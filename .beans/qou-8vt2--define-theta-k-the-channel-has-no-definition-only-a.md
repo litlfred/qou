@@ -781,3 +781,87 @@ be a fit and closes nothing. The next step is to construct the generator and rea
 `μ_λ` off it, then check it lands in this class.
 
 Status stays `todo`.
+
+---
+
+# THE GENERATOR IS BLOCKED ON MISSING INFRA — and the bracket ambiguity collapses
+# (2026-08-10)
+
+Went to construct the q-heat-kernel generator whose block eigenvalue is `μ_λ`.
+Two results: the construction is blocked, but not on research — and the "which
+bracket" ambiguity flagged in the previous section is smaller than stated.
+
+## 1. There is no q-deformed central element in the corpus
+
+Searched the whole Hecke + Schur–Weyl tree, including the `SW-1..SW-9` work that
+landed today (`QOU/SchurWeyl/{HeckeAlgebra,HoefsmitRep,YoungTableaux}.lean`,
+`QOU/HeckeAlgebra/{Common,Demazure,Formal,Hoefsmit,JonesMarkovWenzl,MarkovTrace}.lean`):
+
+    q-deformed Casimir / central element / Jucys–Murphy family:  NONE
+
+The corpus's only Jucys–Murphy is `JucysMurphy.lean:123`, over
+`MonoidAlgebra k (Equiv.Perm (Fin n))` — the **classical S_n** family. That is
+both why `contentSqSum` is q-independent (hence pruned) and why `μ_λ` cannot be
+read off anything currently in the tree.
+
+**So the generator is blocked on infrastructure, not on open mathematics.** What
+is missing is the q-JM family `L_1 … L_n ∈ H_n(q)` and its seminormal
+eigenvalues — standard, citable material (Dipper–James; Murphy; Ram), and the
+`SW-4` Hoefsmit seminormal reps that just landed are the natural substrate to
+build it on. That is a well-posed formalisation task, not a research gap, and it
+should be filed as such rather than left inside this bean.
+
+## 2. The bar-symmetrised JM sum is the principled generator
+
+In `H_n(q)` the JM element `L_k` acts on the seminormal basis with eigenvalue
+`q^{2c}`, `c` the content of the cell holding `k` (standard convention — **not**
+currently stated anywhere in this corpus, so it must be cited when built).
+
+A single `L_k` is **not** bar-even. Its bar-symmetrisation is:
+
+    L_k + L_k⁻¹   ↦   q^{2c} + q^{−2c}          — the *cosh* form.
+
+This is the first thing that **selects** a bracket rather than merely permitting
+one, and it selects on a corpus-internal principle: the bar-even ↔ `cosh` /
+bar-odd ↔ `sinh` dictionary AGENTS.md already uses for the meson scale (`m_π`,
+bar-even cosh) against `Q_β` (bar-odd sinh). Bar-symmetrising the canonical
+central family is the natural way to land in the bar-even class the parity law
+demands.
+
+## 3. The two bar-even candidates are the SAME object — identity
+
+The previous section listed `Σ_c [c]_q²` and left "which bracket" open. It is
+narrower than that. Per cell,
+
+    q^{2c} + q^{−2c} = (q − q⁻¹)² · [c]_q² + 2
+
+(immediate: `(q^c − q^{−c})² = q^{2c} − 2 + q^{−2c}`, and
+`[c]_q = (q^c − q^{−c})/(q − q⁻¹)`). Summing over the `n` cells of λ:
+
+    **Σ_{c∈λ} (q^{2c} + q^{−2c}) = (q − q⁻¹)² · Σ_{c∈λ} [c]_q² + 2n**
+
+Verified symbolically per-cell, and numerically on λ = (2), (2,1), (3,1) where
+the residuals are exactly 4, 6, 8 = 2n.
+
+Consequence: the two candidates differ by a **bar-even scalar** `(q − q⁻¹)²` and
+a **λ-independent** additive `2n`. The scalar is absorbed into normalisation; the
+additive shift moves every rate equally, which in the heat trace
+`Z_q = Σ_λ d_λ exp_q(−μ_λ t)` is an overall factor, not a change to the relative
+spectrum. **So the bracket choice is not a real degree of freedom** — it is a
+normalisation convention. One line of Lean.
+
+## Net position
+
+  * forced: `μ_λ = q^{−1/2}·g_λ`, `g_λ` bar-even  (owner ruling + parity law)
+  * forced: `g_λ` is *not* the corpus's `Σ q^{c}`  (bar-even only on
+    self-conjugate λ; refuted structurally at n = 2)
+  * now also: the two natural bar-even `g_λ` coincide up to bar-even scale and a
+    λ-independent shift, so no choice remains to be made there
+  * still missing: the q-JM family in `H_n(q)` — **infrastructure**, and the one
+    thing standing between this and a derived `μ_λ`
+
+**Guard.** Everything above is shape and structure. None of it evaluates `c₃`, and
+fixing the normalisation by matching the measured `c₃` would convert the whole
+chain into a fit.
+
+Status stays `todo`.
