@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "6329abb9bfbb",
-    "ts": "dd81eb3ca86e",
+    "ts": "04850df14bd8",
     "lean": "8b5f8a519de1",
     "lean_statement": "3266046e549a"
   },
@@ -1379,20 +1379,21 @@
       {
         "field_hash": {
           "md": "6329abb9bfbb",
-          "ts": "dd81eb3ca86e",
+          "ts": "04850df14bd8",
           "lean": "8b5f8a519de1",
-          "lean_statement": "3266046e549a"
+          "lean_statement": "3266046e549a",
+          "graph": "ca27e64f83a9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "ebf2e2e1821c",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-11T10:15:09.681Z",
+        "reviewed_sha": "ae21c3f964be03f77296e17dc663926a29aef37c"
       }
     ],
     "detangler-section-band": [
@@ -1537,20 +1538,21 @@
       {
         "field_hash": {
           "md": "6329abb9bfbb",
-          "ts": "dd81eb3ca86e",
+          "ts": "04850df14bd8",
           "lean": "8b5f8a519de1",
-          "lean_statement": "3266046e549a"
+          "lean_statement": "3266046e549a",
+          "graph": "ca27e64f83a9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "39dfc0abf653",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "e6e7d97bee66",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-11T10:15:09.681Z",
+        "reviewed_sha": "ae21c3f964be03f77296e17dc663926a29aef37c"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1701,7 +1703,7 @@
       {
         "field_hash": {
           "md": "6329abb9bfbb",
-          "ts": "dd81eb3ca86e",
+          "ts": "04850df14bd8",
           "lean": "8b5f8a519de1",
           "lean_statement": "3266046e549a"
         },
@@ -1714,10 +1716,10 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-11T10:15:09.681Z",
+        "reviewed_sha": "ae21c3f964be03f77296e17dc663926a29aef37c",
         "metrics": {
-          "uses_count": 1,
+          "uses_count": 2,
           "broken_edges": 0,
           "redundant_edges": 0
         }
@@ -1773,5 +1775,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-11T10:15:09.681Z"
 }
