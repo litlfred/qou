@@ -180,5 +180,12 @@
       "settled": "2026-08-10"
     }
   ],
-  "refiling_note": "Seven overview-source rows carry refiled_as: \"foreshadows\" -- rejected as dependencies, re-declared as forward pointers. A row with refiled_as absent or \"none\" has NOT been re-declared anywhere and remains simply rejected. Scans must keep filtering on ALL rows regardless of refiled_as: the point is that none of them is a uses[] edge."
+  "refiling_note": "Seven overview-source rows carry refiled_as: \"foreshadows\" -- rejected as dependencies, re-declared as forward pointers. A row with refiled_as absent or \"none\" has NOT been re-declared anywhere and remains simply rejected. Scans must keep filtering on ALL rows regardless of refiled_as: the point is that none of them is a uses[] edge.",
+  "scan_filters": {
+    "note": "A scan proposing uses[] restorations must apply THREE filters before surfacing a candidate. Measured on the prn1 corroborated backlog (2026-08-11): 142 raw -> 93 after the first three -> 83 genuinely actionable. Roughly 40% of every run is otherwise re-proposed settled work.",
+    "1_rejection_ledger": "The `rejections` list below. A JUDGEMENT that the edge does not belong, made by reading the blocks. Permanent, so it lives here. Removed 23 of 142.",
+    "2_foreshadows": "content/<paper>/foreshadows.json. A target already recorded as a forward POINTER is not a uses[] dependency candidate. Removed 18 of 119.",
+    "3_transitive_reachability": "COMPUTED, and deliberately NOT ledgered: drop any candidate A->T where T is already reachable from A through A's declared uses[] cone. The schema requires immediate neighbours only (types.ts: 'If A->B and B->C, then A lists only B'), so such an edge is redundant by construction. It must stay computed rather than recorded, because reachability is STATE-DEPENDENT: if the intermediate edge is later removed, the target stops being reachable and SHOULD be re-proposed. A ledger row would suppress it forever, which is wrong. Removed 10 of 93 -- all of them edges pruned in prn1 tranche 2 and re-surfaced by the next scan.",
+    "4_direction": "Forward-pointing candidates are not uses[] edges; see the detangler criteria. Removed 8 of 101."
+  }
 }
