@@ -844,3 +844,48 @@ eyeball pending: p. 57 (287) f-subscript; p. 56 (281)→(282) factor);
 (b) Bernoulli-polynomial-weighted mixed arguments (GZ (8.7) at c > 1)
 — which needs unprinted higher-fibre data to constrain without
 fitting. Bean `qou-xx9f` reopened accordingly.
+
+## Addendum 21 (2026-08-11) — the m | 24 sweep: ν = 1 at every level; m = 2 is the unique shift-law-canonical case; everything else is "a canonical m-th root of α"
+
+`gswz_epsm_descent_m4to24_probe.py`, **6/6** (77 s; fields to degree
+96). With the m = 2 / m = 3 layers from earlier on this program, the
+descent table over the full divisor lattice is now complete:
+
+| m | d | n_gal | canonical root (shift law) | ν | ε_m(ξ) |
+|---|---|---|---|---|---|
+| 2 | 8 | 4 | **integral** (no choice) | +1 | **+1 well-defined** |
+| 3 | 12 | 6 | fractional in (1−z₂) = α | 1 | ν only |
+| 4 | 16 | 8 | fractional | 1 | ν only |
+| 6 | 24 | 12 | fractional (2r₁ ok, r₂ not) | 1 | ν only |
+| 8 | 32 | 16 | fractional | 1 | ν only |
+| 12 | 48 | 24 | fractional | 1 | ν only |
+| 24 | 96 | 48 | fractional | 1 | ν only |
+
+**Findings:**
+
+- **ν = 1 for every m | 24** — the Galois descent of P(ξ) exists at
+  every level; there is no descent obstruction anywhere in the lattice.
+  (Not in tension with the #4533 result: the exact −1 there is the
+  *Kummer-layer symbol class* of [ζ₂₄] at m = 24 — a different object
+  from the descent obstruction of P(ξ).)
+- **m = 2 is structurally special**: it is the only level where the
+  multiplicities n = (2, 1) and the measured shifts make every
+  exponent even before rooting. At every other m the fractional part
+  sits on the α-line — 1−z₁ = α², 1−z₂ = α, z₁ = −α³ (all re-verified
+  exactly in each of the five fields) — so **the entire remaining
+  ε_m(ξ) program is one question: a canonical m-th root of α.**
+- **Convention note (honest):** the raw shift exponents r_i are
+  relative to each field's ζ_m choice (different primitive-root seeds
+  per field), so they are not comparable across fields; the
+  integrality verdicts m | 2r₁ / m | r₂ ARE intrinsic (unit rescaling
+  of r preserves divisibility by m).
+- The abstract layer's class is deliberately not extracted at any
+  fractional m (PR #4968 established it sweeps μ_m with the root
+  choice — the abstract layer pins ν only).
+
+**Next (bean `qou-y3xv`):** the canonical m-th root of α. Candidate
+mechanisms: CGZ's square-argument η-elements (their Thm 7.4 arguments
+are chosen to kill root ambiguities); or a norm-compatible pinning via
+α = (1−x₂)(1−ζ_m x₂)···-factorizations (α is the full σ-orbit product
+of (1−x₂) at m = 3). Until then, ε₂(ξ) = +1 plus ν ≡ 1 on the whole
+lattice is the complete extractable dataset.
