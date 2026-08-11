@@ -896,6 +896,13 @@ lattice is the complete extractable dataset.
 Addendum 21 in two directions — one that could have overturned its
 table, and one that explains it.
 
+> **⚠ CORRECTED by Addendum 24 (same day).** The paragraph below calls
+> the combined condition m | Q "the sharp criterion". That is the wrong
+> label: m | Q controls **existence** of an m-th root, not
+> **canonicity**. The canonicity criterion is the per-factor
+> m | n_j·r_j that Addendum 21 used. The two **agree on ξ**, so every
+> verdict in this addendum stands unchanged — only the label was wrong.
+
 **The published criterion was not sharp.** Addendum 21 scored each
 level with the *per-factor* condition m | n_i·r_i (n = (2,1)). But the
 α-line identities make **both** base elements powers of the *same*
@@ -976,6 +983,13 @@ row.
 **Q mod 24 is not a class invariant** — a representative change shifts it
 by an arbitrary even amount.
 
+> **⚠ CORRECTED by Addendum 24 (same day).** The consequence below
+> infers a *canonical* cocycle from Q(ξ′) = 0. It does not follow:
+> m | Q only makes U an m-th power, leaving m roots whose choice moves
+> the class. **The conclusion survives, for a stronger reason** — a
+> representative meeting the genuine (per-factor) criterion exists at
+> every m | 24, with an explicit m = 24 witness. See Addendum 24.
+
 **Consequence — the α-block is clearable.** Q(ξ) = 10 is even, so a
 representative ξ′ of the *same* Bloch class has Q(ξ′) ≡ 0, giving an
 integral canonical cocycle **simultaneously at every m | 24**. Explicit
@@ -1007,3 +1021,59 @@ parity.
 **Next.** Extracting the ε_m **values** at m ≥ 3 needs the p-adic descent
 re-run on the 7-symbol representative — the route is now open, the values
 are not yet computed.
+
+## Addendum 24 (2026-08-11) — CORRECTION: m | Q is existence, not canonicity; and a genuinely canonical representative exists at every m | 24
+
+`gswz_epsm_canonicity_criterion_correction_probe.py`, **14/14**.
+Corrects two statements of my own in already-merged work (Addendum 22 /
+PR #4983, Addendum 23 / PR #4999), both amended in place above.
+
+**What was wrong.** Running the Lean-proved shift law through
+P(ξ) = ∏_j D(x_j)^{n_j}/D(1)^{Σn_j} gives
+
+$$\frac{\sigma P}{P} \;=\; \frac{\big[\prod_j \prod_{k<r_j}(1-\zeta^k x_j)^{n_j}\big]^m}{U},
+\qquad U := \prod_j (1-w_j)^{n_j r_j},$$
+
+so a cocycle needs an **m-th root of U**. The two conditions do
+different jobs:
+
+| condition | what it gives |
+|---|---|
+| **per-factor** m \| n_j·r_j (each j) | U is an m-th power with *explicit integer exponents* — the root is **written down**, so the cocycle is **canonical** |
+| **combined** m \| Q | only that U's Teichmüller dlog is divisible by m — U is *some* m-th power, with **m roots** whose choice **moves the class** |
+
+Per-factor ⟹ combined, never conversely. The choice-moves-the-class
+failure is not hypothetical: it is exactly the flip already measured at
+m = 2 (abstract Tonelli layer, PR #4968) and the μ₃ sweep at m = 3. So
+Addendum 22's "sharp criterion" label was wrong, and Addendum 23's
+inference of a *canonical* cocycle from Q(ξ′) = 0 does not follow.
+
+**What survives, checked rather than asserted.** On ξ the two criteria
+**agree at every m | 24** (both give m = 2 only), so every merged
+lattice verdict stands; the Lean file `EpsMObstruction.lean` is
+unaffected (it proves the shift law and the algebra of Q, all true and
+used here); the α-order result is unaffected.
+
+**The corrected question, and its answer.** Per-factor demands
+μ_w | n_w with μ_w := m/gcd(m, e(w)) — a **lattice membership**
+question: is ξ ∈ L_m + R, with R the five-term relation subgroup of
+ℤ^{23}?
+
+- **Non-vacuity first**, since the result would be empty if the
+  relations generated everything: R has full rank but index
+  **[ℤ²³ : R] = 3120** — the pre-Bloch group of 𝔽₂₅ is ℤ/2 × ℤ/1560 —
+  and ξ ∉ R, nor is any single symbol. The membership tester is
+  controlled in both directions.
+- **Answer: yes at every m | 24.** A per-factor — hence genuinely
+  canonical — representative exists at every level.
+- **Explicit witness at the hardest level m = 24**, found by BFS over
+  the 3120-element quotient (464 cosets explored): symbols with
+  Teichmüller dlogs 18, 16, 4 at coefficients 4, 3, 6. Verified
+  directly: 4·18 = 72, 3·16 = 48, 6·4 = 24 are all divisible by 24, and
+  the witness differs from ξ by an element of R.
+
+**Net effect.** Addendum 23's headline — the α-block is clearable —
+**stands**, but on the correct criterion and with a stronger witness.
+The value-extraction increment is now *well-posed*: the cocycle it will
+build is canonical, which the Addendum-23 criterion did not guarantee.
+Still open, unchanged: the ε_m **values** at m ≥ 3.
