@@ -156,12 +156,25 @@ theorem qJM_mul_qJMInv (hqi : q * qi = 1) :
     by_cases h : k < n
     · rw [qJM_succ K q qi n h, qJMInv_succ K q qi n h]
       -- Goal: (σ * L * σ) * (σ⁻¹ * L⁻¹ * σ⁻¹) = 1
-      -- Reassociate: σ * L * (σ * σ⁻¹) * L⁻¹ * σ⁻¹
       have hσσi := σ_mul_σInv K q qi n hqi ⟨k, h⟩
-      have ih := qJM_mul_qJMInv hqi k (Nat.lt_of_lt_of_le h (Nat.le_refl n) |>.le)
-      -- Ref: straightforward mul_assoc chain; sorry pending tactic engineering
-      -- for noncommutative associativity. The mathematics is immediate.
-      sorry
+      have ih := qJM_mul_qJMInv hqi k h.le
+      -- Reassociate: (σ * L * σ) * (σ⁻¹ * L⁻¹ * σ⁻¹)
+      --            = σ * L * (σ * σ⁻¹) * L⁻¹ * σ⁻¹
+      --            = σ * L * 1 * L⁻¹ * σ⁻¹
+      --            = σ * (L * L⁻¹) * σ⁻¹
+      --            = σ * 1 * σ⁻¹ = σ * σ⁻¹ = 1
+      calc σ K q qi n ⟨k, h⟩ * qJM K q qi n k * σ K q qi n ⟨k, h⟩ *
+             (σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩)
+          = σ K q qi n ⟨k, h⟩ * qJM K q qi n k *
+            (σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩) *
+            qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by ring
+        _ = σ K q qi n ⟨k, h⟩ * qJM K q qi n k * 1 *
+            qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by rw [hσσi]
+        _ = σ K q qi n ⟨k, h⟩ * (qJM K q qi n k * qJMInv K q qi n k) *
+            σInv K q qi n ⟨k, h⟩ := by ring
+        _ = σ K q qi n ⟨k, h⟩ * 1 * σInv K q qi n ⟨k, h⟩ := by rw [ih]
+        _ = σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩ := by ring
+        _ = 1 := hσσi
     · -- k ≥ n: recursion freezes, reduces to the k-th case
       push_neg at h
       have hkn : k + 1 ≤ n := hk
@@ -176,8 +189,19 @@ theorem qJMInv_mul_qJM (hqi : q * qi = 1) :
     · rw [qJM_succ K q qi n h, qJMInv_succ K q qi n h]
       have hσiσ := σInv_mul_σ K q qi n hqi ⟨k, h⟩
       have ih := qJMInv_mul_qJM hqi k h.le
-      -- Ref: symmetric to qJM_mul_qJMInv; same mul_assoc chain.
-      sorry
+      -- Symmetric to qJM_mul_qJMInv
+      calc σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ *
+             (σ K q qi n ⟨k, h⟩ * qJM K q qi n k * σ K q qi n ⟨k, h⟩)
+          = σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k *
+            (σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩) *
+            qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by ring
+        _ = σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k * 1 *
+            qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by rw [hσiσ]
+        _ = σInv K q qi n ⟨k, h⟩ * (qJMInv K q qi n k * qJM K q qi n k) *
+            σ K q qi n ⟨k, h⟩ := by ring
+        _ = σInv K q qi n ⟨k, h⟩ * 1 * σ K q qi n ⟨k, h⟩ := by rw [ih]
+        _ = σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩ := by ring
+        _ = 1 := hσiσ
     · push_neg at h; omega
 
 end QJMInv
