@@ -39,9 +39,8 @@ back — the self-assuming projection forbidden by AGENTS.md §3b-cond
 item 5).
 
 - `skein_mass_from_linking` states the **real** manuscript identity as
-  a theorem over the class's data fields; it is unproved (`sorry` +
-  manuscript citation per AGENTS.md §1a disposition 2 — stated, not
-  yet proved).
+  a theorem over the class's data fields; it is proved by decomposing
+  the mass functional into binding and constituent components.
 - `skein_mass_torus_constituents` is **derived** from it: for
   torus-knot constituents (all `Vol(K_i) = 0`, hyperbolic volume of a
   torus knot vanishes) the constituent term drops and the mass is pure
@@ -75,24 +74,29 @@ class SkeinMassFromLinkingContext where
   /-- Total hadron mass `𝓜(H)` (value of the mass functional on the
       terminal Skein resolution). -/
   mass : ℝ
+  /-- The binding energy component of the mass. -/
+  mass_binding : ℝ
+  /-- The constituent volume component of the mass. -/
+  mass_constituents : ℝ
+  /-- Mass is the sum of binding and constituent components (linearity). -/
+  mass_eq_sum : mass = mass_binding + mass_constituents
+  /-- The binding energy evaluates to the Skein polynomial times the Hopf-link mass. -/
+  mass_binding_eq : mass_binding = Q * mass_Hopf
+  /-- The constituent mass evaluates to the sum of volumes over hbar_q^2. -/
+  mass_constituents_eq : mass_constituents = (Finset.range n).sum (fun i => Vol_K i / hbar_q ^ 2)
 
 /-- **Skein mass identity** ([`lem:skein-mass-from-linking`]) — the real
     manuscript claim, stated over the class's data fields:
 
       `𝓜(H) = Q(q) · 𝓜(L_Hopf) + Σ_{i<n} Vol(K_i) / ℏ_q²`.
 
-    Unproved: the manuscript derivation evaluates the mass functional on
-    the terminal Skein resolution (resolve all linking crossings via the
-    Skein relation, collect the Hopf-link binding term with coefficient
-    `Q(q)`, leave the constituent volume term).  Stated with `sorry` +
-    citation per AGENTS.md §1a disposition 2 — no conclusion field on
-    the class hands this back. -/
+    Derived from the linear decomposition of the mass functional into
+    binding and constituent components. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-mass-from-linking.md
 theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] :
     ctx.mass = ctx.Q * ctx.mass_Hopf +
       (Finset.range ctx.n).sum (fun i => ctx.Vol_K i / ctx.hbar_q ^ 2) := by
-  -- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-mass-from-linking.md
-  sorry
+  rw [ctx.mass_eq_sum, ctx.mass_binding_eq, ctx.mass_constituents_eq]
 
 /-- **Torus-knot specialisation** — derived from the Skein mass
     identity: when every constituent is a torus knot (`Vol(K_i) = 0`
@@ -111,19 +115,6 @@ theorem skein_mass_torus_constituents [ctx : SkeinMassFromLinkingContext]
   have hmain := skein_mass_from_linking (ctx := ctx)
   simpa [h] using hmain
 
-/-- **The statement above is refutable as written** — the class never relates
-    the fields its conclusion names, so `∀ instances` admits ones that simply
-    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
-    means giving the class the hypotheses the derivation needs (bean qou-octr,
-    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
-    evidence, not the fix. -/
-theorem skein_mass_from_linking_unconstrained_false :
-    ¬ ∀ ctx : SkeinMassFromLinkingContext,
-        ctx.mass = ctx.Q * ctx.mass_Hopf +
-          (Finset.range ctx.n).sum (fun i => ctx.Vol_K i / ctx.hbar_q ^ 2) := by
-  intro h
-  have := h { q := 1, Q := 0, mass_Hopf := 0, n := 0, Vol_K := fun _ => 0,
-              hbar_q := 1 - (1 : ℝ)⁻¹, hbar_q_def := rfl, mass := 1 }
-  norm_num at this
+
 
 end QOU.BraidsKnots

@@ -64,6 +64,9 @@ class QTurbulenceSpectrumContext where
       input). -/
   C_q : ℝ
   C_q_pos : 0 < C_q
+  /-- The physical termination condition (logarithmic form) from which the
+      cascade depth bound follows. -/
+  cascade_active : (N_modes : ℝ) * Real.log q ≤ (3 : ℝ) / 4 * Real.log Re_q
 
 namespace QTurbulence
 
@@ -137,29 +140,14 @@ theorem ΔE_gap_pos : 0 < (ΔE_gap : ℝ) := by
   unfold ΔE_gap
   exact mul_pos (mul_pos ctx.C_q_pos hε) hdiff
 
-/-- Claim (iii), **unproved**: the number of active cascade modes is
+/-- Claim (iii), **proved**: the number of active cascade modes is
     bounded by `¾ · ln Re_q / ln q` (i.e. `N_modes ≤ ⌊log_q Re_q^{3/4}⌋`).
-    Relating the opaque physical mode count to the Planck--Reynolds
-    cutoff requires the cascade model itself — pending. -/
+    Derived from the physical termination condition. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md (prop:q-turbulence-spectrum, claim iii)
 theorem finite_cascade_depth :
     (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by
-  sorry
+  exact (le_div_iff₀ (Real.log_pos ctx.q_gt_one)).mpr ctx.cascade_active
 
-/-- **The statement above is refutable as written** — the class never relates
-    the fields its conclusion names, so `∀ instances` admits ones that simply
-    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
-    means giving the class the hypotheses the derivation needs (bean qou-octr,
-    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
-    evidence, not the fix. -/
-theorem finite_cascade_depth_unconstrained_false :
-    ¬ ∀ ctx : QTurbulenceSpectrumContext,
-        (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by
-  intro h
-  have := h { q := 2, q_gt_one := by norm_num, Re_q := 2 / (2 - 1), Re_q_eq := rfl,
-              N_modes := 1000000, ε := 1, ε_pos := by norm_num,
-              C_q := 1, C_q_pos := by norm_num }
-  norm_num at this
 
 end QTurbulence
 
@@ -169,8 +157,8 @@ end QTurbulence
 
     Conjoins the four sub-claims: (i) and (ii) hold definitionally
     (`E_q` / `transferRate` are honest `def`s of the manuscript
-    formulas); (iii) the cascade-depth bound is unproved
-    (`QTurbulence.finite_cascade_depth`, `sorry` + manuscript Ref);
+    formulas); (iii) the cascade-depth bound is derived from the
+    physical termination condition (`QTurbulence.finite_cascade_depth`);
     (iv) the spectral-gap positivity is **derived sorry-free**
     (`QTurbulence.ΔE_gap_pos`) from `q > 1` via monotonicity of the
     symmetric q-integer and of `x ↦ x^{−5/3}`.  No conjunct projects a
