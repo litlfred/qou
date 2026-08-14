@@ -63,7 +63,9 @@ if str(HERE) not in sys.path:
 
 import sympy as sp  # noqa: E402
 
-from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
+from canonical_braid_crossings import (  # noqa: E402
+    CTYPES, atom_canonical_crossings,
+)
 from per_irrep_pole_proton_h3 import negative_q_pole_order  # noqa: E402
 from q_parameter import Q as Q0_FLOAT  # noqa: E402  authoritative q_0
 from witness_base import WitnessBuilder  # noqa: E402
@@ -380,9 +382,17 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
     crossings = atom_canonical_crossings(Z, N)
     per_gen: dict[int, dict[str, int]] = {}
     for gen_idx, ctype in crossings:
-        slot = per_gen.setdefault(int(gen_idx),
-                                   {"sigma": 0, "sigma_inv": 0, "averaged": 0})
-        slot[ctype] = slot.get(ctype, 0) + 1
+        # Seed from the canonical vocabulary, not a hand-written triple: the
+        # `.get(ctype, 0)` below is silent, so a ctype the seed does not know
+        # (`averaged_weighted`, added for the colour-weighted p-n interface)
+        # was counted into a key no downstream reader looks for.
+        slot = per_gen.setdefault(int(gen_idx), {c: 0 for c in CTYPES})
+        if ctype not in slot:
+            raise ValueError(
+                f"ctype {ctype!r} is not in canonical_braid_crossings.CTYPES "
+                f"{CTYPES}; per-generator counts would silently drop it"
+            )
+        slot[ctype] += 1
     # KLR-canonical-basis enrichment per gen (PR #608 cemetery infra).
     # σ_g^k pure-power sub-words are by construction *cemetery* — they
     # close to identity / unknots.  We tag each generator with its net
