@@ -74,14 +74,22 @@ def boundary_slopes(monomials):
             continue
         slopes.add((dM, dL))
     # reduce to lowest terms, express as rational dM/dL
+    #
+    # `Fraction`, not `dM2 / dL2`. A boundary slope IS a rational number — the
+    # p/q of knot theory — and the pair is already in lowest terms two lines up,
+    # so float division is a lossy re-encoding of something exact: -10/3 became
+    # -3.3333333333333335, which is both wrong and a raw float64 in the witness.
+    # Fraction sorts, compares and takes abs() exactly like the float did, so
+    # nothing downstream changes except that the values stay correct.
     finite = []
+    from fractions import Fraction
     from math import gcd
     for (dM, dL) in slopes:
         g = gcd(abs(dM), abs(dL)) or 1
         dM2, dL2 = dM // g, dL // g
         if dL2 < 0:
             dM2, dL2 = -dM2, -dL2
-        finite.append(dM2 / dL2)
+        finite.append(Fraction(dM2, dL2))
     Ls = [p[1] for p in monomials]
     Ms = [p[0] for p in monomials]
     return sorted(set(finite)), max(Ls) - min(Ls), max(Ms) - min(Ms), hull
@@ -131,7 +139,7 @@ def main():
     print(f"    geometric L-degree         : {Ldeg41_geom}")
     print(f"    full A-poly L-degree (=#connections {{0,g,gbar}}): {A41_full_Ldeg}")
     max_slope_41 = max(abs(x) for x in s41)
-    print(f"    |max boundary slope|       : {max_slope_41:g}")
+    print(f"    |max boundary slope|       : {max_slope_41}")
 
     # R1: 3 = full L-degree = #boundary-parabolic connections
     check("R1-4_1: full-A L-degree = #connections = 3 (a DT integer)",
@@ -139,8 +147,8 @@ def main():
           full_L_degree=A41_full_Ldeg, dt_spectrum=sorted(DT_SPECTRUM))
     # R2: 4 = |max boundary slope|
     check("R2-4_1: |max boundary slope| = 4 (a DT integer)",
-          abs(max_slope_41 - 4) < 1e-9 and 4 in DT_SPECTRUM,
-          max_boundary_slope=max_slope_41, dt_spectrum=sorted(DT_SPECTRUM))
+          max_slope_41 == 4 and 4 in DT_SPECTRUM,
+          max_boundary_slope=str(max_slope_41), dt_spectrum=sorted(DT_SPECTRUM))
 
     # ---- C1 operator: is it the figure-eight quantum A-polynomial? -----------
     sC1, LdegC1, MwC1, hullC1 = boundary_slopes(C1_op)
@@ -149,12 +157,12 @@ def main():
     print(f"    boundary slopes dM/dL      : {sC1}")
     print(f"    L-degree                   : {LdegC1}")
     c1_max = max(abs(x) for x in sC1) if sC1 else 0
-    print(f"    |max boundary slope|       : {c1_max:g}")
+    print(f"    |max boundary slope|       : {c1_max}")
     # Honest negative: C1's Newton polygon must match 4_1's to BE the quantum
     # A-polynomial. It does not (slopes ±1/2 vs ±4).
     check("C1-is-NOT-quantum-A-poly-of-4_1 (Newton polygons differ)",
           abs(c1_max - max_slope_41) > 1e-9,
-          C1_max_slope=c1_max, A41_max_slope=max_slope_41,
+          C1_max_slope=str(c1_max), A41_max_slope=str(max_slope_41),
           note="C1 (binding carrier, slopes ±1/2) is NOT the reduced Â_{4_1} "
                "(slopes ±4). Route A must use the true colored-Jones recursion, "
                "not the binding carrier.")
@@ -245,11 +253,14 @@ def main():
             "dt_spectrum_corpus": sorted(DT_SPECTRUM),
         },
         "data": {
-            "A41_boundary_slopes": s41,
-            "A41_max_abs_slope": max_slope_41,
+            # Exact rationals as strings: these are p/q boundary slopes, and
+            # float() would both lose the value (-10/3) and re-introduce the
+            # raw float64 this drain removed.
+            "A41_boundary_slopes": [str(x) for x in s41],
+            "A41_max_abs_slope": str(max_slope_41),
             "A41_full_L_degree": A41_full_Ldeg,
-            "C1_boundary_slopes": sC1,
-            "C1_max_abs_slope": c1_max,
+            "C1_boundary_slopes": [str(x) for x in sC1],
+            "C1_max_abs_slope": str(c1_max),
             "R1_survives_crossknot": bool(FIVE2_num_connections in FIVE2_DT),
             "R2_survives_crossknot": bool(r2_survives),
             "verdict": verdict,
