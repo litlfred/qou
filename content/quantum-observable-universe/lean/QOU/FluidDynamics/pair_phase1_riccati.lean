@@ -149,6 +149,8 @@ theorem discrete_riccati_lower (Om0 d0sq r t δ : K) (hOm0 : 0 < Om0)
     unfold d2; nlinarith
   have hd1 : 0 < d2 d0sq r t := lt_of_lt_of_le hd2 hstep
   have hO1 : 0 < Om Om0 d0sq r t := Om_pos _ _ _ _ hOm0 h0 hd1
+  -- `hO2` is consumed implicitly by the `field_simp` in `h1` below (it
+  -- clears the `1/Ω(t+δ)` denominator); removing it leaves `h1` unprovable
   have hO2 : 0 < Om Om0 d0sq r (t + δ) := Om_pos _ _ _ _ hOm0 h0 hd2
   have hmono : Om Om0 d0sq r t ≤ Om Om0 d0sq r (t + δ) :=
     Om_mono _ _ _ _ _ hOm0 h0 hd2 (mul_nonneg hr hδ)
