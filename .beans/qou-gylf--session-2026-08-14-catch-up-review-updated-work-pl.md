@@ -17,8 +17,8 @@ updated_at: 2026-08-14T21:59:16Z
 - **qou-82w7 (z(q0) argument map): dormant, still the open link.** Successor chain
   qou-iyj5 -> qou-yh67 (A=1 vs A=2 binary, structurally open, measurement cannot
   decide — sigma_A ~ 40% >> 2.63% spread; precision hunt = numerology).
-- **2026-08-09 withdrawal**: resurgent/Ecalle D-ladder route only (D(u~) is
-  CONVERGENT, rho=0.1428); z(q0) transcendence claim not withdrawn but must be
+- **2026-08-09 withdrawal**: resurgent/Écalle D-ladder route only (D(ũ) is
+  CONVERGENT, ρ = 0.1428); z(q0) transcendence claim not withdrawn but must be
   re-grounded independently (qou-arvu pattern).
 - **Owner rulings landed**: absolute mass EXCISED (2026-08-11, qou-exam); substrate-q0
   derivation FOREVER GATED (2026-08-02); default anchor = proton; state your bean
