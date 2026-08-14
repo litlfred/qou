@@ -48,8 +48,8 @@ covers only two of them.
 >
 > The 2026-08-08 epistemic accounting is the best single document on this
 > subject and its numbers are correct **for its declared scope** — the
-> `eightfold-way/` and `appendix-standard-model/` chapters only. It says so
-> (§9). But at least four *other* chapters carry SM-relevant results, including
+> `eightfold-way/` and `appendix-standard-model/` chapters only. It says so in
+> its own §9. But at least four *other* chapters carry SM-relevant results, including
 > the two strongest ones:
 >
 > - `QOU/ParticleInteractions/WeakIsospinT3Grading.lean` — T₃ from signed
@@ -447,9 +447,9 @@ exact waste AGENTS.md §"Formalize-first probe discipline" exists to prevent.
 
 ---
 
-## 10. Chapter organisation — measured, then proposed
+## 9. Chapter organisation — measured, then proposed
 
-### 10.1 The measurement that drives everything below
+### 9.1 The measurement that drives everything below
 
 Section block-counts against the detangler's 3–18 band
 ([`local/detangler-integration-watcher`](../.claude/skills/local/detangler-integration-watcher.md)
@@ -473,10 +473,10 @@ makes the measured defect worse.
 > the status quo. The measurement above is what caught it. The structure below
 > is the band-aware replacement: same content, fewer sections.
 
-### 10.2 Proposed eightfold structure — 4 sections, 18 blocks, all in band
+### 9.2 Proposed eightfold structure — 4 sections, 18 blocks, all in band
 
 Four movements: **setup → what is imported → what the braid adds → splittings
-and open problems.** `◇` marks a new placeholder block (§10.4).
+and open problems.** `◇` marks a new placeholder block (§9.4).
 
 ```
 §1  The A₂ datum and its q-deformation                              [3 blocks]
@@ -528,7 +528,7 @@ tensor decomposition"*, which hides the chapter's second-strongest result — GM
 has zero discriminating power — inside a standard one. Retitle the block's
 section, and the block, to lead with the null result.
 
-### 10.3 Proposed appendix adjustment — leave the parameter sections alone
+### 9.3 Proposed appendix adjustment — leave the parameter sections alone
 
 The appendix's **per-parameter chunk sections are correct and should not be
 merged**, even though eight of them are single-block. They are a deliberate
@@ -556,7 +556,7 @@ sec:sm-open-problems (1) — merge the open ledger into the final parameter
 
 Net: 13 sections → 10, with the 8 architectural ones explicitly flagged.
 
-### 10.4 The placeholder blocks — what they are and what they must not be
+### 9.4 The placeholder blocks — what they are and what they must not be
 
 Six new blocks, ranked by value:
 
@@ -577,7 +577,7 @@ Six new blocks, ranked by value:
 
 ---
 
-## 11. Consolidation plan for the SM results (detangle-sensitive)
+## 10. Consolidation plan for the SM results (detangle-sensitive)
 
 The scatter measured in §1 is the thing to fix. **11 `.md` blocks outside the
 two chapters carry SM/flavour content**, across five chapters:
@@ -594,7 +594,7 @@ Plus Lean and compute that no chapter surfaces: `WeakIsospinT3Grading.lean`,
 `MesonOperatorSelectionT3.lean`, `FormLadderAnchorDominance.lean`, the α_EM
 form ladder, `quark-mass-extraction-stage1`.
 
-### 11.1 The consolidation principle — surface, don't move
+### 10.1 The consolidation principle — surface, don't move
 
 **Do not bulk-relocate blocks into the SM appendix.** Three reasons, all
 detangler-grounded:
@@ -613,7 +613,7 @@ detangler-grounded:
 
 So: **consolidate the ledger, not the blocks.**
 
-### 11.2 The plan — five phases, each independently landable
+### 10.2 The plan — five phases, each independently landable
 
 Ordered so every phase is useful alone and none blocks the next.
 
@@ -651,7 +651,7 @@ Both go in the merged `sec:sm-gauge-foundations` or a new
 *Detangle impact: 2 new blocks, `uses[]` pointing **backward** to existing
 blocks only — no forward edges. Update `docs/reorganization-map.md`.*
 
-**Phase 4 — Eightfold restructure (§10.2).** The one phase that touches
+**Phase 4 — Eightfold restructure (§9.2).** The one phase that touches
 manifests. Escalate to the author before landing: it is a section
 merge/split, which the detangler routes to author-ask, not auto-discharge.
 Land in two commits — (a) the section merge with existing blocks only,
@@ -668,19 +668,19 @@ equal-spacing question (does reproducing it carry information, or is it
 automatic like GMO?) is cheap and currently unasked.
 *Detangle impact: 2 blocks into an in-band section.*
 
-### 11.3 What this plan deliberately does NOT do
+### 10.3 What this plan deliberately does NOT do
 
 - **No `α_EM` / `T₃` block relocation.** Surfaced by Phase 3's index, left in
   place.
 - **No merging of the 8 per-parameter sections.** Recorded `wontfix:
-  architectural` instead (§10.3).
+  architectural` instead (§9.3).
 - **No new conjecture classes.** Every gap named here is already a
   content-bearing class with no instance, or an honest `open` row. Adding
   scaffolding would be motion, not progress.
 - **No tier promotions.** Phases 1–3 *demote* or *qualify*; nothing in this
   plan moves a parameter up a tier, because no new derivation is claimed.
 
-### 11.4 Sequencing note
+### 10.4 Sequencing note
 
 Phases 1–3 are content-and-doc work with zero manifest risk and can run in
 parallel with any sibling branch. Phase 4 is the only one needing coordination
@@ -689,7 +689,7 @@ scope (`qou-8lxd`, `qou-vwu9`, `qou-8fl1`) before starting.
 
 ---
 
-## 12. Maintenance
+## 11. Maintenance
 
 Update this file when any of the following change: a parameter's tier; a
 gating object in §4; an exclusion in the §4-A table; an entry in §7; a
