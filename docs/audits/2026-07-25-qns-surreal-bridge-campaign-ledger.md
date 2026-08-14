@@ -166,3 +166,24 @@ collision model (bean `qou-ohaz` — the surviving lock-uniformity caveat:
 does the PDE dynamics actually follow the two-regime ODE through the
 approach?); large-data global persistence at the low-mode block (the
 millennium core, epic `qou-a3n3` remainder).
+
+## The uniformity arc (2026-08-14, PRs #5030–#5035 + this one)
+
+The millennium remainder was progressively localized in one day:
+
+| Step | Result | Where |
+|---|---|---|
+| Fixed-block large data **closed** | `Ω ≤ kmax²·E₀` forever, no smallness; discrete Leray inequality | `low_mode_block_global.lean` (#5030) |
+| Remainder reduced to **one spectral hypothesis** | uniform bound ⟺ no tail pile-up above a fixed band | `low_mode_block_uniformity.lean` (#5031) |
+| Hypothesis tested — **answer is unit-dependent** | substrate: pile-up real (`~(1/ε)^0.83`, fraction → 0.99); c_q-rescaled: tail vanishes (`~ε^1.17`) | SF5 `qns-tail-pileup-probe` (#5033) |
+| Unit convention **decided** (owner: Option C) | two layers, derived `c_q` tie, `ν_phys = 1/(2q)` exact, never-straddle STRICT | `def:qns-unit-layers` (#5035) |
+| Physical-layer **time-averaged no-pile-up PROVED** | `(δ/4)·∑ tail ≤ E₀`, all constants ε-free (`ν_phys ≥ 1/4`) | `physical_layer_leray.lean` (this PR) |
+
+**Where the campaign now stands.** In the physical (fixed-ν) layer the
+in-QOU millennium remainder has exactly the classical shape: energy
+uniform (trivial), time-averaged enstrophy uniform (proved), sup-in-time
+enstrophy open — the discrete/graded image of the classical
+weak-vs-strong gap, no more and no less. In the substrate (Euler) layer
+the pile-up is real and the uniform bound genuinely fails, matching
+vanishing-viscosity physics. Every step above is sorry-free Lean or a
+2/2 witness; every open item is a named hypothesis with no instance.
