@@ -1,4 +1,4 @@
-# A_ω Route C M2 + O2 mechanism + conditional O1-remove
+# `A_ω` Route C M2 + O2 mechanism + conditional O1-remove
 
 **Branch:** `claude/aomega-routec-m2-stokes-mechanism-2026-08-14`
 **Milestone bean:** `qou-fiag`
@@ -32,3 +32,18 @@ whatever O3-M2 lands) stands on its own.
 
 - 2026-08-14 — branch + beans + this doc; corpus maps dispatched (Route C M2
   materials; `A_ω → S` content footprint for the conditional removal).
+- 2026-08-14 — **O3-M2 landed.** Corpus maps returned two findings: (1) the
+  explicit closed-sector `(Q,W)` was never written (M1's content), so M2 also
+  builds it; (2) `A_ω → S` is really two disconnected clusters — Cluster A
+  (`A_ω=3`, DT count, *not wired downstream*) and Cluster B (the `S(muon)/S(proton)`
+  values, from `S = c₃ + Vol(4₁)`). M2 result on the certified eq-(98) datum
+  (`computations/probes/aomega_m2_bps_cohomology.py`,
+  `QOU/QBeta/AomegaM2BPSCohomology.lean`, lean-direct exit 0, `route_c_m2` depends
+  only on `[propext]`): the closed-sector BPS spectrum is **abelian** — every
+  Borel ray distinct ⇒ Davison–Meinhardt plethystic trivial ⇒ `dim BPS = |Ω|`, no
+  superpotential `W`, no motivic q-correction. Chirality spectrum `{3,4}`, bar
+  split `(7,1)`, `4₁` dim `s(1)=3`, `5₂` extra state `s(1)+1` at a distinct ray.
+  **This is why `A_ω` and the whole tower `3,9,75,642,…` are integers, never
+  Poincaré polynomials — reinforcing the O2 integrality obstruction.** The
+  identification "closed-sector category = this `(Q,W)`" stays conjectural (M3,
+  not claimed).
