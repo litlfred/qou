@@ -146,3 +146,23 @@ float64 tier; single `ε = 1e-2` for SF3/SF4.
 **Remaining open on epic `qou-a3n3`:** PDE-level uniformity of the two-regime
 collision model; phase-1 closed-form Lean calculus brick; large-data global
 persistence at the low-mode block (the millennium core, in-QOU).
+
+## Post-SF4 state (2026-08-14)
+
+Landed since the SF-arc completion, in reading order for future agents:
+
+| Item | Where |
+|---|---|
+| **SF4 merged** (#5017): GOY-class backscatter does **not** re-open unforced self-sustainment (survival decays 5–8 orders on both ladders, `R ∈ [0.38, 2.7]`); the shell-model level is exhausted | `computations/qns_backscatter_sustainment_probe.py` + witness |
+| **Owner-proved** `kappa_squared_tends_to_zero` (2026-08-10): the second-order stretching correction `V₂/V₁ → 0` on approach (via `τ²·log τ → 0`) — phase-1 leading-order validity of the two-regime model on Lean footing | `fluid-dynamics/townsend-biot-savart-strain.lean` |
+| **χ(A) = −6 is forced** (Bring terminality: `Σ₄` terminal among genus-4 QOUs) — the Descartes witness of `qou_internal_ns_singular` is canonical, not an example | commit `f53af6f4`, `docs/coordination/skein-observation-bridge.md` |
+| **Cascade depth de-refuted** (#5019, bean `qou-octr`): the flat `finite_cascade_depth` sorry was undischargeable (its own refutation theorem); replaced by the explicit dissipation-cutoff class `QTurbulenceCascadeModel` + derived `finite_cascade_depth_of_cutoff`; `q_turbulence_spectrum.lean` now sorry-free | `lean/QOU/FluidDynamics/q_turbulence_spectrum.lean` |
+| **Phase-1 pair calculus theorem-grade** (#5019): exact invariant `d²Ω`, uniform-Riccati closed form, `discrete_riccati_lower` (the pair channel satisfies GP5's `riccati_lower_growth` hypothesis with `c′ = Γ/(π d₀² Ω₀)`), unboundedness on approach | `lean/QOU/FluidDynamics/pair_phase1_riccati.lean` |
+| **Γ-growth escape route CLOSED in-model** (#5019): consumed-circulation reparametrization eliminates `Γ(t)` from the phase-plane race; overlap engages at `d² = (V₁₀d₀)^{2/3} > 0` for any positive circulation history (`overlap_at_small_separation`) — the first of the two lock-uniformity caveats (§Resolution path above) is resolved; the two-regime model's regularisation is `Γ(t)`-robust | same file, §Γ-robustness |
+| Laundering reverts (2026-08-08): "context enrichment" proofs of `q_ns_wellposedness` / `finite_cascade_depth` reverted on main; `q_ns_wellposedness.lean`'s post-revert state (data-only class, cited research-level sorry) **is** the honest treatment — do not "fix" it by re-proving the conclusion from itself | `lean/QOU/FluidDynamics/q_ns_wellposedness.lean` |
+
+**Remaining open (beans):** model-to-PDE uniformity of the two-regime
+collision model (bean `qou-ohaz` — the surviving lock-uniformity caveat:
+does the PDE dynamics actually follow the two-regime ODE through the
+approach?); large-data global persistence at the low-mode block (the
+millennium core, epic `qou-a3n3` remainder).
