@@ -5779,6 +5779,19 @@ export const references: CSLData[] = [
   }),
 
   ref({
+    id: "crow1970",
+    type: "article-journal",
+    title: "Stability theory for a pair of trailing vortices",
+    author: [{ family: "Crow", given: "S. C." }],
+    "container-title": "AIAA Journal",
+    volume: "8",
+    issue: "12",
+    page: "2172-2179",
+    issued: { "date-parts": [[1970]] },
+    DOI: "10.2514/3.6083",
+  }),
+
+  ref({
     id: "moffatt1994",
     type: "article-journal",
     title:
