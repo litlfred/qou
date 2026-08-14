@@ -150,10 +150,16 @@ def closed_form_prediction(A: int, H_A: float) -> float:
 def count_factor_types_from_crossings(crossings) -> dict:
     """Count Hecke factor types from a `(gen_idx, cross_type)` list.
 
-    `cross_type` ∈ {"sigma", "sigma_inv", "averaged"} — same convention
-    as `atomic_braid_to_crossings` / `light_isotope_sweep`.
+    `cross_type` ∈ `canonical_braid_crossings.CTYPES` — same convention as
+    `atom_canonical_crossings` / `light_isotope_sweep`.
+
+    The bucket set is built from `CTYPES` rather than hand-listed. The
+    hand-listed version raised `ValueError: unknown cross_type` on
+    `averaged_weighted`, which `light_isotope_sweep` feeds it for every
+    `Z >= 1, N >= 1` isotope (qou-8zjd).
     """
-    counts = {"sigma": 0, "sigma_inv": 0, "averaged": 0}
+    from canonical_braid_crossings import CTYPES
+    counts = {ct: 0 for ct in CTYPES}
     for _g, ct in crossings:
         if ct in counts:
             counts[ct] += 1
@@ -162,26 +168,54 @@ def count_factor_types_from_crossings(crossings) -> dict:
     return counts
 
 
+def _weighted_factor(q: float) -> float:
+    """|eigenvalue| of the colour-weighted p-n crossing, exactly.
+
+    On a 1-dimensional irrep `σ ↦ ±…`, a crossing `c·σ + d·1` contributes
+    `(image of σ) + d`. With `d = -h(1/2 - δ/4)` and `h = q - q⁻¹`:
+
+        sym:  q  - h(1/2 - δ/4) = (q + q⁻¹)/2 + hδ/4
+        alt: -q⁻¹ - h(1/2 - δ/4) = -[(q + q⁻¹)/2 - hδ/4]
+
+    so the colour-weighted factor is the colour-blind `[2]_q/2` shifted by
+    `±hδ/4` -- the p-n colour asymmetry, carried exactly rather than
+    approximated by the blind `[2]_q/2`. Returned as the *sym* value; the
+    alt magnitude is the same expression with the sign of the shift flipped.
+    """
+    from canonical_braid_crossings import _avg_color_delta
+    h = q - 1.0 / q
+    return (q + 1.0 / q) / 2.0 + h * float(_avg_color_delta()) / 4.0
+
+
 def chi_sym_closed_form(crossings, q: float) -> float:
     """χ_(n)(T_w) for the 1-dim sym irrep at substrate parameter q.
 
-    Closed form: q^(n_σ - n_σ_inv) · ([2]_q / 2)^n_ud.
+    Closed form: q^(n_σ - n_σ_inv) · ([2]_q / 2)^n_ud · w^n_wud, where
+    `w = [2]_q/2 + hδ/4` is the colour-weighted p-n factor (`_weighted_factor`).
     """
     c = count_factor_types_from_crossings(crossings)
     two_q_half = (q + 1.0 / q) / 2.0  # = [2]_q / 2 = (q + q⁻¹)/2
-    return (q ** (c["sigma"] - c["sigma_inv"])) * (two_q_half ** c["averaged"])
+    return ((q ** (c["sigma"] - c["sigma_inv"]))
+            * (two_q_half ** c["averaged"])
+            * (_weighted_factor(q) ** c["averaged_weighted"]))
 
 
 def chi_alt_closed_form(crossings, q: float) -> float:
     """χ_(1ⁿ)(T_w) for the 1-dim alt irrep at substrate parameter q.
 
-    Closed form: (−1)^#(β) · q^(n_σ_inv − n_σ) · ([2]_q / 2)^n_ud.
+    Closed form: (−1)^#(β) · q^(n_σ_inv − n_σ) · ([2]_q / 2)^n_ud · w̄^n_wud,
+    where `w̄ = [2]_q/2 − hδ/4` — the colour-weighted factor with the shift
+    reflected, since on the alt irrep σ ↦ −q⁻¹ (see `_weighted_factor`).
     """
     c = count_factor_types_from_crossings(crossings)
     two_q_half = (q + 1.0 / q) / 2.0
-    total = c["sigma"] + c["sigma_inv"] + c["averaged"]
+    w_alt = 2.0 * two_q_half - _weighted_factor(q)   # = [2]_q/2 − hδ/4
+    total = (c["sigma"] + c["sigma_inv"]
+             + c["averaged"] + c["averaged_weighted"])
     sign = -1.0 if (total % 2 == 1) else 1.0
-    return sign * (q ** (c["sigma_inv"] - c["sigma"])) * (two_q_half ** c["averaged"])
+    return (sign * (q ** (c["sigma_inv"] - c["sigma"]))
+            * (two_q_half ** c["averaged"])
+            * (w_alt ** c["averaged_weighted"]))
 
 
 def main():
