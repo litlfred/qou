@@ -1061,13 +1061,16 @@ the Φ_b state integral, (iii) canonical `c₄^even` rungs via H₄ Hoefsmit
 (bean `8we6`) since extracted `c_k≥4` are noise (P4 entropy audit). No fit;
 no c_k wired; no tier change.
 
-> **⚠ [SUPERSEDED 2026-08-09] — route (i) is withdrawn; the imperative above
-> is stale.** `D(ũ)` is **CONVERGENT** (`ρ = ũ(q*_ρ) = 0.142799996644689…`,
-> `κ = 0`), so the "transcendental/resurgent (Écalle class)" reading — and the
+> **⚠ [SUPERSEDED 2026-08-09] — route (i) is withdrawn, and the *reason* given
+> for the closure is wrong. The closure instruction itself STANDS.** `D(ũ)` is
+> **CONVERGENT** (`ρ = ũ(q*_ρ) = 0.142799996644689…`, `κ = 0`), so the
+> "transcendental/resurgent (Écalle class)" reading — and the
 > "resurgent/acceleration chain" named as live route (i) — rest on a divergence
-> the ladder does not have. **The holonomic CLOSURE is unaffected and still
-> stands**: a convergent series need not be holonomic, and KC22's closed form
-> `φ(w)log(1−w/ρ) + ψ(w)` is exactly such an element. Routes (ii) and (iii) are
+> the ladder does not have. **"Do not re-run holonomic/P-finite hunts on
+> `D(ũ)`" remains correct and in force**: a convergent series need not be
+> holonomic, and KC22's closed form `φ(w)log(1−w/ρ) + ψ(w)` is exactly such an
+> element — so the (q-)holonomic exclusion survives losing the divergence that
+> was mistakenly offered as its justification. Routes (ii) and (iii) are
 > untouched. See the 2026-08-14 entry at the end of this ledger; `qou-dri7`.
 
 
