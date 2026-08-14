@@ -38,8 +38,18 @@ ATOMS = {"d": 2, "4he": 4}   # recipes present with canonical words
 def interface_crossings(A: int, word_txt: str):
     """Count canonical-word crossings sitting at inter-nucleon generators 3k−1."""
     interfaces = {3 * k - 1 for k in range(1, A)}          # {2,5,8,...}
-    # crossings are (gen, ctype) tuples of ANY type (sigma / averaged / sigma_inv)
-    gens = [int(g) for g in re.findall(r'\((\d+),\s*[\'"](?:sigma|averaged|sigma_inv)[\'"]\)', word_txt)]
+    # crossings are (gen, ctype) tuples of ANY type -- the alternation is
+    # built from the canonical vocabulary rather than spelled out, because
+    # the hand-written one silently dropped `averaged_weighted`: the closing
+    # quote made 'averaged' fail to match the longer label, so the ONE p-n
+    # interface crossing per word went uncounted -- gen 2 for the deuteron,
+    # gen 5 for He-4, both of which ARE interface generators 3k-1. This
+    # function exists to count interface crossings, so it was missing
+    # precisely what it looks for (qou-8zjd).
+    from canonical_braid_crossings import CTYPES
+    _alt = "|".join(sorted(map(re.escape, CTYPES), key=len, reverse=True))
+    gens = [int(g) for g in re.findall(
+        rf'\((\d+),\s*[\'"](?:{_alt})[\'"]\)', word_txt)]
     at_interface = sorted(g for g in set(gens) if g in interfaces)
     return interfaces, at_interface
 

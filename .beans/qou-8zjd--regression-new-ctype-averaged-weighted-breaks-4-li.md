@@ -18,12 +18,22 @@ That fix is correct and should stay.
 What it did not do is check who **consumes** the label. Four live consumers
 carry their own `{sigma, sigma_inv, averaged}` table and reject anything else:
 
-| site | failure |
-|---|---|
-| `markov/markov_peel.crossing_element` | `ValueError: unknown cross_type: 'averaged_weighted'` |
-| `markov/markov_trace_via_wenzl_lr.CTYPE_TO_SIGN` | `KeyError: 'averaged_weighted'` |
-| `canonical_tr_m_via_rust.CTYPE_TO_SIGN` | `KeyError: 'averaged_weighted'` |
-| `tau_M_proton_closed_form_phase5l1._cross_to_cd` | `ValueError: Unknown cross_type` |
+| site | failure | reached today? |
+|---|---|---|
+| `canonical_tr_m_via_rust.CTYPE_TO_SIGN` | `KeyError` | **live** — fed by `atom_canonical_crossings` |
+| `markov/markov_trace_via_wenzl_lr.CTYPE_TO_SIGN` | `KeyError` | **live** — same feed |
+| `chi_sym_alt_closed_form.count_factor_types_from_crossings` | `ValueError` | **live** — `light_isotope_sweep` feeds it canonical crossings |
+| `atom_level_wedderburn_tower` (private `d_for` dict) | `KeyError` | **live** |
+| `markov/markov_peel.crossing_element` | `ValueError` | latent — legacy test wrapper; `word_to_element`, the production path, always carried the weighted form |
+| `tau_M_proton_closed_form_phase5l1._cross_to_cd` | `ValueError` | latent — its word is the proton `(1,0,include_inter=False)`, which has no p-n interface |
+
+**Latent ≠ harmless, but it is not the same claim.** An earlier draft of this
+table listed all sites as current failures; Copilot's review on PR #5018
+correctly pushed back that a site downstream of the still-collapsing
+marshaller could not yet see the new label. Two of the six are latent, for
+two different reasons, and both are recorded above rather than flattened.
+They are fixed anyway: a private copy that happens not to be reached today
+is the same defect one caller away.
 
 Measured at an entry point, not just at the table:
 
@@ -67,7 +77,37 @@ merged PR fixed.
 but equally lossy for both, and documented. Leave the behaviour; route it
 through the shared classifier so it cannot drift.
 
-## The recurring pattern, instances five and six
+## What the mechanical scan found that reading did not
+
+Reading the tree by hand found four consumers. A scan — *does this file name
+the vocabulary without importing it?* — found **eleven more**, of which four
+were real value-mapping defects and seven are prose or counting:
+
+| site | defect |
+|---|---|
+| `atom_level_wedderburn_tower.py` | private `d_for` dict → `KeyError` on the trace |
+| `chi_sym_alt_closed_form.py` | private bucket set → `ValueError`; and bucketing the weighted crossing as `averaged` would silently break an *exact* closed form |
+| `audits/term5_aK_audit.py` | private classifier returned `"unknown"`, which `mirror_word`'s `else` branch then treated as `averaged` — **silent** |
+| `theta_mn_linearchain_vs_allpairs.py` | regex `(?:sigma\|averaged\|sigma_inv)['"]` — the closing quote makes `averaged` fail to match `averaged_weighted` |
+
+The regex one is the sharpest. It dropped gen 2 on the deuteron and gen 5 on
+⁴He — both **interface** generators `3k−1`, which is exactly what that
+function exists to count. It was silently missing precisely what it looks
+for, and it is the same shape as the two drifted `WITNESS_REF` regexes
+earlier in this arc.
+
+`chi_sym_alt_closed_form` needed a derivation, not a bucket. On a 1-dim
+irrep a crossing `c·σ + d·1` contributes `(image of σ) + d`, so with
+`d = -h(1/2 - δ/4)`:
+
+    sym:   q   - h(1/2 - δ/4) = [2]_q/2 + hδ/4
+    alt:  -q⁻¹ - h(1/2 - δ/4) = -([2]_q/2 - hδ/4)
+
+i.e. the colour-blind `[2]_q/2` shifted by `±hδ/4` — the colour asymmetry
+carried exactly. Verified against the direct product at ≤ 4.9e-16 (f64 eps)
+on p, n, D, T, ³He, ⁴He.
+
+## The recurring pattern, instances five through nine
 
 The arc's standing lesson — *a private copy cannot learn what the canonical
 one learns* — now has two more instances, and this time the copy did not
