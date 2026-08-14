@@ -199,3 +199,30 @@ Four Python producers, not twenty-nine. Each needs the source diff first
 (`git diff` the producer) to see whether it carries convention C in its own
 code or inherits it — the bean's own ROOT/DERIVED distinction still applies,
 just to a much smaller set. The Rust family stays blocked on the binary gate.
+
+### The 5 are ROOTS, not derived — and the first measurement said otherwise
+
+Intersecting each producer's witness references against the 14 remaining C
+witnesses first suggested 3 of 5 were derived. **That was an artifact**: the
+regex matched each producer's *own output* filename, which it necessarily
+mentions in order to write it. A read and a write look identical to a grep
+over source text.
+
+Reading it correctly — inputs only:
+
+| producer | inputs | verdict |
+|---|---|---|
+| `alpha_k_jones_markov_h12.py` | `q-pinning-50-digit` (clean) | **ROOT** |
+| `derived_chi_catalogue_build.py` | none | **ROOT** |
+| `probe_1b_li6_orthogonality.py` | `y-lambda-at-q0` (clean) | **ROOT** |
+| `tr_m_q_hecke_seminormal.py` | 3 clean (`atomic-tr-m-helium4`, `atomic-tr-m-mpfr-50dps`, `tr-m-jones-markov-cross-check`) | **ROOT** |
+| `y_lambda_macdonald_telescope.py` | none | **ROOT** |
+
+All five carry convention C **in their own code**, so all five need a source
+edit — a re-run fixes none of them. That is this bean's original conclusion,
+now holding over 5 producers instead of 29.
+
+This is the third time in this bean's history that measuring the artifact
+instead of the property produced a wrong number — `--plan` stdout, then the
+read-set-vs-content-test confusion, now read-vs-write in a source grep.
+Recorded rather than quietly fixed, because the pattern is the finding.
