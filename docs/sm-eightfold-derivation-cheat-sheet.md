@@ -27,6 +27,11 @@ structural finding is that the 21 "open" parameters are **not 21 independent
 problems** — they funnel into **three missing objects** (§4). Two of the three
 have partial derivations already.
 
+Two of the eightfold way's three headline quantitative successes — Gell-Mann–Okubo
+and the decuplet equal-spacing rule behind the `Ω⁻` prediction — are now **both
+proved content-free as derivation targets**, with their deviations (≈ 6 % and
+≈ 9.2 %) relocated as the real testable content.
+
 ---
 
 ## 1. Where the authoritative sources live
@@ -346,8 +351,8 @@ none of the programme's quantitative successes.**
 | Hypercharge `Y` | — | **open** | writhe map **falsified** (`p`, `n` share `Y = +1`, writhes differ). Candidates: strand twist (§6), Milnor `μ̄₁₂₃` (#4597) |
 | GMO mass formula `4m_K² = 3m_η² + m_π²` | [`meson-mass-splitting`](../content/quantum-observable-universe/eightfold-way/meson-mass-splitting.md), `GellMannOkuboIdentity.lean` | **proved-neg** | holds **identically** for *any* first-order octet breaking ⇒ **zero discriminating power**. Reproducing it is evidence for nothing. GMO **withdrawn as a derivation target** |
 | The GMO **deviation** (≈ 6 %) | — | **open** | the only testable content. Framework derives no second-order term ⇒ predicts **0** |
-| **Decuplet equal-spacing rule + the `Ω⁻` mass prediction** | ✗ **no block** | — | **coverage gap, and the most consequential one.** `Ω⁻` appears only as a table row. Since GMO was shown to have no discriminating power, equal spacing is one of the two places the eightfold way's *actual* falsifiable content lives |
-| **U-spin / V-spin** | ✗ **no block** | — | coverage gap; zero mentions |
+| **Decuplet equal-spacing rule + the `Ω⁻` mass prediction** | [`decuplet-equal-spacing`](../content/quantum-observable-universe/eightfold-way/decuplet-equal-spacing.md) | **proved-neg** | **CLOSED 2026-08-14** — the rule is an identity of first-order octet breaking, so it has **zero discriminating power**, same as GMO. `m(Ω) = 2m(Ξ*) − m(Σ*)` identically, so the Ω⁻ extrapolation reads off a value the ansatz already fixed. Cause: on the decuplet `2I = Y + 2`, collapsing the quadratic Casimir term to linear — and this **fails on the octet** (Σ, Λ share `Y = 0`), so it is not generic. Testable content relocated to the **≈ 9.2 %** spacing spread; framework predicts 0. `DecupletEqualSpacing.lean`, sorry-free |
+| **U-spin / V-spin** | ✗ **no block** | — | coverage gap; zero mentions. Lower priority — likely the same null-result class as GMO and equal spacing |
 | **Coleman–Glashow relation** | ✗ **no block** | — | coverage gap; zero mentions |
 | Colour `SU(3)` from octonionic `G₂` | [`color-su3-from-g2`](../content/quantum-observable-universe/eightfold-way/color-su3-from-g2.md) | **standard** skeleton + **proved-neg** | `PSL(2,7) ≅ GL(3,𝔽₂)` machine-verified. The `S₄` bridge is **refuted** and the Bring→Klein degeneration **excluded**; `S₄ ⊂ PSL(2,7)` maximality as *selection* is **withdrawn**. Continuous `G₂` completion is a **Mathlib gap** (infrastructure, not structural). ⚠ `𝕆` and `G₂` are used throughout but **never defined** in this paper (`qou-8fl1`) |
 | Flavour vs colour `SU(3)` | — | **open** | proved they cannot both come from one construction: the `Sym²` gate excludes the icosahedral triple `T₁` while the `G₂` route passes |
@@ -563,7 +568,7 @@ Six new blocks, ranked by value:
 | # | Block | Value | Why |
 |---|---|---|---|
 | 1 | `vector-meson-nonet` | **high — adds falsifiable content** | ρ, K*, ω, φ. This is where GMO *fails*: ideal ω–φ mixing means the nonet is not described by the octet formula. Since GMO was proved to carry zero discriminating power, the nonet's departure from it is one of only two places the eightfold way has real testable content |
-| 2 | `decuplet-equal-spacing` | **high — adds falsifiable content** | Equal spacing + the Ω⁻ mass prediction, the programme's historically decisive test, currently one table row. Needs the same treatment GMO got: does the framework reproduce equal spacing, and does that reproduction carry information, or is it automatic for any first-order breaking? **Unasked, and cheap to settle** |
+| ~~2~~ | ~~`decuplet-equal-spacing`~~ | **DONE 2026-08-14** | Asked and settled: **automatic**, hence zero discriminating power, exactly as GMO. Block landed, Lean sorry-free, deviation (≈ 9.2 %) named as the real target. See [`2026-08-14-decuplet-equal-spacing-null-result.md`](audits/2026-08-14-decuplet-equal-spacing-null-result.md) |
 | 3 | `baryon-octet-decomposition` | medium | The namesake ½⁺ multiplet; promote the passing paragraph at `borromean-decuplet-derivation.md:66-73` |
 | 4 | `weak-isospin-t3-grading` | medium | The chapter has **no** presence for the T₃ result, though it is the second derived item on the surface. State the GMN closure at two-row width (G5) |
 | 5 | `octonion-algebra` | medium | `𝕆` and `G₂` are used throughout the colour section and **never defined in this paper** (`qou-8fl1`). Required, not optional |

@@ -1533,6 +1533,21 @@ export const references: CSLData[] = [
   }),
 
   ref({
+    id: "gellmann1962",
+    type: "article-journal",
+    title: "Symmetries of Baryons and Mesons",
+    author: [
+      { family: "Gell-Mann", given: "Murray" },
+    ],
+    "container-title": "Physical Review",
+    volume: "125",
+    issue: "3",
+    page: "1067-1084",
+    issued: { "date-parts": [[1962]] },
+    DOI: "10.1103/PhysRev.125.1067",
+  }),
+
+  ref({
     id: "lenstra1983",
     type: "article-journal",
     title:
