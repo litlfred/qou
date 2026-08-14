@@ -63,6 +63,10 @@ export default chapter({
       blocks: [
         "meson-octet-decomposition",
         "meson-mass-splitting",
+        // The vector nonet. Placed after the GMO null result it contrasts
+        // with, so both uses[] edges run backward. Takes this section from
+        // 2 to 3 blocks, into the detangler 3-18 band.
+        "vector-meson-nonet",
       ],
     }),
 
