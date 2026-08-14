@@ -1,11 +1,11 @@
 ---
 # qou-l5zi
-title: "wrap_legacy silently drops payload assertions -> 28 producers emit allPassed:true vacuously"
-status: todo
+title: wrap_legacy silently drops payload assertions -> 28 producers emit allPassed:true vacuously
+status: completed
 type: task
 priority: high
 created_at: 2026-08-14T19:10:00Z
-updated_at: 2026-08-14T19:10:00Z
+updated_at: 2026-08-14T20:03:32Z
 ---
 
 ## The defect
@@ -71,24 +71,20 @@ real failure was this session's own new probe
 witness it wrote claimed `allPassed: true`. That is what makes the bug real; it
 is not what the committed corpus was suffering from.
 
-Proven end-to-end on `rho_k_counit_vortex_writhe_probe.py`: the source builds
-2 assertions; `rho-k-counit-vortex-writhe.witness.json` carries
-`assertions: 0, allPassed: true`.
-
-Found because it bit this session's own new probe
-(`computations/probes/ak_lp_dual_quotient_probe.py`): its headline check
-`quotient_recovers_a_K_closed` is **False**, and the first witness it wrote
-still said `allPassed: true`. Switching to `add_assertion` produced the honest
-`allPassed: false`.
+Mechanism proven end-to-end on `rho_k_counit_vortex_writhe_probe.py`: the
+source built 2 assertions and the committed witness carried
+`assertions: 0, allPassed: true`. It now carries both (and still passes).
 
 ## Why it matters more than a formatting bug
 
-This is the same failure shape as `qou-9d6h` (D3), where
+Same failure shape as `qou-9d6h` (D3), where
 `deuteron_tower_fusion_frame_probe` wrote `allPassed: False` and then exited 0,
-so the cascade filed it as `ok`. Here it is worse: the witness itself asserts
-success. Anything that gates on `allPassed` — dashboards, the integration
-watchers, a reader skimming a witness — is reading a value that was never
-computed.
+so the cascade filed it as `ok`. Here it is worse in kind: the witness itself
+asserts success. Anything gating on `allPassed` — dashboards, the integration
+watchers, a reader skimming a witness — reads a value that was never computed.
+
+Worth keeping the severity honest, though: *in kind* worse, **not** in measured
+damage. See the correction above — 0 committed verdicts were wrong.
 
 ## The fix — adopted, not raised
 
