@@ -169,10 +169,42 @@ def solve_atom_lp(atom: str) -> dict:
     )
     u0_star = result.y0_star
 
-    aK_via_dual = 1.0 + chirality_dual_sum / abs(u0_star) if abs(u0_star) > 1e-12 else float("nan")
+    # `a_K` is recovered by normalising the chirality dual sum by the net
+    # constraint's shadow price, so it exists only while that price is nonzero.
+    #
+    # Under convention D it is not. Every `ℓ(λ) ≥ 3` weight vanishes
+    # identically (`qou-u2jg`), so the blocks this LP was posed over collapse
+    # and the solve returns the trivial point: `primal_obj = 0`,
+    # `dual_obj = 0`, `y0_star = -0.0`. The guard below then fires on EVERY
+    # row, where under convention C it fired on none.
+    #
+    # That is a finding, not a formatting problem, and it is the same shape as
+    # the two other convention-D degeneracies: the Gram form going singular
+    # (`tools/pyhecke/python/pyhecke/gram.py`) and `y-lambda-sdp`'s positivity
+    # question changing its answer. The probe is posed over the full partition
+    # set; under D the live content is the two-row block, so the LP needs
+    # re-posing on the quotient rather than reporting a degenerate solve.
+    # Tracked as a bean; NOT silently repaired here, because inventing a
+    # nonzero normaliser would manufacture an `a_K` the data does not support.
+    #
+    # Emitted as `null`, never `float("nan")`. Bare NaN is not valid JSON
+    # (RFC 8259) — `json.dump` writes the bare token `NaN`, which Python reads
+    # back but strict parsers reject, so it was a landmine for every non-Python
+    # consumer of this witness. It also poisons any downstream comparison: the
+    # impact report scored this file at 2.1e21 ppm purely from differencing
+    # against NaN. `null` says "no value" to every reader, and the reason lives
+    # in `a_K_dual_status` beside it instead of in a magic float.
+    degenerate = abs(u0_star) <= 1e-12
+    aK_via_dual = None if degenerate else 1.0 + chirality_dual_sum / abs(u0_star)
+    aK_dual_status = (
+        "degenerate: |y0_star| <= 1e-12, the LP collapsed to the trivial point; "
+        "under convention D the l(lambda)>=3 blocks vanish identically, so this "
+        "LP needs re-posing on the two-row quotient"
+        if degenerate else "ok"
+    )
     aK_C = a_K_closed(A)
     dual_vs_C_ppm = float((aK_via_dual / aK_C - 1) * 1e6) if (
-        aK_C and not (aK_C != aK_C)  # not NaN
+        aK_via_dual is not None and aK_C and not (aK_C != aK_C)  # not NaN
     ) else None
 
     return {
@@ -193,6 +225,7 @@ def solve_atom_lp(atom: str) -> dict:
         "chirality_dual_sum": chirality_dual_sum,
         "self_conjugate_dual_sum": sc_dual_sum,
         "a_K_via_lp_dual": aK_via_dual,
+        "a_K_dual_status": aK_dual_status,
         "a_K_C_closed": aK_C,
         "dual_vs_C_ppm": dual_vs_C_ppm,
         "per_partition": per_partition,
@@ -295,9 +328,23 @@ def main() -> int:
             continue
         ppm = r['dual_vs_C_ppm']
         ppm_s = f"{ppm:+.4e}" if ppm is not None else "n/a"
-        print(f"  {r['atom']:12s} {r['A']:>2d}  {r['tr_M_atom']:>10.6f}  "
-              f"{r['n_active']:>7d}  {r['y0_star']:>10.4f}  "
-              f"{r['a_K_via_lp_dual']:>10.4f}  {r['a_K_C_closed']:>10.4f}  "
+        # `a_K^dual` is None on a degenerate solve (see the extraction above),
+        # so it cannot go through `:.4f`. Printed as `degen` rather than
+        # `n/a`: the distinction is the point, since a degenerate LP is a
+        # result about convention D and not a missing datum.
+        ak = r['a_K_via_lp_dual']
+        ak_s = f"{float(ak):10.4f}" if ak is not None else f"{'degen':>10s}"
+        # Coerced through float() for display ONLY. These fields arrive as
+        # mpmath.mpf (the witness carries them at full precision, which is the
+        # point), and `mpf.__format__` does not accept an `f` presentation
+        # type — the summary table crashed with `unsupported format string
+        # passed to mpf.__format__` AFTER `w.save()` had already written the
+        # witness, so the producer exited 1 having actually succeeded. The
+        # harness records that as a producer failure and the witness gets
+        # re-run forever. Nothing here feeds the witness; it is a console table.
+        print(f"  {r['atom']:12s} {r['A']:>2d}  {float(r['tr_M_atom']):>10.6f}  "
+              f"{r['n_active']:>7d}  {float(r['y0_star']):>10.4f}  "
+              f"{ak_s}  {float(r['a_K_C_closed']):>10.4f}  "
               f"{ppm_s:>12s}")
     return 0
 
