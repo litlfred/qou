@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:03:48.664571+00:00",
-  "commitSha": "e1e6e33b2ea928e8f0fdecef80b4fd5b41a924fc",
+  "computedAt": "2026-08-14T16:38:19.519862+00:00",
+  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
   "assertions": [
     {
       "name": "h3_h4_box_additions_count_is_7",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 351,
+  "durationMs": 167,
   "computation": "option-b-h3-h4-bratteli-probe",
   "scriptFile": "option_b_h3_h4_bratteli_probe.py",
   "scriptHash": "8d26f44c6dd3",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,9 +35,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
   "description": "Option B probe (PR #1762 §5 / sibling #1816 Option A): H₃ ⊂ H₄ Bratteli induction-restriction test for deriving Family-A linking_weight (3q²+4+3q⁻²)/4. Three sub-hypotheses (B1 uniform / B2 y_λ-weighted / B3 per-source λ) tested symbolically in q (B1, B3) and numerically at q_0 (B2) against the production closed-form. EXPLORATORY — no production code, content blocks, or witnesses changed.",
@@ -173,18 +172,18 @@
     "b2_y_lambda_weighted": {
       "hypothesis": "B2 (y_λ-weighted at q_0)",
       "verdict": "REFUTED",
-      "weighted_sum_at_q0": "4.055984589994831501474945914110600714131103323801311610883240678910862",
+      "weighted_sum_at_q0": "4.054514673639646223285550264100000104444572169186000549035759163636217",
       "lambda_A_at_q0": "2.5327796636746759826636838141577022737497563139135",
-      "delta": "1.523204926320155518811262099952898440381347009887811610883240678910862",
-      "relative_error": "0.6013965400015167909278965684962068887494837311316681396240341912109448",
+      "delta": "1.521735009964970240621866449942297830694815855272500549035759163636217",
+      "relative_error": "0.6008161830220815350652947368648725099944609154488607445687109355317178",
       "per_source": [
         {
           "lambda": [
             3
           ],
-          "y_lambda_at_q0": "0.41539579536061340131043751972541446062496615551884",
+          "y_lambda_at_q0": "0.50540422650393080318755870324047227566035119774981",
           "box_addition_sum": "4.0437062182329013102182450855436030316663417518847",
-          "weighted_contribution": "1.679738560727514188171782421275842813194107970140951294170101353549968",
+          "weighted_contribution": "2.043706213435134696833869541392697988751285708281420213115028659766872",
           "box_additions": [
             {
               "lambda_plus": [
@@ -206,9 +205,9 @@
             2,
             1
           ],
-          "y_lambda_at_q0": "0.28092963103101970777815130637822107959502749332953",
+          "y_lambda_at_q0": "0.2472978867480345984062206483797638621698244011251",
           "box_addition_sum": "8.1311186546987039306547352566308090949990252556541",
-          "weighted_contribution": "2.284272163533948235995312936726761684154504662386026308175103241916864",
+          "weighted_contribution": "2.010808460204511526451680722707302115693286460904580335920730503869345",
           "box_additions": [
             {
               "lambda_plus": [
@@ -240,9 +239,9 @@
             1,
             1
           ],
-          "y_lambda_at_q0": "0.022744942577347183133259867518143380184978857822104",
+          "y_lambda_at_q0": "0.0",
           "box_addition_sum": "4.0437062182329013102182450855436030316663417518847",
-          "weighted_contribution": "0.09197386573336907730785055610799621678249069127433400853803608344403054",
+          "weighted_contribution": "0.0",
           "box_additions": [
             {
               "lambda_plus": [

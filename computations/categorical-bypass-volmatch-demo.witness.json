@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T15:57:17.226244+00:00",
-  "commitSha": "915931722efe40315fb6c709965969b9e3c17ad6",
+  "computedAt": "2026-08-14T16:22:56.226226+00:00",
+  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 11,
   "computation": "categorical-bypass-volmatch-demo",
   "scriptFile": "categorical_bypass_volmatch_demo.py",
   "scriptHash": "8a619d2ecfe8",
@@ -20,9 +20,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
   "description": "Bypass demo: compute B(𝔥) directly from joint-tower SDP Wedderburn blocks via tr_M = Σ_λ y_λ · χ_λ at q_0, without using volume-match knot identification. Surfaces a 27%–15× discrepancy with mass-table-ppb's volume-match B = m_e · ρ · Vol_hyp(K), establishing that the regular Markov trace at q_0 ≠ Vol_hyp(K). The canonical chain in PR #442 step (5)–(7) needs further resolution before sub-percent accuracy is possible.",
@@ -39,12 +38,12 @@
         "knot": null,
         "n_native": 2,
         "rho": 1,
-        "tr_M_direct": 0.729319922671296,
-        "B_pred_direct_MeV": 0.37268171520234417,
+        "tr_M_direct": 0.8476155316216548,
+        "B_pred_direct_MeV": 0.4331306472472121,
         "B_volmatch_MeV": null,
         "B_AME_MeV": 1.0,
         "ratio_direct_to_volmatch": null,
-        "ratio_direct_to_AME": 0.37268171520234417,
+        "ratio_direct_to_AME": 0.4331306472472121,
         "wedderburn_terms": [
           {
             "partition": [
@@ -52,8 +51,8 @@
             ],
             "d_lambda": 1,
             "chi_lambda": 1.3665224096730013,
-            "y_lambda": 0.6963254203144307,
-            "contribution": 0.9515442912846412
+            "y_lambda": 0.752702113845058,
+            "contribution": 1.0285843063775104
           },
           {
             "partition": [
@@ -62,8 +61,8 @@
             ],
             "d_lambda": 1,
             "chi_lambda": -0.7317845597858103,
-            "y_lambda": 0.3036745796855693,
-            "contribution": -0.2222243686133453
+            "y_lambda": 0.24729788615494194,
+            "contribution": -0.1809687747558556
           }
         ],
         "comparison_label": "ref m_e"
@@ -74,12 +73,12 @@
         "knot": "6_2",
         "n_native": 3,
         "rho": 1,
-        "tr_M_direct": 0.28787966790047687,
-        "B_pred_direct_MeV": 0.14710620822212936,
+        "tr_M_direct": 0.40923483493978274,
+        "B_pred_direct_MeV": 0.20911857124002434,
         "B_volmatch_MeV": 2.2488207948647343,
         "B_AME_MeV": 2.2245662000000004,
-        "ratio_direct_to_volmatch": 0.06541482031740894,
-        "ratio_direct_to_AME": 0.0661280425020075,
+        "ratio_direct_to_volmatch": 0.09299032262488605,
+        "ratio_direct_to_AME": 0.09400420236539794,
         "wedderburn_terms": [
           {
             "partition": [
@@ -87,8 +86,8 @@
             ],
             "d_lambda": 1,
             "chi_lambda": 1.231434090000003,
-            "y_lambda": 0.4153957863345666,
-            "contribution": 0.5115325321347427
+            "y_lambda": 0.5054042276901161,
+            "contribution": 0.6223719952077323
           },
           {
             "partition": [
@@ -97,8 +96,8 @@
             ],
             "d_lambda": 2,
             "chi_lambda": -0.8618640603115011,
-            "y_lambda": 0.2809296339798641,
-            "contribution": -0.2421231550037095
+            "y_lambda": 0.24729788615494194,
+            "contribution": -0.2131371602679496
           },
           {
             "partition": [
@@ -108,8 +107,8 @@
             ],
             "d_lambda": 1,
             "chi_lambda": 0.812061325994314,
-            "y_lambda": 0.022744945705705264,
-            "contribution": 0.018470290769443697
+            "y_lambda": 0.0,
+            "contribution": 0.0
           }
         ],
         "comparison_label": "vs mass-table-ppb"
@@ -120,12 +119,12 @@
         "knot": "8_11",
         "n_native": 5,
         "rho": 2,
-        "tr_M_direct": 0.012891768633494205,
-        "B_pred_direct_MeV": 0.013175360488507587,
+        "tr_M_direct": 0.035297917348310774,
+        "B_pred_direct_MeV": 0.03607439745305831,
         "B_volmatch_MeV": 8.46859838653302,
         "B_AME_MeV": 8.481796200000002,
-        "ratio_direct_to_volmatch": 0.0015557899769410933,
-        "ratio_direct_to_AME": 0.0015533691423177069,
+        "ratio_direct_to_volmatch": 0.004259783709949539,
+        "ratio_direct_to_AME": 0.0042531554168984045,
         "wedderburn_terms": [
           {
             "partition": [
@@ -133,8 +132,8 @@
             ],
             "d_lambda": 1,
             "chi_lambda": 0.659443597175646,
-            "y_lambda": 0.1181483983336024,
-            "contribution": 0.07791220479765187
+            "y_lambda": 0.1942771888703401,
+            "contribution": 0.12811484827782946
           },
           {
             "partition": [
@@ -143,8 +142,8 @@
             ],
             "d_lambda": 4,
             "chi_lambda": -0.905715028314112,
-            "y_lambda": 0.10937853185946189,
-            "contribution": -0.09906578008004853
+            "y_lambda": 0.12498539716153668,
+            "contribution": -0.11320115252901174
           },
           {
             "partition": [
@@ -153,8 +152,8 @@
             ],
             "d_lambda": 5,
             "chi_lambda": 0.333313822116597,
-            "y_lambda": 0.06172371532319623,
-            "contribution": 0.0205733674696113
+            "y_lambda": 0.06115624449670263,
+            "contribution": 0.020384221599493053
           },
           {
             "partition": [
@@ -164,8 +163,8 @@
             ],
             "d_lambda": 6,
             "chi_lambda": 0.9860915884664503,
-            "y_lambda": 0.016766608958844187,
-            "contribution": 0.01653341206142248
+            "y_lambda": 0.0,
+            "contribution": 0.0
           },
           {
             "partition": [
@@ -175,8 +174,8 @@
             ],
             "d_lambda": 5,
             "chi_lambda": -0.520359398791973,
-            "y_lambda": 0.007749589318305704,
-            "contribution": -0.004032571638558252
+            "y_lambda": 0.0,
+            "contribution": -0.0
           },
           {
             "partition": [
@@ -187,8 +186,8 @@
             ],
             "d_lambda": 4,
             "chi_lambda": -0.9049216374420299,
-            "y_lambda": -0.0009287250802900655,
-            "contribution": 0.0008404234203895668
+            "y_lambda": 0.0,
+            "contribution": -0.0
           },
           {
             "partition": [
@@ -200,8 +199,8 @@
             ],
             "d_lambda": 1,
             "chi_lambda": 1.516429918014132,
-            "y_lambda": 8.619758913550236e-05,
-            "contribution": 0.0001307126030257657
+            "y_lambda": 0.0,
+            "contribution": 0.0
           }
         ],
         "comparison_label": "vs mass-table-ppb"
@@ -212,12 +211,12 @@
         "knot": "L6a4",
         "n_native": 3,
         "rho": 2,
-        "tr_M_direct": 0.9983824519777768,
-        "B_pred_direct_MeV": 1.0203447706959066,
+        "tr_M_direct": 0.9985760982172549,
+        "B_pred_direct_MeV": 1.0205426767462633,
         "B_volmatch_MeV": 7.48891930977096,
         "B_AME_MeV": 7.71804132,
-        "ratio_direct_to_volmatch": 0.13624726459058517,
-        "ratio_direct_to_AME": 0.13220255352246632,
+        "ratio_direct_to_volmatch": 0.13627369110717197,
+        "ratio_direct_to_AME": 0.13222819552697904,
         "wedderburn_terms": [
           {
             "partition": [
@@ -225,8 +224,8 @@
             ],
             "d_lambda": 1,
             "chi_lambda": 1.0000000000000027,
-            "y_lambda": 0.4153957863345666,
-            "contribution": 0.4153957863345677
+            "y_lambda": 0.5054042276901161,
+            "contribution": 0.5054042276901174
           },
           {
             "partition": [
@@ -235,8 +234,8 @@
             ],
             "d_lambda": 2,
             "chi_lambda": 1.9942421595069593,
-            "y_lambda": 0.2809296339798641,
-            "contribution": 0.5602417199375038
+            "y_lambda": 0.24729788615494194,
+            "contribution": 0.49317187052713757
           },
           {
             "partition": [
@@ -246,8 +245,8 @@
             ],
             "d_lambda": 1,
             "chi_lambda": 1.000000000000001,
-            "y_lambda": 0.022744945705705264,
-            "contribution": 0.02274494570570529
+            "y_lambda": 0.0,
+            "contribution": 0.0
           }
         ],
         "comparison_label": "vs mass-table-ppb"
