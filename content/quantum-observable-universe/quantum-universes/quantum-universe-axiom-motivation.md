@@ -12,6 +12,12 @@ The classical picture is $\mathrm{SO}(3)$. Rotations compose, every rotation has
 
 **Why symmetric Frobenius (axiom 3).** A closed loop must have one amplitude. Closing a worldline on the left and closing it on the right are two ways of computing the same number, and axiom 3 requires them to agree. Without it "the trace of a process" is ambiguous, and mass — which is read off a trace — would depend on a drawing convention.
 
-**Why the mass identity (axiom 4).** Mass is a trace, and a trace on a semisimple algebra distributes over its irreducible channels. Axiom 4 fixes how: each channel $\lambda$ contributes in inverse proportion to its quantum dimension $\dim_q(\lambda)$, so wide channels are cheap and narrow ones expensive. This is the bookkeeping that makes the total well defined and lets a mass be assigned to a knot rather than to a diagram of one.
+**Why semisimplicity (axiom 4).** The substrate must have *channels*. Semisimplicity is the statement that any state of $A$ resolves into elementary pieces which do not mix, and that there are finitely many kinds of them. Without it there would be states admitting no decomposition into elementary ones, and so no particle spectrum to speak of. The two invertibility conditions say that no channel is degenerate: a block of zero Frobenius weight would be present in the algebra yet carry no share of any trace, and a block of zero quantum dimension could not be normalised against.
+
+This axiom is what earlier drafts asserted, less directly, as a numerical identity. Once the blocks exist and are non-degenerate, the **co-Casimir trace**
+$$
+  \mathrm{tr}_M(C_{\dim_q}) \;=\; \sum_{\lambda \in \widehat{A}} \frac{1}{\dim_q(\lambda)}
+$$
+follows by linearity of the trace over the central idempotents; it is proved as [Frobenius co-Casimir universal](#thm:frobenius-codim-universal) and is not assumed here. The reading is that the total trace distributes over the channels with each contributing in inverse proportion to its quantum dimension — wide channels cheap, narrow ones expensive. That is the bookkeeping which later lets a mass be attached to a knot rather than to a diagram of one.
 
 **What is deliberately absent.** Rigidity. A quantum universe need not have duals. Duals are what allow a strand to bend backwards, which is what an antiparticle is and what closing a knot requires, and they are imposed one level up, on a quantum observable universe.

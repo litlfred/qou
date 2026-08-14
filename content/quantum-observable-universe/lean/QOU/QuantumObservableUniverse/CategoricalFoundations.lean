@@ -4,6 +4,7 @@ import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.Data.Fintype.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Data.Real.Basic
@@ -124,6 +125,39 @@ structure QuantumUniverse (k : Type*) [Field k] where
   /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
       An exact faithful `k`-linear monoidal functor. -/
   fibreFunctor : @CategoryTheory.Functor C catInst (Type*) inferInstance
+  /-- **Wedderburn semisimplicity** (axiom 4).  The substrate has *channels*:
+      `A` decomposes into finitely many blocks that do not mix, and no block
+      is degenerate.
+
+      Encoded here: a `Fintype` of blocks, an idempotent endomorphism of `A`
+      per block, and non-vanishing of each block's Frobenius weight and
+      quantum dimension.  NOT encoded: mutual orthogonality of the
+      idempotents and completeness of their sum, both of which need additive
+      structure on the hom-sets (`Preadditive` / `HasZeroMorphisms`) that
+      `QuantumUniverse` does not carry.  `frobWeight` and `dimQ` land in `k`
+      via the standard identification of `End(𝟙)` with the ground ring of a
+      `k`-linear category.
+
+      Given this axiom, the co-Casimir trace identity
+      `tr_M(C_dimQ) = Σ_λ 1/dim_q(λ)` is a *consequence*, proved as
+      `QOU.BraidKnot.frobenius_codim_universal` by linearity of the trace
+      over the central idempotents.  It is deliberately NOT an axiom here:
+      asserting it would assert something already proved, and would collide
+      with the unrelated `def:mass-identity` (the vortex integral). -/
+  blocks : Type v
+  [blocksFintype : Fintype blocks]
+  /-- The central idempotent `p_λ` of each block. -/
+  centralIdem : blocks → (frobHopf.obj ⟶ frobHopf.obj)
+  /-- Each `p_λ` is idempotent. -/
+  centralIdem_idem : ∀ b, centralIdem b ≫ centralIdem b = centralIdem b
+  /-- The Frobenius weight `∫_A p_λ` of each block. -/
+  frobWeight : blocks → k
+  /-- No block has zero Frobenius weight: none is invisible to the trace. -/
+  frobWeight_ne_zero : ∀ b, frobWeight b ≠ 0
+  /-- The quantum dimension `dim_q(λ)` of each block. -/
+  dimQ : blocks → k
+  /-- No block has zero quantum dimension: each can be normalised against. -/
+  dimQ_ne_zero : ∀ b, dimQ b ≠ 0
   /-- `A` admits a differential calculus: the module of Kähler
       differentials `Ω¹(A)` exists in `C`.  Represented abstractly as a
       type (the carrier of `Ω¹(A)`). -/
