@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy(exact rational)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T20:58:49.078556+00:00",
-  "commitSha": "fcf36b5ac9dd7655efa9ac99fa3b215cccf594f6",
+  "computedAt": "2026-08-14T21:58:45.236523+00:00",
+  "commitSha": "0fc20c42c9d0b4c09d2c306361733986b7b7e666",
   "assertions": [
     {
       "name": "det_G_is_exactly_zero_under_D",
@@ -39,14 +39,20 @@
       "computed": "1",
       "expected": "1",
       "passed": true
+    },
+    {
+      "name": "rust_tr_m5_bug_masks_the_radical",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "gram-radical-exact-probe",
   "scriptFile": "gram_radical_exact_probe.py",
-  "scriptHash": "430f3cb41925",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6d0d91ee7a87",
+  "scriptCommitSha": "f63d9feba03779874a09ad80ed2d2a7280bff255",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -126,6 +132,36 @@
       "arithmetic_uses_found": 0,
       "arithmetic_use_lines": []
     },
+    "rust_tr_m5_coupling": [
+      {
+        "q": "11/10",
+        "tr_m5_correct": "32797171/48841000",
+        "tr_m5_rust_bug": "2357947691/10793861000",
+        "det_zero_with_correct_tr_m5": true,
+        "rank_with_correct_tr_m5": 5,
+        "det_zero_with_rust_bug": false,
+        "rank_with_rust_bug": 6
+      },
+      {
+        "q": "7/5",
+        "tr_m5_correct": "518959/342250",
+        "tr_m5_rust_bug": "40353607/50653000",
+        "det_zero_with_correct_tr_m5": true,
+        "rank_with_correct_tr_m5": 5,
+        "det_zero_with_rust_bug": false,
+        "rank_with_rust_bug": 6
+      },
+      {
+        "q": "13/7",
+        "tr_m5_correct": "34011757/8150366",
+        "tr_m5_rust_bug": "10604499373/3553559576",
+        "det_zero_with_correct_tr_m5": true,
+        "rank_with_correct_tr_m5": 5,
+        "det_zero_with_rust_bug": false,
+        "rank_with_rust_bug": 6
+      }
+    ],
+    "rust_tr_m5_note": "tools/hecke-engine/src/gram.rs line 89 still ends trace_weights with z*z*z where pyhecke.gram.TR_M ends h*z^2 + z (the 2026-05-19 fix). Rebuilding the same exact Gram with each value settles qou-m7py's coupling claim: with the CORRECT TR_M[5] the form is singular (rank 5), with the Rust z^3 it is not (rank 6). So the Rust mirror survives convention D ONLY because it carries the bug, and fixing the bug WILL make the native path singular — the two cannot be planned independently. At the proton q0 the bug makes TR_M[5] = 0.2299948980 against the correct 0.6911664784, an error of -66.72%.",
     "scope_note": "Does NOT switch gram.py to convention D — still the owner's call, because z / TR_M / G do have consumers and moving them moves numbers. This probe removes the two factual uncertainties the decision rested on, nothing more."
   },
   "context": {

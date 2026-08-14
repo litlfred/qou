@@ -105,8 +105,12 @@ NF_NAMES = ["gamma", "sigma_0", "sigma_1", "L+", "L-", "e-"]
 Q_VALUES = [sp.Rational(11, 10), sp.Rational(7, 5), sp.Rational(13, 7)]
 
 
-def _gram(q, z):
+def _gram(q, z, tr_m5=None):
     """G[i][j] = tr_M(b_i · b_j) on NF_BASIS, exactly.
+
+    `tr_m5` overrides `TR_M[5]` (default: the correct `h·z² + z`), which is what
+    lets `_rust_tr_m5_check` rebuild the same Gram with the Rust engine's
+    `z³` and compare ranks.
 
     Multiplication tables transcribed from `pyhecke.gram.hm`; `TR_M` from the
     same module, including the 2026-05-19 fix `tr_M(e^-) = h·z^2 + z` (NOT z^3).
@@ -143,7 +147,8 @@ def _gram(q, z):
             nf = hm(nf, sp.Integer(1), sp.Integer(0), g)
         return nf
 
-    TR_M = [sp.Integer(1), z, z, z ** 2, z ** 2, h * z ** 2 + z]
+    TR_M = [sp.Integer(1), z, z, z ** 2, z ** 2,
+            h * z ** 2 + z if tr_m5 is None else tr_m5]
     G = sp.zeros(6, 6)
     for i, bi in enumerate(NF_BASIS):
         for j, bj in enumerate(NF_BASIS):
@@ -155,6 +160,40 @@ def _gram(q, z):
 def _antisymmetriser(q):
     """SUM_w (-1/q)^len(w) T_w — the three-strand q-antisymmetriser."""
     return sp.Matrix([sp.Integer(-1) ** len(w) / q ** len(w) for w in NF_BASIS])
+
+
+_gram_tr = _gram
+
+
+def _rust_tr_m5_check(q):
+    """Is the Rust engine's `TR_M[5] = z^3` bug what keeps ITS Gram invertible?
+
+    `tools/hecke-engine/src/gram.rs` is convention D already, and line 89 still
+    ends `trace_weights` with `z * z * z` where `pyhecke.gram.TR_M` ends
+    `h·z² + z` (the 2026-05-19 fix, docs/audits/2026-05-19-trm5-markov-bug.md).
+    The crate's own module docstring records the divergence.
+
+    `qou-m7py` records the coupling claimed by the pyhecke banner: the Rust
+    mirror "survives the degeneracy ONLY because it still carries the
+    pre-2026-05-19 bug", so fixing it is expected to make the native path
+    singular too — i.e. the two cannot be planned independently.
+
+    That was an assertion. Here it is decided, by building the same exact Gram
+    with each value of `TR_M[5]` and comparing ranks.
+    """
+    z = q ** 3 / (q ** 2 + 1)
+    h = q - 1 / q
+    correct, buggy = h * z ** 2 + z, z ** 3
+    Gc, Gb = _gram_tr(q, z, correct), _gram_tr(q, z, buggy)
+    return {
+        "q": str(q),
+        "tr_m5_correct": str(sp.nsimplify(correct)),
+        "tr_m5_rust_bug": str(sp.nsimplify(buggy)),
+        "det_zero_with_correct_tr_m5": bool(sp.simplify(Gc.det()) == 0),
+        "rank_with_correct_tr_m5": int(Gc.rank()),
+        "det_zero_with_rust_bug": bool(sp.simplify(Gb.det()) == 0),
+        "rank_with_rust_bug": int(Gb.rank()),
+    }
 
 
 def _g_inv_consumers() -> dict:
@@ -212,6 +251,7 @@ def main() -> int:
             "rank_C": int(GC.rank()),
         })
 
+    rust = [_rust_tr_m5_check(q) for q in Q_VALUES]
     consumers = _g_inv_consumers()
     all_zero = all(r["det_G_D_is_exactly_zero"] for r in rows)
     rank5 = all(r["rank_D"] == 5 for r in rows)
@@ -219,6 +259,11 @@ def main() -> int:
     anti = all(r["antisymmetriser_annihilated_by_G_D"] for r in rows)
     c_ok = all(r["rank_C"] == 6 and not r["det_G_C_is_zero"] for r in rows)
     no_use = consumers["arithmetic_uses_found"] == 0
+    # The qou-m7py coupling: correct TR_M[5] -> singular; the Rust z^3 -> not.
+    rust_masks = all(r["det_zero_with_correct_tr_m5"]
+                     and r["rank_with_correct_tr_m5"] == 5
+                     and not r["det_zero_with_rust_bug"]
+                     and r["rank_with_rust_bug"] == 6 for r in rust)
 
     payload = {
         "computation": "gram-radical-exact-probe",
@@ -238,6 +283,7 @@ def main() -> int:
             {"name": "null_direction_is_the_q_antisymmetriser", "passed": anti},
             {"name": "convention_C_gram_is_nonsingular", "passed": c_ok},
             {"name": "G_INV_has_no_arithmetic_consumer", "passed": no_use},
+            {"name": "rust_tr_m5_bug_masks_the_radical", "passed": rust_masks},
         ],
         "result": {
             "verdict": (
@@ -257,6 +303,19 @@ def main() -> int:
             "nf_basis": NF_NAMES,
             "per_q": rows,
             "g_inv_consumers": consumers,
+            "rust_tr_m5_coupling": rust,
+            "rust_tr_m5_note": (
+                "tools/hecke-engine/src/gram.rs line 89 still ends "
+                "trace_weights with z*z*z where pyhecke.gram.TR_M ends "
+                "h*z^2 + z (the 2026-05-19 fix). Rebuilding the same exact "
+                "Gram with each value settles qou-m7py's coupling claim: with "
+                "the CORRECT TR_M[5] the form is singular (rank 5), with the "
+                "Rust z^3 it is not (rank 6). So the Rust mirror survives "
+                "convention D ONLY because it carries the bug, and fixing the "
+                "bug WILL make the native path singular — the two cannot be "
+                "planned independently. At the proton q0 the bug makes "
+                "TR_M[5] = 0.2299948980 against the correct 0.6911664784, "
+                "an error of -66.72%."),
             "scope_note": (
                 "Does NOT switch gram.py to convention D — still the owner's "
                 "call, because z / TR_M / G do have consumers and moving them "
