@@ -6,7 +6,7 @@ Are the four axioms of a quantum universe independent?
 
 **Symmetric Frobenius.** A Frobenius algebra need not be symmetric: the left and right traces induced by a non-symmetric form differ by the Nakayama automorphism, which is trivial exactly when the form is symmetric. The axiom is therefore a genuine restriction on the Frobenius--Hopf datum, not a consequence of it.
 
-**Mass identity.** The codimensional trace identity is a numerical constraint on the Wedderburn decomposition of $A$. It fails for a general symmetric Frobenius object, so it is independent of the preceding three.
+**Wedderburn semisimplicity.** A Frobenius object need not be semisimple: a truncated polynomial algebra $k[x]/(x^n)$ carries a non-degenerate Frobenius form and is local, hence has a single block and a nilpotent radical. Semisimplicity is therefore independent of the preceding three axioms. It is the assumption that does the work later: given it, the co-Casimir trace identity ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)) follows by linearity over the central idempotents rather than being assumed.
 
 The differential calculus $\Omega^1(A)$ is a separate matter. For smooth algebraic groups Kähler differentials exist automatically, but for quantum groups ($q \neq 1$) a differential calculus need not exist or be unique, so its existence is an assumption rather than a theorem.
 
