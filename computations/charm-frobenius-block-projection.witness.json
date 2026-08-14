@@ -1,13 +1,13 @@
 {
   "engine": "mpmath+snappy",
-  "engineVersion": "mpmath 1.3.0; snappy unavailable",
-  "computedAt": "2026-08-10T08:41:41.926930+00:00",
-  "durationMs": 315,
+  "engineVersion": "mpmath 1.4.1; snappy unavailable",
+  "computedAt": "2026-08-10T17:36:25.470208+00:00",
+  "durationMs": 272,
   "computation": "charm-frobenius-block-projection",
   "scriptFile": "charm_frobenius_block_projection_probe.py",
   "scriptHash": "672a518eeacd",
-  "scriptCommitSha": "30835c30e73372a6be797072a0472d3770d01d94",
-  "commitSha": "f471f7f46ff5e351c2bb9eceb392e2bee0852f60",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "commitSha": "56e9680162560f9e3c8639adba2ffda1ade01318",
   "assertions": [
     {
       "name": "hecke_resid_(3,)",

@@ -7,5 +7,11 @@ export default definition({
   lean: { ref: "qou:QOU.Torsion.CategoricalMeson",
     validation: "not_checked",
   },
-  uses: ["def:quark-antiquark-production"],
+  uses: [
+    // A meson IS a valence-2 hadron; the definition is stated in these terms.
+    "def:hadron",
+    "def:quark-antiquark-production",
+    // Establishes L_+ / L_-, which the crossing-pair table uses unexplained.
+    "sec:knot-notation-convention",
+  ],
 });

@@ -139,7 +139,11 @@ def _inter_cross_mpfr(
     elif nuc == "n" and next_nuc == "n":
         return (one, -h)               # nn: σ⁻¹
     else:
-        return (one, -h / 2)           # pn: ½(σ + σ⁻¹)
+        # colour-WEIGHTED p-n interface (qou-gdtb): -h(1/2 - delta/4).
+        # -h/2 here was the colour-blind value and dropped the p/n
+        # asymmetry that bring_color_weighted supplies.
+        from canonical_braid_crossings import _avg_color_delta
+        return (one, -h * (1 - _avg_color_delta() / 2) / 2)
 
 
 def atom_per_generator_volumes_mpfr(

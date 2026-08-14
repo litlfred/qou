@@ -68,13 +68,32 @@ reproduces every row of the table below, hadrons included. It is a
 quark braid word is still absent from the corpus, and chirality ($u_L$ vs
 $u_R$) is not yet represented.
 
-**And it is refuted as a function of the link.** Markov II (stabilisation)
-raises the writhe by $1$ without changing the link, so $L$ jumps from $0$ to
-$1$ on the baryon --- violating conservation clause 3 above, which requires
-$\Delta L = 0$ under Markov moves (`leptonNumber_not_markov_invariant`). The
-candidate survives only if states are Gröbner--Shirshov normal forms, where a
-canonical representative is fixed; on that reading clause 3 is about a
-different object and the corpus should say which. See bean `qou-kl39`.
+**And it is refuted, under both readings of the gauge freedom.**
+
+*Markov II.* Stabilisation raises the writhe by $1$ without changing the link,
+so $L$ jumps from $0$ to $1$ on the baryon --- violating conservation clause 3
+above, which requires $\Delta L = 0$ under Markov moves
+(`leptonNumber_not_markov_invariant`).
+
+*The minimal-level ruling.* The escape from the first refutation was that
+states are Gröbner--Shirshov normal forms, with the observable evaluated at the
+lowest level of the substrate tower. That closes the escape rather than opening
+it. The table above assigns $\nu_e = K_{0_1} = T_{2,1}$, the **unknot**, whose
+braid index is $1$: its minimal-level normal form is the *empty* word, and so is
+its mirror's. At the level where the framework says observables live, $\nu_e$
+and $\nu_e^{\sigma}$ are the **same state**, and no function of the state can
+give them $+1$ and $-1$ --- quite apart from $\mathrm{sign}(0) = 0 \neq +1$.
+This is `QOU/StandardModel/WritheLevelParity.lean`'s
+`leptonNumber_collapses_at_minimal_level`, and it is the same obstruction
+`LeptonNumberCarrierChirality.lean` proved for the unframed knot type,
+reappearing once the canonical representative is pinned.
+
+So the "carrier is the braid word, not the knot type" escape is unavailable at
+minimal level, where the braid word is determined by the knot type. **Scope-(a)**:
+$L = \mathrm{sign}(w)$ is refuted; lepton number itself and the $Y = B - L$
+route are untouched, and what the refutation locates is that $L$ must come from
+data the writhe does not carry --- the framing or the smoothing history, not the
+crossing sum. See beans `qou-kl39`, `qou-qia8`.
 
 **Individual lepton assignments.**
 

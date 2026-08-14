@@ -1,0 +1,259 @@
+import QOU.SchurWeyl.HeckeInclusion
+import Mathlib.Algebra.Algebra.Bilinear
+import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
+import Mathlib.LinearAlgebra.Dimension.Constructions
+import Mathlib.LinearAlgebra.Dimension.Finrank
+
+/-!
+# QOU.SchurWeyl.HeckeCoset — the coset spanning bound `dim H_{n+1}(q) ≤ (n+1)!` (bean `qou-uoal`)
+
+The Iwahori–Hecke basis theorem `dim_K H_n(q) = n!` has two halves; this file
+establishes the **spanning half** in general `n` (upper bound), via the tower
+coset decomposition.  With the QOU indexing `Hecke K q qi n = H_{n+1}(q)`
+(the algebra on `n` generators `σ_0,…,σ_{n-1}`), the statement proved here is
+
+  `Module.finrank K (Hecke K q qi n) ≤ (n+1)!`.
+
+## Strategy — coset decomposition of the tower
+
+`H_{n+1}(q) = ⨁_{k} H_n(q) · r_k` over the `n+2` (classically `n+2 = [H_{n+2}:H_{n+1}]`)
+coset representatives
+
+  `r_0 = 1,  r_j = σ_n σ_{n-1} ⋯ σ_{n-j+1}   (j = 1,…,n+1)`,
+
+i.e. `r_j` is the descending product of the top `j` generators.  Left
+multiplication by any generator preserves the subspace `Σ_k ι(H_n)·r_k`
+(`ι = heckeIncl`, the tower inclusion `H_n ↪ H_{n+1}`), so that subspace is a
+left ideal containing `1`, hence all of `H_{n+1}`.  Iterating gives a spanning
+family indexed by `cosetIndex n` of cardinality `(n+1)!`.
+
+## What is delivered here
+
+* `descProd m j` — the descending product `σ_m σ_{m-1} ⋯ σ_{m-j+1}` of length `j`
+  in `H_{m+1}(q) = Hecke K q qi (m+1)` (the coset representative `r_j`).
+* `cosetIndex m`, `cosetFam m` — the recursively-built spanning family and its
+  finite index type, with `Fintype.card (cosetIndex m) = (m+1)!`
+  (`card_cosetIndex`, sorry-free).
+* `one_mem_span_cosetFam` — `1` is in the span of the family (sorry-free).
+* `finrank_le_card_of_span` — the generic finite-spanning ⇒ `finrank ≤ card`
+  reduction (sorry-free).
+* `gen_mul_span_mem` — left-multiplication by a generator preserves the span.
+  The tower-inclusion-image case (`i = j.castSucc`) is proved sorry-free; the
+  **top** generator case (`i = Fin.last m`) is the single open gap (a `-- Ref:`
+  cited `sorry`, bean `qou-j6f9`).
+* `span_cosetFam_eq_top` — the spanning statement, reduced to `gen_mul_span_mem`
+  via the adjoin = span-of-submonoid route (`sorry`-reachable only through the
+  top-generator gap above).
+* `finrank_le_factorial` — the headline bound `finrank K (Hecke K q qi n) ≤ (n+1)!`,
+  proved from `span_cosetFam_eq_top`.
+
+Base ring: generic `[CommRing K]` for the algebraic data; `[Nontrivial K]` only
+for the `finrank` bound (`StrongRankCondition`), per §7c.
+
+LaTeX label: `prop:hecke-coset-spanning-bound`
+
+Refs:
+- [mathas1999] *Iwahori–Hecke Algebras and Schur Algebras of the Symmetric
+  Group*, Ch. 1 (the `T_w` standard basis, `w ∈ S_n`),
+  https://doi.org/10.1090/ulect/015
+- [geckpfeiffer2000] Geck–Pfeiffer, *Characters of Finite Coxeter Groups and
+  Iwahori–Hecke Algebras*, §4.4 (coset representatives / reduced words),
+  https://doi.org/10.1093/oso/9780198502500.001.0001
+-/
+
+namespace QOU.SchurWeyl
+
+open Hecke HeckeInclusion
+
+namespace HeckeCoset
+
+variable {K : Type*} [CommRing K] {q qi : K}
+
+/-! ## Coset representatives: the descending products `r_j = σ_m ⋯ σ_{m-j+1}` -/
+
+/-- The descending product `descProd m j = σ_m σ_{m-1} ⋯ σ_{m-j+1}` of the top
+`j` generators of `H_{m+1}(q) = Hecke K q qi (m+1)` (length `j`; `descProd m 0 = 1`).
+This is the coset representative `r_j` in the decomposition
+`H_{m+1} = Σ_j ι(H_m)·r_j`.  The generator index `m - j` (truncated subtraction)
+is always `< m + 1`, so no bound hypothesis is needed. -/
+noncomputable def descProd (m : ℕ) : ℕ → Hecke K q qi (m + 1)
+  | 0 => 1
+  | (j + 1) => descProd m j * σ K q qi (m + 1) ⟨m - j, by omega⟩
+
+@[simp] theorem descProd_zero (m : ℕ) : descProd (K := K) (q := q) (qi := qi) m 0 = 1 := rfl
+
+theorem descProd_succ (m j : ℕ) :
+    descProd (K := K) (q := q) (qi := qi) m (j + 1)
+      = descProd m j * σ K q qi (m + 1) ⟨m - j, by omega⟩ := rfl
+
+/-! ## The recursively-built spanning family and its index type -/
+
+/-- The finite index type of the coset spanning family of `Hecke K q qi m`.
+`cosetIndex 0 = Unit`; `cosetIndex (m+1) = cosetIndex m × Fin (m+2)` — one factor
+`Fin (m+2)` for the `m+2` coset representatives added at each tower step.
+`Fintype.card (cosetIndex m) = (m+1)!`. -/
+def cosetIndex : ℕ → Type
+  | 0 => Unit
+  | (m + 1) => cosetIndex m × Fin (m + 2)
+
+instance instFintypeCosetIndex : (m : ℕ) → Fintype (cosetIndex m)
+  | 0 => (inferInstance : Fintype Unit)
+  | (m + 1) =>
+      letI := instFintypeCosetIndex m
+      (inferInstance : Fintype (cosetIndex m × Fin (m + 2)))
+
+/-- `Fintype.card (cosetIndex m) = (m+1)!` — the family has `(m+1)!` elements. -/
+theorem card_cosetIndex : (m : ℕ) → Fintype.card (cosetIndex m) = (m + 1).factorial
+  | 0 => rfl
+  | (m + 1) => by
+      have e : cosetIndex (m + 1) ≃ cosetIndex m × Fin (m + 2) := Equiv.refl _
+      rw [Fintype.card_congr e, Fintype.card_prod, Fintype.card_fin, card_cosetIndex m,
+        Nat.factorial_succ (m + 1)]
+      ring
+
+/-- The coset spanning family `cosetFam m : cosetIndex m → Hecke K q qi m`.
+`cosetFam 0 () = 1`; `cosetFam (m+1) (b, j) = ι(cosetFam m b) · r_j`, where
+`ι = heckeIncl` is the tower inclusion and `r_j = descProd m j`. -/
+noncomputable def cosetFam : (m : ℕ) → cosetIndex m → Hecke K q qi m
+  | 0, _ => 1
+  | (m + 1), p => heckeIncl K q qi m (cosetFam m p.1) * descProd m p.2.val
+
+theorem cosetFam_succ (m : ℕ) (p : cosetIndex (m + 1)) :
+    cosetFam (K := K) (q := q) (qi := qi) (m + 1) p
+      = heckeIncl K q qi m (cosetFam m p.1) * descProd m p.2.val := rfl
+
+/-! ## `finrank ≤ card` from a finite spanning set (sorry-free reduction) -/
+
+/-- Generic reduction: a finite set spanning `⊤` bounds the finrank by its card. -/
+theorem finrank_le_card_of_span [Nontrivial K] {A : Type*} [AddCommGroup A]
+    [Module K A] (s : Finset A) (hs : Submodule.span K (s : Set A) = ⊤) :
+    Module.finrank K A ≤ s.card := by
+  have h1 := finrank_span_le_card (R := K) (s : Set A)
+  rw [hs, finrank_top] at h1
+  simpa using h1
+
+/-- `1` lies in the span of the coset family (sorry-free, by induction on `m`).
+Base: `cosetFam 0 () = 1`.  Step: `1 = ι(1)·r_0 = ι(cosetFam m b₁)·descProd m 0`
+where `b₁` witnesses `1 ∈ span (range (cosetFam m))`; since `heckeIncl` is an
+algebra map and `descProd m 0 = 1`, the image of `1` is `1`. -/
+theorem one_mem_span_cosetFam :
+    (m : ℕ) → (1 : Hecke K q qi m) ∈ Submodule.span K (Set.range (cosetFam m))
+  | 0 => Submodule.subset_span ⟨(), rfl⟩
+  | (m + 1) => by
+      -- `1 = heckeIncl 1 = heckeIncl 1 · r_0`; push `1 ∈ span (range (cosetFam m))`
+      -- through the (linear) tower inclusion, which lands each family element at
+      -- coset index `(b, 0)`.
+      have ih := one_mem_span_cosetFam m
+      have hmap : (Submodule.span K (Set.range (cosetFam m))).map
+            (heckeIncl K q qi m).toLinearMap
+          ≤ Submodule.span K (Set.range (cosetFam (m + 1))) := by
+        rw [Submodule.map_span, Submodule.span_le]
+        rintro _ ⟨_, ⟨b, rfl⟩, rfl⟩
+        apply Submodule.subset_span
+        refine ⟨(b, (0 : Fin (m + 2))), ?_⟩
+        simp [cosetFam, AlgHom.toLinearMap_apply]
+      have h1 : (1 : Hecke K q qi (m + 1)) = (heckeIncl K q qi m).toLinearMap 1 := by simp
+      rw [h1]
+      exact hmap (Submodule.mem_map_of_mem ih)
+
+/-! ## The spanning statement (crux) and the headline finrank bound -/
+
+/-- **The coset-span "bubble" closure lemma (the crux).**  Left multiplication by
+any generator `σ_i` of `H_{m+1}(q) = Hecke K q qi m` preserves the `K`-span of the
+coset family `cosetFam m`.
+
+For `i` in the image of the tower inclusion `H_m ↪ H_{m+1}` this is routine
+absorption into `ι(H_m)`; for the **top** generator it is the substance of the
+Iwahori–Hecke basis theorem (the descending coset representatives
+`r_j = σ_m ⋯ σ_{m-j+1}` are permuted / quadratic-reduced under left
+σ-multiplication). This is the general-`n` form of the twelve explicit
+`HeckeDim3.gen_mul_mem` reductions.
+
+The `i` in the image of the tower inclusion case (`i = j.castSucc`) is proved
+sorry-free below; only the **top** generator `i = Fin.last m` remains open (the
+GAP, bean `qou-uoal` child) — it is the deep spanning half of `dim H_n(q) = n!`. -/
+theorem gen_mul_span_mem :
+    ∀ (m : ℕ) (i : Fin m) (b : Hecke K q qi m),
+      b ∈ Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m)) →
+      σ K q qi m i * b ∈ Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m))
+  | 0, i, _, _ => i.elim0
+  | (m + 1), i, b, hb => by
+      rcases Fin.eq_castSucc_or_eq_last i with ⟨i', rfl⟩ | rfl
+      · -- `σ_i = ι(σ_{i'})` lies in the image of the tower inclusion: absorb into `ι(H_m)`.
+        have hσ : σ K q qi (m + 1) i'.castSucc = heckeIncl K q qi m (σ K q qi m i') :=
+          (heckeIncl_σ K q qi m i').symm
+        -- Left multiplication by `σ_{i'.castSucc}` maps each coset generator back into the span.
+        have key : (Submodule.span K
+              (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1)))).map
+              (LinearMap.mulLeft K (σ K q qi (m + 1) i'.castSucc))
+            ≤ Submodule.span K
+              (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1))) := by
+          rw [Submodule.map_span, Submodule.span_le]
+          rintro _ ⟨_, ⟨c, rfl⟩, rfl⟩
+          rw [LinearMap.mulLeft_apply, cosetFam_succ, hσ, ← mul_assoc, ← map_mul]
+          -- `ι(σ_{i'} · cosetFam m c.1) · r_{c.2}`, with `σ_{i'} · cosetFam m c.1 ∈ span` by IH.
+          have hw : σ K q qi m i' * cosetFam m c.1 ∈ Submodule.span K
+              (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m)) :=
+            gen_mul_span_mem m i' (cosetFam m c.1) (Submodule.subset_span ⟨c.1, rfl⟩)
+          have hMj : (Submodule.span K
+                (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m))).map
+                ((LinearMap.mulRight K (descProd m c.2.val)).comp
+                  (heckeIncl K q qi m).toLinearMap)
+              ≤ Submodule.span K
+                (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1))) := by
+            rw [Submodule.map_span, Submodule.span_le]
+            rintro _ ⟨_, ⟨d, rfl⟩, rfl⟩
+            apply Submodule.subset_span
+            exact ⟨(d, c.2), by
+              simp [cosetFam, LinearMap.mulRight_apply, LinearMap.comp_apply,
+                AlgHom.toLinearMap_apply]⟩
+          have hres := hMj (Submodule.mem_map_of_mem hw)
+          simpa [LinearMap.mulRight_apply, LinearMap.comp_apply, AlgHom.toLinearMap_apply]
+            using hres
+        exact key (Submodule.mem_map_of_mem hb)
+      · -- The **top** generator `σ_m` (`i = Fin.last m`): the coset-representative bubble.
+        -- Ref: [mathas1999] Ch. 1 (T_w standard basis, w ∈ S_n)
+        -- Ref: [geckpfeiffer2000] §4.4 (coset representatives / reduced words)
+        -- GAP (bean qou-uoal child): push σ_m through the descending reps r_j via the
+        -- quadratic/braid relations back into Σ_k ι(H_m)·r_k.
+        sorry
+
+/-- **The coset family spans `H_{m+1}(q)`** (`span = ⊤`), reduced to the bubble
+closure lemma `gen_mul_span_mem` via the adjoin-equals-span-of-submonoid route
+(exactly as `HeckeDim3.span_sixWords_eq_top` at `n = 3`). -/
+theorem span_cosetFam_eq_top (m : ℕ) :
+    Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m)) = ⊤ := by
+  rw [eq_top_iff]
+  rintro x -
+  have hx : x ∈ Algebra.adjoin K (Set.range (σ K q qi m)) := by
+    rw [adjoin_range_σ_eq_top]; trivial
+  have hspan : x ∈ Submodule.span K
+      (↑(Submonoid.closure (Set.range (σ K q qi m))) : Set (Hecke K q qi m)) := by
+    rw [← Algebra.adjoin_eq_span]; exact hx
+  refine Submodule.span_le.mpr ?_ hspan
+  intro y hy
+  induction hy using Submonoid.closure_induction_left with
+  | one => exact one_mem_span_cosetFam m
+  | mul_left a ha b _ ih =>
+      obtain ⟨i, rfl⟩ := ha
+      exact gen_mul_span_mem m i b ih
+
+/-- **The headline coset spanning bound** `dim_K H_{m+1}(q) ≤ (m+1)!`
+(`Hecke K q qi m = H_{m+1}(q)`), proved from `span_cosetFam_eq_top` and the
+family-cardinality count `card_cosetIndex`. -/
+theorem finrank_le_factorial [Nontrivial K] (m : ℕ) :
+    Module.finrank K (Hecke K q qi m) ≤ (m + 1).factorial := by
+  classical
+  have hspans : Submodule.span K
+      ((Finset.univ.image (cosetFam m) : Finset (Hecke K q qi m)) : Set (Hecke K q qi m)) = ⊤ := by
+    rw [Finset.coe_image, Finset.coe_univ, Set.image_univ]
+    exact span_cosetFam_eq_top m
+  calc Module.finrank K (Hecke K q qi m)
+      ≤ (Finset.univ.image (cosetFam m)).card := finrank_le_card_of_span _ hspans
+    _ ≤ (Finset.univ : Finset (cosetIndex m)).card := Finset.card_image_le
+    _ = Fintype.card (cosetIndex m) := Finset.card_univ
+    _ = (m + 1).factorial := card_cosetIndex m
+
+end HeckeCoset
+
+end QOU.SchurWeyl

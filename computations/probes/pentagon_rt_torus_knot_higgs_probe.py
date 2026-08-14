@@ -70,7 +70,9 @@ mp.mp.dps = 50
 
 # Substrate + physical constants
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
-M_E_MEV = mpf("0.510998950")
+# CAL-1 from the registry, not re-typed: the literal here was
+# "0.510998950", CODATA truncated to 9 s.f. (canonical 0.51099895069).
+from codata_constants import M_E_MEV  # noqa: E402
 M_HIGGS_GEV = mpf("125.10")
 M_HIGGS_MEV = M_HIGGS_GEV * 1000
 M_H_OVER_M_E = M_HIGGS_MEV / M_E_MEV  # ≈ 244811

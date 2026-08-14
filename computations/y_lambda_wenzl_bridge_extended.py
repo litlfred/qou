@@ -9,8 +9,25 @@ Avoids the O(p(n)³) linear-system solve (which times out at n=5 for
 sympy and at n=12 for MPFR seminormal matmul) — Schur principal-
 specialization is O(p(n) · max_hooks), tractable through n=12.
 
-Verified: at n = 3, 4, the Wenzl-bridge values agree with the
-y-lambda-symbolic-witness.json values to floating-point precision.
+CONVENTION D (migrated 2026-08-10, bean qou-8x1l). z = q³/(q²+1), which
+forces r = 2 — see the derivation in main(). Consequence: y_λ = 0 for every
+partition with ℓ(λ) ≥ 3, automatically, because a Schur polynomial in two
+variables vanishes there.
+
+Un-deprecated for this migration. It had been filed under `_deprecated/` as
+an exploration, but its witness never moved with it and six live producers
+read that witness — `delta_lambda_empirical_tabulation`,
+`per_irrep_pole_atom_crystal`, `phase5/phase1c_proton_h3_symbolic_decomposition`,
+`rho_k_co_casimir_extended`, `rho_k_h3a_refinement`,
+`sigma_shell_from_beta_chain`. Per `_deprecated/README.md`, reviving an
+exploration is just running the producer to re-emit its witness.
+
+The old note here claimed verification against y-lambda-symbolic-witness.json
+at n = 3, 4. That file is convention C too (20 sqrt-bearing expressions), so
+the agreement confirmed only that both were built the same way. The check
+that now stands in its place is downstream and falsifiable: the Schur-Weyl
+identity Σ_λ y_λ χ^λ(β_D) = tr_M(β_D) in `rho_k_h3a_refinement`, which failed
+at 4.75e-8 against the convention-C weights.
 """
 from __future__ import annotations
 import json, sys, time
@@ -77,20 +94,34 @@ def partitions_of(n):
 
 
 def main():
-    # Bridge: q · z = Q^r (1-Q) / (1-Q^r), Q = q², z = 1/(q^{1/2} + q^{-1/2})
-    # → q · z = q · 1/(q^{1/2} + q^{-1/2}) = q^{1/2} (q^{1/2}/(q + 1)) = q^{1/2} · q^{1/2}/(q+1) = q/(q+1)
-    # So q · z = q/(q+1) at the substrate value of z.
-    # Solve Q^r (1-Q)/(1-Q^r) = q/(q+1) with Q = q²:
-    #   q^{2r}(1-q²)/(1-q^{2r}) = q/(q+1)
-    #   q^{2r}(1-q)(1+q)/(1-q^{2r}) = q/(q+1)
-    #   q^{2r}(1-q)(1+q)² = q(1-q^{2r})
-    # Solving for q^{2r}: X(1-q)(1+q)² = q(1-X)
-    #   X[(1-q)(1+q)² + q] = q
-    #   (1-q)(1+q)² = (1-q)(1+2q+q²) = 1+2q+q² - q - 2q² - q³ = 1 + q - q² - q³
-    #   So X[1 + q - q² - q³ + q] = X[1 + 2q - q² - q³] = q
-    #   X = q / (1 + 2q - q² - q³)
+    # Bridge: q · z = Q^r (1-Q) / (1-Q^r), Q = q².
+    #
+    # CONVENTION D.  z = q³/(q² + 1), and the bridge then forces r = 2 exactly:
+    #
+    #   r = 2:  Q²(1-Q)/(1-Q²) = Q²(1-Q)/((1-Q)(1+Q)) = Q²/(1+Q) = q⁴/(1+q²)
+    #           so  q · z = q⁴/(1+q²)  ⟺  z = q³/(q²+1).
+    #
+    # That is the *whole* content of the convention change here, and it is not
+    # a re-parameterisation: r is the number of variables in the Schur
+    # principal specialisation, so r = 2 says the fibre is two-dimensional.
+    # A Schur polynomial in two variables vanishes identically once the
+    # partition has a third row — concretely, the cell at (i, j) = (2, 0) has
+    # content c = -2, so the factor (1 - X·Q^c) below is (1 - Q⁰) = 0 and
+    # kills the numerator.
+    #
+    # So convention D's "y_λ = 0 for ℓ(λ) ≥ 3" is not an extra rule bolted on
+    # top of this formula. It falls out of r = 2, which is Schur-Weyl on a
+    # two-dimensional fibre. Of the 270 partitions emitted for n = 2..12, the
+    # 223 with three or more rows are now exactly zero.
+    #
+    # The previous convention-C line was
+    #     z_sym = 1 / (sp.sqrt(q) + 1/sp.sqrt(q))     # = √q/(q+1)
+    # which solves to a NON-integer r, so nothing vanished and every dead
+    # block carried a live weight. The sqrt is also the detector signature:
+    # D is rational in q and never calls sqrt (cf. `markov_z` in gram.rs),
+    # so a half-integer power of q in a weight expression is C on sight.
     Q_sym = q**2
-    z_sym = 1 / (sp.sqrt(q) + 1/sp.sqrt(q))
+    z_sym = q**3 / (q**2 + 1)
     qz = sp.simplify(q * z_sym)
     print(f"q · z = {sp.simplify(qz)}")
 
@@ -179,7 +210,13 @@ def main():
         "description": (
             "Symbolic closed-form y_λ for n = 2, ..., 12 via the Wenzl bridge: "
             "y_λ = s_{λ, r}(Q) / Σ_µ d_µ s_{µ, r}(Q) with Q = q² and "
-            "r solved from q · z = Q^r (1-Q) / (1-Q^r), z = 1/(q^{1/2} + q^{-1/2}). "
+            "r solved from q · z = Q^r (1-Q) / (1-Q^r), z = q³/(q²+1) "
+            "(CONVENTION D), which forces r = 2 exactly. Since r is the number "
+            "of variables in the Schur principal specialisation, r = 2 is a "
+            "two-dimensional fibre and y_λ = 0 identically for ℓ(λ) ≥ 3 — of the "
+            "270 partitions here, the 223 with three or more rows are exact "
+            "zeros. Convention C (z = 1/(q^{1/2} + q^{-1/2})) solved to a "
+            "non-integer r, so no weight vanished. "
             "Computed via sympy with Q^r treated as the symbolic placeholder X = "
             "q · z / (1 - Q + q · z), giving exact q-rational expressions in "
             "Q(q^{1/2}). Bypasses the O(p(n)³) linear-system solve by using the "

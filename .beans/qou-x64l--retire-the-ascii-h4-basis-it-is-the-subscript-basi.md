@@ -1,10 +1,11 @@
 ---
 # qou-x64l
 title: Retire the ASCII H4 basis — it is the subscript basis relabelled, and the permutation is explicit
-status: in-progress
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-09T17:21:10Z
-updated_at: 2026-08-10T05:20:00Z
+updated_at: 2026-08-11T10:05:07Z
 ---
 
 
@@ -736,3 +737,54 @@ three modules. Nothing else blocks it.
 `HeckeH4BlockMap31` rebuilt from source in **1504 s** (25.1 min) — this bean's
 ">25 min each at ~6 GB" figure is confirmed, not folklore. Peak RSS tracked ~7 GB
 of 15 GB.
+
+---
+
+## 2026-08-11 — CLOSED. End-to-end verification green.
+
+The `MarkovTraceOnH4A` consumer cone finished: **11 modules, exit 0, `rc=0`**
+(~3 h 20 m wall, `lean`-direct, no `lake build`). The call site whose argument
+order moved compiles. Reported on
+[#4974](https://github.com/litlfred/qou/pull/4974#issuecomment-5251718416).
+
+    BlockMap31 1504s   BlockMap211 1987s   WedderburnCoord 796s
+    WedderburnMulA 1696s   MulB 1799s   MulC 2427s   Inv 8s
+    Wedderburn 4s   FullRankFromWedderburn 5s   InstanceOnH4A 186s
+    MarkovTraceOnH4A 4s
+
+Axiom-clean end to end, with the Gram closure gone:
+
+    QOU.Hecke.MarkovTraceOnH4A.markovTraceH4A  → [propext, Classical.choice, Quot.sound]
+    QOU.Machinery.H4.trM4_cyclic               → same
+    QOU.Machinery.H4.trM_cyclic                → same
+
+### Corrections to this bean's own cost table
+
+* `HeckeH4WedderburnMulC` at **2427 s** is the most expensive module in the
+  cone — more than either `BlockMap`. This bean warned only about
+  `BlockMap211`/`31`, so anyone budgeting from it would have under-estimated.
+* The ">25 min each at ~6 GB" figure for the BlockMaps is otherwise
+  **confirmed** (1504 s / 1987 s, peak RSS ~7 GB of 15 GB).
+* The expensive modules are all upstream of `InstanceOnH4A` and were untouched
+  by this work. The cone this bean actually changed — the bridge — rebuilds in
+  **48 s**. Do not read the 3 h figure as the cost of touching cyclicity.
+
+### Process hazard worth carrying forward
+
+Do **not** run two `lean` builds concurrently against the same olean tree. It
+killed the first consumer verification silently: 0-byte log, no error, no OOM
+(15 GB free). Cost ~20 min before the second attempt was launched serially.
+
+### Final state
+
+| | |
+|---|---|
+| `trM4_cyclic` | proved from the three generators, no Gram closure (#4915) |
+| `trM_cyclic` (ASCII) | corollary of it across the bridge, same qualified name |
+| `MarkovTraceH4Gram0..7` + `MarkovTraceH4Gram` | **deleted** — 6604 lines, the build pole |
+| `MarkovTraceH4` + `H4AsciiPresentation` + `H4BasisBridge` | kept **by choice** (see above), ~35 KB, orphan-able by one import swap |
+| `gen_gram_closure.py` | fenced with a header so it is not re-run |
+
+Bean closed. The one deliberate non-goal — deleting the remaining ASCII side —
+is recorded above with its rationale and the exact recipe, so it is a decision
+on the record rather than an unfinished step.

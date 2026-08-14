@@ -12,7 +12,7 @@ $$
   \hbar_{q_0}^{-2} \approx 102.25.
 $$
 
-Evaluating over $\mathbb{C}[z]$ at $z = q_0$ yields the mass predictions:
+Evaluating over $\mathbb{C}[z]$ at $z = q_0$ yields the dimensionless mass ratios $\mathfrak{m}(K)/m_e$; rendered against the $m_e$ scale they read in MeV as follows *(absolute nucleon mass is excised as a framework claim — `qou-exam`; the proton and neutron MeV entries below are the ratio $\mathfrak{m}(K)/m_e$ rendered against the $m_e$ unit, not an independent absolute-mass prediction)*:
 
 | **Particle** | $\mathrm{Vol}(K)$ | $\mathfrak{m}(K) = \mathrm{Vol}(K) / \hbar_{q_0}^2$ | **CODATA** |
 |---|---|---|---|

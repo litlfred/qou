@@ -52,7 +52,14 @@ import pathlib
 from mpmath import mp, mpf, fabs
 
 mp.dps = 40
-Q0 = mpf("1.10997858")
+# Substrate modulus from the registry, not re-typed here: the literal was
+# "1.10997858", the proton pin truncated to 9 s.f. (canonical
+# 1.10997858275138…). Proton is the default anchor per AGENTS.md.
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401,E402
+from q_parameter import Q_MP  # noqa: E402
+Q0 = Q_MP
 HERE = pathlib.Path(__file__).resolve().parent
 DEU = HERE.parent / "atom-chi-rust-d.witness.json"
 

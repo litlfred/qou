@@ -1,4 +1,4 @@
-*The hadronic mass collapses into a combination of neutrino vacuum drag and pure strong-force binding energy. Using the observed substrate parameter $q_0$, the predictions match CODATA to sub-keV precision:*
+*The hadronic mass collapses into a combination of neutrino vacuum drag and pure strong-force binding energy. Using the observed substrate parameter $q_0$, the predicted mass ratios — rendered against the $m_e$ scale in MeV — match CODATA to sub-keV precision. Absolute nucleon mass in MeV is not itself a framework prediction (excised, `qou-exam`); $m_e$ fixes the MeV scale by fiat, so the predictive content is the dimensionless ratio and the proton/neutron MeV entries are that ratio rendered against the $m_e$ unit:*
 
 | **Structure** | **Topological Formula** | **QOU Result (MeV)** | **CODATA (MeV)** |
 |---|---|---|---|

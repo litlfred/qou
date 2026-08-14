@@ -257,6 +257,34 @@ elan / cache hosts are network-restricted.
 > base reseed folds them into `lake-cache/qou-v4-24-0` itself — bean `bnyo` —
 > this addon becomes redundant and can be ignored.)
 
+> **H4 Wedderburn cone addon (2026-08-11).** The base cache does **not** carry
+> the `H₄(q)` Wedderburn cone — `HeckeH4AlgebraLaws`, `HeckeH4BlockMap22/31/211`,
+> `HeckeH4WedderburnCoord/MulA/MulB/MulC/Inv`, `HeckeH4Wedderburn`,
+> `BilinearTraceRepBasis` — plus the 13 Mathlib oleans under
+> `Mathlib.Algebra.Module.LinearMap.Polynomial`. Preserved on the addon orphan
+> branch `lake-cache/qou-v4-24-0-h4-wedderburn-cone` (135 MB, **chunked**:
+> GitHub rejects blobs over 100 MB). Restore **after** the base:
+>
+> ```bash
+> ROOT=$(git rev-parse --show-toplevel); T=$(mktemp)
+> git fetch --depth=1 origin lake-cache/qou-v4-24-0-h4-wedderburn-cone
+> C=$(git rev-parse FETCH_HEAD)   # pin ONCE -- FETCH_HEAD is mutable
+> git ls-tree --name-only "$C" | grep '^addon-oleans\.tgz\.part' | sort \
+>   | while read -r p; do git show "$C:$p"; done > "$T"
+> tar xzf "$T" -C "$ROOT"
+> ```
+>
+> Saves ~65 min: `BlockMap31` 941 s/5.5 GB, `BlockMap211` 916 s/6.5 GB,
+> `WedderburnMulC` 1011 s/7.5 GB, `WedderburnCoord` 584 s/6.5 GB, `MulB` 457 s,
+> `MulA` 335 s, `AlgebraLaws` 222 s. **Build these sequentially** — at 5–7.5 GB
+> peak RSS, two at once OOMs a 15 GB box.
+>
+> The `qou-x64l` warning of *">25 min each at ~6 GB"* for `BlockMap31`/`211` is
+> right on memory and ~60 % over on time. And note **you usually do not need any
+> of this**: `QOU/Machinery/H4Cyclicity.lean` proves `trM4_cyclic` from the
+> generator actions with a cone under 10 minutes and never touches the block
+> maps. The addon is only for work needing the Wedderburn blocks themselves.
+
 ### When even the toolchain *binary* is blocked — vendor it via a git branch (2026-07-11)
 
 The olean restore above assumes a working `lean` **compiler** is already
@@ -907,6 +935,39 @@ CI billing is up, prefer triggering it over an ad-hoc multi-GB agent push.
 
 **Rule for agents going forward:** RESTORE → (build only if miss) → SEED.
 Never silently rebuild Mathlib and throw the oleans away.
+
+> **⚠ …but WHICH seed route depends on how you built (2026-08-11).** This rule
+> and the `lean`-direct verification guidance below are both right, and together
+> they invite one wrong step — feeding lean-direct output to the monolithic
+> seed script. Pick the route by build method:
+>
+> | you built with | seed route |
+> |---|---|
+> | `lake build` | [`lean-olean-cache-seed.sh`](../../../scripts/lean-olean-cache-seed.sh) → the monolithic `lake-cache/qou-<slug>` branch |
+> | `lean`-direct (`lean f.lean -o …`) | an **addon** orphan branch via plain `tar` — e.g. the H₄ Wedderburn cone addon above |
+>
+> Why they differ: `lean -o` writes `.olean` + `.ilean` and **no `.trace`**,
+> which is Lake bookkeeping only `lake build` produces. So:
+>
+> * The monolithic script's 90 % trace guard **refuses** a lean-direct set, and
+>   that refusal is **correct** — its own header says so. Do not force it.
+>   Forcing it is worse than not seeding: Lake treats untraced oleans as stale,
+>   rebuilds, and **evicts** them (bean `02kc`).
+> * An **addon tarball is not subject to that** — it is restored by `tar xzf`,
+>   not by Lake, and untraced oleans are exactly what a `lean`-direct +
+>   `LEAN_PATH` consumer needs. Bean `02kc`'s finding was that such a cache
+>   *"only ever worked for direct `lean` + LEAN_PATH invocations"* — a
+>   limitation on the consumer, not a prohibition on seeding.
+> * Paper (`QOU`/`UGB`/`Fred2005`) oleans are excluded from the **monolithic**
+>   branch by default, valid there only right after `lake build QOU` at the
+>   pinned rev (`SEED_PAPER=1`). The addon route carries them fine.
+>
+> History: this note first read *"a lean-direct build CANNOT seed, do not try"*
+> — an over-claim, written before the H₄ addon branch above existed and without
+> checking whether a non-Lake route was possible. One session accordingly
+> rebuilt the whole H₄ cone lean-direct and then withdrew its offer to preserve
+> it as unseedable; a sibling seeded the same cone as an addon that same day.
+> The honest scope is the table: a *route* was unavailable, not the goal.
 
 ## Delegate the install to a sub-agent (recommended for the main task)
 

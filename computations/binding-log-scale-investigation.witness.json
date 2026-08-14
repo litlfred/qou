@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:26:50.697556+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-10T17:21:13.397106+00:00",
+  "commitSha": "e31e89d1b1180bc329079a8f7adb8eb3d5c1a782",
   "assertions": [
     {
       "name": "no_derived_scale_closes_A3",
-      "computed": 313.2,
+      "computed": 315.1,
       "expected": 313.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1.0,
       "source": "κ_needed spread ≫ 0 ⟹ no single derived scale works"
     }
   ],
-  "allPassed": true,
-  "durationMs": 30,
+  "allPassed": false,
+  "durationMs": 28,
   "computation": "binding-log-scale-investigation",
   "scriptFile": "binding_log_scale_investigation.py",
   "scriptHash": "fa326e099f9d",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,63 +29,64 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
   },
-  "description": "Tests whether a DERIVED scale κ closes A≥3 binding with the log-observable B = κ·log(tr_free/tr_atom). Negative for this SCALAR observable: κ_needed spans 2.39–9.89 MeV (313% spread), tracking B/A. Refinement (2026-05-29 shell review): the shell structure is NOT missing — it is recoverable per-λ (χ^λ Wedderburn, self-conjugate/magic, staircase λ_shell, torus-knot q^{2n_s} gap); the scalar log-ratio collapses it. A ~4 MeV scale (E₀ / m_e·Vol(𝓑₃)) closes the deuteron (sibling PR #1416). A≥3 needs the per-λ / inter-shell object the scalar trace discards — open, not a missing observable.",
+  "description": "Tests whether a DERIVED scale κ closes A≥3 binding with the log-observable B = κ·log(tr_free/tr_atom). Negative for this SCALAR observable: κ_needed spans 3.29–13.64 MeV (315% spread), tracking B/A. Refinement (2026-05-29 shell review): the shell structure is NOT missing — it is recoverable per-λ (χ^λ Wedderburn, self-conjugate/magic, staircase λ_shell, torus-knot q^{2n_s} gap); the scalar log-ratio collapses it. A ~4 MeV scale (E₀ / m_e·Vol(𝓑₃)) closes the deuteron (sibling PR #1416). A≥3 needs the per-λ / inter-shell object the scalar trace discards — open, not a missing observable.",
   "data": {
     "derived_scale_tests": {
       "E0": {
         "kappa_MeV": "4.1859814",
         "err_pct": {
-          "D": 74.88598747091535,
-          "T": 6.916289409685979,
-          "3He": -11.925196152762714,
-          "4He": -57.6768453388239
+          "D": 27.38460307989351,
+          "T": -21.814464732578415,
+          "3He": -36.71367755127665,
+          "4He": -69.31597737876864
         }
       },
       "m_e*Vol(B3)": {
         "kappa_MeV": "3.7444597",
         "err_pct": {
-          "D": 56.43966571760122,
-          "T": -4.360842072614806,
-          "3He": -21.21499800379071,
-          "4He": -62.14093385606527
+          "D": 13.948550204469688,
+          "T": -30.061183414015378,
+          "3He": -43.388882828470656,
+          "4He": -72.55241365443842
         }
       },
       "m_e*Vol(4_1)": {
         "kappa_MeV": "1.0372682",
         "err_pct": {
-          "D": -56.66400391047561,
-          "T": -73.50660297735311,
-          "3He": -78.17544212486285,
-          "4He": -89.51250416676127
+          "D": -68.43464281634371,
+          "T": -80.62596037792999,
+          "3He": -84.31792128220471,
+          "4He": -92.39663106487761
         }
       }
     },
     "kappa_needed": {
       "D": {
-        "kappa_needed_MeV": "2.3935487",
+        "kappa_needed_MeV": "3.2860968",
         "B_per_A_MeV": "1.11228",
-        "log_per_A": "0.4647"
+        "log_per_A": "0.338482"
       },
       "T": {
-        "kappa_needed_MeV": "3.9151951",
+        "kappa_needed_MeV": "5.3539077",
         "B_per_A_MeV": "2.82727",
-        "log_per_A": "0.722126"
+        "log_per_A": "0.528075"
       },
       "3He": {
-        "kappa_needed_MeV": "4.752757",
+        "kappa_needed_MeV": "6.6143539",
         "B_per_A_MeV": "2.57268",
-        "log_per_A": "0.541303"
+        "log_per_A": "0.388954"
       },
       "4He": {
-        "kappa_needed_MeV": "9.890523",
+        "kappa_needed_MeV": "13.642218",
         "B_per_A_MeV": "7.07392",
-        "log_per_A": "0.715222"
+        "log_per_A": "0.518531"
       }
     },
-    "kappa_spread_pct": 313.2158599021964,
+    "kappa_spread_pct": 315.1496192410951,
     "conclusion": {
       "scalar_log_scale_derivable": false,
       "reason": "no single κ closes the SCALAR log-observable (313% spread); κ tracks B/A",

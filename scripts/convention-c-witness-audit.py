@@ -74,6 +74,7 @@ from __future__ import annotations
 import argparse
 import json
 import pathlib
+import re
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
@@ -112,6 +113,23 @@ def _partition_of(node: dict):
     return None
 
 
+#: Expression strings that carry no claim: a literal zero, or a placeholder.
+#: `"?"` is a real value in the corpus and means "unknown", which is not
+#: evidence of convention C — clearing it is what keeps the 3+-row test from
+#: reporting a gap in the data as a convention violation.
+_TRIVIAL_EXPR = {"", "0", "0.0", "-0", "-0.0", "0.", "+0", "?", "-", "n/a",
+                 "none", "null", "nan"}
+
+
+def _nonzero_expr(expr: str) -> bool:
+    """Is this weight expression something other than a written-down zero?
+
+    Syntactic only, deliberately: see `scan_doc_symbolic`. Anything that is not
+    recognisably a zero or a placeholder counts as a live weight.
+    """
+    return expr.strip().lower() not in _TRIVIAL_EXPR
+
+
 def scan_doc(doc, tol: float = DEAD_TOL):
     """Yield (partition, key, value) for every nonzero weight on a 3+ row block."""
     found = []
@@ -133,6 +151,84 @@ def scan_doc(doc, tol: float = DEAD_TOL):
         elif isinstance(node, list):
             for v in node:
                 walk(v)
+
+    walk(doc)
+    return found
+
+
+#: Keys that hold a weight as a SYMBOLIC expression rather than a number.
+SYMBOLIC_WEIGHT_KEYS = WEIGHT_KEYS + ("y_lambda_symbolic", "y_lambda_closed_form",
+                                      "y_lambda_simplified_factored")
+
+#: A half-integer power of q — the convention-C signature, and an exact one.
+#:
+#: C is z = 1/(q^{1/2} + q^{-1/2}); D is z = q^3/(q^2 + 1), a *rational*
+#: function of q that never calls sqrt (the Rust engine's own note on
+#: `markov_z` makes the same point). So a weight expression carrying q^{k/2}
+#: was built under C, at any n, whatever its coefficients.
+SQRT_Q = re.compile(r"q\s*\*\*\s*\(?\s*-?\d+\s*/\s*2\s*\)?"
+                    r"|sqrt\(\s*q\s*\)"
+                    r"|q\s*\*\*\s*-?0\.5")
+
+
+def scan_doc_symbolic(doc):
+    """Yield (partition, key, expr) for weight EXPRESSIONS built under C.
+
+    The numeric test above calls `float(v)` and skips what does not parse, so a
+    weight stored as a sympy expression is invisible to it — the same shape of
+    blind spot as the decimal-fingerprint scan this detector replaced, and it
+    hides the same class of witness.
+
+    Found this way: `y-lambda-wenzl-bridge-symbolic-witness.json` evaluates to
+    nonzero y_λ on 3-, 4-, 5- and 6-row partitions at q₀ (y_(4,1,1) = 0.0101,
+    y_(1^6) = -1.24e-5), which convention D sends to exact zero. It feeds
+    `rho_k_h3a_refinement`, whose own Schur-Weyl check has been failing at
+    4.75e-8 — the producer was reporting this the whole time, via exit 2.
+
+    TWO tests, because the sqrt signature alone misses the file that DEFINES
+    the convention. `SQRT_Q` is a syntactic marker of C, and sympy rationalises
+    it away: measured on the committed convention-C root
+    (`y-lambda-wenzl-bridge-symbolic-witness.json`, 119 KB), `SQRT_Q` scores
+    **0 hits** — every weight is a rational function of q such as
+    `(1 - q**6)/((1 - q**2)*(q**2 + (1 - q**6)/(1 - q**2)))`. So the detector
+    that exists to catch convention C was blind to the one file the whole
+    cascade reads its convention from.
+
+    The second test keys on the DEFINING property instead of a spelling: under
+    convention D, `y_λ = 0` identically for `ℓ(λ) ≥ 3` (the `z_D` radical
+    contains the antisymmetriser — `qou-u2jg`, Lean). A symbolic weight sitting
+    on a 3+-row partition that is not trivially zero therefore cannot be D,
+    whatever powers of q it is spelled with. This is the symbolic twin of
+    `scan_doc`'s numeric test, not a new rule.
+
+    This is still not "symbolic ⇒ suspect" — a 1- or 2-row block may carry any
+    expression, and only the sqrt test fires there. Deciding whether an
+    arbitrary q-expression is identically zero needs a CAS, which does not
+    belong in a scan over a 7 MB witness, so the 3+-row test screens
+    syntactically and over-reports rather than under-reports. For a test whose
+    failure mode was silence, that is the right direction.
+    """
+    found = []
+
+    def walk(node, part=None):
+        if isinstance(node, dict):
+            here = _partition_of(node) or part
+            for k, v in node.items():
+                if isinstance(v, str) and any(w in k for w in SYMBOLIC_WEIGHT_KEYS):
+                    try:
+                        float(v)          # a plain number is the numeric test's job
+                        continue
+                    except (TypeError, ValueError):
+                        pass
+                    if SQRT_Q.search(v):
+                        found.append((here, k, v))
+                    elif here is not None and len(here) >= 3 and _nonzero_expr(v):
+                        found.append((here, k, v))
+            for v in node.values():
+                walk(v, here)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v, part)
 
     walk(doc)
     return found
@@ -160,6 +256,28 @@ def scan_repo(root: pathlib.Path = None):
     return out
 
 
+def scan_repo_symbolic(root: pathlib.Path = None):
+    root = root or (REPO / "computations")
+    out = []
+    for p in sorted(root.rglob("*.json")):
+        if "_deprecated" in str(p):
+            continue
+        try:
+            raw = p.read_text()
+        except OSError:
+            continue
+        if "**" not in raw and "sqrt" not in raw:
+            continue
+        try:
+            doc = json.loads(raw)
+        except json.JSONDecodeError:
+            continue
+        hits = scan_doc_symbolic(doc)
+        if hits:
+            out.append((str(p.relative_to(REPO)), hits))
+    return out
+
+
 def selftest() -> int:
     """A detector that cannot fail is worse than none."""
     cases = [
@@ -178,14 +296,54 @@ def selftest() -> int:
         ("no partitions at all -> clear",
          {"data": {"mass": 938.272}}, False),
     ]
+    sym_cases = [
+        ("symbolic weight with q**(3/2) -> FLAG (C uses sqrt; D is rational)",
+         {"weights": [{"partition": [1, 1, 1],
+                       "y_lambda_symbolic": "q**6*(1 - 1/(q**(3/2) + q))"}]}, True),
+        ("symbolic weight with sqrt(q) -> FLAG",
+         {"weights": [{"partition": [2, 1, 1],
+                       "y_lambda_closed_form": "1/(sqrt(q) + 1/sqrt(q))"}]}, True),
+        # This case asserted `False` — "integer powers only ⇒ convention D" —
+        # which is backwards, and is the exact reason the 119 KB convention-C
+        # root scored 0 hits. Under D a 3-row weight is IDENTICALLY zero
+        # (`qou-u2jg`); a nonzero one is convention C however it is spelled.
+        ("nonzero symbolic weight on a 3-row block, integer powers -> FLAG "
+         "(D sends l(lambda)>=3 to exact zero; sqrt is a spelling, not the test)",
+         {"weights": [{"partition": [1, 1, 1],
+                       "y_lambda_closed_form": "q**6*(1 - q**2)**2/(q**2 + 1)"}]}, True),
+        # The shape actually committed in y-lambda-wenzl-bridge-symbolic-witness
+        # at n=3, [1,1,1]: rational in q, no sqrt anywhere, and NOT identically
+        # zero (evaluates to 0.02274494... at the proton q0).
+        ("the committed convention-C root's own [1,1,1] expression -> FLAG",
+         {"weights": [{"partition": [1, 1, 1], "y_lambda_symbolic":
+                       "(1 - q**6)/((1 - q**2)*(q**2 + (1 - q**6)/(1 - q**2)))"}]}, True),
+        ("symbolic ZERO on a 3-row block -> clear (this is convention D)",
+         {"weights": [{"partition": [1, 1, 1], "y_lambda_symbolic": "0"}]}, False),
+        ("integer-power expression on a TWO-row block -> clear (live under D)",
+         {"weights": [{"partition": [2, 1],
+                       "y_lambda_closed_form": "q**2/(q**2 + 1)"}]}, False),
+        ("sqrt signature on a TWO-row block -> still FLAG (convention, not liveness)",
+         {"weights": [{"partition": [2, 1], "y_lambda_symbolic": "q**(5/2)/(q + 1)"}]}, True),
+        ("placeholder '?' -> clear (unknown, not convention C)",
+         {"weights": [{"partition": [1, 1, 1], "y_lambda_at_zero": "?"}]}, False),
+        ("plain numeric string -> clear here (the numeric test owns it)",
+         {"weights": [{"partition": [1, 1, 1], "y_lambda": "0.0227449"}]}, False),
+    ]
     bad = 0
     for name, doc, want in cases:
         got = bool(scan_doc(doc))
         ok = got == want
         bad += not ok
         print(f"  {'ok  ' if ok else 'FAIL'}  {name}")
-    print(f"selftest: {len(cases)-bad}/{len(cases)}"
-          + ("" if bad else " — flags a 3+row nonzero weight at any n, clears convention D."))
+    for name, doc, want in sym_cases:
+        got = bool(scan_doc_symbolic(doc))
+        ok = got == want
+        bad += not ok
+        print(f"  {'ok  ' if ok else 'FAIL'}  [symbolic] {name}")
+    n = len(cases) + len(sym_cases)
+    print(f"selftest: {n-bad}/{n}"
+          + ("" if bad else " — flags a 3+row nonzero weight at any n, and a "
+                            "sqrt-q weight expression at any n; clears convention D."))
     return bad
 
 
@@ -210,15 +368,32 @@ def main() -> int:
             for part, k, v in entries[:6]:
                 print(f"      {list(part)}  {k} = {str(v)[:38]}")
 
+    sym = scan_repo_symbolic()
+    sym_total = sum(len(h) for _, h in sym)
+    print("\nconvention-C witnesses, detected SYMBOLICALLY "
+          "(half-integer power of q in a weight expression)\n")
+    print(f"  {len(sym)} witness(es), {sym_total} expression(s)\n")
+    for path, entries in sym:
+        print(f"  {path}   ({len(entries)} expressions)")
+        if a.list:
+            for part, k, v in entries[:3]:
+                where = list(part) if part else "-"
+                print(f"      {where}  {k} = {str(v)[:38]}")
+
     if a.json:
         pathlib.Path(a.json).write_text(json.dumps(
-            [{"witness": p,
-              "entries": [{"partition": list(pt), "key": k, "value": str(v)}
-                          for pt, k, v in e]}
-             for p, e in hits], indent=2))
+            {"structural": [{"witness": p,
+                             "entries": [{"partition": list(pt), "key": k,
+                                          "value": str(v)} for pt, k, v in e]}
+                            for p, e in hits],
+             "symbolic": [{"witness": p,
+                           "entries": [{"partition": list(pt) if pt else None,
+                                        "key": k, "value": str(v)[:200]}
+                                       for pt, k, v in e]}
+                          for p, e in sym]}, indent=2))
         print(f"\n  json -> {a.json}")
 
-    return 1 if hits else 0
+    return 1 if (hits or sym) else 0
 
 
 if __name__ == "__main__":

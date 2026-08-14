@@ -117,3 +117,32 @@ honesty, small), PC2 (the decisive in-QOU mechanism check — a validated
 two-regime ODE probe), PC3 (small), then the compute session pinning
 `c`, `νμ`, `Γ` from Clebsch–Gordan/SDP data, and finally the A-vs-B
 adjudication (lock-uniformity analysis) — the genuine research frontier.
+
+## SF arc — self-sustainment of the unforced sustained channel (2026-07-25 → 2026-08-14)
+
+The probe interpretation above localised blow-up to sustained forcing. The SF
+arc asked whether the model can *self*-sustain that channel unforced — the
+last way blow-up could arise without external input.
+
+| PR | Landed |
+|---|---|
+| #4257 | **SF1** (`qns_self_sustainment_probe.py`): unforced DN q-shell, transition emerges at `ε ~ 1e-4` — but viscous confound flagged, not a q-effect claim |
+| #4262 | **SF2** (`qns_self_sustainment_discriminator.py`): classical same-`ν` controls decide it — `R = S_q/S_cl → 1`; the decay is the **viscous clock**, no q-specific self-sustainment |
+| #4267 | **SF3** (`qns_sustainment_n_scaling.py`): `N`-sweep 8→24, survival *decreases* monotonically — the infinite-dimensional escape does **not** open at shell-model level |
+| SF4 | **SF4** (`qns_backscatter_sustainment_probe.py`, bean `qou-y7ey`): the named fidelity caveat tested — a **GOY-class model with backscatter** (all-conjugated triads; `a+b+c=0` energy conservation holds on the q-integer ladder, verified analytically), 4-phase ensemble, late-window survival metric. Survival decays 5–8 orders on both ladders; `S_q(N)` decreasing; `R ∈ [0.38, 2.7]` across the `N`-sweep and the `δ`-sweep. **Backscatter does not re-open the channel** |
+
+**In-model conclusion (scope (a) throughout):** every unforced channel —
+smooth data, pair collision, forward-cascade shell model, backscatter shell
+model — points to regularity; blow-up in the classical limit requires
+**external sustained forcing** or full-NS mechanisms absent from *any* shell
+model (nonlocal-in-`k` transfer, geometric depletion). The SF-arc caveat list
+is now down to that full-NS fidelity gap; the shell-model level is exhausted.
+
+**Honest caveats:** GOY is chaotic — ensemble spreads up to `1.2e3` on
+individual survival values; the verdict rests on the *scale* (`≤ 1e-5`
+everywhere, 5+ orders below O(1)), not on precise ratios. Exploratory
+float64 tier; single `ε = 1e-2` for SF3/SF4.
+
+**Remaining open on epic `qou-a3n3`:** PDE-level uniformity of the two-regime
+collision model; phase-1 closed-form Lean calculus brick; large-data global
+persistence at the low-mode block (the millennium core, in-QOU).

@@ -58,6 +58,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge
 import argparse
+import ast
 import json
 import re
 from collections import defaultdict
@@ -120,6 +121,79 @@ def classify(lit: str) -> tuple[str, str, str] | None:
     return None
 
 
+def _prose_lines(src: str) -> set[int]:
+    """Line numbers that are documentation or console output, not computation.
+
+    A truncated constant in a docstring or a `print()` is describing a value,
+    not computing with one. Replacing it with an import changes nothing and
+    would often make the prose worse. Excluding them is not leniency — it is
+    the difference between a finding and a typo in a sentence.
+
+    Why AST and not a regex: `mp.mpf("0.51099895")` is a string literal and IS
+    a genuine defect, while `"m_e = 0.51099895 MeV"` in a docstring is not. No
+    lexical test separates those; the parse tree does — one is an argument to a
+    numeric constructor, the other is a bare expression-statement string or a
+    `print` argument.
+
+    History: the first published run of this audit reported 86 truncations. It
+    excluded only lines starting with `#`, so docstrings, prints, and — in
+    three cases — a sibling detector's own list of patterns to match were all
+    counted. That number was inflated and is corrected here.
+    """
+    skip: set[int] = set()
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return skip
+
+    def mark(node) -> None:
+        lo = getattr(node, "lineno", None)
+        hi = getattr(node, "end_lineno", lo)
+        if lo:
+            skip.update(range(lo, (hi or lo) + 1))
+
+    for node in ast.walk(tree):
+        # Bare string expression-statements: module/class/function docstrings
+        # and the free-floating comment-strings this corpus uses liberally.
+        if isinstance(node, ast.Expr) and isinstance(node.value, ast.Constant) \
+                and isinstance(node.value.value, str):
+            mark(node)
+        # print(...) — console narration.
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) \
+                and node.func.id == "print":
+            mark(node)
+
+        # ── DELIBERATELY-TRUNCATED COMPARATORS ────────────────────────
+        # A prefix matcher MUST be shorter than the value it matches, and a
+        # window bound MUST NOT equal the value it brackets. "Fixing" these to
+        # the full canonical constant breaks the check they implement:
+        # `q.startswith(Q_MP)` is trivially true, and `x > M_E_MEV` as a lower
+        # bound excludes the very value it is meant to admit.
+        #
+        # This is the third false-positive class this audit has had, after
+        # regex patterns and prose. They share a root: a numeric literal that
+        # *looks like* a constant but is playing a structural role. The lesson
+        # is in the detector's history rather than only its output — a
+        # high-recall matcher on numeric text needs the parse tree to tell
+        # role from resemblance.
+
+        # `x.startswith("1.10997…")`
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) \
+                and node.func.attr in ("startswith", "endswith"):
+            mark(node)
+        # `lo < x`, `x > bound`, `x == "1.109…"` — the literal is a threshold.
+        if isinstance(node, ast.Compare):
+            mark(node)
+        # Names that announce the role: PREFIX / SIG / SIGNATURE / _LO / _HI.
+        if isinstance(node, ast.Assign):
+            for tgt in node.targets:
+                name = getattr(tgt, "id", "") or ""
+                if any(m in name.upper()
+                       for m in ("PREFIX", "_SIG", "SIGNATURE", "_LO", "_HI")):
+                    mark(node)
+    return skip
+
+
 def scan() -> tuple[list[dict], int]:
     rows: list[dict] = []
     exact = 0
@@ -129,10 +203,14 @@ def scan() -> tuple[list[dict], int]:
         if f.name == Path(__file__).name or f.name in REGISTRY_FILES:
             continue
         try:
-            lines = f.read_text().splitlines()
+            src = f.read_text()
         except OSError:
             continue
+        lines = src.splitlines()
+        prose = _prose_lines(src)
         for i, line in enumerate(lines, 1):
+            if i in prose:
+                continue
             s = line.strip()
             # Comments and import lines are prose/plumbing, not computed values.
             if s.startswith("#") or "codata_constants" in line or (

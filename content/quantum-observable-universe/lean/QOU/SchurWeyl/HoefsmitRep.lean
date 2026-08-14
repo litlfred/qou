@@ -30,6 +30,19 @@ universal property `Hecke.lift` (bean SW-1) and the Specht dimension `dLambda λ
 * **Axial-distance infrastructure — sorry-free.**  `cellContent`, `axialDistance` on Young-diagram
   cells: the content difference that indexes Young's seminormal / orthogonal form.
 
+* **The generic axial-distance seminormal block — sorry-free, generic field.**  `seminormalBlock q a`
+  is the `2×2` building block of *every* size-`2` SYT-orbit of the general construction (top-right
+  `1`, trace `q - q⁻¹`, determinant `-1`, one free parameter `a`).  `seminormalBlock_quadratic` proves
+  its Hecke quadratic relation for all `q ≠ 0` and all `a`; `seminormalBlock_ne_scalar` proves its
+  non-degeneracy (off-diagonal `1 ≠ 0`); `S1_eq_seminormalBlock` recovers the concrete `(2,1)` matrix
+  as `seminormalBlock q (-1/(q³+q))`.
+
+* **The `λ = (2,2)`, `d_λ = 2`, `N = 4` seminormal representation — sorry-free over `ℝ`.**
+  `seminormalRep22 : Hecke ℝ q q⁻¹ 3 →ₐ[ℝ] M_2(ℝ)`, generators `![S0, S1, S0]`.  The program's first
+  4-strand rep and its first **non-vacuous far-commutation** (`σ_0 σ_2 = σ_2 σ_0`); every relation
+  reduces to the `(2,1)` lemmas.  `seminormalRep22_nonScalar` is a concrete witness of the general
+  non-degeneracy statement.
+
 * **General `λ` seminormal representation — GAP (honestly stated `sorry`).**
   `hoefsmit_seminormal_rep` states the *existence* of a `d_λ`-dimensional seminormal representation
   that is **non-scalar** for `d_λ ≥ 2` (ruling out the trivial `q·1` matrix rep — so the statement
@@ -216,6 +229,148 @@ noncomputable def seminormalRep21 (hq : q ≠ 0) :
 
 end Seminormal21
 
+/-! ## The generic axial-distance seminormal block (sorry-free, generic field)
+
+Every size-`2` orbit block of the general Hoefsmit matrices has one shape: a `2×2` matrix with
+top-right entry `1`, trace `q - q⁻¹`, and determinant `-1` — hence spectrum `{q, -q⁻¹}` — carrying a
+**single** free parameter, its top-left entry `a` (an axial-distance rational function of `q`), the
+other two entries being forced by the trace and the determinant.  This is the reusable building block
+from which every generator matrix `ρ_λ(σ_i)` of the general seminormal representation is assembled
+block-diagonally over the `s_i`-orbits of `SYT λ`.  We isolate it here and prove its quadratic
+relation once and for all, for **every** `q ≠ 0` and **every** parameter `a`, over a generic field
+(§7c: no archimedean order is used).  The concrete `(2,1)` matrix `S1` is recovered as
+`seminormalBlock q (-1/(q³+q))` (see `S1_eq_seminormalBlock`). -/
+
+section SeminormalBlock
+
+variable {K : Type*} [Field K] (q a : K)
+
+/-- The **generic axial-distance seminormal block** `B(a)`: the unique `2×2` matrix with top-right
+entry `1`, trace `q - q⁻¹`, and determinant `-1`, parametrised by its top-left entry `a`.  The
+bottom-left entry `a·(q - q⁻¹) - a² + 1` and bottom-right entry `(q - q⁻¹) - a` are forced by the
+trace and determinant.  Every size-`2` orbit block of the general Hoefsmit matrices is of this form
+(with `a` an axial-distance function of `q`). -/
+noncomputable def seminormalBlock : Matrix (Fin 2) (Fin 2) K :=
+  !![a, 1; a * (q - q⁻¹) - a ^ 2 + 1, (q - q⁻¹) - a]
+
+/-- **Quadratic relation for the generic block (sorry-free, every `q ≠ 0`, every `a`):**
+`B(a)² = (q - q⁻¹)·B(a) + (q·q⁻¹)·1`.  Because the block's trace is `q - q⁻¹` and its determinant is
+`-1` identically, Cayley–Hamilton gives `B(a)² = (q - q⁻¹)·B(a) + 1`; `q ≠ 0` is used only to
+identify the constant `1 = q·q⁻¹` matching the Hecke normalisation `qi := q⁻¹`. -/
+theorem seminormalBlock_quadratic (hq : q ≠ 0) :
+    seminormalBlock q a * seminormalBlock q a
+      = (q - q⁻¹) • seminormalBlock q a + (q * q⁻¹) • (1 : Matrix (Fin 2) (Fin 2) K) := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [seminormalBlock, Matrix.mul_apply, Fin.sum_univ_two] <;>
+    field_simp <;> ring
+
+/-- **The generic block is non-scalar (sorry-free):** `B(a) ≠ s·1` for every scalar `s`, because its
+top-right entry is `1 ≠ 0` while every scalar matrix `s·1` has off-diagonal entries `0`.  This is the
+crux of the non-degeneracy that distinguishes the seminormal representation from the trivial `q·1`
+rep, isolated for the `2×2` building block. -/
+theorem seminormalBlock_ne_scalar (s : K) :
+    seminormalBlock q a ≠ s • (1 : Matrix (Fin 2) (Fin 2) K) := by
+  intro h
+  have h01 := congrFun (congrFun h 0) 1
+  simp [seminormalBlock, Matrix.smul_apply] at h01
+
+end SeminormalBlock
+
+/-- The concrete `(2,1)` seminormal matrix `S1` is exactly the generic block at `a = -1/(q³+q)`
+(sorry-free), tying the hand-verified `2×2` case to the general building block. -/
+theorem S1_eq_seminormalBlock (q : ℝ) (hq : q ≠ 0) :
+    S1 q = seminormalBlock q (-1 / (q ^ 3 + q)) := by
+  have h1 : (q ^ 2 + 1) ≠ 0 := sq_add_one_ne q
+  have h2 : (q ^ 3 + q) ≠ 0 := cube_add_ne q hq
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [S1, seminormalBlock] <;> field_simp <;> ring
+
+/-- `S1` is non-scalar (sorry-free): its top-right entry is `1 ≠ 0`.  Follows from
+`seminormalBlock_ne_scalar` via `S1_eq_seminormalBlock`. -/
+theorem S1_ne_scalar (q : ℝ) (hq : q ≠ 0) (s : ℝ) :
+    S1 q ≠ s • (1 : Matrix (Fin 2) (Fin 2) ℝ) := by
+  rw [S1_eq_seminormalBlock q hq]
+  exact seminormalBlock_ne_scalar q _ s
+
+/-! ## The shape `λ = (2,2)`, `d_λ = 2` seminormal representation over `ℝ` (sorry-free)
+
+`Hecke ℝ q q⁻¹ 3` is `H_4(q)` (three generators `σ_0, σ_1, σ_2`, two braid relations and **one
+non-vacuous far-commutation** `σ_0 σ_2 = σ_2 σ_0`).  Its `2`-dimensional irreducible — the shape
+`(2,2)` Specht module, with the two SYT `[[1,2],[3,4]]`, `[[1,3],[2,4]]` — is afforded by
+
+* `σ_0 ↦ S0 = diag(q, -q⁻¹)` — entries `1,2` share a row in the first SYT (eigenvalue `q`), a column
+  in the second (eigenvalue `-q⁻¹`);
+* `σ_1 ↦ S1` — the axial-distance block (the same content difference `2` as the `(2,1)` case) that
+  swaps the two SYT;
+* `σ_2 ↦ S0 = diag(q, -q⁻¹)` — entries `3,4` share a row in the first SYT, a column in the second.
+
+Every relation reduces to the already-proved `(2,1)` lemmas: both braid relations are `S0_S1_braid`
+(one directly, one by symmetry), the two quadratics are `S0_quadratic` / `S1_quadratic`, and the
+far-commutation `σ_0 σ_2 = σ_2 σ_0` is `S0 · S0 = S0 · S0` (`rfl`).  This is the program's first
+4-strand seminormal representation and its first non-vacuous far-commutation verification. -/
+
+section Seminormal22
+
+variable (q : ℝ)
+
+/-- **The shape `(2,2)` seminormal representation** `ρ_{(2,2)} : H_4(q) →ₐ[ℝ] M_2(ℝ)`, generators
+`![S0, S1, S0]`.  Sorry-free for all `q ≠ 0`. -/
+noncomputable def seminormalRep22 (hq : q ≠ 0) :
+    Hecke ℝ q q⁻¹ 3 →ₐ[ℝ] Matrix (Fin 2) (Fin 2) ℝ :=
+  Hecke.lift ℝ q q⁻¹ 3 ![S0 q, S1 q, S0 q]
+    (by
+      intro i
+      fin_cases i
+      · show S0 q * S0 q = (q - q⁻¹) • S0 q + (q * q⁻¹) • 1
+        exact S0_quadratic q
+      · show S1 q * S1 q = (q - q⁻¹) • S1 q + (q * q⁻¹) • 1
+        exact S1_quadratic q hq
+      · show S0 q * S0 q = (q - q⁻¹) • S0 q + (q * q⁻¹) • 1
+        exact S0_quadratic q)
+    (by
+      intro i hi
+      fin_cases i
+      · show S0 q * S1 q * S0 q = S1 q * S0 q * S1 q
+        exact S0_S1_braid q hq
+      · show S1 q * S0 q * S1 q = S0 q * S1 q * S0 q
+        exact (S0_S1_braid q hq).symm
+      · exact absurd hi (by decide))
+    (by
+      intro i j h
+      fin_cases i <;> fin_cases j <;>
+        first
+          | (exfalso; revert h; decide)
+          | rfl)
+
+/-- `ρ_{(2,2)} (σ_0) = S0`. -/
+@[simp] theorem seminormalRep22_σ0 (hq : q ≠ 0) :
+    seminormalRep22 q hq (Hecke.σ ℝ q q⁻¹ 3 0) = S0 q := by
+  simp [seminormalRep22, Hecke.lift_σ]
+
+/-- `ρ_{(2,2)} (σ_1) = S1`. -/
+@[simp] theorem seminormalRep22_σ1 (hq : q ≠ 0) :
+    seminormalRep22 q hq (Hecke.σ ℝ q q⁻¹ 3 1) = S1 q := by
+  simp [seminormalRep22, Hecke.lift_σ]
+
+/-- `ρ_{(2,2)} (σ_2) = S0`. -/
+@[simp] theorem seminormalRep22_σ2 (hq : q ≠ 0) :
+    seminormalRep22 q hq (Hecke.σ ℝ q q⁻¹ 3 2) = S0 q := by
+  simp [seminormalRep22, Hecke.lift_σ]
+
+/-- **`ρ_{(2,2)}` is non-scalar (sorry-free):** the generator `σ_1` is sent to `S1`, whose top-right
+entry is `1 ≠ 0`, so it is not `s·1` for any scalar `s`.  This is the concrete `(2,2)` witness of the
+non-degeneracy asserted in general by `hoefsmit_seminormal_rep`. -/
+theorem seminormalRep22_nonScalar (hq : q ≠ 0) :
+    ∃ i : Fin 3, ∀ s : ℝ,
+      seminormalRep22 q hq (Hecke.σ ℝ q q⁻¹ 3 i) ≠ s • (1 : Matrix (Fin 2) (Fin 2) ℝ) := by
+  refine ⟨1, fun s => ?_⟩
+  rw [seminormalRep22_σ1 q hq]
+  exact S1_ne_scalar q hq s
+
+end Seminormal22
+
 /-! ## General `λ` seminormal representation — GAP -/
 
 /-- **Hoefsmit seminormal representation, general shape `λ` — GAP.**
@@ -229,7 +384,22 @@ rep: for `d_λ ≥ 2` at least one generator is sent to a **non-scalar** matrix.
 `S^λ`, hence is non-scalar.)
 
 The `1`-dimensional shapes (`d_λ = 1`) are realised concretely and sorry-free above (`rhoTriv`,
-`rhoSign`), and the smallest genuinely-`2×2` case `λ = (2,1)` (`N = 3`) is `seminormalRep21`. -/
+`rhoSign`); the smallest genuinely-`2×2` case `λ = (2,1)` (`N = 3`) is `seminormalRep21`; and the
+first 4-strand case `λ = (2,2)` (`N = 4`, `d_λ = 2`, non-vacuous far-commutation) is
+`seminormalRep22`, with `seminormalRep22_nonScalar` a concrete witness of the non-degeneracy
+conclusion below.  The `2×2` building block of the general matrices — with its quadratic relation and
+non-scalarity — is `seminormalBlock` / `seminormalBlock_quadratic` / `seminormalBlock_ne_scalar`.
+
+**What is now scaffolded sorry-free (see above):** the reusable size-`2` orbit block and its
+quadratic + non-scalarity, and two fully-worked instances (`(2,1)`, `(2,2)`) exercising the braid and
+far-commutation relations.  **What remains for the general `∀ λ` statement** is: (i) enumerate the
+`s_i`-orbits of `SYT λ` (each of size `1` — scalar `q` / `-q⁻¹` — or `2` — a `seminormalBlock`);
+(ii) assemble the block-diagonal generator matrices from those orbits; (iii) prove the **braid
+relation for arbitrary `λ`** — the Yang–Baxter / axial-distance identity across the `S₃`-orbit of
+three consecutive entries `i, i+1, i+2`, whose generic (size-`6`) case is a genuine `6`-dimensional
+identity, not reducible to the `2×2` blocks above.  Step (iii) is Hoefsmit's thesis theorem and is
+not yet formalised.  Tracked as bean `qou-im9l` (SW-4-gen) and its child GAP bean; irreducibility (the
+`∃ i, non-scalar` witness in full strength) is bean SW-5. -/
 theorem hoefsmit_seminormal_rep {N : ℕ} (q : ℝ) (hq : q ≠ 0) (lam : Partition N) :
     ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
       2 ≤ dLambda lam →
@@ -237,13 +407,14 @@ theorem hoefsmit_seminormal_rep {N : ℕ} (q : ℝ) (hq : q ≠ 0) (lam : Partit
           ρ (Hecke.σ ℝ q q⁻¹ (N - 1) i) ≠ s • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
   -- Ref: [hoefsmit1974] (PhD thesis, UBC 1974 — the seminormal form); [ram1997] axial-distance
   --   formulas.  Both keys resolve in `content/schema/references.ts`.
-  -- GAP: the general seminormal construction indexes an orthonormal basis by `SYT lam` and defines,
-  --   for each generator `σ_i`, the block-diagonal (over SYT orbits under `s_i`) seminormal matrix
-  --   whose `2×2` blocks are the axial-distance rational functions realised concretely for `(2,1)`
-  --   in `seminormalRep21`.  Proving the braid relation for arbitrary `λ` (the Yang–Baxter / axial-
-  --   distance identity across three consecutive entries) is Hoefsmit's theorem and is not yet
-  --   formalised here.  This is bean SW-4's residual; irreducibility (the `∃ i, non-scalar` witness
-  --   in full strength) is bean SW-5.
+  -- GAP (bean qou-im9l / SW-4-gen residual): the general seminormal construction indexes a basis by
+  --   `SYT lam` and, for each generator `σ_i`, forms the block-diagonal matrix over the `s_i`-orbits
+  --   of SYT — size-1 orbits scalar (`q` or `-q⁻¹`), size-2 orbits a `seminormalBlock` (proved
+  --   quadratic + non-scalar above).  The residual is the BRAID relation for arbitrary `λ`: the
+  --   Yang–Baxter / axial-distance identity across the S₃-orbit of `i, i+1, i+2`, whose generic
+  --   size-6 case is a genuine 6-dim identity (the size-1/2 cases reduce to `S0_S1_braid`, as in
+  --   `seminormalRep22`).  This is Hoefsmit's thesis theorem; not yet formalised.  Irreducibility in
+  --   full strength is bean SW-5.
   sorry
 
 end QOU.SchurWeyl
