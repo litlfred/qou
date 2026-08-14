@@ -31,7 +31,10 @@ from hecke_characters import (  # noqa: E402
     partitions_of, build_seminormal_matrices, qfac, dim_q,
     standard_young_tableaux,
 )
-from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings  # noqa: E402
+from canonical_braid_crossings import (  # noqa: E402
+    atom_canonical_crossings as atomic_braid_to_crossings, d_for_ctype,
+)
+from _li_2_q_util import flavor_split_leading  # noqa: E402
 
 # ──────────────────────────────────────────────────────────────────────
 # Symbolic-q Hoefsmit seminormal representation
@@ -114,16 +117,12 @@ def chi_symbolic(shape: tuple[int, ...], crossings: list) -> sp.Expr:
     M = sp.eye(dim)
     for k_gen, ctype in crossings:
         sigma_i = sigmas[k_gen]
-        if ctype == 'sigma':
-            step = sigma_i
-        elif ctype == 'sigma_inv':
-            # σ_i^{-1} = σ_i - h
-            step = sigma_i - H_SKEIN * sp.eye(dim)
-        elif ctype == 'averaged':
-            # (σ + σ^{-1})/2 = σ - h/2
-            step = sigma_i - (H_SKEIN / 2) * sp.eye(dim)
-        else:
-            raise ValueError(f"unknown crossing type {ctype}")
+        # `d_for_ctype` rather than a private if/elif; the chain this replaces
+        # raised on `averaged_weighted`. This module is q-SYMBOLIC, so δ is
+        # passed as its closed form in q -- taking the default would inject
+        # the q0-pinned numeric δ into a symbolic expression (layer straddle).
+        step = sigma_i + d_for_ctype(
+            ctype, H_SKEIN, delta=flavor_split_leading(q)) * sp.eye(dim)
         M = sigma_i_mul = step * M
     chi = sp.cancel(M.trace())
     return chi

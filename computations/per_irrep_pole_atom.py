@@ -403,11 +403,20 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
     for g in sorted(per_gen):
         slot = per_gen[g]
         net_power = slot.get("sigma", 0) - slot.get("sigma_inv", 0)
-        avg_count = slot.get("averaged", 0)
+        # BOTH averaged kinds are mixed / off-Markov crossings. Counting only
+        # `averaged` would mark a generator that carries the colour-weighted
+        # p-n interface and nothing else as `is_pure_power_in_cemetery=True`,
+        # which is exactly the silent projection the CTYPES seed above closed
+        # — reintroduced one field later. Broken out so a reader can still see
+        # which kind of interface the generator carries.
+        avg_count = (slot.get("averaged", 0)
+                     + slot.get("averaged_weighted", 0))
         klr_per_gen.append({
             "gen_idx": g,
             "net_signed_power": net_power,
             "averaged_count": avg_count,
+            "averaged_blind_count": slot.get("averaged", 0),
+            "averaged_weighted_count": slot.get("averaged_weighted", 0),
             # Cemetery class label: the *signed-power projection* of
             # this generator's sub-word, ignoring averaged crossings.
             # If averaged_count > 0, this label is a projection only.
