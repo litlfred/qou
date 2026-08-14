@@ -14,4 +14,8 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.TypedCrossingOperator",
     validation: "not_checked",
   },
+  // The operator is defined per *pair* of strands. That this is enough to
+  // resolve every crossing in the link — that no three-strand vertex needs
+  // an operator of its own — is prop:pairwise-interaction-decomposition.
+  uses: ["prop:pairwise-interaction-decomposition"],
 });
