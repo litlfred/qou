@@ -239,9 +239,27 @@ def run_anchor(anchor: str) -> int:
     # the legacy filename — keeps the consumer chain unbroken.
     from witness_base import WitnessBuilder
     out["auditOnly"] = "AUDIT-DEEP-2026-05.md"
+    # `q0_anchor` MUST be passed explicitly. `stamp_staleness_metadata`
+    # overwrites `payload["q0Anchor"]` UNCONDITIONALLY, and when the argument
+    # is omitted it *infers* the anchor from the script path
+    # (`resolve_q0_anchor(spath)`). A path can only name the producer, not
+    # which of its two caches this invocation is writing — so the careful
+    # per-anchor label set above was silently clobbered to "proton" for BOTH
+    # anchors, leaving the ideal cache self-contradictory:
+    #
+    #     q_0_50dps  1.10997859555733471…   <- the muon/ideal pin
+    #     q0Layer    "ideal / canonical 3-CAL"
+    #     q0Anchor   "proton"               <- wrong, and it is the field
+    #                                          downstream tooling selects on
+    #
+    # Caught by Copilot review on PR #4928. This is the layer-straddle hazard
+    # of AGENTS.md §"q₀ anchor convention" appearing in the witness tooling
+    # itself: the numeric q₀ was right the whole time, only the label lied,
+    # which is the harder version to notice.
     WitnessBuilder.stamp_staleness_metadata(
         out, script_path=__file__, engine="python+mpmath",
         engine_version=f"sympy {sp.__version__} + mpmath {mp.__version__}",
+        q0_anchor=out["q0Anchor"], q0_value=q0_str,
     )
     OUTPUT.write_text(json.dumps(out, indent=2) + "\n")
     print(f"\n  Wrote {OUTPUT.name} ({OUTPUT.stat().st_size} bytes).")
