@@ -15,7 +15,9 @@ Bean `qou-4jut` follow-on, under epic `qou-qia8`.  Formalises the two structural
 facts behind `computations/alpha-em-form-ladder.witness.json`:
 
 ```
-1/α  =  q[9]_q[10]_q  +  2g/(4π(g−1))  +  O(a),      g = 4  (Bring genus)
+1/α  =  q[9]_q[10]_q  +  2g/(4π(g−1))  +  αH(1 − h²α)  +  Δ₂,   g = 4
+      H = [2]_q/(8π),   h = q − q⁻¹ (Hecke structure constant),
+      Δ₂ = uncomputed archimedean two-loop (weight-3; NOT the −h²Hα² above)
 ```
 
 with the recorded fixed points
@@ -59,7 +61,9 @@ neighbouring `δ_q` rule genuinely had.
 * `no_anchor_blind_affine_correction_closes_gap` — appending any further term
   that does not itself depend on the anchor (any affine `x ↦ s·x + c`, `s ≠ 0`)
   leaves the two anchors distinct.  So the residual spread cannot be absorbed by
-  a better `O(a)` truncation; only an anchor-*dependent* ingredient can move it.
+  carrying the α-expansion further — not by the derived `αH(1 − h²α)` already in
+  the form, and not by the uncomputed `Δ₂`, since neither depends on the anchor
+  except through `q` itself.  Only an anchor-*dependent* ingredient can move it.
 * `degenerate_correction_is_vacuous` — the one escape, `s = 0`, does equalise
   them, by discarding the prediction entirely.  Named so the exclusion is not
   over-claimed.
@@ -220,8 +224,8 @@ theorem anchor_gap_eq_prediction_gap (P M C : ℝ) :
 
 A further term appended to the ladder that does not itself depend on the anchor
 acts as one affine map `x ↦ s·x + c` on both predictions.  For `s ≠ 0` the two
-stay distinct.  So the residual spread cannot be removed by truncating `O(a)`
-better, or by any further anchor-independent ingredient; only an
+stay distinct.  So the residual spread cannot be removed by carrying the
+α-expansion further, nor by any other anchor-independent ingredient; only an
 anchor-*dependent* one can move it. -/
 theorem no_anchor_blind_affine_correction_closes_gap
     (P M s c : ℝ) (hne : P ≠ M) (hs : s ≠ 0) :
