@@ -27,10 +27,13 @@ structural finding is that the 21 "open" parameters are **not 21 independent
 problems** — they funnel into **three missing objects** (§4). Two of the three
 have partial derivations already.
 
-Two of the eightfold way's three headline quantitative successes — Gell-Mann–Okubo
-and the decuplet equal-spacing rule behind the `Ω⁻` prediction — are now **both
-proved content-free as derivation targets**, with their deviations (≈ 6 % and
-≈ 9.2 %) relocated as the real testable content.
+All three of the eightfold way's headline quantitative relations are now scored.
+Gell-Mann–Okubo and the decuplet equal-spacing rule behind the `Ω⁻` prediction
+are **proved content-free as derivation targets** (identities of the ansatz),
+with their deviations (≈ 6 % and ≈ 9.2 %) relocated as the real testable
+content. The **nonet mixing angle is proved content-bearing** — the ansatz does
+not constrain it at all — which makes it the one eightfold-way quantity whose
+derivation would be evidence for anything. It is gated on `N = 3` (§4-A).
 
 ---
 
@@ -345,7 +348,7 @@ none of the programme's quantitative successes.**
 | **Meson octet** (0⁻): `3 ⊗ 3̄ = 8 ⊕ 1` | [`meson-octet-decomposition`](../content/quantum-observable-universe/eightfold-way/meson-octet-decomposition.md) | **standard**, conditional on `N=3` | the block calls it "a theorem of `SU(3)` representation theory" |
 | **Baryon decuplet** (3/2⁺) | [`borromean-decuplet-derivation`](../content/quantum-observable-universe/eightfold-way/borromean-decuplet-derivation.md) | **standard**, conditional on `N=3` | "a *matching of dimensions and weights*, not a derivation". Brunnian-ness → Young-symmetriser selection **withdrawn** as a non-sequitur |
 | **Baryon octet** (½⁺) | ✗ **no block** | — | **coverage gap.** The eightfold way's namesake multiplet appears in one passing paragraph (`borromean-decuplet-derivation.md:66-73`) |
-| **Vector meson nonet** (1⁻) | ✗ **no block** | — | **coverage gap.** Zero mentions of `ρ`, `ω`, `φ`, `K*` anywhere in the chapter |
+| **Vector meson nonet** (1⁻) | [`vector-meson-nonet`](../content/quantum-observable-universe/eightfold-way/vector-meson-nonet.md) | **open — and the one content-bearing target** | **CLOSED 2026-08-14.** The mixing is **unconstrained** by the first-order octet ansatz (`NonetMixingUnconstrained.lean`, sorry-free): with the GMO-fixed `m₈` held fixed, *any* spectrum is realisable. So unlike GMO and equal spacing it is **not** automatic. Two nonets, identical `SU(3)` content, opposite mixing: `φ` is **99.5 %** `ss̄` (ideal), `η′` only **50.3 %**. Not currently attemptable — the singlet needs `N = 3` |
 | Gell-Mann–Nishijima `Q = I₃ + Y/2` | [`flavor-charge-assignments`](../content/quantum-observable-universe/eightfold-way/flavor-charge-assignments.md) + `WeakIsospinT3Grading.lean` | **derived** (`I₃` side) / **open** (`Y` side) | see §3.2 for the closure's true width |
 | `I₃` on the nucleon doublet | [`flavor-charge-assignments`](../content/quantum-observable-universe/eightfold-way/flavor-charge-assignments.md) | **derived** | **the one derived entry** — see §7 |
 | Hypercharge `Y` | — | **open** | writhe map **falsified** (`p`, `n` share `Y = +1`, writhes differ). Candidates: strand twist (§6), Milnor `μ̄₁₂₃` (#4597) |
@@ -567,7 +570,7 @@ Six new blocks, ranked by value:
 
 | # | Block | Value | Why |
 |---|---|---|---|
-| 1 | `vector-meson-nonet` | **high — adds falsifiable content** | ρ, K*, ω, φ. This is where GMO *fails*: ideal ω–φ mixing means the nonet is not described by the octet formula. Since GMO was proved to carry zero discriminating power, the nonet's departure from it is one of only two places the eightfold way has real testable content |
+| ~~1~~ | ~~`vector-meson-nonet`~~ | **DONE 2026-08-14** | Landed. The mixing is proved unconstrained by the ansatz — the first eightfold-way quantity whose derivation would carry information. Measured: `φ` 99.5 % `ss̄` vs `η′` 50.3 %, witness `nonet-mixing-purity`. Still gated on `N = 3` |
 | ~~2~~ | ~~`decuplet-equal-spacing`~~ | **DONE 2026-08-14** | Asked and settled: **automatic**, hence zero discriminating power, exactly as GMO. Block landed, Lean sorry-free, deviation (≈ 9.2 %) named as the real target. See [`2026-08-14-decuplet-equal-spacing-null-result.md`](audits/2026-08-14-decuplet-equal-spacing-null-result.md) |
 | 3 | `baryon-octet-decomposition` | medium | The namesake ½⁺ multiplet; promote the passing paragraph at `borromean-decuplet-derivation.md:66-73` |
 | 4 | `weak-isospin-t3-grading` | medium | The chapter has **no** presence for the T₃ result, though it is the second derived item on the surface. State the GMN closure at two-row width (G5) |
