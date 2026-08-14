@@ -22,7 +22,7 @@ formula does not land on the legacy numbers.
 Refuted here (scope-(a), direct test), for both legacy values:
   H1 truncated π (3–10 digits)         → converges to the TRUE value, not legacy
   H2 root rounded to 3–8 dp            → map is insensitive; no effect (confirms bean)
-  H3 perturbed/typo'd cubic coeffs     → nearest legacy repro off by ≥ 0.06
+  H3 perturbed/typo'd cubic coeffs     → nearest legacy repro off by ≥ 8e-3 (8.3e-3)
   H4 clean rational-π² additive shift  → implied shifts are 0.49999·π² and
                                           0.50003·π², independently off π²/2
   H5 low mpmath working precision      → even dps=6 converges to the TRUE value
