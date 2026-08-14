@@ -357,6 +357,8 @@ class Assertion:
         tolerance: Union[float, str, None] = None,
         unit: Optional[str] = None,
         source: Optional[str] = None,
+        passed_override: Optional[bool] = None,
+        extra: Optional[dict] = None,
     ):
         self.name = name
         self.computed = computed
@@ -364,9 +366,20 @@ class Assertion:
         self.tolerance = tolerance
         self.unit = unit
         self.source = source
+        # A verdict the producer computed itself, rather than one derived from
+        # computed/expected/tolerance. Legacy payload assertions are frequently
+        # of the form {"name": …, "passed": bool(some_predicate)} with no
+        # numeric pair to compare — the predicate IS the check. Honoured
+        # verbatim so adoption cannot change a producer's stated result.
+        self.passed_override = passed_override
+        # Keys the corpus attaches beyond the schema (`detail`, `manifold`,
+        # `particle`, …). Preserved so adoption is lossless.
+        self.extra = dict(extra) if extra else {}
 
     @property
     def passed(self) -> bool:
+        if self.passed_override is not None:
+            return self.passed_override
         if self.tolerance is None:
             return self.computed == self.expected
         try:
@@ -392,7 +405,47 @@ class Assertion:
             d["unit"] = self.unit
         if self.source:
             d["source"] = self.source
+        # Adopted extras last, and they may not shadow a schema key.
+        for k, v in self.extra.items():
+            if k not in d:
+                d[k] = v
         return d
+
+
+def _assertion_from_mapping(rec: Mapping[str, Any]) -> "Assertion":
+    """Build an `Assertion` from a legacy payload assertion dict.
+
+    `wrap_legacy` used to DROP these (see its docstring), so this is the
+    conversion that makes them count. Handles the shapes the corpus actually
+    uses, surveyed across the 28 affected producers:
+
+    * ``{"name", "passed"}`` — 11 sites. No numeric pair; the producer's own
+      predicate is the verdict, so it becomes `passed_override`.
+    * ``{"name", "computed", "expected", "passed", …}`` — 5 sites. Both are
+      present; the explicit `passed` still wins, because it is what the
+      producer asserted and adoption must not silently re-decide a verdict.
+    * ``{"name", "expected", "tolerance", "unit", "source", …}`` — 10 sites,
+      no `passed`; derived the normal way from computed/expected/tolerance.
+
+    Anything else on the dict (``detail``, ``manifold``, ``particle``) is
+    carried through in `extra` rather than discarded.
+    """
+    known = {"name", "computed", "expected", "passed", "tolerance",
+             "unit", "source"}
+    passed = rec.get("passed")
+    return Assertion(
+        name=str(rec.get("name", "")),
+        # A missing computed/expected pair is rendered against the verdict so
+        # the emitted assertion is still readable, rather than carrying `None`.
+        computed=rec.get("computed",
+                         ("1" if passed else "0") if passed is not None else ""),
+        expected=rec.get("expected", "1" if passed is not None else ""),
+        tolerance=rec.get("tolerance"),
+        unit=rec.get("unit"),
+        source=rec.get("source"),
+        passed_override=bool(passed) if passed is not None else None,
+        extra={k: v for k, v in rec.items() if k not in known},
+    )
 
 
 # ── WitnessBuilder ───────────────────────────────────────────────
@@ -849,6 +902,35 @@ class WitnessBuilder:
                 builder.set_audit_only(value)
             elif key == "computation":
                 # Filename already encodes this; skip to avoid duplicate
+                continue
+            elif key == "assertions" and isinstance(value, list):
+                # ADOPT, do not skip. `assertions` and `allPassed` are in
+                # `_RESERVED_LEGACY_KEYS`, so both used to fall through to the
+                # `continue` below on the reasoning that `build()` recomputes
+                # them from `add_assertion`. For a producer that writes its
+                # checks as a payload literal — the prevailing legacy shape —
+                # that silently DISCARDED them, and `build()` then emitted
+                #
+                #     "assertions": [], "allPassed": true
+                #
+                # with `allPassed` true *vacuously*, because nothing was
+                # registered. No warning, no exception: a probe whose headline
+                # check FAILED reported success.
+                #
+                # Measured before the fix: 29 producers passed `assertions` in a
+                # wrap_legacy payload, 28 of them without also calling
+                # `add_assertion`; 389 of 2083 witnesses carrying an `allPassed`
+                # field (19 %) had it true with zero assertions.
+                #
+                # Adopting rather than raising is deliberate. The producer's
+                # verdict was never wrong — it was discarded — so converting it
+                # is a faithful reading of what the caller asked for, and it
+                # repairs all 28 without a flag day. An explicit `passed` in the
+                # payload always wins over a derived comparison, so adoption
+                # cannot re-decide a result.
+                for _rec in value:
+                    if isinstance(_rec, Mapping):
+                        builder.assertions.append(_assertion_from_mapping(_rec))
                 continue
             elif key in cls._RESERVED_LEGACY_KEYS:
                 # Skip auto-generated metadata; build() will recompute

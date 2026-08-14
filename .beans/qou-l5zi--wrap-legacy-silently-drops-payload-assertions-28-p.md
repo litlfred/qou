@@ -39,10 +39,37 @@ no exception. A probe whose headline check FAILED reports success.
 |---|---|
 | producers passing `assertions` into a `wrap_legacy` payload | **29** |
 | ...of those NOT also calling `add_assertion` (so dropped) | **28** |
-| witnesses corpus-wide with `allPassed: true` and zero assertions | **389** of 2083 (19 %) |
+| witnesses corpus-wide with `allPassed: true` and zero assertions | 389 of 2083 |
 
-The 389 is an upper bound on the damage — some producers legitimately register
-no assertions — but the 28 all *intend* to assert.
+### ⚠ CORRECTION — the 389 is NOT this bug's blast radius
+
+The first version of this bean led with "389 of 2083 (19 %)" as the damage.
+**That was an overstatement**, and re-running all 28 producers against the fix
+settles it: the corpus count moved **389 → 389**. So the 389 are overwhelmingly
+producers that legitimately register no assertions, not victims of the drop.
+
+The real committed blast radius, measured after the fix landed:
+
+| | |
+|---|---|
+| witnesses that recovered assertions | **6** (+17 assertions) |
+| `allPassed` verdicts that FLIPPED true → false | **0** |
+
+```
+ 0 ->  6   delta-q-decoration
+ 0 ->  3   rho-k-h3a-counit-canonical-integral
+ 0 ->  2   qbeta/qbeta-h4-gram-barchannel-split
+ 0 ->  2   rho-k-counit-defect-form
+ 0 ->  2   rho-k-counit-isotope-systematics
+ 0 ->  2   rho-k-counit-vortex-writhe
+```
+
+**No committed producer was hiding a genuine failure.** The evidence was
+invisible; the verdicts were right. The one case where the drop *did* mask a
+real failure was this session's own new probe
+(`ak_lp_dual_quotient_probe`) — its headline check was `false` and the first
+witness it wrote claimed `allPassed: true`. That is what makes the bug real; it
+is not what the committed corpus was suffering from.
 
 Proven end-to-end on `rho_k_counit_vortex_writhe_probe.py`: the source builds
 2 assertions; `rho-k-counit-vortex-writhe.witness.json` carries
@@ -63,35 +90,34 @@ success. Anything that gates on `allPassed` — dashboards, the integration
 watchers, a reader skimming a witness — is reading a value that was never
 computed.
 
-## The fix, per producer
+## The fix — adopted, not raised
 
-Register through the builder instead of the payload:
+`wrap_legacy` now ADOPTS payload assertions instead of skipping them
+(`_assertion_from_mapping`), so all 28 producers are correct with **zero
+producer edits**.
 
-```python
-builder = WitnessBuilder.wrap_legacy("my-probe", payload, script_path=__file__)
-builder.add_assertion("x_holds", computed="0", expected="1", tolerance="0",
-                      unit="boolean", source="my_probe")
-out = builder.save()
-```
+Adoption beat the raise-and-enumerate plan this bean originally proposed:
+the producer's verdict was never wrong, it was discarded, so converting it is a
+faithful reading of what the caller asked for — and it avoids a flag day where
+28 producers are broken until each is hand-edited.
 
-Pass `computed`/`expected`/`tolerance` as **strings** — that is the drained
-convention (`qou-t0rf`) and keeps the values out of float64.
+Rules, pinned by `tools/qou-substrate/tests/test_wrap_legacy_assertions.py`
+(13 tests):
 
-## Also worth doing (cheap, high leverage)
+* `{"name", "passed"}` (11 sites) — no numeric pair; the producer's predicate
+  IS the check, so it becomes `passed_override`.
+* An explicit `passed` **always beats** a derivable `computed`/`expected`
+  comparison. Adoption must not silently re-decide a stated verdict — that
+  would be a different bug from the one being fixed.
+* No `passed` — derived the normal way from computed/expected/tolerance.
+* Extra keys (`detail`, `manifold`, `particle`) ride along in `extra`, so
+  adoption is lossless, and cannot shadow a schema key.
+* No `assertions` key, or an empty list — unchanged, still vacuously true.
 
-`wrap_legacy` should not swallow these keys in silence. Either
+## Still open
 
-1. **raise** on a payload carrying `assertions`/`allPassed` (they are never
-   what the caller wants — the caller believes they are being emitted), or
-2. **adopt** them: convert payload assertion dicts into `Assertion` records
-   rather than dropping them.
-
-(1) is the safer change and would have surfaced all 28 at once. Whichever is
-chosen, a regression test should pin it, because the current behaviour is
-indistinguishable from working for any producer whose checks happen to pass.
-
-## Next step
-
-Fix `wrap_legacy` first (option 1), then let the resulting failures enumerate
-the 28 rather than hand-auditing them. Re-run each and record which witnesses
-change `allPassed` — those are the ones that were reporting a false green.
+The ~383 other vacuous-true witnesses are a **separate question**, not this
+bug. Worth a look on its own terms: a witness with `allPassed: true` and no
+assertions is asserting nothing, whoever wrote it. Whether that is fine
+(genuinely check-free producers) or a second gap needs its own pass — do not
+inherit the 389 figure into it as though it were established damage.

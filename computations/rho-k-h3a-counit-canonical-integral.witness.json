@@ -1,15 +1,34 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T16:58:11.134620+00:00",
-  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
-  "assertions": [],
+  "computedAt": "2026-08-14T19:49:02.375251+00:00",
+  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
+  "assertions": [
+    {
+      "name": "counit_distinct_from_six_refuted",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "counit_wrong_sign_vs_target",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "counit_does_not_close_gate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "rho-k-h3a-counit-canonical-integral",
   "scriptFile": "rho_k_h3a_counit_canonical_integral.py",
   "scriptHash": "879f3f94d6b8",
-  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
+  "scriptCommitSha": "e5797d6ddb125f7f7856f6393e3e4e20953e46b7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

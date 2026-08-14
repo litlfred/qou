@@ -43,9 +43,11 @@
     "verdict": "GROUNDED (partial): the inverse-product weight is the Mayer b2 normalization, the T/3He split reduces exactly to (tr_p/tr_n)^2 with correct Coulomb sign and -1.38% magnitude. It is a categorically-grounded p!=n isospin discriminator, ORTHOGONAL to the open connected-b4 extensivity magnitude gap. Scope-(a); no wiring."
   },
   "scriptHash": "cdcaacb02454",
-  "scriptCommitSha": "3ee2823ff065fd44503b7b0ba875682883935b64",
-  "commitSha": "632fbdd705331bdbe6ca058b2ff2033384c92dbe",
-  "computedAt": "2026-07-18T09:43:38.505955+00:00",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
+  "computedAt": "2026-08-14T19:48:00.303150+00:00",
   "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "perknot_pn_bond_mayer_grounding_probe.py"
 }
