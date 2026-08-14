@@ -113,6 +113,23 @@ def _partition_of(node: dict):
     return None
 
 
+#: Expression strings that carry no claim: a literal zero, or a placeholder.
+#: `"?"` is a real value in the corpus and means "unknown", which is not
+#: evidence of convention C — clearing it is what keeps the 3+-row test from
+#: reporting a gap in the data as a convention violation.
+_TRIVIAL_EXPR = {"", "0", "0.0", "-0", "-0.0", "0.", "+0", "?", "-", "n/a",
+                 "none", "null", "nan"}
+
+
+def _nonzero_expr(expr: str) -> bool:
+    """Is this weight expression something other than a written-down zero?
+
+    Syntactic only, deliberately: see `scan_doc_symbolic`. Anything that is not
+    recognisably a zero or a placeholder counts as a live weight.
+    """
+    return expr.strip().lower() not in _TRIVIAL_EXPR
+
+
 def scan_doc(doc, tol: float = DEAD_TOL):
     """Yield (partition, key, value) for every nonzero weight on a 3+ row block."""
     found = []
@@ -168,8 +185,28 @@ def scan_doc_symbolic(doc):
     `rho_k_h3a_refinement`, whose own Schur-Weyl check has been failing at
     4.75e-8 — the producer was reporting this the whole time, via exit 2.
 
-    Deliberately not "symbolic ⇒ suspect": of the five witnesses holding
-    symbolic weights on 3+-row blocks, only two carry the sqrt signature.
+    TWO tests, because the sqrt signature alone misses the file that DEFINES
+    the convention. `SQRT_Q` is a syntactic marker of C, and sympy rationalises
+    it away: measured on the committed convention-C root
+    (`y-lambda-wenzl-bridge-symbolic-witness.json`, 119 KB), `SQRT_Q` scores
+    **0 hits** — every weight is a rational function of q such as
+    `(1 - q**6)/((1 - q**2)*(q**2 + (1 - q**6)/(1 - q**2)))`. So the detector
+    that exists to catch convention C was blind to the one file the whole
+    cascade reads its convention from.
+
+    The second test keys on the DEFINING property instead of a spelling: under
+    convention D, `y_λ = 0` identically for `ℓ(λ) ≥ 3` (the `z_D` radical
+    contains the antisymmetriser — `qou-u2jg`, Lean). A symbolic weight sitting
+    on a 3+-row partition that is not trivially zero therefore cannot be D,
+    whatever powers of q it is spelled with. This is the symbolic twin of
+    `scan_doc`'s numeric test, not a new rule.
+
+    This is still not "symbolic ⇒ suspect" — a 1- or 2-row block may carry any
+    expression, and only the sqrt test fires there. Deciding whether an
+    arbitrary q-expression is identically zero needs a CAS, which does not
+    belong in a scan over a 7 MB witness, so the 3+-row test screens
+    syntactically and over-reports rather than under-reports. For a test whose
+    failure mode was silence, that is the right direction.
     """
     found = []
 
@@ -184,6 +221,8 @@ def scan_doc_symbolic(doc):
                     except (TypeError, ValueError):
                         pass
                     if SQRT_Q.search(v):
+                        found.append((here, k, v))
+                    elif here is not None and len(here) >= 3 and _nonzero_expr(v):
                         found.append((here, k, v))
             for v in node.values():
                 walk(v, here)
@@ -264,9 +303,25 @@ def selftest() -> int:
         ("symbolic weight with sqrt(q) -> FLAG",
          {"weights": [{"partition": [2, 1, 1],
                        "y_lambda_closed_form": "1/(sqrt(q) + 1/sqrt(q))"}]}, True),
-        ("symbolic weight, integer powers only -> clear (this is convention D)",
+        # This case asserted `False` — "integer powers only ⇒ convention D" —
+        # which is backwards, and is the exact reason the 119 KB convention-C
+        # root scored 0 hits. Under D a 3-row weight is IDENTICALLY zero
+        # (`qou-u2jg`); a nonzero one is convention C however it is spelled.
+        ("nonzero symbolic weight on a 3-row block, integer powers -> FLAG "
+         "(D sends l(lambda)>=3 to exact zero; sqrt is a spelling, not the test)",
          {"weights": [{"partition": [1, 1, 1],
-                       "y_lambda_closed_form": "q**6*(1 - q**2)**2/(q**2 + 1)"}]}, False),
+                       "y_lambda_closed_form": "q**6*(1 - q**2)**2/(q**2 + 1)"}]}, True),
+        # The shape actually committed in y-lambda-wenzl-bridge-symbolic-witness
+        # at n=3, [1,1,1]: rational in q, no sqrt anywhere, and NOT identically
+        # zero (evaluates to 0.02274494... at the proton q0).
+        ("the committed convention-C root's own [1,1,1] expression -> FLAG",
+         {"weights": [{"partition": [1, 1, 1], "y_lambda_symbolic":
+                       "(1 - q**6)/((1 - q**2)*(q**2 + (1 - q**6)/(1 - q**2)))"}]}, True),
+        ("symbolic ZERO on a 3-row block -> clear (this is convention D)",
+         {"weights": [{"partition": [1, 1, 1], "y_lambda_symbolic": "0"}]}, False),
+        ("integer-power expression on a TWO-row block -> clear (live under D)",
+         {"weights": [{"partition": [2, 1],
+                       "y_lambda_closed_form": "q**2/(q**2 + 1)"}]}, False),
         ("sqrt signature on a TWO-row block -> still FLAG (convention, not liveness)",
          {"weights": [{"partition": [2, 1], "y_lambda_symbolic": "q**(5/2)/(q + 1)"}]}, True),
         ("placeholder '?' -> clear (unknown, not convention C)",

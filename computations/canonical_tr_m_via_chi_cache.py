@@ -160,8 +160,8 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
             "q_0_50dps": str(q_0),
             "tr_M_q0": str(tr_m),
             "abs_tr_M_q0": str(abs(tr_m)),
-            "y_lambda_load_time_sec": round(t_y, 3),
-            "tr_m_sum_time_sec": round(t_sum, 3),
+            "y_lambda_load_time_sec": f"{t_y:.3f}",
+            "tr_m_sum_time_sec": f"{t_sum:.3f}",
             "per_lambda": per_lambda,
         }
 
@@ -217,8 +217,8 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
         "q_0_50dps": str(q_0),
         "tr_M_q0": str(tr_m),
         "abs_tr_M_q0": str(abs(tr_m)),
-        "y_lambda_load_time_sec": round(t_y, 3),
-        "tr_m_sum_time_sec": round(t_sum, 3),
+        "y_lambda_load_time_sec": f"{t_y:.3f}",
+        "tr_m_sum_time_sec": f"{t_sum:.3f}",
         "per_lambda": per_lambda,
     }
 

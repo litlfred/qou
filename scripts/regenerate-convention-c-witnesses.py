@@ -95,9 +95,51 @@ SYS_PATHS = [str(REPO / "computations" / d) if d else str(REPO / "computations")
 #: `per-irrep-pole-proton-h3` and `per-irrep-pole-deuteron-h6`, so the atoms
 #: are `proton` and `deuteron` and no others — passing the full ATOMS list
 #: would rewrite six witnesses this campaign has not audited.
+#:
+#: A LOUD under-run is only half the problem, and the quiet half is worse.
+#: `chi_at_q0_via_hoefsmit_mpfr.py` takes `atoms` as OPTIONAL, defaulting to
+#: `["tritium", "helium-3"]` — two of the SIX witnesses it owns. Bare
+#: invocation exits 0 having regenerated a third of its output, the harness
+#: records `ok`, and the four untouched witnesses stay convention C while the
+#: report implies the producer was covered. That is the exact failure mode
+#: this campaign was reopened to eliminate, so it is tabled here too.
+#:
+#: `--fresh` on the chi producer is not optional. Its symbolic cache IS the
+#: `chi-{atom}-h{n}.witness.json` it writes (module docstring), and the resume
+#: check compares only the stored q0 — it has no notion of convention. Without
+#: `--fresh` the producer resumes from precisely the convention-C data this
+#: pass exists to replace, and reports success.
+_ATOM_NAMES = ("beryllium-9", "beryllium-8", "lithium-7", "lithium-6",
+               "lithium-5", "helium-4", "helium-3", "deuteron", "tritium",
+               "neutron", "proton")
+
+
+def _atoms_from_witnesses(witnesses):
+    """Atom names implied by the witnesses a producer owns, in ATOMS order.
+
+    Derived rather than hardcoded, so adding a witness extends the invocation
+    automatically instead of silently falling outside a fixed list.
+    """
+    return [name for name in _ATOM_NAMES
+            if any(name in pathlib.Path(w).name for w in witnesses)]
+
+
+#: Values are either a static argv list or a callable taking the witnesses the
+#: producer owns and returning argv. Keyed by BASENAME, so a producer that
+#: moves between directories keeps its entry.
 PRODUCER_ARGV = {
-    "computations/per_irrep_pole_atom.py": ["proton", "deuteron"],
+    "per_irrep_pole_atom.py": _atoms_from_witnesses,
+    "chi_at_q0_via_hoefsmit_mpfr.py":
+        lambda ws: _atoms_from_witnesses(ws) + ["--fresh"],
 }
+
+
+def producer_argv(producer: str, witnesses) -> list:
+    """argv for `producer`, given the witnesses it owns in this run."""
+    entry = PRODUCER_ARGV.get(pathlib.Path(producer).name)
+    if entry is None:
+        return []
+    return list(entry(witnesses)) if callable(entry) else list(entry)
 
 
 def numeric_fields(obj, out=None, path=""):
@@ -325,9 +367,54 @@ def _audit():
 
 _AUDIT_MOD = None
 
+def _resolve_producer(doc, witness: pathlib.Path, index, stems):
+    """Find the .py that writes this witness, over three keys and a slug.
+
+    `scriptFile` alone leaves 23 witnesses unowned, 11 of them wrongly: the
+    corpus records a producer under three different keys and sometimes not at
+    all. Resolution order, weakest assumption last:
+
+    1. ``scriptFile`` / ``script`` / ``producer`` — a path or a bare filename.
+       ``producer`` is the one that was being skipped, and it is not a rare
+       spelling: it owns the whole `chi_at_q0_via_hoefsmit_mpfr` family.
+    2. **slug match** on the witness basename, `-` to `_`. `e0-lambda-tryall`
+       to `e0_lambda_tryall.py`. Only accepted on an exact stem hit, so it
+       cannot silently bind a witness to a near-neighbour script.
+
+    A `producer` naming a **Rust binary** (`rust-chi-q-via-gp-lossless`,
+    `matrix-m-chi-q-via-gp`) resolves to nothing here by design — that layer
+    needs the hecke-engine CLI, and is where `qou-j6il` found a binary
+    returning convention C while its source read D. Better unowned and visible
+    than bound to a Python script that does not produce it.
+
+    `_deprecated/` is never a resolution: a witness whose producer was retired
+    is history, and history may stay convention C provided it says so.
+    """
+    # Some files under computations/ are top-level JSON *lists*, not objects.
+    if not isinstance(doc, dict):
+        doc = {}
+    for key in ("scriptFile", "script", "producer"):
+        val = doc.get(key) or ""
+        if not isinstance(val, str) or not val:
+            continue
+        hit = index.get(pathlib.Path(val).name)
+        if hit and "_deprecated" not in str(hit):
+            return hit
+    base = witness.name
+    for suffix in (".witness.json", "-witness.json", ".json"):
+        if base.endswith(suffix):
+            base = base[: -len(suffix)]
+            break
+    hit = stems.get(base.replace("-", "_"))
+    if hit and "_deprecated" not in str(hit):
+        return hit
+    return None
+
+
 def work_list():
     """[(witness, producer)] for every convention-C witness."""
     index = {p.name: p for p in (REPO / "computations").rglob("*.py")}
+    stems = {p.stem: p for p in (REPO / "computations").rglob("*.py")}
     items, orphans = [], []
     for w in sorted((REPO / "computations").rglob("*.json")):
         if "_deprecated" in str(w):
@@ -346,8 +433,7 @@ def work_list():
             doc = json.loads(raw)
         except json.JSONDecodeError:
             doc = {}
-        sf = doc.get("scriptFile") or doc.get("script") or ""
-        src = index.get(pathlib.Path(sf).name) if sf else None
+        src = _resolve_producer(doc, w, index, stems)
         (items if src else orphans).append(
             (str(w.relative_to(REPO)), str(src.relative_to(REPO)) if src else None))
     return items, orphans
@@ -641,7 +727,7 @@ def run_all(timeout: int, source: pathlib.Path | None = None):
         try:
             proc = subprocess.Popen(
                 [sys.executable, str(pathlib.Path(producer).name)]
-                + PRODUCER_ARGV.get(producer, []),
+                + producer_argv(producer, witnesses),
                 cwd=str((REPO / producer).parent), env=env,
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
                 start_new_session=True)
@@ -685,6 +771,125 @@ def run_all(timeout: int, source: pathlib.Path | None = None):
               f"cleared {cleared}/{len(witnesses)}  {producer}", flush=True)
 
     print("\nrun complete", flush=True)
+
+
+def convention_coverage(paths):
+    """How many of these witnesses actually SAY which convention they are.
+
+    The detector finds convention C two ways — a known decimal, or a nonzero
+    `y_λ` on a three-or-more-row partition — and **both key on `y_λ` tables**.
+    A convention-dependent quantity that is not a `y_λ` table is invisible to
+    it. `tr_M(β)` is the case that bit: it is the Markov trace at parameter `z`,
+    so it is fully convention-dependent, it carries no partition structure, and
+    `atomic-tr-m-mpfr-50dps.witness.json` therefore never appeared in the work
+    list at all. Everything derived downstream — ρ, Δρ, binding, mass — inherits
+    the same invisibility.
+
+    No syntactic rule fixes that: a bare trace value looks identical under
+    either convention. The only thing that can distinguish them is
+    **provenance** — the producer saying which convention it computed in.
+
+    So rather than pretend to detect the undetectable, this counts how much of
+    the corpus is even *capable* of answering the question. A witness with no
+    `convention` field is not evidence of convention C; it is evidence that the
+    work-list count is a lower bound of unknown slack, which is worth printing
+    next to that count instead of leaving implied.
+    """
+    have, missing = [], []
+    for rel in paths:
+        try:
+            doc = json.loads((REPO / rel).read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        # `markov_convention` specifically, NOT `convention`: the latter is
+        # already used corpus-wide for the CROSSING convention
+        # ("colour-weighted-averaged-crossing", "sign-only-crossings", …),
+        # an orthogonal axis. Counting those as trace-convention provenance
+        # would report seven witnesses as answered when none of them
+        # addresses the question.
+        if isinstance(doc, dict) and doc.get("markov_convention"):
+            have.append((rel, doc["markov_convention"]))
+        else:
+            missing.append(rel)
+    total = len(have) + len(missing)
+    if not total:
+        return
+    print(f"trace-convention provenance: {len(have)}/{total} witnesses declare "
+          f"a `markov_convention` field")
+    for rel, conv in sorted(have):
+        print(f"    {conv:<4} {rel.replace('computations/', '')}")
+    if missing:
+        print(f"  {len(missing)} declare nothing — for these the work-list "
+              f"count is a LOWER BOUND, not a total.\n"
+          f"  (A trace or a derived scalar looks the same under either "
+          f"convention; only the producer knows.)")
+    print()
+
+
+def impact_vs_main(base: str = "origin/main"):
+    """Total impact: every witness's CURRENT state against its state on `base`.
+
+    The per-run JSONL records a single pass's before/after. Once the campaign
+    needs more than one pass — and it does, because the first two ran in the
+    wrong dependency order — those deltas answer "what did pass 3 change",
+    which is not the question. A witness that moved in pass 1 and settled in
+    pass 3 shows almost nothing in the pass-3 record while having moved a long
+    way from what is committed on main.
+
+    So measure the thing actually being asked for: committed-on-`base` versus
+    on-disk-now, classified with the same rules. Independent of how many passes
+    it took, and it stays correct if a pass has to be re-run.
+    """
+    changed = subprocess.run(
+        ["git", "diff", "--name-only", base, "--", "computations"],
+        cwd=str(REPO), capture_output=True, text=True).stdout.split()
+    witnesses = [f for f in changed if f.endswith(".json")]
+    print(f"impact vs {base}: {len(witnesses)} witness file(s) differ\n")
+    convention_coverage(witnesses)
+
+    kinds, shifts, per_witness = {}, [], []
+    for rel in witnesses:
+        old = subprocess.run(["git", "show", f"{base}:{rel}"], cwd=str(REPO),
+                             capture_output=True, text=True)
+        if old.returncode != 0:          # added on this branch, no base version
+            per_witness.append((rel, "new", 0, None))
+            continue
+        try:
+            before = {"numbers": numeric_fields(json.loads(old.stdout))}
+            after = {"numbers": numeric_fields(json.loads((REPO / rel).read_text()))}
+        except (json.JSONDecodeError, OSError):
+            per_witness.append((rel, "unreadable", 0, None))
+            continue
+        rows = diff(before, after)
+        worst = 0.0
+        for d in rows:
+            kind, rel_change = classify(d["before"], d["after"])
+            kinds[kind] = kinds.get(kind, 0) + 1
+            if kind == "shift":
+                shifts.append((rel_change, rel, d))
+                worst = max(worst, rel_change or 0.0)
+        per_witness.append((rel, "changed" if rows else "provenance only",
+                            len(rows), worst))
+
+    print("delta kinds : " + (", ".join(f"{k}={v}" for k, v in sorted(kinds.items()))
+                              or "none"))
+    collapse = kinds.get("structural_zero", 0) + kinds.get("vanished", 0)
+    print(f"convention-D collapse: {collapse} "
+          f"(exactly 0: {kinds.get('structural_zero', 0)}, "
+          f"below floor: {kinds.get('vanished', 0)})")
+
+    print(f"\n{'witness':<62} {'deltas':>7} {'worst ppm':>14}")
+    for rel, state, n, worst in sorted(per_witness, key=lambda t: -(t[3] or 0)):
+        w = f"{worst*1e6:14.1f}" if worst else ("" if state != "changed" else "0.0")
+        print(f"  {rel.replace('computations/', '')[:60]:<60} {n:7d} {w:>14}"
+              + ("" if state == "changed" else f"  [{state}]"))
+
+    shifts.sort(key=lambda t: t[0] or 0, reverse=True)
+    print("\nlargest shifts overall:")
+    for rel_change, rel, d in shifts[:10]:
+        print(f"  {rel_change*1e6:14.1f} ppm  {rel.split('/')[-1]}  {d['field']}")
+        print(f"        {d['before'][:26]} -> {d['after'][:26]}")
+
 
 
 def report():
@@ -784,6 +989,13 @@ def main() -> int:
     ap.add_argument("--stale", action="store_true",
                     help="list producers that ran before an upstream witness "
                          "they read was rewritten (exit 1 if any)")
+    ap.add_argument("--impact-vs-main", dest="impact", nargs="?",
+                    const="origin/main", metavar="REF",
+                    help="total impact: every witness's CURRENT state against "
+                         "its state on REF (default origin/main). This is the "
+                         "campaign's merge gate — the per-run journal answers "
+                         "'what did THIS pass change', which is a different "
+                         "question once the campaign takes more than one pass")
     a = ap.parse_args()
     if a.journal:
         # A distinct sweep needs a distinct clock. done_set() keys off this
@@ -791,6 +1003,9 @@ def main() -> int:
         # sweep "already done" and skip it -- silently, and looking finished.
         global LOG
         LOG = pathlib.Path(a.journal)
+    if a.impact:
+        impact_vs_main(a.impact)
+        return 0
     if a.stale:
         rows = stale_readers()
         if not rows:

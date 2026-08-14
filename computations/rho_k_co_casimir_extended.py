@@ -351,7 +351,7 @@ def compute_co_casimir_for_atom(
         "err_ppm": str(err_ppm) if err_ppm is not None else None,
         "n_partitions": len(parts),
         "per_lambda": per_lambda,
-        "compute_wall_sec": round(t1 - t0, 2),
+        "compute_wall_sec": f"{t1 - t0:.2f}",
         "status": "ok",
     }
 

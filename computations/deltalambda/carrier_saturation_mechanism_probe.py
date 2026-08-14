@@ -221,7 +221,7 @@ def build_large_a_rows(atom: str, nuc_chi: dict) -> tuple[list[dict], dict]:
                      "ch_atom": cha, "ch_free": chf})
     meta = {"n_partitions": len(rows),
             "tr_M_consistency_rel": tr_rel,
-            "free_chi_wall_sec": round(t2 - t1, 2)}
+            "free_chi_wall_sec": f"{t2 - t1:.2f}"}
     return rows, meta
 
 

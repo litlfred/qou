@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:24:42.260066+00:00",
-  "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
+  "computedAt": "2026-08-11T11:02:39.299498+00:00",
+  "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
   "assertions": [
     {
       "name": "paper_and_clean_forms_agree",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 90,
+  "durationMs": 89,
   "computation": "qbeta-per-block-paper-closed-forms",
   "scriptFile": "qbeta_per_block_paper_closed_forms.py",
   "scriptHash": "be96cda61a46",
@@ -61,10 +61,10 @@
     },
     "y_lambda_at_q_0": {
       "(3)": "0.50540422650393080318755870324047227566035119774981",
-      "(2,1)": "0.24729788674803459840622064837976386216982440112509",
+      "(2,1)": "0.2472978867480345984062206483797638621698244011251",
       "(1,1,1)": "0.0"
     },
-    "tau_M_diff_at_q_0": "-0.1580160253545967470056225422033879205358618620894624587284826930071957",
+    "tau_M_diff_at_q_0": "-0.1580160253545967470056225422033879205358618620894635268731828134256788",
     "taylor_coefficients_per_block_ε_order": {
       "(3)": [
         "0",

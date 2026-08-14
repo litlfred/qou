@@ -267,7 +267,7 @@ def main() -> int:
                         "s_points": SPOINTS, "check_rows": CHECK_ROWS},
         "grid_results": grid_results,
         "verdict": verdict,
-        "wall_seconds": round(time.time() - t0, 1),
+        "wall_seconds": f"{time.time() - t0:.1f}",
     }
     out = script_path.with_name("borromean-diagonal-recurrence-hunt.witness.json")
     out.write_text(json.dumps(witness, indent=2) + "\n")

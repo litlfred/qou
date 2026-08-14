@@ -150,7 +150,7 @@ def main() -> int:
         "factor": factor_mean,
         "nearest_factor": nearest,
         "verdict": f"FACTOR {nearest}: c0={c0_mean:.3f}±{c0_spread:.3f}, excludes factor 1 and 4",
-        "wall_seconds": time.monotonic() - t0,
+        "wall_seconds": f"{time.monotonic() - t0:.3f}",
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     out = Path(__file__).resolve().parent / "whitehead-c0-tower-hi.witness.json"

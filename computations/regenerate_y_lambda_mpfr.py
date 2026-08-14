@@ -126,15 +126,8 @@ def evaluate_y_at_q0(partition, q0_str_50dps: str) -> str:
     return mp.nstr(val, mp.mp.dps, strip_zeros=False)
 
 
-def main() -> int:
-    import argparse
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--anchor", choices=("proton", "ideal"), default="proton",
-                    help="q0 layer to evaluate at. Default proton, per the "
-                         "2026-08-07 owner directive; each layer writes its "
-                         "OWN cache, so this never rewrites the other one.")
-    a = ap.parse_args()
-    anchor, OUTPUT = a.anchor, OUTPUT_BY_ANCHOR[a.anchor]
+def run_anchor(anchor: str) -> int:
+    OUTPUT = OUTPUT_BY_ANCHOR[anchor]
 
     print("=" * 96)
     print(f"  Regenerate {OUTPUT.name} at TRUE 50 dps  [anchor={anchor}]")
@@ -163,6 +156,16 @@ def main() -> int:
         # separate scalar written beside it. D needs no `mp.sqrt`, which is
         # the same portability tell the migration found from the other side:
         # C must reach for a square root, D never leaves ℚ(q).
+        #
+        # z_D is not a choice. `qou-u2jg` proves in Lean (sorry-free,
+        # QOU/QBeta/TemperleyLiebTower.lean §ConventionPinning) that the three
+        # Markov normalisations on H_3(q) force
+        #     y_(1^3) · (q²+1)(q⁴+q²+1) = q² (z − q) (z(q²+1) − q³)
+        # so the three-strand antisymmetriser dies at exactly two values of z;
+        # z = q collapses to the one-dimensional character, leaving
+        # z_D = q³/(q²+1) as the unique non-trivial Markov trace whose radical
+        # contains it. C's z is neither root — which is precisely why it carried
+        # y_(1^3) = 0.0227449 instead of zero.
         q = mp.mpf(q0_str)
         z = q ** 3 / (q ** 2 + 1)
 
@@ -244,6 +247,38 @@ def main() -> int:
     print(f"\n  Wrote {OUTPUT.name} ({OUTPUT.stat().st_size} bytes).")
     print(f"  tables_by_n keys: {sorted(out_tables.keys(), key=int)}")
     print("=" * 96)
+    return 0
+
+
+def main() -> int:
+    """Both anchors by default.
+
+    This defaulted to `proton` alone, which is a *coverage* defect rather than
+    an anchor one: the producer owns two caches, wrote one, and exited 0. The
+    convention-C regeneration harness reads that exit code as "this producer's
+    witnesses are now migrated", so `y-lambda-mpfr-witness.json` (the ideal
+    cache, and the one `tr_m_wenzl_bridge_mpfr._Y_LAMBDA_DEFAULT` reads) stayed
+    convention C through a full pass while the run reported success. Two
+    producers had this shape; the other was `chi_at_q0_via_hoefsmit_mpfr`,
+    which owns six atoms and default-ran two.
+
+    Defaulting to both keeps the 2026-08-07 owner directive intact — each layer
+    still writes only its OWN cache, so neither anchor's numbers ever land in
+    the other's file, and `--anchor proton` / `--anchor ideal` still select one.
+    """
+    import argparse
+    ap = argparse.ArgumentParser(description=main.__doc__)
+    ap.add_argument("--anchor", choices=("proton", "ideal", "both"),
+                    default="both",
+                    help="q0 layer(s) to evaluate at. Default BOTH: each layer "
+                         "writes its own cache, so running one and exiting 0 "
+                         "left the other silently un-migrated.")
+    a = ap.parse_args()
+    anchors = ("proton", "ideal") if a.anchor == "both" else (a.anchor,)
+    for anchor in anchors:
+        rc = run_anchor(anchor)
+        if rc != 0:
+            return rc
     return 0
 
 

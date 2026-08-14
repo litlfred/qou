@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T12:49:50.310130+00:00",
-  "commitSha": "576d19cd00392d6a67b0dd24d2ef3d7bcf3b8792",
+  "computedAt": "2026-08-10T14:03:42.544103+00:00",
+  "commitSha": "e1e6e33b2ea928e8f0fdecef80b4fd5b41a924fc",
   "assertions": [
     {
       "name": "tr_M_at_q0",
@@ -102,7 +102,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 67,
+  "durationMs": 70,
   "computation": "he4-canonical-tr-m-block-fingerprint",
   "scriptFile": "probe_he4_canonical_tr_m_fingerprint.py",
   "scriptHash": "6e163b355dc4",
@@ -119,6 +119,7 @@
     "scipy": "1.17.1",
     "sympy": "1.12",
     "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
   "description": "⁴He two-row Wedderburn-stratum dominance of the canonical Markov trace. Sums the per-partition contributions c_λ = y_λ(q_0)·χ^λ_q(β_⁴He) over the full 77 partitions of 12 (canonical word atom_braid_word_3A(2,2), 50 dps Hoefsmit), and forms the two-row stratum ratio |Σ_{λ∈Λ²(12)} c_λ| / |tr_M|. Reproduces tr_M = 0.05534835, the top-5 binding-receptive blocks (all two-row: (9,3) 29.0%, (8,4) 23.6%, (10,2) 13.5%, (7,5) 10.3%, (11,1) 10.2%; top-5 cum 86.5%), the trivial-rep 2.9% and sub-1e-9 sign rep, and verifies the two-row stratum ≥ 80% claim of prop:he4-two-row-dominance.",

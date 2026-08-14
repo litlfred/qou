@@ -104,7 +104,7 @@ def main():
         "description": "A2 (TAIL) first instance: exact closed form for nu_n "
                        "(hook-length-n covariance), derived and verified.",
         "epic": "qou-x631", "attack": "qou-ogrk (A2), TAIL sub-target",
-        "verdict": verdict, "per_n": rows, "runtime_s": time.time() - t0,
+        "verdict": verdict, "per_n": rows, "runtime_s": f"{time.time() - t0:.3f}",
     }
     path = ("computations/deltalambda/"
             "wlambda-covariance-epic-A2-tail-first-instance.witness.json")

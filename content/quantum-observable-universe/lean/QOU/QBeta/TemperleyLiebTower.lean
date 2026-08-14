@@ -993,6 +993,7 @@ theorem mul_div_pow_succ' (c x : R) (hc : c ≠ 0) (n : ℕ) :
   rw [mul_comm x c]
   exact mul_div_pow_succ c x hc n
 
+omit [LinearOrder R] [IsStrictOrderedRing R] in
 /-- **`[m+2]_q + [m]_q = [2]_q · [m+1]_q`, on the defined `qint`.** -/
 theorem qint_three_term (q : R) (hq : q ≠ 0) (m : ℕ) :
     qint q (m + 2) + qint q m = (q + q⁻¹) * qint q (m + 1) := by
@@ -1004,6 +1005,7 @@ theorem qint_three_term (q : R) (hq : q ≠ 0) (m : ℕ) :
   unfold qint
   rw [← add_div, ← mul_div_assoc, hnum]
 
+omit [LinearOrder R] [IsStrictOrderedRing R] in
 /-- **Branching coherence on the defined weights.**
 
 `y[n+1](m+2) + y[n+1](m) = y[n](m+1)` — the two ways of adding a box to a

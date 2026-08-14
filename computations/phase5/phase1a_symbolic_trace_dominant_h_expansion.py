@@ -210,7 +210,7 @@ def main():
             result = {
                 "partition": list(shape),
                 "d_lambda": d,
-                "wall_time_s": round(wall, 2),
+                "wall_time_s": f"{wall:.2f}",
                 "y_at_q0": str(mp.nstr(y_at_q0, 20)),
                 "chi_at_q0": str(mp.nstr(mp.mpf(chi_at_q0), 20)),
                 "product_at_q0": str(mp.nstr(f_vals[0], 20)),
@@ -232,7 +232,7 @@ def main():
             result = {
                 "partition": list(shape),
                 "d_lambda": d,
-                "wall_time_s": round(wall, 2),
+                "wall_time_s": f"{wall:.2f}",
                 "status": f"solve_failed: {e}",
             }
             print(f"    FAILED: {e}")

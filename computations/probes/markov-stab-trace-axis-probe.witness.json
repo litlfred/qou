@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:24:37.389328+00:00",
-  "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
+  "computedAt": "2026-08-14T16:38:18.825620+00:00",
+  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
   "assertions": [
     {
       "name": "z_markov_below_one_linking_weight_above_one",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2500,
+  "durationMs": 1555,
   "computation": "markov-stab-trace-axis-probe",
   "scriptFile": "markov_stab_trace_axis_probe.py",
   "scriptHash": "64bb471b945f",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,9 +28,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
   "description": "Markov-stabilization trace-level axis probe for the H₃→H₄ jump (PR #1762 chain; sibling #1841 Bratteli REFUTED, #1808 Option E lead). Formalize-first: records the z<1 direction obstruction, then tests M1 (identity trace tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ·f^λ) and M2 (z^{±k}·linking_weight vs clean H₃ quantities) exactly. EXPLORATORY — no production code or witnesses changed.",
