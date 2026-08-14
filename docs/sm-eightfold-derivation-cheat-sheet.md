@@ -63,7 +63,7 @@ covers only two of them.
 > - `QOU/ParticleInteractions/WeakIsospinT3Grading.lean` — T₃ from signed
 >   writhe, GMN closure (§3.2 below)
 > - `QOU/AlphaEM/FormLadderAnchorDominance.lean` + the α_EM form ladder —
->   1.67 ppb proton-anchored (§3.3 below)
+>   **0.313 ppb** proton-anchored with the derived Schwinger term (§3.3 below)
 >
 > So "one derived entry" is a **chapter** count, not a **corpus** count. It
 > errs conservative, but an agent citing it as corpus-wide is misciting it.
@@ -168,23 +168,32 @@ isospin doublet. Blocked behind §4-A and §4-C.
 
 > **`α_EM` — the corpus's most accurate SM number, and the appendix does not
 > state it.** The assembled form is
-> `1/α = q[9]_q[10]_q + 2g/(4π(g−1)) + O(a)`, `g = 4` (Bring genus); integers
+> `1/α = q[9]_q[10]_q + 2g/(4π(g−1)) + αH(1−h²α) + Δ₂`, `g = 4`, `H = [2]_q/(8π)`,
+> `h = q−q⁻¹` (the Hecke structure constant, **not** `ℏ_q = 1−q⁻¹`); `Δ₂` is the
+> uncomputed archimedean two-loop. `α` is on both sides — solved as a fixed
+> point, not a series. Integers
 > structurally derived (Bring genus; crossing numbers of `T(2,9)`, `T(3,5)`),
 > **no coefficient fitted**. Residuals
 > ([`alpha-em-form-ladder.witness.json`](../computations/alpha-em-form-ladder.witness.json),
 > [`2026-08-11-alpha-em-anchor-dominance.md`](audits/2026-08-11-alpha-em-anchor-dominance.md)):
 >
-> | anchor | fixed point | residual |
-> |---|---:|---:|
-> | **proton** (the 2026-08-07 default) | 137.035999313169 | **1.67 ppb** |
-> | muon | 137.036010116763 | 80.51 ppb |
+> | form | anchor | residual |
+> |---|---|---:|
+> | quadratic (truncate after `αH`) | **proton** (2026-08-07 default) | 1.67 ppb |
+> | quadratic | muon | 80.51 ppb |
+> | **cubic** (retain `(1−h²α)`) | **proton** | **0.313 ppb** ≈ 2.09 σ_α |
+>
+> The cubic is the corpus's best; quoting 1.67 understates it by 5.3×. Against
+> the L2 100× criterion (`σ_α/100 ≈ 0.0015` ppb) it is still ~209× short — the
+> schwinger witness's *"misses its 100× target by only ~2×"* conflates the σ
+> multiple with the target multiple (`qou-ydmy`).
 >
 > Three cautions, all load-bearing:
 > 1. **Three unproved classes** remain in the derivation — conditional, not closed.
 >    The per-loop measure is not derived. `partial` is the correct tier.
 > 2. **The anchor choice IS the residual.** The μ–p spread (78.84 ppb) is ~47×
 >    the proton-anchored residual, and
->    `no_anchor_blind_affine_correction_closes_gap` proves no anchor-blind `O(a)`
+>    `no_anchor_blind_affine_correction_closes_gap` proves no anchor-blind
 >    term can absorb it. This is the μ–p substrate tension surfacing in a second
 >    observable — which also makes α_EM a **second independent witness for the
 >    proton pin** (chosen on precision grounds in 2026-05-28, prior to and
@@ -433,7 +442,7 @@ Three items, corpus-wide (not the two-chapter figure):
 2. **`T₃ = sign(κ)/2` as a grading orthogonal to the generation winding**
    (§3.2). Genuinely derived from an oriented crossing already present; the
    GMN closure is a real check at two-row width.
-3. **`α_EM` to 1.67 ppb under the proton pin** (§3.3) — with three unproved
+3. **`α_EM` to 0.313 ppb under the proton pin** (§3.3) — with three unproved
    classes, so `partial`, and with the anchor choice constituting the residual.
 
 Everything else is `standard`, `proved-neg`, `conjectural`, or `open`.

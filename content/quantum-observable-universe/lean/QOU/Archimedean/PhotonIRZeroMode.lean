@@ -8,7 +8,9 @@ import Mathlib.Tactic
 **From-the-Lagrangian derivation of the `α_EM` Bring zero-mode `2/(3π)`.**
 
 `prop:em-coupling-bring-zero-mode` derives
-`1/α_EM = q[9]_q[10]_q + 2g/(4π(g-1)) + O(α)` at `g = 4`; its Status section
+`1/α_EM = q[9]_q[10]_q + 2g/(4π(g-1)) + αH(1 - h²α) + Δ₂` at `g = 4`, where
+`H = [2]_q/(8π)`, `h = q - q⁻¹` is the Hecke structure constant, and `Δ₂` is the
+uncomputed archimedean two-loop term (see `EmCouplingBringZeroMode`); its Status section
 left open *why* the photon IR contribution equals `dim H¹ / Area`, recording a
 failed naive attempt on the 3-manifold `M_Bring × S¹`.
 
