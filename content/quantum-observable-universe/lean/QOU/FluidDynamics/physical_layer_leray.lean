@@ -109,4 +109,65 @@ theorem physical_tail_leray_uniform (E Ωp tail : ℕ → K) (δ q : K)
         mul_le_mul_of_nonneg_left hsumle (by positivity)
     _ ≤ E 0 := hmain
 
+/-!
+## Discrete epochs of regularity (bean `qou-8wjo`)
+
+Markov's counting inequality applied to the ε-uniform Leray bound: for
+**any** exceedance level `λ > 0`, the number of time steps at which the
+tail exceeds `λ` is at most `4E₀/(δλ)` — a bound independent of `ε`, of
+the horizon `n`, and of everything about the data except `E₀`.  Outside
+that boundedly-small bad set the tail is `≤ λ`: the discrete image of
+Leray's *epochs of regularity*.
+
+**What this does not give, honestly:** the bad set is bounded in
+*count*, not located — it may concentrate at a single time, and a
+sup-in-time blow-up hiding inside boundedly many steps is exactly the
+configuration the classical weak-vs-strong gap permits.  The open item
+is unchanged; this theorem fences it into an ε-uniformly small set of
+times.
+-/
+
+/-- **Discrete epochs of regularity, ε-uniform**: under the physical
+    Leray hypotheses, for every level `lam > 0` the count of time steps
+    `i < n` with `lam < tail i` satisfies (for any level `lam`; the
+    inequality is vacuously generous when `lam ≤ 0`)
+
+      `(card bad) · lam ≤ (4/δ)·E₀`,
+
+    i.e. `card bad ≤ 4E₀/(δ·lam)` — uniformly in `ε`, `n`, and the
+    data beyond `E₀`.  (Requires `0 ≤ tail` so that off-bad-set terms
+    cannot hide negative mass.) -/
+theorem epochs_of_regularity (E Ωp tail : ℕ → K) (δ q lam : K)
+    (hδ : 0 < δ) (hq1 : 1 < q) (hq2 : q ≤ 2)
+    (hΩ : ∀ n, 0 ≤ Ωp n)
+    (htail₀ : ∀ n, 0 ≤ tail n) (htail : ∀ n, tail n ≤ Ωp n)
+    (hdiss : ∀ n, E (n + 1) ≤ E n - δ * (1 / (2 * q)) * Ωp n)
+    (hE : ∀ n, 0 ≤ E n) :
+    ∀ n, (((Finset.range n).filter (fun i => lam < tail i)).card : K) * lam
+      ≤ 4 / δ * E 0 := by
+  intro n
+  set bad := (Finset.range n).filter (fun i => lam < tail i) with hbad
+  have hcard : ((bad.card : K)) * lam = ∑ _i ∈ bad, lam := by
+    rw [Finset.sum_const, nsmul_eq_mul]
+  have h1 : ∑ _i ∈ bad, lam ≤ ∑ i ∈ bad, tail i := by
+    apply Finset.sum_le_sum
+    intro i hi
+    exact le_of_lt (Finset.mem_filter.mp hi).2
+  have h2 : ∑ i ∈ bad, tail i ≤ ∑ i ∈ Finset.range n, tail i :=
+    Finset.sum_le_sum_of_subset_of_nonneg
+      (Finset.filter_subset _ _) (fun i _ _ => htail₀ i)
+  have h3 : ∑ i ∈ Finset.range n, tail i ≤ 4 / δ * E 0 := by
+    have hler := physical_tail_leray_uniform E Ωp tail δ q hδ hq1 hq2
+      hΩ htail hdiss hE n
+    have h4 : (0 : K) < 4 / δ := by positivity
+    calc ∑ i ∈ Finset.range n, tail i
+        = 4 / δ * (δ / 4 * ∑ i ∈ Finset.range n, tail i) := by
+          field_simp
+      _ ≤ 4 / δ * E 0 :=
+          mul_le_mul_of_nonneg_left hler (le_of_lt h4)
+  calc ((bad.card : K)) * lam = ∑ _i ∈ bad, lam := hcard
+    _ ≤ ∑ i ∈ bad, tail i := h1
+    _ ≤ ∑ i ∈ Finset.range n, tail i := h2
+    _ ≤ 4 / δ * E 0 := h3
+
 end QOU.FluidDynamics.PhysicalLayerLeray
