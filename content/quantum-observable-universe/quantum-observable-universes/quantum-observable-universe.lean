@@ -74,6 +74,27 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
   frobenius_relation :
     mul ≫ comul = (comul ▷ obj) ≫ (α_ obj obj obj).hom ≫ (obj ◁ mul)
 
+namespace FrobeniusHopfData
+
+variable {C : Type u} [CategoryTheory.Category.{v} C]
+  [CategoryTheory.MonoidalCategory C] (F : FrobeniusHopfData C)
+
+/-- **Evaluation** `ev = μ ≫ ∫_A : A ⊗ A → 𝟙`.  Together with `coevaluation`
+    and the two snake identities, this exhibits `A` as self-dual. -/
+def ev : (F.obj ⊗ F.obj) ⟶ (𝟙_ C) := F.mul ≫ F.frobeniusForm
+
+/-- **Left categorical trace** of `f : A → A`, obtained by closing the loop on
+    the left: `𝟙 →[coev] A ⊗ A →[f ▷ A] A ⊗ A →[ev] 𝟙`. -/
+def leftTrace (f : F.obj ⟶ F.obj) : (𝟙_ C) ⟶ (𝟙_ C) :=
+  F.coevaluation ≫ (f ▷ F.obj) ≫ F.ev
+
+/-- **Right categorical trace** of `f : A → A`, closing the loop on the right:
+    `𝟙 →[coev] A ⊗ A →[A ◁ f] A ⊗ A →[ev] 𝟙`. -/
+def rightTrace (f : F.obj ⟶ F.obj) : (𝟙_ C) ⟶ (𝟙_ C) :=
+  F.coevaluation ≫ (F.obj ◁ f) ≫ F.ev
+
+end FrobeniusHopfData
+
 /-- **Quantum Universe** over a field `k`.
 
     Re-declared from the library module
@@ -97,6 +118,17 @@ structure QuantumUniverse (k : Type*) [Field k] where
   /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
       An exact faithful `k`-linear monoidal functor. -/
   fibreFunctor : @CategoryTheory.Functor C catInst (Type w) inferInstance
+  /-- **Symmetric Frobenius** (axiom 3).  A closed loop has one amplitude:
+      closing a worldline on the left and closing it on the right compute the
+      same endomorphism of the unit.  Equivalently, the Frobenius form `∫_A`
+      is symmetric and the Nakayama automorphism is trivial.
+
+      This is a genuine restriction, not a consequence of axiom 2: a Frobenius
+      algebra whose form is non-symmetric has `leftTrace ≠ rightTrace`, and
+      then "the trace of a process" — hence any mass read off a trace — would
+      depend on a drawing convention. -/
+  frobenius_symmetric : ∀ f : frobHopf.obj ⟶ frobHopf.obj,
+    frobHopf.leftTrace f = frobHopf.rightTrace f
   /-- **Wedderburn semisimplicity** (axiom 4).  The substrate has *channels*:
       `A` decomposes into finitely many blocks that do not mix, and no block
       is degenerate.
