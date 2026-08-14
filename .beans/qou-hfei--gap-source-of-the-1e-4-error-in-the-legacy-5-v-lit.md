@@ -20,12 +20,19 @@ Where the ~1e-4 error in the two legacy 5₂ literals came from.
 
 ## Settled — do not re-litigate
 
-**The convention is IDENTIFIED.** Both literals ARE the extraction convention
-`V_eff = V_GGM + π²/2`, evaluated to ~4 digits. The formula was right; the
-evaluation was sloppy. This supersedes two earlier verdicts — the 2026-07-26
-"matches neither published convention" and the 2026-08-01 "Im V₁ doesn't
-match" — **both of which tested only ONE literal**. Testing σ₃ as well changed
-the answer. Do not reopen the "which convention" question.
+**The convention is IDENTIFIED.** Both literals match the extraction convention
+`V_eff = V_GGM + π²/2` to ~4 digits. This supersedes two earlier verdicts — the
+2026-07-26 "matches neither published convention" and the 2026-08-01 "Im V₁
+doesn't match" — **both of which tested only ONE literal**. Testing σ₃ as well
+changed the answer. Do not reopen the "which convention" question.
+
+> **Corrected 2026-08-14 (see the closing note below).** The earlier gloss
+> "the formula was right; the evaluation was sloppy" is **withdrawn**: the
+> 2026-08-14 narrowing probe shows *no* degradation of this formula reproduces
+> the legacy pair. The literals agree with the convention to ~4 sig figs but
+> are a **different computation**, not a sloppy evaluation of this one. The
+> convention-identification above stands; only the "sloppy eval" mechanism was
+> wrong.
 
 **The pair is internally inconsistent** by 7.3e-5 against the exact relation
 `V₃ = −2·Re V₁ − 3π²/2`, so the two were computed *independently*; neither was
