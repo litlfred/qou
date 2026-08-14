@@ -54,130 +54,132 @@ def rel(a, b):
     return abs(a - b) / abs(b)
 
 
-# ---------------------------------------------------------------- DEFECT 1
-print("=" * 72)
-print("DEFECT 1 — `q*` / `h*` / `ũ(q*)` name two different points in KC21 vs KC22")
-print("=" * 72)
-
-# KC21's q*: the S = 0 point, from the k=31 re-pin witness.
-repin = load("qbeta-c3-qstar-k31-repin.witness.json")
-blob = json.dumps(repin)
+# KC22's q*: the Q_b zero — the degree-12 factor of the Δ_net numerator, as
+# recorded in the 2026-08-09 correction audit.  Coefficients q^12 … q^0.
+POLY = [1, 2, -4, -8, 6, 16, -10, -16, 6, 8, -4, -2, 1]
 
 
-def dig(key):
-    """Pull a scalar string field by key from anywhere in the witness."""
-    import re
-
-    m = re.search(r'"%s"\s*:\s*(?:\{\s*"value"\s*:\s*)?"([-0-9.eE+]+)"' % key, blob)
-    assert m, f"{key} not found"
-    return mpf(m.group(1))
-
-
-q_star_S0 = dig("qstar")
-h_star_S0 = dig("h_qstar")
-u_star_S0 = dig("utilde_qstar")
-
-# KC22's q*: the Q_b zero (degree-12 factor of the Δ_net numerator).  Recomputed
-# here from the polynomial recorded in the 2026-08-09 correction audit, so the
-# two numbers are derived independently rather than both quoted.
-POLY = [1, 2, -4, -8, 6, 16, -10, -16, 6, 8, -4, -2, 1]  # q^12 ... q^0
-
-
-def p(x):
+def deg12(x):
     acc = mpf(0)
     for c in POLY:
         acc = acc * x + c
     return acc
 
 
-q_star_Qb = mp.findroot(p, mpf("1.49"))
-h_star_Qb = q_star_Qb - 1 / q_star_Qb
-rho_KC22 = mpf("0.14279999664468968890572088577932032058109273315046")
+def defect_1_glyph_collision():
+    """KC21 and KC22 use `q*`, `h*`, `ũ(q*)` for two different points."""
+    print("=" * 72)
+    print("DEFECT 1 — `q*` / `h*` / `ũ(q*)` name two different points in KC21 vs KC22")
+    print("=" * 72)
 
-assert abs(p(q_star_Qb)) < mpf("1e-30"), "degree-12 root did not converge"
-assert q_star_Qb > 1, "expected the real root > 1"
-assert rel(h_star_Qb, mpf("0.818706471352")) < mpf("1e-11"), "h* mismatch vs KC22"
+    # KC21's q*: the S = 0 point, read by stable path from the k=31 re-pin witness.
+    repin = load("qbeta-c3-qstar-k31-repin.witness.json")["data"]
+    q_star_S0 = mpf(repin["qstar"]["value"])
+    h_star_S0 = mpf(repin["carrier_saturation"]["h_qstar"])
+    u_star_S0 = mpf(repin["carrier_saturation"]["utilde_qstar"])
 
-print(f"  KC21  q* (S = 0 point)      = {mp.nstr(q_star_S0, 22)}")
-print(f"  KC22  q* (Q_b degree-12)    = {mp.nstr(q_star_Qb, 22)}")
-print(f"        ratio                 = {mp.nstr(q_star_Qb / q_star_S0, 8)}")
-print()
-print(f"  KC21  h* = q*−1/q*          = {mp.nstr(h_star_S0, 14)}")
-print(f"  KC22  h* = q*−1/q*          = {mp.nstr(h_star_Qb, 14)}")
-print(f"        ratio                 = {mp.nstr(h_star_Qb / h_star_S0, 8)}")
-print()
-print(f"  KC21  ũ(q*)                 = {mp.nstr(u_star_S0, 14)}")
-print(f"  KC22  ũ(q*) = ρ             = {mp.nstr(rho_KC22, 14)}")
-print(f"        ratio                 = {mp.nstr(rho_KC22 / u_star_S0, 8)}")
+    # KC22's q*: recomputed from the polynomial rather than quoted, so the two
+    # numbers are independently derived.
+    q_star_Qb = mp.findroot(deg12, mpf("1.49"))
+    h_star_Qb = q_star_Qb - 1 / q_star_Qb
+    rho_KC22 = mpf("0.14279999664468968890572088577932032058109273315046")
 
-assert rel(q_star_S0, q_star_Qb) > mpf("0.25"), "expected the two q* to differ by >25%"
-assert h_star_Qb / h_star_S0 > 3, "expected h* to differ by >3x"
-assert rho_KC22 / u_star_S0 > 10, "expected ũ(q*) to differ by >10x"
-print("\n  => three glyphs, two points. Both rows must name which q* they mean.")
+    assert abs(deg12(q_star_Qb)) < mpf("1e-30"), "degree-12 root did not converge"
+    assert q_star_Qb > 1, "expected the real root > 1"
+    assert rel(h_star_Qb, mpf("0.818706471352")) < mpf("1e-11"), "h* mismatch vs KC22"
 
-# ---------------------------------------------------------------- DEFECT 2
-print()
-print("=" * 72)
-print("DEFECT 2 — the Φ_b deficit → |S| scale claim is ANCHOR-SELECTIVE")
-print("=" * 72)
+    print(f"  KC21  q* (S = 0 point)      = {mp.nstr(q_star_S0, 22)}")
+    print(f"  KC22  q* (Q_b degree-12)    = {mp.nstr(q_star_Qb, 22)}")
+    print(f"        ratio                 = {mp.nstr(q_star_Qb / q_star_S0, 8)}")
+    print()
+    print(f"  KC21  h* = q*−1/q*          = {mp.nstr(h_star_S0, 14)}")
+    print(f"  KC22  h* = q*−1/q*          = {mp.nstr(h_star_Qb, 14)}")
+    print(f"        ratio                 = {mp.nstr(h_star_Qb / h_star_S0, 8)}")
+    print()
+    print(f"  KC21  ũ(q*)                 = {mp.nstr(u_star_S0, 14)}")
+    print(f"  KC22  ũ(q*) = ρ             = {mp.nstr(rho_KC22, 14)}")
+    print(f"        ratio                 = {mp.nstr(rho_KC22 / u_star_S0, 8)}")
 
-phib = load("qbeta-c3-phib-saddle-state-integral.witness.json")
-saddle = {row["anchor"]: row for row in phib["data"]["saddle"]}
+    assert rel(q_star_S0, q_star_Qb) > mpf("0.25"), "expected the two q* to differ by >25%"
+    assert h_star_Qb / h_star_S0 > 3, "expected h* to differ by >3x"
+    assert rho_KC22 / u_star_S0 > 10, "expected ũ(q*) to differ by >10x"
+    print("\n  => three glyphs, two points. Both rows must name which q* they mean.")
 
-deficit = {k: mpf(v["vol_deficit"]) for k, v in saddle.items()}
-S_leak = {k: mpf(v["S_target"]) for k, v in saddle.items()}
+    # ũ at the S=0 point equals ũ at the substrate to 8 digits; defect 2 reuses it.
+    return u_star_S0
 
-# The registry quotes the deficit as anchor-blind. Confirm, and quantify.
-deficit_spread = rel(deficit["proton"], deficit["muon"])
-S_swing = abs(S_leak["proton"]) / abs(S_leak["muon"])
 
-print(f"  vol_deficit(proton)   = {mp.nstr(deficit['proton'], 20)}")
-print(f"  vol_deficit(muon)     = {mp.nstr(deficit['muon'], 20)}")
-print(f"  deficit spread        = {mp.nstr(deficit_spread, 4)}  (anchor-BLIND)")
-print()
-print(f"  |S_leak(muon)|        = {mp.nstr(abs(S_leak['muon']), 12)}")
-print(f"  |S_leak(proton)|      = {mp.nstr(abs(S_leak['proton']), 12)}")
-print(f"  |S_leak| swing        = {mp.nstr(S_swing, 6)}x  (anchor-DEPENDENT)")
-print()
+def defect_2_anchor_selective_scale(u0):
+    """The Φ_b deficit → |S| scale match holds at the muon only."""
+    print()
+    print("=" * 72)
+    print("DEFECT 2 — the Φ_b deficit → |S| scale claim is ANCHOR-SELECTIVE")
+    print("=" * 72)
 
-miss_mu = rel(deficit["muon"], abs(S_leak["muon"]))
-miss_p = rel(deficit["proton"], abs(S_leak["proton"]))
-print(f"  deficit vs |S_leak(muon)|    miss = {mp.nstr(miss_mu * 100, 4)} %   <- the quoted match")
-print(f"  deficit vs |S_leak(proton)|  miss = {mp.nstr(miss_p * 100, 4)} %   <- NOT quoted")
-print(f"  ratio of misses             = {mp.nstr(miss_p / miss_mu, 5)}x")
+    phib = load("qbeta-c3-phib-saddle-state-integral.witness.json")
+    saddle = {row["anchor"]: row for row in phib["data"]["saddle"]}
 
-assert deficit_spread < mpf("1e-6"), "deficit should be anchor-blind"
-assert S_swing > 4, "S_leak should swing by >4x between anchors"
-assert miss_mu < mpf("0.03"), "muon match should be within 3%"
-assert miss_p > mpf("0.7"), "proton miss should exceed 70%"
-assert miss_p / miss_mu > 20, "the two anchors should disagree by >20x"
+    deficit = {k: mpf(v["vol_deficit"]) for k, v in saddle.items()}
+    S_leak = {k: mpf(v["S_target"]) for k, v in saddle.items()}
 
-print(
-    "\n  => an anchor-BLIND deficit cannot supply an anchor-DEPENDENT scale.\n"
-    "     The match is a property of WHICH anchor is quoted, not of the geometry."
-)
+    # The registry quotes the deficit as anchor-blind. Confirm, and quantify.
+    deficit_spread = rel(deficit["proton"], deficit["muon"])
+    S_swing = abs(S_leak["proton"]) / abs(S_leak["muon"])
 
-# --------------------------------------------- how tight is 2.9%, really?
-print()
-print("-" * 72)
-print("Calibration: the substrate expansion variable ũ₀ sits INSIDE the window")
-print("-" * 72)
+    print(f"  vol_deficit(proton)   = {mp.nstr(deficit['proton'], 20)}")
+    print(f"  vol_deficit(muon)     = {mp.nstr(deficit['muon'], 20)}")
+    print(f"  deficit spread        = {mp.nstr(deficit_spread, 4)}  (anchor-BLIND)")
+    print()
+    print(f"  |S_leak(muon)|        = {mp.nstr(abs(S_leak['muon']), 12)}")
+    print(f"  |S_leak(proton)|      = {mp.nstr(abs(S_leak['proton']), 12)}")
+    print(f"  |S_leak| swing        = {mp.nstr(S_swing, 6)}x  (anchor-DEPENDENT)")
+    print()
 
-u0 = u_star_S0  # ũ at the S=0 point == ũ at the substrate to 8 digits
-print(f"  ũ₀ (ladder expansion variable) = {mp.nstr(u0, 14)}")
-print(f"  deficit vs ũ₀                  = {mp.nstr(rel(deficit['muon'], u0) * 100, 4)} %")
-print(f"  deficit vs |S_leak(muon)|      = {mp.nstr(miss_mu * 100, 4)} %")
-print(
-    f"  => the deficit is {mp.nstr(miss_mu / rel(deficit['muon'], u0), 4)}x CLOSER to ũ₀ than to |S(muon)|."
-)
-assert rel(deficit["muon"], u0) < miss_mu, "expected ũ₀ to be the closer of the two"
-print(
-    "     ũ₀ carries no 4₁-volume content, so at a 2.9 % tolerance the match\n"
-    "     does not discriminate a geometric reading from a numerological one."
-)
+    miss_mu = rel(deficit["muon"], abs(S_leak["muon"]))
+    miss_p = rel(deficit["proton"], abs(S_leak["proton"]))
+    print(f"  deficit vs |S_leak(muon)|    miss = {mp.nstr(miss_mu * 100, 4)} %   <- the quoted match")
+    print(f"  deficit vs |S_leak(proton)|  miss = {mp.nstr(miss_p * 100, 4)} %   <- NOT quoted")
+    print(f"  ratio of misses             = {mp.nstr(miss_p / miss_mu, 5)}x")
 
-print()
-print("=" * 72)
-print("ALL CHECKS PASSED — both defects confirmed from committed witnesses.")
-print("Scope-(a). Nothing refuted; nothing wired; no fit; no witness written.")
-print("=" * 72)
+    assert deficit_spread < mpf("1e-6"), "deficit should be anchor-blind"
+    assert S_swing > 4, "S_leak should swing by >4x between anchors"
+    assert miss_mu < mpf("0.03"), "muon match should be within 3%"
+    assert miss_p > mpf("0.7"), "proton miss should exceed 70%"
+    assert miss_p / miss_mu > 20, "the two anchors should disagree by >20x"
+
+    print(
+        "\n  => an anchor-BLIND deficit cannot supply an anchor-DEPENDENT scale.\n"
+        "     The match is a property of WHICH anchor is quoted, not of the geometry."
+    )
+
+    # ------------------------------------------ how tight is 2.9%, really?
+    print()
+    print("-" * 72)
+    print("Calibration: the substrate expansion variable ũ₀ sits INSIDE the window")
+    print("-" * 72)
+
+    miss_u0 = rel(deficit["muon"], u0)
+    print(f"  ũ₀ (ladder expansion variable) = {mp.nstr(u0, 14)}")
+    print(f"  deficit vs ũ₀                  = {mp.nstr(miss_u0 * 100, 4)} %")
+    print(f"  deficit vs |S_leak(muon)|      = {mp.nstr(miss_mu * 100, 4)} %")
+    print(f"  => the deficit is {mp.nstr(miss_mu / miss_u0, 4)}x CLOSER to ũ₀ than to |S(muon)|.")
+    assert miss_u0 < miss_mu, "expected ũ₀ to be the closer of the two"
+    print(
+        "     ũ₀ carries no 4₁-volume content, so at a 2.9 % tolerance the match\n"
+        "     does not discriminate a geometric reading from a numerological one."
+    )
+
+
+def main():
+    u0 = defect_1_glyph_collision()
+    defect_2_anchor_selective_scale(u0)
+    print()
+    print("=" * 72)
+    print("ALL CHECKS PASSED — both defects confirmed from committed witnesses.")
+    print("Scope-(a). Nothing refuted; nothing wired; no fit; no witness written.")
+    print("=" * 72)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

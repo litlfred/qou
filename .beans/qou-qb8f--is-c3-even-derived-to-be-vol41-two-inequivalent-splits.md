@@ -229,3 +229,54 @@ crosses it anyway and KC21 inherits the vocabulary.
 Status: this bean's question is ANSWERED as far as I can take it. (H1) exact =
 open; (H1) motivated = yes. Remaining actionable item is the collision, which is
 a documentation/registry matter for the c_3 owners.
+
+
+---
+
+# *** (c) ANSWERED (2026-08-14, PR #5022) — the registry pointer is placed ***
+
+This bean left item (c) ("should the registry's c_3 row carry a pointer either
+way?") to the registry maintainers. Done. `ck-dk-canonical-registry.md` now
+carries **§9c**, stating the consolidated (H1) verdict:
+
+  (H1) c_3^even = -Vol(4_1) is NOT derived. Geometrically MOTIVATED (Phi_b
+  saddle) but muon-only. The bar-split is not determinable from anchor data at
+  all. Neither named split is a derivation -- S_leak := c_3 + Vol(4_1) and
+  S := -c_3/kappa_(2,1) are both DEFINITIONS. c_3's bar-parity is UNDETERMINED
+  by the present corpus.
+
+Also re-scoped §3's phrase "the -Vol(4_1) piece is the solved bar-even part" ->
+**motivated, not solved** (it contradicted this bean's own three-round verdict
+while sitting in the same bullet that already records the anchor-blind objection
+for the keystone form).
+
+## NEW FINDING that sharpens this bean's second correction
+
+The second correction withdrew "(H1) is UNDERIVED" on the strength of the Phi_b
+volume deficit supplying the |S| scale "fit-free and anchor-blind", noting
+"~2.9% SCALE agreement". Measured (`kc21_kc22_glyph_and_anchor_robustness_check.py`):
+
+  - the deficit IS anchor-blind (spread 2.2e-7); |S_leak| SWINGS 4.075x.
+    An anchor-blind quantity cannot supply an anchor-dependent scale, so the
+    match holds at MUON (2.896%) and misses PROTON (76.17%) -- 26.3x apart.
+    KC21 quotes only the muon. This is the same objection the corpus already
+    accepts against h*D(u~); it was never applied to the deficit.
+  - the 2.9% window is not discriminating: the deficit is 5.32x CLOSER to the
+    ladder's own expansion variable u~_0 (0.544%) than to |S(muon)|. u~_0 carries
+    no 4_1-volume content.
+
+So "(H1) motivated = yes" stands only in the weak sense; the geometric backing
+does not survive the anchor test. The verdict in §9c is worded accordingly.
+The producing witness is honest -- it records both anchors and says
+"|S(muon)|" explicitly; the generalisation happened in the KC21 summary.
+
+## SECOND DEFECT found while placing the pointer (qou-kp9f)
+
+KC21 and KC22 are adjacent and both wrote `q*`, `h*`, `u~(q*)` unqualified for
+TWO DIFFERENT points (1.10998 vs 1.48989; ratios 1.34x / 3.92x / 15.1x). Fixed:
+both rows subscript (q*_S vs q*_rho) and §9a carries the disambiguation table.
+
+Audit: docs/audits/2026-08-14-c3-registry-glyph-collision-and-anchor-selective-scale.md
+
+Scope-(a). No Lean edited; c_3 tier unchanged; nothing wired; no fit.
+Remaining open: the bar-parity itself -> qou-qb8g.
