@@ -27,7 +27,7 @@ remaining work on this bean.
   — banner + two clauses struck. Its exact linear algebra is untouched and
   correct; only the "tightens the resurgent reading" interpretation is withdrawn.
 
-### REMAINING — three producers, and two committed witnesses that assert a refuted verdict
+### REMAINING — three producers, and three committed witnesses in three different states
 
 | file | offending content |
 |---|---|
@@ -35,10 +35,31 @@ remaining work on this bean.
 | `computations/qbeta/qbeta_odd_channel_stokes_borel_probe.py` | whole premise — "characterize the **divergence class** of the bar-ODD Q_β D-ladder"; witness description asserts a drifting Gevrey order |
 | `computations/qbeta/qbeta_dladder_coupled_qsqrt3_recurrence_probe.py` | docstring: NEGATIVE "⇒ … (corroborates the q-Gevrey/**resurgent** reading)" — the invalid step verbatim |
 
-`qbeta-dladder-generating-function-structure.witness.json` currently records
-`data.super_exponentially_divergent = true` and a `verdict` string asserting the
-κ-tower family membership and the "finite-n shadow" reading. **This is a
-committed witness carrying a refuted conclusion.**
+**All three have committed witnesses** (verified via `scriptFile` match +
+`git ls-files`), in **three different states** — do not treat them alike:
+
+| witness | state | work needed |
+|---|---|---|
+| `qbeta-dladder-generating-function-structure.witness.json` | **refuted verdict** — `data.super_exponentially_divergent = true`, `verdict` asserts κ-tower family + "finite-n shadow" | re-scope the boolean's meaning + verdict text, re-run |
+| `qbeta-odd-channel-stokes-borel.witness.json` | **refuted framing, corroborating data** — see below | mostly relabelling |
+| `qbeta-dladder-coupled-qsqrt3-recurrence.witness.json` | **verdict CORRECT** (`NO coupled ℚ(√3) P-recurrence up to (r≤4, D≤4)`); only the `description` gloss carries the invalid step | drop one clause, re-run |
+
+**The middle one is the interesting case.** Its heading calls it the odd-channel
+*"divergence class"*, but its own numbers point the other way:
+`data.gevrey_order_drifts_down = true` (C falls `~0.08 → 0.05` as the tail
+lengthens — the apparent divergence *weakens* with more terms); the description
+already says *"NOT q-Gevrey-1 in any base > 1"*; and the Borel–Leroy pole runs
+`0.147 → 0.165 → 0.249` for `s = 0.02 → 0.10 → 0.30`, so the small-`s` end is
+**0.147**, within ≈ 3 % of `ρ = 0.142799996644689…` and trending toward it.
+
+Scope-(a): that is *consistency with* the 2026-08-09 radius, **not** a
+derivation of `ρ` from Borel–Leroy. But it means the data was pointing at the
+true radius while the framing called the channel divergent — so re-scoping turns
+those numbers from contradicted into supporting, and no measurement is lost.
+
+> **Count correction.** An earlier revision of this bean said *"two committed
+> witnesses"* and named one file. Wrong on both: three, in three states. Caught
+> in review on PR #5039.
 
 ### The fix is re-scoping at the producer, NOT a re-run
 
