@@ -155,4 +155,79 @@ theorem mass_categorical_descent_unconstrained_false :
               B := 0, B_desc := 1, B_trans := 0, B_BW := 0 }
   norm_num at this
 
+section OperatorChannels
+
+open scoped Classical
+
+/-- **Tranche 2 of the route-(b) formalization** (bean `qou-x3gr`):
+    centrality becomes *semantic*.  Each channel now carries an
+    **operator** in a ring `A` (corpus: the block Casimir in `H_n(q)`
+    for the Wedderburn channels; the divisor-local operator for the
+    transient ones), and centrality is **derived** as membership in the
+    centre of `A` — no predicate field.  The tranche-1 structure is
+    recovered as the shadow `toChannels` below. -/
+class MassDescentOperatorChannels (A : Type*) [Ring A] where
+  /-- The channel index (corpus: partitions + divisor sites). -/
+  Channel : Type
+  /-- Finitely many channels. -/
+  [chFin : Fintype Channel]
+  /-- The channel's operator (corpus: block Casimir / divisor-local). -/
+  op : Channel → A
+  /-- Per-channel binding contribution. -/
+  contrib : Channel → ℝ
+
+attribute [instance] MassDescentOperatorChannels.chFin
+
+namespace MassDescentOperatorChannels
+
+variable (A : Type*) [Ring A] [ch : MassDescentOperatorChannels A]
+
+/-- Centrality, **derived from the algebra**: the channel's operator
+    lies in the centre `Z(A)`.  In the corpus instantiation
+    `A = H_n(q)` this is exactly "the Casimir lies in `Z(H_n(q))`" —
+    the defining property of the descended component, now a statement
+    about `A` rather than a field of the class. -/
+def IsCentral (c : ch.Channel) : Prop := ch.op c ∈ Set.center A
+
+/-- **The Casimir property is a theorem**: a central channel's operator
+    commutes with every element of the algebra. -/
+theorem isCentral_commutes {c : ch.Channel} (h : IsCentral A c) (a : A) :
+    ch.op c * a = a * ch.op c :=
+  (Set.mem_center_iff.mp h).comm a
+
+/-- A central channel's operator commutes with **every** channel
+    operator — central or not (only `c`'s centrality is needed).  In
+    particular the descended sector is commutative, and it also
+    commutes with the transient sector. -/
+theorem isCentral_pair_comm {c c' : ch.Channel} (h : IsCentral A c) :
+    ch.op c * ch.op c' = ch.op c' * ch.op c :=
+  (Set.mem_center_iff.mp h).comm (ch.op c')
+
+/-- **Bridge to tranche 1**: an operator-channel structure induces the
+    predicate-based channel structure, with `isCentral` specialised to
+    centre membership (decidability supplied classically — in the
+    finite Wedderburn case it is a finite check). -/
+noncomputable def toChannels : MassDescentChannels :=
+  { Channel := ch.Channel
+    chFin := ch.chFin
+    contrib := ch.contrib
+    isCentral := IsCentral A
+    centralDec := Classical.decPred _ }
+
+/-- **The descent decomposition for operator channels**: with
+    centrality derived from centre membership, the additive identity
+    `B = B^desc + B^trans` holds — inherited from the tranche-1
+    theorem through the bridge.  Sorry-free end to end: the only
+    remaining open item is the corpus *instance*
+    (`A = H_n(q)`, `op λ = z_λ`, `contrib λ = m_e·y_λ χ^λ Δ_λ`). -/
+theorem descent_decomposition_operators :
+    MassDescentChannels.B_total (ch := toChannels A)
+      = MassDescentChannels.B_desc (ch := toChannels A)
+        + MassDescentChannels.B_trans (ch := toChannels A) :=
+  MassDescentChannels.descent_decomposition (ch := toChannels A)
+
+end MassDescentOperatorChannels
+
+end OperatorChannels
+
 end QOU.ParticleInteractions

@@ -17,3 +17,14 @@ SF1 landed: unforced DN q-shell (k_n=[n]_q) shows a TRANSITION — eps≥1e-3 de
 SF2 DISCRIMINATOR DECIDED: at T=1.5·t_visc the q-system tracks the classical same-ν control (R=0.565/0.947/0.995 for eps=1e-1/2/3, →1 as eps→0). SF1's small-eps sustainment was the viscous timescale, NOT q-self-forcing. The unforced finite core decays at every eps on its own clock ⇒ the sustained-forcing blow-up channel requires EXTERNAL or infinite-dimensional sustainment. Hard core sharpened again: no finite unforced structure in the program blows up, in-model. Remaining: infinite-dim sustainment analysis / PDE-uniformity / large-data global.
 
 SF3 DECIDED: N-sweep (8..24) at eps=1e-2 — survival S_q DECREASES monotonically with N (1.35e-8→1.14e-9), R(N)~0.9. The infinite-dimensional escape does NOT open at the shell-model level; unforced decay is N-uniform (improves with N). In-model conclusion: the ONLY route to the sustained channel is EXTERNAL FORCING — but the Clay problem is unforced, so in-model the program now points to global regularity for all unforced channels examined. Remaining honest gaps: shell-model fidelity (DN is a caricature of full NS transfer — no backscatter/nonlocal interactions), PDE-uniformity, large-data global proof.
+
+## 2026-08-14: millennium-core opening brick (low_mode_block_global.lean)
+
+Large-data global persistence AT THE FIXED BLOCK is now proved
+(no smallness hypothesis): energy monotonicity + finite-block norm
+equivalence give Omega_n <= kmax^2 * E_0 forever; plus the discrete
+Leray inequality delta*nu*sum Omega_i <= E_0. The honest millennium
+remainder is sharpened to: UNIFORMITY of these bounds as the block
+widens (kmax = [m]_{1+eps}, m ~ 1/eps) into the classical limit —
+the flux through the receding damping threshold. Nothing resolves that;
+it is the epic's remaining open item, now precisely localized.
