@@ -226,3 +226,42 @@ This is the third time in this bean's history that measuring the artifact
 instead of the property produced a wrong number — `--plan` stdout, then the
 read-set-vs-content-test confusion, now read-vs-write in a source grep.
 Recorded rather than quietly fixed, because the pattern is the finding.
+
+## The detector warning was actioned; the root is clean (verified 2026-08-14)
+
+[`docs/audits/2026-08-10-convention-d-ylambda-root-and-derivation.md` §2](../docs/audits/2026-08-10-convention-d-ylambda-root-and-derivation.md)
+warns: *"The same blindness should be assumed in
+`scripts/convention-c-witness-audit.py` — the 'selftest 7/7' canonical
+detector — until checked."* Checked: it **has** been fixed.
+`scan_doc_symbolic` now carries two tests (the `SQRT_Q` spelling marker and
+the defining 3+-row-nonzero-expression property) and its docstring documents
+exactly that blind spot. So the 13+1 figure is not an undercount of the kind
+the audit doc feared.
+
+The cascade root is migrated. All **223** three-plus-row entries in
+`y-lambda-wenzl-bridge-symbolic-witness.json` are now exactly `0` — convention
+D's defining property (Schur-Weyl on a two-dimensional fibre). Verified by
+reading the file, not by its absence from the detector's output.
+
+## The 5 roots are four DIFFERENT kinds of work, not one sweep
+
+Classifying by what each producer is *for*, before editing any of them — the
+bean already records a case (`weight-factor-audit` C8) where a producer
+deliberately evaluates the C formula and "fixing" it would be wrong:
+
+| producer | kind | what closing it means |
+|---|---|---|
+| `alpha_k_jones_markov_h12.py` | **production weights** | recompute y_λ over 77 partitions of 12 under D; most vanish |
+| `tr_m_q_hecke_seminormal.py` | **production weights** | canonical Wenzl Schur-principal weight, D form |
+| `probe_1b_li6_orthogonality.py` | **premise dissolves** | the probe compares y_λ magnitudes across PSD-dominant many-row families — (3,3,3,3,2,2,2), (5,5,5,3), (4,4,4,3,3). Under D every one is exactly 0, so the orthogonality question it asks does not survive the convention change. The honest outcome is to record that, **not** to refresh numbers. |
+| `y_lambda_macdonald_telescope.py` | **symbolic re-derivation** | `z = q**3/(q**2+1)` with a docstring reading `z = 1/(q^{1/2}+q^{-1/2})`; the hook-content telescope is derived in `Q = q²` with Wenzl level `X = Q^r`. Needs re-derivation under D, not a numeric edit. |
+| `derived_chi_catalogue_build.py` | **unclear — check first** | its flagged entries are keyed `y_lambda_at_zero = 1`, not `y_lambda`. That may be a limit value rather than a weight, in which case the detector is over-reporting on this file by design (it over-reports rather than under-reports, per its own docstring). |
+
+So "fix 5 root producers" is really: 2 weight recomputations, 1 negative
+result to record, 1 symbolic re-derivation, and 1 detector-triage. Treating
+them as one mechanical sweep would repeat this bean's founding error at a
+smaller scale.
+
+**Coordinate before editing.** PR #4928's merge message states both sides had
+already run convention-C campaigns in parallel and converged on the same three
+defects. Check for an in-flight sibling on these five before starting.

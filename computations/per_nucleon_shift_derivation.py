@@ -339,7 +339,14 @@ for (Z, N), shift in EMPIRICAL_SHIFT.items():
         and crosses[i][1] == crosses[i+1][1]
         and crosses[i][1] in ('sigma', 'sigma_inv')
     )
-    avg = sum(1 for g, t in crosses if t == 'averaged')
+    # The averaged FAMILY, not the colour-blind label alone. `t == 'averaged'`
+    # silently dropped the one `averaged_weighted` crossing per word once the
+    # classifier split the label — a pre-existing undercount, not introduced
+    # here: the committed witness's counts (5, 7, ...) predate the split, and
+    # a fresh run under the equality test produced (4, 6, ...) with
+    # predicted_avg_cancel and implied_sigma_sq_cancel moving with them.
+    # Counting the family restores the committed values (qou-8zjd).
+    avg = sum(1 for g, t in crosses if t.startswith('averaged'))
     cancel = gen_counts[(Z, N)]["cancellation"]
     print(f"  {ATOM_NAMES[(Z, N)]:<6} {len(crosses):>4} {adj:>7} {avg:>4}  "
           f"cancel = {cancel}, avg_part = {0.5*avg}, σ²_part = {cancel - 0.5*avg}")

@@ -80,7 +80,12 @@ def main() -> int:
     inner_ops = [(g, t) for (g, t) in ops if g <= 4]
     iface_ops = [(g, t) for (g, t) in ops if g == 5]
     outer_ops = [(g, t) for (g, t) in ops if g >= 6]
-    assert len(iface_ops) == 1 and iface_ops[0][1] == "averaged", \
+    # The averaged FAMILY. The ³He p-n interface at gen 5 is the COLOUR-
+    # WEIGHTED one, `averaged_weighted`, so `== "averaged"` FAILS here. The
+    # `ops_to_factors` dispatch above was repaired without this line, leaving
+    # the file broken after being fixed — found by sweeping for the equality
+    # pattern rather than by re-reading the file (qou-8zjd).
+    assert len(iface_ops) == 1 and iface_ops[0][1].startswith("averaged"), \
         f"³He interface must be pn-averaged, got {iface_ops}"
     inner_fac = ops_to_factors(inner_ops, h)            # H_6 gens 0..4
     outer_fac = ops_to_factors(outer_ops, h, gen_shift=-6)  # H_3 gens 0..1
