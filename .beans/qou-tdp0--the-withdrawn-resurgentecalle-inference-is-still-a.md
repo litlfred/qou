@@ -56,14 +56,50 @@ exclusion without a proved invariant.
    citing the 2026-08-09 correction; (b) **Écalle/Borel as technique** →
    leave; (c) ambiguous → leave and note.
    Line 1055-1058 is (a) and is the priority.
-2. **Then** check whether any open Écalle bean is *motivated* by the withdrawn
-   inference rather than by the technique: `qou-a1bi`, `qou-b00b`, `qou-dri7`,
-   `qou-xuc4`, `qou-jjka`, `qou-vkg5`, `qou-r2nh`, `qou-u7kc`. This is a
-   **question, not a verdict** — a bean pursuing acceleration on the *closed
-   form* is unaffected. Record findings on each bean; do not mass-close.
+2. ~~**Then** check whether any open Écalle bean is *motivated* by the withdrawn
+   inference rather than by the technique.~~ **DONE 2026-08-14** — see below.
 3. Grep wider (`docs/`, `content/`) for the same restatement — the pattern is
    a correction applied to a detail row and not to its summaries, so other
    summary sites are likely.
+
+## Step 2 RESULT (2026-08-14) — triaged; 4 were never live, 3 scrapped, 1 unaffected
+
+**Correction to this bean's own framing.** It implied eight open beans. Four
+were **not open**: `qou-a1bi` (scrapped), `qou-r2nh` (scrapped), `qou-jjka`
+(completed), `qou-u7kc` (completed). Only four had live status, and seven of the
+eight had **completely empty bodies** — frontmatter only.
+
+| bean | disposition |
+|---|---|
+| `qou-a1bi`, `qou-r2nh` | already **scrapped** — no action |
+| `qou-jjka`, `qou-u7kc` | already **completed** — no action |
+| `qou-b00b`, `qou-xuc4` | **consolidated into `qou-dri7`**, scrapped |
+| `qou-dri7` | **scrapped** — carrier; holds the full reasoning |
+| `qou-vkg5` | **LEFT OPEN — unaffected** |
+
+**The three were one task under three titles**, all created 2026-07-17, all
+empty: q-Borel/Écalle acceleration + median-Watson resummation of the bar-odd
+D-ladder. The titles alone settle it — acceleration, median/Watson and
+Borel–Leroy all exist to sum a **divergent** series, and the ladder is proved
+**convergent** (`ρ = 0.1428`, `κ = 0`). KC22 already supplies the closed form and
+the parameter-free asymptotic that the "estimator gate" was to have measured.
+
+**Scope-(a):** the *stated* task has no target. No invariant is named excluding
+q-Borel methods from this function — a study of the `log(1−w/ρ)` branch point
+would be a different task and needs a new bean stating that motivation.
+
+**The distinction that keeps `qou-vkg5` alive** — two objects, one word:
+
+| | object | regularity | resurgence applies? |
+|---|---|---|---|
+| `qou-dri7` et al. | bar-odd D-ladder `D(ũ)` | **convergent**, `ρ = 0.1428` | no |
+| `qou-vkg5` | C1 at `∞` | **irregular**, slope `½` | **yes** |
+
+`qou-vkg5` is live and productive (sorry-free Lean; `0`- and `∞`-side exponents
+computed and cross-checked via `det A`; weight lattice pinned to `q^{½ℤ}` up to
+the deck sign). Nothing here touches it. The failure mode this whole arc keeps
+hitting is one name for two objects — cf. the KC21/KC22 `q*` collision (PR #5022
+§9a); this is the same shape at the level of a *technique name*.
 
 ## Why it matters
 
