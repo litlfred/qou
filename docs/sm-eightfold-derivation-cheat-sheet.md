@@ -189,14 +189,17 @@ isospin doublet. Blocked behind §4-A and §4-C.
 >    observable — which also makes α_EM a **second independent witness for the
 >    proton pin** (chosen on precision grounds in 2026-05-28, prior to and
 >    independently of α_EM — so this is not anchor-shopping).
-> 3. **Two stale texts, in opposite directions.**
+> 3. **Appendix currency — FIXED 2026-08-14 (`qou-fmyd`).**
 >    [`sm-params-gauge-couplings.md`](../content/quantum-observable-universe/appendix-standard-model/sm-params-gauge-couplings.md)
->    states no number at all (under-reports); the witness's own assertion
->    strings still read *"~80 ppb >> target"*, written against the **muon**
->    anchor and stale under the proton default (over-reports the miss). Bean
->    `qou-fmyd`.
+>    now states the form, both anchored residuals, and all three
+>    undischarged qualifications. **Still open:** the witness's own assertion
+>    `source` strings read *"~80 ppb >> target"*, written against the **muon**
+>    anchor and stale under the 2026-08-07 proton default — a producer edit,
+>    not a block edit.
 
-> **`sin²θ_W` — two unreconciled numbers live in the corpus.** Bean `qou-s2pl`.
+> **`sin²θ_W` — the two numbers are now reconciled in-paper (`qou-s2pl`, 2026-08-14).**
+> They measure different constructions, so neither refutes the other — but the
+> smaller one is **not** an accuracy result, and the block now says so.
 > - [`weinberg-angle-categorical.md`](../content/quantum-observable-universe/nuclear-interactions/weinberg-angle-categorical.md)
 >   evaluates the Hecke-eigenvalue ratio at the pure pattern and gets
 >   `cot θ_W ≈ 0.6594` against the CODATA `1.823` — a **64 % miss**, and says so.
@@ -204,12 +207,16 @@ isospin doublet. Blocked behind §4-A and §4-C.
 >   claims the `(3,2,1)` eigenvalue-ratio gap closes to **0.127 %** via a factor
 >   `q^(1/h_corner)` with `h_corner = 5`, "no fit constants introduced".
 >
-> **Neither document cites the other.** Before quoting the 0.127 %, note that
-> selecting one hook of `(3,2,1)` as an exponent is a *discrete* choice from a
-> small menu — the anti-fit discipline scores discrete selection, not only
-> continuous tuning. The appendix tiers the parameter `conjectural` and cites
-> only the block, which is the safe reading. **Do not cite 0.127 % as a
-> framework accuracy result until the two are reconciled.**
+> **Reconciled in-paper 2026-08-14.** They measure different constructions, so
+> neither refutes the other. **Do not cite 0.127 % as a framework accuracy
+> result:** the producing witness declines to support it. The residual factor
+> was the **closest of 74 enumerated candidates**, the best missing the required
+> `1.02239` by `1.3×10⁻³`, and the witness records
+> `ansatz_supported_at_1e_3 = false`, `ansatz_falsified_at_1e_2 = false`,
+> `path_c_status = "inconclusive"`. The surviving exponent *is* expressible as a
+> corner hook of `(3,2,1)`, which makes it structurally **available** — but
+> availability after a proximity search is not derivation, and the sweep ranged
+> well beyond the hook set `{1,3,5}`. Tier stays `conjectural`.
 >
 > The tractable lever is #4597: the **Milnor triple linking `μ̄₁₂₃`** is the
 > writhe-independent second invariant and separates the two `U(1)`s (Lean,
@@ -393,7 +400,7 @@ findings was `completed` as of 2026-08-14.**
 | G3 | Three generations tiered *"partially derived"* from `{3,5,7,9} \ {9}` | Three is obtained by **removing one element from a four-element set**, on a criterion (continuant harmonicity) unrelated to generation counting. Any criterion eliminating exactly one of four yields "three". The row's own status says the physical bridge is open. Accurate tier: **`open`, with an adjacent proved divisibility lemma** | `qou-a5os` |
 | G4 | `a5` orbital fracture *"falsifiable in principle"* | Unaddressed against **exact free-atom `f`-shell degeneracy**: free-atom states are labelled by `J` with `2J+1` exact by rotational invariance, and observed lifting is spin–orbit in a `J` pattern, not a `3' ⊕ 4` seam. Either already in tension with spectra, or below all resolution — in which case *untestable*, not falsifiable. (Referee objection, not a computed bound.) Also: this block and `cal2-higgs-knot-coupling` have **no `.qa.json` sidecar**, so they are invisible to every per-block checker | `qou-cy2h` |
 | G5 | *"GMN proved for all six quarks"* | Collapses to **two** distinct arithmetic rows — see §3.2 | `qou-8z5j` |
-| G6 | Citing the Weinberg **0.127 %** as an accuracy result | Unreconciled with the block's own 64 % miss; the `h_corner = 5` exponent is a discrete selection. See §3.3 | `qou-s2pl` |
+| G6 | Citing the Weinberg **0.127 %** as an accuracy result | **Still a live guardrail** — but now stated in-paper (2026-08-14). It is the residual after picking the best of **74** swept candidates, and the witness itself records the ansatz as neither supported at `10⁻³` nor falsified at `10⁻²` (`path_c_status: inconclusive`). See §3.3 | `qou-s2pl` ✅ |
 | G7 | Quoting the 2026-08-08 audit's *"1 derived"* as a corpus figure | It is a **two-chapter** figure. See §1 | — |
 | G8 | Citing colour-row proofs at `qou:QOU.StandardModel.ColourStabilizerAction` | The proofs are real but live in `QOU/MathlibExt/Octonion*` (9-module cone, verified `ok=9, err=0`). A reader following the `lean.ref` finds none of them | — |
 
@@ -636,13 +643,13 @@ render-QA gate run.
 *Detangle impact: none. No `uses[]`, `kind`, `label` or manifest change.*
 
 **Phase 2 — Close the three currency gaps.** Also content-only:
-- `sm-params-gauge-couplings` gains the α_EM ladder number with all three
-  cautions (`qou-fmyd`);
+- ~~`sm-params-gauge-couplings` gains the α_EM ladder number~~ **done
+  2026-08-14** with all three cautions (`qou-fmyd`);
 - the α_EM witness's muon-anchored assertion strings are re-run under the
   proton default;
-- the Weinberg 0.127 % / 64 % reconciliation is stated in one place — either
-  the block cites the audit and scores the `h_corner` selection, or the audit
-  is marked superseded (`qou-s2pl`).
+- ~~the Weinberg 0.127 % / 64 % reconciliation~~ **done 2026-08-14** — the block
+  now scores the 74-candidate selection and cites the witness's own
+  inconclusive verdict (`qou-s2pl`).
 *Detangle impact: none. One witness re-run (long-compute logging discipline).*
 
 **Phase 3 — Build the SM reference surface.** *This is the consolidation.*
