@@ -37,10 +37,19 @@ any theorem in SLeakZeroCrossing.lean (all generic + hypothesis-carrying).
 
 import json
 import pathlib
+import sys
 
 from mpmath import mp, mpf
 
 mp.dps = 40
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from qbeta_utils import substrate_ladder_quantities  # noqa: E402
+
+
+def utilde(q):
+    """ũ = q·b·ℏ_q² (= q·u), matching `utilde` in the k=31 re-pin probe."""
+    return q * substrate_ladder_quantities(q)["u"]
 
 HERE = pathlib.Path(__file__).resolve().parent
 
@@ -82,11 +91,20 @@ def defect_1_glyph_collision():
     # numbers are independently derived.
     q_star_Qb = mp.findroot(deg12, mpf("1.49"))
     h_star_Qb = q_star_Qb - 1 / q_star_Qb
-    rho_KC22 = mpf("0.14279999664468968890572088577932032058109273315046")
+    # ρ is DERIVED from the recomputed root, not quoted: the registry's KC22
+    # claim is precisely `ρ = ũ(q*_ρ)`, so deriving it here tests that identity
+    # instead of assuming it.  Both KC22 numbers now come from the polynomial.
+    rho_KC22 = utilde(q_star_Qb)
+    RHO_PUBLISHED = mpf("0.14279999664468968890572088577932032058109273315046")
 
     assert abs(deg12(q_star_Qb)) < mpf("1e-30"), "degree-12 root did not converge"
     assert q_star_Qb > 1, "expected the real root > 1"
     assert rel(h_star_Qb, mpf("0.818706471352")) < mpf("1e-11"), "h* mismatch vs KC22"
+    # The identity the registry asserts, now checked rather than assumed.
+    assert rel(rho_KC22, RHO_PUBLISHED) < mpf("1e-30"), (
+        f"ũ(q*_ρ) = {mp.nstr(rho_KC22, 30)} does not reproduce the published "
+        f"radius ρ = {mp.nstr(RHO_PUBLISHED, 30)} — KC22's `ρ = ũ(q*_ρ)` fails"
+    )
 
     print(f"  KC21  q* (S = 0 point)      = {mp.nstr(q_star_S0, 22)}")
     print(f"  KC22  q* (Q_b degree-12)    = {mp.nstr(q_star_Qb, 22)}")
