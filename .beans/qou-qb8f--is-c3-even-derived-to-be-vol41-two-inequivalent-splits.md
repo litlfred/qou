@@ -1,11 +1,11 @@
 ---
 # qou-qb8f
-title: 'Is c_3^even DERIVED to be -Vol(4_1)? Two inequivalent splits live in the corpus'
-status: todo
+title: Is c_3^even DERIVED to be -Vol(4_1)? Two inequivalent splits live in the corpus
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T10:45:00Z
-updated_at: 2026-08-08T10:45:00Z
+updated_at: 2026-08-14T16:13:22Z
 ---
 
 Raised (not adjudicated) from PR #4724 after retracting an S_leak-based filter.
