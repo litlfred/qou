@@ -1,4 +1,9 @@
-**Algorithm (Mass identity at $q = q_0$).**
+**Algorithm (Nucleon mass ratio at $q = q_0$).**
+
+> The name *mass identity* is deliberately not used here. It is already taken by
+> [`def:mass-identity`](#def:mass-identity), which is a different object — inertial mass as a
+> nonabelian multiplicative integral around a vortex filament. This step computes the
+> dimensionless nucleon ratio from the muon-anchored Hecke energy.
 *Evaluate the nucleon mass ratio via the muon-anchored Hecke energy — the
 form adopted here as canonical. Absolute nucleon mass in MeV is not a framework
 prediction (excised, `qou-exam`): $m_e$ sets the MeV scale by fiat, so the
@@ -61,7 +66,7 @@ predictions.*
 ### Correctness conditions
 
 1. *[`prop:mass-identity-exists`](#prop:mass-identity-exists) gives
-   existence of the mass identity in the QOU premise.*
+   existence of the nucleon mass ratio in the QOU premise.*
 2. *[`prop:mass-identity-unique`](#prop:mass-identity-unique) makes
    the identity unique modulo the calibration choice.*
 3. *[`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified)
