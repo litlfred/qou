@@ -133,7 +133,7 @@ def main():
         "description": "nu-sign structure: Descartes-Laguerre narrowing + single-real-zero "
                        "+ long-hook tail positivity for the A2/FMP mechanism.",
         "epic": "qou-x631", "attack": "qou-ogrk (A2), FMP mechanism narrowing",
-        "verdict": verdict, "per_n": rows, "runtime_s": time.time() - t0,
+        "verdict": verdict, "per_n": rows, "runtime_s": f"{time.time() - t0:.3f}",
     }
     path = ("computations/deltalambda/"
             "wlambda-covariance-epic-A2-nu-sign-structure.witness.json")

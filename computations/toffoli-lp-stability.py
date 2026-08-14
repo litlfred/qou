@@ -32,7 +32,7 @@ from mpmath import mp
 import numpy as np
 # NF_BASIS moved to pyhecke.gram (M2b inversion).
 import sys as _sys, pathlib as _pl
-_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import NF_BASIS as _PG_NF_BASIS  # noqa: E402
 
 

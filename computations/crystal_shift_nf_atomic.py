@@ -488,7 +488,7 @@ def main() -> int:
             "bridge_match": bool(bridge_shift == cf),
             "maximizer_lambda": list(res["maximizer_lambda"])
                                 if res["maximizer_lambda"] else None,
-            "compute_time_seconds": elapsed,
+            "compute_time_seconds": f"{elapsed:.3f}",
             "syt_enumeration_method": "full",
         })
 

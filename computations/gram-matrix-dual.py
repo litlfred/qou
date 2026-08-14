@@ -36,7 +36,7 @@ except ImportError:
     qi0 = mp.mpf(1) / q0; HA = q0 - qi0
 # z, NF_BASIS, NF_NAMES, TR_M moved to pyhecke.gram via M2b inversion.
 import sys as _sys, pathlib as _pl
-_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z, NF_BASIS, NF_NAMES  # noqa: E402
 
 print(f"q₀  = {q0:.10f}")

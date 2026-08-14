@@ -121,7 +121,7 @@ def main():
         "description": "A2 (TAIL) second instance: nu_{n-1} carrier reduction "
                        "(derived, exact) + sign onset n_1 = 8.",
         "epic": "qou-x631", "attack": "qou-ogrk (A2), TAIL sub-target",
-        "verdict": verdict, "per_n": rows, "runtime_s": time.time() - t0,
+        "verdict": verdict, "per_n": rows, "runtime_s": f"{time.time() - t0:.3f}",
     }
     path = ("computations/deltalambda/"
             "wlambda-covariance-epic-A2-tail-second-instance.witness.json")

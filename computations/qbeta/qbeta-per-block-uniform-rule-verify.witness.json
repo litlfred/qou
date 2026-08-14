@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:24:42.508993+00:00",
-  "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
+  "computedAt": "2026-08-11T11:02:39.614914+00:00",
+  "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
   "assertions": [
     {
       "name": "rule_normalised_y_lambda_holds",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "qbeta-per-block-uniform-rule-verify",
   "scriptFile": "qbeta_per_block_uniform_rule_verify.py",
   "scriptHash": "dbac5307d896",

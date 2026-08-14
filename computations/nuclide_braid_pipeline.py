@@ -222,7 +222,7 @@ def main() -> int:
             "max_dim_cap": args.max_dim,
             "per_partition": per_partition,
             "tr_M": total,
-            "wall_seconds": time.time() - t0,
+            "wall_seconds": f"{time.time() - t0:.3f}",
         },
     }
     out = HERE / f"nuclide-braid-{sym}.witness.json"

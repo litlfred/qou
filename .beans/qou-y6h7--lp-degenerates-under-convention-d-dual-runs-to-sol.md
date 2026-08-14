@@ -149,3 +149,101 @@ term, or a rank-deficient matrix. Not assumed either way here.
 - [ ] check `he4_stage2_ranking_seminormal_xcheck.py` likewise
 - [ ] give the pipeline a name for "live channel" so the distinction is
       expressible rather than implicit
+
+---
+
+## Second instance, from the convention-D migration (PR #4928)
+
+`rho_k_h3a_lp_dual.py` and `rho_k_h3a_refinement.py` both exit **2** on every
+run of the dependency-ordered cascade, and it is the same family of effect as
+the sentinel above — not a crash, and not something the migration broke by
+accident.
+
+`rho_k_h3a_lp_dual.py:604`:
+
+```python
+return 0 if sw_match and lp_primary["feasible"] else 2
+```
+
+with `sw_match = sw_err < mp.mpf("1e-40")` (line 341). The witness **is still
+written** (line 595, `WitnessBuilder.wrap_legacy(...).save()`) before the
+return, so this is a *gate*, not a failure to produce output — which is why
+`rho-k-h3a-lp-dual.witness.json` shows up refreshed and structurally clean while
+the producer reports non-zero.
+
+So the finding is: **under convention D a shadow-price identity that held to
+`1e-40` under convention C no longer does.** Given `y_(1^3) = 0` exactly under
+D, the zero-weight channel is degenerate and a `1e-40` cross-check on the duals
+is exactly where that degeneracy would surface first.
+
+That makes the "stop publishing a sentinel as a dual" item above load-bearing
+rather than cosmetic: while the zero-weight channel is priced at
+`1/(dim_q · 1e-15)` instead of being excluded from the program, the duals it
+produces are not the duals of the intended program, and no tolerance on them
+means anything.
+
+### Do not "fix" this by loosening the tolerance
+
+Widening `1e-40` would turn the gate green while leaving the degenerate channel
+in the program — the LP/SDP analogue of rebaselining a precision ratchet, which
+AGENTS.md forbids at the producer level for the same reason. Fix the program
+(exclude the zero-weight channel and record it as excluded), then re-run and see
+whether the identity returns.
+
+### Open question worth answering before this is closed
+
+Is the `1e-40` identity supposed to hold under D at all? It was established
+under C, where `y_(1^3) ≈ 0.0227` and every channel is live. If the correct
+convention-D program has one fewer channel, the identity may need restating
+rather than re-satisfying.
+
+---
+
+## Third instance — and now it is a class, not three bugs
+
+`rho_k_h3a_counit_canonical_integral.py:61` dies under convention D:
+
+```python
+delta = 1 / y          # counit block weight
+ZeroDivisionError
+```
+
+Same root as the other two: **convention D's defining property is that
+`y_λ = 0` exactly for `ℓ(λ) ≥ 3`**, so any code that assumes every Wedderburn
+block carries a nonzero weight breaks. Under C every block was live
+(`y_(1^3) ≈ 0.0227`), so the assumption was invisible.
+
+The three instances, all one pattern:
+
+| site | shape | outcome |
+|---|---|---|
+| `rho_k_h3a_gg_trajectory` | `1/(dim_q · max(y, 1e-15))` | sentinel `999999999999998.8` published as a dual |
+| `rho_k_h3a_lp_dual` | Schur–Weyl gate at `1e-40` | exits 2 |
+| `rho_k_h3a_counit_canonical_integral` | `1 / y`, unguarded | `ZeroDivisionError` |
+
+### The class is SMALL — checked, not assumed
+
+Grepping every `y_lambda` consumer for divisions by the weight finds only three
+sites, and two are already fine:
+
+* `probe_binding_measure_search.py:125` — guarded:
+  `(1 / y[lam] if y[lam] != 0 else mpf(0))`
+* `rho_k_counit_defect_form.py:123` — a *label*, `lambda l: mpf(1)`; no division
+* `rho_k_h3a_counit_canonical_integral.py:61` — the one unguarded site
+
+So this is a narrow repair, not a systemic rewrite. Worth stating, because
+"convention D breaks reciprocals of block weights" sounds like it should be
+everywhere and is not.
+
+### Do NOT fix it by copying the guard
+
+`else mpf(0)` is what the sibling does, and it may well be wrong here. `Δ = 1/y`
+is the *counit block weight*; when `y = 0` the block is **absent**, and an
+absent block is not the same as a block of weight zero — that is precisely the
+sentinel-instead-of-exclusion error this bean was opened about. Deciding
+between "exclude the block from the sum" and "contribute 0" is a modelling
+question about what the counit integral is over, and it should be answered
+rather than defaulted.
+
+Note the sibling's guard has the same latent ambiguity and was presumably
+written for the same reason; whichever answer is right probably applies to both.

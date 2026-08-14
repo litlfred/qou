@@ -290,7 +290,7 @@ def build_chi_cache_at_q0_matrix_m(
                 "n_skipped_max_dim": n_skipped,
                 "tr_M_partial": n_skipped > 0,
                 "partial": resume_partial,
-                "compute_time_sec_so_far": round(time.time() - t0, 2),
+                "compute_time_sec_so_far": f"{time.time() - t0:.2f}",
                 "tr_M_at_q0": str(running_total),
                 "by_partition": per_partition,
             }

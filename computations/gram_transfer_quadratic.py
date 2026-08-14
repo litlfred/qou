@@ -373,7 +373,7 @@ def main() -> int:
             drow = {"n": n, "n_lambda": len(dref),
                     "max_rel_transfer_vs_dense": mp.nstr(iso_rel, 4),
                     "worst_lambda": list(worst[0]) if worst else None,
-                    "dense_wall_sec": round(time.time() - td, 2)}
+                    "dense_wall_sec": f"{time.time() - td:.2f}"}
             print(f"      dense n={n}: max_rel(transfer,dense)="
                   f"{mp.nstr(iso_rel, 4)}  ({time.time()-td:.1f}s)", flush=True)
 
@@ -403,7 +403,7 @@ def main() -> int:
                 "exact_dim": edim,
                 "mode": ("fully-stochastic" if edim == 0
                          else f"stochastic(d>{edim})"),
-                "hutch_wall_sec": round(hwall, 2),
+                "hutch_wall_sec": f"{hwall:.2f}",
             }
             hutch_checks.append(hrow)
             print(f"      hutch n={n}: transfer={mp.nstr(Ga, 10)} "

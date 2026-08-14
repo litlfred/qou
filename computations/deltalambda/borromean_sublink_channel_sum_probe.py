@@ -309,7 +309,7 @@ def main():
                            "deficit against the unlink baseline is exactly 0.",
         "anti_fit": "μ₃/c₃ reported as target context only; no free parameter "
                     "tuned; nothing wired.",
-        "wall_seconds": round(time.time() - t_start, 2),
+        "wall_seconds": f"{time.time() - t_start:.2f}",
     }
     out = HERE / "borromean-sublink-channel-sum.witness.json"
     out.write_text(json.dumps(wit, indent=2))

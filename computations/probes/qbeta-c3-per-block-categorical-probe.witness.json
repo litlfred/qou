@@ -1,15 +1,15 @@
 {
   "engine": "sympy series + mpmath 65 dps",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:24:40.156144+00:00",
-  "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
+  "computedAt": "2026-08-14T16:38:21.177970+00:00",
+  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-c3-per-block-categorical-probe",
   "scriptFile": "qbeta_c3_per_block_categorical_probe.py",
   "scriptHash": "da32e9609a2b",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,9 +20,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
   "description": "T2 scaffold for per-block categorical c_3 derivation. Reproduces the order-audit ε-series per Wedderburn block and provides q_0 numerical values of y_λ, χ_λ, f_λ for the (n − p) pair-difference. The full c_3 derivation (connecting per-block ε¹ data to u³ ladder coefficient via a level-2 SU(2) Wenzl eigenphase / scaling map) is the follow-up probe — this scaffold provides the foundational per-block decomposition data.",
@@ -75,15 +74,15 @@
     },
     "y_at_q0": {
       "(3)": "0.50540422650393080318755870324047227566035119774981",
-      "(2,1)": "0.24729788674803459840622064837976386216982440112509",
+      "(2,1)": "0.2472978867480345984062206483797638621698244011251",
       "(1,1,1)": "0.0"
     },
     "f_lambda_at_q0": {
       "(3)": "-0.13160103264650748419533924160208665437035530613109262527270579922",
-      "(2,1)": "-0.026414992708089262810283300601301266165506555958369833455776893791",
+      "(2,1)": "-0.026414992708089262810283300601301266165506555958370901600477014209",
       "(1,1,1)": "0.0"
     },
-    "sum_f_lambda_at_q0": "-0.15801602535459674700562254220338792053586186208946245872848269301"
+    "sum_f_lambda_at_q0": "-0.15801602535459674700562254220338792053586186208946352687318281343"
   },
   "acceptance_criteria": {
     "AC-1_c2_sum_equals_minus_one": "PENDING — requires implementing per-block c_2 via full Q_β/Q_base series.",

@@ -508,7 +508,7 @@ def main() -> None:
             "refuted_real_search": "computations/m_tau_knot_prediction.py",
             "entropy_precedent": "PR #1805 (PSLQ entropy bound)",
         },
-        "duration_sec": round(time.time() - started, 3),
+        "duration_sec": f"{time.time() - started:.3f}",
     }
 
     wpath = Path(__file__).resolve().parent / "m-tau-complex-volume-search.witness.json"

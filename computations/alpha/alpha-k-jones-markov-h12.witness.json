@@ -1,8 +1,8 @@
 {
   "engine": "python+pyhecke-native+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T13:31:07.429279+00:00",
-  "commitSha": "21fbb79c189e0775985307fdc70a567cfa66b90b",
+  "computedAt": "2026-08-10T13:06:44.300974+00:00",
+  "commitSha": "2216604b7176952ff1aae8f1f337f73c13626756",
   "assertions": [
     {
       "name": "all_77_y_lambda_computed",
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 24,
   "computation": "alpha-k-jones-markov-h12",
   "scriptFile": "alpha_k_jones_markov_h12.py",
   "scriptHash": "9162211f69a4",
@@ -51,7 +51,7 @@
     "n_partitions": 77,
     "chi_matrix_condition_number": "7984.908701444466",
     "sum_y_dim_check": "0.9999999999999998",
-    "elapsed_seconds": "328.52",
+    "elapsed_seconds": "425.72",
     "tr_M_he4_via_y_lambda": "0.994261045151763",
     "tr_M_he4_multiplicative": "0.9942610451517598"
   },

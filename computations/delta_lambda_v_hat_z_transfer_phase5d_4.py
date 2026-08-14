@@ -122,9 +122,16 @@ def main() -> int:
                 "gen_idx_0based": g_idx,
                 "gen_sigma_1based": g_idx + 1,
                 "is_interface": is_interface,
-                "V_hat_full": float(full_val),
-                "V_hat_constit": float(constit_val),
-                "ratio_full_over_constit": float(full_val / constit_val) if constit_val != 0 else None,
+                # 50 dps, not float(): these are substrate quantities computed
+                # at mp.dps = 50 and were being truncated to f64 on the way out,
+                # discarding ~35 digits. The sibling producers already spell it
+                # this way — `hydrogen_qshuffle_compound` writes `str(...)` and
+                # `habiro_exact_mass_endomorphism` writes `mp.nstr(v, 50)`.
+                "V_hat_full": mp.nstr(full_val, 50, strip_zeros=False),
+                "V_hat_constit": mp.nstr(constit_val, 50, strip_zeros=False),
+                "ratio_full_over_constit": (
+                    mp.nstr(full_val / constit_val, 50, strip_zeros=False)
+                    if constit_val != 0 else None),
             }
             # Categorical match? (per the finding above)
             tags = []
@@ -149,15 +156,19 @@ def main() -> int:
 
     # Assertion: every interface generator's V̂_FULL matches the
     # flavor-selective rule {0, +h/2, -h/2}
-    h_half = float(h / 2)
+    # Compared at mp precision, matching the 50-dps rows above. The rule is
+    # `V̂ ∈ {0, ±h/2}` exactly, so the tolerance is guarding representation
+    # error, not a fit — keeping it at f64 width here would test the emitted
+    # string's first 16 digits and silently ignore the other 34.
+    h_half = h / 2
     flavor_rule_passes = 0
     flavor_rule_total = 0
-    ZERO_TOL = 1e-10
+    ZERO_TOL = mp.mpf("1e-10")
     for name, rows in per_atom.items():
         for r in rows:
             if r["is_interface"]:
                 flavor_rule_total += 1
-                vf = r["V_hat_full"]
+                vf = mp.mpf(r["V_hat_full"])
                 if abs(vf) < ZERO_TOL or abs(abs(vf) - h_half) < ZERO_TOL:
                     flavor_rule_passes += 1
 

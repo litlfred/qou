@@ -250,7 +250,7 @@ def main() -> int:
                     ),
                     "q_hecke_partition_sum": float(total),
                     "q_hecke_abs": float(new_abs),
-                    "elapsed_sec": float(elapsed),
+                    "elapsed_sec": f"{elapsed:.3f}",
                     "non_zero_partitions": len(breakdown),
                     "top_3_contributions": sorted(
                         breakdown,
@@ -286,7 +286,7 @@ def main() -> int:
                 "rel_err_vs_canonical": float(rel_err),
                 "agrees_to_1e_minus_3": bool(agrees_1e3),
                 "agrees_to_1e_minus_6": bool(agrees_1e6),
-                "elapsed_sec": float(elapsed),
+                "elapsed_sec": f"{elapsed:.3f}",
                 "non_zero_partitions": len(breakdown),
                 "top_3_contributions": sorted(
                     breakdown,
@@ -314,7 +314,7 @@ def main() -> int:
             rows.append({
                 "atom": name, "Z": Z, "N": N,
                 "error": f"{type(exc).__name__}: {exc}",
-                "elapsed_sec": float(elapsed),
+                "elapsed_sec": f"{elapsed:.3f}",
             })
             print(f"  {name}: ERROR after {elapsed:.2f}s — "
                   f"{type(exc).__name__}: {exc}", file=sys.stderr)

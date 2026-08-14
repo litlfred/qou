@@ -167,7 +167,7 @@ def compute_extreme_eigs(shape, word, h, q, k=2, dps_label="?"):
         "max_eig_lanczos": float(max(w_max)),
         "top_eigs_LA": [float(x) for x in sorted(w_max, reverse=True)],
         "bot_eigs_SA": [float(x) for x in sorted(w_min)],
-        "build_time_s": t1 - t0,
+        "build_time_s": f"{t1 - t0:.3f}",
         "max_eig_time_s": t3 - t2,
         "min_eig_time_s": t5 - t4,
     }

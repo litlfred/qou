@@ -1,6 +1,9 @@
 {
   "computation": "y-lambda-wenzl-bridge-symbolic",
-  "description": "Symbolic closed-form y_\u03bb for n = 2, ..., 12 via the Wenzl bridge: y_\u03bb = s_{\u03bb, r}(Q) / \u03a3_\u00b5 d_\u00b5 s_{\u00b5, r}(Q) with Q = q\u00b2 and r solved from q \u00b7 z = Q^r (1-Q) / (1-Q^r), z = q\u00b3/(q\u00b2+1) (CONVENTION D), which forces r = 2 exactly. Since r is the number of variables in the Schur principal specialisation, r = 2 is a two-dimensional fibre and y_\u03bb = 0 identically for \u2113(\u03bb) \u2265 3 \u2014 of the 270 partitions here, the 223 with three or more rows are exact zeros. Convention C (z = 1/(q^{1/2} + q^{-1/2})) solved to a non-integer r, so no weight vanished. Computed via sympy with Q^r treated as the symbolic placeholder X = q \u00b7 z / (1 - Q + q \u00b7 z), giving exact q-rational expressions in Q(q^{1/2}). Bypasses the O(p(n)\u00b3) linear-system solve by using the O(p(n) \u00b7 max_hooks) Schur principal-specialization formula. Tractable through n = 12 in seconds.",
+  "description": "Symbolic y_lambda(q) for H_n(q), n=2..12, under convention D (z_D = q^3/(q^2+1), the unique non-trivial Markov trace on H_3 whose radical contains the three-strand antisymmetriser). y_lambda = [n-2k+1]_q/[2]_q^n on two-row partitions, exactly 0 on three-or-more rows.",
+  "markov_convention": "D",
+  "markov_parameter_symbolic": "q**3/(q**2 + 1)",
+  "scriptFile": "computations/regenerate_y_lambda_symbolic_convention_d.py",
   "references": [
     "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:explicit-alpha-k-h3",
@@ -19,27 +22,16 @@
           "partition": [
             2
           ],
-          "y_lambda_symbolic": "(1 - q**6)/((1 - q**2)*(q**2 + (1 - q**6)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**6)/((1 - q**2)*(q**2 + (1 - q**6)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{6}}{\\left(1 - q^{2}\\right) \\left(q^{2} + \\frac{1 - q^{6}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.75270211325196540124209354529798807292331445105847"
-          }
+          "y_lambda_symbolic": "(q**2*(q**2 + 1) + 1)/(q**2 + 1)**2"
         },
         {
           "partition": [
             1,
             1
           ],
-          "y_lambda_symbolic": "q**2/(q**2 + (1 - q**6)/(1 - q**2))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2/(q**2 + (1 - q**6)/(1 - q**2))",
-            "polynomial_q_latex": "\\frac{q^{2}}{q^{2} + \\frac{1 - q^{6}}{1 - q^{2}}}",
-            "value_at_q0": "0.24729788674803459875790645470201192707668554894153"
-          }
+          "y_lambda_symbolic": "q**2/(q**2 + 1)**2"
         }
-      ],
-      "compute_time_sec": 0.030338287353515625
+      ]
     },
     "3": {
       "n": 3,
@@ -49,24 +41,14 @@
           "partition": [
             3
           ],
-          "y_lambda_symbolic": "(1 - q**8)/((1 - q**2)*(2*q**2*(1 - q**4)/(1 - q**2) + (1 - q**8)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**8)/((1 - q**2)*(2*q**2*(1 - q**4)/(1 - q**2) + (1 - q**8)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{8}}{\\left(1 - q^{2}\\right) \\left(\\frac{2 q^{2} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{1 - q^{8}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.50540422650393080248418709059597614584662890211693"
-          }
+          "y_lambda_symbolic": "(q**4 + 1)/(q**4 + 2*q**2 + 1)"
         },
         {
           "partition": [
             2,
             1
           ],
-          "y_lambda_symbolic": "q**2*(1 - q**4)/((1 - q**2)*(2*q**2*(1 - q**4)/(1 - q**2) + (1 - q**8)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2*(1 - q**4)/((1 - q**2)*(2*q**2*(1 - q**4)/(1 - q**2) + (1 - q**8)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{2} \\cdot \\left(1 - q^{4}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{2 q^{2} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{1 - q^{8}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.24729788674803459875790645470201192707668554894153"
-          }
+          "y_lambda_symbolic": "q**2/(q**2 + 1)**2"
         },
         {
           "partition": [
@@ -74,15 +56,9 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         }
-      ],
-      "compute_time_sec": 0.029556751251220703
+      ]
     },
     "4": {
       "n": 4,
@@ -92,36 +68,21 @@
           "partition": [
             4
           ],
-          "y_lambda_symbolic": "(1 - q**10)/((1 - q**2)*(2*q**4 + 3*q**2*(1 - q**6)/(1 - q**2) + (1 - q**10)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**10)/((1 - q**2)*(2*q**4 + 3*q**2*(1 - q**6)/(1 - q**2) + (1 - q**10)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{10}}{\\left(1 - q^{2}\\right) \\left(2 q^{4} + \\frac{3 q^{2} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{1 - q^{10}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.31926258454593995014121338089999094269931594285838"
-          }
+          "y_lambda_symbolic": "(q**10 - 1)/((q**2 - 1)*(q**2 + 1)**4)"
         },
         {
           "partition": [
             3,
             1
           ],
-          "y_lambda_symbolic": "q**2*(1 - q**6)/((1 - q**2)*(2*q**4 + 3*q**2*(1 - q**6)/(1 - q**2) + (1 - q**10)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2*(1 - q**6)/((1 - q**2)*(2*q**4 + 3*q**2*(1 - q**6)/(1 - q**2) + (1 - q**10)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{2} \\cdot \\left(1 - q^{6}\\right)}{\\left(1 - q^{2}\\right) \\left(2 q^{4} + \\frac{3 q^{2} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{1 - q^{10}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.18614164195799085234297370969598520314731295925855"
-          }
+          "y_lambda_symbolic": "q**2*(q**2*(q**2 + 1) + 1)/(q**2 + 1)**4"
         },
         {
           "partition": [
             2,
             2
           ],
-          "y_lambda_symbolic": "q**4/(2*q**4 + 3*q**2*(1 - q**6)/(1 - q**2) + (1 - q**10)/(1 - q**2))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**4/(2*q**4 + 3*q**2*(1 - q**6)/(1 - q**2) + (1 - q**10)/(1 - q**2))",
-            "polynomial_q_latex": "\\frac{q^{4}}{2 q^{4} + \\frac{3 q^{2} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{1 - q^{10}}{1 - q^{2}}}",
-            "value_at_q0": "0.061156244790043746414932745006026723929372589682982"
-          }
+          "y_lambda_symbolic": "q**4/(q**2 + 1)**4"
         },
         {
           "partition": [
@@ -129,12 +90,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -143,15 +99,9 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         }
-      ],
-      "compute_time_sec": 0.0322723388671875
+      ]
     },
     "5": {
       "n": 5,
@@ -161,36 +111,21 @@
           "partition": [
             5
           ],
-          "y_lambda_symbolic": "(1 - q**12)/((1 - q**2)*(5*q**4*(1 - q**4)/(1 - q**2) + 4*q**2*(1 - q**8)/(1 - q**2) + (1 - q**12)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**12)/((1 - q**2)*(5*q**4*(1 - q**4)/(1 - q**2) + 4*q**2*(1 - q**8)/(1 - q**2) + (1 - q**12)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{12}}{\\left(1 - q^{2}\\right) \\left(\\frac{5 q^{4} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{4 q^{2} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{1 - q^{12}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.19427718737799284421317241621003246348137557328281"
-          }
+          "y_lambda_symbolic": "(q**12 - 1)/((q**2 - 1)*(q**2 + 1)**5)"
         },
         {
           "partition": [
             4,
             1
           ],
-          "y_lambda_symbolic": "q**2*(1 - q**8)/((1 - q**2)*(5*q**4*(1 - q**4)/(1 - q**2) + 4*q**2*(1 - q**8)/(1 - q**2) + (1 - q**12)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2*(1 - q**8)/((1 - q**2)*(5*q**4*(1 - q**4)/(1 - q**2) + 4*q**2*(1 - q**8)/(1 - q**2) + (1 - q**12)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{2} \\cdot \\left(1 - q^{8}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{5 q^{4} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{4 q^{2} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{1 - q^{12}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.12498539716794710592804096468995847921794036957557"
-          }
+          "y_lambda_symbolic": "q**2*(q**8 - 1)/((q**2 - 1)*(q**2 + 1)**5)"
         },
         {
           "partition": [
             3,
             2
           ],
-          "y_lambda_symbolic": "q**4*(1 - q**4)/((1 - q**2)*(5*q**4*(1 - q**4)/(1 - q**2) + 4*q**2*(1 - q**8)/(1 - q**2) + (1 - q**12)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**4*(1 - q**4)/((1 - q**2)*(5*q**4*(1 - q**4)/(1 - q**2) + 4*q**2*(1 - q**8)/(1 - q**2) + (1 - q**12)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{4} \\cdot \\left(1 - q^{4}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{5 q^{4} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{4 q^{2} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{1 - q^{12}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.061156244790043746414932745006026723929372589682982"
-          }
+          "y_lambda_symbolic": "q**4/(q**2 + 1)**4"
         },
         {
           "partition": [
@@ -198,12 +133,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -211,12 +141,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -225,12 +150,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -240,15 +160,9 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         }
-      ],
-      "compute_time_sec": 0.032553911209106445
+      ]
     },
     "6": {
       "n": 6,
@@ -258,36 +172,21 @@
           "partition": [
             6
           ],
-          "y_lambda_symbolic": "(1 - q**14)/((1 - q**2)*(5*q**6 + 9*q**4*(1 - q**6)/(1 - q**2) + 5*q**2*(1 - q**10)/(1 - q**2) + (1 - q**14)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**14)/((1 - q**2)*(5*q**6 + 9*q**4*(1 - q**6)/(1 - q**2) + 5*q**2*(1 - q**10)/(1 - q**2) + (1 - q**14)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{14}}{\\left(1 - q^{2}\\right) \\left(5 q^{6} + \\frac{9 q^{4} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{5 q^{2} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{1 - q^{14}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.11532422490206616533107056893031464138989962018953"
-          }
+          "y_lambda_symbolic": "(q**14 - 1)/((q**2 - 1)*(q**2 + 1)**6)"
         },
         {
           "partition": [
             5,
             1
           ],
-          "y_lambda_symbolic": "q**2*(1 - q**10)/((1 - q**2)*(5*q**6 + 9*q**4*(1 - q**6)/(1 - q**2) + 5*q**2*(1 - q**10)/(1 - q**2) + (1 - q**14)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2*(1 - q**10)/((1 - q**2)*(5*q**6 + 9*q**4*(1 - q**6)/(1 - q**2) + 5*q**2*(1 - q**10)/(1 - q**2) + (1 - q**14)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{2} \\cdot \\left(1 - q^{10}\\right)}{\\left(1 - q^{2}\\right) \\left(5 q^{6} + \\frac{9 q^{4} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{5 q^{2} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{1 - q^{14}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.078952962475926678882101847279717822091475953093277"
-          }
+          "y_lambda_symbolic": "q**2*(q**10 - 1)/((q**2 - 1)*(q**2 + 1)**6)"
         },
         {
           "partition": [
             4,
             2
           ],
-          "y_lambda_symbolic": "q**4*(1 - q**6)/((1 - q**2)*(5*q**6 + 9*q**4*(1 - q**6)/(1 - q**2) + 5*q**2*(1 - q**10)/(1 - q**2) + (1 - q**14)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**4*(1 - q**6)/((1 - q**2)*(5*q**6 + 9*q**4*(1 - q**6)/(1 - q**2) + 5*q**2*(1 - q**10)/(1 - q**2) + (1 - q**14)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{4} \\cdot \\left(1 - q^{6}\\right)}{\\left(1 - q^{2}\\right) \\left(5 q^{6} + \\frac{9 q^{4} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{5 q^{2} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{1 - q^{14}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.046032434692020427045939117410240657126464416482293"
-          }
+          "y_lambda_symbolic": "q**4*(q**2*(q**2 + 1) + 1)/(q**2 + 1)**6"
         },
         {
           "partition": [
@@ -295,24 +194,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             3,
             3
           ],
-          "y_lambda_symbolic": "q**6/(5*q**6 + 9*q**4*(1 - q**6)/(1 - q**2) + 5*q**2*(1 - q**10)/(1 - q**2) + (1 - q**14)/(1 - q**2))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**6/(5*q**6 + 9*q**4*(1 - q**6)/(1 - q**2) + 5*q**2*(1 - q**10)/(1 - q**2) + (1 - q**14)/(1 - q**2))",
-            "polynomial_q_latex": "\\frac{q^{6}}{5 q^{6} + \\frac{9 q^{4} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{5 q^{2} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{1 - q^{14}}{1 - q^{2}}}",
-            "value_at_q0": "0.015123810098023319368993627595786066802908173200690"
-          }
+          "y_lambda_symbolic": "q**6/(q**2 + 1)**6"
         },
         {
           "partition": [
@@ -320,12 +209,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -334,12 +218,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -347,12 +226,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -361,12 +235,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -376,12 +245,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -392,15 +256,9 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         }
-      ],
-      "compute_time_sec": 0.05328798294067383
+      ]
     },
     "7": {
       "n": 7,
@@ -410,36 +268,21 @@
           "partition": [
             7
           ],
-          "y_lambda_symbolic": "(1 - q**16)/((1 - q**2)*(14*q**6*(1 - q**4)/(1 - q**2) + 14*q**4*(1 - q**8)/(1 - q**2) + 6*q**2*(1 - q**12)/(1 - q**2) + (1 - q**16)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**16)/((1 - q**2)*(14*q**6*(1 - q**4)/(1 - q**2) + 14*q**4*(1 - q**8)/(1 - q**2) + 6*q**2*(1 - q**12)/(1 - q**2) + (1 - q**16)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{16}}{\\left(1 - q^{2}\\right) \\left(\\frac{14 q^{6} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{14 q^{4} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{6 q^{2} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{1 - q^{16}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.067279887020136594125914211465051409621979910377859"
-          }
+          "y_lambda_symbolic": "(q**16 - 1)/((q**2 - 1)*(q**2 + 1)**7)"
         },
         {
           "partition": [
             6,
             1
           ],
-          "y_lambda_symbolic": "q**2*(1 - q**12)/((1 - q**2)*(14*q**6*(1 - q**4)/(1 - q**2) + 14*q**4*(1 - q**8)/(1 - q**2) + 6*q**2*(1 - q**12)/(1 - q**2) + (1 - q**16)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2*(1 - q**12)/((1 - q**2)*(14*q**6*(1 - q**4)/(1 - q**2) + 14*q**4*(1 - q**8)/(1 - q**2) + 6*q**2*(1 - q**12)/(1 - q**2) + (1 - q**16)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{2} \\cdot \\left(1 - q^{12}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{14 q^{6} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{14 q^{4} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{6 q^{2} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{1 - q^{16}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.048044337881929571205156357465263231767919709811674"
-          }
+          "y_lambda_symbolic": "q**2*(q**12 - 1)/((q**2 - 1)*(q**2 + 1)**7)"
         },
         {
           "partition": [
             5,
             2
           ],
-          "y_lambda_symbolic": "q**4*(1 - q**8)/((1 - q**2)*(14*q**6*(1 - q**4)/(1 - q**2) + 14*q**4*(1 - q**8)/(1 - q**2) + 6*q**2*(1 - q**12)/(1 - q**2) + (1 - q**16)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**4*(1 - q**8)/((1 - q**2)*(14*q**6*(1 - q**4)/(1 - q**2) + 14*q**4*(1 - q**8)/(1 - q**2) + 6*q**2*(1 - q**12)/(1 - q**2) + (1 - q**16)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{4} \\cdot \\left(1 - q^{8}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{14 q^{6} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{14 q^{4} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{6 q^{2} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{1 - q^{16}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.030908624593997107676945489814454590323556243281603"
-          }
+          "y_lambda_symbolic": "q**4*(q**8 - 1)/((q**2 - 1)*(q**2 + 1)**7)"
         },
         {
           "partition": [
@@ -447,24 +290,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             4,
             3
           ],
-          "y_lambda_symbolic": "q**6*(1 - q**4)/((1 - q**2)*(14*q**6*(1 - q**4)/(1 - q**2) + 14*q**4*(1 - q**8)/(1 - q**2) + 6*q**2*(1 - q**12)/(1 - q**2) + (1 - q**16)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**6*(1 - q**4)/((1 - q**2)*(14*q**6*(1 - q**4)/(1 - q**2) + 14*q**4*(1 - q**8)/(1 - q**2) + 6*q**2*(1 - q**12)/(1 - q**2) + (1 - q**16)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{6} \\cdot \\left(1 - q^{4}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{14 q^{6} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{14 q^{4} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{6 q^{2} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{1 - q^{16}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.015123810098023319368993627595786066802908173200690"
-          }
+          "y_lambda_symbolic": "q**6/(q**2 + 1)**6"
         },
         {
           "partition": [
@@ -472,12 +305,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -486,12 +314,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -499,12 +322,7 @@
             3,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -512,12 +330,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -526,12 +339,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -541,12 +349,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -555,12 +358,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -570,12 +368,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -586,12 +379,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -603,15 +391,9 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         }
-      ],
-      "compute_time_sec": 0.06095695495605469
+      ]
     },
     "8": {
       "n": 8,
@@ -621,36 +403,21 @@
           "partition": [
             8
           ],
-          "y_lambda_symbolic": "(1 - q**18)/((1 - q**2)*(14*q**8 + 28*q**6*(1 - q**6)/(1 - q**2) + 20*q**4*(1 - q**10)/(1 - q**2) + 7*q**2*(1 - q**14)/(1 - q**2) + (1 - q**18)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**18)/((1 - q**2)*(14*q**8 + 28*q**6*(1 - q**6)/(1 - q**2) + 20*q**4*(1 - q**10)/(1 - q**2) + 7*q**2*(1 - q**14)/(1 - q**2) + (1 - q**18)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{18}}{\\left(1 - q^{2}\\right) \\left(14 q^{8} + \\frac{28 q^{6} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{20 q^{4} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{7 q^{2} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{1 - q^{18}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.038760449911000564105730341862155961550416442347003"
-          }
+          "y_lambda_symbolic": "(q**18 - 1)/((q**2 - 1)*(q**2 + 1)**8)"
         },
         {
           "partition": [
             7,
             1
           ],
-          "y_lambda_symbolic": "q**2*(1 - q**14)/((1 - q**2)*(14*q**8 + 28*q**6*(1 - q**6)/(1 - q**2) + 20*q**4*(1 - q**10)/(1 - q**2) + 7*q**2*(1 - q**14)/(1 - q**2) + (1 - q**18)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2*(1 - q**14)/((1 - q**2)*(14*q**8 + 28*q**6*(1 - q**6)/(1 - q**2) + 20*q**4*(1 - q**10)/(1 - q**2) + 7*q**2*(1 - q**14)/(1 - q**2) + (1 - q**18)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{2} \\cdot \\left(1 - q^{14}\\right)}{\\left(1 - q^{2}\\right) \\left(14 q^{8} + \\frac{28 q^{6} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{20 q^{4} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{7 q^{2} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{1 - q^{18}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.028519437109136030020183869602895448071563468030857"
-          }
+          "y_lambda_symbolic": "q**2*(q**14 - 1)/((q**2 - 1)*(q**2 + 1)**8)"
         },
         {
           "partition": [
             6,
             2
           ],
-          "y_lambda_symbolic": "q**4*(1 - q**10)/((1 - q**2)*(14*q**8 + 28*q**6*(1 - q**6)/(1 - q**2) + 20*q**4*(1 - q**10)/(1 - q**2) + 7*q**2*(1 - q**14)/(1 - q**2) + (1 - q**18)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**4*(1 - q**10)/((1 - q**2)*(14*q**8 + 28*q**6*(1 - q**6)/(1 - q**2) + 20*q**4*(1 - q**10)/(1 - q**2) + 7*q**2*(1 - q**14)/(1 - q**2) + (1 - q**18)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{4} \\cdot \\left(1 - q^{10}\\right)}{\\left(1 - q^{2}\\right) \\left(14 q^{8} + \\frac{28 q^{6} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{20 q^{4} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{7 q^{2} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{1 - q^{18}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.019524900772793541184972487862367783696356241780817"
-          }
+          "y_lambda_symbolic": "q**4*(q**10 - 1)/((q**2 - 1)*(q**2 + 1)**8)"
         },
         {
           "partition": [
@@ -658,24 +425,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             5,
             3
           ],
-          "y_lambda_symbolic": "q**6*(1 - q**6)/((1 - q**2)*(14*q**8 + 28*q**6*(1 - q**6)/(1 - q**2) + 20*q**4*(1 - q**10)/(1 - q**2) + 7*q**2*(1 - q**14)/(1 - q**2) + (1 - q**18)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**6*(1 - q**6)/((1 - q**2)*(14*q**8 + 28*q**6*(1 - q**6)/(1 - q**2) + 20*q**4*(1 - q**10)/(1 - q**2) + 7*q**2*(1 - q**14)/(1 - q**2) + (1 - q**18)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{6} \\cdot \\left(1 - q^{6}\\right)}{\\left(1 - q^{2}\\right) \\left(14 q^{8} + \\frac{28 q^{6} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{20 q^{4} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{7 q^{2} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{1 - q^{18}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.011383723821203566491973001952086806627200001500786"
-          }
+          "y_lambda_symbolic": "q**6*(q**2*(q**2 + 1) + 1)/(q**2 + 1)**8"
         },
         {
           "partition": [
@@ -683,12 +440,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -697,24 +449,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             4,
             4
           ],
-          "y_lambda_symbolic": "q**8/(14*q**8 + 28*q**6*(1 - q**6)/(1 - q**2) + 20*q**4*(1 - q**10)/(1 - q**2) + 7*q**2*(1 - q**14)/(1 - q**2) + (1 - q**18)/(1 - q**2))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**8/(14*q**8 + 28*q**6*(1 - q**6)/(1 - q**2) + 20*q**4*(1 - q**10)/(1 - q**2) + 7*q**2*(1 - q**14)/(1 - q**2) + (1 - q**18)/(1 - q**2))",
-            "polynomial_q_latex": "\\frac{q^{8}}{14 q^{8} + \\frac{28 q^{6} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{20 q^{4} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{7 q^{2} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{1 - q^{18}}{1 - q^{2}}}",
-            "value_at_q0": "0.0037400862768197528770206256436992601757081716999038"
-          }
+          "y_lambda_symbolic": "q**8/(q**2 + 1)**8"
         },
         {
           "partition": [
@@ -722,12 +464,7 @@
             3,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -735,12 +472,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -749,12 +481,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -764,12 +491,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -777,12 +499,7 @@
             3,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -791,12 +508,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -805,12 +517,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -820,12 +527,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -836,12 +538,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -850,12 +547,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -865,12 +557,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -881,12 +568,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -898,12 +580,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -916,15 +593,9 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         }
-      ],
-      "compute_time_sec": 0.0912923812866211
+      ]
     },
     "9": {
       "n": 9,
@@ -934,36 +605,21 @@
           "partition": [
             9
           ],
-          "y_lambda_symbolic": "(1 - q**20)/((1 - q**2)*(42*q**8*(1 - q**4)/(1 - q**2) + 48*q**6*(1 - q**8)/(1 - q**2) + 27*q**4*(1 - q**12)/(1 - q**2) + 8*q**2*(1 - q**16)/(1 - q**2) + (1 - q**20)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**20)/((1 - q**2)*(42*q**8*(1 - q**4)/(1 - q**2) + 48*q**6*(1 - q**8)/(1 - q**2) + 27*q**4*(1 - q**12)/(1 - q**2) + 8*q**2*(1 - q**16)/(1 - q**2) + (1 - q**20)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{20}}{\\left(1 - q^{2}\\right) \\left(\\frac{42 q^{8} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{48 q^{6} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{27 q^{4} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{8 q^{2} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{1 - q^{20}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.022122276030274261655566583813240750723717386296081"
-          }
+          "y_lambda_symbolic": "(q**20 - 1)/((q**2 - 1)*(q**2 + 1)**9)"
         },
         {
           "partition": [
             8,
             1
           ],
-          "y_lambda_symbolic": "q**2*(1 - q**16)/((1 - q**2)*(42*q**8*(1 - q**4)/(1 - q**2) + 48*q**6*(1 - q**8)/(1 - q**2) + 27*q**4*(1 - q**12)/(1 - q**2) + 8*q**2*(1 - q**16)/(1 - q**2) + (1 - q**20)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2*(1 - q**16)/((1 - q**2)*(42*q**8*(1 - q**4)/(1 - q**2) + 48*q**6*(1 - q**8)/(1 - q**2) + 27*q**4*(1 - q**12)/(1 - q**2) + 8*q**2*(1 - q**16)/(1 - q**2) + (1 - q**20)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{2} \\cdot \\left(1 - q^{16}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{42 q^{8} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{48 q^{6} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{27 q^{4} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{8 q^{2} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{1 - q^{20}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.016638173880726302450163758048915210826699056050922"
-          }
+          "y_lambda_symbolic": "q**2*(q**16 - 1)/((q**2 - 1)*(q**2 + 1)**9)"
         },
         {
           "partition": [
             7,
             2
           ],
-          "y_lambda_symbolic": "q**4*(1 - q**12)/((1 - q**2)*(42*q**8*(1 - q**4)/(1 - q**2) + 48*q**6*(1 - q**8)/(1 - q**2) + 27*q**4*(1 - q**12)/(1 - q**2) + 8*q**2*(1 - q**16)/(1 - q**2) + (1 - q**20)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**4*(1 - q**12)/((1 - q**2)*(42*q**8*(1 - q**4)/(1 - q**2) + 48*q**6*(1 - q**8)/(1 - q**2) + 27*q**4*(1 - q**12)/(1 - q**2) + 8*q**2*(1 - q**16)/(1 - q**2) + (1 - q**20)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{4} \\cdot \\left(1 - q^{12}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{42 q^{8} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{48 q^{6} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{27 q^{4} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{8 q^{2} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{1 - q^{20}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.011881263228409727570020111553980237244864411979935"
-          }
+          "y_lambda_symbolic": "q**4*(q**12 - 1)/((q**2 - 1)*(q**2 + 1)**9)"
         },
         {
           "partition": [
@@ -971,24 +627,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             6,
             3
           ],
-          "y_lambda_symbolic": "q**6*(1 - q**8)/((1 - q**2)*(42*q**8*(1 - q**4)/(1 - q**2) + 48*q**6*(1 - q**8)/(1 - q**2) + 27*q**4*(1 - q**12)/(1 - q**2) + 8*q**2*(1 - q**16)/(1 - q**2) + (1 - q**20)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**6*(1 - q**8)/((1 - q**2)*(42*q**8*(1 - q**4)/(1 - q**2) + 48*q**6*(1 - q**8)/(1 - q**2) + 27*q**4*(1 - q**12)/(1 - q**2) + 8*q**2*(1 - q**16)/(1 - q**2) + (1 - q**20)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{6} \\cdot \\left(1 - q^{8}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{42 q^{8} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{48 q^{6} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{27 q^{4} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{8 q^{2} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{1 - q^{20}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0076436375443838136149523763083875464514918298008821"
-          }
+          "y_lambda_symbolic": "q**6*(q**8 - 1)/((q**2 - 1)*(q**2 + 1)**9)"
         },
         {
           "partition": [
@@ -996,12 +642,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1010,24 +651,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             5,
             4
           ],
-          "y_lambda_symbolic": "q**8*(1 - q**4)/((1 - q**2)*(42*q**8*(1 - q**4)/(1 - q**2) + 48*q**6*(1 - q**8)/(1 - q**2) + 27*q**4*(1 - q**12)/(1 - q**2) + 8*q**2*(1 - q**16)/(1 - q**2) + (1 - q**20)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**8*(1 - q**4)/((1 - q**2)*(42*q**8*(1 - q**4)/(1 - q**2) + 48*q**6*(1 - q**8)/(1 - q**2) + 27*q**4*(1 - q**12)/(1 - q**2) + 8*q**2*(1 - q**16)/(1 - q**2) + (1 - q**20)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{8} \\cdot \\left(1 - q^{4}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{42 q^{8} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{48 q^{6} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{27 q^{4} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{8 q^{2} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{1 - q^{20}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0037400862768197528770206256436992601757081716999038"
-          }
+          "y_lambda_symbolic": "q**8/(q**2 + 1)**8"
         },
         {
           "partition": [
@@ -1035,12 +666,7 @@
             3,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1048,12 +674,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1062,12 +683,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1077,12 +693,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1090,12 +701,7 @@
             4,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1103,12 +709,7 @@
             3,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1117,12 +718,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1131,12 +727,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1146,12 +737,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1162,12 +748,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1175,12 +756,7 @@
             3,
             3
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1189,12 +765,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1204,12 +775,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1218,12 +784,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1233,12 +794,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1249,12 +805,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1266,12 +817,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1281,12 +827,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1297,12 +838,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1314,12 +850,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1332,12 +863,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1351,15 +877,9 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         }
-      ],
-      "compute_time_sec": 0.13110971450805664
+      ]
     },
     "10": {
       "n": 10,
@@ -1369,36 +889,21 @@
           "partition": [
             10
           ],
-          "y_lambda_symbolic": "(1 - q**22)/((1 - q**2)*(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**22)/((1 - q**2)*(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{22}}{\\left(1 - q^{2}\\right) \\left(42 q^{10} + \\frac{90 q^{8} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{75 q^{6} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{35 q^{4} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{9 q^{2} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{1 - q^{22}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.012536898677880776410560751861367700988987096206806"
-          }
+          "y_lambda_symbolic": "(q**22 - 1)/((q**2 - 1)*(q**2 + 1)**10)"
         },
         {
           "partition": [
             9,
             1
           ],
-          "y_lambda_symbolic": "q**2*(1 - q**18)/((1 - q**2)*(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2*(1 - q**18)/((1 - q**2)*(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{2} \\cdot \\left(1 - q^{18}\\right)}{\\left(1 - q^{2}\\right) \\left(42 q^{10} + \\frac{90 q^{8} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{75 q^{6} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{35 q^{4} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{9 q^{2} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{1 - q^{22}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0095853773523934852450058319518730497347302900892749"
-          }
+          "y_lambda_symbolic": "q**2*(q**18 - 1)/((q**2 - 1)*(q**2 + 1)**10)"
         },
         {
           "partition": [
             8,
             2
           ],
-          "y_lambda_symbolic": "q**4*(1 - q**14)/((1 - q**2)*(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**4*(1 - q**14)/((1 - q**2)*(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{4} \\cdot \\left(1 - q^{14}\\right)}{\\left(1 - q^{2}\\right) \\left(42 q^{10} + \\frac{90 q^{8} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{75 q^{6} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{35 q^{4} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{9 q^{2} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{1 - q^{22}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0070527965283328172051579260970421610919687659616470"
-          }
+          "y_lambda_symbolic": "q**4*(q**14 - 1)/((q**2 - 1)*(q**2 + 1)**10)"
         },
         {
           "partition": [
@@ -1406,24 +911,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             7,
             3
           ],
-          "y_lambda_symbolic": "q**6*(1 - q**10)/((1 - q**2)*(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**6*(1 - q**10)/((1 - q**2)*(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{6} \\cdot \\left(1 - q^{10}\\right)}{\\left(1 - q^{2}\\right) \\left(42 q^{10} + \\frac{90 q^{8} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{75 q^{6} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{35 q^{4} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{9 q^{2} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{1 - q^{22}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0048284667000769103648621854569380761528956460182880"
-          }
+          "y_lambda_symbolic": "q**6*(q**10 - 1)/((q**2 - 1)*(q**2 + 1)**10)"
         },
         {
           "partition": [
@@ -1431,12 +926,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1445,24 +935,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             6,
             4
           ],
-          "y_lambda_symbolic": "q**8*(1 - q**6)/((1 - q**2)*(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**8*(1 - q**6)/((1 - q**2)*(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{8} \\cdot \\left(1 - q^{6}\\right)}{\\left(1 - q^{2}\\right) \\left(42 q^{10} + \\frac{90 q^{8} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{75 q^{6} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{35 q^{4} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{9 q^{2} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{1 - q^{22}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0028151708443069032500901908514494702985961837825941"
-          }
+          "y_lambda_symbolic": "q**8*(q**2*(q**2 + 1) + 1)/(q**2 + 1)**10"
         },
         {
           "partition": [
@@ -1470,12 +950,7 @@
             3,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1483,12 +958,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1497,12 +967,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1512,24 +977,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             5,
             5
           ],
-          "y_lambda_symbolic": "q**10/(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**10/(42*q**10 + 90*q**8*(1 - q**6)/(1 - q**2) + 75*q**6*(1 - q**10)/(1 - q**2) + 35*q**4*(1 - q**14)/(1 - q**2) + 9*q**2*(1 - q**18)/(1 - q**2) + (1 - q**22)/(1 - q**2))",
-            "polynomial_q_latex": "\\frac{q^{10}}{42 q^{10} + \\frac{90 q^{8} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{75 q^{6} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{35 q^{4} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{9 q^{2} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{1 - q^{22}}{1 - q^{2}}}",
-            "value_at_q0": "0.00092491543251284962693043479224978987711198791730975"
-          }
+          "y_lambda_symbolic": "q**10/(q**2 + 1)**10"
         },
         {
           "partition": [
@@ -1537,12 +992,7 @@
             4,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1550,12 +1000,7 @@
             3,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1564,12 +1009,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1578,12 +1018,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1593,12 +1028,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1609,12 +1039,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1622,12 +1047,7 @@
             4,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1636,12 +1056,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1649,12 +1064,7 @@
             3,
             3
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1663,12 +1073,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1678,12 +1083,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1692,12 +1092,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1707,12 +1102,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1723,12 +1113,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1740,12 +1125,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1754,12 +1134,7 @@
             3,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1768,12 +1143,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1783,12 +1153,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1799,12 +1164,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1814,12 +1174,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1830,12 +1185,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1847,12 +1197,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1865,12 +1210,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1880,12 +1220,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1896,12 +1231,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1913,12 +1243,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1931,12 +1256,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1950,12 +1270,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -1970,15 +1285,9 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         }
-      ],
-      "compute_time_sec": 0.21945500373840332
+      ]
     },
     "11": {
       "n": 11,
@@ -1988,36 +1297,21 @@
           "partition": [
             11
           ],
-          "y_lambda_symbolic": "(1 - q**24)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**24)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{24}}{\\left(1 - q^{2}\\right) \\left(\\frac{132 q^{10} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{165 q^{8} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{110 q^{6} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{44 q^{4} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{10 q^{2} \\cdot \\left(1 - q^{20}\\right)}{1 - q^{2}} + \\frac{1 - q^{24}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0070661065655372516290104166087984166148141219261741"
-          }
+          "y_lambda_symbolic": "(q**24 - 1)/((q**2 - 1)*(q**2 + 1)**11)"
         },
         {
           "partition": [
             10,
             1
           ],
-          "y_lambda_symbolic": "q**2*(1 - q**20)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2*(1 - q**20)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{2} \\cdot \\left(1 - q^{20}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{132 q^{10} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{165 q^{8} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{110 q^{6} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{44 q^{4} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{10 q^{2} \\cdot \\left(1 - q^{20}\\right)}{1 - q^{2}} + \\frac{1 - q^{24}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0054707921123435247815503352525692843741729742806316"
-          }
+          "y_lambda_symbolic": "q**2*(q**20 - 1)/((q**2 - 1)*(q**2 + 1)**11)"
         },
         {
           "partition": [
             9,
             2
           ],
-          "y_lambda_symbolic": "q**4*(1 - q**16)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**4*(1 - q**16)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{4} \\cdot \\left(1 - q^{16}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{132 q^{10} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{165 q^{8} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{110 q^{6} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{44 q^{4} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{10 q^{2} \\cdot \\left(1 - q^{20}\\right)}{1 - q^{2}} + \\frac{1 - q^{24}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0041145852400499604634554966993037653605573158086433"
-          }
+          "y_lambda_symbolic": "q**4*(q**16 - 1)/((q**2 - 1)*(q**2 + 1)**11)"
         },
         {
           "partition": [
@@ -2025,24 +1319,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             8,
             3
           ],
-          "y_lambda_symbolic": "q**6*(1 - q**12)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**6*(1 - q**12)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{6} \\cdot \\left(1 - q^{12}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{132 q^{10} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{165 q^{8} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{110 q^{6} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{44 q^{4} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{10 q^{2} \\cdot \\left(1 - q^{20}\\right)}{1 - q^{2}} + \\frac{1 - q^{24}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0029382112882828567417024293977383957314114501530037"
-          }
+          "y_lambda_symbolic": "q**6*(q**12 - 1)/((q**2 - 1)*(q**2 + 1)**11)"
         },
         {
           "partition": [
@@ -2050,12 +1334,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2064,24 +1343,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             7,
             4
           ],
-          "y_lambda_symbolic": "q**8*(1 - q**8)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**8*(1 - q**8)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{8} \\cdot \\left(1 - q^{8}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{132 q^{10} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{165 q^{8} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{110 q^{6} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{44 q^{4} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{10 q^{2} \\cdot \\left(1 - q^{20}\\right)}{1 - q^{2}} + \\frac{1 - q^{24}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0018902554117940536231597560591996804214841958652843"
-          }
+          "y_lambda_symbolic": "q**8*(q**8 - 1)/((q**2 - 1)*(q**2 + 1)**11)"
         },
         {
           "partition": [
@@ -2089,12 +1358,7 @@
             3,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2102,12 +1366,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2116,12 +1375,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2131,24 +1385,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             6,
             5
           ],
-          "y_lambda_symbolic": "q**10*(1 - q**4)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**10*(1 - q**4)/((1 - q**2)*(132*q**10*(1 - q**4)/(1 - q**2) + 165*q**8*(1 - q**8)/(1 - q**2) + 110*q**6*(1 - q**12)/(1 - q**2) + 44*q**4*(1 - q**16)/(1 - q**2) + 10*q**2*(1 - q**20)/(1 - q**2) + (1 - q**24)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{10} \\cdot \\left(1 - q^{4}\\right)}{\\left(1 - q^{2}\\right) \\left(\\frac{132 q^{10} \\cdot \\left(1 - q^{4}\\right)}{1 - q^{2}} + \\frac{165 q^{8} \\cdot \\left(1 - q^{8}\\right)}{1 - q^{2}} + \\frac{110 q^{6} \\cdot \\left(1 - q^{12}\\right)}{1 - q^{2}} + \\frac{44 q^{4} \\cdot \\left(1 - q^{16}\\right)}{1 - q^{2}} + \\frac{10 q^{2} \\cdot \\left(1 - q^{20}\\right)}{1 - q^{2}} + \\frac{1 - q^{24}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.00092491543251284962693043479224978987711198791730975"
-          }
+          "y_lambda_symbolic": "q**10/(q**2 + 1)**10"
         },
         {
           "partition": [
@@ -2156,12 +1400,7 @@
             4,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2169,12 +1408,7 @@
             3,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2183,12 +1417,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2197,12 +1426,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2212,12 +1436,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2228,12 +1447,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2241,12 +1455,7 @@
             5,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2254,12 +1463,7 @@
             4,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2268,12 +1472,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2281,12 +1480,7 @@
             3,
             3
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2295,12 +1489,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2310,12 +1499,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2324,12 +1508,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2339,12 +1518,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2355,12 +1529,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2372,12 +1541,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2385,12 +1549,7 @@
             4,
             3
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2399,12 +1558,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2414,12 +1568,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2428,12 +1577,7 @@
             3,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2442,12 +1586,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2457,12 +1596,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2473,12 +1607,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2488,12 +1617,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2504,12 +1628,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2521,12 +1640,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2539,12 +1653,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2553,12 +1662,7 @@
             3,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2568,12 +1672,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2583,12 +1682,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2599,12 +1693,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2616,12 +1705,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2631,12 +1715,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2647,12 +1726,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2664,12 +1738,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2682,12 +1751,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2701,12 +1765,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2717,12 +1776,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2734,12 +1788,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2752,12 +1801,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2771,12 +1815,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2791,12 +1830,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2812,15 +1846,9 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         }
-      ],
-      "compute_time_sec": 0.30817556381225586
+      ]
     },
     "12": {
       "n": 12,
@@ -2830,36 +1858,21 @@
           "partition": [
             12
           ],
-          "y_lambda_symbolic": "(1 - q**26)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "(1 - q**26)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{1 - q^{26}}{\\left(1 - q^{2}\\right) \\left(132 q^{12} + \\frac{297 q^{10} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{275 q^{8} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{154 q^{6} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{54 q^{4} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{11 q^{2} \\cdot \\left(1 - q^{22}\\right)}{1 - q^{2}} + \\frac{1 - q^{26}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0039657580161231066904630000947989642338423811372766"
-          }
+          "y_lambda_symbolic": "(q**26 - 1)/((q**2 - 1)*(q**2 + 1)**12)"
         },
         {
           "partition": [
             11,
             1
           ],
-          "y_lambda_symbolic": "q**2*(1 - q**22)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**2*(1 - q**22)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{2} \\cdot \\left(1 - q^{22}\\right)}{\\left(1 - q^{2}\\right) \\left(132 q^{12} + \\frac{297 q^{10} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{275 q^{8} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{154 q^{6} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{54 q^{4} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{11 q^{2} \\cdot \\left(1 - q^{22}\\right)}{1 - q^{2}} + \\frac{1 - q^{26}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0031003485494141449385474165139994523809717407888975"
-          }
+          "y_lambda_symbolic": "q**2*(q**22 - 1)/((q**2 - 1)*(q**2 + 1)**12)"
         },
         {
           "partition": [
             10,
             2
           ],
-          "y_lambda_symbolic": "q**4*(1 - q**18)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**4*(1 - q**18)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{4} \\cdot \\left(1 - q^{18}\\right)}{\\left(1 - q^{2}\\right) \\left(132 q^{12} + \\frac{297 q^{10} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{275 q^{8} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{154 q^{6} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{54 q^{4} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{11 q^{2} \\cdot \\left(1 - q^{22}\\right)}{1 - q^{2}} + \\frac{1 - q^{26}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0023704435629293798430029187385698319932012334917341"
-          }
+          "y_lambda_symbolic": "q**4*(q**18 - 1)/((q**2 - 1)*(q**2 + 1)**12)"
         },
         {
           "partition": [
@@ -2867,24 +1880,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             9,
             3
           ],
-          "y_lambda_symbolic": "q**6*(1 - q**14)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**6*(1 - q**14)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{6} \\cdot \\left(1 - q^{14}\\right)}{\\left(1 - q^{2}\\right) \\left(132 q^{12} + \\frac{297 q^{10} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{275 q^{8} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{154 q^{6} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{54 q^{4} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{11 q^{2} \\cdot \\left(1 - q^{22}\\right)}{1 - q^{2}} + \\frac{1 - q^{26}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0017441416771205806204525779607339333673560823169093"
-          }
+          "y_lambda_symbolic": "q**6*(q**14 - 1)/((q**2 - 1)*(q**2 + 1)**12)"
         },
         {
           "partition": [
@@ -2892,12 +1895,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2906,24 +1904,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             8,
             4
           ],
-          "y_lambda_symbolic": "q**8*(1 - q**10)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**8*(1 - q**10)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{8} \\cdot \\left(1 - q^{10}\\right)}{\\left(1 - q^{2}\\right) \\left(132 q^{12} + \\frac{297 q^{10} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{275 q^{8} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{154 q^{6} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{54 q^{4} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{11 q^{2} \\cdot \\left(1 - q^{22}\\right)}{1 - q^{2}} + \\frac{1 - q^{26}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.0011940696111622761212498514370044623640553678360944"
-          }
+          "y_lambda_symbolic": "q**8*(q**10 - 1)/((q**2 - 1)*(q**2 + 1)**12)"
         },
         {
           "partition": [
@@ -2931,12 +1919,7 @@
             3,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2944,12 +1927,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2958,12 +1936,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -2973,24 +1946,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             7,
             5
           ],
-          "y_lambda_symbolic": "q**10*(1 - q**6)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**10*(1 - q**6)/((1 - q**2)*(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2)))",
-            "polynomial_q_latex": "\\frac{q^{10} \\cdot \\left(1 - q^{6}\\right)}{\\left(1 - q^{2}\\right) \\left(132 q^{12} + \\frac{297 q^{10} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{275 q^{8} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{154 q^{6} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{54 q^{4} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{11 q^{2} \\cdot \\left(1 - q^{22}\\right)}{1 - q^{2}} + \\frac{1 - q^{26}}{1 - q^{2}}\\right)}",
-            "value_at_q0": "0.00069618580063177750190990462219521805742882802918990"
-          }
+          "y_lambda_symbolic": "q**10*(q**2*(q**2 + 1) + 1)/(q**2 + 1)**12"
         },
         {
           "partition": [
@@ -2998,12 +1961,7 @@
             4,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3011,12 +1969,7 @@
             3,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3025,12 +1978,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3039,12 +1987,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3054,12 +1997,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3070,24 +2008,14 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
             6,
             6
           ],
-          "y_lambda_symbolic": "q**12/(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2))",
-          "y_lambda_polynomial": {
-            "polynomial_q": "q**12/(132*q**12 + 297*q**10*(1 - q**6)/(1 - q**2) + 275*q**8*(1 - q**10)/(1 - q**2) + 154*q**6*(1 - q**14)/(1 - q**2) + 54*q**4*(1 - q**18)/(1 - q**2) + 11*q**2*(1 - q**22)/(1 - q**2) + (1 - q**26)/(1 - q**2))",
-            "polynomial_q_latex": "\\frac{q^{12}}{132 q^{12} + \\frac{297 q^{10} \\cdot \\left(1 - q^{6}\\right)}{1 - q^{2}} + \\frac{275 q^{8} \\cdot \\left(1 - q^{10}\\right)}{1 - q^{2}} + \\frac{154 q^{6} \\cdot \\left(1 - q^{14}\\right)}{1 - q^{2}} + \\frac{54 q^{4} \\cdot \\left(1 - q^{18}\\right)}{1 - q^{2}} + \\frac{11 q^{2} \\cdot \\left(1 - q^{22}\\right)}{1 - q^{2}} + \\frac{1 - q^{26}}{1 - q^{2}}}",
-            "value_at_q0": "0.00022872963188107212502053017005457181968315988811985"
-          }
+          "y_lambda_symbolic": "q**12/(q**2 + 1)**12"
         },
         {
           "partition": [
@@ -3095,12 +2023,7 @@
             5,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3108,12 +2031,7 @@
             4,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3122,12 +2040,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3135,12 +2048,7 @@
             3,
             3
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3149,12 +2057,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3164,12 +2067,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3178,12 +2076,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3193,12 +2086,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3209,12 +2097,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3226,12 +2109,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3239,12 +2117,7 @@
             5,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3253,12 +2126,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3266,12 +2134,7 @@
             4,
             3
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3280,12 +2143,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3295,12 +2153,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3309,12 +2162,7 @@
             3,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3323,12 +2171,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3338,12 +2181,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3354,12 +2192,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3369,12 +2202,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3385,12 +2213,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3402,12 +2225,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3420,12 +2238,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3433,12 +2246,7 @@
             4,
             4
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3447,12 +2255,7 @@
             3,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3461,12 +2264,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3476,12 +2274,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3492,12 +2285,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3506,12 +2294,7 @@
             3,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3521,12 +2304,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3536,12 +2314,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3552,12 +2325,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3569,12 +2337,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3584,12 +2347,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3600,12 +2358,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3617,12 +2370,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3635,12 +2383,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3654,12 +2397,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3668,12 +2406,7 @@
             3,
             3
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3683,12 +2416,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3699,12 +2427,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3714,12 +2437,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3730,12 +2448,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3747,12 +2460,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3765,12 +2473,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3781,12 +2484,7 @@
             2,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3798,12 +2496,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3816,12 +2509,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3835,12 +2523,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3855,12 +2538,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3871,12 +2549,7 @@
             2,
             2
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3888,12 +2561,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3906,12 +2574,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3925,12 +2588,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3945,12 +2603,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3966,12 +2619,7 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         },
         {
           "partition": [
@@ -3988,15 +2636,9 @@
             1,
             1
           ],
-          "y_lambda_symbolic": "0",
-          "y_lambda_polynomial": {
-            "polynomial_q": "0",
-            "polynomial_q_latex": "0",
-            "value_at_q0": "0"
-          }
+          "y_lambda_symbolic": "0"
         }
-      ],
-      "compute_time_sec": 0.497575044631958
+      ]
     }
   },
   "precision": "symbolic_q",
