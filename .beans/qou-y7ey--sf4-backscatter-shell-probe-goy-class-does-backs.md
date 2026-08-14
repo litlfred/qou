@@ -1,6 +1,6 @@
 ---
 # qou-y7ey
-title: 'SF4: backscatter shell probe (Sabra-class) — does backscatter re-open self-sustainment? [epic qou-a3n3]'
+title: 'SF4: backscatter shell probe (GOY-class) — does backscatter re-open self-sustainment? [epic qou-a3n3]'
 status: completed
 type: task
 priority: normal

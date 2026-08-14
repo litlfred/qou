@@ -201,7 +201,9 @@ def main() -> None:
         w.add_data(f"delta{d}_R", R)
         print(f"  delta={d}: S_q={sq:.4e}  S_cl={sc:.4e}  R={R:.3f}")
 
-    grows = Ss[-1] > 10.0 * Ss[0]
+    # stepwise: any 10x jump between consecutive N counts as growth (an
+    # endpoint-only comparison could miss an intermediate spike)
+    grows = any(Ss[i + 1] > 10.0 * Ss[i] for i in range(len(Ss) - 1))
     flat_R = all(0.2 < r < 5.0 for r in Rs)
     delta_robust = all(0.2 < r < 5.0 for r in Rd)
     w.add_data("S_spread", max(Ss) / max(min(Ss), 1e-300))
