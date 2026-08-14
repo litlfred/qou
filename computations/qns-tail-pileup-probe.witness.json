@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T20:43:25.264507+00:00",
-  "commitSha": "ef85ad97bb6de79651e7be9491ba4ee986626984",
+  "computedAt": "2026-08-14T20:49:39.552276+00:00",
+  "commitSha": "290989580e6a70483fcb331c5f6f3863633271c9",
   "assertions": [
     {
       "name": "SUBSTRATE-UNIT PILE-UP IS REAL (scope-(a) refutation of the substrate-unit no-pile-up hypothesis in this model): sup_t tail enstrophy above the fixed band grows without bound as nu -> 0 (asymptotic 1/eps exponent > 0.5; tail fraction -> 1)",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "asymptotic exponent 0.827 (global 2.320); sup_frac -> 0.99; the vanishing-viscosity cascade fills the receding dissipation range — the Euler-type limit piles up, as classical intuition predicts. Scope (a): DN model, band-limited data, T=50.0 eddy, N=32, alone"
+      "source": "asymptotic exponent 0.827 (global 2.320); max sup_frac = 0.99017; the vanishing-viscosity cascade fills the receding dissipation range — the Euler-type limit piles up, as classical intuition predicts. Scope (a): DN model, band-limited data, T=50.0 eddy, N=32, alone"
     },
     {
       "name": "C_Q-RESCALED (fixed-nu-unit) TAIL VANISHES: in the candidate physical normalization (eps^2 weight) the tail enstrophy decreases toward 0 as eps -> 0 — the fixed-nu-unit form of the hypothesis HOLDS in-model",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4016,
+  "durationMs": 4938,
   "computation": "qns-tail-pileup-probe",
   "scriptFile": "qns_tail_pileup_probe.py",
-  "scriptHash": "7b11b6d502b5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "57fff1315acf",
+  "scriptCommitSha": "290989580e6a70483fcb331c5f6f3863633271c9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

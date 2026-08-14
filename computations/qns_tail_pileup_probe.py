@@ -107,11 +107,12 @@ def main() -> None:
     print(f"SF5 pile-up probe: N={N}, band B={BAND}, data on first {N_DATA} rungs, "
           f"T={T_EDDY} eddy")
     print("=" * 76)
-    tails = []
+    tails, fracs = [], []
     for eps in EPS_SWEEP:
         st, sf, om0 = run(eps)
         resc = (eps ** 2) * st  # c_q-rescaled tail (k_phys = eps*k_sub)
         tails.append(st)
+        fracs.append(sf)
         w.add_data(f"eps{eps:.0e}_sup_tail", st)
         w.add_data(f"eps{eps:.0e}_sup_frac", sf)
         w.add_data(f"eps{eps:.0e}_sup_tail_cq_rescaled", resc)
@@ -144,7 +145,7 @@ def main() -> None:
         "(asymptotic 1/eps exponent > 0.5; tail fraction -> 1)",
         computed=(slope_asym > 0.5), expected=True,
         source=f"asymptotic exponent {slope_asym:.3f} (global {slope:.3f}); "
-               f"sup_frac -> {max(0.0, 0.99):.2f}; the vanishing-viscosity "
+               f"max sup_frac = {max(fracs):.5f}; the vanishing-viscosity "
                "cascade fills the receding dissipation range — the "
                "Euler-type limit piles up, as classical intuition predicts. "
                f"Scope (a): DN model, band-limited data, T={T_EDDY} eddy, "
