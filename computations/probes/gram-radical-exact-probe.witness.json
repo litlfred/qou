@@ -1,0 +1,140 @@
+{
+  "engine": "python+sympy(exact rational)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-14T20:58:49.078556+00:00",
+  "commitSha": "fcf36b5ac9dd7655efa9ac99fa3b215cccf594f6",
+  "assertions": [
+    {
+      "name": "det_G_is_exactly_zero_under_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "rank_is_5_of_6_under_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "nullspace_is_one_dimensional_under_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "null_direction_is_the_q_antisymmetriser",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "convention_C_gram_is_nonsingular",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "G_INV_has_no_arithmetic_consumer",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "gram-radical-exact-probe",
+  "scriptFile": "gram_radical_exact_probe.py",
+  "scriptHash": "430f3cb41925",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Resolves the convention-D Gram degeneracy EXACTLY over Q (no floating point), identifies the null direction as the q-antisymmetriser in closed form, and surveys whether G_INV has any computational consumer. Unblocks the two factual uncertainties under qou-w8zz. audit_only; no anchor, no fit.",
+  "audit_only": true,
+  "markov_convention": "D",
+  "tier": "structural-exact (exact rational arithmetic; decidable)",
+  "result": {
+    "verdict": "Under convention D the H_3(q) Gram form has det = 0 EXACTLY (rational arithmetic, not the 3.998e-17 the float64 path had to quote), rank 5, nullspace dimension exactly 1, spanned by the q-antisymmetriser SUM_w (-1/q)^len(w) T_w — an independent confirmation of qou-u2jg from the Gram side. Convention C is rank 6 at the same q. Separately, G_INV has ZERO arithmetic consumers in the corpus, so the 'every consumer expects a 6x6 inverse' blocker is narrower than the gram.py banner records: the only thing a convention-D switch breaks is a test asserting G @ G_INV ~ I, an identity convention D makes false.",
+    "null_direction_closed_form": "v = SUM_w (-1/q)^len(w) T_w = gamma - q^-1(sigma_0 + sigma_1) + q^-2(L+ + L-) - q^-3 e^-",
+    "nf_basis": [
+      "gamma",
+      "sigma_0",
+      "sigma_1",
+      "L+",
+      "L-",
+      "e-"
+    ],
+    "per_q": [
+      {
+        "q": "11/10",
+        "z_D": "1331/2210",
+        "det_G_D": "0",
+        "det_G_D_is_exactly_zero": true,
+        "rank_D": 5,
+        "nullspace_dim_D": 1,
+        "antisymmetriser_annihilated_by_G_D": true,
+        "det_G_C": "-180182446830195504523*sqrt(110)/17908743409468328340000 - 6897214324020987824950181/118466337653632991969100000",
+        "det_G_C_is_zero": false,
+        "rank_C": 6
+      },
+      {
+        "q": "7/5",
+        "z_D": "343/370",
+        "det_G_D": "0",
+        "det_G_D_is_exactly_zero": true,
+        "rank_D": 5,
+        "nullspace_dim_D": 1,
+        "antisymmetriser_annihilated_by_G_D": true,
+        "det_G_C": "-2592114368946023*sqrt(35)/13550066933760000 - 130083526617476108471/117072578307686400000",
+        "det_G_C_is_zero": false,
+        "rank_C": 6
+      },
+      {
+        "q": "13/7",
+        "z_D": "2197/1526",
+        "det_G_D": "0",
+        "det_G_D_is_exactly_zero": true,
+        "rank_D": 5,
+        "nullspace_dim_D": 1,
+        "antisymmetriser_annihilated_by_G_D": true,
+        "det_G_C": "-3739415833216335075651*sqrt(91)/3993805728640000000000 - 57073281737464283693768991/6390089165824000000000000",
+        "det_G_C_is_zero": false,
+        "rank_C": 6
+      }
+    ],
+    "g_inv_consumers": {
+      "mentions_by_module": {
+        "constants.py": 0,
+        "molecular.py": 0,
+        "sdp.py": 0,
+        "atom.py": 1,
+        "__init__.py": 2,
+        "gram.py": 13
+      },
+      "arithmetic_uses_found": 0,
+      "arithmetic_use_lines": []
+    },
+    "scope_note": "Does NOT switch gram.py to convention D — still the owner's call, because z / TR_M / G do have consumers and moving them moves numbers. This probe removes the two factual uncertainties the decision rested on, nothing more."
+  },
+  "context": {
+    "axis": "convention-D Gram radical (qou-w8zz / D1(b))",
+    "bean": "qou-w8zz",
+    "confirms": "qou-u2jg (z_D radical contains the antisymmetriser)",
+    "related": [
+      "qou-m7py (Rust gram.rs coupling)",
+      "qou-fu8c (same radical, the a_K LP)"
+    ]
+  }
+}
