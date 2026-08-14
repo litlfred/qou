@@ -1,9 +1,13 @@
 Are the four axioms of a quantum universe independent?
 
-**Axioms 1 and 3.** Over a characteristic-zero field, Deligne's theorem shows every symmetric :refterm[monoidal category]{#monoidal-category} admits a fibre functor. However, we require only braided structure over a commutative ring. Axiom 3 is independent.
+**Temporal braiding.** Over a characteristic-zero field, Deligne's theorem shows every symmetric :refterm[monoidal category]{#monoidal-category} admits a fibre functor. We require only a braiding, and only over a commutative ring, so the fibre functor is not supplied for us. The braiding axiom is independent of the fibre functor.
 
-**Axiom 2.** A general Hopf algebra need not carry a non-degenerate Frobenius form. The Frobenius condition $A \cong A^{\vee}$ is strictly stronger than the Hopf axioms.
+**Frobenius--Hopf.** A general Hopf algebra need not carry a non-degenerate Frobenius form. The Frobenius condition $A \cong A^{\vee}$ is strictly stronger than the Hopf axioms.
 
-**Axiom 4.** For smooth algebraic groups, Kähler differentials exist automatically. For quantum groups ($q \neq 1$), differential calculi need not exist or be unique. Axiom 4 is independent.
+**Symmetric Frobenius.** A Frobenius algebra need not be symmetric: the left and right traces induced by a non-symmetric form differ by the Nakayama automorphism, which is trivial exactly when the form is symmetric. The axiom is therefore a genuine restriction on the Frobenius--Hopf datum, not a consequence of it.
+
+**Wedderburn semisimplicity.** A Frobenius object need not be semisimple: a truncated polynomial algebra $k[x]/(x^n)$ carries a non-degenerate Frobenius form and is local, hence has a single block and a nilpotent radical. Semisimplicity is therefore independent of the preceding three axioms. It is the assumption that does the work later: given it, the co-Casimir trace identity ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)) follows by linearity over the central idempotents rather than being assumed.
+
+The differential calculus $\Omega^1(A)$ is a separate matter. For smooth algebraic groups Kähler differentials exist automatically, but for quantum groups ($q \neq 1$) a differential calculus need not exist or be unique, so its existence is an assumption rather than a theorem.
 
 In full generality, all four axioms are independent.

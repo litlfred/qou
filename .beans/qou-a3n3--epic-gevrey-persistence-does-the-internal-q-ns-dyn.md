@@ -28,3 +28,29 @@ remainder is sharpened to: UNIFORMITY of these bounds as the block
 widens (kmax = [m]_{1+eps}, m ~ 1/eps) into the classical limit —
 the flux through the receding damping threshold. Nothing resolves that;
 it is the epic's remaining open item, now precisely localized.
+
+## 2026-08-14: eps-uniformity reduction (low_mode_block_uniformity.lean)
+
+The millennium remainder is now ONE named spectral hypothesis:
+"no enstrophy pile-up at the receding damping threshold" — the
+above-fixed-band tail enstrophy Omega_{>B} uniformly bounded in eps.
+Proved: split Omega <= kB^2*E + tail (banded half eps-uniform);
+trivial converse (equivalence). Also proved: leray_bound_scaling —
+nu_q = eps/(2(1+eps)) makes the in-QOU classical limit a
+VANISHING-VISCOSITY limit (Leray control degrades ~1/eps); mapping to
+the fixed-nu millennium formulation needs an explicit
+substrate-to-physical rescaling (owner flag). Candidate SF5 probe:
+measure the above-fixed-band enstrophy fraction as eps -> 0 in the
+shell models.
+
+## 2026-08-14: SF5 pile-up probe DECIDED — and the answer is unit-dependent
+
+Substrate units: pile-up REAL (sup tail ~ (1/eps)^0.83 asymptotic,
+fraction -> 0.99) — the Euler-type limit fills the receding dissipation
+range; scope-(a) refutation of the substrate-unit tail hypothesis.
+c_q-rescaled (fixed-nu) units: tail VANISHES (~eps^1.17) — the
+fixed-nu-unit hypothesis HOLDS in-model. The two normalizations give
+OPPOSITE answers: the rescaling decision (audit
+2026-08-14-qns-model-to-pde-uniformity-decomposition.md §5, owner
+brief A/B/C) is now LOAD-BEARING for the millennium framing. Epic
+blocks on that owner call.

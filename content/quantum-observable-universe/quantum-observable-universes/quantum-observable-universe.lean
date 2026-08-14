@@ -1,7 +1,10 @@
 import QOU.Basic
 import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.Data.Fintype.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.CategoryTheory.Types.Basic
 import Mathlib.Algebra.Group.Basic
@@ -71,6 +74,27 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
   frobenius_relation :
     mul ≫ comul = (comul ▷ obj) ≫ (α_ obj obj obj).hom ≫ (obj ◁ mul)
 
+namespace FrobeniusHopfData
+
+variable {C : Type u} [CategoryTheory.Category.{v} C]
+  [CategoryTheory.MonoidalCategory C] (F : FrobeniusHopfData C)
+
+/-- **Evaluation** `ev = μ ≫ ∫_A : A ⊗ A → 𝟙`.  Together with `coevaluation`
+    and the two snake identities, this exhibits `A` as self-dual. -/
+def ev : (F.obj ⊗ F.obj) ⟶ (𝟙_ C) := F.mul ≫ F.frobeniusForm
+
+/-- **Left categorical trace** of `f : A → A`, obtained by closing the loop on
+    the left: `𝟙 →[coev] A ⊗ A →[f ▷ A] A ⊗ A →[ev] 𝟙`. -/
+def leftTrace (f : F.obj ⟶ F.obj) : (𝟙_ C) ⟶ (𝟙_ C) :=
+  F.coevaluation ≫ (f ▷ F.obj) ≫ F.ev
+
+/-- **Right categorical trace** of `f : A → A`, closing the loop on the right:
+    `𝟙 →[coev] A ⊗ A →[A ◁ f] A ⊗ A →[ev] 𝟙`. -/
+def rightTrace (f : F.obj ⟶ F.obj) : (𝟙_ C) ⟶ (𝟙_ C) :=
+  F.coevaluation ≫ (F.obj ◁ f) ≫ F.ev
+
+end FrobeniusHopfData
+
 /-- **Quantum Universe** over a field `k`.
 
     Re-declared from the library module
@@ -84,18 +108,70 @@ structure QuantumUniverse (k : Type*) [Field k] where
   C : Type u
   [catInst : CategoryTheory.Category.{v} C]
   [monInst : CategoryTheory.MonoidalCategory C]
+  /-- **Temporal braiding.**  The exchange of two adjacent systems is a
+      process with a direction: `c_{V,W} : V ⊗ W ≅ W ⊗ V`, not required to
+      be symmetric.  Rigidity is deliberately NOT here — it belongs to
+      `QuantumObservableUniverse` below. -/
+  [braidedInst : @CategoryTheory.BraidedCategory C catInst monInst]
   /-- The Frobenius–Hopf object `A` in `C`. -/
   frobHopf : @FrobeniusHopfData C catInst monInst
   /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
       An exact faithful `k`-linear monoidal functor. -/
   fibreFunctor : @CategoryTheory.Functor C catInst (Type w) inferInstance
+  /-- **Symmetric Frobenius** (axiom 3).  A closed loop has one amplitude:
+      closing a worldline on the left and closing it on the right compute the
+      same endomorphism of the unit.  Equivalently, the Frobenius form `∫_A`
+      is symmetric and the Nakayama automorphism is trivial.
+
+      This is a genuine restriction, not a consequence of axiom 2: a Frobenius
+      algebra whose form is non-symmetric has `leftTrace ≠ rightTrace`, and
+      then "the trace of a process" — hence any mass read off a trace — would
+      depend on a drawing convention. -/
+  frobenius_symmetric : ∀ f : frobHopf.obj ⟶ frobHopf.obj,
+    frobHopf.leftTrace f = frobHopf.rightTrace f
+  /-- **Wedderburn semisimplicity** (axiom 4).  The substrate has *channels*:
+      `A` decomposes into finitely many blocks that do not mix, and no block
+      is degenerate.
+
+      Encoded here: a `Fintype` of blocks, an idempotent endomorphism of `A`
+      per block, and non-vanishing of each block's Frobenius weight and
+      quantum dimension.  NOT encoded: mutual orthogonality of the
+      idempotents and completeness of their sum, both of which need additive
+      structure on the hom-sets (`Preadditive` / `HasZeroMorphisms`) that
+      `QuantumUniverse` does not carry.  `frobWeight` and `dimQ` land in `k`
+      via the standard identification of `End(𝟙)` with the ground ring of a
+      `k`-linear category.
+
+      Given this axiom, the co-Casimir trace identity
+      `tr_M(C_dimQ) = Σ_λ 1/dim_q(λ)` is a *consequence*, proved as
+      `QOU.BraidKnot.frobenius_codim_universal` by linearity of the trace
+      over the central idempotents.  It is deliberately NOT an axiom here:
+      asserting it would assert something already proved, and would collide
+      with the unrelated `def:mass-identity` (the vortex integral). -/
+  blocks : Type v
+  [blocksFintype : Fintype blocks]
+  /-- The central idempotent `p_λ` of each block. -/
+  centralIdem : blocks → (frobHopf.obj ⟶ frobHopf.obj)
+  /-- Each `p_λ` is idempotent. -/
+  centralIdem_idem : ∀ b, centralIdem b ≫ centralIdem b = centralIdem b
+  /-- The Frobenius weight `∫_A p_λ` of each block. -/
+  frobWeight : blocks → k
+  /-- No block has zero Frobenius weight: none is invisible to the trace. -/
+  frobWeight_ne_zero : ∀ b, frobWeight b ≠ 0
+  /-- The quantum dimension `dim_q(λ)` of each block. -/
+  dimQ : blocks → k
+  /-- No block has zero quantum dimension: each can be normalised against. -/
+  dimQ_ne_zero : ∀ b, dimQ b ≠ 0
   /-- `A` admits a differential calculus: the module of Kähler
       differentials `Ω¹(A)` exists in `C`. -/
   differentialForms : Type*
 
 /-- **Quantum Observable Universe** over a field `k`.
 
-    A quantum universe satisfying three observability conditions:
+    A quantum universe that is **rigid** and satisfies three observability
+    conditions.  Rigidity (condition 0) is imposed here, not on
+    `QuantumUniverse`: a quantum universe is braided, an observable one is
+    braided and rigid.  The remaining conditions:
     (i)   the Frobenius form on `A` is non-degenerate — an exact self-pairing,
           already enforced structurally by the snake identities in
           `FrobeniusHopfData`.
@@ -108,6 +184,12 @@ structure QuantumUniverse (k : Type*) [Field k] where
     LaTeX: `\label{def:quantum-observable-universe}` -/
 structure QuantumObservableUniverse (k : Type*) [Field k]
     extends QuantumUniverse k where
+  /-- **Rigidity** (condition 0): every object of `C` has left and right
+      duals, with `ev`/`coev` satisfying the snake identities.  A dual is a
+      worldline read backwards, so this is the antiparticle condition; it is
+      also what lets a strand bend back on itself and a braid close into a
+      knot. -/
+  [rigidInst : @CategoryTheory.RigidCategory C catInst monInst]
   /-- The adjoint object `Ad(A)` in `C`, carrying the adjoint action of the
       Hopf algebra `A` on itself.  In a braided monoidal category this is
       constructed from `(A, μ, Δ, S)` and the braiding; here it is provided
