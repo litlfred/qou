@@ -29,6 +29,7 @@ Run: `python3 computations/test_ctype_consumer_coverage.py`
 from __future__ import annotations
 
 import re
+from collections import Counter
 import sys
 from pathlib import Path
 
@@ -202,10 +203,211 @@ def part_b() -> None:
         notes.append(f"  ok   no new private vocabularies ({len(found)} baselined)")
 
 
+# ── Part C: the blind spot Part B leaves open ──────────────────────────────
+# Part B exits early on `if re.search(CANONICAL_MODULE, src): continue` --
+# importing the canonical module buys a file a total exemption. That is
+# backwards. A file that has never heard of the module is mostly harmless:
+# nothing feeds it canonical crossings. The dangerous file is the one that
+# calls `atom_canonical_crossings(...)` and THEN maps the labels with a table
+# of its own, because it receives the new ctype and answers for it privately.
+#
+# Every defect the qou-uzk0 sweep found was in that exempted population --
+# 14 files, all importing the module, all keeping a private table:
+# four silent (spectral_coordinates_all_atoms substituted the IDENTITY for the
+# interface, 199% on the affected generator; per_irrep_pole_atom miscounted;
+# build_atomic_braid_recipe_d_chain asserted a false DERIVED breakdown;
+# hoefsmit_symbolic's self-test reapplied the previous crossing) and ten
+# raising, one of which (per_nucleon_shift_derivation) died at import.
+# habiro_coefficients_interpolate managed both at once: it applied the
+# COLOUR-WEIGHTED value under the colour-BLIND key.
+#
+# So Part B was blind to precisely the population it exists to protect. This
+# part closes that: it looks for value-mapping shapes in importers.
+_VALUE_MAP_PATTERNS = (
+    # dict literal keyed by a ctype label: {"sigma": ..., "averaged": ...}
+    re.compile(r"""\{\s*["']sigma["']\s*:"""),
+    # if/elif dispatch: ctype == "averaged"
+    re.compile(r"""==\s*["'](?:sigma|sigma_inv|averaged)["']"""),
+    # membership set: {"sigma", "sigma_inv", "averaged"}
+    re.compile(r"""\{\s*["']sigma["']\s*,"""),
+)
+#: Importers allowed to keep a value-shaped literal. Same ratchet discipline
+#: as Part B: drains, never grows. Fix the file rather than adding a row.
+#: Triaged 2026-08-14 (qou-uzk0). Two of the nine hits were real and were
+#: repaired rather than listed: d_u_closed_form_proof (n_avg_inter counted
+#: only `averaged`, so it was identically 0 for every Z>=1,N>=1 atom) and
+#: probes/homflypt_operator_valued_probe (an informative "not representable"
+#: refusal degraded into "unknown crossing type"). The seven below all treat
+#: the two averaged kinds identically ALREADY, via an `else` or by excluding
+#: both, so none can substitute a wrong value.
+IMPORTER_VALUE_MAP_BASELINE: dict[str, str] = {
+    "audits/term5_aK_audit.py":
+        "`else` catches both averaged kinds and treats them as self-inverse",
+    # The d-chain is no longer listed: it now names `averaged_weighted` and
+    # passes on its own. These two stay listed because their literals contain
+    # no `averaged_weighted` (a single nucleon has no p-n bond, so the label
+    # would be wrong) — but they are no longer UNVERIFIED, which is what this
+    # row used to say. Part D checks every recipe literal against a live
+    # `atom_canonical_crossings` call, so being right by accident is no longer
+    # indistinguishable from being right (bean qou-nmva, closed).
+    "build_atomic_braid_recipe_n_chain.py":
+        "recipe DATA literal, not dispatch; verified by Part D",
+    "build_atomic_braid_recipe_p_chain.py":
+        "recipe DATA literal, not dispatch; verified by Part D",
+    "deltalambda/c_knot_nonuniversal_pinned_weight_probe.py":
+        "counts writhe (sigma vs sigma_inv) only; excludes both averaged "
+        "kinds by construction",
+    "deltalambda/he4_binding_k_presentation_correction_probe.py":
+        "dict of human-readable descriptions keyed by ctype, not values",
+    "deltalambda/vol_t_he3_snappy_probe.py":
+        "`else` catches both averaged kinds — neither is a topological "
+        "crossing, which is the only distinction this probe makes",
+}
+
+
+def part_c() -> None:
+    print("\nPart C -- importers that still map ctype labels privately")
+    found: list[str] = []
+    for path in sorted(HERE.rglob("*.py")):
+        rel = path.relative_to(HERE).as_posix()
+        if "_deprecated/" in rel or rel == "canonical_braid_crossings.py":
+            continue
+        try:
+            src = path.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        # only importers -- the exact population Part B waves through
+        if not re.search(rf"\b{CANONICAL_MODULE}\b", src):
+            continue
+        # Two ways to be fine, and the second matters: resolving through the
+        # canonical helpers, OR naming `averaged_weighted` explicitly. The
+        # second is not a loophole — comparing against ctype labels is often
+        # correct (converting to a signed word, counting writhe), and what
+        # made every defect in this class silent was that the label was never
+        # mentioned at all. Requiring the mention is what drains: an author
+        # who writes it has had to decide what the interface does.
+        if re.search(r"\b(d_for_ctype|sign_for_ctype|CTYPES)\b", src):
+            continue
+        if "averaged_weighted" in src:
+            continue
+        if any(p.search(src) for p in _VALUE_MAP_PATTERNS):
+            found.append(rel)
+
+    new = [f for f in found if f not in IMPORTER_VALUE_MAP_BASELINE]
+    stale = [f for f in IMPORTER_VALUE_MAP_BASELINE if f not in found]
+    for f in new:
+        failures.append(
+            f"{f} calls into {CANONICAL_MODULE} and still maps ctype labels "
+            f"with a private table -- use d_for_ctype / sign_for_ctype / "
+            f"CTYPES so a new ctype cannot be answered for privately"
+        )
+    for f in stale:
+        notes.append(f"  note Part C baseline entry no longer needed: {f}")
+    if not new:
+        notes.append(
+            f"  ok   no importer maps ctypes privately "
+            f"({len(found)} baselined)"
+        )
+
+
+# ── Part D: recipe-chain breakdown literals are a CLAIM, so check it ───────
+# The three `build_atomic_braid_recipe_*_chain` modules record a crossing
+# `type_breakdown` as a hand-written literal, stamp it `trust_basis=DERIVED`,
+# and state in their own `operation` string that it matches a specific
+# `atom_canonical_crossings(...)` call. Nothing checked that. The d-chain's
+# literal said `averaged: 5` and was wrong from the moment `classify_crossing`
+# learned to separate the two averaged interfaces (qou-gdtb) — wrong under a
+# DERIVED label, next to a sentence naming the exact call that refutes it.
+#
+# The p- and n-chains were correct, but only because a single nucleon has no
+# p-n bond. They were equally unchecked, and a literal that is right by
+# accident is not evidence of anything.
+#
+# This part makes the claim mean what it says. Bean qou-nmva.
+#
+# `scope` selects which crossings of the named word the step is claiming:
+#   "all"   -- the whole word
+#   "inter" -- only the inter-nucleon generators (3k+2, k = 0..A-2), the
+#              convention `d_u_closed_form_proof` also uses
+RECIPE_BREAKDOWN_CLAIMS = (
+    # (module, output_name, Z, N, include_inter, scope)
+    ("build_atomic_braid_recipe_p_chain", "beta_p_canonical", 1, 0, False, "all"),
+    ("build_atomic_braid_recipe_n_chain", "beta_n_canonical", 0, 1, False, "all"),
+    ("build_atomic_braid_recipe_d_chain", "proton_intra", 1, 0, False, "all"),
+    ("build_atomic_braid_recipe_d_chain", "neutron_intra", 0, 1, False, "all"),
+    ("build_atomic_braid_recipe_d_chain", "inter_pn", 1, 1, True, "inter"),
+    ("build_atomic_braid_recipe_d_chain", "beta_D_canonical", 1, 1, True, "all"),
+)
+
+
+def _truth_counter(Z: int, N: int, include_inter: bool, scope: str):
+    from canonical_braid_crossings import atom_canonical_crossings
+    word = atom_canonical_crossings(Z, N, include_inter=include_inter)
+    if scope == "inter":
+        inter_idx = {3 * k + 2 for k in range((Z + N) - 1)}
+        word = [(g, c) for (g, c) in word if g in inter_idx]
+    return Counter(c for _g, c in word)
+
+
+def part_d() -> None:
+    print("\nPart D -- recipe-chain type_breakdown vs the canonical word")
+    import importlib
+    for mod_name, out_name, Z, N, inter, scope in RECIPE_BREAKDOWN_CLAIMS:
+        label = f"{mod_name.replace('build_atomic_braid_recipe_', '')}:{out_name}"
+        try:
+            chain = importlib.import_module(mod_name).build()
+        except Exception as exc:                       # pragma: no cover
+            failures.append(f"{label}: build() raised {type(exc).__name__}: {exc}")
+            continue
+        step = next((s for s in chain.steps if s.output_name == out_name), None)
+        if step is None:
+            failures.append(
+                f"{label}: no step with that output_name -- the claim table "
+                f"in this test has drifted from the chain"
+            )
+            continue
+
+        truth = _truth_counter(Z, N, inter, scope)
+        ov = step.output_value
+        # Two shapes in use: a full `type_breakdown` map, or a single `type`
+        # + `count` (the inter_pn step). Both are claims about the same word.
+        if "type_breakdown" in ov:
+            claimed = Counter(ov["type_breakdown"])
+        elif "type" in ov:
+            claimed = Counter({ov["type"]: ov.get("count", 1)})
+        else:
+            notes.append(f"  skip {label}: no breakdown recorded")
+            continue
+
+        if claimed != truth:
+            failures.append(
+                f"{label}: recorded breakdown {dict(sorted(claimed.items()))} "
+                f"!= canonical {dict(sorted(truth.items()))} for "
+                f"atom_canonical_crossings(Z={Z}, N={N}, "
+                f"include_inter={inter})"
+                + (f" [{scope} crossings only]" if scope != "all" else "")
+                + " -- the literal carries trust_basis=DERIVED, so fix the "
+                  "literal, never this test"
+            )
+            continue
+
+        # The count field is a second, separately-wrong-able claim.
+        recorded_total = ov.get("total", ov.get("count"))
+        if recorded_total is not None and recorded_total != sum(truth.values()):
+            failures.append(
+                f"{label}: recorded total {recorded_total} != "
+                f"{sum(truth.values())} actual crossings"
+            )
+            continue
+        notes.append(f"  ok   {label}: {dict(sorted(truth.items()))}")
+
+
 def main() -> int:
     part_a()
     part_a2()
     part_b()
+    part_c()
+    part_d()
     print("\n".join(notes))
     if failures:
         print(f"\nFAIL ({len(failures)}):")

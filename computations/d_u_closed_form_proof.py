@@ -55,8 +55,13 @@ def count_averaged_crossings(Z: int, N: int) -> dict:
     inter_idx_set = {3 * k + 2 for k in range(A - 1)}
     for gen_idx, ctype in crossings:
         (inter if gen_idx in inter_idx_set else intra).append((gen_idx, ctype))
-    n_avg_intra = sum(1 for _, c in intra if c == "averaged")
-    n_avg_inter = sum(1 for _, c in inter if c == "averaged")
+    # BOTH averaged kinds count. `== "averaged"` alone scored n_avg_inter = 0
+    # for every Z>=1,N>=1 atom, because the inter-nucleon crossing is the
+    # colour-weighted `averaged_weighted` -- so the one quantity this split
+    # exists to report was identically zero on the inter side, silently.
+    _AVG = ("averaged", "averaged_weighted")
+    n_avg_intra = sum(1 for _, c in intra if c in _AVG)
+    n_avg_inter = sum(1 for _, c in inter if c in _AVG)
     return {
         "Z": Z,
         "N": N,
