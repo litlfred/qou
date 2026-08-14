@@ -72,8 +72,7 @@ theorem nu_phys_near_half (ε : K) (hε : 0 < ε) :
     nuPhys (1 + ε) < 1 / 2 ∧ 1 / 2 - nuPhys (1 + ε) ≤ ε / 2 := by
   have hq : (1 : K) + ε ≠ 1 := by
     intro h
-    have : ε = 0 := by linarith [add_left_cancel (a := (1 : K)) (by linarith : (1 : K) + ε = 1 + 0)]
-    exact absurd this (ne_of_gt hε)
+    exact absurd (by linarith : ε = 0) (ne_of_gt hε)
   rw [nu_phys_eq (1 + ε) hq]
   have h2 : (0 : K) < 2 * (1 + ε) := by positivity
   constructor
