@@ -1,0 +1,61 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-14T15:00:44.305592+00:00",
+  "commitSha": "172ad011abe8b14f5bfea180508cd688ee81535a",
+  "assertions": [
+    {
+      "name": "Backscatter does NOT re-open self-sustainment: S_q stays flat/decreasing across the N-sweep (no growth with truncation)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "GOY delta=0.5, S_q across N=(8, 12, 16, 20, 24); scope (a): this model/load/eps, alone"
+    },
+    {
+      "name": "q/classical survival ratio stays near 1 with backscatter present (N-sweep and delta-sweep)",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "R(N) and R(delta) within [0.2, 5]; delta in (0.1, 0.5, 0.9)"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 286722,
+  "computation": "qns-backscatter-sustainment-probe",
+  "scriptFile": "qns_backscatter_sustainment_probe.py",
+  "scriptHash": "14b9e59cf4f9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "SF4 (bean qou-y7ey, epic qou-a3n3): tests the SF-arc's named fidelity caveat — DN has no backscatter — by rerunning the SF3 protocol in a GOY-class shell model (complex amplitudes, all-conjugated three-shell interactions, (a,b,c)=(1,-delta,delta-1), a+b+c=0, with exact energy conservation on the q-integer ladder, verified analytically: all triad (m,m+1,m+2) terms share the factor k_m, so conservation is ladder-independent). Unforced Kolmogorov load, viscous-scaled horizon, classical same-nu controls; N-sweep at delta=1/2 plus delta-sweep at N=16. If survival grows with N or R=S_q/S_cl >> 1, backward transfer re-opens the unforced sustained channel and the DN-based closure was a model artifact; if flat with R ~ 1, the regularity picture survives its own caveat and sustained forcing remains the only in-model blow-up channel. Scope (a); exploratory tier; float64 RK2.",
+  "data": {
+    "N8_S_q": 4.015531999236391e-07,
+    "N8_R": 0.21251565454688778,
+    "N12_S_q": 9.473802508355988e-09,
+    "N12_R": 0.013272906235476977,
+    "N16_S_q": 2.903520830063483e-08,
+    "N16_R": 50.376094241287895,
+    "N20_S_q": 1.06879128055346e-07,
+    "N20_R": 0.1479267199473716,
+    "N24_S_q": 1.6947409766911646e-07,
+    "N24_R": 5.489997499528888,
+    "delta0.1_S_q": 5.19233058026605e-06,
+    "delta0.1_R": 1.2898313263620849,
+    "delta0.5_S_q": 2.903520830063483e-08,
+    "delta0.5_R": 50.376094241287895,
+    "delta0.9_S_q": 1.4728638990612008e-06,
+    "delta0.9_R": 2.0471852936958044,
+    "S_spread": 42.38564183383232,
+    "tier": "exploratory",
+    "eps": 0.01,
+    "delta_std": 0.5
+  }
+}
