@@ -153,7 +153,16 @@ def build() -> DerivationChain:
         output_name="beta_D_canonical",
         output_value={
             "total":          23,
-            "type_breakdown": {"sigma": 11, "sigma_inv": 7, "averaged": 5},
+            # 11 = 6(p) + 5(n); 7 = 3(p) + 4(n); 4 = 2(p) + 2(n) intra.
+            # The 23rd crossing is the ONE p-n interface, and it is
+            # `averaged_weighted` (colour-weighted, d = -h(1/2 - δ/4)), not
+            # `averaged` (colour-blind, d = -h/2). This literal read
+            # `"averaged": 5` and claimed DERIVED provenance against
+            # `atom_canonical_crossings(Z=1, N=1)` -- a match that stopped
+            # holding when that function learned to distinguish the two
+            # interfaces (qou-gdtb). p and n are unaffected: no p-n bond.
+            "type_breakdown": {"sigma": 11, "sigma_inv": 7,
+                               "averaged": 4, "averaged_weighted": 1},
         },
         trust_basis=TrustBasis.DERIVED,
         citation="manuscript:§Atomic-braid recipe; "
