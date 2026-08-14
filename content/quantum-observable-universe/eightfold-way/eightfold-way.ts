@@ -77,6 +77,10 @@ export default chapter({
       blocks: [
         "schur-weyl-eightfold",
         "borromean-decuplet-derivation",
+        // The equal-spacing / Omega-minus null result. Placed after the
+        // decuplet block it interprets, so the edge runs backward. Takes
+        // this section from 2 to 3 blocks, into the detangler 3-18 band.
+        "decuplet-equal-spacing",
       ],
     }),
 
