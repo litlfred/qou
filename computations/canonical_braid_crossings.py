@@ -198,4 +198,39 @@ def d_for_ctype(ctype: str, h_val):
     raise ValueError(f"unknown ctype {ctype!r}")
 
 
-__all__ = ["atom_canonical_crossings", "classify_crossing", "d_for_ctype"]
+#: Every ctype `classify_crossing` can return. The one place to read when
+#: asking "have I covered them all?" — see `sign_for_ctype` and
+#: `test_ctype_consumer_coverage.py`.
+CTYPES: tuple[str, ...] = (
+    "sigma", "sigma_inv", "averaged", "averaged_weighted",
+)
+
+
+def sign_for_ctype(ctype: str) -> int:
+    """The `sign ∈ {-1, 0, +1}` wire encoding of a ctype.
+
+    ⚠ **Lossy for `averaged_weighted`, by construction.** A sign cannot
+    carry a magnitude, so both averaged interfaces collapse onto `0` — the
+    colour-blind projection. The p-n colour weighting `-h(1/2 - δ/4)` is
+    *not* representable in this format at all; consumers that need it must
+    take `d_for_ctype` instead, which is exact.
+
+    This is not a new loss: every sign-format consumer already behaved this
+    way, because before `averaged_weighted` existed `classify_crossing`
+    returned `averaged` for both. Centralising it here makes the projection
+    explicit and auditable rather than an omission in four private tables.
+    The representational gap itself stays open under bean `qou-gdtb`.
+    """
+    if ctype == "sigma":
+        return 1
+    if ctype == "sigma_inv":
+        return -1
+    if ctype in ("averaged", "averaged_weighted"):
+        return 0
+    raise ValueError(f"unknown ctype {ctype!r}")
+
+
+__all__ = [
+    "atom_canonical_crossings", "classify_crossing", "d_for_ctype",
+    "sign_for_ctype", "CTYPES",
+]

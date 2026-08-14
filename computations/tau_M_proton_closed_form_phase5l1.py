@@ -92,15 +92,21 @@ def proton_braid_word_symbolic():
 
 
 def _cross_to_cd(cross_type: str, q: sp.Symbol):
-    """Map cross_type string to (c, d) Hecke coefficients."""
+    """Map cross_type string to (c, d) Hecke coefficients.
+
+    `d` comes from `canonical_braid_crossings.d_for_ctype`, which is exact
+    for all four ctypes and lets `q`'s sympy type drive the arithmetic. The
+    private three-entry table this replaces raised on `averaged_weighted`
+    (qou-8zjd).
+
+    This file's own word is the proton `(1, 0, include_inter=False)`, which
+    has no p-n interface and so never carries `averaged_weighted` -- the
+    breakage here was latent, not live. It is fixed anyway: a private copy
+    that happens not to be reached today is the same defect one caller away.
+    """
+    from canonical_braid_crossings import d_for_ctype
     h = q - 1 / q
-    if cross_type == "sigma":
-        return sp.Integer(1), sp.Integer(0)
-    if cross_type == "sigma_inv":
-        return sp.Integer(1), -h
-    if cross_type == "averaged":
-        return sp.Integer(1), -h / 2
-    raise ValueError(f"Unknown cross_type: {cross_type}")
+    return sp.Integer(1), d_for_ctype(cross_type, h)
 
 
 def chi_lambda_trivial_symbolic(braid_word, q: sp.Symbol) -> sp.Expr:
