@@ -1,6 +1,8 @@
 import QOU.Basic
 import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.CategoryTheory.Types.Basic
@@ -84,6 +86,11 @@ structure QuantumUniverse (k : Type*) [Field k] where
   C : Type u
   [catInst : CategoryTheory.Category.{v} C]
   [monInst : CategoryTheory.MonoidalCategory C]
+  /-- **Temporal braiding.**  The exchange of two adjacent systems is a
+      process with a direction: `c_{V,W} : V ⊗ W ≅ W ⊗ V`, not required to
+      be symmetric.  Rigidity is deliberately NOT here — it belongs to
+      `QuantumObservableUniverse` below. -/
+  [braidedInst : @CategoryTheory.BraidedCategory C catInst monInst]
   /-- The Frobenius–Hopf object `A` in `C`. -/
   frobHopf : @FrobeniusHopfData C catInst monInst
   /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
@@ -95,7 +102,10 @@ structure QuantumUniverse (k : Type*) [Field k] where
 
 /-- **Quantum Observable Universe** over a field `k`.
 
-    A quantum universe satisfying three observability conditions:
+    A quantum universe that is **rigid** and satisfies three observability
+    conditions.  Rigidity (condition 0) is imposed here, not on
+    `QuantumUniverse`: a quantum universe is braided, an observable one is
+    braided and rigid.  The remaining conditions:
     (i)   the Frobenius form on `A` is non-degenerate — an exact self-pairing,
           already enforced structurally by the snake identities in
           `FrobeniusHopfData`.
@@ -108,6 +118,12 @@ structure QuantumUniverse (k : Type*) [Field k] where
     LaTeX: `\label{def:quantum-observable-universe}` -/
 structure QuantumObservableUniverse (k : Type*) [Field k]
     extends QuantumUniverse k where
+  /-- **Rigidity** (condition 0): every object of `C` has left and right
+      duals, with `ev`/`coev` satisfying the snake identities.  A dual is a
+      worldline read backwards, so this is the antiparticle condition; it is
+      also what lets a strand bend back on itself and a braid close into a
+      knot. -/
+  [rigidInst : @CategoryTheory.RigidCategory C catInst monInst]
   /-- The adjoint object `Ad(A)` in `C`, carrying the adjoint action of the
       Hopf algebra `A` on itself.  In a braided monoidal category this is
       constructed from `(A, μ, Δ, S)` and the braiding; here it is provided

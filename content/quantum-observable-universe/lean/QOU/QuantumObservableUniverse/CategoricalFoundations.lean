@@ -1,6 +1,8 @@
 import QOU.Basic
 import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Order.Field.Basic
@@ -92,11 +94,17 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
 
 /-- **Quantum Universe** over a field `k`.
 
-    A triple `(C, A, ω)` where `C` is a `k`-linear rigid monoidal
+    A triple `(C, A, ω)` where `C` is a `k`-linear **braided** monoidal
     category, `A` is a Frobenius–Hopf object in `C`, and `ω` is a fibre
     functor.  The deformation parameter `q` is not part of the base
     definition; it enters via the substrate parameter
     (Definition 1.x, `SubstrateParameter`).
+
+    **Rigidity is deliberately absent here.**  A quantum universe is
+    braided but need not have duals; duals are imposed one level up, on
+    `QuantumObservableUniverse`, where they carry the antiparticles and
+    permit a strand to close into a knot.  Do not add a `RigidCategory`
+    instance to this structure.
 
     LaTeX: `\label{def:quantum-universe}` -/
 structure QuantumUniverse (k : Type*) [Field k] where
@@ -105,6 +113,12 @@ structure QuantumUniverse (k : Type*) [Field k] where
   C : Type u
   [catInst : CategoryTheory.Category.{v} C]
   [monInst : CategoryTheory.MonoidalCategory C]
+  /-- **Temporal braiding.**  The exchange of two adjacent systems is a
+      process with a direction: `c_{V,W} : V ⊗ W ≅ W ⊗ V`, not required to
+      be symmetric.  The hexagon identities are part of the class, and are
+      what make an interaction independent of the order in which its
+      pairwise crossings are written. -/
+  [braidedInst : @CategoryTheory.BraidedCategory C catInst monInst]
   /-- The Frobenius–Hopf object `A` in `C`. -/
   frobHopf : @FrobeniusHopfData C catInst monInst
   /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
@@ -117,7 +131,13 @@ structure QuantumUniverse (k : Type*) [Field k] where
 
 /-- **Quantum Observable Universe** over a field `k`.
 
-    A quantum universe satisfying three observability conditions:
+    A quantum universe that is **rigid** and satisfies three observability
+    conditions:
+    (0)   rigidity: every object has a dual.  This is the antiparticle
+          condition — a dual is a worldline read backwards, `ev` and `coev`
+          are pair annihilation and creation — and it is what lets a strand
+          bend back on itself, hence what lets a braid close into a knot.
+          It is imposed here rather than on `QuantumUniverse`.
     (i)   the Frobenius form on `A` is non-degenerate — an exact self-pairing,
           already enforced structurally by the snake identities in
           `FrobeniusHopfData`.
@@ -130,6 +150,9 @@ structure QuantumUniverse (k : Type*) [Field k] where
     LaTeX: `\label{def:quantum-observable-universe}` -/
 structure QuantumObservableUniverse (k : Type*) [Field k]
     extends QuantumUniverse.{u, v} k where
+  /-- **Rigidity** (condition 0): every object of `C` has left and right
+      duals, with `ev`/`coev` satisfying the snake identities. -/
+  [rigidInst : @CategoryTheory.RigidCategory C catInst monInst]
   /-- The adjoint object `Ad(A)` in `C`, carrying the adjoint action of the
       Hopf algebra `A` on itself.  In a braided monoidal category this is
       constructed from `(A, μ, Δ, S)` and the braiding; here it is provided
