@@ -1,4 +1,4 @@
-# Corpus sweep: "non-holonomic ⇒ resurgent" — 5 sites, and two committed witnesses carrying a refuted verdict
+# Corpus sweep: "non-holonomic ⇒ resurgent" — 5 sites, and three committed witnesses in three different states
 
 **Date:** 2026-08-14 · **Bean:** `qou-arvu` (spun out of `qou-tdp0`, PR #5032) ·
 **Tier:** documentation audit · **Scope:** (a) throughout — an inference step
@@ -60,18 +60,58 @@ connective (`hence`, `so`, `therefore`, `thus`, `⇒`, `implies`, `consequence`)
   ledger already carries this as a proved scope-(b) result: a divergent and a
   convergent series cannot be equated term-by-term.
 
-## The escalation: two committed witnesses assert a refuted verdict
+## The escalation: three committed witnesses, in three different states
 
-Sites 3–5 are **producers**, not prose, and their outputs are committed.
-`computations/qbeta/qbeta-dladder-generating-function-structure.witness.json`
-records:
+Sites 3–5 are **producers**, not prose, and **all three have committed
+witnesses** (verified by `scriptFile` match + `git ls-files`). They are not
+equally affected, and the difference matters for whoever fixes them:
+
+### 1. Refuted verdict — `qbeta-dladder-generating-function-structure.witness.json`
 
 - `data.super_exponentially_divergent = **true**`
 - `data.verdict`: *"super-exponentially DIVERGENT (radius → 0) … the SAME
   resurgent family as the κ-tower … the earlier 'convergent ρ≈0.143' was a
   finite-n shadow"*
 
-Every clause of that was reversed on 2026-08-09.
+Every clause of that was reversed on 2026-08-09. This is the one that genuinely
+asserts something refuted.
+
+### 2. Refuted framing, **corroborating data** — `qbeta-odd-channel-stokes-borel.witness.json`
+
+Its heading calls it the odd-channel *"divergence class"*, but its own
+measurements point the other way:
+
+- `data.gevrey_order_drifts_down = **true**` — the effective Gevrey order `C`
+  falls `~0.08 → 0.05` as the tail lengthens, i.e. the apparent divergence
+  **weakens** with more terms, which is what a *non*-divergent series does to
+  this diagnostic;
+- the description already records *"NOT q-Gevrey-1 in any base > 1"*;
+- the fixed-order Borel–Leroy pole runs `0.147 → 0.165 → 0.249` for
+  `s = 0.02 → 0.10 → 0.30`, so the small-`s` end sits at **0.147** — within
+  ≈ 3 % of `ρ = 0.142799996644689…`, and trending toward it as `s → 0`.
+
+**Scope-(a), stated carefully:** this is an observation that the recorded
+numbers are *consistent with* the 2026-08-09 radius, not a derivation of `ρ`
+from them. But it means this witness's data was pointing at the true radius
+while its framing called the channel divergent. Re-scoping it is mostly a
+relabelling job, and the numbers become supporting evidence rather than
+contradicted ones.
+
+### 3. Verdict correct, only the description carries the bad step — `qbeta-dladder-coupled-qsqrt3-recurrence.witness.json`
+
+- `data.verdict = "NO coupled ℚ(√3) P-recurrence up to (r≤4, D≤4) at this ORD"`
+  — a pure non-holonomicity result, **correct and unaffected**.
+
+Only the surrounding `description` carries the invalid step, *"NEGATIVE ⇒ …
+(corroborates the q-Gevrey/**resurgent** reading)"*. The measurement stands; the
+gloss on it does not. This is the cheapest of the three to fix and the one least
+at risk of being over-corrected.
+
+> **Count correction (2026-08-14).** An earlier revision of this document and of
+> `qou-arvu` said *"two committed witnesses"* and named only one file. Both were
+> wrong: there are **three**, and they are in three different states. Caught in
+> review on PR #5039. Noted here because an unverified count in an audit about
+> unverified claims is the same defect one level up.
 
 **Re-running does not fix it, and that is the important part.** The probe's
 arithmetic is not in question: at `k ≤ 21–27` the root test really does rise
