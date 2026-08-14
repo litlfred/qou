@@ -13,13 +13,13 @@ future probe or estimate must target, before any wide search runs).
 `low_mode_block_global.lean` proved large-data global persistence *at
 the fixed block* with the bound `Ω ≤ kmax²·E₀`, non-uniform in `ε`
 because the block's top rung `kmax = [m]_{1+ε}` diverges as `q → 1⁺`.
-This file splits the enstrophy at a **fixed** band `K` (independent of
-`ε`) and proves:
+This file splits the enstrophy at a **fixed** band `B` (independent of
+`ε`; `K` is reserved for the coefficient field) and proves:
 
-  `Ω  =  Ω_{≤K} + Ω_{>K}  ≤  kK²·E + Ω_{>K}`,
+  `Ω  =  Ω_{≤B} + Ω_{>B}  ≤  kB²·E + Ω_{>B}`,
 
 so the `ε`-uniform large-data bound holds **iff** the above-band tail
-enstrophy `Ω_{>K}` is uniformly bounded — *"no enstrophy pile-up at
+enstrophy `Ω_{>B}` is uniformly bounded — *"no enstrophy pile-up at
 the receding damping threshold."*  The fixed-band part is proved
 (`banded_enstrophy_le`); the tail is the named hypothesis
 (`uniformity_reduction`), and the trivial converse (`tail_le_total`)
