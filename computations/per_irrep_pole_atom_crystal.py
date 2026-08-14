@@ -167,6 +167,24 @@ _LETTER_CONTRIB: dict[tuple[str, int], tuple[int, sp.Rational]] = {
     ("averaged",  1):  (-2, sp.Rational(1, 2)),   # Δ_I on sym:  +½ u⁻²
     ("averaged", -1):  (-2, sp.Rational(-1, 2)),  # Δ_I on anti: -½ u⁻²
     ("averaged",  0):  (None, sp.Integer(0)),
+    # The colour-weighted p-n interface shares the colour-blind entries, and
+    # that is derived rather than convenient:
+    #
+    #   * its d is -h(1/2 - δ/4) not -h/2, so its exact coefficient would be
+    #     (1/2 - δ/4) with δ ≈ 1.376e-3 — which changes neither the u-ORDER
+    #     (still -2) nor the SIGN, the two things this table feeds;
+    #   * `coeff` is consumed as an EXACT RATIONAL: coeff_λ = Σ_T coeff_T,
+    #     and the method's key signal is `coeff_λ == 0`, leading-coefficient
+    #     cancellation. Carrying (1/2 - δ/4) as a float would make that sum
+    #     essentially never exactly zero and destroy the cancellation test.
+    #
+    # So the crystal limit resolves order and exact cancellation; the colour
+    # weighting is an O(δ) coefficient correction it does not resolve —
+    # stated here rather than left silent. Without these rows the lookup
+    # raised KeyError on every Z>=1,N>=1 word (qou-8zjd).
+    ("averaged_weighted",  1):  (-2, sp.Rational(1, 2)),
+    ("averaged_weighted", -1):  (-2, sp.Rational(-1, 2)),
+    ("averaged_weighted",  0):  (None, sp.Integer(0)),
 }
 
 
