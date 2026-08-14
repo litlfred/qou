@@ -1,10 +1,11 @@
 ---
 # qou-hfei
 title: 'GAP: source of the ~1e-4 error in the legacy 5₂ V literals'
-status: todo
+status: scrapped
 type: task
+priority: normal
 created_at: 2026-08-03T14:28:58Z
-updated_at: 2026-08-03T14:28:58Z
+updated_at: 2026-08-14T21:01:52Z
 ---
 
 
@@ -55,3 +56,28 @@ forensics, not a blocker. Close as `wontfix` if it stays cold.
 - probe: `computations/probes/qbeta_5two_saddle_sum_rule_and_provenance_probe.py`
 - ledger: `docs/coordination/1ppq-qbeta.md`, 2026-08-02 row
 - PRs #4454, #4624
+
+
+---
+**2026-08-14 — five more sources refuted; closing `wontfix` (scrapped).**
+
+Probe `computations/probes/qbeta_5two_legacy_provenance_narrowing_probe.py`
+(self-contained mpmath, EXIT 0) refutes five more error sources by direct test:
+H1 truncated π (converges to the TRUE value, min |err| vs legacy 2.81e-4),
+H2 rounded root (map insensitive, confirms bean), H3 perturbed cubic coeffs
+(nearest legacy repro off by 8.3e-3), H4 additive shift (implied shifts are
+`0.49999·π²` and `0.50003·π²` — independently off `π²/2`, not a common
+constant), H5 low working precision (even dps=6 converges to TRUE, never legacy).
+
+DECISIVE: **no degradation of the current formula reproduces the legacy pair.**
+Every perturbation lands on / converges to the TRUE extraction value, ≥ ~6e-5
+from legacy. So the legacy pair is not a sloppy eval of THIS formula — it is a
+DIFFERENT computation agreeing to ~4 sig figs (consistent with the pair being
+internally inconsistent by 7.3e-5 against `V₃ = −2·Re V₁ − 3π²/2`). This mildly
+CORRECTS the bean's prior "formula right, evaluation sloppy" framing.
+
+Cold forensics, no downstream consumer (values unused; V₃ follows from V₁ via
+the proved sum rule). Seven refuted sources total; the remaining space
+(the actual different-source computation) is unbounded and buys nothing.
+Closing `wontfix` per this bean's own guidance. Audit:
+`docs/audits/2026-08-14-hfei-5two-legacy-provenance-narrowing.md`.
