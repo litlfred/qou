@@ -162,6 +162,7 @@ export default chapter({
       label: "sec:ns-approaches",
       blocks: [
         "ns-approaches-intro",
+        "qns-unit-layers",
         "regularity-breakdown",
         "regularity-breakdown-table-data",
         "p2-critical-exponent",
