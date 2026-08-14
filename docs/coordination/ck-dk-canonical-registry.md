@@ -135,11 +135,18 @@ cross-referenced so they are never conflated again.
   (bar-odd parity, Lean-proved), and the `S = 0` point `q*_S` ≈ 1.10998 (**not**
   KC22's `q*_ρ` ≈ 1.48989 — §9a) is a third,
   decay-sector determination of q₀ (μ–p–Q_β three-way). The bar-even ℚ(√3)
-  ladder `D(ũ)` is exact through `d₂₁` and **refuted as low-order
-  (q-)holonomic in every tested class** (KC22) — so a genuine c₃ closure, if
-  any, is transcendental/resurgent (Écalle class), not a q-difference
-  equation. **No tier change**: c₃ stays EMPIRICAL/REFUTED-as-real-q; these
-  rows narrow the search class, they do not produce a value.
+  ladder `D(ũ)` is exact through `d₂₁`, **convergent** (radius `ρ = ũ(q*_ρ)`,
+  CORRECTED 2026-08-09), and **refuted as low-order (q-)holonomic in every
+  tested class** (KC22) — so a genuine c₃ closure, if any, lies outside the
+  low-order (q-)holonomic and q-difference classes that were tested. It is
+  **not** thereby resurgent: the "transcendental/resurgent (Écalle class)"
+  inference this bullet used to draw is **WITHDRAWN 2026-08-09** — it rested
+  on a divergence the ladder does not have (`κ = 0`). What KC22 supplies
+  instead is the closed form `D(w) = φ(w)log(1−w/ρ) + ψ(w)` with algebraic
+  `φ`, `ψ` over a degree-12 field — itself an example of an element that is
+  convergent yet not low-order P-finite. **No tier change**: c₃ stays
+  EMPIRICAL/REFUTED-as-real-q; these rows narrow the search class, they do
+  not produce a value.
 - **`c_3 = −Vol(4₁) + u − (10/3)u²`** ([`2026-07-08-qbeta-keystone-derivation.md`](../audits/2026-07-08-qbeta-keystone-derivation.md),
   landed with an over-scoped "PROVEN/exact" tier) is a **muon-anchor near-match**,
   **re-scoped 2026-07-11**: it is anchor-blind (≈ −2.0216 at both anchors) while
