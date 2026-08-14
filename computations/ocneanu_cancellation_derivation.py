@@ -121,8 +121,15 @@ def chi_symbolic(shape: tuple[int, ...], crossings: list) -> sp.Expr:
         # raised on `averaged_weighted`. This module is q-SYMBOLIC, so δ is
         # passed as its closed form in q -- taking the default would inject
         # the q0-pinned numeric δ into a symbolic expression (layer straddle).
+        # `q_inv` is passed EXPLICITLY. Left to its default, the helper
+        # computes `mpf(1) / q`; against a sympy Symbol that does not raise
+        # (mpmath returns NotImplemented and sympy's reflected op takes over)
+        # but it does seed a `Float(1.0)` into the expression, giving
+        # (q-1)**2*(q**4 - 1.0)/(3*q**4). Handing it `1/q` keeps the whole
+        # δ exact: (q-1)**2*(q**4 - 1)/(3*q**4), no Float atoms.
         step = sigma_i + d_for_ctype(
-            ctype, H_SKEIN, delta=flavor_split_leading(q)) * sp.eye(dim)
+            ctype, H_SKEIN, delta=flavor_split_leading(q, 1 / q),
+        ) * sp.eye(dim)
         M = sigma_i_mul = step * M
     chi = sp.cancel(M.trace())
     return chi
