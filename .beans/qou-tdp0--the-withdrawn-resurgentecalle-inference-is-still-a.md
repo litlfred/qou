@@ -50,12 +50,28 @@ exclusion without a proved invariant.
 
 ## Work
 
-1. Triage all ~10 `Écalle|resurgent` hits in `docs/coordination/1ppq-qbeta.md`
-   (lines ~1055, 1056, 1058, 1170, 1313, 1407, 1532, 1809, 2143, 2151).
-   Per hit, classify: (a) the **withdrawn class-membership inference** → fix,
-   citing the 2026-08-09 correction; (b) **Écalle/Borel as technique** →
-   leave; (c) ambiguous → leave and note.
-   Line 1055-1058 is (a) and is the priority.
+1. ~~Triage the `Écalle|resurgent` hits in `docs/coordination/1ppq-qbeta.md`.~~
+   **DONE 2026-08-14.** 16 hits triaged, owner-directed fix style (append +
+   inline markers + correct the one non-sequitur outright):
+
+   | class | lines | action |
+   |---|---|---|
+   | (a) withdrawn inference stated live | 1055–58, 1170, 1313, 1407, 1532 | `[SUPERSEDED 2026-08-09]` marker in place; **no dated entry rewritten** |
+   | (a′) invalid *inference*, not merely stale | 1809 | **corrected outright** — framing bullet, not a dated entry |
+   | (b) Écalle as technique | 1486, 2143, 2151 | left — normalization scheme |
+   | (c) different object | 851, 2549, 2579, 2771, 2817 | left — κ-tower / GGM–GPPV / 4₁ |
+
+   **Root cause found:** the ledger's last entry is dated 2026-08-09 (PR #4865,
+   the 5₂ saddle sum rule) — the *same day* as the convergence correction — but
+   the correction itself **never got a ledger entry**. The five stale sites are
+   symptoms; the missing entry is the disease. Now appended as a dated
+   2026-08-14 entry, per the file's own correction convention (cf. its earlier
+   `CORRECTION` / `SUPERSEDED` entries).
+
+   **Spun out:** line 1809's "no A-polynomial recurrence *hence* resurgent" is
+   invalid *independently* of the 2026-08-09 correction — non-holonomic does not
+   imply divergent, and KC22's convergent-yet-not-P-finite `φ·log + ψ` is the
+   counterexample. Corpus-wide sweep for that step: **`qou-arvu`**.
 2. ~~**Then** check whether any open Écalle bean is *motivated* by the withdrawn
    inference rather than by the technique.~~ **DONE 2026-08-14** — see below.
 3. Grep wider (`docs/`, `content/`) for the same restatement — the pattern is
