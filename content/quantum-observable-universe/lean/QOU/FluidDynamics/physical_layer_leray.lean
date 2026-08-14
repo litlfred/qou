@@ -113,11 +113,12 @@ theorem physical_tail_leray_uniform (E Ωp tail : ℕ → K) (δ q : K)
 ## Discrete epochs of regularity (bean `qou-8wjo`)
 
 Markov's counting inequality applied to the ε-uniform Leray bound: for
-**any** exceedance level `λ > 0`, the number of time steps at which the
-tail exceeds `λ` is at most `4E₀/(δλ)` — a bound independent of `ε`, of
-the horizon `n`, and of everything about the data except `E₀`.  Outside
-that boundedly-small bad set the tail is `≤ λ`: the discrete image of
-Leray's *epochs of regularity*.
+**any** exceedance level `λ`, the bad-step count satisfies the product
+inequality `(card bad)·λ ≤ (4/δ)·E₀` — with constants independent of
+`ε`, of the horizon `n`, and of everything about the data except `E₀`.
+For `λ > 0` this reads `card bad ≤ 4E₀/(δλ)`: the tail exceeds `λ` on
+at most boundedly many steps, and outside that set it is `≤ λ` — the
+discrete image of Leray's *epochs of regularity*.
 
 **What this does not give, honestly:** the bad set is bounded in
 *count*, not located — it may concentrate at a single time, and a
@@ -128,15 +129,16 @@ times.
 -/
 
 /-- **Discrete epochs of regularity, ε-uniform**: under the physical
-    Leray hypotheses, for every level `lam > 0` the count of time steps
-    `i < n` with `lam < tail i` satisfies (for any level `lam`; the
-    inequality is vacuously generous when `lam ≤ 0`)
+    Leray hypotheses, for every level `lam` the count of time steps
+    `i < n` with `lam < tail i` satisfies the product inequality
 
       `(card bad) · lam ≤ (4/δ)·E₀`,
 
-    i.e. `card bad ≤ 4E₀/(δ·lam)` — uniformly in `ε`, `n`, and the
-    data beyond `E₀`.  (Requires `0 ≤ tail` so that off-bad-set terms
-    cannot hide negative mass.) -/
+    with constants uniform in `ε`, `n`, and the data beyond `E₀`.
+    When `0 < lam` this yields the count bound
+    `card bad ≤ 4E₀/(δ·lam)` on dividing by `lam`; for `lam ≤ 0` the
+    inequality is vacuously generous.  (Requires `0 ≤ tail` so that
+    off-bad-set terms cannot hide negative mass.) -/
 theorem epochs_of_regularity (E Ωp tail : ℕ → K) (δ q lam : K)
     (hδ : 0 < δ) (hq1 : 1 < q) (hq2 : q ≤ 2)
     (hΩ : ∀ n, 0 ≤ Ωp n)
