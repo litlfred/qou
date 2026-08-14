@@ -17,4 +17,15 @@ export default remark({
     "rem:half-life-as-q-probe",
     "rem:mass-comparison-table",
   ],
+  // The +0.313 ppb figure and the 137.035999127 fixed point come from the
+  // Schwinger cubic, not from this block's own arithmetic; pinned so the
+  // numbers are traceable rather than transcribed. The companion q-inversion
+  // (q_alpha = 1.10997858..., 0.245 ppb from the proton pin, 11.8 ppb from the
+  // muon pin) is alpha-em-anchor-preference.witness.json.
+  computation: {
+    engine: "python",
+    script: "computations/alpha_em_schwinger_ladder_probe.py",
+    witness: "computations/alpha-em-schwinger-ladder.witness.json",
+    status: "verified",
+  },
 });
