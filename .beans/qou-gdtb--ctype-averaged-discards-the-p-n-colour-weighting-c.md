@@ -101,3 +101,35 @@ Raises the priority: the colour-weighted p–n interface is not merely
 approximated downstream, it is unrepresentable in more than one place. Any
 fix has to settle the representation across every `d` consumer, not just the
 two behind the χ discrepancy.
+
+## Status correction (2026-08-14): the "two crash-site validators" were already fixed
+
+A prior session's summary listed this bean's remaining work as *"two
+crash-site validators still carry the narrow `{0, -h, -h/2}` vocabulary"*.
+That was stale. Both had already been repaired:
+
+- `atom_braid_active_partitions.py:95` carries `abs(d - _D_PN_WEIGHTED) < 1e-9`
+  and uses the actual `d` as the identity coefficient;
+- `fr_pullback_borromean_h3a_test.py:190` carries the `delta_ratio` branch
+  with `id_coeff = h·δ/4`.
+
+`canonical_braid_marshalling.py` had also grown a `_d_cw` branch in both
+marshallers, so the original `bar_pairing_binding_observable` crash is gone.
+
+**What was actually still live** was subtler than a crash, and is the defect
+this bean names in its first section: `marshal_to_symbolic_braid` accepted the
+colour-weighted `d` but **labelled it `"averaged"`**, and its consumer
+resolves labels through `d_for_ctype` — so `-h/2` was substituted for
+`-h(1/2 - δ/4)` with no error anywhere. Measured at 6.8833e-4 on 1 crossing
+in 23. Fixed in PR #5018 by deleting the private classifier; canonical and
+marshalled classification now agree crossing-by-crossing on p, n, D, T, ³He,
+⁴He.
+
+Item 2 of *To close* ("audit the other consumers of `atom_canonical_crossings`
+for the same loss") is what turned up the nine further sites in `qou-8zjd` —
+it was the right instruction and it had not been run.
+
+**Still open here**: item 1, the representation decision. `sign_for_ctype`
+now documents the projection rather than closing it — a `(gen_idx, ctype)`
+pair still cannot express an operator-valued interface, which is this bean's
+deeper claim.
