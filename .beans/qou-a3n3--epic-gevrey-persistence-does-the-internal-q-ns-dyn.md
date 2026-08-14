@@ -54,3 +54,13 @@ OPPOSITE answers: the rescaling decision (audit
 2026-08-14-qns-model-to-pde-uniformity-decomposition.md §5, owner
 brief A/B/C) is now LOAD-BEARING for the millennium framing. Epic
 blocks on that owner call.
+
+## 2026-08-14: physical-layer Leray UNIFORM (physical_layer_leray.lean)
+
+nu_phys = 1/(2q) >= 1/4 for q <= 2, so the discrete Leray control is
+eps-UNIFORM in the physical layer: (delta/4)*sum Omega_phys <= E0 and
+the same for any above-band tail — the TIME-AVERAGED no-pile-up bound
+is PROVED. Remainder in the physical layer now has exactly the
+classical shape: energy uniform + Leray uniform + sup-in-time OPEN
+(= the classical weak-vs-strong gap, discrete/graded image). That
+sup-in-time bound is the epic's single remaining analytic item.
