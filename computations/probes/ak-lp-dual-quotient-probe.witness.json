@@ -1,8 +1,8 @@
 {
   "engine": "python+scipy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T18:42:19.476287+00:00",
-  "commitSha": "76be40ba7aa23d7d0a1529965c84c57b3c7b7ae6",
+  "computedAt": "2026-08-14T18:53:58.123068+00:00",
+  "commitSha": "842bf13f4f31949525c2c26db4a90e535ccce75a",
   "assertions": [
     {
       "name": "ambient_lp_degenerate_under_D",
@@ -45,8 +45,8 @@
   "durationMs": 0,
   "computation": "ak-lp-dual-quotient-probe",
   "scriptFile": "ak_lp_dual_quotient_probe.py",
-  "scriptHash": "9df4b980a549",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "be18b2899714",
+  "scriptCommitSha": "c4fba6847603db87f2b6cf7391e0cf953b421ffb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,6 +62,58 @@
     "clarabel": "0.11.1"
   },
   "description": "Re-poses the a_K operator-selection LP on H_n/rad (the blocks convention D leaves alive) and asks whether that recovers a_K. It makes y0* nonzero and a_K defined, but does NOT recover a_K — and the convention-C history shows the LP never did, missing by up to 1.6e17 ppm. audit_only; no anchor, no fit.",
+  "data": {
+    "upstream_witness_hashes": [
+      {
+        "path": "chi-proton-h3-at-q0-50dps.witness.json",
+        "sha256": "52c8a353c469626ad015d478dd7dc313f7b0af2b4c45806e951be59e7cf42116",
+        "size_bytes": 2290,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:38.582633+00:00"
+      },
+      {
+        "path": "chi-neutron-h3-at-q0-50dps.witness.json",
+        "sha256": "55375e49007071f1f174544b72a2460b54724a3cda8bdec63de64e3708f09185",
+        "size_bytes": 2295,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:38.505845+00:00"
+      },
+      {
+        "path": "chi-deuteron-h6-at-q0-50dps.witness.json",
+        "sha256": "8def85c0c8ff02872a917db8f2585cc0dac68a1d24ef99b149f9cc10187b02bb",
+        "size_bytes": 4606,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:37.472970+00:00"
+      },
+      {
+        "path": "chi-tritium-h9-at-q0-50dps.witness.json",
+        "sha256": "d8a6bed12bb80f46046d1cdd86c0ac7dfc48adc91dfb1d8f63f3dabd9d1d492c",
+        "size_bytes": 9951,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:38.428907+00:00"
+      },
+      {
+        "path": "chi-helium-3-h9-at-q0-50dps.witness.json",
+        "sha256": "3fc5b0b32b68e7cfea49d7a9adae9e56b136da8f1ea110ae88e57eb974886c9a",
+        "size_bytes": 9953,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:37.388418+00:00"
+      },
+      {
+        "path": "chi-helium-4-h12-at-q0-50dps.witness.json",
+        "sha256": "291432285bc7d220346f294e7a80d65650e2ae82424d9a846b375661d5f19c89",
+        "size_bytes": 23661,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:36.504857+00:00"
+      }
+    ]
+  },
   "audit_only": true,
   "markov_convention": "D",
   "tier": "structural-exact (decidable; LP optimum is an argmin, no fit)",

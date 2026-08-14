@@ -110,7 +110,7 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()
 import mpmath as mp  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 
 #: (Z, N, chi-cache) — mirrors aK_via_lp_dual_full.ATOM_CHI.
@@ -160,9 +160,20 @@ def solve(contribs, target, keep=None):
 
 def main() -> int:
     rows = []
+    # Upstream hash records for every chi cache consumed, captured as they are
+    # read and attached to the builder below.
+    #
+    # Reading a witness with a bare `json.loads(path.read_text())` bypasses
+    # WitnessBuilder's upstream tracking, so `witness_dependency_drift.py` has
+    # no edge from this witness to the caches it depends on and cannot tell
+    # when one of them goes stale underneath it. That matters here more than
+    # usual: this probe's entire result is a statement about the contribution
+    # values in those six caches, so a silent upstream change would invalidate
+    # the verdict with nothing to detect it. (Copilot review, PR #5025.)
+    _UP: list = []
     for atom, Z, N, fname in ATOMS:
         A = Z + N
-        doc = json.loads((COMP / fname).read_text())
+        doc = record_upstream(COMP / fname, _UP)
         per = doc["by_partition"]
         target = mp.mpf(doc["tr_M_at_q0"])
         contribs = [mp.mpf(r["contribution"]) for r in per]
@@ -298,7 +309,7 @@ def main() -> int:
     builder = WitnessBuilder.wrap_legacy(
         "ak-lp-dual-quotient-probe", payload,
         script_path=__file__, engine="python+scipy+mpmath",
-    )
+    ).add_upstream_records(_UP)
     for name, ok in (
         ("ambient_lp_degenerate_under_D", ambient_all_degenerate),
         ("quotient_lp_gives_defined_aK", quotient_all_defined),
