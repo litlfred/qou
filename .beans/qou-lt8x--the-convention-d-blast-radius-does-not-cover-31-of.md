@@ -156,3 +156,46 @@ The correct sequencing is therefore: fix root PRODUCERS at the source, re-run
 them, then let dependency ordering carry it to the 15 derived. A sweep that
 re-runs everything in place cannot do this and should not be launched again as
 though it could.
+
+## RE-BASELINED after the convention-D migration landed (2026-08-14)
+
+PR #4928 ("Move the corpus to convention D: migrate the y_λ root, fix the run
+order, and prove the branching step") landed on `main`. **It did most of this
+bean's work.** Re-measuring with the same detector rather than trusting the
+numbers above:
+
+| | then | now |
+|---|---|---|
+| structurally convention C | 43 | **13** |
+| symbolically convention C | — | 1 |
+| the "29 roots" front | 29 | **~5 Python producers** |
+
+The remaining 14, fully resolved — no unexplained entries:
+
+| class | n | witnesses / producers |
+|---|---|---|
+| **Rust binary** | 8 | the whole `chi-*-at-q0-50dps-matrix-m` family (proton, neutron, deuteron, ³He, ⁴He, ⁵Li, ⁶Li, tritium) → `matrix-m-chi-q-via-gp`, `rust-chi-q-via-gp-lossless`, `chi_via_rust_lossless.py`. **Still do not regenerate**: `qou-j6il` found this layer returning C while its source read D, so the convention gate must reach the binary first. |
+| **Python, actionable** | 4 | `alpha_k_jones_markov_h12.py`, `derived_chi_catalogue_build.py`, `probe_1b_li6_orthogonality.py`, `tr_m_q_hecke_seminormal.py` |
+| **symbolic** | 1 | `y_lambda_macdonald_telescope.py` — half-integer power of q in a closed form, a different fix from the numeric ones |
+| **orphan** | 1 | `chi-helium-4-h12-numeric` — no producer, 3 live readers, already documented in `_deprecated/README.md` |
+
+### What this bean got right, and what it cost
+
+The **sequencing** conclusion was right and is what #4928 acted on: fix root
+producers at the source, then let dependency ordering carry the derived ones.
+A sweep re-running everything in place could not have done it.
+
+The **numbers** went stale the moment that landed, and they are the part a
+later agent would have acted on. I nearly launched a 29-producer campaign for
+work already done — caught only by re-running the detector before starting,
+which is the corpus-grep discipline applied to one's own bean rather than to
+the corpus. Worth stating plainly: **a bean that records a measurement is
+stale from the moment it is written**; the measurement, not the bean, is
+authoritative.
+
+### Next step, re-scoped
+
+Four Python producers, not twenty-nine. Each needs the source diff first
+(`git diff` the producer) to see whether it carries convention C in its own
+code or inherits it — the bean's own ROOT/DERIVED distinction still applies,
+just to a much smaller set. The Rust family stays blocked on the binary gate.
