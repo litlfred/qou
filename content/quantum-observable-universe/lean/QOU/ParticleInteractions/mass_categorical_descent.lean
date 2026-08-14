@@ -195,8 +195,10 @@ theorem isCentral_commutes {c : ch.Channel} (h : IsCentral A c) (a : A) :
     ch.op c * a = a * ch.op c :=
   (Set.mem_center_iff.mp h).comm a
 
-/-- Central channel operators commute among themselves (the centre is
-    commutative) — the descended sector is classical. -/
+/-- A central channel's operator commutes with **every** channel
+    operator — central or not (only `c`'s centrality is needed).  In
+    particular the descended sector is commutative, and it also
+    commutes with the transient sector. -/
 theorem isCentral_pair_comm {c c' : ch.Channel} (h : IsCentral A c) :
     ch.op c * ch.op c' = ch.op c' * ch.op c :=
   (Set.mem_center_iff.mp h).comm (ch.op c')
