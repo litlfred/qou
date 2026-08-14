@@ -143,6 +143,11 @@ chapter; the tail hypothesis splits into a substrate-unit (Euler-type)
 and a $c_q$-unit (fixed-$\nu$) version — which may have *different*
 answers, and SF5's dual-normalization output is designed to see that.
 
-**Status: undecided — owner call.** No block is authored until the owner
-picks; SF5 reports both normalizations so no probe work is blocked on the
-decision.
+**Status: DECIDED — Option C (owner, 2026-08-14, "4 then C").** Implemented
+as [`def:qns-unit-layers`](../../content/quantum-observable-universe/fluid-dynamics/qns-unit-layers.md):
+the two layers, the derived $c_q$ tie ($\nu_{\mathrm{phys}} = c_q\nu_q =
+1/(2q)$ exactly, Lean-proved), the conversion identities, and the
+never-straddle STRICT rule. The uniformity question now officially splits:
+substrate-layer (Euler-face) — refuted in-model by SF5; physical-layer
+(fixed-$\nu$ face) — supported in-model by SF5. Clay-facing statements use
+the physical layer, tagged.
