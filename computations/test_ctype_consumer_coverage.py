@@ -29,6 +29,7 @@ Run: `python3 computations/test_ctype_consumer_coverage.py`
 from __future__ import annotations
 
 import re
+from collections import Counter
 import sys
 from pathlib import Path
 
@@ -243,17 +244,16 @@ IMPORTER_VALUE_MAP_BASELINE: dict[str, str] = {
     "audits/term5_aK_audit.py":
         "`else` catches both averaged kinds and treats them as self-inverse",
     # The d-chain is no longer listed: it now names `averaged_weighted` and
-    # passes on its own. These two are correct only because a single nucleon
-    # has no p-n bond — neither is cross-checked against
-    # `atom_canonical_crossings`, which is exactly how the d-chain carried a
-    # wrong `averaged: 5` under trust_basis=DERIVED until this sweep. The
-    # cross-check is bean qou-nmva.
+    # passes on its own. These two stay listed because their literals contain
+    # no `averaged_weighted` (a single nucleon has no p-n bond, so the label
+    # would be wrong) — but they are no longer UNVERIFIED, which is what this
+    # row used to say. Part D checks every recipe literal against a live
+    # `atom_canonical_crossings` call, so being right by accident is no longer
+    # indistinguishable from being right (bean qou-nmva, closed).
     "build_atomic_braid_recipe_n_chain.py":
-        "recipe DATA literal, not dispatch; correct (neutron has no p-n "
-        "bond) but unverified — bean qou-nmva",
+        "recipe DATA literal, not dispatch; verified by Part D",
     "build_atomic_braid_recipe_p_chain.py":
-        "recipe DATA literal, not dispatch; correct (proton has no p-n "
-        "bond) but unverified — bean qou-nmva",
+        "recipe DATA literal, not dispatch; verified by Part D",
     "deltalambda/c_knot_nonuniversal_pinned_weight_probe.py":
         "counts writhe (sigma vs sigma_inv) only; excludes both averaged "
         "kinds by construction",
@@ -310,11 +310,104 @@ def part_c() -> None:
         )
 
 
+# ── Part D: recipe-chain breakdown literals are a CLAIM, so check it ───────
+# The three `build_atomic_braid_recipe_*_chain` modules record a crossing
+# `type_breakdown` as a hand-written literal, stamp it `trust_basis=DERIVED`,
+# and state in their own `operation` string that it matches a specific
+# `atom_canonical_crossings(...)` call. Nothing checked that. The d-chain's
+# literal said `averaged: 5` and was wrong from the moment `classify_crossing`
+# learned to separate the two averaged interfaces (qou-gdtb) — wrong under a
+# DERIVED label, next to a sentence naming the exact call that refutes it.
+#
+# The p- and n-chains were correct, but only because a single nucleon has no
+# p-n bond. They were equally unchecked, and a literal that is right by
+# accident is not evidence of anything.
+#
+# This part makes the claim mean what it says. Bean qou-nmva.
+#
+# `scope` selects which crossings of the named word the step is claiming:
+#   "all"   -- the whole word
+#   "inter" -- only the inter-nucleon generators (3k+2, k = 0..A-2), the
+#              convention `d_u_closed_form_proof` also uses
+RECIPE_BREAKDOWN_CLAIMS = (
+    # (module, output_name, Z, N, include_inter, scope)
+    ("build_atomic_braid_recipe_p_chain", "beta_p_canonical", 1, 0, False, "all"),
+    ("build_atomic_braid_recipe_n_chain", "beta_n_canonical", 0, 1, False, "all"),
+    ("build_atomic_braid_recipe_d_chain", "proton_intra", 1, 0, False, "all"),
+    ("build_atomic_braid_recipe_d_chain", "neutron_intra", 0, 1, False, "all"),
+    ("build_atomic_braid_recipe_d_chain", "inter_pn", 1, 1, True, "inter"),
+    ("build_atomic_braid_recipe_d_chain", "beta_D_canonical", 1, 1, True, "all"),
+)
+
+
+def _truth_counter(Z: int, N: int, include_inter: bool, scope: str):
+    from canonical_braid_crossings import atom_canonical_crossings
+    word = atom_canonical_crossings(Z, N, include_inter=include_inter)
+    if scope == "inter":
+        inter_idx = {3 * k + 2 for k in range((Z + N) - 1)}
+        word = [(g, c) for (g, c) in word if g in inter_idx]
+    return Counter(c for _g, c in word)
+
+
+def part_d() -> None:
+    print("\nPart D -- recipe-chain type_breakdown vs the canonical word")
+    import importlib
+    for mod_name, out_name, Z, N, inter, scope in RECIPE_BREAKDOWN_CLAIMS:
+        label = f"{mod_name.replace('build_atomic_braid_recipe_', '')}:{out_name}"
+        try:
+            chain = importlib.import_module(mod_name).build()
+        except Exception as exc:                       # pragma: no cover
+            failures.append(f"{label}: build() raised {type(exc).__name__}: {exc}")
+            continue
+        step = next((s for s in chain.steps if s.output_name == out_name), None)
+        if step is None:
+            failures.append(
+                f"{label}: no step with that output_name -- the claim table "
+                f"in this test has drifted from the chain"
+            )
+            continue
+
+        truth = _truth_counter(Z, N, inter, scope)
+        ov = step.output_value
+        # Two shapes in use: a full `type_breakdown` map, or a single `type`
+        # + `count` (the inter_pn step). Both are claims about the same word.
+        if "type_breakdown" in ov:
+            claimed = Counter(ov["type_breakdown"])
+        elif "type" in ov:
+            claimed = Counter({ov["type"]: ov.get("count", 1)})
+        else:
+            notes.append(f"  skip {label}: no breakdown recorded")
+            continue
+
+        if claimed != truth:
+            failures.append(
+                f"{label}: recorded breakdown {dict(sorted(claimed.items()))} "
+                f"!= canonical {dict(sorted(truth.items()))} for "
+                f"atom_canonical_crossings(Z={Z}, N={N}, "
+                f"include_inter={inter})"
+                + (f" [{scope} crossings only]" if scope != "all" else "")
+                + " -- the literal carries trust_basis=DERIVED, so fix the "
+                  "literal, never this test"
+            )
+            continue
+
+        # The count field is a second, separately-wrong-able claim.
+        recorded_total = ov.get("total", ov.get("count"))
+        if recorded_total is not None and recorded_total != sum(truth.values()):
+            failures.append(
+                f"{label}: recorded total {recorded_total} != "
+                f"{sum(truth.values())} actual crossings"
+            )
+            continue
+        notes.append(f"  ok   {label}: {dict(sorted(truth.items()))}")
+
+
 def main() -> int:
     part_a()
     part_a2()
     part_b()
     part_c()
+    part_d()
     print("\n".join(notes))
     if failures:
         print(f"\nFAIL ({len(failures)}):")
