@@ -56,7 +56,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from canonical_braid_crossings import classify_crossing  # noqa: E402
+from canonical_braid_crossings import CTYPES, classify_crossing  # noqa: E402
 from hecke_core import h as H_VAL  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
@@ -71,6 +71,14 @@ _CTYPE_SIGNS = {
     "sigma": SIGN_SIGMA,
     "sigma_inv": SIGN_SIGMA_INV,
     "averaged": SIGN_AVERAGED,
+    # `averaged_weighted` shares the AVERAGED sign code because the LR wire
+    # format carries a SIGN, and a sign cannot carry a magnitude — the same
+    # lossy projection `sign_for_ctype` documents. This is not a new loss
+    # (before the label split, both interfaces arrived here as `averaged`),
+    # but it is a loss, and the wire consumer must not be handed the
+    # colour-weighted p-n interface expecting to recover -h(1/2 - δ/4) from
+    # it. Omitting the key instead made this raise on every Z>=1,N>=1 atom.
+    "averaged_weighted": SIGN_AVERAGED,
 }
 
 
@@ -284,12 +292,16 @@ def _smoke_test() -> int:
             )
         # Interface should have exactly A-1 crossings (one per
         # inter-nucleon arc). ctype is sigma (pp), sigma_inv (nn), or
-        # averaged (mixed pn / np).
+        # averaged_weighted (mixed pn / np — colour-weighted, NOT the
+        # colour-blind `averaged`).
         if iface_total != max(0, A - 1):
             raise AssertionError(
                 f"({Z},{N}): iface count {iface_total} != A-1 = {A-1}"
             )
-        allowed = {"sigma", "sigma_inv", "averaged"}
+        # A mixed pn/np arc is `averaged_weighted` (colour-weighted), not
+        # `averaged`; this set omitted it and so rejected every deuteron-or-
+        # heavier interface word it was handed.
+        allowed = set(CTYPES)
         for entry in summary["interface_word"]:
             if entry["ctype"] not in allowed:
                 raise AssertionError(

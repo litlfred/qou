@@ -94,7 +94,10 @@ def chi_numeric_float(shape, crossings, q_mp):
     ]
     q = float(q_mp)
     h = q - 1.0 / q
-    d_lookup = {"sigma": 0.0, "sigma_inv": -h, "averaged": -h / 2.0}
+    # Private table replaced: it raised KeyError on `averaged_weighted`, i.e.
+    # on every Z>=1,N>=1 word this probe is pointed at.
+    from canonical_braid_crossings import CTYPES, d_for_ctype
+    d_lookup = {c: float(d_for_ctype(c, h)) for c in CTYPES}
     eye = np.eye(dim, dtype=np.float64)
     M = np.eye(dim, dtype=np.float64)
     for gen_idx, ctype in crossings:

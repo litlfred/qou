@@ -89,7 +89,10 @@ def chi_lambda_numeric(shape, crossings):
         I = np.eye(dim)
         product = np.eye(dim)
 
-    d_for = {"sigma": 0.0, "sigma_inv": -H_VAL, "averaged": -H_VAL / 2}
+    # Private table replaced: KeyError on `averaged_weighted`, i.e. on every
+    # isotope in this sweep past the single nucleons.
+    from canonical_braid_crossings import CTYPES, d_for_ctype
+    d_for = {c: float(d_for_ctype(c, H_VAL)) for c in CTYPES}
     for gen_idx, cross_type in crossings:
         if gen_idx < 0 or gen_idx >= len(sigmas):
             raise IndexError(
