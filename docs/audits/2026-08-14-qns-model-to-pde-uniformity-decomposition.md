@@ -90,3 +90,59 @@ not cover: sustained forcing (SF-arc conclusion) and 3D pair effects (U3).
    itself is algebra on the exact solution).
 3. **Large-data global persistence** at the low-mode block (epic
    `qou-a3n3` remainder) — unchanged by this session; the millennium core.
+
+## 5. The substrate-to-physical rescaling decision (owner brief, 2026-08-14)
+
+`leray_bound_scaling` (PR #5031) made a structural fact explicit: the
+q-ladder viscosity $\nu_q = \varepsilon/(2(1+\varepsilon))$ **vanishes** as
+$q \to 1^+$, so in substrate units the in-QOU classical limit is a
+*vanishing-viscosity* (Euler-type) limit — not the fixed-$\nu$ Navier–Stokes
+setting of the Clay formulation. Any "millennium mapping" claim must first
+choose units. Three options, with pros/cons and downstream impact:
+
+**Option A — substrate units as-is (status quo).**
+$\nu_q$ vanishes; the classical limit is Euler-type.
+*Pros:* no new convention; $\nu_q$ is derived from $q$ (zero new DOF);
+every existing witness/probe (SF1–SF5, GP, PC arcs) is already in these
+units. *Cons:* the Clay problem is fixed-$\nu$; an Euler-limit statement
+cannot be presented as the millennium problem without a bridge, and
+vanishing-viscosity limits carry their own pathologies (anomalous
+dissipation, Onsager-type roughness). *Downstream:* zero migration; but
+every "millennium" phrasing in the corpus must be labeled in-QOU-limit,
+never Clay-equivalent.
+
+**Option B — $c_q$-rescaled (physical) units.**
+Rescale time/length by $c_q = 1/(q-1) = \varepsilon^{-1}$ (an *existing*
+canonical substrate scale — not a new fitted constant), making the
+effective viscosity $\varepsilon$-independent ($\to 1/2$).
+*Pros:* the limit becomes fixed-$\nu$ NS — direct Clay correspondence; the
+discrete Leray control becomes $\varepsilon$-uniform in these units (the
+$\varepsilon^{-1}$ degradation is exactly absorbed). *Cons:* the ladder
+spacing collapses ($k_{\mathrm{phys}} = \varepsilon\,[n]_q$ — a continuum
+limit), so the finite-block machinery (norm equivalence, fixed-band split)
+does not transfer verbatim; every existing fluid witness number would need
+re-expression; unit-straddling risk across the corpus (cf. the $\mu_3$
+anchor-straddle incident) — the substrate-unit q-NS content is extensive.
+*Downstream:* a migration comparable to a convention change; high
+flip-flop risk if done piecemeal.
+
+**Option C — two explicit unit layers with the $c_q$ tie (recommended).**
+Keep substrate units for categorical/internal statements; define the
+$c_q$-rescaled layer once, as a content block with the conversion lemma;
+every Clay-facing statement carries its unit tag. This mirrors the repo's
+q₀ ideal/experimental two-pin discipline, including its STRICT
+never-straddle rule.
+*Pros:* zero migration of existing content; the rescaling is derived (tied
+to $c_q$, no new DOF — anti-fit clean); both faces of the uniformity
+question become stateable, and probes can report both normalizations
+cheaply (SF5 already does). *Cons:* permanent bookkeeping — every new
+fluid block must declare its layer; two-layer conventions have caused
+straddling bugs before, so the STRICT rule must land with the definition.
+*Downstream:* one new definition block + a STRICT note in the fluid
+chapter; the tail hypothesis splits into a substrate-unit (Euler-type)
+and a $c_q$-unit (fixed-$\nu$) version — which may have *different*
+answers, and SF5's dual-normalization output is designed to see that.
+
+**Status: undecided — owner call.** No block is authored until the owner
+picks; SF5 reports both normalizations so no probe work is blocked on the
+decision.
