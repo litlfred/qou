@@ -297,6 +297,8 @@ def main() -> int:
                     help="print every file in the 'other' bucket")
     ap.add_argument("--list-truncated", action="store_true",
                     help="print every file on the 5-digit truncated anchor")
+    ap.add_argument("--json", action="store_true",
+                    help="emit the census as JSON and nothing else")
     args = ap.parse_args()
 
     buckets = collections.Counter()
@@ -339,10 +341,42 @@ def main() -> int:
         if len(kinds) > 1:
             mixed.append((str(p), sorted(kinds)))
 
+    rec = total - buckets["NOT RECORDED"] - unreadable
+
+    if args.json:
+        # One machine-readable output, so a count is quoted from a run rather
+        # than hand-copied. Three mutually-contradictory generations of these
+        # numbers were live at once across two beans and this script -- each
+        # correct when written, none marked superseded, and the differences
+        # were caused by fixes to the key pattern rather than by the corpus
+        # moving. Anything that cites a count should cite this.
+        json.dump({
+            "scanned": total,
+            "unreadable": unreadable,
+            "records_an_anchor": rec,
+            "records_none": buckets["NOT RECORDED"],
+            "canonical_pair": {
+                "both": canonical[(True, True)],
+                "anchor_only": canonical[(True, False)],
+                "neither": (canonical[(False, False)]
+                            + canonical[(False, True)]),
+            },
+            "anchor_buckets": {
+                k: buckets[k]
+                for k in ("proton", "muon", "truncated-5-digit", "other")
+            },
+            "false_precision": {
+                "known_stale": buckets["FP-known-stale"],
+                "unknown": buckets["FP-unknown"],
+            },
+            "multi_anchor_candidates": len(mixed),
+        }, sys.stdout, indent=2)
+        print()
+        return 0
+
     print(f"  witnesses scanned  : {total}")
     if unreadable:
         print(f"  unreadable         : {unreadable}")
-    rec = total - buckets["NOT RECORDED"] - unreadable
     print(f"  record an anchor   : {rec}  ({rec / total * 100:.1f}%)")
     print(f"  record NONE        : {buckets['NOT RECORDED']}  "
           f"({buckets['NOT RECORDED'] / total * 100:.1f}%)  "
