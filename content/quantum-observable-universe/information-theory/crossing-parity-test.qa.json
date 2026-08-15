@@ -1253,6 +1253,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not atomically.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "63b63b653e54",
+          "ts": "ae26cab1de6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:08.702Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "'The sublimation behaves molecularly, not atomically.'",
+        "notes": "pass-with-note: substantive contrast — names the unit-of-analysis failure for iodine."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1272,6 +1288,21 @@
         "reviewed_at": "2026-08-15T10:30:59.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "63b63b653e54",
+          "ts": "ae26cab1de6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:17.611Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "Full read: no setup-then-reframe pivot constructions."
       }
     ],
     "trap-em-dash": [
@@ -1291,6 +1322,21 @@
         "reviewed_at": "2026-08-15T10:30:59.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 257 words)"
+      },
+      {
+        "field_hash": {
+          "md": "63b63b653e54",
+          "ts": "ae26cab1de6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:17.651Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "Em-dash use absent or genuinely parenthetical; no structural substitution, low density."
       }
     ],
     "trap-triples": [
@@ -1310,6 +1356,21 @@
         "reviewed_at": "2026-08-15T10:30:59.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 257 words)"
+      },
+      {
+        "field_hash": {
+          "md": "63b63b653e54",
+          "ts": "ae26cab1de6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:17.700Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "No reflex three-item lists; enumerations substantive where present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1329,6 +1390,21 @@
         "reviewed_at": "2026-08-15T10:30:59.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "63b63b653e54",
+          "ts": "ae26cab1de6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:17.758Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "Final line substantive (math/bookkeeping), not a placed quotable."
       }
     ],
     "trap-meta-commentary": [
@@ -1348,6 +1424,21 @@
         "reviewed_at": "2026-08-15T10:30:59.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "63b63b653e54",
+          "ts": "ae26cab1de6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:17.808Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "No self-narrated emphasis (no 'we emphasize'/'note the framing')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1367,6 +1458,21 @@
         "reviewed_at": "2026-08-15T10:30:59.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "63b63b653e54",
+          "ts": "ae26cab1de6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:17.873Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "No block-final restatement of already-established content."
       }
     ],
     "trap-performed-warmth": [
@@ -1386,6 +1492,21 @@
         "reviewed_at": "2026-08-15T10:30:59.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "63b63b653e54",
+          "ts": "ae26cab1de6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:17.939Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "Institutional register throughout; no personal warmth."
       }
     ],
     "trap-superlative": [
@@ -1405,6 +1526,23 @@
         "reviewed_at": "2026-08-15T10:30:59.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "63b63b653e54",
+          "ts": "ae26cab1de6d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:08.744Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "severity": "minor",
+        "evidence": "Pervasive intensifier inflation: 'structurally relies','strictly equals','cleanly resolves','structurally predicts','manifests strictly','identically derives','smoothly trivialize','ruthlessly maximize'.",
+        "notes": "proposed: strip inflated adverbs block-wide (~10 sentences) — e.g. 'strictly equals'->'is', 'cleanly resolves'->'resolves', 'smoothly trivialize; ruthlessly maximize'->'trivialize; maximize'. Structural: exceeds 2-sentence license."
       }
     ],
     "trap-nonspeakable": [
@@ -1424,8 +1562,25 @@
         "reviewed_at": "2026-08-15T10:30:59.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "63b63b653e54",
+          "ts": "ae26cab1de6d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:08.783Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "severity": "minor",
+        "evidence": "Broken idioms: 'Liquid H securely exists', 'The shell rests near-closed' (x3), 'acts metallic', 'holds a near-closed shell', 'holds crossing number', 'artificially renders sublimation favorable'.",
+        "notes": "proposed: 'securely exists'->'exists'; 'rests near-closed'->'is near-closed'; 'acts metallic'->'is metallic'; 'holds'->'has'; drop 'artificially' (wrong physically). Same de-inflation pass as trap-superlative; not edited (structural)."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.726Z"
+  "updated_at": "2026-08-15T11:39:08.783Z"
 }

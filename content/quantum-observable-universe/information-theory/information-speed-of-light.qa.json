@@ -1565,6 +1565,22 @@
         "reviewed_at": "2026-08-15T10:30:59.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:04.739Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "'a q-dependent quantity, not a postulated constant set to 1 by definition'",
+        "notes": "load-bearing disambiguation vs the c=1 convention; kept"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1584,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:30:59.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:04.775Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no rhetorical-pivot construction present"
       }
     ],
     "trap-em-dash": [
@@ -1603,6 +1634,21 @@
         "reviewed_at": "2026-08-15T10:30:59.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 110 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:04.809Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no em-dash construction present"
       }
     ],
     "trap-triples": [
@@ -1622,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:30:59.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 110 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:04.866Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no triples construction present"
       }
     ],
     "trap-closing-aphorism": [
@@ -1641,6 +1702,21 @@
         "reviewed_at": "2026-08-15T10:30:59.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:04.909Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no closing-aphorism construction present"
       }
     ],
     "trap-meta-commentary": [
@@ -1660,6 +1736,21 @@
         "reviewed_at": "2026-08-15T10:30:59.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:04.949Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no meta-commentary construction present"
       }
     ],
     "trap-thesis-restatement": [
@@ -1679,6 +1770,21 @@
         "reviewed_at": "2026-08-15T10:30:59.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:04.985Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no thesis-restatement construction present"
       }
     ],
     "trap-performed-warmth": [
@@ -1698,6 +1804,21 @@
         "reviewed_at": "2026-08-15T10:30:59.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:05.024Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no performed-warmth construction present"
       }
     ],
     "trap-superlative": [
@@ -1717,6 +1838,21 @@
         "reviewed_at": "2026-08-15T10:30:59.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:05.069Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no superlative construction present"
       }
     ],
     "trap-nonspeakable": [
@@ -1736,8 +1872,24 @@
         "reviewed_at": "2026-08-15T10:30:59.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:05.116Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "final sentence: 42-word apposition chain (coordinate/ratio/velocity/fibre-count)",
+        "notes": "fixed: split at 'quantum spin. This is the Lieb--Robinson velocity of the causal cone: ...'"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.683Z"
+  "updated_at": "2026-08-15T11:39:05.116Z"
 }
