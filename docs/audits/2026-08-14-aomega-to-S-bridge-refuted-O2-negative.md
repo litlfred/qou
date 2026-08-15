@@ -81,6 +81,28 @@ What is removed is only the *claimed connection between them* — that the DT
 constant `A_ω` explains or produces the `S` residuals — because that connection is
 what O2 could not derive and q3np found unsupported.
 
+## The swing reframe does not rescue it either (corrected)
+
+The one resolved quantity is the swing `S(muon) − S(proton) = 0.04915`. I initially
+flagged "retarget the S-channel at the swing" as a *foreseeable* direction
+(`qou-6y1p`). Corpus-grep corrected that guess. Two settled facts:
+
+- **c₃ has no first-principles value.** The fixed theory ladder through `N=2` gives
+  `Q_theory/Q_base − 1 = c₂·u²` exactly, so the `[u³]` coefficient is *identically
+  0*; the ~−2 number is only the circular cal-anchored extraction
+  `Q_codata/Q_base(q)` (`docs/audits/2026-07-06-c3-not-exact-cross-anchor-verdict.md`;
+  `ck-dk-canonical-registry.md` §3 tier = empirical / circular / not-anchor-stable).
+- **The swing is the `1/u³` ladder artifact**, `dc₃/dq ≈ 3.84×10⁶`
+  (`computations/qbeta/qbeta-c3-swing-selfdual-pole-vs-ladder.witness.json`).
+
+Their arithmetic consequence, confirmed in
+[`computations/probes/aomega_6y1p_swing_reframe_not_tractable.py`](../../computations/probes/aomega_6y1p_swing_reframe_not_tractable.py)
+(EXIT 0): **`swing = 0.04915 = (11.54 ppb μ-p substrate tension) × dc₃/dq` exactly.**
+So the swing is the known μ-p tension amplified by the circular extraction — not an
+independent quantity. Deriving it needs *both* a first-principles c₃ (coefficient
+`≡ 0`) *and* the μ-p tension (an open ~9.5σ residual). Same wall. `qou-6y1p`
+scrapped. The `S = c₃ + Vol(4₁)` *definition* still stands (it is a definition).
+
 ## Discipline
 
 Exploratory forensics + a rigorous negative. No fit wired to production, no witness
