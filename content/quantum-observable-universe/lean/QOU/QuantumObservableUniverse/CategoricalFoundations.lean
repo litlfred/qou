@@ -4,6 +4,7 @@ import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.CategoryTheory.Limits.Shapes.ZeroMorphisms
 import Mathlib.Data.Fintype.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Order.Field.Basic
@@ -135,6 +136,8 @@ structure QuantumUniverse (k : Type*) [Field k] where
   C : Type u
   [catInst : CategoryTheory.Category.{v} C]
   [monInst : CategoryTheory.MonoidalCategory C]
+  /-- Zero morphisms, needed to state block orthogonality below. -/
+  [zeroInst : @CategoryTheory.Limits.HasZeroMorphisms C catInst]
   /-- **Temporal braiding.**  The exchange of two adjacent systems is a
       process with a direction: `c_{V,W} : V ⊗ W ≅ W ⊗ V`, not required to
       be symmetric.  The hexagon identities are part of the class, and are
@@ -162,12 +165,15 @@ structure QuantumUniverse (k : Type*) [Field k] where
       is degenerate.
 
       Encoded here: a `Fintype` of blocks, an idempotent endomorphism of `A`
-      per block, and non-vanishing of each block's Frobenius weight and
-      quantum dimension.  NOT encoded, and the two gaps cost differently:
-      mutual orthogonality `p_b ≫ p_b' = 0` needs only a zero morphism
-      (`HasZeroMorphisms`), while completeness `Σ p_b = 𝟙` needs additive
-      hom-sets and a finite sum (`Preadditive`).  `QuantumUniverse` carries
-      neither.  `frobWeight` and `dimQ` land in `k`
+      per block, their mutual orthogonality, and non-vanishing of each block's
+      Frobenius weight and quantum dimension.  Orthogonality needs only a zero
+      morphism, so `HasZeroMorphisms` is carried as an instance field.
+
+      STILL NOT encoded: completeness `Σ p_b = 𝟙`.  That needs additive
+      hom-sets and a finite sum (`Preadditive`), which is a larger change —
+      it would alter what a quantum universe is, and the paper's `R`-linear
+      phrasing may already imply it.  Tracked as `qou-w1g8`; do not add the
+      instance without settling that question.  `frobWeight` and `dimQ` land in `k`
       via the standard identification of `End(𝟙)` with the ground ring of a
       `k`-linear category.
 
@@ -183,6 +189,10 @@ structure QuantumUniverse (k : Type*) [Field k] where
   centralIdem : blocks → (frobHopf.obj ⟶ frobHopf.obj)
   /-- Each `p_λ` is idempotent. -/
   centralIdem_idem : ∀ b, centralIdem b ≫ centralIdem b = centralIdem b
+  /-- **Blocks do not mix.**  Distinct central idempotents are orthogonal, so a
+      state resolving into one channel has no component in another.  This is the
+      half of semisimplicity that costs only a zero morphism. -/
+  centralIdem_orthogonal : ∀ b b', b ≠ b' → centralIdem b ≫ centralIdem b' = 0
   /-- The Frobenius weight `∫_A p_λ` of each block. -/
   frobWeight : blocks → k
   /-- No block has zero Frobenius weight: none is invisible to the trace. -/
