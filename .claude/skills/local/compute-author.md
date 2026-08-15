@@ -131,7 +131,15 @@ order:
 python3 -m pip install numpy mpmath sympy
 
 # 2. In-repo pure-Python packages (Layer 2a/2b), editable.
-python3 -m pip install -e tools/qou-substrate -e tools/pyhecke -e tools/witness-schema
+#    NOTE the third path: witness-schema lives under `schemas/`, NOT `tools/`
+#    (moved by `e2ded2c607` when qou-specific schemas came back from
+#    folio-assistant). Install the PACKAGE ROOT — `schemas/witness-schema` —
+#    not `schemas/witness-schema/python`, which holds the module but no
+#    pyproject.toml. This line previously read `-e tools/witness-schema`,
+#    a path that does not exist; because pip is atomic over its argument
+#    list, that failure took the two GOOD installs down with it (the same
+#    gotcha the SnapPy note below describes).
+python3 -m pip install -e tools/qou-substrate -e tools/pyhecke -e schemas/witness-schema
 
 # 3. pyhecke_native — NOT on PyPI yet (alpha), and the prebuilt wheel
 #    is usually NOT shipped. BUT the container ships the Rust toolchain

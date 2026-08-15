@@ -3047,7 +3047,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
 | `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 70 in-repo importers. |
 | `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 89 in-repo importers. |
-| `tools/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. 3 in-repo importers. |
+| `schemas/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. **Under `schemas/`, not `tools/`** — moved back from folio-assistant by `e2ded2c607`. Install the package root (`pip install -e schemas/witness-schema`); `python/` under it holds the module but no `pyproject.toml`. |
 
 > **Importer counts are measured, not maintained.** The five above were
 > `1 / 7 / 19 / 15 / 1` and were wrong by up to two orders of magnitude
@@ -3073,7 +3073,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 > a live defect: `test_ephemeral_mask_sync` exists to detect mirror divergence
 > and was green only because the mirror was stale. Run `--check` after any
 > change to a module in the cone; it is the gate.
-| `tools/block-qa-schema/` | Cross-language QA-sidecar interchange schemas (`<block>.qa.json` block-qa/v1 + `<criterion-id>.script.json` qa-script/v1): canonical JSON Schema + Zod + Pydantic mirrors, corpus-validated. Packaged for npm (`@litlfred/block-qa-schema`) + PyPI (`block-qa-schema`); not yet published to registries. Producing types: `folio-assistant/schemas/block-qa.ts`. |
+| ~~`tools/block-qa-schema/`~~ | **No longer in this repo.** The QA-sidecar interchange schemas (`<block>.qa.json` block-qa/v1 + `<criterion-id>.script.json` qa-script/v1) left with the platform code in `39fc90f6d6` (miga) and live in `litlfred/folio-assistant`; producing types are `folio-assistant/schemas/block-qa.ts`, reachable here via [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh). Do not look for it under `tools/` — this row described an in-repo path for weeks after the directory was deleted. |
 | `tools/hecke-engine/` | `hecke-engine` Rust crate — Layer 1 canonical compute core (Gröbner-Shirshov reducer, Hoefsmit, Markov trace, Clarabel SDP backend). |
 | `tools/hecke-engine-{wasm,node,r,jvm,c}/` | Multi-language bindings of `hecke-engine` (WASM, Node napi-rs, R/JVM/C — last three Tier-3). |
 | `folio.config.json` | Adapter config (content type, adapter module, feedback dir) |
