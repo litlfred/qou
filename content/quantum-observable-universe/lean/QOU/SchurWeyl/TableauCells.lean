@@ -361,6 +361,35 @@ theorem swapAdmissible_of_far (T : StandardYoungTableau μ) {k l : ℕ} (hl : 1 
     cellOf_swapTableau_of_ne T hl hln hadml hkr' (by omega) (by omega)
   exact ⟨by rw [e₁, e₂]; exact hadmk.1, by rw [e₁, e₂]; exact hadmk.2⟩
 
+/-- **A far swap leaves the axial distance alone.**  `s_l` moves no cell outside
+`{l, l+1}`, so the parameter `σ_k` reads off is unchanged.  Together with
+`swapAdmissible_far_iff` this says a far swap leaves *every* input to `σ_k`'s row rule
+untouched — which is what a matrix-level far-commutation proof needs. -/
+theorem axialDist_swapTableau_of_far (T : StandardYoungTableau μ) {k l : ℕ} (hl : 1 ≤ l)
+    (hln : l + 1 ≤ μ.cells.card) (hadml : SwapAdmissible T l)
+    (hkr : k ∈ Set.Icc 1 μ.cells.card) (hkr' : k + 1 ∈ Set.Icc 1 μ.cells.card)
+    (hfar : k + 1 < l ∨ l + 1 < k) :
+    axialDist (swapTableau T l hl hln hadml) k = axialDist T k := by
+  unfold axialDist
+  rw [cellOf_swapTableau_of_ne T hl hln hadml hkr (by omega) (by omega),
+    cellOf_swapTableau_of_ne T hl hln hadml hkr' (by omega) (by omega)]
+
+/-- **Admissibility at `k` is *unchanged* by a far swap at `l`** — both directions.
+`swapAdmissible_of_far` gives the forward implication; the converse matters just as much,
+because a matrix-level argument has to know that a far swap cannot *create* a size-`2`
+orbit where there was a scalar. -/
+theorem swapAdmissible_far_iff (T : StandardYoungTableau μ) {k l : ℕ} (hl : 1 ≤ l)
+    (hln : l + 1 ≤ μ.cells.card) (hadml : SwapAdmissible T l)
+    (hkr : k ∈ Set.Icc 1 μ.cells.card) (hkr' : k + 1 ∈ Set.Icc 1 μ.cells.card)
+    (hfar : k + 1 < l ∨ l + 1 < k) :
+    SwapAdmissible (swapTableau T l hl hln hadml) k ↔ SwapAdmissible T k := by
+  have e₁ : cellOf (swapTableau T l hl hln hadml) k = cellOf T k :=
+    cellOf_swapTableau_of_ne T hl hln hadml hkr (by omega) (by omega)
+  have e₂ : cellOf (swapTableau T l hl hln hadml) (k + 1) = cellOf T (k + 1) :=
+    cellOf_swapTableau_of_ne T hl hln hadml hkr' (by omega) (by omega)
+  unfold SwapAdmissible
+  rw [e₁, e₂]
+
 /-- **The `s_k`-actions commute at far distance** — `s_k s_l · T = s_l s_k · T` for
 `|k - l| ≥ 2`.  This is the tableau-level form of `σ_k σ_l = σ_l σ_k`. -/
 theorem swapTableau_comm (T : StandardYoungTableau μ) {k l : ℕ} (hk : 1 ≤ k) (hl : 1 ≤ l)
