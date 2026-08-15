@@ -38,6 +38,18 @@ reduction supplies the *coefficients*, not the *argument*.
 > which proved convergent), but it rhymes with it; treat "transcendental" as
 > a working hypothesis, not a constraint that prunes algebraic candidates.
 
+> **Premise requalification (2026-08-15, per the O2 negative, PR #5041).**
+> The individual `S` targets quoted above carry a ±1.262 CAL-3 propagated
+> uncertainty (130×/32× the central values); the canonical witness says the
+> sign flip "must not be cited as an established sign flip". The only
+> resolved observable is the swing `S(muon) − S(proton) = 0.04914`
+> (±7.6×10⁻⁷) = the cross-anchor `c₃` variation (`Vol(4₁)` cancels). Read
+> this bean's "sign flip", "ratio ≈ −4.08", and the anchor inversion targets
+> as **conditional on a flip the data does not establish**; the resolved
+> target for any future `z(q₀)` derivation is the swing. See
+> `docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md` and the
+> follow-up bean `qou-6y1p` (retarget the S-channel at the resolved swing).
+
 ## Update (2026-08-01, PRs #4452 + #4457 merged)
 
 The candidate space for the argument map is further narrowed **by proof**:

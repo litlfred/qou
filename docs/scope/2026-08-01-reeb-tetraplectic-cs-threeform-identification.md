@@ -143,6 +143,22 @@ carries and how the bar-even part is labeled.
    retains the original glyph. Relatedly, the "transcendental" characterization
    of the argument map is a working hypothesis, not proved — see the
    2026-08-15 ground-check note in bean `qou-82w7`.
+4. **The sign flip is conditional, not measured** (O2 negative,
+   [`2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`](../audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md);
+   PR #5041). The individual `S` values carry a ±1.262 CAL-3 propagated
+   uncertainty (the `1/u³` amplification of the Q_β input error) — 130× the
+   muon and 32× the proton central value — and the canonical witness itself
+   states the flip "must not be cited as an established sign flip". The only
+   resolved observable is the **swing** `S(muon) − S(proton) = 0.04914`
+   (±7.6×10⁻⁷; the common error cancels), which equals the cross-anchor `c₃`
+   variation with `Vol(4₁)` cancelled. Everywhere this doc says "`S`
+   sign-flips between the anchors", read "conditional on a sign flip the data
+   does not establish"; the diagonal-crossing gate and its inversion targets
+   (`+0.0224`/`−0.0911`, built from the individual values) inherit that
+   conditionality. The Lean lemmas (`signflip_forces_diagonal_cross`,
+   `exists_cs_vanishing`, the F1–F3 exclusions) are unaffected — they were
+   authored hypothesis-carrying (`0 < S q₁`, `S q₂ < 0` as explicit
+   hypotheses), which is precisely the discipline paying off here.
 
 ## Cross-references
 
