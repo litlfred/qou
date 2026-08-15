@@ -348,3 +348,68 @@ member assumes precision was raised *somewhere* and asks whether a value got in
 before it. None asks whether it was raised at all. A "producer never calls
 set_compute_dps / mp.dps and emits a witness" check would be cheap and static,
 and would be a genuinely new axis rather than a fourth variation.
+
+## The #4899 blind spot now has a gate — `never_raises_dps_audit.py`
+
+Wired into both lists, ratcheted at **46 producers / 206 constructions**.
+
+It flags a file only when ALL of these hold, and the third is the one that makes
+it sound:
+
+    1. emits a witness            (WitnessBuilder / .witness.json)
+    2. CONSTRUCTS mpmath values   (AST-level: mp.mpf, mp.sqrt, bare mpf(...))
+    3. is RUNNABLE                (has an `if __name__ == "__main__":` guard)
+    4. never raises precision     (set_compute_dps / .dps assign / workdps)
+
+**`mp.dps` is GLOBAL STATE**, so an imported helper legitimately inherits the
+precision its caller set. `_li_2_q_util.py` builds 40 mpmath values, raises dps
+nowhere, and is entirely correct — it is only ever called from producers that
+raised it first. Without condition 3 the audit flags 66 files and the genuine
+findings drown in helpers working as designed; with it, 46. Condition 2 matters
+too: a string match on "mpmath" caught audits that merely scan for the word,
+145 files rather than 66.
+
+### Worked true positive
+
+    computations/sweeps/paper_six_term_isotope_sweep.py:145
+        out[r["atom"]] = abs(mp.mpf(r["tr_M_at_q0_50dps"]))
+
+It reads a field whose NAME says 50 dps and lifts it at 15, discarding 35
+digits. Its witness contains no string longer than 25 decimals anywhere — the
+whole file computes and emits at binary64 while sourcing 50-dps inputs.
+
+### Note for whoever drains this
+
+Unlike the import-time backlog, **fixing these MOVES PUBLISHED VALUES.** There
+the constant was mis-built and everything downstream of it was already fine;
+here the producer genuinely computed low, so raising dps changes what it emits.
+Expect the witness to move and expect that to be the point — and expect the
+padding ratchet to react, per the correction recorded above.
+
+`markov_trace_recursive.py`, the instance #4899 reported, already raises dps on
+main and is **not** flagged. The gate could not be validated against it; it was
+validated by construction instead — a self-test that fires each condition and
+holds each exemption (8 cases), plus new-file / removed round-trip on the
+ratchet.
+
+## Pre-existing bug found while wiring: the advisory gate CLOBBERS the real one
+
+`scripts/precision-gates.sh` runs `witness_raw_float64_audit.py` twice — once
+blocking over the corpus, once advisory with `--scan-root docs/audits/scripts`.
+Both write the SAME witness, so the advisory subtree run overwrites the
+canonical one:
+
+    dirty_witnesses  1561 -> 5
+    total_fields  534,192 -> 20
+    drained_files      14 -> 1572
+    regressed           1 -> 0
+
+The second row is the dangerous one: a scan of a 5-file subtree reports
+`regressed: 0` into the file that is supposed to record the corpus-wide ratchet
+state. Anyone reading the committed witness rather than re-running the gate gets
+"green" from a run that examined 20 fields.
+
+Pre-existing on `main` (line 89), not introduced here, and NOT fixed here —
+the fix is to give the advisory run its own output path, which is a change to a
+shared gate script and wants its own scope. Recorded so it is not rediscovered
+as a mystery.
