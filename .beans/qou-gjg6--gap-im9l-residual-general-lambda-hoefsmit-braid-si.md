@@ -391,6 +391,53 @@ STEP (ii) REMAINING after this:
   - the block-diagonal assembly itself.
 
 
+## THE QUADRATIC RELATION IS PROVED GLOBALLY 2026-08-15 (route (c))
+
+SeminormalRep.lean now carries genMat_quadratic: for ARBITRARY shape mu and every
+generator sigma_k,
+
+    rho(sigma_k)^2 = (q - q^-1) * rho(sigma_k) + 1
+
+on all of SYT mu at once. Sorry-free, axiom-clean. This is the first Hecke relation
+established for the general-lambda representation rather than one orbit at a time.
+
+WHY ROUTE (c) MADE IT POSSIBLE. The matrix is indexed by StandardYoungTableau mu on BOTH
+sides, so there is no per-orbit basis correspondence to build -- blocker 3 of the step-(ii)
+list is bypassed for this relation, not solved. The proof never constructs a block
+decomposition; it reads one off the entry rules, column by column.
+
+THE TWO NEW FACTS IT RESTS ON (both were missing, both now in TableauCells):
+- axialDist_ne_zero -- consecutive entries never share a diagonal. If they did, the cell
+  completing their rectangle would lie in mu by up-left closure and would carry an entry
+  strictly between k and k+1. NOTE the trichotomy does NOT give this: SwapAdmissible only
+  says the cells differ in both coordinates, not that their CONTENTS differ. Without it
+  seminormalParam sits on its pole at d = 0.
+- axialDist_swapTableau -- the swap negates the distance, so {T, s_k.T} carries d and -d.
+  That is what makes the pair's diagonal sum to q - q^-1 via seminormalParam_add_neg.
+Plus axialDistance_antisymm (added next to the definition in HoefsmitRep), zpow_ne_one
+(a real q > 0, q != 1 is not a root of unity -- the archimedean half of axialDist_ne_zero)
+and swapTableau_ne.
+
+THE SHAPE OF THE ARGUMENT: sum_mul_genMat_column shows column T has support in
+{T, s_k.T} and nothing else, so (M^2) restricted to that column is a 2x2 Cayley-Hamilton:
+trace a(d) + a(-d) = q - q^-1, determinant a(d)a(-d) - (1 + a(d)a(-d)) = -1 by
+offDiag_mul_neg (whichever of the two off-diagonal entries carries the factor, the product
+is the same). On the fixed columns the trichotomy gives d = +-1, where seminormalParam
+evaluates to q resp. -q^-1 -- the two roots of X^2 - (q - q^-1)X - 1.
+
+WHY THIS DOES NOT CLOSE gjg6, stated plainly: the quadratic is COLUMN-LOCAL. Each column
+sees at most two tableaux, so the relation never leaves a 2x2. The braid is NOT
+column-local -- it mixes sigma_k and sigma_{k+1}, whose supports differ, and that
+difference is exactly the content of Orbit3Braid / Orbit6Braid. Far commutation is
+likewise still open (swapTableau_comm gives it at the level of TABLEAUX; lifting that to
+the matrices is not done). hoefsmit_seminormal_rep keeps its Ref'd sorry.
+
+STEP (ii) REMAINING: far commutation of the matrices; the <s_k, s_{k+1}>-orbit size
+classification; the braid relation globally (or, failing that, the per-orbit basis
+correspondence after all). Anyone continuing should try far commutation next -- like the
+quadratic it is likely column-local, since a far swap moves no cell the other generator
+looks at (cellOf_swapTableau_of_ne).
+
 ---
 
 ## 2026-08-16 — TAKEOVER of the branch backing PR #5076 (stalled-claim protocol)
