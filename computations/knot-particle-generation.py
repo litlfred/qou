@@ -25,12 +25,17 @@ q_half = math.sqrt(q)
 q_inv_half = 1.0 / q_half
 
 # ── Hyperbolic volumes (from SnapPy / Clausen function) ──────────────
-VOL_FIGURE_EIGHT = 3.0 * (  # Vol(4_1) = 3 Cl_2(π/3)
-    sum((-1)**k * math.sin((2*k+1) * math.pi/3) / (2*k+1)**2
-        for k in range(1000))
-    * 2  # Clausen function Cl_2(θ) = -∫₀^θ ln|2sin(t/2)| dt
-)
-# Use canonical value from q_parameter.py
+# A local `VOL_FIGURE_EIGHT = 3.0 * (...)` once stood here, annotated
+# `Vol(4_1) = 3 Cl_2(π/3)`. Both halves were wrong: `3·Cl₂(π/3) ≈ 3.0448`
+# is not Vol(4₁) (the Λ↔Cl₂ coefficient slip — `Λ(θ) = Cl₂(2θ)/2`, so the
+# two-tetrahedron figure-eight complement is `2·Cl₂(π/3) = 6Λ(π/3) ≈
+# 2.0298832128`), and the series as written evaluated to 4.9348 — 2.43× the
+# true volume — so it did not even compute its own annotation.
+#
+# It was dead (assigned, never read; every use below goes through VOL_4_1),
+# but it shadowed the canonical `VOL_FIGURE_EIGHT` imported on line 19, which
+# means 2.029883212819307 in every other file in the corpus. Removed rather
+# than corrected: the canonical constant is already imported.
 VOL_4_1 = VOL_4_1_CANONICAL  # figure-eight knot (2.029883212819307)
 VOL_5_2 = 2.8281220883      # three-twist knot (from SnapPy)
 VOL_5_1 = 0.0               # cinquefoil (torus knot, zero volume)
