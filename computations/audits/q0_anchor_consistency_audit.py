@@ -12,9 +12,35 @@ Verdicts:
   Q0_OK              anchor ∈ {muon,proton} and q0Value matches that anchor's pin
   Q0_FLIP            anchor and q0Value disagree  ← CI-FAILING (the flip)
   Q0_AMBIGUOUS       anchor == "ambiguous" (producer genuinely undetermined)
+  Q0_INDEPENDENT     anchor == "independent" (producer never reads q₀ at all)
   Q0_ANCHOR_MISSING  no q0Anchor field yet (pre-backfill; not a failure)
   Q0_VALUE_MISSING   anchor present but no q0Value to check
   Q0_AUDIT_EXEMPT    audit/scan/compliance state-tracking witnesses
+
+`independent` vs `ambiguous` — they are not the same state, and collapsing them
+loses the distinction this field exists to record:
+
+  ambiguous   the producer DOES depend on q₀, but which pin is undetermined —
+              `gen_q0_anchor_manifest.py` assigns it when a witness carries BOTH
+              the muon and the proton signature. It is a queue for a manual
+              ruling.
+  independent the producer never reads q₀. There is nothing to rule on, and no
+              `q0Value` exists to record. Stamping `proton` here — the standing
+              default for new compute — would assert a layer the numbers do not
+              belong to, which is the misrecord this whole field guards against.
+
+Before `independent` existed, a q₀-free producer had no way to say so: the
+manifest generator drops it (`# neither: no q₀ field — omit`), so
+`q0_anchor_is_declared` is False, nothing is stamped, and it lands in
+Q0_ANCHOR_MISSING — indistinguishable from a producer that simply forgot. That
+is the state bean qou-rw91 caught (three probes) and bean qou-pin1 hit earlier
+on `chi-deuteron-h6` (a purely symbolic artifact, still unstamped today).
+
+`independent` is PRODUCER-DECLARED ONLY — `w.save({"q0Anchor": "independent"})`.
+It is deliberately not inferrable from the manifest: "witness records no q₀
+value" does not imply "compute never used q₀" (a producer can use q₀ and simply
+not serialize it), so auto-classifying would manufacture false independence
+claims. An agent must read the import cone and assert it.
 
 Usage:
     python3 q0_anchor_consistency_audit.py            # report
@@ -67,6 +93,15 @@ def classify(path: Path) -> tuple[str, str]:
         return "Q0_ANCHOR_MISSING", ""
     if anchor == "ambiguous":
         return "Q0_AMBIGUOUS", ""
+    if anchor == "independent":
+        # No q₀ was read, so there is no value to cross-check. A q0Value here
+        # is a contradiction, not a bonus: it means something DID supply a pin.
+        if body.get("q0Value"):
+            return "Q0_FLIP", (
+                "anchor=independent but a q0Value is recorded "
+                f"({str(body['q0Value'])[:16]}…) — the producer reads q₀ after all"
+            )
+        return "Q0_INDEPENDENT", ""
     if anchor not in ("muon", "proton"):
         return "Q0_FLIP", f"unknown anchor {anchor!r}"
     value = body.get("q0Value")
@@ -100,8 +135,8 @@ def main(argv: list[str] | None = None) -> int:
             {"witness": wp.name, "detail": detail}
         )
 
-    order = ["Q0_OK", "Q0_AMBIGUOUS", "Q0_ANCHOR_MISSING", "Q0_VALUE_MISSING",
-             "Q0_AUDIT_EXEMPT", "Q0_PARSE_ERROR", "Q0_FLIP"]
+    order = ["Q0_OK", "Q0_AMBIGUOUS", "Q0_INDEPENDENT", "Q0_ANCHOR_MISSING",
+             "Q0_VALUE_MISSING", "Q0_AUDIT_EXEMPT", "Q0_PARSE_ERROR", "Q0_FLIP"]
     n = {k: len(by_verdict.get(k, [])) for k in order}
     n_flip = n["Q0_FLIP"]
 
@@ -123,7 +158,10 @@ def main(argv: list[str] | None = None) -> int:
             "Flip-flop detector: enforces that each witness's q0Value matches "
             "the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a "
             "CI-failing anchor/value disagreement. Anchor recording landed in "
-            "PR #4020."
+            "PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ "
+            "at all — a positive, producer-declared statement, distinct from "
+            "Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from "
+            "Q0_ANCHOR_MISSING (nothing recorded)."
         )
     )
     builder.add_data("counts", n)
