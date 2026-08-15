@@ -1,10 +1,11 @@
 ---
 # qou-o227
 title: Three new q-NS probes carry raw float64 without declaring precision_tier
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-15T03:40:21Z
-updated_at: 2026-08-15T03:40:21Z
+updated_at: 2026-08-15T04:08:46Z
 ---
 
 
@@ -53,3 +54,18 @@ needs a producer fix instead — do NOT baseline it.
 Also still open and unrelated: `rho-k-co-casimir-extended` REGRESSED 3 -> 4
 on `compute_wall_sec`; diagnosed in #5051 as a stale witness (the producer
 already emits the formatted value), heals on its next legitimate run.
+
+## RESOLVED by PR #5080 (the q-NS author, ~40 min after this bean opened)
+
+All three declared, and done the way that holds up: the `precision_tier`
+marker was added to the **producer**, and the witnesses were **re-run**
+rather than hand-edited — `scriptHash` moved and `scriptCommitSha` went
+`"unknown"` -> a real sha on all three.
+
+That distinction is the point. A hand-added `precision_tier` in the JSON
+would have passed the audit while leaving the producer un-declared, i.e. an
+excuse with no author behind it — exactly what the carve-out design exists
+to prevent.
+
+Confirms the call to bean this rather than fix it myself: the declaration is
+the author's claim on the record, and the author made it.
