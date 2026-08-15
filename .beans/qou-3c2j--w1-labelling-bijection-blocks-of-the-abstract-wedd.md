@@ -60,3 +60,33 @@ by construction, so the labelling is not a separate step. Then:
 
 Re-scope W1 and W3 accordingly before starting: they are one construction, not
 two, and the hard core is the density argument.
+
+### Proposed route for W1+W3 as one construction (not yet attempted)
+
+Density is **not** the only way in, and probably not the right one: the pinned
+Mathlib has no Jacobson density theorem (searched the olean module names —
+`Jacobson/{Artinian,Ideal,Polynomial,Radical,Ring,Semiprimary}`, `JacobsonNoether`,
+`Spectrum/Prime/Jacobson`; all radical/ring-theoretic, none the density theorem).
+
+The multiplicity route uses W2 as its hinge and asks less of Mathlib:
+
+1. `k[S_n]` is semisimple (`MaschkeSnSemisimple`), so the regular module is
+   `⊕ᵢ Sᵢ^{mᵢ}` over the simples.
+2. `mᵢ = dim_{𝔇ᵢ} Hom_A(A, Sᵢ)` and `Hom_A(A, Sᵢ) ≅ Sᵢ`, so with **W2's
+   `𝔇ᵢ = k`** this reads `mᵢ = dim_k Sᵢ`.
+3. Hence `dim_k A = Σᵢ mᵢ·dim_k Sᵢ = Σᵢ (dim_k Sᵢ)²`, i.e. **`n! = Σ_μ (dim S^μ)²`
+   comes out as a *conclusion*, not an input.**
+4. The block algebra is then `∏_μ End_k(S^μ)`, and `LinearMap.toMatrix` on
+   `SpechtStandardBasis` (indexed by `StandardYoungTableau μ`) turns each factor
+   into `Matrix (Fin (dim S^μ))` — W3, mechanically.
+
+Note what step 3 buys: it *produces* the RSK sum-of-squares that
+`OVTopAssembly.sum_numSYT_sq_eq_factorial` currently carries as `sorryAx`,
+rather than consuming it. If that holds up, the epic closes its own keystone
+instead of routing around it.
+
+**Unverified premise, do not treat as settled:** whether the pinned Mathlib's
+isotypic API supports step 2 off the shelf. `IsIsotypicOfType` exists
+(`Mathlib.RingTheory.SimpleModule.Isotypic`); I have not checked whether it
+carries a multiplicity-as-`Hom`-dimension lemma or whether that has to be built.
+Probe that first — it is the difference between a session and a tranche.
