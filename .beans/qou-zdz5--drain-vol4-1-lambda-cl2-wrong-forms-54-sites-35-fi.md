@@ -89,3 +89,33 @@ one took it at face value. The lesson is in the guard now: assume the file you
 are editing still carries it.
 
 Found in PR #5119.
+
+## Tranche 2 (PR #5128) — the `.py` class is DONE
+
+22 sites / 13 files drained. Remaining from the 54: the 12 `.json` and the
+17 `.md`.
+
+**One site was not a naming slip.** `docs/audits/scripts/qbeta_s_complex_volume_rigidity_probe.py`
+had `lam_pi3 = mp.mpf("0.5074708")` labelled `Λ(π/3)`. Λ(π/3) = 0.338314;
+0.5074708 is Λ(π/6) = Cl₂(π/3)/2. So `2 * lam_pi3` = 1.0149416 — ONE ideal
+tetrahedron, exactly HALF of Vol(4₁) = 2.0298832. Part B's 4₁ row was
+computed against it. Verdict unchanged (still "no clean near-integer
+match"; the prune rests on Part A's proved anchor-invariance, not Part B),
+so scope-(a): wrong value, sound conclusion. This is why the "check the
+arithmetic beside the name" rule above is not optional.
+
+**New sub-item — orphan witness, no producer.**
+`computations/substrate/knot-volumes.witness.json` is committed and still
+carries `3·Cl₂(π/3)`, but NOTHING writes to that path.
+`computations/knot-volumes.py` (whose `source` string is fixed in #5128)
+emits next to itself, to `computations/knot-volumes.witness.json`, which is
+neither tracked nor gitignored. So the orphan cannot be regenerated in
+place. Resolve the producer/output-path question first; the notation fix
+follows for free. Needs SnapPy installed (`pip install snappy`) to run the
+producer at all.
+
+**Provisioning is part of this drain, not incidental.** Re-running any
+producer in an under-provisioned container silently strips `environment`
+fields from its witness (measured: `numpy` + `pyhecke_native` dropped on a
+one-word label fix). Bootstrap fully before re-running, and diff the
+witness for `-` version lines. Written up in `local/compute-author` §0.1.
