@@ -1,11 +1,11 @@
 ---
 # qou-q7cm
 title: '§7c: two files mix generic + archimedean — surfaced (not caused) by the qou-qint migration'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T17:55:00Z
-updated_at: 2026-08-15T14:51:37Z
+updated_at: 2026-08-15T23:26:00Z
 ---
 
 scripts/check-sidecars.sh flags two files with
@@ -65,3 +65,9 @@ This also answers the bean's "check first whether either file is already covered
 Also surfaced a **third** MIXED file this bean does not name: `QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean` (codeℝ=5, generic=Y, banner=Y, wall=**fail**) — recorded in `qou-oc4v`'s triage table.
 
 The split work described above stands. Note the bean's own general point is reinforced: `check-sidecars.sh` is a CHANGED-FILE checker, so a clean run is not evidence untouched files comply — the whole-tree content checkers are what close that blind spot.
+
+
+
+## Claimed 2026-08-15 — branch `claude/mtcx-7c-verify-close-2026-08-15` (session `qou-xz6t`)
+
+Taking the two MIXED splits named above (`GaugeFieldFluidDynamics` 55 code-ℝ, `MassComputationChainRoadmap` 22), per owner directive. The bean's own note that this is "a two-file restructure of someone else's module" stands — it is being done deliberately now, not folded into an unrelated change.
