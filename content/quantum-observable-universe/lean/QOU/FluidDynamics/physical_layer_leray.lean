@@ -661,4 +661,96 @@ theorem tail_damped_forced_bound (Ωt : ℕ → K) (δ Φ D : K)
           linarith
         exact le_trans key ih
 
+/-!
+## The in-model flux derivation (bean `qou-w9ja`)
+
+`tail_damped_forced_bound` took a *constant* flux bound `Φ`.  The
+honest in-model flux is not constant: the DN boundary coupling injects
+`~ k_{B+1}·u_B²·u_{B+1}` — proportional to the **first tail
+amplitude** `a(n) := u_{B+1}(n)`, with a coefficient `F` controlled by
+the `ε`-uniform band bound (`u_B²` lives in the fixed band).  The
+amplitude itself is tail-controlled: `kB²·a² ≤ Ω_tail`.
+
+The absorption (`sqrt_forced_to_damped_forced`) is pure algebra — AM-GM
+on squares, no square roots, so the file stays over a generic ordered
+field: `F·a ≤ F²/(2·D·kB²) + (D/2)·Ω_t` (from `0 ≤ (F − D·kB²·a)²`
+after the tail bound on `a²`), which folds the amplitude-proportional
+forcing into half the damping.  The composed
+`boundary_flux_tail_bound` then applies the damped-forced invariant
+with `Φ = F²/(2DkB²)`, `D_eff = D/2`, giving
+
+  `Ω_tail(n) ≤ max(Ω_tail(0), F²/(D²·kB²))`  for every `n`,
+
+all data, `ε`-uniform.  **The constant-`Φ` hypothesis is discharged in
+favour of the amplitude-form step** — which is the DN boundary
+structure itself.
+
+**Remainder, honestly:** (a) that the amplitude-form step *is* the DN
+tail evolution (a model-specific inequality — probe-able, recorded as
+the follow-up); (b) full-NS transfer nonlocality (the standing
+fidelity caveat).  Nothing else.
+-/
+
+/-- **Absorption of amplitude-proportional forcing** (AM-GM, no square
+    roots): if the tail obeys the amplitude-forced step
+    `Ωt(n+1) ≤ Ωt(n) + δ·(F·a(n) − D·Ωt(n))` with the tail controlling
+    its own boundary amplitude (`kB2·a(n)² ≤ Ωt(n)`), then it obeys
+    the constant-forced step with `Φ = F²/(2·D·kB2)` and damping
+    `D/2`. -/
+theorem sqrt_forced_to_damped_forced (Ωt a : ℕ → K) (δ F D kB2 : K)
+    (hδ : 0 ≤ δ) (hD : 0 < D) (hkB : 0 < kB2)
+    (hamp : ∀ n, kB2 * (a n) ^ 2 ≤ Ωt n)
+    (hstep : ∀ n, Ωt (n + 1) ≤ Ωt n + δ * (F * a n - D * Ωt n)) :
+    ∀ n, Ωt (n + 1) ≤ Ωt n + δ * (F ^ 2 / (2 * D * kB2) - D / 2 * Ωt n) := by
+  intro n
+  have h1 := hstep n
+  -- AM-GM with weight `m = D·kB2`:  F·a ≤ F²/(2m) + (m/2)·a²
+  have hm : (0 : K) < D * kB2 := mul_pos hD hkB
+  have hamgm : F * a n ≤ F ^ 2 / (2 * (D * kB2)) + D * kB2 / 2 * (a n) ^ 2 := by
+    rw [div_add' _ _ _ (by positivity : (2 : K) * (D * kB2) ≠ 0)]
+    rw [le_div_iff₀ (by positivity : (0 : K) < 2 * (D * kB2))]
+    nlinarith [sq_nonneg (F - D * kB2 * a n)]
+  -- fold the `a²` term into half the damping via the tail bound
+  have habs : D * kB2 / 2 * (a n) ^ 2 ≤ D / 2 * Ωt n := by
+    have h2 : D / 2 * (kB2 * (a n) ^ 2) ≤ D / 2 * Ωt n :=
+      mul_le_mul_of_nonneg_left (hamp n) (by positivity)
+    calc D * kB2 / 2 * (a n) ^ 2 = D / 2 * (kB2 * (a n) ^ 2) := by ring
+      _ ≤ D / 2 * Ωt n := h2
+  have hforce : F * a n ≤ F ^ 2 / (2 * D * kB2) + D / 2 * Ωt n := by
+    have : F ^ 2 / (2 * (D * kB2)) = F ^ 2 / (2 * D * kB2) := by
+      ring_nf
+    linarith [hamgm, habs, this.symm.le, this.le]
+  have hmul : δ * (F * a n - D * Ωt n)
+      ≤ δ * (F ^ 2 / (2 * D * kB2) - D / 2 * Ωt n) := by
+    apply mul_le_mul_of_nonneg_left _ hδ
+    linarith
+  linarith
+
+/-- **The boundary-flux tail bound, in-model form**: with the
+    amplitude-forced step (the DN boundary structure) and the tail's
+    own control of its boundary amplitude, the sup-in-time tail bound
+    holds for all data with the explicit `ε`-uniform equilibrium
+    `F²/(D²·kB2)`:
+
+      `Ω_tail(n) ≤ max(Ω_tail(0), F²/(D²·kB2))`.
+
+    (Composition of the absorption with `tail_damped_forced_bound` at
+    `Φ = F²/(2DkB2)`, damping `D/2`; the equilibrium is
+    `Φ/(D/2) = F²/(D²kB2)`.) -/
+theorem boundary_flux_tail_bound (Ωt a : ℕ → K) (δ F D kB2 : K)
+    (hδ : 0 ≤ δ) (hD : 0 < D) (hkB : 0 < kB2)
+    (hδD : δ * (D / 2) ≤ 1)
+    (hamp : ∀ n, kB2 * (a n) ^ 2 ≤ Ωt n)
+    (hstep : ∀ n, Ωt (n + 1) ≤ Ωt n + δ * (F * a n - D * Ωt n)) :
+    ∀ n, Ωt n ≤ max (Ωt 0) (F ^ 2 / (D ^ 2 * kB2)) := by
+  have habs := sqrt_forced_to_damped_forced Ωt a δ F D kB2 hδ hD hkB
+    hamp hstep
+  have hbound := tail_damped_forced_bound Ωt δ (F ^ 2 / (2 * D * kB2))
+    (D / 2) hδ (by positivity) hδD habs
+  have heq : F ^ 2 / (2 * D * kB2) / (D / 2) = F ^ 2 / (D ^ 2 * kB2) := by
+    field_simp
+  intro n
+  have := hbound n
+  rwa [heq] at this
+
 end QOU.FluidDynamics.PhysicalLayerLeray
