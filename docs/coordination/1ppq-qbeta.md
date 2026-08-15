@@ -3497,3 +3497,41 @@ validator clean).
 Scope-(a) throughout; no convention adjudicated; no `c_k` wired; no tier
 flips (c₂ stays CANONICAL for its now-named object; c₃ stays
 EMPIRICAL/REFUTED-as-real-q — in both frames).
+
+## 2026-08-15 — bean `qou-b3nk` worked: qbeta-decay channel registered DISPUTED; the forcing/ladder boundary proved
+
+**Branch:** `claude/qbeta-channel-convention-2026-08-15` (PR #5111) ·
+**Audit:** [`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md)
+
+Outcome **(c)** of the bean, leaning (b): **neither C nor D is derived for the
+decay channel** — registered `disputed` in `trace-convention-registry.json`
+(`channels.qbeta-decay`: definitional `null` (contradictory — the decay blocks
+write the excised-C value while naming it "the Markov–Jones parameter", whose
+referent has read D since 2026-08-09), production `C`; R9 evaluator on
+`qbeta_utils.markov_parameter` asserts the C-state, CONFIRMED |d| = 1.9e-51).
+
+New Lean, sorry-free
+([`MarkovZFullBarCondition.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
+`lean`-direct exit 0, no `sorryAx`):
+
+- **`decayLadder_zC_threeRow_ne_zero`** — any faithful normalised Markov trace
+  at the ladder's `z_C` has `y_(1³) ≠ 0` for all `s = √q > 1` (locus
+  `s⁷+s⁵−s⁴−1 = (s−1)(s⁶+s⁵+2s⁴+s³+s²+s+1)` empty). **The two-row forcing and
+  the C-frame ladder are mutually exclusive** — no z-swap transfer; D-adoption
+  = ladder re-derivation (measured collapse: c₃ → ≈ −974, N2/N1 0.017 → 0.89).
+- **`zD_full_bar_covariant`** / **`barEven_fullBar_forces_classical`** /
+  **`zC_fails_fullBar`** — the full-bar condition `bar(z) = z − h` (PR #4834
+  discussion, sympy witness 2026-08-08) is now in Lean: D holds exactly; any
+  bar-even `z` (= C, KC13) fails away from `q² = 1`. Premise (trace
+  bar-compatibility) named, not proved.
+
+Witness correction: the `y_(1³) ≠ 0` escape had been cited via the explicit
+instance `y = (z, 1/2−z, z)` — that inhabitant is **not** an Ocneanu
+`z_C`-trace (its `σ₀` value is `h/2` exactly, z-independent, sympy). The
+correct witness is C's own solve (`y_(1³) = 0.02274…`, probe 18/18, proton
+pin) and the Lean brick. Conclusion unchanged.
+
+Scope-(a); no convention adjudicated; no `c_k` wired; no tier flips. Bean
+stays **in-progress** (closing is a human action); settlement routes in the
+audit §4 (derive the decay fibre, or prove/refute
+`conj:binding-qbeta-complex-volume` / bar-compatibility).

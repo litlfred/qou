@@ -720,3 +720,29 @@ re-derive the ladder), or register `disputed` — is bean **`qou-b3nk`**. Until
 then: **any quote of a c₃/S/q*_S value must name the convention** (the
 trace-convention registry's own rule: convention-silent trace values are not
 comparable).
+
+**Registration addendum (2026-08-15, bean `qou-b3nk` worked).** The channel is
+now **registered `disputed`** in `trace-convention-registry.json`
+(`channels.qbeta-decay`: definitional `null` — the decay blocks write the
+excised-C value while naming it "the Markov–Jones parameter", whose referent
+has read D since 2026-08-09 — production `C`; an R9 evaluator on
+`qbeta_utils.markov_parameter` asserts the C-state mechanically). Two upgrades
+to the paragraph above:
+
+1. **The escape is now proved, and unconditional in the parameter** — Lean
+   `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free): *any* faithful
+   normalised Markov trace at the ladder's `z_C` carries `y_(1³) ≠ 0` for every
+   substrate `s = √q > 1`, so the two-row forcing and the C-frame ladder are
+   **mutually exclusive** — the forcing cannot transfer by a z-swap. (The
+   explicit instance `y = (z, 1/2−z, z)` cited above was the *wrong witness*
+   for this: its `σ₀` functional value is `h/2` exactly, z-independently — it
+   is a class inhabitant, not an Ocneanu `z_C`-trace. Conclusion unchanged,
+   witness corrected.)
+2. **The full-bar condition is now in Lean**: `bar(z) = z − h` holds for `z_D`
+   exactly (`zD_full_bar_covariant`) and fails for any bar-even `z` — hence
+   for `z_C` — away from `q² = 1` (`barEven_fullBar_forces_classical`,
+   `zC_fails_fullBar`); premise (trace bar-compatibility) named, not proved.
+
+Neither C nor D is *derived* for the decay channel; the full analysis and the
+two honest settlement routes:
+[`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md).
