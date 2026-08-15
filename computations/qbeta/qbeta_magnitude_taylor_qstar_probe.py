@@ -73,7 +73,7 @@ mp.mp.dps = 60
 ME = mp.mpf(str(C.M_E_MEV))
 QCOD = mp.mpf(str(C.Q_BETA_MEV))       # experimental neutron β-decay Q-value: FIXED constant
 with mp.workdps(60):
-    VOL41 = +(2 * mp.clsin(2, mp.pi / 3))   # Vol(4₁) = 2Λ(π/3)
+    VOL41 = +(2 * mp.clsin(2, mp.pi / 3))   # Vol(4₁) = 2·Cl₂(π/3)
 
 ONE_PPQ = mp.mpf("1e-15")               # L1 compute-precision target (1 part per quadrillion)
 
