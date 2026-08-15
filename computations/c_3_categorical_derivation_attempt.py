@@ -192,8 +192,8 @@ def trM_hopf(q: mpf) -> mpf:
     The producer audit keys on a target named z and could not see it; the
     square root was z_C's, not the identity's.
     """
-    z = q ** 3 / (q ** 2 + 1)
-    return (q - 1 / q) * z + 1
+    from closed_form_tau_M import trM_sigma1_sq as _canonical
+    return _canonical(q)
 
 
 # ─────────────────────────────────────────────────────────────────────

@@ -418,6 +418,11 @@ def _eval_z(entry, mod, q0):
         if idx is None:
             raise ValueError("callable_index requires an `index`")
         return mp.mpf(str(obj()[idx]))
+    if kind == "callable_q_index":
+        idx = entry.get("index")
+        if idx is None:
+            raise ValueError("callable_q_index requires an `index`")
+        return mp.mpf(str(obj(q0)[idx]))
     raise ValueError("unknown z kind %r" % kind)
 
 

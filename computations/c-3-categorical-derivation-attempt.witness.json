@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-15T15:24:48.949265+00:00",
-  "commitSha": "d9fc6c74ba5508301b9de2ce02fe4ca15eb8abf4",
+  "computedAt": "2026-08-15T16:01:59.356986+00:00",
+  "commitSha": "ab9e6f3e4a2589e63b86c41d3ddae65c3865ca86",
   "assertions": [
     {
       "name": "c_3_taylor_exact_promotion",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "c-3-categorical-derivation-attempt",
   "scriptFile": "c_3_categorical_derivation_attempt.py",
-  "scriptHash": "00292cbaee60",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "3ec320c91f55",
+  "scriptCommitSha": "b72b7c57f50269e3997e5f90c366be59997c0156",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

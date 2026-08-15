@@ -486,3 +486,67 @@ import-safe: 0.09 s, witness mtime unchanged) and cannot gate the other three.
 
 **The blocker is the missing `__main__` guard, not R11.** A producer that
 cannot be imported without running cannot be gated by anything that imports it.
+
+---
+
+## Round 8: one definition, five copies, gated once
+
+Rather than add `__main__` guards to three ~350-line producers (≈700 lines of
+module-level restructuring for a gating benefit), fix the root cause: the
+identities were **copy-pasted**, and local copies drifting is the defect class
+this entire arc has been chasing.
+
+`tr_M(sigma_1^2) = h*z + 1` existed in at least five places, each specialised
+to convention C as `1 + (q-1)/q^{1/2}` — which IS that identity at `z_C`, the
+square root being z_C's and not the identity's:
+
+    knot_operator_census_group_actions.trM_sigma1_sq
+    c_3_categorical_derivation_attempt.trM_hopf
+    lepton_t2n_torus_tower.trM_hopf_census_form
+    inter_nucleon_linked_channel.census_hopf
+    tools/sage-examples/.../hecke_surface.trace_weights
+
+That last one is why this matters concretely: its copy drifted from the
+library and the example **exited 1 on main**.
+
+### Canonical home
+
+`computations/closed_form_tau_M.py` already owned `markov_z` (D) and
+`hecke_h`, is a proper library module (no module-level `WitnessBuilder`,
+imports in 0.07 s), and is already an R9 evaluator. Added there:
+
+* `trM_sigma1_sq(q)` = `h*z + 1`
+* `wenzl_weights_h2(q)` = `((q*z+1)/(q^2+1), 1 - that)`
+
+Verified: `y_(2) + y_(1,1) = 1` and `y_(2)*q - y_(1,1)/q = z` both exact.
+`y_(1,1) = 0.24729788674803459840...` = `1/[2]_q^2`, the same value as
+`y_(2,1)` at n=3.
+
+### Gated once, then repointed
+
+R11 now carries 5 entries, all CONFIRMED:
+
+    pyhecke.gram.tr_m_mp[3]                z^2               C   1.9e-51
+    pyhecke.gram.tr_m_mp[5]                h*z^2+z           C   2.4e-51
+    c_3_categorical_derivation_attempt     h*z+1             D   6.2e-52
+    closed_form_tau_M.trM_sigma1_sq        h*z+1             D   6.2e-52
+    closed_form_tau_M.wenzl_weights_h2[0]  (q*z+1)/(q^2+1)   D   1.5e-51
+
+New evaluator kind `callable_q_index` for the tuple return.
+
+All four producers repointed at the canonical definitions and re-run. Every
+one exits 0, and **every witness is identical modulo timestamps** — only
+`computedAt`, `commitSha`, `durationMs`, `scriptHash`, `scriptCommitSha`
+moved. Zero numeric change, which is the test a behaviour-preserving refactor
+has to pass.
+
+The `__main__`-guard blocker is therefore routed around rather than removed:
+those three producers still cannot be imported without running, but the values
+R11 needs to gate now live in a module that can be.
+
+## Next
+
+- The 4 pyhecke sites remain `qou-w8zz`'s.
+- `__main__` guards for the three producers are still worth doing on their own
+  terms (a producer that runs at import is a hazard beyond gating), but no
+  longer block R11.

@@ -222,7 +222,8 @@ w.add_data("trM_pp_nn_asymmetry_note",
 # assertion; the D value of the same quantity is recorded beside it so the
 # gap reads as a convention difference rather than an unexplained residual.
 census_hopf_C = 1 + (Q0 - 1) / mp.sqrt(Q0)
-hopf_D = (Q0 - 1 / Q0) * z_factor(Q0) + 1
+from closed_form_tau_M import trM_sigma1_sq as _trM_sq  # canonical, R11-gated
+hopf_D = _trM_sq(Q0)
 w.add_data("census_hopf_closed_form_C_1+(q-1)/sqrt(q)_at_q0", mp.nstr(census_hopf_C, 60))
 w.add_data("hopf_closed_form_D_h_z_plus_1_at_q0", mp.nstr(hopf_D, 60))
 w.add_data("trM_pp_vs_census_hopf_C_gap", mp.nstr(abs(tr_pp - census_hopf_C), 60))

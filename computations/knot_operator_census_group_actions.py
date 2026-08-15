@@ -82,12 +82,15 @@ def z_factor(q):
 def trM_sigma1_sq(q):
     """Closed form tr_M(sigma_1^2) = h*z + 1, h = q - q^-1 (n-independent).
 
-    Written in terms of z rather than specialised to a convention. The old
-    body was 1 + (q-1)/q^{1/2}, which is this same identity evaluated at
-    z_C -- correct arithmetic, permanently wrong the moment z moved. The
-    square root was never structural; it was z_C's, showing through.
+    Delegates to the canonical definition. It was 1 + (q-1)/q^{1/2} -- this
+    same identity at z_C, correct arithmetic and permanently wrong the moment
+    z moved -- then a local `h*z+1`, which was right but still a COPY. A local
+    copy of a library value is the defect class this whole arc is about, so it
+    is now the library's, gated once by R11 as
+    `closed_form_tau_M.trM_sigma1_sq`.
     """
-    return (q - 1 / q) * z_factor(q) + 1
+    from closed_form_tau_M import trM_sigma1_sq as _canonical
+    return _canonical(q)
 
 
 # --- Census of canonical braid words (operator -> (B_n strand count, word)) ---

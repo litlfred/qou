@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-15T14:58:43.285627+00:00",
-  "commitSha": "b2bef06f2ca0b346473f0b047bb66b1122136fa1",
+  "computedAt": "2026-08-15T16:01:58.322731+00:00",
+  "commitSha": "ab9e6f3e4a2589e63b86c41d3ddae65c3865ca86",
   "assertions": [
     {
       "name": "writhe_T(2,2)_eq_2m",
@@ -49,11 +49,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "knot-operator-census-group-actions",
   "scriptFile": "knot_operator_census_group_actions.py",
-  "scriptHash": "8ac10939e3de",
-  "scriptCommitSha": "6aa3cafe72050ba87b3fc60513c71f434388ad70",
+  "scriptHash": "2deb9d41d3f2",
+  "scriptCommitSha": "b1921853a5054c31989dc0b0932802470ec9c60e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -90,9 +90,8 @@ def wenzl_weights(q):
     showing through a formula that has none of its own. Solving for z instead
     means the weights follow the convention rather than pinning it.
     """
-    z = z_factor(q)
-    W2 = (q * z + 1) / (q**2 + 1)
-    W11 = 1 - W2
+    from closed_form_tau_M import wenzl_weights_h2 as _canonical
+    W2, W11 = _canonical(q)
     return W2, W11
 
 

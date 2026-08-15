@@ -540,6 +540,39 @@
         ],
         "abs_tol": "1e-40",
         "note": "The only one of the four producers migrated in this arc that R11 can gate. The other three -- knot_operator_census_group_actions, lepton_t2n_torus_tower, inter_nucleon_linked_channel -- have NO `if __name__` guard and construct a WitnessBuilder at module level, so importing them RUNS the producer and rewrites its witness. A validator cannot import those without making validation a side-effecting act, which is why R11's coverage of the producer layer is one entry rather than four. Verified import-safe here: 0.09 s, witness mtime unchanged. trM_hopf(q0) = 1.128088744114353785593152 matches h*z+1 at z_D exactly (|d| = 0), and independently matches the sigma_1^2 entry of markov-trace-recursive.witness.json."
+      },
+      {
+        "id": "closed_form_tau_M.trM_sigma1_sq",
+        "convention": "D",
+        "module": "closed_form_tau_M",
+        "symbol": "trM_sigma1_sq",
+        "kind": "callable_q",
+        "identity": "h*z+1",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "THE CANONICAL DEFINITION. tr_M(sigma_1^2) = h*z + 1 was copy-pasted, specialised to convention C, into at least five places (knot_operator_census_group_actions.trM_sigma1_sq, c_3_categorical_derivation_attempt.trM_hopf, lepton_t2n_torus_tower.trM_hopf_census_form, inter_nucleon_linked_channel.census_hopf, and the sage example's trace_weights). `1 + (q-1)/q^{1/2}` IS this identity at z_C -- the square root is z_C's, not the identity's -- so every copy went on describing the excised convention after z moved. Gating the one definition is the point; the copies are being repointed at it."
+      },
+      {
+        "id": "closed_form_tau_M.wenzl_weights_h2[0]",
+        "convention": "D",
+        "module": "closed_form_tau_M",
+        "symbol": "wenzl_weights_h2",
+        "kind": "callable_q_index",
+        "index": 0,
+        "identity": "(q*z+1)/(q^2+1)",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "y_(2) for H_2(q), solved from tr_M(1)=1 and tr_M(sigma_1)=z rather than hardcoded. Its convention-C specialisation is (q^{3/2}+q+1)/(q^3+q^2+q+1), which lepton_t2n_torus_tower carried TWICE -- once numerically and once in sympy -- and the two were migrated in separate steps, so for one commit they disagreed and that file's own symbolic-vs-numeric assertion caught it. y_(1,1) = 1 - y_(2) = 1/[2]_q^2 = 0.24729788674803459840..., the same value as y_(2,1) at n=3."
       }
     ],
     "weights_n3": [
