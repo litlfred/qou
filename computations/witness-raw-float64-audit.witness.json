@@ -60,6 +60,13 @@
       "y0_star",
       "y_star"
     ],
+    "f64_integrator_carved_out_fields": 65,
+    "f64_integrator_carved_out_by_file": {
+      "computations/qns-backscatter-sustainment-probe.witness.json": 19,
+      "computations/qns-crow-efolds-probe.witness.json": 29,
+      "computations/qns-tail-pileup-probe.witness.json": 17
+    },
+    "f64_integrator_declared_tier": "float64-integrator",
     "baseline_files": 1572,
     "baseline_fields": 536570,
     "new_not_baselined": 0,
