@@ -1,10 +1,11 @@
 ---
 # qou-b4lo
 title: 'MISLABEL: RowCapObstruction tiered ''proved'' while Sym2Gate/WeylInvariance get the arithmetic-vs-rep-theory caveat'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T13:03:35Z
-updated_at: 2026-08-08T13:03:35Z
+updated_at: 2026-08-15T04:42:03Z
 ---
 
 Found by the SM/eightfold epistemic accounting,

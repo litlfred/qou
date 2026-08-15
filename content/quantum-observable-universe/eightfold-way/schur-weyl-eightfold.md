@@ -66,8 +66,8 @@ $N = 2$).  No choice of $q$ restores it: the row cap is
 $\ell(\lambda) \leq \dim V$, which the single-fibre construction fixes at $2$,
 and the Drinfeld--Jimbo quantisation does not change dimensions.
 
-**The obstruction is proved.**
-This is not an observation but a theorem, machine-checked sorry-free in
+**The obstruction, and what is machine-checked about it.**
+The following are verified sorry-free in
 `QOU/Eightfold/RowCapObstruction.lean`:
 
 - `weyl_dim_alt_eq_zero_iff` --- the alternating channel
@@ -83,11 +83,32 @@ This is not an observation but a theorem, machine-checked sorry-free in
   $27 = 10 + 16 + 1$ at $N = 3$), so the $N = 2$ deficit sits precisely in the
   vanishing alternating channel and not in some unaccounted-for piece.
 
-The eightfold-way classification is therefore not "approximately available"
+**What that Lean does not establish.**
+The same caveat applies here as to `Sym2Gate.lean` and
+`WeylInvarianceQDeformation.lean` above, and it is load-bearing in this one
+place because $N = 3$ is the chapter's central open problem.  What is
+machine-checked is the *arithmetic* of the row cap on the channel
+dimensions: the file *defines* $\dim V_{(1^3)}^{\mathfrak{gl}_N}$ to be
+$\binom{N}{3}$ and then reasons about $\binom{N}{3}$, with every proof a
+`Nat.choose` identity, a `decide`, or an `omega`.  That the hook-content
+formula gives $\dim V_{(1^3)} = \binom{N}{3}$, and that the Schur--Weyl row
+cap is $\ell(\lambda) \leq N$, are standard and cited --- carried by the
+definition names and docstrings, not proved.  The file's own docstring
+concedes the boundary, noting that Worpitzky's identity is not formalised
+here.  So the tier is *standard mathematics, with a sorry-free
+machine-checked arithmetic instance* --- not *proved* in the sense the other
+Lean-backed rows of this chapter use.
+
+The conclusion is nonetheless correct, because the two cited inputs are
+textbook.  The eightfold-way classification is not "approximately available"
 at $N = 2$ --- it is structurally unavailable.  This is a scope-(b)
 exclusion, and the invariant justifying it is the Schur--Weyl row cap.
-What remains open is the affirmative half: no construction in the framework
-supplies $N = 3$.
+
+One direction is worth naming, because it is not the one the framework
+needs.  `decuplet_forces_three` and `singlet_forces_three` run from an
+*observed* channel dimension to $N = 3$; what the framework requires is
+$N = 3$ *supplied* by a construction.  That is the affirmative half, and it
+remains open.
 
 Therefore, realising the full eightfold way requires $N = 3$.  Within
 QOU, this $N = 3$ cannot arise from a single fibre.  The remaining
