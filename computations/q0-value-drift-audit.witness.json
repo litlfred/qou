@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 317,
-      "proton-pin": 776,
+      "proton-pin": 781,
       "unknown": 25,
       "canonical": 610
     },
@@ -10275,6 +10275,13 @@
         "ppb_vs_canonical": -11.537117889987533
       },
       {
+        "file": "computations/qbeta/qbeta-c3-ladder-trace-convention-sensitivity.witness.json",
+        "field": "q0Value",
+        "value": "1.109978582751380807591669",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/qbeta/qbeta-c3-rung-structure-analysis.witness.json",
         "field": "data.at_q_0.q_0",
         "value": "1.1099785955573347198997632204832250266562084087802",
@@ -10443,6 +10450,13 @@
         "ppb_vs_canonical": -14.015887137074227
       },
       {
+        "file": "computations/qbeta/qbeta-decay-channel-convention-status.witness.json",
+        "field": "parameters.q0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json",
         "field": "parameters.q_0_50dps",
         "value": "1.1099785955573347198997632204832250266562084087802",
@@ -10492,6 +10506,20 @@
         "ppb_vs_canonical": 0.0
       },
       {
+        "file": "computations/qbeta/qbeta-fig8-cyclotomic-bar-invariance.witness.json",
+        "field": "q0Value",
+        "value": "1.109978582751380807591669",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/qbeta/qbeta-fig8-cyclotomic-bar-invariance.witness.json",
+        "field": "result.q0",
+        "value": "1.109978582751380807591669",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/qbeta/qbeta-fsc-g-pattern-comparison.witness.json",
         "field": "data.q_0",
         "value": "1.10997859555733471989976322048",
@@ -10504,6 +10532,13 @@
         "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
         "class": "canonical",
         "ppb_vs_canonical": 0.0
+      },
+      {
+        "file": "computations/qbeta/qbeta-h1-significance-against-cal3-band.witness.json",
+        "field": "q0Value",
+        "value": "1.109978582751380807591669",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-h4-route-a-gate.witness.json",
