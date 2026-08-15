@@ -25,6 +25,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalProton.exists",
     validation: "not_checked",
   },
+  uses: ["def:categorical-proton"],
   proofs: ["prf:categorical-proton-exists"],
   tags: ["existence", "proton", "baryon"],
 });

@@ -8,6 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.gb_spectral_sequence",
     validation: "not_checked",
   },
+  uses: ["def:hecke-normal-form"],
   tags: [
     "spectral-sequence",
     "cohomology",

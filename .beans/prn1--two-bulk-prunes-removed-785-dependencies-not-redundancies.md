@@ -314,3 +314,49 @@ remaining five carry **no prose link at all**. The self-contradicting subset is
 fully drained, so the residue is exactly where a reader's judgement decides
 something — and there the two-reader standard has not been met and I cannot meet
 it alone.
+
+## 2026-08-15 — 13 more structural restorations, and the audit's own graph was blind
+
+Applied 13 edges across tranches 1, 2, 4, 5, 7, 8, 11, 12 — every block whose
+prose links a target its `uses[]` omitted, each cleared of forward-reference and
+cycle refusals, each linking sentence read and confirmed a prerequisite use.
+18 restored under this bean now. `run-validate` ✓ Valid, 42 issues, unchanged;
+editorial graph still acyclic.
+
+`scripts/prune-structural-candidates.ts` is committed: it finds these
+corpus-wide, refuses the forward and cycle cases mechanically, and prints the
+linking sentence so the one judgement left is made on one sentence.
+
+### Three candidates withdrawn: the dependency was declared via `interprets`
+
+`rem:commutative-crossing-energy`, `rem:body-asymptotics-catalog` and
+`rem:archimedean-image-table` declare their target with `interprets:`, not
+`uses[]`. `buildContentGraph` builds editorial edges from `uses[]` alone, so the
+audit counted these as destroyed when they are stated.
+
+**37 of the still-lost edges are in this position.** The damage figure answers
+"unreachable through `uses[]`" — correct for the ordering metrics, which run on
+that graph — but it is not "the author never declared this". Worth a platform
+decision: the detangler already treats `interprets` as an ordering constraint
+("no block may precede one it interprets"), so the graph and the checker
+disagree about whether it is an editorial edge.
+
+### A fourth candidate withdrawn, and it exposed a parser bug
+
+`prop:strangelet-crossing-energy` carries an explicit author comment: the edge
+to `def:crossing-energy` "is NOT listed: it is reached through
+def:coulomb-charge". My candidate list contradicted that, which should not have
+been possible — and the author was right.
+
+`content-graph.extractUses` anchored on `/(?:^|[{,])\s*uses\s*:\s*\[/`, and
+`\s*` does not span comments. That block has three comment lines between the
+previous field's comma and its `uses:` key, so **its whole array was invisible**
+and it appeared to declare nothing. Corpus-wide: **27 blocks, 53 declared edges**
+that no ordering, cone or reachability metric could see. Fixed in
+folio-assistant (#117); still-lost drops **679 → 666**.
+
+**A correction to my own reporting.** I called `rem:archimedean-stpart-strategy`
+the second-strongest candidate on the grounds that it declares nothing. It
+declares `conj:classical-limit-stpart`; the graph could not see it. Any
+"declares nothing" figure in the tranche sheets predating the fix is suspect and
+the sheets need regenerating.
