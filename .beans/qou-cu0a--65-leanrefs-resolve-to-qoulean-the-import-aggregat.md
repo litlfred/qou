@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T20:32:39Z
-updated_at: 2026-08-15T23:03:47Z
+updated_at: 2026-08-15T23:13:52Z
 ---
 
 Found while adjudicating `def:yekutieli-triple` (session `qou-xz6t`, branch `claude/mtcx-7c-verify-close-2026-08-15`).
@@ -82,3 +82,32 @@ This **flips ~304 cached sidecar verdicts from `pass` to `n/a`**. That is the in
 1. Re-sweep after picking up the folio-assistant change, so sidecars reflect `n/a` rather than stale greens.
 2. Expect QA coverage numbers to *drop*. That drop is the removal of false coverage, not a regression.
 3. The 63 blocks whose refs name declarations existing **nowhere** (per the triage above) are now honestly `n/a`. They remain genuinely unformalised — repointing them is not possible; they need formalisation or removal of the `lean.ref`.
+
+
+## Dispositioned (2026-08-15) — 65 → 6 fixed, 2 ambiguous, 57 backlog
+
+Every `qou:QOU.<Name>` ref that fails to resolve (i.e. the set that used to land on the root aggregator) is now triaged. Matching was normalised (case/underscore-insensitive) against a decl index built from the whole Lean tree, and **every proposed fix was verified through the canonical resolver before being written** — an earlier naive pass produced false positives by matching generic last segments like `.exists`, and was discarded.
+
+### FIXED — 6 refs were casing/style mismatches, not missing formalisation
+
+Each named a real declaration under a different spelling. The corrected ref uses the **file** as the module segment and the **exact** decl name as the last segment; all six verified to resolve to the intended file:
+
+| block | was | now | resolves to |
+|---|---|---|---|
+| `braids-and-knots/so3-generators.ts` | `QOU.So3Generators` | `QOU.PathIntegrals.SO3Generators` | `QOU/PathIntegrals.lean` |
+| `braids-and-knots/su2-basis.ts` | `QOU.Su2Basis` | `QOU.PathIntegrals.SU2Basis` | `QOU/PathIntegrals.lean` |
+| `glossary/glossary-observed-value.ts` | `QOU.ObservedValue` | `QOU.BringsSurface.observedValue` | `QOU/BringsSurface.lean` |
+| `lifting-and-descent/qu-to-qou.ts` | `QOU.QuToQou` | `QOU.Torsion.YekutieliTriple.qu_to_qou` | `QOU/Torsion/YekutieliTriple.lean` |
+| `lifting-and-descent/yekutieli-lifting.ts` | `QOU.YekutieliLifting` | `QOU.BringsSurface.yekutieli_lifting` | `QOU/BringsSurface.lean` |
+| `lifting-and-descent/brane-boundary.ts` | `QOU.braneBoundary` | `QOU.Torsion.Descent.BraneBoundary` | `QOU/Torsion/Descent.lean` |
+
+### AMBIGUOUS — 2, deliberately NOT auto-fixed
+
+- `brings-surface/hyperelliptic-quintic.ts` → `qou:QOU.HyperellipticQuintic` names a **directory** (`QOU/HyperellipticQuintic/` holds `minimal_z5_classification`, `zeta5_residue_monodromy`, `ScratchZeta5`, `CheckAbs`); no single decl is obviously the target. Needs an author's call.
+- `mass-endomorphism/mass-identity.ts` → `qou:QOU.categoricalMass` matches **two distinct declarations**: `QOU/PhotonThreading.lean:81` (generic `{M : Type*} (sp : SubstrateParameter M)`) and `QOU/BraidKnot/MassFormulaCategorical.lean:71` (`(rho) (m_e : ℝ) (T_w) : ℝ`). **That collision is itself a finding** — two `categoricalMass` decls on opposite sides of the §7c wall.
+
+### BACKLOG — 57 name a declaration that exists nowhere
+
+These are genuinely **unformalised**, not mis-referenced: no decl matches even under normalised matching. Examples: `QOU.QuantumFlatness`, `QOU.ReebGaugeGroup`, `QOU.DescentData`, `QOU.S3Group`, `QOU.ObservableMTC`, `QOU.qHeatKernelPeterWeyl`, `QOU.ColorSectorCoords`, `QOU.LocalizedHadron`.
+
+**Deliberately left in place.** After the upstream resolver fix they report an honest `n/a` rather than a false green, and the ref still records the *intended* formalisation target, which is useful to whoever writes it. Removing 57 refs would delete that intent and is a content-owner decision, not a tooling one — and §7c discipline is explicit that this class of sweep is not a mass-fix. Note that omitting `lean:` entirely is well-precedented (2345 of 3567 blocks carry no `lean:` field), so removal is available if the owner prefers it.
