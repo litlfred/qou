@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 317,
-      "proton-pin": 786,
+      "proton-pin": 787,
       "unknown": 25,
       "canonical": 610
     },
@@ -6885,6 +6885,13 @@
         "value": "1.1097",
         "class": "unknown",
         "ppb_vs_canonical": -250991.8285359669
+      },
+      {
+        "file": "computations/hoefsmit-sparse-prototype.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/homflypt-reference-qa.witness.json",
