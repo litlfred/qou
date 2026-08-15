@@ -15,8 +15,24 @@ accuracy: *"the prediction sits ~1.55×10⁶ ppb (0.155 %) from CODATA."*
 That is the residual of the **leading term alone**. The form is
 
 ```
-1/α  =  q[9]_q[10]_q  +  2g/(4π(g−1))  +  O(a),      g = 4  (Bring genus)
+1/α  =  q[9]_q[10]_q  +  2g/(4π(g−1))  +  αH(1 − h²α)  +  Δ₂,   g = 4 (Bring genus)
+      H = [2]_q/(8π),   h = q − q⁻¹ (Hecke structure constant),
+      Δ₂ = uncomputed archimedean two-loop (weight-3; NOT the −h²Hα² above)
 ```
+
+> **Notation, corrected 2026-08-15.** This document originally wrote the third
+> and fourth terms together as a bare `O(a)`. That was retired corpus-wide by
+> `2d40f31ad2` (bean `qou-p0u0`) — the symbol was hiding two **derived** terms
+> behind a notation that reads as "unspecified", and it obscured the form's most
+> important structural feature: **α appears on both sides**, so this is a
+> self-consistent relation solved as a *fixed point*, not a series in an
+> auxiliary parameter. The sweep updated
+> [`FormLadderAnchorDominance.lean`](../../content/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean)
+> but not this audit doc; corrected here. **No number moves** — the ladder
+> witness's fixed points already carried these terms (proton `137.035999313169`,
+> muon `137.036010116763`, unchanged), so only the notation was stale.
+>
+> Do not read `h` as the mass-chain `ℏ_q = 1 − q⁻¹`; they differ by ~2.11×.
 
 and `alpha_k_per_force_assembly` computes only `q[9]_q[10]_q = 136.8232…`. The
 assembled ladder is in a different producer:
@@ -83,7 +99,21 @@ needed the minimal-strand guard `m ≤ p` and why
 | theorem | content |
 |---|---|
 | `anchor_gap_eq_prediction_gap` | the reference value **cancels** from the difference of residuals, so "which anchor" is independent of the CODATA vintage — not idle, since the ladder witness scores against `137.035999084` while `alpha-k-per-force-assembly` carries `137.035999177` |
-| `no_anchor_blind_affine_correction_closes_gap` | any further term that does not itself depend on the anchor acts as one affine `x ↦ s·x + c`; for `s ≠ 0` the anchors stay distinct. So the spread cannot be absorbed by a better `O(a)` truncation — **only an anchor-dependent ingredient can move it** |
+| `no_anchor_blind_affine_correction_closes_gap` | any further term that does not itself depend on the anchor acts as one affine `x ↦ s·x + c`; for `s ≠ 0` the anchors stay distinct. So the spread cannot be absorbed by a better *anchor-blind* remainder — **only an anchor-dependent ingredient can move it** |
+
+> **What that leaves, now that the remainder is written out (2026-08-15).** With
+> the form stated explicitly, the theorem's scope is sharper than when it was
+> written against a bare `O(a)`. The `αH(1 − h²α)` term **is** anchor-dependent —
+> `H = [2]_q/(8π)` and `h = q − q⁻¹` are both functions of `q`, and `q₀` differs
+> between the pins — so it is *not* excluded by the theorem. But it is also
+> already **in** the ladder: the fixed points above were computed with it, and the
+> spread is still 78.84 ppb. So the one anchor-dependent term the form currently
+> names does not close the gap, and the only remaining candidate inside this form
+> is `Δ₂`.
+>
+> That is a narrowing, not a route: `Δ₂` is uncomputed, and nothing here says it
+> is the right size or sign. Claiming otherwise would be exactly the
+> fit-shaped reasoning this document is a retraction of.
 | `degenerate_correction_is_vacuous` | the one escape, `s = 0`, does equalise them — by discarding the prediction. Named so the exclusion is not over-claimed |
 | `anchor_gap_dominates_proton_residual` | gap `> 40×` the proton-anchored residual |
 | `leading_term_residual_dwarfs_full_form` | leading term alone misses by `> 5·10⁵×` the full form's residual |
