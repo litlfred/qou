@@ -63,10 +63,12 @@ braid identity holding for the two consistent choices and failing for both mixed
 ## Scope
 
 This closes step (iii) — the braid identity — of the general-`λ` construction, in the
-generic size-`6` case.  It does **not** by itself close `hoefsmit_seminormal_rep`: steps
-(i) and (ii), enumerating the `s_i`-orbits of `SYT λ` and assembling the block-diagonal
-generators from them, remain open (bean `qou-gjg6`).  What is removed is the mathematical
-core; what remains is orbit bookkeeping.
+generic size-`6` case.  It does **not** by itself close `hoefsmit_seminormal_rep`.  Step
+(i) (the tableau layer: `cellOf`, the axial distance, the `s_k`-action, far commutation)
+is complete in `TableauCells.lean`; **step (ii)** — classifying the `⟨s_k, s_{k+1}⟩`-orbits
+of `SYT λ` and assembling the block-diagonal generators, which includes mapping each orbit
+onto the explicit index ordering its identity is stated in — remains open (bean
+`qou-gjg6`).
 
 Refs:
 - [hoefsmit1974] Hoefsmit, PhD thesis (UBC 1974) — the seminormal form.
