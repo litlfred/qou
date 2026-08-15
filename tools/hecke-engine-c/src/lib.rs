@@ -56,12 +56,16 @@ pub extern "C" fn qou_hecke_h(q: f64) -> f64 {
 /// Markov-trace weights on the NF basis.
 ///
 /// `out` must point to at least 6 contiguous `double`s. Fills:
-///   out[0..6] = [1, z, z, z^2, z^2, z^3]
-/// where z = qou_hecke_markov_z(q).
+///   out[0..6] = [1, z, z, z^2, z^2, h*z^2 + z]
+/// where z = qou_hecke_markov_z(q) and h = qou_hecke_h(q).
+///
+/// Convention D (qou-m7py, 2026-08-15): the production Markov trace,
+/// matching `pyhecke.gram.TR_M`. The legacy `z³` weights are
+/// `hecke_engine::gram::trace_weights`.
 #[no_mangle]
 pub extern "C" fn qou_hecke_trace_weights(q: f64, out: *mut f64) {
     if out.is_null() { return; }
-    let w = gram::trace_weights(q);
+    let w = gram::trace_weights_markov(q);
     unsafe {
         std::ptr::copy_nonoverlapping(w.as_ptr(), out, 6);
     }
