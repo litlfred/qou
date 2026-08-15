@@ -1499,3 +1499,97 @@ the tooling now in place is `farComm_transport` (rightwards), `farComm_transport
 (leftwards, any list position), `descWord_split`, `descWord_index_le/_ge`, and the
 `ofTerms_coeff_mid` singling-out lemma. Worth extracting the 17 chains from the
 engine first and looking for the common skeleton before writing any Lean.
+
+## §4x — Bokut–Shiao against the braid word (6) — the first `B × B` column
+
+`B × B` is not one family. Writing `a = i − j₁`, `b = i − j₂` for the two depths,
+the engine's chain length depends only on `(a, b)`:
+
+    (1,1) → 8    §4r   the braid self-overlap
+    (a,1) → 9    §4x   this section, flat in a
+    (1,2) → 10       (1,3) → 12
+    (a,2) → 15       (2,3) → 19       (3,3) → 25
+
+This is the column `b = 1` — the second rule leads on the braid word `σᵢσᵢ₋₁σᵢ`.
+
+**Both terms reduce to one word.** With `E = descWord i−1 j₁`, so
+`descWord i j₁ = σᵢ :: E`:
+
+    spoly = c₂ · ( σᵢ E σᵢ₋₁ σᵢ σᵢ₋₁  −  σᵢ₋₁ σᵢ E σᵢ₋₁ σᵢ )   →*   0
+
+via the common endpoint `σᵢ₋₂ σᵢ₋₁ σᵢ₋₂ σᵢ E`, five steps down the first term and
+four down the second. Only three rules occur: Bokut–Shiao at `(i−2, i−1, j₁)`,
+far-commutation `σᵢσᵢ₋₂`, and the outer rule itself; the branches differ only in
+their last step, term 1 commuting `σᵢ` past `σᵢ₋₂` and term 2 straightening
+`σᵢ₋₁σᵢ₋₂σᵢ₋₁`. Nine steps regardless of `a`, which is why this column is flat.
+
+`c₂` is the second rule's leading coefficient — `1` for Bokut–Shiao at `j = i−1`,
+`−1` for Yang–Baxter, the §4j pair. The **first** rule cannot double: `j₁ ≤ i−2`
+makes its leading monomial strictly longer than the braid word.
+
+**Every distinctness in the section is a first-letter comparison** among
+`σᵢ, σᵢ₋₁, σᵢ₋₂`. The nine stages begin `σᵢ σᵢ σᵢ₋₂ σᵢ₋₂ σᵢ₋₂` and
+`σᵢ₋₁ σᵢ₋₁ σᵢ₋₁ σᵢ₋₁` against passengers beginning `σᵢ₋₁` then `σᵢ₋₂`. No length
+count and no word-uniqueness argument anywhere.
+
+**`monicStep` is the reusable piece, and the one to build the rest of `B × B`
+on.** Every rule the chain applies is monic and every stage is two terms, so one
+lemma discharges all nine steps:
+
+    monicStep hn hp r hr hrel hlm hLR L₁ L₂ a b W W' c hc hW hW' hne
+
+It takes the stage words `W`, `W'` as *arbitrary*, tied to the rule's two words
+by equations `W = a ++ L ++ b`, `W' = a ++ R ++ b` — which is what lets
+consecutive steps compose without their context decompositions having to agree
+syntactically, the thing that would otherwise force one bespoke theorem per step.
+It is stated in the same `L₁ ++ (·) :: L₂` list-position-general form as
+`farComm_transport_left`, so steps 1–5 move the first term and 6–9 the second
+with no duplication. Each of the nine steps is then ~12 lines of arguments, and
+the two `by simp` word equations are the only real content.
+
+Two build notes:
+
+* **`j₁` is not inferable from `oc`'s type** — it appears only inside the
+  structure's fields, so `oc r₂ hi (by omega) hlm₂` leaves it a metavariable and
+  the `by omega` fails against a goal containing `?m`. Pass `(j₁ := j₁)`. The
+  omega counterexample naming a variable `↑↑(?m.85 nf)` is the tell.
+* `BraidSelfOverlap.bs_hrel` takes `i' i` explicitly (they come from the
+  namespace's `variable` line) where `bs_hlm` does not; the error surfaces as
+  "`hi` … expected to have type `Fin ?m`".
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n
+      BS/YB × F (j₀+1=j)       5   §4o
+      cyclic × quadratic      12   §4p
+      quadratic × cyclic       9   §4q
+      braid self-overlap      12   §4r
+      BS × F (j₀=j)            3   §4s
+      quadratic × general BS   3   §4t
+      far-comm × BS/YB         2   §4u
+      BS/YB × F (j₀+1<j)       2   §4v
+      BS/YB × F (j < j₀)       1   §4w
+      BS × braid (b = 1)       6   §4x
+      ---------------------------
+      proved                  81   all general in n
+      remaining               11
+
+    inclusion compositions    22   §4m   (all)
+
+**The remaining 11**, all `B × B` with `b ≥ 2`:
+
+    (1,2)  4  10 steps    Y23×B231, B232×B231, Y12×B120, B121×B120
+    (1,3)  2  12 steps    Y23×B230, B232×B230
+    (2,2)  2  15 steps    B120×B120, B231×B231
+    (3,2)  1  15 steps    B230×B231
+    (2,3)  1  19 steps    B231×B230
+    (3,3)  1  25 steps    B230×B230
+
+The natural next column is `a = 1` (rows (1,2) and (1,3), six compositions, 10
+and 12 steps) — the mirror of §4x with the braid word on the *left* of the
+composition. Note it is **not** flat in `b`: 10 vs 12, so unlike §4x the chain
+grows with the second depth and will need an induction or a transport rather than
+a fixed script. The `(a,b)` both ≥ 2 corner (the last 5, up to 25 steps) is the
+hardest and should come last.
