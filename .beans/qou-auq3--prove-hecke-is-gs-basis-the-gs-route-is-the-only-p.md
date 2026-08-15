@@ -1077,3 +1077,79 @@ Two things worth recording:
 
 A production reseed is a force-push to a shared branch, so it is not something
 to do unilaterally mid-arc — flagged to the owner rather than done.
+
+## §4s — Bokut–Shiao against far-commutation at the **same** index (3 compositions)
+
+The other neighbour of §4o. §4o puts the far-commutation rule one index *below*
+the Bokut–Shiao rule's bottom (`j₀ + 1 = j`) and resolves in one step, because
+the S-polynomial **is** the Bokut–Shiao rule at `j₀`. Here the two rules share
+their bottom index, and that changes the shape completely: `descWord i j` already
+ends in `σⱼ`, so both surviving terms end in `σⱼσⱼ` and the quadratic rule has to
+fire twice before the family's own rules can.
+
+Writing `jp` for `j + 1`, so `descWord i j = descWord i jp ++ [σⱼ]`:
+
+    spoly = descWord i jp ++ [σⱼ, σⱼ, σᵢ]  −  bsWord₂ i' i jp ++ [σⱼ, σⱼ]
+
+| # | target | rule | context | coefficient |
+|---|---|---|---|---|
+| 1 | first term | `Q_j` | `(descWord i jp ∣ σᵢ)` | `1` |
+| 2 | second term | `Q_j` | `(bsWord₂ i' i jp ∣ ε)` | `−1` |
+| 3 | `bsWord₁ i j` | Bokut–Shiao at `j` | `(ε ∣ ε)` | `h` |
+| 4 | `bsWord₁ i jp` | Bokut–Shiao at `jp` | `(ε ∣ ε)` | `1` |
+
+so the `h` term the two squares leave behind is the Bokut–Shiao relation at `j`
+and the constant term is the one at `jp` — §4o's downward self-completion again,
+reached through the quadratic rule instead of directly. General in `n`;
+sorry-free (`propext, Classical.choice, Quot.sound` only).
+
+**The side condition is not an extra hypothesis.** Step 4 needs
+`bokutShiaoRelation i' i jp` to *be* a rule, i.e. `j + 1 ≤ i − 1`, which is
+exactly the condition for `σᵢσⱼ` to be a far-commutation word in the first place.
+At `j = i − 1` there is no composition here to resolve — `σᵢσᵢ₋₁` is a braid
+word, and that case is §4r's. So `resolves` takes the far-commutation side
+condition `j + 1 < i` and nothing else.
+
+**What made it cheap.** Every word in the chain is `descWord i jp` prefixed or
+suffixed, and `descWord_cons` says `descWord i jp` begins with `σᵢ` while every
+`bsWord₂`-side word begins with `σᵢ₋₁`. One `head_ne` lemma (plus its symmetric
+form) discharges every distinctness obligation except a single length count.
+That is why this is 4 steps of ~15 lines each and §4r was 8 of ~25: §4r's words
+are five explicit letters with no structural handle.
+
+Four steps, four declarations — the per-declaration heartbeat budget again,
+applied pre-emptively this time rather than after a timeout.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × far-comm (j₀+1=j) 5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      BS × far-comm (same j)   3   §4s   general in n
+      ---------------------------
+      proved                  67
+      remaining               25
+
+    inclusion compositions    22   §4m   (all)
+
+Re-derived independently from `hecke-gs-confluence-n4.witness.json` by
+classifying all 92 records against the sections rather than by adding up what
+each section claims — the two agree, including the fact that §4q reaches
+Bokut–Shiao only at `j = i − 1` (3 of the 12 `Q × ?` shapes stay open).
+
+**The remaining 25, by chain length** (all from the witness):
+
+    4–5 steps    Q × B at j < i−1                         3    steps 3 + (i′−j)
+    6–8 steps    BS/YB × F and F × BS/YB at j₀ ≢ j        5
+    9–25 steps   BS/YB × BS/YB                           17
+
+The 3 `Q × B` are the cheapest thing left and the natural next target: they are
+§4q's missing instances, and §4q already says why they cost `3 + (i′−j)` rather
+than 3 — `bsWord₂` puts its extra letter on the left, so the `u'' ++ [σ_z]`
+hypothesis fails and the chain has to walk `descWord i j` down one letter at a
+time. Variable-length in `i′−j`, so it needs induction over the descending run,
+which is the first place in this arc a fixed script will not do.
