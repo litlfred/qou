@@ -43,6 +43,15 @@ different handling:
 The detector cannot tell them apart — it counts furniture, not authorship —
 so the flag means *check which of these it is*, not *split it*.
 
+**Classified 2026-08-15: every currently flagged document was checked and
+none needs splitting.** `scripts/split-bound-volume.py` was dry-run against
+all of them and refused each one for want of a repeating masthead, which is
+the mark of a published issue. Spot-checked the largest,
+`arxiv-math-0203194v1` (256pp, 6 flags): it is the André–Baldassarri
+Tôhoku-Hokkaido lecture volume — one coherent work whose chapters restart
+their numbering, exactly the thesis-shaped false positive. `ant-v14-n7-s`
+was the only genuine bound issue and is already split into its 10 papers.
+
 | doc-id | Intro/Ref sections | pp | title |
 |---|---|---|---|
 | [`arxiv-math-0203194v1`](../../library/arxiv-math-0203194v1/) | 6 | 256 | Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkai |

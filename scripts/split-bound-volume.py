@@ -9,33 +9,25 @@ chapters each have their own furniture and must be left alone, while a
 **bound journal issue** is several unrelated papers in one file whose
 combined relevance score is close to meaningless. This splits the latter.
 
-Boundaries are the sections numbered `1` whose title begins
-"Introduction". Each paper is cut two pages earlier than its Introduction
-so it keeps its own title page; the first paper absorbs the issue's front
-matter.
+Boundaries are the **journal masthead** — the line a bound issue reprints
+on every paper's title page ("ALGEBRA AND NUMBER THEORY 14:7 (2020)").
+See `boundaries()` for why the section outline is the wrong input and how
+the masthead is auto-detected.
 
-## STATUS: the heuristic does not work on the volume it was written for
+`--dry-run` is the default and prints each span's DOI and first lines.
+**Verify those look like real paper title pages before applying.** That
+reporting is what caught the previous, outline-based detector: it placed
+every cut in the tail of the preceding paper and found 8 papers where
+there are 10.
 
-Dry-run on `ant-v14-n7-s` (Algebra & Number Theory 14:7, 336pp) finds 8
-boundaries — the right *count* for that issue — but each cut lands in the
-tail of the preceding paper, not on a title page. Every span's first page
-carries the previous paper's running head and its References ("Elliptic
-curves over totally real cubic fields are modular 1799 References [A…").
-So the numbered-`1` "Introduction" sections in this volume's PDF outline
-are not positioned where a paper starts, and `LOOKBACK` cannot fix a
-boundary that is wrong by a variable amount.
+## Not every flagged document should be split
 
-**Do not `--apply` this to a journal issue until the detector is
-replaced.** A better signal is the journal's own continuous pagination:
-the running head changes at a true paper boundary, and the printed page
-numbers (1789, 1799, 1851, 1909, 1979 in this issue) jump at exactly
-those points. Detecting the running-head change is the fix; the section
-outline is the wrong input.
-
-This file is kept because the dry-run *reporting* is what caught it, and
-because the container-marking half is correct and reusable. `--dry-run`
-is the default for exactly this reason — **verify the emitted titles**
-before trusting any split.
+The flag counts furniture, not authorship. A **thesis** trips it too —
+its chapters each carry an Introduction and References — and must be left
+alone; splitting one would cut a single coherent work into fragments.
+This script refuses anything without a repeating well-separated masthead,
+which is the mark of a *published issue*, so a thesis fails the detector
+rather than being mangled by it. Run the dry run and read the result.
 
 Output, per paper:
 
