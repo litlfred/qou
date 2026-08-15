@@ -517,23 +517,72 @@ def verify_dual_present(witness_path: str | Path) -> dict:
             return False
         return True
 
-    def _scan(obj):
+    # Records where an empty active set CONTRADICTS a nonzero y_star.
+    inconsistent: list[str] = []
+
+    def _nonzero_shadow_prices(y) -> list[int]:
+        """Indices with a shadow price above tolerance."""
+        if isinstance(y, list):
+            items = enumerate(y)
+        elif isinstance(y, dict):
+            items = y.items()
+        else:
+            return []
+        out = []
+        for i, x in items:
+            if isinstance(x, bool) or not isinstance(x, (int, float)):
+                continue
+            if abs(float(x)) > 1e-12:
+                out.append(i)
+        return out
+
+    def _scan(obj, path="<root>"):
         if isinstance(obj, dict):
+            # ── active-set / y_star CONSISTENCY, checked pairwise ──────────
+            #
+            # An EMPTY active set is a legitimate dual result *on its own*: it
+            # means no Frobenius constraint is tight (every shadow price is
+            # sub-tolerance), i.e. an interior LP/SDP optimum. Corpus evidence
+            # backs this — of 3096 witnesses, 14 carry an empty active set and
+            # ALL of them pair it with an absent or all-zero `y_star`. So
+            # rejecting emptiness outright would reject 11 well-formed duals.
+            #
+            # What is NEVER legitimate is an empty active set sitting next to a
+            # NONZERO `y_star`, because the active set is *defined* as
+            # {i : y_star[i] > 0}. Those two fields then contradict each other,
+            # and one of them is wrong. No corpus witness has that shape; the
+            # null-hardening test does, which is what it was really pinning.
+            #
+            # Hence a pairwise consistency check rather than a presence check:
+            # it accepts every real interior optimum and still fails the
+            # contradictory shape. Presence-only checks (in either direction)
+            # cannot separate the two, which is why the previous
+            # implementation and its test disagreed.
+            akey = next(
+                (k for k in OPTIONAL_ALIASES
+                 if k in obj and isinstance(obj[k], list)),
+                None,
+            )
+            if akey is not None and len(obj[akey]) == 0:
+                hot = _nonzero_shadow_prices(obj.get("y_star"))
+                if hot:
+                    inconsistent.append(
+                        f"{path}: {akey} is empty but y_star has "
+                        f"{len(hot)} nonzero entr"
+                        f"{'y' if len(hot) == 1 else 'ies'} at "
+                        f"{hot[:5]} — the active set is by definition "
+                        "{i : y_star[i] > 0}, so these contradict"
+                    )
+
             for k, v in obj.items():
                 if k in REQUIRED and _meaningful(v):
                     found.add(k)
                 elif k in OPTIONAL_ALIASES and isinstance(v, list):
-                    # An EMPTY active_set is a legitimate dual result — it means
-                    # no Frobenius constraint is tight (all shadow prices y_star
-                    # are sub-tolerance, i.e. an interior SDP/LP optimum). Treat
-                    # any list (incl. []) as present; the hollowness check stays
-                    # strict for y_star/y0_star/objectives, which a genuinely
-                    # un-computed dual leaves null/empty.
                     found.add(k)
-                _scan(v)
+                _scan(v, f"{path}.{k}")
         elif isinstance(obj, list):
-            for item in obj:
-                _scan(item)
+            for i, item in enumerate(obj):
+                _scan(item, f"{path}[{i}]")
 
     _scan(data)
     missing = REQUIRED - found
@@ -541,9 +590,10 @@ def verify_dual_present(witness_path: str | Path) -> dict:
     if not has_active:
         missing.add("active_set OR active_constraints OR active_channels")
     return {
-        "ok": not missing,
+        "ok": not missing and not inconsistent,
         "missing": sorted(missing),
         "found": sorted(found),
+        "inconsistent": inconsistent,
     }
 
 
