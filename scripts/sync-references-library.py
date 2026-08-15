@@ -150,10 +150,17 @@ def notes_to_doc(text: str) -> dict[str, str]:
     out: dict[str, str] = {}
     for m in re.finditer(r'\n\s*id: "([^"]+)",(.*?)\n  \}\)', text, re.S):
         rid, body = m.group(1), m.group(2)
-        for d in re.findall(r"library/([A-Za-z0-9._-]+)/", body):
-            if os.path.isdir(os.path.join(LIB, d)):
-                out.setdefault(rid, d)
-                break
+        # A note that merely *mentions* another document must not create a
+        # link. Three false links came from taking any path in the prose:
+        # a note comparing this paper to another one, and a DEPRECATED
+        # entry whose note names the entry that replaced it. Require an
+        # explicit possession marker, which is the convention every
+        # hand-written note already uses ("PDF library/<id>/ — ...").
+        if re.search(r"\bDEPRECATED\b", body):
+            continue
+        mm = re.search(r"(?:PDF|held(?: at)?|copy(?: at)?)\s+library/([A-Za-z0-9._-]+)/", body, re.I)
+        if mm and os.path.isdir(os.path.join(LIB, mm.group(1))):
+            out[rid] = mm.group(1)
     return out
 
 
