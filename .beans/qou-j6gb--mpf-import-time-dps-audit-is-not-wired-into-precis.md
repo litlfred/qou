@@ -534,3 +534,53 @@ serialization fixed at the producer before their witnesses can be regenerated.
 
 The one remaining red in the family is `rho-k-co-casimir-extended` 3 -> 4, which
 predates this work and is documented above as needing a ≥ 24 GiB host.
+
+## CORRECTION — "4 already broken" was 1. The triage measured my invocation, not the producers
+
+I recorded four producers as dead, "of the same kind as the six-term sweep", and
+said reviving them was probably the bigger win. **Three of the four were fine.**
+Checked one at a time instead of trusting the exit code:
+
+    derived_masses.py            NOT broken. Raises a deliberate, well-worded
+                                 FileNotFoundError: its upstream
+                                 beta-decay-energy-scale.witness.json does not
+                                 exist here, and the message says to run that
+                                 compute first. Correct behaviour on an unmet
+                                 dependency — and the upstream producer exists.
+
+    hecke/hecke_engine.py        NOT broken. Requires CLI arguments; run bare it
+                                 prints usage and exits non-zero, by design.
+                                 `--all` runs it to completion.
+
+    toffoli-lp-stability.py      NOT broken. MY HARNESS: the triage exported only
+                                 tools/pyhecke/python, so `qou_substrate` was
+                                 missing. With tools/qou-substrate/python on the
+                                 path it exits 0.
+
+    gram_matrix_seminormal_n.py  GENUINELY broken, and fixed here.
+
+**The methodological point, which is the reusable part:** the triage ran each
+producer bare, with an incomplete PYTHONPATH and no arguments, and recorded the
+exit code. That measures *"exits non-zero under one particular invocation"*, not
+*"is broken"* — and I reported the second while having measured the first. A
+non-zero exit is a prompt to look, never a diagnosis.
+
+The same caveat applies to the **5 "timed out"** entries, which I have not
+re-examined: a 20 s cap says nothing about why a producer is slow, and at least
+one of them may simply want arguments.
+
+### The one real defect
+
+    computations/gram_matrix_seminormal_n.py:245
+        print(f"  λ = {lam:<24}  ...")
+
+`lam` is a partition TUPLE, and tuple has no `__format__` accepting an alignment
+spec, so this raised `TypeError: unsupported format string passed to
+tuple.__format__` and killed the sweep on its first block. Fixed with
+`str(lam)`; the file now runs to completion (H_6, 87.3 s).
+
+Worth noting what kind of bug this is: **the failure is in the progress PRINT,
+not the computation.** Nothing it calculated was ever wrong — the producer just
+could not finish saying so. That is the same shape as the `NameError` in the
+six-term sweep: a defect in code that has nothing to do with the mathematics,
+sitting in a producer nothing runs.
