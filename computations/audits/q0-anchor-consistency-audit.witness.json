@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T21:36:37.323963+00:00",
-  "commitSha": "02e44243d2a88b15c50bfbbb7186ecd27bcc360f",
+  "computedAt": "2026-08-15T22:31:44.860220+00:00",
+  "commitSha": "85e94fb8c4a1cfbf5617ed0d6cc7f3cdca098109",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 5,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
-  "scriptHash": "99e16a9c8cd9",
-  "scriptCommitSha": "ff92e214435373f69f93b57a6f186937b0ae1795",
+  "scriptHash": "805ec171e06b",
+  "scriptCommitSha": "e54ffbca0a1b5171dcbdaf5873075129af9b12ba",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,19 +27,18 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
+  "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
       "Q0_OK": 649,
       "Q0_AMBIGUOUS": 16,
+      "Q0_INDEPENDENT": 0,
       "Q0_ANCHOR_MISSING": 1889,
       "Q0_VALUE_MISSING": 1,
-      "Q0_AUDIT_EXEMPT": 68,
+      "Q0_AUDIT_EXEMPT": 69,
       "Q0_PARSE_ERROR": 1,
       "Q0_FLIP": 0
     },
@@ -10534,6 +10533,10 @@
         },
         {
           "witness": "witness-producer-executes-audit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "witness-raw-float64--docs-audits-scripts-audit.witness.json",
           "detail": ""
         },
         {
