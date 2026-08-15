@@ -36,8 +36,14 @@ They are different points:
 | `h* = q* − 1/q*` | `0.2090603174197` | `0.818706471352` | 3.916× |
 | `ũ(q*)` | `0.0094539496177732` | `0.14279999664469` (`= ρ`) | 15.10× |
 
-- **`q*_S`** is the `S = 0` point — a *third, decay-sector determination of q₀*,
-  sitting ~1e-8 from the proton pin. It carries anchor meaning.
+- **`q*_S`** is the `S = 0` point, sitting ~1e-8 from the proton pin.
+  ~~a *third, decay-sector determination of q₀*. It carries anchor meaning.~~
+  **[WITHDRAWN 2026-08-15 — PR #5074, bean `qou-kh7e`, registry §9f.]** `q*_S`
+  is root-found on `S = c₃ + Vol(4₁)` with `c₃` extracted from experimental
+  `Q_β`, so it presupposes (H1) and is **not** an independent determination.
+  What survives is the **glyph** distinction this document exists to make: the
+  two `q*`s are different points and must not be conflated. `q*_S` carries
+  anchor meaning only *conditional on (H1)*.
 - **`q*_ρ`** is the unique real root > 1 of the irreducible degree-12 factor of
   the `Δ_net` numerator — a `Q_b` zero, hence a logarithmic branch point of
   `log R`, and the D-ladder's radius of convergence. It carries none.
