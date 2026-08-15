@@ -8,7 +8,48 @@ updated_at: 2026-08-15T04:05:44Z
 ---
 
 
-## Established by PR #5082 — this is a CLOSED question, not an open task
+## ⚠️ RETRACTED 2026-08-15 — the certificates ARE reproducible
+
+**Everything below the retraction line was wrong, and this bean's original
+title ("closed question, do not retry") is exactly the scope-(b)
+over-narrowing AGENTS.md forbids.** I turned a failed probe into a
+structural exclusion and told the next agent not to look. Reopened.
+
+### What is actually true
+
+* **The 2-adic denominator is exactly `2^pn_count`** — an integer power of
+  two, matching `pn_count`, on all 9 certificates whose f64 still has >=8
+  valid digits (3,4,6,6,5,12,6,10,16). `pn_count` is IN the file. My original
+  hunch was right; I abandoned it one step early.
+* **The non-integer ratios are CATASTROPHIC CANCELLATION**, not a dropped
+  `mid_strip_threshold`. v9 evaluates in plain f64 and the sums are
+  ill-conditioned to log10(cond) = 203 (60Co). **15/35 certificates retain
+  ZERO valid f64 digits; 25/35 fewer than six.** My headline evidence for the
+  threshold story — 11Li at "13.35 against 24" — is a number with zero valid
+  digits. There was never evidence for that story.
+* **Agreement tracks conditioning exactly**, which confirms both mechanisms:
+  2-3 valid digits -> reproduces to 1e-3; -1 -> 0.5-1.9; -5 -> 1.0.
+
+### The conclusion inverts
+
+The exact Laurent data is the SOUND part; the `*_f64` fields are the damaged
+part. High-precision re-evaluation does not merely reproduce them, it
+**REPAIRS 15 certificates whose committed values are pure noise**. My old
+`--max-rel` guard rejected good values by comparing them against that noise.
+
+`tools/hecke-engine/scripts/reanchor_certificates.py` now works: 35
+re-anchorable, 0 flagged. Not yet run with `--write` — repairing 35 committed
+certificates is a separate reviewable change.
+
+### Lesson
+
+I inferred a mechanism (term-dropping) instead of measuring one, then wrote
+it into a durable artifact as settled. The measurement that would have caught
+it — conditioning of the sum — took one command.
+
+---
+
+## SUPERSEDED — original entry follows
 
 The 51 `tools/hecke-engine/certificate-*.json` **cannot be regenerated or
 corrected from what is committed.** Do not attempt it; anyone who "fixes"
