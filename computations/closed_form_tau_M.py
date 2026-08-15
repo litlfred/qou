@@ -14,8 +14,15 @@ where each interface contributes a Markov-axiom factor f_i(q):
   - **averaged** (σ_g - (h/2)·I, the canonical p-n
     form in `mass_at_3A_proper.atom_braid_word_3A`): f = z(q) - h(q)/2
 
-with `z(q) = 1/(q^{1/2} + q^{-1/2})` (Markov parameter) and
-`h(q) = q - q^{-1}` (Hecke skein parameter).
+with `z(q) = q^3 / (q^2 + 1)` (Markov parameter, registry convention **D**)
+and `h(q) = q - q^{-1}` (Hecke skein parameter).
+
+OWNER RULING 2026-08-09 excised convention **C**, `z = 1/(q^{1/2} +
+q^{-1/2})`, which this header documented until 2026-08-15. Reading C off
+this docstring rather than off `markov_z` below is a **23% error**
+(0.4993203 vs 0.6126880 at q_0). `markov_z`'s own docstring carries the
+forcing argument and the registry pointers — it is authoritative; this
+header is a summary of it.
 
 Combined with Phase 5l (`prop:constit-factor-tau-M-proton-identity`)
   tr_M(𝓑_K^vac) = tr_M^3(𝓑_p)^Z · tr_M^3(𝓑_n)^N
