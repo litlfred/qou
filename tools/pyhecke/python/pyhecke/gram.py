@@ -2,8 +2,9 @@
 (Fraction) variants — canonical owner.
 
 Authoritative source for:
-  Constants   NF_BASIS, NF_NAMES, TR_M, z, W_SYM, W_STD, W_ALT, G, G_INV
-  Functions   hm, hm_exact, nf_tr, nf_net
+  Constants   NF_BASIS, NF_NAMES, TR_M, z, W_SYM, W_STD, W_ALT, G,
+              G_PINV, RADICAL
+  Functions   hm, hm_exact, nf_tr, nf_net, gram_quotient_inverse
   Internals   _hm_dict, _reduce_nf, _build_gram
 
 Moved here (with inversion in M2b) from the 3425-line
@@ -11,9 +12,14 @@ computations/hecke_core.py so there is a single
 source of truth that downstream code can depend on. `hecke_core.py`
 now imports these back for backward compatibility.
 
-Every coefficient carries over exactly from the original definition;
-values of G, G_INV, and every NF multiplication are byte-identical
-to the pre-inversion implementation.
+TRACE CONVENTION D (z = q^3/(q^2+1)) since 2026-08-15 — see the banner
+at `z` below. Note for anyone comparing against a pre-2026-08-15
+witness: values are NOT byte-identical to the pre-inversion
+implementation any more. The M2b inversion preserved them exactly; the
+C -> D convention change did not, and was not meant to (z moves +22.70%).
+`G_INV` is GONE rather than renamed — under D the form is singular, so a
+6x6 inverse does not exist; `G_PINV` is the inverse on the quotient
+H_3(q)/rad and `RADICAL` is the null direction it quotients by.
 """
 
 from __future__ import annotations
@@ -141,20 +147,31 @@ except ImportError:
 #
 # The Lean file names the repair — quotient by the radical. Post-retraction
 # that is a strictly better prospect than it first looked: the quotient is a
-# genuine positive-definite inner product, not a causal form. But it is still
-# a design decision for the owner, not a one-line swap, because `G_INV` is
-# exported at import and every consumer expects a 6x6 inverse.
+# genuine positive-definite inner product, not a causal form. The owner
+# approved it 2026-08-15 and it is what `G_PINV` implements; the objection
+# this paragraph used to carry ("every consumer expects a 6x6 inverse") is
+# the one item 2 above measured and refuted, so it is struck rather than
+# left standing next to its own refutation.
 #
-# ALREADY SPLIT, AND WORSE AFTER A REBUILD. The Rust mirror
-# (tools/hecke-engine/src/gram.rs) IS now convention D. It survives the
-# degeneracy only because it still carries the pre-2026-05-19 `TR_M[5] = z^3`
-# bug that this file fixed. `build_atom_nf` / `atom_per_generator_volumes`
-# below dispatch to the compiled `pyhecke_native` wheel built from that
-# crate — so once that wheel is rebuilt from this branch, those two
-# functions return convention D while `z` / `TR_M` / `G` / `G_INV` in this
-# same module stay on C. tests/test_gram_values.py already measures the
-# native-vs-legacy split (2.6e-8 at the muon/proton anchor gap today; it
-# becomes the full 22.7 % convention gap after a rebuild).
+# THE NATIVE SPLIT — and note what it is NOT. The Rust mirror
+# (tools/hecke-engine/src/gram.rs) IS convention D: `markov_z` there is
+# already q^3/(q^2+1). Do not describe the crate as "on convention C".
+# It diverges in the trace RULE and the ANCHOR instead:
+#
+#   * `trace_weights` ends `z*z*z` where `TR_M` below ends `h*z^2 + z`.
+#     This is what keeps the crate's Gram non-singular, so it has no
+#     radical and no quotient — hence the trace fix and the quotient must
+#     land together (fixing the trace alone drops a singular Gram into a
+#     path with nothing to handle it).
+#   * `Q_0` is hardcoded to 1.1099785955541805, the MUON pin, against
+#     AGENTS.md's proton default (2.19e-8 relative on z).
+#
+# `build_atom_nf` / `atom_per_generator_volumes` below dispatch to the
+# compiled `pyhecke_native` wheel built from that crate. Since this module
+# moved to D those two functions would return numbers from a different
+# trace rule at a different anchor, so the dispatch now REFUSES rather
+# than silently diverging — see the guard near `has_native`. Tracked as
+# qou-m7py.
 z = q0 ** 3 / (q0 ** 2 + 1)
 
 # Wedderburn-Artin weights for H_3(q)
@@ -725,42 +742,58 @@ except ImportError:
     _HAS_NATIVE = False
 
 
-# ── CONVENTION GUARD: the native side is still on convention C ────────
+# ── DIVERGENCE GUARD: the native side does not match this module ──────
 #
-# This module moved to convention D (z = q³/(q²+1)); the Rust crate
-# `tools/hecke-engine/src/gram.rs` has NOT, and still carries the
-# pre-2026-05-19 `TR_M[5] = z³` bug on top of that. Tracked as qou-m7py.
+# NOTE — do not restate this as "the Rust is on convention C". It is NOT:
+# `markov_z` in tools/hecke-engine/src/gram.rs is already q³/(q²+1),
+# convention D. (An earlier draft of this guard said C; that was wrong,
+# and the correction is the reason this comment is explicit.) The crate
+# diverges from this module in three OTHER ways, verified by reading it:
 #
-# Before the C → D migration, Python and Rust were both on C, so the
-# native dispatch was merely *fast*. Now the two sides disagree on the
-# trace convention, which means merely INSTALLING the wheel would
-# silently switch a caller's results from D back to C — a ~22.7 % change
-# in z, with no error and no log line. That is a worse failure mode than
-# the migration itself, because it is invisible and environment-dependent
-# (it reproduces only where the wheel happens to be installed).
+#   1. `trace_weights` ends `z*z*z` where TR_M below ends `h*z² + z` —
+#      the 2026-05-19 fix was never ported. This is the load-bearing one:
+#      with `z³` the Gram is NON-singular, so the crate has no radical,
+#      no quotient, and no reason to have either. Fixing the trace alone
+#      would drop a singular Gram into the native path with nothing to
+#      handle it, which is why the trace fix and the quotient must land
+#      in ONE change.
+#   2. `Q_0` is hardcoded to 1.1099785955541805 — the MUON pin. AGENTS.md
+#      (owner directive 2026-08-07) defaults all production compute to the
+#      PROTON pin 1.1099785827513808, which this module reads. That is
+#      2.19e-8 relative on z: far past any tolerance in this test suite,
+#      and a straddle of the ideal/experimental layer boundary.
+#   3. No pseudoinverse / quotient surface at all.
 #
-# So the dispatch REFUSES rather than silently returning C numbers. This
-# deliberately trades the ~100× speedup for correctness until the Rust
-# side lands; set QOU_ALLOW_CONVENTION_C_NATIVE=1 to override if you
-# genuinely want convention-C numbers and know why.
+# Tracked as qou-m7py.
+#
+# Before the C → D migration the native path was merely *fast*; the two
+# sides agreed. Now they do not, so merely INSTALLING the wheel would
+# silently change results with no error and no log line, reproducing only
+# on machines that happen to have it. An environment-dependent silent
+# divergence is a worse failure mode than a loud refusal, so the dispatch
+# REFUSES. This trades the ~100× speedup for correctness until qou-m7py
+# lands; QOU_ALLOW_NATIVE_DIVERGENCE=1 is an explicit opt-in.
 _NATIVE_CONVENTION_MSG = (
-    "pyhecke_native is installed but still implements the trace on "
-    "CONVENTION C (z = 1/(q^1/2+q^-1/2)), while pyhecke.gram is on "
-    "CONVENTION D (z = q^3/(q^2+1)) -- a 22.70% difference in z, plus "
-    "the unported TR_M[5] = z^3 bug. Dispatching would silently return "
-    "convention-C results. Port tools/hecke-engine/src/gram.rs (bean "
-    "qou-m7py), uninstall the wheel to use the pure-Python convention-D "
-    "path, or set QOU_ALLOW_CONVENTION_C_NATIVE=1 to override."
+    "pyhecke_native is installed but DIVERGES from pyhecke.gram. The "
+    "crate is on convention D (markov_z = q^3/(q^2+1), same as here), "
+    "but: (1) trace_weights ends z^3 where TR_M here ends h*z^2 + z -- "
+    "the unported 2026-05-19 fix, which is what makes the crate's Gram "
+    "non-singular; (2) its Q_0 is the MUON pin 1.1099785955541805, not "
+    "the proton pin 1.1099785827513808 this module reads (2.19e-8 on z). "
+    "Dispatching would silently return numbers from a different trace "
+    "rule at a different anchor. Port tools/hecke-engine/src/gram.rs "
+    "(bean qou-m7py), uninstall the wheel to use the pure-Python path, "
+    "or set QOU_ALLOW_NATIVE_DIVERGENCE=1 to override."
 )
 
 
 def _native_ok() -> bool:
-    """True iff the native path may be used. False while the Rust side
-    is on a different trace convention than this module."""
+    """True iff the native path may be used. False while the crate
+    diverges from this module (trace rule + anchor); see the guard note."""
     if not _HAS_NATIVE:
         return False
     import os
-    if os.environ.get("QOU_ALLOW_CONVENTION_C_NATIVE") == "1":
+    if os.environ.get("QOU_ALLOW_NATIVE_DIVERGENCE") == "1":
         return True
     raise RuntimeError(_NATIVE_CONVENTION_MSG)
 
