@@ -1074,3 +1074,32 @@ one -> size 2; none -> size 1. Worth folding back into qou-7xt3.
 REMAINING: only the assembly now -- a single genMat_braid theorem dispatching on
 (hka, hla, hAl) via these iffs to the seven shape theorems, then Hecke.lift. No open
 mathematics.
+
+
+## THE BRAID IS UNCONDITIONAL 2026-08-15 — all three Hecke relations, no orbit hypotheses
+
+genMat_braid (sorry-free, axiom-clean, compiled first try):
+
+    rho(sigma_k) rho(sigma_{k+1}) rho(sigma_k)
+      = rho(sigma_{k+1}) rho(sigma_k) rho(sigma_{k+1})
+
+on all of SYT mu, arbitrary shape, NO hypothesis about the orbit. It dispatches on three
+flags -- does sigma_k move T, does sigma_{k+1}, does sigma_{k+1} move s_k.T -- to the seven
+shape theorems, and every further admissibility those need is DERIVED via the classification
+iffs rather than assumed.
+
+With genMat_quadratic and genMat_far_comm, the three Hecke relations now hold unconditionally
+for the general-lambda seminormal representation.
+
+Note the dispatch needs only THREE flags, not four: hBk is determined by hAl
+(swapAdmissible_cross_iff), which is why the tree has 7 leaves and not 9. The two patterns
+that would have made it 9 are the vacuous ones.
+
+REMAINING for hoefsmit_seminormal_rep: PACKAGING ONLY. Hecke.lift wants
+  g : Fin n -> Matrix (SYT mu) (SYT mu) R
+  hquad  : forall i, g i * g i = (q - qi) . g i + (q * qi) . 1     <- genMat_quadratic, qi := q^-1
+  hbraid : forall i (hi : i+1 < n), ...                            <- genMat_braid
+  hcomm  : forall i j, j+2 <= i -> g i * g j = g j * g i           <- genMat_far_comm
+The work is the index translation between `k : N` with 1 <= k, k+1 <= |mu| here and `Fin n`
+there (n = |mu| - 1, generator i <-> k = i+1), plus matching Hecke's smul normalisation.
+No open mathematics.
