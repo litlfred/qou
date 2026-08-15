@@ -92,9 +92,15 @@ TARGETS = [
 
 EXCLUSION = {
     "D": "Reading 2 assigns the Hopf link L2a1, which is Seifert-fibred: "
-         "Vol = 0 exactly. The corpus's +0.2% deuteron match was obtained by "
+         "Vol = 0 exactly. The corpus's claimed deuteron match was obtained by "
          "substituting Vol(B_3) for Vol(Hopf) -- an unjustified substitution "
-         "(2026-08-07 ledger §6), so it may not be used as a data point here.",
+         "(2026-08-07 ledger §6), so it may not be used as a data point here. "
+         "TWO reasons now, not one: that match was also quoted as +0.2% under "
+         "trace convention C, excised by owner ruling 2026-08-09; under the "
+         "canonical convention D the same computation gives -6.3% and the "
+         "witness records the assertion as failing (bean qou-jdhm). So the "
+         "exclusion below is if anything better founded than when written -- "
+         "there is no deuteron success to exclude, only a near-miss.",
     "4He": "No SDP binding link exists. The registry stops at A = 3 (solver "
            "scope A <= 3; A = 4 needs B_5 Hoefsmit + Clarabel, conj #604 / "
            "GAP-A-1). The only 4He volume in the corpus is Vol_4 ~ 8.046, a "
