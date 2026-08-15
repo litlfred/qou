@@ -42,10 +42,18 @@ in every real-q regime. It excludes any attempt to obtain a USABLE modular dual
 at a substrate near 1. It says nothing about the state integral at other q, and
 nothing about (H1).
 
-Lean: QOU.QBeta.ModularDoubleReciprocity (sorry-free, 4 declarations; the
-reciprocity is stated over a generic field in a generic c, because the fact is
-algebraic -- (c y)(c/y) = c^2 -- and that is precisely why no convention can
-evade it).
+WHAT IS PROVED WHERE (do not over-cite the Lean). The Lean companion
+QOU.QBeta.ModularDoubleReciprocity proves the ALGEBRA -- (c y)(c/y) = c^2 -- over
+a generic field, about definitions that are STIPULATED to be -(c y) and -(c/y).
+It does NOT prove that log q = -2 pi y and log q~ = -2 pi/y for Faddeev's actual
+q, q~; that identification is imported from the modular-double literature, and it
+is THIS PROBE that checks it at the substrate (Re(b^2) = 0 exactly, q = 1/q0
+exactly, reciprocity to 0.0) -- at that point only, by evaluating exp.
+
+So the honest form of the conclusion is: GIVEN the standard identification, the
+degeneracy is forced by an algebraic identity. The force is real; the premise is
+imported. Per AGENTS.md "sorry-free != derived", this is not "Lean proves the
+modular double degenerates".
 """
 
 import datetime

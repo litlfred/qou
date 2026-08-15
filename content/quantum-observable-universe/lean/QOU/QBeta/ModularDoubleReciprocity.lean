@@ -47,10 +47,37 @@ needs it, and `q0` is an input, so nothing in the construction can be re-chosen
 to avoid it. Sitting near `1` *is* sitting at the degenerate point of the
 modular double.
 
-**Scope-(b), invariant named**: the reciprocity `log q * log q~ = c^2` holds
-identically in `y`, hence for every real-`q` regime. It excludes *any* attempt to
-obtain a usable modular dual at a substrate near `1`. It says nothing about the
-state integral at other `q`, and nothing about (H1) `c_3^even = -Vol(4_1)`.
+## WHAT IS PROVED HERE, AND WHAT IS NOT (read before citing this file)
+
+**Proved in Lean:** the algebra. `logQ` and `logQDual` below are *definitions* —
+they are STIPULATED to be `-(c*y)` and `-(c/y)` — and every theorem in this file
+is a statement about those stipulations. `modular_reciprocity` is
+`(c y)(c / y) = c^2`. That is a real theorem and it is trivial.
+
+**NOT proved in Lean, and this file must not be cited as if it were:**
+
+1. that `log q = -2 pi y` and `log q~ = -2 pi / y` for Faddeev's actual `q` and
+   `q~`. That identification is where the physics lives, and here it is a `def`,
+   not a derivation from the state integral;
+2. that a real `q` *forces* `b^2` purely imaginary. That step is prose in this
+   docstring;
+3. anything whatsoever about `Phi_b`.
+
+The identification is standard in the Faddeev / modular-double literature and is
+**verified numerically at the substrate** by the companion probe (`Re(b^2) = 0`
+exactly, `q = 1/q0` exactly, reciprocity to 0.0 relative error) — but at that
+point only, and by evaluating `exp`, not by proof.
+
+So the honest reading of the Option-B conclusion is: *given* the standard
+identification, the degeneracy is forced by an algebraic identity. The force is
+real; the premise is imported. Per AGENTS.md "sorry-free != derived", do not
+upgrade this to "Lean proves the modular double degenerates".
+
+**Scope-(b), invariant named**: the reciprocity holds identically in `y`. Under
+the imported identification that covers every real-`q` regime, which is the
+Option-B claim. It excludes *any* attempt to obtain a usable modular dual at a
+substrate near `1`. It says nothing about the state integral at other `q`, and
+nothing about (H1) `c_3^even = -Vol(4_1)`.
 
 Companion probe: `computations/qbeta/qbeta_modular_double_reciprocity.py`
 (reciprocity to 0.0 relative error at the substrate; `Re(b^2) = 0` exactly).
@@ -77,9 +104,13 @@ def logQDual {K : Type*} [Field K] (c y : K) : K := -(c / y)
 /-- **The modular-double reciprocity.** `log q * log q~ = c^2`, for every
 `y ≠ 0` — the `y` cancels.
 
-Generic per §7c: any field, and no `pi`, no ordering, no `ℝ`. The fact is
-`(c y)(c / y) = c^2`; that it is *algebraic* is precisely the Option-B point,
-since it leaves no convention to re-choose. -/
+Generic per §7c: any field, and no `pi`, no ordering, no `ℝ`.
+
+This is a statement about the two `def`s above, which are stipulated. It is
+`(c y)(c / y) = c^2` and nothing more. That it is *algebraic* is the Option-B
+point — an algebraic identity leaves no convention to re-choose — but the step
+from Faddeev's `q`, `q~` to these definitions is imported, not proved. See the
+module docstring. -/
 theorem modular_reciprocity {K : Type*} [Field K] (c y : K) (hy : y ≠ 0) :
     logQ c y * logQDual c y = c ^ 2 := by
   unfold logQ logQDual
