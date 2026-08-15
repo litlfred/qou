@@ -300,3 +300,94 @@ fixes the target, not the theorem.
 The class should be **relabelled a placeholder** until it carries the trajectory
 statement. Its current "honest open state" comment claims an epistemic status it does not
 have, in two independent ways.
+
+---
+**2026-08-15 — the trajectory statement, drafted. `DiophantineBirthdayTrajectory.lean`.**
+
+Sorry-free, all five declarations on standard axioms. Branch
+`claude/fivetwo-level7-ladder-numerators`.
+
+The previous entry fixed the target ("a faithful statement compares *prefixes* against the
+Liouville exponent") and left it unwritten. Taking it up produced two findings that change
+how the whole conjecture should be read, and one honest limit.
+
+### 1. The obstruction does NOT transfer — and it very nearly did
+
+`no_birthday_only_separation` killed birthday-of-the-number because the criterion is
+constant on the irrationals. The trajectory version faces a structurally similar threat,
+and I expected it to die the same way: two reals whose sign expansions **share a tail**
+differ by a dyadic rational, so any trajectory criterion must be **invariant under adding
+a rational** to be well defined at all. That is exactly the kind of blanket invariance
+that flattened the birthday version.
+
+It survives, because the criterion Mathlib already has is invariant *without* being
+constant:
+
+| criterion | invariant under the ambiguity | constant on the irrationals |
+|---|---|---|
+| `birthday ∘ ofReal` | — | **yes** — separates nothing |
+| `LiouvilleWith p` | yes (`add_rat_iff`) | **no** — separates |
+
+Proved as `liouvilleWith_rat_shift_invariant` and `liouvilleWith_separates` (witnesses:
+`liouvilleNumber 2` satisfies `LiouvilleWith 2`, `0` does not). So the redirection to
+trajectories was not a change of wording — it moves to a criterion that survives the
+invariance its own encoding forces.
+
+### 2. One direction of the conjecture is ALREADY A MATHLIB THEOREM
+
+`Liouville.transcendental` — Liouville's theorem — is in Mathlib, with
+`transcendental_liouvilleNumber` as a concrete witness. Discharged here as
+`liouville_trajectory_direction_settled`.
+
+**So labelling `conj:diophantine-birthday` wholly open overstates what is open.** The
+fast-approximation ⟹ transcendental direction is closed, in the corpus's own toolchain.
+This is a third defect in that conjecture's labelling, independent of the two already
+recorded (degenerate instance; wrong shape).
+
+### 3. Roth does not help, and the conjecture's gloss implies it does
+
+Worth stating because the gloss cites Roth alongside Liouville. Roth sharpens the
+**settled** direction — algebraic irrationals have exponent exactly 2, so `LiouvilleWith p`
+with `p > 2` already forces transcendence, improving Liouville's degree-dependent bound. It
+says nothing about reals that approximate *slowly*. Citing Roth buys a better exponent on
+the direction already closed, not progress on the open one.
+
+The naive converse is named as `SlowApproximationImpliesAlgebraic` and marked **false at
+every `p`** (almost every real is transcendental with exponent exactly 2). It is not
+asserted, instanced, or used as a hypothesis.
+
+### 4. A vacuity trap, shipped as a theorem so it cannot be walked into
+
+`slowApproximation_vacuous_at_one : SlowApproximationImpliesAlgebraic 1` — **proved**.
+Because `liouvilleWith_one` makes every real approximable to order 1, the hypothesis is
+never satisfied and the implication is vacuous. Instantiating the target at a convenient
+exponent yields a *proved Lean theorem* that reads like the conjecture and says nothing —
+worse than the false version, since it carries a proof. Same failure mode as
+`birthday_avg_le` and as `DiophantineBirthday`'s stipulated field.
+
+### ⚠ What is NOT done — the actual open work
+
+**This module does not connect `gonshor` to `LiouvilleWith`.** Nothing here proves that
+`gonshor`'s length-`n` prefix value is the dyadic approximant of `α` at denominator `2ⁿ`.
+That needs the induction on `GonshorState` which `SignSequence.lean` explicitly reserves
+— the halving step wants a per-step birthday bound that is not among the axioms and is not
+implied by them.
+
+So the state of the conjecture is now precisely: the target is **unobstructed** (§1), part
+is **already proved** (§2), Roth is a **red herring** (§3), and the surreal bridge — the
+only genuinely novel content — is **unbuilt**. That is a much sharper description than
+"open conjecture", which is what the corpus said.
+
+Design note: the open content is a `def` of a `Prop`, deliberately **not** a class. A
+`Prop` cannot be inhabited by stipulation, which is exactly how `DiophantineBirthday`'s
+`residual := 0; rfl` went wrong.
+
+`DiophantineBirthday.lean`'s relabelling note updated to point at all of this; the class
+itself is untouched and still degenerate.
+
+### Remaining on this bean
+
+- The `gonshor` ↔ dyadic-approximant bridge (above). This is now the *only* thing between
+  the corpus and a faithful formalisation, and it is a real piece of mathematics.
+- Whether `SignSequence`'s bounds should be re-stated over `[BirthdayFaithful K]` to say
+  something non-vacuous. Still not attempted.

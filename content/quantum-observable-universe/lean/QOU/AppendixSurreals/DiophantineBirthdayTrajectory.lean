@@ -1,0 +1,183 @@
+/-
+  The trajectory target for `conj:diophantine-birthday`, and how much of it is already
+  a theorem.
+
+  Bean `qou-bday`.  Reads on from `DiophantineBirthdayScope.lean`, which fixed the target
+  without stating it.
+
+  ═══ WHERE THIS PICKS UP ═══
+
+  `DiophantineBirthdayScope.lean` proved that the separation **cannot** be by the birthday
+  of the number: `birthday_ofReal_le_omega` puts every real at birthday `≤ ω`, in Conway's
+  surreals every non-dyadic real is born exactly on day `ω`, so `birthday(√2) = ω =
+  birthday(π)` and `no_birthday_only_separation` shows no predicate on the birthday can
+  then tell them apart.  It concluded that the conjecture's own gloss — "separated by
+  birthday **trajectory**" — was right, and its formalisation was not.
+
+  This module asks the next question: **does that obstruction also kill the trajectory
+  version?**  It does not, and the reason is sharp enough to state as a theorem.
+
+  ═══ §1 — WHY THE OBSTRUCTION DOES NOT TRANSFER ═══
+
+  A trajectory criterion reads a real's **sign expansion**, and two reals whose sign
+  expansions share a tail differ by a dyadic rational — that is what changing finitely
+  many signs does.  So for a criterion to be a function of the *trajectory* at all, it
+  must be **invariant under adding a rational**.  That looks like a second collapse
+  waiting to happen: it is exactly the kind of blanket invariance that flattened the
+  birthday version.
+
+  It is not, and Mathlib already has the reason.  `LiouvilleWith p` — "`x` is approximable
+  to order `p` by rationals" — is invariant under a rational shift (`add_rat_iff`) **and
+  is not constant**.  Both facts are recorded below as `liouvilleWith_rat_shift_invariant`
+  and `liouvilleWith_separates`.  The contrast with `no_birthday_only_separation` is the
+  content:
+
+  | criterion | invariant under the ambiguity | constant on the irrationals |
+  |---|---|---|
+  | `birthday ∘ ofReal` | — | **yes** — collapses, cannot separate |
+  | `LiouvilleWith p`   | yes (rational shift) | **no** — separates |
+
+  So the redirection to trajectories in `DiophantineBirthdayScope` was not just a change
+  of wording; it moves to a criterion that survives the invariance its own encoding forces.
+
+  ═══ §2 — ONE DIRECTION OF THE CONJECTURE IS A MATHLIB THEOREM ═══
+
+  The conjecture is glossed as separating algebraic from transcendental by approximation
+  rate.  **Liouville's theorem is that separation in one direction, and Mathlib proves
+  it**: `Liouville.transcendental`.  Recorded here as
+  `liouville_trajectory_direction_settled`, discharged, not assumed.
+
+  This matters for how the conjecture should be labelled.  A file carrying
+  `conj:diophantine-birthday` as wholly open overstates what is open: the
+  fast-approximation ⟹ transcendental direction is closed, in the corpus's own toolchain,
+  and has a concrete witness (`liouvilleNumber 2`).
+
+  ═══ ⚠ §3 — WHAT IS STILL MISSING, STATED SO IT IS NOT MISREAD ═══
+
+  **This module does not connect `gonshor` to `LiouvilleWith`, and that bridge is the
+  actual open work.**  A faithful trajectory statement needs
+
+      |α − gonshor (prefix of length n)|   compared against   the Liouville exponent
+
+  and nothing here proves that `gonshor`'s length-`n` prefix value *is* the dyadic
+  approximant of `α` at denominator `2ⁿ`.  That needs the induction on `GonshorState`
+  which `SignSequence.lean` explicitly reserves ("not derivable for general `s` from the
+  abstract `SurrealField` axioms alone" — the halving step needs a per-step birthday
+  bound that is not among the axioms).
+
+  So: §1 says the target is **not obstructed**, §2 says part of it is **already proved**,
+  and the bridge from the corpus's own `gonshor` to either is **not built**.  Nothing here
+  should be read as formalising `conj:diophantine-birthday`.
+
+  A second gap, inherited and unclosed: the Conway fact that every non-dyadic real is born
+  on day `ω` is **cited, not proved** — `SurrealField` does not pin the birthday of an
+  irrational.  `DiophantineBirthdayScope` says so too.
+
+  -- Ref: [conway1976] On Numbers and Games, Ch. 0–2
+  -- Ref: [gonshor1986] An Introduction to the Theory of Surreal Numbers
+-/
+import Mathlib.NumberTheory.Transcendental.Liouville.LiouvilleWith
+import Mathlib.NumberTheory.Transcendental.Liouville.LiouvilleNumber
+import QOU.AppendixSurreals.DiophantineBirthdayScope
+
+namespace QOU.AppendixSurreals
+
+open Filter
+
+/-! ### §1 — the criterion is invariant under the trajectory's ambiguity, and still separates
+
+Two reals whose sign expansions share a tail differ by a rational.  A trajectory criterion
+must therefore be rational-shift invariant to be well defined; the question is whether that
+invariance forces the collapse `no_birthday_only_separation` exhibits for birthdays. -/
+
+/-- **The Liouville exponent is a function of the trajectory tail.**
+
+Changing finitely many signs of a sign expansion shifts the real by a rational, and
+`LiouvilleWith p` does not see that shift.  So this criterion is well defined on tails —
+the precondition any trajectory criterion has to meet. -/
+theorem liouvilleWith_rat_shift_invariant (p x : ℝ) (r : ℚ) :
+    LiouvilleWith p (x + r) ↔ LiouvilleWith p x :=
+  LiouvilleWith.add_rat_iff
+
+/-- **And it does not collapse.**  Unlike `birthday ∘ ofReal`, which is constant on the
+irrationals and therefore separates nothing, `LiouvilleWith 2` takes both truth values:
+`liouvilleNumber 2` satisfies it and `0` does not.
+
+This is the exact point where the trajectory version departs from the birthday version.
+`no_birthday_only_separation` says every predicate on the birthday agrees on `√2` and `π`;
+no such collapse is available here, because the criterion is already non-constant. -/
+theorem liouvilleWith_separates :
+    ∃ x y : ℝ, LiouvilleWith 2 x ∧ ¬ LiouvilleWith 2 y := by
+  refine ⟨liouvilleNumber 2, 0, (liouville_liouvilleNumber (le_refl 2)).liouvilleWith 2, ?_⟩
+  intro h
+  -- `LiouvilleWith p x` with `1 < p` forces `x` irrational; `0` is not.
+  exact (h.irrational (by norm_num)).ne_rat 0 (by norm_num)
+
+/-! ### §2 — the fast-approximation direction is settled, in Mathlib
+
+`Liouville x` is "approximable to *every* order `p`" (`forall_liouvilleWith_iff`), and
+Liouville's theorem turns that into transcendence. -/
+
+/-- **Liouville's theorem, as the trajectory conjecture's settled direction.**
+
+If a real is approximable to every order — the strongest possible trajectory condition —
+it is transcendental.  Discharged from Mathlib, not assumed.
+
+This is why labelling `conj:diophantine-birthday` as wholly open overstates it: one
+direction of the separation is a theorem in the corpus's own toolchain. -/
+theorem liouville_trajectory_direction_settled (x : ℝ)
+    (h : ∀ p : ℝ, LiouvilleWith p x) : Transcendental ℤ x :=
+  (forall_liouvilleWith_iff.mp h).transcendental
+
+/-- A **concrete witness** that the settled direction is not vacuous: `liouvilleNumber 2`
+is approximable to every order, hence transcendental. -/
+theorem liouvilleNumber_two_transcendental : Transcendental ℤ (liouvilleNumber 2) :=
+  transcendental_liouvilleNumber (le_refl 2)
+
+/-! ### §3 — the shape of what remains
+
+Stated as a definition so the open content has a name, **not** as a class with a
+stipulated field.  `DiophantineBirthday`'s defect was that `residual := 0` with `rfl`
+asserts exactly what the conjecture is supposed to claim, so withholding an instance
+encoded nothing.  A `def` of a `Prop` cannot be inhabited by stipulation. -/
+
+/-- The naive converse of `liouville_trajectory_direction_settled`: that slow rational
+approximation is enough for algebraicity.
+
+⚠ **This is FALSE at every `p`, and is named here only so the conjecture's wording is not
+mistaken for it.**  Almost every real is transcendental with approximation exponent exactly
+`2`, so for any `p > 2` there are transcendentals satisfying `¬ LiouvilleWith p x` — the
+hypothesis holds and the conclusion fails.  It is deliberately **not** asserted, instanced,
+or used as a hypothesis anywhere.
+
+**Roth's theorem does not repair this direction**, and it is worth being explicit because
+the conjecture's gloss cites Roth.  Roth sharpens the *settled* direction — algebraic
+irrationals have exponent exactly `2`, hence `LiouvilleWith p x` with `p > 2` already
+forces `x` transcendental, improving on Liouville's degree-dependent bound.  It says
+nothing about reals that approximate slowly.  So citing Roth buys a better exponent on the
+direction that is already closed, not progress on the one that is open.  (Roth is in any
+case not in Mathlib; Liouville is.)
+
+The genuinely open content of `conj:diophantine-birthday` is therefore neither this nor
+§2, but the **surreal** claim: that the sign-expansion trajectory computes the
+approximation exponent.  That is the bridge §3 of the header says is unbuilt. -/
+def SlowApproximationImpliesAlgebraic (p : ℝ) : Prop :=
+  ∀ x : ℝ, ¬ LiouvilleWith p x → ¬ Transcendental ℤ x
+
+/-- ⚠ **At `p = 1` the statement above is not merely false but VACUOUSLY TRUE**, which is
+the trap worth having in the corpus.
+
+`liouvilleWith_one` makes *every* real approximable to order `1`, so the hypothesis
+`¬ LiouvilleWith 1 x` is never satisfied and the implication holds with no content.  A
+reader who instantiated the target at a convenient exponent would obtain a **proved Lean
+theorem** whose statement reads like the conjecture and which says nothing — worse than
+the false version, because it carries a proof.
+
+This is the same failure mode as `birthday_avg_le` in `Basic.lean` (satisfied vacuously
+under any bounded birthday) and as `DiophantineBirthday`'s stipulated field: a statement
+whose form suggests content it does not carry. -/
+theorem slowApproximation_vacuous_at_one : SlowApproximationImpliesAlgebraic 1 := by
+  intro x hx
+  exact absurd (liouvilleWith_one x) hx
+
+end QOU.AppendixSurreals

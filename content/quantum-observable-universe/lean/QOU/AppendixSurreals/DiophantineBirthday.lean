@@ -45,12 +45,35 @@ distinguish them.  A separation by birthday-of-the-number cannot exist.
 **trajectory**", and that word is load-bearing: Liouville and Roth are about how fast
 rationals approximate `α`, which in surreal terms is the shape of the **sign
 expansion** — the path `SignSequence.gonshor` traces — not the ordinal it terminates at.
-A faithful statement compares *prefixes* against the Liouville exponent.  That statement
-is not written, here or anywhere in the corpus.
+A faithful statement compares *prefixes* against the Liouville exponent.
 
-**Until it is, treat this file as a placeholder rather than a formalised conjecture, and
-do not cite `[DiophantineBirthday]` as conditional support for anything.**  It supports
-nothing.
+## 3. UPDATED 2026-08-15 — the target is not obstructed, and one direction is already proved
+
+`QOU/AppendixSurreals/DiophantineBirthdayTrajectory.lean` takes that redirection up.  Two
+findings there change how this file should be read, though neither rescues the class:
+
+- **The obstruction above does not transfer.**  A trajectory criterion must be invariant
+  under adding a rational (changing finitely many signs shifts the real by a dyadic), and
+  that looked like a second collapse waiting to happen.  It is not: `LiouvilleWith p` is
+  rational-shift invariant *and* non-constant, proved as
+  `liouvilleWith_rat_shift_invariant` and `liouvilleWith_separates`.  So the trajectory
+  target survives the invariance its own encoding forces, where `birthday ∘ ofReal` did
+  not.
+- **The fast-approximation ⟹ transcendental direction is a Mathlib theorem**
+  (`Liouville.transcendental`), discharged as `liouville_trajectory_direction_settled`
+  with `liouvilleNumber 2` as a concrete witness.  **So labelling this conjecture wholly
+  open overstates what is open.**
+
+What is genuinely open is the *surreal* content: that the sign-expansion trajectory
+computes the approximation exponent.  Nothing connects `gonshor`'s length-`n` prefix to
+the dyadic approximant at denominator `2ⁿ`, and `SignSequence.lean` explains why that
+induction is not available from the abstract axioms.
+
+**Treat this file as a placeholder rather than a formalised conjecture, and do not cite
+`[DiophantineBirthday]` as conditional support for anything.**  It supports nothing — the
+class here is unchanged and still stipulates its own answer.  The content lives in
+`DiophantineBirthdayTrajectory.lean`, which deliberately uses a `def` of a `Prop` rather
+than a class, because a `Prop` cannot be inhabited by stipulation.
 -/
 
 namespace QOU.AppendixSurreals
