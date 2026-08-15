@@ -263,23 +263,47 @@ datum.
 
 ## THIS BEAN STAYS OPEN — the gate is untouched
 
-Item 3 was the owed bookkeeping, not the gate. The gate is unchanged and is
-still the one both front-state corrections converged on:
+Item 3 was the owed bookkeeping, not the gate.
 
-  **the map from a bar-odd, anchor-BLIND fibre-level object to an
-  anchor-DEPENDENT number.**
+**CORRECTED 2026-08-15 — the gate is a ZERO LOCATION, not a magnitude.** An
+earlier revision of this section stated the gate as *"the map from a bar-odd,
+anchor-BLIND fibre-level object to an anchor-DEPENDENT number"*, with the Phi_b
+deficit and the h*D carrier as two objects failing the same test. **That framing
+is circular and is withdrawn.** Measured over the same anchor gap
+`dq = 1.28e-8`:
 
-Two independent objects now fail that same test, which is why it is the gate
-and not a coincidence:
+    carrier h*D   moves 1.23e-9   => slope ~ 0.096    (an ORDINARY smooth function)
+    S_leak        moves 0.0491    => slope ~ 3.84e6   (within 17.7% of dc_3/dq ~ 4.66e6)
 
-  Phi_b volume deficit   blind to 2.2e-7   must supply S_leak (swings 4.075x)
-  h*D(u~) carrier        blind to 1.23e-9  must supply S      (swings)
+"anchor-blind" = ordinary derivative; "anchor-dependent" = the `1/u^3` ladder
+inversion, which the 2026-07-12 capstone closed ("the wall was never physical").
+A smooth function failing to track a quantity with a 4e7x larger slope is
+arithmetic, not an obstruction.
 
-The first is measured in PR #5022 (registry section 9b); the second is this
-bean's own recorded finding. `qou-qb8g`'s third correction (PR #5061) restores
-"c_3's bar-parity is undetermined" on the same evidence, and names the live
-route: parity read off the FIBRE object, not inferred from two archimedean
-anchors that cannot see it. **qb8e and qb8g close together or not at all.**
+**What is actually true.** `S_leak`'s zero `q*_S` lies BETWEEN the anchors
+(80.28% from proton to muon); `S_leak` is linear through it (lever arm 4.0700 vs
+measured ratio 4.0751 — 0.12%). This is **Route A** (2026-08-01), Lean-proved
+sorry-free in `SLeakMagnitudeOffsetRatio.lean`. So `|S_leak|` at an anchor is
+`slope x (distance to the zero)` and carries **no scale content** — which is why
+this bean's own ~20 magnitude probes failed. They were matching the wrong thing.
+
+The carrier `h*D(u~0) = -0.003486` is a nonzero near-constant while `S_leak`
+crosses zero. A nonzero constant cannot equal a function crossing zero — that,
+and not any magnitude comparison, is the real content of "S = h*D(u~) is
+schematic, not a tight identity".
+
+**RESTATED GATE (checkable):** the fibre carrier must reproduce the **zero
+location `q*_S`**, not a magnitude. This also fits `q*_S`'s independent standing
+as the third, decay-sector determination of q0.
+
+`qou-qb8g`'s third correction (PR #5061) restores "c_3's bar-parity is
+undetermined" and names the live route: parity read off the FIBRE object, not
+inferred from two archimedean anchors that cannot see it. **qb8e and qb8g close
+together or not at all — but the target is the zero.**
+
+**Standing prohibition, now with its real justification:** do NOT open another
+magnitude-matching probe on `|S_leak|` at an anchor. Not because it is hard, but
+because the quantity has no scale content to match.
 
 Still in force, unchanged: do NOT open another Borel/Leroy/Stokes/Ecalle probe
 on this ladder; do NOT fit a normalisation to land on -2.0202.

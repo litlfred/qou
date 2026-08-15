@@ -158,10 +158,35 @@ the other side: "the gate is still the map from a bar-odd fibre-level object to
 an anchor-*dependent* number", noting the carrier is anchor-blind (spread
 1.23e-9) and so `S = h*D(u)` is "schematic rather than a tight identity".
 
-**Two independent objects, one wall: an anchor-blind quantity cannot deliver an
-anchor-dependent one.** The Phi_b deficit (2.2e-7) fails it for `S_leak`; the
-`h*D` carrier (1.23e-9) fails it for `S`. That is the actual gate, and it is
-`qou-qb8e`'s magnitude channel. These two beans close together or not at all.
+## *** CORRECTED 2026-08-15 — the "anchor-blind -> anchor-dependent" wall is CIRCULAR ***
+
+An earlier revision of this section read: *"Two independent objects, one wall: an
+anchor-blind quantity cannot deliver an anchor-dependent one."* **Withdraw that
+phrasing.** Measured over the same anchor gap `dq = 1.28e-8`:
+
+    carrier h*D   moves 1.23e-9   => slope ~ 0.096     (an ORDINARY smooth function)
+    S_leak        moves 0.0491    => slope ~ 3.84e6    (within 17.7% of dc_3/dq ~ 4.66e6)
+
+So "anchor-blind" means *ordinary derivative* and "anchor-dependent" means *the
+`1/u^3` ladder inversion* — which the 2026-07-12 capstone already closed ("the
+wall was never physical"). Stating it as an open gate re-imports a settled
+result. There is nothing to explain in a smooth function failing to track a
+quantity whose slope is 4e7x larger; that is arithmetic.
+
+**The real content is a ZERO, not a magnitude.** `S_leak`'s zero `q*_S` sits
+BETWEEN the anchors (80.28% of the way from proton to muon), and `S_leak` is
+linear through it — lever arm 4.0700 vs measured ratio 4.0751, agreeing to
+0.12%. This is **Route A** (2026-08-01), Lean-proved sorry-free in
+`SLeakMagnitudeOffsetRatio.lean` (`linear_ratio_slope_independent`: the slope
+*cancels*). The carrier `h*D(u~0) = -0.003486` is a nonzero near-constant while
+`S_leak` crosses zero — and a nonzero constant cannot equal a function crossing
+zero.
+
+**Restated gate, checkable:** the fibre carrier must reproduce the **zero
+location `q*_S`**, not any magnitude. That is why magnitude-matching has failed —
+`|S_leak|` at an anchor is `slope x (distance to the zero)`, and the distance is
+a calibration accident carrying no scale content. `qou-qb8e` and this bean still
+close together or not at all, but the target is the zero.
 
 ## Discipline note
 
