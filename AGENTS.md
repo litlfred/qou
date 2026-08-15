@@ -287,7 +287,7 @@ user's last message, not the most recently mentioned file.
       SHA-256 prefixes) drift from the current file contents;
       refresh by deleting the stale `criteria.<crit>` entry from
       the `.qa.json` and running
-      `bun run content/pipeline/qa-sweep.ts <path> --only <crit>`
+      `bun run folio-assistant/content/pipeline/qa-sweep.ts <path> --only <crit>`
       (single canonical invocation; use `/integration-audit
       <axis>` to batch a whole axis). Witnesses are stale when
       `witness.scriptHash` (SHA-256 prefix of producer file
@@ -701,7 +701,7 @@ that creates or edits a `.md` content block containing math (`$…$`,
 Run the full markdown render check
 ([`local/markdown-render-check`](.claude/skills/local/markdown-render-check.md)):
 the pipeline render where available
-(`bun run content/pipeline/render-latex.ts …` after
+(`bun run folio-assistant/content/pipeline/render-latex.ts …` after
 [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh)),
 **and always** the preflight grep battery — balanced `$`/`$$`/`{}`/
 `\bigl`-`\bigr`/`\begin`-`\end`; no `\operatorname{}` (KaTeX rejects → use
@@ -1705,7 +1705,7 @@ When a user request arrives, route to the right skill(s):
 | "devils advocate / why is this wrong / what will reviewers argue / adversarial review / red team / referee objection / counterexample / break this proof / poke holes" | `local/devils-advocate-watcher` (per-block + Lean adversarial review; 4 lenses + adjudicator; emits `da-*` sidecars) | reader |
 | "/integration-watch devils-advocate / da / adversarial" | `local/integration-watch` (dispatcher → devils-advocate-watcher child) | reader |
 | "bold defined terms / tighten definition / no rambling / no preamble in defn / one definition per block / each thing its own definition / tight theorem/prop/lemma statement / no interpretation in a theorem-prop-lemma-conjecture / statement should be pure / interpretation should be a follow-on remark / graduate-level formal math book style / informal register / contractions / hype / rhetorical header / why-question header / consequence header / academic header register / no Why…? or Consequence. section headers / definition in the wrong block / misplaced definition / definition clarity / setup clarity audit" | `local/definition-clarity-audit` (defn+statement clarity scanner; 8 criteria — `clarity-defterm-bold` / `clarity-defn-single` / `clarity-defn-tight` / `clarity-stmt-tight` / `clarity-stmt-pure` (a theorem/prop/lemma/conjecture must carry only its claim; interpretation moves to a follow-on `remark`) / `clarity-grad-style` (graduate-level formal-math register) / `clarity-rhetorical-header` (section headers must be noun-phrase academic, not "Why…?"/"Consequence." rhetorical/colloquial) + inverse `clarity-defn-misplaced` (a non-`definition` block secretly carrying a definition); emits `clarity-*` sidecars) | reader |
-| "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
+| "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `folio-assistant/content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
 | "session todos / work plan / what's left / track progress / beans" | `local/todo-manager` (session work-plan via the `beans` CLI) + `local/bean-coordination` | reader |
 | "process feedback / review todos / triage open feedback" | `local/todo-review` (content-feedback triage) | reader |
 | "prepare merge auto / auto merge / resolve and merge / ship it" | `local/prepare-merge-auto` (full autonomous merge pipeline: coordinate siblings → prepare-merge → resolve comments → merge) | collaborator |
@@ -2123,7 +2123,7 @@ whole-library `lake build QOU` is red on pre-existing failures and is not
 the gate).
 
 **Audit treatment.** The `conjectural-propagation` audit
-(`content/pipeline/conjectural-propagation-audit.ts`) reports such
+(`folio-assistant/content/pipeline/conjectural-propagation-audit.ts`) reports such
 blocks separately as **conditional-on-class** rather than as
 violations. To opt a block into this status, ensure its Lean
 declaration contains a class hypothesis matching one of the
@@ -2862,14 +2862,14 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 | `content/schema/types.ts` | TypeScript types (discriminated unions) |
 | `content/schema/constraints.ts` | Zod schemas + constraint rules |
 | `content/schema/builders.ts` | `definition()`, `theorem()`, `prose()`, etc. |
-| `content/pipeline/validate.ts` | Three-level validation |
-| `content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
-| `content/pipeline/build.ts` | Full document build |
+| `folio-assistant/content/pipeline/validate.ts` | Three-level validation |
+| `folio-assistant/content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
+| `folio-assistant/content/pipeline/build.ts` | Full document build |
 | `content/schema/references.ts` | **Bibliography source of truth** (CSL-JSON) |
-| `content/pipeline/export-bibtex.ts` | Generates `references.bib` from CSL-JSON |
-| `content/pipeline/validate-references.ts` | Bibliography + citation cross-checks |
-| `content/pipeline/citations.ts` | `\cite{}` extraction from .md content |
-| `content/pipeline/find-dangling-remarks.ts` | Audit: find remarks without `interprets` |
+| `folio-assistant/content/pipeline/export-bibtex.ts` | Generates `references.bib` from CSL-JSON |
+| `folio-assistant/content/pipeline/validate-references.ts` | Bibliography + citation cross-checks |
+| `folio-assistant/content/pipeline/citations.ts` | `\cite{}` extraction from .md content |
+| `folio-assistant/content/pipeline/find-dangling-remarks.ts` | Audit: find remarks without `interprets` |
 
 ### Bibliography architecture
 
@@ -3184,7 +3184,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 |------|---------|
 | `content/` | **Authoritative content objects** (`.ts` + `.md` + `.lean` triples) |
 | `content/schema/` | Type system, Zod schemas, builder functions (re-exports from `folio-assistant/schemas/`) |
-| `content/pipeline/` | Validation, rendering, build pipelines |
+| `content/pipeline/` | qou-side audit scripts only (vacuity/axiom, clarity, orphan, trace-convention, …). Validation / rendering / build moved to `folio-assistant/content/pipeline/` in the miga migration — check which side a script is on before invoking it |
 | `content/<paper>/` | Paper manifest + chapter directories |
 | `content/<paper>/fluid-dynamics/` | Ch 7: Fluid dynamics of the brane (q-NS, NS obstruction) |
 | `folio-assistant/` | **Platform package** — MCP server, auth, UI, blocks, viewer |
