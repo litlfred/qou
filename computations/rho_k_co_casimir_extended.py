@@ -74,6 +74,28 @@ Q_SYM = sp.Symbol("q", positive=True)
 Q_MP = mp.mpf(Q_50_DIGIT_STR)
 
 
+# ── Worker cap (memory-bound, see the note at the call site) ─────
+_WORKER_OVERRIDE: int | None = None
+
+
+def _worker_cap() -> int:
+    """Workers to use: CLI --workers, else $RHO_K_WORKERS, else cpu_count().
+
+    Deliberately a cap and not a fixed number, so the default behaviour is
+    exactly what it was before (cpu_count()) and only an explicit request
+    lowers it.
+    """
+    if _WORKER_OVERRIDE is not None:
+        return max(1, _WORKER_OVERRIDE)
+    env = os.environ.get("RHO_K_WORKERS")
+    if env:
+        try:
+            return max(1, int(env))
+        except ValueError:
+            print(f"  RHO_K_WORKERS={env!r} is not an integer — ignoring.")
+    return multi.cpu_count()
+
+
 # ── Multiprocessing worker (top-level so Pool can pickle) ────────
 
 
@@ -266,7 +288,17 @@ def compute_co_casimir_for_atom(
     # 4-core box ships ~4× wall speedup on top of the ~200× chi_numeric
     # vs chi_lambda_symbolic gain. Partition input is (lam, crossings,
     # q_str_50dps, dps) so the worker is self-contained.
-    n_workers = min(multi.cpu_count(), len(parts))
+    # Worker count is memory-bound, not CPU-bound, at n >= 12. Each worker
+    # holds one partition's Hoefsmit generators, and those are stored DENSE:
+    # the largest partition of 12 is dim 7700, so 11 generators occupy
+    # 7700^2 * 8 B * 11 = 5.22 GB. Four workers therefore want ~20 GB, and on
+    # a 16 GB box the run does not slow down — it HANGS, with the workers
+    # parked in futex_do_wait and khugepaged thrashing (measured 2026-08-15,
+    # bean qou-5qwb; the underlying dense-storage issue is qou-bk0q).
+    #
+    # cpu_count() cannot see that. Hence the override: on a memory-constrained
+    # machine, `--workers 1` turns an unrunnable atom into a slow one.
+    n_workers = min(_worker_cap(), len(parts))
     print(f"  computing per-λ χ^λ via {n_workers} workers (numeric path) …", flush=True)
     pool_args = [(lam, crossings, Q_50_DIGIT_STR, mp.mp.dps) for lam in parts]
     if n_workers > 1:
@@ -390,10 +422,20 @@ def main(argv: list[str] | None = None) -> int:
         help="Comma-separated atom labels (default: p,n,D,T,3He,4He)."
     )
     parser.add_argument(
+        "--workers", type=int, default=None,
+        help="Cap the per-lambda worker pool (default: cpu_count()). Each "
+             "worker holds one partition's DENSE Hoefsmit generators — 5.22 GB "
+             "at the dim-7700 partition of n=12 — so the default can exceed "
+             "RAM and hang rather than slow down. Also settable as "
+             "$RHO_K_WORKERS.")
+    parser.add_argument(
         "--max-A", type=int, default=4,
         help="Skip atoms with A > this (default 4; ⁴He included; ⁵/⁶Li skipped)."
     )
     args = parser.parse_args(argv)
+    if args.workers is not None:
+        global _WORKER_OVERRIDE
+        _WORKER_OVERRIDE = args.workers
 
     if args.atoms:
         wanted = {s.strip().lower() for s in args.atoms.split(",")}
