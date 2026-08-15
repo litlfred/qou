@@ -1307,6 +1307,23 @@
         "reviewed_at": "2026-08-15T10:30:59.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d0d02e955428",
+          "ts": "dfa2f89a70b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:47.012Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "'cores of neutron stars, not freely propagating objects (unlike the Bodmer-Witten hypothesis)' distinguishes QOU's prediction from the standard hypothesis.",
+        "notes": "false-positive class: substantive contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1326,6 +1343,22 @@
         "reviewed_at": "2026-08-15T10:30:59.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d0d02e955428",
+          "ts": "dfa2f89a70b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:47.050Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-em-dash": [
@@ -1345,6 +1378,22 @@
         "reviewed_at": "2026-08-15T10:30:59.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 363 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d0d02e955428",
+          "ts": "dfa2f89a70b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:47.095Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "minor",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-triples": [
@@ -1364,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:30:59.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 363 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d0d02e955428",
+          "ts": "dfa2f89a70b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:47.145Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "minor",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1383,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:30:59.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d0d02e955428",
+          "ts": "dfa2f89a70b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:47.185Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-meta-commentary": [
@@ -1402,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:30:59.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d0d02e955428",
+          "ts": "dfa2f89a70b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:47.227Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1421,6 +1518,23 @@
         "reviewed_at": "2026-08-15T10:30:59.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d0d02e955428",
+          "ts": "dfa2f89a70b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:47.268Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "Filler closer 'The scale ensures observable consequences.' deleted; signatures section follows directly.",
+        "notes": "fixed: deleted 'The scale ensures observable consequences.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1440,6 +1554,22 @@
         "reviewed_at": "2026-08-15T10:30:59.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d0d02e955428",
+          "ts": "dfa2f89a70b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:47.354Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "minor",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-superlative": [
@@ -1459,6 +1589,22 @@
         "reviewed_at": "2026-08-15T10:30:59.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d0d02e955428",
+          "ts": "dfa2f89a70b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:47.399Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "minor",
+        "evidence": "'the only event that exposes a strangelet core' is a model-internal factual claim, argued in the surrounding text."
       }
     ],
     "trap-nonspeakable": [
@@ -1478,8 +1624,24 @@
         "reviewed_at": "2026-08-15T10:30:59.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d0d02e955428",
+          "ts": "dfa2f89a70b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:47.465Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "minor",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.312Z"
+  "updated_at": "2026-08-15T11:37:47.465Z"
 }
