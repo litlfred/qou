@@ -539,6 +539,46 @@ def gram_quotient_inverse() -> np.ndarray:
     return G_PINV
 
 
+def safe_inverse(M, *, what: str = "matrix", rcond: float = 1e-12) -> np.ndarray:
+    """`np.linalg.inv` with the singularity guard numpy does not give you.
+
+    **`np.linalg.inv` does NOT raise on the convention-D Markov Gram.** It
+    returns a matrix with entries up to 7.6e15 and ``‖M @ inv - I‖ = 4.14``,
+    measured. A caller that trusts it silently propagates numerical garbage
+    into every downstream witness — which is precisely what happened to the
+    two `gram_inverse` producers when this module moved C -> D, since they
+    build their Gram from this module's `TR_M` but invert it themselves.
+
+    This raises `LinAlgError` instead, naming the quotient inverse as the
+    replacement. Use it anywhere a Gram-like form is inverted; the cost is
+    one `svd` per call, which is nothing next to shipping a wrong witness.
+
+    `rcond` is the relative singular-value floor: a value is treated as zero
+    when it falls below ``rcond * s_max``. The default is deliberately far
+    above float64 epsilon, because the smallest singular value of the
+    degenerate Gram is ~5e-16 — i.e. *at* the noise floor, not
+    distinguishable from it by magnitude alone (that is the whole reason
+    `computations/probes/gram_radical_exact_probe.py` had to settle the
+    question over ℚ rather than numerically).
+    """
+    M = np.asarray(M, dtype=float)
+    s = np.linalg.svd(M, compute_uv=False)
+    if s.size == 0 or s[0] == 0.0 or (s[-1] / s[0]) < rcond:
+        rank = int((s > rcond * s[0]).sum()) if s.size and s[0] > 0.0 else 0
+        cond = f"{s[0] / s[-1]:.2e}" if s.size and s[-1] > 0.0 else "inf"
+        raise np.linalg.LinAlgError(
+            f"{what} is singular (rank {rank} of {M.shape[0]}, "
+            f"cond {cond}) -- "
+            "np.linalg.inv would NOT have raised here, it would have returned "
+            "inverted rounding noise. Under trace convention D the Markov Gram "
+            "is degenerate and has no inverse; use "
+            "`pyhecke.gram.gram_quotient_inverse()` (the inverse on "
+            "H_3(q)/rad) and record it under a DIFFERENT witness key, since "
+            "it is a different object from the G^-1 that older witnesses hold."
+        )
+    return np.linalg.inv(M)
+
+
 # ══════════════════════════════════════════════════════════════
 # 50-dps mpmath Gram / Markov trace — NO float64
 # ══════════════════════════════════════════════════════════════
