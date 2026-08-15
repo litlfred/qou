@@ -1218,6 +1218,23 @@ Do not regress either.
 
 ### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)
 
+> **🛑 OWNER RULING 2026-08-15 — proton pin canonical; convention D canonical,
+> convention C excised; colour weighting canonical.** Verbatim: *"convention D is
+> convention. excise convention C."* / *"similarly, use proton pin and color
+> wighting"*. **READ FIRST:**
+> [`docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md`](docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md)
+> — the ruling record, the measured blast radius, and the ordered tranche plan
+> (hygiene vs SCIENCE). It supersedes the `disputed` registration of the
+> `qbeta-decay` trace channel (PR #5111) and answers the trace-convention
+> registry's one `owner_decision_required`.
+>
+> **This section's tables and rules below are NOT yet updated to the ruling** —
+> the audit doc §6 lists exactly which lines must change, pending owner approval
+> of the wording. In particular the "~840 muon-q₀ witnesses" figure in rule 2 is
+> **measured at 870** (801 muon-only, 69 carrying both pins). Until those edits
+> land, follow the 2026-08-07 directive below, which the ruling reinforces
+> rather than reverses.
+
 > **🟧 OWNER DIRECTIVE (2026-08-07) — ALL AGENTS AND ALL PRODUCTION CODE
 > DEFAULT TO THE EXPERIMENTAL (PROTON) ANCHOR.** When any code, probe,
 > witness, dashboard, or agent needs a numerical `q₀`, the default is the
