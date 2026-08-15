@@ -118,3 +118,57 @@ rather than `IdealTetrahedron`.
    `one_sub_z_j_ne_zero` lemmas are already generated for exactly this) and an
    `n`-tetrahedron composition lemma beyond the `n = 2` case written here.
    `Finset.prod_div_distrib` makes that routine; it was not needed for the trefoil.
+
+---
+**2026-08-10 (later) — the path is validated end to end on a GENERATED manifold. 6₁ is
+certified.**
+
+`QOU/Knot/SixOneCertified.lean`, sorry-free, standard axioms:
+
+    satisfiesEdgeEquations : (triangulation ht).SatisfiesEdgeEquations gluing
+
+for an arbitrary root `t` of `x⁴ − 3x³ + 6x² − 5x + 2`. Four tetrahedra, four edges, all
+four generated identities consumed. The 312 theorems now have a demonstrated route from
+standalone equations to structure certification.
+
+Two general lemmas added to `GluingBridge`:
+
+- `satisfies_edge_of_cleared` — cleared ⟹ product, **at any `n`**, via
+  `Finset.prod_div_distrib`;
+- `satisfiesEdgeEquations_of_cleared` — the whole edge system from the cleared identity
+  at every edge.
+
+### ⚠ Two traps, both invisible from the statements
+
+**1. `fin_cases` breaks the exponent matrix.** Under `fin_cases k` the index becomes
+`⟨0, ⋯⟩`, on which `Matrix.cons_val_zero` and friends **do not fire** — so the exponent
+matrix never reduces and `linear_combination` is handed an unreduced goal with the entire
+`GluingData` literal still in the exponent. It fails with a bare "ring expressions not
+equal", which reads like a wrong cofactor rather than a stuck `simp`. Adding `Fin.isValue`
+and `Fin.mk_zero` did **not** help.
+
+Fix: prove one cleared lemma **per literal edge index**, where the matrix application
+reduces, and only then `fin_cases` and `exact` them. This is why `SixOneCertified` has
+four `private theorem cleared_k` rather than one tactic block.
+
+I found this only by dumping the goal with `trace_state`. The failure message points at
+`ring`, which is the wrong place to look.
+
+**2. `field_simp` and variable exponents** — recorded with `param_pow_prod`: it does not
+cancel `(1−z)⁻¹^b` against `(1−z)^b` when `b` is a variable. Rewrite to explicit quotients
+via `div_pow` first.
+
+### Generator improvement this exposes
+
+`GeneratedGluing` emits the cleared identity **flattened**; the whole
+`simp only [Fin.prod_univ_four, …]` step exists only to bridge that to the `∏` form.
+**Emitting it directly as a `Finset` product would delete that step**, and with it trap 1
+— there would be no `Matrix` application to reduce. Worth doing before generating the
+remaining 18, since it removes the fiddliest part of the template.
+
+### Remaining
+
+1. Degrees 7–14 — untouched.
+2. Cusp equations — untouched.
+3. The other 18 manifolds — now **mechanical**: `SixOneCertified` is the template, and
+   the generator can emit it. Recommend the `∏`-form change above first.

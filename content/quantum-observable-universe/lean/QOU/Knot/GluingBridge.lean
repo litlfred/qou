@@ -110,6 +110,44 @@ theorem satisfies_of_cleared_two (S T : Shape) {a b c d e f : ℕ}
   rw [S.param_pow_prod a b c, T.param_pow_prod d e f, div_mul_div_comm, h]
   exact div_self (mul_ne_zero (S.param_pow_den_ne_zero b c) (T.param_pow_den_ne_zero e f))
 
+/-! ### The general `n`-tetrahedron composition
+
+`satisfies_of_cleared_two` written for arbitrary `n`, which is what the 19 manifolds in
+`GeneratedGluing` need.  `Finset.prod_div_distrib` does the work: each tetrahedron becomes
+one quotient by `param_pow_prod`, the quotients compose into a single quotient of
+products, and the cleared hypothesis says numerator equals denominator. -/
+
+/-- **Cleared form ⟹ `SatisfiesEdgeEquations`, for one edge, at any `n`.**
+
+The hypothesis is the cleared identity for edge `k` — exactly the shape
+`GeneratedGluing` proves, once its explicit products are read as `Finset` products.  The
+conclusion is one conjunct of `SatisfiesEdgeEquations`. -/
+theorem satisfies_edge_of_cleared {n e : ℕ} (T : ShapedTriangulation n)
+    (G : GluingData n e) (k : Fin e)
+    (h : (∏ i, ((T.tet i).z ^ G.exp k i 0 * ((T.tet i).z - 1) ^ G.exp k i 2))
+        = (∏ i, ((1 - (T.tet i).z) ^ G.exp k i 1 * (T.tet i).z ^ G.exp k i 2))) :
+    (∏ i, ∏ j, (T.tet i).param j ^ G.exp k i j) = 1 := by
+  have hden : (∏ i, ((1 - (T.tet i).z) ^ G.exp k i 1 * (T.tet i).z ^ G.exp k i 2)) ≠ 0 :=
+    Finset.prod_ne_zero_iff.mpr fun i _ => (T.tet i).param_pow_den_ne_zero _ _
+  have hstep : ∀ i, (∏ j, (T.tet i).param j ^ G.exp k i j)
+      = ((T.tet i).z ^ G.exp k i 0 * ((T.tet i).z - 1) ^ G.exp k i 2)
+        / ((1 - (T.tet i).z) ^ G.exp k i 1 * (T.tet i).z ^ G.exp k i 2) := by
+    intro i
+    rw [Fin.prod_univ_three]
+    exact (T.tet i).param_pow_prod _ _ _
+  simp only [hstep]
+  rw [Finset.prod_div_distrib, h]
+  exact div_self hden
+
+/-- **The whole edge system**, from the cleared identity at every edge. -/
+theorem satisfiesEdgeEquations_of_cleared {n e : ℕ} (T : ShapedTriangulation n)
+    (G : GluingData n e)
+    (h : ∀ k : Fin e,
+      (∏ i, ((T.tet i).z ^ G.exp k i 0 * ((T.tet i).z - 1) ^ G.exp k i 2))
+        = (∏ i, ((1 - (T.tet i).z) ^ G.exp k i 1 * (T.tet i).z ^ G.exp k i 2))) :
+    T.SatisfiesEdgeEquations G :=
+  fun k => satisfies_edge_of_cleared T G k (h k)
+
 /-! ### Worked instance: the trefoil, certified against `SatisfiesEdgeEquations`
 
 `QOU/Knot/FlatTetrahedra.lean` proves the trefoil's two edge equations directly.  Here
