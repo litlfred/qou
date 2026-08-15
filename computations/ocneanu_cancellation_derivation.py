@@ -202,7 +202,12 @@ proton_crosses = atomic_braid_to_crossings(1, 0, include_inter=False)
 print(f"  Braid: {len(proton_crosses)} generators")
 print(f"  σ count: {sum(1 for _, t in proton_crosses if t == 'sigma')}")
 print(f"  σ⁻¹ count: {sum(1 for _, t in proton_crosses if t == 'sigma_inv')}")
-print(f"  averaged count: {sum(1 for _, t in proton_crosses if t == 'averaged')}")
+# Averaged FAMILY. Latent here — the proton word (include_inter=False) has no
+# p-n bond, so `averaged_weighted` cannot appear — but an equality test is a
+# trap one caller away, and this is the class that produced three silent
+# losses elsewhere in this arc (qou-8zjd).
+print(f"  averaged count: "
+      f"{sum(1 for _, t in proton_crosses if t.startswith('averaged'))}")
 print()
 
 # For each partition λ ⊢ 3:

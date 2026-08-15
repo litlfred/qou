@@ -310,6 +310,105 @@ def part_c() -> None:
         )
 
 
+# ── Part E: equality tests against 'averaged' that cannot see the family ──
+# The class Parts A-D structurally miss, and the one with the worst record.
+#
+# A dispatch that RAISES on an unknown ctype announces itself. An equality
+# COUNT does not: `sum(1 for _, t in crosses if t == 'averaged')` returns a
+# smaller number and keeps going. Three separate silent losses came from
+# exactly this shape, each in code whose purpose was to count the thing it
+# was dropping:
+#
+#   per_nucleon_shift_derivation  avg undercounted by one per word; the
+#                                 committed witness's (5, 7, ...) predate the
+#                                 split, a fresh run gives (4, 6, ...)
+#   theta_mn_linearchain_vs_...   a regex variant: the closing quote made
+#                                 'averaged' fail to match the longer label,
+#                                 dropping gen 2 (D) / gen 5 (4He), both
+#                                 INTERFACE generators
+#   d_u_closed_form_proof         n_avg_inter went to ZERO for every mixed
+#                                 nuclide — total loss, not an undercount
+#
+# Demonstrated blind spot: restoring main's `per_nucleon_shift_derivation`
+# (line 342, `t == 'averaged'`) and running Parts A-D gives exit 0. The
+# defect is invisible to every other part of this file.
+#
+# RULE: a file that compares a ctype to the literal 'averaged' and never
+# mentions 'averaged_weighted' anywhere cannot be handling the family. Files
+# with a total dispatch mention the weighted label; prose files do not
+# compare. That keeps the rule high-recall and low-noise without parsing.
+EQUALITY_TEST_BASELINE: dict[str, str] = {
+    # `closed_form_tau_M` has its OWN vocabulary (InterfaceKind:
+    # positive/negative/averaged), not the ctype vocabulary, and documents
+    # the separation: "For LABEL purposes returned here, the p-n kind is
+    # `averaged`; the delta-aware factor is applied at the value-computation
+    # layer, not in the labels." Its equality test is correct by design, and
+    # "fixing" it would break a deliberate convention in the file AGENTS.md
+    # names as the p/n asymmetry mechanism.
+    "closed_form_tau_M.py:181": "own InterfaceKind vocabulary; label/value split is documented",
+    # Same vocabulary, same reason: this dispatches on the InterfaceKind
+    # returned by `canonical_interface_kinds(...)` (positive/negative/
+    # averaged), not on a ctype. Its `averaged` is the InterfaceKind label,
+    # whose δ-aware factor is applied at the value layer.
+    "_habiro_coefficient_extract.py:166": "InterfaceKind vocabulary, not ctype",
+}
+
+_EQ_AVERAGED = re.compile(r"""[!=]=\s*['"]averaged['"]""")
+
+
+def part_e() -> None:
+    print("\nPart E -- equality tests that cannot see the averaged family")
+    found: list[str] = []
+    for path in sorted(HERE.rglob("*.py")):
+        rel = path.relative_to(HERE).as_posix()
+        if "_deprecated/" in rel or rel == Path(__file__).name:
+            continue
+        if rel == "canonical_braid_crossings.py":
+            continue  # the classifier itself dispatches on every label
+        try:
+            src = path.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        # Strip comments so this file's own prose does not self-report.
+        lines = [("" if l.lstrip().startswith("#") else l)
+                 for l in src.splitlines()]
+        # Exempt per SITE, not per FILE.
+        #
+        # A file-level "mentions averaged_weighted anywhere ⇒ exempt" rule
+        # fails on a PARTIALLY fixed file, and that is not hypothetical: it
+        # is exactly how main's `per_nucleon_shift_derivation` slips through.
+        # Its import-level counter was repaired (introducing the label) while
+        # line 342's `t == 'averaged'` stayed blind, so a whole-file exemption
+        # clears the file and leaves the defect. That is the same shape as the
+        # module-name exemption this test shipped with in #5018 — a coarse
+        # exemption clearing a site it never looked at. Window the check to
+        # the enclosing dispatch instead.
+        WINDOW = 8
+        for i, line in enumerate(lines):
+            if not _EQ_AVERAGED.search(line):
+                continue
+            near = "\n".join(lines[max(0, i - WINDOW):i + WINDOW + 1])
+            if "averaged_weighted" in near or ".startswith(" in near:
+                continue  # this SITE handles the family
+            found.append(f"{rel}:{i + 1}")
+            break
+
+    new = [f for f in found if f not in EQUALITY_TEST_BASELINE]
+    stale = [f for f in EQUALITY_TEST_BASELINE if f not in found]
+    for f in new:
+        failures.append(
+            f"{f} compares a ctype to 'averaged' and never mentions "
+            f"'averaged_weighted' -- an equality test cannot see the family, "
+            f"and it fails by returning a smaller number rather than raising"
+        )
+    for f in stale:
+        notes.append(f"  note Part E baseline entry no longer needed: {f}")
+    if not new:
+        notes.append(
+            f"  ok   no family-blind equality tests ({len(found)} baselined)"
+        )
+
+
 # ── Part D: recipe-chain breakdown literals are a CLAIM, so check it ───────
 # The three `build_atomic_braid_recipe_*_chain` modules record a crossing
 # `type_breakdown` as a hand-written literal, stamp it `trust_basis=DERIVED`,
@@ -408,6 +507,7 @@ def main() -> int:
     part_b()
     part_c()
     part_d()
+    part_e()
     print("\n".join(notes))
     if failures:
         print(f"\nFAIL ({len(failures)}):")
