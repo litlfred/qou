@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-08-14T22:05:39Z
-updated_at: 2026-08-14T22:19:36Z
+updated_at: 2026-08-15T00:46:19Z
 parent: qou-fiag
 ---
 
@@ -23,3 +23,16 @@ W, no motivic q-correction. Chirality {3,4}, bar (7,1), 4₁ dim s(1)=3, 5₂ ex
 state s(1)+1 at a distinct ray. This is why A_ω and the tower 3,9,75,642,… are
 integers, never Poincaré polynomials — reinforcing the O2 integrality obstruction.
 Closed-sector category = this (Q,W) stays conjectural (M3, not claimed).
+
+
+---
+**2026-08-15 — framing corrected (owner challenge: "newly-categorified A_ω=3?").**
+"Categorified" was an OVERCLAIM. M2 does NOT construct the (Q,W) (M1, unbuilt) or
+compute a cohomology from a category, and does NOT derive A_ω (still imported,
+conditional on conj:stokes-dt-bps-bridge). What M2 actually does: a CONDITIONAL
+STRUCTURAL CHARACTERIZATION — taking the eq-(98) constants as DT invariants, the
+Borel rays are distinct ⇒ Davison-Meinhardt plethystic trivial ⇒ the putative BPS
+spectrum would be abelian (dim BPS=|Ω|, no motivic multiplicity). Corrected on main
+via branch claude/aomega-m2-overclaim-fix-2026-08-15: the content block, the Lean
+docstring title, the audit doc, and the coord doc all now say "characterized
+(conditional)", not "categorified/computed".

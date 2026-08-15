@@ -62,7 +62,7 @@ whatever O3-M2 lands) stands on its own.
   scrapped); `qou-6y1p` (retarget the S-channel at the resolved swing). Content requalified
   in the 3 carrier blocks: the "measured sign flip" prose → conditional-on-an-
   unestablished-flip; the `A_ω` identification noted unsupported / not carried.
-  **Kept intact:** `A_ω=3` (M2-categorified), `S=c₃+Vol(4₁)` definition, and the
+  **Kept intact:** `A_ω=3` (M2-characterized: conditional abelian-spectrum, not categorified), `S=c₃+Vol(4₁)` definition, and the
   sorry-free conditional Lean. Render-QA grep battery + expository pass by hand
   PASS; qa-sweep sidecar refresh could not run (bun/folio-assistant firewalled) —
   stale-pending-CI, flagged in the commit.
@@ -77,4 +77,4 @@ whatever O3-M2 lands) stands on its own.
   quantity. So `qou-6y1p` is **not** foreseeably tractable (same wall as the
   bridge); scrapped. The `S=c₃+Vol(4₁)` definition still stands. **Tranche
   complete** (`qou-fiag`) — no foreseeable derivation survives in the S-channel;
-  only definitions and the M2-categorified `A_ω=3` remain.
+  only definitions and the (conditional, imported) `A_ω=3` — whose putative BPS spectrum M2 characterizes as abelian, not categorifies — remain.
