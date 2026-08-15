@@ -885,7 +885,12 @@ fn main() {
 
     // Print jet bundle decomposition
     eprintln!("\n  Jet bundle (net by word length):");
-    let q0_val: f64 = 1.10998;
+    // The canonical proton anchor, not the 5-digit 1.10998 literal this used
+    // to carry (1277 ppb off — the distance `classify_pin` calls
+    // "truncated-5-digit"). Safe to change: this value reaches only the
+    // stderr jet-bundle diagnostic below, never the emitted certificate, so
+    // the committed certificates are unaffected.
+    let q0_val: f64 = hecke_engine::gram::Q_0;
     let t0_f64 = q0_val.sqrt();
     let denom_f64 = 2.0_f64.powi(elem.pn_count as i32);
     for (k, jet) in total.net_by_len.iter().enumerate() {

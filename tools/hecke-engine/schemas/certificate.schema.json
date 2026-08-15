@@ -196,9 +196,10 @@
           "enum": [
             "proton",
             "muon",
+            "truncated-5-digit",
             "other"
           ],
-          "description": "Which pin q0 is. 'other' flags an anchor that is neither -- e.g. hecke-bigint used a 5-digit 1.10998 until 2026-08-15, 1277 ppb from the proton pin."
+          "description": "Which pin q0 is, bucketed by ppb distance from the proton anchor by classify_pin() in src/provenance.rs. 'truncated-5-digit' is the 1.10998 literal hecke-bigint used until 2026-08-15, 1277 ppb off -- it has its own value because it is a known, fixable cause rather than an unexplained anchor, and lumping it into 'other' hid it. 'other' means neither pin and no known cause: read the emitter."
         },
         "engine_version": {
           "type": "string"
