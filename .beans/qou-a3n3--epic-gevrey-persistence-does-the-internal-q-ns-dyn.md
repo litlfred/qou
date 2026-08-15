@@ -113,3 +113,19 @@ epochs, chaining, all eps-uniform); the surviving large-data
 obstruction is INFRARED — the continuum limit's vanishing spectral
 gap. Open core, sharpest form: large data, eps-uniformly in time,
 against a spectral gap closing like eps.
+
+## 2026-08-15 (5): the damped-forced tail bound — the arc's synthesis
+
+tail_damped_forced_bound: seen from above the fixed band, the tail is
+a strongly damped system (rate nu*kB^2, eps-FREE — the band is fixed)
+forced through a fixed boundary (amplitudes eps-uniformly controlled
+by the banded bound). With ONE named hypothesis — boundary flux <= Phi
+uniform — the invariant gives sup_t Omega_tail <= max(Omega_tail_0,
+Phi/(nu*kB^2)) for ALL data, eps-uniform: the sup-in-time tail bound,
+closed in-model conditional on Phi. The flux hypothesis carries ALL
+remaining uncertainty: in-model it reduces to local shell transfer +
+the band bound (follow-up algebra, not assumed); for full NS it is
+EXACTLY the nonlocal-transfer caveat the SF arc named. One hypothesis,
+one caveat, one place. Epic state: everything proved except (a) the
+in-model Phi derivation (algebra follow-up) and (b) full-NS transfer
+locality (the standing fidelity caveat = the honest research frontier).

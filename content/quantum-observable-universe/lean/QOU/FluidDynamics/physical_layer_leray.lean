@@ -579,4 +579,86 @@ theorem energy_geometric_decay (E Ωp : ℕ → K) (δν g : K)
             mul_le_mul_of_nonneg_left ih hfac
         _ = (1 - δν * g) ^ (p + 1) * E 0 := by ring
 
+/-!
+## The damped-forced tail bound (bean `qou-80p8`)
+
+The synthesis of the whole arc.  Seen from above the fixed band, the
+tail is a **strongly damped system forced through a fixed boundary**:
+
+- every tail mode has `k ≥ kB`, so the tail's own dissipation rate is
+  `ν·kB²` — **`ε`-free**, because the band is fixed;
+- the only input crosses the band boundary, where the banded bound
+  (`banded_enstrophy_le`, `ε`-uniform) controls the amplitudes.
+
+If the boundary flux is bounded by a uniform `Φ` — the **one named
+hypothesis** — then the standard damped-forced invariant
+(`tail_damped_forced_bound`) gives
+
+  `Ω_tail(n) ≤ max(Ω_tail(0), Φ/(ν·kB²))`  for **every** `n`,
+
+**all data, `ε`-uniform**: the sup-in-time tail bound that has been
+the open item since the uniformity reduction — closed in-model,
+conditional on `Φ`.
+
+**Status of the flux hypothesis, honestly.**  In the shell models the
+transfer is local in `k` by construction, and the boundary flux is a
+function of amplitudes at rungs `~B` — controlled by the `ε`-uniform
+band bound; deriving the explicit `Φ` from the band bound is
+model-specific algebra recorded as the follow-up, not assumed done.
+For full NS the flux across a wavenumber shell has a **nonlocal**
+component — this is *the same* fidelity caveat the SF arc named
+(nonlocal-in-`k` transfer), now carrying the entire remaining
+uncertainty of the large-data question.  One hypothesis, one caveat,
+in one place.
+-/
+
+/-- **The damped-forced invariant**: if the tail obeys
+    `Ωt(n+1) ≤ Ωt(n) + δ·(Φ − D·Ωt(n))` (uniform input `Φ`, damping
+    rate `D`), with `0 ≤ δD ≤ 1`, `Φ ≥ 0`, `D > 0`, then
+
+      `Ωt(n) ≤ max(Ωt(0), Φ/D)`  for every `n`.
+
+    Below the equilibrium `Φ/D` the state may rise but never past the
+    equilibrium; above it the drift is downward.  All constants are
+    those of the fixed band — `ε` does not appear. -/
+theorem tail_damped_forced_bound (Ωt : ℕ → K) (δ Φ D : K)
+    (hδ : 0 ≤ δ) (hD : 0 < D) (hδD : δ * D ≤ 1)
+    (hstep : ∀ n, Ωt (n + 1) ≤ Ωt n + δ * (Φ - D * Ωt n)) :
+    ∀ n, Ωt n ≤ max (Ωt 0) (Φ / D) := by
+  intro n
+  induction n with
+  | zero => exact le_max_left _ _
+  | succ p ih =>
+      rcases le_or_gt (Ωt p) (Φ / D) with hlow | hhigh
+      · -- below equilibrium: the step cannot overshoot `Φ/D`
+        have key : Ωt (p + 1) ≤ Φ / D := by
+          have h1 := hstep p
+          have hDp : D * Ωt p ≤ D * (Φ / D) :=
+            mul_le_mul_of_nonneg_left hlow (le_of_lt hD)
+          have hDeq : D * (Φ / D) = Φ := by field_simp
+          -- Ωt(p+1) ≤ (1 − δD)·Ωt p + δΦ ≤ (1 − δD)·(Φ/D) + δΦ = Φ/D
+          have hfac : (0 : K) ≤ 1 - δ * D := by linarith
+          have h2 : Ωt p + δ * (Φ - D * Ωt p)
+              = (1 - δ * D) * Ωt p + δ * Φ := by ring
+          have h3 : (1 - δ * D) * Ωt p ≤ (1 - δ * D) * (Φ / D) :=
+            mul_le_mul_of_nonneg_left hlow hfac
+          have h4 : (1 - δ * D) * (Φ / D) + δ * Φ = Φ / D := by
+            field_simp
+            ring
+          linarith [h1, h3]
+        exact le_trans key (le_max_right _ _)
+      · -- above equilibrium: the drift is downward
+        have key : Ωt (p + 1) ≤ Ωt p := by
+          have h1 := hstep p
+          have hneg : Φ - D * Ωt p ≤ 0 := by
+            have : Φ / D < Ωt p := hhigh
+            have hmul : Φ / D * D < Ωt p * D :=
+              mul_lt_mul_of_pos_right this hD
+            have heq : Φ / D * D = Φ := by field_simp
+            nlinarith
+          have : δ * (Φ - D * Ωt p) ≤ 0 :=
+            mul_nonpos_of_nonneg_of_nonpos hδ hneg
+          linarith
+        exact le_trans key ih
+
 end QOU.FluidDynamics.PhysicalLayerLeray
