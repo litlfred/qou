@@ -174,3 +174,64 @@ the other is done.
 4. Exact-rational (not f64) test asserting rank 5 / det 0.
 5. Remove the `_native_ok()` guard in `pyhecke/gram.py` and its three
    tests in `test_gram_values.py`, restoring the native speedup.
+
+## 2026-08-15 (2) — my own definition-of-done above was WRONG; PR #5069
+
+The 5-step "definition of done" I wrote earlier today treated this as a
+port. It is not. Reading the prior agent's decline note in `gram.rs` and
+measuring the consumers, **that decline was correct** and this bean
+under-scoped the work. Correcting it here rather than leaving a plan that
+would have walked the next agent into a breaking change.
+
+### Why the z³ fix is NOT a port
+
+`z³` is what keeps the crate's Gram non-singular. Correcting it deletes
+`gram_inverse` — and unlike Python's `G_INV` (measured at **zero**
+consumers before removal), this one has a live downstream family:
+
+| consumer | use |
+|---|---|
+| `pyhecke-native/src/lib.rs:50` | exposed as a pyfunction |
+| `gram.rs:619` | certificate builder |
+| `borromean-axial-coupling.py:197` | `GRAM_INV[np.ix_(A, A)]` — arithmetic |
+| `delta_lambda_master_formula_h3_probe.py` | reads the witness field |
+| `delta_lambda_full_variance_phase5e_1.py` | calls the pyfunction |
+| `bound_state_observable_validator.py` | **requires** the field |
+| `audit_frobenius_pairing.py` | **requires** the field |
+
+The honest replacement is dualisation on `H_3(q)/rad`, which is a
+**different object** from what those witnesses hold — so it cannot be
+swapped under the same key. Owner decision.
+
+### Why the Q_0 re-pin is separately gated
+
+Measured: **53** `certificate-*.json`, **657** files carrying the muon
+literal. AGENTS.md posture for this (bean `tnjb`) is "do not
+mass-regenerate" without scoped sign-off. The prior agent's note said the
+same. Not taken.
+
+### What PR #5069 landed instead (additive, non-breaking)
+
+`trace_weights_markov`, `gram_from_weights`, `gram_matrix_markov`,
+`gram_radical`, `gram_quotient_inverse` — correct objects, 16 cargo tests,
+including a cross-language check against `numpy.linalg.pinv` (1e-9) run at
+the proton pin passed **explicitly**, so it does not prejudge the Q_0 call.
+The switch is now a one-line repoint of `gram_matrix`.
+
+### Revised definition of done
+
+1. **[OWNER]** decide the `gram_inverse` deletion + what replaces the
+   dualisation for the seven consumers.
+2. **[OWNER]** decide the `Q_0` re-pin (53 certificates).
+3. Repoint `gram_matrix` → `trace_weights_markov`; update
+   `det_at_q0_convention_d` and `gram_first_row_matches_trace_weights`.
+4. Migrate the seven consumers to the quotient inverse under a NEW key.
+5. Rebuild `pyhecke_native`; only THEN remove the `_native_ok()` guard in
+   `pyhecke/gram.py` and its three tests.
+
+### Related regression found while scoping this (fixed in #5055)
+
+Two producers build their Gram from `pyhecke.gram.TR_M` and call
+`np.linalg.inv` themselves — which does NOT raise on the singular D Gram
+(entries 7.6e15, ‖G@inv − I‖ = 4.14). Guarded by
+`pyhecke.gram.safe_inverse()`.
