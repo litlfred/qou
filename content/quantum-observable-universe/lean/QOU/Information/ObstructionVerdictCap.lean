@@ -1,3 +1,4 @@
+import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Logic.Basic
 
 /-!
@@ -140,5 +141,54 @@ theorem pnp_and_collatz_of_nonzero
 theorem not_all_of_collatz
     (hnonzero : ¬ Vanishes) (hColl : Vanishes ↔ Collatz) (hc : Collatz) : False :=
   hnonzero (hColl.mpr hc)
+
+/-! ### Sharpening: the class is a CONSTANT, so its verdict is `q₀`-independent
+
+`ObstructionGenericity` shows a nonzero *polynomial* obstruction has cofinite
+non-vanishing locus — generic, hence cheap. The derived class is stronger than
+that: `χ(A) = -6` is an **integer**, a degree-0 polynomial, whose vanishing locus
+is not merely finite but **empty**. So `res(χ(A)) ≠ 0 at q₀` holds at *every*
+parameter value — including the Jaeger–Vertigan–Welsh classically-tractable roots
+of unity of order `n ∣ 6`, where the Jones evaluation is poly-time.
+
+That is a genuine incompatibility rather than a weak bound. The corpus asserts
+both:
+
+1. `res_ℛ(χ(A)) ≠ 0 at q₀ ⟺ P ≠ NP` (`conj:qou-p-neq-np`), and
+2. that the complexity verdict **depends on `q₀`** — the `𝔾_m`-torsion
+   stratification, poly-time exactly at `n ∣ 6` (`qou-p-neq-np.md`,
+   `skein-resolution-obstruction.md`).
+
+A `q₀`-independent left-hand side cannot be equivalent to a `q₀`-dependent
+right-hand side. At most one of (1), (2) can hold. -/
+
+/-- **A nonzero constant never vanishes.** The degree-0 case of
+    `obstruction_vanishing_locus_finite`: the vanishing locus is empty, not
+    merely finite. -/
+theorem constant_obstruction_nonvanishing {R : Type*} [CommRing R]
+    {c : R} (hc : c ≠ 0) (q : R) : (Polynomial.C c).eval q ≠ 0 := by
+  simpa using hc
+
+/-- **A constant obstruction gives a `q`-independent verdict.** Its non-vanishing
+    is the *same* proposition at every parameter value, so it cannot distinguish
+    `q₀` from any other point — in particular not from the classically-tractable
+    torsion points. -/
+theorem constant_obstruction_verdict_indep {R : Type*} [CommRing R]
+    {c : R} (hc : c ≠ 0) (q q' : R) :
+    ((Polynomial.C c).eval q ≠ 0) ↔ ((Polynomial.C c).eval q' ≠ 0) :=
+  iff_of_true (constant_obstruction_nonvanishing hc q)
+    (constant_obstruction_nonvanishing hc q')
+
+/-- **The incompatibility, assembled.** If a constant obstruction's non-vanishing
+    is faithful to a predicate `Sep : R → Prop` (the complexity verdict as a
+    function of the substrate parameter), then `Sep` is constant — it takes the
+    same value at the substrate point and at every torsion point. Any claim that
+    `Sep` is `q`-*dependent* is then false. -/
+theorem sep_const_of_constant_obstruction_faithful {R : Type*} [CommRing R]
+    {c : R} (hc : c ≠ 0) {Sep : R → Prop}
+    (hfaithful : ∀ q, ((Polynomial.C c).eval q ≠ 0) ↔ Sep q) (q q' : R) :
+    Sep q ↔ Sep q' :=
+  (hfaithful q).symm.trans
+    ((constant_obstruction_verdict_indep hc q q').trans (hfaithful q'))
 
 end QOU.Information
