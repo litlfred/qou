@@ -699,7 +699,9 @@ The 2026-08-09 owner ruling excised Markov-trace **convention C**
 channel is not registered there**, and its ladder consumes `z` in the N=1
 rung phase `α = (z−1)h/2`
 ([`qbeta_utils.py:124-125`](../../computations/qbeta/qbeta_utils.py); same
-`z_C` in the KC21/KC22 D-ladder core and in `ZBarParity.lean`). Measured
+`z_C` in the KC21/KC22 `D(ũ)`-ladder core and in `ZBarParity.lean` — note
+that the `D` in "`D(ũ)`-ladder" is KC21's bar-even ℚ(√3) function `D`, **not**
+convention D; that core evaluates at `z_C`). Measured
 (probe [`qbeta-c3-ladder-trace-convention-sensitivity`](../../computations/qbeta/qbeta_c3_ladder_trace_convention_sensitivity_probe.py),
 9/9 assertions; full pillar table:
 [validity audit](../audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md)):
