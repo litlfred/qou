@@ -64,16 +64,37 @@ pub const Q0_PROTON: f64 = 1.1099785827513808;
 /// production compute. Kept only so an older certificate can be *labelled*.
 pub const Q0_MUON: f64 = 1.1099785955541805;
 
-/// Classify an anchor without asserting more precision than is meaningful.
+/// Classify an anchor by DISTANCE, in ppb from the proton pin.
 ///
-/// The two pins are 11.54 ppb apart, so a tolerance anywhere between float64
-/// noise and ~1e-9 separates them unambiguously; 1e-12 is used to leave room
-/// for a value that round-tripped through a decimal string.
+/// Rewritten 2026-08-15 after a red-team pass. The first version compared
+/// against the two f64 constants with a `1e-12` tolerance, justified as
+/// "room for a value that round-tripped through a decimal string". Two things
+/// were wrong with that:
+///
+/// 1. **The justification was empty.** Rust's `{}` f64 formatting is
+///    shortest-round-trippable, so that round trip is exact and needed no
+///    slack at all.
+/// 2. **The tolerance it produced was too tight to be useful.** Every
+///    muon-anchored artifact in this repo carries `1.1099785955733347`, not
+///    the canonical `1.1099785955541805` — they differ by 3.154e-12, just
+///    over the 1e-12 bound. So a module written to stop muon/proton collapse
+///    classified the anchor 400+ real witnesses actually use as `"other"`.
+///
+/// Distance bucketing fixes both, and matches what
+/// `computations/q0_provenance_audit.py` does on the Python side — the two
+/// should not disagree about what "muon" means. The muon band is wide enough
+/// to hold both the canonical value and the circular committed one, because
+/// they ARE the same anchor: 11.5 ppb from proton, differing only in digits
+/// past the ~8 that CODATA supports.
 fn classify_pin(q0: f64) -> &'static str {
-    if (q0 - Q0_PROTON).abs() < 1e-12 {
+    let ppb = (q0 - Q0_PROTON).abs() / Q0_PROTON * 1e9;
+    if ppb < 1.0 {
         "proton"
-    } else if (q0 - Q0_MUON).abs() < 1e-12 {
+    } else if (5.0..=30.0).contains(&ppb) {
         "muon"
+    } else if (1000.0..=1600.0).contains(&ppb) {
+        // The 5-significant-digit `1.10998` literal, 1277 ppb off.
+        "truncated-5-digit"
     } else {
         "other"
     }
@@ -136,6 +157,20 @@ mod tests {
 
     /// The two pins are 11.54 ppb apart, so the classifier must not collapse
     /// them — that collapse is the whole defect this module addresses.
+    /// The value the corpus ACTUALLY uses must classify as muon.
+    ///
+    /// This is the case the first implementation got wrong: it is 3.154e-12
+    /// from the canonical muon constant, which the old 1e-12 tolerance
+    /// rejected. Comparing the two constants to each other — which the test
+    /// below does — structurally could not catch that.
+    #[test]
+    fn the_corpus_muon_value_classifies_as_muon() {
+        assert_eq!(classify_pin(1.1099785955733347), "muon");
+        assert_eq!(classify_pin(Q0_MUON), "muon");
+        // And the 5-digit literal is called out, not lumped into "other".
+        assert_eq!(classify_pin(1.10998), "truncated-5-digit");
+    }
+
     #[test]
     fn the_two_pins_are_distinguishable() {
         assert_ne!(classify_pin(Q0_PROTON), classify_pin(Q0_MUON));
