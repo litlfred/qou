@@ -49,8 +49,16 @@ back-fitted into any weight. Nothing here is fitted; nothing is wired.
 Yakubovsky equations with **no four-body parameter**, they find that away from
 threshold the four-body ground state and the deepest three-body state are
 related by a factor of `5`. That is dimensionless, convention-free, and — the
-point — it is a ratio realised by a system that provably carries no four-body
-force.
+point — it is a ratio produced by a calculation containing no four-body input.
+
+Stated that weakly on purpose. "No four-body parameter is needed to renormalise
+at LO" is NOT "no four-body force exists": [jurgenson2009srg] puts the
+four-nucleon force at tens to a few hundred keV, small but nonzero. The authors
+also flag that their universality rests on the RG analysis of their ref. [12],
+which Yamashita et al. dispute (§I, p. 3) — a dispute that explicitly *exempts*
+the nuclear case, "4He atoms and nucleons (where this sensitivity is absent)",
+which is the case at issue here. The argument needs only the weak reading, so
+it takes only the weak reading.
 
 The finding is not a score. Feeding `M(4) = 5*M(3)` into the simplex basis
 gives (Lean `universal_ratio_forces_mu4`, sorry-free)
@@ -58,8 +66,8 @@ gives (Lean `universal_ratio_forces_mu4`, sorry-free)
     mu4 = 9*mu2 + mu3
 
 which at the nuclear `(mu2, mu3)` is `9.81` — about `2.6x` the value the
-nuclear data themselves produce. **mu4 is largest exactly where the four-body
-force is known to be absent**, which is a stronger form of the claim
+nuclear data themselves produce. **mu4 is largest in a calculation that carries
+no four-body input at all**, which is a stronger form of the claim
 `TjonSimplexForm` was already making on structural grounds.
 
 And it is an exclusion, not merely a comparison: on the `mu4 = 0` baseline
@@ -131,6 +139,8 @@ PLATTER_B_ALPHA_LO_BD = mp.mpf("26.9")    # LO, B_d two-body input
 # [hammer2007fourbody] §III.B: "Away from the thresholds, the binding energies
 # of the ground and excited four-body states are related to the deepest
 # three-body state by factors of 5 and 1.01, respectively."
+# Contested in general (Yamashita et al., §I p.3) but NOT for the nuclear case,
+# which those authors explicitly exempt. See the module docstring.
 UNIVERSAL_B4_OVER_B3 = mp.mpf(5)
 
 
@@ -292,8 +302,11 @@ def main() -> int:
         f"[hammer2007fourbody]'s universal B4/B3 = 5, the field's own parameter-free "
         f"target: feeding that ratio into the C(A,k) basis gives mu4 = 9*mu2 + mu3 = "
         f"{mp.nstr(uni_mu[2], 6)}, i.e. {mp.nstr(uni_mu[2] / nat_mu[2], 3)}x LARGER than "
-        f"nature's mu4 for a system that provably has NO four-body force — a stronger form "
-        f"of TjonSimplexForm's thesis that mu4's size is a basis artifact. Sharper: the "
+        f"nature's mu4 for a calculation that carries NO four-body input at all — a stronger "
+        f"form of TjonSimplexForm's thesis that mu4's size is a basis artifact. (Weak reading "
+        f"only: 'no four-body parameter needed at LO' is not 'no four-body force exists'; "
+        f"[jurgenson2009srg] puts the 4N force at tens-to-hundreds of keV, and Yamashita et al. "
+        f"dispute the LO claim generally while exempting nucleons, the case at issue.) Sharper: the "
         f"mu4 = 0 baseline has M(4) < 4*M(3) strictly for any mu2 > 0 (Lean "
         f"tjon_baseline_lt_four_ratio), so ratio 5 is outside its reachable range and the "
         f"EFT's 'no four-body parameter' is PROVABLY NOT the simplex's mu4 = 0 "

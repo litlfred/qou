@@ -200,14 +200,23 @@ rather than asserting it.
 Hammer–Platter solve the four-boson Yakubovsky equations **with no four-body
 parameter at all** and report that, away from threshold, the four-body ground
 state is related to the deepest three-body state by a factor of `5`
-(`nucl-th/0610105` §III.B). So `M(4) = 5·M(3)` is a ratio realised by a system
-that provably carries no four-body force.
+(`[hammer2007fourbody]` §III.B). So `M(4) = 5·M(3)` is a ratio produced by a
+calculation that contains no four-body input.
+
+Say it that way and no further. "No four-body parameter is needed to renormalise
+at leading order" is **not** "no four-body force exists": `[jurgenson2009srg]`
+puts the four-nucleon force at tens to a few hundred keV — small, not zero. And
+the authors themselves flag that their universality rests on the RG analysis of
+their ref. [12], which Yamashita et al. dispute (§I, p. 3) — though that dispute
+explicitly *exempts* the nuclear case, "⁴He atoms and nucleons (where this
+sensitivity is absent)", which is the case at issue here. The argument below
+needs only the weak reading, so it takes only the weak reading.
 
 `universal_ratio_forces_mu4` computes what the simplex basis assigns to that
-system: `μ₄ = 9·μ₂ + μ₃`, which is **positive and large** — at the nuclear
+calculation: `μ₄ = 9·μ₂ + μ₃`, which is **positive and large** — at the nuclear
 `(μ₂, μ₃) = (1, 0.8128)` it is `9.81`, some `2.6 ×` the value the nuclear data
-themselves produce. A quantity that is large precisely where the four-body force
-is known to be absent is not measuring the four-body force.
+themselves produce. A quantity that is large in a calculation carrying no
+four-body input at all is not measuring a four-body input.
 
 `tjon_baseline_lt_four_ratio` sharpens this into an exclusion: on the `μ₄ = 0`
 baseline the ratio `M(4)/M(3)` is *strictly below 4* for any positive `μ₂`, so
@@ -234,10 +243,10 @@ theorem four_sub_two_mul_three (μ₂ μ₃ μ₄ : R) :
   simp only [Mval_three, Mval_four]
   ring
 
-/-- **What the simplex basis assigns to a system with no four-body force.**
-If a ladder realises the universal four-to-three ratio `M(4) = 5·M(3)`, then its
-four-body moment is `μ₄ = 9·μ₂ + μ₃` — determined entirely by the *lower* moments,
-with no four-body input anywhere. -/
+/-- **What the simplex basis assigns to a calculation carrying no four-body
+input.** If a ladder realises the universal four-to-three ratio `M(4) = 5·M(3)`,
+then its four-body moment is `μ₄ = 9·μ₂ + μ₃` — determined entirely by the
+*lower* moments, with no four-body input anywhere. -/
 theorem universal_ratio_forces_mu4 (μ₂ μ₃ μ₄ : R)
     (h : Mval μ₂ μ₃ μ₄ 4 = 5 * Mval μ₂ μ₃ μ₄ 3) : μ₄ = 9 * μ₂ + μ₃ := by
   simp only [Mval_three, Mval_four] at h
