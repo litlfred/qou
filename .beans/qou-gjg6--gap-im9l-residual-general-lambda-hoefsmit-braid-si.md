@@ -315,3 +315,34 @@ Formalising it should follow Orbit6Braid exactly: 3x3 matrices via Matrix.of + m
 the index values (NOT !![...] literals), parameters as free reals subject to whatever
 single relation the elimination gives, then ext + fin_cases + field_simp + ring. Expect
 it to be cheaper than the 6x6.
+
+
+## SIZE-3 ORBIT PROVED 2026-08-15 (branch orbit3-braid) — blocker 4 of 4 closed
+
+Orbit3Braid.lean, sorry-free and axiom-clean: genA_genB_braid proves ABA = BAB on a
+size-3 orbit (domino + disjoint cell), and genA_quadratic the Hecke relation.
+
+TWO hypotheses, both necessary:
+  hsc  : sc * sc = c * sc + 1      -- the SCALAR satisfies the Hecke quadratic, i.e. sc is
+                                      a root of X^2 - cX - 1, so sc in {q, -1/q}
+  hrel : a2 * (sc * (sc - a1)) = a1 -- the two block parameters are a(d) and a(d -+ 1) for
+                                      the same axial distance; eliminating d leaves this
+
+Finding worth recording: my first probe left c and sc INDEPENDENT and everything failed --
+including the QUADRATIC, which is what exposed the omission. sc is not free: the scalar
+block must itself satisfy sigma^2 = c sigma + 1. Once tied, 26/26 exact-rational cases hold
+across both domino orientations, and the hrel form above is uniform in sc (the q-only form
+a2*q*(q-a1) = a1 works for the row-domino but NOT the column one).
+
+Lean note: the proof eliminates both c and a2 by substitution (c = (sc^2-1)/sc, a2 =
+a1/(sc(sc-a1))) and closes with field_simp; ring. genA_quadratic needs the hypothesis
+pre-normalised as sc^2 - c*sc - 1 = 0 -- linear_combination cannot serve both branches
+because they need different multiples (1x and 2x), while linarith on the normalised form
+handles the scaling.
+
+STEP (ii) BLOCKERS REMAINING: 2 of 4 --
+  2. orbit-size classification for <s_k, s_{k+1}> acting on SYT lam;
+  3. per-orbit basis correspondence matching the explicit index orderings of
+     Orbit3Braid / Orbit6Braid.
+Every ORBIT-LOCAL identity is now proved: size 1 (scalars), size 2 (seminormalBlock),
+size 3 (this file), size 6 (Orbit6Braid).
