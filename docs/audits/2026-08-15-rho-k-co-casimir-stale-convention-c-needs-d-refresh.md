@@ -69,17 +69,21 @@ data and still leaves stale physics.
   symptom; the real issue is the **stale convention**, and the float
   `compute_wall_sec` is a pre-fix producer artifact.
 
-## Recommendation (for the owning session / a capable environment)
+## This is a known, tooled migration — use the canonical regenerator
 
-Re-run in the environment that produced the 2533 s ⁴He (the origin machine, or
-any host where the mpmath Hoefsmit compute for n=12 is tractable):
+The C → D staleness is **already tracked and tooled**, not a novel finding:
 
-```bash
-python3 -u computations/rho_k_co_casimir_extended.py 2>&1 | tee /tmp/rhok.log
-```
+- `scripts/convention-c-producer-audit.py` — confirms the *producers* are all
+  convention D (0 actionable sites); only their committed *witnesses* lag.
+- `scripts/regenerate-convention-c-witnesses.py` (`--plan` / `--run` /
+  `--report`) — the canonical, serial, resumable regenerator that re-runs each
+  such producer and records how far every number moved. `rho-k-co-casimir` is
+  one of its targets. **Use this, not a hand-edit** (it never writes a witness
+  itself).
 
-`--max-A 4` (default) regenerates the committed atom set on convention D. This
-corrects the stale ρ_K values, refreshes `scriptHash`, and clears the ratchet
-RED in one pass. The C → D move (`1af7d4b7a0` / #4928) should also trigger a
-**sweep of every witness consuming `canonical-mass-table-extended` /
-`y-lambda-wenzl`** — this was one consumer left on C; others may remain.
+The refresh must run where the χ compute is tractable. This document exists
+because a fresh sandbox that has **not** built `pyhecke-native` (see
+[`docs/pyhecke-native-setup.md`](../pyhecke-native-setup.md)) — and/or whose
+`chi_numpy` fast path silently fell back to mpmath `chi_numeric` — makes ⁴He
+(n=12) a tens-of-hours run. On a correctly-provisioned environment the origin
+run was ~2533 s for ⁴He.
