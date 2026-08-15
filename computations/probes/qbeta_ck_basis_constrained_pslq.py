@@ -38,7 +38,7 @@ formalize-first result; running PSLQ on noise is forbidden.
 
 STAGE 2 (only if Stage 1 passes) — mpmath.pslq per coefficient per anchor
 against the arithmetic-dictated basis ONLY (GSWZ + Garoufalidis–Zagier;
-4₁ trace field ℚ(√−3), Vol(4₁) = 2Λ(π/3) so Λ(π/3) is NOT separately
+4₁ trace field ℚ(√−3), Vol(4₁) = 2·Cl₂(π/3) = 6Λ(π/3) so Λ(π/3) is NOT separately
 included):
 
     {1, √3, π², Vol(4₁), ζ(3)}
