@@ -1820,6 +1820,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "4 negation-contrast construction(s): \", not a QOU derivation.\"; \", not in the non-vanishing.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "a5d270ee717c",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.324Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "dense but load-bearing: 'analogy, not a theorem', 'cited fact, not a QOU derivation', 'counting, not decision', 'not the Clay separation'",
+        "notes": "anti-laundering disambiguation class; each prevents a real overclaim misreading; kept"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1839,6 +1855,21 @@
         "reviewed_at": "2026-08-15T10:30:59.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a5d270ee717c",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.368Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no rhetorical pivot (setup-then-reframe) construction found"
       }
     ],
     "trap-em-dash": [
@@ -1859,6 +1890,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "23 stylistic spaced dashes in 1534 words (1.50/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "a5d270ee717c",
+          "ts": "4a3653213e88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.413Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "severity": "minor",
+        "evidence": "~15 spaced em-dashes; several append afterthoughts ('-- the weaker separation', '-- and no step of that chain refers to computational complexity')",
+        "notes": "proposed: structural pass converting afterthought dashes to sentences/parentheses; keep load-bearing parentheticals (Lean decl names, epistemic guards) and the bolded anti-laundering closer; no math edits"
       }
     ],
     "trap-triples": [
@@ -1878,6 +1926,21 @@
         "reviewed_at": "2026-08-15T10:30:59.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (2 in 1534 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a5d270ee717c",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.454Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no compulsive triple construction found"
       }
     ],
     "trap-closing-aphorism": [
@@ -1897,6 +1960,21 @@
         "reviewed_at": "2026-08-15T10:30:59.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a5d270ee717c",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.492Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no closing aphorism construction found"
       }
     ],
     "trap-meta-commentary": [
@@ -1916,6 +1994,21 @@
         "reviewed_at": "2026-08-15T10:30:59.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a5d270ee717c",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.531Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no meta-commentary (narrated emphasis) construction found"
       }
     ],
     "trap-thesis-restatement": [
@@ -1935,6 +2028,22 @@
         "reviewed_at": "2026-08-15T10:30:59.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a5d270ee717c",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.571Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "bolded closer 'That existence statement -- not the Clay separation -- is what the QOU stands behind' restates the paragraph",
+        "notes": "load-bearing epistemic boundary against overclaiming; kept"
       }
     ],
     "trap-performed-warmth": [
@@ -1954,6 +2063,21 @@
         "reviewed_at": "2026-08-15T10:30:59.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a5d270ee717c",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.612Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no performed warmth construction found"
       }
     ],
     "trap-superlative": [
@@ -1973,6 +2097,22 @@
         "reviewed_at": "2026-08-15T10:30:59.749Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (1)"
+      },
+      {
+        "field_hash": {
+          "md": "a5d270ee717c",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.655Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "'Crucially', 'the framework's strongest honest claim'",
+        "notes": "qualified and load-bearing; kept"
       }
     ],
     "trap-nonspeakable": [
@@ -1993,8 +2133,24 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "3 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "a5d270ee717c",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.698Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "counting-decision-gap paragraph is a single very long dense wall",
+        "notes": "grammatical, content-dense technical prose rather than noun-chain padding; paragraph splits would help in a structural pass"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.749Z"
+  "updated_at": "2026-08-15T12:03:25.698Z"
 }

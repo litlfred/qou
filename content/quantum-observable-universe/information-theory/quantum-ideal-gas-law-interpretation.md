@@ -11,4 +11,4 @@ The identity $\mathcal{J}_q^{\mathrm{thermo}}(\ln Z_q) = 0$ holds strictly at th
 See [Table](#tbl:quantum-ideal-gas-law-interpretation-table-data).
 
 **Classical limit.**
-As $q \to 1$, $T_q = \hbar_q \to 0$. However, $N T_q = N \hbar_q$ remains finite in physical units via $k_B$. The correction vanishes identically as $\hbar_q^2 \to 0$. We correctly recover the classical ideal gas law $PV = Nk_BT$.
+As $q \to 1$, $T_q = \hbar_q \to 0$. However, $N T_q = N \hbar_q$ remains finite in physical units via $k_B$. The correction vanishes identically as $\hbar_q^2 \to 0$. We recover the classical ideal gas law $PV = Nk_BT$.
