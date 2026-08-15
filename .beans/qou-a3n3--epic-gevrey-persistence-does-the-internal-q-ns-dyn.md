@@ -64,3 +64,14 @@ is PROVED. Remainder in the physical layer now has exactly the
 classical shape: energy uniform + Leray uniform + sup-in-time OPEN
 (= the classical weak-vs-strong gap, discrete/graded image). That
 sup-in-time bound is the epic's single remaining analytic item.
+
+## 2026-08-15: eventual regularity FULLY COMPOSED — no unproved link
+
+quadratic_basin_invariant (GP4's mechanism, layer-agnostic algebra) +
+eventual_regularity_quadratic: Leray hypotheses + damped quadratic
+step => enstrophy enters and stays in the d/c basin after an
+eps-uniform entry time. The chain energy -> Leray -> epochs ->
+eventual regularity now has NO unproved hypothesis. The epic's sole
+remaining open item: sup-in-time behaviour INSIDE the eps-uniform
+initial window [0, 4E0/(delta*theta*)] — the classical weak-vs-strong
+gap at its narrowest in-QOU form.
