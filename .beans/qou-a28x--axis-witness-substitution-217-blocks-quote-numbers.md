@@ -113,3 +113,44 @@ same thing.
    in bulk.
 3. `markov_trace_canonical.py` emits no witness while being cited as a
    reproducer. Worth a bean of its own.
+
+---
+
+## The orphan list had a false-positive class: identifiers
+
+Working the 53 orphans turned up `prf:confinement-phase-stratification` with
+"one literal in NO witness: **10.1017**". That is not a measurement — it is the
+Cambridge University Press **DOI prefix**, from
+
+    [Boyd-Vandenberghe](https://doi.org/10.1017/CBO9780511804441)
+
+The scope regex ends a literal at any non-`[\w.]` character, and `/` qualifies,
+so `10.1017` matched and no witness will ever contain it. Same shape for arXiv
+ids (`arXiv:2601.05136`) and bare `doi:` references.
+
+Fixed narrowly — a decimal butted directly against `/`, or immediately preceded
+by `arXiv:`/`doi:`, is an identifier rather than a quantity. Checked against the
+surrounding text, not the literal, because the literal itself is
+indistinguishable from a real number.
+
+**221 -> 214 failing; `no-witness-declared` 190 -> 183.** Seven blocks were
+failing purely on citation identifiers.
+
+One fixture pins the thing that would make this too broad: *a real value on a
+line that ALSO carries a DOI stays in scope*. The exclusion is per-literal, not
+per-line — a citation on the line is not licence to stop checking the numbers
+beside it. Selftest 19 -> 23.
+
+### What the remaining orphans look like
+
+Now that identifiers are gone, the residue sorts into recognisable kinds:
+
+* **external constants** — `137.0359351` (1/alpha) in `prop:meson-em-sinh-closed-form`,
+  `7.32772` in `rem:gas-constant-derivation`. Real values, external sources, but
+  the line never names one, so `externally-attributed` cannot see them.
+* **derived-by-hand** — `0.1134` in `prf:hecke-satisfies-blitvic-hypothesis` is
+  `|z_D - z_C|`, arithmetic on two witnessed values that no witness stores.
+* **genuinely unsourced** — the rest.
+
+Those are three different fixes (name the source / declare the arithmetic /
+find a producer), so the next pass should split them before touching any.

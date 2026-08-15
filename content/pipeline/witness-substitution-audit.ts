@@ -115,6 +115,33 @@ const MARKER_WINDOW = 400;
 
 const LITERAL_MARKER = /<!--\s*literal-source:/i;
 
+/**
+ * Is this "decimal" actually part of an identifier rather than a quantity?
+ *
+ * `10.1017` is not a measurement — it is the Cambridge University Press DOI
+ * prefix, from `https://doi.org/10.1017/CBO9780511804441` in a citation link.
+ * It reached the orphan list (`prf:confinement-phase-stratification`, "one
+ * literal in NO witness") looking exactly like an unsourced physical value,
+ * and no witness will ever contain it.
+ *
+ * Two shapes, both checked against the surrounding text rather than the
+ * literal alone, because the literal itself is indistinguishable from a real
+ * number:
+ *
+ *   * a DOI — `10.NNNN/…`, i.e. immediately followed by `/`
+ *   * an arXiv id — `NNNN.NNNNN` immediately preceded by `arXiv:`
+ *
+ * Deliberately narrow. Anything followed by a slash could in principle be a
+ * ratio written inline, but this corpus writes those in LaTeX, and a decimal
+ * butted directly against `/` with no space is an identifier every time it
+ * occurs here.
+ */
+function isIdentifierNotQuantity(text: string, start: number, end: number): boolean {
+  if (text[end] === "/") return true; // DOI prefix: 10.1017/...
+  const before = text.slice(Math.max(0, start - 12), start);
+  return /arxiv:\s*$/i.test(before) || /doi:\s*$/i.test(before);
+}
+
 /** Exempts every literal in the file. For generated atlases and data dumps. */
 const BLOCK_MARKER = /<!--\s*literal-source-block:/i;
 
@@ -319,6 +346,7 @@ function scopedLiterals(
     const i = m.index!;
     if (frac.length < MIN_DECIMALS) continue;
     if (inFence(i)) continue;
+    if (isIdentifierNotQuantity(text, i, i + whole.length)) continue;
 
     const lineStart = text.lastIndexOf("\n", i) + 1;
     let lineEnd = text.indexOf("\n", i);
@@ -432,6 +460,20 @@ function selftest(): number {
       0,
     ],
     ["two literals on one line -> both in scope", "$1.633154$ and $1.248248$.", 2],
+    // Identifiers, not quantities. 10.1017 is the Cambridge UP DOI prefix and
+    // reached the orphan list looking like an unsourced physical value.
+    [
+      "a DOI prefix in a citation link -> not a quantity",
+      "see [Boyd-Vandenberghe](https://doi.org/10.1017/CBO9780511804441) for this.",
+      0,
+    ],
+    ["an arXiv id -> not a quantity", "Ref: arXiv:2601.05136 for the construction.", 0],
+    ["a bare `doi:` id -> not a quantity", "doi:10.1103/PhysRevD.98.030001", 0],
+    [
+      "a real value on a line that ALSO has a DOI -> still in scope",
+      "gives $1.633154\\ldots$; see https://doi.org/10.1017/CBO9780511804441",
+      1,
+    ],
   ];
 
   /** In scope, but attributed to something other than a witness. */
