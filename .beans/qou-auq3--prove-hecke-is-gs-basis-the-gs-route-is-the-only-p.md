@@ -1153,3 +1153,81 @@ than 3 — `bsWord₂` puts its extra letter on the left, so the `u'' ++ [σ_z]`
 hypothesis fails and the chain has to walk `descWord i j` down one letter at a
 time. Variable-length in `i′−j`, so it needs induction over the descending run,
 which is the first place in this arc a fixed script will not do.
+
+## §4t — the quadratic rule against a **general** Bokut–Shiao rule (3 compositions)
+
+§4q's missing instances, and the first family in this arc whose chain length is
+**not constant**. §4q reaches the quadratic-on-the-left composition for
+far-commutation, Yang–Baxter and Bokut–Shiao at `j = i − 1`, and says exactly why
+the general Bokut–Shiao rule is not among them: `bsWord₂ i' i j = σᵢ₋₁ :: descWord i j`
+puts the extra letter on the **left**, so for `j < i − 1` there is no `σ_z`
+closing the cycle. That prediction — "8 steps rather than 3" in §4q's prose — was
+half right; the engine says `3 + |v|` where `v = descWord i−2 j`, i.e. `4, 4, 5`
+at `n = 4`.
+
+Writing `v` for `descWord i−2 j`, so `descWord i' j = σᵢ₋₁ :: v`:
+
+    spoly = σᵢ σᵢ₋₁ σᵢ σᵢ₋₁ v  −  h · bsWord₁ i j  −  σᵢ₋₁ v σᵢ
+
+| # | target | rule | context | coefficient |
+|---|---|---|---|---|
+| 1 | `σᵢσᵢ₋₁σᵢσᵢ₋₁v` | Yang–Baxter | `(ε ∣ σᵢ₋₁ v)` | `−1` |
+| 2 | `σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁v` | `Q_{i−1}` | `(σᵢ₋₁σᵢ ∣ v)` | `1` |
+| 3 | `bsWord₁ i j` | Bokut–Shiao at `j` | `(ε ∣ ε)` | `−h` |
+| 4… | — | far-commutation | walking | `1` |
+
+After three fixed steps what is left is `σᵢ₋₁ σᵢ v − σᵢ₋₁ v σᵢ`: one generator on
+the wrong side of `v`. Every letter of `v` has index at most `i − 2`, so each is
+a far-commutation partner of `σᵢ`, and the tail of the chain walks `σᵢ` across
+`v` one letter at a time until the two terms coincide and cancel.
+
+**`farComm_transport` is the reusable part.** Stated for an arbitrary word `w`
+and an arbitrary left context `a` rather than for `descWord`:
+
+    (∀ y ∈ w, y.index + 1 < x)  →
+      c·(a σₓ w) − c·(a w σₓ)  →*  (coefficientwise zero)   in |w| steps
+
+The induction is on `w`, and the left context has to be a parameter because it
+grows: the letter just passed becomes part of the context for the next step. The
+17 open `B × B` compositions all end in the same kind of tail, so this should pay
+again rather than being one-family scaffolding.
+
+Two things that made it go in one build:
+
+* **State the stages over `v`, not over `descWord i' j`.** With every word an
+  explicit cons-list over one shared `v`, all but one distinctness obligation is
+  a length count on `List.length_cons` / `List.length_append`; the exception is
+  `bsWord₁` against `bsWord₂`, same length, separated by the first letter.
+* **`obtain ⟨yi⟩ := y` in the induction step.** `farCommRelation x y.index` has
+  leading monomial `[σₓ, σ_{y.index}]`, which is *defeq* but not *syntactically*
+  `[σₓ, y]` — enough to make `split_ifs` treat one word as two. Destructing the
+  generator first makes the letter literally `⟨yi⟩` everywhere.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × far-comm (j₀+1=j) 5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      BS × far-comm (same j)   3   §4s   general in n
+      quadratic × general BS   3   §4t   general in n
+      ---------------------------
+      proved                  70
+      remaining               22
+
+    inclusion compositions    22   §4m   (all)
+
+**The remaining 22**, re-derived from the witness:
+
+    6–8 steps    BS/YB × F at j₀ < j, and F × BS/YB      5
+    9–25 steps   BS/YB × BS/YB                          17
+
+Next: the 5 mixed far-commutation shapes at `j₀ < j` (6–8 steps). They are the
+same "letter on the wrong side of a descending run" situation §4t just solved, so
+`farComm_transport` should carry most of them; `F × BS/YB` is the one with the
+far-commutation rule on the *left*, which is a different overlap and may need the
+mirror transport (moving a letter leftwards). After that, the 17 `B × B`, whose
+25-step worst case is the largest single obligation in the file.
