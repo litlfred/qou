@@ -40,6 +40,7 @@ m = 24 dominates; per-m progress lines are emitted).
 """
 
 import json
+import pathlib
 import sys
 import time
 
@@ -527,7 +528,11 @@ def run_m(m):
         )
 
     res["checks"] = ck
-    res["seconds"] = round(time.time() - t0, 1)
+    # String, not a float. A wall-clock timing is provenance, not a measured
+    # quantity, but `round(..., 1)` still lands a raw float64 in the witness and
+    # the ratchet counts it like any other. Matches the corpus convention set by
+    # 4e126c6f41 (35 timing fields across 28 producers).
+    res["seconds"] = f"{time.time() - t0:.1f}"
     print(f"[m={m}] d={d} r=({r1s},{r2s}) integral={integral} "
           f"{sum(ck.values())}/{len(ck)} checks  {res['seconds']}s", flush=True)
     return res
@@ -579,7 +584,14 @@ witness = {
         "divisibility failure and pin nu only; no printed targets exist"
     ),
 }
-with open("computations/probes/gswz_epsm_descent_m4to24.witness.json", "w") as f:
+# Anchored to THIS FILE, not the caller's cwd. The literal path resolves only
+# when the probe happens to be invoked from the repo root; run from its own
+# directory — which is how the regeneration harness invokes every producer — it
+# died with FileNotFoundError AFTER completing a 69-second compute, so the work
+# was done and thrown away. Same cwd-assumption class as the `parents[2]` bug
+# fixed in 12 scripts, and as `ocneanu_param_from_fibre_dimension` on this branch.
+_OUT = pathlib.Path(__file__).resolve().parent / "gswz_epsm_descent_m4to24.witness.json"
+with open(_OUT, "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

@@ -1,10 +1,11 @@
 ---
 # qou-7kq3
-title: "raw-float64 ratchet is RED on main: 4 new dirty witnesses + 1 regressed"
-status: todo
+title: 'raw-float64 ratchet is RED on main: 4 new dirty witnesses + 1 regressed'
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-14T17:05:00Z
-updated_at: 2026-08-14T17:05:00Z
+updated_at: 2026-08-14T22:05:29Z
 ---
 
 ## What is red
@@ -71,3 +72,62 @@ producer: carry the value as `mpmath.mpf` from its source and serialize with
 One producer per line above. Cheapest first: the 1-field
 `gswz_epsm_residue_model_insufficient`, to confirm the `_precision.fmt` route
 before spending on the 19-field `qns-backscatter-sustainment-probe`.
+
+
+## Update 2026-08-14 — half drained; the other half is a DIFFERENT CLASS (PR #5025)
+
+The offender list moved while this was open (main drained one and added three
+q-NS probes), so the live set was six, not four. Three are now **0**:
+
+| witness | before | after | fix |
+|---|---|---|---|
+| `gswz_epsm_residue_model_insufficient` | 1 | **0** | `collision_fraction` is a ratio of two counts — exact rational, emitted as a string |
+| `gswz_epsm_descent_m4to24` | 5 | **0** | five `per_m.*.seconds` wall-clock timings, per the `4e126c6f41` convention |
+| `qbeta-g3-aomega-route-a-newton-polygon` | 9 | **0** | boundary slopes are **rationals**; `Fraction`, not `dM2 / dL2` |
+
+The third was a correctness fix as much as a ratchet one — the witness now
+records `['-1/2', '1/2']` where it recorded `[-0.5, 0.5]`, matching what the
+probe's own docstring already said.
+
+Also fixed on the way: `gswz_epsm_descent_m4to24_probe` wrote to a **cwd-relative
+literal path**, so run from its own directory — how the harness invokes every
+producer — it raised `FileNotFoundError` *after* a 69-second compute. The work
+completed and was discarded, and the witness could never be refreshed that way.
+Third instance of this class after the `parents[2]` bug in 12 scripts and
+`ocneanu_param_from_fibre_dimension`.
+
+### The remaining three are NOT a serialization defect
+
+```
+29  computations/qns-crow-efolds-probe.witness.json
+19  computations/qns-backscatter-sustainment-probe.witness.json
+17  computations/qns-tail-pileup-probe.witness.json
+```
+
+All three are q-NS shell-model probes whose values come out of a **float64
+Runge–Kutta time integration**. They say so themselves —
+`qns_tail_pileup_probe.py:30` reads *"Precision tier: float64 RK2, adaptive
+nonlinear CFL"*, and the witness carries `tier: exploratory`.
+
+So the audit's standing instruction — *"carry mpmath.mpf from the source and
+serialize with `_precision.fmt`; do NOT stringify the float"* — has **no source
+to carry from**. The two available moves are both wrong as unilateral edits:
+
+* **Stringify.** Explicitly what the audit forbids, and it would dress an f64
+  number as though precision had been preserved.
+* **Rewrite in mpmath.** Turns a declared-float64 exploratory PDE probe into a
+  different object, at enormous cost (mpmath RK2 over thousands of steps), and
+  it is someone else's in-flight q-NS work.
+
+This is the same shape as the **LP-dual carve-out** (`LP_DUAL_F64_FIELDS`),
+which exists precisely for "solver output, f64 by construction" — and which was
+**owner-approved**. A numerical-integrator carve-out would be the analogous
+move, and it is an owner decision, not something to add quietly. Deliberately
+not done here: adding to a carve-out list without sign-off is baseline-widening
+by another name.
+
+**Next step is a question, not a task:** should declared-`tier: exploratory`
+float64 integrator output be carved out (as solver output already is), or
+should the q-NS probes carry a precision tier that the ratchet accepts? Until
+that is answered the ratchet stays red on these three, and it is red for a true
+reason.

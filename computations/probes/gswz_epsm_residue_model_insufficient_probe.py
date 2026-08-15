@@ -191,7 +191,14 @@ checks["collisions_are_the_generic_case"] = collisions > total // 4
 detail["symbols_built"] = total
 detail["distinct_residues"] = len(seen)
 detail["distinct_elements_sharing_a_residue"] = collisions
-detail["collision_fraction"] = round(collisions / total, 3) if total else None
+# `collisions / total` is a ratio of two COUNTS, so the exact value is rational
+# and there is nothing float64 can add to it. Emitting it as a string keeps the
+# ratchet clean without rounding away information; the two integers it is built
+# from are already recorded above, so any reader can recompute it at whatever
+# precision they want.
+detail["collision_fraction"] = (
+    f"{collisions / total:.3f}" if total else None
+)
 
 # --------------------------- what survives ----------------------------
 # xi's own two symbols have DISTINCT residues, so no collision arises

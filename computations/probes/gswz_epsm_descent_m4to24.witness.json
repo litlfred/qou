@@ -3,7 +3,7 @@
  "probe": "gswz_epsm_descent_m4to24_probe",
  "engine": "python3-int-exact",
  "scriptFile": "gswz_epsm_descent_m4to24_probe.py",
- "commitSha": "7ad3054966347814c3ad1ca67764866dac242977",
+ "commitSha": "2d4591687af3a64f51954ee479b51e0788848085",
  "beans": [
   "qou-y3xv",
   "qou-9p9y"
@@ -27,7 +27,7 @@
    "canonical_root_integral": false,
    "nu_dlog": 0,
    "canonical_note": "fractional: m | 2r1 is False, m | r2 is False \u2014 canonical m-th root needs canonical roots of base elements on the alpha-line; abstract layer pins nu only",
-   "seconds": 0.3
+   "seconds": "0.2"
   },
   "6": {
    "field": "d=24, n_gal=12, N=3744",
@@ -38,7 +38,7 @@
    "canonical_root_integral": false,
    "nu_dlog": 0,
    "canonical_note": "fractional: m | 2r1 is True, m | r2 is False \u2014 canonical m-th root needs canonical roots of base elements on the alpha-line; abstract layer pins nu only",
-   "seconds": 0.8
+   "seconds": "0.7"
   },
   "8": {
    "field": "d=32, n_gal=16, N=4992",
@@ -49,7 +49,7 @@
    "canonical_root_integral": false,
    "nu_dlog": 0,
    "canonical_note": "fractional: m | 2r1 is False, m | r2 is False \u2014 canonical m-th root needs canonical roots of base elements on the alpha-line; abstract layer pins nu only",
-   "seconds": 1.9
+   "seconds": "1.7"
   },
   "12": {
    "field": "d=48, n_gal=24, N=7488",
@@ -60,7 +60,7 @@
    "canonical_root_integral": false,
    "nu_dlog": 0,
    "canonical_note": "fractional: m | 2r1 is False, m | r2 is False \u2014 canonical m-th root needs canonical roots of base elements on the alpha-line; abstract layer pins nu only",
-   "seconds": 8.7
+   "seconds": "7.8"
   },
   "24": {
    "field": "d=96, n_gal=48, N=14976",
@@ -71,7 +71,7 @@
    "canonical_root_integral": false,
    "nu_dlog": 0,
    "canonical_note": "fractional: m | 2r1 is False, m | r2 is False \u2014 canonical m-th root needs canonical roots of base elements on the alpha-line; abstract layer pins nu only",
-   "seconds": 68.1
+   "seconds": "59.6"
   }
  },
  "scope": "scope-(a): shift exponents, canonical-root integrality, nu, and (where integral) the canonical eps_m value, for every remaining m | 24; fractional cases disclose the exact divisibility failure and pin nu only; no printed targets exist"

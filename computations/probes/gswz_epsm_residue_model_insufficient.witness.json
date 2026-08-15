@@ -3,7 +3,7 @@
  "probe": "gswz_epsm_residue_model_insufficient_probe",
  "engine": "python3-int-exact",
  "scriptFile": "gswz_epsm_residue_model_insufficient_probe.py",
- "commitSha": "5991268c34f7f17cfe03667fd9af8b0bffeafe4d",
+ "commitSha": "2d4591687af3a64f51954ee479b51e0788848085",
  "beans": [
   "qou-y3xv",
   "qou-9p9y"
@@ -21,7 +21,7 @@
   "symbols_built": 310,
   "distinct_residues": 23,
   "distinct_elements_sharing_a_residue": 180,
-  "collision_fraction": 0.581,
+  "collision_fraction": "0.581",
   "xi_symbol_residues": {
    "z1": [
     3,
