@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T19:01:32.213108+00:00",
-  "commitSha": "fc276a5db39cea056580e6e1b54efc95f69bf2a2",
+  "computedAt": "2026-08-15T23:06:00.184677+00:00",
+  "commitSha": "a18ef36172ee841e08204f0b36b71ab4aeb9273a",
   "assertions": [
     {
       "name": "charge_symm_plus_coulomb_fixes_mirror_split",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "charge-symm+Coulomb split +0.998 MeV is >2× closer to AME +0.764 than the broken kernel +2.271; the residual ~30% is the uniform-sphere Coulomb over-estimate. Absolute binding open (edge-set/connected magnitude → charge-symmetric #3548)."
+      "source": "charge-symm+Coulomb split +0.847 MeV is >2× closer to AME +0.764 than the broken kernel +1.747; the residual ~30% is the uniform-sphere Coulomb over-estimate. Absolute binding open (edge-set/connected magnitude → charge-symmetric #3548)."
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "charge-symmetric-coulomb-binding",
   "scriptFile": "charge_symmetric_coulomb_binding.py",
-  "scriptHash": "324e8b3906e5",
-  "scriptCommitSha": "15f0ff7b6e18a87387cecdcab8faac2f2db6d4ac",
+  "scriptHash": "fe4d5c64daca",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,46 +27,51 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
-  "description": "Benchmarks the charge-symmetric strong bond + separate Coulomb light-nuclei binding vs AME (the #3564/#3570 diagnosis payoff). Charge-symm (all bonds = isoscalar f_pn) minus canonical Coulomb FIXES the ³H/³He mirror split — collapses to 1.00 MeV (Coulomb) from the broken kernel's 2.27–3.27 MeV vs AME 0.76 (~3× gain), exactly as predicted. Absolute binding NOT closed (D over-, ⁴He under-bound) — the edge-set/E₀/connected magnitude (#3548's connected-(2,1)/SU(4) mechanism, still on the charge-breaking kernel) must be re-run charge-symmetric. Verified split win, not a closure. Scope-(a), no wiring.",
+  "description": "Benchmarks the charge-symmetric strong bond + separate Coulomb light-nuclei binding vs AME (the #3564/#3570 diagnosis payoff). Charge-symm (all bonds = isoscalar f_pn) minus canonical Coulomb FIXES the ³H/³He mirror split — collapses to 0.85 MeV (Coulomb) from the broken kernel's 1.75–2.59 MeV vs AME 0.76 (~3× gain), exactly as predicted. Absolute binding NOT closed (D over-, ⁴He under-bound) — the edge-set/E₀/connected magnitude (#3548's connected-(2,1)/SU(4) mechanism, still on the charge-breaking kernel) must be re-run charge-symmetric. Verified split win, not a closure. Scope-(a), no wiring.",
   "data": {
     "E0_MeV": 4.185981363294476,
     "nuclei": {
       "D": {
         "ame": 2.2245662,
-        "ec": 0.0,
-        "broken": 3.890454565814218,
-        "broken_c": 3.890454565814218,
-        "symm_c": 3.890454565814218
+        "ec": "0.0",
+        "broken": 2.8337548241194703,
+        "broken_c": "2.833754824119470328014358528889715671539306640625",
+        "symm_c": "2.833754824119470328014358528889715671539306640625"
       },
       "T": {
         "ame": 8.4817962,
-        "ec": 0.0,
-        "broken": 12.958876338145966,
-        "broken_c": 12.958876338145966,
-        "symm_c": 11.671363697442654
+        "ec": "0.0",
+        "broken": 9.465292583381293,
+        "broken_c": "9.4652925833812933120725574553944170475006103515625",
+        "symm_c": "8.501264472358410984043075586669147014617919921875"
       },
       "3He": {
         "ame": 7.71804132,
-        "ec": 0.99841250061394,
-        "broken": 10.688104319252941,
-        "broken_c": 9.689691818639002,
-        "symm_c": 10.672951196828715
+        "ec": "0.8474218392918697728311719915980025717402204757995986416600957346487021",
+        "broken": 7.718219340620374,
+        "broken_c": "6.870797501328504296486050173811472993216444563262901358339904265351298",
+        "symm_c": "7.653842633066541211211903595071144442877699446075401358339904265351298"
       },
       "4He": {
         "ame": 28.2956624,
-        "ec": 0.9071179575033108,
-        "broken": 23.646980657398906,
-        "broken_c": 22.739862699895596,
-        "symm_c": 22.435609437382
+        "ec": "0.7699338374964722913395922730580176828345690207755500476273655909677097",
+        "broken": 17.183511924001667,
+        "broken_c": "16.41357808650519509005018734774587492962270636984944995237263440903229",
+        "symm_c": "16.23259510722034967674655890028027634640127082297444995237263440903229"
       }
     },
     "mirror_split": {
       "AME": 0.7637548799999996,
-      "broken": 2.270772018893025,
-      "broken_plus_coulomb": 3.2691845195069646,
-      "charge_symm_plus_coulomb": 0.9984125006139397
+      "broken": 1.7470732427609192,
+      "broken_plus_coulomb": "2.594495082052789015586507281582944054284165788299598641660095734648702",
+      "charge_symm_plus_coulomb": "0.8474218392918697728311719915980025717402204757995986416600957346487021"
     }
   }
 }

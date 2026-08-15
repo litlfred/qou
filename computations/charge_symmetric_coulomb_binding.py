@@ -53,10 +53,19 @@ E0 = M_E_MEV / (q * (q - 1))
 
 
 def f_bonds():
-    z = mp.sqrt(q) / (q + 1)
+    # Convention D: z = q^3/(q^2+1). The kernel is STRUCTURAL --
+    # f_pp = z, f_nn = z - h, f_pn = z - h/2 (#2089) -- and these lines
+    # previously carried the C-substituted EXPANSION of exactly that, which is
+    # where the q^{3/2} came from. Writing the structural form instead both
+    # migrates the convention and removes the expansion: under D every factor
+    # is rational, because D never leaves Q(q).
+    #
+    #     f_pp = q^3/(q^2+1)      f_nn = 1/(q^3+q)      f_pn = (q^4+1)/(2q(q^2+1))
+    z = q ** 3 / (q ** 2 + 1)
+    h = q - 1 / q
     f_pp = z
-    f_nn = (q ** mp.mpf("1.5") - q ** 3 - q ** 2 + q + 1) / (q * (q + 1))
-    f_pn = (q ** mp.mpf("1.5") - (q + 1) * (q ** 2 - 1) / 2) / (q * (q + 1))
+    f_nn = z - h
+    f_pn = z - h / 2
     return f_pp, f_pn, f_nn
 
 
