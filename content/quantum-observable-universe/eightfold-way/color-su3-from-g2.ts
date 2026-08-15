@@ -16,7 +16,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:color-su3-from-g2",
   title: "Color $\\mathrm{SU}(3)$ from octonionic stabilization",
-  md: "color-su3-from-g2.md",
   uses: [
     // NOTE: there is no `def:octonion-algebra` in the corpus. The octonion
     // algebra and its automorphism group G_2 are used here but never defined

@@ -27,9 +27,14 @@ the kind never had.
 
 ## Safe to remove — provably inert (15)
 
-Every `md:` warning is a **prose** block in `eightfold-way` declaring
-`md: "<name>.md"` at the top level. The real field is `companions.md`;
-`ProseSchema` has `companions` and no `md`.
+Every `md:` warning is in `eightfold-way`, declaring `md: "<name>.md"` at the
+top level. The real field is `companions.md` — no block schema has a top-level
+`md`.
+
+Correcting my own first reading: these are **not** all prose. They are **8
+`remark`, 6 `proposition`, 1 `prose`** — three kinds, two of which extend
+`BlockBase`. So this is not a light-kind quirk at all; it is a chapter-wide
+authoring habit, and the kind is irrelevant because no kind has the field.
 
 Removal cannot change behaviour, and the argument does not rest on convention:
 **the key is stripped before anything downstream sees it**, so it has never had
