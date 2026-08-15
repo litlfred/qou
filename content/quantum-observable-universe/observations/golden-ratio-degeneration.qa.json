@@ -1321,6 +1321,22 @@
         "reviewed_at": "2026-08-15T10:30:59.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "33f7de326779",
+          "ts": "c5931fdbdde2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:14.715Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "severity": "'The golden ratio is not an input... It emerges strictly from the S5 symmetry'",
+        "evidence": "load-bearing anti-numerology disambiguation; kept\r"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1340,6 +1356,22 @@
         "reviewed_at": "2026-08-15T10:30:59.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "33f7de326779",
+          "ts": "c5931fdbdde2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:14.751Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "severity": "full remark read; no rhetorical pivot construction present",
+        "evidence": "\r"
       }
     ],
     "trap-em-dash": [
@@ -1359,6 +1391,22 @@
         "reviewed_at": "2026-08-15T10:30:59.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 383 words)"
+      },
+      {
+        "field_hash": {
+          "md": "33f7de326779",
+          "ts": "c5931fdbdde2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:14.791Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "severity": "one spaced dash ('loses its elliptic structure — the three color tubes...')",
+        "evidence": "single elaborating dash; low density\r"
       }
     ],
     "trap-triples": [
@@ -1378,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:30:59.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 383 words)"
+      },
+      {
+        "field_hash": {
+          "md": "33f7de326779",
+          "ts": "c5931fdbdde2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:14.845Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "severity": "three regimes table; three golden-ratio context bullets (Penrose/Fibonacci/E8)",
+        "evidence": "each element carries distinct content\r"
       }
     ],
     "trap-closing-aphorism": [
@@ -1397,6 +1461,22 @@
         "reviewed_at": "2026-08-15T10:30:59.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "33f7de326779",
+          "ts": "c5931fdbdde2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:14.881Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "severity": "full remark read; no closing aphorism construction present",
+        "evidence": "\r"
       }
     ],
     "trap-meta-commentary": [
@@ -1416,6 +1496,22 @@
         "reviewed_at": "2026-08-15T10:30:59.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "33f7de326779",
+          "ts": "c5931fdbdde2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:14.936Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "severity": "full remark read; no meta commentary construction present",
+        "evidence": "\r"
       }
     ],
     "trap-thesis-restatement": [
@@ -1435,6 +1531,22 @@
         "reviewed_at": "2026-08-15T10:30:59.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "33f7de326779",
+          "ts": "c5931fdbdde2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:14.998Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "severity": "final paragraph closed with a third sentence restating derived-consequence status already established",
+        "evidence": "fixed: removed closing sentence 'Its status as the boundary of stable chiral structure is a derived consequence of the Descartes universe.' — content already in SS Physical significance\r"
       }
     ],
     "trap-performed-warmth": [
@@ -1454,6 +1566,22 @@
         "reviewed_at": "2026-08-15T10:30:59.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "33f7de326779",
+          "ts": "c5931fdbdde2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:15.076Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "severity": "full remark read; no performed warmth construction present",
+        "evidence": "\r"
       }
     ],
     "trap-superlative": [
@@ -1473,6 +1601,22 @@
         "reviewed_at": "2026-08-15T10:30:59.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "33f7de326779",
+          "ts": "c5931fdbdde2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:15.161Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "severity": "full remark read; no superlative construction present",
+        "evidence": "\r"
       }
     ],
     "trap-nonspeakable": [
@@ -1492,8 +1636,24 @@
         "reviewed_at": "2026-08-15T10:30:59.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "33f7de326779",
+          "ts": "c5931fdbdde2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:15.284Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "severity": "full remark read; no nonspeakable construction present",
+        "evidence": "\r"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.293Z"
+  "updated_at": "2026-08-15T11:27:15.284Z"
 }

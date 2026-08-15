@@ -1253,6 +1253,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "3 negation-contrast construction(s): \", not a fundamental constant.\"; \", not a decay-sector preference.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "06fbf2e3f5d7",
+          "ts": "5d9ccac7b7f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:40.885Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "'It is not a fourth calibration'; 'a unit choice, not a fundamental constant'; 'not an accuracy result. It is the calibration restated'",
+        "notes": "load-bearing epistemic classifications - the block exists to make exactly these status separations (no-fourth-CAL discipline)"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1272,6 +1288,22 @@
         "reviewed_at": "2026-08-15T10:30:59.268Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "06fbf2e3f5d7",
+          "ts": "5d9ccac7b7f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:40.990Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "'sharpening a quantity defined by an assumed offset tests the offset, not the modulus'",
+        "notes": "substantive scope correction of the q* lever, not a reframe flourish"
       }
     ],
     "trap-em-dash": [
@@ -1292,6 +1324,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "11 stylistic spaced dashes in 839 words (1.31/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "06fbf2e3f5d7",
+          "ts": "5d9ccac7b7f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:41.056Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "'the arithmetic - not a preference - selects the second' and similar",
+        "notes": "parenthetical disambiguation preventing a real misreading (that the proton pin is stylistic); density acceptable"
       }
     ],
     "trap-triples": [
@@ -1311,6 +1359,22 @@
         "reviewed_at": "2026-08-15T10:30:59.268Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 839 words)"
+      },
+      {
+        "field_hash": {
+          "md": "06fbf2e3f5d7",
+          "ts": "5d9ccac7b7f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:41.098Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "Significance closer: unit choice / extracted q_0 / derived hadronic residual",
+        "notes": "substantive - mirrors the three-CAL structure"
       }
     ],
     "trap-closing-aphorism": [
@@ -1330,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:30:59.268Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "06fbf2e3f5d7",
+          "ts": "5d9ccac7b7f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:41.138Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; final line is factual, not a placed quotable"
       }
     ],
     "trap-meta-commentary": [
@@ -1349,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:30:59.268Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "06fbf2e3f5d7",
+          "ts": "5d9ccac7b7f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:41.178Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "two narrated-emphasis clauses",
+        "notes": "fixed: 'It is not the one the computed values use, and the distinction is worth stating plainly rather than leaving a reader to infer it from a call site.' -> 'It is not the pin the computed values use.'; 'Two consequences follow, and both are easy to get wrong:' -> 'Two consequences follow:'"
       }
     ],
     "trap-thesis-restatement": [
@@ -1368,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:30:59.268Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "06fbf2e3f5d7",
+          "ts": "5d9ccac7b7f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:41.227Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "'It structuralizes the framework calibrations.' closes Scope exclusions section",
+        "notes": "positive complement of the four exclusion bullets, section-level bookkeeping, not a block-final restatement"
       }
     ],
     "trap-performed-warmth": [
@@ -1387,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:30:59.268Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "06fbf2e3f5d7",
+          "ts": "5d9ccac7b7f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:41.282Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; institutional register throughout, no personal warmth"
       }
     ],
     "trap-superlative": [
@@ -1406,6 +1532,21 @@
         "reviewed_at": "2026-08-15T10:30:59.268Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "06fbf2e3f5d7",
+          "ts": "5d9ccac7b7f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:41.329Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; no unqualified maximum-strength claims"
       }
     ],
     "trap-nonspeakable": [
@@ -1425,8 +1566,23 @@
         "reviewed_at": "2026-08-15T10:30:59.268Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "06fbf2e3f5d7",
+          "ts": "5d9ccac7b7f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:41.387Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; prose parses aloud; no stalling noun chains"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.268Z"
+  "updated_at": "2026-08-15T11:27:41.387Z"
 }
