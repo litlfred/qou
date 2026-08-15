@@ -26,6 +26,24 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (`computations/witness_raw_float64_audit.py`).
+    These probes compute in the float64 tier by design, so the fix is at
+    serialization, not at the numerics: `_precision.fmt` renders a float via
+    `str()`, which round-trips exactly. Non-floats (int, bool, str, list) pass
+    through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 GAMMA, D0, DT = 1.0, 1.0, 1.0e-5
 T_STAR = math.pi * D0 * D0 / GAMMA
 
@@ -53,11 +71,11 @@ def main() -> None:
         t_ode = integrate(v10)
         rel = abs(t_ode - t_pred) / t_pred
         worst = max(worst, rel)
-        w.add_data(f"v10_1e-{e}_t_pred", t_pred)
-        w.add_data(f"v10_1e-{e}_t_ode", t_ode)
-        w.add_data(f"v10_1e-{e}_rel_err", rel)
+        w.add_data(f"v10_1e-{e}_t_pred",_f(t_pred))
+        w.add_data(f"v10_1e-{e}_t_ode",_f(t_ode))
+        w.add_data(f"v10_1e-{e}_rel_err",_f(rel))
         print(f"  V1_0=1e-{e}: t_pred={t_pred:.6f}  t_ode={t_ode:.6f}  rel={rel:.2e}  margin(1-u)={1-u_pred:.3e}")
-    w.add_data("worst_rel_err", worst)
+    w.add_data("worst_rel_err",_f(worst))
     w.add_assertion(
         "Analytic engagement time u = 1-(V1_0/d0^2)^(2/3) matches the ODE sweep "
         "(rel err < 1e-3 across 7 decades of core size)",
@@ -86,10 +104,9 @@ def main() -> None:
         "open question. Consistent with lock-scaling (beta~1) and the "
         "sustained-forcing picture. Exploratory tier."
     )
-    w.add_data("tier", "exploratory")
-    w.add_data("finding",
-               "Race DECIDED in-model: u_overlap = 1-(V1_0/d0^2)^(2/3) < 1 always; "
-               "pair channel branch B for every positive core size. Scope (a).")
+    w.add_data("tier",_f("exploratory"))
+    w.add_data("finding", _f("Race DECIDED in-model: u_overlap = 1-(V1_0/d0^2)^(2/3) < 1 always; "
+               "pair channel branch B for every positive core size. Scope (a)."))
     w.save()
     print("Saved witness: qns-overlap-race-probe.witness.json")
 

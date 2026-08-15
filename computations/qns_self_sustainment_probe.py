@@ -35,6 +35,24 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (`computations/witness_raw_float64_audit.py`).
+    These probes compute in the float64 tier by design, so the fix is at
+    serialization, not at the numerics: `_precision.fmt` renders a float via
+    `str()`, which round-trips exactly. Non-floats (int, bool, str, list) pass
+    through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 N = 12
 T_TURNOVERS = 30.0
 
@@ -79,9 +97,9 @@ def main() -> None:
         ratio = om_end / om_max
         sustained = blew or ratio > 0.5
         all_decay = all_decay and not sustained
-        w.add_data(f"eps_1e-{e}_omega_end_over_max", ratio)
-        w.add_data(f"eps_1e-{e}_omega_max_over_0", om_max / om0)
-        w.add_data(f"eps_1e-{e}_blowup", blew)
+        w.add_data(f"eps_1e-{e}_omega_end_over_max",_f(ratio))
+        w.add_data(f"eps_1e-{e}_omega_max_over_0",_f(om_max / om0))
+        w.add_data(f"eps_1e-{e}_blowup",_f(blew))
         print(f"  eps=1e-{e}: Om_end/Om_max={ratio:.3e}  Om_max/Om0={om_max/om0:.3f}  "
               f"turnovers={tt:.1f}  {'BLEW' if blew else ('SUSTAINED' if sustained else 'decays')}")
     w.add_assertion(
@@ -107,8 +125,8 @@ def main() -> None:
         "require genuinely infinite-dimensional sustainment (the q->1 limit "
         "escaping every finite truncation). Scope (a); exploratory tier."
     )
-    w.add_data("tier", "exploratory")
-    w.add_data("n_shells", N)
+    w.add_data("tier",_f("exploratory"))
+    w.add_data("n_shells",_f(N))
     w.save()
     print("Saved witness: qns-self-sustainment-probe.witness.json")
 

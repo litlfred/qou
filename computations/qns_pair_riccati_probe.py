@@ -44,6 +44,24 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (`computations/witness_raw_float64_audit.py`).
+    These probes compute in the float64 tier by design, so the fix is at
+    serialization, not at the numerics: `_precision.fmt` renders a float via
+    `str()`, which round-trips exactly. Non-floats (int, bool, str, list) pass
+    through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 GAMMA = 1.0
 D0 = 1.0          # initial separation
 V10 = 1.0e-4      # initial stretching coordinate (core scale^2)
@@ -92,12 +110,12 @@ def main() -> None:
     c_early = cprimes[len(cprimes) // 10]
     c_late = cprimes[-1]
     decay_ratio = c_late / c_early if c_early else float("inf")
-    w.add_data("t_star_inviscid", T_STAR)
-    w.add_data("t_overlap", t_overlap if t_overlap is not None else -1.0)
-    w.add_data("c_prime_early", c_early)
-    w.add_data("c_prime_late", c_late)
-    w.add_data("c_prime_decay_ratio", decay_ratio)
-    w.add_data("steps", n)
+    w.add_data("t_star_inviscid", _f(T_STAR))
+    w.add_data("t_overlap", _f(t_overlap if t_overlap is not None else -1.0))
+    w.add_data("c_prime_early", _f(c_early))
+    w.add_data("c_prime_late", _f(c_late))
+    w.add_data("c_prime_decay_ratio", _f(decay_ratio))
+    w.add_data("steps", _f(n))
     print(f"\n  overlap onset t={t_overlap}  c'_early={c_early:.3e}  c'_late={c_late:.3e}  ratio={decay_ratio:.3e}")
 
     riccati_fails = decay_ratio < 1e-2
@@ -132,11 +150,10 @@ def main() -> None:
         "the lock-scaling probe and the sustained-forcing picture. Exploratory "
         "tier, float64 Euler."
     )
-    w.add_data("tier", "exploratory")
-    w.add_data("finding",
-               f"Phase 1: Riccati HOLDS, c' exactly uniform (invariant d^2*Omega). Overlap "
+    w.add_data("tier", _f("exploratory"))
+    w.add_data("finding", _f(f"Phase 1: Riccati HOLDS, c' exactly uniform (invariant d^2*Omega). Overlap "
                f"saturation kills it (decay {decay_ratio:.2e}) engaging ~0.2% before t*. "
-               "Sharpened question: does overlap always engage before d->0? Scope (a).")
+               "Sharpened question: does overlap always engage before d->0? Scope (a)."))
     w.save()
     print("Saved witness: qns-pair-riccati-probe.witness.json")
 

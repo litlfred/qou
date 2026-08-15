@@ -46,6 +46,24 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (`computations/witness_raw_float64_audit.py`).
+    These probes compute in the float64 tier by design, so the fix is at
+    serialization, not at the numerics: `_precision.fmt` renders a float via
+    `str()`, which round-trips exactly. Non-floats (int, bool, str, list) pass
+    through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 RE = 1.0e4          # Reynolds number for the cascade cutoff
 SIGMA = 0.5         # Gevrey decay rate (model B)
 EPS_LADDER = [10.0 ** (-e) for e in range(1, 7)]  # 1e-1 .. 1e-6
@@ -113,14 +131,14 @@ def main() -> None:
             q = 1.0 + eps
             om = omega(q, model)
             oms.append(om)
-            w.add_data(f"model{model}_eps_{eps:.0e}_omega", om)
-            w.add_data(f"model{model}_eps_{eps:.0e}_eps_omega", eps * om)
+            w.add_data(f"model{model}_eps_{eps:.0e}_omega",_f(om))
+            w.add_data(f"model{model}_eps_{eps:.0e}_eps_omega",_f(eps * om))
             print(f"  eps={eps:.0e}  N_eff={n_eff(q):>8d}  Omega={om:.6e}  eps*Omega={eps*om:.6e}  [{time.time()-t0:5.1f}s]")
         alpha = fit_alpha(EPS_LADDER, oms)
         verdict = classify(alpha)
         results[model] = (alpha, verdict)
-        w.add_data(f"model{model}_alpha_fit", alpha)
-        w.add_data(f"model{model}_regime", verdict)
+        w.add_data(f"model{model}_alpha_fit",_f(alpha))
+        w.add_data(f"model{model}_regime",_f(verdict))
         print(f"  → fitted α_{model} = {alpha:.4f}  regime: {verdict}")
 
     aA, vA = results["A"]
@@ -164,13 +182,12 @@ def main() -> None:
         "Decides the regime of the MODELED spectrum only — not the true q-NS flow (open). "
         "Precision tier: float64+fsum (scaling fit), not a 50-dps canonical derivation."
     )
-    w.add_data("tier", "exploratory")
-    w.add_data("re", RE)
-    w.add_data("sigma", SIGMA)
-    w.add_data("qint_convention", "one-sided (q^k-1)/(q-1), matches Lean qInt")
-    w.add_data("finding",
-               f"alpha_A={aA:.4f} ({vA}); alpha_B={aB:.4f} ({vB}). "
-               "See per-eps omega + eps*omega traces for the surreal criterion.")
+    w.add_data("tier",_f("exploratory"))
+    w.add_data("re",_f(RE))
+    w.add_data("sigma",_f(SIGMA))
+    w.add_data("qint_convention",_f("one-sided (q^k-1)/(q-1), matches Lean qInt"))
+    w.add_data("finding", _f(f"alpha_A={aA:.4f} ({vA}); alpha_B={aB:.4f} ({vB}). "
+               "See per-eps omega + eps*omega traces for the surreal criterion."))
 
     w.save()
     print(f"\nSaved witness: qns-enstrophy-grade-probe.witness.json  [{time.time()-t0:.1f}s total]")

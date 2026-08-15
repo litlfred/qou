@@ -38,6 +38,24 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (`computations/witness_raw_float64_audit.py`).
+    These probes compute in the float64 tier by design, so the fix is at
+    serialization, not at the numerics: `_precision.fmt` renders a float via
+    `str()`, which round-trips exactly. Non-floats (int, bool, str, list) pass
+    through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 GAMMA = 1.0  # circulation (fixed data-dependent constant; scaling is Gamma-independent)
 EPS_LADDER = [10.0 ** (-e) for e in range(1, 9)]
 
@@ -55,13 +73,13 @@ def main() -> None:
         C_L = 1.0 / kappa2_lock
         xs.append(-math.log(eps))
         ys.append(math.log(C_L))
-        w.add_data(f"eps_{eps:.0e}_kappa2_lock", kappa2_lock)
-        w.add_data(f"eps_{eps:.0e}_C_L", C_L)
+        w.add_data(f"eps_{eps:.0e}_kappa2_lock",_f(kappa2_lock))
+        w.add_data(f"eps_{eps:.0e}_C_L",_f(C_L))
         print(f"  eps={eps:.0e}  nu_q={nu_q:.3e}  kappa2_lock={kappa2_lock:.3e}  C_L={C_L:.6e}")
     n = len(xs)
     xb, yb = sum(xs) / n, sum(ys) / n
     beta = sum((x - xb) * (y - yb) for x, y in zip(xs, ys)) / sum((x - xb) ** 2 for x in xs)
-    w.add_data("beta_fit", beta)
+    w.add_data("beta_fit",_f(beta))
     print(f"  -> fitted beta = {beta:.5f}  (branch A: 0; branch B: 1; marginal: (0,1))")
 
     w.add_assertion(
@@ -86,11 +104,10 @@ def main() -> None:
         "TENSION FLAG (the corpus argues branch A; its own formula's nu-scaling points "
         "to B in the limit), not a resolution. Exploratory tier; float64 exact formula."
     )
-    w.add_data("tier", "exploratory")
-    w.add_data("finding",
-               f"beta_fit={beta:.5f}: the corpus lock formula implies branch B on the "
+    w.add_data("tier",_f("exploratory"))
+    w.add_data("finding", _f(f"beta_fit={beta:.5f}: the corpus lock formula implies branch B on the "
                "ladder; positive lock at fixed q is consistent with branch-A reading "
-               "at fixed q. Tension flagged, conj:levi-degeneracy NOT resolved.")
+               "at fixed q. Tension flagged, conj:levi-degeneracy NOT resolved."))
     w.save()
     print("Saved witness: qns-levi-lock-scaling-probe.witness.json")
 

@@ -31,6 +31,24 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (`computations/witness_raw_float64_audit.py`).
+    These probes compute in the float64 tier by design, so the fix is at
+    serialization, not at the numerics: `_precision.fmt` renders a float via
+    `str()`, which round-trips exactly. Non-floats (int, bool, str, list) pass
+    through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 N = 12
 F_VISC = 1.5
 
@@ -75,9 +93,9 @@ def main() -> None:
         R = sq / sc if sc > 0 else float("inf")
         near1 = 0.2 < R < 5.0
         all_ratio_near_1 = all_ratio_near_1 and near1
-        w.add_data(f"eps_1e-{e}_S_q", sq)
-        w.add_data(f"eps_1e-{e}_S_classical", sc)
-        w.add_data(f"eps_1e-{e}_R", R)
+        w.add_data(f"eps_1e-{e}_S_q",_f(sq))
+        w.add_data(f"eps_1e-{e}_S_classical",_f(sc))
+        w.add_data(f"eps_1e-{e}_R",_f(R))
         print(f"  eps=1e-{e}: S_q={sq:.4e}  S_cl={sc:.4e}  R={R:.3f}  steps={st1}/{st2}  "
               f"{'~viscous (no q-sustainment)' if near1 else 'DIVERGENT BEHAVIOUR'}")
     w.add_assertion(
@@ -99,8 +117,8 @@ def main() -> None:
         "core once more. R >> 1 would instead be evidence of q-specific "
         "self-sustainment. Scope (a); exploratory tier; float64 RK2."
     )
-    w.add_data("tier", "exploratory")
-    w.add_data("f_visc", F_VISC)
+    w.add_data("tier",_f("exploratory"))
+    w.add_data("f_visc",_f(F_VISC))
     w.save()
     print("Saved witness: qns-self-sustainment-discriminator.witness.json")
 

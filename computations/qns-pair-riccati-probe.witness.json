@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T12:21:28.440790+00:00",
-  "commitSha": "98a984156a3033d47ecd213c347899343feb80da",
+  "computedAt": "2026-08-15T03:17:23.068224+00:00",
+  "commitSha": "6982652c0cb2d7e40442d5395f5afda344b1c7ff",
   "assertions": [
     {
       "name": "Phase-wise structure: c'_n is EXACTLY UNIFORM in the separated phase (exact invariant d^2*Omega conserved) and collapses only at overlap onset",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 428,
+  "durationMs": 370,
   "computation": "qns-pair-riccati-probe",
   "scriptFile": "qns_pair_riccati_probe.py",
-  "scriptHash": "35200bac309f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2c3d82955695",
+  "scriptCommitSha": "ff92e214435373f69f93b57a6f186937b0ae1795",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,15 +33,17 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "PC2 (bean qou-6ngr): tests whether anti-parallel-pair collision data satisfies the uniform-c' discrete Riccati lower bound (hypothesis of the Lean lemma riccati_lower_growth) in the corpus two-regime ODE model. SHARP PHASE-WISE FINDING: in the separated (Biot-Savart) phase the bound HOLDS with c' EXACTLY uniform — d^2*Omega is an exact invariant of the phase-1 flow ((d^2)' = -Gamma/pi, Omega' = Gamma*Omega/(pi*d^2)), giving c' = Gamma/(pi*d0^2*Omega0) = 1/pi here — the branch-A Riccati mechanism is LIVE during the approach. It is destroyed precisely at overlap onset (hyperbolic-overlap saturation caps the strain), which engages at t_overlap ~ 3.1348, only ~0.2% before the inviscid singular time t* = pi: the saturation is the regularizing cutoff, engaging just before blow-up. The pair-channel question thus sharpens to: does the overlap regime ALWAYS engage before d -> 0 (regular, branch B), or can data delay V1 growth past t* (blow-up, branch A)? Scope (a) throughout. Consistent with the lock-scaling probe and the sustained-forcing picture. Exploratory tier, float64 Euler.",
   "data": {
-    "t_star_inviscid": 3.141592653589793,
-    "t_overlap": 3.1348300000120695,
-    "c_prime_early": 0.3183100243547847,
-    "c_prime_late": 7.478744804403878e-07,
-    "c_prime_decay_ratio": 2.3495159536880168e-06,
+    "t_star_inviscid": "3.141592653589793",
+    "t_overlap": "3.1348300000120695",
+    "c_prime_early": "0.3183100243547847",
+    "c_prime_late": "7.478744804403878e-07",
+    "c_prime_decay_ratio": "2.3495159536880168e-06",
     "steps": 376992,
     "tier": "exploratory",
     "finding": "Phase 1: Riccati HOLDS, c' exactly uniform (invariant d^2*Omega). Overlap saturation kills it (decay 2.35e-06) engaging ~0.2% before t*. Sharpened question: does overlap always engage before d->0? Scope (a)."
