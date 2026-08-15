@@ -38,12 +38,15 @@ correspondence: there is no re-indexing to justify.
 
 ## Scope
 
-**All three Hecke relations are now proved on all of `SYT μ`** — `genMat_quadratic`,
-`genMat_far_comm`, and `genMat_braid_generic`.  The braid is proved for a **generic**
-orbit, i.e. one where all six words of the `⟨s_k, s_{k+1}⟩`-orbit are `SwapAdmissible`;
-the case tree for smaller orbits, where some words fail admissibility and terms drop, is
-what remains, along with packaging the three into a `Hecke →ₐ` algebra map.
-`hoefsmit_seminormal_rep` keeps its `-- Ref:`-cited `sorry` until both land.
+**All three Hecke relations are proved on all of `SYT μ`, unconditionally** —
+`genMat_quadratic`, `genMat_far_comm`, and `genMat_braid`.  No hypothesis on the orbit: the
+braid dispatches on three admissibility flags to seven shape theorems (sizes `1`, `2` in two
+orientations, `3` in three positions, and the generic `6`), with every further hypothesis
+those need *derived* through the classification iffs in `TableauCells`.
+
+What remains for `hoefsmit_seminormal_rep` is **packaging only** — feeding the three
+relations to `Hecke.lift`, which is an index translation between `k : ℕ` here and
+`Fin n` there.  The `-- Ref:`-cited `sorry` stands until that lands.
 
 The quadratic is the *easy* one of the three, and it is worth saying why: it is
 **column-local**.  Each column of `genMat` has support in `{T, s_k·T}`
@@ -1668,6 +1671,53 @@ theorem genMat_braid_of_fixed_succ_three (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) 
       genMat_apply_of_ne q (k + 1) hl hln h2 hBl (by rw [bBT]; exact h1),
       genMat_of_not_admissible q (k + 1) hl hln h3 hEl]
     ring
+
+/-- **The braid relation, unconditionally.**
+
+`ρ(σ_k)ρ(σ_{k+1})ρ(σ_k) = ρ(σ_{k+1})ρ(σ_k)ρ(σ_{k+1})` on all of `SYT μ`, arbitrary shape, no
+hypothesis on the orbit.
+
+The proof dispatches on three flags — does `σ_k` move `T`, does `σ_{k+1}`, does `σ_{k+1}`
+move `s_k·T` — to the seven shape theorems.  Every remaining hypothesis those theorems ask
+for is *derived* rather than assumed, via the classification iffs: `hBk` from `hAl`
+(`swapAdmissible_cross_iff` — they are the same condition on the cells of `k` and `k+2`), and
+the two length-`2` admissibilities from `T`'s own (`swapAdmissible_word_left_iff` /
+`_right_iff`).
+
+With `genMat_quadratic` and `genMat_far_comm`, this completes the three Hecke relations
+unconditionally. -/
+theorem genMat_braid (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card) :
+    genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn
+      = genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln := by
+  classical
+  ext T' T
+  by_cases hka : SwapAdmissible T k
+  · by_cases hla : SwapAdmissible T (k + 1)
+    · by_cases hAl : SwapAdmissible (swapTableau T k hk hkn hka) (k + 1)
+      · -- generic: the other three admissibilities are all derived
+        have hBk := (swapAdmissible_cross_iff T hk hkn hln hka hla).mp hAl
+        have hDk := (swapAdmissible_word_left_iff T hk hkn hln hka hAl).mpr hla
+        have hEl := (swapAdmissible_word_right_iff T hk hkn hln hla hBk).mpr hka
+        exact genMat_braid_generic q hq hq1 k hk hkn hl hln hka hla hAl hBk hDk hEl T'
+      · -- `s_k·T` does not extend, hence neither does `s_{k+1}·T`: the middle position
+        have hBk : ¬ SwapAdmissible (swapTableau T (k + 1) hl hln hla) k := fun h =>
+          hAl ((swapAdmissible_cross_iff T hk hkn hln hka hla).mpr h)
+        exact genMat_braid_of_middle q hq hq1 k hk hkn hl hln hka hla hAl hBk T'
+    · by_cases hAl : SwapAdmissible (swapTableau T k hk hkn hka) (k + 1)
+      · have hDk : ¬ SwapAdmissible
+            (swapTableau (swapTableau T k hk hkn hka) (k + 1) hl hln hAl) k := fun h =>
+          hla ((swapAdmissible_word_left_iff T hk hkn hln hka hAl).mp h)
+        exact genMat_braid_of_succ_fixed_three q hq hq1 k hk hkn hl hln hka hla hAl hDk T'
+      · exact genMat_braid_of_succ_fixed q hq hq1 k hk hkn hl hln hka hla hAl T'
+  · by_cases hla : SwapAdmissible T (k + 1)
+    · by_cases hBk : SwapAdmissible (swapTableau T (k + 1) hl hln hla) k
+      · have hEl : ¬ SwapAdmissible
+            (swapTableau (swapTableau T (k + 1) hl hln hla) k hk hkn hBk) (k + 1) := fun h =>
+          hka ((swapAdmissible_word_right_iff T hk hkn hln hla hBk).mp h)
+        exact genMat_braid_of_fixed_succ_three q hq hq1 k hk hkn hl hln hka hla hBk hEl T'
+      · exact genMat_braid_of_fixed_succ q hq hq1 k hk hkn hl hln hka hla hBk T'
+    · exact genMat_braid_of_both_fixed q k hk hkn hl hln hka hla T'
 
 end Braid
 
