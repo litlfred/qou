@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean"
   },
   "source_hashes": {
-    "ts": "7cc169f31e93",
     "md": "4df07c849701",
-    "lean": "022a7965c249"
+    "ts": "7cc169f31e93",
+    "lean": "022a7965c249",
+    "lean_statement": "78c8123beec8"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -2516,26 +2517,6 @@
         "reviewed_sha": "a75f5c65fbef54e3638de522f5129eab8ca338ec"
       }
     ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "4df07c849701",
-          "ts": "7cc169f31e93",
-          "lean": "bb0b7fb3727a",
-          "lean_statement": "5fd2dcccd417"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T04:37:30.630Z",
-        "reviewed_sha": "a75f5c65fbef54e3638de522f5129eab8ca338ec"
-      }
-    ],
     "wall-side-correct": [
       {
         "field_hash": {
@@ -2823,7 +2804,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93",
+          "lean": "022a7965c249",
+          "lean_statement": "78c8123beec8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.673Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

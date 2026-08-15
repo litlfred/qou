@@ -308,25 +308,6 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "4acc42b2ab5b",
-          "ts": "bca1b26a48a5"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
-        "notes": "block has no .lean sibling"
-      }
-    ],
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
@@ -1282,11 +1263,30 @@
         "evidence": "Broken idioms found and fixed; post-fix prose reads cleanly.",
         "notes": "fixed: 'The liquid phase acts securely stable.' -> 'The liquid phase is stable.' (x2); 'The extension forms non-split.' -> 'The extension is non-split.'; 'The split extensions dictate dominance' -> 'The split extensions dominate'."
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "c54e7f0b7faa",
+          "ts": "bca1b26a48a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
   "source_hashes": {
-    "md": "4acc42b2ab5b",
+    "md": "c54e7f0b7faa",
     "ts": "bca1b26a48a5"
   },
-  "updated_at": "2026-08-15T11:39:08.381Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

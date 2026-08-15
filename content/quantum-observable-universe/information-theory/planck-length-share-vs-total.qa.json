@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/information-theory/planck-length-share-vs-total.md"
   },
   "source_hashes": {
-    "md": "a859f2163f4a",
+    "md": "7486a0d62a06",
     "ts": "3044e7fc5d72"
   },
   "criteria": {
@@ -297,25 +297,6 @@
         },
         "reviewed_at": "2026-08-09T19:00:23.733Z",
         "reviewed_sha": "2ce574783fe0e5d7bbb79ae3a27f67ac071094bc",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "a859f2163f4a",
-          "ts": "ae2444564a24"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T18:52:34.164Z",
-        "reviewed_sha": "25003edd6e0c0ebc2016675c7ac88fad64b506d8",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1176,7 +1157,26 @@
         "severity": "minor",
         "evidence": "read full block in context; no nonspeakable construction present"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-15T12:03:36.003Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

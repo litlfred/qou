@@ -11,7 +11,7 @@
     "md": "f82067e55b20",
     "ts": "a7f8d5809974",
     "lean": "303dc63a85a3",
-    "lean_statement": "b366a92dc4f4"
+    "lean_statement": "1bb0ad51f7d5"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -1008,26 +1008,6 @@
         "reviewed_sha": "bd36b6c34b4512d85d76114e0a55e1ebcaacfeb3"
       }
     ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "a6444914a432",
-          "ts": "a7f8d5809974",
-          "lean": "303dc63a85a3",
-          "lean_statement": "b366a92dc4f4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
-      }
-    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -1921,7 +1901,27 @@
         "severity": "minor",
         "evidence": "4 sentence(s) over 60 words — written for the eye, not the ear; split"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "f82067e55b20",
+          "ts": "a7f8d5809974",
+          "lean": "303dc63a85a3",
+          "lean_statement": "1bb0ad51f7d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.994Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean"
   },
   "source_hashes": {
-    "ts": "9ec60e2f0f9c",
     "md": "99b10d3284f5",
-    "lean": "94696339bf6b"
+    "ts": "9ec60e2f0f9c",
+    "lean": "94696339bf6b",
+    "lean_statement": "1cfb30183d69"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -320,26 +321,6 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T03:29:30.366Z",
-        "reviewed_sha": "8aa78aebe2cf2798717c127d827171ac3bec205e"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "99b10d3284f5",
-          "ts": "9ec60e2f0f9c",
-          "lean": "94696339bf6b",
-          "lean_statement": "1cfb30183d69"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
         "reviewed_at": "2026-08-10T03:29:30.366Z",
@@ -2305,7 +2286,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "99b10d3284f5",
+          "ts": "9ec60e2f0f9c",
+          "lean": "94696339bf6b",
+          "lean_statement": "1cfb30183d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.375Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

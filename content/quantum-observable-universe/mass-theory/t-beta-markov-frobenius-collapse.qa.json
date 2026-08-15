@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/t-beta-markov-frobenius-collapse.lean"
   },
   "source_hashes": {
-    "ts": "e2c09a8f38c2",
     "md": "4812606ab9e7",
-    "lean": "b389a4e922b5"
+    "ts": "e2c09a8f38c2",
+    "lean": "b389a4e922b5",
+    "lean_statement": "4bc5505c6425"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -810,26 +811,6 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T03:34:46.997Z",
-        "reviewed_sha": "096e8e0634fad5cd341f1612591d0221f325b073"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "4812606ab9e7",
-          "ts": "e2c09a8f38c2",
-          "lean": "b389a4e922b5",
-          "lean_statement": "4bc5505c6425"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
         "reviewed_at": "2026-08-10T03:34:46.997Z",
@@ -1969,7 +1950,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2",
+          "lean": "b389a4e922b5",
+          "lean_statement": "4bc5505c6425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.466Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }
