@@ -43,3 +43,55 @@ green and commit both the witness and the refreshed audit witness.
 
 The payload numbers cannot change — only the four telemetry fields go float ->
 string — so there is no scientific content at risk, only the gate.
+
+---
+
+## The two kills were probably NOT infrastructure — and the remedy is already on main
+
+Cross-filed from `qou-5qwb`, which chased the same witness from the other end.
+This bean records both attempts as "killed by infrastructure, never by the
+compute". A third attempt from this session, instrumented, says otherwise.
+
+**Measured at helium-4, 2026-08-15:**
+
+| observation | reading |
+|---|---|
+| CPU time unchanged across a 6-second sample, both workers | not computing |
+| both workers in `futex_do_wait` | blocked, not busy |
+| RSS **4.8 GB + 5.1 GB** of a 16 GB box | two workers holding ~10 GB |
+| `khugepaged` at 80 % | kernel thrashing |
+| killing the run | freed ~5 GB immediately |
+
+**Cause.** The largest partition of 12 is **dim 7700** (λ = (5,3,2,1,1)), and
+`hoefsmit_matrices_numpy` stores generators DENSE: `7700² × 8 B × 11 =
+5.22 GB` per worker. `n_workers = min(cpu_count(), len(parts))` therefore asks
+for **~20 GB on a 16 GB box**. It does not slow down — it hangs, and from
+outside that is indistinguishable from a container restart.
+
+So attempt 2 "killed ~20 min in" is at least as consistent with an OOM /
+thrash as with a restart. Worth ruling out before spending a fourth 45 minutes.
+
+**Remedy, already merged (PR #5104, on `main`).** The producer now takes
+`--workers N` / `$RHO_K_WORKERS`:
+
+    python3 -u computations/rho_k_co_casimir_extended.py --workers 1 2>&1 | tee /tmp/rho_k.log
+
+It is a **cap**: absent the flag the behaviour is byte-for-byte what it was, so
+nothing else changes. One worker needs ~6 GB rather than ~20 GB and fits
+comfortably; the cost is wall time on the parallel section.
+
+**Two confirmations for this bean's own warnings.** The `pgrep` self-match
+trap recorded above bit this session independently — same 45-minute false
+"still running". And the five-atom-over-six partial-write risk is real and
+worse than described: a gutted witness scores **zero raw floats**, so the
+raw-float64 ratchet reads it as a *perfect drain*. `witness_shape_guard.py`
+(PR #5089) now catches exactly that; run it before committing any regenerated
+witness.
+
+**Not claimed:** that `--workers 1` will finish. It removes the memory wall
+this session measured; whether the remaining ~45 min survives the container is
+still open, and that part of this bean stands.
+
+**Ownership.** This item is `qou-9br4`'s, and this session is not running the
+compute — only handing over the diagnosis. `qou-5qwb` and `qou-bk0q` (the
+dense-storage waste, with a validated prototype) are the supporting analysis.

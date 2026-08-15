@@ -218,6 +218,46 @@ Measured 2026-08-15: a one-word label fix to
 `pyhecke_native` from its witness on the first re-run; installing both and
 re-running restored them byte-for-byte.
 
+#### A long run that "died to infrastructure" may have OOM'd — check before re-running
+
+The fourth trap of the same family: it passes silently and it reads as
+something else. A worker pool sized by `cpu_count()` is sized by the **wrong
+resource** when each worker holds a large dense array. The run does not slow
+down and does not raise — it **hangs**, and from the outside that is
+indistinguishable from a container restart or a torn-down background job.
+
+Measured 2026-08-15 on `rho_k_co_casimir_extended.py` at helium-4 (n=12):
+
+| symptom | reading |
+|---|---|
+| CPU time **unchanged** across a 6-second sample, on every worker | not computing |
+| all workers in `futex_do_wait` | blocked, not busy |
+| RSS **4.8 GB + 5.1 GB** of a 16 GB box | two workers, ~10 GB |
+| `khugepaged` pinned at 80 % | kernel thrashing on hugepage compaction |
+
+Cause: the largest partition of 12 is **dim 7700**, and Hoefsmit generators
+are stored dense, so eleven of them are `7700² × 8 B × 11 = 5.22 GB` **per
+worker**. Four workers ask for ~20 GB. `cpu_count()` cannot see memory.
+
+**Before concluding a long run was killed by infrastructure:**
+
+1. **Sample CPU time twice, a few seconds apart** (`ps -eo pid,time,cmd`). If
+   it does not advance, the job is blocked, not slow — and a longer timeout
+   will not help.
+2. **Read RSS against total RAM** (`free -m`, `ps -eo rss`). Workers × per-worker
+   RSS is the number that matters, not core count.
+3. **Then** re-run with the pool capped: `rho_k_co_casimir_extended.py`
+   takes `--workers N` / `$RHO_K_WORKERS` for exactly this reason.
+
+Related: `pgrep -c -f rho_k_co_casimir` **matches its own command line**, so it
+reports the job alive indefinitely after it dies. Use
+`pgrep -af "python3 .*<script>"` and check the log's mtime.
+
+Do not read a flop count as a speed prediction either, when memory is the
+binding constraint — measured on the same module, a representation with ~3900×
+fewer flops ran **1.3–2× slower**, because it was bandwidth-bound while dense
+BLAS runs near peak (bean `qou-bk0q`).
+
 ## §1. Precision discipline (STRICT, no f64 in production)
 
 **L1 floor: 50-dps compute / 40-dps output**, configurable via
