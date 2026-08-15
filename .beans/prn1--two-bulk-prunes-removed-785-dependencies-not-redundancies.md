@@ -416,3 +416,31 @@ What remains — 107 sources — carries no textual signal, so it needs readers
 under the two-reader standard. Ten of the 107 would point forward; four of those
 are in `def:borromean-baryon`, which also has the least evidence, so it is the
 worst place to start despite being the largest.
+
+## 2026-08-15 — prepare-merge: figures re-verified on the merged corpus
+
+`origin/main` merged in (3792 files moved since this branch's base), so every
+number in these docs was re-measured rather than assumed. They hold:
+
+- still lost **581**, across 279 blocks, 44 declaring nothing
+- structural candidates **0**
+- `content_validate` ✓ Valid, 42 issues, exit 0
+
+**One figure did move, and it is not this branch's doing.** The editorial graph
+now has **4 cycles**, not the 1 recorded when `i8ad` landed:
+
+```
+rem:frobenius-packing-density -> conj:mass-volume-factorization -> …
+thm:ns-singularity-descartes  -> prop:ns-kummer-specialisation  -> …
+rem:skein-filtration-trichotomy -> conj:q-collatz -> …
+prop:ns-kummer-specialisation -> rem:skein-filtration-trichotomy -> conj:q-collatz -> …
+```
+
+None of the six blocks involved is touched by this branch. All four are
+pre-existing content cycles that counting `interprets` makes visible; three
+arrived with content merged from `main` after `i8ad` was measured. The
+forward-reference gate reads **196**, up one from 195, from the same merged
+content and likewise not from these edits.
+
+Both are author questions, recorded here so the next reader does not have to
+rediscover that "1 cycle" was a snapshot rather than a property.
