@@ -47,3 +47,23 @@ whatever O3-M2 lands) stands on its own.
   Poincaré polynomials — reinforcing the O2 integrality obstruction.** The
   identification "closed-sector category = this `(Q,W)`" stays conjectural (M3,
   not claimed).
+- 2026-08-14 — **O2 refuted (rigorous negative).** No parameter-free `A_ω → S`
+  map; grounded in the canonical `qbeta-c3-barodd-sleak` witness, not a fresh fit.
+  Three obstructions: (1) individual `S` targets not robustly defined — ±1.26
+  CAL-3 uncertainty (130×/32× the value), sign flip **not established by the
+  data**; (2) the one resolved quantity, the swing `S(μ)−S(p)=0.0491`, is the
+  cross-anchor `c₃` difference with `Vol(4₁)`/`A_ω` cancelled — `A_ω`-free; (3)
+  integrality (q3np + M2 abelian spectrum). Probe
+  `computations/probes/aomega_o2_stokes_to_observable_mechanism.py` (EXIT 0);
+  audit `docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`.
+- 2026-08-14 — **O1 narrow excision (owner: keep conjectures as beans, work now,
+  excise if no progress).** Two conjecture beans: `qou-erp1` (the `A_ω → S`
+  bridge — no foreseeable progress, excised from paper, retained in audit + bean,
+  scrapped); `qou-6y1p` (retarget the S-channel at the resolved swing — foreseeable
+  via the `c₃` anchor-dependence front, kept as future work). Content requalified
+  in the 3 carrier blocks: the "measured sign flip" prose → conditional-on-an-
+  unestablished-flip; the `A_ω` identification noted unsupported / not carried.
+  **Kept intact:** `A_ω=3` (M2-categorified), `S=c₃+Vol(4₁)` definition, and the
+  sorry-free conditional Lean. Render-QA grep battery + expository pass by hand
+  PASS; qa-sweep sidecar refresh could not run (bun/folio-assistant firewalled) —
+  stale-pending-CI, flagged in the commit. **Tranche complete** (`qou-fiag`).
