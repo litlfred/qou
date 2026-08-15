@@ -105,3 +105,72 @@ native path with `np.linalg.inv`-equivalent behaviour downstream.
 the compiled wheel's live behaviour was not measured — only the mathematics it
 implements. Anyone picking this up should record whether the wheel is present,
 since the observable split is conditional on it.
+
+## Update 2026-08-15 — Python side has LANDED; crate re-read; one prior claim corrected
+
+`pyhecke.gram` and `pyhecke.trace_formal` are now convention D (PR #5055).
+That makes this bean the last split, and it is now *guarded* rather than
+merely noted: `build_atom_nf` / `atom_per_generator_volumes` REFUSE to
+dispatch to the native wheel (`_native_ok()` raises), because with Python
+on D and the crate diverging, merely installing the wheel would silently
+change results on some machines and not others. Override with
+`QOU_ALLOW_NATIVE_DIVERGENCE=1`. So the ~100× speedup is off until this
+bean lands — that is the cost of the guard and the reason to prioritise it.
+
+### CORRECTION: the crate is NOT "on convention C"
+
+Earlier wording (mine, and in this bean's title context) said the Rust was
+convention C. **It is not.** Re-read of `tools/hecke-engine/src/gram.rs`:
+
+```rust
+/// z = q³/(q² + 1) — Markov closure parameter, **trace convention D**
+pub fn trace_weights(q: f64) -> [f64; 6] {
+    let z = markov_z(q);
+    [1.0, z, z, z * z, z * z, z * z * z]   // <-- TR_M[5] = z³, the unported bug
+}
+pub const Q_0: f64 = 1.1099785955541805;   // <-- the MUON pin
+```
+
+So `markov_z` is already D. Two real divergences remain:
+
+| # | Divergence | Rust | Python | Size |
+|---|---|---|---|---|
+| 1 | `TR_M[5]` | `z*z*z` | `h*z² + z` | structural — see below |
+| 2 | `Q_0` anchor | 1.1099785955541805 (muon) | 1.1099785827513808 (proton) | 2.19e-8 rel on z |
+
+### Why #1 and the quotient must land in ONE commit
+
+`z³` is what keeps the crate's Gram **non-singular**. Fix the trace alone
+and a singular Gram drops into a native path that has no radical, no
+pseudoinverse, and no notion that either is needed. Verified on the exact
+probe at three rational q: correct TR_M[5] → rank 5, det 0 exactly; `z³` →
+rank 6. So the port is: TR_M[5] fix **+** `RADICAL` **+** quotient inverse
+in a single change.
+
+### #2 is independently a violation
+
+The hardcoded muon `Q_0` contradicts AGENTS.md's owner directive
+(2026-08-07): all production compute defaults to the experimental/proton
+pin. Worth fixing in the same PR since it is a one-constant change, but it
+is a *separate* defect from the trace rule — do not let fixing one imply
+the other is done.
+
+### Reference implementation to port against
+
+- `tools/pyhecke/python/pyhecke/gram.py` — `TR_M`, `RADICAL`, `G_PINV`,
+  `gram_quotient_inverse()`, and `gram_inverse()` raising `NotImplementedError`.
+- `tools/pyhecke/tests/test_gram_values.py::test_gram_determinant_is_exactly_zero_over_Q`
+  — the exact-ℚ rank/determinant test. Worth mirroring in Rust: a float64
+  determinant (3.998e-17) cannot distinguish singular from tiny, so an
+  `f64`-only Rust test cannot actually assert the degeneracy either.
+- The crate's own `z_at_q0_matches_python` test pins the muon value
+  0.6126880505455892 and will need the proton value 0.6126880371464652.
+
+### Definition of done
+
+1. `trace_weights` → `[1, z, z, z², z², h*z² + z]`.
+2. `Q_0` → proton pin; update `z_at_q0_matches_python`.
+3. Radical + quotient inverse exposed; no 6×6 inverse.
+4. Exact-rational (not f64) test asserting rank 5 / det 0.
+5. Remove the `_native_ok()` guard in `pyhecke/gram.py` and its three
+   tests in `test_gram_values.py`, restoring the native speedup.
