@@ -120,3 +120,38 @@ did not get it back. One question, seven applications.
 
 Still not a licence to restore in bulk, and the two-reader standard still
 governs what is applied.
+
+
+## 2026-08-15 — tranche 1 evidence assembled (not applied)
+
+`docs/audits/2026-08-15-tranche-1-jones-markov-trace.md`, from
+`scripts/prune-tranche-sheet.ts <target>`. Nothing restored.
+
+`thm:jones-markov-trace` was stripped from 21 blocks in one pass, so this is one
+editorial question with 21 applications. The sheet gives a reader, per source:
+an explicit prose link to the target, a concept mention without a link, whether
+the block's `.lean` touches the decl, and what the block declares today.
+
+- **2 are near-certain restores on a structural ground rather than taste** —
+  `prop:three-calibration-discipline` and `prf:atom-knot-mass-derivation` link
+  to the target from their prose while omitting it from `uses[]`. One block's
+  two halves contradicting each other.
+- **4 more mention the Markov trace without linking**; that is where judgement
+  is actually needed.
+- **16 of 21 declare at most one prerequisite** (6 declare nothing, 10 declare
+  one). The prune's fingerprint, not a convention.
+- **No formal corroboration exists.** Of the 18 with a `.lean`, none references
+  `QOU.Braiding.JonesMarkovTrace`. Not an argument either way — the relations
+  diverge legitimately and `uses[]` is never populated from Lean — but the case
+  rests entirely on editorial reading, and nobody should read the formal graph
+  as support.
+
+The sheet had to be fixed before it was worth anything: a missing `.md` first
+rendered as `—` in the same column as "searched, found nothing". That is the
+absent-baseline-reads-as-agreement defect this whole arc is about, and I had
+written it into the tool meant to detect it. It now reports `n/a` distinctly.
+All 21 do have narratives, so the numbers were right; the sheet just could not
+say so.
+
+Two counts in the first draft of the write-up were wrong (nine/six for what is
+six/ten). Corrected against the table before commit.
