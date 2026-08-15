@@ -1231,3 +1231,102 @@ same "letter on the wrong side of a descending run" situation §4t just solved, 
 far-commutation rule on the *left*, which is a different overlap and may need the
 mirror transport (moving a letter leftwards). After that, the 17 `B × B`, whose
 25-step worst case is the largest single obligation in the file.
+
+## §4u — far-commutation on the **left**, against Bokut–Shiao or Yang–Baxter (2)
+
+§4o, §4s and §4t all put the far-commutation rule on the *right* of the
+composition. This is the other side: `farCommRelation x m` leads on `σₓσ_m`, a
+Bokut–Shiao or Yang–Baxter rule leads on a word beginning with `σ_m`, and they
+overlap in that letter. Writing the second rule as `c·(σ_m :: u'') − c·w₂`:
+
+    spoly = c · (σₓ :: w₂)  −  c · (σ_m :: σₓ :: u'')
+
+`m + 1 < x` is the far-commutation side condition, and **no letter of either
+word has index above `m`** — so `σₓ` commutes with everything in sight and is
+simply a passenger in both terms. Two transports and one rule application:
+
+| phase | term | steps |
+|---|---|---|
+| 1 | `σₓ :: w₂` → `w₂ ++ [σₓ]` | `\|w₂\|` |
+| 2 | `σ_m :: σₓ :: u''` → `σ_m :: (u'' ++ [σₓ])` | `\|u''\|` |
+| 3 | the rule, in the context `(ε ∣ σₓ)` | `1` |
+
+After phase 2 the second term is the rule's leading monomial with `σₓ` appended,
+so one application turns it into `w₂ ++ [σₓ]` and the terms cancel. Both `n = 4`
+instances are 6 steps. Stated for an abstract rule in that two-word shape, so
+Bokut–Shiao and Yang–Baxter are two instantiations — §4j's doubling again.
+
+**The transport needed a bystander, and needed it in both list slots.**
+`farComm_transport` (§4t) moves a generator in an element whose *other* term is
+the transport's own destination, so the two cancel at the end. Here the other
+term is a bystander that must be carried untouched, and the step's
+"targeted coefficient is non-zero" condition needs it told apart from every
+intermediate word. Hence `farComm_transport_snd` / `_fst` — the same induction
+with the bystander in the second and the first slot.
+
+Both slots are genuinely required and this is not an accident of presentation:
+each phase transports a *different* term, so whichever slot phase 1 leaves the
+moving term in, phase 2 needs the other. `MultiStepReduction` composes only up to
+syntactic equality of the joining element (`refl` is the constructor), so the
+list order cannot be permuted mid-chain. §6 has `SingleStepReduction.of_coeffEq_left`
+and a disjunctive `MultiStepReduction.congr_source` but no target-side twin, and
+adding one would not have helped: a `refl` run has nothing to retarget.
+
+The collision hypothesis is phrased over splittings —
+`∀ u v, u ++ v = w → p ≠ a ++ (u ++ (σₓ :: v))` — because that enumerates exactly
+the words the run passes through. It specialises cleanly under the induction
+(prepend the crossed letter to `u`) and at both call sites it is discharged by a
+first-letter comparison.
+
+Two build notes:
+
+* **`simp` normalises `(q :: t) ++ [σₓ]` to `q :: (t ++ [σₓ])`**, so a
+  distinctness hypothesis stated in the first form is silently unused and the
+  goal survives. Same lesson as the §4r word-inequality one; state such
+  hypotheses in cons-normal form.
+* **`omega` will not reduce `(⟨m⟩ : HeckeGen n).index.val` to `m.val`.** It is
+  definitional, but omega's preprocessing does not do projection-of-constructor,
+  so every such goal needs a `show m.val ≤ …` first. Cost three separate errors
+  in one build.
+* **Implicit arguments behind a `refine` hole**: `q` and `t` appear only in
+  `hrel`, which was left as `?_`, so they could not be inferred and the whole
+  `refine` failed to unify. Pass them by name.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × far-comm (j₀+1=j) 5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      BS × far-comm (same j)   3   §4s   general in n
+      quadratic × general BS   3   §4t   general in n
+      far-comm × BS/YB         2   §4u   general in n
+      ---------------------------
+      proved                  72
+      remaining               20
+
+    inclusion compositions    22   §4m   (all)
+
+**The remaining 20:**
+
+    3    BS/YB × F with j₀ neither j nor j−1     6, 6, 8 steps
+    17   BS/YB × BS/YB                           9 … 25 steps
+
+The 3 are two different situations, and neither is §4s or §4o:
+
+* `j₀ + 1 < j` (Y23×F30, B232×F30) — `σ_{j₀}` is *below* the whole descending
+  run, so it commutes past all of it. This is a transport again, but the
+  **mirror** one: the small letter moves *left* through big ones, where §4t/§4u
+  move a big letter right through small ones. Same rule, opposite role in it.
+  It also needs a right context, which neither current transport carries.
+* `j < j₀` (B230×F31) — `σ_{j₀}` lands *inside* the run's index range, so it does
+  not commute past `σ_{j₀±1}`. The engine's chain shows why: the tail of the
+  first term is `descWord j₀ j ++ [σ_{j₀}] = bsWord₁ j₀ j`, so the Bokut–Shiao
+  rule at the *inner* index fires first and the family is genuinely nested.
+
+So the honest next step is the mirror transport (with a right context), which
+closes 2 of the 3 and is also what the long `B × B` tails will want; `j < j₀` is
+its own small family.
