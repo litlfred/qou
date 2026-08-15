@@ -1,7 +1,7 @@
 ---
 # glhi
 title: 'Lean gluing proofs: degrees 7–14, cusp equations, and wiring to SatisfiesEdgeEquations'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -280,3 +280,70 @@ out the arithmetic immediately, leaving only the tactic state.
 Cusp equations are the **completeness** condition on the cusp, not the edge condition;
 satisfying them still says nothing about whether any of this is a triangulation *of* a
 knot complement.
+
+---
+**2026-08-15 — item 1 (degrees 7–14) DONE. All three items are now closed.**
+
+`QOU/Knot/GeneratedGluingHigh.lean` — **180 theorems across 8 manifolds**, degrees 7
+through 14: 9₂ (7), 10₁ 7₅ 8₂ 8₃ (8), 7₆ (9), t12000 (13), 10₁₀₀ (14). Sorry-free; all
+180 verified `#print axioms` = `[propext, Classical.choice, Quot.sound]`;
+`lake build QOU.Knot.GeneratedGluingHigh` exit 0 with the `.olean` deleted first.
+
+### ⚠ THIS BEAN'S CENTRAL PREDICTION WAS WRONG, and the number is the interesting part
+
+The bean said: "the cofactors grow and the emitted file would be large … **Measure before
+committing to it; a file that takes an hour to compile is worse than no file.**" The
+measurement was the right precondition and I did it first. It came out the other way:
+
+| what | size | `lake build` |
+|---|---|---|
+| degrees 7–9, 6 manifolds | 91 KB | **95 s** |
+| t12000, degree 13 | 56 KB | **60 s** |
+| 10₁₀₀, degree 14, 14 tets | 384 KB | **131 s** |
+| all eight together | 532 KB | **264 s** |
+
+`10₁₀₀` alone is **2.5× the character count of the entire degree 2–6 module** and carries
+a single `linear_combination` cofactor **30,193 characters long** — and it compiles in
+about two minutes.
+
+**Why the extrapolation from degree 9 overshoots.** Cost tracks the *number* of `ring`
+normalisations far more than the size of any one of them. `10₁₀₀` has 14 equations of
+enormous individual width; six degree-8/9 manifolds have 40 equations of moderate width,
+and cost more per byte. So "cofactor size" — the quantity this bean identified as the
+thing that grows — is **not** the quantity that predicts compile time. That is the
+generalisable lesson: for `linear_combination`-shaped proofs, count the calls, not the
+characters.
+
+Nothing in the 7–14 range needed abandoning. The degree ceiling for this method is not
+where this bean placed it, and no ceiling was found at all within the range Route 75
+covers.
+
+### Unchanged scope, and one real limit
+
+Edge equations only, at an **arbitrary root** — flat shapes permitted, hyperbolicity not
+established (that needs `Im z > 0`). Nothing says any of this is a triangulation *of* a
+knot complement.
+
+`10₁₀₀`'s **14 tetrahedra exceed the `SatisfiesEdgeEquations` certification template**,
+which stops at 8 because Mathlib provides `Fin.prod_univ_{two..eight}` and no further —
+the same limit already recorded for 9₃₅ and o9_00000. The standalone identities are
+unaffected; only the certification wrapper is. Lifting it needs iterated
+`Fin.prod_univ_succ`, and that is a separate job from this bean.
+
+### Method note
+
+Nothing about the method changed with degree, which is worth stating because it was the
+open question: still exact polynomial division with residual asserted zero *before*
+emission, still one `linear_combination` per equation, still Bézout certificates for
+non-vanishing, still no numerics at any step. Degree 14 uses the identical generator path
+as degree 2.
+
+### Status
+
+All three items delivered — degrees 7–14, cusp equations, and the wiring. Setting
+**completed**. Two things deliberately left for successors, neither a defect of this
+bean's scope:
+
+1. `Fin.prod_univ_succ` iteration to certify `n ≥ 9` triangulations (9₃₅, o9_00000, 10₁₀₀).
+2. Degrees beyond 14 — untested, and now worth testing, since the ceiling this bean
+   predicted did not appear where expected.
