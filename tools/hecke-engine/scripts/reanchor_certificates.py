@@ -206,7 +206,31 @@ def main() -> int:
         print("no certificates found", file=sys.stderr)
         return 1
 
-    rows = [process(p, args.max_rel, args.write) for p in paths]
+    if args.write:
+        print(
+            "--write is DISABLED pending four blocking defects found in review:\n"
+            "  1. It emits ±Infinity for 60Co -- not valid JSON; serde_json\n"
+            "     would reject the file entirely.\n"
+            "  2. mp.dps=50 is ~1/7 of what the cancellation needs. True\n"
+            "     log10(cond) for 60Co is ~359, not the 52 this script's own\n"
+            "     diagnostic reports (it is clamped by the same low precision).\n"
+            "     Three certificates would get wrong magnitude AND sign.\n"
+            "  3. v9 does NOT always evaluate in float64: it falls back to\n"
+            "     MPFR (v9.rs:845) when the f64 eval overflows. 60Co took that\n"
+            "     path, so its committed values are accurate to ~7e-14 -- this\n"
+            "     script would overwrite the MOST accurate certificate in the\n"
+            "     set with -inf. The '15 have zero valid digits' claim is\n"
+            "     wrong for it.\n"
+            "  4. The --max-rel guard IS DEAD CODE. `max_rel` is never read\n"
+            "     inside process(); no path returns 'FLAG'; so 'flagged: 0'\n"
+            "     was structurally guaranteed and asserted a check that never\n"
+            "     ran. I wrote that guard, deleted it in a rewrite, and left\n"
+            "     the counter reporting a pass.\n",
+            file=sys.stderr,
+        )
+        return 2
+
+    rows = [process(p, args.max_rel, False) for p in paths]
     for r in rows:
         print(" ", r)
 
@@ -215,7 +239,9 @@ def main() -> int:
     n_flag = sum(1 for r in rows if r.startswith("FLAG"))
     print(f"\n  re-anchorable : {n_ok}")
     print(f"  skipped       : {n_skip}  (no exact polynomial -- unrecoverable from what is committed)")
-    print(f"  flagged       : {n_flag}  (moved more than --max-rel; left alone)")
+    # NOT printing a "flagged" count: the guard that would produce it is dead
+    # code (see --write). Printing 0 asserted a check that never ran.
+    assert n_flag == 0  # holds trivially; kept so the dead path is visible
     return 1 if n_flag else 0
 
 
