@@ -744,3 +744,35 @@ REMAINING, unchanged: instantiate the six rows against the two expansions. All p
 now exist -- the six rows resolved algebraically, the orbit entry table, the distinctness
 route, the third parameter, seminormalParam_rel, and now the tableau-level braid.
 hoefsmit_seminormal_rep keeps its Ref'd sorry.
+
+
+## FIRST BRAID ROW PROVED AT THE TABLEAU LEVEL 2026-08-15
+
+genMat_braid_apply_diag: the braid's DIAGONAL entry, sorry-free and axiom-clean. Not the
+abstract identity (that was braid_diag_identity) -- this is it wired to actual genMat
+entries, with the tableau distinctness and admissibility discharged. The route is now
+VALIDATED end to end; the remaining five rows are the same shape.
+
+The proof, for anyone doing the other five:
+1. set A,B,D,E as the orbit elements the row touches.
+2. Distinctness T != A,B,D,E,F: A,B from swapTableau_ne; D,E,F by ne_of_entry_ne against
+   orbitEntries_* + entry_cellOf + omega. T != F is needed TWICE, once as s_k D and once as
+   s_l E; the second follows from the first by rewriting with swapTableau_braid.
+3. Off-diagonal entries via genMat_swap applied to the PARTNER column (T = s_k A, so the
+   (T,A) entry is genMat_swap on column A) with swapTableau_involutive to fold it back.
+4. Both expansions, then genMat_diag / genMat_apply_of_ne for every entry, then the
+   axialDist rewrites.
+5. linear_combination, NOT nlinarith. nlinarith failed on the final goal even with all five
+   facts supplied. The exact certificate is
+     (a2 - a1)*hrel + a3*a1*hsump - a3*a2*hsumr + a3*hprodp - a3*hprodr
+   (hsump/hsumr = seminormalParam_add_neg, hprodp/hprodr = offDiag_mul_neg, hrel =
+   seminormalParam_rel). Derived by hand from the factorisation in braid_diag_identity.
+
+Two Lean notes:
+- `(by tac : Type)` is NOT valid ascription syntax inside a rw list; hoist to a `have`.
+- The six admissibility hypotheses are all load-bearing EVEN FOR THIS ONE ROW: the (T,D) and
+  (T,E) entries are only known to vanish once D and E exist as tableaux, which is what hDk
+  and hEl provide. So there is no cheaper "diagonal-only" version with fewer hypotheses.
+
+REMAINING: five rows (A, B by braid_rowA/rowB_identity; D, E, F by ring), then the
+admissibility case tree for non-generic orbits. hoefsmit_seminormal_rep keeps its Ref'd sorry.
