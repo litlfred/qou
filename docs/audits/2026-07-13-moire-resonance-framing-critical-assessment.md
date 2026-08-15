@@ -113,7 +113,11 @@ a keystone gap the framework has honestly kept open.** Three independent reasons
    unity to the Stokes data — but the object they relate is the **asymptotic
    (divergent, resurgent) series** whose Borel/transseries structure carries the
    Stokes constants. The D-ladder study already established this sequence is
-   q-Gevrey-divergent and non-holonomic (bottoming out near `k = 21`). You cannot
+   ~~q-Gevrey-divergent and~~ **[divergence claim SUPERSEDED 2026-08-09 —
+   `D(ũ)` is convergent, `ρ = 0.1428`; see
+   `2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`. The GZ
+   asymptotic series named above is a different object and remains genuinely
+   divergent/resurgent.]** non-holonomic (bottoming out near `k = 21`). You cannot
    both invoke quantum modularity to get `A_ω` *and* claim you have "eliminated
    analysis / no Borel resummation needed": the resurgent series is the vehicle
    quantum modularity rides on. Removing it removes the datum.
