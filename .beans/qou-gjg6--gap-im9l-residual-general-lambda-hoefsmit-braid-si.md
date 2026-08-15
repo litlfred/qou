@@ -941,3 +941,37 @@ Lean note, recurring: when a row needs BOTH diagonals (rho_k[X,X] and rho_l[X,X]
 `genMat_diag` applications instantiate in GOAL ORDER -- LHS first, so generator k first.
 `rw [genMat_diag, dBl, genMat_diag, dBk]` fails; `rw [genMat_diag, dBk, genMat_diag, dBl]`
 works. The error points at the axialDist rewrite, not at genMat_diag, so it misleads.
+
+
+## SIZE-3 HAS **THREE** POSITIONS, NOT TWO — and the middle one shares the generic flags
+
+Worked out the size-3 taxonomy before writing any of it. A size-3 orbit is a domino plus a
+disjoint cell, and T can sit at any of its three positions; each gives a DIFFERENT
+admissibility pattern:
+
+  T at the sigma_k-fixed end        (¬hka,  hla,  hBk)
+  T in the middle                   ( hka,  hla, ¬hAl, ¬hBk)
+  T at the sigma_{k+1}-fixed end    ( hka, ¬hla,  hAl)
+
+THE MIDDLE POSITION HAS hka AND hla -- the same leading flags as a GENERIC size-6 orbit. So
+"both generators move T" does NOT imply the orbit is generic, and the final assembly must
+split on hAl/hBk rather than stopping at (hka, hla). Anyone writing that assembly should read
+this before assuming a 4-way split on the two leading flags suffices; it does not.
+
+genMat_braid_of_succ_fixed_three (sorry-free, axiom-clean) does the third row of that table.
+The T and s_k.T rows carry the SAME two identities as the size-2 case
+genMat_braid_of_succ_fixed; what is new is the third row, which closes by `ring` alone once
+axialDist_swapTableau_word_left supplies d_k(s_{k+1}s_k.T) = r.
+
+So the deletion pattern recorded earlier holds up: the smaller orbits are the generic
+identity with terms deleted, and going 2 -> 3 ADDS BACK a row rather than changing the two
+that were already there.
+
+Lean note: a column whose tableau is NOT admissible needs genMat_of_not_admissible, not
+genMat_apply_of_ne -- the latter takes SwapAdmissible and rejects the negation. Symptom is
+"Application type mismatch" on the admissibility argument; three sites hit it at once here.
+
+CASE TREE: size 1 done; both size-2 done; size-3 sigma_{k+1}-fixed-end done; size 6 done.
+REMAINING: size-3 middle, size-3 sigma_k-fixed end, then any (hka,hla,hAl,hBk) combinations
+that are neither generic nor middle (7 and 8 in the enumeration -- possibly vacuous, but
+that needs proving, not assuming). Then Hecke.lift.
