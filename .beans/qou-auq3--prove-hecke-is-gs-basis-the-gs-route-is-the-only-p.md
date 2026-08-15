@@ -1593,3 +1593,82 @@ composition. Note it is **not** flat in `b`: 10 vs 12, so unlike §4x the chain
 grows with the second depth and will need an induction or a transport rather than
 a fixed script. The `(a,b)` both ≥ 2 corner (the last 5, up to 25 steps) is the
 hardest and should come last.
+
+## §4y — the `a = 1` row of `B × B`: designed and verified against the engine,
+## transport proved, chain **not yet written**
+
+Status: `farComm_transport_right` is proved and in the file; the eleven stages
+and eight fixed steps below are derived and checked step-by-step against the
+`n = 4` engine traces for both `B121 × B120` (b = 2) and `B232 × B230` (b = 3),
+but are **not yet Lean**. Recorded here so the next session starts from the
+design rather than re-deriving it.
+
+**The row.** `a = 1` means `j₁ = i − 1`, so `rule₁` leads on the braid word
+`σᵢσᵢ₋₁σᵢ` — and therefore doubles (Yang–Baxter or Bokut–Shiao at `j = i−1`,
+leading coefficient `c₁ = ∓1`). `rule₂ = bokutShiaoRelation i' i j₂` is monic and
+`j₂ ≤ i − 2`. With `T = descWord i−2 j₂` (so `descWord i' j₂ = σᵢ₋₁ :: T`):
+
+    spoly = c₁ · ( σᵢ σᵢ₋₁ σᵢ₋₁ σᵢ σᵢ₋₁ T  −  σᵢ₋₁ σᵢ σᵢ₋₁ σᵢ₋₁ T σᵢ )
+
+Both terms carry a **square** `σᵢ₋₁σᵢ₋₁`, which is why this row involves the
+quadratic rule where §4x did not, and why `h` and `h²` appear. The chain is
+**8 + 2|T| steps**, i.e. `8 + 2(b−1)` — *not* flat in `b`, unlike §4x's column.
+
+| # | target | rule | context | coeff |
+|---|---|---|---|---|
+| 1 | `σᵢσᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁T` | `Q_{i−1}` | `(σᵢ ∣ σᵢσᵢ₋₁T)` | `c₁` |
+| 2 | `σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁Tσᵢ` | `Q_{i−1}` | `(σᵢ₋₁σᵢ ∣ Tσᵢ)` | `−c₁` |
+| 3 | `σᵢσᵢ₋₁σᵢσᵢ₋₁T` | `BS(i−1,i,i−1)` | `(ε ∣ σᵢ₋₁T)` | `c₁h` |
+| 4 | `σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁T` | `Q_{i−1}` | `(σᵢ₋₁σᵢ ∣ T)` | `c₁h` |
+| 5 | `σᵢ₋₁σᵢσᵢ₋₁Tσᵢ` | `rule₂` | `(σᵢ₋₁ ∣ ε)` | `−c₁h` |
+| 6 | `σᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁T` | `Q_{i−1}` | `(ε ∣ σᵢσᵢ₋₁T)` | `−c₁h` |
+| 7 | `σᵢσᵢσᵢ₋₁T` | `Q_i` | `(ε ∣ σᵢ₋₁T)` | `c₁` |
+| 8… | `σᵢ` across `T` | far-comm | rightward transport | `−c₁` |
+| … | `σᵢ₋₁Tσᵢσᵢ` | `Q_i` | `(σᵢ₋₁T ∣ ε)` | `−c₁` |
+| … | `σᵢ` across `T` | far-comm | rightward transport | `c₁h` |
+
+Two cancellations carry the proof: the `h²` terms `σᵢ₋₁σᵢσᵢ₋₁T` cancel at step 6,
+and `σᵢσᵢ₋₁T` cancels at step 7. The eleven stages, in order, are
+
+    S0  c₁·σᵢσᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁T                −c₁·σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁Tσᵢ
+    S1  +c₁h·σᵢσᵢ₋₁σᵢσᵢ₋₁T, c₁·σᵢσᵢσᵢ₋₁T
+    S2  … −c₁h·σᵢ₋₁σᵢσᵢ₋₁Tσᵢ, −c₁·σᵢ₋₁σᵢTσᵢ
+    S3  σᵢσᵢ₋₁σᵢσᵢ₋₁T ↦ σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁T
+    S4  (5 terms; h² appears)
+    S5  σᵢ₋₁σᵢσᵢ₋₁Tσᵢ ↦ σᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁T
+    S6  (h² cancels) → 4 terms
+    S7  → c₁h·σᵢ₋₁σᵢT, c₁·σᵢ₋₁T, −c₁·σᵢ₋₁σᵢTσᵢ
+    S8  → … −c₁·σᵢ₋₁Tσᵢσᵢ
+    S9  → c₁h·σᵢ₋₁σᵢT, −c₁h·σᵢ₋₁Tσᵢ
+    S10 → c₁h·σᵢ₋₁Tσᵢ, −c₁h·σᵢ₋₁Tσᵢ   (coefficientwise zero)
+
+**Why `monicStep` does not apply.** It is for a rule with *two* words; `Q_i` has
+three (`σᵢσᵢ`, `σᵢ`, `1`). Five of the eight fixed steps are quadratic, so they
+need bespoke `hv` and `CoeffEq` proofs in the §4r style — and the stages merge
+terms that a generic lemma would leave separate (the `h²` cancellation), so a
+three-word generic step lemma would not help either: its target list is
+determined, and these stages are deliberately the merged form.
+
+Estimated size: eleven stage definitions, eight bespoke steps with up to five
+terms and four distinctness obligations each, two transport applications, the
+S-polynomial, the assembly and two instances — roughly §4r plus §4x together.
+That is why it is recorded rather than half-written.
+
+**What is proved this turn.** `farComm_transport_right` — the rightward transport
+at an arbitrary list position, the mirror of `farComm_transport_left`. With it,
+every transport in the file is an instance of one of two lemmas at an arbitrary
+position; §4t's and §4u's narrower versions remain only because they are already
+used. It is what steps 8… and the last block above need, since at those stages
+the element has three terms and neither of the older bystander forms fits.
+
+## Running total at n = 4, rule level (unchanged this turn)
+
+      proved                  81   all general in n
+      remaining               11   all BS × BS with b ≥ 2
+
+    inclusion compositions    22   §4m   (all)
+
+Next: write §4y's chain from the table above. The remaining five after it are the
+`a, b ≥ 2` corner — `(2,2)` ×2, `(3,2)`, `(2,3)`, `(3,3)` at 15, 15, 19, 25 steps
+— which should be attacked only once §4y's skeleton exists, since the 25-step
+`B230 × B230` is the largest single obligation in the arc.

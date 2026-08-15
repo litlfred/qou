@@ -4734,4 +4734,76 @@ theorem bokutShiao_resolves (hp : HeckeParams) {i'' i' i j₁ : Fin n} (hn : 0 <
 
 end BokutShiaoBraid
 
+/-! ## §4y  Preparation for the `a = 1` row of `B × B`: transport at any position
+
+`farComm_transport` (§4t) moves a generator rightwards but only in an element
+whose other term is the transport's own destination; `farComm_transport_snd` /
+`_fst` (§4u) add a single bystander. The `a = 1` row of `B × B` needs it with
+*two* bystanders and `h`-weighted coefficients, so here is the rightward
+transport in the same `L₁ ++ (·) :: L₂` form `farComm_transport_left` (§4v) and
+`monicStep` (§4x) already use — the moving term at an arbitrary position of the
+term list, everything else carried untouched.
+
+With this, all four transports in the file are instances of two lemmas
+(`farComm_transport_left`, `farComm_transport_right`) at arbitrary list
+positions, and the earlier special cases are only kept because they are already
+used. -/
+
+/-- **Far-commutation transport, rightwards, at any list position.** The mirror
+of `farComm_transport_left`: there a generator below the block moves left, here a
+generator above it moves right. The induction recurses on the head of `w` and
+prepends its step, the opposite end from the leftward version. -/
+theorem farComm_transport_right {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (x : Fin n)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) :
+    ∀ (w a b : Monomial (HeckeGen n)), (∀ y ∈ w, y.index.val + 1 < x.val) →
+      (∀ u v : Monomial (HeckeGen n), u ++ v = w →
+          ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+            r ≠ a ++ (u ++ ((⟨x⟩ : HeckeGen n) :: (v ++ b)))) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          (L₁ ++ (a ++ ((⟨x⟩ : HeckeGen n) :: (w ++ b)), c) :: L₂))
+        (AlgElement.ofTerms
+          (L₁ ++ (a ++ (w ++ ((⟨x⟩ : HeckeGen n) :: b)), c) :: L₂)) := by
+  intro w
+  induction w with
+  | nil => intro a b _ _; exact MultiStepReduction.refl _
+  | cons y w ih =>
+    intro a b hw hcol
+    obtain ⟨yi⟩ := y
+    have hy : yi.val + 1 < x.val := hw _ (by simp)
+    have hyx : (⟨yi⟩ : HeckeGen n) ≠ ⟨x⟩ := by
+      intro hcon
+      have := congrArg HeckeGen.rank hcon
+      simp only [HeckeGen.rank] at this
+      omega
+    have key := ih (a ++ [(⟨yi⟩ : HeckeGen n)]) b (fun t ht => hw t (by simp [ht]))
+      (fun u v huv => by
+        have := hcol ((⟨yi⟩ : HeckeGen n) :: u) v (by rw [List.cons_append, huv])
+        simpa only [List.append_assoc, List.singleton_append, List.cons_append] using this)
+    simp only [List.append_assoc, List.singleton_append] at key
+    show MultiStepReduction _ _ (AlgElement.ofTerms
+      (L₁ ++ (a ++ ((⟨x⟩ : HeckeGen n) :: ((⟨yi⟩ : HeckeGen n) :: (w ++ b))), c) :: L₂)) _
+    refine MultiStepReduction.head ?_ key
+    have hv : (AlgElement.ofTerms
+        (L₁ ++ (a ++ ((⟨x⟩ : HeckeGen n) :: ((⟨yi⟩ : HeckeGen n) :: (w ++ b))), c) :: L₂)).coeff
+        (a ++ (farCommRelation x yi).lm (heckeOrder n) ++ (w ++ b)) = c := by
+      rw [farCommRelation_lm x yi (by omega),
+        show (a ++ [(⟨x⟩ : HeckeGen n), (⟨yi⟩ : HeckeGen n)] ++ (w ++ b))
+          = a ++ ((⟨x⟩ : HeckeGen n) :: ((⟨yi⟩ : HeckeGen n) :: (w ++ b))) by simp]
+      refine ofTerms_coeff_mid L₁ L₂ _ c (fun r hr => ?_)
+      have := hcol [] ((⟨yi⟩ : HeckeGen n) :: w) rfl r hr
+      simpa only [List.nil_append, List.cons_append] using this
+    refine ⟨farCommRelation x yi, farCommRelation_mem hn hp hy, a, w ++ b, c, ?_, ?_, ?_⟩
+    · rw [hv]; exact hc
+    · rw [hv, farCommRelation_lc x yi (by omega)]; ring
+    · intro m
+      show _ = _ - c
+        * (AlgElement.contextMul a (farCommRelation x yi).relation (w ++ b)).coeff m
+      simp only [farCommRelation, AlgElement.contextMul_ofTerms_coeff, List.map_cons,
+        List.map_nil, List.cons_append, List.nil_append, List.append_assoc,
+        AlgElement.ofTerms_coeff, List.filter_append, List.filter_cons, List.filter_nil,
+        List.map_append, List.sum_append, decide_eq_true_eq]
+      split_ifs <;>
+        simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
 end UGB.GrobnerShirshov.Hecke
