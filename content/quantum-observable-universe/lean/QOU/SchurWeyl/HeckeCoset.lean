@@ -21,31 +21,48 @@ coset representatives
 
   `r_0 = 1,  r_j = σ_n σ_{n-1} ⋯ σ_{n-j+1}   (j = 1,…,n+1)`,
 
-i.e. `r_j` is the descending product of the top `j` generators.  Left
+i.e. `r_j` is the descending product of the top `j` generators.  **Right**
 multiplication by any generator preserves the subspace `Σ_k ι(H_n)·r_k`
 (`ι = heckeIncl`, the tower inclusion `H_n ↪ H_{n+1}`), so that subspace is a
-left ideal containing `1`, hence all of `H_{n+1}`.  Iterating gives a spanning
+right ideal containing `1`, hence all of `H_{n+1}`.  Iterating gives a spanning
 family indexed by `cosetIndex n` of cardinality `(n+1)!`.
+
+**Handedness.**  The family carries the subalgebra on the *left* (`ι(H_n)·r_j`),
+so the induction must be taken on the *right* — right multiplication acts on the
+`r_j` factor, where the Hecke relations apply.  An earlier left-handed version of
+the closure lemma left the top generator open as a `sorry`, because
+`σ_n · ι(w) · r_j` offers no relation with which to move `σ_n` past the opaque
+`ι(w)`.  On the correct side the same statement is a four-case computation; see
+`span_mul_gen_mem`.  Nothing deeper was needed (bean `qou-j6f9`).
 
 ## What is delivered here
 
 * `descProd m j` — the descending product `σ_m σ_{m-1} ⋯ σ_{m-j+1}` of length `j`
   in `H_{m+1}(q) = Hecke K q qi (m+1)` (the coset representative `r_j`).
+* `descProd_mul_σ_of_add_lt` / `_of_add_eq` / `_of_add_eq_succ` / `_of_le_add` —
+  the **four cases of the bubble**: `r_j σ_i` equals `σ_i r_j` (far commutation),
+  `r_{j+1}` (lengthening), `(q-qi)·r_j + (q·qi)·r_{j-1}` (quadratic), or
+  `σ_{i-1} r_j` (braid), selected by comparing `i + j` with `m`.  All sorry-free.
 * `cosetIndex m`, `cosetFam m` — the recursively-built spanning family and its
   finite index type, with `Fintype.card (cosetIndex m) = (m+1)!`
   (`card_cosetIndex`, sorry-free).
 * `one_mem_span_cosetFam` — `1` is in the span of the family (sorry-free).
 * `finrank_le_card_of_span` — the generic finite-spanning ⇒ `finrank ≤ card`
   reduction (sorry-free).
-* `gen_mul_span_mem` — left-multiplication by a generator preserves the span.
-  The tower-inclusion-image case (`i = j.castSucc`) is proved sorry-free; the
-  **top** generator case (`i = Fin.last m`) is the single open gap (a `-- Ref:`
-  cited `sorry`, bean `qou-j6f9`).
-* `span_cosetFam_eq_top` — the spanning statement, reduced to `gen_mul_span_mem`
-  via the adjoin = span-of-submonoid route (`sorry`-reachable only through the
-  top-generator gap above).
+* `incl_mul_descProd_mem` — coset absorption: `ι(w)·r_k` stays in the span.
+* `span_mul_gen_mem` — **right**-multiplication by a generator preserves the
+  span (sorry-free).  This is the general-`n` form of the twelve explicit
+  `HeckeDim3.gen_mul_mem` reductions at `n = 3`.
+* `span_cosetFam_eq_top` — the spanning statement, from `span_mul_gen_mem` via
+  the adjoin = span-of-submonoid route (`Submonoid.closure_induction_right`).
 * `finrank_le_factorial` — the headline bound `finrank K (Hecke K q qi n) ≤ (n+1)!`,
-  proved from `span_cosetFam_eq_top`.
+  proved from `span_cosetFam_eq_top`.  **Sorry-free**; `#print axioms` gives
+  `[propext, Classical.choice, Quot.sound]`.
+
+The whole file is sorry-free: this settles the **spanning half** of the
+Iwahori–Hecke basis theorem in general `n`.  The complementary
+linear-independence half (`dim ≥ n!`) is *not* claimed here — at `n = 3` it is
+`HeckeDim3Indep`.
 
 Base ring: generic `[CommRing K]` for the algebraic data; `[Nontrivial K]` only
 for the `finrank` bound (`StrongRankCondition`), per §7c.
@@ -78,13 +95,144 @@ This is the coset representative `r_j` in the decomposition
 is always `< m + 1`, so no bound hypothesis is needed. -/
 noncomputable def descProd (m : ℕ) : ℕ → Hecke K q qi (m + 1)
   | 0 => 1
-  | (j + 1) => descProd m j * σ K q qi (m + 1) ⟨m - j, by omega⟩
+  | (j + 1) => descProd m j * σ K q qi (m + 1) ⟨m - j, by first | omega | (simp only []; omega)⟩
 
 @[simp] theorem descProd_zero (m : ℕ) : descProd (K := K) (q := q) (qi := qi) m 0 = 1 := rfl
 
 theorem descProd_succ (m j : ℕ) :
     descProd (K := K) (q := q) (qi := qi) m (j + 1)
-      = descProd m j * σ K q qi (m + 1) ⟨m - j, by omega⟩ := rfl
+      = descProd m j * σ K q qi (m + 1) ⟨m - j, by first | omega | (simp only []; omega)⟩ := rfl
+
+/-! ## Right multiplication of a coset representative by a generator
+
+These four lemmas are the entire content of the coset "bubble".  Writing
+`r_j = descProd m j = σ_m σ_{m-1} ⋯ σ_{m-j+1}` (so `r_j` occupies generator
+indices `[m-j+1, m]`, and `r_0 = 1`), the product `r_j σ_i` re-expresses as
+
+| case | condition | `r_j · σ_i` |
+|---|---|---|
+| far commutation | `i + j + 1 ≤ m` | `σ_i · r_j` |
+| lengthening | `i + j = m` | `r_{j+1}` |
+| quadratic | `i + j = m + 1` | `(q-qi)·r_j + (q·qi)·r_{j-1}` |
+| braid | `m + 2 ≤ i + j` | `σ_{i-1} · r_j` |
+
+In every case the result is `(a generator, or a scalar) · r_k` — i.e. it lands
+back in `Σ_k ι(H_m)·r_k`, which is exactly what closes the span argument.
+
+**Handedness is the crux.** The spanning family is `ι(H_m)·r_j`, with the
+subalgebra on the **left**; so it is *right* multiplication by a generator that
+re-enters the family, and the induction must be taken on the right
+(`Submonoid.closure_induction_right`).  Left multiplication by the top generator
+does *not* reduce this way — `σ_m · ι(w) · r_j` offers no way to move `σ_m` past
+`ι(w)` — which is why the left-handed formulation of this lemma looked like the
+deep half of the basis theorem.
+-/
+
+/-- **Far commutation** (`i + j + 1 ≤ m`): `σ_i` sits at least two below every
+factor of `r_j`, so it commutes past the whole descending product. -/
+theorem descProd_mul_σ_of_add_lt (m : ℕ) (i : Fin (m + 1)) :
+    ∀ j : ℕ, (i : ℕ) + j + 1 ≤ m →
+      descProd (K := K) (q := q) (qi := qi) m j * σ K q qi (m + 1) i
+        = σ K q qi (m + 1) i * descProd m j
+  | 0, _ => by rw [descProd_zero, one_mul, mul_one]
+  | (j + 1), h => by
+      have hc : σ K q qi (m + 1) ⟨m - j, by first | omega | (simp only []; omega)⟩ * σ K q qi (m + 1) i
+          = σ K q qi (m + 1) i * σ K q qi (m + 1) ⟨m - j, by first | omega | (simp only []; omega)⟩ :=
+        σ_commute K q qi (m + 1) ⟨m - j, by first | omega | (simp only []; omega)⟩ i (by first | omega | (simp only []; omega))
+      rw [descProd_succ, mul_assoc, hc, ← mul_assoc,
+        descProd_mul_σ_of_add_lt m i j (by first | omega | (simp only []; omega)), mul_assoc]
+
+/-- **Lengthening** (`i + j = m`): appending `σ_i` to `r_j` is exactly the
+recursive step defining `r_{j+1}`. -/
+theorem descProd_mul_σ_of_add_eq (m j : ℕ) (i : Fin (m + 1)) (h : (i : ℕ) + j = m) :
+    descProd (K := K) (q := q) (qi := qi) m j * σ K q qi (m + 1) i = descProd m (j + 1) := by
+  rw [descProd_succ]
+  congr 2
+  exact Fin.ext (by first | omega | (simp only []; omega))
+
+/-- **Quadratic** (`i + j = m + 1`, `j ≥ 1`): `σ_i` is the *last* factor of `r_j`,
+so `r_j σ_i = r_{j-1} σ_i²`, and the Hecke quadratic relation splits it into
+`r_j` and `r_{j-1}`. -/
+theorem descProd_mul_σ_of_add_eq_succ (m j : ℕ) (i : Fin (m + 1))
+    (hj : 1 ≤ j) (h : (i : ℕ) + j = m + 1) :
+    descProd (K := K) (q := q) (qi := qi) m j * σ K q qi (m + 1) i
+      = (q - qi) • descProd m j + (q * qi) • descProd m (j - 1) := by
+  obtain ⟨j', rfl⟩ : ∃ j', j = j' + 1 := ⟨j - 1, by first | omega | (simp only []; omega)⟩
+  have hi : (⟨m - j', by first | omega | (simp only []; omega)⟩ : Fin (m + 1)) = i :=
+    Fin.ext (by first | omega | (simp only []; omega))
+  have hstep : descProd (K := K) (q := q) (qi := qi) m (j' + 1)
+      = descProd m j' * σ K q qi (m + 1) i := by rw [descProd_succ, hi]
+  rw [hstep, mul_assoc, σ_quadratic, mul_add, mul_smul_comm, mul_smul_comm, mul_one,
+    ← hstep]
+  simp
+
+/-- **Braid** (`m + 2 ≤ i + j`): `σ_i` lies strictly inside `r_j`, and the
+Yang–Baxter move plus far commutation pull `σ_{i-1}` out on the left. -/
+theorem descProd_mul_σ_of_le_add (m : ℕ) :
+    ∀ (j : ℕ) (i : Fin (m + 1)), j ≤ m + 1 → m + 2 ≤ (i : ℕ) + j →
+      descProd (K := K) (q := q) (qi := qi) m j * σ K q qi (m + 1) i
+        = σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ * descProd m j
+  | 0, i, _, h => by exact absurd h (by first | omega | (simp only []; omega))
+  | (j + 1), i, hjm, h => by
+      -- Under the length bound, the hypothesis forces `i ≥ 1`.
+      have hilt : (i : ℕ) < m + 1 := i.isLt
+      have hi1 : 1 ≤ (i : ℕ) := by omega
+      have hak : (⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ : Fin (m + 1))
+          = (⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ : Fin (m + 1)) := rfl
+      rcases Nat.lt_or_ge ((i : ℕ) + (j + 1)) (m + 3) with hA | hB
+      · -- `i + j = m + 1`: `σ_{i-1}` is the new last factor, `σ_i` the previous one.
+        have hj1 : 1 ≤ j := by omega
+        obtain ⟨j', rfl⟩ : ∃ j', j = j' + 1 := ⟨j - 1, by first | omega | (simp only []; omega)⟩
+        have ha : (⟨m - (j' + 1), by first | omega | (simp only []; omega)⟩ : Fin (m + 1))
+            = (⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ : Fin (m + 1)) := Fin.ext (by first | omega | (simp only []; omega))
+        have hb : (⟨m - j', by first | omega | (simp only []; omega)⟩ : Fin (m + 1)) = i := Fin.ext (by first | omega | (simp only []; omega))
+        -- `r_{j'+2} = r_{j'} · σ_i · σ_{i-1}`
+        have hexp : descProd (K := K) (q := q) (qi := qi) m (j' + 1 + 1)
+            = descProd m j' * σ K q qi (m + 1) i
+                * σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ := by
+          rw [descProd_succ, ha, descProd_succ, hb]
+        -- Yang–Baxter at `i-1`: `σ_{i-1} σ_i σ_{i-1} = σ_i σ_{i-1} σ_i`.
+        have hbraid : σ K q qi (m + 1) i * σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩
+              * σ K q qi (m + 1) i
+            = σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ * σ K q qi (m + 1) i
+              * σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ := by
+          have hbr := σ_braid K q qi (m + 1) (⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ : Fin (m + 1))
+            (by first | omega | (simp only []; omega))
+          have hai : (⟨((⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ : Fin (m + 1)) : ℕ) + 1, by first | omega | (simp only []; omega)⟩
+              : Fin (m + 1)) = i := Fin.ext (by first | omega | (simp only []; omega))
+          rw [hai] at hbr
+          exact hbr.symm
+        -- `σ_{i-1}` commutes past `r_{j'}` (all its indices are `≥ i+1`).
+        have hcomm : descProd (K := K) (q := q) (qi := qi) m j'
+              * σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩
+            = σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ * descProd m j' :=
+          descProd_mul_σ_of_add_lt m ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ j' (by first | omega | (simp only []; omega))
+        calc descProd (K := K) (q := q) (qi := qi) m (j' + 1 + 1) * σ K q qi (m + 1) i
+            = descProd m j' * (σ K q qi (m + 1) i
+                * σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩
+                * σ K q qi (m + 1) i) := by rw [hexp]; noncomm_ring
+          _ = descProd m j' * (σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩
+                * σ K q qi (m + 1) i
+                * σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩) := by rw [hbraid]
+          _ = (descProd m j' * σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩)
+                * σ K q qi (m + 1) i
+                * σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ := by noncomm_ring
+          _ = σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩
+                * (descProd m j' * σ K q qi (m + 1) i)
+                * σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ := by rw [hcomm]; noncomm_ring
+          _ = σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ * descProd m (j' + 1)
+                * σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ := by
+              rw [descProd_mul_σ_of_add_eq m j' i (by first | omega | (simp only []; omega))]
+          _ = σ K q qi (m + 1) ⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ * descProd m (j' + 1 + 1) := by
+              rw [mul_assoc, descProd_mul_σ_of_add_eq m (j' + 1)
+                (⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ : Fin (m + 1)) (by first | omega | (simp only []; omega))]
+      · -- `i + j ≥ m + 2`: `σ_i` commutes with the new last factor; recurse.
+        have hc : σ K q qi (m + 1) i * σ K q qi (m + 1) ⟨m - j, by first | omega | (simp only []; omega)⟩
+            = σ K q qi (m + 1) ⟨m - j, by first | omega | (simp only []; omega)⟩ * σ K q qi (m + 1) i :=
+          σ_commute K q qi (m + 1) i ⟨m - j, by first | omega | (simp only []; omega)⟩
+            (by first | omega | (simp only []; omega))
+        rw [descProd_succ, mul_assoc, ← hc, ← mul_assoc,
+          descProd_mul_σ_of_le_add m j i (by first | omega | (simp only []; omega)) (by first | omega | (simp only []; omega)), mul_assoc, ← descProd_succ]
 
 /-! ## The recursively-built spanning family and its index type -/
 
@@ -158,69 +306,105 @@ theorem one_mem_span_cosetFam :
 
 /-! ## The spanning statement (crux) and the headline finrank bound -/
 
-/-- **The coset-span "bubble" closure lemma (the crux).**  Left multiplication by
-any generator `σ_i` of `H_{m+1}(q) = Hecke K q qi m` preserves the `K`-span of the
-coset family `cosetFam m`.
+/-- **Coset absorption.**  For any `w` in the span of the level-`m` family and any
+coset index `k`, the product `ι(w)·r_k` lies in the span of the level-`(m+1)`
+family (it *is* a family element when `w` is one). -/
+theorem incl_mul_descProd_mem (m : ℕ) (k : Fin (m + 2)) {w : Hecke K q qi m}
+    (hw : w ∈ Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m))) :
+    heckeIncl K q qi m w * descProd m (k : ℕ)
+      ∈ Submodule.span K
+        (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1))) := by
+  have hMj : (Submodule.span K
+        (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m))).map
+        ((LinearMap.mulRight K (descProd m (k : ℕ))).comp (heckeIncl K q qi m).toLinearMap)
+      ≤ Submodule.span K
+        (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1))) := by
+    rw [Submodule.map_span, Submodule.span_le]
+    rintro _ ⟨_, ⟨d, rfl⟩, rfl⟩
+    apply Submodule.subset_span
+    exact ⟨(d, k), by
+      simp [cosetFam, LinearMap.mulRight_apply, LinearMap.comp_apply,
+        AlgHom.toLinearMap_apply]⟩
+  have hres := hMj (Submodule.mem_map_of_mem hw)
+  simpa [LinearMap.mulRight_apply, LinearMap.comp_apply, AlgHom.toLinearMap_apply] using hres
 
-For `i` in the image of the tower inclusion `H_m ↪ H_{m+1}` this is routine
-absorption into `ι(H_m)`; for the **top** generator it is the substance of the
-Iwahori–Hecke basis theorem (the descending coset representatives
-`r_j = σ_m ⋯ σ_{m-j+1}` are permuted / quadratic-reduced under left
-σ-multiplication). This is the general-`n` form of the twelve explicit
-`HeckeDim3.gen_mul_mem` reductions.
+/-- **The coset-span closure lemma (the crux) — right-handed.**  *Right*
+multiplication by any generator `σ_i` of `H_{m+1}(q) = Hecke K q qi m` preserves
+the `K`-span of the coset family `cosetFam m`.
 
-The `i` in the image of the tower inclusion case (`i = j.castSucc`) is proved
-sorry-free below; only the **top** generator `i = Fin.last m` remains open (the
-GAP, bean `qou-uoal` child) — it is the deep spanning half of `dim H_n(q) = n!`. -/
-theorem gen_mul_span_mem :
+This is the general-`n` form of the twelve explicit `HeckeDim3.gen_mul_mem`
+reductions at `n = 3`, and it is **sorry-free**: each family element
+`ι(w)·r_j` meets `σ_i` in exactly one of the four cases of the bubble
+(`descProd_mul_σ_of_add_lt` / `_of_add_eq` / `_of_add_eq_succ` / `_of_le_add`,
+selected by comparing `i + j` with `m`), and every case returns either a family
+element or `ι(w·σ_k)·r_j` with the level-`m` statement available by recursion.
+
+**Why right and not left.**  The family is `ι(H_m)·r_j`, with the subalgebra on
+the *left*.  Right multiplication therefore acts on the `r_j` factor, where the
+Hecke relations apply; left multiplication by the top generator would have to
+move `σ_m` past the opaque `ι(w)`, which no relation does.  Taking the induction
+on the correct side is what turns this from "the deep half of the basis theorem"
+into a four-case computation. -/
+theorem span_mul_gen_mem :
     ∀ (m : ℕ) (i : Fin m) (b : Hecke K q qi m),
       b ∈ Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m)) →
-      σ K q qi m i * b ∈ Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m))
+      b * σ K q qi m i
+        ∈ Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m))
   | 0, i, _, _ => i.elim0
   | (m + 1), i, b, hb => by
-      rcases Fin.eq_castSucc_or_eq_last i with ⟨i', rfl⟩ | rfl
-      · -- `σ_i = ι(σ_{i'})` lies in the image of the tower inclusion: absorb into `ι(H_m)`.
-        have hσ : σ K q qi (m + 1) i'.castSucc = heckeIncl K q qi m (σ K q qi m i') :=
-          (heckeIncl_σ K q qi m i').symm
-        -- Left multiplication by `σ_{i'.castSucc}` maps each coset generator back into the span.
-        have key : (Submodule.span K
-              (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1)))).map
-              (LinearMap.mulLeft K (σ K q qi (m + 1) i'.castSucc))
-            ≤ Submodule.span K
-              (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1))) := by
-          rw [Submodule.map_span, Submodule.span_le]
-          rintro _ ⟨_, ⟨c, rfl⟩, rfl⟩
-          rw [LinearMap.mulLeft_apply, cosetFam_succ, hσ, ← mul_assoc, ← map_mul]
-          -- `ι(σ_{i'} · cosetFam m c.1) · r_{c.2}`, with `σ_{i'} · cosetFam m c.1 ∈ span` by IH.
-          have hw : σ K q qi m i' * cosetFam m c.1 ∈ Submodule.span K
-              (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m)) :=
-            gen_mul_span_mem m i' (cosetFam m c.1) (Submodule.subset_span ⟨c.1, rfl⟩)
-          have hMj : (Submodule.span K
-                (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m))).map
-                ((LinearMap.mulRight K (descProd m c.2.val)).comp
-                  (heckeIncl K q qi m).toLinearMap)
-              ≤ Submodule.span K
-                (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1))) := by
-            rw [Submodule.map_span, Submodule.span_le]
-            rintro _ ⟨_, ⟨d, rfl⟩, rfl⟩
-            apply Submodule.subset_span
-            exact ⟨(d, c.2), by
-              simp [cosetFam, LinearMap.mulRight_apply, LinearMap.comp_apply,
-                AlgHom.toLinearMap_apply]⟩
-          have hres := hMj (Submodule.mem_map_of_mem hw)
-          simpa [LinearMap.mulRight_apply, LinearMap.comp_apply, AlgHom.toLinearMap_apply]
-            using hres
-        exact key (Submodule.mem_map_of_mem hb)
-      · -- The **top** generator `σ_m` (`i = Fin.last m`): the coset-representative bubble.
-        -- Ref: [mathas1999] Ch. 1 (T_w standard basis, w ∈ S_n)
-        -- Ref: [geckpfeiffer2000] §4.4 (coset representatives / reduced words)
-        -- GAP (bean qou-uoal child): push σ_m through the descending reps r_j via the
-        -- quadratic/braid relations back into Σ_k ι(H_m)·r_k.
-        sorry
+      have key : (Submodule.span K
+            (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1)))).map
+            (LinearMap.mulRight K (σ K q qi (m + 1) i))
+          ≤ Submodule.span K
+            (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1))) := by
+        rw [Submodule.map_span, Submodule.span_le]
+        rintro _ ⟨_, ⟨c, rfl⟩, rfl⟩
+        rw [LinearMap.mulRight_apply, cosetFam_succ, mul_assoc]
+        have hjlt : (c.2 : ℕ) < m + 2 := c.2.isLt
+        have hilt : (i : ℕ) < m + 1 := i.isLt
+        have hwmem : cosetFam m c.1 ∈ Submodule.span K
+            (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m)) :=
+          Submodule.subset_span ⟨c.1, rfl⟩
+        rcases lt_trichotomy ((i : ℕ) + (c.2 : ℕ)) m with hlt | heq | hgt
+        · -- far commutation: `r_j σ_i = σ_i r_j`, and `σ_i = ι(σ_i)`
+          have hi' : (i : ℕ) < m := by omega
+          have hσ : heckeIncl K q qi m (σ K q qi m ⟨(i : ℕ), hi'⟩) = σ K q qi (m + 1) i := by
+            rw [heckeIncl_σ]; congr 1
+          rw [descProd_mul_σ_of_add_lt m i (c.2 : ℕ) (by omega), ← mul_assoc, ← hσ, ← map_mul]
+          exact incl_mul_descProd_mem m c.2 (span_mul_gen_mem m ⟨(i : ℕ), hi'⟩ _ hwmem)
+        · -- lengthening: `r_j σ_i = r_{j+1}`
+          rw [descProd_mul_σ_of_add_eq m (c.2 : ℕ) i heq]
+          have hk : ((c.2 : ℕ) + 1) < m + 2 := by omega
+          have hcast : descProd (K := K) (q := q) (qi := qi) m ((c.2 : ℕ) + 1)
+              = descProd m ((⟨(c.2 : ℕ) + 1, hk⟩ : Fin (m + 2)) : ℕ) := rfl
+          rw [hcast]
+          exact incl_mul_descProd_mem m ⟨(c.2 : ℕ) + 1, hk⟩ hwmem
+        · rcases eq_or_lt_of_le (Nat.succ_le_of_lt hgt) with heq2 | hgt2
+          · -- quadratic: `r_j σ_i = (q-qi)·r_j + (q·qi)·r_{j-1}`
+            have hj1 : 1 ≤ (c.2 : ℕ) := by omega
+            rw [descProd_mul_σ_of_add_eq_succ m (c.2 : ℕ) i hj1 (by omega), mul_add,
+              mul_smul_comm, mul_smul_comm]
+            refine Submodule.add_mem _ (Submodule.smul_mem _ _ ?_) (Submodule.smul_mem _ _ ?_)
+            · exact incl_mul_descProd_mem m c.2 hwmem
+            · have hk : ((c.2 : ℕ) - 1) < m + 2 := by omega
+              have hcast : descProd (K := K) (q := q) (qi := qi) m ((c.2 : ℕ) - 1)
+                  = descProd m ((⟨(c.2 : ℕ) - 1, hk⟩ : Fin (m + 2)) : ℕ) := rfl
+              rw [hcast]
+              exact incl_mul_descProd_mem m ⟨(c.2 : ℕ) - 1, hk⟩ hwmem
+          · -- braid: `r_j σ_i = σ_{i-1} r_j`, and `σ_{i-1} = ι(σ_{i-1})`
+            have hi' : (i : ℕ) - 1 < m := by omega
+            have hσ : heckeIncl K q qi m (σ K q qi m ⟨(i : ℕ) - 1, hi'⟩)
+                = σ K q qi (m + 1) ⟨(i : ℕ) - 1, by omega⟩ := by
+              rw [heckeIncl_σ]; congr 1
+            rw [descProd_mul_σ_of_le_add m (c.2 : ℕ) i (by omega) (by omega), ← mul_assoc,
+              ← hσ, ← map_mul]
+            exact incl_mul_descProd_mem m c.2 (span_mul_gen_mem m ⟨(i : ℕ) - 1, hi'⟩ _ hwmem)
+      exact key (Submodule.mem_map_of_mem hb)
 
-/-- **The coset family spans `H_{m+1}(q)`** (`span = ⊤`), reduced to the bubble
-closure lemma `gen_mul_span_mem` via the adjoin-equals-span-of-submonoid route
-(exactly as `HeckeDim3.span_sixWords_eq_top` at `n = 3`). -/
+/-- **The coset family spans `H_{m+1}(q)`** (`span = ⊤`), from the right-handed
+closure lemma `span_mul_gen_mem` via the adjoin-equals-span-of-submonoid route
+(exactly as `HeckeDim3.span_sixWords_eq_top` at `n = 3`, but inducting on the
+right). -/
 theorem span_cosetFam_eq_top (m : ℕ) :
     Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m)) = ⊤ := by
   rw [eq_top_iff]
@@ -232,11 +416,11 @@ theorem span_cosetFam_eq_top (m : ℕ) :
     rw [← Algebra.adjoin_eq_span]; exact hx
   refine Submodule.span_le.mpr ?_ hspan
   intro y hy
-  induction hy using Submonoid.closure_induction_left with
+  induction hy using Submonoid.closure_induction_right with
   | one => exact one_mem_span_cosetFam m
-  | mul_left a ha b _ ih =>
-      obtain ⟨i, rfl⟩ := ha
-      exact gen_mul_span_mem m i b ih
+  | mul_right a _ b hb ih =>
+      obtain ⟨i, rfl⟩ := hb
+      exact span_mul_gen_mem m i a ih
 
 /-- **The headline coset spanning bound** `dim_K H_{m+1}(q) ≤ (m+1)!`
 (`Hecke K q qi m = H_{m+1}(q)`), proved from `span_cosetFam_eq_top` and the
