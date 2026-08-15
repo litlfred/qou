@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import decimal
 import json
 import pathlib
 import re
@@ -49,7 +50,9 @@ Q_MUON = 1.1099785955541805
 Q_MUON_50 = "1.10997859555418057528159407960950937799328227995870"
 
 # A NON-REPRODUCIBLE 50-dps muon string, carried by 243 witnesses. It agrees
-# with the canonical value to 12 digits, then diverges by 2.842e-12.
+# with the canonical value to 12 digits, then diverges by 2.842e-12 RELATIVE
+# (3.154e-12 absolute -- the two are quoted interchangeably elsewhere and are
+# not the same number; the comparisons below are all relative).
 #
 # CALIBRATE THIS BEFORE QUOTING IT. An earlier version of this comment (mine)
 # called the trailing digits "38 digits of noise" and compared the gap to the
@@ -150,22 +153,93 @@ def classify(value) -> tuple[str, float] | None:
     return "other", ppb
 
 
+def _sig_digits(s: str) -> int:
+    """Decimal digits a string CLAIMS -- trailing zeros included.
+
+    This is the "how much precision is being asserted" count, and it is what
+    the false-precision gate keys on: `1.10997859555733470000000000` claims
+    28 digits while backing 17, and that padding is precisely the defect.
+    """
+    return len(s.replace(".", "").replace("-", "").lstrip("0"))
+
+
+def _backed_digits(s: str) -> int:
+    """Decimal digits a string can BACK UP -- trailing zeros stripped.
+
+    The counterpart to `_sig_digits`, and the one that sets a comparison
+    tolerance. A trailing zero is the one digit that may be padding rather
+    than measurement, so it cannot be held against the other operand.
+
+    The distinction is not academic: `Q_MUON_50` itself ends in a padding
+    zero (its 51st digit; the true value continues ...58686...). Counting
+    that zero made the tolerance 10x too tight and pushed 13 witnesses
+    carrying the canonical value at 60 digits into "origin unknown", missing
+    by a factor of 1.24.
+    """
+    return len(s.replace(".", "").replace("-", "").strip("0"))
+
+
+def _agrees_to_stated_precision(raw: str, known: str) -> bool:
+    """Do two decimal strings name the same number, to the precision claimed?
+
+    The tolerance is one unit in the last place of whichever string carries
+    FEWER significant digits: a value written to 20 digits cannot be held to
+    a 50-digit standard, and a 50-digit value compared against a 20-digit one
+    is only being asked about its first 20.
+
+    This is what makes the check immune to the round-vs-truncate difference
+    that broke the previous string-prefix version -- a rounded last digit is
+    half an ulp away, well inside one ulp, while a genuinely different
+    constant diverges at digit 17 or earlier and is many orders outside it.
+    """
+    with decimal.localcontext() as ctx:
+        ctx.prec = max(len(raw), len(known)) + 10
+        try:
+            a, b = decimal.Decimal(raw), decimal.Decimal(known)
+        except decimal.InvalidOperation:
+            return False
+        if not b:
+            return False
+        m = min(_backed_digits(raw), _backed_digits(known))
+        return abs(a - b) / abs(b) <= decimal.Decimal(10) ** (1 - m)
+
+
 def false_precision(raw) -> str | None:
-    """Detect a q0 serialized with more digits than it actually has.
+    """Detect a q0 string claiming MORE precision than it carries.
 
-    Returns a description if `raw` is a >16-significant-digit string that
-    is NOT the value `q_muon_at()` produces from the stated inputs — i.e. a
-    constant that cannot be regenerated, and so cannot be checked.
+    Returns a description, or None if the value is fine.
 
-    This is a REPRODUCIBILITY flag, not an accuracy one. See the note at
-    `Q_MUON_50_WRONG`: the divergence sits 431x below the CODATA uncertainty
-    on q_muon, so neither string carries physical content that far out and
-    the canonical one is not "more accurate". What it is, is recomputable.
+    REWRITTEN 2026-08-15, twice, after review. Both earlier versions compared
+    STRINGS, and string comparison is the wrong instrument here. The failures,
+    in the order they were found:
+
+    1. `repr(float)` emits **17** significant digits, so ordinary f64
+       renderings tripped a `>16` test; and being 18 characters they could
+       never match a fixed 20-character prefix, so they were structurally
+       unable to clear. 79 files carrying the CANONICAL value at f64
+       precision were reported as "origin UNKNOWN, no investigation".
+
+    2. Widening the comparison to the full overlap fixed that and broke the
+       other end: a serializer that ROUNDS its last digit rather than
+       truncating produces `...0878015` -> `...087802`, which shares no
+       prefix past the rounded digit. 145 witnesses carrying the known stale
+       constant at 50 digits, plus ~80 more carrying the canonical one, were
+       moved into "origin genuinely unknown" -- the bucket went UP, which is
+       how the defect was caught.
+
+    Both are the same mistake: the question is whether two DECIMALS agree to
+    the precision the shorter one claims, and that is arithmetic, not text.
+    So compare numerically, with the tolerance set by whichever of the two
+    strings offers fewer significant digits -- one unit in its last place.
+    Decimal, not float: the whole point is digits past f64's 17.
     """
     if not isinstance(raw, str):
         return None
     digits = raw.replace(".", "").replace("-", "").lstrip("0")
-    if len(digits) <= 16:
+    # f64 round-trips at 17 significant digits. At or below that, the string
+    # is a legitimate f64 rendering and asserts nothing it cannot back up --
+    # whatever value it holds is a question for the anchor buckets, not here.
+    if len(digits) <= 17:
         return None
     try:
         v = float(raw)
@@ -173,14 +247,15 @@ def false_precision(raw) -> str | None:
         return None
     if abs(v - Q_MUON) / Q_MUON > 1e-9:
         return None  # not a muon-pin value; out of scope for this check
-    canon, wrong = Q_MUON_50, Q_MUON_50_WRONG
-    if raw.startswith(canon[:20]):
-        return None  # matches the canonical prefix — fine
-    if raw.startswith(wrong[:20]):
+
+    if _agrees_to_stated_precision(raw, Q_MUON_50):
+        return None  # canonical, at whatever precision it was written
+    if _agrees_to_stated_precision(raw, Q_MUON_50_WRONG):
         return (f"{len(digits)}-digit muon string that q_muon_at() does not "
-                f"reproduce (diverges at digit 13, 2.8e-12) -- not "
-                f"recomputable from the stated inputs")
-    return f"{len(digits)}-digit muon string not matching the canonical value"
+                f"reproduce (diverges at digit 13) -- not recomputable from "
+                f"the stated inputs")
+    return (f"{len(digits)}-digit muon string matching NEITHER the canonical "
+            f"value nor the known stale one -- origin genuinely unknown")
 
 
 def anchors_in(doc) -> list[tuple[str, object, str, float]]:
