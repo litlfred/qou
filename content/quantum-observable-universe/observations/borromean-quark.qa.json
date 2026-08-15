@@ -1698,6 +1698,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not from constituents.\"; \", not from the constituent unknots.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:53.945Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "'not fundamental knots', 'Mass from linking, not from constituents', 'T(2,2), not T(2,7)' are substantive framework contrasts; 'Crossing orientation is not writhe' is load-bearing disambiguation"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1717,6 +1732,21 @@
         "reviewed_at": "2026-08-15T10:30:59.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:53.981Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no rhetorical pivot construction found"
       }
     ],
     "trap-em-dash": [
@@ -1736,6 +1766,21 @@
         "reviewed_at": "2026-08-15T10:30:59.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 776 words)"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.072Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no load-bearing em-dash construction found"
       }
     ],
     "trap-triples": [
@@ -1755,6 +1800,21 @@
         "reviewed_at": "2026-08-15T10:30:59.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 776 words)"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.123Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no compulsive triple construction found"
       }
     ],
     "trap-closing-aphorism": [
@@ -1774,6 +1834,21 @@
         "reviewed_at": "2026-08-15T10:30:59.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.168Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no closing aphorism construction found"
       }
     ],
     "trap-meta-commentary": [
@@ -1793,6 +1868,21 @@
         "reviewed_at": "2026-08-15T10:30:59.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.211Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no meta-commentary construction found"
       }
     ],
     "trap-thesis-restatement": [
@@ -1812,6 +1902,21 @@
         "reviewed_at": "2026-08-15T10:30:59.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.252Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "final Skein-section sentence restated the preceding two sentences; replaced by a one-line consistency claim (same edit as trap-superlative)"
       }
     ],
     "trap-performed-warmth": [
@@ -1831,6 +1936,21 @@
         "reviewed_at": "2026-08-15T10:30:59.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.300Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no performed warmth construction found"
       }
     ],
     "trap-superlative": [
@@ -1850,6 +1970,22 @@
         "reviewed_at": "2026-08-15T10:30:59.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.354Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "'perfectly aligns' was unqualified maximum-strength; removed in closer rewrite",
+        "notes": "fixed: 'The assertion that the vast majority of hadronic mass ... perfectly aligns with the Borromean volume contributing through the Skein resolution.' -> 'This is consistent with the Borromean volume entering the hadronic mass through the Skein resolution.'"
       }
     ],
     "trap-nonspeakable": [
@@ -1869,8 +2005,23 @@
         "reviewed_at": "2026-08-15T10:30:59.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.407Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "nested-gerund closer ('assertion that ... derives ... multiplying ... aligns with ... contributing') resolved by the same closer rewrite"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.333Z"
+  "updated_at": "2026-08-15T11:25:54.407Z"
 }
