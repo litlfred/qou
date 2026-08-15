@@ -939,4 +939,169 @@ theorem trajectory_tail_collapse (u : ℕ → ℕ → K) (k : ℕ → K) (δ ν 
     _ ≤ θ ^ n * rungBound ν P k 0 := hcollapse n
     _ = θ ^ n * P := rfl
 
+/-!
+### Nonlocal (two-source) generalization (SF8 arc)
+
+Full NS transfer is nonlocal; the SF8 probe stress-tests the
+per-amplitude route with an energy-conserving second-neighbor channel
+of strength `γ` (inflow `γ·k_n·u_{n-2}²` paired with outflow
+`−γ·k_{n+2}·u_n·u_{n+2}`, telescoping exactly in the energy sum).
+The Lean side: the per-rung equilibrium, the ladder collapse, and the
+trajectory composition all survive a second forcing source.
+
+- `rung_equilibrium_two_source` — the damped-forced invariant with
+  `Φ = kn·(P₁² + γ·P₂²)`.
+- `two_source_ladder_collapse` — the pair-maximum induction: under
+  the two-source dissipation-scale condition
+  `(1+γ)·max(β j, β (j+1)) ≤ θ·ν·kk j` the pairwise maxima decay
+  geometrically (rate `θ` per pair, i.e. `√θ` per rung).
+- `rungBound2` + `trajectory_two_source_bounds` — the two-term
+  composed bounds hold along whole trajectories (pair induction on
+  rungs, each step through `rung_equilibrium_two_source`).
+
+This covers the *second-neighbor* nonlocality class the probe tests —
+not full NS triad structure, which remains the standing caveat.
+-/
+
+/-- Per-rung equilibrium with a second (nonlocal) source: forced by
+    `Φ = kn·(P₁² + γ·P₂²)` and damped at `D = ν·kn²`, a rung starting
+    empty never exceeds `(P₁² + γ·P₂²)/(ν·kn)`. -/
+theorem rung_equilibrium_two_source (u : ℕ → K) (δ P₁ P₂ γ ν kn : K)
+    (hδ : 0 ≤ δ) (hν : 0 < ν) (hkn : 0 < kn) (hγ : 0 ≤ γ)
+    (hδD : δ * (ν * kn ^ 2) ≤ 1)
+    (h0 : u 0 = 0)
+    (hstep : ∀ t, u (t + 1) ≤ u t
+      + δ * (kn * (P₁ ^ 2 + γ * P₂ ^ 2) - ν * kn ^ 2 * u t)) :
+    ∀ t, u t ≤ (P₁ ^ 2 + γ * P₂ ^ 2) / (ν * kn) := by
+  have hbound := tail_damped_forced_bound u δ
+    (kn * (P₁ ^ 2 + γ * P₂ ^ 2)) (ν * kn ^ 2)
+    hδ (by positivity) hδD hstep
+  intro t
+  have heq : kn * (P₁ ^ 2 + γ * P₂ ^ 2) / (ν * kn ^ 2)
+      = (P₁ ^ 2 + γ * P₂ ^ 2) / (ν * kn) := by
+    field_simp
+  have := hbound t
+  rw [h0, heq] at this
+  have hmax : max (0 : K) ((P₁ ^ 2 + γ * P₂ ^ 2) / (ν * kn))
+      = (P₁ ^ 2 + γ * P₂ ^ 2) / (ν * kn) :=
+    max_eq_right (by positivity)
+  rwa [hmax] at this
+
+/-- **Two-source ladder collapse** (pair-maximum induction): with the
+    two-term recurrence `β(j+2) ≤ (β(j+1)² + γ·β j²)/(ν·kk j)` and
+    the two-source dissipation-scale condition
+    `(1+γ)·max(β j, β(j+1)) ≤ θ·ν·kk j` (`θ ≤ 1`), the pairwise
+    maxima decay geometrically:
+    `max (β (2m)) (β (2m+1)) ≤ θᵐ·max (β 0) (β 1)`. -/
+theorem two_source_ladder_collapse (β kk : ℕ → K) (ν θ γ : K)
+    (hθ0 : 0 ≤ θ) (hθ1 : θ ≤ 1) (hν : 0 < ν) (hγ : 0 ≤ γ)
+    (hkk : ∀ j, 0 < kk j) (hβ : ∀ j, 0 ≤ β j)
+    (hrec : ∀ j, β (j + 2) ≤ (β (j + 1) ^ 2 + γ * β j ^ 2) / (ν * kk j))
+    (hsub : ∀ j, (1 + γ) * max (β j) (β (j + 1)) ≤ θ * (ν * kk j)) :
+    ∀ m, max (β (2 * m)) (β (2 * m + 1)) ≤ θ ^ m * max (β 0) (β 1) := by
+  have hMnn : ∀ j, 0 ≤ max (β j) (β (j + 1)) :=
+    fun j => le_trans (hβ j) (le_max_left _ _)
+  have hstep : ∀ j, β (j + 2) ≤ θ * max (β j) (β (j + 1)) := by
+    intro j
+    have hpos : (0 : K) < ν * kk j := mul_pos hν (hkk j)
+    have hb0 : β j ≤ max (β j) (β (j + 1)) := le_max_left _ _
+    have hb1 : β (j + 1) ≤ max (β j) (β (j + 1)) := le_max_right _ _
+    have hsq0 : β j ^ 2 ≤ max (β j) (β (j + 1)) ^ 2 := by
+      nlinarith [hβ j, hMnn j]
+    have hsq1 : β (j + 1) ^ 2 ≤ max (β j) (β (j + 1)) ^ 2 := by
+      nlinarith [hβ (j + 1), hMnn j]
+    have hnum : β (j + 1) ^ 2 + γ * β j ^ 2
+        ≤ (1 + γ) * max (β j) (β (j + 1)) ^ 2 := by
+      nlinarith [mul_le_mul_of_nonneg_left hsq0 hγ]
+    have hlast : (β (j + 1) ^ 2 + γ * β j ^ 2) / (ν * kk j)
+        ≤ θ * max (β j) (β (j + 1)) := by
+      rw [div_le_iff₀ hpos]
+      nlinarith [mul_le_mul_of_nonneg_right (hsub j) (hMnn j)]
+    exact le_trans (hrec j) hlast
+  have hmono : ∀ j, max (β (j + 1)) (β (j + 2)) ≤ max (β j) (β (j + 1)) := by
+    intro j
+    refine max_le (le_max_right _ _) ?_
+    have h1 := hstep j
+    nlinarith [hMnn j]
+  have hdecay : ∀ j,
+      max (β (j + 2)) (β (j + 3)) ≤ θ * max (β j) (β (j + 1)) := by
+    intro j
+    refine max_le (hstep j) ?_
+    have h3 : β (j + 3) ≤ θ * max (β (j + 1)) (β (j + 2)) := hstep (j + 1)
+    have h4 : θ * max (β (j + 1)) (β (j + 2)) ≤ θ * max (β j) (β (j + 1)) :=
+      mul_le_mul_of_nonneg_left (hmono j) hθ0
+    exact le_trans h3 h4
+  intro m
+  induction m with
+  | zero => simp
+  | succ p ih =>
+      have hidx1 : 2 * (p + 1) = 2 * p + 2 := by ring
+      rw [hidx1]
+      calc max (β (2 * p + 2)) (β (2 * p + 3))
+          ≤ θ * max (β (2 * p)) (β (2 * p + 1)) := hdecay (2 * p)
+        _ ≤ θ * (θ ^ p * max (β 0) (β 1)) :=
+            mul_le_mul_of_nonneg_left ih hθ0
+        _ = θ ^ (p + 1) * max (β 0) (β 1) := by ring
+
+/-- The two-source composed per-rung bounds: boundary data `P₀, P₁`
+    on the first two rungs, then each rung at the two-source
+    equilibrium forced by the previous two rungs' bounds. -/
+def rungBound2 (ν P₀ P₁ γ : K) (k : ℕ → K) : ℕ → K
+  | 0 => P₀
+  | 1 => P₁
+  | n + 2 => (rungBound2 ν P₀ P₁ γ k (n + 1) ^ 2
+      + γ * rungBound2 ν P₀ P₁ γ k n ^ 2) / (ν * k (n + 2))
+
+/-- **Trajectory-level two-source composition**: with every rung from
+    the third onward starting empty and satisfying the two-source
+    per-amplitude DN step forced by the *actual trajectories* of the
+    two rungs below, and the first two rungs uniformly bounded, every
+    rung's whole trajectory obeys the two-term composed bound.  Pair
+    induction on rungs; each step is `rung_equilibrium_two_source`
+    after upgrading the trajectory forcing to its uniform bounds. -/
+theorem trajectory_two_source_bounds (u : ℕ → ℕ → K) (k : ℕ → K)
+    (δ ν γ P₀ P₁ : K)
+    (hδ : 0 ≤ δ) (hν : 0 < ν) (hγ : 0 ≤ γ) (hk : ∀ n, 0 < k n)
+    (hnn : ∀ n t, 0 ≤ u n t)
+    (hδD : ∀ n, δ * (ν * k (n + 2) ^ 2) ≤ 1)
+    (h0 : ∀ n, u (n + 2) 0 = 0)
+    (hP0 : ∀ t, u 0 t ≤ P₀) (hP1 : ∀ t, u 1 t ≤ P₁)
+    (hstep : ∀ n t, u (n + 2) (t + 1) ≤ u (n + 2) t
+      + δ * (k (n + 2) * (u (n + 1) t ^ 2 + γ * u n t ^ 2)
+             - ν * k (n + 2) ^ 2 * u (n + 2) t)) :
+    ∀ n t, u n t ≤ rungBound2 ν P₀ P₁ γ k n := by
+  have key : ∀ n, (∀ t, u n t ≤ rungBound2 ν P₀ P₁ γ k n)
+      ∧ (∀ t, u (n + 1) t ≤ rungBound2 ν P₀ P₁ γ k (n + 1)) := by
+    intro n
+    induction n with
+    | zero => exact ⟨hP0, hP1⟩
+    | succ p ih =>
+        refine ⟨ih.2, ?_⟩
+        have hstep' : ∀ t, u (p + 2) (t + 1) ≤ u (p + 2) t
+            + δ * (k (p + 2) * (rungBound2 ν P₀ P₁ γ k (p + 1) ^ 2
+                 + γ * rungBound2 ν P₀ P₁ γ k p ^ 2)
+                 - ν * k (p + 2) ^ 2 * u (p + 2) t) := by
+          intro t
+          have hs1 : u (p + 1) t ^ 2
+              ≤ rungBound2 ν P₀ P₁ γ k (p + 1) ^ 2 := by
+            nlinarith [hnn (p + 1) t, ih.2 t]
+          have hs0 : u p t ^ 2 ≤ rungBound2 ν P₀ P₁ γ k p ^ 2 := by
+            nlinarith [hnn p t, ih.1 t]
+          have hforc : u (p + 1) t ^ 2 + γ * u p t ^ 2
+              ≤ rungBound2 ν P₀ P₁ γ k (p + 1) ^ 2
+                + γ * rungBound2 ν P₀ P₁ γ k p ^ 2 := by
+            nlinarith [mul_le_mul_of_nonneg_left hs0 hγ]
+          have hmono := mul_le_mul_of_nonneg_left hforc
+            (le_of_lt (hk (p + 2)))
+          have := hstep p t
+          nlinarith [mul_le_mul_of_nonneg_left hmono hδ]
+        have hbnd := rung_equilibrium_two_source (fun t => u (p + 2) t) δ
+          (rungBound2 ν P₀ P₁ γ k (p + 1)) (rungBound2 ν P₀ P₁ γ k p)
+          γ ν (k (p + 2))
+          hδ hν (hk (p + 2)) hγ (hδD p) (h0 p) hstep'
+        intro t
+        simpa [rungBound2] using hbnd t
+  intro n
+  exact (key n).1
+
 end QOU.FluidDynamics.PhysicalLayerLeray
