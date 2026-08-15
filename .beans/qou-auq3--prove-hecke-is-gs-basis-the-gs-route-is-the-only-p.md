@@ -1,10 +1,10 @@
 ---
 # qou-auq3
 title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to general n
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-10T02:55:00Z
+updated_at: 2026-08-15T12:50:00Z
 ---
 
 
@@ -786,3 +786,71 @@ Bokut–Shiao — which is why `Q2 × B120` is 8 steps, not 3.
 
 `AlgElement.contextMul_ofTerms_coeff` and `contextMul_coeff_congr` are already in
 place and are what make each such family mechanical.
+
+## CLAIM 2026-08-15 — §4q, the `Q × R` mirror
+
+`in-progress`, branch `claude/auq3-quad-left-family`. Re-claimed by the agent
+that released it on 2026-08-10; nothing advanced here in between
+(`HeckeCompletion.lean` is unchanged at 1550 lines, §4e–§4p).
+
+Context for the gap: I stepped off to qou-x64l, was away five days, and in that
+time a sibling finished x64l from my pushed branch — `H4GeneratorAction.lean`
+landed verbatim, `H4WordAction.lean` and `H4Cyclicity.lean` completed the route,
+and the eight `MarkovTraceH4Gram*` modules are deleted. A stale claim should not
+block someone who can finish the work, and it didn't. Recorded because the
+claim/report discipline is only worth anything if the misses are written down
+too.
+
+## §4q — the quadratic rule on the **left**, and why it is not §4p's corollary
+
+`CyclicQuadLeft`. Nine rule-level compositions, three steps each, general in `n`.
+
+The two families need **opposite** cyclic-position hypotheses:
+
+    §4p    lm r = u' ++ [σₓ]   other word   σ_y :: u'
+    §4q    lm r = σₓ :: u''    other word   u'' ++ [σ_z]
+
+Both hold for far-commutation and Yang–Baxter. Only §4p's holds for a general
+Bokut–Shiao rule, because `bsWord₂ i' i j = σᵢ₋₁ :: descWord i j` puts the extra
+letter on the **left**. So §4q reaches Bokut–Shiao only at `j = i − 1`, where §4j
+identifies it with Yang–Baxter — and that is not cosmetic: it is exactly why
+`Q2 × B120` is an **eight**-step composition and is *not* covered here. The
+prediction recorded when this bean was released ("holds for far-commutation and
+Yang–Baxter but not for general Bokut–Shiao") is confirmed by the proof needing
+`le_refl` in the Bokut–Shiao instance.
+
+The chain mirrors §4p with the ends swapped: `r` in context `(ε, σ_z)`, then the
+quadratic rule **at `z`** in context `(u'', ε)`, then `r` in empty context on
+`−h` times its own relation. Step 3 needs `h ≠ 0` again.
+
+### One thing that differed from §4p in practice
+
+`simp` normalises `(σₓ :: u'') ++ [σ_z]` to `σₓ :: (u'' ++ [σ_z])`, so the
+word-inequality hypotheses have to be **stated in cons-normal form** and supplied
+in the `Ne.symm` orientation — the filter condition that needs discharging is
+`u'' = <long word>`, not the reverse. Stated the §4p way they are silently
+unused and the coefficient goals stay open. Two of the three `ofTerms_coeff`
+side conditions needed this.
+
+And the `rw`-closes-only-at-reducible-transparency trap struck a third time, in
+`quad_bokutShiao_resolves`: `[σᵢ', σᵢ] ++ [σᵢ']` and `[σᵢ', σᵢ, σᵢ']` need an
+explicit `rfl` after the rewrite.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × far-commutation  5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      ---------------------------
+      proved                  52
+      remaining               40
+
+    inclusion compositions    22   §4m   (all)
+
+That is every 0-, 1- and 3-step composition the `n = 4` confluence witness
+lists. What remains starts at four steps: `Q × B` for general Bokut–Shiao
+(8 steps), then BS × BS and BS × far-commutation at `j₀ ≥ j`, up to the 25-step
+chain.

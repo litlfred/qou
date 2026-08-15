@@ -1547,4 +1547,264 @@ theorem bokutShiao_quad_resolves {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
 
 end CyclicQuad
 
+/-! ## §4q  The quadratic rule on the **left** — the mirror of §4p, and not its corollary
+
+§4p composes a two-term rule with the quadratic rule at the letter its leading
+monomial *ends* with. This is the other side: the quadratic rule first, against a
+rule whose leading monomial *begins* with `σₓ`. The two are not related by any
+symmetry the presentation has — `mulNF₄`-style left and right actions are
+different maps, and the cyclic-position hypothesis the chain needs is the
+**other** one:
+
+    §4p    lm r = u' ++ [σₓ]   and   the other word is   σ_y :: u'
+    §4q    lm r = σₓ :: u''    and   the other word is   u'' ++ [σ_z]
+
+Both hold for far-commutation and Yang–Baxter. Only §4p's holds for a general
+Bokut–Shiao rule, because `bsWord₂ i' i j = σᵢ₋₁ :: descWord i j` puts the extra
+letter on the *left*. §4q therefore reaches Bokut–Shiao only at `j = i − 1`,
+where the rule is Yang–Baxter anyway — and that is exactly why `Q2 × B120` needs
+eight steps rather than three.
+
+**The chain.** The ambient word is `σₓσₓ ++ u''`, the leading terms cancel, and
+
+    spoly = c · [ (σₓ :: u'') ++ [σ_z]  −  h · (σₓ :: u'')  −  u'' ]
+
+1. `(σₓ :: u'') ++ [σ_z]` is `lm r` followed by one letter, so `r` applies in the
+   context `(ε, σ_z)` and turns it into `u'' ++ [σ_z, σ_z]`;
+2. which ends `σ_zσ_z`, so the quadratic rule **at `z`** applies in the context
+   `(u'', ε)`, leaving `h · (u'' ++ [σ_z]) + u''`;
+3. what is left is `−h` times `r`'s own relation, killed by `r` in empty context.
+
+As in §4p, step 3 needs `h ≠ 0`, and every `CoeffEq` holds unconditionally —
+only the three "targeted coefficient is non-zero" side conditions need words
+distinguished, and only one of those is not a length argument. -/
+
+namespace CyclicQuadLeft
+
+variable {n : ℕ}
+
+variable (hp : HeckeParams) (r : ReductionRule (HeckeGen n) ℝ)
+  (u'' : Monomial (HeckeGen n)) (x z : Fin n) (c : ℝ)
+
+/-- The composition of the quadratic rule at `σₓ` with a two-term rule whose
+leading monomial begins with `σₓ`. -/
+noncomputable def oc (hlm : r.lm (heckeOrder n) = (⟨x⟩ : HeckeGen n) :: u'') :
+    OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := heckeRelation x hp
+  rule₂ := r
+  left := [⟨x⟩]
+  overlap := [⟨x⟩]
+  right := u''
+  lm₁_decomp := by rw [heckeRelation_lm]; rfl
+  lm₂_decomp := hlm
+  overlap_nonempty := by simp
+
+/-- **The S-polynomial**, three terms, ambient word already cancelled. -/
+theorem oc_spoly_coeff
+    (hrel : ∀ w, r.relation.coeff w = (AlgElement.ofTerms
+      [((⟨x⟩ : HeckeGen n) :: u'', c), (u'' ++ [(⟨z⟩ : HeckeGen n)], -c)]).coeff w)
+    (hlm : r.lm (heckeOrder n) = (⟨x⟩ : HeckeGen n) :: u'')
+    (hlc : r.lc (heckeOrder n) = c) (m : Monomial (HeckeGen n)) :
+    (oc hp r u'' x hlm).spoly.coeff m
+      = (AlgElement.ofTerms
+          [(((⟨x⟩ : HeckeGen n) :: u'') ++ [(⟨z⟩ : HeckeGen n)], c),
+           ((⟨x⟩ : HeckeGen n) :: u'', -(c * (hp.q - hp.q⁻¹))),
+           (u'', -c)]).coeff m := by
+  show r.lc (heckeOrder n)
+      * (AlgElement.contextMul [] (heckeRelation x hp).relation u'').coeff m
+    - (heckeRelation x hp).lc (heckeOrder n)
+      * (AlgElement.contextMul [(⟨x⟩ : HeckeGen n)] r.relation []).coeff m
+    = _
+  rw [heckeRelation_lc, hlc, one_mul,
+    AlgElement.contextMul_coeff_congr [(⟨x⟩ : HeckeGen n)] [] hrel m]
+  simp only [heckeRelation, AlgElement.contextMul_ofTerms_coeff, List.map_cons,
+    List.map_nil, List.nil_append, List.append_nil, List.cons_append,
+    AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil, decide_eq_true_eq]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- The leading monomial and the other word have the same length, so length
+cannot separate them; `lc = c ≠ 0` can. -/
+theorem word_ne
+    (hrel : ∀ w, r.relation.coeff w = (AlgElement.ofTerms
+      [((⟨x⟩ : HeckeGen n) :: u'', c), (u'' ++ [(⟨z⟩ : HeckeGen n)], -c)]).coeff w)
+    (hlm : r.lm (heckeOrder n) = (⟨x⟩ : HeckeGen n) :: u'')
+    (hlc : r.lc (heckeOrder n) = c) (hc : c ≠ 0) :
+    (u'' ++ [(⟨z⟩ : HeckeGen n)]) ≠ (⟨x⟩ : HeckeGen n) :: u'' := by
+  intro heq
+  refine hc ?_
+  rw [← hlc]
+  show r.relation.coeff (r.lm (heckeOrder n)) = 0
+  rw [hlm, hrel, ← heq]
+  simp [AlgElement.ofTerms_coeff]
+
+/-- **Three steps, to zero.** -/
+theorem oc_reduces_to_zero (hn : 0 < n)
+    (hrel : ∀ w, r.relation.coeff w = (AlgElement.ofTerms
+      [((⟨x⟩ : HeckeGen n) :: u'', c), (u'' ++ [(⟨z⟩ : HeckeGen n)], -c)]).coeff w)
+    (hlm : r.lm (heckeOrder n) = (⟨x⟩ : HeckeGen n) :: u'')
+    (hlc : r.lc (heckeOrder n) = c) (hc : c ≠ 0)
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hp r u'' x hlm).spoly nf ∧ nf.isZero := by
+  have hh := hp.h_ne_zero
+  have hwne := word_ne r u'' x z c hrel hlm hlc hc
+  have hneL : ((⟨x⟩ : HeckeGen n) :: (u'' ++ [(⟨z⟩ : HeckeGen n)]))
+      ≠ (⟨x⟩ : HeckeGen n) :: u'' := by
+    intro h; have := congrArg List.length h
+    simp only [List.length_append, List.length_cons] at this
+    omega
+  have hneL' : ((⟨x⟩ : HeckeGen n) :: (u'' ++ [(⟨z⟩ : HeckeGen n)])) ≠ u'' := by
+    intro h; have := congrArg List.length h
+    simp only [List.length_append, List.length_cons] at this
+    omega
+  have hneV : (u'' ++ [(⟨z⟩ : HeckeGen n), (⟨z⟩ : HeckeGen n)])
+      ≠ (⟨x⟩ : HeckeGen n) :: u'' := by
+    intro h; have := congrArg List.length h
+    simp only [List.length_append, List.length_cons] at this
+    omega
+  have hneV' : (u'' ++ [(⟨z⟩ : HeckeGen n), (⟨z⟩ : HeckeGen n)]) ≠ u'' := by
+    intro h; have := congrArg List.length h
+    simp only [List.length_append, List.length_cons] at this
+    omega
+  have s₁ : SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hp r u'' x hlm).spoly
+      (AlgElement.ofTerms
+        [(u'' ++ [(⟨z⟩ : HeckeGen n), (⟨z⟩ : HeckeGen n)], c),
+         ((⟨x⟩ : HeckeGen n) :: u'', -(c * (hp.q - hp.q⁻¹))), (u'', -c)]) := by
+    have hval : (oc hp r u'' x hlm).spoly.coeff
+        ([] ++ r.lm (heckeOrder n) ++ [(⟨z⟩ : HeckeGen n)]) = c := by
+      rw [hlm, show (([] : Monomial (HeckeGen n)) ++ ((⟨x⟩ : HeckeGen n) :: u'')
+            ++ [(⟨z⟩ : HeckeGen n)])
+          = ((⟨x⟩ : HeckeGen n) :: u'') ++ [(⟨z⟩ : HeckeGen n)] by simp,
+        oc_spoly_coeff hp r u'' x z c hrel hlm hlc]
+      simp [AlgElement.ofTerms_coeff, Ne.symm hneL, Ne.symm hneL']
+    refine ⟨r, hr, [], [⟨z⟩], 1, ?_, ?_, ?_⟩
+    · rw [hval]; exact hc
+    · rw [hval, hlc]; ring
+    · intro m
+      show _ = (oc hp r u'' x hlm).spoly.coeff m
+        - 1 * (AlgElement.contextMul [] r.relation [(⟨z⟩ : HeckeGen n)]).coeff m
+      rw [oc_spoly_coeff hp r u'' x z c hrel hlm hlc,
+        AlgElement.contextMul_coeff_congr [] [(⟨z⟩ : HeckeGen n)] hrel m,
+        AlgElement.contextMul_ofTerms_coeff]
+      simp only [List.map_cons, List.map_nil, List.nil_append,
+        List.cons_append, List.append_assoc,
+        AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil, decide_eq_true_eq]
+      split_ifs <;>
+        simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+  have s₂ : SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(u'' ++ [(⟨z⟩ : HeckeGen n), (⟨z⟩ : HeckeGen n)], c),
+         ((⟨x⟩ : HeckeGen n) :: u'', -(c * (hp.q - hp.q⁻¹))), (u'', -c)])
+      (AlgElement.ofTerms
+        [(u'' ++ [(⟨z⟩ : HeckeGen n)], c * (hp.q - hp.q⁻¹)),
+         ((⟨x⟩ : HeckeGen n) :: u'', -(c * (hp.q - hp.q⁻¹)))]) := by
+    have hval : (AlgElement.ofTerms
+        [(u'' ++ [(⟨z⟩ : HeckeGen n), (⟨z⟩ : HeckeGen n)], c),
+         ((⟨x⟩ : HeckeGen n) :: u'', -(c * (hp.q - hp.q⁻¹))), (u'', -c)]).coeff
+        (u'' ++ (heckeRelation z hp).lm (heckeOrder n) ++ []) = c := by
+      rw [heckeRelation_lm, show (u'' ++ [(⟨z⟩ : HeckeGen n), ⟨z⟩] ++ ([] : Monomial (HeckeGen n)))
+        = u'' ++ [(⟨z⟩ : HeckeGen n), (⟨z⟩ : HeckeGen n)] by simp]
+      simp [AlgElement.ofTerms_coeff, Ne.symm hneV, Ne.symm hneV']
+    refine ⟨heckeRelation z hp, heckeRelation_mem hn hp z, u'', [], c, ?_, ?_, ?_⟩
+    · rw [hval]; exact hc
+    · rw [hval, heckeRelation_lc]; ring
+    · intro m
+      show _ = _ - c * (AlgElement.contextMul u'' (heckeRelation z hp).relation []).coeff m
+      simp only [heckeRelation, AlgElement.contextMul_ofTerms_coeff, List.map_cons,
+        List.map_nil, List.append_nil,
+        AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil, decide_eq_true_eq]
+      split_ifs <;>
+        simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+  have s₃ : SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(u'' ++ [(⟨z⟩ : HeckeGen n)], c * (hp.q - hp.q⁻¹)),
+         ((⟨x⟩ : HeckeGen n) :: u'', -(c * (hp.q - hp.q⁻¹)))])
+      AlgElement.zero := by
+    have hval : (AlgElement.ofTerms
+        [(u'' ++ [(⟨z⟩ : HeckeGen n)], c * (hp.q - hp.q⁻¹)),
+         ((⟨x⟩ : HeckeGen n) :: u'', -(c * (hp.q - hp.q⁻¹)))]).coeff
+        ([] ++ r.lm (heckeOrder n) ++ []) = -(c * (hp.q - hp.q⁻¹)) := by
+      rw [hlm, show (([] : Monomial (HeckeGen n)) ++ ((⟨x⟩ : HeckeGen n) :: u'') ++ [])
+        = (⟨x⟩ : HeckeGen n) :: u'' by simp]
+      simp [AlgElement.ofTerms_coeff, hwne]
+    refine ⟨r, hr, [], [], -(hp.q - hp.q⁻¹), ?_, ?_, ?_⟩
+    · rw [hval]
+      exact neg_ne_zero.mpr (mul_ne_zero hc hh)
+    · rw [hval, hlc]; ring
+    · intro m
+      show (0 : ℝ) = _
+        - (-(hp.q - hp.q⁻¹)) * (AlgElement.contextMul [] r.relation []).coeff m
+      rw [AlgElement.contextMul_coeff_congr [] [] hrel m,
+        AlgElement.contextMul_ofTerms_coeff]
+      simp only [List.map_cons, List.map_nil, List.nil_append, List.append_nil,
+        AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil, decide_eq_true_eq]
+      split_ifs <;>
+        simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+  exact ⟨AlgElement.zero,
+    ⟨(((MultiStepReduction.refl _).step s₁).step s₂).step s₃,
+      isNormalForm_of_isZero AlgElement.isZero_zero⟩,
+    AlgElement.isZero_zero⟩
+
+/-! ### The instances
+
+Far-commutation and Yang–Baxter satisfy §4q's cyclic-position hypothesis, and
+Bokut–Shiao does **only at `j = i − 1`**, where §4j identifies it with
+Yang–Baxter. That is the asymmetry with §4p, and it is not cosmetic: it is why
+the general Bokut–Shiao rule against the quadratic rule on the left is an
+eight-step composition rather than a three-step one, and so is *not* covered
+here. -/
+
+/-- Far-commutation: `u'' = [σⱼ]`, `x = z = i`, `c = 1`. -/
+theorem quad_farComm_resolves {n : ℕ} (hn : 0 < n) (hp : HeckeParams) {i j : Fin n}
+    (hij : j.val + 1 < i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hp (farCommRelation i j) [(⟨j⟩ : HeckeGen n)] i
+        (farCommRelation_lm i j (by omega))).spoly nf ∧ nf.isZero :=
+  oc_reduces_to_zero hp (farCommRelation i j) [(⟨j⟩ : HeckeGen n)] i i 1 hn
+    (fun _ => rfl) (farCommRelation_lm i j (by omega))
+    (farCommRelation_lc i j (by omega)) one_ne_zero
+    (farCommRelation_mem hn hp hij)
+
+/-- Yang–Baxter: `u'' = [σᵢ₋₁, σᵢ]`, `x = i`, `z = i − 1`, `c = −1`. Terms in the
+opposite order to the family's normal form again, hence the coefficientwise
+`hrel`. -/
+theorem quad_yangBaxter_resolves {n : ℕ} (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
+    (hi : i'.val + 1 = i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hp (yangBaxterRelation i' i) [(⟨i'⟩ : HeckeGen n), ⟨i⟩] i
+        (yangBaxterRelation_lm i' i (by omega))).spoly nf ∧ nf.isZero := by
+  refine oc_reduces_to_zero hp (yangBaxterRelation i' i)
+    [(⟨i'⟩ : HeckeGen n), ⟨i⟩] i i' (-1) hn ?_
+    (yangBaxterRelation_lm i' i (by omega))
+    (DegenerateYbBs.yangBaxter_lc hi) (by norm_num)
+    (yangBaxterRelation_mem hn hp hi)
+  intro w
+  show (AlgElement.ofTerms [([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], (1 : ℝ)),
+      ([(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩], -1)]).coeff w = _
+  simp only [List.cons_append, List.nil_append, AlgElement.ofTerms_coeff,
+    List.filter_cons, List.filter_nil, decide_eq_true_eq]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- Bokut–Shiao **at `j = i − 1` only**. `bsWord₂ i' i j = σᵢ₋₁ :: descWord i j`
+puts the extra letter on the left, so for `j < i − 1` the other word is not
+`u'' ++ [σ_z]` and this family does not reach it. -/
+theorem quad_bokutShiao_resolves {n : ℕ} (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
+    (hi : i'.val + 1 = i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hp (bokutShiaoRelation i' i i') [(⟨i'⟩ : HeckeGen n), ⟨i⟩] i
+        (by rw [bokutShiaoRelation_lm hi (le_refl _), bsWord₁_at_pred hi])).spoly nf
+      ∧ nf.isZero := by
+  refine oc_reduces_to_zero hp (bokutShiaoRelation i' i i')
+    [(⟨i'⟩ : HeckeGen n), ⟨i⟩] i i' 1 hn ?_
+    (by rw [bokutShiaoRelation_lm hi (le_refl _), bsWord₁_at_pred hi])
+    (bokutShiaoRelation_lc hi (le_refl _)) one_ne_zero
+    (bokutShiaoRelation_mem hn hp hi (le_refl _))
+  intro w
+  rw [bokutShiaoRelation_at_pred hi]; rfl
+
+end CyclicQuadLeft
+
 end UGB.GrobnerShirshov.Hecke
