@@ -298,3 +298,79 @@ the matching — over-breadth is this detector's whole risk.
    general identity, check it reproduces the C closed form at `z_C`, then
    rewrite in terms of `z`). `ocneanu_weights` may be a true negative.
 2. `classify()` still has no sage-examples bucket.
+
+---
+
+## Round 5: the three candidates verified, and a THIRD spelling of C
+
+### `c_3_categorical_derivation_attempt.trM_hopf` — real, and the file was split
+
+`1 + (q-1)/sqrt(q)`, while the SAME FILE already had `z = q**3/(q**2+1)` at
+lines 231 and 243. Internally split exactly like `gram.py`: production `z` on
+D, the Hopf closed form derived from it still on C, feeding a `c_3` candidate
+at line 430. Migrated to `h*z + 1`; two stale annotations fixed with it.
+
+Verdict checked before and after: **NEGATIVE both sides.** The numbers moved,
+the scientific conclusion did not — worth confirming rather than assuming,
+since the migration changes an input to that verdict.
+
+### `qbeta_5two_categorical_markov_volume_probe.ocneanu_weights` — real, and a NEW BLIND SPOT
+
+    t = sp.symbols("t", positive=True)
+    q = t ** 2
+    z = 1 / (t + 1 / t)          # convention C, invisible to both detectors
+
+A **third spelling**. `is_c_form` needs a visible `sqrt` or `0.5`; there is
+none. `is_c_form_halfarg` matches `t/(t**2+1)`; this is the reciprocal-sum
+form. And it is *character-for-character* `1/(q + 1/q)` = `1/[2]_q`, the
+Temperley–Lieb loop reciprocal, which the selftest explicitly requires NOT be
+flagged. Shape cannot decide it.
+
+What decides it is the file's own declaration `q = t ** 2`, which says `t` is
+`sqrt(q)`. New `_half_argument_vars` reads that; `is_c_form_reciprocal` uses
+it. The two fixtures that matter are the pair: flag `1/(t+1/t)` when
+`q = t**2` is declared, clear `1/(q + 1/q)` when it is not.
+
+Migrated to `t**6/(t**4+1)` — convention D in the half-argument variable.
+
+**The independent confirmation.** This probe solves the H₃ Wedderburn weights
+from three trace values, knowing nothing of Schur–Weyl or `live_channels`:
+
+    W_(3)   = (q^4 + 1)/(q^2 + 1)^2      -> 0.505405 at q0
+    W_(21)  = q^2/(q^2 + 1)^2            -> 0.247298 at q0
+    W_(111) = 0
+
+`W_(111) = 0` exactly, and the other two match the canonical convention-D
+weights `y_(3) = 0.50540422650...`, `y_(2,1) = 0.24729788674...` to every
+digit. The dead antisymmetric block, arrived at from a completely different
+direction — a linear solve, not a representation-theoretic argument. Held-out
+Ocneanu gate still True; 5 assertions passed.
+
+### `from_scratch/wedderburn_markov.wenzl_y_lambda` — NOT a defect
+
+`computations/from_scratch/README.md` declares the whole directory
+**DEPRECATED for production** (2026-05-29, #1422 decision A'), kept "for
+pedagogy / historical reference; not re-pursued". The file's own docstring
+reads "Wait —", "Hmm but", "This is getting complicated. Let me just use the
+SHORTCUT". No `WitnessBuilder`, no witnesses in the tree. A classifier gap, not
+a producer defect.
+
+### Two classifier gaps closed
+
+- `from_scratch/` — bucketed as DEPRECATED and excused from the actionable
+  count, matching what its README already says. Bucketed rather than skipped
+  outright (as `_deprecated/` is) so it stays countable.
+- `tools/sage-examples/` — bucketed, but **kept actionable**: nothing declares
+  it dead, and an example teaching convention C is arguably worse than a
+  producer using it, because examples get copied.
+
+Selftest 37 -> 42.
+
+## Next
+
+1. `tools/sage-examples/scripts/hecke_surface.py:56 markov_z()` — still C, now
+   correctly bucketed and still actionable.
+2. The 4 pyhecke sites remain `qou-w8zz`'s.
+3. `qbeta-5two-categorical-markov-volume` and `c-3-categorical-derivation-attempt`
+   both carry raw float64 in their witnesses (15 and 67 fields). Pre-existing,
+   the `qou-5lw7` arc.

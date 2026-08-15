@@ -324,7 +324,7 @@ def scan_closed_forms(roots=ROOTS):
             continue
         for p in sorted(base.rglob("*.py")):
             sp_ = str(p)
-            if "_deprecated" in sp_:
+            if "_deprecated" in sp_ or "/from_scratch/" in sp_:
                 continue
             try:
                 src = p.read_text()
@@ -491,6 +491,56 @@ def scan_reexports(roots=ROOTS, repo: pathlib.Path = None):
     return out
 
 
+def _half_argument_vars(tree: ast.AST) -> set:
+    """Names `t` for which the file declares `<q-like> = t ** 2`.
+
+    Such a `t` IS `sqrt(q)`, so `z = 1/(t + 1/t)` is convention C written with
+    no square root anywhere -- no `sqrt` call, no `0.5` exponent, and not the
+    `t/(t**2+1)` shape `is_c_form_halfarg` matches either. It is the third
+    spelling of C and it defeated both z-detectors:
+
+        t = sp.symbols("t", positive=True)
+        q = t ** 2
+        z = 1 / (t + 1 / t)          # <- convention C, invisible
+
+    Shape alone cannot decide this, and that is the point: `1/(q + 1/q)` is
+    `1/[2]_q`, the Temperley-Lieb loop reciprocal, which the selftest requires
+    NOT be flagged. The two are character-for-character identical and differ
+    only in whether the variable is `q` or `sqrt(q)`. So the file has to say
+    so, and here it does -- `q = t ** 2` is the declaration.
+    """
+    out = set()
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Assign) or n.value is None:
+            continue
+        if not any(_is_q_like(t) for t in n.targets):
+            continue
+        v = n.value
+        if (isinstance(v, ast.BinOp) and isinstance(v.op, ast.Pow)
+                and isinstance(v.left, ast.Name)
+                and isinstance(v.right, ast.Constant) and v.right.value == 2):
+            out.add(v.left.id)
+    return out
+
+
+def is_c_form_reciprocal(node: ast.AST, half_vars: set):
+    """`1 / (t + 1/t)` where `t` is a declared half-argument variable."""
+    if not half_vars:
+        return None
+    if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
+        return None
+    if not (isinstance(node.left, ast.Constant) and node.left.value in (1, 1.0)):
+        return None
+    den = node.right
+    if not (isinstance(den, ast.BinOp) and isinstance(den.op, ast.Add)):
+        return None
+    d = "".join(ast.unparse(den).split())
+    for t in half_vars:
+        if d in (f"{t}+1/{t}", f"1/{t}+{t}"):
+            return t
+    return None
+
+
 def classify(path: str, blocked_files=()) -> str:
     """Bucket a site. `blocked_files` comes from the registry, not from here.
 
@@ -509,6 +559,14 @@ def classify(path: str, blocked_files=()) -> str:
         return "tools/pyhecke — BLOCKED on C by design (registry)"
     if path.startswith(BLOCKED_BY_DESIGN):
         return "tools/pyhecke — C with NO registry row (unexplained)"
+    # computations/from_scratch/README.md declares the whole directory
+    # DEPRECATED for production (2026-05-29, #1422 decision A') -- kept for
+    # pedagogy, "not re-pursued". Same status as _deprecated/, which is
+    # skipped outright; bucketed rather than skipped so it stays countable.
+    if "/from_scratch/" in path:
+        return "from_scratch — DEPRECATED for production (its own README)"
+    if "/sage-examples/" in path:
+        return "tools/sage-examples — examples, not producers"
     name = pathlib.Path(path).name
     if "/probes/" in path or name.endswith("_probe.py") or "probe" in name:
         return "probes / exploratory"
@@ -533,6 +591,7 @@ def scan(roots=ROOTS, blocked_files=()):
                 tree = ast.parse(p.read_text())
             except (SyntaxError, UnicodeDecodeError, OSError):
                 continue
+            half_vars = _half_argument_vars(tree)
             for n in ast.walk(tree):
                 if not isinstance(n, (ast.Assign, ast.AnnAssign)):
                     continue
@@ -542,7 +601,8 @@ def scan(roots=ROOTS, blocked_files=()):
                     continue
                 if n.value is None:
                     continue
-                if not (is_c_form(n.value) or is_c_form_halfarg(n.value)):
+                if not (is_c_form(n.value) or is_c_form_halfarg(n.value)
+                        or is_c_form_reciprocal(n.value, half_vars)):
                     continue
                 nm = names[0]
                 yield (sp, n.lineno, nm, ast.unparse(n.value),
@@ -680,7 +740,31 @@ def selftest() -> int:
         finally:
             os.chdir(cwd)
 
+    # The reciprocal form `1/(t + 1/t)` with `q = t**2` declared. Decidable
+    # ONLY from that declaration: it is character-for-character `1/[2]_q`, the
+    # Temperley-Lieb loop reciprocal, which must not be flagged. These two
+    # fixtures are the whole justification for reading the declaration.
+    def _hv(src):
+        return _half_argument_vars(ast.parse(src))
+
+    def _recip(src, decl="t = sp.symbols('t')\nq = t ** 2\n"):
+        tree = ast.parse(decl + src)
+        hv = _half_argument_vars(tree)
+        return any(is_c_form_reciprocal(n.value, hv)
+                   for n in ast.walk(tree)
+                   if isinstance(n, ast.Assign) and n.value is not None)
+
     checks += [
+        ("`q = t ** 2` declares t as the half-argument variable",
+         _hv("t = sp.symbols('t')\nq = t ** 2\n") == {"t"}),
+        ("no such declaration -> no half-argument variables",
+         _hv("q = sp.symbols('q')\nx = q * 2\n") == set()),
+        ("`z = 1/(t + 1/t)` with q = t**2 IS convention C",
+         _recip("z = 1 / (t + 1 / t)\n")),
+        ("the same shape WITHOUT the declaration is 1/[2]_q, not z",
+         not _recip("z = 1 / (q + 1 / q)\n", decl="q = sp.symbols('q')\n")),
+        ("convention D in the half-argument variable is not flagged",
+         not _recip("z = t ** 6 / (t ** 4 + 1)\n")),
         ("a trace closed form with sqrt(q) is flagged",
          _cf("def trM_hopf(q):\n    return 1 + (q - 1) / mp.sqrt(q)\n") == 1),
         ("a Wedderburn weight with q**1.5 is flagged",
@@ -753,7 +837,13 @@ def main() -> int:
     # Only a site with a live registry row is excused. "unexplained"
     # pyhecke sites count as actionable -- that is the whole point of
     # deriving the label from the registry instead of the path.
-    actionable = sum(v for k, v in buckets.items() if "BLOCKED on C by design" not in k)
+    # Excused: a live registry row, or a directory whose own README declares
+    # itself out of production. tools/sage-examples is NOT excused -- nothing
+    # declares it dead, and an example teaching convention C is arguably worse
+    # than a producer using it, because examples get copied.
+    _EXCUSED = ("BLOCKED on C by design", "DEPRECATED for production")
+    actionable = sum(v for k, v in buckets.items()
+                     if not any(e in k for e in _EXCUSED))
     print(f"\n  ACTIONABLE (excludes blocked-by-design): {actionable} sites")
 
     closed = scan_closed_forms()
