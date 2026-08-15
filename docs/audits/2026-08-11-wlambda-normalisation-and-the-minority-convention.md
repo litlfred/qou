@@ -94,6 +94,37 @@ That is why this audit stops at the measurement rather than editing the three
 blocks: fixing the first two is a wording change, fixing the third changes what
 the argument rests on.
 
+## Re-checked against main four days later — and the detection gap that implies
+
+Re-run 2026-08-15, ~690 commits later, including a corpus-wide per-block
+language-trap audit wave (`qou-ujp8`) that swept `brings-surface` and
+`information-theory` in batches and did surface real defects, *"8 anomalies incl.
+a false Hecke claim"* among them.
+
+**Every number above is unchanged.** Still 18–7. Still the same three blocks.
+
+That is not reassurance, it is a finding. The three blocks are not
+under-inspected:
+
+| block | QA criteria on its sidecar |
+|---|---|
+| `h3-markov-wenzl-weights-context` | 61 |
+| `knot-factor-spectral-derivation` | 101 |
+| `gram-kappa-spectral-interpretation` | 78 |
+
+240 criteria across the three, and none of them caught it — because **no
+criterion evaluates a stated identity.** The checkers read voice, status leaks,
+notation register, forward references, `q`-regime, witness pinning, base ring.
+A sentence of the form *"X = 1"* where X is a computable expression is prose to
+every one of them.
+
+The gap is narrow and mechanisable: a criterion that extracts closed-form
+numeric assertions about defined quantities and evaluates them at `q₀` would
+have flagged all three on the day they were written. Not proposed here — it is
+a checker-authoring task, and the corpus-wide false-positive rate would need
+measuring first — but it is the class this defect belongs to, and it is the
+reason 690 commits of active QA did not find it.
+
 ## Scope
 
 Following the "before declaring refuted" discipline, both findings are
