@@ -1,7 +1,7 @@
 ---
 # ptlm
 title: 'Read the uploaded Ptolemy papers: verify the novelty assessment, and price the Ptolemy route past the Gröbner ceiling'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
@@ -339,3 +339,35 @@ it and the number would not change any decision. Said here rather than left impl
 
 **Standing recommendation, unchanged:** use both. Route 76 where rigour matters and the
 manifold is small; Route 75 for reach; G5's field agreement makes them mutually checking.
+
+---
+**2026-08-15 — all three deliverables are met. Setting completed.**
+
+Checked this bean's own "What to produce" list rather than assuming, since the entries
+below were written across several sessions:
+
+| deliverable | status |
+|---|---|
+| 1. verdict on the novelty assessment | **CONFIRMED** against both primary sources; G7's quote is real and cited correctly, so no correction to `m015` or the probe docstring |
+| 2. priced plan + can it run without Sage/Magma | **yes** — Magma is proprietary and unnecessary; the step both papers use it for is primary decomposition, which is Singular's `minAssGTZ`. `apt-get install singular`, no network, no Sage |
+| 3. if it runs: extend Route 75 or open a Route 76 | **Route 76 opened** — `computations/probes/qbeta_route76_ptolemy_singular_probe.py`, 6 gates, with the monomial map recorded in the docstring |
+
+The reach question is measured rather than argued: `finduni` **moves** the ceiling (degree
+8 goes from struggling to instant) without **rescuing** 14 tetrahedra — `10₁₀₀` times out
+at 600 s under `minAssGTZ` and again at 1500 s under `finduni`, against 7.2 s exact for
+Route 75. So G6's conclusion stands with evidence behind it: **the Ptolemy route is
+strictly more rigorous and strictly less far-reaching.**
+
+Standing recommendation, unchanged: use both. Route 76 where rigour matters and the
+manifold is small; Route 75 for reach; G5's field agreement (`nfisisom` on four cases,
+different minimal polynomials, matching discriminants) makes them mutually checking.
+
+### The two lessons this bean produced, kept because both nearly cost a false record
+
+- **A PDF grep proves nothing about a PDF.** Searching both papers for `[Gg]r[oö]bner`
+  returned **zero hits** — the extractor renders it `Gr¨ obner`. I nearly recorded a
+  misattributed citation on that. Search a diacritic-free substring (`bner`,
+  `impractical`) before concluding a source lacks a phrase.
+- **An empty log from a detached job is evidence of nothing.** Not that it died, not that
+  it succeeded. `ps` answers in one call what I guessed at twice — and the job was alive
+  with 21 minutes of CPU while I was writing that it had been killed.
