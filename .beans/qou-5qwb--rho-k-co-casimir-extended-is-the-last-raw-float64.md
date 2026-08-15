@@ -68,3 +68,48 @@ Two things this settles:
 
 Working tree was restored to HEAD after the kill; the committed witness is
 intact (6 `per_atom` entries, original values).
+
+## CORRECTION — it was NOT the environment. It was a one-character bug.
+
+Everything in the section above is **wrong about the cause**, and the
+conclusion it reached ("do not retry here; land it from a faster environment")
+was wrong too. The per-atom ratios were real, but I attributed them to sandbox
+hardware without checking, and that misdiagnosis nearly buried a live
+performance defect as an environment limit.
+
+**Actual root cause.** `hoefsmit_numpy.chi_numpy` is the declared float64/BLAS
+path. `canonical_braid_crossings.d_for_ctype` returns a plain `float` for
+`sigma`, `sigma_inv` and `averaged` — but an mpmath **`mpf`** for
+`averaged_weighted`. In
+
+    cross = sigma + d_val * eye
+    M = M @ cross
+
+one `mpf` promotes `cross` to `dtype=object`; `M` is reassigned from that
+product, so **`M` stays `dtype=object` for every remaining crossing**. The loop
+silently leaves BLAS and finishes in pure-Python matmul — permanently, not just
+for the offending crossing.
+
+Measured on tritium (n=9, dim=120, 35 crossings): the first `averaged_weighted`
+crossing sits at index 11, where matmul cost jumps **0.0005 s -> 2.7 s** and
+never recovers. One partition: **66 s -> 0.16 s** after the fix.
+
+**What disproved the environment theory.** numpy here is healthy — a 600x600
+matmul takes 5 ms. A 120x120 matmul cannot take 2.7 s on that machine unless it
+is not really running in numpy. That single comparison was enough, and it was
+available before I wrote "projects to two to four days."
+
+**Fix.** `float()` the value at the `chi_numpy` boundary. Correct by
+construction — that function *is* the float64 path (full precision is
+`chi_numeric`), and the result is unchanged against the mpmath reference:
+rel_diff 5.3e-15, 4.0e-15, 5.2e-16 on (5,2,2), (3,3,3), (4,3,2), all inside the
+module's documented 1e-14 tolerance.
+
+**Consequence.** The re-run is feasible here after all: the first five atoms
+complete in ~45 s. The witness is no longer blocked on hardware.
+
+**Lesson worth keeping.** "The environment is slow" is an unfalsifiable
+explanation, and I reached for it after one 6-hour observation. A 148x gap on
+arithmetic is a *bug-shaped* number, not a *hardware-shaped* one — hardware
+does not vary by two orders of magnitude on the same instruction mix. The
+disproving measurement (benchmark the primitive in isolation) costs seconds.
