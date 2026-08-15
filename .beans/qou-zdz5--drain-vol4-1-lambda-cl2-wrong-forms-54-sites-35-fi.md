@@ -156,3 +156,58 @@ left untouched. Not every `Λ` in the corpus is wrong; only the Vol(4₁) ones.
 **Portability bug noticed:** `computations/neutrino_mass_volume_exclusion.py`
 writes to a **cwd-relative** path, so it fails unless run from the repo
 root, unlike its siblings which anchor on `__file__`. Not fixed here.
+
+## CORRECTION — `substrate/knot-volumes.witness.json` is NOT an orphan
+
+Tranche 2 and 3 above, the #5128 commit message, and the #5128 PR body all
+describe this file as *"an orphan — no producer writes that path"* and imply
+nothing reads it. **Both halves are wrong.** Investigated 2026-08-15:
+
+**It has consumers.** Three content blocks cite it as their `witness:` —
+`observations/knot-volumes-verification.ts:24`,
+`observations/local-substrate-q-proof.ts:11`,
+`observations/terminal-resolution-proof.ts:16` — plus a docstring reference in
+`binding_wn_link_volume_probe.py:15`, an entry in
+`raw-float64-baseline.json:1500` (34 fields), and coverage in
+`witness-producer-executes-audit`. **Deleting it would have broken three
+blocks.** I nearly did.
+
+*Why I got it wrong:* the grep that returned "no consumers" ran with `.` as
+its root while the shell cwd was `computations/substrate` — Bash cwd persists
+between calls. The same trap cost two other errors this session. Scope greps
+to explicit top-level dirs, never `.`, unless you have just checked cwd.
+
+**It does have a producer — the path moved.** `computations/knot-volumes.py`
+writes it (verified: fresh output matches the committed file on engine
+`snappea` and all 11 assertion names bar one renamed since April). But
+`WitnessBuilder.save()` derives its output path from `script_path=__file__`,
+and the Phase-6 reorg noted in `witness_base.py:42` (*"substrate moved into
+substrate/"*) moved the script up to `computations/`. So it now emits
+`computations/knot-volumes.witness.json` — untracked — while the cited copy
+sits frozen at `computedAt: 2026-04-07`, still carrying `3·Cl₂(π/3)`.
+
+`computations/substrate/knot_volumes.py` is a DIFFERENT module (canonical
+mpmath constants) and is correct throughout; it emits no witness at all.
+
+## Why the obvious fixes are both blocked
+
+- **Track the live output.** Refused by the ratchet: it is a NEW dirty witness
+  carrying **33 raw float64** fields, so `witness_raw_float64_audit --strict`
+  exits 1. Baselining it is forbidden ("baselines drain, never grow").
+- **Hand-fix the string in the cited copy.** Hand-editing a witness is against
+  the discipline, and it would leave producer and artifact still disconnected.
+
+## The actual fix — needs a design call
+
+Re-point the producer at the path its consumers cite. `save(extra)` takes no
+path argument, so this is either:
+
+1. move `computations/knot-volumes.py` back into `computations/substrate/`
+   so the `__file__`-derived path matches — cheap, but a file move with
+   import/reference fallout; or
+2. add an output-path override to `WitnessBuilder` in
+   `tools/qou-substrate/python/qou_substrate/witness.py` — cleaner, but
+   changes a shared library used by ~360 scripts.
+
+Either way the ratchet stays green: a fresh run gives 33 fields against a
+baseline of 34, i.e. a DECREASE. Not attempted here.
