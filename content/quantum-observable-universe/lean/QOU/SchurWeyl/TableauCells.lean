@@ -533,6 +533,84 @@ theorem orbitEntries_sk_sl (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k
   · rw [swapTableau_entry, h1]; simp only [swapVal]; split_ifs <;> omega
   · rw [swapTableau_entry, h2]; simp only [swapVal]; split_ifs <;> omega
 
+/-- `s_k` sends `k` to `k+1`. -/
+@[simp] theorem swapVal_self (k : ℕ) : swapVal k k = k + 1 := by
+  simp [swapVal]
+
+/-- `s_k` sends `k+1` back to `k`. -/
+@[simp] theorem swapVal_succ (k : ℕ) : swapVal k (k + 1) = k := by
+  simp [swapVal]
+
+/-- `s_k` fixes everything outside `{k, k+1}`. -/
+theorem swapVal_of_ne (k x : ℕ) (h0 : x ≠ k) (h1 : x ≠ k + 1) : swapVal k x = x := by
+  simp only [swapVal]; rw [if_neg h0, if_neg h1]
+
+/-- **The braid relation for value-transpositions.**  `s_k s_{k+1} s_k = s_{k+1} s_k s_{k+1}`
+as permutations of `{k, k+1, k+2}` — the symmetric-group relation the whole construction is
+a deformation of.
+
+Performance note: proved by **pointwise rewriting**, not `unfold swapVal; split_ifs`.  The
+latter works for the two-swap statements (`swapVal_involutive`, `swapVal_comm`) but the
+three-swap nesting here has a branch tree that exhausts the default heartbeats — and
+splitting on `x` first is not enough, because each branch still carries the full nesting.
+Rewriting with the three evaluation lemmas keeps every step search-free. -/
+theorem swapVal_braid (k x : ℕ) :
+    swapVal k (swapVal (k + 1) (swapVal k x))
+      = swapVal (k + 1) (swapVal k (swapVal (k + 1) x)) := by
+  by_cases h0 : x = k
+  · subst h0
+    have b1 : swapVal x x = x + 1 := swapVal_self x
+    have b2 : swapVal (x + 1) (x + 1) = x + 2 := by rw [swapVal_self]
+    have b3 : swapVal x (x + 2) = x + 2 := swapVal_of_ne _ _ (by omega) (by omega)
+    have b4 : swapVal (x + 1) x = x := swapVal_of_ne _ _ (by omega) (by omega)
+    rw [b4, b1, b2, b3]
+  by_cases h1 : x = k + 1
+  · subst h1
+    have c1 : swapVal k (k + 1) = k := swapVal_succ k
+    have c2 : swapVal (k + 1) k = k := swapVal_of_ne _ _ (by omega) (by omega)
+    have c3 : swapVal k k = k + 1 := swapVal_self k
+    have c4 : swapVal (k + 1) (k + 1) = k + 2 := by rw [swapVal_self]
+    have c5 : swapVal k (k + 2) = k + 2 := swapVal_of_ne _ _ (by omega) (by omega)
+    have c6 : swapVal (k + 1) (k + 2) = k + 1 := by rw [swapVal_succ]
+    rw [c1, c2, c3, c4, c5, c6]
+  by_cases h2 : x = k + 2
+  · subst h2
+    have e1 : swapVal k (k + 2) = k + 2 := swapVal_of_ne _ _ (by omega) (by omega)
+    have e2 : swapVal (k + 1) (k + 2) = k + 1 := by rw [swapVal_succ]
+    have e3 : swapVal k (k + 1) = k := swapVal_succ k
+    have e4 : swapVal (k + 1) k = k := swapVal_of_ne _ _ (by omega) (by omega)
+    rw [e1, e2, e3, e4]
+  · have d1 : swapVal k x = x := swapVal_of_ne _ _ h0 h1
+    have d2 : swapVal (k + 1) x = x := swapVal_of_ne _ _ h1 (by omega)
+    rw [d1, d2, d1, d2]
+
+/-- **The braid relation at the level of tableaux**: the two longest words agree.
+
+This is what makes the sixth element of a `⟨s_k, s_{k+1}⟩`-orbit well defined from either
+direction, and it is the *undeformed* shadow of the relation the representation must
+satisfy — at `q = 1` the seminormal matrices degenerate to permutation matrices and the
+Hecke braid relation becomes exactly this.
+
+Note the deformed statement does **not** follow from it: the matrix braid needs
+`seminormalParam_rel`, which is invisible here. -/
+theorem swapTableau_braid (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : k + 1 + 1 ≤ μ.cells.card)
+    (hka : SwapAdmissible T k) (hla : SwapAdmissible T (k + 1))
+    (hAl : SwapAdmissible (swapTableau T k hk hkn hka) (k + 1))
+    (hBk : SwapAdmissible (swapTableau T (k + 1) (by omega) hln hla) k)
+    (hDk : SwapAdmissible
+      (swapTableau (swapTableau T k hk hkn hka) (k + 1) (by omega) hln hAl) k)
+    (hEl : SwapAdmissible
+      (swapTableau (swapTableau T (k + 1) (by omega) hln hla) k hk hkn hBk) (k + 1)) :
+    swapTableau (swapTableau (swapTableau T k hk hkn hka) (k + 1) (by omega) hln hAl)
+        k hk hkn hDk
+      = swapTableau (swapTableau (swapTableau T (k + 1) (by omega) hln hla) k hk hkn hBk)
+        (k + 1) (by omega) hln hEl := by
+  refine syt_ext (fun i j => ?_)
+  show swapVal k (swapVal (k + 1) (swapVal k (T.entry i j)))
+    = swapVal (k + 1) (swapVal k (swapVal (k + 1) (T.entry i j)))
+  exact swapVal_braid k (T.entry i j)
+
 /-- Entries of the longest word `s_k s_{k+1}s_k·T`. -/
 theorem orbitEntries_sk_sl_sk (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
     (hkn : k + 1 ≤ μ.cells.card) (hln : k + 1 + 1 ≤ μ.cells.card)
