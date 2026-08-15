@@ -1,0 +1,11 @@
+---
+doc_id: ant-v14-n7-s-p05
+doc_title: "Motivic Gauss–Bonnet formulas"
+section_id: sec-004-5-motivic-gaussbonnet-1826
+section_title: "Motivic Gauss–Bonnet 1826"
+section_number: 5
+pages: 1-1
+source_pdf: ant-v14-n7-s-p05.pdf
+source_sha256: 1c8e94ff62a8d920
+---
+

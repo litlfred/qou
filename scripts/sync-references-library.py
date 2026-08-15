@@ -70,6 +70,11 @@ def library_index() -> dict[str, dict]:
         if not os.path.isdir(d):
             continue
         sj = os.path.join(d, "structure.json")
+        try:
+            if os.path.exists(sj) and json.load(open(sj)).get("container"):
+                continue          # split bound issue; its children carry the content
+        except Exception:
+            pass
         info: dict = {"docId": doc_id, "dir": f"library/{doc_id}"}
         pdfs = sorted(f for f in os.listdir(d) if f.lower().endswith(".pdf"))
         if pdfs:

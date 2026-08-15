@@ -59,6 +59,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 
 try:
@@ -66,20 +67,68 @@ try:
 except ImportError:
     sys.exit("split-bound-volume: needs pypdf — pip install pypdf")
 
-LOOKBACK = 2   # pages of title-page headroom before a paper's Introduction
+MIN_PAPERS = 3      # fewer repeats than this is not a bound issue
+MIN_GAP = 4         # a paper is at least this many pages
+RE_DOI = re.compile(r"\b(10\.\d{4,9}/[-._;()/:A-Za-z0-9]+?)(?=[\s,;)\]]|$)")
 
 
-def boundaries(art: dict) -> list[int]:
-    """1-based first pages of each paper."""
-    starts = [
-        s["page_start"]
-        for s in art.get("sections", [])
-        if s.get("number") == "1" and (s.get("title") or "").lower().startswith("introduction")
-    ]
-    cut = []
-    for i, p in enumerate(sorted(set(starts))):
-        cut.append(1 if i == 0 else max(1, p - LOOKBACK))
-    return cut
+def page_head(text: str) -> str:
+    """Normalised top-of-page line, with digits masked so page numbers
+    and volume numbers do not make every masthead unique."""
+    head = " ".join(x.strip() for x in text.strip().splitlines()[:2])
+    return re.sub(r"\d+", "#", re.sub(r"\s+", " ", head)).strip().lower()[:70]
+
+
+def boundaries(reader) -> tuple[list[int], list[str | None]]:
+    """1-based first page of each paper, plus each paper's DOI if printed.
+
+    Detects the **journal masthead** — the line a bound issue reprints on
+    every paper's title page ("ALGEBRA AND NUMBER THEORY 14:7 (2020)").
+    That is the only mark that reliably sits at a paper start.
+
+    The previous detector used numbered-`1` "Introduction" sections from
+    the PDF outline and was wrong twice over on the volume it was written
+    for: it placed cuts in the tail of the preceding paper, and it found
+    8 papers where the masthead finds 10 (it missed the papers starting on
+    pages 45 and 287 entirely). Section outlines describe a paper's
+    interior; they say nothing about where one paper stops being another.
+
+    Auto-detected rather than configured: the masthead is the normalised
+    head-line that repeats at least MIN_PAPERS times with every occurrence
+    at least MIN_GAP pages from the last. Running heads fail that test —
+    they repeat on *consecutive* pages.
+    """
+    texts = [(p.extract_text() or "") for p in reader.pages]
+    heads = [page_head(t) for t in texts]
+
+    by_head: dict[str, list[int]] = {}
+    for i, h in enumerate(heads, 1):
+        if h:
+            by_head.setdefault(h, []).append(i)
+
+    best: list[int] = []
+    for h, pages in by_head.items():
+        if len(pages) < MIN_PAPERS:
+            continue
+        if any(b - a < MIN_GAP for a, b in zip(pages, pages[1:])):
+            continue                      # a running head, not a masthead
+        if len(pages) > len(best):
+            best = pages
+
+    if not best:
+        return [], []
+
+    # Start the first paper at its own masthead, not at page 1. The issue
+    # cover and table of contents are not part of any paper, and absorbing
+    # them left the first split with no extractable title — the cover page
+    # is not a title page.
+    cuts = best[:]
+    dois = []
+    for i, start in enumerate(cuts):
+        doi_page = start
+        m = RE_DOI.search(" ".join(texts[doi_page - 1].splitlines()[:6]))
+        dois.append(m.group(1).rstrip(".") if m else None)
+    return cuts, dois
 
 
 def main() -> int:
@@ -101,10 +150,10 @@ def main() -> int:
     reader = PdfReader(os.path.join(voldir, pdfs[0]))
     total = len(reader.pages)
 
-    cuts = boundaries(art)
+    cuts, dois = boundaries(reader)
     if len(cuts) < 2:
         sys.exit(f"{vol_id}: found {len(cuts)} paper boundaries — not a bound volume, or "
-                 "the Introduction headings are not numbered `1`")
+                 "no repeating well-separated masthead line was found")
 
     spans = []
     for i, start in enumerate(cuts):
@@ -114,8 +163,9 @@ def main() -> int:
     print(f"{vol_id}: {total} pages -> {len(spans)} papers")
     for i, (a, b) in enumerate(spans, 1):
         first = (reader.pages[a - 1].extract_text() or "").strip().splitlines()
-        head = " ".join(l.strip() for l in first[:4])[:76]
-        print(f"  p{i:02d}  pages {a:>4}-{b:<4} ({b - a + 1:>3}pp)  {head}")
+        head = " ".join(l.strip() for l in first[:6])[:70]
+        print(f"  p{i:02d}  pages {a:>4}-{b:<4} ({b - a + 1:>3}pp)  {dois[i-1] or '(no doi)'}")
+        print(f"        {head}")
         if args.apply:
             out_id = f"{vol_id}-p{i:02d}"
             out_dir = os.path.join(os.path.dirname(voldir), out_id)

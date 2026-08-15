@@ -144,8 +144,16 @@ def main() -> int:
 
     docs: list[tuple[set[str], dict]] = []
     for d in sorted(glob.glob(os.path.join(LIB, "*"))):
-        if os.path.isdir(d) and os.path.exists(os.path.join(d, "structure.json")):
-            docs.append(doc_terms(d))
+        if not (os.path.isdir(d) and os.path.exists(os.path.join(d, "structure.json"))):
+            continue
+        # A container (a bound issue that has been split) holds the same
+        # pages as its children; ranking both counts them twice.
+        try:
+            if json.load(open(os.path.join(d, "structure.json"))).get("container"):
+                continue
+        except Exception:
+            pass
+        docs.append(doc_terms(d))
 
     # IDF over the library: a term in most documents discriminates nothing.
     N = len(docs)

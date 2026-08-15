@@ -1,0 +1,481 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ant-v14-n7-s-p05",
+ "source": {
+  "file": "ant-v14-n7-s-p05.pdf",
+  "sha256": "1c8e94ff62a8d9208b6ce94a7f6a29b20f66dbfa7e3470a7abd1ab9c73eeba1e",
+  "bytes": 580007,
+  "pages": 52
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.2140/ant.2020.14.1801",
+  "title": "Motivic Gauss\u2013Bonnet formulas",
+  "authors_raw": "Marc Levine and Arpon Raksit",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pypdf"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction 1801",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Duality and Euler characteristics 1804",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "SL-oriented motivic spectra 1813",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Projective pushforward in twisted cohomology 1821",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Motivic Gauss\u2013Bonnet 1826",
+   "page": 1,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "SL-oriented cohomology theories 1827",
+   "page": 1,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Comparison isomorphisms 1831",
+   "page": 1,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Applications 1836",
+   "page": 1,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Duality and Euler characteristics",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "TX/B(p\u2217",
+   "page": 10,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "TX/B(1X\u00d7B X)",
+   "page": 10,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "TX/B(1X\u00d7B X))\u2243\u03c0X\u266f6\u2212TX/B p1\u266f(1X\u00d7B X)\u2243\u03c0X! p1\u266f p\u2217",
+   "page": 10,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "SL-oriented motivic spectra",
+   "page": 13,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Projective pushforward in twisted cohomology",
+   "page": 21,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Motivic Gauss\u2013Bonnet",
+   "page": 26,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "SL-oriented cohomology theories",
+   "page": 27,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "L\u2297 p\u2217",
+   "page": 27,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "M)",
+   "page": 27,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Comparison isomorphisms",
+   "page": 31,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Applications",
+   "page": 36,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "(X;\u03c9X/k)= Hd(X, KMW",
+   "page": 40,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(X, L):= GW(Dperf(X), L[r], can),",
+   "page": 41,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(k)= GW(k),",
+   "page": 45,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(k)\u2243 GW(k). \u25a1",
+   "page": 45,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 50,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 50,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-1801",
+   "number": "1",
+   "title": "Introduction 1801",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-2-duality-and-euler-characteristics-1804",
+   "number": "2",
+   "title": "Duality and Euler characteristics 1804",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-3-sl-oriented-motivic-spectra-1813",
+   "number": "3",
+   "title": "SL-oriented motivic spectra 1813",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-4-projective-pushforward-in-twisted-cohomology-1",
+   "number": "4",
+   "title": "Projective pushforward in twisted cohomology 1821",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-5-motivic-gaussbonnet-1826",
+   "number": "5",
+   "title": "Motivic Gauss\u2013Bonnet 1826",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-6-sl-oriented-cohomology-theories-1827",
+   "number": "6",
+   "title": "SL-oriented cohomology theories 1827",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-7-comparison-isomorphisms-1831",
+   "number": "7",
+   "title": "Comparison isomorphisms 1831",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-8-applications-1836",
+   "number": "8",
+   "title": "Applications 1836",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9708,
+   "n_words": 1569
+  },
+  {
+   "id": "sec-008-2-duality-and-euler-characteristics",
+   "number": "2",
+   "title": "Duality and Euler characteristics",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 11519,
+   "n_words": 2006
+  },
+  {
+   "id": "sec-009-1-txb1xb-x",
+   "number": "1",
+   "title": "TX/B(1X\u00d7B X)",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 388,
+   "n_words": 67
+  },
+  {
+   "id": "sec-010-1-txbp",
+   "number": "1",
+   "title": "TX/B(p\u2217",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 314,
+   "n_words": 51
+  },
+  {
+   "id": "sec-011-1-txb1xb-x\u03c0x6txb-p11xb-x\u03c0x-p1-p",
+   "number": "1",
+   "title": "TX/B(1X\u00d7B X))\u2243\u03c0X\u266f6\u2212TX/B p1\u266f(1X\u00d7B X)\u2243\u03c0X! p1\u266f p\u2217",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 5186,
+   "n_words": 814
+  },
+  {
+   "id": "sec-012-3-sl-oriented-motivic-spectra",
+   "number": "3",
+   "title": "SL-oriented motivic spectra",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 21,
+   "n_chars": 14509,
+   "n_words": 2482
+  },
+  {
+   "id": "sec-013-4-projective-pushforward-in-twisted-cohomology",
+   "number": "4",
+   "title": "Projective pushforward in twisted cohomology",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 6108,
+   "n_words": 1032
+  },
+  {
+   "id": "sec-014-5-motivic-gaussbonnet",
+   "number": "5",
+   "title": "Motivic Gauss\u2013Bonnet",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 3800,
+   "n_words": 627
+  },
+  {
+   "id": "sec-015-6-sl-oriented-cohomology-theories",
+   "number": "6",
+   "title": "SL-oriented cohomology theories",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 548,
+   "n_words": 91
+  },
+  {
+   "id": "sec-016-2-m",
+   "number": "2",
+   "title": "M)",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 832,
+   "n_words": 166
+  },
+  {
+   "id": "sec-017-1-l-p",
+   "number": "1",
+   "title": "L\u2297 p\u2217",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 31,
+   "n_chars": 5627,
+   "n_words": 1070
+  },
+  {
+   "id": "sec-018-7-comparison-isomorphisms",
+   "number": "7",
+   "title": "Comparison isomorphisms",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 36,
+   "n_chars": 10834,
+   "n_words": 1999
+  },
+  {
+   "id": "sec-019-8-applications",
+   "number": "8",
+   "title": "Applications",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 11310,
+   "n_words": 1958
+  },
+  {
+   "id": "sec-020-0-x\u03c9xk-hdx-kmw",
+   "number": "0",
+   "title": "(X;\u03c9X/k)= Hd(X, KMW",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2795,
+   "n_words": 487
+  },
+  {
+   "id": "sec-021-0-x-l-gwdperfx-lr-can",
+   "number": "0",
+   "title": "(X, L):= GW(Dperf(X), L[r], can),",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 45,
+   "n_chars": 6330,
+   "n_words": 1108
+  },
+  {
+   "id": "sec-022-0-k-gwk",
+   "number": "0",
+   "title": "(k)= GW(k),",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 483,
+   "n_words": 73
+  },
+  {
+   "id": "sec-023-0-k-gwk",
+   "number": "0",
+   "title": "(k)\u2243 GW(k). \u25a1",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 50,
+   "n_chars": 10165,
+   "n_words": 1757
+  },
+  {
+   "id": "sec-024-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 1083,
+   "n_words": 177
+  },
+  {
+   "id": "sec-025-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 6400,
+   "n_words": 957
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 1,
+  "likely_scanned": false,
+  "toc_entries": 27,
+  "sections": 26,
+  "chars_total": 107939
+ }
+}

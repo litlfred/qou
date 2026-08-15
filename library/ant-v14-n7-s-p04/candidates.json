@@ -1,0 +1,157 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "ant-v14-n7-s-p04",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "6abd838a4c933311f3ffd0d14c21b1ba88152e7572278b09d33671b0ae949a9d",
+  "file": "ant-v14-n7-s-p04.pdf"
+ },
+ "provenance": {
+  "title": "Elliptic curves over totally real cubic \ufb01elds are modular",
+  "authors": "Maarten Derickx , Filip Najman and Samir Siksek",
+  "arxiv": null,
+  "doi": "10.2140/ant.2020.14.1791"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 10,
+  "by_kind": {
+   "theorem": 7,
+   "lemma": 3
+  },
+  "formalization_candidates": 10
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": "Freitas, Le Hung and Siksek",
+   "statement": "Elliptic curves over real quadratic \ufb01elds are modular.",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "Let K be a totally real cubic number \ufb01eld. Let E be an elliptic curve over K . Then E is",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "Let K be a totally real \ufb01eld and E an elliptic curve over K . Suppose that\u03c1 E,3(G K) is not",
+   "section_file": "sections/sec-001-2-images-mod-3-5-7-and-modularity.md",
+   "section_title": "Images mod 3, 5, 7 and modularity",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": "Thorne",
+   "statement": "Let K be a totally real \ufb01eld and E an elliptic curve over K . Suppose 5 is not a",
+   "section_file": "sections/sec-001-2-images-mod-3-5-7-and-modularity.md",
+   "section_title": "Images mod 3, 5, 7 and modularity",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5",
+   "name": "Kalyanswamy",
+   "statement": "Let K be a totally real \ufb01eld and E an elliptic curve over K . Suppose :",
+   "section_file": "sections/sec-001-2-images-mod-3-5-7-and-modularity.md",
+   "section_title": "Images mod 3, 5, 7 and modularity",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6",
+   "name": null,
+   "statement": "Let K be a totally real cubic \ufb01eld. Then X (b5, b7)(K) consists only of cusps.",
+   "section_file": "sections/sec-002-3-modular-curves.md",
+   "section_title": "Modular curves",
+   "pages": "3-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7",
+   "name": null,
+   "statement": "Let K be a cubic \ufb01eld. Then X (b5, ns7)(K) consists only of cusps.",
+   "section_file": "sections/sec-002-3-modular-curves.md",
+   "section_title": "Modular curves",
+   "pages": "3-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "Let K= Q(\u03b67)+. Let E be an elliptic curve de\ufb01ned over K . Then E is modular.",
+   "section_file": "sections/sec-003-4-modularity-of-elliptic-curves-over-q\u03b67.md",
+   "section_title": "Modularity of elliptic curves over Q(\u03b67)+",
+   "pages": "4-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.1",
+   "name": null,
+   "statement": "Let A/Q be the abelian subvariety of J that is the image ofw5\u2212 1. Then A\u223c A2\u00d7 A3 has",
+   "section_file": "sections/sec-005-6-the-modular-curve-xb5-ns7.md",
+   "section_title": "The modular curve X(b5, ns7)",
+   "pages": "5-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.2",
+   "name": null,
+   "statement": "The Q-rational automorphism group of X(b5, ns7) is generated byw5, i.e., AutQ(X)=",
+   "section_file": "sections/sec-005-6-the-modular-curve-xb5-ns7.md",
+   "section_title": "The modular curve X(b5, ns7)",
+   "pages": "5-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}
