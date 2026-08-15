@@ -326,6 +326,29 @@ theorem sum_mul_genMat_column_of_not_admissible (k : ℕ) (hk : 1 ≤ k)
     rw [genMat_of_not_admissible q k hk hkn hb hadm, mul_zero]
   · intro h; exact absurd (Finset.mem_univ T) h
 
+/-- **One factor peeled off a product.**  Multiplying on the right by `genMat q l` replaces
+column `T` by the two-term combination its support dictates.  Iterating this is how a
+product of generators is evaluated: three applications turn the braid's triple product into
+a sum over the `⟨s_k, s_{k+1}⟩`-orbit of `T`. -/
+theorem genMat_mul_apply (l : ℕ) (hl : 1 ≤ l) (hln : l + 1 ≤ μ.cells.card)
+    (M : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ)
+    {T : StandardYoungTableau μ} (hadm : SwapAdmissible T l)
+    (T' : StandardYoungTableau μ) :
+    (M * genMat q l hl hln) T' T
+      = M T' T * seminormalParam q (axialDist T l)
+        + M T' (swapTableau T l hl hln hadm) * offDiag q (axialDist T l) := by
+  rw [Matrix.mul_apply]
+  exact sum_mul_genMat_column q l hl hln hadm (fun S => M T' S)
+
+/-- The scalar-column case of `genMat_mul_apply`. -/
+theorem genMat_mul_apply_of_not_admissible (l : ℕ) (hl : 1 ≤ l) (hln : l + 1 ≤ μ.cells.card)
+    (M : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ)
+    {T : StandardYoungTableau μ} (hadm : ¬ SwapAdmissible T l)
+    (T' : StandardYoungTableau μ) :
+    (M * genMat q l hl hln) T' T = M T' T * seminormalParam q (axialDist T l) := by
+  rw [Matrix.mul_apply]
+  exact sum_mul_genMat_column_of_not_admissible q l hl hln hadm (fun S => M T' S)
+
 /-- **Two far swaps of the same tableau land in different places.**  At the cell holding
 `k`, `s_k·T` carries `k+1` while `s_l·T` still carries `k`.
 
@@ -510,6 +533,108 @@ theorem genMat_far_comm {k l : ℕ} (hk : 1 ≤ k) (hl : 1 ≤ l)
         ring
 
 end FarComm
+
+/-! ## Towards the braid
+
+The braid is the one relation that is **not** column-local: `σ_k` and `σ_{k+1}` have
+different supports, so no single-column argument reaches it.  What replaces the column is
+the `⟨s_k, s_{k+1}⟩`-orbit, and the two lemmas below carry the triple product down to
+entries at *named* tableaux of that orbit, with every coefficient already identified.
+
+Writing `p = axialDist T k` and `r = axialDist T (k+1)`, the third parameter that appears
+is `a(p + r)` — not a new unknown, by `axialDist_succ_swapTableau` /
+`axialDist_swapTableau_succ`.  That is exactly the `a₃` of `Orbit6Braid`, whose one
+relation `a₃(a₁ + a₂ - c) = a₁a₂` (`seminormalParam_mul_rel`) is what the braid needs.
+
+After both expansions the identity to prove is, for every row `T'`,
+
+```
+  ρ_k[T',T]·a(r)·a(p) + ρ_k[T',s_{k+1}T]·off(r)·a(p)
+    + ρ_k[T',s_kT]·a(p+r)·off(p) + ρ_k[T',s_{k+1}s_kT]·off(p+r)·off(p)
+=
+  ρ_{k+1}[T',T]·a(p)·a(r) + ρ_{k+1}[T',s_kT]·off(p)·a(r)
+    + ρ_{k+1}[T',s_{k+1}T]·a(p+r)·off(r) + ρ_{k+1}[T',s_ks_{k+1}T]·off(p+r)·off(r)
+```
+
+which is pure algebra in the orbit once each `ρ` entry is resolved.  **What is still
+missing is the orbit-size classification** (bean `qou-7xt3`): the row cases depend on which
+of `s_kT`, `s_{k+1}T`, `s_{k+1}s_kT`, `s_ks_{k+1}T` exist and which coincide, and
+`s_{k+1}s_kT ≠ s_ks_{k+1}T` is precisely what distinguishes the size-6 orbit from the
+smaller ones.
+-/
+
+section Braid
+
+open scoped Classical
+
+noncomputable local instance : Fintype (StandardYoungTableau μ) := Fintype.ofFinite _
+
+/-- **The braid's left-hand side, expanded onto the orbit.**  Two applications of
+`genMat_mul_apply` reduce `ρ(σ_k)ρ(σ_{k+1})ρ(σ_k)` at column `T` to four entries of
+`ρ(σ_k)` — at `T`, at `s_{k+1}T`, at `s_kT`, and at `s_{k+1}s_kT` — with coefficients built
+from `a(p)`, `a(r)`, `a(p+r)` and the matching `offDiag`s.
+
+The `a(p + r)` is where the third parameter enters, supplied by
+`axialDist_succ_swapTableau`: `σ_{k+1}` acting on `s_kT` reads the *sum* of the two
+distances, not a new quantity. -/
+theorem genMat_braid_lhs_expand (k : ℕ) (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cells.card)
+    (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
+    {T : StandardYoungTableau μ} (hka : SwapAdmissible T k)
+    (hla : SwapAdmissible T (k + 1))
+    (hAl : SwapAdmissible (swapTableau T k hk hkn hka) (k + 1))
+    (T' : StandardYoungTableau μ) :
+    (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T' T
+      = (genMat q k hk hkn T' T * seminormalParam q (axialDist T (k + 1))
+          + genMat q k hk hkn T' (swapTableau T (k + 1) hl hln hla)
+            * offDiag q (axialDist T (k + 1)))
+          * seminormalParam q (axialDist T k)
+        + (genMat q k hk hkn T' (swapTableau T k hk hkn hka)
+            * seminormalParam q (axialDist T k + axialDist T (k + 1))
+          + genMat q k hk hkn T'
+              (swapTableau (swapTableau T k hk hkn hka) (k + 1) hl hln hAl)
+            * offDiag q (axialDist T k + axialDist T (k + 1)))
+          * offDiag q (axialDist T k) := by
+  classical
+  have hshift : axialDist (swapTableau T k hk hkn hka) (k + 1)
+      = axialDist T k + axialDist T (k + 1) :=
+    axialDist_succ_swapTableau T hk hkn (by omega) hka
+  rw [genMat_mul_apply q k hk hkn _ hka T',
+    genMat_mul_apply q (k + 1) hl hln _ hla T',
+    genMat_mul_apply q (k + 1) hl hln _ hAl T', hshift]
+
+/-- **The braid's right-hand side, expanded onto the same orbit.**  The mirror of
+`genMat_braid_lhs_expand`, with `k` and `k+1` exchanged; the third parameter is again
+`a(p + r)`, now by `axialDist_swapTableau_succ`.
+
+Comparing the two expansions is what the braid reduces to — and comparing them needs the
+orbit-size classification, because the row cases turn on which of the four named tableaux
+coincide. -/
+theorem genMat_braid_rhs_expand (k : ℕ) (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cells.card)
+    (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
+    {T : StandardYoungTableau μ} (hka : SwapAdmissible T k)
+    (hla : SwapAdmissible T (k + 1))
+    (hBk : SwapAdmissible (swapTableau T (k + 1) hl hln hla) k)
+    (T' : StandardYoungTableau μ) :
+    (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T' T
+      = (genMat q (k + 1) hl hln T' T * seminormalParam q (axialDist T k)
+          + genMat q (k + 1) hl hln T' (swapTableau T k hk hkn hka)
+            * offDiag q (axialDist T k))
+          * seminormalParam q (axialDist T (k + 1))
+        + (genMat q (k + 1) hl hln T' (swapTableau T (k + 1) hl hln hla)
+            * seminormalParam q (axialDist T k + axialDist T (k + 1))
+          + genMat q (k + 1) hl hln T'
+              (swapTableau (swapTableau T (k + 1) hl hln hla) k hk hkn hBk)
+            * offDiag q (axialDist T k + axialDist T (k + 1)))
+          * offDiag q (axialDist T (k + 1)) := by
+  classical
+  have hshift : axialDist (swapTableau T (k + 1) hl hln hla) k
+      = axialDist T k + axialDist T (k + 1) :=
+    axialDist_swapTableau_succ T hk (by omega) hla
+  rw [genMat_mul_apply q (k + 1) hl hln _ hla T',
+    genMat_mul_apply q k hk hkn _ hka T',
+    genMat_mul_apply q k hk hkn _ hBk T', hshift]
+
+end Braid
 
 end SeminormalRep
 

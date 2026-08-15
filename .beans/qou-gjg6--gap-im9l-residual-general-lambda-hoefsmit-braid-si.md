@@ -514,3 +514,49 @@ sigma_{k+1} have different supports, so no column argument reaches it, and that 
 the content of Orbit3Braid / Orbit6Braid. Either lift those per-orbit identities via the
 basis correspondence (blocker 3, still open), or find a global argument. hoefsmit_seminormal_rep
 keeps its Ref'd sorry until then.
+
+
+## BRAID REDUCED TO PURE ORBIT ALGEBRA 2026-08-15 — the third parameter is NOT a new unknown
+
+Not the braid itself. What landed is the bridge that turns it into algebra, plus the one
+structural fact that makes the algebra finite.
+
+THE STRUCTURAL FACT (axialDist_succ_swapTableau / axialDist_swapTableau_succ, sorry-free):
+an ADJACENT swap shifts the other generator's distance by the current one --
+
+    d_{k+1}(s_k . T) = d_k(T) + d_{k+1}(T)       and the mirror
+    d_k(s_{k+1} . T) = d_k(T) + d_{k+1}(T)
+
+With cell contents x,y,z at entries k,k+1,k+2 the two distances are y-x and z-y; either
+generator applied produces the third, z-x. So a <s_k,s_{k+1}>-orbit is governed by THREE
+parameters a(p), a(r), a(p+r) satisfying ONE relation -- and that relation is exactly
+Orbit6Braid.seminormalParam_mul_rel, a3(a1+a2-c) = a1 a2. The third parameter was never a
+free unknown; contrast this with far commutation, where the other generator's distance is
+UNCHANGED (axialDist_swapTableau_of_far) and no third parameter appears at all. That
+contrast is the precise sense in which the braid is harder.
+
+THE BRIDGE (genMat_braid_lhs_expand / genMat_braid_rhs_expand, sorry-free, axiom-clean):
+two applications of the new genMat_mul_apply carry each triple product down to four entries
+at NAMED tableaux of the orbit. Writing p = d_k(T), r = d_{k+1}(T), the braid becomes,
+for every row T':
+
+  rho_k[T',T] a(r) a(p) + rho_k[T',s_{k+1}T] off(r) a(p)
+    + rho_k[T',s_kT] a(p+r) off(p) + rho_k[T',s_{k+1}s_kT] off(p+r) off(p)
+  =
+  rho_{k+1}[T',T] a(p) a(r) + rho_{k+1}[T',s_kT] off(p) a(r)
+    + rho_{k+1}[T',s_{k+1}T] a(p+r) off(r) + rho_{k+1}[T',s_ks_{k+1}T] off(p+r) off(r)
+
+This is Orbit6Braid's 6x6 identity re-derived in TABLEAU indices -- which is the point:
+there is no basis correspondence to justify, so blocker 3 may be avoidable for the braid
+too, exactly as route (c) avoided it for the quadratic and far commutation.
+
+WHAT IS ACTUALLY BLOCKING, stated precisely: the ORBIT-SIZE CLASSIFICATION (bean qou-7xt3).
+The row cases turn on which of s_kT, s_{k+1}T, s_{k+1}s_kT, s_ks_{k+1}T exist (each needs
+its own admissibility) and which COINCIDE. In particular s_{k+1}s_kT != s_ks_{k+1}T is
+precisely what makes an orbit size 6 rather than smaller, and the smaller orbits are the
+cases where terms merge. Both expansions above also carry admissibility of the intermediate
+tableau as an explicit hypothesis (hAl / hBk) -- discharging or case-splitting those is part
+of the same classification.
+
+So the honest state: the braid is no longer a search for a mechanism, it is a finite case
+analysis waiting on the orbit classification. hoefsmit_seminormal_rep keeps its Ref'd sorry.

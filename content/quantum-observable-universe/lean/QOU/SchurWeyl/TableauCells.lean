@@ -361,6 +361,46 @@ theorem swapAdmissible_of_far (T : StandardYoungTableau μ) {k l : ℕ} (hl : 1 
     cellOf_swapTableau_of_ne T hl hln hadml hkr' (by omega) (by omega)
   exact ⟨by rw [e₁, e₂]; exact hadmk.1, by rw [e₁, e₂]; exact hadmk.2⟩
 
+/-! ### Adjacent generators: the third parameter
+
+Far swaps leave the other generator's distance alone (next section).  **Adjacent** ones do
+not — and what replaces it is not a fourth independent quantity but the *sum*.  With cell
+contents `x, y, z` at the entries `k, k+1, k+2`, the two distances are `y - x` and `z - y`;
+applying either generator produces the third distance `z - x`.
+
+That is the whole reason a `⟨s_k, s_{k+1}⟩`-orbit is governed by *three* parameters
+`a(p), a(r), a(p+r)` satisfying one relation (`Orbit6Braid.seminormalParam_mul_rel`) rather
+than by two free ones — and it is why the braid cannot be read off a single column.
+-/
+
+/-- **An adjacent swap shifts the next generator's distance by the current one.**
+`s_k` moves `k+1` into the cell of `k` and leaves `k+2` alone, so `σ_{k+1}` comes to read
+the distance from `k`'s cell to `k+2`'s — which is the sum. -/
+theorem axialDist_succ_swapTableau (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hkn2 : k + 2 ≤ μ.cells.card)
+    (hadm : SwapAdmissible T k) :
+    axialDist (swapTableau T k hk hkn hadm) (k + 1) = axialDist T k + axialDist T (k + 1) := by
+  have hk2 : k + 2 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn2⟩
+  unfold axialDist
+  rw [cellOf_swapTableau_succ T hk hkn hadm,
+    show k + 1 + 1 = k + 2 from rfl,
+    cellOf_swapTableau_of_ne T hk hkn hadm hk2 (by omega) (by omega)]
+  simp only [axialDistance, cellContent]
+  ring
+
+/-- The mirror: `s_{k+1}` moves `k+2` into the cell of `k+1` and leaves `k` alone, so
+`σ_k` comes to read the same sum. -/
+theorem axialDist_swapTableau_succ (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn2 : k + 2 ≤ μ.cells.card) (hadm : SwapAdmissible T (k + 1)) :
+    axialDist (swapTableau T (k + 1) (by omega) (by omega) hadm) k
+      = axialDist T k + axialDist T (k + 1) := by
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  unfold axialDist
+  rw [cellOf_swapTableau_of_ne T (by omega) (by omega) hadm hkI (by omega) (by omega),
+    cellOf_swapTableau_self T (by omega) (by omega) hadm]
+  simp only [axialDistance, cellContent]
+  ring
+
 /-- **A far swap leaves the axial distance alone.**  `s_l` moves no cell outside
 `{l, l+1}`, so the parameter `σ_k` reads off is unchanged.  Together with
 `swapAdmissible_far_iff` this says a far swap leaves *every* input to `σ_k`'s row rule
