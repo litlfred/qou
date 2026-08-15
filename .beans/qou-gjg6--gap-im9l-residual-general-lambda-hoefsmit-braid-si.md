@@ -595,3 +595,42 @@ Note the table also EXPLAINS the smaller orbits: they arise when some of A, B, D
 to be admissible (not when they collide -- the entry values above are forced), which is why
 both braid expansion lemmas carry intermediate admissibility as an explicit hypothesis.
 That is the shape the remaining case analysis has to take.
+
+
+## THE RELATION IS EXACTLY WHAT CLOSES THE BRAID -- diagonal row derived and formalised
+
+Worked the generic-orbit algebra out by hand and it lands on seminormalParam_rel with
+nothing left over. That is the strongest evidence so far that the GLOBAL braid route closes
+(i.e. that blocker 3, the per-orbit basis correspondence, is avoidable for the braid too).
+
+Parameter bookkeeping is now CLOSED for an orbit. Across the six elements only p, r, p+r and
+their negatives ever occur:
+  axialDist_succ_swapTableau       d_{k+1}(s_k T)     = p + r
+  axialDist_swapTableau_succ       d_k(s_{k+1} T)     = p + r
+  axialDist_swapTableau_word_left  d_k(s_{k+1}s_k T)  = r      <- the OTHER original one
+  axialDist_swapTableau_word_right d_{k+1}(s_k s_{k+1} T) = p
+  axialDist_swapTableau            d(s . T)           = -d
+All sorry-free. No seventh parameter appears, which is why one relation suffices.
+
+seminormalParam_rel (new, in SeminormalParam.lean):
+    a(p+r) * (a(p) + a(r) - (q - q^-1)) = a(p) * a(r)
+Orbit6.seminormalParam_mul_rel stated directly on seminormalParam instead of on the
+multiplicative coordinates x = q^-2p, y = q^-2r -- usable where the distances are READ OFF
+TABLEAUX rather than chosen. Both Orbit6Braid and SeminormalRep can now cite it.
+
+THE DIAGONAL ROW, derived: resolving both expansions at T' = T gives
+    left   a1^2 a2 + a3 * off(-p) off(p)
+    right  a1 a2^2 + a3 * off(-r) off(r)
+and offDiag_mul_neg turns each off*off into 1 + a(d)(c - a(d)) via seminormalParam_add_neg.
+The difference factors as
+
+    (a1 - a2) * [ a1 a2 - a3 (a1 + a2 - c) ]
+
+whose second factor is seminormalParam_rel. Formalised as braid_diag_identity (sorry-free).
+NOTE the first factor is NOT needed -- the identity holds whether or not a1 = a2, so no
+genericity assumption about the orbit enters the diagonal row.
+
+WHAT REMAINS: wire braid_diag_identity to the tableau level (needs T != D, T != E, T != F,
+each an 8-line lemma off the (c1,c2) table recorded above), then the other five rows, then
+the admissibility case tree for the non-generic orbits. Mechanical now, but not small.
+hoefsmit_seminormal_rep keeps its Ref'd sorry.
