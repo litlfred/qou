@@ -235,6 +235,13 @@ def main() -> None:
         "forcing remains the only in-model blow-up channel. Scope (a); "
         "exploratory tier; float64 RK2."
     )
+    # Declares this witness into the float64-integrator carve-out
+    # (qou-7kq3, owner-approved 2026-08-15). The values below come out of a
+    # float64 RK2 integration — the integrator IS the source, so there is no
+    # mpmath.mpf upstream to carry. Explicit rather than inferred: the audit
+    # deliberately does NOT carve on `tier: exploratory`, so this excuse is a
+    # claim made on the record here.
+    w.add_data("precision_tier", "float64-integrator")
     w.add_data("tier", "exploratory")
     w.add_data("eps", EPS)
     w.add_data("delta_std", DELTA_STD)

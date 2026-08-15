@@ -109,6 +109,44 @@ LP_DUAL_F64_FIELDS = frozenset({
     "primal_obj", "dual_obj", "duality_gap",
 })
 
+# ── float64-integrator carve-out (qou-7kq3, owner-approved 2026-08-15) ──
+#
+# The sibling of the LP-dual carve-out, for the same reason: output that is
+# f64 BY CONSTRUCTION, with no higher-precision source to carry from.
+#
+# The q-NS shell-model probes integrate an ODE system with float64 RK2 and say
+# so in their own docstrings ("Precision tier: float64 RK2, adaptive nonlinear
+# CFL"). For those, the standing instruction — "carry mpmath.mpf from the
+# source and serialize with _precision.fmt" — has no source: the integrator IS
+# the source. Stringifying would dress an f64 number as preserved precision,
+# which is what that instruction exists to prevent; rewriting the integrator in
+# mpmath would make it a different object at prohibitive cost.
+#
+# DELIBERATELY NOT keyed on `tier: exploratory`. That marker is worn by many
+# probes that are not integrators, and carving on it would let this quietly
+# widen to cover ordinary f64 sloppiness — the failure mode a carve-out has to
+# be designed against. A producer must opt in EXPLICITLY by declaring
+#
+#     w.add_data("precision_tier", "float64-integrator")
+#
+# so the excuse is a claim its author made on the record, not a property the
+# auditor inferred.
+#
+# Every excused field is COUNTED and REPORTED separately from the LP-dual
+# total. A carve-out that cannot be seen is indistinguishable from a hole.
+F64_INTEGRATOR_TIER = "float64-integrator"
+
+
+def _declares_f64_integrator(doc) -> bool:
+    """Has this witness explicitly claimed the float64-integrator tier?"""
+    if not isinstance(doc, dict):
+        return False
+    for holder in (doc, doc.get("data"), doc.get("result")):
+        if isinstance(holder, dict) and \
+                holder.get("precision_tier") == F64_INTEGRATOR_TIER:
+            return True
+    return False
+
 # A binary64 carries at most 17 significant decimal digits. A `*_str`
 # companion is only a genuine full-precision shadow if it carries MORE than
 # that — otherwise it is just the same f64 spelled as text.
@@ -205,6 +243,9 @@ def _count(obj) -> tuple[int, int]:
 
 
 CARVED: dict[str, int] = {}
+#: Per-file tally for the float64-integrator carve-out, kept SEPARATE from
+#: `CARVED` so the two excuses can never be read as one number.
+CARVED_INTEGRATOR: dict[str, int] = {}
 
 
 def scan() -> dict[str, int]:
@@ -216,6 +257,7 @@ def scan() -> dict[str, int]:
     """
     found: dict[str, int] = {}
     CARVED.clear()
+    CARVED_INTEGRATOR.clear()
     for p in sorted(HERE.rglob("*.witness.json")):
         if p.name in SELF_OUTPUTS or "_deprecated" in p.parts:
             continue
@@ -224,10 +266,19 @@ def scan() -> dict[str, int]:
         except Exception:
             continue
         n, carved = _count(d)
+        rel = p.relative_to(ROOT).as_posix()
+        # An explicit float64-integrator declaration moves this file's REMAINING
+        # count into the integrator carve-out. Applied at witness level, not
+        # field level, because an integrator's output has no fixed field names —
+        # which is exactly why it needs a producer's on-the-record claim rather
+        # than a name list.
+        if n and _declares_f64_integrator(d):
+            CARVED_INTEGRATOR[rel] = n
+            n = 0
         if n:
-            found[p.relative_to(ROOT).as_posix()] = n
+            found[rel] = n
         if carved:
-            CARVED[p.relative_to(ROOT).as_posix()] = carved
+            CARVED[rel] = carved
     return found
 
 
@@ -332,6 +383,13 @@ def main() -> int:
     print("=" * 74)
     print(f"  witnesses carrying raw float64 : {len(found)}")
     print(f"  total raw float64 fields       : {total:,}")
+    if CARVED_INTEGRATOR:
+        print(f"  f64-integrator carve-out       : "
+              f"{sum(CARVED_INTEGRATOR.values()):,} field(s) in "
+              f"{len(CARVED_INTEGRATOR)} witness(es)  [NOT drained — declared "
+              f"precision_tier={F64_INTEGRATOR_TIER!r}]")
+        for _f, _n in sorted(CARVED_INTEGRATOR.items(), key=lambda t: -t[1]):
+            print(f"      {_n:6,d}  {_f}")
     if CARVED:
         print(f"  LP-dual carve-out excused      : {sum(CARVED.values()):,} "
               f"field(s) in {len(CARVED)} witness(es)  [NOT drained — see "

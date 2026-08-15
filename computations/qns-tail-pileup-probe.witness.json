@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T20:49:39.552276+00:00",
-  "commitSha": "290989580e6a70483fcb331c5f6f3863633271c9",
+  "computedAt": "2026-08-15T00:28:25.444270+00:00",
+  "commitSha": "82c809a6151e03db1c9314d72a3bbef69eb36b08",
   "assertions": [
     {
       "name": "SUBSTRATE-UNIT PILE-UP IS REAL (scope-(a) refutation of the substrate-unit no-pile-up hypothesis in this model): sup_t tail enstrophy above the fixed band grows without bound as nu -> 0 (asymptotic 1/eps exponent > 0.5; tail fraction -> 1)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4938,
+  "durationMs": 5975,
   "computation": "qns-tail-pileup-probe",
   "scriptFile": "qns_tail_pileup_probe.py",
-  "scriptHash": "57fff1315acf",
-  "scriptCommitSha": "290989580e6a70483fcb331c5f6f3863633271c9",
+  "scriptHash": "7f9de32c9a96",
+  "scriptCommitSha": "0023cc6820c39862aa50668c31ce2c0358eb3371",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,11 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
   },
   "description": "SF5 (bean qou-7swq): decisive in-model test of the eps-uniformity tail hypothesis of low_mode_block_uniformity.lean ('no enstrophy pile-up above a fixed band as the damping threshold recedes'). Unforced DN q-shell, fixed wide truncation N=32, band B=8, eps-independent data on the first 4 rungs, fixed inertial horizon T=50 eddy turnovers, eps swept 1e-1 -> 1e-3 (nu_q -> 0). Reports sup_t tail enstrophy, sup_t tail fraction, and the c_q-rescaled (eps^2-weighted) tail per the pending rescaling decision — the hypothesis is unit-dependent and both normalizations are recorded. Verdict from the fitted 1/eps growth exponent of the substrate-unit sup-tail. Scope (a); exploratory float64 RK2 tier.",
   "data": {
@@ -54,6 +58,7 @@
     "eps1e-03_sup_tail_cq_rescaled": 0.0007094022692722812,
     "tail_growth_exponent_global": 2.3198316716570826,
     "tail_growth_exponent_asymptotic": 0.8269311084590621,
+    "precision_tier": "float64-integrator",
     "tier": "exploratory",
     "N": 32,
     "band": 8

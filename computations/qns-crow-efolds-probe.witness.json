@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T19:34:23.311880+00:00",
-  "commitSha": "c00ad153fdf926a7acb02b9b943a7582a565e9ab",
+  "computedAt": "2026-08-15T00:28:00.150347+00:00",
+  "commitSha": "82c809a6151e03db1c9314d72a3bbef69eb36b08",
   "assertions": [
     {
       "name": "Closed form N_e = (s*/2)ln(d0^2/d^2_ov) matches direct integration",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 764,
+  "durationMs": 461,
   "computation": "qns-crow-efolds-probe",
   "scriptFile": "qns_crow_efolds_probe.py",
-  "scriptHash": "1e0d0bd96c83",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "aaab023b1d01",
+  "scriptCommitSha": "debe683c63e96046de2808625c6a97901869ca5e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,11 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
   },
   "description": "U3 (bean qou-7fi2): quantifies the named 3D escape of the two-regime pair model — the Crow instability — during the phase-1 approach. sigma = s* Gamma/(2 pi d^2) along d^2 = d0^2 - (Gamma/pi) t integrates to N_e = (s*/2) ln(d0^2/d^2_ov); with the strain-race overlap d^2_ov = d0^2 rho^(2/3) the amplification is the power law A = rho^(-s*/3) (~rho^-0.27 classically) — bounded for every finite core ratio, logarithmic e-folds, no linear finite-time runaway. Sweeps s* in {0.5, 0.8, 1.2} and rho in {1e-2..1e-8}; viscous-overlap engagement (pair_viscous_core_race) taken when earlier. Honest caveats: s* held constant (classically it depends on the evolving core/separation ratio); linear theory only (nonlinear saturation / reconnection not modeled); scope (a) throughout. The 2D reduction degrades only polynomially in the core ratio before the cutoff engages — the 3D escape requires large seed perturbations or the nonlinear regime, which remain the open content of qou-ohaz U3.",
   "data": {
@@ -63,6 +67,7 @@
     "s1.2_rho1e-08_amplification": 13.922851187943785,
     "power_law_exponent": 0.26666666666666666,
     "max_rel_err_closed_vs_numeric": 1.0306249798788257e-14,
+    "precision_tier": "float64-integrator",
     "tier": "exploratory",
     "s_star_sweep": [
       0.5,
