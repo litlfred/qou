@@ -280,3 +280,37 @@ Recommended order is by evidence, not size: `q-from-epsilon`, `crossing-energy`,
 `borromean-baryon`, `habiro-ring`, `hadron` — no prose links at all between the
 three of them, and `borromean-baryon` carries 4 of the 10 forward edges. Being
 large is the worst reason to do one of those first.
+
+## 2026-08-15 — tranche 9 APPLIED (the structural half): 5 edges restored
+
+First edges restored under this bean. `rem:millennium-unification`,
+`rem:bsd-surreal-bound`, `rem:rh-surreal-bound`, `rem:yang-mills-surreal-bound`
+and `rem:p-vs-np-surreal-bound` now declare `def:q-from-epsilon`.
+
+**Applied on a structural ground, not a reading.** Each of the five contains the
+same sentence introducing two definitions together — `def:reeb-epsilon`, then
+`$q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon))` — and
+four of the five already declared the first while none declared the second. Same
+sentence, same role, one dependency carried and the other not. That is a block's
+two halves contradicting each other; nothing is being judged, so two readers are
+not what was missing.
+
+Verified before applying rather than after:
+
+- `def:q-from-epsilon` uses only `def:reeb-epsilon` and cannot reach any of the
+  five, so no cycle is created. Editorial graph still **acyclic corpus-wide**,
+  preserving what #4881 established.
+- **None of the five points forward** — the restored edges cannot regress
+  `detangler-no-forward-ref`.
+- `run-validate` ✓ Valid, **42 issues, unchanged**.
+
+`rem:millennium-unification` declared *neither* definition while linking both.
+Only `def:q-from-epsilon` was added; `def:reeb-epsilon` is a different tranche's
+question and folding it in silently would be the bulk-edit error again. Recorded
+here instead.
+
+**What remains, and why it stops here.** The tranche went 10 → 5, and the
+remaining five carry **no prose link at all**. The self-contradicting subset is
+fully drained, so the residue is exactly where a reader's judgement decides
+something — and there the two-reader standard has not been met and I cannot meet
+it alone.

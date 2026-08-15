@@ -17,7 +17,7 @@ These are the twelve largest, covering **153 of the 692 still-lost edges**.
 | 6 | `def:habiro-ring` | 11 | 0 | 1 | [sheet](2026-08-15-tranche-habiro-ring.md) |
 | 7 | `def:motivic-substrate` | 11 | 2 | 1 | [sheet](2026-08-15-tranche-motivic-substrate.md) |
 | 8 | `def:archimedean-realization-functor` | 11 | 2 | 0 | [sheet](2026-08-15-tranche-archimedean-realization-functor.md) |
-| **9** | **`def:q-from-epsilon`** | 10 | **5** | **0** | [sheet](2026-08-15-tranche-q-from-epsilon.md) |
+| **9** | **`def:q-from-epsilon`** | ~~10~~ **5 left** | ~~5~~ **0 left** | 0 | [sheet](2026-08-15-tranche-q-from-epsilon.md) — **5 APPLIED** |
 | 10 | `def:hadron` | 10 | 0 | 0 | [sheet](2026-08-15-tranche-hadron.md) |
 | 11 | `def:categorical-neutron` | 10 | 3 | 1 | [sheet](2026-08-15-tranche-categorical-neutron.md) |
 | 12 | `def:categorical-proton` | 10 | 2 | **2** | [sheet](2026-08-15-tranche-categorical-proton.md) |
@@ -26,11 +26,31 @@ These are the twelve largest, covering **153 of the 692 still-lost edges**.
 block's own two halves contradicting each other, which is a defect rather than a
 matter of taste. **10 of 153 would point forward if restored.**
 
-## Start with tranche 9 — and it indicts the earlier restoration
+## Tranche 9 — APPLIED (the structural half), and it indicts the earlier restoration
 
-`def:q-from-epsilon` has **the highest prose-link rate of any tranche by far**
+**Five of its ten are done.** `rem:millennium-unification`,
+`rem:bsd-surreal-bound`, `rem:rh-surreal-bound`, `rem:yang-mills-surreal-bound`
+and `rem:p-vs-np-surreal-bound` now declare `def:q-from-epsilon`.
+
+They were applied on a **structural** ground, not a reading. Each contains the
+same sentence introducing two definitions together — `def:reeb-epsilon` and then
+"$q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon))" — and
+four of the five already declared the first while none declared the second. Same
+sentence, same role, one carried and one not: a block's two halves contradicting
+each other. Nothing is judged, so the two-reader standard is not what is missing.
+
+Verified before applying: `def:q-from-epsilon` uses only `def:reeb-epsilon` and
+cannot reach any of the five, so **no cycle** — the editorial graph is still
+acyclic corpus-wide, preserving what #4881 established. **None of the five points
+forward.** `run-validate` ✓ Valid, 42 issues, unchanged from before.
+
+**The remaining five carry no prose link at all.** The self-contradicting subset
+is fully drained, so what is left is exactly the residue where a reader's
+judgement decides something — and that still needs two readers.
+
+`def:q-from-epsilon` had **the highest prose-link rate of any tranche by far**
 (5 of 10, against a next-best of 3 of 12) and **nothing points forward**, so it
-is ordering-safe wholesale.
+was ordering-safe wholesale.
 
 What makes it more than a good candidate is *which* five link. From the re-drive,
 six blocks had edges re-declared since the prune: `rem:yang-mills-surreal-bound`
@@ -77,7 +97,8 @@ Only **10 blocks in all 153** need individual handling, each wanting
 
 Recommended order, by evidence rather than size:
 
-1. **`def:q-from-epsilon`** (5/10 linked, 0 forward) — above.
+1. ~~**`def:q-from-epsilon`**~~ — **structural half applied**; 5 remain, all
+   needing a reading.
 2. **`def:crossing-energy`** (3/12, 1 forward) — `rem:commutative-crossing-energy`
    both links in prose *and* references the declaration in Lean.
 3. **`def:categorical-neutron`** (3/10, 1 forward).

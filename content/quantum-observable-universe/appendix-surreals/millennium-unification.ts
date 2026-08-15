@@ -8,6 +8,7 @@ export default remark({
   uses: [
     "conj:p-vs-np-qou",
     "conj:q-birch-swinnerton-dyer",
+    "def:q-from-epsilon",
     "rem:adelic-tate-squeeze",
     "rem:collatz-surreal-bound",
     "rem:yang-mills-surreal-bound",
