@@ -1,14 +1,14 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T16:22:56.226226+00:00",
-  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
+  "computedAt": "2026-08-15T23:37:51.082028+00:00",
+  "commitSha": "b393679b5ba10c0aa16a8d421800e30e52a8019d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 4,
   "computation": "categorical-bypass-volmatch-demo",
   "scriptFile": "categorical_bypass_volmatch_demo.py",
-  "scriptHash": "8a619d2ecfe8",
+  "scriptHash": "b07e186820ec",
   "scriptCommitSha": "67b2d3d8df8dfd813fd64527bb9c995ffe2ced3e",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -21,7 +21,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
   "description": "Bypass demo: compute B(𝔥) directly from joint-tower SDP Wedderburn blocks via tr_M = Σ_λ y_λ · χ_λ at q_0, without using volume-match knot identification. Surfaces a 27%–15× discrepancy with mass-table-ppb's volume-match B = m_e · ρ · Vol_hyp(K), establishing that the regular Markov trace at q_0 ≠ Vol_hyp(K). The canonical chain in PR #442 step (5)–(7) needs further resolution before sub-percent accuracy is possible.",
@@ -41,9 +42,9 @@
         "tr_M_direct": 0.8476155316216548,
         "B_pred_direct_MeV": 0.4331306472472121,
         "B_volmatch_MeV": null,
-        "B_AME_MeV": 1.0,
+        "B_AME_MeV": "1.0",
         "ratio_direct_to_volmatch": null,
-        "ratio_direct_to_AME": 0.4331306472472121,
+        "ratio_direct_to_AME": "0.433130647247212119399506491390638984739780426025390625",
         "wedderburn_terms": [
           {
             "partition": [
@@ -75,10 +76,10 @@
         "rho": 1,
         "tr_M_direct": 0.40923483493978274,
         "B_pred_direct_MeV": 0.20911857124002434,
-        "B_volmatch_MeV": 2.2488207948647343,
-        "B_AME_MeV": 2.2245662000000004,
-        "ratio_direct_to_volmatch": 0.09299032262488605,
-        "ratio_direct_to_AME": 0.09400420236539794,
+        "B_volmatch_MeV": "2.2488207979013089793867766275070607662200927734375",
+        "B_AME_MeV": "2.2245661999999999380861481768079102039337158203125",
+        "ratio_direct_to_volmatch": "0.09299032249932155183986788148606909931492544911138592978632483077225704",
+        "ratio_direct_to_AME": "0.09400420236539795608360923627958758669961840798016038487166292880435009",
         "wedderburn_terms": [
           {
             "partition": [
@@ -121,10 +122,10 @@
         "rho": 2,
         "tr_M_direct": 0.035297917348310774,
         "B_pred_direct_MeV": 0.03607439745305831,
-        "B_volmatch_MeV": 8.46859838653302,
-        "B_AME_MeV": 8.481796200000002,
-        "ratio_direct_to_volmatch": 0.004259783709949539,
-        "ratio_direct_to_AME": 0.0042531554168984045,
+        "B_volmatch_MeV": "8.46859839796813821730813259591741370968520641326904296875",
+        "B_AME_MeV": "8.4817961999999997857457856298424303531646728515625",
+        "ratio_direct_to_volmatch": "0.00425978370419756815499576719812737228974617066002901372477242816119816",
+        "ratio_direct_to_AME": "0.004253155416898405099789115581170070564724993167874300882405338638320913",
         "wedderburn_terms": [
           {
             "partition": [
@@ -213,10 +214,10 @@
         "rho": 2,
         "tr_M_direct": 0.9985760982172549,
         "B_pred_direct_MeV": 1.0205426767462633,
-        "B_volmatch_MeV": 7.48891930977096,
-        "B_AME_MeV": 7.71804132,
-        "ratio_direct_to_volmatch": 0.13627369110717197,
-        "ratio_direct_to_AME": 0.13222819552697904,
+        "B_volmatch_MeV": "7.488919319883220649523483346950944430489904861364072529740693311161264",
+        "B_AME_MeV": "7.71804132000000020497054720181040465831756591796875",
+        "ratio_direct_to_volmatch": "0.1362736909231620970345538527822530129574965083884646678413938672445369",
+        "ratio_direct_to_AME": "0.1322281955269790242270761787363561367064595276779637796767648739025814",
         "wedderburn_terms": [
           {
             "partition": [
