@@ -705,3 +705,35 @@ The gate exits 1 on one regression — `rho-k-co-casimir-extended.witness.json`,
 the red is inherited. Worth flagging to whoever owns the co-Casimir refresh
 (there is a `docs/audits/2026-08-15-rho-k-co-casimir-stale-convention-c-needs-d-refresh.md`
 on main now).
+
+---
+
+## Round 12: my precision-gates fix was superseded by a better one
+
+Merged 94 commits from main. One conflict, on
+`computations/witness_raw_float64_audit.py`: **main landed a fix for the same
+double-write defect I had fixed an hour earlier**, and theirs is better.
+
+| | |
+|---|---|
+| mine | a `--scan-root` run refuses to write the witness |
+| theirs | `_output_name(scan_root)` derives a per-scan-root filename |
+
+Theirs keeps the advisory run's record rather than suppressing it, and makes
+the collision impossible for **any** future scan root instead of for the one
+invocation `precision-gates.sh` happens to make today.
+
+It also chases a consequence I had not: the derived name must still end in
+`AUDIT_SUFFIX`, because `q0_anchor_consistency_audit.py` classifies audit
+self-outputs by **suffix**, so a name ending in the scan slug gets filed as
+`Q0_ANCHOR_MISSING` — measured 1889 -> 1890. I would have shipped a fix that
+was correct in isolation and moved a count in a different audit.
+
+Resolved `--theirs`; my guard is gone. Worth recording rather than quietly
+dropping: two agents fixed the same defect within the hour, from the same
+report, and the difference between the fixes was entirely in the second-order
+consequence one of them checked.
+
+Post-merge state: `blocked_migrations` still `[]`, `resolved_migrations` 1 row,
+8 derived evaluators, `pyhecke.gram` waiver intact. Validator
+`PASS (0 errors, 23 warnings)`; selftests 42/42, 16/16, 23/23.
