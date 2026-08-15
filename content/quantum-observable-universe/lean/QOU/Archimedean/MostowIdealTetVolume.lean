@@ -78,6 +78,11 @@ Archimedean (ℝ): `Λ`, the hyperbolic volume measure, ordering, `π` — §7c.
 
 import QOU.Archimedean.OrthoschemeTiling
 
+-- The class name intentionally repeats the namespace tail (per the block's `lean.ref`
+-- convention, as in `RealisationVolumeCompatibility`); the resulting duplicated-namespace
+-- lint is cosmetic and disabled here.
+set_option linter.dupNamespace false
+
 namespace QOU.Archimedean.MostowIdealTetVolume
 
 open MeasureTheory
@@ -168,6 +173,7 @@ theorem region_eq_chimney_is_restrictive :
       ∈ chimney (inscribedTriangle 1 t (Real.pi / 3) (Real.pi / 3) (Real.pi / 3)) 1 := by
     rw [← hU]; trivial
   have hup := chimney_subset_upperHalfSpace _ _ hmem
-  simp [upperHalfSpace] at hup
+  simp only [upperHalfSpace, Set.mem_setOf_eq] at hup
+  norm_num at hup
 
 end QOU.Archimedean.MostowIdealTetVolume
