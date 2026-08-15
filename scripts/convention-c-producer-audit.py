@@ -361,6 +361,38 @@ def scan(roots=ROOTS, blocked_files=()):
                 yield (sp, n.lineno, nm, ast.unparse(n.value),
                        classify(sp, blocked_files), bool(DELIBERATE.search(nm)))
 
+            # RETURNED, not assigned. The scan above keys off an assignment
+            # TARGET, so a function that computes the convention straight into
+            # its return statement has no target to match and was invisible:
+            #
+            #     def z_mp(dps=...):
+            #         ...
+            #         return +(1 / (_mp.sqrt(q) + _mp.sqrt(qi_)))
+            #
+            # That is `pyhecke.gram.z_mp`, a public 50-dps entry point, and it
+            # went unreported through every sweep that claimed the surface was
+            # clear. The analogue of "target name contains z" is "function name
+            # contains z", which keeps the same guard against matching
+            # unrelated `1/(sqrt(...)+...)` arithmetic.
+            for fn in ast.walk(tree):
+                if not isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    continue
+                if "z" not in fn.name.lower():
+                    continue
+                for r in ast.walk(fn):
+                    if not isinstance(r, ast.Return) or r.value is None:
+                        continue
+                    val = r.value
+                    # `+expr` is used in this corpus to pin mpmath precision;
+                    # unwrap it or the shape never matches.
+                    while isinstance(val, ast.UnaryOp) and isinstance(val.op, ast.UAdd):
+                        val = val.operand
+                    if not (is_c_form(val) or is_c_form_halfarg(val)):
+                        continue
+                    yield (sp, r.lineno, f"{fn.name}() -> return",
+                           ast.unparse(val), classify(sp, blocked_files),
+                           bool(DELIBERATE.search(fn.name)))
+
 
 def selftest() -> int:
     """Prove the matcher accepts every spelling in the corpus and rejects D.
@@ -424,7 +456,36 @@ def selftest() -> int:
         ("a bare file resolves to its stem",
          _module_path_of("gram.py") == "gram"),
     ]
+    # The return-form blind spot. `scan` keyed off an assignment target, so a
+    # function returning the convention directly had nothing to match on --
+    # five live producers and pyhecke.gram.z_mp went unreported through every
+    # sweep that called the surface clear.
+    def _returns_found(src: str) -> int:
+        tree = ast.parse(src)
+        n = 0
+        for fn in ast.walk(tree):
+            if not isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                continue
+            if "z" not in fn.name.lower():
+                continue
+            for r in ast.walk(fn):
+                if not isinstance(r, ast.Return) or r.value is None:
+                    continue
+                v = r.value
+                while isinstance(v, ast.UnaryOp) and isinstance(v.op, ast.UAdd):
+                    v = v.operand
+                n += is_c_form(v) or bool(is_c_form_halfarg(v))
+        return n
+
     checks += [
+        ("a bare `return 1/(sqrt(q)+1/sqrt(q))` is found",
+         _returns_found("def z_factor(q):\n    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))\n") == 1),
+        ("mpmath's precision-pinning unary + does not hide it",
+         _returns_found("def z_mp(d):\n    return +(1 / (_mp.sqrt(q) + _mp.sqrt(qi_)))\n") == 1),
+        ("a convention-D return is NOT flagged",
+         _returns_found("def z_mp(d):\n    return q ** 3 / (q ** 2 + 1)\n") == 0),
+        ("a function whose name has no z is left alone",
+         _returns_found("def loop(q):\n    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))\n") == 0),
         ("a file defining z the convention-D way is recognised as D",
          _defines_convention_d("z = q0 ** 3 / (q0 ** 2 + 1)", "z")),
         ("the reversed-denominator spelling is recognised as D",

@@ -403,6 +403,21 @@ def _eval_z(entry, mod, q0):
         if len(free) != 1:
             raise ValueError("expected exactly one free symbol, got %s" % free)
         return mp.mpf(str(sp.N(obj.subs(free[0], sp.Float(mp.nstr(q0, 60), 60)), 55)))
+    # --- function-level kinds -------------------------------------------
+    # R9 could previously reach only MODULE ATTRIBUTES. Anything computed
+    # inside a function was invisible to it, and that is exactly where
+    # pyhecke.gram's 50-dps mpmath path sat: `z` (module attr) is convention
+    # D and was checked; `z_mp()` and `tr_m_mp()` return convention C and
+    # were not. A convention that only exists at call time is still a
+    # convention, and the high-precision path is the one you reach for when
+    # the answer matters.
+    if kind == "callable_no_arg":
+        return mp.mpf(str(obj()))
+    if kind == "callable_index":
+        idx = entry.get("index")
+        if idx is None:
+            raise ValueError("callable_index requires an `index`")
+        return mp.mpf(str(obj()[idx]))
     raise ValueError("unknown z kind %r" % kind)
 
 
@@ -477,6 +492,51 @@ def check_evaluated(reg: dict) -> tuple[list[str], list[str], list[str]]:
             else:
                 notes.append("R9 %s: z CONFIRMED convention %s by evaluation "
                              "(|d| = %s)" % (entry["id"], cid, mp.nstr(d, 4)))
+
+        # --- R10: one module, one convention ------------------------------
+        # R9 checks each entry against the registry INDEPENDENTLY, so a module
+        # whose symbols disagree with EACH OTHER passes it entry by entry.
+        # pyhecke.gram does exactly that: `z` is D, `z_mp()` and `tr_m_mp()`
+        # are C, and every one of them is correctly registered -- R9 confirms
+        # all three and says nothing is wrong.
+        #
+        # A caller does not import a registry entry, it imports a module, and
+        # `from pyhecke.gram import z` versus `gram.z_mp()` differ by 18.5%
+        # with nothing at the call site to suggest it. So the divergence is
+        # the defect even when both halves are accurately recorded.
+        #
+        # Waivable, because a module MAY legitimately export a preserved
+        # historical constant beside its production one -- that is what
+        # schur_principal_mpmath does, and it says so in the symbol name.
+        # The waiver has to name the module, so the exception is a decision
+        # somebody made rather than a silence.
+        waived = set(reg.get("intra_module_split_waivers", []))
+        by_module: dict = {}
+        for entry in ev.get("z", []):
+            by_module.setdefault(entry.get("module", "?"), []).append(entry)
+        for mod_name, entries in sorted(by_module.items()):
+            convs = {e["convention"] for e in entries}
+            if len(convs) < 2:
+                continue
+            detail = ", ".join(
+                "%s=%s" % (e["id"], e["convention"])
+                for e in sorted(entries, key=lambda x: x["id"]))
+            msg = ("R10 %s exports MORE THAN ONE convention (%s): %s"
+                   % (mod_name, "/".join(sorted(convs)), detail))
+            if mod_name in waived:
+                # A waiver downgrades to WARNING, never to a note. A note is
+                # read once and then scrolled past; a warning is counted in
+                # the summary line, so a known split stays visible for as long
+                # as it is open. Waiving is for "tracked and not blocking",
+                # not for "resolved".
+                warnings.append(msg + " -- WAIVED in intra_module_split_waivers "
+                                "(open defect, not an approved design)")
+            else:
+                errors.append(
+                    msg + " -- a caller imports a module, not a registry entry, "
+                    "so two conventions behind one import is a defect even when "
+                    "both are accurately recorded. Fix the module, or waive it "
+                    "by name in `intra_module_split_waivers`.")
 
         for entry in ev.get("weights_n3", []):
             cid = entry["convention"]

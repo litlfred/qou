@@ -91,3 +91,85 @@ registry row (unexplained)"** and count as actionable: `0 -> 3`.
   block's "silently corrupts every consumer" warning comes true.
 - Worth an R9-style evaluator for FUNCTION-level returns, not just module
   attributes — that is the hole these three sat in.
+
+---
+
+## Round 2: R9 could only see module attributes
+
+The three unexplained `gram.py`/`atom.py` sites above sat in a hole R9 could
+not reach: it evaluated **module attributes** only, so anything computed inside
+a function was outside the gate. `pyhecke.gram.z` (module attr) was checked and
+confirmed D; `z_mp()` and `tr_m_mp()` return C and were never looked at.
+
+Measured:
+
+    gram.z          (float64) = 0.6126880371464652        <- convention D
+    gram.z_mp()     (50 dps)  = 0.4993203341836944524...  <- convention C
+    gram.tr_m_mp()[1]         = 0.4993203341836944524...  <- convention C
+    gram.tr_m_mp_strings()[1] = 0.49932033418369445241... <- convention C
+
+18.5% divergence behind one import. **The float64 path is correct and the
+NO-FLOAT64 path is not**, so the more precise answer is the wrong-convention
+one — the opposite of where anyone would look.
+
+### Two new evaluator kinds
+
+`callable_no_arg` and `callable_index` in `_eval_z`. Registered
+`pyhecke.gram.z_mp` and `pyhecke.gram.tr_m_mp[1]` as **C** — the truth, so R9
+asserts it rather than leaving it invisible. Both now confirm at `|d| = 1.9e-51`.
+
+### R10 — one module, one convention
+
+R9 checks each entry against the registry *independently*, so a module whose
+symbols disagree with **each other** passes entry by entry. `pyhecke.gram` does
+exactly that: `z`=D, `z_mp`=C, `tr_m_mp[1]`=C, all three accurately recorded,
+R9 confirms all three, nothing reported.
+
+A caller imports a module, not a registry entry. R10 groups the `z` evaluators
+by module and fails any module exporting more than one convention.
+
+Waivable by name, because a module may legitimately export a preserved
+historical constant beside its production one (`schur_principal_mpmath` does,
+and says so in the symbol name). **A waiver downgrades to WARNING, never to a
+note** — a note is read once and scrolled past; a warning is counted in the
+summary line, so an open split stays visible until it is closed.
+
+`pyhecke.gram` is waived as an OPEN DEFECT, not an approved design. Validator:
+`PASS (0 errors, 23 warnings)` — the 23rd is R10's.
+
+## The audit only ever looked at ASSIGNMENTS
+
+`scan()` keyed off an assignment target, so a function computing the convention
+straight into its `return` had nothing to match on:
+
+    def z_mp(dps=...):
+        return +(1 / (_mp.sqrt(q) + _mp.sqrt(qi_)))     # invisible
+
+**"178 → 0 actionable" was never true.** With return-scanning added
+(`ACTIONABLE 0 → 11`), seven sites appear that no sweep had ever counted, five
+of them live producers in `computations/`:
+
+| site | function |
+|---|---|
+| `computations/_habiro_coefficient_extract.py:136` | `_markov_z_q()` |
+| `computations/_helium_habiro_coefficient_extract.py:80` | `_markov_z_q()` |
+| `computations/inter_nucleon_linked_channel.py:116` | `z_factor()` |
+| `computations/knot_operator_census_group_actions.py:79` | `z_factor()` |
+| `computations/lepton_t2n_torus_tower.py:78` | `z_factor()` |
+| `computations/qbeta/qbeta_ck_sseries_operator_match_probe.py:94` | `zf()` (probe) |
+| `tools/sage-examples/scripts/hecke_surface.py:56` | `markov_z()` |
+
+Each detector generation has found a class the previous one structurally could
+not see: grep missed spellings; AST-on-assignments missed the half-argument
+form; AST-on-assignments missed **returns**; witness fingerprints missed higher
+`n`; and a registry-trusting detector missed a stale record. The pattern is
+that the blind spot is always in the *shape* the detector keys on.
+
+## Next
+
+1. **Migrate the 5 live producers + 1 probe**, then regenerate their witnesses
+   on the serial harness. Unclaimed — not started here, because it overlaps the
+   witness arc siblings are running and wants the lock.
+2. `tools/sage-examples/scripts/hecke_surface.py` misclassifies as
+   "computations — live producers"; `classify()` has no sage-examples bucket.
+3. The 3 `gram.py`/`atom.py` sites stay with `qou-w8zz`.
