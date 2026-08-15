@@ -2191,6 +2191,84 @@ theorem oc_reduces_to_zero (hn : 0 < n) (r₁ r₂ : ReductionRule (HeckeGen n) 
   intro m
   exact oc_spoly_coeff i' i c₁ c₂ r₁ r₂ hrel₁ hrel₂ hlm₁ hlm₂ hlc₁ hlc₂ m
 
+/-! ### The four instances
+
+`wHi i' i` is the shared leading monomial of `yangBaxterRelation i' i` and
+`bokutShiaoRelation i' i i'` (§4j), so each of `r₁`, `r₂` may be either — four
+ordered pairs, and at `n = 4` three choices of `i`, giving the **twelve**
+compositions this family exists for.
+
+Only `r₁` needs `c₁ * c₁ = 1` and membership; `r₂` enters through its relation,
+leading monomial and leading coefficient alone. -/
+
+/-- The Yang–Baxter rule in the shape §4r wants, at `c = −1`. Its two terms are
+listed in the opposite order, hence the coefficientwise statement. -/
+theorem yb_hrel (_hi : i'.val + 1 = i.val) (w : Monomial (HeckeGen n)) :
+    (yangBaxterRelation i' i).relation.coeff w
+      = (AlgElement.ofTerms [(wHi i' i, (-1 : ℝ)), (wLo i' i, -(-1 : ℝ))]).coeff w := by
+  show (AlgElement.ofTerms [([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], (1 : ℝ)),
+      ([(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩], -1)]).coeff w = _
+  simp only [wHi, wLo, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+    decide_eq_true_eq]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- The Bokut–Shiao rule at `j = i − 1`, at `c = 1`. Same terms, same order. -/
+theorem bs_hrel (hi : i'.val + 1 = i.val) (w : Monomial (HeckeGen n)) :
+    (bokutShiaoRelation i' i i').relation.coeff w
+      = (AlgElement.ofTerms [(wHi i' i, (1 : ℝ)), (wLo i' i, -(1 : ℝ))]).coeff w := by
+  rw [bokutShiaoRelation_at_pred hi]; rfl
+
+theorem yb_hlm (hi : i'.val + 1 = i.val) :
+    (yangBaxterRelation i' i).lm (heckeOrder n) = wHi i' i :=
+  yangBaxterRelation_lm i' i (by omega)
+
+theorem bs_hlm (hi : i'.val + 1 = i.val) :
+    (bokutShiaoRelation i' i i').lm (heckeOrder n) = wHi i' i := by
+  rw [bokutShiaoRelation_lm hi (le_refl _), bsWord₁_at_pred hi]; rfl
+
+/-- **Yang–Baxter against Yang–Baxter.** -/
+theorem yb_yb_resolves (hn : 0 < n) (hi : i'.val + 1 = i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc i' i (yangBaxterRelation i' i) (yangBaxterRelation i' i)
+        (yb_hlm i' i hi) (yb_hlm i' i hi)).spoly nf ∧ nf.isZero :=
+  oc_reduces_to_zero hp i' i (-1) (-1) hn _ _ (yb_hrel i' i hi) (yb_hrel i' i hi)
+    (yb_hlm i' i hi) (yb_hlm i' i hi)
+    (DegenerateYbBs.yangBaxter_lc hi) (DegenerateYbBs.yangBaxter_lc hi)
+    (by norm_num) (by norm_num) (by norm_num) hi (yangBaxterRelation_mem hn hp hi)
+
+/-- **Yang–Baxter against Bokut–Shiao.** -/
+theorem yb_bs_resolves (hn : 0 < n) (hi : i'.val + 1 = i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc i' i (yangBaxterRelation i' i) (bokutShiaoRelation i' i i')
+        (yb_hlm i' i hi) (bs_hlm i' i hi)).spoly nf ∧ nf.isZero :=
+  oc_reduces_to_zero hp i' i (-1) 1 hn _ _ (yb_hrel i' i hi) (bs_hrel i' i hi)
+    (yb_hlm i' i hi) (bs_hlm i' i hi)
+    (DegenerateYbBs.yangBaxter_lc hi) (bokutShiaoRelation_lc hi (le_refl _))
+    (by norm_num) one_ne_zero (by norm_num) hi (yangBaxterRelation_mem hn hp hi)
+
+/-- **Bokut–Shiao against Yang–Baxter.** -/
+theorem bs_yb_resolves (hn : 0 < n) (hi : i'.val + 1 = i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc i' i (bokutShiaoRelation i' i i') (yangBaxterRelation i' i)
+        (bs_hlm i' i hi) (yb_hlm i' i hi)).spoly nf ∧ nf.isZero :=
+  oc_reduces_to_zero hp i' i 1 (-1) hn _ _ (bs_hrel i' i hi) (yb_hrel i' i hi)
+    (bs_hlm i' i hi) (yb_hlm i' i hi)
+    (bokutShiaoRelation_lc hi (le_refl _)) (DegenerateYbBs.yangBaxter_lc hi)
+    one_ne_zero (by norm_num) (by norm_num) hi
+    (bokutShiaoRelation_mem hn hp hi (le_refl _))
+
+/-- **Bokut–Shiao against Bokut–Shiao.** -/
+theorem bs_bs_resolves (hn : 0 < n) (hi : i'.val + 1 = i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc i' i (bokutShiaoRelation i' i i') (bokutShiaoRelation i' i i')
+        (bs_hlm i' i hi) (bs_hlm i' i hi)).spoly nf ∧ nf.isZero :=
+  oc_reduces_to_zero hp i' i 1 1 hn _ _ (bs_hrel i' i hi) (bs_hrel i' i hi)
+    (bs_hlm i' i hi) (bs_hlm i' i hi)
+    (bokutShiaoRelation_lc hi (le_refl _)) (bokutShiaoRelation_lc hi (le_refl _))
+    one_ne_zero one_ne_zero (by norm_num) hi
+    (bokutShiaoRelation_mem hn hp hi (le_refl _))
+
 end BraidSelfOverlap
 
 end UGB.GrobnerShirshov.Hecke
