@@ -620,6 +620,7 @@ import QOU.QBeta.RationalCoeffRecurrence
 import QOU.QBeta.SilverAnchorGrounding
 import QOU.QBeta.ReebTowerJacobiAnger
 import QOU.QBeta.PhiBSArgumentIdentification
+import QOU.QBeta.TauNormalizationChoice
 import QOU.QBeta.WindingGFTransform
 import QOU.QBeta.ThetaRealityBound
 import QOU.QBeta.AfreeThetaConstraint
