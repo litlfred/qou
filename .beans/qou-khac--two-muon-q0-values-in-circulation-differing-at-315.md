@@ -53,3 +53,64 @@ assertions check.
    `qou-2ixd`: a literal cannot drift from a source it does not have.
 3. The other 15 near-misses are truncations of a correct pin. Worth converting
    to imports on the same principle, but they are not wrong today.
+
+---
+
+## CORRECTION: not two competing canonicals — a stale pin kept as a control
+
+Owner ruling 2026-08-15: **proton is canonical.** That was never in question and
+my framing of this bean was wrong. There is no contest between two muon
+"canonicals" needing adjudication. What is actually in the corpus:
+
+| | value | role |
+|---|---|---|
+| canonical | `1.1099785827513808075916690956107688798744991218736` | **the** pin (registry, AGENTS.md 2026-08-07) |
+| muon-current | `1.10997859555733471989976322048322502665620840878…` | `Q_MUON`, the documented muon anchor |
+| muon-stale | `1.10997859555418057528159407960950937799328227995870` | a **superseded** muon value, deliberately retained |
+
+The third is not a rival canonical. Two of the three files carrying it say so
+in the source:
+
+* `per_basis_row_invariants_probe.py:67` names the variable
+  **`Q0_STALE_MUON_PIN`**, and its docstring describes "a q₀-STABILITY test
+  across canonical (m_p-pin) and stale (muon-pin)" — the stale value is the
+  *control*, and the point of the probe is that results do not depend on it.
+* `probes/flavor_split_alpha_dilog_expansion_probe.py:51` has `_muon_q0()` and
+  states "anchor-stable (proton-q₀ vs muon-q₀ drift 5.8e-8)".
+
+That is the same pattern as convention C being kept quotable for labelled
+comparison: a superseded value retained on purpose, and named as superseded.
+Nothing to rule on.
+
+## The one real defect
+
+`computations/gap_a3_overshoot_robustness_check.py:35`
+
+    Q0 = mp.mpf("1.1099785955541805")
+
+is the **stale muon pin, unlabelled, as the file's only q₀** — no `_muon_q0()`,
+no `STALE` in the name, no mention of muon anywhere in the module. Its docstring
+meanwhile calls its inputs "the canonical inputs" and "the pinned q₀". It also
+truncates: `…5541805` against the full `…55418057528159…`.
+
+So the two files that use the stale pin *as a control* are fine, and the one
+that uses it *as the pin* does not know it is doing so.
+
+Its `Q0` is live — it feeds `q_int(m)` and an `(q^{1/2}+q^{-1/2})^{4N}` factor —
+so this is not cosmetic. (That half-argument factor is a legitimate `[2]_{√q}`
+q-integer, correctly not flagged by the producer audit; it is not a `z`.)
+
+**Not changed here.** The module also carries `TRM` values cached "from the
+#2635 canonical run", and switching `Q0` without establishing which pin those
+were computed at would trade one inconsistency for another. That needs whoever
+owns #2635, not a guess from me.
+
+## Next
+
+1. `gap_a3_overshoot_robustness_check.py` → proton pin by import, once the
+   cached `TRM` provenance is established.
+2. The other two need nothing.
+3. Worth considering: the stale pin should live in one named constant that the
+   control probes import, rather than being retyped (twice at full precision,
+   once truncated, once as `1.1099785955541810` — four spellings of one
+   superseded value).
