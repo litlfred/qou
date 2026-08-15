@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "benign": 13,
-      "advisory-cast": 11
+      "advisory-cast": 12
     },
     "defects": [],
     "rows": [
@@ -40,6 +40,14 @@
         "arg": "1000000000.0",
         "source": "f\"(~{mp.nstr(Q_BETA_N_REL * mpf(1e9), 3)} ppb). 1 ppb is \"",
         "fix": "mpf(\"1000000000.0\")"
+      },
+      {
+        "file": "computations/chi_numpy_dtype_fix_benchmark.py",
+        "line": 83,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "return mp.mpf(float(np.trace(M)))",
+        "fix": null
       },
       {
         "file": "computations/deltalambda/he4_binding_k_presentation_correction_probe.py",
@@ -91,7 +99,7 @@
       },
       {
         "file": "computations/hoefsmit_numpy.py",
-        "line": 161,
+        "line": 177,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "return mp.mpf(float(np.trace(M)))",
