@@ -391,3 +391,76 @@ itself is untouched and still degenerate.
   the corpus and a faithful formalisation, and it is a real piece of mathematics.
 - Whether `SignSequence`'s bounds should be re-stated over `[BirthdayFaithful K]` to say
   something non-vacuous. Still not attempted.
+
+---
+**2026-08-15 (later) — the RATE half of the gonshor bridge is built.
+`GonshorConvergence.lean`.** Sorry-free, 5 declarations on standard axioms.
+
+The previous entry named the missing bridge as "the only genuinely novel content left".
+Half of it turns out to be available immediately, and the reason is worth recording
+because it is the same mistake this bean has caught twice before.
+
+### The blocker did not apply, and I nearly assumed it did
+
+`SignSequence.lean` says Gonshor's sharper `birthday ≤ s.length` is **not derivable** from
+the `SurrealField` axioms: the induction wants a per-step bound on `birthday (x / 2)` — the
+halving move — which is not among them. I had been reading that as blocking the bridge.
+
+**It blocks the lift to `birthday`, not the arithmetic.** `gonshor : List Sign → ℚ` never
+leaves `ℚ`, so the convergence *rate* is ordinary rational arithmetic and needs no axiom at
+all:
+
+| half of the bridge | status |
+|---|---|
+| rate of the rational approximants | **proved**, axiom-free |
+| lifting the rate to surreal birthday | blocked, wants a `birthday (x/2)` axiom |
+
+Conflating those is what made this look harder than it is.
+
+### What is proved
+
+`GonshorState.step` has two regimes: integer stepping until a bound exists, then bisection.
+`Bracketed` names the bisection regime, and its load-bearing clause is
+**`value = (lo + hi) / 2`** — the value is the midpoint of its own bracket. Without that
+clause the new bracket `[value, hi]` has no fixed relation to the old one and nothing
+halves.
+
+- `Bracketed.step` — one sign preserves the regime and **halves the bracket**.
+- `Bracketed.foldl_gap` — `n` signs give `gap₀ / 2ⁿ`.
+- `Bracketed.gap_pos` — the bracket stays positive, so this is a real contraction.
+
+That is the exponential-in-prefix-length denominator a Liouville exponent is measured
+against, which is exactly what the trajectory statement needed.
+
+### ⚠ Non-vacuity, because everything above is conditional on `Bracketed`
+
+If no reachable state satisfied `Bracketed`, all of it would be vacuously true — the
+degeneracy `docs/audits/2026-08-09-inhabitation-is-a-weak-discriminator.md` catalogues, and
+the same failure this bean already found in `DiophantineBirthday` and in
+`slowApproximation_vacuous_at_one`. **Three times now in one bean's territory**, so it is
+checked rather than assumed:
+
+- `bracketed_plus_minus` — `[+, -]` reaches the regime (`+` steps to 1 unbounded above,
+  `-` then finds `hasLo` and bisects to `1/2` inside `(0, 1)`).
+- `gap_after_plus_minus` — concretely, `[+, -] ++ l` leaves a bracket of width `2^-|l|`.
+
+Computed values confirm it independently: gap `1 → 1/2 → 1/4` over `[+,-]`, `[+,-,+]`,
+`[+,-,+,-]`.
+
+### ⚠ What is still missing, and it is NOT more of the same
+
+The rate is about `gonshor`'s **own** bracket. Turning it into `|α − …|` needs the sign
+sequence to be *the sign expansion of a given `α`* — a map `ℝ → (ℕ → Sign)` that
+`SignSequence.lean` **does not define**. Until it does, there is no `α` in the statement to
+approximate. That is a construction, not a lemma, and it is now the next real step.
+
+The birthday lift remains blocked as described above.
+
+### Trap recorded
+
+`simpa [hg, …] using h` failed where `rw [hg] at h; simpa using h` works: `simpa`
+normalises the `foldl` on both sides *first*, after which `hg`'s literal
+`[Sign.plus, Sign.minus].foldl` no longer matches anything. Rewrite with a specific
+equation **before** letting `simp` normalise the term it mentions.
+
+`DiophantineBirthdayTrajectory.lean`'s §3 note updated to say precisely which half is built.

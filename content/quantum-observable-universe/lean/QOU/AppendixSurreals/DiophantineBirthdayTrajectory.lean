@@ -59,15 +59,31 @@
 
       |α − gonshor (prefix of length n)|   compared against   the Liouville exponent
 
-  and nothing here proves that `gonshor`'s length-`n` prefix value *is* the dyadic
-  approximant of `α` at denominator `2ⁿ`.  That needs the induction on `GonshorState`
-  which `SignSequence.lean` explicitly reserves ("not derivable for general `s` from the
-  abstract `SurrealField` axioms alone" — the halving step needs a per-step birthday
-  bound that is not among the axioms).
+  and nothing *here* relates the two.
+
+  **The rate half was built afterwards: `QOU/AppendixSurreals/GonshorConvergence.lean`.**
+  Once the expansion has bracketed, each further sign **halves the bracket**, so `n` signs
+  give width `gap₀ / 2ⁿ` (`Bracketed.foldl_gap`) — with the regime shown reachable rather
+  than assumed (`bracketed_plus_minus`), since every statement there is conditional on
+  `Bracketed` and would be vacuous otherwise.  That supplies the
+  exponential-in-prefix-length denominator a Liouville exponent is measured against.
+
+  ⚠ **What is still missing is a different kind of thing.**  That rate is about `gonshor`'s
+  *own* bracket.  Turning it into `|α − …|` needs the sign sequence to be **the sign
+  expansion of a given `α`** — a map `ℝ → (ℕ → Sign)` that `SignSequence.lean` does not
+  define.  Until it does there is no `α` in the statement to approximate.
+
+  A second, independent gap: lifting any of this to **birthday**.  `SignSequence.lean`
+  records that Gonshor's `birthday ≤ s.length` is not derivable from the `SurrealField`
+  axioms, because the halving step wants a per-step bound on `birthday (x / 2)` that is not
+  among them.  ⚠ Note this does **not** block the rate above, which never leaves `ℚ`.  The
+  two halves have genuinely different status, and conflating them is what made the bridge
+  look harder than it is.
 
   So: §1 says the target is **not obstructed**, §2 says part of it is **already proved**,
-  and the bridge from the corpus's own `gonshor` to either is **not built**.  Nothing here
-  should be read as formalising `conj:diophantine-birthday`.
+  the rate half of the bridge is **built**, and the `ℝ → sign expansion` map plus the
+  birthday lift are **not**.  Nothing here should be read as formalising
+  `conj:diophantine-birthday`.
 
   A second gap, inherited and unclosed: the Conway fact that every non-dyadic real is born
   on day `ω` is **cited, not proved** — `SurrealField` does not pin the birthday of an
