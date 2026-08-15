@@ -83,6 +83,14 @@ BARRIER = re.compile(r"\bfloat\s*\(|\bcomplex\s*\(|\.astype\s*\(|\bnp\.float64\s
 
 ARITH = re.compile(r"[-+*@/]")
 
+# Explicit opt-out, same idiom as the compute-audit catalogue's `# noqa: P31`.
+# Needed because some code is SUPPOSED to contain the leak: the P28 benchmark
+# reconstructs the pre-fix `chi_numpy` in-process so the two callers can be
+# timed on one machine, and that reconstruction only means anything if it
+# keeps the bug. A detector with no way to say "yes, deliberately" forces the
+# author to either delete the measurement or silence the gate wholesale.
+NOQA_P35 = re.compile(r"#\s*noqa:\s*P35\b")
+
 # An explicit object dtype means the author WANTS python objects in there.
 DTYPE_OBJECT = re.compile(r"dtype\s*=\s*(?:object|'O'|\"O\"|np\.object_)")
 
@@ -211,6 +219,8 @@ def scan_text(text: str) -> list[tuple[int, str, str]]:
             if NUMPY_ARRAY.search(src) and not mp_tok and not MPMATH_VALUE.search(src):
                 continue
             raw = lines[lineno - 1].strip() if lineno <= len(lines) else src
+            if NOQA_P35.search(lines[lineno - 1] if lineno <= len(lines) else ""):
+                continue
             if MPMATH_VALUE.search(src):
                 out.append((lineno, raw,
                             "mpmath call meets a numpy array in arithmetic"))
@@ -272,6 +282,9 @@ def self_test() -> int:
         ("mpmath without numpy is NOT flagged", no_numpy, False),
         ("numpy without mpmath is NOT flagged", no_mpmath, False),
         ("scalar-only mpmath arithmetic is NOT flagged", scalar_only, False),
+        ("an explicit # noqa: P35 opts out", buggy.replace(
+            "cross = sigma + d_val * eye",
+            "cross = sigma + d_val * eye  # noqa: P35"), False),
     ]
     failed = 0
     for name, src, want in cases:
