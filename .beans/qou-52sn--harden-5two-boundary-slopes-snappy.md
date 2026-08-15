@@ -1,12 +1,13 @@
 ---
 # qou-52sn
-title: 'Harden the 5_2 boundary-slope / connection-count data (SnapPy) — Route-A cross-knot gate currently uses literature-recalled values'
-status: todo
+title: Harden the 5_2 boundary-slope / connection-count data (SnapPy) — Route-A cross-knot gate currently uses literature-recalled values
+status: completed
 type: task
+priority: normal
 tags:
     - g3-aomega
 created_at: 2026-08-11T00:35:00Z
-updated_at: 2026-08-11T00:35:00Z
+updated_at: 2026-08-15T10:52:55Z
 parent: qou-rt0a
 ---
 
