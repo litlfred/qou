@@ -678,3 +678,33 @@ level -- needs the pairwise distinctness among {T,A,B,D,E,F} (8-line lemmas off 
 table recorded earlier) and the admissibility case tree for non-generic orbits, where some
 of A,B,D,E,F fail to be admissible and terms drop. hoefsmit_seminormal_rep keeps its Ref'd
 sorry.
+
+
+## ORBIT TABLE FORMALISED 2026-08-15 -- all 15 distinctness facts are now 2 lines each
+
+The (c1,c2) table recorded earlier is no longer prose. swapTableau_entry_cellOf is the
+primitive: `s_l.T` carries `swapVal l m` where `T` carried `m`, so any word in the two swaps
+evaluates at cellOf T k / cellOf T (k+1) by iterating it. Five lemmas then pin all six words:
+
+  orbitEntries_sk        s_k.T             (k+1, k)
+  orbitEntries_sl        s_{k+1}.T         (k,   k+2)
+  orbitEntries_sl_sk     s_{k+1}s_k.T      (k+2, k)
+  orbitEntries_sk_sl     s_k s_{k+1}.T     (k+1, k+2)
+  orbitEntries_sk_sl_sk  s_k s_{k+1}s_k.T  (k+2, k+1)
+  (T itself is entry_cellOf: (k, k+1))
+
+All sorry-free, axiom-clean, every one compiled first try. With these, EVERY pairwise
+distinctness among the six is `ne_of_entry_ne` + `omega` -- no tableau reasoning left in it.
+Twelve of the fifteen pairs separate at c1; three need c2 (T vs s_{k+1}.T, s_k.T vs
+s_k s_{k+1}.T, s_{k+1}s_k.T vs the longest word).
+
+Re-confirming a correction made earlier in this bean, now mechanically rather than by
+argument: the six values are FORCED, so the words never collide. A smaller orbit is one
+where some word fails to be SwapAdmissible, never one where two words coincide.
+
+REMAINING for the braid, and it is now only assembly: instantiate the six rows (all six
+already resolved algebraically -- three by `ring`, three by braid_diag_identity /
+braid_rowA_identity / braid_rowB_identity) against genMat_braid_lhs_expand /
+genMat_braid_rhs_expand, using these entry lemmas for the distinctness side conditions;
+then the admissibility case tree for non-generic orbits. No mathematics left, only wiring.
+hoefsmit_seminormal_rep keeps its Ref'd sorry.

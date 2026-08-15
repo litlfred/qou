@@ -448,6 +448,107 @@ theorem ne_of_entry_ne {U V : StandardYoungTableau μ} {i j : ℕ}
   intro heq
   exact h (by rw [heq])
 
+/-- **Reading a swapped tableau at a cell of the original.**  `s_l·T` carries `swapVal l m`
+in the cell where `T` carried `m`.
+
+This is the primitive that makes the whole `⟨s_k, s_{k+1}⟩`-orbit computable: every element
+is a word in the two swaps, so its entry at `cellOf T k` (resp. `cellOf T (k+1)`) is that
+word of `swapVal`s applied to `k` (resp. `k+1`).  Two elements are then distinct as soon as
+their words disagree at one of those two values, which `omega` settles after
+`simp only [swapVal]; split_ifs`. -/
+theorem swapTableau_entry_cellOf (T : StandardYoungTableau μ) {l m : ℕ} (hl : 1 ≤ l)
+    (hln : l + 1 ≤ μ.cells.card) (hadm : SwapAdmissible T l)
+    (hm : m ∈ Set.Icc 1 μ.cells.card) :
+    (swapTableau T l hl hln hadm).entry (cellOf T m).1 (cellOf T m).2 = swapVal l m := by
+  rw [swapTableau_entry, entry_cellOf T hm]
+
+/-! ### The six words, pinned by two entries
+
+Every element of a `⟨s_k, s_{k+1}⟩`-orbit is a word in the two swaps, and is determined by
+what it carries in the two cells `cellOf T k` and `cellOf T (k+1)`:
+
+|  | at `cellOf T k` | at `cellOf T (k+1)` |
+|---|---|---|
+| `T` | `k` | `k+1` |
+| `s_k·T` | `k+1` | `k` |
+| `s_{k+1}·T` | `k` | `k+2` |
+| `s_{k+1}s_k·T` | `k+2` | `k` |
+| `s_k s_{k+1}·T` | `k+1` | `k+2` |
+| `s_k s_{k+1}s_k·T` | `k+2` | `k+1` |
+
+All six rows are distinct, so **every** pairwise distinctness follows from the lemmas below
+by `ne_of_entry_ne` plus `omega` — no further tableau reasoning.  Note the values are
+*forced*: the six words never collide.  A smaller orbit arises when one of them fails to be
+`SwapAdmissible`, not when two coincide.
+-/
+
+/-- Entries of `s_k·T` at the two distinguished cells. -/
+theorem orbitEntries_sk (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hka : SwapAdmissible T k) :
+    (swapTableau T k hk hkn hka).entry (cellOf T k).1 (cellOf T k).2 = k + 1
+      ∧ (swapTableau T k hk hkn hka).entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k := by
+  constructor
+  · rw [swapTableau_entry_cellOf T hk hkn hka ⟨hk, by omega⟩]
+    simp only [swapVal]; split_ifs <;> omega
+  · rw [swapTableau_entry_cellOf T hk hkn hka ⟨by omega, hkn⟩]
+    simp only [swapVal]; split_ifs <;> omega
+
+/-- Entries of `s_{k+1}·T` at the two distinguished cells. -/
+theorem orbitEntries_sl (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hln : k + 1 + 1 ≤ μ.cells.card) (hla : SwapAdmissible T (k + 1)) :
+    (swapTableau T (k + 1) (by omega) hln hla).entry (cellOf T k).1 (cellOf T k).2 = k
+      ∧ (swapTableau T (k + 1) (by omega) hln hla).entry
+          (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 2 := by
+  constructor
+  · rw [swapTableau_entry_cellOf T (by omega) hln hla ⟨hk, by omega⟩]
+    simp only [swapVal]; split_ifs <;> omega
+  · rw [swapTableau_entry_cellOf T (by omega) hln hla ⟨by omega, by omega⟩]
+    simp only [swapVal]; split_ifs <;> omega
+
+/-- Entries of `s_{k+1}s_k·T`. -/
+theorem orbitEntries_sl_sk (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : k + 1 + 1 ≤ μ.cells.card)
+    (hka : SwapAdmissible T k)
+    (hAl : SwapAdmissible (swapTableau T k hk hkn hka) (k + 1)) :
+    (swapTableau (swapTableau T k hk hkn hka) (k + 1) (by omega) hln hAl).entry
+        (cellOf T k).1 (cellOf T k).2 = k + 2
+      ∧ (swapTableau (swapTableau T k hk hkn hka) (k + 1) (by omega) hln hAl).entry
+          (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k := by
+  obtain ⟨h1, h2⟩ := orbitEntries_sk T hk hkn hka
+  constructor
+  · rw [swapTableau_entry, h1]; simp only [swapVal]; split_ifs <;> omega
+  · rw [swapTableau_entry, h2]; simp only [swapVal]; split_ifs <;> omega
+
+/-- Entries of `s_k s_{k+1}·T`. -/
+theorem orbitEntries_sk_sl (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : k + 1 + 1 ≤ μ.cells.card)
+    (hla : SwapAdmissible T (k + 1))
+    (hBk : SwapAdmissible (swapTableau T (k + 1) (by omega) hln hla) k) :
+    (swapTableau (swapTableau T (k + 1) (by omega) hln hla) k hk hkn hBk).entry
+        (cellOf T k).1 (cellOf T k).2 = k + 1
+      ∧ (swapTableau (swapTableau T (k + 1) (by omega) hln hla) k hk hkn hBk).entry
+          (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 2 := by
+  obtain ⟨h1, h2⟩ := orbitEntries_sl T hk hln hla
+  constructor
+  · rw [swapTableau_entry, h1]; simp only [swapVal]; split_ifs <;> omega
+  · rw [swapTableau_entry, h2]; simp only [swapVal]; split_ifs <;> omega
+
+/-- Entries of the longest word `s_k s_{k+1}s_k·T`. -/
+theorem orbitEntries_sk_sl_sk (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : k + 1 + 1 ≤ μ.cells.card)
+    (hka : SwapAdmissible T k)
+    (hAl : SwapAdmissible (swapTableau T k hk hkn hka) (k + 1))
+    (hDk : SwapAdmissible
+      (swapTableau (swapTableau T k hk hkn hka) (k + 1) (by omega) hln hAl) k) :
+    (swapTableau (swapTableau (swapTableau T k hk hkn hka) (k + 1) (by omega) hln hAl)
+        k hk hkn hDk).entry (cellOf T k).1 (cellOf T k).2 = k + 2
+      ∧ (swapTableau (swapTableau (swapTableau T k hk hkn hka) (k + 1) (by omega) hln hAl)
+          k hk hkn hDk).entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 1 := by
+  obtain ⟨h1, h2⟩ := orbitEntries_sl_sk T hk hkn hln hka hAl
+  constructor
+  · rw [swapTableau_entry, h1]; simp only [swapVal]; split_ifs <;> omega
+  · rw [swapTableau_entry, h2]; simp only [swapVal]; split_ifs <;> omega
+
 /-- **The two adjacent generators move `T` to different places.**  Read at the cell holding
 `k`: `s_k·T` puts `k+1` there, while `s_{k+1}·T` leaves `k`. -/
 theorem swapTableau_adj_ne (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
