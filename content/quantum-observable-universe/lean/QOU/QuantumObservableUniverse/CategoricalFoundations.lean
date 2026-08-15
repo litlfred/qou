@@ -163,10 +163,11 @@ structure QuantumUniverse (k : Type*) [Field k] where
 
       Encoded here: a `Fintype` of blocks, an idempotent endomorphism of `A`
       per block, and non-vanishing of each block's Frobenius weight and
-      quantum dimension.  NOT encoded: mutual orthogonality of the
-      idempotents and completeness of their sum, both of which need additive
-      structure on the hom-sets (`Preadditive` / `HasZeroMorphisms`) that
-      `QuantumUniverse` does not carry.  `frobWeight` and `dimQ` land in `k`
+      quantum dimension.  NOT encoded, and the two gaps cost differently:
+      mutual orthogonality `p_b ≫ p_b' = 0` needs only a zero morphism
+      (`HasZeroMorphisms`), while completeness `Σ p_b = 𝟙` needs additive
+      hom-sets and a finite sum (`Preadditive`).  `QuantumUniverse` carries
+      neither.  `frobWeight` and `dimQ` land in `k`
       via the standard identification of `End(𝟙)` with the ground ring of a
       `k`-linear category.
 
