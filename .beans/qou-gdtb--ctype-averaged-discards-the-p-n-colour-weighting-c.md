@@ -1,11 +1,11 @@
 ---
 # qou-gdtb
 title: 'ctype ''averaged'' discards the p-n colour weighting: chi wrong at 7e-4 on the interface crossing'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T15:23:20Z
-updated_at: 2026-08-10T15:24:07Z
+updated_at: 2026-08-15T03:20:32Z
 ---
 
 
@@ -133,3 +133,47 @@ it was the right instruction and it had not been run.
 now documents the projection rather than closing it — a `(gen_idx, ctype)`
 pair still cannot express an operator-valued interface, which is this bean's
 deeper claim.
+
+Claimed 2026-08-15 by claude/color-channel-weighting-audit-qcaqfm. Items 2 and 3 landed via #5029/#5028/#5042 (consumer sweep + coverage test Parts A-E). Item 1 -- the REPRESENTATION decision -- is what remains: does the (gen_idx, ctype) pair form still lose information now that averaged_weighted exists and d_for_ctype is exact? Re-measuring triples-vs-pairs before deciding.
+
+
+
+## CLOSED 2026-08-15 — item 1's second half is a CATEGORY ERROR; the first half is fixed and measured
+
+Items 2 and 3 landed via #5029 / #5028 / #5042 (consumer sweep, coverage test Parts A-E, recipe-literal check). Item 1 was the last open piece. Both of its halves are now settled, in opposite directions.
+
+### The label collapse was real, and is closed
+
+Original measurement: exact triples vs classified pairs disagreed by 6.879e-4 on the interface crossing, 7e-5..3.9e-4 per chi^lambda. Re-measured today on the deuteron word with averaged_weighted in place and d_for_ctype exact:
+
+    worst relative |d_triple - d_pair| = 2.66e-16   (float64 epsilon)
+    at crossing 11, gen 2, ctype averaged_weighted
+
+Three orders past what the bean recorded, and on the crossing that was wrong. The pair form round-trips the scalar d to machine precision.
+
+### The 'cannot express in principle' half does NOT hold
+
+The bean said: 'The pair form also cannot express the interface at all in principle: rho_k_h3a_refinement's own header says I = sigma_3 - (h/2)*1 is operator-valued, non-scalar for 9 of 11 partitions lambda |- 6, while a (gen_idx, ctype) pair denotes a pure generator.'
+
+That runs two different statements together:
+  (a) rho_lambda(I) is not a scalar matrix   -- TRUE, and reproduced
+  (b) the pair form cannot denote I          -- FALSE
+
+(a) is a property of the REPRESENTATION; (b) would be a property of the ENCODING. Neither implies the other. Measured symbolically in q over every lambda |- 6:
+
+    NON-scalar rho_lambda(I): 9 of 11
+    worst |I_pair - I_triple| over all lambda: 0   (EXACT, symbolic)
+
+Both properties hold simultaneously. The reason is one line: I = sigma_g - (h/2)*1 is of the form c*sigma_g + d*1 with d SCALAR, so the pair names the generator and d_for_ctype supplies d — the reconstruction is an algebraic identity, independent of lambda and of the representation. rho_lambda(sigma_g) is non-scalar and rho_lambda(I) inherits it for free.
+
+The header the bean quoted is itself correct: it says the branching COMBINER A^lambda_{mu,nu}(I) is operator-valued, which is about action across a Wedderburn decomposition, not about what a braid word can denote. The misreading is now annotated at the quote site.
+
+SCOPE CLASSIFICATION (per AGENTS.md 'Before declaring refuted'): this is scope-(b), a STRUCTURAL exclusion, and the invariant is cited — the algebraic identity above, verified symbolically-exact over all 11 partitions, not a numerical near-miss. It excludes the inference, not the concern.
+
+### What WOULD break the encoding, stated so nobody re-derives it
+
+An interface NOT of the form c*sigma_g + d*1: a sum over several generators, or a coefficient depending on lambda. The corpus has none today. If one is introduced the encoding must carry triples or grow a ctype — and THAT is the trigger, not non-scalarity, which is universal and harmless.
+
+One real loss remains and is already documented rather than open: sign_for_ctype collapses both averaged interfaces onto 0, because the LR wire format carries a sign and a sign cannot carry a magnitude. That is confined to that format, annotated in place, and is not the pair form's limitation.
+
+Probe: computations/probes/ctype_pair_expressiveness_probe.py (exit 0).
