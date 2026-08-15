@@ -1,14 +1,14 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T11:35:36.592632+00:00",
-  "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
+  "computedAt": "2026-08-15T21:31:09.770258+00:00",
+  "commitSha": "f933ce228900e206c942f5e4448d5c5ffd35cc19",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 19451,
+  "durationMs": 36119,
   "computation": "atom-level-wedderburn-tower",
   "scriptFile": "atom_level_wedderburn_tower.py",
-  "scriptHash": "7ec76c593444",
+  "scriptHash": "33fabd4442c9",
   "scriptCommitSha": "1136e44f8af3314d5eb97d7ed59b2136e0e6fad0",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -31,10 +31,16 @@
     "thm:frobenius-antipode-unifies-chirality-and-tower",
     "prop:e-infinity-page-identifications"
   ],
-  "timestamp": "2026-08-15T11:35:36.513644+00:00",
+  "timestamp": "2026-08-15T21:31:08.049832+00:00",
   "parameters": {
     "q_0": 1.1099785827513808,
     "level_heuristic": "len(λ) - 1 (diagram height - 1)"
+  },
+  "precision_tier": "float64",
+  "deprecated": {
+    "reason": "exploratory f64 shape-probe; retired rather than rewritten in mpmath, which would be a rewrite of the numpy matrix core for a leaf nobody reads",
+    "not_production": "reaches no production location; sole witness reader is itself, sole importer is a test",
+    "ruling": "owner 2026-08-15"
   },
   "results": {
     "p": {
@@ -61,7 +67,7 @@
           "sum_phi_q": 0.0004897310252549171
         }
       },
-      "walltime_sec": 0.1910841464996338
+      "walltime_sec": 0.3320143222808838
     },
     "n": {
       "Z": 0,
@@ -87,7 +93,7 @@
           "sum_phi_q": 0.00015467003899803468
         }
       },
-      "walltime_sec": 0.011394023895263672
+      "walltime_sec": 0.011434078216552734
     },
     "D atom": {
       "Z": 1,
@@ -128,7 +134,7 @@
           "sum_phi_q": 5.5137003213185336e-06
         }
       },
-      "walltime_sec": 0.0582575798034668
+      "walltime_sec": 0.06002068519592285
     },
     "T atom": {
       "Z": 1,
@@ -184,7 +190,7 @@
           "sum_phi_q": 7.405031218917568e-09
         }
       },
-      "walltime_sec": 2.862081527709961
+      "walltime_sec": 7.3433709144592285
     },
     "3He atom": {
       "Z": 2,
@@ -240,7 +246,7 @@
           "sum_phi_q": 4.052615361101452e-08
         }
       },
-      "walltime_sec": 2.578190565109253
+      "walltime_sec": 6.639170169830322
     },
     "4He atom": {
       "Z": 2,
@@ -311,7 +317,7 @@
           "sum_phi_q": 1.5763790764800272e-11
         }
       },
-      "walltime_sec": 13.747921466827393
+      "walltime_sec": 21.73189687728882
     }
   },
   "q0Anchor": "proton",

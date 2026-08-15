@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-15T20:30:53.132454+00:00",
-  "commitSha": "9a9c6b31c71376f8b2e9932b862478e197dae467",
+  "computedAt": "2026-08-15T21:22:16.655273+00:00",
+  "commitSha": "f933ce228900e206c942f5e4448d5c5ffd35cc19",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "binding-bar-even-odd-probe",
   "scriptFile": "binding_bar_even_odd_probe.py",
   "scriptHash": "1b8c45884839",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "83d5e31714263c910f53188ae875883b74e61866",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -107,7 +107,7 @@
       "raw_q0_rel_err": "0.69318070463237111617883172011438785845731854240278"
     }
   },
-  "timestamp": "2026-08-15T20:30:52+00:00",
+  "timestamp": "2026-08-15T21:22:16+00:00",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
