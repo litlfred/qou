@@ -9,13 +9,14 @@ updated_at: 2026-08-14T21:58:00Z
 
 Spun out of `qou-tdp0` step 1 (owner-directed, 2026-08-14).
 
-## SWEEP DONE 2026-08-14 — docs fixed; three producers REMAIN (blocked on sympy)
+## COMPLETE 2026-08-14 — all 5 class-(a) sites fixed (2 prose #5039, 3 producers #5050)
 
 Full findings: [`2026-08-14-non-holonomic-implies-resurgent-corpus-sweep.md`](../docs/audits/2026-08-14-non-holonomic-implies-resurgent-corpus-sweep.md).
 
-**5 class-(a) sites** found across 22 candidate files. Two were prose and are
-fixed on this branch; **three are producers and are NOT fixed** — they are the
-remaining work on this bean.
+**5 class-(a) sites** found across 22 candidate files: 2 prose, 3 producers. All
+five are now fixed. The sections below are kept in the order the work happened,
+so the handoff that was written mid-way — and the call it got wrong — stay
+visible rather than being tidied away.
 
 ### Fixed (prose, no producer hash touched)
 
