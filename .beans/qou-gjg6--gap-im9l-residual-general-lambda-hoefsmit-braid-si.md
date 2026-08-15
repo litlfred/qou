@@ -1036,3 +1036,41 @@ hoefsmit_seminormal_rep:
 
 Note (a) and (b) are the same question from two sides: which flag combinations are actually
 realisable. A lemma classifying the reachable patterns would close both.
+
+
+## REALISABILITY CLASSIFIED 2026-08-15 — BOTH remaining gaps close, and they were one question
+
+Three lemmas, all sorry-free, all compiled FIRST TRY (the cell analysis was done on paper
+before any Lean was written, which is why):
+
+  swapAdmissible_cross_iff       SwapAdmissible (s_k.T) (k+1)  <->  SwapAdmissible (s_{k+1}.T) k
+  swapAdmissible_word_left_iff   SwapAdmissible (s_{k+1}s_k.T) k     <->  SwapAdmissible T (k+1)
+  swapAdmissible_word_right_iff  SwapAdmissible (s_k s_{k+1}.T) (k+1) <->  SwapAdmissible T k
+
+WHY: writing c1,c2,c3 for the cells holding k,k+1,k+2, EVERY admissibility anywhere in the
+orbit is one of just THREE conditions -- (c1,c2), (c2,c3), (c1,c3) sharing neither row nor
+column -- because each word only permutes which ENTRY sits in which of the three CELLS. The
+table:
+
+  word              its k-condition   its (k+1)-condition
+  T                 (c1,c2)           (c2,c3)
+  s_k.T             (c1,c2)           (c1,c3)
+  s_{k+1}.T         (c1,c3)           (c2,c3)
+  s_{k+1}s_k.T      (c2,c3)           --
+  s_k s_{k+1}.T     --                (c1,c2)
+
+BOTH open items fall out, and they were the same question seen from two sides, as suspected:
+
+ (a) hAl and hBk are the SAME condition (c1,c3). So the two unclassified flag patterns
+     (hka, hla, hAl, ¬hBk) and (hka, hla, ¬hAl, hBk) are VACUOUS -- now proved, not assumed.
+ (b) hDk <-> hla and hEl <-> hka. So genMat_braid_generic's two extra hypotheses are DERIVED
+     from the leading flags; no restatement of the generic case is needed.
+
+This is also, essentially, the qou-7xt3 orbit-size classification: the orbit shape is
+determined by which of the three pairwise conditions hold, i.e. by the comparability poset
+on {c1,c2,c3}. Three conditions true -> size 6; two -> size 3 (three positions by WHICH two);
+one -> size 2; none -> size 1. Worth folding back into qou-7xt3.
+
+REMAINING: only the assembly now -- a single genMat_braid theorem dispatching on
+(hka, hla, hAl) via these iffs to the seven shape theorems, then Hecke.lift. No open
+mathematics.
