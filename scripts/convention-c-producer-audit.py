@@ -30,9 +30,17 @@ Shape-matching, not spelling-matching.
 * **Deliberately C-named** targets (`z_C`, `z_c`, `z_C_expr`, ...) are excluded.
   A variable that says it is convention C is a labelled comparison, not a defect
   — the same principle the content axis uses for `C_LABEL`.
-* **`tools/pyhecke/`** is reported separately: the registry records
-  `pyhecke.gram.z` as convention C **by design** under `blocked_migrations`, and
-  R9 asserts that exception rather than leaving it undetected.
+* **`tools/pyhecke/`** is reported separately, but the excuse comes from the
+  REGISTRY, not from the path. A site is "BLOCKED on C by design" only while a
+  `blocked_migrations` row names that exact file; anything else under
+  `tools/pyhecke/` is reported as **C with NO registry row (unexplained)** and
+  counts as actionable.
+
+  The path-prefix version was too generous. One row covered `gram.py::z`, and
+  three *function-local* C definitions sheltered under the same label — two of
+  them inside `gram.py` itself. When `z` migrated to D on 2026-08-15 (bean
+  `qou-w8zz`) and the row was resolved, a prefix classifier would have gone on
+  calling those three "by design" indefinitely.
 * `_deprecated/` is skipped entirely.
 
 Results are stratified, because the layers carry very different risk: a probe
@@ -123,6 +131,51 @@ def is_c_form_halfarg(node: ast.AST):
     return num if d in (f"{num}**2+1", f"1+{num}**2") else None
 
 
+def _defines_convention_d(src: str, sym: str) -> bool:
+    """Does `src` bind `sym` to the convention-D Markov parameter?
+
+    Matches `<sym> = <base>**3 / (<base>**2 + 1)` modulo whitespace and the
+    choice of base name -- the same normalisation `is_c_form` uses, since
+    `ast.unparse` spells it `q ** 3`. Assignment only, at module level or not;
+    a comment mentioning D does not count.
+    """
+    try:
+        tree = ast.parse(src)
+    except (SyntaxError, ValueError):
+        return False
+    for n in ast.walk(tree):
+        if not isinstance(n, (ast.Assign, ast.AnnAssign)):
+            continue
+        targets = n.targets if isinstance(n, ast.Assign) else [n.target]
+        if not any(isinstance(t, ast.Name) and t.id == sym for t in targets):
+            continue
+        if n.value is None:
+            continue
+        s = "".join(ast.unparse(n.value).split())
+        base = s.split("**3", 1)[0]
+        if base and s in (f"{base}**3/({base}**2+1)", f"{base}**3/(1+{base}**2)"):
+            return True
+    return False
+
+
+def _module_path_of(file: str) -> str:
+    """`tools/pyhecke/python/pyhecke/gram.py` -> `pyhecke.gram`.
+
+    The LAST occurrence of the package name is the package root; the first is
+    the containing directory, which yields the nonsense
+    `pyhecke.python.pyhecke.gram`. The selftest caught exactly that, which is
+    why this is a named function with its own fixtures rather than four lines
+    inline reading from the live registry.
+    """
+    parts = pathlib.Path(file).with_suffix("").parts
+    pkg = next((c for c in reversed(parts[:-1])
+                if c not in ("python", "src", "tools", "lib")), None)
+    if pkg and pkg in parts:
+        i = len(parts) - 1 - parts[::-1].index(pkg)
+        return ".".join(parts[i:])
+    return parts[-1] if parts else file
+
+
 def blocked_symbols(repo: pathlib.Path):
     """The (module, symbol) pairs the registry deliberately leaves on C.
 
@@ -139,18 +192,28 @@ def blocked_symbols(repo: pathlib.Path):
         f, sym = r.get("file", ""), r.get("symbol", "")
         if not f or not sym:
             continue
-        # tools/pyhecke/python/pyhecke/gram.py -> pyhecke.gram.
-        # The LAST occurrence of the package name is the package root; the
-        # first is the containing directory, which yields the nonsense
-        # `pyhecke.python.pyhecke.gram`. The selftest caught that.
-        parts = pathlib.Path(f).with_suffix("").parts
-        pkg = next((p for p in reversed(parts[:-1]) if (pathlib.Path(*parts[:parts.index(p) + 1])).name == p
-                    and p not in ("python", "src", "tools")), None)
-        if pkg and pkg in parts:
-            i = len(parts) - 1 - parts[::-1].index(pkg)
-            mod = ".".join(parts[i:])
-        else:
-            mod = parts[-1]
+        # VERIFY THE PREMISE. A blocked row asserts the symbol is still C; if
+        # the file has since moved to D, every "leak" derived from this row is
+        # a false positive, and the row itself is the defect.
+        #
+        # This is not hypothetical. gram.py moved to D on 2026-08-15 (bean
+        # qou-w8zz) and this row was not updated with it, so R9 went red on
+        # main and this detector reported 25 production sites "receiving
+        # convention C" that were receiving D. A detector that trusts a record
+        # inherits the record's staleness -- the same failure the whole
+        # excision has been unpicking, arriving in the tool built to find it.
+        src_path = repo / f
+        try:
+            src = src_path.read_text()
+        except OSError:
+            src = ""
+        if src and _defines_convention_d(src, sym):
+            print(f"  REGISTRY STALE: {f}::{sym} is registered as convention "
+                  f"{r.get('stays', '?')} under blocked_migrations, but the file "
+                  f"defines it as convention D. Every leak derived from this row "
+                  f"is a false positive; fix the registry, not the callers.")
+            continue
+        mod = _module_path_of(f)
         out.append((mod, sym, r.get("reason", ""), r.get("bean", "")))
     return out
 
@@ -241,9 +304,24 @@ def scan_reexports(roots=ROOTS, repo: pathlib.Path = None):
     return out
 
 
-def classify(path: str) -> str:
-    if path.startswith(BLOCKED_BY_DESIGN):
+def classify(path: str, blocked_files=()) -> str:
+    """Bucket a site. `blocked_files` comes from the registry, not from here.
+
+    This used to label EVERY site under `tools/pyhecke/` "BLOCKED on C by
+    design", justified by a single `blocked_migrations` row for
+    `gram.py::z`. The blanket was too wide: the row covered the module-level
+    `z` and nothing else, while three function-local C definitions sheltered
+    under the same label -- two of them inside `gram.py` itself.
+
+    When `gram.py::z` moved to D and the row was resolved, those three stopped
+    having any registry basis at all, and a path-prefix classifier would have
+    gone on calling them "by design" forever. Deriving the label from the
+    registry means a site is only excused while a row actually excuses it.
+    """
+    if path in blocked_files:
         return "tools/pyhecke — BLOCKED on C by design (registry)"
+    if path.startswith(BLOCKED_BY_DESIGN):
+        return "tools/pyhecke — C with NO registry row (unexplained)"
     name = pathlib.Path(path).name
     if "/probes/" in path or name.endswith("_probe.py") or "probe" in name:
         return "probes / exploratory"
@@ -254,7 +332,7 @@ def classify(path: str) -> str:
     return "computations — live producers"
 
 
-def scan(roots=ROOTS):
+def scan(roots=ROOTS, blocked_files=()):
     """Yield (path, lineno, target_name, source, bucket, deliberate)."""
     for r in roots:
         base = pathlib.Path(r)
@@ -281,7 +359,7 @@ def scan(roots=ROOTS):
                     continue
                 nm = names[0]
                 yield (sp, n.lineno, nm, ast.unparse(n.value),
-                       classify(sp), bool(DELIBERATE.search(nm)))
+                       classify(sp, blocked_files), bool(DELIBERATE.search(nm)))
 
 
 def selftest() -> int:
@@ -334,19 +412,28 @@ def selftest() -> int:
     # The re-export detector. `is_c_form` is blind to these by construction --
     # there is no arithmetic to shape-match, only an import -- so it needs its
     # own fixtures or it could silently match nothing forever.
-    repo = pathlib.Path(__file__).resolve().parent.parent
-    bl = blocked_symbols(repo)
+    # Fixtures, not the live registry. These used to assert "the registry has
+    # a blocked row", which passed only while one existed -- so resolving
+    # gram.py::z turned two green checks red without any logic changing. A
+    # selftest that fails when the DATA moves is testing the data.
     checks = [
-        ("registry yields at least one blocked (module, symbol)", bool(bl)),
-        ("the blocked file path resolves to an importable module path",
-         any(m == "pyhecke.gram" and s == "z" for m, s, _, _ in bl)),
+        ("package root is the LAST occurrence, not the first",
+         _module_path_of("tools/pyhecke/python/pyhecke/gram.py") == "pyhecke.gram"),
+        ("a plain package path resolves",
+         _module_path_of("src/foo/bar.py") == "foo.bar"),
+        ("a bare file resolves to its stem",
+         _module_path_of("gram.py") == "gram"),
     ]
-    if bl:
-        leaks = scan_reexports(repo=repo)
-        checks.append(("the known hecke_core re-export is detected",
-                       any("hecke_core.py" in l[0] and l[4] == "direct" for l in leaks)))
-        checks.append(("pyhecke's own modules are NOT reported as leaking",
-                       not any(l[0].startswith(BLOCKED_BY_DESIGN) for l in leaks)))
+    checks += [
+        ("a file defining z the convention-D way is recognised as D",
+         _defines_convention_d("z = q0 ** 3 / (q0 ** 2 + 1)", "z")),
+        ("the reversed-denominator spelling is recognised as D",
+         _defines_convention_d("z = q ** 3 / (1 + q ** 2)", "z")),
+        ("a convention-C definition is NOT mistaken for D",
+         not _defines_convention_d("z = 1 / (q ** 0.5 + q ** (-0.5))", "z")),
+        ("a mere comment mentioning D does not count as a definition",
+         not _defines_convention_d("# convention D: q**3/(q**2+1)\nz = 0.4993", "z")),
+    ]
     for name, ok in checks:
         print(f"  {'ok  ' if ok else 'FAIL'}  reexport: {name}")
         bad += not ok
@@ -367,7 +454,11 @@ def main() -> int:
     if args.selftest:
         return 1 if selftest() else 0
 
-    rows = list(scan())
+    blocked_files = {r.get("file", "") for r in
+                     __import__("json").loads(
+                         pathlib.Path("docs/coordination/trace-convention-registry.json")
+                         .read_text()).get("blocked_migrations", [])}
+    rows = list(scan(blocked_files=blocked_files))
     live = [r for r in rows if not r[5]]
     deliberate = [r for r in rows if r[5]]
 
@@ -381,7 +472,10 @@ def main() -> int:
         print(f"  {v:4d} sites / {len(files[k]):3d} files   {k}")
     print(f"\n  {len(deliberate):4d} sites               deliberately C-named — labelled comparisons, not defects")
 
-    actionable = sum(v for k, v in buckets.items() if not k.startswith("tools/pyhecke"))
+    # Only a site with a live registry row is excused. "unexplained"
+    # pyhecke sites count as actionable -- that is the whole point of
+    # deriving the label from the registry instead of the path.
+    actionable = sum(v for k, v in buckets.items() if "BLOCKED on C by design" not in k)
     print(f"\n  ACTIONABLE (excludes blocked-by-design): {actionable} sites")
 
     leaks = scan_reexports(repo=pathlib.Path("."))

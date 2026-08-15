@@ -94,7 +94,7 @@
       "implementations": [
         "computations/schur_principal_mpmath.py::_wenzl_constants_convention_C_HISTORICAL",
         "computations/schur_principal_mpmath.py::y_lambda_at_q0_mpmath_convention_C_HISTORICAL",
-        "tools/pyhecke/python/pyhecke/gram.py::z  (BLOCKED, not historical -- see blocked_migrations)"
+        "tools/pyhecke/python/pyhecke/gram.py::z  (MIGRATED to D on 2026-08-15 -- see resolved_migrations; was the one blocked site)"
       ],
       "lean": "QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation.trC_borromean_derived",
       "forcing_status": "pinned-by-definition",
@@ -343,11 +343,16 @@
       "must_error_with": "open_item"
     }
   ],
-  "blocked_migrations": [
+  "blocked_migrations": [],
+  "resolved_migrations": [
     {
       "file": "tools/pyhecke/python/pyhecke/gram.py",
       "symbol": "z",
-      "stays": "C",
+      "was": "C",
+      "now": "D",
+      "resolved_on": "2026-08-15",
+      "resolved_by_bean": "qou-w8zz",
+      "resolution": "gram.py:175 now reads `z = q0 ** 3 / (q0 ** 2 + 1)` and G is inverted on the quotient H_3/rad rather than on the full NF basis -- exactly the repair `repair_named_by` predicted. The block was correct while it stood; it stopped being true when the migration landed and this row was not updated with it, so R9 -- which is written to ASSERT the exception -- went RED on main: `registry says convention C but the CODE returns 0.6126880371464652`. The gate did its job. Moved here rather than deleted, because `reason` below is the clearest statement in the repo of WHY the full Wedderburn Gram cannot be inverted under D, and that is still true.",
       "bean": "qou-wgta",
       "item": 11,
       "reason": "G_INV = np.linalg.inv(G) runs at module import, and under D the Markov-Gram form on the H_3(q) NF basis is SINGULAR -- exactly one null direction (the row-cap one). Bilinear eigenvalues at the proton pin: -0.752702, 0, +0.752702 x3, +4.230339; det 3.998e-17, cond 4.9e16. numpy raises nothing -- it returns entries up to 7.6e15 with ||G G_INV - I|| = 1.64. Switching this line silently corrupts every consumer of G_INV.",
@@ -409,7 +414,7 @@
       },
       {
         "id": "pyhecke.gram.z",
-        "convention": "C",
+        "convention": "D",
         "module": "pyhecke.gram",
         "symbol": "z",
         "kind": "module_attr_float",
@@ -418,7 +423,7 @@
           "computations/substrate"
         ],
         "abs_tol": "1e-15",
-        "note": "BLOCKED on C by design -- see blocked_migrations. Registered as C so R9 ASSERTS the exception instead of leaving it undetected. If this ever reports D without blocked_migrations being cleared, something switched it and G_INV is now silently wrong."
+        "note": "Convention D since 2026-08-15 (bean qou-w8zz): G is inverted on the quotient H_3/rad, so the singularity that blocked the flip no longer applies -- see resolved_migrations. This entry was registered as C by design so that R9 would ASSERT the exception rather than leave it undetected, with the standing warning that reporting D while the block was still listed meant something had switched it. That is exactly what happened, and R9 caught it: the migration landed and the registry row did not move with it, so main went RED on `registry says convention C but the CODE returns 0.6126880371464652`. Recorded here because the sequence is the argument for numeric evaluators over string comparison -- R4/R5 compare a docstring to a registry field and would have stayed green on both sides of a stale pair."
       },
       {
         "id": "pyhecke_native.markov_z",
