@@ -1,10 +1,11 @@
 ---
 # qou-nr8y
 title: pyhecke.gram.z is convention C in float64 — the shared root under the remaining 25
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-15T23:05:27Z
-updated_at: 2026-08-15T23:05:27Z
+updated_at: 2026-08-15T23:23:08Z
 ---
 
 
@@ -152,3 +153,50 @@ survives is narrow and still worth having: `hecke_core.z` is C while
 `pyhecke_native.markov_z` is D, the two are used side by side, and *nothing
 in either module says which one a caller should expect*. That is a real
 hazard even though neither value is wrong.
+
+## CLOSED — redundant. The registry already owns this.
+
+Ran the corpus-grep checklist (AGENTS.md §Before declaring "open") *after*
+opening this bean rather than before, which is the wrong order and is why this
+exists at all. `docs/coordination/trace-convention-registry.md` — the
+authoritative ledger — already carries every part of it:
+
+* **Convention C is `EXCISED` as of 2026-08-09** (bean `qou-wgta`); D is
+  `PRODUCTION`. The excision is done, not pending.
+* `pyhecke/gram.py::z` is a **registered `blocked_migrations` entry** in the
+  JSON twin, with the exact mechanism I "found": *"switching it silently
+  destroys `G_INV`, because the Markov–Gram form is degenerate under D."*
+* C survives in exactly **three** deliberate places: two historical functions
+  in `schur_principal_mpmath` kept so the excised convention stays quotable for
+  the D-vs-C comparison, plus this blocked migration.
+* The registry even anticipates the failure mode: *"R9 asserts all three are
+  still C; the preserved reference stopping being C without anyone noticing is
+  precisely what happened to its predecessor."*
+
+So the finding was correct, the blocker was correct, and both were already
+recorded, machine-checked and validator-enforced. Nothing here is new.
+
+### What was actually mine, and it is small
+
+`hecke_core.py:61` re-exports the blocked-migration `z` under a name that says
+nothing about its convention, and `entanglement_orders.py` imports it as
+`Z_MARKOV` — a name that reads as *the* Markov z. The registry governs
+`pyhecke/gram.py::z`; it does not say the re-export is safe to read as
+canonical. That is a naming hazard on top of a governed constant, not a
+convention defect, and it is worth at most a comment at the re-export site.
+
+### Corrected disposition of the 25 flagged witnesses
+
+Not "convention C awaiting excision". The excision happened 2026-08-09 and
+their producers are D. They are **stale outputs predating it**. That makes the
+sweep result from earlier in this arc — 11/41 producers re-run, not one witness
+moved C→D — the live contradiction worth pulling, because the registry says
+those producers are already D.
+
+### Process note
+
+Three corrections on one bean: scope (25 → 2), status (defect → load-bearing),
+and now existence (novel → already registered). All three were avoidable by
+reading `docs/coordination/` first. The checklist exists precisely because a
+plausible mechanism found in code reads as a discovery when it is a
+rediscovery.
