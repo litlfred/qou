@@ -44,3 +44,23 @@ consolidation localizes as open in DT/3d-index categorification itself
 programme, qou-rtec). No distinct angle available from this context that
 is not either a catalogued route or a numerology risk (c=√A is at the
 proved precision ceiling, sigma_A ~ 40%). Do not measure; derive or wait.
+
+## Attack options (2026-08-15 ledger)
+
+- **B1 — consistency-forcing search** [formalize-first; small-medium]. Hunt
+  the sorry-free corpus for an independent pin of the order-u² Im
+  normalization (OhtsukiTowerBarParity odd_rung_imaginary,
+  FigureEightComplexVolume, the q3np integrality) and attempt a Lean
+  contradiction with one of the two conventions. Either outcome is progress:
+  a contradiction forces the object choice; double-consistency proves the
+  binary is genuinely undetermined by current assets.
+- **B2 — conditional-class the choice** [honest scaffolding; small]. State
+  "the τ-functor applies 𝔙 (κ_pot)" as a content-bearing §3b class; A=1
+  downstream statements become conditional theorems; qou-pzzl's convention
+  split becomes machine-tracked instead of prose-tracked.
+- **B3 — normalization literature check** [evidence only; small]. Do
+  Andersen–Kashaev / GGM state-integral conventions normalize the observable
+  at 𝔙 or Φ? Import as evidence tier, never as the derivation.
+- **B4 — the terminus** [blocked]. Full resolution = A_ω internal derivation;
+  post-d999b21d7 the honest next rung there is M1 (see qou-rtec D1), not
+  more normalization analysis.

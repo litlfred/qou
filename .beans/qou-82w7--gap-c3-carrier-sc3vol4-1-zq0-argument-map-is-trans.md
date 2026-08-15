@@ -75,3 +75,24 @@ The candidate space for the argument map is further narrowed **by proof**:
   `(Re²u−Im²u) = +0.0224` (muon) / `−0.0911` (proton). Geometric backbone:
   `docs/scope/2026-08-01-reeb-tetraplectic-cs-threeform-identification.md`
   (Reeb ⌟ tetraplectic → CS face).
+
+## Attack options (2026-08-15 ledger, session qou-gylf follow-up)
+
+- **A1 — complex fibre-seeded Newton** [derivation route; medium; corpus-grep
+  first]. Every pole-seed probe used a REAL seed (either sign — both now
+  excluded). Derive the seed's PHASE from the root-of-unity accumulation
+  itself: the Habiro/Ohtsuki expansion at the nearest ζ_N to q₀ (N from the
+  [N]_q = 0 truncation) supplies a derived complex object with no free
+  parameter. Gate with A3, honoring the conditional-flip premise.
+- **A2 — modular-involution prune** [formalize-first; small]. Lean-constrain
+  arg u(q₀) from Φ_b = Φ_{1/b} self-duality (transpose symmetry) before any
+  scan; even a weak constraint (e.g. sign or sector of arg u) shrinks A1's
+  target space by proof.
+- **A3 — swing-difference gate** [gate upgrade; small]. Replace the
+  conditional two-sided gate with the RESOLVED constraint
+  κ·[(Re²u−Im²u)_μ − (Re²u−Im²u)_p] = 0.04914 ± 7.6e-7 as the primary
+  candidate-map filter; the conditional signs become secondary. Uses only
+  the resolved observable, so it survives the O2 requalification.
+- **A4 — coordinate on W2** [zero-cost]. The theta-valued Birkhoff
+  connection-matrix computation (W2 lineage, qou-vkg5) may output the phase
+  as connection data; watch that front, do not duplicate it.
