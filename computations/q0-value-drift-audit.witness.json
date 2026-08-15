@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 317,
-      "proton-pin": 787,
+      "proton-pin": 790,
       "unknown": 25,
-      "canonical": 610
+      "canonical": 609
     },
     "stale_total": 317,
     "new_stale": 0,
@@ -5354,6 +5354,13 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/deltalambda/delta1g-deuteron-measurement.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/deltalambda/deltalambda-additive-signchanging-term.witness.json",
         "field": "results.substrate.q0",
         "value": "1.109978595557334719899763220483225026656",
@@ -5628,6 +5635,13 @@
       },
       {
         "file": "computations/deltalambda/theta-lambda-magnitude-kernel-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/deltalambda/tjon-external-cross-check.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -9787,9 +9801,9 @@
       {
         "file": "computations/probes/qbeta-root-of-unity.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/qbeta-sdeformed-leading-bound.witness.json",
