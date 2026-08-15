@@ -38,6 +38,7 @@ except ImportError:
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z, NF_BASIS, NF_NAMES  # noqa: E402
+from pyhecke.gram import safe_inverse as _pg_safe_inverse  # noqa: E402
 
 print(f"q₀  = {q0:.10f}")
 print(f"HA  = q−q⁻¹ = {HA:.10f}")
@@ -176,7 +177,10 @@ print("\n" + "=" * 72)
 print("  2. INVERSE GRAM MATRIX  G⁻¹")
 print("=" * 72)
 
-G_inv = np.linalg.inv(G)
+# Guarded: np.linalg.inv does NOT raise on the convention-D Markov Gram,
+# it returns inverted rounding noise (entries ~7.6e15, ||G@inv - I|| = 4.14).
+# safe_inverse raises instead and names the quotient inverse. See qou-m7py.
+G_inv = _pg_safe_inverse(G, what="Markov Gram")
 
 hdr = f"  {'G⁻¹':6s}"
 for name in NF_NAMES:

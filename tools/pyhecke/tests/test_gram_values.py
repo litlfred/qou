@@ -291,3 +291,40 @@ def test_native_convention_guard_is_overridable(monkeypatch):
     monkeypatch.setattr(pyhecke_gram, "_HAS_NATIVE", True)
     monkeypatch.setenv("QOU_ALLOW_NATIVE_DIVERGENCE", "1")
     assert pyhecke_gram._native_ok() is True
+
+
+# ──────────────────────────────────────────────────────────────────
+# safe_inverse — the guard numpy does not give you
+# ──────────────────────────────────────────────────────────────────
+
+def test_numpy_inv_silently_returns_garbage_on_the_d_gram():
+    """The premise `safe_inverse` exists for. If numpy ever starts raising
+    here, this test fails and the guard can be reconsidered -- so the
+    justification is pinned, not just asserted in a docstring."""
+    G = pyhecke_gram.G
+    bad = numpy.linalg.inv(G)          # no exception -- that IS the problem
+    assert numpy.abs(bad).max() > 1e10, numpy.abs(bad).max()
+    assert numpy.linalg.norm(G @ bad - numpy.eye(6)) > 1.0
+
+
+def test_safe_inverse_raises_on_the_singular_gram():
+    with pytest.raises(numpy.linalg.LinAlgError, match="singular"):
+        pyhecke_gram.safe_inverse(pyhecke_gram.G, what="Markov Gram")
+
+
+def test_safe_inverse_message_names_the_replacement():
+    """A guard that only says 'no' costs the caller a research detour."""
+    try:
+        pyhecke_gram.safe_inverse(pyhecke_gram.G)
+    except numpy.linalg.LinAlgError as e:
+        msg = str(e)
+    assert "gram_quotient_inverse" in msg
+    assert "rank 5 of 6" in msg
+    # It must also say the replacement is a DIFFERENT object, or a caller
+    # will just swap it under the old witness key.
+    assert "DIFFERENT witness key" in msg
+
+
+def test_safe_inverse_passes_through_invertible_matrices():
+    M = numpy.array([[2.0, 1.0], [1.0, 3.0]])
+    assert numpy.allclose(pyhecke_gram.safe_inverse(M) @ M, numpy.eye(2))
