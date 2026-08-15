@@ -260,12 +260,15 @@ def markov_trace_combo(terms, *, exact=False):
     Step 1. With `exact=True` the Fraction path (`hm_exact`/`_TR_M_FRAC`)
     is used; pass rational `coeff`s (int/Fraction) in that mode.
 
-    Caveat (exact mode): the NF *reduction* is exact in ℚ, but the
-    Markov weights `_TR_M_FRAC` use `_Z_FRAC = 4993/10000`, a 4-digit
-    rational approximation of the irrational `z = 1/(q^½+q^−½)`. So the
-    exact-mode trace agrees with the float-mode trace only to ~1e-4
-    (the z-truncation level), not to full precision; the float path is
-    the more accurate of the two for the trace value itself."""
+    Caveat (exact mode): under **convention D** both the NF reduction
+    and the Markov weights are exact in ℚ — `_Z_FRAC` is now the exact
+    `q³/(q²+1)` at the rational model, not the old 4-digit truncation
+    that convention C's irrational `z = 1/(q^½+q^−½)` forced. The one
+    remaining approximation is the *model* itself: the exact path runs
+    at q = 111/100, not at the true substrate q₀ = 1.1099785827513808
+    (1.93e-5 relative). So exact-mode and float-mode still differ at
+    the ~1e-4 level, but the cause is now solely the rational q model;
+    the float path remains the accurate one for the trace value."""
     if exact:
         acc = [Fraction(0)] * 6
         for c, word in terms:
@@ -399,7 +402,22 @@ _ID_NF = np.array([1.0, 0, 0, 0, 0, 0])
 _Q_FRAC = Fraction(111, 100)
 _QI_FRAC = Fraction(100, 111)
 _H_FRAC = _Q_FRAC - _QI_FRAC  # h = q - 1/q (exact rational)
-_Z_FRAC = Fraction(4993, 10000)  # z ≈ 1/(q^{1/2}+q^{-1/2})
+
+# z = q³/(q²+1) — **convention D**, and now genuinely EXACT in ℚ.
+#
+# This is a structural win of the C → D migration, not a re-tuning.
+# Under convention C, z = 1/(q^½ + q^−½) is irrational at q = 111/100
+# (it needs √q), so the exact path could only carry the 4-digit
+# truncation `Fraction(4993, 10000)` — an ~1e-4 error deliberately
+# injected into an "exact" code path. Convention D's z is a rational
+# *function* of q, so at a rational q it is a rational *number*:
+#     z = (111/100)³ / ((111/100)² + 1) = 1367631/2232100
+# exactly (1367631 = 3³·37³, 2232100 = 2²·5²·13·17·101 — coprime, so
+# this is already in lowest terms). The `_Z_FRAC` truncation error is
+# therefore GONE; the only remaining approximation on the exact path is
+# the rational model q = 111/100 itself vs the true substrate
+# q₀ = 1.1099785827513808 (a 1.93e-5 relative difference).
+_Z_FRAC = _Q_FRAC ** 3 / (_Q_FRAC ** 2 + 1)  # == Fraction(1367631, 2232100)
 
 _TR_M_FRAC = [Fraction(1), _Z_FRAC, _Z_FRAC,
               _Z_FRAC ** 2, _Z_FRAC ** 2,
@@ -507,12 +525,24 @@ def gram_quotient_inverse() -> np.ndarray:
 # ══════════════════════════════════════════════════════════════
 # 50-dps mpmath Gram / Markov trace — NO float64
 # ══════════════════════════════════════════════════════════════
-# `z = 1/(q^{1/2} + q^{-1/2})` is irrational (q^{1/2} is irrational at
-# q = 111/100), so an *exact* rational Gram is impossible — the Fraction
-# path approximates z by `_Z_FRAC = 4993/10000` (4 digits, ~1e-4).  The
-# faithful high-precision path is mpmath at 50 dps: the NF reduction is
-# exact in ℚ (via `nf_of_word(..., exact=True)`), and only the irrational
-# Markov weight `z` is evaluated numerically at 50 dps.  Consumers that
+# Under **convention C** this block's premise held: `z = 1/(q^{1/2} +
+# q^{-1/2})` is irrational at q = 111/100, so an exact rational Gram was
+# impossible and the Fraction path had to approximate z by 4993/10000
+# (4 digits, ~1e-4).
+#
+# Under **convention D** that premise is FALSE: `z = q³/(q²+1)` is a
+# rational function, so at any rational q the whole Gram is exactly
+# computable in ℚ. `computations/probes/gram_radical_exact_probe.py`
+# does exactly that, and it is the only path that can *prove* the form
+# is degenerate — over ℚ the determinant is exactly 0, where float64 can
+# only report 3.998e-17 and mpmath only a smaller epsilon. Neither
+# numeric path can distinguish "singular" from "very small".
+#
+# The mpmath path below is therefore no longer the *most faithful*
+# path, only the most convenient high-precision numeric one: the NF
+# reduction is exact in ℚ (via `nf_of_word(..., exact=True)`) and the
+# Markov weight is evaluated at 50 dps at the true substrate q₀ (which
+# the exact-ℚ path cannot do, since q₀ is not rational). Consumers that
 # need a float64-free Gram (e.g. the clarabel-MPFR LP dual, which marshals
 # 50-dps decimal strings across the FFI boundary) should source the Gram
 # and trace here, not from the float64 `G` / `TR_M`.
