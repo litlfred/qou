@@ -284,7 +284,14 @@ tabulates them for `n = 2..7`.  The Catalan dimension counts there are
 unaffected (`dim λ = dim λ'`), so nothing numerical is wrong — but the
 two blocks label *different sets of partitions* as the TL quotient.
 **Anyone wiring `schurElement_tl_eq_zero_iff` to that block must
-transpose.**  The `N < 0` mirror gives the textbook row form directly. -/
+transpose.**  The `N < 0` mirror gives the textbook row form directly.
+
+Both forms are proved in `QOU.MathlibExt.TLContentStratification`,
+which eliminates the existential in `HasContentCell` and replaces it
+with a one-line shape statistic: at `X = Q^{-N}`, `N ≥ 0`, a block
+survives iff `λ₁ ≤ N` (`schurElement_tl_ne_zero_iff_numCols_le`);
+the `N < 0` mirror is `ℓ(λ) ≤ -N`
+(`schurElement_tl_ne_zero_iff_length_le`). -/
 
 /-- `lam` contains an in-range cell of content `N`. -/
 def HasContentCell (lam : Partition) (N : ℤ) : Prop :=
