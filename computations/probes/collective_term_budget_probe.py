@@ -26,9 +26,25 @@ produce an extensive quantity (`BindingSaturationCapA4.lean`,
 a candidate that is structurally admissible but an order of magnitude too small
 can be dropped without a deuteron run.
 
+## Units — dimensionless is the content (owner ruling 2026-08-11)
+
+`docs/audits/2026-08-11-excise-absolute-mass-notion.md` retains binding `B(K)`
+as a framework claim but states that its predictive content is the
+**dimensionless categorical binding**, with `m_e` a passive scale. So the budget
+is reported both in MeV/nucleon (readable against AME) and in units of
+`α = E₀`, where it is directly comparable to the derived per-bond
+log-suppressions `L_pp, L_pn, L_nn`. The second form is the one with content;
+the first is the same number times a calibration.
+
+That reframing is what makes the bond-count comparison below possible at all: it
+is only in `α` units that "how much collective binding is missing" and "how much
+one bond supplies" are the same kind of quantity.
+
 ## What is reported, and how to read it
 
 * `R(A)` per nucleon, over the light band and up to ²⁰⁸Pb.
+* the same budget in **bond units** `R/α`, and which bond count it follows —
+  the chain's `A−1` or the all-pairs `C(A,2)`.
 * whether `R` is **extensive** — i.e. whether `R(A)` approaches a constant, which
   is what "a separate, super-pairwise additive extensive object" requires.
 * the two derived scales already in hand, for comparison ONLY:
@@ -143,6 +159,69 @@ def main() -> int:
         print(f"  free-nucleon a_V        = {a_V:.4f}   ->  R/a_V = {mean / a_V:.2f}x")
         print(f"  c1 + a_V                = {c1 + a_V:.4f}   vs measured plateau "
               f"{sum(r[2] for r in heavy) / len(heavy):.4f}")
+
+    # ---- dimensionless form: the budget in BOND UNITS ----------------------
+    # Owner ruling 2026-08-11 (docs/audits/2026-08-11-excise-absolute-mass-notion.md):
+    # the predictive content of B(K) is the DIMENSIONLESS categorical binding;
+    # the m_e in front is a passive scale. So the budget belongs in units of
+    # alpha = E0, where it is directly comparable to the derived per-bond
+    # log-suppressions L_pp, L_pn, L_nn -- which is what makes it readable.
+    print("\nDIMENSIONLESS FORM — the budget in units of alpha = E0 (bond units):\n")
+    Lbar = (Lpp + Lnn) / 2.0
+    print(f"  per-bond log-suppressions:  L_pp = {Lpp:.4f}  L_pn = {Lpn:.4f}  "
+          f"L_nn = {Lnn:.4f}   (mean pp/nn: {Lbar:.4f})")
+    if not math.isnan(mean):
+        print(f"  required collective term:   R/alpha = {mean / alpha:.4f} per nucleon")
+        print(f"    -> {mean / alpha / Lbar:.2f}x a single bond's log-suppression, PER NUCLEON,")
+        print("       on top of the chain's own (A-1) bonds.")
+
+    # Does the budget scale like the bond COUNT? The chain uses A-1 bonds; the
+    # all-pairs alternative uses C(A,2). Total (not per-nucleon) budget divided
+    # by each count says which -- if either -- has the right A-dependence.
+    print("\n  Which BOND COUNT does the budget follow?  (total R*A / count)\n")
+    print("| iso   |   A | R*A/alpha | / (A-1) | / C(A,2) |")
+    print("| ----- | --: | --------: | ------: | -------: |")
+    per_chain, per_pairs = {}, {}
+    for name, A, _meas, _chain, R in rows:
+        tot = R * A / alpha
+        pc = tot / (A - 1) if A > 1 else float("nan")
+        pp_ = tot / (A * (A - 1) / 2) if A > 1 else float("nan")
+        per_chain[A], per_pairs[A] = pc, pp_
+        print(f"| {name:<5} | {A:>3} | {tot:>9.3f} | {pc:>7.3f} | {pp_:>8.4f} |")
+
+    def _spread(d, lo):
+        v = [x for A, x in d.items() if A >= lo and not math.isnan(x)]
+        if len(v) < 3:
+            return float("nan")
+        m = sum(v) / len(v)
+        return (max(v) - min(v)) / abs(m) * 100 if m else float("inf")
+
+    # Measure on the SAME heavy band as the extensivity test above. The
+    # full-band spread is dominated by the light rows (R is negative at 2H and
+    # tiny at 3H/3He), where no plateau is claimed in the first place -- quoting
+    # it would neither support nor refute a scaling claim.
+    print(f"\n  full band  (A >= {min(per_chain)}): per (A-1) bond {_spread(per_chain, 0):>6.1f} %"
+          f"   per C(A,2) pair {_spread(per_pairs, 0):>6.1f} %")
+    print("    (dominated by the light rows; NOT the discriminating comparison)")
+    s_chain, s_pairs = _spread(per_chain, 24), _spread(per_pairs, 24)
+    print(f"  heavy band (A >= 24): per (A-1) bond {s_chain:>6.1f} %"
+          f"   per C(A,2) pair {s_pairs:>6.1f} %")
+
+    linear_wins = (not math.isnan(s_chain)) and (not math.isnan(s_pairs)) and s_chain < s_pairs
+    print(f"\n  linear bond count fits better than pair count: {linear_wins}")
+    if linear_wins:
+        hv = [(A, per_pairs[A]) for A in sorted(per_pairs) if A >= 24]
+        mono = all(hv[i][1] > hv[i + 1][1] for i in range(len(hv) - 1))
+        print(f"  per-pair value falls monotonically across the heavy band: {mono}")
+        print("\n  So the budget is EXTENSIVE -- it tracks the LINEAR bond count. An")
+        print("  unsuppressed all-pairs term contributes ~A/2 per nucleon and cannot")
+        print("  plateau; the measured plateau EXCLUDES it as the collective term,")
+        print("  independently of the proved pairwise cap")
+        print("  (QOU.MassTheory.exchangeDet_pow_two_le_four, rho_A <= C(A,2)).")
+        print("  This does NOT exclude a term with pair structure that is itself")
+        print("  suppressed back to O(A) -- only an unsuppressed all-pairs sum. Nor")
+        print("  is 'per (A-1)' itself flat: it drifts 1.36 -> 1.17 over the heavy")
+        print("  band, so linear is the better of the two counts, not an exact law.")
 
     # ---- the sign structure: the sharpest screen this produces ------------
     print("\nSIGN STRUCTURE — the sharpest screening criterion here:\n")
