@@ -148,6 +148,27 @@ Not fixed unilaterally: rewording a definition's axioms changes what the
 definition says, and downstream blocks cite it. The prose is not wrong, only
 stronger than needed. Options are recorded on the bean for the author.
 
+## This is a recurring class, not a new one
+
+Surfaced during the prepare-merge reuse pass:
+[`2026-05-02-alpha-fit-NOT-derivation-retraction.md`](2026-05-02-alpha-fit-NOT-derivation-retraction.md)
+is the same defect, three months earlier — an agent called
+$\alpha \approx 82 \cdot E_0$ a *"structural binding formula"* and later
+retracted it as fitting rather than categorical derivation.
+
+So the corpus has now produced at least four instances of one shape:
+
+| when | claim | actually |
+|---|---|---|
+| 2026-05-02 | $\alpha \approx 82 E_0$ a "structural binding formula" | a fit |
+| 2026-08-14 (#5044) | pairwise result "forced by the braiding rather than assumed" | the hexagon is an axiom |
+| 2026-08-15 (this doc) | $q$ "precisely and completely constrained" by the braiding | $q_0$ is CAL-2 |
+| 2026-08-15 (this doc) | "Because $\mathbf{C}$ is **rigid** monoidal, its associator …" | pentagon is a *monoidal* axiom |
+
+That frequency is the argument for the `qou-vud6` checker existing at all. Three
+of the four were caught by a reader rather than by tooling, and the fourth was
+caught only because the reader's question prompted a scan.
+
 ## Method note carried forward
 
 `differential-structures-intro`'s *"None of these structures are imposed
