@@ -141,3 +141,18 @@ eps-uniform, explicit equilibrium. FINAL epic remainder: (a) the
 amplitude-form step IS the DN tail evolution (model-specific,
 probe-able); (b) full-NS transfer nonlocality (the standing caveat).
 The Lean chain is otherwise complete end to end.
+
+## 2026-08-15 (7): SF6 — the amplitude-form step is REFUTED for small eps
+
+Honest negative, the arc's first: D_eff = (F*a - dOmt/dt)/Omt holds at
+eps=1e-1 (min +14.8, 0 violations) but goes to -22/-23 at eps=1e-2 and
+1e-3 during the cascade-front transient (t~0.32; 19% of steps at
+1e-3): interior tail production beats dissipation + boundary
+accounting. Scope (a): this step form, this band, alone. The
+boundary_flux_tail_bound Lean theorem STANDS as a conditional; its
+in-model instantiation via the naive single-amplitude form is refuted.
+Epic honest state: the final link's instantiation is genuinely open —
+the correct effective step must account interior cascade production
+(candidate routes: front-following band; production-vs-dissipation
+Grashof condition; time-integrated form only). Full-NS nonlocality
+caveat unchanged.
