@@ -114,6 +114,28 @@ because those can differ, and the mass channel is the case where they do.
 | `mass` | **D** — owner ruling 2026-08-09 (the row cap $\ell(\lambda)\le 2$ forces it) | **D** — `trM_borromean` → `F_Bor` → `canonical_mass` | agreed |
 | `binding` | D | **D** — `binding_canonical.py` → `closed_form_tau_M` → `markov_z`, and `y_lambda_wenzl_bridge_numeric` | agreed |
 | `borromean-binding-single-pipeline` | D | **D** — `borromean_binding_recompute.py` | agreed |
+| `qbeta-decay` | **null (contradictory)** — the decay blocks write the excised-C value while naming it "the Markov–Jones parameter", whose referent has been D since 2026-08-09; no decay-specific derivation of either exists | **C** — `qbeta_utils.markov_parameter` (`α=(z−1)h/2` feeds every committed $c_k$ extraction), `qbeta_ck_sseries_exact_rational` core, `ZBarParity.lean` | **disputed** (bean `qou-b3nk`) |
+
+> **The `qbeta-decay` dispute (registered 2026-08-15, bean `qou-b3nk`) is a
+> derivation gap, not a def-vs-code mismatch of the mass kind.** Neither
+> convention is *derived* for the decay channel. **C** is a stipulation whose
+> cited referent now reads D, and it fails two structural conditions each of
+> which would exclude it *if demanded* — the full-bar condition
+> $\overline{z} = z - h$ (Lean `QOU.QBeta.zD_full_bar_covariant` /
+> `barEven_fullBar_forces_classical`, sorry-free; premise: trace
+> bar-compatibility $\mathrm{tr}\circ\mathrm{bar} = \mathrm{bar}\circ\mathrm{tr}$)
+> and fixed-rank fibre membership ($N_{\mathrm{eff}}(z_C) = 2.5995$ pointwise,
+> $q$-dependent; premise: categorical fibre trace). **D** is conditionally
+> forced only on named unproved premises (`conj:binding-qbeta-complex-volume`
+> same-object identification, or trace bar-compatibility). **Mutual
+> exclusivity is proved** (`decayLadder_zC_threeRow_ne_zero`, sorry-free): any
+> faithful normalised Markov trace at the ladder's $z_C$ carries
+> $y_{(1^3)} \neq 0$, so the mass channel's two-row forcing cannot transfer
+> while the ladder keeps $z_C$ — and a $z$-swap is **not** a migration
+> (measured: $c_3 \to \approx -974$, rung convergence collapses). Until
+> settled, every $c_3$ / $S$ / $q^*_S$ quote names its convention. Audit:
+> [`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md);
+> numeric shadow: `computations/qbeta/qbeta-decay-channel-convention-status.witness.json` (18/18).
 
 > **All three channels were carrying a convention the code did not supply,
 > and the table above said "agreed" throughout.** Found 2026-08-09
