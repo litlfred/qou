@@ -1,11 +1,11 @@
 ---
 # qou-tpl5
 title: 'SW-8 (=R2-inst): Markov trace + tr_M=Σ_λ w_λ χ_λ ⇒ instantiate HeckeWedderburnData for H_n(q)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-11T10:04:10Z
+updated_at: 2026-08-14T18:46:07Z
 parent: qou-59vq
 blocked_by:
     - qou-0h5k
@@ -23,3 +23,7 @@ markovTrace3 (weighted char sum) + trace property (markovTrace3_mul_comm) + tr_M
 ## Correction (2026-08-11): (A) DONE, (B) still open.
 (A) canonical Ocneanu weights markovWeight0/1/2(q,z) + Markov relations PROVED — integrated on PR #4978 (from SW8W agent), sorry-free, axiom-clean.
 (B) REMAINING: the full HeckeWedderburnData instance for H_3 (Part=Fin 3, dim=![1,1,2], Π-reshape of wedderburn3 with M₁≅ℝ) — SW8W was session-limited before finishing it. Bounded plumbing; next pickup.
+
+
+## (B) DONE (2026-08-14, PR #5020)
+HeckeWedderburnData3.lean: heckeDim3 = ![1,1,2], piReshape3 (the Pi-reshape AlgEquiv, M_1 = R on the two scalar blocks), heckeWedderburnData3 bundle, markov_one_eq3. All sorry-free, axiom-clean. markov_eq proved (not assumed). Friction was elaboration, not math: (0 : Fin (heckeDim3 0)) fails because instance synthesis runs at reducible transparency and will not evaluate ![1,1,2] 0 to 1 — fixed with entry11 taking the width as a hypothesis.
