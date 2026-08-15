@@ -1229,6 +1229,21 @@
         "reviewed_at": "2026-08-15T10:30:58.871Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bf7ceffb85ab",
+          "ts": "7e64f99c98b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.839Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "section roadmap prose; declarative sentences"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1248,6 +1263,21 @@
         "reviewed_at": "2026-08-15T10:30:58.871Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bf7ceffb85ab",
+          "ts": "7e64f99c98b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.879Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "section roadmap prose; declarative sentences"
       }
     ],
     "trap-em-dash": [
@@ -1267,6 +1297,21 @@
         "reviewed_at": "2026-08-15T10:30:58.871Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 106 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bf7ceffb85ab",
+          "ts": "7e64f99c98b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.917Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "section roadmap prose; declarative sentences"
       }
     ],
     "trap-triples": [
@@ -1286,6 +1331,21 @@
         "reviewed_at": "2026-08-15T10:30:58.871Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 106 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bf7ceffb85ab",
+          "ts": "7e64f99c98b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.950Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "section roadmap prose; declarative sentences"
       }
     ],
     "trap-closing-aphorism": [
@@ -1305,6 +1365,21 @@
         "reviewed_at": "2026-08-15T10:30:58.871Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bf7ceffb85ab",
+          "ts": "7e64f99c98b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.987Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "section roadmap prose; declarative sentences"
       }
     ],
     "trap-meta-commentary": [
@@ -1324,6 +1399,21 @@
         "reviewed_at": "2026-08-15T10:30:58.871Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bf7ceffb85ab",
+          "ts": "7e64f99c98b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:13.024Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "section roadmap prose; declarative sentences"
       }
     ],
     "trap-thesis-restatement": [
@@ -1343,6 +1433,21 @@
         "reviewed_at": "2026-08-15T10:30:58.871Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bf7ceffb85ab",
+          "ts": "7e64f99c98b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:13.062Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "section roadmap prose; declarative sentences"
       }
     ],
     "trap-performed-warmth": [
@@ -1362,6 +1467,21 @@
         "reviewed_at": "2026-08-15T10:30:58.871Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bf7ceffb85ab",
+          "ts": "7e64f99c98b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:13.098Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "section roadmap prose; declarative sentences"
       }
     ],
     "trap-superlative": [
@@ -1381,6 +1501,21 @@
         "reviewed_at": "2026-08-15T10:30:58.871Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bf7ceffb85ab",
+          "ts": "7e64f99c98b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:13.134Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "section roadmap prose; declarative sentences"
       }
     ],
     "trap-nonspeakable": [
@@ -1400,8 +1535,23 @@
         "reviewed_at": "2026-08-15T10:30:58.871Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bf7ceffb85ab",
+          "ts": "7e64f99c98b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:13.172Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "section roadmap prose; declarative sentences"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:58.871Z"
+  "updated_at": "2026-08-15T12:02:13.172Z"
 }

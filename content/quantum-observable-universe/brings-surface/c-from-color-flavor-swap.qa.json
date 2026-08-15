@@ -1565,6 +1565,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not as C alone.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "7f78b67b9840",
+          "ts": "28f2426a3963"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:09.508Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "'composite CPT, not as C alone' and 'corroborates rather than testing' are substantive scope contrasts central to the block's claims"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1584,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:30:58.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7f78b67b9840",
+          "ts": "28f2426a3963"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:09.217Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "long conjecture block; declarative, tiered, cross-referenced"
       }
     ],
     "trap-em-dash": [
@@ -1603,6 +1633,22 @@
         "reviewed_at": "2026-08-15T10:30:58.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 574 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7f78b67b9840",
+          "ts": "28f2426a3963"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:09.544Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "two appended-clause em-dashes fixed to commas; remaining dashes are i.e.-parentheticals and cross-ref glosses",
+        "notes": "fixed: 'color sheets—orthogonal to P' -> 'color sheets, orthogonal to P'; 'natural order—three commuting Z/2 actions' -> 'natural order, as three commuting Z/2 actions'"
       }
     ],
     "trap-triples": [
@@ -1622,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:30:58.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 574 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7f78b67b9840",
+          "ts": "28f2426a3963"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:09.252Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "long conjecture block; declarative, tiered, cross-referenced"
       }
     ],
     "trap-closing-aphorism": [
@@ -1641,6 +1702,21 @@
         "reviewed_at": "2026-08-15T10:30:58.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7f78b67b9840",
+          "ts": "28f2426a3963"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:09.287Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "long conjecture block; declarative, tiered, cross-referenced"
       }
     ],
     "trap-meta-commentary": [
@@ -1660,6 +1736,21 @@
         "reviewed_at": "2026-08-15T10:30:58.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7f78b67b9840",
+          "ts": "28f2426a3963"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:09.320Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "long conjecture block; declarative, tiered, cross-referenced"
       }
     ],
     "trap-thesis-restatement": [
@@ -1679,6 +1770,21 @@
         "reviewed_at": "2026-08-15T10:30:58.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7f78b67b9840",
+          "ts": "28f2426a3963"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:09.356Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "long conjecture block; declarative, tiered, cross-referenced"
       }
     ],
     "trap-performed-warmth": [
@@ -1698,6 +1804,21 @@
         "reviewed_at": "2026-08-15T10:30:58.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7f78b67b9840",
+          "ts": "28f2426a3963"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:09.392Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "long conjecture block; declarative, tiered, cross-referenced"
       }
     ],
     "trap-superlative": [
@@ -1717,6 +1838,21 @@
         "reviewed_at": "2026-08-15T10:30:58.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7f78b67b9840",
+          "ts": "28f2426a3963"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:09.434Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "long conjecture block; declarative, tiered, cross-referenced"
       }
     ],
     "trap-nonspeakable": [
@@ -1736,8 +1872,23 @@
         "reviewed_at": "2026-08-15T10:30:58.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7f78b67b9840",
+          "ts": "28f2426a3963"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:09.470Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "long conjecture block; declarative, tiered, cross-referenced"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:58.878Z"
+  "updated_at": "2026-08-15T12:02:09.544Z"
 }
