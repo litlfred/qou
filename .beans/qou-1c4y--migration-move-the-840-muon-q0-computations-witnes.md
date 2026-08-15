@@ -144,22 +144,27 @@ published `qou_mass` package. Any proton migration has to deal with both.
 
 ### 2. The real inventory, measured (not "~840")
 
-`computations/q0_provenance_audit.py`, over 3138 witnesses:
+**Do not quote a count from this bean.** Run it:
 
-      406  proton
-      709  muon
-       13  truncated-5-digit (a 1.10998 literal, 1277 ppb off)
-       51  other
-     1978  NOT RECORDED (63.0%)
-      243  muon label that q_muon_at() does not reproduce
-       18  multi-anchor candidates (some are q-sweeps — by design)
+    python3 computations/q0_provenance_audit.py --json
 
-**The migration's headline number is wrong in both directions.** It is 709
-muon-labelled, not ~840 — and the far larger group is the **1978 witnesses
-that record no anchor at all**, which the sweep's framing does not cover.
-For those, "is this muon?" cannot be answered from the file; it needs the
-producer. A sweep scoped to "the muon ones" silently leaves 63% of the corpus
-in an unknown state.
+Three generations of this census were live at once — 406/709/1978 here,
+470/799/2453 in `qou-xm91`, and different numbers again from the script. Each
+was correct when written and none was marked superseded, so they read as
+disagreement about the corpus when they were really successive fixes to the
+audit's anchor-key pattern and its false-precision test. The frozen table that
+stood here is deleted rather than refreshed, because refreshing it would just
+mint a fourth generation.
+
+**What survives, and does not depend on the exact counts:**
+
+* The migration's headline "~840 muon witnesses" is wrong in both directions.
+  The muon-labelled group is smaller than that.
+* The far larger group **records no anchor at all** — roughly half the corpus.
+  For those, "is this muon?" cannot be answered from the file; it needs the
+  producer. A sweep scoped to "the muon ones" silently leaves them in an
+  unknown state. See `qou-xm91`, and read its CORRECTION section: most of that
+  gap is a deliberately-tolerated state, not a defect.
 
 ### 3. Scope calibration on the 243
 
