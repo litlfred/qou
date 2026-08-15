@@ -1,0 +1,137 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0005038v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "db0b9b7a8534f16157041fbe8f6a4351064ed97839efb9ef6856774d89eb5072",
+  "file": "0005038v1.pdf"
+ },
+ "provenance": {
+  "title": "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW",
+  "authors": null,
+  "arxiv": {
+   "id": "math/0005038",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "4 May 2000"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "theorem": 2,
+   "lemma": 3,
+   "proposition": 3
+  },
+  "formalization_candidates": 8
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "The Lawrence-Krammer representation of Bn is faithful for all n.",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-1",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.1",
+   "name": "The Basic Lemma",
+   "statement": "The pairing between forks and noodles is well-",
+   "section_file": "sections/sec-005-4-stephen-j-bigelow.md",
+   "section_title": "STEPHEN J. BIGELOW",
+   "pages": "4-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": "The Key Lemma",
+   "statement": "Let N be a noodle and let F be a fork. Then",
+   "section_file": "sections/sec-009-3-the-representation-is-faithful.md",
+   "section_title": "The representation is faithful",
+   "pages": "6-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "claim",
+   "number": "3.3",
+   "name": null,
+   "statement": "With these orientations, \u01ebi,j = \u2212mi,i mi,j mj,j |(q = 1, t = \u22121).",
+   "section_file": "sections/sec-010-31-computing-the-pairing-we-now-describe-how-to.md",
+   "section_title": "Computing the pairing. We now describe how to compute the pairing be-",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "claim",
+   "number": "3.5",
+   "name": null,
+   "statement": "If mi,j is maximal then mi,i = mj,j = mi,j .",
+   "section_file": "sections/sec-012-32-proof-of-the-key-lemma-let-n-be-a-noodle-and.md",
+   "section_title": "Proof of the Key Lemma. Let N be a noodle and let F be a fork. By",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.6",
+   "name": null,
+   "statement": "Let \u03b1 and \u03b2 be simple closed curves in D \\ P which intersect trans-",
+   "section_file": "sections/sec-013-33-proof-of-the-theorem-in-this-subsection-we-us.md",
+   "section_title": "Proof of the Theorem. In this subsection we use the Basic Lemma and the",
+   "pages": "9-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": null,
+   "statement": "H2( \u02dcC) is a free \u039b -module of rank",
+   "section_file": "sections/sec-015-4-matrices-for-the-lawrence-krammer-representati.md",
+   "section_title": "Matrices for the Lawrence-Krammer representation",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "claim",
+   "number": "4.2",
+   "name": null,
+   "statement": "\u03c3i(vj,k ) is a linear combination of basis vectors vj\u2032,k \u2032 which satisfy",
+   "section_file": "sections/sec-016-12-stephen-j-bigelow.md",
+   "section_title": "STEPHEN J. BIGELOW",
+   "pages": "12-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

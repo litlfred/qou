@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1108.4389v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "d3ac77510654d8285c0fd4e71d628421bf703cd739d76d8f6e14053b58aad8f9",
+  "file": "1108.4389v1.pdf"
+ },
+ "provenance": {
+  "title": "Gauge Theories Labelled by Three-Manifolds",
+  "authors": "Tudor Dimofte1 and Davide Gaiotto 1 and Sergei Gukov 2,3",
+  "arxiv": {
+   "id": "1108.4389",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "22 Aug 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

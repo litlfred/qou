@@ -1,0 +1,110 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0611181v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "6931e3ebca584de90bfb4efe82875c3f342a15db7e492c2956c70b53a7141b60",
+  "file": "0611181v2.pdf"
+ },
+ "provenance": {
+  "title": "Proof of the volume conjecture for Whitehead chains Roland van der Veen",
+  "authors": "November 29, 2021",
+  "arxiv": {
+   "id": "math/0611181",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "30 Jul 2007"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "conjecture": 1,
+   "lemma": 5
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2",
+   "name": null,
+   "statement": "For any non-splittable link L we have:",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "Let a,b,c,d be integers, with b \u2265 2 and c,d \u2265 0. We have the",
+   "section_file": "sections/sec-001-proof-of-the-main-theorem.md",
+   "section_title": "Proof of the main theorem",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "Using the above de\ufb01nitions of n\u2032,k \u2032 and \u03b4 we have:",
+   "section_file": "sections/sec-001-proof-of-the-main-theorem.md",
+   "section_title": "Proof of the main theorem",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4",
+   "name": null,
+   "statement": "There is a nonzero constant C \u2208 C such that:",
+   "section_file": "sections/sec-001-proof-of-the-main-theorem.md",
+   "section_title": "Proof of the main theorem",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5",
+   "name": null,
+   "statement": "Forb \u2265 2 and N odd we have: JN,a,b,c,d \u223c",
+   "section_file": "sections/sec-001-proof-of-the-main-theorem.md",
+   "section_title": "Proof of the main theorem",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "part a) and b) are direct consequences of these facts on ce we note that",
+   "section_file": "sections/sec-002-proof-of-the-lemmas.md",
+   "section_title": "Proof of the lemmas",
+   "pages": "6-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

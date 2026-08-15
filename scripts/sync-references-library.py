@@ -1,0 +1,209 @@
+#!/usr/bin/env python3
+"""
+sync-references-library — record each source's library location + ingestion
+stage on its `references.ts` entry.
+
+`content/schema/references.ts` is the authoritative bibliography (CSL-JSON).
+It says what a source *is*; until now nothing there said whether we hold a
+copy, where, or how far it has been processed. Answering that meant joining
+three files by hand.
+
+This adds one derived field per entry:
+
+    library: {
+      docId: "arxiv-2411.03801v2",
+      dir: "library/arxiv-2411.03801v2",
+      pdf: "library/arxiv-2411.03801v2/2411.03801v2.pdf",
+      stage: "candidates",          // held < structure < sections < candidates
+      pages: 24,
+      sections: 14,
+      arxiv: "2411.03801v2",
+    },
+
+## Derived, never authored
+
+Every value comes from the library tree and the source ledger, so the field
+is regenerated, not maintained. Re-running is a no-op when nothing moved;
+`--check` exits 1 if the file is out of date, which makes it usable as a
+preflight gate the way `sync-qou-mass-vendor.py --check` is.
+
+Do not hand-edit a `library:` block — the next sync overwrites it. If it is
+wrong, the library tree or the ledger is wrong.
+
+## Why here and not in the ledger
+
+`local/document-intake` is explicit that bibliographic metadata belongs to
+`references.ts` alone and the ledger holds examination state. "Where is our
+copy" is a property of the source, not a verdict about it, so it belongs on
+this side of that line. The ledger keeps `source.file` as the join key; this
+field is the resolved, enriched view of it.
+
+Usage:
+    scripts/sync-references-library.py --check     # exit 1 if stale
+    scripts/sync-references-library.py --apply
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import sys
+
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REFS = os.path.join(REPO, "content", "schema", "references.ts")
+LEDGER = os.path.join(REPO, "content", "bib-qa-verifications.json")
+LIB = os.path.join(REPO, "library")
+
+FIELD = "library"
+
+
+def library_index() -> dict[str, dict]:
+    """doc-id -> facts, read from the library tree itself."""
+    out: dict[str, dict] = {}
+    if not os.path.isdir(LIB):
+        return out
+    for doc_id in sorted(os.listdir(LIB)):
+        d = os.path.join(LIB, doc_id)
+        if not os.path.isdir(d):
+            continue
+        sj = os.path.join(d, "structure.json")
+        info: dict = {"docId": doc_id, "dir": f"library/{doc_id}"}
+        pdfs = sorted(f for f in os.listdir(d) if f.lower().endswith(".pdf"))
+        if pdfs:
+            info["pdf"] = f"library/{doc_id}/{pdfs[0]}"
+
+        stage = "held"
+        if os.path.exists(sj):
+            try:
+                art = json.load(open(sj))
+            except Exception:
+                art = {}
+            stage = "structure"
+            info["pages"] = art.get("source", {}).get("pages")
+            ax = (art.get("metadata") or {}).get("arxiv") or {}
+            if ax.get("id"):
+                info["arxiv"] = ax["id"] + (f"v{ax['version']}" if ax.get("version") else "")
+            nsec = len(art.get("sections") or [])
+            sdir = os.path.join(d, "sections")
+            if os.path.isdir(sdir) and any(f.endswith(".md") for f in os.listdir(sdir)):
+                stage = "sections"
+                info["sections"] = nsec
+        if os.path.exists(os.path.join(d, "candidates.json")):
+            stage = "candidates"
+        info["stage"] = stage
+        out[doc_id] = {k: v for k, v in info.items() if v is not None}
+    return out
+
+
+def ref_to_doc() -> dict[str, str]:
+    """references.ts id -> doc-id, via the ledger's source.file."""
+    if not os.path.exists(LEDGER):
+        return {}
+    led = json.load(open(LEDGER))
+    entries = led.get("entries", [])
+    # `entries` may be a dict keyed by reference id, and a row does not
+    # have to repeat that id inside itself — 269 of 355 do not. Take the
+    # key as the id and let an inner `id` override it.
+    if isinstance(entries, dict):
+        rows = [{"id": k, **v} if isinstance(v, dict) else v for k, v in entries.items()]
+    else:
+        rows = entries
+    out: dict[str, str] = {}
+    for r in rows:
+        if not isinstance(r, dict):
+            continue
+        rid = r.get("id")
+        src = r.get("source")
+        path = src.get("file") if isinstance(src, dict) else None
+        if not rid or not isinstance(path, str):
+            continue
+        m = re.match(r"library/([^/]+)/", path)
+        if m:
+            out[rid] = m.group(1)
+    return out
+
+
+def render(info: dict, indent: str = "    ") -> str:
+    order = ["docId", "dir", "pdf", "stage", "pages", "sections", "arxiv"]
+    lines = [f"{indent}{FIELD}: {{"]
+    for k in order:
+        if k not in info:
+            continue
+        v = info[k]
+        lines.append(f'{indent}  {k}: {json.dumps(v)},')
+    lines.append(f"{indent}}},")
+    return "\n".join(lines)
+
+
+def sync(text: str, mapping: dict[str, str], index: dict[str, dict]) -> tuple[str, int, int]:
+    """Insert or refresh the library block on each matching ref({...})."""
+    added = updated = 0
+    out: list[str] = []
+    pos = 0
+    # Each entry starts `ref({` and its id line follows shortly after.
+    for m in re.finditer(r"\n(\s*)ref\(\{\n(\s*)id:\s*\"([^\"]+)\",", text):
+        entry_indent = m.group(2)
+        rid = m.group(3)
+        doc_id = mapping.get(rid)
+        info = index.get(doc_id) if doc_id else None
+
+        insert_at = m.end()
+        out.append(text[pos:insert_at])
+        pos = insert_at
+
+        # An existing block sits immediately after the id line.
+        existing = re.match(
+            r"\n" + re.escape(entry_indent) + FIELD + r": \{.*?\n" + re.escape(entry_indent) + r"\},",
+            text[pos:], re.S,
+        )
+        if existing:
+            pos += existing.end()
+            if info:
+                updated += 1
+        elif info:
+            added += 1
+
+        if info:
+            out.append("\n" + render(info, entry_indent))
+
+    out.append(text[pos:])
+    return "".join(out), added, updated
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description="Record library location + ingestion stage on references.ts")
+    g = ap.add_mutually_exclusive_group(required=True)
+    g.add_argument("--check", action="store_true", help="exit 1 if references.ts is stale")
+    g.add_argument("--apply", action="store_true")
+    args = ap.parse_args()
+
+    index = library_index()
+    mapping = ref_to_doc()
+    text = open(REFS, encoding="utf-8").read()
+    new, added, updated = sync(text, mapping, index)
+
+    joined = sum(1 for r in mapping if mapping[r] in index)
+    print(f"library documents      : {len(index)}")
+    print(f"ledger→ref joins usable: {joined}")
+    print(f"entries added / refreshed: {added} / {updated}")
+
+    stages: dict[str, int] = {}
+    for v in index.values():
+        stages[v["stage"]] = stages.get(v["stage"], 0) + 1
+    print("stages:", ", ".join(f"{k}={v}" for k, v in sorted(stages.items())))
+
+    if new == text:
+        print("\nreferences.ts is up to date")
+        return 0
+    if args.check:
+        print("\nreferences.ts is STALE — run --apply", file=sys.stderr)
+        return 1
+    open(REFS, "w", encoding="utf-8").write(new)
+    print("\nreferences.ts updated")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

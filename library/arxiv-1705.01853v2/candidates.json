@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1705.01853v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "895e0b22c93bca1b83d0a42b4735c2bdd923720cc50dea2ecf3fa50b5a07a5b8",
+  "file": "1705.01853v2.pdf"
+ },
+ "provenance": {
+  "title": "Line Operators in the Standard Model David Tong",
+  "authors": "Department of Applied Mathematics and Theoretical Physics",
+  "arxiv": {
+   "id": "1705.01853",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "12 Jun 2017"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

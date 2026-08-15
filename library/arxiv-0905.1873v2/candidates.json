@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0905.1873v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "d4f785469fafdce623d67c1af8806a081307d3b6b20de52642739e9f38aa66d2",
+  "file": "0905.1873v2.pdf"
+ },
+ "provenance": {
+  "title": "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group",
+  "authors": "E.D. Jurgenson, 1 P. Navr\u00b4 atil,2 and R.J. Furnstahl 1",
+  "arxiv": {
+   "id": "0905.1873",
+   "version": "2",
+   "primary_class": "nucl-th",
+   "stamp_date": "17 Aug 2009"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

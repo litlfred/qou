@@ -1,0 +1,151 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0006111v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "cd99f45d686eb6e235cdb56326775ceded2564111636c87051a933a6a158ca3b",
+  "file": "0006111v2.pdf"
+ },
+ "provenance": {
+  "title": "APPROXIMA TE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane",
+  "authors": null,
+  "arxiv": {
+   "id": "math/0006111",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "16 Jun 2000"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "theorem": 4,
+   "corollary": 2,
+   "lemma": 2,
+   "remark": 1
+  },
+  "formalization_candidates": 8
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Let the sequence (cl)l\u22651 and the integer n be given, then there exists",
+   "section_file": "sections/sec-006-13-approximate-factorization-we-now-give-a-preci.md",
+   "section_title": "Approximate factorization. We now give a precise de\ufb01nition of the approx-",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1",
+   "name": null,
+   "statement": "Let the sequence (cl)l\u22651 and the integer n be given, then there exists",
+   "section_file": "sections/sec-006-13-approximate-factorization-we-now-give-a-preci.md",
+   "section_title": "Approximate factorization. We now give a precise de\ufb01nition of the approx-",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "Let the sequence (cl)l\u22651 and the integer n be given, then there exists",
+   "section_file": "sections/sec-006-13-approximate-factorization-we-now-give-a-preci.md",
+   "section_title": "Approximate factorization. We now give a precise de\ufb01nition of the approx-",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.1",
+   "name": null,
+   "statement": "Letn1,n 2,...n k be positive integers, then for every sequence (cl)l\u22651",
+   "section_file": "sections/sec-007-2-proof-of-theorems-1-and-2.md",
+   "section_title": "Proof of Theorems 1 and 2",
+   "pages": "5-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.3.2",
+   "name": null,
+   "statement": "of [B] one can see that if J \u2044= \u2205, then",
+   "section_file": "sections/sec-008-6-philippe-biane.md",
+   "section_title": "PHILIPPE BIANE",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "now follows by an application of Markov\u2019s inequali ty. \u25a1",
+   "section_file": "sections/sec-008-6-philippe-biane.md",
+   "section_title": "PHILIPPE BIANE",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1",
+   "name": null,
+   "statement": "is a simple consequence of Theorem 1 and of the mom ent-cumulant",
+   "section_file": "sections/sec-008-6-philippe-biane.md",
+   "section_title": "PHILIPPE BIANE",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "As q \u2192 \u221e and \u221aq/N \u2192 c \u2208 [0, +\u221e[, the measure \u03a0q converges",
+   "section_file": "sections/sec-011-31-the-case-of-the-canonical-trace-in-this-secti.md",
+   "section_title": "The case of the canonical trace. In this section we consider the action of Sq",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "One can give an explicit expression for the weight of a given d iagram",
+   "section_file": "sections/sec-013-32-generalization-to-other-tensor-states-leth-h0.md",
+   "section_title": "Generalization to other tensor states. LetH =H0 \u2295H1, be a Z/ 2-graded",
+   "pages": "10-11",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

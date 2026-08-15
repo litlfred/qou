@@ -1,0 +1,151 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1010.5321v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "c6bb20926b1f291fe66fc82b10be9d6a8b51f3b44034d4fd9d111bd4c3767a31",
+  "file": "1010.5321v3.pdf"
+ },
+ "provenance": {
+  "title": "Formulas on hyperbolic volume \u2217 \u00b4A.G.Horv\u00b4 ath Department of Geometry",
+  "authors": "Budapest University of Technology and Economics",
+  "arxiv": {
+   "id": "1010.5321",
+   "version": "3",
+   "primary_class": "math.MG",
+   "stamp_date": "16 Nov 2010"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "theorem": 6,
+   "corollary": 1,
+   "remark": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 8
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Let the edges of an orthosceme be a,b,c , respectively where a\u22a5b and (a,b )\u22a5c. If",
+   "section_file": "sections/sec-012-331-the-3-dimensional-case.md",
+   "section_title": "The 3-dimensional case",
+   "pages": "9-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "This formula can be simpli\ufb01ed in the case of asymptotic ortho scemes. If the edge-",
+   "section_file": "sections/sec-012-331-the-3-dimensional-case.md",
+   "section_title": "The 3-dimensional case",
+   "pages": "9-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "If we substitute to this formula the \ufb01rst-order terms of the T aylor series of the",
+   "section_file": "sections/sec-012-331-the-3-dimensional-case.md",
+   "section_title": "The 3-dimensional case",
+   "pages": "9-13",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "We have two k-dimensional a\ufb03ne subspaces Hk and H \u2032",
+   "section_file": "sections/sec-014-333-the-case-of-dimension-n.md",
+   "section_title": "The case of dimension n",
+   "pages": "13-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": "J. Milnor [7]",
+   "statement": "Opposite dihedral angles of ideal tetrahedron are equal to e ach",
+   "section_file": "sections/sec-015-34-further-results-on-concrete-volumes.md",
+   "section_title": "Further results on concrete volumes",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": "R.Kellerhaus [5]",
+   "statement": "LetR be a Lambert cube with essential angles wk, 0 \u2264wk \u2264",
+   "section_file": "sections/sec-015-34-further-results-on-concrete-volumes.md",
+   "section_title": "Further results on concrete volumes",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": "Y. Mohanty [9]",
+   "statement": "Let O be an ideal symmetric octahedron with all vertices on",
+   "section_file": "sections/sec-015-34-further-results-on-concrete-volumes.md",
+   "section_title": "Further results on concrete volumes",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5",
+   "name": "D. Derevin and A.Mednykh [4]",
+   "statement": "The volume of the hyperbolic tetrahedron T",
+   "section_file": "sections/sec-015-34-further-results-on-concrete-volumes.md",
+   "section_title": "Further results on concrete volumes",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6",
+   "name": "J.Murakami, M.Y ano [10]",
+   "statement": "The volume of the simplex T is",
+   "section_file": "sections/sec-015-34-further-results-on-concrete-volumes.md",
+   "section_title": "Further results on concrete volumes",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2211.08164v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "aff9ff3ef5ac28be3bd457a9e79832ec60e7a69b95c070e09043659fc75d6ce6",
+  "file": "2211.08164v2.pdf"
+ },
+ "provenance": {
+  "title": "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS",
+  "authors": "SEBASTI \u00b4AN REYES-CAROCCA AND PIETRO SPEZIALI",
+  "arxiv": {
+   "id": "2211.08164",
+   "version": "2",
+   "primary_class": "math.AG",
+   "stamp_date": "16 Apr 2024"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "theorem": 3,
+   "remark": 1,
+   "corollary": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "There are in\ufb01nitely many pairwise non-isomorphic, non-hyp erelliptic com-",
+   "section_file": "sections/sec-000-1-introduction-and-statement-of-the-result.md",
+   "section_title": "Introduction and statement of the result",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "A non-hyperelliptic compact Riemann surface X of genus three has",
+   "section_file": "sections/sec-002-3-proof-of-the-main-theorem.md",
+   "section_title": "Proof of the main theorem",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "There is a transitive action on the Weierstrass points on a co mpact",
+   "section_file": "sections/sec-003-4-simple-weierstrass-points.md",
+   "section_title": "Simple Weierstrass points",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.1",
+   "name": null,
+   "statement": "The Weierstrass points of Fermat\u2019s quartic were obtained by Hasse in",
+   "section_file": "sections/sec-003-4-simple-weierstrass-points.md",
+   "section_title": "Simple Weierstrass points",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "For every prime number p /greaterorequalslant5, there are in\ufb01nitely many pairwise non-",
+   "section_file": "sections/sec-008-the-case-of-positive-characteristic.md",
+   "section_title": "The case of positive characteristic",
+   "pages": "8-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

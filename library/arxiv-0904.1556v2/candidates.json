@@ -1,0 +1,149 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0904.1556v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "a1a43786d817f08560d09660297fa55e37cfc3c8c861e12d06c24781f52764f3",
+  "file": "0904.1556v2.pdf"
+ },
+ "provenance": {
+  "title": "The Algebra of Grand Uni\ufb01ed Theories",
+  "authors": "John Baez and John Huerta",
+  "arxiv": {
+   "id": "0904.1556",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "1 May 2010"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "remark": 1,
+   "theorem": 8
+  },
+  "formalization_candidates": 8
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "ably, the weak force interacts only with left-handed partic les and right-",
+   "section_file": "sections/sec-006-222-leptons.md",
+   "section_title": "Leptons",
+   "pages": "17-19",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "The following square commutes:",
+   "section_file": "sections/sec-014-31-the-su5-gut.md",
+   "section_title": "The SU(5) GUT",
+   "pages": "32-42",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "There exists a Lie group homomorphism \u03c8 that makes this triangle",
+   "section_file": "sections/sec-015-32-the-spin10-theory.md",
+   "section_title": "The Spin(10) Theory",
+   "pages": "42-48",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "The following square commutes:",
+   "section_file": "sections/sec-016-33-the-patisalam-model.md",
+   "section_title": "The Pati\u2013Salam Model",
+   "pages": "48-55",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": null,
+   "statement": "There exists an isomorphism of Lie groups",
+   "section_file": "sections/sec-017-34-the-route-to-spin10-via-patisalam.md",
+   "section_title": "The Route to Spin(10) via Pati\u2013Salam",
+   "pages": "55-62",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5",
+   "name": null,
+   "statement": "Taking\u03b8 =\u03b1\u03b2 and h =k\u2113, the following square commutes:",
+   "section_file": "sections/sec-017-34-the-route-to-spin10-via-patisalam.md",
+   "section_title": "The Route to Spin(10) via Pati\u2013Salam",
+   "pages": "55-62",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6",
+   "name": null,
+   "statement": "The following square commutes:",
+   "section_file": "sections/sec-017-34-the-route-to-spin10-via-patisalam.md",
+   "section_title": "The Route to Spin(10) via Pati\u2013Salam",
+   "pages": "55-62",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "8",
+   "name": null,
+   "statement": "GSM/Z6 = SU(5) \u2229 (SO(4) \u00d7 SO(6)) \u2286 SO(10).",
+   "section_file": "sections/sec-019-4-conclusion.md",
+   "section_title": "Conclusion",
+   "pages": "65-73",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "9",
+   "name": null,
+   "statement": "GSM/Z6 = SU(5) \u2229 (Spin(4) \u00d7 Spin(6))/Z2 \u2286 Spin(10).",
+   "section_file": "sections/sec-019-4-conclusion.md",
+   "section_title": "Conclusion",
+   "pages": "65-73",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

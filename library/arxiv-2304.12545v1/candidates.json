@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2304.12545v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "bfc3c2be395b1b2da852c3ddefaf66b3daac043347f1fc9dcc7d19529dfe01ba",
+  "file": "2304.12545v1.pdf"
+ },
+ "provenance": {
+  "title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
+  "authors": "AND THE WORK OF WALTER NEUMANN",
+  "arxiv": {
+   "id": "2304.12545",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "25 Apr 2023"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -127,6 +127,14 @@ export const references: CSLData[] = [
   // ── Garoufalidis 2004 — AJ conjecture / q-holonomic colored Jones ──
   ref({
     id: "garoufalidis2004",
+    library: {
+      docId: "characteristic",
+      dir: "library/characteristic",
+      pdf: "library/characteristic/characteristic.pdf",
+      stage: "candidates",
+      pages: 13,
+      sections: 25,
+    },
     type: "article-journal",
     title: "On the characteristic and deformation varieties of a knot",
     author: [{ family: "Garoufalidis", given: "Stavros" }],
@@ -142,6 +150,15 @@ export const references: CSLData[] = [
   // ── Garoufalidis–Yoon 2024 — 1-loop = adjoint Reidemeister torsion, PROVED for two-bridge knots ──
   ref({
     id: "garoufalidis-yoon-2024",
+    library: {
+      docId: "arxiv-2411.03801v2",
+      dir: "library/arxiv-2411.03801v2",
+      pdf: "library/arxiv-2411.03801v2/2411.03801v2.pdf",
+      stage: "candidates",
+      pages: 24,
+      sections: 14,
+      arxiv: "2411.03801v2",
+    },
     type: "article",
     title: "1-loop equals torsion for two-bridge knots",
     author: [
@@ -188,6 +205,15 @@ export const references: CSLData[] = [
   // ── Dimofte–Garoufalidis 2013 — the 1-loop invariant from the gluing equations ──
   ref({
     id: "dimofte-garoufalidis-2013",
+    library: {
+      docId: "arxiv-1202.6268v2",
+      dir: "library/arxiv-1202.6268v2",
+      pdf: "library/arxiv-1202.6268v2/1202.6268v2.pdf",
+      stage: "candidates",
+      pages: 53,
+      sections: 41,
+      arxiv: "1202.6268v2",
+    },
     type: "article-journal",
     title: "The quantum content of the gluing equations",
     author: [
@@ -285,6 +311,14 @@ export const references: CSLData[] = [
   // ── Garoufalidis–Lê 2005 — colored Jones is q-holonomic (knots AND links) ──
   ref({
     id: "garoufalidis-le-2005",
+    library: {
+      docId: "0309214v3",
+      dir: "library/0309214v3",
+      pdf: "library/0309214v3/0309214v3.pdf",
+      stage: "candidates",
+      pages: 41,
+      sections: 23,
+    },
     type: "article-journal",
     title: "The colored Jones function is q-holonomic",
     author: [
@@ -317,6 +351,15 @@ export const references: CSLData[] = [
   // ── Garoufalidis–Lê 2011 — asymptotics; Borromean VC via Habiro expansion ──
   ref({
     id: "garoufalidis-le-2011",
+    library: {
+      docId: "arxiv-math-0508100v6",
+      dir: "library/arxiv-math-0508100v6",
+      pdf: "library/arxiv-math-0508100v6/0508100v6.pdf",
+      stage: "candidates",
+      pages: 31,
+      sections: 38,
+      arxiv: "math/0508100v6",
+    },
     type: "article-journal",
     title: "Asymptotics of the colored Jones function of a knot",
     author: [
@@ -334,6 +377,15 @@ export const references: CSLData[] = [
   // ── Hakimoglu-Brown 2025 — analytic dilogarithm identities over ℚ(√5) etc. ──
   ref({
     id: "hakimoglu-brown2025",
+    library: {
+      docId: "arxiv-2506.10206v2",
+      dir: "library/arxiv-2506.10206v2",
+      pdf: "library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf",
+      stage: "candidates",
+      pages: 40,
+      sections: 64,
+      arxiv: "2506.10206v2",
+    },
     type: "article",
     title: "Analytic dilogarithm identities",
     author: [{ family: "Hakimoglu-Brown", given: "Cetin" }],
@@ -356,6 +408,14 @@ export const references: CSLData[] = [
   // ── Masbaum 2003 — skein derivation of Habiro's twist-knot formulas ──
   ref({
     id: "masbaum2003",
+    library: {
+      docId: "agt-v3-n1-p17-p",
+      dir: "library/agt-v3-n1-p17-p",
+      pdf: "library/agt-v3-n1-p17-p/agt-v3-n1-p17-p.pdf",
+      stage: "candidates",
+      pages: 20,
+      sections: 8,
+    },
     type: "article-journal",
     title: "Skein-theoretical derivation of some formulas of Habiro",
     author: [{ family: "Masbaum", given: "Gregor" }],
@@ -371,6 +431,15 @@ export const references: CSLData[] = [
   // ── Nguyen–Tran 2021 — strong AJ conjecture proved for the figure-eight ──
   ref({
     id: "nguyen-tran-2021",
+    library: {
+      docId: "arxiv-2006.02042v1",
+      dir: "library/arxiv-2006.02042v1",
+      pdf: "library/arxiv-2006.02042v1/2006.02042v1.pdf",
+      stage: "candidates",
+      pages: 11,
+      sections: 11,
+      arxiv: "2006.02042v1",
+    },
     type: "article-journal",
     title: "The Strong AJ Conjecture for the Figure 8 Knot",
     author: [
@@ -402,6 +471,14 @@ export const references: CSLData[] = [
   // ── Avrin 2012 — knots-on-a-torus elementary-particle model ──
   ref({
     id: "avrin-2012",
+    library: {
+      docId: "symmetry-04-00039-v3",
+      dir: "library/symmetry-04-00039-v3",
+      pdf: "library/symmetry-04-00039-v3/symmetry-04-00039-v3.pdf",
+      stage: "candidates",
+      pages: 77,
+      sections: 37,
+    },
     type: "article-journal",
     title: "Knots on a Torus: A Model of the Elementary Particles",
     author: [{ family: "Avrin", given: "Jack S." }],
@@ -489,6 +566,15 @@ export const references: CSLData[] = [
   // ── Koornwinder–Swarttouw 1992 — q-Fourier / q-Hankel transforms on E_q(2) ──
   ref({
     id: "koornwinderswarttouw1992",
+    library: {
+      docId: "arxiv-1208.2521v1",
+      dir: "library/arxiv-1208.2521v1",
+      pdf: "library/arxiv-1208.2521v1/1208.2521v1.pdf",
+      stage: "candidates",
+      pages: 20,
+      sections: 18,
+      arxiv: "1208.2521v1",
+    },
     type: "article-journal",
     title: "On q-analogues of the Fourier and Hankel transforms",
     author: [
@@ -508,6 +594,15 @@ export const references: CSLData[] = [
   // ── Ciccoli–Koelink–Koornwinder 1999 — big q-Bessel / q-Laguerre spectral duality ──
   ref({
     id: "ciccolikoelinkkoornwinder1999",
+    library: {
+      docId: "arxiv-math-9805023v1",
+      dir: "library/arxiv-math-9805023v1",
+      pdf: "library/arxiv-math-9805023v1/9805023v1.pdf",
+      stage: "candidates",
+      pages: 20,
+      sections: 10,
+      arxiv: "math/9805023v1",
+    },
     type: "article-journal",
     title:
       "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations",
@@ -625,6 +720,14 @@ export const references: CSLData[] = [
   // ── PNAS: Bujack et al. 2022 — non-Riemannian color space ──────
   ref({
     id: "bujack2022",
+    library: {
+      docId: "bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
+      dir: "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
+      pdf: "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf",
+      stage: "candidates",
+      pages: 10,
+      sections: 2,
+    },
     type: "article-journal",
     title: "The non-Riemannian nature of perceptual color space",
     author: [
@@ -1089,6 +1192,15 @@ export const references: CSLData[] = [
   // ── Yekutieli 2015 ────────────────────────────────────────────
   ref({
     id: "yekutieli2015",
+    library: {
+      docId: "arxiv-1007.1250v4",
+      dir: "library/arxiv-1007.1250v4",
+      pdf: "library/arxiv-1007.1250v4/1007.1250v4.pdf",
+      stage: "candidates",
+      pages: 139,
+      sections: 2,
+      arxiv: "1007.1250v4",
+    },
     type: "book",
     title: "Nonabelian Multiplicative Integration on Surfaces",
     author: [
@@ -1808,6 +1920,15 @@ export const references: CSLData[] = [
   // (the Reeb-triad / quaternionic-twist source for bring_tetraplectic.md §4).
   ref({
     id: "fothleitner2003",
+    library: {
+      docId: "arxiv-math-0104104v3",
+      dir: "library/arxiv-math-0104104v3",
+      pdf: "library/arxiv-math-0104104v3/0104104v3.pdf",
+      stage: "candidates",
+      pages: 13,
+      sections: 16,
+      arxiv: "math/0104104v3",
+    },
     type: "article-journal",
     title: "Geometry of Four-Vector Fields on Quaternionic Flag Manifolds",
     author: [
@@ -1944,6 +2065,15 @@ export const references: CSLData[] = [
   // ── Leitner and Pawlowski 2004 ──────────────────────────────────
   ref({
     id: "leitnerpawloski2004",
+    library: {
+      docId: "arxiv-math-0409565v2",
+      dir: "library/arxiv-math-0409565v2",
+      pdf: "library/arxiv-math-0409565v2/0409565v2.pdf",
+      stage: "candidates",
+      pages: 10,
+      sections: 1,
+      arxiv: "math/0409565v2",
+    },
     type: "article-journal",
     title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
     author: [
@@ -2109,6 +2239,15 @@ export const references: CSLData[] = [
   // ── Kirillov 1995 ──────────────────────────────────────────────
   ref({
     id: "kirillov1995",
+    library: {
+      docId: "arxiv-hep-th-9408113v2",
+      dir: "library/arxiv-hep-th-9408113v2",
+      pdf: "library/arxiv-hep-th-9408113v2/9408113v2.pdf",
+      stage: "candidates",
+      pages: 96,
+      sections: 80,
+      arxiv: "hep-th/9408113v2",
+    },
     type: "article-journal",
     title: "Dilogarithm identities",
     author: [
@@ -2220,6 +2359,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "habiro2004cyclotomic",
+    library: {
+      docId: "arxiv-math-0209324v1",
+      dir: "library/arxiv-math-0209324v1",
+      pdf: "library/arxiv-math-0209324v1/0209324v1.pdf",
+      stage: "candidates",
+      pages: 18,
+      sections: 34,
+      arxiv: "math/0209324v1",
+    },
     type: "article-journal",
     title: "Cyclotomic completions of polynomial rings",
     author: [{ family: "Habiro", given: "Kazuo" }],
@@ -2235,6 +2383,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "habiro2008",
+    library: {
+      docId: "arxiv-math-0605314v1",
+      dir: "library/arxiv-math-0605314v1",
+      pdf: "library/arxiv-math-0605314v1/0605314v1.pdf",
+      stage: "candidates",
+      pages: 66,
+      sections: 106,
+      arxiv: "math/0605314v1",
+    },
     type: "article-journal",
     title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres",
     author: [{ family: "Habiro", given: "Kazuo" }],
@@ -2292,6 +2449,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "minkov1996",
+    library: {
+      docId: "arxiv-nucl-th-9605013v1",
+      dir: "library/arxiv-nucl-th-9605013v1",
+      pdf: "library/arxiv-nucl-th-9605013v1/9605013v1.pdf",
+      stage: "candidates",
+      pages: 12,
+      sections: 11,
+      arxiv: "nucl-th/9605013v1",
+    },
     type: "article-journal",
     title:
       "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model",
@@ -3762,6 +3928,15 @@ export const references: CSLData[] = [
   // ── Domagała–Lewandowski (2004): BH entropy from quantum geometry ──
   ref({
     id: "domagala-lewandowski-2004",
+    library: {
+      docId: "arxiv-gr-qc-0407051v2",
+      dir: "library/arxiv-gr-qc-0407051v2",
+      pdf: "library/arxiv-gr-qc-0407051v2/0407051v2.pdf",
+      stage: "candidates",
+      pages: 14,
+      sections: 10,
+      arxiv: "gr-qc/0407051v2",
+    },
     type: "article-journal",
     title: "Black hole entropy from quantum geometry",
     author: [
@@ -3781,6 +3956,15 @@ export const references: CSLData[] = [
   // ── Meissner (2004): BH entropy in loop quantum gravity ──
   ref({
     id: "meissner2004",
+    library: {
+      docId: "arxiv-gr-qc-0407052v1",
+      dir: "library/arxiv-gr-qc-0407052v1",
+      pdf: "library/arxiv-gr-qc-0407052v1/0407052v1.pdf",
+      stage: "candidates",
+      pages: 10,
+      sections: 2,
+      arxiv: "gr-qc/0407052v1",
+    },
     type: "article-journal",
     title: "Black hole entropy in loop quantum gravity",
     author: [{ family: "Meissner", given: "Krzysztof A." }],
@@ -4078,6 +4262,15 @@ export const references: CSLData[] = [
   // ── Bach et al. 2013 (controlled double-slit diffraction) ────
   ref({
     id: "bach2013",
+    library: {
+      docId: "arxiv-1210.6243v1",
+      dir: "library/arxiv-1210.6243v1",
+      pdf: "library/arxiv-1210.6243v1/1210.6243v1.pdf",
+      stage: "candidates",
+      pages: 8,
+      sections: 4,
+      arxiv: "1210.6243v1",
+    },
     type: "article-journal",
     title: "Controlled double-slit electron diffraction",
     author: [
@@ -4348,6 +4541,14 @@ export const references: CSLData[] = [
   // ── Neumann-Zagier 1985 (volumes of hyperbolic 3-manifolds) ───
   ref({
     id: "neumann-zagier1985",
+    library: {
+      docId: "1-s20-0040938385900047-main",
+      dir: "library/1-s20-0040938385900047-main",
+      pdf: "library/1-s20-0040938385900047-main/1-s2.0-0040938385900047-main.pdf",
+      stage: "candidates",
+      pages: 26,
+      sections: 2,
+    },
     type: "article-journal",
     title: "Volumes of hyperbolic three-manifolds",
     author: [
@@ -4416,6 +4617,15 @@ export const references: CSLData[] = [
   // ── Kashaev 1997 (Volume Conjecture) ──────────────────────────
   ref({
     id: "kashaev1997",
+    library: {
+      docId: "arxiv-q-alg-9601025v2",
+      dir: "library/arxiv-q-alg-9601025v2",
+      pdf: "library/arxiv-q-alg-9601025v2/9601025v2.pdf",
+      stage: "candidates",
+      pages: 8,
+      sections: 10,
+      arxiv: "q-alg/9601025v2",
+    },
     type: "article-journal",
     title:
       "The hyperbolic volume of knots from the quantum dilogarithm",
@@ -4430,6 +4640,15 @@ export const references: CSLData[] = [
   // ── van der Veen 2008 (VC for Whitehead chains) ───────────────
   ref({
     id: "vanderveen2008",
+    library: {
+      docId: "arxiv-math-0611181v2",
+      dir: "library/arxiv-math-0611181v2",
+      pdf: "library/arxiv-math-0611181v2/0611181v2.pdf",
+      stage: "candidates",
+      pages: 13,
+      sections: 3,
+      arxiv: "math/0611181v2",
+    },
     type: "article-journal",
     title: "Proof of the volume conjecture for Whitehead chains",
     author: [{ family: "van der Veen", given: "Roland" }],
@@ -4486,6 +4705,15 @@ export const references: CSLData[] = [
   // per-tetrahedron angle sums = 1, per-edge sums = 2 (§2.2-2.3).
   ref({
     id: "garoufalidis2012",
+    library: {
+      docId: "arxiv-1208.1663v2",
+      dir: "library/arxiv-1208.1663v2",
+      pdf: "library/arxiv-1208.1663v2/1208.1663v2.pdf",
+      stage: "candidates",
+      pages: 29,
+      sections: 23,
+      arxiv: "1208.1663v2",
+    },
     type: "article",
     title:
       "The 3D index of an ideal triangulation and angle structures",
@@ -4501,6 +4729,15 @@ export const references: CSLData[] = [
   // CompleteStructureExclusion) with no registry entry.
   ref({
     id: "murakami2004",
+    library: {
+      docId: "arxiv-math-0401084v3",
+      dir: "library/arxiv-math-0401084v3",
+      pdf: "library/arxiv-math-0401084v3/0401084v3.pdf",
+      stage: "candidates",
+      pages: 17,
+      sections: 6,
+      arxiv: "math/0401084v3",
+    },
     type: "article",
     title:
       "Some limits of the colored Jones polynomials of the figure-eight knot",
@@ -4524,6 +4761,15 @@ export const references: CSLData[] = [
   // `2006` is the journal year; the source in the repo is the 2005 preprint.
   ref({
     id: "sniady2006asymptotics",
+    library: {
+      docId: "arxiv-math-0411647v2",
+      dir: "library/arxiv-math-0411647v2",
+      pdf: "library/arxiv-math-0411647v2/0411647v2.pdf",
+      stage: "candidates",
+      pages: 60,
+      sections: 18,
+      arxiv: "math/0411647v2",
+    },
     type: "article",
     title:
       "Asymptotics of characters of symmetric groups, genus expansion and free probability",
@@ -4951,6 +5197,15 @@ export const references: CSLData[] = [
   // ── Garoufalidis–Gu–Mariño 2021 (resurgent structure of quantum knot invariants) ──
   ref({
     id: "garoufalidis-gu-marino2021",
+    library: {
+      docId: "arxiv-2007.10190v2",
+      dir: "library/arxiv-2007.10190v2",
+      pdf: "library/arxiv-2007.10190v2/2007.10190v2.pdf",
+      stage: "candidates",
+      pages: 25,
+      sections: 15,
+      arxiv: "2007.10190v2",
+    },
     type: "article-journal",
     title: "The Resurgent Structure of Quantum Knot Invariants",
     author: [
@@ -4980,6 +5235,15 @@ export const references: CSLData[] = [
   // ── Garoufalidis–Gu–Mariño 2023 (peacock patterns; resurgence in complex CS) ──
   ref({
     id: "garoufalidis-gu-marino2023peacock",
+    library: {
+      docId: "arxiv-2012.00062v3",
+      dir: "library/arxiv-2012.00062v3",
+      pdf: "library/arxiv-2012.00062v3/2012.00062v3.pdf",
+      stage: "candidates",
+      pages: 68,
+      sections: 19,
+      arxiv: "2012.00062v3",
+    },
     type: "article-journal",
     title: "Peacock Patterns and Resurgence in Complex Chern–Simons Theory",
     author: [
@@ -5009,6 +5273,15 @@ export const references: CSLData[] = [
   // ── Gukov–Stošić 2012 (homological algebra of knots and BPS states) ──
   ref({
     id: "gukov-stosic2012",
+    library: {
+      docId: "arxiv-1112.0030v2",
+      dir: "library/arxiv-1112.0030v2",
+      pdf: "library/arxiv-1112.0030v2/1112.0030v2.pdf",
+      stage: "candidates",
+      pages: 46,
+      sections: 7,
+      arxiv: "1112.0030v2",
+    },
     type: "article",
     title: "Homological Algebra of Knots and BPS States",
     author: [
@@ -5043,6 +5316,15 @@ export const references: CSLData[] = [
   // ── Gorsky–Gukov–Stošić 2013 (quadruply-graded colored homology of knots) ──
   ref({
     id: "gorsky-gukov-stosic2013",
+    library: {
+      docId: "arxiv-1304.3481v1",
+      dir: "library/arxiv-1304.3481v1",
+      pdf: "library/arxiv-1304.3481v1/1304.3481v1.pdf",
+      stage: "candidates",
+      pages: 78,
+      sections: 5,
+      arxiv: "1304.3481v1",
+    },
     type: "article",
     title: "Quadruply-Graded Colored Homology of Knots",
     author: [
@@ -5068,6 +5350,15 @@ export const references: CSLData[] = [
   // ── Gukov–Pei–Putrov–Vafa 2017 (GPPV: BPS spectra and 3-manifold invariants) ──
   ref({
     id: "gukov-pei-putrov-vafa2017",
+    library: {
+      docId: "arxiv-1701.06567v2",
+      dir: "library/arxiv-1701.06567v2",
+      pdf: "library/arxiv-1701.06567v2/1701.06567v2.pdf",
+      stage: "candidates",
+      pages: 81,
+      sections: 122,
+      arxiv: "1701.06567v2",
+    },
     type: "article",
     title: "BPS Spectra and 3-Manifold Invariants",
     author: [
@@ -5101,6 +5392,15 @@ export const references: CSLData[] = [
   // ── Kucharski–Reineke–Stošić–Sułkowski 2017 (BPS states, knots and quivers) ──
   ref({
     id: "kucharski-reineke-stosic-sulkowski2017",
+    library: {
+      docId: "arxiv-1707.02991v1",
+      dir: "library/arxiv-1707.02991v1",
+      pdf: "library/arxiv-1707.02991v1/1707.02991v1.pdf",
+      stage: "candidates",
+      pages: 6,
+      sections: 5,
+      arxiv: "1707.02991v1",
+    },
     type: "article",
     title: "BPS States, Knots, and Quivers",
     author: [
@@ -5133,6 +5433,15 @@ export const references: CSLData[] = [
   // ── Garoufalidis–Kashaev 2015 (evaluation of state integrals at rational points) ──
   ref({
     id: "garoufalidis-kashaev2015",
+    library: {
+      docId: "arxiv-1411.6062v2",
+      dir: "library/arxiv-1411.6062v2",
+      pdf: "library/arxiv-1411.6062v2/1411.6062v2.pdf",
+      stage: "candidates",
+      pages: 18,
+      sections: 12,
+      arxiv: "1411.6062v2",
+    },
     type: "article-journal",
     title: "Evaluation of State Integrals at Rational Points",
     author: [
@@ -5159,6 +5468,15 @@ export const references: CSLData[] = [
   // ── Garoufalidis–Zagier 2023 (knots and their related q-series) ──
   ref({
     id: "garoufalidis-zagier2023",
+    library: {
+      docId: "arxiv-2111.06645",
+      dir: "library/arxiv-2111.06645",
+      pdf: "library/arxiv-2111.06645/2304.09377v2.pdf",
+      stage: "candidates",
+      pages: 39,
+      sections: 23,
+      arxiv: "2111.06645",
+    },
     type: "article-journal",
     title: "Knots and Their Related $q$-Series",
     author: [
@@ -5185,6 +5503,15 @@ export const references: CSLData[] = [
   // ── Costin 1995 (generalized Borel summation for rank-one ODE systems) ──
   ref({
     id: "costin1995",
+    library: {
+      docId: "arxiv-math-0608414v1",
+      dir: "library/arxiv-math-0608414v1",
+      pdf: "library/arxiv-math-0608414v1/0608414v1.pdf",
+      stage: "candidates",
+      pages: 47,
+      sections: 9,
+      arxiv: "math/0608414v1",
+    },
     type: "article-journal",
     title:
       "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations",
@@ -5208,6 +5535,15 @@ export const references: CSLData[] = [
   // ── Dimofte–Gaiotto–Gukov 2013 (3-manifolds and 3d indices; DGG flux-sum gluing rule) ──
   ref({
     id: "dimofte-gaiotto-gukov2013",
+    library: {
+      docId: "arxiv-1112.5179v1",
+      dir: "library/arxiv-1112.5179v1",
+      pdf: "library/arxiv-1112.5179v1/1112.5179v1.pdf",
+      stage: "candidates",
+      pages: 79,
+      sections: 23,
+      arxiv: "1112.5179v1",
+    },
     type: "article-journal",
     title: "3-Manifolds and 3d Indices",
     author: [
@@ -5236,6 +5572,14 @@ export const references: CSLData[] = [
   // ── Garoufalidis–Hodgson–Rubinstein–Segerman 2015 (topological invariance of the 3d index) ──
   ref({
     id: "garoufalidis-hodgson-rubinstein-segerman2015",
+    library: {
+      docId: "topologicalinvariance3dindex",
+      dir: "library/topologicalinvariance3dindex",
+      pdf: "library/topologicalinvariance3dindex/topological.invariance.3Dindex.pdf",
+      stage: "candidates",
+      pages: 60,
+      sections: 22,
+    },
     type: "article-journal",
     title:
       "1-Efficient Triangulations and the Index of a Cusped Hyperbolic 3-Manifold",
@@ -5291,6 +5635,15 @@ export const references: CSLData[] = [
   // ── Fantini–Wheeler 2024 (proof of GGM Borel-summability for 4₁, 5₂) ──
   ref({
     id: "fantini-wheeler2024",
+    library: {
+      docId: "arxiv-2410.20973v1",
+      dir: "library/arxiv-2410.20973v1",
+      pdf: "library/arxiv-2410.20973v1/2410.20973v1.pdf",
+      stage: "candidates",
+      pages: 44,
+      sections: 16,
+      arxiv: "2410.20973v1",
+    },
     type: "article",
     title: "Summability for State Integrals of hyperbolic knots",
     author: [
@@ -5319,6 +5672,15 @@ export const references: CSLData[] = [
   // ── McSpirit–Rolen 2025 (quantum modular forms recovered by median resummation) ──
   ref({
     id: "mcspirit-rolen2025",
+    library: {
+      docId: "arxiv-2505.00799v2",
+      dir: "library/arxiv-2505.00799v2",
+      pdf: "library/arxiv-2505.00799v2/2505.00799v2.pdf",
+      stage: "candidates",
+      pages: 32,
+      sections: 15,
+      arxiv: "2505.00799v2",
+    },
     type: "article",
     title: "Quantum Modular Forms and Resurgence",
     author: [
@@ -5342,6 +5704,15 @@ export const references: CSLData[] = [
   // ── McPhail-Snyder 2026 (diagrammatic state integrals for quantized SL₂(ℂ) CS) ──
   ref({
     id: "mcphail-snyder2026",
+    library: {
+      docId: "arxiv-2601.05136v2",
+      dir: "library/arxiv-2601.05136v2",
+      pdf: "library/arxiv-2601.05136v2/2601.05136v2.pdf",
+      stage: "candidates",
+      pages: 19,
+      sections: 15,
+      arxiv: "2601.05136v2",
+    },
     type: "article",
     title:
       "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant",
@@ -5519,6 +5890,14 @@ export const references: CSLData[] = [
   // ── Bilson-Thompson, Markopoulou, Smolin 2007 ─────────────────
   ref({
     id: "bilsonthompson2007",
+    library: {
+      docId: "0603022v2",
+      dir: "library/0603022v2",
+      pdf: "library/0603022v2/0603022v2.pdf",
+      stage: "candidates",
+      pages: 12,
+      sections: 9,
+    },
     type: "article-journal",
     title:
       "Quantum gravity and the standard model",
@@ -6274,6 +6653,14 @@ export const references: CSLData[] = [
   // "HDR Theorem 6.20" from chlouveraki2016 → chlouveraki2016-hdr.
   ref({
     id: "chlouveraki2016-hdr",
+    library: {
+      docId: "hdr",
+      dir: "library/hdr",
+      pdf: "library/hdr/HDR.pdf",
+      stage: "candidates",
+      pages: 75,
+      sections: 27,
+    },
     type: "thesis",
     title: "Hecke algebras, generalisations and representation theory",
     author: [{ family: "Chlouveraki", given: "Maria" }],
@@ -6417,6 +6804,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "faddeev_kashaev1994",
+    library: {
+      docId: "arxiv-hep-th-9310070v1",
+      dir: "library/arxiv-hep-th-9310070v1",
+      pdf: "library/arxiv-hep-th-9310070v1/9310070v1.pdf",
+      stage: "candidates",
+      pages: 9,
+      sections: 5,
+      arxiv: "hep-th/9310070v1",
+    },
     type: "article-journal",
     title: "Quantum dilogarithm",
     author: [
@@ -6454,6 +6850,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "marsh2000",
+    library: {
+      docId: "arxiv-math-0008040v1",
+      dir: "library/arxiv-math-0008040v1",
+      pdf: "library/arxiv-math-0008040v1/0008040v1.pdf",
+      stage: "candidates",
+      pages: 21,
+      sections: 12,
+      arxiv: "math/0008040v1",
+    },
     type: "article",
     title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A",
     author: [
@@ -6467,6 +6872,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "geck-lambropoulou-2004",
+    library: {
+      docId: "arxiv-math-0405508v1",
+      dir: "library/arxiv-math-0405508v1",
+      pdf: "library/arxiv-math-0405508v1/0405508v1.pdf",
+      stage: "candidates",
+      pages: 27,
+      sections: 30,
+      arxiv: "math/0405508v1",
+    },
     type: "article",
     title: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B",
     author: [
@@ -6481,6 +6895,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "webster-williamson-2014-markov",
+    library: {
+      docId: "arxiv-0911.4494v2",
+      dir: "library/arxiv-0911.4494v2",
+      pdf: "library/arxiv-0911.4494v2/0911.4494v2.pdf",
+      stage: "candidates",
+      pages: 14,
+      sections: 7,
+      arxiv: "0911.4494v2",
+    },
     type: "article",
     title: "The geometry of Markov traces",
     author: [
@@ -6495,6 +6918,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "kuhlmann-matusinski-2012",
+    library: {
+      docId: "arxiv-1203.4538v1",
+      dir: "library/arxiv-1203.4538v1",
+      pdf: "library/arxiv-1203.4538v1/1203.4538v1.pdf",
+      stage: "candidates",
+      pages: 15,
+      sections: 7,
+      arxiv: "1203.4538v1",
+    },
     type: "article",
     title: "The exponential-logarithmic equivalence classes of surreal numbers",
     author: [
@@ -6509,6 +6941,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "jing-liu-2021",
+    library: {
+      docId: "arxiv-2104.06067v1",
+      dir: "library/arxiv-2104.06067v1",
+      pdf: "library/arxiv-2104.06067v1/2104.06067v1.pdf",
+      stage: "candidates",
+      pages: 21,
+      sections: 5,
+      arxiv: "2104.06067v1",
+    },
     type: "article",
     title: "On irreducible characters of the Iwahori-Hecke algebra in type A",
     author: [
@@ -6523,6 +6964,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "halverson-1998-markov-weights",
+    library: {
+      docId: "arxiv-math-9806163v1",
+      dir: "library/arxiv-math-9806163v1",
+      pdf: "library/arxiv-math-9806163v1/9806163v1.pdf",
+      stage: "candidates",
+      pages: 23,
+      sections: 25,
+      arxiv: "math/9806163v1",
+    },
     type: "article-journal",
     title: "Weights of Markov Traces on Hecke Algebras",
     author: [
@@ -6537,6 +6987,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "franecki-kapranov-1999",
+    library: {
+      docId: "arxiv-math-9909088v1",
+      dir: "library/arxiv-math-9909088v1",
+      pdf: "library/arxiv-math-9909088v1/9909088v1.pdf",
+      stage: "candidates",
+      pages: 9,
+      sections: 9,
+      arxiv: "math/9909088v1",
+    },
     type: "article",
     title: "The Gauss Map and a Noncompact Riemann-Roch Formula for Constructible Sheaves on Semiabelian Varieties",
     author: [
@@ -6551,6 +7010,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "lu-1999-canonical-bundles",
+    library: {
+      docId: "arxiv-math-9911033v1",
+      dir: "library/arxiv-math-9911033v1",
+      pdf: "library/arxiv-math-9911033v1/9911033v1.pdf",
+      stage: "candidates",
+      pages: 34,
+      sections: 18,
+      arxiv: "math/9911033v1",
+    },
     type: "article",
     title: "On the lower bound estimates of sections of the canonical bundles over a Riemann surface",
     author: [
@@ -6564,6 +7032,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "kontsevich-soibelman-2008",
+    library: {
+      docId: "arxiv-0811.2435v1",
+      dir: "library/arxiv-0811.2435v1",
+      pdf: "library/arxiv-0811.2435v1/0811.2435v1.pdf",
+      stage: "candidates",
+      pages: 148,
+      sections: 43,
+      arxiv: "0811.2435v1",
+    },
     type: "article",
     title: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations",
     author: [
@@ -6578,6 +7055,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "garoufalidis-zagier-2024",
+    library: {
+      docId: "arxiv-2111.06645v3",
+      dir: "library/arxiv-2111.06645v3",
+      pdf: "library/arxiv-2111.06645v3/2111.06645v3.pdf",
+      stage: "candidates",
+      pages: 87,
+      sections: 39,
+      arxiv: "2111.06645v3",
+    },
     type: "article-journal",
     title: "Knots, Perturbative Series and Quantum Modularity",
     author: [
@@ -7021,6 +7507,15 @@ export const references: CSLData[] = [
   // ── Faddeev 1995 — quantum dilogarithm functional equation ────
   ref({
     id: "faddeev1995",
+    library: {
+      docId: "arxiv-hep-th-9504111v1",
+      dir: "library/arxiv-hep-th-9504111v1",
+      pdf: "library/arxiv-hep-th-9504111v1/9504111v1.pdf",
+      stage: "candidates",
+      pages: 7,
+      sections: 3,
+      arxiv: "hep-th/9504111v1",
+    },
     type: "article-journal",
     title:
       "Discrete Heisenberg–Weyl group and modular group",
@@ -7050,6 +7545,14 @@ export const references: CSLData[] = [
   // ── Habiro 2000 / 2002 / 2004 — cyclotomic-completion ring ────
   ref({
     id: "habiro2000",
+    library: {
+      docId: "1172-3",
+      dir: "library/1172-3",
+      pdf: "library/1172-3/1172-3.pdf",
+      stage: "candidates",
+      pages: 10,
+      sections: 9,
+    },
     type: "article-journal",
     title:
       "On the colored Jones polynomials of some simple links",
@@ -7537,6 +8040,14 @@ export const references: CSLData[] = [
   // ── Di Vizio–Zhang 2009 (q-summation and confluence: q→1 shadow statements) ──
   ref({
     id: "divizio-zhang2009",
+    library: {
+      docId: "aif-2009-59-1-347-0",
+      dir: "library/aif-2009-59-1-347-0",
+      pdf: "library/aif-2009-59-1-347-0/AIF_2009__59_1_347_0.pdf",
+      stage: "candidates",
+      pages: 47,
+      sections: 18,
+    },
     type: "article-journal",
     title: "On q-summation and confluence",
     author: [
@@ -7701,6 +8212,15 @@ export const references: CSLData[] = [
   // ── Ramis–Sauloy–Zhang 2013 (local analytic classification of q-difference equations) ──
   ref({
     id: "ramis-sauloy-zhang2013",
+    library: {
+      docId: "arxiv-0903.0853v3",
+      dir: "library/arxiv-0903.0853v3",
+      pdf: "library/arxiv-0903.0853v3/0903.0853v3.pdf",
+      stage: "candidates",
+      pages: 176,
+      sections: 238,
+      arxiv: "0903.0853v3",
+    },
     type: "article-journal",
     title: "Local analytic classification of q-difference equations",
     author: [
@@ -7757,6 +8277,14 @@ export const references: CSLData[] = [
 
   ref({
     id: "zhao2010-standard-relations",
+    library: {
+      docId: "zhao-standard-2010",
+      dir: "library/zhao-standard-2010",
+      pdf: "library/zhao-standard-2010/Zhao_standard_2010.pdf",
+      stage: "candidates",
+      pages: 34,
+      sections: 49,
+    },
     type: "article-journal",
     title: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity",
     author: [{ family: "Zhao", given: "Jianqiang" }],
@@ -7768,6 +8296,14 @@ export const references: CSLData[] = [
   // ── Bugeaud 2011 (RSZ's [14]: NON-INTEGRAL slopes — the case §3.3 excludes) ──
   ref({
     id: "bugeaud2011",
+    library: {
+      docId: "crmath-2011-349-19-20-1037-0",
+      dir: "library/crmath-2011-349-19-20-1037-0",
+      pdf: "library/crmath-2011-349-19-20-1037-0/CRMATH_2011__349_19-20_1037_0.pdf",
+      stage: "candidates",
+      pages: 3,
+      sections: 7,
+    },
     type: "article-journal",
     title:
       "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
@@ -7785,6 +8321,15 @@ export const references: CSLData[] = [
   // ── Cigler–Zeng 2009 (curious q-analogue of Hermite; crossing-weighted combinatorics) ──
   ref({
     id: "cigler-zeng2009",
+    library: {
+      docId: "arxiv-0905.0228v4",
+      dir: "library/arxiv-0905.0228v4",
+      pdf: "library/arxiv-0905.0228v4/0905.0228v4.pdf",
+      stage: "candidates",
+      pages: 19,
+      sections: 8,
+      arxiv: "0905.0228v4",
+    },
     type: "article",
     title: "A curious q-analogue of Hermite polynomials",
     author: [
@@ -7919,6 +8464,15 @@ export const references: CSLData[] = [
   // ── Hikami 2005 (Brieskorn quantum invariants) ────────────────
   ref({
     id: "hikami2005brieskorn",
+    library: {
+      docId: "arxiv-math-ph-0405028v2",
+      dir: "library/arxiv-math-ph-0405028v2",
+      pdf: "library/arxiv-math-ph-0405028v2/0405028v2.pdf",
+      stage: "candidates",
+      pages: 26,
+      sections: 2,
+      arxiv: "math-ph/0405028v2",
+    },
     type: "article-journal",
     title:
       "On the quantum invariant for the Brieskorn homology spheres",
@@ -7974,6 +8528,14 @@ export const references: CSLData[] = [
   // ── Riera–Rodríguez 1992 — the period matrix of Bring's curve ──
   ref({
     id: "riera-rodriguez-1992",
+    library: {
+      docId: "the-period-matrix-of-bring-s-curve-1hik02mwva",
+      dir: "library/the-period-matrix-of-bring-s-curve-1hik02mwva",
+      pdf: "library/the-period-matrix-of-bring-s-curve-1hik02mwva/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf",
+      stage: "candidates",
+      pages: 22,
+      sections: 2,
+    },
     type: "article-journal",
     title: "The period matrix of Bring's curve",
     author: [
@@ -7993,6 +8555,14 @@ export const references: CSLData[] = [
   // ── Braden–Northover 2012 — Bring's curve period matrix + Vector of Riemann Constants + real structure ──
   ref({
     id: "braden-northover-2012",
+    library: {
+      docId: "sigma12-065",
+      dir: "library/sigma12-065",
+      pdf: "library/sigma12-065/sigma12-065.pdf",
+      stage: "candidates",
+      pages: 20,
+      sections: 10,
+    },
     type: "article-journal",
     title:
       "Bring's Curve: its Period Matrix and the Vector of Riemann Constants",
@@ -8013,6 +8583,14 @@ export const references: CSLData[] = [
   // ── Braden–Disney-Hogg 2022 — Bring's curve: old and new ──
   ref({
     id: "braden-disney-hogg-2022",
+    library: {
+      docId: "s40879-023-00706-0",
+      dir: "library/s40879-023-00706-0",
+      pdf: "library/s40879-023-00706-0/s40879-023-00706-0.pdf",
+      stage: "candidates",
+      pages: 46,
+      sections: 22,
+    },
     type: "article",
     title: "Bring's curve: old and new",
     author: [
@@ -8028,6 +8606,15 @@ export const references: CSLData[] = [
   // ── Bilson-Thompson 2005 — helon model (braids → SM fermions) ──
   ref({
     id: "bilson-thompson2005",
+    library: {
+      docId: "arxiv-hep-ph-0503213v2",
+      dir: "library/arxiv-hep-ph-0503213v2",
+      pdf: "library/arxiv-hep-ph-0503213v2/0503213v2.pdf",
+      stage: "candidates",
+      pages: 6,
+      sections: 14,
+      arxiv: "hep-ph/0503213v2",
+    },
     type: "article",
     title: "A topological model of composite preons",
     author: [{ family: "Bilson-Thompson", given: "Sundance O." }],
@@ -8040,6 +8627,15 @@ export const references: CSLData[] = [
   // ── Bigelow 2001 — braid groups are linear (LKB faithful) ─────
   ref({
     id: "bigelow2001",
+    library: {
+      docId: "arxiv-math-0005038v1",
+      dir: "library/arxiv-math-0005038v1",
+      pdf: "library/arxiv-math-0005038v1/0005038v1.pdf",
+      stage: "candidates",
+      pages: 13,
+      sections: 19,
+      arxiv: "math/0005038v1",
+    },
     type: "article-journal",
     title: "Braid groups are linear",
     author: [{ family: "Bigelow", given: "Stephen J." }],
@@ -8055,6 +8651,15 @@ export const references: CSLData[] = [
   // ── Baez–Huerta 2010 — algebra of GUTs ────────────────────────
   ref({
     id: "baez-huerta2010",
+    library: {
+      docId: "arxiv-0904.1556v2",
+      dir: "library/arxiv-0904.1556v2",
+      pdf: "library/arxiv-0904.1556v2/0904.1556v2.pdf",
+      stage: "candidates",
+      pages: 73,
+      sections: 20,
+      arxiv: "0904.1556v2",
+    },
     type: "article-journal",
     title: "The algebra of grand unified theories",
     author: [
@@ -8073,6 +8678,15 @@ export const references: CSLData[] = [
   // ── Tong 2017 — line operators / global SM gauge group ────────
   ref({
     id: "tong2017",
+    library: {
+      docId: "arxiv-1705.01853v2",
+      dir: "library/arxiv-1705.01853v2",
+      pdf: "library/arxiv-1705.01853v2/1705.01853v2.pdf",
+      stage: "candidates",
+      pages: 18,
+      sections: 15,
+      arxiv: "1705.01853v2",
+    },
     type: "article-journal",
     title: "Line operators in the Standard Model",
     author: [{ family: "Tong", given: "David" }],
@@ -8089,6 +8703,15 @@ export const references: CSLData[] = [
   // ── Dubois-Violette 2016 — exceptional quantum geometry ───────
   ref({
     id: "dubois-violette2016",
+    library: {
+      docId: "arxiv-1604.01247v2",
+      dir: "library/arxiv-1604.01247v2",
+      pdf: "library/arxiv-1604.01247v2/1604.01247v2.pdf",
+      stage: "candidates",
+      pages: 37,
+      sections: 13,
+      arxiv: "1604.01247v2",
+    },
     type: "article-journal",
     title: "Exceptional quantum geometry and particle physics",
     author: [{ family: "Dubois-Violette", given: "Michel" }],
@@ -8104,6 +8727,15 @@ export const references: CSLData[] = [
   // ── Furey 2016 — SM from ℂ⊗𝕆 ──────────────────────────────────
   ref({
     id: "furey2016",
+    library: {
+      docId: "arxiv-1611.09182v1",
+      dir: "library/arxiv-1611.09182v1",
+      pdf: "library/arxiv-1611.09182v1/1611.09182v1.pdf",
+      stage: "candidates",
+      pages: 97,
+      sections: 57,
+      arxiv: "1611.09182v1",
+    },
     type: "thesis",
     title: "Standard model physics from an algebra?",
     author: [{ family: "Furey", given: "Cohl" }],
@@ -8116,6 +8748,15 @@ export const references: CSLData[] = [
   // ── Hikami 2004 — colored Jones difference equation (torus knots) ──
   ref({
     id: "hikami2004torus",
+    library: {
+      docId: "arxiv-math-0403224v1",
+      dir: "library/arxiv-math-0403224v1",
+      pdf: "library/arxiv-math-0403224v1/0403224v1.pdf",
+      stage: "candidates",
+      pages: 7,
+      sections: 9,
+      arxiv: "math/0403224v1",
+    },
     type: "article",
     title: "Difference equation of the colored Jones polynomial for torus knot",
     author: [{ family: "Hikami", given: "Kazuhiro" }],
@@ -8128,6 +8769,15 @@ export const references: CSLData[] = [
   // ── Baez–Schreiber 2007 — higher gauge theory (2-connections) ──
   ref({
     id: "baez-schreiber2007",
+    library: {
+      docId: "arxiv-math-0511710v2",
+      dir: "library/arxiv-math-0511710v2",
+      pdf: "library/arxiv-math-0511710v2/0511710v2.pdf",
+      stage: "candidates",
+      pages: 29,
+      sections: 7,
+      arxiv: "math/0511710v2",
+    },
     type: "chapter",
     title: "Higher gauge theory",
     author: [
@@ -8146,6 +8796,15 @@ export const references: CSLData[] = [
   // ── Baez–Huerta 2011 — invitation to higher gauge theory ──────
   ref({
     id: "baez-huerta2011",
+    library: {
+      docId: "arxiv-1003.4485v2",
+      dir: "library/arxiv-1003.4485v2",
+      pdf: "library/arxiv-1003.4485v2/1003.4485v2.pdf",
+      stage: "candidates",
+      pages: 60,
+      sections: 15,
+      arxiv: "1003.4485v2",
+    },
     type: "article-journal",
     title: "An invitation to higher gauge theory",
     author: [
@@ -8164,6 +8823,15 @@ export const references: CSLData[] = [
   // ── Dubois-Violette–Todorov 2018 — exceptional quantum geometry II ──
   ref({
     id: "dubois-violette-todorov2018",
+    library: {
+      docId: "arxiv-1808.08110v1",
+      dir: "library/arxiv-1808.08110v1",
+      pdf: "library/arxiv-1808.08110v1/1808.08110v1.pdf",
+      stage: "candidates",
+      pages: 18,
+      sections: 3,
+      arxiv: "1808.08110v1",
+    },
     type: "article",
     title: "Exceptional quantum geometry and particle physics II",
     author: [
@@ -8179,6 +8847,14 @@ export const references: CSLData[] = [
   // ── DeTurck–Gluck — Gauss linking integral on S³ and H³ ────────
   ref({
     id: "deturck-gluck2008",
+    library: {
+      docId: "0510388v1",
+      dir: "library/0510388v1",
+      pdf: "library/0510388v1/0510388v1.pdf",
+      stage: "candidates",
+      pages: 108,
+      sections: 10,
+    },
     type: "article-journal",
     title:
       "The Gauss linking integral on the 3-sphere and in hyperbolic 3-space",
@@ -8196,6 +8872,14 @@ export const references: CSLData[] = [
   // ── DeTurck–Gluck–Komendarczyk–Melvin–Shonkwiler–Vela-Vick ────
   ref({
     id: "dgkmsv2009",
+    library: {
+      docId: "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+      dir: "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+      pdf: "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf",
+      stage: "candidates",
+      pages: 33,
+      sections: 9,
+    },
     type: "article",
     title:
       "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links",
@@ -8216,6 +8900,15 @@ export const references: CSLData[] = [
   // ── Same collaboration — the Pontryagin/Milnor integral paper ──
   ref({
     id: "dgkmsv2013",
+    library: {
+      docId: "arxiv-1101.3374v1",
+      dir: "library/arxiv-1101.3374v1",
+      pdf: "library/arxiv-1101.3374v1/1101.3374v1.pdf",
+      stage: "candidates",
+      pages: 60,
+      sections: 3,
+      arxiv: "1101.3374v1",
+    },
     type: "article",
     title:
       "Pontryagin invariants and integral formulas for Milnor's triple linking number",
@@ -8236,6 +8929,15 @@ export const references: CSLData[] = [
   // ── Komendarczyk — third-order helicity ───────────────────────
   ref({
     id: "komendarczyk2008",
+    library: {
+      docId: "arxiv-0808.1533v3",
+      dir: "library/arxiv-0808.1533v3",
+      pdf: "library/arxiv-0808.1533v3/0808.1533v3.pdf",
+      stage: "candidates",
+      pages: 30,
+      sections: 4,
+      arxiv: "0808.1533v3",
+    },
     type: "article",
     title:
       "On the third order helicity of magnetic fields on invariant domains in S³",
@@ -8249,6 +8951,14 @@ export const references: CSLData[] = [
   // ── Cantarella–DeTurck–Gluck — the Biot–Savart operator ───────
   ref({
     id: "cantarella-deturck-gluck2001",
+    library: {
+      docId: "candetgl",
+      dir: "library/candetgl",
+      pdf: "library/candetgl/candetgl.pdf",
+      stage: "candidates",
+      pages: 31,
+      sections: 18,
+    },
     type: "article-journal",
     title:
       "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics",
@@ -8267,6 +8977,14 @@ export const references: CSLData[] = [
   // ── Khesin — geometry of higher helicities (survey) ───────────
   ref({
     id: "khesin2003",
+    library: {
+      docId: "helicity03mmj",
+      dir: "library/helicity03mmj",
+      pdf: "library/helicity03mmj/helicity03mmj.pdf",
+      stage: "candidates",
+      pages: 23,
+      sections: 13,
+    },
     type: "article-journal",
     title: "Geometry of higher helicities",
     author: [{ family: "Khesin", given: "Boris A." }],
@@ -8280,6 +8998,15 @@ export const references: CSLData[] = [
   // ── Hornig–Mayer — third-order topological invariant ──────────
   ref({
     id: "hornig-mayer2002",
+    library: {
+      docId: "arxiv-physics-0203048v1",
+      dir: "library/arxiv-physics-0203048v1",
+      pdf: "library/arxiv-physics-0203048v1/0203048v1.pdf",
+      stage: "candidates",
+      pages: 14,
+      sections: 10,
+      arxiv: "physics/0203048v1",
+    },
     type: "article",
     title: "Towards a third-order topological invariant for magnetic fields",
     author: [
@@ -8321,6 +9048,15 @@ export const references: CSLData[] = [
   // library/arxiv-0910.0096v1/0910.0096v1.pdf. Cited for the scope of [bokut2001].
   ref({
     id: "chenliu2009",
+    library: {
+      docId: "arxiv-0910.0096v1",
+      dir: "library/arxiv-0910.0096v1",
+      pdf: "library/arxiv-0910.0096v1/0910.0096v1.pdf",
+      stage: "candidates",
+      pages: 21,
+      sections: 2,
+      arxiv: "0910.0096v1",
+    },
     type: "article",
     title: "Gröbner-Shirshov bases for Coxeter groups I",
     author: [
@@ -8339,6 +9075,15 @@ export const references: CSLData[] = [
   // (same pair, different papers).
   ref({
     id: "bokutchen2015pbw",
+    library: {
+      docId: "arxiv-1502.06472v1",
+      dir: "library/arxiv-1502.06472v1",
+      pdf: "library/arxiv-1502.06472v1/1502.06472v1.pdf",
+      stage: "candidates",
+      pages: 13,
+      sections: 14,
+      arxiv: "1502.06472v1",
+    },
     type: "article",
     title: "Gröbner-Shirshov bases and PBW theorems",
     author: [
@@ -8356,6 +9101,14 @@ export const references: CSLData[] = [
   // library/fd58d8e182edda805fed0946606c5ab82f81/fd58d8e182edda805fed0946606c5ab82f81.pdf.
   ref({
     id: "kimlee2018",
+    library: {
+      docId: "fd58d8e182edda805fed0946606c5ab82f81",
+      dir: "library/fd58d8e182edda805fed0946606c5ab82f81",
+      pdf: "library/fd58d8e182edda805fed0946606c5ab82f81/fd58d8e182edda805fed0946606c5ab82f81.pdf",
+      stage: "candidates",
+      pages: 7,
+      sections: 16,
+    },
     type: "article-journal",
     title: "Gröbner-Shirshov bases for Temperley-Lieb algebras",
     author: [

@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-9504111v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "c5735c1afc5d02ce28bb70e5cf8d58fa64a9db30c80859ff86145b541d333cb9",
+  "file": "9504111v1.pdf"
+ },
+ "provenance": {
+  "title": "PDMI PREPRINT - 1/1995",
+  "authors": "Discrete Heisenberg-Weyl Group and Modular Group",
+  "arxiv": {
+   "id": "hep-th/9504111",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "21 Apr 1995"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "lemma": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "Let \u03b8 be irrational. Then u,v, \u02c6u, \u02c6v constitute an irreducible set of generators in",
+   "section_file": "sections/sec-001-abstract.md",
+   "section_title": "Abstract",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

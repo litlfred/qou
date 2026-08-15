@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1906.12122v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "955e3eda48672e2869a025a83565121851b8ccef1494aeaddac7b4231526460e",
+  "file": "1906.12122v2.pdf"
+ },
+ "provenance": {
+  "title": "Nuclear e\ufb00ective \ufb01eld theory: status and perspectives H.-W. Hammer\u2217 Institut f\u00a8 ur Kernphysik, Technische Universit\u00a8 at Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI",
+  "authors": null,
+  "arxiv": {
+   "id": "1906.12122",
+   "version": "2",
+   "primary_class": "nucl-th",
+   "stamp_date": "6 Apr 2020"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "remark": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "able progress has been achieved in the develop-",
+   "section_file": "sections/sec-021-2-nuclear-potential.md",
+   "section_title": "Nuclear potential",
+   "pages": "42-48",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

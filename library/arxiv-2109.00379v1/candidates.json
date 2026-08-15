@@ -1,0 +1,112 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2109.00379v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "f0c9bd89312a761c77d31da7201670cccd9a8a4e8e1f6292089312b01a30558a",
+  "file": "2109.00379v1.pdf"
+ },
+ "provenance": {
+  "title": "TWISTED NEUMANN\u2013ZAGIER MATRICES",
+  "authors": "STAVROS GAROUFALIDIS AND SEOKBEOM YOON",
+  "arxiv": {
+   "id": "2109.00379",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "1 Sep 2021"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "conjecture": 1,
+   "theorem": 3,
+   "corollary": 1,
+   "remark": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.3",
+   "name": null,
+   "statement": "The Laurent polynomials det( A(t)) and det( B(t)) are palindromic, i.e.",
+   "section_file": "sections/sec-003-13-neumannzagier-matrices-and-their-twisted-vers.md",
+   "section_title": "Neumann\u2013Zagier matrices and their twisted version",
+   "pages": "3-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.4",
+   "name": null,
+   "statement": "With the above notation, there exists a lower triangular matrix P with 1\u2019s",
+   "section_file": "sections/sec-003-13-neumannzagier-matrices-and-their-twisted-vers.md",
+   "section_title": "Neumann\u2013Zagier matrices and their twisted version",
+   "pages": "3-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.5",
+   "name": null,
+   "statement": "\u03c4 CS(T,t ) is invariant under Pachner 2\u20133 moves between ideal triangulations",
+   "section_file": "sections/sec-004-14-the-1-loop-invariant-and-its-twisted-version.md",
+   "section_title": "The 1-loop invariant and its twisted version",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.7",
+   "name": null,
+   "statement": "We have \u03c4 CS(T, 1) = 0 and d",
+   "section_file": "sections/sec-004-14-the-1-loop-invariant-and-its-twisted-version.md",
+   "section_title": "The 1-loop invariant and its twisted version",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1.8",
+   "name": null,
+   "statement": "(assuming Conjecture 1.3) We have",
+   "section_file": "sections/sec-004-14-the-1-loop-invariant-and-its-twisted-version.md",
+   "section_title": "The 1-loop invariant and its twisted version",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.9",
+   "name": null,
+   "statement": "By varying the representation, the adjoint Reidemeister torsion can be ex-",
+   "section_file": "sections/sec-004-14-the-1-loop-invariant-and-its-twisted-version.md",
+   "section_title": "The 1-loop invariant and its twisted version",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

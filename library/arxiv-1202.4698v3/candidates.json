@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1202.4698v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "54171c652161ca5b3bfd107ccf3504d24fa91944ca3ed60b71945f6cb9f61e62",
+  "file": "1202.4698.pdf"
+ },
+ "provenance": {
+  "title": "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories",
+  "authors": "J. Teschner and G. S. Vartanov",
+  "arxiv": {
+   "id": "1202.4698",
+   "version": "3",
+   "primary_class": "hep-th",
+   "stamp_date": "30 Apr 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

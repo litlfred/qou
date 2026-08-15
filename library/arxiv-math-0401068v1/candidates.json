@@ -1,0 +1,98 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0401068v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "8168d7e7f60699781175252c397fc949e5a49790a3d65ecac66e77ed015b66c2",
+  "file": "0401068v1.pdf"
+ },
+ "provenance": {
+  "title": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA",
+  "authors": null,
+  "arxiv": {
+   "id": "math/0401068",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "8 Jan 2004"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "conjecture": 1,
+   "theorem": 3,
+   "lemma": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.1",
+   "name": "The AJ conjecture",
+   "statement": "For every knot K in S3, AK(l, m ) = \u03b5Aq(K)(l, m 2) ,",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.1",
+   "name": null,
+   "statement": "[8] The colored Jones polynomial of the twist knot Kp is given by",
+   "section_file": "sections/sec-001-2-main-theorem.md",
+   "section_title": "Main Theorem",
+   "pages": "2-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": null,
+   "statement": "(Hoste-Shanahan [5]) For p \u2044= \u22121, 0, 1, 2, AKp(l, m ) is given recusively by",
+   "section_file": "sections/sec-001-2-main-theorem.md",
+   "section_title": "Main Theorem",
+   "pages": "2-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.2",
+   "name": null,
+   "statement": "We have Hp(m, x, y ) = yphp(m, x ), where for p \u2265 2, hp(m, x ) is given recursively",
+   "section_file": "sections/sec-001-2-main-theorem.md",
+   "section_title": "Main Theorem",
+   "pages": "2-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": null,
+   "statement": "[15] Every proper q-hypergeometric function F (n, k) satis\ufb01es a k-free recur-",
+   "section_file": "sections/sec-002-4-observations.md",
+   "section_title": "Observations",
+   "pages": "6-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

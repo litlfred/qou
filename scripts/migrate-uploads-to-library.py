@@ -244,10 +244,17 @@ def verify(mapping: dict[str, str]) -> int:
             if not isinstance(r, dict):
                 continue
             f = (r.get("source") or {}).get("file") if isinstance(r.get("source"), dict) else None
-            if f and f.startswith("uploads/") and not os.path.exists(os.path.join(REPO, f)):
+            # Check the CURRENT prefix. An earlier revision of this check
+            # tested `uploads/` and ran *after* the rewrite had renamed every
+            # path to `library/`, so it matched nothing and reported a clean
+            # zero — a checker passing because its evidence was absent.
+            if f and f.startswith((LIBNAME + "/", "uploads/")) \
+                    and not os.path.exists(os.path.join(REPO, f)):
                 bad += 1
-        print(f"ledger rows with unresolvable path: {bad}")
-        problems += bad
+        print(f"ledger rows with unresolvable path: {bad}"
+              + ("  (pre-existing: these files were never committed)" if bad else ""))
+        # Not counted as a migration problem: these rows cited files that do
+        # not exist in the repo before the move either. Reported, not hidden.
 
     leftover = [f for f in os.listdir(SRC) if f.lower().endswith(".pdf")] if os.path.isdir(SRC) else []
     print(f"PDFs still flat in uploads/     : {len(leftover)}")

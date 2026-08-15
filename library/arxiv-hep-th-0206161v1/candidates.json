@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-0206161v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "9530c40215baa02defa98405a7655179d0ceac797ffaf78521b3b6513d554b6d",
+  "file": "0206161v1.pdf"
+ },
+ "provenance": {
+  "title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1",
+  "authors": "Institut des Hautes Etudes Scienti\ufb01ques, Le Bois-Marie, Bu res-sur-Yvette, F-91440 France",
+  "arxiv": {
+   "id": "hep-th/0206161",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "18 Jun 2002"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "remark": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The expressions (3.20)(1.6)(1.8) are the typical localiza tion formulae for the",
+   "section_file": "sections/sec-012-36-residues-and-\ufb01xed-points.md",
+   "section_title": "Residues and \ufb01xed points",
+   "pages": "19-21",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

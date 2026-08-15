@@ -1,0 +1,57 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1502.06472v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "381cd869fcc06f084feb8ceecefc2f389526978d5094c131331dcfbe9744c492",
+  "file": "1502.06472v1.pdf"
+ },
+ "provenance": {
+  "title": "Gr\u00a8 obner-Shirshov bases and PBW theorems\u2217 L. A. Bokut \u2020",
+  "authors": "School of Mathematical Sciences, South China Normal Univer sity",
+  "arxiv": {
+   "id": "1502.06472",
+   "version": "1",
+   "primary_class": "math.RA",
+   "stamp_date": "8 Nov 2014"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "theorem": 2
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Every countable Lie algebra is embeddable into simple 2-generated L ie",
+   "section_file": "sections/sec-013-7-embedding-of-algebras.md",
+   "section_title": "Embedding of algebras",
+   "pages": "8-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "Every countable di\ufb00erential algebra is embeddable into a simple 2-ge nerated",
+   "section_file": "sections/sec-013-7-embedding-of-algebras.md",
+   "section_title": "Embedding of algebras",
+   "pages": "8-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "04procbryden",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "8baffbc6542c34a52724236a5986f58cc30248251dd7d4257f88533feea456c0",
+  "file": "04procbryden.pdf"
+ },
+ "provenance": {
+  "title": "Some computations of Ohtsuki series",
+  "authors": "Nori Jacoby ( nori jacoby@hotmail.com) and Ruth Lawrence",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "theorem": 1,
+   "conjecture": 2
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "For \ufb01xed parity and signs forS and T, \u03bbm is a polyno-",
+   "section_file": "sections/sec-004-23-properties-of-ohtsuki-series.md",
+   "section_title": "Properties of Ohtsuki series",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "If M is a rational homology sphere, then the ratio",
+   "section_file": "sections/sec-011-43-slopes.md",
+   "section_title": "Slopes",
+   "pages": "13-16",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "The slope for the manifolds M \u00b1",
+   "section_file": "sections/sec-011-43-slopes.md",
+   "section_title": "Slopes",
+   "pages": "13-16",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

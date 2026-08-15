@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1707.02991v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "f4f539f74403dd24e5641276bbf7b131e32820662ea471f296e6fd3515cd36fe",
+  "file": "1707.02991v1.pdf"
+ },
+ "provenance": {
+  "title": "BPS states, knots and quivers",
+  "authors": "Piotr Kucharski 1, Markus Reineke 2, Marko Sto\u02c7 si\u00b4 c3,4, and Piotr Su lkowski 1,5",
+  "arxiv": {
+   "id": "1707.02991",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "10 Jul 2017"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}
