@@ -305,3 +305,46 @@ three producers write at import time. An import smoke test is not side-effect
 free in this corpus. It is still the right check — it is what proved route 2's
 alias detection correct — but it needs a `git status` sweep afterwards, which is
 how these were caught.
+
+## State on main, 2026-08-15 (re-measured after main moved 1021 commits)
+
+    literal (proven lossy)   0      exit 0
+    expr    (position-risky) 51
+    drained since baseline   68 files
+    NEW / REGRESSED          0 / 0
+
+The drain survived 1021 commits of other people's work intact. Worth stating
+plainly because it was not obvious it would: 68 producers were edited, and the
+window included at least one incident (recorded on PR #4903 by the #4899 arc)
+where a merge resolution taken "to ours" silently reverted a float64 drain on
+four witnesses. That the `literal` count is still 0 was checked, not assumed.
+
+The bean's original class — the one that landed five times unnoticed — is
+**closed**: the gate is wired in both lists, `literal` is 0, and anything new
+fails.
+
+## The remaining 51 `expr`, and a target handed over from #4899
+
+Still not statically provable, still needing reading rather than a fourth
+automated pass.
+
+But #4899 flagged a related gap that this bean's gate **cannot** see, and it is
+worth recording here because it is the natural next target and the reasoning is
+not obvious:
+
+> `markov_trace_recursive.py` never called `set_compute_dps()`, so every `mpf`
+> in it ran at the default 15 dps — the producer was float64 wearing 60 digits,
+> and `mpf_context_dps_audit` reported the gated paths clean throughout.
+
+A producer that **never raises its working precision at all** is invisible to
+this gate, to the padding scan, and to the raw-float64 scan alike — because the
+numbers it emits are *honestly* float64. There is no fake precision to detect
+and no mpf built too early; the whole computation is simply low. What exposed it
+was tightening a comparison until three assertions failed at digit 17 with
+dyadic tails.
+
+So the gate family has a blind spot shaped exactly like its own premise: every
+member assumes precision was raised *somewhere* and asks whether a value got in
+before it. None asks whether it was raised at all. A "producer never calls
+set_compute_dps / mp.dps and emits a witness" check would be cheap and static,
+and would be a genuinely new axis rather than a fourth variation.
