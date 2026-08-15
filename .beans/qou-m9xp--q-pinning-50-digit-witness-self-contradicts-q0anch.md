@@ -82,3 +82,71 @@ Found while answering a direct question about whether this session's work used
 the correct pin. The work committed so far — `probe_1b_li6_orthogonality`, via
 `y_lambda_at_q0_mpmath(18, q_parameter.Q)` — is **proton**, verified. This
 producer is the next one on that list and is not.
+
+## CORRECTION (2026-08-15): not stale data — a declared manifest entry, and a re-run cannot fix it
+
+I filed this as a self-contradiction to be resolved by re-running the
+producer. Measured: **the re-run reproduces it exactly**, and the mechanism
+is a deliberate design I had not read.
+
+`computations/q0_anchor_manifest.json` (schema `q0-anchor-manifest/v1`)
+carries two lists, `ideal_muon` and the implicit proton remainder, and
+[`substrate/q_parameter.py`](../computations/substrate/q_parameter.py) L90-103
+auto-selects **by the running producer's stem**:
+
+    _stem = Path(sys.argv[0]).stem
+    if _stem in _man.get("ideal_muon", []):
+        _anchor = "ideal"
+
+`q_pinning_50_digit` **is on the `ideal_muon` list**. Under that branch
+`q_at` is *redefined* to return the muon literal `_MUON_Q_STR`. So:
+
+    python3 q_pinning_50_digit.py          -> q_at gives MUON   (stem matches)
+    import q_pinning_50_digit              -> q_at gives PROTON (stem is "-c")
+
+which is why the witness holds muon while a direct import of the same module,
+through the same `q_parameter.py`, gives proton. Nothing is stale; the
+producer is *declared* an ideal-layer (CAL-2 𝔇_β) artifact and behaves as
+declared.
+
+### What is actually wrong, then
+
+Not the number — the **prose around it**. Under the muon override `q_at`
+returns a *literal*; the Newton solve never runs. But the witness says:
+
+    description                     "...derived from Vol(4_1) and m_p/m_e
+                                    (CODATA 2022) through the proton
+                                    substrate identity (q_parameter.q_at
+                                    Newton solve)"
+    calibration_inputs.anchor       "m_p/m_e"
+    physical_anchoring_bound.anchor "m_p/m_e"
+
+Three fields describe a proton derivation that did not execute in the run
+that produced the file. The word "anchor" is doing three different jobs here
+— the *layer* the witness reports at (`q0Anchor`), the *route* the code would
+take absent the override (`calibration_inputs`), and the *uncertainty budget*
+being quoted (`physical_anchoring_bound`) — which is why it reads as a
+contradiction on a grep.
+
+### Revised close
+
+1. ~~Re-run the producer.~~ Does not help; verified.
+2. Fix the prose so each field says which job it is doing, and say plainly
+   that under the `ideal_muon` manifest entry the value is the muon literal,
+   not a Newton solve. **Done in this commit.**
+3. Leave the manifest entry alone. Whether *the* q-pinning witness should be
+   the ideal or the physical artifact is an owner-layer call, not an agent's
+   — AGENTS.md keeps the ideal framing for the canonical chain while the
+   2026-08-07 directive moves *compute* to proton, and this witness is the
+   canonical-chain artifact.
+4. `alpha_k_jones_markov_h12` no longer depends on this: it was repinned to
+   `q_parameter.Q_50_DIGIT_STR` (proton) earlier in this arc, so the
+   downstream hazard this bean flagged is already closed.
+
+### Generalisation worth carrying
+
+**A producer's behaviour can depend on `sys.argv[0]`.** Importing a module to
+inspect its constants can therefore give a *different* answer than running
+it, with no error and no warning. Any anchor investigation that reads a
+constant by import — as my first three probes here did — must confirm by
+running the producer under its own name before concluding.
