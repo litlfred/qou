@@ -602,6 +602,8 @@ export default chapter({
         "hyperbolic-knot-shape-fields",
         "five-two-saddle-sum-rule",
         "kummer-bloch-wigner-identity",
+        "rivin-concavity-one-tetrahedron",
+        "ideal-tetrahedron-relabelling-invariance",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",

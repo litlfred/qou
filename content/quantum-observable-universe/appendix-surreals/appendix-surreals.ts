@@ -107,6 +107,7 @@ export default chapter({
         "classical-limit-stpart",
         "archimedean-stpart",
         "archimedean-stpart-strategy",
+        "hyperreal-limit-transfer",
       ],
     },
     {
