@@ -431,6 +431,10 @@ import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.SpechtCrossDominance
 import QOU.BraidKnot.SpechtCrossKappa
+-- Absolute irreducibility (W2 of the Wedderburn epic): the commutant of every
+-- simple `k[S_n]`-module is the base field. Sorry-free, so it belongs in the
+-- build closure. Pulls `SpechtClassification` in transitively.
+import QOU.BraidKnot.SpechtAbsolutelyIrreducible
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
