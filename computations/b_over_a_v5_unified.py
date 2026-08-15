@@ -43,6 +43,12 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+import mpmath as mp  # noqa: E402
+
+from _precision import fmt, set_compute_dps  # noqa: E402
+
+set_compute_dps()  # before the family callables multiply their constants
+
 # Family-1, Family-2, Family-3 callables (all zero-parameter, fast).
 # AME values + family registries imported from the modules to avoid
 # duplicating magic constants here.
@@ -68,6 +74,18 @@ from alpha_cluster_recursion import (  # noqa: E402
 _FAMILY_1_SYMBOL: dict[tuple[int, int], str] = {
     k: v["symbol"] for k, v in FAMILY_1_REGISTRY.items()
 }
+
+
+def _mpf_default(o):
+    """`json.dumps(default=…)` hook: mpmath values at output precision.
+
+    The three family callables return mpf (they descend from `M_E_MEV` and
+    the `_MPF` knot volumes), so the unified rows carry mpf that `json`
+    cannot encode. Serialize with `_precision.fmt`, never `float(...)`.
+    """
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
 
 
 # ── Plan-H δρ diagnostic (PR #512) ────────────────────────────────
@@ -129,13 +147,13 @@ if _peel_path.exists():
 # ── AME 2020 reference values ─────────────────────────────────────
 # Families 1, 2, 3 imported from their module's AME_BA_MEV; only
 # Family 4 (open atoms with no callable yet) defined locally.
-_FAMILY_4_AME = {
-    (3, 3):  31.99405,       # ⁶Li
-    (3, 4):  39.24452,       # ⁷Li
-    (4, 5):  58.16498,       # ⁹Be
-    (5, 6):  76.20548,       # ¹¹B
-    (7, 7): 104.65877,       # ¹⁴N
-    (9, 10): 147.80137,      # ¹⁹F
+_FAMILY_4_AME: dict[tuple[int, int], mp.mpf] = {
+    (3, 3):  mp.mpf("31.99405"),    # ⁶Li
+    (3, 4):  mp.mpf("39.24452"),    # ⁷Li
+    (4, 5):  mp.mpf("58.16498"),    # ⁹Be
+    (5, 6):  mp.mpf("76.20548"),    # ¹¹B
+    (7, 7):  mp.mpf("104.65877"),   # ¹⁴N
+    (9, 10): mp.mpf("147.80137"),   # ¹⁹F
 }
 AME_BA_MEV = {
     **_FAMILY_1_AME,
@@ -250,7 +268,7 @@ def evaluate(Z: int, N: int) -> dict:
         base["B_AME_MeV"] = B_AME
         if base.get("B_pred_MeV") is not None:
             base["err_MeV"] = base["B_pred_MeV"] - B_AME
-            base["err_pct"] = 100.0 * base["err_MeV"] / B_AME
+            base["err_pct"] = mp.mpf(100) * base["err_MeV"] / B_AME
     # Canonical-input tr_M cross-validation from PR #520's markov_peel
     # production runs — independent path to the Family-1 Hoefsmit-bridge.
     if (Z, N) in _MARKOV_PEEL_TR_M:
@@ -264,9 +282,12 @@ def evaluate(Z: int, N: int) -> dict:
         # the 1-ppb workplan W-1 / GAP-A discussion.
         if B_AME is not None:
             try:
-                tr_M_float = float(_MARKOV_PEEL_TR_M[(Z, N)])
-                if tr_M_float > 0:
-                    base["rho_t_implied"] = B_AME / (M_E_MEV * tr_M_float)
+                # `mp.mpf(...)`, not `float(...)`: the witness stores tr_M as a
+                # full-precision decimal string, and B_AME / (m_e · tr_M) with
+                # an f64 tr_M would cap ρ_t at 16 digits.
+                tr_M_mp = mp.mpf(str(_MARKOV_PEEL_TR_M[(Z, N)]))
+                if tr_M_mp > 0:
+                    base["rho_t_implied"] = B_AME / (M_E_MEV * tr_M_mp)
             except (TypeError, ValueError):
                 pass
     # Plan-H δρ diagnostic: per-atom empirical "true_ρ" exposing GAP-A.
@@ -391,7 +412,7 @@ def main() -> int:
             } for f, rs in family_residuals.items()
         },
         "rows": rows,
-    }, indent=2, ensure_ascii=False) + "\n")
+    }, indent=2, ensure_ascii=False, default=_mpf_default) + "\n")
     print(f"Wrote: {out_path}")
     return 0
 

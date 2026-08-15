@@ -59,6 +59,15 @@ import sys
 from decimal import Decimal
 from pathlib import Path
 
+import mpmath as mp  # noqa: E402 — lifting mass-table-ppb's decimal strings
+
+from _precision import set_compute_dps  # noqa: E402
+
+# Raise dps BEFORE the mass-table decimal strings are lifted, not after:
+# mpmath's default is 15 dps, so `mp.mpf("<44 digits>")` would round on
+# construction and the ratios below would be float64 wearing a long decimal.
+set_compute_dps()
+
 sys.path.insert(0, str(Path(__file__).parent))
 from experimental_constants import M_E_MEV
 from q_parameter import Q as Q_0
@@ -170,9 +179,22 @@ def main():
         # B_pred from direct chain
         B_pred_direct = M_E_MEV * rho * tr_M
         # B_pred from volume-match (mass-table-ppb)
+        #
+        # `mp.mpf(...)` on the way in: `mass_table_ppb.py` was ported to mpmath
+        # (bean qou-3wqg) and now emits `B_pred_MeV` as a 44-digit DECIMAL
+        # STRING rather than a JSON float, because computing it in Python floats
+        # made it wrong past the 8th significant digit. Read raw, the string
+        # reaches `B_pred_direct / B_volmatch` below and raises
+        # `unsupported operand type(s) for /: 'float' and 'str'`.
+        #
+        # Lifting with mpf rather than float keeps the precision the port
+        # created; this ratio is reported to ppb, which is the scale the
+        # correction moved.
         vm = volmatch.get(sym, {})
-        B_volmatch = vm.get("B_pred_MeV")
-        B_AME = vm.get("B_AME_MeV", ref_val)
+        _bv = vm.get("B_pred_MeV")
+        B_volmatch = mp.mpf(_bv) if _bv is not None else None
+        _ba = vm.get("B_AME_MeV", ref_val)
+        B_AME = mp.mpf(_ba) if _ba is not None else None
 
         rows.append({
             "sym":          sym,
@@ -181,14 +203,20 @@ def main():
             "n_native":     n_native,
             "rho":          rho,
             "tr_M_direct":  tr_M,
+            # `str(...)` on the mpf-valued fields: they are mpmath now (see the
+            # lift above) and `json.dump` cannot serialize an mpf — the failure
+            # `alpha_cluster_recursion.py` hit for the same reason. The ratios
+            # are computed in mpmath and stringified only at this sink, so the
+            # precision survives the division and only the JSON encoding is
+            # narrowed.
             "B_pred_direct_MeV": B_pred_direct,
-            "B_volmatch_MeV": B_volmatch,
-            "B_AME_MeV":    B_AME,
+            "B_volmatch_MeV": str(B_volmatch) if B_volmatch is not None else None,
+            "B_AME_MeV":    str(B_AME) if B_AME is not None else None,
             "ratio_direct_to_volmatch": (
-                B_pred_direct / B_volmatch if B_volmatch else None
+                str(B_pred_direct / B_volmatch) if B_volmatch else None
             ),
             "ratio_direct_to_AME": (
-                B_pred_direct / B_AME if B_AME else None
+                str(B_pred_direct / B_AME) if B_AME else None
             ),
             "wedderburn_terms": terms,
             "comparison_label": ref_label,
@@ -202,9 +230,16 @@ def main():
     print("-" * 78)
     for r in rows:
         rd = r["ratio_direct_to_volmatch"]
-        rd_str = f"{rd:>7.4f}" if rd is not None else f"{'—':>7}"
-        bv = f"{r['B_volmatch_MeV']:>10.4f}" if r['B_volmatch_MeV'] is not None else f"{'—':>10}"
-        ba = f"{r['B_AME_MeV']:>10.4f}" if r['B_AME_MeV'] is not None else f"{'—':>10}"
+        # `float(...)` for display, same reason as `bv`/`ba` above: the ratio is
+        # a decimal string in the row now.
+        rd_str = f"{float(rd):>7.4f}" if rd is not None else f"{'—':>7}"
+        # `float(...)` for DISPLAY only — these two are decimal strings in the
+        # row now (mass-table-ppb's mpmath port, bean qou-3wqg), and a format
+        # spec of `.4f` on a str raises `Unknown format code 'f'`. The stored
+        # value keeps its full precision; only this 4-decimal console column is
+        # narrowed.
+        bv = f"{float(r['B_volmatch_MeV']):>10.4f}" if r['B_volmatch_MeV'] is not None else f"{'—':>10}"
+        ba = f"{float(r['B_AME_MeV']):>10.4f}" if r['B_AME_MeV'] is not None else f"{'—':>10}"
         print(f"{r['sym']:<6} {r['n_native']:>2} {r['rho']:>2} "
               f"{r['tr_M_direct']:>9.4f} {r['B_pred_direct_MeV']:>10.4f} "
               f"{bv} {ba} {rd_str}")
