@@ -54,3 +54,230 @@ identity, that is the true blocker to report.
 
 Env: lean-direct against main-repo oleans (worktree has none); NEVER
 `lake build`. Restore recipe in AGENTS.md / lean-environment-setup.md.
+
+
+## PROGRESS 2026-08-14 (PR #5020): step (i)/(ii) parameter IDENTIFIED and verified; step (iii) still open
+
+New sorry-free file QOU/SchurWeyl/SeminormalParam.lean.
+
+The axial-distance rational function the general construction needs is
+
+    a(d) = (q - q^-1) / (1 - q^(-2d))          [seminormalParam]
+
+This is ANCHORED, not asserted: S1 in HoefsmitRep.lean was built by hand to satisfy
+the braid relation with S0, independently of any axial-distance formula, and its (0,0)
+entry is -1/(q^3+q). In [[1,2],[3]] the entry 2 has content 1 and 3 has content -1, so
+sigma_1 acts with axial distance d = -2, and a(-2) = (q-q^-1)/(1-q^4) = -1/(q^3+q).
+Recorded as S1_eq_seminormalParam.
+
+Consequences that simplify the remaining build:
+- a(1) = q and a(-1) = -q^-1 (seminormalParam_one / _neg_one). So the SIZE-1 orbit
+  eigenvalues are the SAME formula as the size-2 blocks. The orbit trichotomy of step (i)
+  is a case split on the BLOCK SIZE only, not on the parameter — one formula throughout.
+- a(d) + a(-d) = q - q^-1 (seminormalParam_add_neg), matching seminormalBlock's trace,
+  so a size-2 orbit is exactly seminormalBlock q (a d) with lower-right entry a(-d) read
+  from the partner tableau. Step (ii) assembly needs no extra choice.
+
+CAVEAT worth carrying: q^2 != 1 is a REAL hypothesis, not cosmetic. At q = +-1 both
+q - q^-1 and 1 - q^4 vanish, so a(-2) evaluates to 0 (Lean 0/0) while S1's entry is
+-1/(2q) != 0. The Hecke algebra degenerates to the group algebra there and the seminormal
+form is not given by this formula. Any general-lambda statement must carry it.
+
+STILL OPEN (the hard core, unchanged): step (iii), the braid relation for arbitrary
+lambda -- the generic size-6 S_3-orbit identity. The suggested probe is now UNBLOCKED:
+with a(d) pinned, parametrise an S_3 orbit by the three cell contents c1,c2,c3, set
+u = q^(-2(c2-c1)), v = q^(-2(c3-c2)); all six axial distances are +-(c2-c1), +-(c3-c2),
++-(c3-c1), so every entry is rational in (q,u,v) with denominators 1-u, 1-v, 1-uv and
+their inverse partners. The 6x6 braid identity is then a rational-function identity in
+three variables. Remaining design step before the probe: fix the basis ordering and the
+two DIFFERENT pairings (sigma_i pairs the 6 tableaux one way, sigma_{i+1} another) -- that
+is what makes it irreducible to 2x2 blocks, and getting it wrong makes the identity false
+rather than hard, so it must be derived, not guessed.
+
+
+## STEP (iii) CLOSED 2026-08-14 (PR #5020) — the size-6 orbit braid is PROVED
+
+New sorry-free file QOU/SchurWeyl/Orbit6Braid.lean: genA_genB_braid proves
+ABA = BAB on a generic size-6 S_3-orbit. Axiom-clean.
+
+Two things made it tractable:
+
+1. THE STATEMENT IS POLYNOMIAL, not rational. The three parameters a1 = a(p),
+   a2 = a(r), a3 = a(p+r) are not independent; eliminating u,v gives ONE relation
+
+       a3 * (a1 + a2 - c) = a1 * a2        (c = q - 1/q)
+
+   and that relation is exactly what the braid needs. Verified sufficient (free
+   random a1,a2,c) and necessary (perturbing a3 breaks it). So the theorem carries
+   no q, no u/v, no integer distances. seminormalParam_mul_rel ties it back to the
+   real seminormal parameters.
+
+2. THE ORIENTATION CONVENTION IS A REAL CONSTRAINT, and it was identified by
+   exhaustive exact-rational search over the four orientation combinations rather
+   than guessed. Both-negative and both-positive HOLD; both mixed combinations FAIL
+   (6/36 nonzero entries in ABA-BAB). Only the consistent case is formalised; the
+   mixed negative is recorded in the docstring as numerical, not formal.
+
+PERFORMANCE NOTE for anyone doing 6x6 matrix identities in Lean: do NOT define the
+matrices as !![...] literals. simp must chase vecCons chains and the triple product
+(1296 scalar terms) times out even at 2M heartbeats on a pure-ring goal. Defining
+via Matrix.of fun i j => match (i:N),(j:N) with ... makes entry lookup a single iota
+reduction: same theorem, 100 seconds.
+
+STILL OPEN (what actually remains of gjg6): steps (i) and (ii) -- enumerate the
+s_i-orbits of SYT lambda (Lean type QOU.Mathlib.StandardYoungTableau; need a map
+Fin (dLambda lam) -> SYT lam and the orbit trichotomy as a decidable case split),
+and assemble the block-diagonal generator matrices from the orbits. This is
+bookkeeping over the tableau combinatorics, not new mathematics: the size-1 and
+size-2 orbit blocks are seminormalBlock (already proved), the size-6 braid is now
+proved, and the parameter is seminormalParam. hoefsmit_seminormal_rep is still a
+Ref'd sorry until that plumbing lands.
+
+
+## STEP (i) PARTIAL 2026-08-14 (PR #5020): entry->cell inverse + the two scalar cases
+
+New sorry-free file QOU/SchurWeyl/TableauCells.lean, axiom-clean.
+
+The StandardYoungTableau structure carries bijOn (the entry map is a bijection from
+cells onto {1..|mu|}) but does not EXPOSE the inverse, and the whole construction needs
+to go backwards: given entry k, which cell holds it. Now:
+
+- cellOf T k  -- the cell holding entry k; total (off-range k |-> (0,0)) so no subtype
+  bookkeeping leaks into the construction. With cellOf_spec, cellOf_mem, entry_cellOf
+  (round trip on entries) and cellOf_unique (round trip on cells -- this is the one that
+  lets you COMPUTE cellOf from an explicit tableau).
+- axialDist T k = axialDistance (cellOf T k) (cellOf T (k+1)) -- the seminormalParam
+  argument for the generator sigma_k.
+- axialDist_of_sameRow = +1 and axialDist_of_sameCol = -1: the two SIZE-1 orbit cases.
+  Composed with seminormalParam_one / _neg_one these are exactly the scalar eigenvalues
+  q and -q^-1.
+
+Worth noting where the content is: sameRow_adjacent / sameCol_adjacent prove that
+CONSECUTIVE entries sharing a row (resp. column) sit in ADJACENT cells -- any cell
+strictly between them would carry an entry strictly between two consecutive integers.
+That is the step where standardness (bijection onto an interval) is used rather than
+mere semistandardness, and it is why the distance is exactly +-1 and not merely signed.
+
+STILL OPEN for step (i): the s_k action on tableaux (swap the entries k, k+1) plus the
+proof that it lands back in SYT lambda exactly in the non-adjacent case -- i.e. the
+size-2 orbit case, which is the remaining substance. Then step (ii), assembling the
+block-diagonal generator from the orbits, and only then does hoefsmit_seminormal_rep
+lose its Ref'd sorry.
+
+
+## STEP (i) ESSENTIALLY DONE 2026-08-14 (PR #5020): the s_k action lands
+
+TableauCells.lean extended, still sorry-free and axiom-clean:
+
+- swapVal k -- the transposition of the VALUES k, k+1, an involution.
+- SwapAdmissible T k -- cells of k and k+1 share neither row nor column. By
+  sameRow_adjacent / sameCol_adjacent this is exactly the complement of the two
+  size-1 cases, i.e. THE size-2 orbit condition.
+- not_sameRow_of_admissible / not_sameCol_of_admissible -- the usable form.
+- swapSsyt -- row_weak' and col_strict' survive the swap. Proof shape: the swap can
+  only disturb order at the two swapped values, and the single bad configuration (k and
+  k+1 in a common row/column) is exactly what admissibility rules out; feeding that
+  negation to omega closes all split_ifs branches at once.
+- bijOn_swapVal -- the value-swap is a bijection of {1..n} (involution + MapsTo, via
+  Set.InvOn.bijOn), so the filling of the swapped tableau is still a bijection.
+- swapTableau -- s_k . T as a StandardYoungTableau. THE SIZE-2 ORBIT PARTNER.
+- swapTableau_involutive -- s_k applied twice is the identity.
+
+CAVEAT recorded in the file: swapTableau_involutive takes admissibility of the SWAPPED
+tableau as a hypothesis rather than deriving it from hadm. It is true (the swap exchanges
+the two cells, so the condition is symmetric) but proving it needs cellOf of the swapped
+tableau, which is not done. Anyone completing step (ii) should close that first -- it is
+small and it removes a hypothesis from every downstream use.
+
+Two Lean gotchas that cost time and will recur:
+1. T.entry vs the SSYT coercion are defeq but NOT syntactically equal, so a `have :=`
+   without a type ascription hands omega two different atoms. Always ascribe.
+2. omega would not use a split_ifs branch hypothesis `0 = k` in the zeros' obligation;
+   discharging the branch explicitly with if_neg was the fix.
+
+STILL OPEN: step (ii) only -- assemble the block-diagonal generator matrix from the
+orbits (map Fin (dLambda lam) -> SYT lam, the orbit trichotomy as a decidable case split,
+and the block-diagonal assembly), then hoefsmit_seminormal_rep loses its Ref'd sorry.
+
+
+## CAVEAT CLOSED 2026-08-15 (PR #5020): admissibility of the swapped tableau is DERIVED
+
+The hypothesis flagged in the previous entry is gone. cellOf_swapTableau_self and
+cellOf_swapTableau_succ compute cellOf of the swapped tableau (the swap exchanges the
+cells of k and k+1, both by cellOf_unique), so swapAdmissible_swapTableau derives
+admissibility of s_k.T from admissibility of T, and swapTableau_involutive now carries
+NO side hypothesis. {T, s_k.T} is a two-element orbit outright.
+
+STEP (i) IS NOW COMPLETE. Everything the block assembly needs about individual tableaux
+is proved: cellOf + its round trips, axialDist, the two size-1 cases (+1 / -1 forcing
+the scalars q and -q^-1), the size-2 orbit partner swapTableau, its involutivity, and
+the derived symmetry of admissibility.
+
+STILL OPEN: step (ii) ONLY -- an enumeration Fin (dLambda lam) -> SYT lam, the orbit
+trichotomy as a decidable case split (same row / same column / admissible), and the
+block-diagonal assembly of the generator matrix. Then hoefsmit_seminormal_rep loses its
+Ref'd sorry. Note the assembly can now cite: seminormalParam for the entry values,
+seminormalBlock for the size-2 blocks, axialDist_of_sameRow/_sameCol for the size-1
+scalars, and Orbit6.genA_genB_braid for the braid relation on the generic orbit.
+
+
+## STEP (ii) RE-SCOPED 2026-08-15 — it is NOT just bookkeeping (correcting my own earlier note)
+
+Earlier entries in this bean called step (ii) "bookkeeping over tableau combinatorics,
+not new mathematics". Having scoped it against the actual API, that is too optimistic and
+is corrected here.
+
+### What IS fully determined now (the generator matrix)
+
+Pick e : SYT lam ~= Fin (dLambda lam) (Fintype.equivFin; noncomputable, arbitrary order --
+the ordering does not matter, only the per-pair orientation does). Write a(d) =
+seminormalParam q d and d_T = axialDist T k. Then rho_lam(sigma_k) has entries, in the
+convention anchored by S1 and used in Orbit6Braid:
+
+    M[T][T]   = a(d_T)                                  -- uniform; covers the scalar
+                                                           cases too, since a(1) = q and
+                                                           a(-1) = -q^-1
+    M[s_k.T][T] = if d_T < 0 then 1 + a(d_T)*a(-d_T)    -- T is the "first" member
+                  else 1
+    M[T'][T]  = 0                                        for T' not in {T, s_k.T}
+
+with s_k.T = swapTableau (defined only when SwapAdmissible; in the size-1 cases the row
+is just the diagonal entry). Every ingredient of that formula is proved: seminormalParam
+(+ its values at +-1), axialDist, axialDist_of_sameRow/_sameCol, swapTableau,
+swapTableau_involutive, swapAdmissible_swapTableau.
+
+### What is NOT bookkeeping (the honest blocker)
+
+Proving the Hecke relations for that matrix at general lambda needs:
+
+1. FAR COMMUTATION (|k-l| >= 2): that the s_k and s_l ACTIONS on tableaux commute, and
+   that admissibility is preserved across them. Not proved; needs its own lemma.
+2. BRAID: an orbit classification for <s_k, s_{k+1}> acting on SYT lam -- each orbit has
+   size 1, 2, 3 or 6 -- AND, for each orbit, a basis correspondence identifying the
+   restriction of rho with the proved matrices. Orbit6Braid proves the generic case in an
+   EXPLICIT basis ordering (indices 0..5 with fixed pairings); matching an arbitrary orbit
+   to it is the missing step, not a rewrite.
+3. The size-3 orbit case is not covered by anything proved so far (sizes 1 and 2 are; 6 is).
+
+So the remaining work is: an s_k action-commutes lemma, an orbit-size classification, a
+per-orbit basis correspondence, and the size-3 case. That is a session or more of genuine
+development, not assembly. Anyone picking this up should not expect the Orbit6Braid result
+to drop straight in.
+
+
+## STEP (ii) BLOCKER 1 of 4 CLOSED 2026-08-15: far commutation of the s_k actions
+
+TableauCells.lean extended, sorry-free and axiom-clean:
+
+- swapVal_comm -- disjoint value-transpositions {k,k+1} and {l,l+1} commute (|k-l| >= 2).
+- cellOf_swapTableau_of_ne -- applying s_l does not move the cell of any entry outside
+  {l, l+1}. This is the workhorse: it is why a far swap cannot disturb anything about k.
+- swapAdmissible_of_far -- admissibility at k survives a far swap at l. DERIVED, so it is
+  supplied automatically at the use site rather than being carried as a hypothesis.
+- swapTableau_comm -- s_k s_l . T = s_l s_k . T for |k-l| >= 2. The tableau-level form of
+  the generator relation sigma_k sigma_l = sigma_l sigma_k.
+
+Remaining step-(ii) blockers, now 3 of 4:
+2. orbit-size classification for <s_k, s_{k+1}> acting on SYT lam (sizes 1,2,3,6);
+3. per-orbit basis correspondence matching Orbit6Braid's explicit index ordering;
+4. the size-3 orbit case, which nothing proved so far covers.
