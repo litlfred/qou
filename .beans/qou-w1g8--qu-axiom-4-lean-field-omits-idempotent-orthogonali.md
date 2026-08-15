@@ -1,10 +1,11 @@
 ---
 # qou-w1g8
 title: QU axiom 4 Lean field omits idempotent orthogonality + completeness (needs Preadditive)
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-15T00:23:28Z
-updated_at: 2026-08-15T00:23:28Z
+updated_at: 2026-08-15T00:38:19Z
 ---
 
 

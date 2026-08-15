@@ -1,10 +1,11 @@
 ---
 # qou-5r17
 title: 'Corpus audit: where does the paper say ''derived'' about something axiomatised?'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-15T00:23:28Z
-updated_at: 2026-08-15T00:23:28Z
+updated_at: 2026-08-15T00:45:18Z
 ---
 
 
