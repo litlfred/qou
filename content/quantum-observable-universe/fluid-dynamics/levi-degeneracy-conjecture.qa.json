@@ -1832,6 +1832,21 @@
         "reviewed_at": "2026-08-15T10:30:59.599Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "151534c76054",
+          "ts": "068451d8c848"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:47.612Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'neither stays uniformly discrete nor flattens completely' defines regime (C); substantive"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1851,6 +1866,21 @@
         "reviewed_at": "2026-08-15T10:30:59.599Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "151534c76054",
+          "ts": "068451d8c848"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:47.671Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read; no setup-then-reframe pivots"
       }
     ],
     "trap-em-dash": [
@@ -1870,6 +1900,21 @@
         "reviewed_at": "2026-08-15T10:30:59.599Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 288 words)"
+      },
+      {
+        "field_hash": {
+          "md": "151534c76054",
+          "ts": "068451d8c848"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:47.734Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'-- hence which regime obtains --' is a true parenthetical"
       }
     ],
     "trap-triples": [
@@ -1889,6 +1934,21 @@
         "reviewed_at": "2026-08-15T10:30:59.599Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 288 words)"
+      },
+      {
+        "field_hash": {
+          "md": "151534c76054",
+          "ts": "068451d8c848"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:47.788Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "regimes (A)/(B)/(C) are the conjecture's exhaustive trichotomy; substantive enumeration"
       }
     ],
     "trap-closing-aphorism": [
@@ -1908,6 +1968,21 @@
         "reviewed_at": "2026-08-15T10:30:59.599Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "151534c76054",
+          "ts": "068451d8c848"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:47.836Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "final line substantive, not quotable-sounding"
       }
     ],
     "trap-meta-commentary": [
@@ -1927,6 +2002,21 @@
         "reviewed_at": "2026-08-15T10:30:59.599Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "151534c76054",
+          "ts": "068451d8c848"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:47.908Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no self-narrated emphasis"
       }
     ],
     "trap-thesis-restatement": [
@@ -1946,6 +2036,21 @@
         "reviewed_at": "2026-08-15T10:30:59.599Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "151534c76054",
+          "ts": "068451d8c848"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:47.951Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no block-final restatement of established content"
       }
     ],
     "trap-performed-warmth": [
@@ -1965,6 +2070,21 @@
         "reviewed_at": "2026-08-15T10:30:59.599Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "151534c76054",
+          "ts": "068451d8c848"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:48.007Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no personal register in institutional prose"
       }
     ],
     "trap-superlative": [
@@ -1984,6 +2104,21 @@
         "reviewed_at": "2026-08-15T10:30:59.599Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "151534c76054",
+          "ts": "068451d8c848"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:48.090Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'is not established here; the open computation the conjecture names' is temporal-status scope, honest"
       }
     ],
     "trap-nonspeakable": [
@@ -2003,8 +2138,23 @@
         "reviewed_at": "2026-08-15T10:30:59.599Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "151534c76054",
+          "ts": "068451d8c848"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:48.231Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "prose parses aloud; no stalled noun chains"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.599Z"
+  "updated_at": "2026-08-15T11:11:48.231Z"
 }

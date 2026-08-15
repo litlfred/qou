@@ -23,7 +23,7 @@ In the brane fluid defined by [substrate parameter](#def:substrate-parameter) $q
 
    For large $k$, the denominator scales as $[k+1]_q - [k]_q \sim q^k \cdot q/(q+1)$. The transfer rate thus drops exponentially at high wavenumbers, enforcing a strict structural UV cutoff.
 
-3. **Finite cascade depth.** The number of active modes participating in the cascade strictly bounds to
+3. **Finite cascade depth.** The number of active modes participating in the cascade is bounded by
 
    $$
      N_{\mathrm{modes}}

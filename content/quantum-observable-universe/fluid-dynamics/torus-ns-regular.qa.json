@@ -1198,6 +1198,22 @@
         "reviewed_at": "2026-08-15T10:30:59.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "cc0bebaa2c76",
+          "ts": "540209c7138c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:45.507Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'Vorticity naturally dissipates rather than forcefully concentrating' is the substantive physical claim of the section",
+        "notes": "pass-with-note: substantive contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1217,6 +1233,21 @@
         "reviewed_at": "2026-08-15T10:30:59.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cc0bebaa2c76",
+          "ts": "540209c7138c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:45.575Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no setup-then-reframe pivots"
       }
     ],
     "trap-em-dash": [
@@ -1236,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:30:59.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 366 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cc0bebaa2c76",
+          "ts": "540209c7138c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:45.626Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: spaced-dash density low; none load-bearing"
       }
     ],
     "trap-triples": [
@@ -1255,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:30:59.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 366 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cc0bebaa2c76",
+          "ts": "540209c7138c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:45.693Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no reflex three-item lists"
       }
     ],
     "trap-closing-aphorism": [
@@ -1274,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:30:59.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cc0bebaa2c76",
+          "ts": "540209c7138c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:45.738Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no quotable-sounding closer"
       }
     ],
     "trap-meta-commentary": [
@@ -1293,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:30:59.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cc0bebaa2c76",
+          "ts": "540209c7138c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:45.779Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no narration of own emphasis"
       }
     ],
     "trap-thesis-restatement": [
@@ -1312,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:30:59.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cc0bebaa2c76",
+          "ts": "540209c7138c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:45.815Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no block-final restatement"
       }
     ],
     "trap-performed-warmth": [
@@ -1331,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:30:59.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cc0bebaa2c76",
+          "ts": "540209c7138c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:45.855Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: institutional register throughout"
       }
     ],
     "trap-superlative": [
@@ -1350,6 +1471,23 @@
         "reviewed_at": "2026-08-15T10:30:59.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cc0bebaa2c76",
+          "ts": "540209c7138c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:45.891Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "severity": "minor",
+        "evidence": "~20 sites: 'The math dictates', 'locks...universally across every single Kummer level', 'seamlessly' x3, 'completely' x3, 'definitively rejecting', 'absolute simplest', 'entirely tame', 'flawless' register throughout",
+        "notes": "proposed: block-wide adverb strip: 'The math dictates'->'Then', 'operates strictly as NS-regular'->'is NS-regular', 'definitively rejecting QOU status'->'so it is not a QOU'; structural, not edited"
       }
     ],
     "trap-nonspeakable": [
@@ -1369,8 +1507,25 @@
         "reviewed_at": "2026-08-15T10:30:59.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cc0bebaa2c76",
+          "ts": "540209c7138c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:45.934Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "severity": "minor",
+        "evidence": "'The mechanically vanishing Euler characteristic specifically prevents the torus from physically supporting a dense universe, explaining precisely why its resulting fluid dynamics remain entirely tame.' stalls aloud",
+        "notes": "proposed: split into short declaratives as part of the trap-superlative rewrite"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.628Z"
+  "updated_at": "2026-08-15T11:11:45.934Z"
 }
