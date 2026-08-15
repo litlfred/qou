@@ -1,0 +1,114 @@
+name: lean-axiom-guard
+
+# Runs `scripts/lean-axiom-guard.py` — the keystone `#print axioms` gate.
+#
+# WHY THIS WORKFLOW EXISTS. The guard has existed since 2026-08-07 and NOTHING
+# INVOKED IT: a repo-wide grep for `lean-axiom-guard` across .github/, scripts/
+# and .claude/ found only a passing mention in a comment. A gate nobody calls
+# protects nothing, which is precisely the failure the guard itself was written
+# to catch in the corpus's *proofs* — a declaration that silently starts
+# depending on `sorryAx`. Bean qou-agrd worried the gate "silently protects
+# nothing" because it could not run; it was worse than that, because even a
+# working gate was never called.
+#
+# WHAT IT NEEDS BUILT — the registry's own modules, and nothing else. Bean
+# qou-agrd recorded that "the guard imports the QOU root, which transitively
+# needs the whole tree built". That is false: the probe imports exactly the
+# modules named in the registry. Measured 2026-08-15, four of five registry
+# oleans were already present and one was missing; building that single module
+# made the gate run clean. `--print-modules` emits the list so this workflow
+# never duplicates the registry.
+#
+# NEUTRAL-SKIP POLICY, and its one deliberate exception. A cold runner (no
+# toolchain, no olean cache) is a runner problem, not a PR defect, so those skip
+# with a ::warning — matching lean-content-siblings.yml. But ONCE THE CACHE IS
+# WARM, exit 2 (environment/setup) FAILS the job rather than skipping. Letting a
+# warm-cache "cannot run" pass silently is the exact hole this workflow closes;
+# a gate that can decline to run without anyone noticing is not a gate.
+#
+# Exit codes: 0 = all as recorded (a PROMOTION also exits 0, with a loud notice
+# in the log); 1 = REGRESSION, something recorded clean now depends on sorryAx;
+# 2 = environment/setup.
+#
+# Bean: qou-agrd.
+
+on:
+  # CI auto-triggers disabled (owner directive 2026-06-30: Actions billing).
+  # Runnable on demand, and locally:
+  #   source scripts/lean-direct-env.sh && scripts/lean-axiom-guard.py
+  workflow_dispatch:
+
+jobs:
+  axiom-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install elan
+        run: |
+          set -o pipefail
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+      - name: Cache oleans (mathlib + QOU)
+        uses: actions/cache@v4
+        with:
+          path: |
+            .lake
+            content/quantum-observable-universe/lean/.lake
+          key: lean-cache-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+          restore-keys: |
+            lean-cache-${{ runner.os }}-
+
+      - name: Restore olean cache (GitHub Release → orphan-branch fallback)
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          ./scripts/lean-cache-restore.sh \
+            || echo "cache restore unavailable — the guard step will neutral-skip"
+
+      - name: Decide whether the environment is warm enough to gate on
+        id: warm
+        run: |
+          if ! command -v lean >/dev/null 2>&1; then
+            echo "::warning::lean toolchain unavailable — axiom guard neutral-skipped"
+            echo "warm=no" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          mathlib_oleans=$(find .lake/packages/mathlib -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
+          if [ "${mathlib_oleans:-0}" -lt 2000 ]; then
+            echo "::warning::olean cache unavailable (${mathlib_oleans:-0} mathlib oleans) — axiom guard neutral-skipped"
+            echo "warm=no" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "warm=yes" >> "$GITHUB_OUTPUT"
+
+      - name: Build the registry's modules (NOT the QOU root)
+        if: steps.warm.outputs.warm == 'yes'
+        working-directory: content/quantum-observable-universe/lean
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          # --print-modules keeps the prerequisite list in ONE place (the
+          # registry inside the guard). Duplicating it here would let the two
+          # drift, and the symptom of that drift is a gate that cannot run —
+          # which is how this gate spent its first week.
+          mods=$(cd "$GITHUB_WORKSPACE" && python3 scripts/lean-axiom-guard.py --print-modules)
+          echo "building: $mods"
+          lake build $mods
+
+      - name: Axiom guard
+        if: steps.warm.outputs.warm == 'yes'
+        run: |
+          source scripts/lean-direct-env.sh
+          set +e
+          python3 scripts/lean-axiom-guard.py
+          rc=$?
+          set -e
+          case "$rc" in
+            0) echo "axiom guard: all declarations match their recorded status" ;;
+            1) echo "::error::AXIOM REGRESSION — a declaration recorded clean now depends on sorryAx. See the log above."
+               exit 1 ;;
+            *) echo "::error::axiom guard could not run (exit $rc) with a WARM cache. This is a real failure: the gate declined to check anything. Do not merge on the assumption it passed."
+               exit 1 ;;
+          esac

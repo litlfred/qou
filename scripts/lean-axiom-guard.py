@@ -20,6 +20,7 @@ Usage
     scripts/lean-axiom-guard.py                 # check every entry
     scripts/lean-axiom-guard.py --filter TAIL   # substring filter on decl name
     scripts/lean-axiom-guard.py --registry F    # alternate registry file
+    scripts/lean-axiom-guard.py --print-modules # the modules that must be built
 
 Exit codes: 0 = all as recorded; 1 = regression; 2 = environment/setup problem.
 A promotion alone exits 0 (it is good news) but prints a LOUD notice.
@@ -32,6 +33,23 @@ The Lean root is `content/quantum-observable-universe/lean`; `LEAN_PATH` must
 already be set for lean-direct use (see `.claude/skills/local/lean-environment-setup.md`
 — restore the olean cache first, and note that a declaration's own module olean
 must exist).
+
+WHAT MUST BE BUILT FIRST — only the registry's own modules
+----------------------------------------------------------
+The probe file imports exactly the modules named in the registry and nothing
+else, so this gate does **not** need the `QOU` root or a whole-tree build.
+`--print-modules` emits that list, so a caller builds precisely the
+prerequisites without duplicating the registry here:
+
+    lake build $(scripts/lean-axiom-guard.py --print-modules)
+
+This is recorded because the opposite was believed, and the belief is what kept
+the gate unrun: bean `qou-agrd` asserted "the guard imports the **`QOU` root**,
+which transitively needs the whole tree built". It does not, and never did.
+Measured 2026-08-15: four of the five registry oleans were already present and
+exactly one — `QOU.BraidsAndKnots.PlancherelNormalisation` — was missing.
+Building that single module took 329 s and made the gate run clean on all seven
+declarations. The diagnosis, not the difficulty, was the blocker.
 """
 
 from __future__ import annotations
@@ -143,6 +161,12 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--registry", type=Path, default=None)
     ap.add_argument("--filter", default=None, help="substring filter on declaration name")
+    ap.add_argument(
+        "--print-modules",
+        action="store_true",
+        help="print the modules this gate needs built (space-separated) and exit; "
+             "feed to `lake build` — the gate does NOT need the QOU root",
+    )
     args = ap.parse_args()
 
     if not LEAN_ROOT.is_dir():
@@ -155,6 +179,11 @@ def main() -> int:
         entries = [e for e in entries if args.filter in e[1]]
     if not entries:
         print("axiom-guard: nothing to check")
+        return 0
+
+    if args.print_modules:
+        # Deliberately bare stdout: this is consumed by `lake build $(...)`.
+        print(" ".join(sorted({m for m, _, _ in entries})))
         return 0
 
     found = run_axiom_check(entries)
