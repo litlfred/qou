@@ -1831,3 +1831,66 @@ by transports, rather than three more explicit chains — §4z is the `|D₁| = 
 with transports inserted where the runs are longer. Note `(3,2)` is also 15 steps
 like `(2,2)`, which supports that reading: lengthening `D₁` alone does not add
 steps, only lengthening `E₂` does — compare `(2,2) → (2,3)`, 15 → 19.
+
+## §4aa — depths `i−3` and `i−2` (1) — and a correction on the corner's shape
+
+`(a, b) = (3, 2)`. Taken next because **nothing in it is quadratic**: all fifteen
+steps apply a two-word monic rule and every stage has exactly two terms, so
+`monicStep` discharges the whole chain and `h` never appears. Six rules occur —
+Bokut–Shiao at `(i−2,i−1,i−3)`, the braid rule at `(i−3,i−2)`, the three
+far-commutations `σᵢσᵢ₋₂`, `σᵢσᵢ₋₃`, `σᵢ₋₁σᵢ₋₃`, and the composition's own first
+rule — over four generators:
+
+    spoly = x y z w y x y z  −  y x y z w y z x
+
+with `x = σᵢ`, `y = σᵢ₋₁`, `z = σᵢ₋₂`, `w = σᵢ₋₃`. Nine steps take the second
+term to `z y z w x y z w`, six take the first to the same word.
+
+**Correction: there is no shorter chain to find.** Last turn I suggested the
+three remaining corner cases would come out as §4z's skeleton with transports
+inserted, and derived a candidate chain of `2a+1` and `a+b+1` steps — 10 for
+`(2,2)` against the engine's 15. That is wrong. Reducing the two terms
+*separately* to normal form takes
+
+    (2,2)  7 + 8 = 15     (3,2)  8 + 7 = 15
+    (2,3)  9 + 10 = 19    (3,3)  12 + 13 = 25
+
+exactly the engine's totals. So the S-polynomial's chain **is** the two
+reductions laid end to end, with no shared intermediate to cut, and the earlier
+derivation had a step in the wrong direction — it transported a generator
+leftwards past a letter where the rewrite only goes rightwards. Worth recording
+because the same mistake is easy to repeat: `farCommRelation` orients
+`σᵢσⱼ → σⱼσᵢ` with the *larger* index first, so the big letter moves right and
+only right.
+
+It also means the corner is **not** one family with a uniform chain in `(a, b)` —
+`(2,2)` needs the quadratic rule twice and `(3,2)` not at all, at the same length
+of 15. Each corner case is its own explicit chain.
+
+## Running total at n = 4, rule level
+
+      proved                  90   all general in n
+      remaining                2
+
+    inclusion compositions    22   §4m   (all)
+
+**The last two:**
+
+    (2,3)  B231 × B230   19 steps
+    (3,3)  B230 × B230   25 steps
+
+Both are mechanical now: extract the chain, classify each step's rule as monic or
+quadratic, and generate. `(3,3)` at 25 steps is the largest single obligation in
+the arc. The generator script pattern used for §4z and §4aa — a table of
+`(rule, a, b, W, W')` per step, expanded into `monicStep` applications, with the
+quadratic steps written by hand — is what makes them tractable; both sections
+went in with only a hypothesis-order slip and lint to fix.
+
+**Scope note, for whoever picks this up.** These counts are the `n = 4`
+enumeration, which is what `§4k` computes and what the bean has tracked
+throughout. Every *family* is proved general in `n`, but the corner sections
+§4z, §4aa and the two remaining are general in `n` at **fixed depths** — `(a,b)`
+pinned. Closing all 92 therefore settles `n = 4` and every family that occurs
+there; the general-`n` theorem additionally needs the corner for arbitrary
+`(a, b)`, which is still open and is the one genuinely unfinished piece of
+mathematics rather than of bookkeeping.
