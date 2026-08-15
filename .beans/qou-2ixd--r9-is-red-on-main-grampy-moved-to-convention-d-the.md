@@ -242,3 +242,59 @@ value. Not touched here; flagged.
    in a weight or trace expression, in a file that otherwise reads as D. That
    is a well-defined scan and would have found all four above.
 2. `classify()` has no sage-examples bucket.
+
+---
+
+## Round 4: a detector for C-specialised closed forms
+
+The blind spot round 3 found by hand is now scanned for. `scan_closed_forms`
+flags a **half-integer power of `q` inside a trace or Wedderburn-weight
+binding, in a file that has already migrated to D**. Under D those quantities
+are rational in `q`, so a square root in one is `z_C` showing through.
+
+### It was built too broad first, and the corpus said so
+
+The first version matched any half-power of `q` in a D-migrated file: **50
+sites**, nearly all legitimate. `q^{1/2}` is not a convention marker on its
+own — `q^{1/2}+q^{-1/2}` is `[2]_{sqrt q}`, the Temperley–Lieb loop parameter
+at half-argument, and it appears in Wenzl positivity, pair-skein formulas, and
+the Jones change of variable `t = q^{-2}`, `A^2 = -q`.
+`trace-convention-audit.ts` had already recorded exactly this: 58 content files
+carry the expression, and flagging them *"would repeat the loose-grep error
+that once reported 70 producers where the truth was 13."*
+
+I repeated it anyway, in a new detector, and had to be told by the output. The
+narrowing is to bindings whose NAME says trace or weight (`trM`, `W2`,
+`y_lambda`, `wenzl`, `hopf`, `census`), which is the claim the detector
+actually makes. **50 -> 4.**
+
+### It rediscovers the site that was found by hand
+
+`tools/pyhecke/python/pyhecke/gram.py:637  tr_m_mp <- sqrt(q)` — found
+independently, having originally cost a manual read of the module. That is the
+test that matters for a detector built after the fact.
+
+### The four
+
+| site | binding | status |
+|---|---|---|
+| `pyhecke/gram.py:637` | `tr_m_mp` | qou-w8zz's scope, registered in R9/R10 |
+| `c_3_categorical_derivation_attempt.py:184` | `trM_hopf` | NEW, unverified |
+| `from_scratch/wedderburn_markov.py:191` | `wenzl_y_lambda` | NEW, unverified |
+| `probes/qbeta_5two_categorical_markov_volume_probe.py:132` | `ocneanu_weights` | NEW — but the Ocneanu trace is the FULL-Hecke trace with its own normalisation, so this one may be correct as written |
+
+A fifth was `lepton_t2n_torus_tower.trM_hopf_census_form`, the C reference I
+kept deliberately in round 3. Renamed `trM_hopf_census_form_C` so the label
+lives in the NAME rather than only the docstring — which is what the audit's
+`DELIBERATE` exemption keys on, and what the registry rule asks for. Producer
+re-run: 21 assertions, all passed.
+
+Selftest 30 -> 37. Six of the seven new fixtures pin the NARROWING rather than
+the matching — over-breadth is this detector's whole risk.
+
+## Next
+
+1. Verify the three new candidates individually (as round 3 did: derive the
+   general identity, check it reproduces the C closed form at `z_C`, then
+   rewrite in terms of `z`). `ocneanu_weights` may be a true negative.
+2. `classify()` still has no sage-examples bucket.

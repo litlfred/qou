@@ -218,6 +218,193 @@ def blocked_symbols(repo: pathlib.Path):
     return out
 
 
+#: A name that plausibly denotes the substrate parameter.
+_Q_LIKE = re.compile(r"^_?[qQ][A-Za-z0-9_]{0,6}$")
+
+#: A binding that names a Markov trace or a Wedderburn weight -- the
+#: quantities that are rational in q under convention D, so a half-integer
+#: power in one is z_C showing through.
+TRACE_OR_WEIGHT = re.compile(
+    r"tr_?M|trace|^W\d|_W\d|\bW\d+\b|y_lam|y_lambda|weight|wenzl|hopf|census",
+    re.I)
+
+
+def _is_q_like(node: ast.AST) -> bool:
+    return isinstance(node, ast.Name) and bool(_Q_LIKE.match(node.id))
+
+
+def _half_integer(node: ast.AST):
+    """If `node` is a half-but-not-whole number, return it; else None.
+
+    Accepts the literal `0.5`/`1.5`, `mp.mpf("1.5")`, `sp.Rational(3, 2)` and
+    `sp.Rational(1, 2)` — the spellings this corpus actually uses for a
+    half-integer exponent.
+    """
+    if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
+        v = float(node.value)
+        return v if (v * 2) % 2 == 1 else None
+    if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.USub):
+        inner = _half_integer(node.operand)
+        return None if inner is None else -inner
+    if isinstance(node, ast.Call):
+        fn = ast.unparse(node.func)
+        if fn.endswith("mpf") and node.args:
+            return _half_integer(node.args[0]) if not isinstance(
+                node.args[0], ast.Constant) or not isinstance(
+                node.args[0].value, str) else (
+                    float(node.args[0].value)
+                    if (float(node.args[0].value) * 2) % 2 == 1 else None)
+        if fn.endswith("Rational") and len(node.args) == 2:
+            try:
+                num, den = node.args[0].value, node.args[1].value
+                return num / den if den == 2 and num % 2 == 1 else None
+            except (AttributeError, TypeError, ZeroDivisionError):
+                return None
+    return None
+
+
+def scan_closed_forms(roots=ROOTS):
+    """Find CONVENTION-C-SPECIALISED CLOSED FORMS -- the third blind spot.
+
+    Migrating `z` is not migrating the file. Quantities DERIVED from `z` get
+    written out in closed form, and a closed form derived under convention C
+    carries `z_C`'s square root where the general identity has none:
+
+        tr_M(sigma_1^2) = h*z + 1        at z_C  ->  1 + (q-1)/q^{1/2}
+        y_(2)  = (q*z + 1)/(q^2 + 1)     at z_C  ->  (q^{3/2}+q+1)/(q^3+q^2+q+1)
+
+    `scan()` cannot see either: it keys on an assignment target containing
+    `z`, and these are named `trM_sigma1_sq`, `W2`, `W11`, `census_hopf`. Four
+    such sites had to be found by hand after the producers they live in were
+    already reported migrated, and one of them (`trM_symbolic`) was missed even
+    then -- caught only because the file cross-checks its symbolic path against
+    its numeric one.
+
+    So the fingerprint is not the name, it is the EXPONENT. Convention D is
+    rational in `q`; a half-integer power of the substrate parameter cannot
+    arise from it. Two shapes are matched:
+
+        sqrt(q) / q**0.5 / q**1.5 / q**mpf("1.5") / q**Rational(3,2)
+        rt = sqrt(q)  ...  rt**3            (indirect, one hop)
+
+    `sqrt` of a COMPOUND expression is not matched — `mp.sqrt(q**4+q**2+1)` is
+    a legitimate polynomial norm, not `q^{1/2}`.
+
+    Reported only for files that ALSO define `z` the convention-D way: in a
+    file still wholly on C a square root is expected and is `scan()`'s
+    business, whereas in a migrated file it is a leftover.
+
+    ## Narrowed to trace/weight bindings, deliberately
+
+    The first version of this matched any half-power of `q` in a D-migrated
+    file and returned 50 sites, most of them legitimate. `q^{1/2}` is not by
+    itself a convention-C marker: `q^{1/2}+q^{-1/2}` is `[2]_{sqrt q}`, the
+    Temperley–Lieb loop parameter at half-argument, and it turns up in Wenzl
+    positivity, in pair-skein formulas, and in the Jones variable change
+    `t = q^{-2}`, `A^2 = -q`. `trace-convention-audit.ts` records the same
+    finding on the content side: 58 files carry the expression and flagging
+    them "would repeat the loose-grep error that once reported 70 producers
+    where the truth was 13".
+
+    So the match is narrowed to a half-power appearing in a binding whose NAME
+    says it is a trace or a Wedderburn weight — `trM`, `tr_m`, `W2`, `W11`,
+    `y_lambda`, `weight`, `hopf`, `census`. That is exactly the claim the
+    detector makes: those quantities are rational in `q` under D, so a square
+    root in one is `z_C` showing through. A half-power anywhere else is
+    somebody's legitimate `sqrt`, and not this detector's business.
+
+    Bindings whose name declares convention C (`..._C`, `census_hopf_C`) are
+    exempt, matching how `scan()` treats deliberately C-named targets: a
+    labelled cross-convention reference is a comparison, not a defect.
+    """
+    out = []
+    for r in roots:
+        base = pathlib.Path(r)
+        if not base.exists():
+            continue
+        for p in sorted(base.rglob("*.py")):
+            sp_ = str(p)
+            if "_deprecated" in sp_:
+                continue
+            try:
+                src = p.read_text()
+                tree = ast.parse(src)
+            except (SyntaxError, UnicodeDecodeError, OSError):
+                continue
+            # Only files that have already moved to D. Elsewhere a square root
+            # is the unmigrated z itself, which `scan` already reports.
+            if "**3" not in "".join(src.split()).replace("* *", "**"):
+                continue
+            if not any(_defines_convention_d(src, t.id)
+                       for n in ast.walk(tree)
+                       if isinstance(n, ast.Assign)
+                       for t in n.targets if isinstance(t, ast.Name)) \
+               and not any(_returns_convention_d(fn) for fn in ast.walk(tree)
+                           if isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef))):
+                continue
+
+            # locals bound to sqrt(q), for the one-hop `rt**3` shape
+            roots_of_q = {
+                t.id for n in ast.walk(tree) if isinstance(n, ast.Assign)
+                for t in n.targets if isinstance(t, ast.Name)
+                if isinstance(n.value, ast.Call)
+                and ast.unparse(n.value.func).endswith("sqrt")
+                and n.value.args and _is_q_like(n.value.args[0])
+            }
+
+            def _half_power_in(node):
+                """First half-power of q inside `node`, or None."""
+                for n in ast.walk(node):
+                    if isinstance(n, ast.Call) and ast.unparse(n.func).endswith("sqrt") \
+                            and n.args and _is_q_like(n.args[0]):
+                        return f"sqrt({ast.unparse(n.args[0])})"
+                    if isinstance(n, ast.BinOp) and isinstance(n.op, ast.Pow):
+                        if _is_q_like(n.left) and _half_integer(n.right) is not None:
+                            return ast.unparse(n)
+                        if (isinstance(n.left, ast.Name) and n.left.id in roots_of_q
+                                and isinstance(n.right, ast.Constant)
+                                and isinstance(n.right.value, int)
+                                and n.right.value % 2 == 1):
+                            return f"{ast.unparse(n)}  (with {n.left.id} = sqrt(q))"
+                return None
+
+            # Only bindings that NAME a trace or a Wedderburn weight. See the
+            # docstring: a half-power elsewhere is somebody's legitimate sqrt.
+            for n in ast.walk(tree):
+                names, value = [], None
+                if isinstance(n, ast.Assign) and n.value is not None:
+                    names = [t.id for t in n.targets if isinstance(t, ast.Name)]
+                    value = n.value
+                elif isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    names, value = [n.name], n
+                if not names or value is None:
+                    continue
+                if not any(TRACE_OR_WEIGHT.search(nm) for nm in names):
+                    continue
+                if any(DELIBERATE.search(nm) for nm in names):
+                    continue
+                hit = _half_power_in(value)
+                if hit:
+                    out.append((sp_, getattr(value, "lineno", n.lineno),
+                                f"{names[0]} <- {hit}"))
+    return out
+
+
+def _returns_convention_d(fn) -> bool:
+    """Does this function return `q**3/(q**2+1)`?"""
+    for r in ast.walk(fn):
+        if not isinstance(r, ast.Return) or r.value is None:
+            continue
+        v = r.value
+        while isinstance(v, ast.UnaryOp) and isinstance(v.op, ast.UAdd):
+            v = v.operand
+        s = "".join(ast.unparse(v).split())
+        b = s.split("**3", 1)[0]
+        if b and s in (f"{b}**3/({b}**2+1)", f"{b}**3/(1+{b}**2)"):
+            return True
+    return False
+
+
 def scan_reexports(roots=ROOTS, repo: pathlib.Path = None):
     """Find where a registry-BLOCKED convention-C symbol escapes its module.
 
@@ -477,7 +664,37 @@ def selftest() -> int:
                 n += is_c_form(v) or bool(is_c_form_halfarg(v))
         return n
 
+    # The closed-form scanner. Its whole risk is over-breadth -- the first
+    # version returned 50 sites in D-migrated files, nearly all legitimate
+    # square roots, which is the loose-grep error this repo has now made
+    # twice. These fixtures pin the narrowing.
+    def _cf(src: str) -> int:
+        import tempfile
+        d = pathlib.Path(tempfile.mkdtemp())
+        (d / "m.py").write_text("z = q ** 3 / (q ** 2 + 1)\n" + src)
+        cwd = pathlib.Path.cwd()
+        try:
+            import os
+            os.chdir(d.parent)
+            return len(scan_closed_forms(roots=(d.name,)))
+        finally:
+            os.chdir(cwd)
+
     checks += [
+        ("a trace closed form with sqrt(q) is flagged",
+         _cf("def trM_hopf(q):\n    return 1 + (q - 1) / mp.sqrt(q)\n") == 1),
+        ("a Wedderburn weight with q**1.5 is flagged",
+         _cf("def wenzl_weights(q):\n    W2 = (q ** 1.5 + q + 1) / d\n    return W2\n") >= 1),
+        ("`rt = sqrt(q)` then `rt**3` is flagged through the alias",
+         _cf("rt = sp.sqrt(q)\nW2 = (rt ** 3 + q + 1) / d\n") == 1),
+        ("sqrt of a POLYNOMIAL is not a half-power of q",
+         _cf("def trM_x(q):\n    return mp.sqrt(q ** 4 + q ** 2 + 1)\n") == 0),
+        ("a half-power OUTSIDE a trace/weight binding is left alone",
+         _cf("def loop_param(q):\n    return mp.sqrt(q) + 1 / mp.sqrt(q)\n") == 0),
+        ("a deliberately C-named trace form is exempt",
+         _cf("def trM_hopf_census_form_C(q):\n    return 1 + (q - 1) / mp.sqrt(q)\n") == 0),
+        ("a file with no convention-D z is not scanned at all",
+         len(scan_closed_forms(roots=("nonexistent-dir-xyz",))) == 0),
         ("a bare `return 1/(sqrt(q)+1/sqrt(q))` is found",
          _returns_found("def z_factor(q):\n    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))\n") == 1),
         ("mpmath's precision-pinning unary + does not hide it",
@@ -538,6 +755,15 @@ def main() -> int:
     # deriving the label from the registry instead of the path.
     actionable = sum(v for k, v in buckets.items() if "BLOCKED on C by design" not in k)
     print(f"\n  ACTIONABLE (excludes blocked-by-design): {actionable} sites")
+
+    closed = scan_closed_forms()
+    if closed:
+        print(f"\n  C-SPECIALISED CLOSED FORMS: {len(closed)} trace/weight binding(s) in "
+              f"convention-D files still carry a half-integer power of q.")
+        print("  Migrating z is not migrating the file: h*z+1 and (q*z+1)/(q^2+1) are")
+        print("  rational under D, so a square root in one is z_C showing through.")
+        for path, line, what in closed:
+            print(f"    {path}:{line}   {what}")
 
     leaks = scan_reexports(repo=pathlib.Path("."))
     if leaks:

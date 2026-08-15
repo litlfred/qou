@@ -102,7 +102,7 @@ def trM_sigma1_pow(q, k):
     return W2 * q**k + W11 * (-1 / q) ** k
 
 
-def trM_hopf_census_form(q):
+def trM_hopf_census_form_C(q):
     """CONVENTION C census Hopf form tr_M(sigma_1^2) = 1 + (q-1)/sqrt(q).
 
     Kept deliberately, and named: it is h*z+1 at z_C, so it is the value the
@@ -237,7 +237,7 @@ w.add_assertion(
 
 # Census Hopf cross-check: tr_M(sigma_1^2) Wenzl == census closed form.
 hopf_wenzl = trM_sigma1_pow(Q0, 2)
-hopf_census = trM_hopf_census_form(Q0)
+hopf_census = trM_hopf_census_form_C(Q0)
 w.add_data("trM_hopf_wenzl_D_at_q0", str(hopf_wenzl))
 w.add_data("trM_hopf_census_C_at_q0", str(hopf_census))
 w.add_data("trM_hopf_D_minus_C_gap", str(abs(hopf_wenzl - hopf_census)))

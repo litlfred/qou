@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T14:59:45.452634+00:00",
-  "commitSha": "b2bef06f2ca0b346473f0b047bb66b1122136fa1",
+  "computedAt": "2026-08-15T15:09:25.370435+00:00",
+  "commitSha": "b1921853a5054c31989dc0b0932802470ec9c60e",
   "assertions": [
     {
       "name": "trM_T2_3_symbolic_eq_numeric",
@@ -134,11 +134,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 70,
+  "durationMs": 68,
   "computation": "lepton-t2n-torus-tower",
   "scriptFile": "lepton_t2n_torus_tower.py",
-  "scriptHash": "f346415e4c2f",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "d4ab4afa0511",
+  "scriptCommitSha": "b1921853a5054c31989dc0b0932802470ec9c60e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
