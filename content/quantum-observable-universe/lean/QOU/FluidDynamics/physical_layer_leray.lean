@@ -521,4 +521,62 @@ theorem energy_small_global (E Ωp : ℕ → K) (δ q c d lam : K)
     hΩ hqstep hhor
   exact sup_bound_of_chaining Ωp lam Nbad H hcount h0 hboot hHN
 
+/-!
+## The energy-drain route and the infrared localization (bean `qou-qy5l`)
+
+For large data (`8cE₀ > 1`) one natural route remains: energy is not
+merely monotone — it *drains* at a rate proportional to the enstrophy,
+and the discrete Poincaré bound `k²ₘᵢₙ·E ≤ Ω` (the lowest rung
+dominates: `Ω = Σk²e ≥ k²ₘᵢₙ·Σe`) turns the drain into **geometric
+decay** (`energy_geometric_decay`): `E_n ≤ (1 − δν·k²ₘᵢₙ)ⁿ·E₀`.
+Wait long enough and any datum enters the energy-small class, where
+`energy_small_global` takes over.
+
+**The honest scaling — and why this does NOT close the core.**  The
+decay rate is `δν·k²ₘᵢₙ`, and in the physical layer the lowest
+wavenumber is `k_phys,1 = (q−1)·[1]_q = ε` (`def:qns-unit-layers`):
+the spectral gap **vanishes in the continuum limit**, so the decay
+rate is `~ δε²/4` — `ε`-NON-uniform, and the entry time into the
+small-energy class diverges as `q → 1⁺`.  This is the correct
+discrete image of the classical situation (no Poincaré inequality on
+an unbounded domain; the physical-layer domain grows like `c_q`).
+
+**Localization achieved:** the ultraviolet side of the uniformity
+question was tamed (tail Leray, epochs, chaining — all `ε`-uniform);
+the energy-drain route shows the surviving large-data obstruction is
+**infrared** — the vanishing spectral gap of the continuum limit.
+The open core of epic `qou-a3n3`, sharpest form: *large data,
+`ε`-uniformly in time, against a spectral gap that closes like `ε`.*
+Nothing here resolves it; the theorem quantifies exactly where it
+lives.
+-/
+
+/-- **Geometric energy decay from the discrete Poincaré bound**: with
+    the dissipation step `E(n+1) ≤ E(n) − δν·Ω(n)`, the spectral-gap
+    bound `g·E(n) ≤ Ω(n)` (with `g = k²ₘᵢₙ`), nonnegative energy, and
+    the step-size sanity `0 ≤ δν·g ≤ 1`, the energy decays
+    geometrically: `E_n ≤ (1 − δν·g)ⁿ·E₀`.  The rate `δν·g` carries
+    the `ε`-non-uniformity of the physical-layer infrared gap
+    (`g = ε²`); see the section docstring. -/
+theorem energy_geometric_decay (E Ωp : ℕ → K) (δν g : K)
+    (hδν : 0 ≤ δν)
+    (hr : δν * g ≤ 1)
+    (hgap : ∀ n, g * E n ≤ Ωp n)
+    (hdiss : ∀ n, E (n + 1) ≤ E n - δν * Ωp n) :
+    ∀ n, E n ≤ (1 - δν * g) ^ n * E 0 := by
+  intro n
+  induction n with
+  | zero => simp
+  | succ p ih =>
+      have hstep : E (p + 1) ≤ (1 - δν * g) * E p := by
+        have h1 := hdiss p
+        have h2 : δν * (g * E p) ≤ δν * Ωp p :=
+          mul_le_mul_of_nonneg_left (hgap p) hδν
+        nlinarith [h1, h2]
+      have hfac : (0 : K) ≤ 1 - δν * g := by linarith
+      calc E (p + 1) ≤ (1 - δν * g) * E p := hstep
+        _ ≤ (1 - δν * g) * ((1 - δν * g) ^ p * E 0) :=
+            mul_le_mul_of_nonneg_left ih hfac
+        _ = (1 - δν * g) ^ (p + 1) * E 0 := by ring
+
 end QOU.FluidDynamics.PhysicalLayerLeray
