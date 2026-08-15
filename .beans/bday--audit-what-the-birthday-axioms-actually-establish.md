@@ -187,3 +187,60 @@ it encodes nothing.*
 the campaign's scan did not reach `AppendixSurreals/`. Worth checking whether
 `scripts/lean-carrier-inhabitation-scan.mjs` covers that directory at all; if it does not,
 the "drained" status is scoped narrower than it reads.
+
+---
+**2026-08-10 — the recommended fix, built and its independence PROVED.**
+
+`QOU/AppendixSurreals/BirthdayFaithful.lean`, sorry-free, standard axioms. This turns the
+bean's "strengthen the axioms" recommendation from a suggestion into verified content,
+without touching the ~38 modules that use `SurrealField`.
+
+### §1 — the asymmetry, made concrete
+
+`birthday_natCast_le : ∀ n : ℕ, birthday ((n:ℕ) : K) ≤ n` is **already a theorem** from
+the existing axioms — induction on `birthday_one` and `birthday_add_le`, via
+`nadd_one : a ♯ 1 = succ a`. No new axiom needed.
+
+So the axioms give the `≤` and nothing gives the `≥`. That is the whole defect in one
+pair of statements, and it is now visible in the corpus rather than only in this bean.
+
+### §2 — `BirthdayFaithful`, a MIXIN not a class change
+
+    class BirthdayFaithful (K) [SurrealField K] where
+      birthday_natCast : ∀ n : ℕ, birthday ((n:ℕ) : K) = (n : Ordinal)
+
+Opt-in, deliberately, for three reasons recorded in the module: ~38 modules use
+`SurrealField` and most never mention birthdays; a mixin makes the dependency **visible**
+in the hypotheses of anything that needs real birthday content; and the corpus already
+demonstrates the pattern with `BlowupField`.
+
+Combined with §1 the mixin pins `birthday n` exactly — it supplies only the missing half.
+
+### §3 — the independence is a THEOREM, not a remark
+
+`flatBirthday_not_faithful : ¬ (∀ n : ℕ, flatBirthday ((n:ℕ) : ℝ*) = n)` — the flat model
+fails at `n = 2`, since `flatBirthday 2 = 1`.
+
+Since `flatBirthday` **does** satisfy all six birthday axioms
+(`surrealFieldHyperreal`), this proves `BirthdayFaithful` is **not derivable** from them.
+Packaged as `birthdayFaithful_independent_of_surrealField_axioms`: the six axioms are
+satisfiable together with the *negation* of the mixin.
+
+Earlier entries in this bean asserted "adding the matching ≥ would kill the flat model
+outright". That assertion is now checked.
+
+### ⚠ NOT claimed
+
+That `BirthdayFaithful` is **sufficient** to characterise Conway's birthday. It rules out
+*the flat model*; it does not rule out every degenerate model, and whether the axiom set
+is now categorical is open and untouched. Stated in the module so a reader cannot take
+this for more than it is.
+
+### Still open on this bean
+
+- `DiophantineBirthday` — the separate and worse problem: its only available instance is
+  degenerate (`residual := 0`, `rfl`), so its "honest open state" label is false. Not
+  fixed here; needs the class to be given content that is actually the conjecture, which
+  by §1–§3 above will require the mixin.
+- Whether `SignSequence`'s bounds should now be re-stated over `[BirthdayFaithful K]` to
+  say something non-vacuous. Not attempted.
