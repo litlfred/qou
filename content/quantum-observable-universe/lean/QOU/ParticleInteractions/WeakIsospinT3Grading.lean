@@ -62,6 +62,14 @@ left-doublet hypercharge `Y = 1/3`.  It is a theorem that could have failed
 (`gellMannNishijima`).  No continuous parameter was tuned — the grading is a
 discrete `ℤ/2`.
 
+**But report its WIDTH honestly.**  The relation is quantified over six quarks
+and collapses to **two** distinct arithmetic rows: `Y` is constant and both `Q`
+and `T₃` are functions of the up/down-type bit alone
+(`gmn_data_factors_through_weakType`, `gmn_check_has_two_distinct_rows`).  So
+the check is one sign correlation plus one normalisation, verified twice — not
+six independent confirmations.  The generation index never enters it
+(`genWinding_finer_than_gmn_data`).
+
 ### What is NOT proved (the honest open remainder)
 
 `signedWrithe` is *entered as data* over a finite toy `Quark` type, so every
@@ -236,6 +244,82 @@ theorem gellMannNishijima (q : Quark) :
 theorem T3_eq_charge_minus_halfY (q : Quark) :
     T3 q = emCharge q - hyperchargeLeft q / 2 := by
   have := gellMannNishijima q; linarith
+
+/-! ### How WIDE the GMN check actually is — two rows, not six
+
+`gellMannNishijima` is quantified over all six quarks, and it is tempting to
+report it as six independent confirmations.  It is not, and the theorems here
+make the collapse machine-checked so that no summary can widen it by accident.
+
+`hyperchargeLeft` is a **constant** function, and both `emCharge` and `T3` are
+functions of `weakType` alone.  Every one of the three quantities entering
+`Q = T₃ + Y/2` therefore depends only on the up/down-type bit, so the six cases
+supply exactly **two** distinct arithmetic rows:
+
+    up-type:    2/3 = +1/2 + 1/6
+    down-type: −1/3 = −1/2 + 1/6
+
+That is one sign correlation plus one normalisation, checked twice — a genuine
+derive-then-check (a wrong sign or a wrong `½` still breaks it), but a
+*two-row* one.  The generation index `n ∈ {3,5,7}` never enters GMN at all;
+it is exactly the datum the relation is blind to. -/
+
+/-- The left-doublet hypercharge is constant across all six quarks — it carries
+no per-quark information into the GMN check. -/
+theorem hyperchargeLeft_constant (q q' : Quark) :
+    hyperchargeLeft q = hyperchargeLeft q' := rfl
+
+/-- **Every GMN ingredient factors through the up/down-type bit.**  Two quarks
+of the same `weakType` are indistinguishable to `Q`, `T₃` and `Y` alike, however
+different their generation. -/
+theorem gmn_data_factors_through_weakType (q q' : Quark)
+    (h : weakType q = weakType q') :
+    emCharge q = emCharge q' ∧ T3 q = T3 q' ∧
+      hyperchargeLeft q = hyperchargeLeft q' := by
+  cases q <;> cases q' <;>
+    simp_all [emCharge, T3, hyperchargeLeft,
+      writheType_up, writheType_charm, writheType_top,
+      writheType_down, writheType_strange, writheType_bottom,
+      writheSign_up, writheSign_charm, writheSign_top,
+      writheSign_down, writheSign_strange, writheSign_bottom]
+
+/-- The up-type GMN row. -/
+def gmnRowUp : ℚ × ℚ × ℚ := (2/3, 1/2, 1/3)
+
+/-- The down-type GMN row. -/
+def gmnRowDown : ℚ × ℚ × ℚ := (-1/3, -1/2, 1/3)
+
+/-- **The GMN check has exactly two distinct rows.**  Every one of the six
+quarks maps onto one of `gmnRowUp` / `gmnRowDown`, and those two are distinct.
+So `gellMannNishijima` is two independent equations restated six times — not
+six confirmations.
+
+Stated by exhibiting the rows rather than as a `Finset.card`, because `Rat`
+decidable equality does not reduce in the kernel inside `Finset.image`. -/
+theorem gmn_check_has_two_distinct_rows :
+    gmnRowUp ≠ gmnRowDown ∧
+    ∀ q : Quark, (emCharge q, T3 q, hyperchargeLeft q) = gmnRowUp ∨
+                 (emCharge q, T3 q, hyperchargeLeft q) = gmnRowDown := by
+  refine ⟨by simp [gmnRowUp, gmnRowDown, Prod.ext_iff]; norm_num, fun q => ?_⟩
+  cases q <;>
+    simp only [emCharge, T3, hyperchargeLeft, gmnRowUp, gmnRowDown,
+      writheSign_up, writheSign_charm, writheSign_top,
+      writheSign_down, writheSign_strange, writheSign_bottom,
+      Prod.mk.injEq] <;> norm_num
+
+/-- **The generation is strictly finer than the GMN data.**  `u`, `c`, `t` carry
+three different windings but land on the *same* GMN row — the precise sense in
+which the relation is blind to the generation index. -/
+theorem genWinding_finer_than_gmn_data :
+    genWinding .up ≠ genWinding .charm ∧
+    genWinding .charm ≠ genWinding .top ∧
+    (emCharge .up, T3 .up, hyperchargeLeft .up)
+      = (emCharge .charm, T3 .charm, hyperchargeLeft .charm) ∧
+    (emCharge .charm, T3 .charm, hyperchargeLeft .charm)
+      = (emCharge .top, T3 .top, hyperchargeLeft .top) := by
+  refine ⟨by decide, by decide, ?_, ?_⟩ <;>
+    simp only [emCharge, T3, writheSign_up, writheSign_charm, writheSign_top,
+      hyperchargeLeft]
 
 /-! ### Doublet (charged-current W±) structure -/
 
