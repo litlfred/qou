@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:23:28Z
-updated_at: 2026-08-15T00:49:00Z
+updated_at: 2026-08-15T22:20:56Z
 ---
 
 
@@ -61,3 +61,5 @@ the instance without settling that.
 
 Note the axiom is now meaningfully stronger than it was: with orthogonality,
 the blocks genuinely do not mix. What is missing is only that they *span*.
+
+QUEUED-BLOCKED 2026-08-15 (session qou-pq8k): blocked on owner's Preadditive decision per the originating discussion. Not dispatched.
