@@ -163,7 +163,7 @@
     },
     "generation": {
       "type": "object",
-      "description": "How this certificate was generated -- enough to re-run it exactly. Absent on certificates emitted before 2026-08-15; every new one has it. Added because the Q_0 muon->proton re-pin could not be applied to the committed certificates: neither the generator nor its cutoff parameter was recorded per file, and the 51 files came from four different binaries emitting different schemas.",
+      "description": "How this certificate was generated -- enough to re-run it exactly. Absent on certificates emitted before 2026-08-15; every new one has it. Added because applying the Q_0 muon->proton re-pin to the committed certificates required reading the emitter's source at the commit that produced each one: neither the generator nor its cutoff parameter was recorded per file, and the 51 files came from four different binaries emitting different schemas. (An earlier version of this description said the re-pin 'could not be applied'. That was withdrawn -- the f64 fields are derivable from the exact Laurent terms via tr_alt_f64 = eval(tr_alt) / 2^pn_count, and scripts/reanchor_certificates.py does so.)",
       "required": [
         "binary",
         "argv",
