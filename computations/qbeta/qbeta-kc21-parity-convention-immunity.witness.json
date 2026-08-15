@@ -5,12 +5,12 @@
   "tier": "structural-parity provenance audit (60-dps measurement + exact symbolic reflection; no fit; no wiring)",
   "q0Anchor": "proton",
   "q0Value": "1.109978582751380807591669",
-  "computedAt": "2026-08-15T15:26:48.126605+00:00",
-  "commitSha": "b9d9ccfadc5417378cf4e856c3b7f09682dd47d6",
+  "computedAt": "2026-08-15T20:49:19.055132+00:00",
+  "commitSha": "a89ca987301a81461cc43dfd3086dec4016dc82d",
   "engine": "mpmath+sympy",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_kc21_parity_convention_immunity_probe.py",
-  "scriptHash": "c8ea09958315",
+  "scriptHash": "0a8df5c6a323",
   "assertions": [
     {
       "name": "A1-regression-reproduces-corpus-c3",
@@ -249,5 +249,5 @@
     ],
     "scope": "Scope-(a). Adjudicates no convention for the Q_beta channel (open, bean qou-b3nk). Revives no C-conditional value: c_3, (H1), [3]_q/25, J-hbar^2, S_leak and q*_S stay C-conditional per registry section 9g. The bar involution sigma: q -> 1/q is a DIFFERENT involution from complex conjugation and is not touched here -- in particular bar(z_D) = q^-4 z_D (PR #5107 A2) and the z_C full-bar-condition failure (PR #5111) remain open as stated. Per 'Defined residual != derived decomposition', S = c_3 + Vol(4_1) remains a residual of a C-frame extraction."
   },
-  "durationSec": "0.080"
+  "durationMs": 65
 }

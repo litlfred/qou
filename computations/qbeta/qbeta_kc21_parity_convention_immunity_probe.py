@@ -472,9 +472,17 @@ def main() -> int:
                 "Per 'Defined residual != derived decomposition', S = c_3 + "
                 "Vol(4_1) remains a residual of a C-frame extraction."),
         },
-        # serialized as a string: a bare round() is a raw float64 and trips the
-        # NO-FLOAT64 ratchet (scripts/precision-gates.sh).
-        "durationSec": f"{time.monotonic() - t0:.3f}",
+        # int ms, not a float and not a seconds-string. A bare round() here is a
+        # raw float64 and trips the NO-FLOAT64 ratchet
+        # (scripts/precision-gates.sh); serializing seconds as a string dodges
+        # that ratchet but creates a second problem, because only `durationMs`
+        # is in `_EPHEMERAL_META_FIELDS`
+        # (tools/qou-substrate/python/qou_substrate/witness.py). A `durationSec`
+        # is therefore compared as SUBSTANTIVE content, so every re-run of this
+        # probe reports drift on a wall-clock number that means nothing. Integer
+        # `durationMs` is the WitnessBuilder convention (55 producers vs 2) and
+        # is masked.
+        "durationMs": int((time.monotonic() - t0) * 1000),
     }
 
     out = HERE / "qbeta-kc21-parity-convention-immunity.witness.json"
