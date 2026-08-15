@@ -55,7 +55,24 @@ START = time.monotonic()
 mp.mp.dps = 60
 
 # Substrate q0 (proton-anchored). FALSIFICATION reference only -- not tuned.
-Q0_STR = "1.10997859561220225731080831999100762523924148"
+#
+# IMPORTED, not typed. This was the hand-written literal
+#
+#     Q0_STR = "1.10997859561220225731080831999100762523924148"
+#
+# under this same "proton-anchored" comment -- and it is not the proton pin.
+# Measured: 1.286e-8 from the registry's proton q0 and 5.487e-11 from the
+# muon-canonical, i.e. ~230x closer to the muon family than to the pin its own
+# comment named, while equalling neither. It arrived in e5dcd8f54, an unrelated
+# Lean commit, so it was copied rather than derived.
+#
+# Owner ruling 2026-08-15: this module IS proton-anchored, per the comment and
+# the AGENTS.md directive of 2026-08-07 that new compute defaults to the
+# experimental (proton) pin. Taking the constant by import closes the class --
+# a literal cannot drift from a source it does not have.
+from q_parameter import Q_50_DIGIT_STR as _Q0_PROTON_STR  # noqa: E402
+
+Q0_STR = _Q0_PROTON_STR
 Q0 = mp.mpf(Q0_STR)
 
 # PDG / CODATA falsification references (NOT fit targets).

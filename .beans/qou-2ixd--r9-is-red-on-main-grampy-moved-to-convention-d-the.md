@@ -619,3 +619,42 @@ a falsification passes. That is an authorial call, not a refactor.
   should become an import of a canonical constant rather than a hand-typed
   near-miss.
 - The 4 pyhecke sites remain `qou-w8zz`'s.
+
+---
+
+## Round 10: the q0 resolved — proton, by owner ruling (2026-08-15)
+
+Owner ruling: `inter_nucleon_linked_channel` is proton-anchored, per its own
+comment and the AGENTS.md 2026-08-07 directive that new compute defaults to the
+experimental (proton) pin.
+
+Taken **by import**, not retyped:
+
+    from q_parameter import Q_50_DIGIT_STR as _Q0_PROTON_STR
+
+which closes the class rather than the instance — a literal cannot drift from a
+source it does not have.
+
+### The result confirms the ruling independently
+
+All 10 assertions still pass, and two values that had been *nearly* right
+snapped onto their canonical counterparts:
+
+| field | before | after | canonical |
+|---|---|---|---|
+| `z(q0)` | `0.612688050606…` | `0.6126880371464652515958…` | registry `z_at_q0`, to 40 digits |
+| `W_(1,1)` | `0.2472978861522…` | `0.2472978867480345984062` | `1/[2]_q^2 = 0.24729788674803459840622…`, to 22 digits |
+| `tr_M(pp)` | `1.128088761203…` | `1.128088744114353785593151…` | `closed_form_tau_M.trM_sigma1_sq(q0)` exactly |
+
+Before the change `W_(1,1)` was wrong at digit 9 against the registry's own
+`y_(2,1)`; after it agrees to 22. `tr_M(pp)` now equals the canonical
+`h*z + 1` **and** the `sigma_1^2` entry of `markov-trace-recursive.witness.json`
+— three independent producers agreeing exactly where they previously did not.
+
+That is the check that matters: the right pin makes the module's numbers
+coincide with values derived elsewhere, and the wrong one made them miss by
+1e-8 while still looking plausible.
+
+Shift: `q0` 1.16e-8, `trM_pp - trM_nn` 1.15e-7, `W_(2)` 7.9e-10,
+`W_(1,1)` 2.4e-9. R11 still CONFIRMS `z_factor` at 2.99e-51; validator
+`PASS (0 errors, 23 warnings)`.
