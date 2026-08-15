@@ -69,3 +69,38 @@ first.
    the `qou-eea0` failure this arc already paid for once.
 4. Consider making `pyhecke.gram.z` delegate to the Rust `markov_z` so the two
    halves cannot drift again — the `d_for_ctype` remedy applied here.
+
+## CORRECTION: it explains 2 of 25, not "a large share"
+
+I wrote above that "a large share" of the 25 roots inherit this constant. That
+was asserted from two examples, not measured. Measured — resolving each
+flagged witness to its producer and parsing that producer's import list for
+`z` from `pyhecke.gram` or `hecke_core`:
+
+    flagged witnesses whose producer imports the shared z:  2 / 25
+
+        entanglement-orders.witness.json          <- entanglement_orders.py
+        h2o-bond-angle-magnitude-vsepr.witness.json <- h2o_bond_angle_magnitude_vsepr.py
+
+So the shared constant is **not** the common root of the remaining surface.
+The other 23 carry convention C by some other route, still unidentified, and
+"25 roots = 25 separate source edits" remains the working assumption rather
+than the thing I claimed to have overturned.
+
+What survives unchanged, because it was measured rather than inferred:
+
+* `pyhecke.gram.z = 1.0/(q0**0.5 + qi**0.5)` is convention C, in float64, in
+  the published package. Runtime: `hecke_core.z = 0.4993203341836945` against
+  `pyhecke_native.markov_z = 0.6126880371464652`.
+* The Rust and Python halves of one package family hold opposite conventions.
+* It is a real defect worth fixing on its own terms, and it is the fourth
+  instance of the two-implementations-drifting shape.
+
+What does not survive: the claim that fixing it clears most of the work list.
+It clears two.
+
+The failure mode is the one this arc keeps repeating and that I keep having to
+correct in my own work — generalising a mechanism from the first two cases
+that fit it, before counting how many actually do. Same shape as "16 of 31
+missing" (real answer 4) and "the roots carry C in their own code" (the first
+root I opened was already D).
