@@ -885,3 +885,35 @@ because that factor is 0 when the l-distance is +-1.
 
 REMAINING: sizes 2 and 3 assembled (the algebra is now understood -- see above), then
 Hecke.lift packaging (which consumes them). hoefsmit_seminormal_rep keeps its Ref'd sorry.
+
+
+## SIZE-2 ORBIT BRAID PROVED 2026-08-15 — and the smaller orbits are NOT special cases
+
+genMat_braid_of_succ_fixed (sorry-free, axiom-clean): the braid when sigma_k moves T but
+sigma_{k+1} fixes both T and s_k.T, so the orbit is exactly {T, s_k.T}.
+
+The two non-zero rows close DIFFERENTLY, which is the finding:
+
+  s_k.T row -- braid_rowA_identity VERBATIM. Same identity as the generic case.
+  T row     -- the generic diagonal identity MINUS the term a3*(1 + a2*a(-r)), which the
+               right-hand side does not produce here. The two sides match ONLY because that
+               factor is 0.
+
+So a smaller orbit is not a degenerate instance of the generic identity; it is the generic
+identity WITH A TERM DELETED, and the deletion is legitimate exactly because of the scalar
+degeneracy (one_add_seminormalParam_mul_neg_of_scalar, available because sigma_{k+1} fixing
+T forces r = +-1 via axialDist_trichotomy). Anyone doing size 3 should expect the same
+shape: not "specialise the generic proof" but "generic identity minus the terms the
+non-admissible columns cannot emit, with degeneracy licensing each deletion".
+
+Certificate for the T row (extends the generic one by one term):
+  (a2-a1)*hrel + a3*a1*hsump - a3*a2*hsumr + a3*hdeg + a3*hprodp
+The s_k.T row is the generic (-o1)*hrel + a3*o1*hsump unchanged.
+
+Lean note: the (A,A) entry of rho_{k+1} needs its OWN genMat_diag + dAl even though dAl was
+already applied to the COEFFICIENT in the outer peel. `rw` had consumed dAl on the
+coefficient; the entry is a separate occurrence. Symptom is a `ring failed` whose goal still
+shows `genMat q (k+1) hl hln A A` -- read the goal, do not re-derive the certificate.
+
+STATUS OF THE CASE TREE: size 1 done, size 2 done (this), sizes 3 and 6 -- 6 is
+genMat_braid_generic, 3 remains. Then Hecke.lift packaging.
