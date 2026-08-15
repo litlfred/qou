@@ -28,8 +28,8 @@ $c_\alpha(q) \in \mathbb{Z}[q^{\pm 1}]$.
 
 **Mass from linking.**  By
 ([Skein-resolution mass formula](#lem:skein-mass-from-linking)),
-$\mathfrak{m}(H) = Q(q) \cdot \mathfrak{m}(\mathcal{L}_{\mathrm{Hopf}})
-+ \sum_i \mathrm{Vol}(K_i)/\hbar_q^2$.  For hadrons composed entirely
+$\mathfrak{m}(H) = Q(q) \cdot \mathfrak{m}(\mathcal{L}_{\mathrm{Hopf}}) +
+\sum_i \mathrm{Vol}(K_i)/\hbar_q^2$.  For hadrons composed entirely
 of fundamental (torus-knot) constituents, $\mathrm{Vol}(K_i) = 0$
 for all $i$, so the entire inertial mass arises from the linking
 topology, $\mathfrak{m}(H) = Q(q) \cdot \mathfrak{m}(\mathcal{L}_{\mathrm{Hopf}})$.

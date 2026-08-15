@@ -38,7 +38,7 @@ $\Lambda_1 = +\infty$.  The bound gives no information.
 **Proof of (c): Uniqueness.**
 Set $w = v_1 - v_2$.  Energy method gives
 $\frac{d}{dt}\lVert w \rVert_A^2
-\leq 2C_q (\lVert v_1 \rVert_{H^1_q}
-+ \lVert v_2 \rVert_{H^1_q}) \lVert w \rVert_A^2$.
+\leq 2C_q (\lVert v_1 \rVert_{H^1_q} +
+\lVert v_2 \rVert_{H^1_q}) \lVert w \rVert_A^2$.
 Gronwall with $w(0) = 0$ gives $w(t) = 0$.
 
