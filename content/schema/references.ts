@@ -3875,8 +3875,8 @@ export const references: CSLData[] = [
     type: "article-journal",
     title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures",
     author: [
-      { family: "Wang", given: "Meng" },
       { family: "Huang", given: "W. J." },
+      { family: "Wang", given: "Meng" },
       { family: "Kondev", given: "F. G." },
       { family: "Audi", given: "Georges" },
       { family: "Naimi", given: "Sarah" },
@@ -3888,6 +3888,26 @@ export const references: CSLData[] = [
     page: "030002",
     DOI: "10.1088/1674-1137/abddb0",
     URL: "https://doi.org/10.1088/1674-1137/abddb0",
+    note: "Author order CORRECTED 2026-08-15 (bean qou-wy51): the entry carried the title, page and DOI of paper (I) but the author order of paper (II) — Wang first instead of Huang. The header of uploads/mass_1.mas20.txt states it directly: paper (I) at Chin. Phys. C45 030002 is 'by W.J.Huang, M.Wang, F.G.Kondev, G.Audi and S.Naimi', paper (II) at 030003 'by M.Wang, W.J.Huang, ...'. Corroborated by qou-mass/src/qou_mass/data/ame2020.json's _metadata, which records Huang-first for 030002. This is the paper covering mass.mas20 — the file computations/deltalambda/tjon_external_cross_check_probe.py parses for B(2H), B(3H), B(4He); see ame2020tables for the companion (II).",
+  }),
+
+  ref({
+    id: "ame2020tables",
+    type: "article-journal",
+    title: "The AME 2020 atomic mass evaluation (II)",
+    author: [
+      { family: "Wang", given: "Meng" },
+      { family: "Huang", given: "W. J." },
+      { family: "Kondev", given: "F. G." },
+      { family: "Audi", given: "Georges" },
+      { family: "Naimi", given: "Sarah" },
+    ],
+    "container-title": "Chinese Physics C",
+    issued: { "date-parts": [[2021]] },
+    volume: "45",
+    issue: "3",
+    page: "030003",
+    note: "The companion volume to ame2020, added 2026-08-15 (bean qou-wy51) because the corpus cites tabulated binding energies, which are paper (II)'s content rather than (I)'s input-data-and-adjustment-procedures. EVERY field here is read verbatim off the header of uploads/mass_1.mas20.txt ('\"The Ame2020 atomic mass evaluation (II)\" by M.Wang, W.J.Huang, F.G.Kondev, G.Audi and S.Naimi / Chinese Physics C45, 030003, March 2021'). The subtitle and the DOI are DELIBERATELY OMITTED rather than guessed: api.crossref.org is blocked by the sandbox egress proxy, so neither could be verified. Fill them in when a session with network access next touches this entry — do not supply them from memory.",
   }),
 
   // ── NUBASE 2020 (companion to AME 2020) ───────────────────────
