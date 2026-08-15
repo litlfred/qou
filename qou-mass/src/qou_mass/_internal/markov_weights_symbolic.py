@@ -111,16 +111,13 @@ def atom_braid_word_3A_to_crossings(Z: int, N: int, *, include_inter: bool = Fal
     """
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
     out = []
+    # Delegate to the canonical classifier. The private three-way test this
+    # replaces had no branch for the colour-weighted p-n interface
+    # -h(1/2 - δ/4) and fell to its `else: raise`, so this broke on every
+    # Z>=1,N>=1 word reached with include_inter=True (qou-8zjd).
+    from canonical_braid_crossings import classify_crossing
     for c, d, gen_idx in word:
-        if d == 0.0:
-            ctype = "sigma"
-        elif abs(d - (-HA_VAL)) < 1e-9:
-            ctype = "sigma_inv"
-        elif abs(d - (-HA_VAL / 2)) < 1e-9:
-            ctype = "averaged"
-        else:
-            raise ValueError(f"Unknown crossing (c={c}, d={d})")
-        out.append((gen_idx, ctype))
+        out.append((gen_idx, classify_crossing(float(c), float(d), HA_VAL)))
     return out
 
 

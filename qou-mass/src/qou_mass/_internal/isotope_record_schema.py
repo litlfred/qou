@@ -63,11 +63,22 @@ class KnotOperatorType(str, Enum):
 
 
 class CrossingType(str, Enum):
-    """The 3 crossing conventions used in the canonical atomic braid."""
+    """The 4 crossing conventions used in the canonical atomic braid.
+
+    Mirrors `canonical_braid_crossings.CTYPES`; keep the two in step. The
+    enum carried only the first three, so the schema could not REPRESENT the
+    colour-weighted p-n interface at all — a type-level gap rather than a
+    call-site bug, and the reason it is listed separately from the consumer
+    repairs in `qou-8zjd`.
+    """
 
     SIGMA = "sigma"            # positive crossing (c=1, d=0)
     SIGMA_INV = "sigma_inv"    # negative crossing (c=1, d=-h)
-    AVERAGED = "averaged"      # half-sum (c=1, d=-h/2)
+    AVERAGED = "averaged"      # half-sum, colour-blind (c=1, d=-h/2)
+    # Colour-weighted p-n interface (c=1, d=-h(1/2 - δ/4)), δ the substrate
+    # flavour split. Distinct from AVERAGED by 6.883e-4 on the crossing —
+    # the proton-neutron colour asymmetry, which collapsing the two loses.
+    AVERAGED_WEIGHTED = "averaged_weighted"
 
 
 @dataclass(frozen=True)
