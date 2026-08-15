@@ -785,6 +785,45 @@ theorem sameCol_of_not_admissible_of_neg_one (T : StandardYoungTableau μ) {k : 
     omega
   · exact hcol
 
+/-- **A tableau no generator moves has all its cells in one row** (when its common axial
+distance is `+1`).  Chains `sameRow_of_not_admissible_of_one` from `1` up to `j`. -/
+theorem row_const_of_no_admissible (T : StandardYoungTableau μ)
+    (h : ∀ m, 1 ≤ m → m + 1 ≤ μ.cells.card → ¬ SwapAdmissible T m)
+    (hd : ∀ m, 1 ≤ m → m + 1 ≤ μ.cells.card → axialDist T m = 1)
+    {j : ℕ} (hj : 1 ≤ j) (hjn : j ≤ μ.cells.card) :
+    (cellOf T j).1 = (cellOf T 1).1 := by
+  induction j with
+  | zero => omega
+  | succ j ih =>
+    rcases Nat.lt_or_ge 1 (j + 1) with hlt | hge
+    · have hj1 : 1 ≤ j := by omega
+      have hstep : (cellOf T j).1 = (cellOf T (j + 1)).1 :=
+        sameRow_of_not_admissible_of_one T hj1 (by omega)
+          (h j hj1 (by omega)) (hd j hj1 (by omega))
+      rw [← hstep]
+      exact ih hj1 (by omega)
+    · have : j + 1 = 1 := by omega
+      rw [this]
+
+/-- The mirror: all cells in one column, when the common distance is `-1`. -/
+theorem col_const_of_no_admissible (T : StandardYoungTableau μ)
+    (h : ∀ m, 1 ≤ m → m + 1 ≤ μ.cells.card → ¬ SwapAdmissible T m)
+    (hd : ∀ m, 1 ≤ m → m + 1 ≤ μ.cells.card → axialDist T m = -1)
+    {j : ℕ} (hj : 1 ≤ j) (hjn : j ≤ μ.cells.card) :
+    (cellOf T j).2 = (cellOf T 1).2 := by
+  induction j with
+  | zero => omega
+  | succ j ih =>
+    rcases Nat.lt_or_ge 1 (j + 1) with hlt | hge
+    · have hj1 : 1 ≤ j := by omega
+      have hstep : (cellOf T j).2 = (cellOf T (j + 1)).2 :=
+        sameCol_of_not_admissible_of_neg_one T hj1 (by omega)
+          (h j hj1 (by omega)) (hd j hj1 (by omega))
+      rw [← hstep]
+      exact ih hj1 (by omega)
+    · have : j + 1 = 1 := by omega
+      rw [this]
+
 /-- **The braid relation for value-transpositions.**  `s_k s_{k+1} s_k = s_{k+1} s_k s_{k+1}`
 as permutations of `{k, k+1, k+2}` — the symmetric-group relation the whole construction is
 a deformation of.

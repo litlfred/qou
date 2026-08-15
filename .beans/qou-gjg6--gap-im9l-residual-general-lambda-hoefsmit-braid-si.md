@@ -1257,3 +1257,27 @@ Then genMat_ne_scalar converts it into the statement's payload.
 ALSO STILL NEEDED for hoefsmit_seminormal_rep, unrelated to the above: (shape lam).cells.card
 = N, to line the generator index m up with the statement's N - 1. Not checked whether the
 repo has it.
+
+
+## CONNECTIVITY STEP 3 DONE — and the tempting shortcut for step 4 is BLOCKED
+
+row_const_of_no_admissible / col_const_of_no_admissible (sorry-free, first-try): chaining
+step 2 over all k, a tableau no generator moves has ALL its cells in one row (common distance
++1) or all in one column (-1).
+
+STEP 4 REMAINS: "a Young diagram with all cells in one row has exactly one SYT".
+
+DO NOT try to get this from the hook-length formula. It looks available --
+QOU/Mathlib/SYTHookFormulaRows.lean proves dimHLF_single : dimHLF [a] = 1, i.e. HLF's
+PREDICTION for a single row -- but the bridge from dimHLF to the actual tableau count is
+`numSYTenum l = dimHLF l`, the Greene-Nijenhuis-Wilf theorem, and that file states plainly it
+"remains open in this corpus". So dimHLF_single gives the right NUMBER on the wrong SIDE of an
+open theorem. Citing it would be circular-by-omission.
+
+The direct route needs no HLF at all and is elementary: in a single-row diagram the entry map
+restricted to row 0 is strictly increasing (row_strict) and bijective onto {1..N} (bijOn), so
+entry (0,j) = j+1 -- two inductions, a lower bound from monotonicity upward and an upper
+bound from the top cell downward. Then cellOf T j = (0, j-1) for EVERY T, hence any two
+tableaux agree, hence #SYT = 1. Estimated 40-60 lines.
+
+Also still needed, independent of this chain: (shape lam).cells.card = N.
