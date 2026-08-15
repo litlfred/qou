@@ -10,17 +10,22 @@ This probe moves to a COMPLEX Sabra-type q-shell model, the minimal
 model class with phase dynamics:
 
   du_n/dt = i( k_{n+1} u*_{n+1} u_{n+2} - delta k_n u*_{n-1} u_{n+1}
-               - (1-delta) k_{n-1} u_{n-1} u_{n-2} ) - nu k_n^2 u_n
+               + (1-delta) k_{n-1} u_{n-1} u_{n-2} ) - nu k_n^2 u_n
 
-Per-triad energy conservation holds on ANY ladder (the triad (n, n+1,
-n+2) carries coefficients k_{n+1}, -delta k_{n+1}, -(1-delta) k_{n+1}
-after index alignment — sum 0 for every delta), so the q-ladder
+Per-triad energy conservation holds on ANY ladder: the triad
+(n, n+1, n+2) contributes 2*Im(Z)*(c_{n+2} - a_n - b_{n+1}) to dE/dt
+with Z = u*_n u*_{n+1} u_{n+2}, and a_n = k_{n+1}, b_{n+1} =
+-delta*k_{n+1}, c_{n+2} = (1-delta)*k_{n+1} makes the bracket vanish
+identically — no geometric-spacing assumption, so the q-ladder
 k_n = [n]_q needs no geometric-spacing assumption. delta = 0.5.
 
 The modulus obeys a triangle-inequality damped-forced step:
 
   d|u_n|/dt <= k_{n+1}|u_{n+1}||u_{n+2}| + delta k_n |u_{n-1}||u_{n+1}|
                + (1-delta) k_{n-1} |u_{n-1}||u_{n-2}| - nu k_n^2 |u_n|
+
+(triangle inequality — signs drop, so the modulus bound is unchanged
+by the conservation sign fix)
 
 — exactly the shape of the Lean invariant rung_equilibrium_forced
 (PR #5078; K = R, F = the triangle forcing sum / k_n), with NO new Lean
@@ -111,7 +116,7 @@ def make_rhs_sabra(N, k, nu):
             km1 = k[n - 1] if n > 0 else 0.0
             nl = (kp1 * up1.conjugate() * up2
                   - DELTA * k[n] * um1.conjugate() * up1
-                  - (1.0 - DELTA) * km1 * um1 * um2)
+                  + (1.0 - DELTA) * km1 * um1 * um2)
             out.append(1j * nl - nu * k[n] ** 2 * v[n])
         return out
     return rhs

@@ -1,0 +1,88 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T04:05:17.881639+00:00",
+  "commitSha": "12e1befe798cd49339d220654499b2e09359e31b",
+  "assertions": [
+    {
+      "name": "the complex Sabra q-ladder conserves energy inviscidly (per-triad coefficient sum is zero on any ladder; drift is RK2 only)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "nu=0 short run per seed, relative energy drift < 1e-4"
+    },
+    {
+      "name": "the modulus damped-forced form holds along actual trajectories: r_n = sup|u_n|*nu*k_n^2 / F_n(sup moduli) <= 1 on every excited empty-start rung, both seeds, every eps — the rung_equilibrium_forced instance for moduli is validated in the phase-dynamical model class",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "triangle-inequality forcing F_n = k_{n+1}|u_{n+1}||u_{n+2}| + delta*k_n|u_{n-1}||u_{n+1}| + (1-delta)*k_{n-1}|u_{n-1}||u_{n-2}| on sup moduli"
+    },
+    {
+      "name": "PHASE VERDICT — phases WEAKEN the tail: the dissipation-scale crossing exists for moduli at every (seed, eps) AND the coherence ratio sup|u_n|(Sabra)/sup u_n(real DN) <= 1 on every tail rung excited in both models — phase decorrelation reduces tail excitation below the coherent (real-amplitude) level; the SF-arc real-model results are CONSERVATIVE with respect to phases in this model class",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "max coherence ratio per (seed, eps) over tail rungs excited in both models"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 23941,
+  "computation": "qns-phase-decorrelation-probe",
+  "scriptFile": "qns_phase_decorrelation_probe.py",
+  "scriptHash": "2440584ef49c",
+  "scriptCommitSha": "12e1befe798cd49339d220654499b2e09359e31b",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "SF10 (bean qou-wgyz): phase-decorrelation probe for the SF arc's irreducible caveat. Complex Sabra-type q-shell model (per-triad exact energy conservation on the [n]_q ladder, delta = 0.5, two deterministic phase windings), compared rung-by-rung against the real DN model at matched eps. Measures the modulus damped-forced ratio (the rung_equilibrium_forced instance — no new Lean needed, the invariant applies verbatim to moduli) and the coherence ratio sup|u_n|(Sabra)/sup u_n(DN). Scope (a); float64 complex RK2 exploratory tier; one phase-dynamical model class, not full NS sweeping.",
+  "data": {
+    "golden_inviscid_energy_drift": "1.4557730982766127e-07",
+    "golden_eps1e-01_bstar_rung": 5,
+    "golden_eps1e-01_kphys_at_bstar": "0.7715610000000008",
+    "golden_eps1e-01_max_modulus_ratio": "0.9572722561039441",
+    "golden_eps1e-01_max_coherence_ratio": "36.293106377410794",
+    "golden_eps1e-01_n_compared": 8,
+    "golden_eps1e-02_bstar_rung": 17,
+    "golden_eps1e-02_kphys_at_bstar": "0.19614747568666502",
+    "golden_eps1e-02_max_modulus_ratio": "0.73847457443651",
+    "golden_eps1e-02_max_coherence_ratio": "1.200793619937578",
+    "golden_eps1e-02_n_compared": 21,
+    "golden_eps3e-03_bstar_rung": 29,
+    "golden_eps3e-03_kphys_at_bstar": "0.09402687487130734",
+    "golden_eps3e-03_max_modulus_ratio": "0.6959271422118853",
+    "golden_eps3e-03_max_coherence_ratio": "1.2839346135430898",
+    "golden_eps3e-03_n_compared": 33,
+    "silver_inviscid_energy_drift": "1.120622443005147e-06",
+    "silver_eps1e-01_bstar_rung": 5,
+    "silver_eps1e-01_kphys_at_bstar": "0.7715610000000008",
+    "silver_eps1e-01_max_modulus_ratio": "0.9301396417339116",
+    "silver_eps1e-01_max_coherence_ratio": "1136.4057698154886",
+    "silver_eps1e-01_n_compared": 8,
+    "silver_eps1e-02_bstar_rung": 18,
+    "silver_eps1e-02_kphys_at_bstar": "0.20810895044353162",
+    "silver_eps1e-02_max_modulus_ratio": "0.7343008162517151",
+    "silver_eps1e-02_max_coherence_ratio": "215.4985103125232",
+    "silver_eps1e-02_n_compared": 21,
+    "silver_eps3e-03_bstar_rung": 30,
+    "silver_eps3e-03_kphys_at_bstar": "0.09730895549592121",
+    "silver_eps3e-03_max_modulus_ratio": "0.690721546414923",
+    "silver_eps3e-03_max_coherence_ratio": "1.351969650559129",
+    "silver_eps3e-03_n_compared": 33,
+    "tier": "exploratory",
+    "delta": "0.5",
+    "seeds": [
+      "golden",
+      "silver"
+    ],
+    "n_cap": 400,
+    "n_data": 4
+  }
+}
