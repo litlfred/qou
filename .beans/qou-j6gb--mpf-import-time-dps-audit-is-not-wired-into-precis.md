@@ -413,3 +413,58 @@ Pre-existing on `main` (line 89), not introduced here, and NOT fixed here —
 the fix is to give the advisory run its own output path, which is a change to a
 shared gate script and wants its own scope. Recorded so it is not rediscovered
 as a mystery.
+
+## First never-raises drain: `paper_six_term_isotope_sweep.py` — and it was DEAD
+
+    never-raises ratchet: 46 producers / 206 constructions -> 45 / 167
+
+Two separate defects in one file, and the first one is the reason nobody had
+noticed the second.
+
+**It could not run at all.** Line 1342 referenced `M_P_MEV_VALIDATION` bare,
+while the file only ever imports that name *aliased and function-scoped*
+(`as _M_P_CODATA`, at lines 858 and 1203). So the module raised `NameError` on
+reaching `ISOTOPES`. Not slow, not skipped — dead, exactly like
+`term6_full_pole_sum` earlier in this arc. Fixed with a local import matching
+the convention the other two sites state explicitly (validation-only CODATA,
+for fit residuals, never a prediction input); its neighbours in that list are
+plain CODATA floats, which is what this entry was meant to be.
+
+**It computed everything at 15 dps.** `set_compute_dps()` at module scope, which
+also covers the `mp.mpf(str(...))` constants immediately below it. The symptom
+that made this the top drain target:
+
+    out[r["atom"]] = abs(mp.mpf(r["tr_M_at_q0_50dps"]))
+
+a field whose NAME says 50 dps, truncated to 15 on the way in.
+
+### The witness is NOT regenerated, and the reason is worth recording
+
+At 50 dps the producer is intractable in this container. It sweeps 8 modes
+(`brane-legacy, drop, q1-base, r-side-bare, li2q, habiro, per-partition-k,
+combined`) through **four separate loops**, i.e. ~32 mode-passes. Measured:
+
+    4h 32m elapsed at 100% CPU, ~1.5 mode-passes done
+
+which extrapolates to days. Raising working precision 15 → 50 makes mpmath
+arithmetic several times slower, so this is a direct and expected consequence of
+the fix — expected in kind, not in degree.
+
+**No damage: this producer writes its witness at the END, not incrementally**,
+so killing it left the committed file byte-identical. That is worth contrasting
+with `rho_k_co_casimir_extended.py`, whose incremental save destroyed its
+witness three times before being fixed — same interrupt, opposite outcome,
+purely because of when the write happens.
+
+So the state is: source correct, witness stale-but-honest (still the 15-dps
+numbers, as committed). Whoever regenerates it needs a faster host, and should
+expect **every published value in it to move** — that is the point of the drain,
+not a side effect.
+
+### Note on the remaining 44
+
+This one took ~5 hours of compute to *not* finish. Before draining another,
+check what it costs to re-run: a producer whose witness cannot be regenerated
+leaves the source and the published numbers disagreeing, which is a worse state
+than either fixing or leaving both. Prefer the cheap ones first — the ratchet
+does not care about order.
