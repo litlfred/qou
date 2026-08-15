@@ -76,7 +76,9 @@ def chi_numpy_prefix(shape, crossings, q_value):
     for gen_idx, ctype in crossings:
         sigma = matrices[gen_idx]
         d_val = d_for_ctype(ctype, h)      # <- the leak: mpf for averaged_weighted
-        cross = sigma + d_val * eye
+        # noqa: P35 — this line is SUPPOSED to leak. It is the pre-fix code
+        # under measurement; casting here would delete the thing being timed.
+        cross = sigma + d_val * eye  # noqa: P35
         M = M @ cross
     return mp.mpf(float(np.trace(M)))
 
