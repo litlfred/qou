@@ -154,7 +154,23 @@ def chi_numpy(
         if gen_idx < 0 or gen_idx >= len(matrices):
             raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
         sigma = matrices[gen_idx]
-        d_val = d_for_ctype(ctype, h)
+        # float() is load-bearing, not cosmetic. `d_for_ctype` returns a plain
+        # float for 'sigma' / 'sigma_inv' / 'averaged' but an mpmath `mpf` for
+        # 'averaged_weighted'. A single mpf in the sum promotes `cross` to
+        # dtype=object, and because M is reassigned from the product, M stays
+        # dtype=object for EVERY remaining crossing — so the loop silently
+        # leaves BLAS and runs pure-Python matmul to the end.
+        #
+        # Measured on tritium (n=9, dim=120, 35 crossings): the first
+        # averaged_weighted crossing appears at index 11, and matmul cost jumps
+        # from ~0.0005 s to ~2.7 s and never recovers — 66 s for one partition
+        # instead of ~0.02 s. That is the whole of the ~148x slowdown that made
+        # rho-k-co-casimir-extended look unrunnable (bean qou-5qwb).
+        #
+        # Casting is correct here, not a precision loss: this function is the
+        # declared float64/BLAS path (see docstring), validated against the
+        # mpmath path at 1e-14. Callers wanting full precision use chi_numeric.
+        d_val = float(d_for_ctype(ctype, h))
         cross = sigma + d_val * eye
         M = M @ cross   # numpy matmul (C-level BLAS)
 
