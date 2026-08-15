@@ -622,3 +622,60 @@ killed at the cap (rc=124). Deleted — a partial witness from a SIGKILLed
 producer is exactly the thing `witness_shape_guard` exists to catch, and it
 should not be committed just because it happens to be new rather than modified.
 An untracked file is easier to overlook than a dirty one.
+
+## CORRECTION — the two "REGRESSED" witnesses were TRUNCATED, not regressed
+
+I reverted `atom-level-wedderburn-tower` (1 → 103 raw float64) and
+`catalan-binding` (35 → 47) as regressions caused by raising precision, and
+recorded them as needing "serialization fixed at the producer". **Both readings
+were wrong.** Comparing committed against regenerated, field by field:
+
+    atom-level-wedderburn-tower
+        COMMITTED     results: {}          — ZERO entries. 28 fields total.
+        REGENERATED   results: 6 atoms     — 199 fields, 171 of them new.
+        type changes between them: 0
+
+    catalan-binding
+        COMMITTED     ~97 leaves, 35 raw float64
+        REGENERATED   ~224 leaves, 47 raw float64
+
+Not a single field changed TYPE in either. The extra float64 arrives with extra
+**content**: the committed witnesses are truncated, and `atom-level-wedderburn-
+tower`'s publishes literally nothing — an empty `results` dict.
+
+**And its raw-float64 baseline entry of `1` is an artifact of that emptiness.**
+`witness_shape_guard`'s own docstring names this exact hazard:
+
+> a gutted witness scores zero raw floats, which reads as a perfect drain
+
+which is what has happened here, one step short of zero. The ratchet has been
+recording a truncated witness as nearly clean, and the moment anyone completes
+it the gate reads the completion as a 100-field regression.
+
+### Why they cannot simply be completed
+
+The float64 in these is **genuine and by construction**, not a serialization
+slip. `atom_level_wedderburn_tower.py` computes in float64 deliberately:
+
+    d_q_val   = float(dim_q(shape))
+    w_lambda  = d_q_val ** 2 / float(nfac)
+    phi       = float(Phi_q(phi_arg))
+    descended = 0.0                       # float accumulator
+
+So `set_compute_dps()` cannot help it — the casts discard precision after the
+raise, which is a different defect from the one this bean's gate detects. My
+"fix the serialization" framing was wrong twice over: the values are not
+mis-serialized mpf, they are honest float64, and the way to drain them is to
+**port the producer off `float()`**, which is a real job rather than a tweak.
+
+Left as-is: source drained (both do call `set_compute_dps()` now, committed in
+`254644182`), witnesses committed-and-truncated, ratchet unmoved. Completing
+either requires the port first, or the completion registers as a regression.
+
+### Method note
+
+I twice reported a cause before checking the diff — first "serialization", then,
+seeing an empty `git diff` on the producer, "my drain never touched this file"
+(it had; the change was already committed, so the working tree was clean). Both
+were resolved the same way: compare the two artefacts directly and count. A
+witness diff is cheap and answers the question that guessing does not.
