@@ -345,3 +345,47 @@ expression with sympy; compare the magnitude against the smallest live weight
 The corollary matters more than the count: **a witness flagged convention C is
 not evidence that its producer computes convention C.** Three of these four
 producers were already fully convention D.
+
+### `tr_m_q_hecke_seminormal` — stale data, and that closes the sample at 0 roots
+
+Determined without waiting for the (slow) re-run, by asking what the producer
+reads versus what its witness claims:
+
+    what it READS today, n=3:  (1,1,1) = 0.0          <- convention D
+                               (2,1)   = 0.2472978867
+                               (3,)    = 0.5054042265
+    committed witness contains 0.022744945706475995   <- convention C
+
+Clean D input, stale C output. Same class as `probe_1b`: **derived, fixed by
+a re-run, no source edit.**
+
+### The "29 roots" were not roots — all five, wrong
+
+That completes the five, and the root/derived split I recorded above is wrong
+for every one of them:
+
+| producer | I said | actually |
+|---|---|---|
+| `probe_1b_li6_orthogonality` | root, source edit | derived — stale data |
+| `tr_m_q_hecke_seminormal` | root, source edit | derived — stale data |
+| `alpha_k_jones_markov_h12` | root, source edit | not C at all — solver residue |
+| `derived_chi_catalogue_build` | root, source edit | not C at all — placeholder literal |
+| `y_lambda_macdonald_telescope` | root, source edit | not C at all — symbolically zero |
+
+**Zero of five carry convention C in their own code.** The claim that they did
+came from a source grep — "reads no C witness, therefore computes C itself" —
+which is a non-sequitur: it excludes one source of C without establishing the
+other. Executing each producer, or even just reading what it reads, settles it
+in seconds; I inferred instead, and the inference was wrong five times out of
+five.
+
+This is the fourth instance in this bean of measuring the artifact instead of
+the property (after `--plan` stdout, read-set-vs-content-test, and
+read-vs-write in a source grep). The instrument changes each time; the error
+does not.
+
+**Practical consequence:** the sequencing advice recorded earlier — "fix root
+PRODUCERS at the source, then let dependency ordering carry the derived" — is
+**not** what this front needs. There are no roots in it. What it needs is
+re-runs of producers whose committed witnesses predate the migration, plus
+three flags that should simply be re-classified as not-C.
