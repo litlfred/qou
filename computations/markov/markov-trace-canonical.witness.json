@@ -1,0 +1,78 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T20:43:26.455583+00:00",
+  "commitSha": "34eff092b81d34f1bc1a3383d290ade547ae2554",
+  "assertions": [
+    {
+      "name": "trM_𝟏",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1.0e-40"
+    },
+    {
+      "name": "trM_σ₀",
+      "computed": "0.61268803714646525159582986394589924802630839154509",
+      "expected": "0.61268803714646525159582986394589924802630839154509",
+      "passed": true,
+      "tolerance": "1.0e-40"
+    },
+    {
+      "name": "trM_σ₀σ₁",
+      "computed": "0.37538663086238838399937230337900991145330721988033",
+      "expected": "0.37538663086238838399937230337900991145330721988033",
+      "passed": true,
+      "tolerance": "1.0e-40"
+    },
+    {
+      "name": "trM_σ₀σ₁σ₀",
+      "computed": "0.69116647835844452614771953097904620661424111867814",
+      "expected": "0.69116647835844452614771953097904620661424111867814",
+      "passed": true,
+      "tolerance": "1.0e-40"
+    },
+    {
+      "name": "trM_σ₁σ₀σ₁",
+      "computed": "0.69116647835844452614771953097904620661424111867814",
+      "expected": "0.69116647835844452614771953097904620661424111867814",
+      "passed": true,
+      "tolerance": "1.0e-40"
+    },
+    {
+      "name": "trM_σ₀²",
+      "computed": "1.1280887441143537855931516549992460492834828187552",
+      "expected": "1.1280887441143537855931516549992460492834828187552",
+      "passed": true,
+      "tolerance": "1.0e-40"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 488,
+  "computation": "markov-trace-canonical",
+  "scriptFile": "markov_trace_canonical.py",
+  "scriptHash": "f5dff3fd9849",
+  "scriptCommitSha": "1ca4f00cf45c0212ff2a15174b974c9b2c770546",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "data": {
+    "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "z_convention_D": "0.61268803714646525159582986394589924802630839154509",
+    "h": "0.20906029879563931543084621312967494385975749526306",
+    "figure8_trM_at_q0_convention_D": "0.280195642272695",
+    "figure8_trM_symbolic": "(q**8 - q**6 + q**4 - q**2 + 1)/(q**6 + 2*q**4 + q**2)"
+  }
+}
