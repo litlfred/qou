@@ -29,3 +29,24 @@ Reference: docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md �
 Route A's R1 (#connections = A-poly L-degree) is the best scalar candidate — it hits the dtMax vector (4_1,5_2)↦(3,4) exactly, and it is a NEW scalar not in the Driver14CharacterVarietyDTMenu menu. BUT Driver14CharacterVarietyDTMenu.no_scalar_matches_chirality_split_datum (sorry-free) proves the 5_2 DT datum is a 2-element SET {3,4} (chirality split), so NO scalar — R1 included — can equal it. The scalar family is proved insufficient.
 
 So Route C is not optional: the internal A_ω count must be a chirality-refined, set-valued Behrend-weighted DT moduli / BPS Hilbert space (the "driver-14" object). The tractable-scalar-shadow entry point is closed (proved). Forward work = the genuine categorification (CoHA / BPS cohomology producing a chirality-graded count) — research programme, out of session scope. R1 stays recorded as the sharpest scalar shadow.
+
+## Attack options (2026-08-15 ledger, post-d999b21d7 correction)
+
+M2 is a CONDITIONAL characterization (no (Q,W) built, no cohomology computed,
+A_ω still imported). Honest rungs:
+
+- **D1 — M1: construct the (Q,W)** [the real next rung; medium-large]. The
+  abelian finding constrains it sharply (distinct Borel rays ⇒ no motivic
+  multiplicity needed): find the smallest quiver-with-potential whose DT
+  spectrum reproduces {3,4} + the bar split (7,1). ANTI-LAUNDERING: a quiver
+  fitted to the data is a CANDIDATE, labeled as such — only a construction
+  from Hecke/Bring data counts as the derivation.
+- **D2 — M3 as a §3b class** [small]. Content-bearing conjecture class for
+  "closed-sector category = this (Q,W)"; enables conditional downstream
+  without laundering.
+- **D3 — cross-knot data** [small; import]. Extend certified DT spectra
+  (6₁; harden 5₂ via qou-52sn / SnapPy) to give M1 candidates more
+  falsification targets.
+- **D4 — chirality = bar-involution link** [small-medium]. Formalize the
+  rtec audit's lever ({S⁺,S⁻} split IS q↦q⁻¹) as conditional Lean tying the
+  DT set to the corpus bar-parity machinery.
