@@ -1175,3 +1175,19 @@ value 1 on the non-negative branch, so whichever sign d has, one of the two is e
 That is the substantive half of gap (2). The remaining half is combinatorial: #SYT mu >= 2
 implies SOME generator moves SOME tableau (the SYT-connectivity fact -- the ledger's
 "all-T connectivity" in yt-seminormal-infra). Not attempted here.
+
+
+## HYPOTHESIS AMENDED 2026-08-15 (owner approved) — hoefsmit_seminormal_rep now takes q^2 != 1
+
+Per owner go-ahead, hoefsmit_seminormal_rep's signature is now
+
+    (q : R) (hq : q != 0) (hq2 : q^2 != 1) (lam : Partition N)
+
+Checked before amending: NO Lean call site applies the theorem (all references are docstring
+mentions), so the added hypothesis breaks nothing.
+
+Its docstring is also rewritten. It had described the braid for arbitrary lambda as the
+outstanding residual -- that is now proved (genMat_braid), so leaving the description would
+have misdirected the next reader to work that is done. It now names the two ACTUAL gaps
+(reindexing; the connectivity half of non-scalarity) and records why q^2 != 1 is not
+decoration.

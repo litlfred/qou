@@ -396,31 +396,40 @@ first 4-strand case `λ = (2,2)` (`N = 4`, `d_λ = 2`, non-vacuous far-commutati
 conclusion below.  The `2×2` building block of the general matrices — with its quadratic relation and
 non-scalarity — is `seminormalBlock` / `seminormalBlock_quadratic` / `seminormalBlock_ne_scalar`.
 
-**What is now scaffolded sorry-free (see above):** the reusable size-`2` orbit block and its
-quadratic + non-scalarity, and two fully-worked instances (`(2,1)`, `(2,2)`) exercising the braid and
-far-commutation relations.  **What remains for the general `∀ λ` statement** is: (i) enumerate the
-`s_i`-orbits of `SYT λ` (each of size `1` — scalar `q` / `-q⁻¹` — or `2` — a `seminormalBlock`);
-(ii) assemble the block-diagonal generator matrices from those orbits; (iii) prove the **braid
-relation for arbitrary `λ`** — the Yang–Baxter / axial-distance identity across the `S₃`-orbit of
-three consecutive entries `i, i+1, i+2`, whose generic (size-`6`) case is a genuine `6`-dimensional
-identity, not reducible to the `2×2` blocks above.  Step (iii) is Hoefsmit's thesis theorem and is
-not yet formalised.  Tracked as bean `qou-im9l` (SW-4-gen) and its child GAP bean; irreducibility (the
-`∃ i, non-scalar` witness in full strength) is bean SW-5. -/
-theorem hoefsmit_seminormal_rep {N : ℕ} (q : ℝ) (hq : q ≠ 0) (lam : Partition N) :
+**The general construction is now built** in `QOU.SchurWeyl.SeminormalRep`: the generator matrices
+on all of `SYT μ` (`genMat`), all three Hecke relations unconditionally (`genMat_quadratic`,
+`genMat_far_comm`, `genMat_braid` — the braid dispatching over every orbit shape), and the algebra
+map `seminormalRep`.  What was for a long time the residual — the braid for arbitrary `λ`, whose
+generic size-`6` case is a genuine `6`-dimensional identity — is proved.
+
+**What still separates that from the statement below** is (i) reindexing `SYT μ` to
+`Fin (dLambda lam)`, and (ii) the non-scalarity payload: `genMat_ne_scalar` gives it for any
+generator that *moves* a tableau, leaving only that `dLambda ≥ 2` forces some generator to move one
+(bean SW-5).
+
+**On the hypotheses.**  `q ^ 2 ≠ 1` is not decoration: over `ℝ` a nonzero `q` is a root of unity
+exactly when `q = ±1`, and at `q = -1` the axial-distance formula degenerates — `S1`'s entry is
+`-1/(2q) ≠ 0` while `seminormalParam` evaluates to `0/0` (see `SeminormalParam.lean`).  Together
+with `q ≠ 0` this is the sharp genericity condition, and it is what `[ram1997]`'s formulas
+presuppose.  Added 2026-08-15; the statement previously assumed only `q ≠ 0` and was not provable
+as written. -/
+theorem hoefsmit_seminormal_rep {N : ℕ} (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (lam : Partition N) :
     ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
       2 ≤ dLambda lam →
         ∃ i : Fin (N - 1), ∀ s : ℝ,
           ρ (Hecke.σ ℝ q q⁻¹ (N - 1) i) ≠ s • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
   -- Ref: [hoefsmit1974] (PhD thesis, UBC 1974 — the seminormal form); [ram1997] axial-distance
   --   formulas.  Both keys resolve in `content/schema/references.ts`.
-  -- GAP (bean qou-im9l / SW-4-gen residual): the general seminormal construction indexes a basis by
-  --   `SYT lam` and, for each generator `σ_i`, forms the block-diagonal matrix over the `s_i`-orbits
-  --   of SYT — size-1 orbits scalar (`q` or `-q⁻¹`), size-2 orbits a `seminormalBlock` (proved
-  --   quadratic + non-scalar above).  The residual is the BRAID relation for arbitrary `λ`: the
-  --   Yang–Baxter / axial-distance identity across the S₃-orbit of `i, i+1, i+2`, whose generic
-  --   size-6 case is a genuine 6-dim identity (the size-1/2 cases reduce to `S0_S1_braid`, as in
-  --   `seminormalRep22`).  This is Hoefsmit's thesis theorem; not yet formalised.  Irreducibility in
-  --   full strength is bean SW-5.
+  -- GAP (bean qou-im9l / SW-4-gen residual).  The BRAID relation for arbitrary `λ` — once the
+  --   residual named here — is now PROVED: `SeminormalRep.genMat_braid`, unconditionally on all
+  --   of `SYT μ`, alongside `genMat_quadratic` and `genMat_far_comm`, and packaged as the algebra
+  --   map `SeminormalRep.seminormalRep`.  Two gaps remain between that and this statement:
+  --   (i) REINDEXING — `seminormalRep` is indexed by `SYT μ`, this by `Fin (dLambda lam)`; needs
+  --       `dLambda lam = #SYT (partitionShape lam)` plus `Matrix.reindexAlgEquiv`.
+  --   (ii) NON-SCALARITY at `dLambda ≥ 2` — `SeminormalRep.genMat_ne_scalar` supplies it for any
+  --       generator that MOVES some tableau (no hypothesis on `q`); what is missing is that
+  --       `#SYT μ ≥ 2` forces some generator to move some tableau (SYT connectivity).  Bean SW-5.
   sorry
 
 end QOU.SchurWeyl
