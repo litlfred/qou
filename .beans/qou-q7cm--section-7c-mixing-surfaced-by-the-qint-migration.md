@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-08T17:55:00Z
-updated_at: 2026-08-08T17:55:00Z
+updated_at: 2026-08-15T14:51:37Z
 ---
 
 scripts/check-sidecars.sh flags two files with
@@ -49,3 +49,19 @@ restructure of someone else's module.
 
 Check first whether either file is already covered by a sibling PR; the
 wall-side §7c sweeps (qou-3bcc, med65) have been working this exact axis.
+
+
+## Independently confirmed by the canonical checker (2026-08-15)
+
+Ran folio-assistant's `wall-side-correct` (content-based) over both files named here — **both return `fail`** (MIXED: generic-R + archimedean markers in one file), corroborating this bean's `check-sidecars.sh` finding with the authoritative checker rather than the changed-file preflight:
+
+| file | codeℝ | generic | wall-side | regimes |
+|---|---|---|---|---|
+| `GaugeFieldFluidDynamics` | 55 | Y | **fail** | generic-R, real-gt-1, real-positive, root-of-unity |
+| `MassComputationChainRoadmap` | 22 | n | **fail** | fixed-q0, real-gt-1, real-positive, symbolic |
+
+This also answers the bean's "check first whether either file is already covered by a sibling PR": a PR search returned none, and both are still MIXED on main.
+
+Also surfaced a **third** MIXED file this bean does not name: `QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean` (codeℝ=5, generic=Y, banner=Y, wall=**fail**) — recorded in `qou-oc4v`'s triage table.
+
+The split work described above stands. Note the bean's own general point is reinforced: `check-sidecars.sh` is a CHANGED-FILE checker, so a clean run is not evidence untouched files comply — the whole-tree content checkers are what close that blind spot.
