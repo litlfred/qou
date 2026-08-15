@@ -69,6 +69,11 @@ Archimedean (ℝ): genuinely archimedean — strict concavity and Jensen over `�
 
 namespace QOU.Knot.AngleStructureUniqueness
 
+-- The maximiser binders (`p`, `q`) occur in the *statement* conclusions/hypotheses
+-- but not by name in the term-mode proofs, which the unused-variable linter flags
+-- spuriously; disabled file-wide for this small, hand-reviewed file.
+set_option linter.unusedVariables false
+
 open QOU.Knot.SymmetricOptimum
 
 /-! ## The generic uniqueness mechanism -/
