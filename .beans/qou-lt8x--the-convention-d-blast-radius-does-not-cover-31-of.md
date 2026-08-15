@@ -253,7 +253,7 @@ deliberately evaluates the C formula and "fixing" it would be wrong:
 |---|---|---|
 | `alpha_k_jones_markov_h12.py` | **production weights** | recompute y_λ over 77 partitions of 12 under D; most vanish |
 | `tr_m_q_hecke_seminormal.py` | **production weights** | canonical Wenzl Schur-principal weight, D form |
-| `probe_1b_li6_orthogonality.py` | **premise dissolves** | the probe compares y_λ magnitudes across PSD-dominant many-row families — (3,3,3,3,2,2,2), (5,5,5,3), (4,4,4,3,3). Under D every one is exactly 0, so the orthogonality question it asks does not survive the convention change. The honest outcome is to record that, **not** to refresh numbers. |
+| `probe_1b_li6_orthogonality.py` | **recompute** ⚠ *(revised — see the 2026-08-15 correction below; this row originally read "premise dissolves")* | Only the PSD-dominant side is 3+ row and vanishes under D; the trace-dominant side is 1- and 2-row and stays nonzero. The question survives and the answer sharpens to an exact zero. Re-run and record it. |
 | `y_lambda_macdonald_telescope.py` | **symbolic re-derivation** | `z = q**3/(q**2+1)` with a docstring reading `z = 1/(q^{1/2}+q^{-1/2})`; the hook-content telescope is derived in `Q = q²` with Wenzl level `X = Q^r`. Needs re-derivation under D, not a numeric edit. |
 | `derived_chi_catalogue_build.py` | **unclear — check first** | its flagged entries are keyed `y_lambda_at_zero = 1`, not `y_lambda`. That may be a limit value rather than a weight, in which case the detector is over-reporting on this file by design (it over-reports rather than under-reports, per its own docstring). |
 

@@ -40,11 +40,17 @@ triples. Neither is vendored, nor is `hecke_core` or `_path_bridge`:
     hecke_core.py        : False
     _path_bridge.py      : False
 
-**It changes published numbers.** Syncing makes `qou-mass` compute the
-colour-weighted p-n interface `-h(1/2 - δ/4)` where today it computes the
-colour-blind `-h/2` — a 6.88e-4 shift on the interface crossing, for every
-`Z >= 1, N >= 1` nuclide. That is a deliberate change to what an
-external-researcher facade reports, not a bug fix to be slipped in.
+**~~It changes published numbers.~~** ⚠ **RETRACTED — see the 2026-08-15
+correction below.** This paragraph originally asserted, in the present tense,
+that syncing "makes `qou-mass` compute the colour-weighted p-n interface
+`-h(1/2 - δ/4)` where today it computes the colour-blind `-h/2` — a 6.88e-4
+shift ... for every `Z >= 1, N >= 1` nuclide."
+
+It computes neither. The vendored path raises `ModuleNotFoundError` on every
+input, so there is no current output for a sync to shift. The 6.88e-4 figure
+would apply only **conditionally** — *if* the vendor were completed (P3) and
+the path became runnable *and* the classifier were left stale. As a statement
+about today's package it is simply false.
 
 ## The decision needed
 
