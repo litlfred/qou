@@ -142,8 +142,12 @@ def _summarize_input_audit(w: dict[str, Any] | None) -> dict[str, Any]:
         "over_count_count": over_count,
         "vol_hyp_fitted_count": vol_hyp,
         "total_classified": total_classified,
+        # Ratios of COUNTS, emitted as strings. All three are exact rationals
+        # built from integers already recorded beside them, so float64 adds
+        # nothing and only lands raw f64 in the witness. Drains 3 baseline
+        # fields; baselines drain, never grow.
         "canonical_ratio": (
-            (canonical / total_classified) if total_classified else None
+            f"{canonical / total_classified:.6f}" if total_classified else None
         ),
     }
 
@@ -188,7 +192,11 @@ def _summarize_repro(w: dict[str, Any] | None) -> dict[str, Any]:
         "status": "loaded",
         "computedAt": w.get("computedAt"),
         "by_status": data.get("by_status") or {},
-        "pass_ratio": data.get("pass_ratio"),
+        "pass_ratio": (
+            f'{data["pass_ratio"]:.6f}'
+            if isinstance(data.get("pass_ratio"), (int, float)) else
+            data.get("pass_ratio")
+        ),
     }
 
 
@@ -266,7 +274,18 @@ def _contract_witness_reproducibility(repro: dict[str, Any]) -> dict[str, Any]:
     timeout_n = by_status.get("timeout", 0)
     skip_n = by_status.get("skip", 0)
     total_checkable = pass_n + drift_n + error_n + timeout_n
-    pass_ratio = repro.get("pass_ratio")
+    # Coerced, because `repro` is the SUMMARY dict, and `_summarize_repro`
+    # serialises `pass_ratio` as a string to keep raw float64 out of the
+    # witness. Without this the `pass_ratio == 1.0` test below silently
+    # compares "1.000000" to 1.0 and is always False — masked today only by
+    # the `or pass_n > 0` fallback beside it, which is exactly the kind of
+    # accident that survives review because the verdict happens to come out
+    # right anyway.
+    _pr = repro.get("pass_ratio")
+    try:
+        pass_ratio = float(_pr) if _pr is not None else None
+    except (TypeError, ValueError):
+        pass_ratio = None
     return {
         "name": "Witness reproducibility (P32)",
         "source": "witness-reproducibility-check.witness.json",
@@ -581,7 +600,10 @@ def main() -> int:
             "witness_reproducibility": repro_summary,
         })
         .add_data("contracts", contracts)
-        .add_data("infra_score", infra_score)
+        .add_data(
+            "infra_score",
+            f"{infra_score:.6f}" if infra_score is not None else None,
+        )
         .add_data("known_open_conflicts", KNOWN_OPEN_CONFLICTS)
         .add_data("closed_recently", CLOSED_RECENTLY)
         .add_data("recommended_next", RECOMMENDED_NEXT)
@@ -598,8 +620,38 @@ def main() -> int:
             "infra-discipline backlog drains."
         )
     )
+
+    # Register one assertion per contract, so `allPassed` reports what the
+    # dashboard actually found.
+    #
+    # Without this the witness carried `allPassed: true` with ZERO assertions —
+    # vacuously true, because nothing had been registered — while `data.contracts`
+    # recorded two contracts at `fail` (P30: 142 of 730 files bypassing
+    # WitnessBuilder; P31: 57 hardcoded CODATA literals). A compliance dashboard
+    # is the worst possible place for that: anything gating on `allPassed` read
+    # this file as compliant while its own body said otherwise.
+    #
+    # `warn` counts as passed. It is a threshold the dashboard deliberately
+    # scores at 0.5 rather than a violation, and collapsing it into `fail` would
+    # swap one wrong verdict for another. Only `fail` fails; `missing` fails too,
+    # since an unverifiable contract is not a satisfied one.
+    for c in contracts:
+        ok = c["status"] in ("pass", "warn")
+        w.add_assertion(
+            f"contract: {c['name']}",
+            computed="1" if ok else "0",
+            expected="1",
+            tolerance="0",
+            unit="boolean",
+            source=c.get("source", "canonical_derivation_pipeline_compliance"),
+        )
+
     w.save()
-    return 0
+    # Exit non-zero when a contract fails. The dashboard previously exited 0
+    # unconditionally, so a caller could not tell a compliant pipeline from a
+    # failing one without parsing the witness — the same silent-success shape as
+    # qou-9d6h.
+    return 0 if all(c["status"] in ("pass", "warn") for c in contracts) else 1
 
 
 if __name__ == "__main__":
