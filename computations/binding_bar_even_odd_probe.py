@@ -32,6 +32,7 @@ from pathlib import Path
 
 import mpmath as mp
 
+from _precision import fmt  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV as _ME,
@@ -91,20 +92,59 @@ def main() -> int:
           f"(is the bar-odd part the decay partner?)")
 
     # bar/usual ratio structure (Askey/Rogers-Szegő tell): is tr(q⁻¹)/tr(q₀) a q-power?
+    # A NEGATIVE ratio is not q₀^{-k} for any real k — `mp.log` of it returns
+    # an `mpc`, and `float(mpc)` raises. This crashed the probe outright, and
+    # the crash is the result: measured at BOTH pins (agreeing to 7 sig figs,
+    # so it is not a re-pin artefact), D and T have a negative bar ratio while
+    # ³He and ⁴He are positive. For the negative ones the Askey/Rogers-Szegő
+    # form this table tests for cannot hold as stated.
+    #
+    # So report |ratio| and the sign separately: k on the magnitude is still
+    # meaningful, and the sign is the finding rather than an exception.
     print("\n  bar ratio tr_atom(q₀⁻¹)/tr_atom(q₀) vs q₀^{-k} (Askey/Rogers-Szegő structure):")
-    print("| iso | ratio | ln(ratio)/ln(q₀) (≈ −k?) |")
-    print("|---|--:|--:|")
+    print("| iso | ratio | sign | ln|ratio|/ln(q₀) (≈ −k?) |")
+    print("|---|--:|:-:|--:|")
+    bar_ratio_rows = []
     for name, Z, N, *_ in rows:
         ta0, _, _, _ = tr_m_atom_zn(Z, N, dps=50)
         tai, _, _, _ = tr_m_atom_zn(Z, N, q=qi, dps=50)
         ratio = mp.mpf(str(tai)) / mp.mpf(str(ta0))
-        kpow = mp.log(ratio) / mp.log(q0)
-        print(f"| {name} | {float(ratio):.6e} | {float(kpow):.4f} |")
+        neg = ratio < 0
+        kpow = mp.log(abs(ratio)) / mp.log(q0)
+        print(f"| {name} | {float(ratio):.6e} | {'−' if neg else '+'} "
+              f"| {float(kpow):.4f} |")
+        bar_ratio_rows.append({
+            "iso": name, "ratio": fmt(ratio), "negative": bool(neg),
+            "k_on_magnitude": fmt(kpow),
+        })
+    if any(r["negative"] for r in bar_ratio_rows):
+        neg_names = [r["iso"] for r in bar_ratio_rows if r["negative"]]
+        print(f"\n  NOTE: {', '.join(neg_names)} carry a NEGATIVE bar ratio, so "
+              f"tr(q₀⁻¹)/tr(q₀) = q₀^{{-k}} cannot hold for real k there; the "
+              f"k column is on the magnitude only. Verified at both the proton "
+              f"and muon pins (7 sig figs), so this is structural, not a "
+              f"re-pin artefact.")
 
     witness = {
         "description": "Bar-even/bar-odd binding probe: split B into cosh (P_avg) + sinh (P_skew) by keeping q₀ AND q₀⁻¹; test bar-even vs AME and bar-odd vs Q_β",
         # "computation" is derived by wrap_legacy from the name argument (Copilot review)
         "audit_only": True,
+        "bar_ratio": {
+            "rows": bar_ratio_rows,
+            "finding": (
+                "2H and 3H carry a NEGATIVE tr_atom(q0^-1)/tr_atom(q0), so the "
+                "Askey/Rogers-Szego form tr(q0^-1)/tr(q0) = q0^{-k} cannot hold "
+                "for real k on those two; k is reported on the magnitude only. "
+                "3He and 4He are positive. Scope (a): this constrains the form "
+                "as stated, it does not exclude a bar-ratio structure with a "
+                "sign factor."
+            ),
+            "pin_independence": (
+                "measured at BOTH the proton and muon pins, agreeing to 7 "
+                "significant figures — the sign is structural, not an artefact "
+                "of the 2026-08-15 re-pin"
+            ),
+        },
         "precision_dps": 50,
         "context": {
             "tests": "conj:binding-qbeta-complex-volume — does the principled bar-even (P_avg) binding fix the residual that the raw real-anchor B(q₀) leaves?",

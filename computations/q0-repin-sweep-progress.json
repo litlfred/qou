@@ -11,17 +11,6 @@
    "n_fields": 37,
    "err": ""
   },
-  "aK_via_lp_dual_hecke_basis": {
-   "rc": 1,
-   "sec": 0.9,
-   "witnesses": [
-    "a-K-via-lp-dual-hecke-basis.witness.json"
-   ],
-   "max_rel_move": 18105.74974103698,
-   "median_rel_move": 0.0,
-   "n_fields": 110,
-   "err": "TypeError: unsupported format string passed to mpf.__format__"
-  },
   "alpha_basis_knot_couplings": {
    "rc": 0,
    "sec": 0.2,
@@ -275,6 +264,50 @@
    "median_rel_move": 0.0,
    "n_fields": 28,
    "err": "\u26a0 raw-float64: benzene-assembly-spine.witness.json: 8 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed[1], .assertions[0].expected[1], .parameters.q, .parameters.TWO_Q, .data.ben"
+  },
+  "beta_ew_delta_I_conjugate_pairing": {
+   "rc": 0,
+   "sec": 122.6,
+   "witnesses": [
+    "beta-ew-delta-I-conjugate-pairing.witness.json"
+   ],
+   "max_rel_move": 4.0,
+   "median_rel_move": 0.0,
+   "n_fields": 175,
+   "err": "\u26a0 raw-float64: beta-ew-delta-I-conjugate-pairing.witness.json: 65 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions"
+  },
+  "binding_a3plus_joint_ji_combiner": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "binding-a3plus-joint-ji-combiner.witness.json"
+   ],
+   "max_rel_move": 2.1554771798943735e-06,
+   "median_rel_move": 0.0,
+   "n_fields": 1083,
+   "err": "\u26a0 raw-float64: binding-a3plus-joint-ji-combiner.witness.json: 6 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1"
+  },
+  "aK_via_lp_dual_hecke_basis": {
+   "rc": 1,
+   "sec": 11.7,
+   "witnesses": [
+    "a-K-via-lp-dual-hecke-basis.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 110,
+   "err": "TypeError: unsupported format string passed to mpf.__format__"
+  },
+  "binding_bar_even_odd_probe": {
+   "rc": 1,
+   "sec": 3.2,
+   "witnesses": [
+    "binding-bar-even-odd-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 39,
+   "err": "TypeError: float() argument must be a string or a real number, not 'mpc'"
   }
  }
 }
