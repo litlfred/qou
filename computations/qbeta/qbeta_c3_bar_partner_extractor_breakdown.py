@@ -245,6 +245,12 @@ def main() -> int:
             "Arithmetic on committed values; no fit, no c_k wired."),
         "audit_only": True,
         "tier": "exact arithmetic on the committed extractor (no fit)",
+        # Declare the pin (AGENTS.md 2026-08-07 owner directive). NOTE: this
+        # probe deliberately EVALUATES at 1/q0 as well, but the witness's
+        # anchor is the proton pin q0 — 1/q0 is a derived point, not a second
+        # anchor, and must not be read as one.
+        "q0Anchor": "proton",
+        "q0Value": mp.nstr(q0, 25),
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "commitSha": _head_sha(),
         "engine": "mpmath",
