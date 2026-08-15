@@ -102,3 +102,54 @@ Both blocks rewritten to carry the fibre/archimedean split explicitly.
   constraint) but the same parameter-vs-value question applies, and being *a*
   solution of the pentagon is weaker than being *the* one.
 - All 55 tier-3 rows, and the 74 tier-2 rows outside the foundational chapters.
+
+## Second pass: the two claims left unchecked above
+
+Both were named as "not checked" when this doc first landed. Both have now been
+read.
+
+**The $q$-dilogarithm pair — earned, not a defect.** The claim *"not imported
+into the framework; forced by the monoidal axioms"* rests on a uniqueness step,
+and the uniqueness is real: `def:q-dilogarithm` states $\mathrm{Li}_2^q$ is *"the
+unique level-2 primitive normalised by the pentagon relation"*. So the pentagon
+**names** the object rather than merely admitting it, and "forced" is the right
+word. The block also self-hedges precisely where it should — *"it does not, by
+itself, determine the analytic monodromy datum … that datum is genuinely
+resurgent and remains open"*. This is what an earned contrastive claim looks
+like, and it is worth recording as the positive control for the `qou-vud6`
+checker.
+
+One stray error fixed: the block said *"Because $\mathbf{C}$ is **rigid**
+monoidal, its associator satisfies the Mac Lane pentagon coherence."* Pentagon
+coherence is a **monoidal** axiom; rigidity is irrelevant to it. One word,
+no claim changed.
+
+**A consequence of #5021 nobody swept for.** Moving rigidity from
+`def:quantum-universe` to `def:quantum-observable-universe` made every block
+asserting "$\mathbf{C}$ is rigid" a QOU-level statement. Five blocks do:
+
+| block | verdict |
+|---|---|
+| `hadron-operations-closure` | fine — own hypothesis, knot closure needs duals |
+| `categorical-linking-operation` | fine — own hypothesis, and it already scopes properties 1–3 vs 4–5 |
+| `categorical-neutrality-saturated-shells` | fine — own hypothesis |
+| `q-dilogarithm-pentagon-associator` | **fixed** — pentagon is monoidal, not rigid |
+| `frobenius-hopf-substrate` | **beaned `qou-t7mt`** — see below |
+
+`frobenius-hopf-substrate` opens "Let $\mathbf{C}$ be a rigid monoidal category"
+and phrases non-degeneracy as *"the induced map $A \to A^\vee$ is an
+isomorphism"*, which presupposes $A^\vee$. Its own Lean encoding needs no such
+thing: `FrobeniusHopfData` is declared over `[MonoidalCategory C]` alone and
+builds the self-duality from `coevaluation` plus the snake identities. That is
+exactly why axiom 3 could stay at QU level after #5021 — the traces come from
+$A$'s own form, not from ambient duals.
+
+Not fixed unilaterally: rewording a definition's axioms changes what the
+definition says, and downstream blocks cite it. The prose is not wrong, only
+stronger than needed. Options are recorded on the bean for the author.
+
+## Method note carried forward
+
+`differential-structures-intro`'s *"None of these structures are imposed
+externally; each is forced by the QOU axioms"* remains unchecked — it is a
+sweeping claim over four separate constructions and each needs its own reading.
