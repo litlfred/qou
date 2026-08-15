@@ -1191,3 +1191,37 @@ outstanding residual -- that is now proved (genMat_braid), so leaving the descri
 have misdirected the next reader to work that is done. It now names the two ACTUAL gaps
 (reindexing; the connectivity half of non-scalarity) and records why q^2 != 1 is not
 decoration.
+
+
+## REINDEX GAP CLOSED 2026-08-15 — and a duplicate-instance diamond removed on the way
+
+seminormalRepFin (sorry-free, axiom-clean, first-try compile):
+
+    Hecke R q q^-1 m ->a[R] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) R
+
+i.e. seminormalRep transported along Fintype.equivFin. NO cardinality theorem was needed:
+dLambda lam is DEFINED as Fintype.card (SYT lam), so Fin (dLambda lam) is already
+Fin (Fintype.card (SYT lam)) and equivFin is the map.
+
+THE TRAP I WALKED INTO AND BACKED OUT OF, worth recording because it would have surfaced far
+from its cause: when packaging I declared
+
+    noncomputable instance instFintypeSYT : Fintype (StandardYoungTableau mu) := Fintype.ofFinite _
+
+But YoungTableaux.lean ALREADY declares instFintypeStandardYoungTableau by the same
+Fintype.ofFinite, and it is in scope transitively (SeminormalRep -> TableauCells ->
+HoefsmitRep -> YoungTableaux). Two Fintype instances on one type is a genuine DIAMOND, and
+here it is load-bearing: dLambda is Fintype.card, so two instances give two cardinals and the
+reindex along equivFin would not typecheck against dLambda -- or worse, would typecheck
+against the wrong one. REMOVED; the file now relies on the shared instance. Only
+instDecEqSYT (DecidableEq, which nothing else provides) is declared here, with a comment
+saying why the Fintype deliberately is not.
+
+Generalisable lesson: before declaring an instance for a type you did not define, grep the
+import cone for an existing one. `Fintype.ofFinite` is especially prone to this because it is
+the obvious thing to write and carries no hint that someone else already wrote it.
+
+REMAINING for hoefsmit_seminormal_rep: only the connectivity half of non-scalarity --
+#SYT mu >= 2 implies SOME generator moves SOME tableau. genMat_ne_scalar already converts
+that into the statement's payload. Also needs (shape lam).cells.card = N to line the index
+m = N - 1 up with the statement; not checked whether that is available.

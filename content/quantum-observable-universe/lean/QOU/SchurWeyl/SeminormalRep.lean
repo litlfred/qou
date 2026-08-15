@@ -71,14 +71,14 @@ namespace SeminormalRep
 
 variable {μ : YoungDiagram} (q : ℝ)
 
-/-- `SYT μ` is finite (`QOU.Mathlib.StandardYoungTableau.instFinite`); this is the
-`Fintype` that makes `Matrix (SYT μ) (SYT μ) ℝ` a ring, so that the generator matrices can
-be multiplied at all.  Noncomputable — it goes through `Fintype.ofFinite`, which is fine
-here because nothing in this file is meant to evaluate. -/
-noncomputable instance instFintypeSYT : Fintype (StandardYoungTableau μ) := Fintype.ofFinite _
+/-- `Matrix`'s ring structure needs decidable equality on the index type as well as
+finiteness — it is what makes the identity matrix definable.
 
-/-- Companion to `instFintypeSYT`: `Matrix`'s ring structure needs decidable equality on the
-index type as well as finiteness (it is what makes the identity matrix definable). -/
+The **`Fintype` is deliberately not redeclared here**: `YoungTableaux.lean` already provides
+`instFintypeStandardYoungTableau`, which is in scope transitively, and a second
+`Fintype.ofFinite` instance on the same type would be a genuine diamond — `dLambda` is
+*defined* as `Fintype.card (SYT lam)`, so two instances would give two cardinals and break
+any reindexing along `Fintype.equivFin`. -/
 noncomputable instance instDecEqSYT : DecidableEq (StandardYoungTableau μ) :=
   Classical.decEq _
 
@@ -1786,6 +1786,23 @@ theorem genMat_ne_scalar (k : ℕ) (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cells.card
         = offDiag q (axialDist T k) := genMat_swap q k hk hkn hadm hne
     rw [hz hne, offDiag_of_not_neg q hsign] at h1
     exact one_ne_zero h1.symm
+
+/-! ### Reindexing onto `Fin (dLambda lam)`
+
+`dLambda lam` is *defined* as `Fintype.card (SYT lam)`, so `Fintype.equivFin` is already the
+required equivalence — no cardinality theorem is needed, only that the `Fintype` instance
+used here is the same one `dLambda` counts with (which is why this file does not declare its
+own; see `instDecEqSYT`).
+-/
+
+/-- **The seminormal representation on `Fin (dLambda lam)`.**  `seminormalRep` transported
+along `Fintype.equivFin`, giving the matrix algebra in the indexing
+`hoefsmit_seminormal_rep` states it in. -/
+noncomputable def seminormalRepFin (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) {N : ℕ}
+    (lam : Partition N) (m : ℕ) (hN : (shape lam).cells.card = m + 1) :
+    Hecke ℝ q q⁻¹ m →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ :=
+  (Matrix.reindexAlgEquiv ℝ ℝ (Fintype.equivFin (SYT lam))).toAlgHom.comp
+    (seminormalRep q hq0 hq2 m hN)
 
 end Package
 
