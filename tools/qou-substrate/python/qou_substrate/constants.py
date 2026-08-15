@@ -16,13 +16,27 @@ Derivation (2026-05-28: re-pinned from m_p/m_e — the most precise anchor):
 
     Experimental error on q₀ (propagated; Vol is a math constant with
     zero error, so only the mass ratio contributes):
-        m_p anchor : σ(q₀) = 0.0029 ppb = 2853 ppQ   (sensitivity ≈ 21)
-        m_μ anchor : σ(q₀) = 1.22  ppb = 1.2e6 ppQ   (429× looser)
+        m_p anchor : σ(q₀) = 0.00083 ppb = 830 ppQ   (sensitivity ≈ 21)
+        m_μ anchor : σ(q₀) = 1.22    ppb = 1.2e6 ppQ (1474× looser)
+
+    (Was "0.0029 ppb / 2853 ppQ / 429× looser" — computed from the
+    CODATA-2018 uncertainty 1.1e-7 on m_p/m_e. The 2022 uncertainty is
+    3.2e-8, so the proton anchor is 3.4× tighter than stated and the
+    anchor-choice margin correspondingly larger. The q₀ VALUE is
+    unchanged: the m_p/m_e value prints identically in both editions,
+    so no witness needs regeneration.)
 
 Sources:
-    Vol(4_1)  = 2.029883212819307…       (2·Cl₂(π/3), exact math constant)
-    m_p/m_e   = 1836.152673426 ± 1.1e-7  (CODATA 2022, 0.06 ppb — ANCHOR)
-    m_μ/m_e   = 206.7682830 ± 0.0000046  (CODATA 2022 — now a prediction)
+    Vol(4_1)  = 2.029883212819307…        (2·Cl₂(π/3), exact math constant)
+    m_p/m_e   = 1836.152673426 ± 3.2e-8   (CODATA 2022, 0.017 ppb — ANCHOR)
+    m_μ/m_e   = 206.7682827 ± 4.6e-6      (CODATA 2022 — now a prediction)
+
+    Both mass ratios are READ from the NIST table shipped at
+    qou_substrate/data/allascii.txt, never transcribed. Two edition
+    straddles were removed when that wiring landed (2026-08-15):
+    m_μ/m_e was the CODATA-2018 value 206.7682830 (1.451 ppb off), and
+    m_p/m_e carried the CODATA-2018 uncertainty 1.1e-7 (3.4× too wide)
+    against a value that happens to print the same in both editions.
 
 Anchor-choice rationale: observations/substrate-anchor-alternatives.md,
 docs/audits/2026-05-28-mu-p-tension-substrate-floor.md.
@@ -30,14 +44,27 @@ docs/audits/2026-05-28-mu-p-tension-substrate-floor.md.
 
 import math
 
+from .codata import codata as _codata
+
 # ── Input measurements with uncertainties ────────────────────────
 VOL_FIGURE_EIGHT     = 2.029883212819307   # 2·Cl₂(π/3): math constant (SnapPy-verified)
 VOL_FIGURE_EIGHT_ERR = 1e-12               # storage precision (math value is exact)
 
-MASS_RATIO_P_E       = 1836.152673426      # CODATA 2022 (m_p/m_e) — CALIBRATION ANCHOR
-MASS_RATIO_P_E_ERR   = 0.00000011          # 0.06 ppb
-MASS_RATIO_MU_E      = 206.7682830         # CODATA 2022 — now a PREDICTION (cross-check)
-MASS_RATIO_MU_E_ERR  = 0.0000046
+# The two mass ratios are READ from the NIST table (qou_substrate/data/
+# allascii.txt, 2022 CODATA adjustment), never transcribed. Until 2026-08-15
+# they were hand-typed literals, and MASS_RATIO_MU_E carried the CODATA-2018
+# value 206.7682830 under a "CODATA 2022" comment — 1.451 ppb (0.065σ) from
+# the 2022 value 206.7682827. Nothing physical moved, but nothing could
+# detect it either: there was no authoritative table in the repo to check
+# against. Reading the table removes both the transcription step and the
+# possibility of an unnoticed edition straddle.
+_P_E                 = _codata("proton-electron mass ratio")
+_MU_E                = _codata("muon-electron mass ratio")
+
+MASS_RATIO_P_E       = float(_P_E.value)         # CODATA 2022 (m_p/m_e) — CALIBRATION ANCHOR
+MASS_RATIO_P_E_ERR   = float(_P_E.uncertainty)   # 0.017 ppb
+MASS_RATIO_MU_E      = float(_MU_E.value)        # CODATA 2022 — now a PREDICTION (cross-check)
+MASS_RATIO_MU_E_ERR  = float(_MU_E.uncertainty)  # 22.2 ppb
 
 # ── Derived substrate parameter (m_p-pinned) ─────────────────────
 # q is DERIVED (never hardcoded): f64 Newton solve of the proton
@@ -91,7 +118,7 @@ HBAR_Q_SQ = HBAR_Q * HBAR_Q
 # math constant (zero experimental error); only the mass ratio enters.
 #   ⇒ σ(q₀) ≈ 0.0029 ppb = 2853 ppQ (vs 1.22 ppb on the old muon anchor).
 _S_PROTON = 21.0
-Q_ERR  = (Q / _S_PROTON) * (MASS_RATIO_P_E_ERR / MASS_RATIO_P_E)  # ~3.2e-12
+Q_ERR  = (Q / _S_PROTON) * (MASS_RATIO_P_E_ERR / MASS_RATIO_P_E)  # ~9.2e-13
 
 # ── Derived constants from q ─────────────────────────────────────
 Q_INV     = 1.0 / Q
@@ -159,8 +186,10 @@ Q_RAT_DEN = 10000000
 # (SnapPy's Vol limit); past that it is stable but bounded by
 # CODATA m_μ/m_e uncertainty.
 
-MASS_RATIO_P_E_STR   = "1836.152673426"  # CODATA 2022 (m_p/m_e) — pinning anchor
-MASS_RATIO_MU_E_STR  = "206.7682830"    # CODATA 2022 — now a prediction (cross-check)
+# Digit strings straight from the NIST table — see the note at the top of the
+# "Input measurements" block above.
+MASS_RATIO_P_E_STR   = _P_E.value_str    # CODATA 2022 (m_p/m_e) — pinning anchor
+MASS_RATIO_MU_E_STR  = _MU_E.value_str   # CODATA 2022 — now a prediction (cross-check)
 
 _DPS_DEFAULT = 50
 
