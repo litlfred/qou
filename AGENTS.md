@@ -1218,7 +1218,7 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:
 [`observations/three-calibration-discipline.md` §3](content/quantum-observable-universe/observations/three-calibration-discipline.md),
 [`observations/epistemic-status-of-calibrations.md`](content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md),
-[`mass-theory/rem-qstar-decay-sector-q0.md`](content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md) — the third, decay-sector determination of the same modulus):
+[`mass-theory/rem-qstar-decay-sector-q0.md`](content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md) — the decay-sector point `q*`, which is **conditional on (H1)** and is **NOT** an independent third determination; see registry §9f):
 
 > **Dead citation corrected 2026-08-11.** This list previously named
 > `observations/substrate-anchor-alternatives.md`, which **does not exist**
@@ -1226,6 +1226,16 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 > resolving to nothing. Replaced with the live block covering the alternative
 > (decay-sector) anchor. Found while adding the §"Which pin the numbers
 > actually use" subsection to `epistemic-status-of-calibrations`.
+>
+> **Descriptive clause corrected 2026-08-15** (PR #5074, bean `qou-kh7e`). The
+> replacement first read *"— the third, decay-sector determination of the same
+> modulus"*. There is no such determination: `q*` is root-found on
+> `S(q) = c₃(q) + Vol(4₁)` where `c₃ = (Q_β^exp/Q_N2 − 1)/u³` is **extracted
+> from experimental Q_β**, so locating it **presupposes (H1)**
+> `c₃^even = −Vol(4₁)`. It is independent of the two **mass** pins only, which
+> is weaker and different. **Two** pins; μ–p is a **two-way** tension. The
+> dead-citation fix above stands — only the clause describing the block was
+> wrong.
 
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
