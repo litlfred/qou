@@ -498,6 +498,7 @@ function main(): number {
   if (argv.includes("--selftest")) return selftest() ? 1 : 0;
 
   const wantList = argv.includes("--list");
+  const wantSuggest = argv.includes("--suggest");
   const jsonIdx = argv.indexOf("--json");
   const jsonOut = jsonIdx >= 0 ? argv[jsonIdx + 1] : null;
   const targets = argv.filter(
@@ -562,6 +563,119 @@ function main(): number {
       }
       if (findings.length > 8) console.log(`      … ${findings.length - 8} more`);
     }
+  }
+
+  if (wantSuggest) {
+    // Which witnesses would make an undeclared block's numbers traceable?
+    //
+    // 190 blocks quote high-precision values and declare no
+    // `computation.witness`. Triage showed ~115 of them are UNDER-declared --
+    // their numbers do exist in some witness, nobody named it -- and ~61 are
+    // orphans, quoting values that appear in no witness anywhere. Those are
+    // very different pieces of work, and hand-separating 190 blocks is the
+    // kind of survey this axis exists to avoid.
+    //
+    // So: index every decimal token in every witness (truncated to 8 decimal
+    // places, which is well past the 4-place scope threshold and cheap to
+    // hold), then greedily cover each block's literals. A block that ends up
+    // fully covered is a declaration away from being traceable; one that ends
+    // up mostly uncovered is a real finding.
+    //
+    // The output is a PROPOSAL, not an edit. A witness that happens to contain
+    // a matching decimal is not necessarily the witness the block means --
+    // 0.612688037146 is z at the proton pin and appears in dozens of unrelated
+    // files. Coverage narrows the candidates for a human; it does not decide.
+    const tokenIndex = new Map<string, string[]>();
+    const witnessFiles: string[] = [];
+    const collect = (dir: string) => {
+      let entries: string[];
+      try {
+        entries = readdirSync(dir);
+      } catch {
+        return;
+      }
+      for (const e of entries) {
+        if (e === "node_modules" || e === "__pycache__" || e === "_deprecated") continue;
+        const full = join(dir, e);
+        let st;
+        try {
+          st = statSync(full);
+        } catch {
+          continue;
+        }
+        if (st.isDirectory()) collect(full);
+        else if (e.endsWith(".witness.json")) witnessFiles.push(full);
+      }
+    };
+    collect(join(repoRoot, "computations"));
+    for (const wf of witnessFiles) {
+      let raw: string;
+      try {
+        raw = readFileSync(wf, "utf8");
+      } catch {
+        continue;
+      }
+      const rel = relative(repoRoot, wf);
+      const seen = new Set<string>();
+      for (const m of raw.matchAll(/(\d+)\.(\d{4,})/g)) {
+        const k = `${m[1]}.${m[2].slice(0, 8)}`;
+        if (seen.has(k)) continue;
+        seen.add(k);
+        const arr = tokenIndex.get(k);
+        if (arr) {
+          if (arr.length < 40) arr.push(rel);
+        } else tokenIndex.set(k, [rel]);
+      }
+    }
+    console.log(
+      `\n  suggest: indexed ${witnessFiles.length} witness(es), ${tokenIndex.size} distinct 8-dp tokens\n`,
+    );
+
+    let fully = 0;
+    let partial = 0;
+    let orphan = 0;
+    for (const { block, findings } of failing) {
+      if (!findings.some((f) => f.detector === "no-witness-declared")) continue;
+      const lits = [...new Set(scopedLiterals(block.md).map((l) => l.lit))];
+      if (!lits.length) continue;
+      const keyOf = (l: string) => {
+        const [a, b] = l.split(".");
+        return `${a}.${b.slice(0, 8)}`;
+      };
+      let uncovered = new Set(lits.filter((l) => tokenIndex.has(keyOf(l))));
+      const missing = lits.filter((l) => !tokenIndex.has(keyOf(l)));
+      const chosen: Array<[string, number]> = [];
+      while (uncovered.size && chosen.length < 6) {
+        const tally = new Map<string, number>();
+        for (const l of uncovered)
+          for (const w of tokenIndex.get(keyOf(l)) ?? [])
+            tally.set(w, (tally.get(w) ?? 0) + 1);
+        let best = "";
+        let bestN = 0;
+        for (const [w, n] of tally) if (n > bestN) [best, bestN] = [w, n];
+        if (!best) break;
+        chosen.push([best, bestN]);
+        uncovered = new Set(
+          [...uncovered].filter((l) => !(tokenIndex.get(keyOf(l)) ?? []).includes(best)),
+        );
+      }
+      const covered = lits.length - missing.length - uncovered.size;
+      if (covered === lits.length) fully++;
+      else if (covered === 0) orphan++;
+      else partial++;
+      const tag = covered === lits.length ? "COVERED" : covered === 0 ? "ORPHAN " : "PARTIAL";
+      console.log(
+        `  ${tag}  ${block.label || block.root}  (${covered}/${lits.length} literals)`,
+      );
+      for (const [w, n] of chosen) console.log(`             +${n} <- ${w}`);
+      if (missing.length)
+        console.log(
+          `             ${missing.length} literal(s) in NO witness: ${missing.slice(0, 3).join(", ")}`,
+        );
+    }
+    console.log(
+      `\n  ${fully} fully coverable by declaration, ${partial} partial, ${orphan} orphan`,
+    );
   }
 
   if (jsonOut) {

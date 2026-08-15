@@ -58,3 +58,58 @@ the 119 shards took it from 13250 → 3163.
    detector.
 4. Sidecar upsert. Deliberately not written yet: the first sweep touches a large
    fraction of the corpus and would bury the tuning diff in generated JSON.
+
+---
+
+## Re-measured on main, and triaged (2026-08-15)
+
+    2721 blocks scanned, 254 quoting high-precision literals, 221 failing
+      unsourced-literal      31 blocks, 3242 literals
+      no-witness-declared   190 blocks
+      externally-attributed  12 blocks, 22 literals
+
+The `unsourced-literal` count fell 13325 -> 3242 because the atlas
+under-declaration fix landed with #4899; the residual 3163 there are AME
+reference columns and derived B/A ratios.
+
+### The 190 undeclared blocks are three different jobs
+
+New `--suggest` mode. It indexes every decimal token in every witness
+(2930 files, ~215k distinct 8-dp tokens) and greedily covers each block's
+literals, so the pile separates mechanically instead of by survey:
+
+| | | |
+|---|---|---|
+| **78** | fully coverable | a declaration away from traceable |
+| **45** | partial | some literals witnessed, some not |
+| **53** | **orphan** | literals appear in **no witness anywhere** |
+
+The orphans are the real finding. `prf:spectral-decomposition-qvalue`,
+`rem:F3-eps6-leading-eq-neg-2b-cubed`, `rem:q-beta-gamma-gamma-canonical-derivation`
+quote precise values that no producer in the repo emits.
+
+**The output is a proposal, not an edit,** and the code says so: a witness that
+happens to contain a matching decimal is not necessarily the witness the block
+means — `0.612688037146` is `z` at the proton pin and appears in dozens of
+unrelated files. Coverage narrows candidates for a human; it does not decide.
+
+### A worked example, and why it is not a simple fix
+
+`prf:categorical-mass-markov` has 9/9 literals witnessed somewhere and declares
+nothing. But its numbers are a **correctly labelled C-vs-D comparison table**
+(headers "convention C (was)" / "convention D (now)", inside a marked
+2026-08-09 convention-change note) — not a defect on the convention axis.
+
+And the reproducer it names in prose, `computations/markov/markov_trace_canonical.py`,
+**emits no witness at all** — no `WitnessBuilder`. So the block cannot declare
+the thing it cites; its values happen to live in `alpha-k-jones-markov-h3`,
+`gram-matrix-dual` and others. "Under-declared" and "declarable" are not the
+same thing.
+
+## Next
+
+1. The 53 orphans, individually — each is a number with no producer.
+2. The 78 coverable, from `--suggest` output, human-checked rather than applied
+   in bulk.
+3. `markov_trace_canonical.py` emits no witness while being cited as a
+   reproducer. Worth a bean of its own.
