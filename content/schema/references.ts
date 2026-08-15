@@ -4362,6 +4362,32 @@ export const references: CSLData[] = [
     DOI: "10.1016/0040-9383(85)90004-7",
   }),
 
+  // ── Rivin 1994 (concavity of hyperbolic volume on angle structures) ──
+  ref({
+    id: "rivin1994",
+    type: "article-journal",
+    title: "Euclidean structures on simplicial surfaces and hyperbolic volume",
+    author: [{ family: "Rivin", given: "Igor" }],
+    "container-title": "Annals of Mathematics",
+    volume: "139",
+    issue: "3",
+    page: "553-580",
+    issued: { "date-parts": [[1994]] },
+    DOI: "10.2307/2118572",
+    note:
+      "The total hyperbolic-volume functional is strictly concave on the " +
+      "angle-structure polytope, and the complete hyperbolic structure is its " +
+      "unique critical point (maximum) — the source theorem for the " +
+      "`qou-krvm` hypothesis (iv). The single-tetrahedron analytic core is " +
+      "formalized sorry-free in " +
+      "`QOU.Archimedean.tetVol_strictConcaveOn` (concavity of " +
+      "$\\Lambda(\\alpha)+\\Lambda(\\beta)+\\Lambda(\\pi-\\alpha-\\beta)$ on " +
+      "the angle simplex); the geometric identification of that sum with the " +
+      "manifold volume is bean qou-idvt T2 (open). The 1994 Annals text " +
+      "itself is paywalled (not read in-repo); cited bibliographically for " +
+      "the theorem statement.",
+  }),
+
   // ── Young 1901 (quantitative substitutional analysis) ─────────
   ref({
     id: "young1901",
