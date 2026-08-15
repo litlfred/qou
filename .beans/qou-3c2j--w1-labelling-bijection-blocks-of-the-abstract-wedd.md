@@ -31,3 +31,32 @@ block set. The blocks of `∏ᵢ Matrix(𝔫ᵢ)(𝔇ᵢ)` correspond to the sim
 expect is *not* mathematical — it is getting from Mathlib's existentially-bound
 `N`/`𝔫`/`𝔇` to a statement about simple modules, since the equivalence is
 `Nonempty`-wrapped and carries no named simples.
+
+### Correction to my own entry note, same session — measured, not assumed
+
+I wrote above that W1 is "build `Fin N ≃ PartitionIndex n` from the abstract
+split's block set". Having now read the actual signature, that framing is wrong
+and would waste the next session.
+
+`IsSemisimpleRing.exists_algEquiv_pi_matrix_divisionRing` binds **`n`, `D`, `d`
+and the equivalence all existentially**, and its statement mentions no simple
+module at all. There is no handle on which block is which — nothing to reindex.
+Any `Fin N ≃ PartitionIndex n` extracted from it would be a choice with no
+stated relation to `S^μ`, which is exactly the over-generality trap
+`SnWedderburnPartitionBridge` already documents (`sn_block_dim_eq_specht` is
+false as a ∀-over-splits claim).
+
+**So W1/W3 should build the split directly, not reindex Mathlib's.** The target
+map is the action map `k[S_n] → ∏_{μ} Module.End k (S^μ)`; it is partition-indexed
+by construction, so the labelling is not a separate step. Then:
+
+- each factor becomes `Matrix (Fin dᵢ) (Fin dᵢ) k` via `LinearMap.toMatrix` on
+  `SpechtStandardBasis` (which is indexed by `StandardYoungTableau μ`, so the
+  size is `dim S^μ` by construction — that is W3, mechanically);
+- W2's `simple_end_scalar` is what makes the factor `End_k` rather than an
+  algebra over a larger `𝔇`;
+- the real work moves to **surjectivity** of the action map (Jacobson density /
+  the double-centraliser theorem), plus injectivity from faithfulness.
+
+Re-scope W1 and W3 accordingly before starting: they are one construction, not
+two, and the hard core is the density argument.
