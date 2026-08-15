@@ -1,5 +1,7 @@
 import QOU.QBeta.AomegaM2BPSCohomology
 
+set_option autoImplicit false
+
 /-!
 # QOU.QBeta.RouteCM3CategoryIdentification — M3 as a content-bearing conjecture class
 
