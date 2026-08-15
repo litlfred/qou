@@ -8,14 +8,14 @@
   },
   "source_hashes": {
     "md": "8d845f88d705",
-    "ts": "360b28f18a4a"
+    "ts": "f2688033d390"
   },
   "criteria": {
     "voice-status-leak": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -25,8 +25,8 @@
           "script_hash": "5c1ec1e16bd8",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "voice-probe-narrative": [
@@ -197,7 +197,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -207,8 +207,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "voice-ai-slop": [
@@ -287,7 +287,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "n/a",
         "reviewer": {
@@ -297,8 +297,8 @@
           "script_hash": "5c1ec1e16bd8",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b",
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -458,7 +458,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -468,8 +468,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "canonical-no-numerology": [
@@ -494,7 +494,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -504,15 +504,15 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -522,15 +522,15 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -540,8 +540,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -566,7 +566,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -576,15 +576,15 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "canonical-no-negative-result-in-paper": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -594,15 +594,15 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "compute-witness-exists": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -612,15 +612,15 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -630,15 +630,15 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -648,15 +648,15 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "detangler-section-band": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "n/a",
         "reviewer": {
@@ -666,15 +666,15 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "n/a",
         "reviewer": {
@@ -684,15 +684,15 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "detangler-archimedean-wall": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "n/a",
         "reviewer": {
@@ -702,8 +702,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b",
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -711,7 +711,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -721,8 +721,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b",
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
@@ -742,7 +742,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -752,8 +752,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b",
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -765,7 +765,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "n/a",
         "reviewer": {
@@ -775,15 +775,15 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "pass",
         "reviewer": {
@@ -793,8 +793,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ],
     "bib-cite-resolves": [
@@ -893,7 +893,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "warn",
         "reviewer": {
@@ -904,8 +904,8 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b",
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35",
         "metrics": {
           "uses_count": 2,
           "broken_edges": 0,
@@ -917,7 +917,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "n/a",
         "reviewer": {
@@ -928,8 +928,8 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "f9b547e15cfd"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b",
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -937,7 +937,7 @@
       {
         "field_hash": {
           "md": "8d845f88d705",
-          "ts": "360b28f18a4a"
+          "ts": "f2688033d390"
         },
         "result": "n/a",
         "reviewer": {
@@ -948,10 +948,10 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-15T03:43:47.221Z",
-        "reviewed_sha": "ffc46376f2e9779cc7a58c7e8cda50bf615f246b"
+        "reviewed_at": "2026-08-15T04:29:43.386Z",
+        "reviewed_sha": "357d1615ea619495ebbd2b750550584a283e6b35"
       }
     ]
   },
-  "updated_at": "2026-08-15T03:43:47.221Z"
+  "updated_at": "2026-08-15T04:29:43.386Z"
 }
