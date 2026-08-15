@@ -83,8 +83,22 @@ SELF_OUTPUTS = {
 }
 
 # Prefix covering this audit's per-scan-root outputs (see `_output_name`), so a
-# derived advisory witness is self-excluded exactly like the default one.
-SELF_OUTPUT_PREFIX = "witness-raw-float64-audit--"
+# derived advisory witness is self-excluded exactly like the default one. The
+# double dash is what separates the family from the plain
+# `witness-raw-float64-audit.witness.json`, which does NOT match this prefix and
+# stays covered by SELF_OUTPUTS above.
+SELF_OUTPUT_PREFIX = "witness-raw-float64--"
+
+# Every derived name must still end in this, because it is what the repo-wide
+# audit-self-output convention keys on: `AUDIT_SUFFIXES` in
+# `computations/audits/q0_anchor_consistency_audit.py` classifies a witness as
+# Q0_AUDIT_EXEMPT by SUFFIX, not by prefix. A derived name ending in the scan
+# slug (…--docs-audits-scripts.witness.json) misses that suffix and gets filed
+# as Q0_ANCHOR_MISSING instead — measured: 1889 -> 1890, with this audit's own
+# output sitting in the "no q0 anchor declared" inventory while its identically
+# generated sibling is exempt. Keeping the suffix keeps the two consistent and
+# needs no special case in the other audit.
+AUDIT_SUFFIX = "-audit.witness.json"
 
 
 def _output_name(scan_root: Path | None) -> str:
@@ -102,11 +116,14 @@ def _output_name(scan_root: Path | None) -> str:
     the carve-out records. Deriving the name (rather than adding an --out flag
     someone must remember to pass) makes the collision impossible for any
     future scan root too. Bean qou-pgdw.
+
+    The slug is infixed rather than appended so the name still ends in
+    `AUDIT_SUFFIX` — see the note there for why the suffix is load-bearing.
     """
     if scan_root is None:
-        return "witness-raw-float64-audit.witness.json"
+        return f"witness-raw-float64{AUDIT_SUFFIX}"
     slug = scan_root.relative_to(ROOT).as_posix().strip("/").replace("/", "-")
-    return f"{SELF_OUTPUT_PREFIX}{slug}.witness.json"
+    return f"{SELF_OUTPUT_PREFIX}{slug}{AUDIT_SUFFIX}"
 
 
 # ── LP-dual carve-out (bean qou-ftuv, owner decision 2026-08-11) ─────────
