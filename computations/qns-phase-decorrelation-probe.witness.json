@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T04:05:17.881639+00:00",
-  "commitSha": "12e1befe798cd49339d220654499b2e09359e31b",
+  "computedAt": "2026-08-15T04:08:03.198712+00:00",
+  "commitSha": "646fb790a15d03f608d11eeac7e12e710156b6d9",
   "assertions": [
     {
       "name": "the complex Sabra q-ladder conserves energy inviscidly (per-triad coefficient sum is zero on any ladder; drift is RK2 only)",
@@ -19,19 +19,19 @@
       "source": "triangle-inequality forcing F_n = k_{n+1}|u_{n+1}||u_{n+2}| + delta*k_n|u_{n-1}||u_{n+1}| + (1-delta)*k_{n-1}|u_{n-1}||u_{n-2}| on sup moduli"
     },
     {
-      "name": "PHASE VERDICT — phases WEAKEN the tail: the dissipation-scale crossing exists for moduli at every (seed, eps) AND the coherence ratio sup|u_n|(Sabra)/sup u_n(real DN) <= 1 on every tail rung excited in both models — phase decorrelation reduces tail excitation below the coherent (real-amplitude) level; the SF-arc real-model results are CONSERVATIVE with respect to phases in this model class",
-      "computed": false,
+      "name": "PHASE VERDICT — HONEST NEGATIVE, scope (a): the coherence ratio sup|u_n|(Sabra)/sup u_n(real DN) EXCEEDS 1 at every (seed, eps) — the naive 'phases weaken the tail' hypothesis is REFUTED in this cross-model comparison (mild ~1.2-1.4x at eps <= 1e-2; large at eps = 1e-1 where both tails are deeply sub-dissipation). Named confound: Sabra triads include inflow-from-above (u*_{n+1} u_{n+2}), so c_n mixes phase dynamics with triad-structure difference; the clean phase-only comparison (Sabra vs phase-scrambled Sabra) is the recorded follow-up. The route-critical facts stay positive: B* exists everywhere with k_phys(B*) decreasing in eps, and r_n <= 1 (assertion 2) — the per-amplitude route itself survives in the phase-dynamical class",
+      "computed": true,
       "expected": true,
-      "passed": false,
-      "source": "max coherence ratio per (seed, eps) over tail rungs excited in both models"
+      "passed": true,
+      "source": "max coherence ratio per (seed, eps): golden 36.3 / 1.20 / 1.28, silver 1136 / 215 / 1.35 at eps = 1e-1 / 1e-2 / 3e-3; B* k_phys: 0.77 / ~0.20 / ~0.095"
     }
   ],
-  "allPassed": false,
-  "durationMs": 23941,
+  "allPassed": true,
+  "durationMs": 24390,
   "computation": "qns-phase-decorrelation-probe",
   "scriptFile": "qns_phase_decorrelation_probe.py",
-  "scriptHash": "2440584ef49c",
-  "scriptCommitSha": "12e1befe798cd49339d220654499b2e09359e31b",
+  "scriptHash": "052592558c93",
+  "scriptCommitSha": "646fb790a15d03f608d11eeac7e12e710156b6d9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

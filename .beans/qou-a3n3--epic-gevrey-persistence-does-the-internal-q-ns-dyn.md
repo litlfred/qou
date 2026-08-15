@@ -232,3 +232,22 @@ geometric-decay version of the all-pairs collapse (the pair-maximum
 argument does not lift verbatim — follow-up); sweeping/phase
 decorrelation — NOT representable in any real-amplitude shell model,
 now the irreducible caveat of the whole SF arc.
+
+## 2026-08-15 (12): SF10 — phases: route survives, naive comparison refuted
+
+Complex Sabra q-shell (per-triad exact conservation derived and
+Lean-free-verified in the docstring: c_{n+2} = a_n + b_{n+1}; first
+draft had the c-sign wrong -> 133% drift, caught and fixed, both
+recorded). POSITIVE: the modulus damped-forced form holds along
+trajectories at every (seed, eps) — r_n <= 1 (max 0.957) with the
+triangle forcing; B* exists everywhere, k_phys(B*) decreasing
+(0.77/0.20/0.094) — the per-amplitude route (the
+rung_equilibrium_forced instance, no new Lean needed) SURVIVES in the
+phase-dynamical class. HONEST NEGATIVE: the coherence ratio
+sup|u_n|(Sabra)/sup u_n(DN) > 1 at every (seed, eps) (~1.2-1.4x at
+eps <= 1e-2; huge at 1e-1 where both tails are sub-dissipation) — the
+naive "phases weaken the tail" hypothesis is REFUTED in this
+cross-model comparison, scope (a). Named confound: Sabra triads
+include inflow-from-above, so c_n mixes phase dynamics with
+triad-structure difference. Follow-up beaned (qou-ougq): Sabra vs
+phase-scrambled Sabra isolates the phase effect.
