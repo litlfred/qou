@@ -1,11 +1,11 @@
 ---
 # qou-exsw
 title: 'excise-absolute-mass: mechanical sweep (AGENTS.md, cheat-sheet, canonical_mass, content)'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-11T01:00:00Z
-updated_at: 2026-08-11T01:00:00Z
+updated_at: 2026-08-15T00:21:58Z
 ---
 
 Parent qou-exam. After the ruling audit + precision-goals anchor edit (PR #4977), sweep the rest:
@@ -39,3 +39,14 @@ Files:
   mass-endomorphism/atomic-mass-gb-nf-interpretation.md, mass-endomorphism/mass-endomorphism-conjecture.md,
   mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md.
 This content sub-sweep is agent-dispatchable (mechanical reframe + render-QA per block).
+
+---
+2026-08-15 COMPLETE (session qou-gylf, PR #5037 branch): the 15-block content
+sub-sweep was found largely LANDED already (8ff926098, 14 blocks); this pass
+(3 parallel agents + review) fixed the residual absolute-mass-as-prediction
+claims the sweep missed (registry captions/preamble, "Predicted m_p" row
+label, witness bullets, h3-markov excision note) and stripped ALL qou-exam
+bean-ID / "excised as a framework claim" editorial markers from content prose
+(one-voice: status leaks; the substantive ratio framing stays). Render-QA:
+manual grep battery per block, all clean — pipeline unavailable in sandbox,
+NOT machine-validated.

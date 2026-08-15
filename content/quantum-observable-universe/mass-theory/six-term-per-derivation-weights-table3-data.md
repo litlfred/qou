@@ -1,4 +1,4 @@
-*The $\mathfrak{m}_{\mathrm{pred}}$ column is the $m_e$-scaled realization of the dimensionless mass ratio $\mathfrak{m}/m_e$ (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction (`qou-exam`).*
+*The $\mathfrak{m}_{\mathrm{pred}}$ column is the $m_e$-scaled realization of the dimensionless mass ratio $\mathfrak{m}/m_e$ (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction.*
 
 | atom | $A$ | $\mathfrak{m}_{\mathrm{AME}}$ (MeV) | $\mathfrak{m}_{\mathrm{pred}}$ | err % |
 |------|-----|------:|------:|------:|
