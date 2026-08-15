@@ -1,11 +1,11 @@
 ---
 # qou-ungx
 title: Registry JSON twin drifts silently from the .md — validator never compares them
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T04:32:25Z
-updated_at: 2026-08-15T04:32:55Z
+updated_at: 2026-08-15T12:00:00Z
 ---
 
 
@@ -55,3 +55,41 @@ idiom, mechanically checkable.
 A general prose-equivalence check between MD row and JSON statement. The MD rows
 are much richer than the JSON summaries by design; requiring equality would be
 wrong and requiring similarity would be noisy.
+
+## Implemented (2026-08-15, branch `claude/registry-r6-twin-drift-2026-08-15`)
+
+R6 landed in `kernel_constraints_registry_validate.py`, split into three
+sub-checks because the scoped design needed one refinement: the *current*
+(post-#5074) JSON rows legitimately quote the withdrawn text inside the
+`previously read here as established: "..."` idiom, so a bare substring
+assert would false-positive on the correct twin. Resolution: **mention vs
+assertion** — double-quoted segments of the JSON statement are masked
+before matching.
+
+- **R6a (error)**: a `~~struck~~` span from the row's `| KCnn |` MD line(s)
+  must not appear (normalised: NFKD accent-fold, `sqrt` dropped,
+  non-alphanumerics stripped, casefolded, ≥12 chars) in the JSON statement
+  outside double quotes.
+- **R6b (error)**: MD row has a WITHDRAWN marker ⇒ the JSON statement must
+  contain WITHDRAWN. Transliteration-proof backstop; this alone catches
+  BOTH live instances above (KC21 had marker-without-strikethrough, so R6a
+  alone could not have caught it — exactly the known limitation this bean
+  recorded).
+- **R6c (warning)**: WITHDRAWN marker without strikethrough = idiom
+  violation. Option (b) taken: the idiom (strikethrough **plus** marker) is
+  now stated in the §9 header, and KC21's row was brought into compliance.
+
+Regression-tested against reconstructed pre-#5074 KC21/KC22 statements
+(KC21→R6b; KC22→R6a+R6b) and the current twin (0 errors, 0 R6 warnings).
+Also fixed the one live missed §9f site the #5107 scoping found: the §9a
+glyph-table "what it is" cell still called `q*_S` "a third, decay-sector
+determination of q₀ (μ–p–Q_β three-way)"; now (H1)-conditional per §9f.
+
+Validator: default 0 errors / 3 pre-existing R5 warnings; `--lint-docs`
+adds 6 pre-existing doc-lint warnings (2026-06-05 scope doc); `--strict`
+fails on those 9 pre-existing warnings exactly as it did before R6 (R6
+contributes zero warnings on the current corpus).
+
+Left open here: nothing from this bean's scope. PR #4767 (unmerged) also
+uses the name "R6" for a different check (`doc_claims`) on its own branch;
+whichever lands second renumbers.
