@@ -79,3 +79,64 @@ not.
 Validate against the current `chi_numpy` on many partitions (it is the
 reference), benchmark per P28, and check whether `_HOEFSMIT_NUMPY_CACHE`
 keying needs to change when the stored object is no longer an ndarray.
+
+## Prototype built and measured — MEMORY confirmed, SPEED refuted
+
+`computations/hoefsmit_sparse_prototype_probe.py`. Correctness first: the
+structured path reproduces `chi_numpy` to **6.8e-16 worst case** across five
+tritium partitions and 1.5e-15 at dim 891 — machine epsilon, as expected for
+the same arithmetic in a different summation order.
+
+| dim | generator memory | ratio | chi dense | chi structured |
+|---|---|---|---|---|
+| 297 | 7.8 MB -> 0.046 MB | **170x** | 0.04 s | **0.08 s** |
+| 891 | 69.9 MB -> 0.139 MB | **503x** | 0.56 s | **0.75 s** |
+
+### The speed claim above is WRONG — retracted
+
+The earlier section argued "~3900x fewer flops at dim 7700" and implied a
+matching speedup. Measured, the structured path is **1.3x to 2x SLOWER**.
+
+Flop count was the wrong model. `M * diag[None, :]` is a full dim^2 multiply,
+and each pair update does `M[:, I]` — a fancy-index gather that **copies** a
+dim x (dim/2) array. So the step is ~3 dim^2 element-ops with poor locality,
+against a dim^3 BLAS kernel that runs near peak. Memory bandwidth, not
+arithmetic, is the binding constraint, and BLAS wins that comparison at every
+dim tested.
+
+This is the same error shape as the "sandbox is slow" call in qou-5qwb:
+a plausible model asserted without measuring the thing it predicts.
+
+### What survives, and it is enough
+
+The memory reduction is real, large, and GROWS with dim (170x -> 503x). That
+alone is what unblocks He-4:
+
+  * generators at dim 7700: 5.22 GB -> ~10 MB
+  * accumulator M stays dense: 474 MB, plus one temporary for `out`
+  * per worker: ~5.7 GB -> ~1 GB
+
+which fits 4 workers in 16 GB instead of hanging at ~20 GB.
+
+So the correct framing is **a memory fix that makes an unrunnable atom
+runnable**, at a ~1.3-2x compute cost — not a speedup. Whether that trade is
+worth taking is a real question, and the honest alternatives are:
+
+  1. Structured generators, dense accumulator (this prototype) — unblocks He-4,
+     pays ~1.5x compute.
+  2. Fewer workers with the dense path — unblocks He-4, pays 4x wall on the
+     parallel part, changes no code.
+  3. Build dense but only for the dims where it fits, structured above a
+     threshold — the P22 "auto-switch at dim>500" shape, keeping BLAS where
+     BLAS wins.
+
+Option 3 is the one P22 actually describes and is probably right, but it needs
+the crossover measured rather than guessed — the two data points here bracket
+it poorly, and 297 vs 891 both favour dense.
+
+### Not yet measured
+
+Whether the O(dim^2) SYT partner search in the builder (P21) dominates at
+dim 7700 — at that size it is ~59M comparisons per generator in pure Python,
+which may exceed everything discussed above. Measure before optimising the
+matmul further.
