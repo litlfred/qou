@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-22T13:14:29.786070+00:00",
-  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
+  "computedAt": "2026-08-15T21:46:15.807211+00:00",
+  "commitSha": "03710c31fe98d1d524d04e12f0e52a45b7e177ab",
   "assertions": [
     {
       "name": "abs_det_product_eq_1[6_x_1_1_1_1_1_1]",
@@ -81,11 +81,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 43086,
+  "durationMs": 53817,
   "computation": "beta-ew-delta-I-conjugate-pairing",
   "scriptFile": "beta_ew_delta_I_conjugate_pairing.py",
-  "scriptHash": "b0e44e9445e0",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "a2d36230be87",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -95,8 +95,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "β_EW(Δ_I^minimal) conjugate-partition pairing at n=6 + staircase recursion (k=2,3,4 ↔ n=3,6,10).  Verifies the structural det law det(M_λ)·det(M_λ′) = ±1 across every conjugate pair, and tests the staircase ρ_k = (k,…,1) extension of the (3,2,1) bar-pair finding from 2d19e475.",
   "contentBlock": "conj:weinberg-angle-categorical",
