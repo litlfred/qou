@@ -853,3 +853,35 @@ REMAINING for hoefsmit_seminormal_rep, restated correctly:
       admissible and terms drop. Size 1 now has its key lemma; the braid identity on it
       still needs assembling.
   (2) THEN packaging into a Hecke ->a algebra map via Hecke.lift, which consumes (1).
+
+
+## SIZE-1 ORBIT BRAID PROVED + the degeneracy that makes ALL smaller orbits cohere
+
+genMat_braid_of_both_fixed (sorry-free): the braid on a size-1 orbit, i.e. when neither
+generator moves T. Both columns are scalar, both triple products collapse, and the two sides
+agree BECAUSE axialDist_eq_of_not_admissible identifies the scalars. This is the only place
+in the whole construction where the braid rests on a GEOMETRIC fact about mu rather than on
+the parameter algebra -- worth noting when reading the proof.
+
+Then, working the size-2 case, the missing piece for ALL the smaller orbits surfaced:
+
+  seminormalParam_mul_neg_one:  a(1) * a(-1) = -1
+  offDiag_neg_one:              offDiag q (-1) = 0
+  offDiag_one:                  offDiag q 1 = 1
+
+The two size-1 eigenvalues q and -1/q multiply to -1, so `1 + a(d)a(-d)` -- the off-diagonal
+factor of seminormalBlock, and the d<0 branch of offDiag -- VANISHES at d = +-1.
+
+WHY THIS IS THE COHERENCE CONDITION, and it is worth being explicit because it is easy to
+miss: genMat applies ONE uniform entry rule to every column, including the scalar ones. That
+rule OFFERS a size-1 orbit an off-diagonal partner entry. The construction only works
+because that entry is forced to zero. Without a(1)a(-1) = -1 the uniform rule would be
+inconsistent with the size-1 blocks being genuinely 1x1 -- so this is not a convenience
+lemma, it is the reason the uniform indexing (route (c)) is legitimate at all.
+
+Concretely it is what makes the size-2 case close: there the RHS lacks the term
+a3*(1 + a2*a(-a2)) that the generic diagonal row carries, and the two sides only match
+because that factor is 0 when the l-distance is +-1.
+
+REMAINING: sizes 2 and 3 assembled (the algebra is now understood -- see above), then
+Hecke.lift packaging (which consumes them). hoefsmit_seminormal_rep keeps its Ref'd sorry.
