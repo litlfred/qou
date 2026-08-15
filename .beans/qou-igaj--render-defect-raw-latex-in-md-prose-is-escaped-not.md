@@ -1,11 +1,11 @@
 ---
 # qou-igaj
 title: 'Render defect: raw LaTeX in .md prose is escaped, not passed through (575 occurrences, 64 files)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T03:33:53Z
-updated_at: 2026-08-15T04:08:50Z
+updated_at: 2026-08-15T05:11:05Z
 ---
 
 
