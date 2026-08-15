@@ -1139,3 +1139,39 @@ So the honest status: the mathematics of the general-lambda seminormal represent
 DONE for 0 < q != 1. hoefsmit_seminormal_rep keeps its Ref'd sorry, and closing it needs (a),
 (b), and a decision about (c) -- which is an owner-facing question about whether the stated
 hypothesis is right, not something to quietly widen or narrow.
+
+
+## HYPOTHESIS QUESTION RESOLVED 2026-08-15 — no literature needed; the sharp condition is q != 0 AND q^2 != 1
+
+Owner asked whether resolving hoefsmit_seminormal_rep's hypotheses needs literature. It does
+not -- the question is elementary over R and now settled both ways:
+
+  OVER R:  q^m = 1 for some m != 0  <=>  |q| = 1  <=>  q = +-1  <=>  q^2 = 1
+
+So `q != 0 AND q^2 != 1` is EXACTLY the condition for seminormalParam to stay off its pole
+(denominator 1 - q^(-2d), d != 0). Consequences, both acted on:
+
+ 1. MY hypothesis was TOO STRONG. The file ran on `0 < q AND q != 1`; negative q is fine as
+    long as q != -1. Weakened throughout -- 11 signatures, 36 zpow_ne_one call sites, 9
+    downstream call sites. zpow_ne_one is reproved via q^2 (positive outright, and exactly
+    what the hypothesis bounds) rather than via |q|, which also dodges the fact that
+    `abs_zpow` / `abs_eq_one` are not the Mathlib names.
+ 2. THE STATED THEOREM's hypothesis is TOO WEAK, and this is the owner-facing part.
+    hoefsmit_seminormal_rep assumes only `hq : q != 0`. At q = -1 the seminormal form
+    genuinely degenerates -- SeminormalParam.lean already records that S1's entry is
+    -1/(2q) != 0 there while the axial-distance formula gives 0/0. So the theorem as stated
+    is NOT provable from this construction, and I believe it is simply missing a hypothesis.
+    RECOMMENDATION: amend it to `(hq : q != 0) (hq2 : q^2 != 1)`. That is the standard
+    genericity assumption -- H_n(q) is semisimple away from roots of unity -- and it is what
+    [ram1997]'s axial-distance formulas presuppose. Not doing this unilaterally: it changes
+    a stated theorem, so it is the owner's call.
+
+Also landed: genMat_ne_scalar -- a generator that moves ANY tableau is not a scalar matrix,
+with NO hypothesis on q. The argument is worth recording because the obvious route fails:
+offDiag at the moved entry CAN vanish (offDiag q (-1) = 0). What cannot vanish is the PAIR --
+the entries (s_k.T, T) and (T, s_k.T) sit at distances d and -d, and offDiag takes the plain
+value 1 on the non-negative branch, so whichever sign d has, one of the two is exactly 1.
+
+That is the substantive half of gap (2). The remaining half is combinatorial: #SYT mu >= 2
+implies SOME generator moves SOME tableau (the SYT-connectivity fact -- the ledger's
+"all-T connectivity" in yt-seminormal-infra). Not attempted here.

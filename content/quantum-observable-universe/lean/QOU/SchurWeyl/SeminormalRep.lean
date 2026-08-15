@@ -179,6 +179,11 @@ give a size-`1` orbit an off-diagonal partner entry, and the construction only w
     seminormalParam_mul_neg_one q hq0 hq2]
   ring
 
+/-- Off the negative branch, `offDiag` is the plain `1`. -/
+theorem offDiag_of_not_neg {d : ℤ} (h : ¬ d < 0) : offDiag q d = 1 := by
+  unfold offDiag
+  rw [if_neg h]
+
 /-- The positive scalar distance takes the plain branch. -/
 @[simp] theorem offDiag_one : offDiag q 1 = 1 := by
   unfold offDiag
@@ -193,15 +198,27 @@ theorem one_add_seminormalParam_mul_neg_of_scalar (hq0 : q ≠ 0) (hq2 : q ^ 2 �
   · rw [seminormalParam_mul_neg_one q hq0 hq2]; ring
   · rw [show -(-1 : ℤ) = 1 from rfl, mul_comm, seminormalParam_mul_neg_one q hq0 hq2]; ring
 
-/-- **A real `q > 0`, `q ≠ 1` is not a root of unity**, so `q ^ (-2d) ≠ 1` for every nonzero
-axial distance `d`.  This is what puts `seminormalParam` off its pole at every generator —
-the archimedean side of `axialDist_ne_zero`. -/
-theorem zpow_ne_one {q : ℝ} (hq : 0 < q) (hq1 : q ≠ 1) {m : ℤ} (hm : m ≠ 0) :
+/-- **`q ≠ 0` and `q² ≠ 1` is exactly the condition for a real `q` not to be a root of
+unity**, hence for `q ^ (-2d) ≠ 1` at every nonzero axial distance — which is what keeps
+`seminormalParam` off its pole.
+
+This is *sharp over `ℝ`*, and that matters for the hypotheses of the whole file.  `q^m = 1`
+with `m ≠ 0` forces `|q| = 1`, hence `q = ±1`, hence `q² = 1`; so no further condition is
+available to assume and none is needed.  In particular the natural-looking `0 < q ∧ q ≠ 1`
+is **stronger than required** — negative `q` is fine as long as `q ≠ -1` — while a bare
+`q ≠ 0` is **too weak**, since `q = -1` genuinely degenerates the seminormal form (see the
+`S1` discussion in `SeminormalParam.lean`). -/
+theorem zpow_ne_one {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) {m : ℤ} (hm : m ≠ 0) :
     q ^ m ≠ 1 := by
   intro h
-  have hlog : (m : ℝ) * Real.log q = 0 := by
-    rw [← Real.log_zpow, h, Real.log_one]
-  have hlq : Real.log q ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one hq hq1
+  -- pass to `q²`, which is positive outright and is exactly what the hypothesis bounds
+  have hsq : (q ^ 2 : ℝ) ^ m = 1 := by
+    rw [show (q ^ 2 : ℝ) = q * q by ring, mul_zpow, h, one_mul]
+  have hpos : (0 : ℝ) < q ^ 2 :=
+    lt_of_le_of_ne (sq_nonneg q) (Ne.symm (pow_ne_zero 2 hq0))
+  have hlog : (m : ℝ) * Real.log (q ^ 2) = 0 := by
+    rw [← Real.log_zpow, hsq, Real.log_one]
+  have hlq : Real.log (q ^ 2) ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one hpos hq2
   rcases mul_eq_zero.mp hlog with h1 | h2
   · exact hm (by exact_mod_cast h1)
   · exact hlq h2
@@ -259,18 +276,17 @@ The proof is a two-case split on `SwapAdmissible`, which is the trichotomy of
 
 No block-diagonal decomposition is constructed or needed: the block structure is read off
 the entry rules column by column. -/
-theorem genMat_quadratic (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+theorem genMat_quadratic (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     (hkn : k + 1 ≤ μ.cells.card) :
     genMat q k hk hkn * genMat q k hk hkn
       = (q - q⁻¹) • genMat q k hk hkn
         + (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) := by
   classical
-  have hq0 : q ≠ 0 := ne_of_gt hq
   ext T' T
   have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
   have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
   have hd0 : axialDist T k ≠ 0 := axialDist_ne_zero T hkI hkI'
-  have hpow : q ^ (-2 * axialDist T k) ≠ 1 := zpow_ne_one hq hq1 (by omega)
+  have hpow : q ^ (-2 * axialDist T k) ≠ 1 := zpow_ne_one hq0 hq2 (by omega)
   have hsum : seminormalParam q (axialDist T k) + seminormalParam q (-axialDist T k)
       = q - q⁻¹ := seminormalParam_add_neg q _ hq0 hpow
   rw [Matrix.mul_apply, Matrix.add_apply, Matrix.smul_apply, smul_eq_mul, Matrix.one_apply]
@@ -321,12 +337,6 @@ theorem genMat_quadratic (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     rw [hcol]
     have hroot : seminormalParam q (axialDist T k) * seminormalParam q (axialDist T k)
         = (q - q⁻¹) * seminormalParam q (axialDist T k) + 1 := by
-      have hq2 : q ^ 2 ≠ 1 := by
-        intro h
-        have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [h]
-        rcases mul_eq_zero.mp hfac with h1 | h2
-        · exact hq1 (by linarith)
-        · linarith
       rcases axialDist_trichotomy T hkI hkI' with h | h | h
       · rw [h, seminormalParam_one q hq0 hq2]; field_simp; ring
       · rw [h, seminormalParam_neg_one q hq0 hq2]; field_simp; ring
@@ -742,7 +752,7 @@ wired to actual `genMat` entries rather than to abstract parameters.
 The hypotheses are the six admissibilities of a generic orbit.  They are *not* redundant
 even for this single row: the `(T, D)` and `(T, E)` entries are only known to vanish once
 `D` and `E` exist as tableaux, which is what `hDk` and `hEl` provide. -/
-theorem genMat_braid_apply_diag (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+theorem genMat_braid_apply_diag (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
     {T : StandardYoungTableau μ}
     (hka : SwapAdmissible T k) (hla : SwapAdmissible T (k + 1))
@@ -755,7 +765,6 @@ theorem genMat_braid_apply_diag (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 �
     (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T T
       = (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T T := by
   classical
-  have hq0 : q ≠ 0 := ne_of_gt hq
   have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
   have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
   have hkI'' : k + 1 + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
@@ -819,13 +828,13 @@ theorem genMat_braid_apply_diag (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 �
     rw [← hdE]; exact axialDist_ne_zero A hkI' hkI''
   have hprodp := offDiag_mul_neg q hp0
   have hprodr := offDiag_mul_neg q hr0
-  have hsump := seminormalParam_add_neg q _ hq0 (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+  have hsump := seminormalParam_add_neg q _ hq0 (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
   have hsumr := seminormalParam_add_neg q _ hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
   have hrel := seminormalParam_rel q (axialDist T k) (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
   -- `(a₂ - a₁)` times the relation, plus the two trace identities and the two
   -- determinant identities; see `braid_diag_identity` for the factorisation.
   linear_combination
@@ -849,7 +858,7 @@ relation `seminormalParam_rel`, with multiples `(a₂ - a₁)`, `-off(p)`, `+off
 Non-generic orbits — where one of the five non-`T` words fails to be `SwapAdmissible` and
 terms drop — are **not** covered here; that case tree is the remaining work on
 `hoefsmit_seminormal_rep`. -/
-theorem genMat_braid_generic (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+theorem genMat_braid_generic (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
     {T : StandardYoungTableau μ}
     (hka : SwapAdmissible T k) (hla : SwapAdmissible T (k + 1))
@@ -863,7 +872,6 @@ theorem genMat_braid_generic (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ 
     (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T' T
       = (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T' T := by
   classical
-  have hq0 : q ≠ 0 := ne_of_gt hq
   have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
   have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
   have hkI'' : k + 1 + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
@@ -940,13 +948,13 @@ theorem genMat_braid_generic (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ 
   have hprodp := offDiag_mul_neg q hp0
   have hprodr := offDiag_mul_neg q hr0
   have hsump := seminormalParam_add_neg q (axialDist T k) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
   have hsumr := seminormalParam_add_neg q (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
   have hrel := seminormalParam_rel q (axialDist T k) (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
   rw [genMat_braid_lhs_expand q k hk hkn hl hln hka hla hAl T',
     genMat_braid_rhs_expand q k hk hkn hl hln hka hla hBk T']
   by_cases h1 : T' = T
@@ -1110,7 +1118,7 @@ Only two rows are non-zero, and they close differently:
 So the smaller orbit is not a degenerate special case of the generic one: it is the generic
 identity with a term deleted, and the deletion is legitimate exactly because of the scalar
 degeneracy. -/
-theorem genMat_braid_of_succ_fixed (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+theorem genMat_braid_of_succ_fixed (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
     {T : StandardYoungTableau μ}
     (hka : SwapAdmissible T k) (hla : ¬ SwapAdmissible T (k + 1))
@@ -1119,13 +1127,6 @@ theorem genMat_braid_of_succ_fixed (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 
     (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T' T
       = (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T' T := by
   classical
-  have hq0 : q ≠ 0 := ne_of_gt hq
-  have hq2 : q ^ 2 ≠ 1 := by
-    intro h
-    have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [h]
-    rcases mul_eq_zero.mp hfac with h1 | h2
-    · exact hq1 (by linarith)
-    · linarith
   have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
   have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
   have hkI'' : k + 1 + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
@@ -1152,13 +1153,13 @@ theorem genMat_braid_of_succ_fixed (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 
     rw [← dAl]; exact axialDist_ne_zero A hkI' hkI''
   have hprodp := offDiag_mul_neg q hp0
   have hsump := seminormalParam_add_neg q (axialDist T k) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
   have hsumr := seminormalParam_add_neg q (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
   have hrel := seminormalParam_rel q (axialDist T k) (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
   -- peel the three factors; the `k+1` columns are scalar, the `k` column is not
   rw [genMat_mul_apply q k hk hkn (genMat q k hk hkn * genMat q (k + 1) hl hln) hka T',
     genMat_mul_apply_of_not_admissible q (k + 1) hl hln (genMat q k hk hkn) hla T',
@@ -1206,7 +1207,7 @@ and `s_{k+1}·T`, so the orbit is `{T, s_{k+1}·T}`.
 The mirror of `genMat_braid_of_succ_fixed`, and it deletes the *other* term: here the **left**
 side lacks `a₃(1 + a₁a(-p))`, and the degeneracy that licenses it is at `p = ±1` rather than
 `r = ±1`.  The moved row is `braid_rowB_identity` verbatim. -/
-theorem genMat_braid_of_fixed_succ (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+theorem genMat_braid_of_fixed_succ (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
     {T : StandardYoungTableau μ}
     (hka : ¬ SwapAdmissible T k) (hla : SwapAdmissible T (k + 1))
@@ -1215,13 +1216,6 @@ theorem genMat_braid_of_fixed_succ (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 
     (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T' T
       = (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T' T := by
   classical
-  have hq0 : q ≠ 0 := ne_of_gt hq
-  have hq2 : q ^ 2 ≠ 1 := by
-    intro h
-    have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [h]
-    rcases mul_eq_zero.mp hfac with h1 | h2
-    · exact hq1 (by linarith)
-    · linarith
   have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
   have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
   have hkI'' : k + 1 + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
@@ -1247,13 +1241,13 @@ theorem genMat_braid_of_fixed_succ (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 
     rw [← dBk]; exact axialDist_ne_zero B hkI hkI'
   have hprodr := offDiag_mul_neg q hr0
   have hsump := seminormalParam_add_neg q (axialDist T k) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
   have hsumr := seminormalParam_add_neg q (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
   have hrel := seminormalParam_rel q (axialDist T k) (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
   rw [genMat_mul_apply_of_not_admissible q k hk hkn
       (genMat q k hk hkn * genMat q (k + 1) hl hln) hka T',
     genMat_mul_apply q (k + 1) hl hln (genMat q k hk hkn) hla T',
@@ -1317,7 +1311,7 @@ but `s_k·T` *is* `(k+1)`-admissible, so the orbit runs `T → s_k·T → s_{k+1
 Compared with the size-`2` case `genMat_braid_of_succ_fixed`, the `T` and `s_k·T` rows carry
 the *same* two identities; what is new is the third row, which closes by `ring` alone once
 `axialDist_swapTableau_word_left` supplies `d_k(s_{k+1}s_k·T) = r`. -/
-theorem genMat_braid_of_succ_fixed_three (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+theorem genMat_braid_of_succ_fixed_three (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
     {T : StandardYoungTableau μ}
     (hka : SwapAdmissible T k) (hla : ¬ SwapAdmissible T (k + 1))
@@ -1328,13 +1322,6 @@ theorem genMat_braid_of_succ_fixed_three (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) 
     (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T' T
       = (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T' T := by
   classical
-  have hq0 : q ≠ 0 := ne_of_gt hq
-  have hq2 : q ^ 2 ≠ 1 := by
-    intro h
-    have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [h]
-    rcases mul_eq_zero.mp hfac with h1 | h2
-    · exact hq1 (by linarith)
-    · linarith
   have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
   have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
   have hkI'' : k + 1 + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
@@ -1370,13 +1357,13 @@ theorem genMat_braid_of_succ_fixed_three (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) 
     rw [← dAl]; exact axialDist_ne_zero A hkI' hkI''
   have hprodp := offDiag_mul_neg q hp0
   have hsump := seminormalParam_add_neg q (axialDist T k) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
   have hsumr := seminormalParam_add_neg q (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
   have hrel := seminormalParam_rel q (axialDist T k) (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
   rw [genMat_mul_apply q k hk hkn (genMat q k hk hkn * genMat q (k + 1) hl hln) hka T',
     genMat_mul_apply_of_not_admissible q (k + 1) hl hln (genMat q k hk hkn) hla T',
     genMat_mul_apply q (k + 1) hl hln (genMat q k hk hkn) hAl T',
@@ -1441,7 +1428,7 @@ That is worth stating because it inverts the expectation set by the smaller orbi
 here nothing is removed and no degeneracy is used — neither generator fixes `T`, so no
 distance is `±1`.  The orbit is smaller than generic purely because the two length-`2` words
 fail to exist, and the rows that *do* exist are the generic ones. -/
-theorem genMat_braid_of_middle (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+theorem genMat_braid_of_middle (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
     {T : StandardYoungTableau μ}
     (hka : SwapAdmissible T k) (hla : SwapAdmissible T (k + 1))
@@ -1451,7 +1438,6 @@ theorem genMat_braid_of_middle (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 �
     (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T' T
       = (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T' T := by
   classical
-  have hq0 : q ≠ 0 := ne_of_gt hq
   have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
   have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
   have hkI'' : k + 1 + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
@@ -1483,13 +1469,13 @@ theorem genMat_braid_of_middle (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 �
   have hprodp := offDiag_mul_neg q hp0
   have hprodr := offDiag_mul_neg q hr0
   have hsump := seminormalParam_add_neg q (axialDist T k) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
   have hsumr := seminormalParam_add_neg q (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
   have hrel := seminormalParam_rel q (axialDist T k) (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
   rw [genMat_mul_apply q k hk hkn (genMat q k hk hkn * genMat q (k + 1) hl hln) hka T',
     genMat_mul_apply q (k + 1) hl hln (genMat q k hk hkn) hla T',
     genMat_mul_apply_of_not_admissible q (k + 1) hl hln (genMat q k hk hkn) hAl T',
@@ -1560,7 +1546,7 @@ The mirror of `genMat_braid_of_succ_fixed_three`, and — consistent with the ru
 deletion tracks which columns are scalar — it deletes on the **left** where that one deleted
 on the right, with the degeneracy at `p = ±1` rather than `r = ±1`.  The third row again
 closes by `ring`, this time via `axialDist_swapTableau_word_right`. -/
-theorem genMat_braid_of_fixed_succ_three (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+theorem genMat_braid_of_fixed_succ_three (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
     {T : StandardYoungTableau μ}
     (hka : ¬ SwapAdmissible T k) (hla : SwapAdmissible T (k + 1))
@@ -1571,13 +1557,6 @@ theorem genMat_braid_of_fixed_succ_three (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) 
     (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T' T
       = (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T' T := by
   classical
-  have hq0 : q ≠ 0 := ne_of_gt hq
-  have hq2 : q ^ 2 ≠ 1 := by
-    intro h
-    have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [h]
-    rcases mul_eq_zero.mp hfac with h1 | h2
-    · exact hq1 (by linarith)
-    · linarith
   have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
   have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
   have hkI'' : k + 1 + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
@@ -1617,13 +1596,13 @@ theorem genMat_braid_of_fixed_succ_three (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) 
     rw [← dBk]; exact axialDist_ne_zero B hkI hkI'
   have hprodr := offDiag_mul_neg q hr0
   have hsump := seminormalParam_add_neg q (axialDist T k) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
   have hsumr := seminormalParam_add_neg q (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
   have hrel := seminormalParam_rel q (axialDist T k) (axialDist T (k + 1)) hq0
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
-    (zpow_ne_one hq hq1 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq0 hq2 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
   rw [genMat_mul_apply_of_not_admissible q k hk hkn
       (genMat q k hk hkn * genMat q (k + 1) hl hln) hka T',
     genMat_mul_apply q (k + 1) hl hln (genMat q k hk hkn) hla T',
@@ -1691,7 +1670,7 @@ the two length-`2` admissibilities from `T`'s own (`swapAdmissible_word_left_iff
 
 With `genMat_quadratic` and `genMat_far_comm`, this completes the three Hecke relations
 unconditionally. -/
-theorem genMat_braid (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+theorem genMat_braid (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card) :
     genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn
       = genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln := by
@@ -1704,24 +1683,24 @@ theorem genMat_braid (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
         have hBk := (swapAdmissible_cross_iff T hk hkn hln hka hla).mp hAl
         have hDk := (swapAdmissible_word_left_iff T hk hkn hln hka hAl).mpr hla
         have hEl := (swapAdmissible_word_right_iff T hk hkn hln hla hBk).mpr hka
-        exact genMat_braid_generic q hq hq1 k hk hkn hl hln hka hla hAl hBk hDk hEl T'
+        exact genMat_braid_generic q hq0 hq2 k hk hkn hl hln hka hla hAl hBk hDk hEl T'
       · -- `s_k·T` does not extend, hence neither does `s_{k+1}·T`: the middle position
         have hBk : ¬ SwapAdmissible (swapTableau T (k + 1) hl hln hla) k := fun h =>
           hAl ((swapAdmissible_cross_iff T hk hkn hln hka hla).mpr h)
-        exact genMat_braid_of_middle q hq hq1 k hk hkn hl hln hka hla hAl hBk T'
+        exact genMat_braid_of_middle q hq0 hq2 k hk hkn hl hln hka hla hAl hBk T'
     · by_cases hAl : SwapAdmissible (swapTableau T k hk hkn hka) (k + 1)
       · have hDk : ¬ SwapAdmissible
             (swapTableau (swapTableau T k hk hkn hka) (k + 1) hl hln hAl) k := fun h =>
           hla ((swapAdmissible_word_left_iff T hk hkn hln hka hAl).mp h)
-        exact genMat_braid_of_succ_fixed_three q hq hq1 k hk hkn hl hln hka hla hAl hDk T'
-      · exact genMat_braid_of_succ_fixed q hq hq1 k hk hkn hl hln hka hla hAl T'
+        exact genMat_braid_of_succ_fixed_three q hq0 hq2 k hk hkn hl hln hka hla hAl hDk T'
+      · exact genMat_braid_of_succ_fixed q hq0 hq2 k hk hkn hl hln hka hla hAl T'
   · by_cases hla : SwapAdmissible T (k + 1)
     · by_cases hBk : SwapAdmissible (swapTableau T (k + 1) hl hln hla) k
       · have hEl : ¬ SwapAdmissible
             (swapTableau (swapTableau T (k + 1) hl hln hla) k hk hkn hBk) (k + 1) := fun h =>
           hka ((swapAdmissible_word_right_iff T hk hkn hln hla hBk).mp h)
-        exact genMat_braid_of_fixed_succ_three q hq hq1 k hk hkn hl hln hka hla hBk hEl T'
-      · exact genMat_braid_of_fixed_succ q hq hq1 k hk hkn hl hln hka hla hBk T'
+        exact genMat_braid_of_fixed_succ_three q hq0 hq2 k hk hkn hl hln hka hla hBk hEl T'
+      · exact genMat_braid_of_fixed_succ q hq0 hq2 k hk hkn hl hln hka hla hBk T'
     · exact genMat_braid_of_both_fixed q k hk hkn hl hln hka hla T'
 
 end Braid
@@ -1746,29 +1725,67 @@ noncomputable def seminormalGen (n : ℕ) (hN : μ.cells.card = n + 1) (i : Fin 
 `H_{n+1}(q) →ₐ[ℝ] M_{SYT μ}(ℝ)` for any shape `μ` with `|μ| = n + 1`, built from the three
 relations proved above through the universal property `Hecke.lift`.  Its dimension is
 `#SYT μ`, the Specht dimension of `μ`. -/
-noncomputable def seminormalRep (hq : 0 < q) (hq1 : q ≠ 1) (n : ℕ)
+noncomputable def seminormalRep (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
     (hN : μ.cells.card = n + 1) :
     Hecke ℝ q q⁻¹ n →ₐ[ℝ] Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ :=
   Hecke.lift ℝ q q⁻¹ n (seminormalGen q n hN)
     (fun i => by
-      have hq0 : q ≠ 0 := ne_of_gt hq
       rw [mul_inv_cancel₀ hq0, one_smul]
-      exact genMat_quadratic q hq hq1 _ _ _)
+      exact genMat_quadratic q hq0 hq2 _ _ _)
     (fun i hi => by
       have h : (seminormalGen q n hN ⟨(i : ℕ) + 1, hi⟩)
           = genMat q ((i : ℕ) + 1 + 1) (by omega) (by omega) := rfl
       rw [h]
-      exact genMat_braid q hq hq1 _ _ _ _ _)
+      exact genMat_braid q hq0 hq2 _ _ _ _ _)
     (fun i j hij => by
       refine genMat_far_comm q _ _ _ _ ?_
       have := i.isLt; have := j.isLt
       omega)
 
 /-- `seminormalRep` sends the generator `σ_i` to the matrix `ρ(σ_{i+1})`. -/
-@[simp] theorem seminormalRep_σ (hq : 0 < q) (hq1 : q ≠ 1) (n : ℕ)
+@[simp] theorem seminormalRep_σ (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
     (hN : μ.cells.card = n + 1) (i : Fin n) :
-    seminormalRep q hq hq1 n hN (Hecke.σ ℝ q q⁻¹ n i) = seminormalGen q n hN i :=
+    seminormalRep q hq0 hq2 n hN (Hecke.σ ℝ q q⁻¹ n i) = seminormalGen q n hN i :=
   Hecke.lift_σ ℝ q q⁻¹ n _ _ _ _ i
+
+/-- **A generator that moves any tableau is not a scalar matrix.**
+
+Needs no hypothesis on `q` whatever.  The reason is that `offDiag` takes the plain value `1`
+on the non-negative branch, so of the two off-diagonal entries `(s_k·T, T)` and `(T, s_k·T)`
+— which sit at distances `d` and `-d` — **at least one is exactly `1`**, whichever sign `d`
+has.  A scalar matrix has both equal to `0`.
+
+Note this does *not* go through `offDiag ≠ 0` at the moved entry: that can genuinely vanish,
+since `offDiag q (-1) = 0`.  It is the *pair* that cannot both vanish. -/
+theorem genMat_ne_scalar (k : ℕ) (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cells.card)
+    {T : StandardYoungTableau μ} (hadm : SwapAdmissible T k) (s : ℝ) :
+    genMat q k hk hkn ≠ s • (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) := by
+  classical
+  intro hcon
+  have hne : swapTableau T k hk hkn hadm ≠ T := swapTableau_ne T hk hkn hadm
+  have hadm' : SwapAdmissible (swapTableau T k hk hkn hadm) k :=
+    swapAdmissible_swapTableau T hk hkn hadm
+  have hback : swapTableau (swapTableau T k hk hkn hadm) k hk hkn hadm' = T :=
+    swapTableau_involutive T hk hkn hadm
+  have hd : axialDist (swapTableau T k hk hkn hadm) k = -axialDist T k :=
+    axialDist_swapTableau T hk hkn hadm
+  -- both off-diagonal entries of a scalar matrix vanish
+  have hz : ∀ {U V : StandardYoungTableau μ}, U ≠ V → genMat q k hk hkn U V = 0 := by
+    intro U V huv
+    rw [hcon]
+    simp [Matrix.one_apply, huv]
+  by_cases hsign : axialDist T k < 0
+  · -- read the partner column instead: its distance is `-d > 0`
+    have h1 : genMat q k hk hkn T (swapTableau T k hk hkn hadm)
+        = offDiag q (axialDist (swapTableau T k hk hkn hadm) k) := by
+      have h := genMat_swap q k hk hkn hadm' (by rw [hback]; exact hne.symm)
+      rwa [hback] at h
+    rw [hz hne.symm, hd, offDiag_of_not_neg q (by omega)] at h1
+    exact one_ne_zero h1.symm
+  · have h1 : genMat q k hk hkn (swapTableau T k hk hkn hadm) T
+        = offDiag q (axialDist T k) := genMat_swap q k hk hkn hadm hne
+    rw [hz hne, offDiag_of_not_neg q hsign] at h1
+    exact one_ne_zero h1.symm
 
 end Package
 
