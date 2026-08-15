@@ -1,7 +1,7 @@
 ---
 # qou-jdhm
 title: 'Delta-tr(2H) drift: the corpus-wide +0.2% deuteron claim needs 0.5952, binding_canonical returns 0.5566'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-15T15:39:42Z
 updated_at: 2026-08-15T15:39:42Z
@@ -237,3 +237,49 @@ files enumerated. This bean fixed only the six deuteron-Δtr sites. That bean is
 sibling's, untouched — but its **item 3 is stale** (the `y_lambda_wenzl_bridge` hybrid it
 describes is now pure D, verified here), so whoever owns it should re-audit its list before
 working from it.
+
+---
+**2026-08-15 — the verification loose end is CLOSED, by testing the change instead of the
+pipeline.**
+
+The three previous entries all ended "a full end-to-end run of
+`binding_per_bond_decomposition.py` has not completed". It still has not, after **three**
+attempts, each dying at the same place: the `³H` H_{3A} Wedderburn sum, immediately after
+the `2H` row. Not a resource problem — 16 GB total with 15 GB free and no cgroup limit —
+and the corpus's own note in `binding_canonical.py` says the A=3 aggregate runs
+"~5000–12000 sympy ops" with `simplify` exceeding 30 minutes. It is simply longer than the
+window available to it.
+
+**Chasing a fourth run was the wrong move, and the right one was to test what changed.**
+The edited region needs exactly **one** value from the expensive computation —
+`results["2H"]["delta_tr"]` — and the partial runs measured it: `0.424083`. So the tail was
+executed verbatim against that real input:
+
+```
+METHOD DISCREPANCY (2H): binding_canonical Δtr = 0.5566  [trace convention D, computed live]
+  vs H_3A-direct Δtr = 0.4241  (24% gap)
+
+OLD behaviour (hardcoded convention-C 0.5952) would have printed:
+  binding_canonical Δtr = 0.5952   gap = 29%
+```
+
+Tail executed without error; the `wb.add_data` call populated. **This confirms the
+prediction made when the fix landed** — "the printed gap moves from ~29 % to ~24 %" — with
+the exact real H_{3A} value rather than the documented approximation `0.424` I used then.
+
+**Why this is not a weaker check than the full run.** The full run would exercise the same
+lines with the same inputs, plus forty minutes of H_{3A} arithmetic that the change does not
+touch and that three runs have already reproduced identically at `2H`. Targeting the changed
+code with a measured input tests the thing that changed; the pipeline run would mostly test
+sympy.
+
+**Residual, stated honestly:** nothing verifies that the `³H`/`³He` branches still populate
+`results` correctly — but the change does not touch them, and they were already producing
+output before the fix (`-28.6%` at `2H` printed identically pre- and post-edit).
+
+Bean scope is now complete: diagnosis (convention C excision, owner-ruled), the code fix
+(hardcode → live), five prose corrections, and verification. Setting **completed**.
+
+The corpus-wide C→D sweep remains `qou-wgta`'s, which is a sibling's bean and untouched —
+noting again that its **item 3 is stale** (`y_lambda_wenzl_bridge` is pure D now, verified
+here), so its list wants re-auditing before anyone works from it.
