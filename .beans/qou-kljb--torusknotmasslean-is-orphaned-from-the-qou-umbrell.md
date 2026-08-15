@@ -1,11 +1,11 @@
 ---
 # qou-kljb
 title: 795 QOU library modules are never built — lake build QOU cannot see them (270 load-bearing)
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-09T02:12:05Z
-updated_at: 2026-08-15T21:31:02Z
+updated_at: 2026-08-15T21:40:39Z
 ---
 
 Surfaced while verifying PR #4824's §1 consolidation claim with the three-way
@@ -255,3 +255,46 @@ Worth recording because it is a **CI-feasibility** issue, not a correctness one:
 This is a distinct resource class from the one the lakefile already documents: `AllKnownIsotopesUniqueness` needs `moreLeanArgs = ["-s", "65536"]` because it overflows the elaboration **stack**; this one is **heap**. Raising the stack does not help it.
 
 Neighbouring `QOU.Machinery.HeckeH4WedderburnMulC` was also slow (~10 min) — the H4 Wedderburn cluster as a whole is the expensive region of the corpus.
+
+
+## FINAL — survey complete, and a correction to my own reading
+
+```
+done: blocked=1, error=1, ok=515, up-to-date=1386 in 4631s      (1903 modules)
+```
+
+| row | value |
+|---|---|
+| **error** | `QOU.SchurWeyl.QJucysMurphy` — `ring_nf made no progress on goal` (223.9 s to fail) |
+| **blocked** | **`QOU`** — the root module, blocker `QOU.SchurWeyl.QJucysMurphy` |
+
+### Correction: I said "nothing imports QJucysMurphy". That was wrong.
+
+`QOU.lean:332` imports it. My grep was `grep -rln "import QOU.SchurWeyl.QJucysMurphy" QOU/` — which searches the `QOU/` **subdirectory** and therefore never looks at the root file `lean/QOU.lean` itself. The conclusion I drew from it ("no dependents, so it failed silently with nothing downstream") was an artifact of that path restriction.
+
+### What that changes — the conclusion is stronger, not weaker
+
+The single error was **not** an isolated orphan. It blocked the umbrella root, and the lakefile sets `defaultTargets = ["QOU"]`. So **`lake build` was failing** on this corpus until the fix in this branch.
+
+That means my earlier escalation hypothesis was right *in kind* and wrong *in magnitude*: I predicted "`lake build` is red now, probably tens of failures". It was red — from exactly **one** module.
+
+### Close
+
+`qou-kljb` closes as: the "795/837 never built" premise was already fixed by `qou-rc7b`'s `globs`; widening the build exposed exactly one real breakage, which blocked the root; that breakage is fixed (`ring` → `noncomm_ring`, six sites, compile-verified) and the corpus is now green.
+
+### Resource outliers (the real remaining constraint)
+
+Six modules dominate build time — the H4 Wedderburn cluster plus one Pauli witness:
+
+| seconds | module |
+|---|---|
+| 1636 | `QOU.Archimedean.PauliWitness.Witness12B` |
+| 1561 | `QOU.Machinery.HeckeH4BlockMap211` |
+| 1195 | `QOU.Machinery.HeckeH4Semisimple` (measured at 5.2 GB RSS) |
+| 748 | `QOU.Machinery.HeckeH4WedderburnMulB` |
+| 680 | `QOU.Machinery.HeckeH4WedderburnMulA` |
+| 609 | `QOU.Machinery.HeckeH4WedderburnCoord` |
+
+Two of these exceed **25 minutes each**. Anyone re-enabling auto-triggered CI should size for that; a standard runner's memory is the binding constraint before wall-clock is.
+
+**Standing caveat:** `lean-direct-cone` bypasses Lake and writes no `.trace` files, so this is evidence about elaboration. A real `lake build` remains the only build-level confirmation, and cannot run in this container without evicting the restored olean cache.
