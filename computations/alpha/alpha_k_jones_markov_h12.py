@@ -74,8 +74,28 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 
 mp.mp.dps = 30
+# PROTON (experimental) pin — AGENTS.md §"q₀ anchor convention", owner
+# directive 2026-08-07: all agents and all production code default to the
+# experimental anchor, and "any probe, producer, or witness you write or
+# modify defaults to the experimental pin. No sign-off needed."
+#
+# This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, which
+# is the MUON value 1.1099785955573347..., and derived q0, h and z_mark from
+# it. The two pins differ by 11.54 ppb — the μ–p substrate tension itself —
+# so this producer was computing at a different anchor from the surface it
+# feeds: `y-lambda-at-q0.witness.json` now records
+# `parameters.q_0 = 1.10997858275138080759...`, i.e. proton. Mixing the two
+# inside one quantity is the straddle AGENTS.md forbids regardless of size.
+#
+# The upstream record is still captured, for provenance and because that
+# witness remains the canonical 3-CAL (muon) pin document — it is simply no
+# longer the source of this computation's q₀. Note that witness contradicts
+# itself about its own anchor (`q0Anchor: muon` vs
+# `calibration_inputs.anchor: m_p/m_e`); tracked as bean `qou-m9xp`.
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q0_mpf = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50  # noqa: E402
+q0_mpf = mp.mpf(_Q50)
 q0_f64 = float(q0_mpf)
 h_f64 = float(q0_mpf - 1 / q0_mpf)
 z_mark = q0_mpf**3 / (q0_mpf**2 + 1)
