@@ -34,6 +34,16 @@ example computations).
 from __future__ import annotations
 
 
+# Path bridge (subdirectory refactor — Phase 4, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+del _sys, _Path
+
 import json
 import sys
 from datetime import datetime, timezone
@@ -44,7 +54,7 @@ import mpmath as mp
 import sympy as sp
 
 HERE = Path(__file__).parent
-sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -53,9 +63,6 @@ from gb_filtration_jet_tracker import HeckeElement, perm_apply_s
 # Sympy q, h, z (matching the jet_tracker convention)
 q = sp.symbols("q", positive=True)
 h_sym = q - 1 / q
-# Trace convention D: z = q^3/(q^2+1). Convention C, 1/(sqrt(q)+1/sqrt(q)),
-# was excised by owner ruling 2026-08-09 -- and note D needs no sp.sqrt, so
-# the symbolic expressions below stay in Q(q) rather than Q(q^{1/2}).
 z_sym = q**3 / (q**2 + 1)
 
 

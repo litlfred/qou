@@ -1,0 +1,32 @@
+{
+  "computation": "markov-weights-symbolic",
+  "description": "Closed-form symbolic Jones\u2013Markov weights y_\u03bb(q) at H_3(q), derived directly from the Markov axioms tr_M(1)=1, tr_M(\u03c3_i)=z, tr_M(\u03c3_i\u03c3_j)=z\u00b2 via the 3\u00d73 linear system A\u00b7y = b with A_{ij} = \u03c7^{\u03bb_j}(elem_i). Reproduces the markov_peel / Hoefsmit-Wenzl bridge value at q_0 from first principles, no numerical fitting.",
+  "n": 3,
+  "y_lambda": {
+    "(3,)": "(q**4 + 1)/(q**4 + 2*q**2 + 1)",
+    "(2, 1)": "q**2/(q**4 + 2*q**2 + 1)",
+    "(1, 1, 1)": "0"
+  },
+  "y_lambda_at_q0": {
+    "(3,)": 0.5054042265039308,
+    "(2, 1)": 0.2472978867480346,
+    "(1, 1, 1)": 0.0
+  },
+  "tr_M_proton_closed_form": "(q**22 + q**20 + 2*q**18 + 2*q**16 + 3*q**14 + 2*q**12 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**13 + 8*q**11 + 4*q**9)",
+  "tr_M_proton_at_q0": 1.1457596924573008,
+  "tr_M_proton_markov_peel_reference": 1.065306228613167,
+  "tr_M_neutron_closed_form": "(q**18 - q**16 + 2*q**14 - 2*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + q**2 - 1)/(4*q**9)",
+  "tr_M_neutron_at_q0": 0.9877436881158096,
+  "tr_M_neutron_markov_peel_reference": 0.9232332971861535,
+  "generated_at": "2026-08-10T01:56:36.856072+00:00",
+  "scriptHash": "23861b203a83",
+  "scriptCommitSha": "ccc12714835fbb44c748fd59388f862a5ba2d04c",
+  "commitSha": "4f351a4e1c8775ee1e173889583ba0ec877aad78",
+  "engine": "sympy",
+  "computedAt": "2026-08-10T01:56:40.422638+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "markov_weights_symbolic.py"
+}

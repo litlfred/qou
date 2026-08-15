@@ -89,13 +89,34 @@ interface crossing. Match on the `averaged` prefix, or handle both labels.
   `--method laurent_q_rust` still errors, since there the kernel was asked for
   by name.
 
+### Vendored `_internal/` is now generated, not hand-copied
+
+Every one of the 14 hand-copied modules under `_internal/` had drifted from
+its source in `computations/` — `witness_base` by 815 lines, `q_parameter` by
+418, and `canonical_braid_crossings` by a whole generation (it predated the
+current crossing classifier). None of the drift was adaptation; the
+vendored-only lines were simply older docstrings.
+
+`scripts/sync-qou-mass-vendor.py` now generates them. It computes the
+transitive import cone from named entry points (42 modules) rather than
+reading a hand-kept list, copies them flat, and applies exactly two
+transforms — flatten the `substrate/` `hecke/` `markov/` layout, and remove
+the `_path_bridge` shim that only makes sense inside `computations/`. It also
+carries the 17 `*.witness.json` files those modules load at runtime.
+
+`--check` makes drift a test failure instead of a discovery months later.
+**Do not hand-edit anything under `_internal/`** — run `--apply`.
+
 ### Known, unchanged
 
-- `_internal/canonical_braid_crossings.py` and its siblings are stale
-  vendored copies. They are unreachable — their own imports
-  (`mass_at_3A_proper`, `hecke_core`) are not vendored, so any call raises
-  `ImportError` first — and `canonical_braid()` does not use them. Tracked as
-  `qou-hy6q`; the live vendoring work is `qou-elb0`.
+- `canonical_braid()` still answers from the bundled shard, not from a live
+  computation. The vendored code is now current and imports cleanly, but two
+  path assumptions in the upstream modules still block the live path: they
+  resolve witnesses as `Path(__file__).parent.parent` (handled here by
+  placing witnesses at the package root), and `codata_constants` reaches back
+  into `qou-mass/src/qou_mass/data/ame2020.json` by a repo-relative path,
+  which doubles inside the wheel. Both are changes to the `computations/`
+  modules rather than to the vendoring, and are tracked under `qou-elb0`.
 
 ## 0.1.0a1
 
