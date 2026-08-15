@@ -131,7 +131,7 @@ most-decisive first:
   [1309.3796](https://arxiv.org/abs/1309.3796)) categorify the **colored Jones /
   quantum knot invariants**, NOT the 3d-index / DT count.
 - The DT / 3d-index side (Garoufalidis topological-invariance
-  [1303.5278](https://arxiv.org/abs/1303.5278) in `uploads/`; DGG state
+  [1303.5278](https://arxiv.org/abs/1303.5278) in `library/`; DGG state
   integrals) gives `{3,4}` from **triangulation** data, not crystal/Hecke.
 - **No categorification of the q→0 DT count `{3,4}` from crystal/Hecke data
   appears to exist** — confirming the keystone's "open problem in DT/3d-index

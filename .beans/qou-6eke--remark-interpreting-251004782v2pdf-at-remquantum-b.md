@@ -13,7 +13,7 @@ The K_3 -> Pic regulator on the Habiro ring, with Chern-Simons q-series as secti
 - sec. 1.4 — The Habiro ring of a number field carries a regulator from K_3 into its Picard group, whose image line bundles have sections given by q-series from perturbative Chern-Simons theory; this geometry is invisible after (q-1)-completion.
   Use here: Directly parallels rem:quantum-bloch-group-framework-connection, which places the framework's traced volumes in a quantum Bloch group with a regulator to R and tags itself 'habiro'; it also identifies a missing primary reference (the number-field Habiro ring paper).
 
-Source: `uploads/2510.04782v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2510.04782v2/2510.04782v2.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

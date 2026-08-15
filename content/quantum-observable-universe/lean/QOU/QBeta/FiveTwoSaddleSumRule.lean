@@ -766,7 +766,7 @@ theorem sum_pentagon_diagonal (L : ℂ → ℂ)
 /-! ### §7g — Neumann's kernel condition, and why `R` does not see the flattening
 
 Route 49 read the definitions from Neumann, *Extended Bloch group and the
-Cheeger–Chern–Simons class*, Geom. Topol. 8 (2004) (`uploads/0307092v2.pdf`):
+Cheeger–Chern–Simons class*, Geom. Topol. 8 (2004) (`library/0307092v2/0307092v2.pdf`):
 
 * `R(z;p,q) = R(z) + (πi/2)·(p·log(1−z) + q·log z) − π²/6`, valued in `ℂ/π²ℤ`;
 * `ℬ̂(ℂ) = ker ν` with `ν([z;p,q]) = (log z + pπi) ∧ (−log(1−z) + qπi)`.

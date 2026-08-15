@@ -475,8 +475,8 @@ def main():
     })
     wb.add_data("task3_spin_data", {
         "source_papers": {
-            "BN12": "uploads/sigma12-065.pdf (Braden-Northover, SIGMA 8 (2012) 065)",
-            "BDH22": "uploads/2208.13692v1.pdf (Braden-Disney-Hogg)",
+            "BN12": "library/sigma12-065/sigma12-065.pdf (Braden-Northover, SIGMA 8 (2012) 065)",
+            "BDH22": "library/arxiv-2208.13692v1/2208.13692v1.pdf (Braden-Disney-Hogg)",
         },
         "K_Q": "(1/10)(3,2,-2,-3) + Im(tau0)*(1,-2,-2,1)*i (BN12 Thm 3 = BDH22 "
                "Prop 5.13, verbatim cross-paper agreement; RR92 homology basis)",

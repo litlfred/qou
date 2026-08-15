@@ -15,7 +15,7 @@ Record the scope honestly: Thm 1.1 is proved for the ONE-dimensional family I_{A
 - Cor. 1.7 and Cor. 1.8 — Explicit q / q-tilde factorizations of the state-integral invariants of the 4_1 and 5_2 knots.
   Use here: The 4_1 and 5_2 block series the corpus's bilinear-bridge probes construct and compare against the Habiro-face targets; the corpus's gate for the 4_1 case currently cites the b=1 closed form of GK 1411.6062 instead.
 
-Source: `uploads/state.integrals.qseries.pdf` — no `references.ts` entry yet
+Source: `library/stateintegralsqseries/state.integrals.qseries.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

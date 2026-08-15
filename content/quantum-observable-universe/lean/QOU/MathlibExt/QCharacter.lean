@@ -28,7 +28,7 @@ Results (generic `CommRing`, then `Field` for the ratio):
 `e_{q,c}` (theta) and the ∞ slope-½ Stokes multipliers are NOT here — beaned (`qou-xufp`).
 §7c: generic `CommRing`; `Field` only for the ratio. Sorry-free. No fit; nothing wired.
 
--- Ref: [manuscript] uploads/Equations_aux_q-differences.pdf (DRSZ, q-characters e_{q,c})
+-- Ref: [manuscript] library/equations-aux-q-differences/Equations_aux_q-differences.pdf (DRSZ, q-characters e_{q,c})
 -/
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring

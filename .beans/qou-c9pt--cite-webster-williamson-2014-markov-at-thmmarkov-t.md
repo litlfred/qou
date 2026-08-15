@@ -15,7 +15,7 @@ The reference currently sits in rem:hecke-markov-interpretation's cites array wi
 - Thm 6 — The trace Tr(C'_w) = dim_{q,t} H*_{B_Delta}(IC_w) depends only on the root system, and agrees with the trace defined independently by Gomi.
   Use here: Supplies the well-definedness context for treating the Markov trace as a root-system-level invariant rather than a type-A accident.
 
-Source: `uploads/0911.4494v2.pdf` (`webster-williamson-2014-markov`)
+Source: `library/arxiv-0911.4494v2/0911.4494v2.pdf` (`webster-williamson-2014-markov`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

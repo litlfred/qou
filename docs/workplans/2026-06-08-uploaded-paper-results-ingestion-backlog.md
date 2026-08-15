@@ -6,7 +6,7 @@ inventory). Seeded by [commit 4183cd9e](https://github.com/litlfred/qou/commit/4
 
 ## The task
 
-For every paper in [`uploads/`](../../uploads/), **pull in its results** using the
+For every paper in [`library/`](../../library/), **pull in its results** using the
 paper-ingestion skills (`local/paper-importer`, `local/document-intake`), with the
 **specific relevant citations**, under three organizing principles:
 
@@ -28,9 +28,9 @@ paper-ingestion skills (`local/paper-importer`, `local/document-intake`), with t
 
 ## Seed (item 1): the DLM papers — just uploaded, already used
 
-- `uploads/0407051v2.pdf` — **Domagała–Lewandowski**, *Black hole entropy from
+- `library/arxiv-gr-qc-0407051v2/0407051v2.pdf` — **Domagała–Lewandowski**, *Black hole entropy from
   quantum geometry* (Class. Quantum Grav. 21 (2004) 5233).
-- `uploads/0407052v1.pdf` — **Meissner**, *Black hole entropy in loop quantum
+- `library/arxiv-gr-qc-0407052v1/0407052v1.pdf` — **Meissner**, *Black hole entropy in loop quantum
   gravity* (Class. Quantum Grav. 21 (2004) 5245).
 - **Relevant results to cite:** the horizon state-count + projection-constraint
   combinatorics (DL); the Immirzi-fixing criticality equation (Meissner). These
@@ -42,7 +42,7 @@ paper-ingestion skills (`local/paper-importer`, `local/document-intake`), with t
   block is not formalized) → no wrapper needed until the spin-network derivation
   is promoted to content.
 
-## Inventory of `uploads/` (ingestion status — verify each)
+## Inventory of `library/` (ingestion status — verify each)
 
 | File | Paper (best-known) | Already cited? | Lean overlap? |
 |---|---|---|---|
@@ -68,14 +68,14 @@ paper-ingestion skills (`local/paper-importer`, `local/document-intake`), with t
   specific cited theorems, mint `references.ts` entries, and decide Lean
   placement (own package vs wrapper) per the overlap rule.
 - **`local/document-intake`** — record per-upload ingestion status (cited? Lean
-  wrapped?) so `uploads/intake.json` tracks it.
+  wrapped?) so `library/intake.json` tracks it.
 - **`local/coordinate` / bib audit** — extend `validate-references` (or a new
   `uploads-ingestion-audit`) to flag **uploaded papers with no `references.ts`
   entry** and **QOU results that overlap an uploaded paper but don't wrap/cite
   it**. Add this check to the integration/bib workflow (CI `audit` or
   witness-pipeline).
 - **`local/integration-watcher`** — a new axis: "uploaded-paper ingestion" (is
-  every `uploads/*.pdf` either cited or marked not-relevant; is overlap wrapped).
+  every `library/*.pdf` either cited or marked not-relevant; is overlap wrapped).
 
 ## Order of work (when picked up)
 

@@ -22,7 +22,7 @@ PR #820's `content/bib-qa-verifications.json` records, per reference id:
 {
   "id": "boyd-vandenberghe-2004",
   "status": "fixed",
-  "local_pdf": "uploads/boyd-vandenberghe-2004-convex-optimization.pdf",
+  "local_pdf": "library/boyd-vandenberghe-2004-convex-optimization.pdf",
   "verified_at": "2026-05-19T06:38:00Z",
   "verified_by": "Claude (claude-opus-4-7)",
   "fixes_applied": 18,

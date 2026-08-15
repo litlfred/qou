@@ -1,0 +1,14 @@
+---
+doc_id: arxiv-0905.0591v3
+doc_title: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS"
+section_id: sec-021-7-twisted-invariants-of-knots-and-special-repres
+section_title: "Twisted invariants of knots and special representations"
+section_number: 7
+pages: 24-24
+source_pdf: friedvidu1.pdf
+source_sha256: cfeaf61f759a6af8
+---
+Given a knot K ⊂ S3 the representations which have been studied most are the 2–
+dimensional complex representations and the metabelian re presentations. It is therefore
+natural to consider special properties of twisted Alexande r polynomials corresponding to
+such representations.

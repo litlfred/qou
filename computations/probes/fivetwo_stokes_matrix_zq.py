@@ -9,7 +9,7 @@ LITERATURE TRANSCRIPTION + IDENTIFICATION — NOT a QOU c₃ derivation.
 Nothing is fitted; nothing is wired to production; c₃ is NOT claimed derived.
 
 Source: Garoufalidis–Gu–Mariño, *The resurgent structure of quantum knot
-invariants* (arXiv:2007.10190v2, CMP 2021; `uploads/2007.10190v2.pdf`),
+invariants* (arXiv:2007.10190v2, CMP 2021; `library/arxiv-2007.10190v2/2007.10190v2.pdf`),
 §3 (the equation x⁻²(1−x)³ = 1 and the 5₂ knot), eqs (22)–(29).
 Registered as `garoufalidis-gu-mariño2021`.
 

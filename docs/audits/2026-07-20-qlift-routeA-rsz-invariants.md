@@ -2,12 +2,12 @@
 
 **Question.** Are the two order-2 q-difference kernels
 C1 `[m+2]_q·b_{m+2} = b_{m+1} + b_m` (proved q-involution/q-Borel form) and
-C2 `y_{m+1} − (2−q^m)·y_m + y_{m−1} = 0` (GGM eq 49, `uploads/2012.00062v3.pdf` p. 14)
+C2 `y_{m+1} − (2−q^m)·y_m + y_{m−1} = 0` (GGM eq 49, `library/arxiv-2012.00062v3/2012.00062v3.pdf` p. 14)
 equivalent as q-difference **modules** — i.e. under arbitrary GL₂ gauge with
 meromorphic/formal coefficients, not just the diagonal gauges pruned in
 [`2026-07-20-qlift-ggm-gauge-prune.md`](2026-07-20-qlift-ggm-gauge-prune.md)?
 Reference read directly: Ramis–Sauloy–Zhang, *Local analytic classification of
-q-difference equations*, Astérisque 355 (`uploads/0903.0853v3.pdf`): Newton polygon
+q-difference equations*, Astérisque 355 (`library/arxiv-0903.0853v3/0903.0853v3.pdf`): Newton polygon
 Def §2.2.1 (p. 16), invariance Thm 2.2.1, pure/fuchsian classification §2.2.2
 (Lemma 2.2.3 + p. 19), formal splitting §2.2.3.1, slope filtration Thm 2.2.4.
 Gauge = F ∈ GL_n(C({z})) resp. GL_n(C((z))) (§2.1.2, p. 13).

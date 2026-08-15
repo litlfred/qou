@@ -17,7 +17,7 @@ The inductive-limit Lean file declares the affine construction 'open R&D content
 - Theorem 1(b) + §2.1-2.2, p.16-22 (with the 2021 correction) — The representations of the family H(R,q^epsilon), epsilon in C, come in families depending analytically on epsilon (matrix coefficients conjecturally algebraic in q^{1/2}).
   Use here: An analyticity-in-the-deformation-parameter statement for Hecke representations. This is the affine instance of the fibre-level framing AGENTS.md sets out for c_k(q) — the object is analytic in q at the fibre level, and each substrate anchor is one evaluation of it. It supports that framing with an external theorem rather than an assertion, though it does not establish it for the finite H_n(q) the corpus computes with.
 
-Source: `uploads/1108.5286v3.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1108.5286v3/1108.5286v3.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -19,7 +19,7 @@ Quoted by section and equation number in two audit docs and used as the organizi
 - Sect. 5 (Chiral Dirac Determinants) — The spin-structure dependence of the chiral Dirac determinant on a Riemann surface is given by Riemann's theta function.
   Use here: The audit uses this to identify the interior theta factor as the anomaly-carrying norm sector; it is also the natural literature anchor for the corpus's otherwise unsourced one-sentence rem:sign-as-spin-structure, though that remark's object (a ribbon twist sign on sqrt(q)) is not the same object and should not be conflated with a determinant line bundle.
 
-Source: `uploads/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf` — no `references.ts` entry yet
+Source: `library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

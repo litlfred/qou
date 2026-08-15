@@ -15,7 +15,7 @@ Step 7 of ex:chi-minus-six-derivation asserts Bring is the unique maximally symm
 - Sec 4, remark following Thm 2 (p. 7) citing Edge, J. London Math. Soc. 18 (1978) 539-545, and Braden-Disney-Hogg arXiv:2208.13692 Sec 3.1 — The Weierstrass points of Bring's curve were determined by Edge; see also Braden-Disney-Hogg Sec 3.1.
   Use here: Names the primary source (Edge 1978) for the Bring Weierstrass-point set, which is the datum ex:chi-minus-six-derivation Step 5 is implicitly using; Braden-Disney-Hogg is already digested in the 2026-07-18 audit, so the two independently agree.
 
-Source: `uploads/2211.08164v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2211.08164v2/2211.08164v2.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

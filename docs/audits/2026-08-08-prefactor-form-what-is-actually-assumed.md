@@ -114,7 +114,7 @@ torsion).
 **Two reasons not to bank it yet**, both from the corpus's own record:
 
 1. The registration says `DOI follows the msp.org pattern, PDF not read
-   in-sandbox`, and there is no Ohtsuki–Takata file in `uploads/`.
+   in-sandbox`, and there is no Ohtsuki–Takata file in `library/`.
 2. The paraphrase says *square root of the torsion* — `τ^{+1/2}` — while the
    form in use is `|τ|^{−1/2}`. That is a sign discrepancy in the exponent. It
    is very likely a torsion-vs-inverse-torsion normalisation convention, which
@@ -144,12 +144,12 @@ reading. But **no file says so**, and one part of the corpus calling a link
 result theorem-backed while another says no link theorem exists is precisely the
 sibling-file contradiction this arc has hit three times already. It should be
 stated once, explicitly, wherever "no theorem covers links" appears.
-`2308.06643` is also not in `uploads/` and its registration came from the
+`2308.06643` is also not in `library/` and its registration came from the
 Garoufalidis–Yoon bibliography rather than a read.
 
 ### DGLZ — downloaded, registered, and cited nowhere
 
-`uploads/0903.2472v1.pdf`, Dimofte–Gukov–Lenells–Zagier, *Exact results for
+`library/arxiv-0903.2472v1/0903.2472v1.pdf`, Dimofte–Gukov–Lenells–Zagier, *Exact results for
 perturbative Chern-Simons theory with complex gauge group*. Registered at
 `references.bib:3975` with the note "1-loop / torsion identification from the
 physics side."
@@ -158,7 +158,7 @@ That single bib entry is its **only occurrence in the repository**. It appears
 in no audit, probe, bean, or Lean file. This is the canonical physics origin of
 the `1/√torsion` one-loop term — the thing the audits gesture at when they say
 "the standard GGMW/Ohtsuki saddle-point form" — and it is sitting unread in
-`uploads/`.
+`library/`.
 
 **This is the cheapest available move on the open problem.** Before treating the
 τ-alone dependence as a research problem, read the paper the form is
@@ -166,7 +166,7 @@ attributed to and find out what it actually derives and under what hypotheses.
 
 ## ADDENDUM — DGLZ was read: it supplies the form, not the constant
 
-Recommendation 1 below was "read `uploads/0903.2472v1.pdf`". Done.
+Recommendation 1 below was "read `library/arxiv-0903.2472v1/0903.2472v1.pdf`". Done.
 
 Read it in two passes and the two passes disagreed, so the order matters here.
 The first pass produced the paragraph immediately below and a claim that the
@@ -347,9 +347,9 @@ The `c = 3` deviation (L6a4, 0.35%) does not change that and is not a cusp law
 either: a systematic `c`-dependence would have shown at `c = 2` and does not, to
 17 digits. More likely specific to that computation, as its own witness says.
 
-### RESOLVED — by a theorem in `uploads/`, and against my inference
+### RESOLVED — by a theorem in `library/`, and against my inference
 
-The N-power tension does not survive a search. `uploads/0611181v2.pdf` is van der
+The N-power tension does not survive a search. `library/arxiv-math-0611181v2/0611181v2.pdf` is van der
 Veen, *Proof of the volume conjecture for Whitehead chains* — **the paper this
 corpus already reads its Whitehead colored-Jones values from**. Its Main theorem:
 
@@ -435,7 +435,7 @@ Machine-checked in `computations/probes/one_loop_dglz_prefactor_identification_p
 
 ## Recommended action, in cost order
 
-1. ~~**Read `uploads/0903.2472v1.pdf` (DGLZ).**~~ **DONE** — see the addendum
+1. ~~**Read `library/arxiv-0903.2472v1/0903.2472v1.pdf` (DGLZ).**~~ **DONE** — see the addendum
    above. It supplied the form, the constant, and the generality, and it
    dissolved item 2 below as well.
 2. ~~**Resolve the Ohtsuki–Takata exponent convention.**~~ **RESOLVED by the

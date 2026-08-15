@@ -15,7 +15,7 @@ Relevant, no ref() entry; complements the registered twist-knot cyclotomic sourc
 - the duality section (comparison with the cyclotomic expansion of J_N(K(m,p))) — A generalisation of the duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.
   Use here: A root-of-unity duality on the same objects the corpus evaluates at roots of unity in the Habiro/zeta-fibre work; a candidate structural identity to test rather than a number to adopt.
 
-Source: `uploads/cJdoubletwistfinal.pdf` — no `references.ts` entry yet
+Source: `library/cjdoubletwistfinal/cJdoubletwistfinal.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

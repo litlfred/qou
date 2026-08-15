@@ -9,7 +9,7 @@ updated_at: 2026-08-08T23:37:25Z
 
 Adjoint Reidemeister torsion is used in three corpus probes and a unified cusp law with no torsion-theory reference registered; this thesis is a citable systematic treatment.
 
-Source: `uploads/2018SORUS020.pdf` — no `references.ts` entry yet
+Source: `library/2018sorus020/2018SORUS020.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

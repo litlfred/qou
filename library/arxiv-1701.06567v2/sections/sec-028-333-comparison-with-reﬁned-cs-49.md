@@ -1,0 +1,11 @@
+---
+doc_id: arxiv-1701.06567v2
+doc_title: "BPS spectra and 3-manifold invariants"
+section_id: sec-028-333-comparison-with-reﬁned-cs-49
+section_title: "Comparison with reﬁned CS 49"
+section_number: 3.3.3
+pages: 2-2
+source_pdf: 1701.06567v2.pdf
+source_sha256: c1610b50f5a7e22c
+---
+

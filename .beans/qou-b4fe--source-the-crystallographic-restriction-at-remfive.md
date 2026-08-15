@@ -15,7 +15,7 @@ while the remark states the crystallographic restriction (rotational order k in
 algebraic claim sourced to an experiment.
 
 Two candidates, neither in references.ts (grep for "twarock", "Patera", "Moody":
-zero hits), both taken from the reference list of uploads/1809.08419v1.pdf:
+zero hits), both taken from the reference list of library/arxiv-1809.08419v1/1809.08419v1.pdf:
 - Patera & Twarock, "Affine extension of noncrystallographic Coxeter groups and
   quasicrystals", J. Phys. A: Math. Gen. 35 (2002), 1551-1574.
 - Chen, Moody & Patera, "Non-crystallographic root systems", in Quasicrystals and

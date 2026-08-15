@@ -13,7 +13,7 @@ resolve BEFORE any further work on `qou-qbs4`.**
 
 ## The objection
 
-RSZ (`uploads/0903.0853v3.pdf` p.21, Def 2.3.1 setup; text extracted from the
+RSZ (`library/arxiv-0903.0853v3/0903.0853v3.pdf` p.21, Def 2.3.1 setup; text extracted from the
 FlateDecode streams since this sandbox has no pdftotext):
 
   "Let us fix a formal class, that is, a pure module: M0 := P1 (+) ... (+) Pk.
@@ -65,10 +65,10 @@ Do NOT write "refuted" anywhere on the basis of this bean. What is warranted is:
 
 ## Lit that would settle it
 
-- RSZ §3.3 in full (LOCAL: `uploads/0903.0853v3.pdf`) -- specifically whether the
+- RSZ §3.3 in full (LOCAL: `library/arxiv-0903.0853v3/0903.0853v3.pdf`) -- specifically whether the
   Stokes/Birkhoff data at a single irregular point is being conflated with the
   isoformal classification of a multi-slope module.
-- **van der Put-Reversat [56]** (pure-module classification; NOT in `uploads/`) --
+- **van der Put-Reversat [56]** (pure-module classification; NOT in `library/`) --
   needed to confirm the irreducibility claim for slope `d/r` coprime. This is the
   one genuine external ask.
 
@@ -129,7 +129,7 @@ the most likely home of any C^2).
 ## Bugeaud [14] OBTAINED — and it does NOT rescue the framing
 
 Owner uploaded it 2026-08-08 (commit 733a88b8):
-`uploads/CRMATH_2011__349_19-20_1037_0.pdf`. Identity metadata-verified from the
+`library/crmath-2011-349-19-20-1037-0/CRMATH_2011__349_19-20_1037_0.pdf`. Identity metadata-verified from the
 PDF's own `/Title`, `/Author` and `dc:description` (the body text is a
 font-subset encoding and does not extract, but the metadata is plain):
 

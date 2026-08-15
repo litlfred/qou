@@ -15,7 +15,7 @@ Cross-check whether the framework's triton and helium-4 binding predictions land
 - ch. 4 (deuteron, finite-volume binding and effective-range expansion) — Lattice predictions for the deuteron binding energy are reported against the value implied by the physical scattering length and effective range, with the finite-volume corrections made explicit.
   Use here: An ab-initio (non-AME) reference point for the deuteron, the isotope where the corpus's magnitude deficit r* was first measured.
 
-Source: `uploads/klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf` — no `references.ts` entry yet
+Source: `library/klein-few-body-systems-in-lattice-effective-field-theory-the/klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

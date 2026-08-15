@@ -1,0 +1,11 @@
+---
+doc_id: 18
+doc_title: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE"
+section_id: sec-017-3-m-d-kovalev-on-curvatures-of-tangent-spheres-t
+section_title: "M. D. Kovalev, On curvatures of tangent spheres , Trudy Mat. Inst. Steklov.; in"
+section_number: 3
+pages: 10-10
+source_pdf: 18.pdf
+source_sha256: 0b7bf055085cb04b
+---
+Russian 196 (1991), 90–92.

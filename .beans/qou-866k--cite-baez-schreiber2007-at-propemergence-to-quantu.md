@@ -13,7 +13,7 @@ prop:emergence-to-quantum-flat cites baez2004 for fake-curvature/2-connection co
 - Abstract; and the vanishing-fake-curvature discussion in the body — A 2-connection on a principal 2-bundle gives parametrisation-independent parallel transport along surfaces exactly when the fake curvature vanishes; this is the condition matching Breen-Messing connections on nonabelian gerbes.
   Use here: This is the actual source for the flatness condition that prop:emergence-to-quantum-flat currently attributes to baez2004; citing it fixes a wrong-source citation and gives the F = B / F^- = 0 discussion a real 2-gauge-theoretic footing.
 
-Source: `uploads/0511710v2.pdf` (`baez-schreiber2007`)
+Source: `library/arxiv-math-0511710v2/0511710v2.pdf` (`baez-schreiber2007`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

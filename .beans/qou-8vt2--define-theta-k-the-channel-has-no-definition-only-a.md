@@ -270,7 +270,7 @@ symbol you happen to be holding.
 # LITERATURE CHECK DONE — NZ 1985 read; AV2's premise is SOURCED (2026-08-08)
 
 The owner uploaded the papers (commit abb217cb / c055a0f5). Read
-`uploads/1-s2.0-0040938385900047-main.pdf` = Neumann-Zagier, "Volumes of
+`library/1-s20-0040938385900047-main/1-s2.0-0040938385900047-main.pdf` = Neumann-Zagier, "Volumes of
 hyperbolic three-manifolds", Topology 24 (1985) 307-332. Three results, all from
 §1:
 

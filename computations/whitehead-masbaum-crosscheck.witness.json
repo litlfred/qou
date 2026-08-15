@@ -1,5 +1,5 @@
 {
-  "description": "R-matrix engine cross-check vs Masbaum's exact twist-knot colored Jones (uploads/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf). Validates the engine on a CHIRAL knot (trefoil) after the fig-8 (amphichiral) leg.",
+  "description": "R-matrix engine cross-check vs Masbaum's exact twist-knot colored Jones (library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf). Validates the engine on a CHIRAL knot (trefoil) after the fig-8 (amphichiral) leg.",
   "computation": "whitehead_masbaum_crosscheck",
   "audit_only": true,
   "convention": "Masbaum a = my balanced q; framing factor q^{-writhe*(N^2-1)/2}",

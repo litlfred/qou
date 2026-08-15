@@ -13,7 +13,7 @@ Record that the corpus's complex-volume observable has a published quantum tower
 - Sect. 1 (surgery formulas) — Surgery formulas for the QHFT partition functions, and their relation to the quantum hyperbolic invariants of cusped hyperbolic 3-manifolds.
   Use here: The cut-and-paste behaviour the corpus would need if it ever computed its complex-volume observable by decomposition rather than as a single Markov trace; currently the folio has no cut-and-paste story for fraktur-V.
 
-Source: `uploads/agt-v7-n2-p13-s.pdf` — no `references.ts` entry yet
+Source: `library/agt-v7-n2-p13-s/agt-v7-n2-p13-s.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -53,7 +53,7 @@ plain rep trace (probe M1g).
 
 ## 2. Mechanism 2 — BCH/Bernoulli (exact statement + citation; verdict: predicts C = 0)
 
-From `uploads/phys-rep09.pdf` (Blanes–Casas–Oteo–Ros, *The Magnus expansion and some of its
+From `library/phys-rep09/phys-rep09.pdf` (Blanes–Casas–Oteo–Ros, *The Magnus expansion and some of its
 applications*, Phys. Rep. **470** (2009) 151–238), read directly, not paraphrased from memory:
 
 - **Theorem 1 (Magnus 1954), eq. (32):** $\dfrac{d\Omega}{dt} = \sum_{n\ge0} \dfrac{B_n}{n!}\,
@@ -65,7 +65,7 @@ applications*, Phys. Rep. **470** (2009) 151–238), read directly, not paraphra
   (eq. 45); $\Omega_4$ prefactor $\tfrac1{12}$. **Every order-$k\ge2$ term is a Lie element** —
   the Bernoulli tower attaches its weights to *commutators only*; there is **no scalar quadratic
   term at any order $\ge 2$**.
-- **Surface-ordered NA-Stokes version** (`uploads/0012035v3.pdf`, Broda, math-ph/0012035v3, §2.1
+- **Surface-ordered NA-Stokes version** (`library/arxiv-math-ph-0012035v3/0012035v3.pdf`, Broda, math-ph/0012035v3, §2.1
   operator approach): $P\exp\bigl(i\oint_{\partial S} A_i\,dx^i\bigr) = \mathcal P\exp\bigl(
   \tfrac{i}{2}\int_S \mathcal F_{ij}\,dx^i\wedge dx^j\bigr)$ with the twisted curvature
   $\mathcal F = U^{-1} F U$. The bar-even quadratic term of the surface-ordered exponential carries
@@ -150,5 +150,5 @@ parity puzzle says the residual lives). Nothing closes; nothing wired; no fit pe
 - Probe: [`computations/probes/eunit_g2_derivation_probe.py`](../../computations/probes/eunit_g2_derivation_probe.py)
 - Witness: [`computations/probes/eunit-g2-derivation.witness.json`](../../computations/probes/eunit-g2-derivation.witness.json) (audit-only, 18/18 assertions)
 - Parent audit: [`2026-07-24-eunit-magnus-order2.md`](2026-07-24-eunit-magnus-order2.md) (one-line follow-up pointer added there)
-- Refs: `uploads/phys-rep09.pdf` (Phys. Rep. 470 (2009) 151, Thm 1 eq (32), eqs (43)/(45), §1.4);
-  `uploads/0012035v3.pdf` (Broda, operator NA-Stokes + §2.1.2 Ordering); §4 citations above.
+- Refs: `library/phys-rep09/phys-rep09.pdf` (Phys. Rep. 470 (2009) 151, Thm 1 eq (32), eqs (43)/(45), §1.4);
+  `library/arxiv-math-ph-0012035v3/0012035v3.pdf` (Broda, operator NA-Stokes + §2.1.2 Ordering); §4 citations above.

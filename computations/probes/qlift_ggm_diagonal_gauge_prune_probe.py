@@ -233,7 +233,7 @@ def main():
             "prior_probe": "computations/probes/qlift_kernel_candidate_crosscheck_probe.py "
                            "(T2 scalar-gauge DISTINCT verdict; this probe upgrades "
                            "scalar -> arbitrary diagonal)",
-            "ggm_source": "uploads/2012.00062v3.pdf pp.14-15 (eq 49, Thm 9 bar parity)",
+            "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf pp.14-15 (eq 49, Thm 9 bar parity)",
             "discipline": "formalize-first (derivation before any scan); "
                           "scope-(a)/(b) vocabulary per AGENTS.md; no AME data; anti-fit",
         },

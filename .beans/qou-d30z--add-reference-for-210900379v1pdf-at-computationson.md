@@ -15,7 +15,7 @@ No ref() entry; the corpus's NZ-matrix work is live and recently corrected, and 
 - Sects. 3.1 and 5.1 (the knot 4_1) — Fully worked NZ matrices and 1-loop invariant for the figure-eight knot.
   Use here: An independent published 4_1 value to regression-test computations/one_loop_torsion.py against, which matters because the corpus's 4_1 calibration was previously off by exactly a factor of two.
 
-Source: `uploads/2109.00379v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2109.00379v1/2109.00379v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

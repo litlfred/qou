@@ -7,7 +7,7 @@ The literature check
 established that A2's block machinery is the *geometric* 3×3 matrix,
 while the trivial connection σ₀ is adjoined only in the extended
 matrix. Reading GGMW (arXiv:2111.04763v2, uploaded as
-`uploads/2111.04763v2.pdf`) §4.2 turns up the object the corpus has
+`library/arxiv-2111.04763v2/2111.04763v2.pdf`) §4.2 turns up the object the corpus has
 been computing all along, in closed form — eq (161):
 
     H_n^{5₂}(q) = (−1)ⁿ q^{n(n+3)/2} · Σ_{k=0}^{n} q^{k(k+1)} [n,k]_q

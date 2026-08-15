@@ -13,7 +13,7 @@ The registry CSL note is carrying multi-paragraph mathematical findings from two
 - Abstract; Sec. 6 (incl. eq. (43)); Rem. 2.6; Cor. 2.5 — Third-order helicity of a volume-preserving field on invariant unlinked domains, realised as an average asymptotic mu-bar-123 of orbits, with an L^2-energy lower bound whose constant is geometric.
   Use here: The Borromean third-order invariant is the natural many-body object for the Borromean-link blocks; the registry note already extracted the two negatives (total antisymmetry of mu-bar-123, and Flux^3 rather than Flux^2 scaling) that constrain a Coulomb-like pair-energy ansatz.
 
-Source: `uploads/0808.1533v3.pdf` (`komendarczyk2008`)
+Source: `library/arxiv-0808.1533v3/0808.1533v3.pdf` (`komendarczyk2008`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -44,7 +44,7 @@
     "bloch_wigner_z2": "-0.942707362776928",
     "vol_over_D": "3.0",
     "cs_re_complex_volume": "1.91067382404",
-    "paper": "uploads/2506.10206v2.pdf (Hakimoglu-Brown, arXiv 2506.10206v2)",
+    "paper": "library/arxiv-2506.10206v2/2506.10206v2.pdf (Hakimoglu-Brown, arXiv 2506.10206v2)",
     "route": "Theorem 3 L(u)=E(u) elementary at real-u substrate face = bar-odd action",
     "verdict": "5_2 DILOG CLOSED-FORM HOME = Q(sqrt-7), via the owner's dilog-identities paper (scope-(a)/(b)). VERIFIED: (1) the paper's Q(sqrt-7) Example 5 to 22+ digits (toolbox correct); (2) the corpus-verified 5_2 complex volume decomposes as Vol(5_2)=3*|D(z1)| with D(z1)=D(z2) EXACTLY (Vol/|D|=3) -- the two distinct 5_2 tetrahedron shapes carry equal Bloch-Wigner dilog, a Q(sqrt-7) value. ROUTE to the bar-odd c3 ACTION: the paper's Theorem 3 gives the 3-tetrahedron sum L(u)=Li2(z_a)+Li2(z_b)+Li2(u)=E(u) ELEMENTARY for real u>0; the 5_2 bar-odd archimedean action is E(u) at the substrate real-u face -- the direct analog of 4_1's elementary pi^2/5. This REDUCES the gate from unknown 5_2 cyclotomic coefficients (Masbaum) to identifying the substrate real-u in Theorem 3. ANTI-LAUNDERING: the geometric Vol(5_2) is anchor-SMOOTH (corpus: not the c3 swing); no bar-odd ACTION value is claimed here (needs the real-u evaluation). No fit; no c_k; no tier change."
   }

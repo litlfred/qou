@@ -142,7 +142,7 @@ classical setting and apply Ecalle there. Whatever is used must be q-native.
 
 ## Also noted
 
-Owner identified `uploads/ant-v14-n7-s.pdf` as ANT **13**:7 and pointed at its TOC:
+Owner identified `library/ant-v14-n7-s/ant-v14-n7-s.pdf` as ANT **13**:7 and pointed at its TOC:
 the relevant article is **Jarossay, "Pro-unipotent harmonic actions and dynamical
 properties of p-adic cyclotomic multiple zeta values"** (p. 1711) -- the p-adic
 cyclotomic-MZV side of the same `{0,1,inf}` story. Not yet read; noted for whoever

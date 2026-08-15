@@ -13,7 +13,7 @@ Evaluate the arc-graph state-sum on (sigma_1 sigma_2^{-1})^3 and compare against
 - Sec. 9 (3-braid words), building on Thm 6.2 and Thm 7.1 — For a 3-braid word the crossing permutation sigma and the jump map tau of the arc-graph state-sum are determined explicitly from the braid word by a finite case analysis, making the colored-Jones state-sum directly evaluable for any 3-braid closure.
   Use here: An independent second method for the colored Jones of exactly the corpus's canonical braid class, usable as a cross-check on the Borromean colored-Jones producers rather than as a new input.
 
-Source: `uploads/2209.06973v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2209.06973v1/2209.06973v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -1,0 +1,11 @@
+---
+doc_id: arxiv-2604.16077v1
+doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
+section_id: sec-009-23-the-case-of-the-ﬁgure-eight-knot-complement-1
+section_title: "The case of the ﬁgure-eight knot complement 16"
+section_number: 2.3
+pages: 1-1
+source_pdf: 2604.16077v1.pdf
+source_sha256: 2f1140b9d5fee38a
+---
+

@@ -8,7 +8,7 @@
 
   T. Ohtsuki, *On the asymptotic expansion of the Kashaev invariant of the 5₂
   knot*, Quantum Topol. **7** (2016) 669–735, DOI 10.4171/QT/83
-  (`uploads/10.4171-qt-83.pdf`, blob `632e54ac`).  The 5₂ volume conjecture is a
+  (`library/104171-qt-83/10.4171-qt-83.pdf`, blob `632e54ac`).  The 5₂ volume conjecture is a
   **published theorem** there — §3 is the saddle point method, §4 the Poisson
   summation, §5 the proof of Theorem 1.1.
 

@@ -355,7 +355,7 @@ be closed gets a bean, not a `sorry`.
 The owner uploaded four of the six wanted refs; **Ratcliffe §10.4 and Thurston
 Ch. 7 stayed paywalled**. What the sources changed:
 
-**1. Milnor 1982 full text is in `uploads/milnor-1982-hyperbolic-geometry-the-first-150-years.pdf`** — the Appendix
+**1. Milnor 1982 full text is in `library/milnor-1982-hyperbolic-geometry-the-first-150-years/milnor-1982-hyperbolic-geometry-the-first-150-years.pdf`** — the Appendix
 carries the proof. It states the target verbatim:
 
 > "ideal hyperbolic 3-simplex … If α, β, γ are the dihedral angles along three
@@ -383,7 +383,7 @@ multiplication identity `Λ(nθ) = n Σ_{k mod n} Λ(θ + kπ/n)` is NOT proved 
 the `n=2` case the volume proof consumes. General case still open here.
 
 **3. The AFP Poincaré Disc entry has NO volume theory — checked, not assumed.**
-Source extracted from `uploads/afp-Poincare_Disc-current.tar.gz`: 11 theory
+Source extracted from `library/afp-Poincare_Disc-current.tar.gz`: 11 theory
 files, **11 289 lines**, and **0 hits** for `volume` / `area` / `lebesgue` /
 `integral`. Its sections are h-lines, h-distance, h-betweenness, h-circles,
 h-perpendicularity, Tarski axioms — a **synthetic** development in the
@@ -394,13 +394,13 @@ h-perpendicularity, Tarski axioms — a **synthetic** development in the
 > just Mathlib. H4 is new formalization, not a translation exercise. This
 > raises confidence in the multi-week estimate rather than lowering it.
 
-**4. `uploads/1010.5321v3.pdf` = Horváth, *Formulas on hyperbolic volume*** —
+**4. `library/arxiv-1010.5321v3/1010.5321v3.pdf` = Horváth, *Formulas on hyperbolic volume*** —
 orthoscheme volume via the Lobachevsky integral, explicitly avoiding the
 Schläfli differential formula, with edge-lengths as parameters. Worth reading
 for H4-4 if Milnor's angle-parameter route proves awkward in Lean; not yet read
 past the abstract.
 
-**5. Neumann–Zagier is `uploads/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-copy-b.pdf`** — the
+**5. Neumann–Zagier is `library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-copy-b.pdf`** — the
 filename confirms DOI `10.1016/0040-9383(85)90004-7`, so the "unverified from
 memory" DOI in the table below was **correct**. Still safe to cite only after a
 proper read.

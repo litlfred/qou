@@ -30,7 +30,7 @@ this independently.
 
 | Route | Method (independent) | Result | File |
 |---|---|---|---|
-| **A** | RSZ Newton polygon (from uploads/0903.0853v3.pdf, Thm 2.2.1/2.2.4) | slopes at ∞: **C1 {½,½}** vs **C2 {−1,+1}** — disjoint; fuchsian exponents at 0 and det-classes also differ | [`routeA`](2026-07-20-qlift-routeA-rsz-invariants.md) |
+| **A** | RSZ Newton polygon (from library/arxiv-0903.0853v3/0903.0853v3.pdf, Thm 2.2.1/2.2.4) | slopes at ∞: **C1 {½,½}** vs **C2 {−1,+1}** — disjoint; fuchsian exponents at 0 and det-classes also differ | [`routeA`](2026-07-20-qlift-routeA-rsz-invariants.md) |
 | **B** | numeric 2×2 connection matrix, growth-class fit | `‖A_m‖ ~ q^{m²/4}` (theta) at q>1; exponent **¼ = C1's −¼ ⊕ C2's +½**, matching A exactly | [`routeB`](../../computations/probes/qlift_routeB_connection_matrix_probe.py) |
 | **C** | homogenize 4₁ colored-Jones to order-3 `L3`, right-factor test | **neither** C1 nor C2 embeds ungauged; the order-2 right factor of `L3` is the AJ homogeneous part `L_hom`, not either candidate | [`routeC`](../../computations/probes/qlift_routeC_homogenized_factor_probe.py) |
 | **D** | formal q-Borel/q-Laplace (all 4 RSZ conventions), diagonal invariant | every formal weight is diagonal; complete invariant **`I^{C1}_m = −[m]_q` ≠ `I^{C2}_m = 1/((2−q^m)(2−q^{m−1}))`** | [`routeD`](2026-07-20-qlift-routeD-qborel-transform.md) |

@@ -384,7 +384,7 @@ def main():
                 "(isoclinicity: no module map bridges them; NON-module maps "
                 "explicitly left as the only carve-out)",
             ],
-            "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+            "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (eq 49)",
             "hypothesis": "GGM solutions are the bar-even (cosh) / bar-odd "
                           "(sinh) combinations of the SQUARES of C1 solutions "
                           "(slope-1/2 products -> slope-1); 2*(1/2)=1",

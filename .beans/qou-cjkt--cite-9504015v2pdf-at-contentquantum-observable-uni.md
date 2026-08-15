@@ -15,7 +15,7 @@ KeystoneRTSurgeryConstruction.lean carries the RT/WRT = Chern-Simons identificat
 - Equation (1.6), p. 3, with equation (4.28), Section 4 — The Kirby-Melvin surgery formula for Z'(M;k) as a sum over odd colours of the framing-independent coloured Jones polynomial weighted by prod_j sin(pi alpha_j/K); and, for the Seifert surgery link of N unknots linked to a single unknot, the explicit sine-product coloured Jones J_{beta,alpha_1..alpha_N}(L;k) = prod_j sin(pi beta alpha_j/K) / [sin^{N-1}(pi beta/K) sin(pi/K)] up to normalisation.
   Use here: The per-colour weight sin(pi alpha/K) is the S-matrix vacuum row d_alpha/D that KeystoneRTSurgeryConstruction.lean proves the RT surgery sum weights each label by — so (1.6) is an explicit analytic instance of the assembly that file formalises abstractly. Equation (4.28) then gives the coloured Seifert link invariant in closed sine-product form, which is the machinery the colored-Sigma(2,3,5) step needs to lift the bare closed-manifold number to a lambda-indexed family. Useful as a cited construction to build against; it is not a substitute for the carried (RT) hypothesis.
 
-Source: `uploads/9504015v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-q-alg-9504015v2/9504015v2.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

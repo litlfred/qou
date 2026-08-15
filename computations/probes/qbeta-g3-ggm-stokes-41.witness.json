@@ -49,7 +49,7 @@
   "description": "A_omega step 2: exact implementation of the GGM 4_1 Stokes data (G/W q-series machinery certified by Theorem-9 identities; the (59a) sandwich derived OCR-free against the printed series). Records the integer Stokes constant 3 on the iota = Vol(4_1)/pi singularity (= the corpus's measured Borel A) with its descendant tower and substrate value, and the proven eq-(21) dictionary making the tower an exact anchor for the step-1 index assembly. No A_omega identification claimed (step 3 decides).",
   "contentBlock": "conj:im-q-physical-role",
   "data": {
-    "source": "uploads/2012.00062v3.pdf (GGM) sections 4-5, eqs 43-64 + Conj 4 eq 21",
+    "source": "library/arxiv-2012.00062v3/2012.00062v3.pdf (GGM) sections 4-5, eqs 43-64 + Conj 4 eq 21",
     "theorem9_checks": {
       "det_Wm_eq_2": true,
       "qdifference_49": true

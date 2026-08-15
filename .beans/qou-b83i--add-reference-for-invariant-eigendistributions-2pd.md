@@ -15,7 +15,7 @@ No ref() entry, and no Springer-theory citation exists anywhere in the corpus de
 - sec. 12 (Appendix) — The homotopy action constructed here agrees with the Kazhdan-Lusztig construction of the Weyl-group action on the conormal variety.
   Use here: Relevant to the PROBE-4 prune's framing, which contrasts the mixed-sign Delta_lambda target against the non-negativity of Kazhdan-Lusztig multiplicities; the comparison shows the two constructions of the same W-action are not independent sources of a sign.
 
-Source: `uploads/Invariant_eigendistributions_2.pdf` — no `references.ts` entry yet
+Source: `library/invariant-eigendistributions-2/Invariant_eigendistributions_2.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

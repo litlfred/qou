@@ -9,7 +9,7 @@ updated_at: 2026-08-08T16:12:52Z
 
 No ref() entry; supplies the framework citation the quantum-Bloch-group cluster lacks.
 
-Source: `uploads/0611504v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0611504v1/0611504v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -186,7 +186,7 @@ def main() -> int:
         "result": result,
         "context": {
             "axis": "Δ_λ binding — μ₀ −9% closure, the exact residual r = g₂ − 1",
-            "paper": "uploads/2509.02354v2.pdf eq (A.15) lifted dilog, (A.17) regular part, §5.2 pinch",
+            "paper": "library/arxiv-2509.02354v2/2509.02354v2.pdf eq (A.15) lifted dilog, (A.17) regular part, §5.2 pinch",
             "lean": "QOU/MassTheory/PinchedOctahedronDegenerate.lean (e2_pinch)",
             "builds_on": "#4345 (shape −h² from rep), #4339 (g₂_leading=1), #4347 (frontier: bare Li₂)",
             "q0_convention": "muon-canonical (computations/ layer)",

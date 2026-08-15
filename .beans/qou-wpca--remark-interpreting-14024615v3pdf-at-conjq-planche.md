@@ -15,7 +15,7 @@ Not aid-proof: the Jack alpha-deformation is a different deformation from the fo
 - §1 (main tool: polynomiality of structure constants of Jack characters, after Lassalle) — The structure constants of Jack characters are polynomial in the deformation parameter, which is what makes the cumulant/CLT machinery go through.
   Use here: Identifies the structural input a q-analogue would have to reproduce for the folio's part (3): a polynomiality/degree bound on the structure constants of the q-deformed characters. Names the obstacle rather than removing it.
 
-Source: `uploads/1402.4615v3.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1402.4615v3/1402.4615v3.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

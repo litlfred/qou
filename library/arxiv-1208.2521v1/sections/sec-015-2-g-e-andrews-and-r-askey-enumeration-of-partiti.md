@@ -1,0 +1,19 @@
+---
+doc_id: arxiv-1208.2521v1
+doc_title: "ON q-ANALOGUES OF THE FOURIER"
+section_id: sec-015-2-g-e-andrews-and-r-askey-enumeration-of-partiti
+section_title: "G. E. Andrews and R. Askey, Enumeration of partitions: The role of Eulerian series and"
+section_number: 2
+pages: 19-19
+source_pdf: 1208.2521v1.pdf
+source_sha256: 8d0281aa84043865
+---
+q-orthogonal polynomials, Higher combinatorics, M. Aigner, ed., Reidel, 1977, pp. 3–26 .
+3. H. Exton, A basic analogue of the Bessel-Cliﬀord equation , J˜ n¯ an¯ abha8 (1978), 49–56.
+4. , q-Hypergeometric functions and applications , Ellis Horwood, 1983.
+5. Ph. Feinsilver, Elements of q-harmonic analysis , J. Math. Anal. Appl. 141 (1989), 509–526.
+6. G. Gasper and M. Rahman, Basic hypergeometric series , Cambridge University Press, 1990;
+second corrected and extended edition 2004.
+7. W. Hahn, Beitr¨ age zur Theorie der Heineschen Reihen , Math. Nachr. 2 (1949), 340–379.
+8. , Die mechanische Deutung einer geometrischen Diﬀerenzglei chung, Z. Angew. Math.
+Mech. 33 (1953), 270–272.

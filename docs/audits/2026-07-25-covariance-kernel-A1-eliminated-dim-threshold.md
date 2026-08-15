@@ -74,4 +74,4 @@ sharpened to "expand `ln dim` against Plancherel." Kernel stays an open §3b con
 
 - A5 (genus eliminated) + A4 (Lean): [`2026-07-25-covariance-kernel-A5-genus-eliminated-A4-lean.md`](2026-07-25-covariance-kernel-A5-genus-eliminated-A4-lean.md)
 - A3 (CM refuted): [`2026-07-25-covariance-kernel-complete-monotonicity-target.md`](2026-07-25-covariance-kernel-complete-monotonicity-target.md)
-- Attack plan: bean `qou-v8t7`; Okounkov–Olshanski `9608020`, IO `0304010`, Śniady `0411647` (`uploads/`)
+- Attack plan: bean `qou-v8t7`; Okounkov–Olshanski `9608020`, IO `0304010`, Śniady `0411647` (`library/`)

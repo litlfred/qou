@@ -17,7 +17,7 @@ Core and orphan; a live probe names this article as its algorithm source and the
 - Prop. 6.1 — The coefficients of the g_n are p-integral with an explicit valuation lower bound, giving a computable precision/truncation estimate.
   Use here: The proved premise behind the probe's truncation choice (N = 120, tail valuation > 20); without it the probe's precision claim is an assertion.
 
-Source: `uploads/S0025-5718-07-02027-3.pdf` — no `references.ts` entry yet
+Source: `library/s0025-5718-07-02027-3/S0025-5718-07-02027-3.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

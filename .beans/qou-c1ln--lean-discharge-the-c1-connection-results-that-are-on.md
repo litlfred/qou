@@ -159,7 +159,7 @@ cheaper thing to buy and it delivers the same missing ingredient.
 
 The corpus note on `conj:qdifference-kernel-prolongation-symbol` (2026-07-20)
 cites RSZ Thm 2.2.1 / 2.2.4 / 5.5.7 for "C1 pure isoclinic ⇒ Stokes data
-trivial". Text-extracted `uploads/0903.0853v3.pdf` (Astérisque 355) and read
+trivial". Text-extracted `library/arxiv-0903.0853v3/0903.0853v3.pdf` (Astérisque 355) and read
 them. All three say what is claimed:
 
 * **2.2.1** — the Newton polygon is well defined, additive, multiplicative,

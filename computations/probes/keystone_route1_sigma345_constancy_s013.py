@@ -10,7 +10,7 @@ route generically:
 Σ(3,4,5) is the minimal Brieskorn sphere whose flat-connection count MATCHES the target:
 D(3,4,5) = (2·3·4)/4 = 6 vector-valued components, of which γ(3,4,5) = 4 contribute flat
 connections — exactly the 4 conjugation classes of bwS0 = d_q/D at n=5. Hikami
-(math-ph/0405028, uploads/0405028v2.pdf, §5 example) gives the explicit data; everything
+(math-ph/0405028, library/arxiv-math-ph-0405028v2/0405028v2.pdf, §5 example) gives the explicit data; everything
 transcribed is machine-validated before use:
 
   (χ)  χ^{(ℓ)}_{2P} from eq. (3.1) at p=(3,4,5), P=60 — the (1,1,1) table must reproduce the
@@ -302,7 +302,7 @@ def run():
 def report(res):
     print("# s013 route 1 — Σ(3,4,5) (γ=4 count-match) executed + constancy exclusion\n")
 
-    print("## Transcription validation (all from uploads/0405028v2.pdf)\n")
+    print("## Transcription validation (all from library/arxiv-math-ph-0405028v2/0405028v2.pdf)\n")
     print(f"- χ^(111)_120 equals the paper's printed table: "
           f"**{res['chi111_matches_printed_table']}**; all weights ±1: "
           f"**{res['all_weights_pm1']}**")
@@ -355,7 +355,7 @@ def main(argv=None):
     w.set_description(
         "s013 route 1 (owner redirect): larger-D Seifert executed on the count-matching "
         "Sigma(3,4,5) (D=6, gamma=4 flat connections = 4 bwS0 classes) and closed as a "
-        "class. Transcription from uploads/0405028v2.pdf machine-validated: chi^(111)_120 "
+        "class. Transcription from library/arxiv-math-ph-0405028v2/0405028v2.pdf machine-validated: chi^(111)_120 "
         "= printed table; Sum n*chi selection (0 for the two non-flat, 4P for the 4 flat); "
         "CS phases from (P/2)(1+Sum l/p)^2 mod 2 = printed (119/240,-49/240,-1/60,11/60) "
         "and reproduce Sigma(2,3,5)'s -1/120,-49/120; phi(3,4,5)=49/60 from Dedekind sums; "

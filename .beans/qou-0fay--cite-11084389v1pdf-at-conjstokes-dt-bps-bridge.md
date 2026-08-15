@@ -15,7 +15,7 @@ conj:stokes-dt-bps-bridge's .md says 'the 3d-3d dictionary is [dimofte-gaiotto-g
 - sec. 6.3 — The S_b^3 partition function of T_M is assembled from tetrahedron factors and computed for the figure-eight knot.
   Use here: This is the state integral whose resurgent Stokes constants the corpus's bridge conjecture identifies with DT/BPS counts; the corpus currently has no citation for the state integral's construction.
 
-Source: `uploads/1108.4389v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1108.4389v1/1108.4389v1.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

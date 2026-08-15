@@ -6,7 +6,7 @@ self-correction (v2) of an earlier over-reach; see §Correction.**
 
 ## Sources (owner upload commit 715ccc8, with citation corrections)
 
-The owner uploaded five PDFs to `uploads/` for this front. **Two of my earlier arXiv
+The owner uploaded five PDFs to `library/` for this front. **Two of my earlier arXiv
 IDs were wrong** and are corrected here:
 
 - `0104249v1.pdf` is **Zudilin, "Irrationality of values of the zeta-function"** — NOT
@@ -77,5 +77,5 @@ Neither is closed here. This doc corrects the object identification and re-scope
 walls; it does **not** mark W1 closed. No new Lean; no fit; nothing wired.
 
 -- Ref: [manuscript] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1)
--- Ref: [manuscript] uploads/Equations_aux_q-differences.pdf (DRSZ survey §3.3, Birkhoff matrix)
--- Ref: [manuscript] uploads/AFST_2007_6_16_3_665_0.pdf (van der Put–Reversat, q-difference Galois)
+-- Ref: [manuscript] library/equations-aux-q-differences/Equations_aux_q-differences.pdf (DRSZ survey §3.3, Birkhoff matrix)
+-- Ref: [manuscript] library/afst-2007-6-16-3-665-0/AFST_2007_6_16_3_665_0.pdf (van der Put–Reversat, q-difference Galois)

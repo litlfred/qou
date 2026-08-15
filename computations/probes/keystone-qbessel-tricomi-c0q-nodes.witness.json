@@ -36,7 +36,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "s013 redirect (ii) sourced sub-route: test whether the 0th-order q-Bessel Tricomi C_{0,q} from the owner-uploaded Raza–Fadel–Cesarano 2025 paper (uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. 11) reproduces the compact value-map target {1,[4]_q,[5]_q,[4][3]/[2]} at any PARAMETER-FREE node (zeros, zero ratios, q-integer evaluations). 0-dof falsifiable; no argument tuning; expected scope-(a) refutation carrying an in-repo source. Nothing wired.",
+  "description": "s013 redirect (ii) sourced sub-route: test whether the 0th-order q-Bessel Tricomi C_{0,q} from the owner-uploaded Raza–Fadel–Cesarano 2025 paper (library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. 11) reproduces the compact value-map target {1,[4]_q,[5]_q,[4][3]/[2]} at any PARAMETER-FREE node (zeros, zero ratios, q-integer evaluations). 0-dof falsifiable; no argument tuning; expected scope-(a) refutation carrying an in-repo source. Nothing wired.",
   "data": {
     "q0": "1.1099785955541805",
     "q_eval_inverse": "0.900918273564301175282572717117",
@@ -55,6 +55,6 @@
     ],
     "matches_within_1pct": [],
     "whole_vector_match": "False",
-    "verdict": "REFUTED-as-is (scope a): no parameter-free quantity of the sourced 0th-order q-Bessel Tricomi C_{0,q} (uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. 11) — positive zeros, zero ratios/roots, consecutive gaps, or C_{0,q} at q-integer/integer nodes — reproduces the compact keystone target {1,[4]_q,[5]_q,[4][3]/[2]} within 1%, and the ordered zero vectors do not match the 4-vector. Consistent with #3292's type argument: a transcendental non-compact q-Bessel object does not hit the compact algebraic (Laurent-polynomial) target at its own parameter-free nodes. This closes the q-Bessel-Tricomi sub-route WITH an in-repo source; it does NOT structurally exclude a Plancherel-fixed E_q(2) row (still needs the un-uploaded Koelink–Swarttouw q-Hankel kernel)."
+    "verdict": "REFUTED-as-is (scope a): no parameter-free quantity of the sourced 0th-order q-Bessel Tricomi C_{0,q} (library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. 11) — positive zeros, zero ratios/roots, consecutive gaps, or C_{0,q} at q-integer/integer nodes — reproduces the compact keystone target {1,[4]_q,[5]_q,[4][3]/[2]} within 1%, and the ordered zero vectors do not match the 4-vector. Consistent with #3292's type argument: a transcendental non-compact q-Bessel object does not hit the compact algebraic (Laurent-polynomial) target at its own parameter-free nodes. This closes the q-Bessel-Tricomi sub-route WITH an in-repo source; it does NOT structurally exclude a Plancherel-fixed E_q(2) row (still needs the un-uploaded Koelink–Swarttouw q-Hankel kernel)."
   }
 }

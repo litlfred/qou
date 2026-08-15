@@ -264,7 +264,7 @@ class-without-instance as the honest open state (§3b-tax). Nothing to fix.
 ## Method note, for the next agent
 
 The convention question sat here for a day framed as "owner must decide". It was
-answerable in one `grep` of a PDF already sitting in `uploads/`
+answerable in one `grep` of a PDF already sitting in `library/`
 (`0903.0853v3.pdf`, RSZ Astérisque 355 §1.3.2). **Read the cited source before
 escalating a citation question to the owner** — the same lesson as the
 2026-08-07 corpus-grep miss, in a different drawer.

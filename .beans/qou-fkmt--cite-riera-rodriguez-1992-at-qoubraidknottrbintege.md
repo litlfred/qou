@@ -13,7 +13,7 @@ TrBIntegerTracePrune.lean:53 attributes a DIFFERENT statement (integer symplecti
 - §2 (universal cover, canonical homology basis, induced [f]_* ) — Construction of a canonical homology basis for Bring's curve from a 20-sided non-euclidean polygon with angles pi/5, pi/4, pi/2, and the explicit integral matrices by which the automorphisms act on H_1(B, Z).
   Use here: This, not a 'Theorem 1', is where the integer homology action cited by TrBIntegerTracePrune actually lives.
 
-Source: `uploads/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf` (`riera-rodriguez-1992`)
+Source: `library/the-period-matrix-of-bring-s-curve-1hik02mwva/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf` (`riera-rodriguez-1992`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

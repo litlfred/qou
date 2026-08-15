@@ -139,7 +139,7 @@ arbitrary congruence representative.
 **Gate (a) for `|c|` — CLOSED.** The explicit period matrix *is* in the corpus
 uploads: Braden–Disney-Hogg *Bring's Curve: Old and New* ([arXiv:2208.13692](https://arxiv.org/abs/2208.13692),
 Thm 2.12, citing [Riera–Rodríguez 1992](https://doi.org/10.2140/pjm.1992.154.179),
-`uploads/2208.13692v1.pdf` + `uploads/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf`)
+`library/arxiv-2208.13692v1/2208.13692v1.pdf` + `library/the-period-matrix-of-bring-s-curve-1hik02mwva/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf`)
 gives the Riemann matrix `τ_B = τ₀·M_S`, `M_S = 5·Id₄ − 𝟙` (eigenvalues `(5,5,5,1)`,
 positive-definite), `τ₀ = −0.5 + 0.186676i`. So the canonical Hodge Gram is
 explicit: `G_Hodge = Im(τ₀)·M_S`. `|c|` is therefore no longer gated on the period

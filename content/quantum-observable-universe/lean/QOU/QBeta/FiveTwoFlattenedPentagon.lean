@@ -51,7 +51,7 @@ a region exists.
 **The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
 and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 
--- Ref: [neumann2004] uploads/0307092v2.pdf, Prop 2.5 and §2 (`R(z;p,q)`, `ker ν`)
+-- Ref: [neumann2004] library/0307092v2/0307092v2.pdf, Prop 2.5 and §2 (`R(z;p,q)`, `ker ν`)
 -/
 import QOU.QBeta.FiveTwoComplexPentagon
 

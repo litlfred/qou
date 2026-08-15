@@ -13,7 +13,7 @@ Once registered, the all-orders 5_2 Poincare asymptotics give a parameter-free c
 - Abstract / main presentation — Presentation of the asymptotic expansion of the Kashaev invariant of the 5_2 knot, with leading term the hyperbolic volume and Chern-Simons invariant, plus a method computing the full Poincare asymptotics to all orders.
   Use here: An independent all-orders 5_2 asymptotic series to cross-check the corpus's 5_2 Stokes/DT-spectrum readings, which currently rest on a single source (garoufalidis-gu-marino2021).
 
-Source: `uploads/ki52.pdf` — no `references.ts` entry yet
+Source: `library/ki52/ki52.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

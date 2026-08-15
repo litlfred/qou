@@ -74,7 +74,7 @@ and does not, to 17 digits. More likely specific to that computation, as its own
 witness already says.
 
 RESOLVED 2026-08-08, BY A THEOREM IN A LOCAL FILE — AND AGAINST MY INFERENCE.
-`uploads/0611181v2.pdf` is van der Veen, "Proof of the volume conjecture for
+`library/arxiv-math-0611181v2/0611181v2.pdf` is van der Veen, "Proof of the volume conjecture for
 Whitehead chains", which the corpus already uses for the colored Jones values
 themselves. Its Main theorem reads
 

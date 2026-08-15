@@ -4,7 +4,7 @@ Route C, milestone M1 (bean qou-m1fx) — the dictionary target computed from
 FIRST PRINCIPLES and checked against the source.
 
 Background. The predecessor probe (qbeta_m1_index_stokes_dictionary.py) failed
-because it summed the wrong index object. Reading GGM 2012.00062v3 (uploads/)
+because it summed the wrong index object. Reading GGM 2012.00062v3 (library/)
 pinned the conventions:
 
   eq (18)   Ind^rot_K(m, zeta; q) = sum_{e in Z} I_K(m,e)(q) zeta^e   [fugacity basis]

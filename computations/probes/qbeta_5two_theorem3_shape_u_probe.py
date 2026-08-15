@@ -2,7 +2,7 @@
 """qbeta_5two_theorem3_shape_u_probe.py
 
 Follow-up to the Q(sqrt-7) home result: does the owner's dilog paper's Theorem 3
-(uploads/2506.10206v2.pdf) -- the three-term dilog closed form L(u)=Li2(z_a)+Li2(z_b)
+(library/arxiv-2506.10206v2/2506.10206v2.pdf) -- the three-term dilog closed form L(u)=Li2(z_a)+Li2(z_b)
 +Li2(u)=E(u), E elementary for real u>0 -- give the bar-odd c3 archimedean action
 directly? Two findings (one positive, one honest negative):
 

@@ -18,7 +18,7 @@ is **B2**: the functorial identity `τ(rho) = Hodge conjugation`.
 
 This audit grounds **B2's target** — the Hodge conjugation on `Jac(Bring)` — on the
 concrete genus-4 Bring arithmetic, using the newly-registered period-matrix
-literature (`[riera-rodriguez-1992]`, `[braden-northover-2012]`, `uploads/` intake;
+literature (`[riera-rodriguez-1992]`, `[braden-northover-2012]`, `library/` intake;
 registered this PR).
 
 ## Result (exact rational arithmetic)

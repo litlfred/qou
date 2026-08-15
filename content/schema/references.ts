@@ -164,7 +164,7 @@ export const references: CSLData[] = [
     ],
     issued: { "date-parts": [[2023]] },
     URL: "https://arxiv.org/abs/2308.06643",
-    note: "arXiv:2308.06643 (math.GT). Proves the Dimofte–Garoufalidis 1-loop conjecture for fundamental shadow link complements — which include the Borromean rings (two regular ideal octahedra) — so exp(2c₀) = 1/|det J_NZ(𝓑₃)| is theorem-backed, not conjecture-conditional. Cited as [PW] in garoufalidis-yoon-2024 (uploads/2411.03801v2.pdf, bibliography). Registered 2026-08-02 for the borromean 1-loop/NZ-torsion witness re-scope (bean qou-pvuw).",
+    note: "arXiv:2308.06643 (math.GT). Proves the Dimofte–Garoufalidis 1-loop conjecture for fundamental shadow link complements — which include the Borromean rings (two regular ideal octahedra) — so exp(2c₀) = 1/|det J_NZ(𝓑₃)| is theorem-backed, not conjecture-conditional. Cited as [PW] in garoufalidis-yoon-2024 (library/arxiv-2411.03801v2/2411.03801v2.pdf, bibliography). Registered 2026-08-02 for the borromean 1-loop/NZ-torsion witness re-scope (bean qou-pvuw).",
   }),
 
   // ── Ohtsuki–Takata 2015 — Kashaev asymptotics ↔ twisted Reidemeister torsion of two-bridge knots ──
@@ -246,7 +246,7 @@ export const references: CSLData[] = [
     volume: "3",
     page: "363-443",
     URL: "https://arxiv.org/abs/0903.2472",
-    note: "arXiv:0903.2472; local copy uploads/0903.2472v1.pdf. THE source of the 1-loop prefactor form this corpus uses: eq (2.1) expands Z^(rho) with an explicit hbar-power -(1/2)delta log hbar, delta = h1 - h0 (2.2), and eq (2.3) identifies the one-loop coefficient with the Ray-Singer torsion, S_1 = (1/2) log(T(M;E_rho)/2), for a GENERAL 3-manifold M with a flat G_C bundle — unrestricted by knot/link or cusp number. A physics derivation (one-loop saddle point / Feynman diagrams, citing Witten 1989, Bar-Natan-Witten 1991, Gukov-Murakami), NOT a theorem. Its multiplicative constant is convention: a /2 in (2.3), a +log 2 in (4.5) between S_1 and the colored-Jones coefficient s_1, and a log(pi) shift against Gukov-Murakami (fn 24), with the S_n integration constants fixed 'by comparison to the asymptotics of the colored Jones polynomial'. Body read in-sandbox 2026-08-08 via pdfminer; journal volume/pages carried over from the pre-existing references.bib entry and NOT independently verified.",
+    note: "arXiv:0903.2472; local copy library/arxiv-0903.2472v1/0903.2472v1.pdf. THE source of the 1-loop prefactor form this corpus uses: eq (2.1) expands Z^(rho) with an explicit hbar-power -(1/2)delta log hbar, delta = h1 - h0 (2.2), and eq (2.3) identifies the one-loop coefficient with the Ray-Singer torsion, S_1 = (1/2) log(T(M;E_rho)/2), for a GENERAL 3-manifold M with a flat G_C bundle — unrestricted by knot/link or cusp number. A physics derivation (one-loop saddle point / Feynman diagrams, citing Witten 1989, Bar-Natan-Witten 1991, Gukov-Murakami), NOT a theorem. Its multiplicative constant is convention: a /2 in (2.3), a +log 2 in (4.5) between S_1 and the colored-Jones coefficient s_1, and a log(pi) shift against Gukov-Murakami (fn 24), with the S_n integration constants fixed 'by comparison to the asymptotics of the colored Jones polynomial'. Body read in-sandbox 2026-08-08 via pdfminer; journal volume/pages carried over from the pre-existing references.bib entry and NOT independently verified.",
   }),
 
   // ── Gukov–Murakami 2008 — conjectures the sub-leading constant is the torsion ──
@@ -339,7 +339,7 @@ export const references: CSLData[] = [
     author: [{ family: "Hakimoglu-Brown", given: "Cetin" }],
     issued: { "date-parts": [[2025]] },
     URL: "https://arxiv.org/abs/2506.10206",
-    note: "arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta_fourone_habiro_tail_action). PDF read in-sandbox 2026-07-18 (uploads/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.",
+    note: "arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta_fourone_habiro_tail_action). PDF read in-sandbox 2026-07-18 (library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.",
   }),
 
   // ── Sawabe 2024 — the link-AJ formulation (Hopf + Whitehead computed) ──
@@ -1953,7 +1953,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2004]] },
     URL: "https://arxiv.org/abs/math/0409565",
-    note: "Corrected 2026-06-23 (doth, author-confirmed arXiv id): title was a fabricated 'On the morphisms of non-commutative formal groups' — the actual paper at arXiv:math/0409565v2 is 'Unital Gröbner Bases over Arbitrary Commutative Ground Rings' (verified vs local uploads/0409565v2.pdf + bib-qa-verifications.json; matches the unital-groebner-bases folio paper). Given-name corrected Jan Pawłowski → Robert Pawloski. This is the Gröbner paper; PDF-verified to contain NO inner products / intertwiners — The agent-fabricated separate pawlowski-leitner-rep entry (a 2026-05-19 wrong-work-split) is DEPRECATED per author 2026-06-24: there is ONE Pawloski-Leitner paper (this one), and its inner-product / intertwiner citation sites (pawlowski-leitner-inner-product.lean, RepresentationTheory.lean) were rewired to this key; inline .lean titles corrected. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §B.",
+    note: "Corrected 2026-06-23 (doth, author-confirmed arXiv id): title was a fabricated 'On the morphisms of non-commutative formal groups' — the actual paper at arXiv:math/0409565v2 is 'Unital Gröbner Bases over Arbitrary Commutative Ground Rings' (verified vs local library/arxiv-math-0409565v2/0409565v2.pdf + bib-qa-verifications.json; matches the unital-groebner-bases folio paper). Given-name corrected Jan Pawłowski → Robert Pawloski. This is the Gröbner paper; PDF-verified to contain NO inner products / intertwiners — The agent-fabricated separate pawlowski-leitner-rep entry (a 2026-05-19 wrong-work-split) is DEPRECATED per author 2026-06-24: there is ONE Pawloski-Leitner paper (this one), and its inner-product / intertwiner citation sites (pawlowski-leitner-inner-product.lean, RepresentationTheory.lean) were rewired to this key; inline .lean titles corrected. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §B.",
   }),
 
   // ── Pawlowski-Leitner inner product / rep-theory (NEW 2026-05-19)
@@ -1971,7 +1971,7 @@ export const references: CSLData[] = [
       { family: "Leitner", given: "Fred" },
     ],
     issued: { "date-parts": [[2009]] },
-    note: "DEPRECATED (author 2026-06-24): agent-mistake duplicate. The separate inner-product / SU(2)-intertwiner Pawloski-Leitner work does not exist as a distinct paper -- there is one Pawloski-Leitner paper, arXiv:math/0409565 = leitnerpawloski2004 (Unital Gröbner Bases; local uploads/0409565v2.pdf). This entry was a 2026-05-19 wrong-work-split; all citation sites were rewired to leitnerpawloski2004. Retained as a no-cite stub; physically remove in a follow-up cleanup.",
+    note: "DEPRECATED (author 2026-06-24): agent-mistake duplicate. The separate inner-product / SU(2)-intertwiner Pawloski-Leitner work does not exist as a distinct paper -- there is one Pawloski-Leitner paper, arXiv:math/0409565 = leitnerpawloski2004 (Unital Gröbner Bases; local library/arxiv-math-0409565v2/0409565v2.pdf). This entry was a 2026-05-19 wrong-work-split; all citation sites were rewired to leitnerpawloski2004. Retained as a no-cite stub; physically remove in a follow-up cleanup.",
   }),
 
   // ── Bergman 1978 ──────────────────────────────────────────────
@@ -2022,7 +2022,7 @@ export const references: CSLData[] = [
     issue: "1",
     page: "103-111",
     DOI: "10.1090/S0273-0979-1985-15304-2",
-    note: "FULL TEXT AVAILABLE at `uploads/S0273-0979-1985-15304-2.pdf`. The original construction: the invariant from a MARKOV TRACE on the Hecke/von Neumann algebra of the braid group, via Alexander's and Markov's theorems. Relevant to the `brings-surface` $\\sqrt5$: at a fifth root of unity the Markov trace produces the golden ratio directly as a quantum dimension, $[2]_{r=5} = 2\\cos(\\pi/5) = \\varphi$, and the two torus knots that chapter names evaluate to golden-ratio algebraic integers — $|V(3_1)(\\zeta_{10})|^2 = \\varphi^2$ and $|V(T_{2,5})(\\zeta_{10})|^2 = 2+\\varphi$, the global dimension of the Fibonacci category. This identifies the corpus's Gauss-sum $\\sqrt5$ with the Markov-trace $\\sqrt5$: both are $\\mathbb{Q}(\\sqrt5) = \\mathbb{Q}(\\zeta_5)^+$. It is NOT the $c_\\sigma$ $\\sqrt5$ — torus knots have zero volume, and the hyperbolic closed forms live in the imaginary quadratic fields $\\mathbb{Q}(i)$ and $\\mathbb{Q}(\\sqrt{-3})$ where a real $\\sqrt5$ cannot appear. See `computations/probes/bring_golden_jones_probe.py`.",
+    note: "FULL TEXT AVAILABLE at `library/s0273-0979-1985-15304-2/S0273-0979-1985-15304-2.pdf`. The original construction: the invariant from a MARKOV TRACE on the Hecke/von Neumann algebra of the braid group, via Alexander's and Markov's theorems. Relevant to the `brings-surface` $\\sqrt5$: at a fifth root of unity the Markov trace produces the golden ratio directly as a quantum dimension, $[2]_{r=5} = 2\\cos(\\pi/5) = \\varphi$, and the two torus knots that chapter names evaluate to golden-ratio algebraic integers — $|V(3_1)(\\zeta_{10})|^2 = \\varphi^2$ and $|V(T_{2,5})(\\zeta_{10})|^2 = 2+\\varphi$, the global dimension of the Fibonacci category. This identifies the corpus's Gauss-sum $\\sqrt5$ with the Markov-trace $\\sqrt5$: both are $\\mathbb{Q}(\\sqrt5) = \\mathbb{Q}(\\zeta_5)^+$. It is NOT the $c_\\sigma$ $\\sqrt5$ — torus knots have zero volume, and the hyperbolic closed forms live in the imaginary quadratic fields $\\mathbb{Q}(i)$ and $\\mathbb{Q}(\\sqrt{-3})$ where a real $\\sqrt5$ cannot appear. See `computations/probes/bring_golden_jones_probe.py`.",
   }),
 
   // ── Edge 1978 ─────────────────────────────────────────────────
@@ -3775,7 +3775,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2004]] },
     DOI: "10.1088/0264-9381/21/22/014",
     URL: "https://arxiv.org/abs/gr-qc/0407051",
-    note: "arXiv:gr-qc/0407051. Horizon state-count + projection-constraint combinatorics. Added 2026-06-08 from uploads/0407051v2.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort).",
+    note: "arXiv:gr-qc/0407051. Horizon state-count + projection-constraint combinatorics. Added 2026-06-08 from library/arxiv-gr-qc-0407051v2/0407051v2.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort).",
   }),
 
   // ── Meissner (2004): BH entropy in loop quantum gravity ──
@@ -3791,7 +3791,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2004]] },
     DOI: "10.1088/0264-9381/21/22/015",
     URL: "https://arxiv.org/abs/gr-qc/0407052",
-    note: "arXiv:gr-qc/0407052. The Immirzi-fixing criticality equation. Added 2026-06-08 from uploads/0407052v1.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort).",
+    note: "arXiv:gr-qc/0407052. The Immirzi-fixing criticality equation. Added 2026-06-08 from library/arxiv-gr-qc-0407052v1/0407052v1.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort).",
   }),
 
   // ── Thiemann (2007): Modern Canonical Quantum General Relativity ──
@@ -4531,7 +4531,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2005]] },
     URL: "https://arxiv.org/abs/math/0411647",
     note: "arXiv:math/0411647v2 [math.CO], 21 Oct 2005. Author, title, arXiv "
-      + "id and preprint date read directly off uploads/0411647v2.pdf. The "
+      + "id and preprint date read directly off library/arxiv-math-0411647v2/0411647v2.pdf. The "
       + "corpus elsewhere asserts a published version in Probab. Theory Relat. "
       + "Fields 136 (2006) 263-297, DOI 10.1007/s00440-005-0479-7 - that "
       + "journal metadata is NOT recorded here because it could not be "
@@ -4996,7 +4996,7 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/2012.00062",
     note:
       "arXiv:2012.00062, Res. Math. Sci. 10 (2023) Paper No. 29. Added " +
-      "2026-07-17 from uploads/2012.00062v3.pdf. Companion to " +
+      "2026-07-17 from library/arxiv-2012.00062v3/2012.00062v3.pdf. Companion to " +
       "garoufalidis-gu-marino2021: the state-integral partition function " +
       "$Z_M(u;\\tau)$, its $q$-holonomic module and descendants " +
       "$W_m(x;q)$ (holomorphic for $|q|\\neq 1$), and the Stokes matrices " +
@@ -5022,7 +5022,7 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/1112.0030",
     note:
       "arXiv:1112.0030v2 [hep-th], Geom. Topol. Monogr. 18 (2012) 309-367. " +
-      "Added 2026-08-02 from uploads/1112.0030v2.pdf (authors verified from " +
+      "Added 2026-08-02 from library/arxiv-1112.0030v2/1112.0030v2.pdf (authors verified from " +
       "the arXiv title page: Sergei Gukov, Marko Stošić). The knot-homology " +
       "↔ BPS-states bridge: reduced/colored HOMFLY homology of a knot K is " +
       "the space of **open** BPS states of the M5-brane on the conormal " +
@@ -5057,7 +5057,7 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/1304.3481",
     note:
       "arXiv:1304.3481v1 [math.QA], Fund. Math. 243 (2018) 209-299. Added " +
-      "2026-08-02 from uploads/1304.3481v1.pdf (authors verified: Eugene " +
+      "2026-08-02 from library/arxiv-1304.3481v1/1304.3481v1.pdf (authors verified: Eugene " +
       "Gorsky, Sergei Gukov, Marko Stošić). Refined (quadruple) grading on " +
       "the colored HOMFLY homology of the Gukov–Stošić BPS-states picture, " +
       "with the physical realization by counting supersymmetric configurations " +
@@ -5084,7 +5084,7 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/1701.06567",
     note:
       "arXiv:1701.06567v2 [hep-th], J. Knot Theory Ramifications 29 (2020) " +
-      "2040003. Added 2026-08-02 from uploads/1701.06567v2.pdf (authors " +
+      "2040003. Added 2026-08-02 from library/arxiv-1701.06567v2/1701.06567v2.pdf (authors " +
       "verified: Sergei Gukov, Du Pei, Pavel Putrov, Cumrun Vafa). The GPPV " +
       "homological invariants $\\hat{H}_a(M_3)$ / $\\hat{Z}$: the Hilbert " +
       "space of BPS states of the 6d fivebrane on $M_3 \\times D^2$ " +
@@ -5118,7 +5118,7 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/1707.02991",
     note:
       "arXiv:1707.02991v1 [hep-th], Phys. Rev. D 96 (2017) 121902. Added " +
-      "2026-08-02 from uploads/1707.02991v1.pdf (authors verified: Piotr " +
+      "2026-08-02 from library/arxiv-1707.02991v1/1707.02991v1.pdf (authors verified: Piotr " +
       "Kucharski, Markus Reineke, Marko Stošić, Piotr Sułkowski). The " +
       "knots–quivers correspondence: to a knot K one associates a quiver whose " +
       "vertices are the generators of the (open-BPS) HOMFLY-PT homology, and " +
@@ -5148,7 +5148,7 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/1411.6062",
     note:
       "arXiv:1411.6062, Comm. Number Theory Phys. 9 (2015) 549-582. Added " +
-      "2026-07-17 from uploads/1411.6062v2.pdf. Multi-dimensional " +
+      "2026-07-17 from library/arxiv-1411.6062v2/1411.6062v2.pdf. Multi-dimensional " +
       "state-integrals of Faddeev quantum dilogarithms ($\\Phi_b$) " +
       "evaluated at rational points, expressed via the Rogers and cyclic " +
       "(quantum) dilogarithms and finite state-sums at roots of unity — " +
@@ -5174,7 +5174,7 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/2304.09377",
     note:
       "arXiv:2304.09377, SIGMA 19 (2023) 082. Added 2026-07-17 from " +
-      "uploads/2304.09377v2.pdf. The factorized $q$-series / matrix-valued " +
+      "library/arxiv-2111.06645/2304.09377v2.pdf. The factorized $q$-series / matrix-valued " +
       "invariant attached to a knot, with Habiro-ring / state-integral " +
       "holomorphic-block structure; companion to the resurgence pair " +
       "(garoufalidis-gu-marino2021, garoufalidis-gu-marino2023peacock). " +
@@ -5196,7 +5196,7 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/math/0608414",
     note:
       "IMRN 1995, no. 8, 377-417; arXiv:math/0608414 (posted 2006). Added " +
-      "2026-07-17 from uploads/0608414v1.pdf. Foundational " +
+      "2026-07-17 from library/arxiv-math-0608414v1/0608414v1.pdf. Foundational " +
       "generalized-Borel-summation / transseries result for rank-one " +
       "nonlinear ODE systems at an irregular singularity — the resurgence " +
       "machinery underlying the QOU $q$-Borel / Écalle acceleration of the " +
@@ -5224,7 +5224,7 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/1112.5179",
     note:
       "arXiv:1112.5179, Adv. Theor. Math. Phys. 17 (2013) 975-1076. Added " +
-      "2026-07-17 from uploads/1112.5179v1.pdf. The DGG 3d-index: the " +
+      "2026-07-17 from library/arxiv-1112.5179v1/1112.5179v1.pdf. The DGG 3d-index: the " +
       "tetrahedron index $I_\\Delta(m,e)$ and the flux-sum gluing rule " +
       "(§4.3) that assembles the total index of an ideal triangulation as " +
       "a sum over internal edge-flux integers subject to the gluing " +
@@ -5254,7 +5254,7 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/1303.5278",
     note:
       "arXiv:1303.5278, Geom. Topol. 19 (2015) 2619-2689. Added 2026-07-17 " +
-      "from uploads/1303.5278v1.pdf. Promotes the 3d index of an ideal " +
+      "from library/arxiv-1303.5278v1/1303.5278v1.pdf. Promotes the 3d index of an ideal " +
       "triangulation to a topological invariant of the cusped hyperbolic " +
       "3-manifold, with the explicit figure-eight m004 single-flux-sum — " +
       "the concrete m004 gluing computation for the QOU G3 / $A_\\omega$ " +
@@ -5969,7 +5969,7 @@ export const references: CSLData[] = [
   }),
 
   // ── Blitvić 2012 CLT (the wrong-fetched paper from arxiv:1205.4003)
-  // Registered separately so the existing uploads/blitvic2012.pdf
+  // Registered separately so the existing library/blitvic2012.pdf
   // (which IS this CLT paper) has a correct canonical home; existing
   // QOU citations all reference the (q,t)-Gaussian content above, so
   // no cite-site key rewrites are needed.
@@ -5982,7 +5982,7 @@ export const references: CSLData[] = [
     ],
     "container-title": "International Mathematics Research Notices",
     issued: { "date-parts": [[2014]] },
-    note: "arXiv:1205.4003. Different Blitvić paper from blitvic2012 (which is The (q,t)-Gaussian process). The PDF at uploads/blitvic2012.pdf currently contains THIS paper (CLT), not the (q,t)-Gaussian paper.",
+    note: "arXiv:1205.4003. Different Blitvić paper from blitvic2012 (which is The (q,t)-Gaussian process). The PDF at library/blitvic2012.pdf currently contains THIS paper (CLT), not the (q,t)-Gaussian paper.",
     URL: "https://arxiv.org/abs/1205.4003",
   }),
 
@@ -6448,8 +6448,8 @@ export const references: CSLData[] = [
     URL: "https://oeis.org/A006752",
   }),
 
-  // ── 8 entries added 2026-05-19 from uploads/ gap audit ────────
-  // These PDFs were already in uploads/ from prior intake but had no
+  // ── 8 entries added 2026-05-19 from library/ gap audit ────────
+  // These PDFs were already in library/ from prior intake but had no
   // bib entry. All have verified-clean title-page metadata.
 
   ref({
@@ -6476,7 +6476,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2004]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/0405508",
-    note: "arXiv:math/0405508. Added 2026-05-19 from uploads/ gap audit. DIRECT fit with QOU's Hecke / Markov-trace content (braids-and-knots chapters). Potential citation target alongside jones1987 (Hecke type A Markov trace).",
+    note: "arXiv:math/0405508. Added 2026-05-19 from library/ gap audit. DIRECT fit with QOU's Hecke / Markov-trace content (braids-and-knots chapters). Potential citation target alongside jones1987 (Hecke type A Markov trace).",
   }),
 
   ref({
@@ -6490,7 +6490,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2014]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/0911.4494",
-    note: "arXiv:0911.4494, Duke Math. J. 2014. Added 2026-05-19 from uploads/ gap audit. DIRECT fit with QOU's Markov-trace content (jones-markov-trace.lean, markov-trace-*.lean). Potential citation target.",
+    note: "arXiv:0911.4494, Duke Math. J. 2014. Added 2026-05-19 from library/ gap audit. DIRECT fit with QOU's Markov-trace content (jones-markov-trace.lean, markov-trace-*.lean). Potential citation target.",
   }),
 
   ref({
@@ -6504,7 +6504,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2012]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/1203.4538",
-    note: "arXiv:1203.4538. Added 2026-05-19 from uploads/ gap audit. Fits QOU's Surreal Numbers appendix content (alongside berarducci2018, ehrlich2012, gonshor1986). Potential citation target.",
+    note: "arXiv:1203.4538. Added 2026-05-19 from library/ gap audit. Fits QOU's Surreal Numbers appendix content (alongside berarducci2018, ehrlich2012, gonshor1986). Potential citation target.",
   }),
 
   ref({
@@ -6518,7 +6518,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2021]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/2104.06067",
-    note: "arXiv:2104.06067. Added 2026-05-19 from uploads/ gap audit. DIRECT fit with QOU's chi-character Hecke type-A work (chi-v3-closed-form-proof.lean, chi-per-irrep-cyclotomic-closed-forms.lean, etc.). Potential citation target.",
+    note: "arXiv:2104.06067. Added 2026-05-19 from library/ gap audit. DIRECT fit with QOU's chi-character Hecke type-A work (chi-v3-closed-form-proof.lean, chi-per-irrep-cyclotomic-closed-forms.lean, etc.). Potential citation target.",
   }),
 
   ref({
@@ -6546,7 +6546,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1999]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/9909088",
-    note: "arXiv:math/9909088. Added 2026-05-19 from uploads/ gap audit. Possible fit with QOU's categorical / constructible-sheaves content but no obvious citation target found in current QOU prose; mark pending-placement.",
+    note: "arXiv:math/9909088. Added 2026-05-19 from library/ gap audit. Possible fit with QOU's categorical / constructible-sheaves content but no obvious citation target found in current QOU prose; mark pending-placement.",
   }),
 
   ref({
@@ -6559,7 +6559,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1999]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/9911033",
-    note: "arXiv:math/9911033. Added 2026-05-19 from uploads/ gap audit. Possible fit with QOU's Riemann-surface / Bring's-surface geometry (archimedean-universe chapters) but no obvious citation target found in current QOU prose; mark pending-placement.",
+    note: "arXiv:math/9911033. Added 2026-05-19 from library/ gap audit. Possible fit with QOU's Riemann-surface / Bring's-surface geometry (archimedean-universe chapters) but no obvious citation target found in current QOU prose; mark pending-placement.",
   }),
 
   ref({
@@ -6573,7 +6573,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2008]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/0811.2435",
-    note: "arXiv:0811.2435 (148 pp, arXiv-only). Added 2026-06-04 from uploads/0811.2435v1.pdf. Comparison with QOU in docs/audits/2026-06-04-kontsevich-soibelman-0811.2435-qou-comparison.md: source of the special-Lagrangian <-> central/trace-observable dictionary, the Euler-form <-> Frobenius-pairing analogy, and the multiplicative wall-crossing formula QOU avoids by pinning q_0. RIGOR CAVEAT: many KS proofs are sketches (Thm 3/4 say 'details to the reader'); admit to QOU content only if Lean-backable.",
+    note: "arXiv:0811.2435 (148 pp, arXiv-only). Added 2026-06-04 from library/arxiv-0811.2435v1/0811.2435v1.pdf. Comparison with QOU in docs/audits/2026-06-04-kontsevich-soibelman-0811.2435-qou-comparison.md: source of the special-Lagrangian <-> central/trace-observable dictionary, the Euler-form <-> Frobenius-pairing analogy, and the multiplicative wall-crossing formula QOU avoids by pinning q_0. RIGOR CAVEAT: many KS proofs are sketches (Thm 3/4 say 'details to the reader'); admit to QOU content only if Lean-backable.",
   }),
 
   ref({
@@ -6590,7 +6590,7 @@ export const references: CSLData[] = [
     page: "055",
     DOI: "10.3842/SIGMA.2024.055",
     URL: "https://arxiv.org/abs/2111.06645",
-    note: "arXiv:2111.06645, SIGMA 20 (2024) 055. Added 2026-06-04 from uploads/2111.06645v3.pdf. Rigorous all-orders refinement of the Kashaev volume conjecture: a matrix invariant whose ($\\sigma_0$, $\\sigma_1$) entry is the Kashaev invariant in the Habiro ring ($\\sigma_0$ = trivial rep / unknot column). DIRECT fit with QOU's Kashaev / Habiro-ring content (QOU.Kashaev.VolumeConjecture, $\\Phi_q$ / $\\mathrm{Li}_2^q$). Preferred citation for the Kashaev-on-trivial-knot sub-part over the bare 1995 conjecture.",
+    note: "arXiv:2111.06645, SIGMA 20 (2024) 055. Added 2026-06-04 from library/arxiv-2111.06645v3/2111.06645v3.pdf. Rigorous all-orders refinement of the Kashaev volume conjecture: a matrix invariant whose ($\\sigma_0$, $\\sigma_1$) entry is the Kashaev invariant in the Habiro ring ($\\sigma_0$ = trivial rep / unknot column). DIRECT fit with QOU's Kashaev / Habiro-ring content (QOU.Kashaev.VolumeConjecture, $\\Phi_q$ / $\\mathrm{Li}_2^q$). Preferred citation for the Kashaev-on-trivial-knot sub-part over the bare 1995 conjecture.",
   }),
 
   // ── Internal QOU derivation pull requests ───────────────────────
@@ -6742,7 +6742,7 @@ export const references: CSLData[] = [
   }),
 
   // ── Bokut, Chen & Li 2011 — Composition-Diamond lemma for categories ──
-  // Added 2026-08-09. Local copy: uploads/1101.1563v1.pdf. Cited by
+  // Added 2026-08-09. Local copy: library/arxiv-1101.1563v1/1101.1563v1.pdf. Cited by
   // UGB/GrobnerShirshov/Quotient.lean §6: Theorem 4.4 is the statement UGB's
   // five standing axioms stand in for, and its clause (iii) is the module's
   // NormalFormBasis. The paper's closing Remark to Thm 4.4 is what makes it
@@ -7722,7 +7722,7 @@ export const references: CSLData[] = [
     title: "Motivic periods and P^1 minus 3 points",
     author: [{ family: "Brown", given: "Francis" }],
     URL: "https://arxiv.org/abs/1407.5165",
-    note: "Registered 2026-08-08. PDF uploads/MotivicPeriodsandP1minus3pointsv3.pdf (identified from first-page text). Review of the motivic fundamental groupoid of the projective line minus three points and its relation to multiple zeta values; MSC 11M32, 14C15; keywords Belyi's theorem, MZVs, mixed Tate motives, modular forms. The CLASSICAL side of the {0,1,∞} configuration — iterated integrals of a KZ-type connection with singularities at 0, 1, ∞.",
+    note: "Registered 2026-08-08. PDF library/motivicperiodsandp1minus3pointsv3/MotivicPeriodsandP1minus3pointsv3.pdf (identified from first-page text). Review of the motivic fundamental groupoid of the projective line minus three points and its relation to multiple zeta values; MSC 11M32, 14C15; keywords Belyi's theorem, MZVs, mixed Tate motives, modular forms. The CLASSICAL side of the {0,1,∞} configuration — iterated integrals of a KZ-type connection with singularities at 0, 1, ∞.",
   }),
 
   ref({
@@ -7734,7 +7734,7 @@ export const references: CSLData[] = [
       { family: "Goncharov", given: "Alexander B." },
     ],
     URL: "https://arxiv.org/abs/math/0302267",
-    note: "Registered 2026-08-08. PDF uploads/0302267v2.pdf. arXiv:math/0302267. Mixed Tate motives over the S-integers of a number field and the (unipotent) motivic fundamental group of a unirational variety. Foundational for the motivic-groupoid side cited in cl3-zeta5-geometric-realization.md Candidate 3.",
+    note: "Registered 2026-08-08. PDF library/arxiv-math-0302267v2/0302267v2.pdf. arXiv:math/0302267. Mixed Tate motives over the S-integers of a number field and the (unipotent) motivic fundamental group of a unirational variety. Foundational for the motivic-groupoid side cited in cl3-zeta5-geometric-realization.md Candidate 3.",
   }),
 
   ref({
@@ -7743,7 +7743,7 @@ export const references: CSLData[] = [
     title: "Some remarks on q-deformed multiple polylogarithms",
     author: [{ family: "Schlesinger", given: "Karl-Georg" }],
     URL: "https://arxiv.org/abs/math/0111022",
-    note: "Registered 2026-08-08. PDF uploads/0111022v1.pdf. arXiv:math/0111022. Defines q-deformed multiple polylogarithms as q-SERIES, e.g. Li_{1,1}(z1,z2,q) = sum_{0<j<k} z1^j z2^k / ((1-q^j)(1-q^k)), and shows their rational span is an algebra, with a noncommutative/noncocommutative Hopf structure on q-deformed multiple zeta values and a conjectural link to a quantum Grothendieck-Teichmüller group. IMPORTANT SCOPE NOTE for anyone using this to q-deform the {0,1,∞} picture: this paper contains NO q-difference module and NO singular locus. It is a q-series/Hopf-algebra construction, not a q-analogue of the KZ connection on P^1 minus {0,1,∞}. It therefore does not by itself supply a map from a q-difference module with singularities at 0, [1], infinity. See bean qou-qbf0.",
+    note: "Registered 2026-08-08. PDF library/arxiv-math-0111022v1/0111022v1.pdf. arXiv:math/0111022. Defines q-deformed multiple polylogarithms as q-SERIES, e.g. Li_{1,1}(z1,z2,q) = sum_{0<j<k} z1^j z2^k / ((1-q^j)(1-q^k)), and shows their rational span is an algebra, with a noncommutative/noncocommutative Hopf structure on q-deformed multiple zeta values and a conjectural link to a quantum Grothendieck-Teichmüller group. IMPORTANT SCOPE NOTE for anyone using this to q-deform the {0,1,∞} picture: this paper contains NO q-difference module and NO singular locus. It is a q-series/Hopf-algebra construction, not a q-analogue of the KZ connection on P^1 minus {0,1,∞}. It therefore does not by itself supply a map from a q-difference module with singularities at 0, [1], infinity. See bean qou-qbf0.",
   }),
 
   ref({
@@ -7752,7 +7752,7 @@ export const references: CSLData[] = [
     title: "Multiple polylogarithm values at roots of unity",
     author: [{ family: "Zhao", given: "Jianqiang" }],
     URL: "https://arxiv.org/abs/0810.1064",
-    note: "Registered 2026-08-08. PDF uploads/0810.1064v1.pdf. arXiv:0810.1064. Q-linear relations among multiple polylogarithms evaluated at Nth roots of unity.",
+    note: "Registered 2026-08-08. PDF library/arxiv-0810.1064v1/0810.1064v1.pdf. arXiv:0810.1064. Q-linear relations among multiple polylogarithms evaluated at Nth roots of unity.",
   }),
 
   ref({
@@ -7762,7 +7762,7 @@ export const references: CSLData[] = [
     author: [{ family: "Zhao", given: "Jianqiang" }],
     "container-title": "Documenta Mathematica",
     issued: { "date-parts": [[2010]] },
-    note: "Registered 2026-08-08. PDF uploads/Zhao_standard_2010.pdf. Special values of multiple polylogarithms at Nth roots of unity (multiple polylogarithm values). Companion to zhao2008-mpl-roots-of-unity; relevant to the zeta5 / 5th-root-of-unity target of cl3-zeta5-geometric-realization.md.",
+    note: "Registered 2026-08-08. PDF library/zhao-standard-2010/Zhao_standard_2010.pdf. Special values of multiple polylogarithms at Nth roots of unity (multiple polylogarithm values). Companion to zhao2008-mpl-roots-of-unity; relevant to the zeta5 / 5th-root-of-unity target of cl3-zeta5-geometric-realization.md.",
   }),
 
   // ── Bugeaud 2011 (RSZ's [14]: NON-INTEGRAL slopes — the case §3.3 excludes) ──
@@ -7779,7 +7779,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2011]] },
     DOI: "10.1016/j.crma.2011.09.002",
     URL: "https://doi.org/10.1016/j.crma.2011.09.002",
-    note: "Registered 2026-08-08. PDF in uploads/CRMATH_2011__349_19-20_1037_0.pdf (metadata-verified: /Title, /Author and dc:description match). This is reference [14] of ramis-sauloy-zhang2013, cited there as the generalisation of the Birkhoff–Guenther normal form 'to the case of arbitrary slopes' — i.e. the non-integral case that RSZ §3.3 explicitly excludes (that section is titled 'in the case of integral slopes'). IMPORTANT for anyone mapping a q-difference module onto this literature: the section bookmarks of this note read §2 'Classification analytique isoformelle à DEUX pentes', §3 'Opérateurs de Stokes', §4 'Groupe de Galois formel' — so the non-integral generalisation is still a TWO-SLOPE theory. Neither RSZ §3.3 nor this note supplies Stokes data for a module that is pure isoclinic (a single slope) at the point in question; RSZ Thm 3.3.5 gives dim F(P₁,…,P_k) = Σ_{i<j} rᵢrⱼ(μⱼ−μᵢ), which is 0 when k = 1. See docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md and bean qou-qbp5.",
+    note: "Registered 2026-08-08. PDF in library/crmath-2011-349-19-20-1037-0/CRMATH_2011__349_19-20_1037_0.pdf (metadata-verified: /Title, /Author and dc:description match). This is reference [14] of ramis-sauloy-zhang2013, cited there as the generalisation of the Birkhoff–Guenther normal form 'to the case of arbitrary slopes' — i.e. the non-integral case that RSZ §3.3 explicitly excludes (that section is titled 'in the case of integral slopes'). IMPORTANT for anyone mapping a q-difference module onto this literature: the section bookmarks of this note read §2 'Classification analytique isoformelle à DEUX pentes', §3 'Opérateurs de Stokes', §4 'Groupe de Galois formel' — so the non-integral generalisation is still a TWO-SLOPE theory. Neither RSZ §3.3 nor this note supplies Stokes data for a module that is pure isoclinic (a single slope) at the point in question; RSZ Thm 3.3.5 gives dim F(P₁,…,P_k) = Σ_{i<j} rᵢrⱼ(μⱼ−μᵢ), which is 0 when k = 1. See docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md and bean qou-qbp5.",
   }),
 
   // ── Cigler–Zeng 2009 (curious q-analogue of Hermite; crossing-weighted combinatorics) ──
@@ -7949,7 +7949,7 @@ export const references: CSLData[] = [
     page: "93-108",
     issued: { "date-parts": [[1999]] },
     DOI: "10.4310/AJM.1999.v3.n1.a5",
-    note: "The Poincare-sphere WRT invariant as an Eichler integral of a weight-3/2 false theta; flat-connection asymptotics via near-modularity. Foundation of the Sigma(2,3,5) keystone false-theta machinery. NOT READ AT FULL TEXT IN-REPO and not needed for it: `hikami2005brieskorn` (uploads/0405028v2.pdf) restates the Poincare-sphere result as its Theorem 10, attributed to this paper, and generalises it to all Sigma(p1,p2,p3). Every host carrying this paper is EGRESS_BLOCKED from the remote execution environment (math.huji.ac.il, people.mpim-bonn.mpg.de, arxiv.org, doi.org), so read Hikami instead unless the PDF is uploaded. RELEVANCE TO c_sigma: the Brieskorn asymptotic has the shape sqrt(N) * sum_l S_l e^{i CS N}, with S_l the Reidemeister torsion (Hikami section 6) and the exponential a PHASE only since Vol = 0 -- so it is the non-hyperbolic analogue of c_sigma = k |tau_DG|^{-1/2}, with a different N-power and no Lobachevsky saddle. The two must not be conflated.",
+    note: "The Poincare-sphere WRT invariant as an Eichler integral of a weight-3/2 false theta; flat-connection asymptotics via near-modularity. Foundation of the Sigma(2,3,5) keystone false-theta machinery. NOT READ AT FULL TEXT IN-REPO and not needed for it: `hikami2005brieskorn` (library/arxiv-math-ph-0405028v2/0405028v2.pdf) restates the Poincare-sphere result as its Theorem 10, attributed to this paper, and generalises it to all Sigma(p1,p2,p3). Every host carrying this paper is EGRESS_BLOCKED from the remote execution environment (math.huji.ac.il, people.mpim-bonn.mpg.de, arxiv.org, doi.org), so read Hikami instead unless the PDF is uploaded. RELEVANCE TO c_sigma: the Brieskorn asymptotic has the shape sqrt(N) * sum_l S_l e^{i CS N}, with S_l the Reidemeister torsion (Hikami section 6) and the exponential a PHASE only since Vol = 0 -- so it is the non-hyperbolic analogue of c_sigma = k |tau_DG|^{-1/2}, with a different N-power and no Lobachevsky saddle. The two must not be conflated.",
   }),
 
   // ── Fintushel & Stern 1990 ────────────────────────────────────
@@ -7987,7 +7987,7 @@ export const references: CSLData[] = [
     page: "179-200",
     DOI: "10.2140/pjm.1992.154.179",
     URL: "https://doi.org/10.2140/pjm.1992.154.179",
-    note: "Original explicit period matrix Z = τ₀·C (C the 4×4 matrix with diagonal 4, off-diagonals ±1) of the genus-4 Bring curve (Aut = S₅); the natural isogeny diagonalises Z to (5τ,5τ,5τ,τ), recovering Serre's Jac ~ E⁴. Resolves the Sage tool-block noted in docs/audits/2026-06-24-keystone-bring-jacobian-E4-elliptic-W-plane.md. CAVEAT: this paper SWAPS the two j-invariant equations (a typographical error flagged by Braden–Northover 2012, braden-northover-2012). Registered 2026-07-18 from uploads/ intake; metadata from the uploaded PDF.",
+    note: "Original explicit period matrix Z = τ₀·C (C the 4×4 matrix with diagonal 4, off-diagonals ±1) of the genus-4 Bring curve (Aut = S₅); the natural isogeny diagonalises Z to (5τ,5τ,5τ,τ), recovering Serre's Jac ~ E⁴. Resolves the Sage tool-block noted in docs/audits/2026-06-24-keystone-bring-jacobian-E4-elliptic-W-plane.md. CAVEAT: this paper SWAPS the two j-invariant equations (a typographical error flagged by Braden–Northover 2012, braden-northover-2012). Registered 2026-07-18 from library/ intake; metadata from the uploaded PDF.",
   }),
 
   // ── Braden–Northover 2012 — Bring's curve period matrix + Vector of Riemann Constants + real structure ──
@@ -8007,7 +8007,7 @@ export const references: CSLData[] = [
     page: "065",
     DOI: "10.3842/SIGMA.2012.065",
     URL: "https://doi.org/10.3842/SIGMA.2012.065",
-    note: "Recovers Riera–Rodríguez's period matrix τ₀·C via the Hulek–Craig sextic model, and additionally (i) identifies the Vector of Riemann Constants and (ii) constructs the explicit anti-holomorphic involution (the real structure / complex conjugation on the plane model), whose fixed set is a union of Hilbert ovals. This explicit conjugation on Jac(Bring) is the concrete Hodge-side object of the α_EM per-loop fibre-level correspondence (docs/audits/2026-07-18-alpha-em-involution-type-nome-independent.md). Corrects the j-invariant labelling: j(τ₀) = −5·29³/2⁵, j(5τ₀) = −25/2, flagging the Riera–Rodríguez swap as a typo. Registered 2026-07-18 from uploads/ intake; metadata from the uploaded PDF.",
+    note: "Recovers Riera–Rodríguez's period matrix τ₀·C via the Hulek–Craig sextic model, and additionally (i) identifies the Vector of Riemann Constants and (ii) constructs the explicit anti-holomorphic involution (the real structure / complex conjugation on the plane model), whose fixed set is a union of Hilbert ovals. This explicit conjugation on Jac(Bring) is the concrete Hodge-side object of the α_EM per-loop fibre-level correspondence (docs/audits/2026-07-18-alpha-em-involution-type-nome-independent.md). Corrects the j-invariant labelling: j(τ₀) = −5·29³/2⁵, j(5τ₀) = −25/2, flagging the Riera–Rodríguez swap as a typo. Registered 2026-07-18 from library/ intake; metadata from the uploaded PDF.",
   }),
 
   // ── Braden–Disney-Hogg 2022 — Bring's curve: old and new ──
@@ -8034,7 +8034,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2005]] },
     URL: "https://arxiv.org/abs/hep-ph/0503213",
-    note: "arXiv:hep-ph/0503213. The helon model: first-generation SM fermions and EW bosons as framed 3-braids; electric charge read off ribbon TWIST (±2π ↔ ±e/3), colour off the strand permutation (odd-man-out), generations off braiding pattern, bosons = identity-permutation triplets. Uploaded uploads/0503213v2.pdf; analysed in docs/audits/2026-07-31-sm-lit-analysis-bean-workplan.md (twist-vs-writhe as candidate second crossing invariant for the hypercharge gap, bean qou-q377).",
+    note: "arXiv:hep-ph/0503213. The helon model: first-generation SM fermions and EW bosons as framed 3-braids; electric charge read off ribbon TWIST (±2π ↔ ±e/3), colour off the strand permutation (odd-man-out), generations off braiding pattern, bosons = identity-permutation triplets. Uploaded library/arxiv-hep-ph-0503213v2/0503213v2.pdf; analysed in docs/audits/2026-07-31-sm-lit-analysis-bean-workplan.md (twist-vs-writhe as candidate second crossing invariant for the hypercharge gap, bean qou-q377).",
   }),
 
   // ── Bigelow 2001 — braid groups are linear (LKB faithful) ─────
@@ -8049,7 +8049,7 @@ export const references: CSLData[] = [
     page: "471-486",
     DOI: "10.1090/S0894-0347-00-00361-1",
     URL: "https://arxiv.org/abs/math/0005038",
-    note: "Theorem 1.1: the Lawrence–Krammer representation of B_n is faithful for all n (braid groups are linear). Lawrence's construction realises this as a summand of the Jones representation at generic parameters. Cited by conj:gauge-hecke-realization for literature context: Burau (a Hecke summand) is unfaithful for n ≥ 5, LKB is faithful — the conjecture's open residue is faithfulness at the substrate specialisation and the groupoid-vs-braid mismatch. Uploaded uploads/0005038v1.pdf.",
+    note: "Theorem 1.1: the Lawrence–Krammer representation of B_n is faithful for all n (braid groups are linear). Lawrence's construction realises this as a summand of the Jones representation at generic parameters. Cited by conj:gauge-hecke-realization for literature context: Burau (a Hecke summand) is unfaithful for n ≥ 5, LKB is faithful — the conjecture's open residue is faithfulness at the substrate specialisation and the groupoid-vs-braid mismatch. Uploaded library/arxiv-math-0005038v1/0005038v1.pdf.",
   }),
 
   // ── Baez–Huerta 2010 — algebra of GUTs ────────────────────────
@@ -8067,7 +8067,7 @@ export const references: CSLData[] = [
     page: "483-552",
     DOI: "10.1090/S0273-0979-10-01294-2",
     URL: "https://arxiv.org/abs/0904.1556",
-    note: "Representation-theoretic structure of the SM gauge group and its SU(5), Spin(10), Pati–Salam extensions; the hypercharge assignments and the ℤ₆ compatibility relations. Target specification for what a derived hypercharge must satisfy (bean qou-q377). Uploaded uploads/0904.1556v2.pdf.",
+    note: "Representation-theoretic structure of the SM gauge group and its SU(5), Spin(10), Pati–Salam extensions; the hypercharge assignments and the ℤ₆ compatibility relations. Target specification for what a derived hypercharge must satisfy (bean qou-q377). Uploaded library/arxiv-0904.1556v2/0904.1556v2.pdf.",
   }),
 
   // ── Tong 2017 — line operators / global SM gauge group ────────
@@ -8083,7 +8083,7 @@ export const references: CSLData[] = [
     page: "104",
     DOI: "10.1007/JHEP07(2017)104",
     URL: "https://arxiv.org/abs/1705.01853",
-    note: "The SM gauge group is (SU(3) × SU(2) × U(1))/Γ with Γ ⊆ ℤ₆ undetermined by current experiment; line-operator spectra and theta-angle periodicities distinguish the choices. Cited by conj:sm-gauge-truncation (containment-not-isomorphism caveat) and relevant to the theta_QCD bean qou-y087. Uploaded uploads/1705.01853v2.pdf.",
+    note: "The SM gauge group is (SU(3) × SU(2) × U(1))/Γ with Γ ⊆ ℤ₆ undetermined by current experiment; line-operator spectra and theta-angle periodicities distinguish the choices. Cited by conj:sm-gauge-truncation (containment-not-isomorphism caveat) and relevant to the theta_QCD bean qou-y087. Uploaded library/arxiv-1705.01853v2/1705.01853v2.pdf.",
   }),
 
   // ── Dubois-Violette 2016 — exceptional quantum geometry ───────
@@ -8098,7 +8098,7 @@ export const references: CSLData[] = [
     page: "426-449",
     DOI: "10.1016/j.nuclphysb.2016.04.018",
     URL: "https://arxiv.org/abs/1604.01247",
-    note: "SU(3) colour from unimodularity + the 27-dimensional Euclidean Albert (exceptional Jordan) algebra; triality ↔ 3 generations; octonions as ℂ ⊕ ℂ³ ↔ quark-lepton symmetry. Literature route matching the corpus octonion fragments (QOU/MathlibExt/OctonionSU3Stabilizer.lean); beans qou-ni4b (SU(3)) and qou-x4qm (three generations). Uploaded uploads/1604.01247v2.pdf.",
+    note: "SU(3) colour from unimodularity + the 27-dimensional Euclidean Albert (exceptional Jordan) algebra; triality ↔ 3 generations; octonions as ℂ ⊕ ℂ³ ↔ quark-lepton symmetry. Literature route matching the corpus octonion fragments (QOU/MathlibExt/OctonionSU3Stabilizer.lean); beans qou-ni4b (SU(3)) and qou-x4qm (three generations). Uploaded library/arxiv-1604.01247v2/1604.01247v2.pdf.",
   }),
 
   // ── Furey 2016 — SM from ℂ⊗𝕆 ──────────────────────────────────
@@ -8110,7 +8110,7 @@ export const references: CSLData[] = [
     "container-title": "PhD thesis, University of Waterloo",
     issued: { "date-parts": [[2016]] },
     URL: "https://arxiv.org/abs/1611.09182",
-    note: "arXiv:1611.09182. Division-algebra (ℝ⊗ℂ⊗ℍ⊗𝕆) construction of one-generation SM structure; SU(3) × U(1) as the unbroken stabilizer inside ℂ⊗𝕆 with correct electric charges from a number operator. Literature route for beans qou-ni4b (SU(3) colour) and the hypercharge target of qou-q377. Uploaded uploads/1611.09182v1.pdf.",
+    note: "arXiv:1611.09182. Division-algebra (ℝ⊗ℂ⊗ℍ⊗𝕆) construction of one-generation SM structure; SU(3) × U(1) as the unbroken stabilizer inside ℂ⊗𝕆 with correct electric charges from a number operator. Literature route for beans qou-ni4b (SU(3) colour) and the hypercharge target of qou-q377. Uploaded library/arxiv-1611.09182v1/1611.09182v1.pdf.",
   }),
 
   // ── Hikami 2004 — colored Jones difference equation (torus knots) ──
@@ -8122,7 +8122,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2004]] },
     URL: "https://arxiv.org/abs/math/0403224",
-    note: "arXiv:math/0403224. Proves the N-colored Jones polynomial of the torus knot T(s,t) satisfies a q-difference equation, with the relation to the AJ conjecture / quantum A-polynomial. Uploaded uploads/0403224v1.pdf (SM-uploads batch, main 5d1385d1); relevant to the corpus's colored-Jones tower infrastructure, not to the SM appendix directly.",
+    note: "arXiv:math/0403224. Proves the N-colored Jones polynomial of the torus knot T(s,t) satisfies a q-difference equation, with the relation to the AJ conjecture / quantum A-polynomial. Uploaded library/arxiv-math-0403224v1/0403224v1.pdf (SM-uploads batch, main 5d1385d1); relevant to the corpus's colored-Jones tower infrastructure, not to the SM appendix directly.",
   }),
 
   // ── Baez–Schreiber 2007 — higher gauge theory (2-connections) ──
@@ -8140,7 +8140,7 @@ export const references: CSLData[] = [
     page: "7-30",
     issued: { "date-parts": [[2007]] },
     URL: "https://arxiv.org/abs/math/0511710",
-    note: "arXiv:math/0511710. 2-connections on 2-bundles: parallel transport of strings/surfaces via 2-groups. Literature route for the categorical gauge-action groupoid of app:standard-model (gauge structure one categorical level up). Uploaded uploads/0511710v2.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
+    note: "arXiv:math/0511710. 2-connections on 2-bundles: parallel transport of strings/surfaces via 2-groups. Literature route for the categorical gauge-action groupoid of app:standard-model (gauge structure one categorical level up). Uploaded library/arxiv-math-0511710v2/0511710v2.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
   }),
 
   // ── Baez–Huerta 2011 — invitation to higher gauge theory ──────
@@ -8158,7 +8158,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2011]] },
     URL: "https://arxiv.org/abs/1003.4485",
     DOI: "10.1007/s10714-010-1070-9",
-    note: "arXiv:1003.4485. Expository companion to higher gauge theory: 2-groups, 2-bundles, string 2-group. Uploaded uploads/1003.4485v2.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
+    note: "arXiv:1003.4485. Expository companion to higher gauge theory: 2-groups, 2-bundles, string 2-group. Uploaded library/arxiv-1003.4485v2/1003.4485v2.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
   }),
 
   // ── Dubois-Violette–Todorov 2018 — exceptional quantum geometry II ──
@@ -8173,7 +8173,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2018]] },
     URL: "https://arxiv.org/abs/1808.08110",
-    note: "arXiv:1808.08110. Continuation of dubois-violette2016: the exceptional Jordan algebra J₃(𝕆) route to the SM gauge group with SU(3)×SU(2)×U(1)/ℤ₆ as the J₃(𝕆)-compatible subgroup of F₄ — directly relevant to the Z₆ compatibility battery of conj:sm-hypercharge-invariant and the colour route of qou-ni4b. Uploaded uploads/1808.08110v1.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
+    note: "arXiv:1808.08110. Continuation of dubois-violette2016: the exceptional Jordan algebra J₃(𝕆) route to the SM gauge group with SU(3)×SU(2)×U(1)/ℤ₆ as the J₃(𝕆)-compatible subgroup of F₄ — directly relevant to the Z₆ compatibility battery of conj:sm-hypercharge-invariant and the colour route of qou-ni4b. Uploaded library/arxiv-1808.08110v1/1808.08110v1.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
   }),
 
   // ── DeTurck–Gluck — Gauss linking integral on S³ and H³ ────────
@@ -8190,7 +8190,7 @@ export const references: CSLData[] = [
     volume: "49",
     issued: { "date-parts": [[2008]] },
     URL: "https://arxiv.org/abs/math/0406276",
-    note: "arXiv:math/0406276 (published under the title 'Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space', J. Math. Phys. 49, 023504). Supplies the H³ Gauss linking integral (Thm 1(3), kernel csch α), the H³ Biot–Savart operator (Thm 2(3)), and — the object the EM-linking attack needs — the H³ Laplacian Green's function φ₀(α) = −coth(α)/4π, the exact hyperbolic analogue of 1/r. Read in full 2026-08-01; findings and the two structural obstructions in docs/audits/2026-08-01-em-linking-reads-round1.md. Note there is NO interaction-energy formula, no compact-quotient theory, and no H³ Green's operator on vector fields (Thm 3 is S³-only). Uploaded uploads/0406276v1.pdf.",
+    note: "arXiv:math/0406276 (published under the title 'Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space', J. Math. Phys. 49, 023504). Supplies the H³ Gauss linking integral (Thm 1(3), kernel csch α), the H³ Biot–Savart operator (Thm 2(3)), and — the object the EM-linking attack needs — the H³ Laplacian Green's function φ₀(α) = −coth(α)/4π, the exact hyperbolic analogue of 1/r. Read in full 2026-08-01; findings and the two structural obstructions in docs/audits/2026-08-01-em-linking-reads-round1.md. Note there is NO interaction-energy formula, no compact-quotient theory, and no H³ Green's operator on vector fields (Thm 3 is S³-only). Uploaded library/0406276v1/0406276v1.pdf.",
   }),
 
   // ── DeTurck–Gluck–Komendarczyk–Melvin–Shonkwiler–Vela-Vick ────
@@ -8210,7 +8210,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2009]] },
     URL: "https://arxiv.org/abs/0901.1612",
-    note: "arXiv:0901.1612 (announcement; proofs sketched). Milnor's μ̄₁₂₃ as the helicity of a characteristic field on the configuration 3-torus. Two facts load-bearing for the EM-linking attack: when the pairwise linkings vanish (the Brunnian/baryon case) the Hopf invariant is an ABSOLUTE integer, so μ = ν/2 is unambiguous; but μ is TOTALLY ANTISYMMETRIC under permuting components, which blocks reading a symmetric per-pair energy off it (obstruction O1). No Euclidean R³ analogue exists (conceded, non-compact isometry group); no energy bound is proved. Read in full 2026-08-01. Uploaded uploads/0901.1612v1.pdf.",
+    note: "arXiv:0901.1612 (announcement; proofs sketched). Milnor's μ̄₁₂₃ as the helicity of a characteristic field on the configuration 3-torus. Two facts load-bearing for the EM-linking attack: when the pairwise linkings vanish (the Brunnian/baryon case) the Hopf invariant is an ABSOLUTE integer, so μ = ν/2 is unambiguous; but μ is TOTALLY ANTISYMMETRIC under permuting components, which blocks reading a symmetric per-pair energy off it (obstruction O1). No Euclidean R³ analogue exists (conceded, non-compact isometry group); no energy bound is proved. Read in full 2026-08-01. Uploaded library/arxiv-0901.1612v1/0901.1612v1.pdf.",
   }),
 
   // ── Same collaboration — the Pontryagin/Milnor integral paper ──
@@ -8243,7 +8243,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2008]] },
     URL: "https://arxiv.org/abs/0808.1533",
-    note: "arXiv:0808.1533. Read in full 2026-08-01. DOES prove a third-order-helicity energy bound (Thm 6.1: |H₁₂₃| ≤ C_𝒯·E₂^{3/2}) for Borromean flux tubes — but the constant is geometric, not topological, and the author states it 'is meaningless when the handlebodies get close', i.e. it degrades exactly in the regime of interest. Also settles two negatives for bean qou-o6ml: Rem. 2.6 PROVES the total antisymmetry of μ̄₁₂₃ (obstruction O1), and the third-order invariant scales as Flux³ where a Coulomb-like pair energy needs Flux². The only pair-indexed object (Cor. 2.5) is forced to zero by the unlinked hypothesis. Uploaded uploads/0808.1533v1.pdf. RE-READ 2026-08-01 (round 5), §6 eq. (43) — the decisive text for the Freedman–He route, and it overturns two of our readings: (i) the FH asymptotic crossing number in the LINK bound is ac(L_k, L), ONE component against the WHOLE link, summed over n COMPONENTS — it is not pairwise, so a per-pair ACN is the wrong object; (ii) eq. (43) carries (π/16)^{1/4}, a pure constant, and NO volume factor — the Vol^{−1/3} we had called 'the Freedman–He template' is Khesin Thm 3.6's SINGLE-torus bound, misapplied. Also states the bound applies 'for borromean links', with ac(L_k,L) bounded below by a smallest genus among surfaces in ℝ³∖(other components) with boundary L_k — a complement constraint, which is what actually holds the Brunnian value up.",
+    note: "arXiv:0808.1533. Read in full 2026-08-01. DOES prove a third-order-helicity energy bound (Thm 6.1: |H₁₂₃| ≤ C_𝒯·E₂^{3/2}) for Borromean flux tubes — but the constant is geometric, not topological, and the author states it 'is meaningless when the handlebodies get close', i.e. it degrades exactly in the regime of interest. Also settles two negatives for bean qou-o6ml: Rem. 2.6 PROVES the total antisymmetry of μ̄₁₂₃ (obstruction O1), and the third-order invariant scales as Flux³ where a Coulomb-like pair energy needs Flux². The only pair-indexed object (Cor. 2.5) is forced to zero by the unlinked hypothesis. Uploaded library/arxiv-0808.1533v1/0808.1533v1.pdf. RE-READ 2026-08-01 (round 5), §6 eq. (43) — the decisive text for the Freedman–He route, and it overturns two of our readings: (i) the FH asymptotic crossing number in the LINK bound is ac(L_k, L), ONE component against the WHOLE link, summed over n COMPONENTS — it is not pairwise, so a per-pair ACN is the wrong object; (ii) eq. (43) carries (π/16)^{1/4}, a pure constant, and NO volume factor — the Vol^{−1/3} we had called 'the Freedman–He template' is Khesin Thm 3.6's SINGLE-torus bound, misapplied. Also states the bound applies 'for borromean links', with ac(L_k,L) bounded below by a smallest genus among surfaces in ℝ³∖(other components) with boundary L_k — a complement constraint, which is what actually holds the Brunnian value up.",
   }),
 
   // ── Cantarella–DeTurck–Gluck — the Biot–Savart operator ───────
@@ -8261,7 +8261,7 @@ export const references: CSLData[] = [
     volume: "42",
     page: "876-905",
     issued: { "date-parts": [[2001]] },
-    note: "Read in full 2026-08-01. Supplies the operator-theoretic skeleton for any per-pair construction: Theorem D proves the Biot–Savart operator is bounded, compact and SELF-ADJOINT (⟨V₁,BS(V₂)⟩ = ⟨BS(V₁),V₂⟩) by pure kernel antisymmetry, so the mechanism should port to H³; helicity is its quadratic form H(V) = ⟨V,BS(V)⟩; and ‖BS‖ ≤ OS(V)/4π via the 'optical size' domain functional. CRITICAL distinction recorded in the audit: the pairing it forms, ∫J₁·B₂, is mutual helicity (topological, zero for unlinked separated tubes) — NOT the electromagnetic interaction energy ∫A₁·J₂, which the paper never writes. R³ only. Uploaded uploads/candetgl.pdf.",
+    note: "Read in full 2026-08-01. Supplies the operator-theoretic skeleton for any per-pair construction: Theorem D proves the Biot–Savart operator is bounded, compact and SELF-ADJOINT (⟨V₁,BS(V₂)⟩ = ⟨BS(V₁),V₂⟩) by pure kernel antisymmetry, so the mechanism should port to H³; helicity is its quadratic form H(V) = ⟨V,BS(V)⟩; and ‖BS‖ ≤ OS(V)/4π via the 'optical size' domain functional. CRITICAL distinction recorded in the audit: the pairing it forms, ∫J₁·B₂, is mutual helicity (topological, zero for unlinked separated tubes) — NOT the electromagnetic interaction energy ∫A₁·J₂, which the paper never writes. R³ only. Uploaded library/candetgl/candetgl.pdf.",
   }),
 
   // ── Khesin — geometry of higher helicities (survey) ───────────
@@ -8274,7 +8274,7 @@ export const references: CSLData[] = [
     volume: "3",
     page: "989-1011",
     issued: { "date-parts": [[2003]] },
-    note: "Read in full 2026-08-01; the most productive source of the EM-linking sweep. Rmk 4.8 EXPLAINS obstruction O1 structurally (linking forms are symmetric/antisymmetric by the parity of the product of codimensions — 1-forms in 3D force antisymmetry). Rmk 3.4 diagnoses that signed invariants cancel between oppositely-linked pairs, and Rmk 3.5 names the fix: the Freedman–He asymptotic CROSSING NUMBER — symmetric (a norm), nonzero when lk = 0, Flux²-scaling. Thm 3.6 carries a Flux²·Vol^{−1/3} energy template. Also flags Laurence–Stredulinsky as the only Borromean-specific energy result. Uploaded uploads/helicity03mmj.pdf. SCOPE CORRECTION 2026-08-01 (round 5): Thm 3.6 is the bound for a SINGLE knotted torus, and its Vol^{−1/3} must NOT be read as the Freedman–He template for a multi-component link — the link bound (Komendarczyk eq. 43) has a constant prefactor and no volume. An earlier note here claimed Thm 3.6's template 'converges with' the corpus's empirical κ ~ A^{−1/3}; that claimed convergence is RETRACTED as a misattribution. Note also that Khesin never writes ac(·,·): his Rmk 3.5 minimisation 'over all homotopies of two given space curves' is a survey gloss on the two-curve warm-up, not the invariant used in the link bound.",
+    note: "Read in full 2026-08-01; the most productive source of the EM-linking sweep. Rmk 4.8 EXPLAINS obstruction O1 structurally (linking forms are symmetric/antisymmetric by the parity of the product of codimensions — 1-forms in 3D force antisymmetry). Rmk 3.4 diagnoses that signed invariants cancel between oppositely-linked pairs, and Rmk 3.5 names the fix: the Freedman–He asymptotic CROSSING NUMBER — symmetric (a norm), nonzero when lk = 0, Flux²-scaling. Thm 3.6 carries a Flux²·Vol^{−1/3} energy template. Also flags Laurence–Stredulinsky as the only Borromean-specific energy result. Uploaded library/helicity03mmj/helicity03mmj.pdf. SCOPE CORRECTION 2026-08-01 (round 5): Thm 3.6 is the bound for a SINGLE knotted torus, and its Vol^{−1/3} must NOT be read as the Freedman–He template for a multi-component link — the link bound (Komendarczyk eq. 43) has a constant prefactor and no volume. An earlier note here claimed Thm 3.6's template 'converges with' the corpus's empirical κ ~ A^{−1/3}; that claimed convergence is RETRACTED as a misattribution. Note also that Khesin never writes ac(·,·): his Rmk 3.5 minimisation 'over all homotopies of two given space curves' is a survey gloss on the two-curve warm-up, not the invariant used in the link bound.",
   }),
 
   // ── Hornig–Mayer — third-order topological invariant ──────────
@@ -8289,7 +8289,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2002]] },
     URL: "https://arxiv.org/abs/physics/0203048",
-    note: "arXiv:physics/0203048. Read in full 2026-08-01. Constructs H⁽³⁾ = ∫A¹·A²×A³ via the SU(2) Chern–Simons split (not Massey products). Independently confirms obstruction O1 from the physics side, naming it outright: 'the antisymmetry of H⁽³⁾ seems to be one of the key problems'. Its Conclusions also state the scaling trap — 'only expressions quadratic and cubic in magnetic flux can be obtained' — with the quadratic slot occupied by cross-helicity, which vanishes for Brunnian configurations. No energy content; requires a simply-connected domain with boundary, so it does not address O2. Uploaded uploads/0203048v1.pdf.",
+    note: "arXiv:physics/0203048. Read in full 2026-08-01. Constructs H⁽³⁾ = ∫A¹·A²×A³ via the SU(2) Chern–Simons split (not Massey products). Independently confirms obstruction O1 from the physics side, naming it outright: 'the antisymmetry of H⁽³⁾ seems to be one of the key problems'. Its Conclusions also state the scaling trap — 'only expressions quadratic and cubic in magnetic flux can be obtained' — with the quadratic slot occupied by cross-helicity, which vanishes for Brunnian configurations. No energy content; requires a simply-connected domain with boundary, so it does not address O2. Uploaded library/arxiv-physics-0203048v1/0203048v1.pdf.",
   }),
 
   // ── Bokut & Shiao — GS bases for Coxeter groups ───────────────
@@ -8297,8 +8297,8 @@ export const references: CSLData[] = [
   // QOU/Archimedean/MassGapGm.lean:46 and the work is named in the
   // References block of UGB/GrobnerShirshov/HeckeGS.lean, with no entry
   // here. Bibliographic data taken from three independent bibliographies
-  // in the 2026-08-09 upload batch (uploads/0910.0096v1.pdf ref [4],
-  // uploads/1808.05026v1.pdf ref [3], uploads/fd58d8e18…pdf ref [3]),
+  // in the 2026-08-09 upload batch (library/arxiv-0910.0096v1/0910.0096v1.pdf ref [4],
+  // library/arxiv-1808.05026v1/1808.05026v1.pdf ref [3], library/fd58d8e18…pdf ref [3]),
   // which agree exactly. No DOI recorded — none of the three prints one
   // and no lookup was performed; do not synthesise one.
   ref({
@@ -8318,7 +8318,7 @@ export const references: CSLData[] = [
 
   // ── Chen & Liu — GS bases for Coxeter groups I ────────────────
   // Added 2026-08-09 from relevance triage (verdict: supporting);
-  // uploads/0910.0096v1.pdf. Cited for the scope of [bokut2001].
+  // library/arxiv-0910.0096v1/0910.0096v1.pdf. Cited for the scope of [bokut2001].
   ref({
     id: "chenliu2009",
     type: "article",
@@ -8335,7 +8335,7 @@ export const references: CSLData[] = [
 
   // ── Bokut & Chen — GS bases and PBW theorems (survey) ─────────
   // Added 2026-08-09 from relevance triage (verdict: supporting);
-  // uploads/1502.06472v1.pdf. Distinct from bokut2005 and bokutchen2014
+  // library/arxiv-1502.06472v1/1502.06472v1.pdf. Distinct from bokut2005 and bokutchen2014
   // (same pair, different papers).
   ref({
     id: "bokutchen2015pbw",
@@ -8353,7 +8353,7 @@ export const references: CSLData[] = [
 
   // ── Kim & Lee — GS bases for Temperley-Lieb algebras ──────────
   // Added 2026-08-09 from relevance triage (verdict: supporting);
-  // uploads/fd58d8e182edda805fed0946606c5ab82f81.pdf.
+  // library/fd58d8e182edda805fed0946606c5ab82f81/fd58d8e182edda805fed0946606c5ab82f81.pdf.
   ref({
     id: "kimlee2018",
     type: "article-journal",
@@ -8368,7 +8368,7 @@ export const references: CSLData[] = [
     page: "11-17",
     publisher: "Palestine Polytechnic University-PPU",
     issued: { "date-parts": [[2018]] },
-    note: "No DOI, ISSN or URL is printed on the article; venue read off the title page and running head, no lookup performed. Read in full 2026-08-09. The folio-relevant part is §3, the type A_{n-1} review: T(A_{n-1}) generated by E₁,…,E_{n-1} with E_i² = δE_i, E_iE_j = E_jE_i for i > j+1, E_iE_jE_i = E_i for j = i±1 (δ ∈ ℂ a free parameter, the E_iE_jE_i relation UN-rescaled — the convention this folio adopted, e_i := q − σ_i with e_i² = [2]_q e_i and δ = [2]_q). Prop. 3.1 gives a Gröbner–Shirshov basis whose standard monomials number C_n, i.e. dim TL_n = Catalan(n), and note that the basis needs two families BEYOND the defining relations (E_{i,j}E_i − E_{i−2,j}E_i and E_jE_{i,j} − E_jE_{i,j+2}) — the same completion phenomenon that makes def:hecke-normal-form's confluence claim false (bean qou-43co). Prop. 3.1 is QUOTED from Kang–Lee–Lee–Oh, J. Algebra 252 (2002) 258-292, Prop. 6.2, the primary, which is not yet in this file (bean qou-qspu). The paper's own theorem (dim T(B_n) = (n+2)C_n − 1) has no consumer here. A close sibling exists — the same authors' arXiv:1808.05026, 'GS bases for Temperley-Lieb algebras of types B and D', whose §3 is verbatim this same review — deliberately NOT registered separately; see the ledger row for uploads/1808.05026v1.pdf.",
+    note: "No DOI, ISSN or URL is printed on the article; venue read off the title page and running head, no lookup performed. Read in full 2026-08-09. The folio-relevant part is §3, the type A_{n-1} review: T(A_{n-1}) generated by E₁,…,E_{n-1} with E_i² = δE_i, E_iE_j = E_jE_i for i > j+1, E_iE_jE_i = E_i for j = i±1 (δ ∈ ℂ a free parameter, the E_iE_jE_i relation UN-rescaled — the convention this folio adopted, e_i := q − σ_i with e_i² = [2]_q e_i and δ = [2]_q). Prop. 3.1 gives a Gröbner–Shirshov basis whose standard monomials number C_n, i.e. dim TL_n = Catalan(n), and note that the basis needs two families BEYOND the defining relations (E_{i,j}E_i − E_{i−2,j}E_i and E_jE_{i,j} − E_jE_{i,j+2}) — the same completion phenomenon that makes def:hecke-normal-form's confluence claim false (bean qou-43co). Prop. 3.1 is QUOTED from Kang–Lee–Lee–Oh, J. Algebra 252 (2002) 258-292, Prop. 6.2, the primary, which is not yet in this file (bean qou-qspu). The paper's own theorem (dim T(B_n) = (n+2)C_n − 1) has no consumer here. A close sibling exists — the same authors' arXiv:1808.05026, 'GS bases for Temperley-Lieb algebras of types B and D', whose §3 is verbatim this same review — deliberately NOT registered separately; see the ledger row for library/arxiv-1808.05026v1/1808.05026v1.pdf.",
   }),
 
 ];

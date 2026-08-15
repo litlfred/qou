@@ -15,7 +15,7 @@ prop:faddeev-phib-uniqueness currently cites only faddeev1995 + faddeev1994 whil
 - Sect. 6.2, eq. (22) — Four-sector asymptotic behaviour of e_b(z) as |z| -> infinity, with Gaussian, theta-function and constant regimes selected by arg(z) relative to arg(b).
   Use here: The sector-wise growth input behind prop:faddeev-phib-uniqueness's 'strip growth' hypothesis; applicable on that block's branch Im b^2 > 0 (arg b = pi/4), so it can replace the block's elementary product-norm bound with a literature statement.
 
-Source: `uploads/0006156v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-hep-th-0006156v1/0006156v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

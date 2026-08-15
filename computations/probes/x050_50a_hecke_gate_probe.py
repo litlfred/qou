@@ -8,7 +8,7 @@ class gate) and the W8b cusp/spin results
 (docs/audits/2026-07-24-tau-dictionary-fricke-cusp-spin.md) as the FIFTH
 discrete filter of the dictionary gauntlet: integer Hecke eigenvalues.
 
-THE GATE. BDH22 (uploads/2208.13692v1.pdf) Prop 4.5 ([Ser08] Ex 8.3.2(b)):
+THE GATE. BDH22 (library/arxiv-2208.13692v1/2208.13692v1.pdf) Prop 4.5 ([Ser08] Ex 8.3.2(b)):
 the ℚ-isogeny class of the Jacobian of the P⁴-model of Bring's curve is
 (50a)⁴ (Cremona labels; their §4.3 note: "the Q-isogeny class of B/A4 is 50a",
 computed in Sage). BDH22 eq (10): C₁ = B/⟨(12)(34)⟩ : B² = A⁶+4A⁵+10A³+4A+1

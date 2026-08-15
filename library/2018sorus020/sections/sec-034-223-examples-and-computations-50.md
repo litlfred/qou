@@ -1,0 +1,11 @@
+---
+doc_id: 2018sorus020
+doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+section_id: sec-034-223-examples-and-computations-50
+section_title: "Examples and computations . . . . . . . . . . . . . . . . . . . 50"
+section_number: 2.2.3
+pages: 5-5
+source_pdf: 2018SORUS020.pdf
+source_sha256: c3f929e5195983ce
+---
+

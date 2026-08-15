@@ -244,7 +244,7 @@ determinant's construction, not just its correction. That is a literature task
 
 ## 2026-08-07 (fourth pass) — DG 1202.6268 obtained. The formula is in hand and the root cause is confirmed.
 
-`uploads/1202.6268v2.pdf` (Dimofte-Garoufalidis, "The quantum content of the
+`library/arxiv-1202.6268v2/1202.6268v2.pdf` (Dimofte-Garoufalidis, "The quantum content of the
 gluing equations"). Four results, all from the source rather than inference.
 
 ### 1. My searched flattening convention was RIGHT — Definition 2.1
@@ -388,7 +388,7 @@ That fails for c >= 2. It is what makes the N edge equations dependent in the
 way the construction needs, so the extension is not a matter of adding rows.
 
 LEAD. DG identify tau via Yamaguchi [Yam08] as tau_M = (1/c_M) dtau_M(t)/dt|_1
-with c_M the CUSP SHAPE. Dubois-Huynh-Yamaguchi (uploads/0706.2213v3.pdf,
+with c_M the CUSP SHAPE. Dubois-Huynh-Yamaguchi (library/arxiv-0706.2213v3/0706.2213v3.pdf,
 Sec 5.3) independently express the torsion at holonomy via the cusp shape.
 Cusp shape is per-cusp, so that is where a genuine c-dependence would enter —
 and the place to look before inventing one. Note this is also the honest
@@ -449,7 +449,7 @@ cannot see a factor depending only on c, and the change-of-curve law is a ratio,
 so `2^{alpha(c-1)} * 1/2` passes every test above. That is the shape of the
 per-cusp factor 2^{(c-1)/2}. So this derivation does NOT revive it, and
 c_sigma = 2^{-3/4} stays at IDENTIFICATION (bean qou-pn5j). Pinning it needs an
-external multi-cusp reference value; nothing in uploads/ has one —
+external multi-cusp reference value; nothing in library/ has one —
 Garoufalidis-Yoon prove 1-loop = adjoint torsion for TWO-BRIDGE knots.
 
 Do NOT close this bean by declaring c_sigma derived. Step 3 of "Do" above is

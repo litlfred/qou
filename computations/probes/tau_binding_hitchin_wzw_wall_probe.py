@@ -191,7 +191,7 @@ def main() -> int:
             "axis": "τ=tr B geometric derivation — Hitchin route (ATTACK 2 of "
                     "qou-do3a; beans qou-oduj/qou-1gdc/z2bn)",
             "paper": "Laszlo–Pauly–Sorger, On the monodromy of the Hitchin "
-                     "connection (uploads/MonodromyHitchinY.pdf)",
+                     "connection (library/monodromyhitchiny/MonodromyHitchinY.pdf)",
             "corpus": "BindingTauAnchorClosure.lean (τ closed form); s5-so3 keystone "
                       "(bwS0_eq_hecke, archimedean continuation, owner-gated)",
             "correction": "τ is NOT an open number — it has a Lean-proved closed "

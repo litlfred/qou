@@ -15,7 +15,7 @@ Cross-check the QOU 4_1 / trefoil colored-Jones towers against Takata's rearrang
 - eq. (16), §4 — Explicit evaluation hat-J_{K_p}(n) of the twist-knot colored Jones at q = exp(2 pi i / n), stated for the volume conjecture 2 pi lim (log|hat-J_K(n)|/n) = Vol(M_K).
   Use here: A directly runnable formula for the Kashaev/volume-conjecture asymptotic on 4_1 = K_{-1}, whose Vol(4_1) = 2 Lambda(pi/3) is the CAL-2 numerical anchor. A finite-n numeric cross-check of Vol(4_1) from this formula is a falsifiable compute-check; it must NOT be used to adopt or re-derive the anchor value.
 
-Source: `uploads/0401068v1 (1).pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0401068v1/0401068v1 (1).pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

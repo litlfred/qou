@@ -9,7 +9,7 @@ number multiplying 1/√5 in Cor 1.2's 4₁ evaluation is 1/√5 × (root of uni
 × (Rogers exp) × ∏ D₅(θ,ζ₅) — needs GK's explicit 4₁ triangulation data").
 
 SOURCE DATA (GK = Garoufalidis–Kashaev, arXiv:1411.6062v2,
-uploads/1411.6062v2.pdf; equations read from the rendered PDF pages 2–5, 16):
+library/arxiv-1411.6062v2/1411.6062v2.pdf; equations read from the rendered PDF pages 2–5, 16):
   (1)   I_{A,B}(b) = ∫_{ℝ+iε} Φ_b(x)^B e^{−Aπi x²} dx;  4₁ ↔ (A,B) = (1,2)
         (§2.2: "(A,B) = (1,2) and (1,3) ... correspond to the state-integrals
         of the knots 4₁ and 5₂"; two tetrahedra ⇒ B = 2 quantum dilogarithms).

@@ -1,0 +1,12 @@
+---
+doc_id: gambaudo-ghys-braids-signatures-2005
+doc_title: "Bull. Soc. math. France 133 (4), 2005, p. 541–579"
+section_id: sec-025-2-αβ-can-be-seen-as-2-fold-covers-over-the-solid
+section_title: "(α,β ) can be seen as 2-fold covers over the solid torus T = S1 × D2 branched"
+section_number: 2
+pages: 22-22
+source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
+source_sha256: 647f4c28cab7428d
+---
+along the links ˆα , ˆβ and ˆα ·β in T .
+The manifold P 4

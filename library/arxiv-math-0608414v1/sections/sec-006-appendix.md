@@ -1,0 +1,11 @@
+---
+doc_id: arxiv-math-0608414v1
+doc_title: "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s Ovidiu Costin ∗"
+section_id: sec-006-appendix
+section_title: "Appendix"
+section_number: null
+pages: 44-44
+source_pdf: 0608414v1.pdf
+source_sha256: bd9a8d48a6d66945
+---
+

@@ -3,9 +3,9 @@
 Bean qou-9p9y (T3 of the Habiro attack plan) — THE previously-missing
 ingredient, now available: Besser-de Jeu, "Li(p)-service? An algorithm
 for computing p-adic polylogarithms", Math. Comp. 77 (2008) 1105-1134
-(uploads/S0025-5718-07-02027-3.pdf), supplemented by Besser,
-"Finite and p-adic polylogarithms" (uploads/0006051v1.pdf) and
-Besser-de Jeu arXiv:0707.3682 (uploads/0707.3682v2.pdf).
+(library/s0025-5718-07-02027-3/S0025-5718-07-02027-3.pdf), supplemented by Besser,
+"Finite and p-adic polylogarithms" (library/arxiv-math-0006051v1/0006051v1.pdf) and
+Besser-de Jeu arXiv:0707.3682 (library/arxiv-0707.3682v2/0707.3682v2.pdf).
 Scope-(a); no fit; nothing wired; audit:
 docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md
 (Addendum 8).
@@ -384,8 +384,8 @@ witness = {
     "beans": ["qou-9p9y"],
     "source": (
         "Besser-de Jeu Math. Comp. 77 (2008) 1105-1134 Props 4.2/4.3/6.1 "
-        "(uploads/S0025-5718-07-02027-3.pdf); GSWZ arXiv:2412.04241v2 "
-        "Example 4.3 eqns (271)/(273)/(274) (uploads/2412.04241v2.pdf)"
+        "(library/s0025-5718-07-02027-3/S0025-5718-07-02027-3.pdf); GSWZ arXiv:2412.04241v2 "
+        "Example 4.3 eqns (271)/(273)/(274) (library/arxiv-2412.04241v2/2412.04241v2.pdf)"
     ),
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5",
     "parameters": {"working_precision": f"5^{W}", "series_terms": N},

@@ -13,7 +13,7 @@ BorromeanVolume.lean sources the Borromean volume conjecture solely from garoufa
 - Abstract / main theorem — The volume conjecture holds for the infinite family of Whitehead chains, which contains both the Whitehead link and the Borromean rings.
   Use here: Backs the queued sorry in whitehead_volume_conjecture, and supplies a SECOND, independent literature proof of the Borromean case now carried only by garoufalidis-le-2011 App. A.
 
-Source: `uploads/0611181v2.pdf` (`vanderveen2008`)
+Source: `library/arxiv-math-0611181v2/0611181v2.pdf` (`vanderveen2008`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -1,6 +1,6 @@
 ---
 # 5htq
-title: Add arxiv refs (AJ/figure-eight/Askey-Wilson/volume-conj/Knots-on-Torus) to references.ts + uploads/ per document-intake skill
+title: Add arxiv refs (AJ/figure-eight/Askey-Wilson/volume-conj/Knots-on-Torus) to references.ts + library/ per document-intake skill
 status: completed
 type: task
 priority: normal

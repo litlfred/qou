@@ -3,7 +3,7 @@
 numeric verification of the GGM exact/perturbative bridge eq (48) for 4₁
 at the substrate point, deriving the integer connection matrix M_I(0).
 
-The bridge (GGM, uploads/2012.00062v3.pdf, all glyph-extracted):
+The bridge (GGM, library/arxiv-2012.00062v3/2012.00062v3.pdf, all glyph-extracted):
 
     diag(1/√τ, √τ)·g(τ) = M_R(q̃)·s_R(Φ)(τ)                       (48)
 
@@ -229,7 +229,7 @@ def main() -> int:
         "structural finding that the u=0 non-perturbative channel is "
         "~1e-164 at the substrate while the deformed odd datum is O(1).")
     wb.set_content_block("conj:im-q-physical-role")
-    wb.add_data("source", "uploads/2012.00062v3.pdf (GGM) eqs 37-48 + Conj 10")
+    wb.add_data("source", "library/arxiv-2012.00062v3/2012.00062v3.pdf (GGM) eqs 37-48 + Conj 10")
     wb.add_data("substrate", {"t": mp.nstr(t_sub, 25),
                               "tau": "i*t/(2*pi)",
                               "log10_qtilde": mp.nstr(mp.log10(qtilde_mag), 8)})

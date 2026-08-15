@@ -79,7 +79,7 @@ separate mechanism that merely shares the field `Q(zeta_5)`.
 
 **Mechanism (3), quantum dimension, is done and it identifies with (1).** The
 user supplied Jones, Bull. AMS 12 (1985) 103-111 (now full text at
-`uploads/S0273-0979-1985-15304-2.pdf`; `jones1985` was already registered). At
+`library/s0273-0979-1985-15304-2/S0273-0979-1985-15304-2.pdf`; `jones1985` was already registered). At
 `r = 5` the Markov trace's quantum dimension is the golden ratio directly,
 `[2] = [3] = 2 cos(pi/5) = phi`, and the Bring torus knots evaluate to
 golden-ratio algebraic integers:
@@ -115,7 +115,7 @@ to these hosts does not. Correct citation, verified by search:
 Both are network-policy denials of the remote execution environment, not
 transient failures, and must not be routed around. Either run from an
 environment whose network policy permits them, or have the PDF uploaded to
-`uploads/` the way `jones1985` was.
+`library/` the way `jones1985` was.
 
 **If it stays blocked, compute instead of reading.** `Sigma(2,3,5)` is `-1`
 surgery on the trefoil, so its WRT invariant is reachable from the trefoil's
@@ -163,7 +163,7 @@ have created in this session (the first was `ohtsuki-takata-2015`). The lesson i
 mechanical: **grep `references.ts` for the id AND the title before adding, and
 grep `computations/` for the topic before opening a bean.**
 
-**The reading block is moot.** `hikami2005brieskorn` is already in `uploads/`
+**The reading block is moot.** `hikami2005brieskorn` is already in `library/`
 (`0405028v2.pdf`) and contains the Poincare-sphere result as its **Theorem 10**,
 attributed to Lawrence-Zagier, plus the generalisation to all
 `Sigma(p1,p2,p3)` and — section 6 — the identification of the S-matrix with the
@@ -194,7 +194,7 @@ READ the five in-repo files above — the answer may already be there.
 
 (2) The branched cover to `Sigma(2,3,5)` is a **parallel structure, not the same
 law**, and it was never blocked — `hikami2005brieskorn` was already in
-`uploads/`. His Corollary 11 gives
+`library/`. His Corollary 11 gives
 
     tau_N(Sigma(p)) ~ sqrt(N/i) sum_l S_l e^{-(i/2) pi P N (1+sum l_j/p_j)^2} + tail
 

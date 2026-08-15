@@ -125,7 +125,7 @@ production; the anti-laundering rule stands (no axiom/class carrying `r` counts 
   machinery (ideal-triangulation gluing) — the reciprocal-pair frame here is the `Vol=0` analog of
   their positive-volume angle structures. Flagged for cross-reference.
 
-Refs: `uploads/2509.02354v2.pdf` (McPhail-Snyder–Reshetikhin, holonomy 4-dilogarithm); #4158
+Refs: `library/arxiv-2509.02354v2/2509.02354v2.pdf` (McPhail-Snyder–Reshetikhin, holonomy 4-dilogarithm); #4158
 `2026-07-24-eunit-magnus-order2.md`; #4127 `2026-07-19-octahedral-four-dilogarithm-missing-tetrahedra.md`
 + `FourDilogFirstOrder.lean`; `2026-07-25-eunit-g2-derivation-attempt.md`;
 `octahedral_barsplit_convergence_probe.py`.

@@ -25,9 +25,9 @@ in the author uploading a **photo of the relevant page(s)**, which then triggers
 
 ## 2. Acquisition ladder (per unvalidated ref)
 
-1. **Source already in `uploads/`** → agent identifies the relevant
+1. **Source already in `library/`** → agent identifies the relevant
    page(s)/passage (no human photo needed) → ingest (§4).
-2. **Not in repo** → acquire legally for `uploads/` (open-access/arXiv/author
+2. **Not in repo** → acquire legally for `library/` (open-access/arXiv/author
    copy), with author assistance if needed.
 3. **Paywalled / not digitally available** → open a **physical-review issue**
    (§3); author photographs the page(s) at a library.
@@ -66,9 +66,9 @@ the bib-physical-review issues. **When a photo is attached:**
    `humanReviewed: { by, date, source: <issue#>, page }`, refresh the bib sidecar,
    and post the result back on the issue.
 
-## 5. Existing `uploads/` — same pipeline, agent-sourced
+## 5. Existing `library/` — same pipeline, agent-sourced
 
-The 19+ files already in `uploads/` follow the **same ingest workflow**, but with
+The 19+ files already in `library/` follow the **same ingest workflow**, but with
 **agent-identified relevant passages** instead of human photocopies. After
 identification, the **post-ingestion process is identical** (§4 steps 1–4):
 formalise, source-match, validate, set status, refresh sidecar. (This subsumes the
@@ -79,7 +79,7 @@ formalise, source-match, validate, set status, refresh sidecar. (This subsumes t
 - `references.review.json` (new): per-ref human-review + ingestion status, hashed
   to the `references.ts` entry.
 - Extend `validate-references` output to a sidecar consumable by the audit/CI.
-- `uploads/intake.json` gains per-file ingestion status (identified passage,
+- `library/intake.json` gains per-file ingestion status (identified passage,
   formalised?, matched?).
 
 ## 7. Skills to add / update
@@ -102,7 +102,7 @@ formalise, source-match, validate, set status, refresh sidecar. (This subsumes t
    ref with full context, assign `@litlfred`.
 3. **`bib-photo-ingestion-watcher`** — the on-photo automation (OCR → formalise →
    match → validate).
-4. **Backfill** — run the agent-sourced path (§5) over existing `uploads/`.
+4. **Backfill** — run the agent-sourced path (§5) over existing `library/`.
 
 **Note:** start with phase 1 (the status model + audit) — it is the gate
 everything else hangs on, and it is buildable now (schema + pipeline check +

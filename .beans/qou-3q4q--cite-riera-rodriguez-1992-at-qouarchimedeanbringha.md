@@ -13,7 +13,7 @@ BringHauptmodulGate.lean:39 attributes the Gamma_0(5) residual gauge to 'Thm 1';
 - Lemma 1 (p. 184) and the following proposition — An integral symplectic matrix commuting with the S_5-automorphism representation on H_1 lies in SpGamma_0(5) (the block form forces 5 | p), and SpGamma_0(5) is contained in the stabiliser of Bring's half-plane.
   Use here: It is the residual-gauge input BringHauptmodulGate leans on for the discrete t_5 = -10 pass/fail gate. Same content the corpus already uses — only the locator needs correcting from 'Thm 1' to 'Lemma 1'.
 
-Source: `uploads/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf` (`riera-rodriguez-1992`)
+Source: `library/the-period-matrix-of-bring-s-curve-1hik02mwva/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf` (`riera-rodriguez-1992`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

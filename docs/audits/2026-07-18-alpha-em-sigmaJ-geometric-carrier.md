@@ -12,7 +12,7 @@ Probe [`alpha_em_sigmaJ_geometric_carrier_probe.py`](../../computations/alpha_em
 Merged #3933 constructed the σ↦J map at the degenerate locus: `σ_ss(q=±i)=±i`, type-correct
 (`σ_ss²=−1`) and bar/conjugation-equivariant. This brick shows the map's target is not
 abstract — **the Bring surface itself carries it**, via the (2,4,5) triangle group's
-order-4 element (source geometry: Braden–Disney-Hogg, `uploads/2208.13692v1.pdf`,
+order-4 element (source geometry: Braden–Disney-Hogg, `library/arxiv-2208.13692v1/2208.13692v1.pdf`,
 Prop 3.9 + §4.3 + Prop 4.6).
 
 ## Findings (all exact)

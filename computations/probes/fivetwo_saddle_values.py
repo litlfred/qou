@@ -4,7 +4,7 @@ Why this module exists
 ----------------------
 Four probes carried `V₁`, `V₂`, `V₃` for 5₂ as hardcoded literals with the
 source comment `# GGM eq 21`. Reconciliation against the two source papers
-(both now in `uploads/`) established:
+(both now in `library/`) established:
 
 * the **cubic is correct** — the corpus's `x³ − 2x² + 3x − 1` is exactly
   GGM eq (233) at `x = 1`, i.e. `(1−ξ)³ = ξ²` = GGMW eq (184), so the

@@ -21,7 +21,7 @@ witness-computed scalars, so no `Matrix` dependency is needed. Sorry-free. No fi
 wired; no `symbol=C1` claim.
 
 -- Ref: [manuscript] docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md (C1 = L1)
--- Ref: [manuscript] uploads/Equations_aux_q-differences.pdf (DRSZ Birkhoff recipe)
+-- Ref: [manuscript] library/equations-aux-q-differences/Equations_aux_q-differences.pdf (DRSZ Birkhoff recipe)
 -/
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Tactic.Ring

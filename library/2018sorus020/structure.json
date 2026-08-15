@@ -1,0 +1,2226 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "2018sorus020",
+ "source": {
+  "file": "2018SORUS020.pdf",
+  "sha256": "c3f929e5195983cec88f2c01dcc0395771877f7793ca6aa246ae4f8325e44c9f",
+  "bytes": 1116805,
+  "pages": 110
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not",
+  "authors_raw": "The documents may come from teaching and research",
+  "abstract": null,
+  "docinfo": {
+   "Creator": "HAL",
+   "Title": "Reidemeister torsion on character varieties",
+   "Author": "L\u00e9o B\u00e9nard",
+   "Producer": "PDFLaTeX",
+   "CreationDate": "D:20260804130517+02'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction 5",
+   "page": 4,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Character varieties and Reidemeister torsion 15",
+   "page": 4,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Character varieties . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 3,
+   "title": "Representation variety . . . . . . . . . . . . . . . . . . . . . . 15",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Algebro-geometric quotient . . . . . . . . . . . . . . . . . . . . 16",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Traces and skein algebra . . . . . . . . . . . . . . . . . . . . . 18",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Characters, reducibility and irreducibility . . . . . . . . . . . . 20",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.1.4"
+  },
+  {
+   "level": 3,
+   "title": "Saito\u2019s Theorem and some consequences . . . . . . . . . . . . 22",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.1.5"
+  },
+  {
+   "level": 3,
+   "title": "The augmented variety . . . . . . . . . . . . . . . . . . . . . . 23",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.1.6"
+  },
+  {
+   "level": 3,
+   "title": "The tautological representation . . . . . . . . . . . . . . . . . 24",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.1.7"
+  },
+  {
+   "level": 3,
+   "title": "Examples . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.1.8"
+  },
+  {
+   "level": 2,
+   "title": "Twisted cohomology . . . . . . . . . . . . . . . . . . . . . . . . . . . 26",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Culler-Shalen theory, group acting on trees and incompressible surfaces 29",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 3,
+   "title": "The tree . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Link of a vertex and ends of the tree . . . . . . . . . . . . . . 30",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3.2"
+  },
+  {
+   "level": 3,
+   "title": "The SL2 action : stabilizers of vertices, \ufb01xed points and trans-",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3.3"
+  },
+  {
+   "level": 3,
+   "title": "Curves and valuations . . . . . . . . . . . . . . . . . . . . . . 32",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3.4"
+  },
+  {
+   "level": 3,
+   "title": "Group acting on a tree and splitting . . . . . . . . . . . . . . 33",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3.5"
+  },
+  {
+   "level": 3,
+   "title": "The split case. . . . . . . . . . . . . . . . . . . . . . . . . . . . 35",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3.6"
+  },
+  {
+   "level": 3,
+   "title": "The non-split case . . . . . . . . . . . . . . . . . . . . . . . . 36",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3.7"
+  },
+  {
+   "level": 2,
+   "title": "Alexander module and character varieties . . . . . . . . . . . . . . . . 38",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 3,
+   "title": "Reducible character in components of irreducible type of the",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Alexander module . . . . . . . . . . . . . . . . . . . . . . . . . 39",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4.2"
+  },
+  {
+   "level": 2,
+   "title": "The Reidemeister torsion . . . . . . . . . . . . . . . . . . . . . . . . . 42",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.5"
+  },
+  {
+   "level": 3,
+   "title": "First de\ufb01nition . . . . . . . . . . . . . . . . . . . . . . . . . . 42",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.5.1"
+  },
+  {
+   "level": 3,
+   "title": "Second de\ufb01nition : the Euler isomorphism . . . . . . . . . . . 43",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.5.2"
+  },
+  {
+   "level": 3,
+   "title": "Third de\ufb01nition : torsion of an exact complex (Cayley formula) 44",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.5.3"
+  },
+  {
+   "level": 1,
+   "title": "The adjoint torsion 45",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The twisted complex with adjoint action . . . . . . . . . . . . . . . . 47",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Tangent space, di\ufb00erential forms and twisted cohomology . . . 47",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Computation of the twisted cohomology . . . . . . . . . . . . 49",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.1.2"
+  },
+  {
+   "level": 2,
+   "title": "The adjoint torsion as a di\ufb00erential form . . . . . . . . . . . . . . . . 49",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "The torsion of an Ad\u25e6\u03c1-twisted cellular complex . . . . . . . . 49",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.2.1"
+  },
+  {
+   "level": 3,
+   "title": "The Reidemeister torsion form . . . . . . . . . . . . . . . . . . 50",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Examples and computations . . . . . . . . . . . . . . . . . . . 50",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.2.3"
+  },
+  {
+   "level": 2,
+   "title": "The torsion at a \ufb01nite point . . . . . . . . . . . . . . . . . . . . . . . 53",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Main Theorem 1 . . . . . . . . . . . . . . . . . . . . 54",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Interpretation of the Theorem : singularities and Alexander",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.3.2"
+  },
+  {
+   "level": 2,
+   "title": "The torsion at an ideal point . . . . . . . . . . . . . . . . . . . . . . . 64",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 3,
+   "title": "An example : a direct computation of the torsion of the trefoil",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Proof of theorem 2.0.2, the case when\u03c1\u03a3 is not residually abelian 72",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.4.2"
+  },
+  {
+   "level": 3,
+   "title": "The case when \u03c1\u03a3 is residually abelian . . . . . . . . . . . . . 78",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.4.3"
+  },
+  {
+   "level": 3,
+   "title": "Back to Examples . . . . . . . . . . . . . . . . . . . . . . . . . 81",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.4.4"
+  },
+  {
+   "level": 1,
+   "title": "The standard torsion 83",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The torsion function . . . . . . . . . . . . . . . . . . . . . . . . . . . 85",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The case of a \ufb01nite character . . . . . . . . . . . . . . . . . . . . . . . 86",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Theorem 3.0.1 . . . . . . . . . . . . . . . . . . . . . . 86",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Some computations and examples . . . . . . . . . . . . . . . . 87",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.2.2"
+  },
+  {
+   "level": 2,
+   "title": "The torsion at ideal points . . . . . . . . . . . . . . . . . . . . . . . . 90",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "The split case . . . . . . . . . . . . . . . . . . . . . . . . . . . 90",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.3.1"
+  },
+  {
+   "level": 3,
+   "title": "The non-split case . . . . . . . . . . . . . . . . . . . . . . . . 95",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.3.2"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 6,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(\u22121)i+1",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "ByH\u2217(M, Ad\u25e6\u03c1) (respectivelyH\u2217(M,\u03c1 )), we denote the twisted cohomology",
+   "page": 9,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Whenever \u03c1 :\u03c01(M)\u2192 SL2(Ov), we denote byH\u2217(M, Ad\u25e6\u03c1)v (respectively",
+   "page": 9,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "In this case, we denote by\u00af\u03c1 : \u03c01(M)\u2192 SL2(k) the composition of\u03c1 with",
+   "page": 9,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "For\u03bb :\u03c01(M)\u2192k\u2217, we denote byH\u2217(M,\u03bb ) the twisted cohomology groups",
+   "page": 9,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Ifv projects to an irreducible character inX(M), then the vanishing order of",
+   "page": 11,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Suppose thatM is a knot complement andm is a meridian. Ifv projects to",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Character varieties",
+   "page": 16,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 3,
+   "title": "Representation variety",
+   "page": 16,
+   "source": "inferred",
+   "number": "1.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Algebro-geometric quotient",
+   "page": 17,
+   "source": "inferred",
+   "number": "1.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Traces and skein algebra",
+   "page": 19,
+   "source": "inferred",
+   "number": "1.1.3"
+  },
+  {
+   "level": 1,
+   "title": "After right-multiplying byA\u22121B and taking the trace, one obtains Tr(AB)\u2212",
+   "page": 19,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 3,
+   "title": "Characters, reducibility and irreducibility",
+   "page": 21,
+   "source": "inferred",
+   "number": "1.1.4"
+  },
+  {
+   "level": 3,
+   "title": "Saito\u2019s Theorem and some consequences",
+   "page": 23,
+   "source": "inferred",
+   "number": "1.1.5"
+  },
+  {
+   "level": 3,
+   "title": "The augmented variety",
+   "page": 24,
+   "source": "inferred",
+   "number": "1.1.6"
+  },
+  {
+   "level": 3,
+   "title": "The tautological representation",
+   "page": 25,
+   "source": "inferred",
+   "number": "1.1.7"
+  },
+  {
+   "level": 3,
+   "title": "Examples",
+   "page": 25,
+   "source": "inferred",
+   "number": "1.1.8"
+  },
+  {
+   "level": 2,
+   "title": "Twisted cohomology",
+   "page": 27,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Culler-Shalen theory, group acting on trees and",
+   "page": 30,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 3,
+   "title": "The tree",
+   "page": 30,
+   "source": "inferred",
+   "number": "1.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Link of a vertex and ends of the tree",
+   "page": 31,
+   "source": "inferred",
+   "number": "1.3.2"
+  },
+  {
+   "level": 3,
+   "title": "The SL2 action : stabilizers of vertices, \ufb01xed points and",
+   "page": 31,
+   "source": "inferred",
+   "number": "1.3.3"
+  },
+  {
+   "level": 1,
+   "title": "Elliptic elements",
+   "page": 32,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Hyperbolic elements",
+   "page": 32,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Curves and valuations",
+   "page": 33,
+   "source": "inferred",
+   "number": "1.3.4"
+  },
+  {
+   "level": 3,
+   "title": "Group acting on a tree and splitting",
+   "page": 34,
+   "source": "inferred",
+   "number": "1.3.5"
+  },
+  {
+   "level": 1,
+   "title": "For each component\u03a3i of \u03a3, the homomorphism\u03c01(\u03a3i)\u2192 \u03c01(M) induced",
+   "page": 36,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "The non-split case",
+   "page": 37,
+   "source": "inferred",
+   "number": "1.3.7"
+  },
+  {
+   "level": 2,
+   "title": "Alexander module and character varieties",
+   "page": 39,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 3,
+   "title": "Reducible character in components of irreducible type",
+   "page": 39,
+   "source": "inferred",
+   "number": "1.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Alexander module",
+   "page": 40,
+   "source": "inferred",
+   "number": "1.4.2"
+  },
+  {
+   "level": 1,
+   "title": "For the \ufb01gure-eight knot, the component of irreducible type and the com-",
+   "page": 43,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The Reidemeister torsion",
+   "page": 43,
+   "source": "inferred",
+   "number": "1.5"
+  },
+  {
+   "level": 3,
+   "title": "First de\ufb01nition",
+   "page": 43,
+   "source": "inferred",
+   "number": "1.5.1"
+  },
+  {
+   "level": 3,
+   "title": "Second de\ufb01nition : the Euler isomorphism",
+   "page": 44,
+   "source": "inferred",
+   "number": "1.5.2"
+  },
+  {
+   "level": 3,
+   "title": "Third de\ufb01nition : torsion of an exact complex (Cayley",
+   "page": 45,
+   "source": "inferred",
+   "number": "1.5.3"
+  },
+  {
+   "level": 2,
+   "title": "The twisted complex with adjoint action",
+   "page": 48,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Tangent space, di\ufb00erential forms and twisted cohomo-",
+   "page": 48,
+   "source": "inferred",
+   "number": "2.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Computation of the twisted cohomology",
+   "page": 50,
+   "source": "inferred",
+   "number": "2.1.2"
+  },
+  {
+   "level": 2,
+   "title": "The adjoint torsion as a di\ufb00erential form",
+   "page": 50,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "The torsion of an Ad\u25e6\u03c1-twisted cellular complex",
+   "page": 50,
+   "source": "inferred",
+   "number": "2.2.1"
+  },
+  {
+   "level": 3,
+   "title": "The Reidemeister torsion form",
+   "page": 51,
+   "source": "inferred",
+   "number": "2.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Examples and computations",
+   "page": 51,
+   "source": "inferred",
+   "number": "2.2.3"
+  },
+  {
+   "level": 1,
+   "title": "Wheny\u2192 2,x\u2192\u221e , we have a double point of type\u201dy2\u2212x6\u201d, its\u03b4-invariant",
+   "page": 54,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "When y,x\u2192\u221e , we have a double point of type\u201dy2\u2212x8\u201d, its\u03b4-invariant is",
+   "page": 54,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The torsion at a \ufb01nite point",
+   "page": 54,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Main Theorem 1",
+   "page": 55,
+   "source": "inferred",
+   "number": "2.3.1"
+  },
+  {
+   "level": 3,
+   "title": "InterpretationoftheTheorem:singularitiesandAlexan-",
+   "page": 58,
+   "source": "inferred",
+   "number": "2.3.2"
+  },
+  {
+   "level": 2,
+   "title": "The torsion at an ideal point",
+   "page": 65,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Moreover, it is a consequence from [Prz83, Proposition 4.3] that as soon as",
+   "page": 66,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Finally, the hypothesis that the irreducible tautological representation\u03c1 :",
+   "page": 66,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "An example : a direct computation of the torsion of the",
+   "page": 66,
+   "source": "inferred",
+   "number": "2.4.1"
+  },
+  {
+   "level": 1,
+   "title": "If the upper-right entry of\u03c1(a) was 0, then again\u03c1 would be reducible, hence we",
+   "page": 67,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(\u2202t)} in{H,E,F }. A direct computation shows that Ad\u03c1(a)F\u2212F = \u2202t,",
+   "page": 70,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Proof of theorem 2.0.2, the case when \u03c1\u03a3 is not resi-",
+   "page": 73,
+   "source": "inferred",
+   "number": "2.4.2"
+  },
+  {
+   "level": 1,
+   "title": "Notice that we have isomorphisms :k(Y )",
+   "page": 74,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Since \u03c1\u03a3 is residually non abelian and so are\u03c11,\u03c1\u2032",
+   "page": 75,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Un =U\u22121",
+   "page": 75,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "In\u2212r0",
+   "page": 76,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 3,
+   "title": "The case when \u03c1\u03a3 is residually abelian",
+   "page": 79,
+   "source": "inferred",
+   "number": "2.4.3"
+  },
+  {
+   "level": 3,
+   "title": "Then",
+   "page": 80,
+   "source": "inferred",
+   "number": "2.4.7"
+  },
+  {
+   "level": 3,
+   "title": "Back to Examples",
+   "page": 82,
+   "source": "inferred",
+   "number": "2.4.4"
+  },
+  {
+   "level": 2,
+   "title": "The torsion function",
+   "page": 86,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The case of a \ufb01nite character",
+   "page": 87,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Theorem 3.0.1",
+   "page": 87,
+   "source": "inferred",
+   "number": "3.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Some computations and examples",
+   "page": 88,
+   "source": "inferred",
+   "number": "3.2.2"
+  },
+  {
+   "level": 2,
+   "title": "The torsion at ideal points",
+   "page": 91,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "The split case",
+   "page": 91,
+   "source": "inferred",
+   "number": "3.3.1"
+  },
+  {
+   "level": 1,
+   "title": "The complement of any\u03a3i in M is the disjoint union of two handlebodies",
+   "page": 92,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "We will denote by \u00af\u03c1i,\u03a3 the restriction of",
+   "page": 95,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "The non-split case",
+   "page": 96,
+   "source": "inferred",
+   "number": "3.3.2"
+  },
+  {
+   "level": 1,
+   "title": "If\u03b41,...,\u03b4 m\u2208Vh such that\u03b4i\u03b4j\u2208Vh for anyi<j , then for any permutation",
+   "page": 100,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "We haveh(\u03b3\u03b4) =\u03c6(\u03b3)h(\u03b4)\u2212h(\u03b3\u22121\u03b4) buth(\u03b4) = 0 andh(\u03b3\u22121\u03b4)+h(\u03b4\u22121\u03b3) = 0,",
+   "page": 101,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "We \ufb01rst remark that Equation (A.1) implies that if\u03b4i,\u03b4j,\u03b4i\u03b4j \u2208 Vh, so is",
+   "page": 101,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "For any\u03b3\u2208 \u0393,",
+   "page": 103,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Letusprovethatforany \u03b3\u03b4\u2208 \u0393,\u03c1 (\u03b3\u03b4) =\u03c1(\u03b3)\u03c1(\u03b4).Let C =",
+   "page": 103,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "A direct computation shows thatT\u03b32 =\u03c6(\u03b3)T\u03b3 +Te = 0, in particular\u03c1(\u03b3)2\u2212",
+   "page": 104,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Finally, we prove the unicity as follows : for any representation\u03c1\u2032 that satis\ufb01es",
+   "page": 104,
+   "source": "inferred",
+   "number": "5"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction-5",
+   "number": "0",
+   "title": "Introduction 5",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-1-character-varieties-and-reidemeister-torsion-1",
+   "number": "1",
+   "title": "Character varieties and Reidemeister torsion 15",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-11-character-varieties-15",
+   "number": "1.1",
+   "title": "Character varieties . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-111-representation-variety-15",
+   "number": "1.1.1",
+   "title": "Representation variety . . . . . . . . . . . . . . . . . . . . . . 15",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-112-algebro-geometric-quotient-16",
+   "number": "1.1.2",
+   "title": "Algebro-geometric quotient . . . . . . . . . . . . . . . . . . . . 16",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-113-traces-and-skein-algebra-18",
+   "number": "1.1.3",
+   "title": "Traces and skein algebra . . . . . . . . . . . . . . . . . . . . . 18",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-114-characters-reducibility-and-irreducibility-2",
+   "number": "1.1.4",
+   "title": "Characters, reducibility and irreducibility . . . . . . . . . . . . 20",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-115-saitos-theorem-and-some-consequences-22",
+   "number": "1.1.5",
+   "title": "Saito\u2019s Theorem and some consequences . . . . . . . . . . . . 22",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-116-the-augmented-variety-23",
+   "number": "1.1.6",
+   "title": "The augmented variety . . . . . . . . . . . . . . . . . . . . . . 23",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-117-the-tautological-representation-24",
+   "number": "1.1.7",
+   "title": "The tautological representation . . . . . . . . . . . . . . . . . 24",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-118-examples-24",
+   "number": "1.1.8",
+   "title": "Examples . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-12-twisted-cohomology-26",
+   "number": "1.2",
+   "title": "Twisted cohomology . . . . . . . . . . . . . . . . . . . . . . . . . . . 26",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-012-13-culler-shalen-theory-group-acting-on-trees-an",
+   "number": "1.3",
+   "title": "Culler-Shalen theory, group acting on trees and incompressible surfaces 29",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-131-the-tree-29",
+   "number": "1.3.1",
+   "title": "The tree . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-014-132-link-of-a-vertex-and-ends-of-the-tree-30",
+   "number": "1.3.2",
+   "title": "Link of a vertex and ends of the tree . . . . . . . . . . . . . . 30",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-015-133-the-sl2-action-stabilizers-of-vertices-\ufb01xed",
+   "number": "1.3.3",
+   "title": "The SL2 action : stabilizers of vertices, \ufb01xed points and trans-",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 72,
+   "n_words": 31
+  },
+  {
+   "id": "sec-016-134-curves-and-valuations-32",
+   "number": "1.3.4",
+   "title": "Curves and valuations . . . . . . . . . . . . . . . . . . . . . . 32",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-017-135-group-acting-on-a-tree-and-splitting-33",
+   "number": "1.3.5",
+   "title": "Group acting on a tree and splitting . . . . . . . . . . . . . . 33",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-018-136-the-split-case-35",
+   "number": "1.3.6",
+   "title": "The split case. . . . . . . . . . . . . . . . . . . . . . . . . . . . 35",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-019-137-the-non-split-case-36",
+   "number": "1.3.7",
+   "title": "The non-split case . . . . . . . . . . . . . . . . . . . . . . . . 36",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-020-14-alexander-module-and-character-varieties-38",
+   "number": "1.4",
+   "title": "Alexander module and character varieties . . . . . . . . . . . . . . . . 38",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-141-reducible-character-in-components-of-irreduc",
+   "number": "1.4.1",
+   "title": "Reducible character in components of irreducible type of the",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 70,
+   "n_words": 28
+  },
+  {
+   "id": "sec-022-142-alexander-module-39",
+   "number": "1.4.2",
+   "title": "Alexander module . . . . . . . . . . . . . . . . . . . . . . . . . 39",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-023-15-the-reidemeister-torsion-42",
+   "number": "1.5",
+   "title": "The Reidemeister torsion . . . . . . . . . . . . . . . . . . . . . . . . . 42",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1,
+   "n_words": 1
+  },
+  {
+   "id": "sec-024-151-first-de\ufb01nition-42",
+   "number": "1.5.1",
+   "title": "First de\ufb01nition . . . . . . . . . . . . . . . . . . . . . . . . . . 42",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-025-152-second-de\ufb01nition-the-euler-isomorphism-43",
+   "number": "1.5.2",
+   "title": "Second de\ufb01nition : the Euler isomorphism . . . . . . . . . . . 43",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-026-153-third-de\ufb01nition-torsion-of-an-exact-complex",
+   "number": "1.5.3",
+   "title": "Third de\ufb01nition : torsion of an exact complex (Cayley formula) 44",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-027-2-the-adjoint-torsion-45",
+   "number": "2",
+   "title": "The adjoint torsion 45",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-028-21-the-twisted-complex-with-adjoint-action-47",
+   "number": "2.1",
+   "title": "The twisted complex with adjoint action . . . . . . . . . . . . . . . . 47",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-029-211-tangent-space-di\ufb00erential-forms-and-twisted",
+   "number": "2.1.1",
+   "title": "Tangent space, di\ufb00erential forms and twisted cohomology . . . 47",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-030-212-computation-of-the-twisted-cohomology-49",
+   "number": "2.1.2",
+   "title": "Computation of the twisted cohomology . . . . . . . . . . . . 49",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-031-22-the-adjoint-torsion-as-a-di\ufb00erential-form-49",
+   "number": "2.2",
+   "title": "The adjoint torsion as a di\ufb00erential form . . . . . . . . . . . . . . . . 49",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-032-221-the-torsion-of-an-ad\u03c1-twisted-cellular-compl",
+   "number": "2.2.1",
+   "title": "The torsion of an Ad\u25e6\u03c1-twisted cellular complex . . . . . . . . 49",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-033-222-the-reidemeister-torsion-form-50",
+   "number": "2.2.2",
+   "title": "The Reidemeister torsion form . . . . . . . . . . . . . . . . . . 50",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-034-223-examples-and-computations-50",
+   "number": "2.2.3",
+   "title": "Examples and computations . . . . . . . . . . . . . . . . . . . 50",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-035-23-the-torsion-at-a-\ufb01nite-point-53",
+   "number": "2.3",
+   "title": "The torsion at a \ufb01nite point . . . . . . . . . . . . . . . . . . . . . . . 53",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-036-231-proof-of-main-theorem-1-54",
+   "number": "2.3.1",
+   "title": "Proof of Main Theorem 1 . . . . . . . . . . . . . . . . . . . . 54",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-037-232-interpretation-of-the-theorem-singularities",
+   "number": "2.3.2",
+   "title": "Interpretation of the Theorem : singularities and Alexander",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 71,
+   "n_words": 33
+  },
+  {
+   "id": "sec-038-24-the-torsion-at-an-ideal-point-64",
+   "number": "2.4",
+   "title": "The torsion at an ideal point . . . . . . . . . . . . . . . . . . . . . . . 64",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-039-241-an-example-a-direct-computation-of-the-torsi",
+   "number": "2.4.1",
+   "title": "An example : a direct computation of the torsion of the trefoil",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 68,
+   "n_words": 15
+  },
+  {
+   "id": "sec-040-242-proof-of-theorem-202-the-case-when\u03c1\u03c2-is-not",
+   "number": "2.4.2",
+   "title": "Proof of theorem 2.0.2, the case when\u03c1\u03a3 is not residually abelian 72",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-041-243-the-case-when-\u03c1\u03c2-is-residually-abelian-78",
+   "number": "2.4.3",
+   "title": "The case when \u03c1\u03a3 is residually abelian . . . . . . . . . . . . . 78",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-042-244-back-to-examples-81",
+   "number": "2.4.4",
+   "title": "Back to Examples . . . . . . . . . . . . . . . . . . . . . . . . . 81",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-043-3-the-standard-torsion-83",
+   "number": "3",
+   "title": "The standard torsion 83",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-044-31-the-torsion-function-85",
+   "number": "3.1",
+   "title": "The torsion function . . . . . . . . . . . . . . . . . . . . . . . . . . . 85",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-045-32-the-case-of-a-\ufb01nite-character-86",
+   "number": "3.2",
+   "title": "The case of a \ufb01nite character . . . . . . . . . . . . . . . . . . . . . . . 86",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-046-321-proof-of-theorem-301-86",
+   "number": "3.2.1",
+   "title": "Proof of Theorem 3.0.1 . . . . . . . . . . . . . . . . . . . . . . 86",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-047-322-some-computations-and-examples-87",
+   "number": "3.2.2",
+   "title": "Some computations and examples . . . . . . . . . . . . . . . . 87",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-048-33-the-torsion-at-ideal-points-90",
+   "number": "3.3",
+   "title": "The torsion at ideal points . . . . . . . . . . . . . . . . . . . . . . . . 90",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-049-331-the-split-case-90",
+   "number": "3.3.1",
+   "title": "The split case . . . . . . . . . . . . . . . . . . . . . . . . . . . 90",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 118,
+   "n_words": 38
+  },
+  {
+   "id": "sec-050-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5384,
+   "n_words": 931
+  },
+  {
+   "id": "sec-051-2-1i1",
+   "number": "2",
+   "title": "(\u22121)i+1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2594,
+   "n_words": 427
+  },
+  {
+   "id": "sec-052-1-byhm-ad\u03c1-respectivelyhm\u03c1-we-denote-the-twisted",
+   "number": "1",
+   "title": "ByH\u2217(M, Ad\u25e6\u03c1) (respectivelyH\u2217(M,\u03c1 )), we denote the twisted cohomology",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 68,
+   "n_words": 9
+  },
+  {
+   "id": "sec-053-2-whenever-\u03c1-\u03c01m-sl2ov-we-denote-byhm-ad\u03c1v-respe",
+   "number": "2",
+   "title": "Whenever \u03c1 :\u03c01(M)\u2192 SL2(Ov), we denote byH\u2217(M, Ad\u25e6\u03c1)v (respectively",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 68,
+   "n_words": 10
+  },
+  {
+   "id": "sec-054-3-in-this-case-we-denote-by\u03c1-\u03c01m-sl2k-the-compos",
+   "number": "3",
+   "title": "In this case, we denote by\u00af\u03c1 : \u03c01(M)\u2192 SL2(k) the composition of\u03c1 with",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 123,
+   "n_words": 19
+  },
+  {
+   "id": "sec-055-4-for\u03bb-\u03c01mk-we-denote-byhm\u03bb-the-twisted-cohomolo",
+   "number": "4",
+   "title": "For\u03bb :\u03c01(M)\u2192k\u2217, we denote byH\u2217(M,\u03bb ) the twisted cohomology groups",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3645,
+   "n_words": 607
+  },
+  {
+   "id": "sec-056-1-ifv-projects-to-an-irreducible-character-inxm",
+   "number": "1",
+   "title": "Ifv projects to an irreducible character inX(M), then the vanishing order of",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 254,
+   "n_words": 44
+  },
+  {
+   "id": "sec-057-2-suppose-thatm-is-a-knot-complement-andm-is-a-m",
+   "number": "2",
+   "title": "Suppose thatM is a knot complement andm is a meridian. Ifv projects to",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 16,
+   "n_chars": 9328,
+   "n_words": 1549
+  },
+  {
+   "id": "sec-058-11-character-varieties",
+   "number": "1.1",
+   "title": "Character varieties",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 921,
+   "n_words": 148
+  },
+  {
+   "id": "sec-059-111-representation-variety",
+   "number": "1.1.1",
+   "title": "Representation variety",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1882,
+   "n_words": 328
+  },
+  {
+   "id": "sec-060-112-algebro-geometric-quotient",
+   "number": "1.1.2",
+   "title": "Algebro-geometric quotient",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 3754,
+   "n_words": 612
+  },
+  {
+   "id": "sec-061-113-traces-and-skein-algebra",
+   "number": "1.1.3",
+   "title": "Traces and skein algebra",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 414,
+   "n_words": 64
+  },
+  {
+   "id": "sec-062-0-after-right-multiplying-bya1b-and-taking-the-t",
+   "number": "0",
+   "title": "After right-multiplying byA\u22121B and taking the trace, one obtains Tr(AB)\u2212",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3066,
+   "n_words": 517
+  },
+  {
+   "id": "sec-063-114-characters-reducibility-and-irreducibility",
+   "number": "1.1.4",
+   "title": "Characters, reducibility and irreducibility",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 2600,
+   "n_words": 449
+  },
+  {
+   "id": "sec-064-115-saitos-theorem-and-some-consequences",
+   "number": "1.1.5",
+   "title": "Saito\u2019s Theorem and some consequences",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2197,
+   "n_words": 370
+  },
+  {
+   "id": "sec-065-116-the-augmented-variety",
+   "number": "1.1.6",
+   "title": "The augmented variety",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2129,
+   "n_words": 330
+  },
+  {
+   "id": "sec-066-117-the-tautological-representation",
+   "number": "1.1.7",
+   "title": "The tautological representation",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1185,
+   "n_words": 166
+  },
+  {
+   "id": "sec-067-118-examples",
+   "number": "1.1.8",
+   "title": "Examples",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 3133,
+   "n_words": 572
+  },
+  {
+   "id": "sec-068-12-twisted-cohomology",
+   "number": "1.2",
+   "title": "Twisted cohomology",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 4327,
+   "n_words": 691
+  },
+  {
+   "id": "sec-069-13-culler-shalen-theory-group-acting-on-trees-an",
+   "number": "1.3",
+   "title": "Culler-Shalen theory, group acting on trees and",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 507,
+   "n_words": 76
+  },
+  {
+   "id": "sec-070-131-the-tree",
+   "number": "1.3.1",
+   "title": "The tree",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2066,
+   "n_words": 374
+  },
+  {
+   "id": "sec-071-132-link-of-a-vertex-and-ends-of-the-tree",
+   "number": "1.3.2",
+   "title": "Link of a vertex and ends of the tree",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 737,
+   "n_words": 133
+  },
+  {
+   "id": "sec-072-133-the-sl2-action-stabilizers-of-vertices-\ufb01xed",
+   "number": "1.3.3",
+   "title": "The SL2 action : stabilizers of vertices, \ufb01xed points and",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 1409,
+   "n_words": 257
+  },
+  {
+   "id": "sec-073-1-elliptic-elements",
+   "number": "1",
+   "title": "Elliptic elements",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 217,
+   "n_words": 45
+  },
+  {
+   "id": "sec-074-2-hyperbolic-elements",
+   "number": "2",
+   "title": "Hyperbolic elements",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 1818,
+   "n_words": 333
+  },
+  {
+   "id": "sec-075-134-curves-and-valuations",
+   "number": "1.3.4",
+   "title": "Curves and valuations",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 1799,
+   "n_words": 305
+  },
+  {
+   "id": "sec-076-135-group-acting-on-a-tree-and-splitting",
+   "number": "1.3.5",
+   "title": "Group acting on a tree and splitting",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 5052,
+   "n_words": 856
+  },
+  {
+   "id": "sec-077-2-for-each-component\u03c3i-of-\u03c3-the-homomorphism\u03c01\u03c3i",
+   "number": "2",
+   "title": "For each component\u03a3i of \u03a3, the homomorphism\u03c01(\u03a3i)\u2192 \u03c01(M) induced",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 2349,
+   "n_words": 414
+  },
+  {
+   "id": "sec-078-137-the-non-split-case",
+   "number": "1.3.7",
+   "title": "The non-split case",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 2715,
+   "n_words": 479
+  },
+  {
+   "id": "sec-079-14-alexander-module-and-character-varieties",
+   "number": "1.4",
+   "title": "Alexander module and character varieties",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 252,
+   "n_words": 28
+  },
+  {
+   "id": "sec-080-141-reducible-character-in-components-of-irreduc",
+   "number": "1.4.1",
+   "title": "Reducible character in components of irreducible type",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 43,
+   "n_chars": 8314,
+   "n_words": 1405
+  },
+  {
+   "id": "sec-081-2-for-the-\ufb01gure-eight-knot-the-component-of-irre",
+   "number": "2",
+   "title": "For the \ufb01gure-eight knot, the component of irreducible type and the com-",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 182,
+   "n_words": 37
+  },
+  {
+   "id": "sec-082-15-the-reidemeister-torsion",
+   "number": "1.5",
+   "title": "The Reidemeister torsion",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 332,
+   "n_words": 56
+  },
+  {
+   "id": "sec-083-151-first-de\ufb01nition",
+   "number": "1.5.1",
+   "title": "First de\ufb01nition",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 955,
+   "n_words": 163
+  },
+  {
+   "id": "sec-084-152-second-de\ufb01nition-the-euler-isomorphism",
+   "number": "1.5.2",
+   "title": "Second de\ufb01nition : the Euler isomorphism",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 1139,
+   "n_words": 183
+  },
+  {
+   "id": "sec-085-153-third-de\ufb01nition-torsion-of-an-exact-complex",
+   "number": "1.5.3",
+   "title": "Third de\ufb01nition : torsion of an exact complex (Cayley",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 5373,
+   "n_words": 909
+  },
+  {
+   "id": "sec-086-21-the-twisted-complex-with-adjoint-action",
+   "number": "2.1",
+   "title": "The twisted complex with adjoint action",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 93,
+   "n_words": 15
+  },
+  {
+   "id": "sec-087-211-tangent-space-di\ufb00erential-forms-and-twisted",
+   "number": "2.1.1",
+   "title": "Tangent space, di\ufb00erential forms and twisted cohomo-",
+   "level": 3,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 2767,
+   "n_words": 450
+  },
+  {
+   "id": "sec-088-212-computation-of-the-twisted-cohomology",
+   "number": "2.1.2",
+   "title": "Computation of the twisted cohomology",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 1486,
+   "n_words": 246
+  },
+  {
+   "id": "sec-089-22-the-adjoint-torsion-as-a-di\ufb00erential-form",
+   "number": "2.2",
+   "title": "The adjoint torsion as a di\ufb00erential form",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 215,
+   "n_words": 36
+  },
+  {
+   "id": "sec-090-221-the-torsion-of-an-ad\u03c1-twisted-cellular-compl",
+   "number": "2.2.1",
+   "title": "The torsion of an Ad\u25e6\u03c1-twisted cellular complex",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 1023,
+   "n_words": 195
+  },
+  {
+   "id": "sec-091-222-the-reidemeister-torsion-form",
+   "number": "2.2.2",
+   "title": "The Reidemeister torsion form",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 667,
+   "n_words": 104
+  },
+  {
+   "id": "sec-092-223-examples-and-computations",
+   "number": "2.2.3",
+   "title": "Examples and computations",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 54,
+   "n_chars": 5022,
+   "n_words": 942
+  },
+  {
+   "id": "sec-093-1-wheny-2x-we-have-a-double-point-of-typey2x6-it",
+   "number": "1",
+   "title": "Wheny\u2192 2,x\u2192\u221e , we have a double point of type\u201dy2\u2212x6\u201d, its\u03b4-invariant",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 5,
+   "n_words": 2
+  },
+  {
+   "id": "sec-094-2-when-yx-we-have-a-double-point-of-typey2x8-its",
+   "number": "2",
+   "title": "When y,x\u2192\u221e , we have a double point of type\u201dy2\u2212x8\u201d, its\u03b4-invariant is",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 622,
+   "n_words": 117
+  },
+  {
+   "id": "sec-095-23-the-torsion-at-a-\ufb01nite-point",
+   "number": "2.3",
+   "title": "The torsion at a \ufb01nite point",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 55,
+   "n_chars": 782,
+   "n_words": 133
+  },
+  {
+   "id": "sec-096-231-proof-of-main-theorem-1",
+   "number": "2.3.1",
+   "title": "Proof of Main Theorem 1",
+   "level": 3,
+   "page_start": 55,
+   "page_end": 58,
+   "n_chars": 5523,
+   "n_words": 898
+  },
+  {
+   "id": "sec-097-232-interpretationofthetheoremsingularitiesandal",
+   "number": "2.3.2",
+   "title": "InterpretationoftheTheorem:singularitiesandAlexan-",
+   "level": 3,
+   "page_start": 58,
+   "page_end": 65,
+   "n_chars": 11657,
+   "n_words": 1921
+  },
+  {
+   "id": "sec-098-24-the-torsion-at-an-ideal-point",
+   "number": "2.4",
+   "title": "The torsion at an ideal point",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 66,
+   "n_chars": 1548,
+   "n_words": 252
+  },
+  {
+   "id": "sec-099-2-moreover-it-is-a-consequence-from-prz83-propos",
+   "number": "2",
+   "title": "Moreover, it is a consequence from [Prz83, Proposition 4.3] that as soon as",
+   "level": 1,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 64,
+   "n_words": 10
+  },
+  {
+   "id": "sec-100-3-finally-the-hypothesis-that-the-irreducible-ta",
+   "number": "3",
+   "title": "Finally, the hypothesis that the irreducible tautological representation\u03c1 :",
+   "level": 1,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 708,
+   "n_words": 99
+  },
+  {
+   "id": "sec-101-241-an-example-a-direct-computation-of-the-torsi",
+   "number": "2.4.1",
+   "title": "An example : a direct computation of the torsion of the",
+   "level": 3,
+   "page_start": 66,
+   "page_end": 67,
+   "n_chars": 1374,
+   "n_words": 239
+  },
+  {
+   "id": "sec-102-1-if-the-upper-right-entry-of\u03c1a-was-0-then-again",
+   "number": "1",
+   "title": "If the upper-right entry of\u03c1(a) was 0, then again\u03c1 would be reducible, hence we",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 70,
+   "n_chars": 3807,
+   "n_words": 628
+  },
+  {
+   "id": "sec-103-1-t-inhef-a-direct-computation-shows-that-ad\u03c1aff",
+   "number": "1",
+   "title": "(\u2202t)} in{H,E,F }. A direct computation shows that Ad\u03c1(a)F\u2212F = \u2202t,",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 73,
+   "n_chars": 3943,
+   "n_words": 717
+  },
+  {
+   "id": "sec-104-242-proof-of-theorem-202-the-case-when-\u03c1\u03c2-is-not",
+   "number": "2.4.2",
+   "title": "Proof of theorem 2.0.2, the case when \u03c1\u03a3 is not resi-",
+   "level": 3,
+   "page_start": 73,
+   "page_end": 74,
+   "n_chars": 2972,
+   "n_words": 485
+  },
+  {
+   "id": "sec-105-2-notice-that-we-have-isomorphisms-ky",
+   "number": "2",
+   "title": "Notice that we have isomorphisms :k(Y )",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 75,
+   "n_chars": 79,
+   "n_words": 17
+  },
+  {
+   "id": "sec-106-3-since-\u03c1\u03c2-is-residually-non-abelian-and-so-are\u03c1",
+   "number": "3",
+   "title": "Since \u03c1\u03a3 is residually non abelian and so are\u03c11,\u03c1\u2032",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 75,
+   "n_chars": 767,
+   "n_words": 139
+  },
+  {
+   "id": "sec-107-2-un-u1",
+   "number": "2",
+   "title": "Un =U\u22121",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 76,
+   "n_chars": 2142,
+   "n_words": 399
+  },
+  {
+   "id": "sec-108-0-inr0",
+   "number": "0",
+   "title": "In\u2212r0",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 79,
+   "n_chars": 3874,
+   "n_words": 622
+  },
+  {
+   "id": "sec-109-243-the-case-when-\u03c1\u03c2-is-residually-abelian",
+   "number": "2.4.3",
+   "title": "The case when \u03c1\u03a3 is residually abelian",
+   "level": 3,
+   "page_start": 79,
+   "page_end": 79,
+   "n_chars": 246,
+   "n_words": 42
+  },
+  {
+   "id": "sec-110-247-then",
+   "number": "2.4.7",
+   "title": "Then",
+   "level": 3,
+   "page_start": 79,
+   "page_end": 82,
+   "n_chars": 3609,
+   "n_words": 587
+  },
+  {
+   "id": "sec-111-244-back-to-examples",
+   "number": "2.4.4",
+   "title": "Back to Examples",
+   "level": 3,
+   "page_start": 82,
+   "page_end": 85,
+   "n_chars": 3839,
+   "n_words": 633
+  },
+  {
+   "id": "sec-112-31-the-torsion-function",
+   "number": "3.1",
+   "title": "The torsion function",
+   "level": 2,
+   "page_start": 85,
+   "page_end": 87,
+   "n_chars": 6093,
+   "n_words": 987
+  },
+  {
+   "id": "sec-113-32-the-case-of-a-\ufb01nite-character",
+   "number": "3.2",
+   "title": "The case of a \ufb01nite character",
+   "level": 2,
+   "page_start": 87,
+   "page_end": 87,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-114-321-proof-of-theorem-301",
+   "number": "3.2.1",
+   "title": "Proof of Theorem 3.0.1",
+   "level": 3,
+   "page_start": 87,
+   "page_end": 88,
+   "n_chars": 1908,
+   "n_words": 311
+  },
+  {
+   "id": "sec-115-322-some-computations-and-examples",
+   "number": "3.2.2",
+   "title": "Some computations and examples",
+   "level": 3,
+   "page_start": 88,
+   "page_end": 91,
+   "n_chars": 2759,
+   "n_words": 499
+  },
+  {
+   "id": "sec-116-33-the-torsion-at-ideal-points",
+   "number": "3.3",
+   "title": "The torsion at ideal points",
+   "level": 2,
+   "page_start": 91,
+   "page_end": 91,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-117-331-the-split-case",
+   "number": "3.3.1",
+   "title": "The split case",
+   "level": 3,
+   "page_start": 91,
+   "page_end": 92,
+   "n_chars": 722,
+   "n_words": 129
+  },
+  {
+   "id": "sec-118-2-the-complement-of-any\u03c3i-in-m-is-the-disjoint-u",
+   "number": "2",
+   "title": "The complement of any\u03a3i in M is the disjoint union of two handlebodies",
+   "level": 1,
+   "page_start": 92,
+   "page_end": 95,
+   "n_chars": 4375,
+   "n_words": 731
+  },
+  {
+   "id": "sec-119-2-we-will-denote-by-\u03c1i\u03c3-the-restriction-of",
+   "number": "2",
+   "title": "We will denote by \u00af\u03c1i,\u03a3 the restriction of",
+   "level": 1,
+   "page_start": 95,
+   "page_end": 96,
+   "n_chars": 2960,
+   "n_words": 506
+  },
+  {
+   "id": "sec-120-332-the-non-split-case",
+   "number": "3.3.2",
+   "title": "The non-split case",
+   "level": 3,
+   "page_start": 96,
+   "page_end": 100,
+   "n_chars": 4724,
+   "n_words": 812
+  },
+  {
+   "id": "sec-121-3-if\u03b41\u03b4-mvh-such-that\u03b4i\u03b4jvh-for-anyij-then-for-a",
+   "number": "3",
+   "title": "If\u03b41,...,\u03b4 m\u2208Vh such that\u03b4i\u03b4j\u2208Vh for anyi<j , then for any permutation",
+   "level": 1,
+   "page_start": 100,
+   "page_end": 101,
+   "n_chars": 135,
+   "n_words": 23
+  },
+  {
+   "id": "sec-122-2-we-haveh\u03b3\u03b4-\u03c6\u03b3h\u03b4h\u03b31\u03b4-buth\u03b4-0-andh\u03b31\u03b4h\u03b41\u03b3-0",
+   "number": "2",
+   "title": "We haveh(\u03b3\u03b4) =\u03c6(\u03b3)h(\u03b4)\u2212h(\u03b3\u22121\u03b4) buth(\u03b4) = 0 andh(\u03b3\u22121\u03b4)+h(\u03b4\u22121\u03b3) = 0,",
+   "level": 1,
+   "page_start": 101,
+   "page_end": 101,
+   "n_chars": 21,
+   "n_words": 3
+  },
+  {
+   "id": "sec-123-3-we-\ufb01rst-remark-that-equation-a1-implies-that-i",
+   "number": "3",
+   "title": "We \ufb01rst remark that Equation (A.1) implies that if\u03b4i,\u03b4j,\u03b4i\u03b4j \u2208 Vh, so is",
+   "level": 1,
+   "page_start": 101,
+   "page_end": 102,
+   "n_chars": 1403,
+   "n_words": 224
+  },
+  {
+   "id": "sec-124-2-for-any\u03b3-\u03b3",
+   "number": "2",
+   "title": "For any\u03b3\u2208 \u0393,",
+   "level": 1,
+   "page_start": 102,
+   "page_end": 103,
+   "n_chars": 1771,
+   "n_words": 337
+  },
+  {
+   "id": "sec-125-3-letusprovethatforany-\u03b3\u03b4-\u03b3\u03c1-\u03b3\u03b4-\u03c1\u03b3\u03c1\u03b4let-c",
+   "number": "3",
+   "title": "Letusprovethatforany \u03b3\u03b4\u2208 \u0393,\u03c1 (\u03b3\u03b4) =\u03c1(\u03b3)\u03c1(\u03b4).Let C =",
+   "level": 1,
+   "page_start": 103,
+   "page_end": 104,
+   "n_chars": 1289,
+   "n_words": 235
+  },
+  {
+   "id": "sec-126-4-a-direct-computation-shows-thatt\u03b32-\u03c6\u03b3t\u03b3-te-0-i",
+   "number": "4",
+   "title": "A direct computation shows thatT\u03b32 =\u03c6(\u03b3)T\u03b3 +Te = 0, in particular\u03c1(\u03b3)2\u2212",
+   "level": 1,
+   "page_start": 104,
+   "page_end": 104,
+   "n_chars": 52,
+   "n_words": 10
+  },
+  {
+   "id": "sec-127-5-finally-we-prove-the-unicity-as-follows-for-an",
+   "number": "5",
+   "title": "Finally, we prove the unicity as follows : for any representation\u03c1\u2032 that satis\ufb01es",
+   "level": 1,
+   "page_start": 104,
+   "page_end": 110,
+   "n_chars": 7539,
+   "n_words": 1044
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 2,
+  "likely_scanned": false,
+  "toc_entries": 130,
+  "sections": 128,
+  "chars_total": 177273
+ }
+}

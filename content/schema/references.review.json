@@ -15,7 +15,7 @@
       "status": "one of statusEnum",
       "by": "GitHub handle of the human reviewer",
       "date": "ISO YYYY-MM-DD",
-      "source": "uploads/ filename, or 'issue#NNN' of the physical-review GitHub issue",
+      "source": "library/ filename, or 'issue#NNN' of the physical-review GitHub issue",
       "page": "page(s)/section verified against the source",
       "entryHash": "12-char SHA-256 prefix of the canonical-JSON-serialized references.ts entry (staleness gate)"
     }
@@ -33,7 +33,7 @@
       "status": "validated",
       "by": "agent-backfill",
       "date": "2026-06-12",
-      "source": "uploads/0409565v2.pdf",
+      "source": "library/arxiv-math-0409565v2/0409565v2.pdf",
       "page": "auto-identified",
       "entryHash": "bc4b9215fa90"
     }

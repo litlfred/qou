@@ -20,7 +20,7 @@ target is the $h^2$-coefficient $\sum_{k=1}^{n-1}(k^2-1)/24$.
 — 9/9 assertions, exit 0 (sympy exact + mpmath 60 dps, tol $10^{-30}$;
 audit-only; both q₀ pins).
 
-## 0. What was read from Ramis–Sauloy–Zhang (Astérisque 355, `uploads/0903.0853v3.pdf`)
+## 0. What was read from Ramis–Sauloy–Zhang (Astérisque 355, `library/arxiv-0903.0853v3/0903.0853v3.pdf`)
 
 | Cite | Content used |
 |---|---|
@@ -256,7 +256,7 @@ second order, with an explicit positive fibre realization. Not proved.
 
 - Target conjecture: [`schwinger-measure-computational-time.md`](../../content/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time.md)
 - Attacks A + E (the reduction + the balanced refinement): [`2026-07-25-borel-propertime-attack-a-e.md`](2026-07-25-borel-propertime-attack-a-e.md); Lean [`BorelProperTimeMoment.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/BorelProperTimeMoment.lean)
-- RSZ source: `uploads/0903.0853v3.pdf` (Def 2.3.3; §3.3.1; eq. (1.2); §1.2.1; §1.1.3); prior corpus extractions [`2026-07-20-qlift-routeA-rsz-invariants.md`](2026-07-20-qlift-routeA-rsz-invariants.md), [`2026-07-20-qlift-routeD-qborel-transform.md`](2026-07-20-qlift-routeD-qborel-transform.md), [`2026-07-20-qlift-doorI-analytic-summation.md`](2026-07-20-qlift-doorI-analytic-summation.md)
+- RSZ source: `library/arxiv-0903.0853v3/0903.0853v3.pdf` (Def 2.3.3; §3.3.1; eq. (1.2); §1.2.1; §1.1.3); prior corpus extractions [`2026-07-20-qlift-routeA-rsz-invariants.md`](2026-07-20-qlift-routeA-rsz-invariants.md), [`2026-07-20-qlift-routeD-qborel-transform.md`](2026-07-20-qlift-routeD-qborel-transform.md), [`2026-07-20-qlift-doorI-analytic-summation.md`](2026-07-20-qlift-doorI-analytic-summation.md)
 - Confluence literature route (outside RSZ): Di Vizio–Zhang, *On q-summation and confluence*, Ann. Inst. Fourier 59(1):347–392 (2009)
 - Balanced convention: [`BalancedQuantumTwist.lean`](../../content/quantum-observable-universe/lean/QOU/Common/BalancedQuantumTwist.lean)
 - Probe + witness: [`qborel_confluence_pos_probe.py`](../../computations/probes/qborel_confluence_pos_probe.py), [`qborel-confluence-pos.witness.json`](../../computations/probes/qborel-confluence-pos.witness.json)

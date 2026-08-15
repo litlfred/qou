@@ -194,7 +194,7 @@ def main():
             "corrects": "#3864 2026-07-18 update — the per-factor product m(5τ₀)³·m(τ₀)≈8.226 is NOT "
                         "the T⁸ boson measure (genus-2 shows measure≠product by ×1.35); retracted",
             "structure_source": "Jac(Bring)≅E_5τ₀³×E_τ₀, period τ₀·M (Braden–Disney-Hogg Thm 2.12 + "
-                                "Prop 4.6; PDF uploads/2208.13692v1.pdf)",
+                                "Prop 4.6; PDF library/arxiv-2208.13692v1/2208.13692v1.pdf)",
             "deferred": "full genus-4 Epstein det'Δ at the thin Bring modulus (Im τ₀=0.187) — needs "
                         "Siegel reduction for numerical convergence",
             "scope_guard": "no q₀, no 8π manufactured, nothing wired, no tier change; scope-(a)",

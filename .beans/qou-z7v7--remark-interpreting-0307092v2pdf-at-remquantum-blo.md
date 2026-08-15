@@ -13,7 +13,7 @@ The corpus's quantum Bloch group blocks develop the Phi_q pentagon without recor
 - Sec. 1, 'Roger's dilogarithm function' map R : Bhat(C) -> C/pi^2 Z — The extended Rogers dilogarithm is well defined modulo pi^2 Z on flattened shape parameters, giving the complex volume exactly where the ordinary Bloch group determines the Chern--Simons invariant only up to an additive ambiguity.
   Use here: This is the derived-not-chosen datum the corpus's normalization-route argument needs; citing it converts that argument's central assertion from an uncited claim into a sourced theorem.
 
-Source: `uploads/0307092v2.pdf` — no `references.ts` entry yet
+Source: `library/0307092v2/0307092v2.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

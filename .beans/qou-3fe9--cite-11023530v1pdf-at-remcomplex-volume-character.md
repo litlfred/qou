@@ -13,7 +13,7 @@ The complex-volume path block discusses the Vol + i*CS pairing and its phase com
 - Abstract / §1 — From the asymptotic behaviour of an evaluation of the colored Jones polynomial of the figure-eight knot one can extract both the Chern-Simons invariant and the twisted Reidemeister torsion associated with an SL(2,C) representation of the knot-group.
   Use here: Supplies, for the exact knot QOU anchors on, the joint colored-Jones to (CS, torsion) extraction that rem:complex-volume-character-variety-path and the 1-loop/torsion blocks currently treat as unsourced background.
 
-Source: `uploads/1102.3530v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1102.3530v1/1102.3530v1.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

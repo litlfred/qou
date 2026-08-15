@@ -5,7 +5,7 @@
 **Bean:** s013 (keystone value-map)
 **Lean:** [`QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean) — verified lean-direct, exit 0, sorry-free.
 **Follows:** [`2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md`](2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md) (the last q-Bessel node screen).
-**New source identified:** [`uploads/9805023v1.pdf`](../../uploads/9805023v1.pdf) (owner upload, commit `8e311cb`) — Ciccoli N., Koelink E., Koornwinder T.H., "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations", *Methods and Applications of Analysis* **6** (1999) 109–127, arXiv:math/9805023 (math.CA); bib key `[ciccolikoelinkkoornwinder1999]`.
+**New source identified:** [`library/arxiv-math-9805023v1/9805023v1.pdf`](../../library/arxiv-math-9805023v1/9805023v1.pdf) (owner upload, commit `8e311cb`) — Ciccoli N., Koelink E., Koornwinder T.H., "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations", *Methods and Applications of Analysis* **6** (1999) 109–127, arXiv:math/9805023 (math.CA); bib key `[ciccolikoelinkkoornwinder1999]`.
 
 ## Two questions, answered
 

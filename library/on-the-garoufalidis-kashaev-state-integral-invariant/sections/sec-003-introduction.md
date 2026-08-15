@@ -1,0 +1,11 @@
+---
+doc_id: on-the-garoufalidis-kashaev-state-integral-invariant
+doc_title: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025"
+section_id: sec-003-introduction
+section_title: "Introduction"
+section_number: null
+pages: 11-11
+source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
+source_sha256: eda230da2a596783
+---
+

@@ -1,0 +1,11 @@
+---
+doc_id: arxiv-1701.06567v2
+doc_title: "BPS spectra and 3-manifold invariants"
+section_id: sec-004-1-introduction-2
+section_title: "Introduction 2"
+section_number: 1
+pages: 2-2
+source_pdf: 1701.06567v2.pdf
+source_sha256: c1610b50f5a7e22c
+---
+

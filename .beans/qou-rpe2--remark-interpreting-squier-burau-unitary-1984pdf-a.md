@@ -13,7 +13,7 @@ Record the invariant-form statement next to the Burau-at-i monodromy work, toget
 - Theorem (p. 199) and section 3 — There is a nonsingular matrix J_0 over Z[t,t^{-1}] with beta(w)* J_0 beta(w) = J_0 for all braid words; over Z[s,s^{-1}] (s^2 = t) a change of basis makes it Hermitian, and each generator acts as a unitary reflection.
   Use here: Supplies the standard invariant-form statement for the braid representation the corpus's Burau-at-i computation uses, and a citable anchor for the corpus's otherwise unsourced unitarity assertion.
 
-Source: `uploads/squier-burau-unitary-1984.pdf` — no `references.ts` entry yet
+Source: `library/squier-burau-unitary-1984/squier-burau-unitary-1984.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -3,7 +3,7 @@
 
 Workplan step 2 of docs/workplans/2026-07-20-qlift-borel-kernel-workplan.md.
 Literature basis: docs/audits/2026-07-20-qlift-literature-check.md (S2 inferred
-c(q)=1 candidate; S4 GGM eq-49 order-2 carrier verified from uploads/2012.00062v3.pdf).
+c(q)=1 candidate; S4 GGM eq-49 order-2 carrier verified from library/arxiv-2012.00062v3/2012.00062v3.pdf).
 
 Candidates for the q-lift of the PROVED classical depth-2 kernel
     (n+2) * b_{n+2} = b_{n+1} + b_n
@@ -292,7 +292,7 @@ def main():
             "workplan": "docs/workplans/2026-07-20-qlift-borel-kernel-workplan.md (step 2)",
             "literature_check": "docs/audits/2026-07-20-qlift-literature-check.md "
                                 "(S2 c(q)=1 inference; S4 GGM eq-49 verified from "
-                                "uploads/2012.00062v3.pdf pp.14-15)",
+                                "library/arxiv-2012.00062v3/2012.00062v3.pdf pp.14-15)",
             "classical_kernel_lean": "QOU.Mass.QDifferenceConfluentObstruction."
                                      "normalized_classical_kernel_exists",
             "discipline": "scope-(a) structural comparison; no AME data; "

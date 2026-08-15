@@ -12,7 +12,7 @@
 The primary sources for the genuine colored amplitude (Lawrence–Rozansky 1999; Hikami
 arXiv:1811.05376; Andersen–Mistegård arXiv:2205.01282) are **firewalled in this sandbox**
 (arXiv/proxy 403 on every route tried: paper-search MCP, WebFetch on arxiv.org /
-export.arxiv.org / sigma-journal.com / ncatlab.org; `uploads/` does not carry them). Per the
+export.arxiv.org / sigma-journal.com / ncatlab.org; `library/` does not carry them). Per the
 s013 discipline note ("the colored-amplitude FORMULA is where fabrication risk is real"),
 this round therefore restricts itself to what is **derivable and machine-verifiable in-repo**
 — nothing below is quoted from memory of the papers.
@@ -116,7 +116,7 @@ firewalled primary sources.
    level of the modular transform* (not the naive residue signs). Requires the primary
    sources; next session should run from an environment where arXiv is reachable, or the
    owner can drop the PDFs (Hikami arXiv:1811.05376; Andersen–Mistegård arXiv:2205.01282;
-   Lawrence–Rozansky CMP 205 (1999)) into `uploads/`.
+   Lawrence–Rozansky CMP 205 (1999)) into `library/`.
 
 The keystone structure result (E₈-exponent family, 4↔4 monotone correspondence, H₄⊂E₈
 folding) is untouched by these prunes — they sharpen where its *numerical realization* must

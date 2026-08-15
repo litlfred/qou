@@ -33,7 +33,7 @@ merge commit; needs cherry-pick not rebase).
 | # | Todo | Source | Size |
 |---|------|--------|------|
 | B1 | `freedman1994` borderline tier-3 — issue vs source-in-repo (author call) | session-handover §2; #2043 | trivial |
-| B2 | Bib workflow phases 3–4 (photo-ingestion watcher; agent-sourced backfill over `uploads/`) | session-handover §3 | multi-session |
+| B2 | Bib workflow phases 3–4 (photo-ingestion watcher; agent-sourced backfill over `library/`) | session-handover §3 | multi-session |
 | B3 | Triage 333 unreviewed refs by availability (one issue per *physical*-access ref only; do NOT mass-seed) | session-handover §2 | ongoing |
 | B4 | Triage fresh HUMAN-REVIEW refs `domagala-lewandowski-2004`, `meissner2004`, `ashtekar-baez-corichi-krasnov-1998` | session-handover §3 | small |
 

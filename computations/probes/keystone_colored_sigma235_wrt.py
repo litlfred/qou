@@ -14,7 +14,7 @@ CLOSED-manifold invariant Ψ(1/q₀) = 2.3296 — ONE number — and its verdict
 NORMALISATION (corrected 2026-08-09). Two series are in play and they are NOT the same object:
 
     Ψ_LZ(q) = Σ χ(n) q^{n²/120}              (Lawrence–Zagier/Hikami false theta)
-    S_JL(q) = Σ χ(n) q^{(n²−1)/120}          (Jacoby–Lawrence, uploads/04procbryden.pdf p.55)
+    S_JL(q) = Σ χ(n) q^{(n²−1)/120}          (Jacoby–Lawrence, library/04procbryden/04procbryden.pdf p.55)
 
 They differ by exactly one universal factor, Ψ_LZ = q^{1/120}·S_JL — not by any n-dependent
 reindexing, because (n²−1)/120 is an INTEGER on the whole support of χ. That integrality is

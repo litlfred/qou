@@ -7,7 +7,7 @@ WHY. A3 falsified the analytic NZ-saddle datum as the capstone carrier
 (no zero at q*; a smooth prefactor cannot manufacture one), narrowing the
 Im 𝔙_q → N_odd carrier search to the CATEGORICAL colored-trace face. This
 probe builds that face exactly, from the owner-supplied Masbaum paper
-(uploads/0306345v1.pdf, arXiv:math/0306345), and asks the same
+(library/0306345v1/0306345v1.pdf, arXiv:math/0306345), and asks the same
 falsification question: does the bar-odd tower datum
     B_N(q) := [J'_N(q) − J'_N(1/q)] / 2      (bar involution = mirror)
 have a zero crossing at (or near) q* — capstone constraint (2)?
@@ -319,7 +319,7 @@ def main() -> int:
                             "the Thm-5.1 p=2 assembly (as transcribed) is NOT J'_N(5₂)")
     ok = all(a.passed for a in wb.assertions)
 
-    wb.add_data("source", "Masbaum math/0306345 (uploads/0306345v1.pdf) Thm 5.1, "
+    wb.add_data("source", "Masbaum math/0306345 (library/0306345v1/0306345v1.pdf) Thm 5.1, "
                           "Rmk 5.2, §5 Example (p=2); arbiter: GZ 2111.06645 eq (7.9)")
     wb.add_data("kashaev_growth_tower", {str(N): f"{v:.6f}"
                                          for N, v in zip(Ns, growth)})

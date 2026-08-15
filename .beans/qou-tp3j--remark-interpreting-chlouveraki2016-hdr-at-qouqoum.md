@@ -13,7 +13,7 @@ The Lean -- Ref: at wenzl-bridge-applicability-qou.lean:82/:106 cites 'HDR Theor
 - Thm 6.20 — Unique linear Markov trace on the Yokonuma-Hecke tower Y_{d,n}(q) fixed by cyclicity, normalisation and the Markov/framing rules; at d=1 it is the Ocneanu trace on H_n(q).
   Use here: Backs the uniqueness hypothesis MarkovTraceFamilyOneDim that wenzl_bridge_applicability_qou consumes; the d=1 sentence is the exact Hecke specialisation the corpus needs.
 
-Source: `uploads/HDR.pdf` (`chlouveraki2016-hdr`)
+Source: `library/hdr/HDR.pdf` (`chlouveraki2016-hdr`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

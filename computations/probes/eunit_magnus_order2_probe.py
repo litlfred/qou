@@ -9,9 +9,9 @@ CONTEXT (read first, in order):
     the exact ring identity (q−q⁻¹) = (v−v⁻¹)·[2]_v, v = √q.
   * binding_qhamiltonian_rotational_scale.py — the canonical rotational-tier frame reused here
     (D/T/³He/⁴He vs AME, j = n/2, n = 3A strands; forward-only, no AME inversion).
-  * uploads/0012035v3.pdf (Broda, NA-Stokes): P exp(i∮_∂S A) = 𝒫 exp(i/2 ∫_S 𝓕), with the
+  * library/arxiv-math-ph-0012035v3/0012035v3.pdf (Broda, NA-Stokes): P exp(i∮_∂S A) = 𝒫 exp(i/2 ∫_S 𝓕), with the
     path-dependent curvature 𝓕(x) = U⁻¹(x,O) F(x) U(x,O) and F = dA − i[A,A].
-  * uploads/phys-rep09.pdf (Blanes–Casas–Oteo–Ros, Phys. Rep. 470 (2009) 151, Thm 1 eq (32)):
+  * library/phys-rep09/phys-rep09.pdf (Blanes–Casas–Oteo–Ros, Phys. Rep. 470 (2009) 151, Thm 1 eq (32)):
     Magnus:  Ω(t) = ∫A dt₁ + ½∫∫_{t₂<t₁} [A(t₁), A(t₂)] dt₂ dt₁ + ⋯  — the order-2 term is
     the double-integral COMMUTATOR ½∮∮[A,A]; every Magnus term of order k ≥ 2 is a Lie element
     (sum of nested commutators).

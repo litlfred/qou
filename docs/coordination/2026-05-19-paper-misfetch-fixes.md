@@ -18,7 +18,7 @@ Dynamical Evolution"). URL already fixed in `references.ts` commit
 ```bash
 bash scripts/upload-bib-papers.sh --force   # uses --force I added in a3c0784c1
 # OR equivalent:
-rm uploads/margolus1998.pdf && bash scripts/upload-bib-papers.sh
+rm library/margolus1998.pdf && bash scripts/upload-bib-papers.sh
 ```
 **Cost**: 0 mental, 1 network round-trip.
 

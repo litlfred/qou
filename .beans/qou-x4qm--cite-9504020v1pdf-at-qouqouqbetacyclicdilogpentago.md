@@ -13,7 +13,7 @@ Once registered, CyclicDilogPentagon.lean should cite the cyclic-dilogarithm R-m
 - Abstract / main theorem — The link invariant obtained from the cyclic quantum dilogarithm by the given R-matrix construction coincides with the invariant of triangulated links in S^3; the R-matrix is the cyclic analogue of the U_q(sl(2)) universal R-matrix.
   Use here: Primary source for the cyclic-dilogarithm R-matrix that QOU/QBeta/CyclicDilogPentagon.lean works with, currently referenced only through faddeev_kashaev1994 and kashaev1997.
 
-Source: `uploads/9504020v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-q-alg-9504020v1/9504020v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

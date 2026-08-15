@@ -2,8 +2,8 @@
 
 **Date:** 2026-07-24 · **Branch:** `claude/binding-mass-derivation-gaps-0f61i6` · **Bean:** `qou-yofd` (W2
 of the merged #4142 workplan) · **Axis:** Δ_λ binding magnitude — the `E_unit`/μ₀ −9.2% closure ·
-**Route:** analytic Magnus order-2 (Broda `uploads/0012035v3.pdf` + Blanes–Casas–Oteo–Ros
-`uploads/phys-rep09.pdf`), deliberately **complementary** to PR #4127's octahedral 4-dilogarithm
+**Route:** analytic Magnus order-2 (Broda `library/arxiv-math-ph-0012035v3/0012035v3.pdf` + Blanes–Casas–Oteo–Ros
+`library/phys-rep09/phys-rep09.pdf`), deliberately **complementary** to PR #4127's octahedral 4-dilogarithm
 resummation (route B there; this is that PR's own route A, bean `qou-dp32`, run in parallel per the
 parallel-exploration policy — intent posted on #4127). **Tier:** structural derivation + forward
 numerics (scope-(a) where numeric, proved identities where symbolic; **no fit, nothing wired, no AME
@@ -195,8 +195,8 @@ ways:
 - Witness: [`computations/probes/eunit-magnus-order2.witness.json`](../../computations/probes/eunit-magnus-order2.witness.json) (audit-only, 20/20 assertions)
 - This report: `docs/audits/2026-07-24-eunit-magnus-order2.md`
 
-Refs: `uploads/0012035v3.pdf` (Broda, NA-Stokes review, eqs. (5)–(10) + the surface-ordered
-theorem); `uploads/phys-rep09.pdf` (Blanes–Casas–Oteo–Ros, Phys. Rep. 470 (2009) 151, Thm 1
+Refs: `library/arxiv-math-ph-0012035v3/0012035v3.pdf` (Broda, NA-Stokes review, eqs. (5)–(10) + the surface-ordered
+theorem); `library/phys-rep09/phys-rep09.pdf` (Blanes–Casas–Oteo–Ros, Phys. Rep. 470 (2009) 151, Thm 1
 eq. (32)); [`2026-07-19-eunit-source-is-the-counit.md`](2026-07-19-eunit-source-is-the-counit.md);
 PR #4127 (`2026-07-19-octahedral-four-dilogarithm-missing-tetrahedra.md`, `FourDilogFirstOrder.lean`);
 [`binding_qhamiltonian_rotational_scale.py`](../../computations/binding_qhamiltonian_rotational_scale.py);

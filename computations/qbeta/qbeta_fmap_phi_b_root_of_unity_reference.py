@@ -3,7 +3,7 @@
 
 Task-2 step of the f-map program (pre-registered, non-fishing): evaluate the
 VALIDATED Faddeev Φ_b (phi_b_evaluator.py — literature-verified against
-uploads/0604094v1.pdf, Hikami math/0604094) at REAL b with b² RATIONAL, i.e.
+library/arxiv-math-0604094v1/0604094v1.pdf, Hikami math/0604094) at REAL b with b² RATIONAL, i.e.
 q = e^{2πib²} a ROOT OF UNITY — the fibre/decay saddle where the bar-odd
 factor F_odd of the ladder element F(q) = F_even·F_odd must live.
 
@@ -64,7 +64,7 @@ def main() -> int:
     wb.set_description(
         "Reference values of the validated Faddeev non-compact quantum "
         "dilogarithm Φ_b (phi_b_evaluator.py — literature-verified against "
-        "uploads/0604094v1.pdf, Hikami math/0604094 eqs (2.1)-(2.5)) at "
+        "library/arxiv-math-0604094v1/0604094v1.pdf, Hikami math/0604094 eqs (2.1)-(2.5)) at "
         "rational b² (root-of-unity q, the fibre/decay saddle), for the "
         "F_odd construction. Every row gated by a local shift-equation "
         "check; unimodularity |Φ_b| = 1 (the pure-phase fact behind "

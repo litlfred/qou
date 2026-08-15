@@ -1,7 +1,7 @@
 # vdV Lemma 4 formalization workplan (epic qou-u1b5)
 
 **Date**: 2026-08-11 · **PR context**: #4971 (W6 majorant rate) · **Source**:
-`uploads/0611181v2.pdf` §3, proof of Lemma 4 (read in full 2026-08-02).
+`library/arxiv-math-0611181v2/0611181v2.pdf` §3, proof of Lemma 4 (read in full 2026-08-02).
 
 ## State after W6
 

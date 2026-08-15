@@ -70,7 +70,7 @@ all tier-3; triage by availability first).
 - **Bib workflow phases 3–4** (design `docs/workplans/2026-06-08-bib-human-review-workflow-design.md`):
   phase 3 = `bib-photo-ingestion-watcher` on-photo automation (OCR → formalise →
   source-match → validate); phase 4 = agent-sourced backfill over existing
-  `uploads/` (19+ files). Skills exist as stubs; the automation is unbuilt.
+  `library/` (19+ files). Skills exist as stubs; the automation is unbuilt.
 - **`Σm=0 ⟺ 𝒪(ℙ(V))=A^{coT}` proposition** (LQG/spin-network thread, deferred):
   needs a Lean weight-grading on `ℙ(V)=G_q/T_q`. Promote the spin-network
   observation to a proper proposition.

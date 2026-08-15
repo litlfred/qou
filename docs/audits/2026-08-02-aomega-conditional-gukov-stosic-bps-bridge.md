@@ -16,7 +16,7 @@ non-degeneracy gate: verify the BPS count of `4₁` reproduces the GGM DT/3d-ind
 spectrum `{3,4}` (reduced-Stokes `3`) *through the bridge* — and if it does **not**,
 STOP and report honestly, landing **no** degenerate class.
 
-## Author verification (from `uploads/`, arXiv title pages)
+## Author verification (from `library/`, arXiv title pages)
 
 | ref id | arXiv | authors (verified) |
 |---|---|---|

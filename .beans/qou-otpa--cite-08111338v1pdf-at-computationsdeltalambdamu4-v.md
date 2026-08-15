@@ -15,7 +15,7 @@ Once registered, the bare-string citations in the probe and the witness's source
 - §II.A, Fig. 10 and surrounding text, p.12 — The Tjon line — the correlation between triton and alpha binding energies B_t and B_alpha — is predicted by pionless EFT because no four-body parameter is required for renormalization at leading order; higher orders broaden it into a band.
   Use here: Supplies the convention-free observable the GAP-9 probe reformulates the test around: instead of matching mu_4 in a C(A,k) basis, test the QOU block-trace operator against the B(3H)-B(4He) correlation. The Fig.-10 band gives the tolerance that test must meet.
 
-Source: `uploads/0811.1338v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-0811.1338v1/0811.1338v1.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

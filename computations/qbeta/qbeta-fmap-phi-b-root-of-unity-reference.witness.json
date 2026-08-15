@@ -48,7 +48,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Reference values of the validated Faddeev non-compact quantum dilogarithm Φ_b (phi_b_evaluator.py — literature-verified against uploads/0604094v1.pdf, Hikami math/0604094 eqs (2.1)-(2.5)) at rational b² (root-of-unity q, the fibre/decay saddle), for the F_odd construction. Every row gated by a local shift-equation check; unimodularity |Φ_b| = 1 (the pure-phase fact behind prop:phi-b-unitary-bar-odd) and the special value Φ_b(0) = +e^{iπ(b²+b⁻²)/24} asserted at every point. C14 anti-fitting: no comparison to c_k / Φ₁ / residue A / any physical constant.",
+  "description": "Reference values of the validated Faddeev non-compact quantum dilogarithm Φ_b (phi_b_evaluator.py — literature-verified against library/arxiv-math-0604094v1/0604094v1.pdf, Hikami math/0604094 eqs (2.1)-(2.5)) at rational b² (root-of-unity q, the fibre/decay saddle), for the F_odd construction. Every row gated by a local shift-equation check; unimodularity |Φ_b| = 1 (the pure-phase fact behind prop:phi-b-unitary-bar-odd) and the special value Φ_b(0) = +e^{iπ(b²+b⁻²)/24} asserted at every point. C14 anti-fitting: no comparison to c_k / Φ₁ / residue A / any physical constant.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "points": [

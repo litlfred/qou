@@ -12,7 +12,7 @@ no new no-go claimed — this is a classification, the existing negatives stand 
 the uploaded paper
 
 > **AGMV**: L. Alvarez-Gaumé, G. Moore, C. Vafa, *Theta Functions, Modular Invariance,
-> and Strings*, Commun. Math. Phys. **106**, 1–40 (1986). (`uploads/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf`;
+> and Strings*, Commun. Math. Phys. **106**, 1–40 (1986). (`library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf`;
 > © Springer-Verlag 1986. Sect. 2 *Fermions on a Torus*; Sect. 4 *Holomorphic
 > Factorization*; Sect. 5 *Chiral Dirac Determinants*.)
 
@@ -226,7 +226,7 @@ the owner-gated R2 attack only.**
 
 ## 7. Cross-references
 
-- AGMV upload: `uploads/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf` (Commun. Math. Phys. **106**, 1–40 (1986))
+- AGMV upload: `library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf` (Commun. Math. Phys. **106**, 1–40 (1986))
 - The genus-1 exact anchor + retraction: [`2026-07-18-bring-polarized-epstein-determinant.md`](2026-07-18-bring-polarized-epstein-determinant.md)
 - Polarized genus-4 value 1.38758: [`2026-07-19-bring-genus4-polarized-epstein-detprime.md`](2026-07-19-bring-genus4-polarized-epstein-detprime.md)
 - Endpoint blindness: [`2026-07-19-bring-polarized-q-dictionary-endpoint-blindness.md`](2026-07-19-bring-polarized-q-dictionary-endpoint-blindness.md)

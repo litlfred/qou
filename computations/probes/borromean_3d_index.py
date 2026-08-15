@@ -8,7 +8,7 @@ index machinery of figure_eight_3d_index.py (#3868 / #3805 thread).
 
 SOURCES (primary, no guessed gluing data):
   [GHHR]  Garoufalidis-Hodgson-Hoffman-Rubinstein, "The 3D-index and normal
-          surfaces" (arXiv:1604.02688, uploads/1604.02688v1.pdf), Section 4:
+          surfaces" (arXiv:1604.02688, library/arxiv-1604.02688v1/1604.02688v1.pdf), Section 4:
           for an ideal triangulation T with n tetrahedra and r cusps,
 
               I_T([gamma])(q) = sum_{k in Z^{n-r}} q^{sum_i k_i}
@@ -22,7 +22,7 @@ SOURCES (primary, no guessed gluing data):
           the gluing_equations() function in SnapPy" (GHHR Section 3.1).
   [GHRS]  Garoufalidis-Hodgson-Rubinstein-Segerman, "1-efficient triangulations and
           the index of a cusped hyperbolic 3-manifold" (arXiv:1303.5278,
-          uploads/1303.5278v1.pdf):
+          library/arxiv-1303.5278v1/1303.5278v1.pdf):
           - Section 4.5 eq (17) + Section 4.6 Thm 4.3 / Rmk 4.4 / Rmk 4.6: the r
             EXCLUDED edges must leave the remaining n-r edge rows an INTEGER BASIS
             of the integer row space Lambda of the Neumann-Zagier matrix (A|B);

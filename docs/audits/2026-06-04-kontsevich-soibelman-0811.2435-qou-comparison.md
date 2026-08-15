@@ -4,9 +4,9 @@
 **Source paper:** Maxim Kontsevich, Yan Soibelman, *Stability structures, motivic
 Donaldson–Thomas invariants and cluster transformations*, arXiv:0811.2435v1
 (148 pp, 16 Nov 2008). PDF now in the corpus at
-[`uploads/0811.2435v1.pdf`](../../uploads/0811.2435v1.pdf) (added by the owner in
+[`library/arxiv-0811.2435v1/0811.2435v1.pdf`](../../library/arxiv-0811.2435v1/0811.2435v1.pdf) (added by the owner in
 [commit `1372394e`](https://github.com/litlfred/qou/commit/1372394e843b23e18fa2cc15d88f2a8fadfde75c)).
-**Supporting cast** (all in [`uploads/`](../../uploads/), uploaded alongside): the
+**Supporting cast** (all in [`library/`](../../library/), uploaded alongside): the
 Kashaev/quantum-modularity refinement (Garoufalidis–Zagier `2111.06645`), the
 microlocal-Lagrangian / constructible-sheaf Euler-characteristic paper
 (Franecki–Kapranov `9909088`), the geometry of Markov traces (Webster–Williamson
@@ -192,14 +192,14 @@ objects of class γ" well-defined.
 QOU does **not** need the hypothesis, for the reason the owner names:
 
 - The QOU "objects" are **braid words / Hecke elements**. The **Gröbner–Shirshov
-  normal form** (the very `0409565` unital-GB / simpler-PBW paper in `uploads/`)
+  normal form** (the very `0409565` unital-GB / simpler-PBW paper in `library/`)
   gives a **canonical, finite** set of normal forms **per Coxeter-length slice
   ℓ(w)** — so each slice is a *finite scheme*, **constructible by theorem**, not by
   assumption. (Chain steps 7–8: "E_∞ = ⊕_λ M_{d_λ}; collapse at E_2 ⇒
   finite-slice.")
 - The **jet order** organizes the slices into the tower, and the **surreal
   exponential-logarithmic hierarchy** (Kuhlmann–Matusinski `1203.4538`, in
-  `uploads/`) gives the jet grading a rigorous value-group home — so the q→1
+  `library/`) gives the jet grading a rigorous value-group home — so the q→1
   classical limit is a controlled Hahn/surreal expansion, **not** an ad-hoc
   analytic limit.
 
@@ -271,7 +271,7 @@ decategorification for the classical (Pauli/Bose) limit, Demazure sub-crystals f
 resonances. Compute infra exists (`klr_canonical_basis_filter.py`,
 `crystal_basis.py`, the `qbeta_chain4_kashiwara_crystal_scaffold` family), and the
 combinatorial substrate is the Lusztig-cone / canonical-basis material of Marsh
-`0008040` (in `uploads/`). What QOU **omits** is the WCF dynamics sitting on top of
+`0008040` (in `library/`). What QOU **omits** is the WCF dynamics sitting on top of
 the KLR layer — consistent with §4 (avoid the wall) and with the
 `2026-05-30-klr-dialog-assessment.md` verdict that a KLR layer does not, by itself,
 shorten QOU's existing Diamond-Lemma / Wenzl proofs.
@@ -806,7 +806,7 @@ A∞). Three mechanisms, all real, all used by *both* frameworks:
      tower of **semisimple Reshetikhin–Turaev modular categories at every root of unity**
      into one object, through which the Kashaev / coloured-Jones invariant factors —
      **exactly** the universal object intuited. Garoufalidis–Zagier (`2111.06645`, in
-     `uploads/`) make it explicit: a *matrix of periods* indexed by the boundary-
+     `library/`) make it explicit: a *matrix of periods* indexed by the boundary-
      parabolic `SL₂(ℂ)` representations — the nerve, written out.
    - **A∞** is the *homotopical nerve*: the A∞ minimal model (KS Thm 5) is the
      homotopy-initial skeleton resolving non-formality. KS's category is A∞ for exactly

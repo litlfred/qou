@@ -1,0 +1,11 @@
+---
+doc_id: arxiv-1203.2182v1
+doc_title: "Volume Conjecture: Reﬁned and Categoriﬁed"
+section_id: sec-011-21-quantum-volume-conjecture-reﬁned-6
+section_title: "Quantum volume conjecture: reﬁned 6"
+section_number: 2.1
+pages: 2-2
+source_pdf: 1203.2182v1.pdf
+source_sha256: 2fe21af194f65227
+---
+

@@ -117,7 +117,7 @@ than one boundary condition.
 
 * parent `qou-0yqu`; siblings `qou-r7ml` (refuted), `qou-g2wr` (lit closed)
 * `QOU/QBeta/FiveTwoSaddleCurve.lean` — the curve, sorry-free, already on `main`
-* GGM `uploads/2012.00062v3.pdf` §6.1, eq (234)–(236), eq (306) palindromy
+* GGM `library/arxiv-2012.00062v3/2012.00062v3.pdf` §6.1, eq (234)–(236), eq (306) palindromy
 * PR #4658
 
 ---

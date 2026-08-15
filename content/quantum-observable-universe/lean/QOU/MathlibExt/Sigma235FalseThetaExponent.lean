@@ -5,7 +5,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 The Poincaré sphere `Σ(2,3,5)` carries two normalisations of the same false theta
 series, and the corpus and the literature use different ones. Jacoby–Lawrence,
-*Some computations of Ohtsuki series* (`uploads/04procbryden.pdf`) p. 55 write the
+*Some computations of Ohtsuki series* (`library/04procbryden/04procbryden.pdf`) p. 55 write the
 Ohtsuki series as
 
   `q(q − 1)·Z_∞(Σ(2,3,5))(q) = 1 − ½·∑_{n≥1} χ(n)·q^{(n²−1)/120}`
@@ -38,7 +38,7 @@ use — those are analytic/convention questions, not settled here. §7c: `ℤ` t
 archimedean structure, no `ℝ`. Sorry-free. Nothing wired; no fit.
 
 -- Ref: [manuscript] Jacoby–Lawrence, *Some computations of Ohtsuki series*, p. 55
---      (`uploads/04procbryden.pdf`); Lawrence–Zagier normalisation as cited there.
+--      (`library/04procbryden/04procbryden.pdf`); Lawrence–Zagier normalisation as cited there.
 -/
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.NormNum

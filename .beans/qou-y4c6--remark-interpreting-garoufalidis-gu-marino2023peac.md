@@ -15,7 +15,7 @@ Correct 'proved … for the figure-eight 4₁' to match the document's own accou
 - Abstract, p. 1 — Proofs are supplied only for the q-difference equations and their fundamental solutions; the Stokes-matrix conjectures are illustrated numerically for 4₁ and 5₂.
   Use here: Establishes that 'proved … for the figure-eight 4₁' is not supported by the source.
 
-Source: `uploads/2012.00062v3.pdf` (`garoufalidis-gu-marino2023peacock`)
+Source: `library/arxiv-2012.00062v3/2012.00062v3.pdf` (`garoufalidis-gu-marino2023peacock`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

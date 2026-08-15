@@ -4,7 +4,7 @@ M-dictionary, part 2a: the (82) u=0 state-integral match, which PINS
 the (c⁺, c⁻) split that part 1 (merged #4011) proved Theorem-11-
 invisible.
 
-Structure: eq (82) (glyph-decoded from uploads/2012.00062v3.pdf p.19,
+Structure: eq (82) (glyph-decoded from library/arxiv-2012.00062v3/2012.00062v3.pdf p.19,
 cmsy-offset discipline for the minus signs; sub/superscript rows read
 at y-band resolution):
 

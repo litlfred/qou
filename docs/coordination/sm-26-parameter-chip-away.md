@@ -96,7 +96,7 @@ normalisation, checked twice — now machine-checked as such
 isospin datum (consistent, not *forced*), and the SU(2)_L gauge/CKM lift is open —
 both reduce to the open SU(3)-flavour sector. So: a real orthogonal ℤ/2 passing GMN,
 NOT yet *the* gauged weak isospin. Chiral-EFT lit for the binding-side template in
-`uploads/` (owner: 1011.1343, 1906.12122, s00601-2022).
+`library/` (owner: 1011.1343, 1906.12122, s00601-2022).
 
 **★★★ UPDATE — the two follow-on tests (both landed, both honest negatives that sharpen):**
 - **`qou-buxs` (T₃ vs Δ_λ sign), #4623 — DERIVED negative.** The literal T₃ = sign(net

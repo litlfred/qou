@@ -1371,7 +1371,7 @@ When a user request arrives, route to the right skill(s):
 | "import + formalize" | `local/paper-importer` + `local/formalizer` | collaborator |
 | "upload / scan / intake / process document" | `local/document-intake` | collaborator |
 | "WHO / guideline / L1 / L2 / normative" | `local/document-intake` | collaborator |
-| "uploads/ status / what's pending" | `local/document-intake` | collaborator |
+| "library/ status / what's pending" | `local/document-intake` | collaborator |
 | "is this paper relevant / triage the uploads / what can we use from X / which uploads aren't cited / source ledger" | `local/paper-relevance-triage` | collaborator |
 | "critical path / trace dependencies" | `local/critical-path-analysis` | collaborator |
 | "archimedean vs categorical / context audit" | `local/critical-path-analysis` | reader |
@@ -2942,7 +2942,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
-| `uploads/` | Document intake pipeline (raw PDFs, scans, WHO guidelines → content objects) |
+| `library/` | Document intake pipeline (raw PDFs, scans, WHO guidelines → content objects) |
 | `.beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
 | `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `.beans/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
 | `docs/` | Planning documents, migration plans, dependency graphs |

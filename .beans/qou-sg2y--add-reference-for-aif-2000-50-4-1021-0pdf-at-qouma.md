@@ -15,7 +15,7 @@ Core and orphan; QCharacter.lean credits this work in prose with no ref() entry 
 - section 4 ('Comportement de la matrice de connexion lorsque q -> 1') — As q tends to 1 the connection matrix converges, recovering the monodromy of the confluent differential system.
   Use here: The classical-limit statement the corpus needs whenever it argues that a q-difference object is the q-lift of a classical monodromy datum rather than an analogy; it sits beside the existing confluence references in the q-lift cluster.
 
-Source: `uploads/AIF_2000__50_4_1021_0.pdf` — no `references.ts` entry yet
+Source: `library/aif-2000-50-4-1021-0/AIF_2000__50_4_1021_0.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

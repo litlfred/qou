@@ -14,7 +14,7 @@ categorical factor `[2]_q = q + q⁻¹`, and this file pins them in Lean:
   bar-involution fixedness of the bracket, with no nonvanishing
   hypothesis (Lean's `0⁻¹ = 0` convention makes it unconditional).
 
-In the GSWZ picture (arXiv:2412.04241, `uploads/2412.04241v2.pdf`)
+In the GSWZ picture (arXiv:2412.04241, `library/arxiv-2412.04241v2/2412.04241v2.pdf`)
 these are the fibre-at-ζ₄ facts of a classical Habiro-ring element; the
 p = 2 gluing edge ζ₄ → ζ₈ is verified concretely for this factor in
 `computations/probes/zeta4_zeta8_habiro_gluing_probe.py`. The

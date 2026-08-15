@@ -2,7 +2,7 @@
 """W2: local exponents of the C1 q-difference module (Birkhoff-matrix, 0-side).
 
 Bean `qou-xufp` (W2, symbol extraction). Following the DRSZ Birkhoff-matrix recipe
-(`uploads/Equations_aux_q-differences.pdf` §3.3), the connection matrix
+(`library/equations-aux-q-differences/Equations_aux_q-differences.pdf` §3.3), the connection matrix
 `P(x) = (X^∞)⁻¹ X^0` of a q-difference module needs the local canonical solutions at 0
 and ∞, each built from the q-characters `e_{q,c}` of the *exponents* (eigenvalues of the
 companion `A(0)`, `A(∞)`).

@@ -274,7 +274,7 @@ def main():
                         "(step 3, Route B)",
             "audit_doc": "docs/audits/2026-07-20-qlift-ggm-gauge-prune.md "
                          "(diagonal prune; non-diagonal 2x2 left live -> this probe)",
-            "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+            "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (eq 49)",
             "discipline": "scope-(a) vocabulary per AGENTS.md; pre-stated "
                           "discrimination criterion; no AME data; sanity check is "
                           "by-construction, growth class is the only measurement",

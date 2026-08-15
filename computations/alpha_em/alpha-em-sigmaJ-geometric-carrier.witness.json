@@ -40,7 +40,7 @@
     "verdict": "GEOMETRIC CARRIER FOUND (scope-(a); derives no clause; no fit; nothing wired): the degenerate braiding data is realized ON the Bring surface exactly \u2014 V=[1:i:-1:-i:0] lies on Bring (G1); the (2,4,5) order-4 rotation fixes it with multiplier exactly i = the democratic q, so dU|_V = J|_V (J is automorphism-realized at the vertices, G2); complex conjugation swaps the +-i multiplier families exactly as bar swaps the degenerate points / conjugation swaps spec(J) (G3); and the order-4 quotient is the genus-1 E_{5tau0} \u2014 the dominant Jacobian factor (G4). The tau target of sigma_ss(q=+-i)=+-i is now CONCRETE: dU at the vertex pair. Remaining wall (unchanged): the functorial statement tau(braiding) = this automorphism action, whose classical limit inherits the conformal structure and hence a0 (Clause A). NO tier change."
   },
   "context": {
-    "builds_on": "merged #3933 (bricks 1-3: corrected dictionary, unique tau target, sigma->J at the degenerate locus) + Braden-Disney-Hogg Prop 3.9/SS4.3/Prop 4.6 (PDF in uploads/)",
+    "builds_on": "merged #3933 (bricks 1-3: corrected dictionary, unique tau target, sigma->J at the degenerate locus) + Braden-Disney-Hogg Prop 3.9/SS4.3/Prop 4.6 (PDF in library/)",
     "remaining": "the functorial statement tau(braiding) = the order-4 automorphism action; its classical limit inherits the conformal structure J defines, hence a0 (Clause A)",
     "scope_guard": "derives NO clause; no fit; nothing wired; 1/(8pi) stays phase-4"
   }

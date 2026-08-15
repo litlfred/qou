@@ -15,7 +15,7 @@ The block records the ribbon-framing twist as the sole candidate second datum, c
 - eq. (2.15)-(2.16), §2, p.5 — t = N/6, t_3 = -w/6, t_0 = -(r+1)/6, Q_e = -(e/6)(w + r + 1), consistent with the Standard-Model relation Q_e = e(t_3 + t_0).
   Use here: A published writhe+rotation -> (I_3, Y, Q) assignment that can be run directly through the two batteries conj:sm-hypercharge-invariant demands — Gell-Mann-Nishijima consistency on the nucleon doublet, and the first-generation hypercharge spectrum with its Z_6 relations. Its failure or success on the p/n doublet (which share Y = +1 but differ in writhe) is a cheap, decisive test.
 
-Source: `uploads/0806.3105v3.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-0806.3105v3/0806.3105v3.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

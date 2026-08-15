@@ -9,7 +9,7 @@ GGM Prop 21 is the structural reason). The bar-odd A_ω channel must
 source from NON-amphichiral geometry. 5₂ is GGM's worked non-amphichiral
 example: CS(5₂) ≠ 0, three saddles, complex Borel singularities.
 
-Exact side (GGM §6.1, uploads/2012.00062v3.pdf, glyph-extracted):
+Exact side (GGM §6.1, library/arxiv-2012.00062v3/2012.00062v3.pdf, glyph-extracted):
 
   * state integral (230): Z₅₂(u;τ) = ∫ Φ_b(v)Φ_b(v+u)Φ_b(v−u) e^{−2πiv²}
   * potential (231): V(u,v) = Li₂(−e^v) + Li₂(−e^{u+v}) + Li₂(−e^{−u+v}) + v²
@@ -215,7 +215,7 @@ def main() -> int:
         "the #3892 5_2 ladder. A nonzero intrinsic pole phase is "
         "predicted — the odd-channel carrier the 4_1 null excluded.")
     wb.set_content_block("conj:im-q-physical-role")
-    wb.add_data("source", "uploads/2012.00062v3.pdf (GGM) eqs 230-233 + 73/75")
+    wb.add_data("source", "library/arxiv-2012.00062v3/2012.00062v3.pdf (GGM) eqs 230-233 + 73/75")
     wb.add_data("curve", "x*y^3 - (x^2+1)*y^2 + (x^2+x+1)*y - x = 0 "
                          "[(232)-derived; Lean: FiveTwoSaddleCurve.lean]")
     wb.add_data("u0", {"xi1": mp.nstr(s1, 20),

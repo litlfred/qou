@@ -39,7 +39,7 @@ CHECK (assertions):
        Natural φ-flavoured ratios (φ³, L₃/L₂, F₃/F₂, cosh/sinh ratios at ρ=ln φ)
        all miss by ≫ the 0.1% that would be persuasive. Magnitudes stay OPEN and
        are NOT pursued here — with cusp shapes dense in Teichmüller space
-       (Dang–Purcell, uploads/CuspShapes.pdf) magnitude-chasing is a fit trap.
+       (Dang–Purcell, library/cuspshapes/CuspShapes.pdf) magnitude-chasing is a fit trap.
 
 SCOPE (stated plainly). [D1] and [D2] are theorems of the quadratic orders and
 are Lean-formalised alongside this probe. [D3] is a 2-bit derive-then-check hit:

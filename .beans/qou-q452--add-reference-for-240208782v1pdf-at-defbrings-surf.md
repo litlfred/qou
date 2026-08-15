@@ -15,7 +15,7 @@ Deep-read and fact-extracted into an audit doc in July, driving an open idea, wi
 - Ex. 5.1 — The Farey map reduced mod 5, M_3(5), is the icosahedron (and M_4(3) is the cube).
   Use here: The level-5 reduction parallel (icosahedron = M_3(5), Bring = M_4(5)) is the structural leg of the still-open idea A7 supporting the corpus's icosahedral 1/sqrt 5 bridge on the Delta_lambda magnitude scalar.
 
-Source: `uploads/2402.08782v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2402.08782v1/2402.08782v1.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

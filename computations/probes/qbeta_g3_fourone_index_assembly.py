@@ -4,7 +4,7 @@
 against the in-repo DGG source.
 
 Source IN-REPO (owner-uploaded): Dimofte–Gaiotto–Gukov, "3-Manifolds and 3d
-Indices" (uploads/1112.5179v1.pdf), §4.3 "Figure-eight from two tetrahedra".
+Indices" (library/arxiv-1112.5179v1/1112.5179v1.pdf), §4.3 "Figure-eight from two tetrahedra".
 The equations were read directly from the PDF (glyph-verified, not
 reconstructed from memory):
 
@@ -42,7 +42,7 @@ Deliverables (all exact, integer):
   (1) I_41(1,1) ≡ eq (4.20)  — CERTIFIED, bare (4.18);
   (2) the (4.19) symmetries, exact, over a battery of charges;
   (3) I_41(0,0)(q) — the zero-charge series whose coefficients GGM
-      (uploads/2012.00062v3.pdf) identify with integer Stokes / DT data
+      (library/arxiv-2012.00062v3/2012.00062v3.pdf) identify with integer Stokes / DT data
       (that Stokes dictionary is the named tranche 3);
   (4) the substrate evaluation I_41(0,0)(e^{−t}) — the index converges at
       the substrate (q ≈ 0.9009).
@@ -298,7 +298,7 @@ def main() -> int:
     certified = eng_ok and anchor_ok and sym_ok and sub_ok and aj_ok
     verdict = (
         "4₁ TOTAL 3d-index CERTIFIED from the in-repo DGG source "
-        "(uploads/1112.5179v1.pdf, eq 4.18 read glyph-verified): the assembly "
+        "(library/arxiv-1112.5179v1/1112.5179v1.pdf, eq 4.18 read glyph-verified): the assembly "
         "is the BARE flux sum Σ_{e₂} I_Δ(m−e₂,m+e−e₂)·I_Δ(e−e₂,−e₂) with NO "
         "prefactor — it reproduces the printed anchor (4.20) "
         "I_41(1,1)=−q−q²+2q³+7q⁴+11q⁵+11q⁶+3q⁷ exactly, and the (4.19) "
@@ -332,7 +332,7 @@ def main() -> int:
         "converge). Includes I_41(0,0) (the GGM Stokes-dictionary input) and "
         "the substrate evaluation. Stokes dictionary = tranche 3.")
     wb.set_content_block("conj:im-q-physical-role")
-    wb.add_data("source", "uploads/1112.5179v1.pdf §4.3 eq (4.18) bare; anchor eq (4.20); symmetry eq (4.19)")
+    wb.add_data("source", "library/arxiv-1112.5179v1/1112.5179v1.pdf §4.3 eq (4.18) bare; anchor eq (4.20); symmetry eq (4.19)")
     wb.add_data("prefactor", "none (bare flux sum) — eq (4.17)'s (-q^{1/2})^{-2e2} is pre-U(1)-breaking, not (4.18)")
     wb.add_data("resolution", "prior 'flat-wing divergence' was a truncation artifact of per-factor min-degree rebasing; absolute-degree I_Δ converges")
     wb.add_data("I41_11_qseries", series_str(I41(1, 1, D), 8))

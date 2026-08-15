@@ -15,7 +15,7 @@ The corpus registers two companion papers on resurgence and Stokes data in compl
 - Sec. 1.5 (modular q-holonomic modules in Chern--Simons theory), Thm 1.5 — Three q-holonomic modules arising in complex Chern--Simons theory are modular, with explicitly computed monodromy and cocycles.
   Use here: Places the corpus's own state-integral and descendant equations inside a class with computable monodromy, which is the missing ingredient in the Stokes-matrix identification target for the figure-eight descendant equation.
 
-Source: `uploads/modular.qholonomic.modules.pdf` — no `references.ts` entry yet
+Source: `library/modularqholonomicmodules/modular.qholonomic.modules.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

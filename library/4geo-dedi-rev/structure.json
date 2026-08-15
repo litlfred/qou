@@ -1,0 +1,655 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "4geo-dedi-rev",
+ "source": {
+  "file": "4GEO-DEDI-REV.pdf",
+  "sha256": "e4d52947b71a3f379908f8da1cd3184d581f74ec66d42ba50f8e498136ec11d5",
+  "bytes": 530631,
+  "pages": 26
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not",
+  "authors_raw": "The documents may come from teaching and research",
+  "abstract": null,
+  "docinfo": {
+   "Creator": "HAL",
+   "Title": "On the quantum Teichm\u00fcller invariants of fibred cusped 3-manifolds",
+   "Author": "St\u00e9phane Baseilhac, Riccardo Benedetti",
+   "Producer": "PDFLaTeX",
+   "CreationDate": "D:20260712145233+02'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Institut Montpelli\u00b4 erain Alexander Grothendieck, CNRS, Universit\u00b4 e de Montpellier",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Introduction 1",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Topological-combinatorial support 6",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Background results 7",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Classical hyperbolic geometry 7",
+   "page": 2,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Quantum hyperbolic geometry 9",
+   "page": 2,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Representations of the quantum Teichm\u00a8 uller spaces 13",
+   "page": 2,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Intertwiners of local representations 16",
+   "page": 2,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Proofs 17",
+   "page": 2,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 5,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 7,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Topological-combinatorial support",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Background results",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Classical hyperbolic geometry. Let M be any cusped hyperbolic 3-manifold with r cusps,",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 9,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 11,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 13,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 15,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 3,
+   "title": "Local representations. The irreducible representations of Tq",
+   "page": 15,
+   "source": "inferred",
+   "number": "3.3.1"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 17,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Proofs",
+   "page": 18,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 19,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "Then, for all X\u2208 Tq",
+   "page": 19,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "A2\u2297A1, so that",
+   "page": 19,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A2\u2297A1)\u25e6 (IN\u2297 w\u22121",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The other cases X =X1, X2 or X3 are similar. 2",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 21,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 2,
+   "title": "(where y3",
+   "page": 22,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 23,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "XN",
+   "page": 24,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "X\u22121",
+   "page": 24,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "X\u2212N",
+   "page": 24,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A2\u2297A1)\u25e6",
+   "page": 24,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "page": 25,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 26,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-institut-montpelli-erain-alexander-grothendiec",
+   "number": "1",
+   "title": "Institut Montpelli\u00b4 erain Alexander Grothendieck, CNRS, Universit\u00b4 e de Montpellier",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 236,
+   "n_words": 29
+  },
+  {
+   "id": "sec-001-33-representations-of-the-quantum-teichm-uller-s",
+   "number": "3.3",
+   "title": "Representations of the quantum Teichm\u00a8 uller spaces 13",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 216,
+   "n_words": 31
+  },
+  {
+   "id": "sec-002-1-introduction-1",
+   "number": "1",
+   "title": "Introduction 1",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-2-topological-combinatorial-support-6",
+   "number": "2",
+   "title": "Topological-combinatorial support 6",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-3-background-results-7",
+   "number": "3",
+   "title": "Background results 7",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-31-classical-hyperbolic-geometry-7",
+   "number": "3.1",
+   "title": "Classical hyperbolic geometry 7",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-32-quantum-hyperbolic-geometry-9",
+   "number": "3.2",
+   "title": "Quantum hyperbolic geometry 9",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 59,
+   "n_words": 9
+  },
+  {
+   "id": "sec-007-34-intertwiners-of-local-representations-16",
+   "number": "3.4",
+   "title": "Intertwiners of local representations 16",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-4-proofs-17",
+   "number": "4",
+   "title": "Proofs 17",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1461,
+   "n_words": 254
+  },
+  {
+   "id": "sec-009-2-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "2",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 8172,
+   "n_words": 1390
+  },
+  {
+   "id": "sec-010-4-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "4",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 7712,
+   "n_words": 1316
+  },
+  {
+   "id": "sec-011-6-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "6",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-012-2-topological-combinatorial-support",
+   "number": "2",
+   "title": "Topological-combinatorial support",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 5928,
+   "n_words": 1086
+  },
+  {
+   "id": "sec-013-3-background-results",
+   "number": "3",
+   "title": "Background results",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-014-31-classical-hyperbolic-geometry-let-m-be-any-cu",
+   "number": "3.1",
+   "title": "Classical hyperbolic geometry. Let M be any cusped hyperbolic 3-manifold with r cusps,",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1138,
+   "n_words": 215
+  },
+  {
+   "id": "sec-015-8-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "8",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 8078,
+   "n_words": 1456
+  },
+  {
+   "id": "sec-016-10-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "10",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 6955,
+   "n_words": 1281
+  },
+  {
+   "id": "sec-017-12-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "12",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4852,
+   "n_words": 917
+  },
+  {
+   "id": "sec-018-14-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "14",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 710,
+   "n_words": 136
+  },
+  {
+   "id": "sec-019-331-local-representations-the-irreducible-repres",
+   "number": "3.3.1",
+   "title": "Local representations. The irreducible representations of Tq",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 5849,
+   "n_words": 1074
+  },
+  {
+   "id": "sec-020-16-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "16",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 3469,
+   "n_words": 623
+  },
+  {
+   "id": "sec-021-4-proofs",
+   "number": "4",
+   "title": "Proofs",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2780,
+   "n_words": 497
+  },
+  {
+   "id": "sec-022-18-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "18",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1606,
+   "n_words": 332
+  },
+  {
+   "id": "sec-023-0-then-for-all-x-tq",
+   "number": "0",
+   "title": "Then, for all X\u2208 Tq",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 546,
+   "n_words": 127
+  },
+  {
+   "id": "sec-024-2-a2a1-so-that",
+   "number": "2",
+   "title": "A2\u2297A1, so that",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1505,
+   "n_words": 289
+  },
+  {
+   "id": "sec-025-2-a2a1-in-w1",
+   "number": "2",
+   "title": "A2\u2297A1)\u25e6 (IN\u2297 w\u22121",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 164,
+   "n_words": 35
+  },
+  {
+   "id": "sec-026-2-the-other-cases-x-x1-x2-or-x3-are-similar-2",
+   "number": "2",
+   "title": "The other cases X =X1, X2 or X3 are similar. 2",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2401,
+   "n_words": 472
+  },
+  {
+   "id": "sec-027-20-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "20",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 4073,
+   "n_words": 731
+  },
+  {
+   "id": "sec-028-41-where-y3",
+   "number": "4.1",
+   "title": "(where y3",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2059,
+   "n_words": 382
+  },
+  {
+   "id": "sec-029-22-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "22",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 5045,
+   "n_words": 929
+  },
+  {
+   "id": "sec-030-2-xn",
+   "number": "2",
+   "title": "X\u2212N",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 28,
+   "n_words": 6
+  },
+  {
+   "id": "sec-031-5-xn",
+   "number": "5",
+   "title": "XN",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 39,
+   "n_words": 10
+  },
+  {
+   "id": "sec-032-2-x1",
+   "number": "2",
+   "title": "X\u22121",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1479,
+   "n_words": 312
+  },
+  {
+   "id": "sec-033-2-a2a1",
+   "number": "2",
+   "title": "A2\u2297A1)\u25e6",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 833,
+   "n_words": 151
+  },
+  {
+   "id": "sec-034-24-st-ephane-baseilhac1-riccardo-benedetti-2",
+   "number": "24",
+   "title": "ST \u00b4EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 5286,
+   "n_words": 969
+  },
+  {
+   "id": "sec-035-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 1584,
+   "n_words": 233
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 37,
+  "sections": 36,
+  "chars_total": 84263
+ }
+}

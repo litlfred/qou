@@ -15,7 +15,7 @@ declaring refuted"), so future agents do not re-chase them.
      (arXiv:2411.03801) — 1-loop invariant = adjoint Reidemeister torsion.
    - **Ormeño Bastías–Martin–Ryom-Hansen, "On the spherical partition algebra"**
      (arXiv:2402.01890) — Gemini misattributed this to "Bowman–Orellana".
-   Both uploaded to `uploads/`. Garoufalidis–Yoon 2411.03801 is now in
+   Both uploaded to `library/`. Garoufalidis–Yoon 2411.03801 is now in
    `references.ts` (`garoufalidis-yoon-2024`, added on main via 951b0939); the
    spherical partition algebra 2402.01890 is not yet added (no content-block
    `\cite` consumer — add when one lands, per the anti-unused-ref discipline).

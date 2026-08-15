@@ -4,7 +4,7 @@ GGM Theorem 22 three-block factorization, with the assembly DERIVED
 anchor-free, and the 5₂ saddle-term structure measured near the Kashaev
 ray (owner "go" on the exact-Z₅₂ tranche).
 
-Source (glyph-extracted from uploads/2012.00062v3.pdf §6.2; Theorem 22
+Source (glyph-extracted from library/arxiv-2012.00062v3/2012.00062v3.pdf §6.2; Theorem 22
 is proven, not conjectural):
 
   * H± q-hypergeometrics (242a/b):
@@ -257,7 +257,7 @@ def main() -> int:
         "printed exponent form (-pi i/3, c_C = c_B); exact three-term "
         "saddle structure near the Kashaev ray recorded.")
     wb.set_content_block("conj:im-q-physical-role")
-    wb.add_data("source", "uploads/2012.00062v3.pdf sec 6.2, eqs 240-245")
+    wb.add_data("source", "library/arxiv-2012.00062v3/2012.00062v3.pdf sec 6.2, eqs 240-245")
     wb.add_data("derived_ratios", {
         str(t): {"cB_over_cA": mp.nstr(v[0], 15),
                  "cC_over_cA": mp.nstr(v[1], 15),

@@ -1,0 +1,11 @@
+---
+doc_id: aif-2000-50-4-1021-0
+doc_title: "A NNALES DE L ’ INSTITUT F OURIER JACQUES SAULOY Systèmes aux q-différences singuliers réguliers : classiﬁcation, matrice de connexion et monodromie"
+section_id: sec-032-1121-cas-dune-matrice-unipotente-soit-u-in-4--n
+section_title: "Cas d'une matrice unipotente. — Soit U = In 4- N où"
+section_number: 1.1.2.1
+pages: 11-11
+source_pdf: AIF_2000__50_4_1021_0.pdf
+source_sha256: a7ca398590a266d8
+---
+N ç Mn(C) est niipotente. Nous aurons besoin, pour ce cas, d'introduire la

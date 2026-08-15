@@ -15,7 +15,7 @@ def:quantum-bloch-group and conj:borromean-bloch-group-element both state Bloch-
 - §4, eq. (11)-(12) — The Neumann-Zagier matrix H = (A B) formed from edge and peripheral equations is half-symplectic over Z, and this follows from the Neumann chain complex 0 -> C_0 -> C_1 -> J -> C_1 -> C_0 -> 0.
   Use here: The corpus consumes det J_NZ(B_3) in its 1-loop / Borromean witness but has only neumann-zagier1985 registered; the integral (not merely rational) symplectic refinement stated here is the property that determinant computation actually needs.
 
-Source: `uploads/2304.12545v1 (1).pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2304.12545v1/2304.12545v1 (1).pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -61,7 +61,7 @@ Corpus-grep before declaring: `Tjon`, `four-nucleon force`, `4N force` return
 ZERO hits across content/, docs/ and computations/ — this connection is new to
 the corpus. `C(A,k) basis` appears once (the κ ledger) with no critique attached.
 
-Papers on disc under uploads/ (owner upload 41930f2a): 0409040v2, 0610105v2,
+Papers on disc under library/ (owner upload 41930f2a): 0409040v2, 0610105v2,
 0811.1338v1, 0905.1873v2, plus Klein's 2018 Bonn thesis (50067518). The original
 Tjon reference (PRC 20, 340, 1979) is paywalled and pre-arXiv; it is NOT needed —
 it is the empirical observation, and Platter–Hammer–Meißner both states and

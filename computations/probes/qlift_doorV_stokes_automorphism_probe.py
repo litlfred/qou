@@ -461,7 +461,7 @@ def main():
                 "G3 keystone A_omega / integer-3 GGM Stokes datum S^0=[[1,0],"
                 "[-3,1]] this probe tests the residual against)",
             ],
-            "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+            "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (eq 49)",
             "discipline": "scope-(a) vocabulary per AGENTS.md refuted-discipline; "
                           "pre-stated kill criterion; positive control validates "
                           "the constancy detector; column-normalization is the "

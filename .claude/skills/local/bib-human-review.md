@@ -37,9 +37,9 @@ source**. This skill manages that status and drives unreviewed references to
 
 ## 2. Acquisition ladder (per flagged reference)
 
-1. **Source in `uploads/`** → identify the cited page/passage (agent-sourced; no
+1. **Source in `library/`** → identify the cited page/passage (agent-sourced; no
    human photo) → mark `source-in-repo`; hand to ingestion (§4).
-2. **Not in repo** → acquire legally for `uploads/` (open-access / arXiv / author
+2. **Not in repo** → acquire legally for `library/` (open-access / arXiv / author
    copy), with author assistance if needed.
 3. **Paywalled / not digital** → open a **physical-review issue** (§3); the author
    photographs the page(s) at a library.

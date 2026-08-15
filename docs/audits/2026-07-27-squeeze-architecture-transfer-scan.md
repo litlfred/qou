@@ -8,7 +8,7 @@ architecture (Riemann sums of `log(2 sin)` against the Clausen primitive +
 saddle + two-envelope squeeze) applies.
 
 > **RESOLVED (2026-08-02, PR #4400).** The owner uploaded the sources
-> (`uploads/0611181v2.pdf` = van der Veen; `uploads/1172-3.pdf` = Habiro,
+> (`library/arxiv-math-0611181v2/0611181v2.pdf` = van der Veen; `library/1172-3/1172-3.pdf` = Habiro,
 > Kōkyūroku 1172) and the third instance is now machine-proved sorry-free
 > for the **2-belt chain `W_{a,2,1,0}`** (same volume 4G):
 > `tendsto_log_whiteheadKashaev_vol` in
@@ -34,7 +34,7 @@ existing bricks, but it is blocked on a corpus-verified single-sum formula.**
 - The single-sum sources — Habiro [Hab00] (RIMS Kōkyūroku 1172) and
   van der Veen arXiv:math/0611181 (whose Whitehead-chain formula IS a
   positive sum at the Kashaev point; that positivity is the engine of his
-  proof) — are **not in `uploads/`** and arXiv is firewalled in-sandbox
+  proof) — are **not in `library/`** and arXiv is firewalled in-sandbox
   (checked 2026-07-27: no `0611181` PDF among the 145 uploads).
 - By analogy with the Borromean case (GL2011 App. A single sum → exact sign
   analysis → `kashaevProd`-powers over sin-squares → B-bricks), the expected
@@ -49,7 +49,7 @@ transcribe + anchor-verify the Whitehead single sum (the
 `habiro_borromean_colored_jones.py` 4-anchor pattern; the R-matrix engine is
 the in-corpus independent cross-check, a *stronger* validation than the
 Borromean had) → run the sign analysis → B-brick program. Coordinated with
-PR #4382 (their `[Kas95]` state-sum route, `uploads/9504020v1.pdf`, may
+PR #4382 (their `[Kas95]` state-sum route, `library/arxiv-q-alg-9504020v1/9504020v1.pdf`, may
 independently expose the positive structure).
 
 ## 2. s5-so3 `W_λ` (colored Σ(2,3,5) WRT / q-Bessel) — squeeze DOES NOT APPLY (type mismatch, two counts)

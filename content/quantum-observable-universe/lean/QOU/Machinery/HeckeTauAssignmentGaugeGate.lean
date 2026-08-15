@@ -36,7 +36,7 @@ precisely equivariance for this ℤ/2 action
 (`tauAssignment_zeta4_bar_equivariance` — a restatement with the right
 name, no new proof). In the Habiro-ring-of-a-number-field picture
 (Garoufalidis–Scholze–Wheeler–Zagier, arXiv:2412.04241 — uploaded at
-`uploads/2412.04241v2.pdf`: modules graded by `K₃(K)` whose elements
+`library/arxiv-2412.04241v2/2412.04241v2.pdf`: modules graded by `K₃(K)` whose elements
 are root-of-unity-indexed series glued by Frobenius), this is the
 bar-involution edge at the ζ₄ fibre; the Frobenius/Galois edges to
 other fibres remain the open research half of bean qou-vegn.

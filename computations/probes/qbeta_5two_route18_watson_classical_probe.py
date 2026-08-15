@@ -2,8 +2,8 @@
 """Route 18 -- the level-7 ladder is CLASSICAL. Watson (1937), via Kirillov.
 
 Beans `qou-fivt`, `qou-abel`, `qou-0yqu`. Literature supplied 2026-08-08:
-`uploads/9408113v2.pdf` (Kirillov, *Dilogarithm identities*, hep-th/9408113) and
-`uploads/the-dilogarithm-function-514sniwxl7.pdf` (Zagier, *The Dilogarithm
+`library/arxiv-hep-th-9408113v2/9408113v2.pdf` (Kirillov, *Dilogarithm identities*, hep-th/9408113) and
+`library/the-dilogarithm-function-514sniwxl7.pdf` (Zagier, *The Dilogarithm
 Function*).
 
 THE CORRECTION THIS PROBE RECORDS

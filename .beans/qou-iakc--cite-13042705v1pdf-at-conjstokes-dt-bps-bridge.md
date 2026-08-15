@@ -13,7 +13,7 @@ conj:stokes-dt-bps-bridge invokes Kontsevich-Soibelman DT data for the knot's q-
 - Cor. 1.6(b), eq. (12) — F is an admissible power series in the sense of Kontsevich-Soibelman [KS11, §6]; the limit omega(x) = lim_{q->1} omega(q,x) exists and satisfies the Nahm/gluing equation (1 - omega)^B = (-1)^A x·omega^A.
   Use here: Bridges the 4_1 q-series to the Kontsevich-Soibelman wall-crossing framework that conj:stokes-dt-bps-bridge invokes when it identifies the Stokes constant with Omega_DT — a named, published link between the knot's q-series and the DT machinery, rather than an asserted one.
 
-Source: `uploads/1304.2705v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1304.2705v1/1304.2705v1.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

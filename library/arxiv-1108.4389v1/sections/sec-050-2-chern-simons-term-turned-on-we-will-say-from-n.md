@@ -1,0 +1,24 @@
+---
+doc_id: arxiv-1108.4389v1
+doc_title: "Gauge Theories Labelled by Three-Manifolds"
+section_id: sec-050-2-chern-simons-term-turned-on-we-will-say-from-n
+section_title: "Chern-Simons term turned on. We will say from now on"
+section_number: 2
+pages: 30-31
+source_pdf: 1108.4389v1.pdf
+source_sha256: d3ac77510654d828
+---
+that the free chiral is associated to the edges of the tetrahedron ∆ labelled by Z, and denote
+it asφZ orOZ. It is also useful to think of the twisted mass ofOZ as Re(Z), and its R-charge
+as Im(Z)/π, where Z is the classical edge/shape parameter of ∆. We use this interpretation
+here as an intuitive aid to motivate our gluing construction; it will be made much more precise
+in Sections 5 and 6.
+– 29 –
+We can extend the deﬁnition ( 4.1) to any other polarization Π obtained by an (aﬃne)
+SL(2, Z) transformation g on ΠZ:
+T∆,g◦ΠZ =g◦T 1 (4.2)
+For example, in a polarization Π−
+Z as in (2.10), we would ﬁndT∆,Π−
+Z
+=T◦T 1 to be the theory
+of a free chiral coupled to a backgroundU(1) with Chern-Simons levelk = + 1

@@ -84,4 +84,4 @@ the geometric identification is untouched by it. Recorded so nobody mistakes
 
 * `qou-5gai` H4 / `qou-w3eg` — the geometric factor
 * `qou-idvt` T2 — same statement, ideal-tetrahedron side
-* N–Z §3, eqs (37)–(39) — `uploads/1-s2.0-0040938385900047-main.pdf`
+* N–Z §3, eqs (37)–(39) — `library/1-s20-0040938385900047-main/1-s2.0-0040938385900047-main.pdf`

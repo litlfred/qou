@@ -25,7 +25,7 @@ between two SEPARATELY transcribed matrices — a typo would break it); the A-po
 polygon is invariant under the reciprocal symmetry (M,L)->(M^-1,L^-1) [proved 2026-08-11 in
 RouteANewtonPolygonDT.a41_monomials_reciprocal_symmetric]; the 4_1 tower matched through q^400.
 
-NOW ACTIONABLE: every source PDF is in uploads/ (2012.00062v3, 2007.10190v2, 2111.04763v2,
+NOW ACTIONABLE: every source PDF is in library/ (2012.00062v3, 2007.10190v2, 2111.04763v2,
 2111.06645v3, 1208.1663v2, 1112.5179v1, 1604.02688v1, 1304.2705v1). Extract eqs (96)/(97)/(98)
 with pymupdf and diff against the typed matrices; do the same for the A-polynomial. Note eq (17)
 S+(x;q)^T S-(x^-1;q) = 1 was CONFIRMED in the source this session.
@@ -33,7 +33,7 @@ STILL NEEDS SnapPy (or a source) for the 5_2 boundary slopes — see qou-52sn.
 
 ## 2026-08-11 — STOKES MATRICES VERIFIED (stronger than a glyph-diff). Partial close.
 
-Read GGM 2012.00062v3 eqs (96)/(97)/(98) from uploads/ (pymupdf). Result: the typed
+Read GGM 2012.00062v3 eqs (96)/(97)/(98) from library/ (pymupdf). Result: the typed
 5_2 Stokes matrices are NOT independent transcriptions at all — they are RECONSTRUCTIBLE
 from the single eq-(98) DT-constant matrix
 

@@ -60,4 +60,4 @@ anything.
 
 Refs: probe [`geometric_qdilog_amplitude_r_frontier_probe.py`](../../computations/deltalambda/geometric_qdilog_amplitude_r_frontier_probe.py);
 #4345 (shape `= −h²` from rep); #4339 (`g₂_leading = 1`); #4315 (octahedral `e₂`);
-`uploads/2509.02354v2.pdf` §5.2 (geometric quantum dilog, pinched limit).
+`library/arxiv-2509.02354v2/2509.02354v2.pdf` §5.2 (geometric quantum dilog, pinched limit).

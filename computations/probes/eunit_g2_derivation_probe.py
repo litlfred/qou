@@ -8,11 +8,11 @@ CONTEXT (read first, in order):
   * docs/audits/2026-07-19-eunit-source-is-the-counit.md: μ₀ = m_e/(3h/2) — the first-order
     counit ladder is 3 crossings × (h/2) per crossing, i.e. the per-crossing bar-ODD counit
     weight is sinh θ = h/2 with θ = ln q (ε(σ) = q = cosh θ + sinh θ).
-  * uploads/phys-rep09.pdf (Blanes–Casas–Oteo–Ros, Phys. Rep. 470 (2009) 151): Theorem 1
+  * library/phys-rep09/phys-rep09.pdf (Blanes–Casas–Oteo–Ros, Phys. Rep. 470 (2009) 151): Theorem 1
     eq (32) dΩ/dt = Σ_n (B_n/n!) ad_Ω^n A with BERNOULLI weights B₀=1, B₁=−½, B₂=1/6,
     B₄=−1/30, B_{2m+1}=0 (m≥1); explicit Ω₂ = ½∫∫[A₁,A₂] (eq 43), Ω₃ = (1/6)∫∫∫{nested
     commutators} (eq 45), Ω₄ prefactor 1/12 — every order-k≥2 term is a LIE ELEMENT.
-  * uploads/0012035v3.pdf (Broda, NA-Stokes): P exp(i∮_∂S A) = 𝒫 exp((i/2)∫_S F_ij dx^i∧dx^j)
+  * library/arxiv-math-ph-0012035v3/0012035v3.pdf (Broda, NA-Stokes): P exp(i∮_∂S A) = 𝒫 exp((i/2)∫_S F_ij dx^i∧dx^j)
     with twisted curvature 𝓕 = U⁻¹FU; the quadratic term of the surface-ordered exponential
     carries the plain Dyson weight 1/2! on [(i/2)∫𝓕]² (§2.1.2 "Ordering", Dyson series).
 
@@ -279,7 +279,7 @@ def main() -> int:
         "cited. g2 remains NEAR-MATCH tier, underived; nothing here is wired to production.")
     wb.add_caveat(
         "Citations: Blanes-Casas-Oteo-Ros, Phys. Rep. 470 (2009) 151-238, Thm 1 eq (32) + "
-        "eqs (43)/(45) [uploads/phys-rep09.pdf]; Broda, math-ph/0012035v3 [uploads/]. "
+        "eqs (43)/(45) [library/phys-rep09/phys-rep09.pdf]; Broda, math-ph/0012035v3 [library/]. "
         "q-rotor lineage (index-verified, abstracts only): Raychev-Roussev-Smirnov, "
         "J. Phys. G 16 (1990) L137-L141; Bonatsos-Daskaloyannis, Prog. Part. Nucl. Phys. 43 "
         "(1999) 537, nucl-th/9909003 — NOTE their q is typically a PHASE (unit-circle) for "

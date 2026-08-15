@@ -2,7 +2,7 @@
 """Van der Veen's unevaluated constant, in closed form — and the bridge closed.
 
 Bean qou-vdvS.  Van der Veen (arXiv:math/0611181, AGT 8 (2008) 603-624;
-`uploads/0611181v2.pdf`) proves the volume conjecture for the Whitehead-chain
+`library/arxiv-math-0611181v2/0611181v2.pdf`) proves the volume conjecture for the Whitehead-chain
 family `W_{a,b,c,d}`,
 
     J_N(W)(e^{2 pi i/N}) ~ exp{ (1/2pi)[ (Vol + i CS) N + D log N + E ] },
@@ -492,7 +492,7 @@ def main() -> int:  # noqa: C901
         "paper": "van der Veen, Proof of the volume conjecture for Whitehead "
                  "chains, Algebr. Geom. Topol. 8 (2008) 603-624",
         "arxiv": "math/0611181",
-        "local": "uploads/0611181v2.pdf",
+        "local": "library/arxiv-math-0611181v2/0611181v2.pdf",
         "what_he_proves": "the volume conjecture for the family, D = 3 pi for b = 1",
         "what_he_leaves": ("E, as a (c+d+1)-dim Gaussian integral; he shows "
                            "only that it is nonzero, which is all his theorem "

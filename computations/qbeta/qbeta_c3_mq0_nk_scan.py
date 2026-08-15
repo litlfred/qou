@@ -5,7 +5,7 @@ Executes the deferred "Next compute" of the m(q₀) unified-boundary memo
 (PR #3660, docs/scope/2026-07-12-mq0-unified-boundary-selection.md §5):
 implement the BRANCH-TRACKED complex volume 𝔙(u) = Vol(u) + i·CS(u) for the
 figure-eight 4₁ from Murakami–Yokota's THEOREM-GRADE formula
-(uploads/0401084v3.pdf = math/0401084, Thm 2.1/2.2), cross-check it against
+(library/arxiv-math-0401084v3/0401084v3.pdf = math/0401084, Thm 2.1/2.2), cross-check it against
 the merged gluing Newton solver on the real slice and against the
 Neumann–Zagier / Hikami leading series, then push the eight NAMED candidates
     (N, k) ∈ {3, 6, 60, 120} × {1, 2}

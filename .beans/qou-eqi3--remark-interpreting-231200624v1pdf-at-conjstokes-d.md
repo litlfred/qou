@@ -15,7 +15,7 @@ One remark covering both usable items: that a GGM co-author lists the BPS-counti
 - Sec 1 eq (1.1) with Sec 3.2 — The resummed WKB q-series wave function has apparent singularities at every ll in 2 pi Q (i.e. at roots of unity q = exp(i ll)), absent from the non-perturbative definition; a conjectured integrality of the holomorphic blocks makes them cancel against the anti-holomorphic blocks, leaving a finite wave function, with the epsilon-expansion mechanics in Appendix A.
   Use here: A stated cancellation mechanism at rational points, worked explicitly for the figure-eight in Sec 4.1 and Sec 5. Recorded against conj:stokes-dt-bps-bridge only as context for the same 4_1 wave function; there is no block that consumes it, which is why the verdict stays supporting.
 
-Source: `uploads/2312.00624v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2312.00624v1/2312.00624v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

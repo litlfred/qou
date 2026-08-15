@@ -3,7 +3,7 @@
 the false-theta level.
 
 Bean s013, step 3. The primary sources are now in-repo (owner upload, commit ece271823:
-`uploads/0405028v2.pdf` = Hikami, *On the quantum invariant for the Brieskorn homology
+`library/arxiv-math-ph-0405028v2/0405028v2.pdf` = Hikami, *On the quantum invariant for the Brieskorn homology
 spheres*, math-ph/0405028; also 1811.05376v4, 2205.01282v2, and Lawrence–Zagier 1999
 `fulltext.pdf`). This probe transcribes the genuine structure and MACHINE-VALIDATES every
 transcribed formula before drawing any conclusion:
@@ -260,7 +260,7 @@ def run():
 
 
 def report(res):
-    print("# s013 — the genuine Σ(2,3,5) S-matrix (Hikami math-ph/0405028, now in uploads/)\n")
+    print("# s013 — the genuine Σ(2,3,5) S-matrix (Hikami math-ph/0405028, now in library/)\n")
 
     print("## (χ) Characters and the D=2 identification\n")
     print(f"- D(2,3,5) = (1·2·4)/4 = **{res['D_235']}** independent vector-valued components:"

@@ -13,7 +13,7 @@ conj:jet-convergence-classical-limit's prose names a 'Feray-Meliot q-Plancherel 
 - Introduction, eqs. (0.1)-(0.4); proved in §7 — Kerov's CLT: for lambda drawn from Plancherel measure M_n, the rescaled boundary satisfies n^{-1/2} lambda(sqrt(n) x) ~ Omega(x) + (2/sqrt(n)) Delta(x), with Omega(x) = (2/pi)(x arcsin(x/2) + sqrt(4 - x^2)) on |x| <= 2 and Delta a generalized Gaussian process given by the random trigonometric series Delta(2 cos theta) = (1/pi) sum_{k>=2} (xi_k/sqrt(k)) sin(k theta), xi_k i.i.d. standard normal.
   Use here: Supplies the actual q = 1 fluctuation theorem — including the exact 1/sqrt(n) scale — that conj:jet-convergence-classical-limit's O(1/sqrt(k)) claim and prop:q-plancherel-asymptotic-skeleton clause (2) are asserting a q-analogue of. Replaces a citation (feray2010) that does not state a CLT.
 
-Source: `uploads/0304010v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0304010v1/0304010v1.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -18,7 +18,7 @@ updated_at: 2026-08-08T18:40:00Z
 ## The ask
 
 Van der Veen (arXiv:math/0611181, AGT 8 (2008) 603-624; local
-`uploads/0611181v2.pdf`) writes the colored-Jones asymptotic of a Whitehead
+`library/arxiv-math-0611181v2/0611181v2.pdf`) writes the colored-Jones asymptotic of a Whitehead
 chain as
 
     J_N(W) ~ exp{ (1/2pi)[ (Vol + iCS) N + D log N + E ] }
@@ -73,7 +73,7 @@ i.e. `S~_N ~ e^{4N Lambda/pi} / sqrt(2N)`.  Verified numerically rather than
 trusted, because the `s_n` line inside its own proof drops a factor `2pi` — the
 two extreme terms of `log S~_N = -2 s_{N/4+N/2} + 2 s_{N/4} + s_{N/2}` cancel
 that factor, so the lemma survives its own proof's typo.  (The mangled text
-extraction the ask warned about was real; `pypdf` on `uploads/0611181v2.pdf`
+extraction the ask warned about was real; `pypdf` on `library/arxiv-math-0611181v2/0611181v2.pdf`
 page 5 reads it cleanly.)
 
 Its constant `2^{-1/2}` per unit of `c+d` is exactly what cancels the

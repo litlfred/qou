@@ -8,7 +8,7 @@ no c_k wired, nothing to production, no tier change.
 
 The prior step ([`…-5two-dilog-qsqrt7-bar-odd-action-home.md`](2026-07-18-5two-dilog-qsqrt7-bar-odd-action-home.md))
 established the bar-odd action's home = ℚ(√−7) and pointed at Theorem 3 of the owner's
-dilog paper ([`uploads/2506.10206v2.pdf`](../../uploads/2506.10206v2.pdf)):
+dilog paper ([`library/arxiv-2506.10206v2/2506.10206v2.pdf`](../../library/arxiv-2506.10206v2/2506.10206v2.pdf)):
 `L(u) = Li₂(z_a)+Li₂(z_b)+Li₂(u) = E(u)`, with `E` elementary for real `u>0`. This step
 tests whether that yields the bar-odd archimedean action directly.
 
@@ -52,6 +52,6 @@ claimed. No fit; no c_k; no tier change.
 ## Cross-references
 
 - Prior step (ℚ(√−7) home): [`2026-07-18-5two-dilog-qsqrt7-bar-odd-action-home.md`](2026-07-18-5two-dilog-qsqrt7-bar-odd-action-home.md)
-- Paper: [`uploads/2506.10206v2.pdf`](../../uploads/2506.10206v2.pdf) (Theorem 3; Examples 5–8, ℚ(√−7))
+- Paper: [`library/arxiv-2506.10206v2/2506.10206v2.pdf`](../../library/arxiv-2506.10206v2/2506.10206v2.pdf) (Theorem 3; Examples 5–8, ℚ(√−7))
 - Sibling M-dictionary (block/saddle): `qbeta_g3_5two_block_saddle_dictionary.py`, `qbeta_5two_phi_series_engine_probe.py` (Theorem 22, β blocks)
 - Ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)

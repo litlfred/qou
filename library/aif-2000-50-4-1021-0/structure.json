@@ -1,0 +1,689 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "aif-2000-50-4-1021-0",
+ "source": {
+  "file": "AIF_2000__50_4_1021_0.pdf",
+  "sha256": "a7ca398590a266d8753d1b7ccbcb80c47bb38d937e3a86113aade5f13342e4dc",
+  "bytes": 3816870,
+  "pages": 52
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "A NNALES DE L \u2019 INSTITUT F OURIER JACQUES SAULOY Syst\u00e8mes aux q-diff\u00e9rences singuliers r\u00e9guliers : classi\ufb01cation, matrice de connexion et monodromie",
+  "authors_raw": "Annales de l\u2019institut F ourier, tome 50, n o 4 (2000), p. 1021-1071",
+  "abstract": null,
+  "docinfo": {
+   "Author": "Jacques Sauloy",
+   "CreationDate": "D:20210205085455+01'00'",
+   "Creator": "NUMDAM",
+   "Producer": "pdfTeX-1.40.16",
+   "Title": "Syst\u00e8mes aux q-diff\u00e9rences singuliers r\u00e9guliers : classification, matrice de connexion et monodromie"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction et notations ........................... 1022",
+   "page": 2,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 2,
+   "title": "R\u00e9solution locale .................................. 1023",
+   "page": 2,
+   "source": "inferred",
+   "number": "0.1"
+  },
+  {
+   "level": 2,
+   "title": "Classification .................................... 1026",
+   "page": 2,
+   "source": "inferred",
+   "number": "0.2"
+  },
+  {
+   "level": 2,
+   "title": "Confluence des solutions ............................. 1026",
+   "page": 2,
+   "source": "inferred",
+   "number": "0.3"
+  },
+  {
+   "level": 2,
+   "title": "Confluence et monodromie ........................... 1027",
+   "page": 2,
+   "source": "inferred",
+   "number": "0.4"
+  },
+  {
+   "level": 1,
+   "title": "Construction de solutions locales",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Solutions fondamentales en 0 .......................... 1028",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 3,
+   "title": "On se ram\u00e8ne au cas fuchsien non r\u00e9sonnant ............ 1028",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Cas d'un syst\u00e8me \u00e0 coefficients constants .............. 1030",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Cas d'un syst\u00e8me fuchsien non r\u00e9sonnant .............. 1033",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Synth\u00e8se ................................... 1034",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1.4"
+  },
+  {
+   "level": 2,
+   "title": "Non-unicit\u00e9 des solutions canoniques ..................... 1036",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Caract\u00e9risation des syst\u00e8mes singuliers r\u00e9guliers par la",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 3,
+   "title": "Un algorithme de r\u00e9duction ....................... 1037",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Caract\u00e9risation des syst\u00e8mes singuliers r\u00e9guliers .......... 1039",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.3.2"
+  },
+  {
+   "level": 1,
+   "title": "Matrice de connexion et classification .................. 1039",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Caract\u00e9risation globale des syst\u00e8mes singuliers r\u00e9guliers ........ 1040",
+   "page": 2,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Classification des syst\u00e8mes singuliers r\u00e9guliers sur \u00a7 ........... 1040",
+   "page": 2,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Pr\u00e9cisions diverses ................................. 1042",
+   "page": 2,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 3,
+   "title": "Polarit\u00e9 .................................... 1042",
+   "page": 2,
+   "source": "inferred",
+   "number": "2.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Interpr\u00e9tation cat\u00e9gorique ........................ 1043",
+   "page": 2,
+   "source": "inferred",
+   "number": "2.3.2"
+  },
+  {
+   "level": 1,
+   "title": "Comportement des solutions lorsque q \u2014\u00bb 1 .............. 1043",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Estimation asymptotique de eq^c et de iq .................. 1044",
+   "page": 2,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Comportement des solutions canoniques ................... 1047",
+   "page": 2,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Comportement des solutions \u00e0 valeur initiale fixe ............. 1048",
+   "page": 3,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Comportement de la matrice de connexion lorsque q \u2022\u2014> 1",
+   "page": 3,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Trois exemples ................................... 1055",
+   "page": 3,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "D\u00e9formation de la fonction hyperg\u00e9om\u00e9trique ............... 1055",
+   "page": 3,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "D\u00e9formation de log(l \u2014 z/zo) .......................... 1058",
+   "page": 3,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Un exemple irr\u00e9gulier ............................... 1059",
+   "page": 3,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 3,
+   "title": "Calculs explicites en dimension 1 ................... 1060",
+   "page": 3,
+   "source": "inferred",
+   "number": "5.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Am\u00e9lioration des estimations de \u00f4 .................. 1061",
+   "page": 3,
+   "source": "inferred",
+   "number": "5.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Application \u00e0 l'exemple ......................... 1062",
+   "page": 3,
+   "source": "inferred",
+   "number": "5.3.3"
+  },
+  {
+   "level": 4,
+   "title": "Cas d'une matrice unipotente. \u2014 Soit U = In 4- N o\u00f9",
+   "page": 11,
+   "source": "inferred",
+   "number": "1.1.2.1"
+  },
+  {
+   "level": 1,
+   "title": "Notation",
+   "page": 11,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Cas d'une matrice semi-simple. \u2014 Pour une matrice diagonale",
+   "page": 12,
+   "source": "inferred",
+   "number": "1.1.2.2"
+  },
+  {
+   "level": 4,
+   "title": "Cas g\u00e9n\u00e9ral. \u2014 Soit A = D + 7V la d\u00e9composition de Dunford",
+   "page": 13,
+   "source": "inferred",
+   "number": "1.1.2.3"
+  },
+  {
+   "level": 1,
+   "title": "Comportement de la matrice de connexion",
+   "page": 33,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Q(^o)",
+   "page": 43,
+   "source": "inferred",
+   "number": "11"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction-et-notations-1022",
+   "number": "0",
+   "title": "Introduction et notations ........................... 1022",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-01-r\u00e9solution-locale-1023",
+   "number": "0.1",
+   "title": "R\u00e9solution locale .................................. 1023",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-02-classification-1026",
+   "number": "0.2",
+   "title": "Classification .................................... 1026",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-03-confluence-des-solutions-1026",
+   "number": "0.3",
+   "title": "Confluence des solutions ............................. 1026",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-04-confluence-et-monodromie-1027",
+   "number": "0.4",
+   "title": "Confluence et monodromie ........................... 1027",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-1-construction-de-solutions-locales",
+   "number": "1",
+   "title": "Construction de solutions locales",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-11-solutions-fondamentales-en-0-1028",
+   "number": "1.1",
+   "title": "Solutions fondamentales en 0 .......................... 1028",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-111-on-se-ram\u00e8ne-au-cas-fuchsien-non-r\u00e9sonnant-1",
+   "number": "1.1.1",
+   "title": "On se ram\u00e8ne au cas fuchsien non r\u00e9sonnant ............ 1028",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-112-cas-dun-syst\u00e8me-\u00e0-coefficients-constants-103",
+   "number": "1.1.2",
+   "title": "Cas d'un syst\u00e8me \u00e0 coefficients constants .............. 1030",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-113-cas-dun-syst\u00e8me-fuchsien-non-r\u00e9sonnant-1033",
+   "number": "1.1.3",
+   "title": "Cas d'un syst\u00e8me fuchsien non r\u00e9sonnant .............. 1033",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-114-synth\u00e8se-1034",
+   "number": "1.1.4",
+   "title": "Synth\u00e8se ................................... 1034",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-12-non-unicit\u00e9-des-solutions-canoniques-1036",
+   "number": "1.2",
+   "title": "Non-unicit\u00e9 des solutions canoniques ..................... 1036",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-012-13-caract\u00e9risation-des-syst\u00e8mes-singuliers-r\u00e9gul",
+   "number": "1.3",
+   "title": "Caract\u00e9risation des syst\u00e8mes singuliers r\u00e9guliers par la",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 60,
+   "n_words": 5
+  },
+  {
+   "id": "sec-013-131-un-algorithme-de-r\u00e9duction-1037",
+   "number": "1.3.1",
+   "title": "Un algorithme de r\u00e9duction ....................... 1037",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 72,
+   "n_words": 8
+  },
+  {
+   "id": "sec-014-2-matrice-de-connexion-et-classification-1039",
+   "number": "2",
+   "title": "Matrice de connexion et classification .................. 1039",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-015-21-caract\u00e9risation-globale-des-syst\u00e8mes-singulie",
+   "number": "2.1",
+   "title": "Caract\u00e9risation globale des syst\u00e8mes singuliers r\u00e9guliers ........ 1040",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-016-22-classification-des-syst\u00e8mes-singuliers-r\u00e9guli",
+   "number": "2.2",
+   "title": "Classification des syst\u00e8mes singuliers r\u00e9guliers sur \u00a7 ........... 1040",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-017-23-pr\u00e9cisions-diverses-1042",
+   "number": "2.3",
+   "title": "Pr\u00e9cisions diverses ................................. 1042",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-018-231-polarit\u00e9-1042",
+   "number": "2.3.1",
+   "title": "Polarit\u00e9 .................................... 1042",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-019-232-interpr\u00e9tation-cat\u00e9gorique-1043",
+   "number": "2.3.2",
+   "title": "Interpr\u00e9tation cat\u00e9gorique ........................ 1043",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-020-3-comportement-des-solutions-lorsque-q-1-1043",
+   "number": "3",
+   "title": "Comportement des solutions lorsque q \u2014\u00bb 1 .............. 1043",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-31-estimation-asymptotique-de-eqc-et-de-iq-1044",
+   "number": "3.1",
+   "title": "Estimation asymptotique de eq^c et de iq .................. 1044",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-022-32-comportement-des-solutions-canoniques-1047",
+   "number": "3.2",
+   "title": "Comportement des solutions canoniques ................... 1047",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 170,
+   "n_words": 25
+  },
+  {
+   "id": "sec-023-33-comportement-des-solutions-\u00e0-valeur-initiale",
+   "number": "3.3",
+   "title": "Comportement des solutions \u00e0 valeur initiale fixe ............. 1048",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 117,
+   "n_words": 10
+  },
+  {
+   "id": "sec-024-4-comportement-de-la-matrice-de-connexion-lorsqu",
+   "number": "4",
+   "title": "Comportement de la matrice de connexion lorsque q \u2022\u2014> 1",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 55,
+   "n_words": 4
+  },
+  {
+   "id": "sec-025-5-trois-exemples-1055",
+   "number": "5",
+   "title": "Trois exemples ................................... 1055",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-026-51-d\u00e9formation-de-la-fonction-hyperg\u00e9om\u00e9trique-1",
+   "number": "5.1",
+   "title": "D\u00e9formation de la fonction hyperg\u00e9om\u00e9trique ............... 1055",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-027-52-d\u00e9formation-de-logl-zzo-1058",
+   "number": "5.2",
+   "title": "D\u00e9formation de log(l \u2014 z/zo) .......................... 1058",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-028-53-un-exemple-irr\u00e9gulier-1059",
+   "number": "5.3",
+   "title": "Un exemple irr\u00e9gulier ............................... 1059",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-029-531-calculs-explicites-en-dimension-1-1060",
+   "number": "5.3.1",
+   "title": "Calculs explicites en dimension 1 ................... 1060",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-030-532-am\u00e9lioration-des-estimations-de-\u00f4-1061",
+   "number": "5.3.2",
+   "title": "Am\u00e9lioration des estimations de \u00f4 .................. 1061",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-031-533-application-\u00e0-lexemple-1062",
+   "number": "5.3.3",
+   "title": "Application \u00e0 l'exemple ......................... 1062",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 11,
+   "n_chars": 15406,
+   "n_words": 2629
+  },
+  {
+   "id": "sec-032-1121-cas-dune-matrice-unipotente-soit-u-in-4--n",
+   "number": "1.1.2.1",
+   "title": "Cas d'une matrice unipotente. \u2014 Soit U = In 4- N o\u00f9",
+   "level": 4,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 74,
+   "n_words": 13
+  },
+  {
+   "id": "sec-033-notation",
+   "number": null,
+   "title": "Notation",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1376,
+   "n_words": 269
+  },
+  {
+   "id": "sec-034-1122-cas-dune-matrice-semi-simple-pour-une-matri",
+   "number": "1.1.2.2",
+   "title": "Cas d'une matrice semi-simple. \u2014 Pour une matrice diagonale",
+   "level": 4,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 711,
+   "n_words": 131
+  },
+  {
+   "id": "sec-035-1123-cas-g\u00e9n\u00e9ral-soit-a-d-7v-la-d\u00e9composition-de",
+   "number": "1.1.2.3",
+   "title": "Cas g\u00e9n\u00e9ral. \u2014 Soit A = D + 7V la d\u00e9composition de Dunford",
+   "level": 4,
+   "page_start": 13,
+   "page_end": 33,
+   "n_chars": 36120,
+   "n_words": 6597
+  },
+  {
+   "id": "sec-036-4-comportement-de-la-matrice-de-connexion",
+   "number": "4",
+   "title": "Comportement de la matrice de connexion",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 43,
+   "n_chars": 15430,
+   "n_words": 2755
+  },
+  {
+   "id": "sec-037-11-qo",
+   "number": "11",
+   "title": "Q(^o)",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 52,
+   "n_chars": 16608,
+   "n_words": 2920
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 39,
+  "sections": 38,
+  "chars_total": 86199
+ }
+}

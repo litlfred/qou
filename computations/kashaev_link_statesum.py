@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """[Kas95] §3 link-invariant state sum — the genuine Kashaev invariant of a
-link given as a two-strand tangle diagram (q-alg/9504020, uploads/9504020v1.pdf).
+link given as a two-strand tangle diagram (q-alg/9504020, library/arxiv-q-alg-9504020v1/9504020v1.pdf).
 
 WHY this and not a braid closure: kashaev_rmatrix.py proves the Markov
 condition tr₂((I⊗μ)Ř)∝I has NO diagonal-μ solution (σ_min≈2.45), so the
@@ -570,7 +570,7 @@ if __name__ == "__main__":
     wit = {
         "description": "[Kas95] §3 face-index link-invariant state sum, validated on the figure-eight: the general planar state sum (3.6) reproduces the Kashaev closed form kashaev_4_1(N) exactly at N=3,5,7,11. The genuine Kashaev invariant machinery (not a Markov trace). Toward the Whitehead ⟨W⟩_N (#3).",
         "computation": "kashaev_link_statesum", "audit_only": True,
-        "reference": "Kashaev 1995, q-alg/9504020 (uploads/9504020v1.pdf), §2-§3",
+        "reference": "Kashaev 1995, q-alg/9504020 (library/arxiv-q-alg-9504020v1/9504020v1.pdf), §2-§3",
         "convention": {"fig8_pd": [list(t) for t in FIG8_PD],
                        "strand_edges": [1, 2], "outer_face": 2,
                        "note": "symmetric choice (4,5)/2 also validates"},

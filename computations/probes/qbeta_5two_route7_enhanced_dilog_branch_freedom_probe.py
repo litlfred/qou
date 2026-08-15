@@ -4,7 +4,7 @@
 Context
 -------
 Bean ``qou-r7ml`` (child of ``qou-0yqu``).  Route 6 tested Zagier's **enhanced
-dilogarithm** (``uploads/zagier-the-dilogarithm-function.pdf``, §II.1 B)
+dilogarithm** (``library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf``, §II.1 B)
 
     D̃(ẑ) = Li₂(z) + ½·u·v      on   X̃ = {(u,v) : eᵘ + eᵛ = 1},  values in ℂ/(π²/2)ℤ
 

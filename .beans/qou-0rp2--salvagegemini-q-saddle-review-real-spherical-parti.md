@@ -49,7 +49,7 @@ arXiv:2402.01890.
   fabricated until confirmed.
 
 ## ASSESSMENT (2026-08-02) — Gemini's coarse Option-B claim REFUTED; only the hard route survives
-Read the real paper (uploads/2402.01890v4.pdf, Ormeño Bastías–Martin–Ryom-Hansen).
+Read the real paper (library/arxiv-2402.01890v4/2402.01890v4.pdf, Ormeño Bastías–Martin–Ryom-Hansen).
 
 **What the paper actually proves (Thm 2 + abstract):**
 - SP_k = idempotent (trivial-rep) subalgebra of the partition algebra P_k.

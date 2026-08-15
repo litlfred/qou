@@ -1,6 +1,6 @@
 ---
 # qou-iiz4
-title: 'EPIC: Lean formalization of Nguyen–Tran strong AJ for 4₁ (uploads/2006.02042v1.pdf) — q-Weyl/q-holonomy infra reusable for keystone q-lift identification + q-difference connections corpus-wide'
+title: 'EPIC: Lean formalization of Nguyen–Tran strong AJ for 4₁ (library/arxiv-2006.02042v1/2006.02042v1.pdf) — q-Weyl/q-holonomy infra reusable for keystone q-lift identification + q-difference connections corpus-wide'
 status: in-progress
 type: epic
 priority: normal

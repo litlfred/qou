@@ -15,7 +15,7 @@ Flag the near-collision: 2026-08-01-arrow-a-stateintegral-saddle-not-index-serie
 - Cor. 10.21 — For a 1-efficient ideal triangulation the index sum is a genuine power series (no negative powers of q).
   Use here: This is self-test (i) of the corpus's Borromean 3D-index validation gate, currently cited as 'GHHR Cor 10.21' with no bibliography entry.
 
-Source: `uploads/1604.02688v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1604.02688v1/1604.02688v1.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

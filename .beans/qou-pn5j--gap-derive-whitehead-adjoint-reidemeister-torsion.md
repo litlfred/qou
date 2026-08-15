@@ -148,7 +148,7 @@ field, from this corpus's own extraction. Fixed with an independent published
 source.
 
 Ohtsuki, "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot"
-(uploads/ki52.pdf), Theorem 1.1 -- a RIGOROUS THEOREM, not a fit:
+(library/ki52/ki52.pdf), Theorem 1.1 -- a RIGOROUS THEOREM, not a fit:
 
     <5_2>_N = e^{N zeta} N^{3/2} omega (1 + sum kappa_i (2 pi i/N)^i + O(N^{-d-1}))
     omega   = e^{-i pi/4} ((1 - y_0)/(2 y_0 + 1))^{1/2},  (y_0-1)^3 = y_0, Im y_0 > 0

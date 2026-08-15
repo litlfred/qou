@@ -936,7 +936,7 @@ proper — and the literature to lean on is arXiv:2412.02281, still unread here
 
 ## 2026-08-07 (nineteenth) — WHY the multipliers never fell out: they need the DIVERGENT presentation
 
-Read Lin–Ma–Xu §3.1 (`uploads/2412.02281v1.pdf`, uploaded by the owner). Their
+Read Lin–Ma–Xu §3.1 (`library/arxiv-2412.02281v1/2412.02281v1.pdf`, uploaded by the owner). Their
 **Definition 3.3**:
 
     connection matrix:  F_q^(∞)(z,λ) · U_q(z,λ) = F_q^(0)(z)
@@ -986,10 +986,10 @@ corrected is the expectation that the multipliers follow from them directly.
 
 ## 2026-08-07 (twentieth) — Morita read; SAME ramification convention; inversion formula in Lean
 
-Owner uploaded the requested papers (`uploads/`): Morita arXiv:1104.0755v2 and
+Owner uploaded the requested papers (`library/`): Morita arXiv:1104.0755v2 and
 1105.1998v3, arXiv:1203.3404v1, 1404.2541v1, Sauloy AIF 2000
 (`AIF_2000__50_4_1021_0.pdf`) and AIF 2009. **RSZ Astérisque 355 was already
-there** as `uploads/0903.0853v3.pdf` — worth knowing the folder is a large
+there** as `library/arxiv-0903.0853v3/0903.0853v3.pdf` — worth knowing the folder is a large
 existing library, not just today's additions.
 
 **Morita uses `q = p²` — our exact ramification convention.** (1105.1998 §2:
@@ -1028,7 +1028,7 @@ papers are therefore the worked rank-2 template for it, and are now in-repo.
 
 ## 2026-08-07 (twenty-first) — the Stokes multipliers are very likely TRIVIAL, and the connection matrix is the whole story
 
-Read RSZ (`uploads/0903.0853v3.pdf`) §5. Their definitions:
+Read RSZ (`library/arxiv-0903.0853v3/0903.0853v3.pdf`) §5. Their definitions:
 
 - `Λ_I := Iₙ + Matₙ(A₀)`, automorphisms **infinitely tangent to the identity**;
 - `Λ_I(M) ⊂ Λ_I`, those that are automorphisms of `M` — *"this is also called the
@@ -1089,7 +1089,7 @@ long-standing target is not mine to call unilaterally.
 
 ### DVRSZ survey confirms the triviality reading, in its own words
 
-`uploads/Equations_aux_q-differences.pdf` (Di Vizio–Ramis–Sauloy–Zhang):
+`library/equations-aux-q-differences/Equations_aux_q-differences.pdf` (Di Vizio–Ramis–Sauloy–Zhang):
 
 - *"On parle de système ou de module **pur** lorsqu'il y a **une seule pente**"* —
   pure ⟺ a single slope. Our terminology matches theirs exactly.

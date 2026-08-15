@@ -1,0 +1,11 @@
+---
+doc_id: arxiv-1705.01853v2
+doc_title: "Line Operators in the Standard Model David Tong"
+section_id: sec-003-31-theta-angles-10
+section_title: "Theta Angles 10"
+section_number: 3.1
+pages: 2-2
+source_pdf: 1705.01853v2.pdf
+source_sha256: 895e0b22c93bca1b
+---
+

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Route 49 -- Neumann's actual definitions, from the paper in `uploads/`, and
+"""Route 49 -- Neumann's actual definitions, from the paper in `library/`, and
 they OVERTURN Route 43's target. The sum rule is a Chern-Simons EVALUATION, not
 a torsion statement.
 
 Beans `qou-xblo` (this route) and `qou-0yqu` (the parent gap). PR #4865.
 Source: W D Neumann, "Extended Bloch group and the Cheeger-Chern-Simons class",
-Geometry & Topology 8 (2004) 413-474 -- `uploads/0307092v2.pdf`.
+Geometry & Topology 8 (2004) 413-474 -- `library/0307092v2/0307092v2.pdf`.
 
 WHAT THE PAPER ACTUALLY SAYS
 ----------------------------
@@ -108,7 +108,7 @@ def main() -> int:
                  "R(z;p,q) = R(z) + (pi i/2)(p log(1-z) + q log z) - pi^2/6, valued in "
                  "C/pi^2 Z. Routes 43-47 used a MINUS sign on the correction and omitted the "
                  "-pi^2/6 per term. This gate exists so the sign is fixed in the record",
-        "source": "uploads/0307092v2.pdf, Prop 2.5",
+        "source": "library/0307092v2/0307092v2.pdf, Prop 2.5",
         "sign_on_correction": "+", "constant_per_term": "-pi^2/6",
         "valued_in": "C / pi^2 Z",
         "pass": True,
@@ -205,7 +205,7 @@ def main() -> int:
     out = {
         "probe": "qbeta_5two_route49_neumann_kernel",
         "beans": ["qou-xblo", "qou-0yqu"], "dps": mp.dps,
-        "source": "uploads/0307092v2.pdf -- Neumann, Extended Bloch group and the "
+        "source": "library/0307092v2/0307092v2.pdf -- Neumann, Extended Bloch group and the "
                   "Cheeger-Chern-Simons class, Geometry & Topology 8 (2004) 413-474",
         "overturns": "Route 43's target ('show sum_sigma [y; eps, 0] is torsion in B-hat(C)') -- "
                      "the element is not in ker nu, and the admissible flattenings give a "

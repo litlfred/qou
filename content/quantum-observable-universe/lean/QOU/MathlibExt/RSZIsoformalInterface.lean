@@ -4,7 +4,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 # Typed interface to the cited RSZ isoformal-classification statements
 
 Ramis–Sauloy–Zhang, *Local analytic classification of q-difference equations*
-(Astérisque 355, `uploads/0903.0853v3.pdf`), §3.3.
+(Astérisque 355, `library/arxiv-0903.0853v3/0903.0853v3.pdf`), §3.3.
 
 **Why this file exists.** Prose citations do not typecheck. The corpus carried,
 from 2026-08-01, the chain

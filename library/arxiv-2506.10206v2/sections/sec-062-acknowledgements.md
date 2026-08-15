@@ -1,0 +1,12 @@
+---
+doc_id: arxiv-2506.10206v2
+doc_title: "Analytic dilogarithm identities Cetin Hakimoglu-Brown"
+section_id: sec-062-acknowledgements
+section_title: "Acknowledgements"
+section_number: null
+pages: 38-38
+source_pdf: 2506.10206v2.pdf
+source_sha256: d0631a9abd9b1da3
+---
+The author thanks John Maxwell Campbell for help with the exposition in this paper and
+for help with the typesetting and formatting for this paper.

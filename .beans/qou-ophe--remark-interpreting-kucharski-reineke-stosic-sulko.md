@@ -15,7 +15,7 @@ Record that the 4₁ open-BPS count of 5 and the #nodes = det(K) rule are corpus
 - p. 5, 'Example – trefoil knot' — The correspondence is worked explicitly for the trefoil only (the quiver of fig. 1); no figure-eight node count is computed anywhere.
   Use here: Establishes that det(4₁)=5 is the corpus's extrapolation, not this document's result.
 
-Source: `uploads/1707.02991v1.pdf` (`kucharski-reineke-stosic-sulkowski2017`)
+Source: `library/arxiv-1707.02991v1/1707.02991v1.pdf` (`kucharski-reineke-stosic-sulkowski2017`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

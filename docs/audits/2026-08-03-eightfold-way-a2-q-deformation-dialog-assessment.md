@@ -204,7 +204,7 @@ All six arXiv identifiers were checked and are **real, correctly titled**
 
 Two are cited for more than they support:
 
-All six PDFs are in [`uploads/`](../../uploads/) (owner upload
+All six PDFs are in [`library/`](../../library/) (owner upload
 [`cba63fa`](https://github.com/litlfred/qou/commit/cba63fa178c9ded661581c11b5a96efadec3bdd7)
 plus the pre-existing `9612303v1.pdf`) and the two load-bearing claims below
 were checked **against the PDFs**, not the abstracts.
@@ -520,7 +520,7 @@ Nothing in the dialog changes any production compute.
 
 ## 8. Papers to obtain next
 
-All six dialog citations are already in [`uploads/`](../../uploads/)
+All six dialog citations are already in [`library/`](../../library/)
 (`9612303v1`, `1012.5432v4`, `1508.01458v1`, `1803.04009v2`, `1910.09966v1`,
 `1911.04486v4`). The following are **not** in the dialog — they surfaced
 from `1910.09966`'s own bibliography and are closer to QOU's actual
@@ -530,7 +530,7 @@ machinery than four of the six papers the dialog cited.
 |---|---|
 | **Gavrilik**, *Quantum algebras in phenomenological description of particle properties*, Nucl. Phys. B (Proc. Suppl.) **102/103** (2001) 298 — [`hep-ph/0103325`](https://arxiv.org/abs/hep-ph/0103325) | **Highest priority.** The only $q$-deformed-flavour line that is genuinely on-topic: $q$ of $\mathrm{SU}_q(n)$ is tied to the **flavour mixing (Cabibbo) angle**, and **torus knots as 2-braids are associated with vector mesons of different flavours**. Directly touches the corpus's [`sm-params-ckm.md`](../../content/quantum-observable-universe/appendix-standard-model/sm-params-ckm.md), and is the eightfold-way-adjacent $q$-deformation the dialog was groping for. Check carefully whether $q \leftrightarrow \theta_C$ is *derived* or *fitted*. |
 | **Finkelstein**, *Knots and Preons*, Int. J. Mod. Phys. A **24** (2009) 2307 — [`0806.3105`](https://arxiv.org/abs/0806.3105) | Particle model built from **knots represented by quantum groups** — the closest published analogue to QOU's own construction. Worth reading for what it does with $\mathrm{SU}_q(2)$ representation labels vs. knot invariants. |
-| **Bilson-Thompson**, *A Topological Model of Composite Preons* — [`hep-ph/0503213`](https://arxiv.org/abs/hep-ph/0503213) | Already cited in [`sm-hypercharge-invariant.md`](../../content/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.md) as the ribbon-twist precedent, but apparently not read into `uploads/`. Needed to evaluate T2 against its stated precedent. |
+| **Bilson-Thompson**, *A Topological Model of Composite Preons* — [`hep-ph/0503213`](https://arxiv.org/abs/hep-ph/0503213) | Already cited in [`sm-hypercharge-invariant.md`](../../content/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.md) as the ribbon-twist precedent, but apparently not read into `library/`. Needed to evaluate T2 against its stated precedent. |
 | **Bilson-Thompson, Markopoulou, Smolin**, *Quantum Gravity and the Standard Model*, Class. Quant. Grav. **24** (2007) 3975 — [`hep-th/0603022`](https://arxiv.org/abs/hep-th/0603022) | The braided-ribbon → SM-charge construction in its developed form; the natural adversarial comparison for T2. |
 
 Lower priority, only if T4 (root-of-unity truncation) is pursued: a standard
