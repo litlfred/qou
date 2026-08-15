@@ -333,3 +333,95 @@ because the quantity has no scale content to match.
 
 Still in force, unchanged: do NOT open another Borel/Leroy/Stokes/Ecalle probe
 on this ladder; do NOT fit a normalisation to land on -2.0202.
+
+---
+
+# ITEM 1 IS ILL-POSED AT q0 — and the restated gate has no test power yet
+# (2026-08-15, PR #5084; formalize-first, no scan run)
+
+Item 1 above asks for "a HABIRO-RING element whose archimedean evaluation at
+q0 ~ 1.10998 reproduces c_3 at THAT anchor". Two structural facts settle it
+before any assembly is attempted. Neither needed a search.
+
+## FACT A — a Habiro element has no value at q0
+
+A Habiro element is `sum_n a_n(q) (q;q)_n`, convergent in the cyclotomic
+completion BECAUSE `(q;q)_n -> 0` there. So a continuous evaluation at q0
+requires `(q0;q0)_n -> 0`. The EXACT reflection identity
+
+    (q;q)_n = (-1)^n * q^(n(n+1)/2) * (1/q;1/q)_n        every n, every q != 0
+
+(termwise, from `1 - q^k = -q^k(1 - q^-k)`) shows the q > 1 branch carries an
+explicit `q^(n(n+1)/2)` blow-up over the |q| < 1 branch. Hence
+
+    |q| > 1  -> diverges super-exponentially
+    |q| < 1  -> tends to a NONZERO limit
+    q^N = 1  -> exactly 0 for n >= N
+
+**Roots of unity are the only points admitting the evaluation, and q0 > 1 is not
+one.** Item 1 is ill-posed AS WRITTEN — not merely hard. Same species as the
+2026-08-09 finding that the resummation arm was an artifact: the premise is
+malformed.
+
+Lean, sorry-free, axioms `[propext, Classical.choice, Quot.sound]` on all 8
+declarations:
+`content/quantum-observable-universe/lean/QOU/QBeta/HabiroEvaluationTrichotomy.lean`
+  - `qPoch_reflection`                     the identity, GENERIC (any field)
+  - `qPoch_eq_zero_of_pow_eq_one`          roots of unity, GENERIC (CommRing)
+  - `qPoch_not_tendsto_zero_of_one_lt`     real q > 1, archimedean
+  - `no_continuous_evaluation_of_one_lt`   the contrapositive punchline
+
+## It is a DICHOTOMY, not a blanket prune
+
+The closed-braid Markov trace is the one-variable Jones polynomial, so ITS
+`(q;q)_m` expansion TERMINATES (2026-05-30 Habiro-PDE audit, stage 2, citing
+Habiro 2000 Thm 1.1). A finite expansion is a Laurent polynomial and evaluates
+at q0 fine. So:
+
+    finite branch    -> evaluable; but then an INTEGER Laurent polynomial, and
+                        FACT B applies to it
+    infinite branch  -> not evaluable at q0 at all; needs an ANALYTIC
+                        representative, and 1/q0 = 0.9009182839557415 is the
+                        ONLY member of the bar-pair inside the unit disc
+
+That last point inverts the framing and is the actionable part: the bar
+involution `q -> 1/q` that qou-qb8g needs for the parity read-off is not an
+extra step to arrange, it IS the map between the two convergence regimes.
+**Evaluate the carrier at 1/q0, not q0.**
+
+## FACT B — neither channel of the gate currently resolves anything
+
+    magnitude       c_3's absolute value carries +/-1.262 propagated CAL-3
+                    against a central value ~ -2.02 (registry 9e; the
+                    aomega_o2 probe fires O1-remove on exactly this)
+    zero location   sigma(q*_S) = 3.2876883e-7, while the genericity window's
+                    IMAGE in q* is the anchor interval, width 1.28028e-8
+
+Ratio **25.679447**. The ENTIRE set of constants that "put a zero between the
+anchors" sits inside ONE error bar of q*_S. So "reproduce the zero" cannot
+presently separate Vol(4_1) from the 7/7 unrelated constants that already pass.
+Cross-checks to 1e-5 against the independently-computed factor in the qstar
+experimental-budget witness — two routes, one number.
+
+**So the restated gate is the right TARGET but not yet a decidable TEST.** It
+becomes one after a ~26x sharper neutron Q_beta, and not before. That is the
+honest state: the zero is the resolved channel and the magnitude is not, but
+"resolved" here means 296 ppb against a 11.5 ppb structure.
+
+## Standing prohibitions, updated
+
+Still in force: no Borel/Leroy/Stokes/Ecalle probe on this ladder; no
+magnitude-matching on |S_leak| at an anchor; no fitting a normalisation to land
+on -2.0202.
+
+**Added:** do NOT open a root-of-unity ASSEMBLY probe aimed at evaluating the
+result at q0. The object has no value there and the Lean proves it. If the
+assembly is pursued, its evaluation point is 1/q0 and its representative must be
+analytic (state integral / convergent q-series), not the formal Habiro series.
+
+**Added:** do NOT report a carrier candidate as a hit on the strength of landing
+between the anchors. That is the null result — 7/7 unrelated constants do it,
+and the whole window is narrower than one error bar on q*_S.
+
+Probe: `computations/qbeta/qbeta_habiro_evaluation_dichotomy_and_test_power.py`
+(exit 0, 7/7 assertions, experimental/proton pin).
