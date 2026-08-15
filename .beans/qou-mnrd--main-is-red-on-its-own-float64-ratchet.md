@@ -1473,3 +1473,70 @@ Notes:
 So the remaining red is **two known-owned items**, not a broad regression.
 Nothing was baselined, `--rebaseline` was not run, and no number was
 hand-edited to reach this reading.
+
+---
+
+## 2026-08-15 — the ratchet's one remaining red, and a regeneration that does NOT work here
+
+Re-measured on `main` at `ebc21d1ae` (main moved 1021 commits since the last
+entry):
+
+    NEW dirty witnesses : 0
+    REGRESSED           : 1     rho-k-co-casimir-extended.witness.json  3 -> 4
+    drained since baseline : 14 file(s)  (incl. binding-k-enumerator 2210 -> 0)
+
+**The one red is timing metadata, not physics.** All four fields are
+`per_atom[i].compute_wall_sec` — `0.34`, `9.28`, `9.45`, `2533.2`. The producer
+was ALREADY fixed by `29b209ce9` ("float64: four timing fields serialised as
+strings"), changing `round(t1-t0, 2)` to `f"{t1-t0:.2f}"`. Only the witness was
+never regenerated, so this is the second half of someone else's change, and it
+is what holds `/prepare-merge` §4b red for every PR.
+
+### The regeneration is not viable in this container
+
+Attempted and abandoned. `rho_k_co_casimir_extended.py` with its default
+`--max-A 4` (the 6 committed atoms):
+
+    elapsed 2h05m, still on the helium-4 leg
+    worker CPU: 11m51s / 4m35s / 1m35s / 0m00s  (9.9% / 3.7% / 1.3% / 0%)
+    parent CPU: 1 second
+
+The committed witness records `compute_wall_sec = 2533.2` for helium-4 — 42
+minutes on whatever host produced it. Three hours in and not finished, with
+workers averaging under 5% CPU, says the bottleneck here is not arithmetic. Four
+workers at 10/4/1/0 percent is a distribution problem or contention, not a busy
+machine. Whoever picks this up should not simply "run it for longer" without
+finding out why the workers idle.
+
+### INCIDENT — I gutted the witness, exactly as `witness_shape_guard` predicts
+
+The producer **saves incrementally** (writes the witness after each atom, so an
+interrupt does not lose completed work). Two hours in, the on-disk witness was
+therefore 5 atoms, not 6, with `durationMs` 2,552,837 -> 7,738.
+
+I then ran `git add -A` for an unrelated bean commit and swept it in:
+
+    6f7ac1001   rho-k-co-casimir-extended.witness.json | 1551 +----------------
+                                                          1415 deletions
+
+Caught by diffing against `origin/main` rather than by noticing at commit time.
+The commit was local-only, so the fix was to restore from `origin/main` and
+amend; the gutted copy never reached the remote. `witness_shape_guard.py` — the
+gate written for the *original* rho-k gutting incident — reports
+"OK — no witness lost content" after the restore, and would have caught it at
+`/prepare-merge` had it got that far.
+
+**This is the SECOND time this arc that a git operation during a background
+write has damaged the tree.** The first was `git stash` mid-run (recorded
+above). Same root cause, different verb. The rule that actually generalises:
+
+> An incremental-save producer means the working tree is a moving target for as
+> long as it runs. Do not run `git add -A`, `git stash`, `git checkout` or
+> `git commit` while one is in flight — stage explicit paths, or wait.
+
+`git add -A` is the worst offender because it is the habit, not the exception.
+
+### Bean status
+
+Stays open. The red is real, the fix is known (regenerate the witness with the
+already-fixed producer), and the blocker is compute rather than diagnosis.
