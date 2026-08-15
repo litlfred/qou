@@ -401,6 +401,45 @@ theorem axialDist_swapTableau_succ (T : StandardYoungTableau μ) {k : ℕ} (hk :
   simp only [axialDistance, cellContent]
   ring
 
+/-- Tableaux differing at a single cell are distinct. -/
+theorem ne_of_entry_ne {U V : StandardYoungTableau μ} {i j : ℕ}
+    (h : U.entry i j ≠ V.entry i j) : U ≠ V := by
+  intro heq
+  exact h (by rw [heq])
+
+/-- **The two adjacent generators move `T` to different places.**  Read at the cell holding
+`k`: `s_k·T` puts `k+1` there, while `s_{k+1}·T` leaves `k`. -/
+theorem swapTableau_adj_ne (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : k + 1 + 1 ≤ μ.cells.card)
+    (hka : SwapAdmissible T k) (hla : SwapAdmissible T (k + 1)) :
+    swapTableau T k hk hkn hka ≠ swapTableau T (k + 1) (by omega) hln hla := by
+  refine ne_of_entry_ne (i := (cellOf T k).1) (j := (cellOf T k).2) ?_
+  have he : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T ⟨hk, by omega⟩
+  rw [swapTableau_entry, swapTableau_entry, he]
+  simp only [swapVal]
+  split_ifs <;> omega
+
+/-- **`s_{k+1}s_k·T ≠ s_k s_{k+1}·T` — the size-`6` distinguisher.**
+
+This single inequality is what separates a generic `⟨s_k, s_{k+1}⟩`-orbit from a smaller
+one: the two length-`2` words land on different tableaux exactly when all six words do.
+Read at the cell holding `k`, the left carries `k+2` and the right carries `k+1`.
+
+(Contrast `swapTableau_comm`, where the *far* generators commute outright.  Here they do
+not, and that failure is the braid.) -/
+theorem swapTableau_adj_words_ne (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : k + 1 + 1 ≤ μ.cells.card)
+    (hka : SwapAdmissible T k) (hla : SwapAdmissible T (k + 1))
+    (hAl : SwapAdmissible (swapTableau T k hk hkn hka) (k + 1))
+    (hBk : SwapAdmissible (swapTableau T (k + 1) (by omega) hln hla) k) :
+    swapTableau (swapTableau T k hk hkn hka) (k + 1) (by omega) hln hAl
+      ≠ swapTableau (swapTableau T (k + 1) (by omega) hln hla) k hk hkn hBk := by
+  refine ne_of_entry_ne (i := (cellOf T k).1) (j := (cellOf T k).2) ?_
+  have he : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T ⟨hk, by omega⟩
+  rw [swapTableau_entry, swapTableau_entry, swapTableau_entry, swapTableau_entry, he]
+  simp only [swapVal]
+  split_ifs <;> omega
+
 /-- **A far swap leaves the axial distance alone.**  `s_l` moves no cell outside
 `{l, l+1}`, so the parameter `σ_k` reads off is unchanged.  Together with
 `swapAdmissible_far_iff` this says a far swap leaves *every* input to `σ_k`'s row rule
