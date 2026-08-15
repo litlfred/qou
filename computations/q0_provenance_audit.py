@@ -41,6 +41,24 @@ import sys
 Q_PROTON = 1.1099785827513808
 Q_MUON = 1.1099785955541805
 
+# Canonical 50-dps muon q0, DERIVED not typed: `q_muon_at(60)` from CODATA
+# m_mu/m_e = 206.7682830 and Vol(4_1) = 2*Cl_2(pi/3) reproduces exactly this.
+# Owner ruling 2026-08-15: the muon string is the correct one, and CODATA +
+# the corpus formula determine it.
+Q_MUON_50 = "1.10997859555418057528159407960950937799328227995870"
+
+# The WRONG 50-dps muon string, carried by ~200 witnesses. It agrees with the
+# canonical value to 12 digits and then diverges: 2.842e-12 relative, which is
+# ~12,900x worse than f64 round-off, so it is not even an f64 solve -- it is a
+# loosely-converged solve serialized with 38 digits it does not have. The
+# implied m_mu/m_e differs by 0.0023 sigma, so this is a PRECISION defect, not
+# a different CODATA vintage.
+Q_MUON_50_WRONG = "1.10997859555733471989976322048322502665620840878015"
+
+# Digits at which the two diverge; anything agreeing to fewer than this many
+# significant digits with the canonical value is carrying noise.
+_FALSE_PRECISION_REL = 1e-14  # comfortably above f64 eps, far below 2.8e-12
+
 # Keys that name a substrate anchor. Deliberately narrow: `q` alone is also
 # used for unrelated quantities, so a value only counts when it also lands in
 # the q₀ neighbourhood (see `classify`).
@@ -72,6 +90,37 @@ def classify(value) -> tuple[str, float] | None:
     return "other", ppb
 
 
+def false_precision(raw) -> str | None:
+    """Detect a q0 serialized with more digits than it actually has.
+
+    Returns a description if `raw` is a >16-significant-digit string that
+    disagrees with the canonical muon value by more than f64 round-off — i.e.
+    it LOOKS like a high-precision constant and is not one. This is the
+    NO-FLOAT64 failure in its subtlest form: not a float where an mpf belongs,
+    but a low-precision solve dressed as a 50-dps string, where the extra
+    digits actively assert precision that was never computed.
+    """
+    if not isinstance(raw, str):
+        return None
+    digits = raw.replace(".", "").replace("-", "").lstrip("0")
+    if len(digits) <= 16:
+        return None
+    try:
+        v = float(raw)
+    except ValueError:
+        return None
+    if abs(v - Q_MUON) / Q_MUON > 1e-9:
+        return None  # not a muon-pin value; out of scope for this check
+    canon, wrong = Q_MUON_50, Q_MUON_50_WRONG
+    if raw.startswith(canon[:20]):
+        return None  # matches the canonical prefix — fine
+    if raw.startswith(wrong[:20]):
+        return (f"{len(digits)}-digit muon string agreeing to only 12 digits "
+                f"with the canonical q_muon_at() value (2.8e-12 rel, ~12,900x "
+                f"f64 eps) -- 38 digits of noise")
+    return f"{len(digits)}-digit muon string not matching the canonical value"
+
+
 def anchors_in(doc) -> list[tuple[str, object, str, float]]:
     """Every substrate anchor recorded anywhere in a witness."""
     found: list[tuple[str, object, str, float]] = []
@@ -83,6 +132,9 @@ def anchors_in(doc) -> list[tuple[str, object, str, float]]:
                     hit = classify(v)
                     if hit:
                         found.append((k, v, hit[0], hit[1]))
+                    fp = false_precision(v)
+                    if fp:
+                        found.append((k, v, "FALSE-PRECISION", 0.0))
                 walk(v)
         elif isinstance(o, list):
             for i in o:
@@ -124,6 +176,12 @@ def main() -> int:
         for k in kinds:
             buckets[k] += 1
             per_bucket_files[k].append(str(p))
+        # FALSE-PRECISION is a QUALITY flag, not an anchor. It must not enter
+        # the straddle test: a file recording the muon pin plus a
+        # false-precision rendering of that same pin is one anchor with a
+        # serialization defect, not two anchors. (Including it inflated the
+        # straddle count 18 -> 257 in an earlier revision of this script.)
+        kinds = kinds - {"FALSE-PRECISION"}
         # A single witness carrying TWO different anchors MAY be the
         # layer-straddle AGENTS.md calls a defect regardless of size. It may
         # equally be correct by construction: a q-sweep or a pin-sensitivity
@@ -145,6 +203,25 @@ def main() -> int:
     for name in ("proton", "muon", "truncated-5-digit", "other"):
         if buckets[name]:
             print(f"  {buckets[name]:5d}  {name}")
+
+    if buckets["FALSE-PRECISION"]:
+        print()
+        print(f"  ** {buckets['FALSE-PRECISION']} witness(es) carry a q0 "
+              f"serialized with MORE DIGITS THAN IT HAS.")
+        print("     The canonical 50-dps muon value is derived by "
+              "q_muon_at(60) from CODATA")
+        print("     m_mu/m_e = 206.7682830 and Vol(4_1) = 2*Cl_2(pi/3):")
+        print(f"       canonical  {Q_MUON_50}")
+        print(f"       in corpus  {Q_MUON_50_WRONG}")
+        print("     They agree to 12 digits, then diverge by 2.842e-12 -- "
+              "~12,900x f64")
+        print("     round-off, so this is not even an f64 solve. The implied "
+              "m_mu/m_e differs")
+        print("     by 0.0023 sigma, so the physics is unaffected: it is a "
+              "PRECISION defect,")
+        print("     not a stale CODATA vintage. The trailing 38 digits assert "
+              "precision")
+        print("     that was never computed.")
 
     if mixed:
         print(f"\n  ** {len(mixed)} witness(es) record MORE THAN ONE anchor "
