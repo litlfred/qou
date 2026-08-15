@@ -150,8 +150,20 @@ def _numbers(o, out: dict, pre: str = "") -> dict:
     return out
 
 
-def max_rel_move(before: str, after: Path) -> float | None:
-    """Largest relative movement of any shared numeric field. None if new."""
+# Relative movement is meaningless once the denominator approaches the
+# numerical floor: a residual going 1e-60 -> 1.5e-59 reads as "9e9 ppb" and
+# says nothing. Fields below this magnitude are excluded from the movement
+# statistic (they still count for "did anything change at all").
+_DENOM_FLOOR = 1e-20
+
+
+def rel_moves(before: str, after: Path) -> tuple[float, float, int] | None:
+    """(max, median, n) relative movement over shared numeric fields.
+
+    The max alone is a poor summary — one near-zero denominator dominates it —
+    so the median is carried too. Both exclude the ephemeral meta fields, so
+    rebase drift is never mistaken for a result.
+    """
     if not before or not after.exists():
         return None
     try:
@@ -159,14 +171,17 @@ def max_rel_move(before: str, after: Path) -> float | None:
         B = _numbers(json.loads(after.read_text(encoding="utf-8")), {})
     except Exception:  # noqa: BLE001
         return None
-    worst = 0.0
     skip = ("computedAt", "durationMs", "commitSha", "scriptCommitSha",
             "scriptHash", "engineVersion", "timestamp")
+    moves = []
     for k, a in A.items():
-        if k not in B or any(s in k for s in skip) or a == 0:
+        if k not in B or any(s in k for s in skip) or abs(a) < _DENOM_FLOOR:
             continue
-        worst = max(worst, abs(B[k] - a) / abs(a))
-    return worst
+        moves.append(abs(B[k] - a) / abs(a))
+    if not moves:
+        return (0.0, 0.0, 0)
+    moves.sort()
+    return (moves[-1], moves[len(moves) // 2], len(moves))
 
 
 def main() -> int:
@@ -200,11 +215,30 @@ def main() -> int:
             done = json.loads(PROGRESS.read_text(encoding="utf-8")).get("done", {})
         except Exception:  # noqa: BLE001
             done = {}
-        print(f"  resuming: {len(done)} already recorded\n", flush=True)
+        # Retry failures on resume. A journalled rc != 0 is unfinished work,
+        # not a result — treating it as done would silently leave the producer
+        # stale, which is the whole thing this sweep exists to prevent.
+        retry = [s for s, v in done.items() if v.get("rc") != 0]
+        for s in retry:
+            del done[s]
+        print(f"  resuming: {len(done)} complete, {len(retry)} failures requeued\n",
+              flush=True)
 
+    # Producers live in several subdirectories and reach each other by bare
+    # name (`from _precision import …`, `import _path_bridge`). Running one
+    # from its own directory is not enough — `computations/` and
+    # `computations/substrate/` must be importable too, or ~40 of them die on
+    # ModuleNotFoundError before computing anything.
     env = dict(os.environ)
-    env["PYTHONPATH"] = str(HERE.parent / "tools" / "qou-substrate" / "python") \
-        + os.pathsep + env.get("PYTHONPATH", "")
+    _tools = HERE.parent / "tools"
+    env["PYTHONPATH"] = os.pathsep.join([p for p in [
+        str(_tools / "qou-substrate" / "python"),
+        str(_tools / "pyhecke" / "python"),
+        str(_tools / "pyhecke-native" / "src"),
+        str(HERE),
+        str(HERE / "substrate"),
+        env.get("PYTHONPATH", ""),
+    ] if p]).rstrip(os.pathsep)
     t_all = time.monotonic()
 
     for i, s in enumerate(order, 1):
@@ -230,22 +264,24 @@ def main() -> int:
             rc, err = -9, [f"TIMEOUT >{args.timeout}s"]
         dt = time.monotonic() - t0
 
-        moves = {}
+        mx = md = 0.0
+        nfields = 0
         for n in outs:
             for w in HERE.rglob(n):
                 if "_deprecated" in w.parts:
                     continue
-                m = max_rel_move(before.get(n, ""), w)
-                if m is not None:
-                    moves[n] = m
+                r = rel_moves(before.get(n, ""), w)
+                if r:
+                    mx, md = max(mx, r[0]), max(md, r[1])
+                    nfields += r[2]
                 break
-        worst = max(moves.values(), default=0.0)
         done[s] = {"rc": rc, "sec": round(dt, 1), "witnesses": outs,
-                   "max_rel_move": worst, "err": err[0][:200]}
+                   "max_rel_move": mx, "median_rel_move": md,
+                   "n_fields": nfields, "err": err[0][:200]}
         PROGRESS.write_text(json.dumps({"done": done}, indent=1), encoding="utf-8")
 
         tag = "ok " if rc == 0 else f"FAIL({rc})"
-        mv = f"{worst*1e9:.1f} ppb" if worst else "no change"
+        mv = (f"med {md*1e9:,.1f} / max {mx*1e9:,.1f} ppb" if mx else "no change")
         print(f"  [{i:3}/{len(order)}] {tag} {dt:6.1f}s  {s:46} {mv}"
               + (f"  {err[0][:60]}" if rc else ""), flush=True)
 

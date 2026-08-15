@@ -1,0 +1,280 @@
+{
+ "done": {
+  "q_pinning_50_digit": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "q-pinning-50-digit.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 37,
+   "err": ""
+  },
+  "aK_via_lp_dual_hecke_basis": {
+   "rc": 1,
+   "sec": 0.9,
+   "witnesses": [
+    "a-K-via-lp-dual-hecke-basis.witness.json"
+   ],
+   "max_rel_move": 18105.74974103698,
+   "median_rel_move": 0.0,
+   "n_fields": 110,
+   "err": "TypeError: unsupported format string passed to mpf.__format__"
+  },
+  "alpha_basis_knot_couplings": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "alpha-basis-knot-couplings.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 31,
+   "err": ""
+  },
+  "alpha_em_4pi_fixed_point_solve": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "alpha-em-4pi-fixed-point-solve.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 28,
+   "err": ""
+  },
+  "alpha_em_4pi_q0_sensitivity": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "alpha-em-4pi-q0-sensitivity.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": ""
+  },
+  "alpha_em_no_pi_correction_probe": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "alpha-em-no-pi-correction-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 16,
+   "err": ""
+  },
+  "alpha_em_rt_phase2_emfermionloop": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "alpha-em-rt-phase2-emfermionloop.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 8,
+   "err": ""
+  },
+  "alpha_em_rt_phase3_schwinger_derivation": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "alpha-em-rt-phase3-schwinger-derivation.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 9,
+   "err": ""
+  },
+  "alpha_em_rt_shadow_world_symbolic_phase1": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "alpha-em-rt-shadow-world-symbolic-phase1.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 10,
+   "err": ""
+  },
+  "alpha_k_four_strand_singlet_selection": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "alpha-k-four-strand-singlet-selection.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 14,
+   "err": ""
+  },
+  "alpha_k_per_force_assembly": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "alpha-k-per-force-assembly.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 51,
+   "err": ""
+  },
+  "alpha_k_selection_rule_conditional": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "alpha-k-selection-rule-conditional.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 8,
+   "err": ""
+  },
+  "alpha_k_split_pole_order_audit": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "alpha-k-split-pole-order-audit.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 17,
+   "err": ""
+  },
+  "atom_braid_active_partitions": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "atom-braid-active-partitions.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 32,
+   "err": ""
+  },
+  "atom_level_wedderburn_tower": {
+   "rc": 0,
+   "sec": 20.1,
+   "witnesses": [
+    "atom-level-wedderburn-tower.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 5,
+   "err": "\u26a0 raw-float64: atom-level-wedderburn-tower.witness.json: 103 raw float64 field(s) would enter the witness \u2014 .parameters.q_0, .results.p.descended_tr_M, .results.p.phi_q_atom_sum, .results.p.by_level.0"
+  },
+  "atomic_braid_alpha_shift_l6": {
+   "rc": 0,
+   "sec": 4.1,
+   "witnesses": [
+    "atomic-braid-alpha-shift-l6.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 55,
+   "err": ""
+  },
+  "atomic_tr_m_mpfr_50dps": {
+   "rc": 0,
+   "sec": 14.9,
+   "witnesses": [
+    "atomic-tr-m-mpfr-50dps-proton.witness.json",
+    "atomic-tr-m-mpfr-50dps.witness.json"
+   ],
+   "max_rel_move": 0.9365079365079365,
+   "median_rel_move": 0.0,
+   "n_fields": 143,
+   "err": ""
+  },
+  "atomic_mass_via_rho_k": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "atomic-mass-via-rho-k.witness.json"
+   ],
+   "max_rel_move": 0.00838150289017341,
+   "median_rel_move": 0.0,
+   "n_fields": 78,
+   "err": "  from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402"
+  },
+  "aufbau_ell_grading_from_eigensplit": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "aufbau-ell-grading-from-eigensplit.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 44,
+   "err": ""
+  },
+  "aufbau_ell_penetration_hartree_pinned": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "aufbau-ell-penetration-hartree-pinned.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 37,
+   "err": ""
+  },
+  "b_over_m_order_probe": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "b-over-m-order-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 24,
+   "err": ""
+  },
+  "balanced_head_dominance_binding_period_probe": {
+   "rc": 0,
+   "sec": 1.7,
+   "witnesses": [
+    "balanced-head-dominance-binding-period-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 188,
+   "err": ""
+  },
+  "bar_symmetry_three_candidates": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "bar-symmetry-three-candidates.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 26,
+   "err": ""
+  },
+  "basis_knot_tables": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "basis-knot-tables.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 723,
+   "err": ""
+  },
+  "benzene_assembly_spine": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "benzene-assembly-spine.witness.json"
+   ],
+   "max_rel_move": 1.153711783645715e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 28,
+   "err": "\u26a0 raw-float64: benzene-assembly-spine.witness.json: 8 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed[1], .assertions[0].expected[1], .parameters.q, .parameters.TWO_Q, .data.ben"
+  }
+ }
+}
