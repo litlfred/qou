@@ -71,3 +71,50 @@ which sidesteps root selection); prove non-vanishing by Bézout certificate; pro
 cleared edge equation by one `linear_combination` with a cofactor from exact polynomial
 division. **Do not reach for `field_simp`** — its normal form is unpredictable and cannot
 be code-generated.
+
+---
+**2026-08-10 — item 3 (the wiring) is DONE, generically. `QOU/Knot/GluingBridge.lean`.**
+
+Sorry-free, standard axioms.
+
+### The bridge, proved once instead of per knot
+
+`GeneratedGluing` proves identities in **cleared** form; `SatisfiesEdgeEquations` is in
+**product** form. The passage between them is exactly the `field_simp` step `glnl`
+refused to code-generate. Doing it **once, generically**, removes the problem entirely:
+
+| lemma | content |
+|---|---|
+| `Shape.param_pow_prod` | `z^a·(1/(1−z))^b·(1−1/z)^c = z^a(z−1)^c / ((1−z)^b z^c)` |
+| `satisfies_of_cleared_one` | cleared ⟹ product, one tetrahedron |
+| `satisfies_of_cleared_two` | cleared ⟹ product, two tetrahedra |
+
+**No per-knot cofactor is ever needed again.** A generated cleared identity plus
+non-vanishing now gives the product form by `rw` and `div_self`.
+
+⚠ **A trap inside the bridge itself.** The obvious proof — `simp only [param_*]` then
+`field_simp` — fails, leaving `(1−z)⁻¹^b * (1−z)^b` uncancelled: `field_simp` does not
+cancel an inverse against a power when **the exponent is a variable**. The fix is to
+rewrite each parameter to an explicit quotient *first* (`div_pow`), so the inverses become
+single atoms. Recorded in the proof, since the failure mode is invisible from the
+statement.
+
+### Worked instance: the trefoil, certifying the structure
+
+`trefoil_satisfiesEdgeEquations : trefoilTriangulation.SatisfiesEdgeEquations trefoilGluing`
+
+The identities stop being standalone and start certifying a `ShapedTriangulation` — which
+is what this bean asked for. The trefoil is the right first case *because its shapes are
+flat*: it exercises the flat-tolerant structure that an `IdealTriangulation` cannot
+represent at all, confirming the design note above that the wiring must target `Shape`
+rather than `IdealTetrahedron`.
+
+### Remaining on this bean
+
+1. **Degrees 7–14** — untouched.
+2. **Cusp equations** — untouched.
+3. ~~Wiring~~ — **done generically**; what is left is *applying* it to the 19 manifolds in
+   `GeneratedGluing`, which needs a `Shape` per tetrahedron (the `z_j_ne_zero` and
+   `one_sub_z_j_ne_zero` lemmas are already generated for exactly this) and an
+   `n`-tetrahedron composition lemma beyond the `n = 2` case written here.
+   `Finset.prod_div_distrib` makes that routine; it was not needed for the trefoil.
