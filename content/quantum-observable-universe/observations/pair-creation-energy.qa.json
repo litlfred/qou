@@ -1491,6 +1491,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \"not a single energy threshold but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "0dcdc2e70914",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:15.500Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "'2m_e is *not* the crossing energy gap - it is the mass-energy'; closer 'not a single energy threshold but the decomposition'",
+        "notes": "both are substantive disambiguation between genuinely distinct energies (pair mass-energy vs crossing gap; three-route table has no single threshold); kept"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1510,6 +1526,22 @@
         "reviewed_at": "2026-08-15T10:30:59.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0dcdc2e70914",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:15.540Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "opening rhetorical question + pivot ('The answer depends on ... - and the QOU framework reveals')",
+        "notes": "fixed: 'How much energy does it cost...? The answer depends on what convert means - and the QOU framework reveals three distinct energy scales.' -> 'The energy cost of converting an electron into a positron depends on what convert means. The QOU framework distinguishes three energy scales.'"
       }
     ],
     "trap-em-dash": [
@@ -1530,6 +1562,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "7 stylistic spaced dashes in 460 words (1.52/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "0dcdc2e70914",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:15.583Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "5 spaced em-dashes pre-fix; density was the tell",
+        "notes": "fixed: 'through the unknot - but the trefoil' -> 'through the unknot, but the trefoil'; 'rotation is free - but inaccessible' -> 'rotation is free but inaccessible'; remaining dashes are load-bearing disambiguation ('is not the crossing energy gap - it is the mass-energy') and a true appositive"
       }
     ],
     "trap-triples": [
@@ -1549,6 +1597,22 @@
         "reviewed_at": "2026-08-15T10:30:59.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 460 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0dcdc2e70914",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:15.645Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "'three distinct energy scales' / three-route summary",
+        "notes": "the three-way split is the block's actual content (table + three numbered routes), not a reflex triple"
       }
     ],
     "trap-closing-aphorism": [
@@ -1568,6 +1632,22 @@
         "reviewed_at": "2026-08-15T10:30:59.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0dcdc2e70914",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:15.693Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "final sentence on cosh/sinh channel decomposition",
+        "notes": "substantive summary of the derived symmetric/antisymmetric decomposition, not a quotable flourish"
       }
     ],
     "trap-meta-commentary": [
@@ -1587,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:30:59.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0dcdc2e70914",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:15.737Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ],
     "trap-thesis-restatement": [
@@ -1606,6 +1701,21 @@
         "reviewed_at": "2026-08-15T10:30:59.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0dcdc2e70914",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:15.785Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ],
     "trap-performed-warmth": [
@@ -1625,6 +1735,21 @@
         "reviewed_at": "2026-08-15T10:30:59.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0dcdc2e70914",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:15.823Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ],
     "trap-superlative": [
@@ -1644,6 +1769,21 @@
         "reviewed_at": "2026-08-15T10:30:59.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0dcdc2e70914",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:15.871Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ],
     "trap-nonspeakable": [
@@ -1663,8 +1803,23 @@
         "reviewed_at": "2026-08-15T10:30:59.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0dcdc2e70914",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:15.916Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.334Z"
+  "updated_at": "2026-08-15T11:37:15.916Z"
 }

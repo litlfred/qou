@@ -1251,6 +1251,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a fixed-constant derivation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "ae79d39b572b",
+          "ts": "3407d098c3c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:21.996Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "'categorically extracted (not a free parameter)'; 'not by one derived constant'; 'phenomenological curve-fitting, not a fixed-constant derivation'",
+        "notes": "fitted-vs-derived contrast is the block's entire content (comparison remark); substantive, kept"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1270,6 +1286,21 @@
         "reviewed_at": "2026-08-15T10:30:59.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ae79d39b572b",
+          "ts": "3407d098c3c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:22.064Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ],
     "trap-em-dash": [
@@ -1289,6 +1320,22 @@
         "reviewed_at": "2026-08-15T10:30:59.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 713 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ae79d39b572b",
+          "ts": "3407d098c3c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:22.116Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "'constant - in this model...'; 'coexists with - rather than contradicts -'",
+        "notes": "low density; the paired dash is a true parenthetical; kept"
       }
     ],
     "trap-triples": [
@@ -1308,6 +1355,21 @@
         "reviewed_at": "2026-08-15T10:30:59.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 713 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ae79d39b572b",
+          "ts": "3407d098c3c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:22.171Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ],
     "trap-closing-aphorism": [
@@ -1327,6 +1389,21 @@
         "reviewed_at": "2026-08-15T10:30:59.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ae79d39b572b",
+          "ts": "3407d098c3c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:22.232Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ],
     "trap-meta-commentary": [
@@ -1346,6 +1423,21 @@
         "reviewed_at": "2026-08-15T10:30:59.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ae79d39b572b",
+          "ts": "3407d098c3c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:22.306Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ],
     "trap-thesis-restatement": [
@@ -1365,6 +1457,23 @@
         "reviewed_at": "2026-08-15T10:30:59.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ae79d39b572b",
+          "ts": "3407d098c3c9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:22.360Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "closer 'In these previous models, the deformation is a free parameter fitted to the observable...' near-verbatim restates intro 'In previous models, the deformation parameter is fitted to the data...'",
+        "notes": "proposed: drop the first two sentences of section 'The common distinction' and keep only the forward-test sentence + the rem:k12-barrier-bypass pointer (or trim the intro's fitted-vs-fixed statement and let the closing section carry the synthesis once); bookend spans two sections and touches calibration wording, so not edited"
       }
     ],
     "trap-performed-warmth": [
@@ -1384,6 +1493,21 @@
         "reviewed_at": "2026-08-15T10:30:59.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ae79d39b572b",
+          "ts": "3407d098c3c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:22.415Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ],
     "trap-superlative": [
@@ -1403,6 +1527,21 @@
         "reviewed_at": "2026-08-15T10:30:59.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ae79d39b572b",
+          "ts": "3407d098c3c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:22.475Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ],
     "trap-nonspeakable": [
@@ -1422,8 +1561,23 @@
         "reviewed_at": "2026-08-15T10:30:59.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ae79d39b572b",
+          "ts": "3407d098c3c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b6",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:22.529Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "full-block read; no such construction present"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.286Z"
+  "updated_at": "2026-08-15T11:37:22.529Z"
 }

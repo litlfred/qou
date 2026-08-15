@@ -1252,6 +1252,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not as M -harmonic forms.\"; \", not on slit width or wavelength.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "847d54761fe6",
+          "ts": "8bd093714b7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:33.822Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "Full-text agent read (agent:it-b2); no negation-contrast construction present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1271,6 +1286,21 @@
         "reviewed_at": "2026-08-15T10:30:59.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "847d54761fe6",
+          "ts": "8bd093714b7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:33.879Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "Full-text agent read (agent:it-b2); no rhetorical-pivot construction present."
       }
     ],
     "trap-em-dash": [
@@ -1290,6 +1320,21 @@
         "reviewed_at": "2026-08-15T10:30:59.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 468 words)"
+      },
+      {
+        "field_hash": {
+          "md": "847d54761fe6",
+          "ts": "8bd093714b7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:33.923Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "Full-text agent read (agent:it-b2); no em-dash construction present."
       }
     ],
     "trap-triples": [
@@ -1309,6 +1354,21 @@
         "reviewed_at": "2026-08-15T10:30:59.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 468 words)"
+      },
+      {
+        "field_hash": {
+          "md": "847d54761fe6",
+          "ts": "8bd093714b7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:33.972Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "Full-text agent read (agent:it-b2); no triples construction present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1328,6 +1388,22 @@
         "reviewed_at": "2026-08-15T10:30:59.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "847d54761fe6",
+          "ts": "8bd093714b7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:34.007Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "\"The irrationality optimizing surface packing also maximizes the information content of photon scattering.\"",
+        "notes": "pass-with-note: quotable-sounding paragraph closer but carries a substantive cross-link to golden-angle phyllotaxis; final block sentence is a concrete testability claim."
       }
     ],
     "trap-meta-commentary": [
@@ -1347,6 +1423,21 @@
         "reviewed_at": "2026-08-15T10:30:59.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "847d54761fe6",
+          "ts": "8bd093714b7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:34.048Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "Full-text agent read (agent:it-b2); no meta-commentary construction present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1366,6 +1457,21 @@
         "reviewed_at": "2026-08-15T10:30:59.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "847d54761fe6",
+          "ts": "8bd093714b7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:34.087Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "Full-text agent read (agent:it-b2); no thesis-restatement construction present."
       }
     ],
     "trap-performed-warmth": [
@@ -1385,6 +1491,21 @@
         "reviewed_at": "2026-08-15T10:30:59.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "847d54761fe6",
+          "ts": "8bd093714b7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:34.141Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "Full-text agent read (agent:it-b2); no performed-warmth construction present."
       }
     ],
     "trap-superlative": [
@@ -1404,6 +1525,22 @@
         "reviewed_at": "2026-08-15T10:30:59.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "847d54761fe6",
+          "ts": "8bd093714b7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:34.192Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "\"the most irrational angle\"; \"richest fractal structure\" (x2); \"hardest to linearize\"",
+        "notes": "pass-with-note: each maximal claim is tied to a stated mechanism (continued fraction, Siegel disk). But see anomaly: \"hardest to linearize\" is mathematically doubtful (golden rotation is Diophantine, hence linearizable)."
       }
     ],
     "trap-nonspeakable": [
@@ -1423,8 +1560,23 @@
         "reviewed_at": "2026-08-15T10:30:59.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "847d54761fe6",
+          "ts": "8bd093714b7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:34.232Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "evidence": "Full-text agent read (agent:it-b2); no nonspeakable construction present."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.767Z"
+  "updated_at": "2026-08-15T11:37:34.232Z"
 }

@@ -1363,6 +1363,23 @@
         "reviewed_at": "2026-08-15T10:30:59.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a664edde9729",
+          "ts": "29afbfcdeec4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:40.988Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "Closer 'The shell energy is not a phenomenological parameter. It is...' was a negation-contrast closer; fixed.",
+        "notes": "fixed: 'The shell energy is not a phenomenological parameter. It is the crossing energy of a computable knot invariant.' -> 'Under this conjecture, the shell energy is the crossing energy of a computable knot invariant rather than a free phenomenological parameter.'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1382,6 +1399,22 @@
         "reviewed_at": "2026-08-15T10:30:59.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a664edde9729",
+          "ts": "29afbfcdeec4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:41.025Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-em-dash": [
@@ -1401,6 +1434,22 @@
         "reviewed_at": "2026-08-15T10:30:59.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 816 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a664edde9729",
+          "ts": "29afbfcdeec4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:41.069Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "minor",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-triples": [
@@ -1420,6 +1469,22 @@
         "reviewed_at": "2026-08-15T10:30:59.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 816 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a664edde9729",
+          "ts": "29afbfcdeec4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:41.139Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "minor",
+        "evidence": "Numbered lists (3 topology factors, 4 computations) are substantive work items, not reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1439,6 +1504,23 @@
         "reviewed_at": "2026-08-15T10:30:59.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a664edde9729",
+          "ts": "29afbfcdeec4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:41.176Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "Same two-sentence quotable closer; folded into one conditional sentence by the neg-contrast fix.",
+        "notes": "same fix as trap-negation-contrast"
       }
     ],
     "trap-meta-commentary": [
@@ -1458,6 +1540,22 @@
         "reviewed_at": "2026-08-15T10:30:59.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a664edde9729",
+          "ts": "29afbfcdeec4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:41.237Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1477,6 +1575,22 @@
         "reviewed_at": "2026-08-15T10:30:59.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a664edde9729",
+          "ts": "29afbfcdeec4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:41.299Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "major",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-performed-warmth": [
@@ -1496,6 +1610,22 @@
         "reviewed_at": "2026-08-15T10:30:59.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a664edde9729",
+          "ts": "29afbfcdeec4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:41.342Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "minor",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-superlative": [
@@ -1515,6 +1645,22 @@
         "reviewed_at": "2026-08-15T10:30:59.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a664edde9729",
+          "ts": "29afbfcdeec4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:41.406Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "minor",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ],
     "trap-nonspeakable": [
@@ -1534,8 +1680,24 @@
         "reviewed_at": "2026-08-15T10:30:59.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a664edde9729",
+          "ts": "29afbfcdeec4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b7",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:37:41.479Z",
+        "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
+        "severity": "minor",
+        "evidence": "Full-text read in context; no such construction present."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.327Z"
+  "updated_at": "2026-08-15T11:37:41.479Z"
 }
