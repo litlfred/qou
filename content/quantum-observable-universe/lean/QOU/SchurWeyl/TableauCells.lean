@@ -545,6 +545,102 @@ theorem orbitEntries_sk_sl (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k
 theorem swapVal_of_ne (k x : ℕ) (h0 : x ≠ k) (h1 : x ≠ k + 1) : swapVal k x = x := by
   simp only [swapVal]; rw [if_neg h0, if_neg h1]
 
+/-- **Adjacent generators that both fix `T` fix it with the *same* scalar.**
+
+If neither `σ_k` nor `σ_{k+1}` moves `T`, then `axialDist T k = axialDist T (k+1)` — both
+`+1` (two cells in a row) or both `-1` (two in a column).  The mixed configurations are
+**impossible**, not merely unobserved.
+
+That impossibility is what makes the braid relation hold on a size-`1` orbit at all.  There
+both sides collapse to `a(d_k)²·a(d_l)` and `a(d_l)²·a(d_k)`, whose difference is
+`a(d_k)a(d_l)(a(d_k) - a(d_l))`; with `a(±1) ∈ {q, -q⁻¹}` that vanishes exactly when the two
+distances agree, and is `-(q + q⁻¹) ≠ 0` when they differ.  So the lemma is not a
+convenience — without it the braid would be *false* on those orbits.
+
+The impossibility argument: suppose `k, k+1` share a row and `k+1, k+2` a column.  Adjacency
+(`sameRow_adjacent` / `sameCol_adjacent`) forces the cells to be `(i,j)`, `(i,j+1)`,
+`(i+1,j+1)`, and then the corner `(i+1,j)` lies in `μ` and is squeezed to carry `k+1` — which
+`(i,j+1)` already carries.  The column-then-row case is the mirror. -/
+theorem axialDist_eq_of_not_admissible (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn2 : k + 2 ≤ μ.cells.card)
+    (hka : ¬ SwapAdmissible T k) (hla : ¬ SwapAdmissible T (k + 1)) :
+    axialDist T k = axialDist T (k + 1) := by
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, by omega⟩
+  have hkI'' : k + 2 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn2⟩
+  have hm1 : ((cellOf T k).1, (cellOf T k).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using cellOf_mem T hkI
+  have hm2 : ((cellOf T (k + 1)).1, (cellOf T (k + 1)).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using cellOf_mem T hkI'
+  have hm3 : ((cellOf T (k + 2)).1, (cellOf T (k + 2)).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using cellOf_mem T hkI''
+  have he1 : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T hkI
+  have he2 : T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 1 := entry_cellOf T hkI'
+  have he3 : T.entry (cellOf T (k + 2)).1 (cellOf T (k + 2)).2 = k + 2 := entry_cellOf T hkI''
+  have hsucc : (k + 1) + 1 = k + 2 := rfl
+  -- unpack the two non-admissibilities
+  rw [SwapAdmissible, not_and_or, not_not, not_not] at hka hla
+  rw [hsucc] at hla
+  rcases hka with hrow1 | hcol1
+  · have hd1 : axialDist T k = 1 :=
+      axialDist_of_sameRow T hm1 (by rw [← hrow1] at hm2; exact hm2) he1
+        (by rw [← hrow1] at he2; exact he2)
+    rcases hla with hrow2 | hcol2
+    · -- row then row: both distances are `+1`
+      rw [hd1]
+      refine (axialDist_of_sameRow T (j₂ := (cellOf T (k + 2)).2) hm2 ?_ he2 ?_).symm
+      · rw [hrow2]; exact hm3
+      · rw [hrow2]; exact he3
+    · -- row then column: the corner `(c₃.1, c₁.2)` is squeezed onto `k+1`
+      exfalso
+      have hadj1 : (cellOf T (k + 1)).2 = (cellOf T k).2 + 1 :=
+        sameRow_adjacent T hm1 (by rw [← hrow1] at hm2; exact hm2) he1
+          (by rw [← hrow1] at he2; exact he2)
+      have hadj2 : (cellOf T (k + 2)).1 = (cellOf T (k + 1)).1 + 1 :=
+        sameCol_adjacent T hm2 (by rw [← hcol2] at hm3; exact hm3) he2
+          (by rw [← hcol2] at he3; exact he3)
+      have hcorner : ((cellOf T (k + 2)).1, (cellOf T k).2) ∈ μ :=
+        μ.up_left_mem (le_refl _) (by omega) hm3
+      have hlo : T.entry (cellOf T k).1 (cellOf T k).2
+          < T.entry (cellOf T (k + 2)).1 (cellOf T k).2 :=
+        T.toSsyt.col_strict (by omega) hcorner
+      have hhi : T.entry (cellOf T (k + 2)).1 (cellOf T k).2
+          < T.entry (cellOf T (k + 2)).1 (cellOf T (k + 2)).2 :=
+        T.row_strict (by omega) hm3
+      have hmid : T.entry (cellOf T (k + 2)).1 (cellOf T k).2 = k + 1 := by omega
+      have huniq := cellOf_unique T (by rw [YoungDiagram.mem_cells]; exact hcorner) hmid
+      rw [huniq] at hadj1
+      omega
+  · have hd1 : axialDist T k = -1 :=
+      axialDist_of_sameCol T hm1 (by rw [← hcol1] at hm2; exact hm2) he1
+        (by rw [← hcol1] at he2; exact he2)
+    rcases hla with hrow2 | hcol2
+    · -- column then row: the mirror corner `(c₁.1, c₃.2)` is squeezed
+      exfalso
+      have hadj1 : (cellOf T (k + 1)).1 = (cellOf T k).1 + 1 :=
+        sameCol_adjacent T hm1 (by rw [← hcol1] at hm2; exact hm2) he1
+          (by rw [← hcol1] at he2; exact he2)
+      have hadj2 : (cellOf T (k + 2)).2 = (cellOf T (k + 1)).2 + 1 :=
+        sameRow_adjacent T hm2 (by rw [← hrow2] at hm3; exact hm3) he2
+          (by rw [← hrow2] at he3; exact he3)
+      have hcorner : ((cellOf T k).1, (cellOf T (k + 2)).2) ∈ μ :=
+        μ.up_left_mem (by omega) (le_refl _) hm3
+      have hlo : T.entry (cellOf T k).1 (cellOf T k).2
+          < T.entry (cellOf T k).1 (cellOf T (k + 2)).2 :=
+        T.row_strict (by omega) hcorner
+      have hhi : T.entry (cellOf T k).1 (cellOf T (k + 2)).2
+          < T.entry (cellOf T (k + 2)).1 (cellOf T (k + 2)).2 :=
+        T.toSsyt.col_strict (by omega) hm3
+      have hmid : T.entry (cellOf T k).1 (cellOf T (k + 2)).2 = k + 1 := by omega
+      have huniq := cellOf_unique T (by rw [YoungDiagram.mem_cells]; exact hcorner) hmid
+      rw [huniq] at hadj1
+      omega
+    · -- column then column: both distances are `-1`
+      rw [hd1]
+      refine (axialDist_of_sameCol T (i₂ := (cellOf T (k + 2)).1) hm2 ?_ he2 ?_).symm
+      · rw [hcol2]; exact hm3
+      · rw [hcol2]; exact he3
+
 /-- **The braid relation for value-transpositions.**  `s_k s_{k+1} s_k = s_{k+1} s_k s_{k+1}`
 as permutations of `{k, k+1, k+2}` — the symmetric-group relation the whole construction is
 a deformation of.
