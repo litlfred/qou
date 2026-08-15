@@ -146,3 +146,70 @@ The registry has **five modules and seven declarations**, all from the 2026-08-0
 audit. Nothing added since — including this session's 492 generated gluing theorems, none
 of which any gate pins. Worth deciding what else belongs in the registry now that running
 it is cheap; that is a scoping question, not this bean.
+
+---
+**2026-08-15 (later) — a sibling landed a staleness check on main the same day, and it
+would have disabled the gate this bean just enabled.**
+
+Merging `origin/main` (35 commits) conflicted in `scripts/lean-axiom-guard.py`. Main had
+added `check_freshness`, motivated by a real failure:
+
+> "the guard reported all-match against 9-day-old oleans while five of the underlying
+> sorries had been closed upstream and three declarations had moved files"
+
+**Their concern is correct and I verified it rather than assuming.** A stale olean gives a
+verdict about an old snapshot, which is worse than no verdict because it looks like
+assurance. That is the same class of defect this bean is about.
+
+### But their mtime heuristic false-fires in the environment the gate runs in
+
+Running the merged guard here: **exit 2, 15 modules flagged stale**, refusing to report.
+Checked whether that was real:
+
+- the merge did **not** touch any of those sources (`git log ebc21d1..origin/main` on them
+  is empty);
+- `Specht.lean` source mtime 10:08 vs olean 03:33, but its last **commit** was the
+  previous day — the olean postdates the content;
+- decisive: `lake build` on the registry modules **replayed all 3285 jobs as up to date**
+  and rebuilt nothing. Lake hashes content; it disagrees with mtime.
+
+So the oleans matched their sources, and the refusal was false. Cause: a clone or checkout
+stamps every file with the checkout time, which is later than any olean restored from a
+build cache — so raw mtime reports the whole import cone stale on any fresh container or
+CI runner.
+
+### The interaction is what makes this urgent
+
+`.github/workflows/lean-axiom-guard.yml`, added earlier on this bean, **fails the job on
+exit 2 once the cache is warm** — deliberately, so a warm-cache "cannot run" can't pass
+silently. Combined with mtime-based freshness, the gate would have refused on **every
+single CI run**. That is the same "protects nothing" outcome this bean exists to fix,
+reached from the opposite direction, and neither change is wrong on its own.
+
+### Fix: keep the protection, lose the false positive
+
+`_effective_source_time` compares against the time of the **commit that last touched the
+file** — stable across clones — falling back to mtime for files with **uncommitted
+changes**, since a local edit is exactly the case the check exists for and there is no
+commit to trust.
+
+Verified in **both** directions, not just the one I wanted:
+
+| case | result |
+|---|---|
+| fresh clone, no local edits | exit 0, all seven declarations match |
+| real local edit to `Specht.lean` | exit 2, names `Specht`, refuses to report |
+
+The positive control matters: a "fix" that only removed the refusal would have deleted a
+sibling's protection while appearing to work.
+
+### ⚠ Correcting this bean's own earlier entry
+
+The entry above says "**This is the first time the gate has ever run**" and reports exit 0
+on all seven. That claim stands — `lake build` replaying 3285 jobs is what establishes the
+oleans matched — **but I did not check that at the time**. The verdict was right and the
+verification was absent; it was luck, not method. The freshness check is what makes it
+method, which is why the sibling's instinct was better than mine even though their
+implementation misfires here.
+
+Their bean is untouched.
