@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-09T02:12:05Z
-updated_at: 2026-08-15T21:29:45Z
+updated_at: 2026-08-15T21:31:02Z
 ---
 
 Surfaced while verifying PR #4824's §1 consolidation claim with the three-way
@@ -244,3 +244,14 @@ error: ring_nf made no progress on goal      (lines 170, 174, 176, 197, 201, 203
 So `qou-kljb` closes as: **the premise was fixed by `qou-rc7b`'s `globs`, and widening the build exposed exactly one real breakage, now repaired.** Neither this bean's implied ~100 failures (extrapolating its 153-module sample) nor my own "tens of failures" escalation was right.
 
 Remaining honest caveat: `lean-direct-cone` bypasses Lake and writes no `.trace` files, so this is evidence about **elaboration**, not about what an incremental `lake build` does. A real `lake build` run is still the only way to confirm build-level green, and cannot be done in this container without evicting the restored olean cache.
+
+
+### Side finding — `QOU.Machinery.HeckeH4Semisimple` is a resource outlier
+
+The survey's final module took **>11 minutes and 5.2 GB RSS** to elaborate, for 688 lines carrying **8 declarations**. Every other module in the corpus finished in seconds.
+
+Worth recording because it is a **CI-feasibility** issue, not a correctness one: a standard GitHub-hosted runner has ~7 GB of RAM, so a single module at 5.2 GB is close to the ceiling — and `lake build` would elaborate it in the same process tree as everything else. Anyone who re-enables auto-triggered CI (currently all workflows are `workflow_dispatch`-only by the 2026-06-30 owner directive) should expect this module to be the binding constraint, and may need a larger runner or a split.
+
+This is a distinct resource class from the one the lakefile already documents: `AllKnownIsotopesUniqueness` needs `moreLeanArgs = ["-s", "65536"]` because it overflows the elaboration **stack**; this one is **heap**. Raising the stack does not help it.
+
+Neighbouring `QOU.Machinery.HeckeH4WedderburnMulC` was also slow (~10 min) — the H4 Wedderburn cluster as a whole is the expensive region of the corpus.
