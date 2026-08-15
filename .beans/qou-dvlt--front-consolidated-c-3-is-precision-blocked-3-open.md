@@ -158,3 +158,68 @@ such adjustment lands on the same 4 pi^2.
 
 Options A and B are now spent. The front's honest state: **precision-blocked
 (front (e)), and the one structural route out is closed (this note).**
+
+
+---
+
+# OPTION D — EXECUTED 2026-08-15. The ask is now concrete.
+
+[`docs/audits/2026-08-15-c3-front-measurement-ask.md`](../docs/audits/2026-08-15-c3-front-measurement-ask.md)
++ probe `qbeta_c3_measurement_proposal_budget.py` (exit 0, 4/4).
+
+D turned the bare "26x/32x/130x" into something a nuclear-physics reader can
+act on, and produced two findings the bare factors did not carry.
+
+## 1. WHICH number — and one trap
+
+`Q_beta` is reachable two ways:
+
+    direct CAL-3 (PDG 2024 / AME 2020)     sigma = 0.61  eV
+    Q_beta = m_n - m_p - m_e, in quadrature sigma = 0.561 eV
+
+**The second is NOT a free 9% improvement, and I nearly published it as one.**
+Quadrature assumes independence; AME2020 is a GLOBAL least-squares adjustment,
+so `m_n`, `m_p` and the neutron Q-value are correlated outputs of one fit.
+Without the covariance — which this repo does not carry — 0.561 eV is a LOWER
+BOUND, not the route's precision. All factors are quoted against the direct
+0.61 eV, which needs no covariance to be meaningful.
+
+## 2. WHERE the uncertainty lives
+
+    sigma(m_n) = 0.48 eV     73.3 % of the variance
+    sigma(m_p) = 0.29 eV     26.7 %
+    sigma(m_e) = 0.00016 eV  ~0
+
+**An improvement programme that does not touch the NEUTRON MASS cannot deliver
+any of the factors.** That is the actionable sentence, and it is not visible
+from the factors alone.
+
+## The table
+
+    target                                        need sigma(Q_b)   factor
+    zero-location test resolves at mu-p scale         0.0238 eV     25.7 x
+    c_3 ~ -Vol(4_1) at 1 sigma (proton)               0.0191 eV     32.0 x
+    c_3 ~ -Vol(4_1) at 1 sigma (muon)                 0.0047 eV    130.3 x
+
+Three independent routes, ordering sensibly — a check on all three, not a
+restatement of one.
+
+## Explicitly not claimed
+
+Feasibility, technique, cost. Outside what this repo can assess. The note says
+so in its own words: "saying which number to improve is useful; pretending to
+know how is not."
+
+And it bears on (H1) in NEITHER direction. 0.03 sigma is not evidence for (H1)
+and not evidence against it.
+
+## Front status after A/B/D
+
+    A  stop / redirect          the default, still available
+    B  dual degeneracy          EXECUTED -> intrinsic; front (a) closed
+    C  decay-face observable    UNTOUCHED — the only route to a testable c_3
+                                claim without new experiment
+    D  measurement proposal     EXECUTED -> this note
+
+**C is the only remaining item that could change the picture from inside the
+theory.** Everything else on this front now waits on an experiment.
