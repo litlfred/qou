@@ -217,6 +217,25 @@ if printf '%s\n' "${files[@]}" | grep -qE '^(computations/.*\.py|(content|docs)/
   fi
 fi
 
+# Block-manifest load check (block-manifest-audit).
+#
+# `run-validate` walks the CHAPTER manifests' block lists, never the filesystem,
+# so a `<block>.ts` that fails to import, exports no `default`, or carries a
+# label the schema rejects is not a validation error — the block is simply
+# invisible. It is absent from the rendered paper AND skipped by every
+# per-block QA checker, with validation still green. Five blocks were in that
+# state on 2026-08-15, three of them since June/July, each announced as landed
+# by its commit message. This is the gate that catches the sixth.
+if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.(md|ts)$'; then
+  mapfile -t blockfiles < <(printf '%s\n' "${files[@]}" | grep -E '^content/.*\.(md|ts)$')
+  if ! bma_out=$(bun run --preload "$ROOT/scripts/preload-registry.ts" \
+        "$ROOT/content/pipeline/block-manifest-audit.ts" --diff "${blockfiles[@]}" 2>&1); then
+    action=1
+    echo "⚠ block-manifest-audit: a changed block's manifest does not load."
+    printf '%s\n' "$bma_out" | sed 's/^/    /'
+  fi
+fi
+
 echo
 if [ "$action" -eq 1 ]; then
   echo "⚠ check-sidecars: action needed above. Resolve §7c markers / refresh sidecars BEFORE commit."
