@@ -107,16 +107,38 @@ carries the 17 `*.witness.json` files those modules load at runtime.
 `--check` makes drift a test failure instead of a discovery months later.
 **Do not hand-edit anything under `_internal/`** — run `--apply`.
 
-### Known, unchanged
+### `canonical_braid()` has a live path
 
-- `canonical_braid()` still answers from the bundled shard, not from a live
-  computation. The vendored code is now current and imports cleanly, but two
-  path assumptions in the upstream modules still block the live path: they
-  resolve witnesses as `Path(__file__).parent.parent` (handled here by
-  placing witnesses at the package root), and `codata_constants` reaches back
-  into `qou-mass/src/qou_mass/data/ame2020.json` by a repo-relative path,
-  which doubles inside the wheel. Both are changes to the `computations/`
-  modules rather than to the vendoring, and are tracked under `qou-elb0`.
+Previously it answered only for the eight atoms in the bundled shard and
+returned an empty word for anything else — the explicit word was deferred as
+"P3 vendoring work", and its test was skipped. Both are done.
+
+Outside the shard's range the word is now **computed** from the vendored
+`_internal.canonical_braid_crossings`. ⁷Li, which the shard does not carry:
+
+```python
+>>> qou_mass.canonical_braid(Z=3, N=4)
+BraidWord(n_strands=21, ...)   # 83 crossings
+# sigma 40, sigma_inv 28, averaged 14, averaged_weighted 1
+```
+
+The shard is still consulted first, deliberately: it is the recorded
+artifact, so preferring it keeps answers reproducible against a published
+witness instead of varying with the installed dependency set. The live path
+is the fallback.
+
+Unblocking it needed one upstream fix, a **layering inversion** in
+`computations/substrate/codata_constants.py`. That module located
+`ame2020.json` as `_WITNESS_DIR.parent / "qou-mass" / "src" / "qou_mass" /
+"data"` — the compute layer reaching into the package layer that vendors it,
+by repo-relative path. In-repo it resolved; inside the wheel the repo segment
+appeared twice and every AME lookup raised `FileNotFoundError`. It now
+searches the known layouts and, on failure, names every path it tried.
+
+`qou-substrate` and `pyhecke` became install dependencies: the vendored
+modules are shims that re-export from them, so they are hard requirements of
+the live path, not accelerators. Without them `canonical_braid()` degrades to
+a strand count rather than raising.
 
 ## 0.1.0a1
 

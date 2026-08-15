@@ -82,12 +82,6 @@ def test_compute_tr_M_proton():
     assert abs(float(tr) - 1.1457597822878355) < 1e-13
 
 
-@pytest.mark.skip(
-    reason="P2 only ships pre-computed shard rows for canonical_braid; "
-    "live computation via canonical_braid_crossings has deep "
-    "transitive deps (mass_at_3A_proper → hecke_core → ...) that "
-    "are P3 vendoring work."
-)
 def test_canonical_braid_4he():
     b = qm.canonical_braid(Z=2, N=2)
     assert b.n_strands == 12
