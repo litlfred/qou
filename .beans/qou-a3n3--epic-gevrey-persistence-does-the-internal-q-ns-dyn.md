@@ -99,3 +99,17 @@ H*delta*c*lam <= 1/4, Nbad+1 <= H, i.e. ~8cE0 <~ 1) => Omega_n <=
 chain — only the model's discrete dynamics and the smallness
 arithmetic. THE open core of the epic, final form: large data
 8cE0 > 1 inside the eps-uniform initial window of the physical layer.
+
+## 2026-08-15 (4): energy-drain route proved — and the core is INFRARED
+
+energy_geometric_decay: discrete Poincare (g*E <= Omega, g = kmin^2)
+turns the dissipation step into geometric decay E_n <= (1-delta*nu*g)^n E0.
+Honest scaling: the physical-layer gap is kmin = eps (def:qns-unit-layers),
+so the rate ~delta*eps^2/4 is eps-NON-uniform — entry into the
+energy-small class diverges as q -> 1+. Correct discrete image of the
+classical no-Poincare-on-unbounded-domain fact (the physical domain
+grows like c_q). LOCALIZATION COMPLETE: UV side tamed (tail Leray,
+epochs, chaining, all eps-uniform); the surviving large-data
+obstruction is INFRARED — the continuum limit's vanishing spectral
+gap. Open core, sharpest form: large data, eps-uniformly in time,
+against a spectral gap closing like eps.
