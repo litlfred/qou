@@ -346,3 +346,22 @@ STEP (ii) BLOCKERS REMAINING: 2 of 4 --
      Orbit3Braid / Orbit6Braid.
 Every ORBIT-LOCAL identity is now proved: size 1 (scalars), size 2 (seminormalBlock),
 size 3 (this file), size 6 (Orbit6Braid).
+
+
+## SIZE-3 HYPOTHESES NOW DERIVED (same branch/PR #5062)
+
+The two hypotheses of genA_genB_braid are no longer merely stated -- Orbit3Braid.lean now
+discharges both for the actual seminormal parameters, the role seminormalParam_mul_rel
+plays for Orbit6Braid:
+
+  hsc_row / hsc_col   -- the scalars q and -q^-1 each satisfy sc^2 = c*sc + 1
+  hrel_row / hrel_col -- with a1 = a(d) at x = q^-2d, a2 = a(d-1) at q^2 x (row-domino)
+                         or a(d+1) at x/q^2 (column), the relation
+                         a2 * sc * (sc - a1) = a1 holds identically
+
+This is also the concrete reason genA_genB_braid is stated through sc rather than q: the
+q-only form of the relation covers the row-domino only, and hrel_col is what shows the
+sc-form is the right generalisation rather than a cosmetic rewrite.
+
+So the size-3 orbit is now a statement about the Hoefsmit matrices end-to-end, not about
+abstract 3x3 arrays.
