@@ -174,13 +174,13 @@ theorem qJM_mul_qJMInv (hqi : q * qi = 1) :
              (σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩)
           = σ K q qi n ⟨k, h⟩ * qJM K q qi n k *
             (σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩) *
-            qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by ring
+            qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = σ K q qi n ⟨k, h⟩ * qJM K q qi n k * 1 *
             qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by rw [hσσi]
         _ = σ K q qi n ⟨k, h⟩ * (qJM K q qi n k * qJMInv K q qi n k) *
-            σInv K q qi n ⟨k, h⟩ := by ring
+            σInv K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = σ K q qi n ⟨k, h⟩ * 1 * σInv K q qi n ⟨k, h⟩ := by rw [ih]
-        _ = σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩ := by ring
+        _ = σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = 1 := hσσi
     · -- k ≥ n: recursion freezes, reduces to the k-th case
       push_neg at h
@@ -201,13 +201,13 @@ theorem qJMInv_mul_qJM (hqi : q * qi = 1) :
              (σ K q qi n ⟨k, h⟩ * qJM K q qi n k * σ K q qi n ⟨k, h⟩)
           = σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k *
             (σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩) *
-            qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by ring
+            qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k * 1 *
             qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by rw [hσiσ]
         _ = σInv K q qi n ⟨k, h⟩ * (qJMInv K q qi n k * qJM K q qi n k) *
-            σ K q qi n ⟨k, h⟩ := by ring
+            σ K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = σInv K q qi n ⟨k, h⟩ * 1 * σ K q qi n ⟨k, h⟩ := by rw [ih]
-        _ = σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩ := by ring
+        _ = σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = 1 := hσiσ
     · push_neg at h; omega
 
@@ -433,7 +433,9 @@ entry `2` has content `+1` (row-sharing) resp. `−1` (column-sharing).  This is
 *genuinely 2-dimensional* witness of the `q^{2c}` convention.  Ref: [ram1997] Thm 4.1. -/
 theorem qJM_seminormalRep21_one (q : ℝ) (hq : q ≠ 0) :
     seminormalRep21 q hq (qJM ℝ q q⁻¹ 2 1) = !![q ^ 2, 0; 0, (q⁻¹) ^ 2] := by
-  rw [qJM_one ℝ q q⁻¹ 2 (by norm_num), map_mul, seminormalRep21_σ0 q hq]
+  have h1 : qJM ℝ q q⁻¹ 2 1 = σ ℝ q q⁻¹ 2 0 * σ ℝ q q⁻¹ 2 0 :=
+    qJM_one ℝ q q⁻¹ 2 (by norm_num)
+  rw [h1, map_mul, seminormalRep21_σ0 q hq]
   ext i j
   fin_cases i <;> fin_cases j <;>
     simp [S0, Matrix.mul_apply, Fin.sum_univ_two] <;> ring
