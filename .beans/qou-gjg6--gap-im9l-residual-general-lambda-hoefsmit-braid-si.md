@@ -475,3 +475,42 @@ description.
 carrying the seminormal eigenvalue statement as hypotheses. Discharging it is
 `qou-ck0g` item 2, and its substrate is this branch's `seminormalRep`. So this
 work has a named dependent now.
+
+
+## FAR COMMUTATION PROVED GLOBALLY 2026-08-15 — two of three relations now hold
+
+genMat_far_comm: rho(sigma_k) rho(sigma_l) = rho(sigma_l) rho(sigma_k) for |k-l| >= 2, all
+of SYT mu, arbitrary shape. Sorry-free, axiom-clean. Blocker 1 of the step-(ii) list is now
+closed at the MATRIX level, not just the tableau level (swapTableau_comm was the latter).
+
+NO HYPOTHESIS ON q -- not even q > 0 or q != 1. Worth contrasting with the quadratic, which
+needed both (via seminormalParam_add_neg, and via zpow_ne_one to stay off the pole): far
+commutation never COMBINES two parameters, it only observes that the two products pair the
+same four entries. So it holds for every real q, degenerate cases included.
+
+SHAPE: both products are supported on {T, s_k.T, s_l.T, s_k s_l.T} and pair them identically,
+because a far swap changes nothing the other generator reads --
+axialDist_swapTableau_of_far (the parameter), swapAdmissible_far_iff (the admissibility,
+BOTH directions), cellOf_swapTableau_of_ne (the partner) -- and swapTableau_comm makes the
+fourth corner well defined. Four admissibility cases x up to five row cases; every one closes
+by `ring` after the entry rewrites.
+
+SUPPORTING (new): sum_mul_genMat_column_of_not_admissible (the scalar-column analogue of
+sum_mul_genMat_column) and swapTableau_far_ne -- s_k.T and s_l.T differ at the cell holding
+k, where the first carries k+1 and the second still carries k. That one is what the
+four-element support rests on: T != s_k s_l.T follows from it by applying s_k.
+
+LEAN GOTCHA THAT COST FOUR ITERATIONS, worth recording since it will recur in the braid:
+`subst` ZETA-EXPANDS a `set` binding in the goal while leaving it folded in the context, so
+a term-mode argument like `Ne.symm hAB : B != A` fails to elaborate against an expected type
+displaying as `swapTableau T l ... != A` even though the two are defeq. Unification assigns
+the metavariables before the defeq check. Fixes that work: use the by_cases hypothesis
+directly when it already has the right shape (h2 : not (B = A)), or wrap in `by exact`.
+Fix that does NOT work: `rw [<- hB]` to re-fold -- it just moves the unfolding to the other
+argument.
+
+REMAINING: the BRAID only. It is the one relation that is not column-local -- sigma_k and
+sigma_{k+1} have different supports, so no column argument reaches it, and that is precisely
+the content of Orbit3Braid / Orbit6Braid. Either lift those per-orbit identities via the
+basis correspondence (blocker 3, still open), or find a global argument. hoefsmit_seminormal_rep
+keeps its Ref'd sorry until then.
