@@ -560,3 +560,38 @@ of the same classification.
 
 So the honest state: the braid is no longer a search for a mechanism, it is a finite case
 analysis waiting on the orbit classification. hoefsmit_seminormal_rep keeps its Ref'd sorry.
+
+
+## SIZE-6 DISTINGUISHER PROVED + the method for every remaining orbit fact 2026-08-15
+
+swapTableau_adj_words_ne (sorry-free): s_{k+1}s_k.T != s_k s_{k+1}.T. This single
+inequality is what separates a generic <s_k,s_{k+1}>-orbit from a smaller one -- the two
+length-2 words land apart exactly when all six words do. Contrast swapTableau_comm, where
+the FAR generators commute outright; here they do not, and that failure IS the braid.
+
+Also swapTableau_adj_ne (s_k.T != s_{k+1}.T) and the helper ne_of_entry_ne.
+
+THE METHOD, which makes every remaining orbit fact an 8-line lemma. Every element of the
+orbit is determined by its entries at the two cells c1 = cellOf T k and c2 = cellOf T (k+1)
+(the third cell is forced). swapTableau_entry turns each into a swapVal word applied to
+T.entry, so the whole computation is `rw [swapTableau_entry, ..., he]; simp only [swapVal];
+split_ifs <;> omega`. With A = s_k.T, B = s_{k+1}.T, D = s_{k+1}A, E = s_kB, F = s_kD
+(= s_{k+1}E, the braid element), the table is
+
+           c1      c2
+    T      k       k+1
+    A      k+1     k
+    B      k       k+2
+    D      k+2     k
+    E      k+1     k+2
+    F      k+2     k+1
+
+All six pairs are distinct, so any of the 15 pairwise distinctness facts follows by reading
+off a column where the two rows differ and running the four-line tactic above. NOT
+pre-built here: build them as the braid case analysis demands, rather than 15 lemmas most
+of which may go unused.
+
+Note the table also EXPLAINS the smaller orbits: they arise when some of A, B, D, E, F fail
+to be admissible (not when they collide -- the entry values above are forced), which is why
+both braid expansion lemmas carry intermediate admissibility as an explicit hypothesis.
+That is the shape the remaining case analysis has to take.
