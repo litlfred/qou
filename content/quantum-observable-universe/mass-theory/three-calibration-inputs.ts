@@ -42,6 +42,12 @@ export default proposition({
       see: "https://github.com/litlfred/qou/pull/1246",
     },
     {
+      kind: "refined-framing",
+      date: "2026-08-15",
+      body: "**Stance (c) is foreclosed on the $q_0$ leg (owner ruling 2026-08-02).** The 2026-05-25 caveat above lists stance (c) [0 calibrations + 3 derivations] as *\"the ideal\"* pending a **substrate-$q_0$ derivation**. That derivation is now **permanently gated** — substrate-$q_0$ derivation is forever excluded, in any form (see [`2026-08-02-subgoal2-q0-derivation-forever-gated`](../../../docs/audits/2026-08-02-subgoal2-q0-derivation-forever-gated.md); [`docs/precision-goals.md`](../../../docs/precision-goals.md)). The reason is structural, not a scope choice: $q_0$ is a **local field value** $q|_U$ — our patch's reading, fixed by the local muon ratio and varying across the manifold ($q:\\infty \\to q_0 \\to 1$ over cosmic evolution) — observed at our location, [not derived from the topology](../observations/local-substrate-q.md). A local, contingent modulus is measured, not derived. Consequently stance (c) is unreachable for the CAL-2/$q_0$ leg; the research ceiling is stance (b) [1 unit choice + 2 cohomological derivations], and even there $q_0$ enters as a local calibration, not a derived constant. The topology derives observables *as functions of* $q$ (e.g. $\\tau(q)$, masses at $q$); it does not derive our patch's value of $q$.",
+      see: "https://github.com/litlfred/qou/blob/main/docs/audits/2026-08-02-subgoal2-q0-derivation-forever-gated.md",
+    },
+    {
       kind: "note",
       date: "2026-08-09",
       body:
