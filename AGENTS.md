@@ -1290,8 +1290,18 @@ muon; muon-anchor → ~4000σ on proton).
    (updated 2026-08-07).** The owner directive above sets the *target end
    state*: experimental (proton) everywhere in compute. It does **not**
    authorise a bulk rewrite as an idle-drain — that sweep is large, is
-   tracked under bean `tnjb`, and still needs scoped sign-off before it
-   runs. Concretely:
+   tracked under bean **`qou-1c4y`**, and still needs scoped sign-off
+   before it runs. Concretely:
+
+   > **Bean reference corrected 2026-08-15.** This paragraph previously
+   > said the sweep is "tracked under bean `tnjb`". It is not, and the
+   > mis-reference is worse than a typo: `tnjb` is *completed* and is
+   > about a **dashboard** defect (`per-observable-100x-status.witness.json`
+   > scoring the muon tautology as the m_μ prediction — see item 3 above,
+   > where the `tnjb` citation is correct). An agent following this
+   > paragraph to find the migration lands on a closed, unrelated bean and
+   > can reasonably conclude the sweep has already run. The live tracker is
+   > `qou-1c4y` (in-progress); its predecessor `z5vu` is completed.
    - **New / touched code: use proton.** Any probe, producer, or witness
      you write or modify defaults to the experimental pin. No sign-off
      needed — that is the standing directive.
