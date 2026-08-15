@@ -725,15 +725,59 @@ except ImportError:
     _HAS_NATIVE = False
 
 
+# ── CONVENTION GUARD: the native side is still on convention C ────────
+#
+# This module moved to convention D (z = q³/(q²+1)); the Rust crate
+# `tools/hecke-engine/src/gram.rs` has NOT, and still carries the
+# pre-2026-05-19 `TR_M[5] = z³` bug on top of that. Tracked as qou-m7py.
+#
+# Before the C → D migration, Python and Rust were both on C, so the
+# native dispatch was merely *fast*. Now the two sides disagree on the
+# trace convention, which means merely INSTALLING the wheel would
+# silently switch a caller's results from D back to C — a ~22.7 % change
+# in z, with no error and no log line. That is a worse failure mode than
+# the migration itself, because it is invisible and environment-dependent
+# (it reproduces only where the wheel happens to be installed).
+#
+# So the dispatch REFUSES rather than silently returning C numbers. This
+# deliberately trades the ~100× speedup for correctness until the Rust
+# side lands; set QOU_ALLOW_CONVENTION_C_NATIVE=1 to override if you
+# genuinely want convention-C numbers and know why.
+_NATIVE_CONVENTION_MSG = (
+    "pyhecke_native is installed but still implements the trace on "
+    "CONVENTION C (z = 1/(q^1/2+q^-1/2)), while pyhecke.gram is on "
+    "CONVENTION D (z = q^3/(q^2+1)) -- a 22.70% difference in z, plus "
+    "the unported TR_M[5] = z^3 bug. Dispatching would silently return "
+    "convention-C results. Port tools/hecke-engine/src/gram.rs (bean "
+    "qou-m7py), uninstall the wheel to use the pure-Python convention-D "
+    "path, or set QOU_ALLOW_CONVENTION_C_NATIVE=1 to override."
+)
+
+
+def _native_ok() -> bool:
+    """True iff the native path may be used. False while the Rust side
+    is on a different trace convention than this module."""
+    if not _HAS_NATIVE:
+        return False
+    import os
+    if os.environ.get("QOU_ALLOW_CONVENTION_C_NATIVE") == "1":
+        return True
+    raise RuntimeError(_NATIVE_CONVENTION_MSG)
+
+
 def has_native() -> bool:
-    """True iff the pyhecke_native wheel is installed."""
+    """True iff the pyhecke_native wheel is installed.
+
+    NOTE: this reports *installation*, not usability. The native path is
+    currently refused even when installed, because it is on a different
+    trace convention -- see `_native_ok`."""
     return _HAS_NATIVE
 
 
 def build_atom_nf(Z: int, N: int):
     """Build the atom NF for (Z, N). Native-dispatched; falls back
     to hecke_core.build_atom_nf when the wheel is absent."""
-    if _HAS_NATIVE:
+    if _native_ok():
         return _native.build_atom_nf(Z, N)
     import hecke_core  # type: ignore[import-not-found]
     return hecke_core.build_atom_nf(Z, N)
@@ -749,7 +793,7 @@ def atom_per_generator_volumes(
     """Per-generator Wedderburn volumes for the atom braid. Native-
     dispatched; falls back to hecke_core.atom_per_generator_volumes
     when the wheel is absent."""
-    if _HAS_NATIVE:
+    if _native_ok():
         return _native.atom_per_generator_volumes(
             Z, N,
             include_inter=include_inter,

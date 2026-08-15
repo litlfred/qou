@@ -251,3 +251,41 @@ def test_pyhecke_gram_atom_per_generator_volumes_matches_hecke_core():
 def test_pyhecke_gram_has_native_exported():
     assert callable(pyhecke_gram.has_native)
     assert isinstance(pyhecke_gram.has_native(), bool)
+
+
+# ──────────────────────────────────────────────────────────────────
+# Convention guard on the native (Rust) dispatch
+# ──────────────────────────────────────────────────────────────────
+# The Rust crate is still on convention C (bean qou-m7py). Before the
+# C -> D migration both sides were on C, so dispatching was merely
+# faster; now they disagree, and installing the wheel would silently
+# swap a caller's results back to C. These tests pin the refusal.
+
+def test_native_ok_false_when_wheel_absent():
+    """No wheel -> no dispatch, and no exception either."""
+    if pyhecke_gram.has_native():
+        pytest.skip("wheel installed; see the raise-path test below")
+    assert pyhecke_gram._native_ok() is False
+
+
+def test_native_dispatch_refuses_while_rust_is_convention_c(monkeypatch):
+    """With the wheel 'installed' but Rust still on C, the dispatch must
+    RAISE rather than silently return convention-C numbers."""
+    monkeypatch.setattr(pyhecke_gram, "_HAS_NATIVE", True)
+    monkeypatch.delenv("QOU_ALLOW_CONVENTION_C_NATIVE", raising=False)
+    with pytest.raises(RuntimeError, match="CONVENTION C"):
+        pyhecke_gram._native_ok()
+    # And the refusal must reach the public entry points, not just the
+    # private helper -- that is the whole point of the guard.
+    with pytest.raises(RuntimeError, match="CONVENTION C"):
+        pyhecke_gram.build_atom_nf(1, 0)
+    with pytest.raises(RuntimeError, match="CONVENTION C"):
+        pyhecke_gram.atom_per_generator_volumes(2, 2)
+
+
+def test_native_convention_guard_is_overridable(monkeypatch):
+    """The escape hatch exists and is explicit -- an opt-in env var, so
+    a convention-C result is never returned by accident."""
+    monkeypatch.setattr(pyhecke_gram, "_HAS_NATIVE", True)
+    monkeypatch.setenv("QOU_ALLOW_CONVENTION_C_NATIVE", "1")
+    assert pyhecke_gram._native_ok() is True
