@@ -50,10 +50,33 @@ sys.path.insert(0, str(Path(__file__).parent))
 # re-exports the identical class). Mirrors low_isotopes_binding_sweep.py.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools" / "qou-substrate" / "python"))
 
-from q_parameter import Q as Q0
-from experimental_constants import M_E_MEV
+# PRECISION LIFT (bean qou-3wqg). This module imported the FLOAT variant of all
+# three constants and computed `B = nu * m_e * Vol` in Python floats, with no
+# `import mpmath` anywhere in the file. Every `B_pred_MeV` in the emitted 16-row
+# table was therefore float64 FROM THE ROOT — and because those numbers were
+# honestly float64 rather than padded or built too early, all four precision
+# gates passed it cleanly. `canonical-mass-table-extended` reads `B_pred_MeV`
+# out of this witness, so its `err_*` fields could not carry more than a float
+# no matter what that producer did (that is the chain traced on qou-3wqg).
+#
+# This is exactly the lift the comment below anticipated — "a `--precision mpfr`
+# lift only needs to update one place" — because mpf variants already sat beside
+# the floats:
+#     q_parameter.Q_MP             knot_volumes.VOL_BORROMEAN_MPF
+#     codata_constants.M_E_MEV     knot_volumes.VOL_7_SQ_1_MPF
+# `experimental_constants.M_E_MEV` is a float while `codata_constants.M_E_MEV`
+# is the same quantity as mpf, which is why the electron mass changes MODULE
+# rather than name.
+from _precision import set_compute_dps, fmt  # noqa: E402,F401
+set_compute_dps()
+
+from q_parameter import Q_MP as Q0  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402 — mpf; experimental_constants' is float
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
-from knot_volumes import VOL_BORROMEAN, VOL_7_SQ_1  # noqa: E402
+from knot_volumes import (  # noqa: E402
+    VOL_BORROMEAN_MPF as VOL_BORROMEAN,
+    VOL_7_SQ_1_MPF as VOL_7_SQ_1,
+)
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 # Knot volumes now imported from `knot_volumes` (canonical mpmath
