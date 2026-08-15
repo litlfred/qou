@@ -180,20 +180,15 @@ def compute_tr_m_canonical(
         # `method_used` carries the substitution into the witness so the
         # route is recorded rather than silently swapped.
         val, wall, err, used = res
-        # Trigger on ABSENT *or* REFUSING native. #5055 (qou-w8zz) makes the
-        # native dispatch raise deliberately rather than run, because the
-        # Python side is on convention D while the Rust crate diverges
-        # (`trace_weights` ends `z*z*z`, and `Q_0` is muon-pinned), so merely
-        # having the wheel installed would change results per-machine.
-        # `QOU_ALLOW_NATIVE_DIVERGENCE=1` overrides it there.
-        #
-        # A refusal lands in the catch-all `except Exception` below, whose
-        # message does NOT contain "pyhecke_native missing" -- so keying the
-        # fallback on that phrase alone would let a refusal through, and
-        # `main()` silently SKIPS any atom with a non-empty err. The row would
-        # vanish from the table with no failure. Matching the divergence
-        # marker too keeps the fallback firing for the case it exists to
-        # handle: the sympy path is correct, just slower.
+        # Trigger the sympy fallback when native is ABSENT. As of qou-m7py
+        # (2026-08-15) the Rust crate is on convention D and proton-pinned to
+        # match the Python side exactly, so the native dispatch no longer
+        # REFUSES — the #5055/qou-w8zz divergence guard is resolved. The legacy
+        # "NATIVE_DIVERGENCE" markers below are kept only so an older wheel that
+        # still raises them lands in this fallback rather than silently skipping
+        # the atom (`main()` drops any atom with a non-empty err). The
+        # missing-wheel branch ("pyhecke_native missing") is the live case: the
+        # sympy path is correct, just slower.
         _native_unavailable = err and (
             "pyhecke_native missing" in err
             or "NATIVE_DIVERGENCE" in err
