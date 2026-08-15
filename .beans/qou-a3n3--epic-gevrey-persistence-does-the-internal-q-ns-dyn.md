@@ -129,3 +129,15 @@ EXACTLY the nonlocal-transfer caveat the SF arc named. One hypothesis,
 one caveat, one place. Epic state: everything proved except (a) the
 in-model Phi derivation (algebra follow-up) and (b) full-NS transfer
 locality (the standing fidelity caveat = the honest research frontier).
+
+## 2026-08-15 (6): Phi chip — constant-flux hypothesis discharged
+
+sqrt_forced_to_damped_forced (AM-GM on squares, no sqrt — generic
+field kept): the amplitude-form flux F*a(n) (the DN boundary coupling,
+F band-controlled, kB2*a^2 <= Omega_tail) absorbs into half the
+damping. boundary_flux_tail_bound composes with the invariant:
+sup_t Omega_tail <= max(Omega_tail_0, F^2/(D^2*kB2)) — all data,
+eps-uniform, explicit equilibrium. FINAL epic remainder: (a) the
+amplitude-form step IS the DN tail evolution (model-specific,
+probe-able); (b) full-NS transfer nonlocality (the standing caveat).
+The Lean chain is otherwise complete end to end.
