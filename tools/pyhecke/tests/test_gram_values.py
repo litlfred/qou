@@ -256,10 +256,11 @@ def test_pyhecke_gram_has_native_exported():
 # ──────────────────────────────────────────────────────────────────
 # Convention guard on the native (Rust) dispatch
 # ──────────────────────────────────────────────────────────────────
-# The Rust crate is still on convention C (bean qou-m7py). Before the
-# C -> D migration both sides were on C, so dispatching was merely
-# faster; now they disagree, and installing the wheel would silently
-# swap a caller's results back to C. These tests pin the refusal.
+# The Rust crate is on convention D like this module, but diverges in the
+# trace rule (z^3 vs h*z^2 + z) and the anchor (muon vs proton) -- bean
+# qou-m7py. Before the C -> D migration both sides agreed, so dispatching
+# was merely faster; now installing the wheel would silently change
+# results. These tests pin the refusal.
 
 def test_native_ok_false_when_wheel_absent():
     """No wheel -> no dispatch, and no exception either."""
@@ -268,24 +269,25 @@ def test_native_ok_false_when_wheel_absent():
     assert pyhecke_gram._native_ok() is False
 
 
-def test_native_dispatch_refuses_while_rust_is_convention_c(monkeypatch):
-    """With the wheel 'installed' but Rust still on C, the dispatch must
-    RAISE rather than silently return convention-C numbers."""
+def test_native_dispatch_refuses_while_crate_diverges(monkeypatch):
+    """With the wheel 'installed' but the crate diverging (z^3 trace rule
+    + muon anchor), the dispatch must RAISE rather than silently return
+    numbers from a different trace rule at a different anchor."""
     monkeypatch.setattr(pyhecke_gram, "_HAS_NATIVE", True)
-    monkeypatch.delenv("QOU_ALLOW_CONVENTION_C_NATIVE", raising=False)
-    with pytest.raises(RuntimeError, match="CONVENTION C"):
+    monkeypatch.delenv("QOU_ALLOW_NATIVE_DIVERGENCE", raising=False)
+    with pytest.raises(RuntimeError, match="DIVERGES"):
         pyhecke_gram._native_ok()
     # And the refusal must reach the public entry points, not just the
     # private helper -- that is the whole point of the guard.
-    with pytest.raises(RuntimeError, match="CONVENTION C"):
+    with pytest.raises(RuntimeError, match="DIVERGES"):
         pyhecke_gram.build_atom_nf(1, 0)
-    with pytest.raises(RuntimeError, match="CONVENTION C"):
+    with pytest.raises(RuntimeError, match="DIVERGES"):
         pyhecke_gram.atom_per_generator_volumes(2, 2)
 
 
 def test_native_convention_guard_is_overridable(monkeypatch):
     """The escape hatch exists and is explicit -- an opt-in env var, so
-    a convention-C result is never returned by accident."""
+    a divergent native result is never returned by accident."""
     monkeypatch.setattr(pyhecke_gram, "_HAS_NATIVE", True)
-    monkeypatch.setenv("QOU_ALLOW_CONVENTION_C_NATIVE", "1")
+    monkeypatch.setenv("QOU_ALLOW_NATIVE_DIVERGENCE", "1")
     assert pyhecke_gram._native_ok() is True
