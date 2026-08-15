@@ -74,18 +74,26 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDA
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
 # AME 2020 binding energies (MeV) for the canonical atoms.
-B_AME_MEV: dict[tuple[int, int], float] = {
-    (1, 0):  0.0,        # proton (no binding)
-    (0, 1):  0.0,        # neutron (no binding; mass excess separate)
-    (1, 1):  float(AME_B_DEUTERON_MEV_VALIDATION), # D
-    (1, 2):  float(AME_B_TRITIUM_MEV_VALIDATION),  # T
-    (2, 1):  float(AME_B_HE3_MEV_VALIDATION),  # ³He
-    (2, 2): float(AME_B_HE4_MEV_VALIDATION),   # ⁴He
-    (3, 2): 26.328,      # ⁵Li (unstable, half-life ~10⁻²² s)
-    (3, 3): float(AME_B_LI6_MEV_VALIDATION),    # ⁶Li
-    (3, 4): 39.24522,    # ⁷Li
-    (4, 3): 37.6,        # ⁷Be
-    (4, 4): 56.49951,    # ⁸Be
+# mpf throughout (bean qou-3wqg). The five `AME_B_*_MEV_VALIDATION` constants
+# ARE mpf in `codata_constants`; wrapping them in `float()` here truncated them
+# on the way in, and the four literals below were plain floats. `err = pred -
+# ref` is now mpf on both sides, so it carries the precision the port to
+# `mass_table_ppb.py` made available rather than losing it at the subtraction.
+# The literals become strings for the same reason a `mpf(<float literal>)` is
+# flagged elsewhere: `mp.mpf(26.328)` binds the binary64 value, `mp.mpf("26.328")`
+# binds the decimal one.
+B_AME_MEV: dict[tuple[int, int], mp.mpf] = {
+    (1, 0):  mp.mpf(0),  # proton (no binding)
+    (0, 1):  mp.mpf(0),  # neutron (no binding; mass excess separate)
+    (1, 1):  AME_B_DEUTERON_MEV_VALIDATION,  # D
+    (1, 2):  AME_B_TRITIUM_MEV_VALIDATION,   # T
+    (2, 1):  AME_B_HE3_MEV_VALIDATION,   # ³He
+    (2, 2): AME_B_HE4_MEV_VALIDATION,    # ⁴He
+    (3, 2): mp.mpf("26.328"),      # ⁵Li (unstable, half-life ~10⁻²² s)
+    (3, 3): AME_B_LI6_MEV_VALIDATION,     # ⁶Li
+    (3, 4): mp.mpf("39.24522"),    # ⁷Li
+    (4, 3): mp.mpf("37.6"),        # ⁷Be
+    (4, 4): mp.mpf("56.49951"),    # ⁸Be
 }
 
 # Default atom list: full coverage through A=7 via canonical.
@@ -358,7 +366,15 @@ def lookup_b_pred_existing(
         rows = mass_table_ppb.get("data", mass_table_ppb).get("rows", [])
         for r in rows:
             if r.get("Z") == Z and r.get("N") == N:
-                return r.get("B_pred_MeV"), r.get("origin")
+                b = r.get("B_pred_MeV")
+                # `mp.mpf(...)` on the STRING, not `float(...)` (bean qou-3wqg).
+                # `mass_table_ppb.py` used to compute `B = nu * m_e * Vol` in
+                # Python floats and emit a JSON number; it now computes in
+                # mpmath and emits a 44-digit decimal string, so lifting it here
+                # is lossless where a float() would throw the lift away again.
+                # Accepts a bare number too, so a witness written before that
+                # port still loads.
+                return (mp.mpf(b) if b is not None else None), r.get("origin")
         return None, None
     except (KeyError, json.JSONDecodeError):
         return None, None
@@ -616,11 +632,18 @@ def main() -> int:
             prediction_MeV_50dps=(
                 str(pred) if pred is not None else None
             ),
-            B_AME_MeV=ref,
-            err_MeV=err_val,
-            err_pct=err_pct_val,
-            err_ppb=err_ppb_val,
-            err_ppm=err_ppm_val,
+            # `fmt` (not `str(float(...))`) — bean qou-3wqg. These are mpf now:
+            # `ref` comes from the un-`float()`-ed AME constants above and
+            # `pred` is lifted from mass_table_ppb's 44-digit decimal string, so
+            # the subtraction carries real precision and `fmt` writes it out at
+            # OUTPUT_DPS. This is NOT the stringify-a-float move the audit
+            # forbids — that was the earlier attempt here, and it was reverted
+            # precisely because `pred` was still a float at the time.
+            B_AME_MeV=fmt(ref) if ref is not None else None,
+            err_MeV=fmt(err_val) if err_val is not None else None,
+            err_pct=fmt(err_pct_val) if err_pct_val is not None else None,
+            err_ppb=fmt(err_ppb_val) if err_ppb_val is not None else None,
+            err_ppm=fmt(err_ppm_val) if err_ppm_val is not None else None,
             # Provenance reflects actual method used (Copilot review).
             chi_cache_witness=(
                 f"(computed live via {method_used})"

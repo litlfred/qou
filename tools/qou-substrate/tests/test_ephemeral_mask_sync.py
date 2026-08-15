@@ -47,6 +47,7 @@ def test_ephemeral_mask_contains_required_fields():
 
     required = {
         "commitSha", "scriptCommitSha", "computedAt", "durationMs",
+        "durationSeconds", "duration_sec",
         "environment", "elapsed_seconds", "elapsed_sec",
     }
     missing = required - _EPHEMERAL_META_FIELDS

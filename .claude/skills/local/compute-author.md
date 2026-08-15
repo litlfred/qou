@@ -623,31 +623,59 @@ For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
 `active_set`, `primal_obj`, `dual_obj`, `duality_gap` per AGENTS.md
 §LP/SDP duals.
 
-### §5.1 STRICT — never commit an audit witness written by a SCOPED run
+### §5.1 STRICT — an audit witness must not be written by two different scopes
 
 An audit witness whose filename claims corpus-wide scope must only ever be
-committed from a **corpus-wide** run. Two mechanisms in this repo write a
-narrow result to a wide filename, and both look like a normal refresh in
-`git status`:
+committed from a **corpus-wide** run. The failure looks like an ordinary
+refresh in `git status`, so only the counts give it away.
 
-| Runner | What it scans | What it overwrites |
+**The cause is a shared output path, not a scoping flag.** When one audit
+script is invoked twice with different scan roots and derives its output
+path from its own location, the LATER invocation wins:
+
+| Runner | Scans | Wrote to |
 |---|---|---|
-| `scripts/precision-gates.sh --changed` | only the files you changed | `witness-raw-float64-audit.witness.json`, `q0-anchor-consistency-audit.witness.json`, `q0-value-drift-audit.witness.json` |
-| `content/pipeline/q-usage-audit.ts --chapter` | one chapter | `docs/audits/<date>-q-usage-audit.witness.json` (records only the LAST chapter) |
+| `witness_raw_float64_audit.py --strict` | `computations/` — 1561 files / 534192 fields | `computations/witness-raw-float64-audit.witness.json` |
+| the SAME script, `--scan-root docs/audits/scripts --strict` | 5 files / 20 fields | ← the same path |
 
-Measured twice on 2026-08-15, `--changed` with 8 files touched:
-`dirty_witnesses: 1561 → 5`, `total_fields: 534192 → 20`. Committing that
-replaces a corpus audit with an 8-file sample under a name that still reads
-corpus-wide — and every later reader, including the next agent's baseline,
-takes it at face value.
+`precision-gates.sh` orders the advisory gate after the ratchet, so the
+five-file scan overwrote the corpus one on **every** run of that script.
+The committed witness was left reading `dirty_witnesses 1561 → 5` and
+`drained_files 14 → 1572`, with every carve-out record dropped.
 
-**Rule:** after any `--changed` / `--chapter` run, `git checkout --` the
-audit witnesses it touched. The gate's own "STALE COMMITTED AUDIT
-WITNESSES … If a COUNT moved, commit the regenerated one" advice is
-**wrong for a scoped run** — under `--changed` the count moved *because the
-scope shrank*, not because the committed copy was stale. Only trust that
-advice from a full run. If you believe a committed audit witness is
-genuinely stale, re-run the audit **unscoped** and commit that.
+**`--changed` is NOT the mechanism.** An earlier version of this section
+said it was. It is only a cheap short-circuit deciding whether to run at
+all — the script says so in its own comment ("the ratchets are corpus-wide,
+not per-file, so there is nothing to scope down") — and it scopes no gate.
+That is why the clobber also fired on full runs.
+
+**Fixed on `main`** (`70835094`, `7668b998`; bean `qou-pgdw`) — and the fix
+is worth reading before you write a similar one, because two parts of it
+are easy to miss:
+
+- `_output_name(scan_root)` **derives** the filename rather than adding an
+  `--out` flag someone must remember to pass, so the collision is impossible
+  for any future scan root too.
+- `SELF_OUTPUT_PREFIX` self-excludes the derived witness from the scan.
+  Without it the new file is itself a witness under `computations/` and the
+  next run re-detects the audit's own output.
+- The slug is **infixed**, keeping the `-audit.witness.json` suffix, because
+  `AUDIT_SUFFIXES` in `computations/audits/q0_anchor_consistency_audit.py`
+  classifies audit self-outputs by SUFFIX. A name ending in the slug is
+  filed as `Q0_ANCHOR_MISSING` instead — measured, 1889 → 1890.
+
+The `--chapter` case is a genuinely different mechanism and is still live:
+
+| Runner | Scans | Overwrites |
+|---|---|---|
+| `content/pipeline/q-usage-audit.ts --chapter` | one chapter | `docs/audits/<date>-q-usage-audit.witness.json` — records only the LAST chapter under a corpus-wide name (#4917) |
+
+**Rule.** Before committing any audit witness, read its counts and its
+scope field. The gate's own "STALE COMMITTED AUDIT WITNESSES … if a COUNT
+moved, commit the regenerated one" advice is sound only when the run was
+**unscoped**; under a scoped run a moved count may just mean the scope
+shrank. A count moving in the *draining* direction on a full run is genuine
+progress and should be committed. When in doubt, re-run unscoped.
 
 ## §6. CI / merge etiquette
 
@@ -677,7 +705,7 @@ genuinely stale, re-run the audit **unscoped** and commit that.
 | Orbit-sum identity gives wrong tr_M | claimed symmetry isn't a conjugation | do §3 preflight before shipping orbit shortcuts |
 | `pip install a b c` says one package is unavailable | pip is atomic — one unresolvable name installs NOTHING | install one per invocation; see §0.1 (SnapPy looked missing only because `pyhecke-native` shared the command) |
 | Regenerated witness silently loses `numpy`/`pyhecke_native` keys | container poorer than the one that wrote the committed copy | bootstrap fully, re-run, and grep the diff for `-` version lines before committing (§0.1) |
-| `precision-gates.sh --changed` leaves 3 audit witnesses modified | scoped run overwrote corpus-wide audit outputs | `git checkout --` them; never commit a scoped audit witness (§5.1) |
+| An audit witness's counts collapse (e.g. `1561 -> 5`) after a gate run | two invocations of one audit script shared a fixed output path; the later, narrower scan won — NOT `--changed`, which scopes nothing | fixed on main (`qou-pgdw`) by deriving the name from the scan root + self-excluding it; keep the `-audit.witness.json` suffix if you write a similar fix (§5.1) |
 
 ## §8. Pre-work checklist (use before every compute change)
 
