@@ -44,9 +44,10 @@ It is fixed, not fitted.  The concrete `(2,1)` matrix `S1` was built by hand in
 
 This is infrastructure for the general-`λ` seminormal representation
 (`hoefsmit_seminormal_rep`, still a `-- Ref:`-cited `sorry`).  It supplies the parameter
-function of steps (i)–(ii) of that construction.  It does **not** address step (iii), the
-braid relation for arbitrary `λ` — the generic size-`6` `S₃`-orbit identity — which remains
-open (bean `qou-gjg6`).
+function of steps (i)–(ii) of that construction.  Step (iii) — the generic size-`6`
+`S₃`-orbit braid identity — is proved in
+[`Orbit6Braid.lean`](Orbit6Braid.lean) (`genA_genB_braid`), which consumes this
+parameter.  What remains of bean `qou-gjg6` is the orbit enumeration and block assembly.
 
 Refs:
 - [hoefsmit1974] Hoefsmit, PhD thesis (UBC 1974) — the seminormal form.
