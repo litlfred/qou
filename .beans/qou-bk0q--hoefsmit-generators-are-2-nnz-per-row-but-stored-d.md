@@ -140,3 +140,54 @@ Whether the O(dim^2) SYT partner search in the builder (P21) dominates at
 dim 7700 — at that size it is ~59M comparisons per generator in pure Python,
 which may exceed everything discussed above. Measure before optimising the
 matmul further.
+
+## CORRECTION 2 — the crossover exists, and my retraction over-generalised
+
+The section above retracted the speed claim and said "both data points favour
+dense". Both data points did. They were both **below the crossover**, and I
+wrote a conclusion wider than the range I had measured — the same error the
+retraction was itself correcting.
+
+Extending the ladder:
+
+| dim | dense | structured | ratio | winner |
+|---|---|---|---|---|
+| 16 | 0.0002 s | 0.0008 s | 4.13x | dense |
+| 28 | 0.0003 s | 0.0017 s | 5.29x | dense |
+| 84 | 0.0014 s | 0.0052 s | 3.57x | dense |
+| 120 | 0.0033 s | 0.0086 s | 2.60x | dense |
+| 297 | 0.0259 s | 0.0728 s | 2.81x | dense |
+| 462 | 0.0748 s | 0.1758 s | 2.35x | dense |
+| 891 | 0.4375 s | 0.7403 s | 1.69x | dense |
+| **1485** | 4.2041 s | **2.9490 s** | **0.70x** | **structured** |
+| **2376** | 13.1718 s | **11.0091 s** | **0.84x** | **structured** |
+
+The ratio falls monotonically from dim 84 onward and crosses 1 between **891
+and 1485**. Above it, structured wins on time AND on memory; below it, dense
+wins on time by up to 5x while the memory difference is irrelevant (under 1 MB).
+
+That is exactly the shape P22 describes ("auto-switch at dim>500"), now with a
+measured threshold instead of an assumed one. The prudent cut is **dim >= 1200**
+— inside the bracket, safely past 891, and clear of the noise at 2376 (0.84 vs
+0.70 is non-monotonic, most likely cache effects, so the exact crossover point
+should not be over-fitted).
+
+### What this changes for He-4
+
+The blocking partition is dim **7700**, far above the crossover. Structured is
+therefore expected to be faster there as well as ~1900x smaller — the trade I
+described ("unblocks it, pays ~1.5x compute") does not apply at the dims that
+actually matter. The earlier framing was drawn from measurements two to eight
+times too small.
+
+### Method note
+
+Two retractions on one claim, in opposite directions:
+
+  * asserted a speedup from flop count without measuring -> refuted;
+  * then asserted "no speedup" from two points, both below the crossover ->
+    also wrong.
+
+The stable lesson is not about flops or bandwidth. It is that a performance
+claim is only valid over the range measured, and the range must bracket the
+case you actually care about. Both errors here came from reporting outside it.
