@@ -68,6 +68,13 @@ from witness_base import WitnessBuilder  # noqa: E402
 SIMPLEX = HERE / "deltalambda-kappa-interface-residual-simplex.witness.json"
 
 
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+mp.mp.dps = 50
+
 def derived_moments():
     """Read μ₃, μ₄ from the committed residual-simplex witness (forward, 0 fit)."""
     raw = json.load(open(SIMPLEX))

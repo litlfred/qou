@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T00:37:42.885845+00:00",
-  "commitSha": "338abede1b2cd79fbafe55497d5d6f8c896d6b55",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-15T20:41:52.469910+00:00",
+  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "canonical-tr-m-three-path-comparison",
   "scriptFile": "canonical_tr_m_three_path_comparison.py",
-  "scriptHash": "24853546612d",
-  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "scriptHash": "be4094b95151",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,50 +19,53 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Compares the three tr_M(q_0) computation paths in the repo against the canonical Hoefsmit+Wenzl bridge witness.  Headline: bridge ≡ markov_peel; pyhecke SW disagrees by orders of magnitude; legacy is only ~15% off but still wrong.  T ≠ ³He on the canonical path (ratio 1.985), refuting PR #524's 'isospin forces equality' claim.",
   "rows": [
     {
       "atom": "proton",
-      "bridge_canonical": 1.0653062286131671,
+      "bridge_canonical": 1.1457597817199365,
       "markov_peel": 1.065306228613167,
       "pyhecke_SW_pseudo_canonical": 0.41539578633234286,
-      "peel_vs_bridge_ratio": 0.9999999999999998,
-      "pyhecke_vs_bridge_ratio": 0.3899308716828886
+      "peel_vs_bridge_ratio": 0.9297814826542452,
+      "pyhecke_vs_bridge_ratio": 0.3625505040059785
     },
     {
       "atom": "neutron",
-      "bridge_canonical": 0.9232332971861535,
+      "bridge_canonical": 0.9877437563653397,
       "markov_peel": 0.9232332971861535,
       "pyhecke_SW_pseudo_canonical": 0.41539578633234286,
-      "peel_vs_bridge_ratio": 1.0,
-      "pyhecke_vs_bridge_ratio": 0.44993588034399684
+      "peel_vs_bridge_ratio": 0.9346890742022311,
+      "pyhecke_vs_bridge_ratio": 0.42055015144909624
     },
     {
       "atom": "deuteron",
-      "bridge_canonical": 0.3882864715594089,
+      "bridge_canonical": 0.5751723291658843,
       "markov_peel": 0.3882864715477133,
       "pyhecke_SW_pseudo_canonical": 0.07330859093603524,
-      "peel_vs_bridge_ratio": 0.999999999969879,
-      "pyhecke_vs_bridge_ratio": 0.18880027069091135
+      "peel_vs_bridge_ratio": 0.6750784971015675,
+      "pyhecke_vs_bridge_ratio": 0.12745500299422863
     },
     {
       "atom": "tritium",
-      "bridge_canonical": 0.10405211867846563,
+      "bridge_canonical": 0.2293101458600947,
       "markov_peel": 0.10405211867552604,
       "pyhecke_SW_pseudo_canonical": 0.01549762744538941,
-      "peel_vs_bridge_ratio": 0.9999999999717488,
-      "pyhecke_vs_bridge_ratio": 0.14894100804692947
+      "peel_vs_bridge_ratio": 0.4537615127549117,
+      "pyhecke_vs_bridge_ratio": 0.06758369712452551
     },
     {
       "atom": "helium-3",
-      "bridge_canonical": 0.20654085857249696,
+      "bridge_canonical": 0.4037671362431507,
       "markov_peel": 0.20654085856226245,
       "pyhecke_SW_pseudo_canonical": 0.01549762744538941,
-      "peel_vs_bridge_ratio": 0.999999999950448,
-      "pyhecke_vs_bridge_ratio": 0.07503419687756192
+      "peel_vs_bridge_ratio": 0.5115345951233695,
+      "pyhecke_vs_bridge_ratio": 0.03838258752207276
     },
     {
       "atom": "helium-4",

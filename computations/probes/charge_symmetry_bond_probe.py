@@ -39,6 +39,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import mass_binding_dashboard as mbd  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -57,6 +58,13 @@ MIRROR_PAIRS = [
     ("13C", 6, 7, "13N", 7, 6),
 ]
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def _crossing_eigs(q: mp.mpf):
     """Hecke eigenvalues of the bare generator σ and its inverse σ⁻¹.
