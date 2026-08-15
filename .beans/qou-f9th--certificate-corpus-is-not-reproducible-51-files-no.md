@@ -1,6 +1,6 @@
 ---
 # qou-f9th
-title: 'Certificate corpus is not reproducible: 51 files, no recoverable generator params'
+title: 'RETRACTED: certificates ARE reproducible (f64 = eval/2^pn_count); repair script ready'
 status: todo
 type: task
 created_at: 2026-08-15T04:05:44Z

@@ -112,24 +112,35 @@ constant ⇒ serve the cache" shape. Grep for other witness caches gated on
 muon-q0 witnesses to proton", which presumes you can tell which witnesses are
 muon-anchored. That identification was not sound.
 
-### 1. The muon LABEL was derivable from a stale file, and about to flip
+### 1. ~~The muon LABEL was about to flip~~ — RETRACTED 2026-08-15
 
-`_q0_value_for_anchor("muon")` in `qou_substrate/witness.py` read
-`computations/q-pinning-50-digit.witness.json` -> `derived_50_digit.q`.
-But that producer now sets `Q = q_at(mp.dps)` — the **PROTON** solve — and
-writes `"q": str(Q)`. The committed witness holds a muon-range value ONLY
-because it predates that change.
+**This section asserted a claim that is FALSE. Struck rather than deleted, so
+the error is visible to anyone who read the earlier version.**
 
-So **re-running `q_pinning_50_digit.py` would have made every subsequent
-muon-anchored witness stamp a PROTON value under `q0Anchor: "muon"`** — the
-full 11.5 ppb gap, silently, with nothing failing. That is the flip-flop this
-whole anchor-stamping mechanism exists to prevent, sitting inside the
-mechanism. Fixed in #5082: both anchors are now DERIVED
-(`q_muon_at()` / `Q_50_DIGIT_STR`), reading no witness.
+I claimed that re-running `q_pinning_50_digit.py` would make every
+muon-anchored witness stamp a PROTON value, because that script sets
+`Q = q_at(mp.dps)`. It does not. `q_pinning_50_digit` is listed in
+`computations/q0_anchor_manifest.json` under `ideal_muon`, so `q_parameter`
+resolves the anchor from the argv stem and rebinds `q_at` to return the
+witness string. Verified under the producer's real argv:
+`q_at(70)` -> `1.10997859555733471989…`. **The producer is a FIXED POINT;
+re-running it changes nothing.**
 
-**A test was pinning the bug**: `test_env_override_muon` asserted the muon
-value `startswith("1.109978595557")` — the stale prefix — so a *correct*
-implementation failed it. Now compared against `q_muon_at()`.
+The "fix" I built on that claim — deriving the muon label from `q_muon_at()`
+— was a REGRESSION and is reverted: it made the stamped label disagree with
+the value the producer actually computes with (1.1099785955541805 stamped vs
+1.1099785955573347 computed), which is the exact misread the field exists to
+prevent.
+
+**The real defect, which that story obscured: the muon 50-dps constant is
+CIRCULAR** — its producer reads, via `q_at`, the witness it writes. It has
+never been derived from a closed form. Breaking that loop must move the LABEL
+and the COMPUTED VALUE together, or it reintroduces the disagreement above.
+
+Note also: `computations/substrate/q_parameter.py` asserts the witness starts
+with `1.109978595557`, so substituting the canonical string there hard-fails
+all 257 `ideal_muon` producers, and a second copy of that guard ships in the
+published `qou_mass` package. Any proton migration has to deal with both.
 
 ### 2. The real inventory, measured (not "~840")
 
