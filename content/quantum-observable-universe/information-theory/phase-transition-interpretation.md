@@ -1,4 +1,4 @@
-The Hecke algebra $H_n(q)$ carries irreducible representations precisely corresponding to Young diagrams. At a generic temperature $T_q$, a single representation dominates the partition function. At a critical temperature $T_q^{(c)}$, two representations contribute equally, introducing a non-analyticity into the partition function.
+The Hecke algebra $H_n(q)$ carries irreducible representations corresponding to Young diagrams. At a generic temperature $T_q$, a single representation dominates the partition function. At a critical temperature $T_q^{(c)}$, two representations contribute equally, introducing a non-analyticity into the partition function.
 
 **The three phases.**
 
@@ -13,4 +13,4 @@ When the crossing number $n_K$ is odd, the Hecke extension at the mixed-channel 
 All three phases coexist only when three Hecke representations contribute identically. This defines a rigid codimension-2 condition in the $(T_q, P_q)$ plane. It obeys the Gibbs phase rule.
 
 **Classical theory comparison.**
-Classical theory generates phase transitions artificially by appending *ad hoc* inter-particle potentials (van der Waals or Lennard-Jones) to the ideal gas. The QOU generates physical interactions through inter-fibre braid linking across the Hopf base of $S^3_q$. The $S^3$ topology inherently supplies the binding potential via its boundary action. The Hecke representation theory dictates the exact discrete phase structure.
+Classical theory generates phase transitions artificially by appending *ad hoc* inter-particle potentials (van der Waals or Lennard-Jones) to the ideal gas. The QOU generates physical interactions through inter-fibre braid linking across the Hopf base of $S^3_q$. The $S^3$ topology supplies the binding potential via its boundary action. The Hecke representation theory dictates the exact discrete phase structure.

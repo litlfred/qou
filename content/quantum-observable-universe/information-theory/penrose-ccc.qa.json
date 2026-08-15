@@ -1246,6 +1246,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "3 negation-contrast construction(s): \", not a conformal rescaling.\"; \", not global.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "93f479ba1608",
+          "ts": "a49756249485"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:32.021Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "block is an explicit CCC-vs-QOU comparison: 'degree-0 vanishing, not a conformal rescaling', 'algebraic, not geometric', 'local, not global', 'consequence of dynamics, not an axiom' are the comparison's content"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1265,6 +1281,22 @@
         "reviewed_at": "2026-08-15T10:30:59.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "93f479ba1608",
+          "ts": "a49756249485"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:32.067Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no rhetorical-pivot construction present"
       }
     ],
     "trap-em-dash": [
@@ -1284,6 +1316,22 @@
         "reviewed_at": "2026-08-15T10:30:59.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 292 words)"
+      },
+      {
+        "field_hash": {
+          "md": "93f479ba1608",
+          "ts": "a49756249485"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:32.105Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no em-dash construction present"
       }
     ],
     "trap-triples": [
@@ -1303,6 +1351,22 @@
         "reviewed_at": "2026-08-15T10:30:59.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 292 words)"
+      },
+      {
+        "field_hash": {
+          "md": "93f479ba1608",
+          "ts": "a49756249485"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:32.143Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no triples construction present"
       }
     ],
     "trap-closing-aphorism": [
@@ -1322,6 +1386,22 @@
         "reviewed_at": "2026-08-15T10:30:59.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "93f479ba1608",
+          "ts": "a49756249485"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:32.182Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "'Cyclicity is a consequence of dynamics, not an axiom' is the substantive point of item 4 (cyclicity derived, not assumed), not an ornament"
       }
     ],
     "trap-meta-commentary": [
@@ -1341,6 +1421,22 @@
         "reviewed_at": "2026-08-15T10:30:59.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "93f479ba1608",
+          "ts": "a49756249485"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:32.224Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no meta-commentary construction present"
       }
     ],
     "trap-thesis-restatement": [
@@ -1360,6 +1456,22 @@
         "reviewed_at": "2026-08-15T10:30:59.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "93f479ba1608",
+          "ts": "a49756249485"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:32.263Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no thesis-restatement construction present"
       }
     ],
     "trap-performed-warmth": [
@@ -1379,6 +1491,22 @@
         "reviewed_at": "2026-08-15T10:30:59.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "93f479ba1608",
+          "ts": "a49756249485"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:32.306Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no performed-warmth construction present"
       }
     ],
     "trap-superlative": [
@@ -1398,6 +1526,22 @@
         "reviewed_at": "2026-08-15T10:30:59.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "93f479ba1608",
+          "ts": "a49756249485"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:32.350Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no superlative construction present"
       }
     ],
     "trap-nonspeakable": [
@@ -1417,8 +1561,24 @@
         "reviewed_at": "2026-08-15T10:30:59.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "93f479ba1608",
+          "ts": "a49756249485"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:32.389Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no nonspeakable construction present"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.727Z"
+  "updated_at": "2026-08-15T12:03:32.389Z"
 }

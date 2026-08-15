@@ -1252,6 +1252,22 @@
         "reviewed_at": "2026-08-15T10:30:59.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b23686ada240",
+          "ts": "d285adcbb8d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.798Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "'resource bound vs geometric statement' and 'checks consistency but reveals nothing about the global sum' are substantive mathematical contrasts (the block's dictionary)"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1271,6 +1287,22 @@
         "reviewed_at": "2026-08-15T10:30:59.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b23686ada240",
+          "ts": "d285adcbb8d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.839Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no rhetorical-pivot construction present"
       }
     ],
     "trap-em-dash": [
@@ -1290,6 +1322,22 @@
         "reviewed_at": "2026-08-15T10:30:59.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 634 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b23686ada240",
+          "ts": "d285adcbb8d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.889Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no em-dash construction present"
       }
     ],
     "trap-triples": [
@@ -1309,6 +1357,22 @@
         "reviewed_at": "2026-08-15T10:30:59.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 634 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b23686ada240",
+          "ts": "d285adcbb8d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.930Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no triples construction present"
       }
     ],
     "trap-closing-aphorism": [
@@ -1328,6 +1392,22 @@
         "reviewed_at": "2026-08-15T10:30:59.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b23686ada240",
+          "ts": "d285adcbb8d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.971Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "quotable rhetorical-question closer defused by the thesis-restatement fix (same sentence)"
       }
     ],
     "trap-meta-commentary": [
@@ -1347,6 +1427,22 @@
         "reviewed_at": "2026-08-15T10:30:59.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b23686ada240",
+          "ts": "d285adcbb8d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:31.010Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no meta-commentary construction present"
       }
     ],
     "trap-thesis-restatement": [
@@ -1366,6 +1462,23 @@
         "reviewed_at": "2026-08-15T10:30:59.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b23686ada240",
+          "ts": "d285adcbb8d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:31.051Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "final line was a rhetorical-question restatement of the geometric reformulation",
+        "notes": "fixed: 'question is entirely geometric: does ... perfectly cover ...?' -> 'question becomes geometric: whether ... covers ...'"
       }
     ],
     "trap-performed-warmth": [
@@ -1385,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:30:59.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b23686ada240",
+          "ts": "d285adcbb8d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:31.091Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no performed-warmth construction present"
       }
     ],
     "trap-superlative": [
@@ -1404,6 +1533,23 @@
         "reviewed_at": "2026-08-15T10:30:59.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b23686ada240",
+          "ts": "d285adcbb8d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:31.130Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "intensity adverbs removed; remaining 'identical horizon geometry' is a literal identity claim",
+        "notes": "fixed: 'strictly equates' -> 'equates'; 'identically matches' -> 'matches'"
       }
     ],
     "trap-nonspeakable": [
@@ -1423,8 +1569,24 @@
         "reviewed_at": "2026-08-15T10:30:59.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b23686ada240",
+          "ts": "d285adcbb8d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:31.173Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no nonspeakable construction present"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.723Z"
+  "updated_at": "2026-08-15T12:03:31.173Z"
 }
