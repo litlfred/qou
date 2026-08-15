@@ -38,24 +38,32 @@ Rust toolchain (`cargo`, `rustc`) is present in these environments; `maturin`
 is pip-installed by the script if absent. `rug`/MPFR builds from source (no
 system GMP/MPFR packages needed).
 
-## IMPORTANT: installing the wheel does NOT (yet) accelerate `pyhecke.gram`
+## Native `pyhecke.gram` acceleration — ENABLED (qou-m7py RESOLVED 2026-08-15)
 
-`pyhecke.gram` **deliberately refuses** the native wheel even when installed —
-`_native_ok()` raises `RuntimeError` — because the Rust crate currently
-**diverges** from the Python module (bean `qou-m7py`):
+The native fast path is now on by default when the wheel is installed. The
+qou-m7py port brought the crate and every language binding onto **convention
+D**: `gram_matrix`/`nf_tr` and every binding's `trace_weights` export use
+`gram::trace_weights_markov` (`TR_M[5] = h·z² + z`), `Q_0` is the proton pin
+`1.1099785827513808`, and the (singular-under-D) Gram is handled by
+`gram_quotient_inverse` + `gram_radical` rather than a removed `gram_inverse`.
 
-1. `trace_weights` in `tools/hecke-engine/src/gram.rs` ends `z³` where the
-   Python `TR_M` ends `h·z² + z` (the 2026-05-19 trace fix was never ported);
-   this makes the crate's Gram non-singular.
-2. The crate hardcodes the **muon** pin `Q_0 = 1.1099785955541805`, while the
-   Python reads the **proton** pin `1.1099785827513808` (2.19e-8 on z).
+`_native_ok()` no longer refuses on principle. It runs a **runtime
+convergence self-check**: it compares the installed wheel's
+`trace_weights`/`gram_matrix` against this module's convention-D reference
+(`TR_M`, `G`) at `q0`, and
 
-An environment-dependent silent divergence is worse than a loud refusal, so the
-dispatch refuses; `QOU_ALLOW_NATIVE_DIVERGENCE=1` is the explicit override.
-**So building the wheel is necessary infrastructure, but the native fast path
-for gram-based compute is unlocked only when `qou-m7py` ports the trace fix +
-proton pin into `tools/hecke-engine/src/gram.rs`.** Until then gram-based
-computes run on the pure-Python path.
+- **matches** → the native path is used (~100× on ⁴⁰Ca);
+- **diverges** (an OLD wheel built before the port — still `z³` / muon pin) →
+  refused **loudly** with a `RuntimeWarning` + rebuild hint. No silent
+  divergence either way.
+
+`QOU_DISABLE_NATIVE=1` is the explicit opt-out (forces the pure-Python path).
+The old `QOU_ALLOW_NATIVE_DIVERGENCE=1` opt-in is obsolete. If the self-check
+fails, `bash scripts/build-pyhecke-native.sh` rebuilds a convergent wheel.
+
+Verified native == Python-D exactly at q0: `trace_weights` Δ=0, `gram_matrix`
+Δ=0, `gram_quotient_inverse` vs `G_PINV` Δ=4.4e-16, `gram_radical` Δ=0,
+`gram_determinant`=0 (singular, as expected under D).
 
 ## Producer-level fast paths are separate
 
