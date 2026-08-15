@@ -196,7 +196,16 @@ def anchors_in(doc) -> list[tuple[str, object, str, float]]:
                         found.append((k, v, hit[0], hit[1]))
                     fp = false_precision(v)
                     if fp:
-                        found.append((k, v, "FALSE-PRECISION", 0.0))
+                        # Keep the two classes DISTINCT. Collapsing them to a
+                        # single "FALSE-PRECISION" label made the report
+                        # attribute every flagged file to the known stale
+                        # string and print that string verbatim -- wrong for
+                        # ~96 files carrying some OTHER non-canonical value,
+                        # which need a different investigation (the stale one
+                        # has a known origin; these do not).
+                        kind = ("FP-known-stale" if "does not reproduce" in fp
+                                else "FP-unknown")
+                        found.append((k, v, kind, 0.0))
                 walk(v)
         elif isinstance(o, list):
             for i in o:
@@ -245,7 +254,7 @@ def main() -> int:
         # false-precision rendering of that same pin is one anchor with a
         # serialization defect, not two anchors. (Including it inflated the
         # straddle count 18 -> 257 in an earlier revision of this script.)
-        kinds = kinds - {"FALSE-PRECISION"}
+        kinds = kinds - {"FP-known-stale", "FP-unknown"}
         # A single witness carrying TWO different anchors MAY be the
         # layer-straddle AGENTS.md calls a defect regardless of size. It may
         # equally be correct by construction: a q-sweep or a pin-sensitivity
@@ -278,26 +287,31 @@ def main() -> int:
         if buckets[name]:
             print(f"  {buckets[name]:5d}  {name}")
 
-    if buckets["FALSE-PRECISION"]:
+    n_stale = buckets["FP-known-stale"]
+    n_unknown = buckets["FP-unknown"]
+    if n_stale or n_unknown:
         print()
-        print(f"  ** {buckets['FALSE-PRECISION']} witness(es) carry a 50-dps "
-              f"muon q0 that is NOT RECOMPUTABLE.")
-        print("     q_muon_at(60) -- the closed form "
-              "q = 1/(1-sqrt(Vol(4_1)/(m_mu/m_e))),")
-        print("     reading only CODATA and an exactly-computed Vol -- gives:")
-        print(f"       canonical  {Q_MUON_50}")
-        print(f"       in corpus  {Q_MUON_50_WRONG}")
-        print("     They diverge at digit 13 (2.842e-12 relative).")
+        print(f"  ** {n_stale + n_unknown} witness(es) carry a 50-dps muon q0 "
+              f"that q_muon_at() does not reproduce.")
+        print("     Two DIFFERENT defects, reported separately because they "
+              "need different work:")
         print()
-        print("     SCOPE -- this is a REPRODUCIBILITY defect, not an accuracy")
-        print("     one. CODATA m_mu/m_e is known to ~7 sig figs, which caps")
-        print("     q_muon at ~8; the gap between the two strings is 431x")
-        print("     SMALLER than that experimental uncertainty. So neither")
-        print("     string means anything past digit 8, the canonical one is")
-        print("     NOT more accurate, and no derived physical quantity moves.")
-        print("     What the canonical one has is that it can be regenerated")
-        print("     and therefore checked. Do not report this as a precision")
-        print("     or accuracy problem.")
+        print(f"     {n_stale:5d}  the KNOWN stale string — origin understood")
+        print(f"            canonical  {Q_MUON_50}")
+        print(f"            in corpus  {Q_MUON_50_WRONG}")
+        print("            Circular: its producer reads, via q_at, the witness")
+        print("            it writes, so it has never been derived from a")
+        print("            closed form. That is why q_muon_at() misses it.")
+        print()
+        print(f"     {n_unknown:5d}  some OTHER non-canonical value — origin UNKNOWN")
+        print("            Not the stale string and not canonical. These have")
+        print("            had no investigation at all; do not assume they")
+        print("            share the circularity above.")
+        print()
+        print("     SCOPE — reproducibility, NOT accuracy. CODATA m_mu/m_e is")
+        print("     known to ~7 sig figs, capping q_muon at ~8; the stale gap")
+        print("     is 431x SMALLER than that uncertainty. No derived physical")
+        print("     quantity moves. Do not report this as a precision problem.")
 
     if mixed:
         print(f"\n  ** {len(mixed)} witness(es) record MORE THAN ONE anchor "
