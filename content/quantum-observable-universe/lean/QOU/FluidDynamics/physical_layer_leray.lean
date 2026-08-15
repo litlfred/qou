@@ -316,4 +316,114 @@ theorem eventual_regularity_quadratic (E Ωp : ℕ → K) (δ q c d : K)
   eventually_in_basin E Ωp δ q (d / c) m hδ hq1 hq2 hΩ hdiss hE hm
     (quadratic_basin_invariant Ωp δ c d (le_of_lt hδ) hc hΩ hstep)
 
+/-!
+## Inside the initial window: good-step chaining (bean `qou-g1kj`)
+
+The one place blow-up could still live is the ε-uniform initial window.
+This section closes it for a **larger data class than GP4's basin** by
+combining the two uniform controls already proved:
+
+- **epochs** bound the *total* number of bad steps (`Ω > lam`) by an
+  ε-free count `Nbad`;
+- the **bootstrap** (GP3's shape: from any good step, `Ω ≤ 2·lam` for
+  the next `H` steps — taken as a named hypothesis here, exactly as
+  the basin was before `qou-f5o6`) covers `H` steps after each good
+  step.
+
+If every bad run is shorter than the bootstrap horizon
+(`Nbad + 1 ≤ H`), the good steps chain: the *latest* good step before
+any time `n` is at most `Nbad` steps back (else the interval in
+between would contain more bad steps than exist in total), so the
+bootstrap from it covers `n` — and `Ω ≤ 2·lam` **everywhere**
+(`sup_bound_of_chaining`).  No induction is needed; the latest-good-
+step argument is a single pigeonhole.
+
+Reading of the arithmetic side condition (docstring only, not
+formalized): with `Nbad ≈ 4E₀/(δ·lam)` and `H ≈ 1/(2δc·lam)` the
+condition `Nbad + 1 ≤ H` is `8cE₀ ≲ 1` — an **energy**-smallness
+condition, ε-uniform, strictly weaker than GP4's enstrophy-smallness
+`c·Ω₀ ≤ νμ`.  In-model, scope (a): the model's transfer constant `c`
+is fixed, whereas the classical supercriticality lives exactly in `c`
+growing with resolution — that distinction is the honest boundary of
+this result, stated, not blurred.  Large data with `8cE₀ > 1` remains
+the open core.
+-/
+
+/-- Convert the epochs product inequality into a natural-number bad
+    count: if `(4/δ)·E₀ ≤ Nbad·lam` (with `lam > 0`), then at most
+    `Nbad` steps of any horizon are bad. -/
+theorem bad_count_le (E Ωp tail : ℕ → K) (δ q lam : K) (Nbad : ℕ)
+    (hδ : 0 < δ) (hq1 : 1 < q) (hq2 : q ≤ 2) (hlam : 0 < lam)
+    (hΩ : ∀ n, 0 ≤ Ωp n)
+    (htail₀ : ∀ n, 0 ≤ tail n) (htail : ∀ n, tail n ≤ Ωp n)
+    (hdiss : ∀ n, E (n + 1) ≤ E n - δ * (1 / (2 * q)) * Ωp n)
+    (hE : ∀ n, 0 ≤ E n)
+    (hcast : 4 / δ * E 0 ≤ (Nbad : K) * lam) :
+    ∀ n, ((Finset.range n).filter (fun i => lam < tail i)).card ≤ Nbad := by
+  intro n
+  have hprod := epochs_of_regularity E Ωp tail δ q lam hδ hq1 hq2
+    hΩ htail₀ htail hdiss hE n
+  have hK : ((((Finset.range n).filter (fun i => lam < tail i)).card : K))
+      ≤ (Nbad : K) := by
+    have := le_trans hprod hcast
+    exact le_of_mul_le_mul_right this hlam
+  exact_mod_cast hK
+
+omit [IsStrictOrderedRing K] in
+/-- **Sup bound by good-step chaining**: if at most `Nbad` steps in any
+    horizon are bad (`lam < Ωp`), the origin is good (`Ωp 0 ≤ lam`),
+    the bootstrap covers `H` steps from every good step
+    (`Ωp g ≤ lam → Ωp (g + j) ≤ 2·lam` for `j ≤ H`), and every bad run
+    fits under the horizon (`Nbad + 1 ≤ H`), then `Ωp n ≤ 2·lam` for
+    **every** `n`.  Latest-good-step pigeonhole: the newest good step
+    `g ≤ n` is at most `Nbad` back, since the strictly-later steps up
+    to `n` are all bad and there are at most `Nbad` of those in total;
+    the bootstrap from `g` then covers `n`. -/
+theorem sup_bound_of_chaining (Ωp : ℕ → K) (lam : K) (Nbad H : ℕ)
+    (hcount : ∀ n, ((Finset.range n).filter (fun i => lam < Ωp i)).card ≤ Nbad)
+    (h0 : Ωp 0 ≤ lam)
+    (hboot : ∀ g, Ωp g ≤ lam → ∀ j, j ≤ H → Ωp (g + j) ≤ 2 * lam)
+    (hHN : Nbad + 1 ≤ H) :
+    ∀ n, Ωp n ≤ 2 * lam := by
+  intro n
+  set S := (Finset.range (n + 1)).filter (fun i => Ωp i ≤ lam) with hS
+  have hne : S.Nonempty := by
+    refine ⟨0, ?_⟩
+    simp [hS, h0]
+  set g := S.max' hne with hg
+  have hgmem := S.max'_mem hne
+  have hgle : g ≤ n := by
+    have := (Finset.mem_filter.mp hgmem).1
+    exact Nat.lt_succ_iff.mp (Finset.mem_range.mp this)
+  have hggood : Ωp g ≤ lam := (Finset.mem_filter.mp hgmem).2
+  -- every step strictly between g and n (inclusive) is bad
+  have hbad : ∀ i, g < i → i ≤ n → lam < Ωp i := by
+    intro i hgi hin
+    by_contra hnot
+    push_neg at hnot
+    have himem : i ∈ S := by
+      refine Finset.mem_filter.mpr ⟨Finset.mem_range.mpr ?_, hnot⟩
+      exact Nat.lt_succ_of_le hin
+    exact absurd (S.le_max' i himem) (not_le.mpr hgi)
+  -- so the run (g, n] injects into the bad set of range (n+1)
+  have hrun : n - g ≤ Nbad := by
+    have hsub : Finset.Ico (g + 1) (n + 1)
+        ⊆ (Finset.range (n + 1)).filter (fun i => lam < Ωp i) := by
+      intro i hi
+      obtain ⟨h1, h2⟩ := Finset.mem_Ico.mp hi
+      exact Finset.mem_filter.mpr
+        ⟨Finset.mem_range.mpr h2,
+         hbad i (Nat.lt_of_succ_le h1) (Nat.lt_succ_iff.mp h2)⟩
+    have hcardIco : (Finset.Ico (g + 1) (n + 1)).card = n - g := by
+      rw [Nat.card_Ico]
+      omega
+    calc n - g = (Finset.Ico (g + 1) (n + 1)).card := hcardIco.symm
+      _ ≤ ((Finset.range (n + 1)).filter (fun i => lam < Ωp i)).card :=
+          Finset.card_le_card hsub
+      _ ≤ Nbad := hcount (n + 1)
+  -- the bootstrap from g covers n
+  have hn : n = g + (n - g) := by omega
+  rw [hn]
+  exact hboot g hggood (n - g) (le_trans hrun (by omega))
+
 end QOU.FluidDynamics.PhysicalLayerLeray

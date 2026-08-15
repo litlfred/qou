@@ -75,3 +75,15 @@ eventual regularity now has NO unproved hypothesis. The epic's sole
 remaining open item: sup-in-time behaviour INSIDE the eps-uniform
 initial window [0, 4E0/(delta*theta*)] — the classical weak-vs-strong
 gap at its narrowest in-QOU form.
+
+## 2026-08-15 (2): initial window closed for ENERGY-SMALL data
+
+bad_count_le + sup_bound_of_chaining: epochs bad-count + GP3-shaped
+bootstrap hypothesis + Nbad+1 <= H (arithmetically ~ 8cE0 <~ 1, an
+ENERGY-smallness condition, eps-uniform) => sup_n Omega_n <= 2*lam
+EVERYWHERE — latest-good-step pigeonhole, no induction. Extends the
+global class from GP4's enstrophy-small basin to energy-small data.
+Honest boundary named in the docstring: in-model c is fixed; classical
+supercriticality lives in c growing with resolution. Remaining open
+core: large data 8cE0 > 1 inside the initial window + the exact-form
+GP3 bootstrap instantiation (hboot hypothesis).
