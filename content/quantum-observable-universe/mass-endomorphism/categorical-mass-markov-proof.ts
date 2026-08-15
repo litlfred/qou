@@ -5,7 +5,7 @@ export default proof({
   title: "Proof of categorical mass markov",
   uses: ["prop:categorical-mass-markov"],
   computation: {
-    engine: "mpmath+sympy",
+    engine: "sympy",
     script: "computations/markov/markov_trace_canonical.py",
     // The body already told the reader to reproduce with this script. It just
     // could not be DECLARED, because the script emitted no witness -- so the

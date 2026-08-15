@@ -1,8 +1,8 @@
 {
-  "engine": "mpmath+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T20:43:26.455583+00:00",
-  "commitSha": "34eff092b81d34f1bc1a3383d290ade547ae2554",
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-15T23:29:49.429254+00:00",
+  "commitSha": "ec099b34f1fb89b4649120f3de90fa8c17835b11",
   "assertions": [
     {
       "name": "trM_𝟏",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 488,
+  "durationMs": 517,
   "computation": "markov-trace-canonical",
   "scriptFile": "markov_trace_canonical.py",
-  "scriptHash": "f5dff3fd9849",
-  "scriptCommitSha": "1ca4f00cf45c0212ff2a15174b974c9b2c770546",
+  "scriptHash": "fed145cc8e30",
+  "scriptCommitSha": "fdc111342d6ed6cff17ce3c428710ced67733620",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

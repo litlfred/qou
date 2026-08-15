@@ -437,7 +437,7 @@ if __name__ == "__main__":
     # pipeline: the 1e-40 gate below was real inside this file and invisible
     # outside it. Bean qou-ft3p.
     from witness_base import WitnessBuilder
-    w = WitnessBuilder("markov-trace-canonical", engine="mpmath+sympy")
+    w = WitnessBuilder("markov-trace-canonical", engine="sympy")
     w.add_data("q0_50dps", _mp.nstr(q0_num, 50))
     w.add_data("z_convention_D", _mp.nstr(z_num, 50))
     w.add_data("h", _mp.nstr(h_num, 50))
