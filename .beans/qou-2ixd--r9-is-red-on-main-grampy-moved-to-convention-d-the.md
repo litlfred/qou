@@ -737,3 +737,49 @@ consequence one of them checked.
 Post-merge state: `blocked_migrations` still `[]`, `resolved_migrations` 1 row,
 8 derived evaluators, `pyhecke.gram` waiver intact. Validator
 `PASS (0 errors, 23 warnings)`; selftests 42/42, 16/16, 23/23.
+
+---
+
+## Round 13 (prepare-merge): two defects the gates caught, both mine
+
+### `content_validate` rejected my `engine` value
+
+`computation.engine` accepts `sympy | mpmath | python+mpmath | …`, and I had
+written **`mpmath+sympy`** — on `prf:categorical-mass-markov` and in the
+`WitnessBuilder` call when giving `markov_trace_canonical.py` its witness.
+
+Set both to `sympy`, matching `markov-trace-recursive-reducer`, whose producer
+has the same sympy-symbolic / mpmath-numeric shape. Witness regenerated, 6
+assertions passing. **run-validate: 1 error -> 0.**
+
+The remaining 5 issues are pre-existing warnings — three blocks with no Lean
+declaration, one dangling remark, and the notice that no reference registry is
+configured — not errors.
+
+### The audit fired on a convention CONTROL
+
+Main's 30 new commits brought `ACTIONABLE 4 -> 5`. The new site was
+`qbeta_kc21_parity_convention_immunity_probe.py:141` (from the sibling's
+#5123), and it is a **false positive of mine**:
+
+    z_of(q, conv):
+      C -> sqrt(q)/(1+q)
+      D -> q**3/(q**2+1)
+      X -> q/(1+q**2)     # "control, in no channel; genericity probe only"
+
+`is_c_form_halfarg` matched the **X control** — `q/(1+q^2)` is exactly the
+`r/(r^2+1)` shape — and a control deliberately chosen to sit in *no* channel is
+the opposite of a convention-C leak.
+
+`DELIBERATE` could not save it: that exemption keys on the target NAME, and
+here the label lives in a docstring and a branch guard. The machine-checkable
+signal is that **the same function also returns the D form** — a function
+returning more than one convention is a dispatcher, and a dispatcher's C branch
+is a labelled comparison by construction.
+
+Bucketed as `convention dispatcher (returns C and D) — labelled comparison`
+rather than silently skipped, so it stays countable. **ACTIONABLE 5 -> 4**, and
+all four remaining are pyhecke (`qou-w8zz`).
+
+Selftest 42 -> 44, with fixtures pinning both directions: a C+D function is a
+dispatcher, a C-only function is not.

@@ -626,6 +626,23 @@ def scan(roots=ROOTS, blocked_files=()):
                     continue
                 if "z" not in fn.name.lower():
                     continue
+                # A function that returns BOTH a C form and the D form is a
+                # convention DISPATCHER, not a defect -- its C branch is the
+                # labelled comparison, by construction.
+                #
+                # qbeta_kc21_parity_convention_immunity_probe.z_of(q, conv)
+                # returns sqrt(q)/(1+q) for "C", q**3/(q**2+1) for "D", and
+                # q/(1+q**2) for "X (control, in no channel; genericity probe
+                # only)". The half-argument matcher fired on the X CONTROL --
+                # `q/(1+q^2)` is exactly the r/(r^2+1) shape -- and a control
+                # deliberately chosen to be in no channel is the opposite of a
+                # convention-C leak.
+                #
+                # The DELIBERATE exemption could not catch it: it keys on the
+                # target NAME, and here the name is `z_of` with the label in a
+                # docstring and a branch guard. Returning D somewhere in the
+                # same function is the machine-checkable signal.
+                dispatcher = _returns_convention_d(fn)
                 for r in ast.walk(fn):
                     if not isinstance(r, ast.Return) or r.value is None:
                         continue
@@ -637,8 +654,10 @@ def scan(roots=ROOTS, blocked_files=()):
                     if not (is_c_form(val) or is_c_form_halfarg(val)):
                         continue
                     yield (sp, r.lineno, f"{fn.name}() -> return",
-                           ast.unparse(val), classify(sp, blocked_files),
-                           bool(DELIBERATE.search(fn.name)))
+                           ast.unparse(val),
+                           "convention dispatcher (returns C and D) — labelled comparison"
+                           if dispatcher else classify(sp, blocked_files),
+                           bool(DELIBERATE.search(fn.name)) or dispatcher)
 
 
 def selftest() -> int:
@@ -787,6 +806,20 @@ def selftest() -> int:
          _returns_found("def z_mp(d):\n    return q ** 3 / (q ** 2 + 1)\n") == 0),
         ("a function whose name has no z is left alone",
          _returns_found("def loop(q):\n    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))\n") == 0),
+        # A convention DISPATCHER is a labelled comparison by construction.
+        # qbeta_kc21_parity_convention_immunity_probe.z_of returns C, D and an
+        # X control (q/(1+q^2), "in no channel"); the half-argument matcher
+        # fired on the CONTROL. DELIBERATE could not help -- the label is in a
+        # docstring and a branch guard, not the name.
+        ("a function returning BOTH C and D is a dispatcher, not a defect",
+         _returns_convention_d(ast.parse(
+             "def z_of(q, conv):\n"
+             "    if conv == 'C': return mp.sqrt(q) / (1 + q)\n"
+             "    if conv == 'D': return q ** 3 / (q ** 2 + 1)\n"
+             "    return q / (1 + q ** 2)\n").body[0])),
+        ("a function returning only C is NOT a dispatcher",
+         not _returns_convention_d(ast.parse(
+             "def z_mp(d):\n    return 1 / (mp.sqrt(q) + mp.sqrt(qi))\n").body[0])),
         ("a file defining z the convention-D way is recognised as D",
          _defines_convention_d("z = q0 ** 3 / (q0 ** 2 + 1)", "z")),
         ("the reversed-denominator spelling is recognised as D",
