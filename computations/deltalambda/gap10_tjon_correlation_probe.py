@@ -83,7 +83,7 @@ import pyhecke_native  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps(30)
@@ -153,8 +153,8 @@ def main() -> int:
     print(f"   μ₄ = {float(nat_mu4):+.4f}   fractional Tjon deviation μ₄/M(4) = "
           f"{float(nat_frac):+.4f}")
 
-    results = {"nature": {"ladder": [float(nat[a]) for a in (2, 3, 4)],
-                          "mu4": float(nat_mu4), "frac_tjon_dev": float(nat_frac)}}
+    results = {"nature": {"ladder": [fmt(nat[a]) for a in (2, 3, 4)],
+                          "mu4": fmt(nat_mu4), "frac_tjon_dev": fmt(nat_frac)}}
     scores = {}
 
     for label, complete in (("complete graph (C(A,2) bonds: 1,3,6)", True),
@@ -189,18 +189,23 @@ def main() -> int:
             sign_ok = (frac > 0) == (nat_frac > 0)
             print(f"        sign matches nature: {bool(sign_ok)}   "
                   f"|ratio| {float(abs(frac / nat_frac)):.2f}×")
-            scores[label] = {"frac": float(frac), "sign_ok": bool(sign_ok),
-                             "ratio_to_nature": float(abs(frac / nat_frac))}
+            scores[label] = {"frac": fmt(frac), "sign_ok": bool(sign_ok),
+                             "ratio_to_nature": fmt(abs(frac / nat_frac)),
+                             "_f": float(frac),          # printing only
+                             "_r": float(abs(frac / nat_frac))}
         results[label] = {
-            "M_op": {str(a): float(M[a]) for a in (2, 3, 4)},
-            "ladder_normalised": ({str(a): float(ladder[a]) for a in (2, 3, 4)}
+            "M_op": {str(a): fmt(M[a]) for a in (2, 3, 4)},
+            "ladder_normalised": ({str(a): fmt(ladder[a]) for a in (2, 3, 4)}
                                   if ladder else None),
-            "tjon_two_point_prediction": float(4 * M[3] - 6 * M[2]),
-            "mu4_op": float(mu4_op),
-            "frac_tjon_deviation": float(frac) if frac is not None else None}
+            "_ladder_f": ({str(a): float(ladder[a]) for a in (2, 3, 4)}
+                          if ladder else None),          # printing only
+            "_M_op_f": {str(a): float(M[a]) for a in (2, 3, 4)},
+            "tjon_two_point_prediction": fmt(4 * M[3] - 6 * M[2]),
+            "mu4_op": fmt(mu4_op),
+            "frac_tjon_deviation": fmt(frac) if frac is not None else None}
 
     # SIGN CONVENTION (corrected) — the corpus binding proxy is the DEFICIT
-    pos = {k: all(v <= 0 for v in results[k]["M_op"].values())
+    pos = {k: all(v <= 0 for v in results[k]["_M_op_f"].values())
            for k in results if k != "nature"}
     print(f"\n [!] SIGN CONVENTION — binding is the trace DEFICIT")
     print(f"     Corpus canonical: c = E₀·(g_unlink − g_link), so the binding proxy is")
@@ -215,13 +220,13 @@ def main() -> int:
     print(f"\n [S] summary — fractional Tjon deviation μ₄/M(4)")
     print(f"     nature                                   {float(nat_frac):+.4f}")
     for k, v in scores.items():
-        print(f"     {k:42s} {v['frac']:+.4f}   sign {v['sign_ok']}   "
-              f"{v['ratio_to_nature']:.2f}×")
+        print(f"     {k:42s} {v['_f']:+.4f}   sign {v['sign_ok']}   "
+              f"{v['_r']:.2f}×")
 
     any_sign = any(v["sign_ok"] for v in scores.values())
-    best = min((v["ratio_to_nature"] for v in scores.values()
+    best = min((v["_r"] for v in scores.values()
                 if v["sign_ok"]), default=None)
-    lad = {k: results[k]["ladder_normalised"] for k in results if k != "nature"}
+    lad = {k: results[k]["_ladder_f"] for k in results if k != "nature"}
     print(f"\n [S2] the substantive score — normalised ladder growth M(A)/M(2)")
     print(f"      nature   A=3 {float(nat[3]):6.2f}   A=4 {float(nat[4]):6.2f}   (grows 3.4x)")
     for k, v in lad.items():
@@ -231,16 +236,20 @@ def main() -> int:
     print(f"      ⇒ the operator's ladder is nearly FLAT in A while nature's grows.")
 
     verdict = (f"operator fractional Tjon deviations "
-               f"{ {k: round(v['frac'], 4) for k, v in scores.items()} } vs nature "
+               f"{ {k: round(v['_f'], 4) for k, v in scores.items()} } vs nature "
                f"{float(nat_frac):+.4f}; sign reproduced by at least one bond convention: "
                f"{bool(any_sign)}"
                + (f"; best |ratio| {best:.2f}×" if best is not None else "")
                + "; the binding proxy is the trace DEFICIT B_op = -M_op > 0 (corpus canonical), "
                  "so the operator's sign is CORRECT, not mismatched — an earlier revision claimed "
                  "otherwise and is retracted; the [T2] score is sign-blind anyway (Lean "
-                 "fracTjon_neg). THE SURVIVING NEGATIVE is the ladder: nearly FLAT in A "
-                 "(1.41-1.54 at A=3, 1.65-1.69 at A=4) against nature's 3.81 -> 13.03, off 2.5x "
-                 "at A=3 and 7.7x at A=4. Scope-(a) NEGATIVE on growth, not on sign")
+                 "fracTjon_neg). THE SURVIVING NEGATIVE is the ladder: nearly FLAT in A ("
+               + "; ".join(f"{k}: A=3 {v['3']:.2f}, A=4 {v['4']:.2f}, grows {v['4']/v['3']:.2f}x"
+                           for k, v in lad.items() if v)
+               + f") against nature's {float(nat[3]):.2f} -> {float(nat[4]):.2f} (grows "
+                 f"{float(nat[4]/nat[3]):.2f}x), off {float(nat[3])/max(v['3'] for v in lad.values() if v):.1f}x "
+                 f"at A=3 and {float(nat[4])/max(v['4'] for v in lad.values() if v):.1f}x at A=4. "
+                 "Scope-(a) NEGATIVE on growth, not on sign")
     print(f"\n ⇒ {verdict}")
     print("   Scale-free by construction — M(2) normalisation and the Tjon deviation")
     print("   both cancel the overall trace scale, y_λ normalisation and global sign.")
@@ -263,11 +272,14 @@ def main() -> int:
         "sensitivity to the bond set. Scored on the normalised ladder M(A)/M(2) against "
         f"ρ_strong = (1, 3.8128, 13.0316) and on the fractional Tjon deviation. VERDICT: {verdict}. "
         "No Δ_λ, no μ fitted, no convention tuned, nothing wired.")
+    for _d in list(results.values()) + list(scores.values()):
+        for _k in ("_f", "_r", "_ladder_f", "_M_op_f"):
+            _d.pop(_k, None)
     wb.set_content_block("conj:binding-manybody-eq-jet-filtration")
     wb.add_data("tjon_correlation", {
         "lean": ("QOU.MassTheory.TjonSimplexForm: tjon_deviation_eq_mu4, mu4_eq_zero_iff_tjon, "
                  "mu4_neg_of_below_tjon, additive_higher_moments_vanish"),
-        "rho_strong": {str(a): float(RHO_STRONG[a]) for a in (2, 3, 4)},
+        "rho_strong": {str(a): fmt(RHO_STRONG[a]) for a in (2, 3, 4)},
         "results": results, "scores": scores, "verdict": verdict})
     wb.add_assertion("three_mass_numbers_measured", str(len(results) >= 3), "True")
     wb.add_assertion("tjon_identity_is_lean_backed", "True", "True")
