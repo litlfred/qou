@@ -1672,3 +1672,90 @@ Next: write §4y's chain from the table above. The remaining five after it are t
 `a, b ≥ 2` corner — `(2,2)` ×2, `(3,2)`, `(2,3)`, `(3,3)` at 15, 15, 19, 25 steps
 — which should be attacked only once §4y's skeleton exists, since the 25-step
 `B230 × B230` is the largest single obligation in the arc.
+
+## §4y — the `a = 1` row of `B × B` (6) — **written and proved**
+
+The design recorded last turn, now Lean. Eleven stages, eight bespoke steps, two
+transports, general in `n`, sorry-free. It went in essentially as designed:
+steps 1–4 built first try, steps 5–8 with the transports and both instances built
+first try. That is what the turn spent on deriving and engine-checking the chain
+bought.
+
+`a = 1` is `j₁ = i − 1`, so `rule₁` leads on the braid word and doubles (§4j);
+`rule₂ = bokutShiaoRelation i' i j₂` is monic and `j₂ ≤ i − 2`, so it cannot.
+With `T = descWord i−2 j₂`:
+
+    spoly = c · ( σᵢ σᵢ₋₁ σᵢ₋₁ σᵢ σᵢ₋₁ T  −  σᵢ₋₁ σᵢ σᵢ₋₁ σᵢ₋₁ T σᵢ )
+
+Both terms carry a **square** `σᵢ₋₁σᵢ₋₁`, so unlike §4x this row runs through the
+quadratic rule and picks up `h` and `h²`. Two cancellations carry it: the `h²`
+terms `σᵢ₋₁σᵢσᵢ₋₁T` cancel at step 6, and `σᵢσᵢ₋₁T` at step 7, taking the element
+from five terms back down to three. Then `σᵢ` crosses `T` twice — `8 + 2(b−1)`
+steps in all, matching the engine's 10 and 12 at `b = 2, 3`.
+
+**Both transports were already in the file, and they are different lemmas.** The
+first has two bystanders (`v7`, `v10`) and needs the list-position-general
+`farComm_transport_right` proved last turn; its collision hypothesis is pure
+length arithmetic, `t+3` against `t+2` and `t+1`. The second, after the
+cancellations, has the moving term and its own destination and nothing else —
+which is exactly §4t's original cancelling `farComm_transport`, used unchanged.
+Worth noting because it is the first place the *older, narrower* transport was
+the right tool and the general one would have needed a collision proof that is
+false at the final stage.
+
+**Distinctness is almost all lengths.** The thirteen words have lengths
+`t+5, t+4, t+3, t+2, t+1` over the shared tail, so a `congrArg List.length` plus
+`omega` discharges most obligations; three go by first letter and one — step 4,
+`σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁T` against `σᵢ₋₁σᵢσᵢ₋₁(T ++ [σᵢ])`, same length and same first
+three letters — by the fourth, which is why `descWord_head` had to be proved:
+`T` must be exhibited as `σᵢ₋₂ :: T'`.
+
+`descWord_head` — the run begins with its top index whenever non-empty — is the
+new general word lemma, by cases on `j = i` (`descWord_self`) and `j < i`
+(`descWord_cons` at `i − 1`). It is the third such lemma after `descWord_cons`,
+`descWord_snoc` and `descWord_split`, and the natural one to reach for whenever a
+distinctness argument needs to see a run's head.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n
+      BS/YB × F (j₀+1=j)       5   §4o
+      cyclic × quadratic      12   §4p
+      quadratic × cyclic       9   §4q
+      braid self-overlap      12   §4r
+      BS × F (j₀=j)            3   §4s
+      quadratic × general BS   3   §4t
+      far-comm × BS/YB         2   §4u
+      BS/YB × F (j₀+1<j)       2   §4v
+      BS/YB × F (j < j₀)       1   §4w
+      BS × braid (b = 1)       6   §4x
+      braid × BS (a = 1)       6   §4y
+      ---------------------------
+      proved                  87   all general in n
+      remaining                5
+
+    inclusion compositions    22   §4m   (all)
+
+**The last five**, the `a, b ≥ 2` corner — both rules at general depth, neither
+on the braid word:
+
+    (2,2)  B120×B120, B231×B231   15 steps
+    (3,2)  B230×B231              15
+    (2,3)  B231×B230              19
+    (3,3)  B230×B230              25
+
+Both rules are now Bokut–Shiao proper (no Yang–Baxter doubling: `a, b ≥ 2` puts
+both leading monomials longer than the braid word), so this is **one** family
+with two independent depths rather than four. The S-polynomial is
+
+    spoly = descWord i j₁ ++ bsWord₂ i' i j₂  −  bsWord₂ i' i j₁ ++ descWord i' j₂ ++ [σᵢ]
+
+i.e. `D₁ σᵢ₋₁ σᵢ E₂ − σᵢ₋₁ D₁ E₂ σᵢ` with `D₁ = descWord i j₁`, `E₂ = descWord i' j₂`
+— visibly symmetric in the two depths, which §4x and §4y were not (each had one
+depth pinned at 1). The 15/15/19/25 counts suggest the chain length grows in both
+`a` and `b`, so expect two nested transports or an induction on one depth with
+the other abstract. Extract all five chains and look for the two-parameter
+skeleton before writing anything, exactly as this turn did for the `b = 1`
+column and the `a = 1` row.
