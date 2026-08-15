@@ -1,7 +1,7 @@
 import QOU.QBeta.StokesMatrixProvenance
 
 /-!
-# QOU.QBeta.AomegaM2BPSCohomology — Route C, Milestone M2: the closed-sector BPS cohomology is ABELIAN
+# QOU.QBeta.AomegaM2BPSCohomology — Route C, Milestone M2: the closed-sector BPS spectrum would be ABELIAN (conditional characterization, not a construction)
 
 **Route C milestone ladder** (`docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md` §4):
 M0 (bar-eigenspace reframe) and M1 (the eq-(98) DT dictionary + eq-200 q¹ erratum)

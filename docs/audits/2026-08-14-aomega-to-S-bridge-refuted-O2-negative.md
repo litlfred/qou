@@ -69,7 +69,8 @@ here. What stays in the paper, unaffected:
 
 - **`A_ω = 3` as a certified conditional DT count** (`conj:stokes-dt-bps-bridge`,
   `thm:aomega-fourone-dt-count`, `prop:dt-spectrum-bar-eigenspace`) — now
-  additionally *categorified* by M2 (the abelian closed-sector BPS cohomology). It
+  additionally *characterized* by M2 (its putative BPS realization would be abelian
+  — a conditional structural statement, not a construction; A_ω=3 stays imported). It
   was already declared not-wired-downstream; that stands.
 - **`S = c₃ + Vol(4₁)` as a defined residual** (the `binding-qbeta-complex-volume`
   keystone and its S-channel) — kept as a *definition* with its existing ±1.262 /
