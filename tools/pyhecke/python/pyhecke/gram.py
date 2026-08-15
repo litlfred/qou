@@ -42,23 +42,60 @@ except ImportError:
 # Scalar constants
 # ══════════════════════════════════════════════════════════════
 
-# ┌────────────────────────────────────────────────────────────────────┐
-# │ TRACE CONVENTION C — and the C → D migration is BLOCKED HERE.      │
-# │ Do not "finish the excision" on this line. Read this first.        │
-# └────────────────────────────────────────────────────────────────────┘
+# ┌─────────────────────────────────────────────────────────────────────┐
+# │ TRACE CONVENTION D. The C → D migration COMPLETED here 2026-08-15.  │
+# └─────────────────────────────────────────────────────────────────────┘
 #
 # Owner ruling 2026-08-09 excised convention C (z = 1/(q^1/2 + q^-1/2)) in
 # favour of convention D (z = q^3/(q^2 + 1)) repo-wide — registry
 # docs/coordination/trace-convention-registry.md, bean qou-wgta. This module
-# is a deliberate EXCEPTION, stopped at item 11 of that bean, because
-# switching this one line silently destroys `G_INV` twelve lines further
-# down and every consumer of it.
+# was the LAST deliberate exception, stopped at item 11 of that bean because
+# `G_INV = np.linalg.inv(G)` ran unconditionally at import and convention D
+# makes that Gram SINGULAR.
 #
-# WHY. `TR_M` below is the Markov trace on the NF basis, `G` its Gram matrix,
-# and `G_INV = np.linalg.inv(G)` runs unconditionally AT IMPORT. Under D that
-# Gram form is SINGULAR — established on this branch in
-# content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean,
-# which names this file by path.
+# The two facts the exception rested on were measured under qou-w8zz (PR #5025)
+# and NEITHER SURVIVED. Both are recorded below, because the reasoning that
+# held this line on C for months is worth more than the line itself.
+#
+# 1. THE DEGENERACY IS EXACT, not a precision artefact. This banner used to
+#    quote det = 3.998e-17 / cond 4.9e+16 and note that even mpmath at 60 dps
+#    "bottoms out at f64 noise, not a resolved eigenvalue". That is a
+#    limitation of THIS module's float64 NF path, not of the question:
+#    `z_D = q^3/(q^2+1)` and `h = q - 1/q` are RATIONAL in q, so at rational q
+#    the whole Gram is exactly rational and sympy settles it —
+#
+#        q = 11/10, 7/5, 13/7  ->  det(G) = 0 EXACTLY, rank 5 of 6,
+#                                  nullspace dimension exactly 1
+#        convention C, same q  ->  rank 6, det != 0
+#
+#    and the null direction has a CLOSED FORM: the q-antisymmetriser
+#    SUM_w (-1/q)^len(w) T_w, verified as `G @ v == 0` exactly at all three q.
+#    It is carried below as `RADICAL`. That is also the Gram-side confirmation
+#    of qou-u2jg, reached independently of the trace-side argument.
+#
+# 2. "EVERY CONSUMER EXPECTS A 6x6 INVERSE" was not so. Surveyed over .py
+#    sources: constants.py 0 mentions, molecular.py 0, sdp.py 0, atom.py 1 (a
+#    COMMENT recording the M2b move), __init__.py export list only. NOTHING in
+#    the corpus multiplies by `G_INV` — no `@`, no `.dot`, no indexing. The one
+#    thing the switch broke is a test asserting `G @ G_INV ~ I`, an identity
+#    convention D makes FALSE — the test reporting the mathematics correctly.
+#
+# WHAT REPLACES IT. `G_PINV`, the inverse on the quotient H_3(q)/rad; see its
+# note below for why the pseudoinverse is the honest object here and why
+# `G_INV` is left UNDEFINED rather than rebound.
+#
+# STILL DIVERGENT — the Rust mirror. tools/hecke-engine/src/gram.rs ends
+# `trace_weights` with `z*z*z` where `TR_M` below ends `h*z^2 + z` (the
+# 2026-05-19 fix). That bug is load-bearing there for exactly the reason it was
+# here: with the CORRECT TR_M[5] the form is singular, with `z^3` it is not
+# (proved on the same probe, three q). So the Rust side needs TR_M[5] AND the
+# quotient in ONE change — fixing the trace alone drops a singular Gram into
+# the native path. Tracked as qou-m7py.
+#
+# ── historical record: what convention C measured here ───────────────
+#
+# Kept because the numbers are how the singularity was first noticed, and a
+# future reader comparing against an older witness will need them.
 #
 # Measured here at the proton pin, on the BILINEAR form this module actually
 # builds (`_build_gram` pairs b_i with b_j, no star):
@@ -118,7 +155,7 @@ except ImportError:
 # same module stay on C. tests/test_gram_values.py already measures the
 # native-vs-legacy split (2.6e-8 at the muon/proton anchor gap today; it
 # becomes the full 22.7 % convention gap after a rebuild).
-z = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+z = q0 ** 3 / (q0 ** 2 + 1)
 
 # Wedderburn-Artin weights for H_3(q)
 _q2 = q0 ** 2
@@ -313,7 +350,41 @@ def _build_gram():
 
 
 G = _build_gram()
-G_INV = np.linalg.inv(G)
+
+#: The radical of the trace form under convention D, in closed form.
+#:
+#: `v_i = (-1/q)^len(w_i)` over NF_BASIS — the three-strand q-antisymmetriser
+#: `SUM_w (-1/q)^len(w) T_w`. Established exactly over Q (rational arithmetic,
+#: no floating point) at three independent rational q in
+#: `computations/probes/gram_radical_exact_probe.py`: `det G = 0` EXACTLY,
+#: rank 5 of 6, nullspace dimension exactly 1, and `G @ RADICAL == 0`.
+#:
+#: This is the Gram-side confirmation of `qou-u2jg` — "z_D is the unique
+#: non-trivial Markov trace on H_3(q) whose radical contains the three-strand
+#: antisymmetriser". Carried explicitly so the quotient below is built from the
+#: proved projector rather than a numerically-extracted null vector, which at
+#: this module's float64 precision would be indistinguishable from noise (the
+#: old convention-C banner had to quote |lambda_min| = 3.9e-17 for exactly that
+#: reason).
+RADICAL = np.array([(-1.0 / q0) ** len(w) for w in NF_BASIS])
+
+#: Inverse of the trace form ON THE QUOTIENT H_3(q)/rad.
+#:
+#: `G` is SINGULAR under convention D — that is what the radical above says —
+#: so a 6x6 inverse does not exist and `np.linalg.inv(G)` does not say so: it
+#: raises nothing and returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64.
+#: The Moore-Penrose pseudoinverse of a symmetric matrix with a one-dimensional
+#: kernel IS the inverse on the orthogonal complement of that kernel, which is
+#: the quotient. So this is the honest object, not an approximation to a
+#: non-existent one.
+#:
+#: `G_INV` is deliberately NOT defined. It is not a rename: the old name meant
+#: "inverse of G", an object convention D removes, and quietly rebinding it to
+#: something else is how a wrong number keeps circulating under a trusted label.
+#: A survey of the corpus found ZERO arithmetic consumers of it — no `@`, no
+#: `.dot`, no indexing — so nothing is broken by its absence; see
+#: `gram_inverse()` below for the migration error.
+G_PINV = np.linalg.pinv(G)
 
 # Identity NF: the trivial braid [1, 0, 0, 0, 0, 0]
 _ID_NF = np.array([1.0, 0, 0, 0, 0, 0])
@@ -386,7 +457,8 @@ __all__ = [
     # NF multiplication
     "hm", "hm_exact", "nf_tr", "nf_net", "nf_of_word", "markov_trace_combo",
     # Gram matrix
-    "G", "G_INV", "gram_matrix", "gram_inverse",
+    "G", "G_PINV", "RADICAL", "gram_matrix", "gram_inverse",
+    "gram_quotient_inverse",
     # 50-dps mpmath Gram / trace (NO float64)
     "z_mp", "h_mp", "tr_m_mp", "hm_mp", "gram_matrix_mp",
     "gram_matrix_mp_strings", "tr_m_mp_strings",
@@ -410,8 +482,26 @@ def gram_matrix() -> np.ndarray:
 
 
 def gram_inverse() -> np.ndarray:
-    """Return G^{-1} (float64). See `gram_matrix_mp` for the 50-dps path."""
-    return G_INV
+    """REMOVED under convention D — `G` is singular, so `G^-1` does not exist.
+
+    Raises rather than returning `G_PINV`. Silently substituting the
+    pseudoinverse would answer a question the caller did not ask: they asked for
+    an inverse, and under convention D there isn't one. A caller that wants the
+    quotient must say so, because the two objects differ on the radical and that
+    difference is the entire content of the convention change.
+    """
+    raise NotImplementedError(
+        "gram_inverse() is removed: under convention D the H_3(q) trace form is "
+        "SINGULAR (rank 5 of 6; the radical is the q-antisymmetriser, exported "
+        "here as RADICAL), so G^-1 does not exist. Use G_PINV — the inverse on "
+        "the quotient H_3(q)/rad — and check that the quotient is what you "
+        "actually want. See the convention-D banner at the top of this module."
+    )
+
+
+def gram_quotient_inverse() -> np.ndarray:
+    """Inverse of the trace form on the quotient `H_3(q)/rad` (float64)."""
+    return G_PINV
 
 
 # ══════════════════════════════════════════════════════════════
