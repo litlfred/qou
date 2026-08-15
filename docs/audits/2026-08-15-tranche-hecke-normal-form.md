@@ -1,12 +1,12 @@
 # Tranche evidence — restore `def:hecke-normal-form` to the blocks that lost it?
 
-Regenerated 2026-08-15 by `scripts/prune-tranche-sheet.ts def:hecke-normal-form`, **after** the
-`extractUses` fix (folio-assistant #117). Earlier revisions of this sheet
-under-reported `declares now` for any block with a comment before its `uses:`
-key — 27 blocks corpus-wide had their whole array invisible. Bean `prn1`.
+Regenerated 2026-08-15 on the **union** editorial graph — `uses[]` *and*
+`interprets` (folio-assistant bean `i8ad`) — and after the `extractUses` fix
+(#117). Both changes shrink these lists by revealing declared dependencies the
+graph previously could not see. Bean `prn1`.
 
-Sources already restored under this bean no longer appear. Column meanings, the
-two-relation caveat and the forward-reference rule:
+Sources already restored under this bean no longer appear. Column meanings and
+the forward-reference rule:
 [`2026-08-15-tranche-index.md`](2026-08-15-tranche-index.md).
 `n/a` means the file does not exist, so nothing was searched — it is not `no`.
 

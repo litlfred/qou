@@ -1,12 +1,12 @@
 # Tranche evidence — restore `def:motivic-substrate` to the blocks that lost it?
 
-Regenerated 2026-08-15 by `scripts/prune-tranche-sheet.ts def:motivic-substrate`, **after** the
-`extractUses` fix (folio-assistant #117). Earlier revisions of this sheet
-under-reported `declares now` for any block with a comment before its `uses:`
-key — 27 blocks corpus-wide had their whole array invisible. Bean `prn1`.
+Regenerated 2026-08-15 on the **union** editorial graph — `uses[]` *and*
+`interprets` (folio-assistant bean `i8ad`) — and after the `extractUses` fix
+(#117). Both changes shrink these lists by revealing declared dependencies the
+graph previously could not see. Bean `prn1`.
 
-Sources already restored under this bean no longer appear. Column meanings, the
-two-relation caveat and the forward-reference rule:
+Sources already restored under this bean no longer appear. Column meanings and
+the forward-reference rule:
 [`2026-08-15-tranche-index.md`](2026-08-15-tranche-index.md).
 `n/a` means the file does not exist, so nothing was searched — it is not `no`.
 
@@ -22,8 +22,8 @@ Sources that lost it and still cannot reach it: **8**
 | `prop:operator-selection-lp` | proposition | no | no | *n/a — no .lean* | 1 | backward |
 | `def:motivic-mass-measure` | definition | no | no | no | 1 | backward |
 | `def:archimedean-realization-functor` | definition | no | no | no | 3 | backward |
-| `ex:archimedean-yekutieli` | example | no | motivic substrate | *n/a — no .lean* | 3 | backward |
-| `rem:kummer-tower` | remark | no | no | *n/a — no .lean* | 1 | **FORWARD** |
+| `ex:archimedean-yekutieli` | example | no | motivic substrate | *n/a — no .lean* | 4 | backward |
+| `rem:kummer-tower` | remark | no | no | *n/a — no .lean* | 2 | **FORWARD** |
 | `def:adelic-substrate` | definition | no | no | no | 0 | backward |
 
 **1 of 8 would point FORWARD if restored**.

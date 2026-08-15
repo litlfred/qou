@@ -383,3 +383,36 @@ exploit and got wrong by dropping both legs of the triangle.
 carries no textual signal at all. "The prune removed it" is a reason to ask
 whether an edge belongs, not an answer — so the rest needs readers, and that is
 a budget decision rather than a technical one.
+
+## 2026-08-15 — regenerated on the union graph; the structural pass is CLOSED
+
+All twelve sheets and the index rebuilt after `i8ad` made `interprets` an
+editorial edge. That plus the `extractUses` fix (#117) shrinks the queue again,
+both times by revealing declared dependencies the graph could not see:
+
+| | at audit | after #117 | after `i8ad` |
+|---|---|---|---|
+| still lost | 785 | 658 | **581** |
+| tranche sources | 153 | 131 | **107** |
+| prose-linked left | 22 | 3 | **0** |
+
+**`prune-structural-candidates.ts` now reports 0 candidates corpus-wide.** That
+is the terminal state for everything decidable without reading.
+
+The four withdrawals both vindicated themselves. Three declared their target via
+`interprets`, and `i8ad` has made that visible — they resolve as declared rather
+than lost, exactly as withholding them anticipated. The fourth,
+`prop:strangelet-crossing-energy`, had an author comment saying the edge was
+deliberately absent because it is reached through `def:coulomb-charge`; the
+comment was right and my candidate was an artifact of the parser bug.
+
+**Two lessons this bean should carry forward**, both instances of the same
+thing: *before concluding a dependency is missing, make sure the tool can see
+the ones that are there.* The audit's 785 was measured on a graph blind to 53
+edges from a parser defect and 342 from a relation it did not model. A quarter
+of the reported damage was never damage.
+
+What remains — 107 sources — carries no textual signal, so it needs readers
+under the two-reader standard. Ten of the 107 would point forward; four of those
+are in `def:borromean-baryon`, which also has the least evidence, so it is the
+worst place to start despite being the largest.
