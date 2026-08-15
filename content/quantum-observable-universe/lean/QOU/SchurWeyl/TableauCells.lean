@@ -641,6 +641,80 @@ theorem axialDist_eq_of_not_admissible (T : StandardYoungTableau μ) {k : ℕ} (
       · rw [hcol2]; exact hm3
       · rw [hcol2]; exact he3
 
+/-! ### The orbit shape is decided by three pairwise conditions
+
+Write `c₁, c₂, c₃` for the cells of `T` holding `k, k+1, k+2`.  Every admissibility that
+arises anywhere in a `⟨s_k, s_{k+1}⟩`-orbit is one of just **three** conditions —
+`(c₁,c₂)`, `(c₂,c₃)`, `(c₁,c₃)` sharing neither a row nor a column — because each word
+merely permutes which entry sits in which of the three cells:
+
+| word | its `k`-condition | its `(k+1)`-condition |
+|---|---|---|
+| `T` | `(c₁,c₂)` | `(c₂,c₃)` |
+| `s_k·T` | `(c₁,c₂)` | `(c₁,c₃)` |
+| `s_{k+1}·T` | `(c₁,c₃)` | `(c₂,c₃)` |
+| `s_{k+1}s_k·T` | `(c₂,c₃)` | — |
+| `s_k s_{k+1}·T` | — | `(c₁,c₂)` |
+
+Two consequences settle the case analysis outright.  `s_k·T` is `(k+1)`-admissible **iff**
+`s_{k+1}·T` is `k`-admissible — both are the `(c₁,c₃)` condition — so the flag patterns
+where exactly one of them holds are **vacuous**.  And the two length-`2` words inherit their
+admissibility from `T`'s own two conditions, so the generic case needs no extra hypotheses.
+-/
+
+/-- **`s_k·T` is `(k+1)`-admissible exactly when `s_{k+1}·T` is `k`-admissible.**  Both are
+the condition on the cells of `k` and `k+2`, so the two "half-generic" flag patterns cannot
+occur. -/
+theorem swapAdmissible_cross_iff (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : k + 1 + 1 ≤ μ.cells.card)
+    (hka : SwapAdmissible T k) (hla : SwapAdmissible T (k + 1)) :
+    SwapAdmissible (swapTableau T k hk hkn hka) (k + 1)
+      ↔ SwapAdmissible (swapTableau T (k + 1) (by omega) hln hla) k := by
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hk2 : k + 2 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
+  unfold SwapAdmissible
+  rw [cellOf_swapTableau_succ T hk hkn hka,
+    show k + 1 + 1 = k + 2 from rfl,
+    cellOf_swapTableau_of_ne T hk hkn hka hk2 (by omega) (by omega),
+    cellOf_swapTableau_of_ne T (by omega) hln hla hkI (by omega) (by omega),
+    cellOf_swapTableau_self T (by omega) hln hla]
+
+/-- **`s_{k+1}s_k·T` is `k`-admissible exactly when `T` is `(k+1)`-admissible.**  The longer
+word inherits the condition rather than imposing a new one. -/
+theorem swapAdmissible_word_left_iff (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : k + 1 + 1 ≤ μ.cells.card)
+    (hka : SwapAdmissible T k)
+    (hAl : SwapAdmissible (swapTableau T k hk hkn hka) (k + 1)) :
+    SwapAdmissible
+        (swapTableau (swapTableau T k hk hkn hka) (k + 1) (by omega) hln hAl) k
+      ↔ SwapAdmissible T (k + 1) := by
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hk2 : k + 2 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
+  unfold SwapAdmissible
+  rw [cellOf_swapTableau_of_ne _ (by omega) hln hAl hkI (by omega) (by omega),
+    cellOf_swapTableau_self T hk hkn hka,
+    cellOf_swapTableau_self _ (by omega) hln hAl,
+    show k + 1 + 1 = k + 2 from rfl,
+    cellOf_swapTableau_of_ne T hk hkn hka hk2 (by omega) (by omega)]
+
+/-- **`s_k s_{k+1}·T` is `(k+1)`-admissible exactly when `T` is `k`-admissible.**  The mirror
+of `swapAdmissible_word_left_iff`. -/
+theorem swapAdmissible_word_right_iff (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : k + 1 + 1 ≤ μ.cells.card)
+    (hla : SwapAdmissible T (k + 1))
+    (hBk : SwapAdmissible (swapTableau T (k + 1) (by omega) hln hla) k) :
+    SwapAdmissible
+        (swapTableau (swapTableau T (k + 1) (by omega) hln hla) k hk hkn hBk) (k + 1)
+      ↔ SwapAdmissible T k := by
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hk2 : k + 2 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
+  unfold SwapAdmissible
+  rw [cellOf_swapTableau_succ _ hk hkn hBk,
+    cellOf_swapTableau_of_ne T (by omega) hln hla hkI (by omega) (by omega),
+    show k + 1 + 1 = k + 2 from rfl,
+    cellOf_swapTableau_of_ne _ hk hkn hBk hk2 (by omega) (by omega),
+    cellOf_swapTableau_succ T (by omega) hln hla]
+
 /-- **The braid relation for value-transpositions.**  `s_k s_{k+1} s_k = s_{k+1} s_k s_{k+1}`
 as permutations of `{k, k+1, k+2}` — the symmetric-group relation the whole construction is
 a deformation of.
