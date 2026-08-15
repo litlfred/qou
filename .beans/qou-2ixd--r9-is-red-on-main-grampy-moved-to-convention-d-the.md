@@ -658,3 +658,50 @@ coincide with values derived elsewhere, and the wrong one made them miss by
 Shift: `q0` 1.16e-8, `trM_pp - trM_nn` 1.15e-7, `W_(2)` 7.9e-10,
 `W_(1,1)` 2.4e-9. R11 still CONFIRMS `z_factor` at 2.99e-51; validator
 `PASS (0 errors, 23 warnings)`.
+
+---
+
+## Round 11: the precision-gates double-write (reported by the merge pipeline)
+
+`scripts/precision-gates.sh` invokes `witness_raw_float64_audit.py` twice —
+gating over the full corpus (line ~63), and advisory with
+`--scan-root docs/audits/scripts` (line ~89). **Both wrote the same witness.**
+
+Reproduced before fixing:
+
+    committed dirty_witnesses = 1561
+    after one advisory run    = 5        (57 lines of carve-outs dropped)
+
+So the narrow advisory run silently replaced a corpus-wide audit with a
+five-file one, and the result reads exactly like "a count moved, commit the
+regenerated witness".
+
+### The fix was already half-written
+
+The script **already refuses `--rebaseline` with `--scan-root`**, with the right
+reason attached: *"Rebaselining against a foreign root would write that root's
+dirty files into a baseline keyed on computations/ paths — growing it.
+Baselines drain, never grow."* The witness write is the same hazard and was not
+guarded by the same rule. Now it is: a `--scan-root` run prints that it is
+advisory and returns without writing.
+
+Verified both directions — advisory leaves the witness untouched; the gating
+run still writes.
+
+### What the gating run then showed, and what I did NOT commit
+
+Re-running the gating invocation gives `dirty_witnesses` 1561 → 1560,
+`drained_files` 14 → 15, −30 fields. That is real progress, but it is **main's**:
+`binding-k-enumerator.witness.json` drained 2210 → 0 in a sibling's work, and
+main's committed audit witness simply has not been refreshed since.
+
+Left it restored. Sweeping an unrelated corpus-count refresh into this PR is
+how a reviewer loses the thread, and the drain belongs to whoever did it.
+
+### Inherited red, not introduced
+
+The gate exits 1 on one regression — `rho-k-co-casimir-extended.witness.json`,
+3 → 4 raw float64. That file is **byte-identical to main** on this branch, so
+the red is inherited. Worth flagging to whoever owns the co-Casimir refresh
+(there is a `docs/audits/2026-08-15-rho-k-co-casimir-stale-convention-c-needs-d-refresh.md`
+on main now).

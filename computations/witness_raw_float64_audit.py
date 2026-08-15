@@ -459,6 +459,25 @@ def main() -> int:
              "files": dict(sorted(found.items()))}, indent=2) + "\n")
         print(f"\nRebaselined: {len(found)} files / {total:,} fields recorded.")
 
+    # A --scan-root run must not write the witness, for exactly the reason
+    # --rebaseline is already refused above: the artifact is keyed on a
+    # corpus-wide scan of computations/, and a narrow root produces a
+    # different, smaller answer to a different question.
+    #
+    # scripts/precision-gates.sh invokes this script TWICE -- once gating over
+    # the full corpus, once advisory with `--scan-root docs/audits/scripts` --
+    # and both wrote here. The advisory run therefore overwrote the gating
+    # run's result, leaving the committed witness at `dirty_witnesses: 5`
+    # instead of 1561, with every carve-out block dropped (57 lines). It reads
+    # exactly like "a count moved, commit the regenerated witness", and
+    # committing it would have replaced a corpus-wide audit with a five-file
+    # one. Reported by the #5125/#5123 prepare-merge pipeline; reproduced here
+    # before fixing (1561 -> 5 on a single advisory invocation).
+    if scan_root is not None:
+        print("\n--scan-root run: witness NOT written (advisory; the artifact "
+              "is corpus-wide, see the note at this guard).")
+        return 1 if (args.strict and (new_files or grew)) else 0
+
     out = HERE / "witness-raw-float64-audit.witness.json"
     out.write_text(json.dumps({
         "schema": "witness/v1",
