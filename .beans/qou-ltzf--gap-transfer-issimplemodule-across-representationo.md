@@ -1,10 +1,11 @@
 ---
 # qou-ltzf
 title: 'GAP: transfer IsSimpleModule across Representation.ofModule / asModule (blocks W1+W3 brick 4c injectivity)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-15T23:07:27Z
-updated_at: 2026-08-15T23:07:27Z
+updated_at: 2026-08-15T23:19:12Z
 ---
 
 
@@ -47,3 +48,22 @@ So the brick needs a hand-built `MonoidAlgebra k G`-linear equivalence
 Bricks 1–4b are merged and independent of this. This gap only gates the *inequality*; the
 identity `n! = Σ_μ (dim S^μ)²` needs the reverse direction too (isotypic independence), which
 is a separate question.
+
+## CLOSED — PR (this branch), sorry-free
+
+`QOU/MathlibExt/OfModuleAsModule.lean`:
+
+- `ofModuleAsModuleEquiv : (ofModule M).asModule ≃ₗ[MonoidAlgebra k G] M`
+- `isSimpleModule_ofModule_asModule` — an **instance**, so the transfer happens by typeclass
+  inference at the use site rather than by hand at each one.
+
+Every ingredient was already in Mathlib; only the assembly was missing.
+`Representation.asModuleEquiv` composed with `RestrictScalars.addEquiv` is the additive
+equivalence, and `Representation.smul_ofModule_asModule` is exactly the `k[G]`-linearity
+hypothesis `AddEquiv.toLinearEquiv` asks for. Compiled first try.
+
+The `exact?` failure recorded above is kept in the file as a regression-guard `example`, so a
+future Mathlib bump that changes the `RestrictScalars` plumbing fails at the source of the gap
+instead of at a distant call site.
+
+**Unblocks** W1+W3 brick 4c (injectivity of the Specht action map ⇒ `n! ≤ Σ_μ (dim S^μ)²`).
