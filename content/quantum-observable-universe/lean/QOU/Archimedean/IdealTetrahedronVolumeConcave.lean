@@ -87,20 +87,42 @@ theorem tetVol_symm₁₂ (p : ℝ × ℝ) : tetVol (p.2, p.1) = tetVol p := by
   simp only [tetVol]
   ring_nf
 
+/-- A convex combination of two positive reals is positive. -/
+private theorem cc_pos {a b x y : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (hab : a + b = 1)
+    (hx : 0 < x) (hy : 0 < y) : 0 < a * x + b * y := by
+  rcases ha.lt_or_eq with ha' | ha'
+  · have h1 : 0 < a * x := mul_pos ha' hx
+    have h2 : 0 ≤ b * y := mul_nonneg hb hy.le
+    linarith
+  · have ha0 : a = 0 := ha'.symm
+    have hb1 : b = 1 := by linarith
+    rw [ha0, hb1]; simpa using hy
+
+/-- A convex combination of two reals below `c` stays below `c`. -/
+private theorem cc_lt {a b x y c : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (hab : a + b = 1)
+    (hx : x < c) (hy : y < c) : a * x + b * y < c := by
+  rcases ha.lt_or_eq with ha' | ha'
+  · have h1 : a * x < a * c := mul_lt_mul_of_pos_left hx ha'
+    have h2 : b * y ≤ b * c := mul_le_mul_of_nonneg_left hy.le hb
+    have hc : a * c + b * c = c := by rw [← add_mul, hab, one_mul]
+    linarith
+  · have ha0 : a = 0 := ha'.symm
+    have hb1 : b = 1 := by linarith
+    rw [ha0, hb1]; simpa using hy
+
 /-- The simplex is convex (a finite intersection of open half-planes). -/
 theorem convex_tetSimplex : Convex ℝ tetSimplex := by
-  have h1 : Convex ℝ {p : ℝ × ℝ | 0 < p.1} := by
-    simpa using (convex_halfSpace_gt (LinearMap.fst ℝ ℝ ℝ) 0)
-  have h2 : Convex ℝ {p : ℝ × ℝ | 0 < p.2} := by
-    simpa using (convex_halfSpace_gt (LinearMap.snd ℝ ℝ ℝ) 0)
-  have h3 : Convex ℝ {p : ℝ × ℝ | p.1 + p.2 < Real.pi} := by
-    simpa using
-      (convex_halfSpace_lt (LinearMap.fst ℝ ℝ ℝ + LinearMap.snd ℝ ℝ ℝ) Real.pi)
-  have hset : tetSimplex = {p : ℝ × ℝ | 0 < p.1} ∩ {p : ℝ × ℝ | 0 < p.2} ∩
-      {p : ℝ × ℝ | p.1 + p.2 < Real.pi} := by
-    ext p; simp only [tetSimplex, Set.mem_setOf_eq, Set.mem_inter_iff]; tauto
-  rw [hset]
-  exact (h1.inter h2).inter h3
+  intro x hx y hy a b ha hb hab
+  obtain ⟨hx1, hx2, hx3⟩ := hx
+  obtain ⟨hy1, hy2, hy3⟩ := hy
+  have e1 : (a • x + b • y).1 = a * x.1 + b * y.1 := by simp [Prod.smul_fst]
+  have e2 : (a • x + b • y).2 = a * x.2 + b * y.2 := by simp [Prod.smul_snd]
+  refine ⟨?_, ?_, ?_⟩
+  · rw [e1]; exact cc_pos ha hb hab hx1 hy1
+  · rw [e2]; exact cc_pos ha hb hab hx2 hy2
+  · rw [e1, e2]
+    have key := cc_lt ha hb hab hx3 hy3
+    nlinarith [key]
 
 /-! ## The line restriction and its second derivative -/
 
@@ -150,8 +172,9 @@ theorem hasDerivAt_lineVol {x1 x2 v1 v2 : ℝ} {s : ℝ}
     simpa using ((hasDerivAt_id s).mul_const v2).const_add x2
   have hC : HasDerivAt (fun s : ℝ => Real.pi - (x1 + s * v1) - (x2 + s * v2))
       (-(v1 + v2)) s := by
-    have := ((hasDerivAt_const s Real.pi).sub hA).sub hB
-    simpa using this
+    have h := ((hasDerivAt_const s Real.pi).sub hA).sub hB
+    rw [show -(v1 + v2) = (0 : ℝ) - v1 - v2 by ring]
+    exact h
   have LA := (hasDerivAt_Lob hA0 hAπ).comp s hA
   have LB := (hasDerivAt_Lob hB0 hBπ).comp s hB
   have LC := (hasDerivAt_Lob hC0 hCπ).comp s hC
@@ -175,6 +198,7 @@ theorem hasDerivAt_deriv_lineVol {x1 x2 v1 v2 : ℝ} {s : ℝ}
       {s : ℝ | lineGood x1 x2 v1 v2 s} := by
     intro s' hs'
     exact (hasDerivAt_lineVol hs').deriv
+  have hsm : s ∈ {s : ℝ | lineGood x1 x2 v1 v2 s} := hs
   obtain ⟨hA0, hAπ, hB0, hBπ, hC0, hCπ⟩ := hs
   have hA : HasDerivAt (fun s : ℝ => x1 + s * v1) v1 s := by
     simpa using ((hasDerivAt_id s).mul_const v1).const_add x1
@@ -182,15 +206,16 @@ theorem hasDerivAt_deriv_lineVol {x1 x2 v1 v2 : ℝ} {s : ℝ}
     simpa using ((hasDerivAt_id s).mul_const v2).const_add x2
   have hC : HasDerivAt (fun s : ℝ => Real.pi - (x1 + s * v1) - (x2 + s * v2))
       (-(v1 + v2)) s := by
-    have := ((hasDerivAt_const s Real.pi).sub hA).sub hB
-    simpa using this
+    have h := ((hasDerivAt_const s Real.pi).sub hA).sub hB
+    rw [show -(v1 + v2) = (0 : ℝ) - v1 - v2 by ring]
+    exact h
   have DA := ((hasDerivAt_neg_log_two_sin hA0 hAπ).comp s hA).mul_const v1
   have DB := ((hasDerivAt_neg_log_two_sin hB0 hBπ).comp s hB).mul_const v2
   have DC := ((hasDerivAt_neg_log_two_sin hC0 hCπ).comp s hC).mul_const (-(v1 + v2))
   have hsum := (DA.add DB).add DC
   refine hsum.congr_of_eventuallyEq ?_
   exact Filter.eventuallyEq_of_mem
-    ((isOpen_lineGood x1 x2 v1 v2).mem_nhds hs) hEq.symm
+    ((isOpen_lineGood x1 x2 v1 v2).mem_nhds hsm) hEq
 
 /-- `deriv (deriv (lineVol …)) s` equals the Hessian quadratic form at direction
 `(v₁, v₂)`, and is `< 0` whenever `(v₁, v₂) ≠ 0`. -/
@@ -198,30 +223,17 @@ theorem deriv2_lineVol_neg {x1 x2 v1 v2 : ℝ} {s : ℝ}
     (hs : lineGood x1 x2 v1 v2 s) (hv : v1 ≠ 0 ∨ v2 ≠ 0) :
     deriv (deriv (lineVol x1 x2 v1 v2)) s < 0 := by
   obtain ⟨hA0, hAπ, hB0, hBπ, hC0, hCπ⟩ := hs
-  -- angle triple at this point of the line
-  set α := x1 + s * v1 with hαdef
-  set β := x2 + s * v2 with hβdef
-  set γ := Real.pi - (x1 + s * v1) - (x2 + s * v2) with hγdef
-  have hsum : α + β + γ = Real.pi := by rw [hαdef, hβdef, hγdef]; ring
-  let t : AngleTriple := ⟨α, β, γ, hA0, hB0, hC0, hsum⟩
-  -- the Hessian form at (v1, v2) is negative
-  have hneg := hessian_neg_definite t (x := v1) (y := v2) hv
-  -- deriv2 value from `hasDerivAt_deriv_lineVol`
-  have hval := (hasDerivAt_deriv_lineVol hs).deriv
-  rw [hval]
-  -- match the computed second derivative to the Hessian form and conclude
-  have ca : t.α = α := rfl
-  have cb : t.β = β := rfl
-  have cg : t.γ = γ := rfl
-  set A := Real.cos α / Real.sin α with hA
-  set B := Real.cos β / Real.sin β with hB
-  set C := Real.cos γ / Real.sin γ with hC
-  -- `hneg` is the Hessian form; rewrite it into the second-derivative shape
-  have : (-(A) * v1) * v1 + (-(B) * v2) * v2 + (-(C) * (-(v1 + v2))) * (-(v1 + v2))
-      = (-(A + C)) * v1 ^ 2 + 2 * (-(C)) * v1 * v2 + (-(B + C)) * v2 ^ 2 := by
-    ring
-  rw [this]
-  simpa [ca, cb, cg, hA, hB, hC] using hneg
+  have hsum : (x1 + s * v1) + (x2 + s * v2)
+      + (Real.pi - (x1 + s * v1) - (x2 + s * v2)) = Real.pi := by ring
+  -- the Hessian form at (v1, v2) is negative (via T3-core)
+  have hneg := hessian_neg_definite
+    (⟨x1 + s * v1, x2 + s * v2, Real.pi - (x1 + s * v1) - (x2 + s * v2),
+      hA0, hB0, hC0, hsum⟩ : AngleTriple) (x := v1) (y := v2) hv
+  dsimp only at hneg
+  -- the second derivative equals that form (an algebraic identity)
+  rw [(hasDerivAt_deriv_lineVol ⟨hA0, hAπ, hB0, hBπ, hC0, hCπ⟩).deriv]
+  convert hneg using 1
+  ring
 
 /-- The line restriction is strictly concave on `[0,1]`, provided the whole
 segment `s ↦ (x₁+s v₁, x₂+s v₂)` for `s ∈ [0,1]` stays in the good set and the
@@ -292,17 +304,23 @@ theorem tetVol_strictConcaveOn : StrictConcaveOn ℝ tetSimplex tetVol := by
     h01 ha hb hab
   -- translate the 1-D inequality back to tetVol
   have g0 : lineVol x.1 x.2 v1 v2 0 = tetVol x := by
-    simp only [lineVol, tetVol, mul_zero, add_zero]
+    have a1 : x.1 + (0 : ℝ) * v1 = x.1 := by ring
+    have a2 : x.2 + (0 : ℝ) * v2 = x.2 := by ring
+    simp only [lineVol, tetVol, a1, a2]
   have g1 : lineVol x.1 x.2 v1 v2 1 = tetVol y := by
-    simp only [lineVol, tetVol, mul_one, hv1, hv2]; ring_nf
-  have gb : lineVol x.1 x.2 v1 v2 (a • (0:ℝ) + b • (1:ℝ)) = tetVol (a • x + b • y) := by
-    have hb' : a • (0:ℝ) + b • (1:ℝ) = b := by simp
-    rw [hb']
-    -- x + b•(y-x) = a•x + b•y  (since a = 1 - b)
+    have a1 : x.1 + (1 : ℝ) * v1 = y.1 := by rw [hv1]; ring
+    have a2 : x.2 + (1 : ℝ) * v2 = y.2 := by rw [hv2]; ring
+    simp only [lineVol, tetVol, a1, a2]
+  have gb : lineVol x.1 x.2 v1 v2 (a • (0 : ℝ) + b • (1 : ℝ))
+      = tetVol (a • x + b • y) := by
+    have hb' : a • (0 : ℝ) + b • (1 : ℝ) = b := by simp
     have ha' : a = 1 - b := by linarith
-    simp only [lineVol, tetVol, smul_eq_mul, Prod.fst_add, Prod.snd_add,
-      Prod.smul_fst, Prod.smul_snd, hv1, hv2, ha']
-    ring_nf
+    rw [hb']
+    have p1 : (a • x + b • y).1 = a * x.1 + b * y.1 := by simp [Prod.smul_fst]
+    have p2 : (a • x + b • y).2 = a * x.2 + b * y.2 := by simp [Prod.smul_snd]
+    have a1 : x.1 + b * v1 = (a • x + b • y).1 := by rw [p1, hv1, ha']; ring
+    have a2 : x.2 + b * v2 = (a • x + b • y).2 := by rw [p2, hv2, ha']; ring
+    simp only [lineVol, tetVol, a1, a2]
   rw [g0, g1, gb] at key
   simpa only [smul_eq_mul] using key
 
