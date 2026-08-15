@@ -292,3 +292,40 @@ has been read as disqualifying both uses; only the first is disqualified.
 **Net: the front is closed to theory work that hopes to be VALIDATED, and open
 to theory work that is willing to be FALSIFIED by the slope filter.** Those are
 different activities and the front should be described as the second from now on.
+
+
+---
+
+# D SHARPENED + THE LIT QUESTION IS BLOCKED (2026-08-15)
+
+## One measurement or two — this changes the ask
+
+The mass-difference route adds in QUADRATURE, so each input must individually
+fall below the target. **`sigma(m_p) = 0.29 eV` alone already exceeds every
+target.** So:
+
+    target                              direct Q_beta    m_n      m_p
+    zero-location resolves at mu-p         25.7 x      20.2 x   12.2 x
+    c_3 ~ -Vol(4_1) 1-sigma (proton)       32.0 x      25.2 x   15.2 x
+    c_3 ~ -Vol(4_1) 1-sigma (muon)        130.3 x     102.6 x   62.0 x
+
+  DIRECT route     = ONE measurement improved ~26x
+  MASS-DIFF route  = TWO measurements improved ~20x and ~12x
+
+Which is cheaper is a domain question. But the ask is now in the form an
+experimentalist works in, not a single factor on a derived quantity.
+
+## The literature question is BLOCKED in this sandbox — do not fake it
+
+**Is sigma(m_n) = 0.48 eV improvable by 20x+, and by what technique?** That is
+the next question, and it is NOT answerable from inside this repo.
+
+Attempted and blocked: the paper-search MCP returns zero results for every
+query — a bare `"quantum"` arXiv search returns nothing — and the egress proxy
+answers 403 to CONNECT. No literature was consulted.
+
+Recorded explicitly because the alternative (plausible sentences about
+crystal-diffraction gamma spectrometry or Penning-trap limits, from memory) is
+exactly the failure mode this whole front is a case study in. **Whoever picks
+this up with working network can close it in one pass.** Nothing else in D
+depends on it; every other number traces to a committed witness.

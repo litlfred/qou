@@ -76,6 +76,39 @@ the seven unrelated constants already known to place a zero between the anchors 
 the entire genericity window maps into an interval **25.7× narrower** than one
 error bar on `q*_S`.
 
+## One measurement or two — the routes differ, and it is not a detail
+
+The mass-difference route adds in quadrature, so **each input must individually
+fall below the target**. `σ(m_p) = 0.29 eV` alone already exceeds every target
+above. So the two routes ask for different programmes:
+
+| target | direct `Q_β` | `m_n` | `m_p` |
+|---|---|---|---|
+| zero-location resolves at μ–p scale | **25.7×** | 20.2× | 12.2× |
+| `c₃ ≈ −Vol(4₁)` at 1 σ (proton) | **32.0×** | 25.2× | 15.2× |
+| `c₃ ≈ −Vol(4₁)` at 1 σ (muon) | **130.3×** | 102.6× | 62.0× |
+
+- **direct route** — one measurement improved ~26×;
+- **mass-difference route** — *two* measurements improved, ~20× and ~12×.
+
+Which is the cheaper programme is a domain question this repository cannot
+answer. But the choice is now stated in the form an experimentalist works in,
+rather than as a single factor on a derived quantity.
+
+## The literature question this note deliberately leaves open
+
+**Is `σ(m_n) = 0.48 eV` improvable by 20×+, and by what technique?** That is the
+question a reader needs answered next, and it is not answerable from inside this
+repository. It was **attempted here and blocked**: the sandbox's literature
+tools return zero results for every query (a bare `"quantum"` search on arXiv
+returns nothing), and the egress proxy answers `403` to `CONNECT`, so no
+literature was consulted.
+
+Recording that explicitly because the alternative — writing plausible-sounding
+sentences about crystal-diffraction γ-ray spectrometry or Penning-trap limits
+from memory — is exactly the failure this note is otherwise about. Nothing above
+depends on it: every number here traces to a committed witness.
+
 ## What is not claimed
 
 Whether any of these targets is experimentally reachable, by what technique, or
