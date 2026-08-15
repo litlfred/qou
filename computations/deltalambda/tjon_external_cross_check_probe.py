@@ -158,6 +158,20 @@ def read_ame_binding(path: Path):
     AME2020 `mass.mas20` fixed-width layout, per the file's own format block:
     columns 17-20 are A, 21-23 the element, and the third numeric field is
     BINDING ENERGY/A in keV. So B = A * (BE/A) / 1000.
+
+    DO NOT refactor this onto `computations/vendor_ame2020.parse_line`.
+    That module parses the same table — and `computations/data/ame2020.mas20.txt`
+    is byte-identical to `uploads/mass_1.mas20.txt`, same sha256, so the two
+    copies are not a divergence risk. The blocker is precision: its
+    `_parse_value` returns `float(s)`, i.e. **float64**. Routing a binding
+    energy through float64 before it reaches a witness is exactly what the
+    NO-FLOAT64 discipline forbids, and it would put this probe back on the
+    raw-float64 ratchet. `mp.mpf(<decimal string>)` below is exact from the
+    source characters; `float()` is not.
+
+    Reuse of the vendor module becomes correct the moment `_parse_value`
+    carries `mpmath.mpf` instead — at which point delete this parser and
+    call it.
     """
     want = {(2, "H"): "2H", (3, "H"): "3H", (4, "He"): "4He"}
     out = {}
