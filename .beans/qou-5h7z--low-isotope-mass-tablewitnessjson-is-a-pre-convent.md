@@ -1,11 +1,11 @@
 ---
 # qou-5h7z
 title: low-isotope-mass-table.witness.json is a pre-convention-D artifact (3 rows), needs regeneration where pyhecke_native exists
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T20:37:31Z
-updated_at: 2026-08-15T20:37:33Z
+updated_at: 2026-08-15T21:39:58Z
 ---
 
 Found by the qou-gscs re-audit witness sweep (16 rows across the corpus carry a recorded braid word for a Z>=1,N>=1 atom; 3 were collapsed, all in this one file).
@@ -59,3 +59,22 @@ Re-run $ /usr/local/bin/python3 -u /home/user/qou/computations/canonical_mass_ta
   Wrote low-isotope-mass-table.witness.json (5 atoms) in an environment WITH pyhecke_native built, so p and n keep the laurent_q_rust route. Expect: 3 multi-nucleon rows move C->D and gain averaged_weighted 1; p and n unchanged. Verify chi_cache_witness still reads laurent_q_rust before committing.
 
 Worth checking at the same time whether any OTHER witness carries pre-D tr_M without a recorded braid word -- the sweep that found this keys on braid_word_canonical, so a witness holding only tr_M would not have been caught.
+
+
+
+## CLOSED 2026-08-15 — and I was wrong twice about why it was blocked
+
+The compute-author skill (landed 3c9e491e7e, 'three container traps that pass silently') says outright: 'Do NOT declare a compute blocked (no pyhecke_native) -- it is almost always buildable in-place.' That is exactly what I had done. Built it: python3 -m pip install ./tools/pyhecke-native -> pyhecke-native 0.9.0, about a minute. It was never blocked.
+
+WRONG #1 -- the reason I gave. I said the p and n rows changed because the auto-fallback substituted laurent_q for laurent_q_rust. With the full stack provisioned and BOTH routes on laurent_q_rust, p and n still move:
+    p  1.06530623 -> 1.14575978
+    n  0.92323330 -> 0.98774376
+Those are the convention C->D deltas, identical in shape to the qou-mass shard migration. So all FIVE rows were pre-convention-D, not three; the p/n change was never a method artifact. The ~1e-9 B_AME/err differences I pointed at were incidental noise on top of a real migration I had misattributed.
+
+WRONG #2 -- worse, and self-inflicted. I wrote in the PR body that the regeneration was 'deliberately not committed'. It WAS committed: my revert was followed by a shell block that rewrote both witnesses (the raw-float64 warnings in that output were the tell), and  swept the fallback-computed file into 708ce844cf. So PR #5133 carried a fallback witness under a paragraph claiming it did not. Corrected by regenerating with the full stack and amending; the PR body is fixed too.
+
+FINAL STATE, all five rows regenerated with pyhecke_native present:
+  p-route  laurent_q_rust (matches main's method)
+  D/T/3He  ctypes gain averaged_weighted 1
+  all 5    tr_M migrated C -> D
+Environment: python 3.11.15, numpy 2.4.6, sympy 1.14.0, mpmath 1.3.0 (matched to the committed witness, NOT the 1.4.1 I first installed -- that came from the richer container that writes the q0 audits, and sympy 1.14 rejects it), pyhecke_native 0.9.0, scipy 1.17.1, clarabel 0.11.1, snappy 3.3.2.
