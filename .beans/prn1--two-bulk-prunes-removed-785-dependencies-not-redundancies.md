@@ -243,3 +243,40 @@ The accessor was the right shape rather than a convenience: it returns
 `undefined` when it cannot place a block, never `false`, so "I could not check"
 cannot be read as "it is fine". That is the same lesson as `9giz` and `mcp1`,
 applied before it could bite here.
+
+
+## 2026-08-15 — twelve tranches, and the earlier restoration pass has a systematic gap
+
+`docs/audits/2026-08-15-tranche-index.md` now covers the twelve largest targets:
+**153 of the 692 still-lost edges, 22 with a prose link to the target the block
+omits, 10 that would point forward if restored.** Totals re-derived from the
+sheets rather than carried forward by hand. Nothing applied.
+
+### Tranche 9 (`def:q-from-epsilon`) goes first, and it indicts the restoration
+
+Highest prose-link rate of any tranche by a wide margin — **5 of 10**, against a
+next-best of 3 of 12 — and **zero forward edges**, so it is ordering-safe
+wholesale.
+
+What makes it more than a good candidate is *which* five. Six blocks had edges
+re-declared since the prune: yang-mills-surreal-bound (6),
+p-vs-np-surreal-bound (6), rh-surreal-bound (4), millennium-unification (3),
+bsd-surreal-bound (3), p-vs-np-qou (2).
+
+**Five of those six are exactly the five whose prose links to
+`def:q-from-epsilon`.** Someone worked through these blocks, restored 3-6
+dependencies to each, and omitted in every case the one their own narrative
+sends the reader to. That is not five independent judgements — it is one
+systematic gap in the restoration pass, visible five times. The blocks that do
+not link are precisely the ones that pass never reached.
+
+### Nine of twelve tranches are ordering-safe wholesale
+
+Tranches 1, 2, 5, 8, 9, 10 have zero forward edges; 4, 6, 7, 11 have one each.
+**Only 10 blocks out of 153** need individual handling.
+
+Recommended order is by evidence, not size: `q-from-epsilon`, `crossing-energy`,
+`categorical-neutron`, `jones-markov-trace`, then 5/7/8/12/2. **Last:**
+`borromean-baryon`, `habiro-ring`, `hadron` — no prose links at all between the
+three of them, and `borromean-baryon` carries 4 of the 10 forward edges. Being
+large is the worst reason to do one of those first.
