@@ -74,6 +74,22 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDA
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
 
+#: Columns exposed in the nuclide-keyed view — the scalars a witnessed-value
+#: pin can address. Excludes `knot_operators` / `braid_word_canonical` and the
+#: provenance strings: those are bulk, and duplicating them doubles the file.
+#:
+#: Every numeric column here is a `fmt` STRING, not a float+`_str` pair. The
+#: pair was this branch's earlier design and it is superseded by bean qou-3wqg,
+#: which lifted the prediction chain to mpmath at the root: once `pred` is a
+#: genuine mpf, `fmt` writes digits that exist and the shadow rule has nothing
+#: left to excuse. The pair only ever made sense while `pred` was still a float
+#: — i.e. while the extra digits were binary64 noise wearing a string.
+_PINNABLE_COLUMNS = (
+    "Z", "N", "A", "n_strands",
+    "prediction_type", "prediction_method",
+    "tr_M_q0_canonical_50dps", "prediction_MeV_50dps",
+    "B_AME_MeV", "err_MeV", "err_pct", "err_ppb", "err_ppm",
+)
 # AME 2020 binding energies (MeV) for the canonical atoms.
 # mpf throughout (bean qou-3wqg). The five `AME_B_*_MEV_VALIDATION` constants
 # ARE mpf in `codata_constants`; wrapping them in `float()` here truncated them
@@ -566,6 +582,10 @@ def main() -> int:
         pass
 
     records: list[dict] = []
+    #: Labels of the rows that actually landed in `records`, in the same order.
+    #: Kept alongside rather than read back off the records, because a record
+    #: carries (Z, N) but not the `--atoms` label the registry keys on.
+    computed_labels: list[str] = []
     for atom_str in requested:
         if atom_str not in label_to_ZN:
             print(f"  {atom_str:<6} (skip — unknown)")
@@ -664,6 +684,7 @@ def main() -> int:
             ),
         )
         records.append(record.to_dict())
+        computed_labels.append(atom_str)
 
         tr_m_str = fmt(tr_m, dps=15)  # display-only, full precision via fmt
         pred_str = f"{pred:.4f}" if pred is not None else "—"
@@ -714,6 +735,31 @@ def main() -> int:
         .add_parameter("atoms_requested", ",".join(requested))
         .add_parameter("timeout_per_atom_sec", args.timeout)
         .add_data("rows", records)
+        # Nuclide-keyed view of the SAME records, so consumers can address a
+        # row by what it is rather than by where it sits (bean `qou-xwet`).
+        #
+        # `data.rows` is ordered by DEFAULT_ATOMS and a comment has long asked
+        # callers not to reorder it. That guard was never enough: it addresses
+        # reordering, while what actually happened was a second producer
+        # SHRINKING the set, which shifts every index without reordering
+        # anything. `registry.ts`'s `B_2H_AME_MeV` pin at `data.rows.2` then
+        # addressed 3He for eight weeks under a description naming deuterium.
+        #
+        # Keys are the `--atoms` labels (p, n, D, T, 3He, ...). A key is absent
+        # when its row is absent, so a pin against a missing nuclide fails
+        # loudly instead of silently reading its neighbour. `rows` is kept
+        # as-is: it is the ordered presentation, and removing it would break
+        # every existing reader for no gain.
+        #
+        # SCALARS ONLY, deliberately. Mirroring whole records here doubled the
+        # witness (68 KB -> 133 KB) to say everything twice; the bulk is
+        # `knot_operators` and `braid_word_canonical`, which no pin addresses.
+        # This view exists to be ADDRESSED, not to duplicate provenance -- a
+        # reader wanting the full record still goes to `rows`.
+        .add_data("rows_by_nuclide", {
+            label: {k: rec[k] for k in _PINNABLE_COLUMNS if k in rec}
+            for label, rec in zip(computed_labels, records)
+        })
         .add_data("n_atoms_computed", len(records))
     )
 

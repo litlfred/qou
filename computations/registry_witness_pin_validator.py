@@ -212,17 +212,27 @@ def check(entries: list[dict]) -> tuple[list[str], list[str], int]:
         if any(s.isdigit() for s in segs):
             warns.append(f"W-positional    {e['name']}: {e['witnessPath']} indexes by position")
 
-            claimed = nuclide_from_name(e["name"])
-            row = parent_row(doc, e["witnessPath"])
-            if claimed and row and {"Z", "A"} <= set(row):
-                checked_nuclides += 1
-                Z, A = claimed
-                if (row["Z"], row["A"]) != (Z, A):
-                    errors.append(
-                        f"E-nuclide-drift {e['name']}: {e['witnessPath']} now addresses "
-                        f"Z={row['Z']} A={row['A']}, but the name claims Z={Z} A={A} "
-                        f"(value read would be {val})"
-                    )
+        # Nuclide identity is checked for BOTH addressing styles.
+        #
+        # For a positional pin it is the whole point: the index is the only
+        # thing tying the pin to a nuclide, and a shifted row set breaks it
+        # silently. For a nuclide-KEYED pin the key already carries the intent,
+        # so this is cheaper — but not free: it catches a producer that fills
+        # `rows_by_nuclide` from a mis-zipped label list, which is exactly the
+        # failure the keyed view was introduced to make impossible. A guard
+        # that only ran on the shape being retired would verify nothing once
+        # the migration finished.
+        claimed = nuclide_from_name(e["name"])
+        row = parent_row(doc, e["witnessPath"])
+        if claimed and row and {"Z", "A"} <= set(row):
+            checked_nuclides += 1
+            Z, A = claimed
+            if (row["Z"], row["A"]) != (Z, A):
+                errors.append(
+                    f"E-nuclide-drift {e['name']}: {e['witnessPath']} now addresses "
+                    f"Z={row['Z']} A={row['A']}, but the name claims Z={Z} A={A} "
+                    f"(value read would be {val})"
+                )
 
     return errors, warns, checked_nuclides
 
