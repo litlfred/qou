@@ -16,7 +16,7 @@ Computes, RAW (no tuning to any lepton mass ratio, charge, or any h^k):
      writhe (=n), genus ((n-1)/2), cyclic Z_n symmetry, the B_2=Z -> H_2 ->
      Z_2 statistics (gcd(2,n) components: odd=knot=fermion, even=link=boson).
      The T(2,n) trace closed form is derived and cross-checked vs the census
-     Hopf form tr_M(sigma_1^2) = 1 + (q-1)/sqrt(q).
+     Hopf form tr_M(sigma_1^2) = 1 + h z, h = q - 1/q (convention D).
   2. The S_5-equivariance selection: Z_n -> S_5 exists iff S_5 has an
      order-n element, n in {1,2,3,4,5,6}; restricting to odd n>=3 gives
      {3,5} = electron + muon (group-theoretic verification).
@@ -71,17 +71,28 @@ CAL_TAU_E = mp.mpf(str(CAL_TAU_E))
 # Two 1-dim blocks: (2) [sigma_1 -> q] and (1,1) [sigma_1 -> -q^{-1}].
 #   tr_M(sigma_1^k) = W_(2) q^k + W_(1,1) (-q^{-1})^k
 # Wenzl weights fixed by the two Markov axioms (tr_M(1)=1, tr_M(b sigma)=z tr_M(b)):
-#   W_(2)   = (q^{3/2} + q + 1)/(q^3 + q^2 + q + 1)
-#   W_(1,1) = (q^3 + q^2 - q^{3/2})/(q^3 + q^2 + q + 1)
+# Solving those two axioms generically in z gives
+#   W_(2)   = (q z + 1)/(q^2 + 1)
+#   W_(1,1) = q (q - z)/(q^2 + 1)
+# and the file previously carried the convention-C substitution of exactly
+# this, expanded -- which is where the q^{3/2} came from. At z_D = q^3/(q^2+1):
+#   W_(2)   = (q^4 + q^2 + 1)/(q^2 + 1)^2
+#   W_(1,1) = q^2/(q^2 + 1)^2
+# Independent cross-check: those are precisely the convention-D weight formula
+# y_lambda = [n-2k+1]_q / [2]_q^n at n = 2 -- [3]_q/[2]_q^2 and [1]_q/[2]_q^2 --
+# proved sorry-free in QOU/QBeta/TwoRowNormalisation.lean. The Wenzl solve and
+# the Lean formula agree without being told about each other.
 # ---------------------------------------------------------------------------
 def z_factor(q):
-    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    # Convention D. Was 1/(sqrt(q) + 1/sqrt(q)) -- convention C.
+    return q ** 3 / (q ** 2 + 1)
 
 
 def wenzl_weights(q):
-    denom = q**3 + q**2 + q + 1
-    W2 = (q ** mp.mpf("1.5") + q + 1) / denom
-    W11 = (q**3 + q**2 - q ** mp.mpf("1.5")) / denom
+    # Generic in z, so the weights follow the convention instead of pinning it.
+    z = z_factor(q)
+    W2 = (q * z + 1) / (q ** 2 + 1)
+    W11 = q * (q - z) / (q ** 2 + 1)
     return W2, W11
 
 
@@ -92,17 +103,27 @@ def trM_sigma1_pow(q, k):
 
 
 def trM_hopf_census_form(q):
-    """Census Hopf closed form tr_M(sigma_1^2) = 1 + (q-1)/sqrt(q)."""
-    return 1 + (q - 1) / mp.sqrt(q)
+    """Census Hopf closed form tr_M(sigma_1^2) = 1 + h z, h = q - 1/q.
+
+    The census spelling `1 + (q-1)/sqrt(q)` was that same identity with
+    convention C substituted; keeping it generic in z lets it track the
+    convention rather than fix it.
+    """
+    return 1 + (q - 1 / q) * z_factor(q)
 
 
 # Symbolic trace in q (verify the closed-form structure independent of q0).
 def trM_symbolic(k):
+    # Convention D, and the SAME generic-in-z solve as `wenzl_weights`.
+    #
+    # This carried the convention-C literals while the numeric path moved to D,
+    # which is an internal straddle -- one file disagreeing with itself, worse
+    # than uniform C. The probe's own `trM_T2_3_symbolic_eq_numeric` assertion
+    # caught it: the COMPUTED value stayed put while the EXPECTED one moved.
     qs = sp.symbols("q", positive=True)
-    rt = sp.sqrt(qs)
-    denom = qs**3 + qs**2 + qs + 1
-    W2 = (rt**3 + qs + 1) / denom
-    W11 = (qs**3 + qs**2 - rt**3) / denom
+    z = qs**3 / (qs**2 + 1)
+    W2 = (qs * z + 1) / (qs**2 + 1)
+    W11 = qs * (qs - z) / (qs**2 + 1)
     expr = W2 * qs**k + W11 * (-1 / qs) ** k
     # sp.cancel combines over the common denominator (a targeted rational
     # normal form) without the heavyweight sp.simplify the compute-audit
