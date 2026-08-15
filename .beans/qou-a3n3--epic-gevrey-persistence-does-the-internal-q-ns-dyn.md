@@ -194,3 +194,23 @@ u n t <= theta^n * P) — sorry-free, closes remainder (a) AT THE MODEL
 LEVEL. Remaining: full-NS transfer nonlocality (standing caveat) —
 now the ONLY open link in the in-model chain. Witness float64 debt
 beaned (qou-xwjs, joins the 4 sibling probe witnesses).
+
+## 2026-08-15 (10): SF8 — the per-amplitude route survives second-neighbor nonlocality
+
+The standing full-NS caveat attacked at probe + Lean level. SF8
+(qns_nonlocal_transfer_probe): DN + energy-conserving second-neighbor
+channel gamma (inflow gamma*k_n*u_{n-2}^2 paired with outflow
+-gamma*k_{n+2}*u_n*u_{n+2}, exact telescoping — drift ~1e-5 inviscid).
+3/3 assertions at gamma = 0.5 AND 1.0 (equal-strength, harsher than NS
+triad decay): two-source trajectory equilibrium r_n <= 1 everywhere
+(max 0.90); dissipation-scale crossing exists at every (gamma, eps)
+and still decreases with eps (shifts up modestly with gamma:
+0.22 -> 0.32 at 1e-2, still under the Kolmogorov bound). Lean (bean
+qou-dxva, sorry-free): rung_equilibrium_two_source (Phi = kn*(P1^2 +
+gamma*P2^2)); two_source_ladder_collapse (pair-maximum induction,
+rate theta per pair); rungBound2 + trajectory_two_source_bounds (pair
+induction on rungs — trajectory-level composition for the nonlocal
+class too). Honest scope: this covers the SECOND-NEIGHBOR nonlocality
+class; full NS triad structure (all k+p+q=0 interactions,
+sweeping/backscatter of distant modes) remains the standing caveat —
+now with evidence it is not fragile to the first nonlocal extension.
