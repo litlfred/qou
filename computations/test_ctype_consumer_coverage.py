@@ -114,6 +114,22 @@ def part_a() -> None:
     import atom_level_wedderburn_tower as alwt  # noqa: F401 -- import-time check
     notes.append("  ok   atom_level_wedderburn_tower imports (private d_for removed)")
 
+    # The schema enum must be able to REPRESENT every ctype. It carried only
+    # the first three, so `averaged_weighted` was unrepresentable in the
+    # isotope record — a type-level gap, not a call-site bug. Checked rather
+    # than promised in a docstring, since "keep the two in step" is exactly
+    # the kind of instruction that decays (qou-8zjd).
+    from isotope_record_schema import CrossingType
+    _enum = {c.value for c in CrossingType}
+    if _enum != set(CTYPES):
+        failures.append(
+            f"isotope_record_schema.CrossingType is out of step with CTYPES: "
+            f"missing {sorted(set(CTYPES) - _enum)}, "
+            f"extra {sorted(_enum - set(CTYPES))}"
+        )
+    else:
+        notes.append("  ok   isotope_record_schema.CrossingType covers CTYPES")
+
     # The marshallers are exercised through real words rather than raw
     # labels, since they take (c, d, gen) triples.
     from canonical_braid_marshalling import (
