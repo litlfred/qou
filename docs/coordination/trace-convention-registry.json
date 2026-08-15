@@ -494,6 +494,38 @@
         "note": "THE COMPILED ARTIFACT. Added 2026-08-09 after the installed wheel was found returning convention C while its own Rust source (tools/hecke-engine/src/gram.rs:75) read D -- the .so was built 2026-08-08 11:30 UTC, b5f4cb5b9 migrated the engine C->D at 2026-08-09 13:18 UTC, and nothing compared the two. Source review cannot see this defect and neither can the content-layer axis; only calling the binary can. markov_z is re-exported through all nine language bindings and drives trace_weights and the v_std quark-volume channel, so a stale build here is a silent C reintroduction across the whole native path -- and it converts 'regenerate from the producer' from the remediation into the attack. If this entry fails, REBUILD (maturin build --release in tools/pyhecke-native, then pip install --force-reinstall the wheel) before running any producer."
       }
     ],
+    "derived": [
+      {
+        "id": "pyhecke.gram.tr_m_mp[3]",
+        "convention": "C",
+        "module": "pyhecke.gram",
+        "symbol": "tr_m_mp",
+        "kind": "callable_index",
+        "index": 3,
+        "identity": "z^2",
+        "sys_path": [
+          "tools/pyhecke/python",
+          "computations/substrate"
+        ],
+        "abs_tol": "1e-40",
+        "note": "R11 -- THE DERIVED CHECK. R9 checks z itself; this checks that a quantity DERIVED from z still matches the z it was derived from. TR_M is [1, z, z, z^2, z^2, h*z^2+z], so index 3 must be z^2 for whatever z the module uses. Registered under C because the mpmath path IS still C (see the intra_module_split_waivers note); if that path migrates to D and this vector is rebuilt consistently, only the `convention` field here changes."
+      },
+      {
+        "id": "pyhecke.gram.tr_m_mp[5]",
+        "convention": "C",
+        "module": "pyhecke.gram",
+        "symbol": "tr_m_mp",
+        "kind": "callable_index",
+        "index": 5,
+        "identity": "h*z^2+z",
+        "sys_path": [
+          "tools/pyhecke/python",
+          "computations/substrate"
+        ],
+        "abs_tol": "1e-40",
+        "note": "The longest element e^- = sigma_0 sigma_1 sigma_0 evaluates to h*z^2 + z by cyclicity plus the Hecke quadratic, NOT z^3. This exact entry was z^3 until docs/audits/2026-05-19-trm5-markov-bug.md, and main carries the follow-on commit 'flip trace_weights to h*z^2 + z -- Rust and Python finally agree'. A static scanner cannot catch it: z^3 and h*z^2+z are both perfectly ordinary expressions in z, differing only in being right and wrong. Only evaluation distinguishes them, which is the whole argument for R9/R11 over R4/R5."
+      }
+    ],
     "weights_n3": [
       {
         "id": "wedderburn_jones_markov.y_lambda_at",

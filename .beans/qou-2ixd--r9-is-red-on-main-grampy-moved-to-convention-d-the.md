@@ -411,3 +411,51 @@ exactly like the defect the witness audit exists to find.
 
 - The 4 pyhecke sites stay with `qou-w8zz`.
 - Nothing else outside pyhecke is on convention C by the current detectors.
+
+---
+
+## Round 7: R11 — a derived quantity must match its own z
+
+The last gate gap. R9 checks the Markov parameter; R11 checks everything
+DERIVED from it — `tr_M(sigma_1^2) = h*z+1`, the H_2 weight
+`(q*z+1)/(q^2+1)`, the entries of the TR_M vector.
+
+`scan_closed_forms` already hunts these statically, but it keys on the
+**binding name** (`trM`, `W2`, `y_lambda`, ...) — and a name-keyed detector is
+precisely what went blind three times in this excision: the half-argument
+spelling, the return form, the reciprocal form. A numeric identity cannot be
+evaded by spelling.
+
+### It has a track record
+
+`TR_M[5]` was `z^3` rather than `h*z^2 + z` until
+`docs/audits/2026-05-19-trm5-markov-bug.md`, and main carries the follow-on
+commit *"flip trace_weights to h*z^2 + z — Rust and Python finally agree"*.
+No static scanner can catch that: `z^3` and `h*z^2+z` are both perfectly
+ordinary expressions in `z`, differing only in that one is right. **Only
+evaluation distinguishes them** — the same argument R9 makes over R4/R5.
+
+Registered `pyhecke.gram.tr_m_mp[3]` (identity `z^2`) and `[5]`
+(`h*z^2+z`). Both CONFIRMED at `|d| ~ 2e-51`.
+
+### Negative test
+
+A gate that cannot fail is worse than none, so I injected the historical bug —
+set `[5]`'s identity to `z^3` — and confirmed it fires:
+
+    ERROR : R11 pyhecke.gram.tr_m_mp[5]: should equal z^3 = 0.1244909432...
+            but the CODE returns 0.5514434143... (|d| = 0.427 > 1.0e-40).
+            The derived form has drifted from the z it is derived from.
+    FAIL (1 error(s), 23 warning(s))
+
+Registry restored; `PASS (0 errors, 23 warnings)`.
+
+Seven named identities are available (`z`, `z^2`, `z^3`, `h*z+1`, `h*z^2+z`,
+`z+h*z^2`, `(q*z+1)/(q^2+1)`) — the closed forms this session had to verify by
+hand in rounds 3 and 5.
+
+## Next
+
+- Extend R11 coverage to the producers migrated in rounds 3/5, so their closed
+  forms are gated rather than merely correct-once.
+- The 4 pyhecke sites remain `qou-w8zz`'s.

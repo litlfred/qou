@@ -538,6 +538,59 @@ def check_evaluated(reg: dict) -> tuple[list[str], list[str], list[str]]:
                     "both are accurately recorded. Fix the module, or waive it "
                     "by name in `intra_module_split_waivers`.")
 
+        # --- R11: derived quantities must match their own z ----------------
+        # R9 checks the Markov parameter itself. Everything DERIVED from it --
+        # tr_M(sigma_1^2) = h*z+1, the H_2 weight (q*z+1)/(q^2+1), the entries
+        # of the TR_M vector -- gets written out in closed form, and a closed
+        # form derived under one convention keeps working, silently, after z
+        # moves. `scan_closed_forms` hunts those statically, but it keys on the
+        # BINDING NAME (trM, W2, y_lambda, ...), and a name-keyed detector is
+        # exactly what has been blind three times over in this excision:
+        # missed the half-argument spelling, missed returns, missed the
+        # reciprocal form. A numeric identity cannot be evaded by spelling.
+        #
+        # It has a track record. TR_M[5] was z^3 rather than h*z^2+z until
+        # docs/audits/2026-05-19-trm5-markov-bug.md, and main carries the
+        # commit "flip trace_weights to h*z^2 + z -- Rust and Python finally
+        # agree". This is that check, at 1e-40, keyed off the registry.
+        _IDENTITIES = {
+            "z": lambda z, h, q: z,
+            "z^2": lambda z, h, q: z ** 2,
+            "z^3": lambda z, h, q: z ** 3,
+            "h*z+1": lambda z, h, q: h * z + 1,
+            "h*z^2+z": lambda z, h, q: h * z * z + z,
+            "z+h*z^2": lambda z, h, q: z + h * z * z,
+            "(q*z+1)/(q^2+1)": lambda z, h, q: (q * z + 1) / (q ** 2 + 1),
+        }
+        for entry in ev.get("derived", []):
+            cid = entry["convention"]
+            ident = entry.get("identity")
+            z_s = (by_id.get(cid) or {}).get("z_at_q0")
+            if z_s is None or ident not in _IDENTITIES:
+                errors.append("R11 %s: convention %s has no z_at_q0, or unknown "
+                              "identity %r" % (entry["id"], cid, ident))
+                continue
+            tol = mp.mpf(str(entry.get("abs_tol", default_tol)))
+            try:
+                got = _eval_z(entry, _import_for(entry), q0)
+            except Exception as exc:  # noqa: BLE001
+                warnings.append("R11 %s: could not evaluate (%s: %s); NOT confirmed"
+                                % (entry["id"], type(exc).__name__, exc))
+                continue
+            zc = mp.mpf(z_s)
+            want = _IDENTITIES[ident](zc, q0 - 1 / q0, q0)
+            d = abs(got - want)
+            if d > tol:
+                errors.append(
+                    "R11 %s: should equal %s = %s for convention %s, but the CODE "
+                    "returns %s (|d| = %s > %s). The derived form has drifted from "
+                    "the z it is derived from."
+                    % (entry["id"], ident, mp.nstr(want, 25), cid,
+                       mp.nstr(got, 25), mp.nstr(d, 4), mp.nstr(tol, 2)))
+            else:
+                notes.append("R11 %s: CONFIRMED %s under convention %s (|d| = %s)"
+                             % (entry["id"], ident, cid, mp.nstr(d, 4)))
+
         for entry in ev.get("weights_n3", []):
             cid = entry["convention"]
             want_map = (by_id.get(cid) or {}).get("weights_at_q0")
