@@ -1,11 +1,11 @@
 ---
 # qou-7425
 title: 'CLOSABLE: multi-tet coupled-polytope strict concavity (m004/L6a4) -> full qou-krvm(ii)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T20:45:18Z
-updated_at: 2026-08-15T20:45:18Z
+updated_at: 2026-08-15T21:37:25Z
 parent: qou-5lm6
 ---
 

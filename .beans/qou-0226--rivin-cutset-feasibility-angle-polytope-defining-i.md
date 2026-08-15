@@ -1,11 +1,11 @@
 ---
 # qou-0226
 title: 'Rivin cutset feasibility: angle-polytope defining (in)equalities; necessity proved, Hall-sufficiency honest sorry'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T15:57:50Z
-updated_at: 2026-08-15T15:57:50Z
+updated_at: 2026-08-15T21:37:25Z
 parent: qou-5lm6
 ---
 
