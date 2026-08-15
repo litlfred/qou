@@ -1545,6 +1545,130 @@ theorem genMat_braid_of_middle (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 �
       genMat_apply_of_ne q (k + 1) hl hln h3 hBl (by rw [bBT]; exact h1)]
     ring
 
+/-- **Size-`3` orbit, `T` at the `σ_k`-fixed end.**  `σ_{k+1}` moves `T`, `σ_k` fixes it, but
+`s_{k+1}·T` *is* `k`-admissible, so the orbit runs `T → s_{k+1}·T → s_k s_{k+1}·T` and stops.
+
+The mirror of `genMat_braid_of_succ_fixed_three`, and — consistent with the rule that
+deletion tracks which columns are scalar — it deletes on the **left** where that one deleted
+on the right, with the degeneracy at `p = ±1` rather than `r = ±1`.  The third row again
+closes by `ring`, this time via `axialDist_swapTableau_word_right`. -/
+theorem genMat_braid_of_fixed_succ_three (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
+    {T : StandardYoungTableau μ}
+    (hka : ¬ SwapAdmissible T k) (hla : SwapAdmissible T (k + 1))
+    (hBk : SwapAdmissible (swapTableau T (k + 1) hl hln hla) k)
+    (hEl : ¬ SwapAdmissible
+      (swapTableau (swapTableau T (k + 1) hl hln hla) k hk hkn hBk) (k + 1))
+    (T' : StandardYoungTableau μ) :
+    (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T' T
+      = (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T' T := by
+  classical
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hq2 : q ^ 2 ≠ 1 := by
+    intro h
+    have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [h]
+    rcases mul_eq_zero.mp hfac with h1 | h2
+    · exact hq1 (by linarith)
+    · linarith
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
+  have hkI'' : k + 1 + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
+  set B := swapTableau T (k + 1) hl hln hla with hB
+  set E := swapTableau B k hk hkn hBk with hE
+  have hBl : SwapAdmissible B (k + 1) := swapAdmissible_swapTableau T hl hln hla
+  have hEk : SwapAdmissible E k := swapAdmissible_swapTableau B hk hkn hBk
+  have bBT : swapTableau B (k + 1) hl hln hBl = T := swapTableau_involutive T hl hln hla
+  have bEB : swapTableau E k hk hkn hEk = B := swapTableau_involutive B hk hkn hBk
+  have dBl : axialDist B (k + 1) = -axialDist T (k + 1) := axialDist_swapTableau T hl hln hla
+  have dBk : axialDist B k = axialDist T k + axialDist T (k + 1) :=
+    axialDist_swapTableau_succ T hk (by omega) hla
+  have dEl : axialDist E (k + 1) = axialDist T k :=
+    axialDist_swapTableau_word_right T hk (by omega) hla hBk
+  have eT1 : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T hkI
+  have eT2 : T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 1 := entry_cellOf T hkI'
+  have eB1 : B.entry (cellOf T k).1 (cellOf T k).2 = k := (orbitEntries_sl T hk hln hla).1
+  have eB2 : B.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 2 :=
+    (orbitEntries_sl T hk hln hla).2
+  have eE1 : E.entry (cellOf T k).1 (cellOf T k).2 = k + 1 :=
+    (orbitEntries_sk_sl T hk hkn hln hla hBk).1
+  have nTB : T ≠ B := ne_of_entry_ne (by rw [eT2, eB2]; omega)
+  have nTE : T ≠ E := ne_of_entry_ne (by rw [eT1, eE1]; omega)
+  have nBE : B ≠ E := ne_of_entry_ne (by rw [eB1, eE1]; omega)
+  -- `σ_k` fixes `T`, so the degeneracy is at `p`
+  have hscalar : axialDist T k = 1 ∨ axialDist T k = -1 := by
+    rcases axialDist_trichotomy T hkI hkI' with h | h | h
+    · exact Or.inl h
+    · exact Or.inr h
+    · exact absurd h hka
+  have hdegp : 1 + seminormalParam q (axialDist T k)
+      * seminormalParam q (-axialDist T k) = 0 :=
+    one_add_seminormalParam_mul_neg_of_scalar q hq0 hq2 hscalar
+  have hp0 : axialDist T k ≠ 0 := axialDist_ne_zero T hkI hkI'
+  have hr0 : axialDist T (k + 1) ≠ 0 := axialDist_ne_zero T hkI' hkI''
+  have hpr0 : axialDist T k + axialDist T (k + 1) ≠ 0 := by
+    rw [← dBk]; exact axialDist_ne_zero B hkI hkI'
+  have hprodr := offDiag_mul_neg q hr0
+  have hsump := seminormalParam_add_neg q (axialDist T k) hq0
+    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+  have hsumr := seminormalParam_add_neg q (axialDist T (k + 1)) hq0
+    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+  have hrel := seminormalParam_rel q (axialDist T k) (axialDist T (k + 1)) hq0
+    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq hq1 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
+  rw [genMat_mul_apply_of_not_admissible q k hk hkn
+      (genMat q k hk hkn * genMat q (k + 1) hl hln) hka T',
+    genMat_mul_apply q (k + 1) hl hln (genMat q k hk hkn) hla T',
+    genMat_mul_apply q (k + 1) hl hln
+      (genMat q (k + 1) hl hln * genMat q k hk hkn) hla T',
+    genMat_mul_apply_of_not_admissible q k hk hkn (genMat q (k + 1) hl hln) hka T',
+    genMat_mul_apply q k hk hkn (genMat q (k + 1) hl hln) hBk T', dBk]
+  by_cases h1 : T' = T
+  · subst h1
+    simp only [← hB, ← hE]
+    have entB : genMat q (k + 1) hl hln T' B = offDiag q (axialDist B (k + 1)) := by
+      have h := genMat_swap q (k + 1) hl hln hBl (by rw [bBT]; exact nTB)
+      rwa [bBT] at h
+    rw [genMat_diag, genMat_diag, entB, dBl,
+      genMat_apply_of_ne q k hk hkn nTB hBk (by rw [← hE]; exact nTE),
+      genMat_of_not_admissible q (k + 1) hl hln nTE hEl]
+    linear_combination
+      (seminormalParam q (axialDist T' (k + 1)) - seminormalParam q (axialDist T' k)) * hrel
+        + seminormalParam q (axialDist T' k + axialDist T' (k + 1))
+            * seminormalParam q (axialDist T' k) * hsump
+        - seminormalParam q (axialDist T' k + axialDist T' (k + 1))
+            * seminormalParam q (axialDist T' (k + 1)) * hsumr
+        - seminormalParam q (axialDist T' k + axialDist T' (k + 1)) * hdegp
+        - seminormalParam q (axialDist T' k + axialDist T' (k + 1)) * hprodr
+  by_cases h2 : T' = B
+  · subst h2
+    simp only [← hB, ← hE]
+    have entT : genMat q (k + 1) hl hln B T = offDiag q (axialDist T (k + 1)) :=
+      genMat_swap q (k + 1) hl hln hla (by rw [← hB]; exact nTB.symm)
+    rw [genMat_of_not_admissible q k hk hkn nTB.symm hka,
+      genMat_diag, dBk, entT, genMat_diag, dBl,
+      genMat_of_not_admissible q (k + 1) hl hln nBE hEl]
+    linear_combination
+      offDiag q (axialDist T (k + 1)) * hrel
+        - seminormalParam q (axialDist T k + axialDist T (k + 1))
+            * offDiag q (axialDist T (k + 1)) * hsumr
+  by_cases h3 : T' = E
+  · subst h3
+    simp only [← hB, ← hE]
+    have entB : genMat q k hk hkn E B = offDiag q (axialDist B k) :=
+      genMat_swap q k hk hkn hBk (by rw [← hE]; exact nBE.symm)
+    rw [genMat_of_not_admissible q k hk hkn nTE.symm hka, entB, dBk,
+      genMat_apply_of_ne q (k + 1) hl hln nTE.symm hla (by rw [← hB]; exact nBE.symm),
+      genMat_apply_of_ne q (k + 1) hl hln nBE.symm hBl (by rw [bBT]; exact nTE.symm),
+      genMat_diag, dEl]
+    ring
+  · rw [genMat_of_not_admissible q k hk hkn h1 hka,
+      genMat_apply_of_ne q k hk hkn h2 hBk (by rw [← hE]; exact h3),
+      genMat_apply_of_ne q (k + 1) hl hln h1 hla (by rw [← hB]; exact h2),
+      genMat_apply_of_ne q (k + 1) hl hln h2 hBl (by rw [bBT]; exact h1),
+      genMat_of_not_admissible q (k + 1) hl hln h3 hEl]
+    ring
+
 end Braid
 
 end SeminormalRep

@@ -1001,3 +1001,38 @@ CASE TREE: size 1 done; both size-2 done; size-3 middle done; size-3 sigma_{k+1}
 done; size 6 done. REMAINING: size-3 sigma_k-fixed end (¬hka, hla, hBk) -- the mirror of the
 one already done -- and then whether (hka, hla, hAl, ¬hBk) / (hka, hla, ¬hAl, hBk) can occur
 at all. Then Hecke.lift.
+
+
+## ALL SIX ORBIT SHAPES PROVED 2026-08-15
+
+genMat_braid_of_fixed_succ_three (sorry-free, axiom-clean, compiled first try) closes the
+last size-3 position. The braid identity now holds on EVERY orbit shape:
+
+  size 1                          genMat_braid_of_both_fixed
+  size 2, sigma_{k+1} scalar      genMat_braid_of_succ_fixed
+  size 2, sigma_k scalar          genMat_braid_of_fixed_succ
+  size 3, sigma_{k+1}-fixed end   genMat_braid_of_succ_fixed_three
+  size 3, middle                  genMat_braid_of_middle
+  size 3, sigma_k-fixed end       genMat_braid_of_fixed_succ_three
+  size 6, generic                 genMat_braid_generic
+
+The "deletion tracks which columns are scalar" rule (corrected two entries above) predicted
+this one exactly: the sigma_k-fixed end deletes on the LEFT with degeneracy at p, mirroring
+the sigma_{k+1}-fixed end which deletes on the right with degeneracy at r. First-try compile,
+which is the rule earning its keep.
+
+REMAINING before Hecke.lift -- and this is now the WHOLE of what stands between here and
+hoefsmit_seminormal_rep:
+
+  (a) The two unclassified flag patterns (hka, hla, hAl, ¬hBk) and (hka, hla, ¬hAl, hBk).
+      By the domino/antichain picture these should be VACUOUS -- if both generators move T
+      and exactly one of the length-2 words exists, there is no 3-cell configuration that
+      realises it -- but that is an argument, not a proof, and it must be PROVED vacuous or
+      handled. Do not assume.
+  (b) genMat_braid_generic takes hDk and hEl as hypotheses. For the assembly they must be
+      DERIVED from (hka, hla, hAl, hBk), or the generic case restated without them.
+  (c) Then Hecke.lift: hquad from genMat_quadratic (with q*q^-1 = 1), hcomm from
+      genMat_far_comm, hbraid by dispatching on the flags to the seven theorems above.
+
+Note (a) and (b) are the same question from two sides: which flag combinations are actually
+realisable. A lemma classifying the reachable patterns would close both.
