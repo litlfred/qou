@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 13,
-    "distinct_values": 10,
-    "files": 6,
-    "live_files": 1,
-    "new_not_baselined": 0,
+    "occurrences": 17,
+    "distinct_values": 13,
+    "files": 7,
+    "live_files": 2,
+    "new_not_baselined": 4,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -86,6 +86,30 @@
         "field": "data.rows[26].hits[4].literal",
         "value": "0.51099894999999995182093925905064679682254791259766",
         "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/charge-symmetric-coulomb-binding.witness.json",
+        "field": "data.nuclei.D.broken_c",
+        "value": "2.833754824119470328014358528889715671539306640625",
+        "real_value": "2.8337548241194703"
+      },
+      {
+        "file": "computations/charge-symmetric-coulomb-binding.witness.json",
+        "field": "data.nuclei.D.symm_c",
+        "value": "2.833754824119470328014358528889715671539306640625",
+        "real_value": "2.8337548241194703"
+      },
+      {
+        "file": "computations/charge-symmetric-coulomb-binding.witness.json",
+        "field": "data.nuclei.T.broken_c",
+        "value": "9.4652925833812933120725574553944170475006103515625",
+        "real_value": "9.465292583381293"
+      },
+      {
+        "file": "computations/charge-symmetric-coulomb-binding.witness.json",
+        "field": "data.nuclei.T.symm_c",
+        "value": "8.501264472358410984043075586669147014617919921875",
+        "real_value": "8.501264472358411"
       }
     ]
   }
