@@ -374,3 +374,40 @@ Selftest 37 -> 42.
 3. `qbeta-5two-categorical-markov-volume` and `c-3-categorical-derivation-attempt`
    both carry raw float64 in their witnesses (15 and 67 fields). Pre-existing,
    the `qou-5lw7` arc.
+
+---
+
+## Round 6: the sage example was BROKEN on main, not merely stale
+
+`tools/sage-examples/scripts/hecke_surface.py:56` kept a local
+`markov_z(q) = 1/(q^{1/2} + q^{-1/2})` — a copy of a value the library also
+exports. When `pyhecke.gram.z` moved to D the copy did not follow, and the
+example's own guard fired:
+
+    TR_M[1] = 0.612688037146  (== z above)
+    AssertionError: TR_M disagrees with markov_z
+    EXIT=1
+
+So this was not a stale-convention nit: **the example exits 1 on `main`**, and
+has since 2026-08-15. `assert abs(TR_M[1] - z) < 1e-9` exists precisely to
+catch a local copy drifting from the library, and it did — nobody ran it.
+
+Migrated to `q**3/(q**2+1)`. Now exits 0 with
+`TR_M[1] == nf_tr(e_1) == 0.612688037146`.
+
+**ACTIONABLE 5 -> 4.** The remaining four are all pyhecke (`qou-w8zz`).
+
+### A non-finding, checked rather than assumed
+
+The example prints `w_λ((1,1,1)) = 0.163383228` — nonzero on a three-row
+partition, which is the structural signature of convention C. It is not:
+`wedderburn_weight(λ) = d_q(λ)²/[n]_q!` is the Wedderburn–Artin/Plancherel
+weight, has no `z` in it at all, and is conjugation-symmetric because
+`d_q(λ) = d_q(λ')` — hence `w_(3) = w_(1³)`. It also sums to 1.648, not 1, so
+it cannot be a normalised Markov weight. Recorded because the number *looks*
+exactly like the defect the witness audit exists to find.
+
+## Next
+
+- The 4 pyhecke sites stay with `qou-w8zz`.
+- Nothing else outside pyhecke is on convention C by the current detectors.
