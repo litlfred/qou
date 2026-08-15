@@ -185,7 +185,45 @@ RYDBERG_eV_VALIDATION = _mpf50("13.605693")
 # hand-maintained `ame-2020-binding-energies.witness.json` (whose manual entry
 # had drifted on ⁵Li/⁷Li/⁹Be) and any divergence between the registry and the
 # in-script literals — each number lives in exactly one place.
-_AME2020_JSON = _WITNESS_DIR.parent / "qou-mass" / "src" / "qou_mass" / "data" / "ame2020.json"
+def _find_ame2020() -> Path:
+    """Locate `ame2020.json` in either layout this module runs under.
+
+    The path used to be written once, as
+    `_WITNESS_DIR.parent / "qou-mass" / "src" / "qou_mass" / "data"`, which
+    is a LAYERING INVERSION: `computations/` (the compute layer) reaching by
+    repo-relative path into `qou-mass/` (the package layer) that vendors it.
+    In-repo it resolves; vendored into the wheel, `_WITNESS_DIR` is
+    `qou_mass/` and the same expression produces
+    `.../qou-mass/src/qou-mass/src/qou_mass/data/ame2020.json` — the repo
+    segment appearing twice — so every AME lookup died with
+    FileNotFoundError. That is the last thing blocking a live
+    `qou_mass.canonical_braid()`.
+
+    Candidates are ordered in-repo first, since that is the hot path and the
+    only one where a wrong answer would be silent. Nothing here changes WHICH
+    file is read in the repo; it only lets the vendored copy find its own.
+    """
+    here = Path(__file__).resolve()
+    candidates = (
+        # in-repo: computations/substrate/ -> repo root -> the package's data
+        _WITNESS_DIR.parent / "qou-mass" / "src" / "qou_mass" / "data" / "ame2020.json",
+        # vendored: _internal/ -> qou_mass/data/
+        here.parent.parent / "data" / "ame2020.json",
+        # vendored, flat-package fallback
+        here.parent.parent / "ame2020.json",
+    )
+    for cand in candidates:
+        if cand.exists():
+            return cand
+    # Raise with every path tried. The old failure named one path that looked
+    # plausible and was simply wrong, which is the slowest kind to diagnose.
+    tried = "\n  ".join(str(c) for c in candidates)
+    raise FileNotFoundError(
+        f"ame2020.json not found in any known layout; tried:\n  {tried}"
+    )
+
+
+_AME2020_JSON = _find_ame2020()
 
 
 def _ame2020() -> dict:
