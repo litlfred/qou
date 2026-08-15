@@ -223,3 +223,72 @@ and not evidence against it.
 
 **C is the only remaining item that could change the picture from inside the
 theory.** Everything else on this front now waits on an experiment.
+
+
+---
+
+# OPTION C — EXECUTED 2026-08-15. Affirmative, but NOT as posed.
+# Probe `qbeta_c3_slope_filter.py` (exit 0, 5/5).
+
+C asked for a decay-face quantity whose sigma does not carry the `1/u^3`
+amplification. **There is one: the cross-anchor SLOPE.** The amplification is
+COMMON-MODE and cancels in the difference.
+
+    dc_3/dQ_beta at proton      2068767.790 per MeV
+    dc_3/dQ_beta at muon        2068766.549 per MeV
+    d(swing)/dQ_beta                 -1.241 per MeV      <- 1.67e6 cancellation
+
+    c_3 VALUE   sigma/|c_3|     60.98 %        unusable (front (e))
+    c_3 SLOPE   sigma/|swing|   15.41 ppm      39574x sharper
+
+## THE LIMITATION — state it before the factor, always
+
+`c_3(q) = (Q_beta^exp/Q_N2(q) - 1)/u(q)^3` is **completely determined** once
+`Q_beta^exp` is fixed. So `dc_3/dq` is NOT a measurement — it is a computation
+from the extractor. The 15.41 ppm is the precision with which the EXTRACTOR's
+slope is insensitive to the Q_beta error, **not** a precision with which nature
+has told us anything.
+
+The sharpness comes from **experiment cancelling out**. That is why it is sharp.
+
+So the slope tests a candidate derived `c_3(q)` against the FRAMEWORK'S OWN
+LADDER SHAPE — theory against theory. **It does not lift the precision block**
+established by front (e), and it cannot confirm the framework against nature.
+Do not cite 39574x as an experimental precision.
+
+## WHY IT IS STILL WORTH HAVING — it is a FIT-DETECTOR
+
+    value check   61 %      slack  ->  a one-anchor fit passes TRIVIALLY
+    slope check   15.4 ppm  slack  ->  a one-anchor fit does NOT
+
+This inverts the usual worry, and it explains the front's history: ~60 probes
+produced agreements that meant nothing **because the value check has 61 % of
+slack**. Any candidate now has to reproduce the slope within 15 ppm as well, and
+a fit to one anchor has no way to do that except by accident.
+
+It cannot tell you a derivation is RIGHT. It will tell you a **fit is a fit**, at
+4.6 orders of magnitude better resolution than anything else on this front.
+
+**This is the first cheap discriminator the front has ever had.** Every future
+candidate `c_3` should be run through it before anything else.
+
+## Relation to registry section 9e
+
+9e records the swing as "resolved but NOT an independent derivation target",
+because it factors as (11.54 ppb mu-p tension) x dc_3/dq. **That is correct and
+is not disputed here.** The distinction is between a derivation TARGET and a
+test OBSERVABLE: you cannot derive the swing without already having c_3's shape,
+but you can certainly CHECK a proposed shape against it. The "circular" label
+has been read as disqualifying both uses; only the first is disqualified.
+
+## FRONT STATUS — all four options now spent
+
+    A  stop / redirect          available; now the default
+    B  dual degeneracy          EXECUTED -> intrinsic; front (a) closed
+    C  observable avoiding 1/u^3  EXECUTED -> the slope; an INTERNAL FILTER,
+                                  not an experimental test
+    D  measurement proposal     EXECUTED -> the neutron mass, 26x/32x/130x
+
+**Net: the front is closed to theory work that hopes to be VALIDATED, and open
+to theory work that is willing to be FALSIFIED by the slope filter.** Those are
+different activities and the front should be described as the second from now on.
