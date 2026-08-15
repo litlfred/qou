@@ -1251,6 +1251,22 @@
         "reviewed_at": "2026-08-15T10:30:59.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7a35771036ae",
+          "ts": "630b8c0fc1b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:01.659Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "'not independent...three projections'; 'neither lost nor preserved...incomplete'; final para",
+        "notes": "first two substantive (unification claim; third-option thesis). fixed: 'does not stand as an accident of general relativity. It follows inevitably from a universe' -> 'is not an accident of general relativity: it follows from any universe' (kept substantive contrast, dropped stilted framing)"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1270,6 +1286,21 @@
         "reviewed_at": "2026-08-15T10:30:59.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7a35771036ae",
+          "ts": "630b8c0fc1b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:01.699Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no rhetorical-pivot construction present"
       }
     ],
     "trap-em-dash": [
@@ -1289,6 +1320,21 @@
         "reviewed_at": "2026-08-15T10:30:59.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 563 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7a35771036ae",
+          "ts": "630b8c0fc1b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:01.756Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no em-dash construction present"
       }
     ],
     "trap-triples": [
@@ -1308,6 +1354,21 @@
         "reviewed_at": "2026-08-15T10:30:59.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 563 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7a35771036ae",
+          "ts": "630b8c0fc1b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:01.817Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no triples construction present"
       }
     ],
     "trap-closing-aphorism": [
@@ -1327,6 +1388,22 @@
         "reviewed_at": "2026-08-15T10:30:59.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7a35771036ae",
+          "ts": "630b8c0fc1b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:01.865Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "final line 'The event horizon constitutes the geometry of incompleteness.'",
+        "notes": "fixed: deleted the quotable closer; the identification is already stated in the triangle table and 6-step argument"
       }
     ],
     "trap-meta-commentary": [
@@ -1346,6 +1423,21 @@
         "reviewed_at": "2026-08-15T10:30:59.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7a35771036ae",
+          "ts": "630b8c0fc1b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:01.905Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no meta-commentary construction present"
       }
     ],
     "trap-thesis-restatement": [
@@ -1365,6 +1457,21 @@
         "reviewed_at": "2026-08-15T10:30:59.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7a35771036ae",
+          "ts": "630b8c0fc1b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:01.950Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no thesis-restatement construction present"
       }
     ],
     "trap-performed-warmth": [
@@ -1384,6 +1491,21 @@
         "reviewed_at": "2026-08-15T10:30:59.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7a35771036ae",
+          "ts": "630b8c0fc1b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:01.994Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "full-text agentic read (agent:it-b1); no performed-warmth construction present"
       }
     ],
     "trap-superlative": [
@@ -1403,6 +1525,22 @@
         "reviewed_at": "2026-08-15T10:30:59.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7a35771036ae",
+          "ts": "630b8c0fc1b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:02.035Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "'inevitably', 'necessarily manifests'",
+        "notes": "fixed: 'inevitably' removed with the closer rewrite; 'necessarily' kept — it is the modal content of step 6"
       }
     ],
     "trap-nonspeakable": [
@@ -1422,8 +1560,24 @@
         "reviewed_at": "2026-08-15T10:30:59.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7a35771036ae",
+          "ts": "630b8c0fc1b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:39:02.084Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "'where Toffoli gates command non-zero amplitude'",
+        "notes": "fixed: 'command' -> 'carry' (anthropomorphic register)"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.792Z"
+  "updated_at": "2026-08-15T11:39:02.084Z"
 }
