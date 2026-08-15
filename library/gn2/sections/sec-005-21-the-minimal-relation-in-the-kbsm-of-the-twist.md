@@ -1,13 +1,13 @@
 ---
 doc_id: gn2
-doc_title: "SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR"
+doc_title: "ning polynomial of the SL(2;C)-character variety of the twist knot. 1. Motivation and background 1.1. Motivation. The Kau man bracket skein module of a 3-manifold was intro- duced "
 section_id: sec-005-21-the-minimal-relation-in-the-kbsm-of-the-twist
 section_title: "The \minimal relation' in the KBSM of the twist knot exterior. There"
 section_number: 2.1
 pages: 3-4
 source_pdf: gn2.pdf
 source_sha256: ffe8965c496dbb2f
-doc_brief: "SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR — In this paper, we list in explicit form the factoring relations of the Kau man bracket skein module (KBSM for short)"
+doc_brief: "ning polynomial of the SL(2;C)-character variety of the twist knot. 1. Motivation and background 1.1. Motivation. The Kau man bracket skein module of a 3-manifold was intro- duced by J. Przyticki as a"
 ---
 is a special curve in the handlebody which can be used to obtain all the necessary
 factorization relations. Sliding this curve through the 2-handle yields a relation

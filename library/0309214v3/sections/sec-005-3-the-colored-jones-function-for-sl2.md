@@ -1,13 +1,13 @@
 ---
 doc_id: 0309214v3
-doc_title: "ISSN 1364-0380 (on line) 1465-3060 (printed) 1253"
+doc_title: "School of Mathematics, Georgia Institute of Technology"
 section_id: sec-005-3-the-colored-jones-function-for-sl2
 section_title: "The colored Jones function for sl2"
 section_number: 3
 pages: 10-13
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
+doc_brief: "School of Mathematics, Georgia Institute of Technology — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l"
 ---
 3.1 Proof of Theorem 1 for links
 We will formulate and prove an analog of Theorem 1 (see Theore m 3 below)

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1105.1998v3
-doc_title: "Symmetry, Integrability and Geometry: Methods and Applica tions SIGMA 7 (2011), 115, 11 pages A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA"
+doc_title: ""
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
-doc_brief: "Symmetry, Integrability and Geometry: Methods and Applica tions SIGMA 7 (2011), 115, 11 pages A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA — We show a connection formula of"
+doc_brief: "We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity. We introduce the q-Borel transformation and the q-Laplace transformation following C."
 ---
 In this paper, we show a connection formula of the Hahn–Exton q-Bessel function J (3)
 ν (x; q). At

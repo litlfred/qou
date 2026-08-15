@@ -1,13 +1,13 @@
 ---
 doc_id: 0306345v1
-doc_title: "ISSN 1472-2739 (on-line) 1472-2747 (printed) 537"
+doc_title: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum"
 section_id: sec-006-references
 section_title: "References"
 section_number: null
 pages: 20-20
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
-doc_brief: "We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres."
+doc_brief: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his"
 ---
 [A] H. Abchir. TQFT invariants at inﬁnity for the Whitehead manifold. In: Knots
 in Hellas ’98 , Proceedings of the International Conference on Knot Theory a nd

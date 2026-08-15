@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2412.02281v1
-doc_title: "Explicit evaluation of the q-Stokes matrices for certain conﬂuent hypergeometric q-diﬀerence equations"
+doc_title: "u + A"
 section_id: sec-010-relationship-between-the-system-33-and-the-equat
 section_title: "Relationship between the System (33) and the Equation (5)"
 section_number: null
 pages: 14-14
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
-doc_brief: "Explicit evaluation of the q-Stokes matrices for certain conﬂuent hypergeometric q-diﬀerence equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1"
+doc_brief: "u + A — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1, 0;b1,...,b n−1;q,z ) by using the q-Borel resummation."
 ---
 The computation of the connection matrix and q-Stokes matrix of (33) can be transformed into the connectio n
 problem of the equation (5). In this subsection, we clarify t he relationship between the system (33) and the

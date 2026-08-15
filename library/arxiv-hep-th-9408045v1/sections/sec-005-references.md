@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9408045v1
-doc_title: "Constrained analysis of topologically massive gravity"
+doc_title: ""
 section_id: sec-005-references
 section_title: "References"
 section_number: null
 pages: 15-15
 source_pdf: 9408045v1.pdf
 source_sha256: a9786c0f44a4e659
-doc_brief: "Constrained analysis of topologically massive gravity — We quantize the Einstein gravity in the formalism of weak gra vitational ﬁelds by using the constrained Hamiltonian method."
+doc_brief: "We quantize the Einstein gravity in the formalism of weak gra vitational ﬁelds by using the constrained Hamiltonian method."
 ---
 [1] See, for example, N.D. Birrel and P.C.W. Davies: Quantum ﬁelds in curved space
 (Cambridge University Press, Cambridge, 1984) and referen ces therein.

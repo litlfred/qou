@@ -1,13 +1,13 @@
 ---
 doc_id: 0306345v1
-doc_title: "ISSN 1472-2739 (on-line) 1472-2747 (printed) 537"
+doc_title: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum"
 section_id: sec-003-3-graphical-calculus-and-a-formula-for-ω-p
 section_title: "Graphical calculus and a formula for ω p"
 section_number: 3
 pages: 9-12
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
-doc_brief: "We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres."
+doc_brief: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his"
 ---
 Let us write ω = ω + and put
 ω p =

@@ -2,650 +2,400 @@
  "_schema": "library-summary/v1",
  "doc_id": "2018sorus020",
  "source_sha256": "c3f929e5195983ce",
- "brief": "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet",
- "extended": "**HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not**\n\n*The documents may come from teaching and research*\n\n110 pp, 128 sections.\n\n**Outline.** 0 Introduction 5; 1 Character varieties and Reidemeister torsion; 1.1 Character varieties . . . . . . . . . . . ; 1.1.1 Representation variety . . . . . . . . .; 1.1.2 Algebro-geometric quotient . . . . . . .; 1.1.3 Traces and skein algebra . . . . . . . .; 1.1.4 Characters, reducibility and irreducibil; 1.1.5 Saito’s Theorem and some consequences . ; 1.1.6 The augmented variety . . . . . . . . . ; 1.1.7 The tautological representation . . . . ; 1.1.8 Examples . . . . . . . . . . . . . . . .; 1.2 Twisted cohomology . . . . . . . . . . . .; 1.3 Culler-Shalen theory, group acting on tree; 1.3.1 The tree . . . . . . . . . . . . . . . .; 1.3.2 Link of a vertex and ends of the tree . ; 1.3.3 The SL2 action : stabilizers of vertices; 1.3.4 Curves and valuations . . . . . . . . . ; 1.3.5 Group acting on a tree and splitting . .\n\n**Extracted claims (proposals, not verified).**\n- Theorem: Letv be a ﬁnite point ofY, thentor(M, Ad◦ρ) has no\n- Theorem: Letv be an ideal point ofY and Σ be an incompressible\n- Theorem 2.0.2: cannot apply since the fundamental group of an annulus have no\n- Theorem: LetX be a geometric component of the character variety\n- Theorem: Let x∈ ˆX be an ideal point in the smooth projective\n- Theorem 1.1.8: The algebra given byB[Γ] =k[Yγ,γ∈ Γ]/(Ye−2,YγYδ−",
+ "brief": "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad",
+ "extended": "**HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not**\n\n*The documents may come from teaching and research*\n\n110 pp, 78 sections.\n\n**Outline.** Introduction; 2 (−1)i+1; 1 ByH∗(M, Ad◦ρ) (respectivelyH∗(M,ρ )), we den; 2 Whenever ρ :π1(M)→ SL2(Ov), we denote byH∗(M; 3 In this case, we denote by¯ρ : π1(M)→ SL2(k); 4 Forλ :π1(M)→k∗, we denote byH∗(M,λ ) the twi; 1 Ifv projects to an irreducible character inX; 2 Suppose thatM is a knot complement andm is a; 1.1 Character varieties; 1.1.1 Representation variety; 1.1.2 Algebro-geometric quotient; 1.1.3 Traces and skein algebra; 0 After right-multiplying byA−1B and taking th; 1.1.4 Characters, reducibility and irreducibil; 1.1.5 Saito’s Theorem and some consequences; 1.1.6 The augmented variety; 1.1.7 The tautological representation; 1.1.8 Examples\n\n**Extracted claims (proposals, not verified).**\n- Theorem: Letv be a ﬁnite point ofY, thentor(M, Ad◦ρ) has no\n- Theorem: Letv be an ideal point ofY and Σ be an incompressible\n- Theorem 2.0.2: cannot apply since the fundamental group of an annulus have no\n- Theorem: LetX be a geometric component of the character variety\n- Theorem: Let x∈ ˆX be an ideal point in the smooth projective\n- Theorem 1.1.8: The algebra given byB[Γ] =k[Yγ,γ∈ Γ]/(Ye−2,YγYδ−",
  "tokens": {
   "brief": 50,
-  "extended": 382
+  "extended": 338
  },
  "sections": [
   {
-   "id": "sec-000-0-introduction-5",
-   "title": "Introduction 5",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-001-1-character-varieties-and-reidemeister-torsion-1",
-   "title": "Character varieties and Reidemeister torsion 15",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-002-11-character-varieties-15",
-   "title": "Character varieties . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-003-111-representation-variety-15",
-   "title": "Representation variety . . . . . . . . . . . . . . . . . . . . . . 15",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-004-112-algebro-geometric-quotient-16",
-   "title": "Algebro-geometric quotient . . . . . . . . . . . . . . . . . . . . 16",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-005-113-traces-and-skein-algebra-18",
-   "title": "Traces and skein algebra . . . . . . . . . . . . . . . . . . . . . 18",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-006-114-characters-reducibility-and-irreducibility-2",
-   "title": "Characters, reducibility and irreducibility . . . . . . . . . . . . 20",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-007-115-saitos-theorem-and-some-consequences-22",
-   "title": "Saito’s Theorem and some consequences . . . . . . . . . . . . 22",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-008-116-the-augmented-variety-23",
-   "title": "The augmented variety . . . . . . . . . . . . . . . . . . . . . . 23",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-009-117-the-tautological-representation-24",
-   "title": "The tautological representation . . . . . . . . . . . . . . . . . 24",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-010-118-examples-24",
-   "title": "Examples . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-011-12-twisted-cohomology-26",
-   "title": "Twisted cohomology . . . . . . . . . . . . . . . . . . . . . . . . . . . 26",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-012-13-culler-shalen-theory-group-acting-on-trees-an",
-   "title": "Culler-Shalen theory, group acting on trees and incompressible surfaces 29",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-013-131-the-tree-29",
-   "title": "The tree . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-014-132-link-of-a-vertex-and-ends-of-the-tree-30",
-   "title": "Link of a vertex and ends of the tree . . . . . . . . . . . . . . 30",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-015-133-the-sl2-action-stabilizers-of-vertices-ﬁxed",
-   "title": "The SL2 action : stabilizers of vertices, ﬁxed points and trans-",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-016-134-curves-and-valuations-32",
-   "title": "Curves and valuations . . . . . . . . . . . . . . . . . . . . . . 32",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-017-135-group-acting-on-a-tree-and-splitting-33",
-   "title": "Group acting on a tree and splitting . . . . . . . . . . . . . . 33",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-018-136-the-split-case-35",
-   "title": "The split case. . . . . . . . . . . . . . . . . . . . . . . . . . . . 35",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-019-137-the-non-split-case-36",
-   "title": "The non-split case . . . . . . . . . . . . . . . . . . . . . . . . 36",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-020-14-alexander-module-and-character-varieties-38",
-   "title": "Alexander module and character varieties . . . . . . . . . . . . . . . . 38",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-021-141-reducible-character-in-components-of-irreduc",
-   "title": "Reducible character in components of irreducible type of the",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-022-142-alexander-module-39",
-   "title": "Alexander module . . . . . . . . . . . . . . . . . . . . . . . . . 39",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-023-15-the-reidemeister-torsion-42",
-   "title": "The Reidemeister torsion . . . . . . . . . . . . . . . . . . . . . . . . . 42",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-024-151-first-deﬁnition-42",
-   "title": "First deﬁnition . . . . . . . . . . . . . . . . . . . . . . . . . . 42",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-025-152-second-deﬁnition-the-euler-isomorphism-43",
-   "title": "Second deﬁnition : the Euler isomorphism . . . . . . . . . . . 43",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-026-153-third-deﬁnition-torsion-of-an-exact-complex",
-   "title": "Third deﬁnition : torsion of an exact complex (Cayley formula) 44",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-027-2-the-adjoint-torsion-45",
-   "title": "The adjoint torsion 45",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-028-21-the-twisted-complex-with-adjoint-action-47",
-   "title": "The twisted complex with adjoint action . . . . . . . . . . . . . . . . 47",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-029-211-tangent-space-diﬀerential-forms-and-twisted",
-   "title": "Tangent space, diﬀerential forms and twisted cohomology . . . 47",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-030-212-computation-of-the-twisted-cohomology-49",
-   "title": "Computation of the twisted cohomology . . . . . . . . . . . . 49",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-031-22-the-adjoint-torsion-as-a-diﬀerential-form-49",
-   "title": "The adjoint torsion as a diﬀerential form . . . . . . . . . . . . . . . . 49",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-032-221-the-torsion-of-an-adρ-twisted-cellular-compl",
-   "title": "The torsion of an Ad◦ρ-twisted cellular complex . . . . . . . . 49",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-033-222-the-reidemeister-torsion-form-50",
-   "title": "The Reidemeister torsion form . . . . . . . . . . . . . . . . . . 50",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-034-223-examples-and-computations-50",
-   "title": "Examples and computations . . . . . . . . . . . . . . . . . . . 50",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-035-23-the-torsion-at-a-ﬁnite-point-53",
-   "title": "The torsion at a ﬁnite point . . . . . . . . . . . . . . . . . . . . . . . 53",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-036-231-proof-of-main-theorem-1-54",
-   "title": "Proof of Main Theorem 1 . . . . . . . . . . . . . . . . . . . . 54",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-037-232-interpretation-of-the-theorem-singularities",
-   "title": "Interpretation of the Theorem : singularities and Alexander",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-038-24-the-torsion-at-an-ideal-point-64",
-   "title": "The torsion at an ideal point . . . . . . . . . . . . . . . . . . . . . . . 64",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-039-241-an-example-a-direct-computation-of-the-torsi",
-   "title": "An example : a direct computation of the torsion of the trefoil",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-040-242-proof-of-theorem-202-the-case-whenρς-is-not",
-   "title": "Proof of theorem 2.0.2, the case whenρΣ is not residually abelian 72",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-041-243-the-case-when-ρς-is-residually-abelian-78",
-   "title": "The case when ρΣ is residually abelian . . . . . . . . . . . . . 78",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-042-244-back-to-examples-81",
-   "title": "Back to Examples . . . . . . . . . . . . . . . . . . . . . . . . . 81",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-043-3-the-standard-torsion-83",
-   "title": "The standard torsion 83",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-044-31-the-torsion-function-85",
-   "title": "The torsion function . . . . . . . . . . . . . . . . . . . . . . . . . . . 85",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-045-32-the-case-of-a-ﬁnite-character-86",
-   "title": "The case of a ﬁnite character . . . . . . . . . . . . . . . . . . . . . . . 86",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-046-321-proof-of-theorem-301-86",
-   "title": "Proof of Theorem 3.0.1 . . . . . . . . . . . . . . . . . . . . . . 86",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-047-322-some-computations-and-examples-87",
-   "title": "Some computations and examples . . . . . . . . . . . . . . . . 87",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-048-33-the-torsion-at-ideal-points-90",
-   "title": "The torsion at ideal points . . . . . . . . . . . . . . . . . . . . . . . . 90",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-049-331-the-split-case-90",
-   "title": "The split case . . . . . . . . . . . . . . . . . . . . . . . . . . . 90",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-050-introduction",
+   "id": "sec-000-introduction",
    "title": "Introduction",
    "pages": "6-8"
   },
   {
-   "id": "sec-051-2-1i1",
+   "id": "sec-001-2-1i1",
    "title": "(−1)i+1",
    "pages": "8-9"
   },
   {
-   "id": "sec-052-1-byhm-adρ-respectivelyhmρ-we-denote-the-twisted",
+   "id": "sec-002-1-byhm-adρ-respectivelyhmρ-we-denote-the-twisted",
    "title": "ByH∗(M, Ad◦ρ) (respectivelyH∗(M,ρ )), we denote the twisted cohomology",
    "pages": "9-9"
   },
   {
-   "id": "sec-053-2-whenever-ρ-π1m-sl2ov-we-denote-byhm-adρv-respe",
+   "id": "sec-003-2-whenever-ρ-π1m-sl2ov-we-denote-byhm-adρv-respe",
    "title": "Whenever ρ :π1(M)→ SL2(Ov), we denote byH∗(M, Ad◦ρ)v (respectively",
    "pages": "9-9"
   },
   {
-   "id": "sec-054-3-in-this-case-we-denote-byρ-π1m-sl2k-the-compos",
+   "id": "sec-004-3-in-this-case-we-denote-byρ-π1m-sl2k-the-compos",
    "title": "In this case, we denote by¯ρ : π1(M)→ SL2(k) the composition ofρ with",
    "pages": "9-9"
   },
   {
-   "id": "sec-055-4-forλ-π1mk-we-denote-byhmλ-the-twisted-cohomolo",
+   "id": "sec-005-4-forλ-π1mk-we-denote-byhmλ-the-twisted-cohomolo",
    "title": "Forλ :π1(M)→k∗, we denote byH∗(M,λ ) the twisted cohomology groups",
    "pages": "9-11"
   },
   {
-   "id": "sec-056-1-ifv-projects-to-an-irreducible-character-inxm",
+   "id": "sec-006-1-ifv-projects-to-an-irreducible-character-inxm",
    "title": "Ifv projects to an irreducible character inX(M), then the vanishing order of",
    "pages": "11-11"
   },
   {
-   "id": "sec-057-2-suppose-thatm-is-a-knot-complement-andm-is-a-m",
+   "id": "sec-007-2-suppose-thatm-is-a-knot-complement-andm-is-a-m",
    "title": "Suppose thatM is a knot complement andm is a meridian. Ifv projects to",
    "pages": "11-16"
   },
   {
-   "id": "sec-058-11-character-varieties",
+   "id": "sec-008-11-character-varieties",
    "title": "Character varieties",
    "pages": "16-16"
   },
   {
-   "id": "sec-059-111-representation-variety",
+   "id": "sec-009-111-representation-variety",
    "title": "Representation variety",
    "pages": "16-17"
   },
   {
-   "id": "sec-060-112-algebro-geometric-quotient",
+   "id": "sec-010-112-algebro-geometric-quotient",
    "title": "Algebro-geometric quotient",
    "pages": "17-19"
   },
   {
-   "id": "sec-061-113-traces-and-skein-algebra",
+   "id": "sec-011-113-traces-and-skein-algebra",
    "title": "Traces and skein algebra",
    "pages": "19-19"
   },
   {
-   "id": "sec-062-0-after-right-multiplying-bya1b-and-taking-the-t",
+   "id": "sec-012-0-after-right-multiplying-bya1b-and-taking-the-t",
    "title": "After right-multiplying byA−1B and taking the trace, one obtains Tr(AB)−",
    "pages": "19-21"
   },
   {
-   "id": "sec-063-114-characters-reducibility-and-irreducibility",
+   "id": "sec-013-114-characters-reducibility-and-irreducibility",
    "title": "Characters, reducibility and irreducibility",
    "pages": "21-23"
   },
   {
-   "id": "sec-064-115-saitos-theorem-and-some-consequences",
+   "id": "sec-014-115-saitos-theorem-and-some-consequences",
    "title": "Saito’s Theorem and some consequences",
    "pages": "23-24"
   },
   {
-   "id": "sec-065-116-the-augmented-variety",
+   "id": "sec-015-116-the-augmented-variety",
    "title": "The augmented variety",
    "pages": "24-25"
   },
   {
-   "id": "sec-066-117-the-tautological-representation",
+   "id": "sec-016-117-the-tautological-representation",
    "title": "The tautological representation",
    "pages": "25-25"
   },
   {
-   "id": "sec-067-118-examples",
+   "id": "sec-017-118-examples",
    "title": "Examples",
    "pages": "25-27"
   },
   {
-   "id": "sec-068-12-twisted-cohomology",
+   "id": "sec-018-12-twisted-cohomology",
    "title": "Twisted cohomology",
    "pages": "27-30"
   },
   {
-   "id": "sec-069-13-culler-shalen-theory-group-acting-on-trees-an",
+   "id": "sec-019-13-culler-shalen-theory-group-acting-on-trees-an",
    "title": "Culler-Shalen theory, group acting on trees and",
    "pages": "30-30"
   },
   {
-   "id": "sec-070-131-the-tree",
+   "id": "sec-020-131-the-tree",
    "title": "The tree",
    "pages": "30-31"
   },
   {
-   "id": "sec-071-132-link-of-a-vertex-and-ends-of-the-tree",
+   "id": "sec-021-132-link-of-a-vertex-and-ends-of-the-tree",
    "title": "Link of a vertex and ends of the tree",
    "pages": "31-31"
   },
   {
-   "id": "sec-072-133-the-sl2-action-stabilizers-of-vertices-ﬁxed",
+   "id": "sec-022-133-the-sl2-action-stabilizers-of-vertices-ﬁxed",
    "title": "The SL2 action : stabilizers of vertices, ﬁxed points and",
    "pages": "31-32"
   },
   {
-   "id": "sec-073-1-elliptic-elements",
+   "id": "sec-023-1-elliptic-elements",
    "title": "Elliptic elements",
    "pages": "32-32"
   },
   {
-   "id": "sec-074-2-hyperbolic-elements",
+   "id": "sec-024-2-hyperbolic-elements",
    "title": "Hyperbolic elements",
    "pages": "32-33"
   },
   {
-   "id": "sec-075-134-curves-and-valuations",
+   "id": "sec-025-134-curves-and-valuations",
    "title": "Curves and valuations",
    "pages": "33-34"
   },
   {
-   "id": "sec-076-135-group-acting-on-a-tree-and-splitting",
+   "id": "sec-026-135-group-acting-on-a-tree-and-splitting",
    "title": "Group acting on a tree and splitting",
    "pages": "34-36"
   },
   {
-   "id": "sec-077-2-for-each-componentσi-of-σ-the-homomorphismπ1σi",
+   "id": "sec-027-2-for-each-componentσi-of-σ-the-homomorphismπ1σi",
    "title": "For each componentΣi of Σ, the homomorphismπ1(Σi)→ π1(M) induced",
    "pages": "36-37"
   },
   {
-   "id": "sec-078-137-the-non-split-case",
+   "id": "sec-028-137-the-non-split-case",
    "title": "The non-split case",
    "pages": "37-39"
   },
   {
-   "id": "sec-079-14-alexander-module-and-character-varieties",
+   "id": "sec-029-14-alexander-module-and-character-varieties",
    "title": "Alexander module and character varieties",
    "pages": "39-39"
   },
   {
-   "id": "sec-080-141-reducible-character-in-components-of-irreduc",
+   "id": "sec-030-141-reducible-character-in-components-of-irreduc",
    "title": "Reducible character in components of irreducible type",
    "pages": "39-43"
   },
   {
-   "id": "sec-081-2-for-the-ﬁgure-eight-knot-the-component-of-irre",
+   "id": "sec-031-2-for-the-ﬁgure-eight-knot-the-component-of-irre",
    "title": "For the ﬁgure-eight knot, the component of irreducible type and the com-",
    "pages": "43-43"
   },
   {
-   "id": "sec-082-15-the-reidemeister-torsion",
+   "id": "sec-032-15-the-reidemeister-torsion",
    "title": "The Reidemeister torsion",
    "pages": "43-43"
   },
   {
-   "id": "sec-083-151-first-deﬁnition",
+   "id": "sec-033-151-first-deﬁnition",
    "title": "First deﬁnition",
    "pages": "43-44"
   },
   {
-   "id": "sec-084-152-second-deﬁnition-the-euler-isomorphism",
+   "id": "sec-034-152-second-deﬁnition-the-euler-isomorphism",
    "title": "Second deﬁnition : the Euler isomorphism",
    "pages": "44-45"
   },
   {
-   "id": "sec-085-153-third-deﬁnition-torsion-of-an-exact-complex",
+   "id": "sec-035-153-third-deﬁnition-torsion-of-an-exact-complex",
    "title": "Third deﬁnition : torsion of an exact complex (Cayley",
    "pages": "45-48"
   },
   {
-   "id": "sec-086-21-the-twisted-complex-with-adjoint-action",
+   "id": "sec-036-21-the-twisted-complex-with-adjoint-action",
    "title": "The twisted complex with adjoint action",
    "pages": "48-48"
   },
   {
-   "id": "sec-087-211-tangent-space-diﬀerential-forms-and-twisted",
+   "id": "sec-037-211-tangent-space-diﬀerential-forms-and-twisted",
    "title": "Tangent space, diﬀerential forms and twisted cohomo-",
    "pages": "48-50"
   },
   {
-   "id": "sec-088-212-computation-of-the-twisted-cohomology",
+   "id": "sec-038-212-computation-of-the-twisted-cohomology",
    "title": "Computation of the twisted cohomology",
    "pages": "50-50"
   },
   {
-   "id": "sec-089-22-the-adjoint-torsion-as-a-diﬀerential-form",
+   "id": "sec-039-22-the-adjoint-torsion-as-a-diﬀerential-form",
    "title": "The adjoint torsion as a diﬀerential form",
    "pages": "50-50"
   },
   {
-   "id": "sec-090-221-the-torsion-of-an-adρ-twisted-cellular-compl",
+   "id": "sec-040-221-the-torsion-of-an-adρ-twisted-cellular-compl",
    "title": "The torsion of an Ad◦ρ-twisted cellular complex",
    "pages": "50-51"
   },
   {
-   "id": "sec-091-222-the-reidemeister-torsion-form",
+   "id": "sec-041-222-the-reidemeister-torsion-form",
    "title": "The Reidemeister torsion form",
    "pages": "51-51"
   },
   {
-   "id": "sec-092-223-examples-and-computations",
+   "id": "sec-042-223-examples-and-computations",
    "title": "Examples and computations",
    "pages": "51-54"
   },
   {
-   "id": "sec-093-1-wheny-2x-we-have-a-double-point-of-typey2x6-it",
+   "id": "sec-043-1-wheny-2x-we-have-a-double-point-of-typey2x6-it",
    "title": "Wheny→ 2,x→∞ , we have a double point of type”y2−x6”, itsδ-invariant",
    "pages": "54-54"
   },
   {
-   "id": "sec-094-2-when-yx-we-have-a-double-point-of-typey2x8-its",
+   "id": "sec-044-2-when-yx-we-have-a-double-point-of-typey2x8-its",
    "title": "When y,x→∞ , we have a double point of type”y2−x8”, itsδ-invariant is",
    "pages": "54-54"
   },
   {
-   "id": "sec-095-23-the-torsion-at-a-ﬁnite-point",
+   "id": "sec-045-23-the-torsion-at-a-ﬁnite-point",
    "title": "The torsion at a ﬁnite point",
    "pages": "54-55"
   },
   {
-   "id": "sec-096-231-proof-of-main-theorem-1",
+   "id": "sec-046-231-proof-of-main-theorem-1",
    "title": "Proof of Main Theorem 1",
    "pages": "55-58"
   },
   {
-   "id": "sec-097-232-interpretationofthetheoremsingularitiesandal",
+   "id": "sec-047-232-interpretationofthetheoremsingularitiesandal",
    "title": "InterpretationoftheTheorem:singularitiesandAlexan-",
    "pages": "58-65"
   },
   {
-   "id": "sec-098-24-the-torsion-at-an-ideal-point",
+   "id": "sec-048-24-the-torsion-at-an-ideal-point",
    "title": "The torsion at an ideal point",
    "pages": "65-66"
   },
   {
-   "id": "sec-099-2-moreover-it-is-a-consequence-from-prz83-propos",
+   "id": "sec-049-2-moreover-it-is-a-consequence-from-prz83-propos",
    "title": "Moreover, it is a consequence from [Prz83, Proposition 4.3] that as soon as",
    "pages": "66-66"
   },
   {
-   "id": "sec-100-3-finally-the-hypothesis-that-the-irreducible-ta",
+   "id": "sec-050-3-finally-the-hypothesis-that-the-irreducible-ta",
    "title": "Finally, the hypothesis that the irreducible tautological representationρ :",
    "pages": "66-66"
   },
   {
-   "id": "sec-101-241-an-example-a-direct-computation-of-the-torsi",
+   "id": "sec-051-241-an-example-a-direct-computation-of-the-torsi",
    "title": "An example : a direct computation of the torsion of the",
    "pages": "66-67"
   },
   {
-   "id": "sec-102-1-if-the-upper-right-entry-ofρa-was-0-then-again",
+   "id": "sec-052-1-if-the-upper-right-entry-ofρa-was-0-then-again",
    "title": "If the upper-right entry ofρ(a) was 0, then againρ would be reducible, hence we",
    "pages": "67-70"
   },
   {
-   "id": "sec-103-1-t-inhef-a-direct-computation-shows-that-adρaff",
+   "id": "sec-053-1-t-inhef-a-direct-computation-shows-that-adρaff",
    "title": "(∂t)} in{H,E,F }. A direct computation shows that Adρ(a)F−F = ∂t,",
    "pages": "70-73"
   },
   {
-   "id": "sec-104-242-proof-of-theorem-202-the-case-when-ρς-is-not",
+   "id": "sec-054-242-proof-of-theorem-202-the-case-when-ρς-is-not",
    "title": "Proof of theorem 2.0.2, the case when ρΣ is not resi-",
    "pages": "73-74"
   },
   {
-   "id": "sec-105-2-notice-that-we-have-isomorphisms-ky",
+   "id": "sec-055-2-notice-that-we-have-isomorphisms-ky",
    "title": "Notice that we have isomorphisms :k(Y )",
    "pages": "74-75"
   },
   {
-   "id": "sec-106-3-since-ρς-is-residually-non-abelian-and-so-areρ",
+   "id": "sec-056-3-since-ρς-is-residually-non-abelian-and-so-areρ",
    "title": "Since ρΣ is residually non abelian and so areρ1,ρ′",
    "pages": "75-75"
   },
   {
-   "id": "sec-107-2-un-u1",
+   "id": "sec-057-2-un-u1",
    "title": "Un =U−1",
    "pages": "75-76"
   },
   {
-   "id": "sec-108-0-inr0",
+   "id": "sec-058-0-inr0",
    "title": "In−r0",
    "pages": "76-79"
   },
   {
-   "id": "sec-109-243-the-case-when-ρς-is-residually-abelian",
+   "id": "sec-059-243-the-case-when-ρς-is-residually-abelian",
    "title": "The case when ρΣ is residually abelian",
    "pages": "79-79"
   },
   {
-   "id": "sec-110-247-then",
+   "id": "sec-060-247-then",
    "title": "Then",
    "pages": "79-82"
   },
   {
-   "id": "sec-111-244-back-to-examples",
+   "id": "sec-061-244-back-to-examples",
    "title": "Back to Examples",
    "pages": "82-85"
   },
   {
-   "id": "sec-112-31-the-torsion-function",
+   "id": "sec-062-31-the-torsion-function",
    "title": "The torsion function",
    "pages": "85-87"
   },
   {
-   "id": "sec-113-32-the-case-of-a-ﬁnite-character",
+   "id": "sec-063-32-the-case-of-a-ﬁnite-character",
    "title": "The case of a ﬁnite character",
    "pages": "87-87"
   },
   {
-   "id": "sec-114-321-proof-of-theorem-301",
+   "id": "sec-064-321-proof-of-theorem-301",
    "title": "Proof of Theorem 3.0.1",
    "pages": "87-88"
   },
   {
-   "id": "sec-115-322-some-computations-and-examples",
+   "id": "sec-065-322-some-computations-and-examples",
    "title": "Some computations and examples",
    "pages": "88-91"
   },
   {
-   "id": "sec-116-33-the-torsion-at-ideal-points",
+   "id": "sec-066-33-the-torsion-at-ideal-points",
    "title": "The torsion at ideal points",
    "pages": "91-91"
   },
   {
-   "id": "sec-117-331-the-split-case",
+   "id": "sec-067-331-the-split-case",
    "title": "The split case",
    "pages": "91-92"
   },
   {
-   "id": "sec-118-2-the-complement-of-anyσi-in-m-is-the-disjoint-u",
+   "id": "sec-068-2-the-complement-of-anyσi-in-m-is-the-disjoint-u",
    "title": "The complement of anyΣi in M is the disjoint union of two handlebodies",
    "pages": "92-95"
   },
   {
-   "id": "sec-119-2-we-will-denote-by-ρiσ-the-restriction-of",
+   "id": "sec-069-2-we-will-denote-by-ρiσ-the-restriction-of",
    "title": "We will denote by ¯ρi,Σ the restriction of",
    "pages": "95-96"
   },
   {
-   "id": "sec-120-332-the-non-split-case",
+   "id": "sec-070-332-the-non-split-case",
    "title": "The non-split case",
    "pages": "96-100"
   },
   {
-   "id": "sec-121-3-ifδ1δ-mvh-such-thatδiδjvh-for-anyij-then-for-a",
+   "id": "sec-071-3-ifδ1δ-mvh-such-thatδiδjvh-for-anyij-then-for-a",
    "title": "Ifδ1,...,δ m∈Vh such thatδiδj∈Vh for anyi<j , then for any permutation",
    "pages": "100-101"
   },
   {
-   "id": "sec-122-2-we-havehγδ-φγhδhγ1δ-buthδ-0-andhγ1δhδ1γ-0",
+   "id": "sec-072-2-we-havehγδ-φγhδhγ1δ-buthδ-0-andhγ1δhδ1γ-0",
    "title": "We haveh(γδ) =φ(γ)h(δ)−h(γ−1δ) buth(δ) = 0 andh(γ−1δ)+h(δ−1γ) = 0,",
    "pages": "101-101"
   },
   {
-   "id": "sec-123-3-we-ﬁrst-remark-that-equation-a1-implies-that-i",
+   "id": "sec-073-3-we-ﬁrst-remark-that-equation-a1-implies-that-i",
    "title": "We ﬁrst remark that Equation (A.1) implies that ifδi,δj,δiδj ∈ Vh, so is",
    "pages": "101-102"
   },
   {
-   "id": "sec-124-2-for-anyγ-γ",
+   "id": "sec-074-2-for-anyγ-γ",
    "title": "For anyγ∈ Γ,",
    "pages": "102-103"
   },
   {
-   "id": "sec-125-3-letusprovethatforany-γδ-γρ-γδ-ργρδlet-c",
+   "id": "sec-075-3-letusprovethatforany-γδ-γρ-γδ-ργρδlet-c",
    "title": "Letusprovethatforany γδ∈ Γ,ρ (γδ) =ρ(γ)ρ(δ).Let C =",
    "pages": "103-104"
   },
   {
-   "id": "sec-126-4-a-direct-computation-shows-thattγ2-φγtγ-te-0-i",
+   "id": "sec-076-4-a-direct-computation-shows-thattγ2-φγtγ-te-0-i",
    "title": "A direct computation shows thatTγ2 =φ(γ)Tγ +Te = 0, in particularρ(γ)2−",
    "pages": "104-104"
   },
   {
-   "id": "sec-127-5-finally-we-prove-the-unicity-as-follows-for-an",
+   "id": "sec-077-5-finally-we-prove-the-unicity-as-follows-for-an",
    "title": "Finally, we prove the unicity as follows : for any representationρ′ that satisﬁes",
    "pages": "104-110"
   }

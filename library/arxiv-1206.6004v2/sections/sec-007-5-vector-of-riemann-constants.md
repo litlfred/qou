@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1206.6004v2
-doc_title: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 8 (2012), 065, 20 pages Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆"
+doc_title: ""
 section_id: sec-007-5-vector-of-riemann-constants
 section_title: "Vector of Riemann constants"
 section_number: 5
 pages: 15-16
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
-doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 8 (2012), 065, 20 pages Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4"
+doc_brief: "Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr´ ıguez have provided the most detailed study of the curve thus far via a hyperbolic model."
 ---
 5 Vector of Riemann constants
 We shall now calculate the vector of Riemann constants for Bring’s curve determining various

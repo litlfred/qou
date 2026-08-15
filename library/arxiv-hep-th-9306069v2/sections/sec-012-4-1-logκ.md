@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics"
+doc_title: "Department of Physics"
 section_id: sec-012-4-1-logκ
 section_title: "(1 − log(κ"
 section_number: 4
 pages: 25-27
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
+doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
 ---
 4 +y+P∞)). (3. 26)
 Diﬀerentiating twice with respect to y+ and transforming to tortoise coordinates gives

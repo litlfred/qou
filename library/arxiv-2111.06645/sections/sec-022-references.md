@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2111.06645
-doc_title: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 19 (2023), 082, 39 pages"
+doc_title: ""
 section_id: sec-022-references
 section_title: "References"
 section_number: null
 pages: 37-39
 source_pdf: 2304.09377v2.pdf
 source_sha256: 76ae6c6058f4a9f9
-doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 19 (2023), 082, 39 pages — We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be"
+doc_brief: "We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state integral of a knot complement with"
 ---
 [1] An N., Li Y., On the quantum modularity conjecture for the ( −2, 3, 7)-pretzel knot, in preparation.
 [2] Andersen J.E., Garoufalidis S., Kashaev R., The volume conjecture for the KLV state-integral, in prepara-

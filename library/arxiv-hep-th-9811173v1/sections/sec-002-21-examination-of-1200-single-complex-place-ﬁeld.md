@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9811173v1
-doc_title: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links"
+doc_title: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The larg"
 section_id: sec-002-21-examination-of-1200-single-complex-place-ﬁeld
 section_title: "Examination of 1,200 single-complex-place ﬁelds"
 section_number: 2.1
 pages: 3-4
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
+doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the"
 ---
 It became clear, from studying [16, 17, 18, 19], that there are uns peciﬁed rational rela-
 tions of the form (2) between Dedekind zeta values and volumes of s ome, but not all,

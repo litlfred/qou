@@ -1,13 +1,13 @@
 ---
 doc_id: revmodphys97025002pdf
-doc_title: "CODATA recommended values of the fundamental physical constants: 2022 *"
+doc_title: "CONTENTS I. Introduction 2 A. Background 2 B. Overview of the 2022 adjustment 2 1. Relative atomic masses 3 2. Ionization and binding energies 3 3. Hydrogen and deuterium transitio"
 section_id: sec-019-a-theory-of-hydrogen-and-deuterium-energy-levels
 section_title: "A. Theory of hydrogen and deuterium energy levels"
 section_number: null
 pages: 10-10
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
-doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
+doc_brief: "CONTENTS I. Introduction 2 A. Background 2 B. Overview of the 2022 adjustment 2 1. Relative atomic masses 3 2. Ionization and binding energies 3 3. Hydrogen and deuterium transition energies 3 — 73 se"
 ---
 This section describes the theory of hydrogen and deu-
 terium energy levels. References to literature cited in earlier

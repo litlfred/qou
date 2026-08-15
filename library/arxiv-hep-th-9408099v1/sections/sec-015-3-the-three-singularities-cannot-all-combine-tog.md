@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg"
+doc_title: "E. Witten Institute for Advanced Study"
 section_id: sec-015-3-the-three-singularities-cannot-all-combine-tog
 section_title: "The three singularities cannot all combine together, since the fundamental group of the"
 section_number: 3

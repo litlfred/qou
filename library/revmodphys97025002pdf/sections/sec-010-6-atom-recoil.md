@@ -1,13 +1,13 @@
 ---
 doc_id: revmodphys97025002pdf
-doc_title: "CODATA recommended values of the fundamental physical constants: 2022 *"
+doc_title: "CONTENTS I. Introduction 2 A. Background 2 B. Overview of the 2022 adjustment 2 1. Relative atomic masses 3 2. Ionization and binding energies 3 3. Hydrogen and deuterium transitio"
 section_id: sec-010-6-atom-recoil
 section_title: "Atom recoil"
 section_number: 6
 pages: 4-4
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
-doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
+doc_brief: "CONTENTS I. Introduction 2 A. Background 2 B. Overview of the 2022 adjustment 2 1. Relative atomic masses 3 2. Ionization and binding energies 3 3. Hydrogen and deuterium transition energies 3 — 73 se"
 ---
 The two input data h=mð87RbÞ and h=mð133CsÞ in the 2022
 adjustment obtained using atom interferometry are also of

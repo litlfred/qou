@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg"
+doc_title: "E. Witten Institute for Advanced Study"
 section_id: sec-020-10-the-singularities-for-nf-4
 section_title: "The singularities for Nf = 4"
 section_number: 10

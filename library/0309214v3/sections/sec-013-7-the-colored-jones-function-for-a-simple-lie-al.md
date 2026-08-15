@@ -1,13 +1,13 @@
 ---
 doc_id: 0309214v3
-doc_title: "ISSN 1364-0380 (on line) 1465-3060 (printed) 1253"
+doc_title: "School of Mathematics, Georgia Institute of Technology"
 section_id: sec-013-7-the-colored-jones-function-for-a-simple-lie-al
 section_title: "The colored Jones function for a simple Lie algebra"
 section_number: 7
 pages: 24-24
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
+doc_brief: "School of Mathematics, Georgia Institute of Technology — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l"
 ---
 Fix a simple complex Lie algebra g of rank ℓ. For every knot K and every
 ﬁnite-dimensional g–module V , called the color of the knot, one can deﬁne

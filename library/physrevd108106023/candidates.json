@@ -8,8 +8,8 @@
   "file": "PhysRevD.108.106023.pdf"
  },
  "provenance": {
-  "title": "Knot-quiver correspondence for double twist knots Vivek Kumar Singh *",
-  "authors": "Center for Quantum and Topological Systems (CQTS), NYUAD Research Institute",
+  "title": "I. INTRODUCTION Knot-quiver correspondence (KQC) conjectured by Kucharski-Reineke-Stosic-Sulkowski [1] provides a new encoding of HOMFL Y -PT invariants of knots in terms of the representation theory of quivers. Such a correspondence",
+  "authors": null,
   "arxiv": null,
   "doi": "10.1103/PhysRevD.108.106023"
  },
@@ -29,9 +29,9 @@
    "number": null,
    "name": null,
    "statement": "The r-colored Jones polynomial for double",
-   "section_file": "sections/sec-002-iii-knot-quiver-correspondence.md",
-   "section_title": "KNOT-QUIVER CORRESPONDENCE",
-   "pages": "3-5",
+   "section_file": "sections/sec-001-ii-double-twist-knots.md",
+   "section_title": "DOUBLE TWIST KNOTS",
+   "pages": "2-5",
    "formalization_candidate": true,
    "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
    "route_to": "formalizer"
@@ -42,9 +42,9 @@
    "number": null,
    "name": null,
    "statement": "The generic structure of the quiver matrix",
-   "section_file": "sections/sec-002-iii-knot-quiver-correspondence.md",
-   "section_title": "KNOT-QUIVER CORRESPONDENCE",
-   "pages": "3-5",
+   "section_file": "sections/sec-001-ii-double-twist-knots.md",
+   "section_title": "DOUBLE TWIST KNOTS",
+   "pages": "2-5",
    "formalization_candidate": false,
    "formalization_note": null,
    "route_to": null

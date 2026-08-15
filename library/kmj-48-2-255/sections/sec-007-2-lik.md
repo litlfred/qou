@@ -1,13 +1,13 @@
 ---
 doc_id: kmj-48-2-255
-doc_title: "KYUNGPOOK Math. J. 48(2008), 255-280 A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata"
+doc_title: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata"
 section_id: sec-007-2-lik
 section_title: "(−lik )"
 section_number: 2
 pages: 13-13
 source_pdf: KMJ-48-2-255.pdf
 source_sha256: 720279042c6d762b
-doc_brief: "KYUNGPOOK Math. J. 48(2008), 255-280 A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata — We derive a formula for the colored Jones polynomial of 2-bridge knots."
+doc_brief: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata — We derive a formula for the colored Jones polynomial of 2-bridge knots."
 ---
 and the special blob gives ∑p′
 j=1 lj.

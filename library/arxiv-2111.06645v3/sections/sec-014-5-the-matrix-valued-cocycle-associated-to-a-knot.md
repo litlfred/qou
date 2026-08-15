@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 20 (2024), 055, 87 pages"
+doc_title: ""
 section_id: sec-014-5-the-matrix-valued-cocycle-associated-to-a-knot
 section_title: "The matrix-valued cocycle associated to a knot"
 section_number: 5
 pages: 30-31
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 20 (2024), 055, 87 pages — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with"
+doc_brief: "We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C)"
 ---
 Let us define, for a fixed knot K (suppressed from the notation as usual), matrix γ∈ SL2(Z)
 and number x∈ Q ∖

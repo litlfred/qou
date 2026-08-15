@@ -1,12 +1,12 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 20 (2024), 055, 87 pages"
+doc_title: ""
 section_id: sec-019-part-ii-complements
 section_title: "Part II. Complements"
 section_number: null
 pages: 43-43
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 20 (2024), 055, 87 pages — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with"
+doc_brief: "We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C)"
 ---
 

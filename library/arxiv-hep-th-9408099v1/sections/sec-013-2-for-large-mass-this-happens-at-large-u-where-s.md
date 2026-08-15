@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg"
+doc_title: "E. Witten Institute for Advanced Study"
 section_id: sec-013-2-for-large-mass-this-happens-at-large-u-where-s
 section_title: "For large mass this happens at large |u| where semiclassical techniques are"
 section_number: 2

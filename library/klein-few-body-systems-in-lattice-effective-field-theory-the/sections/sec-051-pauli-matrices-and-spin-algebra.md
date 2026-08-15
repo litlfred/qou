@@ -1,13 +1,13 @@
 ---
 doc_id: klein-few-body-systems-in-lattice-effective-field-theory-the
-doc_title: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Frie"
+doc_title: "Bonn, November 2018"
 section_id: sec-051-pauli-matrices-and-spin-algebra
 section_title: "Pauli matrices and spin algebra"
 section_number: null
 pages: 90-91
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Unive"
+doc_brief: "Bonn, November 2018 — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
 ---
 The Pauli matrices are the generators of the SU(2) algebra. They are deﬁned as
 σ1 =

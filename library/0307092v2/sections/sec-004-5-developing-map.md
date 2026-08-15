@@ -1,13 +1,13 @@
 ---
 doc_id: 0307092v2
-doc_title: "ISSN 1364-0380 (on line) 1465-3060 (printed) 413"
+doc_title: "Published: 14 February 2004"
 section_id: sec-004-5-developing-map
 section_title: "Developing map"
 section_number: 5
 pages: 18-23
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
-doc_brief: "We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
+doc_brief: "Published: 14 February 2004 — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
 ---
 H
 3

@@ -1,13 +1,13 @@
 ---
 doc_id: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin
-doc_title: "Matem´ atica Contemporˆ anea, Vol. 34, 251–283 http://doi.org/10.21711/231766362008/rmc3411 © 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV "
+doc_title: "© 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS"
 section_id: sec-005-sketch-of-the-algebraic-proof-of-theorem-a
 section_title: "Sketch of the algebraic proof of Theorem A"
 section_number: null
 pages: 17-23
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
-doc_brief: "Matem´ atica Contemporˆ anea, Vol. 34, 251–283 http://doi.org/10.21711/231766362008/rmc3411 © 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-comp"
+doc_brief: "© 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John"
 ---
 This proof is organized around the following key diagram:
 The left half represents the geometric-topological problem we are trying

@@ -1,13 +1,13 @@
 ---
 doc_id: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin
-doc_title: "Matem´ atica Contemporˆ anea, Vol. 34, 251–283 http://doi.org/10.21711/231766362008/rmc3411 © 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV "
+doc_title: "© 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS"
 section_id: sec-006-sketch-of-the-proof-of-theorem-b
 section_title: "Sketch of the proof of Theorem B"
 section_number: null
 pages: 23-25
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
-doc_brief: "Matem´ atica Contemporˆ anea, Vol. 34, 251–283 http://doi.org/10.21711/231766362008/rmc3411 © 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-comp"
+doc_brief: "© 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John"
 ---
 Let L be a 3-component link in S3 with pairwise linking numbers p, q
 andr all zero. We saw in Theorem A that these numbers are the degrees

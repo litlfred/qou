@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics"
+doc_title: "Department of Physics"
 section_id: sec-018-51-microstructure-of-the-stretched-horizon
 section_title: "Microstructure of the stretched horizon"
 section_number: 5.1
 pages: 37-40
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
+doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
 ---
 Consider a quantum ﬁeld theory in a two-dimensional spaceti me with a strictly time-like
 boundary. Suppose the boundary is stationary at σ = 0, except for a brief time interval

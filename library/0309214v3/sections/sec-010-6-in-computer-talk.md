@@ -1,13 +1,13 @@
 ---
 doc_id: 0309214v3
-doc_title: "ISSN 1364-0380 (on line) 1465-3060 (printed) 1253"
+doc_title: "School of Mathematics, Georgia Institute of Technology"
 section_id: sec-010-6-in-computer-talk
 section_title: "In computer talk"
 section_number: 6
 pages: 19-20
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
+doc_brief: "School of Mathematics, Georgia Institute of Technology — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l"
 ---
 In this section we will show that Proposition 3.7 can be imple mented by com-
 puter.

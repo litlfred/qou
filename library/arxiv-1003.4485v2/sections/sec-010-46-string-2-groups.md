@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1003.4485v2
-doc_title: "An Invitation to Higher Gauge Theory"
+doc_title: "email: baez@math.ucr.edu huerta@math.ucr.edu"
 section_id: sec-010-46-string-2-groups
 section_title: "String 2-Groups"
 section_number: 4.6
 pages: 40-44
 source_pdf: 1003.4485v2.pdf
 source_sha256: 714d73873cecd73a
-doc_brief: "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles."
+doc_brief: "email: baez@math.ucr.edu huerta@math.ucr.edu — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles."
 ---
 The Lie 2-groups discussed so far are easy to construct. The str ing 2-group is
 considerably more subtle. Ultimately it forces upon us a deeper conc eption of

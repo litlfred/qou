@@ -1,13 +1,13 @@
 ---
 doc_id: revmodphys97025002pdf
-doc_title: "CODATA recommended values of the fundamental physical constants: 2022 *"
+doc_title: "CONTENTS I. Introduction 2 A. Background 2 B. Overview of the 2022 adjustment 2 1. Relative atomic masses 3 2. Ionization and binding energies 3 3. Hydrogen and deuterium transitio"
 section_id: sec-009-5-electron-magnetic-moment-anomaly
 section_title: "Electron magnetic-moment anomaly"
 section_number: 5
 pages: 4-4
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
-doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
+doc_brief: "CONTENTS I. Introduction 2 A. Background 2 B. Overview of the 2022 adjustment 2 1. Relative atomic masses 3 2. Ionization and binding energies 3 3. Hydrogen and deuterium transition energies 3 — 73 se"
 ---
 Included as an input datum in the 2022 adjustment is a new
 experimental value of ae with ur of 1.1 × 10−10, which is 2.2

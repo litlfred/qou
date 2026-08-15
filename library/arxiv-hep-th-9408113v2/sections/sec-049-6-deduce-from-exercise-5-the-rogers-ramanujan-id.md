@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV"
+doc_title: "Steklov Mathematical Institute"
 section_id: sec-049-6-deduce-from-exercise-5-the-rogers-ramanujan-id
 section_title: "Deduce from Exercise 5 the Rogers-Ramanujan identities ( a = 0 or 1)"
 section_number: 6
 pages: 43-44
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "Steklov Mathematical Institute — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 ∑
 j≥0

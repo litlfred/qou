@@ -1,13 +1,13 @@
 ---
 doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
-doc_title: "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343–354 Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve Michihiko"
+doc_title: "Michihiko Fujii 1. Introduction"
 section_id: sec-010-appendix
 section_title: "Appendix"
 section_number: null
 pages: 10-12
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
-doc_brief: "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343–354 Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve Michihiko Fujii — 12 sections"
+doc_brief: "Michihiko Fujii 1. Introduction — 12 sections: Introduction; Deformation of hyperbolic structur; A birational map from the deformat"
 ---
 In this appendix, we explicitly state the addition law on the elliptic curve
 E : y2 + xy + y = x3 + x2 (see Knapp [6] or Ueno [11]). The elliptic curve E

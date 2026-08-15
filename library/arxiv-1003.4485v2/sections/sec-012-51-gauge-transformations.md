@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1003.4485v2
-doc_title: "An Invitation to Higher Gauge Theory"
+doc_title: "email: baez@math.ucr.edu huerta@math.ucr.edu"
 section_id: sec-012-51-gauge-transformations
 section_title: "Gauge Transformations"
 section_number: 5.1
 pages: 44-46
 source_pdf: 1003.4485v2.pdf
 source_sha256: 714d73873cecd73a
-doc_brief: "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles."
+doc_brief: "email: baez@math.ucr.edu huerta@math.ucr.edu — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles."
 ---
 or nontrivial 2-bundles. Now it is time to begin correcting these over sights.
 5.1 Gauge Transformations

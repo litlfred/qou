@@ -1,13 +1,13 @@
 ---
 doc_id: deligne-mostow-1986
-doc_title: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW"
+doc_title: ""
 section_id: sec-001-8-p-deligne-and-g-d-mostow
 section_title: "P. DELIGNE AND G. D. MOSTOW"
 section_number: 8
 pages: 5-6
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
-doc_brief: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
+doc_brief: "deligne-mostow-1986 — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 dromy group of the hypergeometric function (3") is a lattice in the projective unitary
 group PU(i,rf), i.e. is discrete and of finite covolume.

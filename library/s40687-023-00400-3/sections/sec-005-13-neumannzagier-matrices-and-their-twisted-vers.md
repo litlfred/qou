@@ -1,13 +1,13 @@
 ---
 doc_id: s40687-023-00400-3
-doc_title: "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 https://doi.org/10.1007/s40687-023-00400-3 RESEARCH Twisted Neumann–Zagier matrices StavrosGaroufalidis1,2* andSeokbeomYoon 1 *Co"
+doc_title: "bonn.mpg.de/stavros 2MaxPlanckInstitutefor Mathematics,Bonn,Germany Fulllistofauthorinformationis availableattheendofthearticle DedicatedtoWalterNeumann andDonZagier,withadmiration"
 section_id: sec-005-13-neumannzagier-matrices-and-their-twisted-vers
 section_title: "Neumann–Zagier matrices and their twisted version"
 section_number: 1.3
 pages: 4-7
 source_pdf: s40687-023-00400-3.pdf
 source_sha256: fd7638a8cf512a99
-doc_brief: "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 https://doi.org/10.1007/s40687-023-00400-3 RESEARCH Twisted Neumann–Zagier matrices StavrosGaroufalidis1,2* andSeokbeomYoon 1 *Correspondence: — TheN"
+doc_brief: "bonn.mpg.de/stavros 2MaxPlanckInstitutefor Mathematics,Bonn,Germany Fulllistofauthorinformationis availableattheendofthearticle DedicatedtoWalterNeumann andDonZagier,withadmiration — TheNeumann–Zagier"
 ---
 Having already discussed the torsion and twisted torsion, we now recall some basic facts
 from ideal triangulations of 3-manifolds and their gluing equations, following [22,26].

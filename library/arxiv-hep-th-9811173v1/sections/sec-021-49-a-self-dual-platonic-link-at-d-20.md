@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9811173v1
-doc_title: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links"
+doc_title: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The larg"
 section_id: sec-021-49-a-self-dual-platonic-link-at-d-20
 section_title: "A self-dual platonic link at D = −20"
 section_number: 4.9
 pages: 12-12
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
+doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the"
 ---
 The reader might now expect us to consider the case D = −19. For reasons that will
 be given in Section 5, we skip to D = −20, where we were rewarded by the splendidly

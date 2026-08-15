@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV"
+doc_title: "Steklov Mathematical Institute"
 section_id: sec-063-v-kac-kac-141210-for-the-inﬁnite-rank-aﬃne-algeb
 section_title: "Kac ([Kac], (14.12.10)): for the inﬁnite rank aﬃne algebr a of type A∞"
 section_number: V
 pages: 63-68
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "Steklov Mathematical Institute — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 dimqL(Λ s1 + Λ s2 +··· + Λ sn) = 1
 (q)n

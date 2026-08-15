@@ -1,13 +1,13 @@
 ---
 doc_id: deligne-mostow-1986
-doc_title: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW"
+doc_title: ""
 section_id: sec-025-1-i-i-i-i-i-00
 section_title: "I I I I I 00"
 section_number: 1
 pages: 83-85
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
-doc_brief: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
+doc_brief: "deligne-mostow-1986 — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 2 2 I I I I 00
 3 i i i i i oo

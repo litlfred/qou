@@ -1,13 +1,13 @@
 ---
 doc_id: 0110001v3
-doc_title: "ISSN 1472-2739 (on-line) 1472-2747 (printed) 557"
+doc_title: "Published: 19 June 2003 A geometric interpretation of Milnor’s triple linking numbers Blake Mellor Paul Melvin"
 section_id: sec-003-references
 section_title: "References"
 section_number: null
 pages: 12-12
 source_pdf: 0110001v3.pdf
 source_sha256: f30f603ac1c555e0
-doc_brief: "Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link."
+doc_brief: "Published: 19 June 2003 A geometric interpretation of Milnor’s triple linking numbers Blake Mellor Paul Melvin — Milnor’s triple linking numbers of a link in the 3-sphere are interpreted"
 ---
 [1] T D Cochran , Derivatives of links: Milnor’s concordance invariants and
 Massey’s Products, Memoirs of the Amer. Math. Soc. 427 (1990)

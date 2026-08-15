@@ -1,13 +1,13 @@
 ---
 doc_id: malkin-2021-galois-action-on-motivic-fundamental-groups-thes
-doc_title: ""
+doc_title: "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0)"
 section_id: sec-010-summary
 section_title: "Summary"
 section_number: null
 pages: 34-41
 source_pdf: malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf
 source_sha256: 3bc30dc6a4a03a7f
-doc_brief: "On the Galois Action on Motivic Fundamental Groups of Punctured Elliptic and Rational Curves Nikolay Malkin 2021"
+doc_brief: "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0). (1) — On the"
 ---
 TheHodgecorrelatorsCor H(I0,I 1,...,I =) arefunctionsofseveralcomplexvariables,deﬁnedbyanexplicit
 integralformulain[G9]. Theysatisfysomelinearrelations: thedihedralsymmetryrelations,thedistribution

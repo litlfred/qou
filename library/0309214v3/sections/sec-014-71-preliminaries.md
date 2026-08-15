@@ -1,13 +1,13 @@
 ---
 doc_id: 0309214v3
-doc_title: "ISSN 1364-0380 (on line) 1465-3060 (printed) 1253"
+doc_title: "School of Mathematics, Georgia Institute of Technology"
 section_id: sec-014-71-preliminaries
 section_title: "Preliminaries"
 section_number: 7.1
 pages: 24-25
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
+doc_brief: "School of Mathematics, Georgia Institute of Technology — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l"
 ---
 Fix a Cartan subalgebra h of g and a basis {α1, . . . , αℓ} of simple roots for
 the dual space h∗ . Let h∗

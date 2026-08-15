@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0005296v1
-doc_title: "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant ∗"
+doc_title: "λn(M )(t − 1)n ∈ Q[[t − 1]] for rational homology 3-sphere M . R.Lawrence [La] conjectured that λn(M ) ∈"
 section_id: sec-000-abstract
 section_title: "Abstract"
 section_number: null
 pages: 1-3
 source_pdf: 0005296v1.pdf
 source_sha256: 1714653ecfdf01bc
-doc_brief: "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant ∗ — Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s"
+doc_brief: "λn(M )(t − 1)n ∈ Q[[t − 1]] for rational homology 3-sphere M . R.Lawrence [La] conjectured that λn(M ) ∈ — Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not"
 ---
 Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres
 does not determine Kirby-Melvin’s {τ

@@ -1,13 +1,13 @@
 ---
 doc_id: ppn356556735-0036
-doc_title: "Werk Titel: Inventiones Mathematicae Verlag: Springer Jahr: 1976 Kollektion: Mathematica Digitalisiert: Niedersächsische Staats- und Universitätsbibliothek Göttingen Werk Id: PPN35"
+doc_title: "Titel: Inventiones Mathematicae Verlag: Springer Jahr: 1976 Kollektion: Mathematica Digitalisiert: Niedersächsische Staats- und Universitätsbibliothek Göttingen Werk Id: PPN3565567"
 section_id: sec-000-document
 section_title: "Document"
 section_number: null
 pages: 1-38
 source_pdf: PPN356556735_0036.pdf
 source_sha256: a41a1773c81cc857
-doc_brief: "Werk Titel: Inventiones Mathematicae Verlag: Springer Jahr: 1976 Kollektion: Mathematica Digitalisiert: Niedersächsische Staats- und Universitätsbibliothek Göttingen Werk Id: PPN356556735_0036 — 1 sec"
+doc_brief: "Titel: Inventiones Mathematicae Verlag: Springer Jahr: 1976 Kollektion: Mathematica Digitalisiert: Niedersächsische Staats- und Universitätsbibliothek Göttingen Werk Id: PPN356556735_0036 — 1 sections"
 ---
 Werk
 Titel: Inventiones Mathematicae

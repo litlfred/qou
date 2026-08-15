@@ -1,13 +1,13 @@
 ---
 doc_id: agt-v3-n1-p17-p
-doc_title: "ISSN 1472-2739 (on-line) 1472-2747 (printed) 537"
+doc_title: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum"
 section_id: sec-005-4-another-formula-for-the-coecients-of-p
 section_title: "Another formula for the coecients of !p"
 section_number: 4
 pages: 12-17
 source_pdf: agt-v3-n1-p17-p.pdf
 source_sha256: df196f0a732ad6b9
-doc_brief: "We use skein theory to compute the coecients of certain power series considered by Habiro in his theory ofsl2 invariants of integral homol- ogy 3-spheres."
+doc_brief: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coecients of certain power series considered by Habiro in his"
 ---
 Following Habiro, we introduce the polynomials R0
 n =(fng!)−1Rn and write

@@ -1,13 +1,13 @@
 ---
 doc_id: 0309214v3
-doc_title: "ISSN 1364-0380 (on line) 1465-3060 (printed) 1253"
+doc_title: "School of Mathematics, Georgia Institute of Technology"
 section_id: sec-016-713-quantum-braid-group-action
 section_title: "Quantum braid group action"
 section_number: 7.1.3
 pages: 26-26
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
+doc_brief: "School of Mathematics, Georgia Institute of Technology — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l"
 ---
 For each fundamental root α ∈ {α1, . . . , αℓ} there is an algebra automorphism
 Tα : U → U , as described in [17, Chapter 8]. These automorphisms satis fy the

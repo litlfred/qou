@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "Combinatorial optimization in geometry 1"
+doc_title: "Mathematics Department, California Institute of Technolog y"
 section_id: sec-006-41-some-corollaries-and-reﬁnements
 section_title: "Some corollaries and reﬁnements"
 section_number: 4.1

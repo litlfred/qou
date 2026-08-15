@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg"
+doc_title: "E. Witten Institute for Advanced Study"
 section_id: sec-031-12-the-curve-for-nf-1
 section_title: "The curve for Nf = 1"
 section_number: 12

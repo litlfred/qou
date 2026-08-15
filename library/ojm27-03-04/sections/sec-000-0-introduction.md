@@ -1,13 +1,13 @@
 ---
 doc_id: ojm27-03-04
-doc_title: "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s)"
+doc_title: "The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka"
 section_id: sec-000-0-introduction
 section_title: "Introduction"
 section_number: 0
 pages: 2-3
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
-doc_brief: "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s) — 6 sections: Introduction; Preliminaries; (b) (c)"
+doc_brief: "The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka — 6 sections: Introduction; Preliminaries; (b) (c)"
 ---
 In this paper, we study compact oriented hyperbolic 3-manifolds each of
 which has a totally geodesic boundary. By a hyperbolic manifold, we mean a

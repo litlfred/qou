@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1012.1039v2
-doc_title: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS"
+doc_title: "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume"
 section_id: sec-009-references
 section_title: "References"
 section_number: null
 pages: 20-22
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
-doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
+doc_brief: "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume — Let M be a"
 ---
 [And06] M. T. Anderson. Dehn ﬁlling and Einstein metrics in h igher dimensions. J. Diﬀerential
 Geom., 73(2):219–261, 2006.

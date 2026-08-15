@@ -1,13 +1,13 @@
 ---
 doc_id: s40879-023-00706-0
-doc_title: "European Journal of Mathematics (2024) 10:3 https://doi.org/10.1007/s40879-023-00706-0 RESEARCH ARTICLE"
+doc_title: "RESEARCH ARTICLE"
 section_id: sec-008-4-quotients-by-subgroups
 section_title: "Quotients by subgroups"
 section_number: 4
 pages: 23-24
 source_pdf: s40879-023-00706-0.pdf
 source_sha256: 4c5af312d2e5d6a7
-doc_brief: "European Journal of Mathematics (2024) 10:3 https://doi.org/10.1007/s40879-023-00706-0 RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many"
+doc_brief: "RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
 ---
 Both [54] and [66] consider the quotient of B by the action of subgroups of S5.I nt h i s
 section we shall study the various quotients of Bring’s curve of non-zero genus and

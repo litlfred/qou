@@ -1,13 +1,13 @@
 ---
 doc_id: s40879-023-00706-0
-doc_title: "European Journal of Mathematics (2024) 10:3 https://doi.org/10.1007/s40879-023-00706-0 RESEARCH ARTICLE"
+doc_title: "RESEARCH ARTICLE"
 section_id: sec-004-23-the-automorphism-group
 section_title: "The automorphism group"
 section_number: 2.3
 pages: 14-17
 source_pdf: s40879-023-00706-0.pdf
 source_sha256: 4c5af312d2e5d6a7
-doc_brief: "European Journal of Mathematics (2024) 10:3 https://doi.org/10.1007/s40879-023-00706-0 RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many"
+doc_brief: "RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
 ---
 As previously noted, the P4-model of Bring’s curve shows that the automorphism
 group Aut (B) contains S5. Hurwitz’s theorem on the automorphism group G =

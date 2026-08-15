@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics"
+doc_title: "Department of Physics"
 section_id: sec-008-24-semi-classical-solutions
 section_title: "Semi-classical solutions"
 section_number: 2.4
 pages: 16-18
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
+doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
 ---
 It was observed in [23] that the global causal nature of dynam ical semi-classical ge-
 ometries depends on the incoming energy ﬂux. If the ﬂux remai ns below a certain critical

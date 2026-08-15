@@ -1,13 +1,13 @@
 ---
 doc_id: malkin-2021-galois-action-on-motivic-fundamental-groups-thes
-doc_title: ""
+doc_title: "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0)"
 section_id: sec-011-quasidihedral-lie-coalgebras
 section_title: "Quasidihedral Lie coalgebras"
 section_number: null
 pages: 41-44
 source_pdf: malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf
 source_sha256: 3bc30dc6a4a03a7f
-doc_brief: "On the Galois Action on Motivic Fundamental Groups of Punctured Elliptic and Rational Curves Nikolay Malkin 2021"
+doc_brief: "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0). (1) — On the"
 ---
 Let
  beanabeliangroup. Weusethemultiplicativenotationfor 

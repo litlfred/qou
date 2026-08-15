@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2412.02281v1
-doc_title: "Explicit evaluation of the q-Stokes matrices for certain conﬂuent hypergeometric q-diﬀerence equations"
+doc_title: "u + A"
 section_id: sec-007-fundamental-solution-connection-matrix-and-q-sto
 section_title: "Fundamental Solution, Connection Matrix and q-Stokes Matrix"
 section_number: null
 pages: 10-11
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
-doc_brief: "Explicit evaluation of the q-Stokes matrices for certain conﬂuent hypergeometric q-diﬀerence equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1"
+doc_brief: "u + A — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1, 0;b1,...,b n−1;q,z ) by using the q-Borel resummation."
 ---
 The fundamental solution of (1) is studied in [5] (especiall y when u is invertible). If u is not invertible, there
 is a slightly diﬀerent formal fundamental solution (see e.g ., [6]). Particularly, the system (2) has a formal

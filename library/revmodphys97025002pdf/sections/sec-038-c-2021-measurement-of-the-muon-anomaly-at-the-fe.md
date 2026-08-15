@@ -1,13 +1,13 @@
 ---
 doc_id: revmodphys97025002pdf
-doc_title: "CODATA recommended values of the fundamental physical constants: 2022 *"
+doc_title: "CONTENTS I. Introduction 2 A. Background 2 B. Overview of the 2022 adjustment 2 1. Relative atomic masses 3 2. Ionization and binding energies 3 3. Hydrogen and deuterium transitio"
 section_id: sec-038-c-2021-measurement-of-the-muon-anomaly-at-the-fe
 section_title: "C. 2021 Measurement of the muon anomaly at the Fermi National Accelerator Laboratory"
 section_number: null
 pages: 26-27
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
-doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
+doc_brief: "CONTENTS I. Introduction 2 A. Background 2 B. Overview of the 2022 adjustment 2 1. Relative atomic masses 3 2. Ionization and binding energies 3 3. Hydrogen and deuterium transition energies 3 — 73 se"
 ---
 National Accelerator Laboratory
 New for the 2022 CODA TA adjustment is a measurement of

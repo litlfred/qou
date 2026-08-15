@@ -3,10 +3,10 @@
  "doc_id": "arxiv-1203.2182v1",
  "source_sha256": "2fe21af194f65227",
  "brief": "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero",
- "extended": "**Volume Conjecture: Reﬁned and Categoriﬁed**\n\n*Hiroyuki Fuji1,2, Sergei Gukov 1,3 and Piotr Su/suppress lkowski1,4,5*\n\n92 pp, 99 sections.\n\n**Abstract.** The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero locus of the A-polynomial A(x,y ). Another “family version” of the volume conjecture depend s on a quantization parameter, usually denoted q or ℏ; this quantum volume conjecture (also known as the AJ-conjecture) can be stated in a form of a q-diﬀerence equation that annihilates the colored Jones polynomials and SL(2, C) Chern-Simons partition functions. We propose reﬁnements / categoriﬁcations of both conjectures that inc lude an extra deformation parameter t and describe similar properties of homological knot invari ants and reﬁned BPS invariants.\n\n**Outline.** 1 California Institute of Technology, Pasadena; 2 Nagoya University, Dept. of Physics, Graduat; 3 Max-Planck-Institut f¨ ur Mathematik, Vivats; 4 Institute for Theoretical Physics, Universit; 5 Faculty of Physics, University of Warsaw, ul; 6 Nagoya University, Graduate School of Mathem; 1 Introduction 2; 1.1 Generalized volume conjecture 2; 1.2 Quantum volume conjecture 3; 1.3 Quantization and deformation of algebraic ; 2 The new conjectures: incorporating t 5; 2.1 Quantum volume conjecture: reﬁned 6; 2.2 Generalized volume conjecture: reﬁned 6; 3 Examples coming from knots 7; 3.1 Sr homological invariants of (2, 2p + 1) t; 3.1.1 Reﬁned braid operators and gamma factors; 3.1.2 From partition functions to superpolynom; 3.1.3 Homological algebra of colored knot inva",
+ "extended": "**Volume Conjecture: Reﬁned and Categoriﬁed**\n\n*Hiroyuki Fuji1,2, Sergei Gukov 1,3 and Piotr Su/suppress lkowski1,4,5*\n\n92 pp, 74 sections.\n\n**Abstract.** The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero locus of the A-polynomial A(x,y ). Another “family version” of the volume conjecture depend s on a quantization parameter, usually denoted q or ℏ; this quantum volume conjecture (also known as the AJ-conjecture) can be stated in a form of a q-diﬀerence equation that annihilates the colored Jones polynomials and SL(2, C) Chern-Simons partition functions. We propose reﬁnements / categoriﬁcations of both conjectures that inc lude an extra deformation parameter t and describe similar properties of homological knot invari ants and reﬁned BPS invariants.\n\n**Outline.** 1 California Institute of Technology, Pasadena; 2 Nagoya University, Dept. of Physics, Graduat; 3 Max-Planck-Institut f¨ ur Mathematik, Vivats; 4 Institute for Theoretical Physics, Universit; 5 Faculty of Physics, University of Warsaw, ul; 6 Nagoya University, Graduate School of Mathem; 1 Introduction; 1.1 Generalized volume conjecture; C Reﬁned A-polynomials 78; 1.2 Quantum volume conjecture; 1.3 Quantization and deformation of algebraic ; 2 The new conjectures: incorporating t; 2.1 Quantum volume conjecture: reﬁned; 2.2 Generalized volume conjecture: reﬁned; 3 Examples coming from knots; 3.1 Sr homological invariants of (2, 2p + 1) t; 2 (C2(R1)+C2(R2)−C2(Q)). (3.23); 2 (C2(R1)+C2(R1)+|C2(R1)−C2(R2)|)",
  "tokens": {
   "brief": 49,
-  "extended": 413
+  "extended": 397
  },
  "sections": [
   {
@@ -40,467 +40,342 @@
    "pages": "1-2"
   },
   {
-   "id": "sec-006-1-introduction-2",
-   "title": "Introduction 2",
+   "id": "sec-006-1-introduction",
+   "title": "Introduction",
    "pages": "2-2"
   },
   {
-   "id": "sec-007-11-generalized-volume-conjecture-2",
-   "title": "Generalized volume conjecture 2",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-008-12-quantum-volume-conjecture-3",
-   "title": "Quantum volume conjecture 3",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-009-13-quantization-and-deformation-of-algebraic-cur",
-   "title": "Quantization and deformation of algebraic curves 3",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-010-2-the-new-conjectures-incorporating-t-5",
-   "title": "The new conjectures: incorporating t 5",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-011-21-quantum-volume-conjecture-reﬁned-6",
-   "title": "Quantum volume conjecture: reﬁned 6",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-012-22-generalized-volume-conjecture-reﬁned-6",
-   "title": "Generalized volume conjecture: reﬁned 6",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-013-3-examples-coming-from-knots-7",
-   "title": "Examples coming from knots 7",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-014-31-sr-homological-invariants-of-2-2p-1-torus-kno",
-   "title": "Sr homological invariants of (2, 2p + 1) torus knots 11",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-015-311-reﬁned-braid-operators-and-gamma-factors-14",
-   "title": "Reﬁned braid operators and gamma factors 14",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-016-312-from-partition-functions-to-superpolynomials",
-   "title": "From partition functions to superpolynomials 20",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-017-313-homological-algebra-of-colored-knot-invarian",
-   "title": "Homological algebra of colored knot invariants 25",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-018-32-recursion-relations-for-homological-knot-inva",
-   "title": "Recursion relations for homological knot invariants 31",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-019-321-unknot-31",
-   "title": "Unknot 31",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-020-322-trefoil-33",
-   "title": "Trefoil 33",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-021-323-recursion-in-various-limits-35",
-   "title": "Recursion in various limits 35",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-022-33-reﬁned-a-polynomials-and-the-reﬁned-volume-s0",
-   "title": "Reﬁned A-polynomials and the reﬁned “volume” S0(u,t ) 37",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-023-331-reﬁned-a-polynomial-and-s0ut-for-the-unknot",
-   "title": "Reﬁned A-polynomial and S0(u,t ) for the unknot 38",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-024-332-reﬁned-a-polynomial-and-s0ut-for-the-trefoil",
-   "title": "Reﬁned A-polynomial and S0(u,t ) for the trefoil 39",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-025-333-saddle-point-analysis-of-the-homological-tor",
-   "title": "Saddle point analysis of the homological torus knot in variants 41",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-026-334-asymptotic-behavior-in-diﬀerent-grading-conv",
-   "title": "Asymptotic behavior in diﬀerent grading conventions 4 5",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-027-34-relation-to-algebraic-k-theory-49",
-   "title": "Relation to algebraic K-theory 49",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-028-341-quantizability-of-reﬁned-a-polynomials-51",
-   "title": "Quantizability of reﬁned A-polynomials 51",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-029-4-examples-coming-from-reﬁned-bps-invariants-53",
-   "title": "Examples coming from reﬁned BPS invariants 53",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-030-41-reﬁned-quantum-mirror-curves-57",
-   "title": "Reﬁned quantum mirror curves 57",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-031-42-reﬁned-mirror-curves-s0ut-and-quantizability",
-   "title": "Reﬁned mirror curves, S0(u,t ) and quantizability 59",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-032-43-reﬁnement-as-a-twisted-mass-parameter-62",
-   "title": "Reﬁnement as a twisted mass parameter 62",
+   "id": "sec-007-11-generalized-volume-conjecture",
+   "title": "Generalized volume conjecture",
    "pages": "2-3"
   },
   {
-   "id": "sec-033-c-reﬁned-a-polynomials-78",
+   "id": "sec-008-c-reﬁned-a-polynomials-78",
    "title": "Reﬁned A-polynomials 78",
    "pages": "3-4"
   },
   {
-   "id": "sec-034-12-quantum-volume-conjecture",
+   "id": "sec-009-12-quantum-volume-conjecture",
    "title": "Quantum volume conjecture",
    "pages": "4-4"
   },
   {
-   "id": "sec-035-13-quantization-and-deformation-of-algebraic-cur",
+   "id": "sec-010-13-quantization-and-deformation-of-algebraic-cur",
    "title": "Quantization and deformation of algebraic curves",
    "pages": "4-6"
   },
   {
-   "id": "sec-036-2-the-new-conjectures-incorporating-t",
+   "id": "sec-011-2-the-new-conjectures-incorporating-t",
    "title": "The new conjectures: incorporating t",
    "pages": "6-7"
   },
   {
-   "id": "sec-037-21-quantum-volume-conjecture-reﬁned",
+   "id": "sec-012-21-quantum-volume-conjecture-reﬁned",
    "title": "Quantum volume conjecture: reﬁned",
    "pages": "7-7"
   },
   {
-   "id": "sec-038-22-generalized-volume-conjecture-reﬁned",
+   "id": "sec-013-22-generalized-volume-conjecture-reﬁned",
    "title": "Generalized volume conjecture: reﬁned",
    "pages": "7-8"
   },
   {
-   "id": "sec-039-3-examples-coming-from-knots",
+   "id": "sec-014-3-examples-coming-from-knots",
    "title": "Examples coming from knots",
    "pages": "8-12"
   },
   {
-   "id": "sec-040-31-sr-homological-invariants-of-2-2p-1-torus-kno",
+   "id": "sec-015-31-sr-homological-invariants-of-2-2p-1-torus-kno",
    "title": "Sr homological invariants of (2, 2p + 1) torus knots",
    "pages": "12-15"
   },
   {
-   "id": "sec-041-2-c2r1c2r2c2q-323",
+   "id": "sec-016-2-c2r1c2r2c2q-323",
    "title": "(C2(R1)+C2(R2)−C2(Q)). (3.23)",
    "pages": "15-15"
   },
   {
-   "id": "sec-042-2-c2r1c2r1c2r1c2r2",
+   "id": "sec-017-2-c2r1c2r1c2r1c2r2",
    "title": "(C2(R1)+C2(R1)+|C2(R1)−C2(R2)|)",
    "pages": "15-15"
   },
   {
-   "id": "sec-043-311-reﬁned-braid-operators-and-gamma-factors",
+   "id": "sec-018-311-reﬁned-braid-operators-and-gamma-factors",
    "title": "Reﬁned braid operators and gamma factors",
    "pages": "15-21"
   },
   {
-   "id": "sec-044-2-aq1rℓ",
+   "id": "sec-019-2-aq1rℓ",
    "title": "A;q1)r−ℓ",
    "pages": "21-21"
   },
   {
-   "id": "sec-045-1-a1q2rℓ",
+   "id": "sec-020-1-a1q2rℓ",
    "title": "A−1;q2)r−ℓ",
    "pages": "21-21"
   },
   {
-   "id": "sec-046-312-f-rom-partition-functions-to-superpolynomial",
+   "id": "sec-021-312-f-rom-partition-functions-to-superpolynomial",
    "title": "F rom partition functions to superpolynomials",
    "pages": "21-23"
   },
   {
-   "id": "sec-047-2-z-ref",
+   "id": "sec-022-2-z-ref",
    "title": "Z ref",
    "pages": "23-26"
   },
   {
-   "id": "sec-048-313-homological-algebra-of-colored-knot-invarian",
+   "id": "sec-023-313-homological-algebra-of-colored-knot-invarian",
    "title": "Homological algebra of colored knot invariants",
    "pages": "26-28"
   },
   {
-   "id": "sec-049-2-the-milnor-conjecture",
+   "id": "sec-024-2-the-milnor-conjecture",
    "title": "(The Milnor Conjecture)",
    "pages": "28-28"
   },
   {
-   "id": "sec-050-1-kaqt",
+   "id": "sec-025-1-kaqt",
    "title": "(K;a,q,t )",
    "pages": "28-31"
   },
   {
-   "id": "sec-051-2-n1ℓ",
+   "id": "sec-026-2-n1ℓ",
    "title": "(n−1)−ℓ",
    "pages": "31-32"
   },
   {
-   "id": "sec-052-2-12pn1ℓ-qqn1t2qqℓt2q2q2ℓt3q2qnℓ1tqqnℓ1",
+   "id": "sec-027-2-12pn1ℓ-qqn1t2qqℓt2q2q2ℓt3q2qnℓ1tqqnℓ1",
    "title": "(1−2p)(n−1)−ℓ (q;q)n−1(t2q;q)ℓ(t2q2;q)2ℓ(−t3q2;q)n+ℓ−1(−tq;q)n−ℓ−1",
    "pages": "32-32"
   },
   {
-   "id": "sec-053-32-recursion-relations-for-homological-knot-inva",
+   "id": "sec-028-32-recursion-relations-for-homological-knot-inva",
    "title": "Recursion relations for homological knot invariants",
    "pages": "32-32"
   },
   {
-   "id": "sec-054-321-unknot",
+   "id": "sec-029-321-unknot",
    "title": "Unknot",
    "pages": "32-34"
   },
   {
-   "id": "sec-055-322-t-refoil",
+   "id": "sec-030-322-t-refoil",
    "title": "T refoil",
    "pages": "34-36"
   },
   {
-   "id": "sec-056-323-recursion-in-various-limits",
+   "id": "sec-031-323-recursion-in-various-limits",
    "title": "Recursion in various limits",
    "pages": "36-38"
   },
   {
-   "id": "sec-057-33-reﬁned-a-polynomials-and-the-reﬁned-volume-s0",
+   "id": "sec-032-33-reﬁned-a-polynomials-and-the-reﬁned-volume-s0",
    "title": "Reﬁned A-polynomials and the reﬁned “volume” S0(u,t )",
    "pages": "38-39"
   },
   {
-   "id": "sec-058-331-reﬁned-a-polynomial-and-s0ut-for-the-unknot",
+   "id": "sec-033-331-reﬁned-a-polynomial-and-s0ut-for-the-unknot",
    "title": "Reﬁned A-polynomial and S0(u,t ) for the unknot",
    "pages": "39-39"
   },
   {
-   "id": "sec-059-2-t3",
+   "id": "sec-034-2-t3",
    "title": "(−t−3)",
    "pages": "39-40"
   },
   {
-   "id": "sec-060-332-reﬁned-a-polynomial-and-s0ut-for-the-trefoil",
+   "id": "sec-035-332-reﬁned-a-polynomial-and-s0ut-for-the-trefoil",
    "title": "Reﬁned A-polynomial and S0(u,t ) for the trefoil",
    "pages": "40-41"
   },
   {
-   "id": "sec-061-0-u",
+   "id": "sec-036-0-u",
    "title": "(u) +",
    "pages": "41-41"
   },
   {
-   "id": "sec-062-0-u-3163",
+   "id": "sec-037-0-u-3163",
    "title": "(u), (3.163)",
    "pages": "41-41"
   },
   {
-   "id": "sec-063-0-u-1",
+   "id": "sec-038-0-u-1",
    "title": "(u) = 1",
    "pages": "41-41"
   },
   {
-   "id": "sec-064-0-u-log-1-x3",
+   "id": "sec-039-0-u-log-1-x3",
    "title": "(u) = log (1 −x)3",
    "pages": "41-41"
   },
   {
-   "id": "sec-065-0-u-8x4-9x3-12x2-5x-3",
+   "id": "sec-040-0-u-8x4-9x3-12x2-5x-3",
    "title": "(u) + −8x4 + 9x3 − 12x2 + 5x − 3",
    "pages": "41-41"
   },
   {
-   "id": "sec-066-0-u-1",
+   "id": "sec-041-0-u-1",
    "title": "(u) + 1",
    "pages": "41-41"
   },
   {
-   "id": "sec-067-0-u-includes-1",
+   "id": "sec-042-0-u-includes-1",
    "title": "(u) includes 1",
    "pages": "41-41"
   },
   {
-   "id": "sec-068-0-u-and-also-a-rational-function",
+   "id": "sec-043-0-u-and-also-a-rational-function",
    "title": "(u) and also a rational function",
    "pages": "41-41"
   },
   {
-   "id": "sec-069-0-u-contributions-so-that",
+   "id": "sec-044-0-u-contributions-so-that",
    "title": "(u) contributions, so that",
    "pages": "41-42"
   },
   {
-   "id": "sec-070-333-saddle-point-analysis-of-the-homological-tor",
+   "id": "sec-045-333-saddle-point-analysis-of-the-homological-tor",
    "title": "Saddle point analysis of the homological torus knot invariants",
    "pages": "42-43"
   },
   {
-   "id": "sec-071-0-1-t2z01-t3xz0",
+   "id": "sec-046-0-1-t2z01-t3xz0",
    "title": "(−1 +t2z0)(1 +t3xz0)",
    "pages": "43-46"
   },
   {
-   "id": "sec-072-0-u",
+   "id": "sec-047-0-u",
    "title": "(u)",
    "pages": "46-46"
   },
   {
-   "id": "sec-073-0-u",
+   "id": "sec-048-0-u",
    "title": "(u),",
    "pages": "46-46"
   },
   {
-   "id": "sec-074-0-u-log",
+   "id": "sec-049-0-u-log",
    "title": "(u) = log",
    "pages": "46-46"
   },
   {
-   "id": "sec-075-334-asymptotic-behavior-in-diﬀerent-grading-conv",
+   "id": "sec-050-334-asymptotic-behavior-in-diﬀerent-grading-conv",
    "title": "Asymptotic behavior in diﬀerent grading conventions",
    "pages": "46-49"
   },
   {
-   "id": "sec-076-0-u-log-x4p2x-ξj1-xξj",
+   "id": "sec-051-0-u-log-x4p2x-ξj1-xξj",
    "title": "(u) = log x4p+2(x −ξj)(1 −xξj)",
    "pages": "49-50"
   },
   {
-   "id": "sec-077-34-relation-to-algebraic-k-theory",
+   "id": "sec-052-34-relation-to-algebraic-k-theory",
    "title": "Relation to algebraic K-theory",
    "pages": "50-52"
   },
   {
-   "id": "sec-078-341-quantizability-of-reﬁned-a-polynomials",
+   "id": "sec-053-341-quantizability-of-reﬁned-a-polynomials",
    "title": "Quantizability of reﬁned A-polynomials",
    "pages": "52-54"
   },
   {
-   "id": "sec-079-4-examples-coming-from-reﬁned-bps-invariants",
+   "id": "sec-054-4-examples-coming-from-reﬁned-bps-invariants",
    "title": "Examples coming from reﬁned BPS invariants",
    "pages": "54-55"
   },
   {
-   "id": "sec-080-1-prtqρ",
+   "id": "sec-055-1-prtqρ",
    "title": "PRt(q−ρ",
    "pages": "55-58"
   },
   {
-   "id": "sec-081-41-reﬁned-quantum-mirror-curves",
+   "id": "sec-056-41-reﬁned-quantum-mirror-curves",
    "title": "Reﬁned quantum mirror curves",
    "pages": "58-60"
   },
   {
-   "id": "sec-082-42-reﬁned-mirror-curves-s0ut-and-quantizability",
+   "id": "sec-057-42-reﬁned-mirror-curves-s0ut-and-quantizability",
    "title": "Reﬁned mirror curves, S0(u,t ) and quantizability",
    "pages": "60-61"
   },
   {
-   "id": "sec-083-2-logz2",
+   "id": "sec-058-2-logz2",
    "title": "(logz)2",
    "pages": "61-62"
   },
   {
-   "id": "sec-084-2-however-this-curve-is",
+   "id": "sec-059-2-however-this-curve-is",
    "title": "However, this curve is",
    "pages": "62-62"
   },
   {
-   "id": "sec-085-2-logy2-logylog1-yq1-li2yq1-433",
+   "id": "sec-060-2-logy2-logylog1-yq1-li2yq1-433",
    "title": "(logy)2 + (logy)(log(1 −yq1)) + Li2(yq1). (4.33)",
    "pages": "62-63"
   },
   {
-   "id": "sec-086-43-reﬁnement-as-a-twisted-mass-parameter",
+   "id": "sec-061-43-reﬁnement-as-a-twisted-mass-parameter",
    "title": "Reﬁnement as a twisted mass parameter",
    "pages": "63-67"
   },
   {
-   "id": "sec-087-acknowledgments",
+   "id": "sec-062-acknowledgments",
    "title": "Acknowledgments",
    "pages": "67-68"
   },
   {
-   "id": "sec-088-appendix",
+   "id": "sec-063-appendix",
    "title": "Appendix",
    "pages": "68-69"
   },
   {
-   "id": "sec-089-2-j-n12jj-1-n-we-ﬁnd-the-polynomialmrq",
+   "id": "sec-064-2-j-n12jj-1-n-we-ﬁnd-the-polynomialmrq",
    "title": "(̺j := (N+1)/2−j,j = 1, · · ·,N ), we ﬁnd the polynomialMR(q̺",
    "pages": "69-70"
   },
   {
-   "id": "sec-090-1-bcr",
+   "id": "sec-065-1-bcr",
    "title": "(bc)−r",
    "pages": "70-73"
   },
   {
-   "id": "sec-091-0-x-z01-txz0",
+   "id": "sec-066-0-x-z01-txz0",
    "title": "(−x +z0)(1 +txz0)",
    "pages": "73-74"
   },
   {
-   "id": "sec-092-0-u-log-1-xx2",
+   "id": "sec-067-0-u-log-1-xx2",
    "title": "(u) = log (1 −x)x2",
    "pages": "74-75"
   },
   {
-   "id": "sec-093-1-l-rℓ",
+   "id": "sec-068-1-l-rℓ",
    "title": "L) ·∏ r+ℓ",
    "pages": "75-75"
   },
   {
-   "id": "sec-094-2-1-qi",
+   "id": "sec-069-2-1-qi",
    "title": "(1 −qi",
    "pages": "75-76"
   },
   {
-   "id": "sec-095-2-ℓ-k-ℓ-r-respectively-are",
+   "id": "sec-070-2-ℓ-k-ℓ-r-respectively-are",
    "title": "(ℓ ≤k ≤ℓ +r), respectively, are",
    "pages": "76-76"
   },
   {
-   "id": "sec-096-1-qℓ",
+   "id": "sec-071-1-qℓ",
    "title": "(q−ℓ",
    "pages": "76-79"
   },
   {
-   "id": "sec-097-c-reﬁned-a-polynomials",
+   "id": "sec-072-c-reﬁned-a-polynomials",
    "title": "Reﬁned A-polynomials",
    "pages": "79-87"
   },
   {
-   "id": "sec-098-references",
+   "id": "sec-073-references",
    "title": "References",
    "pages": "87-92"
   }

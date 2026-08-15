@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics"
+doc_title: "Department of Physics"
 section_id: sec-005-22-classical-black-holes
 section_title: "Classical black holes"
 section_number: 2.2
 pages: 10-13
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
+doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
 ---
 A black hole is deﬁned as a region of spacetime which does not l ie in the causal past
 of future null inﬁnity I+, i.e. light rays which have their origin inside the black hole can

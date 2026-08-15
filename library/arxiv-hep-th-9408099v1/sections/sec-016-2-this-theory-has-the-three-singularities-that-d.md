@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg"
+doc_title: "E. Witten Institute for Advanced Study"
 section_id: sec-016-2-this-theory-has-the-three-singularities-that-d
 section_title: "This theory has the three singularities that do"
 section_number: 2

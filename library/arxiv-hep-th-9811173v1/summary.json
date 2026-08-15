@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-th-9811173v1",
  "source_sha256": "986bf57947746523",
- "brief": "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to",
- "extended": "**Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links**\n\n*J. M. Borwein a) and D. J. Broadhurst b)*\n\n54 pp, 45 sections.\n\n**Abstract.** We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the 998 invariants of Hodgson–Weeks manifolds is, astoundingly,a = 2 4×23×37×691 = 9, 408, 656; the largest denominator is merely b = 9. We also study the rational invariant a/b for single-complex- place cusped manifolds, complementary to knots and links, both with in and beyond the Hildebrand–Weeks census. Within the censi, we identify 152 distinct D edekind zetas rationally related to volumes. Moreover, 91 census manifolds have v olumes reducible to pairs of these zeta values.\n\n**Outline.** 1 Introduction; 2 Dedekind-zeta invariants of closed manifolds; 2.1 Examination of 1,200 single-complex-place ; 2.2 Examination of 44 ﬁelds found by Snap; 2.3 A special case: manifold v3066(−1, 2); 2.4 How may one derive the rational invariant?; 2 Cl2(2θ7) + 1; 2 Cl2(3θ7) = 7; 1 Its triangulation immedi-; 3 Cusped manifolds and join ﬁelds; 4 Links whose volumes link Clausen values; 4.1 Signpost: integer sequence A003657; 4.2 Dirichlet character; 2 Cl2(2θ) = Cl 2(θ) − Cl2(π −θ) (25); 4.3 Figure-8 knot at D = −3; 4.4 Whitehead link at D = −4; 4.5 Link 63; 7 At 1800-digit precision, PSLQ ﬁnds this to b",
+ "brief": "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the",
+ "extended": "**b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the 998 invariants of**\n\n54 pp, 42 sections.\n\n**Abstract.** We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the 998 invariants of Hodgson–Weeks manifolds is, astoundingly,a = 2 4×23×37×691 = 9, 408, 656; the largest denominator is merely b = 9. We also study the rational invariant a/b for single-complex- place cusped manifolds, complementary to knots and links, both with in and beyond the Hildebrand–Weeks census. Within the censi, we identify 152 distinct D edekind zetas rationally related to volumes. Moreover, 91 census manifolds have v olumes reducible to pairs of these zeta values.\n\n**Outline.** 1 Introduction; 2 Dedekind-zeta invariants of closed manifolds; 2.1 Examination of 1,200 single-complex-place ; 2.2 Examination of 44 ﬁelds found by Snap; 2.3 A special case: manifold v3066(−1, 2); 2.4 How may one derive the rational invariant?; 2 Cl2(2θ7) + 1; 2 Cl2(3θ7) = 7; 1 Its triangulation immedi-; 3 Cusped manifolds and join ﬁelds; 4 Links whose volumes link Clausen values; 4.1 Signpost: integer sequence A003657; 4.2 Dirichlet character; 2 Cl2(2θ) = Cl 2(θ) − Cl2(π −θ) (25); 4.3 Figure-8 knot at D = −3; 4.4 Whitehead link at D = −4; 4.5 Link 63; 7 At 1800-digit precision, PSLQ ﬁnds this to b",
  "tokens": {
-  "brief": 48,
-  "extended": 409
+  "brief": 50,
+  "extended": 427
  },
  "sections": [
   {
@@ -162,75 +162,60 @@
   {
    "id": "sec-030-54-dedekind-zeta-values-from-10-crossing-feynman",
    "title": "Dedekind zeta values from 10-crossing Feynman knots",
-   "pages": "19-21"
+   "pages": "19-23"
   },
   {
-   "id": "sec-031-3-cl2-4",
-   "title": "Cl2( 4",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-032-3-cl2-2",
-   "title": "Cl2( 2",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-033-55-dedekind-zeta-values-from-12-crossing-feynman",
-   "title": "Dedekind zeta values from 12-crossing Feynman knots",
-   "pages": "21-23"
-  },
-  {
-   "id": "sec-034-56-dedekind-zeta-values-from-maximally-symmetric",
+   "id": "sec-031-56-dedekind-zeta-values-from-maximally-symmetric",
    "title": "Dedekind zeta values from maximally symmetric knots",
    "pages": "23-23"
   },
   {
-   "id": "sec-035-16-before-analyzing-the-most-symmetric-of-these",
+   "id": "sec-032-16-before-analyzing-the-most-symmetric-of-these",
    "title": "Before analyzing the most symmetric of these, we comment on t he situation up to 10",
    "pages": "23-23"
   },
   {
-   "id": "sec-036-1-up-to-9-crossings-maximal-symmetry-is-a-good-y",
+   "id": "sec-033-1-up-to-9-crossings-maximal-symmetry-is-a-good-y",
    "title": "Up to 9 crossings, maximal symmetry is a good – yet far from infallib le – diagnostic",
    "pages": "23-23"
   },
   {
-   "id": "sec-037-2-the-maximally-symmetric-knots-designated-by-ro",
+   "id": "sec-034-2-the-maximally-symmetric-knots-designated-by-ro",
    "title": "The maximally symmetric knots designated by Rolfsen [26] as 6 3, 7 7, 8 21, 9 40 and",
    "pages": "23-23"
   },
   {
-   "id": "sec-038-5-only-one-dedekind-zeta-knot-namely-9-49-escape",
+   "id": "sec-035-5-only-one-dedekind-zeta-knot-namely-9-49-escape",
    "title": "Only one Dedekind-zeta knot, namely 9 49, escapes the sieve of maximal symmetry",
    "pages": "23-23"
   },
   {
-   "id": "sec-039-6-at-10-crossings-we-found-3-non-alternating-ded",
+   "id": "sec-036-6-at-10-crossings-we-found-3-non-alternating-ded",
    "title": "At 10 crossings, we found 3 non-alternating Dedekind-zeta kno ts with less than",
    "pages": "23-25"
   },
   {
-   "id": "sec-040-57-dedekind-zeta-value-from-an-18-crossing-feynm",
+   "id": "sec-037-57-dedekind-zeta-value-from-an-18-crossing-feynm",
    "title": "Dedekind zeta value from an 18-crossing Feynman knot",
    "pages": "25-26"
   },
   {
-   "id": "sec-041-6-conclusions-and-prospects",
+   "id": "sec-038-6-conclusions-and-prospects",
    "title": "Conclusions and prospects",
    "pages": "26-27"
   },
   {
-   "id": "sec-042-acknowledgments",
+   "id": "sec-039-acknowledgments",
    "title": "Acknowledgments",
    "pages": "27-27"
   },
   {
-   "id": "sec-043-references",
+   "id": "sec-040-references",
    "title": "References",
    "pages": "27-30"
   },
   {
-   "id": "sec-044-3-1860-5468-97108-reprinted-in-gesammelte-mathem",
+   "id": "sec-041-3-1860-5468-97108-reprinted-in-gesammelte-mathem",
    "title": "(1860) 54–68, 97–108, reprinted in: Gesammelte mathematische Abhandlungen ,",
    "pages": "30-54"
   }

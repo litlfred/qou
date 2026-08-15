@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 20 (2024), 055, 87 pages"
+doc_title: ""
 section_id: sec-035-a-numerical-data-for-five-sample-knots
 section_title: "A Numerical data for five sample knots"
 section_number: null
 pages: 75-75
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 20 (2024), 055, 87 pages — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with"
+doc_brief: "We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C)"
 ---
 In this appendix, we present numerical data that support the quantum modularity conjecture for
 a choice of knots. Initially, we hoped that pairs of geometrically similar knots (that have identical

@@ -1,13 +1,13 @@
 ---
 doc_id: 0306345v1
-doc_title: "ISSN 1472-2739 (on-line) 1472-2747 (printed) 537"
+doc_title: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum"
 section_id: sec-005-5-the-colored-jones-polynomial-of-twist-knots
 section_title: "The colored Jones polynomial of twist knots"
 section_number: 5
 pages: 17-20
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
-doc_brief: "We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres."
+doc_brief: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his"
 ---
 In this last section, we illustrate one use of ω p , namely to give a formula for the
 colored Jones polynomial of twist knots (see Figure 3) in ter ms of the coeﬃcients

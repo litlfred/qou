@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1012.1039v2
-doc_title: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS"
+doc_title: "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume"
 section_id: sec-007-appendix-b-antisymmetrization-of-chains
 section_title: "Appendix B. (Anti)Symmetrization of chains"
 section_number: null
 pages: 18-20
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
-doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
+doc_brief: "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume — Let M be a"
 ---
 In this section we prove that the chain map S deﬁned in Section 2.2 is chain
 homotopic to the identity.

@@ -1,13 +1,13 @@
 ---
 doc_id: klein-few-body-systems-in-lattice-effective-field-theory-the
-doc_title: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Frie"
+doc_title: "Bonn, November 2018"
 section_id: sec-007-the-effective-theory-of-few-nucleon-systems
 section_title: "The effective theory of few-nucleon systems"
 section_number: null
 pages: 15-19
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Unive"
+doc_brief: "Bonn, November 2018 — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
 ---
 In this section we construct the most general Lagrangian of the same symmetry properties as the
 underlying theory, QCD, focusing on the nucleon-nucleon interaction. We summarize the Lagrangian for

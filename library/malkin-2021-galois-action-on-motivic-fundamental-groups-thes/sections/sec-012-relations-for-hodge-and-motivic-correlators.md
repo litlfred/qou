@@ -1,13 +1,13 @@
 ---
 doc_id: malkin-2021-galois-action-on-motivic-fundamental-groups-thes
-doc_title: ""
+doc_title: "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0)"
 section_id: sec-012-relations-for-hodge-and-motivic-correlators
 section_title: "Relations for Hodge and motivic correlators"
 section_number: null
 pages: 44-45
 source_pdf: malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf
 source_sha256: 3bc30dc6a4a03a7f
-doc_brief: "On the Galois Action on Motivic Fundamental Groups of Punctured Elliptic and Rational Curves Nikolay Malkin 2021"
+doc_brief: "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0). (1) — On the"
 ---
 Hodge correlators
 Recall from §1.2 that the Hodge correlators are objects in the fundamental Lie coalgebra of the category of

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 20 (2024), 055, 87 pages"
+doc_title: ""
 section_id: sec-024-7-two-q-holonomic-modules
 section_title: "Two q-holonomic modules"
 section_number: 7
 pages: 51-52
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 20 (2024), 055, 87 pages — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with"
+doc_brief: "We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C)"
 ---
 In Part I we were led by the refined quantum modularity conjecture to find an entire matrixJ(K)
 of Habiro-like functions generalizing the Kashaev invariant, the first column being the vector of

@@ -1,13 +1,13 @@
 ---
 doc_id: klein-few-body-systems-in-lattice-effective-field-theory-the
-doc_title: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Frie"
+doc_title: "Bonn, November 2018"
 section_id: sec-018-exact-methods
 section_title: "Exact methods"
 section_number: null
 pages: 36-39
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Unive"
+doc_brief: "Bonn, November 2018 — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
 ---
 As long as we consider only systems with a few particles, we can use the Lanczos/ Arnoldi algorithm [95,
 96] for sparse matrices to solve the eigenvalue problem. Afterward, we have the energy and the wave

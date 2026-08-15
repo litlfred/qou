@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2111.06645
-doc_title: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 19 (2023), 082, 39 pages"
+doc_title: ""
 section_id: sec-019-a1-q-series-identities
 section_title: "A.1 q-series identities"
 section_number: null
 pages: 26-27
 source_pdf: 2304.09377v2.pdf
 source_sha256: 76ae6c6058f4a9f9
-doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 19 (2023), 082, 39 pages — We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be"
+doc_brief: "We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state integral of a knot complement with"
 ---
 We begin by giving the proof of the two identities of equation (2.6), as communicated to us by
 Sander Zwegers. We will use the identity (A.17) and

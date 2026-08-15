@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9811173v1
-doc_title: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links"
+doc_title: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The larg"
 section_id: sec-001-2-dedekind-zeta-invariants-of-closed-manifolds
 section_title: "Dedekind-zeta invariants of closed manifolds"
 section_number: 2
 pages: 3-3
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
+doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the"
 ---
 We have found rational Dedekind-zeta invariants for 998 manifolds in the Hodgson–Weeks
 census, which lists 11, 031 closed orientable manifolds, with 9,218 distinct volumes, all less

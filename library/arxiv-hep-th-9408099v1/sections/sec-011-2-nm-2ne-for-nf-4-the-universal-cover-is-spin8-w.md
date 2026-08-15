@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg"
+doc_title: "E. Witten Institute for Advanced Study"
 section_id: sec-011-2-nm-2ne-for-nf-4-the-universal-cover-is-spin8-w
 section_title: "(nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 × Z2. The"
 section_number: 2

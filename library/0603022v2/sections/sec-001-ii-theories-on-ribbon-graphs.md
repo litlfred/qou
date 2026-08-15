@@ -1,13 +1,13 @@
 ---
 doc_id: 0603022v2
-doc_title: "Quantum Gravity and the Standard Model Sundance O. Bilson-Thompson ∗"
+doc_title: "Department of Physics, University of Waterloo"
 section_id: sec-001-ii-theories-on-ribbon-graphs
 section_title: "THEORIES ON RIBBON GRAPHS"
 section_number: II
 pages: 2-3
 source_pdf: 0603022v2.pdf
 source_sha256: 46e24c0289f61d44
-doc_brief: "Quantum Gravity and the Standard Model Sundance O. Bilson-Thompson ∗ — 9 sections: INTRODUCTION; THEORIES ON RIBBON GRAPHS; CONSERVED DEGREES OF FREEDOM"
+doc_brief: "Department of Physics, University of Waterloo — 9 sections: INTRODUCTION; THEORIES ON RIBBON GRAPHS; CONSERVED DEGREES OF FREEDOM"
 ---
 We start with a compact three manifold Σ of genus at
 least 3. Given a two-dimensional surface S in Σ , we can

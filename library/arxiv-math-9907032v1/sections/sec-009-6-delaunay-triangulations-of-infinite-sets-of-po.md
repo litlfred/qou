@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "Combinatorial optimization in geometry 1"
+doc_title: "Mathematics Department, California Institute of Technolog y"
 section_id: sec-009-6-delaunay-triangulations-of-infinite-sets-of-po
 section_title: "DELAUNAY TRIANGULATIONS OF INFINITE SETS OF POINTS"
 section_number: 6

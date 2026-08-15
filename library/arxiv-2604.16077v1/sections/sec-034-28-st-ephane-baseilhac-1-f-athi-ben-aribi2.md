@@ -1,0 +1,27 @@
+---
+doc_id: arxiv-2604.16077v1
+doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
+section_id: sec-034-28-st-ephane-baseilhac-1-f-athi-ben-aribi2
+section_title: "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2"
+section_number: 28
+pages: 28-28
+source_pdf: 2604.16077v1.pdf
+source_sha256: 2f1140b9d5fee38a
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
+---
+we consider the identity (51). By means of (56) it yields
+1
+N
+(
+ΨN (z − 2iπ
+N ) − ΨN (z)
+)
+= N
+2iπ
+(
+Li2(ez) − Li2(ez− 2iπ
+N )
+)
++ 1
+2
+(

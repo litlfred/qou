@@ -1,13 +1,13 @@
 ---
 doc_id: klein-few-body-systems-in-lattice-effective-field-theory-the
-doc_title: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Frie"
+doc_title: "Bonn, November 2018"
 section_id: sec-036-theoretical-framework
 section_title: "Theoretical framework"
 section_number: null
 pages: 69-70
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Unive"
+doc_brief: "Bonn, November 2018 — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
 ---
 In the four-body system, we do not have any new operator as our system should be describable by the
 2NFs and 3NFs only. As the four-body system scales with L9, an exact calculation at suﬃcient large

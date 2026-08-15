@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9811173v1
-doc_title: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links"
+doc_title: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The larg"
 section_id: sec-019-47-a-12-crossing-4-component-link-at-d-11
 section_title: "A 12-crossing 4-component link at D = −11"
 section_number: 4.7
 pages: 11-11
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
+doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the"
 ---
 In [7] it was noted that neither the closed nor the cusped census en tails the ﬁeld Q(√−11).
 In [1] it was observed that the 12-crossing 4-component link of Fig. 7, with braid word

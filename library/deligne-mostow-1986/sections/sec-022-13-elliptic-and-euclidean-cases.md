@@ -1,13 +1,13 @@
 ---
 doc_id: deligne-mostow-1986
-doc_title: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW"
+doc_title: ""
 section_id: sec-022-13-elliptic-and-euclidean-cases
 section_title: "Elliptic and Euclidean Cases"
 section_number: 13
 pages: 76-78
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
-doc_brief: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
+doc_brief: "deligne-mostow-1986 — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 The investigation of the map w^\ C[^ ->B(a)o can be generalized to obtain a
 class of elliptic and euclidean groups which generalize the stabilizers in I\ of points

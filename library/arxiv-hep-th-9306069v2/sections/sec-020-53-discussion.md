@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics"
+doc_title: "Department of Physics"
 section_id: sec-020-53-discussion
 section_title: "Discussion"
 section_number: 5.3
 pages: 44-47
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
+doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
 ---
 We will conclude with some speculation about the nature of th e stretched horizon mi-
 crostructure for four-dimensional black holes. If we consi der nearly spherical black holes, a

@@ -350,48 +350,6 @@
   },
   {
    "level": 1,
-   "title": "(s2 +s\u22122 \u2212 1) \u00b1 1",
-   "page": 46,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(s2 +s\u22122 \u2212 1)2 \u2212 1",
-   "page": 46,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(s4 +s\u22124) \u2212 1",
-   "page": 46,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(s2 +s\u22122) \u2212 1",
-   "page": 46,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(s\u22122 \u2212s2)",
-   "page": 46,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(s2 \u2212s\u22122)2(",
-   "page": 46,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
    "title": "(e\u03b5(\u03b80) \u2212f\u03b5(\u03b80))",
    "page": 47,
    "source": "inferred",
@@ -1036,72 +994,12 @@
    "title": "(\u03b8) =L\u00b1(\u03b8) (5.85)",
    "level": 1,
    "page_start": 44,
-   "page_end": 46,
-   "n_chars": 2345,
-   "n_words": 525
-  },
-  {
-   "id": "sec-043-2-s2-s2-1-1",
-   "number": "2",
-   "title": "(s2 +s\u22122 \u2212 1) \u00b1 1",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 46,
-   "n_chars": 3,
-   "n_words": 2
-  },
-  {
-   "id": "sec-044-2-s2-s2-1",
-   "number": "2",
-   "title": "(s2 +s\u22122) \u2212 1",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 46,
-   "n_chars": 21,
-   "n_words": 6
-  },
-  {
-   "id": "sec-045-4-s2-s2-12-1",
-   "number": "4",
-   "title": "(s2 +s\u22122 \u2212 1)2 \u2212 1",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 46,
-   "n_chars": 58,
-   "n_words": 15
-  },
-  {
-   "id": "sec-046-2-s4-s4-1",
-   "number": "2",
-   "title": "(s4 +s\u22124) \u2212 1",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 46,
-   "n_chars": 19,
-   "n_words": 7
-  },
-  {
-   "id": "sec-047-2-s2-s2",
-   "number": "2",
-   "title": "(s\u22122 \u2212s2)",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 46,
-   "n_chars": 95,
-   "n_words": 28
-  },
-  {
-   "id": "sec-048-4-s2-s22",
-   "number": "4",
-   "title": "(s2 \u2212s\u22122)2(",
-   "level": 1,
-   "page_start": 46,
    "page_end": 47,
-   "n_chars": 890,
-   "n_words": 213
+   "n_chars": 3545,
+   "n_words": 828
   },
   {
-   "id": "sec-049-3-e\u03b5\u03b80-f\u03b5\u03b80",
+   "id": "sec-043-3-e\u03b5\u03b80-f\u03b5\u03b80",
    "number": "3",
    "title": "(e\u03b5(\u03b80) \u2212f\u03b5(\u03b80))",
    "level": 1,
@@ -1111,7 +1009,7 @@
    "n_words": 1012
   },
   {
-   "id": "sec-050-2-mod-z",
+   "id": "sec-044-2-mod-z",
    "number": "2",
    "title": "(mod Z)",
    "level": 1,
@@ -1121,7 +1019,7 @@
    "n_words": 669
   },
   {
-   "id": "sec-051-16-mod-z",
+   "id": "sec-045-16-mod-z",
    "number": "16",
    "title": "(mod Z),",
    "level": 1,
@@ -1131,7 +1029,7 @@
    "n_words": 2901
   },
   {
-   "id": "sec-052-0-xy-ax-by-xy-1",
+   "id": "sec-046-0-xy-ax-by-xy-1",
    "number": "0",
    "title": "(x,y ) = ax +by \u2212xy + 1",
    "level": 1,
@@ -1141,7 +1039,7 @@
    "n_words": 596
   },
   {
-   "id": "sec-053-30-c5",
+   "id": "sec-047-30-c5",
    "number": "30",
    "title": "(C.5)",
    "level": 1,
@@ -1151,7 +1049,7 @@
    "n_words": 226
   },
   {
-   "id": "sec-054-2-a-rey",
+   "id": "sec-048-2-a-rey",
    "number": "2",
    "title": "(a \u2212 Re(y))",
    "level": 1,
@@ -1161,7 +1059,7 @@
    "n_words": 251
   },
   {
-   "id": "sec-055-2-log2t-li2t1-c6",
+   "id": "sec-049-2-log2t-li2t1-c6",
    "number": "2",
    "title": "Log2(\u2212t) \u2212 Li2(t\u22121) (C.6)",
    "level": 1,
@@ -1171,7 +1069,7 @@
    "n_words": 95
   },
   {
-   "id": "sec-056-2-log2w-li2w1",
+   "id": "sec-050-2-log2w-li2w1",
    "number": "2",
    "title": "Log2(\u2212|w|) \u2212 Li2(|w|\u22121),",
    "level": 1,
@@ -1181,7 +1079,7 @@
    "n_words": 644
   },
   {
-   "id": "sec-057-1-\u03b8-q",
+   "id": "sec-051-1-\u03b8-q",
    "number": "1",
    "title": "(\u03b8) = Q\u2213",
    "level": 1,
@@ -1191,7 +1089,7 @@
    "n_words": 0
   },
   {
-   "id": "sec-058-2-\u03b8-d1",
+   "id": "sec-052-2-\u03b8-d1",
    "number": "2",
    "title": "(\u03b8) (D.1)",
    "level": 1,
@@ -1201,7 +1099,7 @@
    "n_words": 15
   },
   {
-   "id": "sec-059-2-\u03b8",
+   "id": "sec-053-2-\u03b8",
    "number": "2",
    "title": "(\u03b8) \u2208",
    "level": 1,
@@ -1211,7 +1109,7 @@
    "n_words": 281
   },
   {
-   "id": "sec-060-2-\u03b8-\u03c8",
+   "id": "sec-054-2-\u03b8-\u03c8",
    "number": "2",
    "title": "(\u03b8) = \u03c8+",
    "level": 1,
@@ -1221,7 +1119,7 @@
    "n_words": 85
   },
   {
-   "id": "sec-061-2-\u03b8-\u03c8",
+   "id": "sec-055-2-\u03b8-\u03c8",
    "number": "2",
    "title": "(\u03b8) = \u03c8\u2212",
    "level": 1,
@@ -1231,7 +1129,7 @@
    "n_words": 38
   },
   {
-   "id": "sec-062-1-\u03b8-\u03c8",
+   "id": "sec-056-1-\u03b8-\u03c8",
    "number": "1",
    "title": "(\u03b8) +\u03c8\u00b1",
    "level": 1,
@@ -1241,7 +1139,7 @@
    "n_words": 74
   },
   {
-   "id": "sec-063-2-\u03b8-4\u03c0\u03b8-2\u03c0z",
+   "id": "sec-057-2-\u03b8-4\u03c0\u03b8-2\u03c0z",
    "number": "2",
    "title": "(\u03b8) \u2208 4\u03c0\u03b8 + 2\u03c0Z,",
    "level": 1,
@@ -1251,7 +1149,7 @@
    "n_words": 8
   },
   {
-   "id": "sec-064-2-\u03b8-4\u03c0\u03b8",
+   "id": "sec-058-2-\u03b8-4\u03c0\u03b8",
    "number": "2",
    "title": "(\u03b8) = 4\u03c0\u03b8",
    "level": 1,
@@ -1261,7 +1159,7 @@
    "n_words": 33
   },
   {
-   "id": "sec-065-1-\u03b8",
+   "id": "sec-059-1-\u03b8",
    "number": "1",
    "title": "(\u2212\u03b8)",
    "level": 1,
@@ -1271,7 +1169,7 @@
    "n_words": 71
   },
   {
-   "id": "sec-066-1-\u03b8-\u03c0-\u03c8",
+   "id": "sec-060-1-\u03b8-\u03c0-\u03c8",
    "number": "1",
    "title": "(\u03b8) +\u03c0 \u2212\u03c8\u00b1",
    "level": 1,
@@ -1281,7 +1179,7 @@
    "n_words": 14
   },
   {
-   "id": "sec-067-1-\u03b8-\u03c8",
+   "id": "sec-061-1-\u03b8-\u03c8",
    "number": "1",
    "title": "(\u03b8) \u2212\u03c8\u00b1",
    "level": 1,
@@ -1291,7 +1189,7 @@
    "n_words": 0
   },
   {
-   "id": "sec-068-2-\u03b8-\u03c0\u03c0-and-we-conclude-that",
+   "id": "sec-062-2-\u03b8-\u03c0\u03c0-and-we-conclude-that",
    "number": "2",
    "title": "(\u03b8) \u2208] \u2212\u03c0,\u03c0 ], and we conclude that",
    "level": 1,
@@ -1301,7 +1199,7 @@
    "n_words": 12
   },
   {
-   "id": "sec-069-1-\u03b8-\u03c8",
+   "id": "sec-063-1-\u03b8-\u03c8",
    "number": "1",
    "title": "(\u03b8) \u2264 \u03c8\u00b1",
    "level": 1,
@@ -1311,7 +1209,7 @@
    "n_words": 29
   },
   {
-   "id": "sec-070-1-\u03b8-and-\u03c8",
+   "id": "sec-064-1-\u03b8-and-\u03c8",
    "number": "1",
    "title": "(\u03b8) and \u03c8\u00b1",
    "level": 1,
@@ -1321,7 +1219,7 @@
    "n_words": 0
   },
   {
-   "id": "sec-071-2-\u03b8-both-belong-to-either",
+   "id": "sec-065-2-\u03b8-both-belong-to-either",
    "number": "2",
    "title": "(\u03b8) both belong to either",
    "level": 1,
@@ -1331,7 +1229,7 @@
    "n_words": 102
   },
   {
-   "id": "sec-072-1-\u03b8-\u03c8",
+   "id": "sec-066-1-\u03b8-\u03c8",
    "number": "1",
    "title": "(\u03b8) = \u03c8\u00b1",
    "level": 1,
@@ -1341,7 +1239,7 @@
    "n_words": 0
   },
   {
-   "id": "sec-073-2-\u03b8-for-\u03b8-16-13-and",
+   "id": "sec-067-2-\u03b8-for-\u03b8-16-13-and",
    "number": "2",
    "title": "(\u03b8) for \u03b8 \u2208 {1/6, 1/3} and",
    "level": 1,
@@ -1351,7 +1249,7 @@
    "n_words": 108
   },
   {
-   "id": "sec-074-3-\u03b8-q",
+   "id": "sec-068-3-\u03b8-q",
    "number": "3",
    "title": "(\u2212\u03b8) = Q\u00b1",
    "level": 1,
@@ -1361,7 +1259,7 @@
    "n_words": 0
   },
   {
-   "id": "sec-075-3-\u03b8-d7",
+   "id": "sec-069-3-\u03b8-d7",
    "number": "3",
    "title": "(\u03b8) (D.7)",
    "level": 1,
@@ -1371,7 +1269,7 @@
    "n_words": 97
   },
   {
-   "id": "sec-076-1-\u03b8q",
+   "id": "sec-070-1-\u03b8q",
    "number": "1",
    "title": "(\u2212\u03b8)Q\u00b1",
    "level": 1,
@@ -1381,7 +1279,7 @@
    "n_words": 92
   },
   {
-   "id": "sec-077-1-\u03b8-q",
+   "id": "sec-071-1-\u03b8-q",
    "number": "1",
    "title": "(\u03b8) = Q\u00b1",
    "level": 1,
@@ -1394,8 +1292,8 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 83,
-  "sections": 78,
-  "chars_total": 133817
+  "toc_entries": 77,
+  "sections": 72,
+  "chars_total": 133931
  }
 }

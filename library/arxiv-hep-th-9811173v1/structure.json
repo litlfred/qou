@@ -15,8 +15,8 @@
    "stamp_date": "19 Nov 1998"
   },
   "doi": null,
-  "title": "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links",
-  "authors_raw": "J. M. Borwein a) and D. J. Broadhurst b)",
+  "title": "b vol(M) = (\u2212D)3/ 2 (2\u03c0)2n\u2212 4 \u03b6K(2) 2\u03b6(2) for a manifold M whose invariant trace \ufb01eldK has a single complex place, discriminant D, degree n, and Dedekind zeta value \u03b6K(2). The largest numerator of the 998 invariants of",
+  "authors_raw": null,
   "abstract": "We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) = (\u2212D)3/ 2 (2\u03c0)2n\u2212 4 \u03b6K(2) 2\u03b6(2) for a manifold M whose invariant trace \ufb01eldK has a single complex place, discriminant D, degree n, and Dedekind zeta value \u03b6K(2). The largest numerator of the 998 invariants of Hodgson\u2013Weeks manifolds is, astoundingly,a = 2 4\u00d723\u00d737\u00d7691 = 9, 408, 656; the largest denominator is merely b = 9. We also study the rational invariant a/b for single-complex- place cusped manifolds, complementary to knots and links, both with in and beyond the Hildebrand\u2013Weeks census. Within the censi, we identify 152 distinct D edekind zetas rationally related to volumes. Moreover, 91 census manifolds have v olumes reducible to pairs of these zeta values. Motivated by studies of Feynman diagra ms, we \ufb01nd a 10- component 24-crossing link in the case n = 2 and D = \u221220. It is one of 5 alternating platonic links, the other 4 being quartic. For 8 of 10 quadratic \ufb01elds d istinguished by rational relations between Dedekind zeta values and volumes of Fey nman orthoschemes, we \ufb01nd corresponding links. Feynman links with D = \u221239 and D = \u221284 are missing; we expect them to be as beautiful as the 8 drawn here. Dedekind-z eta invariants are obtained for knots from Feynman diagrams with up to 11 loops. We ide ntify a sextic 18-crossing positive Feynman knot whose rational invariant, a/b = 26, is 390 times that of the cubic 16-crossing non-alternating knot with maximal D9 symmetry. Our results are secure, numerically, yet appear very hard to prove by analysis . a) CECM, Simon Fraser University, Burnaby, B.C. V5A 1S6, Canada; jborwein@cecm.sfu.ca; http://www.cecm.sfu.ca/~jborwein b) Physics Department, Open University, Milton Keynes MK7 6AA, UK; D.Broadhurst@open.ac.uk; http://physics.open.ac.uk/~dbroadhu",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -242,27 +242,6 @@
    "page": 19,
    "source": "inferred",
    "number": "5.4"
-  },
-  {
-   "level": 1,
-   "title": "Cl2( 4",
-   "page": 21,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Cl2( 2",
-   "page": 21,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 2,
-   "title": "Dedekind zeta values from 12-crossing Feynman knots",
-   "page": 21,
-   "source": "inferred",
-   "number": "5.5"
   },
   {
    "level": 2,
@@ -650,42 +629,12 @@
    "title": "Dedekind zeta values from 10-crossing Feynman knots",
    "level": 2,
    "page_start": 19,
-   "page_end": 21,
-   "n_chars": 6594,
-   "n_words": 1242
-  },
-  {
-   "id": "sec-031-3-cl2-4",
-   "number": "3",
-   "title": "Cl2( 4",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 55,
-   "n_words": 16
-  },
-  {
-   "id": "sec-032-3-cl2-2",
-   "number": "3",
-   "title": "Cl2( 2",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 251,
-   "n_words": 43
-  },
-  {
-   "id": "sec-033-55-dedekind-zeta-values-from-12-crossing-feynman",
-   "number": "5.5",
-   "title": "Dedekind zeta values from 12-crossing Feynman knots",
-   "level": 2,
-   "page_start": 21,
    "page_end": 23,
-   "n_chars": 3791,
-   "n_words": 754
+   "n_chars": 10768,
+   "n_words": 2069
   },
   {
-   "id": "sec-034-56-dedekind-zeta-values-from-maximally-symmetric",
+   "id": "sec-031-56-dedekind-zeta-values-from-maximally-symmetric",
    "number": "5.6",
    "title": "Dedekind zeta values from maximally symmetric knots",
    "level": 2,
@@ -695,7 +644,7 @@
    "n_words": 56
   },
   {
-   "id": "sec-035-16-before-analyzing-the-most-symmetric-of-these",
+   "id": "sec-032-16-before-analyzing-the-most-symmetric-of-these",
    "number": "16",
    "title": "Before analyzing the most symmetric of these, we comment on t he situation up to 10",
    "level": 1,
@@ -705,7 +654,7 @@
    "n_words": 124
   },
   {
-   "id": "sec-036-1-up-to-9-crossings-maximal-symmetry-is-a-good-y",
+   "id": "sec-033-1-up-to-9-crossings-maximal-symmetry-is-a-good-y",
    "number": "1",
    "title": "Up to 9 crossings, maximal symmetry is a good \u2013 yet far from infallib le \u2013 diagnostic",
    "level": 1,
@@ -715,7 +664,7 @@
    "n_words": 4
   },
   {
-   "id": "sec-037-2-the-maximally-symmetric-knots-designated-by-ro",
+   "id": "sec-034-2-the-maximally-symmetric-knots-designated-by-ro",
    "number": "2",
    "title": "The maximally symmetric knots designated by Rolfsen [26] as 6 3, 7 7, 8 21, 9 40 and",
    "level": 1,
@@ -725,7 +674,7 @@
    "n_words": 50
   },
   {
-   "id": "sec-038-5-only-one-dedekind-zeta-knot-namely-9-49-escape",
+   "id": "sec-035-5-only-one-dedekind-zeta-knot-namely-9-49-escape",
    "number": "5",
    "title": "Only one Dedekind-zeta knot, namely 9 49, escapes the sieve of maximal symmetry",
    "level": 1,
@@ -735,7 +684,7 @@
    "n_words": 20
   },
   {
-   "id": "sec-039-6-at-10-crossings-we-found-3-non-alternating-ded",
+   "id": "sec-036-6-at-10-crossings-we-found-3-non-alternating-ded",
    "number": "6",
    "title": "At 10 crossings, we found 3 non-alternating Dedekind-zeta kno ts with less than",
    "level": 1,
@@ -745,7 +694,7 @@
    "n_words": 590
   },
   {
-   "id": "sec-040-57-dedekind-zeta-value-from-an-18-crossing-feynm",
+   "id": "sec-037-57-dedekind-zeta-value-from-an-18-crossing-feynm",
    "number": "5.7",
    "title": "Dedekind zeta value from an 18-crossing Feynman knot",
    "level": 2,
@@ -755,7 +704,7 @@
    "n_words": 502
   },
   {
-   "id": "sec-041-6-conclusions-and-prospects",
+   "id": "sec-038-6-conclusions-and-prospects",
    "number": "6",
    "title": "Conclusions and prospects",
    "level": 1,
@@ -765,7 +714,7 @@
    "n_words": 586
   },
   {
-   "id": "sec-042-acknowledgments",
+   "id": "sec-039-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
@@ -775,7 +724,7 @@
    "n_words": 164
   },
   {
-   "id": "sec-043-references",
+   "id": "sec-040-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -785,7 +734,7 @@
    "n_words": 725
   },
   {
-   "id": "sec-044-3-1860-5468-97108-reprinted-in-gesammelte-mathem",
+   "id": "sec-041-3-1860-5468-97108-reprinted-in-gesammelte-mathem",
    "number": "3",
    "title": "(1860) 54\u201368, 97\u2013108, reprinted in: Gesammelte mathematische Abhandlungen ,",
    "level": 1,
@@ -798,8 +747,8 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 45,
-  "sections": 45,
-  "chars_total": 106872
+  "toc_entries": 42,
+  "sections": 42,
+  "chars_total": 106949
  }
 }

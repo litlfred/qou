@@ -1,13 +1,13 @@
 ---
 doc_id: gt-v10-n3-p07-p
-doc_title: "Geometry & Topology 10 (2006) 1425–1452 1425 Stabilization in the braid groups II: Transversal simplicity of knots JOAN S B IRMAN WILLIAM W M ENASCO The main result of this paper i"
+doc_title: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S B IRMAN WILLIAM W M ENASCO The main result of this paper is a negative answer to the question: are all "
 section_id: sec-011-references
 section_title: "References"
 section_number: null
 pages: 27-28
 source_pdf: gt-v10-n3-p07-p.pdf
 source_sha256: 1f226aac77351a69
-doc_brief: "Geometry & Topology 10 (2006) 1425–1452 1425 Stabilization in the braid groups II: Transversal simplicity of knots JOAN S B IRMAN WILLIAM W M ENASCO The main result of this paper is a negative answer"
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S B IRMAN WILLIAM W M ENASCO The main result of this paper is a negative answer to the question: are all transversal — 12 sec"
 ---
 [1] V I Arnol’d, Topological invariants of plane curves and caustics, University Lecture
 Series 5, American Mathematical Society, Providence, RI (1994) MR1286249
