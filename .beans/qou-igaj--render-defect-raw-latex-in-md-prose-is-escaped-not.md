@@ -1,11 +1,11 @@
 ---
 # qou-igaj
 title: 'Render defect: raw LaTeX in .md prose is escaped, not passed through (575 occurrences, 64 files)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T03:33:53Z
-updated_at: 2026-08-15T05:11:05Z
+updated_at: 2026-08-15T21:31:47Z
 ---
 
 
@@ -247,3 +247,38 @@ signature — it implies a bad escaping pass ran over the corpus at some point.
 Note also: `lean/.lake/...` appears in the raw scan and is a **build
 artifact**, not corpus content — exclude `-not -path '*/.lake/*'` so it is
 not in the denominator.
+
+## Closed 2026-08-15 — drained to zero (PR #5138)
+
+Re-measured against the renderer over the whole corpus rather than by
+regex. Every `.md` with a `.ts` sibling was rendered through
+`renderBlock` and the output searched for `\textbackslash{}`:
+
+    rendered=3580  threw=5  no-ts=23
+    FILES WITH \textbackslash{}: 0   TOTAL: 0
+
+Zero. The class is drained.
+
+**The intermediate counts in this bean were wrong and should not be
+cited.** The 575/64 opening figure and the 56/34 I was carrying at the
+end both came from regex heuristics over the source, which over- and
+then under-counted. Only the render-side `\textbackslash{}` measurement
+is authoritative, because it is the actual artifact the defect produces.
+
+**Do not treat `findMathTextSeams` as a successor metric.** It reports
+70 seams across 33 files, but those are a different and benign thing —
+the largest (17 in `recursive-atom-knot-atlas-registry`) are footnote
+markers like `Helium$^{\diamond\star}$`, which render as
+`Potassium\allowbreak{}$^{\star}$`. That is the pipeline's ordinary
+math/text seam handling working, not a backlog.
+
+Last repairs, all on PR #5138:
+- `phi-q-tower-algebraic-stratification-proof` — the corrupted mass
+  formula, reconstructed from the parent proposition (a list parser had
+  turned the middle `+` into a `*`, making it read as a product)
+- `quantum-peter-weyl-proof` — two Lean field names in prose
+- `mass-tower-syt-cells` — a bare `Φ\_q`
+
+Spun out of the same corpus render: five blocks whose manifest the
+pipeline cannot load at all (bean `qou-6y28`), and
+`content/pipeline/block-manifest-audit.ts` to keep that class closed.
