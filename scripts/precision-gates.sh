@@ -69,6 +69,16 @@ GATES=(
   # with durationMs 2,552,837 -> 519. Neither gate subsumes the other.
   "witness shape guard|computations/witness_shape_guard.py||yes|yes"
   "q0-value drift ratchet|computations/q0_value_drift_audit.py|--strict|no|yes"
+  # ADVISORY, and it starts red on purpose. The ratchet's scan root is
+  # computations/, so every witness under docs/audits/scripts/ has been
+  # outside the NO-FLOAT64 discipline entirely — 5 carry raw float64 today
+  # (20 fields: max_loss_digits, c_ratios, Z_at_q0). Those belong to other
+  # arcs, and the baseline is keyed on computations/ paths, so they cannot be
+  # baselined without GROWING it — which the discipline forbids. Reporting
+  # them is the honest middle: the gap becomes visible, nothing is silenced,
+  # and anything NEW landing there shows up immediately. Flip to blocking
+  # once the five are drained. Bean qou-irzg.
+  "audits-tree raw-float64 (advisory)|computations/witness_raw_float64_audit.py|--scan-root docs/audits/scripts --strict|no|no"
   "no-free-parameter cert|computations/no_free_parameter_certificate.py|--strict|yes|no"
 )
 
