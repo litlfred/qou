@@ -98,6 +98,12 @@ for f in "${files[@]}"; do
         fi
       fi
       ;;
+    # Pipeline / schema code under content/ is not a content block — it has no
+    # .md sibling and no sidecar, so the arm below would print a bogus
+    # "(no sidecar yet)" and a qa-sweep line that cannot do anything.
+    content/pipeline/*|content/schema/*|content/values/*)
+      echo "▸ $f  [content-tree code — not a block, no sidecar applies]"
+      ;;
     content/*.md|content/*.ts)
       base="${f%.*}"
       qa="$base.qa.json"
