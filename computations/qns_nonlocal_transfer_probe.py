@@ -54,6 +54,26 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (AGENTS.md §"QA is agent-owned";
+    `computations/witness_raw_float64_audit.py`). This probe computes in the
+    float64 tier by design, so the fix is at serialization, not at the
+    numerics: `_precision.fmt` renders a float via `str()`, which
+    round-trips exactly. Non-floats (int, bool, str, list) pass through
+    untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
+
 N_DATA = 4
 T_EDDY = 10.0
 EPS_SWEEP = (1e-1, 1e-2, 3e-3)
@@ -170,7 +190,7 @@ def main() -> None:
         ec = energy_check(1e-1, gamma)
         econs_ok = ec < 1e-4
         all_econs &= econs_ok
-        w.add_data(f"g{gamma}_inviscid_energy_drift", ec)
+        w.add_data(f"g{gamma}_inviscid_energy_drift", _f(ec))
         print(f"  gamma={gamma}: inviscid energy drift {ec:.2e} "
               f"({'OK' if econs_ok else 'LEAK'})")
         for eps in EPS_SWEEP:
@@ -184,9 +204,9 @@ def main() -> None:
             all_r_ok &= r_ok
             w.add_data(f"g{gamma}_eps{eps:.0e}_bstar_rung",
                        bstar if bstar is not None else -1)
-            w.add_data(f"g{gamma}_eps{eps:.0e}_kphys_at_bstar", kb)
-            w.add_data(f"g{gamma}_eps{eps:.0e}_kphys_bstar_predicted", kb_pred)
-            w.add_data(f"g{gamma}_eps{eps:.0e}_max_equilibrium_ratio", max_ratio)
+            w.add_data(f"g{gamma}_eps{eps:.0e}_kphys_at_bstar", _f(kb))
+            w.add_data(f"g{gamma}_eps{eps:.0e}_kphys_bstar_predicted", _f(kb_pred))
+            w.add_data(f"g{gamma}_eps{eps:.0e}_max_equilibrium_ratio", _f(max_ratio))
             w.add_data(f"g{gamma}_eps{eps:.0e}_n_excited_ratios", nrat)
             print(f"  gamma={gamma} eps={eps:.0e}: N={nlen}  B*={bstar}  "
                   f"k_phys(B*)={kb:.4f} (pred {kb_pred:.4f})  "
@@ -238,7 +258,7 @@ def main() -> None:
         "class (second-neighbor), not full NS triad structure."
     )
     w.add_data("tier", "exploratory")
-    w.add_data("gamma_sweep", list(GAMMA_SWEEP))
+    w.add_data("gamma_sweep", [_f(x) for x in GAMMA_SWEEP])
     w.add_data("n_cap", N_CAP)
     w.add_data("n_data", N_DATA)
     w.save()
