@@ -90,6 +90,12 @@ export default chapter({
         // this section 3 -> 4, still inside the band. Also gives the
         // baryon octet its first real content (qou-7lio).
         "u-spin-coleman-glashow",
+        // The octet itself: decomposition, weight table, and the weight-map
+        // degeneracy — the one CONTENT-BEARING result of the family (a
+        // weight-only mass formula is structurally impossible, refuted at
+        // 77 MeV). Last, so all four uses[] edges run backward. 4 -> 5
+        // blocks, inside the band. Closes qou-wd07.
+        "baryon-octet-decomposition",
       ],
     }),
 
