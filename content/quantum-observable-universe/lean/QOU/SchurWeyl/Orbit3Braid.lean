@@ -128,6 +128,49 @@ theorem genA_quadratic (hsc : sc * sc = c * sc + 1) :
       Matrix.one_apply, Matrix.add_apply, smul_eq_mul] <;>
     norm_num <;> linarith [hsc']
 
+/-! ## The hypotheses, derived from `seminormalParam`
+
+`genA_genB_braid` takes `hsc` and `hrel` as hypotheses.  This section discharges both for
+the actual seminormal parameters, so the identity is a statement about the Hoefsmit
+matrices rather than about abstract arrays — the same role `seminormalParam_mul_rel` plays
+for `Orbit6Braid`.
+
+Multiplicative coordinates: `x = q^{-2d}` for the axial distance `d` of the `2 × 2` block,
+so `a₁ = a(d) = (q - q⁻¹)/(1 - x)`.  The domino shifts the second generator's distance by
+one, giving `a₂ = a(d-1)` at `q²x` for a row-domino and `a₂ = a(d+1)` at `x/q²` for a
+column one.
+-/
+
+/-- The **row-domino scalar** `q` satisfies the Hecke quadratic `sc² = c·sc + 1`. -/
+theorem hsc_row (q : ℝ) (hq : q ≠ 0) : q * q = (q - q⁻¹) * q + 1 := by
+  field_simp
+  ring
+
+/-- The **column-domino scalar** `-q⁻¹` satisfies the same quadratic. -/
+theorem hsc_col (q : ℝ) (hq : q ≠ 0) : (-q⁻¹) * (-q⁻¹) = (q - q⁻¹) * (-q⁻¹) + 1 := by
+  field_simp
+  ring
+
+/-- **The parameter relation, row-domino.**  With `a₁ = a(d)` at `x` and `a₂ = a(d-1)` at
+`q²x`, the relation `a₂ · sc · (sc - a₁) = a₁` of `genA_genB_braid` holds identically for
+`sc = q`. -/
+theorem hrel_row (q x : ℝ) (hq : q ≠ 0) (hx : 1 - x ≠ 0) (hx' : 1 - q ^ 2 * x ≠ 0) :
+    ((q - q⁻¹) / (1 - q ^ 2 * x)) * (q * (q - (q - q⁻¹) / (1 - x)))
+      = (q - q⁻¹) / (1 - x) := by
+  field_simp
+  ring
+
+/-- **The parameter relation, column-domino.**  With `a₂ = a(d+1)` at `x/q²` and
+`sc = -q⁻¹`, the same relation holds — which is why `genA_genB_braid` is stated through
+`sc` rather than through `q`: the `q`-only form covers the row case only. -/
+theorem hrel_col (q x : ℝ) (hq : q ≠ 0) (hx : 1 - x ≠ 0) (hx' : 1 - x / q ^ 2 ≠ 0) :
+    ((q - q⁻¹) / (1 - x / q ^ 2)) * ((-q⁻¹) * ((-q⁻¹) - (q - q⁻¹) / (1 - x)))
+      = (q - q⁻¹) / (1 - x) := by
+  have h2 : q ^ 2 - x ≠ 0 := fun h => hx' (by field_simp; linarith)
+  field_simp
+  ring
+
+
 end Orbit3
 
 end QOU.SchurWeyl
