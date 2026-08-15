@@ -1192,6 +1192,100 @@ theorem genMat_braid_of_succ_fixed (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 
       genMat_of_not_admissible q (k + 1) hl hln h2 hAl]
     ring
 
+/-- **The braid on the mirror size-`2` orbit** — `σ_{k+1}` moves `T`, `σ_k` fixes both `T`
+and `s_{k+1}·T`, so the orbit is `{T, s_{k+1}·T}`.
+
+The mirror of `genMat_braid_of_succ_fixed`, and it deletes the *other* term: here the **left**
+side lacks `a₃(1 + a₁a(-p))`, and the degeneracy that licenses it is at `p = ±1` rather than
+`r = ±1`.  The moved row is `braid_rowB_identity` verbatim. -/
+theorem genMat_braid_of_fixed_succ (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
+    {T : StandardYoungTableau μ}
+    (hka : ¬ SwapAdmissible T k) (hla : SwapAdmissible T (k + 1))
+    (hBk : ¬ SwapAdmissible (swapTableau T (k + 1) hl hln hla) k)
+    (T' : StandardYoungTableau μ) :
+    (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T' T
+      = (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T' T := by
+  classical
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hq2 : q ^ 2 ≠ 1 := by
+    intro h
+    have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [h]
+    rcases mul_eq_zero.mp hfac with h1 | h2
+    · exact hq1 (by linarith)
+    · linarith
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
+  have hkI'' : k + 1 + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
+  set B := swapTableau T (k + 1) hl hln hla with hB
+  have nTB : T ≠ B := (swapTableau_ne T hl hln hla).symm
+  have hBl : SwapAdmissible B (k + 1) := swapAdmissible_swapTableau T hl hln hla
+  have bBT : swapTableau B (k + 1) hl hln hBl = T := swapTableau_involutive T hl hln hla
+  have dBl : axialDist B (k + 1) = -axialDist T (k + 1) := axialDist_swapTableau T hl hln hla
+  have dBk : axialDist B k = axialDist T k + axialDist T (k + 1) :=
+    axialDist_swapTableau_succ T hk (by omega) hla
+  -- `σ_k` fixing `T` forces a scalar distance at `p` this time
+  have hscalar : axialDist T k = 1 ∨ axialDist T k = -1 := by
+    rcases axialDist_trichotomy T hkI hkI' with h | h | h
+    · exact Or.inl h
+    · exact Or.inr h
+    · exact absurd h hka
+  have hdegp : 1 + seminormalParam q (axialDist T k)
+      * seminormalParam q (-axialDist T k) = 0 :=
+    one_add_seminormalParam_mul_neg_of_scalar q hq0 hq2 hscalar
+  have hp0 : axialDist T k ≠ 0 := axialDist_ne_zero T hkI hkI'
+  have hr0 : axialDist T (k + 1) ≠ 0 := axialDist_ne_zero T hkI' hkI''
+  have hpr0 : axialDist T k + axialDist T (k + 1) ≠ 0 := by
+    rw [← dBk]; exact axialDist_ne_zero B hkI hkI'
+  have hprodr := offDiag_mul_neg q hr0
+  have hsump := seminormalParam_add_neg q (axialDist T k) hq0
+    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+  have hsumr := seminormalParam_add_neg q (axialDist T (k + 1)) hq0
+    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+  have hrel := seminormalParam_rel q (axialDist T k) (axialDist T (k + 1)) hq0
+    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T k ≠ 0))
+    (zpow_ne_one hq hq1 (by omega : -2 * axialDist T (k + 1) ≠ 0))
+    (zpow_ne_one hq hq1 (by omega : -2 * (axialDist T k + axialDist T (k + 1)) ≠ 0))
+  rw [genMat_mul_apply_of_not_admissible q k hk hkn
+      (genMat q k hk hkn * genMat q (k + 1) hl hln) hka T',
+    genMat_mul_apply q (k + 1) hl hln (genMat q k hk hkn) hla T',
+    genMat_mul_apply q (k + 1) hl hln
+      (genMat q (k + 1) hl hln * genMat q k hk hkn) hla T',
+    genMat_mul_apply_of_not_admissible q k hk hkn (genMat q (k + 1) hl hln) hka T',
+    genMat_mul_apply_of_not_admissible q k hk hkn (genMat q (k + 1) hl hln) hBk T', dBk]
+  by_cases h1 : T' = T
+  · subst h1
+    simp only [← hB]
+    have entB : genMat q (k + 1) hl hln T' B = offDiag q (axialDist B (k + 1)) := by
+      have h := genMat_swap q (k + 1) hl hln hBl (by rw [bBT]; exact nTB)
+      rwa [bBT] at h
+    rw [genMat_diag, genMat_diag, entB, dBl,
+      genMat_of_not_admissible q k hk hkn nTB hBk]
+    linear_combination
+      (seminormalParam q (axialDist T' (k + 1)) - seminormalParam q (axialDist T' k)) * hrel
+        + seminormalParam q (axialDist T' k + axialDist T' (k + 1))
+            * seminormalParam q (axialDist T' k) * hsump
+        - seminormalParam q (axialDist T' k + axialDist T' (k + 1))
+            * seminormalParam q (axialDist T' (k + 1)) * hsumr
+        - seminormalParam q (axialDist T' k + axialDist T' (k + 1)) * hdegp
+        - seminormalParam q (axialDist T' k + axialDist T' (k + 1)) * hprodr
+  by_cases h2 : T' = B
+  · subst h2
+    simp only [← hB]
+    have entT : genMat q (k + 1) hl hln B T = offDiag q (axialDist T (k + 1)) :=
+      genMat_swap q (k + 1) hl hln hla (by rw [← hB]; exact nTB.symm)
+    rw [entT, genMat_diag, dBk, genMat_diag, dBl,
+      genMat_of_not_admissible q k hk hkn nTB.symm hka]
+    linear_combination
+      offDiag q (axialDist T (k + 1)) * hrel
+        - seminormalParam q (axialDist T k + axialDist T (k + 1))
+            * offDiag q (axialDist T (k + 1)) * hsumr
+  · rw [genMat_of_not_admissible q k hk hkn h1 hka,
+      genMat_of_not_admissible q k hk hkn h2 hBk,
+      genMat_apply_of_ne q (k + 1) hl hln h1 hla (by rw [← hB]; exact h2),
+      genMat_apply_of_ne q (k + 1) hl hln h2 hBl (by rw [bBT]; exact h1)]
+    ring
+
 end Braid
 
 end SeminormalRep
