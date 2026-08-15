@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "qou-mass"
-version = "0.1.0a1"
+version = "1.0.0"
 description = "Quantum Observable Universe mass-prediction library — |tr_M(β_atom, q_0)|, binding energies, nucleon masses via the canonical-derivation pipeline."
 authors = [{name = "Steven Q. Smith", email = "litlfred@users.noreply.github.com"}]
 license = {text = "see LICENSE in https://github.com/litlfred/qou"}

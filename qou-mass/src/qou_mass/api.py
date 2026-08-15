@@ -207,7 +207,14 @@ def predict(
             value=Decimal(str(b_pred)),
             units="MeV",
             ppm_vs_codata=(
-                Decimal(str(err_pct * 1e4))
+                # `err_pct` arrives as a Decimal — the witness is loaded with
+                # `parse_float=Decimal` to keep full precision — so `* 1e4`
+                # raised TypeError: Decimal and float do not mix. This made
+                # `predict()` raise for EVERY atom and every observable that
+                # reaches this branch, which is most of them. Scaling by a
+                # Decimal keeps the exactness the parse_float was chosen for;
+                # `float(err_pct) * 1e4` would have silently thrown it away.
+                Decimal(err_pct) * Decimal(10_000)
                 if err_pct is not None else None
             ),
             method=row.get("layer", "?"),

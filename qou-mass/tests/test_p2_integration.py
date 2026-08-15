@@ -67,13 +67,19 @@ def test_4he_composite_mass():
 
 
 def test_compute_tr_M_4he():
+    # Convention D. The previous expectation 0.0553483458766979 was a
+    # convention-C value baked in when the bundled shard was a 2026-05-19
+    # copy; the corpus moved to D (z = q³/(q²+1)) and the shard did not
+    # follow until v1.0.0. C and D are different traces, not different
+    # precisions — do not "fix" a failure here by widening the tolerance.
     tr = qm.compute_tr_M(Z=2, N=2)
-    assert abs(float(tr) - 0.0553483458766979) < 1e-13
+    assert abs(float(tr) - 0.16097419322911996) < 1e-13
 
 
 def test_compute_tr_M_proton():
+    # Convention D; was 1.0653062285923887 under C. See test_compute_tr_M_4he.
     tr = qm.compute_tr_M(Z=1, N=0)
-    assert abs(float(tr) - 1.0653062285923887) < 1e-13
+    assert abs(float(tr) - 1.1457597822878355) < 1e-13
 
 
 @pytest.mark.skip(
