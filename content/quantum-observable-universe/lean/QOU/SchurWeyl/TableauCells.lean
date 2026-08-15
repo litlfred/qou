@@ -33,6 +33,10 @@ semistandardness) does the work.
   size-`1` cases).  `swapAdmissible_swapTableau` and `swapTableau_involutive` make
   `{T, s_k·T}` a genuine two-element orbit with no side hypotheses — this is the size-`2`
   orbit of the construction.
+* `swapTableau_comm` — **far commutation**: the `s_k`- and `s_l`-actions commute for
+  `|k - l| ≥ 2`, the tableau-level form of `σ_k σ_l = σ_l σ_k`.  With
+  `cellOf_swapTableau_of_ne` (a far swap moves no cell outside `{l, l+1}`) and
+  `swapAdmissible_of_far`, which derives the admissibility the use site needs.
 
 ## Scope
 
