@@ -1,11 +1,11 @@
 ---
 # qou-wqto
 title: 'V9: chirality grading u_L vs u_R -- no braid word distinguishes them'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-08-15T22:32:24Z
+updated_at: 2026-08-15T23:19:46Z
 ---
 
 Y = B - L is a statement about the LEFT-HANDED sector

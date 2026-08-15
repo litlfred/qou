@@ -73,6 +73,7 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDA
 
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
+
 # AME 2020 binding energies (MeV) for the canonical atoms.
 # mpf throughout (bean qou-3wqg). The five `AME_B_*_MEV_VALIDATION` constants
 # ARE mpf in `codata_constants`; wrapping them in `float()` here truncated them
@@ -607,9 +608,9 @@ def main() -> int:
                 from codata_constants import (  # noqa: E402
                     M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
                 )
-                ref = float(
+                ref = mp.mpf(str(
                     M_P_MEV_VALIDATION if (Z, N) == (1, 0) else M_N_MEV_VALIDATION
-                )
+                ))
             except (ImportError, TypeError, ValueError):
                 ref = None
         else:
@@ -666,7 +667,10 @@ def main() -> int:
 
         tr_m_str = fmt(tr_m, dps=15)  # display-only, full precision via fmt
         pred_str = f"{pred:.4f}" if pred is not None else "—"
-        ame_str = f"{ref:.4f}" if ref is not None else "—"
+        # float() here is display-only: mpf has no `.4f` format support, and
+        # the console column is 4 decimals regardless. The witness columns take
+        # the mpf path above; do not copy this cast into the record.
+        ame_str = f"{float(ref):.4f}" if ref is not None else "—"
         origin_str = (origin or "—")[:20]
         print(f"  {atom_str:<6} {A:>2} {n:>3} {tr_m_str:<22} "
               f"{pred_str:>16} {ame_str:>10} {origin_str:<22} "
