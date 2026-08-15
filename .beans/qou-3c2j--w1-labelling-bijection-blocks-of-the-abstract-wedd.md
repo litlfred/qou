@@ -108,3 +108,31 @@ for which the corpus already has `specht_pairwise_noniso`.
 
 Verdict: the route is viable and W2 is load-bearing in it. Not attempted yet —
 this is a premise check, not a proof.
+
+### Bricks 1–2 landed (PR #5151)
+
+`QOU/BraidKnot/SpechtSchurDiagonal.lean`, sorry-free:
+
+- `finrank_homG_specht_self` — `dim Hom_G(S^μ, S^μ) = 1` (this is W2, in the form the
+  character machinery consumes);
+- `homG_specht_cross_eq_bot` — the off-diagonal vanishing, which
+  `specht_exhausts_irreducibles` already argued *inline* and never exported;
+- `finrank_homG_specht` — **orthonormality**, `1` on the diagonal and `0` off it, over any
+  characteristic-zero field. No algebraic closure anywhere.
+
+Remaining for `n! = Σ_μ (dim S^μ)²`:
+
+1. `χ_reg` — the regular character is `n!` at `1` and `0` elsewhere;
+2. `⟨χ_reg, χ_μ⟩ = dim S^μ` (the pairing computes `dim Hom_G(A, S^μ)`, and
+   `LinearMap.ringLmapEquivSelf` gives `Hom_A(A, S^μ) ≅ S^μ`);
+3. the expansion `χ_reg = Σ_μ ⟨χ_reg, χ_μ⟩ · χ_μ`, which needs the Specht characters to
+   **span** the class functions. The corpus has the counting *equality*
+   `card_irreducibles_eq_card_partitions`; check whether spanning follows from it directly
+   or needs its own argument — that is the one place left where I would expect real work.
+
+Then `⟨χ_reg, χ_reg⟩` computed two ways gives the identity.
+
+**Elaboration hazard, recorded so it is not re-hit:** `finrank_span_singleton` and
+`finrank_bot` both time out at `isDefEq` on these modules unless the module argument is
+given explicitly — at 10⁶ heartbeats, not merely the default. Name the type; do not raise
+the limit.
