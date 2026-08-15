@@ -211,3 +211,43 @@ path argument, so this is either:
 
 Either way the ratchet stays green: a fresh run gives 33 fields against a
 baseline of 34, i.e. a DECREASE. Not attempted here.
+
+## Measured: the producer/consumer path split is a CLASS, but a harmless one
+
+The #5155 design question was "move the script, or add an output-path
+override to `WitnessBuilder` (~360 consumers)?". Measured rather than
+argued, 2026-08-15:
+
+| check | result |
+|---|---|
+| distinct witness paths cited by content blocks | 337 |
+| cited but **missing on disk** (dangling) | **0** |
+| witness basenames present in **two** directories | **25** |
+| of those, pairs where a content block cites the **older** copy | **0** |
+
+All 25 are `computations/X.witness.json` + `computations/<subdir>/X.witness.json`
+with subdir in `probes/ alpha/ audits/ habiro/ qbeta/` — the same reorg
+signature as knot-volumes: a script moved into a subdirectory, and
+`WitnessBuilder.save()` follows `script_path=__file__`, so the new location
+got a fresh witness and the old top-level copy was left behind.
+
+**So the split is a class of 25+, and it has caused no live citation defect.**
+Every cited copy is the fresher one.
+
+`knot-volumes` is the exception, and the only case that actually bit: its
+cited copy IS the stale one (`computedAt: 2026-04-07`), because its
+producer's output moved to a path that is not tracked at all, so no fresh
+copy exists to out-rank it.
+
+**Recommendation: option (1), move the script** — the proportionate fix for
+the one instance that bit. A `WitnessBuilder` API change is not warranted by
+this data; it would be a library-wide change for a class that is currently
+harmless.
+
+**One wrinkle for whoever takes it:** `computations/substrate/` already
+contains `knot_volumes.py` (underscore) — the canonical constants module,
+a DIFFERENT file. Moving `knot-volumes.py` (hyphen) there puts two
+similarly-named modules side by side. `wrap_legacy("knot-volumes", …)`
+passes the slug explicitly, so the witness filename does not depend on the
+script filename — only the directory does — but the adjacency is worth a
+rename or a comment.
