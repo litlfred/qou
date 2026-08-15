@@ -142,56 +142,75 @@ lemmas here upgrade it to a statement about the **objects**: on a system whose
 normal form is a fixed point, blow-up and halting are outright incompatible, so a
 q-NS singularity witness is automatically a q-Collatz divergence witness.
 
-The fixed-point hypothesis `step normalForm = normalForm` is a real hypothesis,
-carried explicitly and never assumed globally: the q-Collatz attractor is the
-**2-cycle** `{q⁻¹, 1 + q⁻¹}`, not a fixed point (`conj:q-collatz`), so the
-transfer applies to normal-form-as-fixed-point systems and the cyclic case needs
-the orbit-level argument instead. Stating it with the hypothesis visible is the
-honest scope. -/
+The hypothesis is **periodicity** of the normal form, `IsPeriodicPt step p
+normalForm` with `0 < p`, and it is carried explicitly on every statement rather
+than assumed globally.
 
-/-- Once the orbit reaches a **fixed** normal form it stays there. -/
-theorem iterate_normalForm_of_ge (hfix : sys.step sys.normalForm = sys.normalForm)
+**Why periodicity and not a fixed point (correction, 2026-08-15).** The first
+version of this section assumed `step normalForm = normalForm`. That hypothesis
+is not merely restrictive, it is **provably false** for the corpus's q-Collatz
+system: `QCollatz` carries `attractor_not_fixed : C attractor ≠ attractor`
+alongside `attractor_period_two : C (C attractor) = attractor`, because the
+attractor is the **2-cycle** `{q⁻¹, 1 + q⁻¹}`, the q-lift of the classical
+`{1, 2}`. So the fixed-point form of this transfer was *vacuous on the one
+instance it was written for*. Periodicity is the hypothesis that actually holds
+— `attractor_period_two` is exactly `IsPeriodicPt C 2 attractor` — and the
+argument goes through unchanged, because an orbit that lands in a finite cycle
+still has bounded complexity. Caught before merge; recorded per AGENTS.md
+§"Report honest negatives". -/
+
+/-- Reaching a **periodic** normal form pins every later state to a point of the
+    cycle: past the landing time `k`, the orbit is `step^[i] normalForm` for some
+    `i < p`. -/
+theorem iterate_mem_cycle_of_ge {p : ℕ} (hp : 0 < p)
+    (hper : Function.IsPeriodicPt sys.step p sys.normalForm)
     (P : S) (k : ℕ) (hk : sys.step^[k] P = sys.normalForm) :
-    ∀ j, k ≤ j → sys.step^[j] P = sys.normalForm := by
+    ∀ j, k ≤ j → ∃ i, i < p ∧ sys.step^[j] P = sys.step^[i] sys.normalForm := by
   intro j hj
   obtain ⟨d, rfl⟩ := Nat.exists_eq_add_of_le hj
-  clear hj
-  induction d with
-  | zero => simpa using hk
-  | succ n ih =>
-    rw [show k + (n + 1) = (k + n) + 1 by ring, Function.iterate_succ_apply', ih, hfix]
+  refine ⟨d % p, Nat.mod_lt _ hp, ?_⟩
+  rw [Nat.add_comm k d, Function.iterate_add_apply, hk]
+  exact (hper.iterate_mod_apply d).symm
 
-/-- **Halting bounds the filtration.** A halting orbit is eventually constant at
-    the normal form, so its complexity never exceeds the maximum reached on the
-    finite prefix before it lands. The bound is explicit. -/
-theorem regular_of_halts (hfix : sys.step sys.normalForm = sys.normalForm)
+/-- **Halting bounds the filtration.** A halting orbit lands in the normal form's
+    cycle and thereafter visits only finitely many states, so its complexity
+    never exceeds the maximum over the finite prefix together with the cycle.
+    The bound is explicit and depends on `P` — no uniform bound is claimed. -/
+theorem regular_of_halts {p : ℕ} (hp : 0 < p)
+    (hper : Function.IsPeriodicPt sys.step p sys.normalForm)
     (P : S) (h : sys.Halts P) : ∃ B : ℕ, sys.Regular B P := by
   obtain ⟨k, hk⟩ := h
-  refine ⟨(Finset.range (k + 1)).sup (fun i => sys.len (sys.step^[i] P)), fun j => ?_⟩
+  refine ⟨(Finset.range (k + 1)).sup (fun i => sys.len (sys.step^[i] P)) ⊔
+      (Finset.range p).sup (fun i => sys.len (sys.step^[i] sys.normalForm)), fun j => ?_⟩
   rcases le_or_gt j k with hjk | hkj
-  · exact Finset.le_sup (f := fun i => sys.len (sys.step^[i] P))
-      (Finset.mem_range.mpr (Nat.lt_succ_of_le hjk))
-  · rw [iterate_normalForm_of_ge sys hfix P k hk j hkj.le, ← hk]
-    exact Finset.le_sup (f := fun i => sys.len (sys.step^[i] P))
-      (Finset.mem_range.mpr (Nat.lt_succ_of_le le_rfl))
+  · exact le_sup_of_le_left (Finset.le_sup (f := fun i => sys.len (sys.step^[i] P))
+      (Finset.mem_range.mpr (Nat.lt_succ_of_le hjk)))
+  · obtain ⟨i, hip, hji⟩ := iterate_mem_cycle_of_ge sys hp hper P k hk j hkj.le
+    rw [hji]
+    exact le_sup_of_le_right
+      (Finset.le_sup (f := fun i => sys.len (sys.step^[i] sys.normalForm))
+        (Finset.mem_range.mpr hip))
 
-/-- **Blow-up excludes halting.** The two walls do not fail independently: on a
-    system with a fixed normal form, a q-NS singularity witness *is* a q-Collatz
-    divergence witness. Nothing chooses which leg the object belongs to. -/
-theorem not_halts_of_blowsUp (hfix : sys.step sys.normalForm = sys.normalForm)
+/-- **Blow-up excludes halting.** The two walls do not fail independently: when
+    the normal form is periodic — as the q-Collatz 2-cycle attractor is — a q-NS
+    singularity witness *is* a q-Collatz divergence witness at the same orbit.
+    Nothing chooses which leg the object belongs to. -/
+theorem not_halts_of_blowsUp {p : ℕ} (hp : 0 < p)
+    (hper : Function.IsPeriodicPt sys.step p sys.normalForm)
     (P : S) (hblow : sys.BlowsUp P) : ¬ sys.Halts P := by
   intro h
-  obtain ⟨B, hreg⟩ := regular_of_halts sys hfix P h
+  obtain ⟨B, hreg⟩ := regular_of_halts sys hp hper P h
   exact sys.not_blowsUp_of_regular B P hreg hblow
 
-/-- **Contrapositive.** A halting orbit never blows up — q-Collatz convergence on
-    an orbit gives q-NS regularity on it for free, with an explicit bound. The
-    implication is one-directional: bounded complexity does **not** imply
-    halting (a bounded orbit may cycle forever), which is exactly why q-Collatz
-    is the harder leg. -/
-theorem not_blowsUp_of_halts (hfix : sys.step sys.normalForm = sys.normalForm)
+/-- **Contrapositive.** A halting orbit never blows up — q-Collatz convergence at
+    an orbit gives q-NS regularity at that orbit for free, with an explicit
+    bound. The implication is one-directional: bounded complexity does **not**
+    imply halting (a bounded orbit may cycle forever without reaching the normal
+    form), which is exactly why descent is the harder question. -/
+theorem not_blowsUp_of_halts {p : ℕ} (hp : 0 < p)
+    (hper : Function.IsPeriodicPt sys.step p sys.normalForm)
     (P : S) (h : sys.Halts P) : ¬ sys.BlowsUp P :=
-  fun hblow => not_halts_of_blowsUp sys hfix P hblow h
+  fun hblow => not_halts_of_blowsUp sys hp hper P hblow h
 
 /-! ### The leg-independent bar: a scalar cannot decide a state predicate -/
 
