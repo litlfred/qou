@@ -1,7 +1,7 @@
 ---
 # qou-fr7j
 title: 'Certify n>=9 triangulations: iterate Fin.prod_univ_succ past Mathlib eight-tetrahedron ceiling'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-15T15:48:26Z
 updated_at: 2026-08-15T15:48:26Z
@@ -55,3 +55,66 @@ It also found that cost tracks the **number** of `ring` normalisations rather th
 of any one, so wide-but-few is cheap. Route 75's reach is the real constraint on what can
 be attempted, not Lean's. Worth finding where the actual ceiling is, now that the
 predicted one turned out to be imaginary.
+
+---
+**2026-08-15 — DONE. The ceiling was not real, and the bean's own caution is what makes
+that worth recording.**
+
+Branch `claude/fivetwo-level7-ladder-numerators`.
+
+### Result
+
+| module | manifolds | n range | degrees | `lake build` |
+|---|---|---|---|---|
+| `GeneratedCertified.lean` | **19** (was 16) | 2–9 | 2–6 | 50 s |
+| `GeneratedCertifiedHigh.lean` (new) | **8** | 5–14 | 7–14 | 50 s |
+
+**27 manifolds certified**, all `satisfiesEdgeEquations` verified
+`[propext, Classical.choice, Quot.sound]`, `lake` exit 0 with the `.olean` deleted first.
+Every manifold Route 75 verifies in Python and `GeneratedGluing`/`High` proves in Lean is
+now also certified as a *structure*.
+
+### The fix is one line, and the bean was right to demand a probe first
+
+    simp [Fin.prod_univ_succ, triangulation, gluing]
+
+`simp` iterates `Fin.prod_univ_succ` unaided, so it unfolds the product at **any** `n`.
+The old refusal — *"no `Fin.prod_univ_9` in Mathlib, so the certification template does not
+apply"* — was true about Mathlib and false about the difficulty.
+
+**This bean predicted the probe might fail and told me to expect a third variant of the
+`Matrix`-index trap.** It did not fail: `9_35` (n = 9, one past the ceiling) certified in
+95 s, sorry-free, **first try**. Following the bean's own advice — probe the smallest case
+past the ceiling by hand before generalising — is what made that cheap to establish either
+way. The caution was correct even though the prediction was wrong; a one-manifold probe
+costs 95 s and a wrong generaliser costs a debugging session.
+
+### The generator drops the table rather than keeping a fast path
+
+`_PROD_UNIV` (the `Fin.prod_univ_{two..eight}` map) and the `n not in _PROD_UNIV` guard are
+both gone. Keeping the named lemmas for `n ≤ 8` would be a second unfolding rule and a
+second thing to get wrong; measured, it buys nothing — **19 manifolds now build in less
+time than 16 did**, because the `ring` normalisation dominates rather than the unfolding.
+
+### Traps recorded
+
+- ⚠ **Illegal import order.** A `/-!` module docstring above `import` fails with
+  *"invalid 'import' command, it must be used in the beginning of the file"*. `/-!` is a
+  module docstring and must follow the imports; use a plain `/- -/` comment above them.
+  Cost one build cycle, and it is the same class the corpus already gates for in
+  `lean-content-siblings.yml`.
+- ⚠ **A naive axiom-check grep reports false failures.** `#print axioms` wraps the axiom
+  list across lines for long declaration names, so
+  `grep -v "axioms: \[propext, Classical.choice, Quot.sound\]$"` reported 3 of 19 as
+  non-standard when all 19 were clean. Parse with a multiline regex, not a line grep — an
+  axiom check that cries wolf is as bad as one that stays silent.
+
+### The bean's second item, restated rather than done
+
+"Degrees beyond 14 are untested" — still untested. `glhi` established that cost tracks the
+number of `ring` normalisations rather than cofactor size, and nothing found here suggests
+a barrier; the real constraint is Route 75's reach, not Lean's. Worth a separate bean if
+anyone wants the actual ceiling, since two predicted ceilings have now failed to appear.
+
+Status **completed** for both enumerated items: n ≥ 9 certification is done through n = 14,
+and the emitter is general.
