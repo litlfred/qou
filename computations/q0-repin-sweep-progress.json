@@ -474,6 +474,17 @@
    "median_rel_move": 0.0,
    "n_fields": 47,
    "err": ""
+  },
+  "binding_via_interface_knot": {
+   "rc": -9,
+   "sec": 1200.1,
+   "witnesses": [
+    "binding-via-interface-knot.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 155,
+   "err": "TIMEOUT >1200s"
   }
  }
 }

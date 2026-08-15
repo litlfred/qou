@@ -190,11 +190,21 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--timeout", type=int, default=900,
                     help="per-producer seconds (default 900)")
+    ap.add_argument("--skip", default="", metavar="STEM,STEM",
+                    help="producers to leave alone — for long-compute cases "
+                         "being run standalone. Without this, a producer that "
+                         "exceeds --timeout is requeued on every resume and "
+                         "burns the full timeout again each time, which with "
+                         "frequent container restarts costs more than the "
+                         "producer does.")
     args = ap.parse_args()
 
     stems = set(former_ideal_muon())
+    skip = {s.strip() for s in args.skip.split(",") if s.strip()}
     paths, wit, deps = build_graph(stems)
-    order = topo_order(paths, deps)
+    order = [s for s in topo_order(paths, deps) if s not in skip]
+    if skip:
+        print(f"  skipping {len(skip)}: {', '.join(sorted(skip))}", flush=True)
     if args.limit:
         order = order[:args.limit]
 
