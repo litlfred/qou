@@ -365,3 +365,26 @@ sc-form is the right generalisation rather than a cosmetic rewrite.
 
 So the size-3 orbit is now a statement about the Hoefsmit matrices end-to-end, not about
 abstract 3x3 arrays.
+
+
+## ORBIT TRICHOTOMY PROVED 2026-08-15 — the step-(ii) case split
+
+TableauCells.lean gains axialDist_trichotomy (+ cellOf_ne), sorry-free and axiom-clean:
+for consecutive entries k, k+1 in range,
+
+    axialDist T k = 1  \/  axialDist T k = -1  \/  SwapAdmissible T k
+
+i.e. the two cells share a row (size-1 orbit, scalar q), share a column (size-1, scalar
+-q^-1), or share neither (size-2, a seminormalBlock). No fourth case and no overlap: the
+cells are distinct because the entries are (cellOf_ne), so they cannot agree in BOTH
+coordinates.
+
+This is the decidable case split the generator assembly runs on, and it is the first
+genuinely step-(ii) result rather than step-(i) infrastructure.
+
+STEP (ii) REMAINING after this:
+  - orbit-SIZE classification (this is the per-generator trichotomy, not yet the
+    <s_k, s_{k+1}>-orbit sizes 1/2/3/6 -- those need both generators considered together);
+  - per-orbit basis correspondence onto the explicit index orderings of Orbit3Braid /
+    Orbit6Braid;
+  - the block-diagonal assembly itself.
