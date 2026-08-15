@@ -834,8 +834,12 @@ export const references: CSLData[] = [
   ref({
     id: "codata2022",
     library: {
-      claimedPath: "library/codata-2022-constants.txt",
-      stage: "missing",
+      docId: "revmodphys97025002pdf",
+      dir: "library/revmodphys97025002pdf",
+      pdf: "library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf",
+      stage: "candidates",
+      pages: 62,
+      sections: 73,
     },
     type: "dataset",
     title: "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
@@ -845,7 +849,14 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2022]] },
     URL: "https://physics.nist.gov/cgi-bin/cuu/Value?mmusme",
     publisher: "NIST Standard Reference Database",
-    note: "Muon--electron mass ratio $m_\\mu/m_e = 206.768\\,2830(46)$",
+    DOI: "10.1103/RevModPhys.97.025002",
+    note: "Muon--electron mass ratio $m_\\mu/m_e = 206.768\\,2830(46)$. "
+      + "DOI added 2026-08-15, read off the held copy: the library holds this "
+      + "as its Rev. Mod. Phys. 97, 025002 publication (Mohr, Newell, Taylor). "
+      + "`type` is left as `dataset` deliberately — the blocks citing this key "
+      + "cite the CODATA *values*, not the review article, and those are "
+      + "arguably different objects. Revisit if a block ever cites the paper "
+      + "as a paper.",
   }),
 
   // ── Kronheimer and Mrowka 2004 ────────────────────────────────
