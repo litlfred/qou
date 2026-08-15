@@ -1251,6 +1251,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a matrix evaluation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "eb5aa72fcb7d",
+          "ts": "486e12056df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:19.193Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Limits section: 'is not waiting on hardware; it uses the wrong tool' (fixed)",
+        "notes": "fixed: 'is not waiting on hardware; it uses the wrong tool' -> 'would remain out of reach even with more hardware, because the method itself is mismatched to the target'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1270,6 +1286,22 @@
         "reviewed_at": "2026-08-15T10:30:59.425Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "eb5aa72fcb7d",
+          "ts": "486e12056df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:19.316Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "The 'not hardware; wrong tool' pivot removed with the negation-contrast fix",
+        "notes": "post-fix the section states the obstruction directly"
       }
     ],
     "trap-em-dash": [
@@ -1289,6 +1321,21 @@
         "reviewed_at": "2026-08-15T10:30:59.425Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 499 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eb5aa72fcb7d",
+          "ts": "486e12056df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:19.459Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Read full block in context; no em dash construction present."
       }
     ],
     "trap-triples": [
@@ -1308,6 +1355,21 @@
         "reviewed_at": "2026-08-15T10:30:59.425Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 499 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eb5aa72fcb7d",
+          "ts": "486e12056df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:19.508Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Read full block in context; no triples construction present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1327,6 +1389,22 @@
         "reviewed_at": "2026-08-15T10:30:59.425Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "eb5aa72fcb7d",
+          "ts": "486e12056df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:19.248Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Section-final quotable line 'Adding compute scales the wrong axis.' (fixed)",
+        "notes": "fixed: deleted the section-final aphorism; the two preceding declarative sentences already state the per-partition vs structural mismatch"
       }
     ],
     "trap-meta-commentary": [
@@ -1346,6 +1424,22 @@
         "reviewed_at": "2026-08-15T10:30:59.425Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "eb5aa72fcb7d",
+          "ts": "486e12056df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:19.357Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Final 'This remark interprets prop:... only. It makes no new logical claim' scope note",
+        "notes": "interprets-discipline bookkeeping (remark scope statement), not narration of emphasis — pass with note"
       }
     ],
     "trap-thesis-restatement": [
@@ -1365,6 +1459,22 @@
         "reviewed_at": "2026-08-15T10:30:59.425Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "eb5aa72fcb7d",
+          "ts": "486e12056df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:19.397Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "'forward test rather than a back-fit' closes the evidential-status section",
+        "notes": "substantive contrast: the change of evidential status IS the block's content"
       }
     ],
     "trap-performed-warmth": [
@@ -1384,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:30:59.425Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "eb5aa72fcb7d",
+          "ts": "486e12056df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:19.548Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Read full block in context; no performed warmth construction present."
       }
     ],
     "trap-superlative": [
@@ -1403,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:30:59.425Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "eb5aa72fcb7d",
+          "ts": "486e12056df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:19.596Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Read full block in context; no superlative construction present."
       }
     ],
     "trap-nonspeakable": [
@@ -1422,8 +1562,23 @@
         "reviewed_at": "2026-08-15T10:30:59.425Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "eb5aa72fcb7d",
+          "ts": "486e12056df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:19.638Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Read full block in context; no nonspeakable construction present."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.425Z"
+  "updated_at": "2026-08-15T11:26:19.638Z"
 }
