@@ -313,3 +313,47 @@ open items on the wider program (not this thread):
   `fullCharacterGen_two_mul`; open.
 - `QHeckeSeminormalCharacterClosure` — conditional class (`claim_paths_agree`
   assumed); discharge or leave conditional.
+---
+
+## 2026-08-15 — general-λ Hoefsmit: two of three Hecke relations proved globally (#5076)
+
+**Scope map.**
+
+| PR | branch | relationship |
+|---|---|---|
+| **#5076** (this) | `claude/seminormal-quadratic-2026-08-15` | general-λ seminormal rep on `SYT μ` — `SeminormalRep.lean` (new), `TableauCells.lean`, `SeminormalParam.lean`, `HoefsmitRep.lean` |
+| #4954 | `claude/8vt2-generator-gap-and-identity-2026-08-10` | **overlap + downstream.** Adds `QOU/SchurWeyl/QJucysMurphy.lean`, which imports `HoefsmitRep.lean`; its `qJM_commute` sorry is explicitly blocked on the SW-4 seminormal residual = `qou-gjg6` = this work. [Intent posted](https://github.com/litlfred/qou/pull/4954#issuecomment-5300631637). |
+| #5013 | `claude/wlambda-normalisation-census-2026-08-11` | **no overlap.** `w_λ` normalisation in `.md` prose + a Python census; touches no `QOU/SchurWeyl/**`. Not posted on. |
+
+Every other open PR at the time of writing is in a different subtree
+(q-NS, c₃/qbeta, precision drains, viewer, LP duals).
+
+**State of `qou-gjg6`.** Route (c) — index the generator matrix by
+`StandardYoungTableau μ` on *both* sides, so there is no per-orbit basis
+correspondence to justify. Sorry-free and axiom-clean throughout:
+
+- `genMat_quadratic` — `ρ(σ_k)² = (q − q⁻¹)ρ(σ_k) + 1`, arbitrary shape;
+- `genMat_far_comm` — `ρ(σ_k)ρ(σ_l) = ρ(σ_l)ρ(σ_k)` for `|k − l| ≥ 2`, arbitrary
+  shape, and **with no hypothesis on `q` at all**.
+
+Both work because they are **column-local**: `genMat`'s column `T` has support in
+`{T, s_k·T}`, so neither relation ever sees a third tableau. The braid is not
+column-local — `σ_k` and `σ_{k+1}` have different supports — which is the precise
+sense in which it is harder, and is exactly what `Orbit3Braid` / `Orbit6Braid`
+encode.
+
+**Braid: reduced to orbit algebra, not yet proved.** The parameter bookkeeping is
+closed (only `p`, `r`, `p+r` and their negatives occur across an orbit —
+`axialDist_succ_swapTableau`, `axialDist_swapTableau_word_left`/`_right`,
+`axialDist_swapTableau`), the relation is available on `seminormalParam` directly
+(`seminormalParam_rel`), the triple products expand onto named orbit tableaux
+(`genMat_braid_lhs_expand` / `_rhs_expand`), and the diagonal row closes on that
+relation with nothing left over (`braid_diag_identity`). What remains is the other
+five rows plus the admissibility case tree for non-generic orbits.
+`hoefsmit_seminormal_rep` keeps its `-- Ref:` sorry.
+
+**Convention note for whoever wires `QJucysMurphy` to this.** The JM eigenvalue
+`q^{2c}` is a per-cell **content**; `genMat`'s diagonal `seminormalParam q
+(axialDist T k)` is a content **difference**. Not a convention clash — the axial
+distance controls the *ratio* of consecutive JM eigenvalues, and that ratio is the
+bridge. State it explicitly when the two meet.
