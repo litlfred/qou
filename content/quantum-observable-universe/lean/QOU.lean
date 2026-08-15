@@ -622,6 +622,7 @@ import QOU.QBeta.ReebTowerJacobiAnger
 import QOU.QBeta.PhiBSArgumentIdentification
 import QOU.QBeta.TauNormalizationChoice
 import QOU.QBeta.ModularRayDiagonalPrune
+import QOU.QBeta.OhtsukiNZBridgeScale
 import QOU.QBeta.WindingGFTransform
 import QOU.QBeta.ThetaRealityBound
 import QOU.QBeta.AfreeThetaConstraint

@@ -64,3 +64,16 @@ proved precision ceiling, sigma_A ~ 40%). Do not measure; derive or wait.
 - **B4 — the terminus** [blocked]. Full resolution = A_ω internal derivation;
   post-d999b21d7 the honest next rung there is M1 (see qou-rtec D1), not
   more normalization analysis.
+
+## B1 result (2026-08-15, qou-uxwc — OhtsukiNZBridgeScale.lean, sorry-free)
+
+The consistency-forcing search's outcome is the DOUBLE-CONSISTENCY branch,
+with a new derived lock: conditional on a linear bridge u = c·b identifying
+the quantum fluctuation with the geometric deformation, the order-b² match
+between the Ohtsuki rung (κ₁ = 11√3π/108, exact) and the NZ leading form
+forces (1) c² purely imaginary — the diagonal-ray geometry DERIVED rather
+than assumed (cross-checks A2), and (2) κ_A²·‖c²‖ = (2πκ₁)² — the bridge
+scale and the A-binary are one unknown, in ratio exactly 2 between the two
+conventions. No sorry-free asset pins ‖c‖ independently, so the binary is
+UNDETERMINED at order b² by current assets — but any future independent
+bridge-scale pin now decides A mechanically, and vice versa.
