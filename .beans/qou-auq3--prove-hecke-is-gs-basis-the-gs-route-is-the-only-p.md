@@ -1330,3 +1330,83 @@ The 3 are two different situations, and neither is §4s or §4o:
 So the honest next step is the mirror transport (with a right context), which
 closes 2 of the 3 and is also what the long `B × B` tails will want; `j < j₀` is
 its own small family.
+
+## §4v — Bokut–Shiao / Yang–Baxter against far-commutation **below** the run (2)
+
+The third regime of `BS/YB × farCommRelation i j₀`, and with it the
+far-commutation block is finished bar one composition. The three regimes by where
+`j₀` sits relative to the run `descWord i j`:
+
+    j₀ + 1 = j     §4o   1 step    the S-polynomial *is* the rule one index lower
+    j₀ = j         §4s   4 steps   a square at each end
+    j₀ + 1 < j     §4v   6 steps   σ_{j₀} is below the run and commutes past it
+    j < j₀         open  8 steps   σ_{j₀} lands *inside* the run's index range
+
+For `j₀ + 1 < j` every letter of the run has index at least `j > j₀ + 1`, so the
+stray `σ_{j₀}` in each term of
+
+    spoly = c · (descWord i j ++ [σ_{j₀}, σᵢ])  −  c · (w₂ ++ [σ_{j₀}])
+
+commutes all the way to the front. Two transports (`|descWord i j|` and `|w₂|`
+steps) then one application of the rule in the context `(σ_{j₀} ∣ ε)`, and the
+terms cancel. Every side condition in the whole section reduces to two letter
+inequalities, `q ≠ σᵢ` and `q ≠ σ_{j₀}`, where `q` is the first letter of the
+rule's other word.
+
+**The mirror transport is a genuinely different lemma.** §4t and §4u move a
+*big* generator rightwards through small ones; §4v moves a *small* generator
+leftwards through big ones. The rewrite is the same rule `σ_aσ_b → σ_bσ_a`, but
+the moving letter is the second factor of the leading monomial instead of the
+first, so the induction recurses at the other end of the word, appends its step
+with `MultiStepReduction.step` rather than `.head`, and needs a **right** context
+that neither earlier transport carries.
+
+**It also fixes §4u's list-slot duplication.** `farComm_transport_left` puts the
+moving term at an arbitrary position `L₁ ++ (·) :: L₂` of the `ofTerms` list, so
+one lemma serves both phases where §4u needed `_snd` and `_fst`. The enabler is
+`ofTerms_coeff_mid`: the coefficient of a singled-out term when no other term
+carries its word, proved by `List.filter_eq_nil_iff` on the two flanking lists.
+The step's `CoeffEq` goal then goes through unchanged — after `List.filter_append`
+and `List.sum_append` the two flanking sums are atoms and `ring` closes over
+them. **If the `B × B` block needs a transport, use this form, not §4u's.**
+
+Two build notes:
+
+* `intro u v _` discarded the splitting hypothesis in one collision proof, and
+  the `u = []` branch genuinely needs it — it is what says the remaining word is
+  the bystander's. Cost one error; the fix is `intro u v huv` and `subst`.
+* `rw` closes by `rfl` only at *reducible* transparency, so
+  `rw [yangBaxterRelation_lm …]` does not finish `[σᵢ,σᵢ₋₁,σᵢ] = [σᵢ,σᵢ₋₁] ++ [σᵢ]`.
+  Fifth time this has come up in this arc.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × F (j₀+1=j)       5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      BS × F (j₀=j)            3   §4s   general in n
+      quadratic × general BS   3   §4t   general in n
+      far-comm × BS/YB         2   §4u   general in n
+      BS/YB × F (j₀+1<j)       2   §4v   general in n
+      ---------------------------
+      proved                  74
+      remaining               18
+
+    inclusion compositions    22   §4m   (all)
+
+**The remaining 18:**
+
+    1    BS/YB × F with j < j₀   (B230 × F31)          8 steps
+    17   BS/YB × BS/YB                                 9 … 25 steps
+
+The single `j < j₀` composition is its own small family and is *not* a transport:
+`σ_{j₀}` lands inside the run's index range, so it does not commute past
+`σ_{j₀±1}`. The engine's chain shows what happens instead — the tail of the first
+term is `descWord j₀ j ++ [σ_{j₀}] = bsWord₁ j₀ j`, so the Bokut–Shiao rule at the
+*inner* index `j₀` fires first, and the family is nested rather than flat. Worth
+doing next precisely because it is small and closes the entire far-commutation
+block, leaving `B × B` as the single remaining shape.
