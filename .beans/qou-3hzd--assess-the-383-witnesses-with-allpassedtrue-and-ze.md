@@ -1,11 +1,11 @@
 ---
 # qou-3hzd
 title: Assess the ~383 witnesses with allPassed:true and zero assertions (NOT the wrap_legacy bug)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-14T20:03:32Z
-updated_at: 2026-08-15T00:11:38Z
+updated_at: 2026-08-15T00:19:50Z
 ---
 
 
