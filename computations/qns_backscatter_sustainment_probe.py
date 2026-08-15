@@ -67,6 +67,25 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (AGENTS.md §"QA is agent-owned";
+    `computations/witness_raw_float64_audit.py`). These probes compute in the
+    float64 tier by design — closed forms plus a Simpson cross-check — so the
+    fix is at serialization, not at the numerics: `_precision.fmt` renders a
+    float via `str()`, which round-trips exactly. Non-floats (int, bool, str,
+    list) pass through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 EPS = 1.0e-2
 F_VISC = 1.5
 N_SWEEP = (8, 12, 16, 20, 24)
@@ -183,8 +202,8 @@ def main() -> None:
         sc = run(kc, nu, DELTA_STD, f"N={N} cl")
         R = sq / sc if sc > 0 else float("inf")
         Ss.append(sq); Rs.append(R)
-        w.add_data(f"N{N}_S_q", sq)
-        w.add_data(f"N{N}_R", R)
+        w.add_data(f"N{N}_S_q", _f(sq))
+        w.add_data(f"N{N}_R", _f(R))
         print(f"  N={N:2d}: S_q={sq:.4e}  S_cl={sc:.4e}  R={R:.3f}")
 
     # (ii) delta-sweep at fixed N (backscatter-strength robustness)
@@ -197,8 +216,8 @@ def main() -> None:
         sc = run(kc, nu, d, f"d={d} cl")
         R = sq / sc if sc > 0 else float("inf")
         Rd.append(R)
-        w.add_data(f"delta{d}_S_q", sq)
-        w.add_data(f"delta{d}_R", R)
+        w.add_data(f"delta{d}_S_q", _f(sq))
+        w.add_data(f"delta{d}_R", _f(R))
         print(f"  delta={d}: S_q={sq:.4e}  S_cl={sc:.4e}  R={R:.3f}")
 
     # stepwise: any 10x jump between consecutive N counts as growth (an
@@ -206,7 +225,7 @@ def main() -> None:
     grows = any(Ss[i + 1] > 10.0 * Ss[i] for i in range(len(Ss) - 1))
     flat_R = all(0.2 < r < 5.0 for r in Rs)
     delta_robust = all(0.2 < r < 5.0 for r in Rd)
-    w.add_data("S_spread", max(Ss) / max(min(Ss), 1e-300))
+    w.add_data("S_spread", _f(max(Ss) / max(min(Ss), 1e-300)))
     w.add_assertion(
         "Backscatter does NOT re-open self-sustainment: S_q stays flat/decreasing "
         "across the N-sweep (no growth with truncation)",
@@ -236,8 +255,8 @@ def main() -> None:
         "exploratory tier; float64 RK2."
     )
     w.add_data("tier", "exploratory")
-    w.add_data("eps", EPS)
-    w.add_data("delta_std", DELTA_STD)
+    w.add_data("eps", _f(EPS))
+    w.add_data("delta_std", _f(DELTA_STD))
     w.save()
     print("Saved witness: qns-backscatter-sustainment-probe.witness.json")
 

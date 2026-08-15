@@ -46,6 +46,25 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (AGENTS.md §"QA is agent-owned";
+    `computations/witness_raw_float64_audit.py`). These probes compute in the
+    float64 tier by design — closed forms plus a Simpson cross-check — so the
+    fix is at serialization, not at the numerics: `_precision.fmt` renders a
+    float via `str()`, which round-trips exactly. Non-floats (int, bool, str,
+    list) pass through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 N = 32
 BAND = 8
 N_DATA = 4
@@ -113,9 +132,9 @@ def main() -> None:
         resc = (eps ** 2) * st  # c_q-rescaled tail (k_phys = eps*k_sub)
         tails.append(st)
         fracs.append(sf)
-        w.add_data(f"eps{eps:.0e}_sup_tail", st)
-        w.add_data(f"eps{eps:.0e}_sup_frac", sf)
-        w.add_data(f"eps{eps:.0e}_sup_tail_cq_rescaled", resc)
+        w.add_data(f"eps{eps:.0e}_sup_tail", _f(st))
+        w.add_data(f"eps{eps:.0e}_sup_frac", _f(sf))
+        w.add_data(f"eps{eps:.0e}_sup_tail_cq_rescaled", _f(resc))
         print(f"  eps={eps:.0e}: sup_tail={st:.4e}  sup_frac={sf:.4f}  "
               f"cq-rescaled={resc:.4e}  (Om0={om0:.3f})")
 
@@ -133,8 +152,8 @@ def main() -> None:
     slope_asym = fit(xs[-3:], ys[-3:])
     rescaled = [(EPS_SWEEP[i] ** 2) * tails[i] for i in range(len(tails))]
     resc_decreasing = rescaled[-3] > rescaled[-2] > rescaled[-1]
-    w.add_data("tail_growth_exponent_global", slope)
-    w.add_data("tail_growth_exponent_asymptotic", slope_asym)
+    w.add_data("tail_growth_exponent_global", _f(slope))
+    w.add_data("tail_growth_exponent_asymptotic", _f(slope_asym))
     print(f"\n  sup_tail 1/eps exponent: global {slope:.3f}, "
           f"asymptotic (last 3) {slope_asym:.3f}")
 
@@ -179,7 +198,7 @@ def main() -> None:
     )
     w.add_data("tier", "exploratory")
     w.add_data("N", N)
-    w.add_data("band", BAND)
+    w.add_data("band", [_f(v) for v in BAND] if isinstance(BAND, (list, tuple)) else _f(BAND))
     w.save()
     print("Saved witness: qns-tail-pileup-probe.witness.json")
 

@@ -50,6 +50,25 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (AGENTS.md §"QA is agent-owned";
+    `computations/witness_raw_float64_audit.py`). These probes compute in the
+    float64 tier by design — closed forms plus a Simpson cross-check — so the
+    fix is at serialization, not at the numerics: `_precision.fmt` renders a
+    float via `str()`, which round-trips exactly. Non-floats (int, bool, str,
+    list) pass through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 N = 32
 BAND = 8
 N_DATA = 4
@@ -125,12 +144,12 @@ def main() -> None:
         md, mt, viol, samp, dfl = run(eps)
         ratio = md / dfl if dfl > 0 else float("inf")
         all_pos &= (md > 0)
-        w.add_data(f"eps{eps:.0e}_min_Deff", md)
-        w.add_data(f"eps{eps:.0e}_min_Deff_time", mt)
+        w.add_data(f"eps{eps:.0e}_min_Deff", _f(md))
+        w.add_data(f"eps{eps:.0e}_min_Deff_time", _f(mt))
         w.add_data(f"eps{eps:.0e}_violation_steps", viol)
         w.add_data(f"eps{eps:.0e}_samples", samp)
-        w.add_data(f"eps{eps:.0e}_naive_floor", dfl)
-        w.add_data(f"eps{eps:.0e}_Deff_over_floor", ratio)
+        w.add_data(f"eps{eps:.0e}_naive_floor", _f(dfl))
+        w.add_data(f"eps{eps:.0e}_Deff_over_floor", _f(ratio))
         print(f"  eps={eps:.0e}: min D_eff={md:.4e} (at t={mt:.2f})  "
               f"violations {viol}/{samp}  naive floor={dfl:.3e}  "
               f"ratio={ratio:.2f}")
@@ -166,7 +185,7 @@ def main() -> None:
     )
     w.add_data("tier", "exploratory")
     w.add_data("N", N)
-    w.add_data("band", BAND)
+    w.add_data("band", [_f(v) for v in BAND] if isinstance(BAND, (list, tuple)) else _f(BAND))
     w.save()
     print("Saved witness: qns-amplitude-step-probe.witness.json")
 

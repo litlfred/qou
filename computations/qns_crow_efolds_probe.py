@@ -51,6 +51,25 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (AGENTS.md §"QA is agent-owned";
+    `computations/witness_raw_float64_audit.py`). These probes compute in the
+    float64 tier by design — closed forms plus a Simpson cross-check — so the
+    fix is at serialization, not at the numerics: `_precision.fmt` renders a
+    float via `str()`, which round-trips exactly. Non-floats (int, bool, str,
+    list) pass through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 GAMMA = 1.0
 D0SQ = 1.0
 S_STAR_SWEEP = (0.5, 0.8, 1.2)
@@ -94,8 +113,8 @@ def main() -> None:
             amp = math.exp(ne_closed)
             all_finite &= math.isfinite(amp)
             key = f"s{s_star}_rho{rho:.0e}"
-            w.add_data(f"{key}_efolds", ne_closed)
-            w.add_data(f"{key}_amplification", amp)
+            w.add_data(f"{key}_efolds", _f(ne_closed))
+            w.add_data(f"{key}_amplification", _f(amp))
             print(f"  s*={s_star:.1f} rho={rho:.0e}: overlap d2={d2_ov:.3e} "
                   f"({'visc' if d2_visc > d2_strain else 'strain'}) "
                   f"N_e={ne_closed:.3f} (num {ne_num:.3f}, rel {rel:.1e}) "
@@ -105,8 +124,8 @@ def main() -> None:
     ne1 = (0.8 / 3.0) * math.log(1 / RHO_SWEEP[1])
     ne2 = (0.8 / 3.0) * math.log(1 / RHO_SWEEP[3])
     slope = (ne2 - ne1) / (math.log(1 / RHO_SWEEP[3]) - math.log(1 / RHO_SWEEP[1]))
-    w.add_data("power_law_exponent", slope)
-    w.add_data("max_rel_err_closed_vs_numeric", max_rel_err)
+    w.add_data("power_law_exponent", _f(slope))
+    w.add_data("max_rel_err_closed_vs_numeric", _f(max_rel_err))
     print(f"\n  power-law exponent (s*=0.8): {slope:.4f} (predicted s*/3 = {0.8/3:.4f})")
     print(f"  max closed-form vs Simpson rel err: {max_rel_err:.2e}")
 
@@ -141,7 +160,7 @@ def main() -> None:
         "nonlinear regime, which remain the open content of qou-ohaz U3."
     )
     w.add_data("tier", "exploratory")
-    w.add_data("s_star_sweep", list(S_STAR_SWEEP))
+    w.add_data("s_star_sweep", [_f(v) for v in S_STAR_SWEEP])
     w.save()
     print("Saved witness: qns-crow-efolds-probe.witness.json")
 
