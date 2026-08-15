@@ -1,11 +1,11 @@
 ---
 # qou-9e3b
 title: Rivin/Farkas strong LP duality (Thm 3.2 full) — conditional on Mathlib Farkas
-status: todo
+status: completed
 type: task
 priority: low
 created_at: 2026-08-15T15:57:50Z
-updated_at: 2026-08-15T15:57:50Z
+updated_at: 2026-08-15T22:07:35Z
 parent: qou-5lm6
 ---
 
