@@ -377,6 +377,52 @@ theorem swapTableau_comm (T : StandardYoungTableau μ) {k l : ℕ} (hk : 1 ≤ k
   exact swapVal_comm hfar (T.entry i j)
 
 
+/-! ## The orbit trichotomy
+
+For consecutive entries `k, k+1` exactly one of three things happens, and this is the
+decidable case split the block assembly of step (ii) runs on: the two cells share a row
+(a size-`1` orbit, axial distance `+1`, scalar `q`), share a column (size `1`, distance
+`-1`, scalar `-q⁻¹`), or share neither (`SwapAdmissible` — a size-`2` orbit, a
+`seminormalBlock`).  There is no fourth case, and no two of them overlap: the cells are
+distinct because the entries are, so they cannot agree in both coordinates.
+-/
+
+/-- The cells of two distinct entries are distinct. -/
+theorem cellOf_ne (T : StandardYoungTableau μ) {k : ℕ}
+    (hk : k ∈ Set.Icc 1 μ.cells.card) (hk' : k + 1 ∈ Set.Icc 1 μ.cells.card) :
+    cellOf T k ≠ cellOf T (k + 1) := by
+  intro h
+  have h₁ : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T hk
+  have h₂ : T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 1 := entry_cellOf T hk'
+  rw [h] at h₁
+  omega
+
+/-- **The orbit trichotomy.**  Exactly one of: the two cells share a row (axial distance
+`+1`), share a column (`-1`), or share neither (`SwapAdmissible`).  This is the case split
+the generator assembly runs on — the first two give the scalar entries `q` and `-q⁻¹`, the
+third a `seminormalBlock`. -/
+theorem axialDist_trichotomy (T : StandardYoungTableau μ) {k : ℕ}
+    (hk : k ∈ Set.Icc 1 μ.cells.card) (hk' : k + 1 ∈ Set.Icc 1 μ.cells.card) :
+    axialDist T k = 1 ∨ axialDist T k = -1 ∨ SwapAdmissible T k := by
+  have hm₁ : cellOf T k ∈ μ.cells := cellOf_mem T hk
+  have hm₂ : cellOf T (k + 1) ∈ μ.cells := cellOf_mem T hk'
+  have hμ₁ : ((cellOf T k).1, (cellOf T k).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using hm₁
+  have hμ₂ : ((cellOf T (k + 1)).1, (cellOf T (k + 1)).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using hm₂
+  have he₁ : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T hk
+  have he₂ : T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 1 := entry_cellOf T hk'
+  by_cases hrow : (cellOf T k).1 = (cellOf T (k + 1)).1
+  · left
+    exact axialDist_of_sameRow T hμ₁ (by rw [← hrow] at hμ₂; exact hμ₂) he₁
+      (by rw [← hrow] at he₂; exact he₂)
+  · by_cases hcol : (cellOf T k).2 = (cellOf T (k + 1)).2
+    · right; left
+      exact axialDist_of_sameCol T hμ₁ (by rw [← hcol] at hμ₂; exact hμ₂) he₁
+        (by rw [← hcol] at he₂; exact he₂)
+    · exact Or.inr (Or.inr ⟨hrow, hcol⟩)
+
+
 end TableauCells
 
 end QOU.SchurWeyl
