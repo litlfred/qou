@@ -69,6 +69,14 @@ GATES=(
   # with durationMs 2,552,837 -> 519. Neither gate subsumes the other.
   "witness shape guard|computations/witness_shape_guard.py||yes|yes"
   "q0-value drift ratchet|computations/q0_value_drift_audit.py|--strict|no|yes"
+  # Blocking, and GREEN as of the commit that added it (0 candidates across
+  # 273 numpy-importing files) — which is exactly when a gate is safe to make
+  # blocking, because it can then only ever fire on a NEW regression.
+  # Guards the mpmath/float64 boundary: an mpf reaching a numpy array demotes
+  # it to dtype=object, silently leaving BLAS. Measured at ~4000x on
+  # chi_numpy, invisible to compute_audit_scan, and misdiagnosed as slow
+  # hardware for six hours. Bean qou-5qwb.
+  "numpy/mpmath dtype leak|computations/numpy_mpmath_dtype_leak_audit.py||yes|yes"
   # ADVISORY, and it starts red on purpose. The ratchet's scan root is
   # computations/, so every witness under docs/audits/scripts/ has been
   # outside the NO-FLOAT64 discipline entirely — 5 carry raw float64 today
