@@ -265,3 +265,40 @@ smaller scale.
 **Coordinate before editing.** PR #4928's merge message states both sides had
 already run convention-C campaigns in parallel and converged on the same three
 defects. Check for an in-flight sibling on these five before starting.
+
+## CORRECTION (2026-08-15): probe_1b's premise does NOT dissolve — it sharpens
+
+The classification above put `probe_1b_li6_orthogonality` under "premise
+dissolves", on the reasoning that it compares `y_λ` magnitudes across
+many-row PSD-dominant families which are all exactly 0 under convention D. I
+wrote that the orthogonality question "does not survive the convention
+change" and that the honest outcome was to record a negative.
+
+Checking the committed witness instead of reasoning about it:
+
+    (17, 1)        rows=2   7.080e-06
+    (16, 2)        rows=2   6.924e-06
+    (15, 3)        rows=2   6.206e-06
+    (18,)          rows=1   5.861e-06
+    ...
+    (15, 2, 1)     rows=3   2.045e-06
+
+**Both** families are present. The trace-dominant side is 1- and 2-row and
+stays nonzero under D; only the PSD-dominant side is 3+ row and vanishes.
+
+So the probe's question survives and its answer gets *sharper*: at A=6 the
+PSD-dominant family contributes **exactly zero** to the trace under D, where
+convention C gave 0.030% / 0.0002%. Orthogonality becomes exact rather than
+approximate — a stronger result, not a dissolved one.
+
+Revised disposition for this producer: **re-run and record the exact-zero
+result**, not "record a negative". It moves from the dissolve bucket to the
+recompute bucket, making that split 3 recompute / 0 dissolve / 1 symbolic
+re-derivation / 1 detector triage.
+
+**Second time in two beans today** that I asserted a consequence from a grep
+without executing the thing (the other: `qou-a0j7`, where I gave a 6.88e-4
+figure for a path that raises ModuleNotFoundError on every input). Both
+corrections were one command away. The pattern is asserting downstream
+consequences from a static read — the same error class this whole arc is
+about, applied to my own reporting rather than to the code.
