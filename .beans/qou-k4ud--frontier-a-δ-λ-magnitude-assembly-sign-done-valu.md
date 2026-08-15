@@ -68,3 +68,13 @@ identification, and — per the keystone-Habiro audit's explicit anti-correspond
 off the 2I/E₈/Hecke S-matrix without a derivation is exactly the unfalsifiable chain the corpus forbids. So
 the shared A↔B wall (fibre S-matrix → observable m/τ) stands as a CONSTRUCTION, not a bridge. My durable
 claim (Δ_λ sign = row-grading (−1)^{n(λ)}, cyclotomic-transfer refuted) is uncontradicted by main.
+
+## CORRECTION (2026-08-15) — my prior "UNCHANGED" note was WRONG; Frontier A ADVANCED on main
+Missed in the first sweep: (a) the Δ_λ VALUE is now PROVED sorry-free general-n on main —
+`Δ_λ=(−1)^{n(λ)}·dim V_λ` (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, wired to
+computations/delta-lambda-witness.json; audit 2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md).
+My July finding (sign=valuation, |Δ_λ|=dim) was right and a sibling carried it to full proof. (b) The
+open piece is the super-pairwise extensive MAGNITUDE term (r*≈1.585), NOT a per-block Δ_λ (structurally
+impossible: pairwise cap ρ_A≤C(A,2) proved, exchangeDet_pow_two_le_four). (c) ℓ¹-ceiling sharpened
+2026-08-07 (free_parameters=0) — "magnitude open" is now a proved quantitative bound. So the b₄ collective
+term I scoped IS the live frontier, and it advanced. Bean stays in-progress (magnitude R&D open).
