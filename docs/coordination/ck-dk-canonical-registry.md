@@ -326,21 +326,65 @@ none. Verified in
 
 ### 9b. Scale caveat — the Φ_b deficit → `|S|` match is anchor-selective (added 2026-08-14)
 
+> **⚠ SHARPENED + ATTRIBUTED 2026-08-15.** The original text here argued the
+> match "can hold at at most one anchor" because `|S_leak|` swings `4.075×`, and
+> called the gap a "26.3× disagreement". Two corrections, neither of which
+> changes the verdict:
+>
+> 1. **Not new, and previously uncited.** The mechanism was already established
+>    as **Route A** (2026-08-01) — the ratio is *anchor-offset arithmetic near
+>    the S-zero*, not a period — and is **Lean-proved sorry-free** in
+>    [`SLeakMagnitudeOffsetRatio.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/SLeakMagnitudeOffsetRatio.lean)
+>    (`linear_ratio_slope_independent`, `smooth_ratio_near_one`,
+>    `smooth_period_excluded_as_magnitude`). §9b restated it without the
+>    citation. The citation is now here.
+> 2. **The "26.3× disagreement" framing overstates what the proton value
+>    tests.** It presents `|S_leak(proton)|` as a meaningful target. It is not —
+>    see below. The correct objection is stronger than the one first given.
+
 KC21 cites the Φ_b state-integral saddle as supplying the `|S|` scale "from
-geometry … smooth + anchor-blind". The **anchor-blindness is the defect, not the
-virtue**: the deficit is anchor-blind (spread `2.2e-7`) while `|S_leak|` swings
-`4.075×` between anchors, so the match can hold at **at most one** anchor.
+geometry … smooth + anchor-blind". The real defect is sharper: **`|S_leak|` at
+either anchor carries no scale content at all.**
 
-| | value | miss vs deficit |
+**`S_leak`'s zero lies BETWEEN the two anchors**, at `q*_S ≈ 1.109978593`, which
+sits **80.28 %** of the way from the proton pin to the muon pin — hence the
+opposite signs in the witness (`S_muon = +0.009683`, `S_proton = −0.039459`).
+Across that interval `S_leak` is **linear through the zero**, so its magnitude at
+an anchor is just `|slope| × |q_anchor − q*_S|`:
+
+| | value |
+|---|---|
+| `\|q_proton − q*_S\| / \|q_muon − q*_S\|` (lever arm) | **4.0700** |
+| measured `\|S_leak(proton)\| / \|S_leak(muon)\|` | **4.0751** |
+| agreement | **0.12 %** |
+
+**The "4.075× anchor swing" is that lever arm and nothing else** — Route A's
+result, and the content of `linear_ratio_slope_independent` (the slope
+*cancels*, so the ratio is pure offset arithmetic). It is set by where the
+calibration happens to place the anchors relative to `q*_S`, not by any property
+of `S_leak`. Consequently:
+
+| | value | status |
 |---|---|---|
-| `vol_deficit` (both anchors) | `0.0094025…` | — |
-| `\|S_leak(muon)\|` | `0.00968298` | **2.896 %** ← the quoted match |
-| `\|S_leak(proton)\|` | `0.03945936` | **76.17 %** ← not quoted |
+| `vol_deficit` (both anchors) | `0.0094025…` | a genuine geometric constant |
+| `\|S_leak(muon)\|` | `0.00968298` | `slope × 2.53e-9` — **no scale content** |
+| `\|S_leak(proton)\|` | `0.03945936` | `slope × 1.03e-8` — **no scale content** |
 
-A 26.3× disagreement between anchors. This is the **same** objection the corpus
-already accepts against `h·D(ũ)` (*"the carrier is anchor-blind … and is NOT the
-swinging empirical S, so `S = h·D(ũ)` is schematic, not a tight identity"* —
-`qbeta-c3-qstar-k31-repin.witness.json`), and it applies verbatim here.
+The quoted 2.896 % agreement at the muon is therefore **not weak evidence for
+(H1); it is not evidence at all** — it is a constant compared against a
+near-zero residual whose size is a calibration accident. Equally, the 76.17 %
+"miss" at the proton is **not counter-evidence**, and the "26.3× disagreement"
+framing of the original text is withdrawn: it presented the proton number as a
+meaningful test.
+
+**Why the earlier "anchor-blind vs anchor-dependent" framing was circular.** Over
+the same `Δq = 1.28e-8`, the carrier `h·D` moves by `1.23e-9` (slope ≈ **0.096**
+— an ordinary smooth function) while `S_leak` moves by `0.0491` (slope ≈
+**3.84e6**, within 17.7 % of the corpus value `dc₃/dq ≈ 4.66e6`). So
+"anchor-blind" means *ordinary derivative* and "anchor-dependent" means *the
+`1/u³` ladder inversion* — a result the 2026-07-12 capstone already closed
+("the wall was never physical"). Casting it as an open obstruction re-imports a
+settled finding as a gate.
 
 **Calibration of the 2.9 %.** The deficit is **5.32× closer** to the ladder's own
 expansion variable `ũ₀ = 0.0094539…` (0.544 %) than to `|S(muon)|` (2.896 %).
@@ -350,6 +394,26 @@ discriminate a geometric reading from a numerological one.
 The producing witness is honest — it records both anchors and says
 `"deficit 0.0094 ~ |S(muon)|"` explicitly. It was the KC21 summary that
 generalised a muon-only match into "the `|S|` scale".
+
+#### What the carrier mismatch actually is — a ZERO, not a magnitude
+
+The corpus note *"the carrier is anchor-blind (spread `1.23e-9`) and is NOT the
+swinging empirical `S`, so `S = h·D(ũ)` is schematic, not a tight identity"*
+(`qbeta-c3-qstar-k31-repin.witness.json`) is **right**, but not for the reason
+the wording suggests. The mismatch is not that one swings and the other does
+not — per the slope figures above, that comparison is just the `1/u³`
+hypersensitivity restated.
+
+The real mismatch: **`h·D(ũ₀) = −0.003486…` is a nonzero near-constant, while
+`S_leak` passes through zero between the anchors.** A nonzero constant cannot
+equal a function that crosses zero. That is a statement about the **location of
+the zero**, and it is checkable.
+
+**Consequence for any fibre-level attack.** The target is the zero location
+`q*_S`, **not** a magnitude. This is why magnitude-matching attempts have failed
+— they were matching a quantity (`|S_leak|` at an anchor) that carries no scale
+information. It also fits `q*_S`'s independent standing as the third,
+decay-sector determination of q₀ (§3).
 
 ### 9c. `c₃^even = −Vol(4₁)` — the registry pointer (answers `qou-qb8f` (c))
 
