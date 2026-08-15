@@ -61,7 +61,11 @@ use hecke_engine::seminormal_mpfr::chi_lambda_braid_mpfr;
 /// digits drift, update this literal in lock-step. There is no
 /// shared Rust constant module for substrate parameters yet (flagged
 /// as future C-full follow-up).
-const Q0_F64: f64 = 1.1099785955541805;
+// Was a local literal with a "drift discipline" note saying there is no
+// shared Rust constant module for substrate parameters. There is:
+// `gram::Q_0`, now the PROTON pin (2026-08-15). Aliased rather than
+// re-declared so the drift the note warned about is impossible.
+use hecke_engine::gram::Q_0 as Q0_F64;
 
 #[derive(serde::Serialize)]
 struct Row {

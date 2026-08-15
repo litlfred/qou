@@ -18,7 +18,12 @@
 use hecke_engine::seminormal::{partitions_of, seminormal_matrices};
 use hecke_engine::wedderburn_psd::evaluate_all_blocks;
 
-const Q_0: f64 = 1.1099785955541806;
+// Substrate q_0 — the single source of truth is `gram::Q_0` (PROTON pin
+// since 2026-08-15). This file previously carried its own literal
+// `1.1099785955541806`, which had ALREADY DRIFTED from the two other
+// copies in this directory (both `...5805`) in the last digit — the
+// characteristic failure of a duplicated constant.
+use hecke_engine::gram::Q_0;
 
 /// Sparse-times-dense matmul. `sparse[i]` is `Vec<(j, val)>` for row i.
 fn sparse_to_dense(sparse: &[Vec<(usize, f64)>], dim: usize) -> Vec<Vec<f64>> {
