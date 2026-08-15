@@ -1,10 +1,11 @@
 ---
 # qou-igaj
 title: 'Render defect: raw LaTeX in .md prose is escaped, not passed through (575 occurrences, 64 files)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-15T03:33:53Z
-updated_at: 2026-08-15T03:33:53Z
+updated_at: 2026-08-15T04:08:50Z
 ---
 
 
@@ -92,3 +93,77 @@ Worth adding alongside the fix: a render-QA criterion that fails on
 Found 2026-08-15 while authoring the baryon-octet block (bean qou-wd07,
 PR #5075). Deliberately NOT fixed in that PR — the new block is clean, the
 sweep is separate work.
+
+---
+
+## Progress (PR #5075)
+
+The **eightfold-way chapter is done** — 15/15 blocks clean, 0 escaping
+defects, 0 dead anchors. Corpus **575 -> 204** (53 files remain).
+
+Per-file, all markup-only:
+
+```
+  color-su3-from-g2.md            58 -> 0     borromean-decuplet-derivation.md 30 -> 0
+  dictionary-flavor-layer.md      53 -> 0     schur-weyl-eightfold.md          42 -> 0
+  eightfold-open-problems.md      50 -> 0     eightfold-intro.md               28 -> 0
+  q-deformation-weight-lattice.md 33 -> 0     meson-mass-splitting.md          28 -> 0
+  flavor-charge-assignments.md    26 -> 0     meson-octet-decomposition.md     20 -> 0
+  a2-from-three-strands.md         3 -> 0
+```
+
+### Verification recipe for the remaining 53
+
+A checker was written for this and is worth reusing rather than
+re-deriving: render each block with `renderBlock` (NOT
+`loadAndRenderBlock` — stub, always returns `""`), then assert
+
+  - `/textbackslash|textasciitilde/` count is 0,
+  - `validateLatexAst(latex).valid`,
+  - every `\hyperref[...]` anchor is in the corpus label set
+    (`grep -rho 'label: "[^"]*"' content --include=*.ts`).
+
+That last check matters: `run-validate` does **not** verify
+`](#anchor)` targets, so a converted `\ref` can silently point nowhere.
+
+### What escaping was hiding (the reason this is worth doing)
+
+Converting `\ref` to a checkable form surfaced **three dead
+cross-references** that had never resolved, because the mangled form was
+never resolved by anything:
+
+| written | actual label |
+|---|---|
+| `chap:braids-and-knots` | `chap:path-integrals-braiding` |
+| `chap:appendix-standard-model` | `app:standard-model` |
+| `chap:knots-particles` | `chap:knots-particles-confinement` |
+
+Expect more in the remaining 53 files. This is the argument for doing the
+sweep at all: it is not cosmetic.
+
+Also found, unrelated to escaping but in the same file:
+`eightfold-open-problems`'s ledger pointed at its own numbered items by
+number, and **4 of 8 pointers were wrong** (the list had been reordered
+without updating the table). Fixed by pointing at item *names* instead,
+which cannot rot. Worth checking for the same pattern elsewhere.
+
+### Two constructs that must stay raw
+
+Markdown cannot express them; keep them in fenced ```tex blocks, where
+they pass through verbatim and their LaTeX is genuine again:
+
+  - `\multicolumn` group-header rows in a tabular
+  - `\begin{equation}\label{...}` (a numbered, referenceable equation)
+
+### Deliberately NOT fixed (dependency-graph, not markup)
+
+Surfaced by the qa-sweep re-runs; left for a separate pass so the
+markup commits stay honest about their scope:
+
+  - `meson-mass-splitting` **detangler-no-forward-ref FAIL** — uses
+    `rem:q-deformation-weight-lattice` (manifest pos 9) from pos 4.
+    Needs a block move.
+  - `flavor-charge-assignments` **detangler-block-tanglement WARN** —
+    forward ref to `conj:sm-hypercharge-invariant` in the SM appendix.
+  - 5 blocks with `uses-editorial-hygiene` WARN, 1-2 transitively
+    redundant edges each.
