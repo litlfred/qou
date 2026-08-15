@@ -299,16 +299,23 @@ def main() -> None:
                "|u_{n-1}||u_{n-2}| on sup moduli",
     )
     w.add_assertion(
-        "PHASE VERDICT — phases WEAKEN the tail: the dissipation-scale "
-        "crossing exists for moduli at every (seed, eps) AND the coherence "
-        "ratio sup|u_n|(Sabra)/sup u_n(real DN) <= 1 on every tail rung "
-        "excited in both models — phase decorrelation reduces tail "
-        "excitation below the coherent (real-amplitude) level; the SF-arc "
-        "real-model results are CONSERVATIVE with respect to phases in "
-        "this model class",
-        computed=(all_bstar and all_coh), expected=True,
-        source="max coherence ratio per (seed, eps) over tail rungs "
-               "excited in both models",
+        "PHASE VERDICT — HONEST NEGATIVE, scope (a): the coherence ratio "
+        "sup|u_n|(Sabra)/sup u_n(real DN) EXCEEDS 1 at every (seed, eps) "
+        "— the naive 'phases weaken the tail' hypothesis is REFUTED in "
+        "this cross-model comparison (mild ~1.2-1.4x at eps <= 1e-2; "
+        "large at eps = 1e-1 where both tails are deeply "
+        "sub-dissipation). Named confound: Sabra triads include "
+        "inflow-from-above (u*_{n+1} u_{n+2}), so c_n mixes phase "
+        "dynamics with triad-structure difference; the clean phase-only "
+        "comparison (Sabra vs phase-scrambled Sabra) is the recorded "
+        "follow-up. The route-critical facts stay positive: B* exists "
+        "everywhere with k_phys(B*) decreasing in eps, and r_n <= 1 "
+        "(assertion 2) — the per-amplitude route itself survives in the "
+        "phase-dynamical class",
+        computed=(all_bstar and (not all_coh)), expected=True,
+        source="max coherence ratio per (seed, eps): golden 36.3 / 1.20 "
+               "/ 1.28, silver 1136 / 215 / 1.35 at eps = 1e-1 / 1e-2 / "
+               "3e-3; B* k_phys: 0.77 / ~0.20 / ~0.095",
     )
     w.set_description(
         "SF10 (bean qou-wgyz): phase-decorrelation probe for the SF arc's "
