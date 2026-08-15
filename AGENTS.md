@@ -2877,11 +2877,36 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `folio-assistant/simulators/` | Interactive HTML simulators |
 | `folio-assistant/feedback/` | User feedback (TypeScript files, committed to main) |
 | `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
-| `qou-mass/` | `qou-mass` PyPI package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). Alpha (`v0.1.0a1`); 1 in-repo importer (the canonical wiring example `computations/qou_mass_canonical_wiring_example.py`). |
-| `tools/qou-substrate/` | `qou-substrate` PyPI package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). 7 in-repo direct importers (≈67 % transitive via `pyhecke`). |
-| `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 19 in-repo direct importers. |
-| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 15 in-repo direct importers. |
-| `tools/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. 1 in-repo importer (same canonical wiring example). |
+| `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). 5 in-repo importers. Its `_internal/` is **generated** — see the note below. |
+| `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
+| `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 70 in-repo importers. |
+| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 89 in-repo importers. |
+| `tools/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. 3 in-repo importers. |
+
+> **Importer counts are measured, not maintained.** The five above were
+> `1 / 7 / 19 / 15 / 1` and were wrong by up to two orders of magnitude
+> (`qou-substrate` was 7, is 309) — a hand-kept number decays exactly like a
+> hand-kept copy. Re-measure rather than trust the table:
+>
+> ```bash
+> grep -rlnE "^\s*(from|import)\s+<pkg>(\.|\s|$)" --include=*.py . \
+>   | grep -v "^./tools/<pkg-dir>/" | grep -v _deprecated | wc -l
+> ```
+>
+> **`qou-mass` and `qou-substrate` are not published.** Both 404 on PyPI, with
+> no `dist/`, no tags and no publish workflow. Do not describe either as
+> shipped, and do not reason about external consumers of their data — there
+> are none. (Checked 2026-08-15; the `qou-mass` entry said "PyPI package"
+> while nothing had ever been uploaded.)
+>
+> **Never hand-edit `qou-mass/src/qou_mass/_internal/`.** It is generated from
+> `computations/` by [`scripts/sync-qou-mass-vendor.py`](scripts/sync-qou-mass-vendor.py)
+> (`--check` / `--apply` / `--list`). It was hand-copied until 2026-08-15, and
+> all 14 copies had drifted — `witness_base` by 815 lines,
+> `canonical_braid_crossings` by a whole generation. Worse, the drift *masked*
+> a live defect: `test_ephemeral_mask_sync` exists to detect mirror divergence
+> and was green only because the mirror was stale. Run `--check` after any
+> change to a module in the cone; it is the gate.
 | `tools/block-qa-schema/` | Cross-language QA-sidecar interchange schemas (`<block>.qa.json` block-qa/v1 + `<criterion-id>.script.json` qa-script/v1): canonical JSON Schema + Zod + Pydantic mirrors, corpus-validated. Packaged for npm (`@litlfred/block-qa-schema`) + PyPI (`block-qa-schema`); not yet published to registries. Producing types: `folio-assistant/schemas/block-qa.ts`. |
 | `tools/hecke-engine/` | `hecke-engine` Rust crate — Layer 1 canonical compute core (Gröbner-Shirshov reducer, Hoefsmit, Markov trace, Clarabel SDP backend). |
 | `tools/hecke-engine-{wasm,node,r,jvm,c}/` | Multi-language bindings of `hecke-engine` (WASM, Node napi-rs, R/JVM/C — last three Tier-3). |
