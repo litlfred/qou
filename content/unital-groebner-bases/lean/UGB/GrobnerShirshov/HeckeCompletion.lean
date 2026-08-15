@@ -3367,4 +3367,418 @@ theorem yangBaxter_resolves (hp : HeckeParams) {x m' m : Fin n} (hn : 0 < n)
 
 end FarCommCyclic
 
+/-! ## §4v  Bokut–Shiao or Yang–Baxter against far-commutation **below** the run
+
+The third and last regime of `BS/YB × farCommRelation i j₀`. §4o is `j₀ + 1 = j`
+(one step: the S-polynomial *is* the Bokut–Shiao rule one index lower) and §4s is
+`j₀ = j` (four steps: a square at each end). This is `j₀ + 1 < j`, where `σ_{j₀}`
+sits strictly below the whole descending run and therefore commutes past *all* of
+it. The S-polynomial is
+
+    spoly = c · (descWord i j ++ [σ_{j₀}, σᵢ])  −  c · (w₂ ++ [σ_{j₀}])
+
+writing the first rule as `c · bsWord₁ i j − c · w₂`, and both terms have a
+stray `σ_{j₀}` that wants to be at the front:
+
+| phase | term | steps |
+|---|---|---|
+| 1 | `descWord i j σ_{j₀} σᵢ` → `σ_{j₀} descWord i j σᵢ` | `\|descWord i j\|` |
+| 2 | `w₂ σ_{j₀}` → `σ_{j₀} w₂` | `\|w₂\|` |
+| 3 | the rule, in the context `(σ_{j₀} ∣ ε)` | `1` |
+
+After phase 1 the first term is `σ_{j₀} :: bsWord₁ i j`, so one application of
+the rule in the context `(σ_{j₀} ∣ ε)` turns it into `σ_{j₀} :: w₂` and the terms
+cancel. Six steps for both `n = 4` instances.
+
+**This is the mirror transport, and it is a different lemma.** §4t and §4u move a
+*big* generator rightwards through small ones; here a *small* generator moves
+leftwards through big ones. Same rule `σ_aσ_b → σ_bσ_a`, opposite role in it: the
+moving letter is the second factor of the leading monomial rather than the first,
+so the induction recurses at the other end of the word and needs a **right**
+context, which neither earlier transport carries.
+
+`farComm_transport_left` is therefore stated once, in a form that also removes
+the list-slot duplication §4u had to live with: the moving term sits at an
+arbitrary position `L₁ ++ (·) :: L₂` of the `ofTerms` list, so one lemma serves
+both phases. `ofTerms_coeff_mid` is what makes that work — the coefficient of a
+singled-out term, given that no other term carries its word.
+
+**Where the last regime went.** `j < j₀` (the `n = 4` composition `B230 × F31`)
+is *not* this: `σ_{j₀}` lands inside the run's index range, so it does not commute
+past `σ_{j₀±1}`, and the chain instead fires the Bokut–Shiao rule at the inner
+index `j₀` first. That one is left. -/
+
+/-- Every letter of `descWord i j` has index at least `j` — the lower bound to
+`descWord_index_le`, and what makes each letter a far-commutation partner of a
+generator strictly below `j`. -/
+theorem descWord_index_ge {n : ℕ} {i j : Fin n} {y : HeckeGen n}
+    (hy : y ∈ descWord i j) : j.val ≤ y.index.val := by
+  simp only [descWord, List.mem_map, List.mem_reverse, List.mem_filter,
+    List.mem_finRange, true_and, decide_eq_true_eq] at hy
+  obtain ⟨k, hk, hky⟩ := hy
+  rw [← hky]
+  exact hk.1
+
+/-- The coefficient of one singled-out term of an `ofTerms` list, when no other
+term carries the same word. Stating the transport for a term at an arbitrary
+position needs exactly this. -/
+theorem ofTerms_coeff_mid {n : ℕ} (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (W : Monomial (HeckeGen n)) (c : ℝ)
+    (h : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, r ≠ W) :
+    (AlgElement.ofTerms (L₁ ++ (W, c) :: L₂)).coeff W = c := by
+  have hnil : ∀ L : List (Monomial (HeckeGen n) × ℝ),
+      (∀ r ∈ L.map Prod.fst, r ≠ W) → L.filter (fun p => decide (p.1 = W)) = [] := by
+    intro L hL
+    refine List.filter_eq_nil_iff.mpr ?_
+    intro a ha
+    simp only [decide_eq_true_eq]
+    exact hL a.1 (List.mem_map.mpr ⟨a, ha, rfl⟩)
+  have h₁ := hnil L₁ (fun r hr => h r (by rw [List.map_append]; exact List.mem_append_left _ hr))
+  have h₂ := hnil L₂ (fun r hr => h r (by rw [List.map_append]; exact List.mem_append_right _ hr))
+  simp [AlgElement.ofTerms_coeff, List.filter_append, h₁, h₂]
+
+/-- **Far-commutation transport, leftwards.** If every letter of `w` is strictly
+more than one above `σ_z`, then `σ_z` may be walked from the right end of `w` to
+its left end, one far-commutation application per letter, inside any contexts
+`a`, `b` and at any position of the term list.
+
+The induction recurses on the *head* of `w` and appends its step at the end,
+which is the opposite end from `farComm_transport`: there the moving letter
+leads, here it trails. The collision hypothesis enumerates the intermediate words
+by splitting `w`, exactly as in §4u. -/
+theorem farComm_transport_left {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (z : Fin n)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) :
+    ∀ (w a b : Monomial (HeckeGen n)), (∀ y ∈ w, z.val + 1 < y.index.val) →
+      (∀ u v : Monomial (HeckeGen n), u ++ v = w →
+          ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+            r ≠ a ++ (u ++ ((⟨z⟩ : HeckeGen n) :: (v ++ b)))) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          (L₁ ++ (a ++ (w ++ ((⟨z⟩ : HeckeGen n) :: b)), c) :: L₂))
+        (AlgElement.ofTerms
+          (L₁ ++ (a ++ ((⟨z⟩ : HeckeGen n) :: (w ++ b)), c) :: L₂)) := by
+  intro w
+  induction w with
+  | nil => intro a b _ _; exact MultiStepReduction.refl _
+  | cons y w ih =>
+    intro a b hw hcol
+    obtain ⟨yi⟩ := y
+    have hy : z.val + 1 < yi.val := hw _ (by simp)
+    have hyz : (⟨yi⟩ : HeckeGen n) ≠ ⟨z⟩ := by
+      intro hcon
+      have := congrArg HeckeGen.rank hcon
+      simp only [HeckeGen.rank] at this
+      omega
+    have key := ih (a ++ [(⟨yi⟩ : HeckeGen n)]) b (fun t ht => hw t (by simp [ht]))
+      (fun u v huv => by
+        have := hcol ((⟨yi⟩ : HeckeGen n) :: u) v (by rw [List.cons_append, huv])
+        simpa only [List.append_assoc, List.singleton_append, List.cons_append] using this)
+    simp only [List.append_assoc, List.singleton_append] at key
+    show MultiStepReduction _ _ (AlgElement.ofTerms
+      (L₁ ++ (a ++ ((⟨yi⟩ : HeckeGen n) :: (w ++ ((⟨z⟩ : HeckeGen n) :: b))), c) :: L₂)) _
+    refine MultiStepReduction.step key ?_
+    have hv : (AlgElement.ofTerms
+        (L₁ ++ (a ++ ((⟨yi⟩ : HeckeGen n) :: ((⟨z⟩ : HeckeGen n) :: (w ++ b))), c) :: L₂)).coeff
+        (a ++ (farCommRelation yi z).lm (heckeOrder n) ++ (w ++ b)) = c := by
+      rw [farCommRelation_lm yi z (by omega),
+        show (a ++ [(⟨yi⟩ : HeckeGen n), (⟨z⟩ : HeckeGen n)] ++ (w ++ b))
+          = a ++ ((⟨yi⟩ : HeckeGen n) :: ((⟨z⟩ : HeckeGen n) :: (w ++ b))) by simp]
+      refine ofTerms_coeff_mid L₁ L₂ _ c (fun r hr => ?_)
+      have := hcol [(⟨yi⟩ : HeckeGen n)] w rfl r hr
+      simpa only [List.singleton_append, List.cons_append] using this
+    refine ⟨farCommRelation yi z, farCommRelation_mem hn hp hy, a, w ++ b, c, ?_, ?_, ?_⟩
+    · rw [hv]; exact hc
+    · rw [hv, farCommRelation_lc yi z (by omega)]; ring
+    · intro m
+      show _ = _ - c
+        * (AlgElement.contextMul a (farCommRelation yi z).relation (w ++ b)).coeff m
+      simp only [farCommRelation, AlgElement.contextMul_ofTerms_coeff, List.map_cons,
+        List.map_nil, List.cons_append, List.nil_append, List.append_assoc,
+        AlgElement.ofTerms_coeff, List.filter_append, List.filter_cons, List.filter_nil,
+        List.map_append, List.sum_append, decide_eq_true_eq]
+      split_ifs <;>
+        simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+namespace CyclicFarCommLow
+
+variable {n : ℕ}
+
+/-- The composition of a rule leading on `σᵢ D' σᵢ` with the far-commutation rule
+`σᵢ σ_{j₀}`, overlapping in the trailing `σᵢ`. -/
+noncomputable def oc (r : ReductionRule (HeckeGen n) ℝ) (i j₀ : Fin n)
+    (D' : Monomial (HeckeGen n))
+    (hlm : r.lm (heckeOrder n)
+      = ((⟨i⟩ : HeckeGen n) :: D') ++ [(⟨i⟩ : HeckeGen n)])
+    (hij : j₀.val + 1 < i.val) : OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := r
+  rule₂ := farCommRelation i j₀
+  left := (⟨i⟩ : HeckeGen n) :: D'
+  overlap := [⟨i⟩]
+  right := [⟨j₀⟩]
+  lm₁_decomp := hlm
+  lm₂_decomp := by rw [farCommRelation_lm i j₀ (by omega)]; rfl
+  overlap_nonempty := by simp
+
+/-- Stage `0` — the S-polynomial. The ambient word cancels; each surviving term
+carries a stray `σ_{j₀}`. -/
+noncomputable def E0 (i j₀ : Fin n) (q : HeckeGen n) (D' s : Monomial (HeckeGen n))
+    (c : ℝ) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(((⟨i⟩ : HeckeGen n) :: D') ++ ((⟨j₀⟩ : HeckeGen n) :: [(⟨i⟩ : HeckeGen n)]), c),
+     ((q :: s) ++ [(⟨j₀⟩ : HeckeGen n)], -c)]
+
+/-- Stage `1` — `σ_{j₀}` has crossed the descending run. -/
+noncomputable def E1 (i j₀ : Fin n) (q : HeckeGen n) (D' s : Monomial (HeckeGen n))
+    (c : ℝ) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [((⟨j₀⟩ : HeckeGen n) :: (((⟨i⟩ : HeckeGen n) :: D') ++ [(⟨i⟩ : HeckeGen n)]), c),
+     ((q :: s) ++ [(⟨j₀⟩ : HeckeGen n)], -c)]
+
+/-- Stage `2` — and the rule's other word too, so the first term is now the
+leading monomial in the context `(σ_{j₀} ∣ ε)`. -/
+noncomputable def E2 (i j₀ : Fin n) (q : HeckeGen n) (D' s : Monomial (HeckeGen n))
+    (c : ℝ) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [((⟨j₀⟩ : HeckeGen n) :: (((⟨i⟩ : HeckeGen n) :: D') ++ [(⟨i⟩ : HeckeGen n)]), c),
+     ((⟨j₀⟩ : HeckeGen n) :: ((q :: s) ++ ([] : Monomial (HeckeGen n))), -c)]
+
+/-- **The S-polynomial.** -/
+theorem oc_spoly_coeff (r : ReductionRule (HeckeGen n) ℝ) (i j₀ : Fin n)
+    {q : HeckeGen n} {D' s : Monomial (HeckeGen n)} {c : ℝ}
+    (hrel : ∀ w, r.relation.coeff w
+      = (AlgElement.ofTerms
+          [(((⟨i⟩ : HeckeGen n) :: D') ++ [(⟨i⟩ : HeckeGen n)], c), (q :: s, -c)]).coeff w)
+    (hlm : r.lm (heckeOrder n) = ((⟨i⟩ : HeckeGen n) :: D') ++ [(⟨i⟩ : HeckeGen n)])
+    (hlc : r.lc (heckeOrder n) = c) (hij : j₀.val + 1 < i.val)
+    (w : Monomial (HeckeGen n)) :
+    (oc r i j₀ D' hlm hij).spoly.coeff w = (E0 i j₀ q D' s c).coeff w := by
+  show (farCommRelation i j₀).lc (heckeOrder n)
+      * (AlgElement.contextMul [] r.relation [⟨j₀⟩]).coeff w
+    - r.lc (heckeOrder n)
+      * (AlgElement.contextMul ((⟨i⟩ : HeckeGen n) :: D')
+          (farCommRelation i j₀).relation []).coeff w
+    = _
+  rw [hlc, farCommRelation_lc i j₀ (by omega), one_mul,
+    AlgElement.contextMul_coeff_congr [] [(⟨j₀⟩ : HeckeGen n)] hrel w]
+  simp only [E0, farCommRelation, AlgElement.contextMul_ofTerms_coeff, List.map_cons,
+    List.map_nil, List.nil_append, List.append_nil, List.cons_append, List.append_assoc,
+    AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil, decide_eq_true_eq]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- Phase 3 — the rule itself, in the context `(σ_{j₀} ∣ ε)`, landing on zero.
+The one distinctness needed is the first letter: the rule's other word begins
+with `q`, its leading monomial with `σᵢ`. -/
+theorem chainStep3 (hp : HeckeParams) (r : ReductionRule (HeckeGen n) ℝ) (i j₀ : Fin n)
+    {q : HeckeGen n} {D' s : Monomial (HeckeGen n)} {c : ℝ} (hn : 0 < n)
+    (hrel : ∀ w, r.relation.coeff w
+      = (AlgElement.ofTerms
+          [(((⟨i⟩ : HeckeGen n) :: D') ++ [(⟨i⟩ : HeckeGen n)], c), (q :: s, -c)]).coeff w)
+    (hlm : r.lm (heckeOrder n) = ((⟨i⟩ : HeckeGen n) :: D') ++ [(⟨i⟩ : HeckeGen n)])
+    (hlc : r.lc (heckeOrder n) = c) (hc : c ≠ 0) (hqi : q ≠ (⟨i⟩ : HeckeGen n))
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (E2 i j₀ q D' s c) AlgElement.zero := by
+  have hne : ((⟨j₀⟩ : HeckeGen n) :: (q :: s))
+      ≠ (⟨j₀⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) :: (D' ++ [(⟨i⟩ : HeckeGen n)])) := by
+    intro hcon
+    injection hcon with _ h2
+    injection h2 with h3 _
+    exact hqi h3
+  have hv : (E2 i j₀ q D' s c).coeff
+      ([(⟨j₀⟩ : HeckeGen n)] ++ r.lm (heckeOrder n) ++ []) = c := by
+    rw [hlm, show ([(⟨j₀⟩ : HeckeGen n)] ++ (((⟨i⟩ : HeckeGen n) :: D')
+        ++ [(⟨i⟩ : HeckeGen n)]) ++ [])
+      = (⟨j₀⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) :: (D' ++ [(⟨i⟩ : HeckeGen n)]))
+      by simp]
+    simp [E2, AlgElement.ofTerms_coeff, hne]
+  refine ⟨r, hr, [(⟨j₀⟩ : HeckeGen n)], [], 1, ?_, ?_, ?_⟩
+  · rw [hv]; exact hc
+  · rw [hv, hlc]; ring
+  · intro m
+    show _ = _ - (1 : ℝ)
+      * (AlgElement.contextMul [(⟨j₀⟩ : HeckeGen n)] r.relation []).coeff m
+    rw [AlgElement.contextMul_coeff_congr [(⟨j₀⟩ : HeckeGen n)] [] hrel m]
+    simp only [E2, AlgElement.zero, AlgElement.contextMul_ofTerms_coeff, List.map_cons,
+      List.map_nil, List.nil_append, List.append_nil, List.cons_append,
+      AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil, decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- **Two leftward transports and one rule application, to zero.**
+
+Every side condition reduces to the two letter inequalities `q ≠ σᵢ` and
+`q ≠ σ_{j₀}`: the rule's other word begins with a letter that is neither the top
+of the run nor the travelling generator, which is what keeps it distinguishable
+from every intermediate word of both transports. -/
+theorem oc_reduces_to_zero (hp : HeckeParams) (r : ReductionRule (HeckeGen n) ℝ)
+    (i j₀ : Fin n) {q : HeckeGen n} {D' s : Monomial (HeckeGen n)} {c : ℝ} (hn : 0 < n)
+    (hrel : ∀ w, r.relation.coeff w
+      = (AlgElement.ofTerms
+          [(((⟨i⟩ : HeckeGen n) :: D') ++ [(⟨i⟩ : HeckeGen n)], c), (q :: s, -c)]).coeff w)
+    (hlm : r.lm (heckeOrder n) = ((⟨i⟩ : HeckeGen n) :: D') ++ [(⟨i⟩ : HeckeGen n)])
+    (hlc : r.lc (heckeOrder n) = c) (hc : c ≠ 0) (hij : j₀.val + 1 < i.val)
+    (hqi : q ≠ (⟨i⟩ : HeckeGen n)) (hqj : q ≠ (⟨j₀⟩ : HeckeGen n))
+    (hfarD : ∀ y ∈ (⟨i⟩ : HeckeGen n) :: D', j₀.val + 1 < y.index.val)
+    (hfar₂ : ∀ y ∈ q :: s, j₀.val + 1 < y.index.val)
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc r i j₀ D' hlm hij).spoly nf ∧ nf.isZero := by
+  -- phase 1: `σ_{j₀}` crosses the descending run, the other term a bystander
+  have ph1 : MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (E0 i j₀ q D' s c) (E1 i j₀ q D' s c) :=
+    farComm_transport_left hn hp j₀ c hc [] [((q :: s) ++ [(⟨j₀⟩ : HeckeGen n)], -c)]
+      ((⟨i⟩ : HeckeGen n) :: D') [] [(⟨i⟩ : HeckeGen n)] hfarD
+      (by
+        intro u v huv r' hr'
+        simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+          List.not_mem_nil, or_false] at hr'
+        subst hr'
+        cases u with
+        | nil =>
+          simp only [List.nil_append, List.cons_append]
+          intro hcon
+          injection hcon with h1 _
+          exact hqj h1
+        | cons a u' =>
+          rw [List.cons_append] at huv
+          injection huv with ha _
+          subst ha
+          simp only [List.cons_append]
+          intro hcon
+          injection hcon with h1 _
+          exact hqi h1)
+  -- phase 2: and across the rule's other word, the first term a bystander
+  have ph2 : MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (E1 i j₀ q D' s c) (E2 i j₀ q D' s c) :=
+    farComm_transport_left hn hp j₀ (-c) (neg_ne_zero.mpr hc)
+      [((⟨j₀⟩ : HeckeGen n) :: (((⟨i⟩ : HeckeGen n) :: D') ++ [(⟨i⟩ : HeckeGen n)]), c)] []
+      (q :: s) [] [] hfar₂
+      (by
+        intro u v huv r' hr'
+        simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+          List.not_mem_nil, or_false] at hr'
+        subst hr'
+        cases u with
+        | nil =>
+          simp only [List.nil_append] at huv
+          subst huv
+          simp only [List.nil_append, List.append_nil, List.cons_append]
+          intro hcon
+          injection hcon with _ h2
+          injection h2 with h3 _
+          exact hqi h3.symm
+        | cons a u' =>
+          rw [List.cons_append] at huv
+          injection huv with ha _
+          subst ha
+          simp only [List.nil_append, List.append_nil, List.cons_append]
+          intro hcon
+          injection hcon with h1 _
+          exact hqj h1.symm)
+  refine reducesToZero_congr ⟨AlgElement.zero,
+    ⟨(ph1.trans ph2).step (chainStep3 hp r i j₀ hn hrel hlm hlc hc hqi hr),
+      isNormalForm_of_isZero AlgElement.isZero_zero⟩, AlgElement.isZero_zero⟩ ?_
+  intro w
+  exact oc_spoly_coeff r i j₀ hrel hlm hlc hij w
+
+/-! ### The two instances
+
+As in §4r and §4u, at `j = i − 1` the Bokut–Shiao and Yang–Baxter rules lead on
+the same word, so both must be discharged. Those are the `n = 4` members
+`B232 × F30` and `Y23 × F30`. -/
+
+/-- Every letter of `bsWord₂ i' i j` has index at least `j`. -/
+theorem bsWord₂_index_ge {i' i j : Fin n} (hi : i'.val + 1 = i.val)
+    (hj : j.val ≤ i'.val) {y : HeckeGen n} (hy : y ∈ bsWord₂ i' i j) :
+    j.val ≤ y.index.val := by
+  rcases List.mem_cons.mp hy with rfl | hy
+  · show j.val ≤ i'.val
+    omega
+  rcases List.mem_cons.mp hy with rfl | hy
+  · show j.val ≤ i.val
+    omega
+  exact descWord_index_ge hy
+
+/-- **Bokut–Shiao**, at any `j` with `j₀ + 1 < j`. -/
+theorem bokutShiao_resolves (hp : HeckeParams) {i' i j j₀ : Fin n} (hn : 0 < n)
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) (hj₀ : j₀.val + 1 < j.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc (bokutShiaoRelation i' i j) i j₀ (descWord i' j)
+        (by rw [bokutShiaoRelation_lm hi hj, bsWord₁, descWord_cons hi hj])
+        (by omega)).spoly nf ∧ nf.isZero := by
+  have hqi : (⟨i'⟩ : HeckeGen n) ≠ ⟨i⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  have hqj : (⟨i'⟩ : HeckeGen n) ≠ ⟨j₀⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  refine oc_reduces_to_zero hp (bokutShiaoRelation i' i j) i j₀
+    (q := (⟨i'⟩ : HeckeGen n)) (s := (⟨i⟩ : HeckeGen n) :: descWord i' j) hn ?_
+    (by rw [bokutShiaoRelation_lm hi hj, bsWord₁, descWord_cons hi hj])
+    (bokutShiaoRelation_lc hi hj) one_ne_zero (by omega) hqi hqj ?_ ?_
+    (bokutShiaoRelation_mem hn hp hi hj)
+  · intro w
+    show (AlgElement.ofTerms [(bsWord₁ i j, (1 : ℝ)), (bsWord₂ i' i j, -1)]).coeff w = _
+    rw [bsWord₁, descWord_cons hi hj, bsWord₂]
+  · intro y hy
+    rw [← descWord_cons hi hj] at hy
+    have := descWord_index_ge hy
+    omega
+  · intro y hy
+    have := bsWord₂_index_ge hi hj (show y ∈ bsWord₂ i' i j from hy)
+    omega
+
+/-- **Yang–Baxter**, which exists only at `j = i − 1`. -/
+theorem yangBaxter_resolves (hp : HeckeParams) {i' i j₀ : Fin n} (hn : 0 < n)
+    (hi : i'.val + 1 = i.val) (hj₀ : j₀.val + 1 < i'.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc (yangBaxterRelation i' i) i j₀ [(⟨i'⟩ : HeckeGen n)]
+        (by rw [yangBaxterRelation_lm i' i (by omega)]; rfl)
+        (by omega)).spoly nf ∧ nf.isZero := by
+  have hqi : (⟨i'⟩ : HeckeGen n) ≠ ⟨i⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  have hqj : (⟨i'⟩ : HeckeGen n) ≠ ⟨j₀⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  refine oc_reduces_to_zero hp (yangBaxterRelation i' i) i j₀
+    (q := (⟨i'⟩ : HeckeGen n)) (s := [(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)]) hn ?_
+    (by rw [yangBaxterRelation_lm i' i (by omega)]; rfl)
+    (DegenerateYbBs.yangBaxter_lc hi) (by norm_num) (by omega) hqi hqj ?_ ?_
+    (yangBaxterRelation_mem hn hp hi)
+  · intro w
+    show (AlgElement.ofTerms [([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], (1 : ℝ)),
+        ([(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩], -1)]).coeff w = _
+    simp only [AlgElement.ofTerms_coeff, List.cons_append, List.nil_append,
+      List.filter_cons, List.filter_nil, decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+  · intro y hy
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hy
+    rcases hy with rfl | rfl
+    · show j₀.val + 1 < i.val
+      omega
+    · show j₀.val + 1 < i'.val
+      omega
+  · intro y hy
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hy
+    rcases hy with rfl | rfl | rfl
+    · show j₀.val + 1 < i'.val
+      omega
+    · show j₀.val + 1 < i.val
+      omega
+    · show j₀.val + 1 < i'.val
+      omega
+
+end CyclicFarCommLow
+
 end UGB.GrobnerShirshov.Hecke
