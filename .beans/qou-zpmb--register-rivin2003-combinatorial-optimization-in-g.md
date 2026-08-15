@@ -1,11 +1,11 @@
 ---
 # qou-zpmb
 title: Register rivin2003 (Combinatorial optimization in geometry) in references.ts
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T15:57:50Z
-updated_at: 2026-08-15T15:57:50Z
+updated_at: 2026-08-15T20:45:18Z
 parent: qou-5lm6
 ---
 
