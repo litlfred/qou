@@ -181,7 +181,7 @@ for k, ck in CKS.items():
 
 # Prefactor P(q) = (Q_A/m_e)·cos(α − u/2)   [dimensionless, q-dependent]
 QA_over_me = (1 + 2 * q - q ** 2) * (q + 1) / (2 * q ** 3)  # |q²−2q−1| = 1+2q−q² near q=1
-z_expr = sp.sqrt(q) / (q + 1)
+z_expr = q ** 3 / (q ** 2 + 1)   # convention D (was C: sqrt(q)/(q+1))
 alpha_expr = (z_expr - 1) * (q - 1 / q) / 2
 t_series = trunc(ser(alpha_expr) - u_series / 2)  # argument of cos, O(h)
 t_sq = trunc(t_series * t_series)

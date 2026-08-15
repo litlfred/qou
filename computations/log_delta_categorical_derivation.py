@@ -163,7 +163,7 @@ def main() -> int:
     )
     builder.add_parameter("q0", str(Q0))
     builder.add_parameter("hbar_q", str(HBAR_Q))
-    builder.add_parameter("z_mark", str(1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))))
+    builder.add_parameter("z_mark", str(Q0 ** 3 / (Q0 ** 2 + 1)))  # convention D
     builder.add_parameter("catalan_G", str(mp.catalan))
 
     results = {}
