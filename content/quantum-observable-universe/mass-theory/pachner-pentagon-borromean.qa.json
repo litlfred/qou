@@ -1565,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:31:00.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d3061a8f09ab",
+          "ts": "9dcd33e93ad0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:07.411Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1584,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d3061a8f09ab",
+          "ts": "9dcd33e93ad0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:07.460Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-em-dash": [
@@ -1603,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:31:00.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 96 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d3061a8f09ab",
+          "ts": "9dcd33e93ad0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:07.528Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-triples": [
@@ -1622,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 96 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d3061a8f09ab",
+          "ts": "9dcd33e93ad0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:07.568Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1641,6 +1701,21 @@
         "reviewed_at": "2026-08-15T10:31:00.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d3061a8f09ab",
+          "ts": "9dcd33e93ad0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:07.615Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-meta-commentary": [
@@ -1660,6 +1735,21 @@
         "reviewed_at": "2026-08-15T10:31:00.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d3061a8f09ab",
+          "ts": "9dcd33e93ad0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:07.679Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1680,6 +1770,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "block closes by restating its thesis: \"This establishes a high-value cross-validation linking the geometric Pentagon to\""
+      },
+      {
+        "field_hash": {
+          "md": "d3061a8f09ab",
+          "ts": "9dcd33e93ad0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:07.745Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "severity": "major",
+        "evidence": "Closer restated the Pentagon<->Markov-trace link already in the conjecture statement, plus self-valuation.",
+        "notes": "fixed: deleted closer 'This establishes a high-value cross-validation linking the geometric Pentagon to the topological Markov trace.' -> (removed)"
       }
     ],
     "trap-performed-warmth": [
@@ -1699,6 +1806,21 @@
         "reviewed_at": "2026-08-15T10:31:00.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d3061a8f09ab",
+          "ts": "9dcd33e93ad0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:07.789Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-superlative": [
@@ -1718,6 +1840,23 @@
         "reviewed_at": "2026-08-15T10:31:00.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d3061a8f09ab",
+          "ts": "9dcd33e93ad0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:07.824Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "severity": "minor",
+        "evidence": "'high-value' — unqualified self-valuation of the block's own result.",
+        "notes": "fixed: removed with the deleted closer (same edit as trap-thesis-restatement)."
       }
     ],
     "trap-nonspeakable": [
@@ -1737,8 +1876,23 @@
         "reviewed_at": "2026-08-15T10:31:00.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d3061a8f09ab",
+          "ts": "9dcd33e93ad0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:07.866Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.573Z"
+  "updated_at": "2026-08-15T11:10:07.866Z"
 }

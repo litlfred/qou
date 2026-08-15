@@ -1250,6 +1250,21 @@
         "reviewed_at": "2026-08-15T10:30:58.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d136c1908742",
+          "ts": "c2084377bdae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:05.416Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "'The C_5 action is no longer diagonal' is a factual mathematical statement, not manufactured contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1269,6 +1284,21 @@
         "reviewed_at": "2026-08-15T10:30:58.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d136c1908742",
+          "ts": "c2084377bdae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:05.451Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-em-dash": [
@@ -1288,6 +1318,21 @@
         "reviewed_at": "2026-08-15T10:30:58.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 44 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d136c1908742",
+          "ts": "c2084377bdae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:05.510Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-triples": [
@@ -1307,6 +1352,21 @@
         "reviewed_at": "2026-08-15T10:30:58.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 44 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d136c1908742",
+          "ts": "c2084377bdae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:05.563Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1326,6 +1386,21 @@
         "reviewed_at": "2026-08-15T10:30:58.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d136c1908742",
+          "ts": "c2084377bdae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:05.611Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-meta-commentary": [
@@ -1345,6 +1420,21 @@
         "reviewed_at": "2026-08-15T10:30:58.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d136c1908742",
+          "ts": "c2084377bdae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:05.665Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1365,6 +1455,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "block closes by restating its thesis: \"This reflects the cost of breaking projective homogeneity by subtracting the aff\""
+      },
+      {
+        "field_hash": {
+          "md": "d136c1908742",
+          "ts": "c2084377bdae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:05.720Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "'This reflects the cost of breaking projective homogeneity...' is substantive interpretation (the remark's content), not a restating closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1384,6 +1489,21 @@
         "reviewed_at": "2026-08-15T10:30:58.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d136c1908742",
+          "ts": "c2084377bdae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:05.768Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-superlative": [
@@ -1403,6 +1523,21 @@
         "reviewed_at": "2026-08-15T10:30:58.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d136c1908742",
+          "ts": "c2084377bdae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:05.818Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-nonspeakable": [
@@ -1422,8 +1557,23 @@
         "reviewed_at": "2026-08-15T10:30:58.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d136c1908742",
+          "ts": "c2084377bdae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:05.882Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:58.772Z"
+  "updated_at": "2026-08-15T11:10:05.882Z"
 }

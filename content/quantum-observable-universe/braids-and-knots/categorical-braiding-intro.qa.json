@@ -1211,6 +1211,21 @@
         "reviewed_at": "2026-08-15T10:30:58.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4fa2dd3b6dca",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:04.393Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "'conventionally introduced through topology... In our framework, however, categorical origin' — substantive framing contrast, the block's content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1230,6 +1245,21 @@
         "reviewed_at": "2026-08-15T10:30:58.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4fa2dd3b6dca",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:04.477Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-em-dash": [
@@ -1249,6 +1279,21 @@
         "reviewed_at": "2026-08-15T10:30:58.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 129 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4fa2dd3b6dca",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:04.535Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-triples": [
@@ -1268,6 +1313,21 @@
         "reviewed_at": "2026-08-15T10:30:58.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 129 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4fa2dd3b6dca",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:04.579Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "The reflex triple lived in the deleted closer; remaining enumerations (existence/uniqueness, hexagon, R-matrix) track real steps."
       }
     ],
     "trap-closing-aphorism": [
@@ -1287,6 +1347,21 @@
         "reviewed_at": "2026-08-15T10:30:58.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4fa2dd3b6dca",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:04.624Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-meta-commentary": [
@@ -1306,6 +1381,21 @@
         "reviewed_at": "2026-08-15T10:30:58.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4fa2dd3b6dca",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:04.663Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1326,6 +1416,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "block closes by restating its thesis: \"This establishes the foundational categorical braiding apparatus: the substrate-\""
+      },
+      {
+        "field_hash": {
+          "md": "4fa2dd3b6dca",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:04.716Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "severity": "major",
+        "evidence": "Closer restated the para-2 roadmap already given (R-matrix, hexagon, Hecke-skein).",
+        "notes": "fixed: deleted closer 'This establishes the foundational categorical braiding apparatus: the substrate-parametrised R-matrix, hexagon coherence, and the Hecke-skein relation.' -> (removed)"
       }
     ],
     "trap-performed-warmth": [
@@ -1345,6 +1452,21 @@
         "reviewed_at": "2026-08-15T10:30:58.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4fa2dd3b6dca",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:04.752Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-superlative": [
@@ -1364,6 +1486,23 @@
         "reviewed_at": "2026-08-15T10:30:58.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4fa2dd3b6dca",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:04.800Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "severity": "minor",
+        "evidence": "'extends seamlessly' — unqualified intensifier adverb.",
+        "notes": "fixed: 'extends seamlessly to non-archimedean settings' -> 'extends to non-archimedean settings'"
       }
     ],
     "trap-nonspeakable": [
@@ -1383,8 +1522,23 @@
         "reviewed_at": "2026-08-15T10:30:58.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4fa2dd3b6dca",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:04.868Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:58.513Z"
+  "updated_at": "2026-08-15T11:10:04.868Z"
 }
