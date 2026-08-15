@@ -1410,3 +1410,92 @@ term is `descWord j₀ j ++ [σ_{j₀}] = bsWord₁ j₀ j`, so the Bokut–Shia
 *inner* index `j₀` fires first, and the family is nested rather than flat. Worth
 doing next precisely because it is small and closes the entire far-commutation
 block, leaving `B × B` as the single remaining shape.
+
+## §4w — far-commutation **inside** the descending run (1) — the F block is closed
+
+The fourth and last position `j₀` can take relative to `descWord i j`. With it
+every composition involving a far-commutation rule is proved, and **`B × B` is
+the only shape left**.
+
+    j₀ + 1 = j     §4o   1 step    the S-polynomial *is* the rule one index lower
+    j₀ = j         §4s   4 steps   a square at each end
+    j₀ + 1 < j     §4v   6 steps   below the run: transport
+    j < j₀         §4w   8 steps   inside the run: nested
+
+Here `σ_{j₀}` is a letter the run already contains, so it does **not** commute
+past `σ_{j₀±1}` and no transport applies to it directly. Splitting the run at
+`j₀`,
+
+    descWord i j = descWord i j₀₊ ++ (σ_{j₀} :: descWord j₀' j)
+
+the first term of the S-polynomial ends in `descWord j₀ j ++ [σ_{j₀}]`, which is
+`bsWord₁ j₀ j` — the Bokut–Shiao word at the **inner** index. So the inner rule
+fires first, and what it leaves, `σ_{j₀'} σ_{j₀} descWord j₀' j`, has its lead
+letter `σ_{j₀'}` *below* everything above it, which is now a transport. Same in
+the second term. Five stages: inner rule, transport, inner rule, transport, outer
+rule.
+
+**The regime that creates the nesting also rules out the doubling.** `j < j₀` and
+`j₀ + 1 < i` force `j < j₀ ≤ i − 2 < i − 1`, so `j ≠ i − 1` and Yang–Baxter never
+leads on `bsWord₁ i j`. Unlike §4r, §4u and §4v there is no second instance —
+this is the only family in the arc where the §4j doubling does not appear, and it
+is a consequence of the side conditions rather than a case distinction.
+
+The composition is §4v's, so `CyclicFarCommLow.oc` and its S-polynomial are
+reused verbatim; only the chain is new. `farComm_transport_left` is reused for
+both transports at different positions of the term list, which is what the
+`L₁ ++ (·) :: L₂` form was for.
+
+**`descWord_split` is the new word identity** and the one most likely to be
+wanted again: `descWord i j = descWord i k ++ descWord k' j` for any interior
+split `k' + 1 = k`. Proved by walking the bottom index down with `descWord_snoc`,
+so the induction is on the gap `k' − j` and not on `List.finRange` — much shorter
+than the filter-level argument `filter_desc_cons` / `filter_desc_snoc` use.
+
+Build notes — every one of these has now cost a build more than once:
+
+* **`₊` is not a valid Lean identifier character.** `j₀₊` in a `variable` line
+  fails to parse and every downstream reference cascades into nonsense errors.
+  Second time in this arc (§4s was the first). Subscript *digits* and the
+  subscript letters are fine; subscript operators are not.
+* **`omega` will not reduce `(⟨j.val + 1, h⟩ : Fin n).val`.** It shows up in the
+  counterexample as an opaque atom. Every such goal needs `show j.val + 1 ≤ …`
+  first — three errors in one build here.
+* **`rw` closes by `rfl` only at *reducible* transparency**, and `List.append` on
+  a cons needs default. Four sites in this section.
+* **State word-inequality hypotheses in cons-normal form**, because that is what
+  `simp` leaves the goal in; otherwise the hypothesis is silently unused and the
+  goal survives.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × F (j₀+1=j)       5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      BS × F (j₀=j)            3   §4s   general in n
+      quadratic × general BS   3   §4t   general in n
+      far-comm × BS/YB         2   §4u   general in n
+      BS/YB × F (j₀+1<j)       2   §4v   general in n
+      BS/YB × F (j < j₀)       1   §4w   general in n
+      ---------------------------
+      proved                  75
+      remaining               17   all BS/YB × BS/YB
+
+    inclusion compositions    22   §4m   (all)
+
+**The last shape.** All 17 are `bokutShiaoRelation i' i j₁ × bokutShiaoRelation i' i j₂`
+(with Yang–Baxter standing in at `j = i − 1`), overlapping in the single trailing
+`σᵢ`. The S-polynomial is
+
+    spoly = c₁c₂ · ( descWord i j₁ ++ bsWord₂ i' i j₂  −  bsWord₂ i' i j₁ ++ descWord i' j₂ ++ [σᵢ] )
+
+and the chains run 9 to 25 steps — the 25 being `B230 × B230`, the largest single
+obligation in the file. This is the block to design carefully rather than attack:
+the tooling now in place is `farComm_transport` (rightwards), `farComm_transport_left`
+(leftwards, any list position), `descWord_split`, `descWord_index_le/_ge`, and the
+`ofTerms_coeff_mid` singling-out lemma. Worth extracting the 17 chains from the
+engine first and looking for the common skeleton before writing any Lean.
