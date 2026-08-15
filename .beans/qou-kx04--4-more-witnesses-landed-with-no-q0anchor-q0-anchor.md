@@ -3,8 +3,9 @@
 title: 4 more witnesses landed with no q0Anchor (Q0_ANCHOR_MISSING 1885 -> 1889)
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-15T22:39:50Z
-updated_at: 2026-08-15T22:39:50Z
+updated_at: 2026-08-15T23:57:23Z
 ---
 
 
@@ -53,3 +54,6 @@ that nothing else moved.
 Also still unstamped and now expressible: `chi-deuteron-h6.witness.json` from
 `qou-pin1`, a purely symbolic artifact that settled for "manifest `ambiguous`,
 drop the stamp" because `independent` did not exist yet.
+
+
+UPDATE 2026-08-16 (PR #5164, post-rebase). A full unscoped precision-gates run after rebasing onto 61 new main commits shows Q0_ANCHOR_MISSING 1886 -> **1888**: two MORE no-anchor witnesses landed on main in that window, on top of the four this bean already names. The count is growing faster than it is being drained, which is an argument for the anchor declaration being enforced at WitnessBuilder rather than chased per-witness after the fact. Q0_INDEPENDENT holds at 3, Q0_FLIP at 0.
