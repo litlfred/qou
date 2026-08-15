@@ -41,3 +41,30 @@ classification:
 (c) is probably the shortest route to discharging hoefsmit_seminormal_rep, since the
 per-orbit basis correspondence — the thing that makes Orbit3Braid/Orbit6Braid's explicit
 index orderings usable — is exactly what (a) and (b) force one to build.
+
+
+## ROUTE (c) TAKEN 2026-08-15 — definition lands, compiles first try
+
+New sorry-free file QOU/SchurWeyl/SeminormalRep.lean:
+
+  offDiag q d -- the size-2 pair's off-diagonal, carrying the orientation convention
+                 (negative-distance member is "first": its column gets 1 + a(d)a(-d), the
+                 other the plain 1)
+  genMat q k  -- the matrix of sigma_k indexed by StandardYoungTableau mu on BOTH sides,
+                 so there is no re-indexing and hence no basis correspondence to justify
+  + genMat_diag / genMat_of_not_admissible / genMat_apply_of_ne / genMat_swap
+
+The diagonal is a(axialDist T k) UNIFORMLY. That is what makes the trichotomy a case split
+on block SIZE only: at distance +-1 it is the size-1 scalar q resp. -q^-1
+(seminormalParam_one/_neg_one), at |d| >= 2 it is a seminormalBlock diagonal. Each column
+has at most two nonzero entries.
+
+Indexing by SYT directly is the whole point of (c): (a) and (b) both force construction of
+the per-orbit basis correspondence that makes Orbit3Braid/Orbit6Braid's explicit index
+orderings usable, and that correspondence is the expensive part. Here there is no
+re-indexing at all.
+
+STILL OPEN: the Hecke relations for genMat -- quadratic, far commutation, braid -- proved
+GLOBALLY, with the orbit-local identities supplying the algebraic content. That is what
+route (c) buys the chance to do and it is not done. hoefsmit_seminormal_rep keeps its
+Ref'd sorry.
