@@ -1298,6 +1298,19 @@ class WitnessBuilder:
 #   - commitSha, scriptCommitSha — change on every commit; would
 #     trigger CI drift loops if comparison were exact
 #   - computedAt, durationMs — wall-clock metadata; not numeric content
+#   - durationSeconds, duration_sec — the seconds-valued spellings of
+#     durationMs. `durationMs` (integer ms) is the WitnessBuilder
+#     convention and is overwhelmingly the majority (2423 witness JSONs
+#     vs 3 + 2 for these two), but the seconds spellings exist and
+#     carry identical wall-clock semantics, so they are masked too
+#     rather than left to be compared as substantive content.
+#
+#     Spelling note — there is NO `durationSec` in this corpus. That
+#     name appears only in prose (a producer comment, and bean
+#     qou-pg2r, which took the shorthand from it); as a JSON key it
+#     occurs zero times. Masking the string "durationSec" would be a
+#     silent no-op. The real keys are the two above; measure with
+#     `grep -rl '"<key>"' --include=*.json .` before adding another.
 #   - environment — Python + numeric-library versions; tracked for
 #     attribution (see `capture_environment` docstring above) but a
 #     runtime swap alone (e.g. 3.11.15 ↔ 3.12.3) shouldn't trigger
@@ -1324,6 +1337,7 @@ class WitnessBuilder:
 # `test_ephemeral_mask_sync` test in `tools/qou-substrate/tests/`.
 _EPHEMERAL_META_FIELDS = frozenset({
     "commitSha", "scriptCommitSha", "computedAt", "durationMs",
+    "durationSeconds", "duration_sec",
     "environment", "elapsed_seconds", "elapsed_sec",
 })
 
@@ -1345,8 +1359,8 @@ def _witnesses_substantively_equal(a: dict, b: dict) -> bool:
     Substantive content includes: assertions, allPassed, computation,
     description, data payload (minus per-item timing), parameters,
     scriptFile, scriptHash, engineVersion. Ephemeral (masked):
-    commitSha, scriptCommitSha, computedAt, durationMs, environment,
-    elapsed_seconds, elapsed_sec.
+    commitSha, scriptCommitSha, computedAt, durationMs, durationSeconds,
+    duration_sec, environment, elapsed_seconds, elapsed_sec.
 
     Python-version swaps + per-item timing differences alone don't
     trigger witness rewrites of otherwise-identical numeric content.
