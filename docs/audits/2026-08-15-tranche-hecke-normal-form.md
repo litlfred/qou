@@ -41,3 +41,37 @@ Sources that lost it and still cannot reach it: **20**
 For those, the narrative is sending the reader to `def:hecke-normal-form` while `uses[]` omits it. That is the editorial relation contradicting itself in the same block, not a matter of taste:
 
 - `prop:gb-spectral-sequence`
+Target exists: yes
+Target Lean decl: `QOU.Braiding.HeckeNormalForm`
+Sources that lost it and still cannot reach it: **20**
+
+| source | kind | prose link | prose mention | lean | declares now | restoring points |
+|---|---|---|---|---|---|---|
+| `prop:level-sufficiency` | proposition | no | normal form | *n/a — no .lean* | 0 | backward |
+| `prop:shell-schur-weyl-self-duality` | proposition | no | no | no | 0 | backward |
+| `prop:phi-q-categorical-truncation` | proposition | no | no | no | 1 | backward |
+| `prop:full-pole-structure-mass-trace` | proposition | no | no | no | 0 | backward |
+| `prop:compound-beta-shell-calibration` | proposition | no | no | no | 2 | backward |
+| `prop:quantum-dilogarithm-stratified` | proposition | no | no | no | 0 | backward |
+| `prop:atom-knot-exists` | proposition | no | no | no | 0 | backward |
+| `prop:atom-knot-unique` | proposition | no | normal form | no | 1 | backward |
+| `def:confinement-category` | definition | no | no | no | 2 | backward |
+| `def:confined-particle` | definition | no | normal form | no | 0 | backward |
+| `prop:gb-spectral-sequence` | proposition | **YES** | hecke normal form, hecke-normal-form, hecke normal, normal form | *n/a — no .lean* | 0 | backward |
+| `def:isotope-knot` | definition | no | no | no | 1 | backward |
+| `def:q-pochhammer-partial-product` | definition | no | no | no | 1 | backward |
+| `def:atom-knot` | definition | no | normal form | no | 1 | backward |
+| `prop:confinement-level-exists` | proposition | no | normal form | no | 0 | backward |
+| `def:confinement-level` | definition | no | hecke normal form, hecke normal, normal form | no | 0 | backward |
+| `def:knot-operator-energy` | definition | no | no | no | 1 | backward |
+| `prop:graded-trace-residue-split` | proposition | no | no | no | 1 | backward |
+| `def:stable-atom` | definition | no | normal form | no | 1 | backward |
+| `prop:gb-residue-spectral-sum` | proposition | no | hecke normal form, hecke normal, normal form | no | 2 | backward |
+
+**None of the 20 would point forward if restored.**
+
+**1 of 20 searchable blocks link to the target from their prose** (0 of 20 have no `.md` and were not searched at all).
+
+For those, the narrative is sending the reader to `def:hecke-normal-form` while `uses[]` omits it. That is the editorial relation contradicting itself in the same block, not a matter of taste:
+
+- `prop:gb-spectral-sequence`

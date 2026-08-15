@@ -207,3 +207,39 @@ The obstacle is small and belongs on the platform: the position map lives in
 manifest parser — the exact duplication `fsl7` exists to prevent and
 folio-assistant #116 just finished undoing. The fix is an exported accessor,
 not a second parser here.
+
+
+## 2026-08-15 — the forward-reference check is automated, and it reorders the queue
+
+`pointsForward` is now exported from `qa-checkers-extended.ts`
+(folio-assistant, alongside `blockPlacement`) and every tranche sheet costs each
+proposed edge with it. Measured rather than assumed:
+
+| tranche | sources | would point FORWARD |
+|---|---|---|
+| `thm:jones-markov-trace` | 21 | **0** |
+| `def:hecke-normal-form` | 20 | **0** |
+| `def:borromean-baryon` | 16 | **4** |
+| `def:crossing-energy` | 12 | **1** |
+
+**Tranches 1 and 2 are ordering-safe wholesale** — all 41 sources point
+backward, so restoring any or all of them cannot regress the detangler metric.
+They are also the two largest. The only question left for them is the editorial
+one, which is the state a tranche is meant to reach.
+
+Five blocks across tranches 3 and 4 need individual handling:
+`rem:down-quark-properties`, `rem:up-quark-properties`,
+`rem:binding-knots-visual-inventory`, `rem:knot-particle-dictionary`, and
+`prop:hadron-exists`. Each needs `foreshadows[]`, a relocation, or a deliberate
+decision to accept the forward edge. The other 23 sources in those tranches are
+unaffected.
+
+Recommended order is now **1, 2, 4, 3** rather than by size. Tranche 4 has the
+strongest evidence despite being smallest; tranche 3 is the weakest (no prose
+links at all, 10 of 16 without a `.lean`) and carries 4 of the 5 forward blocks,
+so it should not be done early merely for being large.
+
+The accessor was the right shape rather than a convenience: it returns
+`undefined` when it cannot place a block, never `false`, so "I could not check"
+cannot be read as "it is fine". That is the same lesson as `9giz` and `mcp1`,
+applied before it could bite here.

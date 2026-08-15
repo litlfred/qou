@@ -22,6 +22,11 @@
  *     is reported and never treated as an answer. A proof can invoke a lemma no
  *     reader needs to have read.
  *   - **declares now** — so a reader can see what the block does carry.
+ *   - **restoring points** — whether the restored edge would run FORWARD, i.e.
+ *     at a target later in the same chapter. That is what
+ *     `detangler-no-forward-ref` counts and what the `fwr` arc has been
+ *     reducing, so a correct restoration can silently undo correct ordering
+ *     work. `n/a` when either block is unplaced — unknown, not safe.
  *
  * None of these is a verdict. The `uses-editorial-review` two-reader standard
  * governs what is applied; this only removes the busywork from their reading.
@@ -31,6 +36,7 @@
 import { existsSync, readFileSync } from "fs";
 import { resolve } from "path";
 import { buildContentGraph } from "../folio-assistant/content/pipeline/content-graph";
+import { pointsForward } from "../folio-assistant/content/pipeline/qa-checkers-extended";
 
 const REPO = resolve(import.meta.dir, "..");
 const AUDIT = resolve(REPO, "docs/audits/2026-08-10-transitive-prune-overreach.md");
@@ -92,11 +98,13 @@ console.log(`# Tranche: restore \`${target}\`?\n`);
 console.log(`Target exists: ${targetNode ? "yes" : "**NO — target block is gone**"}`);
 if (targetDecl) console.log(`Target Lean decl: \`${targetDecl}\``);
 console.log(`Sources that lost it and still cannot reach it: **${sources.length}**\n`);
-console.log(`| source | kind | prose link | prose mention | lean | declares now |`);
-console.log(`|---|---|---|---|---|---|`);
+console.log(`| source | kind | prose link | prose mention | lean | declares now | restoring points |`);
+console.log(`|---|---|---|---|---|---|---|`);
 
 const linked: string[] = [];
 let noNarrative = 0;
+let notPlaced = 0;
+const forward: string[] = [];
 for (const s of sources) {
   const n = g.nodes.get(s)!;
   const md = n.ts.replace(/\.ts$/, ".md");
@@ -124,9 +132,36 @@ for (const s of sources) {
   else if (!existsSync(leanPath)) lean = "*n/a — no .lean*";
   else lean = readFileSync(leanPath, "utf-8").includes(targetDecl.split(".").pop()!) ? "yes" : "no";
 
+  // Cost the edge BEFORE anyone writes it. Restoring `s -> target` adds a
+  // uses[] entry, and if the target sits later in the same chapter that is a
+  // forward reference — the metric the detangler arc has been reducing. A
+  // correct restoration can silently undo correct ordering work.
+  const fwd = pointsForward(s, target);
+  let direction: string;
+  if (fwd === undefined) { direction = "*n/a — unplaced*"; notPlaced++; }
+  else if (fwd) { direction = "**FORWARD**"; forward.push(s); }
+  else direction = "backward";
+
   console.log(
-    `| \`${s}\` | ${n.kind} | ${link} | ${mention} | ${lean} | ${g.out(s, "editorial").length} |`,
+    `| \`${s}\` | ${n.kind} | ${link} | ${mention} | ${lean} | ${g.out(s, "editorial").length} | ${direction} |`,
   );
+}
+
+if (forward.length || notPlaced) {
+  console.log(
+    `\n**${forward.length} of ${sources.length} would point FORWARD if restored**` +
+    (notPlaced ? ` (${notPlaced} could not be placed, so they are unknown, not safe)` : "") + `.`,
+  );
+  if (forward.length) {
+    console.log(
+      `\nEach adds a forward reference to a chapter the detangler arc has been ` +
+      `untangling. Restoring these needs \`foreshadows[]\`, a relocation, or a ` +
+      `deliberate decision to accept the edge — not a bulk apply:\n`,
+    );
+    for (const s of forward) console.log(`- \`${s}\``);
+  }
+} else {
+  console.log(`\n**None of the ${sources.length} would point forward if restored.**`);
 }
 
 const searched = sources.length - noNarrative;
