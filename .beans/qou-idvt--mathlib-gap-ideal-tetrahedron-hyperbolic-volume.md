@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T08:00:00Z
-updated_at: 2026-08-08T08:00:00Z
+updated_at: 2026-08-15T21:31:14Z
 ---
 
 Split out so two beans stop each carrying the same "large Mathlib gap" note.
@@ -175,3 +175,47 @@ T1 **DONE** → T2 (`Vol` = the Λ-sum; GEOMETRIC, still open) → T3-core **DON
 
 Still NOT closed, and not axiomatised anywhere per this bean's GUARD: T2 and
 T3-plumbing. Bean stays open.
+
+
+
+--------
+
+## 2026-08-15 (PR #5142) — T2 packaged as a §3b-cond conditional class; STILL OPEN
+
+New file QOU/Archimedean/MostowIdealTetVolume.lean (lean-direct exit 0,
+#print axioms = [propext, Classical.choice, Quot.sound], NO sorryAx).
+Does NOT close T2 and does NOT close qou-krvm (iv). It records the exact
+remaining gap and packages it honestly.
+
+**Sharpened gap statement.** The bean's older notes framed T2 as "Vol =
+the Λ-sum (GEOMETRIC, still open)". Measured against the corpus, the
+gap is narrower than that: the ANALYTIC identity is ALREADY PROVED,
+sorry-free, against the genuine dx dy dz/z³ measure —
+`hypVolume_chimney_inscribedTriangle` (OrthoschemeTiling):
+  hypVolume (chimney (inscribedTriangle R t α β γ) R) = ofReal(Λα+Λβ+Λγ).
+So "the Λ-sum IS the real hyperbolic volume of a concrete region" is
+done (Milnor circumcentre subdivision, OrthoschemeLambdaSum + Tiling).
+The ONE remaining piece is Milnor's geometric identification: that the
+chimney over the inscribed triangle IS the ideal tetrahedron of dihedral
+angles (α,β,γ). Mathlib has no ideal simplices — that cannot yet be
+stated, let alone proved (qou-5gai H-tier).
+
+**What the class does (§3b-cond, non-laundering).**
+- class MostowIdealTetVolume — PRIMARY conjecture; content field
+  `region_eq_chimney` axiomatises the geometric INPUT (region = chimney),
+  NOT the volume conclusion.
+- idealTetVolume_eq_lambda_sum [MostowIdealTetVolume] — DERIVES
+  Vol = Λα+Λβ+Λγ by rw-ing the region identity and applying the PROVED
+  analytic theorem. Genuine derivation, not a self-assuming projection.
+- Non-vacuity is an `example : Nonempty ...` (region = a chimney,
+  shape-witness) — deliberately NOT a global instance, so the theorem
+  stays conditional and cannot fire on any real ideal tetrahedron.
+- NO instance for the framework's genuine ideal tetrahedron — the honest
+  open state. region_eq_chimney_is_restrictive gives §3b-tax non-degen.
+
+**qou-krvm (iv) is now conditional-on-class, not proved.** Its analytic
+half (concavity+invariance of the Λ-sum) was already done
+(tetVol_strictConcaveOn); T2 was the geometric half, now conditional.
+
+Bean STAYS OPEN. The GUARD holds: no instance discharges the geometric
+input; the class is the labelled open conjecture, not a close.
