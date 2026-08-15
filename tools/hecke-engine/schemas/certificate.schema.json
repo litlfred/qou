@@ -4,72 +4,246 @@
   "title": "Hecke-engine witness certificate",
   "description": "Output of tools/hecke-engine/ binaries. Minimal variant carries f64 trace summaries; full variant adds sparse Laurent polynomials in t = q^{1/2}.",
   "type": "object",
-  "required": ["isotope", "engine"],
+  "required": [
+    "isotope",
+    "engine"
+  ],
   "properties": {
     "isotope": {
       "type": "object",
-      "required": ["z", "n", "a"],
+      "required": [
+        "z",
+        "n",
+        "a"
+      ],
       "properties": {
-        "z": { "type": "integer", "minimum": 0 },
-        "n": { "type": "integer", "minimum": 0 },
-        "a": { "type": "integer", "minimum": 0 },
-        "symbol": { "type": "string" },
-        "name": { "type": "string" },
-        "parity": { "type": ["string", "integer", "null"] }
+        "z": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "a": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "parity": {
+          "type": [
+            "string",
+            "integer",
+            "null"
+          ]
+        }
       }
     },
     "engine": {
       "type": "object",
-      "required": ["name", "version"],
+      "required": [
+        "name",
+        "version"
+      ],
       "properties": {
-        "name": { "type": "string" },
-        "version": { "type": "string" },
-        "commit": { "type": ["string", "null"] },
-        "binary": { "type": ["string", "null"] }
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "binary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
-    "tr_alt": { "$ref": "#/$defs/SparsePoly" },
-    "net": { "$ref": "#/$defs/SparsePoly" },
-    "observable": { "$ref": "#/$defs/SparsePoly" },
-    "color": { "$ref": "#/$defs/SparsePoly" },
-    "pn_count": { "type": ["integer", "null"], "minimum": 0 },
-    "f_pauli_f64": { "type": ["number", "null"] },
-    "tr_alt_f64": { "type": ["number", "null"] },
-    "net_f64": { "type": ["number", "null"] },
-    "observable_f64": { "type": ["number", "null"] },
-    "color_f64": { "type": ["number", "null"] },
+    "tr_alt": {
+      "$ref": "#/$defs/SparsePoly"
+    },
+    "net": {
+      "$ref": "#/$defs/SparsePoly"
+    },
+    "observable": {
+      "$ref": "#/$defs/SparsePoly"
+    },
+    "color": {
+      "$ref": "#/$defs/SparsePoly"
+    },
+    "pn_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "f_pauli_f64": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "tr_alt_f64": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "net_f64": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "observable_f64": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "color_f64": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
     "strands": {
       "type": "array",
-      "items": { "type": ["object", "null"] }
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ]
+      }
     },
-    "total_words": { "type": ["integer", "null"], "minimum": 0 },
-    "max_coeff_log10": { "type": ["number", "null"] },
-    "elapsed_seconds": { "type": ["number", "null"], "minimum": 0 },
-    "computed_at": { "type": ["string", "null"] },
+    "total_words": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "max_coeff_log10": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "elapsed_seconds": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "computed_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "jets": {
       "type": "array",
-      "items": { "$ref": "#/$defs/SparsePoly" }
+      "items": {
+        "$ref": "#/$defs/SparsePoly"
+      }
+    },
+    "generation": {
+      "type": "object",
+      "description": "How this certificate was generated -- enough to re-run it exactly. Absent on certificates emitted before 2026-08-15; every new one has it. Added because the Q_0 muon->proton re-pin could not be applied to the committed certificates: neither the generator nor its cutoff parameter was recorded per file, and the 51 files came from four different binaries emitting different schemas.",
+      "required": [
+        "binary",
+        "argv",
+        "reproduce",
+        "q0",
+        "q0_pin"
+      ],
+      "properties": {
+        "binary": {
+          "type": "string",
+          "description": "Binary as invoked, file name only."
+        },
+        "argv": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Full argument vector. Raw argv rather than modelled per-generator fields, so it cannot silently omit an option the schema does not know about."
+        },
+        "reproduce": {
+          "type": "string",
+          "description": "Ready-to-run command reproducing this certificate."
+        },
+        "q0": {
+          "type": "number",
+          "description": "Substrate anchor actually used."
+        },
+        "q0_pin": {
+          "type": "string",
+          "enum": [
+            "proton",
+            "muon",
+            "other"
+          ],
+          "description": "Which pin q0 is. 'other' flags an anchor that is neither -- e.g. hecke-bigint used a 5-digit 1.10998 until 2026-08-15, 1277 ppb from the proton pin."
+        },
+        "engine_version": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        }
+      }
     }
   },
   "$defs": {
     "SparsePoly": {
       "type": "object",
       "description": "Sparse Laurent polynomial in t = q^{1/2}. `terms` is an array of [exponent, coefficient_decimal_string] pairs.",
-      "required": ["terms"],
+      "required": [
+        "terms"
+      ],
       "properties": {
         "terms": {
           "type": "array",
           "items": {
             "type": "array",
             "prefixItems": [
-              { "type": "integer" },
-              { "type": ["string", "integer", "number"] }
+              {
+                "type": "integer"
+              },
+              {
+                "type": [
+                  "string",
+                  "integer",
+                  "number"
+                ]
+              }
             ],
             "minItems": 2,
             "maxItems": 2
           }
         },
-        "denominator": { "type": ["integer", "string", "null"] }
+        "denominator": {
+          "type": [
+            "integer",
+            "string",
+            "null"
+          ]
+        }
       }
     }
   }
