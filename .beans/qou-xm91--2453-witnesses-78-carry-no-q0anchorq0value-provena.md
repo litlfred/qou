@@ -10,34 +10,46 @@ updated_at: 2026-08-15T10:35:54Z
 
 ## Measured (PR #5082, `computations/q0_provenance_audit.py`)
 
-Over 3138 witnesses:
+**Do not quote a count from this bean.** Run it:
 
-    CANONICAL provenance pair (q0Anchor / q0Value)
-        666  both fields
-         18  q0Anchor only
-       2453  NEITHER  (78.2%)   <- this bean
+    python3 computations/q0_provenance_audit.py --json
 
-    q0 VALUES recorded anywhere (a different question)
-        470  proton
-        799  muon
-         13  truncated-5-digit (a 1.10998 literal, 1277 ppb off)
-         51  other
-       1831  none
-
-    408  muon label that q_muon_at() does not reproduce
-     18  multi-anchor candidates (some are q-sweeps — correct by design)
+The one number this bean is *about* — witnesses carrying NEITHER `q0Anchor`
+nor `q0Value` — has been stable at **2453** across every revision of the
+audit, because the canonical-pair test is an exact field-name check and has
+not changed. Everything else moved repeatedly and the frozen table is deleted
+rather than refreshed; refreshing would mint another generation.
 
 ## READ THIS BEFORE QUOTING EARLIER NUMBERS
 
-My own first pass under-reported every count. `stamp_staleness_metadata`
-writes **camelCase** `q0Anchor` / `q0Value`, and the audit's key set held only
-the snake_case spellings, so matching on `k.lower()` never hit the CANONICAL
-fields at all. Superseded figures that appear in earlier commits/PR comments
-in this arc: "1978 unrecorded (63%)" -> 2453 (78.2%); "709 muon" -> 799;
-"243 non-reproducible" -> 408.
+Every count in this arc moved at least twice, and **never because the corpus
+changed** — always because the audit was measuring the wrong thing. Three
+separate instrument bugs, in order:
 
-Lesson worth keeping: the audit was matching the field names I *expected*
-producers to use, not the ones the writer actually emits. Read the writer.
+1. **Key names.** `stamp_staleness_metadata` writes **camelCase**
+   `q0Anchor`/`q0Value`; the audit's key set held only snake_case, so matching
+   on `k.lower()` never hit the canonical fields at all. Then a second pass
+   missed `q_0_50dps`, `q0_proton`, `q_0_numeric` and ~16 more. Fixed by
+   replacing the list with a pattern — and then the pattern over-matched
+   `*_at_q0` keys (`tr_M_at_q0`, `jones_at_q0`), which name the *other*
+   quantity, sweeping in ~90 non-anchors.
+2. **False-precision by string prefix.** Flagged every ordinary 17-digit f64
+   rendering, and could not clear them because an 18-character string cannot
+   match a 20-character prefix. 79 files carrying the canonical value were
+   reported "origin UNKNOWN".
+3. **Round-vs-truncate.** The fix for (2) compared full overlaps, which a
+   serializer that rounds its last digit (`...0878015` -> `...087802`) fails
+   by construction. 145 files on the known stale constant moved INTO
+   "unknown" — the bucket went *up*, which is how it was caught.
+
+Now compared numerically in `Decimal`, at a tolerance set by the less precise
+operand, with a regression test pinning all three failure modes to the real
+corpus strings.
+
+Lessons worth keeping: the audit was matching the field names I *expected*
+producers to use, not the ones the writer actually emits — read the writer.
+And a bucket moving in the *wrong direction* after a fix is the cheapest
+signal available that the fix was wrong; watch for it.
 
 ## Why the gap exists, and why it is NOT simply "old files"
 
