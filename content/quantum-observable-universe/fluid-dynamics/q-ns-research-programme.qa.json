@@ -1250,6 +1250,21 @@
         "reviewed_at": "2026-08-15T10:30:59.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "de6700b8ea45",
+          "ts": "9b2b391a1210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:29.210Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no negation-contrast constructions found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1269,6 +1284,21 @@
         "reviewed_at": "2026-08-15T10:30:59.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "de6700b8ea45",
+          "ts": "9b2b391a1210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:29.265Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no rhetorical-pivot constructions found."
       }
     ],
     "trap-em-dash": [
@@ -1288,6 +1318,21 @@
         "reviewed_at": "2026-08-15T10:30:59.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 304 words)"
+      },
+      {
+        "field_hash": {
+          "md": "de6700b8ea45",
+          "ts": "9b2b391a1210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:29.311Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no em-dash constructions found."
       }
     ],
     "trap-triples": [
@@ -1307,6 +1352,21 @@
         "reviewed_at": "2026-08-15T10:30:59.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 304 words)"
+      },
+      {
+        "field_hash": {
+          "md": "de6700b8ea45",
+          "ts": "9b2b391a1210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:29.353Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no triples constructions found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1326,6 +1386,22 @@
         "reviewed_at": "2026-08-15T10:30:59.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "de6700b8ea45",
+          "ts": "9b2b391a1210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:29.408Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Final line was quotable-polished: 'The millennium problem asks about a mathematical limit that nature never reaches.'",
+        "notes": "fixed: 'The physical universe sits safely in the regular regime. The millennium problem asks about a mathematical limit that nature never reaches.' -> 'The physical universe lies in the regular regime; the millennium problem concerns a limit that the physical substrate does not attain.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1345,6 +1421,21 @@
         "reviewed_at": "2026-08-15T10:30:59.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "de6700b8ea45",
+          "ts": "9b2b391a1210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:29.453Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no meta-commentary constructions found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1364,6 +1455,22 @@
         "reviewed_at": "2026-08-15T10:30:59.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "de6700b8ea45",
+          "ts": "9b2b391a1210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:29.497Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "'Summary.' section restates the block's framing, but a deliberate summary section closing a five-problem research-programme remark is conventional structure, not a reflex closer.",
+        "notes": "Deliberate summary section; kept (aphorism polish in its final line fixed under trap-closing-aphorism)."
       }
     ],
     "trap-performed-warmth": [
@@ -1383,6 +1490,21 @@
         "reviewed_at": "2026-08-15T10:30:59.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "de6700b8ea45",
+          "ts": "9b2b391a1210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:29.540Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no performed-warmth constructions found."
       }
     ],
     "trap-superlative": [
@@ -1402,6 +1524,21 @@
         "reviewed_at": "2026-08-15T10:30:59.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "de6700b8ea45",
+          "ts": "9b2b391a1210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:29.589Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no superlative constructions found."
       }
     ],
     "trap-nonspeakable": [
@@ -1421,8 +1558,23 @@
         "reviewed_at": "2026-08-15T10:30:59.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "de6700b8ea45",
+          "ts": "9b2b391a1210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:29.637Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no nonspeakable constructions found."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.651Z"
+  "updated_at": "2026-08-15T11:10:29.637Z"
 }

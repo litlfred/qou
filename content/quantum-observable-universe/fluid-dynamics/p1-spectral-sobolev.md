@@ -35,4 +35,4 @@ $$
   C_q = \left(\sum_{k=1}^\infty [k]_q^{-2}\right)^{1/2}.
 $$
 
-The constant $C_q$ converges for all $q > 1$ because $[k]_q^{-2} = O(q^{-2k})$. In the one-dimensional classical limit ($q \to 1$), $[k]_q \to k$ and $C_q^2 \to \sum k^{-2} = \pi^2/6$. However, across the 3-dimensional state bundle $\mathcal{S}$, the exploding eigenvalue multiplicities $(2j+1)^2$ force $C_q$ to diverge entirely. The embedding fails sharply in the classical 3D limit.
+The constant $C_q$ converges for all $q > 1$ because $[k]_q^{-2} = O(q^{-2k})$. In the one-dimensional classical limit ($q \to 1$), $[k]_q \to k$ and $C_q^2 \to \sum k^{-2} = \pi^2/6$. However, across the 3-dimensional state bundle $\mathcal{S}$, the growing eigenvalue multiplicities $(2j+1)^2$ force $C_q$ to diverge. The embedding fails in the classical 3D limit.
