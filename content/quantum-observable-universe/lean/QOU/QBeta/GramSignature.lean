@@ -574,7 +574,20 @@ theorem antisym_weight_closed_form (q z y₃ y₂₁ y₁₃ : R) (hq : q ≠ 0)
 worked around — it *is* convention D. The other root of the closed form,
 `z = q`, is the trivial trace and is excluded separately.
 
-This is what every `*_of_radical` lemma above was assuming. -/
+This is what every `*_of_radical` lemma above was assuming.
+
+**Relation to `RowCapObstruction.lean`.** That file proves the same vanishing
+from the representation side: `weyl_dim_alt_eq_zero_iff`, `weylDimAlt N = 0 ↔
+N < 3` — below three rows the alternating block does not exist, so nothing can
+weight it. This lemma comes at it from the trace side: among all Markov
+parameters `z`, the ones killing that block are exactly `z = q` and `z = z_D`.
+
+Neither subsumes the other, and the pair is the content: `z_D` is not merely
+*compatible with* the `N = 2` cap, it is the unique non-trivial trace parameter
+that implements it. The header above already asserted this ("the degeneracy is
+likewise structural: it *is* the `N = 2` row cap ... seen through the Gram
+form"); until now that was an observation relating two facts, with no lemma
+connecting them. -/
 theorem antisym_weight_eq_zero_of_conventionD (q z y₃ y₂₁ y₁₃ : R) (hq : q ≠ 0)
     (hq1 : q ^ 2 - 1 ≠ 0)
     (hden : (q ^ 2 + 1) * (q ^ 4 + q ^ 2 + 1) ≠ 0)
