@@ -1213,6 +1213,21 @@
         "reviewed_at": "2026-08-15T10:30:59.299Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b6fe98fc4bf5",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:34.190Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; no assert-by-denying construction"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1232,6 +1247,21 @@
         "reviewed_at": "2026-08-15T10:30:59.299Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b6fe98fc4bf5",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:34.239Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; no setup-then-reframe pivot"
       }
     ],
     "trap-em-dash": [
@@ -1251,6 +1281,21 @@
         "reviewed_at": "2026-08-15T10:30:59.299Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 311 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b6fe98fc4bf5",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:34.285Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; no load-bearing spaced-dash pattern; density low"
       }
     ],
     "trap-triples": [
@@ -1270,6 +1315,22 @@
         "reviewed_at": "2026-08-15T10:30:59.299Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 311 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b6fe98fc4bf5",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:34.326Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "closer lists 'twin self-conjugate blocks, single-nu LR fusion, and a rigid binding peak'",
+        "notes": "substantive three named structural features shared by the seven cases"
       }
     ],
     "trap-closing-aphorism": [
@@ -1289,6 +1350,21 @@
         "reviewed_at": "2026-08-15T10:30:59.299Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b6fe98fc4bf5",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:34.371Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; final line is factual, not a placed quotable"
       }
     ],
     "trap-meta-commentary": [
@@ -1308,6 +1384,21 @@
         "reviewed_at": "2026-08-15T10:30:59.299Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b6fe98fc4bf5",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:34.413Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; no narration of own emphasis"
       }
     ],
     "trap-thesis-restatement": [
@@ -1327,6 +1418,22 @@
         "reviewed_at": "2026-08-15T10:30:59.299Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b6fe98fc4bf5",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:34.466Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "final line generalizes the worked example to all seven double-magic cases",
+        "notes": "new claim (extension), not a restatement of the example"
       }
     ],
     "trap-performed-warmth": [
@@ -1346,6 +1453,21 @@
         "reviewed_at": "2026-08-15T10:30:59.299Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b6fe98fc4bf5",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:34.505Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; institutional register throughout, no personal warmth"
       }
     ],
     "trap-superlative": [
@@ -1365,6 +1487,22 @@
         "reviewed_at": "2026-08-15T10:30:59.299Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b6fe98fc4bf5",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:34.558Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "'maximally bound' is qualified 'under the algebraic constraints at A = 40'",
+        "notes": "bounded superlative, not inflation"
       }
     ],
     "trap-nonspeakable": [
@@ -1384,8 +1522,23 @@
         "reviewed_at": "2026-08-15T10:30:59.299Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b6fe98fc4bf5",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:34.604Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "full-block read; prose parses aloud; no stalling noun chains"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.299Z"
+  "updated_at": "2026-08-15T11:27:34.604Z"
 }

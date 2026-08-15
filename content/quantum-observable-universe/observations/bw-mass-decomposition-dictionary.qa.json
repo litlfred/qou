@@ -1265,6 +1265,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a derivation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "7ddfe7e44ad8",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:05.166Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "'not a completed closure'/'not yet retired' are temporal status; 'derive rather than fit' is the substantive anti-fit distinction",
+        "notes": "redundant echo '— a fit, not a derivation' removed with em-dash fix"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1284,6 +1300,21 @@
         "reviewed_at": "2026-08-15T10:30:59.271Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7ddfe7e44ad8",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:04.824Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "No setup-then-reframe construction; claims stated directly"
       }
     ],
     "trap-em-dash": [
@@ -1304,6 +1335,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "4 stylistic spaced dashes in 282 words (1.42/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "7ddfe7e44ad8",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:05.208Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "was 4 spaced em-dashes in a 5-para block, 2 chained in sentence 2; 1 true parenthetical remains",
+        "notes": "fixed: 'is open — six ansatze have failed, and ... fits — a fit, not a derivation.' -> 'is open, six ansatze have failed, and ... fits.'; closer dash -> colon"
       }
     ],
     "trap-triples": [
@@ -1323,6 +1370,21 @@
         "reviewed_at": "2026-08-15T10:30:59.271Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 282 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7ddfe7e44ad8",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:04.861Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "No reflex three-item lists; enumerations track real content"
       }
     ],
     "trap-closing-aphorism": [
@@ -1342,6 +1404,21 @@
         "reviewed_at": "2026-08-15T10:30:59.271Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7ddfe7e44ad8",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:04.905Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "Final line is substantive/technical, not a quotable closer"
       }
     ],
     "trap-meta-commentary": [
@@ -1361,6 +1438,21 @@
         "reviewed_at": "2026-08-15T10:30:59.271Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7ddfe7e44ad8",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:04.988Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "No narration of own emphasis; headers label content, standard math style"
       }
     ],
     "trap-thesis-restatement": [
@@ -1380,6 +1472,22 @@
         "reviewed_at": "2026-08-15T10:30:59.271Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7ddfe7e44ad8",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:05.254Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "closer restated para-1 'targeted for categorical replacement' verbatim; now carries only the open-status pointer",
+        "notes": "fixed: 'targeted for categorical replacement, not yet retired — ... is open.' -> 'not yet retired: ... closure is open.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1399,6 +1507,21 @@
         "reviewed_at": "2026-08-15T10:30:59.271Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7ddfe7e44ad8",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:05.032Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "No personal register; institutional prose throughout"
       }
     ],
     "trap-superlative": [
@@ -1418,6 +1541,21 @@
         "reviewed_at": "2026-08-15T10:30:59.271Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7ddfe7e44ad8",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:05.073Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "No unqualified maximum-strength claims"
       }
     ],
     "trap-nonspeakable": [
@@ -1437,8 +1575,23 @@
         "reviewed_at": "2026-08-15T10:30:59.271Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7ddfe7e44ad8",
+          "ts": "7faa2d860619"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:27:05.119Z",
+        "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
+        "evidence": "Prose parses aloud; technical terms but no stalling noun chains"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.271Z"
+  "updated_at": "2026-08-15T11:27:05.254Z"
 }

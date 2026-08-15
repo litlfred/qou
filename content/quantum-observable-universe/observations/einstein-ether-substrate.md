@@ -8,4 +8,4 @@ The QOU substrate $q_0$ is the categorical analogue of this ether-without-mechan
 
 Where Lorentz's ether supplied a preferred rest frame (and was therefore excluded by special relativity), the QOU substrate supplies only a preferred algebraic deformation class. The substrate $q_0$ is fixed not by any physical medium at rest but by the cohomological structure of $H^1(\mathrm{Bring}) = 2W$ — the first cohomology of Bring's surface. It is a categorical, not mechanical, invariant.
 
-This reading is consistent with Einstein's own conclusion: that one may retain an ether so long as one removes the last mechanical characteristic (a definite state of motion). The QOU substrate does exactly this. It is a relational invariant — fixed by the global structure of the observable algebra — rather than a local mechanical datum.
+This reading is consistent with Einstein's own conclusion: that one may retain an ether so long as one removes the last mechanical characteristic (a definite state of motion). The QOU substrate is a relational invariant — fixed by the global structure of the observable algebra — rather than a local mechanical datum.

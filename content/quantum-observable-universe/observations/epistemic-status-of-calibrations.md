@@ -31,7 +31,7 @@ So the substrate rests on **two** pins, and the $\mu$–$p$ tension ($\approx 11
 
 ### Which pin the numbers actually use
 
-The paragraph above argues that the muon is the *structurally* preferred anchor. It is not the one the computed values use, and the distinction is worth stating plainly rather than leaving a reader to infer it from a call site.
+The paragraph above argues that the muon is the *structurally* preferred anchor. It is not the pin the computed values use.
 
 | Layer | Pins $q_0$ on | $q_0$ | Status of $m_\mu$ |
 |---|---|---|---|
@@ -42,7 +42,7 @@ The two differ by $\approx 11.5$ ppb — the $\mu$–$p$ tension itself. Product
 
 This is a *precision substitution within one overdetermined datum*, not a fourth calibration and not a redefinition of CAL-2. The canonical triple is unchanged; only the numerical evaluation moves.
 
-Two consequences follow, and both are easy to get wrong:
+Two consequences follow:
 
 - **An $m_\mu$ reproduced at the muon pin is not an accuracy result.** It is the calibration restated. Quoting it as a prediction double-counts the input.
 - **The two layers must never be mixed inside a single computed quantity.** A number built from an ideal-layer input and an experimental-layer input carries the $11.5$ ppb tension as a silent error term, regardless of how small the final discrepancy looks.
