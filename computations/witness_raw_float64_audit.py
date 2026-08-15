@@ -82,6 +82,32 @@ SELF_OUTPUTS = {
     "no-free-parameter-certificate.witness.json",
 }
 
+# Prefix covering this audit's per-scan-root outputs (see `_output_name`), so a
+# derived advisory witness is self-excluded exactly like the default one.
+SELF_OUTPUT_PREFIX = "witness-raw-float64-audit--"
+
+
+def _output_name(scan_root: Path | None) -> str:
+    """Output filename for a run — DERIVED from the scan root, never shared.
+
+    Both `precision-gates.sh` invocations used to write the same file: the
+    gating run (full corpus) at line 63, then the narrow advisory run
+    (`--scan-root docs/audits/scripts`) which OVERWROTE it. The committed
+    witness was left reading `dirty_witnesses 1561 -> 5`,
+    `drained_files 14 -> 1572`, with every carve-out record dropped.
+
+    That is not merely wrong, it is wrong in a shape that reads as a normal
+    staleness prompt — "a count moved, commit the regenerated witness" — so
+    committing it would swap a corpus-wide audit for a five-file one and drain
+    the carve-out records. Deriving the name (rather than adding an --out flag
+    someone must remember to pass) makes the collision impossible for any
+    future scan root too. Bean qou-pgdw.
+    """
+    if scan_root is None:
+        return "witness-raw-float64-audit.witness.json"
+    slug = scan_root.relative_to(ROOT).as_posix().strip("/").replace("/", "-")
+    return f"{SELF_OUTPUT_PREFIX}{slug}.witness.json"
+
 
 # ── LP-dual carve-out (bean qou-ftuv, owner decision 2026-08-11) ─────────
 #
@@ -259,7 +285,9 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
     CARVED.clear()
     CARVED_INTEGRATOR.clear()
     for p in sorted((scan_root or HERE).rglob("*.witness.json")):
-        if p.name in SELF_OUTPUTS or "_deprecated" in p.parts:
+        if (p.name in SELF_OUTPUTS
+                or p.name.startswith(SELF_OUTPUT_PREFIX)
+                or "_deprecated" in p.parts):
             continue
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
@@ -459,7 +487,7 @@ def main() -> int:
              "files": dict(sorted(found.items()))}, indent=2) + "\n")
         print(f"\nRebaselined: {len(found)} files / {total:,} fields recorded.")
 
-    out = HERE / "witness-raw-float64-audit.witness.json"
+    out = HERE / _output_name(scan_root)
     out.write_text(json.dumps({
         "schema": "witness/v1",
         "name": "witness-raw-float64-audit",
