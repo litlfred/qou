@@ -1,7 +1,7 @@
 ---
 # qou-b3nk
 title: 'Q_beta channel UNREGISTERED in the trace-convention registry — the ladder is convention-C end-to-end; settle its convention'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T13:30:00Z
