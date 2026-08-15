@@ -140,11 +140,15 @@ three statements are derived unconditionally from the two classes
 (`phase_eq_im_deformed_volume`, `phiB_eq_cs_phase`,
 `exists_cs_vanishing`): the fibre-branch $\Phi_b$ phase at the
 identified argument **is** the deformed Chern–Simons part; the $\Phi_b$
-readout is the pure phase $e^{i\,\mathrm{CS}(u(q_0))}$; and the measured
-sign flip of $S$ between the anchors forces a substrate point $q^{*}$
+readout is the pure phase $e^{i\,\mathrm{CS}(u(q_0))}$; and *if* $S$ flips
+sign between the anchors, that forces a substrate point $q^{*}$
 where $\mathrm{Im}\,\mathfrak{V}(u(q^{*})) = 0$ — the deformed complex
-volume purely real, a falsifiable geometric prediction of the composed
-conjectures. This makes precise that $\Phi_b$ touches binding **only**
+volume purely real. This last is **conditional on a sign flip the data
+does not establish**: each anchor value carries a CAL-3 propagated
+uncertainty of $\pm 1.26$ (130× / 32× the value); only the swing
+$S(\text{muon}) - S(\text{proton})$ is resolved (the cross-anchor $c_3$
+difference, with $\mathrm{Vol}(4_1)$ cancelled). So it is a conditional
+structural statement, not an established prediction. This makes precise that $\Phi_b$ touches binding **only**
 through this channel: remove the `SDeformedVolumeChannel` hypothesis and
 no binding statement about $\Phi_b$ survives. On the open map $u(q_0)$
 itself, the Neumann–Zagier leading-form family laws are proved sorry-free
@@ -156,11 +160,17 @@ fixed-phase ($\mathrm{Re},\mathrm{Im} \propto d$), phase-crossing
 ($\mathrm{Re} \propto d$, $\mathrm{Im} \propto d^{2}$), and
 transverse-constant ($\mathrm{Re} \propto d$, $\mathrm{Im}$ anchor-constant),
 with $d = q - q^{*}$ — are **refuted**: each is even in $d$, hence the same
-sign on both sides of $q^{*}$, so none can produce the measured flip
-$S(\text{muon}) > 0 > S(\text{proton})$. The surviving necessary condition is
-that $u(q_0)$ must cross the diagonal $|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$
-between the anchors; $u(q_0)$ itself stays open. The measured values live in
-the probe witness, never in the Lean.
+sign on both sides of $q^{*}$, so none can produce a sign flip
+$S(\text{muon}) > 0 > S(\text{proton})$ *were one present*. The surviving
+necessary condition is that $u(q_0)$ must cross the diagonal
+$|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$ between the anchors; $u(q_0)$ itself
+stays open. The measured values live in the probe witness, never in the
+Lean, and — per the O2 analysis
+(`docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`) —
+the individual anchor signs are not resolved by the data; the resolved
+target is the swing $S(\text{muon}) - S(\text{proton})$, and the onward
+identification of this channel with the resurgent monodromy datum
+$A_\omega$ is unsupported (no literature; integrality) and not carried.
 
 ## Computational corroboration
 
