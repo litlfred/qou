@@ -753,4 +753,92 @@ theorem boundary_flux_tail_bound (Ωt a : ℕ → K) (δ F D kB2 : K)
   have := hbound n
   rwa [heq] at this
 
+/-!
+## The amplitude repair (bean `qou-2y1i`)
+
+SF6 (`qns-amplitude-step-probe`, PR #5063) refuted the *enstrophy*-form
+step for small `ε`: the tail's aggregated interior transfer is not
+sign-definite.  The repair is to change variables, not to weaken the
+claim: **per amplitude**, the DN inflow into rung `n` comes *only from
+below* (`k_n·u_{n-1}²`), and the interior outflow term
+(`−k_{n+1}·u_n·u_{n+1}`) is **non-positive** for nonnegative
+amplitudes — the sign-indefiniteness SF6 measured lives entirely in the
+enstrophy aggregation.  Each tail rung is therefore a *scalar*
+damped-forced system, and the already-proved invariant applies rung by
+rung:
+
+- `rung_equilibrium` — a rung starting empty and forced by the rung
+  below stays at or under the equilibrium `P²/(ν·kn)` (where `P`
+  bounds the previous rung's amplitude): `tail_damped_forced_bound`
+  specialised to one rung.
+- `amplitude_ladder_collapse` — the equilibria compose down the tail:
+  if each rung's bound sits below the dissipation scale
+  (`β j ≤ θ·ν·kk j`, `θ < 1` — "the band boundary is at or below the
+  dissipation scale"), the bounds collapse geometrically,
+  `β j ≤ θʲ·A`.
+
+**ε-uniform reading (physical layer):** `ν_phys ≥ 1/4` and the active
+block's top physical wavenumber is bounded (`k_phys = q^n − 1 ≤ e − 1`
+for `n ≤ 1/ε`), so both the dissipation-scale condition and the
+resulting geometric tail-enstrophy sum are `ε`-free.  The honest
+remainder: the per-rung comparison uses the previous rung's *sup* as
+constant forcing — composing sups across rungs at the trajectory level
+(not just at the bounds level, as `amplitude_ladder_collapse` does) is
+the recorded follow-up; and the band-boundary amplitude actually
+sitting at the dissipation scale is the data/dynamics condition that
+replaces SF6's refuted form — probe-able (SF7).
+-/
+
+/-- **Per-rung equilibrium**: a rung starting empty, forced by the rung
+    below (`Φ = kn·P²`) and damped at its own dissipation rate
+    (`D = ν·kn²`), never exceeds the equilibrium `P²/(ν·kn)`.
+    (`tail_damped_forced_bound` specialised to one scalar rung;
+    the DN per-amplitude step drops only a non-positive term.) -/
+theorem rung_equilibrium (u : ℕ → K) (δ P ν kn : K)
+    (hδ : 0 ≤ δ) (hν : 0 < ν) (hkn : 0 < kn)
+    (hδD : δ * (ν * kn ^ 2) ≤ 1)
+    (h0 : u 0 = 0)
+    (hstep : ∀ t, u (t + 1) ≤ u t + δ * (kn * P ^ 2 - ν * kn ^ 2 * u t)) :
+    ∀ t, u t ≤ P ^ 2 / (ν * kn) := by
+  -- apply the damped-forced invariant with Φ = kn·P², D = ν·kn²
+  have hbound := tail_damped_forced_bound u δ (kn * P ^ 2) (ν * kn ^ 2)
+    hδ (by positivity) hδD hstep
+  intro t
+  have heq : kn * P ^ 2 / (ν * kn ^ 2) = P ^ 2 / (ν * kn) := by
+    field_simp
+  have := hbound t
+  rw [h0, heq] at this
+  have hmax : max (0 : K) (P ^ 2 / (ν * kn)) = P ^ 2 / (ν * kn) :=
+    max_eq_right (by positivity)
+  rwa [hmax] at this
+
+/-- **Geometric collapse of the amplitude ladder**: with the per-rung
+    recurrence `β(j+1) ≤ β(j)²/(ν·kk j)` (each rung's bound is the
+    equilibrium forced by the previous) and the dissipation-scale
+    condition `β j ≤ θ·ν·kk j`, the bounds collapse geometrically:
+    `β j ≤ θʲ·β 0`.  One induction; the doubly-exponential collapse
+    that actually occurs is stronger, but geometric suffices for the
+    `ε`-uniform tail-enstrophy sum. -/
+theorem amplitude_ladder_collapse (β kk : ℕ → K) (ν θ : K)
+    (hθ : 0 ≤ θ) (hν : 0 < ν) (hkk : ∀ j, 0 < kk j)
+    (hβ : ∀ j, 0 ≤ β j)
+    (hrec : ∀ j, β (j + 1) ≤ β j ^ 2 / (ν * kk j))
+    (hsub : ∀ j, β j ≤ θ * (ν * kk j)) :
+    ∀ j, β j ≤ θ ^ j * β 0 := by
+  intro j
+  induction j with
+  | zero => simp
+  | succ p ih =>
+      have hpos : (0 : K) < ν * kk p := mul_pos hν (hkk p)
+      have hfrac : β p / (ν * kk p) ≤ θ := by
+        rw [div_le_iff₀ hpos]
+        linarith [hsub p]
+      calc β (p + 1) ≤ β p ^ 2 / (ν * kk p) := hrec p
+        _ = β p * (β p / (ν * kk p)) := by ring
+        _ ≤ β p * θ :=
+            mul_le_mul_of_nonneg_left hfrac (hβ p)
+        _ ≤ (θ ^ p * β 0) * θ :=
+            mul_le_mul_of_nonneg_right ih hθ
+        _ = θ ^ (p + 1) * β 0 := by ring
+
 end QOU.FluidDynamics.PhysicalLayerLeray
