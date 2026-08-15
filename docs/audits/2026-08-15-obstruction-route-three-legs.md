@@ -47,7 +47,19 @@ contrapositives of the bridge's descent lemmas:
 - `not_orbit_descent_of_counterexample` — a counterexample on **either** leg
   kills the *shared* orbit-descent ingredient of
   `regular_and_halts_of_len_orbit_descent`, hence the common route to the
-  other. The two walls do not fail independently.
+  other. The two walls do not fail independently *as proof routes*.
+- `not_halts_of_blowsUp` — within **one** system with a periodic normal form,
+  an orbit of unbounded filtration cannot reach it: boundedness and descent are
+  coupled questions *of one instance*.
+
+**Scope, stated sharply because an earlier revision got it wrong.** These
+lemmas fix one `sys` and one `P`. They do **not** identify a Navier–Stokes
+singularity with a q-Collatz divergence, because the corpus instantiates the two
+legs as *different systems* — `qCollatzSystem` (whose `len` is a caller-supplied
+parameter) versus `vortexReductionSystem`, on which `BlowsUp` is outright
+unsatisfiable since `vortexReductionSystem_regular` proves it regular. "Three
+predicates on one shared object" means one shared **type**; the theorems
+quantify over one **value** of it. See the third correction below.
 
 The P-vs-NP direction already existed sorry-free upstream
 (`no_horizon_cost_of_polyObservable`).
@@ -175,6 +187,38 @@ not the same as checking whether the obstacle *refutes* the hypothesis. "The
 attractor is a 2-cycle, not a fixed point" was written down and then not acted
 on. When a docstring names a reason the hypothesis might not hold, grep the class
 for whether the corpus *proves* it does not.
+
+### Third correction: shared *type* is not shared *instance*
+
+The cross-leg transfer was then narrated as "a q-NS blow-up witness **is** a
+q-Collatz divergence witness". False. `not_halts_of_blowsUp` fixes one
+`sys : SkeinObservationSystem S V` and one `P : S`, reading both predicates off
+the *same* `step`, `normalForm` and `len`. The corpus's two legs are different
+instances of that type: `qCollatzSystem` (`step = QCollatz.C`, `len` a free
+caller-supplied parameter — the bridge concedes "any ℕ-measure typechecks")
+versus `vortexReductionSystem`, the only concrete NS instance, on which the
+hypothesis is **unsatisfiable** because `vortexReductionSystem_regular` proves
+it regular. The theorem is a coupling *inside* one instance; the prose promoted
+it to a coupling *between legs*.
+
+Re-scoped in the Lean header, the content block, and the summary above. The
+theorems are unchanged and correct — only the narration was wrong.
+
+**This is the same root cause as the first correction, one abstraction level
+up:** shared abstraction mistaken for shared instance, exactly as level-indexed
+family had been mistaken for its universal closure.
+
+### Fourth instance of the pointwise-vs-`∀` conflation — in this branch's own prose
+
+Worth recording flatly: while the audit doc's "do not re-raise" section (below)
+correctly explains that "the halting set is not cut out by an ideal" (set-level)
+is independent of "`κ_C = 0` ⟺ every orbit converges" (truth-value), **this
+branch simultaneously wrote that exact invalid inference into
+`q-collatz-conjecture.md`** — "hence not cut out by any ideal, so no algebraic
+class can be equivalent to it". Three files apart, in one session: the doc
+naming the fallacy and the content block committing it. Corrected in the block;
+the `SkeinCounterfactual` docstring already carried the refutation
+(`∃ v, (v ↔ ∀ P, Halts P)` is trivially inhabited).
 
 **Root cause of the first correction, stated once:** conflating a predicate that
 varies over states or levels with the single truth value of its universal

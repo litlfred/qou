@@ -134,13 +134,32 @@ theorem not_orbit_descent_of_counterexample (P : S)
   · exact sys.not_blowsUp_of_regular (sys.len P) P hreg hblow
   · exact hnh hhalts
 
-/-! ### The strong form: a q-NS counterexample **is** a q-Collatz counterexample
+/-! ### The strong form, and its exact scope: **one system, two questions**
 
 `not_orbit_descent_of_counterexample` above says a counterexample on either leg
 destroys the *shared proof ingredient*. That is a statement about methods. The
-lemmas here upgrade it to a statement about the **objects**: on a system whose
-normal form is a fixed point, blow-up and halting are outright incompatible, so a
-q-NS singularity witness is automatically a q-Collatz divergence witness.
+lemmas here upgrade it to a statement about the **objects**, within a **single**
+system: when the normal form is periodic, an orbit whose filtration is unbounded
+cannot reach it. Boundedness and descent are not independent questions *of one
+instance*.
+
+**Scope — this does NOT identify a Navier–Stokes singularity with a q-Collatz
+divergence (correction, 2026-08-15).** Every lemma below fixes one
+`sys : SkeinObservationSystem S V` and one `P : S`, reading `BlowsUp` and
+`Halts` off the *same* `step`, `normalForm` and `len`. The corpus instantiates
+the two legs as **different systems**: q-Collatz is `qCollatzSystem` (`step =
+QCollatz.C` on the Skein module, and `len` a caller-supplied parameter — the
+bridge concedes "any ℕ-measure typechecks"), while the concrete NS instance is
+`vortexReductionSystem` on `ℕ`. On the latter `BlowsUp` is outright
+unsatisfiable, since `vortexReductionSystem_regular` proves it regular. So the
+transfer couples two questions asked of **one instance**; it says nothing about
+one leg's counterexample being the other's.
+
+An earlier revision of this header claimed exactly that ("a q-NS singularity
+witness is automatically a q-Collatz divergence witness"). It was wrong for the
+reason above — conflating a shared *type* with a shared *instance*, which is the
+same conflation as the two prior corrections on this branch, one abstraction
+level up. Caught by adversarial review before merge.
 
 The hypothesis is **periodicity** of the normal form, `IsPeriodicPt step p
 normalForm` with `0 < p`, and it is carried explicitly on every statement rather
@@ -191,10 +210,14 @@ theorem regular_of_halts {p : ℕ} (hp : 0 < p)
       (Finset.le_sup (f := fun i => sys.len (sys.step^[i] sys.normalForm))
         (Finset.mem_range.mpr hip))
 
-/-- **Blow-up excludes halting.** The two walls do not fail independently: when
-    the normal form is periodic — as the q-Collatz 2-cycle attractor is — a q-NS
-    singularity witness *is* a q-Collatz divergence witness at the same orbit.
-    Nothing chooses which leg the object belongs to. -/
+/-- **Blow-up excludes halting, within one system.** When the normal form is
+    periodic — as the q-Collatz attractor is, by `attractor_period_two` — an
+    orbit with unbounded filtration cannot reach it. The boundedness question and
+    the descent question are not independent *of the same instance*.
+
+    **Not a cross-leg identification.** `sys` is one system; see the section
+    header. The corpus's two legs are different instances, and on the concrete
+    NS instance this hypothesis is unsatisfiable. -/
 theorem not_halts_of_blowsUp {p : ℕ} (hp : 0 < p)
     (hper : Function.IsPeriodicPt sys.step p sys.normalForm)
     (P : S) (hblow : sys.BlowsUp P) : ¬ sys.Halts P := by
@@ -211,6 +234,24 @@ theorem not_blowsUp_of_halts {p : ℕ} (hp : 0 < p)
     (hper : Function.IsPeriodicPt sys.step p sys.normalForm)
     (P : S) (h : sys.Halts P) : ¬ sys.BlowsUp P :=
   fun hblow => not_halts_of_blowsUp sys hp hper P hblow h
+
+end SkeinObservationSystem
+
+/-- **The q-Collatz instance discharges the periodicity hypothesis.** Recorded as
+    a lemma rather than asserted in prose: `attractor_period_two` *is*
+    `IsPeriodicPt` at `p = 2`, definitionally. Both prior corrections on this
+    branch were "asserted about the instance, never checked against it", so the
+    discharge is machine-checked here. -/
+theorem qCollatzSystem_normalForm_periodic {Skein : Type u} [CommRing Skein]
+    [QOU.AppendixSurreals.QCollatz Skein] {V : Type v}
+    (obs : Skein → V) (len : Skein → ℕ) :
+    Function.IsPeriodicPt (qCollatzSystem obs len).step 2
+      (qCollatzSystem obs len).normalForm :=
+  QOU.AppendixSurreals.QCollatz.attractor_period_two
+
+namespace SkeinObservationSystem
+
+variable {S : Type u} {V : Type v} (sys : SkeinObservationSystem S V)
 
 /-! ### The leg-independent bar: a scalar cannot decide a state predicate -/
 
