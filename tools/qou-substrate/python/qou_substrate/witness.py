@@ -357,6 +357,8 @@ class Assertion:
         tolerance: Union[float, str, None] = None,
         unit: Optional[str] = None,
         source: Optional[str] = None,
+        passed_override: Optional[bool] = None,
+        extra: Optional[dict] = None,
     ):
         self.name = name
         self.computed = computed
@@ -364,9 +366,20 @@ class Assertion:
         self.tolerance = tolerance
         self.unit = unit
         self.source = source
+        # A verdict the producer computed itself, rather than one derived from
+        # computed/expected/tolerance. Legacy payload assertions are frequently
+        # of the form {"name": …, "passed": bool(some_predicate)} with no
+        # numeric pair to compare — the predicate IS the check. Honoured
+        # verbatim so adoption cannot change a producer's stated result.
+        self.passed_override = passed_override
+        # Keys the corpus attaches beyond the schema (`detail`, `manifold`,
+        # `particle`, …). Preserved so adoption is lossless.
+        self.extra = dict(extra) if extra else {}
 
     @property
     def passed(self) -> bool:
+        if self.passed_override is not None:
+            return self.passed_override
         if self.tolerance is None:
             return self.computed == self.expected
         try:
@@ -392,7 +405,47 @@ class Assertion:
             d["unit"] = self.unit
         if self.source:
             d["source"] = self.source
+        # Adopted extras last, and they may not shadow a schema key.
+        for k, v in self.extra.items():
+            if k not in d:
+                d[k] = v
         return d
+
+
+def _assertion_from_mapping(rec: Mapping[str, Any]) -> "Assertion":
+    """Build an `Assertion` from a legacy payload assertion dict.
+
+    `wrap_legacy` used to DROP these (see its docstring), so this is the
+    conversion that makes them count. Handles the shapes the corpus actually
+    uses, surveyed across the 28 affected producers:
+
+    * ``{"name", "passed"}`` — 11 sites. No numeric pair; the producer's own
+      predicate is the verdict, so it becomes `passed_override`.
+    * ``{"name", "computed", "expected", "passed", …}`` — 5 sites. Both are
+      present; the explicit `passed` still wins, because it is what the
+      producer asserted and adoption must not silently re-decide a verdict.
+    * ``{"name", "expected", "tolerance", "unit", "source", …}`` — 10 sites,
+      no `passed`; derived the normal way from computed/expected/tolerance.
+
+    Anything else on the dict (``detail``, ``manifold``, ``particle``) is
+    carried through in `extra` rather than discarded.
+    """
+    known = {"name", "computed", "expected", "passed", "tolerance",
+             "unit", "source"}
+    passed = rec.get("passed")
+    return Assertion(
+        name=str(rec.get("name", "")),
+        # A missing computed/expected pair is rendered against the verdict so
+        # the emitted assertion is still readable, rather than carrying `None`.
+        computed=rec.get("computed",
+                         ("1" if passed else "0") if passed is not None else ""),
+        expected=rec.get("expected", "1" if passed is not None else ""),
+        tolerance=rec.get("tolerance"),
+        unit=rec.get("unit"),
+        source=rec.get("source"),
+        passed_override=bool(passed) if passed is not None else None,
+        extra={k: v for k, v in rec.items() if k not in known},
+    )
 
 
 # ── WitnessBuilder ───────────────────────────────────────────────
@@ -565,6 +618,24 @@ class WitnessBuilder:
         # before the work begins (the original pattern).
         self._start_time = (
             start_time if start_time is not None else time.monotonic()
+        )
+        # Which clock `_start_time` is on. `build()` differences against
+        # `time.monotonic()`, whose zero is arbitrary (typically boot), while
+        # 14 producers pass a `time.time()` baseline — epoch seconds, ~1.79e9.
+        # Differencing those two clocks yielded `durationMs ≈ -1.79e12` in 12
+        # committed witnesses (found by Copilot review on PR #4928).
+        #
+        # Fixed here rather than in the 14 callers: the parameter is documented
+        # only as "the duration baseline", names no clock, and both clocks are
+        # plain floats — so nothing distinguishes a right call from a wrong one
+        # at the call site. Fourteen identical mistakes against 215 correct ones
+        # is a footgun, not fourteen slips.
+        #
+        # The discriminator is safe by a wide margin: `time.monotonic()` counts
+        # from an arbitrary but *recent* zero (uptime — 1e8 s is over 3 years of
+        # continuous uptime), while `time.time()` has been above 1e9 since 2001.
+        self._start_is_epoch = (
+            start_time is not None and start_time > 1e8
         )
 
         # Resolve caller frame ONLY when script path not explicitly
@@ -832,6 +903,35 @@ class WitnessBuilder:
             elif key == "computation":
                 # Filename already encodes this; skip to avoid duplicate
                 continue
+            elif key == "assertions" and isinstance(value, list):
+                # ADOPT, do not skip. `assertions` and `allPassed` are in
+                # `_RESERVED_LEGACY_KEYS`, so both used to fall through to the
+                # `continue` below on the reasoning that `build()` recomputes
+                # them from `add_assertion`. For a producer that writes its
+                # checks as a payload literal — the prevailing legacy shape —
+                # that silently DISCARDED them, and `build()` then emitted
+                #
+                #     "assertions": [], "allPassed": true
+                #
+                # with `allPassed` true *vacuously*, because nothing was
+                # registered. No warning, no exception: a probe whose headline
+                # check FAILED reported success.
+                #
+                # Measured before the fix: 29 producers passed `assertions` in a
+                # wrap_legacy payload, 28 of them without also calling
+                # `add_assertion`; 389 of 2083 witnesses carrying an `allPassed`
+                # field (19 %) had it true with zero assertions.
+                #
+                # Adopting rather than raising is deliberate. The producer's
+                # verdict was never wrong — it was discarded — so converting it
+                # is a faithful reading of what the caller asked for, and it
+                # repairs all 28 without a flag day. An explicit `passed` in the
+                # payload always wins over a derived comparison, so adoption
+                # cannot re-decide a result.
+                for _rec in value:
+                    if isinstance(_rec, Mapping):
+                        builder.assertions.append(_assertion_from_mapping(_rec))
+                continue
             elif key in cls._RESERVED_LEGACY_KEYS:
                 # Skip auto-generated metadata; build() will recompute
                 continue
@@ -929,7 +1029,14 @@ class WitnessBuilder:
 
     def build(self) -> dict:
         """Build the witness dictionary (without writing to disk)."""
-        duration_ms = int((time.monotonic() - self._start_time) * 1000)
+        # Difference against the clock the baseline was actually taken on.
+        _now = time.time() if self._start_is_epoch else time.monotonic()
+        duration_ms = int((_now - self._start_time) * 1000)
+        # Backstop: a duration is never negative. If a future caller finds a
+        # third way to mismatch the clocks, this records an unknown duration as
+        # 0 rather than committing a negative epoch-like number that reads as
+        # data to every consumer.
+        duration_ms = max(duration_ms, 0)
         head_sha = _git_head_sha()
         script_sha = _git_file_sha(str(self._script_path))
         script_hash = file_content_hash(str(self._script_path))

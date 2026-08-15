@@ -1,13 +1,94 @@
 ---
 # qou-arvu
 title: "Corpus sweep: does 'non-holonomic hence resurgent' appear elsewhere?"
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-14T20:02:00Z
-updated_at: 2026-08-14T20:02:00Z
+updated_at: 2026-08-14T21:58:00Z
 ---
 
 Spun out of `qou-tdp0` step 1 (owner-directed, 2026-08-14).
+
+## SWEEP DONE 2026-08-14 — docs fixed; three producers REMAIN (blocked on sympy)
+
+Full findings: [`2026-08-14-non-holonomic-implies-resurgent-corpus-sweep.md`](../docs/audits/2026-08-14-non-holonomic-implies-resurgent-corpus-sweep.md).
+
+**5 class-(a) sites** found across 22 candidate files. Two were prose and are
+fixed on this branch; **three are producers and are NOT fixed** — they are the
+remaining work on this bean.
+
+### Fixed (prose, no producer hash touched)
+
+- `docs/audits/2026-07-12-dladder-divergence-correction.md` — SUPERSEDED banner.
+  Its **title** asserted the refuted conclusion. The banner names the specific
+  defect: its central "no singularity at ρ" argument ran a search that **omitted
+  the `Q_b` zero** `q*_ρ ≈ 1.48989` whose image *is* `ρ = 0.1428`.
+- `docs/audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md`
+  — banner + two clauses struck. Its exact linear algebra is untouched and
+  correct; only the "tightens the resurgent reading" interpretation is withdrawn.
+
+### REMAINING — three producers, and three committed witnesses in three different states
+
+| file | offending content |
+|---|---|
+| `computations/qbeta/qbeta_dladder_generating_function_structure_probe.py` | computes `divergent = bool(root_rising and C > 0 and ssr_ratio < 0.3)`; docstring §3 "super-exponentially DIVERGENT (radius → 0)", "spurious finite ρ≈0.143", "SAME divergent family as the κ-tower" |
+| `computations/qbeta/qbeta_odd_channel_stokes_borel_probe.py` | whole premise — "characterize the **divergence class** of the bar-ODD Q_β D-ladder"; witness description asserts a drifting Gevrey order |
+| `computations/qbeta/qbeta_dladder_coupled_qsqrt3_recurrence_probe.py` | docstring: NEGATIVE "⇒ … (corroborates the q-Gevrey/**resurgent** reading)" — the invalid step verbatim |
+
+**All three have committed witnesses** (verified via `scriptFile` match +
+`git ls-files`), in **three different states** — do not treat them alike:
+
+| witness | state | work needed |
+|---|---|---|
+| `qbeta-dladder-generating-function-structure.witness.json` | **refuted verdict** — `data.super_exponentially_divergent = true`, `verdict` asserts κ-tower family + "finite-n shadow" | re-scope the boolean's meaning + verdict text, re-run |
+| `qbeta-odd-channel-stokes-borel.witness.json` | **refuted framing, corroborating data** — see below | mostly relabelling |
+| `qbeta-dladder-coupled-qsqrt3-recurrence.witness.json` | **verdict CORRECT** (`NO coupled ℚ(√3) P-recurrence up to (r≤4, D≤4)`); only the `description` gloss carries the invalid step | drop one clause, re-run |
+
+**The middle one is the interesting case.** Its heading calls it the odd-channel
+*"divergence class"*, but its own numbers point the other way:
+`data.gevrey_order_drifts_down = true` (C falls `~0.08 → 0.05` as the tail
+lengthens — the apparent divergence *weakens* with more terms); the description
+already says *"NOT q-Gevrey-1 in any base > 1"*; and the Borel–Leroy pole runs
+`0.147 → 0.165 → 0.249` for `s = 0.02 → 0.10 → 0.30`, so the small-`s` end is
+**0.147**, within ≈ 3 % of `ρ = 0.142799996644689…` and trending toward it.
+
+Scope-(a): that is *consistency with* the 2026-08-09 radius, **not** a
+derivation of `ρ` from Borel–Leroy. But it means the data was pointing at the
+true radius while the framing called the channel divergent — so re-scoping turns
+those numbers from contradicted into supporting, and no measurement is lost.
+
+> **Count correction.** An earlier revision of this bean said *"two committed
+> witnesses"* and named one file. Wrong on both: three, in three states. Caught
+> in review on PR #5039.
+
+### The fix is re-scoping at the producer, NOT a re-run
+
+The arithmetic is not wrong. At `k ≤ 21–27` the root test really does rise
+without plateau and `C > 0` really does fit — so a re-run reproduces
+`divergent = True` byte-for-byte and changes nothing. The **diagnostic**
+misfired: with the true `d_k = −(1/(2h*_ρ))ρ^{−k}/k(1+O(1/k))`, the `1/k` factor
+makes `|d_k|^{1/k}` approach `1/ρ` far too slowly to plateau in the available
+window, and the `log` branch point makes a Domb–Sykes `1/k` fit noisy.
+
+So the work is: **re-scope the verdict text and the boolean's meaning at the
+producer** (e.g. rename to `root_test_rising_in_window` and state that this is
+*consistent with* a `ρ^{−k}/k` law, not evidence against it), then re-run so the
+witness regenerates honestly.
+
+**Blocked here:** `sympy` is absent in this sandbox (`numpy` too), so none of the
+three can be executed. Editing a docstring without the ability to re-run would
+drift `scriptHash` and leave a stale witness — the failure mode AGENTS.md
+§idle-backlog names explicitly. Needs an environment with `sympy`.
+
+### Scope discipline for whoever picks this up
+
+Scope-(a). Do **not** convert this into "the D-ladder has no interesting growth
+structure" or into any exclusion of q-Borel methods. And do not touch the
+**κ-tower** work: that ladder *is* genuinely divergent (Gevrey-1, Borel
+singularity `A ≈ 0.7`) and its resurgence programme is unaffected. Same for
+`qou-vkg5` (C1 at `∞`, irregular, slope `½`).
+
+## Original brief (retained)
 
 ## The inference, and why it is invalid
 

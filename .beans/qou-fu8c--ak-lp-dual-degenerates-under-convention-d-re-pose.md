@@ -1,10 +1,11 @@
 ---
 # qou-fu8c
 title: aK LP dual degenerates under convention D — re-pose on the two-row quotient
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-08-14T16:21:57Z
+updated_at: 2026-08-14T18:45:19Z
 ---
 
 ## The finding

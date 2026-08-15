@@ -3,16 +3,15 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 1572,
-    "total_fields": 536570,
-    "lp_dual_carved_out_fields": 3763,
+    "dirty_witnesses": 1568,
+    "total_fields": 534309,
+    "lp_dual_carved_out_fields": 3738,
     "lp_dual_carved_out_by_file": {
-      "computations/a-K-via-lp-dual-full.witness.json": 813,
+      "computations/a-K-via-lp-dual-full.witness.json": 812,
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": 75,
       "computations/a-K-via-lp-dual.witness.json": 1,
       "computations/all-nuclides-sdp-admissibility.witness.json": 144,
       "computations/alpha/alpha-5-lp-dual-crystal.witness.json": 75,
-      "computations/binding-k-enumerator.witness.json": 60,
       "computations/binding-k-solver.witness.json": 154,
       "computations/borromean-axial-coupling.witness.json": 16,
       "computations/co-bond-order-active-set.witness.json": 8,
@@ -38,6 +37,7 @@
       "computations/option-b-proton-mass-full-chain.witness.json": 18,
       "computations/phase-transition-sdp-derivation.witness.json": 1,
       "computations/pn-alpha-lp-dual.witness.json": 1066,
+      "computations/probes/ak-lp-dual-quotient-probe.witness.json": 36,
       "computations/probes/borromean-angle-structure-lp-probe.witness.json": 1,
       "computations/probes/frobenius-repose.witness.json": 278,
       "computations/probes/lpdual-active-set-vs-edge-set-negative.witness.json": 11,
@@ -62,8 +62,8 @@
     ],
     "baseline_files": 1572,
     "baseline_fields": 536570,
-    "new_not_baselined": 0,
-    "regressed": 0,
-    "drained_files": 0
+    "new_not_baselined": 3,
+    "regressed": 1,
+    "drained_files": 9
   }
 }

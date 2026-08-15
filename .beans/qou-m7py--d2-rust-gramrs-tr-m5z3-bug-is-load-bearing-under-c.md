@@ -1,10 +1,11 @@
 ---
 # qou-m7py
-title: "D2: Rust gram.rs TR_M[5]=z^3 bug is load-bearing under convention D"
-status: todo
+title: 'D2: Rust gram.rs TR_M[5]=z^3 bug is load-bearing under convention D'
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-08-14T16:21:57Z
+updated_at: 2026-08-14T21:56:37Z
 ---
 
 ## The coupling
@@ -55,3 +56,52 @@ and returns entries to 7.6e15 with `||G @ G_INV − I|| = 1.64`.
 - `qou-fu8c` — the `a_K` LP dual degenerating under D. Third instance of the
   same shape (the `ℓ(λ) ≥ 3` blocks are the radical under D).
 - `qou-j6il` — a Rust binary returning convention C while its source read D.
+
+
+## Update 2026-08-14 — the coupling is PROVED, not asserted (PR #5025)
+
+`computations/probes/gram_radical_exact_probe.py`. The banner's claim was that
+the Rust mirror "survives the degeneracy **only because** it still carries the
+pre-2026-05-19 `TR_M[5] = z^3` bug". Decided by building the same **exact**
+Gram (rational arithmetic, no floating point) with each value of `TR_M[5]`:
+
+| q | `TR_M[5] = h·z² + z` (correct) | `TR_M[5] = z³` (the Rust value) |
+|---|---|---|
+| 11/10 | det = **0 exactly**, rank 5 | det ≠ 0, rank **6** |
+| 7/5 | det = **0 exactly**, rank 5 | det ≠ 0, rank **6** |
+| 13/7 | det = **0 exactly**, rank 5 | det ≠ 0, rank **6** |
+
+So the coupling is real: **fixing the Rust bug WILL make the native Gram
+singular.** The two cannot be planned independently, exactly as recorded.
+
+**The bug is still live.** `tools/hecke-engine/src/gram.rs:89` ends
+`trace_weights` with `[1.0, z, z, z*z, z*z, z*z*z]`; the crate's own module
+docstring (lines 9–10, 724) documents the divergence from `pyhecke.gram.TR_M`.
+
+**Size of the error.** At the proton pin under convention D:
+
+```
+z                        = 0.6126880371464652
+TR_M[5]  correct h·z²+z  = 0.6911664783584445
+TR_M[5]  Rust    z³      = 0.2299948980341014     -66.72 %
+```
+
+The Markov trace of the 3-strand cap element is off by two thirds, and that
+error is precisely what has been holding the form non-degenerate.
+
+## What this changes for the plan
+
+The repair now has its projector in closed form (from the same probe, under
+`qou-w8zz`): the radical is spanned by the q-antisymmetriser
+`Σ_w (−1/q)^ℓ(w) T_w`. So both sides — `pyhecke/gram.py` and
+`hecke-engine/src/gram.rs` — need the same quotient construction, and it is
+explicit rather than numerically extracted.
+
+Sequencing follows: fix `TR_M[5]` and adopt the quotient **together**, in one
+change, on both sides. Fixing the trace alone lands a singular Gram in the
+native path with `np.linalg.inv`-equivalent behaviour downstream.
+
+**Not attempted here:** `pyhecke_native` is not installed in this container, so
+the compiled wheel's live behaviour was not measured — only the mathematics it
+implements. Anyone picking this up should record whether the wheel is present,
+since the observable split is conditional on it.

@@ -1,0 +1,296 @@
+{
+  "engine": "python+scipy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-14T18:53:58.123068+00:00",
+  "commitSha": "842bf13f4f31949525c2c26db4a90e535ccce75a",
+  "assertions": [
+    {
+      "name": "ambient_lp_degenerate_under_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "ak_lp_dual_quotient_probe"
+    },
+    {
+      "name": "quotient_lp_gives_defined_aK",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "ak_lp_dual_quotient_probe"
+    },
+    {
+      "name": "y0_star_equals_min_live_contribution",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "ak_lp_dual_quotient_probe"
+    },
+    {
+      "name": "quotient_recovers_a_K_closed",
+      "computed": "0",
+      "expected": "1",
+      "passed": false,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "ak_lp_dual_quotient_probe"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 0,
+  "computation": "ak-lp-dual-quotient-probe",
+  "scriptFile": "ak_lp_dual_quotient_probe.py",
+  "scriptHash": "be18b2899714",
+  "scriptCommitSha": "c4fba6847603db87f2b6cf7391e0cf953b421ffb",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Re-poses the a_K operator-selection LP on H_n/rad (the blocks convention D leaves alive) and asks whether that recovers a_K. It makes y0* nonzero and a_K defined, but does NOT recover a_K — and the convention-C history shows the LP never did, missing by up to 1.6e17 ppm. audit_only; no anchor, no fit.",
+  "data": {
+    "upstream_witness_hashes": [
+      {
+        "path": "chi-proton-h3-at-q0-50dps.witness.json",
+        "sha256": "52c8a353c469626ad015d478dd7dc313f7b0af2b4c45806e951be59e7cf42116",
+        "size_bytes": 2290,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:38.582633+00:00"
+      },
+      {
+        "path": "chi-neutron-h3-at-q0-50dps.witness.json",
+        "sha256": "55375e49007071f1f174544b72a2460b54724a3cda8bdec63de64e3708f09185",
+        "size_bytes": 2295,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:38.505845+00:00"
+      },
+      {
+        "path": "chi-deuteron-h6-at-q0-50dps.witness.json",
+        "sha256": "8def85c0c8ff02872a917db8f2585cc0dac68a1d24ef99b149f9cc10187b02bb",
+        "size_bytes": 4606,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:37.472970+00:00"
+      },
+      {
+        "path": "chi-tritium-h9-at-q0-50dps.witness.json",
+        "sha256": "d8a6bed12bb80f46046d1cdd86c0ac7dfc48adc91dfb1d8f63f3dabd9d1d492c",
+        "size_bytes": 9951,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:38.428907+00:00"
+      },
+      {
+        "path": "chi-helium-3-h9-at-q0-50dps.witness.json",
+        "sha256": "3fc5b0b32b68e7cfea49d7a9adae9e56b136da8f1ea110ae88e57eb974886c9a",
+        "size_bytes": 9953,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:37.388418+00:00"
+      },
+      {
+        "path": "chi-helium-4-h12-at-q0-50dps.witness.json",
+        "sha256": "291432285bc7d220346f294e7a80d65650e2ae82424d9a846b375661d5f19c89",
+        "size_bytes": 23661,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:36.504857+00:00"
+      }
+    ]
+  },
+  "audit_only": true,
+  "markov_convention": "D",
+  "tier": "structural-exact (decidable; LP optimum is an argmin, no fit)",
+  "result": {
+    "verdict": "Quotient restriction makes a_K DEFINED but does NOT recover it: worst |quotient vs closed| = 1.070e+09 ppm. The LP reduces to y0* = min_i |contrib_i| (verified on all 6 atoms), so the dual carries no operator-selection content. Convention C missed by up to 1.6e17 ppm, so this is NOT a convention-D regression — D turned a wrong number into no number. Scope-(a): refutes the LP AS POSED (t = |contrib| against a sum-to-target constraint); does NOT exclude an operator-selection LP as the route to a_K.",
+    "trace_constraint_imposed": false,
+    "trace_constraint_note": "aK_via_lp_dual_full documents 'Σ_λ contrib_λ·x_λ = tr_M_atom (reproduce trace)' but the solver enforces Σ_λ x_λ = n_target. The contributions enter the objective only, so trace reproduction has never been a constraint, under either convention. Not repaired here — it changes what the probe means.",
+    "convention_C_history": {
+      "note": "from the committed convention-C witness, before this campaign; a_K^dual vs a_K^closed",
+      "proton": {
+        "a_K_dual": "58.7344",
+        "ppm": "5.7734367e7"
+      },
+      "helium-4": {
+        "a_K_dual": "1.505430126057708e11",
+        "ppm": "1.64618234282323584e17"
+      }
+    },
+    "rows": [
+      {
+        "atom": "proton",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "blocks_total": 3,
+        "blocks_live": 2,
+        "blocks_radical": 1,
+        "ambient": {
+          "y0_star": -0.0,
+          "primal_obj": 0.0,
+          "duality_gap": 0.0
+        },
+        "quotient": {
+          "y0_star": 0.4470411475404006,
+          "primal_obj": 0.5122017277216482,
+          "duality_gap": 0.0
+        },
+        "y0_star_equals_min_contrib": true,
+        "min_live_contrib": "0.4470411475404006",
+        "chirality_dual_sum": "0.3601985366030783",
+        "a_K_via_lp_dual_quotient": "1.8057391105603449",
+        "a_K_closed": "1.0",
+        "quotient_vs_closed_ppm": "805739.1105603449"
+      },
+      {
+        "atom": "neutron",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "blocks_total": 3,
+        "blocks_live": 2,
+        "blocks_radical": 1,
+        "ambient": {
+          "y0_star": -0.0,
+          "primal_obj": 0.0,
+          "duality_gap": 0.0
+        },
+        "quotient": {
+          "y0_star": 0.4206261578890279,
+          "primal_obj": 0.41547083251129124,
+          "duality_gap": 0.0
+        },
+        "y0_star_equals_min_contrib": true,
+        "min_live_contrib": "0.4206261578890279",
+        "chirality_dual_sum": "0.25830866536460984",
+        "a_K_via_lp_dual_quotient": "1.6141050919442779",
+        "a_K_closed": "1.0",
+        "quotient_vs_closed_ppm": "614105.0919442779"
+      },
+      {
+        "atom": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "blocks_total": 11,
+        "blocks_live": 4,
+        "blocks_radical": 7,
+        "ambient": {
+          "y0_star": -0.0,
+          "primal_obj": 0.0,
+          "duality_gap": 0.0
+        },
+        "quotient": {
+          "y0_star": 0.06426714922476277,
+          "primal_obj": 0.0369646804298051,
+          "duality_gap": 0.0
+        },
+        "y0_star_equals_min_contrib": true,
+        "min_live_contrib": "0.06426714922476277",
+        "chirality_dual_sum": "1.5558513160038903",
+        "a_K_via_lp_dual_quotient": "25.20912293094845",
+        "a_K_closed": "1.2090602987956394",
+        "quotient_vs_closed_ppm": "19850178.403889026"
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "blocks_total": 30,
+        "blocks_live": 5,
+        "blocks_radical": 25,
+        "ambient": {
+          "y0_star": -0.0,
+          "primal_obj": 0.0,
+          "duality_gap": 0.0
+        },
+        "quotient": {
+          "y0_star": 0.01654969522358175,
+          "primal_obj": 0.0037950123015188224,
+          "duality_gap": 0.0
+        },
+        "y0_star_equals_min_contrib": true,
+        "min_live_contrib": "0.01654969522358175",
+        "chirality_dual_sum": "2.61022298440348",
+        "a_K_via_lp_dual_quotient": "158.72030536756708",
+        "a_K_closed": "0.956293791467478",
+        "quotient_vs_closed_ppm": "164974417.8867911"
+      },
+      {
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "blocks_total": 30,
+        "blocks_live": 5,
+        "blocks_radical": 25,
+        "ambient": {
+          "y0_star": -0.0,
+          "primal_obj": 0.0,
+          "duality_gap": 0.0
+        },
+        "quotient": {
+          "y0_star": 0.028786848564789778,
+          "primal_obj": 0.011623180545295956,
+          "duality_gap": 0.0
+        },
+        "y0_star_equals_min_contrib": true,
+        "min_live_contrib": "0.028786848564789778",
+        "chirality_dual_sum": "2.638466854434324",
+        "a_K_via_lp_dual_quotient": "92.6552865624036",
+        "a_K_closed": "0.956293791467478",
+        "quotient_vs_closed_ppm": "95889980.24364427"
+      },
+      {
+        "atom": "helium-4",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "blocks_total": 77,
+        "blocks_live": 7,
+        "blocks_radical": 70,
+        "ambient": {
+          "y0_star": -0.0,
+          "primal_obj": 0.0,
+          "duality_gap": 0.0
+        },
+        "quotient": {
+          "y0_star": 0.004682720982298083,
+          "primal_obj": 0.0007537970084706643,
+          "duality_gap": 0.0
+        },
+        "y0_star_equals_min_contrib": true,
+        "min_live_contrib": "0.004682720982298083",
+        "chirality_dual_sum": "4.582224117672618",
+        "a_K_via_lp_dual_quotient": "979.538788664674",
+        "a_K_closed": "0.9144978155992443",
+        "quotient_vs_closed_ppm": "1070122064.9803416"
+      }
+    ]
+  },
+  "context": {
+    "axis": "a_K operator-selection LP under convention D",
+    "bean": "qou-fu8c",
+    "related": [
+      "qou-w8zz (same repair shape: Gram inverse on the quotient)",
+      "qou-m7py (Rust gram.rs coupling)"
+    ]
+  }
+}

@@ -109,4 +109,152 @@ theorem physical_tail_leray_uniform (E Ωp tail : ℕ → K) (δ q : K)
         mul_le_mul_of_nonneg_left hsumle (by positivity)
     _ ≤ E 0 := hmain
 
+/-!
+## Discrete epochs of regularity (bean `qou-8wjo`)
+
+Markov's counting inequality applied to the ε-uniform Leray bound: for
+**any** exceedance level `λ`, the bad-step count satisfies the product
+inequality `(card bad)·λ ≤ (4/δ)·E₀` — with constants independent of
+`ε`, of the horizon `n`, and of everything about the data except `E₀`.
+For `λ > 0` this reads `card bad ≤ 4E₀/(δλ)`: the tail exceeds `λ` on
+at most boundedly many steps, and outside that set it is `≤ λ` — the
+discrete image of Leray's *epochs of regularity*.
+
+**What this does not give, honestly:** the bad set is bounded in
+*count*, not located — it may concentrate at a single time, and a
+sup-in-time blow-up hiding inside boundedly many steps is exactly the
+configuration the classical weak-vs-strong gap permits.  The open item
+is unchanged; this theorem fences it into an ε-uniformly small set of
+times.
+-/
+
+/-- **Discrete epochs of regularity, ε-uniform**: under the physical
+    Leray hypotheses, for every level `lam` the count of time steps
+    `i < n` with `lam < tail i` satisfies the product inequality
+
+      `(card bad) · lam ≤ (4/δ)·E₀`,
+
+    with constants uniform in `ε`, `n`, and the data beyond `E₀`.
+    When `0 < lam` this yields the count bound
+    `card bad ≤ 4E₀/(δ·lam)` on dividing by `lam`; for `lam ≤ 0` the
+    inequality is vacuously generous.  (Requires `0 ≤ tail` so that
+    off-bad-set terms cannot hide negative mass.) -/
+theorem epochs_of_regularity (E Ωp tail : ℕ → K) (δ q lam : K)
+    (hδ : 0 < δ) (hq1 : 1 < q) (hq2 : q ≤ 2)
+    (hΩ : ∀ n, 0 ≤ Ωp n)
+    (htail₀ : ∀ n, 0 ≤ tail n) (htail : ∀ n, tail n ≤ Ωp n)
+    (hdiss : ∀ n, E (n + 1) ≤ E n - δ * (1 / (2 * q)) * Ωp n)
+    (hE : ∀ n, 0 ≤ E n) :
+    ∀ n, (((Finset.range n).filter (fun i => lam < tail i)).card : K) * lam
+      ≤ 4 / δ * E 0 := by
+  intro n
+  set bad := (Finset.range n).filter (fun i => lam < tail i) with hbad
+  have hcard : ((bad.card : K)) * lam = ∑ _i ∈ bad, lam := by
+    rw [Finset.sum_const, nsmul_eq_mul]
+  have h1 : ∑ _i ∈ bad, lam ≤ ∑ i ∈ bad, tail i := by
+    apply Finset.sum_le_sum
+    intro i hi
+    exact le_of_lt (Finset.mem_filter.mp hi).2
+  have h2 : ∑ i ∈ bad, tail i ≤ ∑ i ∈ Finset.range n, tail i :=
+    Finset.sum_le_sum_of_subset_of_nonneg
+      (Finset.filter_subset _ _) (fun i _ _ => htail₀ i)
+  have h3 : ∑ i ∈ Finset.range n, tail i ≤ 4 / δ * E 0 := by
+    have hler := physical_tail_leray_uniform E Ωp tail δ q hδ hq1 hq2
+      hΩ htail hdiss hE n
+    have h4 : (0 : K) < 4 / δ := by positivity
+    calc ∑ i ∈ Finset.range n, tail i
+        = 4 / δ * (δ / 4 * ∑ i ∈ Finset.range n, tail i) := by
+          field_simp
+      _ ≤ 4 / δ * E 0 :=
+          mul_le_mul_of_nonneg_left hler (le_of_lt h4)
+  calc ((bad.card : K)) * lam = ∑ _i ∈ bad, lam := hcard
+    _ ≤ ∑ i ∈ bad, tail i := h1
+    _ ≤ ∑ i ∈ Finset.range n, tail i := h2
+    _ ≤ 4 / δ * E 0 := h3
+
+/-!
+## Discrete eventual regularity (bean `qou-tfbx`)
+
+Leray's second classical theorem, in the discrete physical layer.  Two
+pieces:
+
+1. **Pigeonhole entry** (`exists_small_step`): the ε-uniform Leray
+   bound forces the enstrophy below any threshold `θ` within an
+   explicit, ε-uniform number of steps — if `(4/δ)·E₀ < m·θ`, some
+   step `i < m` has `Ωp i ≤ θ`.  Entry time `≤ 4E₀/(δθ) + 1`,
+   independent of `ε` and of everything but `E₀`.
+2. **Basin chaining** (`eventually_in_basin`): if the threshold's
+   sub-level set is forward-invariant (`Ωp n ≤ θ → Ωp (n+1) ≤ θ` —
+   the abstract shape of GP4's small-data persistence), then from the
+   entry step onward the enstrophy stays `≤ θ` forever.
+
+Together: **every solution is eventually regular, with an ε-uniform
+bound on the irregular window** — blow-up, if any, is confined to
+`[0, 4E₀/(δθ*)]` where `θ*` is the basin threshold.  The
+basin-invariance hypothesis is *named, not smuggled*: GP4
+(`global_persistence_subthreshold`, substrate layer) proves exactly
+this shape; instantiating it in the physical layer (converting its
+threshold through `def:qns-unit-layers` without straddling) is the
+recorded follow-up, not assumed here.
+-/
+
+/-- **Pigeonhole entry into any sub-level set, ε-uniform**: if
+    `(4/δ)·E₀ < m·θ` then some step `i < m` has `Ωp i ≤ θ`.
+    (Otherwise all `m` steps exceed `θ` and the cumulative bound is
+    violated.) -/
+theorem exists_small_step (E Ωp : ℕ → K) (δ q θ : K) (m : ℕ)
+    (hδ : 0 < δ) (hq1 : 1 < q) (hq2 : q ≤ 2)
+    (hΩ : ∀ n, 0 ≤ Ωp n)
+    (hdiss : ∀ n, E (n + 1) ≤ E n - δ * (1 / (2 * q)) * Ωp n)
+    (hE : ∀ n, 0 ≤ E n)
+    (hm : 4 / δ * E 0 < (m : K) * θ) :
+    ∃ i ∈ Finset.range m, Ωp i ≤ θ := by
+  by_contra hnone
+  push_neg at hnone
+  have hall : ∀ i ∈ Finset.range m, θ < Ωp i := fun i hi => hnone i hi
+  have hsum : (m : K) * θ ≤ ∑ i ∈ Finset.range m, Ωp i := by
+    calc (m : K) * θ = ∑ _i ∈ Finset.range m, θ := by
+          rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]
+      _ ≤ ∑ i ∈ Finset.range m, Ωp i :=
+          Finset.sum_le_sum (fun i hi => le_of_lt (hall i hi))
+  have hler := physical_leray_uniform E Ωp δ q hδ hq1 hq2 hΩ hdiss hE m
+  have h4 : (0 : K) < 4 / δ := by positivity
+  have htot : ∑ i ∈ Finset.range m, Ωp i ≤ 4 / δ * E 0 := by
+    calc ∑ i ∈ Finset.range m, Ωp i
+        = 4 / δ * (δ / 4 * ∑ i ∈ Finset.range m, Ωp i) := by
+          field_simp
+      _ ≤ 4 / δ * E 0 :=
+          mul_le_mul_of_nonneg_left hler (le_of_lt h4)
+  linarith
+
+/-- **Discrete eventual regularity**: with the pigeonhole entry and a
+    forward-invariant basin (`Ωp n ≤ θ → Ωp (n+1) ≤ θ`, the abstract
+    shape of GP4's sub-threshold global persistence), there is a step
+    `i₀ < m` from which the enstrophy stays `≤ θ` forever.  Blow-up,
+    if any, is confined to the ε-uniformly bounded initial window
+    `[0, m)` with any `m > 4E₀/(δθ)`. -/
+theorem eventually_in_basin (E Ωp : ℕ → K) (δ q θ : K) (m : ℕ)
+    (hδ : 0 < δ) (hq1 : 1 < q) (hq2 : q ≤ 2)
+    (hΩ : ∀ n, 0 ≤ Ωp n)
+    (hdiss : ∀ n, E (n + 1) ≤ E n - δ * (1 / (2 * q)) * Ωp n)
+    (hE : ∀ n, 0 ≤ E n)
+    (hm : 4 / δ * E 0 < (m : K) * θ)
+    (basin : ∀ n, Ωp n ≤ θ → Ωp (n + 1) ≤ θ) :
+    ∃ i₀ < m, ∀ n, i₀ ≤ n → Ωp n ≤ θ := by
+  obtain ⟨i₀, hi₀, hsmall⟩ :=
+    exists_small_step E Ωp δ q θ m hδ hq1 hq2 hΩ hdiss hE hm
+  refine ⟨i₀, Finset.mem_range.mp hi₀, ?_⟩
+  intro n
+  induction n with
+  | zero =>
+      intro hn
+      have h0 : i₀ = 0 := Nat.le_zero.mp hn
+      simpa [h0] using hsmall
+  | succ p ih =>
+      intro hn
+      rcases Nat.lt_or_ge i₀ (p + 1) with hlt | hge
+      · exact basin p (ih (Nat.lt_succ_iff.mp hlt))
+      · have heq : i₀ = p + 1 := le_antisymm hn hge
+        simpa [heq] using hsmall
+
 end QOU.FluidDynamics.PhysicalLayerLeray
