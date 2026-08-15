@@ -607,6 +607,8 @@ import QOU.QBeta.FiveTwoComplexPentagon
 import QOU.QBeta.FiveTwoFlattenedPentagon
 import QOU.QBeta.FiveTwoOhtsukiCriticalPoint
 import QOU.QBeta.FiveTwoDTSpectrumSplit
+import QOU.QBeta.ChiralityGradedCount
+import QOU.QBeta.DTChiralityBarInvolutionLink
 import QOU.QBeta.FiveTwoSaddleCurve
 import QOU.QBeta.FiveTwoStokesMatrixIdentities
 import QOU.QBeta.FiveTwoSumRuleIntegrand
