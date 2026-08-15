@@ -36,6 +36,7 @@ import argparse
 import collections
 import json
 import pathlib
+import re
 import sys
 
 Q_PROTON = 1.1099785827513808
@@ -77,12 +78,46 @@ Q_MUON_50_WRONG = "1.10997859555733471989976322048322502665620840878015"
 # Keys that name a substrate anchor. Deliberately narrow: `q` alone is also
 # used for unrelated quantities, so a value only counts when it also lands in
 # the q₀ neighbourhood (see `classify`).
-# NOTE the camelCase entries. `stamp_staleness_metadata` writes `q0Anchor` /
-# `q0Value`, and matching is done on `k.lower()`, so the snake_case spellings
-# alone silently missed the CANONICAL provenance fields — an earlier revision
-# of this script did exactly that and under-reported them as absent.
-Q_KEYS = {"q0", "q_0", "q0_value", "q", "substrate_q0", "q0_anchor",
-          "q_parameter", "q0value", "q0anchor"}
+# Substrate-anchor key names, as a PATTERN rather than a literal set.
+#
+# Two earlier revisions of this file used a hardcoded set and undercounted
+# twice: first by omitting the camelCase `q0Value`/`q0Anchor` that
+# `stamp_staleness_metadata` actually writes, then by omitting `q_0_50dps`,
+# `q0_proton`, `q_0_numeric` and ~16 others — ~179 witnesses reported as
+# "NOT RECORDED" that do record an anchor. Extending the list a third time
+# would just move the miss.
+#
+# The pattern is deliberately paired with the q0-neighbourhood test in
+# `classify`, and BOTH must hold. Neither is sufficient alone, which the
+# corpus shows plainly: the single commonest key holding a value in that
+# range is the generic `value` (1801 occurrences), and `frobenius_norm`,
+# `chi_lambda`, `miss_x` all land there too. Name-matching alone over-matches;
+# range-matching alone over-matches harder.
+_Q_NAME = re.compile(
+    r"""(?ix)
+    ^(
+        q_?0                # q0, q_0, q0Value, q0_50dps, q_0_numeric, ...
+          [a-z0-9_]*
+      | q                   # bare q, and q_proton / q_muon / q_50dps
+          (_(proton|muon|parameter|pinned|used|value)
+           |_?\d*dps)?
+      | (substrate|muon|proton)_q_?0[a-z0-9_]*
+    )$
+    # DELIBERATELY NOT matched: `*_at_q0` / `*_at_q_0`. That suffix means
+    # "evaluated AT q0", so the key names the OTHER quantity -- tr_M_at_q0,
+    # chi_lambda_at_q0, jones_at_q0, z_at_q0, one_plus_q_over_2_at_q0. An
+    # earlier draft of this pattern included that arm and swept up ~90 such
+    # keys as anchors, purely because a Markov trace or character happens to
+    # land in the same numeric window as q0. Range-matching cannot separate
+    # them; only the name can, and the name says they are not anchors.
+    """,
+)
+
+
+def is_anchor_key(name: str) -> bool:
+    """True if `name` names a substrate anchor (pattern half of the test)."""
+    return bool(_Q_NAME.match(name))
+
 
 # The canonical provenance pair, reported separately from raw q0 VALUES: a
 # witness can carry a q0 number without the anchor label, and vice versa, and
@@ -155,7 +190,7 @@ def anchors_in(doc) -> list[tuple[str, object, str, float]]:
     def walk(o):
         if isinstance(o, dict):
             for k, v in o.items():
-                if k.lower() in Q_KEYS:
+                if is_anchor_key(k):
                     hit = classify(v)
                     if hit:
                         found.append((k, v, hit[0], hit[1]))
