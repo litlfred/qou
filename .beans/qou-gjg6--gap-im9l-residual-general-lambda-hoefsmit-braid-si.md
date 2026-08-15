@@ -917,3 +917,27 @@ shows `genMat q (k+1) hl hln A A` -- read the goal, do not re-derive the certifi
 
 STATUS OF THE CASE TREE: size 1 done, size 2 done (this), sizes 3 and 6 -- 6 is
 genMat_braid_generic, 3 remains. Then Hecke.lift packaging.
+
+
+## MIRROR SIZE-2 PROVED 2026-08-15 — and it deletes the OTHER term
+
+genMat_braid_of_fixed_succ (sorry-free): sigma_{k+1} moves T, sigma_k fixes both T and
+s_{k+1}.T, so the orbit is {T, s_{k+1}.T}.
+
+Not a copy of genMat_braid_of_succ_fixed with names swapped -- the deletion is on the other
+side. There the RIGHT-hand side lacked a3*(1 + a2*a(-r)) and the degeneracy was at r = +-1;
+here the LEFT-hand side lacks a3*(1 + a1*a(-p)) and the degeneracy is at p = +-1. The moved
+row is braid_rowB_identity verbatim (vs rowA in the other).
+
+T-row certificate (note the SIGNS differ from the succ_fixed case):
+  (a2-a1)*hrel + a3*a1*hsump - a3*a2*hsumr - a3*hdegp - a3*hprodr
+
+CASE TREE STATUS: size 1 done, BOTH size-2 orientations done, size 6 done
+(genMat_braid_generic). Size 3 remains, in its two orientations
+  (hka, ¬hla, hAl)  and  (¬hka, hla, hBk)
+plus whatever sub-cases of (hka, hla) fail to reach the full six. Then Hecke.lift.
+
+Lean note, recurring: when a row needs BOTH diagonals (rho_k[X,X] and rho_l[X,X]), the two
+`genMat_diag` applications instantiate in GOAL ORDER -- LHS first, so generator k first.
+`rw [genMat_diag, dBl, genMat_diag, dBk]` fails; `rw [genMat_diag, dBk, genMat_diag, dBl]`
+works. The error points at the axialDist rewrite, not at genMat_diag, so it misleads.
