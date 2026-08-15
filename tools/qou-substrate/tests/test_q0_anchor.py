@@ -53,12 +53,6 @@ def test_explicit_anchor_overrides_resolution():
     assert payload["q0Anchor"] == "proton"
 
 
-if __name__ == "__main__":
-    for name, fn in sorted(globals().items()):
-        if name.startswith("test_") and callable(fn):
-            fn()
-            print(f"ok  {name}")
-    print("all q0-anchor tests passed")
 
 
 def test_save_carries_forward_a_recorded_pin(tmp_path):
@@ -130,3 +124,29 @@ def test_save_does_not_invent_a_pin(tmp_path):
 # reads, via `q_at`, the witness it writes). A test for that belongs with a fix
 # that gives the muon anchor a real derivation and moves the label and the
 # computed value together — not here.
+
+
+# NOTE: this MUST stay at the end of the file. It enumerates `globals()`, so
+# any test defined BELOW it is invisible to the direct-run path — which is how
+# two tests added on 2026-08-15 silently never ran that way (pytest collects
+# them regardless, since it imports the whole module first).
+if __name__ == "__main__":
+    import inspect
+    ran = skipped = 0
+    for name, fn in sorted(globals().items()):
+        if not (name.startswith("test_") and callable(fn)):
+            continue
+        # This runner cannot supply pytest fixtures. Skip loudly rather than
+        # crash: moving this block to the end (2026-08-15) exposed a test
+        # taking `tmp_path`, which the old placement had hidden by never
+        # reaching it at all.
+        if inspect.signature(fn).parameters:
+            print(f"skip {name}  (needs pytest fixtures: "
+                  f"{', '.join(inspect.signature(fn).parameters)})")
+            skipped += 1
+            continue
+        fn()
+        print(f"ok   {name}")
+        ran += 1
+    print(f"q0-anchor: {ran} passed, {skipped} skipped "
+          f"(run under pytest for full coverage)")
