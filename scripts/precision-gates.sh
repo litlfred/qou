@@ -61,6 +61,13 @@ GATES=(
   "mp.dps no-op|computations/mpf_context_dps_audit.py|--strict|yes|yes"
   "module-const precision|computations/module_const_precision_audit.py|--strict|yes|yes"
   "raw-float64 ratchet|computations/witness_raw_float64_audit.py|--strict|yes|yes"
+  # Paired with the ratchet above and deliberately independent of it: the
+  # ratchet counts raw floats, so a GUTTED witness scores zero and reads as a
+  # perfect drain. This one asks the orthogonal question — did the witness lose
+  # content? — by diffing shape against HEAD. Bean qou-h4xk; measured twice on
+  # rho-k-co-casimir-extended, where a partial write showed 4 -> 0 raw floats
+  # with durationMs 2,552,837 -> 519. Neither gate subsumes the other.
+  "witness shape guard|computations/witness_shape_guard.py||yes|yes"
   "q0-value drift ratchet|computations/q0_value_drift_audit.py|--strict|no|yes"
   "no-free-parameter cert|computations/no_free_parameter_certificate.py|--strict|yes|no"
 )
