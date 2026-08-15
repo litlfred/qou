@@ -251,3 +251,19 @@ cross-model comparison, scope (a). Named confound: Sabra triads
 include inflow-from-above, so c_n mixes phase dynamics with
 triad-structure difference. Follow-up beaned (qou-ougq): Sabra vs
 phase-scrambled Sabra isolates the phase effect.
+
+## 2026-08-15 (13): SF11 — decorrelation weakens; coherence is the worst case
+
+The clean phase-only comparison (Sabra vs itself, hash-scrambled
+phases, moduli untouched): s_n = sup|u_n|(scr)/sup|u_n|(coh) <= 0.25
+at EVERY (cadence, eps) — full-cadence scrambling suppresses the tail
+40-90x, partial (0.1 eddy) 4-7x. r_n <= 1 on scrambled runs too (the
+triangle bound is phase-free, as predicted). Resolution of SF10's
+confound: the cross-model amplification was TRIAD STRUCTURE, not
+phase coherence; the coherent evolution is the in-model worst case,
+so the SF arc's fully-coherent real-amplitude models are CONSERVATIVE
+w.r.t. sweeping/decorrelation. Epic caveat state after SF8-SF11: the
+irreducible remainder is SPATIAL ADVECTION (sweeping moves structures
+in space — no shell model represents it), with in-model evidence that
+both delocalized transfer AND phase decorrelation only ever weaken
+the tail relative to the proved coherent bounds.
