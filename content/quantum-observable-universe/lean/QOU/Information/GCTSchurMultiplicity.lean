@@ -19,17 +19,48 @@ element zero). Two facts, both already proved in `WenzlSchurElement`:
 * **TL locus** (`X = Q^{-N}`): a block with a content-`N` cell is dropped
   (`schurElement_tl_eq_zero`).
 
-So the substrate and TL-locus multiplicity data are `SeparatedAt` **every**
-content-`N` partition — multiplicity `1` vs `0` — a genuine multiplicity
-obstruction. Concretely, `[2]` (which has the content-`1` cell `(0,1)`) is
-separated at `N = 1`.
+So the substrate and TL-locus data are `SeparatedAt` **every** content-`N`
+partition — `1` vs `0`. Concretely, `[2]` (which has the content-`1` cell
+`(0,1)`) is separated at `N = 1`.
 
-**Honest scope.** This is a *proved* multiplicity obstruction between the
-substrate and TL-locus regimes — it grounds the GCT separation logic in real
-data. It is **not** an instance of `QouGCTObstruction` (which would need the
-per-`n` obstruction separating a *counting-hard* object from every *poly-time*
-object — the open `VP`-vs-`VNP` content). No fabricated instance; the wall stays
-open. Base ring `ℝ` (§7c: `schurElement` is archimedean — `Q > 1`, `X ≤ 0`).
+## ⚠ This is an OCCURRENCE obstruction, not a multiplicity one (correction, 2026-08-15)
+
+Read `schurMult` before citing this file as GCT progress:
+
+```
+noncomputable def schurMult (Q X : ℝ) (lam : Partition) : ℕ :=
+  if schurElement Q X lam = 0 then 0 else 1
+```
+
+It is a **0/1 indicator** — block present or absent — and `schur_separatedAt`
+separates by `1 ≠ 0`. In GCT terminology that is precisely an **occurrence**
+obstruction, not a multiplicity obstruction: no multiplicity is ever computed,
+let alone compared. The distinction is not pedantic. This file's own sibling
+`GCTMultiplicityObstruction` records the reason: Bürgisser–Ikenmeyer–Panova
+prove that occurrence obstructions **cannot** separate `VP` from `VNP`
+(`[burgisser2019]`), which is exactly why that module restricts itself to
+multiplicity obstructions.
+
+Earlier docstrings here called this "a genuine GCT multiplicity obstruction" and
+"a real multiplicity drop". Both over-claimed, and in the direction that matters
+— they label as progress-toward-separation an object the literature has proved
+cannot separate. The **theorems are true and sorry-free**; only the framing was
+wrong.
+
+To upgrade this to a genuine multiplicity obstruction, `schurMult` would have to
+return the actual Wedderburn multiplicity (the dimension of the block, or the
+`λ`-isotypic multiplicity), and the separation would have to compare two
+*different nonzero* values — not presence against absence.
+
+**Honest scope.** What is proved: the substrate and TL-locus Wedderburn
+decompositions differ, on real representation-theoretic data. That is worth
+having. It is **not** an instance of `QouGCTObstruction` (which needs the per-`n`
+obstruction separating a *counting-hard* object from every *poly-time* object —
+the open `VP`-vs-`VNP` content), and by BIP it is not a route to one. No
+fabricated instance; the wall stays open. Base ring `ℝ` (§7c: `schurElement` is
+archimedean — `Q > 1`, `X ≤ 0`).
+
+-- Ref: [burgisser2019] https://doi.org/10.1090/jams/908
 -/
 
 namespace QOU.Information
@@ -59,12 +90,15 @@ theorem schurMult_tl_drop {Q : ℝ} (hQ : 1 < Q) {N : ℤ} {lam : Partition}
   unfold schurMult
   rw [if_pos (schurElement_tl_eq_zero hQ h)]
 
-/-- **A genuine GCT multiplicity obstruction (sorry-free).**  The substrate
-    multiplicity data `schurMult Q (-1)` (all blocks present) and the TL-locus
-    data `schurMult Q (Q^{-N})` (content-`N` blocks dropped) are `SeparatedAt`
-    every content-`N` partition: `1 ≠ 0`.  This is the abstract separation logic
-    of `GCTMultiplicityObstruction` instantiated on the proved TL Schur-element
-    vanishing — a real multiplicity drop. -/
+/-- **A proved OCCURRENCE separation (sorry-free).**  The substrate data
+    `schurMult Q (-1)` (all blocks present) and the TL-locus data
+    `schurMult Q (Q^{-N})` (content-`N` blocks dropped) are `SeparatedAt` every
+    content-`N` partition: `1 ≠ 0`.
+
+    **Not a multiplicity obstruction.**  `schurMult` is a 0/1 presence
+    indicator, so this separates by occurrence, and Bürgisser–Ikenmeyer–Panova
+    prove occurrence obstructions cannot separate `VP` from `VNP`.  See the
+    module docstring's correction record before citing this as GCT progress. -/
 theorem schur_separatedAt {Q : ℝ} (hQ : 1 < Q) {N : ℤ} {lam : Partition}
     (h : HasContentCell lam N) :
     SeparatedAt (schurMult Q (-1)) (schurMult Q (Q ^ (-N))) lam := by
