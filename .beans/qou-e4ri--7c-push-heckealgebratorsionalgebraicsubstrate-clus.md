@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T23:07:47Z
-updated_at: 2026-08-15T16:00:40Z
+updated_at: 2026-08-15T20:43:11Z
 ---
 
 ## Content-based triage (2026-08-15) — criteria for whoever picks this up
@@ -69,3 +69,28 @@ Both CANDIDATEs adjudicated so far were **legitimately archimedean with a missin
 | `JonesMarkovWenzl` | half-integer powers `q^{k/2}` — no `√q` in a `CommRing`; generic form is `qIntBal` | no banner |
 
 `quantum_dilogarithm` (codeℝ=10, no banner) is the next likely instance — the 2026-06-25 audit already lists the dilog files as legitimately archimedean. **Recommended for this cluster: assume banner-not-port until a definition-chain read says otherwise.** The remaining unadjudicated files are `YekutieliTriple` (11) and `QChebyshevFunction`'s neighbour `QVonMangoldtFunction` (3, already banner'd).
+
+
+### PORTED: `QOU/Torsion/YekutieliTriple.lean` → `[GroupWithZero R]` (first genuine §7c fix in this cluster)
+
+Unlike the three CANDIDATEs refuted above, this one was real. Content check: the module has **no archimedean construct at all** — the Čech deviation is `g_ij · g_jk · g_ik⁻¹`, the twisted-cocycle condition is a conjugation, and the only hypothesis used is `≠ 0`. Nothing adds, orders, or takes a limit. It was algebraic content sitting on `ℝ`.
+
+**Base ring chosen: `[GroupWithZero R]`, not `[Field R]`** (owner steer). That is the *minimal* structure supporting what is actually used — multiplication, and inverses of non-zero elements, with no zero divisors. Addition and distributivity are never used, so `Field` would over-constrain the transition groupoid. `GroupWithZero` is already one of the generic-`R` markers §7c recognises.
+
+**Verified by compile, at every level:**
+
+| module | result |
+|---|---|
+| `QOU.Torsion.YekutieliTriple` (ported) | `ok=13, err=0` |
+| `QOU.Torsion.YekutielijTriple` (compat aliases — adapted with no edit) | `ok=1` |
+| `QOU.Archimedean.HyperbolicVolumeTranscendence` (consumer, 3 sites instantiated at `ℝ`) | **`ok=35, err=0`** |
+
+Checker verdict flipped: `wall-side` **pass**, code-`ℝ` count **0**, regimes now `generic-R`.
+
+The consumer instantiating at `ℝ` is the §7c-correct shape: the generic groupoid lives here, and the *archimedean* module picks `ℝ` at the point of use.
+
+**Why not `R_q = ℤ[q,q⁻¹]`** (the sibling `QOU.LiftingDescent.CosimplicialCrossedGroupoid`'s ground ring): `R_q` is a `CommRing` whose non-monomial elements are not invertible, so `g_ik⁻¹` has no meaning there. `base-ring-minimal` still reports `warn` (5 `⁻¹` hits) for exactly this reason — that advisory is correct and is the open question, not a defect. Unifying the two modules would first require restating the deviation as a division-free multiplicative relation (the `R[h]` pattern) or moving to `R_qˣ`.
+
+**Deferred, recorded:** the A/B duplication (`Torsion` vs `LiftingDescent` both declaring `YekutieliTriple`/`CosimplicialCrossedGroupoid`) is now *two generic modules over different rings* rather than generic-vs-ℝ. Merging them turns on the division question above — an owner call, not attempted here.
+
+**Correction to my own earlier note:** I described `QOU/Torsion/YekutielijTriple.lean` as a likely stale typo file. It is not — it is a deliberate backward-compatibility re-export of the "Yekutielij" spelling, and its `abbrev`s absorbed the new parameter with no edit.

@@ -400,7 +400,7 @@ to analysis. -/
     LaTeX: `\label{prop:cs-evaluation-faithfulness}` -/
 structure CSEvaluationFaithful where
   /-- The lifting condition with obstruction classes. -/
-  ylc : QOU.Torsion.YekutieliLiftingCondition
+  ylc : QOU.Torsion.YekutieliLiftingCondition ℝ
   /-- A tower decomposition of some knot volume. -/
   vtd : VolumeTowerDecomposition
   /-- The towers agree. -/
@@ -700,13 +700,13 @@ gives the Yekutieli bridge theorem. -/
     Bound to a specific Yekutieli witness so the conjectural
     content is visible at the call site. -/
 class TowerNoncollapseImpliesIndependence
-    (_ylc : QOU.Torsion.YekutieliLiftingCondition) : Prop where
+    (_ylc : QOU.Torsion.YekutieliLiftingCondition ℝ) : Prop where
   /-- The independence witness produced by the bridge. -/
   independence : HyperbolicVolumeIndependence
 
 /-- Per-instance form. -/
 theorem tower_noncollapse_implies_independence
-    (ylc : QOU.Torsion.YekutieliLiftingCondition)
+    (ylc : QOU.Torsion.YekutieliLiftingCondition ℝ)
     [hi : TowerNoncollapseImpliesIndependence ylc] :
     HyperbolicVolumeIndependence :=
   hi.independence
