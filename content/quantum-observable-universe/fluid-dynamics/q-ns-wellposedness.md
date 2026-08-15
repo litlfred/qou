@@ -22,7 +22,7 @@ satisfying:
      \lVert v_0 \rVert_A^2.
    $$
 
-3. **Spectral decay**: The $\Delta_q$-eigencomponents $\hat{v}_k \in V_k \subset \Omega^1(A)$ (where $\Delta_q|_{V_k} = [k]_q^2\mathrm{id}$) strictly obey
+3. **Spectral decay**: The $\Delta_q$-eigencomponents $\hat{v}_k \in V_k \subset \Omega^1(A)$ (where $\Delta_q|_{V_k} = [k]_q^2\mathrm{id}$) satisfy
 
    $$
      |\hat{v}_k(t)|  \leq 
