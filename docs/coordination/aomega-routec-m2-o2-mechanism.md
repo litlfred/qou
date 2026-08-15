@@ -59,11 +59,22 @@ whatever O3-M2 lands) stands on its own.
 - 2026-08-14 — **O1 narrow excision (owner: keep conjectures as beans, work now,
   excise if no progress).** Two conjecture beans: `qou-erp1` (the `A_ω → S`
   bridge — no foreseeable progress, excised from paper, retained in audit + bean,
-  scrapped); `qou-6y1p` (retarget the S-channel at the resolved swing — foreseeable
-  via the `c₃` anchor-dependence front, kept as future work). Content requalified
+  scrapped); `qou-6y1p` (retarget the S-channel at the resolved swing). Content requalified
   in the 3 carrier blocks: the "measured sign flip" prose → conditional-on-an-
   unestablished-flip; the `A_ω` identification noted unsupported / not carried.
   **Kept intact:** `A_ω=3` (M2-categorified), `S=c₃+Vol(4₁)` definition, and the
   sorry-free conditional Lean. Render-QA grep battery + expository pass by hand
   PASS; qa-sweep sidecar refresh could not run (bun/folio-assistant firewalled) —
-  stale-pending-CI, flagged in the commit. **Tranche complete** (`qou-fiag`).
+  stale-pending-CI, flagged in the commit.
+- 2026-08-14 — **Correction (honest negative).** I had flagged `qou-6y1p` (the
+  swing reframe) as *foreseeable*; corpus-grep refuted that guess. c₃ has no
+  first-principles value (theory `[u³] ≡ 0`; circular cal-anchored extraction,
+  2026-07-06 verdict) and the swing is the `1/u³` ladder artifact
+  (`dc₃/dq≈3.84e6`). Probe
+  `computations/probes/aomega_6y1p_swing_reframe_not_tractable.py` (EXIT 0)
+  confirms `swing = 0.04915 = (11.54 ppb μ-p tension) × dc₃/dq` exactly — the
+  swing is the known μ-p substrate tension amplified, not an independent
+  quantity. So `qou-6y1p` is **not** foreseeably tractable (same wall as the
+  bridge); scrapped. The `S=c₃+Vol(4₁)` definition still stands. **Tranche
+  complete** (`qou-fiag`) — no foreseeable derivation survives in the S-channel;
+  only definitions and the M2-categorified `A_ω=3` remain.
