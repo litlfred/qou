@@ -1962,3 +1962,69 @@ different in kind:
 Next session should start from (1): extract the `a = 4` chains by extending the
 confluence engine past `n = 4`, and look for the pattern across `(2,2), (3,2),
 (4,2)` and `(2,2), (2,3), (2,4)` before writing anything.
+
+## Beyond n = 4 — the corner has **two regimes**, and confluence holds to n = 12
+
+With all 92 compositions closed at `n = 4`, the open piece was the corner at
+arbitrary depths (§4z/§4aa/§4ab/§4ac are general in `n` but at fixed `(a,b)`).
+Rather than guess at it again, I measured it: re-parametrised the confluence
+engine by rank — `N` is a module constant, so re-running `build_rules()` is the
+whole change — and swept.
+
+**Confluence holds at every rank from 2 to 12**, zero failing compositions:
+
+     n   rules  overlap  inclusion   max chain
+     4      16       92         22          25
+     6      36      272         46          51
+     8      64      604         78          85
+    10     100     1136        118         127
+    12     144     1916        166         177
+
+That is 8992 overlap and 1010 inclusion compositions across the range, all
+reducing to zero. It takes about 25 seconds.
+
+**The corner splits into two regimes.** Writing `a = i − j₁`, `b = i − j₂`:
+
+    a ≤ b   steps = 2ab − a² + 5a + 1   quadratic rule used twice
+    a > b   steps = b² + 3b + 5         quadratic rule not used at all
+
+Exact on all 325 corner cases across `n = 5..9` and every `i` — no step-count or
+quadratic-count mismatch anywhere. Two things fall out:
+
+* **The `a > b` regime does not depend on `a`.** Extra depth in the *first* rule
+  adds no work at all, which is why `(3,2)`, `(4,2)` and `(5,2)` are every one of
+  them fifteen steps. §4aa observed this for one pair without seeing it was a
+  law.
+* **The longest chain at rank `n` is the deepest corner**, `a = b = n − 1`,
+  giving `n² + 3n − 3` — matching the observed maximum at every rank from 3 to 12.
+  So the corner is not merely the last family, it is the *hardest* one, and its
+  cost grows quadratically in the rank.
+
+That last point settles the shape of the remaining work. The chain length is
+**quadratic in the depths**, so no fixed script can cover the corner: a general
+proof needs an induction on both depths with the two regimes separated, and the
+regimes differ in kind — one uses the quadratic rule, the other never does. This
+also explains, after the fact, why the four fixed-depth sections looked so
+unalike: `(2,2)` and `(3,3)` sit on the diagonal (`a = b`, quadratic used),
+`(3,2)` sits strictly below it (never used), and `(2,3)` above.
+
+New artifact: `computations/hecke_gs_confluence_range.py` and its witness, which
+asserts all five facts above and fails if any of them stops holding. It imports
+the `n = 4` engine unchanged rather than copying it, so the two cannot drift.
+
+## Where the arc stands
+
+**Done.** All 92 overlap and all 22 inclusion compositions at `n = 4`, in Lean,
+sorry-free. Every family general in `n` except the corner. Confluence verified
+computationally to `n = 12`, with the corner's cost characterised exactly.
+
+**Open, in order of size:**
+
+1. **The corner at arbitrary `(a, b)`** — a genuine induction, two regimes, with
+   the `a > b` regime the easier one to attempt first since it ignores `a`
+   entirely and never touches the quadratic rule. The `a ≤ b` regime is the one
+   whose length is quadratic in both depths.
+2. **The shape enumeration for general `n`** — §4k computes `overlapTriples` by
+   `decide` at `n = 4`; a general theorem needs it characterised abstractly. The
+   rank sweep gives the target numbers (shapes `= (n−1)(n+2)/2 · …`, see the
+   witness's `ranks` array) but not the characterisation.
