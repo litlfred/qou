@@ -143,8 +143,42 @@ route", derived from `no_scalar_faithful_to_halts`. That theorem attacks
 scalar ⟺ a *single universally-quantified* proposition, and a scalar is
 faithful to that trivially. Re-scoped to (a).
 
-**Root cause, stated once:** conflating a predicate that varies over states or
-levels with the single truth value of its universal closure. The corpus-grep
+### Second correction: the cross-leg transfer was vacuous as first stated
+
+The cross-leg transfer (`not_halts_of_blowsUp` — "a q-NS blow-up witness *is* a
+q-Collatz divergence witness") was first written with the hypothesis
+`step normalForm = normalForm`. That hypothesis is not merely restrictive; it is
+**provably false** for the corpus's q-Collatz system. The `QCollatz` class
+carries both
+
+```
+attractor_period_two : C (C attractor) = attractor
+attractor_not_fixed  : C attractor ≠ attractor
+```
+
+because the attractor is the **2-cycle** `{q⁻¹, 1 + q⁻¹}`, the q-lift of the
+classical `{1, 2}`. So the theorem was vacuous on the single instance it was
+written for — the honesty caveat in its docstring correctly said the attractor
+is a 2-cycle, but drew the wrong conclusion from it ("the cyclic case needs the
+orbit-level argument") instead of the right one ("this hypothesis is refutable
+here, so the theorem says nothing about q-Collatz").
+
+Fixed by generalising the hypothesis from a fixed point to a **periodic** normal
+form, `Function.IsPeriodicPt step p normalForm` with `0 < p` — which
+`attractor_period_two` supplies directly at `p = 2`. The argument goes through
+unchanged: an orbit that lands in a finite cycle still visits finitely many
+states, so its filtration is bounded. The theorem now applies to the system it
+was written for.
+
+**Lesson, distinct from the first:** an honesty caveat that names the obstacle is
+not the same as checking whether the obstacle *refutes* the hypothesis. "The
+attractor is a 2-cycle, not a fixed point" was written down and then not acted
+on. When a docstring names a reason the hypothesis might not hold, grep the class
+for whether the corpus *proves* it does not.
+
+**Root cause of the first correction, stated once:** conflating a predicate that
+varies over states or levels with the single truth value of its universal
+closure. The corpus-grep
 checklist was run on the *topic* but not on the *claim shape* — on "what does
 the corpus say about obstructions" rather than "does the corpus actually assert
 one shared vanishing proposition". The second question is the one that would
