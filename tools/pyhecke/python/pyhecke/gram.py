@@ -814,16 +814,15 @@ except ImportError:
 # REFUSES. This trades the ~100× speedup for correctness until qou-m7py
 # lands; QOU_ALLOW_NATIVE_DIVERGENCE=1 is an explicit opt-in.
 _NATIVE_CONVENTION_MSG = (
-    "pyhecke_native is installed but DIVERGES from pyhecke.gram. The "
-    "crate is on convention D (markov_z = q^3/(q^2+1), same as here), "
-    "but: (1) trace_weights ends z^3 where TR_M here ends h*z^2 + z -- "
-    "the unported 2026-05-19 fix, which is what makes the crate's Gram "
-    "non-singular; (2) its Q_0 is the MUON pin 1.1099785955541805, not "
-    "the proton pin 1.1099785827513808 this module reads (2.19e-8 on z). "
-    "Dispatching would silently return numbers from a different trace "
-    "rule at a different anchor. Port tools/hecke-engine/src/gram.rs "
-    "(bean qou-m7py), uninstall the wheel to use the pure-Python path, "
-    "or set QOU_ALLOW_NATIVE_DIVERGENCE=1 to override."
+    "pyhecke_native is installed, but the guard cannot tell whether the wheel "
+    "was built BEFORE or AFTER 2026-08-15. The crate itself now matches this "
+    "module exactly (trace_weights ends h*z^2 + z, Q_0 is the proton pin) -- "
+    "verified bit-identical on z, all of TR_M, G and RADICAL. A wheel built "
+    "before that lands is still divergent, and nothing in the wheel reports "
+    "its build. So: REBUILD the wheel (maturin develop / pip install -e "
+    "tools/pyhecke-native) and set QOU_ALLOW_NATIVE_DIVERGENCE=1, or leave it "
+    "refusing and use the pure-Python path. Note gram_inverse no longer "
+    "exists in the wheel either -- it is gram_quotient_inverse now."
 )
 
 
