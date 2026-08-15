@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T10:26:22.225513+00:00",
-  "commitSha": "785e58e31ab9309ae366db94986a19705e949c96",
+  "computedAt": "2026-08-15T11:11:52.230606+00:00",
+  "commitSha": "5385452aa95ea01d5988ad84204a79af93825540",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -35,9 +35,9 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 643,
+      "Q0_OK": 648,
       "Q0_AMBIGUOUS": 13,
-      "Q0_ANCHOR_MISSING": 1874,
+      "Q0_ANCHOR_MISSING": 1882,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 68,
       "Q0_PARSE_ERROR": 1,
@@ -1116,14 +1116,6 @@
         },
         {
           "witness": "chi-lambda-multi-block-first-measurement.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-proton-h3-at-q0-50dps-matrix-m.witness.json",
           "detail": ""
         },
         {
@@ -3104,6 +3096,10 @@
         },
         {
           "witness": "no-free-parameter-certificate.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "nonet-mixing-purity.witness.json",
           "detail": ""
         },
         {
@@ -5407,6 +5403,10 @@
           "detail": ""
         },
         {
+          "witness": "dt-crossknot-snappy-slope-hardening.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "h3-markov-trace-cyclicity-preflight.witness.json",
           "detail": ""
         },
@@ -5688,6 +5688,10 @@
         },
         {
           "witness": "qbeta-c3-state-integral-ladder-bridge.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-c3-swing-gate.witness.json",
           "detail": ""
         },
         {
@@ -6200,6 +6204,14 @@
         },
         {
           "witness": "qbeta-ohtsuki-kappa-vs-ck-direct-comparison.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ohtsuki-nz-bridge-b4.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ohtsuki-nz-bridge-b6.witness.json",
           "detail": ""
         },
         {
@@ -6767,6 +6779,10 @@
           "detail": ""
         },
         {
+          "witness": "qns-allpairs-transfer-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qns-amplitude-step-probe.witness.json",
           "detail": ""
         },
@@ -6779,6 +6795,10 @@
           "detail": ""
         },
         {
+          "witness": "qns-dissipation-scale-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qns-enstrophy-grade-probe.witness.json",
           "detail": ""
         },
@@ -6787,11 +6807,23 @@
           "detail": ""
         },
         {
+          "witness": "qns-nonlocal-transfer-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qns-overlap-race-probe.witness.json",
           "detail": ""
         },
         {
           "witness": "qns-pair-riccati-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qns-phase-decorrelation-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qns-phase-scramble-probe.witness.json",
           "detail": ""
         },
         {
@@ -8369,11 +8401,19 @@
           "detail": ""
         },
         {
+          "witness": "chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-neutron-h3-at-q0-50dps.witness.json",
           "detail": ""
         },
         {
           "witness": "chi-neutron-h3.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-proton-h3-at-q0-50dps-matrix-m.witness.json",
           "detail": ""
         },
         {
@@ -9661,6 +9701,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-c3-bar-partner-extractor-breakdown.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-c3-rung-structure-analysis.witness.json",
           "detail": ""
         },
@@ -9710,6 +9754,14 @@
         },
         {
           "witness": "qbeta-fsc-g-pattern-comparison.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-h1-significance-against-cal3-band.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-habiro-evaluation-dichotomy-and-test-power.witness.json",
           "detail": ""
         },
         {
