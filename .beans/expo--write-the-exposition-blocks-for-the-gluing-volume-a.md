@@ -156,3 +156,42 @@ the *same platform SHA*; `run-validate.ts` prints it for exactly this reason (it
 docstring records two agents disagreeing over a baseline that was a function of two
 inputs). Quote the platform SHA with any baseline, and re-run the positive control after
 a platform bump rather than assuming the previous run still means what it did.
+
+---
+**2026-08-15 (later) — two more blocks, for the work this arc produced *after* the original
+eight.**
+
+The arc kept going after this bean's first pass, adding ~215 Lean declarations with no
+paper presence — the exact gap this bean exists to close. Two blocks, both registered and
+both positive-controlled:
+
+| block | chapter | covers |
+|---|---|---|
+| `diophantine-birthday-trajectory` | `appendix-surreals-archimedean` | the birthday/trajectory separation |
+| `gluing-certification-mechanical-reach` | `mass-theory` | degrees 2–14, 2–14 tetrahedra |
+
+**Baseline unchanged at 42 issues** on both, so neither adds a defect; the positive control
+moves 42 → 43 for each, naming the block, so both are genuinely read.
+
+### ⚠ The first block was written into the wrong chapter
+
+`conj:diophantine-birthday` lives in **`appendix-surreals-archimedean/`**, not
+`appendix-surreals/` where I first put its commentary. Caught by grepping for the label
+before wiring `uses[]` — had I trusted the directory name, the block would have sat in a
+chapter that never mentions the conjecture it is about, and `uses: ["conj:…"]` would have
+pointed across chapters for no reason.
+
+**Related, and not fixed:** `DiophantineBirthday.lean`'s own docstring links to
+`../../../quantum-observable-universe/appendix-surreals/diophantine-birthday.md`, which
+**does not exist** — the file is in `appendix-surreals-archimedean/`. A dead doc link in
+the Lean source, of the same family as the two dead `lean.ref`s this bean caught earlier,
+and equally invisible to every checker.
+
+### The untracked-file trap, avoided deliberately this time
+
+This bean already records a positive control run on an **untracked** file, where
+`git checkout --` could not revert it and silently left a block without its `lean.ref`.
+Both controls here reverted from an explicit `/tmp` backup instead, and the revert was
+verified by grepping the restored ref back. Worth stating as the rule: **a positive control
+on a new file needs a real backup, because the usual revert is a no-op on something git has
+never seen.**
