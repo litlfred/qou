@@ -28,4 +28,4 @@ A surviving morphism $\phi \colon \mathbf{1} \to \mathrm{Ad}(A)$ would establish
 
 This structural leak would provide a persistent **regularity mechanism**: vorticity would dissipate cleanly into the integrable direction rather than concentrating into a blowup.
 
-**Observability directly asserts that no such escape route exists.** The brane fluid remains completely dynamically active; colliding vortices lack any structural geometry to dissipate through.
+**Observability asserts that no such escape route exists.** The brane fluid remains dynamically active; colliding vortices lack any structural geometry to dissipate through.

@@ -1794,6 +1794,21 @@
         "reviewed_at": "2026-08-15T10:30:59.584Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5779d616d4b6",
+          "ts": "310ed1172277"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:58.096Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'is not asserted here; does not constitute an unconditional resolution' guards against over-claim of the Clay problem; load-bearing disambiguation"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1813,6 +1828,21 @@
         "reviewed_at": "2026-08-15T10:30:59.584Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5779d616d4b6",
+          "ts": "310ed1172277"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:58.134Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read; no setup-then-reframe pivots"
       }
     ],
     "trap-em-dash": [
@@ -1832,6 +1862,21 @@
         "reviewed_at": "2026-08-15T10:30:59.584Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 110 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5779d616d4b6",
+          "ts": "310ed1172277"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:58.183Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'-- the Clay problem, governed by ... --' true parenthetical"
       }
     ],
     "trap-triples": [
@@ -1851,6 +1896,21 @@
         "reviewed_at": "2026-08-15T10:30:59.584Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 110 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5779d616d4b6",
+          "ts": "310ed1172277"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:58.221Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no reflex three-item lists"
       }
     ],
     "trap-closing-aphorism": [
@@ -1870,6 +1930,21 @@
         "reviewed_at": "2026-08-15T10:30:59.584Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5779d616d4b6",
+          "ts": "310ed1172277"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:58.272Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "final line substantive, not quotable-sounding"
       }
     ],
     "trap-meta-commentary": [
@@ -1889,6 +1964,21 @@
         "reviewed_at": "2026-08-15T10:30:59.584Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5779d616d4b6",
+          "ts": "310ed1172277"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:58.316Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no self-narrated emphasis"
       }
     ],
     "trap-thesis-restatement": [
@@ -1908,6 +1998,21 @@
         "reviewed_at": "2026-08-15T10:30:59.584Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5779d616d4b6",
+          "ts": "310ed1172277"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:58.364Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no block-final restatement of established content"
       }
     ],
     "trap-performed-warmth": [
@@ -1927,6 +2032,21 @@
         "reviewed_at": "2026-08-15T10:30:59.584Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5779d616d4b6",
+          "ts": "310ed1172277"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:58.414Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no personal register in institutional prose"
       }
     ],
     "trap-superlative": [
@@ -1946,6 +2066,21 @@
         "reviewed_at": "2026-08-15T10:30:59.584Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5779d616d4b6",
+          "ts": "310ed1172277"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:58.458Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'unconditional' is a precise epistemic scope claim explicitly contrasted with the open categorical-to-classical bridge; load-bearing, not inflation"
       }
     ],
     "trap-nonspeakable": [
@@ -1965,8 +2100,23 @@
         "reviewed_at": "2026-08-15T10:30:59.584Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5779d616d4b6",
+          "ts": "310ed1172277"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:58.504Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "prose parses aloud; no stalled noun chains"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.584Z"
+  "updated_at": "2026-08-15T11:11:58.504Z"
 }

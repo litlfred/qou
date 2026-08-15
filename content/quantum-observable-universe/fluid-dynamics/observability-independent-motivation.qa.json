@@ -1255,6 +1255,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not an ad-hoc NS assumption.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "f0db776890bf",
+          "ts": "616d7739e1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:59.407Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'the intrinsic manifold, not an ad-hoc NS assumption' etc.: independence-from-NS is the block's thesis; contrasts substantive"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1274,6 +1289,21 @@
         "reviewed_at": "2026-08-15T10:30:59.594Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f0db776890bf",
+          "ts": "616d7739e1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:59.446Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "opening question 'does this axiom stand independently, or does it merely smuggle in the NS conclusion?' is the block's actual question (its title); substantive framing"
       }
     ],
     "trap-em-dash": [
@@ -1293,6 +1323,21 @@
         "reviewed_at": "2026-08-15T10:30:59.594Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 460 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f0db776890bf",
+          "ts": "616d7739e1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:59.487Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no load-bearing spaced dashes; punctuation carries structure"
       }
     ],
     "trap-triples": [
@@ -1312,6 +1357,21 @@
         "reviewed_at": "2026-08-15T10:30:59.594Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 460 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f0db776890bf",
+          "ts": "616d7739e1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:59.523Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'gauge theory, geometry, and physics' matches the actual span of the six motivations; substantive"
       }
     ],
     "trap-closing-aphorism": [
@@ -1331,6 +1391,21 @@
         "reviewed_at": "2026-08-15T10:30:59.594Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f0db776890bf",
+          "ts": "616d7739e1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:59.567Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "post-fix closer is a plain claim about logical direction, not a quotable line"
       }
     ],
     "trap-meta-commentary": [
@@ -1350,6 +1425,21 @@
         "reviewed_at": "2026-08-15T10:30:59.594Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f0db776890bf",
+          "ts": "616d7739e1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:59.605Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no self-narrated emphasis"
       }
     ],
     "trap-thesis-restatement": [
@@ -1369,6 +1459,21 @@
         "reviewed_at": "2026-08-15T10:30:59.594Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f0db776890bf",
+          "ts": "616d7739e1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:59.648Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no block-final restatement of established content"
       }
     ],
     "trap-performed-warmth": [
@@ -1388,6 +1493,21 @@
         "reviewed_at": "2026-08-15T10:30:59.594Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f0db776890bf",
+          "ts": "616d7739e1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:59.688Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "no personal register in institutional prose"
       }
     ],
     "trap-superlative": [
@@ -1407,6 +1527,22 @@
         "reviewed_at": "2026-08-15T10:30:59.594Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f0db776890bf",
+          "ts": "616d7739e1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:59.733Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "closing-sentence inflation removed; residual 'strictly deduces'/'The descriptor observable is absolute' mild",
+        "notes": "fixed: 'encodes a massive architectural measurement principle' -> 'encodes a measurement principle'; 'the NS blowup merely drops out as a downstream theorem' -> 'the NS blowup is a downstream theorem'"
       }
     ],
     "trap-nonspeakable": [
@@ -1426,8 +1562,23 @@
         "reviewed_at": "2026-08-15T10:30:59.594Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f0db776890bf",
+          "ts": "616d7739e1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:59.789Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "prose parses aloud; no stalled noun chains"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.594Z"
+  "updated_at": "2026-08-15T11:11:59.789Z"
 }
