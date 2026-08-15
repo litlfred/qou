@@ -264,6 +264,82 @@ theorem expansion_approximates (α : ℝ) (n : ℕ) (hb : Bracketed (expandState
   have := dist_le_gap_of_expansion α (n + k) hbk
   rwa [hgk] at this
 
+/-! ### Runs, and why they are where the Liouville exponent lives
+
+`expansion_approximates` gives error `gap / 2ᵏ` at a state whose own denominator has also
+grown by `2ᵏ`.  That is error `≈ 1/q` — approximation **exponent 1**, which
+`LiouvilleWith.liouvilleWith_one` gives for *every* real for free.  So the bracket rate on
+its own certifies nothing, and it would be easy to mistake it for progress.
+
+The exponent lives in the **run structure**.  A `+` step keeps `hi` and raises `lo`; a `-`
+step keeps `lo` and lowers `hi`.  So a **run of `k` identical signs freezes one endpoint**
+while the bracket keeps halving — leaving a rational fixed at step `n`, with denominator
+from step `n`, that approximates `α` to accuracy `2⁻ᵏ` better.  Error `1/q^{(n+k)/n}` rather
+than `1/q`: the exponent is the run length relative to the prefix length, which is exactly
+the shape of a Liouville condition. -/
+
+/-- A `+` step leaves the **upper** bound alone (it raises the lower one). -/
+theorem step_plus_hi (st : GonshorState) (h : Bracketed st) :
+    (st.step Sign.plus).hi = st.hi := by
+  simp [GonshorState.step, h.hasHi]
+
+/-- **A run of `+` freezes the upper bound.**  Induction on the run length, using that each
+step both preserves the bisection regime and leaves `hi` untouched. -/
+theorem foldl_replicate_plus_hi (k : ℕ) (st : GonshorState) (h : Bracketed st) :
+    ((List.replicate k Sign.plus).foldl GonshorState.step st).hi = st.hi
+      ∧ Bracketed ((List.replicate k Sign.plus).foldl GonshorState.step st) := by
+  induction k generalizing st with
+  | zero => simpa using h
+  | succ k ih =>
+    obtain ⟨hb', _⟩ := Bracketed.step st h Sign.plus
+    obtain ⟨hhi, hbk⟩ := ih (st.step Sign.plus) hb'
+    refine ⟨?_, ?_⟩
+    · rw [List.replicate_succ, List.foldl_cons, hhi, step_plus_hi st h]
+    · rw [List.replicate_succ, List.foldl_cons]; exact hbk
+
+/-- **The Liouville-shaped statement.**  After a run of `k` plus-signs, `α` is within
+`gap / 2ᵏ` of `st.hi` — a rational **fixed before the run began**.
+
+The denominator is whatever `st.hi` already had; the accuracy improves by `2ᵏ` without it
+growing. That decoupling is what an approximation exponent above `1` means, and it is
+supplied by the run rather than by the bisection rate. -/
+theorem run_plus_approximates {α : ℝ} {st : GonshorState} (k : ℕ) (hb : Bracketed st)
+    (hbr : Brackets α ((List.replicate k Sign.plus).foldl GonshorState.step st)) :
+    |α - ((st.hi : ℚ) : ℝ)| ≤ (((st.gap / 2 ^ k : ℚ)) : ℝ) := by
+  obtain ⟨hhi, hbk⟩ := foldl_replicate_plus_hi k st hb
+  have hgap := (Bracketed.foldl_gap (List.replicate k Sign.plus) st hb).2
+  rw [List.length_replicate] at hgap
+  obtain ⟨bl, bh⟩ := hbr
+  -- `α` sits in the final bracket, whose top is still `st.hi` and whose width is `gap/2ᵏ`.
+  have hlo : ((((List.replicate k Sign.plus).foldl GonshorState.step st).lo : ℚ) : ℝ) ≤ α :=
+    bl hbk.hasLo
+  have hhi' : α ≤ ((st.hi : ℚ) : ℝ) := by
+    have := bh hbk.hasHi
+    rwa [hhi] at this
+  -- `gap` is *definitionally* `hi - lo`, but `linarith` treats it as an opaque atom, so
+  -- the identity has to be handed over explicitly on both the old and the new state.
+  have hgd : st.gap = st.hi - st.lo := rfl
+  have hpos : (0 : ℚ) < st.gap / 2 ^ k :=
+    div_pos hb.gap_pos (by positivity)
+  have hwidth : (((List.replicate k Sign.plus).foldl GonshorState.step st).lo : ℚ)
+      = st.hi - st.gap / 2 ^ k := by
+    have hg : ((List.replicate k Sign.plus).foldl GonshorState.step st).gap
+        = st.gap / 2 ^ k := hgap
+    simp only [GonshorState.gap] at hg
+    rw [hhi] at hg
+    -- `simp only [GonshorState.gap]` unfolded the RIGHT side too, so `hg` now reads
+    -- `st.hi - lo_k = (st.hi - st.lo) / 2 ^ k` while the goal says `st.gap / 2 ^ k`.
+    -- `linarith` cannot divide, so those are two unrelated atoms to it: fold the
+    -- subtraction back into `gap` before asking.
+    rw [← hgd] at hg
+    linarith
+  have hposR : (0 : ℝ) ≤ ((st.gap / 2 ^ k : ℚ) : ℝ) := by exact_mod_cast hpos.le
+  rw [abs_le]
+  refine ⟨?_, by linarith⟩
+  rw [hwidth] at hlo
+  push_cast at hlo ⊢
+  linarith
+
 /-! ### ⚠ Non-vacuity of the expansion, for the same reason as before
 
 `Brackets` is two implications *guarded* by `hasLo` / `hasHi`, and `dist_le_gap_of_expansion`

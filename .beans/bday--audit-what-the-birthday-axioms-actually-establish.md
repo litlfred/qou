@@ -527,3 +527,63 @@ for anything in this area, not a precaution.
 
 `DiophantineBirthdayTrajectory.lean`'s §3 updated: it no longer claims the bridge is
 missing, and names precisely what is.
+
+---
+**2026-08-15 — the Liouville mechanism, and a correction to my own "next step is bookkeeping".**
+
+I said the Liouville comparison would be "exponent bookkeeping over existing pieces, not new
+infrastructure, so I'd expect it to go quickly". **Half right.** The mechanism was quick;
+the bookkeeping it needs turns out not to exist yet, and that is the more useful finding.
+
+### ⚠ First, a trap the bracket rate sets
+
+`expansion_approximates` gives error `gap / 2ᵏ` at a state whose denominator has *also*
+grown by `2ᵏ`. That is error `≈ 1/q` — approximation **exponent 1** — and
+`LiouvilleWith.liouvilleWith_one` gives exponent 1 for **every** real for free. So the
+bracket rate on its own **certifies nothing about any Liouville exponent**, and it would be
+very easy to read the previous entry's result as progress toward one. It is not; it is the
+denominator, not the discriminator.
+
+### Where the exponent actually lives: runs
+
+A `+` step keeps `hi` and raises `lo`; a `-` keeps `lo` and lowers `hi`. So a **run of `k`
+identical signs freezes one endpoint** while the bracket keeps halving. Proved:
+
+```lean
+run_plus_approximates (k : ℕ) (hb : Bracketed st)
+    (hbr : Brackets α ((List.replicate k Sign.plus).foldl GonshorState.step st)) :
+  |α − (st.hi : ℝ)| ≤ ((st.gap / 2 ^ k : ℚ) : ℝ)
+```
+
+`st.hi` is fixed **before the run begins**. So the denominator is whatever it already had,
+while accuracy improves by `2ᵏ` — error `1/q^{(n+k)/n}` rather than `1/q`. That decoupling
+of accuracy from denominator *is* what an approximation exponent above 1 means, and it is
+supplied by the run structure rather than by the bisection rate.
+
+Supporting: `step_plus_hi` (a `+` leaves `hi` alone) and `foldl_replicate_plus_hi` (a run
+preserves both `hi` and the bisection regime).
+
+### ⚠ What a real `LiouvilleWith` instance still needs — and it is NOT bookkeeping
+
+`LiouvilleWith p x` is `∃ C, ∃ᶠ n in atTop, ∃ m : ℤ, x ≠ m/n ∧ |x − m/n| < C/n^p`. To
+produce one from the above I need `st.hi` **as `m/q` with `q` known as a function of the
+step count**. `GonshorState` records `lo`, `hi`, `value` as bare `ℚ` and **tracks no
+denominator at all**. So the missing piece is a denominator invariant — something like
+"after `n` steps every bound is a dyadic with denominator dividing `2ⁿ`" — which is a new
+induction over `step`, not a rearrangement of existing lemmas.
+
+That is a genuine correction to my estimate: the pieces I said were all present were not.
+
+### Trap recorded
+
+`linarith` **cannot divide**. Given `hg : st.hi − lo_k = (st.hi − st.lo) / 2 ^ k` and a goal
+mentioning `st.gap / 2 ^ k`, it treats the two quotients as unrelated atoms even with
+`st.gap = st.hi − st.lo` in context — because folding that identity in requires dividing.
+`simp only [GonshorState.gap]` had helpfully unfolded the *right* side too, creating the
+mismatch. Fix: `rw [← hgd] at hg` to fold the subtraction back into `gap` **before** calling
+`linarith`. Same shape as the earlier `simpa`-normalises-first trap: a tactic that
+canonicalises both sides can destroy the very match a later step depends on.
+
+### Standing
+
+13 declarations in `GonshorConvergence.lean`, sorry-free, all standard axioms.
