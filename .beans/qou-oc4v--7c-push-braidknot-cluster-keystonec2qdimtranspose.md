@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T23:07:46Z
-updated_at: 2026-08-15T14:51:23Z
+updated_at: 2026-08-15T14:57:34Z
 ---
 
 ## Content-based triage (2026-08-15) — criteria for whoever picks this up
@@ -22,3 +22,19 @@ Ran the **canonical folio-assistant checkers** (`wall-side-correct`, `wall-base-
 | `QBetaWenzlDecomposition` | 9 | n | n | pass | **CANDIDATE** |
 
 `hoefsmit_*` / `KnotFactor*` / `six_term_mass_formula` from the title were not resolved to single files — enumerate before starting. 1 of the named files is already done.
+
+
+### RESOLVED: `DepthStratifiedFrobeniusReciprocity` MIXED → split (2026-08-15)
+
+The one **MIXED** entry in the table above is fixed. Split per §7c into an algebraic module + an archimedean sibling:
+
+| module | content | wall-side | compile |
+|---|---|---|---|
+| `QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean` | all FR-weight algebra, already over `{R : Type*} [Field R]` | **FAIL → PASS**, regimes now `[generic-R,symbolic]` | `ok=1` |
+| `QOU/BraidKnot/DepthStratifiedFrobeniusReciprocityVariance.lean` *(new)* | the two empirical decimal variance-record theorems (ordered `ℝ` literals) | PASS | `ok=1` |
+
+**Why a split was right here, when `HeckeAlgebra` was correctly left alone:** blast radius is **zero** — no `.lean` imports this module, and the single `.ts` `lean.ref` (`qou:QOU.BraidKnot.DepthStratifiedFrobeniusReciprocity`, from `mass-theory/depth-stratified-frobenius-reciprocity.ts`) points at the **class**, which stays in the algebraic module, so ref resolution is untouched. The archimedean part was exactly two self-contained `norm_num` theorems over decimal literals with no dependency on the algebra. That is the cleanest possible split, not a 2003-line restructure with many importers.
+
+Verified by compiler **and** by the canonical `wall-side-correct` checker, not by reading.
+
+⚠ **Pre-existing, not introduced:** neither module is reachable from `QOU.lean`, so `lake build QOU` never elaborates either (both are in the 795-module orphan set of `qou-kljb`). The new sibling imports the algebraic module, so the two are linked to each other; wiring them into the umbrella is `qou-kljb`'s scope and was deliberately not attempted here.
