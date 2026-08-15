@@ -200,6 +200,7 @@ criterion that fired; the `da-referee-verdict` is the rollup.
 | `da-overclaim` | Conclusion stronger than the argument supports: a scope-limited negative written as a structural exclusion, "derived" where it is "fitted", "proved" where it is "conditional", absolute where it is approximate. |
 | `da-hidden-dof` | An undisclosed free parameter — a fourth calibration, an off-menu coefficient, a constant with no canonical-derivation-chain origin, a `h^k` whose source is unstated (numerology). |
 | `da-non-sequitur` | A logical gap: step B does not follow from step A; a "therefore" with a missing lemma; an induction whose step is unproved. |
+| `da-arity-conflation` | A predicate that **varies** — over states, over levels, over instances — is conflated with the single truth value of its universal closure. The four questions are below; this is a specific, recurring form of `da-non-sequitur` / `da-overclaim`, split out because it produced four separate durable-artifact errors in one session and none of the other criteria named it. |
 | `da-lean-narrative-divergence` | `L(B)` proves something weaker than, different from, or vacuously implied by the `.md` claim `S(B)` (proof-statement-integrity failure). |
 | `da-citation-misuse` | A cited reference (`cites[]` or `-- Ref:`) does not contain the invoked result, is mis-attributed, or is used for a claim it does not make. |
 | `da-definitional-ambiguity` | A key term is undefined, admits multiple incompatible readings, or names a construction not shown well-defined ("the unique X" without uniqueness; a regime/base-ring left implicit). |
@@ -207,6 +208,56 @@ criterion that fired; the `da-referee-verdict` is the rollup.
 | `da-physical-implausibility` | A physics claim a domain expert rejects: wrong units, broken conservation law, or contradiction with an established measurement. |
 | `da-reproducibility` | The compute/witness backing a number is irreproducible, stale (`scriptHash` drift — **not** `scriptCommitSha`, which rebase-merge rewrites; bean `qou-wsha`), or its value contradicts the prose `≈`. |
 | `da-referee-verdict` | Rollup: `clean` / `survivable-objection` / `open-objection` + the strongest objection's one-line referee argument. |
+
+### `da-arity-conflation` — the four questions
+
+Before any "X ⟺ Y" / "X is equivalent to Y" / "a P-witness **is** a Q-witness" /
+"hence no Z can be equivalent to it" reaches a durable artifact, answer all four.
+Each corresponds to a real error that shipped:
+
+1. **One proposition, or a family?** Resolve the prose symbol to its Lean
+   declaration and read its **arity**. `kappa_vanishes : ℕ → Prop` is a
+   *level-indexed family*, not a `Prop`; there is no single truth value to be
+   faithful to. (Error: a "the corpus is inconsistent" claim built on collapsing
+   that family.)
+2. **Pointwise, or the universal closure?** `∀ P, v ↔ Pred P` and
+   `v ↔ ∀ P, Pred P` are different statements. The second is **trivially
+   inhabited** (`⟨_, Iff.rfl⟩`), so a refutation of the first says nothing about
+   it. Check which shape the corpus actually asserts. (Error: "no scalar can be
+   faithful to halting", refuting a claim nobody made.)
+3. **Shared type, or shared instance?** A theorem fixing one `sys` and one `P`
+   couples two questions *inside one instance*. It says nothing about two legs
+   instantiated as different values of that type — and the other instance may
+   not even satisfy the hypothesis. (Error: "a q-NS blow-up witness *is* a
+   q-Collatz divergence witness", where the corpus instantiates the legs
+   separately and the NS instance is proved regular.)
+4. **Set-level fact, truth-value conclusion?** "Undecidable", "not cut out by an
+   ideal", "cofinite locus" are statements about *sets* or *loci*. They are
+   logically independent of whether some scalar is equivalent to a single
+   proposition. (Error: "the halting set is not cut out by any ideal, so no
+   algebraic class can be equivalent to it".)
+
+**Why this is agent-adjudicated (`automated: false`), and why the scanner is
+print-only.** A mechanical scanner for this class was prototyped and **measured**
+against the four known instances. It flags all four files but only two at the
+exact sentence, and — decisively — it fires **identically on the corrected
+text**: the fixed q-Collatz prose, which now explicitly warns against the
+inference, matches the same signature as the version that committed it. It
+detects the *topic*, not the *defect*, because the discriminating fact (does the
+index bind across the equivalence? is the symbol level-indexed in its Lean type?
+are the two legs the same instance?) is semantic and not lexically visible.
+Measured actionable precision ≈ 10 % (3 of 29 corpus hits worth an agent look).
+
+So the scanner ships as a **PR-scoped candidate lister**
+([`scripts/arity-conflation-candidates.py`](../../../scripts/arity-conflation-candidates.py)),
+never as a sidecar-writing gate: 26 of 29 corpus hits would enter the
+`needs-agent` backlog for ~3 real findings. Its honest job is to say which
+paragraphs to ask an agent about. Record a `da-arity-conflation` entry only when
+an agent renders a verdict, exactly as the rest of the `da-*` family works.
+
+> **Retraction records re-fire permanently.** A correction note that *quotes* the
+> original error (this repo has several) matches the signature forever. Skip
+> them; do not "fix" a correction record to silence the scanner.
 
 ### Sidecar schema (pre-adopted)
 
