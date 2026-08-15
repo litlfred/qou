@@ -656,6 +656,46 @@ theorem braid_diag_identity (c a₁ a₂ a₃ : ℝ) (hrel : a₃ * (a₁ + a₂
       = a₁ * a₂ * a₂ + a₃ * (1 + a₂ * (c - a₂)) := by
   linear_combination (a₂ - a₁) * hrel
 
+/-- **The `s_k·T` row.**  Left gives `off(p)·(a₁a₂ + a₃·a(-p))`, right gives `off(p)·a₃a₂`;
+the difference is `off(p)` times the relation. -/
+theorem braid_rowA_identity (c a₁ a₂ a₃ o₁ : ℝ) (hrel : a₃ * (a₁ + a₂ - c) = a₁ * a₂) :
+    o₁ * a₂ * a₁ + a₃ * (c - a₁) * o₁ = a₃ * o₁ * a₂ := by
+  linear_combination (-o₁) * hrel
+
+/-- **The `s_{k+1}·T` row** — the mirror of `braid_rowA_identity`, differing only in the
+sign of the multiple of the relation. -/
+theorem braid_rowB_identity (c a₁ a₂ a₃ o₂ : ℝ) (hrel : a₃ * (a₁ + a₂ - c) = a₁ * a₂) :
+    a₃ * o₂ * a₁ = o₂ * a₁ * a₂ + a₃ * (c - a₂) * o₂ := by
+  linear_combination o₂ * hrel
+
+/-! ### Only three of the six rows carry content
+
+Resolving both expansions against the entry rules at every row of a generic (size-`6`)
+orbit — writing `A = s_k·T`, `B = s_{k+1}·T`, `D = s_{k+1}A`, `E = s_kB`,
+`F = s_kD = s_{k+1}E` — gives:
+
+| row | left | right | closes by |
+|---|---|---|---|
+| `T` | `a₁²a₂ + a₃·off(-p)off(p)` | `a₁a₂² + a₃·off(-r)off(r)` | `braid_diag_identity` |
+| `A` | `off(p)(a₁a₂ + a₃a(-p))` | `off(p)·a₃a₂` | `braid_rowA_identity` |
+| `B` | `a₃·off(r)a₁` | `off(r)(a₁a₂ + a₃a(-r))` | `braid_rowB_identity` |
+| `D` | `a₂·off(p+r)off(p)` | `off(p+r)off(p)·a₂` | `ring` |
+| `E` | `off(p+r)off(r)a₁` | `a₁·off(p+r)off(r)` | `ring` |
+| `F` | `off(r)off(p+r)off(p)` | `off(p)off(p+r)off(r)` | `ring` |
+
+**The last three rows are identities of the ambient ring** — the two sides are literally the
+same product in a different order, with no parameter relation involved.  And the three that
+do carry content all reduce to the *same* single relation
+`a₃(a₁ + a₂ - c) = a₁a₂` (`seminormalParam_rel`), differing only in the multiple of it
+required: `(a₂ - a₁)`, `-off(p)`, `+off(r)`.
+
+This is the concrete payoff of indexing by `SYT μ` rather than by `Fin 6`.  `Orbit6Braid`
+proves the same mathematics as an explicit `6 × 6` matrix identity whose triple product has
+1296 scalar terms and needs `maxHeartbeats 1600000`; here the zero pattern is *given* by the
+entry rules rather than discovered by `simp`, so half the rows collapse to `ring` and the
+rest are one `linear_combination` each.
+-/
+
 end Braid
 
 end SeminormalRep

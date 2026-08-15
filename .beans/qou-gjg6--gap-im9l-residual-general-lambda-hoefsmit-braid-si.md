@@ -634,3 +634,47 @@ WHAT REMAINS: wire braid_diag_identity to the tableau level (needs T != D, T != 
 each an 8-line lemma off the (c1,c2) table recorded above), then the other five rows, then
 the admissibility case tree for the non-generic orbits. Mechanical now, but not small.
 hoefsmit_seminormal_rep keeps its Ref'd sorry.
+
+
+## ALL SIX BRAID ROWS RESOLVED ALGEBRAICALLY 2026-08-15 — only THREE carry content
+
+Resolved both expansions against the entry rules at every row of a generic (size-6) orbit.
+Writing A = s_k.T, B = s_{k+1}.T, D = s_{k+1}A, E = s_kB, F = s_kD = s_{k+1}E:
+
+  row  left                          right                        closes by
+  T    a1^2 a2 + a3 off(-p)off(p)    a1 a2^2 + a3 off(-r)off(r)   braid_diag_identity
+  A    off(p)(a1a2 + a3 a(-p))       off(p) a3 a2                 braid_rowA_identity
+  B    a3 off(r) a1                  off(r)(a1a2 + a3 a(-r))      braid_rowB_identity
+  D    a2 off(p+r)off(p)             off(p+r)off(p) a2            ring
+  E    off(p+r)off(r)a1              a1 off(p+r)off(r)            ring
+  F    off(r)off(p+r)off(p)          off(p)off(p+r)off(r)         ring
+
+THE LAST THREE ROWS ARE IDENTITIES OF THE AMBIENT RING -- the two sides are literally the
+same product reordered, no parameter relation involved. And all three content-bearing rows
+reduce to the SAME single relation a3(a1+a2-c) = a1a2, differing only in the multiple of it
+required: (a2-a1), -off(p), +off(r). All three formalised sorry-free (braid_diag_identity,
+braid_rowA_identity, braid_rowB_identity).
+
+WHY THIS IS THE PAYOFF OF ROUTE (c), concretely. Orbit6Braid proves the same mathematics as
+an explicit 6x6 matrix identity whose triple product has 1296 scalar terms and needs
+maxHeartbeats 1600000 (and which timed out entirely under !![...] literals -- see the
+performance note above). Indexing by SYT mu instead of Fin 6 means the zero pattern is GIVEN
+by the entry rules rather than discovered by simp, so half the rows collapse to `ring` and
+the other half are one linear_combination each. The tableau-indexed route is not merely
+correspondence-free, it is dramatically cheaper.
+
+The full entry table used to derive the rows (generic orbit; a1 = a(p), a2 = a(r),
+a3 = a(p+r), primes = a(-d) = c - a(d)):
+
+  rho_k  col T: [T,T]=a1  [A,T]=off1     col A: [A,A]=a1' [T,A]=off1'
+         col B: [B,B]=a3  [E,B]=off3     col D: [D,D]=a2  [F,D]=off2
+         col E: [E,E]=a3' [B,E]=off3'    col F: [F,F]=a2' [D,F]=off2'
+  rho_l  col T: [T,T]=a2  [B,T]=off2     col A: [A,A]=a3  [D,A]=off3
+         col B: [B,B]=a2' [T,B]=off2'    col E: [E,E]=a1  [F,E]=off1
+         col D: [D,D]=a3' [A,D]=off3'    col F: [F,F]=a1' [E,F]=off1'
+
+REMAINING (unchanged in kind, now smaller): wire these three row identities to the tableau
+level -- needs the pairwise distinctness among {T,A,B,D,E,F} (8-line lemmas off the (c1,c2)
+table recorded earlier) and the admissibility case tree for non-generic orbits, where some
+of A,B,D,E,F fail to be admissible and terms drop. hoefsmit_seminormal_rep keeps its Ref'd
+sorry.
