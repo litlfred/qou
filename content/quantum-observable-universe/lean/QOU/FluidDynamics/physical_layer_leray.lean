@@ -1104,4 +1104,117 @@ theorem trajectory_two_source_bounds (u : ℕ → ℕ → K) (k : ℕ → K)
   intro n
   exact (key n).1
 
+/-!
+### All-pairs (geometric N-source) generalization (SF9 arc)
+
+The SF9 probe couples *every* rung pair `(m, n)`, `m < n`, with
+geometric weight `λ^{n−m−1}` — the closest shell-model image of full
+NS triad structure, each pair energy-conserving by construction.  The
+Lean side: the per-rung equilibrium holds for *arbitrary* nonnegative
+constant forcing (`rung_equilibrium_forced` — the all-pairs geometric
+sum is a special case), and the ladder is uniformly `θ`-suppressed
+under the all-pairs dissipation-scale condition
+(`multi_source_ladder_uniform`, strong induction with the geometric
+sum `∑ λ^j ≤ 1/(1−λ)`).  What is *not* claimed: a geometric-decay
+version of the all-pairs collapse (the two-source pair-maximum
+argument does not lift verbatim) — recorded follow-up; and sweeping
+effects (phase decorrelation by distant scales), which a
+real-amplitude shell model cannot represent at all — the irreducible
+caveat.
+-/
+
+/-- Per-rung equilibrium with arbitrary nonnegative constant forcing
+    `Φ = kn·F`: a rung starting empty never exceeds `F/(ν·kn)`.
+    Generalizes `rung_equilibrium` (`F = P²`) and
+    `rung_equilibrium_two_source` (`F = P₁² + γ·P₂²`); the SF9
+    all-pairs geometric sum `F = ∑_{m<n} λ^{n−1−m}·P_m²` is the
+    intended instance. -/
+theorem rung_equilibrium_forced (u : ℕ → K) (δ F ν kn : K)
+    (hδ : 0 ≤ δ) (hν : 0 < ν) (hkn : 0 < kn) (hF : 0 ≤ F)
+    (hδD : δ * (ν * kn ^ 2) ≤ 1)
+    (h0 : u 0 = 0)
+    (hstep : ∀ t, u (t + 1) ≤ u t + δ * (kn * F - ν * kn ^ 2 * u t)) :
+    ∀ t, u t ≤ F / (ν * kn) := by
+  have hbound := tail_damped_forced_bound u δ (kn * F) (ν * kn ^ 2)
+    hδ (by positivity) hδD hstep
+  intro t
+  have heq : kn * F / (ν * kn ^ 2) = F / (ν * kn) := by
+    field_simp
+  have := hbound t
+  rw [h0, heq] at this
+  have hmax : max (0 : K) (F / (ν * kn)) = F / (ν * kn) :=
+    max_eq_right (by positivity)
+  rwa [hmax] at this
+
+/-- **All-pairs uniform suppression** (strong induction): with the
+    geometric all-pairs recurrence
+    `β n ≤ (∑_{m<n} λ^{n−1−m}·β m²)/(ν·k n)` for `n ≥ 1`, a band
+    bound `β 0 ≤ B`, and the all-pairs dissipation-scale condition
+    `B ≤ θ·(1−λ)·ν·k n` (`θ ≤ 1`, `0 ≤ λ < 1`), every rung beyond
+    the band is uniformly `θ`-suppressed: `β n ≤ θ·B`.  The geometric
+    weight sum is controlled by `∑_{j<n} λ^j ≤ 1/(1−λ)`. -/
+theorem multi_source_ladder_uniform (β k : ℕ → K) (ν θ lam B : K)
+    (hθ0 : 0 ≤ θ) (hθ1 : θ ≤ 1) (hν : 0 < ν)
+    (hl0 : 0 ≤ lam) (hl1 : lam < 1)
+    (hk : ∀ n, 0 < k n) (hβ : ∀ n, 0 ≤ β n)
+    (hB0 : β 0 ≤ B) (hBnn : 0 ≤ B)
+    (hrec : ∀ n, 1 ≤ n → β n
+      ≤ (∑ m ∈ Finset.range n, lam ^ (n - 1 - m) * β m ^ 2) / (ν * k n))
+    (hsub : ∀ n, 1 ≤ n → B ≤ θ * ((1 - lam) * (ν * k n))) :
+    ∀ n, 1 ≤ n → β n ≤ θ * B := by
+  intro n
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    intro hn
+    have hall : ∀ m, m < n → β m ≤ B := by
+      intro m hm
+      rcases Nat.eq_zero_or_pos m with h | h
+      · rw [h]; exact hB0
+      · have := ih m hm h
+        nlinarith
+    have hpos : (0 : K) < ν * k n := mul_pos hν (hk n)
+    have h1l : (0 : K) < 1 - lam := by linarith
+    -- termwise bound + reflect + geometric sum
+    have hsum1 : ∑ m ∈ Finset.range n, lam ^ (n - 1 - m) * β m ^ 2
+        ≤ ∑ m ∈ Finset.range n, lam ^ (n - 1 - m) * B ^ 2 := by
+      apply Finset.sum_le_sum
+      intro m hm
+      have hmlt := Finset.mem_range.mp hm
+      have hsq : β m ^ 2 ≤ B ^ 2 := by
+        nlinarith [hβ m, hall m hmlt]
+      exact mul_le_mul_of_nonneg_left hsq (pow_nonneg hl0 _)
+    have hrefl : ∑ m ∈ Finset.range n, lam ^ (n - 1 - m) * B ^ 2
+        = (∑ j ∈ Finset.range n, lam ^ j) * B ^ 2 := by
+      rw [← Finset.sum_mul]
+      congr 1
+      exact Finset.sum_range_reflect (fun j => lam ^ j) n
+    have hSnn : (0 : K) ≤ ∑ j ∈ Finset.range n, lam ^ j :=
+      Finset.sum_nonneg fun j _ => pow_nonneg hl0 j
+    have hgS : (∑ j ∈ Finset.range n, lam ^ j) * (1 - lam) ≤ 1 := by
+      nlinarith [geom_sum_mul lam n, pow_nonneg hl0 n]
+    -- assemble: β n ≤ S·B²/(ν·k n) ≤ θ·B
+    have hlast : (∑ j ∈ Finset.range n, lam ^ j) * B ^ 2 / (ν * k n)
+        ≤ θ * B := by
+      rw [div_le_iff₀ hpos]
+      have hs := mul_le_mul_of_nonneg_left (hsub n hn)
+        (mul_nonneg hSnn hBnn)
+      -- hs : S·B·B ≤ S·B·(θ·((1−λ)·ν·k n))
+      have hfac : (∑ j ∈ Finset.range n, lam ^ j) * B
+            * (θ * ((1 - lam) * (ν * k n)))
+          = ((∑ j ∈ Finset.range n, lam ^ j) * (1 - lam))
+            * (θ * B * (ν * k n)) := by ring
+      have hcap : ((∑ j ∈ Finset.range n, lam ^ j) * (1 - lam))
+            * (θ * B * (ν * k n))
+          ≤ 1 * (θ * B * (ν * k n)) := by
+        apply mul_le_mul_of_nonneg_right hgS
+        positivity
+      nlinarith [hs]
+    calc β n ≤ (∑ m ∈ Finset.range n, lam ^ (n - 1 - m) * β m ^ 2)
+        / (ν * k n) := hrec n hn
+      _ ≤ (∑ j ∈ Finset.range n, lam ^ j) * B ^ 2 / (ν * k n) := by
+          gcongr
+          exact le_of_le_of_eq hsum1 hrefl
+      _ ≤ θ * B := hlast
+
 end QOU.FluidDynamics.PhysicalLayerLeray
+
