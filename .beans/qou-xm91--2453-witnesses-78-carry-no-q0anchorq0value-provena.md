@@ -74,3 +74,74 @@ files are exactly the ones a later reader would most want the label on.
 * `qou-1c4y` — the migration this re-scopes.
 * AGENTS.md §"Migration posture" cited bean `tnjb` for that migration; `tnjb`
   is a completed dashboard bean. Corrected in #5082.
+
+## CORRECTION — my framing above was wrong on the central point
+
+A dispatched agent measured the split. The headline finding contradicts this
+bean's premise, so read the correction before acting on anything above.
+
+### The auto-stamp is NOT unconditional. The 78% is mostly BY DESIGN.
+
+`build()` stamps `q0Anchor` only when the producer stem is declared in
+`computations/q0_anchor_manifest.json` (or `QOU_Q0_ANCHOR` is set). The code
+says so deliberately:
+
+> *"Undeclared producers are still left unstamped: Q0_ANCHOR_MISSING is a
+> tolerated state, and defaulting one in would assert a pin nobody
+> established."*
+
+That is the same principle I applied elsewhere in this arc (don't manufacture
+provenance) — implemented, and I called it a gap. **It is a
+manifest-coverage gap plus a deliberately-tolerated state, not a defect.**
+
+### Measured split (2458 lacking q0Anchor)
+
+    1467  (e) uses WitnessBuilder but producer NOT in the manifest  <- the engine
+     674  (b) producer bypasses WitnessBuilder (hand-rolled json.dump)
+     148  (d) orphan — no surviving producer
+     120  (d) stale VENDORED copies under qou-mass/src/qou_mass/data/
+      39  unknown (reverse-index matched >1 producer, disagreeing)
+      10  (a) predates the stamp AND declared — heals on re-run
+       0  (c) declared + builder + still missing
+
+Verified by execution, not inference:
+
+    canonical_isotope_witness    declared=True  -> q0Anchor=proton
+    probe_inter_knot_decoupling  declared=False -> q0Anchor=None
+
+Cross-tab: declared+builder 80.9% stamped; undeclared+builder **6.6%**.
+Manifest membership, not builder usage, is the predictor.
+
+### My "fix a producer, fix its witnesses" premise is FALSE
+
+674 class-(b) witnesses come from **643 distinct producers** — 98% emit
+exactly one witness. There is no leverage; this is a one-shot-probe corpus,
+not a family bug. A per-producer sweep is ~643 edits for ~674 files.
+
+### Other corrections
+
+* **Cause (a) is 10 files, not the bulk.** The auto-stamp and the manifest
+  landed in the SAME commit `a4d9906659` on **2026-08-10 — five days ago**.
+  Nearly everything predates it, but predating alone does not heal: only a
+  declared producer gets stamped on re-run.
+* **120 files are stale vendored package data** under
+  `qou-mass/src/qou_mass/data/`. Re-running the producer NEVER fixes them —
+  it writes to `computations/`. Verified: one is frozen at 2026-05-19 while
+  its `computations/` twin was regenerated 2026-07-11 and carries the anchor.
+* **My count does not reproduce.** Agent measures 3142 tracked / 2458 missing
+  (2476 under a strict-pair definition); I reported 3138 / 2453. ~5 files,
+  no conclusion changes, but the exact definition needs pinning before either
+  number is quoted as a baseline.
+
+### Revised actionable item
+
+The real work is **manifest coverage**: 1897 producers with witnesses use
+WitnessBuilder, only **391 (21%)** are declared. Closing that is a data-file
+change, far cheaper than 643 producer rewrites — BUT each entry requires
+establishing that producer's actual pin, which is a judgement call per
+producer, not a sweep. That is the honest shape of this task, and it is
+bigger than "add a field".
+
+Full per-file classification and producer lists are in the agent's scratchpad
+output (`classB_producers.txt`, `classE_producers.txt`,
+`q0anchor_missing_classified.json`).
