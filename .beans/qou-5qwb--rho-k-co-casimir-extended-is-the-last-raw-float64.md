@@ -113,3 +113,30 @@ explanation, and I reached for it after one 6-hour observation. A 148x gap on
 arithmetic is a *bug-shaped* number, not a *hardware-shaped* one — hardware
 does not vary by two orders of magnitude on the same instruction mix. The
 disproving measurement (benchmark the primitive in isolation) costs seconds.
+
+## The workaround was folklore: 4 of 5 consumers already cast
+
+Audited every numpy-based `d_for_ctype` consumer after fixing `chi_numpy`:
+
+| consumer | casts? |
+|---|---|
+| `atom_level_wedderburn_tower.py:88` | yes |
+| `hoefsmit_symbolic.py:269` | yes |
+| `spectral_coordinates_all_atoms.py:57` | yes |
+| `canonical_tr_m_via_branching.py:151` | yes |
+| `hoefsmit_numpy.py` (`chi_numpy`) | **no — the straggler** |
+
+Four separate authors independently hit this and each patched their own call
+site. Nothing enforced the convention and nothing communicated it, so the
+fifth author had no way to know. The one place that missed it was, with some
+irony, the module whose whole purpose is to be the fast BLAS path.
+
+That makes it a **class**, not an instance, and the fix landed here only closes
+the instance. Raised with the ctype owners on PR #5073 with two options: make
+`d_for_ctype`'s return type uniform at source, or keep `mpf` and add a test
+asserting all ctypes agree in type, so the next consumer fails loudly instead
+of silently running 4000x slower with a correct answer.
+
+Not decided here: `averaged_weighted` may need the extra precision at the
+symbolic call sites, and that is the piece of context that picks between the
+two — it belongs to the arc that owns the vocabulary.
