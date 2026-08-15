@@ -302,3 +302,46 @@ figure for a path that raises ModuleNotFoundError on every input). Both
 corrections were one command away. The pattern is asserting downstream
 consequences from a static read — the same error class this whole arc is
 about, applied to my own reporting rather than to the code.
+
+## The convention-C count OVERSTATES the front (2026-08-15)
+
+Four of the five "roots" examined closely. **Three are false positives**, each
+by a different mechanism, and none is a detector bug:
+
+| producer | flag cause | verdict |
+|---|---|---|
+| `probe_1b_li6_orthogonality` | committed witness predates the migration; producer could not run (`KeyError: '18'`, cache stops at n=12) | **GENUINE** — migrated, 13 → 12 |
+| `alpha_k_jones_markov_h12` | 3+row weights are **solver residue** (1e-18…9e-18) from a 77×77 linear solve; `z = q₀³/(q₀²+1)` is already the D parameter | false positive — snapped to exact 0, 12 → 11 |
+| `derived_chi_catalogue` | `y_lambda_at_zero="1"` is a **placeholder**, per the producer's own comment | false positive — producer fixed; witness pending an explicit re-derivation (append-only guard) |
+| `y_lambda_macdonald_telescope` | 14 symbolic expressions on 3+row blocks that **simplify to identically 0** — verified with sympy, 14/14 | false positive — **nothing to fix**; the producer is correct |
+| `tr_m_q_hecke_seminormal` | not yet determined | in progress |
+
+### Why none of these is a detector defect
+
+Each flag is the correct output of a test that cannot see the distinguishing
+fact:
+
+- **Solver residue vs symbolic zero.** `DEAD_TOL = 1e-30` is set, per its own
+  comment, for a float pipeline "delivering 1e-300" — underflow. A linear
+  solve delivers machine-epsilon residue at 1e-18, twelve orders the wrong
+  side. Same detector, different numerical route.
+- **Placeholder vs weight.** A literal `"1"` in a weight field is
+  indistinguishable from a computed weight. The defect is writing an unknown
+  as a plausible value.
+- **Syntactic vs semantic zero.** `scan_doc_symbolic`'s own docstring says it
+  "screens syntactically and over-reports rather than under-reports" because
+  deciding whether an arbitrary q-expression vanishes needs a CAS. It is
+  behaving exactly as documented.
+
+### Consequence for anyone reading the count
+
+**Do not treat the remaining structural count as a count of real convention-C
+carriers.** It is an upper bound. On the sample examined it overstated by 3×
+(4 flags, 1 genuine). Before doing migration work on any remaining entry,
+settle which of the four mechanisms it is — the cheap tests are: simplify the
+expression with sympy; compare the magnitude against the smallest live weight
+(y_(12) ≈ 3.97e-3); and read the producer for placeholder literals.
+
+The corollary matters more than the count: **a witness flagged convention C is
+not evidence that its producer computes convention C.** Three of these four
+producers were already fully convention D.
