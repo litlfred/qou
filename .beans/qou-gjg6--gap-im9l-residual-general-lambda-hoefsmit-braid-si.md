@@ -816,3 +816,40 @@ orbits (sizes 1,2,3 -- where some of A,B,D,E,F fail SwapAdmissible and terms dro
 orbit-local identities are already proved in Orbit3Braid/Orbit6Braid), and (b) packaging
 the three relations into a `Hecke ->a` algebra map via Hecke.lift. The Ref'd sorry stays
 until both land.
+
+
+## TWO CORRECTIONS TO MY OWN PLAN, AND THE SIZE-1 CASE 2026-08-15
+
+CORRECTION 1 -- the packaging order I recommended last tick was BACKWARDS. I said "start
+with Hecke.lift packaging, it is the one that discharges the sorry". It cannot be started
+first: Hecke.lift's `hbraid` argument is `forall i, ... g i * g (i+1) * g i = ...`, a
+statement about the MATRICES, so it needs the braid for EVERY column T -- i.e. for
+non-generic orbits too. Packaging DEPENDS ON the case tree; it is not an alternative to it.
+
+CORRECTION 2 -- the non-generic case tree is NOT bookkeeping either. Working the size-1
+case (T fixed by both generators) turned up a genuine lemma with a genuine proof:
+
+  axialDist_eq_of_not_admissible (sorry-free, axiom-clean):
+    ¬SwapAdmissible T k → ¬SwapAdmissible T (k+1) → axialDist T k = axialDist T (k+1)
+
+i.e. adjacent generators that both fix T fix it with the SAME scalar. WITHOUT THIS THE
+BRAID IS FALSE on size-1 orbits: both sides collapse to a(d_k)^2 a(d_l) and a(d_l)^2 a(d_k),
+whose difference is a(d_k)a(d_l)(a(d_k) - a(d_l)); with a(+-1) in {q, -1/q} that vanishes iff
+the two distances agree, and is -(q + 1/q) != 0 when they differ. So this is load-bearing,
+not a convenience.
+
+The content is that the MIXED configurations are IMPOSSIBLE, not merely unobserved. If k,k+1
+share a row and k+1,k+2 share a column, adjacency forces the cells to be (i,j), (i,j+1),
+(i+1,j+1); then the corner (i+1,j) lies in mu by up-left closure and is squeezed strictly
+between k and k+2, so it carries k+1 -- which (i,j+1) already carries. cellOf_unique then
+equates two distinct cells. The column-then-row case is the mirror, with corner (i,j+2)...
+(actually (i, c3.2)). Same shape as axialDist_ne_zero: a forced corner.
+
+Lean note: `refine (axialDist_of_sameRow T hm2 ?_ he2 ?_).symm` cannot infer j2 (it is
+determined by the LAST argument); supply it as `(j2 := ...)`. Same for _sameCol with i2.
+
+REMAINING for hoefsmit_seminormal_rep, restated correctly:
+  (1) the rest of the non-generic case tree -- sizes 2 and 3, where SOME of A,B,D,E,F are
+      admissible and terms drop. Size 1 now has its key lemma; the braid identity on it
+      still needs assembling.
+  (2) THEN packaging into a Hecke ->a algebra map via Hecke.lift, which consumes (1).
