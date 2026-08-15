@@ -151,3 +151,80 @@ available two imports away.
 
 Not proposing a fifth gate on the strength of one example. Recording the
 category so the next instance is recognised rather than re-derived.
+
+## PORTED — the whole chain, root first
+
+    mass-table-ppb.witness.json                  119 -> 36 raw float64
+    canonical-mass-table-extended.witness.json    26 ->  1   (baseline 24)
+    raw-float64 ratchet: 2 REGRESSED -> 1        (only rho-k remains)
+
+Done root-first, because the downstream producer cannot carry precision that
+never existed upstream. Three files:
+
+**1. `mass_table_ppb.py` — the actual root.** It imported the FLOAT variant of
+every constant and computed `B = nu * m_e * Vol` in Python floats, with no
+`import mpmath` in the file at all. The mpf variants already sat beside the
+floats, exactly as this module's own comment anticipated ("a `--precision mpfr`
+lift only needs to update one place"):
+
+    q_parameter.Q -> Q_MP
+    experimental_constants.M_E_MEV -> codata_constants.M_E_MEV   (module, not name)
+    knot_volumes.VOL_BORROMEAN / VOL_7_SQ_1 -> the _MPF variants
+
+**2. `canonical_mass_table_extended.py`.** `lookup_b_pred_existing` now lifts
+with `mp.mpf(...)` rather than taking the JSON number — lossless, since upstream
+emits a 44-digit decimal string. `B_AME_MEV` drops its `float()` wrappers around
+the five mpf `AME_B_*` constants, and its four bare literals become
+`mp.mpf("...")` strings (binding the decimal, not the binary64). The err fields
+serialize with `fmt`.
+
+**3. `atlas_render_canonical_table.py`.** One line: `float(err_ppm)` at the sole
+site doing arithmetic before formatting. `_fmt_number` already coerced strings
+everywhere else.
+
+### This is the move the audit ALLOWS, and the earlier attempt was not
+
+The reverted attempt stringified `err_*` while `pred` was still a float — 20
+fields out of the count, zero digits gained. Now `pred` and `ref` are both mpf
+and `fmt` writes out precision that genuinely exists. Same-looking diff, opposite
+meaning; the difference is entirely upstream.
+
+### The numbers MOVED, which is the point
+
+    B_pred_MeV (D)   2.2488207948647343
+                  -> 2.248820797901308979386776627507060766220092
+
+They differ at the **9th significant digit** — ~1.4e-9 relative. The float
+pipeline was not merely imprecise, it was wrong past digit 8. `err_ppb` for the
+deuteron moves 10903067.24 -> 10903068.61 for the same reason.
+
+Anyone comparing these predictions against AME at ppb was reading roughly 1.4
+ppb of pipeline noise as signal.
+
+### Also fixed in passing: the truncation
+
+`canonical-mass-table-extended` now emits **7 rows where the committed file had
+5**, restoring ⁴He and ⁵Li — the two the producer's own ORDERING INVARIANT names
+at indices 5 and 6 and the published witness did not contain. Shape guard: 0
+collapsed.
+
+## Survey result: "no mpmath" is too blunt to gate on
+
+    runnable witness producers            2355
+    ZERO mpmath (no import, no mp values)  578      ~25%
+    touch mpmath in some way              1777
+
+578 is a quarter of the corpus, and most are certainly fine — combinatorial
+probes, structural audits, anything whose output is counts or flags. A gate on
+"emits a witness, uses no mpmath" would fire on all of them.
+
+So the category is real but the discriminator is not "no mpmath" — it is
+something like "emits values that are compared against experiment at ppb/ppm",
+which is not statically obvious from the source. `mass_table_ppb.py` was worth
+finding because it fed a ppb comparison while importing the float q₀ with an mpf
+one two lines away; that is a judgement about what the numbers are FOR, not a
+property a parser can see.
+
+**Recommendation: do not add a fifth gate.** The four existing ones plus this
+survey are enough to find the next instance by hand. A gate with 578 baseline
+entries would be a gate nobody reads.
