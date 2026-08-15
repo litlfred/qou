@@ -124,3 +124,50 @@ Flipping `gram.py` alone desynchronises the symbolic and float trace paths by
 The banner named only the third. **Awaiting owner direction** on whether to
 extend to all three, do the two Python sites, or park it — the approved
 decision was "flip `gram.py`", and the honest scope is larger.
+
+## 2026-08-15 — DONE on the Python side (PR #5055, out of draft)
+
+`gram.py` and `trace_formal.py` are both convention D. Two claims I made
+mid-work were wrong and are corrected in the PR body and in the code:
+
+* **"trace_formal needs a symbol-basis rewrite"** — false. `z = q³/(q²+1)
+  = s⁶/(s⁴+1)` is still rational in `s`, and `s = √q` is required anyway by
+  `quantum_int` (balanced `[n]_q`). One-line substitution; the `s` basis is
+  kept so the root-of-unity API is untouched. I blocked the PR on a
+  non-blocker.
+* **"the Rust is still on convention C"** — false. `markov_z` is already
+  `q³/(q²+1)`. See qou-m7py for the crate's actual divergences (`z³` trace
+  rule + muon anchor).
+
+### Two results worth carrying forward
+
+1. **The exact ℚ path is now genuinely exact.** `_Z_FRAC` was
+   `4993/10000` — a 4-digit truncation injected into a path labelled
+   "exact", forced by C's irrational `z`. Under D it is
+   `1367631/2232100` exactly. Consequence: the exact-ℚ path is the ONLY
+   one that can *prove* the Gram degenerate (det `0` exactly, rank 5);
+   float64's `3.998e-17` and mpmath's smaller epsilon cannot distinguish
+   singular from tiny. Pinned by
+   `test_gram_determinant_is_exactly_zero_over_Q`.
+
+2. **The trace pole moved N=2 → N=4.** C: `z = s/(s²+1)` → pole at
+   `q = −1`. D: `z = q³/(q²+1)` → pole at `q = ±i`. Verified analytically
+   at N=1..4. **ζ₂ is now an accessible evaluation point; ζ₄ is not.**
+   → *Actionable for anyone on the Habiro / Q_β c₃ residue front:* any
+   analysis that assumed N=2 was the excluded root of unity needs
+   re-checking. This is the kind of change that silently invalidates a
+   downstream conclusion without failing any test.
+
+### Guard added (and its cost)
+
+`build_atom_nf` / `atom_per_generator_volumes` now REFUSE to dispatch to
+`pyhecke_native`, because with Python on D and the crate diverging,
+installing the wheel would silently change results per-machine. Costs the
+~100× speedup until qou-m7py lands. `QOU_ALLOW_NATIVE_DIVERGENCE=1`
+overrides.
+
+### Not done
+
+- qou-m7py (Rust) — guarded against, not fixed.
+- qou-aze5 — pre-existing LP-dual test/impl contradiction found while
+  draining the suite; not folded in.
