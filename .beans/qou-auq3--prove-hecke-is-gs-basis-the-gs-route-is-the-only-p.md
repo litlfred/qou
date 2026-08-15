@@ -1759,3 +1759,75 @@ depth pinned at 1). The 15/15/19/25 counts suggest the chain length grows in bot
 the other abstract. Extract all five chains and look for the two-parameter
 skeleton before writing anything, exactly as this turn did for the `b = 1`
 column and the `a = 1` row.
+
+## §4z — both depths at `i − 2` (2) — the first corner case
+
+The corner `a = b = 2`, i.e. `j₁ = j₂ = i − 2`: the Bokut–Shiao rule against
+**itself** at a proper overlap, the analogue of §4r one level down. Because
+`a, b ≥ 2` puts both leading monomials strictly longer than the braid word,
+neither rule can be Yang–Baxter — no §4j doubling, one composition per `i`, so
+this is `B120 × B120` and `B231 × B231` at `n = 4`.
+
+**Everything is explicit and there are no transports.** Both depths pinned at
+`i − 2` make `descWord i j₁ = σᵢσᵢ₋₁σᵢ₋₂` and `descWord i−1 j₂ = σᵢ₋₁σᵢ₋₂`, so
+every word is a literal five-, six- or seven-letter list in three generators and
+there is no run left to cross. That is exactly why this was the corner to do
+first; the remaining three reintroduce the runs and with them the transports.
+
+    spoly = σᵢσᵢ₋₁σᵢ₋₂σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₂  −  σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₂σᵢ₋₁σᵢ₋₂σᵢ
+
+Fifteen steps, and **thirteen of them apply a two-word monic rule** — the braid
+rule at `(i−2,i−1)`, the braid rule at `(i−1,i)`, far-commutation `σᵢσᵢ₋₂`, and
+the rule itself — so `monicStep` discharges each in a dozen lines. Only steps 4
+and 7 are quadratic and written out. This is the first section where the §4x
+investment in `monicStep` paid at scale: the thirteen applications were generated
+mechanically from a table of `(rule, a, b, W, W')` and every one went through
+unchanged.
+
+`h` enters at the two quadratic steps and leaves at step 11, where
+`σᵢ₋₂σᵢ₋₁σᵢσᵢ₋₂σᵢ₋₁σᵢ₋₂` and `σᵢ₋₂σᵢ₋₁σᵢ₋₂σᵢσᵢ₋₁σᵢ₋₂` carry `h` with opposite
+signs and cancel. The pair is **kept in the term list rather than merged**,
+because `monicStep` produces the unmerged list and merging would need a step of
+its own; carrying it costs nothing since the surviving stages are still separated
+by length or third letter.
+
+Build note: the only failures were four more `rw`-does-not-close-by-`rfl`
+(sixth occurrence in this arc) — everything else built first try.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n
+      BS/YB × F (j₀+1=j)       5   §4o
+      cyclic × quadratic      12   §4p
+      quadratic × cyclic       9   §4q
+      braid self-overlap      12   §4r
+      BS × F (j₀=j)            3   §4s
+      quadratic × general BS   3   §4t
+      far-comm × BS/YB         2   §4u
+      BS/YB × F (j₀+1<j)       2   §4v
+      BS/YB × F (j < j₀)       1   §4w
+      BS × braid (b = 1)       6   §4x
+      braid × BS (a = 1)       6   §4y
+      BS × BS (a = b = 2)      2   §4z
+      ---------------------------
+      proved                  89   all general in n
+      remaining                3
+
+    inclusion compositions    22   §4m   (all)
+
+**The last three**, all `B × B` with the depths unequal or both at 3:
+
+    (3,2)  B230 × B231   15 steps
+    (2,3)  B231 × B230   19
+    (3,3)  B230 × B230   25
+
+These are the general two-depth case, `spoly = D₁ σᵢ₋₁ σᵢ E₂ − σᵢ₋₁ D₁ E₂ σᵢ`
+with `D₁ = descWord i j₁`, `E₂ = descWord i−1 j₂` both of arbitrary length. The
+right frame is probably to prove it for abstract `D₁`, `E₂` with the runs crossed
+by transports, rather than three more explicit chains — §4z is the `|D₁| = 3`,
+`|E₂| = 2` instance of it, and its fifteen steps should reappear as the skeleton
+with transports inserted where the runs are longer. Note `(3,2)` is also 15 steps
+like `(2,2)`, which supports that reading: lengthening `D₁` alone does not add
+steps, only lengthening `E₂` does — compare `(2,2) → (2,3)`, 15 → 19.
