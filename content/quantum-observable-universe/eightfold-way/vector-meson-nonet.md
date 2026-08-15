@@ -24,8 +24,8 @@ $s\bar{s}$ probability of the heavy state is convention-independent, and
 The vector nonet is **ideally mixed** --- the $\phi$ is $s\bar{s}$ to within
 half a percentage point --- while the pseudoscalar nonet sits about as far
 from ideal as it can.  Values from
-`nonet-mixing-purity.witness.json`; PDG central values are comparators, and
-nothing here is fitted.
+[`nonet-mixing-purity.witness.json`](../../../computations/nonet-mixing-purity.witness.json);
+PDG central values are comparators, and nothing here is fitted.
 
 This is also why Gell-Mann--Okubo appears to *fail* on the vector nonet.
 Applied to the physical states, the relation deviates by $\approx 6\%$ for the
