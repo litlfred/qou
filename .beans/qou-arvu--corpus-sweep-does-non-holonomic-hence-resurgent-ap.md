@@ -1,7 +1,7 @@
 ---
 # qou-arvu
 title: "Corpus sweep: does 'non-holonomic hence resurgent' appear elsewhere?"
-status: in-progress
+status: completed
 type: task
 created_at: 2026-08-14T20:02:00Z
 updated_at: 2026-08-14T21:58:00Z
@@ -27,7 +27,44 @@ remaining work on this bean.
   — banner + two clauses struck. Its exact linear algebra is untouched and
   correct; only the "tightens the resurgent reading" interpretation is withdrawn.
 
-### REMAINING — three producers, and three committed witnesses in three different states
+### ✅ PRODUCERS DONE 2026-08-14 (PR #5050) — the sympy block was removable
+
+**`sympy` installed cleanly here.** It pins `mpmath<1.4`, which is what **107**
+of the qbeta witnesses already record, so the stack *matches* the one that
+produced these witnesses (`sympy 1.14.0`) — no provenance regression. The
+"blocked on tooling" call in the section below was right that it was blocked,
+and wrong that it had to stay that way; the first move should have been to try
+installing it.
+
+**Control run first.** The generating-function probe, run unmodified, reproduced
+`divergent=True`, `C=0.0617`, root test `4.3721→5.9104` and a byte-identical
+verdict in 96.1 s — confirming this bean's claim that re-running is not the fix.
+
+**All three re-scoped, every measurement kept:**
+
+1. **`generating_function_structure`** — §5's search omitted the `Q_b` zero. It
+   now tests `q*_ρ = 1.4898947996883652482` and finds
+   `|ũ(q*_ρ)| = 0.142799996644689688905721`, reproducing the published ρ to
+   **2.24e-30** *using the probe's own ũ map*. §3's boolean renamed
+   `divergent` → `root_test_rising_in_window`, with the reason it is consistent
+   with a finite radius (`|d_k|^{1/k} → 1/ρ = 7.0028` from below; at k=21 it is
+   5.9104, still short). Witness: `super_exponentially_divergent` **removed**,
+   `singularity_at_qb_zero` added, 7 assertions pass.
+2. **`odd_channel_stokes_borel`** — "divergence class" → "growth class"; the
+   Gevrey drift-down and the `s→0` Borel–Leroy pole at 0.147 now recorded as
+   *corroboration* (scope-(a): consistency, **not** a derivation of ρ). Its
+   method negative — plain-Borel does not transfer, G3 needs the q-Borel chain —
+   is unaffected.
+3. **`coupled_qsqrt3_recurrence`** — verdict untouched and correct; only the
+   "corroborates the q-Gevrey/resurgent reading" gloss removed, replaced by the
+   explicit statement that an algebraic negative carries no growth-class
+   information.
+
+**Precision:** raw-float64 counts byte-identical before/after (43/43, 6/6, 0/0);
+none of the three is in the NEW-dirty list; the two with raw floats were already
+on `raw-float64-baseline.json`. The ratchet RED is inherited.
+
+### Original REMAINING section (superseded by the above)
 
 | file | offending content |
 |---|---|
