@@ -269,19 +269,23 @@ def test_native_ok_false_when_wheel_absent():
     assert pyhecke_gram._native_ok() is False
 
 
-def test_native_dispatch_refuses_while_crate_diverges(monkeypatch):
-    """With the wheel 'installed' but the crate diverging (z^3 trace rule
-    + muon anchor), the dispatch must RAISE rather than silently return
-    numbers from a different trace rule at a different anchor."""
+def test_native_dispatch_refuses_until_the_wheel_is_rebuilt(monkeypatch):
+    """The dispatch must RAISE while the wheel's build date is unknowable.
+
+    The CRATE was fixed 2026-08-15 (trace_weights ends h*z^2 + z, Q_0 is the
+    proton pin) and now matches this module bit-identically. But a wheel built
+    before that lands is still divergent, and nothing in the wheel reports its
+    build — so the guard cannot distinguish them and keeps refusing. Rebuild
+    and set QOU_ALLOW_NATIVE_DIVERGENCE=1 to opt in."""
     monkeypatch.setattr(pyhecke_gram, "_HAS_NATIVE", True)
     monkeypatch.delenv("QOU_ALLOW_NATIVE_DIVERGENCE", raising=False)
-    with pytest.raises(RuntimeError, match="DIVERGES"):
+    with pytest.raises(RuntimeError, match="pyhecke_native is installed"):
         pyhecke_gram._native_ok()
     # And the refusal must reach the public entry points, not just the
     # private helper -- that is the whole point of the guard.
-    with pytest.raises(RuntimeError, match="DIVERGES"):
+    with pytest.raises(RuntimeError, match="pyhecke_native is installed"):
         pyhecke_gram.build_atom_nf(1, 0)
-    with pytest.raises(RuntimeError, match="DIVERGES"):
+    with pytest.raises(RuntimeError, match="pyhecke_native is installed"):
         pyhecke_gram.atom_per_generator_volumes(2, 2)
 
 

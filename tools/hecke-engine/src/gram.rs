@@ -4,38 +4,45 @@
 //! `tools/pyhecke/python/pyhecke/gram.py`). Same NF basis, same Hecke
 //! reduction rules.
 //!
-//! # Two divergences from the Python mirror — read before trusting a number
+//! # Convention D, correct Markov trace, singular form — read this first
 //!
-//! **1. `TR_M[5]` differs, and has since 2026-05-19.** This engine's
-//! [`trace_weights`] ends `z³`; `pyhecke.gram.TR_M` ends `h·z² + z`. The
-//! Python value is the correct Markov trace of `e⁻ = σ₀σ₁σ₀` (cyclicity plus
-//! `σ₀² = h·σ₀ + 1`); `z³` is the bug that
+//! Both long-standing divergences from the Python mirror are RESOLVED as of
+//! 2026-08-15:
+//!
+//! **1. `TR_M[5]` is now `h·z² + z`**, matching `pyhecke.gram.TR_M`. It was
+//! `z³` here from before 2026-05-19 — the bug
 //! `docs/audits/2026-05-19-trm5-markov-bug.md` fixed in Python and never
-//! ported here. So the "byte-identical to the Python implementation" claim
-//! that stood in this header until 2026-08-09 was false: under convention C
-//! the Gram determinants were −0.3608011 here against −0.1892052 there.
+//! ported. `h·z² + z` is the correct Markov trace of `e⁻ = σ₀σ₁σ₀`
+//! (cyclicity plus `σ₀² = h·σ₀ + 1`).
 //!
-//! **2. Fixing (1) makes this Gram singular.** With the correct `h·z² + z`
-//! and the production convention D, the 6×6 Markov–Gram form is degenerate —
-//! see `content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean`
-//! (bilinear eigenvalues −0.752702, 0, +0.752702×3, +4.230339; det = 0).
-//! Note that file's own retraction, commit `748ba9b1`: its "Lorentzian /
+//! **2. The Gram is therefore SINGULAR**, and that is correct, not a defect.
+//! Under convention D with the right trace the 6×6 Markov–Gram form is
+//! degenerate — see
+//! `content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean`.
+//! Note that file's own retraction (commit `748ba9b1`): its "Lorentzian /
 //! signature (4,1)" reading is WITHDRAWN — under the correct `*`-pairing
-//! (`T_w* = T_{w⁻¹}`) the form is positive semidefinite, `(5,0,1)`. The one
-//! null direction under D is what survives both readings, and it is all this
-//! note needs. [`gram_inverse`] would then panic, or worse, return a matrix
-//! with ~1e15 entries — that is what `numpy.linalg.inv` does on the Python
-//! side: no exception, and ‖G·G⁻¹ − I‖ = 1.64.
+//! (`T_w* = T_{w⁻¹}`) the form is positive semidefinite, `(5,0,1)`. What
+//! survives both readings, and is all this note relies on, is that there is
+//! exactly ONE null direction.
 //!
-//! Both are open for the owner (bean `qou-wgta`, items 10/11). The
-//! convention here IS convention D as of 2026-08-09; the `z³` weight is
-//! knowingly left in place because correcting it in isolation replaces a
-//! wrong-but-finite answer with a silently unbounded one.
+//! **So there is no 6×6 inverse, and [`gram_inverse`] is gone.** Use
+//! [`gram_quotient_inverse`] — the Moore–Penrose inverse on `H_3(q)/rad` —
+//! and [`gram_radical`] for the null direction. `gram_inverse` was NOT
+//! repointed at the pseudoinverse: they differ exactly on the radical, and
+//! silently handing a caller a different object under a trusted name is how
+//! a wrong number keeps circulating.
+//!
+//! The scale of the change, measured: `TR_M[5]` moves +200.5 % (0.2300 →
+//! 0.6912), 19 of 36 Gram entries move, rank 6 → 5, and `‖G⁺ − G⁻¹‖` is
+//! 73.3 % relative. Downstream numbers derived from the old inverse move
+//! substantially — this was a re-derivation, not a patch.
 //!
 //! Public API:
 //!
 //! * [`gram_matrix`] — 6×6 Gram at an arbitrary `q > 1`.
-//! * [`gram_inverse`] — 6×6 inverse at an arbitrary `q > 1`.
+//! * [`gram_quotient_inverse`] — inverse on `H_3(q)/rad` (the form is
+//!   singular, so no 6×6 inverse exists).
+//! * [`gram_radical`] — the null direction, in closed form.
 //! * [`GramCertificate`] — serde-serializable record matching the
 //!   JSON shape used by `pyhecke.certificate`.
 //! * CLI entry via `cargo run --bin hecke-gram`.
@@ -105,20 +112,18 @@ pub fn hecke_h(q: f64) -> f64 {
     q - 1.0 / q
 }
 
-/// Markov-trace weights on the 6-element NF basis (convention D, via
-/// [`markov_z`]).
-/// **CARRIES A KNOWN BUG in the last entry.** `TR_M[5]` is `z³`; the correct
-/// Markov value for `e⁻ = σ₀σ₁σ₀` is `h·z² + z` — see [`trace_weights_markov`].
+/// Markov-trace weights on the 6-element NF basis (convention D).
 ///
-/// Fixed in Python on 2026-05-19
-/// (`docs/audits/2026-05-19-trm5-markov-bug.md`) and never ported here. It is
-/// still not fixed *in this function* because the repair is not local: with the
-/// correct weight this Gram is SINGULAR under convention D, so [`gram_inverse`]
-/// — and the live downstream family that consumes its output — stop being
-/// well-defined. See the module note. Bean `qou-m7py`.
+/// `TR_M[5] = h·z² + z` — the correct Markov trace of `e⁻ = σ₀σ₁σ₀`, matching
+/// `pyhecke.gram.TR_M`. This entry was `z³` until 2026-08-15, the
+/// pre-2026-05-19 bug that was fixed in Python and never ported here.
+///
+/// Correcting it makes [`gram_matrix`] SINGULAR — see the module note. That
+/// is the mathematics, not a regression.
 pub fn trace_weights(q: f64) -> [f64; 6] {
     let z = markov_z(q);
-    [1.0, z, z, z * z, z * z, z * z * z]
+    let h = hecke_h(q);
+    [1.0, z, z, z * z, z * z, h * z * z + z]
 }
 
 /// Markov-trace weights with the CORRECT `TR_M[5] = h·z² + z`.
@@ -131,9 +136,10 @@ pub fn trace_weights(q: f64) -> [f64; 6] {
 /// user-visible switch stays a single gated line. Nothing in the shipped
 /// pipeline calls this yet.
 pub fn trace_weights_markov(q: f64) -> [f64; 6] {
-    let z = markov_z(q);
-    let h = hecke_h(q);
-    [1.0, z, z, z * z, z * z, h * z * z + z]
+    // Now identical to `trace_weights` — kept as a named alias because it is
+    // what the 2026-08-15 additive commit introduced and what several tests
+    // and external callers reference. Delete once those are retargeted.
+    trace_weights(q)
 }
 
 // ─── Word representation + Hecke reduction ───────────────────────────
@@ -280,7 +286,8 @@ fn gram_from_weights(q: f64, tr_m: &[f64; 6]) -> [[f64; 6]; 6] {
 /// SINGULAR by construction — see [`gram_radical`]. Use
 /// [`gram_quotient_inverse`] rather than [`gram_inverse`] with this.
 pub fn gram_matrix_markov(q: f64) -> [[f64; 6]; 6] {
-    gram_from_weights(q, &trace_weights_markov(q))
+    // Now identical to `gram_matrix`; see `trace_weights_markov`.
+    gram_matrix(q)
 }
 
 /// The radical of the Markov trace form under convention D, in closed form.
@@ -353,11 +360,23 @@ pub fn gram_quotient_inverse(q: f64) -> [[f64; 6]; 6] {
     inv
 }
 
-/// Inverse of the Gram matrix (via Gauss-Jordan on f64).
-pub fn gram_inverse(q: f64) -> [[f64; 6]; 6] {
-    let g = gram_matrix(q);
-    invert_6x6(&g).expect("Gram matrix is singular — check q value")
-}
+// `gram_inverse` is REMOVED (2026-08-15), not deprecated and not repointed.
+//
+// With the correct `TR_M[5] = h·z² + z` the Markov-Gram form is singular, so
+// the object this function named does not exist. It previously ended
+// `.expect("Gram matrix is singular")`, i.e. it would now PANIC on every
+// call — across all nine language bindings — which is the one outcome worse
+// than removing it, because it converts a type error into a runtime crash in
+// a library.
+//
+// It was deliberately NOT rebound to `gram_quotient_inverse`. The two differ
+// exactly on the radical, which is the entire content of this change; handing
+// a caller a different matrix under a name they already trust is how a wrong
+// number keeps circulating. A caller asking for an inverse must now see that
+// there isn't one and choose explicitly.
+//
+// Replacement: [`gram_quotient_inverse`] (Moore-Penrose on `H_3(q)/rad`) and
+// [`gram_radical`] (the null direction).
 
 fn invert_6x6(a: &[[f64; 6]; 6]) -> Option<[[f64; 6]; 6]> {
     // Augmented matrix [A | I].
@@ -746,13 +765,24 @@ pub struct GramCertificate {
     pub basis: Vec<String>,
     pub trace_weights: Vec<f64>,
     pub matrix: Vec<Vec<f64>>,
-    pub inverse: Vec<Vec<f64>>,
+    /// Inverse on the quotient `H_3(q)/rad`, NOT a 6x6 inverse.
+    ///
+    /// RENAMED from `inverse` (2026-08-15). Under convention D with the
+    /// correct trace the form is singular, so the old field named an object
+    /// that does not exist. Renaming rather than refilling it is deliberate:
+    /// a consumer keyed on `inverse` now fails loudly instead of silently
+    /// receiving a different matrix — they differ exactly on the radical.
+    pub quotient_inverse: Vec<Vec<f64>>,
+    /// The null direction (q-antisymmetriser), in closed form.
+    pub radical: Vec<f64>,
+    /// Determinant of `matrix`. Zero up to f64 noise under convention D;
+    /// see `gram_radical` for the exact statement.
     pub determinant: f64,
 }
 
 pub fn certificate_at(q: f64) -> GramCertificate {
     let g = gram_matrix(q);
-    let inv = gram_inverse(q);
+    let qinv = gram_quotient_inverse(q);
     GramCertificate {
         q,
         z: markov_z(q),
@@ -761,7 +791,8 @@ pub fn certificate_at(q: f64) -> GramCertificate {
         basis: NF_NAMES.iter().map(|s| s.to_string()).collect(),
         trace_weights: trace_weights(q).to_vec(),
         matrix: g.iter().map(|r| r.to_vec()).collect(),
-        inverse: inv.iter().map(|r| r.to_vec()).collect(),
+        quotient_inverse: qinv.iter().map(|r| r.to_vec()).collect(),
+        radical: gram_radical(q).to_vec(),
         determinant: det_6x6(&g),
     }
 }
@@ -837,60 +868,63 @@ mod tests {
         assert!((g[0][0] - 1.0).abs() < 1e-14);
     }
 
+    /// The 6x6 inverse is GONE, and the quotient inverse replaces it.
+    ///
+    /// Was `gram_inverse_is_right_inverse`, asserting `G * G^-1 = I`. Under
+    /// convention D with the correct trace that identity is FALSE — the form
+    /// is singular — so the test was reporting the mathematics correctly and
+    /// is replaced rather than relaxed. `G^-1` is not "harder to compute"
+    /// here; it does not exist.
     #[test]
-    fn gram_inverse_is_right_inverse() {
-        let q = Q_0;
-        let g = gram_matrix(q);
-        let inv = gram_inverse(q);
-        // g * inv = I
+    fn quotient_inverse_replaces_the_absent_6x6_inverse() {
+        let g = gram_matrix(Q_0);
+        let p = gram_quotient_inverse(Q_0);
+
+        // Singular: no 6x6 inverse to be a right-inverse OF.
+        assert!(det_6x6(&g).abs() < 1e-12, "det = {}", det_6x6(&g));
+
+        let mul = |a: &[[f64; 6]; 6], b: &[[f64; 6]; 6]| {
+            let mut o = [[0.0f64; 6]; 6];
+            for i in 0..6 {
+                for j in 0..6 {
+                    o[i][j] = (0..6).map(|k| a[i][k] * b[k][j]).sum();
+                }
+            }
+            o
+        };
+        // Moore-Penrose in place of the inverse identity.
+        let gpg = mul(&mul(&g, &p), &g);
         for i in 0..6 {
             for j in 0..6 {
-                let mut s = 0.0;
-                for k in 0..6 {
-                    s += g[i][k] * inv[k][j];
-                }
-                let target = if i == j { 1.0 } else { 0.0 };
-                assert!((s - target).abs() < 1e-10, "i={},j={}: {} != {}", i, j, s, target);
+                assert!((gpg[i][j] - g[i][j]).abs() < 1e-8, "G P G != G at {i},{j}");
             }
         }
+        // G*P is NOT the identity, and asserting so guards against anyone
+        // "fixing" this back into the old test.
+        let gp = mul(&g, &p);
+        let off = (0..6).map(|i| (gp[i][i] - 1.0).abs()).fold(0.0, f64::max);
+        assert!(off > 1e-6, "G*P should NOT be I under convention D");
     }
 
-    /// Gram determinant at `Q_0`, convention D.
+    /// Gram determinant at `Q_0` — ZERO, which is the whole point.
     ///
-    /// RENAMED from `det_at_q0_matches_python` (2026-08-09, bean qou-wgta
-    /// item 10): it never matched Python and could not have. This engine's
-    /// [`trace_weights`] ends `..., z*z*z`, while `pyhecke.gram.TR_M` ends
-    /// `..., h*z*z + z`. `h·z² + z` is the correct Markov value for
-    /// `e⁻ = σ₀σ₁σ₀` (cyclicity plus `σ₀² = h·σ₀ + 1`); `z³` is the
-    /// pre-2026-05-19 bug, fixed in Python by
-    /// `docs/audits/2026-05-19-trm5-markov-bug.md` and NEVER PORTED HERE.
-    /// The two determinants under C were −0.3608011166161873 (this engine)
-    /// against −0.1892052 (pyhecke). The old test name asserted an equality
-    /// that had been false for three months.
+    /// Pin history, each step a real change rather than a re-tune:
+    ///   -0.3608011166161873   convention C, muon pin, z^3 trace
+    ///   -0.15201823561588593  convention D, muon pin, z^3 trace
+    ///   -0.15201823908521292  convention D, PROTON pin, z^3 trace
+    ///    0                    convention D, proton pin, CORRECT trace
     ///
-    /// The z³ bug is deliberately NOT fixed in this commit — see the
-    /// module-level note and the bean. Correcting it makes this Gram
-    /// SINGULAR under D (`QOU/QBeta/GramSignature.lean`: eigenvalues
-    /// −0.752702, 0, +0.752702×3, +4.230339; det = 0), which would break
-    /// `gram_inverse` across all nine bindings. That is a proved structural
-    /// result needing an owner decision, not a patch.
+    /// The last step is the 2026-08-15 TR_M[5] flip. Asserting a tolerance
+    /// rather than `== 0.0` on principle — this f64 path happens to return
+    /// literal zero here, but that is luck of the arithmetic, not a
+    /// guarantee, and the EXACT statement (det = 0 over Q, rank 5) lives in
+    /// the Python side's `test_gram_determinant_is_exactly_zero_over_Q`,
+    /// which can prove it because convention D makes the Gram rational. No
+    /// f64 determinant can distinguish singular from very small.
     #[test]
-    fn det_at_q0_convention_d() {
-        // Pin history:
-        //   -0.3608011166161873   convention C, muon pin
-        //   -0.15201823561588593  convention D, muon pin
-        //   -0.15201823908521292  convention D, PROTON pin (2026-08-15)
-        //
-        // The last move is a CONSEQUENCE of the Q_0 re-pin, not a new result,
-        // and the magnitude confirms it rather than merely accommodating it:
-        //   q   shifted  1.153e-08 (relative)
-        //   z   shifted  2.187e-08  ~ 2x, since z ~ q^3/(q^2+1) is ~degree 1
-        //   det shifted  2.282e-08  same order
-        // A determinant that had moved by, say, 1e-3 would mean something
-        // else changed; it did not.
-        let g = gram_matrix(Q_0);
-        let d = det_6x6(&g);
-        assert!((d - (-0.15201823908521292)).abs() < 1e-10, "det = {}", d);
+    fn det_at_q0_is_zero_under_the_correct_trace() {
+        let d = det_6x6(&gram_matrix(Q_0));
+        assert!(d.abs() < 1e-12, "det = {d}");
     }
 
     #[test]
@@ -958,59 +992,70 @@ mod tests {
     // in the shipped pipeline calls them yet. They exist so the correct
     // objects are verified before the gated switch, not after.
 
-    /// The two trace vectors agree except in the last entry, and the last
-    /// entry differs by a lot -- so this is a real repair, not a rounding fix.
+    /// `TR_M[5]` is `h·z² + z`, derived — not read off the implementation.
+    ///
+    /// Was `markov_trace_differs_only_at_e_minus`, which compared
+    /// `trace_weights` against `trace_weights_markov`. The 2026-08-15 flip
+    /// made those the same function, so that comparison is now vacuous and
+    /// is replaced by asserting the VALUE against its definition, plus a
+    /// guard that it is not the old `z³`.
     #[test]
-    fn markov_trace_differs_only_at_e_minus() {
-        let legacy = trace_weights(Q_0);
-        let fixed = trace_weights_markov(Q_0);
-        for i in 0..5 {
-            assert!((legacy[i] - fixed[i]).abs() < 1e-15, "entry {} moved", i);
-        }
+    fn trace_weights_carries_the_correct_markov_value() {
+        let tr = trace_weights(Q_0);
         let z = markov_z(Q_0);
         let h = hecke_h(Q_0);
-        // Derived from the definition, not read off the implementation.
-        assert!((fixed[5] - (h * z * z + z)).abs() < 1e-15);
-        assert!((legacy[5] - z * z * z).abs() < 1e-15);
-        assert!(
-            (fixed[5] - legacy[5]).abs() > 1e-3,
-            "z^3 = {} vs h*z^2 + z = {}", legacy[5], fixed[5]
-        );
+        assert!((tr[0] - 1.0).abs() < 1e-15);
+        assert!((tr[1] - z).abs() < 1e-15);
+        assert!((tr[3] - z * z).abs() < 1e-15);
+        assert!((tr[5] - (h * z * z + z)).abs() < 1e-15);
+        // Guard the flip: NOT the pre-2026-05-19 z^3, which differs by >200%.
+        assert!((tr[5] - z * z * z).abs() > 1e-3,
+                "TR_M[5] regressed to z^3: {}", tr[5]);
+        // The alias must track it, or a caller of either gets a different Gram.
+        assert_eq!(trace_weights_markov(Q_0), tr);
     }
 
-    /// The corrected Gram is SINGULAR and the legacy one is NOT. This is the
-    /// whole reason the fix could not be applied in place: `gram_inverse`
-    /// stops being well-defined the moment the trace is right.
+    /// The Gram is singular — the direct consequence of the correct trace.
+    ///
+    /// Was `markov_gram_is_singular_and_legacy_is_not`; there is no "legacy"
+    /// any more, so the contrast is asserted against the z^3 weight built
+    /// inline rather than against a second live function.
     #[test]
-    fn markov_gram_is_singular_and_legacy_is_not() {
-        let legacy = det_6x6(&gram_matrix(Q_0));
-        let fixed = det_6x6(&gram_matrix_markov(Q_0));
-        assert!(legacy.abs() > 1e-3, "legacy det should be far from 0: {}", legacy);
-        assert!(fixed.abs() < 1e-12, "corrected det should be ~0: {}", fixed);
+    fn gram_is_singular_under_the_correct_trace() {
+        assert!(det_6x6(&gram_matrix(Q_0)).abs() < 1e-12);
+        assert_eq!(gram_matrix_markov(Q_0), gram_matrix(Q_0));
+
+        // With the OLD z^3 weight it would not be — this is what made the
+        // bug survivable, and why the fix could not be applied in isolation.
+        let z = markov_z(Q_0);
+        let legacy = [1.0, z, z, z * z, z * z, z * z * z];
+        let gl = gram_from_weights(Q_0, &legacy);
+        assert!(det_6x6(&gl).abs() > 1e-3,
+                "the z^3 Gram should be NON-singular: {}", det_6x6(&gl));
     }
 
-    /// The closed-form q-antisymmetriser annihilates the corrected Gram, and
-    /// does NOT annihilate the legacy one.
+    /// The closed-form q-antisymmetriser annihilates the Gram.
     #[test]
-    fn radical_annihilates_corrected_gram_only() {
+    fn radical_annihilates_the_gram() {
         let v = gram_radical(Q_0);
-        // Spot-check the closed form itself against the definition.
         assert!((v[0] - 1.0).abs() < 1e-15);
         assert!((v[1] - (-1.0 / Q_0)).abs() < 1e-15);
         assert!((v[5] - (-1.0 / Q_0).powi(3)).abs() < 1e-15);
 
-        let gm = gram_matrix_markov(Q_0);
-        let gl = gram_matrix(Q_0);
-        let mut max_fixed = 0.0f64;
-        let mut max_legacy = 0.0f64;
-        for i in 0..6 {
-            let sf: f64 = (0..6).map(|j| gm[i][j] * v[j]).sum();
-            let sl: f64 = (0..6).map(|j| gl[i][j] * v[j]).sum();
-            max_fixed = max_fixed.max(sf.abs());
-            max_legacy = max_legacy.max(sl.abs());
-        }
-        assert!(max_fixed < 1e-12, "G_markov @ radical = {}", max_fixed);
-        assert!(max_legacy > 1e-3, "legacy G @ radical should NOT vanish: {}", max_legacy);
+        let g = gram_matrix(Q_0);
+        let worst = (0..6)
+            .map(|i| (0..6).map(|j| g[i][j] * v[j]).sum::<f64>().abs())
+            .fold(0.0, f64::max);
+        assert!(worst < 1e-12, "G @ radical = {worst}");
+
+        // Not a null vector of the z^3 form — the radical exists BECAUSE the
+        // trace is right.
+        let z = markov_z(Q_0);
+        let gl = gram_from_weights(Q_0, &[1.0, z, z, z * z, z * z, z * z * z]);
+        let wl = (0..6)
+            .map(|i| (0..6).map(|j| gl[i][j] * v[j]).sum::<f64>().abs())
+            .fold(0.0, f64::max);
+        assert!(wl > 1e-3, "z^3 Gram should NOT be annihilated: {wl}");
     }
 
     /// Moore-Penrose defining identities, plus the property that actually
