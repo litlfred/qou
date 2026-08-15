@@ -3,9 +3,19 @@
 //! # Why this exists
 //!
 //! On 2026-08-15 the substrate anchor `Q_0` was re-pinned muon → proton, and
-//! the committed certificates needed regenerating to match. **They could not
-//! be**, and the reason was not the compute cost — it was that a certificate
-//! did not record enough about its own generation to be reproduced:
+//! the committed certificates were examined for regeneration.
+//!
+//! **Correction, recorded because the wrong version of this paragraph shipped
+//! first.** It said the certificates "could not be" reproduced. That was
+//! withdrawn: the f64 fields *are* derivable from the exact symbolic Laurent
+//! terms the v9 certificates carry, via `tr_alt_f64 = eval(tr_alt) / 2^pn_count`
+//! (`v9.rs:833-841`). Whoever reads this should not take "irreproducible" as
+//! established — it is not, and the repair tooling depends on it being false.
+//!
+//! What is genuinely missing is narrower, and is what this type records: a
+//! certificate does not say *how it was generated*, so a regeneration cannot be
+//! set up without reading the emitter's source at the commit that produced it.
+//! Three specifics:
 //!
 //! * **The generator was not recoverable per file.** The 51 committed
 //!   certificates came from FOUR different binaries (`hecke-bigint (v9)` ×35,
@@ -50,7 +60,9 @@ pub struct Generation {
     pub reproduce: String,
     /// Substrate anchor used, as an f64.
     pub q0: f64,
-    /// Which pin `q0` is — `"proton"`, `"muon"`, or `"other"`.
+    /// Which pin `q0` is. Must stay in sync with the `q0_pin` enum in
+    /// `schemas/certificate.schema.json`; `classify_pin` is the only writer,
+    /// and `classify_pin_is_a_schema_value` asserts the two agree.
     pub q0_pin: String,
     /// Crate version at generation time.
     pub engine_version: String,
@@ -169,6 +181,48 @@ mod tests {
         assert_eq!(classify_pin(Q0_MUON), "muon");
         // And the 5-digit literal is called out, not lumped into "other".
         assert_eq!(classify_pin(1.10998), "truncated-5-digit");
+    }
+
+    /// Every value `classify_pin` can emit must be in the schema's enum.
+    ///
+    /// It was not: `"truncated-5-digit"` was added to the classifier and not
+    /// to `schemas/certificate.schema.json`, so any certificate generated at
+    /// the 1.10998 literal would have been schema-INVALID — and that is
+    /// precisely the certificate class the bucket exists to find. Read the
+    /// enum out of the schema file rather than restating it, so the test
+    /// fails on a real divergence instead of on a stale copy.
+    #[test]
+    fn classify_pin_is_a_schema_value() {
+        let schema = std::fs::read_to_string(concat!(
+            env!("CARGO_MANIFEST_DIR"),
+            "/schemas/certificate.schema.json"
+        ))
+        .expect("certificate schema must be readable from the crate root");
+        let doc: serde_json::Value =
+            serde_json::from_str(&schema).expect("certificate schema must parse");
+        let allowed = doc["properties"]["generation"]["properties"]["q0_pin"]["enum"]
+            .as_array()
+            .expect("q0_pin must declare an enum")
+            .iter()
+            .map(|v| v.as_str().unwrap().to_string())
+            .collect::<Vec<_>>();
+
+        // Sample across every branch, including the bucket boundaries.
+        for q in [
+            Q0_PROTON,
+            Q0_MUON,
+            1.1099785955733347,
+            1.10998,
+            1.5,
+            0.0,
+            f64::NAN,
+        ] {
+            let got = classify_pin(q);
+            assert!(
+                allowed.iter().any(|a| a == got),
+                "classify_pin({q}) = {got:?}, not in schema enum {allowed:?}"
+            );
+        }
     }
 
     #[test]
