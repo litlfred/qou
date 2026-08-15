@@ -84,9 +84,33 @@ pub fn hecke_h(q: f64) -> f64 {
 
 /// Markov-trace weights on the 6-element NF basis (convention D, via
 /// [`markov_z`]).
+/// **CARRIES A KNOWN BUG in the last entry.** `TR_M[5]` is `z³`; the correct
+/// Markov value for `e⁻ = σ₀σ₁σ₀` is `h·z² + z` — see [`trace_weights_markov`].
+///
+/// Fixed in Python on 2026-05-19
+/// (`docs/audits/2026-05-19-trm5-markov-bug.md`) and never ported here. It is
+/// still not fixed *in this function* because the repair is not local: with the
+/// correct weight this Gram is SINGULAR under convention D, so [`gram_inverse`]
+/// — and the live downstream family that consumes its output — stop being
+/// well-defined. See the module note. Bean `qou-m7py`.
 pub fn trace_weights(q: f64) -> [f64; 6] {
     let z = markov_z(q);
     [1.0, z, z, z * z, z * z, z * z * z]
+}
+
+/// Markov-trace weights with the CORRECT `TR_M[5] = h·z² + z`.
+///
+/// Matches `pyhecke.gram.TR_M` exactly. `e⁻ = σ₀σ₁σ₀` reduces by cyclicity plus
+/// `σ₀² = h·σ₀ + 1`; `z³` (in [`trace_weights`]) is the pre-2026-05-19 bug.
+///
+/// Added alongside — rather than in place of — the buggy version so the
+/// correct object is available, tested, and verifiable NOW, while the
+/// user-visible switch stays a single gated line. Nothing in the shipped
+/// pipeline calls this yet.
+pub fn trace_weights_markov(q: f64) -> [f64; 6] {
+    let z = markov_z(q);
+    let h = hecke_h(q);
+    [1.0, z, z, z * z, z * z, h * z * z + z]
 }
 
 // ─── Word representation + Hecke reduction ───────────────────────────
@@ -198,8 +222,19 @@ fn reduce_nf(mut terms: Poly, h: f64) -> Poly {
 /// `G[i, j] = tr_M(b_i · b_j)` where `b_k = NF_BASIS[k]` and
 /// `tr_M` is the Markov trace extended linearly.
 pub fn gram_matrix(q: f64) -> [[f64; 6]; 6] {
+    gram_from_weights(q, &trace_weights(q))
+}
+
+/// Gram matrix built from an explicit weight vector.
+///
+/// Factored out of [`gram_matrix`] so the same NF reduction can be driven by
+/// either the legacy [`trace_weights`] (`z³`) or the correct
+/// [`trace_weights_markov`] (`h·z² + z`) without duplicating the loop. This is
+/// the whole mechanical content of the pending TR_M[5] repair: once the owner
+/// decision below is taken, `gram_matrix` repoints to `trace_weights_markov`
+/// and nothing else in this function changes.
+fn gram_from_weights(q: f64, tr_m: &[f64; 6]) -> [[f64; 6]; 6] {
     let h = hecke_h(q);
-    let tr_m = trace_weights(q);
     let mut g = [[0.0f64; 6]; 6];
     for i in 0..6 {
         for j in 0..6 {
@@ -215,6 +250,84 @@ pub fn gram_matrix(q: f64) -> [[f64; 6]; 6] {
         }
     }
     g
+}
+
+/// Gram matrix under the CORRECT Markov trace ([`trace_weights_markov`]).
+///
+/// SINGULAR by construction — see [`gram_radical`]. Use
+/// [`gram_quotient_inverse`] rather than [`gram_inverse`] with this.
+pub fn gram_matrix_markov(q: f64) -> [[f64; 6]; 6] {
+    gram_from_weights(q, &trace_weights_markov(q))
+}
+
+/// The radical of the Markov trace form under convention D, in closed form.
+///
+/// `v_i = (-1/q)^len(w_i)` over [`NF_BASIS`] — the three-strand
+/// q-antisymmetriser `Σ_w (-1/q)^ℓ(w) T_w`. Mirrors `pyhecke.gram.RADICAL`
+/// exactly, including normalisation (it is NOT a unit vector).
+///
+/// This is a null direction of [`gram_matrix_markov`], NOT of the legacy
+/// [`gram_matrix`] — the `z³` bug is precisely what makes the legacy form
+/// non-singular. Established exactly over ℚ (no floating point) at three
+/// independent rational `q` by
+/// `computations/probes/gram_radical_exact_probe.py`.
+pub fn gram_radical(q: f64) -> [f64; 6] {
+    let mut v = [0.0f64; 6];
+    for (i, w) in NF_BASIS.iter().enumerate() {
+        v[i] = (-1.0 / q).powi(w.len() as i32);
+    }
+    v
+}
+
+/// Inverse of the Markov trace form on the quotient `H_3(q)/rad`.
+///
+/// The Moore–Penrose pseudoinverse of [`gram_matrix_markov`], and the honest
+/// replacement for [`gram_inverse`] under convention D: that form is singular,
+/// so a 6×6 inverse does not exist and Gauss–Jordan on it either panics or
+/// inverts rounding noise.
+///
+/// Computed by the rank-one shift rather than a general SVD, which is exact
+/// here because the kernel is known in closed form and is one-dimensional. For
+/// symmetric `G` with unit kernel vector `u`,
+///
+/// ```text
+///     (G + α u uᵀ)⁻¹ − (1/α) u uᵀ  =  G⁺        for any α ≠ 0
+/// ```
+///
+/// since the shift moves the single zero eigenvalue to `α`, leaving the other
+/// five eigenpairs untouched, and the subtraction removes the `u` direction
+/// again. `G` is symmetric by cyclicity of the trace
+/// (`tr_M(b_i b_j) = tr_M(b_j b_i)`), which is what licenses this. The result
+/// agrees with `numpy.linalg.pinv` — pinned in the tests.
+///
+/// `α` is taken as the mean absolute diagonal entry so the shifted matrix is
+/// conditioned like `G` itself, rather than a hardcoded constant that would be
+/// badly scaled at extreme `q`.
+pub fn gram_quotient_inverse(q: f64) -> [[f64; 6]; 6] {
+    let g = gram_matrix_markov(q);
+
+    // Unit kernel vector.
+    let r = gram_radical(q);
+    let norm = r.iter().map(|x| x * x).sum::<f64>().sqrt();
+    let u: Vec<f64> = r.iter().map(|x| x / norm).collect();
+
+    let alpha = (0..6).map(|i| g[i][i].abs()).sum::<f64>() / 6.0;
+
+    let mut shifted = g;
+    for i in 0..6 {
+        for j in 0..6 {
+            shifted[i][j] += alpha * u[i] * u[j];
+        }
+    }
+
+    let mut inv = invert_6x6(&shifted)
+        .expect("rank-one shift of the Markov Gram must be invertible");
+    for i in 0..6 {
+        for j in 0..6 {
+            inv[i][j] -= u[i] * u[j] / alpha;
+        }
+    }
+    inv
 }
 
 /// Inverse of the Gram matrix (via Gauss-Jordan on f64).
@@ -800,6 +913,135 @@ mod tests {
         assert!((nf[0] - 1.0).abs() < 1e-14);
         for i in 1..6 {
             assert!(nf[i].abs() < 1e-14);
+        }
+    }
+
+    // ─── Convention-D Markov repair: correct trace, radical, quotient ───
+    // These exercise `trace_weights_markov` / `gram_matrix_markov` /
+    // `gram_radical` / `gram_quotient_inverse`, which are ADDITIVE — nothing
+    // in the shipped pipeline calls them yet. They exist so the correct
+    // objects are verified before the gated switch, not after.
+
+    /// The two trace vectors agree except in the last entry, and the last
+    /// entry differs by a lot -- so this is a real repair, not a rounding fix.
+    #[test]
+    fn markov_trace_differs_only_at_e_minus() {
+        let legacy = trace_weights(Q_0);
+        let fixed = trace_weights_markov(Q_0);
+        for i in 0..5 {
+            assert!((legacy[i] - fixed[i]).abs() < 1e-15, "entry {} moved", i);
+        }
+        let z = markov_z(Q_0);
+        let h = hecke_h(Q_0);
+        // Derived from the definition, not read off the implementation.
+        assert!((fixed[5] - (h * z * z + z)).abs() < 1e-15);
+        assert!((legacy[5] - z * z * z).abs() < 1e-15);
+        assert!(
+            (fixed[5] - legacy[5]).abs() > 1e-3,
+            "z^3 = {} vs h*z^2 + z = {}", legacy[5], fixed[5]
+        );
+    }
+
+    /// The corrected Gram is SINGULAR and the legacy one is NOT. This is the
+    /// whole reason the fix could not be applied in place: `gram_inverse`
+    /// stops being well-defined the moment the trace is right.
+    #[test]
+    fn markov_gram_is_singular_and_legacy_is_not() {
+        let legacy = det_6x6(&gram_matrix(Q_0));
+        let fixed = det_6x6(&gram_matrix_markov(Q_0));
+        assert!(legacy.abs() > 1e-3, "legacy det should be far from 0: {}", legacy);
+        assert!(fixed.abs() < 1e-12, "corrected det should be ~0: {}", fixed);
+    }
+
+    /// The closed-form q-antisymmetriser annihilates the corrected Gram, and
+    /// does NOT annihilate the legacy one.
+    #[test]
+    fn radical_annihilates_corrected_gram_only() {
+        let v = gram_radical(Q_0);
+        // Spot-check the closed form itself against the definition.
+        assert!((v[0] - 1.0).abs() < 1e-15);
+        assert!((v[1] - (-1.0 / Q_0)).abs() < 1e-15);
+        assert!((v[5] - (-1.0 / Q_0).powi(3)).abs() < 1e-15);
+
+        let gm = gram_matrix_markov(Q_0);
+        let gl = gram_matrix(Q_0);
+        let mut max_fixed = 0.0f64;
+        let mut max_legacy = 0.0f64;
+        for i in 0..6 {
+            let sf: f64 = (0..6).map(|j| gm[i][j] * v[j]).sum();
+            let sl: f64 = (0..6).map(|j| gl[i][j] * v[j]).sum();
+            max_fixed = max_fixed.max(sf.abs());
+            max_legacy = max_legacy.max(sl.abs());
+        }
+        assert!(max_fixed < 1e-12, "G_markov @ radical = {}", max_fixed);
+        assert!(max_legacy > 1e-3, "legacy G @ radical should NOT vanish: {}", max_legacy);
+    }
+
+    /// Moore-Penrose defining identities, plus the property that actually
+    /// distinguishes a quotient inverse from a regularised fake: it must
+    /// ANNIHILATE the radical.
+    #[test]
+    fn quotient_inverse_is_the_pseudoinverse() {
+        let g = gram_matrix_markov(Q_0);
+        let p = gram_quotient_inverse(Q_0);
+
+        let mul = |a: &[[f64; 6]; 6], b: &[[f64; 6]; 6]| {
+            let mut o = [[0.0f64; 6]; 6];
+            for i in 0..6 {
+                for j in 0..6 {
+                    o[i][j] = (0..6).map(|k| a[i][k] * b[k][j]).sum();
+                }
+            }
+            o
+        };
+
+        let gpg = mul(&mul(&g, &p), &g);
+        let pgp = mul(&mul(&p, &g), &p);
+        for i in 0..6 {
+            for j in 0..6 {
+                assert!((gpg[i][j] - g[i][j]).abs() < 1e-8, "G P G != G at {},{}", i, j);
+                assert!((pgp[i][j] - p[i][j]).abs() < 1e-8, "P G P != P at {},{}", i, j);
+            }
+        }
+
+        let v = gram_radical(Q_0);
+        let max: f64 = (0..6)
+            .map(|i| (0..6).map(|j| p[i][j] * v[j]).sum::<f64>().abs())
+            .fold(0.0, f64::max);
+        assert!(max < 1e-8, "G_PINV must kill the radical, got {}", max);
+    }
+
+    /// Cross-check against `numpy.linalg.pinv` via `pyhecke.gram.G_PINV`.
+    ///
+    /// Values captured at the PROTON pin, which is what pyhecke reads --
+    /// deliberately NOT `Q_0` (this crate's constant is still the muon pin;
+    /// re-pinning it is a separate owner decision, see the module note). So
+    /// this test passes the proton value explicitly and is unaffected by, and
+    /// does not prejudge, that decision.
+    #[test]
+    fn quotient_inverse_matches_python_pinv() {
+        const Q_PROTON: f64 = 1.1099785827513808;
+        let p = gram_quotient_inverse(Q_PROTON);
+        // pyhecke.gram.G_PINV row 0 at the proton pin.
+        let expected_row0 = [
+            0.9012212173018036,
+            0.12260020756551251,
+            0.1226002075655125,
+            -0.40169476804296567,
+            -0.40169476804296567,
+            0.03862177933380513,
+        ];
+        for j in 0..6 {
+            assert!(
+                (p[0][j] - expected_row0[j]).abs() < 1e-9,
+                "P[0][{}] = {} vs numpy {}", j, p[0][j], expected_row0[j]
+            );
+        }
+        // Symmetry, which pinv of a symmetric matrix must have.
+        for i in 0..6 {
+            for j in 0..6 {
+                assert!((p[i][j] - p[j][i]).abs() < 1e-10, "asymmetric at {},{}", i, j);
+            }
         }
     }
 }
