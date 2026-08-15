@@ -90,3 +90,21 @@ isotypic API supports step 2 off the shelf. `IsIsotypicOfType` exists
 (`Mathlib.RingTheory.SimpleModule.Isotypic`); I have not checked whether it
 carries a multiplicity-as-`Hom`-dimension lemma or whether that has to be built.
 Probe that first — it is the difference between a session and a tranche.
+
+### Premise probed the same session — step 2 is supported, with one wrinkle
+
+Measured against the pinned Mathlib rather than assumed:
+
+- `IsIsotypicOfType.linearEquiv_finsupp` — an isotypic semisimple module of type
+  `S` is `≃ₗ[R] (ι →₀ S)`. **Wrinkle: `ι` is existentially bound**, same shape as
+  the Wedderburn statement, so it does not hand over a multiplicity *number*.
+  It is still enough, because the number comes from the other side:
+- `LinearMap.ringLmapEquivSelf : (R →ₗ[R] M) ≃ₗ[S] M` — i.e. `Hom_A(A, M) ≅ M`.
+
+So `dim_k S_j = dim_k Hom_A(A, S_j) = m_j · dim_k End_A(S_j) = m_j` **using W2**
+for the last equality, which pins `m_j = dim_k S_j` without ever needing `ι`
+named. The one further ingredient is Schur's `Hom_A(Sᵢ, S_j) = 0` for `i ≠ j`,
+for which the corpus already has `specht_pairwise_noniso`.
+
+Verdict: the route is viable and W2 is load-bearing in it. Not attempted yet —
+this is a premise check, not a proof.
