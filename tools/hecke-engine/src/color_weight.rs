@@ -310,3 +310,262 @@ pub mod mpfr {
     }
 }
 
+// ---------------------------------------------------------------------------
+// Convergence self-check against the Python canonical.
+// ---------------------------------------------------------------------------
+
+/// Runtime convergence self-check against the Python canonical.
+///
+/// # Why this exists
+///
+/// This module is a **second numeric implementation** of a convention whose
+/// first implementation is `computations/closed_form_tau_M.py`. That is a
+/// drift surface — the same one bean `qou-m7py` closed for `trace_weights`
+/// (`z^3` in Rust vs `h*z^2 + z` in Python, undetected because nothing
+/// compared them). A port without a comparator re-opens it.
+///
+/// # The pattern (mirrored from `pyhecke.gram::_native_ok`)
+///
+/// 1. Pin the *other* implementation's output as an in-tree reference
+///    ([`CANONICAL`]), the way `gram.py` pins `TR_M` / `G`.
+/// 2. Recompute here and compare at a stated tolerance.
+/// 3. On mismatch **refuse loudly** ([`DIVERGENCE_MSG`]) — never silently
+///    return the divergent number.
+pub mod convergence {
+    use super::PnConvention;
+
+    /// One row of the pinned Python canonical.
+    #[derive(Debug, Clone, Copy)]
+    pub struct CanonicalRow {
+        /// Isotope label, for error messages.
+        pub isotope: &'static str,
+        /// Proton count `Z`.
+        pub z_count: usize,
+        /// Neutron count `N`.
+        pub n_count: usize,
+        /// `closed_form_ratio(Z, N, q0, "bring_color_weighted")` as a decimal
+        /// string carrying 50 significant digits.
+        pub ratio_50dps: &'static str,
+    }
+
+    /// The substrate anchor as a 50-digit decimal string — `q_parameter.Q_50_DIGIT_STR`,
+    /// the **proton/experimental** pin. Kept as a string so no f64 rounding
+    /// enters the reference; [`super::super::gram::Q_0`] is its f64 shadow.
+    pub const Q0_50DPS: &str = "1.1099785827513808075916690956107688798744991218736";
+
+    /// `delta(q0)` — pinned for the self-check of the flavour split alone.
+    pub const DELTA_Q0_50DPS: &str =
+        "0.0013757108070270960085511092741065506222254760119378";
+
+    /// `f_pn(q0)` under `bring_color_weighted` — pinned separately from the
+    /// ratios because it is the only factor this port introduces.
+    pub const F_PN_Q0_50DPS: &str =
+        "0.50822978937673896257799579765589360389830839091657";
+
+    /// Python-canonical `closed_form_ratio` at the proton `q0`, produced by
+    /// running, from the repo root:
+    ///
+    /// ```text
+    /// python3 - <<'PY'
+    /// import sys
+    /// sys.path.insert(0, "computations"); sys.path.insert(0, "computations/substrate")
+    /// import mpmath as mp; mp.mp.dps = 60
+    /// from q_parameter import Q_50_DIGIT_STR
+    /// from closed_form_tau_M import closed_form_ratio
+    /// q = mp.mpf(Q_50_DIGIT_STR)
+    /// for name, Z, N in [("2H",1,1),("3H",1,2),("3He",2,1),("4He",2,2),("6Li",3,3),("7Li",3,4)]:
+    ///     print(name, mp.nstr(closed_form_ratio(Z, N, q, pn_convention="bring_color_weighted"), 50))
+    /// PY
+    /// ```
+    ///
+    /// Captured 2026-08-15 against `closed_form_tau_M.py` at commit `85e94fb8`.
+    /// If a future convention ruling moves these, regenerate with the command
+    /// above — **do not** hand-edit a digit to make a test go green.
+    pub const CANONICAL: &[CanonicalRow] = &[
+        CanonicalRow {
+            isotope: "2H",
+            z_count: 1,
+            n_count: 1,
+            ratio_50dps: "0.50822978937673896257799579765589360389830839091657",
+        },
+        CanonicalRow {
+            isotope: "3H",
+            z_count: 1,
+            n_count: 2,
+            ratio_50dps: "0.20513564044864976892685000166038351176091031419587",
+        },
+        CanonicalRow {
+            isotope: "3He",
+            z_count: 2,
+            n_count: 1,
+            ratio_50dps: "0.31138631207259565241288839663309982228956162859607",
+        },
+        CanonicalRow {
+            isotope: "4He",
+            z_count: 2,
+            n_count: 2,
+            ratio_50dps: "0.12568415289526626941387850586668409901893672284696",
+        },
+        CanonicalRow {
+            isotope: "6Li",
+            z_count: 3,
+            n_count: 3,
+            ratio_50dps: "0.031081425408716222670195151585816318684920749964179",
+        },
+        CanonicalRow {
+            isotope: "7Li",
+            z_count: 3,
+            n_count: 4,
+            ratio_50dps: "0.012545325442440024606630167466307946009113087306982",
+        },
+    ];
+
+    /// Relative tolerance for the **MPFR** comparison.
+    ///
+    /// The pinned references carry 50 significant digits, and `mpmath.nstr`
+    /// rounds the 50th — so the reference itself is only meaningful to about
+    /// `1e-49` relative. `1e-45` leaves four decades of headroom over that
+    /// rounding while still being twenty decades stricter than the repo's
+    /// 50-dps cross-check floor of `1e-25` (`compute-author.md` §1.1). A
+    /// genuine algebraic divergence (a wrong bond factor, a dropped `delta/4`,
+    /// convention C vs D) is `1e-3` or larger, so this gate has enormous
+    /// discriminating margin and no false-positive risk from rounding.
+    pub const TOL_MPFR: f64 = 1e-45;
+
+    /// Relative tolerance for the **f64** comparison.
+    ///
+    /// The f64 path accumulates up to `A-1` multiplications of correctly
+    /// rounded quotients; at the isotopes in [`CANONICAL`] that is at most six
+    /// roundings, so `1e-15` is the honest bound. This is NOT a 50-dps check
+    /// and is documented as lossy — it exists to catch an f64 *port* error,
+    /// not to certify precision.
+    pub const TOL_F64: f64 = 1e-15;
+
+    /// Emitted verbatim on divergence. Mirrors `_NATIVE_STALE_MSG` in
+    /// `pyhecke/gram.py`: name the likely cause, name the fix, and refuse.
+    pub const DIVERGENCE_MSG: &str = concat!(
+        "hecke_engine::color_weight DIVERGES from the Python canonical ",
+        "(computations/closed_form_tau_M.py) at the proton q0. Likely causes, ",
+        "in order: (1) a trace-convention ruling moved `markov_z` on one side ",
+        "only (C `1/(q^1/2+q^-1/2)` vs D `q^3/(q^2+1)`); (2) the p-n factor ",
+        "lost its `delta/4` colour weighting, collapsing to strict_averaged; ",
+        "(3) `flavor_split_leading` was swapped for the POSITED subleading ",
+        "form de-wired on 2026-06-29; (4) the q0 pin straddled the muon/proton ",
+        "layer boundary. Regenerate the reference table with the command in ",
+        "the `CANONICAL` docstring and reconcile the MATH. Refusing rather ",
+        "than returning a divergent number. Do NOT widen TOL_MPFR."
+    );
+
+    /// A single divergent row.
+    #[derive(Debug, Clone)]
+    pub struct Divergence {
+        /// Isotope that diverged.
+        pub isotope: &'static str,
+        /// Value this crate computed, as a decimal string.
+        pub computed: String,
+        /// Pinned Python-canonical value.
+        pub expected: &'static str,
+        /// Measured relative difference.
+        pub rel_diff: f64,
+        /// The tolerance that was applied.
+        pub tol: f64,
+    }
+
+    /// Check the **f64** path against [`CANONICAL`] at [`TOL_F64`].
+    ///
+    /// Returns `Ok(max_rel_diff)` on agreement, or every divergent row.
+    pub fn verify_f64_convergence() -> Result<f64, Vec<Divergence>> {
+        let q = crate::gram::Q_0;
+        let mut worst = 0.0f64;
+        let mut bad = Vec::new();
+        for row in CANONICAL {
+            let got = super::closed_form_ratio(
+                row.z_count,
+                row.n_count,
+                q,
+                PnConvention::BringColorWeighted,
+            );
+            let want: f64 = row.ratio_50dps.parse().expect("pinned reference parses");
+            let rel = ((got - want) / want).abs();
+            if rel > worst {
+                worst = rel;
+            }
+            if !(rel <= TOL_F64) {
+                bad.push(Divergence {
+                    isotope: row.isotope,
+                    computed: format!("{got:.17e}"),
+                    expected: row.ratio_50dps,
+                    rel_diff: rel,
+                    tol: TOL_F64,
+                });
+            }
+        }
+        if bad.is_empty() {
+            Ok(worst)
+        } else {
+            Err(bad)
+        }
+    }
+
+    /// Check the **MPFR** path against [`CANONICAL`] at [`TOL_MPFR`].
+    ///
+    /// This is the gate that matters: it is the only comparison in this crate
+    /// carried out at the 50-dps L1 floor. `dps` is the working precision;
+    /// pass at least 60 so the 50-digit reference is not the limiting factor.
+    #[cfg(feature = "mpfr")]
+    pub fn verify_mpfr_convergence(dps: u32) -> Result<f64, Vec<Divergence>> {
+        use rug::Float;
+        let bits = super::mpfr::bits_for_dps(dps);
+        let q = Float::with_val(
+            bits,
+            Float::parse(Q0_50DPS).expect("pinned q0 parses"),
+        );
+        let mut worst = 0.0f64;
+        let mut bad = Vec::new();
+        for row in CANONICAL {
+            let got = super::mpfr::closed_form_ratio_mpfr(
+                row.z_count,
+                row.n_count,
+                &q,
+                PnConvention::BringColorWeighted,
+            );
+            let want = Float::with_val(
+                bits,
+                Float::parse(row.ratio_50dps).expect("pinned reference parses"),
+            );
+            let diff = Float::with_val(bits, &got - &want);
+            let rel = Float::with_val(bits, &diff / &want).abs().to_f64();
+            if rel > worst {
+                worst = rel;
+            }
+            if !(rel <= TOL_MPFR) {
+                bad.push(Divergence {
+                    isotope: row.isotope,
+                    computed: got.to_string_radix(10, Some(50)),
+                    expected: row.ratio_50dps,
+                    rel_diff: rel,
+                    tol: TOL_MPFR,
+                });
+            }
+        }
+        if bad.is_empty() {
+            Ok(worst)
+        } else {
+            Err(bad)
+        }
+    }
+
+    /// Render divergences using [`DIVERGENCE_MSG`], for a caller that wants to
+    /// panic / log rather than match on the rows.
+    pub fn describe(bad: &[Divergence]) -> String {
+        let mut s = String::from(DIVERGENCE_MSG);
+        for d in bad {
+            s.push_str(&format!(
+                "\n  {}: computed {} vs canonical {} (rel {:.3e} > tol {:.0e})",
+                d.isotope, d.computed, d.expected, d.rel_diff, d.tol
+            ));
+        }
+        s
+    }
+}
+
