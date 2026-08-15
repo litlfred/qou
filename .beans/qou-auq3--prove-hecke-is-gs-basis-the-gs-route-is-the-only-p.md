@@ -944,3 +944,69 @@ Filed as **qou-yzl8** rather than fixed: `QJucysMurphy.lean` belongs to
 `qou-ck0g`, in-progress under another session. Six `ring`-on-a-noncommutative-
 algebra sites — the same trap §6 hit twenty minutes earlier, which is why it was
 recognisable on sight. UGB itself is green (1212 jobs).
+
+## §4r — the braid self-overlap `σᵢσᵢ₋₁σᵢσᵢ₋₁σᵢ`: setup landed, chain derived
+
+The largest single block left: **twelve** of the forty. Three words carry it
+(`10101`, `21212`, `32323`) and each carries **two** rules with that leading
+monomial (§4j), so four ordered rule-pairs per word — `Y×Y`, `Y×B`, `B×Y`, `B×B`,
+three of each. Stated for an abstract pair `r₁, r₂` it covers all twelve at once
+and generally in `n`. They are twelve of the thirteen 8-step compositions in the
+witness; the thirteenth (`B230 × F31`) is unrelated.
+
+### Landed
+
+`BraidSelfOverlap.oc` and **`oc_spoly_coeff`** — axiom-clean, UGB green
+(1212 jobs). The S-polynomial is **two terms**, and the leading coefficients
+enter only through their product, because the ambient word is reached from both
+sides and cancels:
+
+    spoly = c₁c₂ · ( σᵢσᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁  −  σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁σᵢ )
+
+### The chain, derived from the confluence engine
+
+Eight steps. `I = σᵢ`, `J = σᵢ₋₁`, `K = c₁c₂`:
+
+| # | target | rule | context | coefficient |
+|---|---|---|---|---|
+| 1 | `IJJIJ` | `Q_{i-1}` | `(I ∣ IJ)` | `K` |
+| 2 | `JIJJI` | `Q_{i-1}` | `(JI ∣ I)` | `−K` |
+| 3 | `IJIJ` | `r₁` | `(ε ∣ J)` | `K·h·c₁` |
+| 4 | `JIJI` | `r₁` | `(J ∣ ε)` | `−K·h·c₁` |
+| 5 | `JIJJ` | `Q_{i-1}` | `(JI ∣ ε)` | `K·h` |
+| 6 | `JJIJ` | `Q_{i-1}` | `(ε ∣ IJ)` | `−K·h` |
+| 7 | `IIJ` | `Q_i` | `(ε ∣ J)` | `K` |
+| 8 | `JII` | `Q_i` | `(J ∣ ε)` | `−K` |
+
+and the intermediate elements, which is the part worth having written down:
+
+    F₀ = K·IJJIJ − K·JIJJI
+    F₁ = K·IIJ + Kh·IJIJ − K·JIJJI
+    F₂ = K·IIJ + Kh·IJIJ − K·JII − Kh·JIJI
+    F₃ = K·IIJ − K·JII + Kh·JIJJ − Kh·JIJI
+    F₄ = K·IIJ − K·JII + Kh·JIJJ − Kh·JJIJ
+    F₅ = K·IIJ − K·JII + Kh·JI + Kh²·JIJ − Kh·JJIJ
+    F₆ = K·IIJ − K·JII + Kh·JI − Kh·IJ
+    F₇ = K·J + Kh·JI − K·JII
+    F₈ = 0
+
+**No intermediate exceeds five terms**, and `h²` appears in exactly one (`F₅`)
+before cancelling at step 6. Four applications of the quadratic rule at `i − 1`,
+two of the braid rule itself, two of the quadratic rule at `i`.
+
+### Two hypotheses the chain forces
+
+* **`c₁ · c₁ = 1`** for steps 3 and 4. The step coefficient must satisfy
+  `c₃ · lc(r₁) = K·h` with `lc(r₁) = c₁`, and there is no division in a `Ring` —
+  so `c₃ = K·h·c₁` works only when `c₁² = 1`. Both instances have `c = ±1`, so
+  this costs nothing, but it has to be a hypothesis rather than an afterthought.
+* **`h ≠ 0`** for steps 3–6, as in §4p and §4q.
+
+### Why the chain is recorded rather than the steps written
+
+Eight `SingleStepReduction`s against five-term intermediates is roughly 2.5× §4p,
+and generating them inline made each element appear three times (source, target,
+coefficient lemma) — unreadable. The next pass should name `F₀ … F₈` as
+definitions first and generate against those. The table above is the
+specification; it came from the engine, so it is a check on the Lean rather than
+a guess the Lean would have to discover.

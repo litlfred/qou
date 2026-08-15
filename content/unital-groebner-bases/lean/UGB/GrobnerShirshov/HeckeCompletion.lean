@@ -1807,4 +1807,100 @@ theorem quad_bokutShiao_resolves {n : ℕ} (hn : 0 < n) (hp : HeckeParams) {i' i
 
 end CyclicQuadLeft
 
+/-! ## §4r  The braid self-overlap `σᵢσᵢ₋₁σᵢσᵢ₋₁σᵢ`
+
+The single largest block of what remains at `n = 4`: **twelve** of the forty
+compositions, and the classical one — the braid relation overlapping itself.
+
+Three words carry it (`σ₁σ₀σ₁σ₀σ₁`, `σ₂σ₁σ₂σ₁σ₂`, `σ₃σ₂σ₃σ₂σ₃`) and each carries
+*two* rules with the same leading monomial (§4j: Yang–Baxter, and Bokut–Shiao at
+`j = i − 1`), so four ordered rule-pairs per word. Stating the family for an
+abstract pair `r₁, r₂` — each with leading monomial `σᵢσᵢ₋₁σᵢ` and relation
+`c·σᵢσᵢ₋₁σᵢ − c·σᵢ₋₁σᵢσᵢ₋₁` — covers all twelve at once, and generally in `n`.
+
+**The S-polynomial is two terms.** Both rules lead on the ambient word, so it
+cancels and nothing about `c₁`, `c₂` survives except their product:
+
+    spoly = c₁c₂ · ( σᵢσᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁  −  σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁σᵢ )
+
+**The chain is eight steps**, derived from the `n = 4` confluence engine and
+recorded here because it is the specification the remaining proof has to meet.
+Writing `I = σᵢ`, `J = σᵢ₋₁`, and `K = c₁c₂`:
+
+| # | target | rule | context | coefficient |
+|---|---|---|---|---|
+| 1 | `IJJIJ` | `Q_{i-1}` | `(I ∣ IJ)` | `K` |
+| 2 | `JIJJI` | `Q_{i-1}` | `(JI ∣ I)` | `−K` |
+| 3 | `IJIJ` | `r₁` | `(ε ∣ J)` | `K·h·c₁` |
+| 4 | `JIJI` | `r₁` | `(J ∣ ε)` | `−K·h·c₁` |
+| 5 | `JIJJ` | `Q_{i-1}` | `(JI ∣ ε)` | `K·h` |
+| 6 | `JJIJ` | `Q_{i-1}` | `(ε ∣ IJ)` | `−K·h` |
+| 7 | `IIJ` | `Q_i` | `(ε ∣ J)` | `K` |
+| 8 | `JII` | `Q_i` | `(J ∣ ε)` | `−K` |
+
+Four applications of the quadratic rule at `i − 1`, two of the braid rule itself,
+two of the quadratic rule at `i`. No intermediate exceeds **five** terms, and
+`h²` appears in exactly one of them (`F₅`) before cancelling. Steps 3 and 4 need
+`c₁ · c₁ = 1` — both instances have `c = ±1` — because the step coefficient must
+satisfy `c₃ · lc(r₁) = K·h` and `lc(r₁) = c₁`.
+
+`h ≠ 0` is needed for steps 3–6, as in §4p and §4q. -/
+
+namespace BraidSelfOverlap
+
+variable {n : ℕ} (hp : HeckeParams) (i' i : Fin n) (c₁ c₂ : ℝ)
+
+/-- `σᵢσᵢ₋₁σᵢ` — the shared leading monomial. -/
+def wHi : Monomial (HeckeGen n) := [⟨i⟩, ⟨i'⟩, ⟨i⟩]
+
+/-- `σᵢ₋₁σᵢσᵢ₋₁` — the other word of both rules. -/
+def wLo : Monomial (HeckeGen n) := [⟨i'⟩, ⟨i⟩, ⟨i'⟩]
+
+/-- The composition of two rules that both lead on `σᵢσᵢ₋₁σᵢ`, overlapping in the
+middle letter — the braid relation against itself. -/
+noncomputable def oc (r₁ r₂ : ReductionRule (HeckeGen n) ℝ)
+    (hlm₁ : r₁.lm (heckeOrder n) = wHi i' i)
+    (hlm₂ : r₂.lm (heckeOrder n) = wHi i' i) :
+    OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := r₁
+  rule₂ := r₂
+  left := [⟨i⟩, ⟨i'⟩]
+  overlap := [⟨i⟩]
+  right := [⟨i'⟩, ⟨i⟩]
+  lm₁_decomp := hlm₁
+  lm₂_decomp := hlm₂
+  overlap_nonempty := by simp
+
+/-- **The S-polynomial: two terms, and the leading coefficients enter only as
+their product.** The ambient word `σᵢσᵢ₋₁σᵢσᵢ₋₁σᵢ` is reached from both sides and
+cancels. -/
+theorem oc_spoly_coeff (r₁ r₂ : ReductionRule (HeckeGen n) ℝ)
+    (hrel₁ : ∀ w, r₁.relation.coeff w
+      = (AlgElement.ofTerms [(wHi i' i, c₁), (wLo i' i, -c₁)]).coeff w)
+    (hrel₂ : ∀ w, r₂.relation.coeff w
+      = (AlgElement.ofTerms [(wHi i' i, c₂), (wLo i' i, -c₂)]).coeff w)
+    (hlm₁ : r₁.lm (heckeOrder n) = wHi i' i) (hlm₂ : r₂.lm (heckeOrder n) = wHi i' i)
+    (hlc₁ : r₁.lc (heckeOrder n) = c₁) (hlc₂ : r₂.lc (heckeOrder n) = c₂)
+    (m : Monomial (HeckeGen n)) :
+    (oc i' i r₁ r₂ hlm₁ hlm₂).spoly.coeff m
+      = (AlgElement.ofTerms
+          [([(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i'⟩, ⟨i⟩, ⟨i'⟩], c₁ * c₂),
+           ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩, ⟨i'⟩, ⟨i⟩], -(c₁ * c₂))]).coeff m := by
+  show r₂.lc (heckeOrder n)
+      * (AlgElement.contextMul [] r₁.relation [(⟨i'⟩ : HeckeGen n), ⟨i⟩]).coeff m
+    - r₁.lc (heckeOrder n)
+      * (AlgElement.contextMul [(⟨i⟩ : HeckeGen n), ⟨i'⟩] r₂.relation []).coeff m
+    = _
+  rw [hlc₁, hlc₂,
+    AlgElement.contextMul_coeff_congr [] [(⟨i'⟩ : HeckeGen n), ⟨i⟩] hrel₁ m,
+    AlgElement.contextMul_coeff_congr [(⟨i⟩ : HeckeGen n), ⟨i'⟩] [] hrel₂ m,
+    AlgElement.contextMul_ofTerms_coeff, AlgElement.contextMul_ofTerms_coeff]
+  simp only [wHi, wLo, List.map_cons, List.map_nil, List.nil_append, List.append_nil,
+    List.cons_append, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+    decide_eq_true_eq]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+end BraidSelfOverlap
+
 end UGB.GrobnerShirshov.Hecke
