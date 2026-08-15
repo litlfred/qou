@@ -599,6 +599,7 @@ export default chapter({
 "thurston-volume-additivity",
         "flat-tetrahedron-zero-volume",
         "gluing-equations-do-not-detect-hyperbolicity",
+        "gluing-certification-mechanical-reach",
         "hyperbolic-knot-shape-fields",
         "five-two-saddle-sum-rule",
         "kummer-bloch-wigner-identity",
