@@ -186,6 +186,32 @@ def main() -> int:
     print(f"\n  (factors are against the DIRECT sigma, "
           f"{mp.nstr(sigma_baseline * MEV_TO_EV, 4)} eV — see the correlation note above)")
 
+    # ---- one measurement or two? ----------------------------------------
+    print("\n" + "-" * 78)
+    print("ONE MEASUREMENT OR TWO — the routes differ, and it is not a detail")
+    print("-" * 78)
+    print("\n  The mass-difference route adds in quadrature, so EACH input must")
+    print("  individually fall below the target. sigma(m_p) alone already exceeds")
+    print("  every target below, so that route needs TWO campaigns, not one.\n")
+    print(f"  {'target':<34}{'need':>10}  {'direct':>8} {'m_n':>8} {'m_p':>8}")
+    per_meas = []
+    for label, need, _ref in targets:
+        f_d, f_n, f_p = sigma_baseline / need, s_n / need, s_p / need
+        per_meas.append({"target": label,
+                         "required_sigma_eV": mp.nstr(need * MEV_TO_EV, 6),
+                         "factor_direct_Qbeta": mp.nstr(f_d, 6),
+                         "factor_m_n": mp.nstr(f_n, 6),
+                         "factor_m_p": mp.nstr(f_p, 6),
+                         "massdiff_route_needs_both": bool(f_p > 1)})
+        print(f"  {label:<34}{mp.nstr(need * MEV_TO_EV, 4):>8} eV "
+              f"{mp.nstr(f_d, 4):>7}x {mp.nstr(f_n, 4):>7}x {mp.nstr(f_p, 4):>7}x")
+    print(f"\n  sigma(m_p) = {mp.nstr(s_p * MEV_TO_EV, 4)} eV exceeds every target,")
+    print("  so: DIRECT route = one measurement improved ~26x;")
+    print("      MASS-DIFF route = two measurements improved ~20x and ~12x.")
+    print("  Which is the cheaper programme is a domain question, not one this")
+    print("  repository can answer — but the choice is now stated in the form an")
+    print("  experimentalist works in.")
+
     print("\n" + "-" * 78)
     print("WHAT IS NOT CLAIMED")
     print("-" * 78)
@@ -209,6 +235,10 @@ def main() -> int:
          "detail": mp.nstr(s_n ** 2 / var_tot * 100, 5) + "% of variance"},
         {"name": "all_targets_need_improvement",
          "passed": bool(all(mp.mpf(b["improvement_factor"]) > 1 for b in budget))},
+        {"name": "massdiff_route_needs_both_masses_improved",
+         "passed": bool(all(pm["massdiff_route_needs_both"] for pm in per_meas)),
+         "detail": "sigma(m_p) = " + mp.nstr(s_p * MEV_TO_EV, 4)
+                   + " eV alone exceeds every target"},
     ]
     all_passed = all(a["passed"] for a in assertions)
 
@@ -261,6 +291,8 @@ def main() -> int:
             "sigma_c3_over_abs_c3_pct": mp.nstr(
                 lever * sigma_direct / abs(c3p) * 100, 6),
             "budget": budget,
+            "per_measurement_requirement": per_meas,
+            "sigma_m_p_exceeds_every_target": True,
         },
         "context": {
             "axis": "front (a)/(e) triage, option D — the measurement ask",

@@ -5,12 +5,12 @@
   "tier": "error propagation on committed values (no fit)",
   "q0Anchor": "proton",
   "q0Value": "1.109978582751380807591669",
-  "computedAt": "2026-08-15T11:59:48.215400+00:00",
-  "commitSha": "1f0132ce3129a50c7708fdaf3c53bb953ea805f3",
+  "computedAt": "2026-08-15T12:16:31.181278+00:00",
+  "commitSha": "5e7ef6a043aa9efe1a9eb22c71b944f9d28ee6c2",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_c3_measurement_proposal_budget.py",
-  "scriptHash": "14974c7b0ca0",
+  "scriptHash": "f43ee18143c0",
   "assertions": [
     {
       "name": "lever_is_one_over_QN2_u_cubed",
@@ -29,6 +29,11 @@
     {
       "name": "all_targets_need_improvement",
       "passed": true
+    },
+    {
+      "name": "massdiff_route_needs_both_masses_improved",
+      "passed": true,
+      "detail": "sigma(m_p) = 0.29 eV alone exceeds every target"
     }
   ],
   "allPassed": true,
@@ -65,7 +70,34 @@
         "required_sigma_Qbeta_eV": "0.00468055",
         "improvement_factor": "130.326"
       }
-    ]
+    ],
+    "per_measurement_requirement": [
+      {
+        "target": "zero-location test resolves at mu-p scale",
+        "required_sigma_eV": "0.0237544",
+        "factor_direct_Qbeta": "25.6794",
+        "factor_m_n": "20.2068",
+        "factor_m_p": "12.2083",
+        "massdiff_route_needs_both": true
+      },
+      {
+        "target": "c_3 ~ -Vol(4_1) at 1 sigma (proton)",
+        "required_sigma_eV": "0.0190738",
+        "factor_direct_Qbeta": "31.981",
+        "factor_m_n": "25.1653",
+        "factor_m_p": "15.2041",
+        "massdiff_route_needs_both": true
+      },
+      {
+        "target": "c_3 ~ -Vol(4_1) at 1 sigma (muon)",
+        "required_sigma_eV": "0.00468055",
+        "factor_direct_Qbeta": "130.326",
+        "factor_m_n": "102.552",
+        "factor_m_p": "61.9585",
+        "massdiff_route_needs_both": true
+      }
+    ],
+    "sigma_m_p_exceeds_every_target": true
   },
   "context": {
     "axis": "front (a)/(e) triage, option D \u2014 the measurement ask",
