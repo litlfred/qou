@@ -295,6 +295,222 @@ theorem genMat_quadratic (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
 
 end Quadratic
 
+/-! ## Far commutation
+
+`σ_k σ_l = σ_l σ_k` for `|k - l| ≥ 2`, again on all of `SYT μ` at once.  Like the
+quadratic and unlike the braid, this relation is **column-local**: a far swap at `l` moves
+no cell that `σ_k` looks at (`cellOf_swapTableau_of_ne`), so every input to `σ_k`'s row
+rule — the parameter, the admissibility, the partner — survives it untouched
+(`axialDist_swapTableau_of_far`, `swapAdmissible_far_iff`).
+
+Note what is *not* needed: no hypothesis on `q` at all.  The quadratic had to know that
+`a(d)` and `a(-d)` sum to `q - q⁻¹`; far commutation never combines two parameters, it only
+observes that both sides pair the same four entries.
+-/
+
+section FarComm
+
+open scoped Classical
+
+noncomputable local instance : Fintype (StandardYoungTableau μ) := Fintype.ofFinite _
+
+/-- The column of a tableau that `σ_k` fixes is the single diagonal entry. -/
+theorem sum_mul_genMat_column_of_not_admissible (k : ℕ) (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) {T : StandardYoungTableau μ} (hadm : ¬ SwapAdmissible T k)
+    (f : StandardYoungTableau μ → ℝ) :
+    ∑ S, f S * genMat q k hk hkn S T = f T * seminormalParam q (axialDist T k) := by
+  classical
+  rw [Finset.sum_eq_single T]
+  · rw [genMat_diag]
+  · intro b _ hb
+    rw [genMat_of_not_admissible q k hk hkn hb hadm, mul_zero]
+  · intro h; exact absurd (Finset.mem_univ T) h
+
+/-- **Two far swaps of the same tableau land in different places.**  At the cell holding
+`k`, `s_k·T` carries `k+1` while `s_l·T` still carries `k`.
+
+This is the distinctness the four-element support `{T, s_k·T, s_l·T, s_k s_l·T}` rests on:
+from it, `T ≠ s_k s_l·T` follows by applying `s_k` to both sides. -/
+theorem swapTableau_far_ne (T : StandardYoungTableau μ) {k l : ℕ} (hk : 1 ≤ k) (hl : 1 ≤ l)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : l + 1 ≤ μ.cells.card)
+    (hfar : k + 1 < l ∨ l + 1 < k)
+    (hadmk : SwapAdmissible T k) (hadml : SwapAdmissible T l) :
+    swapTableau T k hk hkn hadmk ≠ swapTableau T l hl hln hadml := by
+  intro h
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have he : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T hkI
+  have h1 : (swapTableau T k hk hkn hadmk).entry (cellOf T k).1 (cellOf T k).2
+      = swapVal k (T.entry (cellOf T k).1 (cellOf T k).2) :=
+    swapTableau_entry T hk hkn hadmk _ _
+  have h2 : (swapTableau T l hl hln hadml).entry (cellOf T k).1 (cellOf T k).2
+      = swapVal l (T.entry (cellOf T k).1 (cellOf T k).2) :=
+    swapTableau_entry T hl hln hadml _ _
+  rw [h, h2, he] at h1
+  unfold swapVal at h1
+  rw [if_neg (by omega : ¬(k = l)), if_neg (by omega : ¬(k = l + 1)), if_pos rfl] at h1
+  omega
+
+/-- **Far commutation, on all of `SYT μ` at once.**
+
+`ρ(σ_k) ρ(σ_l) = ρ(σ_l) ρ(σ_k)` for `|k - l| ≥ 2`, arbitrary shape `μ`.
+
+Both products are supported on the same four tableaux `{T, s_k·T, s_l·T, s_k s_l·T}`, and
+each pairs them the same way — because a far swap at `l` changes nothing `σ_k` reads
+(`axialDist_swapTableau_of_far`, `swapAdmissible_far_iff`) and the two actions commute
+(`swapTableau_comm`).  The four rows then match term by term, with the factors merely
+transposed.
+
+**No hypothesis on `q`.**  The quadratic needed `a(d) + a(-d) = q - q⁻¹` and hence
+`q > 0`, `q ≠ 1`; far commutation never combines two parameters, so it holds for every
+real `q`. -/
+theorem genMat_far_comm {k l : ℕ} (hk : 1 ≤ k) (hl : 1 ≤ l)
+    (hkn : k + 1 ≤ μ.cells.card) (hln : l + 1 ≤ μ.cells.card)
+    (hfar : k + 1 < l ∨ l + 1 < k) :
+    genMat q k hk hkn * genMat q l hl hln = genMat q l hl hln * genMat q k hk hkn := by
+  classical
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
+  have hlI : l ∈ Set.Icc 1 μ.cells.card := ⟨hl, by omega⟩
+  have hlI' : l + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hln⟩
+  have hfar' : l + 1 < k ∨ k + 1 < l := by omega
+  ext T' T
+  rw [Matrix.mul_apply, Matrix.mul_apply]
+  by_cases hka : SwapAdmissible T k
+  · by_cases hla : SwapAdmissible T l
+    · -- both generators move `T`: the full four-element support
+      set A := swapTableau T k hk hkn hka with hA
+      set B := swapTableau T l hl hln hla with hB
+      have hBk : SwapAdmissible B k :=
+        (swapAdmissible_far_iff T hl hln hla hkI hkI' hfar).mpr hka
+      have hAl : SwapAdmissible A l :=
+        (swapAdmissible_far_iff T hk hkn hka hlI hlI' hfar').mpr hla
+      set C := swapTableau B k hk hkn hBk with hC
+      have hCA : C = swapTableau A l hl hln hAl :=
+        swapTableau_comm T hk hl hkn hln hfar hka hla
+      have hdBk : axialDist B k = axialDist T k :=
+        axialDist_swapTableau_of_far T hl hln hla hkI hkI' hfar
+      have hdAl : axialDist A l = axialDist T l :=
+        axialDist_swapTableau_of_far T hk hkn hka hlI hlI' hfar'
+      have hAT : A ≠ T := swapTableau_ne T hk hkn hka
+      have hBT : B ≠ T := swapTableau_ne T hl hln hla
+      have hAB : A ≠ B := swapTableau_far_ne T hk hl hkn hln hfar hka hla
+      have hCB : C ≠ B := swapTableau_ne B hk hkn hBk
+      have hCA' : C ≠ A := by rw [hCA]; exact swapTableau_ne A hl hln hAl
+      have hCT : C ≠ T := by
+        -- read both off at the cell holding `k`: `C` carries `k+1` there, `T` carries `k`
+        intro h
+        have hBc : cellOf B k = cellOf T k :=
+          cellOf_swapTableau_of_ne T hl hln hla hkI (by omega) (by omega)
+        have heB : B.entry (cellOf T k).1 (cellOf T k).2 = k := by
+          rw [← hBc]; exact entry_cellOf B hkI
+        have hCe : C.entry (cellOf T k).1 (cellOf T k).2
+            = swapVal k (B.entry (cellOf T k).1 (cellOf T k).2) :=
+          swapTableau_entry B hk hkn hBk _ _
+        rw [heB] at hCe
+        unfold swapVal at hCe
+        rw [if_pos rfl] at hCe
+        have heT : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T hkI
+        rw [h] at hCe
+        omega
+      rw [sum_mul_genMat_column q l hl hln hla (fun S => genMat q k hk hkn T' S),
+        sum_mul_genMat_column q k hk hkn hka (fun S => genMat q l hl hln T' S)]
+      by_cases h1 : T' = T
+      · subst h1
+        rw [genMat_diag, genMat_diag,
+          genMat_apply_of_ne q k hk hkn (Ne.symm hBT) hBk (Ne.symm hCT),
+          genMat_apply_of_ne q l hl hln (Ne.symm hAT) hAl (by rw [← hCA]; exact Ne.symm hCT)]
+        ring
+      · by_cases h2 : T' = A
+        · subst h2
+          rw [genMat_swap q k hk hkn hka hAT, genMat_diag,
+            genMat_apply_of_ne q k hk hkn hAB hBk (Ne.symm hCA'),
+            genMat_apply_of_ne q l hl hln h1 hla hAB, hdAl]
+          ring
+        · by_cases h3 : T' = B
+          · subst h3
+            rw [genMat_swap q l hl hln hla hBT, genMat_diag,
+              genMat_apply_of_ne q k hk hkn h1 hka (by exact h2),
+              genMat_apply_of_ne q l hl hln (by exact h2) hAl
+                (by rw [← hCA]; exact Ne.symm hCB), hdBk]
+            ring
+          · by_cases h4 : T' = C
+            · subst h4
+              rw [genMat_apply_of_ne q k hk hkn hCT hka hCA',
+                genMat_apply_of_ne q l hl hln hCT hla hCB,
+                genMat_swap q k hk hkn hBk hCB,
+                (by rw [hCA] : genMat q l hl hln C A
+                  = genMat q l hl hln (swapTableau A l hl hln hAl) A),
+                genMat_swap q l hl hln hAl (by rw [← hCA]; exact hCA'), hdBk, hdAl]
+              ring
+            · rw [genMat_apply_of_ne q k hk hkn h1 hka h2,
+                genMat_apply_of_ne q k hk hkn h3 hBk h4,
+                genMat_apply_of_ne q l hl hln h1 hla h3,
+                genMat_apply_of_ne q l hl hln h2 hAl (by rw [← hCA]; exact h4)]
+              ring
+    · -- `σ_k` moves `T`, `σ_l` fixes it
+      set A := swapTableau T k hk hkn hka with hA
+      have hAl : ¬ SwapAdmissible A l := fun h =>
+        hla ((swapAdmissible_far_iff T hk hkn hka hlI hlI' hfar').mp h)
+      have hdAl : axialDist A l = axialDist T l :=
+        axialDist_swapTableau_of_far T hk hkn hka hlI hlI' hfar'
+      have hAT : A ≠ T := swapTableau_ne T hk hkn hka
+      rw [sum_mul_genMat_column_of_not_admissible q l hl hln hla
+          (fun S => genMat q k hk hkn T' S),
+        sum_mul_genMat_column q k hk hkn hka (fun S => genMat q l hl hln T' S)]
+      by_cases h1 : T' = T
+      · subst h1
+        rw [genMat_diag, genMat_diag,
+          genMat_of_not_admissible q l hl hln (Ne.symm hAT) hAl]
+        ring
+      · by_cases h2 : T' = A
+        · subst h2
+          rw [genMat_swap q k hk hkn hka hAT, genMat_diag,
+            genMat_of_not_admissible q l hl hln h1 hla, hdAl]
+          ring
+        · rw [genMat_apply_of_ne q k hk hkn h1 hka h2,
+            genMat_of_not_admissible q l hl hln h1 hla,
+            genMat_of_not_admissible q l hl hln h2 hAl]
+          ring
+  · by_cases hla : SwapAdmissible T l
+    · -- the mirror: `σ_l` moves `T`, `σ_k` fixes it
+      set B := swapTableau T l hl hln hla with hB
+      have hBk : ¬ SwapAdmissible B k := fun h =>
+        hka ((swapAdmissible_far_iff T hl hln hla hkI hkI' hfar).mp h)
+      have hdBk : axialDist B k = axialDist T k :=
+        axialDist_swapTableau_of_far T hl hln hla hkI hkI' hfar
+      have hBT : B ≠ T := swapTableau_ne T hl hln hla
+      rw [sum_mul_genMat_column q l hl hln hla (fun S => genMat q k hk hkn T' S),
+        sum_mul_genMat_column_of_not_admissible q k hk hkn hka
+          (fun S => genMat q l hl hln T' S)]
+      by_cases h1 : T' = T
+      · subst h1
+        rw [genMat_diag, genMat_diag,
+          genMat_of_not_admissible q k hk hkn (Ne.symm hBT) hBk]
+        ring
+      · by_cases h2 : T' = B
+        · subst h2
+          rw [genMat_swap q l hl hln hla hBT, genMat_diag,
+            genMat_of_not_admissible q k hk hkn h1 hka, hdBk]
+          ring
+        · rw [genMat_of_not_admissible q k hk hkn h1 hka,
+            genMat_of_not_admissible q k hk hkn h2 hBk,
+            genMat_apply_of_ne q l hl hln h1 hla h2]
+          ring
+    · -- both fix `T`: two scalar columns
+      rw [sum_mul_genMat_column_of_not_admissible q l hl hln hla
+          (fun S => genMat q k hk hkn T' S),
+        sum_mul_genMat_column_of_not_admissible q k hk hkn hka
+          (fun S => genMat q l hl hln T' S)]
+      by_cases h1 : T' = T
+      · subst h1
+        rw [genMat_diag, genMat_diag]
+        ring
+      · rw [genMat_of_not_admissible q k hk hkn h1 hka,
+          genMat_of_not_admissible q l hl hln h1 hla]
+        ring
+
+end FarComm
+
 end SeminormalRep
 
 end QOU.SchurWeyl
