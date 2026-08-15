@@ -160,6 +160,64 @@ Key facts (so agents stop mis-reporting the blocker):
   those are unblocked. Corpus-grep / formalize-first discipline: build
   it before reporting a capability as unavailable.
 
+#### SnapPy — `pip install snappy` works; a failed batch install is a lie
+
+`computations/knot-volumes.py` (and any producer taking hyperbolic volumes
+from the census rather than a closed form) needs **SnapPy**. It installs
+straight from PyPI, ~30 s:
+
+```bash
+python3 -m pip install snappy      # -> snappy, snappy_manifolds, spherogram, plink, cypari
+python3 -c "import snappy; print(snappy.__version__)"
+```
+
+The PyPI name `snappy` **is** the 3-manifolds package here, not the
+compression library. A `UserWarning: Plink failed to import tkinter` on
+import is expected and harmless in a headless container.
+
+**The gotcha that will fool you:** `pip install` is atomic over its whole
+argument list. `pip install numpy pyhecke-native snappy` fails *entirely* —
+installing **nothing**, including the two that would have worked — because
+`pyhecke-native` is not on PyPI (build it from `./tools/` per above). The
+error text names only the unresolvable package, so it reads as "snappy is
+unavailable" when snappy was never attempted. **Install one package per
+invocation, or at least separate the in-repo builds from the PyPI ones,
+before concluding any dependency is unobtainable.**
+
+#### STRICT — provision BEFORE re-running a producer, or you strip provenance
+
+`WitnessBuilder` records the versions of the packages **actually importable
+at run time**. Re-running a producer in an under-provisioned container
+therefore *silently deletes* environment fields from the witness — the run
+succeeds, every assertion passes, and the diff quietly drops real
+provenance:
+
+```diff
+-    "numpy": "2.4.6",
+-    "mpmath": "1.3.0",
+-    "pyhecke_native": "0.9.0"
++    "mpmath": "1.3.0"
+```
+
+That is a **regression committed under a green run**, and neither the
+assertions nor `precision-gates.sh` will flag it. Rules:
+
+1. **Bootstrap the full stack first** (numpy + mpmath + sympy + the in-repo
+   packages + `pyhecke_native` + SnapPy if the producer touches volumes),
+   *then* re-run.
+2. **Always diff the regenerated witness for env/version keys** before
+   committing — `git diff -- <witness> | grep -iE "numpy|mpmath|pyhecke|snappy|version"`.
+   Any `-` line there means your container is poorer than the one that wrote
+   the committed copy. Install and re-run; do not commit the stripped one.
+3. If a dependency genuinely cannot be installed, **revert the witness and
+   bean it**. A cosmetic fix (a corrected label in a `description` string)
+   never justifies trading away recorded provenance.
+
+Measured 2026-08-15: a one-word label fix to
+`qbeta_bring_embedding_magnitude_probe.py` dropped `numpy` and
+`pyhecke_native` from its witness on the first re-run; installing both and
+re-running restored them byte-for-byte.
+
 ## §1. Precision discipline (STRICT, no f64 in production)
 
 **L1 floor: 50-dps compute / 40-dps output**, configurable via
@@ -525,6 +583,32 @@ For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
 `active_set`, `primal_obj`, `dual_obj`, `duality_gap` per AGENTS.md
 §LP/SDP duals.
 
+### §5.1 STRICT — never commit an audit witness written by a SCOPED run
+
+An audit witness whose filename claims corpus-wide scope must only ever be
+committed from a **corpus-wide** run. Two mechanisms in this repo write a
+narrow result to a wide filename, and both look like a normal refresh in
+`git status`:
+
+| Runner | What it scans | What it overwrites |
+|---|---|---|
+| `scripts/precision-gates.sh --changed` | only the files you changed | `witness-raw-float64-audit.witness.json`, `q0-anchor-consistency-audit.witness.json`, `q0-value-drift-audit.witness.json` |
+| `content/pipeline/q-usage-audit.ts --chapter` | one chapter | `docs/audits/<date>-q-usage-audit.witness.json` (records only the LAST chapter) |
+
+Measured twice on 2026-08-15, `--changed` with 8 files touched:
+`dirty_witnesses: 1561 → 5`, `total_fields: 534192 → 20`. Committing that
+replaces a corpus audit with an 8-file sample under a name that still reads
+corpus-wide — and every later reader, including the next agent's baseline,
+takes it at face value.
+
+**Rule:** after any `--changed` / `--chapter` run, `git checkout --` the
+audit witnesses it touched. The gate's own "STALE COMMITTED AUDIT
+WITNESSES … If a COUNT moved, commit the regenerated one" advice is
+**wrong for a scoped run** — under `--changed` the count moved *because the
+scope shrank*, not because the committed copy was stale. Only trust that
+advice from a full run. If you believe a committed audit witness is
+genuinely stale, re-run the audit **unscoped** and commit that.
+
 ## §6. CI / merge etiquette
 
 - **CI is billing.** Don't churn commits. Squash where possible.
@@ -551,6 +635,9 @@ For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
 | Compute crashes silently with 0-byte BG output | sympy stack overflow or OOM | re-launch with `python -u` + tee + progress lines |
 | Sympy round-trip dominates ⁵Li+ profile | reduce path still in Python | port `incremental_reduce_rust` to Rust (Tier 1.A roadmap) |
 | Orbit-sum identity gives wrong tr_M | claimed symmetry isn't a conjugation | do §3 preflight before shipping orbit shortcuts |
+| `pip install a b c` says one package is unavailable | pip is atomic — one unresolvable name installs NOTHING | install one per invocation; see §0.1 (SnapPy looked missing only because `pyhecke-native` shared the command) |
+| Regenerated witness silently loses `numpy`/`pyhecke_native` keys | container poorer than the one that wrote the committed copy | bootstrap fully, re-run, and grep the diff for `-` version lines before committing (§0.1) |
+| `precision-gates.sh --changed` leaves 3 audit witnesses modified | scoped run overwrote corpus-wide audit outputs | `git checkout --` them; never commit a scoped audit witness (§5.1) |
 
 ## §8. Pre-work checklist (use before every compute change)
 
