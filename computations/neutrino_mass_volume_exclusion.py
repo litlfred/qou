@@ -59,7 +59,7 @@ def main():
         },
         "verdict": (
             "scope-(b) EXCLUSION (cite: 4_1 is the minimum-volume hyperbolic knot, "
-            f"Vol=2*Lambda(pi/3)~{v41:.4f}; Cao-Meyerhoff). Any hyperbolic-carrier "
+            f"Vol=2*Cl_2(pi/3)~{v41:.4f}; Cao-Meyerhoff). Any hyperbolic-carrier "
             "volume-density mass is >= ~260 MeV with O(1) density, ~10^10 above the "
             "~0.05 eV neutrino scale. The unknot carrier is trivial (Vol=CS=0). "
             "Neutrino masses need a mechanism OUTSIDE the volume-density chain; the "

@@ -24,6 +24,25 @@ Rules:
   R5  (warning) a conditional row's lean decl should carry the hypothesis in
       its name (Mathlib `_of_` style) per local/formalizer.md
       SSConditional-lemma naming.
+  R6  twin-drift check (added 2026-08-15, bean qou-ungx): the JSON twin must
+      not silently restate text the authoritative MD row has withdrawn. For
+      each row id, locate its `| KCnn |` table row(s) in
+      ck-dk-canonical-registry.md and:
+      R6a (error)  no strikethrough span `~~...~~` from the MD row may appear
+          (normalised) in the JSON `statement` OUTSIDE double quotes --
+          quoting a withdrawn claim ("previously read here as established:
+          '...'") is a mention and is fine; asserting it bare is drift.
+      R6b (error)  an MD row carrying a WITHDRAWN marker requires the word
+          WITHDRAWN in its JSON statement (this alone catches both live
+          2026-08-15 instances: KC21 q*-third-determination, KC22
+          divergent/resurgent).
+      R6c (warning)  an MD row saying WITHDRAWN should also strike the
+          withdrawn text -- the registry's standard withdrawal idiom is
+          strikethrough-plus-marker (see the SS9 header note).
+      Known limitation: R6a's normalisation folds accents and strips
+      non-alphanumerics, but MD glyph vs JSON ASCII transliteration (rho vs
+      the Greek letter, sqrt vs the radical) can defeat the substring test;
+      R6b is the transliteration-proof backstop.
 
 Doc-lint mode (--lint-docs):
   For every conditional row with a lean decl, grep docs/**/*.md for bare
@@ -43,13 +62,83 @@ from __future__ import annotations
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
 REGISTRY = HERE / "kernel-constraints-registry.json"
+MARKDOWN = HERE / "ck-dk-canonical-registry.md"
 
 ZERO_SHADOWS = {None, "0", "vanishes"}
+
+STRIKE_RE = re.compile(r"~~(.+?)~~", re.S)
+DQUOTE_RE = re.compile(r'"[^"]*"')
+MD_ROW_RE = re.compile(r"^\|\s*(KC\d+)\s*\|")
+
+# Below this many normalised characters a struck span is too generic to
+# substring-match against the JSON statement without false positives.
+MIN_SPAN_LEN = 12
+
+
+def _norm(s: str) -> str:
+    """Normalise for cross-format (MD prose vs JSON ASCII) comparison.
+
+    NFKD-fold accents (Ecalle == Écalle), drop the literal word 'sqrt'
+    (so 'sqrt3' matches the radical form), strip every non-alphanumeric
+    character to a space (kills markdown emphasis/backticks/quotes and the
+    unicode-arrow vs '->' class of mismatch), collapse whitespace, casefold.
+    """
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    s = re.sub(r"sqrt", " ", s, flags=re.I)
+    s = re.sub(r"[^0-9A-Za-z]+", " ", s)
+    return re.sub(r"\s+", " ", s).strip().casefold()
+
+
+def check_twin_drift(d: dict, md_text: str) -> tuple[list[str], list[str]]:
+    """R6: the JSON twin must not restate text the MD row has withdrawn."""
+    errors: list[str] = []
+    warnings: list[str] = []
+    rows: dict[str, list[str]] = {}
+    for line in md_text.splitlines():
+        m = MD_ROW_RE.match(line)
+        if m:
+            rows.setdefault(m.group(1), []).append(line)
+    for row in d.get("constraints", []):
+        rid = row.get("id") or "<missing-id>"
+        md_lines = rows.get(rid)
+        if not md_lines:
+            warnings.append(
+                f"R6: {rid} has no `| {rid} |` table row in {MARKDOWN.name} "
+                "(twin cannot be cross-checked)")
+            continue
+        md_all = " ".join(md_lines)
+        stmt = row.get("statement") or ""
+        # Mention vs assertion: text inside double quotes in the JSON
+        # statement is a quotation (the withdrawal idiom quotes the withdrawn
+        # claim); only unquoted text asserts.
+        stmt_asserted = _norm(DQUOTE_RE.sub(" ", stmt))
+        # R6a: struck MD text must not be asserted by the JSON.
+        for span in STRIKE_RE.findall(md_all):
+            n = _norm(span)
+            if len(n) >= MIN_SPAN_LEN and n in stmt_asserted:
+                head = re.sub(r"\s+", " ", span).strip()
+                errors.append(
+                    f"R6a: {rid} JSON statement asserts text struck "
+                    f"(~~...~~) in the MD row: “{head[:70]}…”")
+        # R6b: a withdrawal marker in the MD row must reach the JSON.
+        md_withdrawn = "withdrawn" in md_all.casefold()
+        if md_withdrawn and "withdrawn" not in stmt.casefold():
+            errors.append(
+                f"R6b: {rid} MD row carries a WITHDRAWN marker but the JSON "
+                "statement does not mention the withdrawal")
+        # R6c: idiom -- withdrawal marker should come with strikethrough.
+        if md_withdrawn and not STRIKE_RE.search(md_all):
+            warnings.append(
+                f"R6c: {rid} MD row says WITHDRAWN without striking the "
+                "withdrawn text (registry idiom: strikethrough + marker)")
+    return errors, warnings
 
 
 def validate(d: dict) -> tuple[list[str], list[str]]:
@@ -131,6 +220,15 @@ def main() -> int:
     d = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     errors, warnings = validate(d)
+    # R6 twin-drift (always on; the MD is the authoritative twin)
+    try:
+        md_text = MARKDOWN.read_text(encoding="utf-8")
+    except OSError as exc:
+        errors.append(f"R6: cannot read {MARKDOWN.name}: {exc}")
+    else:
+        e6, w6 = check_twin_drift(d, md_text)
+        errors += e6
+        warnings += w6
     if do_lint:
         warnings += lint_docs(d)
 

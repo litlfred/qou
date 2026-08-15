@@ -3457,3 +3457,81 @@ function. A study of the `log(1−w/ρ)` branch point would be a *different* tas
 with a different motivation and needs a bean that says so — not a resumption of
 the scrapped titles. No fit; no `c_k` wired; no tier change (c₃ stays
 EMPIRICAL/REFUTED-as-real-q).
+
+## 2026-08-15 — owner redirect: c₃ refutation chain audited against the C→D trace-convention flip (survives; value layer C-conditional)
+
+**Trigger.** Owner critical-distance redirect: probes behind "c₃ REFUTED as
+real-q fibre element" may be invalid after the C→D trace flip, the
+color-weighting fixes, the GGM V₃ = −7.693 correction, and the q₀ pin changes.
+
+**Audit:** [`2026-08-15-c3-refutation-chain-convention-validity-audit.md`](../audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md)
+· probe `qbeta_c3_ladder_trace_convention_sensitivity_probe.py` (9/9, exit 0)
+· registry §9g + c₂/c₃/KC13/KC21/KC22 provenance notes (.md + JSON twin,
+validator clean).
+
+**Verdict, tiered:**
+
+- **REFUTED-as-real-q SURVIVES** — measured, not assumed: the anchor-swing
+  mechanism is convention-immune (swing D/C = **1.0052**; `u`, `Q_A` are
+  z-free), and P3 (entropy bound), P4 (q→1 shadow; `z_C(1)=z_D(1)=1/2`
+  exact), P6 (KC20 `Δ_net` numerator z-free) are convention-independent.
+  V₃ was already canonical in the 2026-07-30 B1 re-run; color-weighting does
+  not reach the qbeta chain; anchor q₀ values are unchanged.
+- **The value layer is convention-C-conditional** — the extractor's N=1 rung
+  consumes `z_C` via `α=(z−1)h/2` (`qbeta_utils.py:124-125`); re-extraction
+  under D shifts c₃ from ≈ −2.07 to ≈ **−974** — so (H1) `−Vol(4₁)`,
+  `[3]_q/25`, `J−ℏ²`, `S_leak`, `q*_S`, and the KC21/KC22 D-ladder constants
+  hold in the C frame only. `bar(z_D) = q⁻⁴·z_D` exactly ⇒ KC13's
+  no-scalar-z-source prune is C-scoped.
+- **Bigger than the redirect asked:** the canonical rung **c₂ = −1 is also a
+  C-frame statement** (implied empirical c₂ under D ≈ −9.30; rung convergence
+  58× under C vs 1.12× under D). The C→D excision does NOT transfer to Q_β by
+  a z-swap; it would require re-deriving the ladder from the D-trace.
+- **Root cause:** the Q_β channel was never registered in
+  `trace-convention-registry.json` (channels: mass/binding/borromean only),
+  so the whole channel has been convention-silent — the exact failure mode
+  that registry's rule names. Open item: bean **`qou-b3nk`** (register the
+  channel; examine whether the two-row forcing transfers to the decay
+  channel, whose explicit weight instance has `y_(1³) ≠ 0`).
+
+Scope-(a) throughout; no convention adjudicated; no `c_k` wired; no tier
+flips (c₂ stays CANONICAL for its now-named object; c₃ stays
+EMPIRICAL/REFUTED-as-real-q — in both frames).
+
+## 2026-08-15 — bean `qou-b3nk` worked: qbeta-decay channel registered DISPUTED; the forcing/ladder boundary proved
+
+**Branch:** `claude/qbeta-channel-convention-2026-08-15` (PR #5111) ·
+**Audit:** [`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md)
+
+Outcome **(c)** of the bean, leaning (b): **neither C nor D is derived for the
+decay channel** — registered `disputed` in `trace-convention-registry.json`
+(`channels.qbeta-decay`: definitional `null` (contradictory — the decay blocks
+write the excised-C value while naming it "the Markov–Jones parameter", whose
+referent has read D since 2026-08-09), production `C`; R9 evaluator on
+`qbeta_utils.markov_parameter` asserts the C-state, CONFIRMED |d| = 1.9e-51).
+
+New Lean, sorry-free
+([`MarkovZFullBarCondition.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
+`lean`-direct exit 0, no `sorryAx`):
+
+- **`decayLadder_zC_threeRow_ne_zero`** — any faithful normalised Markov trace
+  at the ladder's `z_C` has `y_(1³) ≠ 0` for all `s = √q > 1` (locus
+  `s⁷+s⁵−s⁴−1 = (s−1)(s⁶+s⁵+2s⁴+s³+s²+s+1)` empty). **The two-row forcing and
+  the C-frame ladder are mutually exclusive** — no z-swap transfer; D-adoption
+  = ladder re-derivation (measured collapse: c₃ → ≈ −974, N2/N1 0.017 → 0.89).
+- **`zD_full_bar_covariant`** / **`barEven_fullBar_forces_classical`** /
+  **`zC_fails_fullBar`** — the full-bar condition `bar(z) = z − h` (PR #4834
+  discussion, sympy witness 2026-08-08) is now in Lean: D holds exactly; any
+  bar-even `z` (= C, KC13) fails away from `q² = 1`. Premise (trace
+  bar-compatibility) named, not proved.
+
+Witness correction: the `y_(1³) ≠ 0` escape had been cited via the explicit
+instance `y = (z, 1/2−z, z)` — that inhabitant is **not** an Ocneanu
+`z_C`-trace (its `σ₀` value is `h/2` exactly, z-independent, sympy). The
+correct witness is C's own solve (`y_(1³) = 0.02274…`, probe 18/18, proton
+pin) and the Lean brick. Conclusion unchanged.
+
+Scope-(a); no convention adjudicated; no `c_k` wired; no tier flips. Bean
+stays **in-progress** (closing is a human action); settlement routes in the
+audit §4 (derive the decay fibre, or prove/refute
+`conj:binding-qbeta-complex-volume` / bar-compatibility).

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T10:38:04.851959+00:00",
-  "commitSha": "0d3adfaa5fa732c5e42ef6168e80bebbf6c063a9",
+  "computedAt": "2026-08-15T14:58:00.777769+00:00",
+  "commitSha": "d1f1054732e70fe968e55eded8042bc159c7690e",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 13,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "3f5e9c0e126a7d56586865568f15516bbb6c9048",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,9 +33,9 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 639,
+      "Q0_OK": 642,
       "Q0_AMBIGUOUS": 16,
-      "Q0_ANCHOR_MISSING": 1885,
+      "Q0_ANCHOR_MISSING": 1889,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 68,
       "Q0_PARSE_ERROR": 1,
@@ -1130,6 +1130,10 @@
         },
         {
           "witness": "chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-numpy-dtype-fix-benchmark.witness.json",
           "detail": ""
         },
         {
@@ -5421,6 +5425,10 @@
           "detail": ""
         },
         {
+          "witness": "dt-crossknot-snappy-slope-hardening.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "h3-markov-trace-cyclicity-preflight.witness.json",
           "detail": ""
         },
@@ -5881,6 +5889,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-decay-channel-convention-status.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-decay-sdp-extended-ck.witness.json",
           "detail": ""
         },
@@ -6222,6 +6234,10 @@
         },
         {
           "witness": "qbeta-ohtsuki-nz-bridge-b4.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ohtsuki-nz-bridge-b6.witness.json",
           "detail": ""
         },
         {
@@ -9683,6 +9699,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-c3-ladder-trace-convention-sensitivity.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-c3-rung-structure-analysis.witness.json",
           "detail": ""
         },
@@ -9731,7 +9751,15 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-fig8-cyclotomic-bar-invariance.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-fsc-g-pattern-comparison.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-h1-significance-against-cal3-band.witness.json",
           "detail": ""
         },
         {

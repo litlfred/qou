@@ -105,6 +105,127 @@ def parse_registry(text: str) -> list[tuple[str, str, str]]:
     return out
 
 
+def _module_path(mod: str) -> Path:
+    return LEAN_ROOT / (mod.replace(".", "/") + ".lean")
+
+
+def _olean_path(mod: str) -> Path:
+    return LEAN_ROOT / ".lake/build/lib/lean" / (mod.replace(".", "/") + ".olean")
+
+
+def _qou_imports(src: Path) -> list[str]:
+    out: list[str] = []
+    try:
+        for line in src.read_text().splitlines():
+            m = re.match(r"^import\s+(QOU\.\S+)", line)
+            if m:
+                out.append(m.group(1))
+            elif line.strip() and not line.startswith(("--", "/-", "import")):
+                break
+    except OSError:
+        pass
+    return out
+
+
+def _dirty_paths() -> set[str]:
+    """Repo-relative paths with uncommitted content changes (staged or not)."""
+    try:
+        proc = subprocess.run(
+            ["git", "status", "--porcelain", "--", str(LEAN_ROOT)],
+            capture_output=True, text=True, timeout=120,
+        )
+    except (FileNotFoundError, subprocess.SubprocessError):
+        return set()          # no git → fall back to mtime for everything
+    out: set[str] = set()
+    for line in proc.stdout.splitlines():
+        # "XY path" or "XY old -> new"; take the final path.
+        path = line[3:].strip()
+        if "->" in path:
+            path = path.split("->")[-1].strip()
+        out.add(path.strip('"'))
+    return out
+
+
+def _commit_time(src: Path) -> float | None:
+    """Unix time of the commit that last touched `src`, or None if unavailable."""
+    try:
+        proc = subprocess.run(
+            ["git", "log", "-1", "--format=%ct", "--", str(src)],
+            capture_output=True, text=True, timeout=120,
+        )
+    except (FileNotFoundError, subprocess.SubprocessError):
+        return None
+    val = proc.stdout.strip()
+    return float(val) if val else None
+
+
+def _effective_source_time(src: Path, dirty: set[str]) -> float:
+    """Source timestamp that survives a fresh clone.
+
+    ⚠ A plain `src.stat().st_mtime` is WRONG here, and wrong in the direction that
+    disables the gate. A clone or checkout stamps every file with the checkout time,
+    which is later than any olean restored from a build cache — so an mtime comparison
+    reports the entire import cone stale in exactly the environment this gate is meant
+    to run in (fresh container or CI runner + `lean-cache-restore.sh`).
+
+    Measured 2026-08-15: mtime flagged 15 modules stale — `Specht` source 10:08, olean
+    03:33 — while `lake build`, which hashes content, replayed all 3285 jobs as already
+    up to date. The sources had not changed since a commit that PREDATED the oleans; only
+    the checkout timestamp was newer. Left as-is this would have made the gate refuse to
+    report on every CI run, which is the same "protects nothing" outcome as never running
+    it, reached from the opposite direction.
+
+    So: for a file with no uncommitted changes, use the time of the commit that last
+    touched it — stable across clones. For a DIRTY file, fall back to mtime, because a
+    local edit is precisely the case the staleness check exists for and there is no
+    commit to trust.
+    """
+    try:
+        rel = str(src.relative_to(Path.cwd()))
+    except ValueError:
+        rel = str(src)
+    if rel not in dirty:
+        ct = _commit_time(src)
+        if ct is not None:
+            return ct
+    return src.stat().st_mtime
+
+
+def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
+    """Return human-readable staleness complaints.
+
+    The guard reads whatever `.olean`s are on disk. A *missing* olean already fails
+    loudly, but a **stale** one passes silently and reports the axiom status of an old
+    snapshot — which is worthless, and worse than worthless because it looks like
+    assurance. (Found 2026-08-15: the guard reported all-match against 9-day-old oleans
+    while five of the underlying sorries had been closed upstream and three declarations
+    had moved files.) So walk the transitive QOU import cone of every registry module and
+    flag any olean older than its own source.
+
+    "Older than its own source" is measured by `_effective_source_time`, not raw mtime —
+    see there for why raw mtime disables the gate on a fresh clone.
+    """
+    problems: list[str] = []
+    seen: set[str] = set()
+    dirty = _dirty_paths()
+    stack = [m for m, _, _ in entries]
+    while stack:
+        mod = stack.pop()
+        if mod in seen:
+            continue
+        seen.add(mod)
+        src, ole = _module_path(mod), _olean_path(mod)
+        if not src.exists():
+            continue
+        stack.extend(_qou_imports(src))
+        if not ole.exists():
+            problems.append(f"{mod}: olean MISSING")
+            continue
+        if ole.stat().st_mtime < _effective_source_time(src, dirty):
+            problems.append(f"{mod}: olean STALE (source is newer)")
+    return problems
+
+
 def run_axiom_check(entries: list[tuple[str, str, str]]) -> dict[str, set[str]]:
     """Return {decl: set-of-axioms}. One lean invocation for the whole batch."""
     modules = sorted({m for m, _, _ in entries})
@@ -181,10 +302,25 @@ def main() -> int:
         print("axiom-guard: nothing to check")
         return 0
 
+    # `--print-modules` answers BEFORE the freshness gate, deliberately: it is a pure
+    # query over the registry that touches no olean, and its whole purpose is to tell a
+    # caller what to build. Gating it on a fresh build would make the flag unusable in
+    # exactly the situation it exists for — a cold or stale tree.
     if args.print_modules:
         # Deliberately bare stdout: this is consumed by `lake build $(...)`.
         print(" ".join(sorted({m for m, _, _ in entries})))
         return 0
+
+    stale = check_freshness(entries)
+    if stale:
+        print("axiom-guard: refusing to report — the olean set does not match the source.",
+              file=sys.stderr)
+        for pr in sorted(stale):
+            print("  " + pr, file=sys.stderr)
+        print("\nRebuild the affected modules lean-direct, then re-run. A verdict from a stale\n"
+              "olean set is not assurance — it is the axiom status of an old snapshot.",
+              file=sys.stderr)
+        return 2
 
     found = run_axiom_check(entries)
 

@@ -478,3 +478,24 @@ Build it because it is the right mathematics, not because it can be tested yet.
 
 Scope-(b) for the SERIES route (invariant: the involution fixes each factor).
 Nothing here touches (H1) or argues against the state integral.
+
+---
+
+# CONVENTION PROVENANCE (2026-08-15, owner redirect — read before any carrier work)
+
+The owner-redirect validity audit
+(docs/audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md)
+found the Q_beta ladder consumes the CONVENTION-C Markov parameter end-to-end
+(alpha = (z-1)h/2, z = sqrt(q)/(1+q); qbeta_utils.py:124-125), and the
+Q_beta channel is UNREGISTERED in trace-convention-registry.json. For this
+bean's gate:
+
+- **The target `q*_S` is a C-frame number.** Re-extraction under convention D
+  moves c_3 to ~ -974; there is no ~ -2 value and no S-zero between the
+  anchors in the D frame of the same ladder shape. A fibre carrier "hitting
+  q*_S" is hitting a convention-C-conditional target — say so when reporting.
+- **The gate's structural walls are convention-immune** (swing D/C = 1.0052;
+  the 1/u^3 result, the entropy bound, and the (q;q)_n domain trichotomy do
+  not involve z).
+- Settle-the-convention is bean qou-b3nk; until it lands, carrier work should
+  state "C-frame" on every value-level comparison.
