@@ -95,13 +95,13 @@ This is the coset representative `r_j` in the decomposition
 is always `< m + 1`, so no bound hypothesis is needed. -/
 noncomputable def descProd (m : ℕ) : ℕ → Hecke K q qi (m + 1)
   | 0 => 1
-  | (j + 1) => descProd m j * σ K q qi (m + 1) ⟨m - j, by first | omega | (simp only []; omega)⟩
+  | (j + 1) => descProd m j * σ K q qi (m + 1) ⟨m - j, by omega⟩
 
 @[simp] theorem descProd_zero (m : ℕ) : descProd (K := K) (q := q) (qi := qi) m 0 = 1 := rfl
 
 theorem descProd_succ (m j : ℕ) :
     descProd (K := K) (q := q) (qi := qi) m (j + 1)
-      = descProd m j * σ K q qi (m + 1) ⟨m - j, by first | omega | (simp only []; omega)⟩ := rfl
+      = descProd m j * σ K q qi (m + 1) ⟨m - j, by omega⟩ := rfl
 
 /-! ## Right multiplication of a coset representative by a generator
 
@@ -177,8 +177,6 @@ theorem descProd_mul_σ_of_le_add (m : ℕ) :
       -- Under the length bound, the hypothesis forces `i ≥ 1`.
       have hilt : (i : ℕ) < m + 1 := i.isLt
       have hi1 : 1 ≤ (i : ℕ) := by omega
-      have hak : (⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ : Fin (m + 1))
-          = (⟨(i : ℕ) - 1, by first | omega | (simp only []; omega)⟩ : Fin (m + 1)) := rfl
       rcases Nat.lt_or_ge ((i : ℕ) + (j + 1)) (m + 3) with hA | hB
       · -- `i + j = m + 1`: `σ_{i-1}` is the new last factor, `σ_i` the previous one.
         have hj1 : 1 ≤ j := by omega
