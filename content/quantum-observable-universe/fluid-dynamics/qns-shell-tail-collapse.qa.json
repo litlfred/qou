@@ -475,7 +475,38 @@
         "reviewed_sha": "9c87151bb7cf394a70ab5102155baa1ce0149741",
         "evidence": "cross-ref links use the canonical unescaped colon"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "94887874b972",
+          "ts": "bb2dc9b69656",
+          "lean": "aaf4775e181e",
+          "lean_statement": "372d7904dfcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T11:11:40.739Z"
+  "updated_at": "2026-08-15T21:15:41.696Z",
+  "paths": {
+    "ts": "content/quantum-observable-universe/fluid-dynamics/qns-shell-tail-collapse.ts",
+    "md": "content/quantum-observable-universe/fluid-dynamics/qns-shell-tail-collapse.md",
+    "lean": "content/quantum-observable-universe/lean/QOU/FluidDynamics/physical_layer_leray.lean"
+  },
+  "source_hashes": {
+    "md": "94887874b972",
+    "ts": "bb2dc9b69656",
+    "lean": "aaf4775e181e",
+    "lean_statement": "372d7904dfcb"
+  }
 }

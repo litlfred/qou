@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T14:58:00.777769+00:00",
-  "commitSha": "d1f1054732e70fe968e55eded8042bc159c7690e",
+  "computedAt": "2026-08-15T20:57:10.933758+00:00",
+  "commitSha": "450e36a66904e6a6bd4816592217f7ce17185cee",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 10,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
@@ -33,7 +33,7 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 642,
+      "Q0_OK": 647,
       "Q0_AMBIGUOUS": 16,
       "Q0_ANCHOR_MISSING": 1889,
       "Q0_VALUE_MISSING": 1,
@@ -8987,6 +8987,10 @@
           "detail": ""
         },
         {
+          "witness": "hoefsmit-sparse-prototype.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "homflypt-reference-qa.witness.json",
           "detail": ""
         },
@@ -9703,7 +9707,15 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-c3-measurement-proposal-budget.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-c3-rung-structure-analysis.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-c3-slope-filter.witness.json",
           "detail": ""
         },
         {
@@ -9775,6 +9787,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-kc21-parity-convention-immunity.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-klr-composite1-preflight-run.witness.json",
           "detail": ""
         },
@@ -9788,6 +9804,10 @@
         },
         {
           "witness": "qbeta-klr-lusztig-demazure-preflight-run.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-modular-double-reciprocity.witness.json",
           "detail": ""
         },
         {

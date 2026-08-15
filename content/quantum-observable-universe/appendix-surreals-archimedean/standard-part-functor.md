@@ -59,8 +59,8 @@ r_{ij}$.
 
 ### Key properties
 
-1. **$K$-linear**: $\mathrm{St}(af + bg) = \mathrm{st}(a)\mathrm{St}(f)
-   + \mathrm{st}(b)\mathrm{St}(g)$ for $a, b \in K_{\mathrm{fin}}$.
+1. **$K$-linear**: $\mathrm{St}(af + bg) = \mathrm{st}(a)\mathrm{St}(f) +
+   \mathrm{st}(b)\mathrm{St}(g)$ for $a, b \in K_{\mathrm{fin}}$.
 2. **Monoidal**: $\mathrm{St}(f \otimes g) = \mathrm{St}(f) \otimes
    \mathrm{St}(g)$ on finite-coefficient morphisms.
 3. **Right inverse to inclusion**: $\mathrm{St} \circ \iota_{\mathbb{R}

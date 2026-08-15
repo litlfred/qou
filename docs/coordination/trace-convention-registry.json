@@ -209,7 +209,7 @@
       "definitional_convention": null,
       "definitional_source": "CONTRADICTORY, hence null (registered 2026-08-15, bean qou-b3nk). The decay blocks write the excised-C value z = 1/(q^{1/2}+q^{-1/2}) in their own prose (content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix-proof.md line 73; mass-theory/hoefsmit-V21-cos-symmetrization.md line 22) while NAMING it 'the Markov--Jones parameter (Hecke--Skein normalization)' -- and the corpus's definition of that referent (braids-and-knots/markov-axioms-primitive.md line 5) has read z = q^3/(q^2+1) (D) since the 2026-08-09 owner ruling. Written value and named referent disagree; no decay-specific derivation of either exists (no decay analogue of lem:feynman-eigenbasis-decomposition -- corpus-grep clean, see the audit).",
       "production_convention": "C",
-      "production_source": "computations/qbeta/qbeta_utils.py::markov_parameter + substrate_ladder_quantities (alpha = (z-1)h/2 at z_C feeds every committed c_k extraction); computations/qbeta/qbeta_ck_sseries_exact_rational.py:20,248 (KC21/KC22 D-ladder core); content/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean:59-79 (KC13 bar-even z)",
+      "production_source": "computations/qbeta/qbeta_utils.py::markov_parameter + substrate_ladder_quantities (alpha = (z-1)h/2 at z_C feeds every committed c_k extraction); computations/qbeta/qbeta_ck_sseries_exact_rational.py:20,248 (KC21/KC22 D(u-tilde)-ladder core -- 'D' here is KC21's bar-even Q(sqrt3) ladder function D, NOT convention D; those lines evaluate z = sqrt(q)/(q+1), i.e. z_C); content/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean:59-79 (KC13 bar-even z)",
       "status": "disputed",
       "open_item": {
         "bean": "qou-b3nk",

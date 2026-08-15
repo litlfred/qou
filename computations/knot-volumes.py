@@ -73,7 +73,7 @@ KNOT_REGISTRY = [
         "manifold": "4_1",
         "expected": 2.02988321281931,
         "tolerance": 1e-10,
-        "source": "OEIS A091518, 3·Cl₂(π/3)",
+        "source": "OEIS A091518, 2·Cl₂(π/3) = 6Λ(π/3)",
         "unit": "volume",
         "particle": "higgs",
     },

@@ -89,3 +89,70 @@ one took it at face value. The lesson is in the guard now: assume the file you
 are editing still carries it.
 
 Found in PR #5119.
+
+## Tranche 2 (PR #5128) — the `.py` class is DONE
+
+22 sites / 13 files drained. Remaining from the 54: the 12 `.json` and the
+17 `.md`.
+
+**One site was not a naming slip.** `docs/audits/scripts/qbeta_s_complex_volume_rigidity_probe.py`
+had `lam_pi3 = mp.mpf("0.5074708")` labelled `Λ(π/3)`. Λ(π/3) = 0.338314;
+0.5074708 is Λ(π/6) = Cl₂(π/3)/2. So `2 * lam_pi3` = 1.0149416 — ONE ideal
+tetrahedron, exactly HALF of Vol(4₁) = 2.0298832. Part B's 4₁ row was
+computed against it. Verdict unchanged (still "no clean near-integer
+match"; the prune rests on Part A's proved anchor-invariance, not Part B),
+so scope-(a): wrong value, sound conclusion. This is why the "check the
+arithmetic beside the name" rule above is not optional.
+
+**New sub-item — orphan witness, no producer.**
+`computations/substrate/knot-volumes.witness.json` is committed and still
+carries `3·Cl₂(π/3)`, but NOTHING writes to that path.
+`computations/knot-volumes.py` (whose `source` string is fixed in #5128)
+emits next to itself, to `computations/knot-volumes.witness.json`, which is
+neither tracked nor gitignored. So the orphan cannot be regenerated in
+place. Resolve the producer/output-path question first; the notation fix
+follows for free. Needs SnapPy installed (`pip install snappy`) to run the
+producer at all.
+
+**Provisioning is part of this drain, not incidental.** Re-running any
+producer in an under-provisioned container silently strips `environment`
+fields from its witness (measured: `numpy` + `pyhecke_native` dropped on a
+one-word label fix). Bootstrap fully before re-running, and diff the
+witness for `-` version lines. Written up in `local/compute-author` §0.1.
+
+## Tranche 3 — 54 → 3. Only the two known-blocked items remain.
+
+`.md` (17) and `.json` (9 of 12) drained; the `.py` class finished in
+tranche 2. Corpus-wide count is now **3**, all previously identified:
+
+| site | blocker |
+|---|---|
+| `computations/probes/qbeta_ck_basis_constrained_pslq.py:313` | `qou-u6cz` |
+| `computations/probes/qbeta-ck-basis-constrained-pslq.witness.json:107` | `qou-u6cz` |
+| `computations/substrate/knot-volumes.witness.json:28` | orphan — no producer writes that path |
+
+**The `.md` question resolved itself.** These were flagged as needing an
+owner ruling because rewriting `docs/audits/` changes a historical record.
+On inspection all 17 are a mis-transcribed *formula name* beside the
+*correct value* — several state it inline (`= 2.0298832128`, `≈ 2.0299`).
+`2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md:22` is diagnostic:
+`Vol(4₁) = 2·D(e^{iπ/3}) = 2Λ(π/3) = 2.02988…`, where the Bloch–Wigner
+form on the left is right and only the middle term is wrong. Correcting a
+name is not revising a finding, so no ruling was needed. Had any site
+carried a wrong *value* feeding a conclusion, that would have been the
+owner's call.
+
+**Two witnesses fixed by re-running, not editing:**
+`neutrino-mass-volume-exclusion` and `qbeta-root-of-unity` — both producers
+were already corrected in #5119, so the witnesses were simply stale. Both
+re-ran exit 0 with no provenance loss.
+
+**`content/bib-qa-verifications.json` (5) is an agent ledger**, written by
+the `bib-qa` skill with no pipeline generator, so its `rationale` prose is
+editable like an audit doc. One careful read there: the same entry says
+`Lambda(pi/4) = G/2`, which is **correct** (Λ(π/4) = Cl₂(π/2)/2 = G) —
+left untouched. Not every `Λ` in the corpus is wrong; only the Vol(4₁) ones.
+
+**Portability bug noticed:** `computations/neutrino_mass_volume_exclusion.py`
+writes to a **cwd-relative** path, so it fails unless run from the repo
+root, unlike its siblings which anchor on `__file__`. Not fixed here.

@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/information-theory/hopf-link-symmetric-decomposition.lean"
   },
   "source_hashes": {
-    "ts": "e0d99d34b347",
     "md": "d1f974c4a49e",
-    "lean": "f95f5cc3ca66"
+    "ts": "e0d99d34b347",
+    "lean": "f95f5cc3ca66",
+    "lean_statement": "5fbca24d20a9"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -310,26 +311,6 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T03:17:22.990Z",
-        "reviewed_sha": "5c2ccd2ba2b82b6b96d12b58baa3eeffa29972cb"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "d1f974c4a49e",
-          "ts": "e0d99d34b347",
-          "lean": "f95f5cc3ca66",
-          "lean_statement": "5fbca24d20a9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
         "reviewed_at": "2026-08-10T03:17:22.990Z",
@@ -2646,7 +2627,27 @@
         "evidence": "'avoids corresponding to the e_+ block', 'refuses to arbitrarily fix', 'This split fails to dominate'",
         "notes": "mangled anti-negation constructions obscure meaning (likely rewrites of 'does not correspond'/'does not fix'/'does not dominate'). proposed: 'The van der Waals force does not correspond to the e_+ block alone; it is carried by the bar-odd residual sinh(2*lambda)(e_+-e_-) that P_avg discards.' and 'This decomposition does not by itself fix the ~0.5 kJ/mol long-distance scale.' Needs author-checked rewrite (proposition block, meaning at stake)"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "d1f974c4a49e",
+          "ts": "e0d99d34b347",
+          "lean": "f95f5cc3ca66",
+          "lean_statement": "5fbca24d20a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T11:38:58.123Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

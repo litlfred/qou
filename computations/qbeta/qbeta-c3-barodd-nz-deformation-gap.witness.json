@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T14:15:34.661491+00:00",
-  "commitSha": "f1bc9ff51b1818e8a9cfb0d008d132c726aadde7",
+  "computedAt": "2026-08-15T15:52:28.788294+00:00",
+  "commitSha": "4f1cea622359983a10951aa2f1a145ea45d9944e",
   "assertions": [
     {
       "name": "vol_4_1_eq_2_lambda_pi3",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 25,
   "computation": "qbeta-c3-barodd-nz-deformation-gap",
   "scriptFile": "qbeta_c3_barodd_nz_deformation_probe.py",
-  "scriptHash": "80f276fece34",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e8561b756878",
+  "scriptCommitSha": "0be9e06bde6fbdad4841480a0f61da6c202441af",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Sharpens the z(q₀) gap for the c₃ bar-ODD S via the Neumann–Zagier complex-volume deformation of 4₁. Computes Vol(4₁)=2Λ(π/3), notes CS(4₁)=0 (amphichiral ⇒ S is a deformation phase, not the knot's own CS), and shows a SMOOTH real-scaling deformation u(q₀) cannot produce the measured S(proton)/S(muon)=−4.08 (anchors differ at ~1e-8) — so u(q₀) is a phase-channel / root-of-unity-accumulation quantity, the open z→c_k evaluation map. Scope-(a); C14 anti-fitting; no c_k wired.",
+  "description": "Sharpens the z(q₀) gap for the c₃ bar-ODD S via the Neumann–Zagier complex-volume deformation of 4₁. Computes Vol(4₁)=2·Cl₂(π/3), notes CS(4₁)=0 (amphichiral ⇒ S is a deformation phase, not the knot's own CS), and shows a SMOOTH real-scaling deformation u(q₀) cannot produce the measured S(proton)/S(muon)=−4.08 (anchors differ at ~1e-8) — so u(q₀) is a phase-channel / root-of-unity-accumulation quantity, the open z→c_k evaluation map. Scope-(a); C14 anti-fitting; no c_k wired.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "vol_4_1": {

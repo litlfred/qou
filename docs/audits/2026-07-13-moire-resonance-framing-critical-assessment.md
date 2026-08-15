@@ -54,9 +54,9 @@ physical picture the mathematics does not support.
 ## 2. "Vol(4₁) is a Moiré beat" — a metaphor with no quantitative content
 
 A Moiré beat has a **beat frequency** `Δf = |f₁ − f₂|` — that is the entire
-content of the phenomenon. The claim that `Vol(4₁) = 2Λ(π/3) ≈ 2.0299` (Lobachevsky
+content of the phenomenon. The claim that `Vol(4₁) = 2·Cl₂(π/3) ≈ 2.0299` (Lobachevsky
 function) is "the macroscopic Moiré beat of the two incommensurate periods `b`,
-`b⁻¹`" produces **no such frequency** and no map from `(b, b⁻¹)` to `2Λ(π/3)`.
+`b⁻¹`" produces **no such frequency** and no map from `(b, b⁻¹)` to `2·Cl₂(π/3)`.
 `Vol(4₁)` is the hyperbolic volume of the figure-eight complement — a scissors-
 congruence / Bloch-group invariant (Neumann, extended Bloch group), computed by the
 Bloch–Wigner dilogarithm at the shape parameter `z = e^{iπ/3}`. That derivation is

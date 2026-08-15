@@ -26,7 +26,7 @@ mp.dps = 60
 q0 = mpf(C.Q_50_DIGIT_STR)  # proton pin
 hbar = 1 - 1 / q0  # hbar_q = 1 - 1/q0
 vol41 = mp.mpf(str(C.VOL_4_1))
-# independent recomputation: Vol(4_1) = 2*Lambda(pi/3) = 2*Im Li_2(e^{i pi/3})
+# independent recomputation: Vol(4_1) = 2*Cl_2(pi/3) = 2*Im Li_2(e^{i pi/3})
 vol41_series = 2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3)))
 R_exp = mpf("206.7682830")  # CODATA m_mu/m_e
 R_exp_relerr = mpf("22e-9")  # ~22 ppb
