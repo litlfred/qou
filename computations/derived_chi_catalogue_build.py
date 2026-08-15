@@ -201,7 +201,12 @@ def derive_b2_torus_knot(
             chi_lambda_q_laurent=laurent_pairs(chi_2, q),
             mu_eigenvalues=["1"],  # 1-dim block, trivial eigenvalue
             k_lambda=2,
-            y_lambda_at_zero="1",  # placeholder; per-atom SDP gives real value
+            y_lambda_at_zero="?",  # NOT COMPUTED — the per-atom SDP supplies the
+            # real value. This was "1", which is indistinguishable from a
+            # genuine weight: the convention-C audit read it as a nonzero
+            # y_lambda on the 3-row (1,1,1) cells and flagged this witness
+            # as convention C. "?" is the idiom the sibling sweep already
+            # uses for not-computed, and it cannot be mistaken for data.
             y_star_shadow_price=None,
             tier="derived",
             derivation_ref=(
@@ -222,7 +227,7 @@ def derive_b2_torus_knot(
             chi_lambda_q_laurent=laurent_pairs(chi_11, q),
             mu_eigenvalues=["1"],
             k_lambda=2,
-            y_lambda_at_zero="1",
+            y_lambda_at_zero="?",  # NOT COMPUTED — see above
             y_star_shadow_price=None,
             tier="derived",
             derivation_ref=(
@@ -276,7 +281,7 @@ def derive_h3_knot(
             chi_lambda_q_laurent=laurent_pairs(chi_3, q),
             mu_eigenvalues=["1"],
             k_lambda=2,
-            y_lambda_at_zero="1",
+            y_lambda_at_zero="?",  # NOT COMPUTED — see above
             y_star_shadow_price=None,
             tier="derived",
             derivation_ref=derivation_self + " / trivial Hecke rep σ_i ↦ q",
@@ -323,7 +328,7 @@ def derive_h3_knot(
             chi_lambda_q_laurent=laurent_pairs(chi_111, q),
             mu_eigenvalues=["1"],
             k_lambda=2,
-            y_lambda_at_zero="1",
+            y_lambda_at_zero="?",  # NOT COMPUTED — see above
             y_star_shadow_price=None,
             tier="derived",
             derivation_ref=derivation_self + " / sign Hecke rep σ_i ↦ −q⁻¹",
