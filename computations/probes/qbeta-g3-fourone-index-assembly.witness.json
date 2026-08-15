@@ -1,8 +1,8 @@
 {
   "engine": "python-int+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T03:04:05.022880+00:00",
-  "commitSha": "34fcc97bdef51903fd89d95ced132a0124c12979",
+  "computedAt": "2026-08-15T03:26:24.189510+00:00",
+  "commitSha": "374eedf6d6738824ef46882b3b6f8f0d1c1522d5",
   "assertions": [
     {
       "name": "anchor_420_reproduced_bare_418",
@@ -35,14 +35,22 @@
       "passed": true,
       "tolerance": 0,
       "source": "I_41(0,0)(e^-t) stable across D=120->160"
+    },
+    {
+      "name": "quantum_a_polynomial_annihilation",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "L̂_4₁ (DGG eq C.7) annihilates the certified I_41 over 9 charges — same q-difference operator as the W_m/Stokes route"
     }
   ],
   "allPassed": true,
   "durationMs": 4,
   "computation": "qbeta-g3-fourone-index-assembly",
   "scriptFile": "qbeta_g3_fourone_index_assembly.py",
-  "scriptHash": "45ca3e62a1b0",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "843b06314dcc",
+  "scriptCommitSha": "374eedf6d6738824ef46882b3b6f8f0d1c1522d5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,6 +74,6 @@
       "I41_00": "206906.129589283756",
       "stable_digits": 40
     },
-    "verdict": "4₁ TOTAL 3d-index CERTIFIED from the in-repo DGG source (uploads/1112.5179v1.pdf, eq 4.18 read glyph-verified): the assembly is the BARE flux sum Σ_{e₂} I_Δ(m−e₂,m+e−e₂)·I_Δ(e−e₂,−e₂) with NO prefactor — it reproduces the printed anchor (4.20) I_41(1,1)=−q−q²+2q³+7q⁴+11q⁵+11q⁶+3q⁷ exactly, and the (4.19) amphichirality/Weyl symmetries hold exactly over a 7-charge battery. The prior 'assembly-not-certified' open state is RESOLVED: the 'divergent flat wing' was a truncation artifact of rebasing each tetrahedron factor to its (un-cancelled) minimum exponent; computing I_Δ at absolute degree instead makes the flux sum converge, exactly as DGG state. The earlier q^{−e₂} near-miss was eq (4.17)'s pre-U(1)-breaking prefactor mistakenly applied to (4.18). Zero-charge series I_41(0,0) = +1·q^0 -2·q^1 -3·q^2 +2·q^3 +8·q^4 +18·q^5… converges at the substrate. Next tranche (3): the GGM Stokes dictionary (uploads/2012.00062v3.pdf, Stokes constants = Donaldson–Thomas invariants) mapping these index coefficients to the integer Stokes tower — A_ω not claimed yet. Scope-(a); no fit; no c_k wired."
+    "verdict": "4₁ TOTAL 3d-index CERTIFIED from the in-repo DGG source (uploads/1112.5179v1.pdf, eq 4.18 read glyph-verified): the assembly is the BARE flux sum Σ_{e₂} I_Δ(m−e₂,m+e−e₂)·I_Δ(e−e₂,−e₂) with NO prefactor — it reproduces the printed anchor (4.20) I_41(1,1)=−q−q²+2q³+7q⁴+11q⁵+11q⁶+3q⁷ exactly, and the (4.19) amphichirality/Weyl symmetries hold exactly over a 7-charge battery. The prior 'assembly-not-certified' open state is RESOLVED: the 'divergent flat wing' was a truncation artifact of rebasing each tetrahedron factor to its (un-cancelled) minimum exponent; computing I_Δ at absolute degree instead makes the flux sum converge, exactly as DGG state. The earlier q^{−e₂} near-miss was eq (4.17)'s pre-U(1)-breaking prefactor mistakenly applied to (4.18). Zero-charge series I_41(0,0) = +1·q^0 -2·q^1 -3·q^2 +2·q^3 +8·q^4 +18·q^5… converges at the substrate. The certified index is annihilated by the DGG quantum A-polynomial L̂_4₁ (eq C.7) — the SAME q-difference operator whose fundamental solution W_m(q) yields the GGM Stokes matrix S⁺ (and thence A_ω), so this index face and the already-Lean-proved A_ω=3 route (QOU.QBeta.StokesQZeroDTCount via W₋₁, thm:aomega-fourone-dt-count) are descendants of one operator. This probe does NOT itself feed A_ω (that read-off goes through W_m, not the index); A_ω=3 is a separate, already-derived result. Scope-(a); no fit; no c_k wired."
   }
 }

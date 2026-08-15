@@ -156,6 +156,72 @@ def eval_at(s: dict, xval):
     return mp.fsum(c * xval ** d for d, c in s.items())
 
 
+# --- DGG quantum A-polynomial L̂_{4₁} (eq C.7) and its operator action (eq C.8) ---
+# Operators on an index function fn:(m,e)->{x-deg:int}, with q = x²:
+#   M̂ f(m,e) = x^{m}·f(m,e−1)      M̂⁻¹ f(m,e) = x^{−m}·f(m,e+1)
+#   ℓ̂ f(m,e) = −x^{e}·f(m+1,e)     ℓ̂⁻¹ f(m,e) = −x^{−e}·f(m−1,e)
+def _sadd(*ss):
+    o: dict[int, int] = {}
+    for s in ss:
+        for d, c in s.items():
+            o[d] = o.get(d, 0) + c
+    return {d: c for d, c in o.items() if c}
+
+
+def _xmul(s, k):
+    return {d + k: c for d, c in s.items()}
+
+
+def _smul(s, c0):
+    return {d: c * c0 for d, c in s.items()}
+
+
+def _Mh(fn):
+    return lambda m, e: _xmul(fn(m, e - 1), m)
+
+
+def _Mhi(fn):
+    return lambda m, e: _xmul(fn(m, e + 1), -m)
+
+
+def _Lh(fn):
+    return lambda m, e: _smul(_xmul(fn(m + 1, e), e), -1)
+
+
+def _Lhi(fn):
+    return lambda m, e: _smul(_xmul(fn(m - 1, e), -e), -1)
+
+
+def _OADD(*ops):
+    return lambda m, e: _sadd(*[op(m, e) for op in ops])
+
+
+def _OX(op, k):
+    return lambda m, e: _xmul(op(m, e), k)
+
+
+def _OS(op, c0):
+    return lambda m, e: _smul(op(m, e), c0)
+
+
+def quantum_a_poly_op(D: int):
+    """Return the operator L̂_{4₁} (DGG eq C.7) as a callable (m,e)->{x-deg:int}
+    acting on the certified index I41(·,·,D). DGG (p.36) prove L̂_{4₁} annihilates
+    I_{4₁}; this is the AJ-conjecture recursion whose fundamental solution W_m(q)
+    produces the GGM Stokes matrix S⁺ (and thence A_ω)."""
+    Id = lambda m, e: I41(m, e, D)
+    # A = x·M̂ − x⁻¹·M̂⁻¹ ; term1 = A(ℓ̂⁻¹)
+    term1 = _OADD(_OX(_Mh(_Lhi(Id)), 1), _OS(_OX(_Mhi(_Lhi(Id)), -1), -1))
+    # term3 = (x⁻¹·M̂ − x·M̂⁻¹)(ℓ̂)
+    term3 = _OADD(_OX(_Mh(_Lh(Id)), -1), _OS(_OX(_Mhi(_Lh(Id)), 1), -1))
+    # middle P = M̂⁻² − M̂⁻¹ − q − q⁻¹ − M̂ + M̂²   (q = x², scalars ·Id)
+    P = _OADD(_Mhi(_Mhi(Id)), _OS(_Mhi(Id), -1), _OS(_OX(Id, 2), -1),
+              _OS(_OX(Id, -2), -1), _OS(_Mh(Id), -1), _Mh(_Mh(Id)))
+    # term2 = −(M̂ − M̂⁻¹)(P)
+    term2 = _OS(_OADD(_Mh(P), _OS(_Mhi(P), -1)), -1)
+    return _OADD(term1, term2, term3)
+
+
 def main() -> int:
     print("=" * 78)
     print(" A_ω route 1, tranche 2 — figure-eight TOTAL 3d-index, CERTIFIED (DGG 4.18)")
@@ -216,7 +282,20 @@ def main() -> int:
     print(f"    I_41(0,0)(e^−t) = {mp.nstr(v_hi, 14)}  [{conf} digits stable, D {D_lo}→{D_hi}]")
     print(f"    I_41(1,1)(e^−t) = {mp.nstr(eval_at(I41(1, 1, D_hi), x_sub), 14)}")
 
-    certified = eng_ok and anchor_ok and sym_ok and sub_ok
+    # ---- [5] the index satisfies the DGG quantum A-polynomial L̂_{4₁} (eq C.7) ----
+    # This ties the certified 3d-index face to the same q-difference operator whose
+    # fundamental solution W_m(q) yields the GGM Stokes matrix S⁺ (and thence A_ω).
+    Dop = 26
+    Lop = quantum_a_poly_op(Dop)
+    aj_ok = True
+    aj_charges = [(1, 1), (0, 1), (1, 0), (2, 1), (1, 2), (0, 0), (2, 0), (3, 1), (2, 2)]
+    for (m, e) in aj_charges:
+        r = Lop(m, e)
+        if any(c for d, c in r.items() if d <= Dop - 12):  # within valid window
+            aj_ok = False
+    print(f"\n[5] quantum A-polynomial L̂_4₁ annihilates I_41 (DGG eq C.7), {len(aj_charges)} charges: {aj_ok}")
+
+    certified = eng_ok and anchor_ok and sym_ok and sub_ok and aj_ok
     verdict = (
         "4₁ TOTAL 3d-index CERTIFIED from the in-repo DGG source "
         "(uploads/1112.5179v1.pdf, eq 4.18 read glyph-verified): the assembly "
@@ -230,11 +309,15 @@ def main() -> int:
         "I_Δ at absolute degree instead makes the flux sum converge, exactly as "
         "DGG state. The earlier q^{−e₂} near-miss was eq (4.17)'s pre-U(1)-"
         "breaking prefactor mistakenly applied to (4.18). Zero-charge series "
-        f"I_41(0,0) = {series_str(I00, 6)}… converges at the substrate. Next "
-        "tranche (3): the GGM Stokes dictionary (uploads/2012.00062v3.pdf, "
-        "Stokes constants = Donaldson–Thomas invariants) mapping these index "
-        "coefficients to the integer Stokes tower — A_ω not claimed yet. "
-        "Scope-(a); no fit; no c_k wired."
+        f"I_41(0,0) = {series_str(I00, 6)}… converges at the substrate. The "
+        "certified index is annihilated by the DGG quantum A-polynomial L̂_4₁ "
+        "(eq C.7) — the SAME q-difference operator whose fundamental solution "
+        "W_m(q) yields the GGM Stokes matrix S⁺ (and thence A_ω), so this index "
+        "face and the already-Lean-proved A_ω=3 route (QOU.QBeta.StokesQZeroDTCount "
+        "via W₋₁, thm:aomega-fourone-dt-count) are descendants of one operator. "
+        "This probe does NOT itself feed A_ω (that read-off goes through W_m, not "
+        "the index); A_ω=3 is a separate, already-derived result. Scope-(a); no "
+        "fit; no c_k wired."
     )
     print("\nVERDICT:", verdict)
 
@@ -270,6 +353,9 @@ def main() -> int:
     wb.add_assertion("substrate_evaluation_stable",
                      computed=1 if sub_ok else 0, expected=1, tolerance=0,
                      source="I_41(0,0)(e^-t) stable across D=120->160")
+    wb.add_assertion("quantum_a_polynomial_annihilation",
+                     computed=1 if aj_ok else 0, expected=1, tolerance=0,
+                     source="L̂_4₁ (DGG eq C.7) annihilates the certified I_41 over 9 charges — same q-difference operator as the W_m/Stokes route")
     wb.save()
     return 0 if certified else 1
 
