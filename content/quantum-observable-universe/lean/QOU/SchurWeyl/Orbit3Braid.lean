@@ -42,8 +42,10 @@ are `a(d)` and `a(d ∓ 1)` for the same underlying axial distance `d` (the domi
 distance by one), and eliminating `d` leaves exactly this relation.  It is uniform across
 both domino orientations once written in terms of `sc`.
 
-Both were found by exact-rational search and are recorded as hypotheses rather than
-derived here; the derivation from `seminormalParam` is the natural follow-up.
+Both were found by exact-rational search, and both are **derived** at the foot of this
+file (`hsc_row` / `hsc_col`, `hrel_row` / `hrel_col`) for the actual seminormal
+parameters — the role `seminormalParam_mul_rel` plays for `Orbit6Braid`.  So the identity
+is a statement about the Hoefsmit matrices, not about abstract `3 × 3` arrays.
 
 ## Scope
 
