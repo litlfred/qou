@@ -1034,7 +1034,7 @@
           "in_degree": 0,
           "cone_size": 163,
           "depth": 38,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 18,
           "edge_span_mean": 9.5,
           "worst_target": ""
@@ -1252,6 +1252,21 @@
         "reviewed_at": "2026-08-15T10:30:59.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8f21ff05f495",
+          "ts": "09d776c42cc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.731Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1271,6 +1286,21 @@
         "reviewed_at": "2026-08-15T10:30:59.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8f21ff05f495",
+          "ts": "09d776c42cc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.778Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
       }
     ],
     "trap-em-dash": [
@@ -1290,6 +1320,21 @@
         "reviewed_at": "2026-08-15T10:30:59.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 210 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8f21ff05f495",
+          "ts": "09d776c42cc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.832Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
       }
     ],
     "trap-triples": [
@@ -1309,6 +1354,21 @@
         "reviewed_at": "2026-08-15T10:30:59.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 210 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8f21ff05f495",
+          "ts": "09d776c42cc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.882Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
       }
     ],
     "trap-closing-aphorism": [
@@ -1328,6 +1388,22 @@
         "reviewed_at": "2026-08-15T10:30:59.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8f21ff05f495",
+          "ts": "09d776c42cc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:18.109Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "closing bolded question states the substantive open problem; inflation removed",
+        "notes": "fixed: 'The overarching...does executing...correctly preserve...straight through the infinite-dimensional limit?' -> 'The contact-geometric test: does a finite-dimensional approximation over SU_q(2) preserve Levi form non-degeneracy in the infinite-dimensional limit?'"
       }
     ],
     "trap-meta-commentary": [
@@ -1347,6 +1423,21 @@
         "reviewed_at": "2026-08-15T10:30:59.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8f21ff05f495",
+          "ts": "09d776c42cc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.928Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
       }
     ],
     "trap-thesis-restatement": [
@@ -1366,6 +1457,21 @@
         "reviewed_at": "2026-08-15T10:30:59.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8f21ff05f495",
+          "ts": "09d776c42cc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.989Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
       }
     ],
     "trap-performed-warmth": [
@@ -1385,6 +1491,21 @@
         "reviewed_at": "2026-08-15T10:30:59.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8f21ff05f495",
+          "ts": "09d776c42cc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:18.030Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
       }
     ],
     "trap-superlative": [
@@ -1404,6 +1525,23 @@
         "reviewed_at": "2026-08-15T10:30:59.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8f21ff05f495",
+          "ts": "09d776c42cc1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:18.149Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "severity": "minor",
+        "evidence": "block-wide: 'translates strictly', 'mechanically concentrates', 'absolute lower bound', 'successfully executes', 'rigorously defies', 'unavoidable physical singularity', 'exclusively', 'depends entirely', 'successfully forming'",
+        "notes": "proposed: block-wide adverb strip (>2 sentences); each is a pure intensifier with no technical content"
       }
     ],
     "trap-nonspeakable": [
@@ -1423,8 +1561,23 @@
         "reviewed_at": "2026-08-15T10:30:59.606Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8f21ff05f495",
+          "ts": "09d776c42cc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:18.071Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.606Z"
+  "updated_at": "2026-08-15T11:12:18.149Z"
 }
