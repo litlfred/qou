@@ -201,4 +201,61 @@ theorem slowApproximation_vacuous_at_one : SlowApproximationImpliesAlgebraic 1 :
   intro x hx
   exact absurd (liouvilleWith_one x) hx
 
+/-! ### §4 — the remaining input is a THEOREM, not a conjecture
+
+What stands between the pieces above and an actual separation is **Thue–Siegel–Roth**: an
+algebraic irrational has approximation exponent exactly `2`, so it is not approximable to
+any order `p > 2`.  Roth proved it in 1955 and it earned the Fields Medal.
+
+⚠ **So it must not be recorded as a conjecture.**  Doing so would label a settled theorem
+as open — the same class of error this arc already found three times in
+`conj:diophantine-birthday` (an "honest open state" that encoded nothing, a separation
+that was impossible as stated, and a direction already proved in Mathlib).  It is stated
+here as an explicit **hypothesis**, and results that need it take it as an argument.
+
+⚠ **A name collision that will mislead a search.**  Mathlib *does* contain
+`Mathlib/Combinatorics/Additive/Corner/Roth.lean`, proving **"Roth's theorem"** — but that
+is the additive-combinatorics one about 3-term arithmetic progressions, an unrelated
+result that happens to share the name.  Thue–Siegel–Roth appears in Mathlib only as a
+docstring aside in `LiouvilleWith.lean`.  Checking "is Roth in Mathlib?" by name returns
+yes and the answer is no.
+
+Stated as a `def` of a `Prop` rather than a class, for the reason given in §3: a `Prop`
+taken as a hypothesis cannot be discharged by stipulating a field. -/
+
+/-- **Thue–Siegel–Roth** (Roth 1955): an algebraic irrational is not approximable to any
+order beyond `2`.
+
+A known theorem, **not** formalised in Mathlib and not proved here. Anything below that
+needs it takes it as an explicit hypothesis. -/
+def RothExponent : Prop :=
+  ∀ α : ℝ, IsAlgebraic ℚ α → Irrational α → ∀ p : ℝ, 2 < p → ¬ LiouvilleWith p α
+
+/-- **Conditional on Roth, `LiouvilleWith 3` genuinely separates.**
+
+Both halves are here, and only the first needs the hypothesis:
+
+* no algebraic irrational satisfies it — this is Roth;
+* some transcendental does — `liouvilleNumber 2`, unconditionally, from Mathlib.
+
+That is what "separated by trajectory" has to mean to be worth anything: a criterion
+taking different values on the two classes. Compare `no_birthday_only_separation`, where
+the criterion provably cannot. -/
+theorem roth_separates (hR : RothExponent) :
+    (∀ α : ℝ, IsAlgebraic ℚ α → Irrational α → ¬ LiouvilleWith 3 α)
+      ∧ LiouvilleWith 3 (liouvilleNumber 2) :=
+  ⟨fun α ha hi => hR α ha hi 3 (by norm_num),
+   (liouville_liouvilleNumber (le_refl 2)).liouvilleWith 3⟩
+
+/-- ⚠ The hypothesis is **not** vacuously available: `RothExponent` is a strictly stronger
+statement than anything proved here, since it constrains *every* algebraic irrational at
+*every* exponent above `2`, while the unconditional results only ever conclude
+transcendence from approximability.
+
+Recorded because the temptation, on finding a hypothesis one cannot discharge, is to weaken
+it until it becomes provable — at which point it stops carrying the separation. -/
+theorem rothExponent_implies_liouville_direction (hR : RothExponent) (α : ℝ)
+    (ha : IsAlgebraic ℚ α) (hi : Irrational α) : ¬ ∀ p : ℝ, LiouvilleWith p α :=
+  fun h => hR α ha hi 3 (by norm_num) (h 3)
+
 end QOU.AppendixSurreals

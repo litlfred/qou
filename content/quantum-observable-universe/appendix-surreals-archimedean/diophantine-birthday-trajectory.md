@@ -49,8 +49,22 @@ $$
 
 with the denominator pinned by the invariant that every bound after $n$ steps is a dyadic over $2^n$. Accuracy decouples from denominator, which is precisely what an approximation exponent above $1$ means.
 
-## ⚠ Where the difficulty actually is
+## ⚠ The remaining input is a theorem, not a conjecture
 
-What remains is a **quantifier**, not machinery: a Liouville condition needs *infinitely many* $n$ carrying a run long enough to beat the exponent. That is a property of the individual $\alpha$ — by Roth the runs are bounded for an algebraic irrational, and unbounded for a Liouville number — and proving it for any particular $\alpha$ is the hard Diophantine mathematics the conjecture was always about.
+What makes the criterion separate is **Thue–Siegel–Roth**: an algebraic irrational has approximation exponent exactly $2$, hence is not approximable to any order $p > 2$. Granting that, "approximable to order $3$" does what a separation must — it fails on *every* algebraic irrational and holds on an exhibited transcendental:
 
-So the surreal side is not the obstacle, which is the opposite of what the conjecture's placement in this appendix suggests. A second, independent gap remains on that side and should not be confused with this one: lifting any of the above to *birthday* needs a per-step bound on $\mathrm{birthday}(x/2)$, which the axioms do not supply and do not imply.
+$$
+  \text{Roth}
+  \;\Longrightarrow\;
+  \Bigl(\ \forall\, \alpha \ \text{algebraic irrational},\ \ \neg\,\mathrm{LiouvilleWith}\,3\,\alpha \Bigr)
+  \ \wedge\
+  \mathrm{LiouvilleWith}\,3\Bigl(\textstyle\sum_{n} 2^{-n!}\Bigr).
+$$
+
+The second conjunct is unconditional; the first is exactly Roth.
+
+**So this should not be recorded as an open conjecture.** Roth proved it in 1955. What is missing is a *formalisation*, not a proof — and the distinction matters more than usual here, because this conjecture has already carried three separate epistemic mislabelings: an "honest open state" that encoded nothing, a separation impossible as stated, and a direction already proved elsewhere.
+
+⚠ A name collision makes the opposite error easy too. Searching a formal library for "Roth's theorem" *succeeds* — and returns the **additive-combinatorics** result on three-term arithmetic progressions, an unrelated theorem sharing the name. Thue–Siegel–Roth is absent, and a search by name says otherwise.
+
+So the surreal side is not the obstacle, which is the opposite of what this conjecture's placement suggests. One genuine gap does remain on that side and should not be confused with the above: lifting any of this to *birthday* needs a per-step bound on $\mathrm{birthday}(x/2)$, which the axioms neither supply nor imply.

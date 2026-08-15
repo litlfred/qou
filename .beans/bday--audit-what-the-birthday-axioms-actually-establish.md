@@ -642,3 +642,57 @@ suggested the surreal side was the obstacle, and it is not.
 
 The birthday lift is unchanged and still blocked (`SignSequence.lean`'s missing
 `birthday (x/2)` bound).
+
+---
+**2026-08-15 — "should the remaining input be a conjecture?" Asked, and the answer is NO —
+it is a 1955 theorem.**
+
+I had been calling the last gap "the undischargeable number theory", which invites
+recording it as a conjecture class. Checked before doing so, and it is the wrong move.
+
+**The remaining input is Thue–Siegel–Roth** (Roth 1955, Fields Medal): an algebraic
+irrational has approximation exponent exactly `2`, hence is not approximable to any order
+`p > 2`. That is settled mathematics. Recording it as a conjecture would label a proved
+theorem as open — **the same class of error this bean exists to correct**, and it would be
+the *fourth* epistemic mislabeling attached to `conj:diophantine-birthday`, after:
+
+1. "no instance is provided — that is the honest open state", which encoded nothing;
+2. a separation that was impossible as stated;
+3. a direction already proved in Mathlib.
+
+So it is stated as an explicit **hypothesis**, `RothExponent`, with the label saying
+"known theorem, not formalised in Mathlib". Consequences take it as an argument:
+
+```lean
+roth_separates (hR : RothExponent) :
+  (∀ α : ℝ, IsAlgebraic ℚ α → Irrational α → ¬ LiouvilleWith 3 α)
+    ∧ LiouvilleWith 3 (liouvilleNumber 2)
+```
+
+Conditional on Roth, `LiouvilleWith 3` is a **genuine separator** — it fails on every
+algebraic irrational and holds on an exhibited transcendental. The second conjunct is
+unconditional, straight from Mathlib. Contrast `no_birthday_only_separation`, where the
+criterion provably *cannot* take different values.
+
+### ⚠ A name collision that answers the wrong question
+
+Mathlib **does** contain `Mathlib/Combinatorics/Additive/Corner/Roth.lean`, proving
+**"Roth's theorem"** — the additive-combinatorics one about three-term arithmetic
+progressions. Unrelated result, same name. Thue–Siegel–Roth appears in Mathlib only as a
+docstring aside in `LiouvilleWith.lean`.
+
+**So "is Roth in Mathlib?" returns yes by name and no in fact.** Anyone pricing this work
+by grepping for the name will conclude the input is available. It is not.
+
+### Also corrected: the exposition block said the wrong thing
+
+`diophantine-birthday-trajectory.md` read that what remains is "the hard Diophantine
+mathematics the conjecture was always about" and that it needs "proving it for any
+particular `α`". Both wrong in the same direction — Roth already covers *every* algebraic
+irrational, so no per-`α` work is needed and the mathematics is not the obstacle. Block
+updated to say the missing thing is a formalisation, and to record the name collision.
+Validator baseline unchanged at 42.
+
+`RothExponent` is deliberately a `def` of a `Prop`, not a class — a `Prop` taken as a
+hypothesis cannot be discharged by stipulating a field, which is exactly how
+`DiophantineBirthday` went wrong.
