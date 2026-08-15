@@ -1894,3 +1894,71 @@ pinned. Closing all 92 therefore settles `n = 4` and every family that occurs
 there; the general-`n` theorem additionally needs the corner for arbitrary
 `(a, b)`, which is still open and is the one genuinely unfinished piece of
 mathematics rather than of bookkeeping.
+
+## §4ab, §4ac — the last two, and **92 of 92**
+
+`(2,3)` at nineteen steps and `(3,3)` at twenty-five. With them every overlap
+composition of the `n = 4` enumeration is closed, and every inclusion composition
+was already closed structurally by §4m.
+
+`(2,3)` is **not** `(3,2)` transposed. §4aa needs no quadratic rule and runs in
+fifteen steps; `(2,3)` needs two and runs in nineteen. The two depths enter the
+S-polynomial in different positions — `D₁ σᵢ₋₁ σᵢ E₂ − σᵢ₋₁ D₁ E₂ σᵢ` — so
+swapping them is not a symmetry of the problem, and the four corner cases really
+are four separate chains.
+
+`(3,3)` is §4z one level deeper and inherits its shape exactly: two quadratic
+steps, `h` entering there and cancelling in the middle, everything else monic.
+Its length is not extra difficulty — 12 + 13 = 25, the sum of the two separate
+reductions, as for every corner case.
+
+**The one real bug, and it is a trap worth naming.** Both sections were generated
+from the engine's traces, and the engine picks whichever rule leads on the target
+word — often `Y..`, the Yang–Baxter rule, whose **leading coefficient is −1**. I
+substituted the Bokut–Shiao rule at the same leading monomial (§4j: they share
+it) because `monicStep` needs a monic rule — but kept the engine's step
+coefficients, which are computed against `lc = −1`. Every substituted step then
+had the wrong sign. The fix is a rule, not a patch: **for a monic rule the step
+coefficient is exactly the target term's coefficient in the source stage**, so
+read it off the stage rather than the trace. §4aa was accidentally right because
+its generator assigned coefficients by position; §4z likewise.
+
+    generated sections   §4z  §4aa  §4ab  §4ac
+    steps                 15    15    19    25
+    monic (via monicStep) 13    15    17    23
+    quadratic (by hand)    2     0     2     2
+
+## FINAL — n = 4, rule level
+
+    overlap compositions      92        proved 92, remaining 0
+    inclusion compositions    22   §4m  (all)
+
+    §4l  22   §4n   4   §4o   5   §4p  12   §4q   9   §4r  12
+    §4s   3   §4t   3   §4u   2   §4v   2   §4w   1   §4x   6
+    §4y   6   §4z   2   §4aa  1   §4ab  1   §4ac  1
+
+`HeckeCompletion.lean` is 8000 lines, sorry-free, and every `resolves` depends on
+`propext, Classical.choice, Quot.sound` and nothing else.
+
+## What this does and does not settle
+
+**Settles:** every composition of the completed Hecke rewriting system at `n = 4`
+resolves, and all but the four corner families are proved for *every* `n` — the
+statements are general, the `n = 4` enumeration only tells us which shapes occur.
+
+**Does not settle:** the general-`n` theorem. Two gaps remain, and they are
+different in kind:
+
+1. **The corner at arbitrary depths.** §4z, §4aa, §4ab, §4ac are general in `n`
+   but at *fixed* `(a, b)` — `(2,2)`, `(3,2)`, `(2,3)`, `(3,3)`. At `n ≥ 5` the
+   corner has cases with `a` or `b` ≥ 4 that no section covers. This is the
+   genuinely unfinished mathematics: the chains are not uniform in `(a, b)` —
+   `(2,2)` needs the quadratic rule twice and `(3,2)` not at all at the same
+   length — so a general treatment needs a real idea, not more generation.
+2. **The enumeration itself.** §4k computes the overlap shapes by `decide` at
+   `n = 4`. A general-`n` statement needs `overlapTriples` characterised
+   abstractly, not enumerated.
+
+Next session should start from (1): extract the `a = 4` chains by extending the
+confluence engine past `n = 4`, and look for the pattern across `(2,2), (3,2),
+(4,2)` and `(2,2), (2,3), (2,4)` before writing anything.
