@@ -929,3 +929,18 @@ import is `Mathlib.Tactic.NoncommRing` and the tactic is `noncomm_ring`. Second,
 `show` cannot open `OverlapComposition.spoly` — it is not definitionally
 transparent enough — so the S-polynomial has to be unfolded with
 `simp only [OverlapComposition.spoly, …]` instead.
+
+### QOU build check on §6 — red, and not from this change
+
+`Basic.lean` is reached by `QOU/PhotonThreading.lean`, so §6 forced a full QOU
+rebuild. It **failed**, on `QOU/SchurWeyl/QJucysMurphy.lean`.
+
+Not caused here. That module's import closure is six QOU modules plus Mathlib
+and contains **no UGB module at all**, while this branch's diff is one bean plus
+three UGB files. A module that does not import a changed file compiles
+identically, so the failure is main's.
+
+Filed as **qou-yzl8** rather than fixed: `QJucysMurphy.lean` belongs to
+`qou-ck0g`, in-progress under another session. Six `ring`-on-a-noncommutative-
+algebra sites — the same trap §6 hit twenty minutes earlier, which is why it was
+recognisable on sight. UGB itself is green (1212 jobs).
