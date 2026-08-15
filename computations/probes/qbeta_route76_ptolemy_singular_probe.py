@@ -245,6 +245,20 @@ def main() -> int:
             {"manifold": "11a1", "tets": 17, "ptolemy_singular": "TIMEOUT > 600s",
              "route75": "identification fails"},
         ],
+        "algorithm_choice_matters_but_does_not_rescue_10_100": {
+            "finding": "minAssGTZ is the wrong tool when only the FIELD is wanted. The "
+                       "Ptolemy ideals are ZERO-DIMENSIONAL (dim(std(I)) = 0 throughout), "
+                       "so Singular's `finduni` returns the univariate generator per "
+                       "variable directly. It needs option(redSB) -- otherwise it errors "
+                       "'The ideal G has to be reduced', which reads like the ideal being "
+                       "unsuitable rather than the basis being unreduced.",
+            "finduni_measured": {"6_1": "2.0s, quartic", "7_2": "0.0s, quintic",
+                                 "8_2": "0.0s, DEGREE 8"},
+            "but": "10_100 (15 Ptolemy variables) TIMES OUT under finduni too, at 1500s -- "
+                   "measured, not inferred. So switching algorithm moves the ceiling (degree "
+                   "8 becomes instant) WITHOUT rescuing 14 tetrahedra. The G6 conclusion "
+                   "stands: more rigorous, less far-reaching.",
+        },
         "caveat": "this measures THIS CONFIGURATION, not the method's limit: 600s budget, "
                   "minAssGTZ (not primdecGTZ), degree-reverse-lex `dp` ordering, default "
                   "options, single core. A different engine setting may well do better, and "

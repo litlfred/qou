@@ -315,3 +315,27 @@ suggestion that `finduni` simply dissolves the ceiling is **not** supported: it 
 (degree 8 is now instant where `minAssGTZ` struggled), but 14 tetrahedra remains hard by
 this route. Awaiting the timeout to record the number honestly rather than guessing a
 third time.
+
+---
+**2026-08-10 — 10₁₀₀ MEASURED under `finduni`: still a timeout. The ceiling is real.**
+
+    10_100: 15 Ptolemy variables -> finduni TIMEOUT after 1500s
+
+Measured, not inferred. So switching `minAssGTZ` → `finduni` **moves** the ceiling
+without **rescuing** 14 tetrahedra:
+
+| manifold | `minAssGTZ` | `finduni` | Route 75 |
+|---|---|---|---|
+| 6₁, 7₂ | ran | 2.0s / 0.0s | exact |
+| 8₂ (degree 8) | not attempted | **0.0s** | exact |
+| 10₁₀₀ (14 tets) | timeout 600s | **timeout 1500s** | **exact, 7.2s** |
+| 11a1 (17 tets) | timeout 600s | stopped, not measured | identification fails |
+
+**G6's conclusion stands and is now properly evidenced:** the Ptolemy route is strictly
+more rigorous and strictly less far-reaching than Route 75. Recorded in the probe.
+
+11a1 was stopped rather than measured — Route 75 fails on it too, so neither route reaches
+it and the number would not change any decision. Said here rather than left implied.
+
+**Standing recommendation, unchanged:** use both. Route 76 where rigour matters and the
+manifold is small; Route 75 for reach; G5's field agreement makes them mutually checking.

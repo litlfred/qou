@@ -600,6 +600,8 @@ export default chapter({
         "flat-tetrahedron-zero-volume",
         "gluing-equations-do-not-detect-hyperbolicity",
         "hyperbolic-knot-shape-fields",
+        "five-two-saddle-sum-rule",
+        "kummer-bloch-wigner-identity",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",
