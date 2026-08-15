@@ -93,3 +93,61 @@ commit.
 
 Doing (1) before (2) leaves the gate redder than it is now, which is probably
 why it has sat.
+
+## Traced the chain to its root: there is no mpf to carry
+
+The bean above says the fix is to "carry `pred` as mpf through
+`lookup_b_pred_existing` and its upstream witness". **There is nothing to
+carry.** Followed it one hop at a time:
+
+    canonical_mass_table_extended.lookup_b_pred_existing
+        -> returns r["B_pred_MeV"] straight out of mass-table-ppb.witness.json,
+           no cast of its own
+
+    mass-table-ppb.witness.json
+        -> "B_pred_MeV": 2.2488207948647343      a JSON FLOAT, not a string
+
+    computations/mass_table_ppb.py                the root producer
+        -> imports NO mpmath at all. No `import mpmath`, no set_compute_dps(),
+           no mp.dps anywhere in the file.
+        -> `from q_parameter import Q as Q0`      the FLOAT q0, not Q_MP
+        -> M_E_MEV from experimental_constants, VOL_BORROMEAN / VOL_7_SQ_1
+           from knot_volumes — all float
+        -> B = nu * M_E_MEV * vol                 float arithmetic throughout
+
+So `B_pred` is float64 from the root, and `err = pred - ref` cannot be anything
+else regardless of what `canonical_mass_table_extended` does. Dropping the
+`float()` casts on `AME_B_*_MEV_VALIDATION` there is still correct on its own
+terms — those constants really are mpf and really are being truncated — but it
+changes nothing about the err fields, because `pred` dominates.
+
+**Revised scope: draining this means porting `mass_table_ppb.py` to mpmath** —
+switching it from `q_parameter.Q` to `Q_MP`, and its `M_E_MEV` / `VOL_*`
+constants to mpf sources. That changes every published `B_pred_MeV` in a
+16-row table which other producers read. A third arc, and a bigger one than the
+two above it.
+
+## A gate gap this exposes, worth its own consideration
+
+`mass_table_ppb.py` emits a witness full of physics values and uses **zero
+mpmath**. It is therefore invisible to all four precision gates, including the
+one added for exactly this family of blind spots:
+
+    mpf_float_source_audit          needs an mpf(<float literal>) to flag
+    mpf_import_time_dps_audit       needs an mpf built at module scope
+    witness_float64_padding_audit   needs padding, i.e. mpf serialized too wide
+    never_raises_dps_audit          needs mp_value_calls > 0 — this file has none
+
+Every one of them keys on the producer *touching mpmath*. A producer that never
+touches it at all emits honest float64 and is, by construction, outside all four.
+`never_raises_dps_audit` was written for "raises precision nowhere"; the case
+below it is "has no precision to raise", and the two are not the same.
+
+Whether that is a defect is a real question rather than an obvious yes — plenty
+of producers legitimately work in float64. What makes THIS one worth flagging is
+that it feeds a 16-row published mass table which downstream witnesses compare
+against AME references at ppb, and it takes the float q0 when an mpf q0 is
+available two imports away.
+
+Not proposing a fifth gate on the strength of one example. Recording the
+category so the next instance is recognised rather than re-derived.
