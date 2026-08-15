@@ -171,6 +171,7 @@ import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FigureEightTriangulation
+import QOU.Knot.AngleStructureUniqueness
 import QOU.Knot.IdealTetLawOfSines
 import QOU.Knot.KummerDilogHalf
 import QOU.Knot.KummerRadial
