@@ -283,3 +283,35 @@ same avoidable mistake: a `nohup`-ed job whose parent shell exited, reporting th
 wrapper's exit 0 while python had been killed — the trap already recorded in this lane
 for `lake` wrappers, repeated here. Re-running under harness-tracked background. Until it
 returns, **no claim either way** about whether the Ptolemy route reaches 14 tetrahedra.
+
+---
+**2026-08-10 — correcting the previous entry: the job was NOT killed. It is still running.**
+
+The entry above says two `finduni` attempts "were lost … reporting the wrapper's exit 0
+while python had been killed". **Half of that is right and the conclusion is wrong.**
+
+Checked with `ps`: the process is alive and has been the whole time —
+
+    2406  python3 finduni_reach.py
+    2410  Singular -q --no-warn …    21:12 CPU
+
+It had already written 6₁, 7₂ and 8₂ to its log and was working on **10₁₀₀**, which had
+consumed **over twenty minutes of CPU** in `finduni` alone.
+
+- **Right:** the harness's "completed (exit code 0)" was the *wrapper's* exit status, not
+  python's — `nohup … &` plus `echo` returns immediately while the child runs detached.
+  That part of the standing lesson holds and is worth keeping.
+- **Wrong:** inferring from that that the work had been *lost*. It had not. An empty
+  output file plus a wrapper's exit code is **not** evidence the job died, any more than
+  it is evidence the job succeeded. It is evidence of nothing, and I read it as a
+  diagnosis twice.
+
+The correct move on an empty log from a detached job is to **look for the process**
+before concluding anything about it. `ps` answers in one call what I guessed at twice.
+
+**Consequence for the reach question.** 10₁₀₀ under `finduni` is genuinely expensive —
+20+ minutes of CPU without returning, against 0.0s for 8₂ at degree 8. So the earlier
+suggestion that `finduni` simply dissolves the ceiling is **not** supported: it moves it
+(degree 8 is now instant where `minAssGTZ` struggled), but 14 tetrahedra remains hard by
+this route. Awaiting the timeout to record the number honestly rather than guessing a
+third time.
