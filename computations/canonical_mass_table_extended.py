@@ -467,6 +467,15 @@ def main() -> int:
         ),
     )
     parser.add_argument("--timeout", type=int, default=1500)
+    parser.add_argument(
+        "--allow-partial-canonical",
+        action="store_true",
+        help=(
+            "Permit writing the canonical witness from a RESTRICTED --atoms "
+            "set. Off by default: see the guard below. Only pass this if you "
+            "intend the canonical table to shrink."
+        ),
+    )
     args = parser.parse_args()
 
     # dps policy:
@@ -703,6 +712,43 @@ def main() -> int:
         .add_data("rows", records)
         .add_data("n_atoms_computed", len(records))
     )
+
+    # GUARD — a restricted --atoms run may NOT overwrite the canonical witness
+    # (bean `qou-xwet`).
+    #
+    # The output filename is FIXED (see the module docstring), so ANY run of
+    # this script rewrites `canonical-mass-table-extended.witness.json`
+    # wholesale, including a run that was asked for a handful of atoms. That
+    # is not hypothetical: `low_isotope_mass_table.py` drove this script with
+    # `--atoms p,n,D,T,3He` purely as a speed optimisation, and the resulting
+    # five-row table replaced the canonical nine-row one on `main` — 4He and
+    # every A >= 5 row silently disappeared, committed under two commit
+    # messages that only discussed the low-isotope table.
+    #
+    # It also broke a consumer without tripping anything: `registry.ts` pins
+    # `B_2H_AME_MeV` POSITIONALLY at `data.rows.2.B_AME_MeV`, so the row set
+    # moving underneath it silently repoints that value at a different
+    # nuclide. (The ordering comment on DEFAULT_ATOMS guards against
+    # *reordering the list*; it cannot see a caller shrinking the set.)
+    #
+    # So: refuse. A partial table is fine to compute and print, it is just not
+    # the canonical artifact. Callers that genuinely want a subset should
+    # filter the full table downstream — which is exactly what
+    # `low_isotope_mass_table.project_to_low_isotope()` already does.
+    _default_labels = [label for _, _, label in DEFAULT_ATOMS]
+    _missing = [lab for lab in _default_labels if lab not in requested]
+    if _missing and not args.allow_partial_canonical:
+        print()
+        print("  REFUSING to write the canonical witness from a partial run.")
+        print(f"    requested : {','.join(requested)}")
+        print(f"    missing   : {','.join(_missing)}")
+        print("  The output path is fixed, so this would REPLACE the canonical")
+        print("  table with a subset and silently repoint every positional")
+        print("  consumer of data.rows (see bean qou-xwet).")
+        print("  Run with the full default --atoms set and filter downstream,")
+        print("  or pass --allow-partial-canonical if the shrink is intended.")
+        return 2
+
     out = builder.save()
     print()
     print(f"  Witness: {out.name}")

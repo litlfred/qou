@@ -90,11 +90,30 @@ CANONICAL_WITNESS = _pb.witness_path("canonical-mass-table-extended.witness.json
 
 
 def run_canonical(method: str, target_dps: int) -> None:
-    """Invoke canonical_mass_table_extended.py end-to-end."""
+    """Invoke canonical_mass_table_extended.py end-to-end, at FULL coverage.
+
+    Deliberately does **not** pass `--atoms` (bean `qou-xwet`).
+
+    This used to restrict the canonical run to `LOW_ISOTOPE_ATOMS` as a speed
+    optimisation. That was destructive and redundant at the same time:
+
+    * **Destructive** — the canonical script's output filename is fixed, so the
+      restricted run overwrote `canonical-mass-table-extended.witness.json`
+      with a five-row table. On `main` that dropped 4He and every A >= 5 row,
+      and silently repointed `registry.ts`'s positional `B_2H_AME_MeV` pin
+      (`data.rows.2.B_AME_MeV`) at a different nuclide.
+    * **Redundant** — `project_to_low_isotope()` below already filters to
+      `A <= LOW_ISOTOPE_A_MAX`, so restricting the *upstream* run bought
+      nothing this wrapper needs.
+
+    Full coverage is slower. That is the correct trade for a shared committed
+    artifact, and `--no-rerun-canonical` remains available when the canonical
+    witness is already fresh. The canonical script now also refuses a partial
+    write outright, so this call could not silently regress again.
+    """
     cmd = [
         sys.executable, "-u",
         str(HERE / "canonical_mass_table_extended.py"),
-        "--atoms", ",".join(LOW_ISOTOPE_ATOMS),
         "--method", method,
         "--target-dps", str(target_dps),
     ]
