@@ -122,7 +122,7 @@ factorization theorem.
  the formal derivation).
 2. Build $\hat V_k^{\mathrm{JM}}$ via Plancherel-weighted sum
  over SYTs.
-3. Sum cell-pair Φ\_q contributions (all $\binom{n}{2}$ pairs,
+3. Sum cell-pair $\Phi_q$ contributions (all $\binom{n}{2}$ pairs,
  no distance filter).
 4. Iterate over jet levels $n = 0, 1, \ldots, N$ and sum.
 
