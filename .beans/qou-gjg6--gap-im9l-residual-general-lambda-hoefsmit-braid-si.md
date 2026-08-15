@@ -281,3 +281,37 @@ Remaining step-(ii) blockers, now 3 of 4:
 2. orbit-size classification for <s_k, s_{k+1}> acting on SYT lam (sizes 1,2,3,6);
 3. per-orbit basis correspondence matching Orbit6Braid's explicit index ordering;
 4. the size-3 orbit case, which nothing proved so far covers.
+
+
+## SIZE-3 ORBIT IDENTIFIED (numerical, NOT yet formalised) 2026-08-15
+
+What a size-3 orbit IS: the standard fillings of a DOMINO + a disjoint cell. The domino's
+two cells are adjacent, which forces their relative order, so the count is 3!/2! = 3.
+(Sizes: 3 cells in a row or column -> 1; domino + disjoint cell -> 3; three mutually
+non-adjacent cells -> 6.)
+
+Concretely, with cells A, B adjacent (row-domino: content(B) = content(A)+1; column-domino:
+content(A)-1) and C disjoint from both, the three fillings of {k,k+1,k+2} with
+entry(A) < entry(B) are
+
+  1: A=k,   B=k+1, C=k+2      2: A=k,   B=k+2, C=k+1      3: A=k+1, B=k+2, C=k
+
+and the generators act as
+
+  sigma_k    : fixes filling 1 with the SCALAR a(+-1)  (+1 row-domino -> q; -1 column-domino
+               -> -q^-1); 2x2 block on {2,3}
+  sigma_{k+1}: 2x2 block on {1,2}; fixes filling 3 with the same scalar
+
+so each generator is (scalar) (+) (2x2 block) -- but on DIFFERENT summands, which is why
+the orbit is 3-dimensional and irreducible to the 2x2 case, exactly as at size 6.
+
+STATUS: exact-rational check over 8 random (q, contents) pairs, both row- and
+column-dominoes: the Hecke quadratic relation holds for both generators and the BRAID
+relation holds, under the same negative-distance-first orientation convention used in
+Orbit6Braid. This is NUMERICAL EVIDENCE ONLY -- there is no Lean theorem for the size-3
+orbit yet, and the corresponding blocker in the step-(ii) list stays OPEN.
+
+Formalising it should follow Orbit6Braid exactly: 3x3 matrices via Matrix.of + match on
+the index values (NOT !![...] literals), parameters as free reals subject to whatever
+single relation the elimination gives, then ext + fin_cases + field_simp + ring. Expect
+it to be cheaper than the 6x6.
