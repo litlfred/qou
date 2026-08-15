@@ -119,6 +119,12 @@ def cellContent (c : ℕ × ℕ) : ℤ := (c.2 : ℤ) - (c.1 : ℤ)
 block of the generator `σ_i`. -/
 def axialDistance (c d : ℕ × ℕ) : ℤ := cellContent d - cellContent c
 
+/-- **Axial distance is antisymmetric.**  Exchanging the two cells negates it — which is
+what makes a seminormal pair carry the two parameters `a(d)` and `a(-d)`. -/
+theorem axialDistance_antisymm (c d : ℕ × ℕ) :
+    axialDistance c d = -axialDistance d c := by
+  simp only [axialDistance]; ring
+
 /-- Cells in the same row have axial distance equal to their column gap. -/
 theorem axialDistance_same_row (i j₁ j₂ : ℕ) :
     axialDistance (i, j₁) (i, j₂) = (j₂ : ℤ) - (j₁ : ℤ) := by
