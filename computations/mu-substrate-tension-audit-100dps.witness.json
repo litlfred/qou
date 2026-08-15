@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T11:01:44.899866+00:00",
-  "commitSha": "a550747732e93dd84fcdb9e168331e1982be3fcb",
+  "computedAt": "2026-08-15T11:05:32.352531+00:00",
+  "commitSha": "cb2488c17fc501a2447ba8be1e47f6ac4ec5d3dd",
   "assertions": [
     {
       "name": "audit_completed",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 50,
   "computation": "mu-substrate-tension-audit-100dps",
   "scriptFile": "mu_substrate_tension_audit_100dps.py",
-  "scriptHash": "1aefbcb9d1b1",
+  "scriptHash": "ebc01d3fe4c0",
   "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -35,6 +35,8 @@
   "description": "100-dps audit of the m_μ prediction residual (210 ppb) post q_0 re-pin (#1422). Localises whether the residual is the propagated q_0 shift (H1: no formula correction needed) or requires a missing structural correction (H2).",
   "parameters": {
     "q_canonical_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q_canonical_anchor": "proton",
+    "q_canonical_anchor_note": "asserted at run time; a muon value here would make the audit difference muon against muon and report the inversion residual as the tension (measured: 0.0747 ppb vs the true 11.61 ppb, 155x understated)",
     "m_e_CODATA": "0.51099895069",
     "m_mu_CODATA": "105.6583755"
   },
@@ -46,6 +48,14 @@
     "delta_q0_canonical_minus_mu_anchored": {
       "delta_q0": "-1.288885877078583697167602e-8",
       "delta_q0_ppb": "-11.6118085259"
+    },
+    "leg_separation": {
+      "substrate_tension_ppb": "-11.6118085259",
+      "substrate_tension_meaning": "proton pin vs muon-anchored q_0 — PHYSICAL (the 9.5σ μ–p disagreement)",
+      "inversion_residual_ppb": "0.0775321284938",
+      "inversion_residual_meaning": "stored muon literal vs a fresh Newton inversion — SAME pin, two routes; a precision floor, not a physical quantity",
+      "tension_over_residual": "149.7677",
+      "why_recorded": "the committed witness once reported the residual AS the tension; carrying both makes that substitution visible instead of plausible"
     },
     "propagated_q0_effect_on_m_mu_ppb": "211.164905665",
     "h1_substrate_tension_consistent_with_q0_shift": true,
