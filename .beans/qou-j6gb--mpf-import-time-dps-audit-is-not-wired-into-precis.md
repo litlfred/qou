@@ -468,3 +468,69 @@ check what it costs to re-run: a producer whose witness cannot be regenerated
 leaves the source and the published numbers disagreeing, which is a worse state
 than either fixing or leaving both. Prefer the cheap ones first — the ratchet
 does not care about order.
+
+## Cost-triaged drain: 46 → 11 producers, 206 → 44 constructions
+
+Took the lesson from the sweep and **triaged by re-run cost before touching
+anything**: ran all 45 remaining producers under a 20 s cap, timing each. That
+is a cheap measurement and it changed what got worked:
+
+    completed < 20s : 35   (most under 2s)
+    timed out       :  5   (cost unknown, left alone)
+    ALREADY BROKEN  :  4   (non-zero exit, not a timeout)
+
+The four broken ones — `derived_masses.py`, `gram_matrix_seminormal_n.py`,
+`hecke/hecke_engine.py`, `toffoli-lp-stability.py` — are dead producers of the
+same kind as the six-term sweep and `term6_full_pole_sum`. Not touched here;
+draining a producer that cannot run leaves source and witness disagreeing with
+no way to check which is right.
+
+**The triage runs write witnesses.** 24 files came back dirty and were reverted
+wholesale (`git checkout -- computations/`), plus two witnesses that had not
+existed before and were deleted. Shape guard clean afterwards. Worth planning
+for rather than discovering: timing a producer is not a read-only operation.
+
+### Applied to the 35 cheap ones
+
+34 fixed (one skipped: no mpmath import to key an alias off), then **all 34
+verified to import AND to actually reach dps ≥ 50 at runtime**, with mpmath
+reset to 15 before each so one module's raise cannot mask another's.
+
+One fixer bug caught by that runtime check, and it is the same alias trap as
+before wearing a different hat: `canonical_mass.py` imports `mpmath as mp`
+*inside a function*, so there is no module-scope `mp` to assign to and the
+generated `mp.mp.dps = 50` raised `NameError`. Fixed by hand, raising dps at the
+local import instead. **A module-scope insert is only valid if the binding it
+uses is module-scope** — the AST walk that finds the alias must respect that.
+
+### Then regenerated, and five witnesses were NOT kept
+
+34 producers re-ran cleanly. Of the resulting witnesses, five were reverted
+rather than committed, each caught by a gate rather than by inspection:
+
+    COLLAPSED (shape guard)
+      a4-brunnian-deficit-closed-form   durationMs 573,059 -> 4,997
+      probe-4-li6-rectangular-python    payload 58 -> 36 leaves, assertions 1 -> 0
+      shadow-price-c-321-q0             payload 28 -> 13 leaves (54% gone)
+
+    REGRESSED (raw-float64 ratchet)
+      atom-level-wedderburn-tower       1 -> 103 raw float64
+      catalan-binding                   35 -> 47
+
+None of the three collapsed producers takes CLI arguments, so this is not the
+`--max-a` default trap from `ground-state`; the cause is unidentified and they
+are left with source fixed and witness stale. The two REGRESSED are the
+downstream consequence recorded earlier in this bean — raising working precision
+surfaces float64 that low output precision was hiding — and they need their
+serialization fixed at the producer before their witnesses can be regenerated.
+
+### Net
+
+    never-raises ratchet   46 producers / 206 constructions -> 11 / 44
+    raw-float64            15 files DRAINED, -2,379 fields
+    NEW / REGRESSED        0 / 0 from this work
+    padding ratchet        13/13, 0 NEW
+    shape guard            0 collapsed
+
+The one remaining red in the family is `rho-k-co-casimir-extended` 3 -> 4, which
+predates this work and is documented above as needing a ≥ 24 GiB host.

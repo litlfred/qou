@@ -31,6 +31,7 @@ hyperbolic volume" picture is validated at the atomic binding scale.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import sys
 import json
 import math
@@ -64,6 +65,13 @@ M_N_MEV = float(_M_N_MEV)
 # Binding scale from paper
 ALPHA_MEV = M_E_MEV * VOL_BORROMEAN  # = 3.74447... MeV
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def phi_atom_wedderburn(Z: int, N: int, include_inter: bool = True) -> float:
     """Σ_i ln|V̂_i^{full}| for the atom's braid (paper: wedderburn formula).

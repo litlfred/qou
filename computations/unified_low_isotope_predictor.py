@@ -36,6 +36,7 @@ Output: unified-low-isotope-predictor.witness.json
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import json
 import sys
 from pathlib import Path
@@ -127,6 +128,13 @@ def term4_frobenius(Z, N):
     # A ≥ 8: asymptotic estimate
     return M_E * 2.05
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 # Term 5: BW + chirality (only valid for A ≥ 3 where volume > surface)
 def term5_bw_chirality(Z, N):

@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-04T09:46:35.531107+00:00",
-  "commitSha": "fb1ab90c1a1f77b632fe31bac60dce46f8671cc9",
+  "computedAt": "2026-08-15T20:42:56.757075+00:00",
+  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10600,
+  "durationMs": 9895,
   "computation": "qbeta-eta-square-fibre-probe",
   "scriptFile": "qbeta_eta_square_fibre_probe.py",
-  "scriptHash": "49ab03c46e05",
-  "scriptCommitSha": "376bbf2543cba84276e06a8cae1958dc9e43ad46",
+  "scriptHash": "d470ce78b462",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,9 +19,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "0zr0 eta-square fibre-descent test: (A) exact Pythagorean compatibility P=E^2+2E-O^2 of the cosh/sinh zeta4 fibre model; (B) eta=arcsinh(O) bar-oddness + eta^2 membership in Q(sqrt3)[[u~]] with 08ds conventions, ORD=17.",
   "audit_only": true,

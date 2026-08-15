@@ -41,6 +41,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import mpmath as mp  # noqa: E402
 
 import mass_binding_dashboard as mbd  # noqa: E402
@@ -76,6 +77,13 @@ def _trM_of(word, n, y):
     chi = chi_all_lambda_reduced_block(word, n)
     return _trM(chi, y)
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def _bond_L_gg(Z, N, gg, q, h):
     """log(tr_free/tr_atom) for the (Z,N) 2-nucleon sub-braid; gg=True forces the
