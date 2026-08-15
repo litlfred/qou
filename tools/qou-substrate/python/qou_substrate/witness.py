@@ -63,16 +63,45 @@ _Q0_VALUE_CACHE: dict = {}
 
 
 def _q0_value_for_anchor(anchor: str) -> Optional[str]:
-    """The 50-digit q₀ string for a given anchor (cached). muon ← the committed
-    q-pinning witness; proton ← the package constant. None if unavailable or the
-    anchor is not one of {muon, proton}."""
+    """The 50-digit q₀ string for a given anchor (cached).
+
+    BOTH anchors are DERIVED, never read from a committed witness:
+    muon ← ``q_muon_at()``, proton ← ``Q_50_DIGIT_STR``. None if unavailable
+    or the anchor is not one of {muon, proton}.
+
+    The muon branch used to read
+    ``computations/q-pinning-50-digit.witness.json`` →
+    ``derived_50_digit.q``. That was a latent flip-flop bug of exactly the
+    kind this stamping exists to prevent, and it was live in two ways:
+
+    1. **The producer no longer computes a muon value into that field.**
+       ``q_pinning_50_digit.py`` sets ``Q = q_at(mp.dps)`` — the PROTON
+       solve — and writes ``"q": str(Q)``. The committed witness still holds
+       a muon-range value only because it predates that change. So
+       *re-running the producer* — an ordinary, encouraged act — would have
+       silently made every subsequent muon-anchored witness stamp a PROTON
+       value under ``q0Anchor: "muon"``. Nothing would have failed; the label
+       would simply have started lying.
+
+    2. **The committed value is not reproducible anyway.** It diverges from
+       ``q_muon_at()`` at digit 13 (2.842e-12). That gap is 431x *smaller*
+       than the CODATA uncertainty on q_muon, so no physics moves — but a
+       constant that cannot be regenerated cannot be checked, which is the
+       whole point of stamping it.
+
+    Deriving both anchors removes the stale-file dependency entirely: the
+    label is now recomputed from CODATA plus an exactly-computed Vol(4₁) on
+    every call, so it cannot drift from, or be poisoned by, any witness.
+    """
     if anchor in _Q0_VALUE_CACHE:
         return _Q0_VALUE_CACHE[anchor]
     val: Optional[str] = None
     try:
         if anchor == "muon":
-            p = _repo_root() / "computations" / "q-pinning-50-digit.witness.json"
-            val = json.loads(p.read_text(encoding="utf-8"))["derived_50_digit"]["q"]
+            from qou_substrate.constants import q_muon_at  # noqa: PLC0415
+            import mpmath as _mp  # noqa: PLC0415
+            # 50 significant digits, matching Q_50_DIGIT_STR's convention.
+            val = _mp.nstr(q_muon_at(50), 50, strip_zeros=False)
         elif anchor == "proton":
             from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: PLC0415
             val = str(Q_50_DIGIT_STR)
