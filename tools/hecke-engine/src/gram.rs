@@ -54,8 +54,31 @@ pub const NF_BASIS: [&[u8]; 6] = [
 
 pub const NF_NAMES: [&str; 6] = ["gamma", "sigma_0", "sigma_1", "L_plus", "L_minus", "e_minus"];
 
-/// Default substrate parameter q_0 (matches `q_parameter.py`).
-pub const Q_0: f64 = 1.1099785955541805;
+/// Default substrate parameter q_0 — the **PROTON** pin, `m_p/m_e`.
+///
+/// Matches `q_parameter.Q` / `qou_substrate.constants.Q`, which is what
+/// `pyhecke.gram` reads.
+///
+/// RE-PINNED 2026-08-15 (owner decision, bean `qou-m7py`) from the MUON pin
+/// `1.1099785955541805`, 11.54 ppb away. AGENTS.md's owner directive of
+/// 2026-08-07 makes the experimental/proton pin the default for all
+/// production compute; this constant was the last muon-pinned production
+/// value in the crate. The prior note here correctly declined to change it
+/// as a side effect of the convention migration — it is an owner decision
+/// because it moves every certificate the engine emits — so it was taken
+/// as one, separately.
+///
+/// Effect: `markov_z(Q_0)` moves 0.6126880505455892 -> 0.6126880371464652,
+/// which is now EXACTLY the `pyhecke.gram.z` value. The crate and the Python
+/// mirror no longer straddle the ideal/experimental layer boundary.
+///
+/// Scope note: this is the only *production* muon literal in the crate. The
+/// remaining occurrences (`rational_round`, `precision_scalar`,
+/// `laurent_poly_q`) are test inputs exercising rounding and precision
+/// machinery, not the substrate anchor, and their tolerances (down to 1e-4)
+/// are orders of magnitude larger than the 1.15e-8 re-pin. Changing them
+/// would be churn, not a migration.
+pub const Q_0: f64 = 1.1099785827513808;
 
 /// z = q³/(q² + 1) — Markov closure parameter, **trace convention D**
 /// (SU(2)/Temperley–Lieb, Jones).
@@ -784,18 +807,20 @@ mod tests {
 
     #[test]
     fn z_at_q0_matches_python() {
-        // pyhecke.gram.z at Q_0 = 1.1099785955541805, convention D.
-        // Was 0.4993203340335982 (convention C) until the 2026-08-09 excision.
+        // Pin history:
+        //   0.4993203340335982  convention C, muon pin (pre-2026-08-09)
+        //   0.6126880505455892  convention D, muon pin
+        //   0.6126880371464652  convention D, PROTON pin (2026-08-15 re-pin)
         //
-        // SECOND STALENESS, deliberately NOT fixed here: `Q_0` above is the
-        // MUON pin. The registry's q_0 and every new computation use the
-        // PROTON pin 1.1099785827513808 (AGENTS.md owner directive
-        // 2026-08-07), 11.54 ppb away. At the proton pin this z would be
-        // 0.6126880371464652. Re-pinning `Q_0` moves every certificate the
-        // engine has emitted, so it is an owner decision, not a side effect
-        // of a convention migration. Bean qou-wgta item 16.
+        // The name of this test is finally accurate: as of the re-pin the
+        // value is BIT-IDENTICAL to `pyhecke.gram.z`, not merely close. The
+        // tolerance is kept rather than switched to `==` so the test reports
+        // a drift instead of a bare inequality, but the two sides now agree
+        // exactly at the proton pin.
         let z = markov_z(Q_0);
-        assert!((z - 0.6126880505455892).abs() < 1e-14, "z = {}", z);
+        assert!((z - 0.6126880371464652).abs() < 1e-14, "z = {}", z);
+        // Guard the re-pin directly: this is NOT the muon-pin value.
+        assert!((z - 0.6126880505455892).abs() > 1e-9, "still on the muon pin");
     }
 
     #[test]
@@ -851,10 +876,21 @@ mod tests {
     /// result needing an owner decision, not a patch.
     #[test]
     fn det_at_q0_convention_d() {
-        // Was -0.3608011166161873 under convention C.
+        // Pin history:
+        //   -0.3608011166161873   convention C, muon pin
+        //   -0.15201823561588593  convention D, muon pin
+        //   -0.15201823908521292  convention D, PROTON pin (2026-08-15)
+        //
+        // The last move is a CONSEQUENCE of the Q_0 re-pin, not a new result,
+        // and the magnitude confirms it rather than merely accommodating it:
+        //   q   shifted  1.153e-08 (relative)
+        //   z   shifted  2.187e-08  ~ 2x, since z ~ q^3/(q^2+1) is ~degree 1
+        //   det shifted  2.282e-08  same order
+        // A determinant that had moved by, say, 1e-3 would mean something
+        // else changed; it did not.
         let g = gram_matrix(Q_0);
         let d = det_6x6(&g);
-        assert!((d - (-0.15201823561588593)).abs() < 1e-10, "det = {}", d);
+        assert!((d - (-0.15201823908521292)).abs() < 1e-10, "det = {}", d);
     }
 
     #[test]
