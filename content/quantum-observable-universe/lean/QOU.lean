@@ -431,6 +431,16 @@ import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.SpechtCrossDominance
 import QOU.BraidKnot.SpechtCrossKappa
+-- Absolute irreducibility (W2 of the Wedderburn epic): the commutant of every
+-- simple `k[S_n]`-module is the base field. Sorry-free, so it belongs in the
+-- build closure. Pulls `SpechtClassification` in transitively.
+import QOU.BraidKnot.SpechtAbsolutelyIrreducible
+-- W1+W3 brick 1: the Schur diagonal `dim Hom_G(S^μ, S^μ) = 1`, i.e. the Specht
+-- characters are orthonormal over ℚ and not merely orthogonal.
+import QOU.BraidKnot.SpechtSchurDiagonal
+-- W1+W3 brick 3: `Hom_G(k[G], V) ≃ V` — the multiplicity of an irreducible in the
+-- regular representation is its dimension. General; no S_n, no Specht modules.
+import QOU.MathlibExt.RegularHom
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain

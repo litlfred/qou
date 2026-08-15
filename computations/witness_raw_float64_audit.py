@@ -82,6 +82,49 @@ SELF_OUTPUTS = {
     "no-free-parameter-certificate.witness.json",
 }
 
+# Prefix covering this audit's per-scan-root outputs (see `_output_name`), so a
+# derived advisory witness is self-excluded exactly like the default one. The
+# double dash is what separates the family from the plain
+# `witness-raw-float64-audit.witness.json`, which does NOT match this prefix and
+# stays covered by SELF_OUTPUTS above.
+SELF_OUTPUT_PREFIX = "witness-raw-float64--"
+
+# Every derived name must still end in this, because it is what the repo-wide
+# audit-self-output convention keys on: `AUDIT_SUFFIXES` in
+# `computations/audits/q0_anchor_consistency_audit.py` classifies a witness as
+# Q0_AUDIT_EXEMPT by SUFFIX, not by prefix. A derived name ending in the scan
+# slug (…--docs-audits-scripts.witness.json) misses that suffix and gets filed
+# as Q0_ANCHOR_MISSING instead — measured: 1889 -> 1890, with this audit's own
+# output sitting in the "no q0 anchor declared" inventory while its identically
+# generated sibling is exempt. Keeping the suffix keeps the two consistent and
+# needs no special case in the other audit.
+AUDIT_SUFFIX = "-audit.witness.json"
+
+
+def _output_name(scan_root: Path | None) -> str:
+    """Output filename for a run — DERIVED from the scan root, never shared.
+
+    Both `precision-gates.sh` invocations used to write the same file: the
+    gating run (full corpus) at line 63, then the narrow advisory run
+    (`--scan-root docs/audits/scripts`) which OVERWROTE it. The committed
+    witness was left reading `dirty_witnesses 1561 -> 5`,
+    `drained_files 14 -> 1572`, with every carve-out record dropped.
+
+    That is not merely wrong, it is wrong in a shape that reads as a normal
+    staleness prompt — "a count moved, commit the regenerated witness" — so
+    committing it would swap a corpus-wide audit for a five-file one and drain
+    the carve-out records. Deriving the name (rather than adding an --out flag
+    someone must remember to pass) makes the collision impossible for any
+    future scan root too. Bean qou-pgdw.
+
+    The slug is infixed rather than appended so the name still ends in
+    `AUDIT_SUFFIX` — see the note there for why the suffix is load-bearing.
+    """
+    if scan_root is None:
+        return f"witness-raw-float64{AUDIT_SUFFIX}"
+    slug = scan_root.relative_to(ROOT).as_posix().strip("/").replace("/", "-")
+    return f"{SELF_OUTPUT_PREFIX}{slug}{AUDIT_SUFFIX}"
+
 
 # ── LP-dual carve-out (bean qou-ftuv, owner decision 2026-08-11) ─────────
 #
@@ -259,7 +302,9 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
     CARVED.clear()
     CARVED_INTEGRATOR.clear()
     for p in sorted((scan_root or HERE).rglob("*.witness.json")):
-        if p.name in SELF_OUTPUTS or "_deprecated" in p.parts:
+        if (p.name in SELF_OUTPUTS
+                or p.name.startswith(SELF_OUTPUT_PREFIX)
+                or "_deprecated" in p.parts):
             continue
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
@@ -459,26 +504,7 @@ def main() -> int:
              "files": dict(sorted(found.items()))}, indent=2) + "\n")
         print(f"\nRebaselined: {len(found)} files / {total:,} fields recorded.")
 
-    # A --scan-root run must not write the witness, for exactly the reason
-    # --rebaseline is already refused above: the artifact is keyed on a
-    # corpus-wide scan of computations/, and a narrow root produces a
-    # different, smaller answer to a different question.
-    #
-    # scripts/precision-gates.sh invokes this script TWICE -- once gating over
-    # the full corpus, once advisory with `--scan-root docs/audits/scripts` --
-    # and both wrote here. The advisory run therefore overwrote the gating
-    # run's result, leaving the committed witness at `dirty_witnesses: 5`
-    # instead of 1561, with every carve-out block dropped (57 lines). It reads
-    # exactly like "a count moved, commit the regenerated witness", and
-    # committing it would have replaced a corpus-wide audit with a five-file
-    # one. Reported by the #5125/#5123 prepare-merge pipeline; reproduced here
-    # before fixing (1561 -> 5 on a single advisory invocation).
-    if scan_root is not None:
-        print("\n--scan-root run: witness NOT written (advisory; the artifact "
-              "is corpus-wide, see the note at this guard).")
-        return 1 if (args.strict and (new_files or grew)) else 0
-
-    out = HERE / "witness-raw-float64-audit.witness.json"
+    out = HERE / _output_name(scan_root)
     out.write_text(json.dumps({
         "schema": "witness/v1",
         "name": "witness-raw-float64-audit",

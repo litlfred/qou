@@ -135,6 +135,29 @@ non-isomorphic across distinct partitions — so the labelling bijection is deri
 assumed. Item 4 is the tractable entry (`JucysMurphy.centralC2_acts_by_contentSqSum` already exists,
 making it Schur-per-isotypic-component); items 1–3 are the hard core.
 
+### Item 2 (rationality) is now closed — and it was not the hard part
+
+**Update, same day, PR #5139.** `SpechtAbsolutelyIrreducible.simple_end_scalar`: over any
+characteristic-zero field, **no simple `k[S_n]`-module admits a non-scalar equivariant
+endomorphism**. Sorry-free (`#print axioms` = `propext, Classical.choice, Quot.sound`). A block's
+`𝔇 i` *is* the commutant of the corresponding simple, so this is item 2 in module-theoretic form.
+
+I had this filed as the item needing a descent from ℚ. It needs no descent and no character theory —
+the corpus already carried both halves, in the file that proves the submodule theorem:
+`kapL_mem_line` (`κ_t` maps all of `M^μ` into the line `k·e_t`) and `kapL_polytabloid`
+(`κ_t e_t = |C_t|·e_t`). Equivariance moves `θ` past `κ_t`, characteristic zero divides by `|C_t|`,
+and the polytabloids' single `S_n`-orbit spreads the scalar over a spanning set. The upgrade from
+Specht modules to arbitrary simples is a transport along `specht_exhausts_irreducibles` — one of the
+six gaps a sibling closed in this same nine-day window, which is what made the general form reachable
+immediately rather than as a follow-up.
+
+The generalisable lesson is the same one this audit already records twice: **measure before scoping**.
+"Mathlib gives the collapse only over an algebraically closed base" is true and was the reason to
+expect difficulty, but it says nothing about what *this corpus* carries. Items 1 and 3 — the labelling
+bijection and the block-size identification — remain the hard core, and `sn_isotypic_specht_split`
+stays open. The `sorryAx` labels on `RSKBurnsideHolds` and the Plancherel normalisation are
+unchanged.
+
 Consequence for the two `sorryAx`-carrying keystones (`RSKBurnsideHolds`, the Plancherel
 normalisation): unchanged. `OVTopAssembly` consumes exactly this survivor, so they still inherit
 `sorryAx`. Their labels stay as recorded.

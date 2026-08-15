@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T21:44:24.300507+00:00",
-  "commitSha": "751201fca76ac70012fd7fdebbf4d36e0f751e48",
+  "computedAt": "2026-08-15T20:42:03.363749+00:00",
+  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
   "assertions": [
     {
       "name": "sign_correct_at_both_A",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "a4-brunnian-magnitude-vs-mu4",
   "scriptFile": "a4_brunnian_magnitude_vs_mu4.py",
-  "scriptHash": "97f6addc3d1d",
-  "scriptCommitSha": "2e6d2aa8bab1c073d40a5b630d9598e8fe708624",
+  "scriptHash": "da0181a327d6",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Bean qou-g3e1, the A=4 Brunnian MAGNITUDE leg. The sign and order are derived exactly (order 6, leading (q-1) coeff -96; PR #4458); this compares the derived cluster magnitude c_A = E_0*(1-tau_A) against the forward residual mu_A (AME - model, never inverted) at BOTH known A and BOTH levels (base band commutator, width-3 cabled). KEY RESULT: the shortfall is NOT constant in A — at the cabled level A=3 is a ~1.59x near-miss while A=4 is ~78.8x short, a ~50x divergence — so NO single constant re-weight can close both, and any normalisation tuned to close A=4 would break the A=3 near-miss by the same factor. Independently confirms the bean's anti-fit guard. Sign is correct at both A. Scope-(a): compares and reports; no re-weighting, no fit, no tuning, nothing wired. All inputs read from committed witnesses.",
   "data": {

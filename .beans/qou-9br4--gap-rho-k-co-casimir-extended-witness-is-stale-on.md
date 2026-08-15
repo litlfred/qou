@@ -43,3 +43,94 @@ green and commit both the witness and the refreshed audit witness.
 
 The payload numbers cannot change — only the four telemetry fields go float ->
 string — so there is no scientific content at risk, only the gate.
+
+---
+
+## The two kills were probably NOT infrastructure — and the remedy is already on main
+
+Cross-filed from `qou-5qwb`, which chased the same witness from the other end.
+This bean records both attempts as "killed by infrastructure, never by the
+compute". A third attempt from this session, instrumented, says otherwise.
+
+**Measured at helium-4, 2026-08-15:**
+
+| observation | reading |
+|---|---|
+| CPU time unchanged across a 6-second sample, both workers | not computing |
+| both workers in `futex_do_wait` | blocked, not busy |
+| RSS **4.8 GB + 5.1 GB** of a 16 GB box | two workers holding ~10 GB |
+| `khugepaged` at 80 % | kernel thrashing |
+| killing the run | freed ~5 GB immediately |
+
+**Cause.** The largest partition of 12 is **dim 7700** (λ = (5,3,2,1,1)), and
+`hoefsmit_matrices_numpy` stores generators DENSE: `7700² × 8 B × 11 =
+5.22 GB` per worker. `n_workers = min(cpu_count(), len(parts))` therefore asks
+for **~20 GB on a 16 GB box**. It does not slow down — it hangs, and from
+outside that is indistinguishable from a container restart.
+
+So attempt 2 "killed ~20 min in" is at least as consistent with an OOM /
+thrash as with a restart. Worth ruling out before spending a fourth 45 minutes.
+
+**Remedy, already merged (PR #5104, on `main`).** The producer now takes
+`--workers N` / `$RHO_K_WORKERS`:
+
+    python3 -u computations/rho_k_co_casimir_extended.py --workers 1 2>&1 | tee /tmp/rho_k.log
+
+It is a **cap**: absent the flag the behaviour is byte-for-byte what it was, so
+nothing else changes. One worker needs ~6 GB rather than ~20 GB and fits
+comfortably; the cost is wall time on the parallel section.
+
+**Two confirmations for this bean's own warnings.** The `pgrep` self-match
+trap recorded above bit this session independently — same 45-minute false
+"still running". And the five-atom-over-six partial-write risk is real and
+worse than described: a gutted witness scores **zero raw floats**, so the
+raw-float64 ratchet reads it as a *perfect drain*. `witness_shape_guard.py`
+(PR #5089) now catches exactly that; run it before committing any regenerated
+witness.
+
+**Not claimed:** that `--workers 1` will finish. It removes the memory wall
+this session measured; whether the remaining ~45 min survives the container is
+still open, and that part of this bean stands.
+
+**Ownership.** This item is `qou-9br4`'s, and this session is not running the
+compute — only handing over the diagnosis. `qou-5qwb` and `qou-bk0q` (the
+dense-storage waste, with a validated prototype) are the supporting analysis.
+
+### UPDATE — the memory wall is gone; `--workers` is no longer needed for this
+
+PR #5152 landed the P22 auto-switch in `hoefsmit_numpy.chi_numpy`: above
+**dim 1200** the generators are held by structure (diagonal + symmetric pairs)
+instead of dense. The He-4 blocking partition is dim 7700, so it now routes
+structured.
+
+Measured peak RSS on the structured path, and the scaling checks out against
+the accumulator-only prediction (2 x dim^2 x 8 B):
+
+| dim | predicted | measured delta | dense generators alone |
+|---|---|---|---|
+| 1485 | ~35 MB | 52 MB | 194 MB |
+| 2376 | ~90 MB | 81 MB | 497 MB |
+
+Extrapolated to dim 7700:
+
+    dense generators      5.22 GB   <- what hung it
+    structured generators 2.71 MB
+    accumulator + temp    0.95 GB   (unavoidable: M is dense dim x dim)
+    ------------------------------------------------
+    per worker           ~0.95 GB   x4 workers ~3.8 GB of 16 GB
+
+So the default `cpu_count()` pool should now fit comfortably, and the run is
+also expected to be FASTER at that dim (structured wins above the crossover:
+0.70x at dim 1485, 0.84x at 2376).
+
+**Revised recommendation:** just run it normally —
+
+    python3 -u computations/rho_k_co_casimir_extended.py 2>&1 | tee /tmp/rho_k.log
+
+`--workers 1` remains available and still correct if a machine is tighter, but
+it is no longer the thing standing between this bean and a finished witness.
+
+**Still not claimed:** that the run completes. Wall time (~40 min) and container
+survival are untouched by any of this, and that is the part of this bean that
+stands. Correctness of the switch is verified — rel_diff exactly 0.0 below the
+threshold and 1.26e-16 above, against the pre-switch dense path.
