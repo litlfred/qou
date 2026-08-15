@@ -5,12 +5,12 @@
   "tier": "exact identity + numerical confirmation (no fit)",
   "q0Anchor": "proton",
   "q0Value": "1.109978582751380807591669",
-  "computedAt": "2026-08-15T11:39:28.824969+00:00",
-  "commitSha": "ec548d7894c62da7916b667cb61a55a499b8fdff",
+  "computedAt": "2026-08-15T11:44:11.105963+00:00",
+  "commitSha": "9cb49ff2b590fa0e683f9caa35f7273f2d93757a",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_modular_double_reciprocity.py",
-  "scriptHash": "562f2bf9d343",
+  "scriptHash": "7bfafe648c81",
   "assertions": [
     {
       "name": "b_squared_is_purely_imaginary",
