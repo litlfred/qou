@@ -1,11 +1,11 @@
 ---
 # qou-kljb
 title: 795 QOU library modules are never built — lake build QOU cannot see them (270 load-bearing)
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-09T02:12:05Z
-updated_at: 2026-08-09T19:20:00Z
+updated_at: 2026-08-15T15:12:44Z
 ---
 
 Surfaced while verifying PR #4824's §1 consolidation claim with the three-way
@@ -148,3 +148,48 @@ The sources look healthy. Two honest caveats before anyone treats that as
    deleting healthy proved content would be the worse error.
 4. ~~Cheap guard~~ — `scripts/lean-orphan-modules.sh` (read-only, exits
    non-zero when orphans exist, so it can gate once the count is driven down).
+
+
+
+## Claimed 2026-08-15 — branch `claude/mtcx-7c-verify-close-2026-08-15` (session qou-xz6t)
+
+Taking step 2 ("which orphans are actually broken?"). **Not** touching the lakefile `globs` yet: this sandbox cannot run `lake build` at all (`.lake/packages/mathlib` was restored from `lake-cache/qou-v4-24-0` with no `.git`, so any dep-resolving lake call wipes 6990 oleans), so a `globs` change here would be unverifiable — exactly the kind of claim this bean's own §2 correction warns against. Surveying with `lean-direct-cone.sh --all -k`, which bypasses Lake entirely, to produce the per-module green/red list that a `globs` flip needs as its prerequisite.
+
+
+## FINDING 2026-08-15 — the premise is already fixed; the 44 % figure is stale
+
+**`lake build` DOES build these modules.** The lakefile now carries
+
+```toml
+[[lean_lib]]
+name = "QOU"
+srcDir = "."
+globs = ["QOU", "QOU.+"]     # "WIDEN THE BUILD TO THE WHOLE TREE (bean qou-rc7b)"
+```
+
+`QOU.+` is `Glob.andSubmodules` — the module and **all** its submodules — so every `.lean` under `lean/QOU/` is in the library target whether or not `QOU.lean` imports it. This bean's §2 conclusion ("`lake build QOU` never elaborates them") was true when written on 2026-08-09 and has since been fixed by `qou-rc7b`; the bean was never closed.
+
+**Verified by direct experiment, not inference** — the same throwaway-package method this bean's §2 used, re-run *with* `globs` set (toolchain v4.24.0, no Mathlib, so it cannot touch the restored cache):
+
+```
+lakefile: globs = ["Lib", "Lib.+"];  Lib.lean (root) + Lib/Orphan.lean (imported by nothing)
+$ lake build
+  ✔ [2/4] Built Lib
+  ✔ [3/4] Built Lib.Orphan        ← built despite nothing importing it
+produced: lean/Lib.olean, lean/Lib/Orphan.olean
+```
+
+### Consequence: two pieces of tooling now measure a premise that no longer holds
+
+- **`content/pipeline/lean-orphan-audit.ts`** — its own header states the lakefile has *"`globs` unset"* (line ~15) and it computes reachability by walking `QOU.lean`'s imports (line ~127). Both are now wrong, so its headline "**837 of 1902 modules (44.0 %) are never built by `lake build`**" is **not** a statement about builtness. It measures *umbrella-import hygiene*, which is a real but different (and much less alarming) property.
+- **`.github/workflows/lean-orphan-gate.yml`** — its rationale ("a module nothing imports is never compiled by anything, ever") no longer holds. The gate may still be wanted for umbrella hygiene, but not for the reason stated.
+
+### The question this displaces — and it is more urgent
+
+If `globs` builds all 1902 modules, then **any broken module makes `lake build` red right now**. This bean's own sample (153 modules, 94.8 % green, 8 failures) implies on the order of tens of genuinely-failing modules across the tree. That is no longer "unchecked code sitting in the dark" — it is a **currently-failing build**, or else those modules were fixed too.
+
+A whole-corpus `scripts/lean-direct-cone.sh --all -k` survey is running to settle it; results to be appended here.
+
+### Correction to my own commit on this branch
+
+Commit `8becb91` ("register the §7c split sibling + QChebyshevFunction") justified adding those imports partly as making the modules "actually get compiled by `lake build QOU`". **That justification was wrong** — `globs` already compiled them. What the commit did correctly was satisfy `lean-orphan-gate` (which exited 1) and make the umbrella explicit; the build-coverage benefit I claimed was not real. The change is still defensible as hygiene, but the stated benefit is retracted here.
