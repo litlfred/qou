@@ -103,6 +103,40 @@ You can map out sequence blockers using:
 - When completed: `beans update <id> --status completed`
 - To add notes or discussion: `beans update <id> --body-append "Your note"`
 
+## Stalled-claim takeover — a claim is not forever (STRICT scope)
+
+Agents stall: containers get reclaimed, sessions die, a branch is abandoned
+mid-task. **Standing policy** (AGENTS.md work-plan §2, 2026-08-15): a bean at
+`in-progress` whose **backing branch has had no commit for > 3 h** is presumed
+abandoned and may be taken over. This is the sole exception to "never
+resolve/claim a sibling's bean".
+
+**Scope — read this or you will clobber live work.** The > 3 h rule applies
+ONLY to the branch backing a *live in-progress bean*. It is NOT a licence to
+resurrect the thousands of long-idle `claude/*` branches — most are months old
+and permanently stale; age alone makes none of them a takeover target.
+
+**Detect** (the claimed branch is recorded in the bean's claim note):
+
+```bash
+beans show <id>                                 # find "branch `claude/...`" in the body
+git fetch origin <branch>
+git log -1 --format='%cI %h' origin/<branch>    # last-commit ISO time + sha
+# stale iff (now − that time) > 3h. A running CI/lake build is NOT a stall —
+# check the PR for an in-flight job or a recent comment before deciding.
+```
+
+**Take over safely:**
+
+- Re-claim, recording the handoff:
+  `beans update <id> --status in-progress --body-append "Taken over <date> by <yourbranch>; prior claim <oldbranch> stale since <time> (last <sha>)."`
+- Continue from the stale branch's tip if its partial work is worth keeping
+  (`git checkout -b <yourbranch> origin/<oldbranch>`); otherwise branch from `main`.
+- **Never force-push the sibling's branch.** Open your own branch and leave
+  theirs as the record; if they resume, the bean body shows the handoff.
+- For high-blast-radius work, drop a one-line note on the sibling PR that you
+  have taken it over (per the AGENTS.md sibling-coordination rules).
+
 ## Status Display Format
 
 When the user asks "status" or "show beans", run `beans list` and display the hierarchy:
