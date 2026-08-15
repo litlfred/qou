@@ -99,7 +99,7 @@ disagreement. The manifest is authoritative, so it renders in
 
 ## Plan
 
-- [ ] Remove the 15 inert `md:` declarations
+- [x] Remove the 15 inert `md:` declarations — done; validate 42 -> 27 issues
 - [ ] Put the `authorNotes` question (comment vs. grant it to every kind) to the
       owner
 - [ ] Put `baryon-product-from-alt`'s chapter contradiction to the owner
