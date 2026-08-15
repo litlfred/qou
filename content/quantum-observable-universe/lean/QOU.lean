@@ -441,6 +441,9 @@ import QOU.BraidKnot.SpechtSchurDiagonal
 -- W1+W3 brick 3: `Hom_G(k[G], V) ≃ V` — the multiplicity of an irreducible in the
 -- regular representation is its dimension. General; no S_n, no Specht modules.
 import QOU.MathlibExt.RegularHom
+-- The ofModule/asModule round-trip (bean qou-ltzf): a k[G]-module viewed as a
+-- representation and back is itself, k[G]-linearly; simplicity transfers.
+import QOU.MathlibExt.OfModuleAsModule
 -- W1+W3 brick 4a: the two sides of the Wedderburn dimension count.
 import QOU.BraidKnot.SpechtBlockDimension
 -- W1+W3 brick 4b: the multiplicity of S^μ in the regular representation is dim S^μ.
