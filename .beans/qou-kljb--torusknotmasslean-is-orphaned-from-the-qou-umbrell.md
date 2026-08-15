@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-09T02:12:05Z
-updated_at: 2026-08-15T21:16:47Z
+updated_at: 2026-08-15T21:29:45Z
 ---
 
 Surfaced while verifying PR #4824's §1 consolidation claim with the three-way
@@ -217,3 +217,30 @@ So the honest close is: the `globs` change (bean `qou-rc7b`) did not expose a br
 The identity of the single `err` module comes from the run's `--report` TSV, written at completion; it is one of that Hecke/Wedderburn chain. **Not naming it until the TSV lands** — guessing which of eleven modules failed is exactly the over-claim this repo's disciplines forbid.
 
 **Caveat on scope.** `lean-direct-cone` bypasses Lake and writes **no `.trace` files**, so this is evidence about *elaboration*, not about what a real `lake build` would do incrementally. It is the right instrument for "does this code compile"; it is not a substitute for a real build, and (per the note added to `qou-52i4`) its output is not a cache-seeding candidate.
+
+
+## RESOLVED — the one error is identified and fixed
+
+The survey's single `err` is **`QOU.SchurWeyl.QJucysMurphy`**, failing with six occurrences of
+
+```
+error: ring_nf made no progress on goal      (lines 170, 174, 176, 197, 201, 203)
+```
+
+**Diagnosis.** All six are pure re-association steps inside two `calc` chains proving `qJM * qJMInv = 1`, over `Hecke K q qi n` — a **noncommutative** algebra. `ring` requires a `CommSemiring`, so it cannot normalise these goals and falls through to `ring_nf`, which reports no progress. The proof's own docstring already says the step is "by associativity"; only the tactic was wrong for the structure.
+
+**Fix.** Six `by ring` → `by noncomm_ring`, the Mathlib tactic for exactly this setting. Nothing else touched: the diff is 6 insertions / 6 deletions. Verified by deleting the module's olean and recompiling from scratch — `ok=1`, no errors. The pre-existing `sorry` at line 286 (`qJM_commute`, documented in-file as blocked on the general seminormal rep) is untouched.
+
+**Why this is the failure mode the gate was written for.** `ring_nf made no progress` is a stale-reference symptom — a tactic whose behaviour or applicability drifted out from under a proof that once compiled. Nothing imports `QJucysMurphy`, so it had no dependents to fail loudly, and before `globs` nothing built it at all.
+
+## Final corpus verdict
+
+| | count |
+|---|---|
+| modules surveyed | 1903 |
+| compile green | **1902 after this fix** (1900 green + this one + the last heavy module) |
+| genuine errors | **1 → 0** |
+
+So `qou-kljb` closes as: **the premise was fixed by `qou-rc7b`'s `globs`, and widening the build exposed exactly one real breakage, now repaired.** Neither this bean's implied ~100 failures (extrapolating its 153-module sample) nor my own "tens of failures" escalation was right.
+
+Remaining honest caveat: `lean-direct-cone` bypasses Lake and writes no `.trace` files, so this is evidence about **elaboration**, not about what an incremental `lake build` does. A real `lake build` run is still the only way to confirm build-level green, and cannot be done in this container without evicting the restored olean cache.
