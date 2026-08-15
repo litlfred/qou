@@ -11,7 +11,7 @@ export default definition({
     "cyclotomic-place",
     "axiom",
   ],
-  uses: ["def:adelic-substrate"],
+  uses: ["def:adelic-substrate", "def:motivic-substrate"],
   cites: ["yekutieli2010", "tate1967"],
   lean: {
     ref: "qou:QOU.LiftingDescent.MotivicGaloisCharacter",

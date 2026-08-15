@@ -7,6 +7,7 @@ export default remark({
   interprets: "thm:quantum-gap-collapse",
   uses: [
     "conj:classical-riemann-hypothesis",
+    "def:q-from-epsilon",
     "def:reeb-epsilon",
     "prop:surreal-rate-calculus",
     "rem:conway-normal-form",
