@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:23:28Z
-updated_at: 2026-08-15T00:38:19Z
+updated_at: 2026-08-15T00:49:00Z
 ---
 
 
@@ -40,3 +40,24 @@ bigger decision than this bean — it changes what a quantum universe is, and th
 paper's `R`-linear phrasing may already imply it (check `def:rigid-monoidal-category`
 §"We say C is R-linear ..."). Do not add the instance without deciding that
 question first.
+
+## Cheap half DONE (2026-08-15)
+
+`centralIdem_orthogonal : ∀ b b', b ≠ b' → p_b ≫ p_b' = 0` added to all three
+synced copies, with `[zeroInst : HasZeroMorphisms C]` as the enabling instance
+field. `lean`-direct exit 0 on each; no `sorry`.
+
+This was the half Copilot's review on #5047 unblocked — the original bean text
+claimed both halves were gated on the `Preadditive` decision, which was wrong
+and would have left the valuable half unclaimed.
+
+## Remaining: completeness only
+
+`Σ p_b = 𝟙` still not encoded. It needs `Preadditive` (`AddCommGroup (X ⟶ Y)`
+for the finite sum), which changes what a quantum universe *is*. Prerequisite
+question unchanged: does the paper's `R`-linear phrasing already imply it?
+See `def:rigid-monoidal-category` §"We say **C** is *R*-linear …". Do not add
+the instance without settling that.
+
+Note the axiom is now meaningfully stronger than it was: with orthogonality,
+the blocks genuinely do not mix. What is missing is only that they *span*.
