@@ -1,4 +1,4 @@
-*The QOU column is the $m_e$-scaled realization of the dimensionless mass ratio (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction (`qou-exam`).*
+*The QOU column is the $m_e$-scaled realization of the dimensionless mass ratio (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction.*
 
 | Particle | QOU | Observed | Sig figs |
 |----------|-----|----------|----------|

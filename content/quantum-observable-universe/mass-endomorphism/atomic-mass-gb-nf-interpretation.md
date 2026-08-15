@@ -14,8 +14,7 @@ other two constitute concrete evaluations that fix $\rho_K$ via different
 calibration data. Throughout, the predictive content is the dimensionless
 mass ratio $\mathfrak{m}(K)/m_e$: the leading $m_e$ factor is the CAL-1 scale
 set by fiat, so the MeV figures are that ratio rendered against the $m_e$ unit,
-not an independent absolute-mass prediction *(absolute mass excised as a
-claim — `qou-exam`)*.
+not an independent absolute-mass prediction.
 
 ## The categorical density factor $\rho_K$
 
@@ -118,7 +117,7 @@ The three forms encode the same physical mass $\mathfrak{m}(K)$
 parameterised by different calibration data:
 
 * **(constituent)** anchors at the nucleon level but evaluates the exact constituent masses through the **muon-anchored Hecke energy** $m_{\mathfrak{p}} = 2(m_\mu F_{\mathrm{Bor}} - 6m_e)$, rendering CODATA fits unnecessary. Sub-percent for $Z = 1$..$20$.
-* **(muon-anchored)** is the definitive structural mass form. It computes the mass ratio without any phenomenological proton calibration or empirical spectral parameter tuning, resolving the atomic mass ratio strictly from the topological substrate; the MeV figure follows from the $m_e$ scale and is a rendering, not an absolute-mass claim (`qou-exam`).
+* **(muon-anchored)** is the definitive structural mass form. It computes the mass ratio without any phenomenological proton calibration or empirical spectral parameter tuning, resolving the atomic mass ratio strictly from the topological substrate; the MeV figure follows from the $m_e$ scale and is a rendering, not an absolute-mass claim.
 * **(GB-NF)** states the algebraic statement. The atomic mass is
   proportional to the Markov trace of the normal form, with the
   proportionality constant $\rho_K$ as the categorical density.
@@ -134,5 +133,5 @@ PBW relations.
 * `rho-k-codata-vs-six-term.witness.json` — $\rho_K^{\mathrm{CODATA}}$ vs $\rho_K^{6\text{-term}}$ table for $A = 1, 2, 3$.
 * `rho-k-scaling-structure.witness.json` — leading-order ansatz $\rho_K \approx (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}})/(m_e \cdot |\!\mathrm{tr}_M\!|)$ ($0.14\%$ mean residual); mirror-pair analysis.
 * `atomic-tr-m-mpfr-50dps.witness.json` — canonical $\lvert\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$ at $50$ decimal-place precision.
-* `atom-mass-atomic-braid.witness.json` — (constituent) form predictions.
-* `paper-six-term-isotope-sweep.witness.json` — (six-term spectral) predictions across all five tower modes.
+* `atom-mass-atomic-braid.witness.json` — (constituent) form $m_e$-scaled mass renderings.
+* `paper-six-term-isotope-sweep.witness.json` — (six-term spectral) $m_e$-scaled mass renderings across all five tower modes.
