@@ -27,6 +27,17 @@ transcendental root-of-unity accumulation (PR #3458's z→c_k evaluation map), n
 combinatorial/algebraic object. Do NOT attempt to close S via the reduction; the
 reduction supplies the *coefficients*, not the *argument*.
 
+> **Wording ground-check (2026-08-15, qou-ppjy, per the qou-arvu sweep).** What
+> is *measured* here is the near-singularity (`dc₃/dq ≈ 4.7×10⁶`) and the
+> smooth-route exclusion (ratio −4.08 vs ≈1.0) — both stand. The word
+> "transcendental" is an *interpretation* of those measurements (the
+> root-of-unity-accumulation picture), not a proved classification: a
+> near-singular, non-smooth map could in principle still be algebraic with a
+> nearby branch point. This is NOT the withdrawn "non-holonomic ⇒ resurgent"
+> inference (2026-08-09, D-ladder — that concerned divergence of `D(ũ)`,
+> which proved convergent), but it rhymes with it; treat "transcendental" as
+> a working hypothesis, not a constraint that prunes algebraic candidates.
+
 ## Update (2026-08-01, PRs #4452 + #4457 merged)
 
 The candidate space for the argument map is further narrowed **by proof**:
@@ -43,7 +54,9 @@ The candidate space for the argument map is further narrowed **by proof**:
 - **Surviving constraint composition** (audit
   `docs/audits/2026-08-01-qbeta-c3-pole-sign-reality-exclusion.md`): the phase
   is strictly interior, `0 < |arg m²| < π`, and must cross the diagonal
-  `|Re u| = |Im u|` at the root-found q* with the anchor inversion targets
+  `|Re u| = |Im u|` at the root-found `q*_S` (the S-zero point ≈ 1.10998 — NOT
+  the KC22 radius zero `q*_ρ ≈ 1.48989`; subscripts per the qou-kp9f glyph
+  rule) with the anchor inversion targets
   `(Re²u−Im²u) = +0.0224` (muon) / `−0.0911` (proton). Geometric backbone:
   `docs/scope/2026-08-01-reeb-tetraplectic-cs-threeform-identification.md`
   (Reeb ⌟ tetraplectic → CS face).
