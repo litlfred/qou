@@ -219,3 +219,94 @@ pub fn closed_form_ratio(
         .fold(1.0, |acc, kind| acc * interface_factor(kind, q, conv))
 }
 
+// ---------------------------------------------------------------------------
+// MPFR layer — the one that meets the 50-dps L1 floor.
+// ---------------------------------------------------------------------------
+
+/// Arbitrary-precision mirror of the f64 surface above.
+///
+/// Same algebra, `rug::Float` throughout, so the result matches the Python
+/// `mpmath` canonical to the working precision rather than to f64's ~1e-16.
+#[cfg(feature = "mpfr")]
+pub mod mpfr {
+    use super::{canonical_interface_kinds, InterfaceKind, PnConvention};
+    use rug::Float;
+
+    /// Working bits for a requested decimal precision, with the same 8-bit
+    /// buffer `precision_scalar::to_rug` uses.
+    #[inline]
+    pub fn bits_for_dps(dps: u32) -> u32 {
+        (dps as f64 * std::f64::consts::LOG2_10 + 8.0).ceil() as u32
+    }
+
+    /// `z(q) = q^3/(q^2+1)` at the precision of `q` (convention D).
+    pub fn markov_z(q: &Float) -> Float {
+        let q2 = Float::with_val(q.prec(), q * q);
+        let q3 = Float::with_val(q.prec(), &q2 * q);
+        let denom = Float::with_val(q.prec(), &q2 + 1u32);
+        q3 / denom
+    }
+
+    /// `h(q) = q - 1/q` at the precision of `q`.
+    pub fn hecke_h(q: &Float) -> Float {
+        let inv = Float::with_val(q.prec(), 1u32) / q;
+        Float::with_val(q.prec(), q - &inv)
+    }
+
+    /// `delta(q) = (q-1)^2 (1 - q^-4)/3` at the precision of `q`.
+    pub fn flavor_split_leading(q: &Float) -> Float {
+        let one = Float::with_val(q.prec(), 1u32);
+        let qm1 = Float::with_val(q.prec(), q - &one);
+        let qi = Float::with_val(q.prec(), &one / q);
+        let qi2 = Float::with_val(q.prec(), &qi * &qi);
+        let qi4 = Float::with_val(q.prec(), &qi2 * &qi2);
+        let head = Float::with_val(q.prec(), &qm1 * &qm1);
+        let tail = Float::with_val(q.prec(), &one - &qi4);
+        Float::with_val(q.prec(), &head * &tail) / 3u32
+    }
+
+    /// The p-n bond factor at the precision of `q`.
+    pub fn pn_interface_factor(q: &Float, conv: PnConvention) -> Float {
+        let z = markov_z(q);
+        let h = hecke_h(q);
+        let half = Float::with_val(q.prec(), 1u32) / 2u32;
+        let w = match conv {
+            PnConvention::StrictAveraged => half,
+            PnConvention::BringColorWeighted => {
+                let d4 = flavor_split_leading(q) / 4u32;
+                Float::with_val(q.prec(), &half - &d4)
+            }
+        };
+        Float::with_val(q.prec(), &z - &Float::with_val(q.prec(), &h * &w))
+    }
+
+    /// Per-bond factor at the precision of `q`.
+    pub fn interface_factor(kind: InterfaceKind, q: &Float, conv: PnConvention) -> Float {
+        match kind {
+            InterfaceKind::Positive => markov_z(q),
+            InterfaceKind::Negative => {
+                let z = markov_z(q);
+                let h = hecke_h(q);
+                Float::with_val(q.prec(), &z - &h)
+            }
+            InterfaceKind::Averaged => pn_interface_factor(q, conv),
+        }
+    }
+
+    /// `tr_M(B_K)/tr_M(B_K^vac)` at the precision of `q` — the production
+    /// path, matching the Python `mpmath` canonical to working precision.
+    pub fn closed_form_ratio_mpfr(
+        z_count: usize,
+        n_count: usize,
+        q: &Float,
+        conv: PnConvention,
+    ) -> Float {
+        canonical_interface_kinds(z_count, n_count)
+            .into_iter()
+            .fold(Float::with_val(q.prec(), 1u32), |acc, kind| {
+                let f = interface_factor(kind, q, conv);
+                Float::with_val(q.prec(), &acc * &f)
+            })
+    }
+}
+
