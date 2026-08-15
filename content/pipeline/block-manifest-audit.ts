@@ -62,11 +62,40 @@
  * Survey mode (default) prints the offenders and exits 0. `--diff <files…>`
  * restricts to the named paths and exits 1 if any of them is an offender —
  * that is the pre-commit gate.
+ *
+ * ## `--orphans`: the other way content goes missing
+ *
+ * A manifest that loads perfectly still contributes nothing if no chapter
+ * lists the block, or if no paper lists the chapter. Same end state — content
+ * on disk, absent from the paper — reached by a different route, so it is
+ * reported by the same tool.
+ *
+ * Inclusion is a two-level walk and BOTH levels are checked, because either
+ * can drop content on its own:
+ *
+ *   paper `<paper>.ts` → `chapters: [chapterRef({dir})]`
+ *                      → chapter `<dir>/<dir>.ts` → `sections[].blocks[]`
+ *                        (recursing through `subsections`)
+ *
+ * Measured 2026-08-15 across all five paper directories. QOU is clean at the
+ * chapter level (36/36 included) with 10 unlisted blocks, 3 of which are the
+ * unloadable manifests above and 6 of which are `fluid-dynamics`.
+ * `fred2005-formal-groups`, `bach2013-double-slit` and `visualizer` are clean
+ * on both levels. `unital-groebner-bases` carries a whole second generation of
+ * itself — 2 of its 3 chapter directories
+ * (`introduction`, `buchberger-and-pbw`, 8 blocks) are absent from the paper
+ * manifest, and 5 further blocks in the included chapter's directory are not
+ * listed by it. Those 13 are internally consistent — the excluded chapters'
+ * `uses[]` point at the unlisted blocks — so it reads as a superseded rewrite
+ * whose files were never removed, not as damage.
+ *
+ * Note this is a survey, not a defect list: a block may be parked on disk on
+ * purpose. What the tool asserts is only that it is not in the paper.
  */
 
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync, readdirSync, statSync } from "fs";
 import { execSync } from "child_process";
-import { dirname, basename, resolve } from "path";
+import { dirname, basename, resolve, join } from "path";
 
 const REPO = resolve(import.meta.dir, "../..");
 
@@ -117,8 +146,100 @@ function listMarkdown(): string[] {
 
 const rel = (p: string) => p.replace(`${REPO}/`, "");
 
+/** Every block root-name a chapter lists, recursing through subsections. */
+function listedBlocks(section: { blocks?: unknown[]; subsections?: unknown[] }, out: Set<string>) {
+  for (const b of section.blocks ?? []) if (typeof b === "string") out.add(b);
+  for (const s of section.subsections ?? []) listedBlocks(s as never, out);
+}
+
+/** Chapter directories on disk: a subdir `d` holding `d/d.ts`. */
+function chapterDirsOnDisk(paperDir: string): string[] {
+  return readdirSync(paperDir).filter(
+    (d) => statSync(join(paperDir, d)).isDirectory() && existsSync(join(paperDir, d, `${d}.ts`)),
+  );
+}
+
+/** Block roots on disk under a chapter dir (an `.md` with a `.ts` sibling). */
+function blocksOnDisk(chapterDir: string, chapterName: string): string[] {
+  const out: string[] = [];
+  const walk = (cur: string) => {
+    for (const f of readdirSync(cur)) {
+      const fp = join(cur, f);
+      if (statSync(fp).isDirectory()) { walk(fp); continue; }
+      if (!f.endsWith(".md")) continue;
+      const root = f.slice(0, -3);
+      if (root === chapterName) continue; // the chapter manifest itself
+      if (existsSync(join(cur, `${root}.ts`))) out.push(root);
+    }
+  };
+  walk(chapterDir);
+  return out;
+}
+
+async function orphanSurvey(quiet: boolean): Promise<number> {
+  const contentDir = `${REPO}/content`;
+  const papers = readdirSync(contentDir).filter(
+    (d) => statSync(join(contentDir, d)).isDirectory() && existsSync(join(contentDir, d, `${d}.ts`)),
+  );
+
+  for (const paper of papers) {
+    const pdir = join(contentDir, paper);
+    let manifest: { chapters?: { dir?: string }[] };
+    try {
+      manifest = (await import(join(pdir, `${paper}.ts`))).default;
+    } catch (e) {
+      console.log(`\n${paper}: paper manifest failed to load — ${String((e as Error).message).slice(0, 120)}`);
+      continue;
+    }
+
+    const included = new Set((manifest.chapters ?? []).map((c) => c.dir).filter(Boolean) as string[]);
+    const onDisk = chapterDirsOnDisk(pdir);
+    const excludedChapters = onDisk.filter((d) => !included.has(d));
+    const missingDirs = [...included].filter((d) => !onDisk.includes(d));
+
+    // Blocks listed by the INCLUDED chapters only — a block listed solely by an
+    // excluded chapter is still not in the paper.
+    const listed = new Set<string>();
+    for (const d of onDisk) {
+      if (!included.has(d)) continue;
+      try {
+        const ch = (await import(join(pdir, d, `${d}.ts`))).default as { sections?: unknown[] };
+        for (const s of ch.sections ?? []) listedBlocks(s as never, listed);
+      } catch (e) {
+        console.log(`  !! chapter ${d} failed to load — ${String((e as Error).message).slice(0, 100)}`);
+      }
+    }
+
+    const unlisted: string[] = [];
+    for (const d of onDisk) {
+      if (!included.has(d)) continue; // excluded chapters are reported wholesale
+      for (const b of blocksOnDisk(join(pdir, d), d)) if (!listed.has(b)) unlisted.push(`${d}/${b}`);
+    }
+
+    console.log(
+      `\n${paper}: chapters ${included.size}/${onDisk.length} in the paper, ` +
+        `${listed.size} blocks listed, ${unlisted.length} on disk but unlisted`,
+    );
+    if (missingDirs.length) {
+      console.log(`  ⚠ paper manifest names chapter dirs that do not exist: ${missingDirs.join(", ")}`);
+    }
+    if (!quiet) {
+      for (const d of excludedChapters) {
+        console.log(`  EXCLUDED CHAPTER  ${d}  (${blocksOnDisk(join(pdir, d), d).length} blocks)`);
+      }
+      for (const b of unlisted.sort()) console.log(`  unlisted block    ${b}`);
+    }
+  }
+  console.log(
+    `\n  Survey only — exit 0 regardless. A block may be parked on disk on purpose;\n` +
+      `  all this asserts is that it is not in the rendered paper.`,
+  );
+  return 0;
+}
+
 async function main(argv: string[]): Promise<number> {
   const quiet = argv.includes("--quiet");
+  if (argv.includes("--orphans")) return orphanSurvey(quiet);
   const di = argv.indexOf("--diff");
   const diffMode = di !== -1;
 
