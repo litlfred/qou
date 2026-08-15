@@ -39,3 +39,32 @@ destroyed the witness (`durationMs` 2552837 -> 519, 2272 deletions).
 Check `durationMs` and the `per_atom` count (should be 6) before trusting any
 measurement of this file. Root cause is bean `qou-0vn0`: the ratchet counts raw
 floats, so an **empty** witness scores identically to a **clean** one.
+
+## The re-run is NOT feasible in this sandbox — measured, then abandoned
+
+A second attempt was killed after **6 hours**. It is not a matter of waiting
+longer. Comparing the partial output against the committed witness, atom by atom:
+
+| atom | committed `compute_wall_sec` | this sandbox | ratio |
+|---|---|---|---|
+| #3 | `0.34` | `0.35` | 1x |
+| #4 (tritium, n=9) | `9.28` | `1373.82` | **148x** |
+| #5 (He-3, n=9) | `9.45` | `698.07` | **74x** |
+| #6 (helium-4, n=12, 77 partitions) | `2533.2` | killed at **21,600+** | > 8x and climbing |
+
+At a 74-148x penalty on the mid-size atoms, the He-4 atom's committed 2533 s
+projects to **two to four days**. The run was killed at 6 h with He-4 still in
+its first write.
+
+Two things this settles:
+
+1. **The fix itself is confirmed correct.** The partial run wrote
+   `'0.35'`, `'1373.82'`, `'698.07'` — strings, as the producer intends. Nothing
+   is wrong with the code; the only blocker is wall time.
+2. **Do not retry here.** Land this from an environment that reproduces the
+   committed timings, or leave the red standing and say so. Re-running it in a
+   sandbox burns hours and produces a gutted witness that scores a false green
+   (see `qou-0vn0`).
+
+Working tree was restored to HEAD after the kill; the committed witness is
+intact (6 `per_atom` entries, original values).
