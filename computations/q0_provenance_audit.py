@@ -47,17 +47,32 @@ Q_MUON = 1.1099785955541805
 # the corpus formula determine it.
 Q_MUON_50 = "1.10997859555418057528159407960950937799328227995870"
 
-# The WRONG 50-dps muon string, carried by ~200 witnesses. It agrees with the
-# canonical value to 12 digits and then diverges: 2.842e-12 relative, which is
-# ~12,900x worse than f64 round-off, so it is not even an f64 solve -- it is a
-# loosely-converged solve serialized with 38 digits it does not have. The
-# implied m_mu/m_e differs by 0.0023 sigma, so this is a PRECISION defect, not
-# a different CODATA vintage.
+# A NON-REPRODUCIBLE 50-dps muon string, carried by 243 witnesses. It agrees
+# with the canonical value to 12 digits, then diverges by 2.842e-12.
+#
+# CALIBRATE THIS BEFORE QUOTING IT. An earlier version of this comment (mine)
+# called the trailing digits "38 digits of noise" and compared the gap to the
+# L1 1 ppQ compute goal, making it sound like an accuracy defect. That was an
+# OVERCLAIM, and the correction matters:
+#
+#   CODATA m_mu/m_e = 206.7682830 +/- 4.6e-6  ->  2.2e-8 relative, ~7 sig figs
+#   propagated to q_muon                      ->  1.22e-9 relative, ~8 sig figs
+#   A-vs-B gap                                ->  2.84e-12
+#
+# The gap is 431x SMALLER than the experimental uncertainty on q_muon itself.
+# So BOTH strings are physically meaningless past ~digit 8 — the canonical one
+# is not "more accurate", and no derived physical quantity changes by choosing
+# between them.
+#
+# What is genuinely wrong with this string is REPRODUCIBILITY, not accuracy:
+# it cannot be regenerated from the stated inputs. `q_muon_at(60)` — a closed
+# form, q = 1/(1 - sqrt(Vol(4_1)/(m_mu/m_e))), reading only CODATA and an
+# exactly-computed Vol — yields the canonical string and not this one. A
+# 50-dps constant earns its digits by being *deterministically recomputable*
+# (the L1 compute-agreement goal), which is a different property from being
+# physically accurate to 50 places. This one is not recomputable, so it
+# cannot be checked, which is the defect.
 Q_MUON_50_WRONG = "1.10997859555733471989976322048322502665620840878015"
-
-# Digits at which the two diverge; anything agreeing to fewer than this many
-# significant digits with the canonical value is carrying noise.
-_FALSE_PRECISION_REL = 1e-14  # comfortably above f64 eps, far below 2.8e-12
 
 # Keys that name a substrate anchor. Deliberately narrow: `q` alone is also
 # used for unrelated quantities, so a value only counts when it also lands in
@@ -94,11 +109,13 @@ def false_precision(raw) -> str | None:
     """Detect a q0 serialized with more digits than it actually has.
 
     Returns a description if `raw` is a >16-significant-digit string that
-    disagrees with the canonical muon value by more than f64 round-off — i.e.
-    it LOOKS like a high-precision constant and is not one. This is the
-    NO-FLOAT64 failure in its subtlest form: not a float where an mpf belongs,
-    but a low-precision solve dressed as a 50-dps string, where the extra
-    digits actively assert precision that was never computed.
+    is NOT the value `q_muon_at()` produces from the stated inputs — i.e. a
+    constant that cannot be regenerated, and so cannot be checked.
+
+    This is a REPRODUCIBILITY flag, not an accuracy one. See the note at
+    `Q_MUON_50_WRONG`: the divergence sits 431x below the CODATA uncertainty
+    on q_muon, so neither string carries physical content that far out and
+    the canonical one is not "more accurate". What it is, is recomputable.
     """
     if not isinstance(raw, str):
         return None
@@ -115,9 +132,9 @@ def false_precision(raw) -> str | None:
     if raw.startswith(canon[:20]):
         return None  # matches the canonical prefix — fine
     if raw.startswith(wrong[:20]):
-        return (f"{len(digits)}-digit muon string agreeing to only 12 digits "
-                f"with the canonical q_muon_at() value (2.8e-12 rel, ~12,900x "
-                f"f64 eps) -- 38 digits of noise")
+        return (f"{len(digits)}-digit muon string that q_muon_at() does not "
+                f"reproduce (diverges at digit 13, 2.8e-12) -- not "
+                f"recomputable from the stated inputs")
     return f"{len(digits)}-digit muon string not matching the canonical value"
 
 
@@ -206,22 +223,24 @@ def main() -> int:
 
     if buckets["FALSE-PRECISION"]:
         print()
-        print(f"  ** {buckets['FALSE-PRECISION']} witness(es) carry a q0 "
-              f"serialized with MORE DIGITS THAN IT HAS.")
-        print("     The canonical 50-dps muon value is derived by "
-              "q_muon_at(60) from CODATA")
-        print("     m_mu/m_e = 206.7682830 and Vol(4_1) = 2*Cl_2(pi/3):")
+        print(f"  ** {buckets['FALSE-PRECISION']} witness(es) carry a 50-dps "
+              f"muon q0 that is NOT RECOMPUTABLE.")
+        print("     q_muon_at(60) -- the closed form "
+              "q = 1/(1-sqrt(Vol(4_1)/(m_mu/m_e))),")
+        print("     reading only CODATA and an exactly-computed Vol -- gives:")
         print(f"       canonical  {Q_MUON_50}")
         print(f"       in corpus  {Q_MUON_50_WRONG}")
-        print("     They agree to 12 digits, then diverge by 2.842e-12 -- "
-              "~12,900x f64")
-        print("     round-off, so this is not even an f64 solve. The implied "
-              "m_mu/m_e differs")
-        print("     by 0.0023 sigma, so the physics is unaffected: it is a "
-              "PRECISION defect,")
-        print("     not a stale CODATA vintage. The trailing 38 digits assert "
-              "precision")
-        print("     that was never computed.")
+        print("     They diverge at digit 13 (2.842e-12 relative).")
+        print()
+        print("     SCOPE -- this is a REPRODUCIBILITY defect, not an accuracy")
+        print("     one. CODATA m_mu/m_e is known to ~7 sig figs, which caps")
+        print("     q_muon at ~8; the gap between the two strings is 431x")
+        print("     SMALLER than that experimental uncertainty. So neither")
+        print("     string means anything past digit 8, the canonical one is")
+        print("     NOT more accurate, and no derived physical quantity moves.")
+        print("     What the canonical one has is that it can be regenerated")
+        print("     and therefore checked. Do not report this as a precision")
+        print("     or accuracy problem.")
 
     if mixed:
         print(f"\n  ** {len(mixed)} witness(es) record MORE THAN ONE anchor "
