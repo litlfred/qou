@@ -50,6 +50,7 @@ compile_error!(
 // — ~3 500 LOC of WASM-targetable compute.
 
 pub mod certificate;
+pub mod color_weight;
 pub mod cross_level_embedding;
 #[cfg(feature = "mpfr")]
 pub mod dense_la_mpfr;
