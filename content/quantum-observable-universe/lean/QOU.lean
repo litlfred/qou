@@ -609,6 +609,7 @@ import QOU.QBeta.FiveTwoOhtsukiCriticalPoint
 import QOU.QBeta.FiveTwoDTSpectrumSplit
 import QOU.QBeta.ChiralityGradedCount
 import QOU.QBeta.DTChiralityBarInvolutionLink
+import QOU.QBeta.QuiverMirrorAutomorphismExcluded
 import QOU.QBeta.FiveTwoSaddleCurve
 import QOU.QBeta.FiveTwoStokesMatrixIdentities
 import QOU.QBeta.FiveTwoSumRuleIntegrand
