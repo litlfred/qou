@@ -45,10 +45,13 @@ reduction supplies the *coefficients*, not the *argument*.
 > resolved observable is the swing `S(muon) − S(proton) = 0.04914`
 > (±7.6×10⁻⁷) = the cross-anchor `c₃` variation (`Vol(4₁)` cancels). Read
 > this bean's "sign flip", "ratio ≈ −4.08", and the anchor inversion targets
-> as **conditional on a flip the data does not establish**; the resolved
-> target for any future `z(q₀)` derivation is the swing. See
-> `docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md` and the
-> follow-up bean `qou-6y1p` (retarget the S-channel at the resolved swing).
+> as **conditional on a flip the data does not establish**. The swing is the
+> one *resolved* number but is NOT an independent target: `qou-6y1p`
+> (scrapped) showed it equals the 11.54 ppb μ–p substrate tension × dc₃/dq
+> exactly — the known tension amplified by the circular cal-anchored c₃
+> extraction — so deriving it requires both a first-principles c₃ (ladder
+> coefficient ≡ 0) and the open μ–p tension. See
+> `docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`.
 
 ## Update (2026-08-01, PRs #4452 + #4457 merged)
 

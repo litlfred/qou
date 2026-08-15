@@ -151,7 +151,11 @@ carries and how the bar-even part is labeled.
    states the flip "must not be cited as an established sign flip". The only
    resolved observable is the **swing** `S(muon) − S(proton) = 0.04914`
    (±7.6×10⁻⁷; the common error cancels), which equals the cross-anchor `c₃`
-   variation with `Vol(4₁)` cancelled. Everywhere this doc says "`S`
+   variation with `Vol(4₁)` cancelled — and which is itself **not** an
+   independent derivation target: it factors exactly as the 11.54 ppb μ–p
+   substrate tension × `dc₃/dq` (bean `qou-6y1p`, scrapped — deriving it
+   requires both a first-principles `c₃` and the open μ–p tension).
+   Everywhere this doc says "`S`
    sign-flips between the anchors", read "conditional on a sign flip the data
    does not establish"; the diagonal-crossing gate and its inversion targets
    (`+0.0224`/`−0.0911`, built from the individual values) inherit that
