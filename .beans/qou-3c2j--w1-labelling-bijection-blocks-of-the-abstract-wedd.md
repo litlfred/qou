@@ -136,3 +136,25 @@ Then `⟨χ_reg, χ_reg⟩` computed two ways gives the identity.
 `finrank_bot` both time out at `isDefEq` on these modules unless the module argument is
 given explicitly — at 10⁶ heartbeats, not merely the default. Name the type; do not raise
 the limit.
+
+### Correction to step 3 above — spanning is not needed at all
+
+I wrote that step 3 needs the Specht characters to **span** the class functions, and that
+this was the one place I expected real work. Checked: the corpus carries only *upper*
+bounds in that direction — `finrank_classFunctions_le` (`≤ #ConjClasses`) and
+`card_conjClasses_le` (`≤ #partitions`). Spanning would be a genuinely new argument.
+
+It is also avoidable. Decompose the **module** rather than expanding the character:
+
+- `k[S_n]` is semisimple, so the regular module is the (independent) sup of its isotypic
+  components — Mathlib has `sSup_isotypicComponents` and `sSupIndep_isotypicComponents`;
+- every simple summand is some `S^μ` (`specht_exhausts_irreducibles`), so the components
+  are indexed by partitions;
+- `dim Hom_G(A, S^μ) = m_μ` by orthonormality (bricks 1–2), and `= dim S^μ` by
+  `ringLmapEquivSelf`;
+- `dim_k A = Σ_μ m_μ · dim S^μ = Σ_μ (dim S^μ)²`, i.e. `n! = Σ_μ (dim S^μ)²`.
+
+No class-function spanning, no completeness-of-characters. Revised remaining work is
+therefore: the isotypic decomposition of the regular module (Mathlib-supported), the
+`Hom_A(A, M) ≅ M` identification, and the dimension count. Bricks 1–2 are what make the
+middle step give `m_μ` on the nose rather than `m_μ · dim End`.
