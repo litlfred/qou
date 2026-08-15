@@ -251,3 +251,42 @@ similarly-named modules side by side. `wrap_legacy("knot-volumes", …)`
 passes the slug explicitly, so the witness filename does not depend on the
 script filename — only the directory does — but the adjacency is worth a
 rename or a comment.
+
+## CORRECTION 2 — my #5155 recommendation was backwards
+
+#5155 recommended "option (1), move the script into `substrate/`". **Do not
+do that.** Two facts found immediately afterwards overturn it:
+
+1. **`computations/knot-volumes.py:19` already carries
+   `import _path_bridge  # Phase 6 bridge: substrate modules moved into
+   substrate/ subdir`.** The script never moved. The substrate *modules*
+   moved out from under it, and it was given a bridge to keep importing
+   them. Moving it into `substrate/` would fight that bridge, not use it.
+2. **The witness is the misfiled artifact, not the script.** Checked every
+   witness in `substrate/`: `knot-volumes.witness.json` is the ONLY one whose
+   basename also matches a producer one level up. The collision is the cause —
+   `substrate/knot_volumes.py` (canonical mpmath constants, underscore) and
+   `computations/knot-volumes.py` (SnapPy verification script, hyphen) are
+   different modules with near-identical names, and the witness got filed
+   with the wrong one. The pairing check in the measurement above counted it
+   "paired" for exactly that reason, which is part of why I read it backwards.
+
+**Correct direction: the witness belongs in `computations/`, next to the
+producer that writes it** — which is also where that producer already emits
+today. That makes the live output the tracked one and retires the frozen
+April copy.
+
+**What that costs, and why it is still not a drive-by:**
+
+- 4 references must move with it: the three content blocks
+  (`knot-volumes-verification.ts`, `local-substrate-q-proof.ts`,
+  `terminal-resolution-proof.ts`), plus `binding_wn_link_volume_probe.py:15`.
+- `raw-float64-baseline.json:1500` keys the entry on the OLD path at 34
+  fields. A path move means editing that key. Legitimate (a move, not a
+  growth — the fresh count is 33, a decrease) but it touches the baseline,
+  which the discipline guards closely. Worth doing deliberately, with the
+  decrease stated, rather than as a side effect.
+- `witness-producer-executes-audit` records the old path too.
+
+Not attempted. Two reversed diagnoses on this one item is the signal to hand
+it over with the full picture rather than take a third swing.
