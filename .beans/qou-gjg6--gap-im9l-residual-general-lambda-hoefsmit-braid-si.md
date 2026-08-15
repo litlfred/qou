@@ -708,3 +708,39 @@ braid_rowA_identity / braid_rowB_identity) against genMat_braid_lhs_expand /
 genMat_braid_rhs_expand, using these entry lemmas for the distinctness side conditions;
 then the admissibility case tree for non-generic orbits. No mathematics left, only wiring.
 hoefsmit_seminormal_rep keeps its Ref'd sorry.
+
+
+## TABLEAU-LEVEL BRAID PROVED 2026-08-15 -- a prerequisite I had not noticed
+
+swapTableau_braid: s_k s_{k+1} s_k . T = s_{k+1} s_k s_{k+1} . T, sorry-free. This was NOT
+on the remaining-work list and should have been: without it the sixth orbit element is not
+well defined, since the LHS expansion reaches it as s_k(s_{k+1}s_k.T) and the RHS as
+s_{k+1}(s_k s_{k+1}.T). The matrix braid cannot even be stated cleanly until these are known
+equal.
+
+It is the UNDEFORMED shadow of the relation being chased -- at q = 1 the seminormal matrices
+degenerate to permutation matrices and the Hecke braid becomes exactly this. Worth being
+explicit that the deformed statement does NOT follow from it: the matrix braid needs
+seminormalParam_rel, which is invisible at the tableau level. (Recording that so a later
+reader does not mistake this for the braid.)
+
+Proof is syt_ext down to swapVal_braid, the S_3 relation on value-transpositions.
+
+LEAN PERFORMANCE GOTCHA, second of its kind on this front and worth generalising:
+`unfold swapVal; split_ifs <;> omega` proves the TWO-swap statements (swapVal_involutive,
+swapVal_comm) but TIMES OUT on the three-swap nesting at the default 200000 heartbeats --
+and case-splitting on x first does NOT help, because each branch still carries the full
+nesting. What works is pointwise rewriting with three evaluation lemmas
+(swapVal_self / swapVal_succ / swapVal_of_ne, all new), so every step is search-free.
+Generalisation: for these transposition-word identities, cost grows with NESTING DEPTH, not
+with the number of cases; past depth 2, rewrite rather than split. Compare the Orbit6Braid
+note above, where the fix was also to make lookup a single reduction rather than a search.
+
+Also fixed: swapVal_self/_succ cannot be proved by `simp only [swapVal]; rw [if_pos rfl]` --
+simp only has already reduced `k = k` to True, so the if_pos pattern is gone. Plain
+`simp [swapVal]` closes both.
+
+REMAINING, unchanged: instantiate the six rows against the two expansions. All prerequisites
+now exist -- the six rows resolved algebraically, the orbit entry table, the distinctness
+route, the third parameter, seminormalParam_rel, and now the tableau-level braid.
+hoefsmit_seminormal_rep keeps its Ref'd sorry.
