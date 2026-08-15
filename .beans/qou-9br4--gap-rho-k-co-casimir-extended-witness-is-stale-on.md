@@ -134,3 +134,50 @@ it is no longer the thing standing between this bean and a finished witness.
 survival are untouched by any of this, and that is the part of this bean that
 stands. Correctness of the switch is verified — rel_diff exactly 0.0 below the
 threshold and 1.26e-16 above, against the pre-switch dense path.
+
+---
+
+## Attempt 3 (this session, 21:12–22:32Z) — independently reproduces the section above
+
+Ran a third attempt before seeing the cross-file from `qou-5qwb`. It reached the
+same conclusion from the same evidence, which is worth recording as an
+independent confirmation rather than as a competing account.
+
+| pid | elapsed | CPU time | %CPU | RSS |
+|---|---|---|---|---|
+| main | 1:20:30 | 11:38 | **14.4 %** | **6.97 GB** |
+| worker | 1:21:53 | 4:31 | 5.5 % | 3.58 GB |
+| worker | 1:19:37 | 1:29 | 1.8 % | 1.37 GB |
+| worker | 1:18:20 | 0:06 | 0.1 % | 90 MB |
+
+~12 GB resident on a 16 GB box at 14 % CPU; killing it freed 14.4 GB. Same
+signature, same verdict: **starved, not slow**.
+
+**Correcting my own entry.** I first wrote that the cause "was me", for running
+this alongside a `lake build`, a 1.6 GB cache extract and two `qa-sweep` runs.
+That is at most half right and the weaker half. The section above has the real
+mechanism — `hoefsmit_matrices_numpy` stores generators dense, so
+`7700² × 8 B × 11 = 5.22 GB` **per worker** at `λ = (5,3,2,1,1)`, and the
+default `n_workers` asks for ~20 GB regardless of what else is running. My
+co-tenancy made an already-doomed allocation fail sooner. The producer would
+have thrashed on an idle box too.
+
+**Consequence for the "do not attempt a fourth" line above.** That was written
+before `--workers 1` (PR #5104) was known to this session. It is superseded: a
+fourth attempt IS worth one shot, under the section above's conditions —
+`--workers 1`, idle box, ~45–60 min — because the memory wall the first three
+hit is removed rather than merely waited out. What is still unproven is whether
+the remaining wall time survives the container.
+
+**One addition to the partial-write warning.** The five-atom-over-six risk is
+worse than either entry first said, and the cross-file has it right: a gutted
+witness scores **zero raw floats**, so the raw-float64 ratchet reads it as a
+*perfect drain*. Run `witness_shape_guard.py` (PR #5089) before committing any
+regenerated witness — the ratchet alone will not catch a truncation.
+
+**A liveness note both entries should carry.** Elapsed time cannot distinguish
+slow from starved. A healthy run sits near 100 % CPU; the three failures all
+sat under 15 %. Check CPU time, not the clock — and never
+`pgrep -c -f rho_k_co_casimir`, which self-matches (it cost this session 76
+minutes of false "still running", independently of the same trap recorded
+above).
