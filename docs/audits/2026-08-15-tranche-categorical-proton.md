@@ -1,18 +1,19 @@
 # Tranche evidence — restore `def:categorical-proton` to the blocks that lost it?
 
-Generated 2026-08-15 by `scripts/prune-tranche-sheet.ts def:categorical-proton`. Bean `prn1`.
-**Nothing is restored by this document.**
+Regenerated 2026-08-15 by `scripts/prune-tranche-sheet.ts def:categorical-proton`, **after** the
+`extractUses` fix (folio-assistant #117). Earlier revisions of this sheet
+under-reported `declares now` for any block with a comment before its `uses:`
+key — 27 blocks corpus-wide had their whole array invisible. Bean `prn1`.
 
-Column meanings, the two-relation caveat, the forward-reference rule, and why a
-target-shaped tranche is one question rather than many: see
-[`2026-08-15-tranche-index.md`](2026-08-15-tranche-index.md) and
-[`2026-08-15-tranche-1-jones-markov-trace.md`](2026-08-15-tranche-1-jones-markov-trace.md).
+Sources already restored under this bean no longer appear. Column meanings, the
+two-relation caveat and the forward-reference rule:
+[`2026-08-15-tranche-index.md`](2026-08-15-tranche-index.md).
 `n/a` means the file does not exist, so nothing was searched — it is not `no`.
 
 
 Target exists: yes
 Target Lean decl: `QOU.Torsion.CategoricalProton`
-Sources that lost it and still cannot reach it: **10**
+Sources that lost it and still cannot reach it: **8**
 
 | source | kind | prose link | prose mention | lean | declares now | restoring points |
 |---|---|---|---|---|---|---|
@@ -21,22 +22,15 @@ Sources that lost it and still cannot reach it: **10**
 | `rem:meson-to-proton-via-borromean` | remark | no | no | *n/a — no .lean* | 1 | backward |
 | `ex:hydrogen-derived-nf` | example | no | no | *n/a — no .lean* | 1 | backward |
 | `prop:neutron-proton-mass-splitting` | proposition | no | no | no | 1 | backward |
-| `prop:categorical-proton-exists` | proposition | **YES** | categorical proton, categorical-proton | yes | 0 | backward |
 | `prop:confinement-operator-selection` | proposition | no | no | *n/a — no .lean* | 1 | backward |
 | `ex:helium4-derived-nf` | example | no | no | *n/a — no .lean* | 2 | backward |
 | `prop:four-term-pair-nucleon` | proposition | no | no | *n/a — no .lean* | 2 | **FORWARD** |
-| `prop:categorical-proton-unique` | proposition | **YES** | categorical proton, categorical-proton | yes | 2 | backward |
 
-**2 of 10 would point FORWARD if restored**.
+**2 of 8 would point FORWARD if restored**.
 
 Each adds a forward reference to a chapter the detangler arc has been untangling. Restoring these needs `foreshadows[]`, a relocation, or a deliberate decision to accept the edge — not a bulk apply:
 
 - `prop:hadron-exists`
 - `prop:four-term-pair-nucleon`
 
-**2 of 10 searchable blocks link to the target from their prose** (0 of 10 have no `.md` and were not searched at all).
-
-For those, the narrative is sending the reader to `def:categorical-proton` while `uses[]` omits it. That is the editorial relation contradicting itself in the same block, not a matter of taste:
-
-- `prop:categorical-proton-exists`
-- `prop:categorical-proton-unique`
+**0 of 8 searchable blocks link to the target from their prose** (0 of 8 have no `.md` and were not searched at all).

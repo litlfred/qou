@@ -360,3 +360,26 @@ the second-strongest candidate on the grounds that it declares nothing. It
 declares `conj:classical-limit-stpart`; the graph could not see it. Any
 "declares nothing" figure in the tranche sheets predating the fix is suspect and
 the sheets need regenerating.
+
+## 2026-08-15 — sheets regenerated on the fixed graph; the structural pass is finished
+
+All twelve sheets and the index regenerated after folio-assistant #117. Earlier
+revisions were wrong in the `declares now` column for any block with a comment
+before its `uses:` key, and the index now says so at the top rather than quietly
+superseding them.
+
+Current state: **18 edges restored**, twelve tranches down to **131 remaining
+sources**, **3 prose-linked** (all withheld — the `interprets` cases) and **10**
+that would point forward.
+
+Still-lost, measured now: **658** unreachable through `uses[]`, of which **37**
+are declared via `interprets:`, so **621** are undeclared anywhere. The figure
+falls faster than edges are applied, because one restoration can make several
+pairs reachable transitively — the same effect the original prune tried to
+exploit and got wrong by dropping both legs of the triangle.
+
+**The structural pass is finished.** Every block whose prose linked a target its
+`uses[]` omitted is resolved: 18 restored, 4 withdrawn on evidence. What remains
+carries no textual signal at all. "The prune removed it" is a reason to ask
+whether an edge belongs, not an answer — so the rest needs readers, and that is
+a budget decision rather than a technical one.

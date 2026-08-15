@@ -1,131 +1,85 @@
-# Prune-restoration tranches — index, and why size is the wrong order
+# Prune-restoration tranches — index
 
-Generated 2026-08-15. Bean `prn1`. **Nothing is restored by any of these.**
+Regenerated 2026-08-15, **after** the `extractUses` fix (folio-assistant #117).
+Bean `prn1`.
 
-`2026-08-15-prune-damage-redrive.md` established that the damage cuts far better
-by **target** than by source: 692 still-lost edges across 320 blocks become a few
-dozen questions when you ask "must a reader have read `T` first?" once per `T`.
-These are the twelve largest, covering **153 of the 692 still-lost edges**.
+> **Earlier revisions of these sheets were wrong** in one column. `extractUses`
+> failed on any manifest with a comment between the previous field's comma and
+> its `uses:` key, so 27 blocks and 53 declared edges were invisible to the
+> graph and those blocks read as declaring nothing. Every `declares now` count
+> and every still-lost total predating the fix is superseded by this page.
 
-| # | target | sources | prose-linked | would point forward | sheet |
+**18 edges have been restored** under this bean. The twelve largest targets now
+stand at **131 remaining sources**, of which **3 are prose-linked** and **10
+would point forward if restored**.
+
+| # | target | sources left | prose-linked | forward | sheet |
 |---|---|---|---|---|---|
-| 1 | `thm:jones-markov-trace` | 21 | 2 | 0 | [sheet](2026-08-15-tranche-1-jones-markov-trace.md) |
-| 2 | `def:hecke-normal-form` | 20 | 1 | 0 | [sheet](2026-08-15-tranche-hecke-normal-form.md) |
+| 1 | `thm:jones-markov-trace` | 19 | 0 | 0 | [sheet](2026-08-15-tranche-1-jones-markov-trace.md) |
+| 2 | `def:hecke-normal-form` | 18 | 0 | 0 | [sheet](2026-08-15-tranche-hecke-normal-form.md) |
 | 3 | `def:borromean-baryon` | 16 | 0 | **4** | [sheet](2026-08-15-tranche-borromean-baryon.md) |
-| 4 | `def:crossing-energy` | 12 | 3 | 1 | [sheet](2026-08-15-tranche-crossing-energy.md) |
-| 5 | `rem:conway-normal-form` | 11 | 2 | 0 | [sheet](2026-08-15-tranche-conway-normal-form.md) |
+| 4 | `def:crossing-energy` | 9 | 1† | 1 | [sheet](2026-08-15-tranche-crossing-energy.md) |
+| 5 | `rem:conway-normal-form` | 10 | 1† | 0 | [sheet](2026-08-15-tranche-conway-normal-form.md) |
 | 6 | `def:habiro-ring` | 11 | 0 | 1 | [sheet](2026-08-15-tranche-habiro-ring.md) |
-| 7 | `def:motivic-substrate` | 11 | 2 | 1 | [sheet](2026-08-15-tranche-motivic-substrate.md) |
-| 8 | `def:archimedean-realization-functor` | 11 | 2 | 0 | [sheet](2026-08-15-tranche-archimedean-realization-functor.md) |
-| **9** | **`def:q-from-epsilon`** | ~~10~~ **5 left** | ~~5~~ **0 left** | 0 | [sheet](2026-08-15-tranche-q-from-epsilon.md) — **5 APPLIED** |
+| 7 | `def:motivic-substrate` | 8 | 0 | 1 | [sheet](2026-08-15-tranche-motivic-substrate.md) |
+| 8 | `def:archimedean-realization-functor` | 10 | 1† | 0 | [sheet](2026-08-15-tranche-archimedean-realization-functor.md) |
+| 9 | `def:q-from-epsilon` | 5 | 0 | 0 | [sheet](2026-08-15-tranche-q-from-epsilon.md) |
 | 10 | `def:hadron` | 10 | 0 | 0 | [sheet](2026-08-15-tranche-hadron.md) |
-| 11 | `def:categorical-neutron` | 10 | 3 | 1 | [sheet](2026-08-15-tranche-categorical-neutron.md) |
-| 12 | `def:categorical-proton` | 10 | 2 | **2** | [sheet](2026-08-15-tranche-categorical-proton.md) |
+| 11 | `def:categorical-neutron` | 7 | 0 | 1 | [sheet](2026-08-15-tranche-categorical-neutron.md) |
+| 12 | `def:categorical-proton` | 8 | 0 | **2** | [sheet](2026-08-15-tranche-categorical-proton.md) |
 
-153 sources. **22 carry a prose link to the target they omit from `uses[]`** — the
-block's own two halves contradicting each other, which is a defect rather than a
-matter of taste. **10 of 153 would point forward if restored.**
+† The three remaining prose-linked blocks are **withheld deliberately** — see
+"the `interprets` question" below. They are not pending work.
 
-## Tranche 9 — APPLIED (the structural half), and it indicts the earlier restoration
+## The structural pass is finished
 
-**Five of its ten are done.** `rem:millennium-unification`,
-`rem:bsd-surreal-bound`, `rem:rh-surreal-bound`, `rem:yang-mills-surreal-bound`
-and `rem:p-vs-np-surreal-bound` now declare `def:q-from-epsilon`.
+Every block whose prose linked a target its `uses[]` omitted has been resolved:
+18 restored, 4 withdrawn on evidence. What remains in these twelve tranches
+carries **no textual signal at all** — no prose link, and for most no concept
+mention either.
 
-They were applied on a **structural** ground, not a reading. Each contains the
-same sentence introducing two definitions together — `def:reeb-epsilon` and then
-"$q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon))" — and
-four of the five already declared the first while none declared the second. Same
-sentence, same role, one carried and one not: a block's two halves contradicting
-each other. Nothing is judged, so the two-reader standard is not what is missing.
+That is the honest boundary. "The prune removed it" is a reason to *ask* whether
+an edge belongs, not an answer. Deciding the remaining 131 requires reading the
+blocks, and the `uses-editorial-review` standard asks for two independent
+readers per verdict.
 
-Verified before applying: `def:q-from-epsilon` uses only `def:reeb-epsilon` and
-cannot reach any of the five, so **no cycle** — the editorial graph is still
-acyclic corpus-wide, preserving what #4881 established. **None of the five points
-forward.** `run-validate` ✓ Valid, 42 issues, unchanged from before.
+## The `interprets` question — open, and it changes the numbers
 
-**The remaining five carry no prose link at all.** The self-contradicting subset
-is fully drained, so what is left is exactly the residue where a reader's
-judgement decides something — and that still needs two readers.
+`buildContentGraph` builds editorial edges from `uses[]` **alone**.
+`interprets:` is a second authored relation, and the detangler already treats it
+as an ordering constraint — no block may precede one it interprets. So the graph
+and the checker disagree about whether `interprets` is an editorial edge.
 
-`def:q-from-epsilon` had **the highest prose-link rate of any tranche by far**
-(5 of 10, against a next-best of 3 of 12) and **nothing points forward**, so it
-was ordering-safe wholesale.
+**37 of the still-lost edges are declared via `interprets:`.** Three of them sit
+in these tranches (`rem:commutative-crossing-energy`,
+`rem:body-asymptotics-catalog`, `rem:archimedean-image-table`), which is why
+they are withheld rather than restored.
 
-What makes it more than a good candidate is *which* five link. From the re-drive,
-six blocks had edges re-declared since the prune: `rem:yang-mills-surreal-bound`
-(6), `rem:p-vs-np-surreal-bound` (6), `rem:rh-surreal-bound` (4),
-`rem:millennium-unification` (3), `rem:bsd-surreal-bound` (3), `conj:p-vs-np-qou`
-(2).
+This makes the damage figure answer a narrower question than it appears to:
 
-**Five of those six are exactly the five whose prose links to
-`def:q-from-epsilon`.** Someone went through these blocks, restored 3–6
-dependencies to each, and omitted in every case the one their own narrative
-sends the reader to. That is not five independent editorial judgements; it is one
-systematic gap in the restoration pass, visible five times.
+- **"unreachable through `uses[]`"** — **658** edges. Correct for the ordering
+  metrics, which run on exactly that graph.
+- **"the author never declared this dependency"** — **621**. The other 37 are
+  stated, just in the other field.
 
-The blocks that *don't* link are the ones that pass never reached:
-`rem:ns-surreal-bound` (declares nothing), `prop:surreal-rate-calculus`,
-`rem:adelic-tate-squeeze`, `rem:ns-blowup-physical-evidence`, and the
-least-restored family member `conj:p-vs-np-qou`.
+(Measured after the 18 restorations. The figure moves faster than the count of
+edges applied, because restoring one edge can make several others reachable
+transitively — which is the same effect the original prune was trying to
+exploit, and got wrong by dropping both legs of the triangle.)
 
-## Restoring an edge can create a forward reference — measured, not assumed
-
-`uses[]` pointing at a block later in the same chapter is what
-`detangler-no-forward-ref` counts, and what the `fwr` arc spent five PRs cutting
-from 274 to 194. Restoration adds `uses[]` entries, so **a correct restoration can
-silently undo a different piece of correct work.**
-
-The concrete case: `def:crossing-energy` was relocated into
-`knots-particles-confinement` **§8** on 2026-08-09 *so that* the electroweak
-results would stop forward-referencing their own definitions.
-`prop:hadron-exists`, one of the blocks that lost the edge to it, sits at
-within-chapter **21** against `crossing-energy`'s **87**. Restoring that edge
-recreates exactly what the relocation removed.
-
-Every sheet costs this per source via `pointsForward`, exported from
-`qa-checkers-extended.ts` so nobody hand-rolls a third manifest parser (the
-duplication `fsl7` exists to prevent). It answers `n/a` when either block is
-unplaced: **unknown, not safe.**
-
-## The order
-
-**Nine of the twelve tranches are ordering-safe wholesale** — tranches 1, 2, 5,
-8, 9, 10 have zero forward edges, and 4, 6, 7, 11 have exactly one apiece.
-Only **10 blocks in all 153** need individual handling, each wanting
-`foreshadows[]`, a relocation, or a deliberate decision to accept the edge.
-
-Recommended order, by evidence rather than size:
-
-1. ~~**`def:q-from-epsilon`**~~ — **structural half applied**; 5 remain, all
-   needing a reading.
-2. **`def:crossing-energy`** (3/12, 1 forward) — `rem:commutative-crossing-energy`
-   both links in prose *and* references the declaration in Lean.
-3. **`def:categorical-neutron`** (3/10, 1 forward).
-4. **`thm:jones-markov-trace`** (2/21, 0 forward) — the largest, and free of
-   ordering risk.
-5. Then tranches 5, 7, 8, 12, 2.
-6. **Last: `def:borromean-baryon` (3), `def:habiro-ring` (6), `def:hadron` (10)**
-   — no prose links at all between them, and `borromean-baryon` carries 4 of the
-   10 forward edges. Being large is the worst reason to do one of these first.
-
-## Two cautions on reading the sheets
-
-- **Tranche 2's mention column.** Bare "normal form" is generic and appears for
-  unrelated reasons. Only the three blocks matching **"hecke normal form"**
-  exactly carry weight.
-- **The `lean` column is never corroboration.** It reports the *formal* relation,
-  which is not the editorial one and diverges from it legitimately. `uses[]` must
-  never be populated from Lean.
+Both are defensible; they are not interchangeable, and the audit has been
+reporting the first while being read as the second.
 
 ## What none of this decides
 
-Whether the edge belongs. The prune applied a mechanical rule across a corpus
-without reading, and restoring mechanically repeats it in the opposite direction
-— at least one removal is known deliberate (`def:adelic-substrate` lost
-`def:classical-limit-functor` by owner decision in `78a570365d`, and restoring it
-re-opens a cycle). The `uses-editorial-review` two-reader standard governs what is
-applied. These sheets remove the busywork from that reading and guarantee it
-cannot quietly cost the paper its ordering.
+Whether an edge belongs. The prune applied a mechanical rule across a corpus
+without reading, and restoring mechanically repeats it in the opposite
+direction — at least one removal is known deliberate (`def:adelic-substrate`
+lost `def:classical-limit-functor` by owner decision in `78a570365d`, and
+restoring it re-opens a cycle), and a second was found here: the author comment
+on `prop:strangelet-crossing-energy` turned out to be correct against a
+candidate list built on a broken parser.
 
 Regenerate any sheet: `bun run scripts/prune-tranche-sheet.ts <target-label>`.
+Find structural candidates corpus-wide:
+`bun run scripts/prune-structural-candidates.ts`.

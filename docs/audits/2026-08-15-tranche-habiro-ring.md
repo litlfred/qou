@@ -1,12 +1,13 @@
 # Tranche evidence — restore `def:habiro-ring` to the blocks that lost it?
 
-Generated 2026-08-15 by `scripts/prune-tranche-sheet.ts def:habiro-ring`. Bean `prn1`.
-**Nothing is restored by this document.**
+Regenerated 2026-08-15 by `scripts/prune-tranche-sheet.ts def:habiro-ring`, **after** the
+`extractUses` fix (folio-assistant #117). Earlier revisions of this sheet
+under-reported `declares now` for any block with a comment before its `uses:`
+key — 27 blocks corpus-wide had their whole array invisible. Bean `prn1`.
 
-Column meanings, the two-relation caveat, the forward-reference rule, and why a
-target-shaped tranche is one question rather than many: see
-[`2026-08-15-tranche-index.md`](2026-08-15-tranche-index.md) and
-[`2026-08-15-tranche-1-jones-markov-trace.md`](2026-08-15-tranche-1-jones-markov-trace.md).
+Sources already restored under this bean no longer appear. Column meanings, the
+two-relation caveat and the forward-reference rule:
+[`2026-08-15-tranche-index.md`](2026-08-15-tranche-index.md).
 `n/a` means the file does not exist, so nothing was searched — it is not `no`.
 
 
