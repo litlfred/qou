@@ -1270,6 +1270,21 @@
         "reviewed_at": "2026-08-15T10:30:58.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "093747aff7c5",
+          "ts": "22cabd3c7637"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:14.740Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Vieta/cubic remark; pure mathematical prose"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1289,6 +1304,21 @@
         "reviewed_at": "2026-08-15T10:30:58.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "093747aff7c5",
+          "ts": "22cabd3c7637"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:14.775Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Vieta/cubic remark; pure mathematical prose"
       }
     ],
     "trap-em-dash": [
@@ -1308,6 +1338,21 @@
         "reviewed_at": "2026-08-15T10:30:58.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 72 words)"
+      },
+      {
+        "field_hash": {
+          "md": "093747aff7c5",
+          "ts": "22cabd3c7637"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:14.809Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Vieta/cubic remark; pure mathematical prose"
       }
     ],
     "trap-triples": [
@@ -1327,6 +1372,21 @@
         "reviewed_at": "2026-08-15T10:30:58.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 72 words)"
+      },
+      {
+        "field_hash": {
+          "md": "093747aff7c5",
+          "ts": "22cabd3c7637"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:14.843Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Vieta/cubic remark; pure mathematical prose"
       }
     ],
     "trap-closing-aphorism": [
@@ -1346,6 +1406,21 @@
         "reviewed_at": "2026-08-15T10:30:58.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "093747aff7c5",
+          "ts": "22cabd3c7637"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:14.878Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Vieta/cubic remark; pure mathematical prose"
       }
     ],
     "trap-meta-commentary": [
@@ -1365,6 +1440,21 @@
         "reviewed_at": "2026-08-15T10:30:58.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "093747aff7c5",
+          "ts": "22cabd3c7637"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:14.912Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Vieta/cubic remark; pure mathematical prose"
       }
     ],
     "trap-thesis-restatement": [
@@ -1384,6 +1474,21 @@
         "reviewed_at": "2026-08-15T10:30:58.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "093747aff7c5",
+          "ts": "22cabd3c7637"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:14.947Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Vieta/cubic remark; pure mathematical prose"
       }
     ],
     "trap-performed-warmth": [
@@ -1403,6 +1508,21 @@
         "reviewed_at": "2026-08-15T10:30:58.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "093747aff7c5",
+          "ts": "22cabd3c7637"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:14.982Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Vieta/cubic remark; pure mathematical prose"
       }
     ],
     "trap-superlative": [
@@ -1422,6 +1542,21 @@
         "reviewed_at": "2026-08-15T10:30:58.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "093747aff7c5",
+          "ts": "22cabd3c7637"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:15.017Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Vieta/cubic remark; pure mathematical prose"
       }
     ],
     "trap-nonspeakable": [
@@ -1441,8 +1576,23 @@
         "reviewed_at": "2026-08-15T10:30:58.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "093747aff7c5",
+          "ts": "22cabd3c7637"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:15.052Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "Vieta/cubic remark; pure mathematical prose"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:58.932Z"
+  "updated_at": "2026-08-15T12:02:15.052Z"
 }

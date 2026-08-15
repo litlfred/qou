@@ -1197,6 +1197,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not assumed.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "c18761acbfbf",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:10.579Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "'derived, not assumed' is an epistemic-status claim the block then substantiates step-by-step (substantive contrast, anti-fit discipline)"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1216,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:30:58.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c18761acbfbf",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:10.273Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "8-step derivation chain; declarative"
       }
     ],
     "trap-em-dash": [
@@ -1235,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:30:58.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 317 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c18761acbfbf",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:10.305Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "8-step derivation chain; declarative"
       }
     ],
     "trap-triples": [
@@ -1254,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:30:58.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 317 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c18761acbfbf",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:10.339Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "8-step derivation chain; declarative"
       }
     ],
     "trap-closing-aphorism": [
@@ -1273,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:30:58.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c18761acbfbf",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:10.374Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "8-step derivation chain; declarative"
       }
     ],
     "trap-meta-commentary": [
@@ -1292,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:30:58.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c18761acbfbf",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:10.409Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "8-step derivation chain; declarative"
       }
     ],
     "trap-thesis-restatement": [
@@ -1311,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:30:58.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c18761acbfbf",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:10.444Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "8-step derivation chain; declarative"
       }
     ],
     "trap-performed-warmth": [
@@ -1330,6 +1435,21 @@
         "reviewed_at": "2026-08-15T10:30:58.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c18761acbfbf",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:10.477Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "8-step derivation chain; declarative"
       }
     ],
     "trap-superlative": [
@@ -1349,6 +1469,21 @@
         "reviewed_at": "2026-08-15T10:30:58.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c18761acbfbf",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:10.511Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "8-step derivation chain; declarative"
       }
     ],
     "trap-nonspeakable": [
@@ -1368,8 +1503,23 @@
         "reviewed_at": "2026-08-15T10:30:58.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c18761acbfbf",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:10.545Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "8-step derivation chain; declarative"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:58.792Z"
+  "updated_at": "2026-08-15T12:02:10.579Z"
 }
