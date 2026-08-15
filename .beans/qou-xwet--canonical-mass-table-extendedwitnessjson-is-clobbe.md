@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-15T22:43:14Z
-updated_at: 2026-08-15T23:14:33Z
+updated_at: 2026-08-15T23:42:40Z
 ---
 
 Found 2026-08-15 on the post-merge reorientation pass (PR #4961 landed; this was
@@ -159,3 +159,36 @@ now catches them, and would catch the day someone starts using one.
      the key does not exist in the committed witness yet)
   3. resolve or delete the rho_q pin (owner call)
   4. wire the validator into scripts/precision-gates.sh or an equivalent preflight
+
+
+## CORE FIX COMPLETE (2026-08-15, PR #5165)
+
+All four items closed except the rho_q owner call.
+
+  1. DONE  canonical witness regenerated at full DEFAULT_ATOMS -- 5 -> 9 rows,
+           4He / 5Li / 6Li / 7Li restored. And my 'needs a provisioned run'
+           claim was WRONG TWICE: compute-author §0.1 says do not declare a
+           compute blocked on pyhecke_native (pip install ./tools/pyhecke-native
+           -> 0.9.0 in ~1 min, matching the committed witness), and the full
+           9-atom run takes ~5 SECONDS wall, not 45 minutes. Provisioned first
+           per the §0.1 STRICT note, so the environment block came through
+           byte-identical -- zero provenance stripped.
+  2. DONE  B_2H_AME_MeV repointed to data.rows_by_nuclide.D.B_AME_MeV. Producer
+           emits a nuclide-keyed view (scalars only -- mirroring whole records
+           doubled the file 68 -> 133 KB; the projection costs 8 KB). registry.ts
+           now has ZERO positional pins.
+  3. OPEN  rho_q -- owner call, unchanged. Only _deprecated/ defines it.
+  4. BLOCKED on 3: wiring the validator into precision-gates.sh would make the
+           gate red for a defect I cannot resolve.
+
+BONUS, not on the original bean: the file was drained 24 -> 0 raw float64 at the
+producer. This HAD to ride here rather than land after -- restoring rows would
+otherwise have pushed it 26 -> 34, i.e. the correctness fix would have deepened
+a red. Causes were three float() downcasts (B_AME table, CODATA reference,
+derived err_* columns) plus paper_hard_floor_ppb as 780.0 rather than 780. The
+err columns now carry float + _str twins per the qou-ftuv shadow rule. Ratchet
+regressions 2 -> 1; only rho-k remains.
+
+Validator extended to check nuclide identity on KEYED pins too, not only
+positional ones -- otherwise it would verify nothing once this migration
+finished. Negative control reproduces the historical bug verbatim.
