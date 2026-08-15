@@ -1711,3 +1711,55 @@ Cheaper alternative, if a big box is not available: port this producer to
 accumulates the trace column-batch by column-batch — O(dim·B) memory instead of
 O(dim²). Its docstring calls out the dense identity at dim 7700 by name; it was
 written for exactly this wall.
+
+---
+
+## 2026-08-15 (later) — regeneration is not merely SLOW, it restates the science
+
+Appended rather than filed separately: the entry above already establishes the
+red (rho-k 3 → 4, all `per_atom[i].compute_wall_sec`, producer fixed by
+`29b209ce9`, witness never regenerated) and that regeneration was abandoned on
+**performance** grounds — 2h05m, workers at 9.9/3.7/1.3/0.0 % CPU. This adds a
+second, independent reason not to run it as hygiene, found while draining the
+last gating red after `qou-pgdw` / PR #5141 landed.
+
+**Two recorded upstream witnesses have drifted** since the committed rho-k was
+computed:
+
+- `canonical-mass-table-extended` — `86b861f6…` → `aa62e686…`
+- `y-lambda-wenzl-bridge-symbolic` — `f289cd26…` → `690a3f6e…`
+
+So a re-run does not merely refresh timing metadata; it **restates the Δ_λ
+science**. Measured on three of the four atoms (~20 s by skipping ⁴He):
+
+| atom | `abs_tr_M_at_q0` | `rho_K_pred_co_casimir` |
+|---|---|---|
+| deuteron | 0.38829 → 0.57509 | 9464.88 → 6390.44 |
+| tritium | 0.10407 → 0.22931 | 52978.84 → 24044.14 |
+| helium-3 | 0.20658 → 0.40377 | 26677.80 → 13649.10 |
+
+`err_ppm` moves only in the 5th significant figure (67.5614 → 67.5677,
+8.0768 → 8.0775, 12.7705 → 12.7716). Intermediates restated ~2× while the
+conclusion holds — the signature of an upstream **normalization / convention
+change** (the convention-D cascade), not a numerical error.
+
+**Consequence for ownership.** Even on a big box where the ⁴He leg completes,
+this must not land as a float64-drain commit: it would hide a ~2× intermediate
+restatement behind a hygiene banner, and it would pass every gate while doing
+so. The refresh belongs to the **Δ_λ / convention-D arc**, where that shift
+gets reviewed as science.
+
+**Two measurement notes**, both corrections to first readings:
+
+- The fast and slow chi paths agree **exactly at 60 digits**. An initial read of
+  `6390.4406431251356` as float64-degraded was the console table's truncation,
+  not the witness.
+- `--atoms <subset>` overwrites the **whole** witness with only that subset —
+  the same gutting mode this bean's incident note describes, reachable without
+  any git operation at all. Reproduced locally and restored each time. Any
+  refresh must be a single FULL run, and must confirm **both** gates afterwards:
+  raw-float64 → 0 **and** shape intact (6 `per_atom` entries, `durationMs`
+  ≈ 2.5e6). A zero with a small `durationMs` is a partial write, not a drain.
+
+No carve-out is proposed: `F64_INTEGRATOR_TIER` would be wrong here, since
+these are wall-clock diagnostics rather than integrator output.
