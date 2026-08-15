@@ -1540,3 +1540,89 @@ above). Same root cause, different verb. The rule that actually generalises:
 
 Stays open. The red is real, the fix is known (regenerate the witness with the
 already-fixed producer), and the blocker is compute rather than diagnosis.
+
+## Bottleneck analysis of the ⁴He leg — measured, and one hypothesis killed
+
+Asked directly why ⁴He is slow and whether it uses `pyhecke_native`.
+
+**It does not use pyhecke_native, and it cannot.** `_chi_worker` calls
+`hoefsmit_numpy.chi_numpy` — a numpy f64 kernel. The wheel does export exactly
+the right-shaped function, `chi_lambda_all_partitions_f64` ("χ^λ for every
+partition λ ⊢ n_strands ... rayon-parallel"), which would replace the entire
+Python pool with one Rust call. It takes a word of `(sign, gen_1based)` with
+`sign ∈ {1, -1, 0}`, and the canonical atomic braids use **four** crossing kinds:
+
+    proton     n=11   sigma 6   sigma_inv 3    averaged 2
+    deuteron   n=23   sigma 11  sigma_inv 7    averaged 4   averaged_weighted 1
+    helium-3   n=35   sigma 18  sigma_inv 10   averaged 6   averaged_weighted 1
+    helium-4   n=47   sigma 23  sigma_inv 15   averaged 8   averaged_weighted 1
+
+`averaged_weighted` has no sign encoding, and `canonical_braid_crossings.py`
+already says so in as many words: *"⚠ Lossy for `averaged_weighted`, by
+construction. A sign cannot [express it]"*. One crossing out of 47 — but it is
+an interface crossing, so it carries physics. **The native kernel is not a
+drop-in here without extending the Rust word encoding.**
+
+### What the cost actually is
+
+Measured `chi_numpy` on the ⁴He braid:
+
+    dim 1925 →  7.1 s        dim 3520 → 30.4 s     ⇒  cost ~ dim^2.4
+    largest λ of 12 is (5,3,2,1,1), dim 7700       ⇒  ≈ 200 s for that one λ
+    77 partitions, total dimension 140,152; the top 8 carry 31% of it
+
+So ~20 minutes of single-core work, irreducibly, on this kernel.
+
+### Hypothesis killed: it is NOT memory
+
+Dense f64 at dim 7700 is 474 MB, and four workers holding one each is 1.9 GB —
+which looks alarming and is not the problem. The box has **16 GB with 15 GB
+free and no cgroup limit**. Checked before theorising.
+
+### What it actually is — two compounding scheduling faults
+
+**1. BLAS oversubscription.** numpy is built on scipy-openblas, which defaults
+to one thread per core, and the producer forks four workers: 4 x 4 = 16 runnable
+threads on 4 cores. Measured, 4 partitions of dim ≈ 2100 through a 4-worker pool:
+
+    BLAS threads unset : 25.4 s
+    BLAS threads = 1   : 18.6 s        1.37x
+
+**2. Load imbalance.** `pool.map`'s default chunksize splits 77 λ into ~4
+contiguous blocks, and cost varies by three orders of magnitude across them.
+Observed worker CPU on the abandoned run: **11m51s / 4m35s / 1m35s / 0m00s** over
+2h05m wall — one worker carrying the run, one never scheduled any real work.
+
+### Applied
+
+  * BLAS thread pinning via `os.environ.setdefault` at the TOP of the module,
+    before anything loads numpy — OpenBLAS reads these at library load and a
+    fork inherits the loaded library, so setting them inside the worker is too
+    late. `setdefault`, so a deliberate operator export still wins.
+  * Longest-processing-time-first ordering (Specht dimension as the proxy) with
+    `chunksize=1`, then un-permuting back to `parts` order.
+
+**The un-permute is the risk this introduces** — the per-λ loop indexes
+`chi_values[i]` against `parts[i]`, so a reordering bug would silently pair the
+wrong χ with the wrong λ. Verified on n=6 (11 partitions, non-trivial
+permutation): **11/11 identical** to the un-reordered path.
+
+### Honest accounting of the speedup
+
+The 1.37x from thread pinning is measured. The LPT/chunksize gain is **not** —
+by construction it only shows on the heterogeneous full set, and measuring it
+means running the 20-minute job. The imbalance it targets is evidenced by the
+worker-CPU spread above, not by a before/after. Do not quote a combined figure.
+
+### Remaining options, if this is still too slow
+
+  * **Extend the native kernel** to encode `averaged_weighted` — much the
+    biggest win (Rust + rayon over partitions) and a real cross-language change.
+  * **Sparse path.** `threerow_chi_sparse.chi_atom_sparse` already exists and was
+    written for precisely this shape: keep the Hoefsmit matrices CSR and
+    accumulate the trace column-batch by column-batch, O(L·dim²) instead of
+    O(L·dim³), memory O(dim·B). Its docstring calls the dense identity at
+    dim 7700 out by name.
+  * **The chi cache.** `chi-helium-4-h12-at-q0-50dps.witness.json` exists but is
+    flagged `partial`; this producer never consults it, unlike
+    `habiro_coefficients_atomic`, which takes an `atom_cache_label`.
