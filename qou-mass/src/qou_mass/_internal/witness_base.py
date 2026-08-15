@@ -56,4 +56,19 @@ from qou_substrate.witness import (  # noqa: F401,E402
     _git_file_sha,
     _strip_ephemeral_fields,
     _witnesses_substantively_equal,
+    # `_EPHEMERAL_META_FIELDS` was missing from this hand-listed set, so
+    # `from witness_base import _EPHEMERAL_META_FIELDS` failed in-repo —
+    # `import *` above does not pick up underscore-prefixed names, which is
+    # the whole reason this explicit block exists.
+    #
+    # Nothing caught it because the one consumer,
+    # tools/qou-substrate/tests/test_ephemeral_mask_sync.py, reads the name
+    # from the VENDORED qou-mass mirror, and that mirror was a stale copy of
+    # the pre-shim implementation which still defined it directly. The test
+    # exists precisely to detect mirror divergence, and it was green only
+    # because the mirror had not been updated: the drift was masking the
+    # defect the test was written to find. Generating the mirror
+    # (scripts/sync-qou-mass-vendor.py) made it faithful and the failure
+    # surfaced immediately.
+    _EPHEMERAL_META_FIELDS,
 )
