@@ -1,11 +1,11 @@
 ---
 # qou-0vhl
 title: 'CLOSABLE: Rivin Lemma 1.2 — cone angle = sum of exterior dihedral angles (Finset identity)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T15:57:50Z
-updated_at: 2026-08-15T15:57:50Z
+updated_at: 2026-08-15T20:45:18Z
 parent: qou-5lm6
 ---
 

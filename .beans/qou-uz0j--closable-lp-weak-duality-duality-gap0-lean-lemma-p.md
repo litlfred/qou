@@ -1,11 +1,11 @@
 ---
 # qou-uz0j
 title: 'CLOSABLE: LP weak duality + duality_gap>=0 Lean lemma (proved backing for every LP/SDP-dual witness)'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-15T15:57:50Z
-updated_at: 2026-08-15T15:57:50Z
+updated_at: 2026-08-15T20:45:18Z
 parent: qou-5lm6
 ---
 

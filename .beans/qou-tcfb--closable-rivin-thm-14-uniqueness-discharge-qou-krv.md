@@ -1,11 +1,11 @@
 ---
 # qou-tcfb
 title: 'CLOSABLE: Rivin Thm 1.4 uniqueness -> discharge qou-krvm(ii) via SymmetricOptimum wiring'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-15T15:57:50Z
-updated_at: 2026-08-15T15:57:50Z
+updated_at: 2026-08-15T20:45:18Z
 parent: qou-5lm6
 ---
 
