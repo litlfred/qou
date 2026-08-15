@@ -31,7 +31,7 @@ The positron is the mirror $T_{2,3}^{\sigma}$ with $3$ negative crossings:
 $$
   \mathfrak{E}_{\mathrm{cross}}(e^+)
   =  -3q^{-1}
-   \approx  -3 \times 0.9010
+   \approx  -3 \times 0.9009
   =  -2.703
   \quad (\text{in Skein units}).
 $$

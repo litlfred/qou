@@ -219,3 +219,44 @@ precision claim, with no producer emitting any of them.
   right fix was still a new witness plus a `literal-source` marker, because the
   reproducer it cited emitted nothing and half its numbers were preserved
   convention C.
+
+---
+
+## The three orphans, worked
+
+### 1. `rem:pair-creation-energy` — FIXED, a misrounded constant
+
+The block wrote `E_cross(e+) = -3q^{-1} ≈ -3 × 0.9010 = -2.703`.
+
+`q_0^{-1} = 0.90091828395574149216`, which rounds to **0.9009**, not `0.9010`.
+Both documented pins agree (`muon: 0.90091827356…`), so this is not a pin
+question — it is a misrounded intermediate. The downstream `-2.703` is fine
+either way (`3 × 0.90091828 = 2.70275`), so only the quoted intermediate was
+wrong, which is why nothing downstream ever contradicted it.
+
+Corrected to `0.9009`.
+
+### 2. `prop:habiro-residue-sum-equivalence` — beaned, not fixable here
+
+Split out as **`qou-uabo`**. Its three values come from a **deprecated**
+producer; the "cross-pipeline witness" the prose cites does not exist; and the
+nearest live value is **95x outside the block's own 1e-9 tolerance**. A
+proposition whose whole content is "these two paths agree to machine epsilon"
+cannot be checked while the run that produced it is gone. Deliberately did not
+attach a plausible-looking witness.
+
+### 3. `rem:binding-alpha-shift-extension-context` — `14.6673` MeV/rad, no source
+
+`14.6673` appears in **no witness and no producer**, live or deprecated. It is
+used twice in the block, as a conversion factor
+(`rho_full(D) = 14.6673 MeV/rad`, then "re-multiplied by the 14.6673 MeV/rad").
+
+Unlike the Habiro case there is no deprecated producer to point at, and unlike
+the pair-creation case there is no constant it is a rounding of. It is simply a
+number with no provenance in the repo. Left as-is and recorded: inventing a
+source would be worse than the flag.
+
+## Orphans: 3 -> 2
+
+One fixed, one escalated to its own bean, one recorded as genuinely
+provenance-free.
