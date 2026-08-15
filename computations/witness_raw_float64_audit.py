@@ -451,6 +451,16 @@ def main() -> int:
             "lp_dual_carved_out_fields": sum(CARVED.values()),
             "lp_dual_carved_out_by_file": dict(sorted(CARVED.items())),
             "lp_dual_carved_out_field_names": sorted(LP_DUAL_F64_FIELDS),
+            # The float64-integrator carve-out, recorded on the SAME terms as
+            # the LP-dual one above. Console output is not auditability: a
+            # reviewer reading the committed artifact must be able to see what
+            # was excused and on whose declaration, without re-running the
+            # script. Emitting it only to stdout would have made this carve-out
+            # exactly the unseeable kind its own comment warns against.
+            "f64_integrator_carved_out_fields": sum(CARVED_INTEGRATOR.values()),
+            "f64_integrator_carved_out_by_file": dict(
+                sorted(CARVED_INTEGRATOR.items())),
+            "f64_integrator_declared_tier": F64_INTEGRATOR_TIER,
             "baseline_files": len(prior),
             "baseline_fields": base_total,
             "new_not_baselined": len(new_files),
