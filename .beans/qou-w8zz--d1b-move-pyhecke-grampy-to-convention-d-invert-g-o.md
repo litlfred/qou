@@ -171,3 +171,29 @@ overrides.
 - qou-m7py (Rust) — guarded against, not fixed.
 - qou-aze5 — pre-existing LP-dual test/impl contradiction found while
   draining the suite; not folded in.
+
+### 2026-08-15 check-in — a third G_INV consumer, missed twice
+
+My "zero arithmetic consumers" survey was wrong in scope **twice**:
+
+1. (already corrected) it missed the two re-export shims,
+   `hecke_core_legacy.py` and `substrate/hecke_core.py`;
+2. (this pass) it never walked `computations/_deprecated/`.
+   `hecke_startup_cache.py` **imports and serializes** `G_INV`
+   (L105, L157) — removing the symbol would have shipped a hard
+   `ImportError`.
+
+**Method lesson worth keeping:** the survey grepped for *arithmetic* use
+(`@`, `.dot`, indexing) and for live trees. Neither filter catches a
+re-export or a `.tolist()` serialization, and `_deprecated/` is still
+importable Python. When removing an exported symbol, grep for the NAME
+across every tree and classify each hit, rather than grepping for the
+uses you expect. Also: `mergeable_state: clean` is no evidence here —
+there is no textual conflict when a symbol merely stops existing.
+
+Fixed by DROPPING the `gram_matrix_inv` cache key rather than repointing
+it at `G_PINV` (same reasoning as `G_INV` itself: don't hand readers a
+different object under a trusted name; a JSON key is worse than a Python
+symbol because it carries no type to trip over). New keys:
+`gram_matrix_quotient_inv`, `gram_radical`. Zero consumers of the old key
+anywhere outside the producer, verified.
