@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-14T23:42:36.072954+00:00",
-  "commitSha": "96c4de9c94ef659a11c87efc0293c598271531ad",
+  "computedAt": "2026-08-15T10:43:06.902423+00:00",
+  "commitSha": "fb39f0437cfe7a1b502335ae08dd6c144e0e7a0e",
   "assertions": [
     {
       "name": "active_set_small",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 18,
   "computation": "low-isotopes-binding-sweep",
   "scriptFile": "low_isotopes_binding_sweep.py",
-  "scriptHash": "b9587242cbe2",
-  "scriptCommitSha": "09f3725ed2ef08b6f7c7a193235fde0181ce750e",
+  "scriptHash": "afad4b6466cc",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,11 +42,11 @@
         "A": 2,
         "n_strands": 6,
         "B_AME_MeV": 2.22457,
-        "B_pred_canonical_MeV": 0.46562,
-        "Delta_lambda": 4.7776,
-        "log_q0_Delta": 14.989,
+        "B_pred_canonical_MeV": 0.4354,
+        "Delta_lambda": 5.1092,
+        "log_q0_Delta": 15.632,
         "law_10A_minus_5": 15,
-        "dev_from_law": -0.011,
+        "dev_from_law": 0.632,
         "p_3A": 11,
         "active_set": {
           "n_partitions_total": 11,
@@ -55,17 +55,17 @@
             {
               "partition": "[6]",
               "dim": 1,
-              "frac": 0.4689
+              "frac": 0.5843
             },
             {
               "partition": "[5, 1]",
               "dim": 5,
-              "frac": 0.3469
+              "frac": 0.2971
             },
             {
               "partition": "[4, 2]",
               "dim": 9,
-              "frac": 0.1615
+              "frac": 0.118
             }
           ]
         }
@@ -77,35 +77,35 @@
         "A": 3,
         "n_strands": 9,
         "B_AME_MeV": 8.4818,
-        "B_pred_canonical_MeV": 0.62896,
-        "Delta_lambda": 13.4854,
-        "log_q0_Delta": 24.934,
+        "B_pred_canonical_MeV": 0.69513,
+        "Delta_lambda": 12.2017,
+        "log_q0_Delta": 23.975,
         "law_10A_minus_5": 25,
-        "dev_from_law": -0.066,
+        "dev_from_law": -1.025,
         "p_3A": 30,
         "active_set": {
           "n_partitions_total": 30,
           "n_in_active_90pct": 4,
           "active_partitions": [
             {
+              "partition": "[9]",
+              "dim": 1,
+              "frac": 0.3395
+            },
+            {
               "partition": "[8, 1]",
               "dim": 8,
-              "frac": 0.2782
+              "frac": 0.2837
             },
             {
               "partition": "[7, 2]",
               "dim": 27,
-              "frac": 0.2467
-            },
-            {
-              "partition": "[9]",
-              "dim": 1,
-              "frac": 0.2246
+              "frac": 0.2094
             },
             {
               "partition": "[6, 3]",
               "dim": 48,
-              "frac": 0.1605
+              "frac": 0.1233
             }
           ]
         }
@@ -117,11 +117,11 @@
         "A": 3,
         "n_strands": 9,
         "B_AME_MeV": 7.71804,
-        "B_pred_canonical_MeV": 0.65808,
-        "Delta_lambda": 11.7281,
-        "log_q0_Delta": 23.596,
+        "B_pred_canonical_MeV": 0.69855,
+        "Delta_lambda": 11.0486,
+        "log_q0_Delta": 23.024,
         "law_10A_minus_5": 25,
-        "dev_from_law": -1.404,
+        "dev_from_law": -1.976,
         "p_3A": 30,
         "active_set": null
       },
@@ -131,13 +131,58 @@
         "N": 2,
         "A": 4,
         "n_strands": 12,
-        "B_AME_MeV": 28.29567,
-        "B_pred_canonical_MeV": 0.71346,
-        "Delta_lambda": 39.6597,
-        "log_q0_Delta": 35.272,
+        "B_AME_MeV": 28.29566,
+        "B_pred_canonical_MeV": 0.87606,
+        "Delta_lambda": 32.2986,
+        "log_q0_Delta": 33.305,
         "law_10A_minus_5": 35,
-        "dev_from_law": 0.272,
+        "dev_from_law": -1.695,
         "p_3A": 77,
+        "active_set": null
+      },
+      {
+        "atom": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "n_strands": 18,
+        "B_AME_MeV": 31.99453,
+        "B_pred_canonical_MeV": 1.09873,
+        "Delta_lambda": 29.1194,
+        "log_q0_Delta": 32.312,
+        "law_10A_minus_5": 55,
+        "dev_from_law": -22.688,
+        "p_3A": 385,
+        "active_set": null
+      },
+      {
+        "atom": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "n_strands": 21,
+        "B_AME_MeV": 39.24453,
+        "B_pred_canonical_MeV": 1.10603,
+        "Delta_lambda": 35.4823,
+        "log_q0_Delta": 34.206,
+        "law_10A_minus_5": 65,
+        "dev_from_law": -30.794,
+        "p_3A": 792,
+        "active_set": null
+      },
+      {
+        "atom": "7Be",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "n_strands": 21,
+        "B_AME_MeV": 37.60035,
+        "B_pred_canonical_MeV": 1.27453,
+        "Delta_lambda": 29.5014,
+        "log_q0_Delta": 32.436,
+        "law_10A_minus_5": 65,
+        "dev_from_law": -32.564,
+        "p_3A": 792,
         "active_set": null
       }
     ],

@@ -57,7 +57,15 @@ def active_set(Z: int, N: int):
         return None
     w = json.loads((HERE / f).read_text())
     bp = w.get("data", {}).get("by_partition") or w.get("by_partition")
-    valid = [(str(e["partition"]), abs(float(e["contribution"])), e.get("dim"))
+    # `dim` is COMPUTED, not read. The chi-*-matrix-m witnesses have never
+    # carried a `dim` field — `e.get("dim")` silently yielded None on every
+    # entry, and the committed dims (1, 5, 9 for n=6) were left over from an
+    # older chi source. Regenerating the chi family under convention D
+    # rewrote this witness and turned the nulls visible. Hook-length formula
+    # from `binding_row_length_stratification`, not a sixth private copy.
+    from binding_row_length_stratification import hook_length_dim
+    valid = [(str(e["partition"]), abs(float(e["contribution"])),
+              hook_length_dim(list(e["partition"])))
              for e in bp if e.get("chi_lambda") != "skipped-max-dim"]
     tot = sum(c for _, c, _ in valid)
     valid.sort(key=lambda x: -x[1])
