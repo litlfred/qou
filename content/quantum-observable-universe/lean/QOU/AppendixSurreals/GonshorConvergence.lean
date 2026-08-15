@@ -340,6 +340,92 @@ theorem run_plus_approximates {α : ℝ} {st : GonshorState} (k : ℕ) (hb : Bra
   push_cast at hlo ⊢
   linarith
 
+/-! ### The denominator invariant — what turns a run into an *exponent*
+
+`run_plus_approximates` says `α` is within `gap / 2ᵏ` of `st.hi`.  To read that as an
+approximation **exponent** one needs `st.hi` as `m / q` with `q` known, and `GonshorState`
+stores bare `ℚ` with no denominator information at all.  This supplies it: every bound
+after `n` steps is a dyadic with denominator dividing `2ⁿ`.
+
+Both regimes preserve it, for different reasons — the unbounded `±1` moves keep the
+denominator exactly, and the bisecting moves at worst double it. -/
+
+/-- `x` is a dyadic rational with denominator dividing `2ⁿ`.
+
+⚠ Stated **multiplicatively** (`2ⁿ · x` is an integer) rather than as `x = m / 2ⁿ`.  The
+division form is the natural reading but it defeats `ring`: closing the step cases needs
+`2ⁿ / 2ⁿ = 1`, which `ring` cannot do without knowing `2ⁿ ≠ 0`, so every case would need
+`field_simp` and a side condition.  Multiplied through, all four cases are `ring`
+identities. -/
+def IsDyadicAt (n : ℕ) (x : ℚ) : Prop := ∃ m : ℤ, (2 : ℚ) ^ n * x = (m : ℚ)
+
+/-- A dyadic at level `n` is a dyadic at level `n + 1`. -/
+theorem IsDyadicAt.succ {n : ℕ} {x : ℚ} (h : IsDyadicAt n x) : IsDyadicAt (n + 1) x := by
+  obtain ⟨m, hm⟩ := h
+  exact ⟨2 * m, by push_cast; linear_combination 2 * hm⟩
+
+/-- All three bounds are dyadic at level `n`. -/
+def DyadicState (n : ℕ) (st : GonshorState) : Prop :=
+  IsDyadicAt n st.value ∧ IsDyadicAt n st.lo ∧ IsDyadicAt n st.hi
+
+/-- `init` is dyadic at level `0` — every bound is `0`. -/
+theorem dyadicState_init : DyadicState 0 GonshorState.init :=
+  ⟨⟨0, by simp [GonshorState.init]⟩, ⟨0, by simp [GonshorState.init]⟩,
+   ⟨0, by simp [GonshorState.init]⟩⟩
+
+/-- **One step at most doubles the denominator.**
+
+The four cases split by regime rather than by sign: `±1` keeps the denominator (add
+`±2ⁿ` to the numerator), and the two bisecting cases average two level-`n` dyadics, which
+lands at level `n + 1`. -/
+theorem DyadicState.step {n : ℕ} {st : GonshorState} (h : DyadicState n st) (s : Sign) :
+    DyadicState (n + 1) (st.step s) := by
+  obtain ⟨⟨a, ha⟩, ⟨b, hb⟩, ⟨c, hc⟩⟩ := h
+  cases s with
+  | plus =>
+    by_cases hhi : st.hasHi = true
+    · -- bisect up: value ↦ (value + hi)/2, lo ↦ value, hi ↦ hi
+      refine ⟨⟨a + c, ?_⟩, ⟨2 * a, ?_⟩, ⟨2 * c, ?_⟩⟩ <;>
+        simp only [GonshorState.step, hhi, if_true] <;> push_cast
+      · linear_combination ha + hc
+      · linear_combination 2 * ha
+      · linear_combination 2 * hc
+    · -- step up by 1: value ↦ value + 1, lo ↦ value, hi unused (0)
+      simp only [Bool.not_eq_true] at hhi
+      refine ⟨⟨2 * a + 2 ^ (n + 1), ?_⟩, ⟨2 * a, ?_⟩, ⟨0, ?_⟩⟩ <;>
+        simp only [GonshorState.step, hhi, if_false] <;> push_cast
+      · linear_combination 2 * ha
+      · linear_combination 2 * ha
+      · ring
+  | minus =>
+    by_cases hlo : st.hasLo = true
+    · -- bisect down: value ↦ (lo + value)/2, lo ↦ lo, hi ↦ value
+      refine ⟨⟨b + a, ?_⟩, ⟨2 * b, ?_⟩, ⟨2 * a, ?_⟩⟩ <;>
+        simp only [GonshorState.step, hlo, if_true] <;> push_cast
+      · linear_combination hb + ha
+      · linear_combination 2 * hb
+      · linear_combination 2 * ha
+    · -- step down by 1: value ↦ value − 1, lo unused (0), hi ↦ value
+      simp only [Bool.not_eq_true] at hlo
+      refine ⟨⟨2 * a - 2 ^ (n + 1), ?_⟩, ⟨0, ?_⟩, ⟨2 * a, ?_⟩⟩ <;>
+        simp only [GonshorState.step, hlo, if_false] <;> push_cast
+      · linear_combination 2 * ha
+      · ring
+      · linear_combination 2 * ha
+
+open scoped Classical in
+/-- **Every bound of `α`'s expansion after `n` steps is a dyadic with denominator dividing
+`2ⁿ`.**
+
+This is the piece that was missing: it names the `q` in `|α − m/q|`, so a run of length `k`
+at step `n` reads as an approximation of exponent `(n + k)/n` rather than merely as a small
+error. -/
+theorem expandState_dyadic (α : ℝ) : ∀ n, DyadicState n (expandState α n) := by
+  intro n
+  induction n with
+  | zero => simpa [expandState] using dyadicState_init
+  | succ n ih => rw [expandState]; exact ih.step _
+
 /-! ### ⚠ Non-vacuity of the expansion, for the same reason as before
 
 `Brackets` is two implications *guarded* by `hasLo` / `hasHi`, and `dist_le_gap_of_expansion`

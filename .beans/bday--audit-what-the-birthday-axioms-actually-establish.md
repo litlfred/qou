@@ -587,3 +587,58 @@ canonicalises both sides can destroy the very match a later step depends on.
 ### Standing
 
 13 declarations in `GonshorConvergence.lean`, sorry-free, all standard axioms.
+
+---
+**2026-08-15 — the denominator invariant, which the entry above named as the blocker.**
+
+`expandState_dyadic (α : ℝ) (n : ℕ) : DyadicState n (expandState α n)` — **every bound of
+`α`'s expansion after `n` steps is a dyadic with denominator dividing `2ⁿ`.** Sorry-free,
+standard axioms. 23 declarations in `GonshorConvergence.lean` now.
+
+That was the piece the previous entry identified as missing and (correctly) said was a new
+induction rather than bookkeeping. Both regimes preserve it for different reasons: the
+unbounded `±1` moves keep the denominator exactly, and the two bisecting moves average two
+level-`n` dyadics, landing at level `n + 1`.
+
+Combined with `run_plus_approximates`, the corpus now has the Liouville-shaped statement
+with a **named denominator**:
+
+    |α − m/2ⁿ| ≤ gapₙ / 2ᵏ        after a run of k signs at step n
+
+— accuracy `2⁻ᵏ` better against a denominator fixed at `2ⁿ`.
+
+### ⚠ Trap: state the invariant multiplicatively, not as a quotient
+
+`IsDyadicAt n x := ∃ m : ℤ, x = m / 2ⁿ` is the natural reading and it **defeats `ring`**.
+Closing the step cases then needs `2ⁿ / 2ⁿ = 1`, which `ring` cannot do without knowing
+`2ⁿ ≠ 0`, so all twelve subgoals would want `field_simp` plus a side condition. Restated as
+
+    IsDyadicAt n x := ∃ m : ℤ, (2 : ℚ) ^ n * x = m
+
+every case is a plain `linear_combination` over `ring`. Measured: the quotient form failed
+on the two unbounded cases with "the `ring` tactic failed to close the goal"; the
+multiplicative form went through on the first attempt.
+
+This is the third tactic-shape trap in this bean and they share a moral — **`ring`,
+`linarith` and `simp` all fail on division in their own way** (`ring` cannot cancel,
+`linarith` cannot divide at all, `simp` normalises the quotient into a shape a later `rw`
+no longer matches). Keep denominators out of statements that tactics have to close.
+
+### What remains for an actual `LiouvilleWith` instance
+
+The pieces are now genuinely all present, and what is left is a **quantifier**, not
+infrastructure. `LiouvilleWith p x` needs `∃ᶠ n in atTop` — *infinitely many* `n` with a
+run long enough to beat exponent `p`. That is a property of the particular `α`'s expansion,
+not something derivable in general: for an algebraic irrational Roth says the runs are
+bounded, and for a Liouville number they are not. So the honest next statement is
+conditional —
+
+> if `α`'s expansion has runs of length `≥ (p−1)·n` infinitely often, then `LiouvilleWith p α`
+
+— and proving *that* hypothesis for any specific `α` is the hard number theory the
+conjecture was always about. **The formalisation gap is now closed; the mathematics gap is
+where it always was.** That is worth stating plainly, because the bean's original framing
+suggested the surreal side was the obstacle, and it is not.
+
+The birthday lift is unchanged and still blocked (`SignSequence.lean`'s missing
+`birthday (x/2)` bound).
