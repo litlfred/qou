@@ -3,8 +3,9 @@
 title: canonical-mass-table-extended.witness.json is CLOBBERED by low_isotope_mass_table.py -- and B_2H_AME_MeV is pinned POSITIONALLY over the shifting row set
 status: todo
 type: bug
+priority: normal
 created_at: 2026-08-15T22:43:14Z
-updated_at: 2026-08-15T22:43:14Z
+updated_at: 2026-08-15T23:14:33Z
 ---
 
 Found 2026-08-15 on the post-merge reorientation pass (PR #4961 landed; this was
@@ -111,3 +112,50 @@ missing 4He and every A >= 5 row it claims to cover.
   rows all have populated err fields (5 rows x 5 fields + 1 floor = 26) whereas
   the seven-row version had nulls in the A >= 5 rows. Draining the f64 without
   fixing the row set would paper over this.
+
+
+## Consumer-side guard LANDED (2026-08-15), plus a second dead pin it found
+
+ — nothing validated ANY of the
+69 witness pins in registry.ts before this; `witnessPath` appeared nowhere in the
+repo outside registry.ts itself. Checks: E-missing-file, E-unresolvable,
+E-null-value, E-nuclide-drift, W-positional. Self-test replays the incident (3He
+at index 2 -> drift detected; current D at index 2 -> clean).
+
+Live result: 68 pins parsed, 1 positional (B_2H_AME_MeV, nuclide identity
+currently CORRECT), 1 error.
+
+### The error is a SECOND dead pin, unrelated to the clobber
+
+    rho_q -> derived_50_digit.rho_q  in  q-pinning-50-digit.witness.json
+
+That key does not exist. `derived_50_digit` holds H_A, hbar_q, hbar_q_sq, q,
+q_inv, s_skein, two_q, z_markov — no rho_q, and the string 'rho' appears nowhere
+in the file. The entry is a normal live entry (sits beside z_markov), not a
+needsReview stub.
+
+The ONLY witness in the tree that defines "rho_q" is
+`computations/_deprecated/brane-tower-finite-laurent.witness.json`.
+
+**Not repointed, deliberately.** Aiming a live pin at a deprecated witness would
+be worse than leaving it dead, and 'Hecke trace density rho_q' does not by itself
+say WHICH rho is meant — the notation register warns that rho is overloaded
+(rho_K, rho_F, per-block density, and varrho the vortex). Picking one would be a
+guess wearing a pin. Owner call: delete the entry, or point it at a live producer
+once one emits the intended quantity.
+
+### Severity, stated honestly for both
+
+Neither B_2H_AME_MeV nor rho_q is consumed by a `:val[...]` directive anywhere in
+content/ — grep confirms zero. So neither has ever rendered: the eight-week 3He
+substitution and this dead pin were both latent. The validator's value is that it
+now catches them, and would catch the day someone starts using one.
+
+### Still open on this bean
+
+  1. regenerate canonical-mass-table-extended at full DEFAULT_ATOMS (needs
+     pyhecke_native; absent in the sandbox that found this)
+  2. repoint B_2H_AME_MeV from data.rows.2 to a nuclide key (needs 1 first, since
+     the key does not exist in the committed witness yet)
+  3. resolve or delete the rho_q pin (owner call)
+  4. wire the validator into scripts/precision-gates.sh or an equivalent preflight
