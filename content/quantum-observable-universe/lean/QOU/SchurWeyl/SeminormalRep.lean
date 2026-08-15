@@ -634,6 +634,28 @@ theorem genMat_braid_rhs_expand (k : ℕ) (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cel
     genMat_mul_apply q k hk hkn _ hka T',
     genMat_mul_apply q k hk hkn _ hBk T', hshift]
 
+/-- **The braid's diagonal row, as pure algebra — and the relation is exactly what closes
+it.**
+
+Resolving the two expansions above at row `T'  = T` leaves, with `a₁ = a(p)`, `a₂ = a(r)`,
+`a₃ = a(p+r)` and `c = q - q⁻¹`:
+
+* from the left, `a₁²a₂ + a₃·off(-p)·off(p)`;
+* from the right, `a₁a₂² + a₃·off(-r)·off(r)`;
+
+and `offDiag_mul_neg` turns each `off·off` into `1 + a(d)·a(-d) = 1 + a(d)(c - a(d))`
+(`seminormalParam_add_neg`).  The difference of the two sides factors as
+
+  `(a₁ - a₂)·[a₁a₂ - a₃(a₁ + a₂ - c)]`
+
+whose second factor is `seminormalParam_rel` — vanishing identically.  Note the first factor
+is *not* needed: the identity holds whether or not `a₁ = a₂`, so no genericity assumption
+about the orbit enters here. -/
+theorem braid_diag_identity (c a₁ a₂ a₃ : ℝ) (hrel : a₃ * (a₁ + a₂ - c) = a₁ * a₂) :
+    a₁ * a₁ * a₂ + a₃ * (1 + a₁ * (c - a₁))
+      = a₁ * a₂ * a₂ + a₃ * (1 + a₂ * (c - a₂)) := by
+  linear_combination (a₂ - a₁) * hrel
+
 end Braid
 
 end SeminormalRep

@@ -401,6 +401,47 @@ theorem axialDist_swapTableau_succ (T : StandardYoungTableau μ) {k : ℕ} (hk :
   simp only [axialDistance, cellContent]
   ring
 
+/-- **After both generators have acted, `σ_k` reads the *other* original distance.**
+`s_{k+1}s_k·T` holds `k` in the cell that held `k+1` and `k+1` in the cell that held `k+2`,
+so `σ_k`'s distance there is `r`, not `p` and not the sum.
+
+With `axialDist_succ_swapTableau` this completes the parameter bookkeeping for a
+`⟨s_k, s_{k+1}⟩`-orbit: across the six elements only `p`, `r`, `p+r` and their negatives
+ever occur, which is why the braid closes on the single relation
+`a(p+r)·(a(p) + a(r) - c) = a(p)·a(r)`. -/
+theorem axialDist_swapTableau_word_left (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hkn2 : k + 2 ≤ μ.cells.card)
+    (hka : SwapAdmissible T k)
+    (hAl : SwapAdmissible (swapTableau T k hk hkn hka) (k + 1)) :
+    axialDist (swapTableau (swapTableau T k hk hkn hka) (k + 1) (by omega) (by omega) hAl) k
+      = axialDist T (k + 1) := by
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hk2 : k + 2 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn2⟩
+  unfold axialDist
+  rw [cellOf_swapTableau_of_ne _ (by omega) (by omega) hAl hkI (by omega) (by omega),
+    cellOf_swapTableau_self _ (by omega) (by omega) hAl,
+    cellOf_swapTableau_self T hk hkn hka,
+    show k + 1 + 1 = k + 2 from rfl,
+    cellOf_swapTableau_of_ne T hk hkn hka hk2 (by omega) (by omega)]
+
+/-- The mirror: `s_k s_{k+1}·T` makes `σ_{k+1}` read `p`. -/
+theorem axialDist_swapTableau_word_right (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn2 : k + 2 ≤ μ.cells.card)
+    (hla : SwapAdmissible T (k + 1))
+    (hBk : SwapAdmissible (swapTableau T (k + 1) (by omega) (by omega) hla) k) :
+    axialDist
+        (swapTableau (swapTableau T (k + 1) (by omega) (by omega) hla) k hk (by omega) hBk)
+        (k + 1)
+      = axialDist T k := by
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hk2 : k + 2 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn2⟩
+  unfold axialDist
+  rw [cellOf_swapTableau_succ _ hk (by omega) hBk,
+    cellOf_swapTableau_of_ne T (by omega) (by omega) hla hkI (by omega) (by omega),
+    show k + 1 + 1 = k + 2 from rfl,
+    cellOf_swapTableau_of_ne _ hk (by omega) hBk hk2 (by omega) (by omega),
+    cellOf_swapTableau_succ T (by omega) (by omega) hla]
+
 /-- Tableaux differing at a single cell are distinct. -/
 theorem ne_of_entry_ne {U V : StandardYoungTableau μ} {i j : ℕ}
     (h : U.entry i j ≠ V.entry i j) : U ≠ V := by
