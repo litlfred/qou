@@ -203,3 +203,16 @@ the round-trip, not for the argument.
 
 The reverse inequality `Σ_μ (dim S^μ)² ≤ n!` is a separate question — expect it to need the
 isotypic independence, i.e. that the multiplicity spaces the bricks 1–3 count do not overlap.
+
+### Brick 4b landed (PR #5167); 4c is blocked on a named Mathlib gap
+
+`SpechtRegularMultiplicity.finrank_homG_regular_specht` — `dim Hom_G(k[S_n], S^μ) = dim S^μ`,
+sorry-free. That is the per-partition multiplicity statement in the epic's vocabulary.
+
+**4c (injectivity of the action map ⇒ `n! ≤ Σ_μ (dim S^μ)²`) is blocked**, and the blocker is
+plumbing, not mathematics: no transfer of `IsSimpleModule` across the
+`Representation.ofModule` / `asModule` / `RestrictScalars` round-trip exists at this pin
+(verified with `exact?`, not assumed). Tracked as **`qou-ltzf`** with the full sketch. Nothing
+already merged depends on it.
+
+Five bricks merged or open, none carrying a sorry: #5139, #5151, #5156, #5162, #5167.
