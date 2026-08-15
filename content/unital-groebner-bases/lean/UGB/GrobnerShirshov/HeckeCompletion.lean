@@ -1901,6 +1901,296 @@ theorem oc_spoly_coeff (r₁ r₂ : ReductionRule (HeckeGen n) ℝ)
   split_ifs <;>
     simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
 
+/-! ### The chain
+
+`F₀ … F₇` are the stages, `F₀` the S-polynomial. Named rather than inlined: each
+appears three times — a step's source, its target, and its coefficient lemma —
+and five-term elements written out three times over are unreadable.
+
+Each step is its own theorem. Heartbeats are budgeted **per declaration**, and
+eight steps against five-term elements do not fit one 200 000 budget; the same
+splitting the H₄ generator tables needed. -/
+
+/-- Stage `0` of the chain — the S-polynomial. -/
+noncomputable def F0 (_hp : HeckeParams) (i' i : Fin n) (c₁ c₂ : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i'⟩, ⟨i⟩, ⟨i'⟩], c₁ * c₂),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩, ⟨i'⟩, ⟨i⟩], -(c₁ * c₂))]
+
+/-- Stage `1` of the chain. -/
+noncomputable def F1 (hp : HeckeParams) (i' i : Fin n) (c₁ c₂ : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], c₁ * c₂),
+     ([(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩, ⟨i'⟩], c₁ * c₂ * (hp.q - hp.q⁻¹)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩, ⟨i'⟩, ⟨i⟩], -(c₁ * c₂))]
+
+/-- Stage `2` of the chain. -/
+noncomputable def F2 (hp : HeckeParams) (i' i : Fin n) (c₁ c₂ : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], c₁ * c₂),
+     ([(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩, ⟨i'⟩], c₁ * c₂ * (hp.q - hp.q⁻¹)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i⟩], -(c₁ * c₂)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩, ⟨i⟩], -(c₁ * c₂ * (hp.q - hp.q⁻¹)))]
+
+/-- Stage `3` of the chain. -/
+noncomputable def F3 (hp : HeckeParams) (i' i : Fin n) (c₁ c₂ : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], c₁ * c₂),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i⟩], -(c₁ * c₂)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩, ⟨i'⟩], c₁ * c₂ * (hp.q - hp.q⁻¹)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩, ⟨i⟩], -(c₁ * c₂ * (hp.q - hp.q⁻¹)))]
+
+/-- Stage `4` of the chain. -/
+noncomputable def F4 (hp : HeckeParams) (i' i : Fin n) (c₁ c₂ : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], c₁ * c₂),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i⟩], -(c₁ * c₂)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩, ⟨i'⟩], c₁ * c₂ * (hp.q - hp.q⁻¹)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩, ⟨i'⟩], -(c₁ * c₂ * (hp.q - hp.q⁻¹)))]
+
+/-- Stage `5` of the chain. -/
+noncomputable def F5 (hp : HeckeParams) (i' i : Fin n) (c₁ c₂ : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], c₁ * c₂),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i⟩], -(c₁ * c₂)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩], c₁ * c₂ * (hp.q - hp.q⁻¹)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], c₁ * c₂ * (hp.q - hp.q⁻¹) * (hp.q - hp.q⁻¹)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩, ⟨i'⟩], -(c₁ * c₂ * (hp.q - hp.q⁻¹)))]
+
+/-- Stage `6` of the chain. -/
+noncomputable def F6 (hp : HeckeParams) (i' i : Fin n) (c₁ c₂ : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], c₁ * c₂),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i⟩], -(c₁ * c₂)),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩], c₁ * c₂ * (hp.q - hp.q⁻¹)),
+     ([(⟨i⟩ : HeckeGen n), ⟨i'⟩], -(c₁ * c₂ * (hp.q - hp.q⁻¹)))]
+
+/-- Stage `7` of the chain. -/
+noncomputable def F7 (hp : HeckeParams) (i' i : Fin n) (c₁ c₂ : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i⟩], -(c₁ * c₂)),
+     ([(⟨i'⟩ : HeckeGen n)], c₁ * c₂),
+     ([(⟨i'⟩ : HeckeGen n), ⟨i⟩], c₁ * c₂ * (hp.q - hp.q⁻¹))]
+
+theorem chainStep1 (hn : 0 < n) (hne : ((⟨i⟩ : HeckeGen n)) ≠ ⟨i'⟩) (hK : c₁ * c₂ ≠ 0) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F0 hp i' i c₁ c₂) (F1 hp i' i c₁ c₂) := by
+  have hv : (F0 hp i' i c₁ c₂).coeff ([(⟨i⟩ : HeckeGen n)] ++ (heckeRelation i' hp).lm (heckeOrder n) ++ [(⟨i⟩ : HeckeGen n), ⟨i'⟩]) = c₁ * c₂ := by
+    rw [heckeRelation_lm, show ([(⟨i⟩ : HeckeGen n)] ++ [(⟨i'⟩ : HeckeGen n), ⟨i'⟩] ++ [(⟨i⟩ : HeckeGen n), ⟨i'⟩] : Monomial (HeckeGen n)) = [(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i'⟩, ⟨i⟩, ⟨i'⟩] by simp]
+    simp [F0, AlgElement.ofTerms_coeff, hne, hne.symm]
+  refine ⟨heckeRelation i' hp, heckeRelation_mem hn hp i', [(⟨i⟩ : HeckeGen n)], [(⟨i⟩ : HeckeGen n), ⟨i'⟩], c₁ * c₂, ?_, ?_, ?_⟩
+  · rw [hv]; exact hK
+  · rw [hv, heckeRelation_lc]; ring
+  · intro m
+    show _ = _ - (c₁ * c₂) * (AlgElement.contextMul [(⟨i⟩ : HeckeGen n)] (heckeRelation i' hp).relation [(⟨i⟩ : HeckeGen n), ⟨i'⟩]).coeff m
+    simp only [F0, F1, heckeRelation,
+      AlgElement.contextMul_ofTerms_coeff,
+      List.map_cons, List.map_nil, List.nil_append,
+      List.cons_append, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+theorem chainStep2 (hn : 0 < n) (hne : ((⟨i⟩ : HeckeGen n)) ≠ ⟨i'⟩) (hK : c₁ * c₂ ≠ 0) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F1 hp i' i c₁ c₂) (F2 hp i' i c₁ c₂) := by
+  have hv : (F1 hp i' i c₁ c₂).coeff ([(⟨i'⟩ : HeckeGen n), ⟨i⟩] ++ (heckeRelation i' hp).lm (heckeOrder n) ++ [(⟨i⟩ : HeckeGen n)]) = -(c₁ * c₂) := by
+    rw [heckeRelation_lm, show ([(⟨i'⟩ : HeckeGen n), ⟨i⟩] ++ [(⟨i'⟩ : HeckeGen n), ⟨i'⟩] ++ [(⟨i⟩ : HeckeGen n)] : Monomial (HeckeGen n)) = [(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩, ⟨i'⟩, ⟨i⟩] by simp]
+    simp [F1, AlgElement.ofTerms_coeff, hne, hne.symm]
+  refine ⟨heckeRelation i' hp, heckeRelation_mem hn hp i', [(⟨i'⟩ : HeckeGen n), ⟨i⟩], [(⟨i⟩ : HeckeGen n)], -(c₁ * c₂), ?_, ?_, ?_⟩
+  · rw [hv]; exact neg_ne_zero.mpr hK
+  · rw [hv, heckeRelation_lc]; ring
+  · intro m
+    show _ = _ - (-(c₁ * c₂)) * (AlgElement.contextMul [(⟨i'⟩ : HeckeGen n), ⟨i⟩] (heckeRelation i' hp).relation [(⟨i⟩ : HeckeGen n)]).coeff m
+    simp only [F1, F2, heckeRelation,
+      AlgElement.contextMul_ofTerms_coeff,
+      List.map_cons, List.map_nil, List.nil_append,
+      List.cons_append, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+theorem chainStep3 (hn : 0 < n) (hne : ((⟨i⟩ : HeckeGen n)) ≠ ⟨i'⟩) (hK : c₁ * c₂ ≠ 0) (hh : (hp.q - hp.q⁻¹) ≠ 0)
+    (r₁ : ReductionRule (HeckeGen n) ℝ)
+    (hrel₁ : ∀ w, r₁.relation.coeff w
+      = (AlgElement.ofTerms [(wHi i' i, c₁), (wLo i' i, -c₁)]).coeff w)
+    (hlm₁ : r₁.lm (heckeOrder n) = wHi i' i) (hlc₁ : r₁.lc (heckeOrder n) = c₁)
+    (hsq : c₁ * c₁ = 1) (hr₁ : r₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F2 hp i' i c₁ c₂) (F3 hp i' i c₁ c₂) := by
+  have hv : (F2 hp i' i c₁ c₂).coeff ([] ++ (r₁).lm (heckeOrder n) ++ [(⟨i'⟩ : HeckeGen n)]) = c₁ * c₂ * (hp.q - hp.q⁻¹) := by
+    rw [hlm₁, show ([] ++ wHi i' i ++ [(⟨i'⟩ : HeckeGen n)] : Monomial (HeckeGen n)) = [(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩, ⟨i'⟩] by simp [wHi]]
+    simp [F2, AlgElement.ofTerms_coeff, hne, hne.symm]
+  have hc3 : c₁ ^ 3 = c₁ := by
+    have h3 : c₁ ^ 3 = c₁ * (c₁ * c₁) := by ring
+    rw [h3, hsq, mul_one]
+  refine ⟨r₁, hr₁, [], [(⟨i'⟩ : HeckeGen n)], c₁ * c₂ * (hp.q - hp.q⁻¹) * c₁, ?_, ?_, ?_⟩
+  · rw [hv]; exact mul_ne_zero hK hh
+  · rw [hv, hlc₁]
+    rw [mul_assoc, hsq, mul_one]
+  · intro m
+    show _ = _ - (c₁ * c₂ * (hp.q - hp.q⁻¹) * c₁) * (AlgElement.contextMul [] (r₁).relation [(⟨i'⟩ : HeckeGen n)]).coeff m
+    rw [AlgElement.contextMul_coeff_congr [] [(⟨i'⟩ : HeckeGen n)] hrel₁ m,
+      AlgElement.contextMul_ofTerms_coeff]
+    simp only [F2, F3, wHi, wLo,
+      List.map_cons, List.map_nil, List.nil_append,
+      List.cons_append, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;>
+      ring_nf <;> (try simp only [hc3]) <;> (try ring)
+
+theorem chainStep4 (hn : 0 < n) (hne : ((⟨i⟩ : HeckeGen n)) ≠ ⟨i'⟩) (hK : c₁ * c₂ ≠ 0) (hh : (hp.q - hp.q⁻¹) ≠ 0)
+    (r₁ : ReductionRule (HeckeGen n) ℝ)
+    (hrel₁ : ∀ w, r₁.relation.coeff w
+      = (AlgElement.ofTerms [(wHi i' i, c₁), (wLo i' i, -c₁)]).coeff w)
+    (hlm₁ : r₁.lm (heckeOrder n) = wHi i' i) (hlc₁ : r₁.lc (heckeOrder n) = c₁)
+    (hsq : c₁ * c₁ = 1) (hr₁ : r₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F3 hp i' i c₁ c₂) (F4 hp i' i c₁ c₂) := by
+  have hv : (F3 hp i' i c₁ c₂).coeff ([(⟨i'⟩ : HeckeGen n)] ++ (r₁).lm (heckeOrder n) ++ []) = -(c₁ * c₂ * (hp.q - hp.q⁻¹)) := by
+    rw [hlm₁, show ([(⟨i'⟩ : HeckeGen n)] ++ wHi i' i ++ [] : Monomial (HeckeGen n)) = [(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩, ⟨i⟩] by simp [wHi]]
+    simp [F3, AlgElement.ofTerms_coeff, hne, hne.symm]
+  have hc3 : c₁ ^ 3 = c₁ := by
+    have h3 : c₁ ^ 3 = c₁ * (c₁ * c₁) := by ring
+    rw [h3, hsq, mul_one]
+  refine ⟨r₁, hr₁, [(⟨i'⟩ : HeckeGen n)], [], -(c₁ * c₂ * (hp.q - hp.q⁻¹) * c₁), ?_, ?_, ?_⟩
+  · rw [hv]; exact neg_ne_zero.mpr (mul_ne_zero hK hh)
+  · rw [hv, hlc₁]
+    rw [neg_mul, mul_assoc, hsq, mul_one]
+  · intro m
+    show _ = _ - (-(c₁ * c₂ * (hp.q - hp.q⁻¹) * c₁)) * (AlgElement.contextMul [(⟨i'⟩ : HeckeGen n)] (r₁).relation []).coeff m
+    rw [AlgElement.contextMul_coeff_congr [(⟨i'⟩ : HeckeGen n)] [] hrel₁ m,
+      AlgElement.contextMul_ofTerms_coeff]
+    simp only [F3, F4, wHi, wLo,
+      List.map_cons, List.map_nil, List.nil_append, List.append_nil,
+      List.cons_append, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;>
+      ring_nf <;> (try simp only [hc3]) <;> (try ring)
+
+theorem chainStep5 (hn : 0 < n) (hne : ((⟨i⟩ : HeckeGen n)) ≠ ⟨i'⟩) (hK : c₁ * c₂ ≠ 0) (hh : (hp.q - hp.q⁻¹) ≠ 0) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F4 hp i' i c₁ c₂) (F5 hp i' i c₁ c₂) := by
+  have hv : (F4 hp i' i c₁ c₂).coeff ([(⟨i'⟩ : HeckeGen n), ⟨i⟩] ++ (heckeRelation i' hp).lm (heckeOrder n) ++ []) = c₁ * c₂ * (hp.q - hp.q⁻¹) := by
+    rw [heckeRelation_lm, show ([(⟨i'⟩ : HeckeGen n), ⟨i⟩] ++ [(⟨i'⟩ : HeckeGen n), ⟨i'⟩] ++ [] : Monomial (HeckeGen n)) = [(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩, ⟨i'⟩] by simp]
+    simp [F4, AlgElement.ofTerms_coeff, hne, hne.symm]
+  refine ⟨heckeRelation i' hp, heckeRelation_mem hn hp i', [(⟨i'⟩ : HeckeGen n), ⟨i⟩], [], c₁ * c₂ * (hp.q - hp.q⁻¹), ?_, ?_, ?_⟩
+  · rw [hv]; exact mul_ne_zero hK hh
+  · rw [hv, heckeRelation_lc]; ring
+  · intro m
+    show _ = _ - (c₁ * c₂ * (hp.q - hp.q⁻¹)) * (AlgElement.contextMul [(⟨i'⟩ : HeckeGen n), ⟨i⟩] (heckeRelation i' hp).relation []).coeff m
+    simp only [F4, F5, heckeRelation,
+      AlgElement.contextMul_ofTerms_coeff,
+      List.map_cons, List.map_nil, List.nil_append, List.append_nil,
+      List.cons_append, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+theorem chainStep6 (hn : 0 < n) (hne : ((⟨i⟩ : HeckeGen n)) ≠ ⟨i'⟩) (hK : c₁ * c₂ ≠ 0) (hh : (hp.q - hp.q⁻¹) ≠ 0) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F5 hp i' i c₁ c₂) (F6 hp i' i c₁ c₂) := by
+  have hv : (F5 hp i' i c₁ c₂).coeff ([] ++ (heckeRelation i' hp).lm (heckeOrder n) ++ [(⟨i⟩ : HeckeGen n), ⟨i'⟩]) = -(c₁ * c₂ * (hp.q - hp.q⁻¹)) := by
+    rw [heckeRelation_lm, show ([] ++ [(⟨i'⟩ : HeckeGen n), ⟨i'⟩] ++ [(⟨i⟩ : HeckeGen n), ⟨i'⟩] : Monomial (HeckeGen n)) = [(⟨i'⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩, ⟨i'⟩] by simp]
+    simp [F5, AlgElement.ofTerms_coeff, hne]
+  refine ⟨heckeRelation i' hp, heckeRelation_mem hn hp i', [], [(⟨i⟩ : HeckeGen n), ⟨i'⟩], -(c₁ * c₂ * (hp.q - hp.q⁻¹)), ?_, ?_, ?_⟩
+  · rw [hv]; exact neg_ne_zero.mpr (mul_ne_zero hK hh)
+  · rw [hv, heckeRelation_lc]; ring
+  · intro m
+    show _ = _ - (-(c₁ * c₂ * (hp.q - hp.q⁻¹))) * (AlgElement.contextMul [] (heckeRelation i' hp).relation [(⟨i⟩ : HeckeGen n), ⟨i'⟩]).coeff m
+    simp only [F5, F6, heckeRelation,
+      AlgElement.contextMul_ofTerms_coeff,
+      List.map_cons, List.map_nil, List.nil_append,
+      List.cons_append, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+theorem chainStep7 (hn : 0 < n) (hne : ((⟨i⟩ : HeckeGen n)) ≠ ⟨i'⟩) (hK : c₁ * c₂ ≠ 0) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F6 hp i' i c₁ c₂) (F7 hp i' i c₁ c₂) := by
+  have hv : (F6 hp i' i c₁ c₂).coeff ([] ++ (heckeRelation i hp).lm (heckeOrder n) ++ [(⟨i'⟩ : HeckeGen n)]) = c₁ * c₂ := by
+    rw [heckeRelation_lm, show ([] ++ [(⟨i⟩ : HeckeGen n), ⟨i⟩] ++ [(⟨i'⟩ : HeckeGen n)] : Monomial (HeckeGen n)) = [(⟨i⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩] by simp]
+    simp [F6, AlgElement.ofTerms_coeff, hne, hne.symm]
+  refine ⟨heckeRelation i hp, heckeRelation_mem hn hp i, [], [(⟨i'⟩ : HeckeGen n)], c₁ * c₂, ?_, ?_, ?_⟩
+  · rw [hv]; exact hK
+  · rw [hv, heckeRelation_lc]; ring
+  · intro m
+    show _ = _ - (c₁ * c₂) * (AlgElement.contextMul [] (heckeRelation i hp).relation [(⟨i'⟩ : HeckeGen n)]).coeff m
+    simp only [F6, F7, heckeRelation,
+      AlgElement.contextMul_ofTerms_coeff,
+      List.map_cons, List.map_nil, List.nil_append,
+      List.cons_append, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+theorem chainStep8 (hn : 0 < n) (hK : c₁ * c₂ ≠ 0) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F7 hp i' i c₁ c₂) (AlgElement.zero) := by
+  have hv : (F7 hp i' i c₁ c₂).coeff ([(⟨i'⟩ : HeckeGen n)] ++ (heckeRelation i hp).lm (heckeOrder n) ++ []) = -(c₁ * c₂) := by
+    rw [heckeRelation_lm, show ([(⟨i'⟩ : HeckeGen n)] ++ [(⟨i⟩ : HeckeGen n), ⟨i⟩] ++ [] : Monomial (HeckeGen n)) = [(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i⟩] by simp]
+    simp [F7, AlgElement.ofTerms_coeff]
+  refine ⟨heckeRelation i hp, heckeRelation_mem hn hp i, [(⟨i'⟩ : HeckeGen n)], [], -(c₁ * c₂), ?_, ?_, ?_⟩
+  · rw [hv]; exact neg_ne_zero.mpr hK
+  · rw [hv, heckeRelation_lc]; ring
+  · intro m
+    show _ = _ - (-(c₁ * c₂)) * (AlgElement.contextMul [(⟨i'⟩ : HeckeGen n)] (heckeRelation i hp).relation []).coeff m
+    simp only [F7, heckeRelation,
+      AlgElement.contextMul_ofTerms_coeff,
+      AlgElement.zero, List.map_cons, List.map_nil, List.nil_append, List.append_nil,
+      List.cons_append, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- **Eight steps, to zero.**
+
+`reducesToZero_congr` (§6) makes the last join: the chain runs on `F₀`, and
+`oc_spoly_coeff` says the S-polynomial is coefficientwise `F₀`. That congruence
+was built for the negation transfer; this is where it first pays. -/
+theorem oc_reduces_to_zero (hn : 0 < n) (r₁ r₂ : ReductionRule (HeckeGen n) ℝ)
+    (hrel₁ : ∀ w, r₁.relation.coeff w
+      = (AlgElement.ofTerms [(wHi i' i, c₁), (wLo i' i, -c₁)]).coeff w)
+    (hrel₂ : ∀ w, r₂.relation.coeff w
+      = (AlgElement.ofTerms [(wHi i' i, c₂), (wLo i' i, -c₂)]).coeff w)
+    (hlm₁ : r₁.lm (heckeOrder n) = wHi i' i) (hlm₂ : r₂.lm (heckeOrder n) = wHi i' i)
+    (hlc₁ : r₁.lc (heckeOrder n) = c₁) (hlc₂ : r₂.lc (heckeOrder n) = c₂)
+    (hc₁ : c₁ ≠ 0) (hc₂ : c₂ ≠ 0) (hsq : c₁ * c₁ = 1) (hii : i'.val + 1 = i.val)
+    (hr₁ : r₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc i' i r₁ r₂ hlm₁ hlm₂).spoly nf ∧ nf.isZero := by
+  have hh := hp.h_ne_zero
+  have hK : c₁ * c₂ ≠ 0 := mul_ne_zero hc₁ hc₂
+  have hne : ((⟨i⟩ : HeckeGen n)) ≠ ⟨i'⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  refine reducesToZero_congr ⟨AlgElement.zero,
+    ⟨(MultiStepReduction.refl _)
+      |>.step (chainStep1 hp i' i c₁ c₂ hn hne hK)
+      |>.step (chainStep2 hp i' i c₁ c₂ hn hne hK)
+      |>.step (chainStep3 hp i' i c₁ c₂ hn hne hK hh r₁ hrel₁ hlm₁ hlc₁ hsq hr₁)
+      |>.step (chainStep4 hp i' i c₁ c₂ hn hne hK hh r₁ hrel₁ hlm₁ hlc₁ hsq hr₁)
+      |>.step (chainStep5 hp i' i c₁ c₂ hn hne hK hh)
+      |>.step (chainStep6 hp i' i c₁ c₂ hn hne hK hh)
+      |>.step (chainStep7 hp i' i c₁ c₂ hn hne hK)
+      |>.step (chainStep8 hp i' i c₁ c₂ hn hK),
+      isNormalForm_of_isZero AlgElement.isZero_zero⟩, AlgElement.isZero_zero⟩ ?_
+  intro m
+  exact oc_spoly_coeff i' i c₁ c₂ r₁ r₂ hrel₁ hrel₂ hlm₁ hlm₂ hlc₁ hlc₂ m
+
 end BraidSelfOverlap
 
 end UGB.GrobnerShirshov.Hecke
