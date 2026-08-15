@@ -63,7 +63,10 @@ from pyhecke.gram import (  # noqa: E402
     NF_BASIS, NF_NAMES, TR_M,
     INV_TREFOIL_G0, INV_TREFOIL_G1,
     hm, hm_exact, nf_tr, nf_net,
-    G, G_INV,
+    # `G_INV` is gone under convention D — the form is singular, so the 6x6
+    # inverse does not exist. `G_PINV` is the inverse on the quotient
+    # H_3(q)/rad, and `RADICAL` is the null direction it quotients by.
+    G, G_PINV, RADICAL,
     _H_FRAC, _Z_FRAC, _TR_M_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC,
     _Q_FRAC, _QI_FRAC,
 )
