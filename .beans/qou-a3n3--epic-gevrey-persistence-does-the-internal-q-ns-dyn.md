@@ -87,3 +87,15 @@ Honest boundary named in the docstring: in-model c is fixed; classical
 supercriticality lives in c growing with resolution. Remaining open
 core: large data 8cE0 > 1 inside the initial window + the exact-form
 GP3 bootstrap instantiation (hboot hypothesis).
+
+## 2026-08-15 (3): GP3 wired — energy_small_global, every link a theorem
+
+quadratic_step_of_damped (damped => undamped step) +
+hboot_of_local_bootstrap (GP3 applied to the shifted sequence from
+each good step) + energy_small_global (full composition): Leray +
+damped quadratic step + smallness arithmetic (4E0/delta <= Nbad*lam,
+H*delta*c*lam <= 1/4, Nbad+1 <= H, i.e. ~8cE0 <~ 1) => Omega_n <=
+2*lam for ALL n, eps-uniform. NO named hypothesis remains in the
+chain — only the model's discrete dynamics and the smallness
+arithmetic. THE open core of the epic, final form: large data
+8cE0 > 1 inside the eps-uniform initial window of the physical layer.
