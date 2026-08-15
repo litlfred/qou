@@ -192,7 +192,38 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d",
+          "lean": "28806aa91862",
+          "lean_statement": "9614ced4e2ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.043Z"
+  "updated_at": "2026-08-15T21:15:41.696Z",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/q-exp-entire.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/q-exp-entire.md",
+    "lean": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QExpEntire.lean"
+  },
+  "source_hashes": {
+    "md": "e81dc01d3c5a",
+    "ts": "a3e0cfdbb19d",
+    "lean": "28806aa91862",
+    "lean_statement": "9614ced4e2ee"
+  }
 }

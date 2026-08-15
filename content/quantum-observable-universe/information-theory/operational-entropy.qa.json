@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/information-theory/operational-entropy.lean"
   },
   "source_hashes": {
-    "ts": "2fd5d03865fc",
     "md": "ac193f1b83e6",
-    "lean": "6f8116bebe02"
+    "ts": "2fd5d03865fc",
+    "lean": "6f8116bebe02",
+    "lean_statement": "ad99dadf3a33"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -310,26 +311,6 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T03:19:11.409Z",
-        "reviewed_sha": "5c2ccd2ba2b82b6b96d12b58baa3eeffa29972cb"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "ac193f1b83e6",
-          "ts": "2fd5d03865fc",
-          "lean": "6f8116bebe02",
-          "lean_statement": "ad99dadf3a33"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
         "reviewed_at": "2026-08-10T03:19:11.409Z",
@@ -2402,7 +2383,27 @@
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "Full-text agent read (agent:it-b2); no nonspeakable construction present."
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "ac193f1b83e6",
+          "ts": "2fd5d03865fc",
+          "lean": "6f8116bebe02",
+          "lean_statement": "ad99dadf3a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T11:37:39.959Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

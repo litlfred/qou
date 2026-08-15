@@ -335,26 +335,6 @@
         "reviewed_sha": "a8b197424c3d20c33c16a01f224a5fd69434d1d0"
       }
     ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "b56bba6d985b",
-          "ts": "baa2a5878ce7",
-          "lean": "211c01e82834",
-          "lean_statement": "0cc099bb1042"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T20:05:09.814Z",
-        "reviewed_sha": "a8b197424c3d20c33c16a01f224a5fd69434d1d0"
-      }
-    ],
     "proof-no-bare-sorries": [
       {
         "field_hash": {
@@ -1266,9 +1246,29 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "b56bba6d985b",
+          "ts": "baa2a5878ce7",
+          "lean": "211c01e82834",
+          "lean_statement": "0cc099bb1042"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.513Z",
+  "updated_at": "2026-08-15T21:15:41.696Z",
   "paths": {
     "ts": "content/quantum-observable-universe/appendix-standard-model/strand-twist-datum.ts",
     "md": "content/quantum-observable-universe/appendix-standard-model/strand-twist-datum.md",

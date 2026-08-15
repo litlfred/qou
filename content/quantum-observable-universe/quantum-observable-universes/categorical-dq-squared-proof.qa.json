@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean"
   },
   "source_hashes": {
-    "ts": "8cda94b8b618",
     "md": "1058965cf373",
-    "lean": "ef89d932b2eb"
+    "ts": "8cda94b8b618",
+    "lean": "ef89d932b2eb",
+    "lean_statement": "5cd235d3d552"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -314,26 +315,6 @@
         },
         "reviewed_at": "2026-08-09T23:00:05.214Z",
         "reviewed_sha": "9d4618a251b22a9dd8e019055dea258df7172726"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "1058965cf373",
-          "ts": "e3972ddc3159",
-          "lean": "ef89d932b2eb",
-          "lean_statement": "5cd235d3d552"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-09T22:53:21.848Z",
-        "reviewed_sha": "da6ab6d46385a7a771d8a2acbdf3c712f8718cb9"
       }
     ],
     "q-usage-regime-detected": [
@@ -1668,7 +1649,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618",
+          "lean": "ef89d932b2eb",
+          "lean_statement": "5cd235d3d552"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.937Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

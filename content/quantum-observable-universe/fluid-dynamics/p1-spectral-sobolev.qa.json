@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/lean/QOU/FluidDynamics/p1_spectral_sobolev.lean"
   },
   "source_hashes": {
-    "md": "09580ff87d21",
+    "md": "712ee29cc4ed",
     "ts": "9bd80299aa72",
     "lean": "ff72bded5703",
     "lean_statement": "d44e67ce72a4"
@@ -321,26 +321,6 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "09580ff87d21",
-          "ts": "9bd80299aa72",
-          "lean": "ff72bded5703",
-          "lean_statement": "d44e67ce72a4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
@@ -2123,7 +2103,27 @@
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no nonspeakable constructions found."
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "712ee29cc4ed",
+          "ts": "9bd80299aa72",
+          "lean": "ff72bded5703",
+          "lean_statement": "d44e67ce72a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T11:10:21.712Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }
