@@ -573,6 +573,55 @@
         ],
         "abs_tol": "1e-40",
         "note": "y_(2) for H_2(q), solved from tr_M(1)=1 and tr_M(sigma_1)=z rather than hardcoded. Its convention-C specialisation is (q^{3/2}+q+1)/(q^3+q^2+q+1), which lepton_t2n_torus_tower carried TWICE -- once numerically and once in sympy -- and the two were migrated in separate steps, so for one commit they disagreed and that file's own symbolic-vs-numeric assertion caught it. y_(1,1) = 1 - y_(2) = 1/[2]_q^2 = 0.24729788674803459840..., the same value as y_(2,1) at n=3."
+      },
+      {
+        "id": "inter_nucleon_linked_channel.z_factor",
+        "convention": "D",
+        "module": "inter_nucleon_linked_channel",
+        "symbol": "z_factor",
+        "kind": "callable_q",
+        "identity": "z",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "Gateable only since the producer's side-effecting tail was moved under `if __name__ == \"__main__\"`. Before that, importing this module ran the whole computation and rewrote its witness, so a validator could not touch it without making validation side-effecting."
+      },
+      {
+        "id": "knot_operator_census_group_actions.trM_sigma1_sq",
+        "convention": "D",
+        "module": "knot_operator_census_group_actions",
+        "symbol": "trM_sigma1_sq",
+        "kind": "callable_q",
+        "identity": "h*z+1",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "Now delegates to closed_form_tau_M.trM_sigma1_sq, so this entry checks the DELEGATION rather than a second implementation -- it fails if somebody re-adds a local copy, which is exactly how this identity came to exist in five specialised-to-C versions."
+      },
+      {
+        "id": "lepton_t2n_torus_tower.wenzl_weights[0]",
+        "convention": "D",
+        "module": "lepton_t2n_torus_tower",
+        "symbol": "wenzl_weights",
+        "kind": "callable_q_index",
+        "index": 0,
+        "identity": "(q*z+1)/(q^2+1)",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "y_(2) for H_2. This file carried the convention-C specialisation (q^{3/2}+q+1)/(q^3+q^2+q+1) twice -- numerically and in sympy -- migrated in separate steps, so for one commit they disagreed and the file's own symbolic-vs-numeric assertion caught it. Both now delegate to closed_form_tau_M.wenzl_weights_h2."
       }
     ],
     "weights_n3": [

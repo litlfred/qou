@@ -550,3 +550,72 @@ R11 needs to gate now live in a module that can be.
 - `__main__` guards for the three producers are still worth doing on their own
   terms (a producer that runs at import is a hazard beyond gating), but no
   longer block R11.
+
+---
+
+## Round 9: producers that ran at import, and a q0 that is nobody's pin
+
+### The side-effecting tail, guarded
+
+Three producers ran their whole computation at module level, so `import
+inter_nucleon_linked_channel` executed the producer and **rewrote its
+witness**. Any tool that imports the module — a validator, a doc generator, a
+test collector — regenerated a witness as a side effect. That is a hazard
+beyond gating, and it is also why R11 could not reach them.
+
+Fixed by moving **only the side-effecting tail** (from the `WitnessBuilder`
+line to EOF) into `main()`, leaving constants and pure functions at module
+level so they stay importable. Not a whole-file `main()` wrap — that would
+have turned ~700 lines of module-level statements into locals and risked
+`NameError` in any function reading a module global.
+
+Verified both directions:
+
+| producer | import side-effect free | witness after re-run |
+|---|---|---|
+| `inter_nucleon_linked_channel` | yes | identical modulo provenance |
+| `knot_operator_census_group_actions` | yes | identical modulo provenance |
+| `lepton_t2n_torus_tower` | yes | identical modulo provenance |
+
+R11 now carries **8 entries**, all CONFIRMED — the three above plus the
+canonical definitions and the two pyhecke vector entries.
+`knot_operator_census_group_actions.trM_sigma1_sq` checks the *delegation*
+rather than a second implementation: it fails if somebody re-adds a local
+copy, which is exactly how that identity came to exist in five
+specialised-to-C versions.
+
+### A q0 that matches no documented pin — NOT changed, needs a decision
+
+`inter_nucleon_linked_channel.py:57` pins
+
+    Q0_STR = "1.10997859561220225731080831999100762523924148"
+    # comment: "Substrate q0 (proton-anchored). FALSIFICATION reference only"
+
+Measured against every candidate in the corpus:
+
+| candidate | \|d\| | rel |
+|---|---|---|
+| proton (registry `Q_50_DIGIT_STR`) | 1.286e-8 | 1.16e-8 |
+| muon-canonical (`Q_MUON`, many files) | 5.487e-11 | 4.94e-11 |
+| muon variant (earlier note) | 5.802e-11 | 5.23e-11 |
+| `a4_option_e` / `he4_binding_k` literals | 5.487e-11 | 4.94e-11 |
+
+So it is **~230x closer to the muon family than to the proton pin, while its
+comment says proton-anchored** — and it equals none of them. Introduced in
+`e5dcd8f54`, an unrelated Lean commit, so copied rather than derived; it is
+not a `Vol(4_1)`-ratio either.
+
+**Deliberately not changed.** The two repairs differ by 230x in effect —
+retarget to proton (moves every number ~1.16e-8 relative, matching the comment
+and the AGENTS.md 2026-08-07 "default to the experimental (proton) pin"
+directive) or to the exact muon-canonical (~4.94e-11, matching the magnitude).
+This is a falsification-reference module, so the pin choice can change whether
+a falsification passes. That is an authorial call, not a refactor.
+
+## Next
+
+- **Owner decision needed** on the q0 above: proton (per the comment and the
+  directive) or muon-canonical (per the magnitude)? Either way the literal
+  should become an import of a canonical constant rather than a hand-typed
+  near-miss.
+- The 4 pyhecke sites remain `qou-w8zz`'s.
