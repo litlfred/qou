@@ -9,3 +9,5 @@ updated_at: 2026-08-15T11:29:23Z
 
 
 From obs-b8: three-calibration-discipline-discussion self-contradiction on 'distinct cohomological degrees' (line 5 vs closer — closer likely means h0/h2/h3 orders); trace-ratio-interpretation 10-vs-6 orders-of-magnitude tension presented as agreement; trefoil-vortex-chirality-flip missing article.
+
+From it-b2/obs-b6/b7: mass-energy-equivalence-proof c_q-factor inserted twice (E/m = c_q per-crossing vs displayed c_q^2) — derivation review; julia-set-reeb golden-rotation linearizability inverted; substrate-consistency-window 'single free parameter' vs 3-CAL; pair-creation-energy tanh(ln q0)=0.104 vs alpha 0.0073 overclaim; excised-cross-ref debris in three it blocks; MeVperbaryon token; q-deformed-double-slit trailing-comma display.
