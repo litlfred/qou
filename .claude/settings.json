@@ -22,6 +22,10 @@
           },
           {
             "type": "command",
+            "command": "./scripts/build-pyhecke-native.sh >\"${TMPDIR:-/tmp}/qou-pyhecke-native-build.log\" 2>&1 &"
+          },
+          {
+            "type": "command",
             "command": "./scripts/session-start-coord-sweep.sh"
           }
         ]
