@@ -267,3 +267,12 @@ irreducible remainder is SPATIAL ADVECTION (sweeping moves structures
 in space — no shell model represents it), with in-model evidence that
 both delocalized transfer AND phase decorrelation only ever weaken
 the tail relative to the proved coherent bounds.
+
+## 2026-08-15 (14): the arc is citable content
+
+prop:qns-shell-tail-collapse (four clauses: equilibrium, trajectory
+composition, geometric collapse, nonlocal stability; lean.ref ->
+trajectory_tail_collapse library decl, six declarations listed) +
+rem:qns-shell-tail-collapse-interpretation (eps-free physical-layer
+reading, five probe witnesses, spatial-advection boundary). Wired
+into sec:ns-approaches after def:qns-unit-layers. PR #5095.
