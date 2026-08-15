@@ -1546,6 +1546,21 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1962]] },
     DOI: "10.1103/PhysRev.125.1067",
   }),
+  ref({
+    id: "colemanglashow1961",
+    type: "article-journal",
+    title: "Electrodynamic Properties of Baryons in the Unitary Symmetry Scheme",
+    author: [
+      { family: "Coleman", given: "Sidney" },
+      { family: "Glashow", given: "Sheldon L." },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "6",
+    issue: "8",
+    page: "423-425",
+    issued: { "date-parts": [[1961]] },
+    DOI: "10.1103/PhysRevLett.6.423",
+  }),
 
   ref({
     id: "lenstra1983",
