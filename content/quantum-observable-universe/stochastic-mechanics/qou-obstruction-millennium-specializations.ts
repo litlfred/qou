@@ -18,8 +18,10 @@ export default remark({
         "Proportionality was stated here as a **consequence** of `dim HH² = 1`, " +
         "contradicting `conj:qou-p-neq-np`, which calls it \"part of the " +
         "conjecture, not a consequence of it\". The latter is correct: " +
-        "one-dimensionality of the target constrains the class, not the images " +
-        "of three different restriction maps into three different groups. " +
+        "one-dimensionality is a property of the **source** HH² ≅ k (the " +
+        "common domain of the three restriction maps), so it pins each image " +
+        "within its own target but cannot make images in three different " +
+        "groups proportional to each other — that is not well-typed. " +
         "Corrected, and the disagreement between restrictions is now stated " +
         "concretely (level-2 vanishes at χ(A) = −6 while the resolution-tree " +
         "residue does not), with the machine-checked refutation of the " +

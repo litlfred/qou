@@ -93,13 +93,20 @@ in `conj:qou-p-neq-np`), and `q₀` is strictly non-torsion. The Markov trace at
 `q₀` is precisely *not* efficiently evaluable, so "it is shortcuttable" cannot be
 the reason an algebraic observation fails to carry the bound.
 
-The actual reason is genericity, not tractability: a nonzero polynomial
-obstruction has cofinite non-vanishing locus (`ObstructionGenericity`), so its
-non-vanishing is a Zariski-open — cheap — condition, and cheap conditions cannot
-be equivalent to uniform hardness statements. That is the algebrization barrier
-(Aaronson–Wigderson 2008) as it actually bites here, sharpened for polynomial
-invariants by the algebraic-natural-proofs barrier (Grochow–Kumar–Saks–Saraf
-2017). To cross it the separating invariant must be genuinely **non-algebraic**.
+**No replacement reason is offered, because none is on record.** With the
+tractability argument gone, nothing currently establishes that `hcost` *fails*
+in the Skein setting — it is simply not established there either way. Note the
+deleted premise in fact points the other way: if exact Jones evaluation at `q₀`
+is `#P`-hard, that is prima facie evidence *for* an exponential arrival time,
+not against one. Stating the gap is the honest disposition.
+
+Do not substitute the genericity argument here. That argument
+(`ObstructionGenericity`: a nonzero polynomial obstruction has cofinite
+non-vanishing locus, so its non-vanishing is cheap) concerns the separating
+**invariant** in `conj:qou-p-neq-np`, a different object from `hcost`; nothing
+about the root locus of a polynomial in `q` bears on whether an observation's
+arrival time is exponentially bounded below. Keeping the conclusion while
+swapping in an unrelated premise is how the original error survived.
 
 The lemma below is unaffected: it is hypothetical in `PolyObservable` and takes
 the shortcut as an assumption rather than asserting one exists. Only the prose

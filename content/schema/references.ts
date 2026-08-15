@@ -2763,11 +2763,21 @@ export const references: CSLData[] = [
 
   // ── Complexity-theoretic barriers ─────────────────────────────
   // The three classical barriers plus the algebraic-natural-proofs
-  // refinement. Named in six QOU Lean docstrings
-  // (SkeinObservationBridge, SkeinHorizonLowerBound,
-  // PhysicalIntractability, CocenterTraceFactor,
-  // PNeqNpWallUnification, MagnitudeTraceCommutator) and in the
-  // obstruction-route caveats on all three Millennium legs.
+  // refinement.
+  //
+  // Aaronson-Wigderson is named by author in FOUR Lean docstrings:
+  // SkeinObservationBridge, SkeinHorizonLowerBound, CocenterTraceFactor,
+  // PhysicalIntractability. (PNeqNpWallUnification and
+  // MagnitudeTraceCommutator say only "algebrization" with no author;
+  // an earlier version of this comment miscounted them as citing sites.)
+  // Razborov-Rudich is named in OptionBCountingTransfer;
+  // Burgisser-Ikenmeyer-Panova and Mulmuley-Sohoni in
+  // GCTMultiplicityObstruction. Baker-Gill-Solovay completes the
+  // three-barrier set and is not yet cited from any block.
+  //
+  // Note those docstrings carry the PUBLICATION years the authors are
+  // usually cited by (A-W "2008", BIP "2016" for the arXiv preprint);
+  // the keys below use the journal years, 2009 and 2019.
   ref({
     id: "bakergillsolovay1975",
     type: "article-journal",
