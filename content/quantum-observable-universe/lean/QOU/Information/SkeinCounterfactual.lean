@@ -98,6 +98,71 @@ theorem not_descent_of_not_halts (C : S → Prop) (P : S) (hC : C P)
   intro hdesc
   exact hnot (sys.halts_of_len_descent C hfwd hdesc P hC)
 
+/-! ### How hard is "find a descent measure"? Exactly as hard as the conjecture.
+
+`halts_of_len_descent` is the corpus's route to q-Collatz: exhibit a filtration
+that strictly drops off the normal form, and halting follows. The open core is
+routinely described as *the descent measure* (`prop:collatz-contact-boundary`,
+`PNeqNpWallUnification`, `collatz_obstruction_link`), with `v_[2]` refuted
+scope-(a) in `collatz_vtwo_obstruction`.
+
+It is worth knowing, before any further search, that the descent route is not a
+*shortcut*. Descent is **equivalent** to halting on a forward-invariant cone, not
+merely sufficient for it: if every element of the cone halts, the **hitting
+time** `μ(x) = min {k | step^[k] x = normalForm}` is itself a strict ℕ-valued
+descent measure. So "some descent measure exists" carries exactly the content of
+the conjecture and cannot be established more cheaply.
+
+**What this does and does not say.** It does **not** devalue the descent route —
+the point of `halts_of_len_descent` is to let an *explicit, independently
+motivated* `μ` (a valuation, a degree, a contact volume) discharge the
+conjecture, and that remains the live programme. What it rules out is treating
+"search for a descent measure" as a strictly easier target than "prove
+q-Collatz": any search whose success criterion is mere existence is searching
+for a restatement. A candidate `μ` is worth pursuing only for properties the
+hitting time lacks — computability, a closed form, monotonicity under the
+algebra of `[2]_q` and `[3]_q`.
+
+Scope (a): a statement about the *route*, not about q-Collatz, which is
+untouched here. -/
+
+/-- **The hitting time is a descent measure.** If every element of a
+    forward-invariant cone halts, then the step count to the normal form strictly
+    decreases off it — so a descent measure exists. -/
+theorem exists_descent_of_halts (C : S → Prop)
+    (hfwd : ∀ x, C x → x ≠ sys.normalForm → C (sys.step x))
+    (hhalt : ∀ x, C x → sys.Halts x) :
+    ∃ μ : S → ℕ, ∀ x, C x → x ≠ sys.normalForm → μ (sys.step x) < μ x := by
+  classical
+  refine ⟨fun x => if h : sys.Halts x then Nat.find h else 0, fun x hx hne => ?_⟩
+  have hxh : sys.Halts x := hhalt x hx
+  have hsh : sys.Halts (sys.step x) := hhalt _ (hfwd x hx hne)
+  dsimp only
+  rw [dif_pos hxh, dif_pos hsh]
+  -- the hitting time of `x` is positive, since `x` is not already the normal form
+  have hpos : 0 < Nat.find hxh := by
+    rcases Nat.eq_zero_or_pos (Nat.find hxh) with h0 | h; swap; · exact h
+    exact absurd (by simpa [h0] using Nat.find_spec hxh) hne
+  -- one step of `x` reaches the normal form in `Nat.find hxh - 1` further steps
+  have hstep : sys.step^[Nat.find hxh - 1] (sys.step x) = sys.normalForm := by
+    have := Nat.find_spec hxh
+    rwa [← Nat.succ_pred_eq_of_pos hpos, Function.iterate_succ_apply] at this
+  exact lt_of_le_of_lt (Nat.find_le hstep) (Nat.pred_lt hpos.ne')
+
+/-- **Descent ⟺ halting on the cone.** Combining with `halts_of_len_descent`:
+    the existence of a strict descent measure is not a sufficient condition that
+    might be easier to verify — it carries exactly the conjecture's content. -/
+theorem exists_descent_iff_halts (C : S → Prop)
+    (hfwd : ∀ x, C x → x ≠ sys.normalForm → C (sys.step x)) :
+    (∃ μ : S → ℕ, ∀ x, C x → x ≠ sys.normalForm → μ (sys.step x) < μ x) ↔
+      (∀ x, C x → sys.Halts x) := by
+  constructor
+  · rintro ⟨μ, hdesc⟩
+    exact fun x hx =>
+      QOU.AppendixSurreals.reaches_of_descent_of_forward
+        sys.step sys.normalForm C μ hfwd hdesc x hx
+  · exact fun h => exists_descent_of_halts sys C hfwd h
+
 /-! ### The q-NS counterfactual: blow-up kills every monotone Lyapunov -/
 
 /-- **A q-NS blow-up witness refutes every monotone Lyapunov filtration.** If the
