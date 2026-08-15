@@ -18,11 +18,20 @@ had been failing since 2026-05-19 and one header claim was wrong:
   `z**3` NOR the determinant pin that followed from it (nor the Rust
   mirror -- see tools/hecke-engine/src/gram.rs).
 
-CONVENTION. Every value below is **convention C** (z = 1/(q^1/2+q^-1/2)),
-because pyhecke.gram is still on C: the C -> D migration is BLOCKED here,
-see the note at pyhecke/gram.py's `z`. When that unblocks, every literal
-in this file moves; they are labelled so a grep for the convention finds
-them.
+CONVENTION. **MIGRATED TO CONVENTION D** (z = q^3/(q^2+1)) -- the block
+that this header previously described as "BLOCKED here" is now lifted.
+Every literal that moved is labelled with both values so the change is
+auditable from this file alone:
+
+    z        0.4993203341836945 (C)  ->  0.6126880371464652 (D)   +22.70%
+    det G   -0.1892052191440367 (C)  ->  0                 (D)   SINGULAR
+    G_INV    exists              (C)  ->  does not exist    (D)
+
+The determinant test below was strengthened rather than merely re-pinned:
+under D the form is genuinely degenerate, and a float64 determinant
+(3.998e-17 on this machine) cannot distinguish "singular" from "very
+small". Convention D makes the Gram exactly rational, so the test now
+asserts det == 0 EXACTLY over Q, plus rank 5 and G @ RADICAL == 0.
 """
 
 from __future__ import annotations
@@ -40,14 +49,20 @@ except ImportError:  # pragma: no cover
 
 
 def test_z_markov_value():
-    """z = 1/(q^{1/2}+q^{-1/2}) -- **convention C** -- at the PROTON pin
+    """z = q^3/(q^2+1) -- **convention D** -- at the PROTON pin
     q_0 = 1.1099785827513808 (`q_parameter.Q`).
 
-    Was pinned to 0.4993203340335982, the value at the MUON pin
-    1.1099785955541805, and had been failing by 1.5e-10 against a 1e-14
-    tolerance. Under convention D this becomes 0.6126880371464652.
-    """
-    assert abs(pyhecke_gram.z - 0.4993203341836945) < 1e-14
+    History of this pin: 0.4993203340335982 (convention C at the MUON
+    pin -- wrong pin, failed by 1.5e-10 against a 1e-14 tolerance)
+    -> 0.4993203341836945 (convention C at the proton pin)
+    -> 0.6126880371464652 (convention D at the proton pin), +22.70%.
+
+    Recomputed from the definition rather than read off the module."""
+    q = float(pyhecke_gram.q0)
+    assert abs(pyhecke_gram.z - q ** 3 / (q ** 2 + 1)) < 1e-15
+    assert abs(pyhecke_gram.z - 0.6126880371464652) < 1e-14
+    # Guard the migration directly: this is NOT the convention-C value.
+    assert abs(pyhecke_gram.z - 0.4993203341836945) > 0.1
 
 
 def test_tr_m_weights_shape_and_start():
@@ -76,29 +91,99 @@ def test_nf_basis_is_canonical_ordering():
 
 
 def test_gram_shape_and_determinant():
-    """det G at the proton pin, convention C, with the corrected TR_M[5].
+    """Under **convention D** the Markov-Gram form is SINGULAR.
 
-    Was pinned to -0.36080112. That is the determinant you get with the
-    pre-2026-05-19 `TR_M[5] = z**3` -- it is still what
-    tools/hecke-engine/src/gram.rs produces, because the fix was never
-    ported there. With the module's actual (correct) `h*z^2 + z` the value
-    is -0.1892052191440367.
+    Pin history: -0.36080112 (convention C with the pre-2026-05-19
+    `TR_M[5] = z**3` bug -- still what tools/hecke-engine/src/gram.rs
+    produces, since the fix was never ported there) -> -0.1892052191440367
+    (convention C with the correct `h*z^2 + z`) -> 0 EXACTLY (convention
+    D). Degeneracy proved in QOU/QBeta/GramSignature.lean.
 
-    Under convention D this determinant is ZERO -- the Markov-Gram form is
-    degenerate, proved in QOU/QBeta/GramSignature.lean. That is why the
-    C -> D switch is blocked here; see pyhecke/gram.py.
-    """
+    This asserts rank, not a float determinant. `numpy.linalg.det(G)` is
+    3.998e-17 here, which is NOT evidence of singularity -- it is what a
+    float64 determinant of a singular matrix looks like, and it is also
+    what a genuinely tiny nonzero determinant looks like. The exact
+    statement is `test_gram_determinant_is_exactly_zero_over_Q` below."""
     G = pyhecke_gram.G
     assert G.shape == (6, 6)
-    det = numpy.linalg.det(G)
-    assert abs(det - (-0.1892052191440367)) < 1e-9
+    assert numpy.linalg.matrix_rank(G, tol=1e-12) == 5
+    # The null direction is the q-antisymmetriser, in closed form.
+    assert numpy.linalg.norm(G @ pyhecke_gram.RADICAL) < 1e-12
 
 
-def test_gram_inverse_identity():
+def test_gram_determinant_is_exactly_zero_over_Q():
+    """det G == 0 EXACTLY in Q, and the nullspace is exactly 1-dimensional.
+
+    This is the test the float64 path cannot express. Convention D makes
+    z = q^3/(q^2+1) a rational *function*, so at the rational model
+    q = 111/100 every Gram entry is a Fraction and the determinant is an
+    exact rational number -- which is 0, not 3.998e-17. Under convention C
+    this test could not have been written at all: z was irrational there,
+    so the exact path carried a 4-digit truncation of it."""
+    from fractions import Fraction
+
+    NF = pyhecke_gram.NF_BASIS
+    trm = pyhecke_gram._TR_M_FRAC
+    assert all(isinstance(t, Fraction) for t in trm), trm
+
+    # G_ij = tr_M(w_i . w_j), all in Q.
+    rows = []
+    for i in range(6):
+        row = []
+        for j in range(6):
+            nf = pyhecke_gram.nf_of_word(NF[i] + NF[j], exact=True)
+            row.append(sum(nf[k] * trm[k] for k in range(6)))
+        rows.append(row)
+    assert all(isinstance(x, Fraction) for r in rows for x in r)
+
+    # Exact fraction-free Gaussian elimination -> rank + determinant.
+    M = [r[:] for r in rows]
+    det = Fraction(1)
+    rank = 0
+    for col in range(6):
+        piv = next((r for r in range(rank, 6) if M[r][col] != 0), None)
+        if piv is None:
+            det = Fraction(0)
+            continue
+        if piv != rank:
+            M[rank], M[piv] = M[piv], M[rank]
+            det = -det
+        det *= M[rank][col]
+        inv = Fraction(1) / M[rank][col]
+        for r in range(rank + 1, 6):
+            f = M[r][col] * inv
+            if f:
+                for c in range(col, 6):
+                    M[r][c] -= f * M[rank][c]
+        rank += 1
+    assert rank == 5, f"expected rank 5, got {rank}"
+    assert det == 0, f"expected exactly 0, got {det}"
+
+    # And the closed-form radical really is the null direction, exactly.
+    qf = pyhecke_gram._Q_FRAC
+    v = [(-1 / qf) ** len(w) for w in NF]
+    for i in range(6):
+        assert sum(rows[i][j] * v[j] for j in range(6)) == 0, i
+
+
+def test_gram_inverse_is_gone_and_pseudoinverse_is_the_quotient_inverse():
+    """`G_INV` does not exist under convention D -- the form is singular,
+    so there is no 6x6 inverse. `G_PINV` is the inverse on the quotient
+    H_3(q)/rad, which is what downstream consumers actually need."""
     G = pyhecke_gram.G
-    GI = pyhecke_gram.G_INV
-    prod = G @ GI
-    assert numpy.allclose(prod, numpy.eye(6), atol=1e-10)
+    assert not hasattr(pyhecke_gram, "G_INV"), \
+        "G_INV must not be resurrected: the form is singular under D"
+    with pytest.raises(NotImplementedError):
+        pyhecke_gram.gram_inverse()
+
+    GP = pyhecke_gram.G_PINV
+    # Moore-Penrose defining identity (the one that survives singularity).
+    assert numpy.allclose(G @ GP @ G, G, atol=1e-10)
+    assert numpy.allclose(GP @ G @ GP, GP, atol=1e-10)
+    # G_PINV annihilates the radical -- i.e. it IS the quotient inverse,
+    # not a numerically-regularised stand-in for a 6x6 inverse.
+    assert numpy.linalg.norm(GP @ pyhecke_gram.RADICAL) < 1e-10
+    assert pyhecke_gram.gram_quotient_inverse() is GP
 
 
 def test_wedderburn_weights_sum_and_individual():
@@ -128,7 +213,10 @@ def test_hecke_core_reexports_match_pyhecke():
     """After inversion, hecke_core.G must BE pyhecke.gram.G (not a copy)."""
     import hecke_core  # type: ignore[import-not-found]
     assert hecke_core.G is pyhecke_gram.G
-    assert hecke_core.G_INV is pyhecke_gram.G_INV
+    # G_INV is gone under D; the re-export must follow, not shim it back.
+    assert not hasattr(hecke_core, "G_INV")
+    assert hecke_core.G_PINV is pyhecke_gram.G_PINV
+    assert hecke_core.RADICAL is pyhecke_gram.RADICAL
     assert hecke_core.z is pyhecke_gram.z
     assert hecke_core.NF_BASIS is pyhecke_gram.NF_BASIS
     assert hecke_core.TR_M is pyhecke_gram.TR_M
