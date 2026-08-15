@@ -223,4 +223,62 @@ theorem specht_end_comm {μ : YoungDiagram}
   show θ (ψ x) = ψ (θ x)
   rw [hc, hd, hc, map_smul, hd, smul_comm]
 
+/-! ## The division-ring collapse, at module level
+
+`specht_end_scalar` is a statement about Specht modules. The Wedderburn blocks are indexed by the
+*simple* `k[S_n]`-modules, and a block's division ring `𝔇 i` **is** the commutant of the
+corresponding simple. Composing with the classification theorem
+(`SpechtClassification.specht_exhausts_irreducibles` — every simple `k[S_n]`-module is a Specht
+module, closed by a sibling in the 2026-08 window) upgrades the Specht statement to the general one:
+**no simple `k[S_n]`-module admits a non-scalar equivariant endomorphism**, over any
+characteristic-zero field. That is item (a) of the residual listed in
+`SnWedderburnPartitionBridge`, in module-theoretic form.
+
+What it is *not*: the block-level `𝔇 i ≃ R` inside a specific `∏ Matrix` split still needs the
+index↔partition labelling (W1) to say *which* simple sits in block `i`. That is a separate epic
+item; nothing here claims it. -/
+
+/-- **No simple `k[S_n]`-module has a non-scalar commutant.** Over a characteristic-zero field, every
+`S_n`-equivariant `k`-linear endomorphism of a simple `k[S_n]`-module is a scalar.
+
+Proof: transport an equivariant endomorphism along the classification isomorphism to the Specht
+model, apply `specht_end_scalar`, and transport back. The intertwiner is a `k`-linear equivalence, so
+the scalar is preserved.
+
+This is the module-theoretic form of the division-ring collapse: the commutant of a simple module is
+its Wedderburn block's division ring, and here it is the base field itself. -/
+theorem simple_end_scalar {n : ℕ} {W : Type} [AddCommGroup W] [Module k W]
+    (ρ : Representation k (Perm (Fin n)) W)
+    (hsimple : IsSimpleModule (MonoidAlgebra k (Perm (Fin n))) ρ.asModule)
+    (θ : W →ₗ[k] W)
+    (hθ : ∀ (g : Perm (Fin n)) (x : W), θ (ρ g x) = ρ g (θ x)) :
+    ∃ c : k, ∀ x : W, θ x = c • x := by
+  classical
+  obtain ⟨μ, h, hiso⟩ := specht_exhausts_irreducibles (k := k) ρ hsimple
+  obtain ⟨e, he⟩ := hiso.exists_intertwiner
+  -- `ψ = e ∘ θ ∘ e⁻¹` is an equivariant endomorphism of the Specht model.
+  set ψ : SpechtSubmodule (k := k) μ →ₗ[k] SpechtSubmodule (k := k) μ :=
+    (e : W →ₗ[k] SpechtSubmodule (k := k) μ) ∘ₗ θ ∘ₗ (e.symm : _ →ₗ[k] W) with hψdef
+  have hψ : ∀ (σ : Perm (Fin (nOf μ))) (y : SpechtSubmodule (k := k) μ),
+      ψ (spechtRep (k := k) μ σ y) = spechtRep (k := k) μ σ (ψ y) := by
+    intro σ y
+    obtain ⟨g, rfl⟩ := transportPermHom_surjective h.symm σ
+    -- `e⁻¹` intertwines the other way: `e⁻¹ (ρ' g y) = ρ g (e⁻¹ y)`.
+    have hback : e.symm (spechtRep (k := k) μ (transportPermHom h.symm g) y)
+        = ρ g (e.symm y) := by
+      have := he g (e.symm y)
+      rw [e.apply_symm_apply] at this
+      exact (e.symm_apply_eq).mpr this.symm
+    show e (θ (e.symm (spechtRep (k := k) μ (transportPermHom h.symm g) y)))
+      = spechtRep (k := k) μ (transportPermHom h.symm g) (e (θ (e.symm y)))
+    rw [hback, hθ]
+    exact he g (θ (e.symm y))
+  obtain ⟨c, hc⟩ := specht_end_scalar (k := k) ψ hψ
+  refine ⟨c, fun x => ?_⟩
+  have hx : e (θ x) = e (c • x) := by
+    have := hc (e x)
+    rw [hψdef] at this
+    simpa [LinearEquiv.symm_apply_apply, map_smul] using this
+  exact e.injective hx
+
 end QOU.BraidKnot.SpechtAbsolutelyIrreducible
