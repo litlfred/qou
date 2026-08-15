@@ -156,3 +156,21 @@ the correct effective step must account interior cascade production
 (candidate routes: front-following band; production-vs-dissipation
 Grashof condition; time-integrated form only). Full-NS nonlocality
 caveat unchanged.
+
+## 2026-08-15 (8): Amplitude repair — SF6's failure was the aggregate, not the structure
+
+The refutation dissolves at per-amplitude resolution: DN inflow to
+rung n is only from below (k_n*u_{n-1}^2); the interior term
+-k_{n+1}*u_n*u_{n+1} is NONPOSITIVE for nonnegative amplitudes. SF6
+measured the enstrophy AGGREGATE Omega_tail, where the cascade-front
+interior production shows up; the per-rung scalar has no such term.
+Two new sorry-free theorems (physical_layer_leray.lean, bean
+qou-2y1i): rung_equilibrium (tail_damped_forced_bound at one rung,
+Phi = kn*P^2, D = nu*kn^2, equilibrium P^2/(nu*kn)) and
+amplitude_ladder_collapse (beta j <= theta^j * beta 0 under the
+dissipation-scale condition beta j <= theta*nu*kk j). eps-uniform
+physical-layer reading: nu_phys >= 1/4, k_phys = q^n - 1 <= e-1.
+Honest remainders: (a) trajectory-level sup composition across rungs
+(bounds-level only so far); (b) the band-at-dissipation-scale
+condition — probe-able, SF7 candidate; (c) full-NS nonlocality
+(standing).
