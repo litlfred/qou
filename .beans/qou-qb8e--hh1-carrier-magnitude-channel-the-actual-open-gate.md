@@ -293,8 +293,34 @@ and not any magnitude comparison, is the real content of "S = h*D(u~) is
 schematic, not a tight identity".
 
 **RESTATED GATE (checkable):** the fibre carrier must reproduce the **zero
-location `q*_S`**, not a magnitude. This also fits `q*_S`'s independent standing
-as the third, decay-sector determination of q0.
+location `q*_S`**, not a magnitude.
+
+**CORRECTION 2026-08-15 (`qou-kh7e`, PR #5074).** An earlier revision of this
+paragraph closed with *"This also fits `q*_S`'s independent standing as the
+third, decay-sector determination of q0."* **Withdraw that sentence.** `q*_S` is
+root-found on `S = c_3 + Vol(4_1)` where `c_3 = (Q_beta^exp/Q_N2 - 1)/u^3` is
+extracted from experimental Q_beta, so locating `q*_S` presupposes (H1). It has
+no independent standing; the substrate rests on **two** pins. Registry section
+**9f**; five other sites re-scoped in the same PR.
+
+**The gate itself survives the withdrawal, and is sharper for it.** `q*_S` is a
+determination of q0 *conditional on (H1)*, so a fibre carrier that reproduced it
+would be deriving an experimentally-anchored quantity from the fibre — which is
+exactly what "derive `c_3`" means. What the withdrawal removes is any reading in
+which hitting `q*_S` is corroborated by an *independent* decay-sector pin: there
+is no such pin, so hitting it is the whole claim, not a cross-check on it.
+
+Two consequences for anyone attacking this:
+
+  - Do NOT cite `q*_S` as evidence for (H1) on the way to the gate. That is the
+    circularity, and it is what section 9f removes.
+  - The genericity window is the calibration: **every** constant `V` in
+    `(-c_3(mu), -c_3(p)) = (2.02020024, 2.06934258)`, width `0.0491423`, puts a
+    zero between the anchors (7/7 unrelated constants tested). A carrier that
+    lands *somewhere between the anchors* has therefore achieved nothing. The
+    bar to clear is `q*_S` to a precision better than the window sweeps —
+    `Vol(4_1)` sits 80.2961% from the proton end, so an in-window hit is the
+    null result, not the signal.
 
 `qou-qb8g`'s third correction (PR #5061) restores "c_3's bar-parity is
 undetermined" and names the live route: parity read off the FIBRE object, not

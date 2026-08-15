@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T02:59:21.992919+00:00",
-  "commitSha": "ddd30d9d5ce9cdd54d18aa6327c76aef4e2dfc25",
+  "computedAt": "2026-08-15T04:25:03.692112+00:00",
+  "commitSha": "357d1615ea619495ebbd2b750550584a283e6b35",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 17,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
-  "scriptCommitSha": "b8eb7d9e66db36b80193fd976fa81bc5f9e57b49",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,15 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
       "Q0_OK": 637,
       "Q0_AMBIGUOUS": 16,
-      "Q0_ANCHOR_MISSING": 1879,
+      "Q0_ANCHOR_MISSING": 1882,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 68,
       "Q0_PARSE_ERROR": 1,
@@ -5704,6 +5705,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-c3-swing-gate.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-c3-swing-selfdual-pole-vs-ladder.witness.json",
           "detail": ""
         },
@@ -6780,6 +6785,10 @@
           "detail": ""
         },
         {
+          "witness": "qns-allpairs-transfer-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qns-amplitude-step-probe.witness.json",
           "detail": ""
         },
@@ -6801,6 +6810,10 @@
         },
         {
           "witness": "qns-levi-lock-scaling-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qns-nonlocal-transfer-probe.witness.json",
           "detail": ""
         },
         {
