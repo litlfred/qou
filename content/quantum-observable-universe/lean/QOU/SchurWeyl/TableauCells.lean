@@ -422,6 +422,76 @@ theorem axialDist_trichotomy (T : StandardYoungTableau μ) {k : ℕ}
         (by rw [← hcol] at he₂; exact he₂)
     · exact Or.inr (Or.inr ⟨hrow, hcol⟩)
 
+/-- **The axial distance of a generator is never zero** — consecutive entries never sit on
+the same diagonal.
+
+If they did, the cell completing their rectangle would be forced to carry an entry strictly
+between `k` and `k+1`.  Concretely, if `k` sits at `(i₁, j₁)` and `k+1` at `(i₂, j₂)` with
+equal contents `j₁ - i₁ = j₂ - i₂`, then the two cells are strictly ordered in *both*
+coordinates, and the corner cell (`(i₁, j₂)` in one orientation, `(i₂, j₁)` in the other)
+lies in `μ` by up-left closure and is squeezed between them.
+
+This is what keeps `seminormalParam q (axialDist T k)` away from the pole of
+`(q - q⁻¹)/(1 - q^{-2d})` at `d = 0`, so the parameter is defined at every generator and
+every tableau. -/
+theorem axialDist_ne_zero (T : StandardYoungTableau μ) {k : ℕ}
+    (hk : k ∈ Set.Icc 1 μ.cells.card) (hk' : k + 1 ∈ Set.Icc 1 μ.cells.card) :
+    axialDist T k ≠ 0 := by
+  have hm₁ : cellOf T k ∈ μ.cells := cellOf_mem T hk
+  have hm₂ : cellOf T (k + 1) ∈ μ.cells := cellOf_mem T hk'
+  have hμ₁ : ((cellOf T k).1, (cellOf T k).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using hm₁
+  have hμ₂ : ((cellOf T (k + 1)).1, (cellOf T (k + 1)).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using hm₂
+  have he₁ : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T hk
+  have he₂ : T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 1 := entry_cellOf T hk'
+  intro hzero
+  -- equal contents: `j₁ - i₁ = j₂ - i₂` over `ℤ`
+  have hcontent : ((cellOf T (k + 1)).2 : ℤ) - ((cellOf T (k + 1)).1 : ℤ)
+      = ((cellOf T k).2 : ℤ) - ((cellOf T k).1 : ℤ) := by
+    have := hzero
+    simp only [axialDist, axialDistance, cellContent] at this
+    omega
+  -- the cells are distinct, so the rows differ; with equal contents the columns follow
+  have hne : cellOf T k ≠ cellOf T (k + 1) := cellOf_ne T hk hk'
+  have hrow : (cellOf T k).1 ≠ (cellOf T (k + 1)).1 := by
+    intro h
+    exact hne (Prod.ext h (by omega))
+  rcases Nat.lt_or_ge (cellOf T k).1 (cellOf T (k + 1)).1 with hlt | hge
+  · -- `k` is strictly up-left of `k+1`: the corner `(i₁, j₂)` is squeezed
+    have hjlt : (cellOf T k).2 < (cellOf T (k + 1)).2 := by omega
+    have hcorner : ((cellOf T k).1, (cellOf T (k + 1)).2) ∈ μ :=
+      μ.up_left_mem (le_of_lt hlt) (le_refl _) hμ₂
+    have hlo : T.entry (cellOf T k).1 (cellOf T k).2
+        < T.entry (cellOf T k).1 (cellOf T (k + 1)).2 := T.row_strict hjlt hcorner
+    have hhi : T.entry (cellOf T k).1 (cellOf T (k + 1)).2
+        < T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 :=
+      T.toSsyt.col_strict hlt hμ₂
+    omega
+  · -- `k+1` is strictly up-left of `k`: the corner `(i₂, j₁)` is squeezed the other way
+    have hilt : (cellOf T (k + 1)).1 < (cellOf T k).1 := by omega
+    have hjlt : (cellOf T (k + 1)).2 < (cellOf T k).2 := by omega
+    have hcorner : ((cellOf T (k + 1)).1, (cellOf T k).2) ∈ μ :=
+      μ.up_left_mem (le_of_lt hilt) (le_refl _) hμ₁
+    have hlo : T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2
+        < T.entry (cellOf T (k + 1)).1 (cellOf T k).2 := T.row_strict hjlt hcorner
+    have hhi : T.entry (cellOf T (k + 1)).1 (cellOf T k).2
+        < T.entry (cellOf T k).1 (cellOf T k).2 := T.toSsyt.col_strict hilt hμ₁
+    omega
+
+/-- **The swap negates the axial distance.**  `s_k` exchanges the cells of `k` and `k+1`
+(`cellOf_swapTableau_self` / `_succ`) and `axialDistance` is antisymmetric, so the pair
+`{T, s_k·T}` carries the two distances `d` and `-d`.
+
+This is what makes the size-`2` block a `seminormalBlock`: its diagonal is
+`(a(d), a(-d))`, whose entries sum to `q - q⁻¹` by `seminormalParam_add_neg`.  Without it
+the two rows of a pair would be unrelated and the quadratic relation could not close. -/
+@[simp] theorem axialDist_swapTableau (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hadm : SwapAdmissible T k) :
+    axialDist (swapTableau T k hk hkn hadm) k = -axialDist T k := by
+  unfold axialDist
+  rw [cellOf_swapTableau_self T hk hkn hadm, cellOf_swapTableau_succ T hk hkn hadm]
+  exact axialDistance_antisymm _ _
 
 end TableauCells
 
