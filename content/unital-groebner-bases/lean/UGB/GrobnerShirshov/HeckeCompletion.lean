@@ -2271,4 +2271,308 @@ theorem bs_bs_resolves (hn : 0 < n) (hi : i'.val + 1 = i.val) :
 
 end BraidSelfOverlap
 
+/-! ## §4s  Bokut–Shiao against far-commutation at the **same** index
+
+§4o did `j₀ + 1 = j` — the far-commutation rule extending the descending run by
+one step, which resolves in a single application. This is the neighbouring case
+`j₀ = j`, where the two rules share their bottom index. It does not resolve in
+one step: the shared index puts `σⱼσⱼ` at the end of both words, so the quadratic
+rule fires twice before the Bokut–Shiao rules can.
+
+Writing `jp` for `j + 1` and using `descWord_snoc` (§4o) —
+`descWord i j = descWord i jp ++ [σⱼ]`, and hence
+`bsWord₂ i' i j = bsWord₂ i' i jp ++ [σⱼ]` — the S-polynomial is
+
+    (descWord i jp ++ [σⱼ, σⱼ, σᵢ])  −  (bsWord₂ i' i jp ++ [σⱼ, σⱼ])
+
+and both terms end in `σⱼσⱼ`. Four steps:
+
+| # | target | rule | context | coefficient |
+|---|---|---|---|---|
+| 1 | the first term | `Q_j` | `(descWord i jp ∣ σᵢ)` | `1` |
+| 2 | the second | `Q_j` | `(bsWord₂ i' i jp ∣ ε)` | `−1` |
+| 3 | `bsWord₁ i j` | Bokut–Shiao at `j` | `(ε ∣ ε)` | `h` |
+| 4 | `bsWord₁ i jp` | Bokut–Shiao at `jp` | `(ε ∣ ε)` | `1` |
+
+Steps 3 and 4 use the family's **own** rules at two adjacent depths — the `h`
+term the two squares leave behind is the Bokut–Shiao relation at `j`, the
+constant term is the one at `jp`. That is the same downward self-completion §4o
+exhibited, arriving here through the quadratic rule rather than directly.
+
+**Where the side condition comes from.** Step 4 needs `bokutShiaoRelation i' i jp`
+to *be* a rule, that is `j + 1 ≤ i − 1` — which is exactly the condition for
+`σᵢσⱼ` to be a far-commutation word in the first place, so nothing is left over.
+At `j = i − 1` there is no composition to resolve: `σᵢσᵢ₋₁` is a braid word, not a
+commuting pair, and that case is §4r's. At `n = 4` this family is **three**
+compositions, `(i', i, j) ∈ {(1,2,0), (2,3,0), (2,3,1)}`.
+
+Every word in the chain is `descWord i jp` prefixed or suffixed, and the single
+fact that tells the two sides apart is the first letter — `σᵢ` on the `bsWord₁`
+side (because `descWord i jp` begins with `σᵢ`), `σᵢ₋₁` on the `bsWord₂` side.
+`head_ne` is that observation, and apart from one length count it is the only
+word-distinctness the chain needs. -/
+
+namespace BokutShiaoFarCommSame
+
+variable {n : ℕ}
+
+/-- The composition of `bokutShiaoRelation i' i j` with `farCommRelation i j`,
+overlapping in the single letter `σᵢ` — the same shape as §4o, with the
+far-commutation rule's bottom index moved up to `j`. -/
+noncomputable def oc {i' i j : Fin n} (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
+    OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := bokutShiaoRelation i' i j
+  rule₂ := farCommRelation i j
+  left := descWord i j
+  overlap := [⟨i⟩]
+  right := [⟨j⟩]
+  lm₁_decomp := by rw [bokutShiaoRelation_lm hi hj]; rfl
+  lm₂_decomp := by rw [farCommRelation_lm i j (by omega)]; rfl
+  overlap_nonempty := by simp
+
+/-- **The one word-distinctness fact the chain needs.** `descWord i jp` begins
+with `σᵢ` (`descWord_cons`), and every `bsWord₂`-side word of the chain begins
+with `σᵢ₋₁`; no length arithmetic and no knowledge of the tail is involved. -/
+theorem head_ne {i' i jp : Fin n} (hi : i'.val + 1 = i.val) (hj : jp.val ≤ i'.val)
+    (v w : Monomial (HeckeGen n)) :
+    ((⟨i'⟩ : HeckeGen n) :: v) ≠ descWord i jp ++ w := by
+  rw [descWord_cons hi hj, List.cons_append]
+  intro hcon
+  injection hcon with h1 _
+  have := congrArg HeckeGen.rank h1
+  simp only [HeckeGen.rank] at this
+  omega
+
+/-- `head_ne` the other way round; both directions occur, because the targeted
+word is sometimes on the left of the comparison and sometimes on the right. -/
+theorem head_ne' {i' i jp : Fin n} (hi : i'.val + 1 = i.val) (hj : jp.val ≤ i'.val)
+    (v w : Monomial (HeckeGen n)) :
+    descWord i jp ++ w ≠ (⟨i'⟩ : HeckeGen n) :: v :=
+  fun hcon => head_ne hi hj v w hcon.symm
+
+/-! ### The chain
+
+`F₀ … F₃` are the stages, `F₀` the S-polynomial, and each step is its own
+theorem — heartbeats are budgeted per declaration. -/
+
+/-- Stage `0` — the S-polynomial. Both terms end in `σⱼσⱼ`. -/
+noncomputable def F0 (_hp : HeckeParams) (i' i j jp : Fin n) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨j⟩, ⟨i⟩], (1 : ℝ)),
+     ((⟨i'⟩ : HeckeGen n) :: (descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨j⟩]), -1)]
+
+/-- Stage `1` — the square in the first term is out. -/
+noncomputable def F1 (hp : HeckeParams) (i' i j jp : Fin n) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨i⟩], hp.q - hp.q⁻¹),
+     (descWord i jp ++ [(⟨i⟩ : HeckeGen n)], 1),
+     ((⟨i'⟩ : HeckeGen n) :: (descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨j⟩]), -1)]
+
+/-- Stage `2` — both squares out. What is left is `h ·` the Bokut–Shiao relation
+at `j`, plus the Bokut–Shiao relation at `jp`. -/
+noncomputable def F2 (hp : HeckeParams) (i' i j jp : Fin n) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨i⟩], hp.q - hp.q⁻¹),
+     (descWord i jp ++ [(⟨i⟩ : HeckeGen n)], 1),
+     ((⟨i'⟩ : HeckeGen n) :: (descWord i jp ++ [(⟨j⟩ : HeckeGen n)]), -(hp.q - hp.q⁻¹)),
+     ((⟨i'⟩ : HeckeGen n) :: descWord i jp, -1)]
+
+/-- Stage `3` — exactly the Bokut–Shiao relation at `jp`, which annihilates it. -/
+noncomputable def F3 (_hp : HeckeParams) (i' i jp : Fin n) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(descWord i jp ++ [(⟨i⟩ : HeckeGen n)], (1 : ℝ)),
+     ((⟨i'⟩ : HeckeGen n) :: descWord i jp, -1)]
+
+/-- **The S-polynomial.** The ambient word `descWord i j ++ [σᵢ, σⱼ]` is reached
+from both sides and cancels identically; `descWord_snoc` then exhibits what
+survives as `F₀`, with the square visible in both terms. -/
+theorem oc_spoly_coeff (hp : HeckeParams) {i' i j jp : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) (hjp : j.val + 1 = jp.val)
+    (hjpi : jp.val ≤ i'.val) (m : Monomial (HeckeGen n)) :
+    (oc hi hj).spoly.coeff m = (F0 hp i' i j jp).coeff m := by
+  have hDj : descWord i j = descWord i jp ++ [(⟨j⟩ : HeckeGen n)] :=
+    descWord_snoc hjp (by omega : jp.val ≤ i.val)
+  have hcyc : bsWord₂ i' i j = (⟨i'⟩ : HeckeGen n) :: descWord i j := by
+    rw [bsWord₂, descWord_cons hi hj]
+  show (farCommRelation i j).lc (heckeOrder n)
+      * (AlgElement.contextMul [] (bokutShiaoRelation i' i j).relation [⟨j⟩]).coeff m
+    - (bokutShiaoRelation i' i j).lc (heckeOrder n)
+      * (AlgElement.contextMul (descWord i j) (farCommRelation i j).relation []).coeff m
+    = _
+  rw [farCommRelation_lc i j (by omega), bokutShiaoRelation_lc hi hj, one_mul, one_mul]
+  simp only [F0, bokutShiaoRelation, farCommRelation, bsWord₁, hcyc, hDj,
+    AlgElement.contextMul_ofTerms_coeff, List.map_cons, List.map_nil, List.nil_append,
+    List.append_nil, List.cons_append, List.append_assoc,
+    AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil, decide_eq_true_eq]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- Step 1 — the quadratic rule at `j`, in the context `(descWord i jp ∣ σᵢ)`. -/
+theorem chainStep1 (hp : HeckeParams) (i' i j jp : Fin n) (hn : 0 < n)
+    (hi : i'.val + 1 = i.val) (hjpi : jp.val ≤ i'.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F0 hp i' i j jp) (F1 hp i' i j jp) := by
+  have hv : (F0 hp i' i j jp).coeff
+      (descWord i jp ++ (heckeRelation j hp).lm (heckeOrder n) ++ [(⟨i⟩ : HeckeGen n)])
+      = 1 := by
+    rw [heckeRelation_lm,
+      show (descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨j⟩] ++ [(⟨i⟩ : HeckeGen n)])
+        = descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨j⟩, ⟨i⟩] by simp]
+    simp [F0, AlgElement.ofTerms_coeff, head_ne hi hjpi]
+  refine ⟨heckeRelation j hp, heckeRelation_mem hn hp j, descWord i jp,
+    [(⟨i⟩ : HeckeGen n)], 1, ?_, ?_, ?_⟩
+  · rw [hv]; norm_num
+  · rw [hv, heckeRelation_lc]; ring
+  · intro m
+    show _ = _ - (1 : ℝ) * (AlgElement.contextMul (descWord i jp)
+      (heckeRelation j hp).relation [(⟨i⟩ : HeckeGen n)]).coeff m
+    simp only [F0, F1, heckeRelation, AlgElement.contextMul_ofTerms_coeff,
+      List.map_cons, List.map_nil, List.nil_append,
+      List.cons_append, List.append_assoc,
+      AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil, decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- Step 2 — the quadratic rule at `j` again, now in the context
+`(σᵢ₋₁ descWord i jp ∣ ε)`; that prefix *is* `bsWord₂ i' i jp`, by
+`descWord_cons`. -/
+theorem chainStep2 (hp : HeckeParams) (i' i j jp : Fin n) (hn : 0 < n)
+    (hi : i'.val + 1 = i.val) (hjpi : jp.val ≤ i'.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F1 hp i' i j jp) (F2 hp i' i j jp) := by
+  have hv : (F1 hp i' i j jp).coeff
+      ((⟨i'⟩ : HeckeGen n) :: descWord i jp ++ (heckeRelation j hp).lm (heckeOrder n) ++ [])
+      = -1 := by
+    rw [heckeRelation_lm,
+      show ((⟨i'⟩ : HeckeGen n) :: descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨j⟩] ++ [])
+        = (⟨i'⟩ : HeckeGen n) :: (descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨j⟩]) by simp]
+    simp [F1, AlgElement.ofTerms_coeff, head_ne' hi hjpi]
+  refine ⟨heckeRelation j hp, heckeRelation_mem hn hp j,
+    (⟨i'⟩ : HeckeGen n) :: descWord i jp, [], -1, ?_, ?_, ?_⟩
+  · rw [hv]; norm_num
+  · rw [hv, heckeRelation_lc]; ring
+  · intro m
+    show _ = _ - (-1 : ℝ) * (AlgElement.contextMul ((⟨i'⟩ : HeckeGen n) :: descWord i jp)
+      (heckeRelation j hp).relation []).coeff m
+    simp only [F1, F2, heckeRelation, AlgElement.contextMul_ofTerms_coeff,
+      List.map_cons, List.map_nil, List.append_nil,
+      List.cons_append,
+      AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil, decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- Step 3 — the family's own rule at depth `j`, in empty context, clearing the
+`h` term the two squares left. -/
+theorem chainStep3 (hp : HeckeParams) (i' i j jp : Fin n) (hn : 0 < n)
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) (hjp : j.val + 1 = jp.val)
+    (hjpi : jp.val ≤ i'.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F2 hp i' i j jp) (F3 hp i' i jp) := by
+  have hh := hp.h_ne_zero
+  have hDj : descWord i j = descWord i jp ++ [(⟨j⟩ : HeckeGen n)] :=
+    descWord_snoc hjp (by omega : jp.val ≤ i.val)
+  have hcyc : bsWord₂ i' i j = (⟨i'⟩ : HeckeGen n) :: descWord i j := by
+    rw [bsWord₂, descWord_cons hi hj]
+  have hlen : descWord i jp ++ [(⟨i⟩ : HeckeGen n)]
+      ≠ descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨i⟩] := by
+    intro hcon
+    have := congrArg List.length hcon
+    simp only [List.length_append, List.length_cons, List.length_nil] at this
+    omega
+  have hw : ([] : Monomial (HeckeGen n))
+      ++ (bokutShiaoRelation i' i j).lm (heckeOrder n) ++ []
+      = descWord i jp ++ [(⟨j⟩ : HeckeGen n), ⟨i⟩] := by
+    rw [bokutShiaoRelation_lm hi hj]
+    simp only [bsWord₁, hDj]
+    simp
+  have hv : (F2 hp i' i j jp).coeff
+      (([] : Monomial (HeckeGen n)) ++ (bokutShiaoRelation i' i j).lm (heckeOrder n) ++ [])
+      = hp.q - hp.q⁻¹ := by
+    rw [hw]
+    simp [F2, AlgElement.ofTerms_coeff, head_ne hi hjpi, hlen]
+  refine ⟨bokutShiaoRelation i' i j, bokutShiaoRelation_mem hn hp hi hj, [], [],
+    hp.q - hp.q⁻¹, ?_, ?_, ?_⟩
+  · rw [hv]; exact hh
+  · rw [hv, bokutShiaoRelation_lc hi hj]; ring
+  · intro m
+    show _ = _ - (hp.q - hp.q⁻¹)
+      * (AlgElement.contextMul [] (bokutShiaoRelation i' i j).relation []).coeff m
+    simp only [F2, F3, bokutShiaoRelation, bsWord₁, hcyc, hDj,
+      AlgElement.contextMul_ofTerms_coeff, List.map_cons, List.map_nil,
+      List.nil_append, List.append_nil, List.cons_append, List.append_assoc,
+      AlgElement.ofTerms_coeff, List.filter_cons,
+      List.filter_nil, decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- Step 4 — the family's own rule at depth `jp`, in empty context. `F₃` *is*
+that relation, so the step lands on zero. -/
+theorem chainStep4 (hp : HeckeParams) (i' i jp : Fin n) (hn : 0 < n)
+    (hi : i'.val + 1 = i.val) (hjpi : jp.val ≤ i'.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (F3 hp i' i jp) AlgElement.zero := by
+  have hcyc : bsWord₂ i' i jp = (⟨i'⟩ : HeckeGen n) :: descWord i jp := by
+    rw [bsWord₂, descWord_cons hi hjpi]
+  have hw : ([] : Monomial (HeckeGen n))
+      ++ (bokutShiaoRelation i' i jp).lm (heckeOrder n) ++ []
+      = descWord i jp ++ [(⟨i⟩ : HeckeGen n)] := by
+    rw [bokutShiaoRelation_lm hi hjpi]
+    simp only [bsWord₁]
+    simp
+  have hv : (F3 hp i' i jp).coeff
+      (([] : Monomial (HeckeGen n)) ++ (bokutShiaoRelation i' i jp).lm (heckeOrder n) ++ [])
+      = 1 := by
+    rw [hw]
+    simp [F3, AlgElement.ofTerms_coeff, head_ne hi hjpi]
+  refine ⟨bokutShiaoRelation i' i jp, bokutShiaoRelation_mem hn hp hi hjpi, [], [], 1,
+    ?_, ?_, ?_⟩
+  · rw [hv]; norm_num
+  · rw [hv, bokutShiaoRelation_lc hi hjpi]; ring
+  · intro m
+    show _ = _ - (1 : ℝ)
+      * (AlgElement.contextMul [] (bokutShiaoRelation i' i jp).relation []).coeff m
+    simp only [F3, bokutShiaoRelation, bsWord₁, hcyc, AlgElement.zero,
+      AlgElement.contextMul_ofTerms_coeff, List.map_cons, List.map_nil,
+      List.nil_append, List.append_nil,
+      AlgElement.ofTerms_coeff, List.filter_cons,
+      List.filter_nil, decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- **Four steps, to zero.** `reducesToZero_congr` (§6) joins the chain, which
+runs on `F₀`, to the S-polynomial, which `oc_spoly_coeff` says is `F₀`
+coefficientwise. -/
+theorem oc_reduces_to_zero (hp : HeckeParams) {i' i j jp : Fin n} (hn : 0 < n)
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) (hjp : j.val + 1 = jp.val)
+    (hjpi : jp.val ≤ i'.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hi hj).spoly nf ∧ nf.isZero := by
+  refine reducesToZero_congr ⟨AlgElement.zero,
+    ⟨(MultiStepReduction.refl _)
+      |>.step (chainStep1 hp i' i j jp hn hi hjpi)
+      |>.step (chainStep2 hp i' i j jp hn hi hjpi)
+      |>.step (chainStep3 hp i' i j jp hn hi hj hjp hjpi)
+      |>.step (chainStep4 hp i' i jp hn hi hjpi),
+      isNormalForm_of_isZero AlgElement.isZero_zero⟩, AlgElement.isZero_zero⟩ ?_
+  intro m
+  exact oc_spoly_coeff hp hi hj hjp hjpi m
+
+/-- **The family, in the form the enumeration meets it.** The hypothesis is the
+far-commutation side condition `j + 1 < i` and nothing else: it is what makes
+`σᵢσⱼ` a rule of the system, and simultaneously what makes `jp = j + 1` a legal
+Bokut–Shiao depth for step 4. -/
+theorem resolves (hp : HeckeParams) {i' i j : Fin n} (hn : 0 < n)
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) (hfar : j.val + 1 < i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hi hj).spoly nf ∧ nf.isZero := by
+  have hlt : j.val + 1 < n := Nat.lt_trans hfar i.isLt
+  exact oc_reduces_to_zero hp hn hi hj (jp := ⟨j.val + 1, hlt⟩) rfl
+    (show j.val + 1 ≤ i'.val by omega)
+
+end BokutShiaoFarCommSame
+
 end UGB.GrobnerShirshov.Hecke
