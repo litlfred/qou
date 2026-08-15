@@ -584,3 +584,41 @@ not the computation.** Nothing it calculated was ever wrong — the producer jus
 could not finish saying so. That is the same shape as the `NameError` in the
 six-term sweep: a defect in code that has nothing to do with the mathematics,
 sitting in a producer nothing runs.
+
+## Re-examined the 5 "timed out" — that bucket was mostly sound (4/5)
+
+Re-ran all five with the full PYTHONPATH (`tools/pyhecke/python` **and**
+`tools/qou-substrate/python`) and a 240 s cap instead of 20 s. Only one of the
+five takes CLI arguments, so "wants args" was not the explanation it turned out
+to be for the *broken* bucket:
+
+    rc=124  240s   audits/term5_aK_audit.py
+    rc=0     56s   beta_ew_delta_I_conjugate_pairing.py     ← miscategorised
+    rc=124  240s   garside-irrep-qvalues.py
+    rc=124  240s   probes/pn_pair_two_sector_split.py
+    rc=124  240s   shell_closure_phi8_correlation_test.py
+
+So this bucket was **4/5 accurate**, against **1/4** for "already broken". Worth
+recording the asymmetry rather than just the correction: a timeout is a weak
+claim ("did not finish in N seconds") that mostly survives re-measurement, while
+a non-zero exit is a strong claim ("is broken") that mostly did not. The bucket
+built on the weaker inference was the more reliable one, because the stronger
+one was reading a specific invocation as a property of the producer.
+
+`beta_ew_delta_I_conjugate_pairing.py` completes in 56 s — it was never broken
+or intractable, just past a 20 s cap chosen for speed. Drained and regenerated:
+
+    never-raises ratchet   11 producers / 44 constructions -> 10 / 42
+    raw-float64            0 NEW, 0 REGRESSED from this change
+    shape guard            0 collapsed
+
+The remaining four genuinely exceed 240 s and stay untouched, consistent with
+the cost-triage rule: do not drain a producer whose witness cannot then be
+regenerated.
+
+**Housekeeping:** the re-triage left one untracked artifact,
+`habiro-coefficients-nitrogen-16.witness.json`, written by a run that was then
+killed at the cap (rc=124). Deleted — a partial witness from a SIGKILLed
+producer is exactly the thing `witness_shape_guard` exists to catch, and it
+should not be committed just because it happens to be new rather than modified.
+An untracked file is easier to overlook than a dirty one.
