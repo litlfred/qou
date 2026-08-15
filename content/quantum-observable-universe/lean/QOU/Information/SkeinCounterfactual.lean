@@ -111,11 +111,6 @@ theorem not_len_nonincreasing_of_blowsUp (P : S) (hblow : sys.BlowsUp P) :
   exact sys.not_blowsUp_of_regular (sys.len P) P
     (sys.regular_of_len_nonincreasing P hmono) hblow
 
-/-- **Blow-up is exactly the failure of every bound.** Unfolding form: a blowing-up
-    orbit is not `Regular` for any `B` whatsoever. -/
-theorem not_regular_of_blowsUp (B : ℕ) (P : S) (hblow : sys.BlowsUp P) :
-    ¬ sys.Regular B P := fun hreg => sys.not_blowsUp_of_regular B P hreg hblow
-
 /-! ### The shared ingredient: one counterexample kills BOTH walls
 
 `regular_and_halts_of_len_orbit_descent` derives q-NS regularity *and* q-Collatz
@@ -139,6 +134,65 @@ theorem not_orbit_descent_of_counterexample (P : S)
   · exact sys.not_blowsUp_of_regular (sys.len P) P hreg hblow
   · exact hnh hhalts
 
+/-! ### The strong form: a q-NS counterexample **is** a q-Collatz counterexample
+
+`not_orbit_descent_of_counterexample` above says a counterexample on either leg
+destroys the *shared proof ingredient*. That is a statement about methods. The
+lemmas here upgrade it to a statement about the **objects**: on a system whose
+normal form is a fixed point, blow-up and halting are outright incompatible, so a
+q-NS singularity witness is automatically a q-Collatz divergence witness.
+
+The fixed-point hypothesis `step normalForm = normalForm` is a real hypothesis,
+carried explicitly and never assumed globally: the q-Collatz attractor is the
+**2-cycle** `{q⁻¹, 1 + q⁻¹}`, not a fixed point (`conj:q-collatz`), so the
+transfer applies to normal-form-as-fixed-point systems and the cyclic case needs
+the orbit-level argument instead. Stating it with the hypothesis visible is the
+honest scope. -/
+
+/-- Once the orbit reaches a **fixed** normal form it stays there. -/
+theorem iterate_normalForm_of_ge (hfix : sys.step sys.normalForm = sys.normalForm)
+    (P : S) (k : ℕ) (hk : sys.step^[k] P = sys.normalForm) :
+    ∀ j, k ≤ j → sys.step^[j] P = sys.normalForm := by
+  intro j hj
+  obtain ⟨d, rfl⟩ := Nat.exists_eq_add_of_le hj
+  clear hj
+  induction d with
+  | zero => simpa using hk
+  | succ n ih =>
+    rw [show k + (n + 1) = (k + n) + 1 by ring, Function.iterate_succ_apply', ih, hfix]
+
+/-- **Halting bounds the filtration.** A halting orbit is eventually constant at
+    the normal form, so its complexity never exceeds the maximum reached on the
+    finite prefix before it lands. The bound is explicit. -/
+theorem regular_of_halts (hfix : sys.step sys.normalForm = sys.normalForm)
+    (P : S) (h : sys.Halts P) : ∃ B : ℕ, sys.Regular B P := by
+  obtain ⟨k, hk⟩ := h
+  refine ⟨(Finset.range (k + 1)).sup (fun i => sys.len (sys.step^[i] P)), fun j => ?_⟩
+  rcases le_or_gt j k with hjk | hkj
+  · exact Finset.le_sup (f := fun i => sys.len (sys.step^[i] P))
+      (Finset.mem_range.mpr (Nat.lt_succ_of_le hjk))
+  · rw [iterate_normalForm_of_ge sys hfix P k hk j hkj.le, ← hk]
+    exact Finset.le_sup (f := fun i => sys.len (sys.step^[i] P))
+      (Finset.mem_range.mpr (Nat.lt_succ_of_le le_rfl))
+
+/-- **Blow-up excludes halting.** The two walls do not fail independently: on a
+    system with a fixed normal form, a q-NS singularity witness *is* a q-Collatz
+    divergence witness. Nothing chooses which leg the object belongs to. -/
+theorem not_halts_of_blowsUp (hfix : sys.step sys.normalForm = sys.normalForm)
+    (P : S) (hblow : sys.BlowsUp P) : ¬ sys.Halts P := by
+  intro h
+  obtain ⟨B, hreg⟩ := regular_of_halts sys hfix P h
+  exact sys.not_blowsUp_of_regular B P hreg hblow
+
+/-- **Contrapositive.** A halting orbit never blows up — q-Collatz convergence on
+    an orbit gives q-NS regularity on it for free, with an explicit bound. The
+    implication is one-directional: bounded complexity does **not** imply
+    halting (a bounded orbit may cycle forever), which is exactly why q-Collatz
+    is the harder leg. -/
+theorem not_blowsUp_of_halts (hfix : sys.step sys.normalForm = sys.normalForm)
+    (P : S) (h : sys.Halts P) : ¬ sys.BlowsUp P :=
+  fun hblow => not_halts_of_blowsUp sys hfix P hblow h
+
 /-! ### The leg-independent bar: a scalar cannot decide a state predicate -/
 
 /-- **A state-independent scalar can only decide a constant predicate.** If a
@@ -146,9 +200,10 @@ theorem not_orbit_descent_of_counterexample (P : S)
     carries no dependence on the state `P`) is equivalent to `Pred P` for every
     `P`, then `Pred` is constant on states.
 
-    This is the type mismatch at the heart of the obstruction route: the three
-    Millennium predicates vary over `P : S` at fixed substrate parameter, while
-    `dim_k Obs = 1` supplies one scalar for the entire universe. -/
+    This is the state-indexed form of `ObstructionVerdictCap.verdict_cap`, which
+    is the same `Iff` algebra with the quantifier stripped; the two are kept
+    apart only because that module carries no dependency on this one. See the
+    module docstring for what this does **not** show. -/
 theorem const_of_scalar_faithful {Pred : S → Prop} {v : Prop}
     (hfaithful : ∀ P, v ↔ Pred P) (P Q : S) : Pred P ↔ Pred Q :=
   (hfaithful P).symm.trans (hfaithful Q)
