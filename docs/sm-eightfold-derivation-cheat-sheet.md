@@ -147,15 +147,24 @@ isospin doublet. Blocked behind §4-A and §4-C.
 > derived from an oriented crossing already in the corpus. It resolves
 > charm ≠ strange (both `n = 5`, opposite `T₃`) and closes Gell-Mann–Nishijima.
 >
-> **Read the GMN closure at its true width.** `gellMannNishijima` is stated over
-> six quarks, but `hyperchargeLeft` is the **constant** `1/3` and `emCharge` is
-> two-valued, so the six cases collapse to **two distinct arithmetic rows**
-> (`2/3 = 1/2 + 1/6`, `−1/3 = −1/2 + 1/6`). The Lean is honest — its docstring
-> says `Y` is "entered as SM data here" and the open remainder is a
-> content-bearing class with **no instance**. What overstates is summary prose
-> of the form *"GMN proved for all six quarks — would break under a wrong
-> sign/½"*: the check is real but it is one sign correlation plus one
-> normalisation, checked twice, not six independent confirmations. Bean
+> **Read the GMN closure at its true width — now machine-checked (2026-08-15).**
+> `gellMannNishijima` is stated over six quarks, but `hyperchargeLeft` is the
+> **constant** `1/3` and both `emCharge` and `T3` are functions of the
+> up/down-type bit alone, so the six cases collapse to **two distinct arithmetic
+> rows** (`2/3 = 1/2 + 1/6`, `−1/3 = −1/2 + 1/6`). That collapse is now proved
+> rather than merely observed:
+>
+> | theorem | content |
+> |---|---|
+> | `hyperchargeLeft_constant` | `Y` carries no per-quark information |
+> | `gmn_data_factors_through_weakType` | all three GMN ingredients factor through the up/down bit |
+> | `gmn_check_has_two_distinct_rows` | every quark lands on one of two distinct `(Q, T₃, Y)` rows |
+> | `genWinding_finer_than_gmn_data` | `u`, `c`, `t` differ in winding but share a GMN row — the relation is blind to the generation |
+>
+> The check is real (a wrong sign or a wrong `½` still breaks it) but it is one
+> sign correlation plus one normalisation, verified twice — not six independent
+> confirmations. The wide phrasing is corrected at both sites (the Lean
+> docstring and the chip-away ledger) and can no longer recur unnoticed. Bean
 > `qou-8z5j`. Compare the "4 of 10,000" over-presentation (§6).
 
 ### 3.3 Gauge couplings (3)
@@ -408,7 +417,7 @@ findings was `completed` as of 2026-08-14.**
 | G2 | `RowCapObstruction` tiered *"the obstruction is **proved** … not an observation but a theorem"* | Same construction as `Sym2Gate` and `WeylInvarianceQDeformation`, which **both** get the arithmetic-vs-rep-theory caveat. Every proof in the file is `Nat.choose` arithmetic; the rep theory is carried by `def` names and docstrings. The chapter knows the rule and applies it in 2 of 3 places — omitting it at the one place where it is load-bearing | `qou-b4lo` |
 | G3 | Three generations tiered *"partially derived"* from `{3,5,7,9} \ {9}` | Three is obtained by **removing one element from a four-element set**, on a criterion (continuant harmonicity) unrelated to generation counting. Any criterion eliminating exactly one of four yields "three". The row's own status says the physical bridge is open. Accurate tier: **`open`, with an adjacent proved divisibility lemma** | `qou-a5os` |
 | G4 | `a5` orbital fracture *"falsifiable in principle"* | Unaddressed against **exact free-atom `f`-shell degeneracy**: free-atom states are labelled by `J` with `2J+1` exact by rotational invariance, and observed lifting is spin–orbit in a `J` pattern, not a `3' ⊕ 4` seam. Either already in tension with spectra, or below all resolution — in which case *untestable*, not falsifiable. (Referee objection, not a computed bound.) Also: this block and `cal2-higgs-knot-coupling` have **no `.qa.json` sidecar**, so they are invisible to every per-block checker | `qou-cy2h` |
-| G5 | *"GMN proved for all six quarks"* | Collapses to **two** distinct arithmetic rows — see §3.2 | `qou-8z5j` |
+| G5 | *"GMN proved for all six quarks"* | Collapses to **two** distinct arithmetic rows — see §3.2. **Now machine-checked** (2026-08-15): `gmn_check_has_two_distinct_rows` + `gmn_data_factors_through_weakType` prove the collapse, and `genWinding_finer_than_gmn_data` proves the relation is blind to the generation, so the wide phrasing cannot recur unnoticed | `qou-8z5j` ✅ |
 | G6 | Citing the Weinberg **0.127 %** as an accuracy result | **Still a live guardrail** — but now stated in-paper (2026-08-14). It is the residual after picking the best of **74** swept candidates, and the witness itself records the ansatz as neither supported at `10⁻³` nor falsified at `10⁻²` (`path_c_status: inconclusive`). See §3.3 | `qou-s2pl` ✅ |
 | G7 | Quoting the 2026-08-08 audit's *"1 derived"* as a corpus figure | It is a **two-chapter** figure. See §1 | — |
 | G8 | Citing colour-row proofs at `qou:QOU.StandardModel.ColourStabilizerAction` | The proofs are real but live in `QOU/MathlibExt/Octonion*` (9-module cone, verified `ok=9, err=0`). A reader following the `lean.ref` finds none of them | — |
