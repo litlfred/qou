@@ -61,29 +61,34 @@
 
   and nothing *here* relates the two.
 
-  **The rate half was built afterwards: `QOU/AppendixSurreals/GonshorConvergence.lean`.**
-  Once the expansion has bracketed, each further sign **halves the bracket**, so `n` signs
-  give width `gap₀ / 2ⁿ` (`Bracketed.foldl_gap`) — with the regime shown reachable rather
-  than assumed (`bracketed_plus_minus`), since every statement there is conditional on
-  `Bracketed` and would be vacuous otherwise.  That supplies the
-  exponential-in-prefix-length denominator a Liouville exponent is measured against.
+  **It was built afterwards: `QOU/AppendixSurreals/GonshorConvergence.lean`.**
 
-  ⚠ **What is still missing is a different kind of thing.**  That rate is about `gonshor`'s
-  *own* bracket.  Turning it into `|α − …|` needs the sign sequence to be **the sign
-  expansion of a given `α`** — a map `ℝ → (ℕ → Sign)` that `SignSequence.lean` does not
-  define.  Until it does there is no `α` in the statement to approximate.
+      expansion_approximates (α : ℝ) (n : ℕ) (hb : Bracketed (expandState α n)) (k : ℕ) :
+        |α − ((expandState α (n + k)).value : ℝ)| ≤ ((expandState α n).gap / 2 ^ k : ℚ)
 
-  A second, independent gap: lifting any of this to **birthday**.  `SignSequence.lean`
-  records that Gonshor's `birthday ≤ s.length` is not derivable from the `SurrealField`
-  axioms, because the halving step wants a per-step bound on `birthday (x / 2)` that is not
-  among them.  ⚠ Note this does **not** block the rate above, which never leaves `ℚ`.  The
-  two halves have genuinely different status, and conflating them is what made the bridge
-  look harder than it is.
+  For **any** real `α`: `expandState α` is `α`'s own sign expansion (the greedy rule — emit
+  `+` when the current value undershoots `α`, `-` otherwise), it provably **brackets** `α`
+  at every step (`expandState_brackets`), and once bracketed each further sign **halves**
+  the bracket.  So prefix length controls approximation quality with a denominator
+  exponential in that length — which is exactly the quantity a Liouville exponent is
+  measured against, now for a genuine given real rather than the expansion's own interval.
+
+  Non-vacuity is proved rather than assumed there, since every statement is conditional on
+  `Bracketed`: `expandState_half_bracketed` exhibits a concrete `α` whose expansion reaches
+  the regime.
+
+  ⚠ **One gap remains, and it is the birthday lift.**  `SignSequence.lean` records that
+  Gonshor's `birthday ≤ s.length` is not derivable from the `SurrealField` axioms, because
+  the halving step wants a per-step bound on `birthday (x / 2)` that is not among them.
+  Note this never blocked the rate above, which stays in `ℚ` — the two have genuinely
+  different status, and conflating them is what made the bridge look harder than it was.
 
   So: §1 says the target is **not obstructed**, §2 says part of it is **already proved**,
-  the rate half of the bridge is **built**, and the `ℝ → sign expansion` map plus the
-  birthday lift are **not**.  Nothing here should be read as formalising
-  `conj:diophantine-birthday`.
+  the approximation bridge is **built**, and the lift from rational approximants to surreal
+  *birthday* is **not**.  Nothing here should be read as formalising
+  `conj:diophantine-birthday` — in particular nothing yet compares
+  `expansion_approximates`' rate against `LiouvilleWith`, which is the next step and needs
+  the exponent bookkeeping, not new infrastructure.
 
   A second gap, inherited and unclosed: the Conway fact that every non-dyadic real is born
   on day `ω` is **cited, not proved** — `SurrealField` does not pin the birthday of an

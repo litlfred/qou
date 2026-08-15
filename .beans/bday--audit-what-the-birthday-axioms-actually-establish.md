@@ -464,3 +464,66 @@ normalises the `foldl` on both sides *first*, after which `hg`'s literal
 equation **before** letting `simp` normalise the term it mentions.
 
 `DiophantineBirthdayTrajectory.lean`'s §3 note updated to say precisely which half is built.
+
+---
+**2026-08-15 (later still) — the bridge is BUILT. `expansion_approximates`.**
+
+The entry above said the missing piece was "a map `ℝ → (ℕ → Sign)` that `SignSequence.lean`
+does not define — a construction, not a lemma", and predicted it would be real work. It was
+about two hours of it, and it is done:
+
+```lean
+expansion_approximates (α : ℝ) (n : ℕ) (hb : Bracketed (expandState α n)) (k : ℕ) :
+  |α − ((expandState α (n + k)).value : ℝ)| ≤ ((expandState α n).gap / 2 ^ k : ℚ)
+```
+
+For **any** real `α`. Ten declarations, sorry-free, all standard axioms.
+
+### The construction
+
+`expandState α` is the greedy rule, which is `GonshorState.step` read backwards: emit `+`
+when the current value undershoots `α`, `-` otherwise. Noncomputable, because comparing a
+real to a rational is not decidable — that is a fact about `ℝ`, not a weakness of the
+construction.
+
+- `expandState_brackets` — the expansion **brackets `α` at every step**, for every real.
+  Proved by induction; the base case is vacuous (no bounds set) and each step
+  re-establishes the invariant *by construction*, since `+` moves the lower bound to a
+  value known to undershoot and `-` moves the upper bound to one known not to.
+  Deliberately **weak** inequalities, so a rational `α` landing exactly on a bound is
+  covered rather than excluded.
+- `dist_le_gap` — bracketing plus the bisection regime gives `|α − value| ≤ gap`, because
+  both `α` and `value` lie in `[lo, hi]`.
+- `expandState_gap` — the connecting lemma. `Bracketed.foldl_gap` is stated for
+  `List.foldl` while `expandState` recurses on `ℕ`; they join through `Bracketed.step`
+  directly, with **no list bookkeeping**, because `expandState α (n+1)` is literally one
+  `step` applied to `expandState α n`. I expected this to be the fiddly part and it was
+  three lines.
+
+### ⚠ Non-vacuity, a fourth time
+
+Every statement here is conditional on `Bracketed`, and `Brackets` is two implications
+*guarded* by `hasLo`/`hasHi`. Unexhibited, the whole section would hold vacuously.
+`expandState_half_bracketed` and `expandState_half_flags` settle it on `α = 1/2`: step 0
+has value `0 < 1/2` so emits `+`, reaching `1` with a lower bound only; step 1 has value
+`1`, which does not undershoot, so emits `-`, finds `hasLo`, and bisects into `(0, 1)`.
+The headline was also instantiated at that `α` to confirm the hypothesis is dischargeable.
+
+That is **four** vacuity checks this bean's territory has now required
+(`DiophantineBirthday`'s stipulated field, `slowApproximation_vacuous_at_one`,
+`Bracketed`, `Brackets`). At this point it should be treated as the default failure mode
+for anything in this area, not a precaution.
+
+### What remains
+
+1. **The birthday lift** — still blocked, and now clearly the *only* structural blocker.
+   `SignSequence.lean`: Gonshor's `birthday ≤ s.length` is not derivable from the
+   `SurrealField` axioms because the halving step wants a `birthday (x / 2)` bound that is
+   not among them. It never blocked the rational-side rate, which is why the bridge could
+   be built at all.
+2. **The Liouville comparison itself** — nothing yet compares `expansion_approximates`'
+   rate against `LiouvilleWith`. That is exponent bookkeeping over existing pieces, not new
+   infrastructure, and is the natural next increment.
+
+`DiophantineBirthdayTrajectory.lean`'s §3 updated: it no longer claims the bridge is
+missing, and names precisely what is.

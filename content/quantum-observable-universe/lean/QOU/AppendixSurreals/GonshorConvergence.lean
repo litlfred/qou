@@ -151,4 +151,141 @@ theorem gap_after_plus_minus (l : List Sign) :
   rw [hg] at h
   simpa using h
 
+/-! ### The sign expansion of a real, and the fact that it brackets its target
+
+Everything above concerns `gonshor`'s own bracket.  To compare against a Liouville
+exponent one needs a **given `α`** inside that bracket, which means a map
+`ℝ → sign sequence` — the thing `SignSequence.lean` does not define and whose absence
+`DiophantineBirthdayTrajectory` records as the remaining gap.
+
+It is the obvious greedy rule, and it is `GonshorState.step` read backwards: emit `+` when
+the current value undershoots `α`, `-` otherwise.  Noncomputable because comparing a real
+to a rational is not decidable; that is a statement about `ℝ`, not about this construction. -/
+
+open scoped Classical in
+/-- The state after `n` signs of `α`'s own expansion. -/
+noncomputable def expandState (α : ℝ) : ℕ → GonshorState
+  | 0 => GonshorState.init
+  | n + 1 =>
+      let st := expandState α n
+      st.step (if (st.value : ℝ) < α then Sign.plus else Sign.minus)
+
+/-- `α` lies within the state's bracket — weakly, so that a rational `α` landing exactly on
+a bound is covered rather than excluded. -/
+def Brackets (α : ℝ) (st : GonshorState) : Prop :=
+  (st.hasLo = true → (st.lo : ℝ) ≤ α) ∧ (st.hasHi = true → α ≤ (st.hi : ℝ))
+
+open scoped Classical in
+/-- **The expansion always brackets its target.**
+
+Induction on `n`.  The base case is vacuous — `init` has neither bound set — and each step
+re-establishes the invariant by construction: a `+` moves the *lower* bound up to a value
+known to undershoot `α`, a `-` moves the *upper* bound down to one known not to. -/
+theorem expandState_brackets (α : ℝ) : ∀ n, Brackets α (expandState α n) := by
+  intro n
+  induction n with
+  | zero => exact ⟨by simp [expandState, GonshorState.init], by simp [expandState, GonshorState.init]⟩
+  | succ n ih =>
+    obtain ⟨ihlo, ihhi⟩ := ih
+    rw [expandState]
+    by_cases hlt : ((expandState α n).value : ℝ) < α
+    · -- `+`: the new lower bound is the old value, which undershoots `α`.
+      simp only [hlt, if_true]
+      by_cases hhi : (expandState α n).hasHi = true <;>
+        simp only [GonshorState.step, hhi, if_true, if_false, Bool.not_eq_true] at * <;>
+        exact ⟨fun _ => le_of_lt hlt, by simpa using ihhi⟩
+    · -- `-`: the new upper bound is the old value, which does not undershoot `α`.
+      simp only [hlt, if_false]
+      by_cases hlo : (expandState α n).hasLo = true <;>
+        simp only [GonshorState.step, hlo, if_true, if_false, Bool.not_eq_true] at * <;>
+        exact ⟨by simpa using ihlo, fun _ => not_lt.mp hlt⟩
+
+/-- **The approximation bound.**  When the state both brackets `α` and is in the bisection
+regime, its value is within the bracket width of `α`.
+
+Both `α` and `value` lie in `[lo, hi]` — `α` by `Brackets`, `value` strictly by
+`Bracketed` — so they differ by at most the width. -/
+theorem dist_le_gap {α : ℝ} {st : GonshorState}
+    (hb : Bracketed st) (hbr : Brackets α st) :
+    |α - (st.value : ℝ)| ≤ (st.gap : ℝ) := by
+  obtain ⟨hlo, hhi, hmid, hlt⟩ := hb
+  obtain ⟨bl, bh⟩ := hbr
+  have hα_lo : ((st.lo : ℚ) : ℝ) ≤ α := bl hlo
+  have hα_hi : α ≤ ((st.hi : ℚ) : ℝ) := bh hhi
+  have hv : (st.value : ℝ) = (((st.lo + st.hi) / 2 : ℚ) : ℝ) := by rw [hmid]
+  have hgap : (st.gap : ℝ) = ((st.hi : ℚ) : ℝ) - ((st.lo : ℚ) : ℝ) := by
+    simp [GonshorState.gap]
+  rw [abs_le]
+  constructor <;> · rw [hv, hgap]; push_cast; linarith
+
+/-- **The payoff**: the expansion of `α`, once it has bracketed, approximates `α` to within
+its bracket width — and `Bracketed.foldl_gap` says that width halves per sign.
+
+This is the statement `DiophantineBirthdayTrajectory` wanted and could not state: prefix
+length controls approximation quality, with an exponential dyadic denominator, for a *given*
+real. -/
+theorem dist_le_gap_of_expansion (α : ℝ) (n : ℕ) (hb : Bracketed (expandState α n)) :
+    |α - ((expandState α n).value : ℝ)| ≤ ((expandState α n).gap : ℝ) :=
+  dist_le_gap hb (expandState_brackets α n)
+
+open scoped Classical in
+/-- **The expansion's own bracket halves per sign.**
+
+`Bracketed.foldl_gap` says this for a `List.foldl`; `expandState` is defined by recursion
+on `ℕ` instead, so the two need connecting.  They connect directly through
+`Bracketed.step` — no list bookkeeping required, because `expandState α (n+1)` is literally
+one `step` applied to `expandState α n`. -/
+theorem expandState_gap (α : ℝ) (n : ℕ) (hb : Bracketed (expandState α n)) :
+    ∀ k, Bracketed (expandState α (n + k))
+      ∧ (expandState α (n + k)).gap = (expandState α n).gap / 2 ^ k := by
+  intro k
+  induction k with
+  | zero => simpa using hb
+  | succ k ih =>
+    obtain ⟨hbk, hgk⟩ := ih
+    obtain ⟨hb', hg'⟩ := Bracketed.step _ hbk
+      (if ((expandState α (n + k)).value : ℝ) < α then Sign.plus else Sign.minus)
+    refine ⟨by rw [← Nat.add_assoc]; rw [expandState]; exact hb', ?_⟩
+    rw [← Nat.add_assoc, expandState]
+    rw [hg', hgk, pow_succ]
+    ring
+
+/-- **The bridge, in one statement.**  For *any* real `α`, once its expansion has bracketed,
+`k` further signs approximate `α` to within `gap / 2ᵏ`.
+
+This is what `conj:diophantine-birthday`'s "birthday **trajectory**" needs on the surreal
+side: prefix length controls approximation quality, the denominator is exponential in the
+prefix length, and the target is a genuine given real rather than the expansion's own
+bracket. -/
+theorem expansion_approximates (α : ℝ) (n : ℕ) (hb : Bracketed (expandState α n)) (k : ℕ) :
+    |α - ((expandState α (n + k)).value : ℝ)|
+      ≤ (((expandState α n).gap / 2 ^ k : ℚ) : ℝ) := by
+  obtain ⟨hbk, hgk⟩ := expandState_gap α n hb k
+  have := dist_le_gap_of_expansion α (n + k) hbk
+  rwa [hgk] at this
+
+/-! ### ⚠ Non-vacuity of the expansion, for the same reason as before
+
+`Brackets` is two implications *guarded* by `hasLo` / `hasHi`, and `dist_le_gap_of_expansion`
+is conditional on `Bracketed`.  If the expansion never set those flags, both would hold
+vacuously and this section would prove nothing about any real.
+
+So the regime is exhibited on a concrete target.  For `α = 1/2`: step 0 has value `0 < 1/2`
+and emits `+`, reaching value `1` with a lower bound only; step 1 has value `1`, which does
+*not* undershoot, so it emits `-`, finds `hasLo` set, and bisects into `(0, 1)`. -/
+
+open scoped Classical in
+/-- The expansion of a concrete real reaches the bisection regime — so `Bracketed` is a
+condition the expansion actually meets, not a hypothesis that is never discharged. -/
+theorem expandState_half_bracketed : Bracketed (expandState (1/2 : ℝ) 2) := by
+  refine ⟨?_, ?_, ?_, ?_⟩ <;>
+    norm_num [expandState, GonshorState.step, GonshorState.init]
+
+open scoped Classical in
+/-- …and both bound flags are genuinely set there, so `Brackets` is a real constraint at
+that state rather than two vacuous implications. -/
+theorem expandState_half_flags :
+    (expandState (1/2 : ℝ) 2).hasLo = true ∧ (expandState (1/2 : ℝ) 2).hasHi = true := by
+  norm_num [expandState, GonshorState.step, GonshorState.init]
+
 end QOU.AppendixSurreals
