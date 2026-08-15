@@ -154,6 +154,24 @@ theorem offDiag_mul_neg {d : ℤ} (hd : d ≠ 0) :
       neg_neg]
     ring
 
+/-- **The off-diagonal entry vanishes at the scalar distances.**  `offDiag q (-1) = 0` and
+`offDiag q 1 = 1`, so a generator that *fixes* a tableau contributes a genuinely diagonal
+row — even though the entry rule offers it an off-diagonal slot.
+
+This is the coherence condition for the smaller orbits: the uniform rule in `genMat` would
+give a size-`1` orbit an off-diagonal partner entry, and the construction only works because
+`seminormalParam_mul_neg_one` forces that entry to `0`. -/
+@[simp] theorem offDiag_neg_one (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) : offDiag q (-1) = 0 := by
+  unfold offDiag
+  rw [if_pos (by omega : (-1 : ℤ) < 0), neg_neg, mul_comm,
+    seminormalParam_mul_neg_one q hq0 hq2]
+  ring
+
+/-- The positive scalar distance takes the plain branch. -/
+@[simp] theorem offDiag_one : offDiag q 1 = 1 := by
+  unfold offDiag
+  rw [if_neg (by omega : ¬((1 : ℤ) < 0))]
+
 /-- **A real `q > 0`, `q ≠ 1` is not a root of unity**, so `q ^ (-2d) ≠ 1` for every nonzero
 axial distance `d`.  This is what puts `seminormalParam` off its pole at every generator —
 the archimedean side of `axialDist_ne_zero`. -/
@@ -1024,6 +1042,40 @@ theorem genMat_braid_generic (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ 
       genMat_apply_of_ne q (k + 1) hl hln h2 hAl (by rw [← hD]; exact h4),
       genMat_apply_of_ne q (k + 1) hl hln h3 hBl (by rw [bBT]; exact h1),
       genMat_apply_of_ne q (k + 1) hl hln h5 hEl (by rw [← hFE]; exact h6)]
+    ring
+
+/-- **The braid relation on a size-`1` orbit** — both generators fix `T`.
+
+Both columns are scalar, so each triple product collapses to a single entry times
+`a(d_k)a(d_l)`, and the two sides differ by `a(d_k)a(d_l)·(a(d_k) - a(d_l))`.
+
+That is *not* zero for arbitrary scalars: at `d = ±1` the parameter is `q` or `-q⁻¹`, and
+the mixed product would give `-(q + q⁻¹) ≠ 0`.  The identity holds because the mixed
+configuration cannot occur — `axialDist_eq_of_not_admissible` — which is the only place in
+the whole construction where the braid depends on a *geometric* fact about `μ` rather than
+on the parameter algebra. -/
+theorem genMat_braid_of_both_fixed (k : ℕ) (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cells.card)
+    (hl : 1 ≤ k + 1) (hln : k + 1 + 1 ≤ μ.cells.card)
+    {T : StandardYoungTableau μ}
+    (hka : ¬ SwapAdmissible T k) (hla : ¬ SwapAdmissible T (k + 1))
+    (T' : StandardYoungTableau μ) :
+    (genMat q k hk hkn * genMat q (k + 1) hl hln * genMat q k hk hkn) T' T
+      = (genMat q (k + 1) hl hln * genMat q k hk hkn * genMat q (k + 1) hl hln) T' T := by
+  classical
+  have hd : axialDist T k = axialDist T (k + 1) :=
+    axialDist_eq_of_not_admissible T hk (by omega) hka hla
+  rw [genMat_mul_apply_of_not_admissible q k hk hkn
+      (genMat q k hk hkn * genMat q (k + 1) hl hln) hka T',
+    genMat_mul_apply_of_not_admissible q (k + 1) hl hln (genMat q k hk hkn) hla T',
+    genMat_mul_apply_of_not_admissible q (k + 1) hl hln
+      (genMat q (k + 1) hl hln * genMat q k hk hkn) hla T',
+    genMat_mul_apply_of_not_admissible q k hk hkn (genMat q (k + 1) hl hln) hka T']
+  by_cases h : T' = T
+  · -- the two sides become the same product once `hd` identifies the scalars
+    subst h
+    rw [genMat_diag, genMat_diag, hd]
+  · rw [genMat_of_not_admissible q k hk hkn h hka,
+      genMat_of_not_admissible q (k + 1) hl hln h hla]
     ring
 
 end Braid

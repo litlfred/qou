@@ -118,6 +118,22 @@ theorem seminormalParam_add_neg (d : ℤ) (hq : q ≠ 0) (h : q ^ (-2 * d) ≠ 1
   rw [seminormalParam, seminormalParam, hpow]
   exact add_inv_aux hx0 h
 
+/-- **At a scalar distance the block degenerates: `a(1)·a(-1) = -1`.**
+
+The two size-`1` eigenvalues `q` and `-q⁻¹` multiply to `-1`, so `1 + a(d)a(-d)` — the
+off-diagonal factor of `seminormalBlock`, and the `d < 0` branch of
+`SeminormalRep.offDiag` — **vanishes** exactly at `d = ±1`.
+
+This is what makes the smaller orbits consistent.  A size-`1` orbit is a `1 × 1` block
+sitting inside the same uniform entry rule as every other; the rule would supply an
+off-diagonal entry `1 + a(d)a(-d)` for it, and the whole construction only coheres because
+that entry is zero.  Equivalently: `seminormalBlock` at `a = q` has determinant `-1` and
+trace `q - q⁻¹`, and is already diagonal. -/
+theorem seminormalParam_mul_neg_one (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
+    seminormalParam q 1 * seminormalParam q (-1) = -1 := by
+  rw [seminormalParam_one q hq hq2, seminormalParam_neg_one q hq hq2]
+  field_simp
+
 /-- **The three parameters of a `⟨s_k, s_{k+1}⟩`-orbit satisfy one relation.**
 
 At distances `p`, `r` and their sum — the only distances that occur across such an orbit
