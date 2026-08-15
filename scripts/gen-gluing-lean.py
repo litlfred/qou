@@ -164,3 +164,91 @@ if __name__ == "__main__":
     for nm in sys.argv[1:]:
         d = build(nm)
         print(emit(d) if d else f"-- {nm}: skipped")
+
+
+# ─── certification emission (bean qou-glhi) ──────────────────────────────────
+#
+# Emits the `SixOneCertified` template, which is VALIDATED in-repo: the generated
+# cleared identities are assembled into `ShapedTriangulation.SatisfiesEdgeEquations`.
+#
+# ⚠ TWO TRAPS BAKED INTO THIS TEMPLATE, both invisible from the statements.
+#
+# 1. One `cleared_k` lemma PER LITERAL EDGE INDEX, never one tactic block under
+#    `fin_cases`.  Under `fin_cases k` the index becomes `⟨0, ⋯⟩`, on which
+#    `Matrix.cons_val_zero` and friends do NOT fire — the exponent matrix stays
+#    unreduced and `linear_combination` fails with a bare "ring expressions not equal",
+#    which reads like a wrong cofactor rather than a stuck `simp`.  `Fin.isValue` and
+#    `Fin.mk_zero` do not help.
+# 2. `Shape.ne_one` is derived from the generated `one_sub_zⱼ_ne_zero`, not proved
+#    separately — `1 - z ≠ 0` and `z = 1` are contradictory.
+#
+# Limited to n ≤ 8: `Fin.prod_univ_{two..eight}` is what Mathlib provides, and the
+# template unfolds the product with it.  Larger triangulations need iterated
+# `Fin.prod_univ_succ` and are NOT emitted rather than emitted broken.
+
+_PROD_UNIV = {2: "two", 3: "three", 4: "four", 5: "five",
+              6: "six", 7: "seven", 8: "eight"}
+
+# Index reduction for `![...] k` at a LITERAL k.  Mathlib names only cons_val_zero /
+# one / two / three; beyond index 3 there is no `cons_val_four`, so `cons_val_succ`
+# (plus `cons_val'` and `Matrix.cons_val_fin_one`) is what carries n = 5..8.  Omitting
+# it makes every n >= 5 manifold fail with a bare "ring expressions not equal", which
+# looks like a wrong cofactor rather than an unreduced matrix application.
+_MATRIX_SIMP = ("Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, "
+                "Matrix.cons_val_two, Matrix.cons_val_three, Matrix.tail_cons, "
+                "Matrix.cons_val_succ, Matrix.cons_val_fin_one")
+
+
+def emit_certification(d):
+    """Emit the SatisfiesEdgeEquations certification for one manifold."""
+    nm = d["name"]
+    ident = nm.replace("_", "").replace("-", "")
+    n = d["n"]
+    if n not in _PROD_UNIV:
+        return (f"-- {nm}: {n} tetrahedra — no `Fin.prod_univ_{n}` in Mathlib, so the\n"
+                f"-- certification template does not apply.  Needs iterated\n"
+                f"-- `Fin.prod_univ_succ`.  NOT emitted rather than emitted broken.\n")
+    L, A = [], lambda s: L.append(s)
+    A(f"/-! ### `{nm}` certified -/\n")
+    A(f"namespace Cert{ident}")
+    A(f"open QOU.Knot.GeneratedGluing.K{ident}\n")
+    shapes = ",\n     ".join(
+        f"⟨z{j} t, z{j}_ne_zero ht, fun h => one_sub_z{j}_ne_zero ht (by rw [h]; ring)⟩"
+        for j in range(n))
+    A(f"/-- The {n} `{nm}` shapes, at an arbitrary root of the minimal polynomial. -/")
+    A(f"noncomputable def triangulation {{t : ℂ}} (ht : minpoly t = 0) :")
+    A(f"    ShapedTriangulation {n} :=")
+    A(f"  ⟨![{shapes}]⟩\n")
+    edge_rows = [e[0] for e in d["eqs"]]   # build() stores (row, lp, rp, cofactor)
+    rows = []
+    for row in edge_rows:
+        trip = ", ".join(f"![{row[3*j]},{row[3*j+1]},{row[3*j+2]}]" for j in range(n))
+        rows.append(f"![{trip}]")
+    A(f"/-- `{nm}`'s edge exponents, from SnapPy's integer matrix. -/")
+    A(f"def gluing : GluingData {n} {len(edge_rows)} where")
+    A("  exp := ![" + ",\n           ".join(rows) + "]\n")
+    for k in range(len(edge_rows)):
+        A(f"private theorem cleared_{k} {{t : ℂ}} (ht : minpoly t = 0) :")
+        A(f"    (∏ i, (((triangulation ht).tet i).z ^ gluing.exp {k} i 0")
+        A(f"            * (((triangulation ht).tet i).z - 1) ^ gluing.exp {k} i 2))")
+        A(f"      = (∏ i, ((1 - ((triangulation ht).tet i).z) ^ gluing.exp {k} i 1")
+        A(f"            * ((triangulation ht).tet i).z ^ gluing.exp {k} i 2)) := by")
+        # FULL `simp`, not `simp only`.  A curated `simp only` list works up to n = 4 and
+        # then silently stops: there is no `Matrix.cons_val_four`, and `cons_val_succ`
+        # does not fire on a literal `4 : Fin 5` because it is not syntactically a
+        # `Fin.succ`.  The matrix application survives into the goal and the proof fails
+        # with a bare "ring expressions not equal" — which reads as a wrong cofactor
+        # rather than an unreduced index.  Measured: n <= 4 passes either way, n >= 5
+        # needs full simp.
+        A(f"  simp [Fin.prod_univ_{_PROD_UNIV[n]}, triangulation, gluing]")
+        A(f"  linear_combination edge_{k} ht\n")
+    A(f"/-- **`{nm}` satisfies its edge gluing equations**, at every root of the shape")
+    A("field's minimal polynomial. -/")
+    A("theorem satisfiesEdgeEquations {t : ℂ} (ht : minpoly t = 0) :")
+    A("    (triangulation ht).SatisfiesEdgeEquations gluing := by")
+    A("  refine satisfiesEdgeEquations_of_cleared _ _ ?_")
+    A("  intro k")
+    A("  fin_cases k")
+    A("  exacts [" + ", ".join(f"cleared_{k} ht" for k in range(len(edge_rows))) + "]\n")
+    A(f"end Cert{ident}\n")
+    return "\n".join(L)

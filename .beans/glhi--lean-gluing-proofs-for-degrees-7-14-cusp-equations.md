@@ -172,3 +172,58 @@ remaining 18, since it removes the fiddliest part of the template.
 2. Cusp equations — untouched.
 3. The other 18 manifolds — now **mechanical**: `SixOneCertified` is the template, and
    the generator can emit it. Recommend the `∏`-form change above first.
+
+---
+**2026-08-10 (later still) — 16 manifolds certified, generated. Item 3 is DONE.**
+
+`QOU/Knot/GeneratedCertified.lean` — **16 `SatisfiesEdgeEquations` certifications**,
+machine-generated from the `SixOneCertified` template, sorry-free on standard axioms:
+4₁ 5₂ 7₂ 6₂ 8₂₀ 9₄₂ 7₄ 12n242 v3227 s776 m371 7₇ 8₂₁ 6₃ 7₃ 8₁. Emitter added to
+`scripts/gen-gluing-lean.py` as `emit_certification`.
+
+The generated identities from `glnl` are no longer standalone: each now certifies a
+`ShapedTriangulation` the rest of the corpus can consume.
+
+### ⚠ My proposed "generator improvement" was WRONG, and I checked before building on it
+
+The previous entry recommended emitting the cleared identity as a `Finset` product to
+delete the bridging step. **That does not work**: the ∏ form still indexes the shapes by
+`Fin n`, so the `Matrix` application survives and the reduction problem is unchanged. The
+recommendation is withdrawn; the validated flattened-plus-bridge template is what shipped.
+
+### ⚠ THE TRAP THAT COST THE MOST, and it hides at exactly n = 5
+
+A curated `simp only [Matrix.cons_val_zero, cons_val_one, cons_val_two, cons_val_three,
+…]` works perfectly **up to n = 4** and then silently stops:
+
+- Mathlib names `cons_val_zero/one/two/three` and **no `cons_val_four`**;
+- `cons_val_succ` does **not** fire on a literal `4 : Fin 5`, because that is not
+  syntactically a `Fin.succ`.
+
+So the matrix application survives into the goal and the proof fails with a bare
+**"ring failed, ring expressions not equal"** — which reads as a *wrong cofactor*, sending
+you to check the arithmetic, when the arithmetic is fine and a `simp` is stuck.
+
+**This is the second time in this bean that an unreduced `simp` disguised itself as a
+`ring` failure.** The first was `fin_cases` leaving `⟨0, ⋯⟩`. Both were found only by
+dumping the goal; neither error message points anywhere useful.
+
+Fix: **full `simp`, not `simp only`**. Measured — `n ≤ 4` passes either way, `n ≥ 5`
+needs it. Recorded as a comment at the emission site, since a future editor "tightening"
+it back to `simp only` would break every `n ≥ 5` manifold and get a misleading error.
+
+### A process note
+
+The first generation run emitted 23 lines and I nearly missed it: I had piped stderr to
+`/dev/null`, so a `KeyError: 'edges'` — my emitter assumed a key the real `build()` does
+not return — vanished silently. **Suppressing stderr on a code generator turns a crash
+into an empty file.**
+
+### Remaining on this bean
+
+1. **Degrees 7–14** — untouched.
+2. **Cusp equations** — untouched.
+3. ~~Wiring~~ — **done**: generic bridge, hand-validated template, 16 generated.
+   The three manifolds with `n = 9` (9₃₅, o9_00000) and `n ≥ 9` generally are **not**
+   emitted: Mathlib stops at `Fin.prod_univ_eight`, and the emitter says so rather than
+   emitting something broken.
