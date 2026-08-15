@@ -30,32 +30,47 @@ The P-vs-NP direction of this already exists sorry-free upstream
 `SkeinHorizonLowerBound`); this file adds the other two to the same pattern and
 then records the fact all three share.
 
-## The fact all three share: a counterexample is a STATE, not a scalar
+## A scalar cannot decide halting POINTWISE — and what that does not show
 
 Each predicate is a predicate on `P : S` — it varies **within** a fixed universe,
-at a fixed substrate parameter. An obstruction class evaluated at a fixed `q₀` is
-**one scalar** for the whole universe (`thm:qou-obstruction-reduction`:
-`dim_k Obs = 1`). A state-independent scalar can only be equivalent to a
-predicate that is **constant** on states (`const_of_scalar_faithful`), and the
-halting predicate is **not** constant — witnessed concretely and unconditionally
-by `stallAbove` below, on which `1` halts and `2` does not
-(`stallAbove_halts_one`, `stallAbove_not_halts_two`), hence
-`halts_not_constant`.
+at a fixed substrate parameter, whereas an obstruction class evaluated at a fixed
+`q₀` is one scalar for the whole universe (`thm:qou-obstruction-reduction`:
+`dim_k Obs = 1`). A state-independent verdict can only be equivalent to a
+predicate that is **constant** on states (`const_of_scalar_faithful`), and
+halting is **not** constant — `stallAbove` below halts at `1` and not at `2`
+(`stallAbove_halts_one`, `stallAbove_not_halts_two`, hence
+`halts_not_constant`). So `no_scalar_faithful_to_halts`: no scalar is faithful to
+halting **pointwise in the state**.
 
-So the type mismatch alone bars the route, before any barrier from complexity
-theory is invoked. This is the sharpened, leg-independent form of the
-algebrization caveat that `conj:qou-p-neq-np` currently records for the P-vs-NP
-leg only.
+**This does not bar the obstruction route, and must not be read as doing so.**
+The corpus never claims pointwise faithfulness. Every faithfulness claim it makes
+is scalar ↔ a *single universally-quantified* proposition — `κ_C = 0` iff
+**every** element reduces (`conj:q-collatz`); `NS(A) = 0` iff **the universe** is
+NS-regular (`def:ns-obstruction`); `PNeqNPInQOU` is already `¬ ∃ c k, ∀ m n, …`
+(`CountingModuliGrade`). A scalar *can* be faithful to a `∀`-statement — trivially,
+`⟨_, Iff.rfl⟩` inhabits `∃ v, (v ↔ ∀ P, Halts P)`. So the result below is a
+**scope-(a)** statement about one claim shape, not a structural exclusion of the
+route. The genuine barrier for that route is the genericity argument in
+`ObstructionGenericity` plus algebrization, and it is argued there, not here.
+
+## Correction record (2026-08-15)
+
+An earlier revision of this docstring claimed "the type mismatch alone bars the
+route, before any barrier from complexity theory is invoked" — a scope-(b)
+structural exclusion with no proved invariant covering the corpus's actual claim
+shape. It was wrong: it attacked pointwise faithfulness, which nothing in the
+corpus asserts. Caught by adversarial review before merge; the theorems were
+sound, only the interpretation was over-claimed. Recorded per AGENTS.md
+§"Before declaring refuted".
 
 ## Honesty / anti-laundering
 
 Nothing here proves or refutes any of the three conjectures. Every theorem is a
-contrapositive of an existing sorry-free descent lemma, or a statement about
-what a hypothetical counterexample would destroy. The concrete `stallAbove`
-witness is a two-line dynamical system, **not** a Skein module — it establishes
-only that `Halts` is non-constant *in general*, which is exactly what
-`const_of_scalar_faithful` needs as input. No claim is made that the q-Collatz
-cone itself has a non-halting element; that is the open conjecture.
+contrapositive of an existing sorry-free descent lemma, or a statement about what
+a hypothetical counterexample would destroy. The `stallAbove` witness is a
+two-line dynamical system, **not** a Skein module — it establishes only that
+`Halts` is non-constant in general. No claim is made that the q-Collatz cone
+itself has a non-halting element; that is the open conjecture.
 
 -- Ref: [cardona2021] https://doi.org/10.1073/pnas.2026818118
 -/
@@ -177,11 +192,13 @@ theorem halts_not_constant :
   intro h
   exact stallAbove_not_halts_two ((h 1 2).mp stallAbove_halts_one)
 
-/-- **The bar, assembled (sorry-free).** No state-independent verdict `v` is
-    faithful to halting on `stallAbove`. Any obstruction whose value at the
-    substrate parameter does not depend on the state therefore fails to be
-    equivalent to the halting predicate — the leg-independent form of the
-    algebrization caveat. -/
+/-- **No scalar is faithful to halting POINTWISE (sorry-free).** No
+    state-independent verdict `v` satisfies `∀ P, v ↔ Halts P` on `stallAbove`.
+
+    **Scope (a).** This excludes the *pointwise* claim shape only. It does **not**
+    exclude a scalar faithful to the universally-quantified statement
+    `∀ P, Halts P` — that is trivially inhabited, and it is the shape the corpus
+    actually uses. See the module docstring's correction record. -/
 theorem no_scalar_faithful_to_halts (v : Prop) :
     ¬ (∀ P : ℕ, v ↔ stallAbove.Halts P) := by
   intro hfaithful

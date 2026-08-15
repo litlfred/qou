@@ -2761,6 +2761,113 @@ export const references: CSLData[] = [
     DOI: "10.1017/S0305004100068936",
   }),
 
+  // ── Complexity-theoretic barriers ─────────────────────────────
+  // The three classical barriers plus the algebraic-natural-proofs
+  // refinement. Named in six QOU Lean docstrings
+  // (SkeinObservationBridge, SkeinHorizonLowerBound,
+  // PhysicalIntractability, CocenterTraceFactor,
+  // PNeqNpWallUnification, MagnitudeTraceCommutator) and in the
+  // obstruction-route caveats on all three Millennium legs.
+  ref({
+    id: "bakergillsolovay1975",
+    type: "article-journal",
+    title: "Relativizations of the P =? NP Question",
+    author: [
+      { family: "Baker", given: "T." },
+      { family: "Gill", given: "J." },
+      { family: "Solovay", given: "R." },
+    ],
+    "container-title": "SIAM Journal on Computing",
+    volume: 4,
+    issue: 4,
+    page: "431-442",
+    issued: { "date-parts": [[1975]] },
+    DOI: "10.1137/0204037",
+  }),
+
+  ref({
+    id: "razborovrudich1997",
+    type: "article-journal",
+    title: "Natural Proofs",
+    author: [
+      { family: "Razborov", given: "A. A." },
+      { family: "Rudich", given: "S." },
+    ],
+    "container-title": "Journal of Computer and System Sciences",
+    volume: 55,
+    issue: 1,
+    page: "24-35",
+    issued: { "date-parts": [[1997]] },
+    DOI: "10.1006/jcss.1997.1494",
+  }),
+
+  ref({
+    id: "aaronsonwigderson2009",
+    type: "article-journal",
+    title: "Algebrization: A New Barrier in Complexity Theory",
+    author: [
+      { family: "Aaronson", given: "S." },
+      { family: "Wigderson", given: "A." },
+    ],
+    "container-title": "ACM Transactions on Computation Theory",
+    volume: 1,
+    issue: 1,
+    page: "2:1-2:54",
+    issued: { "date-parts": [[2009]] },
+    DOI: "10.1145/1490270.1490272",
+  }),
+
+  ref({
+    id: "grochow2017",
+    type: "article",
+    title:
+      "Towards an algebraic natural proofs barrier via polynomial identity testing",
+    author: [
+      { family: "Grochow", given: "J. A." },
+      { family: "Kumar", given: "M." },
+      { family: "Saks", given: "M." },
+      { family: "Saraf", given: "S." },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2017]] },
+    URL: "https://arxiv.org/abs/1701.01717",
+  }),
+
+  // ── Geometric Complexity Theory: the programme and its limit ──
+  ref({
+    id: "mulmuleysohoni2001",
+    type: "article-journal",
+    title:
+      "Geometric Complexity Theory I: An Approach to the P vs. NP and Related Problems",
+    author: [
+      { family: "Mulmuley", given: "K. D." },
+      { family: "Sohoni", given: "M." },
+    ],
+    "container-title": "SIAM Journal on Computing",
+    volume: 31,
+    issue: 2,
+    page: "496-526",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1137/S009753970038715X",
+  }),
+
+  ref({
+    id: "burgisser2019",
+    type: "article-journal",
+    title: "No occurrence obstructions in geometric complexity theory",
+    author: [
+      { family: "Bürgisser", given: "P." },
+      { family: "Ikenmeyer", given: "C." },
+      { family: "Panova", given: "G." },
+    ],
+    "container-title": "Journal of the American Mathematical Society",
+    volume: 32,
+    issue: 1,
+    page: "163-193",
+    issued: { "date-parts": [[2019]] },
+    DOI: "10.1090/jams/908",
+  }),
+
   // ── Aharonov-Jones-Landau 2009: BQP approx of Jones ───────────
   ref({
     id: "aharonov2009",

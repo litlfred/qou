@@ -8,6 +8,9 @@ export default conjecture({
   uses: [
     "rem:substrate-gm-torsion",
     "thm:qou-obstruction-reduction",
+    "rem:skein-filtration-trichotomy",
+    "conj:qou-p-neq-np",
+    "prop:ns-kummer-specialisation",
   ],
   tags: [
     "tier:famous",
@@ -21,7 +24,13 @@ export default conjecture({
     "jones-polynomial",
     "markov-trace",
   ],
-  cites: ["collatz1937", "lagarias2010"],
+  cites: [
+    "collatz1937",
+    "lagarias2010",
+    "aaronsonwigderson2009",
+    "grochow2017",
+    "razborovrudich1997",
+  ],
   authorNotes: [
     {
       kind: "note",
