@@ -214,7 +214,19 @@ def main() -> int:
         "partition of n=12, which is what hangs He-4. Tests whether representing "
         "them by structure reproduces chi_numpy exactly and what it saves."
     )
-    w.save()
+    # AGENTS.md §"q0 anchor convention" rule 4: a new witness must record which
+    # pin it used, so a reader can place it on the ideal/muon vs experimental/
+    # proton layer without inferring it from a call site. This probe reads
+    # Q_50_DIGIT_STR — the package layer, i.e. the experimental PROTON pin,
+    # which is the standing default for new compute (owner directive
+    # 2026-08-07).
+    #
+    # These go through save(extra=...) and NOT add_data(): the audit reads
+    # `body.get("q0Anchor")` at the TOP LEVEL of the witness, while add_data
+    # nests under `data`. Recording them in the wrong place looks correct in
+    # the file and leaves the witness classified Q0_ANCHOR_MISSING — which is
+    # exactly what happened on the first attempt here.
+    w.save({"q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR})
     print(f"\n  worst rel_diff: {mp.nstr(worst_rel, 6)}   all below 1e-12: {all_close}")
     print("Saved witness: hoefsmit-sparse-prototype.witness.json")
     return 0 if all_close else 1
