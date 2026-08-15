@@ -42,9 +42,10 @@ mp.mp.dps = 50
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
+sys.path.insert(0, str(HERE.parent / "tools" / "qou-substrate" / "python"))
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from tr_m_wenzl_bridge_mpfr import _load_y_lambda  # noqa: E402
+from tr_m_wenzl_bridge_mpfr import _Y_LAMBDA_DEFAULT, _load_y_lambda  # noqa: E402
 from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402
 from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402
@@ -59,12 +60,47 @@ def _ensure_y_lambda(n: int) -> None:
     on-demand. The only wall for the FULL Wedderburn χ below is p(n) (partition
     count), not y_λ.
     """
-    W = json.loads((HERE / "y-lambda-mpfr-witness.json").read_text(encoding="utf-8"))
+    # Read the SAME table `_load_y_lambda` reads and `extend_y_lambda_tower`
+    # writes — the proton-pinned one (`_Y_LAMBDA_DEFAULT`). Hardcoding
+    # `y-lambda-mpfr-witness.json` here was a muon/proton straddle (bean tnjb):
+    # coverage was checked against the muon table while the values came from
+    # the proton table, so a proton table missing H_n would pass this gate and
+    # then raise KeyError one line later.
+    W = json.loads(_Y_LAMBDA_DEFAULT.read_text(encoding="utf-8"))
     if str(n) not in W.get("tables_by_n", {}):
         from y_lambda_tower_infra import extend_y_lambda_tower
         print(f"     (y_λ tower has no H{n}; extending closed-form, gated)",
               flush=True)
         extend_y_lambda_tower(n)   # closed-form, gated, non-destructive merge
+
+
+def _stamp_anchor(out: Path, cached: dict) -> None:
+    """Backfill `q0Anchor`/`q0Value` on a cached witness that predates the field.
+
+    DERIVED, never assumed: the anchor is read back off the witness's own
+    recorded `q_0_50dps` by matching it against the canonical pins, the same
+    way `audits/q0_anchor_consistency_audit.py` does. A witness whose q matches
+    neither pin is left alone rather than mislabelled — an unlabelled witness
+    is honest, a wrongly-labelled one is the `tnjb` flip this field exists to
+    catch. Cheap (a cache-hit re-run costs seconds), so the corpus self-heals
+    without recomputing an hour of χ.
+    """
+    if cached.get("q0Anchor"):
+        return
+    recorded = str(cached.get("q_0_50dps", ""))
+    if not recorded:
+        return
+    import qou_substrate.witness as _qw
+    for anchor in ("proton", "muon"):
+        pin = _qw._q0_value_for_anchor(anchor)
+        if pin and recorded[:14] == pin[:14]:
+            cached["q0Anchor"] = anchor
+            cached["q0Value"] = recorded
+            out.write_text(json.dumps(cached, indent=2, ensure_ascii=False),
+                           encoding="utf-8")
+            print(f"             (stamped q0Anchor={anchor} from recorded q₀)",
+                  flush=True)
+            return
 
 
 def compute_atom(atom: str, q: mp.mpf) -> dict:
@@ -83,6 +119,7 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
                 and cached.get("n_partitions") == cached.get("n_partitions_total")):
             print(f"  {atom:>10} cached ({cached['n_partitions']} λ, complete) "
                   f"— skip recompute", flush=True)
+            _stamp_anchor(out, cached)
             return {"atom": atom, "n_strands": n, "Z": Z, "N": N,
                     "n_partitions": cached["n_partitions"],
                     "tr_M_at_q0": cached["tr_M_at_q0"],
@@ -131,6 +168,11 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
         "producer": "rust-chi-q-via-gp-lossless",
         "convention": "sign-only-crossings",
         "q_0_50dps": str(q),
+        # Declare the pin the audit reads. Not "ambiguous" any more: q comes
+        # from q_parameter.Q_50_DIGIT_STR and y_λ from the proton-pinned table,
+        # so both inputs sit on the experimental layer (AGENTS.md 2026-08-07).
+        "q0Anchor": "proton",
+        "q0Value": str(q),
         "dps": 50,
         "n_strands": n,
         "atom": atom,

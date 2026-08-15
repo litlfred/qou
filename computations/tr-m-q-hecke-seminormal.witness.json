@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-07-05T11:23:04.662745+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "computedAt": "2026-08-15T04:00:41.267500+00:00",
+  "commitSha": "785e58e31ab9309ae366db94986a19705e949c96",
   "assertions": [
     {
       "name": "q_hecke_seminormal_closes_gap[proton]_to_1e-3",
@@ -36,9 +36,9 @@
     },
     {
       "name": "q_hecke_seminormal_closes_gap[deuteron]_to_1e-6",
-      "computed": "False",
+      "computed": "True",
       "expected": "True",
-      "passed": false
+      "passed": true
     },
     {
       "name": "q_hecke_seminormal_closes_gap[tritium]_to_1e-3",
@@ -48,9 +48,9 @@
     },
     {
       "name": "q_hecke_seminormal_closes_gap[tritium]_to_1e-6",
-      "computed": "False",
+      "computed": "True",
       "expected": "True",
-      "passed": false
+      "passed": true
     },
     {
       "name": "q_hecke_seminormal_closes_gap[helium-3]_to_1e-3",
@@ -60,17 +60,17 @@
     },
     {
       "name": "q_hecke_seminormal_closes_gap[helium-3]_to_1e-6",
-      "computed": "False",
+      "computed": "True",
       "expected": "True",
-      "passed": false
+      "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 5983,
+  "allPassed": true,
+  "durationMs": 4150286,
   "computation": "tr-m-q-hecke-seminormal",
   "scriptFile": "tr_m_q_hecke_seminormal.py",
-  "scriptHash": "2e09fee63ac7",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "ae2d73dbbdc4",
+  "scriptCommitSha": "29b209ce93bb1a334c55cd14773b4260d251058f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -80,9 +80,9 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Closes the character gap in the partition-sum tr_M path: tr_M(β) = Σ_λ y_λ(q) · χ^λ_q(β) via canonical Wenzl y_λ (numerical-q-from-start) + Hoefsmit seminormal χ^λ_q at q_0. Cross-checks against `markov_trace_recursive` reference (atomic-tr-m-mpfr-50dps.witness.json). Closes the residual gap identified in tr-m-jones-markov-cross-check.witness.json (rel err ~55-80% with q=1 MN character → expected ~1e-6 with q-Hecke seminormal character).",
   "data": {
@@ -93,13 +93,13 @@
         "N": 0,
         "A": 1,
         "n_strands": 3,
-        "canonical_abs_tr_M": 1.0653062286131671,
-        "q_hecke_partition_sum": 1.0653061347917407,
-        "q_hecke_abs": 1.0653061347917407,
-        "rel_err_vs_canonical": 8.806991256196888e-08,
+        "canonical_abs_tr_M": 1.1457597817199365,
+        "q_hecke_partition_sum": 1.1457596924573035,
+        "q_hecke_abs": 1.1457596924573035,
+        "rel_err_vs_canonical": 7.790693519444693e-08,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 0.1457031879999704,
+        "elapsed_sec": "0.010",
         "non_zero_partitions": 3,
         "top_3_contributions": [
           {
@@ -107,9 +107,9 @@
               3
             ],
             "dim": 1,
-            "y_at_q0": 0.41539578633234286,
-            "chi_q_at_q0": 1.3824944633925964,
-            "contribution": 0.574282374721078
+            "y_at_q0": 0.5054042265039308,
+            "chi_q_at_q0": 1.3824944633925966,
+            "contribution": 0.6987185449169022
           },
           {
             "partition": [
@@ -117,9 +117,9 @@
               1
             ],
             "dim": 2,
-            "y_at_q0": 0.28092963398059057,
-            "chi_q_at_q0": 1.8077030637786238,
-            "contribution": 0.5078373600529209
+            "y_at_q0": 0.2472978867480346,
+            "chi_q_at_q0": 1.8077030637786236,
+            "contribution": 0.4470411475404012
           },
           {
             "partition": [
@@ -128,9 +128,9 @@
               1
             ],
             "dim": 1,
-            "y_at_q0": 0.022744945706475995,
-            "chi_q_at_q0": -0.7392235707764777,
-            "contribution": -0.0168135999822583
+            "y_at_q0": 0.0,
+            "chi_q_at_q0": -0.7392235707764775,
+            "contribution": -0.0
           }
         ]
       },
@@ -140,33 +140,33 @@
         "N": 1,
         "A": 1,
         "n_strands": 3,
-        "canonical_abs_tr_M": 0.9232332971861535,
-        "q_hecke_partition_sum": 0.9232332219479542,
-        "q_hecke_abs": 0.9232332219479542,
-        "rel_err_vs_canonical": 8.149424372661301e-08,
+        "canonical_abs_tr_M": 0.9877437563653397,
+        "q_hecke_partition_sum": 0.9877436881158117,
+        "q_hecke_abs": 0.9877436881158117,
+        "rel_err_vs_canonical": 6.909639022192054e-08,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 0.00032228699978986697,
+        "elapsed_sec": "0.005",
         "non_zero_partitions": 3,
         "top_3_contributions": [
+          {
+            "partition": [
+              3
+            ],
+            "dim": 1,
+            "y_at_q0": 0.5054042265039308,
+            "chi_q_at_q0": 1.1221068216024752,
+            "contribution": 0.5671175302267832
+          },
           {
             "partition": [
               2,
               1
             ],
             "dim": 2,
-            "y_at_q0": 0.28092963398059057,
-            "chi_q_at_q0": 1.7008886061270454,
-            "contribution": 0.4778300135610277
-          },
-          {
-            "partition": [
-              3
-            ],
-            "dim": 1,
-            "y_at_q0": 0.41539578633234286,
-            "chi_q_at_q0": 1.1221068216024748,
-            "contribution": 0.466118445508446
+            "y_at_q0": 0.2472978867480346,
+            "chi_q_at_q0": 1.7008886061270452,
+            "contribution": 0.42062615788902846
           },
           {
             "partition": [
@@ -175,9 +175,9 @@
               1
             ],
             "dim": 1,
-            "y_at_q0": 0.022744945706475995,
-            "chi_q_at_q0": -0.9107622145530778,
-            "contribution": -0.020715237121519597
+            "y_at_q0": 0.0,
+            "chi_q_at_q0": -0.9107622145530775,
+            "contribution": -0.0
           }
         ]
       },
@@ -187,13 +187,13 @@
         "N": 1,
         "A": 2,
         "n_strands": 6,
-        "canonical_abs_tr_M": 0.3882864715594089,
-        "q_hecke_partition_sum": 0.38835712256235444,
-        "q_hecke_abs": 0.38835712256235444,
-        "rel_err_vs_canonical": 0.00018195587052472306,
+        "canonical_abs_tr_M": 0.5751723291658843,
+        "q_hecke_partition_sum": 0.5751722439177743,
+        "q_hecke_abs": 0.5751722439177743,
+        "rel_err_vs_canonical": 1.4821316272144275e-07,
         "agrees_to_1e_minus_3": true,
-        "agrees_to_1e_minus_6": false,
-        "elapsed_sec": 0.003163012999948478,
+        "agrees_to_1e_minus_6": true,
+        "elapsed_sec": "0.250",
         "non_zero_partitions": 11,
         "top_3_contributions": [
           {
@@ -202,18 +202,18 @@
               1
             ],
             "dim": 5,
-            "y_at_q0": 0.05896068140092541,
-            "chi_q_at_q0": 3.2163173422358935,
-            "contribution": 0.1896362620998417
+            "y_at_q0": 0.07895296247592667,
+            "chi_q_at_q0": 3.216317342235895,
+            "contribution": 0.2539377824322228
           },
           {
             "partition": [
               6
             ],
             "dim": 1,
-            "y_at_q0": 0.05918771693112389,
-            "chi_q_at_q0": 1.55987019956416,
-            "contribution": 0.09232515582109922
+            "y_at_q0": 0.11532422490206617,
+            "chi_q_at_q0": 1.5598701995641606,
+            "contribution": 0.1798908217125681
           },
           {
             "partition": [
@@ -221,9 +221,9 @@
               2
             ],
             "dim": 9,
-            "y_at_q0": 0.040284386965704785,
-            "chi_q_at_q0": 1.6743952620342584,
-            "contribution": 0.06745198666933072
+            "y_at_q0": 0.046032434692020424,
+            "chi_q_at_q0": 1.674395262034259,
+            "contribution": 0.07707649054822045
           }
         ]
       },
@@ -233,13 +233,13 @@
         "N": 2,
         "A": 3,
         "n_strands": 9,
-        "canonical_abs_tr_M": 0.10405211867846563,
-        "q_hecke_partition_sum": 0.10407104703252984,
-        "q_hecke_abs": 0.10407104703252984,
-        "rel_err_vs_canonical": 0.00018191224075600934,
+        "canonical_abs_tr_M": 0.2293101458600947,
+        "q_hecke_partition_sum": 0.22931010210455804,
+        "q_hecke_abs": 0.22931010210455804,
+        "rel_err_vs_canonical": 1.908137841089268e-07,
         "agrees_to_1e_minus_3": true,
-        "agrees_to_1e_minus_6": false,
-        "elapsed_sec": 2.048136963000161,
+        "agrees_to_1e_minus_6": true,
+        "elapsed_sec": "2081.811",
         "non_zero_partitions": 30,
         "top_3_contributions": [
           {
@@ -248,9 +248,9 @@
               3
             ],
             "dim": 48,
-            "y_at_q0": 0.004456442125438941,
-            "chi_q_at_q0": 10.168593988028157,
-            "contribution": 0.045315750604733834
+            "y_at_q0": 0.007643637544383813,
+            "chi_q_at_q0": 10.16859398802816,
+            "contribution": 0.07772504678048757
           },
           {
             "partition": [
@@ -258,9 +258,9 @@
               1
             ],
             "dim": 8,
-            "y_at_q0": 0.007306301640465952,
-            "chi_q_at_q0": 3.7407466497181403,
-            "contribution": 0.027331023383403163
+            "y_at_q0": 0.016638173880726304,
+            "chi_q_at_q0": 3.740746649718143,
+            "contribution": 0.06223919320175483
           },
           {
             "partition": [
@@ -268,9 +268,9 @@
               2
             ],
             "dim": 27,
-            "y_at_q0": 0.0062689450191711765,
-            "chi_q_at_q0": 3.190842160760279,
-            "contribution": 0.020003214070659546
+            "y_at_q0": 0.011881263228409728,
+            "chi_q_at_q0": 3.1908421607602815,
+            "contribution": 0.037911235632300574
           }
         ]
       },
@@ -280,13 +280,13 @@
         "N": 1,
         "A": 3,
         "n_strands": 9,
-        "canonical_abs_tr_M": 0.20654085857249696,
-        "q_hecke_partition_sum": 0.20657841673623548,
-        "q_hecke_abs": 0.20657841673623548,
-        "rel_err_vs_canonical": 0.00018184374751852172,
+        "canonical_abs_tr_M": 0.4037671362431507,
+        "q_hecke_partition_sum": 0.4037670368514308,
+        "q_hecke_abs": 0.4037670368514308,
+        "rel_err_vs_canonical": 2.461609947622371e-07,
         "agrees_to_1e_minus_3": true,
-        "agrees_to_1e_minus_6": false,
-        "elapsed_sec": 3.7670802479999566,
+        "agrees_to_1e_minus_6": true,
+        "elapsed_sec": "2068.188",
         "non_zero_partitions": 30,
         "top_3_contributions": [
           {
@@ -295,9 +295,9 @@
               3
             ],
             "dim": 48,
-            "y_at_q0": 0.004456442125438941,
-            "chi_q_at_q0": 16.066821368283513,
-            "contribution": 0.07160085956752117
+            "y_at_q0": 0.007643637544383813,
+            "chi_q_at_q0": 16.06682136828351,
+            "contribution": 0.12280895902951994
           },
           {
             "partition": [
@@ -305,9 +305,9 @@
               1
             ],
             "dim": 8,
-            "y_at_q0": 0.007306301640465952,
-            "chi_q_at_q0": 6.568433672779511,
-            "contribution": 0.04799095771872074
+            "y_at_q0": 0.016638173880726304,
+            "chi_q_at_q0": 6.568433672779513,
+            "contribution": 0.10928674157172323
           },
           {
             "partition": [
@@ -315,9 +315,9 @@
               2
             ],
             "dim": 27,
-            "y_at_q0": 0.0062689450191711765,
+            "y_at_q0": 0.011881263228409728,
             "chi_q_at_q0": 7.5691272191317935,
-            "contribution": 0.04745044237984924
+            "contribution": 0.08993079289982576
           }
         ]
       }
