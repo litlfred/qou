@@ -194,3 +194,78 @@ Three corrections on one bean, alternating direction. Before a FOURTH: the
 failure mode here has been re-reading a *scale* agreement at one anchor as
 structural support. Any future reversal must state, up front, what it predicts
 at the **proton** anchor -- not just the muon one.
+
+
+---
+
+# OBSTACLE 1 MADE QUANTITATIVE — the extractor cannot be continued to 1/q0
+# (2026-08-15, PR #5084; probe `qbeta_c3_bar_partner_extractor_breakdown.py`)
+
+Obstacle 1 above reads: *"Not empirically accessible. `c_3^even(q) =
+(c_3(q)+c_3(1/q))/2` needs c_3 at `q ~ 0.901`. Both anchors sit at
+`q ~ 1.10998`."* True, but it understates the situation in a way that matters:
+**the extractor CAN be evaluated at 1/q0, and what comes out is an artifact.**
+
+    c_3(q) = (Q_beta^exp / Q_N2(q) - 1) / u(q)^3        qbeta_utils.c3_target_at
+
+`Q_beta^exp` is held FIXED while q moves ~21% — `c3_target_at`'s own docstring
+says so ("the SAME at every substrate anchor ... not a function of q"). Away
+from the anchor the numerator is O(1) rather than O(u^3), and the `1/u^3`
+inversion returns O(1e5). Measured:
+
+    point    u          numerator        c_3^extr
+    q0       0.008517   -1.2786e-6       -2.0693        <- the familiar value
+    1/q0     0.010494   -0.40744         -352599.7      <- 1.7e5 x larger
+
+The `u` shift is TAME and exactly predictable: `hbar_q = 1 - 1/q` gives
+`u(1/q) = q^2 u(q)`, verified to rel.err 1.26e-61. **The entire blow-up is the
+numerator** (ratio 3.19e5) — i.e. the fixed-Q_beta artifact, nothing else.
+
+Consequently the extractor's "bar decomposition" is meaningless:
+
+    extractor bar-even  = -176300.9      (86853 x Vol(4_1))
+    extractor bar-odd   =  176298.8
+    -Vol(4_1)           =      -2.0299
+
+**Do NOT evaluate `c3_target_at` at 1/q0 and read the result as c_3 there.**
+
+## What (H1) demands at 1/q0 — and why it is NOT new information
+
+(H1) `c_3^even = -Vol(4_1)` forces `c_3(1/q0) = -2 Vol(4_1) - c_3(q0) =
+-1.9904238`, an O(1) number, against the extractor's -352600 (factor 1.77e5).
+
+But this is the anchor datum transported, not an independent measurement: (H1)
+is EQUIVALENT to "S_leak IS the bar-odd part", and the implied bar-odd value
+comes out identically `S_leak(q0) = -0.039459364295861` (difference exactly
+0.0, asserted in the probe). Per AGENTS.md "Defined residual != derived
+decomposition", it must not be reported as an out-of-sample test. It also
+inherits the +/-1.262 CAL-3 band.
+
+## What IS gained — methodological, and it is the actionable part
+
+PR #5084 (`HabiroEvaluationTrichotomy.lean`, sorry-free) proves a fibre carrier
+written as a q-series converges at `1/q0 < 1` and NOT at `q0 > 1`. So:
+
+  - the bar-even combination `(F(q0) + F(1/q0))/2` **cannot be formed from a
+    single q-series** — one term is outside the domain. The object required is a
+    PAIR, or a state integral holomorphic off the reals (the Garoufalidis-Zagier
+    shape), not one series. That is a DOMAIN obstruction to the parity read-off
+    as this bean states it.
+  - at 1/q0 the extractor is useless but (H1) still names a value AND the
+    carrier is inside its domain of convergence. So a carrier can be compared to
+    (H1) **without ever evaluating on the divergent side**. The comparison
+    becomes possible; it does not become sharper.
+
+## Net effect on this bean
+
+- **Obstacle 1 STRENGTHENED**, not resolved: it is not merely that we lack data
+  at 1/q0 — the naive continuation there is dominated by a fixed-Q_beta
+  artifact by five orders of magnitude, and the domain obstruction above says a
+  single q-series cannot supply the split either.
+- **Obstacle 2 unchanged.** Neither named split is derived.
+- **The live route is unchanged and now has a concrete evaluation point**: read
+  the parity off the FIBRE object at `1/q0`, where it converges. That is where
+  qb8g and qb8e meet.
+
+Scope-(a) throughout. Nothing here refutes (H1); it shows the EXTRACTOR cannot
+test it at the bar-partner, and names what a carrier must return instead.
