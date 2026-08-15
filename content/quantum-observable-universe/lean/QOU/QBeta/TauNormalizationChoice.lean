@@ -1,5 +1,7 @@
 import QOU.QBeta.ObservableComplexVolumeVsFullPotential
 
+set_option autoImplicit false
+
 /-!
 # QOU.QBeta.TauNormalizationChoice — the A=1-vs-A=2 binary, machine-tracked
 
