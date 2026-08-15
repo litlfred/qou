@@ -19,3 +19,16 @@ snappy.ptolemy_variety(2,'all').retrieve_solutions() needs
 ptolemy.unhyperbolic.org, which 403s through the proxy, and local
 Groebner (magma/sage) is unavailable. A network-open or sage-equipped
 environment can close it in minutes with the same probe pattern.
+
+## 2026-08-15 update — #connections CERTIFIED after all (egress workaround)
+
+The ptolemy-DB-firewalled handoff above is RESOLVED for 4₁/5₂: per the
+owner's egress hint, the snappy WHEEL itself ships the certified Magma
+primary-decomposition outputs (ptolemy/testing_files). Probe
+dt_crossknot_connection_count_certified_probe.py: 4₁ = 2 irreducible
+(one degree-2 orbit, x²−x+1 = ℚ(√−3)) + 1 abelian = 3; 5₂ = 3 (one
+degree-3 orbit, x³+2x²+3x+1, the trace-field cubic) + 1 = 4. R1's
+counts are now locally computed, not literature-recalled. Residual:
+6₁ has no bundled data — the dtMax=recursionOrder+1 third-knot test
+still needs the DB or magma. Pattern documented in the new
+.claude/skills/local/sandbox-egress.md skill.

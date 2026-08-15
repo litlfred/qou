@@ -1,0 +1,104 @@
+{
+  "engine": "snappy-ptolemy-magma-fixtures",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T11:12:31.132171+00:00",
+  "commitSha": "2a319c4ef0d3e5070077c4ac9d55b9da871153a6",
+  "assertions": [
+    {
+      "name": "fourone_connection_count",
+      "computed": "3",
+      "expected": "3",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "certified magma fixtures vs R1 / a41FullLDegree"
+    },
+    {
+      "name": "fivetwo_connection_count",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "certified magma fixtures vs R1 (was literature recall)"
+    },
+    {
+      "name": "trace_field_degrees",
+      "computed": "[[2], [3]]",
+      "expected": "[[2], [3]]",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Galois-orbit degrees vs known 4_1/5_2 trace fields (internal consistency)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 30,
+  "computation": "dt-crossknot-connection-count-certified",
+  "scriptFile": "dt_crossknot_connection_count_certified_probe.py",
+  "scriptHash": "7a2dd3e21252",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "R1 #boundary-parabolic-connections counts for 4_1 and 5_2, computed locally from the certified Magma primary-decomposition outputs shipped in the snappy wheel (ptolemy testing_files; the ptolemy.unhyperbolic.org DB is firewalled - egress workaround per owner hint: the data rides the package itself). 4_1: one degree-2 Galois orbit (Q(sqrt(-3)) pair) -> 2 irreducible; 5_2: one degree-3 orbit (cubic trace field) -> 3 irreducible; plus one abelian connection each (the (L-1) factor, audit convention) -> totals 3 and 4 = the R1 counts / full L-degrees, previously literature-recalled. 6_1 not bundled; third-knot test stays open. Scope-(a); nothing wired. Beans qou-btvl/qou-52sn.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "knots": {
+      "4_1": {
+        "c0": {
+          "galois_orbits": 0,
+          "degrees": [],
+          "number_fields": [],
+          "points": 0
+        },
+        "c1": {
+          "galois_orbits": 1,
+          "degrees": [
+            2
+          ],
+          "number_fields": [
+            "x^2 - x + 1"
+          ],
+          "points": 2
+        },
+        "irreducible_points": 2,
+        "abelian_connections": 1,
+        "total_connections": 3,
+        "matches_r1": true
+      },
+      "5_2": {
+        "c0": {
+          "galois_orbits": 0,
+          "degrees": [],
+          "number_fields": [],
+          "points": 0
+        },
+        "c1": {
+          "galois_orbits": 1,
+          "degrees": [
+            3
+          ],
+          "number_fields": [
+            "x^3 + 2*x^2 + 3*x + 1"
+          ],
+          "points": 3
+        },
+        "irreducible_points": 3,
+        "abelian_connections": 1,
+        "total_connections": 4,
+        "matches_r1": true
+      }
+    },
+    "provenance": {
+      "source": "snappy wheel ptolemy/testing_files (Magma regression fixtures, GPL; read at runtime, not vendored)",
+      "abelian_convention": "the (L-1) factor of the full A-polynomial; reducible reps excluded from the ptolemy variety by nondegeneracy (audit convention)",
+      "six_one": "no bundled data; dtMax=recursionOrder+1 third-knot test remains open"
+    }
+  }
+}
