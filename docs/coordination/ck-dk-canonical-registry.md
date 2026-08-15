@@ -530,3 +530,27 @@ enumerated singular set plus `κ = 0` (`k²Δ²log|d_k| → 1`, `kΔ² → 0`), 
 numerical near-miss. It closes the resummation arm on **this** ladder only. The
 Ohtsuki κ-tower is genuinely Gevrey-1 divergent and its resurgence programme is
 untouched, as are the three group-D probes.
+
+### 9e. The swing is resolved but circular; individual `S` values are not resolved (added 2026-08-15, `qou-9jem`)
+
+Two pins so no future session re-targets either object:
+
+1. **Individual `S_leak` values are not robustly defined.** Each carries a
+   ±1.262 CAL-3 propagated uncertainty (the `1/u³` amplification of the Q_β
+   input error) — 130× the muon and 32× the proton central value. The
+   canonical witness (`qbeta-c3-barodd-sleak.witness.json`) states the
+   anchor sign flip "must not be cited as an established sign flip" (O2
+   negative, [`2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`](../audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md)).
+   This does **not** touch KC21's *structural* parity statement
+   (`S(−ε) = −S(ε)` in complex `ε`, Lean `fig8Trace_im_odd`) — that is an
+   odd-function fact, not a claim that the real-anchor data exhibit a flip.
+2. **The swing `S(μ) − S(p) = c₃(μ) − c₃(p) = 0.0491423421` IS resolved**
+   (±7.6×10⁻⁷; the CAL-3 error is common-mode and cancels) — but it is
+   **not an independent derivation target**: it factors exactly as
+   (11.54 ppb μ–p substrate tension) × `dc₃/dq`, i.e. the known open
+   tension amplified by the circular cal-anchored `c₃` extraction
+   (probe [`aomega_6y1p_swing_reframe_not_tractable.py`](../../computations/probes/aomega_6y1p_swing_reframe_not_tractable.py),
+   exit 0; bean `qou-6y1p`, scrapped). Deriving it requires **both** a
+   first-principles `c₃` (the fixed theory ladder has `[u³] ≡ 0`) **and**
+   the μ–p tension. It remains valid as a *filter* on candidate `u(q₀)`
+   maps (the A3 swing-difference gate), not as a target.
