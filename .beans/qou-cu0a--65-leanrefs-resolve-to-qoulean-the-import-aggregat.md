@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T20:32:39Z
-updated_at: 2026-08-15T23:13:52Z
+updated_at: 2026-08-15T23:15:40Z
 ---
 
 Found while adjudicating `def:yekutieli-triple` (session `qou-xz6t`, branch `claude/mtcx-7c-verify-close-2026-08-15`).
@@ -111,3 +111,24 @@ Each named a real declaration under a different spelling. The corrected ref uses
 These are genuinely **unformalised**, not mis-referenced: no decl matches even under normalised matching. Examples: `QOU.QuantumFlatness`, `QOU.ReebGaugeGroup`, `QOU.DescentData`, `QOU.S3Group`, `QOU.ObservableMTC`, `QOU.qHeatKernelPeterWeyl`, `QOU.ColorSectorCoords`, `QOU.LocalizedHadron`.
 
 **Deliberately left in place.** After the upstream resolver fix they report an honest `n/a` rather than a false green, and the ref still records the *intended* formalisation target, which is useful to whoever writes it. Removing 57 refs would delete that intent and is a content-owner decision, not a tooling one — and §7c discipline is explicit that this class of sweep is not a mass-fix. Note that omitting `lean:` entirely is well-precedented (2345 of 3567 blocks carry no `lean:` field), so removal is available if the owner prefers it.
+
+
+### `QOU.categoricalMass` — adjudicated, and it is NOT a name clash
+
+Both declarations are real, and they are **different formulas in different namespaces**, so Lean sees no conflict (fully-qualified names differ):
+
+| decl | formula | valued in |
+|---|---|---|
+| `QOU.PhotonThreading.categoricalMass` | `m_H = (q−1)²·E_H` via photon-threading crossing energy | `ℝ` |
+| `QOU.BraidKnot.MassFormulaCategorical.categoricalMass` | `M(T_w) = ρ·m_e·|tr_M(T_w)|` (cat units) | `ℝ` |
+
+So there is nothing to de-duplicate. The only defect is that the *ref* `qou:QOU.categoricalMass` is under-qualified and matches both by short name.
+
+**Still not auto-fixing, and the reason is substantive rather than caution.** The block `def:mass-identity` ("Mass (categorical trace)") defines mass through the **Frobenius–Hopf categorical trace** in a rigid monoidal category — `tr : End_C(A) → R`, with inertial mass `m(ϱ) = ‖tr((∫_A ⊗ id) ∘ Δ …)‖`, valued in the **ground ring `R`**. Both Lean candidates are **`ℝ`-valued** and neither is that construction:
+
+- `PhotonThreading` is a crossing-energy formula, not a categorical trace at all — a poor match.
+- `MassFormulaCategorical` is the nearer of the two (it *is* "mass = scalar × |trace|"), but its trace is the **Markov trace of a Hecke element**, not the categorical trace of a Frobenius–Hopf object, and it lands on `ℝ` where the block's definition is over `R`.
+
+So the honest reading is that this block's stated construction is **not formalised yet**, and `MassFormulaCategorical` is at best an archimedean realisation of a downstream special case. Repointing the ref at it would assert an equivalence the corpus does not currently prove — the §7c/`R`-vs-`ℝ` gap is exactly the kind of thing this session found being papered over elsewhere.
+
+**Recommended disposition (author's call):** treat as backlog alongside the other 57 — i.e. leave the ref honest-`n/a` — unless the author intends `def:mass-identity` to be the categorical-trace statement that `MassFormulaCategorical` specialises, in which case the right fix is a new Lean declaration stating it over `R`, with the Hecke formula derived from it.
