@@ -1,7 +1,7 @@
 ---
 # qou-arc1
 title: 'ARC STATUS: A_omega / G3 / Route C — what is settled, what is open, and the four options at the decision point'
-status: in-progress
+status: completed
 type: milestone
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - route-c
     - arc-status
 created_at: 2026-08-11T11:40:00Z
-updated_at: 2026-08-11T11:40:00Z
+updated_at: 2026-08-15T00:51:53Z
 ---
 
 Consolidated position after the 2026-08-11 session (PR #4972). Read this before opening any
@@ -69,3 +69,24 @@ new A_omega work — it supersedes the stale framing in qou-vr3q.
  RECOMMENDATION: O1 now (it is nearly free and it is honest), then decide between O2 and O4.
  O3-M2 is worth doing only if O2 looks survivable — otherwise it elaborates a periphery whose
  connection to physics is unestablished.
+
+
+---
+**2026-08-15 — DECISION POINT RESOLVED → O4 (pivot away).** The arc rule was
+"decide O2 vs O4; O3-M2 only if O2 survives." Outcome:
+- O1 done (bridge excised; PR #5041).
+- O2 done and REFUTED — no parameter-free A_ω→S map; individual S targets ill-posed
+  (±1.26, sign flip not established), the resolved swing is A_ω-free, integrality
+  (PR #5041, audit 2026-08-14-aomega-to-S-bridge-refuted-O2-negative).
+- 6y1p (swing reframe) also dead: swing = 11.54 ppb μ-p tension × dc₃/dq, c₃ has
+  no first-principles value (theory [u³]≡0). Same wall.
+- O3-M2 done as a CONDITIONAL structural characterization (spectrum abelian);
+  "categorified" was an overclaim, corrected (PR #5057).
+
+Per the arc rule, O2 did not survive ⇒ further Route C (M1 build the explicit
+(Q,W); M3 Hecke→BPS categorified-AJ) elaborates a periphery whose physics
+connection is now established as ABSENT. RECOMMENDATION: O4 — bank the standing
+results (eq-98 provenance DERIVED; chirality obstruction PROVED; M2 abelian
+characterization CONDITIONAL; two clean negatives) and stop investing in the A_ω
+periphery. M1/M3 remain available as pure-math options with no physics payoff.
+Arc at a clean terminus.
