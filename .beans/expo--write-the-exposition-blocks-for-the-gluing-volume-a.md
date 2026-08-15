@@ -113,3 +113,46 @@ The 5₂ saddle sum rule; Kummer's identity and the ideal-tetrahedron law of sin
 concavity; the volume functor and `rotate_angles`/`volume_rotate`; the ℝ* limit transfer
 and the two-valued-birthday defect (beans `hypr`, `bday`). Each needs a manifest entry as
 well as a file — see the trap above.
+
+---
+**2026-08-10 — re-validated against a platform 144 commits newer. Delta still zero, and
+several checks I relied on were broken at the old baseline.**
+
+The blocks were first validated against folio-assistant `c9ae256`. The platform was **144
+commits behind**, and the gap includes fixes to the very machinery those checks used:
+
+| platform commit | what it fixed |
+|---|---|
+| `5ebe888` | *"the content validator had never validated anything"* |
+| `91c7eb5` | *"The citation check could never fire"* |
+| `cbe5fa9` | Zod silently stripping declared fields — **including `lean`** |
+| `6c50eca` | 461 blocks invisible to QA |
+| `8db9a93` | report manifest fields the schema silently strips |
+
+**`91c7eb5` explains an anomaly recorded earlier in this bean.** A deliberate bogus
+citation key produced no error, and that was logged as "either citations aren't checked,
+or my block isn't being read". The real answer is now known: the citation check *could
+never fire*. On the new platform it is not fixed so much as **disclosed** —
+
+    ℹ [(bibliography)]: no reference registry configured — cites-resolve did not run,
+      so cites[] entries were NOT validated against references
+
+which is the right behaviour: a check that did not run now says so instead of passing
+silently. `cites[]` in these blocks is still unvalidated, and that is now visible.
+
+**Re-validated on `29b03f7`.** Corpus baseline moved **4 → 40 issues** — entirely from
+`8db9a93` newly reporting pre-existing blocks with undeclared fields (`authorNotes`,
+`chapter`, `is_mathematics`, `proofOf`, `computation`, `probe`, `consumers`). **None of
+the 40 is from this arc's blocks**, and the positive control still fires: removing `lean`
+from one block moves 40 → 41 with the expected warning, back to 40 on revert. So the
+blocks are genuinely read, and `lean` is not among the stripped fields.
+
+**qou main merged**: +1008 commits since the branch base, clean merge, and of this arc's
+files only `mass-theory.ts` was touched upstream — resolved without conflict, all three
+block registrations intact. Post-merge baseline 42, delta from this arc still zero.
+
+**Lesson for the remaining blocks.** A validator's issue count is only comparable against
+the *same platform SHA*; `run-validate.ts` prints it for exactly this reason (its own
+docstring records two agents disagreeing over a baseline that was a function of two
+inputs). Quote the platform SHA with any baseline, and re-run the positive control after
+a platform bump rather than assuming the previous run still means what it did.

@@ -254,3 +254,32 @@ Use **both**, for different purposes:
 - **Route 75** for reach — it verifies to 14 tetrahedra and degree 14.
 
 And G5 makes them mutually checking, which is worth more than either alone.
+
+---
+**2026-08-10 — `finduni` is the right tool, and the 600s "ceiling" was mostly my choice
+of algorithm.**
+
+Full primary decomposition is overkill when all you want is the **field**. The Ptolemy
+ideals here are **zero-dimensional** (`dim(std(I)) = 0` in every case checked), and for a
+zero-dimensional ideal Singular's `finduni` returns the univariate generator per variable
+directly. Measured:
+
+| manifold | vars | `minAssGTZ` | `finduni` |
+|---|---|---|---|
+| 6₁ | 5 | ran | **2.0s**, quartic |
+| 7₂ | 5 | ran | **0.0s**, quintic |
+| 8₂ | 7 | (not attempted) | **0.0s**, **degree 8** |
+
+`finduni` needs `option(redSB)` — it errors with *"The ideal G has to be reduced"*
+otherwise, which is easy to misread as the ideal being unsuitable rather than the basis
+being unreduced.
+
+So the earlier "Ptolemy times out at 600s" figure was substantially **a property of
+`minAssGTZ`**, not of the Ptolemy route. That tempers the previous entry's reach table in
+the *other* direction from the one before it.
+
+**⚠ 10₁₀₀ and 11a1 remain UNMEASURED under `finduni`.** Two attempts were lost to the
+same avoidable mistake: a `nohup`-ed job whose parent shell exited, reporting the
+wrapper's exit 0 while python had been killed — the trap already recorded in this lane
+for `lake` wrappers, repeated here. Re-running under harness-tracked background. Until it
+returns, **no claim either way** about whether the Ptolemy route reaches 14 tetrahedra.
