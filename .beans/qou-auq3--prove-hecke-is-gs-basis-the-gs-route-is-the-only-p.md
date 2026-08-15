@@ -2028,3 +2028,57 @@ computationally to `n = 12`, with the corner's cost characterised exactly.
    `decide` at `n = 4`; a general theorem needs it characterised abstractly. The
    rank sweep gives the target numbers (shapes `= (n−1)(n+2)/2 · …`, see the
    witness's `ranks` array) but not the characterisation.
+
+## §4ad — the first depth-general corner: the whole `b = 2` column
+
+The `a > b` regime's step count ignores `a`, and the natural guess was that the
+extra depth rides along inertly. It does, and now that is proved rather than
+measured.
+
+**What varies with `a`, mechanically checked.** Abstracting the contiguous
+relative block `[b+2 .. a]` of the descending run to a single symbol `T` and
+comparing the resulting symbolic chains: for `b = 2, 3, 4` the stage words are
+**identical** for every `a ≥ b+2`, step for step, coefficient for coefficient.
+So each column stabilises at `a = b+2`, with `a = b+1` a special case below it.
+(An earlier probe printed "DIFF" for these — that comparison keyed on rule
+*names*, which embed the run's bottom index and so never compare equal across
+`a`. The words, which is what matters, never differed.)
+
+**The Lean statement.** `BokutShiaoCornerDepth.resolves`, hypothesis `j ≤ i − 3`
+and nothing else about the depth. Fifteen steps, all monic, `h` never appears.
+Writing `x, y, z, u` for `σᵢ … σᵢ₋₃` and `E = descWord (i−3) j`, every one of the
+seventeen words is `(explicit prefix) ++ E ++ (explicit suffix)`, and `E` is
+never inspected — not by a rule, not by a distinctness obligation. Eight of the
+fifteen steps do not even take the depth hypothesis (their binder is `_hj`): the
+three far-commutations and the fixed-depth Bokut–Shiao at `(i−2, i−1, i−3)` are
+depth-blind, and the other seven carry it only to split the run's top letters
+off via `descWord_cons`.
+
+**It subsumes §4aa.** §4aa is the case `j = i − 3`, where `E = [σᵢ₋₃]`. §4aa is
+kept rather than deleted because its chain is a genuinely different one: at that
+depth the rule used at steps 5 and 13 degenerates to the braid word, and the
+confluence engine picks the Yang–Baxter rule sharing that leading monomial —
+leading coefficient `−1`, which is why §4aa reads differently step for step.
+Both rules are in the completed system; both chains are valid. Using the
+Bokut–Shiao form throughout is what makes one chain serve every depth, since
+`monicStep` wants a monic rule.
+
+**Build lessons.**
+
+* `rfl` will not close `W = a ++ L ++ b` when `b = []` and the word ends in an
+  abstract tail: `List.append` recurses on its *first* argument, so `E ++ []`
+  is stuck where `E` is a variable. Nine of thirty context obligations failed on
+  exactly this. `simp [<word>]` closes all thirty; explicit-list sections like
+  §4aa never hit it because nothing there is stuck.
+* Where the abstract tail sits only to the *right* of explicit letters,
+  everything to its left still reduces, so all the other equalities are
+  definitional. Placing `E` in one slot in every word — always
+  `prefix ++ E ++ suffix` — is what keeps the whole section in that regime.
+
+**Where this leaves the corner.** The `b = 2` column is closed for all `a ≥ 3`.
+Remaining: the columns `b ≥ 3` (each stabilising at `a = b+2`, and nesting —
+`b = 3`'s stabilised chain extends `b = 2`'s by a block `B_{i-4} F F F` inserted
+after the first far-commutation run, `b = 4` extends it again, which is what an
+induction on `b` would have to formalise), the special cases `a = b+1`, and the
+whole `a ≤ b` regime where the quadratic rule appears twice and the length is
+quadratic in both depths.
