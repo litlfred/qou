@@ -15,81 +15,107 @@
   Content:
     * evenPart / oddPart — the σ-parity projections (retained / emitted)
     * evenPart_barEven, oddPart_barOdd — each projection has its parity
-    * even_add_odd — reconstruction E = retained + emitted (char ≠ 2)
+    * even_add_odd — reconstruction E = retained + emitted
     * oddPart_eq_zero_iff_barEven — the emitted channel vanishes iff E is
       purely retained (pure binding, no decay channel)
     * frakD_is_pure_emitted — if `E_unit = ℏ/𝔇` with the width datum 𝔇
       bar-odd, then E_unit is its own emitted part (purely decay-channel)
 
-  Generic field with an involutive ring endomorphism; no ℝ, no √ (§7c).
+  Base ring (AGENTS.md §7c). A generic commutative ring `{R : Type*}
+  [CommRing R]` with an involutive ring endomorphism, plus `[Invertible
+  (2 : R)]` for the halving in the projections — written `⅟(2 : R)`, so no
+  division and no field appears. This is exactly the §7c prescription for a
+  `/2` over a `CommRing`, and it is *stronger* than the old field statements:
+  `Invertible 2` subsumes the `(2 : F) ≠ 0` side conditions those carried, so
+  they are gone from the signatures. No ℝ, no √, no ordering.
 
   -- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/
 
-import Mathlib.Tactic
+import Mathlib.Algebra.Ring.Hom.Defs
+import Mathlib.Data.Nat.Cast.Basic
+import Mathlib.Algebra.Ring.Invertible
+import Mathlib.Logic.Function.Basic
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Ring
 
 namespace QOU.MassTheory.FrakD
 
-variable {F : Type*} [Field F]
-variable (σ : F →+* F)
+variable {R : Type*} [CommRing R] [Invertible (2 : R)]
+variable (σ : R →+* R)
+
+/-- A ring endomorphism fixes `⅟2`: it fixes `2`, so `σ(⅟2)` is a left
+    inverse of `2` and hence *is* `⅟2`.  (The analogue of `map_div₀` /
+    `map_ofNat` for the `Invertible` halving.) -/
+theorem map_invOf_two : σ (⅟(2 : R)) = ⅟(2 : R) := by
+  have h2 : σ (2 : R) = (2 : R) := map_ofNat σ 2
+  have h : σ (⅟(2 : R)) * (2 : R) = 1 := by
+    calc σ (⅟(2 : R)) * (2 : R) = σ (⅟(2 : R)) * σ (2 : R) := by rw [h2]
+      _ = σ (⅟(2 : R) * (2 : R)) := (map_mul σ _ _).symm
+      _ = σ 1 := by rw [invOf_mul_self]
+      _ = 1 := map_one σ
+  exact (invOf_eq_left_inv h).symm
 
 /-- Bar-even ("retained", cosh) projection `(E + σE)/2`. -/
-def evenPart (E : F) : F := (E + σ E) / 2
+def evenPart (E : R) : R := (E + σ E) * ⅟(2 : R)
 
 /-- Bar-odd ("emitted", sinh — the decay-width 𝔇 channel) projection
     `(E − σE)/2`. -/
-def oddPart (E : F) : F := (E - σ E) / 2
+def oddPart (E : R) : R := (E - σ E) * ⅟(2 : R)
 
 section Involutive
 variable (hσ : Function.Involutive σ)
 
 include hσ in
 /-- The retained part is bar-even: `σ(retained E) = retained E`. -/
-theorem evenPart_barEven (E : F) : σ (evenPart σ E) = evenPart σ E := by
+theorem evenPart_barEven (E : R) : σ (evenPart σ E) = evenPart σ E := by
   unfold evenPart
-  rw [map_div₀, map_add, hσ E, map_ofNat]
+  rw [map_mul, map_add, hσ E, map_invOf_two]
   ring
 
 include hσ in
 /-- The emitted part is bar-odd: `σ(emitted E) = −emitted E` — the sinh /
     decay-width channel. -/
-theorem oddPart_barOdd (E : F) : σ (oddPart σ E) = - oddPart σ E := by
+theorem oddPart_barOdd (E : R) : σ (oddPart σ E) = - oddPart σ E := by
   unfold oddPart
-  rw [map_div₀, map_sub, hσ E, map_ofNat]
+  rw [map_mul, map_sub, hσ E, map_invOf_two]
   ring
 
 end Involutive
 
-/-- **Reconstruction.** `E = retained E + emitted E` (char ≠ 2): every energy
-    is its bar-even binding part plus its bar-odd decay part. -/
-theorem even_add_odd (hchar : (2 : F) ≠ 0) (E : F) :
+/-- **Reconstruction.** `E = retained E + emitted E`: every energy is its
+    bar-even binding part plus its bar-odd decay part. -/
+theorem even_add_odd (E : R) :
     evenPart σ E + oddPart σ E = E := by
+  have h : (2 : R) * ⅟(2 : R) = 1 := mul_invOf_self 2
   unfold evenPart oddPart
-  field_simp
-  ring
+  linear_combination E * h
 
 /-- **Pure-binding criterion.** The emitted (decay-width) channel vanishes iff
     `E` is bar-even: a nucleus radiates no γγ̄ / carries no 𝔇 channel exactly
     when its binding is purely retained. -/
-theorem oddPart_eq_zero_iff_barEven (hchar : (2 : F) ≠ 0) (E : F) :
+theorem oddPart_eq_zero_iff_barEven (E : R) :
     oddPart σ E = 0 ↔ σ E = E := by
   unfold oddPart
-  rw [div_eq_zero_iff]
   constructor
-  · rintro (h | h)
-    · exact (sub_eq_zero.mp h).symm
-    · exact absurd h hchar
-  · intro h; left; rw [h]; ring
+  · intro h
+    have h2 : E - σ E = 0 := by
+      have hmul : (E - σ E) * (⅟(2 : R) * (2 : R)) = 0 := by
+        rw [← mul_assoc, h, zero_mul]
+      rwa [invOf_mul_self, mul_one] at hmul
+    exact (sub_eq_zero.mp h2).symm
+  · intro h; rw [h]; ring
 
 /-- **The 𝔇 reinterpretation.** If the deuteron unit is a decay-width energy
     `E_unit = U` with `U` bar-odd (`σ U = -U` — the width datum `ℏ/𝔇` lives in
     the emitted/sinh sector), then `E_unit` equals its own emitted part and
     has zero retained part: it is a *purely decay-channel* energy. -/
-theorem frakD_is_pure_emitted (hchar : (2 : F) ≠ 0) (U : F) (hU : σ U = -U) :
+theorem frakD_is_pure_emitted (U : R) (hU : σ U = -U) :
     oddPart σ U = U ∧ evenPart σ U = 0 := by
+  have h : (2 : R) * ⅟(2 : R) = 1 := mul_invOf_self 2
   refine ⟨?_, ?_⟩
-  · unfold oddPart; rw [hU]; field_simp; ring
+  · unfold oddPart; rw [hU]; linear_combination U * h
   · unfold evenPart; rw [hU]; ring
 
 end QOU.MassTheory.FrakD

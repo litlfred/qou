@@ -1,11 +1,11 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T17:06:50.538278+00:00",
-  "commitSha": "5905014c3136ed365becbb218267d3f12c4b0ffc",
+  "computedAt": "2026-08-11T00:57:35.866985+00:00",
+  "commitSha": "7f55e1eb6c275ed6d7166357bd371b53e2d91fec",
   "assertions": [
     {
-      "name": "trefoil_chiral_avg_c_nonzero_and_antisymmetric",
+      "name": "sigma1_cubed_B3_avg_c_nonzero_and_mirror_antisymmetric",
       "computed": 1,
       "expected": 1,
       "passed": true
@@ -15,18 +15,45 @@
       "computed": 1,
       "expected": 1,
       "passed": true
+    },
+    {
+      "name": "row4_writhe_computed_is_2_not_hardcoded_4",
+      "computed": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "closure_component_counts_2_2_3_3",
+      "computed": "2,2,3,3",
+      "expected": "2,2,3,3",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 136,
+  "durationMs": 281,
   "computation": "chirality-avg-content-chiral",
   "scriptFile": "chirality_avg_content_chiral.py",
-  "scriptHash": "2cdcec8db68c",
-  "scriptCommitSha": "abef54519fe848127fa07292b39d4ff8508098ae",
-  "description": "Chiral residual of GAP-A-2 in derivation-audit-report.md. Computes ⟨c⟩_β = (Σ w_λ χ^λ(β) c(λ)) / (Σ w_λ χ^λ(β)) for chiral 3-braids at q_0 to expose the structural-but-non-zero values that the chiral case takes.  Companion to chirality-avg-content.witness.json (amphichiral case).",
+  "scriptHash": "d9ab4cd7f50f",
+  "scriptCommitSha": "10b4c0e3075e5d9150ec3921820cc1870177f602",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Chiral residual of GAP-A-2 in derivation-audit-report.md. Computes ⟨c⟩_β = (Σ w_λ χ^λ(β) c(λ)) / (Σ w_λ χ^λ(β)) for chiral 3-braids at q_0 to expose the structural-but-non-zero values that the chiral case takes.  Companion to chirality-avg-content.witness.json (amphichiral case, plus the minimal-level trefoil at H_2).  The writhe is computed from each braid word, and each row records the verified topology of its closure (component count, determinant, braid index) — three rows carried wrong knot names and one a wrong hardcoded writhe until 2026-08-10 (qou-okxx).",
   "auditOnly": "content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md (GAP-A-2 chiral residual)",
   "parameters": {
-    "q_0": 1.1099785955541805,
+    "q_0": 1.1099785827513808,
+    "q0_anchor": "proton",
+    "q0_anchor_note": "EXPERIMENTAL / Physical-Observations pin (m_p/m_e). `q_parameter` auto-selects the anchor from `q0_anchor_manifest.json` by the running producer's stem; `chirality_avg_content_chiral` is in NEITHER list, so it takes the proton default — which is also what the 2026-08-07 owner directive prescribes for touched compute.  The PREVIOUSLY COMMITTED witness was built in the muon era (q_0 = 1.1099785955541805), so every ⟨c⟩ here moved by ~1e-7 relative on the 2026-08-10 re-run purely from the anchor, independently of the writhe and label corrections.  The one number that moved for a substantive reason is the fourth row's a_K (1.089679 -> 1.044839), from the hardcoded writhe 4 being replaced by the computed +2.  NOTE the companion `chirality_avg_content.py` is manifest-tagged `ideal_muon`, so ⟨c⟩ values must not be compared across the two witnesses below the 1e-7 level.",
     "n": 3,
     "partitions": [
       [
@@ -44,13 +71,13 @@
     ],
     "chi_precision": "f64_numeric_fallback",
     "rust_chi_available": false,
-    "mp_dps": 50
+    "mp_dps": 70
   },
   "data": {
     "cases": [
       {
-        "name": "trefoil 3_1 (σ_1^3)",
-        "knot_class": "3_1",
+        "name": "σ_1^3 in B_3  (3_1 ⊔ 0_1, split)",
+        "closure": "3_1 ⊔ 0_1 (split link, 2 components, det 0)",
         "amphichiral": false,
         "braid_word": [
           [
@@ -66,7 +93,13 @@
             1
           ]
         ],
+        "n_strands": 3,
         "writhe": 3,
+        "writhe_source": "computed_from_braid_word",
+        "closure_components": 2,
+        "closure_determinant": 0,
+        "braid_index_of_closure": 2,
+        "at_braid_index": false,
         "n_partitions": 3,
         "rows": [
           {
@@ -74,9 +107,9 @@
               3
             ],
             "content_c_lambda": 3,
-            "wedderburn_weight": "0.14181150503252750580014879813280798938471544264213",
-            "chi_lambda_beta": "1.3675518842725498",
-            "weighted_chi_c": "0.58180377275627751238110993061669376718729259741496"
+            "wedderburn_weight": "0.1418115076422694656756848928643485801185924909513869185860448324593782",
+            "chi_lambda_beta": "1.3675518369513862",
+            "weighted_chi_c": "0.5818037633310934328743686595039256418422763998042243694744027476421079"
           },
           {
             "shape": [
@@ -84,8 +117,8 @@
               1
             ],
             "content_c_lambda": 0,
-            "wedderburn_weight": "0.63134619224631376936117445305631419176678151532486",
-            "chi_lambda_beta": "0.6363182020258704",
+            "wedderburn_weight": "0.6313461962032220993256739642694161566798184354603307818464283414842869",
+            "chi_lambda_beta": "0.6363181294019518",
             "weighted_chi_c": "0.0"
           },
           {
@@ -95,22 +128,22 @@
               1
             ],
             "content_c_lambda": -3,
-            "wedderburn_weight": "0.14181150503252750580014879813280798938471544264213",
-            "chi_lambda_beta": "-0.7312336822466794",
-            "weighted_chi_c": "0.31109204702963578232717559318456444214918059202978"
+            "wedderburn_weight": "0.1418115076422694656756848928643485801185924909513869185860448324593782",
+            "chi_lambda_beta": "-0.7312337075494344",
+            "weighted_chi_c": "0.3110920635192949545833517507429072369303516098477976267698855275363356"
           }
         ],
-        "numerator": "0.89289581978591329470828552380125820933647318944474",
-        "denominator": "0.49197431581493448438651288375762242186679819832976",
-        "avg_content_c_beta_mp": "1.8149236476031669005889250459527350585793696086976",
-        "a_K_first_order_mp": "2.1382855664648932099477706387843640120851972028346",
-        "avg_content_c_beta": 1.814923647603167,
-        "a_K_first_order": 2.1382855664648934,
+        "numerator": "0.8928958268503883874577204102468328787726280096520219962442882751784436",
+        "denominator": "0.4919742638436713973599801243795368192335645454678782511459343033488657",
+        "avg_content_c_beta_mp": "1.814923853687828063711028703243388278941336875010113725016858573533586",
+        "a_K_first_order_mp": "2.13828556942993151943846238154665752940244204129797906424483897846707",
+        "avg_content_c_beta": 1.814923853687828,
+        "a_K_first_order": 2.1382855694299314,
         "note": ""
       },
       {
-        "name": "mirror trefoil (σ_1^-3)",
-        "knot_class": "3_1*",
+        "name": "σ_1^-3 in B_3  (3_1* ⊔ 0_1, split)",
+        "closure": "3_1* ⊔ 0_1 (split link, 2 components, det 0)",
         "amphichiral": false,
         "braid_word": [
           [
@@ -126,7 +159,13 @@
             1
           ]
         ],
+        "n_strands": 3,
         "writhe": -3,
+        "writhe_source": "computed_from_braid_word",
+        "closure_components": 2,
+        "closure_determinant": 0,
+        "braid_index_of_closure": 2,
+        "at_braid_index": false,
         "n_partitions": 3,
         "rows": [
           {
@@ -134,9 +173,9 @@
               3
             ],
             "content_c_lambda": 3,
-            "wedderburn_weight": "0.14181150503252750580014879813280798938471544264213",
-            "chi_lambda_beta": "0.7312336822466804",
-            "weighted_chi_c": "0.31109204702963620742165031160196291590875805012913"
+            "wedderburn_weight": "0.1418115076422694656756848928643485801185924909513869185860448324593782",
+            "chi_lambda_beta": "0.7312337075494342",
+            "weighted_chi_c": "0.3110920635192948601179111859905624877961511258067424352440429773408324"
           },
           {
             "shape": [
@@ -144,8 +183,8 @@
               1
             ],
             "content_c_lambda": 0,
-            "wedderburn_weight": "0.63134619224631376936117445305631419176678151532486",
-            "chi_lambda_beta": "-0.6363182020258679",
+            "wedderburn_weight": "0.6313461962032220993256739642694161566798184354603307818464283414842869",
+            "chi_lambda_beta": "-0.6363181294019529",
             "weighted_chi_c": "0.0"
           },
           {
@@ -155,22 +194,22 @@
               1
             ],
             "content_c_lambda": -3,
-            "wedderburn_weight": "0.14181150503252750580014879813280798938471544264213",
-            "chi_lambda_beta": "-1.3675518842725483",
-            "weighted_chi_c": "0.58180377275627685112303814641185169689461655148265"
+            "wedderburn_weight": "0.1418115076422694656756848928643485801185924909513869185860448324593782",
+            "chi_lambda_beta": "-1.367551836951387",
+            "weighted_chi_c": "0.5818037633310938107361309185133046383790783359684451355777729484241209"
           }
         ],
-        "numerator": "0.89289581978591305854468845801381461280337460161178",
-        "denominator": "-0.49197431581493251011831535794407961763350920749472",
-        "avg_content_c_beta_mp": "-1.8149236476031737037539150527407026974380494512831",
-        "a_K_first_order_mp": "2.1382855664648974767633607220647438722187945245189",
-        "avg_content_c_beta": -1.8149236476031736,
-        "a_K_first_order": 2.1382855664648974,
+        "numerator": "0.8928958268503886708540421045038671261752294617751875708218159257649533",
+        "denominator": "-0.4919742638436722557374645999622062194610481744687655046265420134007413",
+        "avg_content_c_beta_mp": "-1.814923853687825473141675762437657633325335717062510860373257840355109",
+        "a_K_first_order_mp": "2.138285569429929894682853451654110652903093324478604677087843323031578",
+        "avg_content_c_beta": -1.8149238536878254,
+        "a_K_first_order": 2.13828556942993,
         "note": ""
       },
       {
-        "name": "(σ_1 σ_2)^3 toral 3_1",
-        "knot_class": "3_1 (toral form)",
+        "name": "(σ_1 σ_2)^3 in B_3  (T(3,3) torus link)",
+        "closure": "T(3,3) torus link (3 components, det 4)",
         "amphichiral": false,
         "braid_word": [
           [
@@ -198,7 +237,13 @@
             2
           ]
         ],
+        "n_strands": 3,
         "writhe": 6,
+        "writhe_source": "computed_from_braid_word",
+        "closure_components": 3,
+        "closure_determinant": 4,
+        "braid_index_of_closure": 3,
+        "at_braid_index": true,
         "n_partitions": 3,
         "rows": [
           {
@@ -206,9 +251,9 @@
               3
             ],
             "content_c_lambda": 3,
-            "wedderburn_weight": "0.14181150503252750580014879813280798938471544264213",
-            "chi_lambda_beta": "1.8701981561774017",
-            "weighted_chi_c": "0.79564684570972579239346454437769557295365545935749"
+            "wedderburn_weight": "0.1418115076422694656756848928643485801185924909513869185860448324593782",
+            "chi_lambda_beta": "1.870198026749111",
+            "weighted_chi_c": "0.7956468052886664676383607771222225113007590950285623818690380820747376"
           },
           {
             "shape": [
@@ -216,8 +261,8 @@
               1
             ],
             "content_c_lambda": 0,
-            "wedderburn_weight": "0.63134619224631376936117445305631419176678151532486",
-            "chi_lambda_beta": "2.000000000000001",
+            "wedderburn_weight": "0.6313461962032220993256739642694161566798184354603307818464283414842869",
+            "chi_lambda_beta": "2.0000000000000018",
             "weighted_chi_c": "0.0"
           },
           {
@@ -227,22 +272,22 @@
               1
             ],
             "content_c_lambda": -3,
-            "wedderburn_weight": "0.14181150503252750580014879813280798938471544264213",
-            "chi_lambda_beta": "0.5347026980520377",
-            "weighted_chi_c": "-0.227480983067137755706289454651471991323173512069"
+            "wedderburn_weight": "0.1418115076422694656756848928643485801185924909513869185860448324593782",
+            "chi_lambda_beta": "0.5347027350564918",
+            "weighted_chi_c": "-0.2274810029964182149048065080157228752194008649086142016216108617318587"
           }
         ],
-        "numerator": "0.5681658626425880366871750897262235816304819472885",
-        "denominator": "1.6037349940849159488369968854781060201646930899337",
-        "avg_content_c_beta_mp": "0.35427665090439767427363042901942685711527188244193",
-        "a_K_first_order_mp": "1.4443911442694167656399038271068391557768072958753",
-        "avg_content_c_beta": 0.3542766509043977,
-        "a_K_first_order": 1.4443911442694168,
+        "numerator": "0.5681658022922482527335542691064996360813582301199481802474272203428789",
+        "denominator": "1.603734995168140214328537345177499151539129373191659519689798533132432",
+        "avg_content_c_beta_mp": "0.3542766130339882663010862307911933485047337079358967526600339437655925",
+        "a_K_first_order_mp": "1.4443910474631560376935780690610314461895226789943669929449188114442",
+        "avg_content_c_beta": 0.3542766130339883,
+        "a_K_first_order": 1.444391047463156,
         "note": ""
       },
       {
-        "name": "σ_1^2 σ_2^-1 σ_1^2 σ_2^-1 (B_3 chiral 6-cross)",
-        "knot_class": "5_2 candidate",
+        "name": "σ_1^2 σ_2^-1 σ_1^2 σ_2^-1 in B_3  (3-component link)",
+        "closure": "unnamed 3-component link (det 12) — NOT 5_2 (det 7)",
         "amphichiral": false,
         "braid_word": [
           [
@@ -270,7 +315,13 @@
             2
           ]
         ],
-        "writhe": 4,
+        "n_strands": 3,
+        "writhe": 2,
+        "writhe_source": "computed_from_braid_word",
+        "closure_components": 3,
+        "closure_determinant": 12,
+        "braid_index_of_closure": null,
+        "at_braid_index": false,
         "n_partitions": 3,
         "rows": [
           {
@@ -278,9 +329,9 @@
               3
             ],
             "content_c_lambda": 3,
-            "wedderburn_weight": "0.14181150503252750580014879813280798938471544264213",
-            "chi_lambda_beta": "1.2320524825884345",
-            "weighted_chi_c": "0.5241576505047833471004121831210928072396602110583"
+            "wedderburn_weight": "0.1418115076422694656756848928643485801185924909513869185860448324593782",
+            "chi_lambda_beta": "1.232052454166766",
+            "weighted_chi_c": "0.524157648059241518192758337480792069355324733412147060913282078623894"
           },
           {
             "shape": [
@@ -288,8 +339,8 @@
               1
             ],
             "content_c_lambda": 0,
-            "wedderburn_weight": "0.63134619224631376936117445305631419176678151532486",
-            "chi_lambda_beta": "2.18254929605285",
+            "wedderburn_weight": "0.6313461962032220993256739642694161566798184354603307818464283414842869",
+            "chi_lambda_beta": "2.1825492538144147",
             "weighted_chi_c": "0.0"
           },
           {
@@ -299,24 +350,27 @@
               1
             ],
             "content_c_lambda": -3,
-            "wedderburn_weight": "0.14181150503252750580014879813280798938471544264213",
-            "chi_lambda_beta": "0.8116537356420812",
-            "weighted_chi_c": "-0.34530551345003024744771218272816427275167155089447"
+            "wedderburn_weight": "0.1418115076422694656756848928643485801185924909513869185860448324593782",
+            "chi_lambda_beta": "0.8116537543657599",
+            "weighted_chi_c": "-0.3453055277703500029060579118062629224438681747934588112966696475388273"
           }
         ],
-        "numerator": "0.17885213705475309965270000039292853448798866016383",
-        "denominator": "1.6677652421044440074835304801658619676385192499648",
-        "avg_content_c_beta_mp": "0.10724059510262443887487087426508776495343563429968",
-        "a_K_first_order_mp": "1.0896790133701637771632510643380188413135726139732",
-        "avg_content_c_beta": 0.10724059510262444,
-        "a_K_first_order": 1.0896790133701637,
+        "numerator": "0.1788521202888915152867004256745291469114565586186882496166124310850667",
+        "denominator": "1.667765228031775273005867019121726844821632661739680326870526426779567",
+        "avg_content_c_beta_mp": "0.1072405859546340873768851471489017865393380684313171235896254182458086",
+        "a_K_first_order_mp": "1.044839497885390486366635067766559612976139137151673639567271428768728",
+        "avg_content_c_beta": 0.1072405859546341,
+        "a_K_first_order": 1.0448394978853905,
         "note": ""
       }
     ],
     "summary_observations": [
-      "trefoil 3_1 (σ_1^3) and its mirror (σ_1^-3) give ⟨c⟩_β = ±1.815 — antisymmetric under braid mirror as required.",
-      "The (σ_1 σ_2)^3 toral form of 3_1 (writhe 6) gives a different ⟨c⟩_β = +0.354, confirming that ⟨c⟩_β depends on the specific braid representative, not just the knot type.",
-      "None of the values match the ⟨c⟩ = 1 universal ansatz from the conjecture; the chiral case has knot-specific structural values that are NOT given by the simple writhe-content formula.",
+      "CORRECTION (2026-08-10, qou-okxx): the writhe is now computed from the braid word.  The fourth row previously carried a hardcoded writhe of 4 for a word whose writhe is +2, which made its a_K = 1 + w·⟨c⟩·h twice too large.",
+      "CORRECTION (2026-08-10, qou-okxx): three rows were mislabelled. σ_1^3 in B_3 closes to the SPLIT LINK 3_1 ⊔ 0_1 (2 components, Alexander ≡ 0, det 0), not the trefoil — the trefoil is a knot and sits at braid index 2.  (σ_1 σ_2)^3 closes to the TORUS LINK T(3,3) (3 components, det 4), not a 'toral form of 3_1'. σ_1^2 σ_2^-1 σ_1^2 σ_2^-1 closes to a 3-component link of determinant 12, so it is neither 5_2 (a knot, det 7) nor any knot.  Component counts are computed from the underlying permutation; determinants are |Δ(−1)| via the reduced Burau representation.",
+      "LEVEL (2026-08-10): the writhe is Markov-I invariant but shifts by ±1 under Markov II, so every row records its n_strands and whether it sits at the braid index of its own closure.  Only the T(3,3) row does (braid index 3).  Per the owner ruling in docs/audits/2026-08-10-writhe-level-of-definition.md the observable is evaluated at the lowest level of the tower, so the two σ_1^{±3} rows are OFF-LEVEL diagnostics: the minimal-level trefoil datum is the H_2 row of the companion chirality_avg_content.py.",
+      "The two σ_1^{±3} rows give ⟨c⟩_β = ±1.815, antisymmetric under the braid mirror as required.  This is a statement about the braid words, not about the trefoil.",
+      "⟨c⟩_β is a function of the BRAID WORD, not of the closure: the four words here present four different links, so this table on its own does not exhibit two representatives of one knot type. (The earlier note claiming σ_1^3 and (σ_1 σ_2)^3 were two representatives of 3_1 was wrong on the topology — they are a split link and a 3-component torus link.)  The level ruling is what makes the datum well-defined: evaluate at the braid index.",
+      "None of the values match the ⟨c⟩ = 1 universal ansatz from the conjecture; the chiral case has word-specific structural values that are NOT given by the simple writhe-content formula.",
       "Combined with the deuteron empirical falsification (chirality-writhe-ribbon-derivation.md:122-126), this demarcates the chiral residual of GAP-A-2: a structural formula relating ⟨c⟩_β to the braid topology is the open piece."
     ]
   }

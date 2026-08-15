@@ -111,14 +111,21 @@ _UPSTREAM_RECORDS: list = []
 
 
 def _classify(c: float, d: float, h_num: float) -> str:
-    """Tag a crossing tuple as 'sigma' / 'sigma_inv' / 'averaged'."""
-    if abs(c - 1.0) < 1e-9 and abs(d) < 1e-9:
-        return "sigma"
-    if abs(c - 1.0) < 1e-9 and abs(d + h_num) < 1e-9:
-        return "sigma_inv"
-    if abs(c - 1.0) < 1e-9 and abs(d + h_num / 2) < 1e-9:
-        return "averaged"
-    return "unknown"
+    """Tag a crossing tuple with its canonical ctype.
+
+    Delegates to `canonical_braid_crossings.classify_crossing`. The private
+    three-way classifier this replaces returned `"unknown"` for the
+    colour-weighted p-n interface `-h(1/2 - δ/4)`, and `mirror_word`'s
+    `else` branch then treated `"unknown"` as `averaged` -- so the interface
+    was mirrored under the colour-blind rule with no error raised anywhere
+    (qou-8zjd). `"unknown"` is preserved for genuinely unrecognised input so
+    the mirror variants keep their existing fallback behaviour.
+    """
+    from canonical_braid_crossings import classify_crossing
+    try:
+        return classify_crossing(float(c), float(d), h_num)
+    except ValueError:
+        return "unknown"
 
 
 def mirror_word(word, *, variant: str, h_num: float):

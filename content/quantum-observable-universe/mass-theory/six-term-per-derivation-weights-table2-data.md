@@ -1,3 +1,5 @@
+*The $\mathfrak{m}_{\mathrm{pred}}$ column is the $m_e$-scaled realization of the dimensionless mass ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (CAL-1, set by fiat); absolute mass in MeV is not a framework prediction.*
+
 | atom | $A$ | $\mathfrak{m}_{\mathrm{AME}}$ (MeV) | $\mathfrak{m}_{\mathrm{pred}}$ | err % |
 |------|-----|------:|------:|------:|
 | p    |  1  |  938.7831 |  938.7831 |  0.000 |

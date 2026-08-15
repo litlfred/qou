@@ -76,6 +76,12 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     partitions_of,
 )
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TOL = mp.mpf("1e-40")  # 50-dps identity tolerance (≫ 1e-25 floor)
 
 
@@ -97,7 +103,7 @@ def symbolic_2a() -> dict:
     """
     q = sp.Symbol("q", positive=True)
     h = q - 1 / q
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
 
     a = h / (1 - q**4)
     ap = h / (1 - q**-4)

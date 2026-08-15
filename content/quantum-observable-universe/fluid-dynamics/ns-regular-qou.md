@@ -15,7 +15,7 @@ with $\Sigma$ denoting the specific collision locus of a generic vortex pair. $\
 We categorise $(\mathbf{C}, A, \tau)$ as:
 
 - **NS-regular** if $\mathrm{NS}(A) = 0$. The categorical obstruction zeroes out; the purely classical Navier--Stokes equation (specialised via $q = 1$ from the [q-NS system](#def:q-navier-stokes)) processes all smooth initial data into smooth global solutions.
-- **NS-singular** if $\mathrm{NS}(A) \neq 0$. The obstruction holds firm; the classical Navier--Stokes equation inevitably ingests smooth initial data and produces a strict singularity in finite time.
+- **NS-singular** if $\mathrm{NS}(A) \neq 0$. The obstruction is nonzero; the classical Navier--Stokes equation ingests smooth initial data and produces a singularity in finite time.
 
 The NS obstruction tracks only the rigid categorical properties of $(\mathbf{C}, A, \tau)$, relying specifically on $\chi(A)$. It operates independently of the selected substrate section $q$ and ignores specific initial data.
 

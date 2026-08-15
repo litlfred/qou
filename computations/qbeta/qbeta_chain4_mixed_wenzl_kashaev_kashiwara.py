@@ -216,7 +216,7 @@ def kashaev_evals(lam: tuple[int, ...], q: mp.mpf, hbar: mp.mpf) -> dict[str, mp
 
 def build_candidates(q: mp.mpf, hbar: mp.mpf) -> dict[str, mp.mpf]:
     """Mixed Wenzl × Kashaev × Kashiwara candidates for n ∈ {3, 4, 5}."""
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))   # Markov parameter (residue probe)
+    z = q**3 / (q**2 + 1)   # Markov parameter (residue probe)
     cands: dict[str, mp.mpf] = {}
     for n in (3, 4, 5):
         parts = partitions_of(n)

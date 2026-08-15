@@ -25,4 +25,4 @@ As the universe approaches heat death ($q \to 1$):
 
 ## Into the next aeon
 
-If the [cosmological chirality flip](#rem:cosmological-chirality-flip) holds, CMB radiation carries topological data across the heat-death boundary. Frobenius degeneration governs this aeon transition. Exceptional divisors reset the topology. The electron trefoil persists until existence dissolves at $q = 1$.
+If the [cosmological chirality flip](#rem:cosmological-chirality-flip) holds, CMB radiation carries topological data across the heat-death boundary. Frobenius degeneration governs this aeon transition. Exceptional divisors reset the topology. The electron trefoil persists to the $q = 1$ boundary.

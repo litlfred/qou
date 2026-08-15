@@ -115,6 +115,12 @@ from qbeta_utils import substrate_ladder_quantities  # noqa: E402
 # expansion).
 TOL_PPM = 100
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # Floor scale used to keep the ppm comparison dimensionally consistent
 # when a target is (near-)zero.  Misses are always computed as
 # `|pred - tgt| / max(|tgt|, ZERO_FLOOR) * 1e6`, i.e. RELATIVE-to-scale

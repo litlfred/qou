@@ -93,7 +93,7 @@ def ladder_chain(q):
     """Reproduce the c_3/c_4 extraction chain at anchor q (the producer's
     exact convention — qbeta_ck_k_gt_3_habiro_extension_scoping.py)."""
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     alpha = (z - 1) * h / 2
     d1 = q ** 3 / (q ** 2 + 1)
     d2 = -1 / (q * (q ** 2 + 1))

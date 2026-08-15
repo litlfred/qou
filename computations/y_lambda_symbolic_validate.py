@@ -263,7 +263,7 @@ def test_3_markov(n: int) -> list[dict]:
     if n <= 4:
         # Symbolic.
         q = sp.Symbol("q", positive=True)
-        z_sym = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+        z_sym = q**3 / (q**2 + 1)
         for mu in test_mus:
             word = cycle_type_word(mu)
             target = z_sym ** (n - len(mu))

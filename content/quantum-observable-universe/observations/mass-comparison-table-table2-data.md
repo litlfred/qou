@@ -1,3 +1,5 @@
+*The LO output column is the $m_e$-scaled realization of the dimensionless mass ratio (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction.*
+
 | Particle | Knot formula | LO output (MeV) | Observed (MeV) | Source |
 |----------|-------------|---:|---:|--------|
 | Proton | $[u,u,d]_p \oplus \mathcal{L}_H$ | $938.272$ † | $938.272$ | CODATA |

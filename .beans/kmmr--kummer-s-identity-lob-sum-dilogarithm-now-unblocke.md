@@ -1,7 +1,7 @@
 ---
 # kmmr
-title: "Kummer's identity (Λ-sum = dilogarithm form) — now UNBLOCKED by cLiTwoExt"
-status: todo
+title: Kummer's identity (Λ-sum = dilogarithm form) — now UNBLOCKED by cLiTwoExt
+status: completed
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - hyperbolic-volume
     - stale-claim-corrected
 created_at: 2026-08-09T20:30:00Z
-updated_at: 2026-08-09T20:30:00Z
+updated_at: 2026-08-14T21:02:10Z
 ---
 
 ## The claim that was stale
@@ -299,3 +299,16 @@ Numerically `VOL_5_2 = 2.82812208833078316276389880927663494277…`, matching th
 corpus's SnapPy HP 50-dps constant to full recorded precision (Route 71,
 residual `4.9e-50`). That is a **control on the definition**, not a proof of the
 geometric identification.
+
+
+---
+**2026-08-14 — status corrected `todo` → `completed` (stale frontmatter).**
+
+The body already records the closure: **Kummer's identity is PROVED for
+general `z`** (`QOU/Knot/KummerRadial.lean` `kummer`, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`, 2026-08-09), via the radial reduction
+(law of sines) with `kummer_unit_circle` as basepoint. The prohibition on
+transporting dilogarithm facts onto `BlochWigner_lob` is lifted, and the first
+consumer `FiveTwoVolumeConstant.lean` (`VOL_5_2_eq_dilog`) has landed. Only the
+frontmatter `status: todo` was stale. NOT this bean (untouched): the geometric
+factor `Vol = D` (`qou-m015`/`qou-krvm`).

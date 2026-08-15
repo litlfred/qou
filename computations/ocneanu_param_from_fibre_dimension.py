@@ -294,7 +294,15 @@ def main() -> int:
         ),
     }
 
-    path = Path("computations/ocneanu-param-from-fibre-dimension.witness.json")
+    # Anchored to THIS FILE, not to the caller's cwd. The literal
+    # `Path("computations/…")` only resolves when the producer happens to be
+    # invoked from the repo root; the regeneration harness runs every producer
+    # from its own directory, so this became
+    # `computations/computations/ocneanu-…` and died with FileNotFoundError.
+    # That reads in the journal as a producer failure and the witness is never
+    # migrated — the same cwd-assumption class as the `parents[2]` bug fixed in
+    # 12 scripts on this branch.
+    path = Path(__file__).resolve().parent / "ocneanu-param-from-fibre-dimension.witness.json"
     path.write_text(json.dumps(out, indent=2) + "\n")
 
     for c in checks:

@@ -108,6 +108,12 @@ TOL_EXACT = 0        # sympy exact comparisons
 TOL_50 = 1e-30       # 60-dps kernel-identity cross-checks
 N_LADDER = 3         # ladder q = 1 + 10^{−k}, k = 1..3 (atomic grids grow as 10^k)
 R_THRESHOLDS = (2, 4, 8, 16, 32)
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 EPS_LADDER = (mpf("1e-2"), mpf("1e-4"), mpf("1e-6"))
 TAIL_DPS = 34        # truncation depth for kernel grids (tails compared at 1e-30)
 

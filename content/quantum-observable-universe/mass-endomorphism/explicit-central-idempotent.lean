@@ -34,16 +34,21 @@ opaque SYT (lam : List ℕ) : Type
     `c(i, j; q) = q^(2(j - i))`.
 
     This is the integer (signed) power, so for boxes below the main
-    diagonal (`j < i`) the content is `q⁻²ᵏ` for some `k > 0`. We
-    therefore require the base ring to be a `GroupWithZero` (provided
-    by `Field`) so `q ^ (n : ℤ)` is well-defined via `zpow`.
+    diagonal (`j < i`) the content is `q⁻²ᵏ` for some `k > 0`, i.e.
+    `q ^ (n : ℤ)` must be total.
+
+    §7c: that is supplied by carrying `q` as a **unit** `q : Rˣ` of a bare
+    `CommRing R` — `Rˣ` is a group, so `zpow` is total there — rather than by
+    strengthening the base ring to a `GroupWithZero`/`Field`. The generic
+    Hecke ground ring `ℤ[q, q⁻¹]` is exactly this situation: `q` is a unit and
+    the ring is not a field.
 
     Per Gemini PR #634 review: previous `(2 * (j - i)).toNat` was
     mathematically incorrect — it forced `q^0 = 1` for all boxes
     below the diagonal, which contradicts the standard q-content
     definition (Hoefsmit, prop:hoefsmit-seminormal-form). -/
-def qContent {R : Type*} [Field R] (i j : ℤ) (q : R) : R :=
-  q ^ (2 * (j - i))
+def qContent {R : Type*} [CommRing R] (i j : ℤ) (q : Rˣ) : R :=
+  ((q ^ (2 * (j - i)) : Rˣ) : R)
 
 /-- Murphy–Lagrange formula for the central primitive idempotent
     `e_λ ∈ Z(H_n(q))`. Placeholder element-of-the-algebra constant.
@@ -55,7 +60,7 @@ def qContent {R : Type*} [Field R] (i j : ℤ) (q : R) : R :=
     placeholder fixes the signature to return a value in the
     underlying ring `R`, allowing element-level identities
     (orthogonality, self-adjointness, bar-pairing) to typecheck. -/
-opaque centralIdempotent {R : Type*} [CommRing R]
+noncomputable opaque centralIdempotent {R : Type*} [CommRing R]
     (lam : List ℕ) (q : R) : R
 
 /-- **Theorem (`prop:explicit-central-idempotent`).** The central

@@ -72,7 +72,23 @@ class LpDualResult:
     duality_gap_str: Optional[str] = None
 
     def to_dict(self) -> dict:
-        return {
+        """Serialize both sides of the LP.
+
+        The numeric fields are kept verbatim: every existing consumer does
+        arithmetic on them (`sum(r["y_star"] ...)`, `r["duality_gap"] < 1e-6`),
+        so turning them into strings here would break readers silently rather
+        than loudly.
+
+        When the clarabel-MPFR backend supplied full-precision decimals, they
+        are emitted ALONGSIDE as `*_str`. Before this, `_lp_result_from_dict`
+        kept them on the dataclass (bean `qou-t0rf`) but `to_dict` dropped them
+        again, so a ~50-dps solve still reached its witness as f64 — the same
+        truncation qou-t0rf fixed one layer up, re-applied at the last step.
+        `None` on the scipy path, which has nothing beyond f64 to report; the
+        key is omitted rather than emitted as null, so a reader can use
+        `"y_star_str" in d` to ask "was this solved at precision?".
+        """
+        d = {
             "x_star": list(self.x_star),
             "y0_star": float(self.y0_star),
             "y_star": list(self.y_star),
@@ -82,6 +98,17 @@ class LpDualResult:
             "duality_gap": float(self.duality_gap),
             "feasible": bool(self.feasible),
         }
+        for key, val in (
+            ("x_star_str", self.x_star_str),
+            ("y0_star_str", self.y0_star_str),
+            ("y_star_str", self.y_star_str),
+            ("primal_obj_str", self.primal_obj_str),
+            ("dual_obj_str", self.dual_obj_str),
+            ("duality_gap_str", self.duality_gap_str),
+        ):
+            if val is not None:
+                d[key] = list(val) if isinstance(val, (list, tuple)) else str(val)
+        return d
 
 
 def solve_frobenius_dual_lp(
@@ -207,14 +234,49 @@ def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
         dual_obj=float(out["dual_obj"]),
         duality_gap=float(out["duality_gap"]),
         feasible=True,
-        # keep what the solver actually computed, alongside the f64 view
-        x_star_str=[str(v) for v in out["x_star"]],
-        y0_star_str=str(out["y0_star"]),
-        y_star_str=[str(v) for v in out["y_star"]],
-        primal_obj_str=str(out["primal_obj"]),
-        dual_obj_str=str(out["dual_obj"]),
-        duality_gap_str=str(out["duality_gap"]),
+        # Keep what the solver actually computed, alongside the f64 view.
+        #
+        # This used to read `str(out["y0_star"])` -- the *f64* key -- while
+        # the genuine MPFR decimals sat right beside it under `y0_star_str`.
+        # Both transports emit them (the CLI formats them from the MPFR
+        # values; the PyO3 binding returns them as `str`/`list[str]`
+        # alongside its f64 convenience view), so the digits were always
+        # there and always discarded:
+        #
+        #   y0_star      0.9999999999997836                    (f64, 17 sig)
+        #   y0_star_str  9.999999999997835691118368666860018…e-1  (52 sig)
+        #
+        # So `qou-t0rf` -- which added these fields to stop `float()`
+        # throwing ~35 digits away -- fixed the storage and kept the wrong
+        # source, and every `*_str` since has been f64 wearing a string.
+        # That is worse than an absent field: a reader takes `*_str` as the
+        # authoritative value precisely because it is a string.
+        **_str_fields_if_decimal(out),
     )
+
+
+_STR_KEYS = ("x_star", "y0_star", "y_star", "primal_obj", "dual_obj",
+             "duality_gap")
+
+
+def _str_fields_if_decimal(out: dict) -> dict:
+    """`*_str` kwargs, taken only from a source that really sent decimals.
+
+    Reads the solver's own `*_str` key first -- that is the MPFR value, and
+    reading the f64 key instead was the defect this replaces. Falls back to
+    the plain key only when it is itself a string. A float is DROPPED rather
+    than stringified: `str(0.9999999999997836)` fabricates an authoritative
+    -looking field carrying no digits beyond f64. Absent is honest.
+    """
+    def _pick(key):
+        val = out.get(f"{key}_str", out.get(key))
+        if isinstance(val, str):
+            return val
+        if isinstance(val, (list, tuple)):
+            return list(val) if all(isinstance(v, str) for v in val) else None
+        return None
+
+    return {f"{k}_str": v for k in _STR_KEYS if (v := _pick(k)) is not None}
 
 
 def _solve_operator_selection_lp_clarabel(
@@ -455,23 +517,72 @@ def verify_dual_present(witness_path: str | Path) -> dict:
             return False
         return True
 
-    def _scan(obj):
+    # Records where an empty active set CONTRADICTS a nonzero y_star.
+    inconsistent: list[str] = []
+
+    def _nonzero_shadow_prices(y) -> list[int]:
+        """Indices with a shadow price above tolerance."""
+        if isinstance(y, list):
+            items = enumerate(y)
+        elif isinstance(y, dict):
+            items = y.items()
+        else:
+            return []
+        out = []
+        for i, x in items:
+            if isinstance(x, bool) or not isinstance(x, (int, float)):
+                continue
+            if abs(float(x)) > 1e-12:
+                out.append(i)
+        return out
+
+    def _scan(obj, path="<root>"):
         if isinstance(obj, dict):
+            # ── active-set / y_star CONSISTENCY, checked pairwise ──────────
+            #
+            # An EMPTY active set is a legitimate dual result *on its own*: it
+            # means no Frobenius constraint is tight (every shadow price is
+            # sub-tolerance), i.e. an interior LP/SDP optimum. Corpus evidence
+            # backs this — of 3096 witnesses, 14 carry an empty active set and
+            # ALL of them pair it with an absent or all-zero `y_star`. So
+            # rejecting emptiness outright would reject 11 well-formed duals.
+            #
+            # What is NEVER legitimate is an empty active set sitting next to a
+            # NONZERO `y_star`, because the active set is *defined* as
+            # {i : y_star[i] > 0}. Those two fields then contradict each other,
+            # and one of them is wrong. No corpus witness has that shape; the
+            # null-hardening test does, which is what it was really pinning.
+            #
+            # Hence a pairwise consistency check rather than a presence check:
+            # it accepts every real interior optimum and still fails the
+            # contradictory shape. Presence-only checks (in either direction)
+            # cannot separate the two, which is why the previous
+            # implementation and its test disagreed.
+            akey = next(
+                (k for k in OPTIONAL_ALIASES
+                 if k in obj and isinstance(obj[k], list)),
+                None,
+            )
+            if akey is not None and len(obj[akey]) == 0:
+                hot = _nonzero_shadow_prices(obj.get("y_star"))
+                if hot:
+                    inconsistent.append(
+                        f"{path}: {akey} is empty but y_star has "
+                        f"{len(hot)} nonzero entr"
+                        f"{'y' if len(hot) == 1 else 'ies'} at "
+                        f"{hot[:5]} — the active set is by definition "
+                        "{i : y_star[i] > 0}, so these contradict"
+                    )
+
             for k, v in obj.items():
                 if k in REQUIRED and _meaningful(v):
                     found.add(k)
                 elif k in OPTIONAL_ALIASES and isinstance(v, list):
-                    # An EMPTY active_set is a legitimate dual result — it means
-                    # no Frobenius constraint is tight (all shadow prices y_star
-                    # are sub-tolerance, i.e. an interior SDP/LP optimum). Treat
-                    # any list (incl. []) as present; the hollowness check stays
-                    # strict for y_star/y0_star/objectives, which a genuinely
-                    # un-computed dual leaves null/empty.
                     found.add(k)
-                _scan(v)
+                _scan(v, f"{path}.{k}")
         elif isinstance(obj, list):
-            for item in obj:
-                _scan(item)
+            for i, item in enumerate(obj):
+                _scan(item, f"{path}[{i}]")
 
     _scan(data)
     missing = REQUIRED - found
@@ -479,9 +590,10 @@ def verify_dual_present(witness_path: str | Path) -> dict:
     if not has_active:
         missing.add("active_set OR active_constraints OR active_channels")
     return {
-        "ok": not missing,
+        "ok": not missing and not inconsistent,
         "missing": sorted(missing),
         "found": sorted(found),
+        "inconsistent": inconsistent,
     }
 
 

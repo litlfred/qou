@@ -79,7 +79,7 @@ def _load_q0_50dps() -> tuple[mp.mpf, mp.mpf, mp.mpf, mp.mpf]:
     q0 = mp.mpf(d["derived_50_digit"]["q"])
     qi = 1 / q0
     h = q0 - qi
-    z = 1 / (mp.sqrt(q0) + mp.sqrt(qi))
+    z = q0**3 / (q0**2 + 1)
     return q0, qi, h, z
 
 
@@ -139,7 +139,11 @@ def _inter_cross_mpfr(
     elif nuc == "n" and next_nuc == "n":
         return (one, -h)               # nn: σ⁻¹
     else:
-        return (one, -h / 2)           # pn: ½(σ + σ⁻¹)
+        # colour-WEIGHTED p-n interface (qou-gdtb): -h(1/2 - delta/4).
+        # -h/2 here was the colour-blind value and dropped the p/n
+        # asymmetry that bring_color_weighted supplies.
+        from canonical_braid_crossings import _avg_color_delta
+        return (one, -h * (1 - _avg_color_delta() / 2) / 2)
 
 
 def atom_per_generator_volumes_mpfr(

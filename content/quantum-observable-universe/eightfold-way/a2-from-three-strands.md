@@ -9,7 +9,7 @@ throughout this chapter.*
 > substrate is derived from it. In particular this is **not** the
 > $A_2 = \mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)$, which is the
 > Schur--Weyl partner acting on the fibre $V$ and requires $\dim V = 3$
-> (Proposition~\ref{prop:schur-weyl-eightfold}, where the framework
+> ([Proposition](#prop:schur-weyl-eightfold), where the framework
 > supplies $\dim V = 2$). Items 1--3 below are the standard
 > braid/Coxeter dictionary, recorded for reference; item 4 and the
 > weight-lattice paragraph are what the chapter actually uses.
@@ -39,7 +39,7 @@ otherwise.*
 3. *The six roots of $A_2$ are the elements $\{\pm\alpha_1,
    \pm\alpha_2, \pm(\alpha_1 + \alpha_2)\}$, where $\alpha_1, \alpha_2$
    are the simple roots associated to $T_1, T_2$.  The angle between
-   adjacent roots is $\pi/3$ (i.e.\ $120°$ between a root and its
+   adjacent roots is $\pi/3$ (that is, $120°$ between a root and its
    negative), reflecting the Coxeter number $h = 3$ of $A_2$.  The Weyl
    group $W(A_2) \cong S_3$ acts by permuting the three strands.*
 

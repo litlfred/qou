@@ -37,7 +37,7 @@ from witness_base import WitnessBuilder
 NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 
-z = 1.0 / (q0**0.5 + qi0**0.5)
+z = q0**3 / (q0**2 + 1)
 TR_M = [1.0, z, z, z**2, z**2, z**3]
 
 

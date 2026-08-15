@@ -1,0 +1,180 @@
+{
+  "computedAt": "2026-05-03T14:26:31.976613+00:00",
+  "computation": "brane-tower-isospin-diagnosis",
+  "description": "Diagnoses the origin of the 6-term formula's isospin violation (predicted T - ³He = -737 MeV vs CODATA +0.019). Localises to T2/T3 brane-tower: Φ_q diverges near x=1 and amplifies tiny per-generator |V̂_i| differences between p/n intra-crossings into hundreds of MeV.  Term 1 (canonical Markov trace) does NOT have this problem — the issue is structural to the brane-tower formula at q_0.",
+  "auditOnly": "docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md",
+  "rows": [
+    {
+      "atom": "proton",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "n_generators": 2,
+      "include_inter": false,
+      "abs_per_gen": [
+        0.98900731592926,
+        0.9710701586527439
+      ],
+      "phi_q_per_gen": [
+        671221.4103737387,
+        425756.9858019366
+      ],
+      "sum_phi_q": 1096978.3961756753,
+      "max_phi_q": 671221.4103737387,
+      "max_abs_v": 0.98900731592926
+    },
+    {
+      "atom": "neutron",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "n_generators": 2,
+      "include_inter": false,
+      "abs_per_gen": [
+        0.854210312825839,
+        0.975509471107746
+      ],
+      "phi_q_per_gen": [
+        36047.91315102696,
+        475250.3602002062
+      ],
+      "sum_phi_q": 511298.27335123316,
+      "max_phi_q": 475250.3602002062,
+      "max_abs_v": 0.975509471107746
+    },
+    {
+      "atom": "deuteron",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_generators": 5,
+      "include_inter": true,
+      "abs_per_gen": [
+        0.98900731592926,
+        0.9710701586527439,
+        0.26414511559102966,
+        0.854210312825839,
+        0.975509471107746
+      ],
+      "phi_q_per_gen": [
+        671221.4103737387,
+        425756.9858019366,
+        13.087322123262831,
+        36047.91315102696,
+        475250.3602002062
+      ],
+      "sum_phi_q": 1608289.756849032,
+      "max_phi_q": 671221.4103737387,
+      "max_abs_v": 0.98900731592926
+    },
+    {
+      "atom": "tritium",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_generators": 8,
+      "include_inter": true,
+      "abs_per_gen": [
+        0.98900731592926,
+        0.9710701586527439,
+        0.26414511559102966,
+        0.854210312825839,
+        0.975509471107746,
+        0.15961495459608993,
+        0.854210312825839,
+        0.975509471107746
+      ],
+      "phi_q_per_gen": [
+        671221.4103737387,
+        425756.9858019366,
+        13.087322123262831,
+        36047.91315102696,
+        475250.3602002062,
+        4.527895379214803,
+        36047.91315102696,
+        475250.3602002062
+      ],
+      "sum_phi_q": 2119592.558095644,
+      "max_phi_q": 671221.4103737387,
+      "max_abs_v": 0.98900731592926
+    },
+    {
+      "atom": "helium-3",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_generators": 8,
+      "include_inter": true,
+      "abs_per_gen": [
+        0.98900731592926,
+        0.9710701586527439,
+        0.36867527658596944,
+        0.98900731592926,
+        0.9710701586527439,
+        0.26414511559102966,
+        0.854210312825839,
+        0.975509471107746
+      ],
+      "phi_q_per_gen": [
+        671221.4103737387,
+        425756.9858019366,
+        40.532919957478136,
+        671221.4103737387,
+        425756.9858019366,
+        13.087322123262831,
+        36047.91315102696,
+        475250.3602002062
+      ],
+      "sum_phi_q": 2705308.685944665,
+      "max_phi_q": 671221.4103737387,
+      "max_abs_v": 0.98900731592926
+    },
+    {
+      "atom": "helium-4",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_generators": 11,
+      "include_inter": true,
+      "abs_per_gen": [
+        0.98900731592926,
+        0.9710701586527439,
+        0.36867527658596944,
+        0.98900731592926,
+        0.9710701586527439,
+        0.26414511559102966,
+        0.854210312825839,
+        0.975509471107746,
+        0.15961495459608993,
+        0.854210312825839,
+        0.975509471107746
+      ],
+      "phi_q_per_gen": [
+        671221.4103737387,
+        425756.9858019366,
+        40.532919957478136,
+        671221.4103737387,
+        425756.9858019366,
+        13.087322123262831,
+        36047.91315102696,
+        475250.3602002062,
+        4.527895379214803,
+        36047.91315102696,
+        475250.3602002062
+      ],
+      "sum_phi_q": 3216611.487191278,
+      "max_phi_q": 671221.4103737387,
+      "max_abs_v": 0.98900731592926
+    }
+  ],
+  "verdict": "Brane-tower Σ Φ_q(|V̂_i|) is the pathology source.  The formula faithfully reproduces |V̂_i| from the Wedderburn construction, but Φ_q's divergence near x=1 amplifies small p/n asymmetries by 10⁵×.  Not a software bug — a feature of the formula as stated.",
+  "reconciliation_paths": [
+    "(A) audit per-generator (c, d) for p vs n intra-crossings",
+    "(B) audit Φ_q derivation in prop:mass-endomorphism-tower",
+    "(C) re-evaluate brane-tower applicability at q_0 (vs roots)",
+    "(D) check Term 5 chirality absorbs more p/n asymmetry"
+  ],
+  "engine": "python",
+  "scriptFile": "brane_tower_isospin_diagnosis.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

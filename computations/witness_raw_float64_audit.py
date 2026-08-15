@@ -83,33 +83,202 @@ SELF_OUTPUTS = {
 }
 
 
+# ── LP-dual carve-out (bean qou-ftuv, owner decision 2026-08-11) ─────────
+#
+# THIS IS A CARVE-OUT AND IS NAMED AS ONE. It is not a precision improvement
+# and it does not drain anything; it declares a class of fields out of scope.
+#
+# These are the primal/dual variables of the operator-selection LP/SDP, i.e.
+# raw solver output. On the scipy path the solver IS float64 — there is no
+# `mpmath.mpf` upstream to carry, so the standing fix ("carry mpf from the
+# source, serialize with `_precision.fmt`") has nothing to act on. And they
+# cannot simply become strings: `lp_dual_solver.to_dict()` documents that every
+# existing consumer does arithmetic on them, so stringifying breaks readers
+# silently rather than loudly.
+#
+# Deliberately NARROW. It names seven fields and nothing else. In
+# `a-K-via-lp-dual-full` these account for 801 of 867 floats; the remaining ~66
+# are the probe's OWN results (`a_K_via_lp_dual`, `dual_vs_C_ppm`, `tolerance`,
+# …), which are not solver output and stay counted — a producer-level fix is
+# the right treatment for those, and this carve-out must not hide them.
+#
+# Every excused field is COUNTED and REPORTED as `carved_out`. A carve-out that
+# cannot be seen is indistinguishable from a hole.
+LP_DUAL_F64_FIELDS = frozenset({
+    "x_star", "y_star", "y0_star", "u_lambda_star",
+    "primal_obj", "dual_obj", "duality_gap",
+})
+
+# ── float64-integrator carve-out (qou-7kq3, owner-approved 2026-08-15) ──
+#
+# The sibling of the LP-dual carve-out, for the same reason: output that is
+# f64 BY CONSTRUCTION, with no higher-precision source to carry from.
+#
+# The q-NS shell-model probes integrate an ODE system with float64 RK2 and say
+# so in their own docstrings ("Precision tier: float64 RK2, adaptive nonlinear
+# CFL"). For those, the standing instruction — "carry mpmath.mpf from the
+# source and serialize with _precision.fmt" — has no source: the integrator IS
+# the source. Stringifying would dress an f64 number as preserved precision,
+# which is what that instruction exists to prevent; rewriting the integrator in
+# mpmath would make it a different object at prohibitive cost.
+#
+# DELIBERATELY NOT keyed on `tier: exploratory`. That marker is worn by many
+# probes that are not integrators, and carving on it would let this quietly
+# widen to cover ordinary f64 sloppiness — the failure mode a carve-out has to
+# be designed against. A producer must opt in EXPLICITLY by declaring
+#
+#     w.add_data("precision_tier", "float64-integrator")
+#
+# so the excuse is a claim its author made on the record, not a property the
+# auditor inferred.
+#
+# Every excused field is COUNTED and REPORTED separately from the LP-dual
+# total. A carve-out that cannot be seen is indistinguishable from a hole.
+F64_INTEGRATOR_TIER = "float64-integrator"
+
+
+def _declares_f64_integrator(doc) -> bool:
+    """Has this witness explicitly claimed the float64-integrator tier?"""
+    if not isinstance(doc, dict):
+        return False
+    for holder in (doc, doc.get("data"), doc.get("result")):
+        if isinstance(holder, dict) and \
+                holder.get("precision_tier") == F64_INTEGRATOR_TIER:
+            return True
+    return False
+
+# A binary64 carries at most 17 significant decimal digits. A `*_str`
+# companion is only a genuine full-precision shadow if it carries MORE than
+# that — otherwise it is just the same f64 spelled as text.
+_F64_SIG_DIGITS = 17
+
+
+def _sig_digits(s: str) -> int:
+    """Significant decimal digits in a numeric string ('1.20e-3' -> 3)."""
+    mantissa = s.strip().lstrip("+-").split("e")[0].split("E")[0]
+    return len(mantissa.replace(".", "").lstrip("0"))
+
+
+def _is_full_precision_shadow(value, companion) -> bool:
+    """Is `companion` a `*_str` carrying MORE precision than `value`?
+
+    The guard on `_sig_digits` is the whole point, and it is not optional.
+    Without it the rule is a laundering hole: any producer could silence the
+    ratchet by emitting `x_str = str(x)` beside its f64 and claiming a shadow.
+    That is not hypothetical — bean `qou-t0rf` records exactly that bug, where
+    `_lp_result_from_dict` built `*_str` from the f64 key, so every `*_str`
+    since was "f64 wearing a string". A shadow rule that accepted those would
+    have certified the bug as a fix.
+
+    So a companion counts only when it demonstrably carries digits the double
+    could not hold.
+    """
+    if isinstance(value, float) and isinstance(companion, str):
+        return _sig_digits(companion) > _F64_SIG_DIGITS
+    if isinstance(value, list) and isinstance(companion, list):
+        if not value or len(value) != len(companion):
+            return False
+        pairs = list(zip(value, companion))
+        if not all(isinstance(v, float) and isinstance(c, str) for v, c in pairs):
+            return False
+        return all(_sig_digits(c) > _F64_SIG_DIGITS for _, c in pairs)
+    return False
+
+
 def count_raw_floats(obj) -> int:
     """Number of JSON numbers parsed as float (i.e. non-integer literals).
 
     JSON integers arrive as Python `int`, so this counts exactly the
     values written with a decimal point or an exponent — the float64
     payload. `bool` is a subclass of `int` and so is never counted.
+
+    SHADOW RULE (bean `qou-ftuv`, owner decision 2026-08-11). An f64 that sits
+    beside a `<key>_str` companion carrying more than 17 significant digits is
+    a **shadow, not a defect**: the value IS present at full precision in the
+    same witness, and the float is a convenience for consumers that do
+    arithmetic on it. `lp_dual_solver.to_dict()` emits exactly this pair and
+    documents why the float cannot simply become a string — every existing
+    consumer computes on it (`sum(r["y_star"] …)`, `r["duality_gap"] < 1e-6`),
+    so stringifying would break readers silently rather than loudly.
+
+    This does NOT weaken the ratchet. A shadow must prove itself by carrying
+    digits a double cannot hold; see `_is_full_precision_shadow`.
     """
+    return _count(obj)[0]
+
+
+def count_carved(obj) -> int:
+    """How many f64 the LP-dual carve-out excused. Reported, never silent."""
+    return _count(obj)[1]
+
+
+def _count(obj) -> tuple[int, int]:
+    """(counted, carved_out) — one traversal, both numbers."""
     if isinstance(obj, dict):
-        return sum(count_raw_floats(v) for v in obj.values())
+        total = carved = 0
+        for k, v in obj.items():
+            if k.endswith("_str"):
+                t, c = _count(v)
+                total += t
+                carved += c
+                continue
+            companion = obj.get(f"{k}_str")
+            if companion is not None and _is_full_precision_shadow(v, companion):
+                continue  # shadowed at full precision — not raw float64
+            if k in LP_DUAL_F64_FIELDS:
+                carved += _count(v)[0]
+                continue  # carve-out: solver output, f64 by construction
+            t, c = _count(v)
+            total += t
+            carved += c
+        return total, carved
     if isinstance(obj, list):
-        return sum(count_raw_floats(v) for v in obj)
-    return 1 if isinstance(obj, float) else 0
+        total = carved = 0
+        for v in obj:
+            t, c = _count(v)
+            total += t
+            carved += c
+        return total, carved
+    return (1 if isinstance(obj, float) else 0), 0
 
 
-def scan() -> dict[str, int]:
-    """{repo-relative path: raw float64 count} for every live witness."""
+CARVED: dict[str, int] = {}
+#: Per-file tally for the float64-integrator carve-out, kept SEPARATE from
+#: `CARVED` so the two excuses can never be read as one number.
+CARVED_INTEGRATOR: dict[str, int] = {}
+
+
+def scan(scan_root: Path | None = None) -> dict[str, int]:
+    """{repo-relative path: raw float64 count} for every live witness.
+
+    Also populates the module-level `CARVED` with what the LP-dual carve-out
+    excused per file, so `main` can report it. A carve-out is only defensible
+    while it is visible.
+    """
     found: dict[str, int] = {}
-    for p in sorted(HERE.rglob("*.witness.json")):
+    CARVED.clear()
+    CARVED_INTEGRATOR.clear()
+    for p in sorted((scan_root or HERE).rglob("*.witness.json")):
         if p.name in SELF_OUTPUTS or "_deprecated" in p.parts:
             continue
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
         except Exception:
             continue
-        n = count_raw_floats(d)
+        n, carved = _count(d)
+        rel = p.relative_to(ROOT).as_posix()
+        # An explicit float64-integrator declaration moves this file's REMAINING
+        # count into the integrator carve-out. Applied at witness level, not
+        # field level, because an integrator's output has no fixed field names —
+        # which is exactly why it needs a producer's on-the-record claim rather
+        # than a name list.
+        if n and _declares_f64_integrator(d):
+            CARVED_INTEGRATOR[rel] = n
+            n = 0
         if n:
-            found[p.relative_to(ROOT).as_posix()] = n
+            found[rel] = n
+        if carved:
+            CARVED[rel] = carved
     return found
 
 
@@ -133,6 +302,41 @@ def self_test() -> int:
         ({"a": [1.5, 2.5], "b": {"c": 3.5}}, 3),          # nested
         ({"a": ["1.5", {"c": "3.5"}]}, 0),                # nested, serialized
         ({}, 0),
+
+        # ── shadow rule (qou-ftuv) ────────────────────────────────────
+        # An f64 beside a *_str carrying MORE than 17 significant digits is
+        # the value at full precision, not a defect.
+        ({"y0_star": 0.012246289813934,
+          "y0_star_str": "1.224628981393451974336267854072680408e-2"}, 0),
+        # Same, for the list shape the LP duals actually use.
+        ({"y_star": [0.5, 0.25],
+          "y_star_str": ["5.000000000000000000000000000000e-1",
+                         "2.500000000000000000000000000000e-1"]}, 0),
+
+        # ── the laundering guard, which is the point ──────────────────
+        # A *_str that is merely the f64 spelled as text proves nothing and
+        # must still count. This is the qou-t0rf bug shape: *_str built from
+        # the f64 key. If this case ever returns 0, the rule has become a
+        # bypass and the ratchet is defeated.
+        ({"v": 0.1, "v_str": "0.1"}, 1),
+        ({"v": 0.012246289813934, "v_str": "0.012246289813934"}, 1),
+        # Length mismatch is not a shadow.
+        ({"v": [0.5, 0.25],
+          "v_str": ["5.00000000000000000000000000e-1"]}, 2),
+        # A *_str beside a non-float is irrelevant, and must not crash.
+        ({"v": "x", "v_str": "5.0000000000000000000000000e-1"}, 0),
+
+        # ── LP-dual carve-out (qou-ftuv route 3) ──────────────────────
+        # Named solver-output fields are excused...
+        ({"y_star": [0.5, 0.25], "duality_gap": 1e-9}, 0),
+        ({"x_star": [1.0], "y0_star": 0.5, "primal_obj": 2.5}, 0),
+        # ...and NOTHING else in the same witness is. This is the
+        # discrimination that keeps the carve-out narrow: a-K's own results
+        # (a_K_via_lp_dual, dual_vs_C_ppm, tolerance) are not solver output
+        # and must still count.
+        ({"y_star": [0.5], "a_K_via_lp_dual": 1.5, "tolerance": 1e-9}, 2),
+        # A same-named key nested anywhere is still solver output.
+        ({"per_atom": [{"lp_dual": {"y_star": [0.5, 0.25]}}]}, 0),
     ]
     bad = [(p, e, count_raw_floats(p)) for p, e in cases
            if count_raw_floats(p) != e]
@@ -143,13 +347,25 @@ def self_test() -> int:
         return 1
     print(f"SELF-TEST PASSED — {len(cases)} cases: raw float64 detected in "
           "plain/exponent/nested/negative form; strings, ints and bools not "
-          "flagged.")
+          "flagged; an f64 with a >17-digit *_str companion treated as a "
+          "shadow, and one with a same-precision *_str still counted (the "
+          "laundering guard).")
     return 0
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--self-test", action="store_true")
+    ap.add_argument(
+        "--scan-root", default=None, metavar="DIR",
+        help="directory to scan instead of computations/ (repo-relative). "
+             "The baseline is keyed on computations/ paths, so any OTHER root "
+             "reports every dirty file as NEW — that is honest for a "
+             "previously-unscanned tree, but it means such a run belongs in "
+             "precision-gates.sh as ADVISORY, never blocking, until the files "
+             "are drained. Do NOT rebaseline against a different root: it "
+             "would grow the baseline, which the discipline forbids "
+             "(bean qou-irzg).")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 on a NEW dirty witness or an INCREASED count")
     ap.add_argument("--rebaseline", action="store_true",
@@ -158,7 +374,22 @@ def main() -> int:
     if args.self_test:
         return self_test()
 
-    found = scan()
+    scan_root = (ROOT / args.scan_root).resolve() if args.scan_root else None
+    if scan_root is not None:
+        if not scan_root.is_dir():
+            print(f"--scan-root: not a directory: {scan_root}")
+            return 2
+        if args.rebaseline:
+            # Rebaselining against a foreign root would write that root's
+            # dirty files into a baseline keyed on computations/ paths —
+            # growing it. Baselines drain, never grow.
+            print("--rebaseline is refused with --scan-root (bean qou-irzg).")
+            return 2
+        print(f"  scan root                      : {args.scan_root}  "
+              f"[non-default — baseline does not cover it, so every dirty\n"
+              f"                                   file below is reported as "
+              f"NEW; treat this run as ADVISORY]")
+    found = scan(scan_root)
     prior: dict[str, int] = {}
     if BASELINE.exists():
         prior = json.loads(BASELINE.read_text())["files"]
@@ -177,6 +408,17 @@ def main() -> int:
     print("=" * 74)
     print(f"  witnesses carrying raw float64 : {len(found)}")
     print(f"  total raw float64 fields       : {total:,}")
+    if CARVED_INTEGRATOR:
+        print(f"  f64-integrator carve-out       : "
+              f"{sum(CARVED_INTEGRATOR.values()):,} field(s) in "
+              f"{len(CARVED_INTEGRATOR)} witness(es)  [NOT drained — declared "
+              f"precision_tier={F64_INTEGRATOR_TIER!r}]")
+        for _f, _n in sorted(CARVED_INTEGRATOR.items(), key=lambda t: -t[1]):
+            print(f"      {_n:6,d}  {_f}")
+    if CARVED:
+        print(f"  LP-dual carve-out excused      : {sum(CARVED.values()):,} "
+              f"field(s) in {len(CARVED)} witness(es)  [NOT drained — see "
+              f"LP_DUAL_F64_FIELDS]")
     if prior:
         print(f"  baseline files / fields        : {len(prior)} / {base_total:,}")
         print(f"  drained since baseline         : {len(drained)} file(s), "
@@ -229,6 +471,21 @@ def main() -> int:
         "data": {
             "dirty_witnesses": len(found),
             "total_fields": total,
+            # The carve-out, recorded in the witness so it is auditable rather
+            # than only visible in console output.
+            "lp_dual_carved_out_fields": sum(CARVED.values()),
+            "lp_dual_carved_out_by_file": dict(sorted(CARVED.items())),
+            "lp_dual_carved_out_field_names": sorted(LP_DUAL_F64_FIELDS),
+            # The float64-integrator carve-out, recorded on the SAME terms as
+            # the LP-dual one above. Console output is not auditability: a
+            # reviewer reading the committed artifact must be able to see what
+            # was excused and on whose declaration, without re-running the
+            # script. Emitting it only to stdout would have made this carve-out
+            # exactly the unseeable kind its own comment warns against.
+            "f64_integrator_carved_out_fields": sum(CARVED_INTEGRATOR.values()),
+            "f64_integrator_carved_out_by_file": dict(
+                sorted(CARVED_INTEGRATOR.items())),
+            "f64_integrator_declared_tier": F64_INTEGRATOR_TIER,
             "baseline_files": len(prior),
             "baseline_fields": base_total,
             "new_not_baselined": len(new_files),

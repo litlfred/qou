@@ -15,7 +15,7 @@ To estimate sublimation behavior, we examine the composite crossing parity. The 
 **Full criterion.**
 Let $\ell_v$ denote the number of valence electrons beyond the last closed shell. Let $\ell_{\max}$ dictate the capacity of the valence shell ($\ell_{\max} = 2n^2$ for principal quantum number $n$). We systematically classify the macroscopic phase:
 
-1. **Closed shell** ($\ell_v = 0$ or $\ell_v = \ell_{\max}$): The extension splits. The liquid phase acts securely stable.
-2. **Near-closed shell** ($\ell_v = 1$ or $\ell_v = \ell_{\max} - 1$): The extension splits via the closed-core trivializing section. The liquid phase acts securely stable.
-3. **Half-filled shell** ($\ell_v \approx \ell_{\max}/2$) with odd $Z$: The extension forms non-split. The atom is structurally prone to sublimation.
-4. **Metallic band** (delocalized electrons): The single-atom Hecke module $S_\lambda$ expands to the band-structure module $\bigoplus_k S_{\lambda(k)}$ over crystal momenta $k$. The direct sum generically harbors both split and non-split extensions. The split extensions dictate dominance, ensuring a stable liquid phase.
+1. **Closed shell** ($\ell_v = 0$ or $\ell_v = \ell_{\max}$): The extension splits. The liquid phase is stable.
+2. **Near-closed shell** ($\ell_v = 1$ or $\ell_v = \ell_{\max} - 1$): The extension splits via the closed-core trivializing section. The liquid phase is stable.
+3. **Half-filled shell** ($\ell_v \approx \ell_{\max}/2$) with odd $Z$: The extension is non-split. The atom is structurally prone to sublimation.
+4. **Metallic band** (delocalized electrons): The single-atom Hecke module $S_\lambda$ expands to the band-structure module $\bigoplus_k S_{\lambda(k)}$ over crystal momenta $k$. The direct sum generically harbors both split and non-split extensions. The split extensions dominate, ensuring a stable liquid phase.

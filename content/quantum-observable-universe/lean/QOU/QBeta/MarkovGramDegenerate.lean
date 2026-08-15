@@ -194,4 +194,102 @@ theorem corank_five : 120 - (1 ^ 2 + 4 ^ 2 + 5 ^ 2) = 6 ^ 2 + 5 ^ 2 + 4 ^ 2 + 1 
 
 end RankAccounting
 
+
+section LiveChannels
+
+/-! ## Blocks versus channels — giving the distinction a name
+
+The compute layer enumerates its Wedderburn blocks as *all* partitions of `n`
+and then weights each by `y_λ`. That is correct as a **block** list, and it was
+also correct as a **channel** list under the excised convention C, where every
+`y_λ` was nonzero. Under convention D the two sets come apart —
+`y_λ = 0` for every `ℓ(λ) ≥ 3` — and nothing in the pipeline noticed, because
+nothing in the pipeline could *say* it: there was no name for "block the trace
+can actually see".
+
+The gap is not a missing check, it is a missing word. This section supplies it.
+
+The whole thing turns on an observation `rem:gram-matrix-spectral-connection`
+already contains: in the Wedderburn basis the Gram matrix is **diagonal, with the
+weights themselves on the diagonal**. Everything below is then a corollary of
+`Matrix.det_diagonal`, and the live set is simply the support of `y`. -/
+
+variable {R : Type*} [CommRing R] {ι : Type*} [Fintype ι] [DecidableEq ι]
+
+/-- **The Wedderburn Gram matrix**: diagonal, carrying the block weights.
+
+`G_{λμ} = δ_{λμ} · y_λ`. Not an assumption — it is what
+`rem:gram-matrix-spectral-connection` derives from
+`τ(e_λ e_μ) = δ_{λμ} τ(e_λ)` for orthogonal idempotents. Stating it as a
+definition is what lets every statement below be a one-line corollary rather
+than an argument. -/
+def wedderburnGram (y : ι → R) : Matrix ι ι R := Matrix.diagonal y
+
+/-- **A channel is live when the trace can see it.** The live set is exactly the
+support of `y`, and "dead" is the complement.
+
+This is the word the compute layer was missing. It is deliberately defined by
+`y_λ ≠ 0` rather than by `ℓ(λ) ≤ 2`: the row bound is a *consequence* of
+convention D via Schur–Weyl (a two-dimensional fibre cannot antisymmetrise three
+ways), not the definition of observability. Defining liveness by the weight keeps
+it correct if the convention ever moves again, and keeps the reason visible. -/
+def IsLive (y : ι → R) (i : ι) : Prop := y i ≠ 0
+
+/-- **`det G = ∏ y_λ`.** The Gram determinant is the product of the block
+weights — immediately, since the matrix is diagonal. -/
+theorem wedderburnGram_det (y : ι → R) :
+    (wedderburnGram y).det = ∏ i, y i := by
+  unfold wedderburnGram
+  exact Matrix.det_diagonal
+
+/-- **One dead channel kills the whole determinant.** If any block is dead then
+`det G = 0`, however many live blocks sit beside it.
+
+This is the sharp form of what convention D does: it is not that `G` becomes
+ill-conditioned, it is that a single vanishing weight annihilates the product.
+`y_(1^3) = 0` at `n = 3` is enough on its own. -/
+theorem wedderburnGram_det_eq_zero_of_dead (y : ι → R) {i : ι} (hdead : y i = 0) :
+    (wedderburnGram y).det = 0 := by
+  rw [wedderburnGram_det]
+  exact Finset.prod_eq_zero (Finset.mem_univ i) hdead
+
+end LiveChannels
+
+section LiveChannelsField
+
+variable {R : Type*} [CommRing R] [NoZeroDivisors R] [Nontrivial R]
+variable {ι : Type*} [Fintype ι] [DecidableEq ι]
+
+/-- **`G` is invertible exactly when every channel is live.**
+
+The converse direction is the one the compute layer needs: wanting `G⁻¹` is
+*equivalent to* asserting there are no dead channels. Under convention D that
+assertion is false for every `n ≥ 3`, so any producer that inverts the full Gram
+is committing to something the convention denies — and now has a statement to be
+checked against rather than a guard to fall through. -/
+theorem wedderburnGram_det_ne_zero_iff_all_live (y : ι → R) :
+    (wedderburnGram y).det ≠ 0 ↔ ∀ i, IsLive y i := by
+  rw [wedderburnGram_det]
+  unfold IsLive
+  constructor
+  · intro h i
+    exact fun hy => h (Finset.prod_eq_zero (Finset.mem_univ i) hy)
+  · intro h
+    exact Finset.prod_ne_zero_iff.mpr fun i _ => h i
+
+omit [Fintype ι] [DecidableEq ι] in
+/-- **Restricted to the live channels, the Gram is invertible.**
+
+The positive half, and the reason the excision is a relocation rather than a
+loss: drop the dead blocks and the determinant is a product over the survivors,
+every factor nonzero. This is `H_n/rad ≅ TL_n` in the diagonal picture — the
+quotient is not a repair, it is what is left when the zeros are removed. -/
+theorem wedderburnGram_restrict_live_det_ne_zero
+    (y : ι → R) (s : Finset ι) (hs : ∀ i ∈ s, IsLive y i) :
+    ∏ i ∈ s, y i ≠ 0 :=
+  Finset.prod_ne_zero_iff.mpr fun i hi => hs i hi
+
+end LiveChannelsField
+
+
 end QOU.QBeta.MarkovGramDegenerate

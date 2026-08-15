@@ -112,6 +112,43 @@ jobs:
             echo '```';
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: import-time dps ratchet (strict on NEW constants built at dps=15)
+        # The third member of the float64 family, and the one the other two
+        # structurally cannot see. `mp.mpf("2.22456607")` is exactly the
+        # COMPLIANT form the source audit above tells you to write — but at
+        # module scope it runs at IMPORT time, when mp.dps is still mpmath's
+        # default 15. The value is rounded to ~53 bits before set_compute_dps()
+        # is ever called, and raising dps afterwards cannot recover it. Printed
+        # at 50 dps it yields the binary64 expansion, i.e. padding:
+        #   mp.mpf("2.22456607") -> 2.2245660699999998399789546965621411800384…
+        #
+        # So string-sourcing is NECESSARY BUT NOT SUFFICIENT; the timing matters
+        # too. The fix is one line: call the idempotent set_compute_dps() at
+        # module scope ABOVE the constant.
+        #
+        # WIRED 2026-08-10 (bean qou-j6gb). The audit was written 2026-08-07 and
+        # belonged to no gate list — not here, not in scripts/precision-gates.sh
+        # — so nothing ran it, and its defect class landed five more times in the
+        # interim, each caught by a different gate reacting to a downstream
+        # symptom rather than the cause.
+        #
+        # Ratchet: 91 files / 185 proven-lossy / 103 position-risky are baselined
+        # and tolerated so the gate can run today; anything new fails. `literal`
+        # and `expr` counts are compared SEPARATELY so a statically-proven defect
+        # cannot hide behind an unproven one drained from the same file. A file
+        # the audit CANNOT PARSE is never baselined and always fails — that is
+        # "no information", not "no findings", and conflating the two is the bug
+        # bean qou-brkp records this audit having had once already.
+        run: |
+          python3 computations/mpf_import_time_dps_audit.py --self-test
+          python3 computations/mpf_import_time_dps_audit.py --strict | tee /tmp/impdps.txt
+          {
+            echo '## import-time dps ratchet (strict on NEW)';
+            echo '```';
+            head -16 /tmp/impdps.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: float64-padding ratchet (strict on NEW fake precision)
         # Owner directive: NO FLOAT64. A value that enters a producer as a
         # Python float carries ~17 significant digits; serializing it at 50

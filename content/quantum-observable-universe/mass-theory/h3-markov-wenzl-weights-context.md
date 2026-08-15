@@ -34,8 +34,9 @@ compute, not two.
 > admissible band $[2.9072, 5.1780]$ MeV; under D the band is $[2.0507, 3.7978]$
 > and AME sits inside it. ${}^2$H itself improves $+74.85\% \to +27.36\%$.
 >
-> The mass channel was already on D in production, so $m_p$ and $m_n$ are
-> **unchanged** (verified: $938.27208943$, $939.56542276$).
+> The mass channel was already on D in production, so the $m_e$-scaled
+> renderings of $m_p$ and $m_n$ are **unchanged** (verified: $938.27208943$,
+> $939.56542276$).
 >
 > Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
 > $\mathbb{Z}$-Laurent identity remains proven for C in the

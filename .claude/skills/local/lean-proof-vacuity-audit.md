@@ -533,6 +533,83 @@ their `sorry`s, and each carried `-- Ref:` citations that made them look
 audited. Expect the population to correlate with build coverage, not with
 apparent maturity.
 
+### 11. Axiom-in-class-field laundering — `proof-no-axiom-class-laundering`
+
+A class field encodes a mathematical claim (e.g., `almost_everywhere_nontrivial`).
+The theorem that extracts this field is 'sorry-free' because the sorry was pushed
+into the `instance` declaration, which fills the field via a bare `axiom` or
+`sorry`. The theorem appears sorry-free in audits while the claim remains
+unproved.
+
+```lean
+-- The class declares the claim as a field:
+class MotivicGaloisCharacter (M : Type*) where
+  galois_action : M → M
+  almost_everywhere_nontrivial : ∃ S, ∀ x ∉ S, galois_action x ≠ x  -- ← unproved claim
+
+-- The instance fills it with an axiom:
+axiom ae_nontrivial_placeholder : ∃ S, ∀ x ∉ S, myAction x ≠ x
+instance : MotivicGaloisCharacter MyType where
+  galois_action := myAction
+  almost_everywhere_nontrivial := ae_nontrivial_placeholder  -- ← bare axiom
+
+-- The downstream theorem looks sorry-free:
+theorem galois_char_nontrivial [MotivicGaloisCharacter M] :
+    ∃ S, ∀ x ∉ S, MotivicGaloisCharacter.galois_action x ≠ x :=
+  MotivicGaloisCharacter.almost_everywhere_nontrivial  -- ← "proved" ✗
+```
+
+**Why this is WORSE than a visible `sorry`:**
+
+- Audits that grep for `sorry`/`axiom` in theorem files miss it — the axiom
+  lives in the instance file, not the theorem file
+- The class instance file may not even compile (as happened with
+  `qou-motivic-galois-instance.lean` which had 3 type mismatches)
+- Downstream blocks cite the 'sorry-free' theorem as proved
+- `#print axioms` on the theorem shows `sorryAx` or the named axiom, but
+  only if someone thinks to run it — the file-level grep misses it entirely
+
+**How it differs from #1 and #10:**
+
+| | mechanism | why audits miss it |
+|---|---|---|
+| #1 self-assuming | conclusion IS a field; theorem projects it | file-local, caught by field-name grep |
+| #10 unclosable | class has too few hypotheses; sorry unclosable | file-local sorry visible |
+| #11 axiom-in-class | claim is a field; INSTANCE fills it with axiom/sorry | axiom is in a **different file**; theorem file is clean |
+
+**Honest dispositions:**
+
+1. **PROVE it** — supply a constructive witness for the class field in the
+   instance
+2. **SEPARATE it** — move the claim OUT of the class into a standalone
+   theorem with an explicit `sorry` and `-- Ref:` citation
+3. **DEMOTE it** — label the block as `conjecture(...)` in the `.ts` metadata
+
+**Never:** pack an unproved claim as a class field and fill it with `axiom`.
+
+**Detection.** For every `class` with a `Prop`-valued field, check that every
+`instance` fills that field with a proof term, not `sorry` / `axiom` /
+`by exact someAxiom`. Concretely:
+
+1. Enumerate all `class` declarations; for each, identify fields whose type
+   is `Prop` (or returns `Prop` after applying parameters).
+2. For each `instance` of that class (grep `instance.*:.*ClassName`), check
+   whether the corresponding field assignment is a proof term or one of:
+   - a bare `axiom` name
+   - `sorry`
+   - `by exact <axiom_name>` where the name resolves to an `axiom`
+3. If the instance is in a file that does not compile, flag unconditionally —
+   a non-compiling instance filling a `Prop` field is evidence of laundering.
+4. Run `#print axioms <theorem_name>` on any downstream theorem that extracts
+   the field — if it shows `sorryAx` or an unjustified `axiom`, the laundering
+   is confirmed.
+
+**Motivating incident.** `MotivicGaloisCharacter.almost_everywhere_nontrivial`
+was carried as a class field. The instance in `qou-motivic-galois-instance.lean`
+attempted to fill it with a bare axiom but had 3 type mismatches and never
+compiled. Downstream theorems extracted the field and appeared sorry-free,
+passing all file-level audits. The claim was unproved.
+
 | criterion id | status | anti-pattern |
 |---|---|---|
 | `proof-no-self-assuming-projection` | active | #1 circular projection |
@@ -544,6 +621,7 @@ apparent maturity.
 | `proof-no-false-cited-sorry` | active | #9 cited `sorry` on a false statement |
 | `proof-docstring-sorry-mismatch` | active | #8 docstring claims a `sorry` the body lacks |
 | `proof-unclosable-context-sorry` | active | #10 class carries too little; `sorry` unclosable |
+| `proof-no-axiom-class-laundering` | active | #11 axiom-in-class-field laundering |
 
 **Minimal wiring (per Agent-A recon):**
 

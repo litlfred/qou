@@ -73,7 +73,7 @@ h = HA_VAL
 # Markov parameter z for the Ocneanu/Jones-Wenzl trace.
 # Standard convention: z such that tr_M(T_i) = z, tr_M(1) = 1.
 # Matches mass_endomorphism.z_mark = 1/(q^½ + q^(-½)).
-Z_MARKOV = 1.0 / (Q0 ** 0.5 + QI ** 0.5)
+Z_MARKOV = Q0**3 / (Q0**2 + 1)
 
 
 # ── Jones–Wenzl Ocneanu weights ω_λ(q, z) ───────────────────

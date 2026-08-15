@@ -63,7 +63,7 @@ def main() -> None:
     w = WitnessBuilder("h2s-chiral-residue-bar-antisymmetric", engine="python")
     q = float(q0)
     hh = float(h)
-    z = 1.0 / (np.sqrt(q) + 1.0 / np.sqrt(q))     # bar-symmetric Markov param
+    z = q**3 / (q**2 + 1)     # bar-symmetric Markov param
     h12 = np.sqrt(q) - 1.0 / np.sqrt(q)           # bar-anti-symmetric half-step
 
     print("=" * 72)

@@ -1,9 +1,0 @@
----
-# qou-96ae
-title: Extract HeckeBaerStarGeneric.hecke_baer_star_generic
-status: todo
-type: task
-created_at: 2026-08-04T10:58:26Z
-updated_at: 2026-08-04T10:58:26Z
----
-

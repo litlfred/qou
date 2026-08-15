@@ -47,14 +47,18 @@ of them by the bar law `bar(z) = z − h`, a condition this class has no field f
 subscript basis** — which is what `H4A`, and hence
 `QOU.Hecke.InstanceOnH4A.instHeckeAlgebraH4A`, is built on.
 
-There *is* one on the **ASCII** basis, and it is sorry-free:
-`QOU.Machinery.H4.trM_cyclic` in `MarkovTraceH4Gram`, from `gram_symm` over the
-576-entry closure. (An earlier revision of this paragraph said it rested on a
-cited `sorry`, following stale docstrings in `MarkovTraceH4` and
-`MarkovTraceH4Gram` — both now corrected. `#print axioms` shows
-`[propext, Classical.choice, Quot.sound]`.) It does not transfer for free: the
-two 24-word bases are different tables, and relating cyclicity on one to the
-other needs the change of basis.
+There is one now, proved **directly on the subscript basis**:
+`QOU.Machinery.H4.trM4_cyclic` in `H4Cyclicity`, sorry-free, from the three
+generators plus the fact that the trace-central elements form a subalgebra.
+`#print axioms` shows `[propext, Classical.choice, Quot.sound]`.
+
+Historical note, since this paragraph has been wrong twice. It first said `n=4`
+cyclicity rested on a cited `sorry` (false — stale docstrings). It then said the
+only proof was `QOU.Machinery.H4.trM_cyclic` in `MarkovTraceH4Gram`, from
+`gram_symm` over a 576-entry closure — true when written, but that chain has
+since been **deleted**, and `trM_cyclic` is now a corollary of `trM4_cyclic`
+transported across the basis relabelling in `H4BasisBridge`. The change of basis
+is still what relates the two 24-word tables; only its direction changed.
 
 The route that avoids both a second Gram closure and the basis change is
 `QOU.Machinery.BilinearTrace.gram_symm_of_rep_decomp`: if `trM4` decomposes as a

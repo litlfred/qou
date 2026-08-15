@@ -45,9 +45,17 @@ export default proposition({
     engine: "sympy",
     script:
       "computations/markov/markov_trace_recursive.py",
+    // markov-trace-axiomatic-multi-atom.witness.json was declared here too,
+    // and disagreed with the one above by 17%.  It is the output of a
+    // DIFFERENT script (markov_trace_axiomatic_multi_atom.py, not this
+    // block's declared `script`), it has not been regenerated since the
+    // Markov parameter moved to z = q^3/(q^2+1), and its own
+    // `convention_status` field reads DEPRECATED_NON_CANONICAL — "DO NOT use
+    // for mass predictions".  A block citing a witness that disowns itself
+    // is how the convention-C values reached this proposition's table.
+    // Dropped as backing; the file stays in the tree as a record.
     witness: [
       "computations/markov/markov-trace-recursive.witness.json",
-      "computations/markov/markov-trace-axiomatic-multi-atom.witness.json",
     ],
     status: "verified",
     requires: ["sympy"],

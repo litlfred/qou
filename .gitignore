@@ -99,6 +99,15 @@ content/todos/
 # event logs — keep them gitignored (matching the prior todos/ semantics).
 .beans/*-ledger.md
 
+# Harness runtime noise under .work/ (the directory itself is tracked). The
+# convention-C regeneration journal .work/convention-c-regen.jsonl IS
+# committed — it is the resume point for the serial regeneration harness and
+# the evidence behind
+# docs/audits/2026-08-10-convention-c-witness-regeneration-impact.md.
+# Its rotation backup and the stdout logs are not.
+.work/*.bak
+.work/*.log
+
 # Local agent state (per-machine, not shared)
 .claude/local-state/
 .claude/worktrees/
@@ -173,3 +182,31 @@ lake-oleans.tgz
 # qou-vbw1 A2 verification aid (resumable I-cache + log); see qbeta_3bp8_a2_sample_point_delta_check.py
 .a2_icache.json
 .a2_run.log
+
+# Agent scratch state — never repository content. A sandbox accumulates these
+# as untracked directories; a `git add -A` then sweeps them into a commit whose
+# message describes something else entirely. That is how commit 85ea8e55
+# ("Hecke: rank axiom") came to add 46,155 files / 11.4M insertions, including
+# 14,688 duplicate beans. None of these is listed in AGENTS.md §Project
+# structure. (`uploads/` IS a documented intake pipeline — deliberately absent.)
+#
+# ANCHORED with a leading slash — root-level only, deliberately. A gitignore
+# pattern containing no internal slash matches at EVERY depth, so the earlier
+# unanchored `_deprecated/` silently captured two documented archives:
+# `computations/_deprecated/` (1,449 tracked files: README, witnesses, and
+# `script-qa/*.script-qa.json` QA sidecars) and `docs/audits/_deprecated/`
+# (66 files). Tracked files were unaffected — ignore rules never untrack — but
+# any NEW file under either path would have been dropped by `git add` with no
+# error, which is the same silent-loss shape this block exists to prevent.
+# Keep the leading slash on every entry here.
+/.agents/
+/amalgamated_done/
+/amalgamated_input/
+/_deprecated/
+/scratch/
+
+# convention-C regeneration harness runtime lock (SerialLock, O_EXCL). Carries
+# an internal slash, so it is already anchored to this file's directory by
+# gitignore semantics — consistent with the leading-slash rule above, which
+# only needs stating for patterns that have no slash of their own.
+.work/*.lock

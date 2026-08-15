@@ -6,6 +6,9 @@ export default remark({
     "Millennium problems unified by the surreal squeeze $\\delta^2 / \\varepsilon > \\varepsilon^3$",
   interprets: "thm:macroscopic-stability-equivalence",
   uses: [
+    "conj:p-vs-np-qou",
+    "conj:q-birch-swinnerton-dyer",
+    "rem:adelic-tate-squeeze",
     "rem:collatz-surreal-bound",
     "rem:yang-mills-surreal-bound",
   ],

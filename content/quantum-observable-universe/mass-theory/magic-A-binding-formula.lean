@@ -41,8 +41,7 @@
        [compute] computations/binding_alpha_shift_witness.py
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Defs
 
 namespace QOU.BraidKnot
 
@@ -72,8 +71,8 @@ def isDoublyMagic (Z N : ℕ) : Prop :=
     `prop:gravity-spectral-prefactor`; here we abstract it as a
     parameter so the formula statement does not depend on the
     Catalan-constant Mathlib import depth. -/
-class CatalanPrefactor (R : Type u) [Field R] where
-  /-- The value of `8G` in the given field. -/
+class CatalanPrefactor (R : Type u) [CommRing R] where
+  /-- The value of `8G` in the given coefficient ring. -/
   vol_borromean : R
 
 /-- **Doubly-magic binding formula class** (§3b-cond hypothesis).
@@ -105,7 +104,7 @@ class CatalanPrefactor (R : Type u) [Field R] where
 
     The class hypothesis is sorry-free per §3b-cond: any instance
     discharges `formula` definitionally for its specific (Z, N). -/
-class MagicABindingFormula {R : Type u} [Field R] [CatalanPrefactor R]
+class MagicABindingFormula {R : Type u} [CommRing R] [CatalanPrefactor R]
     (B : ℕ → ℕ → R) (m_e : R) where
   /-- The substrate-determined prefactor for the (Z, N) regime.
       ⁴He uses `rho_F = 2`. -/
@@ -120,7 +119,7 @@ class MagicABindingFormula {R : Type u} [Field R] [CatalanPrefactor R]
     `ρ_F · m_e · A · 8G` where `A = Z + N`. Sorry-free conditional
     on the `MagicABindingFormula` class hypothesis. -/
 theorem magic_A_binding_formula
-    {R : Type u} [Field R] [CatalanPrefactor R]
+    {R : Type u} [CommRing R] [CatalanPrefactor R]
     (B : ℕ → ℕ → R) (m_e : R)
     [hMA : MagicABindingFormula B m_e]
     (Z N : ℕ) (hZN : isDoublyMagic Z N) :
@@ -268,7 +267,7 @@ theorem bindingDispatch_alphaShift {R : Type u}
     is doubly magic, the dispatched value equals the closed form
     `ρ_F · m_e · A · 8G`. -/
 theorem he4_binding_via_dispatch
-    {R : Type u} [Field R] [CatalanPrefactor R]
+    {R : Type u} [CommRing R] [CatalanPrefactor R]
     (B B_as : ℕ → ℕ → R) (m_e : R)
     [hMA : MagicABindingFormula B m_e] :
     bindingDispatch B B_as 2 2

@@ -6,7 +6,7 @@ See [Table](#tbl:qvalue-observation-table-data).
 
 The MAE is $\approx 4.4\%$ and the RMS is $\approx 5.4\%$. Light nuclei ($A \leq 14$) achieve errors $\leq 2.2\%$. Heavy nuclei require $F_{\mathrm{deg2}} = 0.5904$ and $F_{\mathrm{Pauli}} = 0.6382$.
 
-**Headline demonstration: ${}^{90}\mathrm{Sr}$.**
+**Worked example: ${}^{90}\mathrm{Sr}$.**
 
 For ${}^{90}\mathrm{Sr}$, the bare prediction $\mathcal{Q}_{\mathrm{bare}} \approx 0.944\,\mathrm{MeV}$ overshoots $\mathcal{Q}_{\mathrm{exp}} = 0.546\,\mathrm{MeV}$ by $+73\%$. Applying the correction $F_{\mathrm{deg2}} = 0.5904$ yields $Q \approx 0.557\,\mathrm{MeV}$ ($+2.1\%$). This categorical reduction involves no fitting.
 

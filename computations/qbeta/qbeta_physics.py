@@ -61,7 +61,7 @@ def compute_substrate_quantities() -> dict:
     """Return all substrate-derived quantities at current `mp.mp.dps`."""
     q = q_0_at_50dps()
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     hbar_q = (q - 1) / q
     alpha = (z - 1) * h / 2
     d1 = q ** 3 / (q ** 2 + 1)

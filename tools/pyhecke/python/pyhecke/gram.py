@@ -2,8 +2,9 @@
 (Fraction) variants — canonical owner.
 
 Authoritative source for:
-  Constants   NF_BASIS, NF_NAMES, TR_M, z, W_SYM, W_STD, W_ALT, G, G_INV
-  Functions   hm, hm_exact, nf_tr, nf_net
+  Constants   NF_BASIS, NF_NAMES, TR_M, z, W_SYM, W_STD, W_ALT, G,
+              G_PINV, RADICAL
+  Functions   hm, hm_exact, nf_tr, nf_net, gram_quotient_inverse
   Internals   _hm_dict, _reduce_nf, _build_gram
 
 Moved here (with inversion in M2b) from the 3425-line
@@ -11,9 +12,14 @@ computations/hecke_core.py so there is a single
 source of truth that downstream code can depend on. `hecke_core.py`
 now imports these back for backward compatibility.
 
-Every coefficient carries over exactly from the original definition;
-values of G, G_INV, and every NF multiplication are byte-identical
-to the pre-inversion implementation.
+TRACE CONVENTION D (z = q^3/(q^2+1)) since 2026-08-15 — see the banner
+at `z` below. Note for anyone comparing against a pre-2026-08-15
+witness: values are NOT byte-identical to the pre-inversion
+implementation any more. The M2b inversion preserved them exactly; the
+C -> D convention change did not, and was not meant to (z moves +22.70%).
+`G_INV` is GONE rather than renamed — under D the form is singular, so a
+6x6 inverse does not exist; `G_PINV` is the inverse on the quotient
+H_3(q)/rad and `RADICAL` is the null direction it quotients by.
 """
 
 from __future__ import annotations
@@ -42,23 +48,60 @@ except ImportError:
 # Scalar constants
 # ══════════════════════════════════════════════════════════════
 
-# ┌────────────────────────────────────────────────────────────────────┐
-# │ TRACE CONVENTION C — and the C → D migration is BLOCKED HERE.      │
-# │ Do not "finish the excision" on this line. Read this first.        │
-# └────────────────────────────────────────────────────────────────────┘
+# ┌─────────────────────────────────────────────────────────────────────┐
+# │ TRACE CONVENTION D. The C → D migration COMPLETED here 2026-08-15.  │
+# └─────────────────────────────────────────────────────────────────────┘
 #
 # Owner ruling 2026-08-09 excised convention C (z = 1/(q^1/2 + q^-1/2)) in
 # favour of convention D (z = q^3/(q^2 + 1)) repo-wide — registry
 # docs/coordination/trace-convention-registry.md, bean qou-wgta. This module
-# is a deliberate EXCEPTION, stopped at item 11 of that bean, because
-# switching this one line silently destroys `G_INV` twelve lines further
-# down and every consumer of it.
+# was the LAST deliberate exception, stopped at item 11 of that bean because
+# `G_INV = np.linalg.inv(G)` ran unconditionally at import and convention D
+# makes that Gram SINGULAR.
 #
-# WHY. `TR_M` below is the Markov trace on the NF basis, `G` its Gram matrix,
-# and `G_INV = np.linalg.inv(G)` runs unconditionally AT IMPORT. Under D that
-# Gram form is SINGULAR — established on this branch in
-# content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean,
-# which names this file by path.
+# The two facts the exception rested on were measured under qou-w8zz (PR #5025)
+# and NEITHER SURVIVED. Both are recorded below, because the reasoning that
+# held this line on C for months is worth more than the line itself.
+#
+# 1. THE DEGENERACY IS EXACT, not a precision artefact. This banner used to
+#    quote det = 3.998e-17 / cond 4.9e+16 and note that even mpmath at 60 dps
+#    "bottoms out at f64 noise, not a resolved eigenvalue". That is a
+#    limitation of THIS module's float64 NF path, not of the question:
+#    `z_D = q^3/(q^2+1)` and `h = q - 1/q` are RATIONAL in q, so at rational q
+#    the whole Gram is exactly rational and sympy settles it —
+#
+#        q = 11/10, 7/5, 13/7  ->  det(G) = 0 EXACTLY, rank 5 of 6,
+#                                  nullspace dimension exactly 1
+#        convention C, same q  ->  rank 6, det != 0
+#
+#    and the null direction has a CLOSED FORM: the q-antisymmetriser
+#    SUM_w (-1/q)^len(w) T_w, verified as `G @ v == 0` exactly at all three q.
+#    It is carried below as `RADICAL`. That is also the Gram-side confirmation
+#    of qou-u2jg, reached independently of the trace-side argument.
+#
+# 2. "EVERY CONSUMER EXPECTS A 6x6 INVERSE" was not so. Surveyed over .py
+#    sources: constants.py 0 mentions, molecular.py 0, sdp.py 0, atom.py 1 (a
+#    COMMENT recording the M2b move), __init__.py export list only. NOTHING in
+#    the corpus multiplies by `G_INV` — no `@`, no `.dot`, no indexing. The one
+#    thing the switch broke is a test asserting `G @ G_INV ~ I`, an identity
+#    convention D makes FALSE — the test reporting the mathematics correctly.
+#
+# WHAT REPLACES IT. `G_PINV`, the inverse on the quotient H_3(q)/rad; see its
+# note below for why the pseudoinverse is the honest object here and why
+# `G_INV` is left UNDEFINED rather than rebound.
+#
+# STILL DIVERGENT — the Rust mirror. tools/hecke-engine/src/gram.rs ends
+# `trace_weights` with `z*z*z` where `TR_M` below ends `h*z^2 + z` (the
+# 2026-05-19 fix). That bug is load-bearing there for exactly the reason it was
+# here: with the CORRECT TR_M[5] the form is singular, with `z^3` it is not
+# (proved on the same probe, three q). So the Rust side needs TR_M[5] AND the
+# quotient in ONE change — fixing the trace alone drops a singular Gram into
+# the native path. Tracked as qou-m7py.
+#
+# ── historical record: what convention C measured here ───────────────
+#
+# Kept because the numbers are how the singularity was first noticed, and a
+# future reader comparing against an older witness will need them.
 #
 # Measured here at the proton pin, on the BILINEAR form this module actually
 # builds (`_build_gram` pairs b_i with b_j, no star):
@@ -104,21 +147,32 @@ except ImportError:
 #
 # The Lean file names the repair — quotient by the radical. Post-retraction
 # that is a strictly better prospect than it first looked: the quotient is a
-# genuine positive-definite inner product, not a causal form. But it is still
-# a design decision for the owner, not a one-line swap, because `G_INV` is
-# exported at import and every consumer expects a 6x6 inverse.
+# genuine positive-definite inner product, not a causal form. The owner
+# approved it 2026-08-15 and it is what `G_PINV` implements; the objection
+# this paragraph used to carry ("every consumer expects a 6x6 inverse") is
+# the one item 2 above measured and refuted, so it is struck rather than
+# left standing next to its own refutation.
 #
-# ALREADY SPLIT, AND WORSE AFTER A REBUILD. The Rust mirror
-# (tools/hecke-engine/src/gram.rs) IS now convention D. It survives the
-# degeneracy only because it still carries the pre-2026-05-19 `TR_M[5] = z^3`
-# bug that this file fixed. `build_atom_nf` / `atom_per_generator_volumes`
-# below dispatch to the compiled `pyhecke_native` wheel built from that
-# crate — so once that wheel is rebuilt from this branch, those two
-# functions return convention D while `z` / `TR_M` / `G` / `G_INV` in this
-# same module stay on C. tests/test_gram_values.py already measures the
-# native-vs-legacy split (2.6e-8 at the muon/proton anchor gap today; it
-# becomes the full 22.7 % convention gap after a rebuild).
-z = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+# THE NATIVE SPLIT — and note what it is NOT. The Rust mirror
+# (tools/hecke-engine/src/gram.rs) IS convention D: `markov_z` there is
+# already q^3/(q^2+1). Do not describe the crate as "on convention C".
+# It diverges in the trace RULE and the ANCHOR instead:
+#
+#   * `trace_weights` ends `z*z*z` where `TR_M` below ends `h*z^2 + z`.
+#     This is what keeps the crate's Gram non-singular, so it has no
+#     radical and no quotient — hence the trace fix and the quotient must
+#     land together (fixing the trace alone drops a singular Gram into a
+#     path with nothing to handle it).
+#   * `Q_0` is hardcoded to 1.1099785955541805, the MUON pin, against
+#     AGENTS.md's proton default (2.19e-8 relative on z).
+#
+# `build_atom_nf` / `atom_per_generator_volumes` below dispatch to the
+# compiled `pyhecke_native` wheel built from that crate. Since this module
+# moved to D those two functions would return numbers from a different
+# trace rule at a different anchor, so the dispatch now REFUSES rather
+# than silently diverging — see the guard near `has_native`. Tracked as
+# qou-m7py.
+z = q0 ** 3 / (q0 ** 2 + 1)
 
 # Wedderburn-Artin weights for H_3(q)
 _q2 = q0 ** 2
@@ -223,12 +277,15 @@ def markov_trace_combo(terms, *, exact=False):
     Step 1. With `exact=True` the Fraction path (`hm_exact`/`_TR_M_FRAC`)
     is used; pass rational `coeff`s (int/Fraction) in that mode.
 
-    Caveat (exact mode): the NF *reduction* is exact in ℚ, but the
-    Markov weights `_TR_M_FRAC` use `_Z_FRAC = 4993/10000`, a 4-digit
-    rational approximation of the irrational `z = 1/(q^½+q^−½)`. So the
-    exact-mode trace agrees with the float-mode trace only to ~1e-4
-    (the z-truncation level), not to full precision; the float path is
-    the more accurate of the two for the trace value itself."""
+    Caveat (exact mode): under **convention D** both the NF reduction
+    and the Markov weights are exact in ℚ — `_Z_FRAC` is now the exact
+    `q³/(q²+1)` at the rational model, not the old 4-digit truncation
+    that convention C's irrational `z = 1/(q^½+q^−½)` forced. The one
+    remaining approximation is the *model* itself: the exact path runs
+    at q = 111/100, not at the true substrate q₀ = 1.1099785827513808
+    (1.93e-5 relative). So exact-mode and float-mode still differ at
+    the ~1e-4 level, but the cause is now solely the rational q model;
+    the float path remains the accurate one for the trace value."""
     if exact:
         acc = [Fraction(0)] * 6
         for c, word in terms:
@@ -313,7 +370,41 @@ def _build_gram():
 
 
 G = _build_gram()
-G_INV = np.linalg.inv(G)
+
+#: The radical of the trace form under convention D, in closed form.
+#:
+#: `v_i = (-1/q)^len(w_i)` over NF_BASIS — the three-strand q-antisymmetriser
+#: `SUM_w (-1/q)^len(w) T_w`. Established exactly over Q (rational arithmetic,
+#: no floating point) at three independent rational q in
+#: `computations/probes/gram_radical_exact_probe.py`: `det G = 0` EXACTLY,
+#: rank 5 of 6, nullspace dimension exactly 1, and `G @ RADICAL == 0`.
+#:
+#: This is the Gram-side confirmation of `qou-u2jg` — "z_D is the unique
+#: non-trivial Markov trace on H_3(q) whose radical contains the three-strand
+#: antisymmetriser". Carried explicitly so the quotient below is built from the
+#: proved projector rather than a numerically-extracted null vector, which at
+#: this module's float64 precision would be indistinguishable from noise (the
+#: old convention-C banner had to quote |lambda_min| = 3.9e-17 for exactly that
+#: reason).
+RADICAL = np.array([(-1.0 / q0) ** len(w) for w in NF_BASIS])
+
+#: Inverse of the trace form ON THE QUOTIENT H_3(q)/rad.
+#:
+#: `G` is SINGULAR under convention D — that is what the radical above says —
+#: so a 6x6 inverse does not exist and `np.linalg.inv(G)` does not say so: it
+#: raises nothing and returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64.
+#: The Moore-Penrose pseudoinverse of a symmetric matrix with a one-dimensional
+#: kernel IS the inverse on the orthogonal complement of that kernel, which is
+#: the quotient. So this is the honest object, not an approximation to a
+#: non-existent one.
+#:
+#: `G_INV` is deliberately NOT defined. It is not a rename: the old name meant
+#: "inverse of G", an object convention D removes, and quietly rebinding it to
+#: something else is how a wrong number keeps circulating under a trusted label.
+#: A survey of the corpus found ZERO arithmetic consumers of it — no `@`, no
+#: `.dot`, no indexing — so nothing is broken by its absence; see
+#: `gram_inverse()` below for the migration error.
+G_PINV = np.linalg.pinv(G)
 
 # Identity NF: the trivial braid [1, 0, 0, 0, 0, 0]
 _ID_NF = np.array([1.0, 0, 0, 0, 0, 0])
@@ -328,7 +419,22 @@ _ID_NF = np.array([1.0, 0, 0, 0, 0, 0])
 _Q_FRAC = Fraction(111, 100)
 _QI_FRAC = Fraction(100, 111)
 _H_FRAC = _Q_FRAC - _QI_FRAC  # h = q - 1/q (exact rational)
-_Z_FRAC = Fraction(4993, 10000)  # z ≈ 1/(q^{1/2}+q^{-1/2})
+
+# z = q³/(q²+1) — **convention D**, and now genuinely EXACT in ℚ.
+#
+# This is a structural win of the C → D migration, not a re-tuning.
+# Under convention C, z = 1/(q^½ + q^−½) is irrational at q = 111/100
+# (it needs √q), so the exact path could only carry the 4-digit
+# truncation `Fraction(4993, 10000)` — an ~1e-4 error deliberately
+# injected into an "exact" code path. Convention D's z is a rational
+# *function* of q, so at a rational q it is a rational *number*:
+#     z = (111/100)³ / ((111/100)² + 1) = 1367631/2232100
+# exactly (1367631 = 3³·37³, 2232100 = 2²·5²·13·17·101 — coprime, so
+# this is already in lowest terms). The `_Z_FRAC` truncation error is
+# therefore GONE; the only remaining approximation on the exact path is
+# the rational model q = 111/100 itself vs the true substrate
+# q₀ = 1.1099785827513808 (a 1.93e-5 relative difference).
+_Z_FRAC = _Q_FRAC ** 3 / (_Q_FRAC ** 2 + 1)  # == Fraction(1367631, 2232100)
 
 _TR_M_FRAC = [Fraction(1), _Z_FRAC, _Z_FRAC,
               _Z_FRAC ** 2, _Z_FRAC ** 2,
@@ -386,7 +492,8 @@ __all__ = [
     # NF multiplication
     "hm", "hm_exact", "nf_tr", "nf_net", "nf_of_word", "markov_trace_combo",
     # Gram matrix
-    "G", "G_INV", "gram_matrix", "gram_inverse",
+    "G", "G_PINV", "RADICAL", "gram_matrix", "gram_inverse",
+    "gram_quotient_inverse",
     # 50-dps mpmath Gram / trace (NO float64)
     "z_mp", "h_mp", "tr_m_mp", "hm_mp", "gram_matrix_mp",
     "gram_matrix_mp_strings", "tr_m_mp_strings",
@@ -410,19 +517,89 @@ def gram_matrix() -> np.ndarray:
 
 
 def gram_inverse() -> np.ndarray:
-    """Return G^{-1} (float64). See `gram_matrix_mp` for the 50-dps path."""
-    return G_INV
+    """REMOVED under convention D — `G` is singular, so `G^-1` does not exist.
+
+    Raises rather than returning `G_PINV`. Silently substituting the
+    pseudoinverse would answer a question the caller did not ask: they asked for
+    an inverse, and under convention D there isn't one. A caller that wants the
+    quotient must say so, because the two objects differ on the radical and that
+    difference is the entire content of the convention change.
+    """
+    raise NotImplementedError(
+        "gram_inverse() is removed: under convention D the H_3(q) trace form is "
+        "SINGULAR (rank 5 of 6; the radical is the q-antisymmetriser, exported "
+        "here as RADICAL), so G^-1 does not exist. Use G_PINV — the inverse on "
+        "the quotient H_3(q)/rad — and check that the quotient is what you "
+        "actually want. See the convention-D banner at the top of this module."
+    )
+
+
+def gram_quotient_inverse() -> np.ndarray:
+    """Inverse of the trace form on the quotient `H_3(q)/rad` (float64)."""
+    return G_PINV
+
+
+def safe_inverse(M, *, what: str = "matrix", rcond: float = 1e-12) -> np.ndarray:
+    """`np.linalg.inv` with the singularity guard numpy does not give you.
+
+    **`np.linalg.inv` does NOT raise on the convention-D Markov Gram.** It
+    returns a matrix with entries up to 7.6e15 and ``‖M @ inv - I‖ = 4.14``,
+    measured. A caller that trusts it silently propagates numerical garbage
+    into every downstream witness — which is precisely what happened to the
+    two `gram_inverse` producers when this module moved C -> D, since they
+    build their Gram from this module's `TR_M` but invert it themselves.
+
+    This raises `LinAlgError` instead, naming the quotient inverse as the
+    replacement. Use it anywhere a Gram-like form is inverted; the cost is
+    one `svd` per call, which is nothing next to shipping a wrong witness.
+
+    `rcond` is the relative singular-value floor: a value is treated as zero
+    when it falls below ``rcond * s_max``. The default is deliberately far
+    above float64 epsilon, because the smallest singular value of the
+    degenerate Gram is ~5e-16 — i.e. *at* the noise floor, not
+    distinguishable from it by magnitude alone (that is the whole reason
+    `computations/probes/gram_radical_exact_probe.py` had to settle the
+    question over ℚ rather than numerically).
+    """
+    M = np.asarray(M, dtype=float)
+    s = np.linalg.svd(M, compute_uv=False)
+    if s.size == 0 or s[0] == 0.0 or (s[-1] / s[0]) < rcond:
+        rank = int((s > rcond * s[0]).sum()) if s.size and s[0] > 0.0 else 0
+        cond = f"{s[0] / s[-1]:.2e}" if s.size and s[-1] > 0.0 else "inf"
+        raise np.linalg.LinAlgError(
+            f"{what} is singular (rank {rank} of {M.shape[0]}, "
+            f"cond {cond}) -- "
+            "np.linalg.inv would NOT have raised here, it would have returned "
+            "inverted rounding noise. Under trace convention D the Markov Gram "
+            "is degenerate and has no inverse; use "
+            "`pyhecke.gram.gram_quotient_inverse()` (the inverse on "
+            "H_3(q)/rad) and record it under a DIFFERENT witness key, since "
+            "it is a different object from the G^-1 that older witnesses hold."
+        )
+    return np.linalg.inv(M)
 
 
 # ══════════════════════════════════════════════════════════════
 # 50-dps mpmath Gram / Markov trace — NO float64
 # ══════════════════════════════════════════════════════════════
-# `z = 1/(q^{1/2} + q^{-1/2})` is irrational (q^{1/2} is irrational at
-# q = 111/100), so an *exact* rational Gram is impossible — the Fraction
-# path approximates z by `_Z_FRAC = 4993/10000` (4 digits, ~1e-4).  The
-# faithful high-precision path is mpmath at 50 dps: the NF reduction is
-# exact in ℚ (via `nf_of_word(..., exact=True)`), and only the irrational
-# Markov weight `z` is evaluated numerically at 50 dps.  Consumers that
+# Under **convention C** this block's premise held: `z = 1/(q^{1/2} +
+# q^{-1/2})` is irrational at q = 111/100, so an exact rational Gram was
+# impossible and the Fraction path had to approximate z by 4993/10000
+# (4 digits, ~1e-4).
+#
+# Under **convention D** that premise is FALSE: `z = q³/(q²+1)` is a
+# rational function, so at any rational q the whole Gram is exactly
+# computable in ℚ. `computations/probes/gram_radical_exact_probe.py`
+# does exactly that, and it is the only path that can *prove* the form
+# is degenerate — over ℚ the determinant is exactly 0, where float64 can
+# only report 3.998e-17 and mpmath only a smaller epsilon. Neither
+# numeric path can distinguish "singular" from "very small".
+#
+# The mpmath path below is therefore no longer the *most faithful*
+# path, only the most convenient high-precision numeric one: the NF
+# reduction is exact in ℚ (via `nf_of_word(..., exact=True)`) and the
+# Markov weight is evaluated at 50 dps at the true substrate q₀ (which
+# the exact-ℚ path cannot do, since q₀ is not rational). Consumers that
 # need a float64-free Gram (e.g. the clarabel-MPFR LP dual, which marshals
 # 50-dps decimal strings across the FFI boundary) should source the Gram
 # and trace here, not from the float64 `G` / `TR_M`.
@@ -605,15 +782,74 @@ except ImportError:
     _HAS_NATIVE = False
 
 
+# ── DIVERGENCE GUARD: the native side does not match this module ──────
+#
+# NOTE — do not restate this as "the Rust is on convention C". It is NOT:
+# `markov_z` in tools/hecke-engine/src/gram.rs is already q³/(q²+1),
+# convention D. (An earlier draft of this guard said C; that was wrong,
+# and the correction is the reason this comment is explicit.) The crate
+# diverges from this module in three OTHER ways, verified by reading it:
+#
+#   1. `trace_weights` ends `z*z*z` where TR_M below ends `h*z² + z` —
+#      the 2026-05-19 fix was never ported. This is the load-bearing one:
+#      with `z³` the Gram is NON-singular, so the crate has no radical,
+#      no quotient, and no reason to have either. Fixing the trace alone
+#      would drop a singular Gram into the native path with nothing to
+#      handle it, which is why the trace fix and the quotient must land
+#      in ONE change.
+#   2. `Q_0` is hardcoded to 1.1099785955541805 — the MUON pin. AGENTS.md
+#      (owner directive 2026-08-07) defaults all production compute to the
+#      PROTON pin 1.1099785827513808, which this module reads. That is
+#      2.19e-8 relative on z: far past any tolerance in this test suite,
+#      and a straddle of the ideal/experimental layer boundary.
+#   3. No pseudoinverse / quotient surface at all.
+#
+# Tracked as qou-m7py.
+#
+# Before the C → D migration the native path was merely *fast*; the two
+# sides agreed. Now they do not, so merely INSTALLING the wheel would
+# silently change results with no error and no log line, reproducing only
+# on machines that happen to have it. An environment-dependent silent
+# divergence is a worse failure mode than a loud refusal, so the dispatch
+# REFUSES. This trades the ~100× speedup for correctness until qou-m7py
+# lands; QOU_ALLOW_NATIVE_DIVERGENCE=1 is an explicit opt-in.
+_NATIVE_CONVENTION_MSG = (
+    "pyhecke_native is installed, but the guard cannot tell whether the wheel "
+    "was built BEFORE or AFTER 2026-08-15. The crate itself now matches this "
+    "module exactly (trace_weights ends h*z^2 + z, Q_0 is the proton pin) -- "
+    "verified bit-identical on z, all of TR_M, G and RADICAL. A wheel built "
+    "before that lands is still divergent, and nothing in the wheel reports "
+    "its build. So: REBUILD the wheel (maturin develop / pip install -e "
+    "tools/pyhecke-native) and set QOU_ALLOW_NATIVE_DIVERGENCE=1, or leave it "
+    "refusing and use the pure-Python path. Note gram_inverse no longer "
+    "exists in the wheel either -- it is gram_quotient_inverse now."
+)
+
+
+def _native_ok() -> bool:
+    """True iff the native path may be used. False while the crate
+    diverges from this module (trace rule + anchor); see the guard note."""
+    if not _HAS_NATIVE:
+        return False
+    import os
+    if os.environ.get("QOU_ALLOW_NATIVE_DIVERGENCE") == "1":
+        return True
+    raise RuntimeError(_NATIVE_CONVENTION_MSG)
+
+
 def has_native() -> bool:
-    """True iff the pyhecke_native wheel is installed."""
+    """True iff the pyhecke_native wheel is installed.
+
+    NOTE: this reports *installation*, not usability. The native path is
+    currently refused even when installed, because it is on a different
+    trace convention -- see `_native_ok`."""
     return _HAS_NATIVE
 
 
 def build_atom_nf(Z: int, N: int):
     """Build the atom NF for (Z, N). Native-dispatched; falls back
     to hecke_core.build_atom_nf when the wheel is absent."""
-    if _HAS_NATIVE:
+    if _native_ok():
         return _native.build_atom_nf(Z, N)
     import hecke_core  # type: ignore[import-not-found]
     return hecke_core.build_atom_nf(Z, N)
@@ -629,7 +865,7 @@ def atom_per_generator_volumes(
     """Per-generator Wedderburn volumes for the atom braid. Native-
     dispatched; falls back to hecke_core.atom_per_generator_volumes
     when the wheel is absent."""
-    if _HAS_NATIVE:
+    if _native_ok():
         return _native.atom_per_generator_volumes(
             Z, N,
             include_inter=include_inter,

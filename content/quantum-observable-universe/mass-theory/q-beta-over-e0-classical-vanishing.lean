@@ -17,7 +17,15 @@
 
   * `qbeta_over_e0_at_one_eq_zero` — the full ratio
     `(2q + 1 − q²)(q² − 1) / (2q²)` vanishes at q = 1.  Follows
-    from the numerator vanishing via Field R.
+    from the numerator vanishing, over the same CommRing.
+
+  Base ring (AGENTS.md §7c): both statements live over a bare
+  `CommRing R`.  The single division — by `2q²` — is carried as a
+  **unit** `d : Rˣ` pinned by `↑d = 2q²`, so the ratio is the
+  division-free product `(2q + 1 − q²)(q² − 1) · ↑d⁻¹`.  Over a field
+  with `q ≠ 0` and `2 ≠ 0` take `d = Units.mk0 (2 * q ^ 2) _`; this
+  also removes the old form's junk case, where a vanishing `2q²` made
+  the "ratio" silently `0/0`.
 
   Ref: [pr1769] https://github.com/litlfred/qou/pull/1769
        [pr1752] https://github.com/litlfred/qou/pull/1752
@@ -27,10 +35,9 @@
        docs/audits/2026-06-03-qbeta-sdp-strict-complementarity-partial.md
 -/
 
-import Mathlib.Algebra.Ring.Defs
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Group.Units.Defs
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
 
 namespace QOU.QBeta.OverE0ClassicalVanishing
 
@@ -52,8 +59,9 @@ theorem qbeta_over_e0_numerator_at_one_eq_zero {R : Type u} [CommRing R] :
 /-- The simplified closed form of `S(q) = Q_β(q) / E_0(q)` using the
     `N = 0` form of `E_0`.  The `m_e` mass scale cancels in the ratio,
     consequently the result is a pure rational function of `q`. -/
-noncomputable def S_N0 {R : Type u} [Field R] (q : R) : R :=
-  (2 * q + 1 - q ^ 2) * (q ^ 2 - 1) / (2 * q ^ 2)
+def S_N0 {R : Type u} [CommRing R] (q : R) (d : Rˣ)
+    (_hd : (d : R) = 2 * q ^ 2) : R :=
+  (2 * q + 1 - q ^ 2) * (q ^ 2 - 1) * (↑d⁻¹ : R)
 
 /-- **$S(q) = Q_\beta(q) / E_0(q)$ vanishes at the classical point $q = 1$.**
 
@@ -69,11 +77,12 @@ noncomputable def S_N0 {R : Type u} [Field R] (q : R) : R :=
     normalization is `Q_β / [Q_A · cos(α_eff)]` per
     `qbeta_1ppq_achieved.py`, and `Q_A` is the CODATA-free bare scale
     identified by the SDP strict-complementarity route in PR #1752. -/
-theorem qbeta_over_e0_at_one_eq_zero {R : Type u} [Field R] :
-    S_N0 (1 : R) = 0 := by
+theorem qbeta_over_e0_at_one_eq_zero {R : Type u} [CommRing R]
+    (d : Rˣ) (hd : (d : R) = 2 * (1 : R) ^ 2) :
+    S_N0 (1 : R) d hd = 0 := by
   unfold S_N0
   have h : (2 * (1 : R) + 1 - 1 ^ 2) * (1 ^ 2 - 1) = 0 :=
     qbeta_over_e0_numerator_at_one_eq_zero
-  rw [h, zero_div]
+  rw [h, zero_mul]
 
 end QOU.QBeta.OverE0ClassicalVanishing

@@ -1,15 +1,28 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T18:44:00.075156+00:00",
-  "commitSha": "d42ea09fb93f6881be4cc503d66e20b3842f1c4a",
-  "assertions": [],
+  "computedAt": "2026-08-14T19:49:02.103809+00:00",
+  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
+  "assertions": [
+    {
+      "name": "negative_writhe_flips_sign_negative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "no_derived_integer_writhe_closes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "rho-k-counit-vortex-writhe",
   "scriptFile": "rho_k_counit_vortex_writhe_probe.py",
   "scriptHash": "5fcfd58be60f",
-  "scriptCommitSha": "225ea77ccdc02ccedbb45a1a0bde9da2ccbf9e67",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +31,11 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
   },
   "description": "Counit + Kauffman ribbon-framing vortex weight q^{w c(λ)} on the deuteron. Negative writhe supplies the binding sign (mechanism confirmed) but no derived integer writhe closes the target; principled defect form is the untested next object. audit_only, parameter-free scan, no fit.",
   "audit_only": true,
@@ -28,49 +44,49 @@
     "functional": "counit + vortex:  ε_vortex(β_D) = Σ_λ χ^λ(β_D)·q^{w·c(λ)}",
     "vortex_weight": "Kauffman ribbon framing q^{w·c(λ)}, c(λ)=content sum (DERIVED, prop:chirality-writhe-ribbon-derivation)",
     "free_parameters": 0,
-    "target_signed": "-4.3533672818701",
+    "target_signed": "-4.3533650059284",
     "tol": 1,
     "writhe_scan": {
       "-3": {
-        "eps_vortex": "-52.077797122465",
+        "eps_vortex": "-52.077771328646",
         "sign_negative": true,
-        "abs_miss": "47.72443",
+        "abs_miss": "47.724406",
         "within_tol": false
       },
       "-2": {
-        "eps_vortex": "-9.975665517305",
+        "eps_vortex": "-9.9756619016261",
         "sign_negative": true,
-        "abs_miss": "5.6222982",
+        "abs_miss": "5.6222969",
         "within_tol": false
       },
       "-1": {
-        "eps_vortex": "-1.1922294900681",
+        "eps_vortex": "-1.1922286264608",
         "sign_negative": true,
-        "abs_miss": "3.1611378",
+        "abs_miss": "3.1611364",
         "within_tol": false
       },
       "0": {
-        "eps_vortex": "4.9266782191423",
+        "eps_vortex": "4.9266775236468",
         "sign_negative": false,
-        "abs_miss": "9.2800455",
+        "abs_miss": "9.2800425",
         "within_tol": false
       },
       "1": {
-        "eps_vortex": "18.999560395474",
+        "eps_vortex": "18.999555047213",
         "sign_negative": false,
-        "abs_miss": "23.352928",
+        "abs_miss": "23.35292",
         "within_tol": false
       },
       "2": {
-        "eps_vortex": "64.44687287713",
+        "eps_vortex": "64.446847267038",
         "sign_negative": false,
-        "abs_miss": "68.80024",
+        "abs_miss": "68.800212",
         "within_tol": false
       },
       "4": {
-        "eps_vortex": "977.60113886191",
+        "eps_vortex": "977.60043877861",
         "sign_negative": false,
-        "abs_miss": "981.95451",
+        "abs_miss": "981.9538",
         "within_tol": false
       }
     },

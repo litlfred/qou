@@ -1,8 +1,5 @@
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Tactic.LinearCombination
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.Ring.Units
 
 
 /-!
@@ -23,6 +20,21 @@ $\kappa = \lambda_{\mathrm{sym}}^{-1} = -\lambda_{\mathrm{anti}} = q^{-1}$.
 * `glue_classical_limit` — at $\lambda_{\mathrm{sym}} = 1$ the
   chart-glue degenerates to $1$.  No `sorry`.
 
+## Ground ring (§7c) — a `CommRing`, eigenvalues carried as units
+
+The determinant constraint $\lambda_{\mathrm{sym}}\lambda_{\mathrm{anti}} = -1$
+**already exhibits each eigenvalue as a unit** (its inverse is minus the other),
+so no field structure is needed: the data is stated over a bare `CommRing R`
+with `lam_sym lam_anti : Rˣ`, and every inverse below is a `Units` inverse.
+This is the intended home — the Hecke eigenvalue pair is $(q, -q^{-1})$ over
+$\mathbb{Z}[q,q^{-1}]$ (AGENTS.md §7a), which is *not* a field, and there the
+constraint $q \cdot (-q^{-1}) = -1$ holds on the nose.
+
+The former `[Field K]` presentation is the special case `R := K`,
+`lam_sym := Units.mk0 _ h`; its separate `lam_sym_ne_zero` / `lam_anti_ne_zero`
+fields are now *derived* (`lam_sym_ne_zero`, `lam_anti_ne_zero` below, over any
+nontrivial `R`) rather than assumed, so nothing is lost.
+
 ## Where we hit the wall
 The interpretation of $\kappa$ as the *chart-glue of* $\mathbb{P}_q(V)$
 requires a categorical model of the quantum plane $\mathcal{O}_q(\mathbb{P}^1)$
@@ -40,52 +52,65 @@ LaTeX label: `prop:spectral-chart-correspondence`
 
 namespace QOU
 
-noncomputable section
-
 /-- Eigenvalue data of the braiding on `V ⊗ V` for a rank-2 fundamental
     object: a symmetric eigenvalue `λ_sym` (on `S²V`) and an
     antisymmetric eigenvalue `λ_anti` (on `Λ²V ≅ 𝟙`), constrained by
     `λ_sym · λ_anti = -1` (Hecke determinant).
 
-    Parametrised over the ground field `K = End(𝟙)` of the QOU; this
-    is the natural setting since braiding eigenvalues land in
-    `End(𝟙) ≅ k`, which is a field by simplicity of the unit. -/
-structure SCBraidingEigenvalueData (K : Type*) [Field K] where
+    Parametrised over the ground ring `R = End(𝟙)` of the QOU, with both
+    eigenvalues carried in the unit group `Rˣ` — which is exactly what the
+    determinant constraint asserts. -/
+structure SCBraidingEigenvalueData (R : Type*) [CommRing R] where
   /-- Symmetric eigenvalue `λ_sym` (on `S²V`). -/
-  lam_sym : K
+  lam_sym : Rˣ
   /-- Antisymmetric eigenvalue `λ_anti` (on `Λ²V ≅ 𝟙`). -/
-  lam_anti : K
-  lam_sym_ne_zero : lam_sym ≠ 0
-  lam_anti_ne_zero : lam_anti ≠ 0
+  lam_anti : Rˣ
+  /-- Hecke determinant constraint. -/
   det_constraint : lam_sym * lam_anti = -1
 
-variable {K : Type*} [Field K]
+variable {R : Type*} [CommRing R]
+
+/-- The symmetric eigenvalue is nonzero — *derived* from unit-hood rather
+    than assumed as a structure field. -/
+theorem SCBraidingEigenvalueData.lam_sym_ne_zero [Nontrivial R]
+    (bed : SCBraidingEigenvalueData R) : (bed.lam_sym : R) ≠ 0 := by
+  intro h
+  have hu := bed.lam_sym.mul_inv
+  rw [h, zero_mul] at hu
+  exact zero_ne_one hu
+
+/-- The antisymmetric eigenvalue is nonzero — *derived*, as above. -/
+theorem SCBraidingEigenvalueData.lam_anti_ne_zero [Nontrivial R]
+    (bed : SCBraidingEigenvalueData R) : (bed.lam_anti : R) ≠ 0 := by
+  intro h
+  have hu := bed.lam_anti.mul_inv
+  rw [h, zero_mul] at hu
+  exact zero_ne_one hu
 
 /-- The antisymmetric eigenvalue is forced to be $-\lambda_{\mathrm{sym}}^{-1}$
     by the Hecke determinant constraint. -/
 theorem SCBraidingEigenvalueData.anti_eq_neg_inv
-    (bed : SCBraidingEigenvalueData K) :
-    bed.lam_anti = -(bed.lam_sym)⁻¹ := by
-  have h := bed.det_constraint
-  have hne := bed.lam_sym_ne_zero
-  field_simp
-  linear_combination h
+    (bed : SCBraidingEigenvalueData R) :
+    bed.lam_anti = -(bed.lam_sym⁻¹ : Rˣ) := by
+  have h : (bed.lam_sym⁻¹ : Rˣ) * (bed.lam_sym * bed.lam_anti) = bed.lam_sym⁻¹ * (-1) := by
+    rw [bed.det_constraint]
+  rwa [inv_mul_cancel_left, mul_neg, mul_one] at h
 
 /-- Algebraic identity: $\lambda_{\mathrm{sym}}^{-1} = -\lambda_{\mathrm{anti}}$.
     This is the Hecke determinant constraint rewritten as the
     candidate chart-glue coefficient. -/
 theorem glue_eq_inv_sym
-    (bed : SCBraidingEigenvalueData K) :
-    bed.lam_sym⁻¹ = -bed.lam_anti := by
-  rw [bed.anti_eq_neg_inv]; ring
+    (bed : SCBraidingEigenvalueData R) :
+    (bed.lam_sym⁻¹ : Rˣ) = -bed.lam_anti := by
+  rw [bed.anti_eq_neg_inv, neg_neg]
 
 /-- Classical limit: at $\lambda_{\mathrm{sym}} = 1$, the candidate
     chart-glue degenerates to $1$ (classical inversion $z\cdot w = 1$). -/
 theorem glue_classical_limit
-    (bed : SCBraidingEigenvalueData K)
+    (bed : SCBraidingEigenvalueData R)
     (hsym : bed.lam_sym = 1) :
-    bed.lam_sym⁻¹ = 1 := by
-  rw [hsym]; simp
+    (bed.lam_sym⁻¹ : Rˣ) = 1 := by
+  rw [hsym, inv_one]
 
 /-- Categorical interpretation: on $\mathbb{P}_q(V)$, the chart-transition
     coefficient $\kappa$ of `contact_affine_chart` equals
@@ -93,8 +118,8 @@ theorem glue_classical_limit
     model of $\mathcal{O}_q(\mathbb{P}^1)$ is not in Mathlib. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2  §IV.5
 axiom chart_glue_from_spectrum
-    (bed : SCBraidingEigenvalueData K) :
-    ∃ κ : K, κ = bed.lam_sym⁻¹
+    (bed : SCBraidingEigenvalueData R) :
+    ∃ κ : R, κ = ↑bed.lam_sym⁻¹
 
 /-- The full spectral–chart correspondence: the chart-glue
     coefficient $\kappa$ of $\mathbb{P}_q(V)$ equals
@@ -102,12 +127,12 @@ axiom chart_glue_from_spectrum
     the algebraic identity (`glue_eq_inv_sym`) with the categorical
     interpretation (`chart_glue_from_spectrum`). -/
 theorem spectral_chart_correspondence
-    (bed : SCBraidingEigenvalueData K) :
-    ∃ κ : K, κ = bed.lam_sym⁻¹ ∧ κ = -bed.lam_anti := by
+    (bed : SCBraidingEigenvalueData R) :
+    ∃ κ : R, κ = ↑bed.lam_sym⁻¹ ∧ κ = -↑bed.lam_anti := by
   obtain ⟨κ, hκ⟩ := chart_glue_from_spectrum bed
   refine ⟨κ, hκ, ?_⟩
-  rw [hκ, glue_eq_inv_sym bed]
-
-end
+  have h : (↑bed.lam_sym⁻¹ : R) = ↑(-bed.lam_anti) :=
+    congrArg Units.val (glue_eq_inv_sym bed)
+  rw [hκ, h, Units.val_neg]
 
 end QOU

@@ -564,13 +564,28 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
             "a_V": a_V, "B_vol": B_vol, "E_C": E_C}
 
 
+def _disp(v):
+    """Coerce a value to a `float`-formattable display type.
+
+    `mpmath.mpf` implements `__format__` but rejects the fixed-point /
+    scientific specs used below, so an mpf-valued cell (e.g. `E_C`, which
+    `coulomb_energy_mev` returns at full working precision) raises
+    `TypeError` instead of printing. Coercion happens HERE, at the display
+    boundary only — every computed quantity stays mpf upstream and nothing
+    that reaches a witness passes through this function.
+    """
+    return v if v is None or isinstance(v, float) else float(v)
+
+
 def _fmt(v, w=8, p=2):
+    v = _disp(v)
     return f"{v:>{w}.{p}f}" if v is not None else f"{'—':>{w}}"
 
 
 def _sci(v, w=11, p=2):
     """Scientific-notation cell — for sub-keV σ_exp values that round to
     0.000000 in fixed-point and read as a misleading empty column."""
+    v = _disp(v)
     return f"{v:>{w}.{p}e}" if v is not None else f"{'—':>{w}}"
 
 

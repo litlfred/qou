@@ -5,5 +5,8 @@ export default proof({
   title: "Proof of genus-filtration ideal characterisation",
   of: "prop:genus-filtration-ideal",
   tags: ["chebyshev", "yekutieli", "hecke-algebra", "ideal"],
-  uses: ["lem:yekutieli-leading-coefficient"],
+  uses: [
+    "prop:genus-filtration-ideal",
+    "lem:yekutieli-leading-coefficient",
+  ],
 });

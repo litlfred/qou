@@ -37,7 +37,7 @@ This three-fold structure aligns with the three color tubes. Each color fiber ca
 The Standard Model matter/force distinction aligns with winding numbers:
 
 - **Matter generators** ($T_{2,3}$, $T_{2,5}$, $T_{2,7}$) have prime winding numbers. They do not factor through a lower generator.
-- **Force generators** ($T_{3,4}$, $T_{3,5}$, $T_{2,9}$) populate the $H^{0,1}$ antiholomorphic sector. The composite winding $9 = 3 \times 3$ of $T_{2,9}$ factors through $T_{2,3}$. The knot $T_{3,4}$ provides Hopf-squared color binding. The knot $T_{3,5}$ mediates the weak interaction.
+- **Force generators** ($T_{3,4}$, $T_{3,5}$, $T_{2,9}$) populate the $H^{0,1}$ antiholomorphic sector. The composite winding $9 = 3 \times 3$ of $T_{2,9}$ factors through $T_{2,3}$. The knot $T_{3,4}$ provides Hopf-squared color binding. The knot $T_{3,5}$ carries three-strand colour at the second-generation column; the production reading below identifies it with the $gg \to c\bar{c}$ vertex rather than a weak mediator.
 
 A generator whose winding interpolates three matter copies binds rather than acts as a standalone particle. This yields the identification:
 
@@ -60,12 +60,15 @@ The knot $T_{3,5}$ sits at the intersection of the $m = 3$ (quark) row and the $
 
 If $T_{2,9}$ carries the strong force, $T_{3,5}$ is the natural candidate for a flavor-changing interaction. It topologically connects the $m = 2$ and $m = 3$ families. The weak force changes quark flavor (e.g., $u \leftrightarrow d$ via $W^{\pm}$) and requires precisely this cross-family mediation. Alternatively, $T_{3,5}$ encodes the electroweak mixing between leptonic and quark sectors.
 
+**Production reading: $T_{3,5}$ as the $gg \to c\bar{c}$ vertex.**
+The pair-production mechanism sharpens the $T_{3,5}$ reading and disfavours the weak-mediator alternative above. Dominant second-generation quark production is gluon fusion $gg \to c\bar{c}$; the two incoming gluons occupy the three-strand colour ($m = 3$) sector — the sector of the strong generator $T_{2,9}$ — and the Frobenius Gram matrix selects the emergent pair by the colour-tube threading operation, which attaches the $m = 3$ colour structure to the second-generation longitudinal winding $n = 5$. On this reading $T_{3,5}$ is the production vertex, and the second-generation quark is its coloured outgoing leg: a colour-threaded $T_{2,5}$. The uncoloured $T_{2,5}$ is the generation label the quark shares with the muon; $T_{3,5}$ is its coloured realisation under threading. This reading is more consistent than the weak-mediator guess, which collides with the electroweak-triplet assignment $W = T_{2,4}$ — the charged weak boson is a genus-zero torus link, not $T_{3,5}$. It also reconciles the [Standard-Model appendix](../appendix-standard-model/sm-params-quark-masses.md), where the quark masses are open precisely because quarks carry no independent knot: the second-generation quark is a threaded constituent leg, not a standalone carrier. The identification fixes a channel, not a mass — $T_{3,5}$ has zero hyperbolic volume, so a second-generation quark mass requires the complex-volume constituent functional (the real part of $\mathrm{Vol} + i\,\mathrm{CS}$ projected onto the $n = 5$ Frobenius block), which is open.
+
 **Summary of candidate assignments.**
 
 | Generator | Structure | Candidate | Rationale |
 |-----------|-----------|-----------|-----------|
 | $T_{2,9}$ | Three-fold cover of $T_{2,3}$ | Strong force / gluonic binding | Interpolates 3 color copies of the trefoil; zero volume = massless |
-| $T_{3,5}$ | Cross-link of $m = 3$, $n = 5$ | Weak / electroweak mediator | Connects quark and lepton winding families; flavor-changing |
+| $T_{3,5}$ | Cross-link of $m = 3$, $n = 5$ | $gg \to c\bar{c}$ vertex / second-generation quark channel | Colour-threaded $T_{2,5}$; weak-mediator reading disfavoured by $W = T_{2,4}$ |
 
 **Open problem.**
 Make the force interpretation precise. Identify $T_{2,9}$ and $T_{3,5}$ with specific gauge bosons (gluon, $W^{\pm}$, $Z^0$). Compute their Skein interaction terms with matter generators. Compare coupling constants derived from the mass functional with Standard Model values.

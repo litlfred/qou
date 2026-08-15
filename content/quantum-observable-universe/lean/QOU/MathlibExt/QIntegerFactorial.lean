@@ -1,6 +1,7 @@
 import Mathlib.Algebra.GeomSum
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.MathlibExt.QIntegerFactorial — quantum integers, q-factorial, genericity
@@ -34,6 +35,14 @@ variable {K : Type*} [Field K]
 
 /-- The **quantum integer** `[n]_q = 1 + q + ⋯ + q^{n-1} = ∑_{i<n} q^i`. -/
 def qInt (q : K) (n : ℕ) : K := ∑ i ∈ range n, q ^ i
+
+/-- **Bridge to the canonical geometric bracket.**
+
+`qInt` is kept rather than aliased: `qInt_eq_div` below does
+`rw [qInt, geom_sum_eq hq]`, which needs the `Finset.sum` to be the literal
+body. The two are definitionally the same object, so the consolidation here is
+this equation — checked, not asserted. -/
+theorem qInt_eq_canonical (q : K) (n : ℕ) : qInt q n = QOU.QInteger.qIntGeo q n := rfl
 
 @[simp] theorem qInt_zero (q : K) : qInt q 0 = 0 := by simp [qInt]
 

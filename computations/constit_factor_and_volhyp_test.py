@@ -82,7 +82,7 @@ def categorical_search_for(target: mp.mpf, max_rel_err: float = 0.01):
     q = mp.mpf(str(Q0))
     qi = 1 / q
     h = q - qi
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     sqrt_q = mp.sqrt(q)
     sqrt_qi = 1 / sqrt_q
 
@@ -158,7 +158,7 @@ def report_constit_factor_search() -> dict:
 # ──────────────────────────────────────────────────────────────────
 
 def alpha_k_base(k: int) -> mp.mpf:
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k in (0, 1, 3):
         return mp.mpf(1)

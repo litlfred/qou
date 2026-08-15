@@ -198,7 +198,7 @@ class ZHLaurent:
         import sympy as sp
         with mp.workdps(dps):
             q = mp.mpf(q_str)
-            z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+            z = q**3 / (q**2 + 1)
             h = q - 1 / q
             total = mp.mpf(0)
             for (a, b), coef in self.terms.items():
@@ -429,7 +429,7 @@ def _self_check() -> int:
     from markov_trace_canonical import tr_M_element, H_SYMB as h_sym
 
     q_val = float(Q0)
-    z_val = 1.0 / (q_val ** 0.5 + q_val ** (-0.5))
+    z_val = q_val**3 / (q_val**2 + 1)
     h_val = q_val - 1.0 / q_val
 
     # n = max(word) + 2 if word else 1 (per markov_trace_canonical convention)

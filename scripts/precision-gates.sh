@@ -35,8 +35,18 @@
 # DO NOT MAKE A RED RUN GREEN BY WIDENING A BASELINE.
 #   Each gate says so in its own output. Fix at the producer: carry the value as
 #   mpmath.mpf from its source and serialize with _precision.fmt. Adding a file
-#   to raw-float64-baseline.json, or --rebaseline'ing to go green, defeats the
-#   mechanism the gate exists to provide. Baselines drain, never grow.
+#   to raw-float64-baseline.json or mpf-import-time-dps-baseline.json, or
+#   --rebaseline'ing to go green, defeats the mechanism the gate exists to
+#   provide. Baselines drain, never grow.
+#
+# A GATE OUTSIDE THIS ARRAY IS A GATE NOBODY RUNS. (2026-08-10, bean qou-j6gb)
+#   `mpf_import_time_dps_audit.py` was written 2026-08-07, worked from the start,
+#   and was in no array — not here, so nothing ran it. Its defect class then
+#   landed five more times, each caught instead by a different gate reacting to a
+#   downstream symptom. It was added here as a ratchet (baseline 91 files / 185
+#   proven-lossy / 103 position-risky) rather than pass/fail, because a gate that
+#   is red on arrival gets skipped, which is how a checker goes quiet. When you
+#   write a detector, wiring it here is the half that makes it a gate.
 set -uo pipefail
 
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not a git repo"; exit 0; }
@@ -46,11 +56,37 @@ cd "$ROOT"
 GATES=(
   "q0-anchor flip|computations/audits/q0_anchor_consistency_audit.py|--strict|no|yes"
   "mpf(<float>) source|computations/mpf_float_source_audit.py|--strict|yes|yes"
+  "import-time dps ratchet|computations/mpf_import_time_dps_audit.py|--strict|yes|yes"
   "float64-padding ratchet|computations/witness_float64_padding_audit.py|--strict|yes|yes"
   "mp.dps no-op|computations/mpf_context_dps_audit.py|--strict|yes|yes"
   "module-const precision|computations/module_const_precision_audit.py|--strict|yes|yes"
   "raw-float64 ratchet|computations/witness_raw_float64_audit.py|--strict|yes|yes"
+  # Paired with the ratchet above and deliberately independent of it: the
+  # ratchet counts raw floats, so a GUTTED witness scores zero and reads as a
+  # perfect drain. This one asks the orthogonal question — did the witness lose
+  # content? — by diffing shape against HEAD. Bean qou-h4xk; measured twice on
+  # rho-k-co-casimir-extended, where a partial write showed 4 -> 0 raw floats
+  # with durationMs 2,552,837 -> 519. Neither gate subsumes the other.
+  "witness shape guard|computations/witness_shape_guard.py||yes|yes"
   "q0-value drift ratchet|computations/q0_value_drift_audit.py|--strict|no|yes"
+  # Blocking, and GREEN as of the commit that added it (0 candidates across
+  # 273 numpy-importing files) — which is exactly when a gate is safe to make
+  # blocking, because it can then only ever fire on a NEW regression.
+  # Guards the mpmath/float64 boundary: an mpf reaching a numpy array demotes
+  # it to dtype=object, silently leaving BLAS. Measured at ~4000x on
+  # chi_numpy, invisible to compute_audit_scan, and misdiagnosed as slow
+  # hardware for six hours. Bean qou-5qwb.
+  "numpy/mpmath dtype leak|computations/numpy_mpmath_dtype_leak_audit.py||yes|yes"
+  # ADVISORY, and it starts red on purpose. The ratchet's scan root is
+  # computations/, so every witness under docs/audits/scripts/ has been
+  # outside the NO-FLOAT64 discipline entirely — 5 carry raw float64 today
+  # (20 fields: max_loss_digits, c_ratios, Z_at_q0). Those belong to other
+  # arcs, and the baseline is keyed on computations/ paths, so they cannot be
+  # baselined without GROWING it — which the discipline forbids. Reporting
+  # them is the honest middle: the gap becomes visible, nothing is silenced,
+  # and anything NEW landing there shows up immediately. Flip to blocking
+  # once the five are drained. Bean qou-irzg.
+  "audits-tree raw-float64 (advisory)|computations/witness_raw_float64_audit.py|--scan-root docs/audits/scripts --strict|no|no"
   "no-free-parameter cert|computations/no_free_parameter_certificate.py|--strict|yes|no"
 )
 

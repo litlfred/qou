@@ -46,7 +46,7 @@ from q_parameter import Q, Q_INV, HA, q_int, Q_50_DIGIT_STR
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 q0 = Q; qi0 = Q_INV; h = HA; me = M_E_MEV
-z = 1.0 / (q0**0.5 + qi0**0.5)
+z = q0**3 / (q0**2 + 1)
 
 # E_0 calibration: free-neutron β-decay Q-value (MeV), per
 # prop:categorical-mass-markov / hecke_core.E_0_CALIBRATION_MEV.

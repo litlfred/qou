@@ -96,7 +96,7 @@ def vanishing_threshold() -> mp.mpf:
 
 def alpha_k(k: int) -> mp.mpf:
     """Structural prefactor per prop:plancherel-term-7-formulation."""
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k in (0, 1, 3):
         return mp.mpf(1)

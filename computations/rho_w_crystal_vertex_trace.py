@@ -57,7 +57,9 @@ sys.path.insert(0, str(HERE))
 # Centralised precision (COMPUTE 65 dps / SERIALIZE 50 dps defaults).
 from _precision import set_compute_dps, fmt  # noqa: E402
 
-from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
+from canonical_braid_crossings import (  # noqa: E402
+    atom_canonical_crossings, d_for_ctype,
+)
 
 
 # ----------------------------------------------------------------------------
@@ -240,13 +242,21 @@ def identity(n):
 
 
 def generator_word_matrices(lam, syts, syt_index, q, qi):
-    """Pre-build σ_g, σ_g⁻¹, and the interface (σ_g − h/2·1) for each generator
-    g = 1..n−1, in the SYT basis. h = q − q⁻¹ (substrate)."""
+    """Pre-build σ_g, σ_g⁻¹, and BOTH interfaces for each generator
+    g = 1..n−1, in the SYT basis. h = q − q⁻¹ (substrate).
+
+    Two interfaces, not one: the colour-blind `averaged` (σ_g − (h/2)·1) and
+    the colour-weighted `averaged_weighted` (σ_g − h(1/2 − δ/4)·1) that the
+    canonical word carries on the p-n bond. Building only the first is what
+    made this module raise on every Z≥1,N≥1 atom.
+    """
     n = sum(lam)
     h = q - qi
     sig: dict[int, list] = {}
     sig_inv: dict[int, list] = {}
     inter: dict[int, list] = {}
+    inter_w: dict[int, list] = {}
+    d_w = d_for_ctype("averaged_weighted", h)
     for g in range(1, n):
         S = seminormal_generator_matrix(lam, syts, syt_index, g, q, qi)
         sig[g] = S
@@ -258,7 +268,12 @@ def generator_word_matrices(lam, syts, syt_index, q, qi):
         Ig = [[S[i][j] - (h / 2 if i == j else mpf(0)) for j in range(len(S))]
               for i in range(len(S))]
         inter[g] = Ig
-    return sig, sig_inv, inter
+        # colour-weighted interface I^w_g = σ_g + d_w·1, d_w = −h(1/2 − δ/4).
+        # `d_for_ctype` returns the signed shift, so this ADDS it — matching
+        # `Ig` above, which subtracts the positive h/2.
+        inter_w[g] = [[S[i][j] + (d_w if i == j else mpf(0))
+                       for j in range(len(S))] for i in range(len(S))]
+    return sig, sig_inv, inter, inter_w
 
 
 def rho_lambda_of_word(lam, word, q, qi):
@@ -268,7 +283,8 @@ def rho_lambda_of_word(lam, word, q, qi):
     syts = standard_young_tableaux(lam)
     syt_index = {tuple(sorted(T.items())): i for i, T in enumerate(syts)}
     dim = len(syts)
-    sig, sig_inv, inter = generator_word_matrices(lam, syts, syt_index, q, qi)
+    sig, sig_inv, inter, inter_w = generator_word_matrices(
+        lam, syts, syt_index, q, qi)
     M = identity(dim)
     for (g0, ctype) in word:
         g = g0 + 1  # 1-indexed generator
@@ -278,6 +294,8 @@ def rho_lambda_of_word(lam, word, q, qi):
             G = sig_inv[g]
         elif ctype == "averaged":
             G = inter[g]
+        elif ctype == "averaged_weighted":
+            G = inter_w[g]
         else:
             raise ValueError(f"unknown ctype {ctype!r}")
         M = mat_mul(M, G)

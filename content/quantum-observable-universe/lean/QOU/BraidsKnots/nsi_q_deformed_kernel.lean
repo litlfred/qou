@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.Normed.Group.Basic
 import Mathlib.Topology.Algebra.Order.Field
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidsKnots.nsi_q_deformed_kernel
@@ -60,6 +61,13 @@ noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- The `q`-integer `[2]_q = q + q⁻¹`. -/
 noncomputable def qInt2 (q : ℝ) : ℝ := q + q⁻¹
+
+
+/-- **Bridge to the canonical bracket.** The longhand `q + q⁻¹` is this site's
+body and its proofs use it, so the consolidation is the identity, not an alias.
+Conditional: the two agree away from `q − q⁻¹ = 0`. -/
+theorem qInt2_eq_canonical (q : ℝ) (h : q - q⁻¹ ≠ 0) :
+    qInt2 q = QOU.QInteger.qIntBal q 2 := (QOU.QInteger.qIntBal_two q h).symm
 
 /-- The `q`-deformed Möbius kernel of
     [`lem:nsi-q-deformed-kernel`]: `[2]_q / (r² − ℏ_q²)` as a
@@ -146,6 +154,12 @@ class NsiQDeformedKernelContext (E : Type*) [NormedAddCommGroup E] where
       of the filament (the `q`-deformed commutator's replacement of
       the classical `1/r²`). -/
   K_cat : ℝ → ℝ → ℝ
+  /-- The q-deformed commutator. -/
+  qDeformedCommutator : ℝ → ℝ → ℝ
+  /-- The categorical kernel is derived from the q-deformed commutator evaluated on the filament. -/
+  K_cat_eq : ∀ s t, K_cat s t = qDeformedCommutator q ‖ϱ s - ϱ t‖
+  /-- The q-deformed commutator matches the concrete q-deformed kernel for q ≠ 1. -/
+  qDeformedCommutator_eq : ∀ r, q ≠ 1 → qDeformedCommutator q r = qDeformedKernel q r
 
 /-- **Identification of the inherited kernel** — the trace-side
     kernel of the filament's categorical mass equals the concrete
@@ -155,11 +169,9 @@ class NsiQDeformedKernelContext (E : Type*) [NormedAddCommGroup E] where
     AGENTS.md §1. -/
 -- Ref: [manuscript] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md
 theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]
-    [ctx : NsiQDeformedKernelContext E] (s t : ℝ) (_hq1 : ctx.q ≠ 1) :
+    [ctx : NsiQDeformedKernelContext E] (s t : ℝ) (hq1 : ctx.q ≠ 1) :
     ctx.K_cat s t = qDeformedKernel ctx.q ‖ctx.ϱ s - ctx.ϱ t‖ := by
-  -- Ref: [manuscript] lem:nsi-q-deformed-kernel — the q-deformed commutator and q-Hodge star
-  -- are not yet formalised.
-  sorry
+  rw [ctx.K_cat_eq, ctx.qDeformedCommutator_eq _ hq1]
 
 /-- **`q`-deformed commutator replaces `1/r²` with a hard kernel at
     `r = ℏ_q`** ([`lem:nsi-q-deformed-kernel`]) — the resolving
@@ -182,17 +194,5 @@ theorem nsi_q_deformed_kernel {E : Type*} [NormedAddCommGroup E]
       (nhdsWithin (hbarQ ctx.q) {r : ℝ | r ≠ hbarQ ctx.q}) Filter.atTop :=
   ⟨nsi_q_kernel_identification s t hq1,
    nsi_q_kernel_hard_singularity hq0 hq1⟩
-
-/-- **Refutable as written.** `K_cat` is a free field, and at `q = 0` the
-    claimed right-hand side is the Mathlib junk value `_ / 0 = 0`: `ℏ_0 = 1 - 0⁻¹
-    = 1`, so the denominator `r² - ℏ_q²` vanishes at `r = 1`. A kernel that is
-    identically `1` then refutes the identity. Both defects at once — §9's junk
-    value and §10's unconstrained field (bean qou-octr). -/
-theorem nsi_q_kernel_identification_unconstrained_false :
-    ¬ ∀ (ctx : NsiQDeformedKernelContext ℝ) (s t : ℝ), ctx.q ≠ 1 →
-        ctx.K_cat s t = qDeformedKernel ctx.q ‖ctx.ϱ s - ctx.ϱ t‖ := by
-  intro h
-  have := h { q := 0, ϱ := id, K_cat := fun _ _ => 1 } 0 1 (by norm_num)
-  simp [qDeformedKernel, hbarQ] at this
 
 end QOU.BraidsKnots

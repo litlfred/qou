@@ -1,0 +1,106 @@
+{
+  "computation": "qbeta-fig8-cyclotomic-bar-invariance",
+  "description": "Front (a): the figure-eight cyclotomic term T_n(q) = prod (1-q^j)(1-q^-j) is EXACTLY bar-invariant (T_n(1/q) = T_n(q)), because the involution merely swaps the two brackets of each factor. Measured at the substrate pair: max relative |T_n(q0)/T_n(1/q0) - 1| = 5.9e-49 over n=1..40, and the closed form -(q^j-1)^2/q^j matches to 1.6e-50. So J(4_1)'s series diverges at q0 and 1/q0 at the SAME rate, and 1/q0 is NOT a better evaluation point \u2014 correcting the PR #5084 framing, which was right for a generic q-series but wrong for this invariant: the building block (q;q)_n is asymmetric, but J(4_1) multiplies the two branches and the asymmetry cancels. A state integral (convergent on C\\R, not a series in q) is therefore the ONLY route for front (a), not one among several. Scope-(b) for the series route; says nothing about (H1).",
+  "audit_only": true,
+  "tier": "exact identity + numerical confirmation (no fit)",
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "computedAt": "2026-08-15T11:12:34.356683+00:00",
+  "commitSha": "7fdb84a6ac61b497293b44866b9fdc8cb3438396",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_fig8_cyclotomic_bar_invariance.py",
+  "scriptHash": "2464fdcbcd5c",
+  "assertions": [
+    {
+      "name": "fig8_term_bar_invariant_to_working_precision",
+      "passed": true,
+      "detail": "max rel err 1.11632e-59"
+    },
+    {
+      "name": "closed_form_matches",
+      "passed": true,
+      "detail": "max rel err 4.03657e-61"
+    },
+    {
+      "name": "growth_root_rises_toward_q0",
+      "passed": true
+    },
+    {
+      "name": "inv_q0_is_not_a_better_evaluation_point",
+      "passed": true,
+      "detail": "corrects the PR #5084 framing; state integral is the only route"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "q0": "1.109978582751380807591669",
+    "inv_q0": "0.9009182839557414921608229",
+    "n_max": 40,
+    "term_table": [
+      {
+        "n": 1,
+        "abs_T_q0": "0.0108968667071",
+        "abs_T_inv_q0": "0.0108968667071",
+        "bar_rel_err": "0.0"
+      },
+      {
+        "n": 3,
+        "abs_T_q0": "4.70476754043e-5",
+        "abs_T_inv_q0": "4.70476754043e-5",
+        "bar_rel_err": "0.0"
+      },
+      {
+        "n": 5,
+        "abs_T_q0": "2.31492354158e-6",
+        "abs_T_inv_q0": "2.31492354158e-6",
+        "bar_rel_err": "5.12737e-61"
+      },
+      {
+        "n": 10,
+        "abs_T_q0": "4.35917378843e-7",
+        "abs_T_inv_q0": "4.35917378843e-7",
+        "bar_rel_err": "1.70179e-60"
+      },
+      {
+        "n": 20,
+        "abs_T_q0": "0.0413658168913",
+        "abs_T_inv_q0": "0.0413658168913",
+        "bar_rel_err": "4.34862e-60"
+      },
+      {
+        "n": 40,
+        "abs_T_q0": "2.34525518285e+25",
+        "abs_T_inv_q0": "2.34525518285e+25",
+        "bar_rel_err": "1.11632e-59"
+      }
+    ],
+    "max_bar_relative_error": "1.1163225e-59",
+    "max_closed_form_relative_error": "4.0365725e-61",
+    "growth_root_table": [
+      {
+        "n": 10,
+        "root": "0.766218799432"
+      },
+      {
+        "n": 20,
+        "root": "0.984946358933"
+      },
+      {
+        "n": 30,
+        "root": "1.0482195813"
+      },
+      {
+        "n": 40,
+        "root": "1.07383920641"
+      }
+    ],
+    "growth_limit_is_q0": "1.109978582751381"
+  },
+  "context": {
+    "axis": "front (a) \u2014 fibre carrier evaluation point",
+    "lean": "QOU.QBeta.Fig8CyclotomicBarInvariance (sorry-free, 6 declarations)",
+    "corrects": "PR #5084 / QOU.QBeta.HabiroEvaluationTrichotomy's closing framing that 1/q0 is the convergent member of the bar-pair. True of the building block, false of J(4_1).",
+    "scope": "Scope-(b) for the SERIES route, invariant named: the bar involution fixes each cyclotomic factor, hence each term. It does not touch (H1) and does not argue against the state-integral route \u2014 it narrows front (a) to that route."
+  }
+}

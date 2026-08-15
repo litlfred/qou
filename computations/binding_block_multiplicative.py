@@ -91,6 +91,12 @@ from mass_at_3A_proper import E_0_CALIBRATION_MEV
 from _li_2_q_util import load_q_50dps, li_2_q
 
 
+# Precision must be raised BEFORE the module-scope constants below: at import
+# time mp.dps is still mpmath's default 15 (~binary64), and a literal rounded
+# there cannot be recovered by raising dps afterwards. Idempotent; the call at
+# the top of main() stays. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 B_AME = {
     "D":   mp.mpf("2.22456607"),
     "T":   AME_B_TRITIUM_MEV_VALIDATION,

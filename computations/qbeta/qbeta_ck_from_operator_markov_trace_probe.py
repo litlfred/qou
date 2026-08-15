@@ -135,7 +135,7 @@ def main() -> int:
 
     # Q_β prefactor (substrate) — PR #1786 chain
     h_qq = q - 1 / q
-    z_qq = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z_qq = q**3 / (q**2 + 1)
     alpha = (z_qq - 1) * h_qq / 2
     b_sub = sp.sqrt(q ** 4 + q ** 2 + 1) / (q ** 2 + 1)
     hbar = (q - 1) / q

@@ -430,7 +430,7 @@ def q_beta_kashiwara_n2_mev() -> mp.mpf:
     q = _q_0()
     Q_A = q_beta_predicted_mev()
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     hbar_q = (q - 1) / q
     alpha = (z - 1) * h / 2
     q_sq = q ** 2
@@ -476,7 +476,7 @@ def q_beta_toroidal_mev() -> mp.mpf:
     q = _q_0()
     Q_A = q_beta_predicted_mev()
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     hbar_q = (q - 1) / q
     alpha = (z - 1) * h / 2
     q_sq = q ** 2

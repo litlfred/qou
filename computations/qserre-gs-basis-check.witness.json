@@ -1,0 +1,149 @@
+{
+  "arithmetic": "exact (sympy rational functions of q); no float64",
+  "bean": "qou-18s7",
+  "compute": "qserre_gs_basis_check",
+  "conclusion": "qSerre_is_gs_basis is FALSE of the five-rule system",
+  "description": "Overlap-ambiguity (critical pair) check of the q-Serre rewriting system. Tests whether UGB.GrobnerShirshov.qSerre_is_gs_basis holds of the five explicit rules built in NormalForms.lean \u00a73.1, and of the seven-rule completion.",
+  "five_rule_system": {
+    "ambiguities": [
+      {
+        "ambiguous_word": "K K^-1 K",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(1)\u00b7K",
+        "reduct_right": "(1)\u00b7K",
+        "resolved": true,
+        "rule_left": "R1",
+        "rule_right": "R2"
+      },
+      {
+        "ambiguous_word": "K^-1 K K^-1",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(1)\u00b7K^-1",
+        "reduct_right": "(1)\u00b7K^-1",
+        "resolved": true,
+        "rule_left": "R2",
+        "rule_right": "R1"
+      },
+      {
+        "ambiguous_word": "K^-1 K E+",
+        "both_reducts_irreducible": true,
+        "difference": "(1)\u00b7E+  +  (-q**2)\u00b7K^-1 E+ K",
+        "reduct_left": "(1)\u00b7E+",
+        "reduct_right": "(q**2)\u00b7K^-1 E+ K",
+        "resolved": false,
+        "rule_left": "R2",
+        "rule_right": "R3"
+      },
+      {
+        "ambiguous_word": "K^-1 K E-",
+        "both_reducts_irreducible": true,
+        "difference": "(1)\u00b7E-  +  (-1/q**2)\u00b7K^-1 E- K",
+        "reduct_left": "(1)\u00b7E-",
+        "reduct_right": "(q**(-2))\u00b7K^-1 E- K",
+        "resolved": false,
+        "rule_left": "R2",
+        "rule_right": "R4"
+      },
+      {
+        "ambiguous_word": "K E+ E-",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(-q/(q**2 - 1))\u00b71  +  (1)\u00b7E- E+ K  +  (q/(q**2 - 1))\u00b7K K",
+        "reduct_right": "(-q/(q**2 - 1))\u00b71  +  (1)\u00b7E- E+ K  +  (q/(q**2 - 1))\u00b7K K",
+        "resolved": true,
+        "rule_left": "R3",
+        "rule_right": "R5"
+      }
+    ],
+    "is_gs_basis": false
+  },
+  "method": "A terminating system is confluent iff every overlap ambiguity resolves. Each ambiguous word is reduced both ways to a fixed point and the reducts compared; a FAIL is only reported as decisive when both reducts are genuinely irreducible.",
+  "seven_rule_system": {
+    "ambiguities": [
+      {
+        "ambiguous_word": "K K^-1 K",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(1)\u00b7K",
+        "reduct_right": "(1)\u00b7K",
+        "resolved": true,
+        "rule_left": "R1",
+        "rule_right": "R2"
+      },
+      {
+        "ambiguous_word": "K K^-1 E+",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(1)\u00b7E+",
+        "reduct_right": "(1)\u00b7E+",
+        "resolved": true,
+        "rule_left": "R1",
+        "rule_right": "R6"
+      },
+      {
+        "ambiguous_word": "K K^-1 E-",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(1)\u00b7E-",
+        "reduct_right": "(1)\u00b7E-",
+        "resolved": true,
+        "rule_left": "R1",
+        "rule_right": "R7"
+      },
+      {
+        "ambiguous_word": "K^-1 K K^-1",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(1)\u00b7K^-1",
+        "reduct_right": "(1)\u00b7K^-1",
+        "resolved": true,
+        "rule_left": "R2",
+        "rule_right": "R1"
+      },
+      {
+        "ambiguous_word": "K^-1 K E+",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(1)\u00b7E+",
+        "reduct_right": "(1)\u00b7E+",
+        "resolved": true,
+        "rule_left": "R2",
+        "rule_right": "R3"
+      },
+      {
+        "ambiguous_word": "K^-1 K E-",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(1)\u00b7E-",
+        "reduct_right": "(1)\u00b7E-",
+        "resolved": true,
+        "rule_left": "R2",
+        "rule_right": "R4"
+      },
+      {
+        "ambiguous_word": "K E+ E-",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(-q/(q**2 - 1))\u00b71  +  (1)\u00b7E- E+ K  +  (q/(q**2 - 1))\u00b7K K",
+        "reduct_right": "(-q/(q**2 - 1))\u00b71  +  (1)\u00b7E- E+ K  +  (q/(q**2 - 1))\u00b7K K",
+        "resolved": true,
+        "rule_left": "R3",
+        "rule_right": "R5"
+      },
+      {
+        "ambiguous_word": "K^-1 E+ E-",
+        "both_reducts_irreducible": true,
+        "difference": "0",
+        "reduct_left": "(q/(q**2 - 1))\u00b71  +  (1)\u00b7E- E+ K^-1  +  (-q/(q**2 - 1))\u00b7K^-1 K^-1",
+        "reduct_right": "(q/(q**2 - 1))\u00b71  +  (1)\u00b7E- E+ K^-1  +  (-q/(q**2 - 1))\u00b7K^-1 K^-1",
+        "resolved": true,
+        "rule_left": "R6",
+        "rule_right": "R5"
+      }
+    ],
+    "is_gs_basis": true
+  },
+  "status": "derived"
+}

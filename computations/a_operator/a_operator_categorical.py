@@ -57,6 +57,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 del _sys, _Path, _bridge
 
 import argparse
@@ -78,6 +79,12 @@ try:
 except ImportError:  # pragma: no cover
     _pyn = None
     _HAVE_NATIVE = False
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 # Exact cross-check bar at 50 dps (compute-author §1.1: 1e-25 minimum). Reachable
 # only via the native MPFR character path (`pyhecke_native.chi_lambda_braid_mpfr`),
@@ -103,7 +110,8 @@ INTERFACE_COEFS: dict[str, tuple[str, str]] = {
     # d-coefficient is "0", "-h", or "-h/2" — resolved against h at q_0.
     "pp": ("1", "0"),
     "nn": ("1", "-h"),
-    "pn": ("1", "-h/2"),
+    # colour-WEIGHTED p-n (qou-gdtb); was "-h/2", the colour-blind form.
+    "pn": ("1", "-h*(1/2-delta/4)"),
 }
 
 

@@ -68,7 +68,7 @@ except Exception:
     qi = 1 / q0
     HA = q0 - qi
 
-z = 1 / (mp.sqrt(q0) + mp.sqrt(qi))
+z = q0**3 / (q0**2 + 1)
 HA_d = q0 ** 5 - qi ** 5          # dressed intra-atomic pe sum (eigenvalues q^5,-q^-5)
 
 STRANDS = [('p', 1), ('e', 1), ('p', 2), ('e', 2)]

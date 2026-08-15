@@ -181,7 +181,7 @@ def main():
         "attack": "qou-ogrk (A2), fractional-moment interpolation angle",
         "verdict": verdict,
         "per_n": results,
-        "runtime_s": time.time() - t0,
+        "runtime_s": f"{time.time() - t0:.3f}",
     }
     path = ("computations/deltalambda/"
             "wlambda-covariance-epic-A2-fractional-moment-family.witness.json")

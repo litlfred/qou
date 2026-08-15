@@ -34,7 +34,7 @@ set_compute_dps()
 q0 = mpf(Q_50_DIGIT_STR)
 m_e = mpf(M_E_MEV)
 h = q0 - 1 / q0
-z_markov = 1 / (q0 ** mpf("0.5") + q0 ** mpf("-0.5"))
+z_markov = q0**3 / (q0**2 + 1)
 
 MAGIC = [0, 2, 8, 20, 28, 50, 82, 126]
 

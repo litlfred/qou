@@ -7,6 +7,21 @@ export default proposition({
   tags: ["turbulence", "kolmogorov", "energy-cascade", "fluid-dynamics", "prediction"],
   authorNotes: [
     {
+      kind: "status",
+      date: "2026-08-14",
+      body:
+        "**Claim (iii) restructured — file now sorry-free (bean `qou-octr`).** " +
+        "The flat cascade-depth statement was *refutable as written* " +
+        "(`finite_cascade_depth_unconstrained_false`: the context class never " +
+        "related `N_modes` to `Re_q`), so its `sorry` could never be discharged " +
+        "and was removed. The dissipation-cutoff hypothesis " +
+        "`q^N_modes ≤ Re_q^{3/4}` is now an explicit class " +
+        "(`QTurbulenceCascadeModel`), and the depth bound is derived from it " +
+        "sorry-free (`finite_cascade_depth_of_cutoff`); the resolving theorem " +
+        "`q_turbulence_spectrum` is conditional on that class per §3b-cond. " +
+        "Verified lean-direct exit 0.",
+    },
+    {
       kind: "note",
       date: "2026-08-07",
       body:

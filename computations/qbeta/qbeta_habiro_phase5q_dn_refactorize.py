@@ -235,7 +235,7 @@ def main() -> int:
     #         z(q) = 1 / (sqrt(q) + 1/sqrt(q))
     # ─────────────────────────────────────────────────────────────────
     log("Step 2: Construct Phase 5q canonical tr_M(D, q) = p · n · z(q)")
-    z_q = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z_q = q**3 / (q**2 + 1)
     d_tr_phase5q = sp.together(p_tr * n_tr * z_q)
     log(f"  tr_M(D, q)_Phase5q symbolic form constructed")
 

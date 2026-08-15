@@ -643,3 +643,503 @@ core), the 3s cancel entirely (stronger than the 4₁ `Z[1/3]`
 statement), and the 23-powers are the per-order δ³ᵏ normalization
 (integrality away from Δ, disc = −23). `N(3α−2) = −23` (odd-degree
 sign) checked exactly.
+
+## Addendum 16 (2026-08-02) — global symbols: machinery to degree 96, and the Kummer-field-collapse finding; xx9f E-hypotheses refuted on digits
+
+**xx9f second narrowing (scope-(a) negatives)**: GZ §8.1 identifies
+the C_r as Taylor data of `log(1 − e(1/6 + w))` (shifted Li₋ᵣ values).
+Two zero-free-parameter hypotheses for the (287) mismatch λ were
+tested against its known digits and **both refuted**: the
+uniform-Bernoulli-shift form `Δ(s)·Σc_j Li₀(ζ_j)` (full s-grid, both
+signs) and the weaker parallel form (any 5-unit rational multiple).
+Conclusion: the E-factor's tail arguments are not the (275) roots of
+unity — most plausibly the Nahm z-data of the ψ³ bracket in (281).
+
+**y3xv increment (`gswz_epsm_global_symbols_probe.py`, 5/5)**: the
+global integer-coefficient symbols (ξ = 2[z₁]+[z₂], z₁ = 1−α²,
+1−z₁ = α² exactly) run through the cyclic-quantum-dilog machinery in
+unramified fields containing μ_{624m} up to **degree 96** (≈60 s
+total): field integrity, α Hensel-lift, and the root-difference law
+all green. **The honest structural finding (vacuity vigilance, the
+#4533 lesson applied proactively)**: a diagnostic showed
+`χ(ζ_N) = 624 ≠ 0` (the character resolves F) but `χ` kills ALL of
+μ₆₂₄ — since `624m | 5^d−1` by construction, every base-Teichmüller
+unit is an m-th power in F. The all-zero classes are **Kummer-field
+collapse, not ε-triviality**; the α²-identity and Bloch-shadow checks
+hold vacuously at these field sizes (disclosed in probe + witness).
+**The ε-invariant lives in the base field**: CGZ's descent
+`P(ξ) = a·b^m, a ∈ F_n^×` — extracting the base-field class of `a`
+via the Galois norm/transfer from F down to `Q₂₅(ζ_m)` is the
+precisely-defined next increment (bean `y3xv` stays in-progress).
+
+## Addendum 17 (2026-08-11) — the descent EXECUTED at m = 2: ν = +1, canonical ε₂(ξ) = +1 (PR #4968)
+
+The increment-2 spec (Addendum 16 / PR #4946) is now implemented and
+run: `gswz_epsm_descent_m2_probe.py`, **20/20 checks**, the first
+genuinely **descended and well-defined** ε_m value of the program.
+
+**Setup.** F = Q₅(μ₁₂₄₈) (degree 8 unramified), base B = Q₂₅,
+Γ = ⟨σ⟩ = ⟨φ₅²⟩ of order 4. σ is the Hensel-lifted Frobenius
+(checked: h(σx) = 0 and σ⁴ = id). P(ξ) = D(x₁)²·D(x₂)·D(1)⁻³ from
+the Addendum-16 machinery.
+
+**Layer 1 — the obstruction (abstract Tonelli root).**
+c = √(σ(P)/P) exists (Tonelli–Shanks on the 2-Sylow + Newton);
+**ν = N_{F/B}(c) = +1** ∈ μ₂, root-choice invariant — unobstructed.
+**Honest finding, self-caught the same day in two stages before any
+review:** (i) the first pushed version used χ_B = teich(·)³¹², which
+is *identically* +1 on the σ-fixed base (312 ≡ 0 mod 24) — fixed to
+the genuine quadratic character teich(·)¹² = teich(·)^{(25−1)/2} with
+a base-level non-vacuity control (χ_B(ζ₆₂₄²⁶) = −1); (ii) with the
+genuine character, the abstract-layer value **flips with the root
+choice** (χ_B(a) = +1 for c, −1 for −c — asserted as a check): the
+flip c → −c moves a by v² with σ(v) = −v, forcing teich(v)²⁴ = −1.
+So the abstract layer pins **only ν**; χ_B(a) from an arbitrary
+Tonelli branch is not an invariant.
+
+**Layer 2 — the canonical equivariant cocycle (the value).** σ fixes
+z₁, z₂, α, and acts on the chosen roots by x₁ → −x₁ (r₁ = 1),
+x₂ → x₂ (r₂ = 0) — measured, not assumed. The Lean-proved shift law
+(21) (`QOU.Machinery.CyclicQuantumDilog`, PR #4964) then gives σP/P
+as an **explicit product**, D(−x₁)/D(x₁) = (1−x₁)²/(1−z₁), whose
+square root is *forced* (every exponent even before rooting, gated by
+`canonical_root_integral`):
+
+$$c_{\mathrm{canon}} = \frac{(1-x_1)^2}{1-z_1}, \qquad
+c_{\mathrm{canon}}^2 = \frac{\sigma P}{P} \;\text{(exact)}.$$
+
+No Tonelli choice anywhere. The c_canon-splice satisfies
+c·σ(b) = b exactly, the descended a = P·b⁻² is σ-fixed (the
+falsifiable certificate), and
+
+**ε₂(ξ) = χ_B(a_canon) = +1**, **invariant under x₁ → −x₁** (the
+whole canonical chain re-run on flipped data; both give +1).
+
+**Why this is new information.** Addendum 16's collapse finding showed
+every F-level Kummer class is structurally vacuous. ε₂(ξ) = +1 is the
+base-level class of the canonically-descended element — the object
+CGZ's ε actually is. No printed target exists; the value is
+falsifiable against any independent computation.
+
+**Next.** m = 3: d = 12 (ord₅ mod 1872), Γ of order 6, ν ∈ μ₃
+(root-ambiguity ζ₃⁶ = 1 auto-invariant), χ_B = teich(·)⁸; the
+canonical-cocycle integrality pattern must again be read off the
+measured r_i. Then remaining m | 24; m = 24 is where the #4533 −1
+obstruction on [ζ₂₄] and the open (−1)^{c₁} parity live.
+
+## Addendum 18 (2026-08-11) — m = 3 descent: ν = 1, but the shift-law layer cannot pin ε₃; the cocycle lives on the α-line (PR #4968)
+
+`gswz_epsm_descent_m3_probe.py`, **18/18 checks**, F = Q₅(μ₁₈₇₂)
+(d = 12), Γ = ⟨φ₅²⟩ of order 6, χ_B = teich(·)⁸ into the base
+μ₃ = ⟨g₂₄⁸⟩.
+
+**Measured structure (none of it assumed):**
+
+- Shift exponents **r = (r₁, r₂) = (0, 1)**: z₁ *has* a σ-fixed (base)
+  cube root; z₂ does **not** — its Frobenius shifts every cube root by
+  ζ₃. (r_i is intrinsic to z_i: σ fixes ζ₃, so the shift is the same
+  for all three roots.)
+- **ν = N_{F/B}(c) = 1** (Tonelli cube root via the 3-Sylow, order 9 =
+  3^{v₃(5¹²−1)}; c³ = σP/P exact; ν root-choice invariant since
+  ζ₃⁶ = 1). The descent **exists**.
+- **The canonical layer is integrally obstructed**: with n = (2, 1),
+  the shift law gives σP/P = (1−x₂)³·(1−z₂)⁻¹, and the (1−z₂)-factor's
+  cube root is fractional — unlike m = 2, where every exponent was
+  even before rooting. Any residual cube-root choice sweeps the class
+  through **all of μ₃** (the m = 2 flip generalizes: a root twist
+  c → ζ₃c moves the descended a by v³ with σ(v) = ζ₃v, forcing
+  teich(v)²⁴ = ζ₃, i.e. Δχ_B = ζ₃ per twist). So the shift-law layer
+  pins **ν only** at m = 3 — reported as such, not forced.
+- **The α-line identity (exact, new):** 1−z₁ = α² *and* **1−z₂ = α**
+  (α⁴−α²+1 = −α from α³ = α²−1). The entire cocycle obstruction of
+  ξ = 2[z₁]+[z₂] is a power of α: σP/P = (1−x₂)³/α. A canonical ε₃
+  therefore reduces to one question — a canonical cube root of α —
+  which the CGZ square-argument η-elements (their Thm 7.4 arguments
+  are squares, sidestepping root choices) are the natural candidate
+  mechanism for. Queued on `qou-y3xv`.
+
+**Contrast table so far:**
+
+| m | r (measured) | canonical root | ν | ε_m(ξ) |
+|---|---|---|---|---|
+| 2 | (1, 0) | integral — no choice | +1 | **+1, well-defined** (x₁-flip invariant) |
+| 3 | (0, 1) | fractional in (1−z₂) = α | 1 | pinning-dependent; only ν invariant at this layer |
+
+## Addendum 19 (2026-08-11) — the c_k payoff run: named corpus candidates through the gate stack, twisted p = 5 leg executed (PR #4968)
+
+`ck_membership_payoff_run_probe.py`, **7/7**, exact sympy/cyclotomic
+arithmetic. This executes the "twisted test" queued on `qou-9p9y` by
+the classical gate run (`habiro_tail_membership_gate_probe.py`) and
+the U2 payoff promised on `qou-1hlh`.
+
+**Candidates (the corpus's actual named fibre-level objects):**
+J_Hopf(q) = −(q+1/q) (the c₃ fibre candidate); [2]_q (the α_EM
+element's q-factor); D(4) (binding Habiro tail control). Exact anchor:
+the corpus's two c₃ q-forms, −2 − ℏ_q²q and J_Hopf(q), are **the same
+Laurent element** (verified exactly).
+
+**Gates:** G1 integer-Laurent (global); G2 bar-even symmetrization
+3-integral (GSWZ pattern); G3 the p = 2 Frobenius edge
+F(ζ₈)² ≡ F(ζ₄) mod 2 in Z[ζ₈]; **G4 the twisted p = 5 leg
+F(ζ₅)⁵ ≡ F(1) mod 5 in Z[ζ₅]** — the Frobenius-endomorphism
+congruence at the prime where the whole 5₂/GSWZ program lives.
+
+**Result table (all signatures predicted in advance and asserted):**
+
+| candidate | G1 | G2 | G3 (p=2) | G4 (p=5) |
+|---|---|---|---|---|
+| J_Hopf (c₃) | ✓ | ✓ | ✓ | ✓ |
+| [2]_q (α_EM) | ✓ | ✓ | ✓ | ✓ |
+| D(4) (binding tail) | ✓ | ✓ | ✓ | ✓ |
+| swing-fit (×(1+149/5000)) | ✗ | ✓ | ✗ | ✗ |
+| denom-7 | ✗ | ✓ | ✓ | ✓ |
+
+The two controls fail **per-prime, exactly where their denominators
+live**: the 2.98%-swing-sized fitted shape (denominator 2³·5⁴) breaks
+the global, p = 2 and p = 5 gates while passing the 3-gate; the
+denominator-7 shape breaks only the global gate — every local gate at
+p ∉ {7} passes. This is "coefficient integrality away from Δ" made
+operational: a fitted c₃-shape is refuted by arithmetic alone, no
+anchor inversion anywhere. VALUE-level c₃ verdicts (near-match,
+2.98% swing — SETTLED 2026-05-31) are untouched; this is
+element-level arithmetic.
+
+## Addendum 20 (2026-08-11) — xx9f third narrowing: the Nahm-argument E-factor is also excluded on digits; the Nahm saddle IS z₁; the (1+x)^a structure exact (PR #4968)
+
+`gswz_287_nahm_efactor_probe.py`, **6/6**, exact (Z/5⁸)[α] arithmetic.
+This executes the surviving route from the second narrowing ("the
+E-factor's tail arguments are most plausibly the Nahm z-data of the
+ψ_{0,z,1}³ bracket in (281)").
+
+**New exact positives:**
+
+- **The 5₂ Nahm saddle is the shape z₁.** The cube-potential saddle
+  equation (1−z)³ = z² (disc −23, the same cubic field) has K-rational
+  root exactly **z = z₁ = 1−α²** — verified in the ring. So the (281)
+  ψ_{0,z,1} parameter is the tetrahedron shape itself, mirroring 4₁'s
+  ψ_{0,ζ₆,1} (ζ₆ = the 4₁ shape).
+- **The mismatch has the exact (1+x)^a structure at h².** With
+  a = e₁ from the reconstruction printed = (1+e₁x+e₂x²+e₃x³)·computed,
+  the identity e₂ = a(a−1)/2 holds on **all** available digits — an
+  independent re-derivation of the Addendum-16 x²-confirmation, i.e.
+  the B₃ = 0 E-factor signature.
+- **The h³ residual pinned:** μ₃ = e₃ − a(a−1)(a−2)/6 has digits
+  (4, 0, 3)·(const, α, α²) mod 5 — nonzero, so the normalization is a
+  genuine series (not a single (1+x)^a power).
+
+**The test and its outcome (scope-(a)):** 84 zero-free-parameter
+candidates C₁ = ±(n₁Li₀(ζ₆ᵗz₁) + n₂Li₀(ζ₆ᵗz₂)) (t ∈ 0..5, structural
+weights, both signs; ζ₆ = the GZ Z-shift e(−5/6) at c = 1), each
+implying a = −C₁/12 — **none matches the e₁ digits**. A planted-
+candidate sensitivity control (synthetic mismatch from weights (2,1))
+is found *exactly* by the same scanner, so the empty result is a
+genuine exclusion, not a scanner artifact. Had any candidate survived
+h¹, it would have faced −C₃ = 720μ₃ (same weights, Li₋₂) at h³.
+
+**Where xx9f stands (three argument-classes now excluded on digits):**
+(275) roots of unity under uniform Bernoulli shift; parallel 5-unit
+scalars; Nahm z-arguments under structural Li₀ weights. Remaining:
+(a) the f₅ fibre reading of the printed subscript (owner's pdf
+eyeball pending: p. 57 (287) f-subscript; p. 56 (281)→(282) factor);
+(b) Bernoulli-polynomial-weighted mixed arguments (GZ (8.7) at c > 1)
+— which needs unprinted higher-fibre data to constrain without
+fitting. Bean `qou-xx9f` reopened accordingly.
+
+## Addendum 21 (2026-08-11) — the m | 24 sweep: ν = 1 at every level; m = 2 is the unique shift-law-canonical case; everything else is "a canonical m-th root of α"
+
+`gswz_epsm_descent_m4to24_probe.py`, **6/6** (77 s; fields to degree
+96). With the m = 2 / m = 3 layers from earlier on this program, the
+descent table over the full divisor lattice is now complete:
+
+| m | d | n_gal | canonical root (shift law) | ν | ε_m(ξ) |
+|---|---|---|---|---|---|
+| 2 | 8 | 4 | **integral** (no choice) | +1 | **+1 well-defined** |
+| 3 | 12 | 6 | fractional in (1−z₂) = α | 1 | ν only |
+| 4 | 16 | 8 | fractional | 1 | ν only |
+| 6 | 24 | 12 | fractional (2r₁ ok, r₂ not) | 1 | ν only |
+| 8 | 32 | 16 | fractional | 1 | ν only |
+| 12 | 48 | 24 | fractional | 1 | ν only |
+| 24 | 96 | 48 | fractional | 1 | ν only |
+
+**Findings:**
+
+- **ν = 1 for every m | 24** — the Galois descent of P(ξ) exists at
+  every level; there is no descent obstruction anywhere in the lattice.
+  (Not in tension with the #4533 result: the exact −1 there is the
+  *Kummer-layer symbol class* of [ζ₂₄] at m = 24 — a different object
+  from the descent obstruction of P(ξ).)
+- **m = 2 is structurally special**: it is the only level where the
+  multiplicities n = (2, 1) and the measured shifts make every
+  exponent even before rooting. At every other m the fractional part
+  sits on the α-line — 1−z₁ = α², 1−z₂ = α, z₁ = −α³ (all re-verified
+  exactly in each of the five fields) — so **the entire remaining
+  ε_m(ξ) program is one question: a canonical m-th root of α.**
+- **Convention note (honest):** the raw shift exponents r_i are
+  relative to each field's ζ_m choice (different primitive-root seeds
+  per field), so they are not comparable across fields; the
+  integrality verdicts m | 2r₁ / m | r₂ ARE intrinsic (unit rescaling
+  of r preserves divisibility by m).
+- The abstract layer's class is deliberately not extracted at any
+  fractional m (PR #4968 established it sweeps μ_m with the root
+  choice — the abstract layer pins ν only).
+
+**Next (bean `qou-y3xv`):** the canonical m-th root of α. Candidate
+mechanisms: CGZ's square-argument η-elements (their Thm 7.4 arguments
+are chosen to kill root ambiguities); or a norm-compatible pinning via
+α = (1−x₂)(1−ζ_m x₂)···-factorizations (α is the full σ-orbit product
+of (1−x₂) at m = 3). Until then, ε₂(ξ) = +1 plus ν ≡ 1 on the whole
+lattice is the complete extractable dataset.
+
+## Addendum 22 (2026-08-11) — the α-obstruction is MAXIMAL: α generates μ₂₄, so no root choice can ever repair the canonical cocycle (PR #4983)
+
+`gswz_epsm_alpha_teichmuller_order_probe.py`, **14/14**. This sharpens
+Addendum 21 in two directions — one that could have overturned its
+table, and one that explains it.
+
+> **⚠ CORRECTED by Addendum 24 (same day).** The paragraph below calls
+> the combined condition m | Q "the sharp criterion". That is the wrong
+> label: m | Q controls **existence** of an m-th root, not
+> **canonicity**. The canonicity criterion is the per-factor
+> m | n_j·r_j that Addendum 21 used. The two **agree on ξ**, so every
+> verdict in this addendum stands unchanged — only the label was wrong.
+
+**The published criterion was not sharp.** Addendum 21 scored each
+level with the *per-factor* condition m | n_i·r_i (n = (2,1)). But the
+α-line identities make **both** base elements powers of the *same*
+element (1−z₁ = α², 1−z₂ = α), so the cocycle's whole fractional part
+is a single α-power and the sharp condition is the **combined**
+m | (4r₁ + r₂) — strictly weaker, and intrinsic (rescaling ζ_m
+multiplies both r_i by one unit). Re-scored:
+
+| m | 2 | 3 | 4 | 6 | 8 | 12 | 24 |
+|---|---|---|---|---|---|---|---|
+| (4r₁+r₂) mod m | **0** | 1 | 2 | 4 | 2 | 10 | 22 |
+
+Only m = 2 vanishes. **The Addendum-21 verdicts stand under the more
+permissive test** — the obstruction survives being tested harder, which
+strengthens the table rather than correcting it (m = 8 improves 6 → 2,
+m = 24 improves 18/10 → 22, neither reaching 0).
+
+**Why no root choice can help — a proved invariant.** α is σ-fixed, so
+it lies in the base B = Q₂₅ with Teichmüller group μ₂₄. Measured:
+
+$$e_\alpha := \mathrm{dlog}_{g_{24}}\ \mathrm{teich}(\alpha) = 13,
+\qquad \gcd(13, 24) = 1.$$
+
+**α is a primitive generator of μ₂₄** (exact order 24, computed
+independently of the gcd). Three consequences, each checked:
+
+1. **α is an m-th power in B for no m > 1** — the m-th powers are
+   ⟨g₂₄^m⟩ and m ∤ 13 for every m > 1. There is no base m-th root of α
+   *to choose*: the canonical construction cannot be repaired by a
+   better choice.
+2. **α contributes no divisibility of its own** — e_α being a unit mod
+   24 makes m | e_α(4r₁+r₂) equivalent to m | (4r₁+r₂). The lattice is
+   governed entirely by the shift exponents.
+3. **m = 2 is canonical for a different reason than one might guess** —
+   not because α is a square (13 is odd; it is not), but because
+   4r₁+r₂ = 4 is *even*, so the exponent is an integer and no root of α
+   is needed at all. Addendum 21's "m = 2 is uniquely canonical" is now
+   explained, not merely observed.
+
+**Scope (strict).** The exclusion is **scope-(b)** with its invariant
+named — *the order of α in the cyclic group μ₂₄* forbids any m-th root
+in the base, permanently, for m > 1. But the ε_m consequence stays
+**scope-(a)**: ε_m is a function of the **Bloch class**, and a different
+representative of the same class (five-term-related, or CGZ's
+square-argument η-form, their Thm 7.4) has different 1−w_i and may avoid
+α entirely. What is excluded is **one route on one representative** — not
+ε_m at m ≥ 3. That change of representative is the next increment on
+`qou-y3xv`.
+
+## Addendum 23 (2026-08-11) — the obstruction is a quadratic form, and the α-block is CLEARABLE by a representative change (Lean-proved backbone)
+
+`gswz_epsm_representative_obstruction_probe.py` (**27/27**, exact 𝔽₂₅
+arithmetic) + `QOU/Machinery/EpsMObstruction.lean` (**sorry-free**,
+axioms `[propext, Classical.choice, Quot.sound]` only). This settles the
+question Addendum 22 deliberately left open.
+
+**The closed form.** σ = φ₅² acts on μ₂₄ₘ by ζ ↦ ζ²⁵, so an m-th root
+written ζ^e is moved by (ζ²⁴)^e — i.e. **r(w) = e(w) mod m**, the
+Teichmüller discrete logarithm. Lean: `frobenius_shift` (generic
+`CommGroup`) with `orderOf_shift_factor` proving the shift factor has
+order exactly m. **Validated, not assumed**: every measured shift pair in
+the merged p-adic sweep (all seven m | 24, fields to degree 96) is
+reproduced from two residue-field logarithms.
+
+**The obstruction form.** The canonical cocycle is integral at level m iff
+
+$$m \mid Q\Big(\textstyle\sum_j n_j[w_j]\Big) := \sum_j n_j\,e(w_j)\,e(1-w_j) \bmod 24 .$$
+
+Q is computable entirely in **𝔽₂₅** — the whole degree-96 lattice
+recomputed by hand-sized arithmetic — and is independent of the
+logarithm generator, because every unit of Z/24 squares to 1 (Lean:
+`unit_sq_eq_one`, `qSymbol_rescale`). **Q(ξ) = 10, gcd(10,24) = 2**:
+only m = 2 divides it, reproducing the merged lattice verdicts row by
+row.
+
+**The decisive sweep.** Over all 506 admissible five-term instances in
+𝔽₂₅, Q takes **every even residue mod 24 and never an odd one**. So
+**Q mod 24 is not a class invariant** — a representative change shifts it
+by an arbitrary even amount.
+
+> **⚠ CORRECTED by Addendum 24 (same day).** The consequence below
+> infers a *canonical* cocycle from Q(ξ′) = 0. It does not follow:
+> m | Q only makes U an m-th power, leaving m roots whose choice moves
+> the class. **The conclusion survives, for a stronger reason** — a
+> representative meeting the genuine (per-factor) criterion exists at
+> every m | 24, with an explicit m = 24 witness. See Addendum 24.
+
+**Consequence — the α-block is clearable.** Q(ξ) = 10 is even, so a
+representative ξ′ of the *same* Bloch class has Q(ξ′) ≡ 0, giving an
+integral canonical cocycle **simultaneously at every m | 24**. Explicit
+witness: a five-term instance with Q = 14 seeded at x = y = 1 + 2α
+(K-rational; α's residue generates 𝔽₂₅ over 𝔽₅, so every target residue
+lifts), giving a 7-symbol representative with Q = 0. Lean:
+`clearable_of_even`.
+
+**This confirms Addendum 22 was correctly scoped.** The α-order exclusion
+was deliberately called scope-(b) *for the root choice* and scope-(a)
+*for ε_m*; the α-block is now shown to be genuinely representative-
+specific and **not** a barrier to ε_m.
+
+**A parity claim of mine, refuted by its own check.** An earlier draft
+here asserted that Q mod 2 is a Bloch-class invariant. The probe's
+inversion check **failed**, and the closed form (Lean:
+`inversion_closed_form`, `inversion_even_iff`) says why:
+
+$$Q([x]+[1/x]) = e(x)^2 - 12\,e(x), \quad\text{odd exactly when } e(x)
+\text{ is odd (12 of 23 cases).}$$
+
+Inversion holds in the Bloch group only **modulo torsion**, and Z/24 sees
+exactly that torsion. The honest statement is therefore: Q mod 2 is
+invariant under the *defining* five-term relation (exhaustively swept)
+and under reflection — **not** claimed for B(K) modulo torsion. The
+clearing argument above uses only five-term shifts and does not depend on
+parity.
+
+**Next.** Extracting the ε_m **values** at m ≥ 3 needs the p-adic descent
+re-run on the 7-symbol representative — the route is now open, the values
+are not yet computed.
+
+## Addendum 24 (2026-08-11) — CORRECTION: m | Q is existence, not canonicity; and a genuinely canonical representative exists at every m | 24
+
+`gswz_epsm_canonicity_criterion_correction_probe.py`, **14/14**.
+Corrects two statements of my own in already-merged work (Addendum 22 /
+PR #4983, Addendum 23 / PR #4999), both amended in place above.
+
+**What was wrong.** Running the Lean-proved shift law through
+P(ξ) = ∏_j D(x_j)^{n_j}/D(1)^{Σn_j} gives
+
+$$\frac{\sigma P}{P} \;=\; \frac{\big[\prod_j \prod_{k<r_j}(1-\zeta^k x_j)^{n_j}\big]^m}{U},
+\qquad U := \prod_j (1-w_j)^{n_j r_j},$$
+
+so a cocycle needs an **m-th root of U**. The two conditions do
+different jobs:
+
+| condition | what it gives |
+|---|---|
+| **per-factor** m \| n_j·r_j (each j) | U is an m-th power with *explicit integer exponents* — the root is **written down**, so the cocycle is **canonical** |
+| **combined** m \| Q | only that U's Teichmüller dlog is divisible by m — U is *some* m-th power, with **m roots** whose choice **moves the class** |
+
+Per-factor ⟹ combined, never conversely. The choice-moves-the-class
+failure is not hypothetical: it is exactly the flip already measured at
+m = 2 (abstract Tonelli layer, PR #4968) and the μ₃ sweep at m = 3. So
+Addendum 22's "sharp criterion" label was wrong, and Addendum 23's
+inference of a *canonical* cocycle from Q(ξ′) = 0 does not follow.
+
+**What survives, checked rather than asserted.** On ξ the two criteria
+**agree at every m | 24** (both give m = 2 only), so every merged
+lattice verdict stands; the Lean file `EpsMObstruction.lean` is
+unaffected (it proves the shift law and the algebra of Q, all true and
+used here); the α-order result is unaffected.
+
+> **⚠ THE EXISTENCE ANSWER BELOW IS RETRACTED by Addendum 25 (same
+> day).** The lattice computation merges symbols by **residue**, but the
+> product U is indexed by distinct **field elements** — and 58 % of
+> built symbols are distinct elements sharing a residue, so the model is
+> not a harmless approximation. The **criterion correction above stands**
+> (it is a derivation); what falls is "a canonical representative exists
+> at every m | 24", which that computation does not establish.
+
+**The corrected question, and its answer.** Per-factor demands
+μ_w | n_w with μ_w := m/gcd(m, e(w)) — a **lattice membership**
+question: is ξ ∈ L_m + R, with R the five-term relation subgroup of
+ℤ^{23}?
+
+- **Non-vacuity first**, since the result would be empty if the
+  relations generated everything: R has full rank but index
+  **[ℤ²³ : R] = 3120** — the pre-Bloch group of 𝔽₂₅ is ℤ/2 × ℤ/1560 —
+  and ξ ∉ R, nor is any single symbol. The membership tester is
+  controlled in both directions.
+- **Answer: yes at every m | 24.** A per-factor — hence genuinely
+  canonical — representative exists at every level.
+- **Explicit witness at the hardest level m = 24**, found by BFS over
+  the 3120-element quotient (464 cosets explored): symbols with
+  Teichmüller dlogs 18, 16, 4 at coefficients 4, 3, 6. Verified
+  directly: 4·18 = 72, 3·16 = 48, 6·4 = 24 are all divisible by 24, and
+  the witness differs from ξ by an element of R.
+
+**Net effect.** Addendum 23's headline — the α-block is clearable —
+**stands**, but on the correct criterion and with a stronger witness.
+The value-extraction increment is now *well-posed*: the cocycle it will
+build is canonical, which the Addendum-23 criterion did not guarantee.
+Still open, unchanged: the ε_m **values** at m ≥ 3.
+
+## Addendum 25 (2026-08-11) — RETRACTION: the residue-level model does not establish a canonical representative; the per-element question is open
+
+`gswz_epsm_residue_model_insufficient_probe.py`, **6/6**. A negative
+about my own claim of one turn earlier, found while starting the
+value-extraction increment. Addendum 24 amended in place.
+
+**What does not follow.** Addendum 24 answered "does a per-factor
+representative exist?" with a lattice-membership computation in ℤ^{S},
+S = the 23 admissible symbols of the **residue field** 𝔽₂₅. That model
+merges every symbol sharing a residue into one coordinate. The product
+
+$$U = \prod_j (1-w_j)^{n_j r_j}$$
+
+does not merge them: its factors are indexed by the distinct **field
+elements** w_j, and two Bloch symbols can be congruent mod 5 while being
+different elements of the base — then (1−w_j) and (1−w_k) are separate
+factors, each needing its own exponent divisible by m for the root to be
+explicit. So the residue-level condition is **necessary but not
+sufficient** (the implication direction is checked), and the existence
+claim is not established by that computation.
+
+**The measurement.** Building five-term relations in the p-adic base
+from α-basis lifts — so the relations hold *exactly* — over a sample of
+seeds:
+
+| symbols built | distinct residues | distinct elements sharing a residue |
+|---|---|---|
+| 310 | 23 | **180 (58 %)** |
+
+With only 23 residues and arbitrarily many admissible field elements,
+collisions are the generic case.
+
+**A bug this probe's own control caught.** The first run reported
+150/300 collisions but **failed** its exactness control. The cause: the
+residue field was modelled in a t² = 2 basis while lifts were built as
+a + bα, whose residue is (a+2b, b) — so symbols were paired with the
+wrong residues, and some 1−XY became non-units, making `R.inv` return
+garbage. Rebuilt in the α-basis (ᾱ² = 4ᾱ + 3, from the quadratic factor
+of x³−x²+1 over 𝔽₅) the control passes and the count is 180/310. The
+control exists precisely so that a broken lift cannot produce a
+publishable number, and it did its job.
+
+**What survives, checked rather than asserted.** The **criterion
+correction** of Addendum 24 — per-factor is canonicity, m | Q is only
+existence of a root — is a derivation from the shift law and is
+unaffected. Every merged per-m verdict on ξ is unaffected: those were
+computed on ξ's own two symbols, whose residues are distinct
+((3,1) and (1,4), checked). `EpsMObstruction.lean` and the α-order
+result are unaffected.
+
+**Open, restated honestly (bean `qou-y3xv`).** Whether a representative
+of ξ exists whose **per-element** multiplicities satisfy m | n_j r_j at
+any m ≥ 3. The residue-level answer was yes; the per-element question is
+strictly harder, and a per-element solution would imply the
+residue-level one — so the residue "yes" is *consistent with*, but no
+evidence for, a per-element solution. The ε_m values at m ≥ 3 remain
+uncomputed.

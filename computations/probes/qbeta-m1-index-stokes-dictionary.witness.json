@@ -1,0 +1,69 @@
+{
+  "name": "qbeta-m1-index-stokes-dictionary",
+  "description": "Route C M1: coefficient-by-coefficient check of the GGM eq-(21) dictionary S+_11 = sum_e I_{4_1}(0,e) against the printed eq-(61) tower, using the corpus's certified tetrahedron-index gluing.",
+  "computation": "qbeta-m1-index-stokes-dictionary",
+  "engine": "python",
+  "scriptFile": "computations/probes/qbeta_m1_index_stokes_dictionary.py",
+  "scriptCommitSha": "a603dbe5f3b18cbb6c65cf8b30368b3338af44a2",
+  "computedAt": "2026-08-11T10:15:06Z",
+  "durationMs": 137,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
+  "parameters": {
+    "ggm_tower_eq61": [
+      1,
+      -8,
+      -9,
+      18,
+      46,
+      90,
+      62
+    ],
+    "n_terms": 7,
+    "producer": "computations/probes/figure_eight_3d_index.py (GHHR Ex 4.1 certified)",
+    "dictionary": "GGM 2012.00062 Conjecture 4 / eq (21), proven for 4_1"
+  },
+  "data": {
+    "I_T0_coeffs": [
+      1,
+      -2,
+      -3,
+      2,
+      8,
+      18,
+      18,
+      14,
+      -12,
+      -52,
+      -106
+    ],
+    "verdict": "M1 dictionary NOT reproduced: neither the longitude sum sum_e I(0,e) nor any naive rotated-index pairing reproduces the printed GGM eq-(61) tower [1,-8,-9,18,46,90,62]. The producer is sound (it reproduces the GHHR Ex 4.1 anchor exactly), and GGM eq (21) is a THEOREM for 4_1 \u2014 so the gap is the Neumann-Zagier weight / charge-basis convention (the q^{nu.k/2} prefactor and which (mu,lam) charges are summed), which must be pinned FROM THE SOURCE. Deliberately NOT tuned to fit. Route C M2 is blocked on this convention-pinning step, which is now the concrete next action."
+  },
+  "assertions": [
+    {
+      "name": "M1-0-ghhr-anchor-reproduced",
+      "passed": true,
+      "computed": "[1, -2, -3, 2, 8, 18, 18, 14, -12, -52, -106]",
+      "expected": "[1, -2, -3, 2, 8, 18, 18, 14, -12, -52, -106]",
+      "source": "figure_eight_3d_index.py certified gluing (GHHR arXiv:1604.02688 Ex 4.1)"
+    },
+    {
+      "name": "M1-1-dictionary-matches-eq61",
+      "passed": false,
+      "computed": "[1, -2, -3, 4, 12, 28, 22]",
+      "expected": "[1, -8, -9, 18, 46, 90, 62]",
+      "note": "No symmetric e-truncation reproduced eq (61). The dictionary eq (21) is a theorem for 4_1, so a mismatch here indicates a CONVENTION difference (which charge is summed / the (mu,lam) basis / a normalization prefactor), NOT a failure of GGM. Recorded as an open convention-pinning item \u2014 not tuned away."
+    },
+    {
+      "name": "M1-2-no-naive-pairing-reproduces-eq61",
+      "passed": true,
+      "candidates": {
+        "sum_k I_D(k,k)^2": "[9613941, 9864226, 9116381, -435413, -8260424, -11761674, -13977915]",
+        "sum_k I_D(k,-k)I_D(-k,k)": "[1, -4, -5, 4, 14, 32, 30]",
+        "sum_k I_D(k,0)I_D(0,k)": "[-1748, 1400, 2149, 2966, -39, -4792, -5321]"
+      },
+      "expected": "[1, -8, -9, 18, 46, 90, 62]",
+      "note": "Recorded as an honest negative: none of the naive rotated-index pairings reproduces the printed tower. Since GGM eq (21) is a THEOREM for 4_1, the missing piece is the Neumann-Zagier weight / charge-basis convention (the q^{nu.k/2} prefactor and which (mu,lam) charges are summed), which must be pinned FROM THE SOURCE, not guessed. Deliberately not tuned to fit."
+    }
+  ]
+}

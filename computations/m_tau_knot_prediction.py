@@ -66,6 +66,12 @@ except ImportError:
 
 # ── targets ────────────────────────────────────────────────────────────────
 TARGET_MU_OVER_E = mp.mpf(MASS_RATIO_MU_E_STR)  # CODATA: 206.7682830  # noqa: P31 — trailing comment; value from MASS_RATIO_MU_E_STR
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TARGET_TAU_OVER_E = mp.mpf("3477.23")  # PDG 2024: m_tau / m_e
 
 # ── canonical substrate constants ──────────────────────────────────────────
@@ -329,7 +335,7 @@ def main() -> None:
                 "https://github.com/litlfred/qou/pull/1249 (substrate-q_0 workplan)",
             ],
         },
-        "duration_sec": round(time.time() - started_at, 3),
+        "duration_sec": f"{time.time() - started_at:.3f}",
     }
 
     witness_path = Path(__file__).resolve().parent / "m-tau-knot-prediction.witness.json"

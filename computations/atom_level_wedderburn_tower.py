@@ -78,11 +78,14 @@ def chi_lambda_atom(shape, crossings):
     I = sp_sparse.eye(dim, format='csr') if is_sp else np.eye(dim)
     prod = sp_sparse.eye(dim, format='csr') if is_sp else np.eye(dim)
     h_val = float(Q0_FLOAT) - 1.0 / float(Q0_FLOAT)
-    d_for = {"sigma": 0.0, "sigma_inv": -h_val, "averaged": -h_val / 2}
+    # `d` from the canonical vocabulary, not a private dict. The dict this
+    # replaces had no `averaged_weighted` entry, so this trace raised
+    # KeyError on every word carrying a p-n interface (qou-8zjd).
+    from canonical_braid_crossings import d_for_ctype
     for gen_idx, ct in crossings:
         if gen_idx >= len(sigmas):
             raise IndexError
-        M = sigmas[gen_idx] + d_for[ct] * I
+        M = sigmas[gen_idx] + float(d_for_ctype(ct, h_val)) * I
         prod = prod @ M
     return (float(prod.diagonal().sum()) if is_sp
             else float(np.trace(prod))), dim

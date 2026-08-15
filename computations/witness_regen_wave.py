@@ -424,7 +424,7 @@ def failed_record(rel: str, code, stderr, before: set, seconds: float) -> dict:
     touched = sorted(set(dirty_witnesses()) - before)
     revert(touched)
     return {"producer": rel, "verdict": "FAILED", "exit_code": code,
-            "stderr_tail": tail(stderr), "duration_sec": round(seconds, 2),
+            "stderr_tail": tail(stderr), "duration_sec": f"{seconds:.2f}",
             "touched": touched, "kept": [], "reverted": touched,
             "witnesses": []}
 
@@ -451,7 +451,7 @@ def run_one(prod: Path, timeout: int, env: dict) -> dict:
     revert(drop)
     return {"producer": rel, "verdict": verdict, "exit_code": 0,
             "stderr_tail": tail(r.stderr),
-            "duration_sec": round(time.monotonic() - t0, 2),
+            "duration_sec": f"{time.monotonic() - t0:.2f}",
             "touched": touched, "kept": keep, "reverted": drop,
             "witnesses": witnesses}
 

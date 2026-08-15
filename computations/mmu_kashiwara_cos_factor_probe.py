@@ -53,7 +53,7 @@ def hoefsmit_b(q: mpf) -> mpf:
 
 def alpha_kashiwara(q: mpf) -> mpf:
     """α = (z - 1) * h / 2 per QBetaCategoricalPrecisionLadder."""
-    z = 1 / (sqrt(q) + 1 / sqrt(q))
+    z = q**3 / (q**2 + 1)
     h = q - 1 / q
     return (z - 1) * h / 2
 

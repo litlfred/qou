@@ -117,7 +117,13 @@ def run_lr_compute(
     return json.loads(result.stdout)
 
 
-CTYPE_TO_SIGN = {"sigma": 1, "sigma_inv": -1, "averaged": 0}
+from canonical_braid_crossings import CTYPES, sign_for_ctype  # noqa: E402
+
+# Derived from the canonical vocabulary, not hand-listed -- see qou-8zjd.
+# Note `sign_for_ctype` maps BOTH averaged interfaces to 0: the wire format
+# carries a sign, and a sign cannot carry the p-n colour weighting. That
+# projection is the pre-existing behaviour of this file, now explicit.
+CTYPE_TO_SIGN = {ct: sign_for_ctype(ct) for ct in CTYPES}
 
 
 def canonical_factor_spec(Z: int, N: int, label: str) -> dict:

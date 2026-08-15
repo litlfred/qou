@@ -143,6 +143,22 @@ user's last message, not the most recently mentioned file.
    is one trivial task, you may skip — but any time there are ≥ 2
    distinct steps, create the beans.
 
+   **Check before you create (STRICT).** `beans create` is **not**
+   idempotent — it mints a fresh ID on every call and dedupes on
+   nothing, so re-entering this step duplicates the entire plan
+   instead of no-op'ing. Before **every** `beans create`, including
+   the session milestone, run the exact-title existence check in
+   [`local/todo-manager` §Check before you
+   create](.claude/skills/local/todo-manager.md); on a match, claim
+   the existing bean with `beans update <id> --status in-progress`
+   rather than creating a second one. History: an unguarded re-run of
+   this very step ~980 times on 2026-08-04 produced **14,688**
+   duplicate beans — 92 % of every open bean — which starved the
+   §4 idle-backlog policy of signal, left an already-proved core at
+   `todo`, collided with the IDs of 15 real beans, and corrupted a
+   later agent's corpus-grep badly enough to nearly land a false
+   correction in a PR body (bean `qou-2ryn`).
+
 2. **Queue, do not pivot.** When a new request, review comment, or
    sibling-PR ask arrives mid-session, **append** it to the plan in
    priority order — do not abandon the in-progress task. Pivot only
@@ -257,12 +273,37 @@ user's last message, not the most recently mentioned file.
       `bun run content/pipeline/qa-sweep.ts <path> --only <crit>`
       (single canonical invocation; use `/integration-audit
       <axis>` to batch a whole axis). Witnesses are stale when
-      `witness.scriptCommitSha` (producer file's `git log -1
-      --format=%H -- <path>`) or `witness.scriptHash` (SHA-256
-      prefix of producer file content) drift; refresh by
-      re-running the producer with
+      `witness.scriptHash` (SHA-256 prefix of producer file
+      content) drifts from a freshly-computed hash of the current
+      producer. **Do NOT treat `witness.scriptCommitSha` drift as
+      staleness** — rebase-merge (rule 8) rewrites every branch
+      commit sha, so that field is stale-on-arrival for any
+      producer committed on a branch and no branch-side refresh
+      can fix it (the merge *is* the rewrite). It is informational
+      provenance only; the enforcement paths already ignore it
+      (`witness_dependency_drift.py` keys self-staleness on
+      `scriptHash` alone; `witness.py` masks `scriptCommitSha` in
+      `_EPHEMERAL_META_FIELDS`). Measured cost of the old wording:
+      two false positives and zero true positives on the
+      reliably-measurable sample — i.e. it spent the idle-pass
+      witness budget on producer re-runs that fix nothing. Never
+      mass-refresh the field; it would be correct only until the
+      next merge (bean `qou-wsha`). Refresh genuine `scriptHash`
+      staleness by re-running the producer with
       `2>&1 | tee /tmp/<script>.log` per the compute-audit
-      long-compute logging discipline. Cap at ≤ 10 sidecars /
+      long-compute logging discipline. **Diff the producer first**
+      (`git diff <witness.commitSha> -- <producer>`): `scriptHash`
+      is a whole-file hash, so a comment- or docstring-only edit
+      drifts it while the recomputed payload is byte-identical.
+      This is a far weaker false-positive class than
+      `scriptCommitSha` — it needs a real edit, not merely a merge —
+      but it is the same waste when the producer is expensive. Cheap
+      probes: just re-run. Long-compute producer with a comment-only
+      diff: claim it as a bean rather than spend the idle pass
+      recomputing numbers that cannot change. Worked case:
+      `canonical-ordering-dof` drifted `87418d646ff1` →
+      `894cafe018ee` on +21 lines that are **all comment**
+      (bean `qou-zv2l`). Cap at ≤ 10 sidecars /
       ≤ 3 witnesses per idle pass. Every refresh that changes a
       sidecar or witness gets a `chore(qa-sweep|witness)` commit
       naming the producer + criterion + count. Full discipline:
@@ -929,7 +970,8 @@ The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetim
 
 All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-plane scale + modulus + one orthogonal class; 2+1=3) — **not** three distinct degrees H⁰/H¹/H² (per `calibration-cohomology-alignment`, Lean `QOU.Mass.calibrations_eq_cohomology` — a count/alignment claim, unchanged). The canonical inputs are **weak-sector observables** (m_e, 𝔇_β, 𝔇_π); their proxies are the masses (m_e, m_π) plus the Q-value Q_β. m_e sets the unit; since q₀ is dimensionless it is pinned by m_μ *in that unit* — the ratio m_μ/m_e, the most precise CAL-2 anchor. The exact maps:
 
-- **q₀** ← CAL-2 (𝔇_β), pinned numerically via CAL-1 + the lepton ratio:  `m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2Λ(π/3) ≈ 2.0299`  ⇒ invert for `q₀ ≈ 1.10998`.
+- **q₀** ← CAL-2 (𝔇_β), pinned numerically via CAL-1 + the lepton ratio:  `m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2·Cl₂(π/3) = 6Λ(π/3) ≈ 2.0299`  ⇒ invert for `q₀ ≈ 1.10998`.
+  (**Λ vs Cl₂ — do not swap the coefficient.** `Λ(θ) = Cl₂(2θ)/2`, so one regular ideal tetrahedron is `Cl₂(π/3) = 3Λ(π/3) ≈ 1.01494` and the two-tetrahedron figure-eight complement is `2·Cl₂(π/3) = 6Λ(π/3)`. The forms `2Λ(π/3) ≈ 0.6766` and `3·Cl₂(π/3) ≈ 3.0448` are **both wrong** and both were live in the corpus until 2026-08-10 — they arise from keeping one function's coefficient while writing the other function's name.)
 - **Q_β** (the CAL-2 proxy):  `Q_β = ℏ/𝔇_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π. 𝔇_β **is** CAL-2; because the modulus is overdetermined and pinned most precisely by m_μ/m_e, Q_β reproduced from q₀ is a 0.17% **cross-check**, not a fourth input.
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
@@ -951,6 +993,8 @@ Read the cheat sheet for: per-step math + paper references + canonical compute s
 When working on math-affecting code or content, **trace the change to a step in the chain** and verify the canonical compute script is in the consumer set.
 
 > **🟧 Mass-and-Binding-Algorithms appendix sync (STRICT).** Any PR that touches mass / binding derivations or compute infra (Steps 9a, 9b, 10, 11 of the canonical chain, or any sidecar algorithm — Δ_λ closure, c_k truncation ladder, LP/SDP dual emission, witness-JSON pipeline) **must** update the matching `alg:`-block under [`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](content/quantum-observable-universe/appendix-mass-binding-algorithms/) in the same PR. The appendix is a maintenance contract bridging propositions ↔ Python API; its `uses[]`, `computation.script`, `computation.witness`, and `.md` *Algorithm / Correctness / Python API* sections must stay in sync with the actual compute. Enforced by `local/coordinate.md §2-bis`, `local/compute-author.md §8 pre-work checklist`, `local/compute-audit.md §verification checklist`, and `local/proof-editor.md §coordination rules`. Reviewers diff the appendix against the compute / proof change.
+
+> **🛑 ABSOLUTE MASS EXCISED (owner ruling 2026-08-11, bean `qou-exam`).** The framework no longer claims, targets, or scores an **absolute** nucleon or atomic mass in MeV (m_p, m_n, m_⁴He) as a prediction. Absolute mass is `m_e · (dimensionless ratio)`, and m_e (CAL-1) sets the MeV scale *by fiat* — so the MeV number double-counts the calibration and carries no content beyond the ratio. **The mass-formula shape and the `canonical_mass` facade in the two banners below remain valid — but as `m_e`-scaled *realizations* of the dimensionless ratio / binding, NOT as absolute-mass predictions.** Report ratios (`m_p/m_e`, `m_μ/m_e`, `m_K/m_π`), binding `B(K)`, decay Q-values (`Q_β`), and splittings (`Δ_pn`); do **not** present `m_p ≈ 938.27 MeV` as a framework *prediction* (it remains derivable as `m_e × ratio`, but that is a rendering, not a claim). Broader than the 2026-08-02 q₀-derivation forever-gate — that closed one route; this closes the absolute-mass *target*. Full ruling: [`docs/audits/2026-08-11-excise-absolute-mass-notion.md`](docs/audits/2026-08-11-excise-absolute-mass-notion.md).
 
 > **⚠ Critical framing — the mass formula is `m(K) = m_e · Vol(K) · ρ(K) / ℏ_q²`; do NOT reintroduce `λ_scale` OR the `Geom_full` wrapper.** Two standing purges: (1) the factor once called `λ_scale` was **absorbed** 2026-05-23 (commit `ffdd84409`) — not a separate constant to derive; (2) the opaque `Geom_full(K)` wrapper was **PURGED 2026-06-06** (owner directive, repeated — it obscured) in favour of its explicit meaning, the **volume–density product** `Vol(K)·ρ(K)/ℏ_q²`. So the per-knot mass is `m(K) = m_e · Vol(K) · ρ(K) / ℏ_q²` (electron scale × hyperbolic volume × per-block density). Compute uses `vol_density_borromean` / `vol_density_per_block` / `vol_density` (`_li_2_q_util.py`, `mass_vol_density.py`). The Yekutieli per-cell variant was tried then PURGED 2026-05-24 (`71d674da1`). The "2.89% m_p gap" is between the current categorical `Vol(𝓑₃)·ρ` value and its exact value — **not** a "λ_scale closure" problem. **Do not write `Geom_full` in paper, audit doc, or compute — write the explicit `Vol(K)·ρ(K)/ℏ_q²`.**
 
@@ -1174,7 +1218,24 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:
 [`observations/three-calibration-discipline.md` §3](content/quantum-observable-universe/observations/three-calibration-discipline.md),
 [`observations/epistemic-status-of-calibrations.md`](content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md),
-[`observations/substrate-anchor-alternatives.md`](content/quantum-observable-universe/observations/substrate-anchor-alternatives.md)):
+[`mass-theory/rem-qstar-decay-sector-q0.md`](content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md) — the decay-sector point `q*`, which is **conditional on (H1)** and is **NOT** an independent third determination; see registry §9f):
+
+> **Dead citation corrected 2026-08-11.** This list previously named
+> `observations/substrate-anchor-alternatives.md`, which **does not exist**
+> anywhere in `content/` or `docs/` — an authoritative pointer in this document
+> resolving to nothing. Replaced with the live block covering the alternative
+> (decay-sector) anchor. Found while adding the §"Which pin the numbers
+> actually use" subsection to `epistemic-status-of-calibrations`.
+>
+> **Descriptive clause corrected 2026-08-15** (PR #5074, bean `qou-kh7e`). The
+> replacement first read *"— the third, decay-sector determination of the same
+> modulus"*. There is no such determination: `q*` is root-found on
+> `S(q) = c₃(q) + Vol(4₁)` where `c₃ = (Q_β^exp/Q_N2 − 1)/u³` is **extracted
+> from experimental Q_β**, so locating it **presupposes (H1)**
+> `c₃^even = −Vol(4₁)`. It is independent of the two **mass** pins only, which
+> is weaker and different. **Two** pins; μ–p is a **two-way** tension. The
+> dead-citation fix above stands — only the clause describing the block was
+> wrong.
 
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
@@ -1517,6 +1578,16 @@ root-workspace commands are the standardized entry point used by CI
 > `lake-cache/<pkg>-<toolchain-slug>` (e.g. `lake-cache/qou-v4-24-0`):
 > **fetch-and-extract to restore (~2 min) instead of recompiling (~30 min+),
 > and SEED the branch after a successful build** so the next agent restores.
+> **Caveat — the seed ROUTE depends on how you built.** `lake build` output
+> seeds the monolithic branch via `lean-olean-cache-seed.sh`. A `lean`-direct
+> build (`lean f.lean -o …`, which the verification guidance below tells you to
+> prefer) writes no `.trace`, so that script's guard correctly **refuses** it —
+> never force it past, since Lake treats untraced oleans as stale, rebuilds and
+> evicts them (bean `02kc`). Preserve lean-direct output as an **addon** orphan
+> branch via plain `tar` instead (e.g.
+> `lake-cache/qou-v4-24-0-h4-wedderburn-cone`); restored with `tar xzf`, not by
+> Lake, it is exactly what a `lean`-direct + `LEAN_PATH` consumer needs. See the
+> skill's §"Rule for agents going forward" for the route table.
 > Full proven recipe + restore/seed commands:
 > [`.claude/skills/local/lean-environment-setup.md` §"PROVEN sandbox build
 > recipe" + §"PRESERVE THE BUILD"](.claude/skills/local/lean-environment-setup.md).
@@ -2823,11 +2894,36 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `folio-assistant/simulators/` | Interactive HTML simulators |
 | `folio-assistant/feedback/` | User feedback (TypeScript files, committed to main) |
 | `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
-| `qou-mass/` | `qou-mass` PyPI package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). Alpha (`v0.1.0a1`); 1 in-repo importer (the canonical wiring example `computations/qou_mass_canonical_wiring_example.py`). |
-| `tools/qou-substrate/` | `qou-substrate` PyPI package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). 7 in-repo direct importers (≈67 % transitive via `pyhecke`). |
-| `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 19 in-repo direct importers. |
-| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 15 in-repo direct importers. |
-| `tools/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. 1 in-repo importer (same canonical wiring example). |
+| `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). 5 in-repo importers. Its `_internal/` is **generated** — see the note below. |
+| `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
+| `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 70 in-repo importers. |
+| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 89 in-repo importers. |
+| `tools/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. 3 in-repo importers. |
+
+> **Importer counts are measured, not maintained.** The five above were
+> `1 / 7 / 19 / 15 / 1` and were wrong by up to two orders of magnitude
+> (`qou-substrate` was 7, is 309) — a hand-kept number decays exactly like a
+> hand-kept copy. Re-measure rather than trust the table:
+>
+> ```bash
+> grep -rlnE "^\s*(from|import)\s+<pkg>(\.|\s|$)" --include=*.py . \
+>   | grep -v "^./tools/<pkg-dir>/" | grep -v _deprecated | wc -l
+> ```
+>
+> **`qou-mass` and `qou-substrate` are not published.** Both 404 on PyPI, with
+> no `dist/`, no tags and no publish workflow. Do not describe either as
+> shipped, and do not reason about external consumers of their data — there
+> are none. (Checked 2026-08-15; the `qou-mass` entry said "PyPI package"
+> while nothing had ever been uploaded.)
+>
+> **Never hand-edit `qou-mass/src/qou_mass/_internal/`.** It is generated from
+> `computations/` by [`scripts/sync-qou-mass-vendor.py`](scripts/sync-qou-mass-vendor.py)
+> (`--check` / `--apply` / `--list`). It was hand-copied until 2026-08-15, and
+> all 14 copies had drifted — `witness_base` by 815 lines,
+> `canonical_braid_crossings` by a whole generation. Worse, the drift *masked*
+> a live defect: `test_ephemeral_mask_sync` exists to detect mirror divergence
+> and was green only because the mirror was stale. Run `--check` after any
+> change to a module in the cone; it is the gate.
 | `tools/block-qa-schema/` | Cross-language QA-sidecar interchange schemas (`<block>.qa.json` block-qa/v1 + `<criterion-id>.script.json` qa-script/v1): canonical JSON Schema + Zod + Pydantic mirrors, corpus-validated. Packaged for npm (`@litlfred/block-qa-schema`) + PyPI (`block-qa-schema`); not yet published to registries. Producing types: `folio-assistant/schemas/block-qa.ts`. |
 | `tools/hecke-engine/` | `hecke-engine` Rust crate — Layer 1 canonical compute core (Gröbner-Shirshov reducer, Hoefsmit, Markov trace, Clarabel SDP backend). |
 | `tools/hecke-engine-{wasm,node,r,jvm,c}/` | Multi-language bindings of `hecke-engine` (WASM, Node napi-rs, R/JVM/C — last three Tier-3). |

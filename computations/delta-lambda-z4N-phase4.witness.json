@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T21:32:02.335562+00:00",
-  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
+  "computedAt": "2026-08-10T01:56:03.735441+00:00",
+  "commitSha": "4f351a4e1c8775ee1e173889583ba0ec877aad78",
   "assertions": [
     {
       "name": "alpha_cosh_h_z_step_correction_rel_err",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "delta-lambda-z4N-phase4",
   "scriptFile": "delta_lambda_z4N_phase4.py",
-  "scriptHash": "257623fcf46b",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "d99f71d48c57",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,7 @@
   "description": "Phase 4 of the closed-forms-first-principles workplan: tests V(K) = Vol_hyp(K) · α^(Z-1) · (q^{1/2}+q^{-1/2})^(4N) as the Δ_λ closure factor. Identifies the per-N step factor as (q^{1/2}+q^{-1/2})^4 = z^(-4) — the 4th power of the quantum dim of spin-½. Empirical T/D = 15.955, ⁴He/³He = 16.358 vs predicted 16.087 (≤ 2% rel. err.). The per-Z step factor α remains empirical-fit at this phase.",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
-    "z": "0.49932033418369445241344268025766630375194816404153",
+    "z": "0.61268803714646525159582986394589924802630839154509",
     "1_over_z": "2.0027223638605332905078202379916317625341050850907",
     "inv_z_to_4": "16.08729367536101118841198724804483957332517695465"
   },

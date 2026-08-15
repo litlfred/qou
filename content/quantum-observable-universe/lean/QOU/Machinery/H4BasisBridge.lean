@@ -1,4 +1,5 @@
-import QOU.Machinery.MarkovTraceH4Gram
+import QOU.Machinery.MarkovTraceH4
+import QOU.Machinery.H4Cyclicity
 import QOU.Machinery.HeckeH4AlgebraLaws
 import QOU.Machinery.H4AsciiPresentation
 
@@ -300,20 +301,32 @@ theorem phi_mulNF (u v : Fin 24 → R) :
   rw [Finset.sum_congr rfl fun k _ => step k]
   exact Equiv.sum_comp piEquiv (fun j => phi v j • wordAction h j (phi u))
 
-/-! ## Cyclicity transports
+/-! ## Cyclicity transports — now in the other direction
 
-`trM4` had no cyclicity theorem on the subscript basis, which is exactly what
-`H4A` — and hence `QOU.Hecke.InstanceOnH4A.instHeckeAlgebraH4A` — is built on.
-It has one now, and **without a second 576-entry Gram closure**: the ASCII basis
-already carries `QOU.Machinery.H4.trM_cyclic` (sorry-free, via `gram_symm`), the
-products correspond, and the traces correspond. -/
+**This arrow used to run ASCII → subscript**, deriving `trM4_cyclic` from the
+ASCII `trM_cyclic`, which rested on `gram_symm`'s 576 computed entries. That is
+why the Gram chain stayed alive: it was the only proof of cyclicity at `n = 4`.
 
-theorem trM4_cyclic (z : R) (x y : Fin 24 → R) :
-    trM4 z h (mulNF₄ h x y) = trM4 z h (mulNF₄ h y x) := by
-  have hx : x = phi (psi x) := (phi_psi x).symm
-  have hy : y = phi (psi y) := (phi_psi y).symm
-  rw [hx, hy, ← phi_mulNF, ← phi_mulNF, trM4_phi, trM4_phi]
-  exact trM_cyclic z h (psi x) (psi y)
+`QOU.Machinery.H4.trM4_cyclic` (`H4Cyclicity`) now proves cyclicity directly on
+the subscript basis, from the three generators and the subalgebra argument, with
+no Gram closure anywhere. So the transport runs **subscript → ASCII**, and the
+576 entries are dead weight — `MarkovTraceH4Gram0..7` and `MarkovTraceH4Gram`
+(6604 generated lines, the tree's build pole) are deleted in the same commit.
+
+Nothing downstream loses a theorem: `H4.trM4_cyclic` replaces this file's own
+former `trM4_cyclic` (one canonical statement rather than two proofs of it), and
+`H4.trM_cyclic` below is the ASCII statement, re-proved as a corollary. -/
+
+/-- **ASCII-basis cyclicity, as a corollary of the subscript proof.**
+
+Formerly `MarkovTraceH4Gram.trM_cyclic`, proved from `gram_symm`'s 576 entries.
+The bridge carries products to products and `trM` to `trM4`, so it now follows
+from `H4.trM4_cyclic` in three rewrites. Kept under its original fully-qualified
+name `QOU.Machinery.H4.trM_cyclic` so nothing has to be renamed to find it. -/
+theorem _root_.QOU.Machinery.H4.trM_cyclic (z : R) (u v : Fin 24 → R) :
+    trM z h (mulNF h u v) = trM z h (mulNF h v u) := by
+  rw [← trM4_phi, ← trM4_phi, phi_mulNF, phi_mulNF]
+  exact QOU.Machinery.H4.trM4_cyclic z h (phi u) (phi v)
 
 /-! ## Postmortem: three `simp` routes that do not work
 

@@ -60,6 +60,12 @@ except ImportError:
 
 HERE = Path(__file__).resolve().parent
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+mp.dps = 50
+
 # CODATA-2022 / PDG constants — centralised in the registry
 # (computations/substrate/codata_constants.py) per the hidden-codata-
 # literals consolidation.  The inline literals are kept only on the

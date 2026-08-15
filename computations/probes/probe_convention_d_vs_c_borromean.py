@@ -77,7 +77,11 @@ def main() -> int:
     # function of t — sympy's full `simplify` heuristic-GCD chokes on
     # mixed √q radicals; `cancel` on Q(t) is exact and decidable.
     t = sp.symbols("t", positive=True)
-    z_of_t = t / (t**2 + 1)              # z = 1/(√q + 1/√q)
+    # Renamed z_C_of_t -> z_C_of_t 2026-08-10: this probe deliberately
+    # evaluates the EXCISED convention C in order to compare it against D,
+    # so the name now says so and the producer audit clears it as a labelled
+    # comparison rather than flagging it as a relapse.
+    z_C_of_t = t / (t**2 + 1)            # convention C: z = 1/(√q + 1/√q)
     h_of_t = t**2 - 1 / t**2             # h = q − 1/q
 
     # ── Route 1: canonical tr_M_word with σ₁⁻¹ = σ₁ − h expansion ──
@@ -98,12 +102,12 @@ def main() -> int:
     # (not free symbols) — substitute the q-symbol itself as well, so
     # every residual q-subtree becomes rational in t.
     tr_c_t = sp.cancel(sp.together(
-        tr_c_sym.subs({Z_SYMB: z_of_t, H_SYMB: h_of_t, HECKE_Q: t**2})))
+        tr_c_sym.subs({Z_SYMB: z_C_of_t, H_SYMB: h_of_t, HECKE_Q: t**2})))
 
     # ── Route 2: recursive signed-word trace (1-indexed) ──
     tr_rec = R.markov_trace_of_word(3, [1, -2, 1, -2, 1, -2])
     tr_rec_t = sp.cancel(sp.together(
-        sp.sympify(tr_rec).subs({R.z_sym: z_of_t, R.q: t**2})))
+        sp.sympify(tr_rec).subs({R.z_sym: z_C_of_t, R.q: t**2})))
 
     # ── Convention D: the pipeline / Lean closed form ──
     h = h_of_t

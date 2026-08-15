@@ -48,7 +48,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 # qou-substrate (Layer 2a): import WitnessBuilder directly from the
 # package rather than via the witness_base back-compat shim (which
 # re-exports the identical class). Mirrors low_isotopes_binding_sweep.py.
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools" / "qou-substrate" / "python"))
 
 from q_parameter import Q as Q0
 from experimental_constants import M_E_MEV

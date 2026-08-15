@@ -88,4 +88,4 @@ Both factors are determined by $q$ and the nuclear braid topology.
 
 The nuclear threading link $L_0$ is the same mathematical object as the molecular threading link $\mathcal{T}_N = T(2, N)$ that binds atoms in a ring ([molecular Hopf ring](#def:molecular-hopf-ring), [threading link](#def:threading-link)). In benzene, the threading $T(2, 6)$ binds 6 carbons with Alexander weight $\Delta_{T(2,6)}(q) = q^2 + 1 + q^{-2}$. In nuclear physics, the same construction binds nucleon clusters. The Alexander weight determines the shell correction.
 
-The shell energy is not a phenomenological parameter. It is the crossing energy of a computable knot invariant.
+Under this conjecture, the shell energy is the crossing energy of a computable knot invariant rather than a free phenomenological parameter.

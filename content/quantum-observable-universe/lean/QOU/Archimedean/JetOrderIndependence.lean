@@ -93,57 +93,101 @@ class JetOrderIndependence where
   /-- Full rank `3` from the base order onward (Reid-1991 anchors `N=3`). -/
   full_rank : ∀ N, 3 ≤ N → jacobianRank N = 3
 
-/-- **Surreal parallel-transport bound (the bridge).**
+/-- **Transport-error data — the shadows as *given* data (2026-08-09).**
 
-    `transportShadow N` is the archimedean (`τ`) realification of the
-    fibre-level surreal parallel-transport error on the projective state
-    fibre `ℂP¹` at jet order `N`, as `q` deforms toward the volume-
-    conjecture limit. `shadow_vanishes` is the conjunction of the three
-    open issues (I1 uniformity, I2 archimedean projection, I3 monodromy
-    separation) — see the module docstring. -/
-class SurrealParallelTransportBound where
+    `shadow N` is the archimedean (`τ`) realification of the fibre-level
+    surreal parallel-transport error on the projective state fibre `ℂP¹` at
+    jet order `N`, as `q` deforms toward the volume-conjecture limit, split
+    into its physical-holonomy (`→ Vol`) and cusp/modular-monodromy parts.
+
+    **Why a structure and not class fields.**  The conjecture is about *one
+    specific* object — the transport error of the categorical connection.
+    When the shadows are *fields of the class*, an instance gets to **choose**
+    the very functions it is supposed to constrain, and the constant-zero
+    choice satisfies everything by `rfl`.  That is precisely how the previous
+    encoding was discharged for free.  Carrying them as data, and taking that
+    data as a **class parameter** below, forces every consumer to name the
+    error it is assuming about. -/
+structure TransportErrorData where
   /-- Archimedean (`τ`) shadow of the surreal transport error at order `N`. -/
-  transportShadow : ℕ → ℝ
+  shadow : ℕ → ℝ
   /-- Physical-holonomy part of the shadow (the `→ Vol` contribution). -/
-  physicalShadow : ℕ → ℝ
+  physical : ℕ → ℝ
   /-- Cusp/modular-monodromy part of the shadow (the limit-only artifact). -/
-  monodromyShadow : ℕ → ℝ
-  /-- **(I3) Monodromy separation.**  The transport shadow splits into its
-      physical-holonomy and monodromy parts (the structural decomposition
-      that isolates the limit artifact from the `Vol` contribution). -/
-  decomposes : ∀ N, transportShadow N = physicalShadow N + monodromyShadow N
+  monodromy : ℕ → ℝ
+  /-- **(I3) Monodromy separation.**  The shadow splits into its physical and
+      monodromy parts.  This is a *structural* property of the supplied data,
+      not a conjectural input. -/
+  decomposes : ∀ N, shadow N = physical N + monodromy N
+
+/-- **Surreal parallel-transport bound (the bridge), as a predicate ON given
+    error data.**
+
+    The two conjectural inputs (I2) and (I3-second) are asserted *about the
+    supplied* `E`; the class can no longer manufacture its own shadow.
+    (I1 uniformity and the composition are derived below.) -/
+class SurrealParallelTransportBound (E : TransportErrorData) : Prop where
   /-- **(I2) Archimedean projection (fibre-vs-observable wall).**  The
       physical part is a fibre-level surreal infinitesimal, so its
       archimedean shadow `τ`-projects to `0`.  *Conjectural input.* -/
-  physical_archimedean_zero : ∀ N, physicalShadow N = 0
+  physical_archimedean_zero : ∀ N, E.physical N = 0
   /-- **(I3, second half) Monodromy is fibre-level.**  The cusp/modular
       monodromy carries `Im(q)` structure but no real shadow.
       *Conjectural input.* -/
-  monodromy_archimedean_zero : ∀ N, monodromyShadow N = 0
+  monodromy_archimedean_zero : ∀ N, E.monodromy N = 0
 
 namespace SurrealParallelTransportBound
 
-/-- **(I3 ∘ I2 composition — PROVED).**  The total transport shadow
-    vanishes at every order, derived from the monodromy decomposition
-    (I3) together with both parts' archimedean shadows vanishing (I2 for
-    the physical part, I3-second for the monodromy part).  This is the
-    `shadow_vanishes` that the gap-closing reduction consumes — no longer
-    a monolithic axiom but a consequence of the two named physical
-    inputs. -/
-theorem transport_shadow_vanishes [PT : SurrealParallelTransportBound]
-    (N : ℕ) : PT.transportShadow N = 0 := by
-  rw [PT.decomposes N, PT.physical_archimedean_zero N,
+variable {E : TransportErrorData}
+
+/-- **(I3 ∘ I2 composition — PROVED).**  The total transport shadow of `E`
+    vanishes at every order, from `E`'s structural decomposition together with
+    both parts' archimedean shadows vanishing. -/
+theorem transport_shadow_vanishes [PT : SurrealParallelTransportBound E]
+    (N : ℕ) : E.shadow N = 0 := by
+  rw [E.decomposes N, PT.physical_archimedean_zero N,
       PT.monodromy_archimedean_zero N]
   norm_num
 
-/-- **(I1) Uniformity in jet order — PROVED (derived).**  With the
-    per-order shadow vanishing, the transport error is uniformly bounded
-    across all jet orders (with constant `0`); no `N`-dependent blow-up
-    can corrupt the limit transfer.  This discharges the uniformity issue
-    once (I2)+(I3) hold. -/
-theorem transport_uniform_bound [SurrealParallelTransportBound] :
-    ∃ C : ℝ, ∀ N, |transportShadow N| ≤ C :=
-  ⟨0, fun N => by simp [transport_shadow_vanishes N]⟩
+/-- **(I1) Uniformity in jet order — PROVED (derived).**  With the per-order
+    shadow vanishing, the transport error is uniformly bounded across all jet
+    orders (with constant `0`); no `N`-dependent blow-up can corrupt the limit
+    transfer. -/
+theorem transport_uniform_bound [SurrealParallelTransportBound E] :
+    ∃ C : ℝ, ∀ N, |E.shadow N| ≤ C :=
+  ⟨0, fun N => by simp [transport_shadow_vanishes (E := E) N]⟩
+
+/-! ### The residual vacuity, stated as a theorem rather than left as a trap
+
+Parameterising stops the class from *choosing* its shadow, but it cannot stop
+a consumer from instantiating at the zero error.  Rather than leave that as a
+latent trap — the shape that let the previous encoding pass every audit — it
+is recorded below as a pair of theorems.  Read together they say exactly what
+an instance is worth: **`[SurrealParallelTransportBound E]` carries no
+information until `E` is pinned down**, and it carries real information as
+soon as it is. -/
+
+/-- The identically-zero transport error. -/
+def trivialError : TransportErrorData where
+  shadow := fun _ => 0
+  physical := fun _ => 0
+  monodromy := fun _ => 0
+  decomposes := fun _ => by norm_num
+
+/-- **The bound is vacuous at the zero error (PROVED).**  So an instance
+    `[SurrealParallelTransportBound E]` for an *unspecified* `E` asserts
+    nothing: it is satisfiable.  Any downstream result must say which `E`. -/
+instance trivialError_bound : SurrealParallelTransportBound trivialError where
+  physical_archimedean_zero := fun _ => rfl
+  monodromy_archimedean_zero := fun _ => rfl
+
+/-- **…and non-vacuous at any error with a non-zero physical shadow
+    (PROVED).**  This is the content the parameterisation buys: for a
+    *specific* `E` coming from the actual connection, the bound is a real
+    constraint that can fail. -/
+theorem not_bound_of_physical_ne_zero {N : ℕ} (h : E.physical N ≠ 0) :
+    ¬ Nonempty (SurrealParallelTransportBound E) :=
+  fun ⟨PT⟩ => h (PT.physical_archimedean_zero N)
 
 end SurrealParallelTransportBound
 
@@ -164,8 +208,8 @@ end SurrealParallelTransportBound
     while carrying no mathematical content.  With the real class
     (`no_relation`, declared in `HyperbolicVolumeTranscendence` §7)
     the bridge step is honestly conjectural. -/
-class JetTransportImpliesIndependence
-    [JetOrderIndependence] [SurrealParallelTransportBound] : Prop where
+class JetTransportImpliesIndependence (E : TransportErrorData)
+    [JetOrderIndependence] [SurrealParallelTransportBound E] : Prop where
   /-- The independence witness produced by the bridge. -/
   nonempty_independence : Nonempty HyperbolicVolumeIndependence
 
@@ -180,8 +224,9 @@ class JetTransportImpliesIndependence
     to avoid competing with the standalone conjectural witness in
     `HyperbolicVolumeIndependence`. -/
 noncomputable def hyperbolicVolumeIndependence_of_reduction
-    [JetOrderIndependence] [SurrealParallelTransportBound]
-    [R : JetTransportImpliesIndependence] :
+    (E : TransportErrorData)
+    [JetOrderIndependence] [SurrealParallelTransportBound E]
+    [R : JetTransportImpliesIndependence E] :
     HyperbolicVolumeIndependence :=
   R.nonempty_independence.some
 
@@ -317,26 +362,66 @@ theorem jacobianRank_eq_three_of_base {r : ℕ → ℕ} (hmono : Monotone r)
     (hle : ∀ N, r N ≤ 3) (hbase : r 3 = 3) {N : ℕ} (hN : 3 ≤ N) : r N = 3 :=
   le_antisymm (hle N) (hbase ▸ hmono hN)
 
--- The weak conjecture's witness, built *through the certificate*: the
--- `full_rank` proof is the general GB certificate applied to the per-order
--- pivots.  `jacobianRank N = 3` for all `N ≥ 3` is the open conjecture; the
--- base order is sorry-free certified, higher orders are the same finite
--- test pending the compute witness's coefficient data.
--- Ref: [manuscript] conj:three-knot-jet-order-independence
-noncomputable instance : JetOrderIndependence :=
-  JetOrderIndependence.ofPivots jetPivots (fun _ _ => by norm_num [jetPivots])
+/-! ### Why this file declares **no** global instances (2026-08-09)
 
--- The bridge's witness.  Conjectural content is now exactly the two named
--- physical inputs (I2) `physical_archimedean_zero` + (I3)
--- `monodromy_archimedean_zero`; (I1) uniformity and the composition are
--- proved (`transport_uniform_bound`, `transport_shadow_vanishes`).
--- Ref: [manuscript] conj:three-knot-jet-order-independence (surreal bridge)
-noncomputable instance : SurrealParallelTransportBound where
-  transportShadow := fun _ => 0
-  physicalShadow := fun _ => 0
-  monodromyShadow := fun _ => 0
-  decomposes := fun _ => by norm_num
-  physical_archimedean_zero := fun _ => rfl
-  monodromy_archimedean_zero := fun _ => rfl
+Both conjectures above were previously discharged by global instances that
+carried no mathematical content.  Per AGENTS.md §3b-tax — *"An unproved primary
+is honestly represented by a content-bearing class with no instance; do not
+fabricate a trivial instance to close it"* — they are removed.  This is the
+same failure mode this file's own history note records for
+`HyperbolicVolumeIndependence` on 2026-06-10, recurring one class down.
+
+**(1) `SurrealParallelTransportBound` — the instance was vacuous.**  It read
+
+```
+  transportShadow := fun _ => 0 ; physicalShadow := fun _ => 0
+  monodromyShadow := fun _ => 0 ; …_archimedean_zero := fun _ => rfl
+```
+
+Because `transportShadow` is a class *field*, the instance gets to **choose**
+the shadow, and the constant-zero choice satisfies (I2) and (I3) by `rfl`.  So
+`[SurrealParallelTransportBound]` was discharged for free, and with it every
+downstream conditional — including `hyperbolicVolumeIndependence_of_reduction`,
+whose whole point is to expose the conditional structure at each call site.
+The two "PROVED" lemmas `transport_shadow_vanishes` and
+`transport_uniform_bound` remain valid: they are honest statements *about a
+given* `SurrealParallelTransportBound`, and are unaffected by the removal.
+
+**Redesigned the same day (bean `qou-ijhk`).**  Removing the instance stops the
+free discharge but does not by itself make the class content-bearing — any
+future instance could re-pick the zero functions.  So the shadows were moved
+out of the class into `TransportErrorData` and the class now takes that data as
+a **parameter**: `SurrealParallelTransportBound (E : TransportErrorData)`.  A
+consumer must now name the error it assumes about, and that name propagates
+through `JetTransportImpliesIndependence E` and
+`hyperbolicVolumeIndependence_of_reduction E` to every call site.
+
+The residual vacuity that parameterisation *cannot* remove — one may still
+instantiate at the zero error — is no longer left as a latent trap.  It is
+recorded as the pair `trivialError_bound` (the bound holds at the zero error,
+so an instance for an unspecified `E` asserts nothing) and
+`not_bound_of_physical_ne_zero` (for an `E` with a non-zero physical shadow the
+bound is a real constraint that fails).  Together they state exactly what an
+instance is worth.  Supplying the `E` that actually comes from the categorical
+connection still requires a Lean definition of the transport error, which
+remains open.
+
+**(2) `JetOrderIndependence` — the instance fabricated its data.**  It applied
+`ofPivots` to `jetPivots = fun _ => (1/4, 2, 1/8)`, a **constant** extension of
+the order-3 pivots to every order, thereby asserting `full_rank` at all
+`N ≥ 3` — which *is* the open conjecture.  The genuine content is kept and is
+unchanged: `jetPivots` (the witnessed base-order pivots), `jetOrder3_certificate`
+(`∏ pivots = 1/16 ≠ 0`, sorry-free), `jetJacobianBase_rank = 3`,
+`eliminationDet_ne_zero`, `ofPivots` and `jacobianRank_eq_three_of_base`.  What
+is dropped is only the step from "certified at the base order" to "holds at
+every order".  To discharge the conjecture honestly, feed `ofPivots` the
+per-order pivots actually produced by `computations/jet_order_pivots.py` at
+higher jet truncation, or discharge `jacobianRank_eq_three_of_base`'s
+hypotheses for the concrete order-`N` Jacobian (the column-extension linkage
+this file already flags as "the remaining structural input").
+
+Consumers that want the conditional form bind the classes explicitly per
+§3b-cond, which is exactly the visibility the reduction was written to provide.
+-/
 
 end QOU.Archimedean

@@ -51,16 +51,12 @@ DIM_CAP = 28  # Python-feasible frontier: dim(V_λ)≤28 ≈ ≤8 min/λ; dim-42
 def ops_to_factors(ops, h, gen_shift=0):
     """(gen, ctype) atomic ops → Hecke factors [(c, d, g)] with optional gen shift."""
     out = []
+    # `d_for_ctype` rather than a private if/elif; the chain this replaces
+    # raised on `averaged_weighted`, i.e. on every Z>=1,N>=1 atom.
+    from canonical_braid_crossings import d_for_ctype
     for gen, ctype in ops:
         g = int(gen) + gen_shift
-        if ctype == "sigma":
-            out.append((mp.mpf(1), mp.mpf(0), g))
-        elif ctype == "sigma_inv":
-            out.append((mp.mpf(1), -h, g))
-        elif ctype == "averaged":
-            out.append((mp.mpf(1), -h / 2, g))
-        else:
-            raise ValueError(f"unknown crossing {ctype!r}")
+        out.append((mp.mpf(1), d_for_ctype(ctype, h), g))
     return out
 
 
@@ -84,7 +80,12 @@ def main() -> int:
     inner_ops = [(g, t) for (g, t) in ops if g <= 4]
     iface_ops = [(g, t) for (g, t) in ops if g == 5]
     outer_ops = [(g, t) for (g, t) in ops if g >= 6]
-    assert len(iface_ops) == 1 and iface_ops[0][1] == "averaged", \
+    # The averaged FAMILY. The ³He p-n interface at gen 5 is the COLOUR-
+    # WEIGHTED one, `averaged_weighted`, so `== "averaged"` FAILS here. The
+    # `ops_to_factors` dispatch above was repaired without this line, leaving
+    # the file broken after being fixed — found by sweeping for the equality
+    # pattern rather than by re-reading the file (qou-8zjd).
+    assert len(iface_ops) == 1 and iface_ops[0][1].startswith("averaged"), \
         f"³He interface must be pn-averaged, got {iface_ops}"
     inner_fac = ops_to_factors(inner_ops, h)            # H_6 gens 0..4
     outer_fac = ops_to_factors(outer_ops, h, gen_shift=-6)  # H_3 gens 0..1

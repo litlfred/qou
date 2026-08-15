@@ -23,7 +23,7 @@ In the brane fluid defined by [substrate parameter](#def:substrate-parameter) $q
 
    For large $k$, the denominator scales as $[k+1]_q - [k]_q \sim q^k \cdot q/(q+1)$. The transfer rate thus drops exponentially at high wavenumbers, enforcing a strict structural UV cutoff.
 
-3. **Finite cascade depth.** The number of active modes participating in the cascade strictly bounds to
+3. **Finite cascade depth.** The number of active modes participating in the cascade is bounded by
 
    $$
      N_{\mathrm{modes}}
@@ -36,7 +36,7 @@ In the brane fluid defined by [substrate parameter](#def:substrate-parameter) $q
      \biggr\rfloor.
    $$
 
-   At the physical anchor $q \approx 1.110$, $N_{\mathrm{modes}} \approx 21$. (This accounts for all modes spanning the cascade; the [Planck--Reynolds](#rem:planck-reynolds) bound $k_{\max} \approx 4$ measures only those modes carrying significant amplitude.)
+   The bound is the logarithmic form of the dissipation-scale cutoff $q^{N_{\mathrm{modes}}} \leq \mathrm{Re}_q^{3/4}$ (every active mode lies below the Kolmogorov scale), which is the modeling hypothesis of the derivation; the passage from the cutoff to the stated bound is elementary. At the physical anchor $q \approx 1.110$, $N_{\mathrm{modes}} \approx 21$. (This accounts for all modes spanning the cascade; the [Planck--Reynolds](#rem:planck-reynolds) bound $k_{\max} \approx 4$ measures only those modes carrying significant amplitude.)
 
 4. **Spectral gap.** Below the fundamental mode $k = 1$, a **spectral gap** isolates the ground state (laminar flow) from the first excited mode:
 

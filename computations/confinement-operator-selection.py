@@ -26,8 +26,9 @@ from q_parameter import Q as q0, HA as HA_val, E_CROSS
 # z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
 # bootstrap for dev mode; the installed-pyhecke path is preferred.
 import sys as _sys, pathlib as _pl
-_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
+from pyhecke.gram import safe_inverse as _pg_safe_inverse  # noqa: E402
 from derived_masses import TARGET_NET_PROTON, TARGET_NET_NEUTRON  # noqa: E402
 
 
@@ -188,7 +189,10 @@ print(f"Commit: {SHA[:8]}")
 print("=" * 80)
 
 G = build_gram()
-G_inv = np.linalg.inv(G)
+# Guarded: np.linalg.inv does NOT raise on the convention-D Markov Gram,
+# it returns inverted rounding noise (entries ~7.6e15, ||G@inv - I|| = 4.14).
+# safe_inverse raises instead and names the quotient inverse. See qou-m7py.
+G_inv = _pg_safe_inverse(G, what="Markov Gram")
 check = np.max(np.abs(G @ G_inv - np.eye(6)))
 print(f"\nGram matrix: det(G) = {np.linalg.det(G):.10f}")
 print(f"Verification: max|G·G⁻¹ - I| = {check:.2e}")

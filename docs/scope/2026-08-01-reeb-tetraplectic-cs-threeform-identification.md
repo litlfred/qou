@@ -58,7 +58,8 @@ The Reeb flow is substrate time. The Reeb-contraction 3-form's holonomy
 integral is exactly the **Chern–Simons face** the c₃ bar-odd chain has already
 pinned:
 
-- bar-EVEN (cosh / mass face): `−Vol(4₁)` — solved.
+- bar-EVEN (cosh / mass face): `−Vol(4₁)` — ~~solved~~ **[re-scoped 2026-08-15:
+  motivated, not derived — see §Corrections]**.
 - bar-ODD (sinh / decay face): `S = Im 𝔙(m)`, the **deformation phase** of the
   complex volume `𝔙 = Vol + i·CS` at meridian holonomy `m(q₀)`
   ([NZ gap audit](../audits/2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md);
@@ -86,15 +87,15 @@ same statement one categorical level up.
 The correct, corpus-established gate (already Lean-proved and probe-wired —
 no new probe needed, per the don't-duplicate-mechanical-work rule):
 
-- `S` sign-flips between the anchors, so (assuming continuity) a zero `q*`
+- `S` sign-flips between the anchors, so (assuming continuity) a zero `q*_S`
   exists; it is **root-found exactly** (not just IVT-estimated) by
   [`qbeta_udeform_map_constraint_probe.py`](../../computations/qbeta/qbeta_udeform_map_constraint_probe.py),
-  whose `q*` is the numerical face of the derived Lean theorem
-  `exists_cs_vanishing` (`Im 𝔙(u(q*)) = 0`).
+  whose `q*_S` is the numerical face of the derived Lean theorem
+  `exists_cs_vanishing` (`Im 𝔙(u(q*_S)) = 0`).
 - **Gate for any candidate `q₀ → m` map:** its `u(q₀)` must (i) reproduce the
   inversion targets `(Re²u − Im²u) = 4S/√3` at both anchors (`+0.0224` muon,
   `−0.0911` proton) and (ii) **cross the diagonal** `|Re u| = |Im u|` at the
-  root-found `q*` (Lean `signflip_forces_diagonal_cross`). Families F1–F3 are
+  root-found `q*_S` (Lean `signflip_forces_diagonal_cross`). Families F1–F3 are
   already refuted against this gate.
 
 The Reeb/CS identification of this doc is consistent with — and geometrically
@@ -113,6 +114,55 @@ the argument map `q₀ → m`** — transcendental, near-singular
 The Reeb-contraction identification adds a geometric backbone and the `m(q*) = 1`
 consistency check; it supplies **no value of `z(q₀)`** and does not touch the
 open link. Do not route a c₃ closure attempt through this doc.
+
+## Corrections (2026-08-15, bean qou-znwq — post-catchup reconciliation)
+
+Three later corpus results erode parts of this doc's framing. The generic
+Cartan lemma (`CartanContraction.lean`, hypothesis-carrying) is unaffected by
+all three; what changes is how much *instantiated* content the QOU tetraplectic
+carries and how the bar-even part is labeled.
+
+1. **The corpus tetraplectic instantiation is vacuous at `m = 1`** (bean
+   `qou-8p1g`, 2026-08-07): on the Bring cone — a real 4-manifold — *every*
+   4-form is closed, so the tetraplectic requirement reduces to a
+   nowhere-vanishing volume form; the current instantiation "uses the name and
+   none of the content". The literature-placement table above therefore
+   describes the structure's *potential*, not what the corpus instantiates.
+   The `dω = 0` hypothesis of the Cartan step is automatic there, and the
+   resulting Reeb triad is SU(2) (adjoint) — already double-booked to the
+   electroweak sector (`QuaternionicElectroweak.lean`).
+2. **`−Vol(4₁)` is a defined residual, not a derived decomposition** (H1
+   re-scope, `docs/audits/2026-08-14-c3-registry-glyph-collision-and-anchor-selective-scale.md`;
+   AGENTS.md §"Defined residual ≠ derived decomposition"). The bar-even line
+   in the identification table is re-scoped from "solved" to **motivated**:
+   `S := c₃ + Vol(4₁)` fixes the split by definition, and the Φ_b
+   volume-deficit scale evidence was retired as anchor-selective.
+3. **Glyph rule** (`qou-kp9f`): bare `q*` is ambiguous since KC22 introduced
+   `q*_ρ ≈ 1.48989` (radius zero). This doc's zero is `q*_S ≈ 1.10998`
+   (subscripted above); quoted historical wording in the correction block
+   retains the original glyph. Relatedly, the "transcendental" characterization
+   of the argument map is a working hypothesis, not proved — see the
+   2026-08-15 ground-check note in bean `qou-82w7`.
+4. **The sign flip is conditional, not measured** (O2 negative,
+   [`2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`](../audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md);
+   PR #5041). The individual `S` values carry a ±1.262 CAL-3 propagated
+   uncertainty (the `1/u³` amplification of the Q_β input error) — 130× the
+   muon and 32× the proton central value — and the canonical witness itself
+   states the flip "must not be cited as an established sign flip". The only
+   resolved observable is the **swing** `S(muon) − S(proton) = 0.04914`
+   (±7.6×10⁻⁷; the common error cancels), which equals the cross-anchor `c₃`
+   variation with `Vol(4₁)` cancelled — and which is itself **not** an
+   independent derivation target: it factors exactly as the 11.54 ppb μ–p
+   substrate tension × `dc₃/dq` (bean `qou-6y1p`, scrapped — deriving it
+   requires both a first-principles `c₃` and the open μ–p tension).
+   Everywhere this doc says "`S`
+   sign-flips between the anchors", read "conditional on a sign flip the data
+   does not establish"; the diagonal-crossing gate and its inversion targets
+   (`+0.0224`/`−0.0911`, built from the individual values) inherit that
+   conditionality. The Lean lemmas (`signflip_forces_diagonal_cross`,
+   `exists_cs_vanishing`, the F1–F3 exclusions) are unaffected — they were
+   authored hypothesis-carrying (`0 < S q₁`, `S q₂ < 0` as explicit
+   hypotheses), which is precisely the discipline paying off here.
 
 ## Cross-references
 

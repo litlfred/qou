@@ -1,4 +1,6 @@
-import Mathlib.Tactic
+import Mathlib.Algebra.Ring.Units
+import Mathlib.Algebra.Ring.Invertible
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.BraidKnot.per_block_hopf_jones_absorption
@@ -25,6 +27,14 @@ This file states the LO ε^1 coefficient theorems as `ring`-discharged
 identities. The categorical interpretation (dimension-scaled Hopf-
 Jones absorption) is in the .md sibling.
 
+Base ring (AGENTS.md §7c). The closed forms are Laurent in `q, q⁻¹` over
+`ℤ[1/4]`: the modulus is carried as a **unit** `q : Rˣ` (so every `q⁻¹` is a
+`Units` coercion) and the Markov-trace normalisation `1/4` as `⅟(4 : R)`
+with `[Invertible (4 : R)]`, over a generic `[CommRing R]`. No division,
+no field. Invertibility of `4` is the honest hypothesis: it is what the
+Markov-trace normalisation needs, and it is where the old `[Field R]` was
+actually being used.
+
 This connects to the global $c_3 = J_{\\text{Hopf}}(q{=}1) = -2$
 coefficient of the Q_β precision ladder (per
 `q-beta-c3-hopf-three-fold-markov`): the single Hopf-Jones value at
@@ -36,18 +46,19 @@ $q=1$ is realised structurally per Wedderburn block.
 
 namespace QOU.BraidKnot
 
-variable {R : Type*} [Field R]
+variable {R : Type*} [CommRing R] [Invertible (4 : R)]
 
 /-- Per-block χ_λ closed-form differences (from
-    `chi-per-irrep-cyclotomic-closed-forms`).  -/
-noncomputable def chi_V3_diff (q : R) : R :=
-  -(q^2 + 1)^2 * (q^2 - 1) / (4 * q)
+    `chi-per-irrep-cyclotomic-closed-forms`), written division-free:
+    `x / (4·qᵏ)` is `x · ⅟4 · (q⁻¹)ᵏ`.  -/
+def chi_V3_diff (q : Rˣ) : R :=
+  -((q : R)^2 + 1)^2 * ((q : R)^2 - 1) * ⅟(4 : R) * (↑q⁻¹ : R)
 
-noncomputable def chi_V21_diff (q : R) : R :=
-  -(q^4 + 1) * (q^2 - 1) / (4 * q^3)
+def chi_V21_diff (q : Rˣ) : R :=
+  -((q : R)^4 + 1) * ((q : R)^2 - 1) * ⅟(4 : R) * (↑q⁻¹ : R)^3
 
-noncomputable def chi_V111_diff (q : R) : R :=
-  -(q^2 + 1)^2 * (q^2 - 1) / (4 * q^5)
+def chi_V111_diff (q : Rˣ) : R :=
+  -((q : R)^2 + 1)^2 * ((q : R)^2 - 1) * ⅟(4 : R) * (↑q⁻¹ : R)^5
 
 /-- Hopf-link Jones polynomial classical limit (per
     `q-beta-c3-hopf-three-fold-markov`, Fact 4 / KL decategorification). -/
@@ -58,19 +69,19 @@ def jones_hopf_at_q1 : R := -2
 The leading-order term of `chi_V3_diff` in (q − 1) is `-2·(q-1)` plus
 higher orders. -/
 -- Ref: [manuscript] prop:q-beta-c3-hopf-three-fold-markov (Fact 3)
-theorem chi_V3_diff_value_at_1 : chi_V3_diff (1 : R) = 0 := by
-  unfold chi_V3_diff; ring
+theorem chi_V3_diff_value_at_1 : chi_V3_diff (1 : Rˣ) = (0 : R) := by
+  unfold chi_V3_diff; simp
 
 /-- **LO ε^1 absorption coefficient for V_(2,1): −1 (half Hopf-Jones).**
 
 The cleaner form `-(q⁴+1)·(q+1)·ℏ_q/(4q²)` at q=1 vanishes (since
 ℏ_q = 0 at q=1). The LO ε^1 coefficient in (q-1) expansion is -1. -/
-theorem chi_V21_diff_value_at_1 : chi_V21_diff (1 : R) = 0 := by
-  unfold chi_V21_diff; ring
+theorem chi_V21_diff_value_at_1 : chi_V21_diff (1 : Rˣ) = (0 : R) := by
+  unfold chi_V21_diff; simp
 
 /-- **LO ε^1 absorption coefficient for V_(1,1,1): −2 (full Hopf-Jones, same as V_(3)).** -/
-theorem chi_V111_diff_value_at_1 : chi_V111_diff (1 : R) = 0 := by
-  unfold chi_V111_diff; ring
+theorem chi_V111_diff_value_at_1 : chi_V111_diff (1 : Rˣ) = (0 : R) := by
+  unfold chi_V111_diff; simp
 
 /-- **Dimension-scaled Hopf-Jones absorption summary.**
 

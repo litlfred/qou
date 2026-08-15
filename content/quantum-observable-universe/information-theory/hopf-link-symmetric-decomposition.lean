@@ -1,5 +1,5 @@
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Algebra.Ring.Units
+import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Ring
 
 
@@ -14,19 +14,28 @@ element weights them by the squared block eigenvalues `q²` and `q⁻²`:
 
   `[2]_q · σ² = q²·(σ + q⁻¹) + q⁻²·(q − σ)`,   `[2]_q = q + q⁻¹`,
 
-cleared of the `[2]_q` denominator (so it holds over any field with `q ≠ 0`).
+cleared of the `[2]_q` denominator.
+
 Equivalently `σ² = q²·e₊ + q⁻²·e₋` with the normalised idempotents
 `e± = E±/[2]_q`. The symmetric (Hopf/[2]_q) block is the **van der Waals**
 channel ([`def:van-der-waals-hopf-channel`](van-der-waals-hopf-channel.md)).
 
 LaTeX label: `prop:hopf-link-symmetric-decomposition`.
-**Ground ring**: a field `R` (so `q⁻¹` exists); the identity is purely
-algebraic in `σ` modulo the Hecke relation.
+
+**Ground ring** (AGENTS.md §7c): `ℤ[q, q⁻¹]`, i.e. a generic
+`{R : Type*} [CommRing R]` with the modulus carried as a **unit** `q : Rˣ`,
+so every `q⁻¹` is a `Units` coercion `↑q⁻¹` and no ring inverse, division or
+field appears. The identity is purely algebraic in `σ` modulo the Hecke
+relation: after substituting it, the whole content is the single unit
+relation `q·q⁻¹ = 1`, which is what the `linear_combination` certificate
+below records. (Previously stated over a field with `q ≠ 0` and discharged
+by `field_simp`; the field was only clearing the `[2]_q` denominator that
+the statement has already cleared by hand.)
 -/
 
 namespace QOU.HopfSymmetric
 
-variable {R : Type*} [Field R]
+variable {R : Type*} [CommRing R]
 
 /-- **Hopf-link symmetric/antisymmetric decomposition.**
 
@@ -35,11 +44,13 @@ variable {R : Type*} [Field R]
     with weights `q²` and `q⁻²` (the squared block eigenvalues), after clearing
     the `[2]_q = q + q⁻¹` denominator. Sorry-free. -/
 -- Ref: [manuscript] information-theory/hopf-link-symmetric-decomposition
-theorem hopf_symmetric_decomposition (q σ : R) (hq : q ≠ 0)
-    (hHecke : σ ^ 2 = (q - q⁻¹) * σ + 1) :
-    (q + q⁻¹) * σ ^ 2 = q ^ 2 * (σ + q⁻¹) + (q⁻¹) ^ 2 * (q - σ) := by
+theorem hopf_symmetric_decomposition (q : Rˣ) (σ : R)
+    (hHecke : σ ^ 2 = ((q : R) - (↑q⁻¹ : R)) * σ + 1) :
+    ((q : R) + (↑q⁻¹ : R)) * σ ^ 2
+      = (q : R) ^ 2 * (σ + (↑q⁻¹ : R))
+        + (↑q⁻¹ : R) ^ 2 * ((q : R) - σ) := by
+  have hq : (q : R) * (↑q⁻¹ : R) = 1 := q.mul_inv
   rw [hHecke]
-  field_simp
-  ring
+  linear_combination (-((q : R) + (↑q⁻¹ : R))) * hq
 
 end QOU.HopfSymmetric

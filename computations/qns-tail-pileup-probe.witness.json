@@ -1,0 +1,66 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T00:28:25.444270+00:00",
+  "commitSha": "82c809a6151e03db1c9314d72a3bbef69eb36b08",
+  "assertions": [
+    {
+      "name": "SUBSTRATE-UNIT PILE-UP IS REAL (scope-(a) refutation of the substrate-unit no-pile-up hypothesis in this model): sup_t tail enstrophy above the fixed band grows without bound as nu -> 0 (asymptotic 1/eps exponent > 0.5; tail fraction -> 1)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "asymptotic exponent 0.827 (global 2.320); max sup_frac = 0.99017; the vanishing-viscosity cascade fills the receding dissipation range — the Euler-type limit piles up, as classical intuition predicts. Scope (a): DN model, band-limited data, T=50.0 eddy, N=32, alone"
+    },
+    {
+      "name": "C_Q-RESCALED (fixed-nu-unit) TAIL VANISHES: in the candidate physical normalization (eps^2 weight) the tail enstrophy decreases toward 0 as eps -> 0 — the fixed-nu-unit form of the hypothesis HOLDS in-model",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "rescaled tail over last 3 eps: 1.059e-02 > 2.792e-03 > 7.094e-04 (~eps^1.17); the two normalizations give OPPOSITE answers — the substrate-to-physical rescaling decision (audit §5) is load-bearing for the uniformity question"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5975,
+  "computation": "qns-tail-pileup-probe",
+  "scriptFile": "qns_tail_pileup_probe.py",
+  "scriptHash": "7f9de32c9a96",
+  "scriptCommitSha": "0023cc6820c39862aa50668c31ce2c0358eb3371",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "SF5 (bean qou-7swq): decisive in-model test of the eps-uniformity tail hypothesis of low_mode_block_uniformity.lean ('no enstrophy pile-up above a fixed band as the damping threshold recedes'). Unforced DN q-shell, fixed wide truncation N=32, band B=8, eps-independent data on the first 4 rungs, fixed inertial horizon T=50 eddy turnovers, eps swept 1e-1 -> 1e-3 (nu_q -> 0). Reports sup_t tail enstrophy, sup_t tail fraction, and the c_q-rescaled (eps^2-weighted) tail per the pending rescaling decision — the hypothesis is unit-dependent and both normalizations are recorded. Verdict from the fitted 1/eps growth exponent of the substrate-unit sup-tail. Scope (a); exploratory float64 RK2 tier.",
+  "data": {
+    "eps1e-01_sup_tail": 0.00408913697178667,
+    "eps1e-01_sup_frac": 0.0003353750522732022,
+    "eps1e-01_sup_tail_cq_rescaled": 4.089136971786671e-05,
+    "eps3e-02_sup_tail": 26.931726826525306,
+    "eps3e-02_sup_frac": 0.5051471112973761,
+    "eps3e-02_sup_tail_cq_rescaled": 0.024238554143872774,
+    "eps1e-02_sup_tail": 105.93093989403278,
+    "eps1e-02_sup_frac": 0.8404398947945566,
+    "eps1e-02_sup_tail_cq_rescaled": 0.010593093989403278,
+    "eps3e-03_sup_tail": 310.220048963545,
+    "eps3e-03_sup_frac": 0.9634560302272202,
+    "eps3e-03_sup_tail_cq_rescaled": 0.002791980440671905,
+    "eps1e-03_sup_tail": 709.4022692722812,
+    "eps1e-03_sup_frac": 0.9901685966786823,
+    "eps1e-03_sup_tail_cq_rescaled": 0.0007094022692722812,
+    "tail_growth_exponent_global": 2.3198316716570826,
+    "tail_growth_exponent_asymptotic": 0.8269311084590621,
+    "precision_tier": "float64-integrator",
+    "tier": "exploratory",
+    "N": 32,
+    "band": 8
+  }
+}

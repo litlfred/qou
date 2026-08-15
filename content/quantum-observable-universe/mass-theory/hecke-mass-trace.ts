@@ -13,7 +13,14 @@ export default proposition({
   lean: { ref: "qou:QOU.Braiding.hecke_mass_trace",
     validation: "leanok",
   },
-  uses: ["def:hecke-mass-element"],
+  uses: [
+    // def:mass-identity is NOT listed although the statement names it (the
+    // categorical mass it equates with the trace norm): it is reached
+    // through def:hecke-mass-element, which now declares it directly.
+    "def:hecke-mass-element",
+    // The decomposition the proposition descends to H_n(R, q).
+    "thm:topological-mass",
+  ],
   // Production wiring of the proved mass = Markov-trace bridge: the canonical
   // mass table computes |tr_M(Φ_mass(β))| per atom via the canonical Markov
   // trace (compute_tr_m_canonical → Rust MPFR kernel), realising the

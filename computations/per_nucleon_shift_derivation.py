@@ -38,7 +38,9 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings  # noqa: E402
+from canonical_braid_crossings import (  # noqa: E402
+    CTYPES, atom_canonical_crossings as atomic_braid_to_crossings,
+)
 from witness_base import WitnessBuilder  # noqa: E402
 
 # ──────────────────────────────────────────────────────────────────────
@@ -148,13 +150,17 @@ print("=" * 70)
 print("§2  Generator-count decomposition per atom + per-new-nucleon")
 print("=" * 70)
 print()
-print(f"{'atom':<8} {'σ':>4} {'σ⁻¹':>4} {'avg':>4} {'total':>5}  "
+print(f"{'atom':<8} {'σ':>4} {'σ⁻¹':>4} {'avg':>4} {'avgW':>5} {'total':>5}  "
       f"{'shift':>5} {'2·pole':>6}  {'cancel':>7}")
 
 gen_counts = {}
 for (Z, N), shift in EMPIRICAL_SHIFT.items():
     crosses = atomic_braid_to_crossings(Z, N, include_inter=True)
-    cnt = {'sigma': 0, 'sigma_inv': 0, 'averaged': 0}
+    # Seeded from the canonical CTYPES. This was a hand-written
+    # {sigma, sigma_inv, averaged} triple with a bare `cnt[ctype] += 1`, so it
+    # died with KeyError: 'averaged_weighted' on the first Z>=1,N>=1 atom in
+    # the table -- i.e. every atom past the single nucleons.
+    cnt = {c: 0 for c in CTYPES}
     for gen, ctype in crosses:
         cnt[ctype] += 1
     total = sum(cnt.values())
@@ -162,11 +168,17 @@ for (Z, N), shift in EMPIRICAL_SHIFT.items():
     # DP-max upper bound = total (each gen contributes 1)
     cancel = total - pole  # cancellation count
     print(f"  {ATOM_NAMES[(Z, N)]:<6} {cnt['sigma']:>4} {cnt['sigma_inv']:>4} "
-          f"{cnt['averaged']:>4} {total:>5}  {shift:>5} {pole:>6.1f}  {cancel:>7.1f}")
+          f"{cnt['averaged']:>4} {cnt['averaged_weighted']:>5} {total:>5}  "
+          f"{shift:>5} {pole:>6.1f}  {cancel:>7.1f}")
     gen_counts[(Z, N)] = {
         "sigma":     cnt['sigma'],
         "sigma_inv": cnt['sigma_inv'],
+        # kept separate: `averaged` is colour-blind (-h/2), `averaged_weighted`
+        # is the colour-weighted p-n interface (-h(1/2 - δ/4)). Summing them
+        # is what the old triple did implicitly, and it is what erases the
+        # proton-neutron asymmetry from the count.
         "averaged":  cnt['averaged'],
+        "averaged_weighted": cnt['averaged_weighted'],
         "total":     total,
         "shift":     shift,
         "pole":      pole,
@@ -327,7 +339,14 @@ for (Z, N), shift in EMPIRICAL_SHIFT.items():
         and crosses[i][1] == crosses[i+1][1]
         and crosses[i][1] in ('sigma', 'sigma_inv')
     )
-    avg = sum(1 for g, t in crosses if t == 'averaged')
+    # The averaged FAMILY, not the colour-blind label alone. `t == 'averaged'`
+    # silently dropped the one `averaged_weighted` crossing per word once the
+    # classifier split the label — a pre-existing undercount, not introduced
+    # here: the committed witness's counts (5, 7, ...) predate the split, and
+    # a fresh run under the equality test produced (4, 6, ...) with
+    # predicted_avg_cancel and implied_sigma_sq_cancel moving with them.
+    # Counting the family restores the committed values (qou-8zjd).
+    avg = sum(1 for g, t in crosses if t.startswith('averaged'))
     cancel = gen_counts[(Z, N)]["cancellation"]
     print(f"  {ATOM_NAMES[(Z, N)]:<6} {len(crosses):>4} {adj:>7} {avg:>4}  "
           f"cancel = {cancel}, avg_part = {0.5*avg}, σ²_part = {cancel - 0.5*avg}")

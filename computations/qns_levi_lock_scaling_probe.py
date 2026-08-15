@@ -38,6 +38,27 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (AGENTS.md §"QA is agent-owned";
+    `computations/witness_raw_float64_audit.py`). This probe's declared tier is
+    *"float64 (exact rational formula)"* — there is no integrator, so the
+    `float64-integrator` carve-out (`qou-7kq3`) does **not** apply and
+    serialization is the right treatment: `_precision.fmt` renders a float via
+    `str()`, which round-trips exactly. Non-floats pass through untouched so
+    counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
+
 GAMMA = 1.0  # circulation (fixed data-dependent constant; scaling is Gamma-independent)
 EPS_LADDER = [10.0 ** (-e) for e in range(1, 9)]
 
@@ -55,13 +76,13 @@ def main() -> None:
         C_L = 1.0 / kappa2_lock
         xs.append(-math.log(eps))
         ys.append(math.log(C_L))
-        w.add_data(f"eps_{eps:.0e}_kappa2_lock", kappa2_lock)
-        w.add_data(f"eps_{eps:.0e}_C_L", C_L)
+        w.add_data(f"eps_{eps:.0e}_kappa2_lock", _f(kappa2_lock))
+        w.add_data(f"eps_{eps:.0e}_C_L", _f(C_L))
         print(f"  eps={eps:.0e}  nu_q={nu_q:.3e}  kappa2_lock={kappa2_lock:.3e}  C_L={C_L:.6e}")
     n = len(xs)
     xb, yb = sum(xs) / n, sum(ys) / n
     beta = sum((x - xb) * (y - yb) for x, y in zip(xs, ys)) / sum((x - xb) ** 2 for x in xs)
-    w.add_data("beta_fit", beta)
+    w.add_data("beta_fit", _f(beta))
     print(f"  -> fitted beta = {beta:.5f}  (branch A: 0; branch B: 1; marginal: (0,1))")
 
     w.add_assertion(

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T21:29:59.389316+00:00",
-  "commitSha": "8a2bbbb6837d6d32ad9bd89b7d9da9efd8bdd07c",
+  "computedAt": "2026-08-10T17:36:21.148131+00:00",
+  "commitSha": "56e9680162560f9e3c8639adba2ffda1ade01318",
   "assertions": [
     {
       "name": "family_a_fit_recovers_truncated_coefficients",
@@ -14,18 +14,26 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 23,
   "computation": "borromean-markov-trace-h-expansion-50dps",
   "scriptFile": "borromean_markov_trace_h_expansion_50dps.py",
-  "scriptHash": "69d9b8206f9d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1b3920937fda",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
   },
-  "description": "Independent mp.mpf 50-dps verification of the Borromean Markov-trace h-expansion. Uses PR #1285's precision-fixed markov_trace_for_knot to compute tr_M(β_𝓑, q) at 5 sampled q values, then fits Σ_{j even} a_j · h^j via mpf-precision linear algebra. Compares against PR #1272's f64 'via_jones' coefficients and PR #1276's 'Bring + Faddeev h⁴' candidate. EXPLORATORY — does not change production linking_weight or any blocks.",
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Independent mp.mpf 50-dps verification of the Borromean Markov-trace h-expansion. Uses PR #1285's precision-fixed markov_trace_for_knot to compute tr_M(β_𝓑, q) at 5 sampled q values, then fits Σ_{j even} a_j · h^j via mpf-precision linear algebra. Compares against PR #1272's f64 'via_jones' coefficients and PR #1276's 'Bring + compact-q-dilog h⁴' candidate. EXPLORATORY — does not change production linking_weight or any blocks.",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",
   "parameters": {
     "q_sample_points": [
@@ -41,11 +49,11 @@
   },
   "data": {
     "actual_h_coefficients_wenzl_jm": {
-      "a_0": "0.9999988934098679922888297",
-      "a_2": "0.0003284149657056204579457187",
-      "a_4": "-0.8082796734157335935195086",
-      "a_6": "-1.393979396555135912963702",
-      "a_8": "3.770832218094011235252646"
+      "a_0": "0.9999999999487277202949822",
+      "a_2": "1.193730444580960868843739e-8",
+      "a_4": "-0.750000981676165909174168",
+      "a_6": "-0.06246368446967394072511696",
+      "a_8": "0.01501019477673374942956364"
     },
     "family_a_h_coefficients": {
       "a_0": "2.5",

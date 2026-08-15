@@ -4,6 +4,7 @@ import Mathlib.Tactic
 import QOU.HeckeAlgebra.Common
 import QOU.HeckeAlgebra.MarkovTrace
 import QOU.HeckeAlgebra.QSubstrate
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.HeckeAlgebra.JonesMarkovWenzl
@@ -75,6 +76,40 @@ noncomputable def qInteger (k : ℕ) (q : ℝ) : ℝ :=
   if k = 0 then 0
   else (q ^ ((k : ℝ) / 2) - q ^ (-(k : ℝ) / 2)) /
        (q ^ ((1 : ℝ) / 2) - q ^ (-(1 : ℝ) / 2))
+
+/-- **Bridge to the canonical balanced bracket — this is not a third
+convention.**
+
+The half-powers make this site look like a separate `[k]` from both `qIntBal`
+and `qIntGeo`, and an earlier census set it aside on exactly that reading.  It
+is not: substituting `v = q^{1/2}` gives `v^k = q^{k/2}` and
+`v⁻¹ = q^{-1/2}`, so the whole expression is the *balanced* bracket in the
+half-power variable.
+
+That makes it the mirror of `qIntegerRescaled`: one site is the canonical
+bracket at `q²`, this one at `q^{1/2}`, and both are instances of the single
+twist `qIntBal_eq_twist_canonical` rather than new conventions.  Here the `k = 0`
+guard is again redundant — `qIntBal v 0 = 0` already.
+
+`0 ≤ q` is the real content of the hypothesis: it is what lets `rpow` powers
+compose (`(q^{1/2})^k = q^{k/2}`), and it is the file's own standing assumption
+("Defined for real `q > 0`"). -/
+theorem qInteger_eq_canonical (q : ℝ) (hq : 0 ≤ q) (k : ℕ) :
+    qInteger k q = QOU.QInteger.qIntBal (q ^ ((1 : ℝ) / 2)) k := by
+  have hv : ∀ m : ℕ, (q ^ ((1 : ℝ) / 2)) ^ m = q ^ ((m : ℝ) / 2) := by
+    intro m
+    rw [← Real.rpow_natCast (q ^ ((1 : ℝ) / 2)) m, ← Real.rpow_mul hq]
+    ring_nf
+  have hinv : ∀ m : ℕ, ((q ^ ((1 : ℝ) / 2))⁻¹) ^ m = q ^ (-(m : ℝ) / 2) := by
+    intro m
+    rw [← Real.rpow_neg hq, ← Real.rpow_natCast (q ^ (-((1 : ℝ) / 2))) m,
+      ← Real.rpow_mul hq]
+    ring_nf
+  unfold qInteger
+  rw [QOU.QInteger.qIntBal_def]
+  split_ifs with h
+  · subst h; simp
+  · rw [hv k, hinv k, show (-1 : ℝ) / 2 = -((1 : ℝ) / 2) by ring, Real.rpow_neg hq]
 
 /-- `[1]_q = 1` whenever the denominator `q^{1/2} - q^{-1/2}` is
     non-zero (i.e. for `q ≠ 1`).  At `q = 1` the formula gives

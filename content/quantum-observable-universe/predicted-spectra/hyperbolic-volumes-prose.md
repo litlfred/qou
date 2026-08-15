@@ -4,11 +4,11 @@ Inertial mass originates in the topology of knot complements. The framework iden
 The framework identifies the Higgs boson with the figure-eight knot $4_1$ ([cohomological embedding](#prop:cohomological-embedding)). Its volume is
 
 $$
-  \mathrm{Vol}(4_1) = 3\mathrm{Cl}_2(\pi/3)
+  \mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) = 6\,\Lambda(\pi/3)
     \approx 2.02988321281931,
 $$
 
-where $\mathrm{Cl}_2$ denotes the Clausen function.
+where $\mathrm{Cl}_2$ denotes the Clausen function and $\Lambda(\theta) = \mathrm{Cl}_2(2\theta)/2$ the Lobachevsky function. The complement $S^3 \setminus 4_1$ decomposes into two regular ideal tetrahedra, each of volume $\mathrm{Cl}_2(\pi/3) = 3\,\Lambda(\pi/3) \approx 1.01494$.
 
 The [topological mass formula](#prop:topological-mass-formula) defines the mass $\mathfrak{m}(K)$ of a particle with knot type $K$ as
 

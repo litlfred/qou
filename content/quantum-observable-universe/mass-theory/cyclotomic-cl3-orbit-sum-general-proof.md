@@ -73,7 +73,6 @@ See [Table](#tbl:cyclotomic-cl3-orbit-sum-general-table-data).
 
 The $N = 5$ row recovers $\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5)
 = -\frac{12}{25}\zeta(3)$ as $2 \times -\frac{12}{25} = -\frac{24}{25}$.
-(yes)
 
 ### $N = 2$ special case: $\mathrm{Cl}_3(\pi)$
 

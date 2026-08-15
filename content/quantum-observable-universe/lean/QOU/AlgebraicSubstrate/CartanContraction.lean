@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Module.LinearMap.Defs
 
+set_option autoImplicit false
+
 /-!
 # QOU.AlgebraicSubstrate.CartanContraction — the Cartan contraction step
 

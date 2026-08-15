@@ -65,7 +65,7 @@ def main() -> None:
     cosh2 = (q ** 2 + q ** -2) / 2.0        # = cosh(2λ)
     sinh2 = (q ** 2 - q ** -2) / 2.0        # = sinh(2λ)
     # idempotent q-dims (van-der-waals-hopf-channel):
-    z = 1.0 / (sqrt(q) + 1.0 / sqrt(q))
+    z = q**3 / (q**2 + 1)
     e_plus = (z + 1.0 / q) / (q + 1.0 / q)
     e_minus = (q - z) / (q + 1.0 / q)
     e_diff = e_plus - e_minus

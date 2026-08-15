@@ -91,6 +91,12 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_core import h as H_BAKED_F64  # noqa: E402 — template classifier only
 from q_parameter import Q_50_DIGIT_STR as Q_RUNTIME_STR  # noqa: E402 — drift measurement only
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 B_AME = {
     "D": mp.mpf("2.22456607"),
     "T": AME_B_TRITIUM_MEV_VALIDATION,
@@ -267,7 +273,7 @@ def phi_k(chi_map: dict, k: int, weights: dict, dim_q) -> mp.mpf:
 
 
 def make_alpha(q: mp.mpf):
-    z_mark = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z_mark = q**3 / (q**2 + 1)
     G = mp.catalan
 
     def alpha_k(k: int) -> mp.mpf:

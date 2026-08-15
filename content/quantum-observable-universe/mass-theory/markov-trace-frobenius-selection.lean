@@ -34,9 +34,10 @@
   `docs/uniqueness-theorems-backlog.md` for the broader uniqueness
   programme (item 1 there is now superseded by this retraction).
 
-  **Pre-Archimedean stub.** We parametrise in an abstract field
-  `R ⊇ ℚ(q)`; the substrate model below lives in `R`.  The Archimedean
-  realisation `R = ℝ` at `q = q₀` is post-τ.
+  **Pre-Archimedean, and base-ring minimal (§7c).**  What survives here
+  is stated over a generic `CommRing R` — nothing below divides, so no
+  field is needed.  The Archimedean realisation `R = ℝ` at `q = q₀` is
+  post-τ and consumes these statements by instantiation.
 
   Ref: [jones1987] Theorem 6.1 (Markov-trace existence and uniqueness
                    *at a fixed parameter z* — this part stands);
@@ -45,7 +46,7 @@
                    above).
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Defs
 import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
@@ -53,8 +54,8 @@ namespace QOU.BraidKnot
 universe u
 
 /-- Abstract Markov-trace functional on a Frobenius algebra,
-    polymorphic in the ground field `R`. -/
-structure MarkovTraceData (R : Type u) [Field R] (n : ℕ) where
+    polymorphic in the ground ring `R`. -/
+structure MarkovTraceData (R : Type u) [CommRing R] (n : ℕ) where
   τ : R → R         -- trace functional (q-rational; pre-Arch)
   τ_one : τ 1 = 1   -- normalisation
   -- Markov peel and cyclic axioms abstract here
@@ -130,14 +131,14 @@ theorem completing_the_square_substrate {R : Type u} [CommRing R]
 /-- **Theorem (T_β = S · 1 under Markov-Frobenius min-norm) —
     substrate-model proof.**
 
-    Let `R` be a field.  The minimum of `X²` (Frobenius norm squared
-    in the substrate model `A = R`, `τ = id`) subject to the linear
-    constraint `X = S` is attained at `X = S`, with min value `S²`.
+    Let `R` be a commutative ring.  The minimum of `X²` (Frobenius norm
+    squared in the substrate model `A = R`, `τ = id`) subject to the
+    linear constraint `X = S` is attained at `X = S`, with min value `S²`.
 
     **Why this is the substrate model.**  At the Hecke-algebra level
     H_n(R, q), the Frobenius inner product is `⟨X, Y⟩_τ := τ_M(X · Y)`
     and the constraint is `τ_M(T_β) = S`.  Reducing the algebra to its
-    substrate ground field `A = R` with `τ = id` collapses both: the
+    substrate ground ring `A = R` with `τ = id` collapses both: the
     inner product is `X · Y` (ring multiplication) and the constraint
     is `X = S` directly.  The min-norm result `X = S` is then trivial.
 
@@ -178,7 +179,7 @@ theorem completing_the_square_substrate {R : Type u} [CommRing R]
 
     **Status.** Substrate-model proof complete (sorry-free).  General
     H_n(R, q) lift deferred to follow-up PR. -/
-theorem t_beta_markov_min_frobenius_collapse_substrate {R : Type u} [Field R]
+theorem t_beta_markov_min_frobenius_collapse_substrate {R : Type u} [CommRing R]
     (S X : R) (h_constraint : X = S) :
     -- Min Frobenius norm squared = S²; attained at X = S.
     X * X = S * S := by
@@ -190,7 +191,7 @@ theorem t_beta_markov_min_frobenius_collapse_substrate {R : Type u} [Field R]
     norm² = S².  At Hecke-algebra level this lifts to: the
     minimum-Frobenius-norm element of `H_n(R, q)` with `τ_M(T_β) = S`
     is `T_β = S · 1`, with `‖T_β‖²_τ_M = S²`. -/
-theorem t_beta_markov_min_norm_value_substrate {R : Type u} [Field R]
+theorem t_beta_markov_min_norm_value_substrate {R : Type u} [CommRing R]
     (S : R) :
     -- The constrained minimum of X² over the level set X = S is S².
     (S : R) * S = S * S := rfl

@@ -2,6 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidsAndKnots.QSchurYLambdaClosedForm
@@ -119,6 +120,21 @@ where
 noncomputable def qBracket (k : ℕ) (q : ℝ) : ℝ :=
   if _h : q - q⁻¹ = 0 then 0
   else (q ^ (k : ℤ) - q ^ (-(k : ℤ))) / (q - q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket, and the guard is redundant.**
+
+This site guards the singular locus `q − q⁻¹ = 0` and returns `0` there — which
+is exactly what the *unguarded* `qIntBal` already returns, since Lean's
+`x / 0 = 0`.  So unlike the sites that guard to `n`, this one is not a
+classical extension at all: it agrees with the plain canonical bracket
+everywhere, and needs no hypothesis. -/
+theorem qBracket_eq_canonical (k : ℕ) (q : ℝ) :
+    qBracket k q = QOU.QInteger.qIntBal q k := by
+  unfold qBracket
+  split_ifs with h
+  · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, h]
+  · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, zpow_neg,
+      zpow_natCast, inv_pow]
 
 /-- q-factorial `[n]_q! = Π_{k=1}^{n} [k]_q`. At `n = 0` returns 1. -/
 noncomputable def qFactorial : ℕ → ℝ → ℝ

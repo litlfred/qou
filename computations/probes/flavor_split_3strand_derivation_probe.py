@@ -64,7 +64,7 @@ C_DATA = (_M_N_MEV - _M_P_MEV) / ((_M_N_MEV + _M_P_MEV) / 2)
 
 def zh(q):
     qi = 1 / q
-    z = 1 / (mp.sqrt(q) + mp.sqrt(qi))
+    z = q**3 / (q**2 + 1)
     h = q - qi
     return z, h
 

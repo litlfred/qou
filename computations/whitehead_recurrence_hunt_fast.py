@@ -62,7 +62,7 @@ def main() -> int:
         "whitehead_braid_word": "[1,-2,1,-2,1]", "Nmax": Nmax,
         "tower": "weight-block engine (validated vs full colored_jones_modp N=2..6)",
         "grid_results": res, "certified_windows": hits, "min_window": minwin,
-        "wall_seconds": time.time() - t0,
+        "wall_seconds": f"{time.time() - t0:.3f}",
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     out = Path(__file__).resolve().parent / "whitehead-recurrence-hunt-fast.witness.json"

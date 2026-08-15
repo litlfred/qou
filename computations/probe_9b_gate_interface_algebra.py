@@ -122,7 +122,7 @@ def main() -> int:
         return mp.log(x) / lnq
 
     # Structural constants of the closed form (exact formulas at 50 dps).
-    z = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    z = q0**3 / (q0**2 + 1)
     h = q0 - 1 / q0
     delta = flavor_split_leading(q0)
     f = {

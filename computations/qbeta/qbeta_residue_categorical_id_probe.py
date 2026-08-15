@@ -49,7 +49,7 @@ def categorical_constants(q: mp.mpf) -> dict[str, mp.mpf]:
     b_sq = (q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2
     b = mp.sqrt(b_sq)
     h = q - 1 / q             # Hecke skein parameter
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))   # Markov parameter
+    z = q**3 / (q**2 + 1)   # Markov parameter
     return {
         "q": q,
         "hbar_q": hbar_q,

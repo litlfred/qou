@@ -1,0 +1,57 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T04:07:16.836883+00:00",
+  "commitSha": "5c7ea6e2509e85f86abe5f257ce68bcdd70010d6",
+  "assertions": [
+    {
+      "name": "SCOPE-(a) REFUTATION for small eps: the amplitude-form step FAILS along the DN tail evolution during the cascade-front transient — D_eff goes strongly negative at eps <= 1e-2 (interior tail production beats dissipation + boundary accounting), while holding at eps = 1e-1",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "min D_eff: +14.8 at eps=1e-1 (0 violations) but -22.1 at eps=1e-2 (682/3575 steps) and -23.1 at eps=1e-3 (3544/18567), all at t~0.32 — the cascade-front passage. The boundary_flux_tail_bound Lean theorem stands as a conditional; its in-model instantiation via THIS step form (single boundary amplitude, naive floor D) is refuted, scope (a): this form, this band, alone. The correct effective step must account interior production."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7375,
+  "computation": "qns-amplitude-step-probe",
+  "scriptFile": "qns_amplitude_step_probe.py",
+  "scriptHash": "4b9149419049",
+  "scriptCommitSha": "f763cebc71ce1ff070ac87c930fb0f222d53f60a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "SF6 (bean qou-g0dl): probe-level validation of the amplitude-form step hypothesis of boundary_flux_tail_bound (PR #5058) — dOmega_tail/dt <= F*a - D*Omega_tail with a = u_{B+1}, F = 2 k_{B+1}^3 u_B^2 (the DN boundary coupling). Measures the effective damping D_eff pointwise along unforced DN runs (N=32, B=8, band-limited data, T=50 eddy) across eps; the step is validated iff min_t D_eff > 0. The named risk is the tail's interior cascade production (not sign-definite) vs tail dissipation. Scope (a); float64 RK2 exploratory tier; the Lean chain's remaining full-NS caveat (nonlocal transfer) is untouched by this probe.",
+  "data": {
+    "eps1e-01_min_Deff": "14.837784506516627",
+    "eps1e-01_min_Deff_time": "0.33519540785844754",
+    "eps1e-01_violation_steps": 0,
+    "eps1e-01_samples": 11229,
+    "eps1e-01_naive_floor": "16.763835740838484",
+    "eps1e-01_Deff_over_floor": "0.8851067700675572",
+    "eps1e-02_min_Deff": "-22.054692375876495",
+    "eps1e-02_min_Deff_time": "0.32290661104501633",
+    "eps1e-02_violation_steps": 682,
+    "eps1e-02_samples": 3575,
+    "eps1e-02_naive_floor": "0.8690030017765387",
+    "eps1e-02_Deff_over_floor": "-25.379305170165324",
+    "eps1e-03_min_Deff": "-23.109218279062496",
+    "eps1e-03_min_Deff_time": "0.32413358553386395",
+    "eps1e-03_violation_steps": 3544,
+    "eps1e-03_samples": 18567,
+    "eps1e-03_naive_floor": "0.08156924708733884",
+    "eps1e-03_Deff_over_floor": "-283.307975790419",
+    "tier": "exploratory",
+    "N": 32,
+    "band": 8
+  }
+}

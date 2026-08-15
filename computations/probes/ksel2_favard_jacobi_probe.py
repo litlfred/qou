@@ -119,6 +119,12 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TOL_PIN = mpf("1e-25")   # 60-dps Jacobi extraction at the pins
 TOL_30 = mpf("1e-30")    # theta-moment u-independence cross-check
 K_EXACT = 9              # exact-ℚ Hankel depth (needs moments to m_18)

@@ -43,6 +43,11 @@ export default chapter({
       blocks: [
         "quantum-universe-intro",
         "quantum-universe",
+        // Light-touch physical motivation for each axiom, and the
+        // foreshadow of ch:knots-particles-confinement §1 (the braiding's
+        // hexagons are what make "an interaction" order-independent).
+        // Kept out of the definition itself so the definition stays tight.
+        "quantum-universe-axiom-motivation",
         "quantum-universe-exists",
         "quantum-universe-exists-proof",
         "tau-notation",

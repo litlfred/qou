@@ -246,7 +246,7 @@ def main() -> int:
         "computation": "borromean-qzeil-multiq",
         "audit_only": True,
         "verdict": verdict,
-        "wall_seconds": round(time.time() - t0, 1),
+        "wall_seconds": f"{time.time() - t0:.1f}",
     }
     out = script_path.with_name("borromean-qzeil-multiq.witness.json")
     out.write_text(json.dumps(witness, indent=2) + "\n")

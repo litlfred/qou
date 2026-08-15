@@ -107,7 +107,7 @@ def main():
     Q0 = Q_MP
     QI = Q_INV_MP
     h_amp = Q0 - QI
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
 
     print(f"  Substrate: q_0 = {Q0}, h_0 = {float(h_amp):.6f}")
     print(f"  Markov z = 1/(√q + 1/√q) = {float(z_mark):.10f}")

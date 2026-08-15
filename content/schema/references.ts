@@ -1533,6 +1533,36 @@ export const references: CSLData[] = [
   }),
 
   ref({
+    id: "gellmann1962",
+    type: "article-journal",
+    title: "Symmetries of Baryons and Mesons",
+    author: [
+      { family: "Gell-Mann", given: "Murray" },
+    ],
+    "container-title": "Physical Review",
+    volume: "125",
+    issue: "3",
+    page: "1067-1084",
+    issued: { "date-parts": [[1962]] },
+    DOI: "10.1103/PhysRev.125.1067",
+  }),
+  ref({
+    id: "colemanglashow1961",
+    type: "article-journal",
+    title: "Electrodynamic Properties of Baryons in the Unitary Symmetry Scheme",
+    author: [
+      { family: "Coleman", given: "Sidney" },
+      { family: "Glashow", given: "Sheldon L." },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "6",
+    issue: "8",
+    page: "423-425",
+    issued: { "date-parts": [[1961]] },
+    DOI: "10.1103/PhysRevLett.6.423",
+  }),
+
+  ref({
     id: "lenstra1983",
     type: "article-journal",
     title:
@@ -5776,6 +5806,19 @@ export const references: CSLData[] = [
     publisher: "Cambridge University Press",
     issued: { "date-parts": [[1992]] },
     ISBN: "9780521477390",
+  }),
+
+  ref({
+    id: "crow1970",
+    type: "article-journal",
+    title: "Stability theory for a pair of trailing vortices",
+    author: [{ family: "Crow", given: "S. C." }],
+    "container-title": "AIAA Journal",
+    volume: "8",
+    issue: "12",
+    page: "2172-2179",
+    issued: { "date-parts": [[1970]] },
+    DOI: "10.2514/3.6083",
   }),
 
   ref({

@@ -83,7 +83,7 @@ import pyhecke.gram as gram  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402  (canonical q0, via substrate path)
 
 z_live = float(gram.z)
-z_formula = 1.0 / (float(Q0) ** 0.5 + float(Q0) ** (-0.5))
+z_formula = Q0**3 / (Q0**2 + 1)
 z_canonical_ok = abs(z_live - z_formula) < 1e-12
 
 # symbolic: [2]_v as bracket
@@ -176,3 +176,20 @@ for kk, val in assertions.items():
 print(f"\nallPassed: {witness['allPassed']}")
 print(f"\nVERDICT: {verdict}")
 print(f"\nwitness -> {out}")
+
+# Exit non-zero when an assertion fails.  Bean qou-9d6h.
+#
+# This probe wrote `allPassed: False` and exited 0, so the convention-C
+# regeneration harness recorded it `ok` (25/29 on the 2026-08-11 run) and the
+# failure was visible only to someone opening the witness. The failing check is
+# not incidental: `z_canonical_equals_pyhecke_gram_z` is the live detector for
+# the `pyhecke` C/D split (`qou-5wpk`) -- the pure-Python `gram.z` is convention
+# C (0.4993203341836945) while the installed `pyhecke_native.markov_z` returns
+# convention D (0.6126880371464652). Silent success on that check is exactly the
+# failure shape this campaign exists to find, so it is now loud.
+#
+# Expect this to stay red until `qou-w8zz` lands.
+if not witness["allPassed"]:
+    failed = [k for k, v in assertions.items() if not v]
+    print(f"\nFAILED assertions: {', '.join(failed)}")
+    sys.exit(1)

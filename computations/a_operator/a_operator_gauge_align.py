@@ -64,6 +64,19 @@ import a_operator_categorical as aoa  # noqa: E402
 EXACT_TOL = mp.mpf("1e-25")
 
 
+
+def _d_pn(h):
+    """Colour-weighted p-n interface shift -h(1/2 - delta/4) (qou-gdtb).
+
+    The interface here is the PHYSICAL p-n bridge (the docstring's
+    "reconstructs chi^lambda exactly (deuteron, 1.5e-49)"), so it must carry
+    the same colour weighting the canonical braid word emits. It previously
+    used the colour-blind -h/2; that agreed to 1.5e-49 only because the chi
+    path was colour-blind too. Both are now weighted.
+    """
+    from canonical_braid_crossings import _avg_color_delta
+    return -h * (1 - _avg_color_delta() / 2) / 2
+
 def _kron(A: "mp.matrix", B: "mp.matrix") -> "mp.matrix":
     """Kronecker product of two mpmath matrices."""
     ra, ca = A.rows, A.cols
@@ -324,7 +337,7 @@ def gauge_aligned_A_combiner_general(lam: tuple[int, ...], n_inner: int,
     P_in = aoa._lagrange_projectors(C_in, ev_in, dim)
     P_bl = aoa._lagrange_projectors(C_bl, ev_bl, dim)
     # Interface I_pn = σ_{n_inner-1} − (h/2)·1 (the bridge generator).
-    I_iface = mats[n_inner - 1] - (h / 2) * mp.eye(dim)
+    I_iface = mats[n_inner - 1] + _d_pn(h) * mp.eye(dim)
     null_tol = mp.mpf("1e-30")
     out = {}
     for mu in ev_in:
@@ -552,7 +565,7 @@ def gauge_aligned_A_combiner_general_cyclic(lam: tuple[int, ...], n_inner: int,
     C_bl = _transposition_class_sum(mats, n_inner, n - 1)
     P_in = aoa._lagrange_projectors(C_in, ev_in, dim)
     P_bl = aoa._lagrange_projectors(C_bl, ev_bl, dim)
-    I_iface = mats[n_inner - 1] - (h / 2) * mp.eye(dim)
+    I_iface = mats[n_inner - 1] + _d_pn(h) * mp.eye(dim)
     tol = mp.mpf("1e-30")
     out = {}
     for mu in ev_in:
@@ -617,7 +630,7 @@ def gauge_aligned_A_combiner_general_rust(lam: tuple[int, ...], n_inner: int,
         sig = mp.mp.dps
         q = mp.mpf(q_str)
         h = q - 1 / q
-        d_pn = mp.nstr(-h / 2, sig)
+        d_pn = mp.nstr(_d_pn(h), sig)
         ev_in = _classsum_eigenvalues(n_inner, q_str, dps)
         ev_bl = _classsum_eigenvalues(n_block, q_str, dps)
         p_in, p_bl = partitions_of(n_inner), partitions_of(n_block)
@@ -664,7 +677,7 @@ def gauge_aligned_A_combiner(lam: tuple[int, ...], q_str: str,
     C_bl = aoa._class_sum_C2(mats, 3, 4)
     P_in = aoa._lagrange_projectors(C_in, ev, dim)
     P_bl = aoa._lagrange_projectors(C_bl, ev, dim)
-    I_iface = mats[2] - (h / 2) * mp.eye(dim)     # pn interface I = σ_2 − (h/2)·1
+    I_iface = mats[2] + _d_pn(h) * mp.eye(dim)     # pn interface I = σ_2 − (h/2)·1
     null_tol = mp.mpf("1e-30")
     out = {}
     for mu in ev:
@@ -764,7 +777,7 @@ def verify_combiner_identity(dps: int = 50) -> dict:
         mats6, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
         if dim == 0:
             continue
-        I_iface = mats6[2] - (h / 2) * mp.eye(dim)
+        I_iface = mats6[2] + _d_pn(h) * mp.eye(dim)
         Acomb = gauge_aligned_A_combiner(lam, q_str, dps)
         if any("error" in v for v in Acomb.values()):
             return {"all_passed": False,
@@ -847,7 +860,7 @@ def verify_combiner_h9(lambdas=None, dps: int = 50) -> dict:
         mats9, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
         if dim == 0:
             continue
-        I_iface = mats9[5] - (h / 2) * mp.eye(dim)        # bridge gen 5
+        I_iface = mats9[5] + _d_pn(h) * mp.eye(dim)        # bridge gen 5
         Ac = gauge_aligned_A_combiner_general(lam, 6, 3, q_str, dps)
         if any("error" in v for v in Ac.values()):
             return {"all_passed": False, "error": "intertwiner failed λ=" + str(list(lam))}

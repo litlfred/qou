@@ -72,9 +72,19 @@ at `q*`**.
 ## What survives and is sharpened
 
 The **non-circular core is unchanged**: `q*` is a fixed **simple** zero of the
-deterministic bar-odd extractor — the CS→0 / ε=0 point — a third, decay-sector
+deterministic bar-odd extractor — the CS→0 / ε=0 point ~~— a third, decay-sector
 determination of q₀ (per capstone result 4; the μ-p tension becomes a μ-p-Q_β
-trio). The swing and `q*` are **separate facts that merely coincide at `q*`**:
+trio)~~.
+
+> **[WITHDRAWN 2026-08-15 — PR #5074, bean `qou-kh7e`, registry §9f.]** Capstone
+> result 4 is withdrawn at its source. The extractor is deterministic *given*
+> experimental `Q_β`, and `q*` is the zero of `c₃ + Vol(4₁)`, so it presupposes
+> (H1); it is not a third determination and μ–p is a **two-way** tension. Note
+> the wording above — *"the **non-circular** core"* — is the claim that fails:
+> the core is circular in exactly this respect. Everything else in this
+> paragraph, including the separation of the swing from `q*`, is unaffected.
+
+The swing and `q*` are **separate facts that merely coincide at `q*`**:
 the swing is the extractor's `1/u³` artifact, `q*` is where its smooth numerator
 crosses zero. The synthesis's shared-target claim (c₃ and q₀ both point at `q*`)
 is untouched; only the "swing = signature of a pole" sub-claim is retired.

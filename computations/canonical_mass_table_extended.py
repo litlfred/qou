@@ -67,7 +67,7 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 # package rather than via the witness_base back-compat shim (which
 # re-exports the identical class). Bootstrap the in-repo package path —
 # mirrors low_isotopes_binding_sweep.py.
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
@@ -163,9 +163,50 @@ def compute_tr_m_canonical(
         # are Rust-backed and MPFR. The returned `method_used` records
         # the per-atom route ("laurent_q_rust" or "branching").
         eff = "laurent_q_rust" if (Z + N) < 2 else "branching"
-        return compute_tr_m_canonical(
+        res = compute_tr_m_canonical(
             Z, N, label, dps=dps, timeout_sec=timeout_sec, method=eff,
         )
+        # Fall back to the sympy H_3 path when the Rust extension is simply
+        # ABSENT. This is narrow on purpose and does NOT reopen the PR #886
+        # decision below: #886 declined an automatic chain out of `Case C`,
+        # a MATHEMATICAL condition where the Rust kernel is inapplicable and
+        # the right answer may differ. A missing `pyhecke_native` is an
+        # ENVIRONMENT capability, not a case distinction -- the sympy path
+        # computes the same object, and for p and n it agrees exactly with
+        # `laurent_q` to every digit printed.
+        #
+        # Only `auto` falls back. An explicit `--method laurent_q_rust` still
+        # errors, because there the caller asked for that kernel by name.
+        # `method_used` carries the substitution into the witness so the
+        # route is recorded rather than silently swapped.
+        val, wall, err, used = res
+        # Trigger on ABSENT *or* REFUSING native. #5055 (qou-w8zz) makes the
+        # native dispatch raise deliberately rather than run, because the
+        # Python side is on convention D while the Rust crate diverges
+        # (`trace_weights` ends `z*z*z`, and `Q_0` is muon-pinned), so merely
+        # having the wheel installed would change results per-machine.
+        # `QOU_ALLOW_NATIVE_DIVERGENCE=1` overrides it there.
+        #
+        # A refusal lands in the catch-all `except Exception` below, whose
+        # message does NOT contain "pyhecke_native missing" -- so keying the
+        # fallback on that phrase alone would let a refusal through, and
+        # `main()` silently SKIPS any atom with a non-empty err. The row would
+        # vanish from the table with no failure. Matching the divergence
+        # marker too keeps the fallback firing for the case it exists to
+        # handle: the sympy path is correct, just slower.
+        _native_unavailable = err and (
+            "pyhecke_native missing" in err
+            or "NATIVE_DIVERGENCE" in err
+            or "native divergence" in err.lower()
+        )
+        if val is None and _native_unavailable:
+            v2, w2, e2, u2 = compute_tr_m_canonical(
+                Z, N, label, dps=dps, timeout_sec=timeout_sec,
+                method="laurent_q",
+            )
+            if v2 is not None:
+                return v2, w2, None, f"{u2} (auto-fallback: {used} unavailable)"
+        return res
 
     if method == "laurent_q_rust":
         try:
@@ -462,6 +503,17 @@ def main() -> int:
         "laurent_q_rust": "pyhecke-native v0.9.0 tr_m_atomic_mpfr (Tier 1.A Rust + MPFR) + mpmath y_λ (MPFR-50dps)",
         "rust_f64":  f"Rust hecke-canonical-chi (f64) + mpmath y_λ",
         "rust_mpfr": f"Rust hecke-canonical-chi (MPFR-50dps) + mpmath y_λ",
+        # `branching` is this script's DEFAULT method and `auto` is the
+        # documented route for mixed nucleon+composite sets, yet neither had
+        # an entry -- so the default invocation wrote "unknown method
+        # 'branching'" into its own witness `description`, i.e. the provenance
+        # string disclaimed the run that produced it.
+        "branching": "operator-valued Wenzl branching combiner (canonical "
+                     "pipeline) + mpmath y_λ",
+        "auto": "per-atom route: A<2 -> direct H_3 Hoefsmit "
+                "(laurent_q_rust, falling back to laurent_q when "
+                "pyhecke_native is absent); A>=2 -> operator-valued Wenzl "
+                "branching combiner; + mpmath y_λ",
     }.get(args.method, f"unknown method '{args.method}'")
 
     # Pre-load upstream witnesses through the builder so their

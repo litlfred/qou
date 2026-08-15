@@ -7,7 +7,7 @@ from hecke_symbolic import q as qsym, HA as H_SYMB, z_markov as Z_SYMB
 
 q0 = sp.Float(str(Q), 50)
 h0 = q0 - 1/q0
-z0 = 1/(sp.sqrt(q0) + 1/sp.sqrt(q0))
+z0 = q0**3 / (q0**2 + 1)
 print("q0 =", q0, " h0 =", sp.N(h0, 25), " z0 =", sp.N(z0, 25))
 
 

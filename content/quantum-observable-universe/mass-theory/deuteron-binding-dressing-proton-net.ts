@@ -31,6 +31,32 @@ export default proposition({
         "stands). Lean not machine-verified locally (Mathlib cache " +
         "unavailable in sandbox); CI confirms.",
     },
+    {
+      kind: "note",
+      date: "2026-08-09",
+      body:
+        "Lean sibling: archimedean specialisation over $\\mathbb{R}$ " +
+        "(AGENTS.md §7c). The $\\mathbb{R}$ is inherited from the " +
+        "`BorromeanQuark` class (`QOU.ParticleInteractions." +
+        "neutron_qvalue_symbolic`) and is load-bearing **here**, not just " +
+        "upstream: the $Q$-value ansatz is stated with an absolute value, " +
+        "$\\mathfrak{Q}_\\beta = |\\Delta(\\mathrm{net})| \\cdot " +
+        "\\mathfrak{E}_0$, and `qbeta_eq_E0_h_net_p` discharges it via " +
+        "`abs_of_nonpos` using the class's substrate-regime *order* " +
+        "hypotheses $0 < h$ and $h < 2$ (which give " +
+        "$\\mathrm{net}(p) = 1 - h/2 > 0$). Strip the order and the " +
+        "$|\\cdot|$ cannot be resolved, so the theorem does not survive to " +
+        "a generic `CommRing`. Two further constructs need at least a " +
+        "field: `binding_dressing_eq_qbeta_over_h` divides by $h$ " +
+        "(`field_simp`, $h \\neq 0$), and $\\mathfrak{E}_0 = m_e/(q(q-1))$ " +
+        "divides by $q(q-1)$. What *is* pre-archimedean is the first " +
+        "identity, $\\Delta(\\mathrm{net}) = -h\\,\\mathrm{net}(p)$ " +
+        "(`delta_net_eq_neg_h_net_p`), proved by `ring` alone with no " +
+        "order and no division — it would restate verbatim over any " +
+        "commutative ring carrying $h$, and it is the structural content " +
+        "the block actually claims (dressing $\\leftrightarrow$ " +
+        "$Q$-value separated by the single Hecke factor $h$).",
+    },
   ],
   tags: [
     "binding",

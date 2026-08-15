@@ -7,13 +7,20 @@ In the binding convention the inter-nucleon crossings are Hecke elements
 not braid generators. The dim-independent Rust binding character
 `chi_q_atomic_all_partitions` evaluates `tr_λ(Π(c·σ+d·1))` for every λ⊢n in a
 single call, with **no dim×dim seminormal** (the matrix-M producer is infeasible
-at n = 12, dims to 7700). That is the default, fast path here (all 77 λ ≈ 10 s,
-f64), and resolves the completeness of the binding cache (bean `b0vf`,
-previously 27/77).
+at n = 12, dims to 7700). It resolves the completeness of the binding cache
+(bean `b0vf`, previously 27/77).
 
-The default precision is the f64 Rust binding character; per-λ values agree with
-the matrix-M 50-dps reference (the feasible-λ subset) to the f64 floor, which the
-gate checks. A 50-dps per-λ pass for **all** 77 λ is available under `--exact`:
+The default is the **MPFR** atomic character
+`chi_q_atomic_all_partitions_mpfr` at 50 dps, not the f64 one: the f64 call is
+the *gate* the MPFR result is checked against, to the f64 floor. Budget the
+runtime accordingly — 50 dps over all 77 λ⊢12 (dims to 7700) runs in tens of
+minutes, not the ≈10 s the f64 atomic path takes. (This paragraph previously
+described the f64 path as the default and the gate as the reference, which is
+the reverse of what the code does; a regeneration run read it as a promise of
+~10 s and recorded a 900 s timeout as a suspected hang.)
+
+A 50-dps per-λ pass for all 77 λ by explicit branch expansion is available
+under `--exact`:
 it reconstructs the binding word at full MPFR precision, collapses each maximal
 same-generator run `Π(c·σ+d)` to a linear `a·σ + b·1` via `σ²=h·σ+1`, expands the
 binomials into sign-only braid branches, and accumulates the dim-independent
@@ -41,6 +48,12 @@ import pyhecke_native as pn  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+mp.mp.dps = 50
 
 GATE_F64 = mp.mpf("1e-5")   # f64 char vs the 50-dps matrix-M reference (rel·|χ|)
 

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T19:39:57.807945+00:00",
-  "commitSha": "757490e9367c738533bf2a8b64d17a3c4dc97438",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-11T11:15:27.611317+00:00",
+  "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
   "assertions": [
     {
       "name": "counit_eps_E0_eq_closed_form",
@@ -24,9 +24,9 @@
     },
     {
       "name": "trace_substrate_residual_pct",
-      "computed": -55.8385498026049,
+      "computed": -43.157175337586516,
       "expected": -56.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1.0,
       "unit": "percent",
       "source": "PR #2363 audit (−56 %)"
@@ -40,12 +40,12 @@
       "source": "ℏ_q²/(1−ℏ_q²) ≈ 1 % truncation bound"
     }
   ],
-  "allPassed": true,
-  "durationMs": 9,
+  "allPassed": false,
+  "durationMs": 8,
   "computation": "qbeta-counit-substrate-consistency",
   "scriptFile": "qbeta_counit_substrate_consistency.py",
-  "scriptHash": "ba8fc62391d9",
-  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "scriptHash": "1106faaf3dd5",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,8 +55,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Q_β counit/trace consistency at the proton-anchored substrate q₀: reproduces the merged PR #2363 +0.17 % counit and −56 % trace signatures at the live anchor (confirming non-staleness), and pins the N=0 truncation remainder bound O(ℏ_q²/(1−ℏ_q²)) ≈ 1 % that the open convergence leg must respect.",
   "auditOnly": "docs/audits/2026-06-18-qbeta-counit-substrate-consistency.md",
@@ -71,14 +74,14 @@
     "h": "0.20906029879563931543084621312967494385975749526302",
     "hbar_q_sq": "0.0098171864542750738105690571795642528890492845753979",
     "E0_MeV": "4.1859813632944758969450621587590084101434868908796",
-    "z_substrate": "0.49932033418369445241344268025766630375194816404153",
+    "z_substrate": "0.61268803714646525159582986394589924802630839154506",
     "eps_reduction_content": "-0.18720719452937832072983654529098078897565051490627",
-    "trM_at_z_substrate": "-0.082534953992920643132107491511112447749553880893489",
-    "gap_eps_minus_trM": "-0.10467224053645767759772905377986834122609663401278",
+    "trM_at_z_substrate": "-0.10623563984809279089214198716055189439937583839846",
+    "gap_eps_minus_trM": "-0.080971554681285529837694558130428894576274676507816",
     "counit_qbeta_MeV": "0.78364582737462121307493975134139689052573644103029",
-    "trace_qbeta_MeV": "0.34548977923473280069536065221504603754060098654494",
+    "trace_qbeta_MeV": "0.44470040852178040910096221302494277902490277736446",
     "counit_residual_pct": 0.1677567847474663,
-    "trace_residual_pct": -55.8385498026049,
+    "trace_residual_pct": -43.157175337586516,
     "N0_truncation_bound_pct": 0.9914519137249935,
     "E0_derived_vs_cal_gap_pct": 0.1677567847474663
   },

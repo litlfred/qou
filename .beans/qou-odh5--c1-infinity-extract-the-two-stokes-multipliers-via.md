@@ -1,7 +1,7 @@
 ---
 # qou-odh5
 title: 'C1 infinity: extract the TWO Stokes multipliers via q-Borel/theta resummation (leading blocks now known)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-06T23:30:00Z
@@ -82,3 +82,119 @@ is only a sensible target now that the unknown is finite-dimensional.
   `docs/coordination/2026-07-17-1ppq-program-ownership-map.md`. Post intent
   and name the distinct angle before attacking; measured research overlap is
   permitted per AGENTS.md but must be deliberate and visible.
+
+
+---
+
+## STEP 2 LANDED (PR #4647) — the singularities are located
+
+`computations/qbeta/c3_w2_c1_qborel_singularity.py` + witness, 4/4 assertions.
+
+**q-Gevrey order = Newton slope = ½.** Fit `-log_q|b_m| = A m² + Bm + C` on
+m ∈ {600,700,800} at 500 dps gives **A = 0.25 exactly**. The slope is an
+algebraic invariant of the operator; the Gevrey order is the measured decay of
+its solutions. They agree — an independent cross-check of step 1.
+
+(Subtlety: the naive reading gives ½ not ¼. One expects
+`b_{m+2} ≈ K q^{−m} b_{m+1}`. But `b_{m+1}/b_m ~ q^{−m/2} → 0`, so
+`b_{m+1}+b_m ≈ b_m` and the recurrence is effectively **two-step**,
+`b_{m+2} ≈ K q^{−m} b_m`, halving the exponent.)
+
+**Two nearby singularities — the sector structure is visible.** With
+`c_m = b_m q^{m(m−1)/4}` the level-½ q-Borel transform converges. Within a
+branch `c_{m+1}/c_m` settles to ~1e-10 by m=400 and holds to m=900. But the
+limit **differs between branches at 3.7e-4**:
+
+    b^(1) (1,0)   ξ_s = 2.36571876588619
+    b^(2) (0,1)   ξ_s = 2.36485280484881
+    mix   (1,1)   ξ_s = 2.36515076658802
+
+A single simple pole would be branch-independent. Branch-dependence is the
+signature of **two nearby singularities**, each branch a different linear
+combination — exactly what `B₁,₂ = ±√(q−1)/q` predicts. `q^{33/4} = 2.36507786`
+sits inside the spread.
+
+## REMAINING — this is now the whole task
+
+Turn "two singularities are there" into **two complex numbers**:
+
+1. **Resolve the pair.** They are ~3.7e-4 apart, so the plain ratio test
+   returns a blend. Use a two-pole Padé (or a 2×2 Hankel/Prony fit on the
+   `c_m`) to separate `ξ_s^{(1)}, ξ_s^{(2)}` individually.
+2. **Match to sectors.** Check the separated pair against the exponentials
+   indexed by `B₁,₂ = ±√(q−1)/q`, i.e. verify each singularity sits on the
+   q-spiral `ξ q^ℤ` attached to its leading block.
+3. **Take residues.** The Stokes multipliers are the connection data — the
+   jump between the two Borel sums across the singular direction, i.e. the
+   residues at the separated singularities.
+4. **Cross-check** against `qou-105e` (completed): FW eq(73) gives the `4₁`
+   Stokes integer q-series as the divisor-function Lambert series with
+   constant term `−1/4`. Independent handle; use it.
+
+Anti-fit gate unchanged: a multiplier obtained by inverting `c₃` against its
+measured value is a fit, must be labelled one, and may not be wired.
+
+
+---
+
+## STEP 4 — theta-normalised route attempted; HONEST NEGATIVE (2026-08-07)
+
+After the step-3 negative (the antipodal pair is two-step decoupling, not
+sectors), the next idea was that the sector-mixing information *is* the
+exponentially suppressed `b_{m+1}` coupling that the two-step asymptotic
+discards. With `(b₀,b₁) = (1,0)` the odd subsequence is generated **purely**
+by that coupling, so it isolates the mixing.
+
+**Measured.** `t_m = b_{m+1}/b_m` obeys the Riccati recurrence
+`t_{m+1} = (1 + 1/t_m)/[m+2]_q`, and
+
+    b_{m+1}/b_m · q^{m/2}  →  C
+
+converges, with `d(log_q t_m)/dm = −0.5` exactly. Stable to **5.5e-15**
+within a branch by m = 800.
+
+**But C is BRANCH-DEPENDENT:**
+
+    C from (1,0) = 0.4227045134950364687
+    C from (0,1) = 0.4228592992974597357
+    relative spread = 3.7e-4
+
+A Stokes multiplier is a property of the module and its connection data, not
+of which solution you happened to start from. **A branch-dependent constant
+cannot be one.** So `C` is not the target, and this route does not reach it
+either.
+
+**Leading-order structure of C.** The Riccati fixed point gives
+`C² = (q − q⁻¹)·q^{−3/2}`, i.e. `C_pred = 0.42281446251`. That sits *between*
+the two measured branch values and agrees with each only to ~2.6e-4 — the
+same scale as the branch spread itself.
+
+**The recurring 3.7e-4.** This same spread has now appeared in three
+independent estimators: the step-2 single-pole ratio test, the step-3 Prony
+blend, and this `C`. It is a real feature of the problem at that scale. What
+it *is* has not been established — and identifying it is probably the actual
+next question, ahead of any further attempt at the multipliers.
+
+## Process note (worth recording)
+
+Three times across steps 2–4 I wrote an interpretive conclusion into the
+probe's output *before* seeing the numbers, and the data contradicted it each
+time: "ratios are NOT settling" (they settled to 10 digits), "same
+singularity ⇒ module invariant" (branches disagreed), "SAME ⇒ module
+invariant" for `C` (branches disagreed again). Each was caught, but only
+because the numbers were printed alongside. **Print the measurement; derive
+the label afterwards.**
+
+## Status
+
+`qou-odh5` remains **open**. Two routes are now closed with scope-(a)
+negatives — Prony/ratio (step 3) and the Riccati mixing constant (step 4).
+Neither touches steps 1–2, which are algebraic and stand:
+`B₁,₂ = ±√(q−1)/q`, and q-Gevrey order = Newton slope = ½.
+
+The untried route remains the genuine one: construct the theta-normalised
+canonical solutions in the ramified single-slope picture (`QBorelKernel`,
+level d=2) and read the connection matrix between them. Nothing attempted so
+far actually builds those solutions — steps 3 and 4 both tried to shortcut
+past them with asymptotics of the raw coefficients, and both failed for the
+same underlying reason: the sector data is not visible in `b_m` asymptotics.

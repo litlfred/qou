@@ -146,7 +146,7 @@ We tested three single-level approaches for the proton ($uud$) and neutron ($udd
 
 None of these single-level computations reproduce the neutron-to-proton mass ratio. The quantum dilogarithm $\Phi_q = \sum \log \lvert\hat{V}_i\rvert$ gives the correct binding energy differences between nuclei (Q-values at Level 0), but not single-nucleon absolute masses.
 
-The proton mass $938.272$ MeV in this paper derives from the pair Skein formula $m_p = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$. This requires the dressed quark mass $\mu_\mathfrak{u} \approx 311$ MeV as input, calibrated from CODATA $m_p$. The structural content (pair formula, splitting isolation, binding energy) is categorically derived; the absolute scale is calibrated.
+The proton mass $938.272$ MeV in this paper derives from the pair Skein formula $m_p = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$. This requires the dressed quark mass $\mu_\mathfrak{u} \approx 311$ MeV as input, calibrated from CODATA $m_p$. The structural content (pair formula, splitting isolation, binding energy) is categorically derived; the absolute scale is calibrated — consistent with absolute mass in MeV not being a framework prediction, the predictive content residing in the dimensionless ratios, with $m_e$ (CAL-1) setting the MeV scale by fiat.
 
 ## Candidate structures
 

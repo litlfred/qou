@@ -37,8 +37,8 @@
        [audit] docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md
        [audit] docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md
 -/
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Data.Subtype
 
 namespace QOU.BraidKnot
 
@@ -62,9 +62,14 @@ theorem alphaShift_T_2_4 : alphaShift 2 4 = 4 := by
 
 /-- A `q`-character function on the substrate: takes the
     substrate parameter `q` and the q-integer index `n`, returns
-    `[n]_q` in the ground field `R ⊇ ℚ(q)`.  Pre-Arch: `R`
-    abstract.  Closed form: `[n]_q = (q^n - q^{-n}) / (q - q^{-1})`. -/
-abbrev QChar (R : Type u) [Field R] : Type u := R → ℕ → R
+    `[n]_q` in the ground ring `R`.  Pre-Arch: `R` abstract.  Closed
+    form: `[n]_q = (q^n - q^{-n}) / (q - q^{-1})`.
+
+    §7c: only the ring multiplication of `R` is used below — the GMOR
+    factorisation `m_K²/m_π² = [m]_q·[n]_q` is a product, the closed form
+    of `[n]_q` itself is not formalised here — so `[CommRing R]` is the
+    weakest typeclass admitting the construction and no field is needed. -/
+abbrev QChar (R : Type u) [CommRing R] : Type u := R → ℕ → R
 
 /-- **Meson GMOR factorisation.**  The substrate-evaluated ratio
     `m_K² / m_π²` factors as a product of two q-character values
@@ -73,7 +78,7 @@ abbrev QChar (R : Type u) [Field R] : Type u := R → ℕ → R
     The class records the structural decomposition; the specific
     factorisation indices (`3` and `4`) and the q-character
     function are carried as substrate axioms. -/
-class MesonGMORFactorization (R : Type u) [Field R]
+class MesonGMORFactorization (R : Type u) [CommRing R]
     (mK2_over_mpi2 : R → R) (qChar : QChar R)
     (m n : ℕ) : Prop where
   /-- `m_K² / m_π² (q) = [m]_q · [n]_q` at the substrate value. -/
@@ -120,7 +125,7 @@ instance : MesonForceCarrierPair where
     requires the residue / resolvent step shared with PRs #1444
     + #1445 — the smaller-scope open math). -/
 theorem meson_ratio_via_alpha_shift
-    {R : Type u} [Field R] (mK2_over_mpi2 : R → R) (qChar : QChar R)
+    {R : Type u} [CommRing R] (mK2_over_mpi2 : R → R) (qChar : QChar R)
     [hF : MesonGMORFactorization R mK2_over_mpi2 qChar 3 4]
     [_hC : MesonForceCarrierPair] :
     ∀ q : R, mK2_over_mpi2 q = qChar q (alphaShift 2 3) * qChar q (alphaShift 2 4) := by
@@ -132,7 +137,7 @@ theorem meson_ratio_via_alpha_shift
     sharing the same q-character function and the same
     GMOR-via-α_shift identification agree pointwise. -/
 theorem meson_ratio_subsingleton
-    {R : Type u} [Field R] (qChar : QChar R) (m n : ℕ) :
+    {R : Type u} [CommRing R] (qChar : QChar R) (m n : ℕ) :
     Subsingleton {f : R → R //
       ∃ _ : MesonGMORFactorization R f qChar m n, True} := by
   refine ⟨fun ⟨f, h⟩ ⟨f', h'⟩ => ?_⟩

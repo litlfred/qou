@@ -101,8 +101,11 @@ def generate_cache() -> dict:
     from pyhecke.gram import (
         # Wedderburn-Artin
         W_SYM, W_STD, W_ALT, z,
-        # Gram matrix
-        G, G_INV,
+        # Gram matrix. `G_INV` is GONE under trace convention D (2026-08-15):
+        # the form is singular, so a 6x6 inverse does not exist. `G_PINV` is
+        # the inverse on the quotient H_3(q)/rad; `RADICAL` is the null
+        # direction it quotients by.
+        G, G_PINV, RADICAL,
         # NF basis
         NF_BASIS, NF_NAMES, TR_M,
     )
@@ -154,7 +157,15 @@ def generate_cache() -> dict:
 
         # ── Gram matrix (6x6) ───────────────────────────────
         "gram_matrix": G.tolist(),
-        "gram_matrix_inv": G_INV.tolist(),
+        # `gram_matrix_inv` is DROPPED, not repointed. Under convention D the
+        # form is singular and that key's value does not exist; writing the
+        # pseudoinverse under the old name would hand every existing consumer
+        # a different object under a name they already trust — the same error
+        # that `G_INV` -> `G_PINV` was deliberately NOT made as a rename.
+        # A reader keyed on `gram_matrix_inv` should now fail loudly (KeyError)
+        # and choose between the two new keys explicitly.
+        "gram_matrix_quotient_inv": G_PINV.tolist(),
+        "gram_radical": RADICAL.tolist(),
 
         # ── Figure-eight BW modification ─────────────────────
         "fig8_a_bulk": FIG8_A_BULK,

@@ -129,23 +129,35 @@ cross-referenced so they are never conflated again.
   open odd channel is the exact D-ladder, now proved non-holonomic.** The
   [capstone](../audits/2026-07-12-c3-wall-resolution-capstone.md) (#3600/#3636/#3654):
   the `dc₃/dq ≈ 4.66×10⁶` hypersensitivity is the `1/u³` ladder inversion
-  magnifying a **smooth** numerator zero (`S′(q*) = 2.37 × (1/u³)`) — there is
+  magnifying a **smooth** numerator zero (`S′(q*_S) = 2.37 × (1/u³)`) — there is
   no singular substrate→u map; do not re-open the "singular wall" search. The
   bar-odd part factors `S = h·D(ũ)` (KC21); its sign-flip is structural
-  (bar-odd parity, Lean-proved), and the `S = 0` point `q*` is a third,
-  decay-sector determination of q₀ (μ–p–Q_β three-way). The bar-even ℚ(√3)
-  ladder `D(ũ)` is exact through `d₂₁` and **refuted as low-order
-  (q-)holonomic in every tested class** (KC22) — so a genuine c₃ closure, if
-  any, is transcendental/resurgent (Écalle class), not a q-difference
-  equation. **No tier change**: c₃ stays EMPIRICAL/REFUTED-as-real-q; these
-  rows narrow the search class, they do not produce a value.
+  (bar-odd parity, Lean-proved), and the `S = 0` point `q*_S` ≈ 1.10998 (**not**
+  KC22's `q*_ρ` ≈ 1.48989 — §9a) is **NOT** an independent third determination
+  of q₀ (**§9f** — it is conditional on (H1), since `q*_S` is *defined* as the
+  root of `c₃ + Vol(4₁)`; the μ–p–Q_β "three-way" reading is withdrawn). The bar-even ℚ(√3)
+  ladder `D(ũ)` is exact through `d₂₁`, **convergent** (radius `ρ = ũ(q*_ρ)`,
+  CORRECTED 2026-08-09), and **refuted as low-order (q-)holonomic in every
+  tested class** (KC22) — so a genuine c₃ closure, if any, lies outside the
+  low-order (q-)holonomic and q-difference classes that were tested. It is
+  **not** thereby resurgent: the "transcendental/resurgent (Écalle class)"
+  inference this bullet used to draw is **WITHDRAWN 2026-08-09** — it rested
+  on a divergence the ladder does not have (`κ = 0`). What KC22 supplies
+  instead is the closed form `D(w) = φ(w)log(1−w/ρ) + ψ(w)` with algebraic
+  `φ`, `ψ` over a degree-12 field — itself an example of an element that is
+  convergent yet not low-order P-finite. **No tier change**: c₃ stays
+  EMPIRICAL/REFUTED-as-real-q; these rows narrow the search class, they do
+  not produce a value.
 - **`c_3 = −Vol(4₁) + u − (10/3)u²`** ([`2026-07-08-qbeta-keystone-derivation.md`](../audits/2026-07-08-qbeta-keystone-derivation.md),
   landed with an over-scoped "PROVEN/exact" tier) is a **muon-anchor near-match**,
   **re-scoped 2026-07-11**: it is anchor-blind (≈ −2.0216 at both anchors) while
   c_3 swings 2.43%, so it matches muon (0.07%) but misses proton (2.3%) and fails
-  the §8 guard. The `−Vol(4₁)` piece is the solved bar-even part and `10/3 =
-  lim_{q→1}[10]_q/[3]_q` is an exact writhe-ratio identity — both real; only the tier is
-  corrected. c_3's status stays **EMPIRICAL/REFUTED as real-q** (this row). See
+  the §8 guard. `10/3 = lim_{q→1}[10]_q/[3]_q` is an exact writhe-ratio identity
+  — real, and unaffected. The `−Vol(4₁)` piece was called "the solved bar-even
+  part"; **re-scoped 2026-08-14 to *motivated, not solved*** — the bar-split is
+  not determinable from anchor data at all, and its geometric backing is
+  muon-only (**§9c**, the `qou-qb8f` pointer; **§9b**).
+  c_3's status stays **EMPIRICAL/REFUTED as real-q** (this row). See
   [`2026-07-11-qbeta-c3-keystone-rescope-anchor-blind.md`](../audits/2026-07-11-qbeta-c3-keystone-rescope-anchor-blind.md).
 
 ---
@@ -291,5 +303,378 @@ witness) · `conditional` (Lean implication; hypothesis named, NOT established)
 | KC13 | `z` exactly bar-even; `κ_{(2,1)}` exactly bar-odd; no scalar z-functional sources the odd channel | proved-lean (`z_bar_invariant`, `kappa21_bar_odd`, ZBarParity) | even resp. odd / `1/2` resp. `0` | PR #3449 |
 | KC14 | `f(z)·κ_{(2,1)}` order-blocked at q=1 (odd total order vs finite nonzero shadow) | symbolic-exact | — | PR #3449 (T3 witness) |
 | KC20 | bar-ODD carrier is **not a root-of-unity object**: `num = (q²−1)·R₁₂` (cyclotomic content exactly `q²−1`; `Φ₄=q²+1 ∤ num`, remainder `−64`), and `R₁₂ = q⁶·C(q²+q⁻²)` with `C(y)=y³−4y²+3y−2` **irreducible** (no rational root among RRT candidates). Degree-3 field ⇒ no quadratic anchor (golden `y=3`, silver `y=6`, q=1 `y=2`) is a root ⇒ real-q/quadratic `c_3` closures structurally excluded. **proved-lean**: the factorisation, `Φ₄ ∤ num`, the trace-cubic reduction, `C = C_Hopf + C_unknot`, and no-rational-root of `C`/`C_Hopf`. **symbolic-exact** (witness, not Lean): the sector attribution (the cubic is the **Hopf (2-crossing)** sector `C_Hopf=y³−6y²+10y−6`; unknot adds `C_unknot=2y²−7y+4`; virtual+trefoil vanish). The discriminants (`C: −152=−2³·19`, `C_Hopf: −76=−2²·19`, shared prime 19) are **Lean-certified since 2026-07-13** (`cubicDisc` + `cubicC_disc`/`cubicC_Hopf_disc`/`disc_shared_prime_19`, generic `CommRing`) | proved-lean (`numOdd_factor`, `numOdd_at_phi4_root`, `R12_eq_cubic_trace`, `cubicC_sector_decomp`, `cubicC_rrt_candidates_all_nonzero`, `cubicC_Hopf_rrt_candidates_all_nonzero`, `cubicC_disc`, `cubicC_Hopf_disc`, `disc_shared_prime_19`) + symbolic-exact (sector attribution) | — / — | PR #3467 ([audit](../audits/2026-07-07-zeta4-residue-lean-certificate-and-surviving-cubic.md); refines [2026-07-04 ζ₄ refutation](../audits/2026-07-04-zeta4-fibre-cyclotomic-refutation.md); complements KC19 affine ladder, PR #3473) |
-| KC21 | **the c₃ bar-odd part factors `S = h·D(ũ)`** — `h = q−q⁻¹` the anchor-blind bar-odd carrier, `D(ũ)` a bar-even ℚ(√3) ladder — and the "wall" is a representation artifact: the `dc₃/dq ≈ 4.66×10⁶` hypersensitivity is the `1/u³` ladder inversion over a **smooth** zero (`S′(q*) = 2.37×(1/u³)`); the sign-flip is **structural** (bar-odd: with `q = q₀+iε`, `S(−ε) = −S(ε)`, so no real q₀ produces it); the `S=0` point `q*` is a **third, decay-sector determination of q₀**; the Φ_b state-integral saddle supplies the `\|S\|` scale from geometry (`Im 𝔙 = 0` at real substrate, volume deficit `0.0094 ≈ \|S(muon)\|`), smooth + anchor-blind | proved-lean (`fig8Trace_im_odd`, `fig8Trace_im_real_zero`) + symbolic-exact (`S = h·D` split, `1/u³` prefactor, Φ_b saddle) | odd / `0` | PRs #3600/#3636/#3654 ([capstone](../audits/2026-07-12-c3-wall-resolution-capstone.md); [1/u³ audit](../audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md)) |
-| KC22 | **`D(ũ)` is NOT low-order (q-)holonomic in any tested class** — exact `d_k = a_k + b_k√3 ∈ ℚ(√3)` through `k=21`, **convergent, radius `ρ = 0.142799996644689688905720885779` (CORRECTED 2026-08-09)** — `ρ = ũ(q*)`, `q*` the unique real root > 1 of the irreducible degree-12 factor of the `Δ_net` numerator, a **`Q_b` zero** the 2026-07-12 singularity search omitted; the `≈0.143` ratio was the radius all along, not a `(k!)^C` shadow: no ℚ P-finite recurrence (separated `a_k`, `b_k`), no **coupled ℚ(√3)** matrix P-recurrence (`r≤2, D≤4`; `r=3, D≤3`; `r=4, D≤2` — exact, over-determined), no **q-holonomic** recurrence in base `3`, `1/3`, or classical `k` (`r≤3, E≤3`, prime-certified full rank) — even though the denominators are 3-smooth (`v₃(den d_k) ~ 1.5k`, Ohtsuki–Habiro). Denominator **2-adic valuation is parity-graded** (proved window `K=5`; conjecture class beyond; `p=3` ungraded ⇒ **2 is the unique graded prime**). Consequence: the (q-)holonomic search class is closed — that part stands, and is unaffected by the radius correction (a convergent series need not be holonomic; `φ(w)log(1−w/ρ) + ψ(w)` with algebraic `φ`, `ψ` over a degree-12 field is exactly the sort of element that is not low-order P-finite). ~~the odd-channel element is transcendental/**resurgent** (Écalle acceleration class), not a q-difference equation~~ — **the resurgent/Écalle inference is WITHDRAWN 2026-08-09**: it was drawn from the divergence, and the ladder is convergent (`k²Δ²log|d_k| → 1`, `kΔ² → 0`, so `κ = 0`). Closed form `D(w) = φ(w)log(1−w/ρ) + ψ(w)`, `φ(ρ) = 1/(2h*)`, `h* = q*−1/q* = 0.818706471352`, hence `d_k = −(1/(2h*))ρ^{−k}/k(1+O(1/k))` with no free parameters. The exact non-holonomicity, the 2-adic parity grading, and the Lean anchors are all untouched. **Log-closure loophole also closed (2026-07-14, owner-suggested):** `log D` and `ũD′/D` (exact `ℓ_k ∈ ℚ(√3)`, k≤20) are likewise not low-order coupled-ℚ(√3) P-finite nor q-holonomic in base `3`/`1/3`/`k` (same windows, prime-certified) — so `D` is not the exp of a low-order (q-)holonomic element either | symbolic-exact (exact rational linear algebra + prime-certified rank) + proved-lean 2-adic anchor (`DLadderTwoAdicGrading.bDen_two_adic_graded`; `three_not_parity_graded`; open `DLadderGradingConjecture`) | — / — | PR #3737 ([coupled-recurrence + 2-adic audit](../audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md); [divergence correction](../audits/2026-07-12-dladder-divergence-correction.md); **[convergence correction 2026-08-09](../audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md)**) |
+| KC21 | **the c₃ bar-odd part factors `S = h·D(ũ)`** — `h = q−q⁻¹` the anchor-blind bar-odd carrier, `D(ũ)` a bar-even ℚ(√3) ladder — and the "wall" is a representation artifact: the `dc₃/dq ≈ 4.66×10⁶` hypersensitivity is the `1/u³` ladder inversion over a **smooth** zero (`S′(q*_S) = 2.37×(1/u³)`); the sign-flip is **structural** (bar-odd: with `q = q₀+iε`, `S(−ε) = −S(ε)`, so no real q₀ produces it); the `S=0` point **`q*_S` ≈ 1.10998** (**NOT** KC22's `q*_ρ ≈ 1.48989` — see the glyph note under this table) is **NOT an independent determination of q₀** — it is the root of `c₃ + Vol(4₁)` and so presupposes (H1); the "third, decay-sector determination" reading is **WITHDRAWN 2026-08-15**, see **§9f**; the Φ_b state-integral saddle supplies the `\|S\|` scale from geometry (`Im 𝔙 = 0` at real substrate, volume deficit `0.0094 ≈ \|S(muon)\|`) — but that scale match is **muon-only and anchor-selective**, see the scale caveat below | proved-lean (`fig8Trace_im_odd`, `fig8Trace_im_real_zero`) + symbolic-exact (`S = h·D` split, `1/u³` prefactor, Φ_b saddle) | odd / `0` | PRs #3600/#3636/#3654 ([capstone](../audits/2026-07-12-c3-wall-resolution-capstone.md); [1/u³ audit](../audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md)) |
+| KC22 | **`D(ũ)` is NOT low-order (q-)holonomic in any tested class** — exact `d_k = a_k + b_k√3 ∈ ℚ(√3)` through `k=21`, **convergent, radius `ρ = 0.142799996644689688905720885779` (CORRECTED 2026-08-09)** — `ρ = ũ(q*_ρ)`, **`q*_ρ` ≈ 1.48989** the unique real root > 1 of the irreducible degree-12 factor of the `Δ_net` numerator, a **`Q_b` zero** the 2026-07-12 singularity search omitted (**NOT** KC21's `q*_S` ≈ 1.10998 — see the glyph note under this table); the `≈0.143` ratio was the radius all along, not a `(k!)^C` shadow: no ℚ P-finite recurrence (separated `a_k`, `b_k`), no **coupled ℚ(√3)** matrix P-recurrence (`r≤2, D≤4`; `r=3, D≤3`; `r=4, D≤2` — exact, over-determined), no **q-holonomic** recurrence in base `3`, `1/3`, or classical `k` (`r≤3, E≤3`, prime-certified full rank) — even though the denominators are 3-smooth (`v₃(den d_k) ~ 1.5k`, Ohtsuki–Habiro). Denominator **2-adic valuation is parity-graded** (proved window `K=5`; conjecture class beyond; `p=3` ungraded ⇒ **2 is the unique graded prime**). Consequence: the (q-)holonomic search class is closed — that part stands, and is unaffected by the radius correction (a convergent series need not be holonomic; `φ(w)log(1−w/ρ) + ψ(w)` with algebraic `φ`, `ψ` over a degree-12 field is exactly the sort of element that is not low-order P-finite). ~~the odd-channel element is transcendental/**resurgent** (Écalle acceleration class), not a q-difference equation~~ — **the resurgent/Écalle inference is WITHDRAWN 2026-08-09**: it was drawn from the divergence, and the ladder is convergent (`k²Δ²log|d_k| → 1`, `kΔ² → 0`, so `κ = 0`). Closed form `D(w) = φ(w)log(1−w/ρ) + ψ(w)`, `φ(ρ) = 1/(2h*_ρ)`, `h*_ρ = q*_ρ − 1/q*_ρ = 0.818706471352` (**NOT** KC21's `h*_S = 0.2090603174197`), hence `d_k = −(1/(2h*_ρ))ρ^{−k}/k(1+O(1/k))` with no free parameters. The exact non-holonomicity, the 2-adic parity grading, and the Lean anchors are all untouched. **Log-closure loophole also closed (2026-07-14, owner-suggested):** `log D` and `ũD′/D` (exact `ℓ_k ∈ ℚ(√3)`, k≤20) are likewise not low-order coupled-ℚ(√3) P-finite nor q-holonomic in base `3`/`1/3`/`k` (same windows, prime-certified) — so `D` is not the exp of a low-order (q-)holonomic element either | symbolic-exact (exact rational linear algebra + prime-certified rank) + proved-lean 2-adic anchor (`DLadderTwoAdicGrading.bDen_two_adic_graded`; `three_not_parity_graded`; open `DLadderGradingConjecture`) | — / — | PR #3737 ([coupled-recurrence + 2-adic audit](../audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md); [divergence correction](../audits/2026-07-12-dladder-divergence-correction.md); **[convergence correction 2026-08-09](../audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md)**) |
+
+### 9a. Glyph note — `q*`, `h*`, `ũ(q*)` name TWO points (added 2026-08-14)
+
+KC21 and KC22 are adjacent and both wrote `q*`, `h*` and `ũ(q*)` without
+qualification. They are **different points**, off by 1.34× / 3.92× / 15.1×:
+
+| glyph | **`q*_S`** — KC21, the `S = 0` point | **`q*_ρ`** — KC22, the `Q_b` zero |
+|---|---|---|
+| `q*` | `1.109978593031523288402…` | `1.489894799688365248225…` |
+| `h* = q* − 1/q*` | `0.2090603174197` | `0.818706471352` |
+| `ũ(q*)` | `0.0094539496177732` | `0.14279999664469` (`= ρ`) |
+| what it is | a third, **decay-sector** determination of q₀ (μ–p–Q_β three-way) | the D-ladder's **radius of convergence**; root of the degree-12 `Δ_net` factor |
+
+**Always subscript.** Attributes do not transfer between them (AGENTS.md
+§"Conditional-proved ≠ premise-established" rule 4): `q*_S` sits ~1e-8 from q₀
+and carries anchor meaning; `q*_ρ` is a singularity of `log R` and carries
+none. Verified in
+[`kc21_kc22_glyph_and_anchor_robustness_check.py`](../../computations/qbeta/kc21_kc22_glyph_and_anchor_robustness_check.py)
+(`q*_ρ` recomputed from the polynomial, not quoted).
+
+### 9b. Scale caveat — the Φ_b deficit → `|S|` match is anchor-selective (added 2026-08-14)
+
+> **⚠ SHARPENED + ATTRIBUTED 2026-08-15.** The original text here argued the
+> match "can hold at at most one anchor" because `|S_leak|` swings `4.075×`, and
+> called the gap a "26.3× disagreement". Two corrections, neither of which
+> changes the verdict:
+>
+> 1. **Not new, and previously uncited.** The mechanism was already established
+>    as **Route A** (2026-08-01) — the ratio is *anchor-offset arithmetic near
+>    the S-zero*, not a period — and is **Lean-proved sorry-free** in
+>    [`SLeakMagnitudeOffsetRatio.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/SLeakMagnitudeOffsetRatio.lean)
+>    (`linear_ratio_slope_independent`, `smooth_ratio_near_one`,
+>    `smooth_period_excluded_as_magnitude`). §9b restated it without the
+>    citation. The citation is now here.
+> 2. **The "26.3× disagreement" framing overstates what the proton value
+>    tests.** It presents `|S_leak(proton)|` as a meaningful target. It is not —
+>    see below. The correct objection is stronger than the one first given.
+
+KC21 cites the Φ_b state-integral saddle as supplying the `|S|` scale "from
+geometry … smooth + anchor-blind". The real defect is sharper: **`|S_leak|` at
+either anchor carries no scale content at all.**
+
+**`S_leak`'s zero lies BETWEEN the two anchors**, at `q*_S ≈ 1.109978593`, which
+sits **80.28 %** of the way from the proton pin to the muon pin — hence the
+opposite signs in the witness (`S_muon = +0.009683`, `S_proton = −0.039459`).
+Across that interval `S_leak` is **linear through the zero**, so its magnitude at
+an anchor is just `|slope| × |q_anchor − q*_S|`:
+
+| | value |
+|---|---|
+| `\|q_proton − q*_S\| / \|q_muon − q*_S\|` (lever arm) | **4.0700** |
+| measured `\|S_leak(proton)\| / \|S_leak(muon)\|` | **4.0751** |
+| agreement | **0.12 %** |
+
+**The "4.075× anchor swing" is that lever arm and nothing else** — Route A's
+result, and the content of `linear_ratio_slope_independent` (the slope
+*cancels*, so the ratio is pure offset arithmetic). It is set by where the
+calibration happens to place the anchors relative to `q*_S`, not by any property
+of `S_leak`. Consequently:
+
+| | value | status |
+|---|---|---|
+| `vol_deficit` (both anchors) | `0.0094025…` | a genuine geometric constant |
+| `\|S_leak(muon)\|` | `0.00968298` | `slope × 2.53e-9` — **no scale content** |
+| `\|S_leak(proton)\|` | `0.03945936` | `slope × 1.03e-8` — **no scale content** |
+
+The quoted 2.896 % agreement at the muon is therefore **not weak evidence for
+(H1); it is not evidence at all** — it is a constant compared against a
+near-zero residual whose size is a calibration accident. Equally, the 76.17 %
+"miss" at the proton is **not counter-evidence**, and the "26.3× disagreement"
+framing of the original text is withdrawn: it presented the proton number as a
+meaningful test.
+
+**Why the earlier "anchor-blind vs anchor-dependent" framing was circular.** Over
+the same `Δq = 1.28e-8`, the carrier `h·D` moves by `1.23e-9` (slope ≈ **0.096**
+— an ordinary smooth function) while `S_leak` moves by `0.0491` (slope ≈
+**3.84e6**, within 17.7 % of the corpus value `dc₃/dq ≈ 4.66e6`). So
+"anchor-blind" means *ordinary derivative* and "anchor-dependent" means *the
+`1/u³` ladder inversion* — a result the 2026-07-12 capstone already closed
+("the wall was never physical"). Casting it as an open obstruction re-imports a
+settled finding as a gate.
+
+**Calibration of the 2.9 %.** The deficit is **5.32× closer** to the ladder's own
+expansion variable `ũ₀ = 0.0094539…` (0.544 %) than to `|S(muon)|` (2.896 %).
+`ũ₀` carries no 4₁-volume content, so at that tolerance the match does not
+discriminate a geometric reading from a numerological one.
+
+The producing witness is honest — it records both anchors and says
+`"deficit 0.0094 ~ |S(muon)|"` explicitly. It was the KC21 summary that
+generalised a muon-only match into "the `|S|` scale".
+
+#### What the carrier mismatch actually is — a ZERO, not a magnitude
+
+The corpus note *"the carrier is anchor-blind (spread `1.23e-9`) and is NOT the
+swinging empirical `S`, so `S = h·D(ũ)` is schematic, not a tight identity"*
+(`qbeta-c3-qstar-k31-repin.witness.json`) is **right**, but not for the reason
+the wording suggests. The mismatch is not that one swings and the other does
+not — per the slope figures above, that comparison is just the `1/u³`
+hypersensitivity restated.
+
+The real mismatch: **`h·D(ũ₀) = −0.003486…` is a nonzero near-constant, while
+`S_leak` passes through zero between the anchors.** A nonzero constant cannot
+equal a function that crosses zero. That is a statement about the **location of
+the zero**, and it is checkable.
+
+**Consequence for any fibre-level attack.** The target is the zero location
+`q*_S`, **not** a magnitude. This is why magnitude-matching attempts have failed
+— they were matching a quantity (`|S_leak|` at an anchor) that carries no scale
+information.
+
+> **⚠ One sentence removed here, 2026-08-15.** This paragraph originally closed
+> with *"It also fits `q*_S`'s independent standing as the third, decay-sector
+> determination of q₀ (§3)."* That standing does not exist — `q*_S` is the root
+> of `c₃ + Vol(4₁)` and so presupposes (H1). See **§9f**. The sentence was added
+> in the same 2026-08-14 edit that corrected other errors in this section, which
+> is how a withdrawn claim got re-asserted inside its own correction.
+
+### 9c. `c₃^even = −Vol(4₁)` — the registry pointer (answers `qou-qb8f` (c))
+
+Bean [`qou-qb8f`](../../.beans/qou-qb8f--is-c3-even-derived-to-be-vol41-two-inequivalent-splits.md)
+asked whether the registry's c₃ row should carry a pointer on **(H1)**
+`c₃^even = −Vol(4₁)`. It should, and this is it:
+
+> **(H1) is NOT derived.** It is *geometrically motivated* — the Φ_b saddle gives
+> `Im 𝔙 = 0` at the real substrate (amphichirality) and a volume deficit at the
+> `|S|` scale — but per §9b that scale match is **muon-only** and no better than
+> the substrate's own `ũ₀`. The bar-split is in any case **not determinable from
+> anchor data** (it needs c₃ at `q ≈ 0.901`; both anchors sit at `q ≈ 1.10998`),
+> so it must come from an assumed structural form. **Neither** named split is a
+> derivation: `S_leak := c₃ + Vol(4₁)` and `S := −c₃/κ_(2,1)` are both
+> *definitions*, and c₃ is recovered exactly from either — reparametrisations
+> carrying no information (AGENTS.md §"Defined residual ≠ derived
+> decomposition"). **c₃'s bar-parity is undetermined by the present corpus.**
+
+Consequently the §3 phrase *"the `−Vol(4₁)` piece is the solved bar-even part"*
+is **re-scoped**: motivated, not solved. The `10/3 = lim_{q→1}[10]_q/[3]_q`
+writhe-ratio identity in that same bullet is exact and unaffected. c₃'s tier is
+unchanged (**EMPIRICAL / REFUTED as real-q**).
+
+Two objects are both called "the c₃ bar-odd `S`" and differ by ~5 orders
+(`S_leak ≈ 0.0097` vs `S ≈ 886.79`); `SLeakZeroCrossing.lean` carries a collision
+guard, but the 2026-07-12 capstone straddles them and KC21 inherits the
+vocabulary. **Say which `S` you mean.**
+
+### 9d. Resummation-witness re-tier — the owed item from `qou-qb8e`
+
+The 2026-08-09 convergence correction enumerated 29 D-ladder witnesses and
+recorded which had been rendered ill-posed, but explicitly deferred the re-tier:
+*"That re-tiering is a registry edit and is **not made here**; it is tracked on
+bean `qou-qb8e`."* This is that edit.
+
+**Why it matters, and why a re-run would not have caught it.** No witness file
+was wrong, and **all 29 still report `allPassed: true`** — each computes exactly
+what it says it computes. What changed is that for one group the *question* is
+ill-posed: they are divergent-series estimators applied to a series that
+converges. Their recorded failures — *"gate fails at every `s`"*,
+*"length-blocked at k=41"*, *"UNDECIDABLE at k=21"* — read as obstructions to be
+overcome with more terms. They are not. They are the estimators detecting that
+**there is nothing to estimate**.
+
+| tier | count | reading |
+|---|---|---|
+| **A — UNAFFECTED** | 6 | arithmetic / holonomicity / 2-adic; independent of growth class |
+| **B — scope-(b) CLOSED / ILL-POSED** | **12** | divergent-series estimators on a convergent series |
+| **C — PARTIALLY superseded** | 1 | exact k=31 data stands; its "divergence-class C" reading is the spurious `1/log k` decay |
+| **D — NOT ASSESSED** | **3** | genuinely different object (deformed meridian); radius result does not transfer |
+
+**Group B is re-tiered from scope-(a) NEGATIVE to scope-(b) CLOSED/ILL-POSED.**
+None is deleted — they are the evidence the resummation arm was pursued properly
+and exhausted, and their input (the exact `ℚ(√3)` ladder) is live. What changes
+is that **none of them is an open lever**: do not re-run them for more terms, and
+do not read their failures as a gate.
+
+#### Correction to the 2026-08-09 group assignment (B is 12, D is 3)
+
+That note put `qbeta-odd-channel-stokes-borel` in group **D** ("different
+object … concerns the deformed meridian and the odd-channel Stokes structure,
+**not `D(ũ)`**"). **That is wrong, and it is checkable in one line.** The probe
+imports the D-ladder producer and calls it directly:
+
+```python
+import qbeta_dladder_generating_function_structure_probe as P   # line 87
+dk, KMAX, valid_top, odd_ok = P.build_d_ladder()                # line 136
+```
+
+It operates on **exactly the same `d_k`**, so the radius result *does* transfer
+and it belongs in **B**. Verified by reference count: the three genuine group-D
+probes (`…deformed-meridian`, `…deformed-rungs`, `…borel-pade-resummation`) have
+**0** references to `build_d_ladder`; this one has **4**.
+
+This is also why its re-scope in PR #5050 was correct rather than an over-reach:
+its own data corroborates convergence (Gevrey order drifts **down**, `0.08→0.05`;
+Borel–Leroy pole `0.147` at `s = 0.02`, ≈3 % from `ρ` and trending toward it as
+`s → 0`). Scope-(a): that is *consistency with* the radius, **not** a derivation
+of `ρ` from Borel–Leroy.
+
+Its method negative — plain-Borel (Vol/π) does **not** transfer to the odd
+channel, so G3 (#3805) needs the true q-Borel/alien chain — is a statement about
+the *method* and survives the re-tier intact.
+
+#### Group B — the twelve
+
+    qbeta-dladder-ecalle-acceleration                 Leroy gate fails at every s
+    qbeta-dladder-ecalle-phib-resummation
+    qbeta-dladder-single-instanton-extraction         "length-blocked at k=41"
+    qbeta-dladder-fibre-branch-stokes-ambiguity       r* = 0.147 IS the ratio estimate of ρ
+    qbeta-dladder-fibre-two-action
+    qbeta-dladder-jackson-qborel-acceleration
+    qbeta-dladder-qborel-leroy-resummation
+    qbeta-dladder-parity-split-resummation
+    qbeta-dladder-parity-odd-singularity-even-order
+    qbeta-dladder-barodd-borel-pade-laplace
+    qbeta-dladder-parity-adjudication                 "UNDECIDABLE at k=21"
+    qbeta-odd-channel-stokes-borel                    ← moved from D (see above)
+
+`…fibre-branch-stokes-ambiguity` is the sharpest of them: its `r* = 0.147` was
+recorded as an ambiguity scale and is in fact a ratio estimate of `ρ = 0.1428`
+— the arm measuring the radius while reporting a Stokes datum.
+
+#### The reusable falsifier
+
+Any future claim of Gevrey growth, a nonzero instanton action, or a Stokes
+ambiguity **in this ladder** must first exhibit a singularity of
+`log R(q) − log R(1/q)` strictly inside `|ũ| < ρ`. The complete singular set is
+enumerated in the 2026-08-09 audit; none is. Do not open another
+Borel/Leroy/Stokes/Écalle probe on `D(ũ)` without clearing that bar first.
+
+**Scope.** Scope-(b) here is the *proved-invariant* kind and is justified by the
+enumerated singular set plus `κ = 0` (`k²Δ²log|d_k| → 1`, `kΔ² → 0`), not by a
+numerical near-miss. It closes the resummation arm on **this** ladder only. The
+Ohtsuki κ-tower is genuinely Gevrey-1 divergent and its resurgence programme is
+untouched, as are the three group-D probes.
+
+### 9e. The swing is resolved but circular; individual `S` values are not resolved (added 2026-08-15, `qou-9jem`)
+
+Two pins so no future session re-targets either object:
+
+1. **Individual `S_leak` values are not robustly defined.** Each carries a
+   ±1.262 CAL-3 propagated uncertainty (the `1/u³` amplification of the Q_β
+   input error) — 130× the muon and 32× the proton central value. The
+   canonical witness (`qbeta-c3-barodd-sleak.witness.json`) states the
+   anchor sign flip "must not be cited as an established sign flip" (O2
+   negative, [`2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`](../audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md)).
+   This does **not** touch KC21's *structural* parity statement
+   (`S(−ε) = −S(ε)` in complex `ε`, Lean `fig8Trace_im_odd`) — that is an
+   odd-function fact, not a claim that the real-anchor data exhibit a flip.
+2. **The swing `S(μ) − S(p) = c₃(μ) − c₃(p) = 0.0491423421` IS resolved**
+   (±7.6×10⁻⁷; the CAL-3 error is common-mode and cancels) — but it is
+   **not an independent derivation target**: it factors exactly as
+   (11.54 ppb μ–p substrate tension) × `dc₃/dq`, i.e. the known open
+   tension amplified by the circular cal-anchored `c₃` extraction
+   (probe [`aomega_6y1p_swing_reframe_not_tractable.py`](../../computations/probes/aomega_6y1p_swing_reframe_not_tractable.py),
+   exit 0; bean `qou-6y1p`, scrapped). Deriving it requires **both** a
+   first-principles `c₃` (the fixed theory ladder has `[u³] ≡ 0`) **and**
+   the μ–p tension. It remains valid as a *filter* on candidate `u(q₀)`
+   maps (the A3 swing-difference gate), not as a target.
+
+### 9f. `q*_S` is NOT an independent determination of q₀ (added 2026-08-15, `qou-kh7e`)
+
+> **Companion to §9e.** That section and this one were written independently,
+> hours apart, and reach the same root from opposite ends: §9e from the
+> *swing* ("the circular cal-anchored `c₃` extraction"), this one from the
+> *zero* (`q*_S` presupposes (H1)). Read together they say the anchor-level
+> `S` data supports neither a magnitude nor a determination.
+>
+> **§9e sharpens this section.** Its finding that each individual `S_leak`
+> value carries **±1.262** propagated CAL-3 uncertainty — **130×** the muon
+> central value `0.00968` — is stronger than the argument below. If the
+> value is not resolved at all, the quoted "2.896 % agreement" between the
+> Φ_b deficit and `|S(muon)|` is not a weak match; it is a comparison
+> against a number with no resolved central value. §9b's conclusion stands
+> on either ground.
+
+Author-found. `c₃` is **extracted from experimental Q_β**, and `q*_S` is
+root-found on `c₃ + Vol(4₁)` — so locating `q*_S` presupposes the very
+hypothesis (H1) it was cited as evidence for.
+
+    c₃(q)  = (Q_β^exp / Q_N2(q) − 1) / u(q)³      ← qbeta_utils.c3_target_at
+    q*_S   = root of  S(q) = c₃(q) + Vol(4₁)       ← qstar_k31_repin_probe.py:164
+
+`q*_S` is therefore a determination of q₀ **conditional on (H1)**. It *is*
+independent of the two **mass** pins (it uses neither `m_p` nor `m_μ`) — that is
+a weaker and different statement, and conflating the two is the defect.
+
+#### The placement carries no information beyond Vol(4₁)'s value
+
+[`sleak_offset_genericity_check.py`](../../computations/qbeta/sleak_offset_genericity_check.py)
+(committed well before this note) shows **every** constant in
+
+    window (−c₃(μ), −c₃(p)) = (2.02020024, 2.06934258),  width 0.0491423
+
+puts a zero between the anchors — 7/7 unrelated constants tested (`2+1/36`,
+`63/31`, `e^0.708`, …). As `V` sweeps that window, `q*_V` sweeps the **entire**
+anchor interval. Vol(4₁)'s position in it:
+
+| | |
+|---|---|
+| `(V − lo)/(hi − lo)` from the muon end | 0.197039 |
+| from the proton end | **0.802961** |
+| figure published for `q*_S` | **"≈ 80.3 % muon-ward"** |
+
+**80.2961 % computed against "≈80.3 %" published.** The headline placement *is*
+Vol(4₁)'s position in the genericity window — a restatement of
+`c₃(q₀) ≈ −Vol(4₁)`, not a decay-sector preference. (That restatement is itself
+worth only **0.031 σ** against `σ(c₃) = ±1.262`; the "0.48 %" this sentence
+originally quoted is the **muon** figure — proton is 1.907 % — see the re-scope
+box at the end of this section.) The supporting
+argument that `q*_S` "is not the precision-weighted mean" (0.0007 % muon-ward)
+is true and irrelevant: no in-window `V` gives a reconciliation either.
+
+Consistent with this, [`SLeakMagnitudeOffsetRatio.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/SLeakMagnitudeOffsetRatio.lean)
+already states the same thing from the magnitude side — *"the magnitude fixes
+only **where the anchors fall** relative to `q*`"*. The anchor offsets and the
+`80.3 %` are one datum, not two.
+
+#### Sites corrected
+
+| site | was |
+|---|---|
+| `observations/epistemic-status-of-calibrations.md` | *"a third, decay-sector determination … μ–p–Q_β three-way consistency test"* — **the calibration authority**, worst affected |
+| `mass-theory/rem-qstar-decay-sector-q0.md` | *"a third determination of q₀, independent of both mass-sector pins"* |
+| §3 above, KC21 row, and §9b | the same phrase; **§9b's was added 2026-08-14 by the same edit that corrected other errors in that section** |
+
+**The Lean is clean.** `BarOddLadderShape.lean` uses "the decay-sector
+determination `q*`" only as a *name* for the point where the numerator vanishes;
+its content (`A(q*) = 0`) is unaffected. The other `decay-sector` hits
+(`MassComputationChainRoadmap`, `BraneTowerNStar`) are an unrelated `n_⋆ = 2`
+sector.
+
+#### Scope, and what survives
+
+Scope-(a). This does **not** refute (H1) — §9c already has it as *motivated, not
+derived* — and does not show Vol(4₁) is absent from c₃. What falls is the **use
+of `q*_S` as independent evidence**, and with it the "three-way" reading: the
+substrate rests on **two** pins, and μ–p is a **two-way** tension.
+
+Untouched and still correct: the `1/u³` smoothness result (`S′(q*_S) = 2.37 ×
+(1/u³)`), `dq*/dQ_β ≈ −0.539`, and the bar-odd structural sign-flip.
+
+> **🛑 The "surviving empirical fact" is RE-SCOPED 2026-08-15** (same day, same
+> author, PR #5093; probe
+> [`qbeta_h1_significance_against_cal3_band.py`](../../computations/qbeta/qbeta_h1_significance_against_cal3_band.py)).
+> It previously read: *"the surviving empirical fact, stated without the
+> machinery: **c₃ at the substrate anchor agrees with −Vol(4₁) to ≈ 0.48 %**
+> (0.07 % at the muon for the full keystone form …; 2.3 % at the proton …)."*
+> Two defects, both mine:
+>
+> 1. **The percentage omits the error bar on the quantity being compared.**
+>    `σ(c₃) = ±1.262` per anchor, CAL-3 propagated — **61 %** of `|c₃|`. Derived
+>    in the probe as `σ(Q_β)/(Q_N2·u³)`, reproducing the corpus's quoted 1.262 to
+>    `4.1e-5` rather than assuming it. In σ the agreements are **0.031 σ**
+>    (proton) and **0.008 σ** (muon). That is not strong evidence — it is *no*
+>    evidence, and by the same standard §9e's O2 verdict already applied to the
+>    `A_ω → S` bridge ("neither confirmed nor excluded … the signature of a fit").
+>    That test had never been turned on **(H1) itself**, the hypothesis that
+>    *defines* `S`.
+> 2. **The 0.48 % is the MUON figure**, quoted under the label "the substrate
+>    anchor". Measured: muon **0.479 %**, proton **1.907 %** — 4.0× worse. Since
+>    the 2026-08-07 owner directive makes the proton pin the default, "substrate
+>    anchor" now reads as proton, so the headline attaches the muon's number to
+>    it and flatters (H1) fourfold.
+>
+> **This makes the genericity result above understate the problem by ~51×**: the
+> 1σ acceptance for `V` is `[0.807, 3.331]`, width **2.524**, against the
+> **0.0491** window the 7/7-constants check was computed over.
+>
+> **Scope-(a), and it cuts both ways.** (H1) is **not** refuted — no invariant
+> forbids a `4₁`-volume ingredient in `c₃`'s bar-even part, and 0.031 σ is not
+> evidence *against* it either. Nothing is being measured. Testability needs
+> **32×** (proton) or **130×** (muon) sharper `Q_β`, bracketing the **25.68×**
+> the zero-location test needs (#5084) — all three are the same lever.
+
+Tracked: beans `qou-kh7e`, `qou-qb8g`.

@@ -71,7 +71,9 @@ from _li_2_q_util import vol_density_borromean  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Constants — anchored on the registry / CODATA values
-M_E_MEV = mpf("0.510998950")  # CAL-1
+# CAL-1 from the registry, not re-typed: the literal here was
+# "0.510998950", CODATA truncated to 9 s.f. (canonical 0.51099895069).
+from codata_constants import M_E_MEV  # noqa: E402  # CAL-1
 M_P_CODATA_MEV = mpf(M_P_MEV_VALIDATION)
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 

@@ -3,8 +3,9 @@
 title: Small-instance check the 34 sorries the drain made visible — never reported by any build
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-09T09:57:23Z
-updated_at: 2026-08-09T09:57:23Z
+updated_at: 2026-08-14T16:07:49Z
 ---
 
 
@@ -133,3 +134,13 @@ carries a `-- Ref:` citation that makes it read as a tracked gap.
 
 If the rate holds outside this set, that is the more important number, and it
 is cheap to get: the method is one instance per statement.
+
+## Update 2026-08-14 (q-NS session)
+
+One of the three ill-posed statements is FIXED: `cascade_depth` — PR #5019
+replaces the undischargeable flat sorry with the explicit dissipation-cutoff
+class `QTurbulenceCascadeModel` + derived `finite_cascade_depth_of_cutoff`
+(sorry-free, lean-direct exit 0). Remaining on this bean:
+`mass_categorical_descent` and `np_splitting` (same fix shape: give the
+context class the hypotheses the derivation needs). Status reverted to
+in-progress (a prior update to completed was premature — scope is all 3).

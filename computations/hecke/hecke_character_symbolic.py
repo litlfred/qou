@@ -233,8 +233,11 @@ def _q_character_compute(shape, braid_crossings, q):
         if gen_idx < 0 or gen_idx >= len(matrices):
             raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
         sigma = matrices[gen_idx]
-        d_val = {"sigma": Integer(0), "sigma_inv": -h,
-                 "averaged": -h / 2}[cross_d]
+        from canonical_braid_crossings import d_for_ctype
+        # was an inline {sigma, sigma_inv, averaged} map; averaged
+        # swallowed the colour-weighted p-n interface.
+        d_val = d_for_ctype(cross_d, h)
+
         cross = sigma + d_val * sp.eye(dim)
         M = M * cross
         # `cancel` — polynomial-division on rationals — is 5–10×

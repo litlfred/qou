@@ -1,0 +1,136 @@
+{
+  "name": "qbeta-g3-aomega-route-a-newton-polygon",
+  "description": "Route A: Newton polygon of A_{4_1} / C1 carrier vs the G3 DT spectrum {3,4}. 3 = full-A L-degree = #connections; 4 = |max boundary slope|; C1 \u2260 quantum A-poly; slope reading R2 refuted on 5_2 cross-knot, L-degree reading R1 survives.",
+  "computation": "qbeta-g3-aomega-route-a-newton-polygon",
+  "engine": "python",
+  "scriptFile": "computations/probes/qbeta_g3_aomega_route_a_newton_polygon.py",
+  "scriptCommitSha": "159a901189d2666e7645fef528478a01dc452044",
+  "computedAt": "2026-08-14T22:17:46Z",
+  "durationMs": 5,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md",
+  "parameters": {
+    "A41_geometric_monomials_ML": [
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "A41_full_L_degree": 3,
+    "C1_operator_monomials_ML": [
+      [
+        1,
+        2
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "five2_boundary_slopes_literature": [
+      -10,
+      -4,
+      0
+    ],
+    "five2_num_connections_literature": 4,
+    "dt_spectrum_corpus": [
+      3,
+      4
+    ]
+  },
+  "data": {
+    "A41_boundary_slopes": [
+      "-4",
+      "4"
+    ],
+    "A41_max_abs_slope": "4",
+    "A41_full_L_degree": 3,
+    "C1_boundary_slopes": [
+      "-1/2",
+      "1/2"
+    ],
+    "C1_max_abs_slope": "1/2",
+    "R1_survives_crossknot": true,
+    "R2_survives_crossknot": false,
+    "verdict": "Route A is PARTIAL / mixed (scope-(a), anti-numerology-gated). AIRTIGHT: (i) the figure-eight DT integers {3,4} ARE Newton-polygon data of A_{4_1} \u2014 3 = full-A L-degree = #boundary-parabolic connections, 4 = |max boundary slope|; (ii) the QOU C1 binding carrier is NOT the quantum A-polynomial (slopes \u00b11/2 \u2260 \u00b14), so Route A needs the true colored-Jones recursion \u00c2_K, not C1. CROSS-KNOT GATE: the slope reading R2 (DT=boundary slope) is REFUTED on 5_2 (max slope 10 \u2209 {3,4}); the L-degree/#connections reading R1 SURVIVES (4_1:3, 5_2:4, both \u2208 {3,4}). Consequence: the internal handle on the DT spectrum is the A-polynomial L-degree / connection count (an Euler-characteristic datum \u2192 Route B), NOT the Newton-polygon slope; and it needs \u00c2_K, not the binding carrier. 5_2 boundary data is literature-recalled \u2014 verify with SnapPy before hardening."
+  },
+  "assertions": [
+    {
+      "name": "R1-4_1: full-A L-degree = #connections = 3 (a DT integer)",
+      "passed": true,
+      "full_L_degree": 3,
+      "dt_spectrum": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "R2-4_1: |max boundary slope| = 4 (a DT integer)",
+      "passed": true,
+      "max_boundary_slope": "4",
+      "dt_spectrum": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "C1-is-NOT-quantum-A-poly-of-4_1 (Newton polygons differ)",
+      "passed": true,
+      "C1_max_slope": "1/2",
+      "A41_max_slope": "4",
+      "note": "C1 (binding carrier, slopes \u00b11/2) is NOT the reduced \u00c2_{4_1} (slopes \u00b14). Route A must use the true colored-Jones recursion, not the binding carrier."
+    },
+    {
+      "name": "R2-crossknot-5_2: |max boundary slope| in DT spectrum?",
+      "passed": false,
+      "five2_max_slope": 10,
+      "five2_dt": [
+        3,
+        4
+      ],
+      "note": "5_2 max boundary slope 10 is NOT a DT integer {3,4} \u2014 the 'DT integer = boundary slope' reading (R2) is REFUTED on 5_2 (scope-(a), conditional on the literature slope 10)."
+    },
+    {
+      "name": "R1-crossknot-5_2: #connections consistent with a DT integer?",
+      "passed": true,
+      "five2_connections": 4,
+      "five2_dt": [
+        3,
+        4
+      ],
+      "note": "4_1 #connections=3\u2208{3,4}; 5_2 #connections=4\u2208{3,4} (lit). The L-degree/#connections reading of the 3\u21944 is CONSISTENT across both knots (both land in {3,4}) \u2014 survives where R2 fails."
+    }
+  ]
+}

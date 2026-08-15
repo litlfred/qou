@@ -41,4 +41,4 @@ This identification extends to cosmological horizons. An aeon boundary is a locu
 
 Each aeon acts as a consistent theory: a connected component of $\mathrm{Bun}^{\circ}$ where degree-$0$ sections are non-trivial and the Frobenius pairing is non-degenerate. The aeon boundary is the expressive limit where G\"{o}delian sentences reside. Crossing an aeon boundary transitions to a stronger theory. The degree $\geq 1$ data from the dying aeon seeds the axioms of the next.
 
-The universe does not resolve its own incompleteness. It iterates past it. Each aeon is a consistent fragment bounded by the limit of finite derivation.
+The universe iterates past its own incompleteness rather than resolving it. Each aeon is a consistent fragment bounded by the limit of finite derivation.

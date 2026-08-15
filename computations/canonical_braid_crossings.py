@@ -119,9 +119,17 @@ def classify_crossing(
     # "averaged" p-n interface: color-blind −h/2, OR color-weighted
     # −h·(1/2 − δ/4) (bring_color_weighted default, mass_at_3A_proper).
     delta = float(_avg_color_delta())                # float-context comparison
-    if (abs(d - (-h_val / 2.0)) < 1e-9
-            or abs(d - (-h_val * (0.5 - delta / 4.0))) < 1e-9):
+    if abs(d - (-h_val / 2.0)) < 1e-9:
         return "averaged"
+    if abs(d - (-h_val * (0.5 - delta / 4.0))) < 1e-9:
+        # DISTINCT from "averaged". Both used to return it, and every consumer
+        # maps that label to -h/2, so the colour-weighted p-n interface was
+        # silently replaced by the colour-blind one: 6.879e-4 on the crossing,
+        # 7e-5..3.9e-4 per chi^lambda, and the whole residual Schur-Weyl
+        # failure in rho_k_h3a_refinement after the convention-D migration.
+        # This is the proton-neutron colour asymmetry (bring_color_weighted);
+        # collapsing it into "averaged" de-asymmetrises the nucleus.
+        return "averaged_weighted"
     raise ValueError(
         f"Unrecognised crossing (c, d)=({c}, {d}); expected d ∈ "
         f"{{0, -h, -h/2, -h·(1/2-δ/4)}} with h≈{h_val:.6f}, "
@@ -164,4 +172,80 @@ def atom_canonical_crossings(
     return out
 
 
-__all__ = ["atom_canonical_crossings", "classify_crossing"]
+def d_for_ctype(ctype: str, h_val, *, delta=None):
+    """The Hecke shift `d` a ctype denotes, in the caller's numeric type.
+
+    Consumers used to hardcode `{"sigma": 0, "sigma_inv": -h, "averaged": -h/2}`
+    inline. That is how the colour-weighted interface got lost: a private
+    lookup cannot know about a label it predates, and there were at least two
+    such lookups plus two validators with their own `{0, -h, -h/2}` vocabulary.
+    Centralised here so a new crossing type is a one-line change with one
+    place to audit.
+
+    `h_val` is passed in rather than recomputed so the caller's precision
+    (mpmath mpf, sympy expression, float) carries through unchanged -- do not
+    coerce it.
+
+    `delta` overrides the substrate flavour split used by
+    `averaged_weighted`. It exists for **q-symbolic callers**, and skipping it
+    there is a layer straddle: the default `_avg_color_delta()` is evaluated
+    at the numeric `q_parameter.Q`, so passing a sympy `h_val` and taking the
+    default silently bakes a q0-pinned constant into an otherwise
+    q-symbolic expression -- an ideal/experimental mix inside one quantity,
+    which AGENTS.md rules out regardless of its size. δ has a closed form, so
+    symbolic callers have no excuse:
+
+        from _li_2_q_util import flavor_split_leading
+        d_for_ctype(ctype, h_sym, delta=flavor_split_leading(q_sym))
+
+    Numeric callers should leave it None and get the cached q0 value.
+    """
+    if ctype == "sigma":
+        return 0 * h_val
+    if ctype == "sigma_inv":
+        return -h_val
+    if ctype == "averaged":
+        return -h_val / 2
+    if ctype == "averaged_weighted":
+        # -h(1/2 - delta/4), written so h_val's type drives the arithmetic.
+        d = _avg_color_delta() if delta is None else delta
+        return -h_val * (1 - d / 2) / 2
+    raise ValueError(f"unknown ctype {ctype!r}")
+
+
+#: Every ctype `classify_crossing` can return. The one place to read when
+#: asking "have I covered them all?" — see `sign_for_ctype` and
+#: `test_ctype_consumer_coverage.py`.
+CTYPES: tuple[str, ...] = (
+    "sigma", "sigma_inv", "averaged", "averaged_weighted",
+)
+
+
+def sign_for_ctype(ctype: str) -> int:
+    """The `sign ∈ {-1, 0, +1}` wire encoding of a ctype.
+
+    ⚠ **Lossy for `averaged_weighted`, by construction.** A sign cannot
+    carry a magnitude, so both averaged interfaces collapse onto `0` — the
+    colour-blind projection. The p-n colour weighting `-h(1/2 - δ/4)` is
+    *not* representable in this format at all; consumers that need it must
+    take `d_for_ctype` instead, which is exact.
+
+    This is not a new loss: every sign-format consumer already behaved this
+    way, because before `averaged_weighted` existed `classify_crossing`
+    returned `averaged` for both. Centralising it here makes the projection
+    explicit and auditable rather than an omission in four private tables.
+    The representational gap itself stays open under bean `qou-gdtb`.
+    """
+    if ctype == "sigma":
+        return 1
+    if ctype == "sigma_inv":
+        return -1
+    if ctype in ("averaged", "averaged_weighted"):
+        return 0
+    raise ValueError(f"unknown ctype {ctype!r}")
+
+
+__all__ = [
+    "atom_canonical_crossings", "classify_crossing", "d_for_ctype",
+    "sign_for_ctype", "CTYPES",
+]

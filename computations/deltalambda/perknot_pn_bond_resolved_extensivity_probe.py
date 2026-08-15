@@ -58,6 +58,12 @@ except Exception:
     WitnessBuilder = None
     _HAVE_WB = False
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # ── pre-registered inputs ─────────────────────────────────────────────────────
 TR = {"p": mp.mpf("1.0653062"), "n": mp.mpf("0.9232333")}
 

@@ -1,3 +1,5 @@
+*The $\mathfrak{m}_{\text{pred}}^{\mathrm{LO}}$ column is the $m_e$-scaled realization of the dimensionless mass ratio (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction. The binding column is the physical content.*
+
 | Atom | $\mathfrak{m}_{\text{pred}}^{\mathrm{LO}}$ (MeV) | $\mathfrak{m}_{\text{CODATA}}$ (MeV) | $\Delta$ (MeV) | rel err | binding (CODATA) |
 |---|---:|---:|---:|---:|---:|
 | $p$ † | 938.272088 | 938.272088 | 0.0000 | 0.000 % | (anchor) |

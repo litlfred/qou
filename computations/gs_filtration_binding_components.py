@@ -151,7 +151,7 @@ def main() -> int:
     t0 = time.time()
     q0 = float(Q0)
     h0 = float(H0)
-    z0 = 1.0 / (q0 ** 0.5 + q0 ** (-0.5))
+    z0 = q0**3 / (q0**2 + 1)
 
     rows = []
     for name, Z, N in ATOMS:

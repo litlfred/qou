@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T00:14:18.250154+00:00",
-  "commitSha": "165aeb064f70a764d90070fc19b9435ad9473a48",
+  "computedAt": "2026-08-15T00:31:31.794621+00:00",
+  "commitSha": "659ab8f5229a447729493981a89d7d98caa29d86",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 4076,
+  "durationMs": 6551,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "24d485c288e4",
-  "scriptCommitSha": "165aeb064f70a764d90070fc19b9435ad9473a48",
+  "scriptHash": "b981268ce640",
+  "scriptCommitSha": "2216604b7176952ff1aae8f1f337f73c13626756",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,10 +20,9 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
-  "description": "Extended canonical mass table via unknown method 'branching'. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
+  "description": "Extended canonical mass table via operator-valued Wenzl branching combiner (canonical pipeline) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
     "q_0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
     "method": "branching",
@@ -93,7 +92,7 @@
           ],
           [
             2,
-            "averaged"
+            "averaged_weighted"
           ],
           [
             3,
@@ -197,7 +196,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.388286471559303623300996013421437400033851516133983663589779",
+        "tr_M_q0_canonical_50dps": "0.575090958682446712091773040231153383121357773890000053489481",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -266,7 +265,7 @@
           ],
           [
             2,
-            "averaged"
+            "averaged_weighted"
           ],
           [
             3,
@@ -445,7 +444,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.104071069302087155706449026068381119976943088037765428852023",
+        "tr_M_q0_canonical_50dps": "0.229310147182826882258918179177713169271845436208713791256341",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -562,7 +561,7 @@
           ],
           [
             5,
-            "averaged"
+            "averaged_weighted"
           ],
           [
             6,
@@ -693,7 +692,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.206578475087402999457063156194875204017734288007641841464382",
+        "tr_M_q0_canonical_50dps": "0.403767138483831240377191090408085854220080958322842091263489",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -810,7 +809,7 @@
           ],
           [
             5,
-            "averaged"
+            "averaged_weighted"
           ],
           [
             6,
@@ -1016,7 +1015,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.0553584262667831064648084527393493030521290255609457472078877",
+        "tr_M_q0_canonical_50dps": "0.160974193229119964929384297981003709661519065433656652234632",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1181,7 +1180,7 @@
           ],
           [
             8,
-            "averaged"
+            "averaged_weighted"
           ],
           [
             9,
@@ -1414,7 +1413,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.0294467557534109300226757354311861797679127779419539464061367",
+        "tr_M_q0_canonical_50dps": "0.113002809531608300825543185696018264363194852404090850698385",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1579,7 +1578,7 @@
           ],
           [
             8,
-            "averaged"
+            "averaged_weighted"
           ],
           [
             9,
@@ -1887,7 +1886,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.00789107411351287580113349031334919627704955183405735341439617",
+        "tr_M_q0_canonical_50dps": "0.0450520469924349469877257170620091866933225348339623815327175",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -2052,7 +2051,7 @@
           ],
           [
             8,
-            "averaged"
+            "averaged_weighted"
           ],
           [
             9,
@@ -2435,7 +2434,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.00211463195424304618221721150636179496335306264765667760785080",
+        "tr_M_q0_canonical_50dps": "0.0179613847356674605542085067877959617417924202998737808561996",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",

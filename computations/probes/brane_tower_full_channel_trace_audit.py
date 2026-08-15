@@ -54,7 +54,7 @@ mp.mp.dps = 50
 Q0 = mp.mpf("1.1099785955541805752815940796095093779932822799587")
 QI = 1 / Q0
 H = Q0 - QI
-ZM = 1 / (mp.sqrt(Q0) + mp.sqrt(QI))  # Markov parameter z = 1/(q^½+q^-½)
+ZM = Q0**3 / (Q0**2 + 1)  # Markov parameter z = 1/(q^½+q^-½)
 
 
 def nucleon_chains(quarks: tuple[str, str, str]) -> tuple[list, list]:

@@ -180,18 +180,22 @@ def crossing_element(gen_idx: int, cross_type: str) -> SymbolicHeckeElement:
     """Legacy convenience wrapper used by the unit tests.
 
     Matches the string convention in `atomic_braid_to_crossings`:
-      "sigma"     → σ_i
-      "sigma_inv" → σ_i − h·𝟏
-      "averaged"  → σ_i − (h/2)·𝟏
+      "sigma"             → σ_i
+      "sigma_inv"         → σ_i − h·𝟏
+      "averaged"          → σ_i − (h/2)·𝟏
+      "averaged_weighted" → σ_i − h(1/2 − δ/4)·𝟏   (p-n colour interface)
+
+    The `d` shift comes from `canonical_braid_crossings.d_for_ctype` rather
+    than a private table here. The private table this replaces did not know
+    `averaged_weighted` and raised on it (qou-8zjd), while `word_to_element`
+    below -- the production path -- has carried the weighted form all along.
+    Two spellings of one mapping is exactly how they drift apart.
     """
+    from canonical_braid_crossings import d_for_ctype
     sigma = SymbolicHeckeElement({(gen_idx,): sp.Integer(1)})
     if cross_type == "sigma":
         return sigma
-    if cross_type == "sigma_inv":
-        return sigma + SymbolicHeckeElement({(): -HA})
-    if cross_type == "averaged":
-        return sigma + SymbolicHeckeElement({(): -HA / 2})
-    raise ValueError(f"unknown cross_type: {cross_type!r}")
+    return sigma + SymbolicHeckeElement({(): d_for_ctype(cross_type, HA)})
 
 
 def word_to_element(word) -> SymbolicHeckeElement:

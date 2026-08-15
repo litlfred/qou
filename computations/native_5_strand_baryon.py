@@ -342,7 +342,7 @@ def candidate_C_s5_braid():
 # ===========================================================================
 
 def destabilization_arithmetic():
-    z = 1 / (mp.sqrt(Q0_MP) + 1 / mp.sqrt(Q0_MP))   # = 1/sqrt([2]_q)
+    z = Q0_MP**3 / (Q0_MP**2 + 1)   # = 1/sqrt([2]_q)
     trM_B3 = None
     # RAW tr_M(B_3) at q0 from the closed form V/[2]_q^2.
     V = borromean_jones()
@@ -437,7 +437,7 @@ def main():
     if raw5.get("available"):
         # RAW tr_M(B_3) at q0 (numeric, same float64+30dps route, for the
         # destabilization comparison) and z^2 from arith.
-        z = 1 / (mp.sqrt(Q0_MP) + 1 / mp.sqrt(Q0_MP))
+        z = Q0_MP**3 / (Q0_MP**2 + 1)
         trM_B3_num = float(mp.mpf(arith["trM_B3_raw_at_q0"]))
         z2_trM_B3 = float(z * z) * trM_B3_num
         rel_mismatch = abs(raw5["trM_w5_raw_at_q0"] - z2_trM_B3) / abs(z2_trM_B3)

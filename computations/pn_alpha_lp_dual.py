@@ -56,7 +56,7 @@ from q_parameter import Q as q0, Q_INV as qi0
 # z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
 # bootstrap for dev mode; the installed-pyhecke path is preferred.
 import sys as _sys, pathlib as _pl
-_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
 
 from mass_endomorphism import HA as HA_VAL, z_mark
@@ -166,7 +166,7 @@ def atom_per_gen_vols_alpha(Z, N, *, pn_alpha=0.5,
                 sp_arr[i] *= c * q0 + d
                 ap_arr[i] *= -c * qi + d
 
-    z_m = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+    z_m = q0**3 / (q0**2 + 1)
     nf3 = q_int_local(1) * q_int_local(2) * q_int_local(3)
     w_sym = 1.0 / nf3
     w_std = q_int_local(2) ** 2 / nf3
