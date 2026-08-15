@@ -19,7 +19,12 @@ $$
   e_5 \;\equiv\; (1 - e_2)/(1 - e_1).
 $$
 
-These constraints derive from a valid Rogers pair `(x, y) \in F^\times \times F^\times` with `x \neq y`, `x \neq 0`, `x \neq 1`, `y \neq 0`, and `y \neq 1`. This derivation requires decidability of the pentagon-domain conditions on `F`, a pentagon-shape map `F \times F \to \text{PentagonShape F}`, and the restriction of `pentagonRelationGenerators` to the `ValidPentagonShape F` subtype. The structural skeleton accommodates this restriction via the validity predicate and the constrained range.
+These constraints derive from a valid Rogers pair
+$(x, y) \in F^\times \times F^\times$ with $x \neq y$, $x \neq 0$,
+$x \neq 1$, $y \neq 0$, and $y \neq 1$. This derivation requires
+decidability of the pentagon-domain conditions on $F$, a pentagon-shape
+map $F \times F \to \mathrm{PentagonShape}\,F$, and the restriction of
+`pentagonRelationGenerators` to the `ValidPentagonShape F` subtype. The structural skeleton accommodates this restriction via the validity predicate and the constrained range.
 
 The conditional-class chain anchored by `prop:archimedean-functor-uniqueness` brings `BlochSuslinUniqueness` closer to unconditional inhabitation. The remaining work includes the pentagon identity proof for $\mathrm{Cl}_2$ on the unit-circle subset, Bloch-Wigner regulator $D \otimes \mathbb{Q}$ injectivity, and the Suslin map $K_3^{\mathrm{ind}}(\mathbb{C}) \to \mathbb{R}$.
 

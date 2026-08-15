@@ -481,6 +481,7 @@ fn main() {
             }),
         },
         "engine": { "name": "hecke-crt", "version": "0.10.1" },
+        "generation": hecke_engine::provenance::Generation::capture(hecke_engine::gram::Q_0),
         "f_pauli_f64": fp,
         "tr_alt_f64": ta,
         "net_f64": nt,

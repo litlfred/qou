@@ -1,10 +1,11 @@
 ---
 # qou-f3ec
 title: Cross-check 0610105v2.pdf at computations/deltalambda/gap10_tjon_correlation_probe.py
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:03Z
-updated_at: 2026-08-08T23:36:03Z
+updated_at: 2026-08-15T15:02:38Z
 ---
 
 The probe compares its operator against a hard-coded rho_strong = (1, 3.8128, 13.0316) from AME. This paper's universal Tjon curve gives an independent, dimensionless target: check whether the operator's fractional Tjon deviation sits on the universal band and whether its curvature sign matches. A mismatch is informative either way; an agreement must NOT be back-fitted into any weight.

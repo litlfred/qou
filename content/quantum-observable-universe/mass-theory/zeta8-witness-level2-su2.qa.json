@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean"
   },
   "source_hashes": {
-    "ts": "9ce4c75a219d",
     "md": "4d904154c525",
-    "lean": "c1cc463bacf7"
+    "ts": "9ce4c75a219d",
+    "lean": "c1cc463bacf7",
+    "lean_statement": "dab1847208be"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -2217,26 +2218,6 @@
         "reviewed_sha": "d410f902106fdf2891eefc2d1ae74814bbe4d806"
       }
     ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "4d904154c525",
-          "ts": "9ce4c75a219d",
-          "lean": "c1cc463bacf7",
-          "lean_statement": "dab1847208be"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T04:45:05.542Z",
-        "reviewed_sha": "d410f902106fdf2891eefc2d1ae74814bbe4d806"
-      }
-    ],
     "wall-side-correct": [
       {
         "field_hash": {
@@ -2486,7 +2467,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "4d904154c525",
+          "ts": "9ce4c75a219d",
+          "lean": "c1cc463bacf7",
+          "lean_statement": "dab1847208be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.736Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

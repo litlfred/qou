@@ -1,13 +1,13 @@
 {
   "computation": "habiro-coefficients-atomic",
-  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = Σ_m a_m·(check_q;check_q)_m (check_q = q^{1/2}) for atomic braids p, n (default), D (HABIRO_WITH_DEUTERON=1), and T / ³He (HABIRO_WITH_A3=1). Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
+  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = \u03a3_m a_m\u00b7(check_q;check_q)_m (check_q = q^{1/2}) for atomic braids p, n (default), D (HABIRO_WITH_DEUTERON=1), and T / \u00b3He (HABIRO_WITH_A3=1). Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
     "thm:knot-mass-formula-unified",
     "prop:e-infinity-page-identifications"
   ],
-  "timestamp": "2026-07-18T17:55:54.282640+00:00",
+  "timestamp": "2026-08-15T20:42:14.995344+00:00",
   "parameters": {
     "q_0": 1.1099785827513808,
     "engine": "sympy Poly + sequential cyclotomic division"
@@ -17,157 +17,157 @@
       "Z": 1,
       "N": 0,
       "include_inter": false,
-      "tr_M_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) + q**(23/2) + q**(21/2) - q**(19/2) - q**(17/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 2*q**12 + 2*q**8 - q**2 + 1)/(4*q**(21/2) + 4*q**(19/2))",
+      "tr_M_in_q": "(q**22 + q**20 + 2*q**18 + 2*q**16 + 3*q**14 + 2*q**12 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**13 + 8*q**11 + 4*q**9)",
       "shift": 0,
-      "denom_in_u": "4*check_q**21 + 4*check_q**19",
-      "p_in_u": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 + 2*check_q**24 + check_q**23 + check_q**21 - check_q**19 - check_q**17 + 2*check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
-      "deg_p_u": 40,
+      "denom_in_u": "4*u**26 + 8*u**22 + 4*u**18",
+      "p_in_u": "u**44 + u**40 + 2*u**36 + 2*u**32 + 3*u**28 + 2*u**24 + u**20 - u**16 - u**8 - u**4 - 1",
+      "deg_p_u": 44,
       "habiro_coefficients": [
         {
           "m": 0,
-          "a_m": "4",
+          "a_m": "8",
           "deg_a_m": 0,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 1,
-          "a_m": "-74*check_q - 74",
+          "a_m": "-172*u - 172",
           "deg_a_m": 1,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 2,
-          "a_m": "340*check_q**2 + 365*check_q + 389",
+          "a_m": "865*u**2 + 922*u + 977",
           "deg_a_m": 2,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 3,
-          "a_m": "-711*check_q**3 - 789*check_q**2 - 872*check_q - 959",
+          "a_m": "-1918*u**3 - 2135*u**2 - 2323*u - 2566",
           "deg_a_m": 3,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 4,
-          "a_m": "788*check_q**4 + 901*check_q**3 + 1029*check_q**2 + 1172*check_q + 1328",
+          "a_m": "2171*u**4 + 2474*u**3 + 2831*u**2 + 3204*u + 3635",
           "deg_a_m": 4,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 5,
-          "a_m": "-466*check_q**5 - 559*check_q**4 - 660*check_q**3 - 781*check_q**2 - 918*check_q - 1078",
+          "a_m": "-1273*u**5 - 1504*u**4 - 1807*u**3 - 2118*u**2 - 2517*u - 2928",
           "deg_a_m": 5,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 6,
-          "a_m": "133*check_q**6 + 167*check_q**5 + 212*check_q**4 + 264*check_q**3 + 328*check_q**2 + 402*check_q + 494",
+          "a_m": "356*u**6 + 457*u**5 + 568*u**4 + 717*u**3 + 880*u**2 + 1093*u + 1329",
           "deg_a_m": 6,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 7,
-          "a_m": "-12*check_q**7 - 17*check_q**6 - 24*check_q**5 - 34*check_q**4 - 48*check_q**3 - 63*check_q**2 - 84*check_q - 110",
+          "a_m": "-38*u**7 - 55*u**6 - 73*u**5 - 104*u**4 - 134*u**3 - 182*u**2 - 234*u - 313",
           "deg_a_m": 7,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 8,
-          "a_m": "check_q**4 + 2*check_q**3 + 3*check_q**2 + 5*check_q + 7",
-          "deg_a_m": 4,
+          "a_m": "u**8 + u**7 + 2*u**6 + 3*u**5 + 6*u**4 + 8*u**3 + 13*u**2 + 18*u + 29",
+          "deg_a_m": 8,
           "integral": true,
           "remainder_nonzero": false
         }
       ],
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0": "1.06530614425445002702019792196"
+      "tr_M_at_q0": "1.1457596924573008164354403946"
     },
     "n (neutron, A=1)": {
       "Z": 0,
       "N": 1,
       "include_inter": false,
-      "tr_M_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) - q**(25/2) - q**(21/2) + q**(19/2) + q**(15/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 4*q**10 - q**2 + 1)/(4*q**(21/2) + 4*q**(19/2))",
+      "tr_M_in_q": "(q**18 - q**16 + 2*q**14 - 2*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + q**2 - 1)/(4*q**9)",
       "shift": 0,
-      "denom_in_u": "4*check_q**21 + 4*check_q**19",
-      "p_in_u": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 - check_q**25 - check_q**21 + 4*check_q**20 + check_q**19 + check_q**15 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
-      "deg_p_u": 40,
+      "denom_in_u": "4*u**18",
+      "p_in_u": "u**36 - u**32 + 2*u**28 - 2*u**24 + 4*u**20 - 3*u**16 + 3*u**12 - 2*u**8 + u**4 - 1",
+      "deg_p_u": 36,
       "habiro_coefficients": [
         {
           "m": 0,
-          "a_m": "4",
+          "a_m": "2",
           "deg_a_m": 0,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 1,
-          "a_m": "-64*check_q - 64",
+          "a_m": "-34*u - 34",
           "deg_a_m": 1,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 2,
-          "a_m": "276*check_q**2 + 296*check_q + 316",
+          "a_m": "131*u**2 + 142*u + 153",
           "deg_a_m": 2,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 3,
-          "a_m": "-580*check_q**3 - 646*check_q**2 - 712*check_q - 782",
+          "a_m": "-239*u**3 - 272*u**2 - 299*u - 337",
           "deg_a_m": 3,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 4,
-          "a_m": "696*check_q**4 + 787*check_q**3 + 893*check_q**2 + 1010*check_q + 1139",
+          "a_m": "228*u**4 + 264*u**3 + 309*u**2 + 354*u + 410",
           "deg_a_m": 4,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 5,
-          "a_m": "-448*check_q**5 - 531*check_q**4 - 621*check_q**3 - 729*check_q**2 - 849*check_q - 988",
+          "a_m": "-112*u**5 - 134*u**4 - 165*u**3 - 197*u**2 - 239*u - 283",
           "deg_a_m": 5,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 6,
-          "a_m": "133*check_q**6 + 167*check_q**5 + 211*check_q**4 + 261*check_q**3 + 323*check_q**2 + 394*check_q + 479",
+          "a_m": "23*u**6 + 31*u**5 + 40*u**4 + 52*u**3 + 66*u**2 + 85*u + 106",
           "deg_a_m": 6,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 7,
-          "a_m": "-12*check_q**7 - 17*check_q**6 - 24*check_q**5 - 34*check_q**4 - 48*check_q**3 - 63*check_q**2 - 84*check_q - 110",
+          "a_m": "-u**7 - 2*u**6 - 3*u**5 - 4*u**4 - 6*u**3 - 9*u**2 - 12*u - 19",
           "deg_a_m": 7,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 8,
-          "a_m": "check_q**4 + 2*check_q**3 + 3*check_q**2 + 5*check_q + 7",
-          "deg_a_m": 4,
+          "a_m": "1",
+          "deg_a_m": 0,
           "integral": true,
           "remainder_nonzero": false
         }
       ],
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0": "0.9232332299116371"
+      "tr_M_at_q0": "0.987743688115809530983023454636"
     },
     "D (deuteron, A=2)": {
       "Z": 1,
@@ -276,12 +276,14 @@
       "tr_M_at_q0": "0.388286471559408430387350108504"
     }
   },
-  "scriptHash": "8d2281c23446",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+  "scriptHash": "3aae79b3b695",
+  "scriptCommitSha": "7bcfeb61d33f8e706f5d7a3f84f3a6a0dbb86614",
+  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
   "engine": "mpmath",
-  "computedAt": "2026-07-18T17:55:54.718701+00:00",
+  "computedAt": "2026-08-15T20:42:15.072648+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "habiro_coefficients_atomic.py"
 }

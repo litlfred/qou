@@ -69,7 +69,7 @@ decidable datum:
 This is a *simpler and more falsifiable* target than "derive the DT count via the
 resurgent Ohtsuki tower": it is an algebraic/combinatorial fact about the q→0 3d
 index, and the natural driver home is the **crystal `q→0` limit (driver 13)** and
-the **hexagonal/Lobachevsky volume constants (driver 11, `Vol(4₁)=2Λ(π/3)`)**, not
+the **hexagonal/Lobachevsky volume constants (driver 11, `Vol(4₁)=2·Cl₂(π/3)`)**, not
 the CS-asymptotics resurgence (driver 12).
 
 The new Lean brick

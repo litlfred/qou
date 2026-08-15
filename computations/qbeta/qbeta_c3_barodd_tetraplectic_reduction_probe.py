@@ -26,7 +26,7 @@ TWO DISTINCT INVOLUTIONS (the correction — thanks to owner's "e_k(q̄,…)?"):
 CHARACTERIZATION (measurement, not fit):
   On |q|=1 the sinh part collapses to i·Im e_k(q,q³,…) — a pure phase (the
   channel-separation phase channel; |Φ_b|=1). Reported at the corpus-natural
-  point b²=1/6 (q=ζ₆, the Vol(4₁)=2Λ(π/3) angle), NOT chosen by matching S. The
+  point b²=1/6 (q=ζ₆, the Vol(4₁)=2·Cl₂(π/3) angle), NOT chosen by matching S. The
   two S-values (muon +0.00968298, proton −0.03945936; sign-flip) are the target;
   pinning the derived argument z(q₀) is the open handoff to the z→c_k evaluation
   map (PR #3458 territory).
@@ -205,7 +205,7 @@ def main() -> int:
 
     # ---- Arrow 5: on |q|=1 the sinh part = i·Im e_k = pure phase ----
     print("\n[3] Arrow 5 — on |q|=1 the bar-ODD (sinh) part = i·Im e_k = phase:")
-    print("    corpus-natural point b²=1/6 ⇒ q=ζ₆=e^{iπ/3} (Vol(4₁)=2Λ(π/3) angle,")
+    print("    corpus-natural point b²=1/6 ⇒ q=ζ₆=e^{iπ/3} (Vol(4₁)=2·Cl₂(π/3) angle,")
     print("    NOT S-matched). Both the direct i·Im e_k and the validated arg Φ_b.")
     ek3 = sp.lambdify(q, sp.expand(Pfull.coeff(x, 3)), "mpmath")
     zeta6 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)

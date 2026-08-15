@@ -57,6 +57,7 @@ GATES=(
   "q0-anchor flip|computations/audits/q0_anchor_consistency_audit.py|--strict|no|yes"
   "mpf(<float>) source|computations/mpf_float_source_audit.py|--strict|yes|yes"
   "import-time dps ratchet|computations/mpf_import_time_dps_audit.py|--strict|yes|yes"
+  "never-raises-dps ratchet|computations/never_raises_dps_audit.py|--strict|yes|yes"
   "float64-padding ratchet|computations/witness_float64_padding_audit.py|--strict|yes|yes"
   "mp.dps no-op|computations/mpf_context_dps_audit.py|--strict|yes|yes"
   "module-const precision|computations/module_const_precision_audit.py|--strict|yes|yes"

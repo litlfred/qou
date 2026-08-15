@@ -70,6 +70,9 @@ pub mod laurent_rational_q;
 pub mod littlewood_richardson;
 #[cfg(feature = "mpfr")]
 pub mod precision_scalar;
+/// Reproducibility record for emitted certificates (argv + anchor + a
+/// ready-to-run command). See the module docs for why it exists.
+pub mod provenance;
 pub mod rational_round;
 #[cfg(feature = "mpfr")]
 pub mod reduce_laurent;

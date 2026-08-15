@@ -1,10 +1,11 @@
 ---
 # qou-cy2h
 title: 'OBJECTION: a5 orbital-fracture ''falsifiable in principle'' unaddressed against exact free-atom f-shell degeneracy'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T13:03:57Z
-updated_at: 2026-08-08T13:03:57Z
+updated_at: 2026-08-15T10:37:13Z
 ---
 
 

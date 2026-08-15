@@ -344,7 +344,38 @@
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read: prose reads aloud cleanly"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "7bd89a2ae491",
+          "ts": "a4b5a5d3d145",
+          "lean": "9882e1a1a257",
+          "lean_statement": "82eb13b67c78"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T11:11:41.181Z"
+  "updated_at": "2026-08-15T21:15:41.696Z",
+  "paths": {
+    "ts": "content/quantum-observable-universe/fluid-dynamics/qns-unit-layers.ts",
+    "md": "content/quantum-observable-universe/fluid-dynamics/qns-unit-layers.md",
+    "lean": "content/quantum-observable-universe/fluid-dynamics/qns-unit-layers.lean"
+  },
+  "source_hashes": {
+    "md": "7bd89a2ae491",
+    "ts": "a4b5a5d3d145",
+    "lean": "9882e1a1a257",
+    "lean_statement": "82eb13b67c78"
+  }
 }

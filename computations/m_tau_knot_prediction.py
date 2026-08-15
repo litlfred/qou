@@ -85,7 +85,7 @@ HBAR_Q_SQ = HBAR_Q ** 2
 # All values verified to 8+ dps. Higher-precision values are noted.
 KNOT_VOL_TABLE: dict[str, str] = {
     # smallest hyperbolic knots (Rolfsen, up to 7 crossings)
-    "4_1":  "2.0298832128193072500",   # = 2*Λ(π/3); 15+ dps from canonical sources
+    "4_1":  "2.0298832128193072500",   # = 2·Cl₂(π/3) = 6Λ(π/3); 15+ dps from canonical sources
     "5_2":  "2.8281220883177828550",   # 10-cell hyperbolic
     "6_1":  "3.1639632305103625730",
     "6_2":  "4.0597664956578801590",

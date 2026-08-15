@@ -1,15 +1,15 @@
 {
   "engine": "complex_volume_witness.py",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T17:36:31.554648+00:00",
-  "commitSha": "56e9680162560f9e3c8639adba2ffda1ade01318",
+  "computedAt": "2026-08-15T20:41:54.860094+00:00",
+  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 19,
   "computation": "complex-volume-unification",
   "scriptFile": "complex_volume_witness.py",
-  "scriptHash": "9f501d50c1eb",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "a8f65c17827f",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,9 +20,10 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "𝔙 = 𝔈_bind + i·𝔔_β: binding (Re) and β-decay Q-value (Im) as the two real archimedean shadows of one complex fibre object (conj:binding-qbeta-complex-volume). Im(q₀)=0 ⇒ both real; complex structure is fibre-level. Re via binding_canonical, Im via q_beta_substrate_prediction; pure-canonical (m_e, q₀). Packaging only — that both descend from one fibre 𝔙 is the open conjecture, not proved here (no binding/Q_β double-count: main cdc2d867 branch A).",
   "contentBlock": "conj:binding-qbeta-complex-volume",

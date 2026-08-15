@@ -12,7 +12,11 @@ import qou_substrate.witness as w  # noqa: E402
 def test_env_override_muon():
     a, v = w.resolve_q0_anchor("whatever.py", env={"QOU_Q0_ANCHOR": "muon"})
     assert a == "muon"
-    assert v is None or v.startswith("1.109978595557")  # muon pin
+    # The muon pin as the COMPUTE path actually uses it. Do NOT "correct" this
+    # to the q_muon_at() value (1.109978595554…): a muon-tagged producer
+    # computes with the witness string, so a derived label would disagree with
+    # the number the witness reports. See _q0_value_for_anchor's note.
+    assert v is None or v.startswith("1.109978595557")
 
 
 def test_env_override_proton():
@@ -49,12 +53,6 @@ def test_explicit_anchor_overrides_resolution():
     assert payload["q0Anchor"] == "proton"
 
 
-if __name__ == "__main__":
-    for name, fn in sorted(globals().items()):
-        if name.startswith("test_") and callable(fn):
-            fn()
-            print(f"ok  {name}")
-    print("all q0-anchor tests passed")
 
 
 def test_save_carries_forward_a_recorded_pin(tmp_path):
@@ -113,3 +111,42 @@ def test_save_does_not_invent_a_pin(tmp_path):
 
     got = json.loads(out.read_text())
     assert "q0Anchor" not in got, "rebuild invented a pin that was never recorded"
+
+
+# RETRACTED 2026-08-15. Two tests stood here asserting the muon label must
+# equal `q_muon_at()`, on the premise that re-running `q_pinning_50_digit.py`
+# would flip the label to a proton value. That premise is FALSE — the producer
+# is manifest-tagged `ideal_muon`, so `q_at` returns the witness string and the
+# producer is a fixed point. The tests encoded the wrong invariant and would
+# have failed correct code.
+#
+# The real defect is that the muon 50-dps constant is CIRCULAR (its producer
+# reads, via `q_at`, the witness it writes). A test for that belongs with a fix
+# that gives the muon anchor a real derivation and moves the label and the
+# computed value together — not here.
+
+
+# NOTE: this MUST stay at the end of the file. It enumerates `globals()`, so
+# any test defined BELOW it is invisible to the direct-run path — which is how
+# two tests added on 2026-08-15 silently never ran that way (pytest collects
+# them regardless, since it imports the whole module first).
+if __name__ == "__main__":
+    import inspect
+    ran = skipped = 0
+    for name, fn in sorted(globals().items()):
+        if not (name.startswith("test_") and callable(fn)):
+            continue
+        # This runner cannot supply pytest fixtures. Skip loudly rather than
+        # crash: moving this block to the end (2026-08-15) exposed a test
+        # taking `tmp_path`, which the old placement had hidden by never
+        # reaching it at all.
+        if inspect.signature(fn).parameters:
+            print(f"skip {name}  (needs pytest fixtures: "
+                  f"{', '.join(inspect.signature(fn).parameters)})")
+            skipped += 1
+            continue
+        fn()
+        print(f"ok   {name}")
+        ran += 1
+    print(f"q0-anchor: {ran} passed, {skipped} skipped "
+          f"(run under pytest for full coverage)")

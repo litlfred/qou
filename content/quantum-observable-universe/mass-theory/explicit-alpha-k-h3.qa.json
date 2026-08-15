@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/explicit-alpha-k-h3.lean"
   },
   "source_hashes": {
-    "ts": "58d35e3d5364",
     "md": "463c9b1b2c25",
-    "lean": "b0c2f06dc71a"
+    "ts": "58d35e3d5364",
+    "lean": "b0c2f06dc71a",
+    "lean_statement": "cae792598df8"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -814,26 +815,6 @@
         },
         "reviewed_at": "2026-08-10T04:37:09.661Z",
         "reviewed_sha": "a75f5c65fbef54e3638de522f5129eab8ca338ec"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "36979dd567f5",
-          "ts": "58d35e3d5364",
-          "lean": "b0c2f06dc71a",
-          "lean_statement": "cae792598df8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T03:25:56.808Z",
-        "reviewed_sha": "08a8affec24816376244e11fc156254784f5f50b"
       }
     ],
     "q-usage-regime-detected": [
@@ -1968,7 +1949,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364",
+          "lean": "b0c2f06dc71a",
+          "lean_statement": "cae792598df8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.595Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

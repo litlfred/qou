@@ -782,67 +782,89 @@ except ImportError:
     _HAS_NATIVE = False
 
 
-# ── DIVERGENCE GUARD: the native side does not match this module ──────
+# ── NATIVE DISPATCH: convergence self-check (qou-m7py RESOLVED 2026-08-15) ──
 #
-# NOTE — do not restate this as "the Rust is on convention C". It is NOT:
-# `markov_z` in tools/hecke-engine/src/gram.rs is already q³/(q²+1),
-# convention D. (An earlier draft of this guard said C; that was wrong,
-# and the correction is the reason this comment is explicit.) The crate
-# diverges from this module in three OTHER ways, verified by reading it:
+# The qou-m7py port brought the crate and every language binding onto
+# convention D: `gram::trace_weights_markov` (`TR_M[5] = h·z² + z`) drives
+# `gram_matrix`/`nf_tr` and every binding's `trace_weights` export, `Q_0` is
+# the proton pin, and `gram_inverse` was removed in favour of
+# `gram_quotient_inverse` + `gram_radical`. A freshly-built wheel now matches
+# this module exactly.
 #
-#   1. `trace_weights` ends `z*z*z` where TR_M below ends `h*z² + z` —
-#      the 2026-05-19 fix was never ported. This is the load-bearing one:
-#      with `z³` the Gram is NON-singular, so the crate has no radical,
-#      no quotient, and no reason to have either. Fixing the trace alone
-#      would drop a singular Gram into the native path with nothing to
-#      handle it, which is why the trace fix and the quotient must land
-#      in ONE change.
-#   2. `Q_0` is hardcoded to 1.1099785955541805 — the MUON pin. AGENTS.md
-#      (owner directive 2026-08-07) defaults all production compute to the
-#      PROTON pin 1.1099785827513808, which this module reads. That is
-#      2.19e-8 relative on z: far past any tolerance in this test suite,
-#      and a straddle of the ideal/experimental layer boundary.
-#   3. No pseudoinverse / quotient surface at all.
-#
-# Tracked as qou-m7py.
-#
-# Before the C → D migration the native path was merely *fast*; the two
-# sides agreed. Now they do not, so merely INSTALLING the wheel would
-# silently change results with no error and no log line, reproducing only
-# on machines that happen to have it. An environment-dependent silent
-# divergence is a worse failure mode than a loud refusal, so the dispatch
-# REFUSES. This trades the ~100× speedup for correctness until qou-m7py
-# lands; QOU_ALLOW_NATIVE_DIVERGENCE=1 is an explicit opt-in.
-_NATIVE_CONVENTION_MSG = (
-    "pyhecke_native is installed, but the guard cannot tell whether the wheel "
-    "was built BEFORE or AFTER 2026-08-15. The crate itself now matches this "
-    "module exactly (trace_weights ends h*z^2 + z, Q_0 is the proton pin) -- "
-    "verified bit-identical on z, all of TR_M, G and RADICAL. A wheel built "
-    "before that lands is still divergent, and nothing in the wheel reports "
-    "its build. So: REBUILD the wheel (maturin develop / pip install -e "
-    "tools/pyhecke-native) and set QOU_ALLOW_NATIVE_DIVERGENCE=1, or leave it "
-    "refusing and use the pure-Python path. Note gram_inverse no longer "
-    "exists in the wheel either -- it is gram_quotient_inverse now."
+# The one residual risk is BUILD PROVENANCE: an OLD wheel (built before the
+# port) is still on the legacy `z³` trace and/or the muon pin, and nothing in
+# the wheel reports its build date. Merely installing such a wheel would
+# silently change results. So rather than trust installation, `_native_ok()`
+# runs a RUNTIME CONVERGENCE SELF-CHECK — it compares the installed wheel's
+# `trace_weights`/`gram_matrix` against this module's convention-D reference
+# (`TR_M`, `G`) at `q0`, and refuses LOUDLY on any mismatch. A correct wheel
+# is enabled (~100× on ⁴⁰Ca); an old/divergent wheel is refused with a rebuild
+# hint — no silent divergence either way. `QOU_DISABLE_NATIVE=1` is the
+# explicit opt-out (debugging / forcing the pure-Python path).
+_NATIVE_STALE_MSG = (
+    "pyhecke_native is installed but DIVERGES from pyhecke.gram at q0 "
+    "(convention-D self-check failed). This is almost certainly a wheel built "
+    "before the qou-m7py convention-D port (2026-08-15): its trace_weights "
+    "still ends z^3 and/or Q_0 is the muon pin. REBUILD it — "
+    "`bash scripts/build-pyhecke-native.sh` (or `maturin develop` in "
+    "tools/pyhecke-native) — then retry. Refusing rather than silently "
+    "returning divergent numbers. Set QOU_DISABLE_NATIVE=1 to force the "
+    "pure-Python path without rebuilding."
 )
+
+#: Cached result of the one-time runtime convergence self-check.
+_NATIVE_VERIFIED: "bool | None" = None
+
+
+def _verify_native_convergence() -> bool:
+    """Compare the installed wheel against this module's convention-D
+    reference at q0. Returns True iff it matches within f64 tolerance;
+    otherwise emits a loud warning (never silently degrades) and returns
+    False. Cached by `_native_ok`."""
+    import warnings
+    try:
+        tw = np.asarray(_native.trace_weights(q0), dtype=float)
+        gm = np.asarray(_native.gram_matrix(q0), dtype=float)
+    except Exception as exc:  # pragma: no cover - defensive
+        warnings.warn(
+            f"pyhecke_native convention-D self-check could not run ({exc!r}); "
+            "refusing the native path. " + _NATIVE_STALE_MSG,
+            RuntimeWarning,
+            stacklevel=2,
+        )
+        return False
+    tol = 1e-9
+    if np.allclose(tw, TR_M, atol=tol) and np.allclose(gm, G, atol=tol):
+        return True
+    warnings.warn(_NATIVE_STALE_MSG, RuntimeWarning, stacklevel=2)
+    return False
 
 
 def _native_ok() -> bool:
-    """True iff the native path may be used. False while the crate
-    diverges from this module (trace rule + anchor); see the guard note."""
+    """True iff the native path may be used: the wheel is installed, not
+    explicitly disabled, and passes the runtime convention-D self-check.
+
+    Resolved by qou-m7py (2026-08-15): the crate + bindings are on
+    convention D, so an up-to-date wheel is ENABLED by default. An old,
+    divergent wheel fails the self-check and is refused loudly (never
+    silently). `QOU_DISABLE_NATIVE=1` forces the pure-Python path."""
+    global _NATIVE_VERIFIED
     if not _HAS_NATIVE:
         return False
     import os
-    if os.environ.get("QOU_ALLOW_NATIVE_DIVERGENCE") == "1":
-        return True
-    raise RuntimeError(_NATIVE_CONVENTION_MSG)
+    if os.environ.get("QOU_DISABLE_NATIVE") == "1":
+        return False
+    if _NATIVE_VERIFIED is None:
+        _NATIVE_VERIFIED = _verify_native_convergence()
+    return _NATIVE_VERIFIED
 
 
 def has_native() -> bool:
     """True iff the pyhecke_native wheel is installed.
 
-    NOTE: this reports *installation*, not usability. The native path is
-    currently refused even when installed, because it is on a different
-    trace convention -- see `_native_ok`."""
+    Reports *installation*. Usability additionally requires passing the
+    runtime convention-D self-check and not being disabled via
+    `QOU_DISABLE_NATIVE=1` — see `_native_ok`."""
     return _HAS_NATIVE
 
 
