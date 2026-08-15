@@ -1010,3 +1010,70 @@ coefficient lemma) — unreadable. The next pass should name `F₀ … F₈` as
 definitions first and generate against those. The table above is the
 specification; it came from the engine, so it is a check on the Lean rather than
 a guess the Lean would have to discover.
+
+### §4r complete — the chain and all four instances
+
+`chainStep1 … chainStep8`, `oc_reduces_to_zero`, and the four instances
+`yb_yb_resolves`, `yb_bs_resolves`, `bs_yb_resolves`, `bs_bs_resolves`.
+UGB green (1212 jobs), warning-free, axiom-clean.
+
+`reducesToZero_congr` (§6) makes the last join — the chain runs on the explicit
+element `F₀`, and `oc_spoly_coeff` says the S-polynomial is coefficientwise `F₀`.
+Built for the negation transfer; this is where it first pays, and it is why the
+chain can be stated on explicit elements instead of on `oc.spoly`.
+
+**Three build facts, none visible from the statement:**
+
+* **Heartbeats are budgeted per declaration.** Eight steps against five-term
+  elements do not fit one 200 000 budget — the single theorem timed out at
+  `elaborator` and again at `whnf`. Split into eight top-level theorems, each
+  fits comfortably. Same lesson as the H₄ generator tables; second time it has
+  cost a build.
+* **Steps 3 and 4 leave goals `ring` cannot close**, because they hold only
+  modulo `c₁ * c₁ = 1`: after `ring_nf` the terms carry `c₁ ^ 3`. Derive
+  `hc3 : c₁ ^ 3 = c₁` and rewrite before the final `ring`. `linear_combination`
+  is the natural tactic and is **not in scope in this file** — `Mathlib.Tactic`
+  reaches `ring` but not it.
+* **`F₀` does not mention `hp`** (it carries no `h`), so `variable`-driven
+  binders gave it a different signature from `F₁ … F₇` and every call site
+  mismatched. Made explicit and named `_hp`.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × far-commutation  5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      ---------------------------
+      proved                  64
+      remaining               28
+
+    inclusion compositions    22   §4m   (all)
+
+## Build-cache note (2026-08-15)
+
+Checked the cache mechanism after being pointed at it. `lake-cache/qou-v4-24-0`
+is restored automatically on SessionStart by
+`scripts/lean-cache-restore.sh` — which is **why** the UGB rebuilds in this
+session cost 12–16 s rather than a Mathlib build. Nothing here needed reseeding
+for that reason.
+
+Two things worth recording:
+
+* `scripts/lean-olean-cache-seed.sh` **excludes paper oleans by default**
+  (`SEED_PAPER=1` opts in) precisely because they go stale the moment Mathlib is
+  rebuilt. So seeding this branch's UGB oleans would be wrong — they are branch
+  state, not main.
+* The expensive thing this session did that a sibling would repeat is **not**
+  UGB: it is the **full QOU rebuild** (5407 modules, ~40 min), triggered because
+  `QOU/PhotonThreading.lean` imports UGB, so any edit to
+  `UGB/GrobnerShirshov/Basic.lean` or `Elem.lean` invalidates the whole QOU
+  tree. §6 touched both. Worth knowing before editing UGB's lower layers:
+  a leaf-only change (`HeckeCompletion.lean`) costs 13 s, a `Basic.lean` change
+  costs ~40 min downstream.
+
+A production reseed is a force-push to a shared branch, so it is not something
+to do unilaterally mid-arc — flagged to the owner rather than done.
