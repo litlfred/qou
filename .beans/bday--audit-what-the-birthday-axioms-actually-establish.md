@@ -244,3 +244,59 @@ this for more than it is.
   by §1–§3 above will require the mixin.
 - Whether `SignSequence`'s bounds should now be re-stated over `[BirthdayFaithful K]` to
   say something non-vacuous. Not attempted.
+
+---
+**2026-08-10 — `DiophantineBirthday`: the second defect is worse than the first, and it is
+about the conjecture's SHAPE.**
+
+`QOU/AppendixSurreals/DiophantineBirthdayScope.lean`, sorry-free, standard axioms.
+
+The degenerate-instance problem recorded earlier is real but secondary. Looking at what
+the conjecture would have to *say* turned up something sharper.
+
+### Birthday-of-the-number cannot separate algebraic from transcendental
+
+`SurrealField`'s own axiom `birthday_ofReal_le_omega` puts **every** real — algebraic and
+transcendental alike — at birthday `≤ ω`. So any separation already has to fit inside
+`[0, ω]` for both classes.
+
+In **Conway's actual surreals** it collapses entirely: the reals are exactly the surreals
+born on or before day `ω`, with dyadic rationals born strictly earlier and **every other
+real born exactly on day `ω`**. So
+
+    birthday(√2) = ω = birthday(π)
+
+— an algebraic irrational and a transcendental at the *same* birthday.
+
+Proved here: `no_birthday_only_separation` — if two reals have equal birthday then **every**
+predicate `P : Ordinal → Prop` gives the same verdict on both, so no criterion phrased in
+terms of `birthday ∘ ofReal` can separate them, however cleverly chosen. Trivial to prove;
+the point is what it rules out.
+
+⚠ The Conway fact is **cited, not proved** — nothing in `SurrealField` pins the birthday
+of an irrational. That is the same gap `BirthdayFaithful` closes for the naturals and
+nobody has closed for the irrationals, and the module says so.
+
+### So the conjecture's own gloss was right and its formalisation was not
+
+The gloss says *"separated by birthday **trajectory**"*. That word is load-bearing and was
+not taken literally. Liouville/Roth are about *how fast rationals approximate `α`*, which
+in surreal terms is the shape of the **sign expansion** — the path `gonshor` traces — not
+the ordinal it terminates at. The corpus already has that infrastructure
+(`SignSequence.gonshor : List Sign → ℚ`, `gonshorIn`).
+
+A faithful statement would compare *prefixes* — the rate at which `gonshor` on length-`n`
+prefixes approaches `α` — against the Liouville exponent. **Not attempted.** This module
+fixes the target, not the theorem.
+
+### Status of the two defects
+
+| defect | status |
+|---|---|
+| only available instance stipulates the answer (`⟨0, rfl⟩`) | recorded, not fixed |
+| separation cannot be by birthday-of-the-number | **proved here** |
+| a trajectory-level statement | open, unformalised, and now the correct target |
+
+The class should be **relabelled a placeholder** until it carries the trajectory
+statement. Its current "honest open state" comment claims an epistemic status it does not
+have, in two independent ways.
