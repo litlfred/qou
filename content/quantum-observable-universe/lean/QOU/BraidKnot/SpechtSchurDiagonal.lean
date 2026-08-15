@@ -97,4 +97,53 @@ theorem finrank_homG_specht_self (μ : YoungDiagram) :
     (V := SpechtSubmodule (k := k) μ →ₗ[k] SpechtSubmodule (k := k) μ)
     (id_ne_zero (k := k) μ)
 
+/-! ## The off-diagonal, exported
+
+The vanishing `Hom_G(S^μ, S^ν) = 0` for `μ ≠ ν` is used inside
+`SpechtClassification.specht_exhausts_irreducibles`'s counting proof but was never stated
+as a lemma of its own. Exported here, because orthonormality needs *both* entries and the
+diagonal alone is only half of it. -/
+
+/-- **Schur, off the diagonal.** For distinct diagrams of the same size there is no nonzero
+equivariant map `S^μ → S^ν`.
+
+Both simplicity hypotheses come from `SpechtClassification.spechtRep_stable_eq_bot_or_top`;
+on the `ν` side, stability under every `spechtRepOn h g` is the same condition as stability
+under every `spechtRep ν σ`, because `transportPermHom h` is surjective. The
+non-isomorphism is `specht_pairwise_noniso`. -/
+theorem homG_specht_cross_eq_bot {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nOf ν)
+    (hne : μ ≠ ν) :
+    homG (spechtRep (k := k) μ) (spechtRepOn (k := k) h) = ⊥ := by
+  refine homG_eq_bot (spechtRep_stable_eq_bot_or_top (k := k) μ) (fun p hp => ?_) ?_
+  · refine spechtRep_stable_eq_bot_or_top (k := k) ν p (fun σ v hv => ?_)
+    obtain ⟨g, rfl⟩ := transportPermHom_surjective h σ
+    exact hp g v hv
+  · intro e he
+    exact specht_pairwise_noniso (k := k) h hne ⟨e, fun g x => he g x⟩
+
+/-- **The Schur pairing is orthonormal on Specht modules, over any characteristic-zero
+field.** `dim_k Hom_G(S^μ, S^ν) = 1` if `μ = ν` and `0` otherwise.
+
+Mathlib's orthonormality (`FDRep.char_orthonormal`) carries `[IsAlgClosed k]`; neither half
+of this needs it. The `1` is W2 (`SpechtAbsolutelyIrreducible.specht_end_scalar`); the `0` is
+the classification's own Schur argument, exported above. -/
+theorem finrank_homG_specht (μ ν : YoungDiagram) (h : Specht.nOf μ = Specht.nOf ν) :
+    finrank k (homG (spechtRep (k := k) μ) (spechtRepOn (k := k) h))
+      = if μ = ν then 1 else 0 := by
+  by_cases hne : μ = ν
+  · subst hne
+    -- at `μ = ν` the transport `h : nOf μ = nOf μ` acts trivially on the group, so
+    -- `spechtRepOn h` is `spechtRep μ` itself.
+    have hrep : spechtRepOn (k := k) h = spechtRep (k := k) μ := by
+      refine DFunLike.ext _ _ (fun g => ?_)
+      show spechtRep (k := k) μ (transportPermHom h g) = spechtRep (k := k) μ g
+      congr 1
+    rw [hrep, if_pos rfl]
+    exact finrank_homG_specht_self (k := k) μ
+  · rw [homG_specht_cross_eq_bot (k := k) h hne, if_neg hne]
+    -- as in `finrank_homG_specht_self`, name the module or elaboration unfolds the
+    -- `Submodule k (Mtab _)` carriers and times out.
+    exact finrank_bot k
+      (SpechtSubmodule (k := k) μ →ₗ[k] SpechtSubmodule (k := k) ν)
+
 end QOU.BraidKnot.SpechtSchurDiagonal
