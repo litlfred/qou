@@ -6,6 +6,28 @@ Part 3 rests on the locality of an elementary crossing. Read the word through it
 
 The empty word crosses no pair, so induction on the length of $w$ gives $|P(w)| \le \ell$. If $P(w)$ is all of the $\binom{n}{2}$ pairs then $\binom{n}{2} \le \ell$. $\square$
 
+## Status of the three parts
+
+The parts do not carry equal weight, and the difference matters to how the
+proposition should be read.
+
+| part | status | rests on |
+|---|---|---|
+| 1. composite reduction | the hexagon axiom, solved for $c_{X \otimes Y, Z}$ | axiom of `BraidedCategory` |
+| 2. route independence | theorem | hexagon + naturality of the braiding |
+| 3. crossing count | theorem, proved here | the locality of an elementary crossing |
+
+Part 1 rearranges an axiom rather than establishing anything new: the hexagon
+identities are fields of the braided-category structure, so a composite object's
+failure to contribute an interaction of its own is stipulated with the scaffold.
+Part 2 is a genuine derivation, and a standard one — the Yang--Baxter equation
+follows from the hexagons together with naturality. Part 3 is independent of
+both and is the only part whose argument is not classical.
+
+Neither part 1 nor part 2 is derivable from the remaining quantum-universe
+axioms, nor from the observability conditions. The hexagon enters with the
+braiding or not at all.
+
 ## Lean structure
 
 The formalization is [`pairwise-interaction-decomposition.lean`](pairwise-interaction-decomposition.lean), namespace `QOU.Braiding`. The declaration `pairwise_interaction_decomposition` is the conjunction of all three parts, each proved separately.
