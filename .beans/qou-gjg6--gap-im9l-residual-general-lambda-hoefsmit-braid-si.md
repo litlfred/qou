@@ -975,3 +975,29 @@ CASE TREE: size 1 done; both size-2 done; size-3 sigma_{k+1}-fixed-end done; siz
 REMAINING: size-3 middle, size-3 sigma_k-fixed end, then any (hka,hla,hAl,hBk) combinations
 that are neither generic nor middle (7 and 8 in the enumeration -- possibly vacuous, but
 that needs proving, not assuming). Then Hecke.lift.
+
+
+## SIZE-3 MIDDLE PROVED 2026-08-15 — and it INVERTS the pattern the smaller orbits set
+
+genMat_braid_of_middle (sorry-free, axiom-clean): both generators move T, but neither
+s_k.T nor s_{k+1}.T extends, so the orbit is {s_{k+1}.T, T, s_k.T}.
+
+THE FINDING, and it is the opposite of what sizes 1 and 2 predicted: this case needs NO
+DELETION AND NO DEGENERACY. Its three rows are braid_diag_identity, braid_rowA_identity and
+braid_rowB_identity UNCHANGED -- the same three the generic size-6 orbit uses.
+
+The reason is structural: sizes 1 and 2 were "generic identity minus terms", licensed by the
+scalar degeneracy 1 + a(d)a(-d) = 0, which is available only when a generator FIXES T. Here
+neither generator fixes T, so no distance is +-1 and no degeneracy exists to invoke -- and
+none is needed. The orbit is smaller than generic purely because the two LENGTH-2 words fail
+to exist; the rows that do exist are the generic ones verbatim.
+
+So the earlier bean note "smaller orbits are the generic identity with a term deleted" is
+TRUE FOR THE ORBITS WHERE A GENERATOR FIXES T, and false in general. Corrected here rather
+than left to mislead. The right statement: deletion tracks which COLUMNS are scalar, not
+orbit size.
+
+CASE TREE: size 1 done; both size-2 done; size-3 middle done; size-3 sigma_{k+1}-fixed end
+done; size 6 done. REMAINING: size-3 sigma_k-fixed end (¬hka, hla, hBk) -- the mirror of the
+one already done -- and then whether (hka, hla, hAl, ¬hBk) / (hka, hla, ¬hAl, hBk) can occur
+at all. Then Hecke.lift.
