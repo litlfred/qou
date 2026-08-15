@@ -155,3 +155,55 @@ say so.
 
 Two counts in the first draft of the write-up were wrong (nine/six for what is
 six/ten). Corrected against the table before commit.
+
+
+## 2026-08-15 — tranches 2-4 assembled, and the caveat that gates all of them
+
+Index: `docs/audits/2026-08-15-tranche-index.md`. Sheets for
+`def:hecke-normal-form` (20), `def:borromean-baryon` (16),
+`def:crossing-energy` (12). Nothing applied.
+
+Across the first four tranches: **69 sources, 6 with a prose link to the target
+they omit from `uses[]`** — a block's two halves contradicting each other — and
+about 22 more mentioning the concept without linking, which is where judgement
+decides.
+
+Not all tranches are equal, and size is the wrong order:
+
+- `def:crossing-energy` is the **strongest** (3 of 12 link, 6 mention, and
+  `rem:commutative-crossing-energy` links in prose *and* references the decl in
+  Lean) despite being the smallest.
+- `def:borromean-baryon` is the **weakest** — zero prose links, 10 of 16 with no
+  `.lean`, a narrative cluster of remarks and an example. Almost no mechanical
+  signal, so it should not be done early merely for being large.
+- `def:hecke-normal-form`'s mention column needs care: bare "normal form" is
+  generic and appears for unrelated reasons. Only the three exact
+  "hecke normal form" matches are strong.
+
+### Restoring an edge can CREATE a forward reference — this gates application
+
+`uses[]` pointing at a later block in the same chapter is exactly what
+`detangler-no-forward-ref` counts, and what the `fwr` arc spent five PRs cutting
+from 274 to 194. Restoration adds `uses[]` entries, so some restorations push it
+back up.
+
+Concretely: `def:crossing-energy` was relocated into knots-particles-confinement
+**§8** on 2026-08-09 *so that* the electroweak results would stop
+forward-referencing their own definitions. `prop:hadron-exists`, one of the
+blocks that lost the edge, sits in **§3** of that same chapter. Restoring it
+would recreate precisely the forward reference that relocation removed.
+
+So every tranche needs a third, mechanical question after the two editorial
+ones: does restoring this point forward, and if so is that acceptable, does the
+block need `foreshadows[]`, or does something need to move?
+
+**It is not automated, and until it is, no tranche should be applied in bulk.**
+Not because the editorial reading is unsound, but because a correct restoration
+can silently undo a different piece of correct work.
+
+The obstacle is small and belongs on the platform: the position map lives in
+`loadChapterGraph`, private to `qa-checkers-extended.ts`, so a consumer asking
+"where is this block?" has no accessor and would have to hand-roll a second
+manifest parser — the exact duplication `fsl7` exists to prevent and
+folio-assistant #116 just finished undoing. The fix is an exported accessor,
+not a second parser here.
