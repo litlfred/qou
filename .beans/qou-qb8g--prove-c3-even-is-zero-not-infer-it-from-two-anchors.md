@@ -269,3 +269,72 @@ written as a q-series converges at `1/q0 < 1` and NOT at `q0 > 1`. So:
 
 Scope-(a) throughout. Nothing here refutes (H1); it shows the EXTRACTOR cannot
 test it at the bar-partner, and names what a carrier must return instead.
+
+
+---
+
+# FRONT (e) — (H1)'s STATED EVIDENCE HAS NO DISCRIMINATING POWER
+# (2026-08-15, PR #5093; probe `qbeta_h1_significance_against_cal3_band.py`)
+
+Owner picked "(e) re-examine (H1) itself" alongside (a) and (b). Result: the
+evidence cited for (H1) does not discriminate at present resolution, and the
+corpus phrasing overstates it two ways. **Both defects are in text I wrote
+earlier the same day (PR #5074).**
+
+## Defect 1 — the percentage omits the error bar on what is being compared
+
+`sigma(c_3) = +/-1.262` per anchor, CAL-3 propagated — **61 %** of `|c_3|`.
+DERIVED in the probe as `sigma(Q_beta)/(Q_N2 u^3)` from the committed CAL-3
+input, reproducing the corpus's quoted 1.262 to `4.1e-5` rather than assuming
+it. In sigma:
+
+    proton   |c_3 - (-Vol(4_1))| = 0.03946   ->  0.031 sigma
+    muon                         = 0.00968   ->  0.008 sigma
+
+A 0.03-sigma agreement is not strong evidence; it is NO evidence. Every
+candidate within the band agrees at least as well. This is precisely the
+standard the O2 probe (`qou-ws1w`) already applied to the `A_omega -> S`
+bridge — "neither confirmed nor excluded ... the signature of a fit, not a
+derivation" — and fired O1-remove on. **That test had never been turned on (H1)
+itself**, the hypothesis that DEFINES S.
+
+## Defect 2 — the "0.48 %" is the MUON figure, labelled as the substrate anchor
+
+    muon    0.479 %      <- this is the published "0.48 %"
+    proton  1.907 %      <- 4.0x worse, not quoted
+
+Since the 2026-08-07 owner directive makes the proton pin the default for new
+compute, "the substrate anchor" reads as proton today, so the headline attaches
+the muon's number to it and flatters (H1) fourfold.
+
+## Consequence for the genericity result
+
+The 1-sigma acceptance for `V` in `c_3 ~ -V` is `[0.807, 3.331]`, width
+**2.524**, against the **0.0491** genericity window the 7/7-unrelated-constants
+check was computed over. **The window understates the ambiguity by 51x.**
+
+## What would make (H1) testable
+
+    32x  sharper Q_beta  ->  proton agreement reaches 1 sigma
+    130x sharper Q_beta  ->  muon agreement reaches 1 sigma
+
+bracketing the **25.68x** the zero-location test needs (PR #5084). All three
+thresholds are the SAME lever — a sharper neutron Q-value — and they order
+sensibly, which is a consistency check on all three numbers.
+
+## Scope — and it cuts BOTH ways
+
+Scope-(a). (H1) is **NOT refuted**: no invariant forbids a `4_1`-volume
+ingredient in `c_3`'s bar-even part, and `0.031 sigma` is not evidence AGAINST
+(H1) either. Nothing is being measured. Do not convert this into a scope-(b)
+exclusion, and do not cite it as a reason to drop (H1) — cite it as the reason
+(H1) cannot currently be tested.
+
+## Net effect on this bean
+
+- Obstacle 2 ("neither named split is derived") is unchanged and now has a
+  quantitative floor under it: even if a split were proposed, the anchor data
+  could not adjudicate it.
+- Re-scoped in the same PR: registry section 9f's "surviving empirical fact"
+  paragraph, and the `rem-qstar-decay-sector-q0` paper block, both of which
+  carried the bare "0.48 %".

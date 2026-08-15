@@ -608,7 +608,10 @@ anchor interval. Vol(4₁)'s position in it:
 
 **80.2961 % computed against "≈80.3 %" published.** The headline placement *is*
 Vol(4₁)'s position in the genericity window — a restatement of
-`c₃(q₀) ≈ −Vol(4₁)` to 0.48 %, not a decay-sector preference. The supporting
+`c₃(q₀) ≈ −Vol(4₁)`, not a decay-sector preference. (That restatement is itself
+worth only **0.031 σ** against `σ(c₃) = ±1.262`; the "0.48 %" this sentence
+originally quoted is the **muon** figure — proton is 1.907 % — see the re-scope
+box at the end of this section.) The supporting
 argument that `q*_S` "is not the precision-weighted mean" (0.0007 % muon-ward)
 is true and irrelevant: no in-window `V` gives a reconciliation either.
 
@@ -639,10 +642,39 @@ of `q*_S` as independent evidence**, and with it the "three-way" reading: the
 substrate rests on **two** pins, and μ–p is a **two-way** tension.
 
 Untouched and still correct: the `1/u³` smoothness result (`S′(q*_S) = 2.37 ×
-(1/u³)`), `dq*/dQ_β ≈ −0.539`, and the bar-odd structural sign-flip. The
-surviving empirical fact, stated without the machinery: **c₃ at the substrate
-anchor agrees with −Vol(4₁) to ≈ 0.48 %** (0.07 % at the muon for the full
-keystone form `−Vol(4₁) + u − (10/3)u²`; 2.3 % at the proton — and 2.3 % is
-*inside* the 2.4 % genericity window).
+(1/u³)`), `dq*/dQ_β ≈ −0.539`, and the bar-odd structural sign-flip.
 
-Tracked: bean `qou-kh7e`.
+> **🛑 The "surviving empirical fact" is RE-SCOPED 2026-08-15** (same day, same
+> author, PR #5093; probe
+> [`qbeta_h1_significance_against_cal3_band.py`](../../computations/qbeta/qbeta_h1_significance_against_cal3_band.py)).
+> It previously read: *"the surviving empirical fact, stated without the
+> machinery: **c₃ at the substrate anchor agrees with −Vol(4₁) to ≈ 0.48 %**
+> (0.07 % at the muon for the full keystone form …; 2.3 % at the proton …)."*
+> Two defects, both mine:
+>
+> 1. **The percentage omits the error bar on the quantity being compared.**
+>    `σ(c₃) = ±1.262` per anchor, CAL-3 propagated — **61 %** of `|c₃|`. Derived
+>    in the probe as `σ(Q_β)/(Q_N2·u³)`, reproducing the corpus's quoted 1.262 to
+>    `4.1e-5` rather than assuming it. In σ the agreements are **0.031 σ**
+>    (proton) and **0.008 σ** (muon). That is not strong evidence — it is *no*
+>    evidence, and by the same standard §9e's O2 verdict already applied to the
+>    `A_ω → S` bridge ("neither confirmed nor excluded … the signature of a fit").
+>    That test had never been turned on **(H1) itself**, the hypothesis that
+>    *defines* `S`.
+> 2. **The 0.48 % is the MUON figure**, quoted under the label "the substrate
+>    anchor". Measured: muon **0.479 %**, proton **1.907 %** — 4.0× worse. Since
+>    the 2026-08-07 owner directive makes the proton pin the default, "substrate
+>    anchor" now reads as proton, so the headline attaches the muon's number to
+>    it and flatters (H1) fourfold.
+>
+> **This makes the genericity result above understate the problem by ~51×**: the
+> 1σ acceptance for `V` is `[0.807, 3.331]`, width **2.524**, against the
+> **0.0491** window the 7/7-constants check was computed over.
+>
+> **Scope-(a), and it cuts both ways.** (H1) is **not** refuted — no invariant
+> forbids a `4₁`-volume ingredient in `c₃`'s bar-even part, and 0.031 σ is not
+> evidence *against* it either. Nothing is being measured. Testability needs
+> **32×** (proton) or **130×** (muon) sharper `Q_β`, bracketing the **25.68×**
+> the zero-location test needs (#5084) — all three are the same lever.
+
+Tracked: beans `qou-kh7e`, `qou-qb8g`.
