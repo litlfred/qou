@@ -119,3 +119,40 @@ producer in an under-provisioned container silently strips `environment`
 fields from its witness (measured: `numpy` + `pyhecke_native` dropped on a
 one-word label fix). Bootstrap fully before re-running, and diff the
 witness for `-` version lines. Written up in `local/compute-author` §0.1.
+
+## Tranche 3 — 54 → 3. Only the two known-blocked items remain.
+
+`.md` (17) and `.json` (9 of 12) drained; the `.py` class finished in
+tranche 2. Corpus-wide count is now **3**, all previously identified:
+
+| site | blocker |
+|---|---|
+| `computations/probes/qbeta_ck_basis_constrained_pslq.py:313` | `qou-u6cz` |
+| `computations/probes/qbeta-ck-basis-constrained-pslq.witness.json:107` | `qou-u6cz` |
+| `computations/substrate/knot-volumes.witness.json:28` | orphan — no producer writes that path |
+
+**The `.md` question resolved itself.** These were flagged as needing an
+owner ruling because rewriting `docs/audits/` changes a historical record.
+On inspection all 17 are a mis-transcribed *formula name* beside the
+*correct value* — several state it inline (`= 2.0298832128`, `≈ 2.0299`).
+`2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md:22` is diagnostic:
+`Vol(4₁) = 2·D(e^{iπ/3}) = 2Λ(π/3) = 2.02988…`, where the Bloch–Wigner
+form on the left is right and only the middle term is wrong. Correcting a
+name is not revising a finding, so no ruling was needed. Had any site
+carried a wrong *value* feeding a conclusion, that would have been the
+owner's call.
+
+**Two witnesses fixed by re-running, not editing:**
+`neutrino-mass-volume-exclusion` and `qbeta-root-of-unity` — both producers
+were already corrected in #5119, so the witnesses were simply stale. Both
+re-ran exit 0 with no provenance loss.
+
+**`content/bib-qa-verifications.json` (5) is an agent ledger**, written by
+the `bib-qa` skill with no pipeline generator, so its `rationale` prose is
+editable like an audit doc. One careful read there: the same entry says
+`Lambda(pi/4) = G/2`, which is **correct** (Λ(π/4) = Cl₂(π/2)/2 = G) —
+left untouched. Not every `Λ` in the corpus is wrong; only the Vol(4₁) ones.
+
+**Portability bug noticed:** `computations/neutrino_mass_volume_exclusion.py`
+writes to a **cwd-relative** path, so it fails unless run from the repo
+root, unlike its siblings which anchor on `__file__`. Not fixed here.
