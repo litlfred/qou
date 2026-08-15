@@ -132,8 +132,13 @@ ATOMS: list[tuple[str, str, int, int, int]] = [
 
 
 def _markov_z_q(q: sp.Symbol) -> sp.Expr:
-    """z(q) = 1 / (q^{1/2} + q^{-1/2})."""
-    return 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    """z(q) = q^3 / (q^2 + 1) -- the production Markov parameter.
+
+    Was 1/(q^{1/2} + q^{-1/2}), convention C, excised by the owner ruling of
+    2026-08-09. Nothing flagged it: the audit keyed off an assignment TARGET
+    and this computes straight into its return, so it had no name to match.
+    """
+    return q**3 / (q**2 + 1)
 
 
 def _hecke_h_q(q: sp.Symbol) -> sp.Expr:

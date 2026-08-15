@@ -173,3 +173,72 @@ that the blind spot is always in the *shape* the detector keys on.
 2. `tools/sage-examples/scripts/hecke_surface.py` misclassifies as
    "computations — live producers"; `classify()` has no sage-examples bucket.
 3. The 3 `gram.py`/`atom.py` sites stay with `qou-w8zz`.
+
+---
+
+## Round 3: the six return-form producers, migrated and regenerated
+
+All six moved to `z = q^3/(q^2+1)`. Audit **11 -> 5 actionable**; the 5 left are
+the 4 pyhecke sites (`qou-w8zz`'s scope) and one sage example that misclassifies
+as a live producer.
+
+Witnesses regenerated serially, lock held, nothing else running:
+
+| witness | result |
+|---|---|
+| `inter-nucleon-linked-channel` | 10 assertions, all passed |
+| `knot-operator-census-group-actions` | regenerated |
+| `lepton-t2n-torus-tower` | 21 assertions, all passed (after two fixes below) |
+
+All three: **0 dead-block entries** structurally.
+
+### A THIRD blind spot: C-specialised closed forms
+
+Migrating `z` is not migrating the file. Four downstream quantities were
+hardcoded to values that only hold at `z_C`, and the audit cannot see any of
+them — it keys on a target name containing `z`, and these are named `W2`,
+`W11`, `trM_sigma1_sq`, `census_hopf`:
+
+| site | was | is |
+|---|---|---|
+| `knot_operator_census_group_actions.trM_sigma1_sq` | `1 + (q-1)/sqrt(q)` | `h*z + 1` |
+| `lepton_t2n_torus_tower.wenzl_weights` | `(q^{3/2}+q+1)/(q^3+q^2+q+1)` | `(q*z+1)/(q^2+1)` |
+| `lepton_t2n_torus_tower.trM_symbolic` | same weights, in sympy | solved from `z` |
+| `inter_nucleon_linked_channel.census_hopf` | unlabelled "DIFFERENT normalisation" | named convention C, D value recorded beside it |
+
+Verified symbolically before rewriting: `h*z+1` at `z_C` reproduces
+`1+(q-1)/sqrt(q)` exactly, and `(q*z+1)/(q^2+1)` at `z_C` reproduces
+`(q^{3/2}+q+1)/(q^3+q^2+q+1)` exactly. **The square roots were never
+structural — they were `z_C`'s, showing through.** Under D both are rational,
+which is the same "D never leaves Q(q)" property the migration keeps hitting.
+
+### The symbolic path caught itself
+
+`lepton_t2n_torus_tower` failed 2 of 21 assertions on first regeneration, and
+both failures were informative:
+
+- `trM_T2_3_symbolic_eq_numeric` — 0.7302 vs 0.8485. **A real miss of mine**:
+  I migrated `wenzl_weights` (numeric) and left `trM_symbolic` (sympy) on C.
+  The file's own symbolic-vs-numeric cross-check found it, which is exactly
+  what that assertion is for.
+- `trM_hopf_wenzl_eq_census` — this one was **correctly** failing. It asserted
+  the Wenzl form equals the census Hopf form, which holds only while both are
+  C. Asserting it now would be asserting C = D. Replaced with the
+  convention-independent `trM_hopf_wenzl_eq_h_z_plus_1`, and the C/D gap
+  recorded as data — the treatment `inter_nucleon_linked_channel` already gave
+  the same pair.
+
+### Pre-existing, not from this migration
+
+`inter_nucleon_linked_channel` pins its own `Q0 = 1.109978595612202257...`,
+against the canonical proton pin `1.109978582751380807...` and the muon pin
+`1.109978595554180575...`. Close to muon, differing at digit 11 — a **third**
+value. Not touched here; flagged.
+
+## Next
+
+1. **Detector gap:** nothing looks for C-specialised closed forms. The
+   fingerprint is a half-integer power (`sqrt(q)`, `q**1.5`, `q**Rational(3,2)`)
+   in a weight or trace expression, in a file that otherwise reads as D. That
+   is a well-defined scan and would have found all four above.
+2. `classify()` has no sage-examples bucket.

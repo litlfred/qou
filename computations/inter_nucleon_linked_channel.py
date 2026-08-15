@@ -112,8 +112,8 @@ def writhe(word):
 
 
 def z_factor(qv):
-    """Markov stabilization factor z = 1/(q^{1/2}+q^{-1/2})."""
-    return 1 / (mp.sqrt(qv) + 1 / mp.sqrt(qv))
+    """Markov stabilization factor z = q^3/(q^2+1) (convention D)."""
+    return qv**3 / (qv**2 + 1)
 
 
 # ---------------------------------------------------------------------------
@@ -214,11 +214,19 @@ w.add_data("trM_pp_nn_asymmetry_note",
     "supplies; it is reported, not tuned to any split."
     % (mp.nstr(tr_pp, 30), mp.nstr(tr_nn, 30)))
 # Cross-check: tr_M(sigma_1^2) here vs the census Hopf closed form
-# 1+(q-1)/sqrt(q) (which is the n-independent Hopf value under a DIFFERENT
-# normalisation); record the raw gap (NOT an assertion -- different conventions).
-census_hopf = 1 + (Q0 - 1) / mp.sqrt(Q0)
-w.add_data("census_hopf_closed_form_1+(q-1)/sqrt(q)_at_q0", mp.nstr(census_hopf, 60))
-w.add_data("trM_pp_vs_census_hopf_gap", mp.nstr(abs(tr_pp - census_hopf), 60))
+# 1+(q-1)/sqrt(q).  That "DIFFERENT normalisation" the comment used to name
+# vaguely is CONVENTION C -- 1+(q-1)/q^{1/2} is exactly h*z+1 evaluated at
+# z_C = 1/(q^{1/2}+q^{-1/2}), which is why the square root is there at all.
+# Naming it is the registry rule: convention-silent trace values are not
+# comparable.  Kept as a labelled C-vs-D comparison and still NOT an
+# assertion; the D value of the same quantity is recorded beside it so the
+# gap reads as a convention difference rather than an unexplained residual.
+census_hopf_C = 1 + (Q0 - 1) / mp.sqrt(Q0)
+hopf_D = (Q0 - 1 / Q0) * z_factor(Q0) + 1
+w.add_data("census_hopf_closed_form_C_1+(q-1)/sqrt(q)_at_q0", mp.nstr(census_hopf_C, 60))
+w.add_data("hopf_closed_form_D_h_z_plus_1_at_q0", mp.nstr(hopf_D, 60))
+w.add_data("trM_pp_vs_census_hopf_C_gap", mp.nstr(abs(tr_pp - census_hopf_C), 60))
+w.add_data("trM_pp_vs_hopf_D_gap", mp.nstr(abs(tr_pp - hopf_D), 60))
 # unlink T(2,0): tr_M(1) in H_2 with q-Schur weights = w_(2)+w_(1,1) = 1.
 tr_pn = eval_at_q0(trM_T2k_symbolic(0)[0])
 w.add_assertion("trM_unlink_pn_eq_1", mp.nstr(tr_pn, 55), mp.nstr(mp.mpf(1), 55),

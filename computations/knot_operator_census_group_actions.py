@@ -75,13 +75,19 @@ def writhe_from_word(word):
 
 
 def z_factor(q):
-    """Markov stabilization factor z = 1/(q^{1/2} + q^{-1/2})."""
-    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    """Markov stabilization factor z = q^3/(q^2 + 1) (convention D)."""
+    return q**3 / (q**2 + 1)
 
 
 def trM_sigma1_sq(q):
-    """Closed form tr_M(sigma_1^2) = 1 + (q-1)/q^{1/2} (n-independent)."""
-    return 1 + (q - 1) / mp.sqrt(q)
+    """Closed form tr_M(sigma_1^2) = h*z + 1, h = q - q^-1 (n-independent).
+
+    Written in terms of z rather than specialised to a convention. The old
+    body was 1 + (q-1)/q^{1/2}, which is this same identity evaluated at
+    z_C -- correct arithmetic, permanently wrong the moment z moved. The
+    square root was never structural; it was z_C's, showing through.
+    """
+    return (q - 1 / q) * z_factor(q) + 1
 
 
 # --- Census of canonical braid words (operator -> (B_n strand count, word)) ---

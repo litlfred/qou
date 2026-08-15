@@ -75,13 +75,24 @@ CAL_TAU_E = mp.mpf(str(CAL_TAU_E))
 #   W_(1,1) = (q^3 + q^2 - q^{3/2})/(q^3 + q^2 + q + 1)
 # ---------------------------------------------------------------------------
 def z_factor(q):
-    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    """Markov parameter z = q^3/(q^2 + 1) (convention D)."""
+    return q**3 / (q**2 + 1)
 
 
 def wenzl_weights(q):
-    denom = q**3 + q**2 + q + 1
-    W2 = (q ** mp.mpf("1.5") + q + 1) / denom
-    W11 = (q**3 + q**2 - q ** mp.mpf("1.5")) / denom
+    """H_2 Wedderburn weights, solved from the Markov axioms for THIS z.
+
+    tr_M(1) = W2 + W11 = 1 and tr_M(sigma_1) = W2*q - W11/q = z give
+    W2 = (q*z + 1)/(q^2 + 1), W11 = 1 - W2, for any z.
+
+    The previous body hardcoded (q^{3/2} + q + 1)/(q^3 + q^2 + q + 1), which
+    is exactly this evaluated at z_C -- the q^{3/2} is z_C's square root
+    showing through a formula that has none of its own. Solving for z instead
+    means the weights follow the convention rather than pinning it.
+    """
+    z = z_factor(q)
+    W2 = (q * z + 1) / (q**2 + 1)
+    W11 = 1 - W2
     return W2, W11
 
 
@@ -92,17 +103,37 @@ def trM_sigma1_pow(q, k):
 
 
 def trM_hopf_census_form(q):
-    """Census Hopf closed form tr_M(sigma_1^2) = 1 + (q-1)/sqrt(q)."""
+    """CONVENTION C census Hopf form tr_M(sigma_1^2) = 1 + (q-1)/sqrt(q).
+
+    Kept deliberately, and named: it is h*z+1 at z_C, so it is the value the
+    census tables were built on. Under production convention D the same
+    quantity is h*z+1 at z_D = q^3/(q^2+1); use `trM_sigma1_pow(q, 2)` for
+    that. Retained only so C-era census numbers stay quotable.
+    """
     return 1 + (q - 1) / mp.sqrt(q)
 
 
 # Symbolic trace in q (verify the closed-form structure independent of q0).
 def trM_symbolic(k):
+    """Symbolic tr_M(sigma_1^k) in H_2(q) -- the same weights as the numeric
+    path, solved from the Markov axioms rather than hardcoded.
+
+    This body used to carry the convention-C weights symbolically:
+
+        rt = sp.sqrt(qs)
+        W2  = (rt**3 + qs + 1) / (qs**3 + qs**2 + qs + 1)
+        W11 = (qs**3 + qs**2 - rt**3) / (...)
+
+    The producer audit could not see them: it keys on a target name containing
+    `z`, and these are named W2/W11. So migrating `z_factor` and
+    `wenzl_weights` left this path on C, and the symbolic-vs-numeric assertion
+    below caught the split -- 0.7302 against 0.8485 at T(2,3) -- which is
+    exactly what that assertion is for.
+    """
     qs = sp.symbols("q", positive=True)
-    rt = sp.sqrt(qs)
-    denom = qs**3 + qs**2 + qs + 1
-    W2 = (rt**3 + qs + 1) / denom
-    W11 = (qs**3 + qs**2 - rt**3) / denom
+    z = qs**3 / (qs**2 + 1)
+    W2 = (qs * z + 1) / (qs**2 + 1)
+    W11 = 1 - W2
     expr = W2 * qs**k + W11 * (-1 / qs) ** k
     # sp.cancel combines over the common denominator (a targeted rational
     # normal form) without the heavyweight sp.simplify the compute-audit
@@ -207,10 +238,20 @@ w.add_assertion(
 # Census Hopf cross-check: tr_M(sigma_1^2) Wenzl == census closed form.
 hopf_wenzl = trM_sigma1_pow(Q0, 2)
 hopf_census = trM_hopf_census_form(Q0)
-w.add_data("trM_hopf_wenzl_at_q0", str(hopf_wenzl))
-w.add_data("trM_hopf_census_at_q0", str(hopf_census))
+w.add_data("trM_hopf_wenzl_D_at_q0", str(hopf_wenzl))
+w.add_data("trM_hopf_census_C_at_q0", str(hopf_census))
+w.add_data("trM_hopf_D_minus_C_gap", str(abs(hopf_wenzl - hopf_census)))
+# This was `add_assertion("trM_hopf_wenzl_eq_census", ...)` at 1e-50, and it
+# held only because BOTH sides were convention C. The Wenzl side is now D and
+# the census form is kept deliberately as a labelled C reference, so asserting
+# equality would be asserting that C = D. The gap is recorded as data instead
+# -- the same treatment inter_nucleon_linked_channel gives the same pair.
+#
+# What IS still assertable is the convention-independent identity: the Wenzl
+# Hopf value must equal h*z + 1 for whatever z is in force.
 w.add_assertion(
-    "trM_hopf_wenzl_eq_census", str(hopf_wenzl), str(hopf_census),
+    "trM_hopf_wenzl_eq_h_z_plus_1",
+    str(hopf_wenzl), str((Q0 - 1 / Q0) * z_factor(Q0) + 1),
     tolerance=mp.mpf("1e-50"),
 )
 
