@@ -2082,3 +2082,30 @@ after the first far-commutation run, `b = 4` extends it again, which is what an
 induction on `b` would have to formalise), the special cases `a = b+1`, and the
 whole `a ≤ b` regime where the quadratic rule appears twice and the length is
 quadratic in both depths.
+
+### The shape of the induction on `b` (read off the `b = 3` chain)
+
+The columns nest, and now concretely. Writing rules in relative notation, the
+stabilised chains are
+
+    b = 2:  B21 F02 │ B21 F02 B32 F13 F03                      │ B10 B21ᵥ │ B10 B21 F02 B32 F13 F03
+    b = 3:  B21 F02 │ B21 F02 B32 F13 F03 ⟨B43 F24 F14 F04⟩    │ B10 B21ᵥ │ B10 B21 F02 B32 F13 F03 ⟨B43 F24 F14 F04⟩
+
+Each increment of `b` inserts the same kind of block **twice**, once per term of
+the S-polynomial: one Bokut–Shiao step at the next generator down, then a run of
+far-commutations carrying the newly exposed letter leftwards past the whole
+prefix. The block for `b` has length `b + 1`, so
+
+    steps(b) = steps(b−1) + 2(b + 1),   steps(2) = 15   ⟹   b² + 3b + 5  ✓
+
+matching the fitted closed form. `b = 4` adds `B54 F35 F25 F15 F05` and comes
+out at 33, as measured.
+
+The far-commutation run is not new work: it is exactly a leftward transport of a
+single generator past a descending run, which is `farComm_transport_left` from
+§4v. What §4ad did with fifteen explicit `monicStep`s, the induction has to do
+with a transport lemma instead, because the block length grows with `b`. The
+words also need a *second* abstract run (the `b`-side one) alongside `E`, so the
+`prefix ++ E ++ suffix` discipline becomes `prefix ++ E ++ mid ++ F ++ suffix`.
+That is the next piece of work, and it closes the whole `a > b` regime at once
+rather than one column at a time.
