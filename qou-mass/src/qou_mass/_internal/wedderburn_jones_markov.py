@@ -65,6 +65,7 @@ def _schur_principal_at_q(args):
 
 
 _Y_LAMBDA_AT_Q0_WITNESS_CACHE: dict[int, dict[tuple, sp.Expr]] | None = None
+_Y_LAMBDA_AT_Q0_WITNESS_Q0: float | None = None
 
 
 def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
@@ -78,8 +79,12 @@ def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
     Returns `{n: {partition: mpf-or-sympy y_lambda}}` keyed by n,
     or empty dict if witness file missing (caller falls back to
     the slow recompute path).
+
+    Also records, in `_Y_LAMBDA_AT_Q0_WITNESS_Q0`, the q_0 the witness was
+    actually BUILT at.  Callers must gate on that value, not on the package
+    constant — see `y_lambda_at`.
     """
-    global _Y_LAMBDA_AT_Q0_WITNESS_CACHE
+    global _Y_LAMBDA_AT_Q0_WITNESS_CACHE, _Y_LAMBDA_AT_Q0_WITNESS_Q0
     if _Y_LAMBDA_AT_Q0_WITNESS_CACHE is not None:
         return _Y_LAMBDA_AT_Q0_WITNESS_CACHE
     import json
@@ -97,6 +102,13 @@ def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
             shape = tuple(r["partition"])
             d[shape] = sp.Float(r["y_at_q0_50dps"], 50)
         by_n[n_key] = d
+    # Record the q_0 this witness was built at, so the fast path can refuse to
+    # serve it to a caller asking for a DIFFERENT anchor.
+    _q0 = (w.get("parameters", {}) or {}).get("q_0") or w.get("q0Value")
+    try:
+        _Y_LAMBDA_AT_Q0_WITNESS_Q0 = float(_q0) if _q0 is not None else None
+    except (TypeError, ValueError):
+        _Y_LAMBDA_AT_Q0_WITNESS_Q0 = None
     _Y_LAMBDA_AT_Q0_WITNESS_CACHE = by_n
     return by_n
 
@@ -106,7 +118,60 @@ def y_lambda_at(
     q_val: sp.Expr | float | None = None,
     workers: int | None = None,
 ) -> dict[tuple, sp.Expr]:
-    """Jones-Markov y_λ(q) at H_n.
+    """Jones-Markov y_λ(q) at H_n — registry convention **D** since 2026-08-09.
+
+    OWNER RULING: convention C excised. Every path below returned C
+    (`y_λ(3,q₀) = (0.4153958, 0.2809296, 0.0227449)`, `z = 1/(√q+1/√q)`); this
+    function now returns D (`(0.5054042, 0.2472979, 0)`, `z = q³/(q²+1)`).
+
+    D's weights are the SU(2) quantum dimensions, computed by the hook-content
+    principal specialisation in `y_lambda_su_n` and normalised `Σ y_λ f^λ = 1`.
+    The defining difference is the row cap: `y_λ = 0` for `ℓ(λ) > 2`, which under
+    C was nonzero — and that zero is exactly what
+    `markovWeights_eq_jones_of_threeRow_eq_zero` needs to force D uniquely.
+
+    THE THREE C FAST PATHS BELOW ARE NOW DEAD and are retained only as the
+    historical record of what C was; the D result returns before any of them is
+    reached. In particular `y-lambda-at-q0.witness.json` holds C weights and must
+    NOT be served — that cache is why the switch has to happen here rather than
+    only at `markov_z`.
+
+    Scale note, because it governs the migration: this function has ~155
+    consumers, more than twice the other three C implementations combined, and
+    it was *unregistered* as a C implementation until 2026-08-09.
+
+    The mass channel is unaffected — `m_p_substrate_identity_50dps.trM_borromean`
+    uses the Lean closed form `(4+h²−3h⁴−h⁶)/(h²+4)` directly and never calls
+    this. Verified: m_p unchanged.
+    """
+    from y_lambda_su_n import y_lambda_su_n as _y_su_n
+    import mpmath as _mp
+    if q_val is not None:
+        _y = _y_su_n(n, _mp.mpf(str(q_val)), 2)
+        return {sh: sp.Float(_mp.nstr(v, 30), 30) for sh, v in _y.items()}
+    # Symbolic q: route to the EXACT convention-D solver (wired 2026-08-09).
+    # This path previously RAISED — the excision left it with no D
+    # implementation, and returning the C solver below would have silently
+    # reintroduced C. `y_lambda_su_n_symbolic` is the same hook-content formula
+    # as the numeric branch, over sympy, so the two agree to round-off
+    # (measured 5.35e-51 at 50 dps) and `z` comes out as `q³/(q²+1)` exactly.
+    #
+    # It is also far cheaper than the C path it replaces: C needed an ~18 min
+    # linear solve at n=4, this is a product formula and returns instantly.
+    from y_lambda_su_n import y_lambda_su_n_symbolic as _y_su_n_sym
+    return _y_su_n_sym(n, Q_SYM, 2)
+
+
+def _y_lambda_at_convention_C_HISTORICAL(
+    n: int,
+    q_val: sp.Expr | float | None = None,
+    workers: int | None = None,
+) -> dict[tuple, sp.Expr]:
+    """DEAD — convention C, excised 2026-08-09. Kept as the historical record.
+
+    Original docstring follows.
+
+    Jones-Markov y_λ(q) at H_n.
 
     If `q_val` is None (default): returns symbolic y_λ via
     `markov_weights_symbolic.solve_y_lambda(n)` — fast for n ≤ 3,
@@ -139,11 +204,25 @@ def y_lambda_at(
     if q_val is None:
         return m.solve_y_lambda(n)
 
-    # Fast path 1: numeric q matches q_0 — load from witness.
+    # Fast path 1: serve the cached witness ONLY if the caller is asking for the
+    # very q_0 the witness was BUILT at.
+    #
+    # This gate used to compare against `q_parameter.Q` (the PROTON / experimental
+    # pin) while the witness itself is built at the MUON / ideal-3-CAL pin — 11.54 ppb
+    # apart.  Passing `q_parameter.Q` therefore satisfied the gate TRIVIALLY and the
+    # ideal-layer cache was served to an experimental-layer caller with no signal that
+    # a calibration-layer boundary had been crossed.  See AGENTS.md §"q₀ anchor
+    # convention" (owner directive 2026-08-07: default to the experimental anchor) and
+    # `computations/deltalambda/mu3_anchor_consistency_probe.py`.
+    #
+    # Gating on the witness's own recorded q_0 means a proton-anchored caller now falls
+    # through to fast path 2 (live closed form at the requested q) and gets values at
+    # the anchor it actually asked for.  A caller that genuinely wants the muon cache
+    # still hits it by passing the muon q_0.
     try:
-        from q_parameter import Q as Q_0_FLOAT
-        if abs(float(q_val) - float(Q_0_FLOAT)) < 1e-12:
-            witness_by_n = _load_y_lambda_at_q0_witness()
+        witness_by_n = _load_y_lambda_at_q0_witness()
+        if _Y_LAMBDA_AT_Q0_WITNESS_Q0 is not None and \
+                abs(float(q_val) - _Y_LAMBDA_AT_Q0_WITNESS_Q0) < 1e-12:
             cached = witness_by_n.get(n)
             if cached is not None and len(cached) == len(shapes):
                 return dict(cached)

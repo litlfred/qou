@@ -57,7 +57,13 @@ Issues = "https://github.com/litlfred/qou/issues"
 where = ["src"]
 
 [tool.setuptools.package-data]
-"qou_mass" = ["data/*.json"]
+# `data/*.json` — the hand-curated shards read by the public API.
+# `*.witness.json` at the package ROOT — vendored witnesses the `_internal`
+#   modules load themselves. They cannot live under `data/`: those modules
+#   resolve paths as `Path(__file__).parent.parent`, which inside the wheel
+#   is `qou_mass/`, so `data/` would FileNotFoundError at runtime. Both are
+#   written by `scripts/sync-qou-mass-vendor.py`; do not hand-place either.
+"qou_mass" = ["data/*.json", "data/isotopes/*.json", "*.witness.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

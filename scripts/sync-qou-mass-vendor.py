@@ -1,0 +1,302 @@
+#!/usr/bin/env python3
+"""Regenerate `qou-mass`'s vendored `_internal/` modules from `computations/`.
+
+WHY THIS EXISTS
+---------------
+`qou-mass` ships standalone, so it carries copies of the `computations/`
+modules it needs. Those copies were made by hand, and on 2026-08-15 every
+single one had drifted from its source:
+
+    _precision                166 changed lines
+    active_set_pruning          1
+    canonical_braid_crossings 200
+    codata_constants          207
+    experimental_constants     86
+    hecke_characters          204
+    hoefsmit_symbolic          19
+    isotope_record_schema      32
+    knot_volumes               26
+    markov_trace_recursive     16
+    markov_weights_symbolic    52
+    q_parameter               418
+    wedderburn_jones_markov    92
+    witness_base              815
+
+14 of 14. The drift was not adaptation — inspected, the vendored-only lines
+are older docstring text, i.e. the copies are simply behind. One of them
+(`canonical_braid_crossings`) was behind by a whole generation: it predated
+`classify_crossing` and still carried the narrow `{0, -h, -h/2}` vocabulary
+that the qou-gdtb / qou-8zjd arc removed everywhere else.
+
+Hand-vendoring 22 more modules for the `qou-elb0` live-path work would have
+guaranteed a repeat at ~2.5x the surface. So the copies are GENERATED now,
+and `--check` makes a drifted copy a test failure rather than a discovery
+three months later.
+
+THE TRANSFORM
+-------------
+Two things, and deliberately only two:
+
+1. **Flatten.** `computations/` has `substrate/`, `hecke/`, `markov/`
+   subdirectories; `_internal/` is flat. Modules import each other by bare
+   name (`from q_parameter import Q`), which resolves because `_internal`
+   puts itself on `sys.path`. Flattening is what makes that work.
+2. **Drop `import _path_bridge`.** That shim exists to paper over the
+   subdirectory layout of `computations/`. A flat `_internal` does not need
+   it, and it is not vendored, so leaving the import in would break every
+   module on import. This is the one transform the old hand-copies also
+   applied, and the only one they applied.
+
+Nothing else is rewritten. If a module ever needs a genuine package-specific
+adaptation, it does NOT belong in this script — give it a real seam upstream
+so both sides can share one file.
+
+USAGE
+-----
+    python3 scripts/sync-qou-mass-vendor.py --check    # exit 1 if drifted
+    python3 scripts/sync-qou-mass-vendor.py --apply    # regenerate
+    python3 scripts/sync-qou-mass-vendor.py --list     # show the cone
+"""
+from __future__ import annotations
+
+import argparse
+import ast
+import sys
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[1]
+SRC_ROOT = REPO / "computations"
+VENDOR = REPO / "qou-mass" / "src" / "qou_mass" / "_internal"
+
+#: Modules the package's public API needs to reach. The vendored set is the
+#: TRANSITIVE cone of these, computed from imports rather than listed by hand
+#: -- a hand-maintained list is the same failure mode as a hand-maintained
+#: copy. `mass_at_3A_proper` + `hecke_core` are what `canonical_braid()`'s
+#: live path needs (qou-elb0); the rest are already-vendored entry points
+#: kept so the cone never shrinks below what shipped.
+ENTRY_POINTS = (
+    "mass_at_3A_proper",
+    "hecke_core",
+    "canonical_braid_crossings",
+    "hoefsmit_symbolic",
+    "markov_weights_symbolic",
+    "isotope_record_schema",
+    "wedderburn_jones_markov",
+    "markov_trace_recursive",
+    "active_set_pruning",
+    "knot_volumes",
+    "_precision",
+    "witness_base",
+    "q_parameter",
+    "codata_constants",
+    "experimental_constants",
+    "hecke_characters",
+)
+
+#: Never vendor these even if they appear in the cone.
+EXCLUDE = {
+    # The subdirectory shim; see THE TRANSFORM above.
+    "_path_bridge",
+}
+
+
+def index_sources() -> dict[str, Path]:
+    """Map bare module name -> path, over all of `computations/`."""
+    idx: dict[str, Path] = {}
+    for p in sorted(SRC_ROOT.rglob("*.py")):
+        if "_deprecated" in p.parts:
+            continue
+        idx.setdefault(p.stem, p)
+    return idx
+
+
+def compute_cone(idx: dict[str, Path]) -> list[str]:
+    """Transitive repo-local import cone of ENTRY_POINTS."""
+    seen: set[str] = set()
+    queue = list(ENTRY_POINTS)
+    while queue:
+        mod = queue.pop()
+        if mod in seen or mod in EXCLUDE:
+            continue
+        seen.add(mod)
+        path = idx.get(mod)
+        if path is None:
+            continue  # stdlib or a real third-party dep; not ours to vendor
+        try:
+            tree = ast.parse(path.read_text(encoding="utf-8", errors="replace"))
+        except SyntaxError:
+            continue
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                for alias in node.names:
+                    queue.append(alias.name.split(".")[0])
+            elif isinstance(node, ast.ImportFrom):
+                if node.module and node.level == 0:
+                    queue.append(node.module.split(".")[0])
+    return sorted(m for m in seen if m in idx and m not in EXCLUDE)
+
+
+def render(path: Path) -> str:
+    """Source text as it should appear under `_internal/`.
+
+    The bridge appears in two shapes and BOTH must be handled:
+
+        # flat modules in computations/
+        import _path_bridge  # noqa: F401, E402 — Phase 6 bridge...
+
+        # modules under computations/substrate/ etc., a 4-line preamble
+        import sys as _sys
+        from pathlib import Path as _Path
+        _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+        import _path_bridge as _bridge   # noqa: E402, F401
+        del _sys, _Path, _bridge
+
+    Dropping only the `import` line in the second shape leaves
+    `del ..., _bridge` referring to a name that was never bound, and every
+    such module then dies at import with `NameError: name '_bridge' is not
+    defined`. The package's tests did not catch this because they exercise
+    the bundled-witness fast path, never the vendored modules -- which is
+    the same reason the copies could rot unnoticed for months.
+    """
+    out = []
+    for line in path.read_text(encoding="utf-8").splitlines(keepends=True):
+        stripped = line.strip()
+        if stripped.startswith("import _path_bridge"):
+            continue
+        # Drop the now-unbound `_bridge` from any `del` that names it,
+        # keeping the rest of the statement intact.
+        if stripped.startswith("del ") and "_bridge" in stripped:
+            names = [n.strip() for n in stripped[4:].split(",")]
+            names = [n for n in names if n != "_bridge"]
+            if not names:
+                continue
+            indent = line[: len(line) - len(line.lstrip())]
+            out.append(f"{indent}del {', '.join(names)}\n")
+            continue
+        out.append(line)
+    return "".join(out)
+
+
+#: Witnesses land in the PACKAGE ROOT, not `data/`, and that is forced
+#: rather than chosen. The vendored modules resolve their witness paths
+#: themselves, relative to `Path(__file__).resolve().parent.parent` -- which
+#: mirrors `computations/substrate/foo.py` reaching up to `computations/`.
+#: Inside the wheel that same expression is `_internal/` -> `qou_mass/`, so
+#: this is where they look. Putting them in `data/` (tidier, and where the
+#: hand-curated shards live) makes every one of them FileNotFoundError.
+#:
+#: The honest fix is a package-aware resolver in the modules so vendored
+#: data can live under `data/` like everything else -- that is a change to
+#: the modules, not to this script, and it is tracked separately. Until
+#: then, matching the resolver beats fighting it.
+WITNESS_DEST = REPO / "qou-mass" / "src" / "qou_mass"
+
+
+def required_witnesses(cone: list[str], idx: dict[str, Path]) -> dict[str, Path]:
+    """Witness JSONs the vendored modules load at runtime.
+
+    Vendoring the Python alone is not enough: several cone modules read a
+    `*.witness.json` on import or first call, so a wheel with the code but
+    not the data fails at runtime with FileNotFoundError rather than
+    ImportError -- later, and further from the cause.
+
+    Scraped from source text rather than declared by hand, for the same
+    reason the module cone is: a hand-kept list drifts exactly like a
+    hand-kept copy. Names that match nothing under `computations/` are
+    reported, not silently skipped -- a rename upstream should be loud.
+    """
+    import re
+    names: set[str] = set()
+    for mod in cone:
+        text = idx[mod].read_text(encoding="utf-8", errors="replace")
+        names.update(re.findall(r"[a-z0-9][a-z0-9._-]*\.witness\.json", text))
+    found: dict[str, Path] = {}
+    for name in sorted(names):
+        hits = [p for p in SRC_ROOT.rglob(name) if "_deprecated" not in p.parts]
+        if hits:
+            found[name] = hits[0]
+    return found
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    g = ap.add_mutually_exclusive_group(required=True)
+    g.add_argument("--check", action="store_true",
+                   help="exit 1 if any vendored copy differs from its source")
+    g.add_argument("--apply", action="store_true", help="regenerate the copies")
+    g.add_argument("--list", action="store_true", help="print the cone and exit")
+    args = ap.parse_args()
+
+    idx = index_sources()
+    cone = compute_cone(idx)
+
+    wits = required_witnesses(cone, idx)
+
+    if args.list:
+        print(f"{len(cone)} modules in the vendoring cone:")
+        for m in cone:
+            print(f"  {m:<34} {idx[m].relative_to(REPO)}")
+        print(f"\n{len(wits)} witness JSON(s) they load at runtime:")
+        for n, p in wits.items():
+            print(f"  {n:<48} {p.stat().st_size:>8} B")
+        return 0
+
+    drifted, missing, added = [], [], []
+    for name, src in wits.items():
+        dest = WITNESS_DEST / name
+        want = src.read_bytes()
+        if not dest.exists():
+            missing.append(f"data/{name}")
+        elif dest.read_bytes() != want:
+            drifted.append(f"data/{name}")
+        if args.apply:
+            dest.write_bytes(want)
+    for mod in cone:
+        want = render(idx[mod])
+        dest = VENDOR / f"{mod}.py"
+        if not dest.exists():
+            missing.append(mod)
+        elif dest.read_text(encoding="utf-8") != want:
+            drifted.append(mod)
+        if args.apply:
+            dest.write_text(want, encoding="utf-8")
+            added.append(mod)
+
+    # A vendored file with no counterpart in the cone is dead weight; report
+    # it rather than deleting, since removing a shipped module is an API
+    # decision and this script should not make one silently.
+    orphans = sorted(
+        p.stem for p in VENDOR.glob("*.py")
+        if p.stem != "__init__" and p.stem not in cone
+    )
+
+    if args.apply:
+        print(f"regenerated {len(added)} module(s) into "
+              f"{VENDOR.relative_to(REPO)}")
+        if orphans:
+            print(f"  note: {len(orphans)} vendored file(s) are not in the "
+                  f"cone: {', '.join(orphans)}")
+        return 0
+
+    if not drifted and not missing:
+        print(f"vendored copies are in sync ({len(cone)} modules)")
+        if orphans:
+            print(f"  note: not in cone: {', '.join(orphans)}")
+        return 0
+
+    if missing:
+        print(f"MISSING from {VENDOR.relative_to(REPO)} ({len(missing)}):")
+        for m in missing:
+            print(f"  {m}")
+    if drifted:
+        print(f"DRIFTED from source ({len(drifted)}):")
+        for m in drifted:
+            print(f"  {m}")
+    print("\nRun: python3 scripts/sync-qou-mass-vendor.py --apply")
+    print("Do NOT hand-edit files under _internal/ -- they are generated.")
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
