@@ -22,7 +22,7 @@ ANSWER: NO, and my earlier framing was wrong.
 
 ## The find: the drift was MASKING an upstream defect
 
-computations/substrate/witness_base.py is a shim re-exporting a HAND-LISTED set of private helpers from qou_substrate.witness. _EPHEMERAL_META_FIELDS was missing from that list, and  does not pick up underscore names -- which is the whole reason the explicit block exists. So  was FAILING IN-REPO, on main, before I touched anything.
+computations/substrate/witness_base.py is a shim re-exporting a HAND-LISTED set of private helpers from qou_substrate.witness. _EPHEMERAL_META_FIELDS was missing from that list, and `import *` does not pick up underscore names -- which is the whole reason the explicit block exists. So `from witness_base import _EPHEMERAL_META_FIELDS` was FAILING IN-REPO, on main, before I touched anything.
 
 Nothing caught it because its one consumer, test_ephemeral_mask_sync.py, reads the name from the VENDORED mirror -- and that mirror was a stale copy of the pre-shim implementation, which still defined it directly. The test exists PRECISELY to detect mirror divergence, and it was green only because the mirror had not been updated. The drift was hiding the defect the test was written to find.
 
