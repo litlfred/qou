@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T23:07:47Z
-updated_at: 2026-08-15T14:53:56Z
+updated_at: 2026-08-15T16:00:40Z
 ---
 
 ## Content-based triage (2026-08-15) — criteria for whoever picks this up
@@ -40,3 +40,32 @@ Generalising to `{R : Type*} [CommRing R]` would be *unfaithful* — it would ha
 **Action taken instead of a port:** added the missing §7c banner to the module docstring recording exactly this, so sweeps stop re-flagging it (it read as a bare ℝ-typed module in an `AlgebraicSubstrate` namespace with no stated reason — which is precisely why it scored CANDIDATE). Compile-verified after the edit: `lean-direct-cone → ok=1`.
 
 **Method note for the remaining CANDIDATEs in this cluster:** `banner=n` measures *documentation*, not *correctness*. Check the **sibling/definition chain** before porting — a file can inherit legitimate ℝ from the module that defines its summands. `quantum_dilogarithm` is the next most likely instance of this same pattern (the 2026-06-25 audit already lists the dilog files as legitimately archimedean).
+
+
+### Adjudicated: `JonesMarkovWenzl` is NOT a violation — second CANDIDATE refuted
+
+The table lists `JonesMarkovWenzl` as the cluster's largest **CANDIDATE** (codeℝ=26). **Refuted.** Its ℝ is required, for a sharper reason than `QChebyshevFunction`'s:
+
+**Every `q` in the module carries a half-integer exponent.** The q-integer is `[k]_q = (q^{k/2} − q^{−k/2}) / (q^{1/2} − q^{−1/2})` and the Markov parameter is `z = 1/(q^{1/2} + q^{−1/2})`. **A square root of `q` does not exist in a generic `CommRing`** — these are `Real.rpow` applications, hence the `Mathlib.Analysis.SpecialFunctions.Pow.Real` import.
+
+**And the generic content is not missing — it already exists, and this module proves the bridge to it.** The base-ring-generic q-integer is `QOU.QInteger.qIntBal` (`QOU.MathlibExt.QIntegerCanonical`); this file proves
+
+```lean
+theorem qInteger_eq_canonical (q : ℝ) (hq : 0 ≤ q) (k : ℕ) :
+    qInteger k q = QOU.QInteger.qIntBal (q ^ ((1 : ℝ) / 2)) k
+```
+
+So `JonesMarkovWenzl` **is** `qIntBal` instantiated at the real square root of the substrate parameter. That is precisely the §7c-correct shape — generic core in one module, archimedean realisation in another — not a violation of it. Porting it to `{R : Type*} [CommRing R]` would be unfaithful: there is no `√q` to instantiate at, and restating it in a variable that *means* `q^{1/2}` is exactly what `qIntBal` already is.
+
+**Action:** added the §7c banner recording this (docstring-only). Compile verification deferred to the running whole-corpus `lean-direct-cone --all` survey rather than run concurrently against the same olean files; a docstring-only edit cannot change elaboration, and the survey result will be appended to `qou-kljb`.
+
+### Running pattern across this cluster — two for two
+
+Both CANDIDATEs adjudicated so far were **legitimately archimedean with a missing banner**, not gratuitous ℝ:
+
+| file | why ℝ is correct | defect |
+|---|---|---|
+| `QChebyshevFunction` | sums `Λ_q` (a `Real.rpow` weight); cut-off `N m ≤ X` is an ordering | no banner |
+| `JonesMarkovWenzl` | half-integer powers `q^{k/2}` — no `√q` in a `CommRing`; generic form is `qIntBal` | no banner |
+
+`quantum_dilogarithm` (codeℝ=10, no banner) is the next likely instance — the 2026-06-25 audit already lists the dilog files as legitimately archimedean. **Recommended for this cluster: assume banner-not-port until a definition-chain read says otherwise.** The remaining unadjudicated files are `YekutieliTriple` (11) and `QChebyshevFunction`'s neighbour `QVonMangoldtFunction` (3, already banner'd).
