@@ -214,3 +214,21 @@ class too). Honest scope: this covers the SECOND-NEIGHBOR nonlocality
 class; full NS triad structure (all k+p+q=0 interactions,
 sweeping/backscatter of distant modes) remains the standing caveat —
 now with evidence it is not fragile to the first nonlocal extension.
+
+## 2026-08-15 (11): SF9 — the route survives ALL-PAIRS geometric nonlocality
+
+The closest shell image of full NS triads: every pair (m,n) coupled
+with weight lam^{n-m-1}, per-pair energy-conserving; the geometric
+structure telescopes into O(N) recursions so no truncation anywhere.
+3/3 assertions at lam = 0.5 AND 0.9 (10 rungs at >38% weight — far
+more delocalized than NS): all-source equilibrium r_n <= 1 everywhere
+(max 0.84 over 363 excited rungs at 3e-3); crossing exists and still
+decreases with eps (0.27 at 3e-3 for lam=0.9). Lean (sorry-free):
+rung_equilibrium_forced (arbitrary nonneg forcing — subsumes the P^2,
+two-source, and geometric-sum instances); multi_source_ladder_uniform
+(strong induction + sum_range_reflect + geom_sum_mul: uniform
+theta-suppression under B <= theta*(1-lam)*nu*k_n). Honest remainders:
+geometric-decay version of the all-pairs collapse (the pair-maximum
+argument does not lift verbatim — follow-up); sweeping/phase
+decorrelation — NOT representable in any real-amplitude shell model,
+now the irreducible caveat of the whole SF arc.
