@@ -3457,3 +3457,43 @@ function. A study of the `log(1−w/ρ)` branch point would be a *different* tas
 with a different motivation and needs a bean that says so — not a resumption of
 the scrapped titles. No fit; no `c_k` wired; no tier change (c₃ stays
 EMPIRICAL/REFUTED-as-real-q).
+
+## 2026-08-15 — owner redirect: c₃ refutation chain audited against the C→D trace-convention flip (survives; value layer C-conditional)
+
+**Trigger.** Owner critical-distance redirect: probes behind "c₃ REFUTED as
+real-q fibre element" may be invalid after the C→D trace flip, the
+color-weighting fixes, the GGM V₃ = −7.693 correction, and the q₀ pin changes.
+
+**Audit:** [`2026-08-15-c3-refutation-chain-convention-validity-audit.md`](../audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md)
+· probe `qbeta_c3_ladder_trace_convention_sensitivity_probe.py` (9/9, exit 0)
+· registry §9g + c₂/c₃/KC13/KC21/KC22 provenance notes (.md + JSON twin,
+validator clean).
+
+**Verdict, tiered:**
+
+- **REFUTED-as-real-q SURVIVES** — measured, not assumed: the anchor-swing
+  mechanism is convention-immune (swing D/C = **1.0052**; `u`, `Q_A` are
+  z-free), and P3 (entropy bound), P4 (q→1 shadow; `z_C(1)=z_D(1)=1/2`
+  exact), P6 (KC20 `Δ_net` numerator z-free) are convention-independent.
+  V₃ was already canonical in the 2026-07-30 B1 re-run; color-weighting does
+  not reach the qbeta chain; anchor q₀ values are unchanged.
+- **The value layer is convention-C-conditional** — the extractor's N=1 rung
+  consumes `z_C` via `α=(z−1)h/2` (`qbeta_utils.py:124-125`); re-extraction
+  under D shifts c₃ from ≈ −2.07 to ≈ **−974** — so (H1) `−Vol(4₁)`,
+  `[3]_q/25`, `J−ℏ²`, `S_leak`, `q*_S`, and the KC21/KC22 D-ladder constants
+  hold in the C frame only. `bar(z_D) = q⁻⁴·z_D` exactly ⇒ KC13's
+  no-scalar-z-source prune is C-scoped.
+- **Bigger than the redirect asked:** the canonical rung **c₂ = −1 is also a
+  C-frame statement** (implied empirical c₂ under D ≈ −9.30; rung convergence
+  58× under C vs 1.12× under D). The C→D excision does NOT transfer to Q_β by
+  a z-swap; it would require re-deriving the ladder from the D-trace.
+- **Root cause:** the Q_β channel was never registered in
+  `trace-convention-registry.json` (channels: mass/binding/borromean only),
+  so the whole channel has been convention-silent — the exact failure mode
+  that registry's rule names. Open item: bean **`qou-b3nk`** (register the
+  channel; examine whether the two-row forcing transfers to the decay
+  channel, whose explicit weight instance has `y_(1³) ≠ 0`).
+
+Scope-(a) throughout; no convention adjudicated; no `c_k` wired; no tier
+flips (c₂ stays CANONICAL for its now-named object; c₃ stays
+EMPIRICAL/REFUTED-as-real-q — in both frames).

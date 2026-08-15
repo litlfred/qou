@@ -338,3 +338,21 @@ exclusion, and do not cite it as a reason to drop (H1) — cite it as the reason
 - Re-scoped in the same PR: registry section 9f's "surviving empirical fact"
   paragraph, and the `rem-qstar-decay-sector-q0` paper block, both of which
   carried the bare "0.48 %".
+
+---
+
+# CONVENTION PROVENANCE (2026-08-15, owner redirect)
+
+The validity audit
+(docs/audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md)
+adds a third structural obstacle to the two above, and it is upstream of
+both: **c_3 itself is a convention-C-frame quantity** (the extractor's N=1
+phase consumes z_C; the Q_beta channel is unregistered in the
+trace-convention registry — bean qou-b3nk). Under convention D the same
+ladder shape extracts c_3 ~ -974, so "c_3's bar-parity" is only defined once
+the channel's convention is settled. Also directly relevant to this bean's
+live route: KC13's "z exactly bar-even" is proved for z_C only —
+bar(z_D) = q^-4 * z_D exactly (probe
+qbeta-c3-ladder-trace-convention-sensitivity, 9/9) — so under D the trace
+parameter itself carries a monomial bar-twist (KC16-style). Scope-(a):
+observation, not a parity result.
