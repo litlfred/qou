@@ -266,6 +266,11 @@ def main() -> int:
             "values; no fit, no new measurement, no c_k wired."),
         "audit_only": True,
         "tier": "structural argument + error propagation (no fit)",
+        # Declare the pin (AGENTS.md 2026-08-07 owner directive: "Any new
+        # witness must record its q0 so a later reader can tell which layer
+        # it belongs to"). Enforced by q0_anchor_consistency_audit.
+        "q0Anchor": "proton",
+        "q0Value": mp.nstr(q0, 25),
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "commitSha": _head_sha(),
         "engine": "mpmath",

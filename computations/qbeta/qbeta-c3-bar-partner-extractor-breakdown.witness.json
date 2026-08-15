@@ -3,12 +3,14 @@
   "description": "qou-qb8g obstacle 1 made quantitative. The c_3 extractor c_3 = (Q_beta^exp/Q_N2(q) - 1)/u(q)^3 is an explicit function of q and CAN be evaluated at the bar-partner 1/q0, but Q_beta^exp is held fixed while q moves ~21%, so away from the anchor the numerator is O(1) rather than O(u^3) and the 1/u^3 inversion returns O(1e5). Measured: c_3^extr(q0) = -2.069, c_3^extr(1/q0) = -352600 (1.7e5x). The u shift itself is tame \u2014 u(1/q) = q^2 u(q) exactly \u2014 so the blow-up is entirely the fixed-Q_beta artifact. Consequently the extractor's 'bar-even part' is -176301, about 8.7e4 x Vol(4_1), and is not a bar split. Separately, (H1) c_3^even = -Vol(4_1) DEMANDS c_3(1/q0) = -2 Vol(4_1) - c_3(q0), an O(1) number. That demand is NOT new information \u2014 it equals the anchor datum transported by (H1) (the implied bar-odd part is identically S_leak(q0)) \u2014 so it must not be reported as an out-of-sample test. What is gained is methodological: a fibre carrier converges at 1/q0 and not at q0 (PR #5084), so at 1/q0 the carrier can be compared to (H1) without evaluating on the divergent side. The comparison becomes possible, not sharper. Arithmetic on committed values; no fit, no c_k wired.",
   "audit_only": true,
   "tier": "exact arithmetic on the committed extractor (no fit)",
-  "computedAt": "2026-08-15T10:26:30.396174+00:00",
-  "commitSha": "1be44102ec3bedc7f853f3b9735c44c4acbe2224",
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "computedAt": "2026-08-15T10:37:31.895806+00:00",
+  "commitSha": "0d3adfaa5fa732c5e42ef6168e80bebbf6c063a9",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_c3_bar_partner_extractor_breakdown.py",
-  "scriptHash": "5cbb0d721634",
+  "scriptHash": "dffe3de86dae",
   "assertions": [
     {
       "name": "u_shift_is_tame_q_squared",
