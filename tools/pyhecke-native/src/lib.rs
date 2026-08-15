@@ -28,9 +28,12 @@ fn hecke_h(q: f64) -> f64 {
 }
 
 /// Markov-trace weights on the NF basis as a length-6 list.
+///
+/// Convention D (qou-m7py, 2026-08-15): `TR_M[5] = h·z² + z`, matching
+/// `pyhecke.gram.TR_M`. The legacy `z³` weights are `gram::trace_weights`.
 #[pyfunction]
 fn trace_weights(q: f64) -> Vec<f64> {
-    gram::trace_weights(q).to_vec()
+    gram::trace_weights_markov(q).to_vec()
 }
 
 /// Gram matrix G_ij = tr_M(b_i · b_j) as a 6x6 list of lists.

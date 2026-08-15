@@ -81,13 +81,29 @@ def _chi_worker(args):
     """Pool worker: chi_numpy for one partition (10-50× faster than
     chi_numeric, validated against mpmath at 1e-14 relative tolerance
     per docs/audits/2026-05-19-cocasimir-compute-bottleneck.md).
-    Falls back to chi_numeric if numpy import unavailable."""
+
+    NO SILENT FALLBACK (owner directive 2026-08-15): if the numpy fast path
+    is unavailable, refuse loudly rather than silently dropping to the slow
+    mpmath chi_numeric path (the ct80/#2747 silent-degradation class — a slow
+    run that also looks like a correct one). The slow path stays available as
+    an EXPLICIT opt-in via QOU_ALLOW_SLOW_CHI_FALLBACK=1. Mirrors
+    pyhecke.gram._native_ok()'s loud-refusal philosophy. See
+    docs/pyhecke-native-setup.md."""
     lam, crossings, q_str, dps = args
     mp.mp.dps = dps
     try:
         from hoefsmit_numpy import chi_numpy as _chi  # noqa: E402
         return _chi(lam, crossings, float(mp.mpf(q_str)))
-    except ImportError:
+    except ImportError as e:
+        import os
+        if os.environ.get("QOU_ALLOW_SLOW_CHI_FALLBACK") != "1":
+            raise RuntimeError(
+                "chi_numpy (numpy fast path) is unavailable: " + repr(e) + ". "
+                "Refusing to silently fall back to the slow mpmath chi_numeric "
+                "path. Fix the numpy/hoefsmit_numpy import, or set "
+                "QOU_ALLOW_SLOW_CHI_FALLBACK=1 to explicitly permit the slow "
+                "path. See docs/pyhecke-native-setup.md."
+            ) from e
         from rho_k_h3a_refinement import chi_numeric as _chi  # noqa: E402
         return _chi(lam, crossings, mp.mpf(q_str))
 

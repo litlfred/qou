@@ -789,7 +789,10 @@ pub fn certificate_at(q: f64) -> GramCertificate {
         h: hecke_h(q),
         n: 3,
         basis: NF_NAMES.iter().map(|s| s.to_string()).collect(),
-        trace_weights: trace_weights(q).to_vec(),
+        // Convention D (qou-m7py): report the production Markov trace
+        // (`h·z² + z`), matching `matrix`/`quotient_inverse`/`radical` below.
+        // The legacy `z³` weights live in `trace_weights` for reference only.
+        trace_weights: trace_weights_markov(q).to_vec(),
         matrix: g.iter().map(|r| r.to_vec()).collect(),
         quotient_inverse: qinv.iter().map(|r| r.to_vec()).collect(),
         radical: gram_radical(q).to_vec(),
