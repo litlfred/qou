@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-11T10:37:57.498781+00:00",
-  "commitSha": "5b0fe8953e220700aa87f4c6cba693cd26ea6619",
+  "computedAt": "2026-08-15T02:59:21.992919+00:00",
+  "commitSha": "ddd30d9d5ce9cdd54d18aa6327c76aef4e2dfc25",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "b8eb7d9e66db36b80193fd976fa81bc5f9e57b49",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,17 +27,13 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 620,
-      "Q0_AMBIGUOUS": 17,
+      "Q0_OK": 637,
+      "Q0_AMBIGUOUS": 16,
       "Q0_ANCHOR_MISSING": 1879,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 68,
@@ -1068,6 +1064,10 @@
           "detail": ""
         },
         {
+          "witness": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-deuteron-h6.witness.json",
           "detail": ""
         },
@@ -1304,10 +1304,6 @@
           "detail": ""
         },
         {
-          "witness": "delta-lambda-dim-weight-proof.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "delta-lambda-energy-scale-extensivity.witness.json",
           "detail": ""
         },
@@ -1324,19 +1320,7 @@
           "detail": ""
         },
         {
-          "witness": "delta-lambda-multi-atom-crosscheck.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "delta-lambda-q-sweep-2row.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "delta-lambda-qlommel-recurrence-precheck.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "delta-lambda-sign-rule-proof.witness.json",
           "detail": ""
         },
         {
@@ -1741,10 +1725,6 @@
         },
         {
           "witness": "perblock-weight-class-feasibility.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "perknot-pn-bond-mayer-grounding.witness.json",
           "detail": ""
         },
         {
@@ -2852,6 +2832,10 @@
           "detail": ""
         },
         {
+          "witness": "logsine-smooth-defect-constant.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "low-isotope-mass-table.witness.json",
           "detail": ""
         },
@@ -3132,6 +3116,10 @@
           "detail": ""
         },
         {
+          "witness": "nonet-mixing-purity.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "normalization-reconciliation-phase5l2.witness.json",
           "detail": ""
         },
@@ -3328,15 +3316,7 @@
           "detail": ""
         },
         {
-          "witness": "per-irrep-pole-deuteron-h6.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "per-irrep-pole-neutron-h3.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "per-irrep-pole-proton-h3.witness.json",
           "detail": ""
         },
         {
@@ -3516,6 +3496,10 @@
           "detail": ""
         },
         {
+          "witness": "ak-lp-dual-quotient-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "alpha-em-coulomb-channel-probe.witness.json",
           "detail": ""
         },
@@ -3529,6 +3513,10 @@
         },
         {
           "witness": "aomega-bps-sector-nondegeneracy.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "aomega-m2-bps-cohomology.witness.json",
           "detail": ""
         },
         {
@@ -4000,6 +3988,10 @@
           "detail": ""
         },
         {
+          "witness": "gram-radical-exact-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "ground-state-ordering-a3.witness.json",
           "detail": ""
         },
@@ -4028,6 +4020,10 @@
           "detail": ""
         },
         {
+          "witness": "gswz_epsm_canonicity_criterion_correction.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gswz_epsm_descent_m2.witness.json",
           "detail": ""
         },
@@ -4045,6 +4041,14 @@
         },
         {
           "witness": "gswz_epsm_kummer_level.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_representative_obstruction.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_residue_model_insufficient.witness.json",
           "detail": ""
         },
         {
@@ -4085,6 +4089,10 @@
         },
         {
           "witness": "habiro-expansion-atomic-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-frobenius-norm-probe.witness.json",
           "detail": ""
         },
         {
@@ -4832,6 +4840,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-g3-aomega-route-a-newton-polygon.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-g3-aomega-sharpened-amplitude.witness.json",
           "detail": ""
         },
@@ -4933,6 +4945,14 @@
         },
         {
           "witness": "qbeta-lorentzian-gram-offset.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-m1-index-stokes-dictionary.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-m1-rotated-index-from-blocks.witness.json",
           "detail": ""
         },
         {
@@ -6760,6 +6780,22 @@
           "detail": ""
         },
         {
+          "witness": "qns-amplitude-step-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qns-backscatter-sustainment-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qns-crow-efolds-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qns-dissipation-scale-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qns-enstrophy-grade-probe.witness.json",
           "detail": ""
         },
@@ -6785,6 +6821,10 @@
         },
         {
           "witness": "qns-sustainment-n-scaling.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qns-tail-pileup-probe.witness.json",
           "detail": ""
         },
         {
@@ -7056,14 +7096,6 @@
           "detail": ""
         },
         {
-          "witness": "frakV-descent-zeta4-partner-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "frakV-zeta4-fibre-vs-observable-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "gauss-linking-channel-slope-probe.witness.json",
           "detail": ""
         },
@@ -7084,19 +7116,7 @@
           "detail": ""
         },
         {
-          "witness": "lever1-binding-habiro-qexponential.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "lever1-bring-period-trB.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "lever1-color-eq-intrinsic-tau-rapidity.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "lever1-color-eq-monodromy-integrality.witness.json",
           "detail": ""
         },
         {
@@ -7112,31 +7132,11 @@
           "detail": ""
         },
         {
-          "witness": "lever1-lambda-sw-no-shortcut.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "lever1-lw-depth2-recurrence-test.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "lever1-qholonomic-kernel-fit.witness.json",
           "detail": ""
         },
         {
           "witness": "lever1-qholonomic-order3-fit.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "lever1-qinvolution-kernel-test.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "lever1-trB-geometric-target.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "lever1-trB-quantum-integer-form.witness.json",
           "detail": ""
         },
         {
@@ -7185,10 +7185,6 @@
         },
         {
           "witness": "z2bn-prolongation-qdifference-constraint.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "zeta4-complex-volume-moderator-probe.witness.json",
           "detail": ""
         },
         {
@@ -7755,10 +7751,6 @@
         },
         {
           "witness": "binding-heat-kernel-weight-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "binding-k-enumerator.witness.json",
           "detail": ""
         },
         {
@@ -8486,6 +8478,10 @@
           "detail": ""
         },
         {
+          "witness": "delta-lambda-dim-weight-proof.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "delta-lambda-empirical-tabulation.witness.json",
           "detail": ""
         },
@@ -8518,7 +8514,19 @@
           "detail": ""
         },
         {
+          "witness": "delta-lambda-multi-atom-crosscheck.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "delta-lambda-qdim-route-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "delta-lambda-qlommel-recurrence-precheck.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "delta-lambda-sign-rule-proof.witness.json",
           "detail": ""
         },
         {
@@ -8567,6 +8575,10 @@
         },
         {
           "witness": "mirror-split-s3-em-functional.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "perknot-pn-bond-mayer-grounding.witness.json",
           "detail": ""
         },
         {
@@ -9326,6 +9338,14 @@
           "detail": ""
         },
         {
+          "witness": "per-irrep-pole-deuteron-h6.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "per-irrep-pole-proton-h3.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "per-knot-density-per-block-wiring.witness.json",
           "detail": ""
         },
@@ -9866,7 +9886,19 @@
           "detail": ""
         },
         {
+          "witness": "frakV-descent-zeta4-partner-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "frakV-zeta4-fibre-vs-observable-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "lever1-binding-core-characterization.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "lever1-binding-habiro-qexponential.witness.json",
           "detail": ""
         },
         {
@@ -9878,7 +9910,35 @@
           "detail": ""
         },
         {
+          "witness": "lever1-color-eq-intrinsic-tau-rapidity.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "lever1-color-eq-lambda-sw-rapidity.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "lever1-color-eq-monodromy-integrality.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "lever1-lambda-sw-no-shortcut.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "lever1-lw-depth2-recurrence-test.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "lever1-qinvolution-kernel-test.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "lever1-trB-geometric-target.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "lever1-trB-quantum-integer-form.witness.json",
           "detail": ""
         },
         {
@@ -9899,6 +9959,10 @@
         },
         {
           "witness": "zeropoint-unit-candidate-gate-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "zeta4-complex-volume-moderator-probe.witness.json",
           "detail": ""
         },
         {
@@ -10057,10 +10121,6 @@
         },
         {
           "witness": "chi-deuteron-free-h6-at-q0-50dps.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
           "detail": ""
         },
         {

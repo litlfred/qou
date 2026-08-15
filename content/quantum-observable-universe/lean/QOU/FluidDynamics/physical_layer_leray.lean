@@ -841,4 +841,102 @@ theorem amplitude_ladder_collapse (β kk : ℕ → K) (ν θ : K)
             mul_le_mul_of_nonneg_right ih hθ
         _ = θ ^ (p + 1) * β 0 := by ring
 
+/-!
+### Trajectory-level composition (the recorded remainder (a))
+
+`rung_equilibrium` bounds one rung forced by a *constant*; the honest
+remainder was composing the per-rung sups **along the actual
+trajectories** — rung `n+1` is forced by the trajectory `u n ·`, not
+by a constant.  The composition is a rung-by-rung induction: a uniform
+bound on rung `n`'s trajectory upgrades rung `n+1`'s step to the
+constant-forced form, and `rung_equilibrium` then yields the uniform
+bound on rung `n+1`.  The resulting bounds are exactly the
+`rungBound` recursion, and `trajectory_tail_collapse` closes the loop
+with `amplitude_ladder_collapse`: under the dissipation-scale
+condition the trajectory bounds decay geometrically.
+-/
+
+/-- The composed per-rung bounds: `rungBound 0 = P` (the boundary
+    datum), `rungBound (n+1) = (rungBound n)²/(ν·k (n+1))` (each rung
+    at the equilibrium forced by the previous rung's bound). -/
+def rungBound (ν P : K) (k : ℕ → K) : ℕ → K
+  | 0 => P
+  | n + 1 => (rungBound ν P k n) ^ 2 / (ν * k (n + 1))
+
+/-- **Trajectory-level ladder composition**: for a rung family
+    `u n t` (rung `n`, time `t`) with all tail rungs starting empty,
+    each rung satisfying the per-amplitude DN step forced by the
+    *actual trajectory* of the rung below, and the boundary rung
+    uniformly bounded by `P`, every rung's whole trajectory obeys the
+    composed bound: `u n t ≤ rungBound n`.  Rung-by-rung induction;
+    each step is `rung_equilibrium` after upgrading the trajectory
+    forcing to its constant bound. -/
+theorem trajectory_ladder_bounds (u : ℕ → ℕ → K) (k : ℕ → K) (δ ν P : K)
+    (hδ : 0 ≤ δ) (hν : 0 < ν) (hk : ∀ n, 0 < k n)
+    (hnn : ∀ n t, 0 ≤ u n t)
+    (hδD : ∀ n, δ * (ν * k (n + 1) ^ 2) ≤ 1)
+    (h0 : ∀ n, u (n + 1) 0 = 0)
+    (hP : ∀ t, u 0 t ≤ P)
+    (hstep : ∀ n t, u (n + 1) (t + 1) ≤ u (n + 1) t
+      + δ * (k (n + 1) * u n t ^ 2 - ν * k (n + 1) ^ 2 * u (n + 1) t)) :
+    ∀ n t, u n t ≤ rungBound ν P k n := by
+  intro n
+  induction n with
+  | zero => exact hP
+  | succ m ih =>
+      -- upgrade the trajectory forcing `u m t ^ 2` to the constant
+      -- `(rungBound m) ^ 2` — the square is monotone on nonnegatives
+      have hstep' : ∀ t, u (m + 1) (t + 1) ≤ u (m + 1) t
+          + δ * (k (m + 1) * (rungBound ν P k m) ^ 2
+                 - ν * k (m + 1) ^ 2 * u (m + 1) t) := by
+        intro t
+        have hsq : u m t ^ 2 ≤ (rungBound ν P k m) ^ 2 := by
+          have h1 := hnn m t
+          have h2 := ih t
+          nlinarith
+        have hmono : k (m + 1) * u m t ^ 2
+            ≤ k (m + 1) * (rungBound ν P k m) ^ 2 :=
+          mul_le_mul_of_nonneg_left hsq (le_of_lt (hk (m + 1)))
+        have := hstep m t
+        nlinarith [mul_le_mul_of_nonneg_left hmono hδ]
+      have := rung_equilibrium (fun t => u (m + 1) t) δ
+        (rungBound ν P k m) ν (k (m + 1)) hδ hν (hk (m + 1))
+        (hδD m) (h0 m) hstep'
+      intro t
+      exact this t
+
+/-- **Trajectory-level tail collapse**: adding the dissipation-scale
+    condition on the composed bounds (`rungBound n ≤ θ·ν·k (n+1)`,
+    with `θ ≥ 0` and `0 ≤ P`), the whole trajectory of rung `n` is
+    geometrically small: `u n t ≤ θⁿ·P`.  This closes the amplitude
+    repair's remainder (a) at the model level — the composition across
+    rungs now holds along trajectories, not only at the bounds level. -/
+theorem trajectory_tail_collapse (u : ℕ → ℕ → K) (k : ℕ → K) (δ ν P θ : K)
+    (hδ : 0 ≤ δ) (hν : 0 < ν) (hk : ∀ n, 0 < k n)
+    (hθ : 0 ≤ θ) (hP0 : 0 ≤ P)
+    (hnn : ∀ n t, 0 ≤ u n t)
+    (hδD : ∀ n, δ * (ν * k (n + 1) ^ 2) ≤ 1)
+    (h0 : ∀ n, u (n + 1) 0 = 0)
+    (hP : ∀ t, u 0 t ≤ P)
+    (hstep : ∀ n t, u (n + 1) (t + 1) ≤ u (n + 1) t
+      + δ * (k (n + 1) * u n t ^ 2 - ν * k (n + 1) ^ 2 * u (n + 1) t))
+    (hsub : ∀ n, rungBound ν P k n ≤ θ * (ν * k (n + 1))) :
+    ∀ n t, u n t ≤ θ ^ n * P := by
+  have htraj := trajectory_ladder_bounds u k δ ν P hδ hν hk hnn hδD h0 hP hstep
+  -- the composed bounds collapse geometrically
+  have hbnn : ∀ n, 0 ≤ rungBound ν P k n := by
+    intro n
+    cases n with
+    | zero => exact hP0
+    | succ m =>
+        have : (0 : K) < ν * k (m + 1) := mul_pos hν (hk (m + 1))
+        exact div_nonneg (sq_nonneg _) (le_of_lt this)
+  have hcollapse := amplitude_ladder_collapse
+    (fun n => rungBound ν P k n) (fun n => k (n + 1)) ν θ
+    hθ hν (fun j => hk (j + 1)) hbnn (fun j => le_of_eq rfl) hsub
+  intro n t
+  calc u n t ≤ rungBound ν P k n := htraj n t
+    _ ≤ θ ^ n * rungBound ν P k 0 := hcollapse n
+    _ = θ ^ n * P := rfl
+
 end QOU.FluidDynamics.PhysicalLayerLeray

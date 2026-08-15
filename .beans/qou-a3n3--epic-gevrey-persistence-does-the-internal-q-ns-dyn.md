@@ -174,3 +174,23 @@ Honest remainders: (a) trajectory-level sup composition across rungs
 (bounds-level only so far); (b) the band-at-dissipation-scale
 condition — probe-able, SF7 candidate; (c) full-NS nonlocality
 (standing).
+
+## 2026-08-15 (9): SF7 validates the repair; trajectory composition closes remainder (a)
+
+SF7 (qns_dissipation_scale_probe, bean qou-qzh2): all 3 assertions
+pass. (i) The dissipation-scale crossing B* exists at every eps once
+the ladder reaches the physical dissipation scale (eps-scaled ladder,
+cap 400 rungs). (ii) The crossing's physical wavenumber is bounded by
+the Kolmogorov prediction 2^{3/4} eps^{1/4} and DECREASES with eps
+(0.949 / 0.220 / 0.104 at 1e-1 / 1e-2 / 3e-3, ~eps^0.6) — the
+condition gets EASIER toward the classical limit. (iii) The per-rung
+trajectory equilibrium ratio r_n <= 1 on every excited empty-start
+rung at every eps (max 0.901) — rung_equilibrium holds along actual
+trajectories, empirically. Lean side (bean qou-9vk9):
+trajectory_ladder_bounds (rung-by-rung induction upgrading trajectory
+forcing to its uniform bound, then rung_equilibrium) +
+trajectory_tail_collapse (compose with amplitude_ladder_collapse:
+u n t <= theta^n * P) — sorry-free, closes remainder (a) AT THE MODEL
+LEVEL. Remaining: full-NS transfer nonlocality (standing caveat) —
+now the ONLY open link in the in-model chain. Witness float64 debt
+beaned (qou-xwjs, joins the 4 sibling probe witnesses).
