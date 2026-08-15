@@ -60,3 +60,11 @@ overshoots the ceiling" and re-scope the open item:
 
 Status: b₄ SCALAR m = g_reeb SETTLED (deformed ss-criticality); Vector 2 (icosahedral-entry=m) REFUTED
 as stated; the open magnitude object is now the α-condensation pole regulator. Attack map §4a updated.
+
+## CURRENCY (2026-08-15) — 1-month main sweep: Δ_λ magnitude UNCHANGED; the shared wall confirmed
+No Δ_λ/b₄/magnitude derivation landed on main in the 50-commit window (bean still in-progress). The
+icosahedral-m lead is unadvanced: the forward selection of m<1/√5 still needs a principled (non-fit)
+identification, and — per the keystone-Habiro audit's explicit anti-correspondence-chain flag — reading m
+off the 2I/E₈/Hecke S-matrix without a derivation is exactly the unfalsifiable chain the corpus forbids. So
+the shared A↔B wall (fibre S-matrix → observable m/τ) stands as a CONSTRUCTION, not a bridge. My durable
+claim (Δ_λ sign = row-grading (−1)^{n(λ)}, cyclotomic-transfer refuted) is uncontradicted by main.

@@ -46,3 +46,16 @@ machine-evidence" is the ANALYTIC input A_m(α)=±(2/√5)sin(αmπ/5) (LR flat-
 Thm 10 anchor ~1e-38) which is "not a Lean theorem" and whose q₀ continuation "remains open" = the
 loc_matches core gate. So there is NO cheap sorry-free Lean win here — the algebraic part is done, the
 rest is the core construction wall (formalizing the state-integral). No sibling keystone branch active.
+
+## CURRENCY (2026-08-15) — 1-month main sweep: NO route opened; Habiro bridge is EXPOSITION-only
+Reviewed 50 new main commits since the July scoping. Frontier B is UNCHANGED (bean still in-progress on
+main; no keystone/bwS0/tau/s5-so3 derivation commit landed). The keystone-Habiro coupling audit
+(docs/audits/2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md) NAMES the two Habiro elements
+— spacetime WRT(S³/2I)=Lawrence–Zagier quantum modular form (Poincaré sphere, 2I/E₈ McKay) vs colour
+full-Hecke Markov trace at q₀ (= τ=tr B's home) — but EXPLICITLY flags that chaining
+2I→E₈→Poincaré→LZ→Habiro→masses into "the coupling IS [formula]" is an unfalsifiable correspondence-chain,
+NOT done. So the Habiro bridge is EXPOSITION (reframes Q_β c_k as Ohtsuki invariants of one element), NOT a
+derivation route for τ — CONFIRMS the July finding (wall = bwS0_eq_hecke construction). EPIC 08a2 keystone
+de-abstraction: most work is WIRING to existing Lean infra; only geom-Langlands/motivic-Galois/Jones-poly
+are research-grade. Frontier B stays the same hard construction wall. My durable claims stand (nothing
+contradicted). No fit.
