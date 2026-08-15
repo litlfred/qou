@@ -1,12 +1,13 @@
 ---
 # qou-j6f9
 title: GAP HeckeCoset top-generator bubble reduction (spanning half dim H_n = n!)
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
     - lean
 created_at: 2026-08-11T11:19:12Z
-updated_at: 2026-08-11T11:19:12Z
+updated_at: 2026-08-14T16:32:15Z
 blocking:
     - qou-uoal
 ---
