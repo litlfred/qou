@@ -257,10 +257,13 @@ deliberately evaluates the C formula and "fixing" it would be wrong:
 | `y_lambda_macdonald_telescope.py` | **symbolic re-derivation** | `z = q**3/(q**2+1)` with a docstring reading `z = 1/(q^{1/2}+q^{-1/2})`; the hook-content telescope is derived in `Q = q²` with Wenzl level `X = Q^r`. Needs re-derivation under D, not a numeric edit. |
 | `derived_chi_catalogue_build.py` | **unclear — check first** | its flagged entries are keyed `y_lambda_at_zero = 1`, not `y_lambda`. That may be a limit value rather than a weight, in which case the detector is over-reporting on this file by design (it over-reports rather than under-reports, per its own docstring). |
 
-So "fix 5 root producers" is really: 2 weight recomputations, 1 negative
-result to record, 1 symbolic re-derivation, and 1 detector-triage. Treating
-them as one mechanical sweep would repeat this bean's founding error at a
-smaller scale.
+So "fix 5 root producers" is really: 3 recomputations, 1 symbolic
+re-derivation, and 1 detector-triage. Treating them as one mechanical sweep
+would repeat this bean's founding error at a smaller scale.
+
+*(Revised 2026-08-15 along with the `probe_1b` row above: this sentence
+originally read "2 weight recomputations, 1 negative result to record". The
+probe is a recomputation, not a negative — see the correction below.)*
 
 **Coordinate before editing.** PR #4928's merge message states both sides had
 already run convention-C campaigns in parallel and converged on the same three

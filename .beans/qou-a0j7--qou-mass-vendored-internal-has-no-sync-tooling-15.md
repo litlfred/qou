@@ -22,10 +22,16 @@ One of them is confirmed stale. `canonical_braid_crossings.py` is the
     vendored has sign_for_ctype      : False
     vendored has CTYPES              : False
 
-So the published package raises on any word carrying a p-n interface —
-deuteron and up — the same way `canonical_tr_m_via_rust` did before
-`qou-8zjd`. This is the seventh instance of *a private copy cannot learn
-what the canonical one learns*, and the only one that ships to PyPI.
+This is the seventh instance of *a private copy cannot learn what the
+canonical one learns*, and the only one that ships to PyPI.
+
+*(Revised 2026-08-15.)* This paragraph originally read "the published package
+raises on any word carrying a p-n interface — deuteron and up — the same way
+`canonical_tr_m_via_rust` did before `qou-8zjd`". Both halves were wrong: it
+raises on **every** input, proton included, and for an unrelated reason
+(`ModuleNotFoundError`, missing vendored deps — see the correction below), not
+because of the narrow vocabulary. The stale vocabulary is real but currently
+unreachable.
 
 ## Why it was not fixed alongside qou-8zjd
 
@@ -56,7 +62,9 @@ about today's package it is simply false.
 
 1. **Does `qou-mass` ship the colour-weighted convention?** If yes, vendor
    the four missing deps and sync. If no, the package should *say* it is
-   colour-blind rather than raise.
+   colour-blind rather than raise. Note this is conditional on P3 landing
+   first: until the path is runnable at all, neither answer changes any
+   number the package currently reports, because it reports none.
 2. **What replaces hand-copying?** A sync script with a drift check in CI, or
    a real dependency on `qou-substrate` / `pyhecke` instead of a snapshot.
    Whichever — 15 files with no provenance will drift again, and the next
