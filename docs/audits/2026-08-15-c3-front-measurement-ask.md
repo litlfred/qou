@@ -1,0 +1,112 @@
+# The c₃ front's deliverable is a measurement ask
+
+**Date:** 2026-08-15 · **Bean:** `qou-dvlt` (option D) · **PR:** #5100
+**Probe:** [`qbeta_c3_measurement_proposal_budget.py`](../../computations/qbeta/qbeta_c3_measurement_proposal_budget.py)
+
+After roughly sixty probes the c₃ front has produced no decidable test, and
+today's work established why: it is **precision-blocked, not idea-blocked**.
+This note states the resulting ask in the form a nuclear-physics reader can act
+on — which number to improve, by how much, and what each level buys.
+
+## The lever
+
+Every c₃ claim passes through one extraction and one amplification:
+
+```
+c₃ = (Q_β^exp / Q_N2(q) − 1) / u(q)³
+⟹  dc₃/dQ_β = 1 / (Q_N2 · u³) ≈ 2.0688 × 10⁶  per MeV
+```
+
+At `u(q₀) = 0.0085172` the inversion carries `1/u³ = 1.618 × 10⁶`. So the
+experimental uncertainty on the neutron β-decay Q-value arrives at c₃ multiplied
+by two million:
+
+| | |
+|---|---|
+| `Q_β` (CAL-3) | `0.78233341(61)` MeV |
+| `σ(Q_β)` | **0.61 eV** |
+| `σ(c₃) = σ(Q_β) · 2.07e6` | **±1.262** |
+| `\|c₃\|` | ≈ 2.02 |
+| relative | **61 %** |
+
+That is the whole situation. The corpus's headline — *"c₃ agrees with −Vol(4₁)
+to ≈0.48 %"* — is a comparison of central values on a 61 %-uncertain quantity,
+and in σ it is worth **0.03 σ**. Not weak evidence: no evidence.
+
+## Which number
+
+`Q_β` is reachable two ways, and the corpus carries both.
+
+| route | σ |
+|---|---|
+| direct CAL-3 (PDG 2024 / AME 2020) | **0.61 eV** |
+| `Q_β = m_n − m_p − m_e`, in quadrature | 0.561 eV |
+
+**The second is not a free 9 % improvement.** Quadrature assumes the three
+inputs are independent, and they are not: AME2020 is a *global least-squares
+adjustment*, so `m_n`, `m_p` and the neutron Q-value are correlated outputs of
+one fit. Without the covariance — which this repository does not carry — 0.561 eV
+is a **lower bound**, not the route's precision. Everything below is therefore
+quoted against the direct 0.61 eV, which needs no covariance to be meaningful.
+
+The variance budget of the mass-difference route is nonetheless informative
+about *where the uncertainty lives*:
+
+| | σ | share of variance |
+|---|---|---|
+| `m_n` | 0.48 eV | **73.3 %** |
+| `m_p` | 0.29 eV | 26.7 % |
+| `m_e` | 0.00016 eV | 8.1e-6 % |
+
+**An improvement programme that does not touch the neutron mass cannot deliver
+the factors below.**
+
+## What each level buys
+
+| target | required σ(Q_β) | factor |
+|---|---|---|
+| the zero-location test resolves at the μ–p scale | 0.0238 eV | **25.7×** |
+| `c₃ ≈ −Vol(4₁)` reaches 1 σ at the **proton** anchor | 0.0191 eV | **32.0×** |
+| `c₃ ≈ −Vol(4₁)` reaches 1 σ at the **muon** anchor | 0.0047 eV | **130.3×** |
+
+These were computed by three independent routes and order sensibly, which is a
+check on all three rather than a restatement of one. The first is the cheapest
+meaningful threshold: below it, the framework cannot distinguish `Vol(4₁)` from
+the seven unrelated constants already known to place a zero between the anchors —
+the entire genericity window maps into an interval **25.7× narrower** than one
+error bar on `q*_S`.
+
+## What is not claimed
+
+Whether any of these targets is experimentally reachable, by what technique, or
+at what cost, is **outside what this repository can assess**. This note reports
+required σ; a domain reader supplies the feasibility. Saying which number to
+improve is useful; pretending to know how is not.
+
+Nor does any of this bear on **(H1)** `c₃^even = −Vol(4₁)` in either direction.
+0.03 σ is not evidence *for* (H1), and it is equally not evidence *against* it.
+Nothing is being measured. Scope-(a) throughout.
+
+## Why it took ~60 probes to reach this
+
+`σ(c₃) = σ(Q_β)/(Q_N2·u³)` is one line of error propagation, and the `1/u³`
+amplification was **the headline result** of the 2026-07-12 capstone
+([`2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md`](2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md)).
+The derivative was known and much discussed. Nobody multiplied it by the input
+error. The same formula was read for its consequence for *signal* and never for
+*noise*.
+
+Worth recording as a general lesson, not a local one: a corpus that computes
+sensitivity without also computing the induced uncertainty will accumulate
+agreements that look strong and are not. The check is cheap and should be
+routine wherever an extractor amplifies an experimental input.
+
+## Cross-references
+
+- **σ(c₃) derivation and the 0.03 σ finding** — PR #5093,
+  [`qbeta_h1_significance_against_cal3_band.py`](../../computations/qbeta/qbeta_h1_significance_against_cal3_band.py)
+- **the zero-location test's 25.7× shortfall** — PR #5084,
+  [`qbeta_habiro_evaluation_dichotomy_and_test_power.py`](../../computations/qbeta/qbeta_habiro_evaluation_dichotomy_and_test_power.py)
+- **the front-level consolidation and option ranking** — bean `qou-dvlt`
+- **why the structural route out is closed** — PR #5100,
+  [`qbeta_modular_double_reciprocity.py`](../../computations/qbeta/qbeta_modular_double_reciprocity.py)
