@@ -60,6 +60,25 @@ try:
 except Exception:
     from witness_base import WitnessBuilder
 
+try:
+    from _precision import fmt  # noqa: E402
+except Exception:  # pragma: no cover - fallback keeps the probe runnable
+    def fmt(value, dps=None, strip_zeros=False):  # type: ignore[misc]
+        return str(value)
+
+
+def _f(x):
+    """Serialize float64-tier values as strings.
+
+    Witnesses must not carry raw float64 (AGENTS.md §"QA is agent-owned";
+    `computations/witness_raw_float64_audit.py`). These probes compute in the
+    float64 tier by design — closed forms plus a Simpson cross-check — so the
+    fix is at serialization, not at the numerics: `_precision.fmt` renders a
+    float via `str()`, which round-trips exactly. Non-floats (int, bool, str,
+    list) pass through untouched so counts and flags keep their JSON types.
+    """
+    return fmt(x) if isinstance(x, float) else x
+
 N_DATA = 4
 T_EDDY = 10.0            # sups are set during the cascade-front passage
 EPS_SWEEP = (1e-1, 1e-2, 3e-3)
@@ -161,9 +180,9 @@ def main() -> None:
         all_r_ok &= r_ok
         w.add_data(f"eps{eps:.0e}_ladder_len", nlen)
         w.add_data(f"eps{eps:.0e}_bstar_rung", bstar if bstar is not None else -1)
-        w.add_data(f"eps{eps:.0e}_kphys_at_bstar", kb)
-        w.add_data(f"eps{eps:.0e}_kphys_bstar_predicted", kb_pred)
-        w.add_data(f"eps{eps:.0e}_max_equilibrium_ratio", max_ratio)
+        w.add_data(f"eps{eps:.0e}_kphys_at_bstar", _f(kb))
+        w.add_data(f"eps{eps:.0e}_kphys_bstar_predicted", _f(kb_pred))
+        w.add_data(f"eps{eps:.0e}_max_equilibrium_ratio", _f(max_ratio))
         w.add_data(f"eps{eps:.0e}_n_excited_ratios", len(ratios))
         print(f"  eps={eps:.0e}: N={nlen}  B*={bstar}  k_phys(B*)={kb:.4f} "
               f"(pred {kb_pred:.4f})  max r_n={max_ratio:.3f} "
@@ -173,7 +192,7 @@ def main() -> None:
                and all(r <= 1.1 for r in pred_ratio_list)
                and all(kb_list[j] > kb_list[j + 1]
                        for j in range(len(kb_list) - 1)))
-    w.add_data("kphys_over_predicted_per_eps", pred_ratio_list)
+    w.add_data("kphys_over_predicted_per_eps", [_f(r) for r in pred_ratio_list])
 
     w.add_assertion(
         "the dissipation-scale crossing B* exists for every eps in the "
