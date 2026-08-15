@@ -63,45 +63,50 @@ _Q0_VALUE_CACHE: dict = {}
 
 
 def _q0_value_for_anchor(anchor: str) -> Optional[str]:
-    """The 50-digit q₀ string for a given anchor (cached).
+    """The 50-digit q₀ string for a given anchor (cached). muon ← the committed
+    q-pinning witness; proton ← the package constant.
 
-    BOTH anchors are DERIVED, never read from a committed witness:
-    muon ← ``q_muon_at()``, proton ← ``Q_50_DIGIT_STR``. None if unavailable
-    or the anchor is not one of {muon, proton}.
+    REVERTED 2026-08-15, same day, after a red-team pass. I had changed the
+    muon branch to DERIVE from ``q_muon_at()``. That was a regression, and the
+    reasoning behind it was false. Both are recorded because the second error
+    is subtle and someone will try the same fix again.
 
-    The muon branch used to read
-    ``computations/q-pinning-50-digit.witness.json`` →
-    ``derived_50_digit.q``. That was a latent flip-flop bug of exactly the
-    kind this stamping exists to prevent, and it was live in two ways:
+    **The change broke the field's purpose.** ``q0Value`` records the value the
+    producer actually computed with. A muon-tagged producer computes with the
+    witness string, so deriving the label made the stamp disagree with the
+    compute — measured 1.1099785955573347 computed vs 1.1099785955541805
+    stamped. Before the change they agreed. That is exactly the misread this
+    field exists to prevent, introduced while claiming to prevent it.
 
-    1. **The producer no longer computes a muon value into that field.**
-       ``q_pinning_50_digit.py`` sets ``Q = q_at(mp.dps)`` — the PROTON
-       solve — and writes ``"q": str(Q)``. The committed witness still holds
-       a muon-range value only because it predates that change. So
-       *re-running the producer* — an ordinary, encouraged act — would have
-       silently made every subsequent muon-anchored witness stamp a PROTON
-       value under ``q0Anchor: "muon"``. Nothing would have failed; the label
-       would simply have started lying.
+    **The justification was also wrong.** I claimed re-running
+    ``q_pinning_50_digit.py`` would flip every muon stamp to a PROTON value,
+    since that script sets ``Q = q_at(mp.dps)``. It does not.
+    ``q_pinning_50_digit`` is listed in ``computations/q0_anchor_manifest.json``
+    under ``ideal_muon``, so ``q_parameter`` resolves the anchor from the argv
+    stem and rebinds ``q_at`` to return the witness string. Verified under the
+    producer's real argv: ``q_at(70)`` -> ``1.10997859555733471989…``. The
+    producer is a FIXED POINT; re-running it changes nothing.
 
-    2. **The committed value is not reproducible anyway.** It diverges from
-       ``q_muon_at()`` at digit 13 (2.842e-12). That gap is 431x *smaller*
-       than the CODATA uncertainty on q_muon, so no physics moves — but a
-       constant that cannot be regenerated cannot be checked, which is the
-       whole point of stamping it.
+    **The real defect, which that story obscured, is CIRCULARITY.** The muon
+    50-dps constant certifies itself — the producer reads, via ``q_at``, the
+    witness it writes. It has never been derived from a closed form, which is
+    exactly why ``q_muon_at()`` does not reproduce it. Breaking the loop means
+    giving the muon anchor a real derivation and re-running its dependents; it
+    must move the LABEL and the COMPUTED VALUE together, or it reintroduces the
+    disagreement above.
 
-    Deriving both anchors removes the stale-file dependency entirely: the
-    label is now recomputed from CODATA plus an exactly-computed Vol(4₁) on
-    every call, so it cannot drift from, or be poisoned by, any witness.
+    Note ``computations/substrate/q_parameter.py`` asserts the witness starts
+    with ``1.109978595557``, so substituting the canonical string there
+    hard-fails all 257 ``ideal_muon`` producers, and a second copy of that
+    guard ships in the published ``qou_mass`` package.
     """
     if anchor in _Q0_VALUE_CACHE:
         return _Q0_VALUE_CACHE[anchor]
     val: Optional[str] = None
     try:
         if anchor == "muon":
-            from qou_substrate.constants import q_muon_at  # noqa: PLC0415
-            import mpmath as _mp  # noqa: PLC0415
-            # 50 significant digits, matching Q_50_DIGIT_STR's convention.
-            val = _mp.nstr(q_muon_at(50), 50, strip_zeros=False)
+            p = _repo_root() / "computations" / "q-pinning-50-digit.witness.json"
+            val = json.loads(p.read_text(encoding="utf-8"))["derived_50_digit"]["q"]
         elif anchor == "proton":
             from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: PLC0415
             val = str(Q_50_DIGIT_STR)
