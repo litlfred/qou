@@ -237,7 +237,7 @@ theorem m004_regular_mem :
       ∈ m004Polytope := by
   refine ⟨fun i => ?_, ?_⟩
   · fin_cases i <;> simpa using regTet_mem
-  · simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons]
+  · simp only [Matrix.cons_val_zero, Matrix.cons_val_one]
     ring
 
 end QOU.Knot.MultiTetVolumeConcave
