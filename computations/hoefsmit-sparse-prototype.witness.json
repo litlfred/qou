@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T12:19:49.381340+00:00",
-  "commitSha": "24421edeeca9e786cee45e25cd71e5aa8f85831f",
+  "computedAt": "2026-08-15T20:33:59.868477+00:00",
+  "commitSha": "a09a0e41e99ecc5cabe9d86de98706c5af1c575b",
   "assertions": [
     {
       "name": "the structured path reproduces chi_numpy on every partition to better than 1e-12 — it is the same arithmetic in a different summation order, not a different object",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 124,
+  "durationMs": 107,
   "computation": "hoefsmit-sparse-prototype",
   "scriptFile": "hoefsmit_sparse_prototype_probe.py",
-  "scriptHash": "04ab2db02b08",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "110c4978babd",
+  "scriptCommitSha": "abc64402c9fec6f3e442e2ffe27ceb969ce48a1b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,8 @@
       {
         "partition": "(5, 2, 2)",
         "dim": 120,
-        "t_dense_sec": "0.013078689575195312",
-        "t_structured_sec": "0.008902549743652344",
+        "t_dense_sec": "0.009558916091918945",
+        "t_structured_sec": "0.007479429244995117",
         "rel_diff": "1.89553e-16",
         "generator_bytes_dense": 921600,
         "generator_bytes_structured": 14208,
@@ -48,8 +48,8 @@
       {
         "partition": "(3, 3, 3)",
         "dim": 42,
-        "t_dense_sec": "0.0018148422241210938",
-        "t_structured_sec": "0.002449512481689453",
+        "t_dense_sec": "0.001638174057006836",
+        "t_structured_sec": "0.002004861831665039",
         "rel_diff": "0.0",
         "generator_bytes_dense": 112896,
         "generator_bytes_structured": 4704,
@@ -59,8 +59,8 @@
       {
         "partition": "(4, 3, 2)",
         "dim": 168,
-        "t_dense_sec": "0.02147078514099121",
-        "t_structured_sec": "0.015079736709594727",
+        "t_dense_sec": "0.022078752517700195",
+        "t_structured_sec": "0.012397527694702148",
         "rel_diff": "5.05569e-16",
         "generator_bytes_dense": 1806336,
         "generator_bytes_structured": 20832,
@@ -70,8 +70,8 @@
       {
         "partition": "(7, 1, 1)",
         "dim": 28,
-        "t_dense_sec": "0.0012166500091552734",
-        "t_structured_sec": "0.0016121864318847656",
+        "t_dense_sec": "0.0009884834289550781",
+        "t_structured_sec": "0.0014297962188720703",
         "rel_diff": "3.83528e-16",
         "generator_bytes_dense": 50176,
         "generator_bytes_structured": 2800,
@@ -81,8 +81,8 @@
       {
         "partition": "(4, 4, 1)",
         "dim": 84,
-        "t_dense_sec": "0.0051686763763427734",
-        "t_structured_sec": "0.0053195953369140625",
+        "t_dense_sec": "0.004410505294799805",
+        "t_structured_sec": "0.0043735504150390625",
         "rel_diff": "6.81178e-16",
         "generator_bytes_dense": 451584,
         "generator_bytes_structured": 9744,
@@ -92,5 +92,7 @@
     ],
     "worst_rel_diff": "6.81178e-16",
     "tier": "exploratory"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
