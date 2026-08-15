@@ -524,6 +524,22 @@
         ],
         "abs_tol": "1e-40",
         "note": "The longest element e^- = sigma_0 sigma_1 sigma_0 evaluates to h*z^2 + z by cyclicity plus the Hecke quadratic, NOT z^3. This exact entry was z^3 until docs/audits/2026-05-19-trm5-markov-bug.md, and main carries the follow-on commit 'flip trace_weights to h*z^2 + z -- Rust and Python finally agree'. A static scanner cannot catch it: z^3 and h*z^2+z are both perfectly ordinary expressions in z, differing only in being right and wrong. Only evaluation distinguishes them, which is the whole argument for R9/R11 over R4/R5."
+      },
+      {
+        "id": "c_3_categorical_derivation_attempt.trM_hopf",
+        "convention": "D",
+        "module": "c_3_categorical_derivation_attempt",
+        "symbol": "trM_hopf",
+        "kind": "callable_q",
+        "identity": "h*z+1",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "The only one of the four producers migrated in this arc that R11 can gate. The other three -- knot_operator_census_group_actions, lepton_t2n_torus_tower, inter_nucleon_linked_channel -- have NO `if __name__` guard and construct a WitnessBuilder at module level, so importing them RUNS the producer and rewrites its witness. A validator cannot import those without making validation a side-effecting act, which is why R11's coverage of the producer layer is one entry rather than four. Verified import-safe here: 0.09 s, witness mtime unchanged. trM_hopf(q0) = 1.128088744114353785593152 matches h*z+1 at z_D exactly (|d| = 0), and independently matches the sigma_1^2 entry of markov-trace-recursive.witness.json."
       }
     ],
     "weights_n3": [

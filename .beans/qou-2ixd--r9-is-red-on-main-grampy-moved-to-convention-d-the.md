@@ -459,3 +459,30 @@ hand in rounds 3 and 5.
 - Extend R11 coverage to the producers migrated in rounds 3/5, so their closed
   forms are gated rather than merely correct-once.
 - The 4 pyhecke sites remain `qou-w8zz`'s.
+
+### R11 coverage of the producer layer is one entry, and that is a finding
+
+Extending R11 to the four producers migrated in rounds 3/5 turned out to be
+mostly impossible, for a reason worth recording:
+
+| producer | `if __name__` guard | module-level `WitnessBuilder` |
+|---|---|---|
+| `c_3_categorical_derivation_attempt` | **yes** | no |
+| `knot_operator_census_group_actions` | no | yes (line 109) |
+| `lepton_t2n_torus_tower` | no | yes (line 178) |
+| `inter_nucleon_linked_channel` | no | yes (line 120) |
+
+Three of the four **run the whole producer at import and rewrite their own
+witness**. A validator cannot import those without making validation a
+side-effecting act — running `trace_convention_registry_validate.py` would
+regenerate witnesses as a side effect, which is precisely the "regenerate from
+the producer" attack surface the registry warns about elsewhere.
+
+So R11 gates `c_3_categorical_derivation_attempt.trM_hopf` (verified
+import-safe: 0.09 s, witness mtime unchanged) and cannot gate the other three.
+`trM_hopf(q0) = 1.128088744114353785593152` matches `h*z+1` at `z_D` with
+`|d| = 0`, and independently matches the `sigma_1^2` entry of
+`markov-trace-recursive.witness.json` — two unrelated producers agreeing.
+
+**The blocker is the missing `__main__` guard, not R11.** A producer that
+cannot be imported without running cannot be gated by anything that imports it.
