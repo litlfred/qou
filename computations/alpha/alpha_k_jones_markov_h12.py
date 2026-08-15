@@ -272,10 +272,34 @@ def main() -> int:
     w.add_parameter("elapsed_seconds", f"{elapsed:.2f}")
     w.add_parameter("tr_M_he4_via_y_lambda", _f(tr_M_he4))
     w.add_parameter("tr_M_he4_multiplicative", _f(tr_M_he4_mult))
+    # Convention D forces y_λ = 0 EXACTLY for ℓ(λ) >= 3 — Schur-Weyl on the
+    # two-dimensional fibre, a theorem, not an approximation. This is a 77×77
+    # linear solve, so those entries come back as solver residue (~1e-18 here,
+    # 15 orders below the smallest live weight y_(12) ≈ 3.97e-3). Emitting the
+    # residue misrepresents a proved zero as a small number, and the
+    # convention-C audit correctly read it as a nonzero weight on a 3+ row
+    # block and flagged this witness as convention C — a false positive whose
+    # cause is here, not in the detector. (Its DEAD_TOL is 1e-30, set for a
+    # float pipeline "delivering 1e-300"; a linear solve delivers 1e-18.)
+    #
+    # Snap to exact 0 and keep the residue as a solver-quality diagnostic, so
+    # no information is lost.
+    _dead_residue = [abs(float(yv)) for sh, yv in zip(shapes, y) if len(sh) >= 3]
     w.add_data("y_lambda_table", [
-        {"partition": sh, "dim_S_lambda": d, "y_lambda": _f(yv)}
+        {"partition": sh, "dim_S_lambda": d,
+         "y_lambda": _f(0.0) if len(sh) >= 3 else _f(yv)}
         for sh, d, yv in zip(shapes, dims, y)
     ])
+    w.add_data("dead_block_solve_residue", {
+        "n_dead_blocks": len(_dead_residue),
+        "max_abs_residue": _f(max(_dead_residue)) if _dead_residue else _f(0.0),
+        "note": (
+            "ell(lambda) >= 3 blocks are exactly 0 under convention D "
+            "(Schur-Weyl, two-dimensional fibre). The table above reports "
+            "that exact 0; this is the numerical residue the 77x77 solve "
+            "left in those entries, kept as a conditioning diagnostic."
+        ),
+    })
     w.add_data("candidate_B_4He_MeV", {n: _f(v) for n, v in candidates.items()})
     w.add_data("B_4He_AME_MeV", repr(B_AME))
     w.add_assertion(

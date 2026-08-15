@@ -1,8 +1,8 @@
 {
   "engine": "python+pyhecke-native+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T13:06:44.300974+00:00",
-  "commitSha": "2216604b7176952ff1aae8f1f337f73c13626756",
+  "computedAt": "2026-08-15T03:03:15.631668+00:00",
+  "commitSha": "6334f0c7fa4eaf0d6e0135e4efdadcf8fd5fa3e8",
   "assertions": [
     {
       "name": "all_77_y_lambda_computed",
@@ -15,7 +15,7 @@
     },
     {
       "name": "markov_normalization_holds",
-      "computed": "0.9999999999999998",
+      "computed": "1.0000000000000002",
       "expected": "1.0",
       "passed": true,
       "tolerance": "1e-6",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 20,
   "computation": "alpha-k-jones-markov-h12",
   "scriptFile": "alpha_k_jones_markov_h12.py",
-  "scriptHash": "9162211f69a4",
-  "scriptCommitSha": "63db388851425a23a623cecaaef1ae8c05ce6878",
+  "scriptHash": "660cfc5f2817",
+  "scriptCommitSha": "6334f0c7fa4eaf0d6e0135e4efdadcf8fd5fa3e8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,22 +38,20 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Jones-Markov weights y_λ at H_12(q) — full 77-partition atlas. Extends sibling alpha_k_jones_markov_h4.py to the algebra needed for 4He per the H_3-vs-H_{3A} legacy bug audit (commit c70707397). Builds 77 cycle-type representative braids, computes 77×77 q-Hecke character matrix via pyhecke_native.chi_lambda_braid, solves linear system from Markov-axiom RHS tr_M(rep) = z^{n-r}. Cross-checks tr_M(β_⁴He) via Σ y_λ · χ_λ vs the multiplicative formula tr_M(β_𝓑_3)^4 on 4 disjoint Borromean copies.",
   "parameters": {
-    "q_0_f64": "1.1099785955573347",
-    "z_mark_f64": "0.6126880505488902",
+    "q_0_f64": "1.1099785827513808",
+    "z_mark_f64": "0.6126880371464652",
     "n_partitions": 77,
-    "chi_matrix_condition_number": "7984.908701444466",
-    "sum_y_dim_check": "0.9999999999999998",
-    "elapsed_seconds": "425.72",
-    "tr_M_he4_via_y_lambda": "0.994261045151763",
-    "tr_M_he4_multiplicative": "0.9942610451517598"
+    "chi_matrix_condition_number": "7984.908312037897",
+    "sum_y_dim_check": "1.0000000000000002",
+    "elapsed_seconds": "303.08",
+    "tr_M_he4_via_y_lambda": "0.9942610476982464",
+    "tr_M_he4_multiplicative": "0.9942610476982431"
   },
   "data": {
     "y_lambda_table": [
@@ -62,7 +60,7 @@
           12
         ],
         "dim_S_lambda": 1,
-        "y_lambda": "0.003965758198280982"
+        "y_lambda": "0.003965758016123073"
       },
       {
         "partition": [
@@ -70,7 +68,7 @@
           1
         ],
         "dim_S_lambda": 11,
-        "y_lambda": "0.003100348642323526"
+        "y_lambda": "0.003100348549414107"
       },
       {
         "partition": [
@@ -78,7 +76,7 @@
           2
         ],
         "dim_S_lambda": 54,
-        "y_lambda": "0.002370443600725565"
+        "y_lambda": "0.0023704435629293787"
       },
       {
         "partition": [
@@ -87,7 +85,7 @@
           1
         ],
         "dim_S_lambda": 55,
-        "y_lambda": "1.9384536406840746e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -95,7 +93,7 @@
           3
         ],
         "dim_S_lambda": 154,
-        "y_lambda": "0.0017441416844496673"
+        "y_lambda": "0.0017441416771205775"
       },
       {
         "partition": [
@@ -104,7 +102,7 @@
           1
         ],
         "dim_S_lambda": 320,
-        "y_lambda": "-1.798483560985298e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -114,7 +112,7 @@
           1
         ],
         "dim_S_lambda": 165,
-        "y_lambda": "-2.5932057558553926e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -122,7 +120,7 @@
           4
         ],
         "dim_S_lambda": 275,
-        "y_lambda": "0.0011940696052634401"
+        "y_lambda": "0.0011940696111622734"
       },
       {
         "partition": [
@@ -131,7 +129,7 @@
           1
         ],
         "dim_S_lambda": 891,
-        "y_lambda": "4.3963487678964274e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -140,7 +138,7 @@
           2
         ],
         "dim_S_lambda": 616,
-        "y_lambda": "1.5475607875020889e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -150,7 +148,7 @@
           1
         ],
         "dim_S_lambda": 945,
-        "y_lambda": "-8.369452477290349e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -161,7 +159,7 @@
           1
         ],
         "dim_S_lambda": 330,
-        "y_lambda": "-3.679554024739928e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -169,7 +167,7 @@
           5
         ],
         "dim_S_lambda": 297,
-        "y_lambda": "0.0006961857928301305"
+        "y_lambda": "0.000696185800631777"
       },
       {
         "partition": [
@@ -178,7 +176,7 @@
           1
         ],
         "dim_S_lambda": 1408,
-        "y_lambda": "1.5891849845680932e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -187,7 +185,7 @@
           2
         ],
         "dim_S_lambda": 1925,
-        "y_lambda": "1.507104797755647e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -197,7 +195,7 @@
           1
         ],
         "dim_S_lambda": 2376,
-        "y_lambda": "-2.9138359933598173e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -207,7 +205,7 @@
           1
         ],
         "dim_S_lambda": 2079,
-        "y_lambda": "-6.519910539146842e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -218,7 +216,7 @@
           1
         ],
         "dim_S_lambda": 1728,
-        "y_lambda": "3.299141249921286e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -230,7 +228,7 @@
           1
         ],
         "dim_S_lambda": 462,
-        "y_lambda": "2.7677843713497427e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -238,7 +236,7 @@
           6
         ],
         "dim_S_lambda": 132,
-        "y_lambda": "0.00022872962858889716"
+        "y_lambda": "0.00022872963188107334"
       },
       {
         "partition": [
@@ -247,7 +245,7 @@
           1
         ],
         "dim_S_lambda": 1155,
-        "y_lambda": "-2.0852239409356873e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -256,7 +254,7 @@
           2
         ],
         "dim_S_lambda": 2673,
-        "y_lambda": "8.351327647472158e-20"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -266,7 +264,7 @@
           1
         ],
         "dim_S_lambda": 3080,
-        "y_lambda": "-2.9738199247475944e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -275,7 +273,7 @@
           3
         ],
         "dim_S_lambda": 1650,
-        "y_lambda": "9.32219121459814e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -285,7 +283,7 @@
           1
         ],
         "dim_S_lambda": 5632,
-        "y_lambda": "-8.6609338309598425e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -296,7 +294,7 @@
           1
         ],
         "dim_S_lambda": 3696,
-        "y_lambda": "1.609675947294744e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -306,7 +304,7 @@
           2
         ],
         "dim_S_lambda": 1925,
-        "y_lambda": "3.724712513260707e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -317,7 +315,7 @@
           1
         ],
         "dim_S_lambda": 3564,
-        "y_lambda": "2.6953526610637775e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -329,7 +327,7 @@
           1
         ],
         "dim_S_lambda": 2100,
-        "y_lambda": "-9.570344932423158e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -342,7 +340,7 @@
           1
         ],
         "dim_S_lambda": 462,
-        "y_lambda": "-1.3481085368063334e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -351,7 +349,7 @@
           2
         ],
         "dim_S_lambda": 1320,
-        "y_lambda": "-2.7268814684274603e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -361,7 +359,7 @@
           1
         ],
         "dim_S_lambda": 1485,
-        "y_lambda": "1.57637884763391e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -370,7 +368,7 @@
           3
         ],
         "dim_S_lambda": 2112,
-        "y_lambda": "8.92010545181508e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -380,7 +378,7 @@
           1
         ],
         "dim_S_lambda": 5775,
-        "y_lambda": "2.5155998512463113e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -391,7 +389,7 @@
           1
         ],
         "dim_S_lambda": 3520,
-        "y_lambda": "3.918884324634692e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -401,7 +399,7 @@
           1
         ],
         "dim_S_lambda": 4158,
-        "y_lambda": "-1.012060891504807e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -411,7 +409,7 @@
           2
         ],
         "dim_S_lambda": 4455,
-        "y_lambda": "1.9927095311520946e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -422,7 +420,7 @@
           1
         ],
         "dim_S_lambda": 7700,
-        "y_lambda": "1.369203874091255e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -434,7 +432,7 @@
           1
         ],
         "dim_S_lambda": 3564,
-        "y_lambda": "-1.0174605249278527e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -445,7 +443,7 @@
           1
         ],
         "dim_S_lambda": 3520,
-        "y_lambda": "1.075334581707654e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -457,7 +455,7 @@
           1
         ],
         "dim_S_lambda": 3696,
-        "y_lambda": "3.7658082866581545e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -470,7 +468,7 @@
           1
         ],
         "dim_S_lambda": 1728,
-        "y_lambda": "-3.2257514775346092e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -484,7 +482,7 @@
           1
         ],
         "dim_S_lambda": 330,
-        "y_lambda": "7.765412369310828e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -493,7 +491,7 @@
           4
         ],
         "dim_S_lambda": 462,
-        "y_lambda": "1.4400603942427351e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -503,7 +501,7 @@
           1
         ],
         "dim_S_lambda": 2970,
-        "y_lambda": "6.1451616145759145e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -513,7 +511,7 @@
           2
         ],
         "dim_S_lambda": 2640,
-        "y_lambda": "-1.3102717016257803e-20"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -524,7 +522,7 @@
           1
         ],
         "dim_S_lambda": 4455,
-        "y_lambda": "-2.11604888884547e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -536,7 +534,7 @@
           1
         ],
         "dim_S_lambda": 1925,
-        "y_lambda": "-2.746578340313766e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -546,7 +544,7 @@
           2
         ],
         "dim_S_lambda": 2970,
-        "y_lambda": "4.943744343851982e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -557,7 +555,7 @@
           1
         ],
         "dim_S_lambda": 4158,
-        "y_lambda": "-3.7485005395405555e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -568,7 +566,7 @@
           1
         ],
         "dim_S_lambda": 5775,
-        "y_lambda": "-3.202101023162913e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -580,7 +578,7 @@
           1
         ],
         "dim_S_lambda": 5632,
-        "y_lambda": "-2.217847832926915e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -593,7 +591,7 @@
           1
         ],
         "dim_S_lambda": 2079,
-        "y_lambda": "2.5943110455056253e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -604,7 +602,7 @@
           2
         ],
         "dim_S_lambda": 1485,
-        "y_lambda": "-4.2275111241595544e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -616,7 +614,7 @@
           1
         ],
         "dim_S_lambda": 3080,
-        "y_lambda": "4.349933499799655e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -629,7 +627,7 @@
           1
         ],
         "dim_S_lambda": 2376,
-        "y_lambda": "-6.439775592794978e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -643,7 +641,7 @@
           1
         ],
         "dim_S_lambda": 945,
-        "y_lambda": "-6.580293068223975e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -658,7 +656,7 @@
           1
         ],
         "dim_S_lambda": 165,
-        "y_lambda": "-2.271625903099545e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -668,7 +666,7 @@
           3
         ],
         "dim_S_lambda": 462,
-        "y_lambda": "-2.5626537132973445e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -679,7 +677,7 @@
           1
         ],
         "dim_S_lambda": 2112,
-        "y_lambda": "-5.689955879503573e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -691,7 +689,7 @@
           1
         ],
         "dim_S_lambda": 1650,
-        "y_lambda": "1.1463443692656015e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -702,7 +700,7 @@
           2
         ],
         "dim_S_lambda": 1320,
-        "y_lambda": "-3.046140032382514e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -714,7 +712,7 @@
           1
         ],
         "dim_S_lambda": 2673,
-        "y_lambda": "-7.034175608894362e-19"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -727,7 +725,7 @@
           1
         ],
         "dim_S_lambda": 1925,
-        "y_lambda": "2.1143393457268172e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -741,7 +739,7 @@
           1
         ],
         "dim_S_lambda": 616,
-        "y_lambda": "7.055970592482843e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -753,7 +751,7 @@
           1
         ],
         "dim_S_lambda": 1155,
-        "y_lambda": "4.752052025173708e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -766,7 +764,7 @@
           1
         ],
         "dim_S_lambda": 1408,
-        "y_lambda": "-2.0060306087445344e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -780,7 +778,7 @@
           1
         ],
         "dim_S_lambda": 891,
-        "y_lambda": "1.1963535934932554e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -795,7 +793,7 @@
           1
         ],
         "dim_S_lambda": 320,
-        "y_lambda": "3.816934882302888e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -811,7 +809,7 @@
           1
         ],
         "dim_S_lambda": 55,
-        "y_lambda": "8.241036863998799e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -823,7 +821,7 @@
           2
         ],
         "dim_S_lambda": 132,
-        "y_lambda": "4.1629313975761e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -836,7 +834,7 @@
           1
         ],
         "dim_S_lambda": 297,
-        "y_lambda": "1.9788876559761996e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -850,7 +848,7 @@
           1
         ],
         "dim_S_lambda": 275,
-        "y_lambda": "2.6695227304746626e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -865,7 +863,7 @@
           1
         ],
         "dim_S_lambda": 154,
-        "y_lambda": "7.214347839031317e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -881,7 +879,7 @@
           1
         ],
         "dim_S_lambda": 54,
-        "y_lambda": "1.0625262691314831e-17"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -898,7 +896,7 @@
           1
         ],
         "dim_S_lambda": 11,
-        "y_lambda": "5.014480933272913e-18"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -916,13 +914,18 @@
           1
         ],
         "dim_S_lambda": 1,
-        "y_lambda": "-1.3483589637006049e-17"
+        "y_lambda": "0.0"
       }
     ],
+    "dead_block_solve_residue": {
+      "n_dead_blocks": 70,
+      "max_abs_residue": "9.163718683397107e-18",
+      "note": "ell(lambda) >= 3 blocks are exactly 0 under convention D (Schur-Weyl, two-dimensional fibre). The table above reports that exact 0; this is the numerical residue the 77x77 solve left in those entries, kept as a conditioning diagnostic."
+    },
     "candidate_B_4He_MeV": {
       "B_prod (2·m_e·A·8G, ν=2)": "29.95567723908384",
-      "m_e·A·8G·tr_M(β_⁴He)_H12": "14.891881479980189",
-      "2·m_e·A·8G·tr_M(β_⁴He)_H12": "29.783762959960377"
+      "m_e·A·8G·tr_M(β_⁴He)_H12": "14.891881518121007",
+      "2·m_e·A·8G·tr_M(β_⁴He)_H12": "29.783763036242014"
     },
     "B_4He_AME_MeV": "28.2956912",
     "upstream_witness_hashes": [
