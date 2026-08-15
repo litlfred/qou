@@ -29,13 +29,20 @@ part is nonzero", which for the chiral $5_2$ it is ($=1$) and for the amphichira
 $4_1$ it is not ($=0$).
 
 The grading is the $q\mapsto q^{-1}$ bar-involution that runs through the whole
-even/odd programme (the bar-even Vol/mass face and the bar-odd $Q_\beta$/decay
-face); the chirality-refined, set-valued count the exclusion forces is therefore
-the categorification of that involution's eigenspaces, not a generic
-cohomological-Hall computation. The remaining milestones (the closed-sector
-quiver-with-potential, its BPS cohomology, and the Hecke-to-BPS bridge that would
-*derive* rather than *import* the count) stay open; this proposition fixes only
-the structural target.
+even/odd programme; the chirality-refined, set-valued count the exclusion forces is
+therefore the categorification of that involution's eigenspaces, not a generic
+cohomological-Hall computation. Milestone M2 (the closed-sector BPS cohomology) has
+since been computed on the certified eq-(98) datum: every Borel ray is distinct, so
+the Davison–Meinhardt plethystic log is trivial and $\dim \mathrm{BPS}_d = |\Omega_d|$
+with no superpotential and no motivic $q$-correction — the closed-sector BPS
+cohomology is *abelian*, which is why $A_\omega$ and the whole Stokes tower are
+integers rather than Poincaré polynomials (`QOU.QBeta.AomegaM2BPSCohomology`,
+`computations/probes/aomega_m2_bps_cohomology.py`). The Hecke-to-BPS bridge (M3)
+that would *derive* rather than *import* the count stays open; this proposition
+fixes only the structural target. The onward identification of $A_\omega$ with the
+bar-odd decay leak $S$ has no literature support and is not derivable (recorded in
+`docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`); it is not
+carried here.
 
 ## Lean structure
 
