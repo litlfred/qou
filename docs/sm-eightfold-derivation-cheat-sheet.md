@@ -27,11 +27,11 @@ structural finding is that the 21 "open" parameters are **not 21 independent
 problems** — they funnel into **three missing objects** (§4). Two of the three
 have partial derivations already.
 
-All three of the eightfold way's headline quantitative relations are now scored.
-Gell-Mann–Okubo and the decuplet equal-spacing rule behind the `Ω⁻` prediction
-are **proved content-free as derivation targets** (identities of the ansatz),
-with their deviations (≈ 6 % and ≈ 9.2 %) relocated as the real testable
-content. The **nonet mixing angle is proved content-bearing** — the ansatz does
+All four of the eightfold way's headline quantitative relations are now scored.
+Gell-Mann–Okubo, the decuplet equal-spacing rule behind the `Ω⁻` prediction, and
+the Coleman–Glashow relation are all **proved content-free as derivation
+targets** (identities of the ansatz), with their deviations (≈ 6 %, ≈ 9.2 % and
+≈ 0.8 %) relocated as the real testable content. The **nonet mixing angle is proved content-bearing** — the ansatz does
 not constrain it at all — which makes it the one eightfold-way quantity whose
 derivation would be evidence for anything. It is gated on `N = 3` (§4-A).
 
@@ -372,7 +372,7 @@ none of the programme's quantitative successes.**
 | `N = 2` cannot host the decomposition | `RowCapObstruction.lean` | **proved-neg** | ⚠ **tier caveat** — see §6 |
 | **Meson octet** (0⁻): `3 ⊗ 3̄ = 8 ⊕ 1` | [`meson-octet-decomposition`](../content/quantum-observable-universe/eightfold-way/meson-octet-decomposition.md) | **standard**, conditional on `N=3` | the block calls it "a theorem of `SU(3)` representation theory" |
 | **Baryon decuplet** (3/2⁺) | [`borromean-decuplet-derivation`](../content/quantum-observable-universe/eightfold-way/borromean-decuplet-derivation.md) | **standard**, conditional on `N=3` | "a *matching of dimensions and weights*, not a derivation". Brunnian-ness → Young-symmetriser selection **withdrawn** as a non-sequitur |
-| **Baryon octet** (½⁺) | ✗ **no block** | — | **coverage gap.** The eightfold way's namesake multiplet appears in one passing paragraph (`borromean-decuplet-derivation.md:66-73`) |
+| **Baryon octet** (½⁺) | partial — [`u-spin-coleman-glashow`](../content/quantum-observable-universe/eightfold-way/u-spin-coleman-glashow.md) | **proved-neg** | **Partly closed 2026-08-15** — the octet now carries real content via the Coleman–Glashow null result. Still missing: the `3⊗3⊗3 = 10 ⊕ 8 ⊕ 8 ⊕ 1` decomposition block itself, with the `p, n, Σ, Λ, Ξ` weight table. That remains the passing paragraph at `borromean-decuplet-derivation.md:66-73` |
 | **Vector meson nonet** (1⁻) | [`vector-meson-nonet`](../content/quantum-observable-universe/eightfold-way/vector-meson-nonet.md) | **open — and the one content-bearing target** | **CLOSED 2026-08-14.** The mixing is **unconstrained** by the first-order octet ansatz (`NonetMixingUnconstrained.lean`, sorry-free): with the GMO-fixed `m₈` held fixed, *any* spectrum is realisable. So unlike GMO and equal spacing it is **not** automatic. Two nonets, identical `SU(3)` content, opposite mixing: `φ` is **99.5 %** `ss̄` (ideal), `η′` only **50.3 %**. Not currently attemptable — the singlet needs `N = 3` |
 | Gell-Mann–Nishijima `Q = I₃ + Y/2` | [`flavor-charge-assignments`](../content/quantum-observable-universe/eightfold-way/flavor-charge-assignments.md) + `WeakIsospinT3Grading.lean` | **derived** (`I₃` side) / **open** (`Y` side) | see §3.2 for the closure's true width |
 | `I₃` on the nucleon doublet | [`flavor-charge-assignments`](../content/quantum-observable-universe/eightfold-way/flavor-charge-assignments.md) | **derived** | **the one derived entry** — see §7 |
@@ -380,7 +380,7 @@ none of the programme's quantitative successes.**
 | GMO mass formula `4m_K² = 3m_η² + m_π²` | [`meson-mass-splitting`](../content/quantum-observable-universe/eightfold-way/meson-mass-splitting.md), `GellMannOkuboIdentity.lean` | **proved-neg** | holds **identically** for *any* first-order octet breaking ⇒ **zero discriminating power**. Reproducing it is evidence for nothing. GMO **withdrawn as a derivation target** |
 | The GMO **deviation** (≈ 6 %) | — | **open** | the only testable content. Framework derives no second-order term ⇒ predicts **0** |
 | **Decuplet equal-spacing rule + the `Ω⁻` mass prediction** | [`decuplet-equal-spacing`](../content/quantum-observable-universe/eightfold-way/decuplet-equal-spacing.md) | **proved-neg** | **CLOSED 2026-08-14** — the rule is an identity of first-order octet breaking, so it has **zero discriminating power**, same as GMO. `m(Ω) = 2m(Ξ*) − m(Σ*)` identically, so the Ω⁻ extrapolation reads off a value the ansatz already fixed. Cause: on the decuplet `2I = Y + 2`, collapsing the quadratic Casimir term to linear — and this **fails on the octet** (Σ, Λ share `Y = 0`), so it is not generic. Testable content relocated to the **≈ 9.2 %** spacing spread; framework predicts 0. `DecupletEqualSpacing.lean`, sorry-free |
-| **U-spin / V-spin** | ✗ **no block** | — | coverage gap; zero mentions. Lower priority — likely the same null-result class as GMO and equal spacing |
+| **U-spin / V-spin + Coleman–Glashow** | [`u-spin-coleman-glashow`](../content/quantum-observable-universe/eightfold-way/u-spin-coleman-glashow.md) | **proved-neg** | **CLOSED 2026-08-15.** The "likely the same null-result class" guess recorded here was **checked, not assumed** — and it holds: CG vanishes identically for all **six** first-order parameters (`ColemanGlashowIdentity.lean`, sorry-free). Mechanism: the octet's three U-spin multiplets each sit at fixed `Q`, so the alternating sum cancels every parameter. **One real difference from the other two nulls** — CG rests on a *conjunction* (isospin-exact strong ∧ U-spin-scalar EM), and dropping the second makes the combination nonzero, so it does test those two premises. Residual `−0.064` MeV ≈ **0.8 %** — the *tightest* of the three, hence the hardest second-order target. V-spin yields no independent octet relation |
 | **Coleman–Glashow relation** | ✗ **no block** | — | coverage gap; zero mentions |
 | Colour `SU(3)` from octonionic `G₂` | [`color-su3-from-g2`](../content/quantum-observable-universe/eightfold-way/color-su3-from-g2.md) | **standard** skeleton + **proved-neg** | `PSL(2,7) ≅ GL(3,𝔽₂)` machine-verified. The `S₄` bridge is **refuted** and the Bring→Klein degeneration **excluded**; `S₄ ⊂ PSL(2,7)` maximality as *selection* is **withdrawn**. Continuous `G₂` completion is a **Mathlib gap** (infrastructure, not structural). ⚠ `𝕆` and `G₂` are used throughout but **never defined** in this paper (`qou-8fl1`) |
 | Flavour vs colour `SU(3)` | — | **open** | proved they cannot both come from one construction: the `Sym²` gate excludes the icosahedral triple `T₁` while the `G₂` route passes |
@@ -600,7 +600,7 @@ Six new blocks, ranked by value:
 | 3 | `baryon-octet-decomposition` | medium | The namesake ½⁺ multiplet; promote the passing paragraph at `borromean-decuplet-derivation.md:66-73` |
 | 4 | `weak-isospin-t3-grading` | medium | The chapter has **no** presence for the T₃ result, though it is the second derived item on the surface. State the GMN closure at two-row width (G5) |
 | 5 | `octonion-algebra` | medium | `𝕆` and `G₂` are used throughout the colour section and **never defined in this paper** (`qou-8fl1`). Required, not optional |
-| 6 | `u-spin-v-spin` | low | U-spin/V-spin, Coleman–Glashow; zero mentions |
+| ~~6~~ | ~~`u-spin-v-spin`~~ | **DONE 2026-08-15** | Landed as `u-spin-coleman-glashow`. Ranked "low" here on the assumption it was another null; that assumption was checked and confirmed, but the *mechanism* (U-spin multiplets at fixed `Q`) and the conjunction-of-premises distinction were worth having explicitly |
 
 > **A placeholder is a `prose` block, full stop.** It names the missing object,
 > its tier, and its blocker. It is **never** a `theorem`/`proposition` with a

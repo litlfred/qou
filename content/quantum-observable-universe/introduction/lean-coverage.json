@@ -1,13 +1,13 @@
 {
   "paper": "quantum-observable-universe",
-  "total_blocks": 3053,
+  "total_blocks": 3061,
   "by_kind": {
-    "remark": 970,
-    "prose": 384,
-    "proof": 438,
-    "proposition": 608,
+    "remark": 974,
+    "prose": 385,
+    "proof": 439,
+    "proposition": 609,
     "example": 101,
-    "definition": 257,
+    "definition": 258,
     "theorem": 48,
     "corollary": 17,
     "lemma": 45,
@@ -16,11 +16,11 @@
     "simulator": 11
   },
   "provable": {
-    "total": 718,
-    "with_lean_field": 715,
-    "with_lean_file": 712,
-    "sorry_free": 680,
-    "percent_sorry_free": 94.7
+    "total": 719,
+    "with_lean_field": 716,
+    "with_lean_file": 713,
+    "sorry_free": 684,
+    "percent_sorry_free": 95.1
   },
   "conjectures": {
     "total": 172,
@@ -33,7 +33,7 @@
     "class_axiomatized": 158
   },
   "definitions": {
-    "total": 257,
-    "with_lean_file": 257
+    "total": 258,
+    "with_lean_file": 258
   }
 }

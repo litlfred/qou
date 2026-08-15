@@ -85,6 +85,11 @@ export default chapter({
         // decuplet block it interprets, so the edge runs backward. Takes
         // this section from 2 to 3 blocks, into the detangler 3-18 band.
         "decuplet-equal-spacing",
+        // U-spin / Coleman–Glashow, the third null result. Placed after
+        // both blocks it uses, so every uses[] edge runs backward. Takes
+        // this section 3 -> 4, still inside the band. Also gives the
+        // baryon octet its first real content (qou-7lio).
+        "u-spin-coleman-glashow",
       ],
     }),
 
