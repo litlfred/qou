@@ -158,3 +158,18 @@ No class-function spanning, no completeness-of-characters. Revised remaining wor
 therefore: the isotypic decomposition of the regular module (Mathlib-supported), the
 `Hom_A(A, M) ≅ M` identification, and the dimension count. Bricks 1–2 are what make the
 middle step give `m_μ` on the nose rather than `m_μ · dim End`.
+
+### Brick 3 landed (PR #5156)
+
+`QOU/MathlibExt/RegularHom.lean`, sorry-free: `homGRegularEquiv : Hom_G(k[G], V) ≃ₗ[k] V`
+and `finrank_homG_regular`. Evaluation at the identity basis vector is the isomorphism.
+General — any group, any field, any representation.
+
+With bricks 1–2 this gives, for each partition, that `dim Hom_G(k[G], S^μ)` is the
+multiplicity on one side and `dim S^μ` on the other.
+
+**Remaining for `n! = Σ_μ (dim S^μ)²`:** the isotypic decomposition of the regular module
+and the dimension count over it. Mathlib supplies `sSup_isotypicComponents` +
+`sSupIndep_isotypicComponents`; the work is turning that sup into a `finrank` sum indexed
+by `PartitionIndex n`, using `specht_exhausts_irreducibles` to know each component's type
+is a Specht module. That is the next brick and the last one before the identity.
