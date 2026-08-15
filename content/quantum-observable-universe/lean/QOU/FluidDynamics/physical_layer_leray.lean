@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import QOU.FluidDynamics.low_mode_block_global
+import QOU.FluidDynamics.surreal_enstrophy_finite_modes
 
 /-!
 # QOU.FluidDynamics.physical_layer_leray
@@ -425,5 +426,99 @@ theorem sup_bound_of_chaining (Ωp : ℕ → K) (lam : K) (Nbad H : ℕ)
   have hn : n = g + (n - g) := by omega
   rw [hn]
   exact hboot g hggood (n - g) (le_trans hrun (by omega))
+
+/-!
+## Wiring GP3 into the chain (bean `qou-c637`)
+
+The chaining theorem above took the bootstrap as the named hypothesis
+`hboot`.  It is discharged here from GP3's actual statement
+(`local_bootstrap`, `surreal_enstrophy_finite_modes.lean`): applying
+GP3 to the sequence *shifted to start at each good step* — the shifted
+sequence inherits the quadratic step — gives
+`Ωp (g+j) ≤ 2·Ωp g ≤ 2·lam` for `j ≤ H`, provided the horizon
+condition `H·δc·lam ≤ 1/4` holds at the level `lam`
+(`hboot_of_local_bootstrap`).  The damped step of the basin section
+implies GP3's undamped step (`d ≥ 0` drops the damping term), so one
+step hypothesis serves the whole file
+(`quadratic_step_of_damped`).
+
+`energy_small_global` is the full composition — Leray + damped
+quadratic step + the two arithmetic side conditions ⇒
+`Ωp n ≤ 2·lam` for **all** `n`.  Every link in the chain is now a
+theorem; the only assumptions left are the model step inequalities
+themselves (the discrete dynamics) and the arithmetic smallness
+`Nbad + 1 ≤ H` (≈ `8cE₀ ≲ 1`, the energy-smallness reading).
+-/
+
+/-- The damped quadratic step implies GP3's undamped step: for
+    `d, Ω ≥ 0`, `δ·Ω·(c·Ω − d) ≤ δ·c·Ω²`. -/
+theorem quadratic_step_of_damped (Ωp : ℕ → K) (δ c d : K)
+    (hδ : 0 ≤ δ) (hd : 0 ≤ d) (hΩ : ∀ n, 0 ≤ Ωp n)
+    (hstep : ∀ n, Ωp (n + 1) ≤ Ωp n + δ * Ωp n * (c * Ωp n - d)) :
+    ∀ n, Ωp (n + 1) ≤ Ωp n + δ * c * (Ωp n) ^ 2 := by
+  intro n
+  have h := hstep n
+  nlinarith [mul_nonneg hδ (hΩ n), mul_nonneg (mul_nonneg hδ (hΩ n)) hd]
+
+/-- **`hboot` discharged from GP3**: applying `local_bootstrap` to the
+    sequence shifted to start at a good step `g` (the shift inherits
+    the quadratic step) gives the bootstrap cover
+    `Ωp (g+j) ≤ 2·lam` for `j ≤ H`, under the horizon condition
+    `H·(δc·lam) ≤ 1/4`. -/
+theorem hboot_of_local_bootstrap (Ωp : ℕ → K) (δ c lam : K) (H : ℕ)
+    (hδ : 0 ≤ δ) (hc : 0 ≤ c)
+    (hΩ : ∀ n, 0 ≤ Ωp n)
+    (hqstep : ∀ n, Ωp (n + 1) ≤ Ωp n + δ * c * (Ωp n) ^ 2)
+    (hhor : (H : K) * (δ * c * lam) ≤ 1 / 4) :
+    ∀ g, Ωp g ≤ lam → ∀ j, j ≤ H → Ωp (g + j) ≤ 2 * lam := by
+  intro g hg j hj
+  have hδc : (0 : K) ≤ δ * c := mul_nonneg hδ hc
+  have hHnn : (0 : K) ≤ (H : K) := Nat.cast_nonneg H
+  have hh : (H : K) * (δ * c * Ωp g) ≤ 1 / 4 := by
+    have h1 : (H : K) * (δ * c * Ωp g) ≤ (H : K) * (δ * c * lam) := by
+      apply mul_le_mul_of_nonneg_left _ hHnn
+      exact mul_le_mul_of_nonneg_left hg hδc
+    linarith
+  have hshift := QOU.FluidDynamics.local_bootstrap hδ hc
+    (fun i => Ωp (g + i)) (fun i => hΩ (g + i))
+    (fun i => by
+      show Ωp (g + (i + 1)) ≤ Ωp (g + i) + δ * c * (Ωp (g + i)) ^ 2
+      rw [Nat.add_succ]
+      exact hqstep (g + i)) H
+    (by
+      show (H : K) * (δ * c * Ωp (g + 0)) ≤ 1 / 4
+      simpa using hh)
+  have h2 : Ωp (g + j) ≤ 2 * Ωp g := by simpa using hshift j hj
+  linarith
+
+/-- **Energy-small global regularity, fully composed — every link a
+    theorem.**  Hypotheses: the physical Leray dissipation step, the
+    damped quadratic low-mode step, good data (`Ωp 0 ≤ lam`), and the
+    two arithmetic side conditions (`4E₀/δ ≤ Nbad·lam`, the bootstrap
+    horizon `H·δc·lam ≤ 1/4`, and the gap condition `Nbad + 1 ≤ H` —
+    jointly the `8cE₀ ≲ 1` energy-smallness reading).  Conclusion:
+    `Ωp n ≤ 2·lam` for **every** `n`, uniformly in `ε`.  The only
+    assumptions are the model's discrete dynamics and the smallness
+    arithmetic; no bootstrap, basin, or counting hypothesis remains
+    undischarged. -/
+theorem energy_small_global (E Ωp : ℕ → K) (δ q c d lam : K)
+    (Nbad H : ℕ)
+    (hδ : 0 < δ) (hq1 : 1 < q) (hq2 : q ≤ 2) (hc : 0 ≤ c)
+    (hd : 0 ≤ d) (hlam : 0 < lam)
+    (hΩ : ∀ n, 0 ≤ Ωp n)
+    (hdiss : ∀ n, E (n + 1) ≤ E n - δ * (1 / (2 * q)) * Ωp n)
+    (hE : ∀ n, 0 ≤ E n)
+    (hstep : ∀ n, Ωp (n + 1) ≤ Ωp n + δ * Ωp n * (c * Ωp n - d))
+    (h0 : Ωp 0 ≤ lam)
+    (hcast : 4 / δ * E 0 ≤ (Nbad : K) * lam)
+    (hhor : (H : K) * (δ * c * lam) ≤ 1 / 4)
+    (hHN : Nbad + 1 ≤ H) :
+    ∀ n, Ωp n ≤ 2 * lam := by
+  have hqstep := quadratic_step_of_damped Ωp δ c d (le_of_lt hδ) hd hΩ hstep
+  have hcount := bad_count_le E Ωp Ωp δ q lam Nbad hδ hq1 hq2 hlam hΩ
+    hΩ (fun n => le_refl _) hdiss hE hcast
+  have hboot := hboot_of_local_bootstrap Ωp δ c lam H (le_of_lt hδ) hc
+    hΩ hqstep hhor
+  exact sup_bound_of_chaining Ωp lam Nbad H hcount h0 hboot hHN
 
 end QOU.FluidDynamics.PhysicalLayerLeray
