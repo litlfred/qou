@@ -140,3 +140,52 @@ of silently running 4000x slower with a correct answer.
 Not decided here: `averaged_weighted` may need the extra precision at the
 symbolic call sites, and that is the piece of context that picks between the
 two — it belongs to the arc that owns the vocabulary.
+
+## Third finding: He-4 does not fail on TIME, it fails on MEMORY
+
+With the dtype leak fixed, the re-run reached helium-4 in ~45 s and the five
+smaller atoms came out **faster than the committed witness**:
+
+| atom | committed | after the fix |
+|---|---|---|
+| #3 | 0.34 s | **0.13 s** |
+| #4 (tritium) | 9.28 s | **5.86 s** |
+| #5 (He-3) | 9.45 s | **5.68 s** |
+
+So the machine is not slow — it is ~1.6x *faster* than whatever produced the
+committed values. The environment theory is dead twice over.
+
+**He-4 then hung.** Not "ran long" — hung:
+
+- **Zero CPU delta** across a 6-second sample on both workers
+  (`00:08:20` and `00:10:07`, unchanged).
+- Both blocked in `futex_do_wait`.
+- RSS **4.8 GB and 5.1 GB** for two workers — ~10 GB of a 16 GB box,
+  with 3.2 GB free.
+- `khugepaged` pinned at 80 % (kernel hugepage compaction — the signature
+  of memory pressure, not of arithmetic).
+
+Killing the run returned the box from 11.2 GB used to 6.1 GB.
+
+So the He-4 atom (n=12, 77 partitions) exceeds available memory at the
+default **4 workers**. The wall-clock reading was a symptom; the constraint
+is RAM per worker times worker count.
+
+### What to try next, in order
+
+1. **Fewer workers.** `--atoms` exists but worker count is currently
+   hardcoded at 4. One or two workers may fit in 16 GB and finish. This is
+   the cheapest experiment and needs no code change beyond the pool size.
+2. **Measure per-partition peak RSS at n=12.** 5 GB *per worker* is much
+   larger than a float64 Hoefsmit matrix set should need, so there may be a
+   second, memory-shaped defect in the n=12 path — worth measuring before
+   assuming the size is inherent.
+3. Only then conclude anything about hardware.
+
+### Discipline note
+
+This is the **third** cause proposed for the same symptom: environment (wrong),
+dtype leak (real, and worth 4000x, but not the whole story), and now memory
+(the actual blocker for this atom). Each earlier diagnosis was stated with
+more confidence than the evidence supported. The lesson is the same one the
+600x600-matmul check taught: measure the specific resource before naming it.
