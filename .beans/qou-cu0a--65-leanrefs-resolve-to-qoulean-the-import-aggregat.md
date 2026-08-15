@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T20:32:39Z
-updated_at: 2026-08-15T20:32:39Z
+updated_at: 2026-08-15T23:03:47Z
 ---
 
 Found while adjudicating `def:yekutieli-triple` (session `qou-xz6t`, branch `claude/mtcx-7c-verify-close-2026-08-15`).
@@ -54,3 +54,31 @@ So the gate fires and the fallback hands the aggregator back anyway. That choice
 ## Relation to existing beans
 
 Distinct from `qou-qe41` (29 sibling stubs with no candidate-2 resolution) and `qou-ref10` (ten refs with no formalisation): both are about refs that **fail** to resolve. This bean is about refs that **succeed** into the wrong file and therefore never surface. The 319-unresolved figure above suggests those two beans undercount their own class as well.
+
+
+## SCALE CORRECTION + FIX LANDED (2026-08-15)
+
+**The 65 figure in the title undercounts by ~5×.** It counted only refs resolving to the *root* `QOU.lean`. Refs also fell back to **other** import-only aggregators — e.g. `QOU/BraidKnot.lean`, whose entire non-`import` content is a module-index docstring and which declares **nothing** — and those were invisible to my original scan because they are neither "the root aggregator" nor "unresolved".
+
+Measured on the same 1220 blocks, before → after the resolver fix:
+
+| | before | after |
+|---|---|---|
+| resolve to the `QOU.lean` root aggregator | 65 | **0** |
+| unresolved (honest `n/a`) | 319 | **558** |
+
+The `+239` are the non-root aggregator cases. So **~304 of 1220 blocks — a quarter of the corpus — were being audited against a list of `import` lines and passing.**
+
+### Fix (option 2 of the three recorded above), landed upstream
+
+`folio-assistant` commit `ef80839`, branch `claude/gracious-dijkstra-0ijp2l`: `resolveCanonicalLean`'s safe fallback is **narrowed, not removed** — it still returns the direct module-path file, unless that file declares nothing at all. New helper `fileDeclaresAnything()` gates it.
+
+Verified: five spot-checked decl-bearing refs still resolve (`TauQuantumIntegerForm`, `QChebyshevFunction`, `CosimplicialCrossedGroupoid.YekutieliTriple`, `QJucysMurphy`, `Torsion.YekutieliTriple`); an aggregator ref now returns `undefined`. Regression test added; folio-assistant suite **643 pass / 0 fail**.
+
+### What qou must do before adopting
+
+This **flips ~304 cached sidecar verdicts from `pass` to `n/a`**. That is the intended correction — those passes were never real — but it is not a silent upgrade:
+
+1. Re-sweep after picking up the folio-assistant change, so sidecars reflect `n/a` rather than stale greens.
+2. Expect QA coverage numbers to *drop*. That drop is the removal of false coverage, not a regression.
+3. The 63 blocks whose refs name declarations existing **nowhere** (per the triage above) are now honestly `n/a`. They remain genuinely unformalised — repointing them is not possible; they need formalisation or removal of the `lean.ref`.
