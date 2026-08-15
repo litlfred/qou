@@ -235,3 +235,49 @@ Two producers build their Gram from `pyhecke.gram.TR_M` and call
 `np.linalg.inv` themselves — which does NOT raise on the singular D Gram
 (entries 7.6e15, ‖G@inv − I‖ = 4.14). Guarded by
 `pyhecke.gram.safe_inverse()`.
+
+## 2026-08-15 (3) — Q_0 DONE; trace flip measured
+
+**Q_0 re-pin: owner-approved and landed** (PR #5069). muon
+1.1099785955541805 → proton 1.1099785827513808. `markov_z(Q_0)` is now
+bit-identical to `pyhecke.gram.z`. 183 cargo tests pass; one pinned
+determinant moved by 2.28e-8, consistent with the 1.15e-8 q shift.
+
+**53 certificates NOT regenerated** — they record a superseded anchor and
+nothing enforces them (no test cross-checks a committed certificate against
+the live Q_0). That is the `tnjb` mass-migration and still needs its own
+sign-off.
+
+### Measured impact of the remaining flip (`z³` → `h·z² + z`)
+
+| | value |
+|---|---|
+| `TR_M[5] = z³` | 0.2299948980341014 |
+| `TR_M[5] = h·z² + z` | 0.6911664783584446 |
+| change | **+200.5 %** — a tripling, not a correction |
+
+Gram: 19/36 entries change; rank 6 → 5; det −0.152 → 0; cond 12 → 4.9e16.
+
+**‖G⁺ − G⁻¹‖ = 4.26, i.e. 73.3 % relative.** The replacement object is
+*substantially* different, so every downstream number derived from
+`gram_inverse` moves — this is a re-derivation, not a patch.
+
+### The split that must not be lumped
+
+The two defects hit different consumers:
+
+* **Rust-fed** (`z³` trace rule): `delta_lambda_full_variance_phase5e_1.py`,
+  via `pyhecke_native.gram_inverse`.
+* **Python-witness-fed** (inverting a singular D Gram):
+  `borromean-axial-coupling.py`, `delta_lambda_master_formula_h3_probe.py`,
+  `bound_state_observable_validator.py`, `audit_frobenius_pairing.py`.
+  Guarded by `safe_inverse` in #5055.
+
+Do not describe all five as "broken by the z³ bug" — only the first is.
+
+### Remaining
+
+1. **[OWNER]** flip `trace_weights`, given the 73 % re-derivation cost.
+2. Migrate consumers to the quotient inverse under a NEW key.
+3. Rebuild `pyhecke_native`; only then drop the `_native_ok()` guard.
+4. **[OWNER/tnjb]** regenerate the 53 certificates.
