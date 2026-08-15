@@ -104,3 +104,51 @@ correct in my own work — generalising a mechanism from the first two cases
 that fit it, before counting how many actually do. Same shape as "16 of 31
 missing" (real answer 4) and "the roots carry C in their own code" (the first
 root I opened was already D).
+
+## RETRACTED as a defect: the C here is load-bearing, and D is SINGULAR
+
+Asked to excise convention C, I went to change `gram.py:121` and read the
+comment block directly above it first. It rules the change out:
+
+> under D there is exactly ONE null direction, the row-cap one, under BOTH
+> pairings. So **det G = 0 and G_INV does not exist**. C stays invertible
+> either way, because `y_(1^3) = 0.0227 != 0`.
+>
+> And numpy does not protect you: `np.linalg.inv` on the D matrix **RAISES
+> NOTHING**. It returns entries up to 7.6e15 with `||G @ G_INV - I|| = 1.64`.
+
+`pyhecke.gram` computes `G_INV`. Under convention D the Wedderburn Gram matrix
+is **singular** — that is the *same* fact as `y_λ = 0` on 3+-row blocks, seen
+from the determinant side, and it is already Lean-proved:
+`MarkovGramDegenerate.wedderburnGram_det_eq_zero_of_dead`.
+
+So the C in this module is not stale, and not a drift against the Rust half.
+It is the convention under which the object this module exists to build
+actually exists. Flipping `z` to D would leave every call site running on a
+fabricated inverse, with no exception raised — exactly the failure the file
+documents in advance.
+
+**Excision is therefore blocked here, on a proved invariant rather than on
+caution.** This is a scope-(b) structural exclusion in the AGENTS.md sense:
+the ingredient cannot be removed because a proved degeneracy forbids the
+replacement, not because the numbers came out wrong.
+
+### What this means for the two witnesses
+
+`entanglement-orders` and `h2o-bond-angle-magnitude-vsepr` inherit C from a
+module that must be C. Migrating them is not "flip the shared constant" — it
+is either (a) they should not be using the Gram-inverse path at all, or (b)
+they need a D-convention trace that does not route through `G_INV`. Which one
+is a per-witness question, and neither is a one-line edit.
+
+### Correction history on this bean, in order
+
+1. "the shared root under the remaining 25"        -> it explains 2 of 25
+2. "a real defect worth fixing on its own terms"   -> it is load-bearing; D is
+                                                      singular here
+Both corrections came from measuring or reading rather than from inference,
+and both retracted something I had already published. The finding that
+survives is narrow and still worth having: `hecke_core.z` is C while
+`pyhecke_native.markov_z` is D, the two are used side by side, and *nothing
+in either module says which one a caller should expect*. That is a real
+hazard even though neither value is wrong.
