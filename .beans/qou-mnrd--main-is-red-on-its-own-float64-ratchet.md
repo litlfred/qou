@@ -1626,3 +1626,88 @@ worker-CPU spread above, not by a before/after. Do not quote a combined figure.
   * **The chi cache.** `chi-helium-4-h12-at-q0-50dps.witness.json` exists but is
     flagged `partial`; this producer never consults it, unlike
     `habiro_coefficients_atomic`, which takes an `atom_cache_label`.
+
+## The ⁴He leg CANNOT run on a 16 GiB box — and three corrections to my own analysis
+
+**Correction 1: it IS memory.** I wrote "Hypothesis killed: it is NOT memory"
+above, on the strength of `free -m` showing 15 GiB available. That measured the
+idle state, not the peak, and it was wrong.
+
+**Correction 2: my load-balancing fix caused an OOM.** Longest-processing-time
+ordering is right for balance, but it also puts the four LARGEST partitions in
+flight at once. The previous block-chunked schedule never hit the ceiling only
+because it happened to stagger them. First OOM:
+
+    Killed process 23356  anon-rss:5263136kB          (4 workers, ~5 GiB each)
+
+**Correction 3: the peak is 3x what I first recorded.** I took 5.0 GiB from
+`ps` on a worker that was *about to be killed*, i.e. one that had not finished
+growing, and built a `84 bytes/dim²` model on it. A single SERIAL process on
+(5,3,2,1,1), dim 7700, actually peaks at **15.9 GiB**:
+
+    Killed process 26199  anon-rss:15884144kB          (1 worker)
+
+≈ **268 bytes/dim²**, ~33 dense dim×dim f64 matrices resident at once. Read the
+peak off the OOM line's `anon-rss`, never off `ps` mid-flight.
+
+So ⁴He at n=12 does not fit at ANY worker count on 16 GiB. This is an
+environmental limit, not a scheduling one. The committed witness's
+`compute_wall_sec = 2533.2` was produced on a larger machine.
+
+## What the producer does now
+
+  * **BLAS threads pinned** at module scope before numpy loads (measured 1.37x;
+    worker state went `Sl`→`R`, ~14% → ~97% utilisation).
+  * **Worker count derived from `MemAvailable`** and the largest λ scheduled —
+    adaptive, so n=9 legs still use all 4 cores (0.0 GiB/worker) and only n=12
+    is capped.
+  * **Refuses rather than attempts** when not even one process fits, recording
+    `skip_insufficient_memory` with the required/available bytes.
+  * **Carry-forward on BOTH write paths.** The incremental save used to
+    overwrite `per_atom` with whatever the run had reached, so an interrupt
+    destroyed committed atoms — the `ground-state` defect again, and the reason
+    this witness was gutted three times today. Now a run preserves atoms it did
+    not reach, and a `skip_*` result does NOT displace a committed one.
+
+That last one took three attempts to get right, and the two failures are worth
+recording because they are both plausible-looking half-fixes:
+
+    keyed on label only    -> the skip STUB counted as "have it" and overwrote
+                              the committed entry: 77 per_lambda rows replaced
+                              by a 5-field stub. Quieter than dropping the atom,
+                              exactly as much data gone.
+    guarded only the       -> `_save_incremental` preserved ⁴He correctly on
+    incremental saves         every intermediate write, then the FINAL
+                              `builder.save()` — a separate WitnessBuilder that
+                              never read the disk — overwrote it anyway.
+                              A guard applied on all but the last write is not
+                              a guard.
+
+## Why the regenerated witness is NOT committed
+
+With ⁴He preserved and the other three timings drained, the ratchet goes GREEN
+(rho-k 4 → 1 raw float64 against a baseline of 3, i.e. a drain; 0 NEW,
+0 REGRESSED). It would have closed the one red holding §4b for everyone.
+
+**The witness shape guard flagged it, correctly, and I did not override it.**
+`durationMs` collapses 2,552,837 → 794: the file would carry ⁴He's real 77-row
+`per_lambda` block, computed over 2533 s, while advertising a 794 ms run. The
+content is intact — that part the guard's heuristic misreads — but the result is
+a hybrid that reads as a complete fresh run and is not one. `--accept` exists for
+intended shrinks and would have made it green in one flag.
+
+Publishing that to close a gate is the same move as widening a baseline. The red
+is honest; the hybrid would not be.
+
+## What is actually needed
+
+Run `rho_k_co_casimir_extended.py` on a host with **≥ 24 GiB** free (15.9 GiB
+peak plus headroom). The producer is now safe to run anywhere: on a small box it
+skips ⁴He and preserves the committed block rather than destroying it. On a big
+one it recomputes everything and the ratchet closes.
+
+Cheaper alternative, if a big box is not available: port this producer to
+`threerow_chi_sparse.chi_atom_sparse`, which keeps the Hoefsmit matrices CSR and
+accumulates the trace column-batch by column-batch — O(dim·B) memory instead of
+O(dim²). Its docstring calls out the dense identity at dim 7700 by name; it was
+written for exactly this wall.
