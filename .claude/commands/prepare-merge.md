@@ -273,6 +273,69 @@ surface the duplicates in step 6) saves a full review cycle.
   free disk before doing it — the root copy is a second full Mathlib build tree
   — and see AGENTS.md's RESTORE → build → SEED note.
 
+- **🛑 If the root cache was RESTORED from `lake-cache/*`, do NOT run this step
+  at all — it will DESTROY the cache.** This is not the cold-cache case above;
+  it is worse, and it looks like the opposite.
+
+  Measured 2026-08-15 on PR #5106 (bean `qou-r13s`), running the very command
+  this section prescribes:
+
+  | | before | during (10 min) | after kill |
+  |---|---|---|---|
+  | root `mathlib` oleans | **6990** | — | **334** |
+  | oleans written | — | 536 | — |
+  | …under `mathlib`/`aesop`/`batteries` | — | **520** | — |
+  | …under `QOU`/`UGB`/`Fred2005` | — | **0** | — |
+
+  Oleans restored by `tar` carry no `.trace` files, so **Lake treats them as
+  stale, rebuilds them from source, and evicts them as it goes** (AGENTS.md
+  records the mechanism for the *seeding* direction as bean `02kc`; it fires
+  identically on an ordinary consumer build of named library targets). Ten
+  minutes produced zero paper-library progress and cost the session its cache;
+  recovery is a fresh 1.6 GB fetch + extract.
+
+  **A high olean count is not a validity check for the cache — the traces
+  are.** 6990 reads as fully populated, which is exactly why the run above
+  proceeded. Check for traces, not oleans:
+
+  ```bash
+  # oleans present but traces sparse ⇒ RESTORED; do not `lake build` at the root
+  o=$(find .lake/packages/mathlib -name '*.olean' | wc -l)
+  t=$(find .lake/packages/mathlib -name '*.trace' | wc -l)
+  echo "oleans=$o traces=$t"; [ "$o" -gt 100 ] && [ "$t" -lt "$((o / 10))" ] \
+    && echo "RESTORED CACHE — use lean-direct, NOT lake build"
+  ```
+
+  **Treat that as a strong hint, not a proof, and know its calibration.**
+  Measured on the tree that produced this section: the restored root reports
+  `oleans=6991 traces=333` (ratio 0.048, trips the check) — and those 333
+  traces are themselves debris from the aborted rebuild, so a *pristine*
+  restore sits nearer zero. The control available here, a genuinely
+  lake-built `QOU` library tree, reports `oleans=951 traces=310` (ratio 0.33)
+  and clears the 0.1 threshold by 3.3×. That margin is real but modest, and
+  the control is a **paper library, not a lake-built Mathlib** — no built
+  Mathlib tree existed in this sandbox to calibrate against. If you have one,
+  measure it and tighten this threshold. Until then: when the check trips,
+  believe it; when it does not, you still have not proved the cache is built.
+
+  On a restored cache the gate is **`lean`-direct against the real import
+  cone**, per AGENTS.md §"QA is agent-owned; CI is a backup" — which is the
+  sanctioned verification path anyway, not a fallback. It verified the changed
+  file on #5106 in **2.4 s** against the same cone the aborted `lake build`
+  was 50 minutes into not reaching:
+
+  ```bash
+  LP="$PWD/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+  for p in mathlib batteries aesop Qq proofwidgets importGraph plausible \
+           LeanSearchClient; do
+    LP="$LP:$PWD/.lake/packages/$p/.lake/build/lib/lean"
+  done
+  LEAN_PATH="$LP" lean path/to/Changed.lean      # exit 0 = checks, sorry-free
+  ```
+
+  Then `#print axioms` on the new declarations to confirm no `sorryAx`. Say in
+  the PR that this is what you ran and why.
+
 - **If the root cache is cold and `cache get` will not fetch, build per-paper
   instead.** Measured in a sandbox with 9.2 GB free: the per-paper Mathlib build
   tree is 3.3 GB, so the root workspace wants a second one, and `lake exe cache

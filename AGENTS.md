@@ -2831,7 +2831,20 @@ SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> 
 git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
-  && tar xzf "$TGZ" -C "$ROOT" && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
+  && tar xzf "$TGZ" -C "$ROOT" \
+  && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
+  && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3; lean-direct ONLY, see below"
+
+# 🛑 A RESTORED tree has oleans but NO .trace files, so Lake treats every one as
+# stale: a later `lake build` rebuilds them from source AND EVICTS THE RESTORE.
+# Measured 2026-08-15 (bean qou-r13s) running `lake build QOU UGB Fred2005` at
+# the root against a tree restored exactly as above: root mathlib oleans
+# 6990 -> 334, and of the 536 oleans written in ten minutes, 520 were
+# mathlib/aesop/batteries and ZERO were QOU/UGB/Fred2005. It is silent — the
+# output reads as ordinary build progress. Verify with lean-direct instead
+# (2.4 s vs 50 minutes of nothing); guard any build step with:
+#     [ -f "$ROOT/.lake/RESTORED-NO-TRACES" ] && echo "restored — do NOT lake build"
+# Delete the marker only once Lake has genuinely rebuilt the tree.
 
 # Step 1: Shallow-clone mathlib locally (~144 MB).  [fallback if Step 0 misses]
 cd .. && git clone --depth 1 https://github.com/leanprover-community/mathlib4.git
