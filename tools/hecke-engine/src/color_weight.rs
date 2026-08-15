@@ -569,3 +569,130 @@ pub mod convergence {
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use super::convergence::{
+        describe, verify_f64_convergence, CANONICAL, DELTA_Q0_50DPS, F_PN_Q0_50DPS,
+        TOL_F64,
+    };
+    use super::*;
+    use crate::gram::Q_0;
+
+    #[test]
+    fn census_matches_python_at_the_light_isotopes() {
+        // (Z, N) -> (positive, negative, averaged, total), from
+        // closed_form_tau_M.interface_census — see /tmp ground-truth run.
+        assert_eq!(interface_census(1, 1), (0, 0, 1, 1)); // 2H
+        assert_eq!(interface_census(1, 2), (0, 1, 1, 2)); // 3H
+        assert_eq!(interface_census(2, 1), (1, 0, 1, 2)); // 3He
+        assert_eq!(interface_census(2, 2), (1, 1, 1, 3)); // 4He
+        assert_eq!(interface_census(3, 3), (2, 2, 1, 5)); // 6Li
+        assert_eq!(interface_census(3, 4), (2, 3, 1, 6)); // 7Li
+    }
+
+    #[test]
+    fn single_nucleon_has_no_bonds() {
+        assert!(canonical_interface_kinds(1, 0).is_empty());
+        assert!(canonical_interface_kinds(0, 1).is_empty());
+        assert!(canonical_interface_kinds(0, 0).is_empty());
+        // An empty product is 1 — matches the Python's `mp.mpf(1)` early return.
+        let r = closed_form_ratio(1, 0, Q_0, PnConvention::BringColorWeighted);
+        assert!((r - 1.0).abs() < 1e-15);
+    }
+
+    #[test]
+    fn pure_species_have_no_averaged_bond() {
+        // p^4: three p-p bonds, no p-n — so the convention cannot matter.
+        let bring = closed_form_ratio(4, 0, Q_0, PnConvention::BringColorWeighted);
+        let strict = closed_form_ratio(4, 0, Q_0, PnConvention::StrictAveraged);
+        assert_eq!(bring, strict);
+        assert!((bring - markov_z(Q_0).powi(3)).abs() < 1e-15);
+    }
+
+    #[test]
+    fn flavor_split_matches_python_f64() {
+        let want: f64 = DELTA_Q0_50DPS.parse().unwrap();
+        let got = flavor_split_leading(Q_0);
+        assert!(
+            ((got - want) / want).abs() < TOL_F64,
+            "delta(q0): got {got:.17e}, want {want:.17e}"
+        );
+    }
+
+    #[test]
+    fn pn_factor_matches_python_f64() {
+        let want: f64 = F_PN_Q0_50DPS.parse().unwrap();
+        let got = pn_interface_factor(Q_0, PnConvention::BringColorWeighted);
+        assert!(
+            ((got - want) / want).abs() < TOL_F64,
+            "f_pn(q0): got {got:.17e}, want {want:.17e}"
+        );
+    }
+
+    #[test]
+    fn deuteron_ratio_is_exactly_the_pn_factor() {
+        // A = 2 with one of each species: the product has a single bond.
+        let ratio = closed_form_ratio(1, 1, Q_0, PnConvention::BringColorWeighted);
+        let f_pn = pn_interface_factor(Q_0, PnConvention::BringColorWeighted);
+        assert_eq!(ratio, f_pn);
+    }
+
+    #[test]
+    fn colour_weighting_is_a_real_shift_not_a_no_op() {
+        // Guards against a port that silently collapses to strict_averaged:
+        // the two conventions must differ, by h*delta/4 on the single p-n bond.
+        let bring = closed_form_ratio(1, 1, Q_0, PnConvention::BringColorWeighted);
+        let strict = closed_form_ratio(1, 1, Q_0, PnConvention::StrictAveraged);
+        let shift = hecke_h(Q_0) * flavor_split_leading(Q_0) / 4.0;
+        assert!((bring - strict - shift).abs() < 1e-16);
+        // ~7e-5 absolute at q0 — small, but a hundred times the f64 floor.
+        assert!(shift > 5e-5 && shift < 1e-4, "shift = {shift:e}");
+    }
+
+    #[test]
+    fn f64_path_converges_to_the_python_canonical() {
+        match verify_f64_convergence() {
+            Ok(worst) => assert!(worst <= TOL_F64, "worst rel {worst:.3e}"),
+            Err(bad) => panic!("{}", describe(&bad)),
+        }
+    }
+
+    #[test]
+    fn canonical_table_is_self_consistent() {
+        // Every pinned row parses and is a plausible ratio in (0, 1).
+        for row in CANONICAL {
+            let v: f64 = row.ratio_50dps.parse().unwrap();
+            assert!(v > 0.0 && v < 1.0, "{}: {}", row.isotope, row.ratio_50dps);
+            assert_eq!(
+                row.ratio_50dps.chars().filter(|c| c.is_ascii_digit()).count() >= 50,
+                true,
+                "{} reference lost digits",
+                row.isotope
+            );
+        }
+    }
+
+    #[cfg(feature = "mpfr")]
+    #[test]
+    fn mpfr_path_converges_to_the_python_canonical_at_50dps() {
+        use super::convergence::{verify_mpfr_convergence, TOL_MPFR};
+        match verify_mpfr_convergence(60) {
+            Ok(worst) => assert!(worst <= TOL_MPFR, "worst rel {worst:.3e}"),
+            Err(bad) => panic!("{}", describe(&bad)),
+        }
+    }
+
+    #[cfg(feature = "mpfr")]
+    #[test]
+    fn mpfr_beats_f64_on_the_same_input() {
+        // The point of shipping two layers: show the MPFR one is actually
+        // more accurate, rather than asserting it on faith.
+        use super::convergence::{verify_f64_convergence, verify_mpfr_convergence};
+        let f64_worst = verify_f64_convergence().expect("f64 path converges");
+        let mpfr_worst = verify_mpfr_convergence(60).expect("mpfr path converges");
+        assert!(
+            mpfr_worst < f64_worst,
+            "mpfr {mpfr_worst:.3e} should beat f64 {f64_worst:.3e}"
+        );
+    }
+}
