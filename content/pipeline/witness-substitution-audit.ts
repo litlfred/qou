@@ -627,7 +627,9 @@ function main(): number {
     // a matching decimal is not necessarily the witness the block means --
     // 0.612688037146 is z at the proton pin and appears in dozens of unrelated
     // files. Coverage narrows the candidates for a human; it does not decide.
-    const tokenIndex = new Map<string, string[]>();
+    // coarse key -> [(witness, full decimal token)]. The full token is what
+    // makes the prefix confirmation possible; the key only buckets.
+    const tokenIndex = new Map<string, Array<[string, string]>>();
     const witnessFiles: string[] = [];
     const collect = (dir: string) => {
       let entries: string[];
@@ -660,17 +662,26 @@ function main(): number {
       const rel = relative(repoRoot, wf);
       const seen = new Set<string>();
       for (const m of raw.matchAll(/(\d+)\.(\d{4,})/g)) {
-        const k = `${m[1]}.${m[2].slice(0, 8)}`;
+        // Bucket on MIN_DECIMALS, not 8. Keying both sides at 8 was a bug: a
+        // literal with 4-7 decimals produced a key of ITS OWN length while the
+        // index produced one of length 8, so `137.0359351` (7) could never
+        // match a witness token indexed as `137.03593513` (8). Every literal
+        // shorter than 8 decimals was therefore reported ORPHAN regardless of
+        // what the corpus contained -- which is most of them, and is why the
+        // first orphan list was full of 4-decimal values. Bucket coarsely,
+        // then confirm by full prefix below.
+        const k = `${m[1]}.${m[2].slice(0, MIN_DECIMALS)}`;
         if (seen.has(k)) continue;
         seen.add(k);
+        const full = `${m[1]}.${m[2]}`;
         const arr = tokenIndex.get(k);
         if (arr) {
-          if (arr.length < 40) arr.push(rel);
-        } else tokenIndex.set(k, [rel]);
+          if (arr.length < 200) arr.push([rel, full]);
+        } else tokenIndex.set(k, [[rel, full]]);
       }
     }
     console.log(
-      `\n  suggest: indexed ${witnessFiles.length} witness(es), ${tokenIndex.size} distinct 8-dp tokens\n`,
+      `\n  suggest: indexed ${witnessFiles.length} witness(es), ${tokenIndex.size} distinct ${MIN_DECIMALS}-dp buckets\n`,
     );
 
     let fully = 0;
@@ -682,23 +693,43 @@ function main(): number {
       if (!lits.length) continue;
       const keyOf = (l: string) => {
         const [a, b] = l.split(".");
-        return `${a}.${b.slice(0, 8)}`;
+        return `${a}.${b.slice(0, MIN_DECIMALS)}`;
       };
-      let uncovered = new Set(lits.filter((l) => tokenIndex.has(keyOf(l))));
-      const missing = lits.filter((l) => !tokenIndex.has(keyOf(l)));
+      // A bucket hit is necessary, not sufficient: confirm the witness really
+      // carries this literal as a prefix of one of its values.
+      const witnessesFor = (l: string) => {
+        // Prefix OR numeric, matching `isSourced`. Prefix alone was not
+        // enough: `1.1099786` in prop:alpha-em-categorical-trace-ratio is q0
+        // ROUNDED to eight significant figures, and no prefix of
+        // 1.1099785827... starts with it. The main detector already handled
+        // rounding and this triage did not, so it reported a rounded q0 as a
+        // value no producer emits.
+        const out = new Set<string>();
+        const decimals = l.split(".")[1].length;
+        const tol = 0.5 * Math.pow(10, -decimals) * 1.000001;
+        const x = Number(l);
+        for (const [w, full] of tokenIndex.get(keyOf(l)) ?? []) {
+          if (full.startsWith(l) || l.startsWith(full)) { out.add(w); continue; }
+          const y = Number(full);
+          if (Number.isFinite(x) && Number.isFinite(y) && Math.abs(x - y) <= tol) out.add(w);
+        }
+        return out;
+      };
+      const cover = new Map(lits.map((l) => [l, witnessesFor(l)]));
+      let uncovered = new Set(lits.filter((l) => cover.get(l)!.size > 0));
+      const missing = lits.filter((l) => cover.get(l)!.size === 0);
       const chosen: Array<[string, number]> = [];
       while (uncovered.size && chosen.length < 6) {
         const tally = new Map<string, number>();
         for (const l of uncovered)
-          for (const w of tokenIndex.get(keyOf(l)) ?? [])
-            tally.set(w, (tally.get(w) ?? 0) + 1);
+          for (const w of cover.get(l)!) tally.set(w, (tally.get(w) ?? 0) + 1);
         let best = "";
         let bestN = 0;
         for (const [w, n] of tally) if (n > bestN) [best, bestN] = [w, n];
         if (!best) break;
         chosen.push([best, bestN]);
         uncovered = new Set(
-          [...uncovered].filter((l) => !(tokenIndex.get(keyOf(l)) ?? []).includes(best)),
+          [...uncovered].filter((l) => !cover.get(l)!.has(best)),
         );
       }
       const covered = lits.length - missing.length - uncovered.size;

@@ -154,3 +154,68 @@ Now that identifiers are gone, the residue sorts into recognisable kinds:
 
 Those are three different fixes (name the source / declare the arithmetic /
 find a producer), so the next pass should split them before touching any.
+
+---
+
+## CORRECTION: the orphan count was wrong by a factor of 18
+
+I reported **53 orphans**. The real number is **3**. Two bugs in `--suggest`,
+both of the same kind — the triage tool was weaker than the detector it
+triages for.
+
+### Bug 1: key lengths did not match
+
+The index bucketed witness tokens on **8** fraction digits; a literal was keyed
+on **its own** length. So `137.0359351` (7 decimals) could never match a
+witness token indexed as `137.03593513`, and *every literal with fewer than 8
+decimals was reported ORPHAN regardless of what the corpus contained*. That is
+most of them, which is why the first orphan list was full of four-decimal
+values like `0.5904`, `1.1073`, `0.1134`.
+
+Fixed by bucketing on `MIN_DECIMALS` and confirming with a full prefix check.
+**53 -> 7.**
+
+### Bug 2: no numeric fallback
+
+`isSourced` — the real detector — matches by prefix **or** numerically to
+within half a unit in the literal's last place, because prose sometimes rounds
+instead of truncating. `--suggest` only did prefix. So `1.1099786` in
+`prop:alpha-em-categorical-trace-ratio`, which is q0 rounded to eight
+significant figures, was reported as a value no producer emits.
+
+**7 -> 3.**
+
+### How it was caught
+
+Not by the selftest — by pulling on `137.0359351` and finding the block says
+*"the framework's own **derived** value … No measured constant is imported"*.
+That contradicted my own triage note, which had filed it under "external
+constants whose line never names a source". Checking the contradiction instead
+of widening `EXTERNAL_SOURCE_LINE` is what exposed the indexing bug — widening
+the regex would have *suppressed* a real finding and left the bug in place.
+
+### The three real orphans
+
+| block | literals |
+|---|---|
+| `rem:binding-alpha-shift-extension-context` | `14.6673` |
+| `prop:habiro-residue-sum-equivalence` | `2.1225825095`, `1.5893934460`, `0.1774369242` |
+| `rem:pair-creation-energy` | `0.9010` |
+
+The Habiro one is the substantive case: three ten-decimal values, which is a
+precision claim, with no producer emitting any of them.
+
+### Current triage
+
+    151 fully coverable by declaration
+     20 partial
+      3 orphan
+
+## Next
+
+- The three orphans, individually.
+- The 151 coverable are a mechanical pass, but `prf:categorical-mass-markov`
+  showed why they cannot be applied in bulk: it was "fully coverable" and the
+  right fix was still a new witness plus a `literal-source` marker, because the
+  reproducer it cited emitted nothing and half its numbers were preserved
+  convention C.
