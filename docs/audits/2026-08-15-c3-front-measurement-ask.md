@@ -95,6 +95,24 @@ Which is the cheaper programme is a domain question this repository cannot
 answer. But the choice is now stated in the form an experimentalist works in,
 rather than as a single factor on a derived quantity.
 
+## How far the repository can take this on its own — and where it stops
+
+`m_n` is determined through the deuteron: `m_n = m_d − m_p + B_d`. The corpus's
+own masses are mutually consistent with that route —
+
+```
+m_n + m_p − m_d  =  2.22456637 MeV      (the deuteron binding energy)
+```
+
+— so the determination chain is visible from inside the repository. **But the
+corpus carries no `M_D_..._ERR`.** Only `m_n` and `m_p` have committed
+uncertainties, so the budget **cannot be decomposed past `σ(m_n) = 0.48 eV`**
+here. That is the floor of what this repository knows, and the boundary is
+stated rather than papered over.
+
+Decomposing further — which of `m_d`, `B_d`, or the ¹²C-relative calibration
+actually limits `σ(m_n)` — requires the primary evaluation, below.
+
 ## The literature question this note deliberately leaves open
 
 **Is `σ(m_n) = 0.48 eV` improvable by 20×+, and by what technique?** That is the
@@ -108,6 +126,22 @@ Recording that explicitly because the alternative — writing plausible-sounding
 sentences about crystal-diffraction γ-ray spectrometry or Penning-trap limits
 from memory — is exactly the failure this note is otherwise about. Nothing above
 depends on it: every number here traces to a committed witness.
+
+**What to fetch, for whoever has network.** Both are already cited in
+`content/schema/references.ts`, and neither PDF is in `uploads/`:
+
+| ref id | what it answers |
+|---|---|
+| `ame2020` — Wang, Huang, Kondev, Audi, Naimi, *"The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures"*, Chin. Phys. C **45** 030002 (2021) | **the** source: which input data determine `m_n`, and what limits each |
+| `codata2022` — *CODATA Recommended Values of the Fundamental Physical Constants: 2022* | the adjustment `m_n`, `m_p` come out of, and their correlations |
+
+Note for an arXiv-based workflow: **AME2020 is published in Chinese Physics C
+and is not, as far as this repository can tell, an arXiv preprint** — it is
+distributed by the AMDC. Worth knowing before searching arXiv for it.
+
+What is wanted is the **prose on precision limits**, not the mass tables: the
+numbers are already committed here (`M_N_MEV_VALIDATION_ERR` etc.). The open
+question is *what limits them*, which only the evaluation text answers.
 
 ## What is not claimed
 
