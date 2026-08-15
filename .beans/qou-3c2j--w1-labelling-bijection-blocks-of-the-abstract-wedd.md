@@ -173,3 +173,33 @@ and the dimension count over it. Mathlib supplies `sSup_isotypicComponents` +
 `sSupIndep_isotypicComponents`; the work is turning that sup into a `finrank` sum indexed
 by `PartitionIndex n`, using `specht_exhausts_irreducibles` to know each component's type
 is a Specht module. That is the next brick and the last one before the identity.
+
+### Brick 4a landed (PR #5162); 4b scoped, with its friction named
+
+`QOU/BraidKnot/SpechtBlockDimension.lean`, sorry-free: `finrank_specht_blocks`
+(`dim ∏_μ End_k(S^μ) = Σ_μ (dim S^μ)²`) and `finrank_group_algebra` (`dim k[S_n] = n!`).
+Both sides of the count, and nothing joining them — deliberately, so the next brick must
+supply a map rather than let adjacency imply the identity.
+
+**Brick 4b — the action map and its injectivity.** All the pieces exist:
+
+- `Pi.algHom k _ (fun i => (spechtRepAt i.property).asAlgebraHom)` gives
+  `Φ : k[S_n] →ₐ[k] ∏_{μ} End_k(S^μ)` (`Representation.asAlgebraHom` and `Pi.algHom` both
+  checked present at this pin);
+- injectivity: `x ∈ ker Φ` acts as zero on every simple `k[S_n]`-module, because every
+  simple is a Specht module (`specht_exhausts_irreducibles`); `k[S_n]` is semisimple so
+  `IsSemisimpleModule.sSup_simples_eq_top` makes it a sup of simple submodules; hence `x`
+  acts as zero on `k[S_n]`, and `x = x • 1 = 0`;
+- injectivity then yields `n! ≤ Σ_μ (dim S^μ)²` from brick 4a. **One inequality, not the
+  identity** — say so when it lands.
+
+**The friction, so the next session budgets for it and does not mistake it for the maths:**
+applying `specht_exhausts_irreducibles` to a simple *submodule* `N ≤ k[S_n]` needs `N` as a
+`Representation k (Perm (Fin n))`. `Representation.ofModule` supplies one, but on
+`RestrictScalars k (MonoidAlgebra k G) ↥N`, and the hypothesis wants
+`IsSimpleModule (MonoidAlgebra k G) (·).asModule`. That `ofModule`/`asModule`/`RestrictScalars`
+round-trip is the whole risk in 4b; the mathematics above is routine. Budget the session for
+the round-trip, not for the argument.
+
+The reverse inequality `Σ_μ (dim S^μ)² ≤ n!` is a separate question — expect it to need the
+isotypic independence, i.e. that the multiplicity spaces the bricks 1–3 count do not overlap.
