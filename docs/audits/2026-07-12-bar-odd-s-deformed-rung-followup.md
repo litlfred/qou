@@ -101,6 +101,13 @@ of a factorial / q-factorial (Ohtsuki–Habiro) normalization.
 > in the **same** resurgent family as the κ-tower — *not* a convergent contrast.
 > Full correction:
 > [`2026-07-12-dladder-divergence-correction.md`](2026-07-12-dladder-divergence-correction.md).
+>
+> **⚠ [SUPERSEDED 2026-08-09]** — the correction above is reversed a second
+> time: `D(ũ)` **is convergent** (`ρ = 0.1428…`, `κ = 0`; the 07-12 divergence
+> estimators missed the `Q_b` zero at `q*_ρ ≈ 1.48989`), so this file's
+> *original* convergent reading was closer to right than its 07-12 correction,
+> and the ladder is **not** in the κ-tower's resurgent family. See
+> [`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md).
 
 **4 — no holonomic recurrence.** No P-finite recurrence of order ≤ 3 / degree
 ≤ 4 fits `a_k` or `b_k` (the 21-term run rules out order ≤ 4 / degree ≤ 5 too).

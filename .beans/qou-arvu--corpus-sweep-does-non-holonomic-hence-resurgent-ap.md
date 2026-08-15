@@ -3,8 +3,9 @@
 title: "Corpus sweep: does 'non-holonomic hence resurgent' appear elsewhere?"
 status: completed
 type: task
+priority: normal
 created_at: 2026-08-14T20:02:00Z
-updated_at: 2026-08-14T21:58:00Z
+updated_at: 2026-08-15T00:29:43Z
 ---
 
 Spun out of `qou-tdp0` step 1 (owner-directed, 2026-08-14).
@@ -188,3 +189,42 @@ The corpus's recurring failure mode is a correct finding restated one step too
 strongly, then relied on downstream. This one is cheap to check and, unlike the
 convergence correction, does not depend on any numerical result — it is a
 logical step that can be audited by reading.
+
+---
+## Sweep result (2026-08-15, session qou-gylf, PR #5037 branch)
+
+> Merged with the concurrent #5050 session's work during rebase: its banners on
+> the 07-12 divergence-correction + 07-13 coupled-recurrence files are kept
+> (more detailed than this pass's, which are dropped); this pass's banners on
+> the OTHER three files (rung-followup, 07-17 qgevrey-drift, moire) are novel
+> and kept. The doc-sweep portion is DONE; the bean stays in-progress for the
+> producer/witness re-scope above (blocked on sympy in both sandboxes).
+
+Proximity sweep (premise terms within ±2 lines of conclusion terms) over
+docs/ content/ computations/ .beans/: **32 candidates, classified**:
+
+- **(a) the invalid inference step itself: 0 live sites.** Every occurrence of
+  the step is inside the already-corrected ledger/registry text or this bean's
+  own quotation of it (1ppq-qbeta.md 1846-1850, 3450-3451 = the correction).
+- **STALE DIVERGENCE CONCLUSION (the 2026-08-09 withdrawal never propagated
+  to the July audit files): 5 sites, now banner-marked at the claim site:**
+  1. 2026-07-12-dladder-divergence-correction.md — whole conclusion reversed
+     (its estimators missed the Q_b zero); top banner.
+  2. 2026-07-12-bar-odd-s-deformed-rung-followup.md — Route-2 correction
+     blockquote reversed a second time; inline banner.
+  3. 2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md —
+     result stands, "resurgent reading" framing stale; scope-note banner.
+  4. 2026-07-17-dladder-extension-qgevrey-drift-confirmed.md — headline
+     ("genuinely resurgent") withdrawn; k≤31 ladder + non-holonomicity stand.
+  5. 2026-07-13-moire-resonance-framing-critical-assessment.md — surgical
+     strikethrough of the D-ladder divergence attribution only; the GZ
+     asymptotic series named there is a different object, genuinely
+     divergent (class (b), untouched).
+- **(b) independently grounded (κ-tower Gevrey-1, C1 at ∞): untouched.**
+- **(c) technique usages (Écalle median / M-dictionary): untouched.**
+- **Converse check (convergent⇒holonomic / holonomic⇒convergent): 0 hits**
+  (only the registry's correct "convergent need not be holonomic").
+
+Scope-(a) throughout: banners mark the withdrawn divergence claims; the exact
+d_k ladders, non-holonomicity negatives, and genuinely-divergent objects all
+stand as recorded.

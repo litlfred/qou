@@ -1,5 +1,13 @@
 # D-ladder extension (k→31): structural q-Gevrey drift confirmed, not a finite-k shadow
 
+> **⚠ [SUPERSEDED 2026-08-09]** — the headline conclusion ("genuinely
+> resurgent"; "super-exponentially divergent") is withdrawn: `D(ũ)` **is
+> convergent** (`ρ = 0.1428…`, `κ = 0`; the estimator disagreement this file
+> probed was the signature of the missed `Q_b` zero at `q*_ρ ≈ 1.48989`, not
+> q-Gevrey drift). The extended exact ladder `k ≤ 31` and the non-holonomicity
+> results stand. See
+> [`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md).
+
 **Date:** 2026-07-17 · **Axis:** Q_β odd channel (c₃) · **Tier:** measurement
 (scope-(a); no `c_k` wired; no fit; no tier change). **Branch:**
 `claude/dladder-qgevrey-extension-2026-07-17`. Executes Front 1 of the owner-picked
