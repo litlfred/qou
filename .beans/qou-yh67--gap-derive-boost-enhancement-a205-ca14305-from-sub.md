@@ -29,3 +29,18 @@ functor applies = the same categorical Stokes derivation as the G3 integer-A_ω=
 Surfaced a live corpus inconsistency (beaned qou-pzzl): ArgUPhaseBranchSelection /
 NZBarEvenVolumeFace use κ_shape for the S face; SDeformedVolumeChannel keystone uses
 κ_pot·A_ω. See docs/audits/2026-08-02-nz-half-observable-normalization-structural-resolution.md.
+
+## Status check (2026-08-15, session qou-gylf catch-up)
+
+Re-examined from a fresh context; verdict UNCHANGED — structurally open,
+and honestly BLOCKED. The candidate unification this pass produced (the
+κ_shape convention ≡ κ_pot with prefactor 2, so qou-pzzl's "two conventions"
+are one integer variable with candidate values {2, A_ω=3}) is ALREADY
+recorded in docs/audits/2026-08-02-pzzl-kappa-shape-vs-pot-S-normalization.md
+— not new. The missing ingredient remains the A_ω internal derivation
+(qou-qnnq / qou-ujmw / qou-sfuo), whose remaining gap the 2026-08-11
+consolidation localizes as open in DT/3d-index categorification itself
+(Route A executed, R1 survives cross-knot; Route C scoped as a research
+programme, qou-rtec). No distinct angle available from this context that
+is not either a catalogued route or a numerology risk (c=√A is at the
+proved precision ceiling, sigma_A ~ 40%). Do not measure; derive or wait.
