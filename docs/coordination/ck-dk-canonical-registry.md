@@ -316,7 +316,7 @@ qualification. They are **different points**, off by 1.34× / 3.92× / 15.1×:
 | `q*` | `1.109978593031523288402…` | `1.489894799688365248225…` |
 | `h* = q* − 1/q*` | `0.2090603174197` | `0.818706471352` |
 | `ũ(q*)` | `0.0094539496177732` | `0.14279999664469` (`= ρ`) |
-| what it is | a third, **decay-sector** determination of q₀ (μ–p–Q_β three-way) | the D-ladder's **radius of convergence**; root of the degree-12 `Δ_net` factor |
+| what it is | the `S = 0` point — an **(H1)-conditional** determination of q₀, **NOT** an independent third one (**§9f**); independent of the two *mass* pins only | the D-ladder's **radius of convergence**; root of the degree-12 `Δ_net` factor |
 
 **Always subscript.** Attributes do not transfer between them (AGENTS.md
 §"Conditional-proved ≠ premise-established" rule 4): `q*_S` sits ~1e-8 from q₀
