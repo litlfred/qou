@@ -132,4 +132,38 @@ theorem origin_not_mem_hookUnion (l : List ℕ) (p : ℕ × ℕ) (hp : p ≠ (0,
   · obtain ⟨_, h2, _⟩ := (mem_legF_iff l p (0, 0)).mp hleg
     exact absurd h2 (Nat.not_lt_zero p.1)
 
+/-- **The carrier lies on the first row or the first column.** If both coordinates were positive
+the hook would miss *two* distinct cells — the corner `(0,0)` and `(0, p.2)` — contradicting
+`card_sdiff_hookUnion_eq_one`. Combined with the corner lemma this is the case split that pins the
+depth-1 carriers. -/
+theorem carrier_fst_or_snd_eq_zero (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) (heq : hookLen l p + 1 = l.sum) : p.1 = 0 ∨ p.2 = 0 := by
+  by_contra hcon
+  push_neg at hcon
+  obtain ⟨h1, h2⟩ := hcon
+  have hpc : p.2 < l.getD p.1 0 := by rw [mem_cells] at hp; exact hp
+  have hilen : p.1 < l.length := by
+    by_contra hcon2
+    rw [List.getD_eq_default _ _ (le_of_not_gt hcon2)] at hpc
+    exact Nat.not_lt_zero p.2 hpc
+  have hhead : l.getD p.1 0 ≤ l.getD 0 0 := by
+    rw [getD_zero_eq_headD]
+    refine mem_le_headD l hs _ ?_
+    rw [List.getD_eq_getElem _ _ hilen]
+    exact List.getElem_mem hilen
+  have hlt0 : p.2 < l.getD 0 0 := lt_of_lt_of_le hpc hhead
+  obtain ⟨c, hc⟩ := exists_unique_missed_cell l hs p hp heq
+  have hA : ((0 : ℕ), (0 : ℕ)) ∈ (cells l) \ (armF l p ∪ legF l p) := by
+    refine Finset.mem_sdiff.mpr ⟨?_, origin_not_mem_hookUnion l p ?_⟩
+    · rw [mem_cells]; dsimp only; omega
+    · intro hpe; exact h1 (congrArg Prod.fst hpe)
+  have hB : ((0 : ℕ), p.2) ∈ (cells l) \ (armF l p ∪ legF l p) := by
+    refine Finset.mem_sdiff.mpr ⟨by rw [mem_cells]; exact hlt0, ?_⟩
+    intro hmem
+    rcases Finset.mem_union.mp hmem with harm | hleg
+    · exact h1 ((mem_armF_iff l p (0, p.2)).mp harm).1.symm
+    · exact absurd ((mem_legF_iff l p (0, p.2)).mp hleg).2.1 (Nat.not_lt_zero p.1)
+  rw [hc, Finset.mem_singleton] at hA hB
+  exact h2 (congrArg Prod.snd (hA.trans hB.symm)).symm
+
 end QOU.BraidsAndKnots.HookArmLeg
