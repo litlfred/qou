@@ -26,7 +26,6 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:decuplet-equal-spacing",
   title: "The decuplet equal-spacing rule has no discriminating power",
-  md: "decuplet-equal-spacing.md",
   interprets: "prop:borromean-decuplet",
   // The ref names a DECLARATION, not the module, following the pattern
   // of rem:meson-mass-splitting. `equal_spacing_cannot_discriminate` is

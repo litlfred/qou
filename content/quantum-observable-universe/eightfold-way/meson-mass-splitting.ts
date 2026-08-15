@@ -14,7 +14,6 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:meson-mass-splitting",
   title: "Meson mass splitting from q-deformed dynamics",
-  md: "meson-mass-splitting.md",
   interprets: "prop:meson-octet-decomposition",
   // Lean backs the NEGATIVE result: GMO is an identity of the first-order
   // octet ansatz and therefore cannot discriminate between mechanisms. It does
