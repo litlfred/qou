@@ -854,3 +854,78 @@ That is every 0-, 1- and 3-step composition the `n = 4` confluence witness
 lists. What remains starts at four steps: `Q × B` for general Bokut–Shiao
 (8 steps), then BS × BS and BS × far-commutation at `j₀ ≥ j`, up to the 25-step
 chain.
+
+## Correction — `Q2 × B120` is **4** steps, not 8
+
+The §4q note above says eight. The witness says **four**, and the pattern is
+`3 + (i' − j)`:
+
+    Q1 × B010  j = i'      3 steps   (covered by §4q)
+    Q2 × B121  j = i'      3
+    Q3 × B232  j = i'      3
+    Q2 × B120  i' − j = 1  4
+    Q3 × B231  i' − j = 1  4
+    Q3 × B230  i' − j = 2  5
+
+So `Q × B` beyond §4q is **three** compositions, not a large block, and it is a
+family with a *variable-length* chain — an induction on `i' − j`, not a fixed
+three-step script. The qualitative claim §4q makes (Bokut–Shiao only fits at
+`j = i − 1`) stands; the number attached to it was wrong.
+
+## Where the remaining 40 actually are
+
+    B × B   14        Y × B    6        B × Y    6
+    B × F    5        Q × B    3        Y × Y    3
+    Y × F    1        F × Y    1        F × B    1
+
+**Seventeen of the forty involve a Yang–Baxter rule**, and §4j makes every such
+rule the exact negative of a Bokut–Shiao rule at `j = i − 1`, with the opposite
+leading coefficient. So they are not independent work — they are the same
+compositions with a sign.
+
+Two ways to cash that in, and it is worth recording that the *first* one already
+suffices:
+
+1. **Abstraction over the rule.** §4o/§4p/§4q are stated for an abstract
+   two-term rule and instantiated three times each; the Yang–Baxter instance
+   costs ~10 lines and no new mathematics. Any B-family theorem written the same
+   way gets its Y-variants the same way.
+2. **§6, the negation transfer** (below) — which makes them free rather than
+   cheap, and is general.
+
+## §6 — reduction respects `CoeffEq`, and negation (`Basic.lean`)
+
+    SingleStepReduction.of_coeffEq_left      source may be swapped up to CoeffEq
+    SingleStepReduction.neg                  run the same rule with −c
+    MultiStepReduction.neg
+    MultiStepReduction.congr_source          the disjunctive form — see below
+    reducesToZero_congr / reducesToZero_neg
+    OverlapComposition.spoly_coeff_neg_rule₁ negating a rule negates the spoly
+    AlgElement.contextMul_coeff_neg          (`Elem.lean`)
+
+### The obstacle, which is structural and not a proof weakness
+
+`AlgElement` is a representation and `CoeffEq` is the equality that means
+anything — but **`MultiStepReduction.refl` is syntactic**. So
+`MultiStepReduction f' f` does *not* follow from `CoeffEq f' f`, and a
+coefficientwise-equal source cannot simply be substituted into a chain.
+
+`congr_source` gets through by concluding a **disjunction**:
+
+    MultiStepReduction ord sys f' nf  ∨  CoeffEq f' nf
+
+The `refl` case lands in the second disjunct; the `step` case either extends a
+chain that already restarted at `f'`, or — when the previous stage only gave
+`CoeffEq f' g` — restarts it with `of_coeffEq_left` on the last step. That
+disjunction is exactly what the syntactic constructor costs, and
+`reducesToZero_congr` absorbs it because a `CoeffEq` to a zero endpoint is
+itself a resolution.
+
+### Two tactic notes
+
+`ring` is the wrong tactic here: `k` is only a `Ring`, and `ring` needs
+commutativity, so it reports "made no progress" on goals that are true. The
+import is `Mathlib.Tactic.NoncommRing` and the tactic is `noncomm_ring`. Second,
+`show` cannot open `OverlapComposition.spoly` — it is not definitionally
+transparent enough — so the S-polynomial has to be unfolded with
+`simp only [OverlapComposition.spoly, …]` instead.
