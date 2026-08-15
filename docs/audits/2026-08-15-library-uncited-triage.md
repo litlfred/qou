@@ -3,7 +3,7 @@
 **Generated** 2026-08-15 by `scripts/library-relevance-rank.py --write-triage`.
 Regenerate rather than edit.
 
-243 of 341 library documents carry no `library:` back-reference from
+234 of 341 library documents carry no `library:` back-reference from
 `content/schema/references.ts` — nothing in the bibliography points at them.
 That is the backlog [`local/paper-relevance-triage`](../../.claude/skills/local/paper-relevance-triage.md)
 exists to work; it was invisible until the sources were sectioned.
@@ -16,8 +16,8 @@ whole journal issue first — that measures how much formal content a document
 *offers*, which is not the same question.
 
 The vocabulary is derived from this corpus, not hand-supplied: every content-block
-`title:` and `defines:` entry plus the notation register, yielding 2096 terms,
-of which 1177 discriminate within the library. Weighting is library IDF times
+`title:` and `defines:` entry plus the notation register, yielding 2099 terms,
+of which 1179 discriminate within the library. Weighting is library IDF times
 corpus frequency: a term must be both rare in the library and central here, so
 neither a ubiquitous word nor a rare-but-alien one scores. Scoring reads each
 document's extracted *claims*
@@ -65,85 +65,85 @@ was the only genuine bound issue and is already split into its 10 papers.
 
 | # | score | doc-id | fml | pp | title | strongest shared terms |
 |---|---|---|---|---|---|---|
-| 1 | 648.7 | [`arxiv-math-0203194v1`](../../library/arxiv-math-0203194v1/) `!` | 91 | 256 | Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkai | table, tower, frobenius, archimedean, data |
-| 2 | 475.1 | [`210811825v1`](../../library/210811825v1/) | 40 | 163 | for the award of Doctor of Philosophy of Loughborough University | table, subscript, involution, resolvent, eigenvalue |
-| 3 | 465.3 | [`arxiv-1511.00400v2`](../../library/arxiv-1511.00400v2/) | 71 | 55 | Reidemeister torsion, hyperbolic three-manifolds, and character variet | chain, trace, exceptional, correspondence, surface |
-| 4 | 446.2 | [`agt-v7-n2-p13-s`](../../library/agt-v7-n2-p13-s/) | 31 | 73 | Algebraic & Geometric Topology 7 (2007) 845–917 845 Quantum hyperbolic | trace, ratio, functor, amplitude, parameter |
-| 5 | 446.0 | [`arxiv-1402.4615v3`](../../library/arxiv-1402.4615v3/) | 53 | 71 | GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JAC | plancherel, close, transition, classical, probability |
-| 6 | 444.1 | [`ant-v14-n7-s-p01`](../../library/ant-v14-n7-s-p01/) | 33 | 42 | p-adic Asai L-functions of Bianchi modular forms David Loeﬄerand Chris | realisation, involution, generator, factor, weights |
-| 7 | 439.2 | [`ant-v14-n7-s-p05`](../../library/ant-v14-n7-s-p05/) | 30 | 52 | Motivic Gauss–Bonnet formulas | trace, object, functor, interpretation, monoidal |
-| 8 | 437.2 | [`deligne-mostow-1986`](../../library/deligne-mostow-1986/) | 73 | 86 | P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW | locus, kernel, normal, stable, bundle |
-| 9 | 434.4 | [`0310279v5`](../../library/0310279v5/) | 44 | 128 | Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENA | existence, braid, across, decomposition, observations |
-| 10 | 434.1 | [`arxiv-2509.02354v2`](../../library/arxiv-2509.02354v2/) | 33 | 41 | THE HOLONOMY BRAIDING FORUξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGAR | crossing, braiding, interpretation, fourier, experimental |
-| 11 | 431.8 | [`klein-few-body-systems-in-lattice-effective-field-theory-the`](../../library/klein-few-body-systems-in-lattice-effective-field-theory-the/) `!` | 0 | 111 | Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erl | nuclear, coulomb, particle, status, nuclei |
-| 12 | 431.5 | [`arxiv-2412.04241v2`](../../library/arxiv-2412.04241v2/) | 50 | 73 | THE HABIRO RING OF A NUMBER FIELD | habiro, integration, residue, field, trefoil |
-| 13 | 429.1 | [`arxiv-math-0611504v1`](../../library/arxiv-math-0611504v1/) | 28 | 40 | QUANTUM HYPERBOLIC GEOMETRY | trace, ratio, branching, functor, weights |
-| 14 | 427.0 | [`arxiv-2604.16077v1`](../../library/arxiv-2604.16077v1/) | 31 | 66 | VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT | factor, weights, classical, parameter, limits |
-| 15 | 423.3 | [`arxiv-1604.02688v1`](../../library/arxiv-1604.02688v1/) | 40 | 57 | THE 3D-INDEX AND NORMAL SURFACES | normal, trefoil, surface, independence, duality |
-| 16 | 418.8 | [`reshetikhin-turaev`](../../library/reshetikhin-turaev/) | 2 | 26 | Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Ph | uniqueness, hopf, functor, enveloping, monoidal |
-| 17 | 418.4 | [`arxiv-0906.1500v4`](../../library/arxiv-0906.1500v4/) | 15 | 29 | TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR  | never, involution, bridge, dual, topological |
-| 18 | 418.4 | [`arxiv-1611.03697v5`](../../library/arxiv-1611.03697v5/) | 19 | 51 | RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND | uniqueness, data, symbols, sector, topological |
-| 19 | 417.4 | [`arxiv-0905.0591v3`](../../library/arxiv-0905.0591v3/) | 37 | 42 | A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS | bridge, hopf, factor, commutative, period |
-| 20 | 414.8 | [`arxiv-1712.04887v3`](../../library/arxiv-1712.04887v3/) | 39 | 43 | BLOCH GROUPS, ALGEBRAIC K-THEORY | closure, reduction, kernel, divisor, commutative |
-| 21 | 408.5 | [`arxiv-2208.13692v1`](../../library/arxiv-2208.13692v1/) | 30 | 38 | BRING’S CURVE: OLD AND NEW | data, bring, decomposition, parity, divisor |
-| 22 | 407.9 | [`arxiv-1204.4824v2`](../../library/arxiv-1204.4824v2/) | 1 | 87 | Prepared for submission to JHEP Spectral networks | categorical, spectral, crossing, content, lifting |
-| 23 | 397.3 | [`arxiv-0706.2213v3`](../../library/arxiv-0706.2213v3/) | 10 | 36 | NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS | table, trace, regularity, bridge, trefoil |
-| 24 | 390.9 | [`arxiv-2008.09788v2`](../../library/arxiv-2008.09788v2/) | 29 | 31 | NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECT | eigenvalue, rigidity, reduction, residue, field |
-| 25 | 382.9 | [`arxiv-1303.5278v1`](../../library/arxiv-1303.5278v1/) | 21 | 60 | 1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANI | decomposition, normal, trefoil, dual, invariance |
-| 26 | 377.0 | [`malkin-2021-galois-action-on-motivic-fundamental-groups-thes`](../../library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/) `!` | 58 | 123 | _(none extracted)_ | depth, interpretation, base, motivic, weight |
-| 27 | 375.5 | [`arxiv-math-0604057v2`](../../library/arxiv-math-0604057v2/) | 29 | 19 | VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER V ARIETY OF A KNOT | exceptional, surface, bundle, instance, character |
-| 28 | 373.2 | [`arxiv-2301.02038v1`](../../library/arxiv-2301.02038v1/) | 22 | 26 | Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partia | derivation, prolongation, regularity, shift, cohomological |
-| 29 | 373.1 | [`nrarith`](../../library/nrarith/) | 29 | 38 | Arithmetic of Hyperbolic Manifolds | chain, trace, parameter, derived, algebras |
-| 30 | 370.7 | [`arxiv-hep-th-0306165v1`](../../library/arxiv-hep-th-0306165v1/) | 0 | 67 | Three-Dimensional Quantum Gravity | physical, gravity, gauge, interpretation, field |
-| 31 | 369.4 | [`ant-v14-n7-s-p02`](../../library/ant-v14-n7-s-p02/) | 22 | 36 | Pro-unipotent harmonic actions and dynamical properties of p -adic cyc | frobenius, depth, zeta, cyclotomic, times |
-| 32 | 367.3 | [`arxiv-1507.03238v3`](../../library/arxiv-1507.03238v3/) | 33 | 26 | TRIANGULATION INDEPENDENT PTOLEMY VARIETIES | obstruction, degeneracy, correspondence, coordinates, action |
-| 33 | 365.0 | [`arxiv-2402.04839v2`](../../library/arxiv-2402.04839v2/) | 24 | 28 | On a volume invariant of 3–manifolds | table, borromean, surface, finiteness, topological |
-| 34 | 364.9 | [`afst-2007-6-16-3-665-0`](../../library/afst-2007-6-16-3-665-0/) | 31 | 55 | ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques | data, observation, descent, functor, topological |
-| 35 | 361.7 | [`monodromyhitchiny`](../../library/monodromyhitchiny/) | 9 | 14 | HAL is a multi-disciplinary open access archive for the deposit and di | trace, braid, decomposition, conformal, base |
-| 36 | 350.8 | [`0504116v2`](../../library/0504116v2/) | 31 | 24 | On deformations of hyperbolic 3–manifolds with geodesic boundary ROBER | completeness, lifting, pairing, exceptional, rigidity |
-| 37 | 346.8 | [`arxiv-hep-th-0006156v1`](../../library/arxiv-hep-th-0006156v1/) | 0 | 20 | STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE | data, involution, shift, factor, fourier |
-| 38 | 340.0 | [`modularqholonomicmodules`](../../library/modularqholonomicmodules/) | 23 | 66 | MODULAR q-HOLONOMIC MODULES | categorical, residue, operator, duality, identity |
-| 39 | 336.4 | [`arxiv-1704.02352v2`](../../library/arxiv-1704.02352v2/) | 18 | 43 | GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS | content, plancherel, conditional, probability, check |
-| 40 | 335.5 | [`arxiv-1203.2182v1`](../../library/arxiv-1203.2182v1/) | 0 | 92 | Volume Conjecture: Reﬁned and Categoriﬁed | mass, gamma, braid, recursion, trefoil |
-| 41 | 333.4 | [`gambaudo-ghys-braids-signatures-2005`](../../library/gambaudo-ghys-braids-signatures-2005/) | 15 | 40 | Bull. Soc. math. France 133 (4), 2005, p. 541–579 | braid, convention, surface, signatures, braids |
-| 42 | 333.3 | [`arxiv-math-0305275v1`](../../library/arxiv-math-0305275v1/) | 52 | 38 | Hyperbolic volume of representations of fundamental groups of cusped 3 | chain, rigidity, classical, operator, topological |
-| 43 | 326.9 | [`arxiv-math-0506456v1`](../../library/arxiv-math-0506456v1/) | 29 | 70 | Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publis | bridge, classical, dilogarithm, leading, pair |
-| 44 | 323.7 | [`0307092v2`](../../library/0307092v2/) | 44 | 62 | ISSN 1364-0380 (on line) 1465-3060 (printed) 413 | star, ordering, normal, commutative, instance |
-| 45 | 323.1 | [`arxiv-math-9907032v1`](../../library/arxiv-math-9907032v1/) | 33 | 27 | Combinatorial optimization in geometry 1 | flow, surface, computational, vertex, curvature |
-| 46 | 322.5 | [`arxiv-2510.04782v2`](../../library/arxiv-2510.04782v2/) | 15 | 82 | q-Hodge complexes over the Habiro ring Ferdinand Wagner | fibre, filtration, observation, descent, convention |
-| 47 | 322.1 | [`arxiv-2203.17029v1`](../../library/arxiv-2203.17029v1/) | 22 | 65 | MODULAR q-HOLONOMIC MODULES | categorical, residue, operator, duality, identity |
-| 48 | 316.9 | [`arxiv-1002.0126v1`](../../library/arxiv-1002.0126v1/) | 9 | 39 | AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI | skein, descent, closure, braid, interpretation |
-| 49 | 310.8 | [`ihpmay2025`](../../library/ihpmay2025/) | 41 | 41 | IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY | stability, classification, density, cosh, conformal |
-| 50 | 309.7 | [`arxiv-math-0304010v1`](../../library/arxiv-math-0304010v1/) | 38 | 49 | KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAG | mass, equals, plancherel, transition, correspondence |
-| 51 | 308.5 | [`lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3`](../../library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/) | 35 | 24 | Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 2 | fixed, residue, limits, recursive, coefficients |
-| 52 | 305.8 | [`arxiv-1512.04993v2`](../../library/arxiv-1512.04993v2/) | 0 | 70 | Complexity, action, and black holes | energy, shells, gate, equals, times |
-| 53 | 304.8 | [`arxiv-1106.6298v1`](../../library/arxiv-1106.6298v1/) | 11 | 18 | ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INV ARIANTS | frobenius, endomorphism, cyclotomic, habiro, laplace |
-| 54 | 302.4 | [`arxiv-hep-th-9408099v1`](../../library/arxiv-hep-th-9408099v1/) | 0 | 88 | Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric  | mass, energy, scale, classical, coupling |
-| 55 | 300.7 | [`arxiv-1511.05628v1`](../../library/arxiv-1511.05628v1/) | 3 | 41 | QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY | data, derivation, feynman, level, invariance |
-| 56 | 295.3 | [`arxiv-2209.06973v1`](../../library/arxiv-2209.06973v1/) | 6 | 66 | On the geometry of two state models for the colored Jones polynomial | braid, ordering, correspondence, classical, evaluation |
-| 57 | 295.0 | [`arxiv-2205.01282v2`](../../library/arxiv-2205.01282v2/) | 27 | 18 | WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBE | decay, theta, refinement, linking, block |
-| 58 | 286.0 | [`arxiv-1108.4389v1`](../../library/arxiv-1108.4389v1/) | 0 | 58 | Gauge Theories Labelled by Three-Manifolds | chain, gauge, operations, operator, interaction |
-| 59 | 285.0 | [`arxiv-math-0410233v4`](../../library/arxiv-math-0410233v4/) | 31 | 46 | CUSP SHAPES UNDER CONE DEFORMA TION JESSICA S. PURCELL | tube, bridge, time, bound, local |
-| 60 | 282.3 | [`arxiv-1202.4698v3`](../../library/arxiv-1202.4698v3/) | 0 | 32 | 6j symbols for the modular double, quantum hyperbolic geometry, and su | gamma, symbols, gauge, kernel, classical |
-| 61 | 268.9 | [`angled-survey`](../../library/angled-survey/) | 30 | 24 | Contemporary Mathematics From angled triangulations to hyperbolic stru | close, rigidity, normal, surface, volume |
-| 62 | 263.4 | [`arxiv-2111.04763v2`](../../library/arxiv-2111.04763v2/) | 5 | 59 | RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION | equals, habiro, block, connection, resummation |
-| 63 | 262.6 | [`4geo-dedi-rev`](../../library/4geo-dedi-rev/) | 15 | 26 | HAL is a multi-disciplinary open access archive for the deposit and di | factor, classical, parameter, dual, coordinate |
-| 64 | 261.5 | [`zagier-the-dilogarithm-function`](../../library/zagier-the-dilogarithm-function/) | 9 | 63 | The Dilogarithm Function Don Zagier | quotient, information, dilogarithm, functional, volumes |
-| 65 | 259.1 | [`arxiv-2605.22763v1`](../../library/arxiv-2605.22763v1/) | 19 | 59 | 2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof S | selection, text, lean, count, light |
-| 66 | 258.4 | [`arxiv-1811.05376v4`](../../library/arxiv-1811.05376v4/) | 10 | 40 | Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology  | decay, decomposition, transform, invariance, coefficients |
-| 67 | 256.2 | [`zagier-the-dilogarithm-function-copy-b`](../../library/zagier-the-dilogarithm-function-copy-b/) | 9 | 63 | The Dilogarithm Function Don Zagier | information, dilogarithm, functional, volumes, geometry |
-| 68 | 255.5 | [`maximal-hoermander-q-var-revised-v03`](../../library/maximal-hoermander-q-var-revised-v03/) | 41 | 43 | HAL is a multi-disciplinary open access archive for the deposit and di | spectral, time, operator, harmonic, functional |
-| 69 | 253.6 | [`cspaper`](../../library/cspaper/) | 11 | 29 | Combinatorics of Triangulations and the Chern-Simons Invariant for Hyp | cohomological, interpretation, parity, topological, check |
-| 70 | 253.2 | [`arxiv-0707.3682v2`](../../library/arxiv-0707.3682v2/) | 12 | 44 | ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS | cyclotomic, motivic, residue, role, fields |
-| 71 | 251.3 | [`poincare-proof-outline`](../../library/poincare-proof-outline/) | 0 | 175 | Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry | uniqueness, existence, axiom, interpretation, axioms |
-| 72 | 247.2 | [`s0025-5718-07-02027-3`](../../library/s0025-5718-07-02027-3/) | 28 | 30 | MA THEMA TICS OF COMPUT A TION | times, residue, precision, characterisation, rigid |
-| 73 | 244.4 | [`arxiv-2305.14884v2`](../../library/arxiv-2305.14884v2/) | 14 | 48 | PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS | data, fourier, integration, transform, invariance |
-| 74 | 242.9 | [`arxiv-1203.6551v1`](../../library/arxiv-1203.6551v1/) | 19 | 25 | On the number of hyperbolic 3-manifolds of a given volume | crossing, volume, pair, primitive, torus |
-| 75 | 242.6 | [`arxiv-1906.12122v2`](../../library/arxiv-1906.12122v2/) | 0 | 76 | Nuclear eﬀective ﬁeld theory: status and perspectives H.-W. Hammer∗ In | neutron, nuclear, status, quark, amplitude |
-| 76 | 242.2 | [`arxiv-math-ph-0012035v3`](../../library/arxiv-math-ph-0012035v3/) | 0 | 46 | Non-Abelian Stokes theorem in action Bogus/suppress law Broda1 Departm | trace, decomposition, ordering, operator, topological |
-| 77 | 238.3 | [`ant-v14-n7-s-p09`](../../library/ant-v14-n7-s-p09/) | 45 | 28 | Galois action on the principal block and cyclic Sylow subgroups | normal, character, block, action, product |
-| 78 | 237.9 | [`arxiv-2410.14661v1`](../../library/arxiv-2410.14661v1/) | 33 | 62 | ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RES | surface, identity, dilogarithm, volume, canonical |
-| 79 | 235.9 | [`arxiv-2311.02632v2`](../../library/arxiv-2311.02632v2/) | 20 | 40 | SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE CHUL-HEE LEE | trace, eigenvalue, normal, surface, spectrum |
-| 80 | 228.4 | [`ant-v14-n7-s-p10`](../../library/ant-v14-n7-s-p10/) | 22 | 22 | Abelian extensions in dynamical Galois theory | tower, archimedean, pairing, chebyshev, stable |
+| 1 | 648.8 | [`arxiv-math-0203194v1`](../../library/arxiv-math-0203194v1/) `!` | 91 | 256 | Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkai | table, tower, frobenius, archimedean, data |
+| 2 | 432.6 | [`arxiv-2412.04241v2`](../../library/arxiv-2412.04241v2/) | 50 | 73 | THE HABIRO RING OF A NUMBER FIELD | habiro, integration, residue, field, trefoil |
+| 3 | 431.9 | [`klein-few-body-systems-in-lattice-effective-field-theory-the`](../../library/klein-few-body-systems-in-lattice-effective-field-theory-the/) `!` | 0 | 111 | Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erl | nuclear, coulomb, particle, status, nuclei |
+| 4 | 429.7 | [`arxiv-math-0611504v1`](../../library/arxiv-math-0611504v1/) | 28 | 40 | QUANTUM HYPERBOLIC GEOMETRY | trace, ratio, branching, functor, weights |
+| 5 | 429.6 | [`arxiv-2604.16077v1`](../../library/arxiv-2604.16077v1/) | 31 | 66 | VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT | factor, weights, classical, parameter, limits |
+| 6 | 423.8 | [`arxiv-1604.02688v1`](../../library/arxiv-1604.02688v1/) | 40 | 57 | THE 3D-INDEX AND NORMAL SURFACES | normal, trefoil, surface, independence, duality |
+| 7 | 419.5 | [`arxiv-0906.1500v4`](../../library/arxiv-0906.1500v4/) | 15 | 29 | TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR  | never, involution, bridge, dual, topological |
+| 8 | 419.4 | [`arxiv-1611.03697v5`](../../library/arxiv-1611.03697v5/) | 19 | 51 | RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND | uniqueness, data, symbols, sector, topological |
+| 9 | 418.9 | [`reshetikhin-turaev`](../../library/reshetikhin-turaev/) | 2 | 26 | Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Ph | uniqueness, hopf, functor, enveloping, monoidal |
+| 10 | 418.6 | [`arxiv-0905.0591v3`](../../library/arxiv-0905.0591v3/) | 37 | 42 | A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS | bridge, hopf, factor, commutative, period |
+| 11 | 415.8 | [`arxiv-1712.04887v3`](../../library/arxiv-1712.04887v3/) | 39 | 43 | BLOCH GROUPS, ALGEBRAIC K-THEORY | closure, reduction, kernel, divisor, commutative |
+| 12 | 409.1 | [`arxiv-2208.13692v1`](../../library/arxiv-2208.13692v1/) | 30 | 38 | BRING’S CURVE: OLD AND NEW | data, bring, decomposition, parity, divisor |
+| 13 | 408.0 | [`arxiv-1204.4824v2`](../../library/arxiv-1204.4824v2/) | 1 | 87 | Prepared for submission to JHEP Spectral networks | categorical, spectral, crossing, content, lifting |
+| 14 | 399.1 | [`arxiv-0706.2213v3`](../../library/arxiv-0706.2213v3/) | 10 | 36 | NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS | table, trace, regularity, bridge, trefoil |
+| 15 | 391.6 | [`arxiv-2008.09788v2`](../../library/arxiv-2008.09788v2/) | 29 | 31 | NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECT | eigenvalue, rigidity, reduction, residue, field |
+| 16 | 383.7 | [`arxiv-1303.5278v1`](../../library/arxiv-1303.5278v1/) | 21 | 60 | 1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANI | decomposition, normal, trefoil, dual, invariance |
+| 17 | 378.1 | [`malkin-2021-galois-action-on-motivic-fundamental-groups-thes`](../../library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/) `!` | 58 | 123 | _(none extracted)_ | depth, interpretation, motivic, base, weight |
+| 18 | 376.5 | [`arxiv-math-0604057v2`](../../library/arxiv-math-0604057v2/) | 29 | 19 | VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER V ARIETY OF A KNOT | exceptional, surface, bundle, instance, character |
+| 19 | 373.6 | [`nrarith`](../../library/nrarith/) | 29 | 38 | Arithmetic of Hyperbolic Manifolds | chain, trace, parameter, derived, algebras |
+| 20 | 373.4 | [`arxiv-2301.02038v1`](../../library/arxiv-2301.02038v1/) | 22 | 26 | Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partia | derivation, prolongation, regularity, shift, cohomological |
+| 21 | 371.9 | [`arxiv-hep-th-0306165v1`](../../library/arxiv-hep-th-0306165v1/) | 0 | 67 | Three-Dimensional Quantum Gravity | physical, gravity, gauge, interpretation, field |
+| 22 | 370.1 | [`ant-v14-n7-s-p02`](../../library/ant-v14-n7-s-p02/) | 22 | 36 | Pro-unipotent harmonic actions and dynamical properties of p -adic cyc | frobenius, depth, zeta, cyclotomic, times |
+| 23 | 368.2 | [`arxiv-1507.03238v3`](../../library/arxiv-1507.03238v3/) | 33 | 26 | TRIANGULATION INDEPENDENT PTOLEMY VARIETIES | obstruction, degeneracy, correspondence, coordinates, action |
+| 24 | 365.9 | [`arxiv-2402.04839v2`](../../library/arxiv-2402.04839v2/) | 24 | 28 | On a volume invariant of 3–manifolds | table, borromean, surface, finiteness, topological |
+| 25 | 365.3 | [`afst-2007-6-16-3-665-0`](../../library/afst-2007-6-16-3-665-0/) | 31 | 55 | ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques | data, observation, descent, functor, topological |
+| 26 | 363.3 | [`monodromyhitchiny`](../../library/monodromyhitchiny/) | 9 | 14 | HAL is a multi-disciplinary open access archive for the deposit and di | trace, braid, decomposition, conformal, base |
+| 27 | 351.0 | [`0504116v2`](../../library/0504116v2/) | 31 | 24 | On deformations of hyperbolic 3–manifolds with geodesic boundary ROBER | completeness, lifting, pairing, exceptional, rigidity |
+| 28 | 347.1 | [`arxiv-hep-th-0006156v1`](../../library/arxiv-hep-th-0006156v1/) | 0 | 20 | STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE | data, involution, shift, factor, fourier |
+| 29 | 341.6 | [`modularqholonomicmodules`](../../library/modularqholonomicmodules/) | 23 | 66 | MODULAR q-HOLONOMIC MODULES | categorical, residue, operator, duality, identity |
+| 30 | 338.0 | [`arxiv-1704.02352v2`](../../library/arxiv-1704.02352v2/) | 18 | 43 | GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS | content, plancherel, conditional, probability, check |
+| 31 | 335.6 | [`arxiv-1203.2182v1`](../../library/arxiv-1203.2182v1/) | 0 | 92 | Volume Conjecture: Reﬁned and Categoriﬁed | mass, gamma, braid, recursion, trefoil |
+| 32 | 334.0 | [`arxiv-math-0305275v1`](../../library/arxiv-math-0305275v1/) | 52 | 38 | Hyperbolic volume of representations of fundamental groups of cusped 3 | chain, rigidity, classical, operator, topological |
+| 33 | 333.6 | [`gambaudo-ghys-braids-signatures-2005`](../../library/gambaudo-ghys-braids-signatures-2005/) | 15 | 40 | Bull. Soc. math. France 133 (4), 2005, p. 541–579 | braid, convention, surface, signatures, braids |
+| 34 | 331.0 | [`arxiv-math-0506456v1`](../../library/arxiv-math-0506456v1/) | 29 | 70 | Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publis | bridge, classical, dilogarithm, leading, pair |
+| 35 | 324.3 | [`0307092v2`](../../library/0307092v2/) | 44 | 62 | ISSN 1364-0380 (on line) 1465-3060 (printed) 413 | star, ordering, normal, commutative, instance |
+| 36 | 323.7 | [`arxiv-2203.17029v1`](../../library/arxiv-2203.17029v1/) | 22 | 65 | MODULAR q-HOLONOMIC MODULES | categorical, residue, operator, duality, identity |
+| 37 | 323.3 | [`arxiv-math-9907032v1`](../../library/arxiv-math-9907032v1/) | 33 | 27 | Combinatorial optimization in geometry 1 | flow, surface, computational, vertex, curvature |
+| 38 | 322.5 | [`arxiv-2510.04782v2`](../../library/arxiv-2510.04782v2/) | 15 | 82 | q-Hodge complexes over the Habiro ring Ferdinand Wagner | fibre, filtration, observation, descent, convention |
+| 39 | 317.1 | [`arxiv-1002.0126v1`](../../library/arxiv-1002.0126v1/) | 9 | 39 | AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI | skein, descent, closure, braid, interpretation |
+| 40 | 314.6 | [`ihpmay2025`](../../library/ihpmay2025/) | 41 | 41 | IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY | stability, classification, density, cosh, conformal |
+| 41 | 311.2 | [`arxiv-math-0304010v1`](../../library/arxiv-math-0304010v1/) | 38 | 49 | KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAG | mass, equals, plancherel, transition, correspondence |
+| 42 | 309.2 | [`lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3`](../../library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/) | 35 | 24 | Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 2 | fixed, residue, limits, recursive, coefficients |
+| 43 | 306.5 | [`arxiv-1512.04993v2`](../../library/arxiv-1512.04993v2/) | 0 | 70 | Complexity, action, and black holes | energy, shells, gate, equals, times |
+| 44 | 304.8 | [`arxiv-1106.6298v1`](../../library/arxiv-1106.6298v1/) | 11 | 18 | ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INV ARIANTS | frobenius, endomorphism, cyclotomic, habiro, laplace |
+| 45 | 303.0 | [`arxiv-hep-th-9408099v1`](../../library/arxiv-hep-th-9408099v1/) | 0 | 88 | Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric  | mass, energy, scale, classical, coupling |
+| 46 | 301.6 | [`arxiv-1511.05628v1`](../../library/arxiv-1511.05628v1/) | 3 | 41 | QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY | data, derivation, feynman, level, invariance |
+| 47 | 295.4 | [`arxiv-2205.01282v2`](../../library/arxiv-2205.01282v2/) | 27 | 18 | WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBE | decay, theta, refinement, linking, block |
+| 48 | 295.4 | [`arxiv-2209.06973v1`](../../library/arxiv-2209.06973v1/) | 6 | 66 | On the geometry of two state models for the colored Jones polynomial | braid, ordering, correspondence, classical, evaluation |
+| 49 | 286.9 | [`arxiv-1108.4389v1`](../../library/arxiv-1108.4389v1/) | 0 | 58 | Gauge Theories Labelled by Three-Manifolds | chain, gauge, operations, operator, interaction |
+| 50 | 285.3 | [`arxiv-math-0410233v4`](../../library/arxiv-math-0410233v4/) | 31 | 46 | CUSP SHAPES UNDER CONE DEFORMA TION JESSICA S. PURCELL | tube, bridge, time, bound, local |
+| 51 | 282.9 | [`arxiv-1202.4698v3`](../../library/arxiv-1202.4698v3/) | 0 | 32 | 6j symbols for the modular double, quantum hyperbolic geometry, and su | gamma, symbols, gauge, kernel, classical |
+| 52 | 269.0 | [`angled-survey`](../../library/angled-survey/) | 30 | 24 | Contemporary Mathematics From angled triangulations to hyperbolic stru | close, rigidity, normal, surface, volume |
+| 53 | 264.2 | [`arxiv-2111.04763v2`](../../library/arxiv-2111.04763v2/) | 5 | 59 | RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION | equals, habiro, block, connection, resummation |
+| 54 | 262.8 | [`4geo-dedi-rev`](../../library/4geo-dedi-rev/) | 15 | 26 | HAL is a multi-disciplinary open access archive for the deposit and di | factor, classical, parameter, dual, coordinate |
+| 55 | 262.1 | [`zagier-the-dilogarithm-function`](../../library/zagier-the-dilogarithm-function/) | 9 | 63 | The Dilogarithm Function Don Zagier | quotient, information, dilogarithm, functional, geometry |
+| 56 | 259.1 | [`arxiv-2605.22763v1`](../../library/arxiv-2605.22763v1/) | 19 | 59 | 2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof S | selection, text, lean, count, light |
+| 57 | 258.6 | [`arxiv-1811.05376v4`](../../library/arxiv-1811.05376v4/) | 10 | 40 | Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology  | decay, decomposition, transform, invariance, coefficients |
+| 58 | 256.9 | [`zagier-the-dilogarithm-function-copy-b`](../../library/zagier-the-dilogarithm-function-copy-b/) | 9 | 63 | The Dilogarithm Function Don Zagier | information, dilogarithm, functional, geometry, volumes |
+| 59 | 255.5 | [`maximal-hoermander-q-var-revised-v03`](../../library/maximal-hoermander-q-var-revised-v03/) | 41 | 43 | HAL is a multi-disciplinary open access archive for the deposit and di | spectral, time, operator, harmonic, functional |
+| 60 | 253.8 | [`cspaper`](../../library/cspaper/) | 11 | 29 | Combinatorics of Triangulations and the Chern-Simons Invariant for Hyp | cohomological, interpretation, parity, topological, check |
+| 61 | 253.7 | [`arxiv-0707.3682v2`](../../library/arxiv-0707.3682v2/) | 12 | 44 | ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS | cyclotomic, motivic, residue, role, fields |
+| 62 | 251.7 | [`poincare-proof-outline`](../../library/poincare-proof-outline/) | 0 | 175 | Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry | uniqueness, existence, axiom, interpretation, axioms |
+| 63 | 247.3 | [`s0025-5718-07-02027-3`](../../library/s0025-5718-07-02027-3/) | 28 | 30 | MA THEMA TICS OF COMPUT A TION | times, residue, precision, characterisation, rigid |
+| 64 | 245.3 | [`arxiv-2305.14884v2`](../../library/arxiv-2305.14884v2/) | 14 | 48 | PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS | data, fourier, integration, transform, invariance |
+| 65 | 243.2 | [`arxiv-1203.6551v1`](../../library/arxiv-1203.6551v1/) | 19 | 25 | On the number of hyperbolic 3-manifolds of a given volume | crossing, volume, pair, primitive, torus |
+| 66 | 243.2 | [`arxiv-1906.12122v2`](../../library/arxiv-1906.12122v2/) | 0 | 76 | Nuclear eﬀective ﬁeld theory: status and perspectives H.-W. Hammer∗ In | neutron, nuclear, status, quark, amplitude |
+| 67 | 242.3 | [`arxiv-math-ph-0012035v3`](../../library/arxiv-math-ph-0012035v3/) | 0 | 46 | Non-Abelian Stokes theorem in action Bogus/suppress law Broda1 Departm | trace, decomposition, ordering, operator, topological |
+| 68 | 239.8 | [`arxiv-2311.02632v2`](../../library/arxiv-2311.02632v2/) | 20 | 40 | SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE CHUL-HEE LEE | trace, eigenvalue, normal, surface, spectrum |
+| 69 | 238.9 | [`ant-v14-n7-s-p09`](../../library/ant-v14-n7-s-p09/) | 45 | 28 | Galois action on the principal block and cyclic Sylow subgroups | normal, character, block, action, product |
+| 70 | 238.2 | [`arxiv-2410.14661v1`](../../library/arxiv-2410.14661v1/) | 33 | 62 | ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RES | surface, identity, dilogarithm, volume, canonical |
+| 71 | 228.8 | [`ant-v14-n7-s-p10`](../../library/ant-v14-n7-s-p10/) | 22 | 22 | Abelian extensions in dynamical Galois theory | tower, archimedean, pairing, chebyshev, stable |
+| 72 | 227.8 | [`alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari`](../../library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/) | 1 | 40 | Communications in | observation, conformal, integration, dirac, finiteness |
+| 73 | 227.5 | [`arxiv-math-0411505v2`](../../library/arxiv-math-0411505v2/) | 26 | 22 | A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION | zeta, rotation, correspondence, computational, quantum |
+| 74 | 227.1 | [`arxiv-hep-th-9811173v1`](../../library/arxiv-hep-th-9811173v1/) | 0 | 54 | Determinations of rational Dedekind-zeta invariants of hyperbolic mani | crossing, zeta, feynman, precision, figure-8 |
+| 75 | 221.2 | [`arxiv-0808.1533v1`](../../library/arxiv-0808.1533v1/) | 14 | 31 | On the third order helicity of magnetic ﬁelds on invariant domains in  | energy, factor, dual, always, bound |
+| 76 | 219.5 | [`ant-v14-n7-s-p08`](../../library/ant-v14-n7-s-p08/) | 25 | 42 | Burgess bounds for short character sums evaluated at forms | closure, character, bound, algebraic, dimension |
+| 77 | 218.9 | [`ki6c`](../../library/ki6c/) | 32 | 72 | On the asymptotic expansions of the Kashaev invariant of the knots wit | dilogarithm, crossings, symmetric, boundary, matrices |
+| 78 | 211.8 | [`arxiv-hep-ph-0103325v4`](../../library/arxiv-hep-ph-0103325v4/) | 0 | 8 | Quantum algebras in phenomenological description of parti cle properti | mass, baryon, quark, realization, algebras |
+| 79 | 211.5 | [`arxiv-1012.1039v2`](../../library/arxiv-1012.1039v2/) | 28 | 22 | SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS | chain, topological, duality, identity, bound |
+| 80 | 209.7 | [`arxiv-math-0305423v3`](../../library/arxiv-math-0305423v3/) | 16 | 19 | Stein’s Method and Plancherel Measure of the Symmetric Group | plancherel, operator, character, bound, chains |
 
-_Showing 80 of 243. Full data: `library/*/candidates.json`._
+_Showing 80 of 234. Full data: `library/*/candidates.json`._

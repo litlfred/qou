@@ -9511,6 +9511,222 @@ export const references: CSLData[] = [
       + "complex reflection groups. Distinct from mcmullen1998, already registered.",
   }),
 
+  ref({
+    id: "porti2015",
+    library: {
+      docId: "arxiv-1511.00400v2",
+      dir: "library/arxiv-1511.00400v2",
+      pdf: "library/arxiv-1511.00400v2/1511.00400v2.pdf",
+      stage: "candidates",
+      pages: 55,
+      sections: 30,
+      arxiv: "1511.00400v2",
+    },
+    type: "article",
+    title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties",
+    author: [{ family: "Porti", given: "Joan" }],
+    issued: { "date-parts": [[2015]] },
+    URL: "https://arxiv.org/abs/1511.00400",
+    note: "PDF library/arxiv-1511.00400v2/ — held copy is v2 [math.GT], 26 May 2016. "
+      + "A survey, which is what makes it useful here: it is the orientation text for "
+      + "the torsion-on-character-varieties material this corpus works in, alongside "
+      + "benard2018.",
+  }),
+
+  ref({
+    id: "baseilhac-benedetti2007",
+    library: {
+      docId: "agt-v7-n2-p13-s",
+      dir: "library/agt-v7-n2-p13-s",
+      pdf: "library/agt-v7-n2-p13-s/agt-v7-n2-p13-s.pdf",
+      stage: "candidates",
+      pages: 73,
+      sections: 19,
+    },
+    type: "article-journal",
+    title: "Quantum hyperbolic geometry",
+    author: [
+      { family: "Baseilhac", given: "Stéphane" },
+      { family: "Benedetti", given: "Riccardo" },
+    ],
+    "container-title": "Algebraic & Geometric Topology",
+    volume: "7",
+    page: "845-917",
+    issued: { "date-parts": [[2007]] },
+    note: "PDF library/agt-v7-n2-p13-s/ — constructs a family, indexed by odd N, of "
+      + "(2+1)-dimensional quantum hyperbolic field theories. Volume, page range and "
+      + "journal read off the paper's own first line.",
+  }),
+
+  ref({
+    id: "mcphail-snyder-reshetikhin2025",
+    library: {
+      docId: "arxiv-2509.02354v2",
+      dir: "library/arxiv-2509.02354v2",
+      pdf: "library/arxiv-2509.02354v2/2509.02354v2.pdf",
+      stage: "candidates",
+      pages: 41,
+      sections: 16,
+      arxiv: "2509.02354v2",
+    },
+    type: "article",
+    title: "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms",
+    author: [
+      { family: "McPhail-Snyder", given: "Calvin" },
+      { family: "Reshetikhin", given: "Nicolai" },
+    ],
+    issued: { "date-parts": [[2025]] },
+    URL: "https://arxiv.org/abs/2509.02354",
+    note: "PDF library/arxiv-2509.02354v2/ — an explicit formula for the holonomy "
+      + "R-matrix. Registered because it was ALREADY being cited: computations/ "
+      + "provenance strings name 'library/arxiv-2509.02354v2/... eq (4.11-4.14), (4.19)' "
+      + "and '(A.15)' while no bibliography entry existed. Distinct from "
+      + "mcphail-snyder2026 (arXiv 2601.05136), a different paper by one of the authors.",
+  }),
+
+  ref({
+    id: "birman-menasco2006",
+    library: {
+      docId: "0310279v5",
+      dir: "library/0310279v5",
+      pdf: "library/0310279v5/0310279v5.pdf",
+      stage: "candidates",
+      pages: 128,
+      sections: 30,
+    },
+    type: "article-journal",
+    title: "Stabilization in the braid groups I: MTWS",
+    author: [
+      { family: "Birman", given: "Joan S." },
+      { family: "Menasco", given: "William W." },
+    ],
+    "container-title": "Geometry & Topology",
+    volume: "10",
+    page: "413-540",
+    issued: { "date-parts": [[2006]] },
+    note: "PDF library/0310279v5/ — the Markov theorem without stabilization. The held "
+      + "copy is the arXiv version, whose own header warns that fonts, pagination and "
+      + "layout may differ from the published Geometry & Topology text; the volume and "
+      + "page range recorded here are the ones it prints.",
+  }),
+
+  ref({
+    id: "deligne-mostow1986",
+    library: {
+      docId: "deligne-mostow-1986",
+      dir: "library/deligne-mostow-1986",
+      pdf: "library/deligne-mostow-1986/deligne-mostow-1986.pdf",
+      stage: "candidates",
+      pages: 86,
+      sections: 27,
+    },
+    type: "article-journal",
+    title: "Monodromy of hypergeometric functions and non-lattice integral monodromy",
+    author: [
+      { family: "Deligne", given: "Pierre" },
+      { family: "Mostow", given: "G. D." },
+    ],
+    "container-title": "Publications mathématiques de l'IHÉS",
+    issued: { "date-parts": [[1986]] },
+    note: "PDF library/deligne-mostow-1986/ — the Numdam scan. Distinct from the "
+      + "deligne* entries already registered here, none of which is this paper.",
+  }),
+
+  ref({
+    id: "dolega-feray2014",
+    library: {
+      docId: "arxiv-1402.4615v3",
+      dir: "library/arxiv-1402.4615v3",
+      pdf: "library/arxiv-1402.4615v3/1402.4615v3.pdf",
+      stage: "candidates",
+      pages: 71,
+      sections: 37,
+      arxiv: "1402.4615v3",
+    },
+    type: "article",
+    title: "Gaussian fluctuations of Young diagrams and structure constants of Jack characters",
+    author: [
+      { family: "Dołęga", given: "Maciej" },
+      { family: "Féray", given: "Valentin" },
+    ],
+    issued: { "date-parts": [[2014]] },
+    URL: "https://arxiv.org/abs/1402.4615",
+    note: "PDF library/arxiv-1402.4615v3/ — held copy is v3 [math.PR], 3 Feb 2015. "
+      + "Young-diagram fluctuations and Jack-character structure constants; the "
+      + "partition-indexed character material is what overlaps this corpus.",
+  }),
+
+  ref({
+    id: "cook2021",
+    library: {
+      docId: "210811825v1",
+      dir: "library/210811825v1",
+      pdf: "library/210811825v1/2108.11825v1.pdf",
+      stage: "candidates",
+      pages: 163,
+      sections: 1,
+    },
+    type: "thesis",
+    title: "Properties of eigenvalues on Riemann surfaces with large symmetry groups",
+    author: [{ family: "Cook", given: "Joseph" }],
+    issued: { "date-parts": [[2021]] },
+    publisher: "Loughborough University",
+    genre: "PhD thesis",
+    URL: "https://arxiv.org/abs/2108.11825",
+    note: "PDF library/210811825v1/ — surfaced by resolvent / eigenvalue / involution "
+      + "overlap. Distinct from cook1971, already registered.",
+  }),
+
+  ref({
+    id: "loeffler-williams2020",
+    library: {
+      docId: "ant-v14-n7-s-p01",
+      dir: "library/ant-v14-n7-s-p01",
+      pdf: "library/ant-v14-n7-s-p01/ant-v14-n7-s-p01.pdf",
+      stage: "candidates",
+      pages: 42,
+      sections: 13,
+    },
+    type: "article-journal",
+    title: "p-adic Asai L-functions of Bianchi modular forms",
+    author: [
+      { family: "Loeffler", given: "David" },
+      { family: "Williams", given: "Chris" },
+    ],
+    "container-title": "Algebra & Number Theory",
+    volume: "14",
+    issue: "7",
+    issued: { "date-parts": [[2020]] },
+    DOI: "10.2140/ant.2020.14.1669",
+    note: "PDF library/ant-v14-n7-s-p01/ — paper 1 of the bound issue ant-v14-n7-s, "
+      + "split out by scripts/split-bound-volume.py. DOI read from its title page.",
+  }),
+
+  ref({
+    id: "levine-raksit2020",
+    library: {
+      docId: "ant-v14-n7-s-p05",
+      dir: "library/ant-v14-n7-s-p05",
+      pdf: "library/ant-v14-n7-s-p05/ant-v14-n7-s-p05.pdf",
+      stage: "candidates",
+      pages: 52,
+      sections: 26,
+    },
+    type: "article-journal",
+    title: "Motivic Gauss-Bonnet formulas",
+    author: [
+      { family: "Levine", given: "Marc" },
+      { family: "Raksit", given: "Arpon" },
+    ],
+    "container-title": "Algebra & Number Theory",
+    volume: "14",
+    issue: "7",
+    issued: { "date-parts": [[2020]] },
+    DOI: "10.2140/ant.2020.14.1801",
+    note: "PDF library/ant-v14-n7-s-p05/ — paper 5 of the bound issue ant-v14-n7-s, "
+      + "split out by scripts/split-bound-volume.py. DOI read from its title page.",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
