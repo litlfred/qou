@@ -36,7 +36,65 @@ family that break does not happen: Δ = 0 exactly, so any consumer reading
 these witnesses for a p–n asymmetry gets nothing, and an E₀ derived from them
 would divide by zero.
 
-## The likely mechanism, not yet confirmed
+## CONFIRMED (2026-08-15): the sign is read from a field that is always +1
+
+Measured, closing steps 1 and 2 below. `_word_for_braid_word_3a(1,0)` and
+`(0,1)` return **byte-identical** words, so the degeneracy is in the word
+builder — not the engine, not the sign marshalling.
+
+The reason is one line
+([`derived_chi_catalogue_matrix_m.py:655`](../computations/derived_chi_catalogue_matrix_m.py)):
+
+    word = [(1 if c >= 0 else -1, gen_0based + 1) for (c, _d, gen_0based) in triples]
+
+`atom_braid_word_3A` returns `(c, d, gen_idx)` triples, and **`c` is not the
+crossing sign.** Measured across the whole range, `c ≡ +1` for every crossing
+of every nucleus:
+
+    proton    n= 11  c-values={1: 11}   distinct-d=3
+    neutron   n= 11  c-values={1: 11}   distinct-d=3
+    deuteron  n= 23  c-values={1: 23}   distinct-d=4
+    He-4      n= 47  c-values={1: 47}   distinct-d=5
+    Li-6      n= 71  c-values={1: 71}   distinct-d=5
+
+The σ / σ⁻¹ / averaged distinction lives entirely in **`d`**, as that
+function's own docstring says — *"every crossing is a template
+{0, −h, −h/2, −h(½−δ/4)}"*. Decoding `d` back reproduces exactly the counts
+this bean recorded from the other word source, so the two agree and the
+earlier "either the word source is species-independent or the distinction is
+lost further down" was a false dichotomy — it is the *translation* between
+them:
+
+    proton   σ:6  σ⁻¹:3  averaged:2      (d = 0, −h, −h/2)
+    neutron  σ:5  σ⁻¹:4  averaged:2
+
+So `_word_for_braid_word_3a` reads the sign off the constant field and
+discards the field that carries it. Every word collapses to an all-positive
+braid whose only remaining content is the generator-index pattern — which is
+a function of A alone. Hence p ≡ n and tritium ≡ ³He *identically, by
+construction*, at every q and in both conventions. That is why the old
+committed C-era values were equal too.
+
+This is **not** the documented `sign_for_ctype` lossiness (σ→+1, σ⁻¹→−1,
+averaged→0, magnitude unrepresentable). It is worse: a genuine sign-only
+encoding would still separate p from n by their σ⁻¹ counts, 3 vs 4. This one
+maps everything to +1, so it is sign-*free*, while the witness `convention`
+field advertises `"sign-only-crossings"`.
+
+### Why the obvious fix does not work
+
+Deriving the sign from `d` via the canonical vocabulary
+(`classify_crossing` → `sign_for_ctype`) would restore σ vs σ⁻¹ — but
+`sign_for_ctype` sends *averaged* to `0`, and `0` is not a braid generator.
+The `(sign, gen)` wire format has nowhere to put an averaged crossing. That
+is precisely the open representation question in `qou-gdtb`: a
+`(gen_idx, ctype)` pair cannot express an operator-valued interface.
+
+So the answer to step 3 is: **this family cannot carry the p–n split**, and
+should say so rather than let a reader take Δ = 0 for physics. Recorded in
+the producer's witness description rather than left to inference.
+
+## The original hypothesis, superseded by the measurement above
 
 The `matrix-m` route goes through the Rust engine, whose wire format carries
 a **sign** per crossing. `canonical_braid_crossings.sign_for_ctype` maps

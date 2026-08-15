@@ -74,8 +74,15 @@ def _ensure_y_lambda(n: int) -> None:
         extend_y_lambda_tower(n)   # closed-form, gated, non-destructive merge
 
 
+PN_SPLIT_NOTE = (
+    "isobars are degenerate by construction: the (sign, gen) wire format "
+    "drops the crossing-type field. See beans qou-sgv5 (mechanism, measured) "
+    "and qou-gdtb (representation)."
+)
+
+
 def _stamp_anchor(out: Path, cached: dict) -> None:
-    """Backfill `q0Anchor`/`q0Value` on a cached witness that predates the field.
+    """Backfill provenance fields on a cached witness that predates them.
 
     DERIVED, never assumed: the anchor is read back off the witness's own
     recorded `q_0_50dps` by matching it against the canonical pins, the same
@@ -85,22 +92,29 @@ def _stamp_anchor(out: Path, cached: dict) -> None:
     catch. Cheap (a cache-hit re-run costs seconds), so the corpus self-heals
     without recomputing an hour of χ.
     """
-    if cached.get("q0Anchor"):
-        return
+    dirty = False
+
+    if "pn_split_carried" not in cached:
+        cached["pn_split_carried"] = False
+        cached["pn_split_note"] = PN_SPLIT_NOTE
+        dirty = True
+
     recorded = str(cached.get("q_0_50dps", ""))
-    if not recorded:
-        return
-    import qou_substrate.witness as _qw
-    for anchor in ("proton", "muon"):
-        pin = _qw._q0_value_for_anchor(anchor)
-        if pin and recorded[:14] == pin[:14]:
-            cached["q0Anchor"] = anchor
-            cached["q0Value"] = recorded
-            out.write_text(json.dumps(cached, indent=2, ensure_ascii=False),
-                           encoding="utf-8")
-            print(f"             (stamped q0Anchor={anchor} from recorded q₀)",
-                  flush=True)
-            return
+    if not cached.get("q0Anchor") and recorded:
+        import qou_substrate.witness as _qw
+        for anchor in ("proton", "muon"):
+            pin = _qw._q0_value_for_anchor(anchor)
+            if pin and recorded[:14] == pin[:14]:
+                cached["q0Anchor"] = anchor
+                cached["q0Value"] = recorded
+                dirty = True
+                print(f"             (stamped q0Anchor={anchor} "
+                      f"from recorded q₀)", flush=True)
+                break
+
+    if dirty:
+        out.write_text(json.dumps(cached, indent=2, ensure_ascii=False),
+                       encoding="utf-8")
 
 
 def compute_atom(atom: str, q: mp.mpf) -> dict:
@@ -167,6 +181,18 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
         ),
         "producer": "rust-chi-q-via-gp-lossless",
         "convention": "sign-only-crossings",
+        # ⚠ Δ(tr_M) between isobars is ZERO BY CONSTRUCTION here — not physics.
+        # `_word_for_braid_word_3a` takes the sign from the `c` field of
+        # `atom_braid_word_3A`'s (c, d, gen) triples, and `c ≡ +1` for every
+        # crossing of every nucleus; the σ / σ⁻¹ / averaged distinction lives
+        # in `d`, which that translation discards. So the word depends only on
+        # the generator-index pattern, a function of A alone, and p ≡ n,
+        # tritium ≡ ³He identically at every q. Do NOT read a p–n asymmetry
+        # (or an E₀ = Q_β/|Δtr_M|) out of this family. Deriving the sign from
+        # `d` would restore σ vs σ⁻¹ but has nowhere to put an averaged
+        # crossing — the open representation question, bean qou-gdtb.
+        "pn_split_carried": False,
+        "pn_split_note": PN_SPLIT_NOTE,
         "q_0_50dps": str(q),
         # Declare the pin the audit reads. Not "ambiguous" any more: q comes
         # from q_parameter.Q_50_DIGIT_STR and y_λ from the proton-pinned table,
