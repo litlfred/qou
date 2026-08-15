@@ -39,6 +39,27 @@ patch to flip the `canonical_status` field for matching atoms.
 """
 from __future__ import annotations
 
+# ── BLAS thread pinning — must precede ANY import that loads numpy ────────
+# This producer fans out over partitions with `multiprocessing.Pool`, and each
+# worker calls into scipy-openblas, which by default spawns one thread per core.
+# Four workers x four BLAS threads on a four-core box is 16 runnable threads
+# competing for 4 cores: the per-worker matrix products are already the whole
+# cost, so the extra threads buy nothing and the context switching is pure loss.
+#
+# Measured on the ⁴He leg (bean qou-mnrd), 4 partitions of dim ≈ 2100 through a
+# 4-worker pool:
+#     BLAS threads unset : 25.4 s
+#     BLAS threads = 1   : 18.6 s      1.37x
+#
+# `setdefault`, so an operator who deliberately exports a value keeps it.
+# It must run before numpy is first imported — OpenBLAS reads these at library
+# load, and a fork inherits the already-loaded library, so setting them inside
+# the worker is too late.
+import os  # noqa: E402
+for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS",
+           "NUMEXPR_NUM_THREADS"):
+    os.environ.setdefault(_v, "1")
+
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
@@ -97,6 +118,27 @@ def _worker_cap() -> int:
 
 
 # ── Multiprocessing worker (top-level so Pool can pickle) ────────
+
+
+def _lambda_cost_proxy(lam: tuple[int, ...]) -> int:
+    """Scheduling weight for one partition: its Specht dimension (# SYT).
+
+    Only the ORDER matters — this decides which λ a free worker takes next, so
+    a monotone proxy for cost is enough and an exact model would be wasted. The
+    Hoefsmit kernel builds dim x dim matrices, and measured cost tracks
+    ~dim^2.4 on this path, so dimension ranks the work correctly.
+
+    Hook-length formula. Cheap (integer arithmetic on a partition of ≤ 12) next
+    to the χ^λ it is scheduling.
+    """
+    import math
+    n = sum(lam)
+    conj = [sum(1 for r in lam if r > j) for j in range(lam[0])] if lam else []
+    prod = 1
+    for i, r in enumerate(lam):
+        for j in range(r):
+            prod *= (r - j) + (conj[j] - i) - 1
+    return math.factorial(n) // prod if prod else 1
 
 
 def _chi_worker(args):
@@ -316,12 +358,38 @@ def compute_co_casimir_for_atom(
     # machine, `--workers 1` turns an unrunnable atom into a slow one.
     n_workers = min(_worker_cap(), len(parts))
     print(f"  computing per-λ χ^λ via {n_workers} workers (numeric path) …", flush=True)
-    pool_args = [(lam, crossings, Q_50_DIGIT_STR, mp.mp.dps) for lam in parts]
+    # Largest λ FIRST, and chunksize=1 (bean qou-mnrd). Per-λ cost is steeply
+    # superlinear in the partition's dimension — measured ~dim^2.4 on this
+    # kernel (dim 1925 → 7.1 s, dim 3520 → 30.4 s), so the single largest
+    # partition of 12 (dim 7700) costs ≈ 200 s while the smallest cost
+    # milliseconds. Two consequences the previous call got wrong:
+    #
+    #   * `pool.map`'s default chunksize splits the list into ~4 contiguous
+    #     blocks, so whichever worker draws the block holding the big λ runs
+    #     alone while the others finish and idle. Observed on the ⁴He leg:
+    #     worker CPU 11m51s / 4m35s / 1m35s / 0m00s over 2h05m wall.
+    #   * feeding them in enumeration order leaves a 200 s task to be picked up
+    #     last, so the whole run waits on one straggler at the end.
+    #
+    # Longest-processing-time-first with chunksize=1 is the standard remedy for
+    # both. `pool.map` returns in INPUT order, so the results are reordered back
+    # to `parts` order below — the per-λ loop indexes `chi_values[i]` against
+    # `parts[i]` and would silently mismatch otherwise.
+    order = sorted(range(len(parts)), key=lambda i: -_lambda_cost_proxy(parts[i]))
+    pool_args = [(parts[i], crossings, Q_50_DIGIT_STR, mp.mp.dps) for i in order]
     if n_workers > 1:
         with multi.Pool(n_workers) as pool:
-            chi_values = pool.map(_chi_worker, pool_args)
+            _out = pool.map(_chi_worker, pool_args, chunksize=1)
+        chi_values = [None] * len(parts)
+        for slot, val in zip(order, _out):
+            chi_values[slot] = val
     else:
-        chi_values = [_chi_worker(a) for a in pool_args]
+        # Single worker: same reordering, so the un-permute below is the only
+        # place that knows about `order` and the two branches cannot diverge.
+        _out = [_chi_worker(a) for a in pool_args]
+        chi_values = [None] * len(parts)
+        for slot, val in zip(order, _out):
+            chi_values[slot] = val
 
     per_lambda: list[dict] = []
     sum_contributions = mp.mpf(0)
