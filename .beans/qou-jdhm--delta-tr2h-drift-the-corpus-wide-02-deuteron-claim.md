@@ -165,3 +165,75 @@ Remaining sites quoting `+0.2%`: `binding_error_source.py:11,105`,
 **Fix shape:** replace the hardcode with a *live* call to `binding_canonical` so it cannot
 go stale again, and name the convention at each quoted value per the registry rule. No
 number needs to be chosen; it needs to be computed and labelled.
+
+---
+**2026-08-15 — FIXED, all six sites. One verification is still in flight and is named below.**
+
+| site | change | kind |
+|---|---|---|
+| `binding_link_volumes.py` | docstring → −6.3%, cites witness | done under `qou-bind` |
+| `binding_per_bond_decomposition.py:126` | **hardcode → live call** | code |
+| `binding_error_source.py:11,105` | → −6.3%, convention named | comment |
+| `binding_multibond_wenzl.py:9` | → −6.3%, convention named | comment |
+| `probe_volume_wedderburn_delta_lambda.py:126` | → −6.3%/−56% | comment |
+| `volume_binding_four_point.py:95` | exclusion note strengthened | comment |
+
+The one **code** change replaces `dtr_canonical_2H = mpf("0.5952")` with a live
+`binding_canonical(1, 1, use_closed_form=True)`. Computing rather than substituting is
+the point: a hardcoded trace value cannot track a convention change, which is exactly how
+this went wrong. Measured live: `0.5566260326923999`.
+
+**This one changes output**, unlike the `qou-bind` fix which was byte-identical. The
+printed METHOD DISCREPANCY moves from ~29 % to ~24 % against the documented H_{3A} value
+0.424. That is the correction landing, not a side effect — the old gap was measured
+against an excised convention.
+
+### What survives, checked site by site rather than assumed
+
+The corrections are to *numbers*, and at every site the surrounding *argument* holds:
+
+- **`binding_error_source`** — its FINDING (Δtr intensive and saturating, binding
+  extensive) is untouched. −6.3 % at A=2 against −59 %/−88 % at A≥3 shows the same ceiling
+  behaviour +0.2 % did. What is lost is the claim the deuteron *works*. That is a
+  **cleaner** reading: there is no special A=2 success needing separate explanation.
+- **`binding_multibond_wenzl`** — the A-flatness argument is untouched; its hypothesis was
+  motivated by the combined Δtr being A-independent, not by the deuteron matching.
+- **`volume_binding_four_point`** — its exclusion is now **better** founded than when
+  written: no deuteron success to exclude, only a near-miss.
+
+### ⚠ A near-miss worth recording: one grep hit was a false positive
+
+`MassComputationChainRoadmap.lean` matches `0.2%`, but it is
+`betaDecayRecovery_at_N0_within_0_2_percent` — a **β-decay recovery tolerance**, nothing to
+do with the deuteron Δtr. Sweeping it would have corrupted an unrelated Lean claim. The
+seven-file count in this bean's header was therefore **six**; a grep across a corpus that
+reuses a number is a candidate list, not a work list.
+
+### Verified
+
+- New code path executed in isolation inside the module's own import environment: returns
+  `0.5566260326923999`, gap arithmetic intact.
+- All four comment-only files parse (`ast.parse`).
+- `probe-float64-guard.py --diff` with files passed explicitly: **33 hits across the four,
+  identical to HEAD** (verified by stashing). A first attempt at the code fix passed
+  `float(Q_BETA_MEV)` and added one hit; replaced by passing the `mpf` through, since
+  `binding_canonical` stringifies it anyway.
+
+### ⚠ NOT verified
+
+**A full end-to-end run of `binding_per_bond_decomposition.py` has not completed.** It
+takes > 40 min (H_{3A} Wedderburn sums) and a baseline run started before the edit was
+still going when this was written. The isolated path is what is verified. Whoever next
+touches this file should run it once and confirm the printed gap and the witness.
+
+Witness deliberately **not** regenerated, same reason as `qou-bind`: this container's
+python is weaker than the one that produced the committed witnesses (mpmath 1.3.0 vs
+1.4.1, no scipy, no pyhecke_native).
+
+### Still open, and it belongs to someone else
+
+`qou-wgta` (P0) is the corpus-wide C→D sweep and is **still `todo`** with 174 py + 61 lean
+files enumerated. This bean fixed only the six deuteron-Δtr sites. That bean is a
+sibling's, untouched — but its **item 3 is stale** (the `y_lambda_wenzl_bridge` hybrid it
+describes is now pure D, verified here), so whoever owns it should re-audit its list before
+working from it.
