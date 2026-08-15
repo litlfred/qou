@@ -178,9 +178,8 @@ pub fn canonical_interface_kinds(z_count: usize, n_count: usize) -> Vec<Interfac
     if a < 2 {
         return Vec::new();
     }
-    let mut ordering: Vec<u8> = Vec::with_capacity(a);
-    ordering.extend(std::iter::repeat(b'p').take(z_count));
-    ordering.extend(std::iter::repeat(b'n').take(n_count));
+    let mut ordering: Vec<u8> = vec![b'n'; a];
+    ordering[..z_count].fill(b'p');
     (0..a - 1)
         .map(|k| match (ordering[k], ordering[k + 1]) {
             (b'p', b'p') => InterfaceKind::Positive,
@@ -490,7 +489,9 @@ pub mod convergence {
             if rel > worst {
                 worst = rel;
             }
-            if !(rel <= TOL_F64) {
+            // NaN must FAIL, not slip through: `rel > tol` alone would pass a
+            // NaN silently, which is the one outcome this check exists to stop.
+            if rel.is_nan() || rel > TOL_F64 {
                 bad.push(Divergence {
                     isotope: row.isotope,
                     computed: format!("{got:.17e}"),
@@ -538,7 +539,8 @@ pub mod convergence {
             if rel > worst {
                 worst = rel;
             }
-            if !(rel <= TOL_MPFR) {
+            // NaN must FAIL — see the note in `verify_f64_convergence`.
+            if rel.is_nan() || rel > TOL_MPFR {
                 bad.push(Divergence {
                     isotope: row.isotope,
                     computed: got.to_string_radix(10, Some(50)),
@@ -663,9 +665,8 @@ mod tests {
         for row in CANONICAL {
             let v: f64 = row.ratio_50dps.parse().unwrap();
             assert!(v > 0.0 && v < 1.0, "{}: {}", row.isotope, row.ratio_50dps);
-            assert_eq!(
+            assert!(
                 row.ratio_50dps.chars().filter(|c| c.is_ascii_digit()).count() >= 50,
-                true,
                 "{} reference lost digits",
                 row.isotope
             );
