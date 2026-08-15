@@ -1,0 +1,80 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T11:52:26.060757+00:00",
+  "commitSha": "73f8fafac4a8a7369e0d1c7e4996e13e6270e50e",
+  "assertions": [
+    {
+      "name": "the fixed float64 path agrees with the mpmath reference to better than 1e-14 on every partition — the cast changes speed, not value",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "chi_numpy vs rho_k_h3a_refinement.chi_numeric at substrate q0; 1e-14 is the tolerance hoefsmit_numpy's own docstring documents"
+    },
+    {
+      "name": "the pre-fix path is strictly slower on every partition — the leak cost real time rather than being a theoretical concern",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "same process, same machine, same inputs; the only difference between the two callers is the float() cast"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 408402,
+  "computation": "chi-numpy-dtype-fix-benchmark",
+  "scriptFile": "chi_numpy_dtype_fix_benchmark.py",
+  "scriptHash": "41e443db69f6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "P28 benchmark witness for the chi_numpy dtype-leak fix (0bfb2a48ab). d_for_ctype returns mpf for 'averaged_weighted' and float otherwise; one mpf promotes the accumulating numpy product to dtype=object, which drops the remaining matmuls out of BLAS into pure Python permanently. Measures fixed vs pre-fix vs mpmath reference on tritium partitions, caller-vs-caller in one process. Value is unchanged; only speed moves.",
+  "data": {
+    "atom": "tritium",
+    "n_crossings": 35,
+    "first_non_float_crossing_index": 11,
+    "per_partition": [
+      {
+        "partition": "(5, 2, 2)",
+        "t_fixed_sec": "0.004297494888305664",
+        "t_prefix_sec": "66.0659441947937",
+        "speedup": "15373.129209431345",
+        "t_mpmath_reference_sec": "41.711801528930664",
+        "rel_diff_vs_mpmath": "5.3013e-15",
+        "rel_diff_fixed_vs_prefix": "0.0",
+        "within_1e-14": true
+      },
+      {
+        "partition": "(3, 3, 3)",
+        "t_fixed_sec": "0.002095937728881836",
+        "t_prefix_sec": "2.86191987991333",
+        "speedup": "1365.4603571834832",
+        "t_mpmath_reference_sec": "2.1039438247680664",
+        "rel_diff_vs_mpmath": "3.97375e-15",
+        "rel_diff_fixed_vs_prefix": "1.87944e-16",
+        "within_1e-14": true
+      },
+      {
+        "partition": "(4, 3, 2)",
+        "t_fixed_sec": "0.02530670166015625",
+        "t_prefix_sec": "183.92356872558594",
+        "speedup": "7267.781127524872",
+        "t_mpmath_reference_sec": "111.67164778709412",
+        "rel_diff_vs_mpmath": "5.15103e-16",
+        "rel_diff_fixed_vs_prefix": "1.26392e-16",
+        "within_1e-14": true
+      }
+    ],
+    "commit_fixed": "0bfb2a48ab",
+    "tier": "benchmark"
+  }
+}
