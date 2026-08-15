@@ -725,8 +725,22 @@ corpus — run the **corpus-grep checklist**:
 4. Check the relevant coordination ledger
    `docs/coordination/<theme>.md` — prior agents may have closed
    the item already.
+5. `grep -rln <topic> library/*/sections/` — the **ingested sources**.
+   An item can be open *in this corpus* and settled in a paper we
+   already hold; that is a citation, not a derivation, but it changes
+   what "open" means and it is the difference between deriving a result
+   and re-deriving one. 332 documents / 7,313 sections / 24.7 M
+   characters are searchable this way.
 
-Only after **all four** grep paths return empty (modulo the
+   This path exists only because the sources were sectioned into text.
+   Before that they were 339 PDFs and grep could not see them, which is
+   why the checklist historically stopped at four. Two practical notes:
+   a hit's YAML front-matter names the document, section and page range,
+   so it is immediately citable; and `library/<doc-id>/candidates.json`
+   lists that document's extracted theorems and definitions if you want
+   the claims rather than the prose.
+
+Only after **all five** grep paths return empty (modulo the
 originating file itself) may you declare the item open. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
@@ -2942,7 +2956,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
-| `library/` | Document intake pipeline (raw PDFs, scans, WHO guidelines → content objects) |
+| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `content/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`; renamed from `uploads/` 2026-08-15. |
 | `.beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
 | `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `.beans/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
 | `docs/` | Planning documents, migration plans, dependency graphs |

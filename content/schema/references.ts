@@ -833,6 +833,10 @@ export const references: CSLData[] = [
   // ── CODATA 2022 ───────────────────────────────────────────────
   ref({
     id: "codata2022",
+    library: {
+      claimedPath: "library/codata-2022-constants.txt",
+      stage: "missing",
+    },
     type: "dataset",
     title: "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
     author: [
@@ -847,6 +851,10 @@ export const references: CSLData[] = [
   // ── Kronheimer and Mrowka 2004 ────────────────────────────────
   ref({
     id: "kronheimer2004",
+    library: {
+      claimedPath: "library/kronheimer2004.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Witten's conjecture and Property P",
     author: [
@@ -1073,6 +1081,10 @@ export const references: CSLData[] = [
   // ── Lurie 2009 ────────────────────────────────────────────────
   ref({
     id: "lurie2009",
+    library: {
+      claimedPath: "library/lurie2009.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "On the classification of topological field theories",
     author: [
@@ -1141,6 +1153,10 @@ export const references: CSLData[] = [
   // ── Witten 2011 ───────────────────────────────────────────────
   ref({
     id: "witten2011",
+    library: {
+      claimedPath: "library/witten2011.pdf",
+      stage: "missing",
+    },
     type: "chapter",
     title: "Analytic Continuation Of Chern-Simons Theory",
     author: [
@@ -1160,6 +1176,10 @@ export const references: CSLData[] = [
   // ── Yekutieli 2010 ────────────────────────────────────────────
   ref({
     id: "yekutieli2010",
+    library: {
+      claimedPath: "library/yekutieli2010.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Central Extensions of Gerbes",
     author: [
@@ -1178,6 +1198,10 @@ export const references: CSLData[] = [
   // ── Yekutieli 2008 ────────────────────────────────────────────
   ref({
     id: "yekutieli2008",
+    library: {
+      claimedPath: "library/yekutieli2008.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Twisted Deformation Quantization of Algebraic Varieties (Survey)",
     author: [
@@ -1216,6 +1240,10 @@ export const references: CSLData[] = [
   // ── Yekutieli 2009 (published 2012) ───────────────────────────
   ref({
     id: "yekutieli2009",
+    library: {
+      claimedPath: "library/yekutieli2009.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "MC Elements in Pronilpotent DG Lie Algebras",
     author: [
@@ -1234,6 +1262,10 @@ export const references: CSLData[] = [
   // ── Freed, Hopkins, Lurie, Teleman 2010 ───────────────────────
   ref({
     id: "freed2010",
+    library: {
+      claimedPath: "library/freed2010.pdf",
+      stage: "missing",
+    },
     type: "chapter",
     title: "Topological quantum field theories from compact Lie groups",
     author: [
@@ -1463,6 +1495,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "boyd-vandenberghe-2004",
+    library: {
+      claimedPath: "library/boyd-vandenberghe-2004-convex-optimization.pdf",
+      stage: "missing",
+    },
     type: "book",
     title: "Convex Optimization",
     author: [
@@ -2123,6 +2159,10 @@ export const references: CSLData[] = [
   // ── Faddeev 1994 ──────────────────────────────────────────────
   ref({
     id: "faddeev1994",
+    library: {
+      claimedPath: "library/faddeev1994.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Current-like variables in massive and massless integrable models",
     author: [
@@ -2263,6 +2303,10 @@ export const references: CSLData[] = [
   // ── Frenkel & Ben-Zvi 2004 ──────────────────────────────────
   ref({
     id: "frenkel2004",
+    library: {
+      claimedPath: "library/frenkel2004.pdf",
+      stage: "missing",
+    },
     type: "book",
     title: "Vertex Algebras and Algebraic Curves",
     author: [
@@ -2297,6 +2341,10 @@ export const references: CSLData[] = [
   // ── Baez and Lauda 2004 ───────────────────────────────────────
   ref({
     id: "baez2004",
+    library: {
+      claimedPath: "library/baez2004.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Higher-dimensional algebra V: 2-groups",
     author: [
@@ -2327,6 +2375,10 @@ export const references: CSLData[] = [
   // ── Habiro 2008 (published 2008, circulated 2002) ──────────────
   ref({
     id: "habiro2002",
+    library: {
+      claimedPath: "library/habiro2002.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Bottom tangles and universal invariants",
     author: [
@@ -2345,6 +2397,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "habiro2004",
+    library: {
+      claimedPath: "library/habiro2004.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres",
     author: [{ family: "Habiro", given: "Kazuo" }],
@@ -2511,6 +2567,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "madison2000",
+    library: {
+      claimedPath: "library/madison2000.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Vortex formation in a stirred Bose-Einstein condensate",
     author: [
@@ -2564,6 +2624,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "fetter2009",
+    library: {
+      claimedPath: "library/fetter2009.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Rotating trapped Bose-Einstein condensates",
     author: [
@@ -2579,6 +2643,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "navon2021",
+    library: {
+      claimedPath: "library/navon2021.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Quantum gases in optical boxes",
     author: [
@@ -2596,6 +2664,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "gauthier2019",
+    library: {
+      claimedPath: "library/gauthier2019.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Giant vortex clusters in a two-dimensional quantum fluid",
     author: [
@@ -2637,6 +2709,10 @@ export const references: CSLData[] = [
   // ── Nature Physics: Scheeler et al. 2014 ────────────────────────
   ref({
     id: "scheeler2014",
+    library: {
+      claimedPath: "library/scheeler2014.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Helicity conservation by flow across scales in reconnecting vortex links and knots",
     author: [
@@ -2677,6 +2753,10 @@ export const references: CSLData[] = [
   // ── PRL: Aubert et al. 2001 (BaBar CP violation in B mesons) ───
   ref({
     id: "aubert2001",
+    library: {
+      claimedPath: "library/aubert2001.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Observation of CP Violation in the $B^0$ Meson System",
     author: [
@@ -2891,6 +2971,10 @@ export const references: CSLData[] = [
   // ── Freedman-Kitaev-Larsen-Wang 2003: Topological QC ──────────
   ref({
     id: "freedman2003",
+    library: {
+      claimedPath: "library/freedman2003.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Topological Quantum Computation",
     author: [
@@ -3012,6 +3096,10 @@ export const references: CSLData[] = [
   // ── Lloyd 2000: Ultimate physical limits to computation ───────
   ref({
     id: "lloyd2000",
+    library: {
+      claimedPath: "library/lloyd2000.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Ultimate Physical Limits to Computation",
     author: [
@@ -3045,6 +3133,10 @@ export const references: CSLData[] = [
   // ── Jacobson 1995: Thermodynamics of spacetime ────────────────
   ref({
     id: "jacobson1995",
+    library: {
+      claimedPath: "library/jacobson1995.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Thermodynamics of Spacetime: The Einstein Equation of State",
     author: [
@@ -3280,6 +3372,10 @@ export const references: CSLData[] = [
   // ── Shishikura 1998: Dimension of Mandelbrot boundary ─────────
   ref({
     id: "shishikura1998",
+    library: {
+      claimedPath: "library/shishikura1998.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "The Hausdorff Dimension of the Boundary of the Mandelbrot Set and Julia Sets",
     author: [
@@ -3411,6 +3507,10 @@ export const references: CSLData[] = [
   // ── Kitaev 2006 ───────────────────────────────────────────────
   ref({
     id: "kitaev2006",
+    library: {
+      claimedPath: "library/kitaev2006.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Anyons in an exactly solved model and beyond",
     author: [{ family: "Kitaev", given: "Alexei" }],
@@ -3426,6 +3526,10 @@ export const references: CSLData[] = [
   // ── Nayak et al. 2008 ─────────────────────────────────────────
   ref({
     id: "nayak2008",
+    library: {
+      claimedPath: "library/nayak2008.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title:
       "Non-Abelian anyons and topological quantum computation",
@@ -3766,6 +3870,10 @@ export const references: CSLData[] = [
   // ── Frenkel 2007 ────────────────────────────────────────────────
   ref({
     id: "frenkel2007",
+    library: {
+      claimedPath: "library/frenkel2007.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Lectures on the Langlands Program and Conformal Field Theory",
     author: [{ family: "Frenkel", given: "Edward" }],
@@ -3779,6 +3887,10 @@ export const references: CSLData[] = [
   // ── Aganagic–Frenkel–Okounkov 2017 ─────────────────────────────
   ref({
     id: "aganagic2018",
+    library: {
+      claimedPath: "library/aganagic2018.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Quantum $q$-Langlands Correspondence",
     author: [
@@ -4228,6 +4340,10 @@ export const references: CSLData[] = [
   // ── Hu-Mathas 2012 (Graded induction for Specht modules) ─────
   ref({
     id: "hu-mathas2012graded",
+    library: {
+      claimedPath: "library/hu-mathas2012graded.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Graded induction for Specht modules",
     author: [
@@ -4429,6 +4545,10 @@ export const references: CSLData[] = [
   // ── Diaconis--Ram 2000 (random walks on Hecke algebras) ─────
   ref({
     id: "diaconis-ram2000",
+    library: {
+      claimedPath: "library/diaconis-ram2000.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques",
     author: [
@@ -4447,6 +4567,10 @@ export const references: CSLData[] = [
   // ── Bufetov 2020 (ASEP and Hecke algebras) ──────────────────
   ref({
     id: "bufetov2020",
+    library: {
+      claimedPath: "library/bufetov2020.pdf",
+      stage: "missing",
+    },
     type: "article",
     title: "Interacting particle systems and random walks on Hecke algebras",
     author: [
@@ -4588,6 +4712,10 @@ export const references: CSLData[] = [
   // ── Mostow 1968 (rigidity for hyperbolic manifolds) ───────────
   ref({
     id: "mostow1968",
+    library: {
+      claimedPath: "library/mostow1968.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title:
       "Quasi-conformal mappings in n-space and the rigidity of hyperbolic space forms",
@@ -4603,6 +4731,10 @@ export const references: CSLData[] = [
   // ── Gromov 1982 (Volume and bounded cohomology) ───────────────
   ref({
     id: "gromov1982",
+    library: {
+      claimedPath: "library/gromov1982.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Volume and bounded cohomology",
     author: [{ family: "Gromov", given: "Mikhail" }],
@@ -5876,6 +6008,10 @@ export const references: CSLData[] = [
   // ── Bilson-Thompson 2005 ──────────────────────────────────────
   ref({
     id: "bilsonthompson2005",
+    library: {
+      claimedPath: "library/bilsonthompson2005.pdf",
+      stage: "missing",
+    },
     type: "report",
     title: "A topological model of composite preons",
     author: [
@@ -5990,6 +6126,10 @@ export const references: CSLData[] = [
   // ── Klein 1888 (icosahedron / Bring's curve) ──────────────────
   ref({
     id: "klein1888",
+    library: {
+      claimedPath: "library/klein1888.pdf",
+      stage: "missing",
+    },
     type: "book",
     title:
       "Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade",
@@ -6221,6 +6361,10 @@ export const references: CSLData[] = [
   // ── Causal Fermion Systems (Finster et al.) ───────────────────
   ref({
     id: "finster2021",
+    library: {
+      claimedPath: "library/finster2021.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "The linear dynamics of wave functions in causal fermion systems",
     author: [
@@ -6238,6 +6382,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "finster2022",
+    library: {
+      claimedPath: "library/finster2022.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "A mechanism of baryogenesis for causal fermion systems",
     author: [
@@ -6256,6 +6404,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "finster2024",
+    library: {
+      claimedPath: "library/finster2024.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Causal fermion systems as an effective collapse theory",
     author: [
@@ -6274,6 +6426,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "dappiaggi2024",
+    library: {
+      claimedPath: "library/dappiaggi2024.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title:
       "Holographic mixing and Fock space dynamics of causal fermion systems",
@@ -6354,6 +6510,10 @@ export const references: CSLData[] = [
   // no cite-site key rewrites are needed.
   ref({
     id: "blitvic2012-clt",
+    library: {
+      claimedPath: "library/blitvic2012.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Two-Parameter Non-Commutative Central Limit Theorem",
     author: [
@@ -6387,6 +6547,10 @@ export const references: CSLData[] = [
   // ── Pham 1965 — generalised Picard-Lefschetz formula ──────────
   ref({
     id: "pham1965",
+    library: {
+      claimedPath: "library/pham1965.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Formules de Picard-Lefschetz généralisées et ramification des intégrales",
     author: [{ family: "Pham", given: "Frédéric" }],
@@ -6788,6 +6952,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "berarducci2018",
+    library: {
+      claimedPath: "library/berarducci-mantova-2018-surreal-derivations.pdf",
+      stage: "missing",
+    },
     type: "article-journal",
     title: "Surreal numbers, derivations and transseries",
     author: [
@@ -6837,6 +7005,10 @@ export const references: CSLData[] = [
 
   ref({
     id: "oeis-A006752",
+    library: {
+      claimedPath: "library/oeis-A006752.txt",
+      stage: "missing",
+    },
     type: "webpage",
     title: "Decimal expansion of Catalan's constant",
     author: [{ literal: "OEIS Foundation" }],

@@ -57,6 +57,7 @@ LEDGER = os.path.join(REPO, "content", "bib-qa-verifications.json")
 LIB = os.path.join(REPO, "library")
 
 FIELD = "library"
+MISSING = "\0missing:"   # sentinel prefix; never appears in a real doc-id
 
 
 def library_index() -> dict[str, dict]:
@@ -122,11 +123,18 @@ def ref_to_doc() -> dict[str, str]:
         m = re.match(r"library/([^/]+)/", path)
         if m:
             out[rid] = m.group(1)
+        elif path.startswith("library/") and not os.path.exists(os.path.join(REPO, path)):
+            # The ledger claims `kind: "upload"` for a file that is not in
+            # the repo and, per git history, never was. Record the claim as
+            # a `missing` stage rather than dropping the entry: silence here
+            # reads identically to "not ingested yet", and these are a
+            # different thing — a source we believed we held.
+            out[rid] = MISSING + path
     return out
 
 
 def render(info: dict, indent: str = "    ") -> str:
-    order = ["docId", "dir", "pdf", "stage", "pages", "sections", "arxiv"]
+    order = ["docId", "dir", "pdf", "claimedPath", "stage", "pages", "sections", "arxiv"]
     lines = [f"{indent}{FIELD}: {{"]
     for k in order:
         if k not in info:
@@ -147,7 +155,10 @@ def sync(text: str, mapping: dict[str, str], index: dict[str, dict]) -> tuple[st
         entry_indent = m.group(2)
         rid = m.group(3)
         doc_id = mapping.get(rid)
-        info = index.get(doc_id) if doc_id else None
+        if doc_id and doc_id.startswith(MISSING):
+            info = {"stage": "missing", "claimedPath": doc_id[len(MISSING):]}
+        else:
+            info = index.get(doc_id) if doc_id else None
 
         insert_at = m.end()
         out.append(text[pos:insert_at])
@@ -185,8 +196,10 @@ def main() -> int:
     new, added, updated = sync(text, mapping, index)
 
     joined = sum(1 for r in mapping if mapping[r] in index)
+    absent = sum(1 for r in mapping if mapping[r].startswith(MISSING))
     print(f"library documents      : {len(index)}")
     print(f"ledger→ref joins usable: {joined}")
+    print(f"claimed-but-absent files : {absent}")
     print(f"entries added / refreshed: {added} / {updated}")
 
     stages: dict[str, int] = {}
