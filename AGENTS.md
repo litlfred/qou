@@ -731,6 +731,42 @@ originating file itself) may you declare the item open. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
 
+### Grep the claim SHAPE, not only the topic (STRICT, 2026-08-15)
+
+The four paths above answer *"has anyone worked this topic?"*. They do
+**not** answer *"does the corpus actually assert the proposition I am
+about to reason from?"* — and that second question is where a whole
+class of errors lives. Before writing any equivalence, identification,
+or exclusion into a durable artifact, resolve the symbols to their Lean
+declarations and check the **arity**:
+
+1. **One proposition, or a family?** Read the declaration's type.
+   `kappa_vanishes : ℕ → Prop` is a *level-indexed family*; there is no
+   single truth value to be faithful to.
+2. **Pointwise, or the universal closure?** `∀ P, v ↔ Pred P` and
+   `v ↔ ∀ P, Pred P` are different claims, and the second is
+   **trivially inhabited**. Refuting the first says nothing about it.
+3. **Shared type, or shared instance?** A theorem fixing one `sys` and
+   one `P` couples two questions *within one instance*; it says nothing
+   about two legs instantiated as different values — and the other
+   instance may not even satisfy the hypothesis.
+4. **Set-level premise, truth-value conclusion?** "Undecidable", "not
+   cut out by an ideal", "cofinite locus" are facts about sets or loci,
+   logically independent of whether a scalar is equivalent to a single
+   proposition.
+
+History: four separate instances of this one conflation reached durable
+artifacts in a single session (2026-08-15) — a retracted "the corpus is
+inconsistent" claim, a "no scalar can be faithful to halting"
+over-claim, a "q-NS blow-up witness *is* a q-Collatz divergence
+witness" cross-leg identification, and a set-level-to-truth-value
+inference written into a content block *while the audit doc three files
+away named that exact fallacy*. Each survived a topic-grep. Recorded as
+the `da-arity-conflation` criterion in
+[`local/devils-advocate-watcher`](.claude/skills/local/devils-advocate-watcher.md),
+which carries the worked examples and the measured reason a machine
+checker cannot do this for you.
+
 **Scope note (2026-06-10):** this checklist gates *factual
 corpus-status claims*. Skeptical assessments — "this looks fitted",
 outside-view critique of a derivation, reception/publishability
