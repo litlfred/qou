@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-15T23:19:10.159504+00:00",
-  "commitSha": "5ef0f6269ba51e6ddad4aab0ada86bca4ed85b05",
+  "computedAt": "2026-08-15T23:45:27.457281+00:00",
+  "commitSha": "e696746eb44cde11c02ae2a45b78fb506d15d6d5",
   "assertions": [
     {
       "name": "compositions_failing_to_reduce_any_rank",
@@ -33,14 +33,20 @@
       "computed": "0",
       "expected": "0",
       "passed": true
+    },
+    {
+      "name": "corner_chains_differing_from_stabilised_shape",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 9817,
+  "durationMs": 9841,
   "computation": "hecke-gs-confluence-range",
   "scriptFile": "hecke_gs_confluence_range.py",
-  "scriptHash": "13e3fe45e095",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4123a3ae7bcb",
+  "scriptCommitSha": "871c16193b8158258eefb76e71d4e43fd34e3b97",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,7 +67,8 @@
     "deformation_symbol": "h = q - q^{-1}",
     "lean_module": "UGB.GrobnerShirshov.HeckeCompletion",
     "corner_formula_a_le_b": "2ab - a^2 + 5a + 1 steps, 2 quadratic",
-    "corner_formula_a_gt_b": "b^2 + 3b + 5 steps, 0 quadratic"
+    "corner_formula_a_gt_b": "b^2 + 3b + 5 steps, 0 quadratic",
+    "stabilisation_threshold": "a = b + 2"
   },
   "data": {
     "ranks": [
@@ -3786,10 +3793,133 @@
         "predicted_quadratic": 2,
         "reduces_to_zero": true
       }
+    ],
+    "stabilisation": [
+      {
+        "b": 2,
+        "a": 4,
+        "n": 8,
+        "i": 5,
+        "steps": 15,
+        "matches_reference": true
+      },
+      {
+        "b": 2,
+        "a": 5,
+        "n": 9,
+        "i": 6,
+        "steps": 15,
+        "matches_reference": true
+      },
+      {
+        "b": 2,
+        "a": 6,
+        "n": 10,
+        "i": 7,
+        "steps": 15,
+        "matches_reference": true
+      },
+      {
+        "b": 2,
+        "a": 7,
+        "n": 11,
+        "i": 8,
+        "steps": 15,
+        "matches_reference": true
+      },
+      {
+        "b": 2,
+        "a": 8,
+        "n": 12,
+        "i": 9,
+        "steps": 15,
+        "matches_reference": true
+      },
+      {
+        "b": 3,
+        "a": 5,
+        "n": 9,
+        "i": 6,
+        "steps": 23,
+        "matches_reference": true
+      },
+      {
+        "b": 3,
+        "a": 6,
+        "n": 10,
+        "i": 7,
+        "steps": 23,
+        "matches_reference": true
+      },
+      {
+        "b": 3,
+        "a": 7,
+        "n": 11,
+        "i": 8,
+        "steps": 23,
+        "matches_reference": true
+      },
+      {
+        "b": 3,
+        "a": 8,
+        "n": 12,
+        "i": 9,
+        "steps": 23,
+        "matches_reference": true
+      },
+      {
+        "b": 3,
+        "a": 9,
+        "n": 13,
+        "i": 10,
+        "steps": 23,
+        "matches_reference": true
+      },
+      {
+        "b": 4,
+        "a": 6,
+        "n": 10,
+        "i": 7,
+        "steps": 33,
+        "matches_reference": true
+      },
+      {
+        "b": 4,
+        "a": 7,
+        "n": 11,
+        "i": 8,
+        "steps": 33,
+        "matches_reference": true
+      },
+      {
+        "b": 4,
+        "a": 8,
+        "n": 12,
+        "i": 9,
+        "steps": 33,
+        "matches_reference": true
+      },
+      {
+        "b": 4,
+        "a": 9,
+        "n": 13,
+        "i": 10,
+        "steps": 33,
+        "matches_reference": true
+      },
+      {
+        "b": 4,
+        "a": 10,
+        "n": 14,
+        "i": 11,
+        "steps": 33,
+        "matches_reference": true
+      }
     ]
   },
   "caveats": [
     "Computational witness, not a proof. It establishes that the obligation set is discharge-able at every rank tested and measures the shape of the corner family; it proves nothing for n > 12, and the closed forms are fitted-and-checked, not derived.",
+    "The stabilisation check compares chains only up to a = b + 6 and only for b <= 4, and it compares the reduction the engine's strategy happens to produce, not every reduction that exists. A column could in principle destabilise beyond the range tested.",
     "The rule set, S-polynomial conventions and reduction strategy are imported unchanged from hecke_gs_confluence_n4.py; faithfulness to the Lean definitions rests on that script's docstring table, checked by inspection rather than mechanically."
   ]
 }
