@@ -1432,6 +1432,21 @@
         "reviewed_at": "2026-08-15T10:31:01.175Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "621ded3485d9",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:09.469Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1451,6 +1466,21 @@
         "reviewed_at": "2026-08-15T10:31:01.175Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "621ded3485d9",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:09.515Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-em-dash": [
@@ -1470,6 +1500,21 @@
         "reviewed_at": "2026-08-15T10:31:01.175Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 30 words)"
+      },
+      {
+        "field_hash": {
+          "md": "621ded3485d9",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:09.558Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-triples": [
@@ -1489,6 +1534,21 @@
         "reviewed_at": "2026-08-15T10:31:01.175Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 30 words)"
+      },
+      {
+        "field_hash": {
+          "md": "621ded3485d9",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:09.604Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1508,6 +1568,21 @@
         "reviewed_at": "2026-08-15T10:31:01.175Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "621ded3485d9",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:09.647Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-meta-commentary": [
@@ -1527,6 +1602,21 @@
         "reviewed_at": "2026-08-15T10:31:01.175Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "621ded3485d9",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:09.693Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1547,6 +1637,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "block closes by restating its thesis: \"This establishes the required consistency boundaries.\""
+      },
+      {
+        "field_hash": {
+          "md": "621ded3485d9",
+          "ts": "5fd0858008eb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:09.759Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "severity": "major",
+        "evidence": "Circular closer: sentence 1 says extensions 'require consistency boundaries'; closer said 'This establishes the required consistency boundaries.'",
+        "notes": "fixed: deleted closer 'This establishes the required consistency boundaries.' -> (removed)"
       }
     ],
     "trap-performed-warmth": [
@@ -1566,6 +1673,21 @@
         "reviewed_at": "2026-08-15T10:31:01.175Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "621ded3485d9",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:09.807Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-superlative": [
@@ -1585,6 +1707,21 @@
         "reviewed_at": "2026-08-15T10:31:01.175Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "621ded3485d9",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:09.848Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full-block read; no instance of this construction found."
       }
     ],
     "trap-nonspeakable": [
@@ -1604,8 +1741,25 @@
         "reviewed_at": "2026-08-15T10:31:01.175Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "621ded3485d9",
+          "ts": "5fd0858008eb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:xmaj",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:09.881Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "severity": "minor",
+        "evidence": "'Resolving the boundary scaffolding for the Faddeev-Kashaev relation anchors the pentagon formulation formally' — vague noun-chain; the 'novelty' remark never names a novelty.",
+        "notes": "structural, not edited. proposed: rewrite to state concretely which boundary/consistency conditions the Faddeev-Kashaev relation requires over the non-standard domain and what is mathematically new; needs author content."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.175Z"
+  "updated_at": "2026-08-15T11:10:09.881Z"
 }
