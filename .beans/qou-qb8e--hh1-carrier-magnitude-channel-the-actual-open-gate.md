@@ -224,3 +224,62 @@ STILL OWED (3rd item), now enumerated but NOT executed:
      input (the exact ladder) is live. NO witness file was edited; all 29 still
      report allPassed:true, which is exactly why a bulk re-run would not have
      caught this.
+
+---
+
+# ITEM 3 EXECUTED 2026-08-15 — registry section 9d
+
+The owed re-tier is landed: `ck-dk-canonical-registry.md` section **9d**. Group
+B is re-tiered scope-(a) NEGATIVE -> scope-(b) CLOSED/ILL-POSED, nothing
+deleted, with the reusable falsifier restated (any Gevrey / instanton / Stokes
+claim on this ladder must FIRST exhibit a singularity of
+`log R(q) - log R(1/q)` strictly inside `|u~| < rho`).
+
+## Correction to the enumeration above: B is 12, D is 3
+
+The 2026-08-09 note put `qbeta-odd-channel-stokes-borel` in group D ("different
+object ... not `D(u~)`"). **Wrong, and checkable in one line** -- the probe
+imports the D-ladder producer and calls it:
+
+    import qbeta_dladder_generating_function_structure_probe as P   # line 87
+    dk, KMAX, valid_top, odd_ok = P.build_d_ladder()                # line 136
+
+Same `d_k`, so the radius result DOES transfer; it belongs in B. Verified by
+reference count: the three genuine group-D probes (deformed-meridian,
+deformed-rungs, borel-pade-resummation) have **0** refs to `build_d_ladder`;
+this one has **4**.
+
+That also settles whether its re-scope in PR #5050 over-reached: it did not.
+Its own data corroborates convergence (Gevrey order drifts DOWN 0.08->0.05;
+Borel-Leroy pole 0.147 at s=0.02, ~3% from rho, trending toward it as s->0).
+Scope-(a): consistency with the radius, NOT a derivation of rho. Its method
+negative -- plain-Borel does not transfer, G3 needs the true q-Borel chain --
+survives intact.
+
+Sharpest of the twelve: `qbeta-dladder-fibre-branch-stokes-ambiguity`, whose
+`r* = 0.147` was recorded as an ambiguity scale and is in fact a ratio estimate
+of `rho = 0.1428`. That arm was measuring the radius while reporting a Stokes
+datum.
+
+## THIS BEAN STAYS OPEN — the gate is untouched
+
+Item 3 was the owed bookkeeping, not the gate. The gate is unchanged and is
+still the one both front-state corrections converged on:
+
+  **the map from a bar-odd, anchor-BLIND fibre-level object to an
+  anchor-DEPENDENT number.**
+
+Two independent objects now fail that same test, which is why it is the gate
+and not a coincidence:
+
+  Phi_b volume deficit   blind to 2.2e-7   must supply S_leak (swings 4.075x)
+  h*D(u~) carrier        blind to 1.23e-9  must supply S      (swings)
+
+The first is measured in PR #5022 (registry section 9b); the second is this
+bean's own recorded finding. `qou-qb8g`'s third correction (PR #5061) restores
+"c_3's bar-parity is undetermined" on the same evidence, and names the live
+route: parity read off the FIBRE object, not inferred from two archimedean
+anchors that cannot see it. **qb8e and qb8g close together or not at all.**
+
+Still in force, unchanged: do NOT open another Borel/Leroy/Stokes/Ecalle probe
+on this ladder; do NOT fit a normalisation to land on -2.0202.
