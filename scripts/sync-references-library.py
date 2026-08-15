@@ -133,6 +133,25 @@ def ref_to_doc() -> dict[str, str]:
     return out
 
 
+def notes_to_doc(text: str) -> dict[str, str]:
+    """references.ts id -> doc-id, harvested from `note:` prose.
+
+    A second join source, and not a redundant one. Earlier agents recorded
+    "PDF library/<doc-id>/<file>" in an entry's note when they identified a
+    source by hand, without ever adding a ledger row. Those entries look
+    uncited to a ledger-only join even though the identification was already
+    done — 12 of them, measured. The ledger still wins where both exist.
+    """
+    out: dict[str, str] = {}
+    for m in re.finditer(r'\n\s*id: "([^"]+)",(.*?)\n  \}\)', text, re.S):
+        rid, body = m.group(1), m.group(2)
+        for d in re.findall(r"library/([A-Za-z0-9._-]+)/", body):
+            if os.path.isdir(os.path.join(LIB, d)):
+                out.setdefault(rid, d)
+                break
+    return out
+
+
 def render(info: dict, indent: str = "    ") -> str:
     order = ["docId", "dir", "pdf", "claimedPath", "stage", "pages", "sections", "arxiv"]
     lines = [f"{indent}{FIELD}: {{"]
@@ -191,14 +210,15 @@ def main() -> int:
     args = ap.parse_args()
 
     index = library_index()
-    mapping = ref_to_doc()
     text = open(REFS, encoding="utf-8").read()
+    mapping = notes_to_doc(text)
+    mapping.update(ref_to_doc())        # ledger is authoritative where both exist
     new, added, updated = sync(text, mapping, index)
 
     joined = sum(1 for r in mapping if mapping[r] in index)
     absent = sum(1 for r in mapping if mapping[r].startswith(MISSING))
     print(f"library documents      : {len(index)}")
-    print(f"ledger→ref joins usable: {joined}")
+    print(f"joins usable (ledger+note): {joined}")
     print(f"claimed-but-absent files : {absent}")
     print(f"entries added / refreshed: {added} / {updated}")
 

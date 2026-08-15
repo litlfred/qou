@@ -173,6 +173,15 @@ export const references: CSLData[] = [
   // ── Pandey–Wong 2023 — 1-loop = torsion for fundamental shadow links (covers the Borromean rings) ──
   ref({
     id: "pandey-wong-2023",
+    library: {
+      docId: "arxiv-2411.03801v2",
+      dir: "library/arxiv-2411.03801v2",
+      pdf: "library/arxiv-2411.03801v2/2411.03801v2.pdf",
+      stage: "candidates",
+      pages: 24,
+      sections: 14,
+      arxiv: "2411.03801v2",
+    },
     type: "article",
     title: "Geometry of fundamental shadow link complements and applications to the 1-loop conjecture",
     author: [
@@ -258,6 +267,15 @@ export const references: CSLData[] = [
   // ── DGLZ 2009 — the one-loop term IS the Ray-Singer torsion (physics side) ──
   ref({
     id: "dimofte-gukov-lenells-zagier-2009",
+    library: {
+      docId: "arxiv-0903.2472v1",
+      dir: "library/arxiv-0903.2472v1",
+      pdf: "library/arxiv-0903.2472v1/0903.2472v1.pdf",
+      stage: "candidates",
+      pages: 61,
+      sections: 91,
+      arxiv: "0903.2472v1",
+    },
     type: "article-journal",
     title:
       "Exact results for perturbative Chern-Simons theory with complex gauge group",
@@ -2141,6 +2159,15 @@ export const references: CSLData[] = [
   // entry; bib metadata TODO until verified.
   ref({
     id: "pawlowski-leitner-rep",
+    library: {
+      docId: "arxiv-math-0409565v2",
+      dir: "library/arxiv-math-0409565v2",
+      pdf: "library/arxiv-math-0409565v2/0409565v2.pdf",
+      stage: "candidates",
+      pages: 10,
+      sections: 1,
+      arxiv: "math/0409565v2",
+    },
     type: "manuscript",
     title: "[DEPRECATED agent-mistake duplicate — the single Pawloski–Leitner paper is leitnerpawloski2004 = arXiv:math/0409565; all citation sites rewired there]",
     author: [
@@ -2192,6 +2219,14 @@ export const references: CSLData[] = [
   // ── Jones 1985 ────────────────────────────────────────────────
   ref({
     id: "jones1985",
+    library: {
+      docId: "s0273-0979-1985-15304-2",
+      dir: "library/s0273-0979-1985-15304-2",
+      pdf: "library/s0273-0979-1985-15304-2/S0273-0979-1985-15304-2.pdf",
+      stage: "candidates",
+      pages: 9,
+      sections: 5,
+    },
     type: "article-journal",
     title: "A polynomial invariant for knots via von Neumann algebras",
     author: [
@@ -8421,6 +8456,14 @@ export const references: CSLData[] = [
   // ── P¹∖{0,1,∞} motivic side + q-deformed polylogs (uploaded 2026-08-08, commit 9a6d8f4b) ──
   ref({
     id: "brown-motivic-p1-three-points",
+    library: {
+      docId: "motivicperiodsandp1minus3pointsv3",
+      dir: "library/motivicperiodsandp1minus3pointsv3",
+      pdf: "library/motivicperiodsandp1minus3pointsv3/MotivicPeriodsandP1minus3pointsv3.pdf",
+      stage: "candidates",
+      pages: 25,
+      sections: 73,
+    },
     type: "article",
     title: "Motivic periods and P^1 minus 3 points",
     author: [{ family: "Brown", given: "Francis" }],
@@ -8430,6 +8473,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "deligne-goncharov2005",
+    library: {
+      docId: "arxiv-math-0302267v2",
+      dir: "library/arxiv-math-0302267v2",
+      pdf: "library/arxiv-math-0302267v2/0302267v2.pdf",
+      stage: "candidates",
+      pages: 84,
+      sections: 80,
+      arxiv: "math/0302267v2",
+    },
     type: "article-journal",
     title: "Groupes fondamentaux motiviques de Tate mixte",
     author: [
@@ -8442,6 +8494,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "schlesinger2001",
+    library: {
+      docId: "arxiv-math-0111022v1",
+      dir: "library/arxiv-math-0111022v1",
+      pdf: "library/arxiv-math-0111022v1/0111022v1.pdf",
+      stage: "candidates",
+      pages: 11,
+      sections: 3,
+      arxiv: "math/0111022v1",
+    },
     type: "article",
     title: "Some remarks on q-deformed multiple polylogarithms",
     author: [{ family: "Schlesinger", given: "Karl-Georg" }],
@@ -8451,6 +8512,15 @@ export const references: CSLData[] = [
 
   ref({
     id: "zhao2008-mpl-roots-of-unity",
+    library: {
+      docId: "arxiv-0810.1064v1",
+      dir: "library/arxiv-0810.1064v1",
+      pdf: "library/arxiv-0810.1064v1/0810.1064v1.pdf",
+      stage: "candidates",
+      pages: 9,
+      sections: 2,
+      arxiv: "0810.1064v1",
+    },
     type: "article",
     title: "Multiple polylogarithm values at roots of unity",
     author: [{ family: "Zhao", given: "Jianqiang" }],
@@ -8673,6 +8743,15 @@ export const references: CSLData[] = [
   // ── Lawrence & Zagier 1999 ────────────────────────────────────
   ref({
     id: "lawrence-zagier-1999",
+    library: {
+      docId: "arxiv-math-ph-0405028v2",
+      dir: "library/arxiv-math-ph-0405028v2",
+      pdf: "library/arxiv-math-ph-0405028v2/0405028v2.pdf",
+      stage: "candidates",
+      pages: 26,
+      sections: 2,
+      arxiv: "math-ph/0405028v2",
+    },
     type: "article-journal",
     title:
       "Modular forms and quantum invariants of 3-manifolds",
