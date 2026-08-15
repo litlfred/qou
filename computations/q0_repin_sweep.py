@@ -48,6 +48,7 @@ import hashlib
 import json
 import os
 import re
+import signal
 import subprocess
 import sys
 import time
@@ -56,6 +57,36 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 PROGRESS = HERE / "q0-repin-sweep-progress.json"
 NUM = re.compile(r"^-?\d*\.?\d+(?:[eE][-+]?\d+)?$")
+
+# Live producer subprocesses, so a SIGTERM/SIGINT to this driver takes them
+# with it instead of orphaning them to init. See the comment at the Popen call.
+_CHILDREN: list = []
+
+
+def _kill_group(proc) -> None:
+    """SIGKILL a producer's whole process group; tolerate an already-dead one."""
+    if proc is None:
+        return
+    try:
+        os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
+    except (ProcessLookupError, PermissionError, OSError):
+        try:
+            proc.kill()
+        except Exception:  # noqa: BLE001
+            pass
+
+
+def _on_signal(signum, _frame):  # noqa: ANN001
+    for p in list(_CHILDREN):
+        _kill_group(p)
+    raise SystemExit(128 + signum)
+
+
+for _s in (signal.SIGTERM, signal.SIGINT, signal.SIGHUP):
+    try:
+        signal.signal(_s, _on_signal)
+    except (ValueError, OSError):
+        pass
 
 
 def former_ideal_muon() -> list[str]:
@@ -265,13 +296,34 @@ def main() -> int:
                     before[n] = w.read_text(encoding="utf-8")
                     break
         t0 = time.monotonic()
+        # Run each producer in its OWN process group, and kill the group — not
+        # just the immediate child — on timeout or on our own termination.
+        #
+        # Measured: `pkill`-ing this driver (which the container restarts force
+        # several times a run) left its producer alive and REPARENTED TO INIT.
+        # The relaunched sweep then started the same script again, so two
+        # processes wrote one witness concurrently — observed with
+        # block_swap_binding.py running twice, 6 min and 3 min in. A
+        # double-write is precisely the silent corruption this whole re-pin
+        # exists to remove, so the sweep must not be a source of it.
+        proc = None
         try:
-            r = subprocess.run([sys.executable, "-u", p.name],
-                               cwd=p.parent, env=env, capture_output=True,
-                               text=True, timeout=args.timeout)
-            rc, err = r.returncode, (r.stderr or "").strip().splitlines()[-1:] or [""]
+            proc = subprocess.Popen([sys.executable, "-u", p.name],
+                                    cwd=p.parent, env=env,
+                                    stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE, text=True,
+                                    start_new_session=True)
+            _CHILDREN.append(proc)
+            _out, _errtxt = proc.communicate(timeout=args.timeout)
+            rc = proc.returncode
+            err = (_errtxt or "").strip().splitlines()[-1:] or [""]
         except subprocess.TimeoutExpired:
+            _kill_group(proc)
+            proc.communicate()
             rc, err = -9, [f"TIMEOUT >{args.timeout}s"]
+        finally:
+            if proc in _CHILDREN:
+                _CHILDREN.remove(proc)
         dt = time.monotonic() - t0
 
         mx = md = 0.0
