@@ -1,194 +1,160 @@
-import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Logic.Basic
 
 /-!
-# QOU.Information.ObstructionVerdictCap — one scalar cannot carry three verdicts
+# QOU.Information.ObstructionVerdictCap — the single-verdict reading, and its counter-model
 
 **Companion to** [`ObstructionGenericity`](ObstructionGenericity.lean) and content
 block [`thm:qou-obstruction-reduction`](../../../quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md).
 
-## The setting
+## The question this answers
 
-`thm:qou-obstruction-reduction` computes the classical-limit obstruction space:
+`thm:qou-obstruction-reduction` computes the classical-limit obstruction space as
+**one**-dimensional, `HH²(𝒰_q, Ad) ≅ k`, with class `χ(A) = -6 ≠ 0`; and the
+corpus attaches several Millennium reformulations to *restrictions* of that one
+class. It is tempting to read this as: one scalar, therefore one verdict,
+therefore the legs stand or fall together. Call that the **single-verdict
+reading**.
 
-```
-dim_k Obs(𝐂, q → 1) = dim_k HH²(𝒰_q, Ad) = 1,      [φ₁] ↦ χ(A)
-```
+This file makes the reading precise, shows what it would cost, and then exhibits
+the corpus's own **counter-model** to it. The conclusion is the opposite of the
+tempting one: the restrictions are *independent*, the unification is weaker than
+it reads, and no leg constrains another through the shared class alone.
 
-It is **one**-dimensional, and its class is `χ(A) = -6 ≠ 0`. The corpus then
-attaches three Millennium reformulations to restrictions of that single class,
-**with two different polarities**:
+## Why the reading is not the corpus's
 
-| Leg | Assertion in the corpus | Polarity |
-|---|---|---|
-| q-Collatz | conjecture ⟺ `κ_C = 0` | **vanishing** |
-| q-Navier–Stokes | regularity ⟺ `NS(A) = 0` | **vanishing** |
-| P-vs-NP | `P ≠ NP` ⟺ `res_ℛ(χ(A)) ≠ 0` | **non-vanishing** |
+Three facts, each checkable in the corpus, defeat any attempt to model "the
+obstruction vanishes" as a single `Prop`:
 
-and `conj:qou-p-neq-np` states that the proportionality of those evaluations is
-itself part of the conjecture, not a consequence of it.
+1. **Vanishing is level-indexed, not a proposition.**
+   `qou-obstruction-reduction.md` part (c) reads *"the obstruction vanishes at
+   Kummer level `n` iff `n ∣ χ(A)`"*, carried in Lean as
+   `kappa_vanishes : ℕ → Prop` with `kappa_vanishes_iff_chi` a **family** over
+   `n` (`QOU.AlgebraicSubstrate.qou_obstruction_reduction`). There is no single
+   Prop to be faithful to.
 
-## What this file proves (all sorry-free, all trivial-by-design)
+2. **The evaluation maps are explicitly different.** `conj:qou-p-neq-np` states
+   the shared-class corollary as *"their evaluation maps **differing** but the
+   underlying class remaining identical"*, and scopes proportionality to
+   *"RH, NS, and BSD"* plus P-vs-NP — **q-Collatz is not among them.**
 
-The theorems here are deliberately short: the content is not their proofs but
-the fact that the corpus's own stated hypotheses **already** entail them.
+3. **The restrictions land in three different groups**: `χ(A) ∈ HH²(𝒰_q, Ad)`,
+   `κ_C ∈ H²(𝒮_{C_q}, 𝔾_m)`, `NS(A) ∈ H³_loc(A, Θ)`. Classes in different
+   groups may vanish independently by construction.
 
-* `verdict_cap` — two predicates faithful to the *same* scalar verdict are
-  equivalent. One scalar cannot separate two questions.
-* `opposite_polarity` — a predicate faithful to *vanishing* and a predicate
-  faithful to *non-vanishing* of the same scalar are **negations** of one
-  another.
-* `collatz_iff_not_pnp_of_proportional` — assembling the two: under the
-  proportionality hypothesis, q-Collatz holds **iff** `P ≠ NP` fails.
-* `pnp_and_collatz_of_nonzero` — evaluating at the derived value `χ(A) ≠ 0`:
-  the package asserts `P ≠ NP` **and** the failure of both vanishing-polarity
-  legs, i.e. it predicts **q-Collatz is false** and **q-NS regularity is false**.
+## The counter-model (the punchline)
 
-The q-NS half of that last conclusion matches the corpus
-(`thm:ns-singularity-descartes` records `NS(A) = e(ξ)|_Σ ≠ 0`, QOU-internally
-singular). The q-Collatz half **contradicts** the corpus, which conjectures
-q-Collatz true and argues for it via the surreal squeeze. So the three
-faithfulness claims and the proportionality claim are **not jointly tenable**
-with the corpus's own stated beliefs: at least one must be given up.
+The corpus proves **both** of the following at `χ(A) = -6`, with no
+inconsistency:
 
-## Scope (per AGENTS.md "Before declaring refuted")
+* `kappa_vanishes 2` is **true** — since `2 ∣ -6`, the q-Collatz even-branch
+  `[2]_q` Kummer divisor is removable
+  (`QOU.AlgebraicSubstrate.qcollatz_kummer_removable_of_chi_neg_six`, proved);
+* `res_ℛ(χ(A)) ≠ 0` — because `q₀` is strictly non-torsion, **no** finite Kummer
+  level applies (`QouPNeqNp.chiResidual_ne_zero`).
 
-This is a **scope-(a)** result about a *package of stated hypotheses*, not a
-scope-(b) structural exclusion of any ingredient. It refutes no obstruction
-class and no conjecture. What it shows is that the four claims — three
-faithfulness equivalences plus proportionality — cannot all hold alongside the
-corpus's stated expectation that q-Collatz is true. Dropping any one of them
-restores consistency; the natural casualty is **proportionality**, which
-`conj:qou-p-neq-np` already labels conjectural.
+A vanishing verdict on one leg and a non-vanishing verdict on another, from the
+same class, simultaneously. That pair **is** a counter-model to the
+single-verdict hypothesis: `single_verdict_refuted_by_counter_model` below turns
+it into a refutation. So the collision results in this file are conditional on a
+hypothesis the corpus itself falsifies — which is exactly why the "one scalar,
+three problems" intuition must not be used to transfer results between legs.
 
-Nothing here is instantiated: every hypothesis is a named argument, never an
-`axiom` or an `instance`. `P ≠ NP`, q-Collatz and q-NS regularity appear only as
-opaque `Prop`s, exactly as they do in `QouPNeqNp`.
+## Correction record (2026-08-15)
+
+An earlier revision of this file asserted the opposite: that the three
+faithfulness claims plus proportionality were "not jointly tenable" and that the
+package "predicts q-Collatz is false, contradicting `conj:q-collatz`". **That was
+wrong**, for the three reasons above — it collapsed a level-indexed family to one
+`Prop`, and applied a proportionality claim to a leg that claim excludes. The
+error was caught by adversarial review before merge. The present file keeps the
+formal skeleton (which was sound) and replaces the interpretation with the
+counter-model. Recorded per AGENTS.md §"Report honest negatives".
+
+## Scope
+
+Every hypothesis is a named argument — no `axiom`, no `instance`, nothing
+instantiated. `Collatz`, `NSRegular`, `PNeqNP` are opaque `Prop`s throughout,
+exactly as in `QouPNeqNp`. Nothing here proves or refutes any conjecture; the
+only thing refuted is the single-verdict *reading*, and it is refuted by corpus
+facts supplied as explicit hypotheses.
 -/
 
 namespace QOU.Information
 
-/-! ### The cap -/
+/-! ### What one verdict would buy -/
 
-/-- **Verdict cap.** If a single verdict `v` (e.g. "the obstruction is non-zero
-    at `q₀`") is faithful to two predicates, those predicates are equivalent. A
-    one-dimensional obstruction space supplies exactly one such verdict, so it
-    cannot answer two independent questions differently. -/
+/-- **Verdict cap.** If one verdict `v` is faithful to two predicates, those
+    predicates are equivalent. This is the whole content of "one scalar cannot
+    answer two questions differently" — and it is `Iff` algebra, which is the
+    point: the mathematics is trivial, so all the weight sits on whether the
+    hypotheses hold. Per the counter-model below, they do not. -/
 theorem verdict_cap {v A B : Prop} (hA : v ↔ A) (hB : v ↔ B) : A ↔ B :=
   hA.symm.trans hB
 
-/-- **Opposite polarity.** A predicate faithful to the *vanishing* of a verdict
-    and a predicate faithful to its *non-vanishing* are negations of each other.
-    This is the formal content of the corpus attaching `κ_C = 0 ⟺ Collatz` and
-    `res ≠ 0 ⟺ P ≠ NP` to restrictions of one class. -/
+/-- **Opposite polarity.** A predicate faithful to a verdict and a predicate
+    faithful to its negation are negations of one another. -/
 theorem opposite_polarity {z A B : Prop} (hA : z ↔ A) (hB : ¬ z ↔ B) : A ↔ ¬ B := by
   constructor
   · intro ha hb; exact (hB.mpr hb) (hA.mpr ha)
   · intro hnb; exact hA.mp (Classical.byContradiction fun hz => hnb (hB.mp hz))
 
-/-! ### Applied to the three legs
+/-! ### The single-verdict hypothesis, named rather than assumed
 
-`Vanishes` is "the (proportional) obstruction restriction vanishes at `q₀`".
-`Collatz`, `NSRegular`, `PNeqNP` are opaque propositions — the QOU-internal
-conjectures. `hColl`, `hNS`, `hPNP` are the corpus's three faithfulness claims,
-all open; each is a hypothesis here, never assumed globally. -/
+The three restrictions get **three distinct** propositions, as the corpus has
+them. `SingleVerdict` is the extra assumption that collapses them — stated
+explicitly so it can be pointed at, and, below, falsified. -/
 
-variable {Vanishes Collatz NSRegular PNeqNP : Prop}
+variable {VanC VanNS VanR Collatz NSRegular PNeqNP : Prop}
 
-/-- **q-Collatz and `P ≠ NP` are negations, under proportionality.** Given the
-    corpus's own faithfulness claims at their stated polarities, the two
-    conjectures cannot both be true. -/
-theorem collatz_iff_not_pnp_of_proportional
-    (hColl : Vanishes ↔ Collatz) (hPNP : ¬ Vanishes ↔ PNeqNP) :
-    Collatz ↔ ¬ PNeqNP :=
-  opposite_polarity hColl hPNP
+/-- **The single-verdict hypothesis.** The Collatz, Navier–Stokes and
+    resolution-tree restrictions of `κ₀` agree: the first two vanish together,
+    and the third's vanishing is the same event. This is what "one class, one
+    verdict" would require. It is **not** a corpus claim. -/
+def SingleVerdict (VanC VanNS VanR : Prop) : Prop :=
+  (VanC ↔ VanNS) ∧ (VanC ↔ VanR)
 
-/-- **q-NS regularity and `P ≠ NP` are negations too.** Same argument on the
-    other vanishing-polarity leg. -/
-theorem nsRegular_iff_not_pnp_of_proportional
-    (hNS : Vanishes ↔ NSRegular) (hPNP : ¬ Vanishes ↔ PNeqNP) :
-    NSRegular ↔ ¬ PNeqNP :=
-  opposite_polarity hNS hPNP
-
-/-- **q-Collatz ⟺ q-NS regularity**, under proportionality — both sit on the
-    vanishing side, so the verdict cap identifies them. Two questions the corpus
-    treats as independent open problems collapse to one. -/
-theorem collatz_iff_nsRegular_of_proportional
-    (hColl : Vanishes ↔ Collatz) (hNS : Vanishes ↔ NSRegular) :
+/-- **Under the single-verdict hypothesis, q-Collatz and q-NS regularity
+    collide.** Both legs sit on the vanishing side, so one verdict identifies
+    them: two problems the corpus treats as independent would become one. -/
+theorem collatz_iff_nsRegular_of_single
+    (hsv : SingleVerdict VanC VanNS VanR)
+    (hColl : VanC ↔ Collatz) (hNS : VanNS ↔ NSRegular) :
     Collatz ↔ NSRegular :=
-  verdict_cap hColl hNS
+  verdict_cap hColl (hsv.1.trans hNS)
 
-/-- **Evaluating at the derived non-zero class.** `χ(A) = -6 ≠ 0` is derived from
-    the axioms (observability kills `HH⁰`; Frobenius–Hopf duality gives
-    `HH² ≅ (HH¹)^∨ ≅ k`; Riemann–Roch on Bring's surface pins the value), and
-    `q₀` is strictly non-torsion so no finite Kummer level applies. Feeding
-    `¬ Vanishes` through the three faithfulness claims, the package asserts
-    `P ≠ NP` **and** the failure of q-Collatz **and** the failure of q-NS
-    regularity.
+/-- **Under the single-verdict hypothesis, q-Collatz and `P ≠ NP` become
+    negations.** The Collatz leg is faithful to *vanishing*, the P-vs-NP leg to
+    *non-vanishing*; one verdict makes the two conjectures incompatible. That
+    this conclusion is absurd is a mark against the hypothesis, not against
+    either conjecture. -/
+theorem collatz_iff_not_pnp_of_single
+    (hsv : SingleVerdict VanC VanNS VanR)
+    (hColl : VanC ↔ Collatz) (hPNP : ¬ VanR ↔ PNeqNP) :
+    Collatz ↔ ¬ PNeqNP :=
+  opposite_polarity (hsv.2.symm.trans hColl) hPNP
 
-    The q-NS conclusion is what `thm:ns-singularity-descartes` already records.
-    The q-Collatz conclusion contradicts `conj:q-collatz`. -/
-theorem pnp_and_collatz_of_nonzero
-    (hnonzero : ¬ Vanishes)
-    (hColl : Vanishes ↔ Collatz) (hNS : Vanishes ↔ NSRegular)
-    (hPNP : ¬ Vanishes ↔ PNeqNP) :
-    PNeqNP ∧ ¬ Collatz ∧ ¬ NSRegular :=
-  ⟨hPNP.mp hnonzero, fun hc => hnonzero (hColl.mpr hc), fun hr => hnonzero (hNS.mpr hr)⟩
+/-! ### The counter-model: the corpus falsifies the hypothesis -/
 
-/-- **The joint package is inconsistent with believing q-Collatz.** Stated as the
-    explicit contradiction: the four claims plus `Collatz` are unsatisfiable.
-    This is the file's punchline — the reader must give up one of the four. -/
-theorem not_all_of_collatz
-    (hnonzero : ¬ Vanishes) (hColl : Vanishes ↔ Collatz) (hc : Collatz) : False :=
-  hnonzero (hColl.mpr hc)
+/-- **The single-verdict hypothesis is refuted by the corpus's own arithmetic.**
+    Feed it the two facts the corpus proves at `χ(A) = -6` — the Collatz-side
+    level-2 restriction **vanishes** (`2 ∣ -6`, so the `[2]_q` divisor is
+    removable), while the resolution-tree restriction does **not** (`q₀` strictly
+    non-torsion, so no finite Kummer level applies) — and it is inconsistent.
 
-/-! ### Sharpening: the class is a CONSTANT, so its verdict is `q₀`-independent
+    Hence no collision result above applies to the corpus, and the shared class
+    transfers nothing between legs. -/
+theorem single_verdict_refuted_by_counter_model
+    (hCvanishes : VanC) (hRnonzero : ¬ VanR) :
+    ¬ SingleVerdict VanC VanNS VanR :=
+  fun hsv => hRnonzero (hsv.2.mp hCvanishes)
 
-`ObstructionGenericity` shows a nonzero *polynomial* obstruction has cofinite
-non-vanishing locus — generic, hence cheap. The derived class is stronger than
-that: `χ(A) = -6` is an **integer**, a degree-0 polynomial, whose vanishing locus
-is not merely finite but **empty**. So `res(χ(A)) ≠ 0 at q₀` holds at *every*
-parameter value — including the Jaeger–Vertigan–Welsh classically-tractable roots
-of unity of order `n ∣ 6`, where the Jones evaluation is poly-time.
-
-That is a genuine incompatibility rather than a weak bound. The corpus asserts
-both:
-
-1. `res_ℛ(χ(A)) ≠ 0 at q₀ ⟺ P ≠ NP` (`conj:qou-p-neq-np`), and
-2. that the complexity verdict **depends on `q₀`** — the `𝔾_m`-torsion
-   stratification, poly-time exactly at `n ∣ 6` (`qou-p-neq-np.md`,
-   `skein-resolution-obstruction.md`).
-
-A `q₀`-independent left-hand side cannot be equivalent to a `q₀`-dependent
-right-hand side. At most one of (1), (2) can hold. -/
-
-/-- **A nonzero constant never vanishes.** The degree-0 case of
-    `obstruction_vanishing_locus_finite`: the vanishing locus is empty, not
-    merely finite. -/
-theorem constant_obstruction_nonvanishing {R : Type*} [CommRing R]
-    {c : R} (hc : c ≠ 0) (q : R) : (Polynomial.C c).eval q ≠ 0 := by
-  simpa using hc
-
-/-- **A constant obstruction gives a `q`-independent verdict.** Its non-vanishing
-    is the *same* proposition at every parameter value, so it cannot distinguish
-    `q₀` from any other point — in particular not from the classically-tractable
-    torsion points. -/
-theorem constant_obstruction_verdict_indep {R : Type*} [CommRing R]
-    {c : R} (hc : c ≠ 0) (q q' : R) :
-    ((Polynomial.C c).eval q ≠ 0) ↔ ((Polynomial.C c).eval q' ≠ 0) :=
-  iff_of_true (constant_obstruction_nonvanishing hc q)
-    (constant_obstruction_nonvanishing hc q')
-
-/-- **The incompatibility, assembled.** If a constant obstruction's non-vanishing
-    is faithful to a predicate `Sep : R → Prop` (the complexity verdict as a
-    function of the substrate parameter), then `Sep` is constant — it takes the
-    same value at the substrate point and at every torsion point. Any claim that
-    `Sep` is `q`-*dependent* is then false. -/
-theorem sep_const_of_constant_obstruction_faithful {R : Type*} [CommRing R]
-    {c : R} (hc : c ≠ 0) {Sep : R → Prop}
-    (hfaithful : ∀ q, ((Polynomial.C c).eval q ≠ 0) ↔ Sep q) (q q' : R) :
-    Sep q ↔ Sep q' :=
-  (hfaithful q).symm.trans
-    ((constant_obstruction_verdict_indep hc q q').trans (hfaithful q'))
+/-- **Restated as the corpus's disposition.** Given the same two facts, the legs
+    are *not* forced together: the collision hypothesis fails, so `Collatz` and
+    `PNeqNP` may both hold. This is the honest reading of "one class, several
+    restrictions" — the class is shared, the verdicts are not. -/
+theorem legs_independent_of_counter_model
+    (hCvanishes : VanC) (hRnonzero : ¬ VanR) :
+    ¬ SingleVerdict VanC VanNS VanR ∧ (VanC ∧ ¬ VanR) :=
+  ⟨single_verdict_refuted_by_counter_model hCvanishes hRnonzero, hCvanishes, hRnonzero⟩
 
 end QOU.Information
