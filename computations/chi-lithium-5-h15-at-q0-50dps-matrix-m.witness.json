@@ -1,0 +1,2498 @@
+{
+  "computation": "chi-lithium-5-h15-at-q0-50dps-matrix-m",
+  "description": "Lossless per-λ χ^λ(β_atomic(3,2))=lithium-5 at q_0, 50 dps, ALL 176 partitions of S_15 via the canonical Rust chi_q_via_gp path (sign-only crossings; matches the matrix-M backend to the 50-dps floor, PR #2062 §8). No max_dim cap — feasible at any n because χ_λ is dim-independent (~20 ms/λ). y_λ from the closed-form tower (y_lambda_tower_infra.py).",
+  "producer": "rust-chi-q-via-gp-lossless",
+  "convention": "sign-only-crossings",
+  "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+  "dps": 50,
+  "n_strands": 15,
+  "atom": "lithium-5",
+  "Z": 3,
+  "N": 2,
+  "n_partitions": 176,
+  "n_partitions_total": 176,
+  "max_dim": null,
+  "n_skipped_max_dim": 0,
+  "tr_M_partial": false,
+  "partial": false,
+  "compute_time_sec": 69,
+  "tr_M_at_q0": "3.3475747047309799092663319701603297775468352888815",
+  "by_partition": [
+    {
+      "partition": [
+        15
+      ],
+      "y_lambda": "0.00068901418428121838908189257677395279516120088295881",
+      "chi_lambda": "471.58647951068198468927469226605590621095684978485",
+      "contribution": "0.32492977349810405704497602364807475687437394245855",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        14,
+        1
+      ],
+      "y_lambda": "0.00054858703390679096791513303429015842641429474934514",
+      "chi_lambda": "871.30091730159393893606612654010962756453079549929",
+      "contribution": "0.4779843858627475872769753438096217076137463247611",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        13,
+        2
+      ],
+      "y_lambda": "0.0004321365428345314640607909843245596813891319789469",
+      "chi_lambda": "1338.6613156397386394348552595946429264446483315403",
+      "contribution": "0.57848447296688216105153890855162899986222395812221",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        13,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "174.11915592195554437559012258039693081761354540525",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        12,
+        3
+      ],
+      "y_lambda": "0.00033457310161792111344079002876137090975101693432205",
+      "chi_lambda": "2029.2118920137200245434467476998813075772114773024",
+      "contribution": "0.67891971655100031487770714468623136790571821736313",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        12,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "350.59756151803087465394564564789466468291700725001",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        12,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-268.40019141126703854398608723224605885828286688065",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        11,
+        4
+      ],
+      "y_lambda": "0.00025163258214999629320640316330209671521379995117601",
+      "chi_lambda": "2363.8235030020400334173913764372158024704816288559",
+      "contribution": "0.59481501180725284812066550071509977541466874989415",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        11,
+        3,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1185.2909651585335716563910876819325693366079487111",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        11,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "95.032305604068625218675499818911703879110390231982",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        11,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-794.42664002099409896875439126495307996904903161015",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        11,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "109.14766087487222943626974728982782516776232408628",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        10,
+        5
+      ],
+      "y_lambda": "0.00017968996879109618140700742734159027615785887726444",
+      "chi_lambda": "2281.5637891251142256244990747016441642824457603528",
+      "contribution": "0.40997412606278692441219162195702493431334733600359",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        10,
+        4,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1429.5908772638290482123542967497378828798240320656",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        10,
+        3,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1274.6573379744771345797911055015437304923882880386",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        10,
+        3,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-845.47275972809292357432905016135918618084967536809",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        10,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-722.81676349677847444200903309834324661645150385715",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        10,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "46.433341382293556076180031807528979531486530240131",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        10,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "115.63076754412072205361927032335081528394000199568",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        6
+      ],
+      "y_lambda": "0.00011560092267938208751641339655247180752015551004497",
+      "chi_lambda": "1913.8203624956230830183763242285118789665071762719",
+      "contribution": "0.22123939974708352236510225831783322477658147098849",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        5,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1323.4283237527962055764022071762256173141483177791",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        4,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1486.0287267434740952598200197452103661050785915172",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        4,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-1021.2957920251197888919101537500016015829500084311",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        3,
+        3
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1496.4650709867489177312632888384158891167485565007",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        3,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-549.57779987315281324177848321907743787965483816095",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        3,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-85.497500201499732312647392135059072089398274221194",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        2,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-136.69950352789263490105082486616323981714045440493",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        2,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-126.68172144782192954231467711177750320219101220507",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "280.85881891656086978774038250426294571426099175872",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        9,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-56.977027925366645195736335701270164504850910570527",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        7
+      ],
+      "y_lambda": "0.00005656435460084501777621949776153300535012499291533",
+      "chi_lambda": "1082.4452725958939628747550157189979894527433158126",
+      "contribution": "0.061227818235122494117175168474815010786175289290325",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        6,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1143.1314388062912210465251425260055371074413207087",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        5,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1207.9980026391523850332507022666746603320885653155",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        5,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-913.80091376757593399980030524230396888835861715312",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        4,
+        3
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1654.312007834556300707644281881483723093273193372",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        4,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-776.72223847257475257352385086204858792147018447041",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        4,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-182.4276951536206742925276602033273477482230440929",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        3,
+        3,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "540.8076619345602094573357579503774717402579594534",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        3,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "83.306496974060661010219403790734465025716036885799",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        3,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-448.50975717142091380996373915037081056095910433278",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "398.8050440286360140133193070162368601818979746547",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        2,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "41.553498353616890163064940102707575324402922045471",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "219.16963788890155211328200106429275267948016607102",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-108.31982985373043480353482416905277460638997921611",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        8,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-3.4104863095110949815420899129181398816076043452232",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        7,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "445.84292160609752357318987758388713947521679836611",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        6,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1022.4590142873762530709114790528159289617844833222",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        6,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-417.24706742351546122884059979563800584350226909049",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        5,
+        3
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1203.2211822033577528563489246028409006911242604581",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        5,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-603.24523406834294851670422817593237915085417954924",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        5,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-140.16385219384030785471377558627488930490266863262",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        4,
+        4
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "237.2346771192539018817055129576615656903779624061",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        4,
+        3,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "253.62120080879759151280534511486619685460960706175",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        4,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "85.323654279280733858411760011166106895896458953909",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        4,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-552.99243177045845512849904948705741084283357248233",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        4,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "357.73114786758863676625079572045938474448080668753",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        3,
+        3,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "658.63395349067418455409634535631617717168128869838",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        3,
+        3,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-317.19640412480394306484397637729980333983850727884",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        3,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-232.0836662692830725642070339730517131933142258101",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "308.67214274918250307818971357668573578542756985352",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-59.204048077416823036987952926517981413540248805056",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        2,
+        2,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "119.82230621139578967691279074459882094478338994852",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "90.494323730705323004359085761693988954459284434839",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-62.060024899867401185917121904706502164368516154053",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-35.003826334233264073083883469116026014240686176204",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "14.873978199543027502706541407455380758127347023943",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        6,
+        3
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "630.0362221868053979118893211049542058285461418486",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        6,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-86.16886382099427704326314848805240913351568481235",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        6,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-53.178039243413510343242633248096889555561918949501",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        5,
+        4
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "83.819216703551344424616509424858575214675156167185",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        5,
+        3,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "63.797491526356562123945913730870806583933347290814",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        5,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "52.761940187888461696124302875660600021790413693645",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        5,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-229.05886114438215829651673812663830809769068522121",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        5,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "232.13107883968570859264425098507649945836695104183",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        4,
+        4,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-217.85823876147788452974167950988386541989856825033",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        4,
+        3,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "538.91346592106533660523252188708805257783916613513",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        4,
+        3,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-372.88521206486374332298470850187006440157103122214",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        4,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-159.37005895840410278226863541851902995540821589821",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "252.16008659035294497623488713458784288179517040219",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-49.922109114327229969650929057181567265835968959716",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        3,
+        3,
+        3
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "460.86808357856765337358805765940953278911685054015",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        3,
+        3,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-191.34949784725633881014821370736311809742637622878",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        3,
+        3,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "42.958653824612535062052877878578350900964461456081",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        3,
+        2,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "49.099583104488827119635527756397196643456808700481",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "0.14585725355154936097681038654340952569766694441352",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        3,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "30.522971766293554434082994655450753965817999043661",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-55.339708839951958831837171160390320176765070640734",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "41.975310262056662344015732671669899857881205854617",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-23.425773724673018890912947915020978484392700532489",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-39.918414112014481085411208297011959517549322900868",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "31.083401440094496533210730663874661620824025188039",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-4.5433564053796038610764811956579470637300401483244",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        5,
+        5
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-103.59033122906444931088046904566054050656210780704",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        5,
+        4,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-226.28353536736531590632442128016520012630117547113",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        5,
+        3,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "134.98555054562836495498782361508868852386142328142",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        5,
+        3,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-74.751936372090604009210401183237807500249723418983",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        5,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "37.799246541854335949257513762929325684371733798144",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        5,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "108.69887501215563284366700794646627868306106983129",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        5,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-32.171344604915705095738326201374150302528683798475",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        4,
+        4,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-26.160538951550947296688841905934034966694463848203",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        4,
+        4,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-108.56276086753764386642767872188114251068799315829",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        4,
+        3,
+        3
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "308.944621224373432117025471411428715783467710374",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-115.23239900800528350037732539175007708646337809116",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        4,
+        3,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "41.923224964842565393948858838099347255036613099936",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        4,
+        2,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "116.90002934644009762063556861227910331259571147883",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        4,
+        2,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "20.357083609807349075130472047952812197725247605429",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        4,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "10.323746839950653400900205252460883510065514785541",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-31.167235271210562845979688072159531187233814498671",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        3,
+        3,
+        3,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "77.562070881136640508291953597930505080770260282964",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        3,
+        3,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-1.3508047107946819788567593667299603057126555867216",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-131.72880553202664265835844788948816997464791902898",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "87.229235084057637846562343480332929111615962464403",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        3,
+        2,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "0.010572732633597521896964431214290089654221235398617",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        3,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "31.020896513761852261018442410172775599389114932586",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-61.230472327434496675795753247104061017245681175287",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "24.575898974591883637025909658686955496827778664888",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1.1533112874344766168402500726066662426386619270772",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-21.909601208860722880871724377141964898263473931506",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-6.1152854943228774461438350403209761047781374738281",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "19.568923919152041920827038830465040259550128107964",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-5.0105438010634832834433963231570926886174969852465",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.27591330547801347896811404552021767327456619669301",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        4,
+        3
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "2.1336327203188151078937608296334909561775218476418",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        4,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-8.4241911318017280563027918243040359713852436318956",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        4,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-12.117226565840319113991138845086302944833756261299",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        3,
+        3,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "36.432457988894564753290179858225340445242775735238",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        3,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "40.93861404604537542838280888406883118639804794584",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-61.054088314550354082984095868703972529094926440055",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "46.592221505566370499583890755927694743452385078239",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        2,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "7.9302595745977352584880384991157201828283594790489",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "28.188104933414972104875372060192467855407020865625",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-29.476730998585677656118536625153023318457940372541",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "6.6587553785234301005405047263887208569431613904814",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        3,
+        3,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "76.80284123334742931298918995436872310657612898525",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        3,
+        3,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-50.966132428972080493116771321422354833930214104067",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        3,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-53.821603408365543773810728937470529756252021793439",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "54.143164223640357922559539142005968763570765972553",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-17.910598038787456323420812267309121436662758353394",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        2,
+        2,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "27.297994091688395771885032258219686021959724601383",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "2.8079527106603470884151573185170358299501040213981",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-19.858075040008907102003887928562794634974411864466",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "9.8267246523255389644379468132597538663336059459084",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1.2673734484915264858727858473971745171031105490055",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-12.430251102372163941692156192755054053632338197319",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "0.37843337332552411816759812833252824547956436397866",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "7.8558002725348141860149939126706048496540920640974",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.94685394004752568407383465458004193669122745511774",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-2.1599659292421162930287142334552766962183696619808",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "0.62767365557693550526650023834909740678110354659964",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "22.673525999823478769530298905809163344802395929228",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-7.7350844663119076232724324044622478827529231040927",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        3,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "4.3686379841632545223905345980126492898340598784727",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        2,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "0.23823065532332297237431470681629499591209266452945",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "4.0387210825081971023058626466984273004437660098203",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "3.0110494394865323353052166635764551216502999724682",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-3.8307999373949843257457857004519353500686679431914",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "6.9126486546477543379810672869271173631258083098436",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-4.0091187489346202206587673765452596724290400536865",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.61777299016928103329826383403836605251345562379376",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "3.3009597547181929905752499802119741554246873709662",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-1.9216389838997996063916276668489818536654998008779",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-3.3526196647145394213705927206344999401990362933405",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.40242991648243443914809379157300800549710349965714",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "3.8376821802534206272452308618588115837578952968521",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-1.4266915881162172630848852701675131259280705352976",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-1.4382527103800739324659125131660811213410061513188",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1.052030200485247919411816493137267616211741579868",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.19895163009622944406773836013119539368537554237516",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "1.9097452347677820463173655533663668311449070680177",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.17747664868276657154028637657046692767252026432593",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-1.0579465269398057336983410358867217841715311845691",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "0.26681799086497419783160115084238437801923930532732",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "0.26722283652409409379496250612646028356065520951876",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.15856001668703151244380637768459878228889182774289",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "0.031113070934852747631798116936505856580980878524729",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.0021205018452556141015391447358469431466965104382393",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    }
+  ]
+}
