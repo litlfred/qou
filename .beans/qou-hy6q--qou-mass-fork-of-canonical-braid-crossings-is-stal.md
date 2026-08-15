@@ -21,7 +21,7 @@ My earlier note said the vendored module is '~95 lines behind' and framed this a
 
 qou-mass/src/qou_mass/_internal/canonical_braid_crossings.py is 95 lines vs 251 in computations/ — not a drifted copy but an EARLIER GENERATION. It predates classify_crossing entirely: grep counts are 0 for classify_crossing, d_for_ctype, sign_for_ctype, CTYPES, averaged_weighted, _avg_color_delta. It carries an inline {0, -h, -h/2} classifier with a raise on anything else, i.e. exactly the narrow vocabulary the whole qou-gdtb/qou-8zjd arc removed.
 
-But it CANNOT RUN. Its body does  and , and NEITHER is vendored — the _internal dir has 16 files and no mass_at_3A_proper.py, no hecke_core.py. Any call raises ImportError before reaching the classifier. api.canonical_braid() does not call it; it reads a bundled witness and falls back to empty generators, with the live path documented as 'P3 work (vendoring the canonical_braid_crossings transitive dependency chain)' and test_canonical_braid_4he pytest.mark.skip for the same reason.
+But it CANNOT RUN. Its body does `from mass_at_3A_proper import atom_braid_word_3A` and `from hecke_core import h`, and NEITHER is vendored — the _internal dir has 16 files and no mass_at_3A_proper.py, no hecke_core.py. Any call raises ImportError before reaching the classifier. api.canonical_braid() does not call it; it reads a bundled witness and falls back to empty generators, with the live path documented as 'P3 work (vendoring the canonical_braid_crossings transitive dependency chain)' and test_canonical_braid_4he pytest.mark.skip for the same reason.
 
 So: no user of the published package can reach the stale classifier. Refreshing that file is cosmetic.
 
