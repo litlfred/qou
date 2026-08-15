@@ -39,6 +39,18 @@ sign carries no four-body information.
 additivity forces `μ₃ = μ₄ = 0`, so every nonzero high moment measures
 *non-additivity*, not a `k`-body force.
 
+**On the name.** Throughout this file `μ₄` is called the "four-body moment"
+because that is the standing name for the `k = 4` simplex coefficient, and the
+docstrings are careful to deny the physical reading each time. It is worth
+saying once, plainly, why the denial is needed: with three moments fitted to
+three anchors (`A = 2, 3, 4`) the system is exactly determined, so
+`μ₄ := M(4) − 4M(3) + 6M(2)` is a **definition** carrying zero residual
+freedom. Writing `μ₄` is another way of writing "the amount by which `M(4)`
+exceeds the two-point prediction" and nothing more; it acquires no physical
+content from the index it is written under. This is the corpus rule *defined
+residual ≠ derived decomposition* applied to this file's own vocabulary.
+Narrative twin: `rem:tjon-universality-external`.
+
 `mu4_target_exceeds_n3lo_bound` certifies the numeric claim behind the
 GAP-9 probe: the corpus target `μ₄ = −4.591` (in units of `B(D) = 2.224566 MeV`)
 exceeds `34 ×` the N³LO four-nucleon estimate of `0.300 MeV`
