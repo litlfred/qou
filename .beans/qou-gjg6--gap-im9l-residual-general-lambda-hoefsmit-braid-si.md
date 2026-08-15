@@ -776,3 +776,43 @@ Two Lean notes:
 
 REMAINING: five rows (A, B by braid_rowA/rowB_identity; D, E, F by ring), then the
 admissibility case tree for non-generic orbits. hoefsmit_seminormal_rep keeps its Ref'd sorry.
+
+
+## THE BRAID IS PROVED (generic orbit) 2026-08-15 — all three Hecke relations now hold
+
+genMat_braid_generic: rho(sigma_k) rho(sigma_{k+1}) rho(sigma_k) =
+rho(sigma_{k+1}) rho(sigma_k) rho(sigma_{k+1}) in column T, for any T whose
+<s_k,s_{k+1}>-orbit is the full size-6 one (all six admissibilities hold). Sorry-free,
+axiom-clean. With genMat_quadratic and genMat_far_comm, ALL THREE Hecke relations now hold
+on all of SYT mu for arbitrary shape.
+
+The six rows came out exactly as derived: D, E, F by `ring`; T, A, B by the single relation
+with multiples (a2-a1), -off(p), +off(r).
+
+THE ONE THING THAT COST ITERATIONS, and it was not the mathematics: getting the COLUMN MAP
+right. The two expansions do not use the same column sets --
+  LHS (genMat_braid_lhs_expand) reads rho_k at columns  T, B, A, D
+  RHS (genMat_braid_rhs_expand) reads rho_l at columns  T, A, B, E
+-- and each entry needs its own (distinctness, admissibility, partner) triple. Getting a
+column wrong produces an unhelpful "rewrite failed / ring failed" rather than a type error.
+The full 6x8 map is worth having written down; it is reconstructible from the two expansion
+statements plus the entry table above, but reconstructing it under time pressure is where
+the mistakes happen.
+
+Partner identities needed for the side conditions (column, generator -> partner):
+  (T,k)->A  (T,l)->B  (A,k)->T [bAT]  (A,l)->D  (B,k)->E  (B,l)->T [bBT]
+  (D,k)->F  (E,l)->F [via hFE = swapTableau_braid]
+
+LEAN NOTES (both cost real time):
+1. `subst` on `h : T' = X` eliminates T' and ZETA-EXPANDS every `set` binding in the goal
+   while leaving them folded in the context. Fix: `simp only [<- hA, <- hB, ...]` right
+   after each subst to re-fold. This is the same gotcha recorded for far commutation, now
+   with a general fix rather than a per-site workaround.
+2. `subst` picks its direction: on `h1 : T' = T` it eliminated T (goal became T'), on
+   `h2 : T' = A` with A a set-variable it eliminated T'. Do not assume; read the error.
+
+REMAINING for hoefsmit_seminormal_rep: (a) the admissibility case tree for NON-generic
+orbits (sizes 1,2,3 -- where some of A,B,D,E,F fail SwapAdmissible and terms drop; the
+orbit-local identities are already proved in Orbit3Braid/Orbit6Braid), and (b) packaging
+the three relations into a `Hecke ->a` algebra map via Hecke.lift. The Ref'd sorry stays
+until both land.
