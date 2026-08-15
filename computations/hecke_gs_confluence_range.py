@@ -30,6 +30,16 @@ A corollary the script checks: the longest chain at rank `n` is always the
 deepest corner, `a = b = n − 1`, giving `n² + 3n − 3` — matching the observed
 maximum at every rank.
 
+The `a > b` regime's independence from `a` goes further than the step count.
+Collapse the part of the descending run that grows with `a` — the contiguous
+relative block `b+2 .. a` — to a single symbol, and the chains for `a ≥ b + 2`
+are *identical*, stage for stage and coefficient for coefficient, at `b = 2, 3`
+and `4` alike. Each column of the corner therefore stabilises two below the
+diagonal, and the depth below that point is inert rather than merely cheap.
+That is what makes a depth-general proof possible in the first place, and the
+`b = 2` column is now closed in Lean for every `a` as
+`UGB.GrobnerShirshov.Hecke.BokutShiaoCornerDepth.resolves`.
+
 ## Method and faithfulness
 
 The rule set, the S-polynomial conventions and the reduction strategy are
@@ -100,6 +110,81 @@ def corner_predicted(a: int, b: int) -> tuple:
     return b * b + 3 * b + 5, 0
 
 
+def corner_symbolic(i: int, a: int, b: int, depth: int) -> tuple:
+    """The corner chain with the run's tail abstracted away.
+
+    Each generator is named by its distance below `i`, and every contiguous
+    block of relative indices `depth .. a` — the part of the descending run that
+    grows with `a` — is collapsed to the single symbol `T`. What survives is the
+    chain's *shape*: the sequence of stages, each a list of `(word, coefficient)`
+    pairs, with nothing in it that depends on how deep the run goes.
+    """
+    def abstract(w: tuple) -> str:
+        r = [i - x for x in w]
+        block = list(range(depth, a + 1))
+        out, k = [], 0
+        while k < len(r):
+            if r[k:k + len(block)] == block:
+                out.append("T"); k += len(block)
+            else:
+                out.append(str(r[k])); k += 1
+        return " ".join(out)
+
+    j1, j2 = i - a, i - b
+    d1, e2 = eng.desc_word(i, j1), eng.desc_word(i - 1, j2)
+    n1, n2 = f"B{i-1}{i}{j1}", f"B{i-1}{i}{j2}"
+    f = dict(eng.clean(eng.combine(
+        {w: eng.LC[n2] * c
+         for w, c in eng.context_mul((), eng.REL[n1], e2 + (i,)).items()},
+        {w: eng.LC[n1] * c
+         for w, c in eng.context_mul(d1, eng.REL[n2], ()).items()}, -1)))
+    stages = []
+    while True:
+        items = sorted(f.items(), key=lambda kv: eng.deglex_key(kv[0]))
+        stages.append(tuple((abstract(w), str(sp.factor(c))) for w, c in items))
+        target = None
+        for w, _ in items:
+            for name in eng.LM:
+                pos = eng.infix_positions(w, eng.LM[name])
+                if pos:
+                    target = (w, name, pos[0]); break
+            if target:
+                break
+        if target is None:
+            return tuple(stages)
+        w, name, k = target
+        left, right = w[:k], w[k + len(eng.LM[name]):]
+        coeff = sp.expand(f[w] / eng.LC[name])
+        f = eng.clean(eng.combine(
+            f, eng.context_mul(left, eng.REL[name], right), -coeff))
+
+
+def stabilisation(b_max: int = 4, extra: int = 4) -> list:
+    """Does the corner chain stop changing once `a ≥ b + 2`?
+
+    This is what makes a *depth-general* Lean proof possible: if the chain's
+    shape is the same at every `a` from `b + 2` up, one script covers the whole
+    column and the extra depth is inert. Checked by comparing the symbolic
+    chains of `corner_symbolic` against the one at `a = b + 2`.
+    """
+    rows = []
+    for b in range(2, b_max + 1):
+        depth = b + 2
+        ref = None
+        for a in range(depth, depth + extra + 1):
+            n = a + 4
+            retune(n)
+            i = a + 1
+            chain = corner_symbolic(i, a, b, depth)
+            if ref is None:
+                ref = chain
+            rows.append({
+                "b": b, "a": a, "n": n, "i": i, "steps": len(chain) - 1,
+                "matches_reference": chain == ref,
+            })
+    return rows
+
+
 def run() -> dict:
     ranks = []
     for n in range(2, N_MAX + 1):
@@ -134,13 +219,13 @@ def run() -> dict:
                         "predicted_steps": p_steps, "predicted_quadratic": p_quad,
                         "reduces_to_zero": ok,
                     })
-    return {"ranks": ranks, "corner": corner}
+    return {"ranks": ranks, "corner": corner, "stabilisation": stabilisation()}
 
 
 def main() -> int:
     started = time.monotonic()
     r = run()
-    ranks, corner = r["ranks"], r["corner"]
+    ranks, corner, stab = r["ranks"], r["corner"], r["stabilisation"]
 
     failing = sum(x["overlap_failing"] + x["inclusion_failing"] for x in ranks)
     max_chain_mismatch = sum(
@@ -150,6 +235,7 @@ def main() -> int:
         1 for x in corner if x["steps"] != x["predicted_steps"])
     corner_quad_mismatch = sum(
         1 for x in corner if x["quadratic_steps"] != x["predicted_quadratic"])
+    stab_mismatch = sum(1 for x in stab if not x["matches_reference"])
 
     w = WitnessBuilder("hecke-gs-confluence-range", engine="sympy",
                        start_time=started)
@@ -167,6 +253,7 @@ def main() -> int:
     w.add_parameter("lean_module", "UGB.GrobnerShirshov.HeckeCompletion")
     w.add_parameter("corner_formula_a_le_b", "2ab - a^2 + 5a + 1 steps, 2 quadratic")
     w.add_parameter("corner_formula_a_gt_b", "b^2 + 3b + 5 steps, 0 quadratic")
+    w.add_parameter("stabilisation_threshold", "a = b + 2")
 
     w.add_assertion("compositions_failing_to_reduce_any_rank",
                     computed=str(failing), expected="0")
@@ -178,16 +265,25 @@ def main() -> int:
                     computed=str(corner_step_mismatch), expected="0")
     w.add_assertion("corner_quadratic_count_differs_from_formula",
                     computed=str(corner_quad_mismatch), expected="0")
+    w.add_assertion("corner_chains_differing_from_stabilised_shape",
+                    computed=str(stab_mismatch), expected="0")
 
     w.add_data("ranks", ranks)
     w.add_data("corner_cases_checked", len(corner))
     w.add_data("corner", corner)
+    w.add_data("stabilisation", stab)
 
     w.add_caveat(
         "Computational witness, not a proof. It establishes that the "
         "obligation set is discharge-able at every rank tested and measures the "
         "shape of the corner family; it proves nothing for n > 12, and the "
         "closed forms are fitted-and-checked, not derived."
+    )
+    w.add_caveat(
+        "The stabilisation check compares chains only up to a = b + 6 and only "
+        "for b <= 4, and it compares the reduction the engine's strategy "
+        "happens to produce, not every reduction that exists. A column could "
+        "in principle destabilise beyond the range tested."
     )
     w.add_caveat(
         "The rule set, S-polynomial conventions and reduction strategy are "
@@ -208,9 +304,11 @@ def main() -> int:
     print(f"corner cases checked           : {len(corner)}  "
           f"failing: {corner_bad}  step mismatches: {corner_step_mismatch}  "
           f"quadratic mismatches: {corner_quad_mismatch}")
+    print(f"stabilisation chains compared  : {len(stab)}  "
+          f"differing from the a = b+2 shape: {stab_mismatch}")
     print(f"witness -> {path}")
     bad = failing or corner_bad or corner_step_mismatch or corner_quad_mismatch \
-        or max_chain_mismatch
+        or max_chain_mismatch or stab_mismatch
     return 0 if not bad else 1
 
 
