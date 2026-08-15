@@ -91,3 +91,70 @@ converging. It is oscillating around an unmeasurable target.
   #5084 Habiro evaluation trichotomy (Lean)
   #5093 bar-involution domain obstruction (Lean) + (H1) is 0.03 sigma
   #5098 4_1 cyclotomic term is bar-invariant (Lean)
+
+
+---
+
+# OPTION B — EXECUTED 2026-08-15. Answer: INTRINSIC. Front (a) is CLOSED.
+
+Option B asked whether the `|q~| ~ 1e-165` modular-dual suppression at the
+substrate is an `arg b` artifact or intrinsic. It is intrinsic, and the reason
+is **algebraic, not analytic** — which is why no convention can evade it.
+
+With `b^2 = i y` (forced: a real `q` requires `b^2` purely imaginary):
+
+    log q = -2 pi y ,   log q~ = -2 pi / y   =>   log q * log q~ = 4 pi^2
+
+**The `y` cancels.** After demanding a real `q`, `y` is the only remaining
+freedom and the product does not depend on it. Verified at three unrelated `y`
+(0.001, 1, 17.25): identical to 20 digits.
+
+Measured at the substrate (probe exit 0, 6/6):
+
+    Re(b^2)                          0.0 exactly
+    |q - 1/q0|                       0.0 exactly
+    log|q| * log|q~| vs 4 pi^2       relative error 0.0
+    balance point |log q| = 2 pi     6.28319
+    substrate     |log q|            0.10434    <- 60.2x too close to 1
+    forced        |log q~|           378.361    => |q~| ~ 4.8e-165
+    q0 needed for |q~| > 1e-16       > 2.92     (substrate is 1.10998)
+
+Lean: `QOU.QBeta.ModularDoubleReciprocity`, sorry-free, 4 declarations, axioms
+`[propext, Classical.choice, Quot.sound]`. Stated over a **generic field in a
+generic `c`**, because the fact is `(c y)(c / y) = c^2` — putting it that way is
+the point, since an algebraic identity leaves nothing to re-choose.
+
+## What this closes
+
+`BarInvolutionDomainObstruction` (PR #5093) proved the parity read-off needs a
+**pair**, not a single series — the Garoufalidis-Zagier shape, whose second entry
+IS this modular dual. `phi_b_evaluator.py` already realises that pair at the
+substrate. **Its second entry is 1e-165 there**, and `q0` is an INPUT, so nothing
+in the construction can be re-chosen.
+
+**Sitting near 1 IS sitting at the degenerate point of the modular double.** The
+framework's own substrate value places it 60x from the balanced point.
+
+So **front (a) as stated is CLOSED**: "build the GZ pair carrier at the
+substrate" cannot work, for a proved structural reason rather than for want of
+effort.
+
+## Standing prohibition, added
+
+Do NOT re-open the state-integral carrier at the substrate by adjusting `arg b`,
+the contour, or the `b` normalisation. The reciprocity is identical in `y`; every
+such adjustment lands on the same 4 pi^2.
+
+## What survives
+
+  * The state integral itself. `phi_b_evaluator` is validated (10/10) and its
+    NATIVE regime (|q| = 1, roots of unity) is untouched — that is the bar-stable
+    locus of PR #5093, where everything works.
+  * Option **D** (write the 26x/32x/130x up as a measurement proposal) is now the
+    highest-value remaining item on this front.
+  * Option **C** (find a decay-face observable whose sigma does not carry 1/u^3)
+    is the only route to a testable c_3 claim without new experiment, and is
+    untouched by this result.
+
+Options A and B are now spent. The front's honest state: **precision-blocked
+(front (e)), and the one structural route out is closed (this note).**
