@@ -72,3 +72,64 @@ similar number is not the witness a block means.
 
 Related: `qou-a28x` (the axis and triage), `qou-ft3p` (the same shape — a cited
 reproducer that emitted no witness).
+
+---
+
+## RESOLVED: the block is quoting the non-canonical path, and its producer says so
+
+The two paths **do** still exist. The block is citing the wrong one, and this
+has been documented in the producer since **2026-05-03** (PR #537 follow-up),
+three months before the numbers were flagged.
+
+`computations/term6_full_pole_sum.py` opens with a CONVENTION CAVEAT:
+
+> This script reads `habiro-coefficients-atomic.witness.json` … using
+> `schur_weyl_weight(λ, q) = s_λ(q, q⁻¹) / H_q(λ)`. **That is NOT the canonical
+> Markov trace specified in the paper.** […]
+>
+>     canonical Markov tr_M (markov_peel ≡ Hoefsmit, 1ppb cross-check)  =  0.388
+>     Schur-Weyl-weighted trace consumed by THIS script                 =  0.177
+>
+> The canonical Term-6 path is `term6_residues_at_roots.py` (PR #526), which
+> consumes `markov_peel.tr_M_atomic` directly. […] Treat `term6_in_MeV` from
+> THIS script as the **Schur-Weyl-weighted contribution, NOT as the canonical
+> Term 6.**
+
+Now compare the numbers:
+
+| | value |
+|---|---|
+| block's deuteron row | **0.1774369242** |
+| caveat's Schur-Weyl-weighted figure | **0.177** |
+| caveat's canonical figure | **0.388** |
+| live `term6-full-pole-sum.witness.json` | **0.3882864240747888…** |
+
+**The block quotes the Schur-Weyl-weighted value; the live witness now carries
+the canonical one.** They were never the same quantity, which is why the
+orphan search found no witness containing the block's number — it was looking
+for a value the canonical pipeline does not produce and the non-canonical one
+no longer publishes.
+
+So the "direct empirical evidence for the analytic identity" is an agreement
+between the polynomial path and a trace the repo has documented for months as
+**not the canonical Markov trace**.
+
+### Why the earlier framing was incomplete
+
+I wrote this bean saying "the producer has been deprecated and the numbers
+outlived it". That is true of `build_markov_trace_assembly_chain.py` but it is
+not the substance. The substance is that a **live, non-deprecated** producer
+carries a caveat naming itself non-canonical, and the block quotes it as
+evidence anyway. The deprecation was a distraction.
+
+## Next — now concrete
+
+1. Re-derive the table against `computations/term6_residues_at_roots.py`
+   (canonical, PR #526, witness `term6-residues-at-roots.witness.json` exists).
+2. If the two paths still agree to 1e-9 under the canonical trace, the
+   proposition stands and can finally declare a real `computation.witness`.
+3. If they do not, the identity claim needs restating — and that is the
+   finding, not a bug in the table.
+
+Not doing (2)/(3) here: it is a mass-theory claim, and re-deriving it is
+authorial work rather than provenance repair.
