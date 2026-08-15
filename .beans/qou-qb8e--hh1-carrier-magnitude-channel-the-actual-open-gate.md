@@ -425,3 +425,56 @@ and the whole window is narrower than one error bar on q*_S.
 
 Probe: `computations/qbeta/qbeta_habiro_evaluation_dichotomy_and_test_power.py`
 (exit 0, 7/7 assertions, experimental/proton pin).
+
+
+---
+
+# FRONT (a) — `1/q0` DOES NOT RESCUE THE CARRIER (2026-08-15, PR #5096)
+# This CORRECTS the closing framing of PR #5084, written hours earlier.
+
+#5084 concluded: *"1/q0 = 0.9009 is the only member of the bar-pair inside the
+unit disc, which is exactly where a state integral / q-series converges.
+Evaluate the carrier at 1/q0, not q0."* Right for a GENERIC q-series. **Wrong
+for the object actually wanted.**
+
+The figure-eight's cyclotomic (Habiro / Kashaev) expansion is
+
+    J(4_1; q) = sum_n (q;q)_n (1/q;1/q)_n = sum_n prod_{j=1..n} (1-q^j)(1-q^-j)
+
+Each term carries BOTH q and 1/q, so the bar involution merely swaps the two
+brackets of each factor: **T_n(1/q) = T_n(q) EXACTLY**, every n, every q, any
+field. Lean-proved sorry-free, `QOU.QBeta.Fig8CyclotomicBarInvariance` (6
+declarations, axioms clean). Measured at the substrate pair: max relative
+|T_n(q0)/T_n(1/q0) - 1| = **5.9e-49** over n=1..40; closed form
+`-(q^j-1)^2/q^j` matches to **1.6e-50**; growth root |T_n|^(2/(n(n+1))) rises
+monotonically toward q0 (0.766 -> 0.985 -> 1.048 -> 1.074).
+
+## Why this is a correction, not a restatement
+
+`HabiroEvaluationTrichotomy` (#5084) showed the BUILDING BLOCK `(q;q)_n` is
+asymmetric — diverges above 1, tends to a nonzero limit below.
+`BarInvolutionDomainObstruction` (#5093) showed the unit ball is not bar-stable.
+Both are true and both survive. But `J(4_1)` MULTIPLIES the two branches, and
+the asymmetry **cancels exactly**. So the substrate pair is not "one good side
+and one bad side" for the figure-eight invariant — it is two equally bad sides.
+
+## Net effect on front (a)
+
+A **state integral** — an integral, convergent on `C \ R`, not a series in q —
+is not one route among several. It is the **ONLY** route. The corpus already has
+`computations/qbeta/phi_b_evaluator.py`, so the machinery exists.
+
+**Standing prohibition, added:** do NOT attempt to make `J(4_1)`'s series
+converge by choosing an evaluation point. No point in a bar-pair is better than
+its partner; the invariant is bar-symmetric by construction.
+
+## And read this with front (e)
+
+Even a successful state-integral carrier **cannot be validated at present
+precision**. Per PR #5093: sigma(c_3) = +/-1.262 (61% of |c_3|), so the magnitude
+channel is 0.03-sigma — no evidence either way; and per #5084 the zero-location
+channel is 25.7x short of separating Vol(4_1) from 7/7 unrelated constants.
+Build it because it is the right mathematics, not because it can be tested yet.
+
+Scope-(b) for the SERIES route (invariant: the involution fixes each factor).
+Nothing here touches (H1) or argues against the state integral.
