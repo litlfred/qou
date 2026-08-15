@@ -248,7 +248,7 @@ CARVED: dict[str, int] = {}
 CARVED_INTEGRATOR: dict[str, int] = {}
 
 
-def scan() -> dict[str, int]:
+def scan(scan_root: Path | None = None) -> dict[str, int]:
     """{repo-relative path: raw float64 count} for every live witness.
 
     Also populates the module-level `CARVED` with what the LP-dual carve-out
@@ -258,7 +258,7 @@ def scan() -> dict[str, int]:
     found: dict[str, int] = {}
     CARVED.clear()
     CARVED_INTEGRATOR.clear()
-    for p in sorted(HERE.rglob("*.witness.json")):
+    for p in sorted((scan_root or HERE).rglob("*.witness.json")):
         if p.name in SELF_OUTPUTS or "_deprecated" in p.parts:
             continue
         try:
@@ -356,6 +356,16 @@ def self_test() -> int:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--self-test", action="store_true")
+    ap.add_argument(
+        "--scan-root", default=None, metavar="DIR",
+        help="directory to scan instead of computations/ (repo-relative). "
+             "The baseline is keyed on computations/ paths, so any OTHER root "
+             "reports every dirty file as NEW — that is honest for a "
+             "previously-unscanned tree, but it means such a run belongs in "
+             "precision-gates.sh as ADVISORY, never blocking, until the files "
+             "are drained. Do NOT rebaseline against a different root: it "
+             "would grow the baseline, which the discipline forbids "
+             "(bean qou-irzg).")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 on a NEW dirty witness or an INCREASED count")
     ap.add_argument("--rebaseline", action="store_true",
@@ -364,7 +374,22 @@ def main() -> int:
     if args.self_test:
         return self_test()
 
-    found = scan()
+    scan_root = (ROOT / args.scan_root).resolve() if args.scan_root else None
+    if scan_root is not None:
+        if not scan_root.is_dir():
+            print(f"--scan-root: not a directory: {scan_root}")
+            return 2
+        if args.rebaseline:
+            # Rebaselining against a foreign root would write that root's
+            # dirty files into a baseline keyed on computations/ paths —
+            # growing it. Baselines drain, never grow.
+            print("--rebaseline is refused with --scan-root (bean qou-irzg).")
+            return 2
+        print(f"  scan root                      : {args.scan_root}  "
+              f"[non-default — baseline does not cover it, so every dirty\n"
+              f"                                   file below is reported as "
+              f"NEW; treat this run as ADVISORY]")
+    found = scan(scan_root)
     prior: dict[str, int] = {}
     if BASELINE.exists():
         prior = json.loads(BASELINE.read_text())["files"]

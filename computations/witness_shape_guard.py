@@ -90,6 +90,28 @@ DEFAULT_TOLERANCE = 0.30
 DURATION_COLLAPSE = 0.90
 
 
+# Self-describing audit outputs: their payload IS a list of the corpus's
+# current findings, so it shrinks legitimately whenever the corpus gets
+# cleaner. Draining 14 files makes witness-raw-float64-audit smaller BY
+# DESIGN — flagging that as a collapse would punish exactly the work this
+# gate family exists to encourage.
+#
+# Found the honest way: the guard fired on witness-raw-float64-audit
+# (66 -> 20 leaves, 70%) on its first live run, immediately after a genuine
+# drain. Mirrors SELF_OUTPUTS in witness_raw_float64_audit.py, which excludes
+# the same files from the ratchet for the same reason.
+SELF_DESCRIBING = {
+    "witness-raw-float64-audit.witness.json",
+    "witness-float64-padding-audit.witness.json",
+    "q0-value-drift-audit.witness.json",
+    "no-free-parameter-certificate.witness.json",
+    "q0-anchor-consistency-audit.witness.json",
+    "mpf-float-source-audit.witness.json",
+    "compute-audit-scan.witness.json",
+    "derivation-chain-audit.witness.json",
+}
+
+
 def count_leaves(obj) -> int:
     """Total scalar leaves — the payload size, independent of type."""
     if isinstance(obj, dict):
@@ -165,6 +187,10 @@ def check(tolerance: float) -> tuple[list[dict], list[str]]:
     """(findings, skipped) over every witness modified against HEAD."""
     findings, skipped = [], []
     for rel in modified_witnesses():
+        if Path(rel).name in SELF_DESCRIBING:
+            skipped.append(f"{rel} (self-describing audit output — shrinks "
+                           f"legitimately as the corpus is drained)")
+            continue
         head_raw = _git("show", f"HEAD:{rel}")
         if head_raw is None:
             skipped.append(f"{rel} (new file — no HEAD copy to compare)")
