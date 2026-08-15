@@ -521,6 +521,97 @@ theorem mu_triplet_eq_one_sub_y21_of_radical (q z y₃ y₂₁ : R) (hs : q + q�
 
 end Branching
 
+section AntisymmetricWeight
+
+variable {R : Type*} [Field R]
+
+/-- **The antisymmetric weight in closed form — the premise, not a hypothesis.**
+
+Every `*_of_radical` result above takes `y₍₁³₎ = 0` as a HYPOTHESIS. That is
+honest as far as it goes, but nothing in this file established *why* the
+weight vanishes, so the conditional results rested on an unproved premise —
+the pattern AGENTS.md names "conditional-proved ≠ premise-established". This
+lemma supplies it.
+
+Solving `tr_M = Σ_λ y_λ χ_λ` on `H₃(q)` at the identity, at `σ₀`, and at
+`e⁻ = σ₀σ₁σ₀` determines all three weights. The `e⁻` row is where the
+corrected `tr_M(e⁻) = h·z² + z` enters (it was `z³` before 2026-05-19), so
+this identity is a statement about the *corrected* trace specifically.
+
+The three character values used, from the `H₃(q)` table:
+
+| | `1` | `σ₀` | `e⁻` |
+|---|---|---|---|
+| `χ₍₃₎` | `1` | `q` | `q³` |
+| `χ₍₂,₁₎` | `2` | `q − q⁻¹` | `0` |
+| `χ₍₁³₎` | `1` | `−q⁻¹` | `−q⁻³` |
+
+Stated multiplied through by the denominator, so the conclusion itself needs no
+non-vanishing hypothesis and no division.
+
+`q² ≠ 1` IS required, and is not a technicality: `χ₍₂,₁₎(σ₀) = q − q⁻¹`
+vanishes there, so at `q² = 1` the `σ₀` row carries no information about
+`y₍₂,₁₎` and the three rows stop determining the weights. That is the
+classical `S₃` degeneration — `H₃(1) = ℂ[S₃]`, where the Markov parameter no
+longer separates the blocks. The substrate sits at `q₀ ≈ 1.11`, comfortably
+away from it. -/
+theorem antisym_weight_closed_form (q z y₃ y₂₁ y₁₃ : R) (hq : q ≠ 0)
+    (hq1 : q ^ 2 - 1 ≠ 0)
+    (hone : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (hz : q * y₃ + (q - q⁻¹) * y₂₁ + (-q⁻¹) * y₁₃ = z)
+    (he : q ^ 3 * y₃ + (-(q⁻¹ ^ 3)) * y₁₃ = (q - q⁻¹) * z ^ 2 + z) :
+    y₁₃ * ((q ^ 2 + 1) * (q ^ 4 + q ^ 2 + 1))
+      = q ^ 2 * (z - q) * (z * (q ^ 2 + 1) - q ^ 3) := by
+  field_simp at hz he ⊢
+  linear_combination (norm := (field_simp; ring))
+    q ^ 6 * hone - (2 * q ^ 6 / (q ^ 2 - 1)) * hz
+      + ((q ^ 2 + 1) / (q ^ 2 - 1)) * he
+
+/-- **Convention D is exactly the trace that annihilates the sign block.**
+
+`z_D = q³/(q²+1)`, written here without division as `z·(q²+1) = q³`, forces
+`y₍₁³₎ = 0`. So the radical is not an accident of convention D that has to be
+worked around — it *is* convention D. The other root of the closed form,
+`z = q`, is the trivial trace and is excluded separately.
+
+This is what every `*_of_radical` lemma above was assuming. -/
+theorem antisym_weight_eq_zero_of_conventionD (q z y₃ y₂₁ y₁₃ : R) (hq : q ≠ 0)
+    (hq1 : q ^ 2 - 1 ≠ 0)
+    (hden : (q ^ 2 + 1) * (q ^ 4 + q ^ 2 + 1) ≠ 0)
+    (hone : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (hz : q * y₃ + (q - q⁻¹) * y₂₁ + (-q⁻¹) * y₁₃ = z)
+    (he : q ^ 3 * y₃ + (-(q⁻¹ ^ 3)) * y₁₃ = (q - q⁻¹) * z ^ 2 + z)
+    (hD : z * (q ^ 2 + 1) = q ^ 3) :
+    y₁₃ = 0 := by
+  have h := antisym_weight_closed_form q z y₃ y₂₁ y₁₃ hq hq1 hone hz he
+  rw [hD, sub_self, mul_zero] at h
+  exact (mul_eq_zero.mp h).resolve_right hden
+
+end AntisymmetricWeight
+
+section AntisymmetricWeightOrdered
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- Over an ordered field the denominator hypothesis discharges itself: both
+factors are sums of even powers and `1`, hence strictly positive at every `q`.
+
+Ordering is the weakest thing that decides it, so this stays generic rather
+than specialising to `ℝ` — §7c, and it keeps this file free of
+`Mathlib.Data.Real.Basic`. (`LinearOrderedField` is deprecated in this Mathlib;
+the three-class spelling is its replacement.) -/
+theorem antisym_weight_eq_zero_of_conventionD' (q z y₃ y₂₁ y₁₃ : R) (hq : q ≠ 0)
+    (hq1 : q ^ 2 - 1 ≠ 0)
+    (hone : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (hz : q * y₃ + (q - q⁻¹) * y₂₁ + (-q⁻¹) * y₁₃ = z)
+    (he : q ^ 3 * y₃ + (-(q⁻¹ ^ 3)) * y₁₃ = (q - q⁻¹) * z ^ 2 + z)
+    (hD : z * (q ^ 2 + 1) = q ^ 3) :
+    y₁₃ = 0 :=
+  antisym_weight_eq_zero_of_conventionD q z y₃ y₂₁ y₁₃ hq hq1
+    (by positivity) hone hz he hD
+
+end AntisymmetricWeightOrdered
+
 section BandSeparation
 
 variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
