@@ -7997,4 +7997,574 @@ theorem resolves (hp : HeckeParams) {i''' i'' i' i : Fin n} (hn : 0 < n)
 
 end BokutShiaoCornerDeep
 
+/-! ## §4ad  `B × B` at general depth: the whole `b = 2` column
+
+§4z–§4ac closed the Bokut–Shiao-against-Bokut–Shiao corner at four fixed depths,
+`(a, b) ∈ {(2,2), (3,2), (2,3), (3,3)}`, writing `a = i − j₁` and `b = i − j₂`.
+Those are cases, not a family. The chain length is *quadratic* in the depths —
+`2ab − a² + 5a + 1` steps when `a ≤ b`, `b² + 3b + 5` when `a > b` — so no fixed
+script covers the corner, and the general statement needs an induction on both.
+
+This section takes the first genuinely general slice: **`b = 2`, and `a`
+arbitrary**. It is the tractable half, because in the `a > b` regime the length
+does not depend on `a` at all — the extra depth rides along inertly rather than
+contributing work. That is precisely what the proof exhibits. Writing
+
+    x = σᵢ,   y = σᵢ₋₁,   z = σᵢ₋₂,   u = σᵢ₋₃,   E = descWord (i−3) j
+
+so that `descWord i j = x y z E`, every one of the seventeen words in the chain
+has the shape
+
+    (explicit prefix) ++ E ++ (explicit suffix)
+
+and `E` is never inspected — not by a rule, not by a distinctness obligation.
+The chain is fifteen steps at every depth, all of them monic, so `monicStep`
+(§4x) discharges the lot and the deformation parameter `h` never appears.
+
+The only hypothesis on the depth is `j ≤ i − 3`, so this **subsumes §4aa**, which
+is the case `j = i − 3` (there `E = [σᵢ₋₃]`). §4aa is kept rather than replaced
+because its chain is the one the confluence engine produces at that depth: when
+`j = i − 3` the rule used at steps 5 and 13 degenerates to the braid word, and
+the engine picks the Yang–Baxter rule sharing that leading monomial — a rule of
+leading coefficient `−1`, which is why §4aa reads differently step for step.
+Both rules are in the completed system and both chains are valid.
+
+Six rules occur. Three are Bokut–Shiao at the general bottom `j`, with tops `i`,
+`i−1` and `i−2`; one is the fixed-depth Bokut–Shiao at `(i−2, i−1, i−3)` (§4aa's,
+reused); and three are far-commutations, `σᵢσᵢ₋₂`, `σᵢσᵢ₋₃` and `σᵢ₋₁σᵢ₋₃`.
+Every distinctness obligation is settled by a first, second, third or fourth
+letter among the four generators, which is what leaves the depth free.
+
+**Why fifteen.** Reducing the two terms of the S-polynomial separately takes 9
+and 6 steps, and 9 + 6 = 15: as in every other corner case, the chain is exactly
+the two independent reductions with no shared intermediate to cut. -/
+
+namespace BokutShiaoCornerDepth
+
+variable {n : ℕ}
+
+section
+
+variable {i''' i'' i' i j : Fin n}
+
+/-- The run with its top letter split off. -/
+theorem dw_y (hi'' : i''.val + 1 = i'.val) (hi''' : i'''.val + 1 = i''.val)
+    (hj : j.val ≤ i'''.val) :
+    descWord i' j = (⟨i'⟩ : HeckeGen n) :: (⟨i''⟩ : HeckeGen n) :: descWord i''' j := by
+  rw [descWord_cons hi'' (by omega), descWord_cons hi''' hj]
+
+/-- The run with its top two letters split off. -/
+theorem dw_x (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    descWord i j = (⟨i⟩ : HeckeGen n) :: (⟨i'⟩ : HeckeGen n) :: (⟨i''⟩ : HeckeGen n) :: descWord i''' j := by
+  rw [descWord_cons hi' (by omega), dw_y hi'' hi''' hj]
+
+/-- The Bokut–Shiao rule with top `i` and the general bottom `j`. -/
+theorem bs_x_hrel (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val)
+    (v : Monomial (HeckeGen n)) :
+    (bokutShiaoRelation i' i j).relation.coeff v
+      = (AlgElement.ofTerms
+          [([(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i⟩ : HeckeGen n)], (1 : ℝ)),
+           ([(⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j, -1)]).coeff v := by
+  show (AlgElement.ofTerms
+    [(bsWord₁ i j, (1 : ℝ)), (bsWord₂ i' i j, -1)]).coeff v = _
+  rw [bsWord₁, dw_x hi' hi'' hi''' hj, bsWord₂, dw_y hi'' hi''' hj]
+  rfl
+
+theorem bs_x_hlm (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    (bokutShiaoRelation i' i j).lm (heckeOrder n)
+      = [(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i⟩ : HeckeGen n)] := by
+  rw [bokutShiaoRelation_lm hi' (by omega), bsWord₁, dw_x hi' hi'' hi''' hj]
+  rfl
+
+/-- The Bokut–Shiao rule with top `i−1` and the general bottom `j`. -/
+theorem bs_y_hrel (hi'' : i''.val + 1 = i'.val) (hi''' : i'''.val + 1 = i''.val)
+    (hj : j.val ≤ i'''.val)
+    (v : Monomial (HeckeGen n)) :
+    (bokutShiaoRelation i'' i' j).relation.coeff v
+      = (AlgElement.ofTerms
+          [([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i'⟩ : HeckeGen n)], (1 : ℝ)),
+           ([(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j, -1)]).coeff v := by
+  show (AlgElement.ofTerms
+    [(bsWord₁ i' j, (1 : ℝ)), (bsWord₂ i'' i' j, -1)]).coeff v = _
+  rw [bsWord₁, dw_y hi'' hi''' hj, bsWord₂, descWord_cons hi''' hj]
+  rfl
+
+theorem bs_y_hlm (hi'' : i''.val + 1 = i'.val) (hi''' : i'''.val + 1 = i''.val)
+    (hj : j.val ≤ i'''.val) :
+    (bokutShiaoRelation i'' i' j).lm (heckeOrder n)
+      = [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i'⟩ : HeckeGen n)] := by
+  rw [bokutShiaoRelation_lm hi'' (by omega), bsWord₁, dw_y hi'' hi''' hj]
+  rfl
+
+/-- The Bokut–Shiao rule with top `i−2` and the general bottom `j`. -/
+theorem bs_z_hrel (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val)
+    (v : Monomial (HeckeGen n)) :
+    (bokutShiaoRelation i''' i'' j).relation.coeff v
+      = (AlgElement.ofTerms
+          [([(⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i''⟩ : HeckeGen n)], (1 : ℝ)),
+           ([(⟨i'''⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j, -1)]).coeff v := by
+  show (AlgElement.ofTerms
+    [(bsWord₁ i'' j, (1 : ℝ)), (bsWord₂ i''' i'' j, -1)]).coeff v = _
+  rw [bsWord₁, descWord_cons hi''' hj, bsWord₂]
+  rfl
+
+theorem bs_z_hlm (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    (bokutShiaoRelation i''' i'' j).lm (heckeOrder n)
+      = [(⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i''⟩ : HeckeGen n)] := by
+  rw [bokutShiaoRelation_lm hi''' hj, bsWord₁, descWord_cons hi''' hj]
+  rfl
+
+end
+
+def V0 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]
+def V1 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]
+def V2 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]
+def V3 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]
+def V4 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i''⟩ : HeckeGen n)]
+def V5 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i''⟩ : HeckeGen n)]
+def V6 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i'''⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j
+def V7 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j
+def V8 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i'''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j
+def U0 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+def U1 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+def U2 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+def U3 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i'''⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i⟩ : HeckeGen n)]
+def U4 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i⟩ : HeckeGen n)]
+def U5 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i'''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i⟩ : HeckeGen n)]
+def U6 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i'''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j
+def U7 (i''' i'' i' i j : Fin n) : Monomial (HeckeGen n) := [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i'''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j
+
+noncomputable def T0 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V0 i''' i'' i' i j, (1 : ℝ)), (U0 i''' i'' i' i j, -1)]
+
+noncomputable def T1 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V1 i''' i'' i' i j, (1 : ℝ)), (U0 i''' i'' i' i j, -1)]
+
+noncomputable def T2 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i''' i'' i' i j, (1 : ℝ)), (U0 i''' i'' i' i j, -1)]
+
+noncomputable def T3 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i''' i'' i' i j, (1 : ℝ)), (U1 i''' i'' i' i j, -1)]
+
+noncomputable def T4 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i''' i'' i' i j, (1 : ℝ)), (U2 i''' i'' i' i j, -1)]
+
+noncomputable def T5 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i''' i'' i' i j, (1 : ℝ)), (U3 i''' i'' i' i j, -1)]
+
+noncomputable def T6 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i''' i'' i' i j, (1 : ℝ)), (U4 i''' i'' i' i j, -1)]
+
+noncomputable def T7 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i''' i'' i' i j, (1 : ℝ)), (U5 i''' i'' i' i j, -1)]
+
+noncomputable def T8 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i''' i'' i' i j, (1 : ℝ)), (U6 i''' i'' i' i j, -1)]
+
+noncomputable def T9 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i''' i'' i' i j, (1 : ℝ)), (U7 i''' i'' i' i j, -1)]
+
+noncomputable def T10 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V3 i''' i'' i' i j, (1 : ℝ)), (U7 i''' i'' i' i j, -1)]
+
+noncomputable def T11 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V4 i''' i'' i' i j, (1 : ℝ)), (U7 i''' i'' i' i j, -1)]
+
+noncomputable def T12 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V5 i''' i'' i' i j, (1 : ℝ)), (U7 i''' i'' i' i j, -1)]
+
+noncomputable def T13 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V6 i''' i'' i' i j, (1 : ℝ)), (U7 i''' i'' i' i j, -1)]
+
+noncomputable def T14 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V7 i''' i'' i' i j, (1 : ℝ)), (U7 i''' i'' i' i j, -1)]
+
+noncomputable def T15 (i''' i'' i' i j : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V8 i''' i'' i' i j, (1 : ℝ)), (U7 i''' i'' i' i j, -1)]
+
+section
+
+variable (hp : HeckeParams) {i''' i'' i' i j : Fin n}
+
+theorem s1 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i''' i'' i' i j) (T1 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (bokutShiaoRelation i'' i' j) (bokutShiaoRelation_mem hn hp hi'' (by omega))
+    (bs_y_hrel hi'' hi''' hj) (bs_y_hlm hi'' hi''' hj)
+    (by simp [*])
+    [] [(U0 i''' i'' i' i j, -1)]
+    ([(⟨i⟩ : HeckeGen n)]) ([(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]) _ _ 1 one_ne_zero
+    (by simp [V0]) (by simp [V1])
+    (by simp [V0, U0, *])
+
+theorem s2 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (_hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T1 i''' i'' i' i j) (T2 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (farCommRelation i i'') (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i'' i) (farCommRelation_lm i i'' (by omega))
+    (by simp [*])
+    [] [(U0 i''' i'' i' i j, -1)]
+    ([]) ([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]) _ _ 1 one_ne_zero
+    (by simp [V1]) (by simp [V2])
+    (by simp [V1, U0, *])
+
+theorem s3 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T2 i''' i'' i' i j) (T3 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (bokutShiaoRelation i'' i' j) (bokutShiaoRelation_mem hn hp hi'' (by omega))
+    (bs_y_hrel hi'' hi''' hj) (bs_y_hlm hi'' hi''' hj)
+    (by simp [*])
+    [(V2 i''' i'' i' i j, (1 : ℝ))] []
+    ([(⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]) ([(⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]) _ _ (-1) (neg_ne_zero.mpr one_ne_zero)
+    (by simp [U0]) (by simp [U1])
+    (by simp [U0, V2, *])
+
+theorem s4 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (_hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T3 i''' i'' i' i j) (T4 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (farCommRelation i i'') (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i'' i) (farCommRelation_lm i i'' (by omega))
+    (by simp [*])
+    [(V2 i''' i'' i' i j, (1 : ℝ))] []
+    ([(⟨i'⟩ : HeckeGen n)]) ([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]) _ _ (-1) (neg_ne_zero.mpr one_ne_zero)
+    (by simp [U1]) (by simp [U2])
+    (by simp [U1, V2, *])
+
+theorem s5 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T4 i''' i'' i' i j) (T5 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (bokutShiaoRelation i''' i'' j) (bokutShiaoRelation_mem hn hp hi''' hj)
+    (bs_z_hrel hi''' hj) (bs_z_hlm hi''' hj)
+    (by simp [*])
+    [(V2 i''' i'' i' i j, (1 : ℝ))] []
+    ([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)]) ([(⟨i⟩ : HeckeGen n)]) _ _ (-1) (neg_ne_zero.mpr one_ne_zero)
+    (by simp [U2]) (by simp [U3])
+    (by simp [U2, V2, *])
+
+theorem s6 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (_hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T5 i''' i'' i' i j) (T6 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (farCommRelation i' i''') (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i''' i') (farCommRelation_lm i' i''' (by omega))
+    (by simp [*])
+    [(V2 i''' i'' i' i j, (1 : ℝ))] []
+    ([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]) ([(⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i⟩ : HeckeGen n)]) _ _ (-1) (neg_ne_zero.mpr one_ne_zero)
+    (by simp [U3]) (by simp [U4])
+    (by simp [U3, V2, *])
+
+theorem s7 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (_hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T6 i''' i'' i' i j) (T7 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (farCommRelation i i''') (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i''' i) (farCommRelation_lm i i''' (by omega))
+    (by simp [*])
+    [(V2 i''' i'' i' i j, (1 : ℝ))] []
+    ([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]) ([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i⟩ : HeckeGen n)]) _ _ (-1) (neg_ne_zero.mpr one_ne_zero)
+    (by simp [U4]) (by simp [U5])
+    (by simp [U4, V2, *])
+
+theorem s8 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T7 i''' i'' i' i j) (T8 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (bokutShiaoRelation i' i j) (bokutShiaoRelation_mem hn hp hi' (by omega))
+    (bs_x_hrel hi' hi'' hi''' hj) (bs_x_hlm hi' hi'' hi''' hj)
+    (by simp [*])
+    [(V2 i''' i'' i' i j, (1 : ℝ))] []
+    ([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i'''⟩ : HeckeGen n)]) ([]) _ _ (-1) (neg_ne_zero.mpr one_ne_zero)
+    (by simp [U5]) (by simp [U6])
+    (by simp [U5, V2, *])
+
+theorem s9 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (_hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T8 i''' i'' i' i j) (T9 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (bokutShiaoRelation i'' i' i''') (bokutShiaoRelation_mem hn hp hi'' (by omega))
+    (BokutShiaoCornerUneq.bs_yw_hrel hi'' hi''') (BokutShiaoCornerUneq.bs_yw_hlm hi'' hi''')
+    (by simp [*])
+    [(V2 i''' i'' i' i j, (1 : ℝ))] []
+    ([]) ([(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j) _ _ (-1) (neg_ne_zero.mpr one_ne_zero)
+    (by simp [U6]) (by simp [U7])
+    (by simp [U6, V2, *])
+
+theorem s10 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T9 i''' i'' i' i j) (T10 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (bokutShiaoRelation i' i j) (bokutShiaoRelation_mem hn hp hi' (by omega))
+    (bs_x_hrel hi' hi'' hi''' hj) (bs_x_hlm hi' hi'' hi''' hj)
+    (by simp [*])
+    [] [(U7 i''' i'' i' i j, -1)]
+    ([(⟨i''⟩ : HeckeGen n)]) ([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]) _ _ 1 one_ne_zero
+    (by simp [V2]) (by simp [V3])
+    (by simp [V2, U7, *])
+
+theorem s11 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T10 i''' i'' i' i j) (T11 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (bokutShiaoRelation i'' i' j) (bokutShiaoRelation_mem hn hp hi'' (by omega))
+    (bs_y_hrel hi'' hi''' hj) (bs_y_hlm hi'' hi''' hj)
+    (by simp [*])
+    [] [(U7 i''' i'' i' i j, -1)]
+    ([(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]) ([(⟨i''⟩ : HeckeGen n)]) _ _ 1 one_ne_zero
+    (by simp [V3]) (by simp [V4])
+    (by simp [V3, U7, *])
+
+theorem s12 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (_hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T11 i''' i'' i' i j) (T12 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (farCommRelation i i'') (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i'' i) (farCommRelation_lm i i'' (by omega))
+    (by simp [*])
+    [] [(U7 i''' i'' i' i j, -1)]
+    ([(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)]) ([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j ++ [(⟨i''⟩ : HeckeGen n)]) _ _ 1 one_ne_zero
+    (by simp [V4]) (by simp [V5])
+    (by simp [V4, U7, *])
+
+theorem s13 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T12 i''' i'' i' i j) (T13 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (bokutShiaoRelation i''' i'' j) (bokutShiaoRelation_mem hn hp hi''' hj)
+    (bs_z_hrel hi''' hj) (bs_z_hlm hi''' hj)
+    (by simp [*])
+    [] [(U7 i''' i'' i' i j, -1)]
+    ([(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)]) ([]) _ _ 1 one_ne_zero
+    (by simp [V5]) (by simp [V6])
+    (by simp [V5, U7, *])
+
+theorem s14 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (_hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T13 i''' i'' i' i j) (T14 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (farCommRelation i' i''') (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i''' i') (farCommRelation_lm i' i''' (by omega))
+    (by simp [*])
+    [] [(U7 i''' i'' i' i j, -1)]
+    ([(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]) ([(⟨i''⟩ : HeckeGen n)] ++ descWord i''' j) _ _ 1 one_ne_zero
+    (by simp [V6]) (by simp [V7])
+    (by simp [V6, U7, *])
+
+theorem s15 (hn : 0 < n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (_hj : j.val ≤ i'''.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T14 i''' i'' i' i j) (T15 i''' i'' i' i j) := by
+  obtain ⟨hxy, hxz, hxw, hyz, hyw, hzw⟩ :=
+    BokutShiaoCornerUneq.gen4_ne hi' hi'' hi'''
+  have hyx := hxy.symm
+  have hzx := hxz.symm
+  have hwx := hxw.symm
+  have hzy := hyz.symm
+  have hwy := hyw.symm
+  have hwz := hzw.symm
+  exact monicStep hn hp (farCommRelation i i''') (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i''' i) (farCommRelation_lm i i''' (by omega))
+    (by simp [*])
+    [] [(U7 i''' i'' i' i j, -1)]
+    ([(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]) ([(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j) _ _ 1 one_ne_zero
+    (by simp [V7]) (by simp [V8])
+    (by simp [V7, U7, *])
+
+end
+
+theorem T15_isZero (i''' i'' i' i j : Fin n) : (T15 i''' i'' i' i j).isZero := by
+  intro m
+  simp only [T15, V8, U7, AlgElement.ofTerms_coeff, List.filter_cons,
+    List.filter_nil, decide_eq_true_eq]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]
+  ring
+
+/-- The composition of the rule at the general depth `j` with the rule at
+depth `i−2`, overlapping in the trailing `σᵢ`. -/
+noncomputable def oc (i''' i'' i' i j : Fin n) (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := bokutShiaoRelation i' i j
+  rule₂ := bokutShiaoRelation i' i i''
+  left := [(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j
+  overlap := [(⟨i⟩ : HeckeGen n)]
+  right := [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+  lm₁_decomp := by rw [bs_x_hlm hi' hi'' hi''' hj]
+  lm₂_decomp := by rw [BokutShiaoCornerUneq.bs_xz_hlm hi' hi'']; rfl
+  overlap_nonempty := by simp
+
+/-- **The S-polynomial.** -/
+theorem oc_spoly_coeff {i''' i'' i' i j : Fin n} (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val)
+    (m : Monomial (HeckeGen n)) :
+    (oc i''' i'' i' i j hi' hi'' hi''' hj).spoly.coeff m = (T0 i''' i'' i' i j).coeff m := by
+  show (bokutShiaoRelation i' i i'').lc (heckeOrder n)
+      * (AlgElement.contextMul [] (bokutShiaoRelation i' i j).relation
+          [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]).coeff m
+    - (bokutShiaoRelation i' i j).lc (heckeOrder n)
+      * (AlgElement.contextMul ([(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j)
+          (bokutShiaoRelation i' i i'').relation []).coeff m
+    = _
+  rw [bokutShiaoRelation_lc hi' (by omega), bokutShiaoRelation_lc hi' (by omega),
+    one_mul, one_mul,
+    AlgElement.contextMul_coeff_congr [] [(⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+      (bs_x_hrel hi' hi'' hi''' hj) m,
+    AlgElement.contextMul_coeff_congr ([(⟨i⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)] ++ descWord i''' j) []
+      (BokutShiaoCornerUneq.bs_xz_hrel hi' hi'') m]
+  simp only [T0, V0, U0, AlgElement.contextMul_ofTerms_coeff, List.map_cons,
+    List.map_nil, List.nil_append, List.append_nil, List.cons_append,
+    List.append_assoc, AlgElement.ofTerms_coeff, List.filter_cons,
+    List.filter_nil, decide_eq_true_eq]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- **Fifteen steps, to zero, at every depth `j ≤ i − 3`.** -/
+theorem resolves (hp : HeckeParams) {i''' i'' i' i j : Fin n} (hn : 0 < n)
+    (hi' : i'.val + 1 = i.val) (hi'' : i''.val + 1 = i'.val)
+    (hi''' : i'''.val + 1 = i''.val) (hj : j.val ≤ i'''.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc i''' i'' i' i j hi' hi'' hi''' hj).spoly nf ∧ nf.isZero := by
+  refine reducesToZero_congr ⟨T15 i''' i'' i' i j,
+    ⟨(MultiStepReduction.refl (T0 i''' i'' i' i j))
+      |>.step (s1 hp hn hi' hi'' hi''' hj)
+      |>.step (s2 hp hn hi' hi'' hi''' hj)
+      |>.step (s3 hp hn hi' hi'' hi''' hj)
+      |>.step (s4 hp hn hi' hi'' hi''' hj)
+      |>.step (s5 hp hn hi' hi'' hi''' hj)
+      |>.step (s6 hp hn hi' hi'' hi''' hj)
+      |>.step (s7 hp hn hi' hi'' hi''' hj)
+      |>.step (s8 hp hn hi' hi'' hi''' hj)
+      |>.step (s9 hp hn hi' hi'' hi''' hj)
+      |>.step (s10 hp hn hi' hi'' hi''' hj)
+      |>.step (s11 hp hn hi' hi'' hi''' hj)
+      |>.step (s12 hp hn hi' hi'' hi''' hj)
+      |>.step (s13 hp hn hi' hi'' hi''' hj)
+      |>.step (s14 hp hn hi' hi'' hi''' hj)
+      |>.step (s15 hp hn hi' hi'' hi''' hj),
+      isNormalForm_of_isZero (T15_isZero i''' i'' i' i j)⟩, T15_isZero i''' i'' i' i j⟩ ?_
+  intro m
+  exact oc_spoly_coeff hi' hi'' hi''' hj m
+
+end BokutShiaoCornerDepth
+
 end UGB.GrobnerShirshov.Hecke
