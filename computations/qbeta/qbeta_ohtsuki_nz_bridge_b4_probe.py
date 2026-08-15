@@ -158,7 +158,23 @@ def main() -> int:
     wb.add_assertion("a2_matches_proved",
                      computed=mp.nstr(a2_err, 10), expected="0", tolerance="1e-8",
                      source="Richardson a2 vs proved i*sqrt(3)/4 (method validation)")
-    wb.save()
+    # AGENTS.md §"q0 anchor convention" rule 4: say which pin you used. This
+    # probe uses NONE. Every input is a pure constant (pi, sqrt(3), the exact
+    # Ohtsuki rungs kappa1 = 11*sqrt(3)*pi/108 and kappa2 = 2*pi^2/27) or the
+    # 4_1 hyperbolic geometry read off t2.V41_integrated — the NZ longitude
+    # integral, a property of the knot complement, not of the substrate. The
+    # single non-trivial import, computations/probes/
+    # sdeformed_channel_signflip_probe.py, imports only json, subprocess,
+    # datetime, pathlib and mpmath: no q_parameter, no constants.Q, and no
+    # wedderburn_jones_markov.y_lambda_at, so the muon-cache straddle that
+    # AGENTS.md warns about is not reachable from here.
+    #
+    # So the honest record is `independent`, not the standing proton default:
+    # stamping a pin the compute never read is the misrecord this field exists
+    # to prevent. Via save(extra=...) and NOT add_data(), which nests under
+    # `data` where the audit reading body["q0Anchor"] cannot see it. No
+    # q0Value — there is no value, and one here is a Q0_FLIP.
+    wb.save({"q0Anchor": "independent"})
 
     ok = a2_err < mp.mpf("1e-8")
     print(f"\n  RESULT: {'method validated; verdict recorded' if ok else 'a2 VALIDATION FAILED'}")
