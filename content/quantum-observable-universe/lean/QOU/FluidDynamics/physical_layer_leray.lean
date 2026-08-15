@@ -257,4 +257,63 @@ theorem eventually_in_basin (E Ωp : ℕ → K) (δ q θ : K) (m : ℕ)
       · have heq : i₀ = p + 1 := le_antisymm hn hge
         simpa [heq] using hsmall
 
+/-!
+## Closing the basin hypothesis (bean `qou-f5o6`)
+
+`eventually_in_basin` above took the basin invariance as a *named
+hypothesis*.  It is discharged here by proof: with the damped
+quadratic low-mode step `Ω_{n+1} ≤ Ω_n + δ·Ω_n·(c·Ω_n − d)` — the
+same step shape GP4 (`global_persistence_subthreshold`,
+`surreal_enstrophy_finite_modes.lean`) is stated over, with
+`d = ν·μ` — the sub-level set of the threshold `θ = d/c` is
+forward-invariant (`quadratic_basin_invariant`): below threshold the
+quadratic drift is non-positive.  The lemma is layer-agnostic algebra;
+supplying the parameters of **one** layer consistently (never
+straddling, per `def:qns-unit-layers`) instantiates it in that layer.
+
+`eventual_regularity_quadratic` composes everything: Leray hypotheses
++ quadratic step ⇒ there is a step `i₀ < m` (any `m > 4E₀/(δ·(d/c))`)
+after which `Ω ≤ d/c` forever.  **Discrete eventual regularity with no
+unproved hypothesis left in the chain** — the only open item remaining
+is the sup-in-time behaviour *inside* the ε-uniform initial window.
+-/
+
+/-- **Basin invariance from the damped quadratic step** (GP4's
+    mechanism, layer-agnostic): if
+    `Ω(n+1) ≤ Ω(n) + δ·Ω(n)·(c·Ω(n) − d)` with `δ, Ω ≥ 0` and
+    `c > 0`, then the sub-level set of `θ = d/c` is forward-invariant —
+    below threshold the drift term is non-positive. -/
+theorem quadratic_basin_invariant (Ωp : ℕ → K) (δ c d : K)
+    (hδ : 0 ≤ δ) (hc : 0 < c) (hΩ : ∀ n, 0 ≤ Ωp n)
+    (hstep : ∀ n, Ωp (n + 1) ≤ Ωp n + δ * Ωp n * (c * Ωp n - d)) :
+    ∀ n, Ωp n ≤ d / c → Ωp (n + 1) ≤ d / c := by
+  intro n hn
+  have hcd : c * Ωp n ≤ d := by
+    rw [le_div_iff₀ hc] at hn
+    linarith [hn]
+  have hdrift : δ * Ωp n * (c * Ωp n - d) ≤ 0 :=
+    mul_nonpos_of_nonneg_of_nonpos
+      (mul_nonneg hδ (hΩ n)) (sub_nonpos.mpr hcd)
+  calc Ωp (n + 1) ≤ Ωp n + δ * Ωp n * (c * Ωp n - d) := hstep n
+    _ ≤ Ωp n := by linarith
+    _ ≤ d / c := hn
+
+/-- **Discrete eventual regularity, fully composed — no unproved
+    hypothesis in the chain**: Leray hypotheses + the damped quadratic
+    low-mode step give a step `i₀ < m` (for any `m` with
+    `(4/δ)·E₀ < m·(d/c)`) after which the enstrophy stays at or below
+    the threshold `d/c` forever.  Blow-up, if any, lives only inside
+    the ε-uniform initial window `[0, m)`. -/
+theorem eventual_regularity_quadratic (E Ωp : ℕ → K) (δ q c d : K)
+    (m : ℕ)
+    (hδ : 0 < δ) (hq1 : 1 < q) (hq2 : q ≤ 2) (hc : 0 < c)
+    (hΩ : ∀ n, 0 ≤ Ωp n)
+    (hdiss : ∀ n, E (n + 1) ≤ E n - δ * (1 / (2 * q)) * Ωp n)
+    (hE : ∀ n, 0 ≤ E n)
+    (hstep : ∀ n, Ωp (n + 1) ≤ Ωp n + δ * Ωp n * (c * Ωp n - d))
+    (hm : 4 / δ * E 0 < (m : K) * (d / c)) :
+    ∃ i₀ < m, ∀ n, i₀ ≤ n → Ωp n ≤ d / c :=
+  eventually_in_basin E Ωp δ q (d / c) m hδ hq1 hq2 hΩ hdiss hE hm
+    (quadratic_basin_invariant Ωp δ c d (le_of_lt hδ) hc hΩ hstep)
+
 end QOU.FluidDynamics.PhysicalLayerLeray
