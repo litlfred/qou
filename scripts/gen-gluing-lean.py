@@ -182,12 +182,25 @@ if __name__ == "__main__":
 # 2. `Shape.ne_one` is derived from the generated `one_sub_zⱼ_ne_zero`, not proved
 #    separately — `1 - z ≠ 0` and `z = 1` are contradictory.
 #
-# Limited to n ≤ 8: `Fin.prod_univ_{two..eight}` is what Mathlib provides, and the
-# template unfolds the product with it.  Larger triangulations need iterated
-# `Fin.prod_univ_succ` and are NOT emitted rather than emitted broken.
+# ⚠ THE n ≤ 8 CEILING IS GONE (2026-08-15, bean `qou-fr7j`).
+#
+# This block used to read: "Limited to n ≤ 8: `Fin.prod_univ_{two..eight}` is what Mathlib
+# provides, and the template unfolds the product with it.  Larger triangulations need
+# iterated `Fin.prod_univ_succ` and are NOT emitted rather than emitted broken."
+#
+# They do need it, and `simp` iterates it unaided:
+#
+#     simp [Fin.prod_univ_succ, triangulation, gluing]
+#
+# handles ANY n, including the n = 9 and n = 14 manifolds this generator used to refuse.
+# Measured: `9_35` (n = 9, one past the old ceiling) certifies in 95 s, sorry-free on
+# standard axioms, FIRST TRY — no variant of the `Matrix`-index trap below appeared.
+#
+# The named-lemma table is NOT kept as a fast path for n ≤ 8.  A second unfolding rule is
+# a second thing to get wrong, and the `ring` normalisation dominates the cost, not the
+# unfolding — so one rule for every n is both simpler and no slower.
 
-_PROD_UNIV = {2: "two", 3: "three", 4: "four", 5: "five",
-              6: "six", 7: "seven", 8: "eight"}
+_PROD_UNIV = None   # retained only so a stale reference fails loudly rather than silently
 
 # Index reduction for `![...] k` at a LITERAL k.  Mathlib names only cons_val_zero /
 # one / two / three; beyond index 3 there is no `cons_val_four`, so `cons_val_succ`
@@ -204,10 +217,7 @@ def emit_certification(d):
     nm = d["name"]
     ident = nm.replace("_", "").replace("-", "")
     n = d["n"]
-    if n not in _PROD_UNIV:
-        return (f"-- {nm}: {n} tetrahedra — no `Fin.prod_univ_{n}` in Mathlib, so the\n"
-                f"-- certification template does not apply.  Needs iterated\n"
-                f"-- `Fin.prod_univ_succ`.  NOT emitted rather than emitted broken.\n")
+    # No n guard: `Fin.prod_univ_succ` unfolds any n.  See the note above `_PROD_UNIV`.
     L, A = [], lambda s: L.append(s)
     A(f"/-! ### `{nm}` certified -/\n")
     A(f"namespace Cert{ident}")
@@ -240,7 +250,7 @@ def emit_certification(d):
         # with a bare "ring expressions not equal" — which reads as a wrong cofactor
         # rather than an unreduced index.  Measured: n <= 4 passes either way, n >= 5
         # needs full simp.
-        A(f"  simp [Fin.prod_univ_{_PROD_UNIV[n]}, triangulation, gluing]")
+        A("  simp [Fin.prod_univ_succ, triangulation, gluing]")
         A(f"  linear_combination edge_{k} ht\n")
     A(f"/-- **`{nm}` satisfies its edge gluing equations**, at every root of the shape")
     A("field's minimal polynomial. -/")
