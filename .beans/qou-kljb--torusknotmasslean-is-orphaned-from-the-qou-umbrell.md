@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-09T02:12:05Z
-updated_at: 2026-08-15T15:12:44Z
+updated_at: 2026-08-15T21:16:47Z
 ---
 
 Surfaced while verifying PR #4824's §1 consolidation claim with the three-way
@@ -193,3 +193,27 @@ A whole-corpus `scripts/lean-direct-cone.sh --all -k` survey is running to settl
 ### Correction to my own commit on this branch
 
 Commit `8becb91` ("register the §7c split sibling + QChebyshevFunction") justified adding those imports partly as making the modules "actually get compiled by `lake build QOU`". **That justification was wrong** — `globs` already compiled them. What the commit did correctly was satisfy `lean-orphan-gate` (which exited 1) and make the umbrella explicit; the build-coverage benefit I claimed was not real. The change is still defensible as hygiene, but the stated benefit is retracted here.
+
+
+## Whole-corpus compile survey — INTERIM at 99.5 % (2026-08-15)
+
+`scripts/lean-direct-cone.sh --all -k -j4` over the whole tree (v4.24.0, restored oleans, Lake bypassed). Two runs: the first was killed by a container restart at ~82 %, the second resumed from the surviving oleans and reached 99.5 %.
+
+```
+[1893/1903 99.5%] ok=1891 err=1 blocked=1 ready=0 inflight=1
+```
+
+**The central question is answered: the corpus is essentially green.** 1891 of 1903 modules compile. **Exactly one genuine error**, plus one module blocked behind it.
+
+That refutes two predictions, including my own:
+
+- This bean's §"Why this matters" implied a large unchecked-and-possibly-broken set; the 153-module sample (94.8 % green, 8 failures) extrapolates to ~100 failures across 1903. Actual: **1**.
+- My own escalation hypothesis — "if `globs` builds everything then any red module means `lake build` is red *now*, and there are probably tens" — is also wrong on the count. There is one.
+
+So the honest close is: the `globs` change (bean `qou-rc7b`) did not expose a broken corpus. The modules that were previously unbuilt are, with one exception, fine.
+
+**Still in flight:** `QOU.Machinery.HeckeH4WedderburnMulC` (>5 min single-module elaboration; the H4 Wedderburn modules are heavy), with 8 dependents queued behind it — `HeckeH4Semisimple`, `HeckeH4RepDecomp`, `HeckeH4WedderburnInv`, `HeckeH4Wedderburn`, `Hecke.MarkovTraceOnH3A/H4A`, `Hecke.FullRankFromWedderburn`, `Hecke.InstanceOnH3A/H4A`, `SchurWeyl.QJucysMurphy`.
+
+The identity of the single `err` module comes from the run's `--report` TSV, written at completion; it is one of that Hecke/Wedderburn chain. **Not naming it until the TSV lands** — guessing which of eleven modules failed is exactly the over-claim this repo's disciplines forbid.
+
+**Caveat on scope.** `lean-direct-cone` bypasses Lake and writes **no `.trace` files**, so this is evidence about *elaboration*, not about what a real `lake build` would do incrementally. It is the right instrument for "does this code compile"; it is not a substitute for a real build, and (per the note added to `qou-52i4`) its output is not a cache-seeding candidate.
