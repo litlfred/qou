@@ -97,6 +97,15 @@ def main() -> int:
 
         checked += 1
         agree = have == want
+
+        # Check the UNCERTAINTY as well as the value. A value-only check is
+        # not enough: `m_p/m_e` prints identically in CODATA-2018 and -2022,
+        # so its value passed while its error bar was still the 2018 one
+        # (1.1e-7 vs 3.2e-8, 3.4x too wide). An edition straddle can live
+        # entirely in the uncertainty.
+        err_agree = True
+        if have_err and entry.uncertainty is not None:
+            err_agree = mp.mpf(have_err) == entry.uncertainty
         # Express any disagreement in units of the table's own uncertainty.
         if entry.uncertainty and entry.uncertainty != 0:
             sigma = float(abs(have - want) / entry.uncertainty)
@@ -104,14 +113,19 @@ def main() -> int:
             sigma = 0.0
         rel_ppb = float(abs(have - want) / want) * 1e9 if want != 0 else 0.0
 
-        flag = "OK  " if agree else "DIFF"
+        flag = "OK  " if (agree and err_agree) else "DIFF"
         print(f"[{flag}] {sym}")
         print(f"        NIST  {quantity!r}")
         print(f"        table = {entry.value_str} ± {entry.uncertainty_str}")
         print(f"        corpus= {have_str.rstrip('0').rstrip('.')}  (± {have_err})")
         if not agree:
-            print(f"        delta = {rel_ppb:.4g} ppb = {sigma:.4g} sigma(table)")
+            print(f"        VALUE delta = {rel_ppb:.4g} ppb = {sigma:.4g} sigma(table)")
             mismatches.append((mod, sym, entry.value_str, have_str, sigma))
+        if not err_agree:
+            ratio = float(mp.mpf(have_err) / entry.uncertainty)
+            print(f"        UNCERTAINTY differs: corpus {have_err} vs table "
+                  f"{entry.uncertainty_str}  ({ratio:.3g}x)")
+            mismatches.append((mod, f"{sym} [uncertainty]", entry.uncertainty_str, have_err, 0.0))
         print()
 
     print("=" * 78)
