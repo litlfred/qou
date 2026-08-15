@@ -630,6 +630,11 @@ import QOU.QBeta.ThetaLipschitzObstruction
 import QOU.QBeta.StokesSymmetryConstant
 import QOU.QBeta.StokesQZeroDTCount
 import QOU.QBeta.StokesSymmetryConstantQZero
+-- M2 (conditional BPS characterization) was an umbrella orphan (qou-orph
+-- pattern: nothing imported it, so `lake build` never checked it). Importing
+-- the M3 conjecture class below pulls the whole M2 chain under CI.
+import QOU.QBeta.AomegaM2BPSCohomology
+import QOU.QBeta.RouteCM3CategoryIdentification
 import QOU.QBeta.UDeformFamilyPruning
 import QOU.QBeta.NewtonRealityInvariance
 import QOU.QBeta.QBesselContiguityRecurrence
