@@ -105,3 +105,64 @@ Sequencing that keeps it reviewable:
 `y_lambda_at` is unlikely to be the only accessor with the "matches the package
 constant ⇒ serve the cache" shape. Grep for other witness caches gated on
 `q_parameter.Q` and apply the same fix (gate on the artifact's own recorded q₀).
+
+## 2026-08-15 — the inventory rests on a field that could flip (PR #5082)
+
+**Re-scope this before running the sweep.** The premise is "move the ~840
+muon-q0 witnesses to proton", which presumes you can tell which witnesses are
+muon-anchored. That identification was not sound.
+
+### 1. The muon LABEL was derivable from a stale file, and about to flip
+
+`_q0_value_for_anchor("muon")` in `qou_substrate/witness.py` read
+`computations/q-pinning-50-digit.witness.json` -> `derived_50_digit.q`.
+But that producer now sets `Q = q_at(mp.dps)` — the **PROTON** solve — and
+writes `"q": str(Q)`. The committed witness holds a muon-range value ONLY
+because it predates that change.
+
+So **re-running `q_pinning_50_digit.py` would have made every subsequent
+muon-anchored witness stamp a PROTON value under `q0Anchor: "muon"`** — the
+full 11.5 ppb gap, silently, with nothing failing. That is the flip-flop this
+whole anchor-stamping mechanism exists to prevent, sitting inside the
+mechanism. Fixed in #5082: both anchors are now DERIVED
+(`q_muon_at()` / `Q_50_DIGIT_STR`), reading no witness.
+
+**A test was pinning the bug**: `test_env_override_muon` asserted the muon
+value `startswith("1.109978595557")` — the stale prefix — so a *correct*
+implementation failed it. Now compared against `q_muon_at()`.
+
+### 2. The real inventory, measured (not "~840")
+
+`computations/q0_provenance_audit.py`, over 3138 witnesses:
+
+      406  proton
+      709  muon
+       13  truncated-5-digit (a 1.10998 literal, 1277 ppb off)
+       51  other
+     1978  NOT RECORDED (63.0%)
+      243  muon label that q_muon_at() does not reproduce
+       18  multi-anchor candidates (some are q-sweeps — by design)
+
+**The migration's headline number is wrong in both directions.** It is 709
+muon-labelled, not ~840 — and the far larger group is the **1978 witnesses
+that record no anchor at all**, which the sweep's framing does not cover.
+For those, "is this muon?" cannot be answered from the file; it needs the
+producer. A sweep scoped to "the muon ones" silently leaves 63% of the corpus
+in an unknown state.
+
+### 3. Scope calibration on the 243
+
+They are a REPRODUCIBILITY defect, not accuracy: the gap is 2.842e-12, which
+is **431x smaller** than the CODATA uncertainty on q_muon itself (m_mu/m_e is
+known to ~7 sig figs, capping q_muon at ~8). No physical quantity moves.
+Do not report it as a precision problem — an earlier version of my own note
+did, and that was an overclaim.
+
+### Suggested re-scope
+
+1. Land the derived-label fix (#5082) first — otherwise the sweep's own
+   identification step can flip mid-run.
+2. Decide what to do about the **1978 unrecorded** witnesses; that is the
+   actual bulk, and it is a producer-side question, not a witness-rewrite.
+3. Only then consider the 709 labelled-muon files, and only where a producer
+   re-run is genuinely wanted — not as a string substitution.
