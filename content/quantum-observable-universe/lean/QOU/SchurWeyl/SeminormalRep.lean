@@ -71,6 +71,17 @@ namespace SeminormalRep
 
 variable {μ : YoungDiagram} (q : ℝ)
 
+/-- `SYT μ` is finite (`QOU.Mathlib.StandardYoungTableau.instFinite`); this is the
+`Fintype` that makes `Matrix (SYT μ) (SYT μ) ℝ` a ring, so that the generator matrices can
+be multiplied at all.  Noncomputable — it goes through `Fintype.ofFinite`, which is fine
+here because nothing in this file is meant to evaluate. -/
+noncomputable instance instFintypeSYT : Fintype (StandardYoungTableau μ) := Fintype.ofFinite _
+
+/-- Companion to `instFintypeSYT`: `Matrix`'s ring structure needs decidable equality on the
+index type as well as finiteness (it is what makes the identity matrix definable). -/
+noncomputable instance instDecEqSYT : DecidableEq (StandardYoungTableau μ) :=
+  Classical.decEq _
+
 /-- The off-diagonal entry of a size-`2` orbit pair, at axial distance `d` **as measured in
 the source tableau**.  The negative-distance member is the "first" of the pair and its
 column carries `1 + a(d)·a(-d)`; the other carries the plain `1`.
@@ -140,8 +151,6 @@ when it does not.
 section Quadratic
 
 open scoped Classical
-
-noncomputable local instance : Fintype (StandardYoungTableau μ) := Fintype.ofFinite _
 
 /-- **The two off-diagonal entries of a size-`2` pair multiply to `1 + a(d)·a(-d)`.**  One
 of them is the plain `1` and the other carries the whole factor — which one depends on the
@@ -344,8 +353,6 @@ observes that both sides pair the same four entries.
 section FarComm
 
 open scoped Classical
-
-noncomputable local instance : Fintype (StandardYoungTableau μ) := Fintype.ofFinite _
 
 /-- The column of a tableau that `σ_k` fixes is the single diagonal entry. -/
 theorem sum_mul_genMat_column_of_not_admissible (k : ℕ) (hk : 1 ≤ k)
@@ -599,8 +606,6 @@ smaller ones.
 section Braid
 
 open scoped Classical
-
-noncomputable local instance : Fintype (StandardYoungTableau μ) := Fintype.ofFinite _
 
 /-- **The braid's left-hand side, expanded onto the orbit.**  Two applications of
 `genMat_mul_apply` reduce `ρ(σ_k)ρ(σ_{k+1})ρ(σ_k)` at column `T` to four entries of
@@ -1720,6 +1725,52 @@ theorem genMat_braid (hq : 0 < q) (hq1 : q ≠ 1) (k : ℕ) (hk : 1 ≤ k)
     · exact genMat_braid_of_both_fixed q k hk hkn hl hln hka hla T'
 
 end Braid
+
+/-! ## Packaging: the representation as an algebra map
+
+The three relations are exactly `Hecke.lift`'s three obligations, so the seminormal
+representation of `H_{n+1}(q)` on `SYT μ` follows once the indexing is translated: generators
+here are `k : ℕ` with `1 ≤ k` and `k + 1 ≤ |μ|`, generators there are `i : Fin n`, and the
+correspondence is `k = i + 1` with `|μ| = n + 1`.
+-/
+
+section Package
+
+/-- The generator matrices re-indexed for `Hecke.lift`: `σ_i ↦ ρ(σ_{i+1})`. -/
+noncomputable def seminormalGen (n : ℕ) (hN : μ.cells.card = n + 1) (i : Fin n) :
+    Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ :=
+  genMat q ((i : ℕ) + 1) (by omega) (by have := i.isLt; omega)
+
+/-- **The general-`λ` Hoefsmit seminormal representation.**
+
+`H_{n+1}(q) →ₐ[ℝ] M_{SYT μ}(ℝ)` for any shape `μ` with `|μ| = n + 1`, built from the three
+relations proved above through the universal property `Hecke.lift`.  Its dimension is
+`#SYT μ`, the Specht dimension of `μ`. -/
+noncomputable def seminormalRep (hq : 0 < q) (hq1 : q ≠ 1) (n : ℕ)
+    (hN : μ.cells.card = n + 1) :
+    Hecke ℝ q q⁻¹ n →ₐ[ℝ] Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ :=
+  Hecke.lift ℝ q q⁻¹ n (seminormalGen q n hN)
+    (fun i => by
+      have hq0 : q ≠ 0 := ne_of_gt hq
+      rw [mul_inv_cancel₀ hq0, one_smul]
+      exact genMat_quadratic q hq hq1 _ _ _)
+    (fun i hi => by
+      have h : (seminormalGen q n hN ⟨(i : ℕ) + 1, hi⟩)
+          = genMat q ((i : ℕ) + 1 + 1) (by omega) (by omega) := rfl
+      rw [h]
+      exact genMat_braid q hq hq1 _ _ _ _ _)
+    (fun i j hij => by
+      refine genMat_far_comm q _ _ _ _ ?_
+      have := i.isLt; have := j.isLt
+      omega)
+
+/-- `seminormalRep` sends the generator `σ_i` to the matrix `ρ(σ_{i+1})`. -/
+@[simp] theorem seminormalRep_σ (hq : 0 < q) (hq1 : q ≠ 1) (n : ℕ)
+    (hN : μ.cells.card = n + 1) (i : Fin n) :
+    seminormalRep q hq hq1 n hN (Hecke.σ ℝ q q⁻¹ n i) = seminormalGen q n hN i :=
+  Hecke.lift_σ ℝ q q⁻¹ n _ _ _ _ i
+
+end Package
 
 end SeminormalRep
 

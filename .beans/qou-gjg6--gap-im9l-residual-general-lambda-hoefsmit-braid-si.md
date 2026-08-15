@@ -1103,3 +1103,39 @@ REMAINING for hoefsmit_seminormal_rep: PACKAGING ONLY. Hecke.lift wants
 The work is the index translation between `k : N` with 1 <= k, k+1 <= |mu| here and `Fin n`
 there (n = |mu| - 1, generator i <-> k = i+1), plus matching Hecke's smul normalisation.
 No open mathematics.
+
+
+## THE REPRESENTATION IS BUILT 2026-08-15 — but it does NOT discharge the stated sorry
+
+seminormalRep (sorry-free, axiom-clean):
+
+    Hecke R q q^-1 n ->a[R] Matrix (SYT mu) (SYT mu) R    for  |mu| = n+1,  0 < q,  q != 1
+
+built from genMat_quadratic / genMat_far_comm / genMat_braid through Hecke.lift, with
+seminormalRep_sigma as the computation rule. The general-lambda Hoefsmit seminormal
+representation now EXISTS as an algebra map. Also hoisted instFintypeSYT / instDecEqSYT to
+file level (Matrix's ring structure needs BOTH; the sections had only supplied Fintype
+locally, via `open scoped Classical` for the DecidableEq).
+
+I CHECKED WHETHER THIS CLOSES hoefsmit_seminormal_rep. IT DOES NOT. Three gaps remain, and
+the third is not bookkeeping:
+
+ (a) INDEX TYPE. The statement wants Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) R; mine
+     is indexed by SYT mu. Needs dLambda lam = #SYT(partitionShape lam) plus a reindex along
+     an equiv (Matrix.reindexAlgEquiv). Mechanical but not written.
+ (b) NON-SCALARITY. The statement's payload is `2 <= dLambda lam -> exists i, forall s,
+     rho(sigma_i) != s . 1`. Nothing above proves that; it is bean SW-5. Should be reachable
+     -- if dLambda >= 2 some generator has two distinct diagonal entries a(d) and a(-d), or
+     a nonzero off-diagonal -- but it is a separate argument.
+ (c) HYPOTHESIS MISMATCH, and this one is a real question, not a chore. The statement assumes
+     only `hq : q != 0`. seminormalRep needs `0 < q` AND `q != 1`, because seminormalParam
+     has a pole where q^(-2d) = 1 and zpow_ne_one is what keeps it off. At q = -1 (q^2 = 1)
+     the formula degenerates -- SeminormalParam.lean already records that S1's entry is
+     -1/(2q) != 0 while the formula gives 0/0. So the stated theorem is NOT a corollary of
+     this construction for general q != 0, and may need either a weaker hypothesis in the
+     statement or a different construction at roots of unity. DO NOT assume it follows.
+
+So the honest status: the mathematics of the general-lambda seminormal representation is
+DONE for 0 < q != 1. hoefsmit_seminormal_rep keeps its Ref'd sorry, and closing it needs (a),
+(b), and a decision about (c) -- which is an owner-facing question about whether the stated
+hypothesis is right, not something to quietly widen or narrow.
