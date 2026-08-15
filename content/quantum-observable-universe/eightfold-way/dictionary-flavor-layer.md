@@ -1,11 +1,13 @@
-The knot--particle dictionary of Chapter~\ref{chap:knots-particles}
+The knot--particle dictionary of [the knots-particles
+chapter](#chap:knots-particles-confinement)
 maps each particle to a specific braid configuration: leptons to torus
 knots $T(2, 2k+1)$, bosons to torus links $T(2, 2k)$, quarks to
 unknot strands in the Borromean braid, and composite hadrons to
-products under $\bowtie_K$.  This chapter adds the \emph{flavor layer}:
+products under $\bowtie_K$.  This chapter adds the *flavor layer*:
 each dictionary entry now carries the $A_2$ quantum numbers $(I_3, Y)$
 from the hexagonal weight lattice.
 
+```tex
 \begin{center}
 \begin{tabular}{l l c c l}
 \hline
@@ -33,26 +35,28 @@ $r, g, b$ & $G_2$ stabilizer (\S\ref{sec:color-algebra}) & --- & --- & not exclu
 \hline
 \end{tabular}
 \end{center}
+```
 
-\textbf{Epistemic tiers.}
-The isospin $I_3$ column is \emph{derived} (writhe-to-isospin map,
-no fitted parameters).  The hypercharge $Y$ column is \emph{open}
+**Epistemic tiers.**
+The isospin $I_3$ column is *derived* (writhe-to-isospin map,
+no fitted parameters).  The hypercharge $Y$ column is *open*
 (candidate: ribbon twist; battery: Gell-Mann--Nishijima consistency).
-The quark flavor assignments are \emph{conditional on $N = 3$}
+The quark flavor assignments are *conditional on $N = 3$*
 (the central open problem of this chapter).  The color assignments
 follow from the octonionic $G_2$ route but remain at the
 discrete-skeleton level pending the continuous $G_2$ completion.
 
-\textbf{What the $(I_3, Y)$ columns are.}  With one exception they are
+**What the $(I_3, Y)$ columns are.**  With one exception they are
 the standard $\mathrm{SU}(3)$ flavour assignments, imported from the
 eightfold-way classification and placed against the braid column to show
-that the dictionary is \emph{consistent} with it.  They are not outputs
+that the dictionary is *consistent* with it.  They are not outputs
 of the braid construction.  The exception is $I_3$ on the nucleon
 doublet, where the writhe difference reproduces $\Delta I_3 = 1$
 scale-free --- that entry is derived.  Every $Y$ entry, and every quark
 row, is either open or conditional on $N = 3$.
 
-No entry in this table is a \emph{fit} --- nothing here was tuned to
+No entry in this table is a *fit* --- nothing here was tuned to
 match data --- but neither is the table a derivation of the flavour
 quantum numbers.  It is a consistency ledger, and will be updated as the
-open problems of \S\ref{sec:eightfold-open-problems} are resolved.
+open problems of [the open-problems
+section](#sec:eightfold-open-problems) are resolved.
