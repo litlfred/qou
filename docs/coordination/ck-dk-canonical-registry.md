@@ -377,3 +377,92 @@ Two objects are both called "the c₃ bar-odd `S`" and differ by ~5 orders
 (`S_leak ≈ 0.0097` vs `S ≈ 886.79`); `SLeakZeroCrossing.lean` carries a collision
 guard, but the 2026-07-12 capstone straddles them and KC21 inherits the
 vocabulary. **Say which `S` you mean.**
+
+### 9d. Resummation-witness re-tier — the owed item from `qou-qb8e`
+
+The 2026-08-09 convergence correction enumerated 29 D-ladder witnesses and
+recorded which had been rendered ill-posed, but explicitly deferred the re-tier:
+*"That re-tiering is a registry edit and is **not made here**; it is tracked on
+bean `qou-qb8e`."* This is that edit.
+
+**Why it matters, and why a re-run would not have caught it.** No witness file
+was wrong, and **all 29 still report `allPassed: true`** — each computes exactly
+what it says it computes. What changed is that for one group the *question* is
+ill-posed: they are divergent-series estimators applied to a series that
+converges. Their recorded failures — *"gate fails at every `s`"*,
+*"length-blocked at k=41"*, *"UNDECIDABLE at k=21"* — read as obstructions to be
+overcome with more terms. They are not. They are the estimators detecting that
+**there is nothing to estimate**.
+
+| tier | count | reading |
+|---|---|---|
+| **A — UNAFFECTED** | 6 | arithmetic / holonomicity / 2-adic; independent of growth class |
+| **B — scope-(b) CLOSED / ILL-POSED** | **12** | divergent-series estimators on a convergent series |
+| **C — PARTIALLY superseded** | 1 | exact k=31 data stands; its "divergence-class C" reading is the spurious `1/log k` decay |
+| **D — NOT ASSESSED** | **3** | genuinely different object (deformed meridian); radius result does not transfer |
+
+**Group B is re-tiered from scope-(a) NEGATIVE to scope-(b) CLOSED/ILL-POSED.**
+None is deleted — they are the evidence the resummation arm was pursued properly
+and exhausted, and their input (the exact `ℚ(√3)` ladder) is live. What changes
+is that **none of them is an open lever**: do not re-run them for more terms, and
+do not read their failures as a gate.
+
+#### Correction to the 2026-08-09 group assignment (B is 12, D is 3)
+
+That note put `qbeta-odd-channel-stokes-borel` in group **D** ("different
+object … concerns the deformed meridian and the odd-channel Stokes structure,
+**not `D(ũ)`**"). **That is wrong, and it is checkable in one line.** The probe
+imports the D-ladder producer and calls it directly:
+
+```python
+import qbeta_dladder_generating_function_structure_probe as P   # line 87
+dk, KMAX, valid_top, odd_ok = P.build_d_ladder()                # line 136
+```
+
+It operates on **exactly the same `d_k`**, so the radius result *does* transfer
+and it belongs in **B**. Verified by reference count: the three genuine group-D
+probes (`…deformed-meridian`, `…deformed-rungs`, `…borel-pade-resummation`) have
+**0** references to `build_d_ladder`; this one has **4**.
+
+This is also why its re-scope in PR #5050 was correct rather than an over-reach:
+its own data corroborates convergence (Gevrey order drifts **down**, `0.08→0.05`;
+Borel–Leroy pole `0.147` at `s = 0.02`, ≈3 % from `ρ` and trending toward it as
+`s → 0`). Scope-(a): that is *consistency with* the radius, **not** a derivation
+of `ρ` from Borel–Leroy.
+
+Its method negative — plain-Borel (Vol/π) does **not** transfer to the odd
+channel, so G3 (#3805) needs the true q-Borel/alien chain — is a statement about
+the *method* and survives the re-tier intact.
+
+#### Group B — the twelve
+
+    qbeta-dladder-ecalle-acceleration                 Leroy gate fails at every s
+    qbeta-dladder-ecalle-phib-resummation
+    qbeta-dladder-single-instanton-extraction         "length-blocked at k=41"
+    qbeta-dladder-fibre-branch-stokes-ambiguity       r* = 0.147 IS the ratio estimate of ρ
+    qbeta-dladder-fibre-two-action
+    qbeta-dladder-jackson-qborel-acceleration
+    qbeta-dladder-qborel-leroy-resummation
+    qbeta-dladder-parity-split-resummation
+    qbeta-dladder-parity-odd-singularity-even-order
+    qbeta-dladder-barodd-borel-pade-laplace
+    qbeta-dladder-parity-adjudication                 "UNDECIDABLE at k=21"
+    qbeta-odd-channel-stokes-borel                    ← moved from D (see above)
+
+`…fibre-branch-stokes-ambiguity` is the sharpest of them: its `r* = 0.147` was
+recorded as an ambiguity scale and is in fact a ratio estimate of `ρ = 0.1428`
+— the arm measuring the radius while reporting a Stokes datum.
+
+#### The reusable falsifier
+
+Any future claim of Gevrey growth, a nonzero instanton action, or a Stokes
+ambiguity **in this ladder** must first exhibit a singularity of
+`log R(q) − log R(1/q)` strictly inside `|ũ| < ρ`. The complete singular set is
+enumerated in the 2026-08-09 audit; none is. Do not open another
+Borel/Leroy/Stokes/Écalle probe on `D(ũ)` without clearing that bar first.
+
+**Scope.** Scope-(b) here is the *proved-invariant* kind and is justified by the
+enumerated singular set plus `κ = 0` (`k²Δ²log|d_k| → 1`, `kΔ² → 0`), not by a
+numerical near-miss. It closes the resummation arm on **this** ladder only. The
+Ohtsuki κ-tower is genuinely Gevrey-1 divergent and its resurgence programme is
+untouched, as are the three group-D probes.
