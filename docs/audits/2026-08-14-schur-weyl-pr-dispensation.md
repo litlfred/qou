@@ -238,12 +238,34 @@ exchanges the cells of `k` and `k+1`, each by `cellOf_unique` — so
 `swapTableau_involutive` now carries no side hypothesis. `{T, s_k·T}` is a two-element
 orbit outright.
 
-**Step (i) is therefore complete**, and what still remains of `qou-gjg6` is step (ii)
-only — a map `Fin (dLambda λ) → SYT λ`, the orbit trichotomy as a decidable case split,
-and the block-diagonal assembly. Bookkeeping rather than new mathematics: the block is
-`seminormalBlock` (proved), the parameter is `seminormalParam` (proved), the two scalar
-cases are proved, the size-2 orbit partner is proved, and the size-6 braid is proved.
-`hoefsmit_seminormal_rep` keeps its `-- Ref:`-cited `sorry` until that plumbing lands.
+**Step (i) is complete**, and — as of 2026-08-15 — two of the four step-(ii) blockers
+have closed as well. Current state:
+
+| step-(ii) blocker | state |
+|---|---|
+| far commutation of the `s_k`-actions (`σ_kσ_l = σ_lσ_k`, `\|k-l\| ≥ 2`) | **closed** — `swapTableau_comm` (#5053) |
+| the size-3 orbit identity | **closed** — `Orbit3Braid` (#5062) |
+| orbit-size classification for `⟨s_k, s_{k+1}⟩` on `SYT λ` | open |
+| per-orbit basis correspondence onto the explicit index orderings | open |
+
+**Every orbit-*local* identity is now proved**: size 1 (the scalars `q`, `-q⁻¹`, via
+`axialDist_of_sameRow`/`_sameCol` with `seminormalParam_one`/`_neg_one`), size 2
+(`seminormalBlock`, with `swapTableau` as the orbit partner), size 3 (`Orbit3Braid` — the
+standard fillings of a domino together with a disjoint cell, `3!/2! = 3`), and size 6
+(`Orbit6Braid`). `Orbit3Braid`'s two hypotheses are derived from `seminormalParam`, not
+merely stated.
+
+What is left is therefore **assembly**, not new identities: classify the orbits, and map
+each onto the explicit index ordering in which its identity is stated.
+`hoefsmit_seminormal_rep` keeps its `-- Ref:`-cited `sorry` until both land.
+
+**Two corrections worth keeping.** Both were mine, and both were wrong at the time of
+writing. Step (ii) was first described in this document as "bookkeeping rather than new
+mathematics"; it in fact required four distinct blockers, two of which needed real proofs.
+And the size-3 case was initially probed with the scalar left unconstrained, which made
+every relation fail — including the quadratic — until `sc² = c·sc + 1` was imposed. They
+are recorded rather than silently overwritten, because the failure mode they share —
+assuming the remaining work is plumbing — is the one most likely to recur.
 
 ## 4. Verification posture
 
