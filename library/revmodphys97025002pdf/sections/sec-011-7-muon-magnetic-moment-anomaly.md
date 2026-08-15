@@ -7,6 +7,7 @@ section_number: 7
 pages: 4-4
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 There are two experimental input data that determine
 the recommended value of aμ. These are values of the

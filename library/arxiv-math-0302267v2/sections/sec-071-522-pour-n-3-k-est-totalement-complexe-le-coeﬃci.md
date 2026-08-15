@@ -7,6 +7,7 @@ section_number: 5.22
 pages: 65-66
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et"
 ---
 σ(ζ)) (resp. 0 pour ζ = 1), et le rˆ ole pr´ ec´ edemment jou´ e par le coeﬃcient−ζ(2) de e0e1
 est jou´ e par la diﬀ´ erence des coeﬃcients deeζ et de eζ−1 , pour ζ ∈ µN outre que ±1. Cette

@@ -7,6 +7,7 @@ section_number: null
 pages: 2-3
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
+doc_brief: "Stateintegralsforthequantized SL2(C)Chern-Simonsinvariant CalvinMcPhail-Snyder DepartmentofMathematics,DukeUniversity calvin@sl2.site — Previous work of the author and N."
 ---
 Kashaev’s Volume Conjecture[Kas97] proposes a striking connection between the geometry of
 hyperbolicknotsandtheirquantuminvariants. Thisconjectureappearstoberelatedtoquantum

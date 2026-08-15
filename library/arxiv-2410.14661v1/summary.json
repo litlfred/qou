@@ -1,0 +1,117 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2410.14661v1",
+ "source_sha256": "3362fcd5e28eb1f0",
+ "brief": "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the",
+ "extended": "**ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT**\n\n62 pp, 19 sections.\n\n**Abstract.** This is the third article in a series devoted to the study of the asymptotic expansions of various quantum invariants related to the twist knots. In this paper, by us- ing the saddle point method developed by Ohtsuki and Yokota, we obtain an asymptotic expansion formula for the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by doing integral q-surgery along the twist knotsKp at the root of unity e 4π√−1 r (r is odd).\n\n**Outline.** 1 Introduction; 2 Preliminaries; 2.1 Defintion of the Reshetikhin-Turaev invari; 2.2 Dilogarithm and Lobachevsky functions; 2.3 Quantum dilogrithm functions; 2.4 Saddle point method; 3 Computations of the potential function; 4 Poisson summation formula; 5 Asymptotic expansions; 5.1 Preparations; 5.5 Final proof; 6 Appendices; 6.1 Geometry of the critical point; 6.2 Critical value gives the complex volume; 6.3 Proof of Proposition 5.2; 6.4 Estimation of the critical value; 6.5 Two-dimensional saddle point method; 6.6 One-dimensional saddle point method\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: For (p,q )∈S, the asymptotic expansion of Reshetikhin-TuraevRTr(Mp,q)\n- Theorem 1.2: The final Appendix Section 6 is devoted to the proof of several results\n- Theorem 5.7: When m1 = 0 and m3≥ 1, then\n- Theorem 6.11: Moreover, when m3≥ 1, from the inequalities (6) and (7), we obtain\n- Theorem 5.8: When m1≥ 1 and m3 = 0, then\n- Theorem 6.12: Moreover, when m1≥ 1, from the inequalities (14), we obtain",
+ "tokens": {
+  "brief": 49,
+  "extended": 427
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-21-defintion-of-the-reshetikhin-turaev-invariant",
+   "title": "Defintion of the Reshetikhin-Turaev invariants",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-003-22-dilogarithm-and-lobachevsky-functions",
+   "title": "Dilogarithm and Lobachevsky functions",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-23-quantum-dilogrithm-functions",
+   "title": "Quantum dilogrithm functions",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-005-24-saddle-point-method",
+   "title": "Saddle point method",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-3-computations-of-the-potential-function",
+   "title": "Computations of the potential function",
+   "pages": "8-15"
+  },
+  {
+   "id": "sec-007-4-poisson-summation-formula",
+   "title": "Poisson summation formula",
+   "pages": "15-20"
+  },
+  {
+   "id": "sec-008-5-asymptotic-expansions",
+   "title": "Asymptotic expansions",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-009-51-preparations",
+   "title": "Preparations",
+   "pages": "20-41"
+  },
+  {
+   "id": "sec-010-55-final-proof",
+   "title": "Final proof",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-011-6-appendices",
+   "title": "Appendices",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-012-61-geometry-of-the-critical-point",
+   "title": "Geometry of the critical point",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-013-62-critical-value-gives-the-complex-volume",
+   "title": "Critical value gives the complex volume",
+   "pages": "43-45"
+  },
+  {
+   "id": "sec-014-63-proof-of-proposition-52",
+   "title": "Proof of Proposition 5.2",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-015-64-estimation-of-the-critical-value",
+   "title": "Estimation of the critical value",
+   "pages": "46-52"
+  },
+  {
+   "id": "sec-016-65-two-dimensional-saddle-point-method",
+   "title": "Two-dimensional saddle point method",
+   "pages": "52-55"
+  },
+  {
+   "id": "sec-017-66-one-dimensional-saddle-point-method",
+   "title": "One-dimensional saddle point method",
+   "pages": "55-61"
+  },
+  {
+   "id": "sec-018-references",
+   "title": "References",
+   "pages": "61-62"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

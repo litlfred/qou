@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-5
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
+doc_brief: "MOSCOW MA THEMA TICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
 ---
 Let M be a simply connected three-dimensional manifold with a volume form
 µ, and ξ a divergence-free vector ﬁeld on M . The divergence-free property means

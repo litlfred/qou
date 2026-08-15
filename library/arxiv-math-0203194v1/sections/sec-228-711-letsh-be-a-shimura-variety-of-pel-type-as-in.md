@@ -7,6 +7,7 @@ section_number: 7.1.1
 pages: 100-100
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 setting of 1.1.4: B is a simple ﬁnite-dimensional Q-algebra, with a positive
 involution∗, V is a B-module of ﬁnite type, endowed with an alternate

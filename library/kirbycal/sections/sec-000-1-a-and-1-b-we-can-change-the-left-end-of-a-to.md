@@ -7,6 +7,7 @@ section_number: 1
 pages: 15-20
 source_pdf: kirbycal.pdf
 source_sha256: 8dae9487ed32a3bd
+doc_brief: "Inventiones math. 45, 35- 56 (1978) mathematicae 9 by Springer-Verlag 197 A Calculus for Framed Links in S 3 Robion Kirby* — 3 sections: A and 1 B, we can change the left ; B prove half this equivale"
 ---
 1 -1 -2 -2 
 Fig. 4.11 

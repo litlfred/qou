@@ -7,6 +7,7 @@ section_number: 7
 pages: 123-128
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
+doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 (1) As was pointed out in Section 1.1, Markov’s Theorem is just one example of a class
 of theorems about 3–manifolds in which some form of stabilization and destabilization

@@ -7,6 +7,7 @@ section_number: null
 pages: 79-79
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 LetX be any topological space. By a path inX we mean a continuous map℘ : [T1,T 2]→X
 for some interval [T1,T 2]⊂ R. We deﬁne the path groupoidP(X) as follows: the objects of

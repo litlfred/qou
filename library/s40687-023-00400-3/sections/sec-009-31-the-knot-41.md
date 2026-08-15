@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 12-16
 source_pdf: s40687-023-00400-3.pdf
 source_sha256: fd7638a8cf512a99
+doc_brief: "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 https://doi.org/10.1007/s40687-023-00400-3 RESEARCH Twisted Neumann–Zagier matrices StavrosGaroufalidis1,2* andSeokbeomYoon 1 *Correspondence: — TheN"
 ---
 and /Delta12. Using the default triangulation of SnapPy for 41 with isometry signature
 cPcbbbiht_BaCB, thegluingequationsare

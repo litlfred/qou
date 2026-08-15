@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 19-20
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 The A-polynomial of a knot has a number of interesting proper ties. For example, as
 we already mentioned earlier, one can choose a normalizatio n such that A(l,m ) has integer

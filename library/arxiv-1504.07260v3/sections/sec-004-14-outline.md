@@ -7,5 +7,6 @@ section_number: 1.4
 pages: 10-10
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
+doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
 ---
 In section 2 we introduce the CHL models that we shall analyse in the paper and we discuss

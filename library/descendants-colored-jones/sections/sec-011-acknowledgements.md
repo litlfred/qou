@@ -7,6 +7,7 @@ section_number: null
 pages: 24-24
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
+doc_brief: "Pure and Applied Mathematics Quarterly — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 The authors wish to thank Jie Gu, Marcos Mariño, Campbell Wheeler and
 Don Zagier for many enlightening conversations, and the International Math

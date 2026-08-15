@@ -7,6 +7,7 @@ section_number: null
 pages: 39-40
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 a ray from Section 2.5. Let us now also ﬁx an acute sector ∆ ⊂ C. The support property ensures
 that for any ray ℓ⊂ ∆ the expression

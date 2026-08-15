@@ -7,6 +7,7 @@ section_number: 8.1
 pages: 26-26
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
+doc_brief: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 For two prime knots K1 and K2 one deﬁnes K1 ≥ K2 if there exists a surjective group
 homomorphism ϕ :π1(K1) →π1(K2). The relation “ ≥ ” deﬁnes a partial order on the set

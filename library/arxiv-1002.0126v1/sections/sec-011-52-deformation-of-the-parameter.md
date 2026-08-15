@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 29-38
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
+doc_brief: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
 ---
 and its complexiﬁcation (Conjecture 5.1), the (possible) limit corres ponds to the
 complete hyperbolic structure of S3\ K for a hyperbolic knot K. As described in

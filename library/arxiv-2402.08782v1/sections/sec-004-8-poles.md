@@ -7,6 +7,7 @@ section_number: 8
 pages: 9-11
 source_pdf: 2402.08782v1.pdf
 source_sha256: 30311f0bd815f93f
+doc_brief: "Hecke–Farey coordinates for Bring’s surface — The modular groupΓ (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that"
 ---
 In a Farey map (the caseq = 3) a pole is a vertex with a Farey coordinate of
 the form a

@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 10-11
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 In Chapter 2 of this thesis, we give a brief sketch of our experiment, which motivates the
 algebraic model being proposed. In Chapter 3, we introduce the algebra of the complex

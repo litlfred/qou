@@ -7,6 +7,7 @@ section_number: 2
 pages: 33-40
 source_pdf: 0304010v1.pdf
 source_sha256: fc2296c027b3feb0
+doc_brief: "KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS — Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn."
 ---
 This is a continuous function on R with compact support. Dropping λ, which we
 consider as the random element from the probability space ( Yn, Mn), we interpret

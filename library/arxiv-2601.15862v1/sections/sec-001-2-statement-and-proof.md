@@ -7,6 +7,7 @@ section_number: 2
 pages: 1-14
 source_pdf: 2601.15862v1.pdf
 source_sha256: e37fa9b4515f58d1
+doc_brief: "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED — We have previously observed that the theory of solutions of par- tial differential equations, regarded asdiffietiesinside jet bundles, acquires a"
 ---
 Appendix A. Background 9
 References 14

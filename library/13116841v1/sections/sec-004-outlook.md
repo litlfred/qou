@@ -7,6 +7,7 @@ section_number: null
 pages: 24-29
 source_pdf: 1311.6841v1.pdf
 source_sha256: ca65879d80b1e1c3
+doc_brief: "Observables in Loop Quantum Gravity with a cosmological constant — 5 sections: Introduction; Contents; Scalar product"
 ---
 Summary: Let us summarize the main results of our paper. We have recalled the deﬁnition of tensor operators
 forUq(su(2)), with q real, which is the relevant case to study Euclidian 3d LQG with Λ < 0 and Lorentzian 3+1 LQG

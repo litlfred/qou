@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 26-27
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 The most easily understood, and constructed, hyperbolic 3-manifolds which are not convex
 cocompact arise as covers of closed hyperbolic 3-manifolds which fiber over the circle. Thurston

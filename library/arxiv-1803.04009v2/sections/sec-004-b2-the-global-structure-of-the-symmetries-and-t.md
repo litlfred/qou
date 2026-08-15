@@ -7,6 +7,7 @@ section_number: null
 pages: 51-52
 source_pdf: 1803.04009v2.pdf
 source_sha256: 8b34299b739cd2b0
+doc_brief: "Prepared for submission to JHEP IPMU-18-0045 — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
 ---
 Now we study the global structure of the symmetriessu(2)H and su(2)C. We claim that
 both of them areSO(3) type in the sense that all gauge invariant operators (in the absence

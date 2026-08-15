@@ -7,5 +7,6 @@ section_number: 3
 pages: 8-8
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
+doc_brief: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE — 19 sections: Introduction; These; Conformal simplices"
 ---
 are hyperbolic confromal simplices).

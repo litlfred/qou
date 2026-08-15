@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 27-32
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
+doc_brief: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Scie"
 ---
 Typically quantum systems cannot be isolated from their environment. It is interesting
 to understand to what extent a system which began in an unknown state can be restored

@@ -7,6 +7,7 @@ section_number: null
 pages: 9-11
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 In the p-Gaussian model with the measure (13), which is under our consideration in this paper, there is a
 formula for the bilinear correlator similar to (57), however, in this case, one has to deal with the operators 3

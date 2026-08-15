@@ -7,6 +7,7 @@ section_number: null
 pages: 73-74
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
+doc_brief: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Unive"
 ---
 The results for the binding energy of triton and 4He in the previous sections are combined and shown
 in Fig. 5.9. For the standard coarse lattice spacing of a = 1.97 fm already the LO is above the Tjon

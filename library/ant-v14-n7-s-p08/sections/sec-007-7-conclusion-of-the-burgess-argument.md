@@ -7,6 +7,7 @@ section_number: 7
 pages: 31-31
 source_pdf: ant-v14-n7-s-p08.pdf
 source_sha256: 81b8f00fe5fbd0f6
+doc_brief: "Burgess bounds for short character sums evaluated at forms — 12 sections: Introduction; Method of proof: an overview; Preliminaries"
 ---
 We now apply Proposition 6.2 to (5 -9) with K= 2H/P, recalling that we are working under the
 assumption (5-1) that H1≤ H2≤···≤ Hn. (Also recall that Kn≤ Hn< q.) We conclude that

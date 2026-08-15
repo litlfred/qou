@@ -7,6 +7,7 @@ section_number: 3
 pages: 5-6
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
+doc_brief: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 In this section, we deﬁne the twisted Alexander invariant and called it for short the
 polynomial torsion. This invariant is the twisted Alexander invariant w ith coeﬃcients in

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 1809.08419v1.pdf
 source_sha256: 7ebca632544a6ea4
+doc_brief: "GR ¨OBNER-SHIRSHOV BASES FOR NON-CRYST ALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨ obner- Shirshov bases and the corresponding standard"
 ---
 The object in this paper is the symmetry group of a four-dimensiona l regular polytope, the
 120-cell or its dual, the 600-cell. We note that this is among a genera l class of groups, so called,

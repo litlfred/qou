@@ -7,6 +7,7 @@ section_number: null
 pages: 40-41
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 In this section, we summarize efforts to determine the lattice
 spacing of an ideal (or nearly perfect) natural-silicon single

@@ -7,6 +7,7 @@ section_number: 14.1
 pages: 45-49
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 The best source of conﬁrmation of theC =V hypothesis is to perturb the evolution of the
 black hole, and see if the correspondence between GR and quantum circuits continues to

@@ -7,6 +7,7 @@ section_number: 8
 pages: 8-10
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
+doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 1.1.4. Dilogarithm of complex argument. Wigner-Bloch’s function .
 By using the integral representation

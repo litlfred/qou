@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-7
 source_pdf: 1172-1.pdf
 source_sha256: f067a1bfa4c60df0
+doc_brief: "Fs=E2=7k$SL\$Ncolored Jones B?9`<0$a7W;;J}K!$K$D$$$F @;?4=w;RBg3X2,K\H~@c(Mﬁyuki Okamoto) 0lHL$N7k$SL\$NFs=E2=7k$SL\$K4X$9$kcolored Jones B?9`<0$r, Whitehead Mm$_ L\$Ncolored Jones B?9`<0$rMQ$$$F7W;;$"
 ---
 Mm$_L\$r1 2U=j$G@ZCG$7$F$(1,1)-$%?%s%0%kI=<($7, [1] $N$R$9TNs$rMQ$$$Fcolored
 Jones B?9`<0$r7W;;$9$k$3$H$,$G$-$k.

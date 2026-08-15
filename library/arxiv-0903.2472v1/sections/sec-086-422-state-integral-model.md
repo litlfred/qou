@@ -7,6 +7,7 @@ section_number: 4.2.2
 pages: 55-57
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 4.2.2 State integral model
 The state integral model (3.53) for the ﬁgure-eight knot com plement gives:

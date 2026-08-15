@@ -7,6 +7,7 @@ section_number: 12
 pages: 12-12
 source_pdf: 0006111v2.pdf
 source_sha256: cd99f45d686eb6e2
+doc_brief: "APPROXIMA TE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
 ---
 [MP] V.A. Marˇ cenko and L. A. Pastur, Distribution of eigenvalues in certain sets of random
 matrices, Mat. Sb. (N.S.) 72 (114) (1967), 507–536.

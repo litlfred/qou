@@ -7,6 +7,7 @@ section_number: 17.4
 pages: 81-84
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 We have ﬁnally assembled the tools to determine the precise f unction F in our equa-
 tions y2 = F (x,u ). First we do this for the theory with Nf = 4. We will determine

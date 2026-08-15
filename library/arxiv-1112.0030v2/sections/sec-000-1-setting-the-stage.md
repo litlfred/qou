@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-7
 source_pdf: 1112.0030v2.pdf
 source_sha256: 745f143c2df4734b
+doc_brief: "Homological algebra of knots and BPS states — It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces."
 ---
 2. Algebra of BPS states and its representations 7
 3. B-model and matrix factorizations 10

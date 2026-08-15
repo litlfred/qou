@@ -7,6 +7,7 @@ section_number: null
 pages: 71-73
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
+doc_brief: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Unive"
 ---
 The correlation between the 3H and 4He binding energies was ﬁrst observed by Tjon [24] for a large class
 of 2N potentials of diﬀerent accuracy. This was later dubbed the Tjon line. It was shown in Refs. [70, 71,

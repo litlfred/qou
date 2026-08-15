@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-5
 source_pdf: 0502543v2.pdf
 source_sha256: 227ef8150cb08faf
+doc_brief: "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR IGOR RIVIN — In his paper [6] J."
 ---
 In dimension 2 , the result follows immediately from Gauss’ for-
 mula, which states that area is a linear function of the angle s, so we

@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 17-19
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 The cusp boundaries of a 3-manifold M arise from the resolution of line defects, and have
 the topology of annuli or tori, depending on whether the defects are open or closed. For

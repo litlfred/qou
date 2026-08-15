@@ -7,6 +7,7 @@ section_number: 7
 pages: 31-36
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
+doc_brief: "Motivic Gauss–Bonnet formulas — 26 sections: Introduction 1801; Duality and Euler characteristics ; SL-oriented motivic spectra 1813"
 ---
 We recall the elementη∈ HomSH(B)(1B, S−1,−1∧1B) induced by the map of B-schemesη: A2\{0}→ P1,
 η(a, b)=(a: b). As every E∈ SH(B) is a module for 1B, we have the map×η: E→ S−1,−1∧ E for

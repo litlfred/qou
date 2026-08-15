@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 3-4
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
+doc_brief: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES YUYA MURAKAMI — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed"
 ---
 Γ = (V,E, (wv)v∈V ) be a plumbing graph and W be its linking matrix such that it is negative definite
 and detW =±1. Here we consider the edge set E as the subset of {{v,v′}| v,v′∈V}. We identify

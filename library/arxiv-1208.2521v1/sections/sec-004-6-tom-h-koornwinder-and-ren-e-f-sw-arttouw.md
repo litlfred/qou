@@ -7,6 +7,7 @@ section_number: 6
 pages: 6-8
 source_pdf: 1208.2521v1.pdf
 source_sha256: 8d0281aa84043865
+doc_brief: "ON q-ANALOGUES OF THE FOURIER — For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H."
 ---
 Remark 2.4. Because of (2.6), the behaviour of the two equal sides of (2.3 ) as
 |w| → ∞ (cf. (2.4)) drastically improves when w runs over the values q1− n, n =

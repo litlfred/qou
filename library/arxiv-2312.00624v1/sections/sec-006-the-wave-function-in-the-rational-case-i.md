@@ -7,6 +7,7 @@ section_number: null
 pages: 14-17
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 We will now apply the results obtained in Section 3.2 to derive explicitly the exact wave function
 χ(u; ℏ) in Eq. (3.13) as a power series in X,X−1 for rational values of ℏ. Let us start from the

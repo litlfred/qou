@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 27-30
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 It is diﬃcult to ignore the presence of Cliﬀord algebras within elementary particle physics.
 Cliﬀord algebras inevitably appear whenever spinors do, and ultimately underlie the alge-

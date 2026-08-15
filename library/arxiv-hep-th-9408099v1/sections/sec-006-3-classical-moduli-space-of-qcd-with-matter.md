@@ -7,6 +7,7 @@ section_number: 3
 pages: 11-14
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 We now turn to QCD with an SU (2) gauge group. The gluons are accompanied by
 Dirac fermions and complex scalars φ in the adjoint representation of the gauge group. We

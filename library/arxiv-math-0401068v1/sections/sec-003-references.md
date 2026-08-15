@@ -7,6 +7,7 @@ section_number: null
 pages: 11-12
 source_pdf: 0401068v1.pdf
 source_sha256: 8168d7e7f6069978
+doc_brief: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA — @We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum’s"
 ---
 [1] D. Cooper, M. Culler, H. Gillet, D.D. Long, and P. B. Shalen, Plane curves associated to character
 varieties of 3-manifolds, Invent. Math. 118 (1994), no. 1, 47–84.

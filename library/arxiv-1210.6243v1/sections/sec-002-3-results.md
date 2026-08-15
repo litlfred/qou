@@ -7,6 +7,7 @@ section_number: 3
 pages: 3-4
 source_pdf: 1210.6243v1.pdf
 source_sha256: 3ff2f5358b25586e
+doc_brief: "Controlled double-slit electron diﬀraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
 ---
 The movable mask was placed behind the double-slit, see ﬁgure 1. The mask was moved
 from one side to the other (ﬁgure 2 top to bottom). Initially the maj ority of the electrons

@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 9-11
 source_pdf: 2411.03801v2.pdf
 source_sha256: a7f1f6fa74cb0949
+doc_brief: "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS — Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal"
 ---
 of a planar projection of a knot and the state-sum formula for its Kashaev invariant, where
 the shapes of 4 tetrahedra around a crossing of the knot match with the quantum factorials

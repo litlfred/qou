@@ -7,6 +7,7 @@ section_number: null
 pages: 7-8
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 Note that the averaging procedure allows one to evaluate various sums of combinatorics quantities by evaluating
 the Gaussian moment. For instance (using the Fr¨ obenius formula [10]),

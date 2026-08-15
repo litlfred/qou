@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-3
 source_pdf: 9310070v1.pdf
 source_sha256: b979ebf2f47a4653
+doc_brief: "September, 1993 Quantum Dilogarithm — A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity."
 ---
 Recently, the dilogarithm function appeared in the study of the two dimensional quantum
 conformal ﬁeld theory (CFT)[1] and solvable lattice models both in two [2] and three

@@ -7,6 +7,7 @@ section_number: 2.1.3
 pages: 76-76
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 formally smooth; the completion ˆΛ of a p-divisible group Λ along the zero
 section is a formal Lie group [ Gro74, VI,3.1]. However ˆΛ is not necessarily

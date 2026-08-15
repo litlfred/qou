@@ -7,6 +7,7 @@ section_number: 4
 pages: 11-13
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
+doc_brief: "The Stokes phenomenon for the Ramanujan’s q-diﬀerence equation and its higher order extension Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu - jan equation between the"
 ---
 We deﬁne a covering transformation for a second order linear q-diﬀerence
 equation.

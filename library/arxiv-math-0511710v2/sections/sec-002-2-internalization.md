@@ -7,6 +7,7 @@ section_number: 2
 pages: 8-9
 source_pdf: 0511710v2.pdf
 source_sha256: f88f50d459080490
+doc_brief: "Higher Gauge Theory John Baez Department of Mathematics University of California — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge"
 ---
 The idea of internalization is simple: given a mathematical concept X deﬁned
 solely in terms of sets, functions and commutative diagrams involving these, and

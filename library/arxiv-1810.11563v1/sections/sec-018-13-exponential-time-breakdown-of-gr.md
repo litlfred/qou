@@ -7,6 +7,7 @@ section_number: 13
 pages: 43-44
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 According to classical general relativity an Einstein-Rosen bridge (ERB), or a one-sided
 bridge-to-nowhere, grows forever. It is interesting that this growth is bounded by quantum

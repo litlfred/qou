@@ -7,6 +7,7 @@ section_number: 2
 pages: 19-19
 source_pdf: 1208.2521v1.pdf
 source_sha256: 8d0281aa84043865
+doc_brief: "ON q-ANALOGUES OF THE FOURIER — For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H."
 ---
 q-orthogonal polynomials, Higher combinatorics, M. Aigner, ed., Reidel, 1977, pp. 3–26 .
 3. H. Exton, A basic analogue of the Bessel-Cliﬀord equation , J˜ n¯ an¯ abha8 (1978), 49–56.

@@ -7,6 +7,7 @@ section_number: null
 pages: 68-71
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
 ---
 [AC12] K. Aker and M. B. Can. Generators of the Hecke algebra o f (S2n, B n). Advances in
 Mathematics, 231(5):2465–2483, 2012.

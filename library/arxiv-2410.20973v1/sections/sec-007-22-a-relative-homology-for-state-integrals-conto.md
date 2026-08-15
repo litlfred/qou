@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 12-14
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
 ---
 mology H•(Σ , D∞,θ) relative to a region D∞,θ. The ﬁrst relative homology group H1(Σ , D∞,θ)
 contains lifts of the state integral contours Jℓ,τ to Σ and the thimbles Cp0,ϑ. First, we con-

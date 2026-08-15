@@ -7,6 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: 0511710v2.pdf
 source_sha256: f88f50d459080490
+doc_brief: "Higher Gauge Theory John Baez Department of Mathematics University of California — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge"
 ---
 Just as gauge theory describes the parallel transport of poi nt particles
 using connections on bundles, higher gauge theory describe s the parallel

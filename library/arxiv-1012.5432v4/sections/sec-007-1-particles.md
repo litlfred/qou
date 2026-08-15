@@ -7,6 +7,7 @@ section_number: 1
 pages: 23-24
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
+doc_brief: "arxiv-1012.5432v4 — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 SPECIAL PHYSICAL THEORIES
 A. Abelian vs. Non-Abelian: Physical Origin and Computational Potential

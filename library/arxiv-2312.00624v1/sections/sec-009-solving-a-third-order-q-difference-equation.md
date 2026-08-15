@@ -7,6 +7,7 @@ section_number: null
 pages: 20-23
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 We will show how the matrix formalism of Section 3.4.1 can be applied to solve a third-order q-
 difference equation in closed form. In particular, let us return to the quantumA-polynomial equation

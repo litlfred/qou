@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-2
 source_pdf: 0405126v1.pdf
 source_sha256: 713498dbe80f7319
+doc_brief: "ASYMPTOTIC BEHA VIORS OF THE COLORED JONES POL YNOMIALS OF A TORUS KNOT HITOSHI MURAKAMI — W e study the asymptotic behaviors of the colored Jones polyn o- mials of torus knots."
 ---
 Let T (a, b ) be the ( a, b )-torus knot for coprime integers a and b (a > 1, b > 1).
 Then its colored Jones polynomial JN

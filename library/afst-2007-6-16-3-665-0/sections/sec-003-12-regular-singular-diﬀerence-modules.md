@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 5-6
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
+doc_brief: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques — 24 sections: Introduction; Classiﬁcation of q-diﬀerence equat; Some notation and formulas"
 ---
 We recall some classical results (a modern proof is given in [vdP-S1]).
 The classiﬁcation of regular singular modules overK and ˆK are similar and

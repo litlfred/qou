@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 7-19
 source_pdf: 1911.04486v4.pdf
 source_sha256: 53a34938c0e63bad
+doc_brief: "In this chapter, we review the Ra˜ nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld, as well as their relation with"
 ---
 The geometric properties of the electromagnetic ﬁeld are highlighted in the
 formulation of Maxwell’s equations in terms of diﬀerential forms onR3. How-

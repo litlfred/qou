@@ -7,6 +7,7 @@ section_number: 10.7
 pages: 70-71
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 Fix a curveC and singularities sn and orderingso(sn). Exploration of some examples leads
 to a rough conjecture about the set X =X(C, sn,o (sn)) of all spectral networks with these

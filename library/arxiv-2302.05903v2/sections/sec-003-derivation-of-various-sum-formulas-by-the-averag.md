@@ -7,6 +7,7 @@ section_number: null
 pages: 4-5
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 The averaging method can be easily modified to handle more examples. Say, we can ask the average ⟨SR⟩ = 1
 only for even diagramsR, i.e. with all rows of even lengths, and vanishes otherwise. The corresponding measure

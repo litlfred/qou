@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 27-29
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 We now consider the case in which the incident energy ﬂux rema ins below the critical
 value κ

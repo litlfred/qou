@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 11-12
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 The expressions (4.1) and (4.2) strongly suggest to redeﬁne the conformal blocks by absorbing
 the three-point functionsC(α3,α 2,α 1) into the deﬁnition,

@@ -7,6 +7,7 @@ section_number: null
 pages: 26-26
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 The author would like to thank the ´Ecole Normale Superieure de Lyon and the
 Institut Henri Poincar´ e for their hospitality. The special case of Theorem 3.1 for

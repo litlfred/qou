@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 38-39
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
+doc_brief: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques — 24 sections: Introduction; Classiﬁcation of q-diﬀerence equat; Some notation and formulas"
 ---
 We describe here the diﬀerence Galois group for the general case. The
 proof follows straightforward from the case of two slopes. Consider aq-

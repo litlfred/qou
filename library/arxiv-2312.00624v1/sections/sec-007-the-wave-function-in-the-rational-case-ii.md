@@ -7,6 +7,7 @@ section_number: null
 pages: 17-17
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 In Section 3.3, we showed that the exact wave function χ(u; ℏ) in Eq. (3.13) at rational values of
 ℏ is determined by the functions Υ (α)(X), defined in Eq. (3.45), and their derivatives with respect

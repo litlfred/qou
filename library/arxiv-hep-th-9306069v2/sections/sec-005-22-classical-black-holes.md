@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 10-13
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 A black hole is deﬁned as a region of spacetime which does not l ie in the causal past
 of future null inﬁnity I+, i.e. light rays which have their origin inside the black hole can

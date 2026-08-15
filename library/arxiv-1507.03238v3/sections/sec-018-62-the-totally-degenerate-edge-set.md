@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 16-16
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 Proposition 6.7.If a decoration of a representationρ is totally degenerate, thenρ is reducible.
 Proof. If all Ptolemy coordinates are zero, the decoration must take all ideal vertices of~M to

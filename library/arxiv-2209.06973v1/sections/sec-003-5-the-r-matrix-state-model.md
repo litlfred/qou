@@ -7,6 +7,7 @@ section_number: 5
 pages: 17-23
 source_pdf: On_the_geometry_of_two_state_models_for_the_colore.pdf
 source_sha256: cc3393a17c48b9df
+doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---
 We review and reformulate the state model for the framed colored Jones
 polynomial Jn as deﬁned in [4]. Recall that n labels the (n + 1)-dimensional

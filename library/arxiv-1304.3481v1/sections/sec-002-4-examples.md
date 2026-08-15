@@ -7,6 +7,7 @@ section_number: 4
 pages: 35-68
 source_pdf: 1304.3481v1.pdf
 source_sha256: d0840f2775c0f761
+doc_brief: "Quadruply-graded colored homology of knots — W e conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 In this section we give some examples of the quadruply-graded color ed HOM-
 FLY homology that exhibit all of the structure and satisfy all of the conjectures

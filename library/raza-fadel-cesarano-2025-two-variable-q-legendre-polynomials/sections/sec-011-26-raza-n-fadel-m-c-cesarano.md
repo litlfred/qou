@@ -7,6 +7,7 @@ section_number: 26
 pages: 13-13
 source_pdf: raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf
 source_sha256: da8c1204e84d019c
+doc_brief: "ISSN 2075-9827 e-ISSN 2313-0210 https://journals.pnu.ed u.ua/index.php/cmp — 12 sections: Aligarh Muslim University , Aligar; University of Lahej, 73560 Lahej, ; Introduction"
 ---
 [17] Jackson F.H. I. – On Generalized Functions of Legendre and Bessel. Trans. Roy. Soc. Edinburgh 1906, 41 (1), 1–28.
 doi:10.1017/S0080456800080017

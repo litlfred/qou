@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 14-17
 source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
 source_sha256: 647f4c28cab7428d
+doc_brief: "Bull. Soc. math. France 133 (4), 2005, p. 541–579 — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
 ---
 oriented compact 4-manifold is the signature of the interse ction form on the
 second homology group H2(M ; R). Note that this intersection form can be

@@ -7,6 +7,7 @@ section_number: 6
 pages: 31-32
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 The original complexity/geometry duality passed a number of nontrivial tests involving
 the eﬀects of shock waves on the growth of complexity and volume. It is important that

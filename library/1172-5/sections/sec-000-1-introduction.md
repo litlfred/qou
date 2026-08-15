@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 1172-5.pdf
 source_sha256: 21b7a0e13bd208fc
+doc_brief: "OPTIMISTIC CALCULATIONS ABOUT THE $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mathrm{H}\mathrm{I}\mat"
 ---
 In [2] R. Kashaev deﬁned a link invariant by using quantum dilogarithm and
 conﬁrmed that his invariants grow exponentially with the growth rates the hyper-

@@ -7,6 +7,7 @@ section_number: 3
 pages: 159-159
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 In particular, p-adic exponents in the sense of Christol-Mebkhout ex-
 ist (in any annulus which does not contain any ζi), and they are rational

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 9909088v1.pdf
 source_sha256: 52cfb568951f195f
+doc_brief: "THE GAUSS MAP AND A NONCOMP ACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEA VES ON SEMIABELIAN V ARIETIES — For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as"
 ---
 Let X be a smooth algebraic variety over C and F be a constructible sheaf of
 C-vector spaces on X. As in other situations, we have the Riemann-Roch problem:

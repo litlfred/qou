@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 15-15
 source_pdf: 2109.04664v4.pdf
 source_sha256: 639cd40a29752e3f
+doc_brief: "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
 ---
 SL(2; C), one can consider the cochain complex C∗(X; sl(2; C)ρ ) :=
 HomZ[π 1(X)](C∗( ˜X; Z), sl(2; C)) twisted by the adjoint action of ρ. Here ˜X

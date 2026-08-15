@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-7
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 The formation and evaporation of a macroscopic black hole is a complex process which
 certainly leads to a practical loss of information and an inc rease of thermal entropy. The

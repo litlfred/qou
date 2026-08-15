@@ -7,6 +7,7 @@ section_number: null
 pages: 16-17
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
+doc_brief: "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s) — 6 sections: Introduction; Preliminaries; (b) (c)"
 ---
 [1] A.F. Beardon: The Geometry of Discrete Groups (GTM 91), Springer-Verlag,
 New York, 1983.

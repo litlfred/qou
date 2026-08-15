@@ -7,6 +7,7 @@ section_number: 4
 pages: 5-6
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 related to three-dimensional gravity, namely to de Sitter g ravity in 2+1 dimensions [6,7]. This
 theory can be treated similarly, and many of the arguments be low easily extend to this case. For

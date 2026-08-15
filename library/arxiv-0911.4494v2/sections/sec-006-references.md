@@ -7,6 +7,7 @@ section_number: null
 pages: 13-14
 source_pdf: 0911.4494v2.pdf
 source_sha256: 1ba1c79686b12d98
+doc_brief: "The geometry of Markov traces Ben Webster Geordie Williamson — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on"
 ---
 [BBD82] A. A. Beilinson, J. Bernstein, and P . Deligne, Faisceaux pervers , Analysis and topology on
 singular spaces, I (Luminy , 1981), Ast´ erisque, vol. 100, Soc. Math. France, Paris, 1982, pp. 5–

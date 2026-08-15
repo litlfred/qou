@@ -7,6 +7,7 @@ section_number: 6
 pages: 29-29
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 In this section we consider a class of BPS structures related to clos ed topological string theory
 on a compact Calabi-Yau threefold. In mathematical terms they ar ise from stability conditions on

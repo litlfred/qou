@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 20-25
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
 ---
 full six functor and vanishing cycles functor formalism for equivaria nt monodromic
 mixed Hodge modules via a theory of monodromic mixed Hodge modules o n stacks.

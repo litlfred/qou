@@ -7,6 +7,7 @@ section_number: 1.8
 pages: 11-12
 source_pdf: 0504116v2.pdf
 source_sha256: 24a8c998e40aed5d
+doc_brief: "On deformations of hyperbolic 3–manifolds with geodesic boundary ROBERTO FRIGERIO Let M be a complete ﬁnite-volume hyperbolic 3–manifold with compact non-empty geodesic boundary and k toric cusps, and"
 ---
 Let T1,..., Tk be the boundary tori of ¯N . From now on we denote by µi,λ i a ﬁxed
 basis of H1(Ti; Z)∼= π1(Ti), i = 1,..., k. Any point in Ω(T ) naturally deﬁnes an

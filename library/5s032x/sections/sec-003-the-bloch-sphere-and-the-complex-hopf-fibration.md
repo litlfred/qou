@@ -7,6 +7,7 @@ section_number: null
 pages: 6-7
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
+doc_brief: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗ — quantum description."
 ---
 Above, we have already introduced the Bloch sphere representation of single qubits. The normalization condition
 |c0|2 +|c1|2 = 1 implies that the Hilbert space of a single qubit is the 3-sphere S3. However, quantum states are

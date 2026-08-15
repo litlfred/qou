@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 31-33
 source_pdf: 1704.01735v4.pdf
 source_sha256: 3935747ae9291f76
+doc_brief: "Modular curves, invariant theory and E8 Lei Yang — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2 , 13)."
 ---
 In this section, we will construct the Barlow surface from the modu lar
 curve X(13) by the method of transversal linear sections.

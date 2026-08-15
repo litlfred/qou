@@ -7,6 +7,7 @@ section_number: 7
 pages: 28-30
 source_pdf: 0105039v1.pdf
 source_sha256: 850e6a00721e38d0
+doc_brief: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI † — We study the knot invariant based on the quantum dilogarithm function."
 ---
 We have studied the knot invariant by use of the inﬁnite dimensional representation of the quantum
 dilogarithm function. This invariant can be seen by constru ction as the non-compact analogue of

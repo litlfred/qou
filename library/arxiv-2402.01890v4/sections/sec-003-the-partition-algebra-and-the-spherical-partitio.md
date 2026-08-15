@@ -7,6 +7,7 @@ section_number: null
 pages: 6-7
 source_pdf: 2402.01890v4.pdf
 source_sha256: e1eeb2865f0b53e1
+doc_brief: "On the spherical partition algebra — For k ∈ N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated"
 ---
 We next recall the partition algebra Pk; it was introduced by the second named author via considerations in
 statistical mechanics, see [32]. Let SetPar k be the set of set partitions on {1, 2...,k }, that is the set of equivalence

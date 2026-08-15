@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-7
 source_pdf: 1911.04486v4.pdf
 source_sha256: 53a34938c0e63bad
+doc_brief: "In this chapter, we review the Ra˜ nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld, as well as their relation with"
 ---
 The discovery of the knot solutions of Maxwell’s equations in the vacuum
 represents one of the most exciting results obtained recently in the modern

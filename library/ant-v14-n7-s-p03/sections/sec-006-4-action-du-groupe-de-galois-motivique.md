@@ -7,6 +7,7 @@ section_number: 4
 pages: 38-44
 source_pdf: ant-v14-n7-s-p03.pdf
 source_sha256: e32fde16c3ce0940
+doc_brief: "Nouvelles cohomologies de Weil en caractéristique positive Joseph Ayoub — periods” admitting an explicit description by generators and relations."
 ---
 Tout au long de la section, on ﬁxe un corps K muni d’une valuation de hauteur 1 et on note ˆK son
 complété. On désigne par K◦ et ˆK◦ les anneaux de valuation de K et ˆK , et on note k le corps résiduel

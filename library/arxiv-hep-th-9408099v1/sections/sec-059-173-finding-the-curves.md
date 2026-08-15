@@ -7,6 +7,7 @@ section_number: 17.3
 pages: 75-80
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 Now we would like to ﬁnd a suitable set of curves Ca on whichλ will have poles. In this
 section we set v = 1 and work on the uncompactiﬁed manifold X given by y2 =F (x,u ).

@@ -7,6 +7,7 @@ section_number: 4.6
 pages: 42-42
 source_pdf: 0411647v2.pdf
 source_sha256: d79f96b416cb28da
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many"
 ---
 stacles to repeat the reasoning from Section 4.5 for partiti ons with genus 2
 and in this way obtain higher order asymptotic expansions.

@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 4-6
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 troduced by Thurston as an eﬃcient way to describe (algebraically, or numerically) 3-
 dimensional hyperbolic manifolds. For a leisure introduction, the reader may consult Thurston’s

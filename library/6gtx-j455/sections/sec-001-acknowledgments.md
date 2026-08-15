@@ -7,6 +7,7 @@ section_number: null
 pages: 4-5
 source_pdf: 6gtx-j455.pdf
 source_sha256: 3b0864e1373097cd
+doc_brief: "Ultraviolet Completion of the Big Bang in Quadratic Gravity — 3 sections: Ultraviolet Completion of the Big ; Acknowledgments; Data availability"
 ---
 Buoninfante, Dra žen Glavan, Anamaria Hell, Roberto
 FIG. 3. Constraints on the QQG parameters λtH and N from the

@@ -7,6 +7,7 @@ section_number: 9
 pages: 4-5
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 The new direct measurement of the g-factor of the helion
 bound in the 3Heþ ion, ghð3HeþÞ, provides the important new

@@ -7,6 +7,7 @@ section_number: 28
 pages: 28-28
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 Presumably,PK,ζr ,0(t) with ζr = exp 2π√−1
 r is the rth Akutsu-Deguchi-Ohtsuki

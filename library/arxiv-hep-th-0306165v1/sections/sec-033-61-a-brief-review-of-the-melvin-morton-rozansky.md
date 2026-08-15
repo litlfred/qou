@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 45-47
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 Let JN (K,q ) be the N -colored Jones polynomial of a knot K. We deﬁne a reduced
 Jones polynomial as

@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 13-20
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
 ---
 The principle tool in the proof of the MTWS is the study of the braid foliation of CA,
 the singular foliation which is determined by the intersections of CAwith the disc

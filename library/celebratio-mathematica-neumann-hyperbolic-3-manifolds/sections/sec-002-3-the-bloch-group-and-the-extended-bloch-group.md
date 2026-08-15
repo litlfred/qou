@@ -7,6 +7,7 @@ section_number: 3
 pages: 9-12
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
+doc_brief: "Jump to Bibliography by Stavros Garoufalidis and Don Zagier Published: 2023 — Wal ter Neu mann — hence forth simply Wal ter — has made huge con tri bu ‐ tions to to po logy, sin gu lar ity the ory"
 ---
 The Bloch group of a field is an ana logue of its mul ti plic at ive group, but with the
 re la tion  sat is fied by the log ar ithm func tion re placed by the func ‐

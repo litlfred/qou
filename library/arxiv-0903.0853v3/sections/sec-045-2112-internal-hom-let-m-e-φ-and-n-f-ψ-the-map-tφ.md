@@ -7,6 +7,7 @@ section_number: 2.1.1.2
 pages: 18-19
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 f↦→Ψ◦f◦Φ−1 is a semi-linear automorphism of theK-vector spaceLK(E,F ),
 whence a diﬀerence module Hom (M,N ) :=

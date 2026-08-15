@@ -7,6 +7,7 @@ section_number: null
 pages: 11-12
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 Another amusing fact about the two nice cases (9) and (11) is their possible relation to the celebrated Ramanujan
 sums [19]

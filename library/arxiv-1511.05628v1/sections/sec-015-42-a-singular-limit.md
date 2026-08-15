@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 16-17
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 Chern-Simons theory, namely (t, ˜t)→ (2k, 0), or equivalently σ→k with k∈ Z held ﬁxed.
 This is a singular limit rather than a weak coupling limit. We propose

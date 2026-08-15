@@ -7,6 +7,7 @@ section_number: null
 pages: 9-11
 source_pdf: 2302.08363v2.pdf
 source_sha256: c2244e03b17048fb
+doc_brief: "Prepared for submission to JHEP On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the"
 ---
 Complex Chern–Simons (CS) theory is an ideal arena to study trans-series, since as a QFT it is
 essentially solvable, and at the same time it leads to highly non-trivial perturbative series. The

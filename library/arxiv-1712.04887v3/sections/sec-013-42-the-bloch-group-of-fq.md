@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 23-25
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
+doc_brief: "BLOCH GROUPS, ALGEBRAIC K-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
 ---
 class map to the Bloch group. Let p> 2 and q >2 be odd primes such that q≡− 1 modn,
 where n = pm. For a ﬁnite ﬁeld Fq, the group F×

@@ -7,6 +7,7 @@ section_number: 10
 pages: 1-4
 source_pdf: milnor_hyperbolic.pdf
 source_sha256: d444d7a61af54c7c
+doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY — 9 sections: JOHN MILNOR; JOHN MILNOR; JOHN MILNOR"
 ---
 This will be a description of a few highlights in the early history of 
 non-euclidean geometry, and a few miscellaneous recent developments. An 

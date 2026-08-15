@@ -7,6 +7,7 @@ section_number: 1
 pages: 30-32
 source_pdf: 9504015v2.pdf
 source_sha256: ea5588225a393477
+doc_brief: "Witten’s Invariants of Rational Homology Spheres at Prime — We establish a relation between the coeﬃcients of asymptotic expan sion of the trivial connection contribution to Witten’s invariant of"
 ---
 n (M) (5.5)
 for some numbers Cm1,...,mn. Consider the n-loop diagram consisting of ( n − 1) small loops

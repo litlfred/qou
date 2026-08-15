@@ -7,6 +7,7 @@ section_number: 8
 pages: 8-8
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 Proposition 3.2. Let τ be an ideal triangulation ofM, containingn tetrahe-
 dra. The set of all ways to assign a real number to each pair of opposite edges of each

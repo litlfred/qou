@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 44-45
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 A generalization of the volume conjecture discussed above c ould be interpreted as
 a purely algebraic relation between the A-polynomial and th e colored Jones polynomial.

@@ -7,6 +7,7 @@ section_number: null
 pages: 68-75
 source_pdf: 1304.3481v1.pdf
 source_sha256: d0840f2775c0f761
+doc_brief: "Quadruply-graded colored homology of knots — W e conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 As we use the quantum invariants of (2 , m) torus knots colored by the represen-
 tations labeled by the rectangular Young diagrams in many examples t hroughout

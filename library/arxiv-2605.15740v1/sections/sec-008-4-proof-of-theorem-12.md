@@ -7,6 +7,7 @@ section_number: 4
 pages: 21-25
 source_pdf: 2605.15740v1.pdf
 source_sha256: aa7f99d6633113c6
+doc_brief: "BAILEY P AIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
 ---
 We are now in a position to prove Theorem 1.2. Again, we follow the order in which the
 Bailey pairs were introduced in Section 2.2.

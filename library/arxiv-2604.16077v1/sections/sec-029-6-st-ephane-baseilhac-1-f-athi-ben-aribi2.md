@@ -7,6 +7,7 @@ section_number: 6
 pages: 6-6
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
 ---
 For details on HN,(T,b,c ) the most computation-oriented readers may want to look at th e
 formulas (81) (where the charge c has been ﬁxed to some speciﬁc value), (46) and (82).

@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-2
 source_pdf: 9504020v1.pdf
 source_sha256: 0baef40fa9934c91
+doc_brief: "∗On leave from St. Petersburg Branch of the Steklov Mathemati cal Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ ee ` a l’E.N.S. de Lyon, et ` a l’Universit` e de Sa"
 ---
 Solutions to the Yang-Baxter equation (YBE) [20, 2] play imp ortant role both
 in the theory of solvable two-dimensional models of statist ical mechanics and

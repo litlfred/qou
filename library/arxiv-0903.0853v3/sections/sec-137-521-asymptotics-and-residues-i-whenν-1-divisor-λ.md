@@ -7,6 +7,7 @@ section_number: 5.2.1
 pages: 80-81
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 to [λ] and the above deﬁnition coincides with the deﬁnition of A[λ;q]
 q;1 in [59],

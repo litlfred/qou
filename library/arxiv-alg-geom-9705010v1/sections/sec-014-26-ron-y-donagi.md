@@ -7,6 +7,7 @@ section_number: 26
 pages: 26-28
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
+doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
 ---
 and so on. In terms of this basis, one checks by an easy inducti on argument that
 pn =tn − Σ n

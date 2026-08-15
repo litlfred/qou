@@ -7,6 +7,7 @@ section_number: 5
 pages: 11-12
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
+doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
 ---
 We have not tried to keep track of explicit constants in the proofs above, since
 these would obscure the main ideas of the proof, and the calculations become quite

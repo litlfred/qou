@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 9-11
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
+doc_brief: "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN ="
 ---
 The TBA equations we will obtain are conformal limits [7] of the integral equations proposed
 by Gaiotto–Moore–Neitzke (GMN) in [5] to describe the hyperK¨ ahler metric on the Coulomb

@@ -7,6 +7,7 @@ section_number: 6
 pages: 36-37
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
+doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
 ---
 In this paper we have analysed a large class of non-geometric CHL models and showed that
 they exhibit larger symmetries than previously expected. These models are in particular in-

@@ -7,6 +7,7 @@ section_number: null
 pages: 7-8
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
+doc_brief: "On a volume invariant of 3–manifolds — 22 sections: Introduction; Properties, examples and questions; Definition of topological volume a"
 ---
 The main observation used in this section is that, following Jørgensen–Thurston theory [ Thu78Thu78,
 Gro81Gro81, Mai10Mai10], all hyperbolic 3–manifolds of volume bounded from above by a constant are

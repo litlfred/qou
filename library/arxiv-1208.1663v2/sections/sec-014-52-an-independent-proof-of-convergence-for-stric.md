@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 16-21
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 implies that IM converges when M admits a strict index structure. In this section we give
 an independent proof of this fact without using the restriction of the summand of the index

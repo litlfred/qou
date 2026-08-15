@@ -7,6 +7,7 @@ section_number: 4
 pages: 9-13
 source_pdf: 1203.4538v1.pdf
 source_sha256: 5e44909e355c78d6
+doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 7 sections: Introduction.; Preliminaries on surreal numbers.; Sign sequences."
 ---
 For any a ∈ No and n ∈ N, we denote by κa,n := logn(κa) and κa,−n = expn(κa), where
 log0 and exp0 are equal to the identity map on No. The aim of this section is to show

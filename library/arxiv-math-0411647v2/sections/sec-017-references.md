@@ -7,6 +7,7 @@ section_number: null
 pages: 58-60
 source_pdf: 0411647v2.pdf
 source_sha256: d79f96b416cb28da
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many"
 ---
 [Bia97] Philippe Biane. Some properties of crossings and pa rtitions. Discrete Math.,
 175(1-3):41–53, 1997.

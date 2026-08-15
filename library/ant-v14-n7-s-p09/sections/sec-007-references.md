@@ -7,6 +7,7 @@ section_number: null
 pages: 25-28
 source_pdf: ant-v14-n7-s-p09.pdf
 source_sha256: c8fe963200a79d25
+doc_brief: "Galois action on the principal block and cyclic Sylow subgroups — 8 sections: Introduction; Blocks with normal defect group; Suppose that|D|= 2n. Since G/CD ac"
 ---
 [Alperin 1976] J. L. Alperin, “Isomorphic blocks”, J. Algebra 43:2 (1976), 694–698. MR Zbl
 [Bonnafé 2005] C. Bonnafé, “Quasi-isolated elements in reductive groups”, Comm. Algebra 33:7 (2005), 2315–2337. MR Zbl

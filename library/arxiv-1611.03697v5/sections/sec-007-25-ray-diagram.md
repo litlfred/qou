@@ -7,6 +7,7 @@ section_number: 2.5
 pages: 5-6
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 bounded region of C there are only ﬁnitely many points of the form Z(γ) with γ∈ Γ an active
 class. It also implies that all such points are nonzero.

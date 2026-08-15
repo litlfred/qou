@@ -7,6 +7,7 @@ section_number: 5
 pages: 14-15
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
 ---
 In this section we prove the case Bk,i(n, j) = Ek,i(n, j) of Theorem 1.4. We even prove a reﬁnement:
 Proposition 5.1. There exists a one-to-one correspondence between the paths counted by Ek,i(n, j) and the

@@ -7,6 +7,7 @@ section_number: 14
 pages: 11-13
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
+doc_brief: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 From the point of view ofhomology, this implies that a locally finite i-cycle with
 coefficient in 1^ is homologous to a compactly supported one. Here is a drawing of

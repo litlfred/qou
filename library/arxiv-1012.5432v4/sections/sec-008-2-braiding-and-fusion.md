@@ -7,6 +7,7 @@ section_number: 2
 pages: 24-25
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
+doc_brief: "arxiv-1012.5432v4 — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 The braiding and fusion rules for Z/NZ theories are particularly simple. Braiding two
 identical particles, one encounters the Dirac string of the other, which introduces a phase:

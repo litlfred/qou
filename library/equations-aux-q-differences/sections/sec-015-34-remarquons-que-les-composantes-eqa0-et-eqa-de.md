@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 15-16
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
+doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 fournissent des rep`eres (m´eromorphes) pour les ﬁbr´es holomorphes plats F(0)
 et F(∞) introduits pr´ec´edemment (th´eor`eme 3.4). Par ailleurs, la q-invariance

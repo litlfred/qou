@@ -7,6 +7,7 @@ section_number: 9
 pages: 22-23
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 A well-known theorem of Steinitz says that every three-connecte d planar graph
 can be realized as the 1-skeleton of a convex polyhedron in R3, while a famous

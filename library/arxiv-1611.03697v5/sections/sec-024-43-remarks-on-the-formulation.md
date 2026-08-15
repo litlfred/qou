@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 18-19
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 main subject of this paper. Unfortunately we have no general res ults giving existence or uniqueness
 of its solutions. Moreover one could easily imagine various small pertu rbations of the statement of

@@ -7,6 +7,7 @@ section_number: 2
 pages: 13-14
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 to a 1-primitive gives a 1-primitive of higher weight. Here Y is the grading operator,
 which multiplies each tree by its weight and operates on products by a Leibniz rule. Thus

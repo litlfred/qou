@@ -7,6 +7,7 @@ section_number: 0
 pages: 25-25
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 r = 1 case one can also think of the symmetry (2.61) as the Weyl re ﬂection. Since, by
 deﬁnition, holonomies that diﬀer by an element of the Weyl gro up deﬁne the same point in

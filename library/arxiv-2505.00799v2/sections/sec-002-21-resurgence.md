@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 6-7
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
+doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 Corollary 1.4. Letf(z) be the periodic function of the real-analytic Eisenstein seriesE1/2(z),
 defined in Equation 2.4. Define

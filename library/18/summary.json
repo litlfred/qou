@@ -1,0 +1,116 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "18",
+ "source_sha256": "0b7bf055085cb04b",
+ "brief": "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE — 19 sections: Introduction; These; Conformal simplices",
+ "extended": "**Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE**\n\n*AND RIGIDITY OF BALL PACKINGS*\n\n10 pp, 19 sections.\n\n**Outline.** Introduction; 3 These; 1 Conformal simplices; 3 In section 4 we study the deformation space ; 3 Denote the vertices of T by v1,...,v 4, and; 2 Another coordinate system; 3 Hyperbolic conformal simplices; 4 The space ofconf ormal simplices; 5 Conformal deformation space of singular Eucl; 3 (those where the simplices of T; 6 Applications to ball packing; 7 Remarks and questions; 3 Nor is; Acknowledgements; References; 1 D. V. Alekseevskij, E. Vinberg, and A. S. So; 2 Yves Colin de Verdi`ere, Un principe variati; 3 M. D. Kovalev, On curvatures of tangent sphe\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.3: Fix the scale of the simplices under consideration, byset-\n- Theorem 1.4: A conformal simplex cannot be deformed while keeping the\n- Theorem 4.2: The space ofisometry classes of Euclidean conformal sim-\n- Theorem 4.3: LetSi,i =1,...,n +2, ben +2 pairwise tangent distinct\n- Theorem 4.4: The space CT ⊂ R4 is not convex.\n- Theorem 4.3: was already known to Coxeter in the thirties.",
+ "tokens": {
+  "brief": 32,
+  "extended": 288
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-3-these",
+   "title": "These",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-1-conformal-simplices",
+   "title": "Conformal simplices",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-003-3-in-section-4-we-study-the-deformation-space-of",
+   "title": "In section 4 we study the deformation space of conformal simplices. In",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-004-3-denote-the-vertices-of-t-by-v1v-4-and",
+   "title": "Denote the vertices of T by v1,...,v 4, and",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-005-2-another-coordinate-system",
+   "title": "Another coordinate system",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-3-hyperbolic-conformal-simplices",
+   "title": "Hyperbolic conformal simplices",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-007-4-the-space-ofconf-ormal-simplices",
+   "title": "The space ofconf ormal simplices",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-008-5-conformal-deformation-space-of-singular-euclid",
+   "title": "Conformal deformation space of singular Euclidean metrics",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-009-3-those-where-the-simplices-of-t",
+   "title": "(those where the simplices of T",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-010-6-applications-to-ball-packing",
+   "title": "Applications to ball packing",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-011-7-remarks-and-questions",
+   "title": "Remarks and questions",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-012-3-nor-is",
+   "title": "Nor is",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-013-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-014-references",
+   "title": "References",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-015-1-d-v-alekseevskij-e-vinberg-and-a-s-solodovniko",
+   "title": "D. V. Alekseevskij, E. Vinberg, and A. S. Solodovnikov, Geometry of spaces of",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-016-2-yves-colin-de-verdiere-un-principe-variationne",
+   "title": "Yves Colin de Verdi`ere, Un principe variationnel pour les empilements des cercles ,",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-017-3-m-d-kovalev-on-curvatures-of-tangent-spheres-t",
+   "title": "M. D. Kovalev, On curvatures of tangent spheres , Trudy Mat. Inst. Steklov.; in",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-018-4-greg-kuperberg-and-oded-schramm-average-kissin",
+   "title": "Greg Kuperberg and Oded Schramm, Average kissing numbers for non-congruent",
+   "pages": "10-10"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

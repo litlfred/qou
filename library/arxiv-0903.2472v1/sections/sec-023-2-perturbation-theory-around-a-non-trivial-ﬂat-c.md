@@ -7,6 +7,7 @@ section_number: 2
 pages: 10-10
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 In this section we pursue traditional approaches to Chern-S imons gauge theory based on the
 evaluation of Feynman diagrams and the quantization of modu li spaces of ﬂat connections.

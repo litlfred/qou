@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 15-17
 source_pdf: 1704.02352v2.pdf
 source_sha256: 9a14dd6ee33248d3
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y"
 ---
 ters of the symmetric groups is to ﬁx the irreducible represe ntation λ and
 to consider the character as a function of the conjugacy clas s π. However,

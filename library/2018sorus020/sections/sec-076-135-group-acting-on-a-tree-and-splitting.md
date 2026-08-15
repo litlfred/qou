@@ -7,6 +7,7 @@ section_number: 1.3.5
 pages: 34-36
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 Let X be an irreducible component of irreducible type ofX(Γ), which is reduced
 and one dimensional, and letρ : Γ→ SL2(k(X)) be the tautological representation.

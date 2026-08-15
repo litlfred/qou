@@ -7,6 +7,7 @@ section_number: 16
 pages: 55-59
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 Let me come now to the subject of ﬁrewalls. A ﬁrewall is supposed to be an extremely
 intense high energy shock wave propagating on or just behind the horizon. There are two

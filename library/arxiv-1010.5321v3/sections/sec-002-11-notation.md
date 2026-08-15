@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-2
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
+doc_brief: "Formulas on hyperbolic volume ∗ ´A.G.Horv´ ath Department of Geometry — This paper collects some important formulas on hyperbolic volume."
 ---
 Rn, En, Hn: The space of the n-dimensional real vectors, the n-dimensional Euclidean space
 and the n-dimensional hyperbolic space, respectively.

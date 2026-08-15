@@ -7,6 +7,7 @@ section_number: 1.5.3
 pages: 45-48
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 formula)
 If the complex is exact, one has the following alternative description : pick a system

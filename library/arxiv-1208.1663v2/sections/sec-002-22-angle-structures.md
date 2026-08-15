@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 5-5
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 Corollary 2.9. Fix an r×s matrix A with integer entries and columns vi for i = 1,...,s ,
 and let v0∈ Zr, and let M = (A|0|v0). The following are equivalent:

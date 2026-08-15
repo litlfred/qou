@@ -7,6 +7,7 @@ section_number: 7.4.2
 pages: 134-135
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 properties for the generating series of theorem 7.4.1, Mord ell generalized his
 results in 1933. We extract the part illustrating our point. Mordell sets:

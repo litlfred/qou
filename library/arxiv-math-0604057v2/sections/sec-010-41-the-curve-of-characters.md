@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 7-9
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
+doc_brief: "VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER V ARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is"
 ---
 character varieties and its component D0.
 Since ∂MK is a torus, we identify R(∂MK ) with the set {(A, B)|A, B ∈ SL2(C), AB = BA},

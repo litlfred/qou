@@ -7,6 +7,7 @@ section_number: null
 pages: 28-29
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
+doc_brief: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 [CS83] M. Culler and P. B. Shalen, Varieties of group representations and splittings of 3-manifolds,
 Ann. of Math. 117 (1983), 109–146.

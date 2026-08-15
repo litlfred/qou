@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 13-16
 source_pdf: 04procbryden.pdf
 source_sha256: 8baffbc6542c34a5
+doc_brief: "Some computations of Ohtsuki series — We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand"
 ---
 For ﬁxedS and T, the dependence onm of λ±
 m(S, T) is more interesting.

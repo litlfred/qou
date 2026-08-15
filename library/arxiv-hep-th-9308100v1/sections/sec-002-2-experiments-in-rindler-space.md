@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-10
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
+doc_brief: "Gedanken Experiments Involving Black Holes Leonard Susskind, and L ´arus Thorlacius, Department of Physics — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot"
 ---
 Before considering ﬁnite mass black holes it is instructive to consider the simpler geom-
 etry of Rindler space which can be viewed as the exterior regi on close to the horizon in the

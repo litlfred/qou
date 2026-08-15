@@ -7,6 +7,7 @@ section_number: null
 pages: 82-87
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 We summarize here some conventions used in this and our preceding papers.
 1. Homology classes on the IR (Seiberg-Witten) curve Σ are denoted in this paper

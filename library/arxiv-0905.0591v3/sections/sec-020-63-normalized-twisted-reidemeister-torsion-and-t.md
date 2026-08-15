@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 23-24
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
+doc_brief: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 K ⊂S3 a knot and let γ :π1(S3 \νK ) → GL(k,R ) be a representation with R a Noetherian
 UFD. Letǫ = det(γ(µ )) whereµ denotes a meridian of K. Kitayama [Kiy08a] introduced an

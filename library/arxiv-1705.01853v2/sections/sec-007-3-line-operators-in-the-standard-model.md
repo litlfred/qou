@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-8
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
+doc_brief: "Line Operators in the Standard Model David Tong — There is an ambiguity in the gauge group of the Standard Model."
 ---
 In this section, we extend the analysis of [1] to the non-connected gauge group
 G = U(1) ˜Y × SU (2) × SU (3)

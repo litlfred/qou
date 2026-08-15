@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-5
 source_pdf: 0305423v3.pdf
 source_sha256: e4554f9084ba4935
+doc_brief: "Stein’s Method and Plancherel Measure of the Symmetric Group — We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group."
 ---
 It is accurate to state that one of the most important develop ments in
 probability theory in the last century was Stein’s method. S tein’s method

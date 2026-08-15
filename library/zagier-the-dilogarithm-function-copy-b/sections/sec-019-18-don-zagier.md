@@ -7,6 +7,7 @@ section_number: 18
 pages: 16-16
 source_pdf: zagier-the-dilogarithm-function-copy-b.pdf
 source_sha256: c584944a501ef0c5
+doc_brief: "The Dilogarithm Function Don Zagier — 57 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 This equation together with the fact that ζF (2) = 1 .89484144897 ··· ⁄=0
 implies that the element (13) has inﬁnite order in BC.

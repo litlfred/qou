@@ -7,6 +7,7 @@ section_number: null
 pages: 84-92
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
+doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 In this section the ﬁeld k can have arbitrary characteristic.
 LetC be an ind-constructible triangulated A∞-category over a ﬁeld k. We

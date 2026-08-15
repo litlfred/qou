@@ -7,6 +7,7 @@ section_number: 4.20
 pages: 51-51
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et"
 ---
 MAT(X/k), ( Mx)σ est une structure de Hodge-Tate mixte, munie d’une action de Hodge
 mixte de π1(X, x)σ. D’apr` es Hain and Zucker (1987) (5.21), ces donn´ ees d´ eﬁnissent une

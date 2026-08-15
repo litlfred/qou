@@ -7,6 +7,7 @@ section_number: 18
 pages: 19-21
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
 ---
 Substituting into Lemma 6.1 and simplifying, we obtain
 ∑

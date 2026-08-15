@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 11-11
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
+doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
 ---
 a Tannakian category with respect to the de Rham ﬁber functor . Therefore the
 motivic Galois group acts on the aﬃne ring O(0Π 1) of the de Rham realisation of

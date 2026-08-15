@@ -7,6 +7,7 @@ section_number: 9
 pages: 54-56
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 As we have remarked in §5.7, in the theories S[A1,C,D ], each spectral network Wϑ cor-
 responds naturally to an ideal triangulation of C. Ideal triangulations are rather ﬂexible

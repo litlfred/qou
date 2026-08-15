@@ -7,6 +7,7 @@ section_number: 5.5
 pages: 46-47
 source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised"
 ---
 the extension of the cocycle to the cut plane. The main idea is to use d escendant state
 integrals, following [ 23, Eqn.(41)], deﬁned by

@@ -7,6 +7,7 @@ section_number: 14.2
 pages: 50-52
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 We now determine the curve for the massive Nf = 3 theory. We repeat the steps we
 used for Nf = 1, 2. The masses m1, m2, m3 are in the 15 of the global SO(6) symmetry.

@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 25-27
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 Now, let us brieﬂy describe how the problem of quantizing the moduli space of ﬂat connec-
 tions,Mﬂat (GC, Σ), would look in the new approach [24] based on the topologic al A-model

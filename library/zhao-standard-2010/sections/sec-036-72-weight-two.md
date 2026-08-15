@@ -7,6 +7,7 @@ section_number: 7.2
 pages: 18-19
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
+doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm V alues at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
 ---
 There are N 2 MPVs of weight two and level N :
 LN (1, 1|i, j), L N (2|j), 1 ≤ i ≤ N − 1, 0 ≤ j ≤ N − 1.

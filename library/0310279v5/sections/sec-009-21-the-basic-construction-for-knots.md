@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 19-23
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
+doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 Lemma 2.1.1 Let X+, X− be arbitrary disjoint closed braid representatives of the
 same knot typeX . Then there is an intermediate representative X0 ofX such that the

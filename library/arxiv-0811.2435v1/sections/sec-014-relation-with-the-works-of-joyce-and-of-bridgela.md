@@ -7,6 +7,7 @@ section_number: null
 pages: 38-43
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
+doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 land and Toledano-Laredo
 Let g, Γ be as in Section 2.1. We assume that the ground ﬁeld is C. Suppose

@@ -7,6 +7,7 @@ section_number: null
 pages: 24-26
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 As we saw in Section 2.2, the specialisation q ↦→ 1 yields a bijection between the set of irreducible
 representations of K(q)Hq(W,L ) and Irr(W ). What happens though when q specialises to a complex

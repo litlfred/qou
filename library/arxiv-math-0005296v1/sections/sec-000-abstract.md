@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: 0005296v1.pdf
 source_sha256: 1714653ecfdf01bc
+doc_brief: "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant ∗ — Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s"
 ---
 Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres
 does not determine Kirby-Melvin’s {τ

@@ -7,6 +7,7 @@ section_number: 3
 pages: 15-22
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
+doc_brief: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
 ---
 Figure 22. The label of the arc between the second bottom cross-
 ing and the bottom-most crossing should be i + j− k. Note that

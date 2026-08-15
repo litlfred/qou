@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 9-9
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 We now seek to prove that Hk(x) = [ H1(x)]k in the case that H = HR is the Hopf algebra
 of undecorated rooted trees.

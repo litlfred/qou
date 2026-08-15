@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 In the paper [20] we gave the following description of the angles of ide al polyhedra
 in H3: let P be a combinatorial polyhedron, and let A : E(P ) → [0,π ) be a

@@ -7,6 +7,7 @@ section_number: 2.5
 pages: 19-20
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 We have explained, in principle, how to construct 3-manifolds M, phase spaces P∂M , and
 LagrangiansLM by gluing together ideal tetrahedra ∆ i. It would be useful to verify that

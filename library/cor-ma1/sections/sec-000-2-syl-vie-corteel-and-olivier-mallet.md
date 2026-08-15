@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-2
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
 ---
 Abstract. W e extend partition-theoretic work of Andrews, Bressoud, a nd Burge to overpartitions, deﬁning
 the notions of successive ranks, generalized Durfee square s, and generalized lattice paths, and then relating

@@ -7,5 +7,6 @@ section_number: 4
 pages: 104-104
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 Tr(ρ(γ))ρ(γ) +ρ(e) = 1 and det(ρ(γ)) = 1 for anyγ∈G.

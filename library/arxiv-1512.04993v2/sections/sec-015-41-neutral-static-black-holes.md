@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 22-24
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 For neutral black holes, we calculated the rate of change of action of the WDW patch
 as dA

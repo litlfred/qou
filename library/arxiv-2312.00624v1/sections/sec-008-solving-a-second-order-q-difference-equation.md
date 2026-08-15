@@ -7,6 +7,7 @@ section_number: null
 pages: 17-20
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 Recall that, for each choice of α, the resummed perturbative wave function χ(α),WKB(u; ℏ) is given
 in Eq. (3.1). Equivalently, we write

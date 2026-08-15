@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 37-38
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
+doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 As elaborated on in the introduction to this paper, one of the questions that motivated
 our work was a desire to understand why stabilization played such an important role

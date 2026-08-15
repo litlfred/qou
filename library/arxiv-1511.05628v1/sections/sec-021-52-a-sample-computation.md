@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 21-22
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 one example, the 5 2 knot with k = 7. 5 2 is a hyperbolic knot with trace ﬁeld F52 = Q(α)
 where α = 0.8774···− 0.7448...i is a root of

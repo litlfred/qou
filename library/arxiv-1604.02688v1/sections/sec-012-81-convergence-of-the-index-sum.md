@@ -7,6 +7,7 @@ section_number: 8.1
 pages: 21-27
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 (as a formal Laurent series) we need to examine the lowest degree of the terms in this sum.
 Given any coset[S] =S + T, we can choose its “minimal non-negative coset representative”

@@ -7,6 +7,7 @@ section_number: 0
 pages: 45-50
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
+doc_brief: "Motivic Gauss–Bonnet formulas — 26 sections: Introduction 1801; Duality and Euler characteristics ; SL-oriented motivic spectra 1813"
 ---
 Corollary 8.7. Let k be a perfect ﬁeld of characteristic different from two. Let H∈ GW(k) denote the
 class of the hyperbolic form x 2− y2. Let X be a smooth and projective k-scheme.

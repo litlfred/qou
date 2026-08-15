@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 34-35
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
 ---
 have constant shape parameters uk ∈ C∗ and constant edge colors ak ∈ Z. In this situation,
 and assuming (86), as usual we put, for k ∈ {0, 1}:

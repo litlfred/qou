@@ -7,6 +7,7 @@ section_number: null
 pages: 75-75
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 20 (2024), 055, 87 pages — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with"
 ---
 In this appendix, we present numerical data that support the quantum modularity conjecture for
 a choice of knots. Initially, we hoped that pairs of geometrically similar knots (that have identical

@@ -7,6 +7,7 @@ section_number: 3.5
 pages: 18-19
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 the hermitian invariant-action, mh(a,b )≡aba†,
 and quaternionic invariant-action, mq(a,b )≡ab~a.

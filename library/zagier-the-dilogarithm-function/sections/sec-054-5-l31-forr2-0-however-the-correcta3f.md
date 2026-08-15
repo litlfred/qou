@@ -7,6 +7,7 @@ section_number: 5
 pages: 58-60
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
+doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 turns out to be a subgroup of Ker(∂3), as we now explain.
 Let φ be any homomorphism from F × to Z.I f ξ =∑ni[xi] belongs to

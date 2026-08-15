@@ -7,6 +7,7 @@ section_number: 9
 pages: 20-23
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 the induced map π1(F ) → π1(M ) is injective. Its boundary slope is deﬁned as follows. An
 incompressible surface ( F, ∂F ) gives rise to a collection of parallel simple closed loops i n ∂M .

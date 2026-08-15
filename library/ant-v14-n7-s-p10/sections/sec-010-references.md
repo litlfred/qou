@@ -7,6 +7,7 @@ section_number: null
 pages: 18-22
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Introduction; Some algebraic lemmas; Ramiﬁcation and postcritically inﬁ"
 ---
 [Ahmad et al. 2019] F. Ahmad, R. L. Benedetto, J. Cain, G. Carroll, and L. Fang, “The arithmetic basilica: a quadratic PCF
 arboreal Galois group”, preprint, 2019. arXiv

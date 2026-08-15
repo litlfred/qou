@@ -7,6 +7,7 @@ section_number: II
 pages: 2-3
 source_pdf: PhysRevD.108.106023.pdf
 source_sha256: 50c7980e88cd21a0
+doc_brief: "Knot-quiver correspondence for double twist knots Vivek Kumar Singh * — 10 sections: INTRODUCTION; DOUBLE TWIST KNOTS; KNOT-QUIVER CORRESPONDENCE"
 ---
 by two variables, denoted as Kðp; −mÞ, illustrated in Fig. 1.
 Note p; m ∈ Zþ denote the number of full twists, and the

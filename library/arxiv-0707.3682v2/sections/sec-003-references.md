@@ -7,6 +7,7 @@ section_number: null
 pages: 34-44
 source_pdf: 0707.3682v2.pdf
 source_sha256: 609a6f67a0cd5fc8
+doc_brief: "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS — We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the"
 ---
 [1] D. Barsky. Fonctions zˆ etap-adiques d’une classe de rayon des corps de nombres totaleme nt
 r´ eels. InGroupe d’Etude d’Analyse Ultram´ etrique (5e ann´ ee: 1977/78), pages Exp. No. 16,

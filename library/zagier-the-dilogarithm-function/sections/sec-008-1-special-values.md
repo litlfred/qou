@@ -7,6 +7,7 @@ section_number: 1
 pages: 4-5
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
+doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 Let us start with the question of special values. Most functions have either
 no exactly computable special values (Bessel functions, for instance) or else a

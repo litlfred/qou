@@ -7,6 +7,7 @@ section_number: 5.3.1
 pages: 69-88
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
+doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 Preparing for the shortening of long clasp arcs, we will construct a familyS of ‘thin
 annuli’ which is a subset ofPA . Normal neighborhoods will play a key role in the

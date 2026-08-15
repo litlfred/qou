@@ -7,6 +7,7 @@ section_number: null
 pages: 53-53
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
+doc_brief: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
 ---
 The 2↔ 3 Pachner move alters an ideal triangulation by replacing two tetrahedra
 sharing a face with three tetrahedra sharing an edge. At the analytic level, this local

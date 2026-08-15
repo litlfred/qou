@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-13
 source_pdf: 1203.6551v1.pdf
 source_sha256: a8e84f8ed63dbcca
+doc_brief: "On the number of hyperbolic 3-manifolds of a given volume — The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v."
 ---
 Thurston and Jørgensen (see [ 43]) showed that the set of volumes of ﬁnite
 volume orientable complete hyperbolic 3-manifolds is a closed, non-dis crete, well

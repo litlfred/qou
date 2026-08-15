@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 38-39
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 Next, let us comment on states perturbed by multiple precursors as in Eq. 6.1. As
 before, we will consider a compact boundary theory but this time perturbed n spheri-

@@ -7,6 +7,7 @@ section_number: 4
 pages: 27-28
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
+doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 We now prove our main theorem. We proceed by analyzing each case in order. For g of
 Type 1 or 2, by Section 3.1, we know that the Borel–Laplace sum

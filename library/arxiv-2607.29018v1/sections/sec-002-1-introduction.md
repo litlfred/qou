@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-4
 source_pdf: 2607.29018v1.pdf
 source_sha256: 789faa122dd32290
+doc_brief: "The Aldous property for normal Cayley graphs on symmetric groups — Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same"
 ---
 All graphs considered in this paper are finite and undirected with no loops or parallel edges.
 The order of a graph is meant to be its number of vertices. Denote byA(Γ) the adjacency

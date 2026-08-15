@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 1711.08944v2.pdf
 source_sha256: ad7a020e7e92b788
+doc_brief: "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥ 3."
 ---
 Let G = ( V (G), E(G)) be a simple undirected graph of order n. The adjacency
 matrix of G, denoted by A(G), is the n × n matrix with entries auv = 1 if {u, v} ∈

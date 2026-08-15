@@ -7,6 +7,7 @@ section_number: 7.1
 pages: 63-64
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 In Section 4.7, we found a four-complex-dimensional Dirac spinor, Ψ D≡ ΨL + ΨR, as an
 irreducible representation of Cl(2)⊗C Cl(2). Here, the second factor of Cl(2) came from

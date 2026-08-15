@@ -7,6 +7,7 @@ section_number: 16
 pages: 16-17
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
+doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
 ---
 Conversely, forallPu ...,PgeΣJfwedefinezaccording to(3.24) then f(Pt) = 0 for
 alli = l,...,g.

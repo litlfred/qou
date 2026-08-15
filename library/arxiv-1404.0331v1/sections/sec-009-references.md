@@ -7,6 +7,7 @@ section_number: null
 pages: 9-9
 source_pdf: 1404.0331v1.pdf
 source_sha256: 53d7ce3afaf405e1
+doc_brief: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS ANH T. TRAN — The AJ conjecture, formulated by Garoufalidis, relates the A-poly nomial and the colored Jones polynomial of a knot in the 3-sphere."
 ---
 [CCGLS] D. Cooper, M. Culler, H. Gillet, D. Long and P. Shalen, Plane curves associated to character
 varieties of 3-manifolds , Invent. Math. 118 (1994), pp. 47–84.

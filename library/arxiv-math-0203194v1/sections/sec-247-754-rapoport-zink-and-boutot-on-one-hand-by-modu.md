@@ -7,6 +7,7 @@ section_number: 7.5.4
 pages: 109-110
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 Drinfeld), and Varshavsky on the other hand (by group-theor etic methods ` a
 la ˇCerednik), have pointed out similar global p-adic uniformizations in much

@@ -7,6 +7,7 @@ section_number: null
 pages: 20-21
 source_pdf: 2104.06067v1.pdf
 source_sha256: 750303181ca019ba
+doc_brief: "ON IRREDUCIBLE CHARACTERS OF THE IW AHORI-HECKE ALGEBRA IN TYPE A — We use vertex operators to compute irreducible characters o f the Iwahori-Hecke algebra of type A."
 ---
 [1] A. Berele, A. Regev, Hook Young diagrams with applications to combinatorics and to representations of Lie superal-
 gebras, Adv. Math. 64(2) (1987), 118-175.

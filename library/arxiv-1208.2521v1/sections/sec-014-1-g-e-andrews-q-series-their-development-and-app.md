@@ -7,6 +7,7 @@ section_number: 1
 pages: 19-19
 source_pdf: 1208.2521v1.pdf
 source_sha256: 8d0281aa84043865
+doc_brief: "ON q-ANALOGUES OF THE FOURIER — For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H."
 ---
 combinatorics, physics, and computer algebra , Regional Conf. Ser. in Math., no. 66, Amer.
 Math. Soc., Providence, R.I., 1986.

@@ -7,6 +7,7 @@ section_number: null
 pages: 23-24
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 [1] Ken Chan, Constructing hyperbolic3-manifolds, Undergraduate thesis with Craig Hodgson,
 University of Melbourne, 2002.

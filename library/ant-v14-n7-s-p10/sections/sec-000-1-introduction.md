@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Introduction; Some algebraic lemmas; Ramiﬁcation and postcritically inﬁ"
 ---
 Let K be a number ﬁeld with algebraic closure K . Letφ(x)∈ K[x] be a polynomial of degree d≥ 2, and
 denote byφn=φ◦···◦ φ the n-fold composition ofφ with itself. Let α∈ K be a nonexceptional point

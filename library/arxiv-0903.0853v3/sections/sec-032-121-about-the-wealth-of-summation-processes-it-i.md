@@ -7,6 +7,7 @@ section_number: 1.2.1
 pages: 13-13
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 to notice that the construction of q-analogs of classical objects (special func-
 tions. . . ) is not canonical, there are in general several “go od” q-analogs. So

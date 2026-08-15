@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 12-13
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 C∗ of the Zariski open sets of the elliptic curve C∗/qZ, that is, complements
 of ﬁnite unions of discrete q-spirals in C∗; and the growth conditions at

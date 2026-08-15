@@ -7,6 +7,7 @@ section_number: null
 pages: 1-4
 source_pdf: 6gtx-j455.pdf
 source_sha256: 3b0864e1373097cd
+doc_brief: "Ultraviolet Completion of the Big Bang in Quadratic Gravity — 3 sections: Ultraviolet Completion of the Big ; Acknowledgments; Data availability"
 ---
 Ruolin Liu , 1,2,3,* Jerome Quintin , 4,5,6,2,3,† and Niayesh Afshordi 1,2,3,‡
 1Department of Physics and Astronomy, University of Waterloo , Waterloo, Ontario N2L 3G1, Canada

@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 32-34
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
 ---
 combination of equivalence classes of cyclic words in CQ. Such a W is called
 a potential. A potential W induces a function Tr(W ) on M, deﬁned as follows.

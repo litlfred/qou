@@ -7,6 +7,7 @@ section_number: 6
 pages: 7-7
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
 ---
 This decomposition shows that the generating function for o verpartitions with generalized Durfee square
 of size N where the exponent of q counts the weight and the exponent of a counts the number of overlined

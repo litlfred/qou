@@ -7,6 +7,7 @@ section_number: null
 pages: 9-11
 source_pdf: 2211.13362v2.pdf
 source_sha256: 3becbeaa1135d2e1
+doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
 ---
 As mentioned in the introduction, there have been many realizations of the double-slit experiment.
 One experiment of particular interest is that of KPM [10], which recorded not only the detected

@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 18-19
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
+doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry ISSN 2073-8994 www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive"
 ---
 These functions turn out to find expression as coeffi cients in a tensor formalism [2] that describes 
 the operations of fusion and fission, which implicate this model’s identity as a Hopf algebra [14]. 

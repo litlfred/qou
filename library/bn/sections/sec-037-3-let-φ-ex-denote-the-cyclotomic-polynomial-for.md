@@ -7,6 +7,7 @@ section_number: 3
 pages: 34-35
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
+doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
 ---
 roots of unity, and let Ge = G| Ker(Φ e(T ∗)) We then have a similar
 factorization of Q-algebraic groups, namely G =∏

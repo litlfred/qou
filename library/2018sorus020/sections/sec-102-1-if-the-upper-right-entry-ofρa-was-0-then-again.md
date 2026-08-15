@@ -7,6 +7,7 @@ section_number: 1
 pages: 67-70
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 can ﬁx, up to conjugacy that preserves the diagonal matrixρ(b), this entry to be1.
 Now observe that the Cayley-Hamilton identityρ(a)2−Tr(ρ(a))ρ(a)+Id = 0 implies

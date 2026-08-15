@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 11-13
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 Deﬁnition 4.5.A Bruhat cocycleis a natural cocycle as in Deﬁnition 2.16, but where long edges
 may be either diagonal or counter-diagonal. A zero-cochainη : V (T )→ P preserves a Bruhat

@@ -7,6 +7,7 @@ section_number: 12
 pages: 39-41
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 In this section we study thePachner graph for a compact orientable 3-manifoldM with
 non-empty boundary consisting of tori. This is a graph where each vertex corresponds to

@@ -7,6 +7,7 @@ section_number: 1
 pages: 6-7
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
+doc_brief: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 three–manifolds with non–empty boundary. We will use the symbol TM to denote the
 sign–reﬁned Reidemeister torsion of C∗(M ; sl2(C)ρ).

@@ -7,6 +7,7 @@ section_number: null
 pages: 7-7
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
+doc_brief: "EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
 ---
 by joint work of Zagier and the ﬁrst author. We wish to thank Tudor Dimofte and especially
 Don Zagier for enlightening conversations and for a generous shar ing of their ideas. The paper

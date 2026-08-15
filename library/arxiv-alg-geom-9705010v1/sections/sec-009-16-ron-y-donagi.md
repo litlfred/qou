@@ -7,6 +7,7 @@ section_number: 16
 pages: 16-18
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
+doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
 ---
 with particles in representations ρi, i = 1,...,N f , is
 β =c2(ad) −

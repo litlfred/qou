@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 33-35
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
+doc_brief: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques — 24 sections: Introduction; Classiﬁcation of q-diﬀerence equat; Some notation and formulas"
 ---
 Now we extend the above to larger categories. We introduce a category
 Tuples 2 as follows. The objects are tuples

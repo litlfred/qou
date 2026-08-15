@@ -7,6 +7,7 @@ section_number: 5.6
 pages: 94-100
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
+doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 In this subsection all clasp arcs have intermediate length, that is the pierce points of
 bothγ+ andγ− are on b–arcs.

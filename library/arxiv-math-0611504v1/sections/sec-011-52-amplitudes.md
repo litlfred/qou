@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 24-26
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
+doc_brief: "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study"
 ---
 V −1 for the dual space. Both are endowed with the hermitian inner prod uct with orthonormal basis
 the vectors e0 and (ei +eN −i)/

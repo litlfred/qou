@@ -7,6 +7,7 @@ section_number: VII
 pages: 23-25
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 It will be convenient to divide the statement and proof of Theorem D into three pieces, as
 follows:

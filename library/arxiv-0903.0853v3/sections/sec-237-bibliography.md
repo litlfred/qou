@@ -7,6 +7,7 @@ section_number: null
 pages: 167-176
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 [1] C. R. Adams. Linear q-diﬀerence equations. Bulletin A. M. S. , 37:361–
 400, 1931.

@@ -7,6 +7,7 @@ section_number: 3.7
 pages: 21-22
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
 ---
 We shall now give the formulae for the ﬁrst three instanton co ntributions to the
 prepotential for the general SU (N ) case, with Nf < 2N .

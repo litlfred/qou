@@ -7,6 +7,7 @@ section_number: 12.1
 pages: 40-41
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 Let’s review some facts about the growth of wormhole volume that follow from the black
 hole geometry. First of all, except for an early transient, lasting about a thermal time, the

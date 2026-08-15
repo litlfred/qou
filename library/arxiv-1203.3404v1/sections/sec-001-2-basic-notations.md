@@ -7,6 +7,7 @@ section_number: 2
 pages: 7-8
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the"
 ---
 In this section, we review our notations. We assume that q ∈ C∗ satisﬁes
 0< |q|< 1. The q-shifted operator σq is given by σqf (x) = f (qx). For any

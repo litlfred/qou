@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-6
 source_pdf: 1172-4.pdf
 source_sha256: ffc47732ce0138e9
+doc_brief: "Notes on Construction of the Knot Invariant from $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$Dilogarithm Function El5~Bg3XBg3X1!N#>8Ln8&5f2JJ*N#3XUs96 — 13 sections: D"
 ---
 Since the discovery of the Jones polynomial [15], the quantum $\mathrm{g}\mathrm{r}o$up has $\dot{\mathrm{b}}\mathrm{e}\mathrm{e}\mathrm{n}$used to
 construct the invariants of knots and links, and many knot invariants such as HOM-

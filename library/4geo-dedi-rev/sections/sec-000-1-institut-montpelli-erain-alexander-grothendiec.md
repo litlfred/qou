@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-2
 source_pdf: 4GEO-DEDI-REV.pdf
 source_sha256: e4d52947b71a3f37
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 36 sections: Institut Montpelli´ erain Alexand"
 ---
 (sbaseilh@univ-montp2.fr)
 2 Dipartimento di Matematica, Universit` a di Pisa, Largo Bruno Pontecorvo 5, 56127 Pisa, Italy

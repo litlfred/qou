@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 17-25
 source_pdf: 0706.2213v3.pdf
 source_sha256: 75dd29acc9e34bda
+doc_brief: "NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS — This paper gives an explicit formula for the SL 2(C)−non–abelian Reidemeister torsion as deﬁned in [Dub06] in the case of twist knots."
 ---
 abelian Reidemeister torsion for even twist knots J(2, 2m) where m is an integer.
 5.1.1. Preliminaries. Following Section 3.2 and using Riley’s method, we can parametrize

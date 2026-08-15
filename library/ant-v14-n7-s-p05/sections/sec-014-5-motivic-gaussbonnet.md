@@ -7,6 +7,7 @@ section_number: 5
 pages: 25-27
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
+doc_brief: "Motivic Gauss–Bonnet formulas — 26 sections: Introduction 1801; Duality and Euler characteristics ; SL-oriented motivic spectra 1813"
 ---
 The triangle commutes by the functoriality of ϑ−, as expressed by Remark 3.16.
 To see that square commutes, we have the diagram

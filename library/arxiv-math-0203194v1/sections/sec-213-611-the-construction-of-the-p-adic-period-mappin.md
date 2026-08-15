@@ -7,6 +7,7 @@ section_number: 6.1.1
 pages: 94-94
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 plex case: one attaches to a point s∈M representing a pair (Λ ,ρ ) the point
 P(s) of D∨ which parametrizes the notch F 1 of the Hodge ﬁltration of the

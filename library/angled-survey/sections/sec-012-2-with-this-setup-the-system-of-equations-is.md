@@ -7,6 +7,7 @@ section_number: 2
 pages: 8-10
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 Av =[ π,...,π,2π,...,2π ]T,
 where v ∈ R3n is the vector of angles. Then dimA(τ)=3 n−rank(A).

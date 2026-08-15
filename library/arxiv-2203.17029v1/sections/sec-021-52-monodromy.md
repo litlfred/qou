@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 40-42
 source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised"
 ---
 29)
 and the associated monodromy. Using the modular transformation properties of the Jacobi

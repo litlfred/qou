@@ -7,6 +7,7 @@ section_number: 1
 pages: 21-21
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
+doc_brief: "arxiv-1012.5432v4 — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 Similar to regular quantum ﬁeld theory of the collision of two particles in three dimensions,
 the fusion of two particles can lead to multiple possible outcomes. The fusion rules are the

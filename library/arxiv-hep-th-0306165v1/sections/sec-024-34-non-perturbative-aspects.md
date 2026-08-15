@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 31-34
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 We found the semi-classical expression for the partition fu nction Z(M ) and brieﬂy
 discussed higher-order perturbative corrections. Howeve r, using the eﬀective quantum

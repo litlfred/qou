@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 4-4
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 8 (2012), 065, 20 pages Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4"
 ---
 The points at infinity for the HC curve (2.1) are given by (the real points) [0 , 1, 0] and [1, 0, 0],
 but the latter is singular. In fact the singularities of the HC curve are [1 , 0, 0] and [ζk,ζ 2k, 1]

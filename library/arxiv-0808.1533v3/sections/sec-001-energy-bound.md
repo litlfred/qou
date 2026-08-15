@@ -7,6 +7,7 @@ section_number: null
 pages: 21-25
 source_pdf: 0808.1533v3.pdf
 source_sha256: 3e003cc35a4e5711
+doc_brief: "The third order helicity of magnetic ﬁelds via link maps. R. Komendarczyk ∗† — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us"
 ---
 In this section we indicate how the quantity H123(B; T ) invariant under frozen-in-ﬁeld de-
 formations provides a lower bound for the L2-energy E2(B) of a volume preserving ﬁeld B

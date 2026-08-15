@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 24-25
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 The basic “matter” action on 3d N = 2 theories begins with a theory that has a coupling to
 a background 3d chiral multiplet φ. In practice, what we mean is a choice of chiral operator

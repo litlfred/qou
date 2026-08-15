@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 9-14
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
+doc_brief: "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study"
 ---
 pseudomanifold (Z, T ) a trace tensor HN (T ), as follows. Deﬁne an N -state of T as a function that
 gives every 2-simplex an index, with values in {0,...,N − 1}. Every N -state determines an entry

@@ -7,6 +7,7 @@ section_number: 6.5
 pages: 22-23
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 T which contains an edge e and a tetrahedron ∆ 1 such that goes around e ﬁve times with
 shapes Z, Z′, Z′, Z′′ and Z′′. Suppose that no other tetrahedron touches e. Then the

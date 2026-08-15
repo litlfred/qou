@@ -7,6 +7,7 @@ section_number: 10
 pages: 10-10
 source_pdf: 2109.04664v4.pdf
 source_sha256: 639cd40a29752e3f
+doc_brief: "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
 ---
 So we have eN ×F (x) < eN (S(ξ)/ξ −δ) if x ⁄∈[c−,c +]. Since fN (x) uniformly con-
 verges to F (x) from Proposition 2.8, we also have

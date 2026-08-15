@@ -7,6 +7,7 @@ section_number: null
 pages: 29-30
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 In this section, we consider the Andersen–Kashaev invariant [1, 27, 33]χK(u; ℏ) in its original form as
 a finite-dimensional state integral, whose integrand is a product of Faddeev’s quantum dilogarithm

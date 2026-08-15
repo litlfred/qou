@@ -7,6 +7,7 @@ section_number: null
 pages: 12-13
 source_pdf: 0806.3105v3.pdf
 source_sha256: a37b4f2e96365d30
+doc_brief: "KNOTS AND PREONS Robert J. Finkelstein — It is shown that the four quantum trefoil solitons that are describ ed by the irreducible representations D3/ 2 mm′ of the quantum algebra SLq(2) (and that"
 ---
 The preceding discussion is based on SLq(2). One may, however, describe the knots by
 SUq(2) instead of by SLq(2) if one sets

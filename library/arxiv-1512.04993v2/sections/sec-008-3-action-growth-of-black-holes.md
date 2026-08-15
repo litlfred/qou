@@ -7,6 +7,7 @@ section_number: 3
 pages: 16-16
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 In this section, we will calculate the rate of increase of action of a Wheeler-DeWitt
 patch of the two-sided black hole (which we are conjecturing to be dual to the rate of

@@ -7,6 +7,7 @@ section_number: 5
 pages: 12-15
 source_pdf: 1808.08110v1.pdf
 source_sha256: 4bf98566792d47bd
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — We continue the study undertaken in [13] of the relevance of t he exceptional Jordan algebra J 8 3 of hermitian 3 × 3 octonionic matrices for the description of the"
 ---
 We now consider the triality as corresponding to the 3 canonical Jor dan
 subalgebras J(1), J(2), J(3) isomorphic to J 8

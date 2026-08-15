@@ -7,6 +7,7 @@ section_number: 7.7
 pages: 53-54
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
 ---
 sis of polynomial functions, Theorem 1.2 implies that any po lynomial function F
 converge, after proper normalization, towards a multivariate polynomial evaluated

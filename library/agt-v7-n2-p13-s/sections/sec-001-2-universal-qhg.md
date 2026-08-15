@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-5
 source_pdf: agt-v7-n2-p13-s.pdf
 source_sha256: affd571adbaac3fc
+doc_brief: "Algebraic & Geometric Topology 7 (2007) 845–917 845 Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
 ---
 where we recall also from [3; 4] and [23; 24] (in Section 2.4 in particular) the notions
 and results we need.

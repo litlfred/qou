@@ -7,6 +7,7 @@ section_number: null
 pages: 32-32
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
+doc_brief: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Unive"
 ---
 3.4.1 Lüscher’s effective range expansion in the ﬁnite volume
 Similar to the ﬁnite volume eﬀects of bound states, we can have a look on ﬁnite volume calculations of

@@ -1,0 +1,81 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "ant-v14-n7-s-p08",
+ "source_sha256": "81b8f00fe5fbd0f6",
+ "brief": "Burgess bounds for short character sums evaluated at forms — 12 sections: Introduction; Method of proof: an overview; Preliminaries",
+ "extended": "**Burgess bounds for short character sums evaluated at forms**\n\n*Lillian B. Pierce and Junyan Xu*\n\n42 pp, 12 sections.\n\n**Outline.** 1 Introduction; 2 Method of proof: an overview; 3 Preliminaries; 1 Fa2; 4 The stratiﬁcation of complete character sums; 5 Initiation of the Burgess argument; 6 Stratiﬁcation and a Menshov–Rademacher argum; 7 Conclusion of the Burgess argument; 2 H1q−1/(2r)≤ P≤ H1q−1/(2r). (7-2); Appendix; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: Letχ be a nonprincipal multiplicative Dirichlet character of order1 modulo a prime q.\n- Theorem 2.1: Let n=2 and letr,1, D≥1 be ﬁxed. There exists a constantC=C(n, r, D) and a constant\n- Theorem: A [Xu 2018, Theorem 1.1]. Let integers n, r,1, D≥ 1 be ﬁxed. There exist integers C=\n- Theorem 4.1: Letκ= Fq, q prime. The result of Theorem A holds if we replace the hypothesis that\n- Theorem 4.4: Let integers n, r,1, D≥ 1 be ﬁxed. Then there exist constants C= C(n, r, D) and\n- Proposition 4.5: Letκ= Fq with q prime and ﬁx a rational function F∈κ(x1,..., xn) with deg F< q",
+ "tokens": {
+  "brief": 32,
+  "extended": 271
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-8"
+  },
+  {
+   "id": "sec-001-2-method-of-proof-an-overview",
+   "title": "Method of proof: an overview",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-002-3-preliminaries",
+   "title": "Preliminaries",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-003-1-fa2",
+   "title": "Fa2",
+   "pages": "11-15"
+  },
+  {
+   "id": "sec-004-4-the-stratiﬁcation-of-complete-character-sums",
+   "title": "The stratiﬁcation of complete character sums",
+   "pages": "15-21"
+  },
+  {
+   "id": "sec-005-5-initiation-of-the-burgess-argument",
+   "title": "Initiation of the Burgess argument",
+   "pages": "21-25"
+  },
+  {
+   "id": "sec-006-6-stratiﬁcation-and-a-menshovrademacher-argument",
+   "title": "Stratiﬁcation and a Menshov–Rademacher argument",
+   "pages": "25-31"
+  },
+  {
+   "id": "sec-007-7-conclusion-of-the-burgess-argument",
+   "title": "Conclusion of the Burgess argument",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-008-2-h1q12r-p-h1q12r-7-2",
+   "title": "H1q−1/(2r)≤ P≤ H1q−1/(2r). (7-2)",
+   "pages": "31-36"
+  },
+  {
+   "id": "sec-009-appendix",
+   "title": "Appendix",
+   "pages": "36-39"
+  },
+  {
+   "id": "sec-010-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "39-39"
+  },
+  {
+   "id": "sec-011-references",
+   "title": "References",
+   "pages": "39-42"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

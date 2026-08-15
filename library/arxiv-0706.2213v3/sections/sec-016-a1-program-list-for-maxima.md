@@ -7,6 +7,7 @@ section_number: null
 pages: 31-32
 source_pdf: 0706.2213v3.pdf
 source_sha256: 75dd29acc9e34bda
+doc_brief: "NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS — This paper gives an explicit formula for the SL 2(C)−non–abelian Reidemeister torsion as deﬁned in [Dub06] in the case of twist knots."
 ---
 Reidemeister torsion for a given twist knot. This program wo rks on the free computer al-
 gebra system Maxima [Sa06]. The function R(m) in the list computes the Riley polynomial

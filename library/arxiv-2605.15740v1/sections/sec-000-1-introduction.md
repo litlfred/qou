@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-6
 source_pdf: 2605.15740v1.pdf
 source_sha256: aa7f99d6633113c6
+doc_brief: "BAILEY P AIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
 ---
 In 1999, Lawrence and Zagier made a prescient observation connecting quantum invariants
 and modular forms [23]. To state their result, letZ ζ(M) denote the Witten-Reshetikhin-Turaev

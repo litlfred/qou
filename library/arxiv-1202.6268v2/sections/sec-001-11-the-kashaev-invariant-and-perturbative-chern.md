@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-4
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
+doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
 ---
 1.2. The Neumann-Zagier datum 4
 1.3. The 1-loop invariant 5

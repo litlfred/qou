@@ -7,6 +7,7 @@ section_number: 3
 pages: 18-18
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 Our postulates require us to build a theory in which a distant observer makes no reference
 to events inside a black hole. For this purpose it is very usef ul to introduce the idea of a

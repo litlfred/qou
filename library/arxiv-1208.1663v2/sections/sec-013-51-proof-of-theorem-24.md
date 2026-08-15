@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 14-16
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 known lemma due to Farkas [30].
 Lemma 5.1. Fix ﬁnite collectionsA ={a1,...,a r} andB ={b1,...,b s} of vectors in RN.

@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 65-68
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
+doc_brief: "Prepared for submission to JHEP 3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Ca"
 ---
 As we argued in [19], a three-dimensional N = 2 theory TM labeled by a 3-manifold M can
 be thought of as the result of compactiﬁcation of the six-dimensional (2 , 0) theory of type A1

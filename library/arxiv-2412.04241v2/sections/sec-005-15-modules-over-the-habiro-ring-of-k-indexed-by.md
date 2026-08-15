@@ -7,6 +7,7 @@ section_number: 1.5
 pages: 8-11
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 collection of modulesHR,ξ over the Habiro ringHR (withR given in (11)) labelled by elements
 ofξ∈K3(K). (Philosophically, the modules ought to be labelled by K3(R). However, given

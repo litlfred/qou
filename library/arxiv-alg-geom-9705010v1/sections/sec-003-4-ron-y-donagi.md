@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-6
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
+doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
 ---
 isometries of ( X,g ). When dim X = 4, the equations are also invariant under
 the duality F ↦→ ∗F . When X = R4 with the Minkowski metric, this duality

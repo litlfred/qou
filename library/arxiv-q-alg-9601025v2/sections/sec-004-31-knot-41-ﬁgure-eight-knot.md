@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 5-5
 source_pdf: 9601025v2.pdf
 source_sha256: 369b0a1a92ce67a8
+doc_brief: "The hyperbolic volume of knots from quantum dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Th´ eoriqueenslapp† — The invariant of a link in three-sphere, associated with the cyclic quantum"
 ---
 The exact formula (2.2) can be rewritten as a contour integral:
 ⟨41⟩ = i

@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 22-22
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
+doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
 ---
 The analysis of T-duality in the type IIA frame of CHL models can be repeated without
 essential modiﬁcations to describe T-duality in the heterotic frame (equivalently, S-duality

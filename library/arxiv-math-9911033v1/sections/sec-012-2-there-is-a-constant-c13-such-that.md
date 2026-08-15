@@ -7,6 +7,7 @@ section_number: 2
 pages: 22-24
 source_pdf: 9911033v1.pdf
 source_sha256: 196c05d2e3419565
+doc_brief: "ON THE LOWER BOUND ESTIMA TES OF SECTIONS OF THE CANONICAL BUNDLES OVER A RIEMANN SURF ACE ZHIQIN LU Contents 1. Introductions 1 2. A lower bound estimate 4 3. A counterexample 11 4. Partial uniform e"
 ---
 √−1
 2π ∂∂ϕ ≥ −C13ω g(4.29)

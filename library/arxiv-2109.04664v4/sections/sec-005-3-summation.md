@@ -7,6 +7,7 @@ section_number: 3
 pages: 7-8
 source_pdf: 2109.04664v4.pdf
 source_sha256: 639cd40a29752e3f
+doc_brief: "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
 ---
 In this section, we use the quantum dilogarithm TN (z) to express JN (E;eξ/N )
 without the product of a sequence.

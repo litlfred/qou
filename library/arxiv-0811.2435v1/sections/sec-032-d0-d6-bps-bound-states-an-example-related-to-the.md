@@ -7,6 +7,7 @@ section_number: null
 pages: 105-109
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
+doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 the MacMahon function
 LetX be a compact 3d Calabi-Yau manifold over k, such that H 1(X,OX) =

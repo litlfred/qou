@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 1.1. Thurston’s gluing equations 2
 1.2. Our main results 3

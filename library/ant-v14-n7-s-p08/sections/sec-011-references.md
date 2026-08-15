@@ -7,6 +7,7 @@ section_number: null
 pages: 39-42
 source_pdf: ant-v14-n7-s-p08.pdf
 source_sha256: 81b8f00fe5fbd0f6
+doc_brief: "Burgess bounds for short character sums evaluated at forms — 12 sections: Introduction; Method of proof: an overview; Preliminaries"
 ---
 [Aggarwal et al. 2018] K. Aggarwal, R. Holowinsky, Y . Lin, and Q. Sun, “The Burgess bound via a trivial delta method”, 2018.
 To appear in Ramanujan J. arXiv

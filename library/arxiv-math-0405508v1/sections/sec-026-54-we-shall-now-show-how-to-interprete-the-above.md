@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 22-24
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 diagrams, and how to calculate alternatively the above solid torus kn ot invari-
 ants using initial conditions and applying skein relations on the mixed link

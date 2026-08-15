@@ -7,6 +7,7 @@ section_number: 8
 pages: 25-26
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 We refer to Garoufalidis-Thurston-Zickert [11] or Zickert [19] for more details on decora-
 tions. Let G be a group and H a subgroup of G.

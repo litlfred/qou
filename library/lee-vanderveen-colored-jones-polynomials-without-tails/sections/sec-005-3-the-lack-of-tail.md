@@ -7,6 +7,7 @@ section_number: 3
 pages: 4-4
 source_pdf: lee-vanderveen-colored-jones-polynomials-without-tails.pdf
 source_sha256: fcc45aebd34e25dc
+doc_brief: "COLORED JONES POLYNOMIALS WITHOUT TAILS — We exhibit an in nite family of knots with the property that the rst coecient of the n-colored Jones polynomial grows linearly with n."
 ---
 Using the formulas for the building blocks we may determine the degree (a;b;c;d ) of each term in
 the state sum. It is an explicit piecewise quadratic function on the polytopenP . From our assumptions

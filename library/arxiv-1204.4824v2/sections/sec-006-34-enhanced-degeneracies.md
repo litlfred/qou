@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 16-17
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 In the presence of a surface defect Sz there is an important enhancement to the 4d BPS
 degeneracies Ω(γ) [5]: they are replaced by numbers ω(γ, ¯a) ∈ Z for any γ ∈ Γ and

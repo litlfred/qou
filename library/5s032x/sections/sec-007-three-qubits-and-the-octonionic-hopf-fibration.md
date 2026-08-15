@@ -7,6 +7,7 @@ section_number: null
 pages: 12-16
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
+doc_brief: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗ — quantum description."
 ---
 Due to the normalization|o0|2 +|o1|2 = 1, an octonionic qubit defines a point on the sphere S15. There again exists
 a map taking points of the sphere to the extended octonionic plane,

@@ -7,6 +7,7 @@ section_number: null
 pages: 34-35
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 Let τ :Hq
 n→R be the linear map deﬁned by

@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 19-19
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
 ---
 integer partitions. Therefore it will be useful to use some s hort notations for small
 modiﬁcations (adding or removing a box or a part) of partitio ns. We denote by

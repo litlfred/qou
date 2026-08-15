@@ -7,6 +7,7 @@ section_number: null
 pages: 18-20
 source_pdf: 2304.07001v3.pdf
 source_sha256: b6c0d7f50b6407f1
+doc_brief: "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a f ormal power series associated to elements in the Habiro ring that come from radi al"
 ---
 [1] S. Ahlgren, B. Kim, Dissections of a “strange” function , Int. J. Number Theory 11 (2015), no. 5, 1557–1562.
 [2] S. Ahlgren, B. Kim and J. Lovejoy, Dissections of strange q-series, Ann. Comb. 23 (2019), no. 3-4, 427–442.

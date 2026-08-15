@@ -7,6 +7,7 @@ section_number: 2
 pages: 19-19
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
+doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 product V| Woftwo A-modules, V, W. Cutting out B alongits core we get two new 
 ribbons which make together with F\B another DR-graph, say, F'. The colouring 

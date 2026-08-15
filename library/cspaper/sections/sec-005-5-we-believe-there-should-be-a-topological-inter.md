@@ -7,6 +7,7 @@ section_number: 5
 pages: 4-4
 source_pdf: cspaper.pdf
 source_sha256: 1910c380cf79bf42
+doc_brief: "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds Walter D. Neumann 1. Introduction In this paper we prove some results on combinatorics of triangulations of 3"
 ---
 Theorem 2: it should be associated with some kind of extra structure on M . Remark 4
 and Section 2 both give some support for this belief.

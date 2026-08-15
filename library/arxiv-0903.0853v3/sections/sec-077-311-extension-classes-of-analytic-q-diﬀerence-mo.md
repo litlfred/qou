@@ -7,6 +7,7 @@ section_number: 3.1.1
 pages: 35-35
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 here on, we consider only analytic q-diﬀerence modules and the base ﬁeld is
 C({z}) (except for brief indications about the formal case).

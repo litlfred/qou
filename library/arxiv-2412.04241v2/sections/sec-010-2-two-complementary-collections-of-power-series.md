@@ -7,6 +7,7 @@ section_number: 2
 pages: 17-18
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 In this section we will describe two beautiful consequences of a formal power series satis-
 fying a simple system of linear q-difference equations. On one hand these series will have a

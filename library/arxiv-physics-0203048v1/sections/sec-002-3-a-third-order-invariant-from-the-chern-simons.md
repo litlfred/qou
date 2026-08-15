@@ -7,6 +7,7 @@ section_number: 3
 pages: 4-6
 source_pdf: 0203048v1.pdf
 source_sha256: 47204f32280e91a3
+doc_brief: "Towards a third-order topological invariant for magnetic ﬁelds — An expression for a third-order link integral of three magne tic ﬁelds is presented."
 ---
 In this section we construct a third-order invariant which, under c onditions speciﬁed
 below, yields an invariant for three magnetic ﬁelds. The derivation is b ased on some

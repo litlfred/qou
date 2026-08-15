@@ -7,6 +7,7 @@ section_number: null
 pages: 10-11
 source_pdf: 0111022v1.pdf
 source_sha256: fea7f118014838fe
+doc_brief: "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schr¨ odinger Institute for Mathematical Physics Boltzmanngasse 9 — We introduce general q-deformed multiple"
 ---
 [BK] D. J. Broadhurst, D. Kreimer, Phys. Lett. B393, 403-412 (1997),
 hep-th/9609128.

@@ -7,6 +7,7 @@ section_number: 7.1.3
 pages: 26-26
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
+doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
 ---
 For each fundamental root α ∈ {α1, . . . , αℓ} there is an algebra automorphism
 Tα : U → U , as described in [17, Chapter 8]. These automorphisms satis fy the

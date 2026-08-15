@@ -7,6 +7,7 @@ section_number: 5
 pages: 8-8
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
+doc_brief: "Gr¨ obner-Shirshov bases and PBW theorems∗ L. A. Bokut † — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for"
 ---
 –Braid groups
 in Artin-Burau generators (Bokut-Chanikov-Shum [9]);

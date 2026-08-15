@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-3
 source_pdf: 1210.6243v1.pdf
 source_sha256: 3ff2f5358b25586e
+doc_brief: "Controlled double-slit electron diﬀraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
 ---
 Richard Feynman described electron diﬀraction as a phenomenon “w hich has in it the
 heart of quantum mechanics. In reality, it contains the only mystery”[1]. He went

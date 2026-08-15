@@ -7,6 +7,7 @@ section_number: 14.1
 pages: 49-50
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 Now we will determine the curve for the Nf = 3 theory with zero bare masses. We do
 this using the expected singularity structure: there shoul d be a singularity in the u plane

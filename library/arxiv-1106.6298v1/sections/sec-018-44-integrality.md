@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 17-17
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
+doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INV ARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
 ---
 unity and for all 3–manifolds is given in [4]. Note that even restricted t o rational homology
 3–spheres, this fact requires a separate proof, since the existe nce of IM ∈ R b does not

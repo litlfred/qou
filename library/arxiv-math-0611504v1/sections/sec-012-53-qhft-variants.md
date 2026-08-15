@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 26-26
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
+doc_brief: "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study"
 ---
 QHFT0: Consider the bordism category supported by triples ( Y,L,ρ ), where L is an non-empty
 unframed tangle in Y and ρ is a PSL (2, C)-character on the whole of Y (ie. ρ is trivial at the

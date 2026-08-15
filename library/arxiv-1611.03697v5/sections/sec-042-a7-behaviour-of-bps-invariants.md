@@ -7,6 +7,7 @@ section_number: null
 pages: 41-43
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 A.2 completely describes the
 variation of the BPS (or equivalently DT) invariants: if one knows the Ω p(γ) at some point p∈ M

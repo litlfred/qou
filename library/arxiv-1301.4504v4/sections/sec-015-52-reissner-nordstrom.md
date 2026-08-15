@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 43-44
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
+doc_brief: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Scie"
 ---
 Another way Alice could try to extend the lifetime of her black hole is by giving it some
 charge. The Reissner-Nordstrom black hole of mass M and charge Q has metric

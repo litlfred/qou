@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-7
 source_pdf: 2402.08782v1.pdf
 source_sha256: 30311f0bd815f93f
+doc_brief: "Hecke–Farey coordinates for Bring’s surface — The modular groupΓ (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that"
 ---
 In [10, 7] it was shown that the Farey mapˆM3 is the universal triangular map.
 The Farey map is a map on the upper-half plane whose vertices are the extended

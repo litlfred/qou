@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 24-26
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
 ---
 Theorem 3 There exist inﬁnitely many transversal knot types of braid index 3 which
 are not transversally simple. In particular, consider the collection of inﬁnitely many

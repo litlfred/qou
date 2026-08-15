@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 16-19
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
+doc_brief: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Scie"
 ---
 We begin with a rather formal discussion of Alice’s computation to illustrate some basic
 limitations on what is possible; we will take a more standard approach in the following

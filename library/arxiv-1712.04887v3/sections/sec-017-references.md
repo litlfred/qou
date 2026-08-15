@@ -7,6 +7,7 @@ section_number: null
 pages: 41-43
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
+doc_brief: "BLOCH GROUPS, ALGEBRAIC K-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
 ---
 [1] George Andrews. On the general Rogers-Ramanujan theorem . American Mathematical Society, Provi-
 dence, R.I., 1974. Memiors of the American Mathematical Society, No. 152.

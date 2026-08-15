@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 14-15
 source_pdf: 2109.04664v4.pdf
 source_sha256: 639cd40a29752e3f
+doc_brief: "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
 ---
 hood of E ⊂S3. The fundamental group π1(X) is presented as
 ⟨x,y |wx =yw⟩,

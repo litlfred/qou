@@ -7,6 +7,7 @@ section_number: 2.5
 pages: 13-14
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
+doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
 ---
 Ihara’s formula. Dualising (2 .17), we have
 ∆ : O(0Π 1) − → O(U dR) ⊗ O(0Π 1)

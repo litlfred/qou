@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 9-10
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 sider an associated Riemann-Hilbert problem. It depends on a choice of a point ξ∈ T which we
 call the constant term. We discuss the statement of this problem m ore carefully in Section

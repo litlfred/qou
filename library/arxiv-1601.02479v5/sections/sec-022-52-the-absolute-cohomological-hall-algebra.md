@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 46-50
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
 ---
 W,µ ), a monoid in the
 monoidal category (D≥,lf (MMHM(NQ0 )), ⊠tw

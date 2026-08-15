@@ -7,6 +7,7 @@ section_number: null
 pages: 26-27
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 [1] K. Ahuja, J. B. Orlin, and R. E. Tarjan. Improved time bounds for the maximum ﬂow
 problem, SIAM Journal on Computing, 18(1989), pp. 939-954.

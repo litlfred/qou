@@ -7,6 +7,7 @@ section_number: 6
 pages: 17-17
 source_pdf: 04procbryden.pdf
 source_sha256: 8baffbc6542c34a5
+doc_brief: "Some computations of Ohtsuki series — We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand"
 ---
 The authors would like to thank Dror Bar-Natan, Thang Le, Lev Rozan-
 sky and Dylan Thurston for many conversations on the subject of

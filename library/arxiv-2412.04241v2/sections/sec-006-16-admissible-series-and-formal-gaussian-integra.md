@@ -7,6 +7,7 @@ section_number: 1.6
 pages: 11-13
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 that the modularity of certainq-hypergeometric functions is intimately related to the vanish-
 ing of certain associated classes in algebraicK-theory, as was indeed later seen in a variety of

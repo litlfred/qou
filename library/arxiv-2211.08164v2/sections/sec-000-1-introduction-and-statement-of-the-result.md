@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
+doc_brief: "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
 ---
 Weierstrass point theory is one of the main tools in the study of the g eometry
 of compact Riemann surfaces. Since its inception in Hurwitz’s founda tional paper

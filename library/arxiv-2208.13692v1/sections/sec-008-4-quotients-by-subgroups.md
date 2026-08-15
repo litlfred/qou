@@ -7,6 +7,7 @@ section_number: 4
 pages: 18-18
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
+doc_brief: "BRING’S CURVE: OLD AND NEW — Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties."
 ---
 Both [RR92] and [Web05] consider the quotient ofB by the action of subgroups of S5. In
 this section we shall study the various quotients of Bring’s curve of nonzero genus and the

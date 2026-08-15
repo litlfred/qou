@@ -7,6 +7,7 @@ section_number: null
 pages: 12-13
 source_pdf: 0104104v3.pdf
 source_sha256: e2154399f783aa9b
+doc_brief: "Geometry of Four-vector Fields on Quaternionic Flag Manifolds — The purpose of this paper is to describe certain natural 4-ve ctor ﬁelds on quaternionic ﬂag manifolds, which geometrically determ ine"
 ---
 [1] J. A. de Asc´ arraga, A. M. Perelomov, and J. C. P´ erez Bueno. The
 Schouten-Nijenhuis bracket, cohomology and generalized Poisson struc-

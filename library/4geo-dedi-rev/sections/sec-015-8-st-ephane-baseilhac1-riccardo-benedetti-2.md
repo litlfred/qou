@@ -7,6 +7,7 @@ section_number: 8
 pages: 9-11
 source_pdf: 4GEO-DEDI-REV.pdf
 source_sha256: e4d52947b71a3f37
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 36 sections: Institut Montpelli´ erain Alexand"
 ---
 Recall that π1(Mφ) is a HNN-extension of π1(S). That is, given a generating set γ1,...,γ u of π1(S)
 satisfying the relations r1,...,r v, there is an isomorphism between π1(Mφ) and the group generated

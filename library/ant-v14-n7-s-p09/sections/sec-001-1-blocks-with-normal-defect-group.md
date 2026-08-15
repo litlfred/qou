@@ -7,6 +7,7 @@ section_number: 1
 pages: 3-7
 source_pdf: ant-v14-n7-s-p09.pdf
 source_sha256: c8fe963200a79d25
+doc_brief: "Galois action on the principal block and cyclic Sylow subgroups — 8 sections: Introduction; Blocks with normal defect group; Suppose that|D|= 2n. Since G/CD ac"
 ---
 The aim of this section is to prove that Conjecture B follows from the Alperin–McKay–Navarro conjecture,
 stated below.

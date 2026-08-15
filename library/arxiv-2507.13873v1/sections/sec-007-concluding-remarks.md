@@ -7,6 +7,7 @@ section_number: null
 pages: 21-24
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
+doc_brief: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡ — We study the emergence ofq-deformed spacetime in a lower-dimensional"
 ---
 In this work, we have investigated the probe regime in aq-deformed setting of holography.
 We then illustrated that sinh (or sine) dilaton gravity exhibits this structure explicitly close

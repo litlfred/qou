@@ -7,6 +7,7 @@ section_number: 7.1
 pages: 24-25
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
+doc_brief: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 νK ) → SL(2, C) is called parabolic if the image of any meridian is a matrix with trace
 2. Note that Thurston [Th87] showed that given a hyperbolic k not K the discrete faithful

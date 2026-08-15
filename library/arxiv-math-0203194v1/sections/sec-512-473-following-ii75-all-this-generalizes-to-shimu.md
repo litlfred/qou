@@ -7,6 +7,7 @@ section_number: 4.7.3
 pages: 175-176
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 quaternion algebras B over totally real number ﬁelds E, and a “congruence
 172 III. p-ADIC ORBIFOLDS AND MONODROMY.

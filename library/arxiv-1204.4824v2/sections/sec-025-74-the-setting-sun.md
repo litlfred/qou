@@ -7,6 +7,7 @@ section_number: 7.4
 pages: 46-48
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 Next we brieﬂy consider a more complicated example, in which several overlapping ﬁnite
 webs appear simultaneously. Unlike the previous examples, we just draw the degenerate

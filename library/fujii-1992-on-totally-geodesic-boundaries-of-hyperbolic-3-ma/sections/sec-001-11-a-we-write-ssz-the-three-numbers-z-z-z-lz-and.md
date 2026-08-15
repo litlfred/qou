@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 2-5
 source_pdf: fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf
 source_sha256: d3d3bf68955ad775
+doc_brief: "M. FUJJI KODAI MATH. J. 15 (1992), 244-257 ON TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS By MICHIHIKO FUJII Introduction — 5 sections: An ideal tetrahedral decomposition; (a)). We write S=S"
 ---
 give the same tetrahedron: to specify z uniquely, we must pick an edge of 5
 (the dihedral angle at this edge will be arg(z)). Then to each edge of 5 is as-

@@ -7,6 +7,7 @@ section_number: 7
 pages: 23-25
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
 ---
 We ﬁrst prove Corollary 1.6 and then extract its combinatori al information.
 7.1. Proof of Corollary 1.6. We recall here the Jacobi Triple Product identity (JTP) give n in equation

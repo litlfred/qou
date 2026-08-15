@@ -7,6 +7,7 @@ section_number: null
 pages: 11-14
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 There is no more than one h-line that contains two diﬀerent h-points (in the disc).
 lemma unique-is-poincare-line:

@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 5-8
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
 ---
 the process of resurgence requires convergence and then analy tic continuation of the series’s
 Borel transform [ 5, 20]. Recall that the Borel transform B is deﬁned as the formal inverse

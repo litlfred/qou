@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 21-24
 source_pdf: 1108.5286v3.pdf
 source_sha256: 447d90883adce21e
+doc_brief: "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots"
 ---
 Everything we discussed in the previous subsection has a nat ural analogue for graded
 Hecke algebras. The condition q positive translates to k real valued, but with the

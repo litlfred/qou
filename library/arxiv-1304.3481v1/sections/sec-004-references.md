@@ -7,6 +7,7 @@ section_number: null
 pages: 75-78
 source_pdf: 1304.3481v1.pdf
 source_sha256: d0840f2775c0f761
+doc_brief: "Quadruply-graded colored homology of knots — W e conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 [1] M. Abouzaid, On the Fukaya Categories of Higher Genus Surfaces, arXiv:math/0606598.
 [2] M. Aganagic, S. Shakirov, Knot Homology from Reﬁned Chern-Simons Theory,

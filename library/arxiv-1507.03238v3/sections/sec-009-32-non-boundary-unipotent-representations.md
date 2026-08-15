@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 9-10
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 ∂sM is a torus, and that we have ﬁxed a meridianµs and a longitudeλs in H1(∂sM). The
 deﬁnition ofEP (T ) involves a choice offundamental rectangleRs for each boundary component

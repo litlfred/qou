@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 14-15
 source_pdf: state.integrals.qseries.pdf
 source_sha256: a5e86443f35e21c0
+doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written"
 ---
 1
 (b(1−eb−1w))3 =− 1

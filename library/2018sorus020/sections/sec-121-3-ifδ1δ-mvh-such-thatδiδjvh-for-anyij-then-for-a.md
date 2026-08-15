@@ -7,6 +7,7 @@ section_number: 3
 pages: 100-101
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 σ∈S m and anyγ∈ Γ, h(δ1...δ mγ) =h(δσ(1)...δ σ(m)γ).
 99

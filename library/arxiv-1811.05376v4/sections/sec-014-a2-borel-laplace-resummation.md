@@ -7,6 +7,7 @@ section_number: null
 pages: 36-40
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
 ---
 We now discuss in more detail the relation between the Borel transformB and the Laplace trans-
 form, which we now introduce. Letγ⊂ C be an oriented contour. Letg be a measurable function

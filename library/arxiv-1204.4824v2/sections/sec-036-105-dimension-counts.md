@@ -7,6 +7,7 @@ section_number: 10.5
 pages: 67-68
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 Now let us compare the dimensions of the moduli spaces related by Ψ W.
 First we consider M(C,GL (K); m). This space can be represented as the space of

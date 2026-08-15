@@ -7,6 +7,7 @@ section_number: null
 pages: 11-12
 source_pdf: 0006111v2.pdf
 source_sha256: cd99f45d686eb6e2
+doc_brief: "APPROXIMA TE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
 ---
 [B] P. Biane, Representations of symmetric groups and free probability , Adv. Math. 138
 (1998), 126–181.

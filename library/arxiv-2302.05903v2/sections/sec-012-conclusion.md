@@ -7,6 +7,7 @@ section_number: null
 pages: 13-15
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 In this paper we raised the trick of [8] to the level of a method, applicable to a large variety of functions and
 providing a unified treatment of the so far sporadic set of amusing identities. We emphasize its conceptual

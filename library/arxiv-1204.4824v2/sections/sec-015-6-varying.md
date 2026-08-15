@@ -7,6 +7,7 @@ section_number: 6
 pages: 34-34
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 In§5 above, we held ϑ ﬁxed and studied the generating functions F (℘,ϑ ). In this section
 we consider what happens when ϑ is allowed to vary. In so doing we will uncover new

@@ -7,6 +7,7 @@ section_number: 3
 pages: 3-4
 source_pdf: 1172-5.pdf
 source_sha256: 21b7a0e13bd208fc
+doc_brief: "OPTIMISTIC CALCULATIONS ABOUT THE $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mathrm{H}\mathrm{I}\mat"
 ---
 Suppose that we are given a function $S(N)$of $N$by the following summation.
 (3.1) $S(N)=P(N)n2\sum_{n_{1},,..,n_{k}}.q^{Q+}L\prod_{a=1}(q\alpha)_{l_{a}}\epsilon_{a}$,

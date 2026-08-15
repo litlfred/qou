@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 33-42
 source_pdf: 0411647v2.pdf
 source_sha256: d79f96b416cb28da
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many"
 ---
 present a method of enumerating all evercrossing partition s with a given
 genus. The main concept is to simplify a given evercrossing p artition by

@@ -7,6 +7,7 @@ section_number: null
 pages: 12-18
 source_pdf: malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf
 source_sha256: 3bc30dc6a4a03a7f
+doc_brief: "On the Galois Action on Motivic Fundamental Groups of Punctured Elliptic and Rational Curves Nikolay Malkin 2021"
 ---
 We review the construction of Hodge and motivic correlators from [G9]. The Hodge correlator functions
 CorH(G0,...,G =) of the previous section are upgraded to elements of the Tannakian Lie coalgebra Lie∨

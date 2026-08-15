@@ -7,6 +7,7 @@ section_number: 8.2
 pages: 19-21
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
+doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
 ---
 by ratios of ﬁve quantum factorials (see Equations ( 26)), Proposition 8.2 gives a formula for the asymptotic
 behavior of the entries of the R-matrix when evaluated at e2πi/n . This is the content of the next proposition.

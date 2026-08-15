@@ -7,6 +7,7 @@ section_number: null
 pages: 45-48
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 nik algebras
 Since the algebra H0,c is ﬁnite dimensional, we can deﬁne its blocks in the usual way. LetE, E′∈ Irr(W ).

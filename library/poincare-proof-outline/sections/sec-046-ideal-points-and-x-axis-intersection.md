@@ -7,6 +7,7 @@ section_number: null
 pages: 112-114
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 lemma ideal-points-intersects-x-axis:
 assumes is-poincare-line H and ideal-points H ={i1, i2} and H⁄= x-axis

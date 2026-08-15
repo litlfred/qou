@@ -7,6 +7,7 @@ section_number: null
 pages: 23-25
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
+doc_brief: "Matem´ atica Contemporˆ anea, Vol. 34, 251–283 http://doi.org/10.21711/231766362008/rmc3411 © 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-comp"
 ---
 Let L be a 3-component link in S3 with pairwise linking numbers p, q
 andr all zero. We saw in Theorem A that these numbers are the degrees

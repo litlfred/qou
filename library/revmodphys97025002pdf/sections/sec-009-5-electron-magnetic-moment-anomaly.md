@@ -7,6 +7,7 @@ section_number: 5
 pages: 4-4
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 Included as an input datum in the 2022 adjustment is a new
 experimental value of ae with ur of 1.1 × 10−10, which is 2.2

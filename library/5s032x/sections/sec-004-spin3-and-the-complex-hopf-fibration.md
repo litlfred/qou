@@ -7,6 +7,7 @@ section_number: null
 pages: 7-9
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
+doc_brief: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗ — quantum description."
 ---
 We will now connect the story so far with the formalism in Ref. [28]. Thus, consider matrices of the form
 X(r,c ) =

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
 ---
 This paper is about knots which are transverse to the standard tight contact structure in
 R3, and about the ways in which topological information about braids can be used to

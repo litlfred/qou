@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 13-19
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
+doc_brief: "q-LAGUERRE POL YNOMIALS AND BIG q-BESSEL — The q-Laguerre polynomials correspond to an indetermined moment probl em."
 ---
 alternative analytic proof of Theorem 4.1.
 For α > −1, c > 0, k ∈ Z, x ∈ R put

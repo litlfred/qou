@@ -7,6 +7,7 @@ section_number: 20
 pages: 20-22
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
+doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
 ---
 index. We will simplify our calculation by assuming that kerD^O so that the
 cokernel has constant dimension. This is true for the ghost operators on higher

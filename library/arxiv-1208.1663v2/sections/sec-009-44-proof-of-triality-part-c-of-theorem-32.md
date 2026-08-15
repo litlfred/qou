@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 12-13
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 Theorem 3.2. Equation (3.2) concerns the following Z/3-action on V .
 Deﬁnition 4.2. Consider the action f↦→Sf on a function f : Z2−→ Z((q1/2)) given by:

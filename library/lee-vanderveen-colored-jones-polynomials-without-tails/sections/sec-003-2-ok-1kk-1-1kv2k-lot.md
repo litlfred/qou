@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-4
 source_pdf: lee-vanderveen-colored-jones-polynomials-without-tails.pdf
 source_sha256: fcc45aebd34e25dc
+doc_brief: "COLORED JONES POLYNOMIALS WITHOUT TAILS — We exhibit an in nite family of knots with the property that the rst coecient of the n-colored Jones polynomial grows linearly with n."
 ---
 (a;b;c ) =O
 a+b+c

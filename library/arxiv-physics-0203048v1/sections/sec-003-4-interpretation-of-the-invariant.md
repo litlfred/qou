@@ -7,6 +7,7 @@ section_number: 4
 pages: 6-7
 source_pdf: 0203048v1.pdf
 source_sha256: 47204f32280e91a3
+doc_brief: "Towards a third-order topological invariant for magnetic ﬁelds — An expression for a third-order link integral of three magne tic ﬁelds is presented."
 ---
 It is interesting to note that the new third-order invariant comes o n an equal footing as
 the conservation of helicity, since both invariants where derived fr om the same identity

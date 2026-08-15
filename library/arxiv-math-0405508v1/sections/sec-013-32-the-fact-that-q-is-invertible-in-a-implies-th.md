@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 10-10
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 also invertible in H. In fact, we have that
 g−1

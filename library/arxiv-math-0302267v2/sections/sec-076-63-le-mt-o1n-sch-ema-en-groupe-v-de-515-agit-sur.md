@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 71-74
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et"
 ---
 ﬁltration D de Lie V par la condition que DpLie V soit maximal tel que l’action de Lie V sur
 O(P0,0) et O(P0,1) envoie DpLie V ⊗ DqO(P0,0) dans Dp+qO(P0,0) et DpLie V ⊗ DqO(P1,0)

@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 61-62
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 We agree that f−1≡ 0 and f0 = h0/a. Iterating the last relation (4.1)
 above, we ﬁnd:

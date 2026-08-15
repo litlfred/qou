@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 58-60
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero"
 ---
 In this section we derive the reﬁned quantum curves relevant in the context of the open BPS
 state counting (or topological string theory). They can be r egarded as reﬁned and quantum

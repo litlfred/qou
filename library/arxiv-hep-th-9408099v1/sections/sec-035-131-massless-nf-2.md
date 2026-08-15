@@ -7,6 +7,7 @@ section_number: 13.1
 pages: 47-48
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 First we consider the Nf = 2 theory without masses. The instanton amplitude is now
 Λ 22, and the internal parity implies that without bare masses, o nly amplitudes with an

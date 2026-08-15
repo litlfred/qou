@@ -7,6 +7,7 @@ section_number: 2.10
 pages: 24-27
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 Motivated by the results of this paper, combined with [22], we can make another conjecture:
 Conjecture 2.3 Let G be a compact Lie group (not necessarily of ADE type) and LG its

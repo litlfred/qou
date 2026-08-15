@@ -7,6 +7,7 @@ section_number: null
 pages: 40-40
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
+doc_brief: "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study"
 ---
 [1] W. Abikoﬀ, The Real Analytic Theory of Teichm¨ uller Space, Lect. Notes Math. 820, Springer (1980)
 [2] M.F. Atiyah, Topological quantum ﬁeld theories , Publ. Math. IHES 68 (1988) 175–186

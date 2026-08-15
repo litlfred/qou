@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 21-22
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 We begin with a brief survey of the theory of quasiconformal maps (without proof). Roughly,
 quasiconformal maps are orientation preserving homeomorphisms which distort the conformal

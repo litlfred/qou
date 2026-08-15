@@ -7,6 +7,7 @@ section_number: 11.2
 pages: 35-36
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 has a 2-tetrahedron triangulationT with gluing equation/holonomy coeﬃcients given by:
 

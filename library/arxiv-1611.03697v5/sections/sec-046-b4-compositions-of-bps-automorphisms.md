@@ -7,6 +7,7 @@ section_number: null
 pages: 47-48
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 ﬁx a convex sector ∆ ⊂ C∗. Fix ǫ > 0 and take R > 0 as in Lemma B.1. Recall the notion of the
 height of a ray from Section 2.5. For each ray ℓ⊂ ∆ deﬁne M(ℓ) > 0 as in the proof of Proposition

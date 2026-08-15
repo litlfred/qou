@@ -7,6 +7,7 @@ section_number: null
 pages: 1-2
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
+doc_brief: "Gedanken Experiments Involving Black Holes Leonard Susskind, and L ´arus Thorlacius, Department of Physics — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot"
 ---
 Analysis of several gedanken experiments indicates that bl ack hole complementarity
 cannot be ruled out on the basis of known physical principles . Experiments designed by

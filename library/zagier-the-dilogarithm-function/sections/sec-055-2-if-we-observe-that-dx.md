@@ -7,6 +7,7 @@ section_number: 2
 pages: 60-63
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
+doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 i)=𝓁iD(θ′) with (𝓁0,...,𝓁5)=( 0 ,1,−1,2,1,−1)
 and that the values of φ(xi) for any φ : F × → Z are proportional to the

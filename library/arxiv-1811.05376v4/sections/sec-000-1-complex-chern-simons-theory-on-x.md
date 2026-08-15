@@ -7,6 +7,7 @@ section_number: 1
 pages: 5-6
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
 ---
 LetX be the oriented Seifert ﬁbered homology3-sphere from the introduction. Chooseq1,...,q n∈
 Z such that (pj,qj) = 1 and

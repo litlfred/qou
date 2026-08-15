@@ -7,6 +7,7 @@ section_number: null
 pages: 25-26
 source_pdf: 1-s2.0-0040938385900047-main.pdf
 source_sha256: f0db9d97f2ae83c6
+doc_brief: "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd. VOLUMES OF HYPERBOLIC THREE-MANIFOLDS — 2 sections: ( ‘A2 35A ,)($)“+ . ..I"
 ---
 S. BLOCH: Applications of the dilogarithm function in algebraic K-theory and algebraic geometry, Proc. of the 
 International Svmp on Alg. Geom: (Kyoto Univ., Kyoto, 1977), pp. 103-114, Kinokuniya Book Store, Tokyo 

@@ -7,6 +7,7 @@ section_number: null
 pages: 8-11
 source_pdf: Maximal-Hoermander-q-Var-revised-v03.pdf
 source_sha256: 135332c04a1b3bb8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 10 sections: Introduction; R-boundedness; Prel"
 ---
 In this section, we recall the notions on Banach space geometry and functional calculus that we
 need in this paper. For the Hörmander functional calculus, we only need few facts that we will

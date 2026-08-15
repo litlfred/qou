@@ -7,6 +7,7 @@ section_number: 5.3.6
 pages: 184-186
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 groups from p-adic triangle groups “of Mumford type”.
 5. p-ADIC TRIANGLE GROUPS. 181

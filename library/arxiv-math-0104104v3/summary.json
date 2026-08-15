@@ -1,0 +1,102 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0104104v3",
+ "source_sha256": "e2154399f783aa9b",
+ "brief": "Geometry of Four-vector Fields on Quaternionic Flag Manifolds — The purpose of this paper is to describe certain natural 4-ve ctor ﬁelds on quaternionic ﬂag manifolds, which geometrically determ ine",
+ "extended": "**Geometry of Four-vector Fields on Quaternionic Flag Manifolds**\n\n*Philip Foth & Frederick Leitner*\n\n13 pp, 16 sections.\n\n**Abstract.** The purpose of this paper is to describe certain natural 4-ve ctor ﬁelds on quaternionic ﬂag manifolds, which geometrically determ ine the Bruhat cell decomposition. These structures naturally descend fr om the sym- plectic group Sp(n), and are related to the dressing action given by the Iwasawa decomposition of the general linear group over the q uaternions, GLn(H).\n\n**Outline.** Abstract; 1 Introduction; 2 Foth, Leitner; 2 Quaternionic matrices and ﬂags; 4 Foth, Leitner; 3 Quatrisson and tetraplectic structures; 6 Foth, Leitner; 5 Quatrisson structures on ﬂag manifolds; 8 Foth, Leitner; 0 Id; 10 Foth, Leitner; 6 Quatrisson action and intrinsic derivative; 7 Dressing action; 1 K1 =; 12 Foth, Leitner; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 5.7: The tetraplectic leaf decomposition of the quaternionic ﬂa g man-\n- Theorem 6.1: In the above situation for each X∈ h we have:\n- Theorem 7.2: The tetraplectic leaves of κ on Sp(n) are the orbits of the dress-\n- Proposition 3.2: Denoting ⋀ iχ(M ) the space of i-vector ﬁelds on M , there\n- Proposition 4.1: The 4-vector ﬁeld κ is a quatrisson structure on Sp(2). More-\n- Proposition 4.2: The invariant quatrisson structure on S4≃ HP1 is given by:",
+ "tokens": {
+  "brief": 49,
+  "extended": 342
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-2-foth-leitner",
+   "title": "Foth, Leitner",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-2-quaternionic-matrices-and-ﬂags",
+   "title": "Quaternionic matrices and ﬂags",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-004-4-foth-leitner",
+   "title": "Foth, Leitner",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-3-quatrisson-and-tetraplectic-structures",
+   "title": "Quatrisson and tetraplectic structures",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-006-6-foth-leitner",
+   "title": "Foth, Leitner",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-007-5-quatrisson-structures-on-ﬂag-manifolds",
+   "title": "Quatrisson structures on ﬂag manifolds",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-8-foth-leitner",
+   "title": "Foth, Leitner",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-0-id",
+   "title": "Id",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-010-10-foth-leitner",
+   "title": "Foth, Leitner",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-011-6-quatrisson-action-and-intrinsic-derivative",
+   "title": "Quatrisson action and intrinsic derivative",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-012-7-dressing-action",
+   "title": "Dressing action",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-013-1-k1",
+   "title": "K1 =",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-014-12-foth-leitner",
+   "title": "Foth, Leitner",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-015-references",
+   "title": "References",
+   "pages": "12-13"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

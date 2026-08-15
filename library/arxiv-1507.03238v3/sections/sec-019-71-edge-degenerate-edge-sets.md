@@ -7,6 +7,7 @@ section_number: 7.1
 pages: 16-18
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 at most one zero-edge.
 Proposition 7.1. Letc be a Ptolemy assignment on a simplex∆. If each face has at most one

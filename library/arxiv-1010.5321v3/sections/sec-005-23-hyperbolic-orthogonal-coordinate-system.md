@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 4-5
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
+doc_brief: "Formulas on hyperbolic volume ∗ ´A.G.Horv´ ath Department of Geometry — This paper collects some important formulas on hyperbolic volume."
 ---
 Put an orthogonal system of axes to paracycle coordinate sys tem such that, the new half-axes
 let the tangent half-lines at the origin of the old one. (We ca n see it on Fig.3.) To determine

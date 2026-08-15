@@ -7,6 +7,7 @@ section_number: 3.3.3
 pages: 47-48
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 mal form. — Let A0 be as in (3.1) and AU = A as in (3.2). Looking for
 ˆF∈ G(C((z))) such that ˆF[A0] =A amounts, with notation (2.3), to solving

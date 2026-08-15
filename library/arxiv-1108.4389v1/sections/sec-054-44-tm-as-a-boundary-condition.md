@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 37-37
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 In section 3 we learned some useful facts about the relation between three dimensional theories
 and boundary conditions for four-dimensional theories. We saw that all the 3d theories in an

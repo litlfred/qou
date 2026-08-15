@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 50-51
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 We should be able to reproduce the well known Chern-Simons wavefunction for the ﬁgure-eight
 knot complement from the theory T41,Π described in Section 4.6. The deﬁnition of the actual

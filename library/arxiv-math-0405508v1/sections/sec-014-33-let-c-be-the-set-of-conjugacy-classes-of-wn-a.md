@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 10-12
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 of minimal length in C which admits a decomposition as a product of negative
 blocks (ordered by increasing length) followed by various positive blo cks (see

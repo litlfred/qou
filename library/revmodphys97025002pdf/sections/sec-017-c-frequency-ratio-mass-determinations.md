@@ -7,6 +7,7 @@ section_number: null
 pages: 6-7
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 Relative atomic masses of p, d, t, h, and the α particle may
 be derived from measurements of seven cyclotron frequency

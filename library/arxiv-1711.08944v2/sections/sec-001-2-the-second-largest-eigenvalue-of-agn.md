@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-12
 source_pdf: 1711.08944v2.pdf
 source_sha256: ad7a020e7e92b788
+doc_brief: "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥ 3."
 ---
 In this section, we focus on determining the second largest eigenva lue of AGn. In
 order to obtain enough information about the eigenvalues of AGn, we need a well

@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 5-13
 source_pdf: 2008.09788v2.pdf
 source_sha256: 460f4f5432cb1f0c
+doc_brief: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETR Y — This paper surveys results related to well-known works of B. Plotkin and V."
 ---
 school. The section 2.1 is devoted to this approach. In conne ction with this approach,
 Plotkin’s problem about the automorphism of semigroups of endomorphisms of free algebra

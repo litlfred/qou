@@ -7,6 +7,7 @@ section_number: 1.10
 pages: 5-5
 source_pdf: 1704.02352v2.pdf
 source_sha256: 9a14dd6ee33248d3
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y"
 ---
 which correspond to the limit when the number of boxes n → ∞ of the
 random Y oung diagrams tends to inﬁnity. This corresponds to considering

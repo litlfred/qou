@@ -7,6 +7,7 @@ section_number: 22
 pages: 9-11
 source_pdf: raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf
 source_sha256: da8c1204e84d019c
+doc_brief: "ISSN 2075-9827 e-ISSN 2313-0210 https://journals.pnu.ed u.ua/index.php/cmp — 12 sections: Aligarh Muslim University , Aligar; University of Lahej, 73560 Lahej, ; Introduction"
 ---
 Moreover, we obtain the following q-multiplicative ˆMq,R and q-derivative ˆPq,R operators of
 2VqLP Rn,q(x, y)/[n]q!.

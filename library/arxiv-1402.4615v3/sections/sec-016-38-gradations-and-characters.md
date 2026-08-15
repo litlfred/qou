@@ -7,6 +7,7 @@ section_number: 3.8
 pages: 30-31
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
 ---
 different gradations. The elements of our favorite basis (Chµ) are not homoge-
 neous, but have the following nice property: if we deﬁne

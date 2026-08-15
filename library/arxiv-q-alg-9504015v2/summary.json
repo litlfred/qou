@@ -1,0 +1,177 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-q-alg-9504015v2",
+ "source_sha256": "ea5588225a393477",
+ "brief": "Witten’s Invariants of Rational Homology Spheres at Prime — We establish a relation between the coeﬃcients of asymptotic expan sion of the trivial connection contribution to Witten’s invariant of",
+ "extended": "**Witten’s Invariants of Rational Homology Spheres at Prime**\n\n*Values of K and Trivial Connection Contribution*\n\n33 pp, 31 sections.\n\n**Abstract.** We establish a relation between the coeﬃcients of asymptotic expan sion of the trivial connection contribution to Witten’s invariant of rational homology spheres and the invariants that T. Ohtsuki extracted from Witte n’s invariant at prime values of K. We also rederive the properties of prime K invariants discovered by H. Murakami and T. Ohtsuki. We do this by using the bo unds on Taylor series expansion of the Jones polynomial of algebraically sp lit links, studied in our previous paper. These bounds are enough to prove t hat Ohtsuki’s invariants are of ﬁnite type. The relation between Ohtsuki’s invarian ts and trivial connection contribution is veriﬁed explicitly for lens spaces and Seife rt manifolds. 1Work supported by the National Science Foundation under Grant N o. PHY-92 09978.\n\n**Outline.** L Rozansky 1; Abstract; 1 Introduction; 2 Trǫµνρ; 2 Z ZK[x]. (1.11); 2 Z Z[x] instead of (1.11) (in other words, he; 2 Gaussian Sums and Divisibility in Cyclotomic; 4 (3+κ); 4 (κ−1); 4 (1−κ)√; 4 N (1−κ) uN; 4 (κ − 1)(sign (pj) − 1) ∈ Z Z, we conclude th; 2 J (res); 3 Gaussian Sums and Integrals; 4 (1−κ); 2 Z ZK[x] and using the “checked binomial poly; 2 (−1)m(2m)!; 4 N (κ−1)\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: For a RHS M and a prime K > 2\n- Theorem 1.2: For any RHS M there exists a sequence of rational\n- Theorem: s 1.1, 1.2 and Proposition 1.1.\n- Proposition 1.1: Ohtsuki’s invariants λn(M) of eq. (1.14) and loop corrections to the trivial\n- Proposition 1.2: Let L be an algebraically split link (ASL ) in S3. Then its framing-\n- Proposition 1.3: Let M be a rational homology sphere (RHS ) constructed by (pj, 1) surg-",
+ "tokens": {
+  "brief": 48,
+  "extended": 453
+ },
+ "sections": [
+  {
+   "id": "sec-000-l-rozansky-1",
+   "title": "Rozansky 1",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "title": "Introduction",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-2-trǫµνρ",
+   "title": "Trǫµνρ",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-004-2-z-zkx-111",
+   "title": "Z ZK[x]. (1.11)",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-2-z-zx-instead-of-111-in-other-words-he-did-not",
+   "title": "Z Z[x] instead of (1.11) (in other words, he did not ﬁx the coeﬃcient at x",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-006-2-gaussian-sums-and-divisibility-in-cyclotomic-r",
+   "title": "Gaussian Sums and Divisibility in Cyclotomic Ring",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-007-4-3κ",
+   "title": "(3+κ)",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-008-4-κ1",
+   "title": "(κ−1)",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-009-4-1κ",
+   "title": "(1−κ)√",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-010-4-n-1κ-un",
+   "title": "N (1−κ) uN",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-011-4-κ-1sign-pj-1-z-z-we-conclude-that-to-prove-the",
+   "title": "(κ − 1)(sign (pj) − 1) ∈ Z Z, we conclude that to prove Theorem 1.1 it is enough to",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-012-2-j-res",
+   "title": "J (res)",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-013-3-gaussian-sums-and-integrals",
+   "title": "Gaussian Sums and Integrals",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-014-4-1κ",
+   "title": "(1−κ)",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-015-2-z-zkx-and-using-the-checked-binomial-polynomia",
+   "title": "Z ZK[x] and using the “checked binomial polynomial”",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-016-2-1m2m",
+   "title": "(−1)m(2m)!",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-017-4-n-κ1",
+   "title": "N (κ−1)",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-018-4-κ1signp1",
+   "title": "(κ−1)(sign(p)−1)",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-019-4-a-general-rational-surgery-f-ormula",
+   "title": "A General Rational Surgery F ormula",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-020-1-s-45",
+   "title": "S, (4.5)",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-021-1-s-47",
+   "title": "S, (4.7)",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-022-4-κ1",
+   "title": "(κ−1)√",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-023-4-κ1-sign-p",
+   "title": "(κ−1) sign( p",
+   "pages": "24-28"
+  },
+  {
+   "id": "sec-024-4-κ1",
+   "title": "(κ−1)∑",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-025-4-κ1-ˇq4p-hn2",
+   "title": "(κ−1) ˇq4∗P H∗n2",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-026-4-κ1-ei-π",
+   "title": "(κ−1) ei π",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-027-5-discussion",
+   "title": "Discussion",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-028-1-m-smn",
+   "title": "(M) · · · Smn",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-029-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-030-references",
+   "title": "References",
+   "pages": "32-33"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

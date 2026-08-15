@@ -7,6 +7,7 @@ section_number: null
 pages: 11-12
 source_pdf: AIF_2000__50_4_1021_0.pdf
 source_sha256: a7ca398590a266d8
+doc_brief: "aif-2000-50-4-1021-0 — 7 sections: Cas d'une matrice unipotente. — So; Notation; Cas d'une matrice semi-simple. — P"
 ---
 ew-^ n (^-^(l9)- fceN-0<i<k-l
 Par convention, iq = 0 pour k < 0. La formule de Pascal pour les

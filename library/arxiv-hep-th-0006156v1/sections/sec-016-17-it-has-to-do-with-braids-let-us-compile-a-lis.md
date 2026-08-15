@@ -7,6 +7,7 @@ section_number: 1.7
 pages: 6-6
 source_pdf: 0006156v1.pdf
 source_sha256: b799d4ef150291cf
+doc_brief: "STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with"
 ---
 about the b’s. They are periodic, bn+N =bn, they are this “local”
 bmbn =bnbm if |m −n| ⁄≡1 (mod N ),

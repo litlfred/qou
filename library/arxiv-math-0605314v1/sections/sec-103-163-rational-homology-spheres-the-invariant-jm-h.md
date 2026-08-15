@@ -7,6 +7,7 @@ section_number: 16.3
 pages: 62-63
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 Beliakova, Blanchet and Le [3] to closed 3-manifold whose ﬁr st homology group is
 isomorphic to Z/2Z, and by Le [51] to rational homology spheres. These invarian ts

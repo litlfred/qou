@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-4
 source_pdf: 9909088v1.pdf
 source_sha256: 52cfb568951f195f
+doc_brief: "THE GAUSS MAP AND A NONCOMP ACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEA VES ON SEMIABELIAN V ARIETIES — For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as"
 ---
 Let G be a complex algebraic group, g its Lie algebra and G(k, g) the Grassman-
 nian of k-dimensional linear subspaces in g. If Z⊂ G is an irreducible k-dimensional

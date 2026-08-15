@@ -7,6 +7,7 @@ section_number: 16
 pages: 16-18
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 Note that S2, S 3 ∈ H(≤ N − 1) so that we can use our inductive hypotheses
 in the evaluation of τ on these elements. Let us ﬁrst consider S2. At ﬁrst, we

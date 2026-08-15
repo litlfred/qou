@@ -7,6 +7,7 @@ section_number: null
 pages: 36-37
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 Bound-state corrections to the magnitudes of nuclear
 magnetic moments in the diatomic molecules HD and HT

@@ -7,6 +7,7 @@ section_number: null
 pages: 1-2
 source_pdf: 9504020v1.pdf
 source_sha256: 0baef40fa9934c91
+doc_brief: "∗On leave from St. Petersburg Branch of the Steklov Mathemati cal Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ ee ` a l’E.N.S. de Lyon, et ` a l’Universit` e de Sa"
 ---
 The link invariant, arising from the cyclic quantum dilogarithm via the
 particular R-matrix construction, is proved to coincide with the invariant

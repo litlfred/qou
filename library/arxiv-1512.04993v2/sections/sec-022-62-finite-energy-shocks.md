@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 36-38
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 In the limit studied in the last section, the time of the shock |tw| was taken to inﬁnity,
 and the asymptotic energy of the shock (as compared to the mass of the black hole)

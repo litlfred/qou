@@ -7,6 +7,7 @@ section_number: 6.4
 pages: 17-17
 source_pdf: 0006156v1.pdf
 source_sha256: b799d4ef150291cf
+doc_brief: "STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with"
 ---
 Ψ(u,v,w ) lead to the following Fourier transformation formulas for the QDL:
 (30) φ+(w) ≡

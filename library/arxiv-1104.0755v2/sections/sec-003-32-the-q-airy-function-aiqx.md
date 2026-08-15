@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 7-7
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
+doc_brief: "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡ — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 The q-Airy function is found by K. Kajiwara, T. Masuda, M. Noumi, Y.
 Ohta and Y. Yamada [7], in their study of the q-Painlev´ e equations. This

@@ -7,6 +7,7 @@ section_number: 3.3.5
 pages: 42-43
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 2 , 1
 2 ,1 on an ordinary disk D(s, 1−), which is not

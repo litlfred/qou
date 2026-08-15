@@ -7,6 +7,7 @@ section_number: 2
 pages: 27-29
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 coincides with T1. This is certainly compatible with ( ST )3 = 1. In particular, we want to
 show that a U(1) CS theory at level k = 1

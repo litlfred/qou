@@ -7,6 +7,7 @@ section_number: 24
 pages: 23-23
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
+doc_brief: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e"
 ---
 Remark 3. Let us make a slight digression by giving some general remarks about
 the set of solutions to (4.42). Assume that v,w ∈ C∗ and let z = v2. Then (4.42)

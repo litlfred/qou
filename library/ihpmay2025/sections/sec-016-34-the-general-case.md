@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 24-26
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 The same outline of proof will always produce a natural parametrization of CC0(M) in
 general.

@@ -7,6 +7,7 @@ section_number: 2.7
 pages: 13-14
 source_pdf: state.integrals.qseries.pdf
 source_sha256: a5e86443f35e21c0
+doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written"
 ---
 ~FA,B.
 Part (b) follows from an application of Zeilberger’s creative telescoping [Zei91]. To apply

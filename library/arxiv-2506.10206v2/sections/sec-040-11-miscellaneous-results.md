@@ -7,6 +7,7 @@ section_number: 11
 pages: 31-31
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
+doc_brief: "Analytic dilogarithm identities Cetin Hakimoglu-Brown — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured"
 ---
 Through the use of the Landen identity in (7), and by solving for u and z, this leads to:
 −2u2 + 3u +

@@ -7,6 +7,7 @@ section_number: 5
 pages: 31-33
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
+doc_brief: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 (5.1) Let V be a complex vector space, and ( , ) be a Hermitian form on V, of
 signature (i, dim V — i). The complex ball B"^ in P(V) : == {i -dimensional subspaces ofV}

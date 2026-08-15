@@ -7,6 +7,7 @@ section_number: 6
 pages: 53-55
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 ˆZb(q) ∈ 2−cq∆bZ[[q]] (3.147)
 where

@@ -7,6 +7,7 @@ section_number: 3.3.2
 pages: 96-100
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 In this section we prove the following theorem :
 95

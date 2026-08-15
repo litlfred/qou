@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 13-15
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
+doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 Avant d’´enoncer le r´esultat g´en´eral, revenons `a l’exemple 2.2 des s´eries hyper-
 g´eom´etriques et ´etudions le d’un point de vue global, c’est-`a-dire sur la sph`ere

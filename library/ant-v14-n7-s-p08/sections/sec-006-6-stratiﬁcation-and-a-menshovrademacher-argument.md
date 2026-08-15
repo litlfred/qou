@@ -7,6 +7,7 @@ section_number: 6
 pages: 25-31
 source_pdf: ant-v14-n7-s-p08.pdf
 source_sha256: 81b8f00fe5fbd0f6
+doc_brief: "Burgess bounds for short character sums evaluated at forms — 12 sections: Introduction; Method of proof: an overview; Preliminaries"
 ---
 6A. Application of the stratiﬁcation for character sums. We now come to a critical novel step, which
 is to estimate how often we obtain a certain quality of upper bound for the complete character sum

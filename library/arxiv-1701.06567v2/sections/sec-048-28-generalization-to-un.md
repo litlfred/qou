@@ -7,6 +7,7 @@ section_number: 2.8
 pages: 21-22
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 For simplicity, in this paper we mostly consider Chern-Simons theory onM3 with gauge group
 beingG =SU (2) and the 3d/3d dual theoryT [M3;SU (2)]. However, in principle, everything

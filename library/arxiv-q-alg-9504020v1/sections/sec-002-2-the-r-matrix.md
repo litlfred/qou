@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-4
 source_pdf: 9504020v1.pdf
 source_sha256: 0baef40fa9934c91
+doc_brief: "∗On leave from St. Petersburg Branch of the Steklov Mathemati cal Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ ee ` a l’E.N.S. de Lyon, et ` a l’Universit` e de Sa"
 ---
 structed in Sect.3. In Sect.4 the three-dimensional descri ption is developed and
 the equivalence with construction of [14] is established.

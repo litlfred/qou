@@ -7,6 +7,7 @@ section_number: 10.1
 pages: 61-65
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 The space M(Σ,GL (1); m) is a torsor for ( C×)2g¯Σ, where ¯Σ is the closure of Σ, so
 another way to read Ψ W is as a local coordinate system onMF (C,GL (K); m). These

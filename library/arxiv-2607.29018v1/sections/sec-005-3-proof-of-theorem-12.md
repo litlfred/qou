@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-11
 source_pdf: 2607.29018v1.pdf
 source_sha256: 789faa122dd32290
+doc_brief: "The Aldous property for normal Cayley graphs on symmetric groups — Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same"
 ---
 Proof of Theorem 1.2.Letn≥5, and letSbe a nonempty normal set inS n withS̸=S n\{e}.
 Assume first that eitherSorS c is equal toA n\{e}. Without loss of generality, we may

@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 16-16
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
+doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
 ---
 In [27], Andrei Davydychev and Bob Delbourgo made a ﬁne discovery : the dilogarithms
 of the box diagram for particle scattering are those which give the v olume of a tetrahedron

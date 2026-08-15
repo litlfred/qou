@@ -1,0 +1,57 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1104.0755v2",
+ "source_sha256": "d2fbbea44598e8f4",
+ "brief": "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡ — We show a connection formula between two diﬀerent q-Airy func- tions.",
+ "extended": "**A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡**\n\n12 pp, 7 sections.\n\n**Abstract.** We show a connection formula between two diﬀerent q-Airy func- tions. One is called the Ramanujan function which appears in Ra- manujan’s ”Lost notebook”. Another one is called the q-Airy function that obtained in the study of the second q-Painlev´ e equation. We use the q-Borel transformation and the q-Laplace transformation following C. Zhang to obtain the connection formula.\n\n**Outline.** 1 Introduction; 2 Standard notations; 3.1 The Ramanujan function Aq(x); 3.2 The q-Airy function Aiq(x); 3.3 Shearing transformations; 4.1 The q-Borel transformation and the q-Lapla; 4.2 The connection formula of the q-Airy funct\n\n**Extracted claims (proposals, not verified).**\n- Lemma 2: For any k ∈ Z,θ (x) satisﬁes\n- Lemma 3: For any x ∈ C∗ , one gets\n- Lemma 5: For any entire function f ,\n- Lemma 7: For any k ∈ N, λ ∈ C∗, one can get;",
+ "tokens": {
+  "brief": 40,
+  "extended": 241
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-standard-notations",
+   "title": "Standard notations",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-31-the-ramanujan-function-aqx",
+   "title": "The Ramanujan function Aq(x)",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-32-the-q-airy-function-aiqx",
+   "title": "The q-Airy function Aiq(x)",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-004-33-shearing-transformations",
+   "title": "Shearing transformations",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-005-41-the-q-borel-transformation-and-the-q-laplace",
+   "title": "The q-Borel transformation and the q-Laplace transformation",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-006-42-the-connection-formula-of-the-q-airy-function",
+   "title": "The connection formula of the q-Airy function",
+   "pages": "10-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

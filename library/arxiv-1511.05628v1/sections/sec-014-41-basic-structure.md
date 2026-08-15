@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 15-16
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 compact Lie group) was initially studied by Witten in [Wit89, Wit91]. It is a topologi-
 cal quantum ﬁeld theory in three-dimensions, whose action is a sum of holomorphic and

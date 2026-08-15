@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 14-15
 source_pdf: 0504116v2.pdf
 source_sha256: 24a8c998e40aed5d
+doc_brief: "On deformations of hyperbolic 3–manifolds with geodesic boundary ROBERTO FRIGERIO Let M be a complete ﬁnite-volume hyperbolic 3–manifold with compact non-empty geodesic boundary and k toric cusps, and"
 ---
 If S∈S gd, by construction the image of S under the developing map Dt is contained in
 a totally geodesic immersed surface in H3. It is easily seen that such a surface must in

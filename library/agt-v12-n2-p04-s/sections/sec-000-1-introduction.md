@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: agt-v12-n2-p04-s.pdf
 source_sha256: bcbb460bc75f5612
+doc_brief: "Algebraic & Geometric Topology 12 (2012) 791–804 791 The twisted Alexander polynomial for ﬁnite abelian covers over three manifolds with boundary JÉRÔME DUBOIS YOSHIKAZU YAMAGUCHI We provide the twist"
 ---
 The classical Alexander polynomial is deﬁned for null–homologous knots in rational
 homology spheres, where null–homologous means that the homology class of a knot is

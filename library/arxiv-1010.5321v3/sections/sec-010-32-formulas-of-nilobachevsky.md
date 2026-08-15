@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 8-9
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
+doc_brief: "Formulas on hyperbolic volume ∗ ´A.G.Horv´ ath Department of Geometry — This paper collects some important formulas on hyperbolic volume."
 ---
 The formulas of this subsection can be found in [6] or [8].
 Barrel-wedge: Barrel-wedge is a sector of a barrel intersected from it by tw o meridian-plane

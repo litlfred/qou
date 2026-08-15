@@ -7,6 +7,7 @@ section_number: 6
 pages: 38-44
 source_pdf: 1101.0956v3.pdf
 source_sha256: 28fffdb404e88501
+doc_brief: "ALGEBRAIC CONSTRUCTIONS IN THE CA TEGOR Y OF VECTOR BUNDLES CONSTANTIN M. ARCUS ¸ — In this paper we present the category of generalized Lie algebroids ."
 ---
 Bianchi type
 Using the theory of linear connections of Eresmann type pres ented in [1] for the diagram:

@@ -7,6 +7,7 @@ section_number: null
 pages: 13-13
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
+doc_brief: "Stateintegralsforthequantized SL2(C)Chern-Simonsinvariant CalvinMcPhail-Snyder DepartmentofMathematics,DukeUniversity calvin@sl2.site — Previous work of the author and N."
 ---
 [OT15] T. Ohtsuki and T. Takata, “On the
 KashaevinvariantandthetwistedReidemeister

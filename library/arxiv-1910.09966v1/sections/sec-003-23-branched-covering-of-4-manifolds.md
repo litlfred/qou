@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 6-7
 source_pdf: 1910.09966v1.pdf
 source_sha256: 21798500c98ed25a
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 ---
 In a similar manner, one would expect that every 4-manifold M4 can be repre-
 sented as 4-fold branched covering of S4 branched along a surface. Piergallini

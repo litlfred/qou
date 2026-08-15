@@ -7,6 +7,7 @@ section_number: 12
 pages: 18-18
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 Any (left)D-module M∈ Mod D can be seen as a K-vector space E and
 the left multiplication x↦→σ.x as a semi-linear (or σ-linear) automorphism

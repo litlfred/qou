@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-12
 source_pdf: 1808.08110v1.pdf
 source_sha256: 4bf98566792d47bd
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — We continue the study undertaken in [13] of the relevance of t he exceptional Jordan algebra J 8 3 of hermitian 3 × 3 octonionic matrices for the description of the"
 ---
 2 Unimodularity of SU (3)c and the quark-lepton symmetry 5
 3 The 3 generations and the triality in J 8

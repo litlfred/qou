@@ -7,6 +7,7 @@ section_number: null
 pages: 8-11
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
+doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium"
 ---
 In [33], Alan Weinstein conjectures the relevance of a certain three-point function, here denoted SW , as the
 essential constituent of the phase of an oscillatory kernel deﬁning an invariant star product on the hyperbolic

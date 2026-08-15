@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 39-39
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 Now, let us return to the analysis of the integral (3.16) and c ompare it with the perturba-
 tiveSL(2, C) invariantZ (α)(M ; ℏ,u ). Both invariants compute quantum ( i.e. ℏ - deformed)

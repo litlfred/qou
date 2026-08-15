@@ -7,5 +7,6 @@ section_number: null
 pages: 1-12
 source_pdf: 1992EvansBerger.pdf
 source_sha256: 6f100e931a1e5f22
+doc_brief: "1992evansberger — 1 sections: Document"
 ---
 

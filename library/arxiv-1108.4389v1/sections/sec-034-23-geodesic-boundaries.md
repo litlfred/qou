@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 13-15
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 We proceed to provide some details of the phase spaces P∂M associated to the various types
 of boundary for M, and to give explicit examples of their construction. A more complete,

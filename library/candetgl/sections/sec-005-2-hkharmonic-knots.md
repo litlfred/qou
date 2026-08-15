@@ -7,6 +7,7 @@ section_number: 2
 pages: 7-7
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 Let V be a solid torus of revolution about the z-axis. Using cylindrical coordinates ( r,w,z),
 consider the vector ﬁeld

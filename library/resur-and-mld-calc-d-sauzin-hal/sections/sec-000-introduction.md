@@ -7,6 +7,7 @@ section_number: null
 pages: 2-4
 source_pdf: Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf
 source_sha256: b33f24cc76102f33
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 9 sections: Introduction; Alien operators. Ali"
 ---
 2 “Simple” version of Resurgence Theory . . 1
 2.1 Simple Ω-resurgent series . . . . . . 2

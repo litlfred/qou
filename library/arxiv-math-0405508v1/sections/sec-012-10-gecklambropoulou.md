@@ -7,6 +7,7 @@ section_number: 10
 pages: 10-10
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 in terms of the generators t, g 1, . . . , g n−1 is independent of the chosen reduced
 expression for w. We may therefore denote this element in Hn unambiguously

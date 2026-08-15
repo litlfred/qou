@@ -7,6 +7,7 @@ section_number: III
 pages: 7-9
 source_pdf: 0407051v2.pdf
 source_sha256: 2de07e909b17c5a5
+doc_brief: "Black hole entropy from Quantum Geometry — Quantum Geometry (the modern Loop Quantum Gravity using gra phs and spin-networks instead of the loops) provides microscopic d egrees of freedom that"
 ---
 From now our treatment starts to diﬀer from that of [8]. Our ai m is to deﬁne the number
 of the quantum states of the horizon which contribute to the e ntropy in a form of a clear

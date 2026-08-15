@@ -7,6 +7,7 @@ section_number: 5
 pages: 13-15
 source_pdf: 1203.6551v1.pdf
 source_sha256: a8e84f8ed63dbcca
+doc_brief: "On the number of hyperbolic 3-manifolds of a given volume — The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v."
 ---
 Let M be a cusped hyperbolic 3-manifold with horospherical torus cross s ection
 T , and chose meridian and longitude generators for H1(T ) = Z2 as in section 2.

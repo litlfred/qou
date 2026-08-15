@@ -7,6 +7,7 @@ section_number: null
 pages: 84-85
 source_pdf: phys-rep09.pdf
 source_sha256: cd345d3df9358efc
+doc_brief: "PhysicsReports470(2009)151–238 Contents lists available at ScienceDirect PhysicsReports journal homepage: www.elsevier.com/locate/physrep TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas"
 ---
 Oneofus(J.A.O)wasintroducedtothefieldofMagnusexpansionbyProf.SilvioKlarsfeld(Orsay)towhomwealso
 acknowledgehiscontinuousinterestinourwork.EncouragingcommentsbyProf.A.J.Dragt(Maryland)inearlystagesof

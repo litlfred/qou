@@ -7,6 +7,7 @@ section_number: null
 pages: 65-68
 source_pdf: 2012.00062v3.pdf
 source_sha256: 2aacb7fa43f5e0da
+doc_brief: "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional"
 ---
 [ABS19] Inês Aniceto, Gökçe Başar, and Ricardo Schiappa,A primer on resurgent transseries and their
 asymptotics, Phys. Rep.809 (2019), 1–135.

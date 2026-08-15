@@ -7,6 +7,7 @@ section_number: null
 pages: 6-7
 source_pdf: 0610105v2.pdf
 source_sha256: 5f3bd6d31a419d4d
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut f¨ ur Strahlen- und Kernphysik (Theori e) — Few-body systems with large scattering length"
 ---
 Yakubovsky equations which are a generalization of the Faddeev eq uations to the four-body
 system. The full four-body wave function Ψ is ﬁrst decomposed int o Faddeev components,

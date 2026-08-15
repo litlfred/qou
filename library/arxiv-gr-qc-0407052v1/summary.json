@@ -1,0 +1,31 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-gr-qc-0407052v1",
+ "source_sha256": "4624ea2fb4d318ad",
+ "brief": "Black hole entropy in Loop Quantum Gravity Krzysztof A. Meissner — We calculate the black hole entropy in Loop Quantum Gravity a s a function of the horizon area and provide the exact formula fo r",
+ "extended": "**Black hole entropy in Loop Quantum Gravity Krzysztof A. Meissner**\n\n*Institute of Theoretical Physics, Warsaw University*\n\n10 pp, 2 sections.\n\n**Abstract.** We calculate the black hole entropy in Loop Quantum Gravity a s a function of the horizon area and provide the exact formula fo r the leading and sub-leading terms. By comparison with the Beken stein– Hawking formula we uniquely ﬁx the value of the ’quantum of ar ea’ in the theory. The Bekenstein–Hawking formula gives the leading term in th e entropy of the black hole in the form S = 1 4 A l2 P (1) where lP is the Planck length and A is the black hole horizon area. According to the common belief, the entropy is always connected with th e logarithm of the number of microscopic states realizing a given macrosco pic state. The fact that the entropy in (1) is proportional to the area (and not as is usual to the volume) has led to the formulation of the so called holographic principle. It was however diﬃcult to ﬁnd the microscopic states that cou ld account for such an entropy.\n\n**Outline.** Abstract; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 269
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-9"
+  },
+  {
+   "id": "sec-001-references",
+   "title": "References",
+   "pages": "9-10"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

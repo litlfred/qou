@@ -7,6 +7,7 @@ section_number: 8.1
 pages: 54-56
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
 ---
 bines our ﬂuctuation results for Jack characters and argume nts from the proof of
 Kerov, Ivanov and Olshanski for the case α = 1 . In particular we shall com-

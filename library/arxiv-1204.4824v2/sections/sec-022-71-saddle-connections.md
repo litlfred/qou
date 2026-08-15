@@ -7,6 +7,7 @@ section_number: 7.1
 pages: 42-43
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 The simplest possibility has already appeared in Figure 24 above. It involves two S-walls,
 colliding along a two-way streetp running between two branch points. We call such a two-

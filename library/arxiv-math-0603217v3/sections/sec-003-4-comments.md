@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-5
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
+doc_brief: "A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume"
 ---
 In [4, (5.29)], Gukov proposed the following conjecture.
 Conjecture 4.1. [4] Let K be a knot in the three-sphere. For a ∈ C \ Q, deﬁne

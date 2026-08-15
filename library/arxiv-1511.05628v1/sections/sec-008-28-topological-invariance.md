@@ -7,6 +7,7 @@ section_number: 2.8
 pages: 11-12
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 a topological invariant — depending only on a knot K and the root of unity ζ, rather than
 on a full Neumann-Zagier datum — and thus φγ,ζ(ℏ) =φK,ζ(ℏ) is the series that appears in

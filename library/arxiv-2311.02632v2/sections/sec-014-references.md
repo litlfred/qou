@@ -7,6 +7,7 @@ section_number: null
 pages: 38-40
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE CHUL-HEE LEE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 [AS89] R. Aurich and F. Steiner, Periodic-orbit sum rules for the Hadamard-Gutzwiller model ,
 Phys. D 39 (1989), no. 2-3, 169–193.

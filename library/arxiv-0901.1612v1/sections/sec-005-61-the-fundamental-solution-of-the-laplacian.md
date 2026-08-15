@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 18-20
 source_pdf: 0901.1612v1.pdf
 source_sha256: b4f3efcadd1e5caf
+doc_brief: "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-component links in the 3-dimensional sphere were classiﬁed up to link homotopy by John Milnor in his senior thesis, published in 1954."
 ---
 Proposition. The fundamental solution of the scalar Laplacian on the 3-torus T 3 is
 given by the formula

@@ -7,6 +7,7 @@ section_number: 1.5
 pages: 7-7
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
+doc_brief: "CUSP SHAPES UNDER CONE DEFORMA TION JESSICA S. PURCELL — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
 ---
 information on cone deformations.
 In Section 3, we begin the proofs of Theorems 1.2, 1.3, and 1.4 using

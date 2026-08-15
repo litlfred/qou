@@ -7,6 +7,7 @@ section_number: null
 pages: 37-38
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
+doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
 ---
 In this section, we generalize the analysis of CHL models to the most general case, where
 the level matching condition for ag-twisted sector is not satisﬁed.

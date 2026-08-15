@@ -7,6 +7,7 @@ section_number: 7.3.1
 pages: 21-22
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
+doc_brief: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 following splitting: M = N ∪ (S × I), where I = [0 , 1] is the closed unit interval. The
 boundaries of N and S × I are equal and consist in the disjoint union of two copies of

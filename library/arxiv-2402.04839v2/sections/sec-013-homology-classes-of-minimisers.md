@@ -7,6 +7,7 @@ section_number: null
 pages: 15-16
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
+doc_brief: "On a volume invariant of 3–manifolds — 22 sections: Introduction; Properties, examples and questions; Definition of topological volume a"
 ---
 Example 4.4A minimiser does not need to be nullhomologous. Indeed, the unique minimiser
 forL(10,3) is given bym003; see Table 1Table 1. Sincem003(1,0) is diffeomorphic toL(10,3), the

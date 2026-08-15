@@ -1,0 +1,141 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "afst-2007-6-16-3-665-0",
+ "source_sha256": "402b61574e561f86",
+ "brief": "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques — 24 sections: Introduction; Classiﬁcation of q-diﬀerence equat; Some notation and formulas",
+ "extended": "**ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques**\n\n*MARIUS VAN DER PUT, M ARC REVERSAT*\n\n55 pp, 24 sections.\n\n**Outline.** Introduction; 1 Classiﬁcation of q-diﬀerence equations; 1.1 Some notation and formulas; 1.2 Regular singular diﬀerence modules; 1.3 The slope ﬁltration; 1.4 Classiﬁcation of pure modules over ˆK and ; 2 The ﬁrst; 0 It follows thatM has a unique ﬁnite dimensio; 1.4.1 Pure diﬀerence modules overK∞ with desce; 2 Vector bundles andq-diﬀerence modules; 2.6 (Canonical representatives forcoker(Φ −1,M; 3 Moduli spaces for q-diﬀerence equations; C It will turn out that the scheme representin; 4 Global diﬀerence modules; 5 The Galois group of aq-diﬀerence module; 5.1 Universal Picard-Vessiot extensions; 5.2 Galois groups for split modules overK; 5.3 Galois groups for modules overK with two s\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.3: — The functorv from the category of the split diﬀerence\n- Theorem 2.5: —L et M be a pure diﬀerence module overK with slope\n- Theorem 3.2: —L etS =P1 ⊕···⊕ Pr be a direct sum of pure modules\n- Theorem 4.3: — The functorT from the category of the global diﬀer-\n- Theorem 5.12: — Let the diﬀerence moduleM be given by an exact\n- Theorem 6.3: — There exists a functorN ↦→(v(N), ∇N) from the cat-",
+ "tokens": {
+  "brief": 35,
+  "extended": 318
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-001-1-classiﬁcation-of-q-diﬀerence-equations",
+   "title": "Classiﬁcation of q-diﬀerence equations",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-11-some-notation-and-formulas",
+   "title": "Some notation and formulas",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-12-regular-singular-diﬀerence-modules",
+   "title": "Regular singular diﬀerence modules",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-004-13-the-slope-ﬁltration",
+   "title": "The slope ﬁltration",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-14-classiﬁcation-of-pure-modules-over-ˆk-and-k",
+   "title": "Classiﬁcation of pure modules over ˆK and K",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-2-the-ﬁrst",
+   "title": "The ﬁrst",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-007-0-it-follows-thatm-has-a-unique-ﬁnite-dimensiona",
+   "title": "It follows thatM has a unique ﬁnite dimensionalC-linear subspaceW,",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-008-141-pure-diﬀerence-modules-overk-with-descent-da",
+   "title": "Pure diﬀerence modules overK∞ with descent data",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-009-2-vector-bundles-andq-diﬀerence-modules",
+   "title": "Vector bundles andq-diﬀerence modules",
+   "pages": "13-20"
+  },
+  {
+   "id": "sec-010-26-canonical-representatives-forcokerφ-1m",
+   "title": "(Canonical representatives forcoker(Φ −1,M",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-011-3-moduli-spaces-for-q-diﬀerence-equations",
+   "title": "Moduli spaces for q-diﬀerence equations",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-012-c-it-will-turn-out-that-the-scheme-representingf",
+   "title": "It will turn out that the scheme representingF is in factAN",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-013-4-global-diﬀerence-modules",
+   "title": "Global diﬀerence modules",
+   "pages": "25-30"
+  },
+  {
+   "id": "sec-014-5-the-galois-group-of-aq-diﬀerence-module",
+   "title": "The Galois group of aq-diﬀerence module",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-015-51-universal-picard-vessiot-extensions",
+   "title": "Universal Picard-Vessiot extensions",
+   "pages": "30-33"
+  },
+  {
+   "id": "sec-016-52-galois-groups-for-split-modules-overk",
+   "title": "Galois groups for split modules overK",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-017-53-galois-groups-for-modules-overk-with-two-slop",
+   "title": "Galois groups for modules overK with two slopes",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-018-54-modules-over-k-with-more-slopes",
+   "title": "Modules over K with more slopes",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-019-6-realizing-q-diﬀerence-modules-overk-as-connect",
+   "title": "Realizing q-diﬀerence modules overK as connections",
+   "pages": "39-47"
+  },
+  {
+   "id": "sec-020-7-positive-characteristic",
+   "title": "Positive characteristic",
+   "pages": "47-49"
+  },
+  {
+   "id": "sec-021-71-picard-vessiot-theory-and-examples",
+   "title": "Picard-Vessiot theory and examples",
+   "pages": "49-53"
+  },
+  {
+   "id": "sec-022-72-the-universal-diﬀerence-ring-over-ˆk",
+   "title": "The universal diﬀerence ring over ˆK",
+   "pages": "53-54"
+  },
+  {
+   "id": "sec-023-bibliography",
+   "title": "Bibliography",
+   "pages": "54-55"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 14-16
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
+doc_brief: "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study"
 ---
 respective fundamental groups.
 Fix an e-triangulation (T,b ) of F . Denote by Z(T,b ) the space of PSL (2, C)-valued 1-cocycles on

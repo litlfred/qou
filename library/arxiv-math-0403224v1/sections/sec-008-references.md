@@ -7,6 +7,7 @@ section_number: null
 pages: 6-7
 source_pdf: 0403224v1.pdf
 source_sha256: c25ccba77da375ad
+doc_brief: "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT KAZUHIRO HIKAMI — We prove that the N-colored Jones polynomial for the torus knot Ts, t satisﬁes the second order diﬀerence"
 ---
 [1] G. E. Andrews, The Theory of Partitions, Addison-Wesley, London, 1976.
 [2] D. Bar-Natan and S. Garoufalidis, On the Melvin–Morton–Rozansky conjecture, In-

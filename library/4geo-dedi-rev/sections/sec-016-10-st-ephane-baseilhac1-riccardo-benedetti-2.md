@@ -7,6 +7,7 @@ section_number: 10
 pages: 11-13
 source_pdf: 4GEO-DEDI-REV.pdf
 source_sha256: e4d52947b71a3f37
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 36 sections: Institut Montpelli´ erain Alexand"
 ---
 on C asw↦→γrw +b, where γr∈ C∗ andb∈ C. The coeﬃcient γr is that squared eigenvalue selected
 by [(r,{ξΓ}Γ)].

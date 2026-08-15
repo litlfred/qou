@@ -7,6 +7,7 @@ section_number: 3.2.1
 pages: 32-34
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero"
 ---
 such reﬁned relations exist and can be explicitly written do wn is already nontrivial. Having
 found these examples, we have no doubt that their generalization to the entire family of torus

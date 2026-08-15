@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 10-15
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
+doc_brief: "Prepared for submission to JHEP KIAS-P22064 Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455"
 ---
 The power series ϕ(k,σ∗)
 γ (u,n ;τ) are asymptotic. To make sense of them, we need to apply

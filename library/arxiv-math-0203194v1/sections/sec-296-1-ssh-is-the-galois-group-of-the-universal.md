@@ -7,6 +7,7 @@ section_number: 1
 pages: 131-132
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 topological covering of some ﬁnite ´ etale Galois covering o f S.
 Proof. This follows from 1.4.7. and 2.1.2 (connected temperate cov erings

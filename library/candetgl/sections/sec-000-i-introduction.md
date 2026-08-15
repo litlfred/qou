@@ -7,6 +7,7 @@ section_number: I
 pages: 2-3
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 Let V be a compact domain with smooth boundary in 3-space, and let VF ~V! be the space of
 smooth vector ﬁelds on V with the L2 inner product ^V,W&5*VVWd (vol). By ‘‘smooth,’’

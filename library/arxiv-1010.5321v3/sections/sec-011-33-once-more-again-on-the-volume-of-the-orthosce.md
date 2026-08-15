@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 9-9
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
+doc_brief: "Formulas on hyperbolic volume ∗ ´A.G.Horv´ ath Department of Geometry — This paper collects some important formulas on hyperbolic volume."
 ---
 As an application of our general formulas we determine the vo lume of the orthosceme as the
 function of its edge-lengthes a, b and c. We note that there are formulas to transform the

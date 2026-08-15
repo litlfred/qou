@@ -7,6 +7,7 @@ section_number: 1
 pages: 31-32
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et"
 ---
 l’extension Eα de l’extension Λ /I n+1 de Λ /I n par I n/I n+1 en poussant par α:
 (3.4.3)

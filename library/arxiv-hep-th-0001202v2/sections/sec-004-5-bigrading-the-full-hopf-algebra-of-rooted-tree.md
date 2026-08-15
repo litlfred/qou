@@ -7,6 +7,7 @@ section_number: 5
 pages: 6-7
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 Given how long it took to compute the data that eventually led to the g enerating principle
 for the Connes-Moscovici subalgebra, one might be daunted by th e task of inferring the

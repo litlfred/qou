@@ -7,6 +7,7 @@ section_number: null
 pages: 29-31
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 For those readers interested in the history of the Biot–Savart Law, we recommend R. A. R.
 Tricker’s little volume, Early Electrodynamics, The First Law of Circulation .49 It contains exten-

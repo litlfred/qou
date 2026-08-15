@@ -7,6 +7,7 @@ section_number: null
 pages: 6-7
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 To summarize, we can reproduce the whole collection of the single-Schur sums from [7, secs.1.5,3.4,3.5].
 They are naturally divided in three blocks, and the formulas are given also in terms of symmetric variables

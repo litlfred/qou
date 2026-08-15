@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 7-15
 source_pdf: 1101.0956v3.pdf
 source_sha256: 28fffdb404e88501
+doc_brief: "ALGEBRAIC CONSTRUCTIONS IN THE CA TEGOR Y OF VECTOR BUNDLES CONSTANTIN M. ARCUS ¸ — In this paper we present the category of generalized Lie algebroids ."
 ---
 Let
 (

@@ -7,6 +7,7 @@ section_number: 1.15
 pages: 9-13
 source_pdf: 1704.02352v2.pdf
 source_sha256: 9a14dd6ee33248d3
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y"
 ---
 notations from Theorem 1.3. The difference
 (1.17) ∆ n := √

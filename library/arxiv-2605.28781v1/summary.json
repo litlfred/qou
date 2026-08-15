@@ -1,0 +1,107 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2605.28781v1",
+ "source_sha256": "eee6d535af1996ca",
+ "brief": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number",
+ "extended": "**THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS**\n\n*THOMAS F. BLOOM, WILL SAWIN, CARL SCHILDKRAUT, AND DMITRII ZHELEZOV*\n\n25 pp, 17 sections.\n\n**Abstract.** We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number field of degree≍log|A|) such that max(|A+A|,|AA|)≤|A| 2−c wherec >0 is an absolute constant. We also disprove the many sums and products conjecture by constructing, for anyk≥3, arbitrarily largeA⊂Rsuch that max(|kA|,|A (k)|)≤|A| C logk log logk for some constantC >0. We obtain similar constructions forp-adics, finite fields, and function fields in positive characteristic, and also obtain new lower bounds for the number of solutions to linear equations in a multiplicative group, and the number of solutions to the unit equation in sufficiently many variables. 1.Introduction Given any finite setAin some ring we define the sum set and product set ofAas A+A={a+b:a,b∈A}andAA={ab:a,b∈A}.\n\n**Outline.** 1.1 Many sums and products; 1 Introduction; 1.2 Linear equations in a multiplicative group; 1.3 Sum-product in other settings; The role of AI in this proof; Acknowledgements; 2 Sketch of the construction; 3.1 The additive lattice; 3 Algebraic number theory; 3.2 The unit lattice; 4 The construction; 5 Numerical estimates; 6 Linear equations in a multiplicative group; 7 Variants; 7.2 Finite fields; 7.3 Function fields; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: There exists an absolute constantc >0such that there are arbi-\n- Theorem 1.1: is easily deduced from the following more general result.\n- Theorem 1.2: There exists an absolute constantC >0such that the following\n- Theorem 1.1: is an immediate consequence. This result should also be compared\n- Theorem 1.4: There exists an absolute constantC >0such that for any fixed\n- Theorem 1.5: There is an absolute constantC >1such that the following holds.",
+ "tokens": {
+  "brief": 49,
+  "extended": 488
+ },
+ "sections": [
+  {
+   "id": "sec-000-11-many-sums-and-products",
+   "title": "Many sums and products",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-12-linear-equations-in-a-multiplicative-group",
+   "title": "Linear equations in a multiplicative group",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-13-sum-product-in-other-settings",
+   "title": "Sum-product in other settings",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-the-role-of-ai-in-this-proof",
+   "title": "The role of AI in this proof",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-2-sketch-of-the-construction",
+   "title": "Sketch of the construction",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-31-the-additive-lattice",
+   "title": "The additive lattice",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-008-3-algebraic-number-theory",
+   "title": "Algebraic number theory",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-009-32-the-unit-lattice",
+   "title": "The unit lattice",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-010-4-the-construction",
+   "title": "The construction",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-011-5-numerical-estimates",
+   "title": "Numerical estimates",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-012-6-linear-equations-in-a-multiplicative-group",
+   "title": "Linear equations in a multiplicative group",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-013-7-variants",
+   "title": "Variants",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-014-72-finite-fields",
+   "title": "Finite fields",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-015-73-function-fields",
+   "title": "Function fields",
+   "pages": "17-23"
+  },
+  {
+   "id": "sec-016-references",
+   "title": "References",
+   "pages": "23-25"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

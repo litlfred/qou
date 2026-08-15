@@ -7,6 +7,7 @@ section_number: 8
 pages: 4-5
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 White,10 Wang,11 Sumners,12–14 and Cantarella, Kusner, and Sullivan. 15
 For an overview of the connection between knot theory and electrodynamics, see

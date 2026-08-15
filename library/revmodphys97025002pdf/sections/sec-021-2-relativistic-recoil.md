@@ -7,6 +7,7 @@ section_number: 2
 pages: 11-11
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 The leading relativistic-recoil correction, to lowest order in
 Zα and all orders in me=mN ,i s( Erickson, 1977; Sapirstein and

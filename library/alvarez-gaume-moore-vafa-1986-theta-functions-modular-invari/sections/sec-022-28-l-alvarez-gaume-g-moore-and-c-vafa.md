@@ -7,6 +7,7 @@ section_number: 28
 pages: 28-29
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
+doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
 ---
 loops, taking n = 2 for simplicity. Therefore, consider a real Bose field x on a
 Riemann surface Σ. We can introduce soliton sectors into the theory if we allow x

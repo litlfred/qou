@@ -7,6 +7,7 @@ section_number: 5.5
 pages: 21-23
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
+doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
 ---
 At 12 crossings, corresponding to 8 loops in QFT, Broadhurst and K reimer [14] found
 that 7 of the 2,176 hyperbolic knots are positive. We found that 3 of these have rational

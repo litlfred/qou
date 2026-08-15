@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
+doc_brief: "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343–354 Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve Michihiko Fujii — 12 sections"
 ---
 In this paper, we consider a hyperbolic structure on a manifold to be a
 Riemannian metric of constant sectional curvature −1 which is not necessarily

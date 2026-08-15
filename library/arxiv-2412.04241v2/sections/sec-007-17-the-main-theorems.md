@@ -7,6 +7,7 @@ section_number: 1.7
 pages: 13-15
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 collectionsfA,m(t,x ) andf FGI
 A,m(t,x ) of power series at roots of unity and draws complementary

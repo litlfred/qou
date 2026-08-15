@@ -7,6 +7,7 @@ section_number: 11
 pages: 37-38
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 In the remainder of this paper we will ﬁnd the exact solution f or the low energy eﬀective
 action, metric on moduli space, and particle masses for the v arious theories. The basic

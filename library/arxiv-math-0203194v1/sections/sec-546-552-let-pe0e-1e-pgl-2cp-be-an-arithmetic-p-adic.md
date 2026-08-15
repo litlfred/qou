@@ -7,6 +7,7 @@ section_number: 5.5.2
 pages: 188-189
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 group. Thus, there is a totally real number ﬁeld E ⊂ Cp, and a totally
 deﬁnite quaternion algebra B over E, split at one place v above p, and a

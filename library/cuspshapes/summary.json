@@ -1,0 +1,62 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "cuspshapes",
+ "source_sha256": "01db19e63193e6ae",
+ "brief": "CUSP SHAPE AND TUNNEL NUMBER — We show that the set of cusp shapes of hyperbolic tunnel number one manifolds is dense in the Teichm¨ uller space of the torus.",
+ "extended": "**CUSP SHAPE AND TUNNEL NUMBER**\n\n*VINH DANG AND JESSICA S. PURCELL*\n\n15 pp, 8 sections.\n\n**Abstract.** We show that the set of cusp shapes of hyperbolic tunnel number one manifolds is dense in the Teichm¨ uller space of the torus. A similar result holds for tunnel number n manifolds. As a consequence, for ﬁxed n, there are inﬁnitely many hyperbolic tunnel number n manifolds with at most one exceptional Dehn ﬁlling. This is in contrast to large volume Berge knots, which are tunnel number one manifolds, but with cusp shapes converging to a single point in Teichm¨ uller space.\n\n**Outline.** 1 Introduction; 2 Hyperbolic structures on compression bodies; 1.1 Acknowledgements; 3 Spaces of hyperbolic structures; 4 Pinched handlebodies; 5 Cusp shapes of tunnel number n manifolds; 6 Exceptional fillings; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: For any ϵ >0 and any point [T ] in the Teichm¨ uller space of the\n- Theorem 1.2: For any ϵ> 0, any point [T ] in the Teichm¨ uller space of the torus,\n- Theorem 1.1: also has interesting Dehn ﬁlling consequences.\n- Theorem 3.7: Maximally pinched structures are dense on the boundary ∂ MP(C,T )\n- Theorem 3.7: , maximally pinched structures are dense on the boundary ∂ MP(C,T ) of\n- Theorem 1.2: we obtain a hyperbolic 3-manifold M with a single tunnel and cusp",
+ "tokens": {
+  "brief": 39,
+  "extended": 335
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-hyperbolic-structures-on-compression-bodies",
+   "title": "Hyperbolic structures on compression bodies",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-11-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-3-spaces-of-hyperbolic-structures",
+   "title": "Spaces of hyperbolic structures",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-004-4-pinched-handlebodies",
+   "title": "Pinched handlebodies",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-005-5-cusp-shapes-of-tunnel-number-n-manifolds",
+   "title": "Cusp shapes of tunnel number n manifolds",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-006-6-exceptional-fillings",
+   "title": "Exceptional fillings",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "14-15"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -7,6 +7,7 @@ section_number: null
 pages: 21-23
 source_pdf: 2411.03801v2.pdf
 source_sha256: a7f1f6fa74cb0949
+doc_brief: "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS — Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal"
 ---
 In this section we explain how to find a flattening of the collapsed triangulation T˚D when
 ˚D is given by a closure of a braid, more precisely, when ˚D is an open diagram obtained

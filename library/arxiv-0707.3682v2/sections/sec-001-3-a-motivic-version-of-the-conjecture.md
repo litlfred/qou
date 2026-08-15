@@ -7,6 +7,7 @@ section_number: 3
 pages: 9-29
 source_pdf: 0707.3682v2.pdf
 source_sha256: 609a6f67a0cd5fc8
+doc_brief: "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS — We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the"
 ---
 If E is any extension of Q, and k/Q is ﬁnite and Galois with Galois group G,
 then we let ME = E ⊗Qk and K2n−1(k)E = E ⊗QK2n−1(k)Q, which are E[G]-

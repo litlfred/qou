@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-5
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 2.1 Self-dual representations of Uq(sl(2, R)) and the modular double
 We will be considering the Hopf-algebraUq(sl(2, R)) which has generatorsE,F andK subject

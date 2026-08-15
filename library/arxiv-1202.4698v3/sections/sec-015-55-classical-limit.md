@@ -7,6 +7,7 @@ section_number: 5.5
 pages: 17-18
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 The classical counterpart of the expression (5.13b) is found by replacing ls and ks by commuting
 variablesls andks, respectively, and sendingb → 0. The formulae for the operatorsπcan

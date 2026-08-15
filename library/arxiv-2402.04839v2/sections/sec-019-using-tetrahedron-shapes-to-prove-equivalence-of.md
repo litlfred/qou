@@ -7,6 +7,7 @@ section_number: null
 pages: 26-26
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
+doc_brief: "On a volume invariant of 3–manifolds — 22 sections: Introduction; Properties, examples and questions; Definition of topological volume a"
 ---
 In this appendix we verify our assertions regarding the equality of volumes of certain 3–manifolds,
 as claimed in the proof of Proposition 4.1Proposition 4.1. SnapPy [ CDGW21CDGW21] gives gluing information for tri-

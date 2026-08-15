@@ -7,6 +7,7 @@ section_number: 5
 pages: 9-10
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 We therefore have:
 Theorem 4.4 Let i ∈ χ n. For j = 1, 2,... ,n and P a partial quiver associated to i, let bj(i) =

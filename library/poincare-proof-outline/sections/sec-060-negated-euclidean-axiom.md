@@ -7,6 +7,7 @@ section_number: null
 pages: 143-150
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 lemma negated-euclidean-axiom-aux:
 assumes on-circline H (of-complex (1/2 + i/2 )) and is-poincare-line H

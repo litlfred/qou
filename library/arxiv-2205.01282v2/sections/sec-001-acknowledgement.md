@@ -7,6 +7,7 @@ section_number: null
 pages: 3-3
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
+doc_brief: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES YUYA MURAKAMI — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed"
 ---
 The author would like to show the greatest appreciation to Takuya Yamauchi for giving many pieces
 of advice. The author would like to thank Takuya Yamauchi, Yuji Terashima, Kazuhiro Hikami,

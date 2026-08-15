@@ -7,6 +7,7 @@ section_number: 8.2.4
 pages: 50-51
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 In this paper, we have worked exclusively with strongly coupled holographic theories
 described in the bulk by Einstein gravity. It is natural to ask how our results and

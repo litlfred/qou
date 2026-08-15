@@ -7,6 +7,7 @@ section_number: 7.2.2.3
 pages: 129-129
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 presently known to yield the solution of (7.4) in the spirit o f theorem 5.5.3
 with Λ = [λ] + [µ]. A multisummation algorithm does exist in a very diﬀerent

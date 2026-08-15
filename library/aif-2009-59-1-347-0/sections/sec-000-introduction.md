@@ -7,6 +7,7 @@ section_number: null
 pages: 2-7
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
+doc_brief: "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
 ---
 Let C[[x]] be the ring of formal power series with complex coeﬃcients and
 C{x} the ring of germs of analytic functions at zero. A divergent formal

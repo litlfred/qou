@@ -7,6 +7,7 @@ section_number: null
 pages: 48-54
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 Instead of the h-distance itself, very frequently its hyperbolic cosine is analyzed.
 abbreviation cosh-dist u v ≡ cosh (poincare-distance u v )

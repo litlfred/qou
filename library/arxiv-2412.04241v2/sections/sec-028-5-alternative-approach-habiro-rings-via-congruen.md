@@ -7,6 +7,7 @@ section_number: 5
 pages: 58-59
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 In this final section we study the basic properties of the original Habiro ring H and its
 generalisation to the HabiroHR of a ring R. The most important point is how to identify H

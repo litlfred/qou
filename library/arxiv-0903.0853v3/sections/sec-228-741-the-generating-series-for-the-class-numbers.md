@@ -7,6 +7,7 @@ section_number: 7.4.1
 pages: 134-134
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 quadratic formsax2 +2hxy +by2, witha,b,h ∈ Z,a,b not both even (“uneven
 forms”), and D :=ab−h2 > 0, up to the usual equivalence. For any D∈ N∗,

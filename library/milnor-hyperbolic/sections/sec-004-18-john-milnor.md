@@ -7,6 +7,7 @@ section_number: 18
 pages: 10-12
 source_pdf: milnor_hyperbolic.pdf
 source_sha256: d444d7a61af54c7c
+doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY — 9 sections: JOHN MILNOR; JOHN MILNOR; JOHN MILNOR"
 ---
 Integrating the negative log absolute value of both sides we obtain 
 n-\ 

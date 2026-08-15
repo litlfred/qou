@@ -7,6 +7,7 @@ section_number: 5
 pages: 17-17
 source_pdf: 0706.2213v3.pdf
 source_sha256: 75dd29acc9e34bda
+doc_brief: "NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS — This paper gives an explicit formula for the SL 2(C)−non–abelian Reidemeister torsion as deﬁned in [Dub06] in the case of twist knots."
 ---
 there exists an isomorphism between the knot groupsΠ(J(2, 2m+1)) and Π(J(2,−2m)) (see
 Remark 2), it is enough for us to make the computations in the c ase of even twist knots

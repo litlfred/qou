@@ -7,6 +7,7 @@ section_number: 3.1.2
 pages: 8-8
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
+doc_brief: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 ϕ : π1(M ) → Zn = ⟨t1, . . . , tn | titj = tjti, ∀i, j ⟩
 is a surjective homomorphism which satisﬁes the following assumption (in the case of

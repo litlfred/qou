@@ -7,6 +7,7 @@ section_number: 4
 pages: 16-21
 source_pdf: 2109.00379v1.pdf
 source_sha256: f0c9bd89312a761c
+doc_brief: "TWISTED NEUMANN–ZAGIER MATRICES — The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around"
 ---
 In this section we give proofs of the properties of the twisted 1-loop invariant.
 Proof. (of Theorem 1.5) We will use the notation of Theorem 1.4 which relates the NZ

@@ -7,6 +7,7 @@ section_number: 4.12
 pages: 48-48
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et"
 ---
 suppose X s´ epar´ e. Sous l’hypoth` ese queH 1( ¯X, O) = 0 pour ¯X une compactiﬁcation lisse
 de X, nous avons d´ eﬁni dans Deligne (1989) §13 un “espace de chemins” Py,x qui est un

@@ -7,6 +7,7 @@ section_number: 8
 pages: 18-19
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
+doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
 ---
 8.1. The Lobachevsky function. In Section 6 we got a simple but crude estimate for the l1-norm of the
 R-matrices, which are a ratio of ﬁve quantum factorials. In this large ly independent section we will give

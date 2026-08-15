@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-3
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 The ionization energies of 1H, 3H, 3He, 4He, 12C, and 28Si are
 from the 2022 National Institute of Standards and Technology

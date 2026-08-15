@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-10
 source_pdf: 0111022v1.pdf
 source_sha256: fea7f118014838fe
+doc_brief: "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schr¨ odinger Institute for Mathematical Physics Boltzmanngasse 9 — We introduce general q-deformed multiple"
 ---
 In [CL] a family of noncommutative deformations S4,θ of the four dimen-
 sional sphere has been introduced from the instanton algebra. Co ncretely,

@@ -7,6 +7,7 @@ section_number: 2
 pages: 13-20
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
+doc_brief: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques — 24 sections: Introduction; Classiﬁcation of q-diﬀerence equat; Some notation and formulas"
 ---
 We recall thatO denotes the algebra of the holomorphic functions on
 C∗ and that a diﬀerence moduleM overO is a left module over the ring

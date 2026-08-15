@@ -7,6 +7,7 @@ section_number: 5
 pages: 15-16
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 8 (2012), 065, 20 pages Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4"
 ---
 5 Vector of Riemann constants
 We shall now calculate the vector of Riemann constants for Bring’s curve determining various

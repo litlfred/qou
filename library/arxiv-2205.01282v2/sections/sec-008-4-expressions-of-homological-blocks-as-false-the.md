@@ -7,6 +7,7 @@ section_number: 4
 pages: 9-11
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
+doc_brief: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES YUYA MURAKAMI — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed"
 ---
 In this section, we represent the homological block of M(Γ) as a false theta function.
 For the plumbed homology sphere M(Γ), the homological block bZΓ(q) is defined as follows.

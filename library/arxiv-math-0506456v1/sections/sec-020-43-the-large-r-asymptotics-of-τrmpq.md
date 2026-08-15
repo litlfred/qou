@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 19-21
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
+doc_brief: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e"
 ---
 In Sec. 5 we will see that the signs of the phases in the asymptotics o f ¯τr(Mp/q) =
 τr(Mp/q) agrees with the Chern–Simons values, hence we work with this conj ugate

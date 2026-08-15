@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 16-19
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 8 (2012), 065, 20 pages Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4"
 ---
 We now describe how symmetries may be used to restrict the vector of Riemann constants by
 recalling some results we have established elsewhere.

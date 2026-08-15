@@ -7,6 +7,7 @@ section_number: 5
 pages: 13-19
 source_pdf: 1011.1343v1.pdf
 source_sha256: 7d50e5e28e695191
+doc_brief: "Chiral symmetry, nuclear forces and all that Ulf-G. Meißner — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
 ---
 simulations
 Having now constructed nuclear forces between two, three an d four nucleons, one has a

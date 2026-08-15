@@ -7,6 +7,7 @@ section_number: C
 pages: 10-10
 source_pdf: 0603022v2.pdf
 source_sha256: 46e24c0289f61d44
+doc_brief: "Quantum Gravity and the Standard Model Sundance O. Bilson-Thompson ∗ — 9 sections: INTRODUCTION; THEORIES ON RIBBON GRAPHS; CONSERVED DEGREES OF FREEDOM"
 ---
 Another feature of the present proposal that we
 would like to discuss is the fact that the invariant quan-

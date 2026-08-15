@@ -1,0 +1,92 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2411.03801v2",
+ "source_sha256": "a7f1f6fa74cb0949",
+ "brief": "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS — Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal",
+ "extended": "**1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS**\n\n*STAVROS GAROUFALIDIS AND SEOKBEOM YOON*\n\n24 pp, 14 sections.\n\n**Abstract.** Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal triangulation of a cusped hyperbolic 3-manifold, proved that its constant (1-loop) term is a topological invariant and conjectured that it equals to the adjoint Reidemeister torsion. We prove this conjecture for hyperbolic 2-bridge knots by combining the work of Ohtsuki–Takata with an explicit computation.\n\n**Outline.** 1 Introduction; 2.1 The 1-loop invariant; 2 Two invariants from the asymptotics of the K; 2.2 Essential open diagrams and their potentia; 2.3 The Ohtsuki–Takata invariant; 3 From planar diagrams to ideal triangulations; 3.1 Octahedral decomposition; 3.2 Collapsing the octahedral decomposition to; 4 Proof of the main theorem; 4.1 Flattening of the collapsed triangulation; 4.2 Variable reduction; Appendix A. Further discussion on collapsing; Appendix B. Braid closures; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: The 1-loop equals torsion conjecture holds for hyperbolic 2-bridge knots.\n- Theorem 4.1: For ˚D as above, τ(T˚D) =±ω(˚D).\n- Definition 2.1: The 1-loop invariant of an essential triangulationT is defined as\n- Definition 2.5: The Ohtsuki–Takata invariant of an essential open diagram ˚D is\n- Lemma 4.2: We have⟨f,e⟩ = 2 for all C-edges e.\n- Lemma 4.3: We have⟨f,e⟩ = 2 for all R-edges e.",
+ "tokens": {
+  "brief": 49,
+  "extended": 383
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-21-the-1-loop-invariant",
+   "title": "The 1-loop invariant",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-2-two-invariants-from-the-asymptotics-of-the-kas",
+   "title": "Two invariants from the asymptotics of the Kashaev invariant",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-003-22-essential-open-diagrams-and-their-potential",
+   "title": "Essential open diagrams and their potential",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-004-23-the-ohtsukitakata-invariant",
+   "title": "The Ohtsuki–Takata invariant",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-005-3-from-planar-diagrams-to-ideal-triangulations",
+   "title": "From planar diagrams to ideal triangulations",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-006-31-octahedral-decomposition",
+   "title": "Octahedral decomposition",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-007-32-collapsing-the-octahedral-decomposition-to-an",
+   "title": "Collapsing the octahedral decomposition to an ideal triangulation",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-008-4-proof-of-the-main-theorem",
+   "title": "Proof of the main theorem",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-009-41-flattening-of-the-collapsed-triangulation",
+   "title": "Flattening of the collapsed triangulation",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-010-42-variable-reduction",
+   "title": "Variable reduction",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-011-appendix-a-further-discussion-on-collapsing",
+   "title": "Appendix A. Further discussion on collapsing",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-012-appendix-b-braid-closures",
+   "title": "Appendix B. Braid closures",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-013-references",
+   "title": "References",
+   "pages": "23-24"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

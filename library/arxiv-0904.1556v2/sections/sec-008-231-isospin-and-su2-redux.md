@@ -7,6 +7,7 @@ section_number: 2.3.1
 pages: 19-22
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
+doc_brief: "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
 ---
 The tale we told of isospin in Section 2.1 only concerned the strong for ce, which
 binds nucleons together into nuclei. We learned about an approximat ion in which

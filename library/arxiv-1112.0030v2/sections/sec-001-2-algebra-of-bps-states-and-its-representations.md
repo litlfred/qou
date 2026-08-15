@@ -7,6 +7,7 @@ section_number: 2
 pages: 7-10
 source_pdf: 1112.0030v2.pdf
 source_sha256: 745f143c2df4734b
+doc_brief: "Homological algebra of knots and BPS states — It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces."
 ---
 Diﬀerentials in knot homology form a part of a larger algebraic struct ure that
 has an elegant interpretation in the geometric / physical framewor k. Because this

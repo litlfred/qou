@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 9-11
 source_pdf: 04procbryden.pdf
 source_sha256: 8baffbc6542c34a5
+doc_brief: "Some computations of Ohtsuki series — We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand"
 ---
 Since q-factorials can be numerically very large, the individual terms
 in (3) can be many orders of magnitude larger than their sum and this

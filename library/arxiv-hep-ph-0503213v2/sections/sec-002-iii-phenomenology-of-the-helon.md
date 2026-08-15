@@ -7,6 +7,7 @@ section_number: III
 pages: 2-4
 source_pdf: 0503213v2.pdf
 source_sha256: 637a9e53b9b30776
+doc_brief: "A topological model of composite preons Sundance O. Bilson-Thompson ∗ — 14 sections: INTRODUCTION; THE HELON MODEL; PHENOMENOLOGY OF THE HELON"
 ---
 MODEL
 A braid on n strands is said to be an element of the

@@ -7,6 +7,7 @@ section_number: 1.1.1
 pages: 70-71
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 ous essential parameters of smooth complex compact curves o f a given genus
 g. The use of this term has been extended to many classiﬁcation problems

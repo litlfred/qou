@@ -7,6 +7,7 @@ section_number: 3.1.3
 pages: 18-19
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
+doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗ — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
 ---
 In this subsection, M 3 denotes a ﬁnite volume hyperbolic manifold, i.e. a man-
 ifold whose ends are cusps.

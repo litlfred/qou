@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 32-32
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
 ---
 what follows. Their cohomology provides an approximation to the coh omology of
 Mζ -ss, in a way which we will make precise in Section 4.1.

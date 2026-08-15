@@ -7,6 +7,7 @@ section_number: 1
 pages: 9-10
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
+doc_brief: "Motivic Gauss–Bonnet formulas — 26 sections: Introduction 1801; Duality and Euler characteristics ; SL-oriented motivic spectra 1813"
 ---
 in SH(X) and a canonical isomorphism
 πX♯(X×B X/ XB.M.)≃ X/BB.M.∧B X/B

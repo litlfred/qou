@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 21-24
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
+doc_brief: "Prepared for submission to JHEP KIAS-P22064 Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455"
 ---
 We collect the trans-series associated to the geometric and conjugate ﬂat connections in a
 vector

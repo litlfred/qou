@@ -7,6 +7,7 @@ section_number: 10.1
 pages: 34-35
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 is said to be admissible if L is algebraically split and ±1-framed. Surgery on S3
 along an admissible framed link yields an integral homology sphere. Conversely,

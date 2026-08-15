@@ -7,6 +7,7 @@ section_number: null
 pages: 45-46
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
+doc_brief: "Modern Theory of Nuclear Forces E. Epelbaum∗ — 38 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 We thank all our collaborators for sharing their insights
 into the topics discussed here. The work of E.E. was sup-

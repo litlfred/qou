@@ -7,6 +7,7 @@ section_number: 4.5.1
 pages: 52-52
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 0→ Zp(1)→Tp(AK )→ Zp→ 0.
 Let us take for γ1 the image of (2 iπ)p∈ Zp(1) in Tp(AK ), and for γ2 any

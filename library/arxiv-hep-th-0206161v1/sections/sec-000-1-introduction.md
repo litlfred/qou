@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-3
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
 ---
 The dynamics of gauge theories is a long and fascinating subj ect. The dynamics of
 supersymmetric gauge theories is a subject with shorter his tory. However, more facts are

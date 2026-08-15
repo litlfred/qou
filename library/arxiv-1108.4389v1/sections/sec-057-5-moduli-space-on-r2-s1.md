@@ -7,6 +7,7 @@ section_number: 5
 pages: 41-42
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 One simple way to test the correspondence M ←→TM is to associate a moduli space to
 each side. In the analogous construction [ 1] of the 4d N = 2 superconformal theory from

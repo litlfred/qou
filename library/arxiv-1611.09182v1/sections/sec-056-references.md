@@ -7,6 +7,7 @@ section_number: null
 pages: 93-97
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 [1] R. Ab lamowicz. Construction of spinors via Witt decomposition and primitive idempo-
 tents: a review . Cliﬀord algebras and spinor structures. Kluwer Academic Publishers,

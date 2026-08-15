@@ -7,6 +7,7 @@ section_number: null
 pages: 42-44
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
+doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
 ---
 constraintsXI→ 0, and the meridian XN→ 2u. In Section C.1, these functions were actu-
 ally used as moment maps to perform a symplectic reduction. Now we s hould do the same

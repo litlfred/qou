@@ -7,6 +7,7 @@ section_number: 12
 pages: 12-14
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
+doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
 ---
 With (3.10) and (3.12) we can construct two Laplacians:
 nn ~ y n + 2y w>

@@ -7,6 +7,7 @@ section_number: 1
 pages: 3-5
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 1.1 Singular similarity structures.
 Consider an oriented surface S, possibly with boundary, and with a number of dis-

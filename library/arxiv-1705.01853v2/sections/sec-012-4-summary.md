@@ -7,6 +7,7 @@ section_number: 4
 pages: 15-16
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
+doc_brief: "Line Operators in the Standard Model David Tong — There is an ambiguity in the gauge group of the Standard Model."
 ---
 The global structure of the Standard Model gauge group depend s on the choice of
 quotient Γ. The diﬀerences in these theories described above are r ather formal in

@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-3
 source_pdf: 0911.4494v2.pdf
 source_sha256: 1ba1c79686b12d98
+doc_brief: "The geometry of Markov traces Ben Webster Geordie Williamson — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on"
 ---
 of classical type were classiﬁed by Geck and Geck-Lambropou lou [Gec98, GL97], but
 such traces form an inﬁnite dimensional vector space. Gomi [ Gom06] constructed

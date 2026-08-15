@@ -7,6 +7,7 @@ section_number: 5
 pages: 9-12
 source_pdf: 2304.12545v1.pdf
 source_sha256: bfc3c2be395b1b2d
+doc_brief: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP — 7 sections: Ideal triangulations and the gluin; Volumes and Dehn surgeries; The Bloch group and the extended B"
 ---
 next section, as well as many of the connections to number theory described in Section 6.
 Deﬁne anN×2N matrixH = (AB ) whose rows form a Z-basis for the lattice spanned by

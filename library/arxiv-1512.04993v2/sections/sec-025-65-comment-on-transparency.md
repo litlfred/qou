@@ -7,6 +7,7 @@ section_number: 6.5
 pages: 42-47
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 Finally, let us comment on the transition in complexity growth that occurs at|tw|−t∗ =
 tR. This transition is precisely the transparent and opaque horizons of [55]. From

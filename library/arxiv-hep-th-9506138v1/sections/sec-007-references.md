@@ -7,6 +7,7 @@ section_number: null
 pages: 28-28
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
+doc_brief: "Black Hole Complementarity vs. Locality — 8 sections: Introduction; The Nice-Slice Argument; The Nice Slice and String Field Th"
 ---
 [1] L. Susskind, L. Thorlacius, and J. Uglum, Phys. Rev. D48 (1993) 3743.
 [2] G. ’t Hooft, Nucl. Phys. B256 (1985) 727; Nucl. Phys. B335 (1990) 138; Phys. Scr.

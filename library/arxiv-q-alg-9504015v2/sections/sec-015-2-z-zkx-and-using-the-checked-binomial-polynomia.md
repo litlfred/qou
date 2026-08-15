@@ -7,6 +7,7 @@ section_number: 2
 pages: 15-17
 source_pdf: 9504015v2.pdf
 source_sha256: ea5588225a393477
+doc_brief: "Witten’s Invariants of Rational Homology Spheres at Prime — We establish a relation between the coeﬃcients of asymptotic expan sion of the trivial connection contribution to Witten’s invariant of"
 ---
 P ∨
 m(α) = ( m!)∗α(α − 1) · · ·(α − m + 1) = ( m!)∗

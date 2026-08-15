@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 11-12
 source_pdf: 04procbryden.pdf
 source_sha256: 8baffbc6542c34a5
+doc_brief: "Some computations of Ohtsuki series — We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand"
 ---
 For small K (up to 100), it turns out that the number of states is
 ≈ K2.9 (rather than K3) while the running time is ≈ K4.2 (rather

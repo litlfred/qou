@@ -7,6 +7,7 @@ section_number: 4.6
 pages: 14-14
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 gulation can be obtained from an oriented one by reordering some of the vertices, Lemma 4.9
 motivates the following.

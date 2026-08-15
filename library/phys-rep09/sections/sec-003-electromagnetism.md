@@ -7,6 +7,7 @@ section_number: null
 pages: 82-82
 source_pdf: phys-rep09.pdf
 source_sha256: cd345d3df9358efc
+doc_brief: "PhysicsReports470(2009)151–238 Contents lists available at ScienceDirect PhysicsReports journal homepage: www.elsevier.com/locate/physrep TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas"
 ---
 TheMaxwellequationsgoverntheevolutionofelectromagneticwaves.Theequationsarelinearintheusualformand,
 althoughtheyhavebeenextensivelystudied,thecomplexityofobtainingapproximatesolutionsisrathersignificant.When

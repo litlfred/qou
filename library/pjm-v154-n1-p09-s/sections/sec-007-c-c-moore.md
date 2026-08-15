@@ -7,6 +7,7 @@ section_number: C
 pages: 24-25
 source_pdf: pjm-v154-n1-p09-s.pdf
 source_sha256: cbf5c02babe5a61e
+doc_brief: "Pacific Journal of Mathematics THE PERIOD MA TRIX OF BRING’S CURVE — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute"
 ---
 University of California
 Berkeley, CA 94720

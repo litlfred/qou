@@ -7,6 +7,7 @@ section_number: 3.3.1
 pages: 24-27
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
 ---
 Consider Chern-Simons theory with gauge group G — either compact or complex —
 on a knot complement M =~M\K, with ∂M =T 2. The phase space M associated to

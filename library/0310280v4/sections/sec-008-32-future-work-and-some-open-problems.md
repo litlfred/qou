@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 26-28
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
 ---
 Here are some of the ideas and questions that occurred to us in the course of the work
 in this paper.

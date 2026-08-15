@@ -7,6 +7,7 @@ section_number: null
 pages: 9-10
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
+doc_brief: "Matem´ atica Contemporˆ anea, Vol. 34, 251–283 http://doi.org/10.21711/231766362008/rmc3411 © 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-comp"
 ---
 Continuing to view S3⊂ R4, let ℘x denote stereographic projection of
 S3−{x} onto the 3-space R3

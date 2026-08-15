@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 5-6
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
+doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm V alues at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
 ---
 The main goal of this paper is to provide some extensive numer ical evidence
 concerning the (in)completeness of the standard relations . Namely, these re-

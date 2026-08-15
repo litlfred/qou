@@ -7,6 +7,7 @@ section_number: null
 pages: 53-54
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 Table XXXVIII compares the 2022 and 2018 recommended
 values of a representative group of constants. However, the

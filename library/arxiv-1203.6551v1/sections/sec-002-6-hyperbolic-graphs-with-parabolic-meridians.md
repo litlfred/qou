@@ -7,6 +7,7 @@ section_number: 6
 pages: 15-18
 source_pdf: 1203.6551v1.pdf
 source_sha256: a8e84f8ed63dbcca
+doc_brief: "On the number of hyperbolic 3-manifolds of a given volume — The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v."
 ---
 In this section, we recall some results on hyperbolic graphs in S3 with parabolic
 meridians; for details see [ 26] and [ 34]. In this paper, spatial graphs may contain

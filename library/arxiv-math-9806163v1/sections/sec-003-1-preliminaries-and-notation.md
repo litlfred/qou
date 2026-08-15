@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-3
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
+doc_brief: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
 ---
 Let F be a ﬁeld of characteristic 0. The algebra of n × n matrices over F is denoted by
 Mn(F ) = Mn. Let A ⊂ B be an inclusion of semisimple algebras. Then A = ⨁ m

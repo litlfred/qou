@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 21-25
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
+doc_brief: "Prepared for submission to JHEP 3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Ca"
 ---
 prescription for calculating the supersymmetric index IM ≡I TM of TM on S2×S1. Here
 we proceed to write down these rules explicitly, and to give several examples of the resulting

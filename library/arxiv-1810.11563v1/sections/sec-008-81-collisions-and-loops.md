@@ -7,6 +7,7 @@ section_number: 8.1
 pages: 21-26
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 Each vertex of the tree represents a unitary operator and for that reason we can think of
 the tree as being embedded in SU (2K). Suppose a collision does occur. This means that

@@ -7,6 +7,7 @@ section_number: null
 pages: 17-18
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
+doc_brief: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES YUYA MURAKAMI — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed"
 ---
 [AH12] J. E. Andersen and B. Himpel. The Witten–Reshetikhin–Turaev invariants of finite order mapping tori II.
 Quantum Topol., 3(3-4):377–421, 2012.

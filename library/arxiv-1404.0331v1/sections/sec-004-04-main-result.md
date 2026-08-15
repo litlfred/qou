@@ -7,6 +7,7 @@ section_number: 0.4
 pages: 2-3
 source_pdf: 1404.0331v1.pdf
 source_sha256: 53d7ce3afaf405e1
+doc_brief: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS ANH T. TRAN — The AJ conjecture, formulated by Garoufalidis, relates the A-poly nomial and the colored Jones polynomial of a knot in the 3-sphere."
 ---
 variety of G, see [CS]. For a manifold Y we use χ(Y ) also to denote χ(π1(Y )). Suppose
 G = Z2. Every pair of generators µ, λ will deﬁne an isomorphism between χ(G) and

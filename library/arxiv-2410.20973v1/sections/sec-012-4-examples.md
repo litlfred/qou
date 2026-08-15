@@ -7,6 +7,7 @@ section_number: 4
 pages: 21-36
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
 ---
 We now go though two explicit examples. One is associated to the ﬁgur e eight knot 4 1,
 where ( A, B) = (1 , 2) and the other is for ( A, B) = (4 , 1). The ﬁrst was studied in [ 9] and

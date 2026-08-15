@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 4-5
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
+doc_brief: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and"
 ---
 p2 and p−2 to be the same as those of the A-polynomial squared. Namely we let
 p2(t, M) = ˜a2(M) = 1 and p−2(t, M) = ˜a−2(M) = 1 .

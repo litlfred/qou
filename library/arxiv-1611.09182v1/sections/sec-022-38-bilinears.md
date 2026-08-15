@@ -7,6 +7,7 @@ section_number: 3.8
 pages: 25-26
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Bilinears and other scalars can now be built by combining the various ideal representations,
 whose SL(2, C) factors, L, ﬁt together like lock and key. Noting that ~L = L−1, let us

@@ -7,6 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: 1311.6841v1.pdf
 source_sha256: ca65879d80b1e1c3
+doc_brief: "Observables in Loop Quantum Gravity with a cosmological constant — 5 sections: Introduction; Contents; Scalar product"
 ---
 constant Λ. In 3d, Chern-Simons theory provides some guiding lines: Λ appears in the quantum
 deformation of the gauge group. The Turaev-Viro model, which is an example of spin foam model is

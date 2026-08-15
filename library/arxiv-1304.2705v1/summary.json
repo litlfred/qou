@@ -1,0 +1,92 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1304.2705v1",
+ "source_sha256": "cb07e66e418e11f2",
+ "brief": "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topolog y can be",
+ "extended": "**FROM STATE INTEGRALS TO q-SERIES**\n\n*STA VROS GAROUF ALIDIS AND RINAT KASHAEV*\n\n16 pp, 14 sections.\n\n**Abstract.** It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topolog y can be written as ﬁnite sums of products of basic hypergeometric series in q = e2πiτ and ˜q = e− 2πi/τ . We illustrate this fact by giving a detailed proof for a family of one-dimens ional integrals which includes state-integral invariants of 4 1 and 5 2 knots.\n\n**Outline.** 1 Introduction; 1.1 State-integrals and their q-series; 1.3 The case of the 41 knot; 1.4 The case of the 52 knot; 2 Proofs; 2.1 A residue computation; 2.5 Some auxiliary power series; 2.6 Proof of Proposition 2.2; 2.7 Proof of Lemma 1.5; 3 An application: state-integrals of the 41 an; 3.1 Proof of Corollary 1.7; 3.2 Proof of Corollary 1.8; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Corollary 1.6: (a) If we deﬁne ω(q, x) = FA,B(q, qx)/FA,B(q, x) and ω(q, x)n =∏ n\n- Lemma 2.6: For part (b), we will use the series",
+ "tokens": {
+  "brief": 48,
+  "extended": 274
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-state-integrals-and-their-q-series",
+   "title": "State-integrals and their q-series",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-13-the-case-of-the-41-knot",
+   "title": "The case of the 41 knot",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-14-the-case-of-the-52-knot",
+   "title": "The case of the 52 knot",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-004-2-proofs",
+   "title": "Proofs",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-005-21-a-residue-computation",
+   "title": "A residue computation",
+   "pages": "6-10"
+  },
+  {
+   "id": "sec-006-25-some-auxiliary-power-series",
+   "title": "Some auxiliary power series",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-007-26-proof-of-proposition-22",
+   "title": "Proof of Proposition 2.2",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-008-27-proof-of-lemma-15",
+   "title": "Proof of Lemma 1.5",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-009-3-an-application-state-integrals-of-the-41-and-5",
+   "title": "An application: state-integrals of the 41 and 52 knots",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-010-31-proof-of-corollary-17",
+   "title": "Proof of Corollary 1.7",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-011-32-proof-of-corollary-18",
+   "title": "Proof of Corollary 1.8",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-012-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-013-references",
+   "title": "References",
+   "pages": "15-16"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

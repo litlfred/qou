@@ -7,6 +7,7 @@ section_number: null
 pages: 23-24
 source_pdf: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf
 source_sha256: 3fb38d4cfd20d4fb
+doc_brief: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants"
 ---
 [1] T Ohtsuki. A polynomial invariant of integral homology 3-spheres. Math Proc Camb Phil Soc, 1995, 117: 
 83-112 

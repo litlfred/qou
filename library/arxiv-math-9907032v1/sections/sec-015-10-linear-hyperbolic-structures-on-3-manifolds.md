@@ -7,6 +7,7 @@ section_number: 10
 pages: 23-26
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 As explained in [19], the study of Euclidean triangulations on surfaces is essentially
 equivalent to the study of hyperbolic ideally triangulated complexes, which are

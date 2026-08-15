@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 14-15
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 The quantum Teichm¨ uller theory [Fo97, Ka98, CF99, CF00] co nstructs a non-commutative
 algebra Ab deforming the Poisson-algebra of geodesic length function s on Teichm¨ uller space.

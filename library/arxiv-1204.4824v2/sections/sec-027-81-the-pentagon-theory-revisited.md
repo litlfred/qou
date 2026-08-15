@@ -7,6 +7,7 @@ section_number: 8.1
 pages: 48-52
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 The ﬁrst new example we consider is obtained by takingK = 3 andC = CP1, with a single
 defect at z =∞, imposing the boundary conditions that φ2 has a pole of order 4 and φ3

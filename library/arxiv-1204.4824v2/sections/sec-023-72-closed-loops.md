@@ -7,6 +7,7 @@ section_number: 7.2
 pages: 43-45
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 A more interesting possibility is shown in Figure 27. This case involves an S-wall which
 winds around a cylinder in C many times, more and more tightly as ϑ→ϑc. In this case

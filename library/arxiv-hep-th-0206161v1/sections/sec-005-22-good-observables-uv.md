@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 9-12
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
 ---
 In the applications of the susy gauge theory to Donaldson the ory, where one works with
 the standard topological supercharge Q, the observables one is usually interested in are the

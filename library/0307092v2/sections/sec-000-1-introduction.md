@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-4
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
+doc_brief: "We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
 ---
 There are several variations of the deﬁnition of the Bloch gr oup in the litera-
 ture; by [7] they diﬀer at most by torsion and they agree with ea ch other for

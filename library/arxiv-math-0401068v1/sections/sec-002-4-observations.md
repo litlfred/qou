@@ -7,6 +7,7 @@ section_number: 4
 pages: 6-11
 source_pdf: 0401068v1.pdf
 source_sha256: 8168d7e7f6069978
+doc_brief: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA — @We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum’s"
 ---
 We start with reviewing Wilf-Zeilberger’s algorithm. For more details, w e refer to [4] and
 [3]. A disctrete function F (n, k) is called proper q-hypergeometric if it is one of the form

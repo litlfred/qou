@@ -7,6 +7,7 @@ section_number: 18
 pages: 18-19
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 that αi is the angle cut oﬀ byσi. Recall that, in Deﬁnition 2.3, we deﬁned
 ϵi =

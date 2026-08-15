@@ -7,6 +7,7 @@ section_number: 8.3
 pages: 58-60
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
 ---
 independent standard Gaussian random variables(Ξ k)k=2,3,... and consider the ran-
 dom series

@@ -7,6 +7,7 @@ section_number: null
 pages: 9-10
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
+doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 3d Calabi-Yau varieties
 Recall that a non-commutative Calabi-Yau variety of dimens ion d (a.k.a

@@ -7,6 +7,7 @@ section_number: 8
 pages: 8-8
 source_pdf: 9909088v1.pdf
 source_sha256: 52cfb568951f195f
+doc_brief: "THE GAUSS MAP AND A NONCOMP ACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEA VES ON SEMIABELIAN V ARIETIES — For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as"
 ---
 be the associated semiabelian variety.
 We denote ~Li = p∗Li and let fi∈ H 0(G, ~Li) be the tautological section. As

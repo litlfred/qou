@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 22-23
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 We now show that any two quasifuchsian representations are quasiconformally conjugate.
 Theorem 3.4. If ρ1,ρ 2∈ QF (S), then there exists a quasiconformal map ϕ : ∂H3→ ∂H3, so

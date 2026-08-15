@@ -7,6 +7,7 @@ section_number: 7.1
 pages: 19-22
 source_pdf: 1172-4.pdf
 source_sha256: ffc47732ce0138e9
+doc_brief: "Notes on Construction of the Knot Invariant from $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$Dilogarithm Function El5~Bg3XBg3X1!N#>8Ln8&5f2JJ*N#3XUs96 — 13 sections: D"
 ---
 The ﬁgure-eight knot is;
 62

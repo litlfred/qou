@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 20-24
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
 ---
 We are now ready to state and prove our transverse version of the MTWS.
 By Proposition 1 we know that there is a transversal clasp annulusTA associated to any

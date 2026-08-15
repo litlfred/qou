@@ -7,6 +7,7 @@ section_number: 5.5.3
 pages: 189-189
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 list, and if B/E is ramiﬁed at the place v|p, then ∆ p(e0,e 1,e∞) exists and
 is an arithmetic p-adic triangle group; more precisely, it is commensurable

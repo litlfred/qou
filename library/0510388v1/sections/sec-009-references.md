@@ -7,6 +7,7 @@ section_number: null
 pages: 107-108
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
+doc_brief: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 10 sections: Magnetic fields in R; Vector-valued Green’s operators in; IN LEFT-TRANSLATION FORMAT"
 ---
 1820 Jean-Baptiste Biot and Felix Savart, Note sur le magnetisme de la pile de Volta, 
  Annales de chimie et de physique, 2nd ser., vol 15, 222-223. 

@@ -7,6 +7,7 @@ section_number: 3
 pages: 13-21
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
+doc_brief: "Motivic Gauss–Bonnet formulas — 26 sections: Introduction 1801; Duality and Euler characteristics ; SL-oriented motivic spectra 1813"
 ---
 In this section, we discuss the deﬁnition and basic features of SL-oriented motivic spectra. This is treated
 in [Ananyevskiy 2016a] in the context of the motivic stable homotopy category SH(k) for k a ﬁeld.

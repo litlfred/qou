@@ -1,0 +1,37 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0808.1533v1",
+ "source_sha256": "85bb9732afdd70ea",
+ "brief": "On the third order helicity of magnetic ﬁelds on invariant domains in S3 R. Komendarczyk ∗ — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld X.",
+ "extended": "**On the third order helicity of magnetic ﬁelds on invariant domains in S3 R. Komendarczyk ∗**\n\n*December 8, 2018*\n\n31 pp, 3 sections.\n\n**Abstract.** We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld X. The proposed approach exploits correspondence between th e Milnor ¯µ 123-invariant for 3-component links and the homotopy invarian ts of maps to conﬁg- uration spaces, and we provide a simple geometric proof of th is fact in the case of borromean links. Based on these connections we develop a for mulation for the third order helicity of X on invariant unlinked domains of X, and provide Arnold’s style er- godic interpretation of this invariant as an average asympt otic ¯µ 123-invariant of orbits of X. We also obtain a lower bound for the L2-energy of X.\n\n**Outline.** Introduction; Energy bound.; Comparison to the known approaches via Massey \n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.2: Let LBor = {L1, L2, L3} be a 3-component link in S3 link homotopic to the\n- Theorem 3.1: Given X1, X2 ∈ Vectvol(M), The following\n- Theorem 4.3: On every unlinked invariant handlebody T in\n- Theorem 5.1: For any real valued L1-function F\n- Theorem 5.3: ). Given (X; T ), the following limit\n- Theorem 5.4: On every unlinked domain T",
+ "tokens": {
+  "brief": 49,
+  "extended": 324
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-23"
+  },
+  {
+   "id": "sec-001-energy-bound",
+   "title": "Energy bound.",
+   "pages": "23-27"
+  },
+  {
+   "id": "sec-002-comparison-to-the-known-approaches-via-massey-pr",
+   "title": "Comparison to the known approaches via Massey products.",
+   "pages": "27-31"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

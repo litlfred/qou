@@ -7,6 +7,7 @@ section_number: 1
 pages: 13-14
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
+doc_brief: "arxiv-1012.5432v4 — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 Consider a physical system consisting of n identical point particles. (Note that for these
 particles to be truly indistinguishable, the system has to be quantum mechanical.) In three

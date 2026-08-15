@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 7-7
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 subgroup of diagonal matrices, the torusTc acts on P-decorations, Ptolemy assignments and
 natural cocycles. This action is called thediagonal action and is illustrated in Figure 1.

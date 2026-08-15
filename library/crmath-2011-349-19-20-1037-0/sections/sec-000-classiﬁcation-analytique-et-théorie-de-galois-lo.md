@@ -7,6 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
+doc_brief: "C. R. Acad. Sci. Paris, Ser. I 349 (2011) 1037–1039 Contents lists available at SciVerse ScienceDirect — Van der Put and Reversat described the form of a pure q-difference module with non integral"
 ---
 aux q-différences à pentes non entières
 Local analytic classiﬁcation and local Galois theory of q-difference modules

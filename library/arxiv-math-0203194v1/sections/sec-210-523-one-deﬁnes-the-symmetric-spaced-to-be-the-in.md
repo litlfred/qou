@@ -7,6 +7,7 @@ section_number: 5.2.3
 pages: 92-92
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 stable loci of D∨ with respect to all maximal Qp-split tori T in J′. This is
 a p-adic manifold in the sense of I.1.3.6. It is also called the p-adic period

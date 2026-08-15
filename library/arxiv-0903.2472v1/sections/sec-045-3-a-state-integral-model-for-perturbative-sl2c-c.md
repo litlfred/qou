@@ -7,6 +7,7 @@ section_number: 3
 pages: 27-27
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 In this section, we introduce a “state integral” model for Z (ρ)(M ; ℏ) in the simplest case
 of GC = SL(2, C). Our construction will rely heavily on the work of Hikami [2 6, 27],

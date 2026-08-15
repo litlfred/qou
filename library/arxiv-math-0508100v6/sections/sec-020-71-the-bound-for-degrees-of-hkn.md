@@ -7,6 +7,7 @@ section_number: 7.1
 pages: 16-17
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
+doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
 ---
 deg±(f g) = deg ±(f ) + deg±(g), and deg +(f + g) ≤ max(deg+(f ), deg+(g)).
 From deg±{k} = ±k/2, we get

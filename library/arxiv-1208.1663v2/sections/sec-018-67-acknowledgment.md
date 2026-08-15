@@ -7,6 +7,7 @@ section_number: 6.7
 pages: 23-23
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 Christoph Koutschan, Henry Segerman and Josephine Yu for enlightening conversations.
 The author wishes to especially thank Tudor Dimofte for explaining the 3D index, and for

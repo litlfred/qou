@@ -7,6 +7,7 @@ section_number: null
 pages: 23-27
 source_pdf: 0808.1533v1.pdf
 source_sha256: 85bb9732afdd70ea
+doc_brief: "On the third order helicity of magnetic ﬁelds on invariant domains in S3 R. Komendarczyk ∗ — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld X."
 ---
 In this section we indicate how the quantity H123(X; T ) invariant under frozen-in-ﬁeld defor-
 mations provides a lower bound for the L2-energy E2(X) of a volume preserving ﬁeld X on

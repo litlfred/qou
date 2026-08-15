@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-7
 source_pdf: 2304.07001v3.pdf
 source_sha256: b6c0d7f50b6407f1
+doc_brief: "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a f ormal power series associated to elements in the Habiro ring that come from radi al"
 ---
 The modern theory of resurgence began with the voluminous wo rks of ´Ecalle in 1981 [ 16, 17]
 and 1985 [ 18]. This theory now plays a vital rˆ ole in a remarkable number o f diverse areas, to

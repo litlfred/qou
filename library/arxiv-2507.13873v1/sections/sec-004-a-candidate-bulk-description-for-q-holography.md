@@ -7,6 +7,7 @@ section_number: null
 pages: 11-12
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
+doc_brief: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡ — We study the emergence ofq-deformed spacetime in a lower-dimensional"
 ---
 In the previous section, we derived theq-conformal two-point function by constraining its
 form (2.21) through the requirement of invariance under the global part of theq-conformal

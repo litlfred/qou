@@ -7,6 +7,7 @@ section_number: 3
 pages: 7-12
 source_pdf: 0905.0228v4.pdf
 source_sha256: 1744545d0f210949
+doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POL YNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
 ---
 By deﬁnition (1.13) and (1.7) we have
 hn+1(x, s ; q) = qnxhn(x, s ; q) − [n]qshn−1(x, s ; q). (3.1)

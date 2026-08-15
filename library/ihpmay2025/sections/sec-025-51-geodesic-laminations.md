@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 35-36
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 We begin with a brief discussion of the theory of geodesic laminations.
 A geodesic lamination on a hyperbolic surface X is a closed set which is a disjoint union of

@@ -7,6 +7,7 @@ section_number: 11
 pages: 15-17
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 tetrahedra, with respective shape parameters Z(′)(′′), W(′)(′′), Y(′)(′′). 5 This leads to a 6-
 dimensional product phase space P{∂∆i}≈{ (Z,Z′,Z′′,W,W ′,W′′,Y,Y ′,Y ′′)} with relations

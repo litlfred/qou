@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 8-9
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
+doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
 ---
 The counting of BPS-states in CHL models have lead to deep insights into the quantum
 properties of certain black holes. In this paper we shall focus on 1/2 BPS-states which in

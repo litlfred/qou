@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: lee-vanderveen-colored-jones-polynomials-without-tails.pdf
 source_sha256: fcc45aebd34e25dc
+doc_brief: "COLORED JONES POLYNOMIALS WITHOUT TAILS — We exhibit an in nite family of knots with the property that the rst coecient of the n-colored Jones polynomial grows linearly with n."
 ---
 The colored Jones polynomials are a well known knot invariant with many connections to other
 parts of mathematics [11, 16]. It is the Reshetikhin-Turaev knot invariant corresponding to the

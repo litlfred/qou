@@ -7,6 +7,7 @@ section_number: 1.8
 pages: 12-12
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
 ---
 is the introduction above, a second part which goes up to Section 4.3 , and then a
 third part. The purpose of the second part is to prove the cohomo logical integral-

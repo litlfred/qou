@@ -7,6 +7,7 @@ section_number: 8.2.10
 pages: 55-55
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 At very late times, of order the classical recurrence time eS, the complexity must
 saturate and stop increasing [55]. It is a nontrivial test of our duality that there is

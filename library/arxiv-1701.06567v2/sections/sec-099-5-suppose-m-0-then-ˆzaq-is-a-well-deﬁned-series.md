@@ -7,6 +7,7 @@ section_number: 5
 pages: 53-53
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 |q|< 1. Unless M3 is a Lens space, ˆZa(q) does not admit analytic continuation (in the
 usual sense) outside of|q|< 1 due to Fabry gap theorem (because the powers of q with

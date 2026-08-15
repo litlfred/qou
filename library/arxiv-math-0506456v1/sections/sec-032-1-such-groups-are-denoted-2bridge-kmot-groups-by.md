@@ -7,6 +7,7 @@ section_number: 1
 pages: 30-33
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
+doc_brief: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e"
 ---
 the 2–bridge knot groups. Following Riley we say that a representat ion ψ : G →
 SL(2, C) is aﬃne when the image of ψ ﬁxes exactly one point in CP1 and not aﬃne

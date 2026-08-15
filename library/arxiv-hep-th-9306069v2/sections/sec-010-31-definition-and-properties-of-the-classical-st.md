@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 18-22
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 We deﬁne the classical stretched horizon as follows. Consid er the classical area function
 (2.2) along the global event horizon. For a black hole formed by gravitational collapse,

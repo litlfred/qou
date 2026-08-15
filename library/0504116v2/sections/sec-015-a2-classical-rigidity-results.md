@@ -7,6 +7,7 @@ section_number: null
 pages: 22-24
 source_pdf: 0504116v2.pdf
 source_sha256: 24a8c998e40aed5d
+doc_brief: "On deformations of hyperbolic 3–manifolds with geodesic boundary ROBERTO FRIGERIO Let M be a complete ﬁnite-volume hyperbolic 3–manifold with compact non-empty geodesic boundary and k toric cusps, and"
 ---
 Let N be a smooth 3–manifold without boundary and supposeρ0 : π1(N)→ PSL(2, C)
 is the holonomy representation for a complete ﬁnite-volume hyperbolic structure on N .

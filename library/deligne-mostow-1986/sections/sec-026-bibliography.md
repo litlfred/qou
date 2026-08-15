@@ -7,6 +7,7 @@ section_number: null
 pages: 85-86
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
+doc_brief: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 [i] APPEL, P., a) CR Acad. Sci., Paris, 16 fevrier 1880; b) Sur les fbnctions hygergeometriques de deux variables,
 J. de Math., 3® ser., VIII (1882), 173-216.

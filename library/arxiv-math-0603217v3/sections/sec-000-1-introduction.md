@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-1
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
+doc_brief: "A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume"
 ---
 For a knot K in the three-sphere S3, one can deﬁne the colored Jones polynomial
 JN (K; t) as the quantum invariant corresponding to the N -dimensional irreducible

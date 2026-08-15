@@ -7,6 +7,7 @@ section_number: 4.7
 pages: 57-58
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 associated to torsion classes in K3. We will consider two simple examples: one coming from
 a quadratic Gauss sum (and hence related to the asymptotics of Jacobi θ-series) and the

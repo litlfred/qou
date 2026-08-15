@@ -7,6 +7,7 @@ section_number: null
 pages: 25-27
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
+doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
 ---
 It is well-known that the complement of the Borromean rings B can be geometrically identiﬁed by gluing
 two regular ideal octahedra, see [ Thu77]. As a result, the volume vol( S3 − B) of S3 − B is equal to 2 v8.

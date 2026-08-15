@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 30-34
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
+doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 Braid foliations are not unique, and in this section we describe some of the ways we have
 discovered to modify them. This is an essential part of the argument in the proof of the

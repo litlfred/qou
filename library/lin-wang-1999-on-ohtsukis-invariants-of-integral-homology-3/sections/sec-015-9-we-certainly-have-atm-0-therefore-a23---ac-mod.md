@@ -7,6 +7,7 @@ section_number: 9
 pages: 13-13
 source_pdf: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf
 source_sha256: 3fb38d4cfd20d4fb
+doc_brief: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants"
 ---
 question of whether A2/3 mod 2 is a homology spin cobordism invariant. 
 We end this section with a proposition which relates Vassiliev invariants coming from Con- 

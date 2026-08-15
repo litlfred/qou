@@ -7,6 +7,7 @@ section_number: 1
 pages: 21-21
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 constant sheaves of sets on X. They coincide [ Ber90, 3.3.4] with topological
 coverings of the rigid analytic variety associated to X.

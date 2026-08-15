@@ -7,6 +7,7 @@ section_number: 5.6
 pages: 47-52
 source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised"
 ---
 this into a homogeneous equation of one degree higher
 tf (t; q) + (1 − 3qt)f (qt; q) + (3tq2 − 1)f (q2t; q) − tq3f (q3t; q) = 0 (250)

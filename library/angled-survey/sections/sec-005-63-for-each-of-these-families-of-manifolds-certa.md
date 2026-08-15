@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 3-4
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 proving thatV : A(τ) → R has a critical point also imply that the combinatorially
 natural triangulationτ is in fact thegeometrically canonicalway to subdivideM.

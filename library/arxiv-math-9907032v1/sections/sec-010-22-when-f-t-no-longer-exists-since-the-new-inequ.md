@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 17-19
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 non-negative, it follows that for the objective function to equal 0 ,u must be 0.
 Now, we follow Section 3 again, to deﬁne a program L′

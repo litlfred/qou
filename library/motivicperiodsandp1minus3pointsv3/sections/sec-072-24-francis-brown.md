@@ -7,6 +7,7 @@ section_number: 24
 pages: 24-25
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
+doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
 ---
 [2] A. Borel: Stable real cohomology of arithmetic groups , Annales Ecole Normale Sup.
 7, No. 4, (1974), 235-272.

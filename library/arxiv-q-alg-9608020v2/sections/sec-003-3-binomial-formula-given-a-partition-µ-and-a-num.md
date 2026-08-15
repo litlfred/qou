@@ -7,6 +7,7 @@ section_number: 3
 pages: 3-4
 source_pdf: 9608020v2.pdf
 source_sha256: 727268098db7f23d
+doc_brief: "SHIFTED JACK POL YNOMIALS, BINOMIAL — In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St])."
 ---
 H ′(µ ) =
 ∏

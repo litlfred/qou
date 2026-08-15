@@ -7,6 +7,7 @@ section_number: 2
 pages: 1-1
 source_pdf: 2109.04664v4.pdf
 source_sha256: 639cd40a29752e3f
+doc_brief: "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
 ---
 Dedicated to the memory of Toshie Takata
 Abstract. W e study the asymptotic behavior of the N -dimensional colored

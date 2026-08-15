@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 34-38
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 There is also a second, more interesting kind of jump which can occur at a critical phase
 ϑ =ϑc. In contrast to the previous case, these jumps do not arise because of a change in

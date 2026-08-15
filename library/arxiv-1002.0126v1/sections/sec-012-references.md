@@ -7,6 +7,7 @@ section_number: null
 pages: 38-39
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
+doc_brief: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
 ---
 [1] J. W. Alexander, A lemma on systems of knotted curves. , Proc. Nat. Acad. Sci. U.S.A. 9
 (1923), no. 3, 93–95.

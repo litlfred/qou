@@ -7,6 +7,7 @@ section_number: 18
 pages: 18-19
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
+doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
 ---
 By applying the period map, each case gives a statement about cyclotomic
 multiple zeta values. In the case N = 2, the underlying ﬁeld is still Q, and it

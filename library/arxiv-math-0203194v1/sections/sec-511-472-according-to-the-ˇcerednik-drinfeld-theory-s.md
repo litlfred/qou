@@ -7,6 +7,7 @@ section_number: 4.7.2
 pages: 175-175
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 (and the description of the p-adic period mapping given there as a quotient
 of solutions of the Gauss-Manin connection), there is an ent irely parallel

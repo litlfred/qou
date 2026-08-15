@@ -7,6 +7,7 @@ section_number: 1
 pages: 8-11
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p -adic cyclotomic multiple zeta values David Jarossay p-adic cyclotomic multiple zeta values depend on the choice of a number of iterations"
 ---
 we have a canonical embedding5y,x(K)⊂ K⟨⟨e0∪µN⟩⟩. We consider now an enrichment of K⟨⟨e0∪µN⟩⟩
 into a ultrametric complete normed K -algebra: we review facts from [Jarossay 2015], and we add a

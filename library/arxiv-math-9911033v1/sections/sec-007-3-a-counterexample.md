@@ -7,6 +7,7 @@ section_number: 3
 pages: 11-12
 source_pdf: 9911033v1.pdf
 source_sha256: 196c05d2e3419565
+doc_brief: "ON THE LOWER BOUND ESTIMA TES OF SECTIONS OF THE CANONICAL BUNDLES OVER A RIEMANN SURF ACE ZHIQIN LU Contents 1. Introductions 1 2. A lower bound estimate 4 3. A counterexample 11 4. Partial uniform e"
 ---
 In the last section, we give a lower bound estimate of (1.1) in terms of
 the injective radius of M . In this section, we give a counterexample that

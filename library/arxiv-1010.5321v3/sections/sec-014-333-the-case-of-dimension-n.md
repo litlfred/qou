@@ -7,6 +7,7 @@ section_number: 3.3.3
 pages: 13-14
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
+doc_brief: "Formulas on hyperbolic volume ∗ ´A.G.Horv´ ath Department of Geometry — This paper collects some important formulas on hyperbolic volume."
 ---
 The following lemma plays an important role in the n-dimensional case.
 Lemma 1 We have two k-dimensional aﬃne subspaces Hk and H ′

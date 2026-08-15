@@ -7,6 +7,7 @@ section_number: 2.5
 pages: 30-32
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
+doc_brief: "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
 ---
 Our description of the Standard Model is almost at an end. We have t old you about
 its gauge group, GSM, its representation F ⊕F ∗ on the ﬁrst generation of fermions

@@ -7,6 +7,7 @@ section_number: null
 pages: 8-9
 source_pdf: 0205308v2.pdf
 source_sha256: 2de5a4f40d80174c
+doc_brief: "WDVV Equations as Functional Relations — 5 sections: Introduction; WDVV and dispersionless Hirota equ; The associativity equations as coc"
 ---
 Although the WDVV equations arise in several diﬀerent physical set tings no unifying
 geometry as yet underpins them. With the additional restrictions o f topological ﬁeld

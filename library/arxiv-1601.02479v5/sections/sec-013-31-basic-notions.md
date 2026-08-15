@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 25-28
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
 ---
 we brieﬂy recall. Let Q = ( Q0, Q1, s, t) denote a quiver, that is, a pair of ﬁnite
 sets Q0 and Q1, and a pair of maps s : Q1 → Q0 and t : Q1 → Q0, taking an arrow

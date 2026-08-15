@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 6-6
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
 ---
 monomial) the set of complex-valued functions of N of the form
 exp (ON →∞(1) + log(N )ON →∞(1)).

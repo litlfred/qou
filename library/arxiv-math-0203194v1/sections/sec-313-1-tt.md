@@ -7,6 +7,7 @@ section_number: 1
 pages: 134-134
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 = Gal(H(t)sep/H(t)) is sent to 1 if
 G is torsion-free. This means that for any

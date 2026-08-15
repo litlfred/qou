@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 11-12
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 discrete integer variables e,m which satisﬁes Equations (3.1a) and 3.1b. Section 4.1 implies
 that f(0,e ) satisﬁes the 3-term recursion

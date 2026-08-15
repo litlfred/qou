@@ -7,6 +7,7 @@ section_number: 3
 pages: 13-15
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
 ---
 the “quantumG-invariants” of knots and links. This was supplied by quantum Chern-
 Simons theory with compact gauge group G in [3], and reinterpreted via quantum

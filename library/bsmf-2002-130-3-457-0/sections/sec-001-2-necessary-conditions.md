@@ -7,6 +7,7 @@ section_number: 2
 pages: 8-10
 source_pdf: BSMF_2002__130_3_457_0.pdf
 source_sha256: 63f79235d0c13ba8
+doc_brief: "Bull. Soc. math. France 130 (3), 2002, p. 457–491 HYPERIDEAL POL YHEDRA IN HYPERBOLIC 3-SP ACE by Xiliang Bao & Francis Bonahon — —A h y p e r i d e a l p o l y h e d r o n i s a n o n - c o m p a c"
 ---
 Proposition 5 .— Let Γ be the dual graph of a hyperideal polyhedron P in H3
 and, for every edge e of Γ,l e t θe ∈ ]0,π [ be the external dihedral angle of P

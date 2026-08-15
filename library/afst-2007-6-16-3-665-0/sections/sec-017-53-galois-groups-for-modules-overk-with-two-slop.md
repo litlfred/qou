@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 35-38
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
+doc_brief: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques — 24 sections: Introduction; Classiﬁcation of q-diﬀerence equat; Some notation and formulas"
 ---
 Let theq-diﬀerence moduleM over K be given by an exact sequence
 0 →P1 →M →P2 → 0, whereP1,P 2 are pure with slopesλ1 <λ 2. The

@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-14
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
+doc_brief: "We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
 ---
 In this section we shall interpret ˆC as a space of parameters for what we call
 “combinatorial ﬂattenings” of ideal hyperbolic simplices . We need this to deﬁne

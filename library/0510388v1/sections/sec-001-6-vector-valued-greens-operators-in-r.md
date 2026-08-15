@@ -7,6 +7,7 @@ section_number: 6
 pages: 17-22
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
+doc_brief: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 10 sections: Magnetic fields in R; Vector-valued Green’s operators in; IN LEFT-TRANSLATION FORMAT"
 ---
 3 ,  S3  and  H3 . 
  

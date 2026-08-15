@@ -7,6 +7,7 @@ section_number: 0
 pages: 5-5
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
 ---
 the equalities (see e.g. [I] Lemma 4.1.I)
 j(σ1) =

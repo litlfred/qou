@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 40-44
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 Given our assumptions about the microstructure of the stret ched horizon, it is evident
 that no real loss of information takes place during black hol e evaporation. Nevertheless,

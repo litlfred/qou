@@ -7,6 +7,7 @@ section_number: 12
 pages: 12-12
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 element considered in Lemma 2.3(c). In any case, it commutes with d′
 j+1 up

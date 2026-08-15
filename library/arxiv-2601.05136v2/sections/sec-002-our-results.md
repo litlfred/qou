@@ -7,6 +7,7 @@ section_number: null
 pages: 3-4
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
+doc_brief: "Stateintegralsforthequantized SL2(C)Chern-Simonsinvariant CalvinMcPhail-Snyder DepartmentofMathematics,DukeUniversity calvin@sl2.site — Previous work of the author and N."
 ---
 LetK be an oriented, framed knot inS3 andρ a decorated representation ofK, which is a
 representationρ: π1(S3\K)→ SL2(C) along with a choice of eigenspace for the image of

@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 114-115
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 We brieﬂy recall here the general construction of which the v ector bundle
 in subsection 6.2.1 is an example, and then give an applicati on. This is based

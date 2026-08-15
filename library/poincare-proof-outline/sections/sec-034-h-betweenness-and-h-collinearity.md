@@ -7,6 +7,7 @@ section_number: null
 pages: 86-87
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 For three h-collinear points at least one of the three possible h-betweeness relations must hold.
 lemma poincare-collinear3-between:

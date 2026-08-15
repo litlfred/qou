@@ -7,6 +7,7 @@ section_number: 0
 pages: 40-42
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 for some α. In particular, lα(u) as given by (3.46) and m =eu obey (2.51).
 To analyze generic critical points of V , observe that the critical point equations take

@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 60-63
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 ForM3 = S2×S1, the theory T [M3] is a particular case of ( 3.120) with p = 0 and g = 0,
 that is the theory of 3d N = 2 vector multiplet with gauge group G = G = SU (2). In this

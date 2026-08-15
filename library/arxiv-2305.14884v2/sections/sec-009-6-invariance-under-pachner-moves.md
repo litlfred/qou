@@ -7,6 +7,7 @@ section_number: 6
 pages: 23-25
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
+doc_brief: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further"
 ---
 In this section, we will prove that Φ Ξ is invariant under 2–3 Pachner moves. There are
 several versions of the 2–3 move (and of the corresponding pent agon identity in Teichm¨ uller

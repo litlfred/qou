@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 8-9
 source_pdf: 04procbryden.pdf
 source_sha256: 8baffbc6542c34a5
+doc_brief: "Some computations of Ohtsuki series — We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand"
 ---
 The Ohtsuki series ∑ ∞
 m=0 λm(q − 1)m will depend on S and T (and U,

@@ -7,6 +7,7 @@ section_number: 2.2.1
 pages: 50-51
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 Here we consider the case of the torsion of the cellular complexC∗(M, Ad◦ρ) with
 coeﬃcients in sl2(k( ¯X)) twisted by a representationρ : π1(M)→ SL2(k( ¯X)). We

@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-13
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
+doc_brief: "Black Hole Complementarity vs. Locality — 8 sections: Introduction; The Nice-Slice Argument; The Nice Slice and String Field Th"
 ---
 Although the nice-slice argument seems very general, we wil l present evidence from
 string theory that it fails. A key assumption that goes into t he nice-slice argument is that

@@ -7,6 +7,7 @@ section_number: 28
 pages: 28-30
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
+doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
 ---
 supersymmetries of N = 4 SYM are broken when the theory is perturbed by the
 addition of a mass term to the Lagrangian). The extra symmetr y of the N =

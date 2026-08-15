@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 4-6
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
+doc_brief: "EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
 ---
 M/N in terms of the state-sums GM,N , the Rogers dilogarithm and the cyclic dilogarithm.
 Fix an admissible pair ( M, N ), and deﬁne

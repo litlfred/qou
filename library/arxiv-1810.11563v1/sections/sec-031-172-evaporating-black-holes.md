@@ -7,6 +7,7 @@ section_number: 17.2
 pages: 65-67
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 Finally there are black holes in asymptotically ﬂat space that can evaporate. Such black
 holes may start out in low complexity pure states. As they evaporate and shrink they

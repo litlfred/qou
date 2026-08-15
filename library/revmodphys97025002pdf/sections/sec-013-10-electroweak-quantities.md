@@ -7,6 +7,7 @@ section_number: 10
 pages: 5-5
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 The recommended values for the mass of the tau lepton mτ,
 Fermi coupling constant GF, and sine squared of the weak

@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 13-15
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Recently, it has been emphasized in the fundamental physics community, [30], that theories
 like general relativity do a poor job of encapsulating our experience of events unfolding.

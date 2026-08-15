@@ -7,6 +7,7 @@ section_number: 4.6
 pages: 29-30
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 In the last subsection we discussed that large charged black holes may be unstable to
 growing charged hair. In this subsection, we will look at an example in which this

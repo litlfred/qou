@@ -7,6 +7,7 @@ section_number: 10
 pages: 10-12
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
+doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
 ---
 Using (3.4) with θ = ωb η = cθp it follows that Ω^—Ω^, and if one uses again (3.4)
 with θ = ή, and η holomorphic, then

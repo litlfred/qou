@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
+doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 In a seminal 2010 paper [31], Zagier defined a new type of modular object which he
 called a quantum modular form. This new notion was meant to capture the behavior of a

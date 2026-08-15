@@ -7,6 +7,7 @@ section_number: null
 pages: 42-44
 source_pdf: 1112.0030v2.pdf
 source_sha256: 745f143c2df4734b
+doc_brief: "Homological algebra of knots and BPS states — It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces."
 ---
 For a nonnegative integer N we deﬁne the quantum dimension [ N ] to be
 [N ] = qN− q−N

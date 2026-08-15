@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 20-22
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
+doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
 ---
 knots
 The twist knots Kp for integer p are shown in Figure 2. Their planar projec-

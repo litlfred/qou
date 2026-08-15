@@ -7,6 +7,7 @@ section_number: null
 pages: 26-29
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 The state integral of the three-twist knot χ52(u; ℏ) can be expressed explicitly as [23, 29, 30]
 χ52(u; ℏ) =e−πi

@@ -7,6 +7,7 @@ section_number: 4
 pages: 53-53
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 On the other hand, let γ2∈Tp(AQp
 ) be such that the Weil pairing ⟨γ1,γ 2⟩∈

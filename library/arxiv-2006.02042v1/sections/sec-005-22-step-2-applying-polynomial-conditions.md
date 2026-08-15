@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 5-8
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
+doc_brief: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and"
 ---
 be Laurent polynomials. This imposes additional conditions on b0, but it is hard to work
 with rational equations in terms of b0. So we will work with equations in terms of pi’s

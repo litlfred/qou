@@ -7,6 +7,7 @@ section_number: 0
 pages: 41-45
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
+doc_brief: "Motivic Gauss–Bonnet formulas — 26 sections: Introduction 1801; Duality and Euler characteristics ; SL-oriented motivic spectra 1813"
 ---
 where L→ X is a line bundle andGW(Dperf(X), L[r], can) is the Grothendieck–Witt group ofL[r]-valued
 symmetric bilinear forms on Dperf(X); we recall a version of the deﬁnition here.

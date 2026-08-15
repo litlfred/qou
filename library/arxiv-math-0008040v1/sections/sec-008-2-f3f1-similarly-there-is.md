@@ -7,6 +7,7 @@ section_number: 2
 pages: 10-13
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 a corresponding monomial in the Kashiwara operators which w e denote ~F (P ). So in our example,
 ~F (LRL−) = ~F4 ~F5 ~F2 ~F 2

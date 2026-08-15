@@ -7,6 +7,7 @@ section_number: 6.4
 pages: 53-55
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 With the algebra C⊗← −O in hand, we can now set out to ﬁnd a system of ladder operators
 within the octonionic chain algebra. Consider α1≡ 1

@@ -7,6 +7,7 @@ section_number: null
 pages: 143-148
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
+doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 [1] A. Bayer, Polynomial Bridgeland stability conditions and the large v ol-
 ume limit , arXiv:0712.1083.

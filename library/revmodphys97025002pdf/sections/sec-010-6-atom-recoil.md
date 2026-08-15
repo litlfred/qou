@@ -7,6 +7,7 @@ section_number: 6
 pages: 4-4
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 The two input data h=mð87RbÞ and h=mð133CsÞ in the 2022
 adjustment obtained using atom interferometry are also of

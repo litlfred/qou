@@ -7,6 +7,7 @@ section_number: 6
 pages: 6-7
 source_pdf: 0104104v3.pdf
 source_sha256: e2154399f783aa9b
+doc_brief: "Geometry of Four-vector Fields on Quaternionic Flag Manifolds — The purpose of this paper is to describe certain natural 4-ve ctor ﬁelds on quaternionic ﬂag manifolds, which geometrically determ ine"
 ---
 We begin by deﬁning an element Λ of ∧4sp2 in terms of the following basis
 for sp2:

@@ -7,6 +7,7 @@ section_number: C
 pages: 25-29
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 To prove that the Biot–Savart operator is compact, we use two standard facts from functional
 analysis. First is the fact that for any compact domain V,i f f(x) is continuous on R3, then the

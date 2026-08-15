@@ -7,6 +7,7 @@ section_number: 3.2.1
 pages: 18-21
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
 ---
 The problem of quantization can be approached in many diﬀerent ways. Each approach
 has its advantages and disadvantages, but in the end all methods are expected to yield

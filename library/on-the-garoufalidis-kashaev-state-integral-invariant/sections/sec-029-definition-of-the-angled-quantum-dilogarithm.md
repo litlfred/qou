@@ -7,6 +7,7 @@ section_number: null
 pages: 29-31
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
+doc_brief: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
 ---
 Definition 8 (Angled Quantum Dilogarithm as a Distribution [7]). The angle-dependent
 quantum dilogarithm is defined as the tempered distribution

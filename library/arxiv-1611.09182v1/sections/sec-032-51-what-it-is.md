@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 40-43
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 The standard model of particle physics is the result of decades of collaboration, which
 began roughly in the 1930s, and converged ﬁnally on its current state in 1979, [62]. It is a

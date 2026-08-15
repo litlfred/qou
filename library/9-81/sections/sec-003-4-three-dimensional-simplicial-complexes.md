@@ -7,6 +7,7 @@ section_number: 4
 pages: 6-7
 source_pdf: 9_81.pdf
 source_sha256: 12a83d647032306e
+doc_brief: "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges KAMEISatoshi — 5 sections: Introduction; Locally Euclidean Structures; Singular Euclidean Structures"
 ---
 FromSects.2and3,weobtainthefollowingtheorem.
 86 KAMEI

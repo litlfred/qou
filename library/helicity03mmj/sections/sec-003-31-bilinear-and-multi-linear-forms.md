@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 5-6
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
+doc_brief: "MOSCOW MA THEMA TICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
 ---
 quadratic form on divergence-free vector ﬁelds, as the explicit formula in Deﬁ-
 nition 2.1 shows. Similarly, one deﬁnes a symmetric form, the cross-helicity, for

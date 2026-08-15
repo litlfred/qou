@@ -7,6 +7,7 @@ section_number: C
 pages: 15-21
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 If V is divergence-free and tangent to the boundary of V, then we already know from item ~5!
 in the list of Standard Information that the vector potential A(V) is divergence-free.

@@ -7,6 +7,7 @@ section_number: null
 pages: 19-20
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 8 (2012), 065, 20 pages Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4"
 ---
 [1] Berndt B.C., Ramanujan’s notebooks. Part III, Springer-Verlag, New York, 1991.
 [2] Braden H.W., Northover T.P., Klein’s curve, J. Phys. A: Math. Theor. 43 (2010), 434009, 17 pages,

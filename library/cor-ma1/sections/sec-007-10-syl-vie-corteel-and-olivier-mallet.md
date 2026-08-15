@@ -7,6 +7,7 @@ section_number: 10
 pages: 11-12
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
 ---
 Proof. We only prove the case n≥ 0. The case n < 0 is identical as ( a)−n = (−1/a)nq(
 n+1

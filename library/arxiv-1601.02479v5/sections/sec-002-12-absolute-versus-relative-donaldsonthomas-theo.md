@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 3-5
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
 ---
 Thomas theory and cohomological Hall algebras associated to quive rs, a vital role
 is always played by the grading by NQ0 , the semigroup of dimension vectors, which

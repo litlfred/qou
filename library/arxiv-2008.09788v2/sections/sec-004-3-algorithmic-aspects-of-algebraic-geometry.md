@@ -7,6 +7,7 @@ section_number: 3
 pages: 23-25
 source_pdf: 2008.09788v2.pdf
 source_sha256: 460f4f5432cb1f0c
+doc_brief: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETR Y — This paper surveys results related to well-known works of B. Plotkin and V."
 ---
 The section contains two subsections: the ﬁrst one is devote d to noncommutative Finite
 Gr¨ obner basis issues and the second one is devoted to algorithmic inclusion undecidability.

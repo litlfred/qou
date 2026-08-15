@@ -7,6 +7,7 @@ section_number: 14
 pages: 20-20
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 (witha,a ′∈K ∗) give rise to isomorphic modules Dq/DqP≃D q/DqP ′ if, and
 only if, a′/a belongs to the subgroup{ σb

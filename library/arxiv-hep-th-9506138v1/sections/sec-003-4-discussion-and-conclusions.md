@@ -7,6 +7,7 @@ section_number: 4
 pages: 13-13
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
+doc_brief: "Black Hole Complementarity vs. Locality — 8 sections: Introduction; The Nice-Slice Argument; The Nice Slice and String Field Th"
 ---
 Having obtained the commutators of nice-slice ﬁelds from st ring ﬁeld theory, we are
 now in a position to understand their signiﬁcance for the nic e-slice argument. In this

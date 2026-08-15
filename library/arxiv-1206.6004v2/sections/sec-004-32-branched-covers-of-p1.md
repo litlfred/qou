@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 4-6
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 8 (2012), 065, 20 pages Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4"
 ---
 We now consider the curve (2.1) as a branched cover of P1 withx as the coordinate. The affine
 part of the HC curve is obtained by setting z = 1 in (2.1) yielding

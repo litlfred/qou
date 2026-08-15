@@ -7,6 +7,7 @@ section_number: 22
 pages: 3-5
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
+doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 peut aussi remarquer que l’´equation fonctionnelle (1.0.2), r´e´ecrite en utilisant
 l’op´erateur δq, tend vers l’´equation (1.0.1) lorsque q → 1 (toujours avec a =

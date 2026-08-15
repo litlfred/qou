@@ -7,6 +7,7 @@ section_number: 5
 pages: 16-19
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
+doc_brief: "Gedanken Experiments Involving Black Holes Leonard Susskind, and L ´arus Thorlacius, Department of Physics — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot"
 ---
 observer will have to conduct experiments on the outgoing Ha wking radiation for a period
 τ ∼ M 3 before information can be recovered. During this time the ma ss of an evaporating

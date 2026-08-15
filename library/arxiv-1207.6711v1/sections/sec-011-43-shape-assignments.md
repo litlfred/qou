@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 9-10
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 need to replace the traditional labeling of the shape parameters z′ and z′′ by a notation,
 which better exhibits the symmetry and naturally allows for a uniﬁed treatment of the

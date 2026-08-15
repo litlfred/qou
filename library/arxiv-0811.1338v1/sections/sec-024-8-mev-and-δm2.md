@@ -7,6 +7,7 @@ section_number: 8
 pages: 29-32
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
+doc_brief: "Modern Theory of Nuclear Forces E. Epelbaum∗ — 38 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 ∆ | ∼ e2Mρ/(4π)2 ∼ 0.5 MeV. For a re-
 lated discussion on the delta mass splittings in chiral EFT

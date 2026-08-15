@@ -7,6 +7,7 @@ section_number: 8
 pages: 8-8
 source_pdf: 0104104v3.pdf
 source_sha256: e2154399f783aa9b
+doc_brief: "Geometry of Four-vector Fields on Quaternionic Flag Manifolds — The purpose of this paper is to describe certain natural 4-ve ctor ﬁelds on quaternionic ﬂag manifolds, which geometrically determ ine"
 ---
 position which is −1. We also let Sp,q
 x denote the matrix with 0’s everywhere

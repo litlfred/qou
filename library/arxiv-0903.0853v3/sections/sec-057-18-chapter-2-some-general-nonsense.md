@@ -7,6 +7,7 @@ section_number: 18
 pages: 24-24
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 By our previous deﬁnitions, S(L) ={0, 1} (both multiplicities equal 1). The
 second computation of a dual above implies that:

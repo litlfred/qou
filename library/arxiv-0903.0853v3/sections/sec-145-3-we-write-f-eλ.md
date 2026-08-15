@@ -7,6 +7,7 @@ section_number: 3
 pages: 86-86
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 0 ifF is analytic in a neighborhood of 0 punctured at 0,
 has q-Gevrey order ν at 0 and q-Gevrey order 0 along Λ at 0.

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 9_81.pdf
 source_sha256: 12a83d647032306e
+doc_brief: "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges KAMEISatoshi — 5 sections: Introduction; Locally Euclidean Structures; Singular Euclidean Structures"
 ---
 In [3] and [5], Rivin considered geometric structures on a 2-simplicial complex which is homeomorphic to an
 orientablesurfacewhensomevaluesareassignedtotheedgesofthesimplicialcomplexandtheassignedvaluesare

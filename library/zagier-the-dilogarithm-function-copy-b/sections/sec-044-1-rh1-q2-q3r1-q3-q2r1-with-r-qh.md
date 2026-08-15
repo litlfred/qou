@@ -7,6 +7,7 @@ section_number: 1
 pages: 46-48
 source_pdf: zagier-the-dilogarithm-function-copy-b.pdf
 source_sha256: c584944a501ef0c5
+doc_brief: "The Dilogarithm Function Don Zagier — 57 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 1 Q2/Q3)α.
 The last two give (1 − Q2)(1 − Q3)= Q2Q3 or Q2 + Q3 = 1, which implies

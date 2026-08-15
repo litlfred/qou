@@ -7,6 +7,7 @@ section_number: null
 pages: 8-10
 source_pdf: 2605.22763v1.pdf
 source_sha256: 1fe6b92bb5eb0b45
+doc_brief: "2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof Search George Tsoukalas1† , Anton Kovsharov1† , Sergey Shirobokov1† , Anja Surina1, Moritz Firsching1, Gergely — 14 sections: Intro"
 ---
 Exploration of a large space of open problems is expensive, and we chose the full-featured
 agent (agent (D)) for this based on its strong performance on competition benchmarks. To

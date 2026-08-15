@@ -7,6 +7,7 @@ section_number: 11.1
 pages: 34-35
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 the contribution ofS to the 3D-index sum hasq1/2-degreed(S)≥ 1.
 Proof. Since S is irreducible, it contains no tetrahedral solution summand, soS = S∗ is

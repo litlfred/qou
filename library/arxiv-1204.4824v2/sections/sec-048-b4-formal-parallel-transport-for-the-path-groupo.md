@@ -7,6 +7,7 @@ section_number: null
 pages: 80-80
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 Now let Σ → C be a K-fold branched cover of an oriented surface with at least one
 puncture, and let W be a spectral network subordinate to that cover, as deﬁned in §9.1.

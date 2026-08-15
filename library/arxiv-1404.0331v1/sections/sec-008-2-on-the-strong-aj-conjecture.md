@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-9
 source_pdf: 1404.0331v1.pdf
 source_sha256: 53d7ce3afaf405e1
+doc_brief: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS ANH T. TRAN — The AJ conjecture, formulated by Garoufalidis, relates the A-poly nomial and the colored Jones polynomial of a knot in the 3-sphere."
 ---
 Let ε be the map reducing t = −1.
 Lemma 2.1. Suppose the AJ conjecture holds true for a knot K and the A-polynomial

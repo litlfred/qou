@@ -7,6 +7,7 @@ section_number: 2.4.7
 pages: 79-82
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 Computational evidences suggest that it is always the case. Remark that in this
 case, the eigenvalues of¯ρΣ(∂Σ) are necessarily±1 because they are roots of unity

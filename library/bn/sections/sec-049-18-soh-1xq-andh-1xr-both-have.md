@@ -7,6 +7,7 @@ section_number: 18
 pages: 49-50
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
+doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
 ---
 signature (1, 2)). Using the period mappings at these two roots of unity, we
 obtain a holomorphic map F :Z →S making the diagram

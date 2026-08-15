@@ -7,6 +7,7 @@ section_number: null
 pages: 87-88
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 We would like to thank T. Banks, K. Intriligator, R. Leigh, G. Moore, R. Plesser
 and S. Shenker for useful discussions and P. Deligne for expl anations that made possible

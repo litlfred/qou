@@ -7,6 +7,7 @@ section_number: 1
 pages: 4-5
 source_pdf: 9608020v2.pdf
 source_sha256: 727268098db7f23d
+doc_brief: "SHIFTED JACK POL YNOMIALS, BINOMIAL — In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St])."
 ---
 the highest derivatives one easily proves that the map
 (3.4) D(n;θ) → S 1

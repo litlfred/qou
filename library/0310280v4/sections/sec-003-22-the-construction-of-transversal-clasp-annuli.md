@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 8-13
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
 ---
 The goal in this subsection and the two that follow it is to state and prove a modiﬁed
 version of Theorem 1 which holds in the transversal setting. The proof of the MTWS

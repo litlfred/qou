@@ -7,6 +7,7 @@ section_number: 11.2
 pages: 34-35
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 The properties of black holes suggest that a description in terms of qubits should have a
 particular form. First, how many qubits do we need? To fully and exactly describe the

@@ -7,6 +7,7 @@ section_number: null
 pages: 39-39
 source_pdf: ant-v14-n7-s-p08.pdf
 source_sha256: 81b8f00fe5fbd0f6
+doc_brief: "Burgess bounds for short character sums evaluated at forms — 12 sections: Introduction; Method of proof: an overview; Preliminaries"
 ---
 The authors thank D. R. Heath-Brown and M. Larsen for helpful advice on this project; the authors
 also thank the referee for helpful suggestions. Pierce is partially supported by NSF CAREER grant

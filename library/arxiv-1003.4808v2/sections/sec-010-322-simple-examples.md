@@ -7,6 +7,7 @@ section_number: 3.2.2
 pages: 21-23
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
 ---
 Let us now adapt the general statements here to some speciﬁc examples.
 Harmonic oscillator

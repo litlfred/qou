@@ -7,6 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings."
 ---
 We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with
 6 crossings. In particular, we show the volume conjecture for these knots, which states that the

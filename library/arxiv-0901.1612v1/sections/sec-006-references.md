@@ -7,6 +7,7 @@ section_number: null
 pages: 20-23
 source_pdf: 0901.1612v1.pdf
 source_sha256: b4f3efcadd1e5caf
+doc_brief: "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-component links in the 3-dimensional sphere were classiﬁed up to link homotopy by John Milnor in his senior thesis, published in 1954."
 ---
 [1820] Jean-Baptiste Biot and Felix Savart, Note sur le magnetisme de la pile de Volta, Annales
 de Chimie et de Physique, 2nd ser. 15, 222–223.

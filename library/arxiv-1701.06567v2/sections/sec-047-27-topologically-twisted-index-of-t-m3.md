@@ -7,6 +7,7 @@ section_number: 2.7
 pages: 20-21
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 Another interesting invariant ofM3 which can be realized as an observable of T [M3] and has
 a categoriﬁcation by construction is the topologically twisted index on S2×S1 [56]. Namely,

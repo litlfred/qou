@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-1
 source_pdf: 0103325v4.pdf
 source_sha256: 38590174ab836fa1
+doc_brief: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine — 28 sections: Introduction; V ector meso"
 ---
 Quantum groups and quantum or q-deformed
 algebras [1,2], whose basic mathematical aspects

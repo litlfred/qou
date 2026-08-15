@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-5
 source_pdf: 9612303v1.pdf
 source_sha256: 5311d7faf2b3e005
+doc_brief: "The q-deformed quark model : quantum isospin and q-hadrons — 5 sections: Introduction; The quantum isospin group and its ; Do not confuse the baryons ∆ ++, ∆"
 ---
 Given the SU (2) algebra, it is possible to q-deform it to obtain the quantum group
 Uq(sℓ(2)), with generators I+, I− and Iz, subject to the commutation relations

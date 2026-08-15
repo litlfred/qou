@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 36-38
 source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
 source_sha256: 647f4c28cab7428d
+doc_brief: "Bull. Soc. math. France 133 (4), 2005, p. 541–579 — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
 ---
 to which it is possible to embed quasi-isometrically copies of Zd in the gordian
 metric space ( Knots,d gordian). We begin with a simple observation, already

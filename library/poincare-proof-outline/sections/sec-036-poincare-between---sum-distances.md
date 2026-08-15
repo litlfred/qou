@@ -7,6 +7,7 @@ section_number: null
 pages: 89-94
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 Another possible deﬁnition of the h-betweenness relation is given in terms of h-distances between pairs of points.
 We prove it as a characterization equivalent to our cross-ratio based deﬁnition.

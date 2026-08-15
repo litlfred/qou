@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 21-25
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
+doc_brief: "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN ="
 ---
 Let us ﬁrst review some basic ingredients of instanton calculus in the 4d N = 2 SYM with gauge
 group G =SU (N) [1, 45–48].

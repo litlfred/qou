@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-8
 source_pdf: 2304.09377v2.pdf
 source_sha256: 76ae6c6058f4a9f9
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 19 (2023), 082, 39 pages — We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be"
 ---
 In this section, we discuss three further aspects of our pair ( G0(q),G 1(q)) of q-series. One is
 that their asymptotic expansions depend on a sector. This seems to be a property of general

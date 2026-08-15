@@ -7,6 +7,7 @@ section_number: 5.1.2
 pages: 91-91
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 as in 4.1, possibly decorated as in 4.3 (from which we follow t he notation).
 The decoration reﬂects on the Dieudonn´ e module D(

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 2304.12545v1.pdf
 source_sha256: bfc3c2be395b1b2d
+doc_brief: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP — 7 sections: Ideal triangulations and the gluin; Volumes and Dehn surgeries; The Bloch group and the extended B"
 ---
 2. Volumes and Dehn surgeries 3
 3. The Bloch group and the extended Bloch group 7

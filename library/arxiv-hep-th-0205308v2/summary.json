@@ -1,0 +1,45 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-0205308v2",
+ "source_sha256": "2de5a4f40d80174c",
+ "brief": "WDVV Equations as Functional Relations — 5 sections: Introduction; WDVV and dispersionless Hirota equ; The associativity equations as coc",
+ "extended": "**WDVV Equations as Functional Relations**\n\n*H.W. Braden 1 and A. Marshakov 2*\n\n9 pp, 5 sections.\n\n**Outline.** Introduction; WDVV and dispersionless Hirota equations; The associativity equations as cocycle conditi; Example: perturbative Seiberg-Witten prepotent; Discussion",
+ "tokens": {
+  "brief": 34,
+  "extended": 68
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-wdvv-and-dispersionless-hirota-equations",
+   "title": "WDVV and dispersionless Hirota equations",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-the-associativity-equations-as-cocycle-condition",
+   "title": "The associativity equations as cocycle conditions",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-003-example-perturbative-seiberg-witten-prepotential",
+   "title": "Example: perturbative Seiberg-Witten prepotentials",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-004-discussion",
+   "title": "Discussion",
+   "pages": "8-9"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

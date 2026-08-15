@@ -1,0 +1,136 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "cor-ma1",
+ "source_sha256": "d90c91dcd82bfcab",
+ "brief": "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE",
+ "extended": "**HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not**\n\n*The documents may come from teaching and research*\n\n26 pp, 23 sections.\n\n**Outline.** 2 SYL VIE CORTEEL AND OLIVIER MALLET; 1 Introduction; 2 Definitions on overpartitions; 4 SYL VIE CORTEEL AND OLIVIER MALLET; 6 SYL VIE CORTEEL AND OLIVIER MALLET; 3 Paths and generating function; 8 SYL VIE CORTEEL AND OLIVIER MALLET; 10 SYL VIE CORTEEL AND OLIVIER MALLET; 4 Paths and successive ranks; 12 SYL VIE CORTEEL AND OLIVIER MALLET; 2 (xi− xi+1− yi− yi+1 + ui− ui+1 + 1). Since u; 5 Paths and multiplicities; 14 SYL VIE CORTEEL AND OLIVIER MALLET; 5.1 A generating function proof. LetBk,i(a, q); 16 SYL VIE CORTEEL AND OLIVIER MALLET; 6 Paths and successive Durfee squares; 18 SYL VIE CORTEEL AND OLIVIER MALLET; 20 SYL VIE CORTEEL AND OLIVIER MALLET\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: [26] Let Bk,i(n) denote the number of partitions of n of the form (λ1, λ2, . . . , λs), where\n- Theorem 1.2: [5] Let Ck,i(n) be the number of partitions of n whose successive ranks lie in the interval\n- Theorem 1.3: [28] Let Bk(n) denote the number of overpartitions\n- Theorem 1.4: • Let Bk,i(n, j) be the number of overpartitions of n of the form (λ1, λ2, . . . , λs) with j overlined parts,\n- Theorem 1.5: The generating function E k,i(a, q) =∑\n- Theorem 7.2: For 1≤ i≤ k− 1, the number of overpartitions counted by Bk,i(n) plus the number of",
+ "tokens": {
+  "brief": 50,
+  "extended": 378
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-2-definitions-on-overpartitions",
+   "title": "Definitions on overpartitions",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-4-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-004-6-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-005-3-paths-and-generating-function",
+   "title": "Paths and generating function",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-006-8-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-007-10-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-008-4-paths-and-successive-ranks",
+   "title": "Paths and successive ranks",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-009-12-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-010-2-xi-xi1-yi-yi1-ui-ui1-1-since-ui-ui1-it-is-suﬃc",
+   "title": "(xi− xi+1− yi− yi+1 + ui− ui+1 + 1). Since ui≥ ui+1, it is suﬃcient",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-011-5-paths-and-multiplicities",
+   "title": "Paths and multiplicities",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-012-14-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-013-51-a-generating-function-proof-letbkia-q",
+   "title": "A generating function proof. LetBk,i(a, q) =∑",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-014-16-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-015-6-paths-and-successive-durfee-squares",
+   "title": "Paths and successive Durfee squares",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-016-18-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-017-20-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-018-22-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-019-7-new-partition-theorems",
+   "title": "New partition theorems",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-020-24-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-021-8-conclusion",
+   "title": "Conclusion",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-022-references",
+   "title": "References",
+   "pages": "26-26"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

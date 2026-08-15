@@ -7,6 +7,7 @@ section_number: null
 pages: 73-75
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
+doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 We start with a motivation for this section. There are many ex amples of pairs
 of constructible sets (or even varieties) X1,X 2 over a ﬁeld k such that their

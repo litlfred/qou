@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 5-6
 source_pdf: 1910.09966v1.pdf
 source_sha256: 21798500c98ed25a
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 ---
 For a 3-manifold, one has a one-dimensional, branching set and a result of
 Alexander states that this branching set is a link with a ﬁnite number of com-

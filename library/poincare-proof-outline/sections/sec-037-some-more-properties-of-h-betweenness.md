@@ -7,6 +7,7 @@ section_number: null
 pages: 94-96
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 Some lemmas proved earlier are proved almost directly using the sum of distances characterization.
 lemma unit-disc-ﬁx-moebius-preserve-poincare-between′:

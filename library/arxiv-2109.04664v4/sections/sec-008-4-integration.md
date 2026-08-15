@@ -7,6 +7,7 @@ section_number: 4
 pages: 10-11
 source_pdf: 2109.04664v4.pdf
 source_sha256: 639cd40a29752e3f
+doc_brief: "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
 ---
 In this section, we use the Poisson summation formula (see [28, Prop osition 4.2])
 to change the summation in (3.6) into an integration. Then by using th e saddle

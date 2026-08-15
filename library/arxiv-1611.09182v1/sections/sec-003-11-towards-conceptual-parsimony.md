@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 9-10
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 The safest conceivable theory is one which implements the fewest initial assumptions pos-
 sible. That is, any model based on elaborate input will by deﬁnition specify more detail

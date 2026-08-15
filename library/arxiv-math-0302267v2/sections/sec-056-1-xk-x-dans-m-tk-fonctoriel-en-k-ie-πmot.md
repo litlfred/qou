@@ -7,6 +7,7 @@ section_number: 1
 pages: 48-49
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et"
 ---
 1 (X, x) dans MAT( k).
 Soit y ∈ X(k), distinct de x. Prouvons que P real

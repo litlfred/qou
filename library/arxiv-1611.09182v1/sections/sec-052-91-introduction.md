@@ -7,6 +7,7 @@ section_number: 9.1
 pages: 79-84
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Despite the wide range of proposals to simplify the standard model, most schemes tend
 to share the same impedances. Few uniﬁed models naturally oﬀer more than a single

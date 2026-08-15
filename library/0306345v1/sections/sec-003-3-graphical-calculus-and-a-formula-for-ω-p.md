@@ -7,6 +7,7 @@ section_number: 3
 pages: 9-12
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
+doc_brief: "We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres."
 ---
 Let us write ω = ω + and put
 ω p =

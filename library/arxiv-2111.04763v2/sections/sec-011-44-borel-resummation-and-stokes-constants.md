@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 42-47
 source_pdf: 2111.04763v2.pdf
 source_sha256: 760a7f9794e8baaa
+doc_brief: "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
 ---
 Φ(σj )(τ)forj= 0,1,2,3corresponding to the trivial, the geometric, the conjugate, and
 the real flat connections respectively, denoted respectively byσj forj= 0,1,2,3. Similar

@@ -7,6 +7,7 @@ section_number: null
 pages: 7-8
 source_pdf: 0205308v2.pdf
 source_sha256: 2de5a4f40d80174c
+doc_brief: "WDVV Equations as Functional Relations — 5 sections: Introduction; WDVV and dispersionless Hirota equ; The associativity equations as coc"
 ---
 tials
 Here we shall consider one of the simplest examples of solutions to th e WDVV equations

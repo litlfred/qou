@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 7-9
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
+doc_brief: "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡ — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 We deﬁne a shearing transformation of a second order linear q-diﬀerence
 equation.

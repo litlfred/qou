@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-4
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
+doc_brief: "Black Hole Complementarity vs. Locality — 8 sections: Introduction; The Nice-Slice Argument; The Nice Slice and String Field Th"
 ---
 According to the principle of black hole complementarity [1 ], an observer who remains
 outside the horizon of a black hole can describe the black hol e as a very hot membrane,

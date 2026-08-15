@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-8
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
+doc_brief: "We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
 ---
 by an idea of Jun Yang, to whom I am grateful also for many usefu l conversa-
 tions. I’m grateful to Benedetti and Baseilhac, whose use in [1] of the prelimi-

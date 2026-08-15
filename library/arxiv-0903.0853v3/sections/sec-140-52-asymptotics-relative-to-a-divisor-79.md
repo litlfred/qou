@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 85-85
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 with ˜A(z) as in (5.18) and r∈ (1, 2).
 To sum up, we have seen that, if dq(z, Λ)>ǫ> 0 and δ = ν i

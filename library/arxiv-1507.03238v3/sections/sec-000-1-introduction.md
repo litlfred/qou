@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 The Ptolemy varietyPn(T ) of a topological ideal triangulationT of a compact 3-manifold
 M was deﬁned by Garoufalidis, Thurston and Zickert [9]. It gives coordinates (called Ptolemy

@@ -7,6 +7,7 @@ section_number: 22
 pages: 73-73
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 That a resource analogous to negentropy can be vastly increased by merely adding a single
 qubit seems very counterintuitive. If I told you that by adding a single molecule to a gas

@@ -7,6 +7,7 @@ section_number: null
 pages: 1-9
 source_pdf: 0304010v1.pdf
 source_sha256: fc2296c027b3feb0
+doc_brief: "KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS — Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn."
 ---
 In: S. Fomin, editor. Symmetric Functions 2001: Surveys of Deve lopments and Perspectives
 (NATO Science Series II. Mathematics, Physics and Chemistry. Vol. 74), Kluwer, 2002, pp.

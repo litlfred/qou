@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 3-4
 source_pdf: characteristic.pdf
 source_sha256: 42bd31da2754488f
+doc_brief: "gure eight knots — The colored Jones function of a knot is a sequence of Laurent polynomials in one variable, whose nth term is the Jones polynomial of the knot colored with the n-dimensional"
 ---
 2 is the disjoint union V0 t V1 t V2 where
 Vi is a subvariety of V of pure dimension i.

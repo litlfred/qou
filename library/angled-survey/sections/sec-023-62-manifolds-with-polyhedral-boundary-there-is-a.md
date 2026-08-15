@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 20-20
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 Theorem 1.2 for ideal triangulations where not every face of the tetrahedra is glued
 to another face. Given such a partial gluing of tetrahedra, one obtains a 3–manifold

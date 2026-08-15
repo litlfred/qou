@@ -7,6 +7,7 @@ section_number: 6
 pages: 8-9
 source_pdf: 9612303v1.pdf
 source_sha256: 5311d7faf2b3e005
+doc_brief: "The q-deformed quark model : quantum isospin and q-hadrons — 5 sections: Introduction; The quantum isospin group and its ; Do not confuse the baryons ∆ ++, ∆"
 ---
 As noted in section 2 above, we have restricted ourselves to s tatic predictions of the
 (q-deformed) quark model. They are satisfactory for the nucle ons but not so for the pions.

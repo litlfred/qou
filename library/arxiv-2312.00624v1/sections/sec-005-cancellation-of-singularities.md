@@ -7,6 +7,7 @@ section_number: null
 pages: 12-14
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 Again, we hide the explicit dependence on the classical solution α to simplify the notation. Here
 and in the rest of this work, we will only re-introduce it when necessary. Recall that the exact wave

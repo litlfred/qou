@@ -7,6 +7,7 @@ section_number: 24
 pages: 16-16
 source_pdf: milnor-1982-hyperbolic-geometry-the-first-150-years.pdf
 source_sha256: d444d7a61af54c7c
+doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY — 9 sections: JOHN MILNOR; JOHN MILNOR; JOHN MILNOR"
 ---
 [1981] A. Borel, Commensurability classes and volumes of hyperbolic 3-manifolds, Ann. Scuola 
 Norm. Sup. Pisa CI. Sci. (4) 8, 1-33. 

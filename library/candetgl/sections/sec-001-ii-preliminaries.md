@@ -7,6 +7,7 @@ section_number: II
 pages: 3-4
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 A. Writhing, helicity, and the Biot–Savart operator
 The writhing number Wr(K) of a smooth curve K in 3-space, deﬁned by the formula

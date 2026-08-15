@@ -7,6 +7,7 @@ section_number: 3.10
 pages: 26-27
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 It is plain to see that mc, mh, and mq each correspond to an involution of the C⊗ H
 algebra. That is, mc corresponds to∗,mh corresponds to†, andmq corresponds to∼. The

@@ -7,6 +7,7 @@ section_number: 6.9
 pages: 61-62
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Perhaps unexpectedly, it turns out that Su packages all of the isospin up-type states to-
 gether, and Sd packages all of the down-type states together. This is of course, if one goes

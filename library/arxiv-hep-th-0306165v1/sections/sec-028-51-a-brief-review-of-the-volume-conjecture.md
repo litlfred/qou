@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 37-38
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 A well-known invariant of knots is the Jones polynomial J(K,q ) [78]. Here we consider
 a more general invariant, the so-called N -colored Jones polynomial JN (K,q ), associated

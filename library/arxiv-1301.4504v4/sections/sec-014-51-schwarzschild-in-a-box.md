@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 41-43
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
+doc_brief: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Scie"
 ---
 In order for Alice to have any chance of doing the AMPS experiment given our claim
 of exponential decoding time, she will clearly need some way of slowing down the

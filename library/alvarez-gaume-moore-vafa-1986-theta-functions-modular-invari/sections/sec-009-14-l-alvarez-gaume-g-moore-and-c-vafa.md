@@ -7,6 +7,7 @@ section_number: 14
 pages: 14-15
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
+doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
 ---
 Locally, Aφ, φ) is pure gauge, but it cannot be gauged away because it has
 nontrivial holonomy. The advantage of introducing the gauge field (3.13) is that if

@@ -7,6 +7,7 @@ section_number: null
 pages: 18-19
 source_pdf: 0305423v3.pdf
 source_sha256: e4554f9084ba4935
+doc_brief: "Stein’s Method and Plancherel Measure of the Symmetric Group — We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group."
 ---
 [AlD] Aldous, D. and Diaconis, P., Longest increasing subse quences: from patience sort-
 ing to the Baik-Deift-Johansson theorem, Bull. AMS (N.S.) 36 (1999), 413-432.

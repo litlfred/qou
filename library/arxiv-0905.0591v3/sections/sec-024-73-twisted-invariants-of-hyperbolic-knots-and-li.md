@@ -7,6 +7,7 @@ section_number: 7.3
 pages: 25-25
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
+doc_brief: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 link. Then the corresponding representation π1(S3 \νL) →PSL (2, C) lifts to a canonical
 representation γcan : π1(S3 \νL) → SL(2, C) and it induces the adjoint representation

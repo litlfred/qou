@@ -7,6 +7,7 @@ section_number: null
 pages: 20-20
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
+doc_brief: "We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres."
 ---
 [A] H. Abchir. TQFT invariants at inﬁnity for the Whitehead manifold. In: Knots
 in Hellas ’98 , Proceedings of the International Conference on Knot Theory a nd

@@ -7,6 +7,7 @@ section_number: 2
 pages: 43-43
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 a “fermionic factor,” all coeﬃcients appearing in the two indices will be positive. This
 may seems to be qualitatively diﬀerent from 1, where we have positivity in ( q,−t)-

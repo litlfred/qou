@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-3
 source_pdf: 9608020v2.pdf
 source_sha256: 727268098db7f23d
+doc_brief: "SHIFTED JACK POL YNOMIALS, BINOMIAL — In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St])."
 ---
 gebra of polynomials f (x1,...,x n) that are symmetric in variables xi −θi. We
 call such polynomials shifted symmetric . By (1.1) one has the Harish-Chandra

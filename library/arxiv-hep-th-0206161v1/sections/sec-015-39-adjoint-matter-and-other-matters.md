@@ -7,6 +7,7 @@ section_number: 3.9
 pages: 22-23
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
 ---
 So far we were discussing N = 2 gauge theories with matter in the fundamental
 representations. Now we shall pass to other representation s. It is simpler to start with

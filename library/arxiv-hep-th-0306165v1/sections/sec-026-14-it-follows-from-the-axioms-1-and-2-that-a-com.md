@@ -7,6 +7,7 @@ section_number: 14
 pages: 34-37
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 (−Σ 1) ⊔ Σ 2 determines a linear map Z(M ) ∈ HomC(HΣ 1 , HΣ 2 ). Such a manifold M is called a
 cobordism between Σ 1 and Σ 2.

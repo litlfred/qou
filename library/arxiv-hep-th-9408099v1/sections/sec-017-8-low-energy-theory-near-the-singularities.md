@@ -7,6 +7,7 @@ section_number: 8
 pages: 28-31
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 In this section we study the low energy eﬀective ﬁeld theory n ear the singularities.
 For simplicity, we will focus on the massless theories. It is straightforward to extend our

@@ -7,6 +7,7 @@ section_number: 1.3.1
 pages: 17-18
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 topology, and their structure sheaf is a sheaf with respect t o this topology.
 Hence it cannot be said to satisfy the principle of unique con tinuation in

@@ -7,6 +7,7 @@ section_number: 6.2.3
 pages: 112-113
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 6.2.1.
 So we assume that A,A ′ represent two classes in H 1(Eq, Λ/Λ≥δ+1) having

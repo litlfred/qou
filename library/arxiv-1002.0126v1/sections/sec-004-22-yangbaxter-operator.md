@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 5-10
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
+doc_brief: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
 ---
 dimensional vector space V .
 Deﬁnition 2.6. For an n-braid β, we deﬁne T(R,µ,a,b)(β)∈ C by the following

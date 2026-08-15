@@ -7,6 +7,7 @@ section_number: 6
 pages: 23-25
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
+doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
 ---
 maximal symmetry: the Feynman [11, 14] pair, 10 139 and 10 152, with the modest
 symmetriesD2 andZ2, and 10 153, which SnapPea declared to be devoid of symmetry.

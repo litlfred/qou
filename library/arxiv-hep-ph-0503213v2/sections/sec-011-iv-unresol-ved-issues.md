@@ -7,6 +7,7 @@ section_number: IV
 pages: 5-6
 source_pdf: 0503213v2.pdf
 source_sha256: 637a9e53b9b30776
+doc_brief: "A topological model of composite preons Sundance O. Bilson-Thompson ∗ — 14 sections: INTRODUCTION; THE HELON MODEL; PHENOMENOLOGY OF THE HELON"
 ---
 There are three signiﬁcant issues the helon model has
 not yet addressed: the origin of spin, the origin of mass,

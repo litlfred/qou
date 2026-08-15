@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 12-18
 source_pdf: 2111.04763v2.pdf
 source_sha256: 760a7f9794e8baaa
+doc_brief: "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
 ---
 totic expansion asq= e 2πiτ →1of the vectorG(q)ofq-series and relate it to the vector
 Φ(τ)of the asymptotic series, where

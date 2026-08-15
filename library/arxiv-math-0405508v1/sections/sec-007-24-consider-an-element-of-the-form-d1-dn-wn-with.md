@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 6-7
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 i for all
 i. If we collect together non-trivial terms with consecutive indices w e obtain

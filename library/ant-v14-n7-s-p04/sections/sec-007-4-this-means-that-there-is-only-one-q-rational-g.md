@@ -7,6 +7,7 @@ section_number: 4
 pages: 7-8
 source_pdf: ant-v14-n7-s-p04.pdf
 source_sha256: 6abd838a4c933311
+doc_brief: "Elliptic curves over totally real cubic ﬁelds are modular — 10 sections: Introduction; Images mod 3, 5, 7 and modularity; Modular curves"
 ---
 6, namely the one corresponding to the degree
 6 model given by u,w,v above. In particular every Q-rational automorphism has to come from an

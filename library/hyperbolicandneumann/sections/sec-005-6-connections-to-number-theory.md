@@ -7,6 +7,7 @@ section_number: 6
 pages: 12-17
 source_pdf: HyperbolicAndNeumann.pdf
 source_sha256: 3d66fe4c64bdc62b
+doc_brief: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP — 7 sections: Ideal triangulations and the gluin; Volumes and Dehn surgeries; The Bloch group and the extended B"
 ---
 The paper [31] and its sequel [28] suggested or led to several interesting developments in
 pure number theory as well as in topology. In this ﬁnal section we describe of a few of these.

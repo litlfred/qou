@@ -7,6 +7,7 @@ section_number: 1
 pages: 7-8
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p -adic cyclotomic multiple zeta values David Jarossay p-adic cyclotomic multiple zeta values depend on the choice of a number of iterations"
 ---
 thenσα= id, thusφα is K -linear in the usual sense, its source and target are the same, and it is equal to
 φo iteratedα/o times: we will write α= o˜α, andφo˜α=φ˜α

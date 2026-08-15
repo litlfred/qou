@@ -7,6 +7,7 @@ section_number: null
 pages: 48-49
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 Yokonuma–Hecke algebras were introduced by Yokonuma [Yo] for the same reason that Ariki–Koike alge-
 bras were introduced by Ariki and Koike: as generalisations of Iwahori–Hecke algebras. More precisely,

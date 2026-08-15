@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-3
 source_pdf: 1210.6243v1.pdf
 source_sha256: 3ff2f5358b25586e
+doc_brief: "Controlled double-slit electron diﬀraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
 ---
 The experimental setup is shown diagrammatically in ﬁgure 1a. An elec tron beam
 with energy of 600 eV was generated with a thermionic tungsten ﬁlam ent and several

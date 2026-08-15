@@ -7,6 +7,7 @@ section_number: 5
 pages: 9-11
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Introduction; Some algebraic lemmas; Ramiﬁcation and postcritically inﬁ"
 ---
 In a slightly more general framework than what has been described above, in this section we consider pairs
 (φ,α) , whereφ(x)∈ K[x] is a polynomial and whereα∈ K . We deﬁne recursively K0= K0(φ,α)= K(α)

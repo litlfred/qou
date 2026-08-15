@@ -7,6 +7,7 @@ section_number: null
 pages: 55-58
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 [1] D. Gaiotto, N=2 dualities, arXiv:0904.2715.
 [2] D. Gaiotto, G. W. Moore, and A. Neitzke, Four-dimensional wall-crossing via three-dimensional

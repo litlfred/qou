@@ -7,6 +7,7 @@ section_number: 1.3.1
 pages: 4-5
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
+doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
 ---
 provide functors ωB, ωdR, and integration deﬁnes a canonical element comp B,dR ∈
 IsomT (ωdR, ωB)(C). Since the de Rham functor ωdR is graded by the weight, the

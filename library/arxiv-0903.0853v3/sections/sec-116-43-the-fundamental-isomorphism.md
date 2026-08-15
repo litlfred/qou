@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 62-63
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 We write Λ I := In + Matn(A0) for the subsheaf of groups of GL n(A )
 made up of matrices inﬁnitely tangent to the identity and, if G is an al-

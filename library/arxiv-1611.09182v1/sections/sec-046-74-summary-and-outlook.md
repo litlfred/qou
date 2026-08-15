@@ -7,6 +7,7 @@ section_number: 7.4
 pages: 66-67
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 In this chapter, we have focussed our attention onCl(2)⊗CCl(2)≃ Cl(4) structure, coming
 from the right action on our previously constructed minimal left ideals. From this Cliﬀord

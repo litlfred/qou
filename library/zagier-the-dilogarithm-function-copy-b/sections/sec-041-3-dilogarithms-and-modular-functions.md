@@ -7,6 +7,7 @@ section_number: 3
 pages: 39-43
 source_pdf: zagier-the-dilogarithm-function-copy-b.pdf
 source_sha256: c584944a501ef0c5
+doc_brief: "The Dilogarithm Function Don Zagier — 57 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 A fascinating and almost completely unsolved problem is to understand
 the overlap between the classes of q-hypergeometric functions and modular

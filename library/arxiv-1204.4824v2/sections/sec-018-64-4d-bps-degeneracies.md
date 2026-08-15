@@ -7,6 +7,7 @@ section_number: 6.4
 pages: 38-38
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 According to the analysis of [5, 21], the jump K of the framed 2d-4d degeneracies captures
 the degeneracies of 4d BPS particles.25 Since we have now given a formula forK, it follows

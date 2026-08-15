@@ -7,6 +7,7 @@ section_number: 3
 pages: 9-10
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
+doc_brief: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE — 19 sections: Introduction; These; Conformal simplices"
 ---
 it obvious that every hyperbolic manifold admits even one ball-packing. A
 characterization of those Euclidean 3 manifolds (even those homeomorphic

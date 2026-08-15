@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-4
 source_pdf: 2109.04664v4.pdf
 source_sha256: 639cd40a29752e3f
+doc_brief: "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
 ---
 The purpose of this paper is to reﬁne (1.7). We will show
 Theorem 1.5. If ξ is real and |ξ|>κ , then we have

@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 9-10
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
+doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
 ---
 Monstrous moonshine relates representations of the monster groupM with modular forms,
 Borcherds-Kac-Moody algebras and conformal ﬁeld theory. To each elementg∈ M one

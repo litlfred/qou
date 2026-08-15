@@ -1,0 +1,82 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2607.29018v1",
+ "source_sha256": "789faa122dd32290",
+ "brief": "The Aldous property for normal Cayley graphs on symmetric groups — Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same",
+ "extended": "**The Aldous property for normal Cayley graphs on symmetric groups**\n\n*Chenhui Lv∗1 and Sanming Zhou 2*\n\n23 pp, 12 sections.\n\n**Abstract.** Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same spectral gap, or, equivalently, the second largest eigenvalue of any connected Cayley graph on the symmetric groupS n with respect to a set of transpositions is achieved by the standard representation ofS n. This celebrated conjecture, proved in its general form in 2010, has inspired much interest in searching for other Cayley graphs onS n possessing this property, now known as the Aldous property. In this paper, we first prove that forn≥5 at most one of a normal Cayley graph onSn and its complement can possess the Aldous property except when these two graphs are 2K n!/2 andK n!/2,n!/2 respectively.\n\n**Outline.** Abstract; 1.1 Aldous’ spectral gap conjecture; 1 Introduction; 1.2 Main results; 2 Preliminaries; 3 Proof of Theorem 1.2; 4 Proofs of Theorem 1.3 and Corollary 1.5; 5 Normal Cayley graphs on symmetric groups wit; 5.1 Normal Cayley graphs onS n that are line g; 5.2 Normal Cayley graphs onS n with strictly s; 6 Proofs of Theorem 1.6 and Corollary 1.7; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: Letn≥5, and letSbe a nonempty normal set inS n withS̸=S n\\{e}.\n- Theorem 1.2: implies that at most half of all normal Cayley graphs onSn exhibit the Aldous\n- Theorem 1.3: There exists a positive integerN≥5such that, for everyn≥Nand every\n- Theorem 1.6: Letn≥5, and letSbe a nonempty normal set inS n. If\n- Theorem 1.3: and Corollary 1.7 together resolve Problem 1.1 for all normal Cayley graphs\n- Theorem 5.1: Letn≥2, and letSbe a nonempty normal set inS n. ThenCay(S n,S)is a",
+ "tokens": {
+  "brief": 47,
+  "extended": 447
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-aldous-spectral-gap-conjecture",
+   "title": "Aldous’ spectral gap conjecture",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-003-12-main-results",
+   "title": "Main results",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-004-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-3-proof-of-theorem-12",
+   "title": "Proof of Theorem 1.2",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-006-4-proofs-of-theorem-13-and-corollary-15",
+   "title": "Proofs of Theorem 1.3 and Corollary 1.5",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-007-5-normal-cayley-graphs-on-symmetric-groups-with",
+   "title": "Normal Cayley graphs on symmetric groups with",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-008-51-normal-cayley-graphs-ons-n-that-are-line-grap",
+   "title": "Normal Cayley graphs onS n that are line graphs",
+   "pages": "12-17"
+  },
+  {
+   "id": "sec-009-52-normal-cayley-graphs-ons-n-with-strictly-seco",
+   "title": "Normal Cayley graphs onS n with strictly second largest eigen-",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-010-6-proofs-of-theorem-16-and-corollary-17",
+   "title": "Proofs of Theorem 1.6 and Corollary 1.7",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-011-references",
+   "title": "References",
+   "pages": "21-23"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

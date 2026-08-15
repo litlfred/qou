@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 30-31
 source_pdf: 1704.02352v2.pdf
 source_sha256: 9a14dd6ee33248d3
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y"
 ---
 Lemma 4.2. Let (Sl)l≥2 be a sequence of real numbers and let (Rl)l≥2
 given by (3.7) be the corresponding sequence of free cumulants. Assume

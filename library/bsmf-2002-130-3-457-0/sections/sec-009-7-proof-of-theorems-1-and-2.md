@@ -7,6 +7,7 @@ section_number: 7
 pages: 34-34
 source_pdf: BSMF_2002__130_3_457_0.pdf
 source_sha256: 63f79235d0c13ba8
+doc_brief: "Bull. Soc. math. France 130 (3), 2002, p. 457–491 HYPERIDEAL POL YHEDRA IN HYPERBOLIC 3-SP ACE by Xiliang Bao & Francis Bonahon — —A h y p e r i d e a l p o l y h e d r o n i s a n o n - c o m p a c"
 ---
 We are now ready to complete the pro of of Theorems 1 and 2, by considering
 again the map Θ : PΓ → KΓ ⊂ RE ,w h i c ht oah y p e r i d e a lp o l y h e d r o na s s o c i a t e s

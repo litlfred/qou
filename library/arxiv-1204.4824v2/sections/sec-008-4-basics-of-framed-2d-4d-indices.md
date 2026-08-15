@@ -7,6 +7,7 @@ section_number: 4
 pages: 19-19
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 In this section we study the basic properties of the indices Ω
 ′

@@ -7,6 +7,7 @@ section_number: 7
 pages: 8-9
 source_pdf: ant-v14-n7-s-p04.pdf
 source_sha256: 6abd838a4c933311
+doc_brief: "Elliptic curves over totally real cubic ﬁelds are modular — 10 sections: Introduction; Images mod 3, 5, 7 and modularity; Modular curves"
 ---
 In this section we prove Theorem 7 thereby completing the proof of Theorem 2. Recall X= X(b5, ns7).
 Write X(3) for the third symmetric power of X. We shall prove the following result which immediately

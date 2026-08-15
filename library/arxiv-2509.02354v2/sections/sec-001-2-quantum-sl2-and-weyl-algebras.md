@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-4
 source_pdf: 2509.02354v2.pdf
 source_sha256: 14680221e597fe61
+doc_brief: "THE HOLONOMY BRAIDING FORUξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomyR-matrix of quantumsl2 at a root of unity."
 ---
 Here we recall basic facts about quantumsl2, its structure at a root of unity and its
 braiding properties.

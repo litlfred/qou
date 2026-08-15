@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 0403224v1.pdf
 source_sha256: c25ccba77da375ad
+doc_brief: "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT KAZUHIRO HIKAMI — We prove that the N-colored Jones polynomial for the torus knot Ts, t satisﬁes the second order diﬀerence"
 ---
 The N-colored Jones polynomial JK(N) is one of the quantum invariants
 for knot K. It is associated with the N-dimensional irreducible represen-

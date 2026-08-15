@@ -7,6 +7,7 @@ section_number: 1
 pages: 28-31
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero"
 ---
 = arsq−r2st0 + (1 +a−1qrt−1)Qr(K;a,q,t ). (3.81)
 5The slice genus of a knot K in S3 (sometimes also known as the Murasugi genus or four-ball gen us) is the

@@ -7,6 +7,7 @@ section_number: 3
 pages: 1-1
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
+doc_brief: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE — 19 sections: Introduction; These; Conformal simplices"
 ---
 section 5 we prove the results on scalar curvature alluded to above, and in
 section 6 we discuss the ball-packing results.

@@ -1,0 +1,47 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-9310070v1",
+ "source_sha256": "b979ebf2f47a4653",
+ "brief": "September, 1993 Quantum Dilogarithm — A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity.",
+ "extended": "**September, 1993 Quantum Dilogarithm**\n\n*L.D. Faddeev1,2,†, R.M. Kashaev 1,∗,†*\n\n9 pp, 5 sections.\n\n**Abstract.** A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity. The case where the quantum identity is realized in ﬁnite dimensional space is also considered and the quantum dilogarithm is constructed as a function on Ferm at curve, while the identity itself is equivalent to the restricted star-triangle relat ion introduced by Bazhanov and Baxter. † Supported by the Russian Academy of Sciences and Academy of F inland ∗ On leave of absence from St. Petersburg Nuclear Physics Inst itute, Gatchina, St. Petersburg 188350, Russia\n\n**Outline.** Abstract; 1 Introduction; 2 Quantized Rogers’ Identity; 3 Quantum Dilogarithm at θN = 1; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: The following “quantum pentagon ” identity holds :",
+ "tokens": {
+  "brief": 50,
+  "extended": 242
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-2-quantized-rogers-identity",
+   "title": "Quantized Rogers’ Identity",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-003-3-quantum-dilogarithm-at-θn-1",
+   "title": "Quantum Dilogarithm at θN = 1",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "8-9"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

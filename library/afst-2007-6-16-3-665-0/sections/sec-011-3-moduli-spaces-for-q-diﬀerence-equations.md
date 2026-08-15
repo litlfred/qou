@@ -7,6 +7,7 @@ section_number: 3
 pages: 21-22
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
+doc_brief: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques — 24 sections: Introduction; Classiﬁcation of q-diﬀerence equat; Some notation and formulas"
 ---
 For a diﬀerence moduleM over K we consider again the slope ﬁltra-
 tion 0 =M0 ⊂ M1 ⊂· · ·⊂ Mr. One associates toM the graded module

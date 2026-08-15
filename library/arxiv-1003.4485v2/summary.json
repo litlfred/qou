@@ -1,0 +1,97 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1003.4485v2",
+ "source_sha256": "714d73873cecd73a",
+ "brief": "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles.",
+ "extended": "**An Invitation to Higher Gauge Theory**\n\n*John C. Baez and John Huerta*\n\n60 pp, 15 sections.\n\n**Abstract.** In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles. Just as ordinary gauge theory involves a gauge group, this genera lization in- volves a gauge ‘2-group’. We focus on 6 examples. First, ever y abelian Lie group gives a Lie 2-group; the case of U(1) yields the theo ry of U(1) gerbes, which play an important role in string theory and mul tisymplec- tic geometry. Second, every group representation gives a Li e 2-group; the representation of the Lorentz group on 4d Minkowski spaceti me gives the Poincar´ e 2-group, which leads to a spin foam model for Minko wski space- time. Third, taking the adjoint representation of any Lie gr oup on its own Lie algebra gives a ‘tangent 2-group’, which serves as a gaug e 2-group in 4d BF theory, which has topological gravity as a special case.\n\n**Outline.** 1 Introduction; 2 Categories and Connections; 3 2-Categories and 2-Connections; 3.2 Path 2-Groupoids; 3.3 2-Groups; 3.4 2-Connections; 4 Examples and Applications; 4.1 Shifted Abelian Groups; 4.3 Tangent 2-Groups; 4.4 Inner Automorphism 2-Groups; 4.6 String 2-Groups; 5 Further Topics; 5.1 Gauge Transformations; 5.2 Curvature; 5.3 Nontrivial 2-Bundles\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: For any Lie group G and any smooth manifold M , there is a\n- Theorem 1: says this is almost all there is to being a connection. The on ly\n- Theorem: For any Lie 2-group G and any smooth manifold M , there is a\n- Theorem 2: Given a crossed module (G, H, t, α), there is a unique 2-group G\n- Theorem 3: For any Lie 2-group G and any smooth manifold M , there is a\n- Lemma: There is a one-to-one correspondence between smooth functo rs",
+ "tokens": {
+  "brief": 47,
+  "extended": 464
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-categories-and-connections",
+   "title": "Categories and Connections",
+   "pages": "3-11"
+  },
+  {
+   "id": "sec-002-3-2-categories-and-2-connections",
+   "title": "2-Categories and 2-Connections",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-003-32-path-2-groupoids",
+   "title": "Path 2-Groupoids",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-004-33-2-groups",
+   "title": "2-Groups",
+   "pages": "15-21"
+  },
+  {
+   "id": "sec-005-34-2-connections",
+   "title": "2-Connections",
+   "pages": "21-27"
+  },
+  {
+   "id": "sec-006-4-examples-and-applications",
+   "title": "Examples and Applications",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-007-41-shifted-abelian-groups",
+   "title": "Shifted Abelian Groups",
+   "pages": "27-33"
+  },
+  {
+   "id": "sec-008-43-tangent-2-groups",
+   "title": "Tangent 2-Groups",
+   "pages": "33-37"
+  },
+  {
+   "id": "sec-009-44-inner-automorphism-2-groups",
+   "title": "Inner Automorphism 2-Groups",
+   "pages": "37-40"
+  },
+  {
+   "id": "sec-010-46-string-2-groups",
+   "title": "String 2-Groups",
+   "pages": "40-44"
+  },
+  {
+   "id": "sec-011-5-further-topics",
+   "title": "Further Topics",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-012-51-gauge-transformations",
+   "title": "Gauge Transformations",
+   "pages": "44-46"
+  },
+  {
+   "id": "sec-013-52-curvature",
+   "title": "Curvature",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-014-53-nontrivial-2-bundles",
+   "title": "Nontrivial 2-Bundles",
+   "pages": "47-60"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

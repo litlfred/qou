@@ -1,0 +1,172 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1511.00400v2",
+ "source_sha256": "6cb493049394ce3a",
+ "brief": "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗ — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume.",
+ "extended": "**Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗**\n\n*November 6, 2018*\n\n55 pp, 30 sections.\n\n**Abstract.** This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume. Torsions are viewed as topological invaria nts and also as functions on the variety of representations in SL 2(C). In both cases, the torsions may also be computed after composing with ﬁnite dim ensional representations of SL 2(C). In addition the paper deals with the torsion of the adjoint representation as a function on the variety of PSLn+ 1(C)- characters, using that the ﬁrst cohomology group with coeﬃc ients twisted by the adjoint is the tangent space to the variety of characte rs.\n\n**Outline.** 1 Introduction; 2.1 Combinatorial torsion; 2 Combinatorial and analytic torsions; 2.1.2 Twisted chain complexes; 2.2 Geometric properties of combinatorial tors; 2.2.1 Mayer-Vietoris; 2.2.2 Polynomials; 2.2.3 Examples; 2.3 Analytic torsion; 3 Torsion of hyperbolic three-manifold with re; 3.1 Torsions from lifts of the holonomy repres; 3.1.3 Cusped hyperbolic 3-manifolds; 3.1.4 The twisted polynomial; 3.2 Torsion on the variety of characters; 3.2.1 The distinguished curve of characters; 4.1 Representations of SL2(C); 4.2 Higher torsions for closed manifolds; 4.3 Functions on the variety of characters\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.13: For a knot exterior S3 − K, we have:\n- Theorem 2.24: For a compact Lie group G\n- Theorem 2.27: Let M be a closed hyperbolic manifold of odd dimen-\n- Theorem 2.28: Let M be a closed hyperbolic manifold of odd dimension\n- Theorem 3.3: Let M 3 be a closed, orientable, hyperbolic 3-manifold. Then\n- Theorem 3.7: Let M 3 be a compact oriented",
+ "tokens": {
+  "brief": 44,
+  "extended": 438
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-21-combinatorial-torsion",
+   "title": "Combinatorial torsion",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-2-combinatorial-and-analytic-torsions",
+   "title": "Combinatorial and analytic torsions",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-003-212-twisted-chain-complexes",
+   "title": "Twisted chain complexes",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-22-geometric-properties-of-combinatorial-torsion",
+   "title": "Geometric properties of combinatorial torsion",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-005-221-mayer-vietoris",
+   "title": "Mayer-Vietoris",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-222-polynomials",
+   "title": "Polynomials",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-007-223-examples",
+   "title": "Examples",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-008-23-analytic-torsion",
+   "title": "Analytic torsion",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-009-3-torsion-of-hyperbolic-three-manifold-with-repr",
+   "title": "Torsion of hyperbolic three-manifold with representations in SL2(C)",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-010-31-torsions-from-lifts-of-the-holonomy-represent",
+   "title": "Torsions from lifts of the holonomy representation",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-011-313-cusped-hyperbolic-3-manifolds",
+   "title": "Cusped hyperbolic 3-manifolds",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-012-314-the-twisted-polynomial",
+   "title": "The twisted polynomial",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-013-32-torsion-on-the-variety-of-characters",
+   "title": "Torsion on the variety of characters",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-014-321-the-distinguished-curve-of-characters",
+   "title": "The distinguished curve of characters",
+   "pages": "19-26"
+  },
+  {
+   "id": "sec-015-41-representations-of-sl2c",
+   "title": "Representations of SL2(C)",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-016-42-higher-torsions-for-closed-manifolds",
+   "title": "Higher torsions for closed manifolds",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-017-43-functions-on-the-variety-of-characters",
+   "title": "Functions on the variety of characters",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-018-431-generic-cohomology-on-the-distinguished-comp",
+   "title": "Generic cohomology on the distinguished component",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-019-432-higher-torsions-on-the-variety-of-characters",
+   "title": "Higher torsions on the variety of characters",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-020-44-evaluation-at-the-holonomy",
+   "title": "Evaluation at the holonomy",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-021-441-cohomolgy-at-the-character-of-the-holonomy",
+   "title": "Cohomolgy at the character of the holonomy",
+   "pages": "32-35"
+  },
+  {
+   "id": "sec-022-45-quantum-invariants",
+   "title": "Quantum invariants",
+   "pages": "35-39"
+  },
+  {
+   "id": "sec-023-51-local-parameters-and-change-of-curve",
+   "title": "Local parameters and change of curve",
+   "pages": "39-41"
+  },
+  {
+   "id": "sec-024-52-an-example",
+   "title": "An example",
+   "pages": "41-44"
+  },
+  {
+   "id": "sec-025-appendix-a-not-approximating-the-trivial-represe",
+   "title": "Appendix A Not approximating the trivial representation",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-026-appendix-b-cohomology-on-the-variety-or-characte",
+   "title": "Appendix B Cohomology on the variety or characters",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-027-b1-the-complete-structure",
+   "title": "B.1 The complete structure",
+   "pages": "46-48"
+  },
+  {
+   "id": "sec-028-b12-a-basis-in-cohomology",
+   "title": "B.1.2 A basis in cohomology",
+   "pages": "48-49"
+  },
+  {
+   "id": "sec-029-b2-generic-representations-in-the-distinguished",
+   "title": "B.2 Generic representations in the distinguished component.",
+   "pages": "49-55"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

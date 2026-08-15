@@ -7,6 +7,7 @@ section_number: null
 pages: 74-76
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 We consider six two-way streetspn entering a joint as in Figure 46. It is convenient to sum-
 marize the soliton spectrum by deﬁning generating functions for the soliton degeneracies

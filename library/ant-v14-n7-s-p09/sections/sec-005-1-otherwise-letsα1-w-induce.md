@@ -7,6 +7,7 @@ section_number: 1
 pages: 25-25
 source_pdf: ant-v14-n7-s-p09.pdf
 source_sha256: c8fe963200a79d25
+doc_brief: "Galois action on the principal block and cyclic Sylow subgroups — 8 sections: Introduction; Blocks with normal defect group; Suppose that|D|= 2n. Since G/CD ac"
 ---
 the reﬂection corresponding to α1. Then s1:= s′g
 1 is F∗-ﬁxed, where g∈˜G∗ satisﬁes g−1F∗(g)=˙sα.

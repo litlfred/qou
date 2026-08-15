@@ -7,6 +7,7 @@ section_number: 9
 pages: 47-48
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 Paradigm, Yale University Press, 1986, and references therein.
 10. G. ’t Hooft, private communication.

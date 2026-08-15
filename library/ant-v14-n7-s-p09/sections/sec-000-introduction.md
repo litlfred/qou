@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: ant-v14-n7-s-p09.pdf
 source_sha256: c8fe963200a79d25
+doc_brief: "Galois action on the principal block and cyclic Sylow subgroups — 8 sections: Introduction; Blocks with normal defect group; Suppose that|D|= 2n. Since G/CD ac"
 ---
 One of the most prevalent questions in the representation theory of ﬁnite groups is to determine what
 relationships hold between the set Irr(G) of irreducible complex characters of a ﬁnite group G and its

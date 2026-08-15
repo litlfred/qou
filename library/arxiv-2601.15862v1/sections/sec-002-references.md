@@ -7,6 +7,7 @@ section_number: null
 pages: 14-16
 source_pdf: 2601.15862v1.pdf
 source_sha256: e37fa9b4515f58d1
+doc_brief: "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED — We have previously observed that the theory of solutions of par- tial differential equations, regarded asdiffietiesinside jet bundles, acquires a"
 ---
 [Bor94] F. Borceux.Categories of Sheaves. Vol. 3. Handbook of Categorical Alge-
 bra. Cambridge: Cambridge University Press, 1994.isbn: 9780521061247.

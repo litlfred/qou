@@ -7,6 +7,7 @@ section_number: 2
 pages: 21-23
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
+doc_brief: "arxiv-1012.5432v4 — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 An antiparticle is deﬁned to be the representation which when fused with the original
 particle yields the identity as one possible outcome. It turns out that the antiparticle is

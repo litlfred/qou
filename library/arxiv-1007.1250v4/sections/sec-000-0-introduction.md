@@ -7,6 +7,7 @@ section_number: 0
 pages: 3-137
 source_pdf: 1007.1250v4.pdf
 source_sha256: 541ba4fb3068de8b
+doc_brief: "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES AMNON YEKUTIELI — We construct a 2 -dimensional twisted nonabelian multiplicative integral ."
 ---
 necessary to devise a theory of 2 -dimensional nonabelian multiplicative integration .
 Our work was guided by the problem at hand, plus ideas borrowed from the

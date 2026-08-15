@@ -7,6 +7,7 @@ section_number: null
 pages: 20-28
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 For ﬁnite points, our deﬁnition matches the classic algebraic deﬁnition for points in C (given in ordinary, not
 homogenous coordinates).

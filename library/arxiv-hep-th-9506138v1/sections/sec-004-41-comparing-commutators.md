@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 13-15
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
+doc_brief: "Black Hole Complementarity vs. Locality — 8 sections: Introduction; The Nice-Slice Argument; The Nice Slice and String Field Th"
 ---
 Let us begin our comparison by examining the commutators of l ocal ﬁelds more closely.
 For the moment, let us ignore gravity, and focus on quantum ﬁe ld theory on a ﬁxed

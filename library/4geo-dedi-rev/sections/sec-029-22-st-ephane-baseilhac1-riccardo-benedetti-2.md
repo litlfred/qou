@@ -7,6 +7,7 @@ section_number: 22
 pages: 23-24
 source_pdf: 4GEO-DEDI-REV.pdf
 source_sha256: e4d52947b71a3f37
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 36 sections: Institut Montpelli´ erain Alexand"
 ---
 Let us consider now Theorem 1.2. For the convenience of the reader we re-state it. We keep the
 usual setting. Recall that Mφ is the interior of a compact manifold ¯Mφ with boundary made by tori.

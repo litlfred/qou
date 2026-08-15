@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-4
 source_pdf: gt-v10-n3-p07-p.pdf
 source_sha256: 1f226aac77351a69
+doc_brief: "Geometry & Topology 10 (2006) 1425–1452 1425 Stabilization in the braid groups II: Transversal simplicity of knots JOAN S B IRMAN WILLIAM W M ENASCO The main result of this paper is a negative answer"
 ---
 The goal of this section is to prove Theorem 2, a special and limited version of Theorem
 1, the main result in [6]. Theorem 1 is valid in the topological setting, whereas Theorem

@@ -7,6 +7,7 @@ section_number: null
 pages: 15-19
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
+doc_brief: "Pure and Applied Mathematics Quarterly — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 In this section we give the proofs of equations (26)a n d(27)w h i c hw e r es t a t e d
 in [Kas96], but proofs were ommitted.

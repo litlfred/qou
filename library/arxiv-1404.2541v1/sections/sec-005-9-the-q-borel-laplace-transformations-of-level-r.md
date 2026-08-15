@@ -7,6 +7,7 @@ section_number: 9
 pages: 19-22
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
+doc_brief: "The Stokes phenomenon for the Ramanujan’s q-diﬀerence equation and its higher order extension Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu - jan equation between the"
 ---
 r − 1 and its application
 In this section, we deﬁne the higher order extension of the q-Borel-Laplace

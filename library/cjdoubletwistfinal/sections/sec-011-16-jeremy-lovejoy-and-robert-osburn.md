@@ -7,6 +7,7 @@ section_number: 16
 pages: 16-18
 source_pdf: cJdoubletwistfinal.pdf
 source_sha256: a1e18db5232b39f4
+doc_brief: "THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p)"
 ---
 then this cancels with the fourth sum of (3.12) and the second sum of (3.13). Putting all of this
 together and expanding sums we have that (3.4) equals

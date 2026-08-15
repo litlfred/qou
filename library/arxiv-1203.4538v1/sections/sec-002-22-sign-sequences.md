@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 6-7
 source_pdf: 1203.4538v1.pdf
 source_sha256: 5e44909e355c78d6
+doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 7 sections: Introduction.; Preliminaries on surreal numbers.; Sign sequences."
 ---
 Gonshor obtains in [
 Gon86] detailed results on the sign sequences of the surreals under

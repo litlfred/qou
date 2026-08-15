@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 11-13
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 Away from the location of Wilson loops, the classical Euler- Lagrange equations derived
 from the Chern-Simons action (1.1) look like

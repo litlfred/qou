@@ -7,6 +7,7 @@ section_number: 3
 pages: 5-8
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 Lusztig [12] introduced certain regions which, in low rank, give rise to canonical basis elements of
 a particularly simple form. The Lusztig cone , Ci, corresponding to i ∈χ n, is deﬁned to be the set

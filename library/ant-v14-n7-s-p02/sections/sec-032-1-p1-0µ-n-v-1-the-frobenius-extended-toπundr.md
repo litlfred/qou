@@ -7,6 +7,7 @@ section_number: 1
 pages: 36-36
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p -adic cyclotomic multiple zeta values David Jarossay p-adic cyclotomic multiple zeta values depend on the choice of a number of iterations"
 ---
 1 (P1−
 {0,µ pα N,∞})”, preprint, 2017. Submitted as “Cyclotomic p-adic multiple zeta values for roots of unity of order divisible

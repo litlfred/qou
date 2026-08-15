@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 10-13
 source_pdf: 2605.15740v1.pdf
 source_sha256: aa7f99d6633113c6
+doc_brief: "BAILEY P AIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
 ---
 (1.16), (1.24) and (1.25) to finite polynomial sums at roots of unity. We have chosen to present
 these results following the order in which the Bailey pairs in Section 2.2 were introduced.

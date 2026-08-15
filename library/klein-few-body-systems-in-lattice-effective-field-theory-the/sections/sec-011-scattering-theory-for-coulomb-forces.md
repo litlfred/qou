@@ -7,6 +7,7 @@ section_number: null
 pages: 24-25
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
+doc_brief: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Unive"
 ---
 Beside the strong interaction between particles, we also have the electromagnetic interaction, which must
 be treated separately. The beforementioned considerations concerning the solution of the free system

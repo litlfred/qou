@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 25-28
 source_pdf: 2008.09788v2.pdf
 source_sha256: 460f4f5432cb1f0c
+doc_brief: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETR Y — This paper surveys results related to well-known works of B. Plotkin and V."
 ---
 braic varieties over a ﬁeld of characteristic zero.
 3.2.1. The Case of Real Numbers. By a Matiyasevich family of polynomials we mean

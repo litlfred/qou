@@ -7,6 +7,7 @@ section_number: 16
 pages: 14-16
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
+doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 We give an example of a non-trivial element of the Bloch group. For con-
 venience, setα = 1−√−7

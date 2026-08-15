@@ -7,6 +7,7 @@ section_number: III
 pages: 7-14
 source_pdf: 9408045v1.pdf
 source_sha256: a9786c0f44a4e659
+doc_brief: "Constrained analysis of topologically massive gravity — We quantize the Einstein gravity in the formalism of weak gra vitational ﬁelds by using the constrained Hamiltonian method."
 ---
 When the spacetime dimension is odd, it is possible to introd uce a CS term in the
 Lagrangian. In this section we concentrate on the 2+1 case. T he corresponding CS

@@ -7,6 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: 0910.0096v1.pdf
 source_sha256: 805a75c337599adc
+doc_brief: "Gr¨ obner-Shirshov bases for Coxeter groups I∗ — A conjecture of Gr¨ obner-Shirshov basis of any Coxeter group h as proposed by L.A. Bokut and L.-S. Shiao [4]."
 ---
 Let M = ‖mij‖n×n be a symmetric n × n matrix such that mii = 1 , 2 ≤ mij ≤ ∞ .
 The Coxeter group W = W (M) is deﬁned by the generators s1, · · · , s n and the deﬁning

@@ -7,6 +7,7 @@ section_number: null
 pages: 17-18
 source_pdf: 04procbryden.pdf
 source_sha256: 8baffbc6542c34a5
+doc_brief: "Some computations of Ohtsuki series — We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand"
 ---
 [B-NG] D. Bar-Natan, S. Garoufalidis,On the Melvin-Morton-Rozansky Conjecture,
 Invent. Math. 125, 103-133 (1996).

@@ -7,6 +7,7 @@ section_number: null
 pages: 8-10
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
+doc_brief: "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
 ---
 [1] F. Bars, Automorphisms groups of genus 3 curves, Number The-
 ory Seminar UAB-UB-UPC on Genus 3 curves, available at:

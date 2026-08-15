@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 54-55
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 Recall that X is a one-dimensional component of the character varietyX(M) of
 a 3-manifold M with boundary a torus, and the same homology as a circle. The

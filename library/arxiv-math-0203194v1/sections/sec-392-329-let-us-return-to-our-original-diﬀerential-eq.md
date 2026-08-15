@@ -7,6 +7,7 @@ section_number: 3.2.9
 pages: 150-150
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 that the only singularities at ﬁnite distance are in D(0, 1+). Let us also as-
 sume that (∗) satisﬁes Dwork’s condition (so that the associated diﬀere ntial

@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 7-8
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 the 3D index IT depends only on the underlying 3-manifold M. Recall that [11] prove that
 every hyperbolic 3-manifold M that satisﬁes

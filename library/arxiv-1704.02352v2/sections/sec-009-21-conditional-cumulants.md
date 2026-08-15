@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 14-15
 source_pdf: 1704.02352v2.pdf
 source_sha256: 9a14dd6ee33248d3
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y"
 ---
 and let E : A → B be a unital linear map. We will say that E is a conditional
 expectation value ; in the literature one usually imposes some additional

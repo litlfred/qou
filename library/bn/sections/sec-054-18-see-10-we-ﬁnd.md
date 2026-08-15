@@ -7,6 +7,7 @@ section_number: 18
 pages: 51-52
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
+doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
 ---
 Corollary 11.8 The image of B4 has inﬁnite index in Sp(X)T
 18.

@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 6-7
 source_pdf: Di_Cairano_2022_J._Phys._Commun._6_015002.pdf
 source_sha256: f75313b507f97172
+doc_brief: "Journal of Physics Communications PAPER • OPEN ACCESS On the derivation of a Nonlinear Generalized Langevin Equation To cite this article: Loris Di Cairano 2022 J. Phys. Commun. 6 015002 — 14 sections"
 ---
 Let us ﬁrst clarify the role and the physical meaning of the mapa :i 33 .
 5

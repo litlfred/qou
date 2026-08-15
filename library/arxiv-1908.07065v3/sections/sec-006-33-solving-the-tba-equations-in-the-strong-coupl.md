@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 18-20
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
+doc_brief: "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN ="
 ---
 As we have argued, Borel sums of quantum periods are solutions to the TBA equations (3.30),(3.55).
 In principle the resummed quantum periods can be computed from these TBA equations by using

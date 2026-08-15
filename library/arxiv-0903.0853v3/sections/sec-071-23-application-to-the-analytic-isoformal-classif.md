@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 31-31
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 Example 2.3.7 . — If we take for instance u := 1 and v := 0, we see that
 the unique formal solution of the equation zσqf−f =v−u is the Tshakaloﬀ

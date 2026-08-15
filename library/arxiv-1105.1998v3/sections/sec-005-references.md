@@ -7,6 +7,7 @@ section_number: null
 pages: 11-11
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applica tions SIGMA 7 (2011), 115, 11 pages A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA — We show a connection formula of"
 ---
 [1] Birkhoff G.D., The generalized Riemann problem for line ar differential equations and the allied problems
 for linear difference and q-difference equations, Proc. Amer. Acad. 49 (1913), 521–568.

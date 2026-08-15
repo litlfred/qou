@@ -7,6 +7,7 @@ section_number: null
 pages: 56-60
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
+doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 LetC be an ind-constructible weakly unital A∞-category over a ﬁeld k of
 arbitrary characteristic. Let cl : Ob(C) → Γ ≃ Zn be a map of ind-

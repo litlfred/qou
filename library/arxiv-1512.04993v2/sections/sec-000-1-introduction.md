@@ -7,6 +7,7 @@ section_number: 1
 pages: 4-7
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 According to the holographic principle all physics is encoded at the boundaries of
 spacetime. A good deal is known in the context of AdS/CFT about this encoding as

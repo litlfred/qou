@@ -7,6 +7,7 @@ section_number: 3
 pages: 10-25
 source_pdf: 1112.0030v2.pdf
 source_sha256: 745f143c2df4734b
+doc_brief: "Homological algebra of knots and BPS states — It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces."
 ---
 Let us denote byHg,R a homology theory of knots and links colored by a repre-
 sentation R of the Lie algebra g. Many such homology theories can be constructed

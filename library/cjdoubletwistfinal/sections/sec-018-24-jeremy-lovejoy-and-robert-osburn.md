@@ -7,6 +7,7 @@ section_number: 24
 pages: 24-24
 source_pdf: cJdoubletwistfinal.pdf
 source_sha256: a1e18db5232b39f4
+doc_brief: "THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p)"
 ---
 [16] K. Hikami, Asymptotics of the colored Jones polynomial and the A-polynomial, Nuclear Phys. B 773 (2007),
 no. 3, 184–202.

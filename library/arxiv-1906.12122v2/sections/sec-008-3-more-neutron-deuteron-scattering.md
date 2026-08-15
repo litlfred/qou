@@ -7,6 +7,7 @@ section_number: 3
 pages: 19-21
 source_pdf: 1906.12122v2.pdf
 source_sha256: 955e3eda48672e28
+doc_brief: "Nuclear eﬀective ﬁeld theory: status and perspectives H.-W. Hammer∗ Institut f¨ ur Kernphysik, Technische Universit¨ at Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI — 34 sections"
 ---
 a. Range corrections, partial resummation, and two-body
 parametrizations At NLO one needs to account for the

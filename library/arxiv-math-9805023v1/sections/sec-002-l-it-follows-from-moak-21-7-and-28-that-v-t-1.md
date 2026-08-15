@@ -7,6 +7,7 @@ section_number: L
 pages: 7-7
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
+doc_brief: "q-LAGUERRE POL YNOMIALS AND BIG q-BESSEL — The q-Laguerre polynomials correspond to an indetermined moment probl em."
 ---
 k (0) is not identically zero for k < −N
 for some N . The observation now follows from the asymptotic expressio n for the Jackson

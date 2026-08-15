@@ -7,5 +7,6 @@ section_number: L
 pages: 1-1
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
+doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 

@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-8
 source_pdf: 1210.6243v1.pdf
 source_sha256: 3ff2f5358b25586e
+doc_brief: "Controlled double-slit electron diﬀraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
 ---
 In this paper, we show a full realization of Feynman’s thought exper iment and illustrate
 key features of quatum mechanics: interference and the wave-p article duality of matter.

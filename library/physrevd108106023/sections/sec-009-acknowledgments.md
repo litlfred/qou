@@ -7,6 +7,7 @@ section_number: null
 pages: 8-11
 source_pdf: PhysRevD.108.106023.pdf
 source_sha256: 50c7980e88cd21a0
+doc_brief: "Knot-quiver correspondence for double twist knots Vivek Kumar Singh * — 10 sections: INTRODUCTION; DOUBLE TWIST KNOTS; KNOT-QUIVER CORRESPONDENCE"
 ---
 The work of V . K. S. is supported by “Tamkeen under
 the NYU Abu Dhabi Research Institute Grant No. CG008

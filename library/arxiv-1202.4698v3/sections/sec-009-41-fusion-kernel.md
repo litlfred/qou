@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 10-11
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 Recall that the fusion kernel is usually deﬁned in terms of th e conformal blocks appearing in
 the holomorphically factorized form of the four-point functions,

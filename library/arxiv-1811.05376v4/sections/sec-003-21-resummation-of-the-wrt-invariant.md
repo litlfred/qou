@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 17-18
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
 ---
 We now turn to the resummation of the normalized WRT invariant˜Zk(X). Recall that forµ∈ Q/Z
 we introduced the set

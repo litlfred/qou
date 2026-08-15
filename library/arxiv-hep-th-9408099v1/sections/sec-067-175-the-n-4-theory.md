@@ -7,6 +7,7 @@ section_number: 17.5
 pages: 85-87
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 In equation (16.17), we determined the general structure of the curve for N = 4:
 y2 = (x −e1~u −e1

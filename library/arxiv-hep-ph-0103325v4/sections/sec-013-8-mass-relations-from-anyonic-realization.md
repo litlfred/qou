@@ -7,6 +7,7 @@ section_number: 8
 pages: 6-6
 source_pdf: 0103325v4.pdf
 source_sha256: 38590174ab836fa1
+doc_brief: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine — 28 sections: Introduction; V ector meso"
 ---
 of Uq(suN )
 Necessary setting adopted from [22] includes

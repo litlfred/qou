@@ -7,6 +7,7 @@ section_number: null
 pages: 4-5
 source_pdf: lee-vanderveen-colored-jones-polynomials-without-tails.pdf
 source_sha256: fcc45aebd34e25dc
+doc_brief: "COLORED JONES POLYNOMIALS WITHOUT TAILS — We exhibit an in nite family of knots with the property that the rst coecient of the n-colored Jones polynomial grows linearly with n."
 ---
 [1] Cody Armond. The head and tail conjecture for alternating knots. Algebr. Geom. Topol., 13(5):2809{2826, 2013.
 [2] Cody Armond and Oliver T. Dasbach. The head and tail of the colored Jones polynomial for adequate knots. Proc.

@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 6-8
 source_pdf: 1806.09450v1.pdf
 source_sha256: 8556b67d97856446
+doc_brief: "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗ — We continue the study undertaken in [DV] of the exceptional Jordan algebra"
 ---
 algebra and its Lie algebra f4
 About the same time Pascual Jordan introduced his algebras Ruth Moufang

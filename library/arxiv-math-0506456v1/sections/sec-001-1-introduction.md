@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
+doc_brief: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e"
 ---
 In this paper we investigate the large level asymptotics of the Resh etikhin–Turaev
 invariants of the 3–manifolds obtained by doing surgery on the ﬁgur e 8 knot with

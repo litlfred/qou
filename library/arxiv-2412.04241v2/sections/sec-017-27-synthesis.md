@@ -7,6 +7,7 @@ section_number: 2.7
 pages: 35-37
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 the one hand and formal Gaussian integration on the other. It identifies the two collections
 fA(t,q ) and f FGI

@@ -7,6 +7,7 @@ section_number: 4
 pages: 47-47
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 Evaporation, Princeton preprint, PUPT-1380,IASSNS-HEP-93/8, Februar y 1993;
 K. Schoutens, E. Verlinde, and H. Verlinde, Quantum Black Hole Evaporation, Prince-

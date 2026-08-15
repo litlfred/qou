@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 38-41
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 Incomplete hyperbolic structures on knot complements come in continuous families.
 For example, if K is a hyperbolic knot in the 3-sphere, then the moduli space of hyperbolic

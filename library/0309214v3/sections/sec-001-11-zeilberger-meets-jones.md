@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 2-4
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
+doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
 ---
 The colored Jones function of a framed knot K in 3–space
 JK : N − →Z[q±1/4]

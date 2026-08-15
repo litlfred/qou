@@ -7,6 +7,7 @@ section_number: 7
 pages: 18-23
 source_pdf: 1203.6551v1.pdf
 source_sha256: a8e84f8ed63dbcca
+doc_brief: "On the number of hyperbolic 3-manifolds of a given volume — The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v."
 ---
 In this section we study the circle packing corresponding to the hyp erbolic
 graph Wn shown in Figure 8.

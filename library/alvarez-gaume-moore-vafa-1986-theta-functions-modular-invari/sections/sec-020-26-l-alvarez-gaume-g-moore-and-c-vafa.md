@@ -7,6 +7,7 @@ section_number: 26
 pages: 26-27
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
+doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
 ---
 In order to define the chiral determinant we must take the square root of (5.11).
 There are many ways to define chiral square roots, and we must choose a definition

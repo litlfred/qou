@@ -7,6 +7,7 @@ section_number: 3
 pages: 10-13
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
+doc_brief: "Gedanken Experiments Involving Black Holes Leonard Susskind, and L ´arus Thorlacius, Department of Physics — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot"
 ---
 The event horizon of Rindler space can be viewed as a black hol e event horizon in the
 limit of inﬁnite mass. Any attempt by external observers to d etermine the physical presence

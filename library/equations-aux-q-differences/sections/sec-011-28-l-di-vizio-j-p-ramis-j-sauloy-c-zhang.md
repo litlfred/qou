@@ -7,6 +7,7 @@ section_number: 28
 pages: 9-11
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
+doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 `a produire des solutions formelles (comme au §4). Sans surprise, dans le cas
 fuchsien, ces solutions formelles convergent.

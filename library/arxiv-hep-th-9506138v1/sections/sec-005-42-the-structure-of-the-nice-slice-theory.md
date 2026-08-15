@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 15-26
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
+doc_brief: "Black Hole Complementarity vs. Locality — 8 sections: Introduction; The Nice-Slice Argument; The Nice Slice and String Field Th"
 ---
 The comparison of the commutators of low-energy nice-slice ﬁelds in quantum ﬁeld
 theory and in string theory has provided evidence that the as sumption of locality of the

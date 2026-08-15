@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 1203.4538v1.pdf
 source_sha256: 5e44909e355c78d6
+doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 7 sections: Introduction.; Preliminaries on surreal numbers.; Sign sequences."
 ---
 In his monograph [
 Gon86], H. Gonshor showed that Conway’s real closed ﬁeld of

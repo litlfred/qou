@@ -7,6 +7,7 @@ section_number: 5
 pages: 31-34
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
+doc_brief: "Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Constant term formulas for"
 ---
 In summary, we have seen that the constant term expressions for the number of 
 Gog-type objects are all of the following form

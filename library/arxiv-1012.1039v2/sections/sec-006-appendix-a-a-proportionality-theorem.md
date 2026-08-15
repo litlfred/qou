@@ -7,6 +7,7 @@ section_number: null
 pages: 14-18
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 The purpose of this appendix is to establish the following proportiona lity theo-
 rem.

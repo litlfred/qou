@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 14-14
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 Lemma 3.3. We have:
 Dk(ζx) =Dk(x)(1−x)k

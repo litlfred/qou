@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 19-22
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
 ---
 given above to prove the existence of Lµ and Kµ is not effective. M. Lassalle
 [Las09] gave an algorithm for computing Kµ by induction over µ. In this section

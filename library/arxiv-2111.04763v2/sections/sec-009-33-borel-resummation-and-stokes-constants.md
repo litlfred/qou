@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 27-37
 source_pdf: 2111.04763v2.pdf
 source_sha256: 760a7f9794e8baaa
+doc_brief: "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
 ---
 in Section 2.4 to includex-deformation. We analyse the asymptotic expansion asq= e2πiτ
 andτ→0ofthe(x,q)-seriespresentedinSection3.2andrelatethemtothe(x,τ)-asymptotic

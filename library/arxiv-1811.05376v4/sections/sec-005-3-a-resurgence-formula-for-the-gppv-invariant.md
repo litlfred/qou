@@ -7,6 +7,7 @@ section_number: 3
 pages: 19-20
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
 ---
 We now turn to theq-series invariantˆZ0(X,q ). We follow [28]. Let(Γ,m ) be an ordered weighted
 tree, i.e. Γ is a tree together with an ordering of its set of verticesV and m is a mapm :V → Z.

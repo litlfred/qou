@@ -7,6 +7,7 @@ section_number: 6.6
 pages: 23-23
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 has nothing to do with triangulations. The following rigidity theorem, due to Weil
 [32], precedes Mostow–Prasad rigidity by a dozen years.

@@ -7,6 +7,7 @@ section_number: 2
 pages: 1-3
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
+doc_brief: "A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume"
 ---
 Let K be a knot in S3. Denote by JN (K; q) the colored Jones polynomial associ-
 ated to the N -dimensional irreducible representation of the Lie algebra sl(2, C) [9].

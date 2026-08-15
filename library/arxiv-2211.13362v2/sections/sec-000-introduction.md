@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: 2211.13362v2.pdf
 source_sha256: 3becbeaa1135d2e1
+doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
 ---
 Diffraction and interference phenomena occupy a prominent place in the phenomenology of quan-
 tum physics, Young’s double-slit experiment (DSE) being an archetypal example which, according

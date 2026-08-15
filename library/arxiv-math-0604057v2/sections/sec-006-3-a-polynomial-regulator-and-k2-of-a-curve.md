@@ -7,6 +7,7 @@ section_number: 3
 pages: 3-3
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
+doc_brief: "VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER V ARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is"
 ---
 In this section, we brieﬂy recall the generalized volume con jecture. Using the regulator map of a
 curve, we show that the form r(l, m) = ξ(l, m) + iη(l, m) over the 1-dimensional character variety

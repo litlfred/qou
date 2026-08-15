@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 4-4
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
+doc_brief: "Gr¨ obner-Shirshov bases and PBW theorems∗ L. A. Bokut † — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for"
 ---
 Let S ⊂ Lie(X) ⊂ k⟨X⟩ be a nonempty set of monic Lie polynomials, ( X ∗, < ) deg-lex
 order, ¯s means the maximal word of s as non-commutative polynomial. Then compositions

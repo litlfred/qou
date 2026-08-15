@@ -7,6 +7,7 @@ section_number: null
 pages: 1-9
 source_pdf: 0407052v1.pdf
 source_sha256: 4624ea2fb4d318ad
+doc_brief: "Black hole entropy in Loop Quantum Gravity Krzysztof A. Meissner — We calculate the black hole entropy in Loop Quantum Gravity a s a function of the horizon area and provide the exact formula fo r"
 ---
 We calculate the black hole entropy in Loop Quantum Gravity a s a
 function of the horizon area and provide the exact formula fo r the

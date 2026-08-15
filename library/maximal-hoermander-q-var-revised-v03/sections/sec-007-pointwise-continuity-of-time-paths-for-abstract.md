@@ -7,6 +7,7 @@ section_number: null
 pages: 28-35
 source_pdf: Maximal-Hoermander-q-Var-revised-v03.pdf
 source_sha256: 135332c04a1b3bb8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 10 sections: Introduction; R-boundedness; Prel"
 ---
 and wave equations
 The goal of this section is to provide an application of Corollary 5.3 to the continuity in time

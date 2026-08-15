@@ -7,6 +7,7 @@ section_number: null
 pages: 28-29
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
+doc_brief: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡ — We study the emergence ofq-deformed spacetime in a lower-dimensional"
 ---
 The bulk action of a generic (Euclidean) dilaton gravity model with potentialV (Φ) is given
 by

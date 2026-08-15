@@ -7,6 +7,7 @@ section_number: 20
 pages: 20-20
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 part of equation(6.1). Then a critical point of the volume functionalV on Ap/q(τ)
 yields a complete hyperbolic structure onM(p/q),t h ep/q Dehn ﬁlling ofM.

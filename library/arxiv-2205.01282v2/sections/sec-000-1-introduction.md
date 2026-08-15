@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
+doc_brief: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES YUYA MURAKAMI — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed"
 ---
 Acknowledgement 3
 2. Basic notations for plumbing graphs 3

@@ -7,6 +7,7 @@ section_number: null
 pages: 80-82
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 We would now like to relate the formalism of this paper to the formalism using the Xγij′
 used in our previous paper [5]. The essential problem here is one of signs. In this section we

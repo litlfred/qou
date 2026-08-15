@@ -7,6 +7,7 @@ section_number: 14
 pages: 14-16
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 Now h lies in Hn, that is, h only involves the generators t, g 1, . . . , g n−1. It fol-
 lows that h commutes with g−1

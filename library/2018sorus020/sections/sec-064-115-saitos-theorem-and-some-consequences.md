@@ -7,6 +7,7 @@ section_number: 1.1.5
 pages: 23-24
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 From the equivalence of the two deﬁnitions of the character variety, we know that
 any character χ ∈ X(Γ) is the character of a representation ρ : Γ → SL2(k).

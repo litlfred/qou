@@ -7,6 +7,7 @@ section_number: 3
 pages: 2-4
 source_pdf: 1172-3.pdf
 source_sha256: e9c32f59e9db7970
+doc_brief: "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS KAZUO HABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Progress Towards the V"
 ---
 Here we list our results of calculations. In the following the links are
 assumed to be framed with framings zero.

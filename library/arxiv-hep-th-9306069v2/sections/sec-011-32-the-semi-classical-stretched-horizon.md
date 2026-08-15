@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 22-25
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 In deﬁning the stretched horizon of a semi-classical black h ole, we ﬁnd it more convenient
 to refer to the ultimate horizon at y− = 0 than the event horizon (2.41). For a large black

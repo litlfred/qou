@@ -7,6 +7,7 @@ section_number: 5
 pages: 43-44
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
+doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 its real conjugate and D(ξ) = 0 for both non-real conjugates of ξQ0 )a n d
 could verify algebraically as in section 2B. But the equations 1−Q1 =Q8

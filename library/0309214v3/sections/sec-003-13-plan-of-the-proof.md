@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 5-5
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
+doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
 ---
 In Section 2, we discuss in detail the notion of a q –holonomic function. We give
 examples of q –holonomic functions (our building blocks), together with rules

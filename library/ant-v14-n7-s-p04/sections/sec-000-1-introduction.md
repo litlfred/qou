@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: ant-v14-n7-s-p04.pdf
 source_sha256: 6abd838a4c933311
+doc_brief: "Elliptic curves over totally real cubic ﬁelds are modular — 10 sections: Introduction; Images mod 3, 5, 7 and modularity; Modular curves"
 ---
 Let K be a totally real number ﬁeld and let E be an elliptic curve over K with conductor N . It is
 conjectured that such a curve E is modular in the following sense: there is a level N Hilbert newform

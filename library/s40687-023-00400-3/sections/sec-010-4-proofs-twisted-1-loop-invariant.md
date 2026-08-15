@@ -7,6 +7,7 @@ section_number: 4
 pages: 16-21
 source_pdf: s40687-023-00400-3.pdf
 source_sha256: fd7638a8cf512a99
+doc_brief: "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 https://doi.org/10.1007/s40687-023-00400-3 RESEARCH Twisted Neumann–Zagier matrices StavrosGaroufalidis1,2* andSeokbeomYoon 1 *Correspondence: — TheN"
 ---
 Inthissection,wegiveproofsofthepropertiesofthetwisted1-loopinvariant.
 Proof Theorem 1.6 WewillusethenotationofTheorem 1.5whichrelatestheNZmatrices

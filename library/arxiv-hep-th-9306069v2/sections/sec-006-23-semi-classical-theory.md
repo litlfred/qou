@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 13-15
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 Our second postulate assumes that a semi-classical approxi mation to gravitation theory
 can be developed systematically. In the simpliﬁed world of t wo-dimensional dilaton gravity

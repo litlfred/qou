@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 4-5
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 we deﬁne the length, l(w), to be the smallest non-negative integer k such that
 w can be written as a product of k generators (or their inverses). Such an

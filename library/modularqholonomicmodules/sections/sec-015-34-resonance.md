@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 29-31
 source_pdf: modular.qholonomic.modules.pdf
 source_sha256: 640303a68dd75453
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 ---
 equation (11), i.e., the case where at least one of the ratios ai/aj (fori⁄=j),bi/bj (fori⁄=j)
 orai/bj (for some i andj) is an integer power of q. For simplicity, we will consider only the

@@ -7,6 +7,7 @@ section_number: null
 pages: 23-26
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
+doc_brief: "Jump to Bibliography by Stavros Garoufalidis and Don Zagier Published: 2023 — Wal ter Neu mann — hence forth simply Wal ter — has made huge con tri bu ‐ tions to to po logy, sin gu lar ity the ory"
 ---
 [e1]  S. Bloch: “Ap plic a tions of the di log ar ithm func tion in al geb ra ic -the ory and al geb ‐
 ra ic geo metry,” pp. 103– 114 in Pro ceed ings of the In ter na tion al Sym posi um on Al geb ra ic⇧

@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-7
 source_pdf: HyperbolicAndNeumann.pdf
 source_sha256: 3d66fe4c64bdc62b
+doc_brief: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP — 7 sections: Ideal triangulations and the gluin; Volumes and Dehn surgeries; The Bloch group and the extended B"
 ---
 As already stated, the original main purpose of [31] was to study the arithmetic of the set
 of volumes of all hyperbolic 3-manifolds. It had been observed by Thurston, using earlier

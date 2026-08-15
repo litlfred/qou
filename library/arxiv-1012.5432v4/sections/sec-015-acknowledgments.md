@@ -7,6 +7,7 @@ section_number: null
 pages: 39-44
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
+doc_brief: "arxiv-1012.5432v4 — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 The author would like to thank F. Wilczek for advising her thesis (the ﬂagstone for this
 paper) and for subsequently suggesting she “condense a paper out of it”. In addition, she

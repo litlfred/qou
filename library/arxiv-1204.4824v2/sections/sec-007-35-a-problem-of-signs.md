@@ -7,6 +7,7 @@ section_number: 3.5
 pages: 17-19
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 We must now confront a pesky but important detail.
 There is an ambiguity in (3.7): the generators F andJ are well deﬁned only up to

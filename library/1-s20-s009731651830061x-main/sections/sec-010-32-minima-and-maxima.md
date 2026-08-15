@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 16-18
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
+doc_brief: "Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Constant term formulas for"
 ---
 In order to involve the number of minima and the number of maxima in the Gog-
 trapezoids, we have to apply the version of Corollary 6 where the requirement on b1, b2,

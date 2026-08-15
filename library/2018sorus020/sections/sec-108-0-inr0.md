@@ -7,6 +7,7 @@ section_number: 0
 pages: 76-79
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 )
 is diagonal, wherer0 = dim kerA0, andIn−r0 is the(n−r0)

@@ -7,6 +7,7 @@ section_number: 3
 pages: 13-17
 source_pdf: 2304.07001v3.pdf
 source_sha256: b6c0d7f50b6407f1
+doc_brief: "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a f ormal power series associated to elements in the Habiro ring that come from radi al"
 ---
 In order to prove Theorem 1.4 and Corollary 1.5, we require some general preliminaries. Recall
 the periodic function χ(n,m)

@@ -7,6 +7,7 @@ section_number: 0.30
 pages: 29-29
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
+doc_brief: "Modern Theory of Nuclear Forces E. Epelbaum∗ — 38 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 with the average mass m∆ ≡ (m∆ ++ +m∆ + +m∆ 0 +
 m∆ −)/4 = 1233 MeV from Ref. (325) which leads to

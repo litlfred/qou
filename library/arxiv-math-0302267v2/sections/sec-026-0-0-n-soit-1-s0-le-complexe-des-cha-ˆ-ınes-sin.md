@@ -7,6 +7,7 @@ section_number: 0
 pages: 36-41
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et"
 ---
 guli` eres du point. On a [0 , 1] = |∆ 1|. Soit σm le simplexe |∆ m| → | ∆ 1|m = [0, 1]m de coor-
 donn´ ees les d´ eg´ en´ erescencesϕi (1 ≤ i ≤ m) de (3.6.1). Son image est {t¯|1 ≥ t1 ≥ . . . ≥ tm ≥ 0}.

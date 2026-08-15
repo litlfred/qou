@@ -7,6 +7,7 @@ section_number: 2
 pages: 8-29
 source_pdf: ant-v14-n7-s-p03.pdf
 source_sha256: e32fde16c3ce0940
+doc_brief: "Nouvelles cohomologies de Weil en caractéristique positive Joseph Ayoub — periods” admitting an explicit description by generators and relations."
 ---
 On commence cette section avec des rappels sur les motifs (algébriques et rigides) qui serviront dans
 la suite. On donne ensuite la construction du foncteur ~Rig∗ (voir (1-7)) et on démontre le théorème 1.7.

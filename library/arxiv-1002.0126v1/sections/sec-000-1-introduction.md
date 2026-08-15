@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
+doc_brief: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
 ---
 HITOSHI MURAKAMI
 Abstract. This is an introduction to the Volume Conjecture and its gene r-

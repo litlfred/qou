@@ -7,6 +7,7 @@ section_number: 4.1.1
 pages: 27-31
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
 ---
 Recall that q = exp(2πiτ ) with τ ∈ h where h denotes the upper half plane, and recall the
 deﬁnitions ofF∈M (C) and g∈ C[x] given in (15). Let˜Γ+ =e

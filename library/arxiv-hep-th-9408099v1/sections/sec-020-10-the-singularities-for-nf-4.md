@@ -7,6 +7,7 @@ section_number: 10
 pages: 34-37
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 When the number of ﬂavors is four the one loop beta function va nishes. Because of the
 properties ofN = 2, the beta function is also zero to all orders in perturbati on theory. Does

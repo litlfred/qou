@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 18-21
 source_pdf: 1604.01247v2.pdf
 source_sha256: 5a402405aadf5d54
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an"
 ---
 There are general deﬁnitions of bimodules for classes of algebras [3 8], [27]
 or for categories of algebras [14]. For Jordan algebras this reduce s to the

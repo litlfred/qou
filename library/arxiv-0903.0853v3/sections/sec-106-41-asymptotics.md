@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 51-53
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 We shall need a q-analogue of asymptotics in the sense of Poincar´ e . In
 chapter 5 we shall develop a more restrictive notion of asymp totics.

@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-8
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
+doc_brief: "Black Hole Complementarity vs. Locality — 8 sections: Introduction; The Nice-Slice Argument; The Nice Slice and String Field Th"
 ---
 ﬁeld theory is valid for the trans-Planckian modes, but it is assumed that they can be
 localized on some scale small compared to the overall geomet ry, such as ℓP . We shall see

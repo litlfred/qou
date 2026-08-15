@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 11-13
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
 ---
 So far, we have considered two continuous deformations of the volume conjecture,
 in u and ℏ, as drawn schematically in Figure 3. In addition, there are two discrete

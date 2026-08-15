@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 16-18
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
+doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
 ---
 Our starting point are multisums of q –proper hypergeometric functions. Recall
 the deﬁnition 2.3 of a q –proper hypergeometric function F (n, k) from Section

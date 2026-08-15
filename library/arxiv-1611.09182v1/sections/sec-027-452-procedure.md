@@ -7,6 +7,7 @@ section_number: 4.5.2
 pages: 31-33
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 plex Cliﬀord algebras, where n is even. This procedure is described in [1], which also
 accommodates other types of Cliﬀord algebra.

@@ -7,6 +7,7 @@ section_number: 2
 pages: 7-13
 source_pdf: 2304.07001v3.pdf
 source_sha256: b6c0d7f50b6407f1
+doc_brief: "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a f ormal power series associated to elements in the Habiro ring that come from radi al"
 ---
 Proof of Theorem 1.2. The Borel transform of Ff (1/x) from ( 1.16) is given by
 B[Ff ](p) = CM δ + Gf (p)

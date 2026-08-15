@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-1
 source_pdf: fd58d8e182edda805fed0946606c5ab82f81.pdf
 source_sha256: 292cb048e7097935
+doc_brief: "Palestine Journal of Mathematics — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another combinatorial"
 ---
 Originally, the Temperley-Lieb algebra appears in the context of statistical mechanics [ 19], and
 later its structure has been studied in connection with knot theory, where it is known to be a

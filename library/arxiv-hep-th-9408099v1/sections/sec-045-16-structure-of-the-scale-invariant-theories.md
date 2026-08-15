@@ -7,6 +7,7 @@ section_number: 16
 pages: 56-57
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 In this section, we will analyze the Nf = 4 and N = 4 theories. In the absence of bare
 masses, those theories are conformally invariant. In the pr esence of N = 2-invariant bare

@@ -7,6 +7,7 @@ section_number: 3
 pages: 11-16
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
+doc_brief: "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s) — 6 sections: Introduction; Preliminaries; (b) (c)"
 ---
 with totally geodesic boundary of genus g
 In this section we construct infinitely many mutually non-isometric hyper-

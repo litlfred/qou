@@ -7,6 +7,7 @@ section_number: 6
 pages: 16-23
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
+doc_brief: "Jump to Bibliography by Stavros Garoufalidis and Don Zagier Published: 2023 — Wal ter Neu mann — hence forth simply Wal ter — has made huge con tri bu ‐ tions to to po logy, sin gu lar ity the ory"
 ---
 The pa per [1] and its se quel [2] sug ges ted or led to sev er al in ter est ing de vel op ‐
 ments in pure num ber the ory as well as in to po logy. In this fi nal sec tion we de ‐

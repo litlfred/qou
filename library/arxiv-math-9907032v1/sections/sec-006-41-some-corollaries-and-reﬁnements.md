@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 11-13
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 Here are some easy consequences of Theorem 4.3:
 Special case 1. F = T . Then, since E′(F ) = ∅, we just get the Gauss-Bonnet

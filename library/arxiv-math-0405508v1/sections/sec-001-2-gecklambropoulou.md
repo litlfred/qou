@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-4
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 In Section 5 we discuss the knot theory of a solid torus and we explain why
 the related braid groups are in fact the Artin-Tits groups of B-type. We also

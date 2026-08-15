@@ -7,6 +7,7 @@ section_number: III
 pages: 8-12
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 A. The basic facts
 Given a smooth vector ﬁeld V on V, the vector potential A(V) for BS( V) is deﬁned by the

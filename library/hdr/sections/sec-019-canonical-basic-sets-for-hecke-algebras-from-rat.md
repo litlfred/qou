@@ -7,6 +7,7 @@ section_number: null
 pages: 41-44
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 nik algebras
 Let Θ and Hk(W ) be deﬁned as above. We have a decomposition matrix Dk for the specialised Hecke

@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: 1707.02991v1.pdf
 source_sha256: f4f539f74403dd24
+doc_brief: "BPS states, knots and quivers — 5 sections: BPS states, knots and quivers; Moduli of quiver representations; Knot invariants from quiver repres"
 ---
 Piotr Kucharski 1, Markus Reineke 2, Marko Stoˇ si´ c3,4, and Piotr Su lkowski 1,5
 1 Faculty of Physics, University of Warsaw,

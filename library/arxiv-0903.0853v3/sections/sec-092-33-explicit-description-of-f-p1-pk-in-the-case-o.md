@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 43-43
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 Any class inF(P1,...,P k) can be represented by a module MU := (K n, ΦAU )
 for some U := (Ui,j)1≤i<j≤k∈ ∏

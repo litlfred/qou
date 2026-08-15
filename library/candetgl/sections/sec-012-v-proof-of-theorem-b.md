@@ -7,6 +7,7 @@ section_number: V
 pages: 15-15
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 BS(V)50 throughout 3-space, so that surely „ 3BS(V)50i n V8.
 This gives us half of the Addendum to Theorem A.

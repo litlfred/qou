@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 27-30
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 In this section we recall the basics of twisted cohomology that we will use in the
 sequel of the manuscript. Given a groupΓ, we will denote byZ[Γ] the group ring of

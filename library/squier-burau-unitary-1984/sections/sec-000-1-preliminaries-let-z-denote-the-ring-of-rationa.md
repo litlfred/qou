@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: squier-burau-unitary-1984.pdf
 source_sha256: 5087ee3cb48679d1
+doc_brief: "PROCEEDINGS OF THE AMERICAN MATHEMATICAL SOCIETY — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
 ---
 terminate and let Z[t, /"'] denote the ring of Laurent polynomials with coefficients
 in Z. We consider infinite-dimensional matrices A = (a¡ ) with entries in Z[f, /"']

@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-2
 source_pdf: 0005038v1.pdf
 source_sha256: db0b9b7a8534f161
+doc_brief: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 P ⊂ D consisting of n distinct points p1, . . . , pn in the interior of D. Let H(D, P )
 be the group of all homeomorphisms h : D → D such that h(P ) = P and h ﬁxes

@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 65-68
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 for some different ground rings. We will illustrate how one can test whether a Galois invariant
 function near roots of unity is actually an element of a Habiro ring.

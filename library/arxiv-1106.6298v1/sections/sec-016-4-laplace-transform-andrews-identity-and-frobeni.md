@@ -7,6 +7,7 @@ section_number: 4
 pages: 15-16
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
+doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INV ARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
 ---
 The aim of this section is to deﬁne the Laplace transform and to stud y its image.
 4.1. Laplace transform. To deﬁne the uniﬁed invariant we have to compute

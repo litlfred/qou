@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 34-34
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 First, there are “simple” jumps which occur when an S-wall moves across one of the
 endpoints of℘. Namely: F (℘,ϑ ) jumps whenever there is some ¯a∈ Γ(z1,z 1) or ¯a∈ Γ(z2,z 2)

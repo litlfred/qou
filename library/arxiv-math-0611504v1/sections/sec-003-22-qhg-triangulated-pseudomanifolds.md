@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 7-9
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
+doc_brief: "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study"
 ---
 plicity, but all what follows makes sense for arbitrary singular 3-cyc les whose non manifold locus is
 of codimension ≥ 2. By a pseudomanifold Z, possibly with non-empty boundary ∂Z , we mean a

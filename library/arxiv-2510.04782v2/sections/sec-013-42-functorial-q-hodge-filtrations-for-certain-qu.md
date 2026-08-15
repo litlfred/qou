@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 60-81
 source_pdf: 2510.04782v2.pdf
 source_sha256: 591d0bdf2c48d12f
+doc_brief: "q-Hodge complexes over the Habiro ring Ferdinand Wagner — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over theHabiro ringH := limm∈N Z[q]∧"
 ---
 In this subsection, we’ll explain another elementary construction of functorialq-Hodge filtrations.
 To this end, let us first fix a primep and work in ap-complete setting (at the end of this

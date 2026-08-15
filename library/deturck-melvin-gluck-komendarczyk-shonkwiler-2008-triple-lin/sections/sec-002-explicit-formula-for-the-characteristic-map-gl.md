@@ -7,6 +7,7 @@ section_number: null
 pages: 8-9
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
+doc_brief: "Matem´ atica Contemporˆ anea, Vol. 34, 251–283 http://doi.org/10.21711/231766362008/rmc3411 © 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-comp"
 ---
 View R4 as the space of quaternions, with 1,i,j,k as basis, and consider
 the map F : Conf3S3→ R3−{ 0} defined by

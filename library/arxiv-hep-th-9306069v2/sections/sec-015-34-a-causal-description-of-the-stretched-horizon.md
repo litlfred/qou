@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 30-34
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 Our aim is a self-contained description of black hole evolut ion as seen by a distant
 observer in which no reference need be made to events behind t he stretched horizon. It will

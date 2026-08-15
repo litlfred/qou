@@ -7,6 +7,7 @@ section_number: 6.5
 pages: 38-40
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 In§2.3 of [5], we wrote a 2d-4d wall-crossing formula which should be obeyed by the
 degeneracies µ and ω in any coupled 2d-4d system. We have given an explicit description

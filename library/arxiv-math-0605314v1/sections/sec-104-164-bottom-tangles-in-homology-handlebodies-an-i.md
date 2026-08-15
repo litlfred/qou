@@ -7,6 +7,7 @@ section_number: 16.4
 pages: 63-63
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 tion of integral homology spheres (more precisely, integra l homology 3-balls) are
 homology cylinders over a surface [12, 15] (see also [8, 14]). (In [15] they are ca lled

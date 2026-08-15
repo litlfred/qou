@@ -7,6 +7,7 @@ section_number: null
 pages: 4-4
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
+doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
 ---
 of disproving the sum-product conjecture using number fields of large degree by the
 recent OpenAI counterexample to the unit distance conjecture (see [2]). Curiously,

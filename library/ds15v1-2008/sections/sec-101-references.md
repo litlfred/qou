@@ -7,6 +7,7 @@ section_number: null
 pages: 56-57
 source_pdf: ds15v1-2008.pdf
 source_sha256: aef155a324c6fdf4
+doc_brief: "Mathematics Subject Classi cation: 33D15, 05A17, 05A19, 11B65, 11P81 — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type"
 ---
 to the mathematical community in 1952. Accordingly, the authors believe it was a useful
 endeavor to bring together Slater’s list with Ramanujan’s lost notebook, and the dozens

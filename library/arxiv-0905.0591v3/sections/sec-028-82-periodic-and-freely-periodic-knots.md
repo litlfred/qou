@@ -7,6 +7,7 @@ section_number: 8.2
 pages: 26-27
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
+doc_brief: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 q, if there exists a smooth transformation of S3 of order q which leaves K invariant and
 such that the ﬁxed point set is a circle A disjoint from K. Note that A ⊂S3 is the trivial

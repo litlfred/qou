@@ -7,6 +7,7 @@ section_number: 4
 pages: 2-4
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
+doc_brief: "Line Operators in the Standard Model David Tong — There is an ambiguity in the gauge group of the Standard Model."
 ---
 1. Introduction
 At the parochial distance scales accessible by experiment, the wor ld in which we live is

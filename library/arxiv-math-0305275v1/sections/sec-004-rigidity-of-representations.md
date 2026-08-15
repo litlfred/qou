@@ -7,6 +7,7 @@ section_number: null
 pages: 21-34
 source_pdf: 0305275v1.pdf
 source_sha256: 9b356a9d716a0d3e
+doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Stefano Francaviglia12 — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2"
 ---
 This section is completely devoted to proving the following:
 Theorem 6.1 Let M be a non-compact, complete, orientable hyperbolic 3-

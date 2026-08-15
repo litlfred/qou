@@ -7,6 +7,7 @@ section_number: 3.3.1
 pages: 32-33
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
 ---
 that αN (M,ρ,k c; s) is in PM (N ), as deﬁned in Section 1.3, for every ﬁxed ρ ∈ Xhyp(M ),
 kc ∈H 1(∂ ¯M ; Z) and s. Because of the splitting (80), the proof of Theorem 1.1 is th erefore

@@ -7,6 +7,7 @@ section_number: 8
 pages: 37-38
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
+doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
 ---
 Much work remains to be done. We have seen that theta functions are useful for
 understanding spin one-half particles. Can the ghost determinants and zero modes

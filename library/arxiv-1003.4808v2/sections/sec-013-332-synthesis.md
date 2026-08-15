@@ -7,6 +7,7 @@ section_number: 3.3.2
 pages: 27-32
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
 ---
 It is fairly clear from the above discussion of quantization that there should be a relation
 between the partition function for Chern-Simons theory with compact gauge group G

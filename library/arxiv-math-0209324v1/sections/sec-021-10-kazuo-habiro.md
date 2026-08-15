@@ -7,6 +7,7 @@ section_number: 10
 pages: 10-10
 source_pdf: 0209324v1.pdf
 source_sha256: ae2ea5024a0a45e8
+doc_brief: "CYCLOTOMIC COMPLETIONS OF POL YNOMIAL RINGS KAZUO HABIRO — The main object of study in this paper is the completion Z[q]N = lim←− n Z[q]/ ((1− q)(1− q2)···(1− qn)) of the polynomial ring Z[q], which"
 ---
 We remark that the special case of Theorem 4.2 where R = Z, S = N,
 and S′ ={1} is obtained also by P. Vogel. Another proof of a special case

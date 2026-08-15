@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 33-36
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 Let’s consider the theory of the bipyramid, as constructed from two diﬀerent triangulations.
 To keep things simple, we will focus on the “equatorial” polarization Π = Π eq for the bipyra-

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
 source_sha256: 647f4c28cab7428d
+doc_brief: "Bull. Soc. math. France 133 (4), 2005, p. 541–579 — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
 ---
 This paper deals with the interaction of the following two st andard construc-
 tions in knot theory.

@@ -7,6 +7,7 @@ section_number: 4.10
 pages: 27-33
 source_pdf: 0304010v1.pdf
 source_sha256: fc2296c027b3feb0
+doc_brief: "KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS — Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn."
 ---
 2 wt(f ), which implies that (5.4)
 has a limit as n→∞ .

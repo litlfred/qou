@@ -7,6 +7,7 @@ section_number: 9.4
 pages: 59-61
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 In§§4-5 we studied at great length the generating functions F (℘,ϑ ) of framed 2d-4d BPS
 degeneracies. Let us set aside the physical meaning of these functions for a moment and

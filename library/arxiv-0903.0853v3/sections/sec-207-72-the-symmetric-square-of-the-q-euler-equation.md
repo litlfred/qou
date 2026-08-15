@@ -7,6 +7,7 @@ section_number: 7.2
 pages: 124-125
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 This will be our only example with more than two slopes. Consi der the
 square ˆY := Q2 of the Tshakaloﬀ series:

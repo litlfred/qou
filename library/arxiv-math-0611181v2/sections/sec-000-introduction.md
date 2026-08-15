@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: 0611181v2.pdf
 source_sha256: 6931e3ebca584de9
+doc_brief: "Proof of the volume conjecture for Whitehead chains Roland van der Veen — We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead"
 ---
 The volume conjecture relates the colored Jones polynomials of a kn ot to the
 simplicial volume of its complement. More precisely, let us denote the n ormal-

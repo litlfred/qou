@@ -7,6 +7,7 @@ section_number: 10.1
 pages: 23-24
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
+doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
 ---
 K, the functions JK and HK are q-holonomic. Recall that a sequence f : N − →Q(q) is q-holonomic if
 satisﬁes a q-linear diﬀerence equation. In other words, there exists a natura l number d and polynomial

@@ -7,6 +7,7 @@ section_number: 19
 pages: 67-69
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 it to be minus the entropy. We’ll need to be a little more precise. Suppose we have a
 certain amount of energy available, and also suppose the entropy of the system is S. The

@@ -1,0 +1,236 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0811.2435v1",
+ "source_sha256": "615b04eca83bcade",
+ "brief": "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol",
+ "extended": "**Stability structures, motivic**\n\n*Donaldson-Thomas invariants and cluster*\n\n148 pp, 43 sections.\n\n**Outline.** Introduction; Counting problems for 3-dimensional Calabi-Yau; Non-commutative varieties with polarization; Donaldson-Thomas invariants for non-commutativ; Multiplicative wall-crossing formula; Some analogies and speculations; About the content of the paper; Stability conditions for graded Lie algebras; Stability data; Reformulation of the stability data; Topology and the wall-crossing formula; Crossing the wall of second kind; Symplectic double torus; Complex integrable systems and stability data; Relation with the works of Joyce, and of Bridg; Stability data on gl(n); Ind-constructible categories and stability str; Stack of objects\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The forgetting map Stab(C) → Cn ≃ Hom(Γ, C) given by\n- Theorem 2: 1) For a ﬁxed Q there is a natural bijection between sets ˆStabQ(g)\n- Theorem 3: For given quadratic form Q0 and (Z0,a 0)∈ StabQ0(g) there\n- Theorem 4: For any short loop the monodromy∏ −→\n- Theorem 5: a) Let (X,x 0,ω,d X) be a Z/2Z-graded non-commutative for-\n- Theorem 7: Assuming the integral identity, the collection of elements (Amot",
+ "tokens": {
+  "brief": 32,
+  "extended": 305
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-001-counting-problems-for-3-dimensional-calabi-yau-v",
+   "title": "Counting problems for 3-dimensional Calabi-Yau varieties",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-non-commutative-varieties-with-polarization",
+   "title": "Non-commutative varieties with polarization",
+   "pages": "5-9"
+  },
+  {
+   "id": "sec-003-donaldson-thomas-invariants-for-non-commutative",
+   "title": "Donaldson-Thomas invariants for non-commutative 3d Calabi-Yau varieties",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-multiplicative-wall-crossing-formula",
+   "title": "Multiplicative wall-crossing formula",
+   "pages": "10-15"
+  },
+  {
+   "id": "sec-005-some-analogies-and-speculations",
+   "title": "Some analogies and speculations",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-006-about-the-content-of-the-paper",
+   "title": "About the content of the paper",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-007-stability-conditions-for-graded-lie-algebras",
+   "title": "Stability conditions for graded Lie algebras",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-008-stability-data",
+   "title": "Stability data",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-009-reformulation-of-the-stability-data",
+   "title": "Reformulation of the stability data",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-010-topology-and-the-wall-crossing-formula",
+   "title": "Topology and the wall-crossing formula",
+   "pages": "25-30"
+  },
+  {
+   "id": "sec-011-crossing-the-wall-of-second-kind",
+   "title": "Crossing the wall of second kind",
+   "pages": "30-33"
+  },
+  {
+   "id": "sec-012-symplectic-double-torus",
+   "title": "Symplectic double torus",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-013-complex-integrable-systems-and-stability-data",
+   "title": "Complex integrable systems and stability data",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-014-relation-with-the-works-of-joyce-and-of-bridgela",
+   "title": "Relation with the works of Joyce, and of Bridgeland and Toledano-Laredo",
+   "pages": "38-43"
+  },
+  {
+   "id": "sec-015-stability-data-on-gln",
+   "title": "Stability data on gl(n)",
+   "pages": "43-45"
+  },
+  {
+   "id": "sec-016-ind-constructible-categories-and-stability-struc",
+   "title": "Ind-constructible categories and stability structures",
+   "pages": "45-48"
+  },
+  {
+   "id": "sec-017-stack-of-objects",
+   "title": "Stack of objects",
+   "pages": "48-53"
+  },
+  {
+   "id": "sec-018-ind-constructible-calabi-yau-categories-and-pote",
+   "title": "Ind-constructible Calabi-Yau categories and potentials",
+   "pages": "53-56"
+  },
+  {
+   "id": "sec-019-topology-on-the-space-of-stability-structures",
+   "title": "Topology on the space of stability structures",
+   "pages": "56-60"
+  },
+  {
+   "id": "sec-020-recollection-on-motivic-functions",
+   "title": "Recollection on motivic functions",
+   "pages": "60-62"
+  },
+  {
+   "id": "sec-021-motivic-functions-in-the-equivariant-setting",
+   "title": "Motivic functions in the equivariant setting",
+   "pages": "62-69"
+  },
+  {
+   "id": "sec-022-an-integral-identity",
+   "title": "An integral identity",
+   "pages": "69-73"
+  },
+  {
+   "id": "sec-023-equivalence-relation-on-motivic-functions",
+   "title": "Equivalence relation on motivic functions",
+   "pages": "73-75"
+  },
+  {
+   "id": "sec-024-numerical-realization-of-motivic-functions",
+   "title": "Numerical realization of motivic functions",
+   "pages": "75-80"
+  },
+  {
+   "id": "sec-025-orientation-data",
+   "title": "Orientation data",
+   "pages": "80-83"
+  },
+  {
+   "id": "sec-026-orientation-data-from-a-splitting-of-bifunctors",
+   "title": "Orientation data from a splitting of bifunctors",
+   "pages": "83-84"
+  },
+  {
+   "id": "sec-027-motivic-donaldson-thomas-invariants",
+   "title": "Motivic Donaldson-Thomas invariants",
+   "pages": "84-84"
+  },
+  {
+   "id": "sec-028-motivic-hall-algebra-and-stability-data",
+   "title": "Motivic Hall algebra and stability data",
+   "pages": "84-92"
+  },
+  {
+   "id": "sec-029-motivic-weights-and-stability-data-on-motivic-qu",
+   "title": "Motivic weights and stability data on motivic quantum tori",
+   "pages": "92-95"
+  },
+  {
+   "id": "sec-030-from-motivic-hall-algebra-to-motivic-quantum-tor",
+   "title": "From motivic Hall algebra to motivic quantum torus",
+   "pages": "95-102"
+  },
+  {
+   "id": "sec-031-examples",
+   "title": "Examples",
+   "pages": "102-105"
+  },
+  {
+   "id": "sec-032-d0-d6-bps-bound-states-an-example-related-to-the",
+   "title": "D0-D6 BPS bound states: an example related to the MacMahon function",
+   "pages": "105-109"
+  },
+  {
+   "id": "sec-033-quasi-classical-limit-and-integrality-conjecture",
+   "title": "Quasi-classical limit and integrality conjecture",
+   "pages": "109-109"
+  },
+  {
+   "id": "sec-034-quasi-classical-limit-numerical-dt-invariants",
+   "title": "Quasi-classical limit, numerical DT-invariants",
+   "pages": "109-112"
+  },
+  {
+   "id": "sec-035-deformation-invariance-and-intermediate-jacobian",
+   "title": "Deformation invariance and intermediate Jacobian",
+   "pages": "112-120"
+  },
+  {
+   "id": "sec-036-reduction-to-the-case-of-category-of-modules",
+   "title": "Reduction to the case of category of modules",
+   "pages": "120-125"
+  },
+  {
+   "id": "sec-037-evidence-for-the-integrality-conjecture",
+   "title": "Evidence for the integrality conjecture",
+   "pages": "125-128"
+  },
+  {
+   "id": "sec-038-spherical-collections-and-mutations",
+   "title": "Spherical collections and mutations",
+   "pages": "128-136"
+  },
+  {
+   "id": "sec-039-orientation-data-for-cluster-collections",
+   "title": "Orientation data for cluster collections",
+   "pages": "136-137"
+  },
+  {
+   "id": "sec-040-quantum-dt-invariants-for-quivers",
+   "title": "Quantum DT-invariants for quivers",
+   "pages": "137-137"
+  },
+  {
+   "id": "sec-041-quivers-and-cluster-transformations",
+   "title": "Quivers and cluster transformations",
+   "pages": "137-143"
+  },
+  {
+   "id": "sec-042-references",
+   "title": "References",
+   "pages": "143-148"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

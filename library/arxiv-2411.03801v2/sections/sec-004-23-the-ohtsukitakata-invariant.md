@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 7-9
 source_pdf: 2411.03801v2.pdf
 source_sha256: a7f1f6fa74cb0949
+doc_brief: "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS — Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal"
 ---
 two more functions associated with ˚D. To define the first one, for each crossing, cup and cap
 of ˚D, we choose two corners around it and associate a rational function with each of them,

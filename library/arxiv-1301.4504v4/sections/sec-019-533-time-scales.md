@@ -7,6 +7,7 @@ section_number: 5.3.3
 pages: 50-56
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
+doc_brief: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Scie"
 ---
 In this section we work out the time scales for sending signals down the throat from the
 Minkowski region to the vicinity of the black hole horizon at r0 in (5.20), as well as the

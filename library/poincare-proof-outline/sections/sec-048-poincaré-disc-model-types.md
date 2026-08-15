@@ -7,5 +7,6 @@ section_number: null
 pages: 124-124
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 In this section we introduce datatypes that represent objects in the Poincaré disc model. The types are deﬁned

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-8
 source_pdf: 1304.3481v1.pdf
 source_sha256: d0840f2775c0f761
+doc_brief: "Quadruply-graded colored homology of knots — W e conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 2. Bosonic and Fermionic generators 7
 3. Gradings, Diﬀerentials, Mirror Symmetry 19

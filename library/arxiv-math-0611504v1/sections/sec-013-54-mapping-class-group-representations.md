@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 26-28
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
+doc_brief: "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study"
 ---
 with trivial vertical framing, and let Mod( g,r ) be the mapping class group of F , that is, the group
 of homotopy classes of orientation-preserving diﬀeomorphisms of F ﬁxing pointwise each boundary

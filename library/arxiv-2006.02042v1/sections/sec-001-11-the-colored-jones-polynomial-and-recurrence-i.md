@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-1
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
+doc_brief: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and"
 ---
 and a positive integer n, let JK(n) ∈ Z[t±1] denote the n-colored Jones polynomial of
 K with zero-framing. The polynomial JK(n) is the quantum link invariant, as deﬁned

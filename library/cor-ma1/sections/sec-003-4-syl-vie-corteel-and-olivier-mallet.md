@@ -7,6 +7,7 @@ section_number: 4
 pages: 5-7
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
 ---
 Figure 1. Ferrers diagram of the overpartition λ = (5, 4, 3, 3) of weight 15.
 2 2 2 2 1

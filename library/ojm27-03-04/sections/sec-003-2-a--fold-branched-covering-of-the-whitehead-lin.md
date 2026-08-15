@@ -7,6 +7,7 @@ section_number: 2
 pages: 7-11
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
+doc_brief: "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s) — 6 sections: Introduction; Preliminaries; (b) (c)"
 ---
 inS3
 In this section, for each number g^2y we construct combinatorially a

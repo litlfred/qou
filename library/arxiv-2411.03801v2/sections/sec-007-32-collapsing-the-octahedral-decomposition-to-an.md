@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 11-13
 source_pdf: 2411.03801v2.pdf
 source_sha256: a7f1f6fa74cb0949
+doc_brief: "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS — Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal"
 ---
 section we discuss how to collapse the ideal cell decomposition OD of S3\ (K∪{p,q}) into
 an ideal triangulationTD ofS3\K. The collapsing depends on fixing an alternating segment

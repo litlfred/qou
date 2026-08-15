@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 11-12
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
+doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INV ARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
 ---
 by the well–known trick of diagonalization using lens spaces. We say th at M is diagonal if
 it can be obtained from S3 by surgery along a framed link L with diagonal linking matrix,

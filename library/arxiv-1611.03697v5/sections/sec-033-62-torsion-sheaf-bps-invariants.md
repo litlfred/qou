@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 30-33
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 sheaves on X supported in dimension ≤ 1. Any sheaf E ∈ A has a Chern character ch( E)∈
 H ∗(X, Z), which via Poincar´ e duality we can view as an element

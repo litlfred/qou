@@ -7,6 +7,7 @@ section_number: null
 pages: 20-20
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 Thanks are due to Professor R. W. Carter of the University of W arwick, whose help, ideas and
 discussions were invaluable. The research for this paper wa s carried out while the author was an

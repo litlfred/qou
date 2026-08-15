@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-6
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
+doc_brief: "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343–354 Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve Michihiko Fujii — 12 sections"
 ---
 curve in W eierstrass form
 Let V be the projective completion of the complex aﬃne plane curve C.

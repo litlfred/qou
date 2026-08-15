@@ -7,6 +7,7 @@ section_number: 5
 pages: 16-18
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 In this section, we show how volume considerations give a way to turn an angle
 structure into a genuine hyperbolic metric onM. To compute the volume of an

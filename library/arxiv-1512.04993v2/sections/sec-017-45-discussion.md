@@ -7,6 +7,7 @@ section_number: 4.5
 pages: 28-29
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 Of the four classes of black holes we have looked at, three worked perfectly. Neutral
 black holes (of any size and in any dimension), spinning BTZ black holes, and small

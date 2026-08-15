@@ -7,6 +7,7 @@ section_number: 4
 pages: 5-6
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 To compute Table 2 we proceeded as above, now using the coproduc t [2]
 ∆( δn) = δn ⊗ e + e ⊗ δn + Rn−1 (13)

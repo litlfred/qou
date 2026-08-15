@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 6-10
 source_pdf: state.integrals.qseries.pdf
 source_sha256: a5e86443f35e21c0
+doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written"
 ---
 residue theorem on a semicircle γR with center 0 and radius R, oriented counterclockwise in
 the upper half-plane:

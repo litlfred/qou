@@ -7,6 +7,7 @@ section_number: 2
 pages: 62-63
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 limit. For a smooth limit, f0 = f (τ = i∞) should be ﬁnite. Using c1(τ = i∞) = 1
 61

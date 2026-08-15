@@ -7,6 +7,7 @@ section_number: 14
 pages: 14-15
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
 ---
 We call lκ the log weight of (w,d ), and h2 the bulk weight . In the particular case where M
 is the complement of a knot K in S3, H 1( ¯M ; Z/2) ∼

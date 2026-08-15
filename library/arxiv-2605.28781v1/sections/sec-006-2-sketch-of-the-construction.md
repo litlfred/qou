@@ -7,6 +7,7 @@ section_number: 2
 pages: 5-6
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
+doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
 ---
 In this section we give a sketch of the construction which is used to prove The-
 orem 1.2. The construction is a high-dimensional version of the standard Balog–

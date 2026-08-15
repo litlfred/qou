@@ -7,6 +7,7 @@ section_number: 4
 pages: 12-13
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
 ---
 In this section we prove the case C k,i(n, j) = Ek,i(n, j) of Theorem 1.4. In fact, we prove a reﬁnement of
 this case:

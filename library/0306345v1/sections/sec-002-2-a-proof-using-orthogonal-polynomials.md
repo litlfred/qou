@@ -7,6 +7,7 @@ section_number: 2
 pages: 5-9
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
+doc_brief: "We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres."
 ---
 Habiro’s proof of Theorem 1.1 uses the relationship with the quantum group
 Uqsl2 . Here is another proof, using the method of orthogonal polyn omials as in

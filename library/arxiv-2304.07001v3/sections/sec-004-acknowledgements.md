@@ -7,6 +7,7 @@ section_number: null
 pages: 17-18
 source_pdf: 2304.07001v3.pdf
 source_sha256: b6c0d7f50b6407f1
+doc_brief: "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a f ormal power series associated to elements in the Habiro ring that come from radi al"
 ---
 The ﬁrst author thanks Dan Zhang, Nick Dorey and Phil Trinh fo r many interesting dis-
 cussions. He was supported by EPSRC grant EP/V012479/1 as a p ostdoc at the University

@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-3
 source_pdf: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf
 source_sha256: 3fb38d4cfd20d4fb
+doc_brief: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants"
 ---
 Fermat's Little Theorem tells us that for an integer a and a prime r such that a # 0 mod r, 
 a ~-1 : 1 mod r. Let us view this theorem from a different angle. 

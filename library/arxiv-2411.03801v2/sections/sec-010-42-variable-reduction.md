@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 17-20
 source_pdf: 2411.03801v2.pdf
 source_sha256: a7f1f6fa74cb0949
+doc_brief: "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS — Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal"
 ---
 by solving the gluing equations for the C and R-edges, and the completeness equation. The
 following lemma will be used repeatedly.

@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 68-71
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 functions that behave like elements of Habiro rings that involve different fields at each root
 of unity. On the face of it, it could seem that this would make patching together series via

@@ -7,6 +7,7 @@ section_number: 2.1.2.1
 pages: 59-61
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 below).
 Lemma 4.2.3 . — LetR be a C({z})-vector space on whichσq operates. With

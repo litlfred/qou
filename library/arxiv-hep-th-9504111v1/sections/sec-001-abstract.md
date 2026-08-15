@@ -7,6 +7,7 @@ section_number: null
 pages: 1-7
 source_pdf: 9504111v1.pdf
 source_sha256: c5735c1afc5d02ce
+doc_brief: "PDMI PREPRINT - 1/1995 — It is shown that the generators of two discrete Heisenberg-W eyl groups with irra- tional rotation numbers θ and −1/θ generate the whole algebra B of bounded operators on"
 ---
 It is shown that the generators of two discrete Heisenberg-W eyl groups with irra-
 tional rotation numbers θ and −1/θ generate the whole algebra B of bounded operators

@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 3-3
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 paper, surveys some of the ways in which the Casson–Rivin program has been
 generalized and applied. Among the generalizations are versions of Theorem 1.2

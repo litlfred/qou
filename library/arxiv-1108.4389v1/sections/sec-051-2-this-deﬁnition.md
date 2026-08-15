@@ -7,6 +7,7 @@ section_number: 2
 pages: 31-33
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 is consistent with the Z3 symmetry of the tetrahedron: the triality symmetry permutes three
 equivalent polarizations Π Z, ΠZ′, ΠZ′′ in ( 2.9) which, on the N = 2 gauge theory side,

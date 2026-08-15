@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-12
 source_pdf: 0110001v3.pdf
 source_sha256: f30f603ac1c555e0
+doc_brief: "Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link."
 ---
 A generic family F = Fi ∪ Fj ∪ Fk of Seifert surfaces for the link Li ∪ Lj ∪ Lk
 will be called reduced if it is of one of the following types:

@@ -7,6 +7,7 @@ section_number: 2
 pages: 8-11
 source_pdf: ant-v14-n7-s-p08.pdf
 source_sha256: 81b8f00fe5fbd0f6
+doc_brief: "Burgess bounds for short character sums evaluated at forms — 12 sections: Introduction; Method of proof: an overview; Preliminaries"
 ---
 In this section we recall the main points of the Burgess method in dimension 1, outline the difﬁculties that
 arise in n≥ 2 dimensions, and then sketch how we overcome these difﬁculties to obtain our main theorem.

@@ -7,6 +7,7 @@ section_number: 5
 pages: 5-10
 source_pdf: KMJ-48-2-255.pdf
 source_sha256: 720279042c6d762b
+doc_brief: "KYUNGPOOK Math. J. 48(2008), 255-280 A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata — We derive a formula for the colored Jones polynomial of 2-bridge knots."
 ---
 expressed in Figure 7. The number of the crossings equals 2( p − 1) = 4 p′. We name
 by ja (resp. jd) the crossing of the label (2 j − 1)t mod 2 p (resp. 2 jt mod 2 p)

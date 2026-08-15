@@ -7,6 +7,7 @@ section_number: 4
 pages: 5-9
 source_pdf: 9504020v1.pdf
 source_sha256: 0baef40fa9934c91
+doc_brief: "∗On leave from St. Petersburg Branch of the Steklov Mathemati cal Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ ee ` a l’E.N.S. de Lyon, et ` a l’Universit` e de Sa"
 ---
 In this section we establish the connection of the link invar iant constructed in
 Sect. 3 with the invariant of triangulated links of [14], rel ated in turn to cyclic

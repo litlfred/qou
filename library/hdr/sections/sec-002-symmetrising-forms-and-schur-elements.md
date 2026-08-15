@@ -7,6 +7,7 @@ section_number: null
 pages: 16-17
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 A symmetrising form on the algebra A is a linear map τ :A→R such that
 (a) τ(ab) =τ(ba) for all a,b∈A, that is, τ is a trace function, and

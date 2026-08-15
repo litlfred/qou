@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-7
 source_pdf: 0407051v2.pdf
 source_sha256: 2de07e909b17c5a5
+doc_brief: "Black hole entropy from Quantum Geometry — Quantum Geometry (the modern Loop Quantum Gravity using gra phs and spin-networks instead of the loops) provides microscopic d egrees of freedom that"
 ---
 for i = 1, ..., n. The ji labels are assumed not to vanish,
 ji ⁄= 0 . (8)

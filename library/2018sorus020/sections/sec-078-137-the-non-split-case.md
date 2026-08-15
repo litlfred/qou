@@ -7,6 +7,7 @@ section_number: 1.3.7
 pages: 37-39
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 Let S be an incompressible surface associated to an ideal pointv∈ ˆX which is,
 again, union ofn parallel copiesS =S1∪... ∪Sn, and we assume now thatM\Si

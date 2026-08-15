@@ -7,6 +7,7 @@ section_number: 2
 pages: 23-23
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 (3.12)
 Clearly, this 2-form vanishes when restricted to the holomo rphic curve A(eu,e v) = 0.

@@ -7,6 +7,7 @@ section_number: 10.2
 pages: 29-30
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 I([S]) in theq-series for the 3D-index is given by the expression
 d(S) =d(S∗) =−χ(S∗) +δ(S∗),

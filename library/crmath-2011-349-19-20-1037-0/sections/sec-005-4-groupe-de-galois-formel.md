@@ -7,6 +7,7 @@ section_number: 4
 pages: 3-3
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
+doc_brief: "C. R. Acad. Sci. Paris, Ser. I 349 (2011) 1037–1039 Contents lists available at SciVerse ScienceDirect — Van der Put and Reversat described the form of a pure q-difference module with non integral"
 ---
 Van der Put et Reversat ont décrit dans [2] le groupe de Galois formel des équations auxq-différences sur ˆK du point de
 vue algébrique, en tant qu’extension de Picard–Vessiot. Nous donnons ici, une description matricielle explicite de ce groupe

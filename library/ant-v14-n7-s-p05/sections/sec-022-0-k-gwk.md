@@ -7,6 +7,7 @@ section_number: 0
 pages: 45-45
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
+doc_brief: "Motivic Gauss–Bonnet formulas — 26 sections: Introduction 1801; Duality and Euler characteristics ; SL-oriented motivic spectra 1813"
 ---
 where the ﬁrst isomorphism arises from Morel’s theorem [2004, Theorem 6.4.1, Remark 6.4.2; 2012,
 Theorem 6.40] identifying 10,0

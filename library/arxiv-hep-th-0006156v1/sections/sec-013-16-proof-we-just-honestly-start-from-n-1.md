@@ -7,6 +7,7 @@ section_number: 1.6
 pages: 5-5
 source_pdf: 0006156v1.pdf
 source_sha256: b799d4ef150291cf
+doc_brief: "STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with"
 ---
 Q−1u1Q =Q−1u1b1b2b3...b N −1 =Q−1b1
 ∞∑

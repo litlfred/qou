@@ -7,6 +7,7 @@ section_number: null
 pages: 5-5
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
+doc_brief: "A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume"
 ---
 [1] D. Cooper, M. Culler, H. Gillet, D. D. Long, and P. B. Shale n, Plane curves associated to
 character varieties of 3-manifolds, Invent. Math. 118 (1994), no. 1, 47–84.

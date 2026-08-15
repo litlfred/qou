@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-4
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 For positive integers p < qwe denote by [ p,q ] the set {p,p + 1,... ,q }, and for a rational number
 x we denote by ⌈x⌉ the smallest element of {y ∈ Z : x ≤y}.

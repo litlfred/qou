@@ -7,6 +7,7 @@ section_number: null
 pages: 12-12
 source_pdf: Di_Cairano_2022_J._Phys._Commun._6_015002.pdf
 source_sha256: f75313b507f97172
+doc_brief: "Journal of Physics Communications PAPER • OPEN ACCESS On the derivation of a Nonlinear Generalized Langevin Equation To cite this article: Loris Di Cairano 2022 J. Phys. Commun. 6 015002 — 14 sections"
 ---
 [1] Cortés E, West B J and Lindenberg K 1985J. Chem. Phys.82 2708– 17
 [2] Langevin P 1908Compt. Rendus 146 530– 3

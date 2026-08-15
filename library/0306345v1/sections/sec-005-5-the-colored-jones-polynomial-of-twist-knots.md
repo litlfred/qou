@@ -7,6 +7,7 @@ section_number: 5
 pages: 17-20
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
+doc_brief: "We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres."
 ---
 In this last section, we illustrate one use of ω p , namely to give a formula for the
 colored Jones polynomial of twist knots (see Figure 3) in ter ms of the coeﬃcients

@@ -7,6 +7,7 @@ section_number: null
 pages: 3-6
 source_pdf: 0611181v2.pdf
 source_sha256: 6931e3ebca584de9
+doc_brief: "Proof of the volume conjecture for Whitehead chains Roland van der Veen — We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead"
 ---
 In this section we give an overview of the proof of the main theorem, postponing
 the proofs of the more technical lemmas to the next section.

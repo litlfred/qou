@@ -7,6 +7,7 @@ section_number: null
 pages: 23-24
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 The second class of special functions we need here is the elli ptic gamma function which ap-
 peared implicitly in [Bx] and was introduced in [Ru]

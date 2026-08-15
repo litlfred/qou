@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-4
 source_pdf: 1208.2521v1.pdf
 source_sha256: 8d0281aa84043865
+doc_brief: "ON q-ANALOGUES OF THE FOURIER — For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H."
 ---
 Our motivation is that (i) the rφ s notation is fairly well known nowadays and clari-
 ﬁes the position of these q-Bessel functions among other q-hypergeometric functions;

@@ -7,6 +7,7 @@ section_number: 4
 pages: 22-23
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
+doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
 ---
 Having given a putative formula for the non-abelian torsion of a cusp ed hyperbolic man-
 ifold M at the discrete faithful representation ρ0, it is natural to ask whether the formula

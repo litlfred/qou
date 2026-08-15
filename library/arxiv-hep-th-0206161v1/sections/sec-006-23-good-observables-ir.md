@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 12-13
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
 ---
 The nice feature of the correlator (2.10) is it simple relati on to the prepotential of the
 low-energy eﬀective theory. In order to derive it let us thin k of the observable (2.10) as

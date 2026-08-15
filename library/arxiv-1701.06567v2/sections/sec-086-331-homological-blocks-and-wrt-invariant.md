@@ -7,6 +7,7 @@ section_number: 3.3.1
 pages: 47-48
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 Consider the partition function ofT [M3] onD2×S1 with the following 2dN = (0, 2) boundary
 conditions (which generalize the boundary conditions for T [L(p, 1)] that produce ˆZa(q,t )):

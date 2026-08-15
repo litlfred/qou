@@ -7,6 +7,7 @@ section_number: 3
 pages: 21-29
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p -adic cyclotomic multiple zeta values David Jarossay p-adic cyclotomic multiple zeta values depend on the choice of a number of iterations"
 ---
 In this section, we prove (0-5) and we discuss its meaning.
 3A. Prime weighted multiple harmonic sums as functions of the number of iterations of the Frobenius.

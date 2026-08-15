@@ -7,6 +7,7 @@ section_number: 7.1.1
 pages: 25-26
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
+doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
 ---
 The quantum group U = Uq(g) associated to g is a Hopf algebra deﬁned over
 Q(v), where v is the usual quantum parameter (see [17, 22]). Here our v is

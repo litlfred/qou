@@ -7,6 +7,7 @@ section_number: 3
 pages: 7-8
 source_pdf: 1101.1563v1.pdf
 source_sha256: 0c45b250fc4a2a49
+doc_brief: "Gr¨ obner-Shirshov bases for categories∗ L. A. Bokut † — In this paper we establish Composition-Diamond lemma for small categ ories."
 ---
 Let X = ( V (X), E (X)) be an oriented (multi) graph. Then the free category on X is
 C(X) = ( Ob(X), Arr (X)), where Ob(X) = V (X), and Arr(X) is the set of all paths

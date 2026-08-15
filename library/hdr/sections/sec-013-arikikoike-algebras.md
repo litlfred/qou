@@ -7,6 +7,7 @@ section_number: null
 pages: 31-32
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 G(l, 1,n ) in the next chapter.
 In [ChJa2], building on work by Genet and Jacon [GenJa], we generalised the above result to obtain

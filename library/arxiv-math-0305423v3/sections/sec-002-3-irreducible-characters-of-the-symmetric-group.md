@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-14
 source_pdf: 0305423v3.pdf
 source_sha256: e4554f9084ba4935
+doc_brief: "Stein’s Method and Plancherel Measure of the Symmetric Group — We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group."
 ---
 This section collects properties we will use about characte rs of irreducible
 representations of the symmetric group. For more backgroun d on this topic,

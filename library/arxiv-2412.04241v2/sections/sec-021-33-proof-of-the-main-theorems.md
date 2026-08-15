@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 43-45
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 Proof of Theorem 2 of Section 1.5. Firstly, we see that HR⊆H R,0 as f(q) = 1 is a global
 invertible L(0)-section. For all p prime to ∆, the constant collection 1 is an invertible

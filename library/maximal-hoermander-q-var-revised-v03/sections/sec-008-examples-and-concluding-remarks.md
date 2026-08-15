@@ -7,6 +7,7 @@ section_number: null
 pages: 35-36
 source_pdf: Maximal-Hoermander-q-Var-revised-v03.pdf
 source_sha256: 135332c04a1b3bb8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 10 sections: Introduction; R-boundedness; Prel"
 ---
 In this section, we shortly discuss examples of0-sectorial operatorsA and of UMD latticesY,
 to illustrate our main results from Sections 3 and 5. We will then end with some concluding

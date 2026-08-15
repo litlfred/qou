@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 9-10
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
+doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
 ---
 are the coeﬃcients of the comparison isomorphism comp B,dR (2.2) with respect to
 the Q-structures on the Betti and de Rham sides. Let

@@ -7,6 +7,7 @@ section_number: L
 pages: 7-9
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 we can state the Duality Theorem:
 Theorem 3.2 ( Duality Theorem of Linear Programming ). Let P be a

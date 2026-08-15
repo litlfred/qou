@@ -7,6 +7,7 @@ section_number: 5.5
 pages: 15-17
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 Four comments are in order. The ﬁrst concerns the enumeration o f the ﬁltration. This
 follows from taking logs in (33), which gives

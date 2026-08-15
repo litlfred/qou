@@ -7,6 +7,7 @@ section_number: 5
 pages: 67-70
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 On the other hand, we shall see that the diﬀerential equation s studied
 in section 1 ( resp. 2) arise in the context of deformations of supersingular

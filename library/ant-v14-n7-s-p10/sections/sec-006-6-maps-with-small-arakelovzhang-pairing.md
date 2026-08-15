@@ -7,6 +7,7 @@ section_number: 6
 pages: 11-13
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Introduction; Some algebraic lemmas; Ramiﬁcation and postcritically inﬁ"
 ---
 We now describe how to extend the ideas used in the proof of Theorem 12 to treat polynomials which
 are not necessarily K -conjugate to powering maps, but which are K ab-conjugate to some polynomial

@@ -7,6 +7,7 @@ section_number: 2
 pages: 13-14
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 here in chapter 6 is actually just a special case of the genera l summation process described
 in chapter 5: when one restricts to solutions of q-diﬀerence equations, the algorithm of

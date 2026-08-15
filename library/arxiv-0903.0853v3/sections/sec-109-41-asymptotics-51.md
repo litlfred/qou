@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 57-58
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 f (k): by deﬁnition, they depend only on the class of f.
 So let f be aC∞ function in the Whitney sense on K ′. The functions f (k)

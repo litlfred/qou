@@ -1,0 +1,67 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
+ "source_sha256": "aa2f1eb73610a81b",
+ "brief": "5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces: — The existence and uniqueness conditions of quater- nion reproducing",
+ "extended": "**5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces:**\n\n*Existence and Uniqueness Conditions*\n\n14 pp, 9 sections.\n\n**Abstract.** The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established in order to provide a mathematical foundation for the develop- ment of quaternion-valued kernel learning algorithms. This is achieved through a rigorous account of left quaternion Hilbert spaces, which makes it possible to generalise standard RKHS to quaternion RKHS. Quaternion versions of the Riesz repre- sentation and Moore–Aronszajn theorems are next introduced, thus underpinning kernel estimation algorithms operating on quaternion-valued feature spaces. The difference between the proposed quaternion kernel concept and the existing real and vector approaches is also established in terms of both theoretical advantages and computational complexity.\n\n**Outline.** C Quaternion Kernels; 1 (x)φ1(y) + φH; 2 (x)φ2(y),; 1 (x)φ T; 2 (x)]T we arrive at; C Quaternion-Valued Gaussian Kernel; C Nonlinear Channel Equalisation: Real and Qua; C Model Comparison for Nonlinear Channel Equal; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: Let K and −→K be arbitrary quaternion- and\n- Theorem 2: gives the justiﬁcation for the design and imple-\n- Lemma 2: Let K = Kr +iK i + jK j +kK k be a quaternion",
+ "tokens": {
+  "brief": 48,
+  "extended": 359
+ },
+ "sections": [
+  {
+   "id": "sec-000-c-quaternion-kernels",
+   "title": "Quaternion Kernels",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-001-1-xφ1y-φh",
+   "title": "(x)φ1(y) + φH",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-002-2-xφ2y",
+   "title": "(x)φ2(y),",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-003-1-xφ-t",
+   "title": "(x)φ T",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-004-2-xt-we-arrive-at",
+   "title": "(x)]T we arrive at",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-c-quaternion-valued-gaussian-kernel",
+   "title": "Quaternion-Valued Gaussian Kernel",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-006-c-nonlinear-channel-equalisation-real-and-quater",
+   "title": "Nonlinear Channel Equalisation: Real and Quaternion",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-007-c-model-comparison-for-nonlinear-channel-equalis",
+   "title": "Model Comparison for Nonlinear Channel Equalisation",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "13-14"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

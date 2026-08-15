@@ -7,6 +7,7 @@ section_number: null
 pages: 141-143
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 lemma upper-dimension-axiom:
 assumes in-disc: x∈ unit-disc y ∈ unit-disc z ∈ unit-disc u ∈ unit-disc v ∈ unit-disc

@@ -7,6 +7,7 @@ section_number: 3
 pages: 14-16
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
+doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
 ---
 In this section we analyze the action of the braid group furth er, by using
 holomorphic 1-forms to represent the cohomology of X.

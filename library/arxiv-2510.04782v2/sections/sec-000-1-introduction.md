@@ -7,6 +7,7 @@ section_number: 1
 pages: 3-3
 source_pdf: 2510.04782v2.pdf
 source_sha256: 591d0bdf2c48d12f
+doc_brief: "q-Hodge complexes over the Habiro ring Ferdinand Wagner — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over theHabiro ringH := limm∈N Z[q]∧"
 ---
 §1. Introduction
 Throughout the introduction, we’ll work overZ for simplicity. In the main body, we’ll work

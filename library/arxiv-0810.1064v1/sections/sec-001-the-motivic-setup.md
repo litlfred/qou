@@ -7,6 +7,7 @@ section_number: null
 pages: 2-9
 source_pdf: 0810.1064v1.pdf
 source_sha256: b2d7514c5382ceaa
+doc_brief: "Multiple polylogarithm values at roots of unity Jianqiang Zhao — For any positive integer N let µ N be the group of the N th roots of unity."
 ---
 Let us review some constructions from [4]. Fix a positive integer N . Let k be the ﬁeld over Q generated
 by a primitive N th root of unity and O its ring of integers. Let Γ be the Q-vector subspace of O[1/N]∗ ⊗

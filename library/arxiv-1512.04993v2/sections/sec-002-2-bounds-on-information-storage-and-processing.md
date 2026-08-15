@@ -7,6 +7,7 @@ section_number: 2
 pages: 9-10
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 Given limited resources, there are limits on the storage and processing of information.
 For the purposes of our conjecture we are ultimately interested in information process-

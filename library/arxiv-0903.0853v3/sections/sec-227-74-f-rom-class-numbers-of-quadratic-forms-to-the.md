@@ -7,6 +7,7 @@ section_number: 7.4
 pages: 133-134
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 This topic is related to a paper of Mordell [ 34] and to recent work [ 64] by
 the third author. We follow their notations, except for the u se of the letter q,

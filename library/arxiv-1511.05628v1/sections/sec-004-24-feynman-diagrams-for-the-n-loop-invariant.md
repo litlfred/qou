@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 8-9
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 diagram formulation of the higher-loop invariants. A Feynman diagram D is a ﬁnite graph
 possibly with loops and multiple edges. To every edge in a Feynman diagram we associate

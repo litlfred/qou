@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 53-55
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 In each case the limit is taken for all Σ-invariant open subsetU of C∗ such that
 U∞ :=p(U). Then the A (U∞) form a sheaf of C-algebras and the A0(U∞) a

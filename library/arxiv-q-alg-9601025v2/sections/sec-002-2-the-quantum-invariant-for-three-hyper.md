@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-3
 source_pdf: 9601025v2.pdf
 source_sha256: 369b0a1a92ce67a8
+doc_brief: "The hyperbolic volume of knots from quantum dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Th´ eoriqueenslapp† — The invariant of a link in three-sphere, associated with the cyclic quantum"
 ---
 bolic knots
 Let ω be a primitive N -th root of unity. Throughout this paper we

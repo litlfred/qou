@@ -7,6 +7,7 @@ section_number: null
 pages: 31-33
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
+doc_brief: "REPRESENTATIONS OF WEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMANN1 — 25 sections: In"
 ---
 P. Alexandroﬀ and H. Hopf,Topologie. Chelsea, New York 1965. Original edition: Berlin 1935.
 D. Barbasch and D. Vogan, Jr., The local structure of characters. J. Functional Analysis 37, 27–55

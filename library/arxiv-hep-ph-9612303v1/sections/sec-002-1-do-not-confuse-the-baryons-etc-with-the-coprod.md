@@ -7,6 +7,7 @@ section_number: 1
 pages: 5-8
 source_pdf: 9612303v1.pdf
 source_sha256: 5311d7faf2b3e005
+doc_brief: "The q-deformed quark model : quantum isospin and q-hadrons — 5 sections: Introduction; The quantum isospin group and its ; Do not confuse the baryons ∆ ++, ∆"
 ---
 4
 4. q-baryons

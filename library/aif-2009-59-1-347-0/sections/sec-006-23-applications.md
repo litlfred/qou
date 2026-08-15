@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 17-19
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
+doc_brief: "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
 ---
 Notice that the assumptions of Theorem 2.6 are veriﬁed in the following
 two natural situations.

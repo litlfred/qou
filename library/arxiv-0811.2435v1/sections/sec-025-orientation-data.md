@@ -7,6 +7,7 @@ section_number: null
 pages: 80-83
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
+doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 LetC be an ind-constructible k-linear 3-dimensional Calabi-Yau category. 17
 Then we have a natural ind-constructible super line bundle D over Ob(C)

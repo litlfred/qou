@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 46-50
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Using only the algebra of the complex octonions, which we will introduce, we expose an
 intrinsic structure to a generation of quarks and leptons. This algebraic structure mimics

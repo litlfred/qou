@@ -7,6 +7,7 @@ section_number: 4
 pages: 29-31
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p -adic cyclotomic multiple zeta values David Jarossay p-adic cyclotomic multiple zeta values depend on the choice of a number of iterations"
 ---
 We prove (0-6) and we discuss more generally the comparison between integrals and series.
 4A. Uniqueness of the expansion of harq ˜α as a function of ˜α and q ˜α.

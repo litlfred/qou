@@ -7,6 +7,7 @@ section_number: null
 pages: 24-24
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
+doc_brief: "Pure and Applied Mathematics Quarterly — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 When n = −1, Equation (43) implies that the invariant of a long knot K is a
 multiple of the identity N × N matrix, and the multiple is the specialization

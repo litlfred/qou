@@ -7,6 +7,7 @@ section_number: I
 pages: 2-4
 source_pdf: 0407051v2.pdf
 source_sha256: 2de07e909b17c5a5
+doc_brief: "Black hole entropy from Quantum Geometry — Quantum Geometry (the modern Loop Quantum Gravity using gra phs and spin-networks instead of the loops) provides microscopic d egrees of freedom that"
 ---
 Quantum Geometry [1–3] provides microscopic degrees of fre edom that account for the
 black-hole entropy. The issue was raised in works by Krasnov [4] and Rovelli [5]. The ﬁ-

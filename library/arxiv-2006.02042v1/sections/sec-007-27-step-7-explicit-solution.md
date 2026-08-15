@@ -7,6 +7,7 @@ section_number: 2.7
 pages: 9-9
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
+doc_brief: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and"
 ---
 P (t, M, L) = L2 + L−2 + p1(t, M)L + p−1(t, M)L−1 + p0(t, M)
 where

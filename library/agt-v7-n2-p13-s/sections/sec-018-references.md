@@ -7,6 +7,7 @@ section_number: null
 pages: 71-73
 source_pdf: agt-v7-n2-p13-s.pdf
 source_sha256: affd571adbaac3fc
+doc_brief: "Algebraic & Geometric Topology 7 (2007) 845–917 845 Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
 ---
 [1] W Abikoff, The real analytic theory of Teichm¨uller space, Lecture Notes in Mathemat-
 ics 820, Springer, Berlin (1980) MR590044

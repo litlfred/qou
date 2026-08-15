@@ -7,6 +7,7 @@ section_number: IV
 pages: 7-8
 source_pdf: PhysRevD.108.106023.pdf
 source_sha256: 50c7980e88cd21a0
+doc_brief: "Knot-quiver correspondence for double twist knots Vivek Kumar Singh * — 10 sections: INTRODUCTION; DOUBLE TWIST KNOTS; KNOT-QUIVER CORRESPONDENCE"
 ---
 Double twist knots Kðp; −mÞ depend on two full twist
 parameters p; m ∈ Zþ belong to the arborescent family

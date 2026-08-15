@@ -7,6 +7,7 @@ section_number: null
 pages: 10-11
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
+doc_brief: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and"
 ---
 [CCGLS] D. Cooper, M. Culler, H. Gillet, D. Long and P. Shalen, Plane curves associated to character
 varieties of 3-manifolds , Invent. Math. 118 (1994), pp. 47–84.

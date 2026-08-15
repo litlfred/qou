@@ -7,6 +7,7 @@ section_number: 3.2.3
 pages: 36-38
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero"
 ---
 In order to understand better the reﬁned recursion relation (3.129), let us consider what
 happens in various special limits, when t = −1 or q = ±1. We begin with the unreﬁned limit

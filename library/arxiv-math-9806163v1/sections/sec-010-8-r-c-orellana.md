@@ -7,6 +7,7 @@ section_number: 8
 pages: 8-9
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
+doc_brief: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
 ---
 (H6) tgi = git for i ≥ 2.
 Note that for q = 1 and Q = 1, (H3) and (H4) become g2

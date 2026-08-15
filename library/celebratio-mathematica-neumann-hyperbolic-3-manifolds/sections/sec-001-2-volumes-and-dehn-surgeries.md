@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-9
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
+doc_brief: "Jump to Bibliography by Stavros Garoufalidis and Don Zagier Published: 2023 — Wal ter Neu mann — hence forth simply Wal ter — has made huge con tri bu ‐ tions to to po logy, sin gu lar ity the ory"
 ---
 As already stated, the ori gin al main pur pose of [1] was to study the arith met ic of
 the set of volumes of all hy per bol ic 3-man i folds. It had been ob served by Thur ‐

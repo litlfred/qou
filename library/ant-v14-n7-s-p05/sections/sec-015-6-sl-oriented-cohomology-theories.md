@@ -7,6 +7,7 @@ section_number: 6
 pages: 27-27
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
+doc_brief: "Motivic Gauss–Bonnet formulas — 26 sections: Introduction 1801; Duality and Euler characteristics ; SL-oriented motivic spectra 1813"
 ---
 Our ultimate goal is to apply the Gauss–Bonnet theorem of Section 5 when projective pushforwards are
 deﬁned on a representable cohomology theory in some concrete manner, not necessarily relying on the

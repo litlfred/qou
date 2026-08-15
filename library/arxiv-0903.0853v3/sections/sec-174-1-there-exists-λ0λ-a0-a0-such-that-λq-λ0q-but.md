@@ -7,6 +7,7 @@ section_number: 1
 pages: 104-104
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 Stλ0(λ;B1) = Stλ0(λ;B2).
 2. The equality St λ0(λ;B1) = Stλ0(λ;B2) holds for all λ0, λ∈{A0}.

@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 14-17
 source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised"
 ---
 Bκ (for a rational number κ) deﬁned by
 Bκ

@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 9-12
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
 ---
 to V , we will use two descriptions of Σ and V . In particular, we choose branch cuts in the
 upper half plane to deﬁne a function Λ (see Figure 2).

@@ -7,6 +7,7 @@ section_number: 7.3
 pages: 45-45
 source_pdf: topological.invariance.3Dindex.pdf
 source_sha256: 22953b4eee66dca2
+doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
 ---
 and its sister are the census manifolds m004 and m003 respectively, and are punctured torus
 bundles over a circle with monodromy +RL and −RL respectively [CDW]. The Epstein-

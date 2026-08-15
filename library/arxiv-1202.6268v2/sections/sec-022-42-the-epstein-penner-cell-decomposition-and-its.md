@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 23-24
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
+doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
 ---
 sider the canonical ideal cell decomposition of a hyperbolic manifold M with cusps [ EP88],
 and ﬁnally prove Proposition 1.7. It is easy to see that every convex ideal polyhedron can

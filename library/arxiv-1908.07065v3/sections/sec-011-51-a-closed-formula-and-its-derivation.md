@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 30-31
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
+doc_brief: "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN ="
 ---
 By using the approach of [2, 18] we ﬁnd the following expression for the spectral determinant of
 (2.14)6

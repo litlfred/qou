@@ -7,6 +7,7 @@ section_number: 4
 pages: 20-21
 source_pdf: 9504015v2.pdf
 source_sha256: ea5588225a393477
+doc_brief: "Witten’s Invariants of Rational Homology Spheres at Prime — We establish a relation between the coeﬃcients of asymptotic expan sion of the trivial connection contribution to Witten’s invariant of"
 ---
 Up until this point we were working only with surgeries of the type ( p, 1). This was enough
 to prove the theorems of Section 1, because H. Murakami and T. O htsuki showed [6] that any

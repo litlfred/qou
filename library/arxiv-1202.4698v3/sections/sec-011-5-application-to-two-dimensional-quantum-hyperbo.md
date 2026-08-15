@@ -7,6 +7,7 @@ section_number: 5
 pages: 12-14
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 It is known that the Racah-Wigner symbols of the modular double play an important role when
 the quantum Teichm¨ uller theory [Fo97, Ka98, CF99] is studi ed in the length representation

@@ -1,0 +1,57 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2402.08782v1",
+ "source_sha256": "30311f0bd815f93f",
+ "brief": "Hecke–Farey coordinates for Bring’s surface — The modular groupΓ (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that",
+ "extended": "**Hecke–Farey coordinates for Bring’s surface**\n\n*Doha Kattan 1 and David Singerman 2*\n\n12 pp, 7 sections.\n\n**Abstract.** The modular groupΓ (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that underlies Bring’s surface of genus 4. Our main result is the determination of the 20-sided hyperbnolic polygon that gives Bring’s surface.\n\n**Outline.** 1 Introduction; 3 The congruence subgroups of the Hecke groups; 4 Universal q-gonal maps; 6 Hecke-Farey fractions for the cube; 8 Poles; 10 Equivalence classes of vertices; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: There is a unique regular map of type {5, 4} of genus 4 with\n- Theorem 3.1: (3.2) µq(n) =|Hq : (Hq)(n)| =\n- Theorem 3.2: H/H4(5) is Bring’s surface.\n- Definition 9.2: A Farey circuitis a collection of pointsv0,v 1,··· vn each with",
+ "tokens": {
+  "brief": 48,
+  "extended": 225
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-3-the-congruence-subgroups-of-the-hecke-groups",
+   "title": "The congruence subgroups of the Hecke groups",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-4-universal-q-gonal-maps",
+   "title": "Universal q-gonal maps",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-003-6-hecke-farey-fractions-for-the-cube",
+   "title": "Hecke-Farey fractions for the cube",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-8-poles",
+   "title": "Poles",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-005-10-equivalence-classes-of-vertices",
+   "title": "Equivalence classes of vertices",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "11-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

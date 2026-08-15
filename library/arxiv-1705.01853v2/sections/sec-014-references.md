@@ -7,6 +7,7 @@ section_number: null
 pages: 17-18
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
+doc_brief: "Line Operators in the Standard Model David Tong — There is an ambiguity in the gauge group of the Standard Model."
 ---
 [1] O. Aharony, N. Seiberg and Y. Tachikawa, “ Reading between the lines of
 four-dimensional gauge theories ,” JHEP 1308, 115 (2013) [arXiv:1305.0318 [hep-th]].

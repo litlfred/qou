@@ -7,6 +7,7 @@ section_number: 6
 pages: 6-6
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
+doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
 ---
 for ni ∈ {2, 3} are linearly independent. In this way, we could have dispens ed with
 motives altogether and worked with objects in P m

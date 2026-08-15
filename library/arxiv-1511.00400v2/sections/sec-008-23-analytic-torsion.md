@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 14-15
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
+doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗ — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
 ---
 Consider now a smooth compact manifold M and a representation
 ρ∶ π1M → SLn(R).

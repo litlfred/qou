@@ -7,6 +7,7 @@ section_number: 3
 pages: 16-16
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 c(C) − (1 − 3ǫ)F ≥ψ −ǫE∂ (F3). (26)
 In other words, if ∑

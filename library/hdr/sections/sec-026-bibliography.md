@@ -7,6 +7,7 @@ section_number: null
 pages: 68-75
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 [Ai] F. Aicardi, Private communication.
 [Al] D. Alvis, The left cells of the Coxeter group of type H4, J. Algebra 107 (1987) 160–168.

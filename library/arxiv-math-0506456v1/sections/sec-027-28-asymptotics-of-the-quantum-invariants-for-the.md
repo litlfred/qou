@@ -7,6 +7,7 @@ section_number: 28
 pages: 27-28
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
+doc_brief: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e"
 ---
 diﬃcult since higher order terms in the Taylor expansion of Ψ( x0 +αs,y 0 +βt) need
 to be involved, and it is likely that the analysis can not be carried throu gh in this

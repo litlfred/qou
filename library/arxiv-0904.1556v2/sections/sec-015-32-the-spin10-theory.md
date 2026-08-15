@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 42-48
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
+doc_brief: "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
 ---
 We now turn our attention to another grand uniﬁed theory. Physic ists call it the
 ‘SO(10) theory’, but we shall call it the Spin(10) theory, because t he Lie group

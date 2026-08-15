@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 38-38
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 We shall now give some complements to the results in 3.1.1, in the form
 of index theorems. They mostly originate in the works [ 7] of B´ ezivin(2) and

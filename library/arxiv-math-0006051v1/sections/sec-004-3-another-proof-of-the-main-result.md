@@ -7,6 +7,7 @@ section_number: 3
 pages: 5-6
 source_pdf: 0006051v1.pdf
 source_sha256: 10483e75bd3655ea
+doc_brief: "FINITE AND p-ADIC POL YLOGARITHMS AMNON BESSER 1. Introduction The ﬁnite logarithm was introduced by Kontsevich (under the name “ The 1 1 logarithm”) in [Kon]. The ﬁnite logarithm is the case n = 1 of"
 ---
 In this section we sketch another proof of the main result. This pro of has two
 interesting features: First of all, it proves directly the formula for Fn in terms of

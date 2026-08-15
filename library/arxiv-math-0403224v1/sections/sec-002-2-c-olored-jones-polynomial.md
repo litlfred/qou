@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-2
 source_pdf: 0403224v1.pdf
 source_sha256: c25ccba77da375ad
+doc_brief: "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT KAZUHIRO HIKAMI — We prove that the N-colored Jones polynomial for the torus knot Ts, t satisﬁes the second order diﬀerence"
 ---
 The Alexander polynomial ∆K(A) for the torus knot K = Ts, t is known
 to be (see e.g. Ref. 14)

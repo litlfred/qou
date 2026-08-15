@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 46-47
 source_pdf: agt-v7-n2-p13-s.pdf
 source_sha256: affd571adbaac3fc
+doc_brief: "Algebraic & Geometric Topology 7 (2007) 845–917 845 Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
 ---
 By varying the bordism category we can vary the corresponding QFT.
 QHFT0 Consider the bordism category supported by triples .Y; L;/ , where L is

@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 4-6
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
+doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
 ---
 proach of Reshetikhin-Turaev invariants [1, 12] following the concise illustration given in
 [24]. We focus on the SO(3) TQFT theory and consider the root of unity e

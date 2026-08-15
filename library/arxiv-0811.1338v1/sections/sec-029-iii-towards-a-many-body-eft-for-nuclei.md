@@ -7,6 +7,7 @@ section_number: III
 pages: 39-39
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
+doc_brief: "Modern Theory of Nuclear Forces E. Epelbaum∗ — 38 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 The EFT approach to the nuclear many-body problem
 is much less established than the one for the forces and

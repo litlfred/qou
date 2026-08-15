@@ -7,6 +7,7 @@ section_number: null
 pages: 24-25
 source_pdf: 1203.6551v1.pdf
 source_sha256: a8e84f8ed63dbcca
+doc_brief: "On the number of hyperbolic 3-manifolds of a given volume — The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v."
 ---
 [1] J. W. Aaber and N. M. Dunﬁeld, Closed surface bundles of le ast volume, Algebr. Geom.
 Topol. 10 (2010), 2315–2342.

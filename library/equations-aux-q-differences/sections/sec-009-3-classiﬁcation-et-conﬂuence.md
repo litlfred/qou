@@ -7,6 +7,7 @@ section_number: 3
 pages: 7-8
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
+doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 des syst`emes fuchsiens rationnels
 Dans le §3, le nombre complexe q est de module > 1 et les ai sont des

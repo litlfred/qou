@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 15-16
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 H, there is a “universal invariant” of links and tangles from w hich one can recover
 the operator invariants, such as the colored Jones polynomi als. Such universal

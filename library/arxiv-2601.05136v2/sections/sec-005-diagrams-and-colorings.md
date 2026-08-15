@@ -7,6 +7,7 @@ section_number: null
 pages: 5-6
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
+doc_brief: "Stateintegralsforthequantized SL2(C)Chern-Simonsinvariant CalvinMcPhail-Snyder DepartmentofMathematics,DukeUniversity calvin@sl2.site — Previous work of the author and N."
 ---
 Deﬁnition2.1.Adecoratedrepresentation ofaknot Kisarepresentation ρ: π1(S3\K)→ SL2(C)
 andachoiceofeigenspacefortheimageofeachperipheralsubgroupof K underρ.

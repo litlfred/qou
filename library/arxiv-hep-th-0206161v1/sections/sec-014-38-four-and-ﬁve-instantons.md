@@ -7,6 +7,7 @@ section_number: 3.8
 pages: 22-22
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
 ---
 To collect more “experimental data-points” we have conside red in more details the
 cases of the gauge groups SU (2) and SU (3) with fundamental matter. We have computed

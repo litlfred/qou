@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 20-22
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 by ‘mixed’ knots/links inS3 which contain one oriented, unknotted, pointwise
 ﬁxed component (the core of the complementary unknotted solid t orus in S3).

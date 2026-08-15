@@ -1,0 +1,126 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "1-s20-s009731651830061x-main",
+ "source_sha256": "8d591fe7f1673c52",
+ "brief": "Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Constant term formulas for",
+ "extended": "**Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Constant term formulas for reﬁned enumerations**\n\n45 pp, 21 sections.\n\n**Outline.** Constant term formulas for reﬁned enumerations; 1 Introduction; 1.1.1 Gog trapezoids; 1.1.2 Magog trapezoids; 1.1 Gog trapezoids, Magog trapezoids and Kratt; 2 Preliminaries: monotone triangles and trunca; 2.1 Inversion numbers; 2.2 Reﬁned enumeration with respect to the top; 3 Application: constant term formula for the g; 3.1 Inversion numbers; 3.2 Minima and maxima; 3.3 Gog pentagons; 3.4 Inversion numbers; 3.5 Minima and maxima; 4.1 First version; 4.2 Second version; 5 Connecting Gogs and Magogs; 5.1 A variant of Theorem 16 and its applicatio\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: in [15]c a n be generalized as follows.\n- Theorem 2: Suppose b =( b1, ..., bn) is a strictly increasing sequence of integers, then\n- Theorem 4: Suppose b =( b1, ..., bn) is a strictly increasing sequence of integers and\n- Theorem 5: Let n, l, r be non-negative integers with l + r ≤ n. Suppose b1, ..., bn is\n- Theorem 7: The number of (m, n, k)-Gog trapezoids with bottom row b1, ..., bk is the\n- Theorem 8: The generating function of (m, n, k)-Gog trapezoids with bottom row",
+ "tokens": {
+  "brief": 50,
+  "extended": 338
+ },
+ "sections": [
+  {
+   "id": "sec-000-constant-term-formulas-for-reﬁned-enumerations-o",
+   "title": "Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-111-gog-trapezoids",
+   "title": "Gog trapezoids",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-112-magog-trapezoids",
+   "title": "Magog trapezoids",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-11-gog-trapezoids-magog-trapezoids-and-krattenth",
+   "title": "Gog trapezoids, Magog trapezoids and Krattenthaler's conjecture",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-005-2-preliminaries-monotone-triangles-and-truncated",
+   "title": "Preliminaries: monotone triangles and truncated monotone triangles",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-006-21-inversion-numbers",
+   "title": "Inversion numbers",
+   "pages": "5-10"
+  },
+  {
+   "id": "sec-007-22-reﬁned-enumeration-with-respect-to-the-top-en",
+   "title": "Reﬁned enumeration with respect to the top entry",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-008-3-application-constant-term-formula-for-the-gene",
+   "title": "Application: constant term formula for the generating function of (m,n,k)-Gog trapezoids",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-009-31-inversion-numbers",
+   "title": "Inversion numbers",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-010-32-minima-and-maxima",
+   "title": "Minima and maxima",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-011-33-gog-pentagons",
+   "title": "Gog pentagons",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-012-34-inversion-numbers",
+   "title": "Inversion numbers",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-013-35-minima-and-maxima",
+   "title": "Minima and maxima",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-014-41-first-version",
+   "title": "First version",
+   "pages": "21-27"
+  },
+  {
+   "id": "sec-015-42-second-version",
+   "title": "Second version",
+   "pages": "27-31"
+  },
+  {
+   "id": "sec-016-5-connecting-gogs-and-magogs",
+   "title": "Connecting Gogs and Magogs",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-017-51-a-variant-of-theorem-16-and-its-application-t",
+   "title": "A variant of Theorem 16 and its application to (2.3) and to (2.6) when bi=i",
+   "pages": "34-38"
+  },
+  {
+   "id": "sec-018-52-the-application-of-theorem-17-to-28-when-bii",
+   "title": "The application of Theorem 17 to (2.8) when bi=i",
+   "pages": "38-41"
+  },
+  {
+   "id": "sec-019-acknowledgment",
+   "title": "Acknowledgment",
+   "pages": "41-44"
+  },
+  {
+   "id": "sec-020-references",
+   "title": "References",
+   "pages": "44-45"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

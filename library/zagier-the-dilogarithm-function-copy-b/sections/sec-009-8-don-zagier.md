@@ -7,6 +7,7 @@ section_number: 8
 pages: 6-6
 source_pdf: zagier-the-dilogarithm-function-copy-b.pdf
 source_sha256: c584944a501ef0c5
+doc_brief: "The Dilogarithm Function Don Zagier — 57 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 The quantitative interpretation turned out as follows [9] : The diﬀer ence
 between the left and right sides of Ramanujan’s equation is O

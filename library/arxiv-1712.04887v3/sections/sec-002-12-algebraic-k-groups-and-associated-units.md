@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 4-6
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
+doc_brief: "BLOCH GROUPS, ALGEBRAIC K-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
 ---
 concerns the relation to the algebraic K-theory of ﬁelds. The group B(F ) was introduced
 by Bloch as a concrete model for the abstract K-group K3(F ). It was proved by Suslin [30]

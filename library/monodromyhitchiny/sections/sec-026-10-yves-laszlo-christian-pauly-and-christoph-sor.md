@@ -7,6 +7,7 @@ section_number: 10
 pages: 11-12
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
 ---
 Here ⟨.|.⟩ denotes the standard pairing between H⃗λ,µ,µ † and its dual H†
 ⃗λ,µ,µ †. It is shown in

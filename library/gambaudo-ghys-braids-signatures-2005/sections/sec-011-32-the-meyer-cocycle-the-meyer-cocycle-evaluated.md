@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 17-19
 source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
 source_sha256: 647f4c28cab7428d
+doc_brief: "Bull. Soc. math. France 133 (4), 2005, p. 541–579 — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
 ---
 elements in Sp(2g, R) is also related to the signature of 4-manifolds as follows.
 Let P be the oriented pair of pants (the oriented 2-sphere minus th ree discs)

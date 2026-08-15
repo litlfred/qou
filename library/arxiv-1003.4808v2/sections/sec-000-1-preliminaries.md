@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-6
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
 ---
 2 The many dimensions of the volume conjecture 5
 2.1 Parametrized VC . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5

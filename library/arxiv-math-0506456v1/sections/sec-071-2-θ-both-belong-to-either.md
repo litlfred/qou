@@ -7,6 +7,7 @@ section_number: 2
 pages: 67-67
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
+doc_brief: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e"
 ---
 ]−π, 0[ or to ]0,π [. We use this fact together with the fact that cot :] mπ, (m+1)π[→
 R is strictly decreasing for any m ∈ Z. In fact, cot( ψi) = Re(Qi)

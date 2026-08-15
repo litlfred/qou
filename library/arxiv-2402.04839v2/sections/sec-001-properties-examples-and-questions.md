@@ -7,6 +7,7 @@ section_number: null
 pages: 3-4
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
+doc_brief: "On a volume invariant of 3–manifolds — 22 sections: Introduction; Properties, examples and questions; Definition of topological volume a"
 ---
 We first define the notion of topological volume and refinements thereof. We then establish
 general properties of the topological volume, give examples and state questions that arise from

@@ -7,6 +7,7 @@ section_number: 4
 pages: 3-4
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 and α particle
 Included as input data in the 2022 adjustment are the

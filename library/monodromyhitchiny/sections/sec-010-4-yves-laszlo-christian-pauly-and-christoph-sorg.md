@@ -7,6 +7,7 @@ section_number: 4
 pages: 5-5
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
 ---
 σi satisfy the relation σ3σ2σ1 = 1. Clearly π1(M0,4,x ) coincides with the fundamental group
 π1(Q,x ) of the 3-holed sphere Q.

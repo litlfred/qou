@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
+doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
 ---
 Given any finite setAin some ring we define the sum set and product set ofAas
 A+A={a+b:a,b∈A}andAA={ab:a,b∈A}.

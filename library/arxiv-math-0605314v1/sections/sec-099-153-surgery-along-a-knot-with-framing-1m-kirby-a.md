@@ -7,6 +7,7 @@ section_number: 15.3
 pages: 59-59
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 riodicity results for the WRT invariant of integral homolog y spheres obtained from
 S3 by surgery along a knot with framings 1 /m (Corollaries 8.15 and 8.26 of [38]).

@@ -7,6 +7,7 @@ section_number: 7.2.2
 pages: 101-102
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 M→S h
 as follows [ RZ96, 6.14]. Let S be in Nil v and let us consider a pair (Λ ,ρ )∈

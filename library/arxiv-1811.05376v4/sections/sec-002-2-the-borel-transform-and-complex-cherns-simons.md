@@ -7,6 +7,7 @@ section_number: 2
 pages: 15-17
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
 ---
 We now provide the proof of Theorem 2. The reader not familiar with the Borel transformB and
 its relation to the Laplace transform is encouraged to read Section A, before reading the proof of

@@ -7,6 +7,7 @@ section_number: null
 pages: 55-57
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 [Bac] David Bachman, Normalizing topologically minimal surfaces ii: Disks, arXiv:1210.4574, Preprint
 2012.

@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 3-4
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
+doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
 ---
 two ﬁber functors ωB, ωdR : T → VecQ. Deﬁne the ring of motivic periods to be
 the aﬃne ring of functions on the scheme of tensor isomorphis ms from ωdR to ωB

@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 58-59
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 We call adequate an open subset C∗ of the form q−NU0, where the
 q−kU0,k ≥ 0 are pairwise disjoint. Clearly, A0(U∞) is a C({z})-vector

@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 48-50
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 In Section 3.3, we derived ST -invariance of the tetrahedron theory T1≃T ∆,ΠZ by starting
 withN = 4 mirror symmetry, translating to N = 2 mirror symmetry for the XYZ model

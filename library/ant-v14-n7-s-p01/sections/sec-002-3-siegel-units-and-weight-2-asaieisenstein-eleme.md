@@ -7,6 +7,7 @@ section_number: 3
 pages: 14-17
 source_pdf: ant-v14-n7-s-p01.pdf
 source_sha256: 976199bfca4ac086
+doc_brief: "p-adic Asai L-functions of Bianchi modular forms David Loeﬄerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction to"
 ---
 3A. Modular units. Let U⊂ GL2(ˆZ) be an open compact subgroup, with associated symmetric space
 YQ(U). In this section, we work exclusively overQ, so we shall drop the subscriptQ from the notation. As

@@ -7,6 +7,7 @@ section_number: 4
 pages: 7-9
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 The enormity of the space of states of quantum systems begs the question of how to
 measure the distance between states. Are some states close to each other and others

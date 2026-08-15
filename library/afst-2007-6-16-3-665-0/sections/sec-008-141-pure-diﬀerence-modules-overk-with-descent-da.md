@@ -7,6 +7,7 @@ section_number: 1.4.1
 pages: 11-13
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
+doc_brief: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques — 24 sections: Introduction; Classiﬁcation of q-diﬀerence equat; Some notation and formulas"
 ---
 K∞ denotesthealgebraicclosureof K andGal denotestheGaloisgroup
 of K∞/K. LetM be a diﬀerence module overK∞. Descent dataD for M

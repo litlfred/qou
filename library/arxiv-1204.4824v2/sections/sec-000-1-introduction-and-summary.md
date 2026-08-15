@@ -7,6 +7,7 @@ section_number: 1
 pages: 4-11
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 In this paper we study objects which we call spectral networks. A spectral network W is
 made up of walls drawn on a punctured real surface C. Here is a picture of one:

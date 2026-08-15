@@ -7,6 +7,7 @@ section_number: 1
 pages: 31-33
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p -adic cyclotomic multiple zeta values David Jarossay p-adic cyclotomic multiple zeta values depend on the choice of a number of iterations"
 ---
 subspace U an= P1,an\⋃
 ξ N=1 B(ξ, 1) of P1,an over K , where B(ξ, 1) is the open ball of center ξ and

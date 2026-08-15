@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 10-11
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
+doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
 ---
 estimates of the degree and the coeﬃcients of the cyclotomic expa nsion of the knot. These estimates will be
 established in Section 6. By deﬁnition fK,n (α) = JK,n (eα/n ), hence equation ( 12) gives that

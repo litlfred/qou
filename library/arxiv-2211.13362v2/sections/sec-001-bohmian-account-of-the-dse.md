@@ -7,5 +7,6 @@ section_number: null
 pages: 3-3
 source_pdf: 2211.13362v2.pdf
 source_sha256: 3becbeaa1135d2e1
+doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
 ---
 

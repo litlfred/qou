@@ -7,6 +7,7 @@ section_number: 1
 pages: 9-13
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 that ~H3(x) < ~H1(x)~H2(x). This exercise reveals the ﬁltration of the bigrading of Table 2:
 the generator is

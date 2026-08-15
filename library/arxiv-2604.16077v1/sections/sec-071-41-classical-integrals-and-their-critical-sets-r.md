@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 35-36
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
 ---
 assumption (86), when z ∈CN both cases 0 < I(l0,∞ +z)< 2π and −2π <I(l0,∞ +z)< 0
 may happen. If 0 < I(l0,∞ +z)< 2π, then ˆSN (l0,∞ +z) is given by the formulas (47)-(50),

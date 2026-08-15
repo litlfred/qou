@@ -7,6 +7,7 @@ section_number: null
 pages: 17-18
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
+doc_brief: "On a volume invariant of 3–manifolds — 22 sections: Introduction; Properties, examples and questions; Definition of topological volume a"
 ---
 LetWdenote the complement of the right-handed Whitehead link with Seifert framing. This
 ism129 andL5a1 in the census, where the latter denotes the left-handed Whitehead link. We

@@ -7,6 +7,7 @@ section_number: 15.1
 pages: 57-58
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 consisting of a bottom knot T0 and an algebraically-split, 0-framed link L1∪···∪ Ll,
 where lk(T0,L i) = 0 for i = 1,... ,l . For x1,... ,x l∈P , we deﬁne JT (x1,... ,x l)

@@ -7,6 +7,7 @@ section_number: 4
 pages: 8-9
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Introduction; Some algebraic lemmas; Ramiﬁcation and postcritically inﬁ"
 ---
 We recall the deﬁnition of the absolute Weil height function h: K→ R for a number ﬁeld K . For each
 ﬁnite extension L/K , denote by ML the set of places of L, and for each placev let|·|v be a corresponding

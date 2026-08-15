@@ -7,6 +7,7 @@ section_number: 12
 pages: 10-10
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
+doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 where f : P1(C)→ P1(C) is a function of degree n and a0 = f(z0). (Equa-
 tion (1) is the special case when f is a polynomial, so f −1(∞)i s∞ with

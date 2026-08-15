@@ -7,6 +7,7 @@ section_number: 3
 pages: 5-5
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
+doc_brief: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE — 19 sections: Introduction; These; Conformal simplices"
 ---
 In this section we consider conformal simplices (deﬁned as in Section 1)
 in hyperbolic 3-space H3, rather than in E3. Rather than repeating all of

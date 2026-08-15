@@ -7,6 +7,7 @@ section_number: 1.5
 pages: 43-43
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 In this section we give various deﬁnitions used for the Redemeister torsion. Refe-
 rences are [Mil66], [GKZ94, Appendix A], [Por97, Chapitre 0]. We stress out the fact

@@ -7,6 +7,7 @@ section_number: null
 pages: 9-10
 source_pdf: 1172-5.pdf
 source_sha256: 21b7a0e13bd208fc
+doc_brief: "OPTIMISTIC CALCULATIONS ABOUT THE $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mathrm{H}\mathrm{I}\mat"
 ---
 [1] S.-S. Chern and J. Simons, Characteristicforms and geometric invariants, Ann. of Math.
 (2) 99 (1974),48-69.

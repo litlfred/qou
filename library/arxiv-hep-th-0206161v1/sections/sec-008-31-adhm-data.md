@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 13-15
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
 ---
 The moduli space Mk,N of instantons with ﬁxed framing at inﬁnity has dimension
 4kN . It has the following convenient description. Take two comp lex vector spaces V and

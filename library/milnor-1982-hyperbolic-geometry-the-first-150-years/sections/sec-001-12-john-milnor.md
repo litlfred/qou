@@ -7,6 +7,7 @@ section_number: 12
 pages: 4-6
 source_pdf: milnor-1982-hyperbolic-geometry-the-first-150-years.pdf
 source_sha256: d444d7a61af54c7c
+doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY — 9 sections: JOHN MILNOR; JOHN MILNOR; JOHN MILNOR"
 ---
 •e FIGURE 2. The Cayley formula for noneuclidean distance, 
 in the projective disk model 

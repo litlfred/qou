@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 15-16
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
 ---
 In its more mathematical incarnation, a 3-dimensional TQFT can be thought of as a
 functor Z that assigns

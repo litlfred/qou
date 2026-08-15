@@ -7,6 +7,7 @@ section_number: null
 pages: 8-12
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
+doc_brief: "Pure and Applied Mathematics Quarterly — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 In this section we give explicit formulas for the descendant colored Jones
 polynomials and their recursions for the trefoil (a non-hyperbolic knot) and

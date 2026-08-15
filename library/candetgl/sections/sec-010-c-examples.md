@@ -7,6 +7,7 @@ section_number: C
 pages: 12-13
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 We give three examples to illustrate Proposition 1, each in ‘‘bare bones’’ format, and invite
 the interested reader to carry out the supporting calculations.

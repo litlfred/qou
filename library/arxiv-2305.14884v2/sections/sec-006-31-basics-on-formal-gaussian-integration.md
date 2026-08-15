@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 9-18
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
+doc_brief: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further"
 ---
 erties of formal Gaussian integration, which is a combinatorial analo gue of integration of
 analytic functions. This theory was introduced and studied in detail in [ 4], where it was

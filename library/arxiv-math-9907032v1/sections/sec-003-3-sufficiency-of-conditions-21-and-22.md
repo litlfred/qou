@@ -7,6 +7,7 @@ section_number: 3
 pages: 7-7
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 Somewhat surprisingly, the trivial conditions 2.1 and 2.2 guarantees that the linear
 program L has a solution:

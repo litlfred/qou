@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-4
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 The weight n of a rooted tree t is the number of its nodes. The weight of a forest F =
 ∏

@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 236-236
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 the category of ﬁnite dimensional Qp-rational representations of G. An
 exact faithful ⊗-functor Rep Qp(G)→ Isoc(K0) is called an isocrystal with

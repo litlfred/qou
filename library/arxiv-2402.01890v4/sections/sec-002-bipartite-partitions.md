@@ -7,6 +7,7 @@ section_number: null
 pages: 3-6
 source_pdf: 2402.01890v4.pdf
 source_sha256: e1eeb2865f0b53e1
+doc_brief: "On the spherical partition algebra — For k ∈ N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated"
 ---
 and introduce the corresponding diagrammatic representations. For b∈ BiPark, we further recall the lexicographic
 normal form N(b) and Garsia and Gessel’s normal formGG(b) from [23]. In section 4 we recall the partition algebra

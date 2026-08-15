@@ -7,6 +7,7 @@ section_number: 9.7
 pages: 89-91
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 In Section 6.8, we described a one-generation model in C⊗← −O, transforming under the
 symmetry generators Λ j and Q. In Section 9 we described a three-generation model in

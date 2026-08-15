@@ -7,6 +7,7 @@ section_number: C
 pages: 3-3
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
+doc_brief: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 fuji, K. Murasugi and S. Friedl for giving us helpful informations an d comments regarding
 this work. The paper was conceived during J.D. visited the CRM. He th anks the CRM

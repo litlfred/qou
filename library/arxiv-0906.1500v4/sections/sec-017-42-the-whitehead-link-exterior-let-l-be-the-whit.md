@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 13-14
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
+doc_brief: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 following Wirtinger presentation of the Whitehead link group:
 π1(EL) = ⟨a, b | awa−1w−1⟩ where w = bab−1a−1b−1ab.

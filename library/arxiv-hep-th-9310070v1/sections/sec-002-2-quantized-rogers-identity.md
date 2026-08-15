@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-5
 source_pdf: 9310070v1.pdf
 source_sha256: b979ebf2f47a4653
+doc_brief: "September, 1993 Quantum Dilogarithm — A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity."
 ---
 Let ˆU and ˆV be two operators, satisfying the Weil algebra:
 ˆU ˆV = θ ˆV ˆU . (2.1)

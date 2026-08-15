@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 22-24
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
+doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 Rappelons que la transform´ee de Laplace de la fonction ϕ dans la direction
 d = R+eiα,d ’ a r g u m e n tα, issue de l’origine dans le plan complexe de la variable

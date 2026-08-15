@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-4
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 tetrahedra ofτ are positively oriented. This turns out to imply Weil’s local rigidity
 theorem, as we shall show in Theorem 6.4.

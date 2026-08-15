@@ -1,0 +1,42 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0401068v1",
+ "source_sha256": "8168d7e7f6069978",
+ "brief": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA — @We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum’s",
+ "extended": "**THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA**\n\n12 pp, 4 sections.\n\n**Abstract.** @We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum’s formula of the colored Jones p olynomial. Our result supports the AJ conjecture due to S.Garoufalidis.\n\n**Outline.** 1 introduction; 2 Main Theorem; 4 Observations; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: [8] The colored Jones polynomial of the twist knot Kp is given by\n- Theorem 3.1: (Hoste-Shanahan [5]) For p ⁄= −1, 0, 1, 2, AKp(l, m ) is given recusively by\n- Theorem 4.1: [15] Every proper q-hypergeometric function F (n, k) satisﬁes a k-free recur-\n- Lemma 3.2: We have Hp(m, x, y ) = yphp(m, x ), where for p ≥ 2, hp(m, x ) is given recursively",
+ "tokens": {
+  "brief": 48,
+  "extended": 205
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-main-theorem",
+   "title": "Main Theorem",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-002-4-observations",
+   "title": "Observations",
+   "pages": "6-11"
+  },
+  {
+   "id": "sec-003-references",
+   "title": "References",
+   "pages": "11-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

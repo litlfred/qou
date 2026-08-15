@@ -7,6 +7,7 @@ section_number: 1
 pages: 3-5
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 19 Negentropy 67
 20 Uncomplexity 68

@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 237-237
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 of a one-parameter subgroup λ : Gm→G overK 0. Here two one-parameter
 subgroups λ,λ′ are conjugate if and only if gλg−1 = λ′ for some element

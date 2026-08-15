@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 1-s2.0-S0097316524000426-main.pdf
 source_sha256: 76a8ab857163aa09
+doc_brief: "Journal of Combinatorial Theory, Series A 206 (2024) 105903 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A journal homepage: www.elsevier.com/locate/jcta — 7 secti"
 ---
 Recall that a partition of a positive integer n is an integer sequence λ =( λ1, λ2, ...,  λk)
 such that λ1 ≥ λ2 ≥···≥ λk > 0a n d λ1 + λ2 + ··· + λk = n. The numbers λi are called 

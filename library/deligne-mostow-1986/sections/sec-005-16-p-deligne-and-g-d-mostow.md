@@ -7,6 +7,7 @@ section_number: 16
 pages: 13-15
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
+doc_brief: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 We define ^(^.^(L) :== ^(S^.^) (L) ® Q1. It results from (2.11) that
 (2.11.1) deg^S^KL) =-2 +S^.

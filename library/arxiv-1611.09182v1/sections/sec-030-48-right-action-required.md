@@ -7,6 +7,7 @@ section_number: 4.8
 pages: 36-40
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Readers may have noticed that the left action of C⊗ H on itself was not enough to describe
 ΨL + ΨR together as a single irreducible representation. That is, the left action alone has

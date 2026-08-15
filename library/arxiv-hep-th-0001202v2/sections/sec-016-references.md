@@ -7,6 +7,7 @@ section_number: null
 pages: 19-21
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 [1] D. Kreimer, Adv. Theor. Math. Phys. 2 (1998) 303, q-alg/9707029.
 [2] A. Connes, D. Kreimer, Comm. Math. Phys. 199 (1998) 203, hep-th/9808042.

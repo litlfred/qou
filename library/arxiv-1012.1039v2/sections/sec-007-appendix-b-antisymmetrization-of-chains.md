@@ -7,6 +7,7 @@ section_number: null
 pages: 18-20
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 In this section we prove that the chain map S deﬁned in Section 2.2 is chain
 homotopic to the identity.

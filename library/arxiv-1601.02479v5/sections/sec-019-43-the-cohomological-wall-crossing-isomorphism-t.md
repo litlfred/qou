@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 40-43
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
 ---
 section we prove Theorem B, which is a categoriﬁcation of the motivic wall crossing
 formula (8). In Section 6.4 we will prove that this isomorphism can be r ealised in

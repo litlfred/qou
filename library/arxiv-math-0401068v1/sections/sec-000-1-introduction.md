@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 0401068v1.pdf
 source_sha256: 8168d7e7f6069978
+doc_brief: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA — @We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum’s"
 ---
 The colored Jones polynomial is a one variable polynomial invariant of a knot colored
 with irreducible ﬁnite dimensional representation of sl(2, C) [14]. The original Jones poly-

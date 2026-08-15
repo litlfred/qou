@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 17-18
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 the associated twisted torus. Given a ray r⊂ C∗ we consider the corresponding half-plane
 Hr ={t∈ C∗ : t = z· v with z∈ r and Re( v) > 0}⊂ C∗

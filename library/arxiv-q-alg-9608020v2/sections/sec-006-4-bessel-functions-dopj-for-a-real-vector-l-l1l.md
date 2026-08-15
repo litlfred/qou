@@ -7,6 +7,7 @@ section_number: 4
 pages: 5-6
 source_pdf: 9608020v2.pdf
 source_sha256: 727268098db7f23d
+doc_brief: "SHIFTED JACK POL YNOMIALS, BINOMIAL — In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St])."
 ---
 [l] = ([l1],..., [ln])
 its integral part. Suppose that l1 ≥ · · · ≥ ln. By deﬁnition, put

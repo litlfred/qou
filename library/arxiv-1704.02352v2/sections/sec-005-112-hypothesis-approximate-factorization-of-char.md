@@ -7,6 +7,7 @@ section_number: 1.12
 pages: 6-9
 source_pdf: 1704.02352v2.pdf
 source_sha256: 9a14dd6ee33248d3
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y"
 ---
 lowing we will use the following convention. If χn : Pn → R is a function
 on the set of partitions of n, we will extend its domain to the set

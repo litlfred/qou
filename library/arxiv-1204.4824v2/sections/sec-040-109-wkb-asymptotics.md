@@ -7,6 +7,7 @@ section_number: 10.9
 pages: 72-74
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 So far in this section we have been considering the map Ψ W associated to an arbitrary
 spectral networkW. These maps have especially interesting asymptotic properties if we

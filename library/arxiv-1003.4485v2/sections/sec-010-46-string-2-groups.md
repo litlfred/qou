@@ -7,6 +7,7 @@ section_number: 4.6
 pages: 40-44
 source_pdf: 1003.4485v2.pdf
 source_sha256: 714d73873cecd73a
+doc_brief: "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles."
 ---
 The Lie 2-groups discussed so far are easy to construct. The str ing 2-group is
 considerably more subtle. Ultimately it forces upon us a deeper conc eption of

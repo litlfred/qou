@@ -7,6 +7,7 @@ section_number: null
 pages: 105-108
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 deﬁnition intersects-x-axis-positive-cmat :: complex-mat⇒ bool where
 [simp]: intersects-x-axis-positive-cmat H = ( let (A, B, C, D) = H in Re A ⁄= 0∧ Re B / Re A <−1 )

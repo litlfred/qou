@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 4-10
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
+doc_brief: "Prepared for submission to JHEP KIAS-P22064 Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455"
 ---
 The sl(2, C) Chern-Simons theory on a three manifold M has action
 Ik,s =tSCS(A) + ˜tSCS(A) (2.1)

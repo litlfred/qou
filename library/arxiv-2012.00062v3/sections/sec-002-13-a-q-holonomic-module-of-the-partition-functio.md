@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 4-6
 source_pdf: 2012.00062v3.pdf
 source_sha256: 2aacb7fa43f5e0da
+doc_brief: "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional"
 ---
 section we discuss aq-holonomic module associated to the partition function and its de-
 scendants. This module and its fundamental solutions are crucial to our exact computation

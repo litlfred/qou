@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 56-60
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 Consider a knot K in M3 colored by a representation R of G. As described above, it corre-
 sponds to a certain half-BPS line operator Γ K,R in T [M3;G]:

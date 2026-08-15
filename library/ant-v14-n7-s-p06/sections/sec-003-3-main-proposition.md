@@ -7,6 +7,7 @@ section_number: 3
 pages: 11-14
 source_pdf: ant-v14-n7-s-p06.pdf
 source_sha256: 4881141ef679dd5a
+doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function ﬁelds — 24 sections: Introduction and statement of resu; L′(; Some useful lemmas"
 ---
 For N|1∞, let
 SE1,E2(N, X, Y;α,β):=

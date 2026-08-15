@@ -7,6 +7,7 @@ section_number: 6
 pages: 8-9
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
+doc_brief: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE — 19 sections: Introduction; These; Conformal simplices"
 ---
 Consider the special case of the situation in the previous section where
 the metric on (M, T ) is in fact non-singular Euclidean or hyperbolic in the

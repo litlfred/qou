@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 25-29
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
+doc_brief: "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN ="
 ---
 We now have two diﬀerent approaches to the calculation of (resummed) quantum periods: on
 the one hand, we have the Borel resummation of the all-orders WKB expansion in ℏ2, which is

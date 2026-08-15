@@ -7,6 +7,7 @@ section_number: null
 pages: 40-41
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 structures. The conditions are explained more fully below.
 Deﬁnition A.2. A variation of BPS structure consists of a complex manifold M, together with

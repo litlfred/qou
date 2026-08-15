@@ -7,6 +7,7 @@ section_number: null
 pages: 20-21
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 Let ι be the algebra involution on Hq(W,L ) given by ι(q) = q−1 and ι(Ts) = T−1
 s for s∈ S (as a

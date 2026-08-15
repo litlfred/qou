@@ -7,6 +7,7 @@ section_number: 5
 pages: 21-25
 source_pdf: ant-v14-n7-s-p08.pdf
 source_sha256: 81b8f00fe5fbd0f6
+doc_brief: "Burgess bounds for short character sums evaluated at forms — 12 sections: Introduction; Method of proof: an overview; Preliminaries"
 ---
 We now derive the ﬁrst steps of the Burgess method, generalizing the approach of [Gallagher and Mont-
 gomery 2010; Heath-Brown 2013] from the one-variable case and [Pierce 2016] in the multi-variable case.

@@ -7,6 +7,7 @@ section_number: 12
 pages: 38-39
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 In this section, we give some properties of JM and some applications.
 Throughout this section, M denotes an integral homology sphere.

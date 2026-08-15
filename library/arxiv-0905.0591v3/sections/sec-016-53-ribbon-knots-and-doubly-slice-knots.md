@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 16-17
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
+doc_brief: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 exists a slice disk D such that π1(NK ) →π1(D4 \νD) is surjective. Note that if a knot is
 ribbon, then it is also homotopy ribbon. It is an open conject ure whether every knot that

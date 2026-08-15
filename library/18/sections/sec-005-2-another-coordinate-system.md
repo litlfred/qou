@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-5
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
+doc_brief: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE — 19 sections: Introduction; These; Conformal simplices"
 ---
 While the radiiri are a natural set of coordinates for the space of confor-
 mal simplices, it turns out that, in many ways, thecurvatures of the spheres

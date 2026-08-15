@@ -7,6 +7,7 @@ section_number: null
 pages: 34-36
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 Let us apply the explicit formula for the Faddeev’s quantum dilogarithm at the rational point
 b2 =P/Q,P,Q∈ Z>0 coprime, in Eq. (C.11) to the expression for Fk(y(x)), 0≤k≤PQ− 1, which

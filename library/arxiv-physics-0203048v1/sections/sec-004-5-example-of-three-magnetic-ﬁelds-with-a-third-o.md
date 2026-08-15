@@ -7,6 +7,7 @@ section_number: 5
 pages: 7-7
 source_pdf: 0203048v1.pdf
 source_sha256: 47204f32280e91a3
+doc_brief: "Towards a third-order topological invariant for magnetic ﬁelds — An expression for a third-order link integral of three magne tic ﬁelds is presented."
 ---
 In this section we want to give an example of three magnetic ﬁelds not conﬁned to
 ﬂux tubes, which ﬁrstly allow for one-form potentials that obey d( Ai ∧Aj) = 0 and

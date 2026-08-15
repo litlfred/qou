@@ -7,6 +7,7 @@ section_number: 3
 pages: 11-12
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 The one-photon self-energy of an electron bound to a
 stationary point nucleus is

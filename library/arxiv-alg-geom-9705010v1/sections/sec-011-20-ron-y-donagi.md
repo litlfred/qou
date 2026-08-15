@@ -7,6 +7,7 @@ section_number: 20
 pages: 20-22
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
+doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
 ---
 and we assume both maps are bundles, at least over some open t∗
 0 ⊂ t∗. The

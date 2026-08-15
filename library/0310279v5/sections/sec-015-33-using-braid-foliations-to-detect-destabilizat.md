@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 34-37
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
+doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 In this section we will show how to recognize, from the foliation of F, when a closed
 braid admits a destabilization or an exchange move.

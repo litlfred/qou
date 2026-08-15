@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 9-11
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
+doc_brief: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Scie"
 ---
 We’ll ﬁrst discuss Charlie’s description, which is based on the following three postulates:
 • According to Charlie, the formation and evaporation of the black hole is a unitary

@@ -7,6 +7,7 @@ section_number: 4.6.1
 pages: 173-174
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 that S is a smooth projective curve overK. Then Z ={ζ0,... ,ζ n} is just
 a ﬁnite set of points and S =S\Z.

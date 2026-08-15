@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-6
 source_pdf: 0005038v1.pdf
 source_sha256: db0b9b7a8534f161
+doc_brief: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 In this section, we prove that the Lawrence-Krammer represent ation is faithful.
 The main ingredient in the proof is the following lemma.

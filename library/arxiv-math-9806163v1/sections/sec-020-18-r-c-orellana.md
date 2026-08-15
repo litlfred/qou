@@ -7,6 +7,7 @@ section_number: 18
 pages: 18-20
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
+doc_brief: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
 ---
 Let λ = [ mr1] ⊢ f . Since we assumed that m > n and r1 > n , then we have that
 for all µ ⊢ n + f we have that µ/λ can be interpreted as a double partition ( α, β) of n.

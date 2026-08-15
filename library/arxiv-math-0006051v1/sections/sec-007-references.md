@@ -7,6 +7,7 @@ section_number: null
 pages: 8-8
 source_pdf: 0006051v1.pdf
 source_sha256: 10483e75bd3655ea
+doc_brief: "FINITE AND p-ADIC POL YLOGARITHMS AMNON BESSER 1. Introduction The ﬁnite logarithm was introduced by Kontsevich (under the name “ The 1 1 logarithm”) in [Kon]. The ﬁnite logarithm is the case n = 1 of"
 ---
 [BdJ00] A. Besser and R. de Jeu. The syntomic regulator for K–theory of ﬁelds. W ork in progress,
 2000.

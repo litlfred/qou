@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-4
 source_pdf: 0901.1612v1.pdf
 source_sha256: b4f3efcadd1e5caf
+doc_brief: "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-component links in the 3-dimensional sphere were classiﬁed up to link homotopy by John Milnor in his senior thesis, published in 1954."
 ---
 Consider the conﬁguration space
 Conf3S3⊂S3×S3×S3

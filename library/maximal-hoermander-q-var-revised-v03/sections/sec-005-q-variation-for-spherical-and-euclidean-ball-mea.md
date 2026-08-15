@@ -7,6 +7,7 @@ section_number: null
 pages: 16-21
 source_pdf: Maximal-Hoermander-q-Var-revised-v03.pdf
 source_sha256: 135332c04a1b3bb8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 10 sections: Introduction; R-boundedness; Prel"
 ---
 In this section, we consider fort> 0, d∈N, 1<p< ∞and f∈S(Rd) a Schwartz function,
 Atf(x) = 1

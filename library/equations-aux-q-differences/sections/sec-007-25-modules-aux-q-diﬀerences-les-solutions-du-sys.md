@@ -7,6 +7,7 @@ section_number: 2.5
 pages: 7-7
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
+doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 les invariants de l’application X ↦→ A−1σqX. C’est l’analogue multiplicatif
 de la caract´erisation des solutions du syst`eme diﬀ´erentiel δX = AX comme

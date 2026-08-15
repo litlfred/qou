@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 46-47
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 Now, we consider a class of three-manifolds M3 that could be viewed as a natural general-
 ization of L(p, 1) — the total space of a degree-( −p) circle bundle over a genus- g Riemann

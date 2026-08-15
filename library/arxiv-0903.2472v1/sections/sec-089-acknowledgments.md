@@ -7,6 +7,7 @@ section_number: null
 pages: 58-58
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 We would like to thank D. Auroux, N. Dunﬁeld, S. Garoufalidis , K. Hikami, T. Mrowka,
 W. Neumann, E. Witten, and C. Zickert for useful discussions and correspondence. Re-

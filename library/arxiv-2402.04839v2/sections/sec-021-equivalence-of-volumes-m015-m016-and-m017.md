@@ -7,6 +7,7 @@ section_number: null
 pages: 27-28
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
+doc_brief: "On a volume invariant of 3–manifolds — 22 sections: Introduction; Properties, examples and questions; Definition of topological volume a"
 ---
 SnapPy gives the following output for
 C=Manifold(‘m015’),D=Manifold(‘m016’)andE=Manifold(‘m017’):

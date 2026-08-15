@@ -7,6 +7,7 @@ section_number: 2
 pages: 8-35
 source_pdf: 1304.3481v1.pdf
 source_sha256: d0840f2775c0f761
+doc_brief: "Quadruply-graded colored homology of knots — W e conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 knot invariants and will also help us in section 7.2 to understand the limit a→ 0.
 As we shall see, the latter allows one to focus on the “bottom row” o f the superpoly-

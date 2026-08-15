@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-2
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
+doc_brief: "Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Constant term formulas for"
 ---
 When Robbins and Rumsey [29] introduced alternating sign matrices in the 1980s, 
 this was exciting for several reasons. On the one hand, they formulated a conjecture 

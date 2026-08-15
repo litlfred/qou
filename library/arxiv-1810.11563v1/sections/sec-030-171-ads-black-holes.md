@@ -7,6 +7,7 @@ section_number: 17.1
 pages: 64-65
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 First of all for black holes in AdS which cannot evaporate, but which are entangled through
 wormholes to other AdS black holes:

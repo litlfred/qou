@@ -7,6 +7,7 @@ section_number: null
 pages: 14-25
 source_pdf: 10.4171-qt-83.pdf
 source_sha256: d95b9363de2766d2
+doc_brief: "Quantum Topol. 7 (2016), 669– 735 DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot T omotada Ohtsuki1 — We give a"
 ---
 In this section, we calculate Gaussian integrals by the sadd le point method.
 We calculate a Gaussian integral in Proposition /three.prop./one.prop, a Gaussian integral with per-

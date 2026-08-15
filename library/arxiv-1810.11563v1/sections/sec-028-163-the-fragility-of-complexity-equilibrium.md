@@ -7,6 +7,7 @@ section_number: 16.3
 pages: 63-64
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
+doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
 ---
 Let’s take the default position: If there is no reason to believe that ﬁrewalls don’t occur
 when the complexity stops increasing, then they probably do occur. How stable would

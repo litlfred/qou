@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 7-9
 source_pdf: 1011.1343v1.pdf
 source_sha256: 7d50e5e28e695191
+doc_brief: "Chiral symmetry, nuclear forces and all that Ulf-G. Meißner — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
 ---
 When I was still at Bonn ﬁlling in for the vacant chair of Max Hu ber, then rector of Bonn
 University, I met a few times with Karl Holinde of the IKP Jüli ch. Karl had become

@@ -7,6 +7,7 @@ section_number: 7
 pages: 24-24
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
+doc_brief: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 Given a knot K ⊂ S3 the representations which have been studied most are the 2–
 dimensional complex representations and the metabelian re presentations. It is therefore

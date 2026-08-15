@@ -7,6 +7,7 @@ section_number: 10
 pages: 91-93
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 As a non-associative algebra, one might have naturally expected that R⊗ C⊗ H⊗ O would
 not be ﬁt to describe the action of groups. And with no more than 32 complex dimensions,

@@ -7,6 +7,7 @@ section_number: 4
 pages: 33-43
 source_pdf: AIF_2000__50_4_1021_0.pdf
 source_sha256: a7ca398590a266d8
+doc_brief: "aif-2000-50-4-1021-0 — 7 sections: Cas d'une matrice unipotente. — So; Notation; Cas d'une matrice semi-simple. — P"
 ---
 lorsque q —> 1, et monodromie.
 On ajoute maintenant les conditions analogues en oo. Le système (2)

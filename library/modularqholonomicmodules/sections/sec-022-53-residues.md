@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 43-45
 source_pdf: modular.qholonomic.modules.pdf
 source_sha256: 640303a68dd75453
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 ---
 the residues of the meromorphic functions f (−1) =g(0,1) and f (1).
 Lemma 5.2. The functionsf (−1)(t,q ) =g(0,1)(t,q ) have simple poles att =qZ with residues

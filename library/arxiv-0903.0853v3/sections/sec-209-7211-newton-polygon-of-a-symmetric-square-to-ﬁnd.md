@@ -7,6 +7,7 @@ section_number: 7.2.1.1
 pages: 125-127
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 satisﬁed by a product of two functions, one uses the tensor pr oduct of two
 systems or modules; for a square, one uses likewise the symme tric square.

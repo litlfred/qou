@@ -7,6 +7,7 @@ section_number: 2
 pages: 18-38
 source_pdf: 1101.0956v3.pdf
 source_sha256: 28fffdb404e88501
+doc_brief: "ALGEBRAIC CONSTRUCTIONS IN THE CA TEGOR Y OF VECTOR BUNDLES CONSTANTIN M. ARCUS ¸ — In this paper we present the category of generalized Lie algebroids ."
 ---
 In general, if C is a category, then we denote |C| the class of objects and for any
 A, B ∈ |C|, we denote C (A, B ) the set of morphisms of A source and B target. Let V ect,

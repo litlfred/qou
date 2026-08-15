@@ -7,6 +7,7 @@ section_number: null
 pages: 1-10
 source_pdf: 0409565v2.pdf
 source_sha256: 236704063f12c05e
+doc_brief: "Unital Gr¨ obner Bases over Aribtrary Commutative Ground Rings — Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module."
 ---
 There have been several generalizations of Gr¨ obner basis theor y, coming in one
 of two ﬂavors: noncommutative theory and theories for working o ver special

@@ -7,6 +7,7 @@ section_number: 4.2.1
 pages: 51-52
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 In order to test the proposed state integral model (3.53), we ﬁrst compute the perturbative
 SL(2, C) invariants of M via quantization of Mﬂat (GC, Σ), as outlinted in Section 2.2.

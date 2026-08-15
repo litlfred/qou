@@ -7,6 +7,7 @@ section_number: 7
 pages: 14-15
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
+doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
 ---
 requires only minor modifications, disproves the sum-product conjecture in thep-
 adic numbers for each primep. The bounds obtained are uniform inp, though we

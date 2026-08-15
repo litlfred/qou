@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "5s032x",
+ "source_sha256": "17761383781f7bdc",
+ "brief": "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗ — quantum description.",
+ "extended": "**The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗**\n\n*Research at the intersection of quantum gravity and quantum information theory has seen sig-*\n\n20 pp, 9 sections.\n\n**Abstract.** quantum description. Indeed, the links appear so deep that Susskind has proposed to generalize ER =EPR , the conjecture that quantum entanglement is equivalent to wormholes in spacetime [6], to GR = QM, proposing that ‘where there is quantum mechanics, there is also gravity’ [7]. Hence, a quantum system does not merely come equipped with a geometry, but that geometry is dynamical, approximating general relativistic spacetimes in a classical limit. The origin of this idea can be traced to work of Jacobson, who has shown that Einstein’s equations can be recovered from thermodynamics in the presence of black hole horizons [8] (see also [9, 10]). These arguments rely essentially on the area law-scaling of the Bekenstein-Hawking entropy of black holes [11].\n\n**Outline.** The Standard Model Symmetry and Qubit Entangle; Abstract; The Complex Case: Single Qubits; The Bloch Sphere and the Complex Hopf Fibratio; Spin(3) and the Complex Hopf Fibration; Two Qubits and the Quaternionic Hopf Fibration; The Octonionic Case: Three Qubits; Three Qubits and the Octonionic Hopf Fibration; Conclusion",
+ "tokens": {
+  "brief": 23,
+  "extended": 325
+ },
+ "sections": [
+  {
+   "id": "sec-000-the-standard-model-symmetry-and-qubit-entangleme",
+   "title": "The Standard Model Symmetry and Qubit Entanglement",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "Abstract",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-002-the-complex-case-single-qubits",
+   "title": "The Complex Case: Single Qubits",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-003-the-bloch-sphere-and-the-complex-hopf-fibration",
+   "title": "The Bloch Sphere and the Complex Hopf Fibration",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-spin3-and-the-complex-hopf-fibration",
+   "title": "Spin(3) and the Complex Hopf Fibration",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-005-two-qubits-and-the-quaternionic-hopf-fibration",
+   "title": "Two Qubits and the Quaternionic Hopf Fibration",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-006-the-octonionic-case-three-qubits",
+   "title": "The Octonionic Case: Three Qubits",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-007-three-qubits-and-the-octonionic-hopf-fibration",
+   "title": "Three Qubits and the Octonionic Hopf Fibration",
+   "pages": "12-16"
+  },
+  {
+   "id": "sec-008-conclusion",
+   "title": "Conclusion",
+   "pages": "16-20"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

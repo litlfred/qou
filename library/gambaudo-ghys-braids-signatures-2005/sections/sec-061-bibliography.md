@@ -7,6 +7,7 @@ section_number: null
 pages: 38-40
 source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
 source_sha256: 647f4c28cab7428d
+doc_brief: "Bull. Soc. math. France 133 (4), 2005, p. 541–579 — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
 ---
 [1] Atiyah (M.) – The logarithm of the Dedekind η -function, Math. Ann.,
 t. 278 (1987), pp. 335–380.

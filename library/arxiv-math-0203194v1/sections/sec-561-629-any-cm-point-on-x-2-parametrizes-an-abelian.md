@@ -7,6 +7,7 @@ section_number: 6.2.9
 pages: 200-201
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 to the square of an elliptic curve with complex multiplicati on. It follows
 from 6.2.2 that the points of ramiﬁcation of the “projection ” X +(2)→X ∗

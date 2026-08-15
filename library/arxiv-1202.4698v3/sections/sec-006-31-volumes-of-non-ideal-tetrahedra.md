@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 8-9
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 We are considering non-ideal tetrahedra which are complete ly deﬁned by the collection of six
 dihedral anglesη1,...,η 6. In order to formulate the formula for their volumes from [MY ], let

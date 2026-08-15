@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 52-57
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 with the absolute basics. Hensel’s lemma states that if a polynomial factors into irreducible
 polynomials over Z/pZ, then this factorisation lifts to a unique factorisation over Z/pnZ.

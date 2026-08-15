@@ -7,6 +7,7 @@ section_number: 4
 pages: 9-9
 source_pdf: HyperbolicAndNeumann.pdf
 source_sha256: 3d66fe4c64bdc62b
+doc_brief: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP — 7 sections: Ideal triangulations and the gluin; Volumes and Dehn surgeries; The Bloch group and the extended B"
 ---
 In retrospect, the symplectic properties as descibed in equation (3) and the following text,
 and their reﬁnement from Q to Z as given in the follow-up paper [28], turned out to be the

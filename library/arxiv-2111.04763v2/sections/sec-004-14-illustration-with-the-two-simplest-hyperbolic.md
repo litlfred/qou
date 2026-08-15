@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 6-6
 source_pdf: 2111.04763v2.pdf
 source_sha256: 760a7f9794e8baaa
+doc_brief: "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
 ---
 by giving a detailed description of these matrices and of their algebraic, analytic and asymp-
 totic properties for the case of the two simplest hyperbolic knots, the41 and the5 2 knots.

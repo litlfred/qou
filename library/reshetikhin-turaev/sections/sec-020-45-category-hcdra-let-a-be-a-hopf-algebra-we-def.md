@@ -7,6 +7,7 @@ section_number: 4.5
 pages: 11-12
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
+doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 homogeneous A-coloured directed ribbon graphs W--HCDR(A). Its objects are 
 elements of N(A) (see Sect. 4.4). If q, q'e N(A) then a morphism t/~q' is a HCDR- 

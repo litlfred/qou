@@ -7,5 +7,6 @@ section_number: null
 pages: 1-18
 source_pdf: yanagihara-1980-meromorphic-solutions-difference-equations.pdf
 source_sha256: c5e4a39ec3d43d8f
+doc_brief: "yanagihara-1980-meromorphic-solutions-difference-equations — 1 sections: Document"
 ---
 

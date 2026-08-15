@@ -725,7 +725,32 @@ corpus — run the **corpus-grep checklist**:
 4. Check the relevant coordination ledger
    `docs/coordination/<theme>.md` — prior agents may have closed
    the item already.
-5. `grep -rln <topic> library/*/sections/` — the **ingested sources**.
+5. **The library — walk three tiers, cheapest first.** The ingested
+   sources are 24.7 M characters; do not grep straight into them when a
+   line will do.
+
+   ```sh
+   grep -in <topic> library/INDEX.md              # 341 briefs, ~15k tokens total
+   cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
+   grep -rln <topic> library/<doc-id>/sections/   # the text itself
+   ```
+
+   `INDEX.md` is one line per document and is the right first read — it
+   costs about as much as a single paper's abstract to scan the entire
+   library. Each section file also carries a `doc_brief` in its
+   front-matter, so a hit found by the third command is interpretable
+   without opening anything else (contextual retrieval: a chunk in
+   isolation otherwise loses what makes it mean anything).
+
+   Briefs and summaries are **extractive** — assembled from each
+   document's own abstract, section titles and extracted claims, nothing
+   written by a model — so a brief is only as good as the abstract it came
+   from. Regenerate with `scripts/summarize-library.py --apply`; a
+   hand-written summary marked `provenance.kind: "agent"` survives
+   regeneration.
+
+   The full-text grep, for when you want it directly:
+   `grep -rln <topic> library/*/sections/` — the **ingested sources**.
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result

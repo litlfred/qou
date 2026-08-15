@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 6-6
 source_pdf: 0005038v1.pdf
 source_sha256: db0b9b7a8534f161
+doc_brief: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 sic Lemma. The proof given above is a compromise of sorts, since it pr oves the
 existence of an appropriate element of H2( ˜C), but does so in a non-constructive

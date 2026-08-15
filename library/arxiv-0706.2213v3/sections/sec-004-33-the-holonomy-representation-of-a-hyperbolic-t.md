@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 5-6
 source_pdf: 0706.2213v3.pdf
 source_sha256: 75dd29acc9e34bda
+doc_brief: "NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS — This paper gives an explicit formula for the SL 2(C)−non–abelian Reidemeister torsion as deﬁned in [Dub06] in the case of twist knots."
 ---
 3.3.1. Some generalities. It is well known that the complete hyperbolic structure of a h y-
 perbolic knot complement determines a unique discrete faithful representation of the knot

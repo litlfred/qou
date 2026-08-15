@@ -7,6 +7,7 @@ section_number: null
 pages: 57-68
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 One of the reasons that the interest in Yokonuma–Hecke algebras was rekindled in the past years was
 that Juyumaya and Lambropoulou used the Markov trace on them deﬁned by the former [Ju2] in order

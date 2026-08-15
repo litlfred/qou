@@ -7,6 +7,7 @@ section_number: 7.6.5
 pages: 112-115
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 of Shimura curves attached to a quaternion algebra D over a totally real
 number ﬁeld E of degree > 1. We concentrate on the case of a critical place

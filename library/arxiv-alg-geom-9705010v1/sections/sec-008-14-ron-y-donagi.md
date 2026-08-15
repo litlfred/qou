@@ -7,6 +7,7 @@ section_number: 14
 pages: 14-16
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
+doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
 ---
 The monodromies generate the level-2 congruence subgroup Γ (2) ⊂ SL(2, Z),
 and the local system itself can now be identiﬁed with the ﬁber cohomology of the

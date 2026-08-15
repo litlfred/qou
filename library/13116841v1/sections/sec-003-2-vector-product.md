@@ -7,6 +7,7 @@ section_number: 2
 pages: 9-24
 source_pdf: 1311.6841v1.pdf
 source_sha256: ca65879d80b1e1c3
+doc_brief: "Observables in Loop Quantum Gravity with a cosmological constant — 5 sections: Introduction; Contents; Scalar product"
 ---
 1. Scalar product
 We call “scalar product” of two tensor operators, the projection of these operators on the trivial representation.

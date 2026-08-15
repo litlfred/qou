@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 21-24
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
+doc_brief: "BRING’S CURVE: OLD AND NEW — Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties."
 ---
 quotients we expect we shall now write them explicitly. We will begin with the 2,2-cycle
 corresponding to U 2 with the 4-cycle U arising in the discussion. Recall that we have

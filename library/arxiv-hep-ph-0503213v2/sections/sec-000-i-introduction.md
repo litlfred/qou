@@ -7,6 +7,7 @@ section_number: I
 pages: 1-1
 source_pdf: 0503213v2.pdf
 source_sha256: 637a9e53b9b30776
+doc_brief: "A topological model of composite preons Sundance O. Bilson-Thompson ∗ — 14 sections: INTRODUCTION; THE HELON MODEL; PHENOMENOLOGY OF THE HELON"
 ---
 The Standard Model (SM) provides an extremely suc-
 cesful and simple means of classifying and understand-

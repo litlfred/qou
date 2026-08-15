@@ -7,6 +7,7 @@ section_number: null
 pages: 17-18
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
+doc_brief: "Explicit evaluation of the q-Stokes matrices for certain conﬂuent hypergeometric q-diﬀerence equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1"
 ---
 Since the matrices Enn and diag (Pn−1, 1) commute with each other, we get
 Proposition 3.11. Under the condition (3) (with the condition (30) included), the nonresonant condition

@@ -1,0 +1,107 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0611504v1",
+ "source_sha256": "a33d2771c873a97e",
+ "brief": "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study",
+ "extended": "**QUANTUM HYPERBOLIC GEOMETRY**\n\n*ST´EPHANE BASEILHAC 1 AND RICCARDO BENEDETTI 2*\n\n40 pp, 17 sections.\n\n**Abstract.** W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study its main structural properties. The QHFT are deﬁned for (marked) (2 + 1)-bordisms supported by compact oriented 3-manifolds Y with a properly embedded framed tangle LF and an arbitrary P SL(2, C)- character ρ of Y \\ LF (covering, for example, the case of hyperbolic cone manifol ds). The marking of QHFT bordisms includes a speciﬁc set of parameters for the sp ace of pleated hyperbolic structures on punctured surfaces. Each QHFT associates in a constructi ve way to any triple ( Y, L F , ρ ) with marked boundary components a tensor built on the matrix dilo garithms, which is holomorphic in the boundary parameters.\n\n**Outline.** 1 Introduction; 2 Universal QHG; 2.1 Building blocks; 2.2 QHG triangulated pseudomanifolds; 2.3 QHG universal functor; 3.2 Cocycle parameters; 3.3 Cross-ratio parameters; 4 The QHFT bordism category; 4.1 Marked topological bordisms; 4.2 Boundary structures; 5 The QHFT functor; 5.2 Amplitudes; 5.3 QHFT variants; 5.4 Mapping class group representations; 6 Partition functions; 6.2 Invariants of cusped manifolds and surgery; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.12: ([24], Theorem 5.1) The sequence\n- Theorem 5.3: For every bordism B = ( ˜Y, ˜LF,ρ,α ±) and every (h,k ) ∈H 1( ˜Y ; Z/2Z) ×H 1( ˜LF ; C)\n- Theorem 5.4: The morphism HN (B,h,k ) = HN (T (B)) does not depend on the choice of T (B) up\n- Theorem 5.3: For the dependance with respect to the mod( N Z) reductions of weights, we note that\n- Theorem 5.3: there exists integral charges on ( C(T,b ),H ).\n- Theorem 6.3: [Cusped manifold surgery formula] Let (W,L ) be obtained by completion of a small",
+ "tokens": {
+  "brief": 49,
+  "extended": 477
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-universal-qhg",
+   "title": "Universal QHG",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-21-building-blocks",
+   "title": "Building blocks",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-003-22-qhg-triangulated-pseudomanifolds",
+   "title": "QHG triangulated pseudomanifolds",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-23-qhg-universal-functor",
+   "title": "QHG universal functor",
+   "pages": "9-14"
+  },
+  {
+   "id": "sec-005-32-cocycle-parameters",
+   "title": "Cocycle parameters",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-006-33-cross-ratio-parameters",
+   "title": "Cross-ratio parameters",
+   "pages": "16-20"
+  },
+  {
+   "id": "sec-007-4-the-qhft-bordism-category",
+   "title": "The QHFT bordism category",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-008-41-marked-topological-bordisms",
+   "title": "Marked topological bordisms",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-009-42-boundary-structures",
+   "title": "Boundary structures",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-010-5-the-qhft-functor",
+   "title": "The QHFT functor",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-011-52-amplitudes",
+   "title": "Amplitudes",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-012-53-qhft-variants",
+   "title": "QHFT variants",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-013-54-mapping-class-group-representations",
+   "title": "Mapping class group representations",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-014-6-partition-functions",
+   "title": "Partition functions",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-015-62-invariants-of-cusped-manifolds-and-surgery-fo",
+   "title": "Invariants of cusped manifolds and surgery formulas",
+   "pages": "29-40"
+  },
+  {
+   "id": "sec-016-references",
+   "title": "References",
+   "pages": "40-40"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

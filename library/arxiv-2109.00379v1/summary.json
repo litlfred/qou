@@ -1,0 +1,97 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2109.00379v1",
+ "source_sha256": "f0c9bd89312a761c",
+ "brief": "TWISTED NEUMANN–ZAGIER MATRICES — The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around",
+ "extended": "**TWISTED NEUMANN–ZAGIER MATRICES**\n\n*STAVROS GAROUFALIDIS AND SEOKBEOM YOON*\n\n23 pp, 15 sections.\n\n**Abstract.** The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around each edge of the triangulation. They can be used as input data for the construction of a number of quantum invariants that include the loop invariants, the 3D-index and state- integrals. We deﬁne a twisted version of Neumann–Zagier matrices, describe their symplectic properties, and show how to compute them from the combinatorics of an ideal triangulation. As a sample application, we use them to deﬁne a twisted version of the 1-loop invariant (a topological invariant) which determines the 1-loop invariant of the cyclic covers of a hyperbolic knot complement, and conjecturally equals to the adjoint twisted Alexander polynomial.\n\n**Outline.** 1 Introduction; 1.1 Motivation; 1.2 Torsion and its twisted version; 1.3 Neumann–Zagier matrices and their twisted ; 1.4 The 1-loop invariant and its twisted versi; 2 Proofs: twisted NZ matrices; 3 Examples; 3.1 The knot 41; 3.2 The knot 63; 4 Proofs: twisted 1-loop invariant; 5 Examples, continued; 5.1 The knot 41; 5.2 The knot 63; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.4: With the above notation, there exists a lower triangular matrix P with 1’s\n- Theorem 1.5: τ CS(T,t ) is invariant under Pachner 2–3 moves between ideal triangulations\n- Theorem 1.7: We have τ CS(T, 1) = 0 and d\n- Corollary 1.8: (assuming Conjecture 1.3) We have",
+ "tokens": {
+  "brief": 49,
+  "extended": 404
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-motivation",
+   "title": "Motivation",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-12-torsion-and-its-twisted-version",
+   "title": "Torsion and its twisted version",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-003-13-neumannzagier-matrices-and-their-twisted-vers",
+   "title": "Neumann–Zagier matrices and their twisted version",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-004-14-the-1-loop-invariant-and-its-twisted-version",
+   "title": "The 1-loop invariant and its twisted version",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-2-proofs-twisted-nz-matrices",
+   "title": "Proofs: twisted NZ matrices",
+   "pages": "8-12"
+  },
+  {
+   "id": "sec-006-3-examples",
+   "title": "Examples",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-007-31-the-knot-41",
+   "title": "The knot 41",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-008-32-the-knot-63",
+   "title": "The knot 63",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-009-4-proofs-twisted-1-loop-invariant",
+   "title": "Proofs: twisted 1-loop invariant",
+   "pages": "16-21"
+  },
+  {
+   "id": "sec-010-5-examples-continued",
+   "title": "Examples, continued",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-011-51-the-knot-41",
+   "title": "The knot 41",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-012-52-the-knot-63",
+   "title": "The knot 63",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-013-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-014-references",
+   "title": "References",
+   "pages": "22-23"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

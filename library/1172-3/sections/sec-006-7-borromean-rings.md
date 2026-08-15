@@ -7,6 +7,7 @@ section_number: 7
 pages: 8-8
 source_pdf: 1172-3.pdf
 source_sha256: e9c32f59e9db7970
+doc_brief: "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS KAZUO HABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Progress Towards the V"
 ---
 Let $\mathfrak{G}$denote the Borromean rings.
 Proposition 7.1. We have

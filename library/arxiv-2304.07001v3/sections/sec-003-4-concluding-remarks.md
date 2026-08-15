@@ -7,6 +7,7 @@ section_number: 4
 pages: 17-17
 source_pdf: 2304.07001v3.pdf
 source_sha256: b6c0d7f50b6407f1
+doc_brief: "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a f ormal power series associated to elements in the Habiro ring that come from radi al"
 ---
 In order to apply Theorems 1.2 and 1.4 and thus verify Conjecture 1.1 for all torus knots
 T (s, t), one needs to prove the relevant strange identity in ( 1.13). The ﬁrst obstruction in this

@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 42-46
 source_pdf: 0411647v2.pdf
 source_sha256: d79f96b416cb28da
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many"
 ---
 with moments of the Jucys–Murphy element J (or with products of such
 moments) and we need an efﬁcient way to enumerate the summand s in

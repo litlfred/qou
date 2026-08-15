@@ -7,6 +7,7 @@ section_number: 8.1
 pages: 48-50
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 From the perspective of CA-duality, CV-duality [6] can be expressed as follows:
 1) The geometry of an Einstein-Rosen bridge may be identiﬁed with maximal (spa-

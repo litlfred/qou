@@ -7,6 +7,7 @@ section_number: null
 pages: 17-18
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
+doc_brief: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
 ---
 Pontryagin duality equips every LCA group with a harmonic dual.
 Definition 2. A homomorphism of LCA groups is a continuous group homomorphism

@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-4
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
 ---
 partitions occur in mathematics and physics in a wide variety of contexts, in partic-
 ular in the Gromov-Witten and Seiberg-Witten theories, see [Oko03] for an intro-

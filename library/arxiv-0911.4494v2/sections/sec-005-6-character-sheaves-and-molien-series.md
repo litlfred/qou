@@ -7,6 +7,7 @@ section_number: 6
 pages: 11-13
 source_pdf: 0911.4494v2.pdf
 source_sha256: 1ba1c79686b12d98
+doc_brief: "The geometry of Markov traces Ben Webster Geordie Williamson — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on"
 ---
 need only sum over the sheaves that appear as summands of K1, since the trivial local
 system is the only unipotent character sheaf onT. Let us give a more careful description

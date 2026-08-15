@@ -7,6 +7,7 @@ section_number: null
 pages: 26-26
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
 ---
 [1] A.K. Agarwal, G.E. Andrews, and D.M. Bressoud, The Baile y lattice, J. Indian. Math. Soc. 51 (1987), 57-73.
 [2] A. K. Agarwal and D. M. Bressoud, Lattice paths and multip le basic hypergeometric series. Paciﬁc J. Math. 135 (1989)

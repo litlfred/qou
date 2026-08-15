@@ -7,6 +7,7 @@ section_number: 4
 pages: 26-27
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
 ---
 The invention of ˆZ was party motivated by an attempt to generalize the following discovery of
 Lawrence and Zagier. Setqk = exp(2πi/k). Forn = 3 they proved in [40] the identity (for some

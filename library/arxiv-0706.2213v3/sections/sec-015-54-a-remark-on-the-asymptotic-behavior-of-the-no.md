@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 28-31
 source_pdf: 0706.2213v3.pdf
 source_sha256: 75dd29acc9e34bda
+doc_brief: "NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS — This paper gives an explicit formula for the SL 2(C)−non–abelian Reidemeister torsion as deﬁned in [Dub06] in the case of twist knots."
 ---
 holonomy. We close this paper with some remarks on the behavior of the cusp shape and
 of the non–abelian Reidemeister torsion at the holonomy for twist knots.

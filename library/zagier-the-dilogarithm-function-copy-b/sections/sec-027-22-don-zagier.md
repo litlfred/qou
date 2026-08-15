@@ -7,6 +7,7 @@ section_number: 22
 pages: 20-20
 source_pdf: zagier-the-dilogarithm-function-copy-b.pdf
 source_sha256: c584944a501ef0c5
+doc_brief: "The Dilogarithm Function Don Zagier — 57 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 Chapter II. Further aspects of the dilogarithm
 As explained in the preface to this paper, in this chapter we give a mor e

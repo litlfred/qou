@@ -7,6 +7,7 @@ section_number: null
 pages: 2-4
 source_pdf: 0610105v2.pdf
 source_sha256: 5f3bd6d31a419d4d
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut f¨ ur Strahlen- und Kernphysik (Theori e) — Few-body systems with large scattering length"
 ---
 Eﬀective theories are a powerful framework to exploit a separatio n of scales in a physical
 system. The long-distance degrees of freedom must be included dy namically in the eﬀective

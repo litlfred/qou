@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-6
 source_pdf: 1203.4538v1.pdf
 source_sha256: 5e44909e355c78d6
+doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 7 sections: Introduction.; Preliminaries on surreal numbers.; Sign sequences."
 ---
 2.1 Inductive deﬁnitions.
 This section is dedicated to ﬁx the notations and recall some of the deﬁnitions and

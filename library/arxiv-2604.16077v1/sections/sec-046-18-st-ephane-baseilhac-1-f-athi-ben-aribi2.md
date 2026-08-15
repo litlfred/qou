@@ -7,6 +7,7 @@ section_number: 18
 pages: 18-18
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
 ---
 The system (35) may be rewritten in a very convenient form by ﬁ xing the point w ∈G(T,b ),
 and working solely with edge colors. To see this, assume at ﬁr st that w =whyp, so we have

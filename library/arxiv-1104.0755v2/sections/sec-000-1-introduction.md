@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
+doc_brief: "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡ — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 In the study of the q-analysis, it is known that there exist several diﬀerent q-
 special functions corresponding to a special function deﬁned by a diﬀerential

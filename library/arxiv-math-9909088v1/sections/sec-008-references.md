@@ -7,6 +7,7 @@ section_number: null
 pages: 8-9
 source_pdf: 9909088v1.pdf
 source_sha256: 52cfb568951f195f
+doc_brief: "THE GAUSS MAP AND A NONCOMP ACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEA VES ON SEMIABELIAN V ARIETIES — For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as"
 ---
 [1] A.A. Belinson, J.Bernstein, P. Deligne, Faiceaux Pervers, Asterisque 100 (1982), pp. 5-171.
 [2] C.Chai, G. Faltings, Degeneration of Abelian Varieties , Springer-Verlag, 1990.

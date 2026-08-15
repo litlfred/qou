@@ -7,6 +7,7 @@ section_number: 3.2.2
 pages: 80-81
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 crystallineExt-sheafExt1(Λ cris,OS/v). It can be shown that D(Λ) is a ﬁnite
 locally free crystal on S, of rank the height of Λ. It depends functorially in

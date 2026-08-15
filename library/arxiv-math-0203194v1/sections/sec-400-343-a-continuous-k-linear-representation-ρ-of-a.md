@@ -7,6 +7,7 @@ section_number: 3.4.3
 pages: 153-153
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 be called discrete if its coimage Γ / kerρ is discrete, or equivalently, if ρ
 factors through a discrete group.

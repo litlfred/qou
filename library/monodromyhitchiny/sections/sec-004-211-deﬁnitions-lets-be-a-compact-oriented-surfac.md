@@ -7,6 +7,7 @@ section_number: 2.1.1
 pages: 3-4
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
 ---
 n marked points x1,...,x n ∈ S. Associated to the n-pointed surface S are the mapping
 class groups Γ n

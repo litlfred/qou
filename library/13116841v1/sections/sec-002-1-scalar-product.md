@@ -7,6 +7,7 @@ section_number: 1
 pages: 8-9
 source_pdf: 1311.6841v1.pdf
 source_sha256: ca65879d80b1e1c3
+doc_brief: "Observables in Loop Quantum Gravity with a cosmological constant — 5 sections: Introduction; Contents; Scalar product"
 ---
 We would like now to consider the analogue of (11) and (12) in terms of tensor operators.
 Lemma II.3. Product of tensor operators [34].

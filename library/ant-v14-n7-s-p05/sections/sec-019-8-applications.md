@@ -7,6 +7,7 @@ section_number: 8
 pages: 36-40
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
+doc_brief: "Motivic Gauss–Bonnet formulas — 26 sections: Introduction 1801; Duality and Euler characteristics ; SL-oriented motivic spectra 1813"
 ---
 In this section, we apply the motivic Gauss–Bonnet formula of Section 5 and the comparison results of
 Section 7 to various speciﬁc SL-oriented cohomology theories, and thereby make computations of the

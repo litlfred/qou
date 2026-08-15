@@ -7,6 +7,7 @@ section_number: 9
 pages: 19-20
 source_pdf: 1208.2521v1.pdf
 source_sha256: 8d0281aa84043865
+doc_brief: "ON q-ANALOGUES OF THE FOURIER — For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H."
 ---
 der Kugelfunctionen und der verwandten Functionen , Reiner, Berlin, 1878.
 10. M. E. H. Ismail, The zeros of basic Bessel functions, the functions Jν +ax(x), and associated

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: 1102.3530v1.pdf
 source_sha256: ad3edab19f3dc404
+doc_brief: "THE COLORED JONES POL YNOMIAL, THE CHERN–SIMONS — W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight knot we can extr act the Chern– Simons"
 ---
 Let JN (K;q) be the colored Jones polynomial of a knot K in the three-sphere
 S3 associated with the N -dimensional irreducible representation of sl(2; C). We

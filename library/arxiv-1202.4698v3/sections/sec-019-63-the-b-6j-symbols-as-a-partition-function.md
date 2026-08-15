@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 20-21
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 Although expression (2.28) for b- 6j symbol resembles the partition functions of 3d SYM the-
 ory withU(1) gauge group, it cannot easily be interpreted as partition function for some three-

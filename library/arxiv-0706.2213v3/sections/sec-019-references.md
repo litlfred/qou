@@ -7,6 +7,7 @@ section_number: null
 pages: 35-36
 source_pdf: 0706.2213v3.pdf
 source_sha256: 75dd29acc9e34bda
+doc_brief: "NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS — This paper gives an explicit formula for the SL 2(C)−non–abelian Reidemeister torsion as deﬁned in [Dub06] in the case of twist knots."
 ---
 [Ada94] C. Adams, The knot book, W. H. Freeman and Company, 1994.
 [Cal06] D. Calegari, Real places and torus bundles, Geom. Dedicata 118 (2006), 209–227.

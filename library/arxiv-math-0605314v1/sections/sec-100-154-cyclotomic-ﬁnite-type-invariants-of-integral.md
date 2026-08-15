@@ -7,6 +7,7 @@ section_number: 15.4
 pages: 59-61
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 and Spence [41] (see also [70]) proved that for integral homo logy spheres the Oht-
 suki series τ O(M ) modulo ( q− 1)k+1 is a ﬁnite type invariant of degree 3 k in the

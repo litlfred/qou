@@ -7,6 +7,7 @@ section_number: 22
 pages: 22-23
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
+doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
 ---
 where D is now the operator P"v of (3.10), and ew is the partition function for a pair
 of spin ±- particles on the worlds

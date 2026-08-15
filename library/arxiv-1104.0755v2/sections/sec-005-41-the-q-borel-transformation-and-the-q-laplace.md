@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 9-10
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
+doc_brief: "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡ — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 transformation following Zhang [13].
 4.1 The q-Borel transformation and the q-Laplace trans-

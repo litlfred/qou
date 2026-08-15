@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-8
 source_pdf: ant-v14-n7-s-p08.pdf
 source_sha256: 81b8f00fe5fbd0f6
+doc_brief: "Burgess bounds for short character sums evaluated at forms — 12 sections: Introduction; Method of proof: an overview; Preliminaries"
 ---
 The celebrated Burgess bound [1957] proves that for χ a nonprincipal multiplicative Dirichlet character
 modulo a prime q, the character sum

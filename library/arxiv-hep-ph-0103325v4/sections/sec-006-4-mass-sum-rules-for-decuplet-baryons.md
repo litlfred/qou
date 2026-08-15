@@ -7,6 +7,7 @@ section_number: 4
 pages: 3-3
 source_pdf: 0103325v4.pdf
 source_sha256: 38590174ab836fa1
+doc_brief: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine — 28 sections: Introduction; V ector meso"
 ---
 the q-analog matches empirical masses
 In the case of SU (3)-decuplet baryons 3

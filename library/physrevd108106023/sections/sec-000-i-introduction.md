@@ -7,6 +7,7 @@ section_number: I
 pages: 1-2
 source_pdf: PhysRevD.108.106023.pdf
 source_sha256: 50c7980e88cd21a0
+doc_brief: "Knot-quiver correspondence for double twist knots Vivek Kumar Singh * — 10 sections: INTRODUCTION; DOUBLE TWIST KNOTS; KNOT-QUIVER CORRESPONDENCE"
 ---
 Knot-quiver correspondence (KQC) conjectured by
 Kucharski-Reineke-Stosic-Sulkowski [1] provides a new

@@ -7,6 +7,7 @@ section_number: 7.3.2
 pages: 132-132
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 study φ,ψ,ν,ρ by setting x = 1 in s(α,β ;q,x ). (The function χ involves
 x =−q and f,ω will not comply the condition β/α⁄∈qZ: in [ 63], their study

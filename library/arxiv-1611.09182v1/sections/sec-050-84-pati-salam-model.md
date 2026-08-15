@@ -7,6 +7,7 @@ section_number: 8.4
 pages: 76-79
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Before the introduction ofSU (5)- andSpin(10)-theories came an extension to the standard
 model, now known as the Pati-Salam model. The model is named after its inventors, J.

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
+doc_brief: "MOSCOW MA THEMA TICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
 ---
 The helicity of a vector ﬁeld in a three-dimensional space can be thought of as
 a real-valued version of the integral-valued Hopf invariant for a continuous map

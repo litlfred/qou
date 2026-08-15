@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 9-21
 source_pdf: 1912.13486v2.pdf
 source_sha256: 9a8dbc1a143f7448
+doc_brief: "We consider theS2×qS1 supersymmetric index of a 3dN = 2 theory T [M3] when M3 is a plumbed 3-manifold."
 ---
 When the 3-manifold is a lens space M3 =L(p, 1)≃S3/Zp, the corresponding 3d N = 2
 theoryT [L(p, 1)] has been discussed in [20, 25, 26] and more recently in [1, 2] in the context

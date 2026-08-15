@@ -7,6 +7,7 @@ section_number: 2.1.1.3
 pages: 19-19
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 Φ⊗Ψ :x⊗y↦→Φ(x)⊗Ψ(y) fromE⊗KF to itself is well deﬁned and it is a semi-
 linear automorphism, whence a diﬀerence module M⊗N = (E⊗KF, Φ⊗ Ψ).

@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-13
 source_pdf: fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf
 source_sha256: d3d3bf68955ad775
+doc_brief: "M. FUJJI KODAI MATH. J. 15 (1992), 244-257 ON TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS By MICHIHIKO FUJII Introduction — 5 sections: An ideal tetrahedral decomposition; (a)). We write S=S"
 ---
 3-manifold DM with respect to the hyperbolic Dehn surgery.
 In this section we consider the move of the flat structure of the cusp torus

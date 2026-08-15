@@ -7,6 +7,7 @@ section_number: 3.4.1
 pages: 82-82
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 crystal” in I.2.4.2, 2.4.3 in the more down-to-earth contex t of connections.
 This comes as follows. Assume for simplicity that S0 is aﬃne of characteristic

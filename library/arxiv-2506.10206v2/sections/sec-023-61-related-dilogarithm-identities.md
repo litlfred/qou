@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 18-19
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
+doc_brief: "Analytic dilogarithm identities Cetin Hakimoglu-Brown — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured"
 ---
 In this section, we provide some further dilogarithm identities that we have obtained fol-
 lowing a similar approach, relative to the material given above, and we encourage further

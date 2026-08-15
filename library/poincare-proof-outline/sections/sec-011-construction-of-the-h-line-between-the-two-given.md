@@ -7,6 +7,7 @@ section_number: null
 pages: 17-20
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 Next we show how to construct the (unique) h-line between the two given points in the Poincaré model
 Geometrically, h-line can be constructed by ﬁnding the inverse point of one of the two points and by constructing

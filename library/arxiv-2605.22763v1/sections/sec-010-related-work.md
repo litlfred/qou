@@ -7,6 +7,7 @@ section_number: null
 pages: 22-26
 source_pdf: 2605.22763v1.pdf
 source_sha256: 1fe6b92bb5eb0b45
+doc_brief: "2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof Search George Tsoukalas1† , Anton Kovsharov1† , Sergey Shirobokov1† , Anja Surina1, Moritz Firsching1, Gergely — 14 sections: Intro"
 ---
 Formal Theorem Proving with LLMs.There is a large literature on neural-network-guided
 search over machine-checkable formal proofs [66, 15, 16, 64, 40]. Early work such as

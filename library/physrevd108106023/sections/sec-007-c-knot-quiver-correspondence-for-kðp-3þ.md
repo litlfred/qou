@@ -7,6 +7,7 @@ section_number: C
 pages: 6-7
 source_pdf: PhysRevD.108.106023.pdf
 source_sha256: 50c7980e88cd21a0
+doc_brief: "Knot-quiver correspondence for double twist knots Vivek Kumar Singh * — 10 sections: INTRODUCTION; DOUBLE TWIST KNOTS; KNOT-QUIVER CORRESPONDENCE"
 ---
 Following reverse MMR, we could write the quiver
 presentation for Kð3; −3Þ and obtain the quiver matrix

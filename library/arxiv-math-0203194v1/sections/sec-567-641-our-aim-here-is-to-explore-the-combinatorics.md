@@ -7,6 +7,7 @@ section_number: 6.4.1
 pages: 202-202
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 groups ∆ 3(2, 4, 6) and ∆ 2(2, 4, 6).
 It follows from the above considerations that ∆ 3(2, 4, 6) sits in an exact

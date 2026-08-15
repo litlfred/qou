@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 6-6
 source_pdf: 0411647v2.pdf
 source_sha256: d79f96b416cb28da
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many"
 ---
 sented in our subsequent work [ ´Sni05] where we study the distribution of
 a random Young diagram contributing to a given reducible rep resentation

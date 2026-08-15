@@ -7,6 +7,7 @@ section_number: 6
 pages: 7-9
 source_pdf: 2402.08782v1.pdf
 source_sha256: 30311f0bd815f93f
+doc_brief: "Hecke–Farey coordinates for Bring’s surface — The modular groupΓ (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that"
 ---
 The main aim of this paper is to find Hecke-Farey fractions for Bring’s curve,
 M4(5). In general, for a positive integer n the mapM4(n) has vertices of the

@@ -7,6 +7,7 @@ section_number: 3
 pages: 3-4
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
+doc_brief: "A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume"
 ---
 In this section we prove Conjecture 2.1 for torus knots. (To be ho nest, (2.3) is
 proved only up to a constant, that is, we prove (2.4) instead.)

@@ -7,6 +7,7 @@ section_number: 6
 pages: 16-17
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 In this section we will show that theorem 3.1 for singular Euclidean str uctures can
 be extended without change to inﬁnite locally ﬁnite complexes:

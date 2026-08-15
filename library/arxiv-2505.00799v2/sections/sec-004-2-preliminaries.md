@@ -7,6 +7,7 @@ section_number: 2
 pages: 7-11
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
+doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 2.1. Resurgence. Resurgence is a theory of divergent series developed by ´Ecalle in the
 1980s, building on work dating back to Borel. It begins with classical Borel resummation, but

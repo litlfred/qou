@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-3
 source_pdf: CuspShapes.pdf
 source_sha256: 01db19e63193e6ae
+doc_brief: "CUSP SHAPE AND TUNNEL NUMBER — We show that the set of cusp shapes of hyperbolic tunnel number one manifolds is dense in the Teichm¨ uller space of the torus."
 ---
 shape [T ], then show these lead to maximally pinched structures with cusp shape
 approaching [T ]. By gluing maximally pinched compression bodies to maximally

@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 4-4
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 ture (Γ , Z, Ω) are deﬁned by the expression
 DT(γ) =

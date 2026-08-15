@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 19-20
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 Hilbert problem which deserve further comment. For the ﬁrst, not e that the twisted torus T has a
 canonical involution σ : T→ T which acts on twisted characters by σ∗(xγ) = x−γ. The ﬁxed point

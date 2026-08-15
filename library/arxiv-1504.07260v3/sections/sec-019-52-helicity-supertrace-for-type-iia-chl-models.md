@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 32-33
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
+doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
 ---
 Let us now generalize the previous analysis to CHL models in type IIA string theory. We
 are interested in the case where the orbifold groupG is cyclic of orderˆN, with generatorˆg

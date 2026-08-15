@@ -7,6 +7,7 @@ section_number: null
 pages: 3-3
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 Poincaré disc is a model of hyperbolic geometry. That fact has been a mathematical folklore for more than
 100 years. However, up to the best of our knowledge, fully precise, formal proofs of this fact are lacking. In

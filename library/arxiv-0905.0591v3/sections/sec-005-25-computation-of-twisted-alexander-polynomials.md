@@ -7,6 +7,7 @@ section_number: 2.5
 pages: 7-7
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
+doc_brief: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 empty or toroidal boundary, and α : π1(N ) → GL(k,R [F ]) a representation with R a
 Noetherian UFD and F a free abelian group. Given a ﬁnite presentation for π1(N ) the

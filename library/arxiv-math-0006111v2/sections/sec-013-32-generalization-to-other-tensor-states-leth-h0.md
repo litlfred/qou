@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 10-11
 source_pdf: 0006111v2.pdf
 source_sha256: cd99f45d686eb6e2
+doc_brief: "APPROXIMA TE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
 ---
 Hilbert space with grading operator ∆. Endow B(H ⊗q) = B(H)⊗q with a tensor
 stateτ⊗q whereτ is a state on B(H), of the form τ(X) = Tr (TX ), withT a positive

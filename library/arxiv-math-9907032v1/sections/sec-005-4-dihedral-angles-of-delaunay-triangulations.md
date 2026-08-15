@@ -7,6 +7,7 @@ section_number: 4
 pages: 9-11
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 In the preceding section it was shown that in order for the linear pro gram L to
 have a solution, it is necessary and suﬃcient that the putative dihed ral angles δ(e)

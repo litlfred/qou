@@ -7,6 +7,7 @@ section_number: null
 pages: 24-25
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 The muon magnetic-moment anomaly aμ and thus the
 muon g-factor gμ ¼ −2ð1 þ aμÞ were first measured in 2006,

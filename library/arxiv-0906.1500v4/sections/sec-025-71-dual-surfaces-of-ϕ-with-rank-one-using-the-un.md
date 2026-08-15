@@ -7,6 +7,7 @@ section_number: 7.1
 pages: 20-20
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
+doc_brief: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 homomorphism ϕ : π1(M ) → Z can be regarded as a cohomology class in H 1(M, Z),
 and its Poincar´ e dual P D(ϕ) lies in H2(M ; Z). Each representative of P D(ϕ) consists

@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 9-10
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
 ---
 K = C((τ )) and K the algebraic closure of K. For a variety B deﬁned over C we denote
 BR = B × Spec(R) and BK = B × Spec(K).

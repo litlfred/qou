@@ -7,6 +7,7 @@ section_number: 3
 pages: 16-17
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
 ---
 We will now describe an algorithm to construct a combination of state integrals for each
 eiϑ∈ C\S(V0). This will be a locally constant assignment and have uniform asympto tics

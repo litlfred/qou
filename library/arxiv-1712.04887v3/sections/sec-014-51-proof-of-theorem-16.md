@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 25-31
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
+doc_brief: "BLOCH GROUPS, ALGEBRAIC K-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
 ---
 primitiventh root of unity. For a prime q≡− 1 mod n that splits completely in F , and for
 a corresponding prime q aboveq, let Rζ,q denote the map B(OF/q) =B(Fq)→ F×

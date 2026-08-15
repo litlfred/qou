@@ -7,6 +7,7 @@ section_number: null
 pages: 38-41
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
+doc_brief: "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients."
 ---
 There are two fundamental roots denoted here by α and β , where α is the
 short root. The set of positive roots is {α, β, 2α + β, α + β}. The reduced

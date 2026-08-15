@@ -7,6 +7,7 @@ section_number: null
 pages: 12-13
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 The combinatorial Borel transform allows one to enrich the set of the Hurwitz τ-functions [14,20]
 τ (n){p(1),...,p (n)} :=

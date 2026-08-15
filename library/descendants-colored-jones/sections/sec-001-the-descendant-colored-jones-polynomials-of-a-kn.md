@@ -7,6 +7,7 @@ section_number: null
 pages: 3-5
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
+doc_brief: "Pure and Applied Mathematics Quarterly — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 2.1. A conjectured matrix-valued invariant from [ GZ, GZ23]
 We begin by explaining the most recent reappearance of the colored Jones

@@ -7,6 +7,7 @@ section_number: 22
 pages: 22-22
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 punctured torus bundles [11]. In an appendix to the same paper, Futer extended
 the method to two–bridge links [11, Appendix]. For both of these families of

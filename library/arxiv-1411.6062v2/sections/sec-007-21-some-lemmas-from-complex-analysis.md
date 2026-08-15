@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 7-10
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
+doc_brief: "EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
 ---
 Lemma 2.1. Let f :U→ C be an analytic function satisfying the functional equation
 (26) f( z− a) f(z + a) = f( z)2,

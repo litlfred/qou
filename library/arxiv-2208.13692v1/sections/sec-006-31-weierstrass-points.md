@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 13-17
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
+doc_brief: "BRING’S CURVE: OLD AND NEW — Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties."
 ---
 Deﬁnition 3.2 ([McM14], Proposition 12.6, Theorem 12.7) . A Weierstrass Point on a
 curve X of genus g with canonical embedding Xc⊆ Pg−1 is a point P satisfying one of the

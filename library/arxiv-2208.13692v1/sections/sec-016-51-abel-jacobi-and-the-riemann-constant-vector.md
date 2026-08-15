@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 31-31
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
+doc_brief: "BRING’S CURVE: OLD AND NEW — Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties."
 ---
 lay out some notation and deﬁnitions in preparation for later.
 Deﬁnition 5.4. The Abel-Jacobi map on a Riemann surface C with basis of diﬀerentials

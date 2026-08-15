@@ -7,6 +7,7 @@ section_number: 2
 pages: 23-23
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
+doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
 ---
 10123 have invariant trace ﬁelds with more than one complex place.
 3. In (56) it is shown that the volume of 8 21 reduces to a pair of Dedekind zeta values.

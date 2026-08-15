@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 6-6
 source_pdf: 2509.02354v2.pdf
 source_sha256: 14680221e597fe61
+doc_brief: "THE HOLONOMY BRAIDING FORUξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomyR-matrix of quantumsl2 at a root of unity."
 ---
 z·v =χ(z)v for allv∈V,z ∈Z 0.
 In particular any simpleUξ-module has a character. Because the multiplication on characters

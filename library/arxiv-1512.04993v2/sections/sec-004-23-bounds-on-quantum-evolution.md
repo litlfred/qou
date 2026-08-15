@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 11-12
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 As well as being concerned with how much information may be stored, or how fast
 information may be scrambled, we are interested in how fast the system can change

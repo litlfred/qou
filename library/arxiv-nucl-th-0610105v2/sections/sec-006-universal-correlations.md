@@ -7,6 +7,7 @@ section_number: null
 pages: 10-13
 source_pdf: 0610105v2.pdf
 source_sha256: 5f3bd6d31a419d4d
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut f¨ ur Strahlen- und Kernphysik (Theori e) — Few-body systems with large scattering length"
 ---
 We now consider the universal correlations in the three-body syst em for negative scat-
 tering length. In particular, we focus on the correlation between t he binding energies in

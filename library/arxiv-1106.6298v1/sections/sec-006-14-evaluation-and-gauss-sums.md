@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 7-9
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
+doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INV ARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
 ---
 the evaluation map ev ξ by replacing q with ξ.
 Suppose f (q; n1, . . . , nm) is a function of variables q±1 and integers n1, . . . , nm. In

@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 35-37
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
+doc_brief: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e"
 ---
 We begin by recalling formulas from [18] for the Chern–Simons invarian ts of the
 ﬂat SU(2)–connections on Mp/q. The basic tool will be Theorem 6 below due to P.

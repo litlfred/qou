@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 3-6
 source_pdf: 2301.02038v1.pdf
 source_sha256: 27b303939826ab39
+doc_brief: "Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Diﬀerential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a"
 ---
 1.2. the Cartan distribution 6
 1.3. diﬃeties 8

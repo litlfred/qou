@@ -7,6 +7,7 @@ section_number: 9
 pages: 31-32
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 In this section we break N = 2 supersymmetry to N = 1 by adding a mass term
 m TrΦ 2 to the tree level superpotential (3.1). When m ≫ Λ, the N = 1 chiral multiplet

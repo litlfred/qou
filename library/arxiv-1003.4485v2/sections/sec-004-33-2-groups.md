@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 15-21
 source_pdf: 1003.4485v2.pdf
 source_sha256: 714d73873cecd73a
+doc_brief: "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles."
 ---
 symmetries in gauge theory, these describe symmetries in higher ga uge theory.
 3.3 2-Groups

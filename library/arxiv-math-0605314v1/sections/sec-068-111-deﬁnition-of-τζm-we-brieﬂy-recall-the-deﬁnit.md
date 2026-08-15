@@ -7,6 +7,7 @@ section_number: 11.1
 pages: 36-37
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 antτζ(M ) of a closed 3-manifold M at ζ∈Z . For the details, see [73, 38].
 If ζ = 1, then we set τζ(M ) = 1 for any closed 3-manifold M .

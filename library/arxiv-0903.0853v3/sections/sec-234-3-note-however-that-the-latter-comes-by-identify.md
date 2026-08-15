@@ -7,6 +7,7 @@ section_number: 3
 pages: 138-139
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 are two opposite such identiﬁcations, see for instance [ 15], exercice 1, p. 308. We shall
 systematically use the conventions of [ 12] and, from now on, make no diﬀerence between

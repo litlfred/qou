@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 53-53
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et"
 ---
 un MT( k)-sch´ ema aﬃne (4.4). La r´ ealisationω de Py,x est ind´ ependante dex et y. C’est
 un Q-sch´ ema en groupe pro-unipotent, et la composition des che mins est la loi de groupe.

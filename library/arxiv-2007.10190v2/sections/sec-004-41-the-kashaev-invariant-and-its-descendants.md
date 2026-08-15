@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 7-9
 source_pdf: 2007.10190v2.pdf
 source_sha256: 37bcbd3a343bb21a
+doc_brief: "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS — The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series."
 ---
 saddle-point expansion of the state integral appeared originally in the asymptotic expansion
 of the Kashaev invariant [Kas95]. In the case of the 4 1 knot, the Kashaev invariant is given

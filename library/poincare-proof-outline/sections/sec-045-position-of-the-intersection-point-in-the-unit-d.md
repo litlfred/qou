@@ -7,6 +7,7 @@ section_number: null
 pages: 110-112
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 Check if the intersection point of one h-line with the x-axis is located more outward the edge of the disc than
 the intersection point of another h-line.

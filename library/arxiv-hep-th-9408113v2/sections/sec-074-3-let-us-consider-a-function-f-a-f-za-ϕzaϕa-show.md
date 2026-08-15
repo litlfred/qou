@@ -7,6 +7,7 @@ section_number: 3
 pages: 83-83
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
+doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 i) f (qa)
 f (q−1a) = 1 +za

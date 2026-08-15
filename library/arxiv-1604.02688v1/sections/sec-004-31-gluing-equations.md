@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 5-6
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 triangulation contained in Thurston’s gluing equations (compare [Thu77, Chapter 4]), while
 also including notation for normal disks in a tetrahedron. First, in each tetrahedron there

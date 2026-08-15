@@ -7,6 +7,7 @@ section_number: 2
 pages: 62-63
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero"
 ---
 In our next example, namely the conifold, the free energy S0(x,q 1) is a Q-deformation of
 the C3 result. An explicit expression in terms of the variable x can again be given in framing

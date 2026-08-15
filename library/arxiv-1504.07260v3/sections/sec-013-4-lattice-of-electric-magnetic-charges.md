@@ -7,5 +7,6 @@ section_number: 4
 pages: 25-25
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
+doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
 ---
 The lattice of electric-magnetic chargesΛem of a CHL models contains the sublatticesΛe

@@ -7,5 +7,6 @@ section_number: 5
 pages: 7-7
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
+doc_brief: "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
 ---
 We end this note with some remarks.

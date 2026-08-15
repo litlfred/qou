@@ -7,6 +7,7 @@ section_number: 3.5.2
 pages: 20-21
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Let us now identify two subspaces, which partition the algebra C⊗ H. These subspaces
 will be given the suggestive nomenclature Ψ L and ΨR, and be deﬁned as

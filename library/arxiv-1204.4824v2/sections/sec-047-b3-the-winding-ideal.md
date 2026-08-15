@@ -7,6 +7,7 @@ section_number: null
 pages: 79-80
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 Let π : ˜X→X be a circle bundle. There is an exact sequence
 π1(S1) ι→π1( ˜X) π∗

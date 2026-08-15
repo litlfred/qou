@@ -7,6 +7,7 @@ section_number: 2.4.2
 pages: 5-6
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
 ---
 M0,4 = P1
 C \ {0, 1, ∞} − →X3, z ↦→(0, 1,z )

@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-8
 source_pdf: 1172-5.pdf
 source_sha256: 21b7a0e13bd208fc
+doc_brief: "OPTIMISTIC CALCULATIONS ABOUT THE $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mathrm{H}\mathrm{I}\mat"
 ---
 Put $k:=2,$ $n_{1}:=n,$$n_{2}:=m,$$z:=z_{1},$$w:=z_{2},$$Q:=pn^{2}/4-mn,$ $L:=-n/2$ ,
 $\alpha:=4,$$l_{1}:=n,$$\epsilon_{1}$$:=1,$$l_{2}:=n-1,$$\epsilon_{2}:=-1,$$l_{3}$$:=n+m,$ $\epsilon_{3}:=1,$$l_{4}:=n-m-1$ ,

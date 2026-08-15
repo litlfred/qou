@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 0110001v3.pdf
 source_sha256: f30f603ac1c555e0
+doc_brief: "Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link."
 ---
 Milnor’s higher order linking numbers (or mu-bar invariants) ¯µi of an oriented
 link L = L1 ∪ · · · ∪Lℓ in the 3-sphere are a measure of how deep the longitudes

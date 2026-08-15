@@ -7,6 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: ki52.pdf
 source_sha256: 35ad4ee5a00d4a18
+doc_brief: "On the asymptotic expansion of the Kashaev invariant of the 5 2 knot Tomotada Ohtsuki — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 5 2 knot."
 ---
 We give a presentation of the asymptotic expansion of the Kashaev invariant of the 5 2 knot.
 As the volume conjecture states, the leading term of the expansion presents the hyperbolic volume

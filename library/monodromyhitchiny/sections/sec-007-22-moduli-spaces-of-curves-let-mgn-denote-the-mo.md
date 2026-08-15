@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 4-4
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
 ---
 smooth projective curves of genus g. The moduli space Mg,n is a (possibly singular) algebraic
 variety. It can also be thought as an orbifold (or Deligne-Mumford s tack) and one has an

@@ -7,6 +7,7 @@ section_number: null
 pages: 46-48
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
+doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗ — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
 ---
 Let M 3 be a hyperbolic orientable 3-manifold and
 ̺ = /tild⟩comb.alt1hol∶ π1M 3 → SL2(C)

@@ -7,6 +7,7 @@ section_number: 3
 pages: 11-12
 source_pdf: Di_Cairano_2022_J._Phys._Commun._6_015002.pdf
 source_sha256: f75313b507f97172
+doc_brief: "Journal of Physics Communications PAPER • OPEN ACCESS On the derivation of a Nonlinear Generalized Langevin Equation To cite this article: Loris Di Cairano 2022 J. Phys. Commun. 6 015002 — 14 sections"
 ---
 We have showed that in order to obtain a kernel matrix which contains the parameters of the interactions and,
 thereby, that admits athermodynamics limit as proposed by Zwanzig, we have to pay attention to the deﬁnition of

@@ -7,6 +7,7 @@ section_number: null
 pages: 16-17
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
+doc_brief: "Line Operators in the Standard Model David Tong — There is an ambiguity in the gauge group of the Standard Model."
 ---
 My thanks to Bobby Acharya, Nick Dorey, Zohar Komargodski, Ton y Padilla and
 John Terning for useful discussions. This work was supported by S TFC grant

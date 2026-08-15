@@ -7,6 +7,7 @@ section_number: 3.5
 pages: 11-12
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the"
 ---
 tion following Zhang [16].
 3.5 The q-Borel transformation and the q-Laplace trans-

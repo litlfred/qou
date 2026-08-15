@@ -7,6 +7,7 @@ section_number: 6
 pages: 12-14
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
+doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
 ---
 Let Γ≤C × be a multiplicative group. A natural question is how many solutions
 the equation

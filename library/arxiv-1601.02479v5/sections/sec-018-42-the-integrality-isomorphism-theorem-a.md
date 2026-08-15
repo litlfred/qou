@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 37-40
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
 ---
 generic Bridgeland stability condition. As in [13] and the introduction , for d ∈
 Λζ

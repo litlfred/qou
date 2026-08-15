@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-9
 source_pdf: 0707.3682v2.pdf
 source_sha256: 609a6f67a0cd5fc8
+doc_brief: "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS — We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the"
 ---
 The Beilinson conjectures about special values of L-functions [2] are a far reach-
 ing generalization of the class number formula for the Dedekind zeta function. For

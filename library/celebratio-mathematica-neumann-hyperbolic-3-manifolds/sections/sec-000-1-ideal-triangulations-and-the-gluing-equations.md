@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
+doc_brief: "Jump to Bibliography by Stavros Garoufalidis and Don Zagier Published: 2023 — Wal ter Neu mann — hence forth simply Wal ter — has made huge con tri bu ‐ tions to to po logy, sin gu lar ity the ory"
 ---
 The start ing point of the pa per [1] was Thur ston’s amaz ing in sight in the 1980’s
 that all 3-di men sion al man i folds should be ca non ic ally di vis ible in to pieces hav ing

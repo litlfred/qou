@@ -7,6 +7,7 @@ section_number: 1.6
 pages: 9-9
 source_pdf: 2012.00062v3.pdf
 source_sha256: 2aacb7fa43f5e0da
+doc_brief: "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional"
 ---
 tions. The factorization of the state-integral (1) and its descendant version (4) into a matrix
 points towards a TQFT in 4 dimensions where the vector space associated to a 3-manifold

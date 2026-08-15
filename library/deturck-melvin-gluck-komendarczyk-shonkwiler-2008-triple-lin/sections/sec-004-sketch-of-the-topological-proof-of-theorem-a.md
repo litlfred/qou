@@ -7,6 +7,7 @@ section_number: null
 pages: 10-17
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
+doc_brief: "Matem´ atica Contemporˆ anea, Vol. 34, 251–283 http://doi.org/10.21711/231766362008/rmc3411 © 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-comp"
 ---
 Starting with a link in the 3-sphere, consider the delta move shown in
 Figure 3, which may be thought of as a higher order variant of a crossing

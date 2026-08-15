@@ -7,6 +7,7 @@ section_number: 5
 pages: 23-23
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 In this section we show how to solve the Riemann-Hilbert problem asso ciated to a ﬁnite, un-
 coupled, integral BPS structure, and compute the τ -function associated to a variation of such

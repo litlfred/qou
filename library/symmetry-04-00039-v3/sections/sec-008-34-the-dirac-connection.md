@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 20-20
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
+doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry ISSN 2073-8994 www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive"
 ---
 The fact that traverse in our model does, indeed proceed one way through the fermion component 
 and the opposite way through the antifermion highlights how ye t another historically iconic item, in 

@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 22-26
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
 ---
 mine the coefﬁcients aµ
 ρ (where ρ runs over partitions without parts equal to 1) of

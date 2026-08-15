@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf
 source_sha256: 3fb38d4cfd20d4fb
+doc_brief: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants"
 ---
 In [1], Ohtsuki extracted a series of rational topological invariants of oriented homology 3- 
 spheres from the SU(2) quantum invariants of Reshetikhin and Turaev [2]. Physically, they 

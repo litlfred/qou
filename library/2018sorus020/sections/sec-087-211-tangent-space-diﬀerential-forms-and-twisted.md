@@ -7,6 +7,7 @@ section_number: 2.1.1
 pages: 48-50
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 logy
 The results of this section can be found in [Mar15]. It’s a well-known result [LM85,

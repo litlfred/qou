@@ -7,6 +7,7 @@ section_number: 5
 pages: 16-17
 source_pdf: 04procbryden.pdf
 source_sha256: 8baffbc6542c34a5
+doc_brief: "Some computations of Ohtsuki series — We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand"
 ---
 We have presented numerical data on Ohtsuki series for a 2-parameter
 family of integer homology 3-spheres (which includes some hyperbolic

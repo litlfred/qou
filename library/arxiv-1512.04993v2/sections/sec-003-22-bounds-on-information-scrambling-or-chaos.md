@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 10-11
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 For a system with N degrees of freedom, the scrambling time t∗ is a measure of how
 long it takes for information about a small O(1) perturbation to spread over O(N)

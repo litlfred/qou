@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-10
 source_pdf: 1102.3530v1.pdf
 source_sha256: ad3edab19f3dc404
+doc_brief: "THE COLORED JONES POL YNOMIAL, THE CHERN–SIMONS — W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight knot we can extr act the Chern– Simons"
 ---
 In this section we approximate the integral formula for the colored Jones poly-
 nomial obtained in the previous section.

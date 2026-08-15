@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 21-23
 source_pdf: 1604.01247v2.pdf
 source_sha256: 5a402405aadf5d54
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an"
 ---
 As recalled in §3.1, there are two families by generation. In view of §4.2
 it seems, at ﬁrst sight, reasonable to take as J 8

@@ -7,6 +7,7 @@ section_number: 2
 pages: 8-10
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 It is very useful to have a simpliﬁed setting in which to study black hole physics. Callan,
 Giddings, Harvey and Strominger (CGHS) suggested for this p urpose two-dimensional dila-

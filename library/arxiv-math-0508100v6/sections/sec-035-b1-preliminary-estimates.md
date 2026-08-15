@@ -7,6 +7,7 @@ section_number: null
 pages: 27-28
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
+doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
 ---
 Lemma B.1. (a) The xj, as a function of j, is increasing for j ∈ [0, n/2] and decreasing for j ∈ [n/2, n]. In
 particular, for j ≤ l ≤ n − j we have xj ≤ xl.

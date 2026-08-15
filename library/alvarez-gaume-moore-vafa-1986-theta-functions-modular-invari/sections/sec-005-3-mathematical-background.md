@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-8
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
+doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
 ---
 In this section we summarize some aspects of the theory of Riemann surfaces which
 are useful in the computation of higher loop string amplitudes. Since we only

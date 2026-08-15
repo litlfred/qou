@@ -7,6 +7,7 @@ section_number: null
 pages: 56-59
 source_pdf: 2111.04763v2.pdf
 source_sha256: 760a7f9794e8baaa
+doc_brief: "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
 ---
 [AH06] Jorgen Ellegaard Andersen and Soren Kold Hansen,Asymptotics of the quantum invariants for
 surgeries on the figure 8 knot, J. Knot Theory Ramifications15(2006), no. 4, 479–548.

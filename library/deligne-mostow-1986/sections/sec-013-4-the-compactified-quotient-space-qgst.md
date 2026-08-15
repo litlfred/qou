@@ -7,6 +7,7 @@ section_number: 4
 pages: 25-31
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
+doc_brief: "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 (4.0) As in section 3, we fix a complex projective line P, an integer N^3 and
 a finite set S with N elements. We further fix a family ^ == (^s)sgs °^ rea^ numbers

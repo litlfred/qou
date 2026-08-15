@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 12-15
 source_pdf: 2301.02038v1.pdf
 source_sha256: 27b303939826ab39
+doc_brief: "Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Diﬀerential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a"
 ---
 mologies have nice interpretations, sometimes informal, s ometimes more precise. In
 this subsection we illustrate some of them. We begin with hor izontal cohomology

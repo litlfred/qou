@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 4-5
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE CHUL-HEE LEE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 review of the properties of the Laplacian on a Riemannian manifold. For a detailed
 discussion on this topic, see [Bus10]. Consider a Riemannian manifold M with the

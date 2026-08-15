@@ -7,6 +7,7 @@ section_number: IV
 pages: 13-15
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
 ---
 Recall the statement:
 Theorem A: The equation „ 3BS (V)5V holds in V if and only if V is divergence-free and

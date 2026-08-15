@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 30-30
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 In order to implement the ﬁrst step, we begin by deﬁning a theory T∆,ΠZ that we associate
 to a single tetrahedron ∆ in polarization Π Z (as in (2.9)):

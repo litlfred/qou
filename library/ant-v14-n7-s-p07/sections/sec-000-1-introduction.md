@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: ant-v14-n7-s-p07.pdf
 source_sha256: c5a749ef6be194fd
+doc_brief: "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds — 7 sections: Introduction; For the similar Theorem 1.7, the 𝓁; Main theorem and proof"
 ---
 Let p be an odd prime, set q= pk for some positive integer k, and denote by Fq the ﬁnite ﬁeld with q
 elements. To (the smooth completion of) any hyperelliptic curve C over Fq one associates a zeta function

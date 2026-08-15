@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 16-18
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
+doc_brief: "The Stretched Horizon and Black Hole Complementarity Leonard Susskind, L´arus Thorlacius, and John Uglum Department of Physics — Three postulates asserting the validity of conventional qu antum"
 ---
 It was observed in [23] that the global causal nature of dynam ical semi-classical ge-
 ometries depends on the incoming energy ﬂux. If the ﬂux remai ns below a certain critical

@@ -7,6 +7,7 @@ section_number: 3.1.2
 pages: 37-38
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 isoclinicq-diﬀerence modules over C({z}), of ranks r1,...,r k∈ N∗ and slopes
 µ1 <··· < µk. From section A.6 of the appendix A, we have a functor from

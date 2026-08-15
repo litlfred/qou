@@ -7,6 +7,7 @@ section_number: 2
 pages: 8-10
 source_pdf: ant-v14-n7-s-p09.pdf
 source_sha256: c8fe963200a79d25
+doc_brief: "Galois action on the principal block and cyclic Sylow subgroups — 8 sections: Introduction; Blocks with normal defect group; Suppose that|D|= 2n. Since G/CD ac"
 ---
 The aim of this section is to reduce the statement of Theorem A to a problem on simple groups that we
 will solve in Section 3.

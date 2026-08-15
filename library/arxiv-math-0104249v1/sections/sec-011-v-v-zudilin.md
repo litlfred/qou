@@ -7,5 +7,6 @@ section_number: V
 pages: 9-9
 source_pdf: 0104249v1.pdf
 source_sha256: c2fcdefc73b8df24
+doc_brief: "IRRA TIONALITY OF V ALUES OF ZET A-FUNCTION W. Zudilin 1. Introduction. The irrationality of values of the zeta-function ζ(s) at odd integers s ≥ 3 is one of the most attractive problems in number the"
 ---
 

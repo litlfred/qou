@@ -7,6 +7,7 @@ section_number: 4
 pages: 13-16
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
+doc_brief: "Gedanken Experiments Involving Black Holes Leonard Susskind, and L ´arus Thorlacius, Department of Physics — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot"
 ---
 In this section we shall consider a class of experiments whic h explore quantum corre-
 lations between events on both sides of the event horizon. In particular, we are interested

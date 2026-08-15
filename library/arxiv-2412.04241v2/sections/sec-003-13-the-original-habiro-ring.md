@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 4-5
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
+doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 tion [27]
 H := lim←−n

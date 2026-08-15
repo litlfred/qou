@@ -7,6 +7,7 @@ section_number: null
 pages: 30-31
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 Given a cyclotomic Hecke algebraHϕm(W ) and a ring homomorphism θ :q↦→η∈ C\{ 0}, we obtain a
 semisimplicity criterion and a decomposition map exactly as in §2.4. A canonical basic set with respect

@@ -7,6 +7,7 @@ section_number: null
 pages: 23-25
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
+doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
 ---
 [1] R. Agrawal, T. F. Bloom, and G. Petridis. More on the sum-product problem for integers
 with few prime factors.arXiv:2512.04931, 2025. 6

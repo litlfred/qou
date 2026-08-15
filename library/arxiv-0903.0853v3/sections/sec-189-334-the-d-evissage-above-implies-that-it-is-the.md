@@ -7,6 +7,7 @@ section_number: 3.3.4
 pages: 114-114
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
+doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 238 sections: The Newton polygon and the slope ﬁ; Application to the analytic isofor; The aﬃne"
 ---
 H 1(Eq, ΛI(M0)) inherited from the vector space structures on theH 1(Eq,λ (δ))
 through corollary 6.2.2. More precisely:

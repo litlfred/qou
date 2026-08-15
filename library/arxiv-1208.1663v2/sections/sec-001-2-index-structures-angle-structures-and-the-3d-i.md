@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-5
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 2.1. Index structures. Consider two r×s matrices A and B with integer entries and a
 column vector v∈ Zr, and let M = (A|B|v).

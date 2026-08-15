@@ -7,6 +7,7 @@ section_number: 4
 pages: 21-25
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
+doc_brief: "Motivic Gauss–Bonnet formulas — 26 sections: Introduction 1801; Duality and Euler characteristics ; SL-oriented motivic spectra 1813"
 ---
 In this section, we describe how one gets projective pushforward maps in twisted E-cohomology for E
 an SL-oriented motivic spectrum. We rely on the six-functor formalism. This is a bit different from the

@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 30-32
 source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised"
 ---
 The q-diﬀerence equation ( 19) can be written in operator form as ((1 − qt)σ − 1)f = 0, with
 the Newton polygon shown in Figure 2.

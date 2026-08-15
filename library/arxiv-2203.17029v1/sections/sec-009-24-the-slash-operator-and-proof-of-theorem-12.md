@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 17-20
 source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised"
 ---
 operator, an important ingredient to express modularity. We will us e the usual conventions
 for the modular q = e(τ ) and the Jacobi t = e(z), λi = e(ui), µi = e(vi), x = e(w) variables,

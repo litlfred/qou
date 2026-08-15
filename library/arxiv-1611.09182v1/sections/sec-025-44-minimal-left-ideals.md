@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 30-31
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 For the remainder of this text, we will be interested only in Cliﬀord algebras over C, where
 n is even. The most common way to model these algebras is to represent them as 2n/2×2n/2

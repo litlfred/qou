@@ -7,6 +7,7 @@ section_number: null
 pages: 40-42
 source_pdf: ant-v14-n7-s-p06.pdf
 source_sha256: 4881141ef679dd5a
+doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function ﬁelds — 24 sections: Introduction and statement of resu; L′(; Some useful lemmas"
 ---
 [Altu˘g and Tsimerman 2014] S. A. Altu ˘g and J. Tsimerman, “Metaplectic Ramanujan conjecture over function ﬁelds with
 applications to quadratic forms”, Int. Math. Res. Not. 2014:13 (2014), 3465–3558. MR Zbl

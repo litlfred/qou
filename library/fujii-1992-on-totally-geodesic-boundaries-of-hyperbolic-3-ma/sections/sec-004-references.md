@@ -7,6 +7,7 @@ section_number: null
 pages: 13-14
 source_pdf: fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf
 source_sha256: d3d3bf68955ad775
+doc_brief: "M. FUJJI KODAI MATH. J. 15 (1992), 244-257 ON TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS By MICHIHIKO FUJII Introduction — 5 sections: An ideal tetrahedral decomposition; (a)). We write S=S"
 ---
 [ 1 ] R. BROOKS, Circle packings and co-compact extensions of Klemian groups. Invent.
 Math. 86 (1986), 461-469.

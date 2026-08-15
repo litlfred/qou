@@ -7,6 +7,7 @@ section_number: 10
 pages: 58-64
 source_pdf: On_the_geometry_of_two_state_models_for_the_colore.pdf
 source_sha256: cc3393a17c48b9df
+doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---
 In the previous section we used symmetry and did appeal to the geometry of
 the projections in order to ﬁnd the formulas for the jump map (and thereby

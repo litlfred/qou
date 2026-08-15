@@ -7,6 +7,7 @@ section_number: null
 pages: 11-11
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
+doc_brief: "arxiv-1012.5432v4 — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 symmetry:
 1. Add an external potential: If the potential does not respect the full symmetry of the

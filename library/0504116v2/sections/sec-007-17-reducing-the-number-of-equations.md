@@ -7,6 +7,7 @@ section_number: 1.7
 pages: 10-11
 source_pdf: 0504116v2.pdf
 source_sha256: 24a8c998e40aed5d
+doc_brief: "On deformations of hyperbolic 3–manifolds with geodesic boundary ROBERTO FRIGERIO Let M be a complete ﬁnite-volume hyperbolic 3–manifold with compact non-empty geodesic boundary and k toric cusps, and"
 ---
 When N has cusps, some equations inC(T ) turn out to be redundant. Let T be a ﬁxed
 toric component of∂ ¯N and let j be the number of tetrahedra asymptotic to T . Since

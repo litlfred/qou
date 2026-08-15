@@ -7,6 +7,7 @@ section_number: I
 pages: 1-2
 source_pdf: 0603022v2.pdf
 source_sha256: 46e24c0289f61d44
+doc_brief: "Quantum Gravity and the Standard Model Sundance O. Bilson-Thompson ∗ — 9 sections: INTRODUCTION; THEORIES ON RIBBON GRAPHS; CONSERVED DEGREES OF FREEDOM"
 ---
 Ever since the notion that geometry is dynamical was
 advanced in the 19th Century and, even more since that

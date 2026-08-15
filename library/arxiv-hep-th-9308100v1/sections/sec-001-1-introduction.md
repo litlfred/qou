@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-4
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
+doc_brief: "Gedanken Experiments Involving Black Holes Leonard Susskind, and L ´arus Thorlacius, Department of Physics — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot"
 ---
 One of the most interesting open questions in theoretical ph ysics is whether the unitary
 evolution of states in quantum theory is violated by gravita tional eﬀects [1]. The debate

@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 41-44
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
+doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗ — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
 ---
 Let me use Proposition 5.9 to compute TM,γ for the ﬁgure eight knot for
 PSL2(C) and PSL 3(C). For PSL 2(C) this is done in [82], but I recall it here

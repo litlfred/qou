@@ -7,6 +7,7 @@ section_number: null
 pages: 31-32
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
+doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 [1] Rostislav Akhmechet, Peter K Johnson, and Vyacheslav Krushkal. Lattice cohomology and q-
 series invariants of 3-manifolds. Journal f¨ ur die reine und angewandte Mathematik (Crelles Journal) ,

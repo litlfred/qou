@@ -7,6 +7,7 @@ section_number: 2
 pages: 1-2
 source_pdf: fd58d8e182edda805fed0946606c5ab82f81.pdf
 source_sha256: 292cb048e7097935
+doc_brief: "Palestine Journal of Mathematics — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another combinatorial"
 ---
 In this section, we recall a basic theory of Gröbner-Shirshov bases for associative algebras so as
 to make the paper self-contained. There will be some properties listed without proofs which are

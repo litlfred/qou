@@ -7,6 +7,7 @@ section_number: null
 pages: 5-6
 source_pdf: 1707.02991v1.pdf
 source_sha256: f4f539f74403dd24
+doc_brief: "BPS states, knots and quivers — 5 sections: BPS states, knots and quivers; Moduli of quiver representations; Knot invariants from quiver repres"
 ---
 In this letter we presented a surprising duality between
 knots and quivers, which underlies the supersymmetric

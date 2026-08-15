@@ -7,6 +7,7 @@ section_number: 3
 pages: 10-25
 source_pdf: ant-v14-n7-s-p09.pdf
 source_sha256: c8fe963200a79d25
+doc_brief: "Galois action on the principal block and cyclic Sylow subgroups — 8 sections: Introduction; Blocks with normal defect group; Suppose that|D|= 2n. Since G/CD ac"
 ---
 Theorem 2.6 below. Theorem C collects the properties of simple groups that will be key for performing
 such reduction. We would like to remark that the conditions in Theorem C related to the conjugation by

@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 88-94
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
+doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 We interrupt the ﬂow of the argument, brieﬂy. The procedure that we gave in Section 5.3.2
 for constructing a candidate for a template from thin annuli is almost identical to the

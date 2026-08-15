@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-5
 source_pdf: 1910.09966v1.pdf
 source_sha256: 21798500c98ed25a
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 ---
 2 Preliminaries: Branched Coverings of 3- and 4-Manifolds 4
 2.1 As Warmup: Branched Coverings of 2-Manifolds . . . . . . . . . 5

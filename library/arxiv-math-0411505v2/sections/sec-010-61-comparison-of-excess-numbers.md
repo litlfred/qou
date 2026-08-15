@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 11-12
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
+doc_brief: "A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
 ---
 K , let f be the corresponding
 ﬂow in GK, to which c projects, under the projection

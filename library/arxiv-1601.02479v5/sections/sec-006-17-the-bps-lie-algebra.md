@@ -7,6 +7,7 @@ section_number: 1.7
 pages: 12-12
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
 ---
 and a direct corollary of the above structural theorems, is the de ﬁnition of the
 BPS Lie algebra. This is a natural Lie algebra, for any choice of Q, W,µ , S,ψ and

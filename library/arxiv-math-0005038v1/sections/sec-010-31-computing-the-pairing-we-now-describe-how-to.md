@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 6-8
 source_pdf: 0005038v1.pdf
 source_sha256: db0b9b7a8534f161
+doc_brief: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 tween a give noodle and fork. Let N be a noodle and let F be a fork. By applying a
 preliminary isotopy, we can assume that T (F ) intersects N transversely at a ﬁnite

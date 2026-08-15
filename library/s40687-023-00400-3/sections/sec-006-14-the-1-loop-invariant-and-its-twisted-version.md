@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 7-9
 source_pdf: s40687-023-00400-3.pdf
 source_sha256: fd7638a8cf512a99
+doc_brief: "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 https://doi.org/10.1007/s40687-023-00400-3 RESEARCH Twisted Neumann–Zagier matrices StavrosGaroufalidis1,2* andSeokbeomYoon 1 *Correspondence: — TheN"
 ---
 The adjoint Reidemeister torsion has a conjectural description in terms of the 1-loop
 invariant of [6]. The latter depends on the NZ matrices of an ideal triangulation, its

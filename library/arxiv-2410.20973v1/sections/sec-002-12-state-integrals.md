@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 3-5
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
 ---
 where e(z) = exp(2 πiz) and Σ is the associated Riemann surface. In particular, Σ is deﬁned
 by taking points p = (z, m) where z∈ C\(Z− iR) and m∈ Z with the equivalences

@@ -7,6 +7,7 @@ section_number: 2.2.1
 pages: 18-20
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 For a generic 3-manifold M with boundary Σ = T 2, constructing the quantum operators
 ˆAi(ˆl, ˆm) may be a diﬃcult task. However, when M is the complement of a knot K in the

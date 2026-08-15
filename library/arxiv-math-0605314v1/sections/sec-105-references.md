@@ -7,6 +7,7 @@ section_number: null
 pages: 63-66
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 [1] Y. Akutsu, T. Deguchi and T. Ohtsuki, Invariants of color ed links. J. Knot Theory Ramiﬁ-
 cations 1 (1992), no. 2, 161–184.

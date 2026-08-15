@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 19-19
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
+doc_brief: "Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Constant term formulas for"
 ---
 We observe that (m, n, kL, kR)-Gog pentagons with bottom row bn−kR +1, bn−kR +2,
 ...,  bkL correspond to (s, t)-trees of order n, where s =( n −kR −1, n −kR −2, ...,  0) and 

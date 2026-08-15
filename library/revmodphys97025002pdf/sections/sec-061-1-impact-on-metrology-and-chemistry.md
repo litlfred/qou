@@ -7,6 +7,7 @@ section_number: 1
 pages: 54-54
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 The CODA TA 2018 adjustment was the first to reflect the
 revision of the SI based on exact values of h, e, k, and NA.

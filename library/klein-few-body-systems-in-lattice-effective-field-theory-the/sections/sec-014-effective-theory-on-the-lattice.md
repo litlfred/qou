@@ -7,6 +7,7 @@ section_number: null
 pages: 27-30
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
+doc_brief: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Unive"
 ---
 As already mentioned, we have to discretize all operators so that they are deﬁned on the lattice and the
 explicit form of discretization for any operator will be given explicitly in the subsequent chapters. Here

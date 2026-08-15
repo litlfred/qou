@@ -7,6 +7,7 @@ section_number: 2.1.2
 pages: 10-12
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
 ---
 carried by quantum 3-simplices can be globalized on ideal tr iangulations.
 Let M be a cusped manifold, i.e. an oriented non-compact 3-manifo ld admitting a complete

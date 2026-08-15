@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 10-11
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 gulationT induces a decompositionT of M by truncated simplices.
 Deﬁnition 4.1.A G-cocycle on M is a labeling of the oriented edges ofM satisfying (i) and

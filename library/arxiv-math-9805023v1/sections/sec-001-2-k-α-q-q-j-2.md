@@ -7,6 +7,7 @@ section_number: 2
 pages: 5-7
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
+doc_brief: "q-LAGUERRE POL YNOMIALS AND BIG q-BESSEL — The q-Laguerre polynomials correspond to an indetermined moment probl em."
 ---
 α (2√c q
 1

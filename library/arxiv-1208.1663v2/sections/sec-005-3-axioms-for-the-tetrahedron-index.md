@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-10
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 In this section we discuss an axiomatic approach to the tetrahedron index. Let Z((q1/2))
 (resp., Z[[q1/2]]) denote the ring of series of the form

@@ -7,6 +7,7 @@ section_number: null
 pages: 23-24
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 The families of characters are a special partition of the set of irreducible representations of W . In the
 case where W is a Weyl group, these families play an essential role in the deﬁnition of the families of

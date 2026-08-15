@@ -7,6 +7,7 @@ section_number: null
 pages: 21-22
 source_pdf: kirbycal.pdf
 source_sha256: 8dae9487ed32a3bd
+doc_brief: "Inventiones math. 45, 35- 56 (1978) mathematicae 9 by Springer-Verlag 197 A Calculus for Framed Links in S 3 Robion Kirby* — 3 sections: A and 1 B, we can change the left ; B prove half this equivale"
 ---
 Akbulut, S., Kirby, R.C.: (To appear) 
 Akbulut, S., Kirby, R.C.: Mazur manifolds. (To appear) 

@@ -7,6 +7,7 @@ section_number: 1.1.7
 pages: 15-16
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
+doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 606 sections: Analytic continuation"
 ---
 ply) connected, and F a locally constant abelian sheaf on S. We ﬁx a point
 s∈S, and denote by π1(S,s ) the fundamental group based at s.(1) To any

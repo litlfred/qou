@@ -7,6 +7,7 @@ section_number: null
 pages: 5-6
 source_pdf: RevModPhys.97.025002.pdf.pdf
 source_sha256: e7fa786c5b666407
+doc_brief: "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction"
 ---
 The input data for the relative atomic masses of 28Si, 87Rb,
 and 133Cs are taken from the AMDC ( Huang et al. ,

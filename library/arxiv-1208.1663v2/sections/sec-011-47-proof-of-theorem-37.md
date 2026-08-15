@@ -7,6 +7,7 @@ section_number: 4.7
 pages: 13-14
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
 ---
 (a) I∆ ∈ V from Section 4.5. Lemma 3.6 and Equation (3.4) manifestly imply that
 δ(I∆(m,e ))≥ 0 for all integers m and e. Thus, I∆ ∈ V+. Moreover, I∆(0, 0) =

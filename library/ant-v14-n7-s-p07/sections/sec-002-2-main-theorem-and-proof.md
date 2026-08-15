@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-10
 source_pdf: ant-v14-n7-s-p07.pdf
 source_sha256: c5a749ef6be194fd
+doc_brief: "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds — 7 sections: Introduction; For the similar Theorem 1.7, the 𝓁; Main theorem and proof"
 ---
 2A. Setup and notations. Throughout the paper, Fq is a ﬁnite ﬁeld of odd characteristic p. Let Qn,q be
 the set of squarefree polynomials over Fq of degree n. For each f∈ Qn,q, write J f for the Jacobian of

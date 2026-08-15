@@ -7,6 +7,7 @@ section_number: 8.1.1
 pages: 67-70
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 The SU (5) grand uniﬁed theory oﬀers a classic example of what it means to be a grand
 uniﬁed theory. It was proposed in 1974 by H. Georgi and S. Glashow, [38], and can be seen

@@ -7,6 +7,7 @@ section_number: 2
 pages: 15-16
 source_pdf: KMJ-48-2-255.pdf
 source_sha256: 720279042c6d762b
+doc_brief: "KYUNGPOOK Math. J. 48(2008), 255-280 A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata — We derive a formula for the colored Jones polynomial of 2-bridge knots."
 ---
 σj+1 −σj
 2

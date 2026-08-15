@@ -7,6 +7,7 @@ section_number: 2
 pages: 9-27
 source_pdf: 0511710v2.pdf
 source_sha256: f88f50d459080490
+doc_brief: "Higher Gauge Theory John Baez Department of Mathematics University of California — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge"
 ---
 and φ: C → X has the property that φ ◦ iα is a plot in X for all α, then φ
 is a plot in X.

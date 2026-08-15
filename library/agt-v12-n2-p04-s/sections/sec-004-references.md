@@ -7,6 +7,7 @@ section_number: null
 pages: 13-14
 source_pdf: agt-v12-n2-p04-s.pdf
 source_sha256: bcbb460bc75f5612
+doc_brief: "Algebraic & Geometric Topology 12 (2012) 791–804 791 The twisted Alexander polynomial for ﬁnite abelian covers over three manifolds with boundary JÉRÔME DUBOIS YOSHIKAZU YAMAGUCHI We provide the twist"
 ---
 [1] M Hirasawa, K Murasugi, On the twisted Alexander Polynomials of Knots , from:
 “Proceedings of Hakone Seminar on Graphs and 3–manifolds”, (M Yamasita, editor),

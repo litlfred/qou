@@ -7,6 +7,7 @@ section_number: null
 pages: 35-38
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
+doc_brief: "BRING’S CURVE: OLD AND NEW — Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties."
 ---
 [ACGH85] E. Arbarello, M. Cornalba, P. A. Griﬃths, and J. Harris, Geometry of algebraic curves. Volume
 I, Grundlehren der mathematischen Wissenschaften, vol. 267, Springer-Verlag, New York, 1985.

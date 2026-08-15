@@ -1,0 +1,117 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0005038v1",
+ "source_sha256": "db0b9b7a8534f161",
+ "brief": "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc.",
+ "extended": "**BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW**\n\n13 pp, 19 sections.\n\n**Abstract.** The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc. The Lawrence-Krammer representation of t he braid group is the induced action on a certain twisted second homol ogy of the space C of unordered pairs of points in the n-punctured disc. Recently, Daan Krammer showed that this is a faithful representation in the case n = 4. In this paper, we show that it is faithful for all n.\n\n**Outline.** 2 STEPHEN J. BIGELOW; 1 Introduction; 1.1 Deﬁnitions. Let D be an oriented disc in t; 1.2 Outline. In Section 2 we will deﬁne forks ; 1.3 Notation. If α and β are arcs in D \\ P suc; 4 STEPHEN J. BIGELOW; 2.1 Proof of the Basic Lemma. The problem is t; 6 STEPHEN J. BIGELOW; 2.2 Alternative proofs. There are many possibl; 3 The representation is faithful; 3.1 Computing the pairing. We now describe how; 8 STEPHEN J. BIGELOW; 3.2 Proof of the Key Lemma. Let N be a noodle ; 3.3 Proof of the Theorem. In this subsection w; 10 STEPHEN J. BIGELOW; 4 Matrices for the Lawrence-Krammer representa; 12 STEPHEN J. BIGELOW; V Jones noticed a striking resemblance between\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: The Lawrence-Krammer representation of Bn is faithful for all n.\n- Theorem 4.1: H2( ˜C) is a free Λ -module of rank\n- Proposition 3.3: With these orientations, ǫi,j = −mi,i mi,j mj,j |(q = 1, t = −1).\n- Proposition 3.5: If mi,j is maximal then mi,i = mj,j = mi,j .\n- Proposition 4.2: σi(vj,k ) is a linear combination of basis vectors vj′,k ′ which satisfy\n- Lemma 2.1: The pairing between forks and noodles is well-",
+ "tokens": {
+  "brief": 32,
+  "extended": 413
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-stephen-j-bigelow",
+   "title": "STEPHEN J. BIGELOW",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-11-deﬁnitions-let-d-be-an-oriented-disc-in-the-c",
+   "title": "Deﬁnitions. Let D be an oriented disc in the complex plane. Fix a set",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-12-outline-in-section-2-we-will-deﬁne-forks-and",
+   "title": "Outline. In Section 2 we will deﬁne forks and noodles. These will be one-",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-13-notation-if-α-and-β-are-arcs-in-d-p-such-αs-β",
+   "title": "Notation. If α and β are arcs in D \\ P such α(s) ⁄= β(s) for all s ∈ I then",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-005-4-stephen-j-bigelow",
+   "title": "STEPHEN J. BIGELOW",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-006-21-proof-of-the-basic-lemma-the-problem-is-that",
+   "title": "Proof of the Basic Lemma. The problem is that one cannot necessarily",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-007-6-stephen-j-bigelow",
+   "title": "STEPHEN J. BIGELOW",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-008-22-alternative-proofs-there-are-many-possible-ap",
+   "title": "Alternative proofs. There are many possible approaches to proving the Ba-",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-009-3-the-representation-is-faithful",
+   "title": "The representation is faithful",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-010-31-computing-the-pairing-we-now-describe-how-to",
+   "title": "Computing the pairing. We now describe how to compute the pairing be-",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-011-8-stephen-j-bigelow",
+   "title": "STEPHEN J. BIGELOW",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-012-32-proof-of-the-key-lemma-let-n-be-a-noodle-and",
+   "title": "Proof of the Key Lemma. Let N be a noodle and let F be a fork. By",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-013-33-proof-of-the-theorem-in-this-subsection-we-us",
+   "title": "Proof of the Theorem. In this subsection we use the Basic Lemma and the",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-014-10-stephen-j-bigelow",
+   "title": "STEPHEN J. BIGELOW",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-015-4-matrices-for-the-lawrence-krammer-representati",
+   "title": "Matrices for the Lawrence-Krammer representation",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-016-12-stephen-j-bigelow",
+   "title": "STEPHEN J. BIGELOW",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-017-v-jones-noticed-a-striking-resemblance-between-t",
+   "title": "Jones noticed a striking resemblance between the matrices desc ribed in Theorem",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-018-references",
+   "title": "References",
+   "pages": "12-13"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -7,6 +7,7 @@ section_number: null
 pages: 6-8
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
+doc_brief: "Stateintegralsforthequantized SL2(C)Chern-Simonsinvariant CalvinMcPhail-Snyder DepartmentofMathematics,DukeUniversity calvin@sl2.site — Previous work of the author and N."
 ---
 Thediagram D determinesasemi-idealtriangulation TD ofS3\K (withtwonon-idealpoints)
 called theoctahedral decomposition; we refer to [KKY18] for a detailed discussion and [McP22;

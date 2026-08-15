@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
+doc_brief: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further"
 ---
 2. Preliminaries 5
 2.1. The Faddeev quantum dilogarithm 5

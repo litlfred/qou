@@ -7,6 +7,7 @@ section_number: 7
 pages: 13-15
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Introduction; Some algebraic lemmas; Ramiﬁcation and postcritically inﬁ"
 ---
 It is well known that there are exactly three Q-conjugacy classes of postcritically ﬁnite quadratic poly-
 nomials over Q, represented by x2, x2− 1, and x2− 2. By Q-conjugacy it sufﬁces to check the family

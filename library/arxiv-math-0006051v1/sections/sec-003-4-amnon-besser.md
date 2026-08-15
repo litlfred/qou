@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-5
 source_pdf: 0006051v1.pdf
 source_sha256: 10483e75bd3655ea
+doc_brief: "FINITE AND p-ADIC POL YLOGARITHMS AMNON BESSER 1. Introduction The ﬁnite logarithm was introduced by Kontsevich (under the name “ The 1 1 logarithm”) in [Kon]. The ﬁnite logarithm is the case n = 1 of"
 ---
 This implies that
 vp(ak(fn+1)) ≥ min

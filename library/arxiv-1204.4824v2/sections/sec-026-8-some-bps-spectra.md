@@ -7,6 +7,7 @@ section_number: 8
 pages: 48-48
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
+doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
 ---
 In this section we ﬁnally show how the spectral networksWϑ can be used to determine the
 4d BPS spectrum in some simple examples of theories S[g =AK−1,C,D ].

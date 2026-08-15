@@ -7,6 +7,7 @@ section_number: null
 pages: 10-12
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
+doc_brief: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗ — quantum description."
 ---
 The third step in this construction takes us to the octonionic case. Remarkably, this is also the final step: the
 octonions are the largest division algebra, and the octonionic one is the final Hopf fibration. The next algebra that

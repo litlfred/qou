@@ -7,6 +7,7 @@ section_number: null
 pages: 16-16
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
 ---
 Let R be a commutative integral domain and let A be an R-algebra, free and ﬁnitely generated as an
 R-module. If R′ is a commutative integral domain containing R, we will write R′A for R′⊗RA and we

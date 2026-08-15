@@ -7,6 +7,7 @@ section_number: null
 pages: 12-13
 source_pdf: characteristic.pdf
 source_sha256: 42bd31da2754488f
+doc_brief: "gure eight knots — The colored Jones function of a knot is a sequence of Laurent polynomials in one variable, whose nth term is the Jones polynomial of the knot colored with the n-dimensional"
 ---
 [BP] M. Bronstein and M. Petkovsek, An introduction to pseudo-linear algebra, in Algorithmic complexity of algebraic and
 geometric models (Creteil, 1994). Theoret. Comput. Sci. 157 (1996) 3{33.

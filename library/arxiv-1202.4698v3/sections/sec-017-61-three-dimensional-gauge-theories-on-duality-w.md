@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 18-19
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 Recently remarkable relations between a certain class S of N = 2 supersymmetric four-
 dimensional gauge theories and two-dimensional conformalﬁeld theories have been discovered

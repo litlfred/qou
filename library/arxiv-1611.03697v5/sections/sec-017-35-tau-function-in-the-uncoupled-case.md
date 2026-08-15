@@ -7,6 +7,7 @@ section_number: 3.5
 pages: 13-14
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 coupled, integral BPS structures over a complex manifold M. We will show that the family of
 solutions given by Theorem 3.2 has a corresponding τ -function. To describe this function we ﬁrst

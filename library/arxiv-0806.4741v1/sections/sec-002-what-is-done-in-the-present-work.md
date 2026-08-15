@@ -7,6 +7,7 @@ section_number: null
 pages: 3-4
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
+doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium"
 ---
 We now summarize what is done in the present article as well as the method used. Given the geometric data
 of an aﬃne space (i.e. a manifold endowed with an aﬃne connection), one deﬁnes the notion of contracted

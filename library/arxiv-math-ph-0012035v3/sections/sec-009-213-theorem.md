@@ -7,6 +7,7 @@ section_number: 2.1.3
 pages: 11-16
 source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
+doc_brief: "Non-Abelian Stokes theorem in action Bogus/suppress law Broda1 Department of Theoretical Physics University of /suppress L´ od´ z Pomorska 149/153 PL 90–236 /suppress L´ od´ z Poland — In this short"
 ---
 The non-Abelian Stokes theorem in its original operator form rough ly claims
 that the holonomy round a closed curve C = ∂S equals a surface-ordered expo-

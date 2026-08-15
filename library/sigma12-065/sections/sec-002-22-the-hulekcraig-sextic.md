@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 3-4
 source_pdf: sigma12-065.pdf
 source_sha256: a6e0e0da5cc5ff9b
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 8 (2012), 065, 20 pages Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4"
 ---
 Hulek and Craig both introduce the sextic
 C(¯x, ¯y, ¯z) := ¯x

@@ -7,6 +7,7 @@ section_number: null
 pages: 89-90
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
+doc_brief: "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Unive"
 ---
 In the following we give the deﬁnition of special functions used throughout the thesis. A basis of spherical
 functions is given by the spherical harmonics Yl,lz(φ,θ ), where l = 0, 1, 2,∞ and lz =−l,−l + 1,..., l.

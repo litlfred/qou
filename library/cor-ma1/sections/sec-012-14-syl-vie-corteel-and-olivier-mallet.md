@@ -7,6 +7,7 @@ section_number: 14
 pages: 15-15
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 23 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
 ---
 We will ﬁrst give a generating function proof of that proposi tion (without the reﬁnement). Then we will
 give the sketch of a combinatorial proof which is a generaliz ation of Burge’s correspondence for partitions

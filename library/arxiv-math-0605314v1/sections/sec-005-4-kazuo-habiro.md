@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-4
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 for α∈ Gal(Qab/Q) and ζ∈Z . Here Qab denotes the maximal abelian extension
 of Q, which is generated over Q by all roots of unity. (Gal( Qab/Q) can be identiﬁed

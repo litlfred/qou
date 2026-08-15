@@ -1,0 +1,137 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1208.1663v2",
+ "source_sha256": "87e94e429d58386c",
+ "brief": "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of",
+ "extended": "**THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers**\n\n29 pp, 23 sections.\n\n**Abstract.** The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary components. For a ﬁxed 2 r tuple of integers, the index takes values in the set of q-series with integer coeﬃcients. Our goal is to give an axiomatic deﬁnition of the tetrahedron index, and a proof that the domain of the 3D index consists precisely of the set of ideal triangulations that support an index structure. The latter is a generalization of a strict angle structure. We also prove that the 3D index is invariant under 3-2 moves, but not in general under 2-3 moves.\n\n**Outline.** 1 Introduction; 2 Index structures, angle structures and the 3; 2.2 Angle structures; 2.3 The Neumann-Zagier matrices; 2.4 On the topological invariance of the index; 3 Axioms for the tetrahedron index; 4 Properties of a tetrahedron index; 4.1 Part (d) of Theorem 3.2; 4.3 The rank of V+: part (b) of Theorem 3.2; 4.4 Proof of triality: part (c) of Theorem 3.2; 4.6 The degree of I; 4.7 Proof of Theorem 3.7; 5 Convergence of the 3D index; 5.1 Proof of Theorem 2.4; 5.2 An independent proof of convergence for st; 6.3 An ideal triangulation of m136; 6.4 An ideal triangulation of m064; 6.5 An ideal triangulation with no index struc\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.4: IM(m,e )(q)∈ Z((q1/2)) is convergent for all m,e ∈ Zs if and only if M\n- Theorem 2.12: The index IT : Zr× Zr−→ Z((q1/2)) is well-deﬁned if and only if T admits\n- Theorem 3.2: (a) V is a free q-holonomic Z((q))-module of rank 2.\n- Theorem 3.7: I∆ is uniquely characterized by the following equations:\n- Theorem 3.2: Equation (3.2) concerns the following Z/3-action on V .\n- Proposition 2.13: If ~T admits a strict angle structure structure, so does T and I ~T =IT .",
+ "tokens": {
+  "brief": 49,
+  "extended": 486
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-index-structures-angle-structures-and-the-3d-i",
+   "title": "Index structures, angle structures and the 3D index",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-22-angle-structures",
+   "title": "Angle structures",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-003-23-the-neumann-zagier-matrices",
+   "title": "The Neumann-Zagier matrices",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-004-24-on-the-topological-invariance-of-the-index",
+   "title": "On the topological invariance of the index",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-3-axioms-for-the-tetrahedron-index",
+   "title": "Axioms for the tetrahedron index",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-006-4-properties-of-a-tetrahedron-index",
+   "title": "Properties of a tetrahedron index",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-007-41-part-d-of-theorem-32",
+   "title": "Part (d) of Theorem 3.2",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-008-43-the-rank-of-v-part-b-of-theorem-32",
+   "title": "The rank of V+: part (b) of Theorem 3.2",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-009-44-proof-of-triality-part-c-of-theorem-32",
+   "title": "Proof of triality: part (c) of Theorem 3.2",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-010-46-the-degree-of-i",
+   "title": "The degree of I",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-011-47-proof-of-theorem-37",
+   "title": "Proof of Theorem 3.7",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-012-5-convergence-of-the-3d-index",
+   "title": "Convergence of the 3D index",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-013-51-proof-of-theorem-24",
+   "title": "Proof of Theorem 2.4",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-014-52-an-independent-proof-of-convergence-for-stric",
+   "title": "An independent proof of convergence for strict index structures",
+   "pages": "16-21"
+  },
+  {
+   "id": "sec-015-63-an-ideal-triangulation-of-m136",
+   "title": "An ideal triangulation of m136",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-016-64-an-ideal-triangulation-of-m064",
+   "title": "An ideal triangulation of m064",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-017-65-an-ideal-triangulation-with-no-index-structur",
+   "title": "An ideal triangulation with no index structure",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-018-67-acknowledgment",
+   "title": "Acknowledgment",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-019-a1-a-generating-series-proof-of-the-pentagon-ide",
+   "title": "A.1. A generating series proof of the pentagon identity",
+   "pages": "23-26"
+  },
+  {
+   "id": "sec-020-a2-a-second-proof-of-the-pentagon-identity",
+   "title": "A.2. A second proof of the pentagon identity",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-021-appendix-b-the-tetrahedron-index-and-the-quantum",
+   "title": "Appendix B. The tetrahedron index and the quantum dilogarithm",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-022-references",
+   "title": "References",
+   "pages": "28-29"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

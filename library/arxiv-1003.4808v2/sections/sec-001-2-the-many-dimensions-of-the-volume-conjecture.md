@@ -7,6 +7,7 @@ section_number: 2
 pages: 6-6
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
 ---
 There are several natural ways in which one might try to generalize the basic volume
 conjecture (1.14). One possibility is to consider not just k = N (or q = e

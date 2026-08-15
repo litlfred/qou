@@ -7,6 +7,7 @@ section_number: 7.3
 pages: 18-19
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 Deﬁnition 7.12.LetT′ be a triangulation whose edge set contains that ofT . Adescendant of
 E∈ T(T ) is an elementE′∈ T(T′) such thatE′ agrees withE on the edges ofT . IfE′∈ T(T′)

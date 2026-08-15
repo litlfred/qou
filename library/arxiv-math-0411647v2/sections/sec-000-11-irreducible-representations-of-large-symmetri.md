@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-2
 source_pdf: 0411647v2.pdf
 source_sha256: d79f96b416cb28da
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many"
 ---
 representations of symmetric groups are in the one-to-one c orrespondence
 with Young diagrams and due to algorithms such as Murnaghan–Nakayama

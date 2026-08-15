@@ -7,6 +7,7 @@ section_number: 4.6
 pages: 20-26
 source_pdf: 1303.5278v1.pdf
 source_sha256: 92e417c93f8b883a
+doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifoldM (a collection"
 ---
 with r≥ 1 torus cusps and let T be an ideal triangulation ofM with N tetrahedra and,
 hence, N edges which we denotee1,...,e N. LetG be the 1-skeletonT(1) of T together with

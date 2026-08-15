@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 19-20
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
+doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
 ---
 extend Theorem 1.2 to closed manifolds is via Dehn surgery. IfC is a boundary
 torus ofM,a n dμ,λ are simple closed normal curves that form a basis forH1(C),

@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 17-19
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
+doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 In Section 2 we set up the topological construction which will be the basis for our work.
 We will show that there is a very special isotopy that takes us fromX+ to X−. The trace

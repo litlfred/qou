@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 21-22
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 A rotating black hole in (2 + 1)-dimensional AdS space has metric
 ds2 =−f(r)dt2 + 1

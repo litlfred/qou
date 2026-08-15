@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 15-16
 source_pdf: 1910.09966v1.pdf
 source_sha256: 21798500c98ed25a
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 ---
 and Knot Complements
 In the previous subsection, we described a relation between the octonions and

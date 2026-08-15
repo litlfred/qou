@@ -7,6 +7,7 @@ section_number: 3.2.6
 pages: 43-44
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 LetRn denote by a representation of SU (2) of dimension n. The Hilbert space of the reﬁned
 Chern-Simons theory [19] on T 2 is the same as in the unreﬁned case. Namely, it is generated

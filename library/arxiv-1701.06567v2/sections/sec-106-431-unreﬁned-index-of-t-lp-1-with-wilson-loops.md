@@ -7,6 +7,7 @@ section_number: 4.3.1
 pages: 64-65
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 The unreﬁned superconformal index — with contribution of the Cartan component of the
 adjoint chiral removed, as in ( 3.40) — with the Wilson line inserted at the north pole reads:

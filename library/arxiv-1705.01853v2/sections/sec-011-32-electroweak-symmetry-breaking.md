@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 13-15
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
+doc_brief: "Line Operators in the Standard Model David Tong — There is an ambiguity in the gauge group of the Standard Model."
 ---
 Let’s now see what becomes of our line operators after electrowea k symmetry breaking.
 The Higgs ﬁeld H lies in the ( 2, 1)3 representation and condenses, breaking U(1) ˜Y ×

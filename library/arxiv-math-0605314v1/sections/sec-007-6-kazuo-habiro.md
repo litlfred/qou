@@ -7,6 +7,7 @@ section_number: 6
 pages: 6-7
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
+doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
 ---
 Here L(K,±1) is the framed link in S3 obtained from L1∪···∪ Lm by±1-framed
 surgery along K.

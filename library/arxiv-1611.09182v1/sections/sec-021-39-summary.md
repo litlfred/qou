@@ -7,6 +7,7 @@ section_number: 3.9
 pages: 24-25
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 F , are simply generalized ideals under the quaternionic invariant-action, mq. These gen-
 eralized ideals transform as φ′ =Lφ~L =φ andF′ =LF~L under the Lorentz group, where

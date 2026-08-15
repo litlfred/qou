@@ -1,0 +1,71 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-gr-qc-0407051v2",
+ "source_sha256": "2de07e909b17c5a5",
+ "brief": "Black hole entropy from Quantum Geometry — Quantum Geometry (the modern Loop Quantum Gravity using gra phs and spin-networks instead of the loops) provides microscopic d egrees of freedom that",
+ "extended": "**Black hole entropy from Quantum Geometry**\n\n*Marcin Domagala 1 and Jerzy Lewandowski 1,2,3*\n\n14 pp, 10 sections.\n\n**Abstract.** Quantum Geometry (the modern Loop Quantum Gravity using gra phs and spin-networks instead of the loops) provides microscopic d egrees of freedom that account for the black-hole entropy. However, the proce dure for state counting used in the literature contains an error and the num ber of the rel- evant horizon states is underestimated. In our paper a corre ct method of counting is presented. Our results lead to a revision of the l iterature of the subject. It turns out that the contribution of spins greater then 1/2 to the entropy is not negligible. Hence, the value of the Barbero-I mmirzi parameter involved in the spectra of all the geometric and physical ope rators in this theory is diﬀerent than previously derived. Also, the conje ctured relation be- tween Quantum Geometry and the black hole quasi-normal mode s should be understood again. Pacs 04.60Pp, 04.60.Ds, 04.60.Nc, 03.65.Sq 1\n\n**Outline.** 2 Physics Department, 104 Davey, Penn State, U; Abstract; I INTRODUCTION AND RESUL TS; II THE HORIZON QUANTUM ST A TES; 2 N, m i ∈ {−j1, ..., ji} (7); III THE COMBINA TORIC FORMULA TION OF THE PROB; 2 Z,; IV THE ENTROPY CALCULA TIONS; V THE SPIN PROBABILITY DISTRIBUTION; References",
+ "tokens": {
+  "brief": 48,
+  "extended": 331
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-physics-department-104-davey-penn-state-univer",
+   "title": "Physics Department, 104 Davey, Penn State, University Pa rk, PA 16802, USA",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-i-introduction-and-resul-ts",
+   "title": "INTRODUCTION AND RESUL TS",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-003-ii-the-horizon-quantum-st-a-tes",
+   "title": "THE HORIZON QUANTUM ST A TES",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-2-n-m-i-j1-ji-7",
+   "title": "N, m i ∈ {−j1, ..., ji} (7)",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-005-iii-the-combina-toric-formula-tion-of-the-proble",
+   "title": "THE COMBINA TORIC FORMULA TION OF THE PROBLEM",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-006-2-z",
+   "title": "Z,",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-007-iv-the-entropy-calcula-tions",
+   "title": "THE ENTROPY CALCULA TIONS",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-008-v-the-spin-probability-distribution",
+   "title": "THE SPIN PROBABILITY DISTRIBUTION",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "14-14"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

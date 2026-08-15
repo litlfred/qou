@@ -7,6 +7,7 @@ section_number: 6
 pages: 56-59
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
+doc_brief: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Scie"
 ---
 The main argument of this paper is now complete, and although the paper is already
 long, we can’t resist making a few comments about the possible implications of our

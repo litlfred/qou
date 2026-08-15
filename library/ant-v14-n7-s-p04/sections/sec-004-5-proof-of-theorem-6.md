@@ -7,6 +7,7 @@ section_number: 5
 pages: 4-5
 source_pdf: ant-v14-n7-s-p04.pdf
 source_sha256: 6abd838a4c933311
+doc_brief: "Elliptic curves over totally real cubic ﬁelds are modular — 10 sections: Introduction; Images mod 3, 5, 7 and modularity; Modular curves"
 ---
 Let X= X(b5, b7) (in standard notation denoted by X0(35)). It is known that X has four Q-points and
 that these are cusps. Let K be a totally real cubic ﬁeld. For the proof of Theorem 6 it will be sufﬁcient

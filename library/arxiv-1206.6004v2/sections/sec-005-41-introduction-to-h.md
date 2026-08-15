@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 6-9
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 8 (2012), 065, 20 pages Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4"
 ---
 Riera and Rodr´ ıguez, in [17], give Bring’s curve as a quotient,H, of the hyperbolic disc. They
 then proceed to calculate a period matrix taking account of the symmetries of the curve.

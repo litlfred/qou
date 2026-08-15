@@ -7,6 +7,7 @@ section_number: null
 pages: 18-19
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
+doc_brief: "On a volume invariant of 3–manifolds — 22 sections: Introduction; Properties, examples and questions; Definition of topological volume a"
 ---
 Hodgson and Masai [ HM13HM13,§2] give an excellent exposition of results of Neumann and Za-
 gier [NZ85NZ85] relating the decrease in volume during hyperbolic Dehn filling to the length of the

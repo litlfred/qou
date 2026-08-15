@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-4
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
+doc_brief: "THE COLORED JONES POL YNOMIALS OF THE — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
 ---
 To state our main result we recall some of the results in [16, 24].
 Let K be a hyperbolic knot in the three-sphere S3, that is, the complement

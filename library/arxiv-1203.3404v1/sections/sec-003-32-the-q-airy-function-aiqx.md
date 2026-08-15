@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 9-10
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the"
 ---
 The q-Airy function is found by K. Kajiwara, T. Masuda, M. Noumi, Y.
 Ohta and Y. Yamada [8], in their study of the q-Painlev´ e equations. This

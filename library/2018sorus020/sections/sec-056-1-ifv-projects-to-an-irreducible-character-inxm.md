@@ -7,6 +7,7 @@ section_number: 1
 pages: 11-11
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 128 sections: Introduction 5; Character variet"
 ---
 tor(M, Ad◦ρ) atv is the length of the torsion part of the moduleΩC[X]/C⊗Ov.
 This integer is an invariant of the local singularity which can be computed

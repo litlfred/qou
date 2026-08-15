@@ -7,6 +7,7 @@ section_number: 10
 pages: 10-12
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
+doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
 ---
 transform as a scalar under p0. This is unsatisfactory, since some free theories (e.g.
 of one real scalar ﬁeld plus one real vector ﬁeld, [ F r]; such theories are not covered

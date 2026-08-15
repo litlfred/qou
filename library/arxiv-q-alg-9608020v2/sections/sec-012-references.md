@@ -7,6 +7,7 @@ section_number: null
 pages: 8-9
 source_pdf: 9608020v2.pdf
 source_sha256: 727268098db7f23d
+doc_brief: "SHIFTED JACK POL YNOMIALS, BINOMIAL — In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St])."
 ---
 [Bi] C. Bingham, An identity involving partitional generalized binomial co eﬃcients , J. Multi-
 variate Analysis 4 (1974), 210–223.

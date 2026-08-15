@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-20
 source_pdf: 1101.3374v1.pdf
 source_sha256: 01d76c1d259c1d51
+doc_brief: "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR’S TRIPLE LINKING NUMBER — To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus"
 ---
 Borromean Rings
 Three-component links in the 3-sphere S3 were classiﬁed up to

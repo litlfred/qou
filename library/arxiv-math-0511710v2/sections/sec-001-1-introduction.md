@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-8
 source_pdf: 0511710v2.pdf
 source_sha256: f88f50d459080490
+doc_brief: "Higher Gauge Theory John Baez Department of Mathematics University of California — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge"
 ---
 Ordinary gauge theory describes how 0-dimensional particl es transform as we
 move them along 1-dimensional paths. It is natural to assign a group element

@@ -7,6 +7,7 @@ section_number: 11.2
 pages: 39-40
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
+doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
 ---
 To prove that (11.7) is the modular curve of Γ 0(4) is a fairly simple exercise using the
 addition law on a cubic curve. 5 For our purposes, it will be more helpful to simply work

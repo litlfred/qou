@@ -7,6 +7,7 @@ section_number: 4
 pages: 12-17
 source_pdf: agt-v3-n1-p17-p.pdf
 source_sha256: df196f0a732ad6b9
+doc_brief: "We use skein theory to compute the coecients of certain power series considered by Habiro in his theory ofsl2 invariants of integral homol- ogy 3-spheres."
 ---
 Following Habiro, we introduce the polynomials R0
 n =(fng!)−1Rn and write

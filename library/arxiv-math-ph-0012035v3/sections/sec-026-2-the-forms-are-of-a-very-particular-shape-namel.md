@@ -7,6 +7,7 @@ section_number: 2
 pages: 33-34
 source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
+doc_brief: "Non-Abelian Stokes theorem in action Bogus/suppress law Broda1 Department of Theoretical Physics University of /suppress L´ od´ z Pomorska 149/153 PL 90–236 /suppress L´ od´ z Poland — In this short"
 ---
 the curvature 2-form. Now, we would like to discuss possible genera lizations to
 arbitrary, higher-dimensional diﬀerential forms in arbitrary dimen sions. Since

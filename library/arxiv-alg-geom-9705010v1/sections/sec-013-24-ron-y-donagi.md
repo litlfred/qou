@@ -7,6 +7,7 @@ section_number: 24
 pages: 24-26
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
+doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
 ---
 A number of special cases of this construction are well known . When D = 0,
 we get Hitchin’s system [ Hi] on T ∗M. When E has genus 0, we get the polynomial

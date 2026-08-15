@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 5-6
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE CHUL-HEE LEE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 of the hyperbolic plane. One such model is the upper half-plane, denoted by H. This
 consists of complex numbers z where the imaginary part is positive: H ={z∈ C :

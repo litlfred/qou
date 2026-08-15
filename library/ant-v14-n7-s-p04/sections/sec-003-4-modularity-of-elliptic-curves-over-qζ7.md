@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-4
 source_pdf: ant-v14-n7-s-p04.pdf
 source_sha256: 6abd838a4c933311
+doc_brief: "Elliptic curves over totally real cubic ﬁelds are modular — 10 sections: Introduction; Images mod 3, 5, 7 and modularity; Modular curves"
 ---
 In this section we prove Theorem 2 for K= Q(ζ7)+.
 Lemma 4.1. Let K= Q(ζ7)+. Let E be an elliptic curve deﬁned over K . Then E is modular.

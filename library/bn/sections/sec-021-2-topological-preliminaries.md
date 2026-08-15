@@ -7,6 +7,7 @@ section_number: 2
 pages: 9-11
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
+doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
 ---
 A basic reference for the algebraic structure of the braid gr oups and mapping-
 class groups is [Bi]; see also [BZ], [KT] and [FM].

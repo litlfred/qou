@@ -7,6 +7,7 @@ section_number: 6
 pages: 6-6
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
+doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 following identities (see [Dr]): 
 sZ(a)=uau -1 for all a~A, (3.1.11) 

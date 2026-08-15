@@ -7,6 +7,7 @@ section_number: null
 pages: 77-78
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
+doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 Since they preserve cross-ratio and inversion, h-isometries (unit disc preserving Möbius transformations and
 conjugation) preserve h-betweeness.

@@ -7,6 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: 9605013v1.pdf
 source_sha256: cdeab7717dcb9567
+doc_brief: "NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2) ROT A TOR MODEL — The SU q (2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective nuclei."
 ---
 The SU q (2) rotator model is used for describing the β1- and γ1-bands of even-
 even rare earth and actinide collective nuclei. Good results are o btained in nuclei

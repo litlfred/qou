@@ -7,6 +7,7 @@ section_number: null
 pages: 43-44
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
 ---
 [1] Jørgen Andersen and Rinat Kashaev. A TQFT from quantum Teich m¨ uller theory.Communications in
 Mathematical Physics, 330:887–934, 2014.

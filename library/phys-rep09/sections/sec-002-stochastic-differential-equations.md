@@ -7,6 +7,7 @@ section_number: null
 pages: 79-82
 source_pdf: phys-rep09.pdf
 source_sha256: cd345d3df9358efc
+doc_brief: "PhysicsReports470(2009)151–238 Contents lists available at ScienceDirect PhysicsReports journal homepage: www.elsevier.com/locate/physrep TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas"
 ---
 procedureasfordeterministicODEs.
 WithrespecttononlinearStratonovichstochasticdifferentialequations,itshouldberemarkedthattheuseofLie

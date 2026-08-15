@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-4
 source_pdf: 0405508v1.pdf
 source_sha256: ef2e41cf67f3a411
+doc_brief: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 30 sections: Introductory remarks on knots, bra; Geck–Lambropoulou; Geck–Lambropoulou"
 ---
 In Wn, let ti := si · · · s1ts1 · · · si and let a positive, respectively negative, block
 be an element of the form

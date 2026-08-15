@@ -7,6 +7,7 @@ section_number: 8.1
 pages: 26-28
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 GL(n, C), let{g}i denote the ordered set consisting of the ﬁrst i column vectors of g.
 Deﬁnition 8.6. A GL(n, C)/N-decoration (g0N,g 1N,g 2N,g 3N) on ∆3

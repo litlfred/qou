@@ -7,6 +7,7 @@ section_number: null
 pages: 58-64
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
+doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
 ---
 [A’C] N. A’Campo. Tresses, monodromie et le groupe symplect ique. Com-
 ment. Math. Helvetici 54(1979), 318–327.

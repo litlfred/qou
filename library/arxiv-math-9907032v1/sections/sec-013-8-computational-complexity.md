@@ -7,6 +7,7 @@ section_number: 8
 pages: 21-22
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
 ---
 Consider the following two decision problems:
 Problem 1. Let T be a simplicial complex, homeomorphic to a surface S (possibly

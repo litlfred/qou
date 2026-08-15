@@ -7,6 +7,7 @@ section_number: 4.5
 pages: 52-58
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
+doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 In Section 4.3 we modiﬁed the discs R1,..., Rk which had been constructed as part
 of the basic construction to very special foliated discs which we called tabs. Thus we

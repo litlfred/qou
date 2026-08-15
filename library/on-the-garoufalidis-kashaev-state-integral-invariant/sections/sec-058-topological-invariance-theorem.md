@@ -7,6 +7,7 @@ section_number: null
 pages: 56-58
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
+doc_brief: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
 ---
 Theorem 9 (Topological Invariance). LetM be a compact, oriented 3-manifold with
 torus boundary and H2(M, Z) = 0. Then the state-integral

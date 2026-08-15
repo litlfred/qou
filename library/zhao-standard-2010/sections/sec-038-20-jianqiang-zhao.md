@@ -7,6 +7,7 @@ section_number: 20
 pages: 20-21
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
+doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm V alues at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
 ---
 which implies that
 LN (2, 1, i, 0) + LN (3, i) = LN (2, 1, i, −i) + LN (2, 1, 0, i). (31)

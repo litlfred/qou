@@ -7,6 +7,7 @@ section_number: 6
 pages: 6-6
 source_pdf: 0405126v1.pdf
 source_sha256: 713498dbe80f7319
+doc_brief: "ASYMPTOTIC BEHA VIORS OF THE COLORED JONES POL YNOMIALS OF A TORUS KNOT HITOSHI MURAKAMI — W e study the asymptotic behaviors of the colored Jones polyn o- mials of torus knots."
 ---
 (ii) the diagonal coeﬃcients give the inverse of the Alexander polyno mial, that
 is, ∑

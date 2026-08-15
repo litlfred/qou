@@ -7,6 +7,7 @@ section_number: 11.4
 pages: 36-37
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 signature ‘cPcbbbdei’ is not 1-eﬃcient. In fact it gives a manifold containing an incom-
 pressible torus which splits the manifold in two Seifert ﬁbres piecesSFS [D2(2, 1)(3, 1)] and

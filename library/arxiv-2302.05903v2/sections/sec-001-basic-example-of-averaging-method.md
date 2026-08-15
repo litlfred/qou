@@ -7,6 +7,7 @@ section_number: null
 pages: 3-4
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 Eq.(3) counts Young diagrams, or the ordered integer partitions, while (4) is the Cauchy identity for the Schur
 functions, i.e. for the characters of linear groups GLN. Technically, upon choosing pk = ¯pk = δk,1 in (4),

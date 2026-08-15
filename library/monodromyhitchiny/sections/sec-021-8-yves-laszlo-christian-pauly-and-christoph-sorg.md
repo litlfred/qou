@@ -7,6 +7,7 @@ section_number: 8
 pages: 9-9
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
+doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
 ---
 Proposition 5.3. In the four cases l = 1, 2, 4 and 8, the image ρl(π1(M0,4,x )) in the projective
 linear group PGL(2, C) is ﬁnite and isomorphic to the groups given in table

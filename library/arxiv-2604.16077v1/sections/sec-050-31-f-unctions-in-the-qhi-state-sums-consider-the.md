@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 20-22
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
 ---
 deﬁned on the curve FN := {(x,y ) ∈ C2| xN +yN = 1} by
 (46) ωN (x,y |0) = 1 , ωN (x,y |n) =
