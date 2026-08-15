@@ -122,28 +122,54 @@ def main():
               f"({float((B_single-AME[iso])/AME[iso]*100):+.1f}%)")
         print(f"    AME/bond = {float(AME[iso]/n_bonds):.3f} MeV")
 
-    # Method-discrepancy flag: binding_canonical (Wenzl-bridge closed
-    # form) reports Δtr(²H) = 0.5952 → B = 2.229 (+0.2%); this H_{3A}-
-    # direct Wedderburn sum reports Δtr(²H) = 0.424 → −28.6%. The two
-    # production trace conventions DISAGREE — this must be reconciled
-    # before the binding endomorphism can be trusted at A≥3.
-    dtr_canonical_2H = mpf("0.5952")
+    # Method-discrepancy flag: compare this H_{3A}-direct Wedderburn sum against
+    # binding_canonical's Wenzl-bridge closed form on the deuteron Δtr.
+    #
+    # ⚠ COMPUTED LIVE, NOT HARDCODED (2026-08-15, bean `qou-jdhm`). This line read
+    #     dtr_canonical_2H = mpf("0.5952")
+    # with prose reporting "→ B = 2.229 (+0.2%)". That constant entered on
+    # 2026-06-15, while the corpus was on **trace convention C**
+    # (z = 1/(√q + 1/√q) = 0.4993203). Convention C was EXCISED BY OWNER RULING on
+    # 2026-08-09 in favour of **convention D** (z = q³/(q²+1) = 0.6126880) — see
+    # `closed_form_tau_M.markov_z`, which documents the switch, and
+    # `docs/coordination/trace-convention-registry.md`. Under D the same call
+    # returns 0.5566260326923999, so the hardcode was quoting an excised
+    # convention, and `method_gap_pct` below — a printed headline of this script —
+    # was being measured against it.
+    #
+    # Do NOT reinstate 0.5952: the D selection is forced rather than stipulated,
+    # via `y_(1^3) = 0` plus the sorry-free
+    # `QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero`.
+    #
+    # Computing it live is the point of the fix. A hardcoded trace value cannot
+    # track a convention change, and the registry's own rule is that
+    # convention-silent trace values are not comparable.
+    from binding_canonical import binding_canonical as _bc
+    from codata_constants import Q_BETA_MEV as _Q_BETA_MEV
+    # Pass the mpf straight through -- `binding_canonical` does `mp.mpf(str(...))`
+    # on it, so a `float()` here would round-trip through binary64 for nothing.
+    # (It does not even reach Δtr, which is read from the two traces below, but a
+    # gratuitous float64 in a computations/ file is what the guard exists to stop.)
+    _r2h = _bc(1, 1, Q_beta_n_mev=_Q_BETA_MEV, use_closed_form=True, verbose=False)
+    dtr_canonical_2H = (fabs(mpf(str(_r2h["tr_M_free"])))
+                        - fabs(mpf(str(_r2h["tr_M_atom"]))))
     dtr_h3a_2H = mpf(results["2H"]["delta_tr"])
     method_gap_pct = float(fabs(dtr_canonical_2H - dtr_h3a_2H) / dtr_canonical_2H * 100)
 
     print()
-    print(f"METHOD DISCREPANCY (²H): binding_canonical Δtr = {float(dtr_canonical_2H):.4f}")
+    print(f"METHOD DISCREPANCY (²H): binding_canonical Δtr = {float(dtr_canonical_2H):.4f}"
+          "  [trace convention D, computed live]")
     print(f"  vs H_{{3A}}-direct Δtr = {float(dtr_h3a_2H):.4f}  ({method_gap_pct:.0f}% gap)")
-    print("The clean +0.19% deuteron result is specific to the Wenzl-bridge")
-    print("convention; the H_{3A} Wedderburn sum disagrees. Reconciling the")
-    print("two binding-trace conventions is a prerequisite for A≥3 closure.")
+    print("The two production trace routes disagree on the deuteron Δtr.")
+    print("Reconciling them is a prerequisite for A≥3 closure.")
 
     wb.set_description(
         "Per-inter-nucleon-bond decomposition of the H_{3A} binding trace "
         "for ²H/³H/³He. FINDING: the H_{3A}-direct Wedderburn trace "
         f"disagrees with binding_canonical (Wenzl bridge) by {method_gap_pct:.0f}% "
-        "on the deuteron Δtr — the +0.19% endomorphism result is "
-        "convention-specific. Reconciling the two conventions is the "
+        "on the deuteron Δtr, with BOTH sides now read under trace convention D "
+        "(the earlier +0.19% figure quoted here was convention C, excised by owner "
+        "ruling 2026-08-09; bean qou-jdhm). Reconciling the two routes is the "
         "prerequisite for the open A≥3 binding problem."
     )
     wb.add_data("per_bond", results)
