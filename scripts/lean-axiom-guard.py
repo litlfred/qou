@@ -87,6 +87,59 @@ def parse_registry(text: str) -> list[tuple[str, str, str]]:
     return out
 
 
+def _module_path(mod: str) -> Path:
+    return LEAN_ROOT / (mod.replace(".", "/") + ".lean")
+
+
+def _olean_path(mod: str) -> Path:
+    return LEAN_ROOT / ".lake/build/lib/lean" / (mod.replace(".", "/") + ".olean")
+
+
+def _qou_imports(src: Path) -> list[str]:
+    out: list[str] = []
+    try:
+        for line in src.read_text().splitlines():
+            m = re.match(r"^import\s+(QOU\.\S+)", line)
+            if m:
+                out.append(m.group(1))
+            elif line.strip() and not line.startswith(("--", "/-", "import")):
+                break
+    except OSError:
+        pass
+    return out
+
+
+def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
+    """Return human-readable staleness complaints.
+
+    The guard reads whatever `.olean`s are on disk. A *missing* olean already fails
+    loudly, but a **stale** one passes silently and reports the axiom status of an old
+    snapshot — which is worthless, and worse than worthless because it looks like
+    assurance. (Found 2026-08-15: the guard reported all-match against 9-day-old oleans
+    while five of the underlying sorries had been closed upstream and three declarations
+    had moved files.) So walk the transitive QOU import cone of every registry module and
+    flag any olean older than its own source.
+    """
+    problems: list[str] = []
+    seen: set[str] = set()
+    stack = [m for m, _, _ in entries]
+    while stack:
+        mod = stack.pop()
+        if mod in seen:
+            continue
+        seen.add(mod)
+        src, ole = _module_path(mod), _olean_path(mod)
+        if not src.exists():
+            continue
+        stack.extend(_qou_imports(src))
+        if not ole.exists():
+            problems.append(f"{mod}: olean MISSING")
+            continue
+        if ole.stat().st_mtime < src.stat().st_mtime:
+            problems.append(f"{mod}: olean STALE (source is newer)")
+    return problems
+
+
 def run_axiom_check(entries: list[tuple[str, str, str]]) -> dict[str, set[str]]:
     """Return {decl: set-of-axioms}. One lean invocation for the whole batch."""
     modules = sorted({m for m, _, _ in entries})
@@ -156,6 +209,17 @@ def main() -> int:
     if not entries:
         print("axiom-guard: nothing to check")
         return 0
+
+    stale = check_freshness(entries)
+    if stale:
+        print("axiom-guard: refusing to report — the olean set does not match the source.",
+              file=sys.stderr)
+        for pr in sorted(stale):
+            print("  " + pr, file=sys.stderr)
+        print("\nRebuild the affected modules lean-direct, then re-run. A verdict from a stale\n"
+              "olean set is not assurance — it is the axiom status of an old snapshot.",
+              file=sys.stderr)
+        return 2
 
     found = run_axiom_check(entries)
 
