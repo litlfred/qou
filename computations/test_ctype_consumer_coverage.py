@@ -367,6 +367,11 @@ EQUALITY_TEST_BASELINE: dict[str, str] = {
     # averaged), not on a ctype. Its `averaged` is the InterfaceKind label,
     # whose δ-aware factor is applied at the value layer.
     "_habiro_coefficient_extract.py:166": "InterfaceKind vocabulary, not ctype",
+    # Same file, SECOND site — a tally over the InterfaceKind values returned
+    # by `canonical_interface_kinds`, not over ctypes. It stayed invisible
+    # until the per-file `break` was removed, which is precisely why that
+    # break was wrong: one baselined site was silently standing in for two.
+    "closed_form_tau_M.py:445": "InterfaceKind tally, not ctype",
 }
 
 _EQ_AVERAGED = re.compile(r"""[!=]=\s*['"]averaged['"]""")
@@ -407,7 +412,13 @@ def part_e() -> None:
             if "averaged_weighted" in near or ".startswith(" in near:
                 continue  # this SITE handles the family
             found.append(f"{rel}:{i + 1}")
-            break
+            # NO `break`. An earlier cut stopped at the first match per file,
+            # which silently re-introduced file-level granularity into a check
+            # whose whole point is per-site precision: later `== 'averaged'`
+            # sites in the same file were never examined, and their baseline
+            # entries would read as stale. Caught by Copilot on #5028 — the
+            # third time in this arc that a coarse scope quietly cleared
+            # something it never looked at.
 
     new = [f for f in found if f not in EQUALITY_TEST_BASELINE]
     stale = [f for f in EQUALITY_TEST_BASELINE if f not in found]
