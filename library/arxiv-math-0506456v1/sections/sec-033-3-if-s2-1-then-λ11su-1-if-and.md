@@ -7,7 +7,7 @@ section_number: 3
 pages: 33-35
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
-doc_brief: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e"
+doc_brief: "Asymptotics of the quantum invariants for surgeries on the figure-8 knot (Andersen–Hansen, JKTR) — asymptotic expansion of the SU(2) Reshetikhin–Turaev invariants for surgeries on 4₁."
 ---
 only if λ12(s,u ) = 0. Therefore ρ(s,u)(λ) is diagonalizable (or diagonal) if and only
 if s2 ⁄= 1. In case s2 ⁄= 1 and λ12(s,u ) ⁄= 0 we have

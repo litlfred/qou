@@ -7,7 +7,7 @@ section_number: 2
 pages: 20-20
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
-doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 four representations of Z2 × Z2 are conveniently labeled by representations of Spin(8) tha t
 realize them; we will call them o (associated with the trivial representation of Spin(8)), v

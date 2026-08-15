@@ -7,7 +7,7 @@ section_number: 2.4
 pages: 10-10
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
-doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 The N = 2 algebra has “large” representations with 16 states and “s mall” ones with
 only four states. As explained in [13], the masses of particl es in small representations

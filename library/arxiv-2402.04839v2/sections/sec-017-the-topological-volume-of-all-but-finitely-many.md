@@ -7,7 +7,7 @@ section_number: null
 pages: 19-21
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
-doc_brief: "On a volume invariant of 3–manifolds — 22 sections: Introduction; Properties, examples and questions; Definition of topological volume a"
+doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
 ---
 Agol [Ago10Ago10] showed thatWandPare the minimal volume orientable hyperbolic 3-manifolds
 with two cusps. This property is key for the following:

@@ -7,7 +7,7 @@ section_number: 6.1
 pages: 19-20
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
-doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
+doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
 ---
 Let us assume that the complex T has no boundary, and that the function ∆ is such
 that all of the cone angles (computed using Lemma 1.2) are equal to 2π, so that

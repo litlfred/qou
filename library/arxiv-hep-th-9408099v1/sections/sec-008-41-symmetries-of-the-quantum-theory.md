@@ -7,7 +7,7 @@ section_number: 4.1
 pages: 14-15
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
-doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 Now we consider the quantum modiﬁcations to the symmetry str ucture. Since the
 one-loop beta function of the theory is proportional to 4 −Nf (higher order perturba-

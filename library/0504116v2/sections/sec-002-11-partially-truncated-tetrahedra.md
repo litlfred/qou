@@ -7,7 +7,7 @@ section_number: 1.1
 pages: 2-4
 source_pdf: 0504116v2.pdf
 source_sha256: 24a8c998e40aed5d
-doc_brief: "On deformations of hyperbolic 3–manifolds with geodesic boundary ROBERTO FRIGERIO Let M be a complete ﬁnite-volume hyperbolic 3–manifold with compact non-empty geodesic boundary and k toric cusps, and"
+doc_brief: "On deformations of hyperbolic 3-manifolds with geodesic boundary (Frigerio, AGT 6 (2006) 435–457) — the solution variety of consistency equations for a geometric partially truncated triangulation…"
 ---
 A partially truncated tetrahedron is a pair (∆,I), where ∆ is a tetrahedron andI is a
 set of vertices of ∆, that will be called ideal vertices. In the sequel we will always refer

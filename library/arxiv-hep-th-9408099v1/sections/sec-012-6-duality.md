@@ -7,7 +7,7 @@ section_number: 6
 pages: 20-22
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
-doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 As in the pure gauge theory [9], we can perform SL(2, Z) duality transformation on
 the low energy ﬁelds. Although they are non-local on the phot on ﬁeld Aµ, they act simply

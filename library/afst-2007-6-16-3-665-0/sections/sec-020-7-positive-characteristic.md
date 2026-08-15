@@ -7,7 +7,7 @@ section_number: 7
 pages: 47-49
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
-doc_brief: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques — 24 sections: Introduction; Classiﬁcation of q-diﬀerence equat; Some notation and formulas"
+doc_brief: "Galois theory of q-difference equations (van der Put–Reversat, Ann. Fac. Sci. Toulouse XVI:3, 2007, 665–718) — Galois-theoretic framework for q-difference equations."
 ---
 Atiyah’s paper makes some excursions to positive characteristic. Here,
 wedothesamefor q-diﬀerenceequations.Wereplacetheﬁeld Cb yaﬁeldC

@@ -7,7 +7,7 @@ section_number: 7
 pages: 20-21
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
-doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
+doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
 ---
 In the Introduction we alluded to the cell decomposition of the modu li space M
 of Euclidean structures, where the cells are given by Euclidean stru ctures where

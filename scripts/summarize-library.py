@@ -247,8 +247,15 @@ def main() -> int:
             except Exception:
                 prev = {}
             if (prev.get("provenance") or {}).get("kind") == "agent":
-                rows.append(prev)      # never clobber a hand-written summary
+                # Keep the summary, but still push its brief into the chunks:
+                # an agent-written brief is the one most worth having there,
+                # and an earlier version of this skipped injection along with
+                # regeneration, leaving the best briefs out of the sections
+                # that most needed them.
+                rows.append(prev)
                 kept += 1
+                if args.apply and not args.index_only and not args.no_inject:
+                    injected += inject_context(d, prev.get("brief", ""))
                 continue
         s = build(d)
         if not s:

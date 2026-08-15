@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0506456v1",
  "source_sha256": "ce11210245a29eec",
- "brief": "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e",
- "extended": "**Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗†**\n\n70 pp, 78 sections.\n\n**Abstract.** W e investigate the Reshetikhin–Turaev invariants associa ted to SU(2) for the 3– manifolds M obtained by doing any rational surgery along the ﬁgure 8 knot . In partic- ular, we express these invariants in terms of certain comple x double contour integrals. These integral formulae allow us to propose a formula for the leading asymptotics of the invariants in the limit of large quantum level. W e analyz e this expression using the saddle point method. W e construct a certain surjection f rom the set of stationary points for the relevant phase functions onto the space of con jugacy classes of nonabelian SL(2,C)–representations of the fundamental group of M and prove that the values of these phase functions at the relevant stationary points equ als the classical Chern–Simons invariants of the corresponding ﬂat SU(2)–connections.\n\n**Outline.** Abstract; 1 Introduction; 2 Asymptotics of the quantum invariants for th; 4 Asymptotics of the quantum invariants for th; 6 Asymptotics of the quantum invariants for th; 8 Asymptotics of the quantum invariants for th; 20 In case |p/q| >; 10 Asymptotics of the quantum invariants for t; Acknowledgements; 2 The RT-invariant for surgeries on the ﬁgure ; 12 Asymptotics of the quantum invariants for t; 3 A complex double contour integral formula fo; 14 Asymptotics of the quantum invariants for t; 16 Asymptotics of the quantum invariants for t; 4 The large r asymptotics of J ′; 4.1 Semiclassical asymptotics of the quantum d; 2 Vol(K), (4.25); 2 (J+(r,ε ) +J−(r,ε )),\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The leading order large r asymptotics of the colored Jones polynomial\n- Theorem 3: Assume that p/q ⁄= 0. IF Conjecture 2 is true and if all the critical\n- Theorem 5: Let (s,u ) ∈ C∗ × C. None of the assignments ρ(s,u) extend to an\n- Theorem 6: Assume that ρ0(µ) = ρ1(µ) = 1. Thinking\n- Theorem 7: The map ( x,y ) ↦→ρ(eπix,e2πiy −1) gives a surjection ϕ from the set\n- Theorem 8: Let (x,y ) ∈ C2 such that ρ(eπix,e2πiy −1) is equivalent to a nonabelian",
+ "brief": "Asymptotics of the quantum invariants for surgeries on the figure-8 knot (Andersen–Hansen, JKTR) — asymptotic expansion of the SU(2) Reshetikhin–Turaev invariants for surgeries on 4₁.",
+ "extended": "**Asymptotics of the quantum invariants for surgeries on the figure 8 knot** — Jørgen Ellegaard Andersen and Søren Kold Hansen. Journal of Knot Theory and Its Ramifications. arXiv:math/0506456v1 [math.QA], 22 Jun 2005.\n\nInvestigates the Reshetikhin–Turaev invariants associated to SU(2) for the 3-manifolds obtained by surgery on the figure-eight knot, and their asymptotic expansion.\n\n**Why it may bear here.** The figure-eight complement is the calibration object of this corpus (Vol(4₁) = 2·Cl₂(π/3) pins the CAL-2 modulus), and asymptotic expansions of its quantum invariants are the volume-conjecture side of that same knot. Adjacent to the Ohtsuki 5₂ asymptotics already held.",
  "tokens": {
-  "brief": 47,
-  "extended": 564
+  "brief": 45,
+  "extended": 170
  },
  "sections": [
   {
@@ -401,12 +401,12 @@
   }
  ],
  "provenance": {
-  "kind": "extractive",
+  "kind": "agent",
   "from": [
+   "title-page",
    "abstract",
-   "section-titles",
-   "candidates"
+   "opening-text"
   ],
-  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+  "note": "Written after reading the document, not assembled mechanically. Regeneration preserves this (summarize-library keeps kind==\"agent\"). The \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
  }
 }

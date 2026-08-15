@@ -7,7 +7,7 @@ section_number: 4
 pages: 9-9
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
-doc_brief: "Arithmetic of Hyperbolic Manifolds — 36 sections: Introduction; PSL2C has algebraic integer trace ; Trace-ﬁelds"
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 The main results of this section are Theorem 4.6 and its Corollary, which set strong limits
 on the possible lengths of short geodesics in arithmetic cusped hyperbolic orbifolds,

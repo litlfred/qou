@@ -7,7 +7,7 @@ section_number: null
 pages: 37-38
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
-doc_brief: "Arithmetic of Hyperbolic Manifolds — 36 sections: Introduction; PSL2C has algebraic integer trace ; Trace-ﬁelds"
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 [A1] Adams, C., Limit volumes of hyperbolic 3-orbifold. Preprint.
 [A2] Adams, C., Non-compact hyperbolic 3-orbifolds of small volume. These Proceedings.

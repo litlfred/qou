@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-9907032v1",
  "source_sha256": "1850f32a2375c8ce",
- "brief": "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A",
- "extended": "**Combinatorial optimization in geometry 1**\n\n*Igor Rivin Mathematics Institute, Warwick University*\n\n27 pp, 18 sections.\n\n**Outline.** Introduction; 1 BACKGROUND; 2 NECESSARY CONDITIONS ON DIHEDRAL ANGLES; 3 SUFFICIENCY OF CONDITIONS 2.1 AND 2.2; L If the feasible region of L is empty, the pr; 4 DIHEDRAL ANGLES OF DELAUNAY TRIANGULATIONS; 4.1 Some corollaries and reﬁnements; 5 A NETWORK FLOW APPROACH; 3 (a triangle cannot have all angles greater t; 6 DELAUNAY TRIANGULATIONS OF INFINITE SETS OF ; 2.2 (when F = T ) no longer exists. Since the ; 6.1 Remarks and Corollaries; 7 DELAUNAY CELLS IN MODULI SPACE; 8 COMPUTATIONAL COMPLEXITY; 9 SOME APPLICATIONS TO COMBINATORIAL GEOMETRY; 10 LINEAR HYPERBOLIC STRUCTURES ON 3-MANIFOLDS; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.4: Let ∆ : E(T ) → (0, 2π) be an assignment of dihedral angles\n- Theorem 1.6: If the feasible region of L is non-empty and every dihedral angle\n- Theorem 3.1: LetT be a semi-simplicial triangulation of a surface S, possibly\n- Theorem 3.3: Assume that the conditions described in conditions 2.1 and 2 .2\n- Theorem 3.4: The optimal value of the objective of L∗\n- Theorem 4.3: For every non-empty subcomplex F ofT the following are equiv-",
+ "brief": "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities.",
+ "extended": "**Combinatorial optimization in geometry 1** — Igor Rivin. arXiv:math/9907032v1 [math.GT], 6 Jul 1999.\n\nExtends and unifies earlier results, generalising the framework of ideal polyhedra in H³ to that of singular Euclidean structures on surfaces, possibly with an infinite number of singularities. The method is variational: geometric structures are characterised as optima of a combinatorial/convex problem.\n\n**Why it may bear here.** A variational characterisation of ideal hyperbolic structures is the same shape as the LP/SDP optimisation this corpus uses for operator selection, and the ideal-polyhedron setting is where hyperbolic volume comes from. Structural resemblance, not an established connection.",
  "tokens": {
-  "brief": 29,
-  "extended": 315
+  "brief": 48,
+  "extended": 177
  },
  "sections": [
   {
@@ -101,11 +101,12 @@
   }
  ],
  "provenance": {
-  "kind": "extractive",
+  "kind": "agent",
   "from": [
-   "section-titles",
-   "candidates"
+   "title-page",
+   "abstract",
+   "opening-text"
   ],
-  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+  "note": "Written after reading the document, not assembled mechanically. Regeneration preserves this (summarize-library keeps kind==\"agent\"). The \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
  }
 }

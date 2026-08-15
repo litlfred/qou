@@ -7,7 +7,7 @@ section_number: null
 pages: 12-15
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
-doc_brief: "On a volume invariant of 3–manifolds — 22 sections: Introduction; Properties, examples and questions; Definition of topological volume a"
+doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
 ---
 Proposition 4.1The complete list of non-hyperbolic closed 3–manifolds of topological volumes
 at most3.07, their explicit volumes and their minimisers are given in Table 1Table 1. In particular,

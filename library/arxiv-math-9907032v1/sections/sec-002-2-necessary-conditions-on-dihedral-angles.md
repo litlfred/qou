@@ -7,7 +7,7 @@ section_number: 2
 pages: 5-7
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
-doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
+doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
 ---
 In order for the linear program L to have any chance of having a solution, the
 dihedral angles ∆ must satisfy some constraints. Indeed, suppos eL has a solution.

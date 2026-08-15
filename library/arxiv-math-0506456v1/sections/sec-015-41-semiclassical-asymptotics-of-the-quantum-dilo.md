@@ -7,7 +7,7 @@ section_number: 4.1
 pages: 15-16
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
-doc_brief: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e"
+doc_brief: "Asymptotics of the quantum invariants for surgeries on the figure-8 knot (Andersen–Hansen, JKTR) — asymptotic expansion of the SU(2) Reshetikhin–Turaev invariants for surgeries on 4₁."
 ---
 It is well-known that the semiclassical asymptotics, i.e. the small γ asymptotics of
 the quantum dilogarithm Sγ, is given by Euler’s dilogarithm

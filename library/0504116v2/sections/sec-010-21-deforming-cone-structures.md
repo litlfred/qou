@@ -7,7 +7,7 @@ section_number: 2.1
 pages: 13-14
 source_pdf: 0504116v2.pdf
 source_sha256: 24a8c998e40aed5d
-doc_brief: "On deformations of hyperbolic 3–manifolds with geodesic boundary ROBERTO FRIGERIO Let M be a complete ﬁnite-volume hyperbolic 3–manifold with compact non-empty geodesic boundary and k toric cusps, and"
+doc_brief: "On deformations of hyperbolic 3-manifolds with geodesic boundary (Frigerio, AGT 6 (2006) 435–457) — the solution variety of consistency equations for a geometric partially truncated triangulation…"
 ---
 We begin with the following:
 Proposition 2.4 The tangent map dFx0 : Tx0(W)→ R6t−l−(3/2)p−k has maximal rank,

@@ -7,7 +7,7 @@ section_number: 5
 pages: 13-16
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
-doc_brief: "Combinatorial optimization in geometry 1 — 18 sections: Introduction; BACKGROUND; NECESSARY CONDITIONS ON DIHEDRAL A"
+doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
 ---
 There is an alternative way to prove Theorem 3.3 which uses the Max F low-Min Cut
 theorem of network ﬂow instead of the duality theorem of linear pro gramming. It

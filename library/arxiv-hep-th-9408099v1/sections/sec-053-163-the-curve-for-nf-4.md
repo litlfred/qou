@@ -7,7 +7,7 @@ section_number: 16.3
 pages: 65-65
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
-doc_brief: "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg — 70 sections: Introduction; A warm-up example: QED with matter; The classical moduli space"
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 In this subsection we determine the curve for the Nf = 4 theory with arbitrary masses
 (m1,m 2,m 3,m 4). Among other things we will establish triality and SL(2, Z) invariance.

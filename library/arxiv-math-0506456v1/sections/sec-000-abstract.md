@@ -7,7 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
-doc_brief: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† — W e"
+doc_brief: "Asymptotics of the quantum invariants for surgeries on the figure-8 knot (Andersen–Hansen, JKTR) — asymptotic expansion of the SU(2) Reshetikhin–Turaev invariants for surgeries on 4₁."
 ---
 W e investigate the Reshetikhin–Turaev invariants associa ted to SU(2) for the 3–
 manifolds M obtained by doing any rational surgery along the ﬁgure 8 knot . In partic-
