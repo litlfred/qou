@@ -227,3 +227,56 @@ into an empty file.**
    The three manifolds with `n = 9` (9₃₅, o9_00000) and `n ≥ 9` generally are **not**
    emitted: Mathlib stops at `Fin.prod_univ_eight`, and the emitter says so rather than
    emitting something broken.
+
+---
+**2026-08-10 — item 2 (cusp equations) DONE. `QOU/Knot/GeneratedCusp.lean`.**
+
+**42 cusp theorems across 17 manifolds**, machine-generated, sorry-free on standard
+axioms. Emitter added as `emit_cusp`.
+
+### The negative exponents never became `zpow`
+
+This bean assumed cusp equations would need "inverses as explicit polynomials plus `zpow`
+handling". They do not. Every edge parameter is a unit, so
+
+    ∏ paramᵉ = 1   ⟺   ∏_{e>0} paramᵉ  =  ∏_{e<0} param^{−e}
+
+and **both sides now have natural exponents**. Clearing denominators turns the whole
+thing into one polynomial identity — exactly the edge case — so the same exact-division
+cofactor works. `zpow` appears nowhere, and no invertibility bookkeeping is threaded
+through the statements.
+
+That is a strictly simpler design than this bean anticipated, and worth recording as the
+reason cusp equations turned out cheap rather than expensive.
+
+### ⚠ Three of forty-two need a different tactic shape, and it is not visible in advance
+
+When the cofactor is **0** the cusp identity is a plain ring identity, and the preceding
+`simp only [zⱼ]` closes the goal outright — so a bare `linear_combination` fails with
+**"No goals to be solved"**. Measured: 3 of 42.
+
+Fix: emit `all_goals linear_combination …`, which succeeds on zero goals, so **one
+emission shape covers both cases**. Recorded at the emission site.
+
+This is the third time in this bean a generated proof failed for a reason that is a
+property of the *tactic state* rather than the mathematics:
+
+1. `fin_cases` leaving `⟨0, ⋯⟩` unreduced → looked like a wrong cofactor;
+2. no `Matrix.cons_val_four`, so `simp only` silently stops at n ≥ 5 → looked like a
+   wrong cofactor;
+3. cofactor 0 closing the goal early → looked like a broken emission.
+
+In all three the mathematics was already correct and asserted exact in the generator
+*before* emission. **That assertion is what made each one cheap to diagnose** — it ruled
+out the arithmetic immediately, leaving only the tactic state.
+
+### Remaining on this bean
+
+1. **Degrees 7–14** — the only item left untouched. Route 75 verifies them in Python;
+   Lean has nothing.
+2. ~~Cusp equations~~ — done.
+3. ~~Wiring~~ — done.
+
+Cusp equations are the **completeness** condition on the cusp, not the edge condition;
+satisfying them still says nothing about whether any of this is a triangulation *of* a
+knot complement.

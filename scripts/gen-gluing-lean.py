@@ -252,3 +252,94 @@ def emit_certification(d):
     A("  exacts [" + ", ".join(f"cleared_{k} ht" for k in range(len(edge_rows))) + "]\n")
     A(f"end Cert{ident}\n")
     return "\n".join(L)
+
+
+# ─── cusp equations (bean qou-glhi) ──────────────────────────────────────────
+#
+# Cusp rows carry NEGATIVE exponents, e.g. 5_2's `[2,0,-3, 1,0,-2, 0,0,1]`, so they are
+# not directly a product of natural powers.  The obvious route is `zpow`, which drags
+# `Int` exponents and invertibility through every statement.
+#
+# THE CHEAPER ROUTE, used here: split by sign.  Since every edge parameter is a unit,
+#
+#     prod param^e = 1     <=>     prod_{e>0} param^e  =  prod_{e<0} param^{-e}
+#
+# and both sides now have NATURAL exponents.  Clearing denominators on each side turns
+# the whole thing into one polynomial identity, exactly like the edge case, so the same
+# exact-division cofactor works and no zpow appears anywhere.
+#
+# Verified before emission: the residual mod the minimal polynomial is asserted zero, so
+# a wrong split fails here rather than producing Lean that will not compile.
+
+def _cusp_parts(row, n, j_expr):
+    """Return (numL, denL, numR, denR) as lists of (factor_string, exponent)."""
+    numL, denL, numR, denR = [], [], [], []
+    for j in range(n):
+        z = j_expr(j)
+        for t in range(3):
+            e = row[3 * j + t]
+            if e == 0:
+                continue
+            num_t = {0: f"{z}", 1: None, 2: f"({z} - 1)"}[t]
+            den_t = {0: None, 1: f"(1 - {z})", 2: f"{z}"}[t]
+            tgt_n, tgt_d = (numL, denL) if e > 0 else (numR, denR)
+            m = abs(e)
+            if num_t: tgt_n.append((num_t, m))
+            if den_t: tgt_d.append((den_t, m))
+    return numL, denL, numR, denR
+
+
+def emit_cusp(d):
+    """Emit the cusp equations for one manifold, sign-split and denominator-cleared."""
+    import snappy
+    nm = d["name"]
+    ident = nm.replace("_", "").replace("-", "")
+    n = d["n"]
+    P, Z = d["P"], d["Z"]
+    rows = [[int(v) for v in r] for r in snappy.Manifold(nm).gluing_equations()][n:]
+    if not rows:
+        return f"-- {nm}: no cusp equations\n"
+    L, A = [], lambda s: L.append(s)
+    A(f"/-! ### `{nm}` cusp equations -/\n")
+    A(f"namespace Cusp{ident}")
+    A(f"open QOU.Knot.GeneratedGluing.K{ident}\n")
+    for k, row in enumerate(rows):
+        # symbolic cofactor, asserted exact
+        NumL = NumR = DenL = DenR = sp.Integer(1)
+        for j in range(n):
+            z = Z[j]
+            for t, (num, den) in enumerate([(z, sp.Integer(1)),
+                                            (sp.Integer(1), 1 - z),
+                                            (z - 1, z)]):
+                e = row[3 * j + t]
+                if e > 0:
+                    NumL *= num ** e; DenL *= den ** e
+                elif e < 0:
+                    NumR *= num ** (-e); DenR *= den ** (-e)
+        diff = sp.expand(sp.together(NumL * DenR - NumR * DenL))
+        q, r = sp.div(sp.Poly(diff, x), sp.Poly(P, x))
+        assert sp.expand(r.as_expr()) == 0, f"{nm} cusp {k}: RESIDUAL NONZERO"
+        nl, dl, nr, dr = _cusp_parts(row, n, lambda j: f"z{j} t")
+        def fmt(parts):
+            return " * ".join(f"{s} ^ {e}" for s, e in parts) or "1"
+        lhs = f"({fmt(nl)}) * ({fmt(dr)})"
+        rhs = f"({fmt(nr)}) * ({fmt(dl)})"
+        used = sorted({j for j in range(n) if any(row[3 * j + t] for t in range(3))})
+        A(f"/-- **Cusp {k}** of `{nm}`, exponents `{row}`.")
+        A("")
+        A("Negative exponents are removed by moving those factors to the other side —")
+        A("legitimate because every edge parameter is a unit — and then denominators are")
+        A("cleared, leaving a polynomial identity. -/")
+        A(f"theorem cusp_{k} {{t : ℂ}} (ht : minpoly t = 0) :")
+        A(f"    {lhs} = {rhs} := by")
+        A(f"  simp only [minpoly] at ht")
+        if used:
+            A(f"  simp only [{', '.join(f'z{j}' for j in used)}]")
+        # `all_goals`, not a bare call: when the cofactor is 0 the identity is a plain
+        # ring identity and the preceding `simp only` closes the goal outright, so a bare
+        # `linear_combination` errors with "No goals to be solved".  Measured: 3 of 42
+        # cusp equations are in that case.  `all_goals` succeeds on zero goals, so one
+        # emission shape covers both.
+        A(f"  all_goals linear_combination ({lean_expr(sp.expand(q.as_expr()))}) * ht\n")
+    A(f"end Cusp{ident}\n")
+    return "\n".join(L)
