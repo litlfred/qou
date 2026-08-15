@@ -77,7 +77,17 @@ Q_MUON_50_WRONG = "1.10997859555733471989976322048322502665620840878015"
 # Keys that name a substrate anchor. Deliberately narrow: `q` alone is also
 # used for unrelated quantities, so a value only counts when it also lands in
 # the q₀ neighbourhood (see `classify`).
-Q_KEYS = {"q0", "q_0", "q0_value", "q", "substrate_q0", "q0_anchor", "q_parameter"}
+# NOTE the camelCase entries. `stamp_staleness_metadata` writes `q0Anchor` /
+# `q0Value`, and matching is done on `k.lower()`, so the snake_case spellings
+# alone silently missed the CANONICAL provenance fields — an earlier revision
+# of this script did exactly that and under-reported them as absent.
+Q_KEYS = {"q0", "q_0", "q0_value", "q", "substrate_q0", "q0_anchor",
+          "q_parameter", "q0value", "q0anchor"}
+
+# The canonical provenance pair, reported separately from raw q0 VALUES: a
+# witness can carry a q0 number without the anchor label, and vice versa, and
+# only the label survives a re-anchoring unambiguously.
+CANONICAL_FIELDS = ("q0Anchor", "q0Value")
 
 # Distance thresholds in ppb from the proton pin.
 PROTON_PPB = 1.0
@@ -171,6 +181,7 @@ def main() -> int:
     args = ap.parse_args()
 
     buckets = collections.Counter()
+    canonical = collections.Counter()
     mixed = []
     per_bucket_files = collections.defaultdict(list)
     total = 0
@@ -185,6 +196,7 @@ def main() -> int:
         except Exception:
             unreadable += 1
             continue
+        canonical[("q0Anchor" in doc, "q0Value" in doc)] += 1
         hits = anchors_in(doc)
         if not hits:
             buckets["NOT RECORDED"] += 1
@@ -216,6 +228,16 @@ def main() -> int:
     print(f"  record NONE        : {buckets['NOT RECORDED']}  "
           f"({buckets['NOT RECORDED'] / total * 100:.1f}%)  "
           f"<- AGENTS.md requires new witnesses to record q0")
+    print()
+    both = canonical[(True, True)]
+    anchor_only = canonical[(True, False)]
+    neither = canonical[(False, False)] + canonical[(False, True)]
+    print("  CANONICAL provenance pair (q0Anchor / q0Value), written by")
+    print("  stamp_staleness_metadata and auto-stamped by build():")
+    print(f"    {both:5d}  both fields")
+    print(f"    {anchor_only:5d}  q0Anchor only")
+    print(f"    {neither:5d}  NEITHER  ({neither / total * 100:.1f}%)  "
+          f"<- the real provenance gap")
     print()
     for name in ("proton", "muon", "truncated-5-digit", "other"):
         if buckets[name]:
