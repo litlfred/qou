@@ -715,6 +715,76 @@ theorem swapAdmissible_word_right_iff (T : StandardYoungTableau μ) {k : ℕ} (h
     cellOf_swapTableau_of_ne _ hk hkn hBk hk2 (by omega) (by omega),
     cellOf_swapTableau_succ T (by omega) hln hla]
 
+/-- **A tableau no generator moves has a single axial distance throughout.**
+
+Chaining `axialDist_eq_of_not_admissible` along `k, k+1, …`: if every generator fixes `T`,
+then all of `T`'s axial distances agree — so they are *all* `+1` (every consecutive pair in a
+row) or *all* `-1` (every pair in a column).
+
+This is the route to non-scalarity that avoids the full SYT-connectivity theorem.  Rather
+than showing two tableaux are joined by swaps, it shows that a tableau admitting **no** swap
+at all is forced to be a single row or a single column — and such a shape has only one
+tableau.  So `#SYT μ ≥ 2` must produce a movable tableau. -/
+theorem axialDist_eq_of_no_admissible (T : StandardYoungTableau μ)
+    (h : ∀ m, 1 ≤ m → m + 1 ≤ μ.cells.card → ¬ SwapAdmissible T m)
+    {k j : ℕ} (hk : 1 ≤ k) (hkj : k ≤ j) (hjn : j + 1 ≤ μ.cells.card) :
+    axialDist T j = axialDist T k := by
+  induction j with
+  | zero => omega
+  | succ j ih =>
+    rcases Nat.lt_or_ge k (j + 1) with hlt | hge
+    · have hkj' : k ≤ j := by omega
+      have hstep : axialDist T j = axialDist T (j + 1) :=
+        axialDist_eq_of_not_admissible T (by omega) (by omega)
+          (h j (by omega) (by omega)) (h (j + 1) (by omega) (by omega))
+      rw [← hstep]
+      exact ih hkj' (by omega)
+    · have : k = j + 1 := by omega
+      rw [this]
+
+/-- A fixed generator at distance `+1` fixes it *within a row*: `¬SwapAdmissible` leaves
+"same row or same column", and same-column would force distance `-1`. -/
+theorem sameRow_of_not_admissible_of_one (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hna : ¬ SwapAdmissible T k) (hd : axialDist T k = 1) :
+    (cellOf T k).1 = (cellOf T (k + 1)).1 := by
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
+  have hm1 : ((cellOf T k).1, (cellOf T k).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using cellOf_mem T hkI
+  have hm2 : ((cellOf T (k + 1)).1, (cellOf T (k + 1)).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using cellOf_mem T hkI'
+  have he1 : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T hkI
+  have he2 : T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 1 := entry_cellOf T hkI'
+  rw [SwapAdmissible, not_and_or, not_not, not_not] at hna
+  rcases hna with hrow | hcol
+  · exact hrow
+  · -- same column would give distance `-1`
+    exfalso
+    have := axialDist_of_sameCol T hm1 (by rw [← hcol] at hm2; exact hm2) he1
+      (by rw [← hcol] at he2; exact he2)
+    omega
+
+/-- The mirror: a fixed generator at distance `-1` fixes it within a column. -/
+theorem sameCol_of_not_admissible_of_neg_one (T : StandardYoungTableau μ) {k : ℕ}
+    (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cells.card) (hna : ¬ SwapAdmissible T k)
+    (hd : axialDist T k = -1) :
+    (cellOf T k).2 = (cellOf T (k + 1)).2 := by
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
+  have hm1 : ((cellOf T k).1, (cellOf T k).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using cellOf_mem T hkI
+  have hm2 : ((cellOf T (k + 1)).1, (cellOf T (k + 1)).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using cellOf_mem T hkI'
+  have he1 : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T hkI
+  have he2 : T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 1 := entry_cellOf T hkI'
+  rw [SwapAdmissible, not_and_or, not_not, not_not] at hna
+  rcases hna with hrow | hcol
+  · exfalso
+    have := axialDist_of_sameRow T hm1 (by rw [← hrow] at hm2; exact hm2) he1
+      (by rw [← hrow] at he2; exact he2)
+    omega
+  · exact hcol
+
 /-- **The braid relation for value-transpositions.**  `s_k s_{k+1} s_k = s_{k+1} s_k s_{k+1}`
 as permutations of `{k, k+1, k+2}` — the symmetric-group relation the whole construction is
 a deformation of.

@@ -1225,3 +1225,35 @@ REMAINING for hoefsmit_seminormal_rep: only the connectivity half of non-scalari
 #SYT mu >= 2 implies SOME generator moves SOME tableau. genMat_ne_scalar already converts
 that into the statement's payload. Also needs (shape lam).cells.card = N to line the index
 m = N - 1 up with the statement; not checked whether that is available.
+
+
+## CONNECTIVITY: the route that AVOIDS the connectivity theorem, and two of its four steps
+
+The last gap is: #SYT mu >= 2 implies SOME generator moves SOME tableau. The obvious route is
+the SYT-connectivity theorem (any two SYT joined by swaps) -- that is the ledger's "all-T
+connectivity" and it is a real theorem. IT IS NOT NEEDED. Contrapositive route instead:
+
+  a tableau that NO generator moves is forced to be a single row or a single column,
+  and such a shape has exactly one tableau.
+
+So a single non-movable T already forces #SYT mu = 1; hence #SYT >= 2 makes EVERY T movable,
+and picking any one finishes. This is strictly weaker than connectivity and only needs facts
+about ONE tableau at a time.
+
+STEP 1 DONE -- axialDist_eq_of_no_admissible (sorry-free, first-try compile): if every
+generator fixes T then all of T's axial distances agree. Chains axialDist_eq_of_not_admissible
+by induction. Since ¬adm forces d = +-1, the common value is +1 or -1.
+
+STEP 2 DONE -- sameRow_of_not_admissible_of_one / sameCol_of_not_admissible_of_neg_one: a
+fixed generator at distance +1 fixes within a ROW (¬adm leaves "same row or same column", and
+same-column would force -1); mirror at -1.
+
+STEP 3 TODO -- chain step 2 over all k: all cells of T lie in one row (resp. one column).
+STEP 4 TODO -- a Young diagram all of whose cells lie in one row IS a single row (cellOf is
+onto mu.cells), and a single row/column has exactly one SYT. Then #SYT mu = 1.
+
+Then genMat_ne_scalar converts it into the statement's payload.
+
+ALSO STILL NEEDED for hoefsmit_seminormal_rep, unrelated to the above: (shape lam).cells.card
+= N, to line the generator index m up with the statement's N - 1. Not checked whether the
+repo has it.
