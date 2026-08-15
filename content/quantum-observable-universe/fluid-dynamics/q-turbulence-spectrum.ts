@@ -4,6 +4,12 @@ export default proposition({
   label: "prop:q-turbulence-spectrum",
   lean: { ref: "qou:QOU.FluidDynamics.q_turbulence_spectrum", validation: "not_checked" },
   title: "$q$-deformed energy cascade and modified Kolmogorov spectrum",
+  uses: [
+    // A hypothesis of the statement, named in its first clause and used again
+    // for the cascade-depth bound. It reaches the substrate parameter, the
+    // block's other prose citation, so that one stays undeclared.
+    "rem:planck-reynolds",
+  ],
   tags: ["turbulence", "kolmogorov", "energy-cascade", "fluid-dynamics", "prediction"],
   authorNotes: [
     {

@@ -23,6 +23,10 @@ export default definition({
     ref: "qou:QOU.FluidDynamics.QNavierStokes",
     validation: "not_checked",
   },
-  uses: [],
+  uses: [
+    // The quantum Euler equation this definition adds dissipation to; the
+    // opening sentence introduces the block as exactly that extension.
+    "rem:madelung-fluid",
+  ],
   tags: ["navier-stokes", "q-deformation", "dissipation", "fluid-dynamics"],
 });
