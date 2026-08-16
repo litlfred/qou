@@ -692,6 +692,28 @@ Tracked: beans `qou-kh7e`, `qou-qb8g`.
 
 ### 9g. Convention provenance — the Q_β ladder is a convention-C object end-to-end (added 2026-08-15, owner redirect)
 
+> **🛑 SUPERSEDED IN PART — owner ruling 2026-08-15** ([audit](../audits/2026-08-15-owner-ruling-convention-d-proton-color.md),
+> bean `qou-cdh1`). Two things below are now settled and one sentence is stale.
+>
+> 1. **The decay channel's convention is adjudicated: it is D.** The ruling
+>    (*"convention D is convention. excise convention C."*) settles what
+>    scope-(a) below explicitly declined to settle. `channels.qbeta-decay` in
+>    [`trace-convention-registry.json`](trace-convention-registry.json) is now
+>    `definitional_convention: "D"`, `status: "agreed-migration-pending"`.
+> 2. **"The Q_β channel is not registered there" is stale.** It *is* registered
+>    — as `disputed` on 2026-08-15 (bean `qou-b3nk`), settled 2026-08-16.
+>
+> **What is NOT superseded — do not re-derive it.** Every number in the measured
+> table below is a correct measurement of the C→D *sensitivity* and stays. In
+> particular `c₃ ≈ −974` is **what the current extractor returns when fed `z_D`
+> — a sensitivity measurement, not a proposed new value of `c₃`.** The ladder
+> must be **re-derived** under D, not re-evaluated, and this is proved rather
+> than assumed: `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free) makes
+> *"keep the C-frame ladder"* and *"the two-row forcing applies here"* mutually
+> exclusive. That re-derivation is bean `qou-cds1`; until it lands, the
+> C-conditional labels on rows `c_2`, `c_3`, KC13, KC21, KC22 above remain
+> correct as written.
+
 The 2026-08-09 owner ruling excised Markov-trace **convention C**
 (`z = √q/(1+q)`) in favour of **D** (`z = q³/(q²+1)`) for the `mass`,
 `binding`, and `borromean` channels of
@@ -803,7 +825,12 @@ the wrong one, and it was doing evidential work it cannot do.
 convention for the Q_β channel (`qou-b3nk` is untouched by this section: the
 addendum to §9g above registers the channel `disputed`, which records the
 disagreement rather than settling it — neither C nor D is derived, and nothing
-here changes that). It
+here changes that). *[Still true of **this section**, whose scope is the parity
+immunity only — but the channel itself was settled the same day by the owner
+ruling of 2026-08-15 (D); see the banner on §9g. What that ruling did **not**
+supply is a derivation, so "neither C nor D is derived" stands as written: the
+convention is now decided, the ladder is not yet re-derived (bean `qou-cds1`).]*
+It
 revives **no** C-conditional value — `c₃`, (H1), `[3]_q/25`, `J−ℏ²`, `S_leak`,
 `q*_S` stay C-conditional per §9g. And it does **not** touch the **bar
 involution**, which is a *different* involution from complex conjugation:

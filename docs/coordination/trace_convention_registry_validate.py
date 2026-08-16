@@ -52,6 +52,15 @@ Rules (errors unless marked):
       its production_convention must have status "disputed" AND a non-null
       `open_item` carrying a bean and an audit. A disputed channel silently
       recorded as agreed is an error.
+
+      "disputed" answers "which convention is right?". It cannot answer "the
+      owner settled it and the code has not moved yet" -- so recording the
+      2026-08-15 ruling on `qbeta-decay`, whose production still returns z_C,
+      forced a choice between lying about the code and losing the ruling.
+      "agreed-migration-pending" (added 2026-08-16, bean qou-cdh1) is that
+      third state: it additionally requires a `resolution` block naming the
+      ruling and its date, and a `production_convention_target` equal to the
+      settled definitional convention.
   R9  EVALUATION (added 2026-08-09, bean qou-wgta item 12): import every entry
       in `evaluators` and CALL IT at q_0, comparing the result to the declared
       convention's own `z_at_q0` / `weights_at_q0` at 1e-40 absolute.
@@ -101,7 +110,7 @@ FORCING_STATUS = {
     "not-a-z-trace",
     "deprecated",
 }
-CHANNEL_STATUS = {"agreed", "disputed"}
+CHANNEL_STATUS = {"agreed", "disputed", "agreed-migration-pending"}
 CONV_DECL = re.compile(r"convention[\s:]+([A-D])\b", re.IGNORECASE)
 REL_TOL = 1e-15
 
@@ -745,9 +754,10 @@ def check_channels(reg: dict, channels=None) -> tuple[list[str], list[str]]:
                           % (ch["id"], st, sorted(CHANNEL_STATUS)))
             continue
         if d != p:
-            if st != "disputed":
+            if st not in ("disputed", "agreed-migration-pending"):
                 errors.append("R8 channel %s: definitional %s != production %s "
-                              "but status is %r -- must be 'disputed'"
+                              "but status is %r -- must be 'disputed' or "
+                              "'agreed-migration-pending'"
                               % (ch["id"], d, p, st))
             oi = ch.get("open_item") or {}
             if not oi.get("bean") or not oi.get("audit"):
@@ -755,6 +765,31 @@ def check_channels(reg: dict, channels=None) -> tuple[list[str], list[str]]:
                               "open_item with a bean and an audit -- a "
                               "convention disagreement may not be recorded "
                               "silently" % (ch["id"], d, p))
+            # 'agreed-migration-pending' separates the two questions R8
+            # originally ran together: WHICH convention is right (settled by an
+            # owner ruling) and HAS THE CODE MOVED (not yet). The old vocabulary
+            # could express only "disputed", so recording a settlement forced a
+            # choice between lying about the code (production := D while the
+            # code returns z_C) and losing the ruling. It demands strictly MORE
+            # evidence than 'disputed' -- which required a bean and an audit and
+            # nothing else -- so it cannot be used to quiet a live dispute.
+            if st == "agreed-migration-pending":
+                res = ch.get("resolution") or {}
+                for field in ("ruling", "date"):
+                    if not res.get(field):
+                        errors.append(
+                            "R8 channel %s is 'agreed-migration-pending' but "
+                            "its resolution block has no %r -- a settlement "
+                            "must name the authority that settled it"
+                            % (ch["id"], field))
+                tgt = ch.get("production_convention_target")
+                if tgt != d:
+                    errors.append(
+                        "R8 channel %s is 'agreed-migration-pending' with "
+                        "production_convention_target %r, which does not match "
+                        "the settled definitional_convention %r -- the target "
+                        "of the migration IS the settled convention"
+                        % (ch["id"], tgt, d))
         elif st == "disputed":
             warnings.append("R8 channel %s: status 'disputed' but the two "
                             "conventions agree (%s)" % (ch["id"], d))

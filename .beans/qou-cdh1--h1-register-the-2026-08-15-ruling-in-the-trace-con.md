@@ -1,11 +1,11 @@
 ---
 # qou-cdh1
 title: 'H1 (hygiene): register the 2026-08-15 ruling in the trace-convention registry'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-15T00:00:00Z
+updated_at: 2026-08-16T02:10:40Z
 ---
 
 Parent: `qou-cdx1`. Audit:
