@@ -49,7 +49,10 @@ LIB = os.path.join(REPO, "library")
 PRODUCER = os.path.join(os.path.dirname(REPO), "folio-assistant",
                         "scripts", "pdf-structure.py")
 
-FIELDS = ("title", "authors_raw", "abstract", "arxiv", "doi")
+# `title_lines` matters as much as `title`: it is what lets a consumer
+# split a byline off, and omitting it here silently withheld the fix
+# that had just been added to the producer for exactly that purpose.
+FIELDS = ("title", "title_lines", "authors_raw", "abstract", "arxiv", "doi")
 
 
 def extract(pdf: str) -> dict | None:
