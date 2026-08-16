@@ -113,6 +113,92 @@ def test_save_does_not_invent_a_pin(tmp_path):
     assert "q0Anchor" not in got, "rebuild invented a pin that was never recorded"
 
 
+def test_stamp_records_independent_without_a_value():
+    """`independent` states the compute never reads q₀, so it carries no value.
+
+    A `q0Value` next to this label is a contradiction the consistency audit
+    reports as Q0_FLIP, so the stamp must not manufacture one.
+    """
+    payload = {}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="python",
+        q0_anchor="independent",
+    )
+    assert payload["q0Anchor"] == "independent"
+    assert "q0Value" not in payload
+
+
+def _tmpdir():
+    import tempfile
+    return tempfile.TemporaryDirectory()
+
+
+def test_save_carries_forward_independent():
+    """An independence declaration survives a rebuild, like any recorded pin.
+
+    Fixture-free on purpose: the direct-run path at the bottom of this file
+    skips anything taking a pytest fixture, and this invariant is worth having
+    under both runners.
+    """
+    import json
+    from pathlib import Path as _P
+
+    with _tmpdir() as d:
+        tmp = _P(d)
+        script = tmp / "qfree_producer.py"
+        script.write_text("# a producer that never reads q0\n")
+        out = tmp / "qfree.witness.json"
+        out.write_text(json.dumps({
+            "computation": "qfree",
+            "scriptFile": "qfree_producer.py",
+            "allPassed": True,
+            "assertions": [],
+            "q0Anchor": "independent",
+        }) + "\n")
+
+        b = w.WitnessBuilder(name="qfree", _script_path=str(script),
+                             output_dir=str(tmp))
+        b.save()
+
+        got = json.loads(out.read_text())
+        assert got["q0Anchor"] == "independent", "independence claim was dropped"
+        assert "q0Value" not in got
+
+
+def test_save_drops_independent_when_payload_gains_a_q0():
+    """The mirror of the muon/proton payload-evidence check.
+
+    If a producer acquires a q₀ dependency, a carried-forward `independent`
+    would vouch for layer-freedom that no longer holds — strictly worse than
+    dropping it, since Q0_ANCHOR_MISSING is a tolerated state.
+    """
+    import json
+    from pathlib import Path as _P
+
+    with _tmpdir() as d:
+        tmp = _P(d)
+        script = tmp / "now_uses_q0.py"
+        script.write_text("# this producer grew a q0 dependency\n")
+        out = tmp / "grew.witness.json"
+        out.write_text(json.dumps({
+            "computation": "grew",
+            "scriptFile": "now_uses_q0.py",
+            "allPassed": True,
+            "assertions": [],
+            "q0Anchor": "independent",
+        }) + "\n")
+
+        b = w.WitnessBuilder(name="grew", _script_path=str(script),
+                             output_dir=str(tmp))
+        b.add_data("q0", "1.1099785827513808075916690956107688798744991218736")
+        b.save()
+
+        got = json.loads(out.read_text())
+        assert "q0Anchor" not in got, (
+            "a stale independence claim survived onto a witness that now "
+            "records a proton q0")
+
+
 # RETRACTED 2026-08-15. Two tests stood here asserting the muon label must
 # equal `q_muon_at()`, on the premise that re-running `q_pinning_50_digit.py`
 # would flip the label to a proton value. That premise is FALSE — the producer

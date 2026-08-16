@@ -1043,6 +1043,22 @@ When working on math-affecting code or content, **trace the change to a step in 
 > **Route every absolute nucleon/atom mass through the single facade [`computations/canonical_mass.py`](computations/canonical_mass.py)** (`proton_mass_mev` / `neutron_mass_mev` / `nucleon_mass_mev`). `mass_vol_density` / `vol_density_borromean` / `linking_weight_family_a` (=λ_A) are **deprecated for absolute mass** (emit `DeprecationWarning`); `vol_density_per_block` stays valid for **binding ratios only** (scale cancels). Read first: [`docs/canonical-mass-formula-guardrail.md`](docs/canonical-mass-formula-guardrail.md). Why it recurred: this very banner read with `K=𝓑₃` *is* the wrong form — that's the trap the facade closes.
 
 > **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is PROVED Taylor-exact; `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` swings up to 3.47 % at m_p-pin q₀ (≈ 3 % cross-anchor)), with the N=4 → N=5 non-monotonicity as the experimental signature. Report TIERED (`proved` / `near-match` / `fitted`), never binary wired/dropped — the four-session wire/un-wire flip-flop (#1452 ↔ #1479) came from conflating "N=3 beats 100× experimental" (true) with "c_3 = -2 is Taylor-exact" (false). **Canonical reference (read before any `c_k` wire/un-wire decision): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).** Permanent fix is the Q_β Habiro element (parallel α_EM `[2]_q·(1−h²α)` in PR #1511). **2026-05-31 c_3 SETTLED** (PR #1580 verdict audit + flip-flop history table now at 6 entries in [`docs/coordination/1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md)); Li_2^q × spectral combiner refuted as mech #7 (PR #1609); Δtr_M bar-decomposition recorded as structural observation (PR #1615) — none of these wire to production.
+>
+> **🛑 CONVENTION LABEL (2026-08-15 ruling) — every number in this banner is
+> CONVENTION-C-frame.** `c_2 = -1`, `c_3 = -2 = J_Hopf(q=1)`, the 3.47 % swing,
+> and the whole `c_k` ladder were derived with the Markov parameter
+> `z = √q/(q+1)` (convention C). The owner ruling of 2026-08-15 makes
+> **convention D (`z = q³/(q²+1)`) canonical**. The values above are **correct
+> for C** and are kept as recorded — they need *scoping*, not correction; do
+> **not** "fix" them. **The ladder must be RE-DERIVED under D, and that is not
+> a z-swap** — `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`
+> ([`MarkovZFullBarCondition.lean`](content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
+> sorry-free) makes the C-frame ladder and the mass channel's three-row forcing
+> mutually exclusive, so substituting `z_D` into the existing ladder is not a
+> valid move. Until the re-derivation lands, treat every `c_k` conclusion —
+> including the downstream `c₃^even = −Vol(4₁)`, `[3]_q/25`, `J − ℏ²`, `S_leak`
+> and `q*_S` facts — as **C-conditional**. Tranche S1, bean `qou-cds1`;
+> §S1 of [`docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md`](docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md).
 
 > **⚠ Critical framing — Im(q) at fibre vs observable level (2026-06-01).** A recurrent source of confusion in the c_k flip-flop saga and the (1+q)/2 Option-E v9 near-match: distinguish two levels of "Im(q)":
 >
@@ -1218,22 +1234,47 @@ Do not regress either.
 
 ### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)
 
-> **🛑 OWNER RULING 2026-08-15 — proton pin canonical; convention D canonical,
-> convention C excised; colour weighting canonical.** Verbatim: *"convention D is
+> **🛑 OWNER RULING 2026-08-15 — convention D canonical (C excised); proton pin
+> canonical; colour weighting canonical.** Verbatim: *"convention D is
 > convention. excise convention C."* / *"similarly, use proton pin and color
-> wighting"*. **READ FIRST:**
-> [`docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md`](docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md)
-> — the ruling record, the measured blast radius, and the ordered tranche plan
-> (hygiene vs SCIENCE). It supersedes the `disputed` registration of the
-> `qbeta-decay` trace channel (PR #5111) and answers the trace-convention
-> registry's one `owner_decision_required`.
+> wighting"*. Record, measured blast radius, and ordered tranche plan:
+> [`docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md`](docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md).
+> It supersedes the `disputed` registration of the `qbeta-decay` trace channel
+> (PR #5111) and answers the trace-convention registry's one
+> `owner_decision_required`.
 >
-> **This section's tables and rules below are NOT yet updated to the ruling** —
-> the audit doc §6 lists exactly which lines must change, pending owner approval
-> of the wording. In particular the "~840 muon-q₀ witnesses" figure in rule 2 is
-> **measured at 870** (801 muon-only, 69 carrying both pins). Until those edits
-> land, follow the 2026-08-07 directive below, which the ruling reinforces
-> rather than reverses.
+> - **R1 — convention D (`z = q³/(q²+1)`) canonical; C (`z = √q/(q+1)`)
+>   excised.** **Largely a RE-AFFIRMATION** — the 2026-08-09 ruling had
+>   already excised C. R1's new work is the two surviving carve-outs: the
+>   `qbeta-decay` channel registered `disputed` (PR #5111) and the registry's
+>   one `owner_decision_required`. It removes the *convention* question from
+>   `tools/pyhecke/gram.py::z` but **not** the Gram singularity under D —
+>   that is a numerical blocker, bean `qou-cds2`.
+>
+>   **A clean detector run is NOT evidence the C surface is clear.**
+>   [`scripts/convention-c-producer-audit.py`](scripts/convention-c-producer-audit.py)
+>   reports **0 actionable C producers** (3 blocked-by-design sites in
+>   `tools/pyhecke`, 9 labelled comparisons). That count is real but
+>   **narrow**: it keys on *assignment targets*, so a convention-C value
+>   **returned from a function** is structurally invisible to it. Measured
+>   2026-08-16 — **7 files** return `1/(√q + 1/√q)`, which is `√q/(q+1) = z_C`
+>   *exactly* (`0.49932…` against D's `0.61268…`). PR #5124 catalogues five
+>   such detector-blind spellings and retracts the earlier "0 actionable"
+>   reading outright. So: **treat the remaining C surface as UNMEASURED
+>   rather than clear — and do not launch a corpus-wide sweep off either
+>   number.** R1 settles which convention is canonical; it does not tell you
+>   how much code still disagrees.
+> - **R2 — proton pin canonical.** Reaffirms the 2026-08-07 directive
+>   immediately below; nothing in that directive changes. The *ideal CAL-2
+>   definition* (`𝔇_β`, proxy `m_μ/m_e`) is untouched — R2 governs which pin
+>   code **evaluates** at, not what the calibration **is**.
+> - **R3 — `bring_color_weighted` canonical** as the p/n convention. Six live
+>   non-comparison files are still off-canon (bean `qou-cds4`).
+>
+> **The Q_β `c_k` ladder is convention-C-frame throughout and has not been
+> re-derived** (bean `qou-cds1`) — see the convention note on the `c_k`
+> truncation-order banner earlier in this document before wiring or
+> un-wiring any `c_k`.
 
 > **🟧 OWNER DIRECTIVE (2026-08-07) — ALL AGENTS AND ALL PRODUCTION CODE
 > DEFAULT TO THE EXPERIMENTAL (PROTON) ANCHOR.** When any code, probe,
@@ -1328,7 +1369,14 @@ muon; muon-anchor → ~4000σ on proton).
    - **`computations/` layer** historically carries **muon-q₀**
      witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
      `1.10997859555733471…` (−11.5 ppb), feeding ~72 producers /
-     ~840 witnesses — the canonical 3-CAL (muon) derivation witnesses.
+     **870** witnesses — the canonical 3-CAL (muon) derivation witnesses.
+     (Re-measured 2026-08-15 and again 2026-08-16 over the 2941 tracked
+     `computations/*.witness.json`: **870** carry the muon fingerprint —
+     **801 muon-only** and **69 also carrying the proton pin**. The
+     previous figure here was "~840"; the error was **low, not
+     stale-high**. A both-pin witness is either a deliberate comparison
+     or a layer straddle — see the straddling hazard above; triage is
+     bean `qou-cds3`.)
      These remain **valid as recorded** (they are what they say they are)
      but are **no longer the default an agent should reach for**; see
      rule 4 for the migration posture.
@@ -1339,12 +1387,16 @@ muon; muon-anchor → ~4000σ on proton).
    (m_μ ≈ 105.6583978, 963.6×) is the **canonical** value; a fresh run
    that reads the muon-q₀ Borromean witness (≈ 105.6583756, 1.36 ppb)
    is the symptom.
-4. **Migration posture for the ~840 muon-q₀ `computations/` witnesses
-   (updated 2026-08-07).** The owner directive above sets the *target end
-   state*: experimental (proton) everywhere in compute. It does **not**
-   authorise a bulk rewrite as an idle-drain — that sweep is large, is
-   tracked under bean **`qou-1c4y`**, and still needs scoped sign-off
-   before it runs. Concretely:
+4. **Migration posture for the 870 muon-q₀ `computations/` witnesses
+   (updated 2026-08-07; count re-measured 2026-08-16).** The owner
+   directive above sets the *target end state*: experimental (proton)
+   everywhere in compute. It does **not** authorise a bulk rewrite as an
+   idle-drain — that sweep is large, is tracked under bean **`qou-1c4y`**,
+   and still needs scoped sign-off before it runs. **The 2026-08-15 ruling
+   (R2) does not change this.** R2 restates the end state; it does not
+   scope the sweep, so the sign-off requirement stands. If the owner
+   intends R2 to authorise the bulk migration, that has to be said here
+   explicitly — do not infer it from R2's wording. Concretely:
 
    > **Bean reference corrected 2026-08-15.** This paragraph previously
    > said the sweep is "tracked under bean `tnjb`". It is not, and the
