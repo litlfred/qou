@@ -5,7 +5,16 @@ export default definition({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "def:hyperelliptic-quintic",
-  lean: { ref: "qou:QOU.HyperellipticQuintic", validation: "not_checked" },
+  // Was `qou:QOU.HyperellipticQuintic` — that names the *directory*
+  // `QOU/HyperellipticQuintic/`, not a declaration, so it matched two files and
+  // resolved to neither reliably. Pointed at the substantive module: both it and
+  // the 94-line `ScratchZeta5.lean` declare `HyperellipticQuintic`/`zeta5`/
+  // `Zeta5MonodromyContext` in the SAME namespace, but nothing imports Scratch
+  // and this file is the fuller one (124 lines, incl. the monodromy content).
+  lean: {
+    ref: "qou:QOU.HyperellipticQuintic.zeta5_residue_monodromy.HyperellipticQuintic",
+    validation: "not_checked",
+  },
   title: "The hyperelliptic quintic $\\mathcal{X}_5 \\colon y^2 = x^5 - 1$",
   tags: ["hyperelliptic", "genus-2", "bolza", "roots-of-unity"],
   uses: ["prop:lagrange-resolvent-transform"],

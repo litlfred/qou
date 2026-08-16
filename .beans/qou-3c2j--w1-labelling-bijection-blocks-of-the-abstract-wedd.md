@@ -240,3 +240,56 @@ Elaboration note: `spechtRepAt h` is *definitionally* `(spechtRep μ).comp (tran
 but `specht_exhausts_irreducibles` states its conclusion in the unfolded form, so `rw` across
 the two fails on syntax. Bridge with `show`, not with a type ascription — the ascription does
 not survive elaboration (`MonoidHom.comp` wins and `.asAlgebraHom` then fails to resolve).
+
+### Brick 5 — W1+W3 now reduces to ONE NUMBER, and it is combinatorial
+
+`QOU/BraidKnot/SpechtWedderburnCriterion.lean`, sorry-free:
+
+- `spechtProduct_bijective_of_sum_sq` — `spechtProduct` is bijective as soon as
+  `Σ_μ (dim S^μ)² = n!`;
+- `spechtEquiv_of_sum_sq` — the resulting `k[S_n] ≃ₐ[k] ∏_μ End_k(S^μ)`;
+- `sum_sq_of_numSYT` — the hypothesis restated through `dim S^μ = #SYT(μ)`.
+
+**So all three items of the `SnWedderburnPartitionBridge` residual are discharged**: the map is
+partition-indexed by construction (no labelling to choose — W1), each block is `End_k(S^μ)` of
+size `dim S^μ` by construction (W3), and the commutant is the base field (W2, #5139). What is
+left is not representation theory at all: it is
+
+  **`Σ_{μ ⊢ n} (#SYT μ)² = n!`** — the RSK identity, a statement about tableaux.
+
+That reframing is the point of this brick. The remaining work can be attacked
+**combinatorially** (an explicit Robinson–Schensted correspondence) by someone who never touches
+Specht modules, and `spechtEquiv_of_sum_sq` hands them the algebra isomorphism for free.
+
+Note `OVTopAssembly.sum_numSYT_sq_eq_factorial` *states* exactly this identity and carries
+`sorryAx`; this file does not import that cone, so nothing here is circular.
+
+Also proved on the way: `surjective_of_injective_of_finrank_eq` (injective + equal finite
+dimension ⇒ onto). Mathlib has the endomorphism case only; `exact?` fails on the two-space form
+at this pin.
+
+### Brick 6 — the split is UNCONDITIONAL for n ≤ 12
+
+`QOU/BraidKnot/SpechtWedderburnLe12.lean`: `spechtEquiv_le12` — for `n ≤ 12` and any
+characteristic-zero field,
+
+  **`k[S_n] ≃ₐ[k] ∏_{μ ⊢ n} End_k(S^μ)`**
+
+sorry-free AND axiom-free (`#print axioms` = propext / Classical.choice / Quot.sound).
+
+**The number brick 5 reduced everything to is not open at every n.** The corpus already proves
+`Σ_{p ⊢ n} dimSYT(p)² = n!` for `n ≤ 12` — `PartitionsOfBridge.rskBurnsideHolds_le12`,
+`decide`-verified list-model data pushed through the hook-length bridge, with **no RSK
+correspondence anywhere in it**. I did not know this existed until I measured; it is the fifth
+time this session that the corpus turned out to carry more than I credited.
+
+The bridge cost two index changes, both already available:
+`SpechtClassification.partitionEquivYoungIndex` (and its diagram is *definitionally*
+`RSKBurnsideTarget.partitionShape`), and `SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux`
+(the 0-indexed and 1-indexed SYT encodings have the same count).
+
+**Do not confuse this with the general case.** `RSKBridge.RSK_substrate_axiom` is an `axiom`
+asserting the identity for all `n`; nothing here touches it — checked with `#print axioms`, not
+by reading imports. General `n` is the RSK correspondence, under construction in the separate
+Schensted programme (`QOU/Mathlib/SchenstedInsertion.lean`, ~1400 lines, brick 1 of its own
+roadmap done). `sn_isotypic_specht_split` is stated for all `n` and stays open.
