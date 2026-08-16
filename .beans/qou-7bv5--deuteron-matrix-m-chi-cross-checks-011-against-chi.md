@@ -83,3 +83,37 @@ strongest clue and should be explained, not worked around.
 
 **Severity:** the producer prints this and **exits 0**, so a 0/11 mismatch is
 invisible to the harness — the same silent-failure shape as `qou-9d6h`.
+
+## RESOLVED 2026-08-16 — neither path is wrong; the producer under-precises n=6
+
+Ran the matrix-M build in-process with guard digits (`mp.mp.dps = dps + 10`)
+and compared to the Rust `chi_q_via_gp` value:
+
+| dps | worst \|matrixM/rust − 1\| | worst λ |
+|---|---|---|
+| 70 | **9.37e-79** | (3,3) |
+| 90 | **3.50e-98** | (3,3) |
+
+It converges cleanly, ~10^-(dps+9). **Both paths compute the same object
+correctly.** The earlier 0/11 was never a disagreement between the paths.
+
+**Where the digits go.** The committed `dps=50` cache retains only ~7 good
+digits (ratios 1.0000003, scattered, straddling 1) while the identical
+computation with guard digits gives 79. So the loss is inside the producer's
+compute-and-serialize step, not in either χ path.
+
+**Why n=6 and not n=9.** The matrix-M route takes a *parabolic split* at the
+σ₃ bridge (`_split_atom_braid`) and requires exactly one bridge crossing. The
+deuteron's split is ill-conditioned enough to eat ~43 digits at working
+precision 50; helium-3's is not, which is why it matched 30/30 in the same run.
+The worst partition is λ=(3,3) at every precision tested — a rank-5 block —
+which is the place to look.
+
+**Fix direction:** raise the working precision above the requested output `dps`
+inside `build_chi_cache_at_q0_matrix_m` (guard digits), rather than computing at
+exactly `dps`. Then re-emit the deuteron cache and the cross-check should go
+11/11. Worth confirming the guard-digit margin needed scales with n before
+picking a constant.
+
+**Still true and still worth fixing separately:** the producer prints the 0/11
+and exits 0, so the harness cannot see it (same shape as `qou-9d6h`).
