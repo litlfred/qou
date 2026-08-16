@@ -320,3 +320,60 @@ Stated in the file rather than assumed, so nothing downstream can quietly consum
 | generalized Wronskians (independence direction) | open, needs char 0 |
 | Roth's lemma | open — the hard core |
 | Roth's theorem | open |
+
+---
+**2026-08-16 — the Wronskian converse at `m = 2`, characteristic zero. Base case done.**
+
+```lean
+exists_dependence_of_wronskian_eq_zero {K} [Field K] [CharZero K] [DecidableEq K]
+    {a b : K[X]} (ha : a ≠ 0) (hw : wronskian a b = 0) :
+  ∃ c d : K, c ≠ 0 ∧ C c * b + C d * a = 0
+```
+
+Nine declarations in `GenWronskian.lean`, sorry-free, standard axioms.
+
+**The route, once the right Mathlib pieces were found:** divide by the gcd to reach coprime
+`a₁, b₁`; the new `wronskian_mul_mul` (`W(ga, gb) = g²·W(a, b)`) kills the `g²`, so
+`W(a₁, b₁) = 0`; Mathlib's `IsCoprime.wronskian_eq_zero_iff` turns that into
+`a₁' = b₁' = 0`; `eq_C_of_derivative_eq_zero` makes both constant in characteristic zero;
+and `b₁ · a − a₁ · b = 0` is the dependence.
+
+Both of the hard steps were **already in Mathlib** — the coprime criterion and the
+char-zero constancy. Only the scaling identity was missing, and it is two lines.
+
+### ⚠ Three instance/API traps, each costing a build cycle
+
+1. **`EuclideanDomain K[X]` does not synthesize from the Wronskian imports** — it needs
+   `Mathlib.Algebra.Polynomial.FieldDivision` transitively. The error reads as a missing
+   *instance argument*, which sends you to add `[DecidableEq K]`; the real fix is an
+   **import**.
+2. **`isCoprime_div_gcd_div_gcd` uses `GCDMonoid.gcd`, not `EuclideanDomain.gcd`**, and
+   requires the **second** argument non-zero. My hypothesis was `a ≠ 0`, so the proof had to
+   split on `b = 0` instead — the degenerate branch is `1·b + 0·a = 0`.
+3. **`GCDMonoid K[X]` still does not synthesize** after that: the instance is
+   `Polynomial.normalizedGcdMonoid` in `RingTheory/Polynomial/Content.lean`, a third import.
+
+None of these is visible from the statement, and each presents as a different problem than
+it is.
+
+### ⚠ What is NOT proved, restated so the file cannot be over-read
+
+General `m` — the statement Roth's lemma actually consumes. The induction step needs the
+ratio argument in the function field and is materially harder than the base case.
+
+Characteristic zero is **not a convenience**: in characteristic `p` the converse is
+outright **false** for the naive derivative, since `xᵖ` has every derivative zero, so
+`1, xᵖ` are linearly independent with vanishing Wronskian. The file's header said the
+converse was "not proved here"; corrected to say which case is and which is not.
+
+### Standing
+
+| prerequisite | status |
+|---|---|
+| Siegel's lemma | already in Mathlib |
+| index at a point | **done** (18 decls) |
+| generalized Wronskian, vanishing direction | **done** |
+| generalized Wronskian, converse at `m = 2`, char 0 | **done** |
+| generalized Wronskian, converse at general `m` | open |
+| Roth's lemma | open — the hard core |
+| Roth's theorem | open |
