@@ -3,8 +3,9 @@
 title: 'canonical-mass-table-extended: raw-float64 red (26 vs baseline 24) AND the committed witness is truncated to 5 of 7 rows'
 status: todo
 type: bug
+priority: normal
 created_at: 2026-08-15T23:00:29Z
-updated_at: 2026-08-15T23:00:29Z
+updated_at: 2026-08-15T23:42:57Z
 ---
 
 
@@ -228,3 +229,39 @@ property a parser can see.
 **Recommendation: do not add a fifth gate.** The four existing ones plus this
 survey are enough to find the next instance by hand. A gate with 578 baseline
 entries would be a gate nobody reads.
+
+
+---
+
+## Update (claude/ppb-consumers-recheck @ 4d852e5d4) — raw-float64 half CLOSED
+
+`canonical-mass-table-extended.witness.json` is now at **0** raw float64, down
+from the 26 this bean opened on (baseline 24, so it is drained past baseline
+rather than merely back to it).
+
+Two changes got it there. The `err_*` and prediction fields moved to
+`_precision.fmt` in the mass_table_ppb port; the last remaining leaf was
+`paper_hard_floor_ppb: 780.0` — the paper's declared CAL-2 propagation floor,
+a stated threshold rather than a computed quantity. It is now the int `780`.
+`atlas_render_canonical_table.py:167` already read it through `int(...)`, so no
+consumer changes.
+
+The truncation half is also gone: the committed witness carries **7 rows**
+(D, T, 3He, 4He, 5Li, 6Li, 7Li), not the 5 this bean found.
+
+## Still open, and it is NOT the same defect this bean opened on
+
+The producer's ORDERING INVARIANT comment names index 5 as 4He and index 6 as
+5Li — i.e. a layout that begins with p and n. The regenerated witness puts 4He
+at index 3 and 5Li at index 4, because the default `--atoms` set has no nucleon
+rows. So the published table and the documented invariant still disagree about
+what index means what, and `content/values/registry.ts` pins `data.rows.2.
+B_AME_MeV` against that layout. Either the comment or the default atom set is
+wrong; deciding which is a content call, not a precision one.
+
+Unrelated observation from the same regeneration, recorded so it is not lost:
+the witness records `"precision": "mpfr"` alongside `"dps": 0`. Those come from
+different branches of the same `args.precision` — `precision` is forced to
+"mpfr" for the `branching` method, while `dps` still reports the f64 value 0.
+Each is defensible under its own definition ("effective precision" vs "the dps
+handed to the Rust binary"); the PAIRING is what reads as a contradiction.

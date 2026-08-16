@@ -483,7 +483,11 @@ def main() -> int:
     label_to_ZN.update({"proton": (1, 0), "neutron": (0, 1)})
     requested = [s.strip() for s in args.atoms.split(",") if s.strip()]
 
-    paper_floor_ppb = 780.0
+    # An int: this is the paper's declared CAL-2 propagation floor, a stated
+    # threshold rather than a computed quantity, and `780.0` would otherwise
+    # be the last raw float64 in this witness. `atlas_render_canonical_table`
+    # already reads it through `int(...)`.
+    paper_floor_ppb = 780
     paper_floor_dps = float(-mp.log10(mp.mpf(paper_floor_ppb) * mp.mpf("1e-9")))
     pruning_safe = verify_pruning_safe(args.target_dps, paper_floor_ppb)
 
