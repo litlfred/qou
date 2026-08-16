@@ -339,7 +339,7 @@ export const references: CSLData[] = [
     author: [{ family: "Hakimoglu-Brown", given: "Cetin" }],
     issued: { "date-parts": [[2025]] },
     URL: "https://arxiv.org/abs/2506.10206",
-    note: "arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta_fourone_habiro_tail_action). PDF read in-sandbox 2026-07-18 (uploads/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.",
+    note: "arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta\\_fourone\\_habiro\\_tail\\_action). PDF read in-sandbox 2026-07-18 (uploads/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.",
   }),
 
   // ── Sawabe 2024 — the link-AJ formulation (Hopf + Whitehead computed) ──
@@ -7424,10 +7424,10 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1999]] },
     DOI: "10.1006/jabr.1999.7916",
     URL: "https://arxiv.org/abs/math/9802116",
-    note: "The octonions 𝕆 = ℝ_F[(ℤ/2)³] realised as the group algebra of (ℤ/2)³ twisted by a sign 2-cochain F that is not a 2-cocycle (dF ≠ 0) — octonion non-associativity as a pentagon-cochain deformation, the associativity-side analogue of the braiding/hexagon (quantum-group) deformation. The multiplication associator dF is a coboundary (cohomologically trivial); Albuquerque–Majid's nontrivial H³ class is the category associator of Vect_(ℤ/2)³^ω. Cited in the genus-4 octonion-recovery audit (docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md).",
+    note: "The octonions $\\mathbb{O}$ = ℝ_F[(ℤ/2)³] realised as the group algebra of (ℤ/2)³ twisted by a sign 2-cochain F that is not a 2-cocycle (dF ≠ 0) — octonion non-associativity as a pentagon-cochain deformation, the associativity-side analogue of the braiding/hexagon (quantum-group) deformation. The multiplication associator dF is a coboundary (cohomologically trivial); Albuquerque–Majid's nontrivial H³ class is the category associator of Vect_(ℤ/2)³^ω. Cited in the genus-4 octonion-recovery audit (docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md).",
   }),
 
-  // ── Baez 2002 — The Octonions (Der(𝕆) ≅ 𝔤₂) ──────────────────
+  // ── Baez 2002 — The Octonions ($\\mathrm{Der}(\\mathbb{O})\\cong\\mathfrak{g}_2$) ──────────────────
   ref({
     id: "baez2002",
     type: "article-journal",
@@ -7440,7 +7440,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2002]] },
     DOI: "10.1090/S0273-0979-01-00934-X",
     URL: "https://arxiv.org/abs/math/0105155",
-    note: "The canonical survey of the octonions. §4.1 identifies the derivation algebra of the octonions with the compact exceptional Lie algebra 𝔤₂: Der(𝕆) ≅ 𝔤₂, a 14-dimensional space. Cited by QOU/MathlibExt/OctonionDerivationsBound.lean for the upper bound dim Der(𝕆) ≤ 14 (the lower bound and the rank-nullity reduction are machine-verified there).",
+    note: "The canonical survey of the octonions. §4.1 identifies the derivation algebra of the octonions with the compact exceptional Lie algebra $\\mathfrak{g}_2$: $\\mathrm{Der}(\\mathbb{O})\\cong\\mathfrak{g}_2$, a 14-dimensional space. Cited by QOU/MathlibExt/OctonionDerivationsBound.lean for the upper bound $\\dim\\mathrm{Der}(\\mathbb{O})\\le 14$ (the lower bound and the rank-nullity reduction are machine-verified there).",
   }),
 
   // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
@@ -8056,7 +8056,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1917]] },
     DOI: "10.1112/plms/s2-16.1.301",
     URL: "https://doi.org/10.1112/plms/s2-16.1.301",
-    note: "The Whipple transformation exchanging degree and order of associated Legendre functions at hyperbolic argument — the structural home of the half-integer-degree toroidal family P^mu_{nu-1/2}(cosh eta) used as the 3-d channel carrier in the toroidal channel-interpolation audit (2026-07-06).",
+    note: "The Whipple transformation exchanging degree and order of associated Legendre functions at hyperbolic argument — the structural home of the half-integer-degree toroidal family $P^{\\mu}_{\\nu-1/2}(\\cosh\\eta)$ used as the 3-d channel carrier in the toroidal channel-interpolation audit (2026-07-06).",
   }),
 
   // ── Lebedev 1965 (toroidal coordinates and toroidal harmonics: standard reference) ──
@@ -8067,7 +8067,7 @@ export const references: CSLData[] = [
     author: [{ family: "Lebedev", given: "Nikolai N." }],
     publisher: "Prentice-Hall (Dover reprint 1972)",
     issued: { "date-parts": [[1965]] },
-    note: "Standard reference for toroidal coordinates and the separated harmonics sqrt(cosh eta - cos theta) P^mu_{nu-1/2}(cosh eta) e^{i mu theta} e^{i nu phi}: the two phase windings are the two local 1-d channel oscillations and the half-integer-degree Legendre factor is the decaying radial profile off the core torus (toroidal channel-interpolation audit, 2026-07-06).",
+    note: "Standard reference for toroidal coordinates and the separated harmonics $\\sqrt{\\cosh\\eta-\\cos\\theta}\\,P^{\\mu}_{\\nu-1/2}(\\cosh\\eta)\\,e^{i\\mu\\theta}e^{i\\nu\\varphi}$: the two phase windings are the two local 1-d channel oscillations and the half-integer-degree Legendre factor is the decaying radial profile off the core torus (toroidal channel-interpolation audit, 2026-07-06).",
   }),
 
   // ── Deligne 2007 (Rep(S_t) at non-integer t: interpolated tensor categories) ──
@@ -8282,7 +8282,7 @@ export const references: CSLData[] = [
     page: "471-486",
     DOI: "10.1090/S0894-0347-00-00361-1",
     URL: "https://arxiv.org/abs/math/0005038",
-    note: "Theorem 1.1: the Lawrence–Krammer representation of B_n is faithful for all n (braid groups are linear). Lawrence's construction realises this as a summand of the Jones representation at generic parameters. Cited by conj:gauge-hecke-realization for literature context: Burau (a Hecke summand) is unfaithful for n ≥ 5, LKB is faithful — the conjecture's open residue is faithfulness at the substrate specialisation and the groupoid-vs-braid mismatch. Uploaded uploads/0005038v1.pdf.",
+    note: "Theorem 1.1: the Lawrence–Krammer representation of $B_n$ is faithful for all n (braid groups are linear). Lawrence's construction realises this as a summand of the Jones representation at generic parameters. Cited by conj:gauge-hecke-realization for literature context: Burau (a Hecke summand) is unfaithful for n ≥ 5, LKB is faithful — the conjecture's open residue is faithfulness at the substrate specialisation and the groupoid-vs-braid mismatch. Uploaded uploads/0005038v1.pdf.",
   }),
 
   // ── Baez–Huerta 2010 — algebra of GUTs ────────────────────────
@@ -8316,7 +8316,7 @@ export const references: CSLData[] = [
     page: "104",
     DOI: "10.1007/JHEP07(2017)104",
     URL: "https://arxiv.org/abs/1705.01853",
-    note: "The SM gauge group is (SU(3) × SU(2) × U(1))/Γ with Γ ⊆ ℤ₆ undetermined by current experiment; line-operator spectra and theta-angle periodicities distinguish the choices. Cited by conj:sm-gauge-truncation (containment-not-isomorphism caveat) and relevant to the theta_QCD bean qou-y087. Uploaded uploads/1705.01853v2.pdf.",
+    note: "The SM gauge group is (SU(3) × SU(2) × U(1))/Γ with Γ ⊆ ℤ₆ undetermined by current experiment; line-operator spectra and theta-angle periodicities distinguish the choices. Cited by conj:sm-gauge-truncation (containment-not-isomorphism caveat) and relevant to the $\\theta_{\\mathrm{QCD}}$ bean qou-y087. Uploaded uploads/1705.01853v2.pdf.",
   }),
 
   // ── Dubois-Violette 2016 — exceptional quantum geometry ───────
@@ -8343,7 +8343,7 @@ export const references: CSLData[] = [
     "container-title": "PhD thesis, University of Waterloo",
     issued: { "date-parts": [[2016]] },
     URL: "https://arxiv.org/abs/1611.09182",
-    note: "arXiv:1611.09182. Division-algebra (ℝ⊗ℂ⊗ℍ⊗𝕆) construction of one-generation SM structure; SU(3) × U(1) as the unbroken stabilizer inside ℂ⊗𝕆 with correct electric charges from a number operator. Literature route for beans qou-ni4b (SU(3) colour) and the hypercharge target of qou-q377. Uploaded uploads/1611.09182v1.pdf.",
+    note: "arXiv:1611.09182. Division-algebra ($\\mathbb{R}\\otimes\\mathbb{C}\\otimes\\mathbb{H}\\otimes\\mathbb{O}$) construction of one-generation SM structure; SU(3) × U(1) as the unbroken stabilizer inside $\\mathbb{C}\\otimes\\mathbb{O}$ with correct electric charges from a number operator. Literature route for beans qou-ni4b (SU(3) colour) and the hypercharge target of qou-q377. Uploaded uploads/1611.09182v1.pdf.",
   }),
 
   // ── Hikami 2004 — colored Jones difference equation (torus knots) ──
@@ -8406,7 +8406,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2018]] },
     URL: "https://arxiv.org/abs/1808.08110",
-    note: "arXiv:1808.08110. Continuation of dubois-violette2016: the exceptional Jordan algebra J₃(𝕆) route to the SM gauge group with SU(3)×SU(2)×U(1)/ℤ₆ as the J₃(𝕆)-compatible subgroup of F₄ — directly relevant to the Z₆ compatibility battery of conj:sm-hypercharge-invariant and the colour route of qou-ni4b. Uploaded uploads/1808.08110v1.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
+    note: "arXiv:1808.08110. Continuation of dubois-violette2016: the exceptional Jordan algebra $J_3(\\mathbb{O})$ route to the SM gauge group with SU(3)×SU(2)×U(1)/ℤ₆ as the $J_3(\\mathbb{O})$-compatible subgroup of F₄ — directly relevant to the Z₆ compatibility battery of conj:sm-hypercharge-invariant and the colour route of qou-ni4b. Uploaded uploads/1808.08110v1.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
   }),
 
   // ── DeTurck–Gluck — Gauss linking integral on S³ and H³ ────────
@@ -8423,7 +8423,7 @@ export const references: CSLData[] = [
     volume: "49",
     issued: { "date-parts": [[2008]] },
     URL: "https://arxiv.org/abs/math/0406276",
-    note: "arXiv:math/0406276 (published under the title 'Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space', J. Math. Phys. 49, 023504). Supplies the H³ Gauss linking integral (Thm 1(3), kernel csch α), the H³ Biot–Savart operator (Thm 2(3)), and — the object the EM-linking attack needs — the H³ Laplacian Green's function φ₀(α) = −coth(α)/4π, the exact hyperbolic analogue of 1/r. Read in full 2026-08-01; findings and the two structural obstructions in docs/audits/2026-08-01-em-linking-reads-round1.md. Note there is NO interaction-energy formula, no compact-quotient theory, and no H³ Green's operator on vector fields (Thm 3 is S³-only). Uploaded uploads/0406276v1.pdf.",
+    note: "arXiv:math/0406276 (published under the title 'Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space', J. Math. Phys. 49, 023504). Supplies the H³ Gauss linking integral (Thm 1(3), kernel csch α), the H³ Biot--Savart operator (Thm 2(3)), and — the object the EM-linking attack needs — the H³ Laplacian Green's function φ₀(α) = −coth(α)/4π, the exact hyperbolic analogue of 1/r. Read in full 2026-08-01; findings and the two structural obstructions in docs/audits/2026-08-01-em-linking-reads-round1.md. Note there is NO interaction-energy formula, no compact-quotient theory, and no H³ Green's operator on vector fields (Thm 3 is S³-only). Uploaded uploads/0406276v1.pdf.",
   }),
 
   // ── DeTurck–Gluck–Komendarczyk–Melvin–Shonkwiler–Vela-Vick ────
@@ -8463,7 +8463,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2011]] },
     URL: "https://arxiv.org/abs/1101.3374",
-    note: "arXiv:1101.3374 (full version of dgkmsv2009). Theorem B gives μ̄₁₂₃ as a two-point Biot–Savart-shaped double integral over T³×T³ — the helicity of the characteristic field. Caveat established on reading: the additive per-pair form of F does NOT survive into the integrand (the ‖F‖³ normalization couples the pairs), so the paper supplies no per-pair splitting. Read in full 2026-08-01.",
+    note: "arXiv:1101.3374 (full version of dgkmsv2009). Theorem B gives μ̄₁₂₃ as a two-point Biot--Savart-shaped double integral over T³×T³ — the helicity of the characteristic field. Caveat established on reading: the additive per-pair form of F does NOT survive into the integrand (the ‖F‖³ normalization couples the pairs), so the paper supplies no per-pair splitting. Read in full 2026-08-01.",
   }),
 
   // ── Komendarczyk — third-order helicity ───────────────────────
@@ -8479,12 +8479,12 @@ export const references: CSLData[] = [
     note: "arXiv:0808.1533. Read in full 2026-08-01. DOES prove a third-order-helicity energy bound (Thm 6.1: |H₁₂₃| ≤ C_𝒯·E₂^{3/2}) for Borromean flux tubes — but the constant is geometric, not topological, and the author states it 'is meaningless when the handlebodies get close', i.e. it degrades exactly in the regime of interest. Also settles two negatives for bean qou-o6ml: Rem. 2.6 PROVES the total antisymmetry of μ̄₁₂₃ (obstruction O1), and the third-order invariant scales as Flux³ where a Coulomb-like pair energy needs Flux². The only pair-indexed object (Cor. 2.5) is forced to zero by the unlinked hypothesis. Uploaded uploads/0808.1533v1.pdf. RE-READ 2026-08-01 (round 5), §6 eq. (43) — the decisive text for the Freedman–He route, and it overturns two of our readings: (i) the FH asymptotic crossing number in the LINK bound is ac(L_k, L), ONE component against the WHOLE link, summed over n COMPONENTS — it is not pairwise, so a per-pair ACN is the wrong object; (ii) eq. (43) carries (π/16)^{1/4}, a pure constant, and NO volume factor — the Vol^{−1/3} we had called 'the Freedman–He template' is Khesin Thm 3.6's SINGLE-torus bound, misapplied. Also states the bound applies 'for borromean links', with ac(L_k,L) bounded below by a smallest genus among surfaces in ℝ³∖(other components) with boundary L_k — a complement constraint, which is what actually holds the Brunnian value up.",
   }),
 
-  // ── Cantarella–DeTurck–Gluck — the Biot–Savart operator ───────
+  // ── Cantarella–DeTurck–Gluck — the Biot--Savart operator ───────
   ref({
     id: "cantarella-deturck-gluck2001",
     type: "article-journal",
     title:
-      "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics",
+      "The Biot--Savart operator for application to knot theory, fluid dynamics, and plasma physics",
     author: [
       { family: "Cantarella", given: "Jason" },
       { family: "DeTurck", given: "Dennis" },
@@ -8494,7 +8494,7 @@ export const references: CSLData[] = [
     volume: "42",
     page: "876-905",
     issued: { "date-parts": [[2001]] },
-    note: "Read in full 2026-08-01. Supplies the operator-theoretic skeleton for any per-pair construction: Theorem D proves the Biot–Savart operator is bounded, compact and SELF-ADJOINT (⟨V₁,BS(V₂)⟩ = ⟨BS(V₁),V₂⟩) by pure kernel antisymmetry, so the mechanism should port to H³; helicity is its quadratic form H(V) = ⟨V,BS(V)⟩; and ‖BS‖ ≤ OS(V)/4π via the 'optical size' domain functional. CRITICAL distinction recorded in the audit: the pairing it forms, ∫J₁·B₂, is mutual helicity (topological, zero for unlinked separated tubes) — NOT the electromagnetic interaction energy ∫A₁·J₂, which the paper never writes. R³ only. Uploaded uploads/candetgl.pdf.",
+    note: "Read in full 2026-08-01. Supplies the operator-theoretic skeleton for any per-pair construction: Theorem D proves the Biot--Savart operator is bounded, compact and SELF-ADJOINT (⟨V₁,BS(V₂)⟩ = ⟨BS(V₁),V₂⟩) by pure kernel antisymmetry, so the mechanism should port to H³; helicity is its quadratic form H(V) = ⟨V,BS(V)⟩; and ‖BS‖ ≤ OS(V)/4π via the 'optical size' domain functional. CRITICAL distinction recorded in the audit: the pairing it forms, $\\int J_1\\cdot B_2$, is mutual helicity (topological, zero for unlinked separated tubes) — NOT the electromagnetic interaction energy ∫A₁·J₂, which the paper never writes. R³ only. Uploaded uploads/candetgl.pdf.",
   }),
 
   // ── Khesin — geometry of higher helicities (survey) ───────────
@@ -8522,7 +8522,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2002]] },
     URL: "https://arxiv.org/abs/physics/0203048",
-    note: "arXiv:physics/0203048. Read in full 2026-08-01. Constructs H⁽³⁾ = ∫A¹·A²×A³ via the SU(2) Chern–Simons split (not Massey products). Independently confirms obstruction O1 from the physics side, naming it outright: 'the antisymmetry of H⁽³⁾ seems to be one of the key problems'. Its Conclusions also state the scaling trap — 'only expressions quadratic and cubic in magnetic flux can be obtained' — with the quadratic slot occupied by cross-helicity, which vanishes for Brunnian configurations. No energy content; requires a simply-connected domain with boundary, so it does not address O2. Uploaded uploads/0203048v1.pdf.",
+    note: "arXiv:physics/0203048. Read in full 2026-08-01. Constructs $H^{(3)}=\\int A^1\\cdot A^2\\times A^3$ via the SU(2) Chern–Simons split (not Massey products). Independently confirms obstruction O1 from the physics side, naming it outright: 'the antisymmetry of H⁽³⁾ seems to be one of the key problems'. Its Conclusions also state the scaling trap — 'only expressions quadratic and cubic in magnetic flux can be obtained' — with the quadratic slot occupied by cross-helicity, which vanishes for Brunnian configurations. No energy content; requires a simply-connected domain with boundary, so it does not address O2. Uploaded uploads/0203048v1.pdf.",
   }),
 
   // ── Bokut & Shiao — GS bases for Coxeter groups ───────────────
@@ -8546,7 +8546,7 @@ export const references: CSLData[] = [
     volume: "29",
     page: "4305-4319",
     issued: { "date-parts": [[2001]] },
-    note: "NOT READ — metadata only, reconciled from three agreeing bibliographies (see comment above). TWO SCOPE CAVEATS, both established from other documents rather than from this one. (1) COXETER GROUPS, NOT H_n(q): every document that cites it describes it as constructing GS bases for Coxeter groups W = sgp⟨Σ | (ss′)^m = 1⟩ at q = 1; none mentions the Iwahori–Hecke deformation. The q-deformed type-A statement appears to be Kang–Lee–Lee–Oh, J. Algebra 252 (2002) 258-292 §6 (not yet held; bean qou-qspu). (2) NOT GENERAL COXETER: [chenliu2009] Example 3.2 refutes the Bokut–Shiao conjecture that a GS basis of an arbitrary Coxeter group follows from S = {(1),(2),(3′)} with commuting relations; the positive results are for finite Coxeter groups, which does cover type A_{n-1}. It is cited in this folio for the COMPLETION family σᵢσᵢ₋₁⋯σⱼσᵢ → σᵢ₋₁σᵢσᵢ₋₁⋯σⱼ that HeckeGS.lean §4e names as missing from `heckeRewritingSystem`; the axiom `hecke_is_gs_basis` that formerly cited 'Bokut & Shiao 2001, Thm 3.5' was deleted as FALSE for the uncompleted system (NotAGSBasis.hecke_not_gs_basis_four).",
+    note: "NOT READ — metadata only, reconciled from three agreeing bibliographies (see comment above). TWO SCOPE CAVEATS, both established from other documents rather than from this one. (1) COXETER GROUPS, NOT H_n(q): every document that cites it describes it as constructing GS bases for Coxeter groups W = sgp⟨Σ | (ss′)^m = 1⟩ at q = 1; none mentions the Iwahori–Hecke deformation. The q-deformed type-A statement appears to be Kang–Lee–Lee–Oh, J. Algebra 252 (2002) 258-292 §6 (not yet held; bean qou-qspu). (2) NOT GENERAL COXETER: [chenliu2009] Example 3.2 refutes the Bokut–Shiao conjecture that a GS basis of an arbitrary Coxeter group follows from S = {(1),(2),(3′)} with commuting relations; the positive results are for finite Coxeter groups, which does cover type A_{n-1}. It is cited in this folio for the COMPLETION family $\\sigma_i\\sigma_{i-1}\\cdots\\sigma_j\\sigma_i \\to \\sigma_{i-1}\\sigma_i\\sigma_{i-1}\\cdots\\sigma_j$ that HeckeGS.lean §4e names as missing from `heckeRewritingSystem`; the axiom `hecke_is_gs_basis` that formerly cited 'Bokut & Shiao 2001, Thm 3.5' was deleted as FALSE for the uncompleted system (NotAGSBasis.hecke_not_gs_basis_four).",
   }),
 
   // ── Chen & Liu — GS bases for Coxeter groups I ────────────────
