@@ -59,6 +59,18 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from witness_base import WitnessBuilder
+# Physical constants come from the registry, never from literals in this file.
+# The hardcoded-literal audit flagged this script `i9_violation` with five
+# hand-typed constants and `imported_codata_names = []`; four of the five
+# disagreed with the registry (m_e by 1.35e-9, the D/3He/4He bindings by
+# ~3e-8), so this was a correctness defect and not merely a style one.
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 from q_parameter import Q as Q0_FLOAT
 from hecke_characters import chi_lambda_braid, partitions_of, dim_q
 from q_mpmath import set_q, qint, qfac
@@ -85,9 +97,19 @@ KNOT_TO_PARTICLE = {
     "4_1":    "figure-eight",
 }
 
-# Atoms with Z, N
-ATOMS = [("D", 1, 1, 6, 2.224566069), ("T", 1, 2, 9, 8.481798),
-         ("3He", 2, 1, 9, 7.718042799), ("4He", 2, 2, 12, 28.29567400)]
+# Atoms with Z, N.  The trailing entry is the AME binding energy, taken from the
+# registry rather than typed here: the four literals this replaces read
+# 2.224566069 / 8.481798 / 7.718042799 / 28.29567400, and every one disagreed
+# with the registry -- by 5.9e-8, 2.1e-7, 1.9e-7 and 4.1e-7 relative.
+#
+# Kept as `mp.mpf`, not downcast.  `atom-chi-rust-*.witness.json` stores
+# `chi_lambda` as a 49-digit decimal string, so the character chain feeding
+# `B_pred` carries real precision and there is no float64 floor to justify
+# narrowing these.  They are stringified at the witness sink instead.
+ATOMS = [("D", 1, 1, 6, AME_B_DEUTERON_MEV_VALIDATION),
+         ("T", 1, 2, 9, AME_B_TRITIUM_MEV_VALIDATION),
+         ("3He", 2, 1, 9, AME_B_HE3_MEV_VALIDATION),
+         ("4He", 2, 2, 12, AME_B_HE4_MEV_VALIDATION)]
 
 
 def depth_k(partition: tuple) -> int:
@@ -134,8 +156,16 @@ def compute_phi_k_FR(K_atom_chis: dict, K_k_word: list, n: int, k: int) -> mp.mp
     total = mp.mpf(0)
     for lam in parts_at_k:
         w_norm = weights_unnorm[lam] / Z_norm
-        chi_atom = K_atom_chis.get(str(list(lam)), 0.0)
-        if abs(chi_atom) < 1e-30:
+        # `mp.mpf(...)` on the way in.  The cached-character witnesses store
+        # `chi_lambda` as a 49-digit decimal STRING, and this line read it raw:
+        # `abs(<str>)` raised `TypeError: bad operand type for abs(): 'str'` on
+        # the first atom, so the script could not regenerate its own witness at
+        # all.  That break is independent of the constants fix and predates it
+        # -- verified by running the unmodified file, which fails identically.
+        # Lifting the string (rather than casting to float) is also what keeps
+        # the 49 digits the Rust engine produced.
+        chi_atom = mp.mpf(K_atom_chis.get(str(list(lam)), 0))
+        if abs(chi_atom) < mp.mpf("1e-30"):
             continue
         log_abs = mp.log(mp.fabs(chi_atom))
         total += w_norm * log_abs
@@ -182,8 +212,16 @@ def main() -> int:
         print("  ERROR: no χ data found in witnesses. Exiting.")
         return 1
 
-    # M_E_MEV for binding energy scale
-    M_E_MEV = 0.51099894999999995182093925905064679682254791259766
+    # M_E_MEV for binding energy scale — imported from `codata_constants` above.
+    #
+    # The literal removed here was
+    #     M_E_MEV = 0.51099894999999995182093925905064679682254791259766
+    # which is the binary64 expansion of a TRUNCATED m_e (0.51099895): padded to
+    # 50 digits it looks precise while sitting 1.35e-9 away from the registry's
+    # 0.51099895069.  Recording it via `str()` then wrote all 50 of those digits
+    # into the witness, which is what the float64-padding audit sees.
+    #
+    # Recorded at the registry's own width and consumed as mpf (see ATOMS).
     builder.add_parameter("M_E_MEV", str(M_E_MEV))
 
     # For each (K_1*, K_2*) pair, compute predicted B and variance
@@ -207,19 +245,35 @@ def main() -> int:
                 # the unified curvature-rank mass formula.
                 phi_sum = phi_1 + phi_2 + phi_3
                 # Map to MeV scale (m_e · 8G ≈ 3.74 MeV per unit; simplified)
-                B_pred = float(phi_sum) * M_E_MEV
-                per_atom_B[atom] = {"B_pred_MeV": B_pred,
-                                    "B_AME": info["B_AME"],
-                                    "ratio": B_pred / info["B_AME"] if info["B_AME"] else 0.0,
-                                    "phi_1": float(phi_1), "phi_2": float(phi_2), "phi_3": float(phi_3)}
+                # Stays in mpf: phi_sum descends from the 49-digit chi strings
+                # and M_E_MEV is an mpf constant, so `float(phi_sum)` here would
+                # discard real digits rather than shed fake ones.
+                B_pred = phi_sum * M_E_MEV
+                b_ame = info["B_AME"]
+                ratio = (B_pred / b_ame) if b_ame else mp.mpf(0)
+                # Stringified at this sink because `per_atom_B` is serialized
+                # verbatim into the witness and `json.dump` cannot encode an mpf.
+                # The numeric ratio is kept alongside for the variance below --
+                # stringifying first would make `max`/`min` compare lexically.
+                per_atom_B[atom] = {"B_pred_MeV": str(B_pred),
+                                    "B_AME": str(b_ame),
+                                    "ratio": str(ratio),
+                                    "ratio_numeric": ratio,
+                                    "phi_1": str(phi_1), "phi_2": str(phi_2),
+                                    "phi_3": str(phi_3)}
 
             # Variance = max(ratio) / min(ratio) across atoms
-            ratios = [d["ratio"] for d in per_atom_B.values() if d["B_AME"] > 0]
+            ratios = [d.pop("ratio_numeric") for d in per_atom_B.values()]
             valid_ratios = [r for r in ratios if abs(r) > 1e-10]
             if len(valid_ratios) >= 2:
                 pos_ratios = [r for r in valid_ratios if r > 0]
                 if len(pos_ratios) >= 2:
-                    variance = max(pos_ratios) / min(pos_ratios)
+                    # float() deliberately: this is a reported diagnostic ratio
+                    # (printed at .4f, sorted, compared against float("inf")),
+                    # not a carried quantity -- mpf has no __format__ and would
+                    # break all three uses.  The precision lives in the per-atom
+                    # values above, which stay mpf.
+                    variance = float(max(pos_ratios) / min(pos_ratios))
                 else:
                     variance = float("inf")
             else:
@@ -255,7 +309,12 @@ def main() -> int:
         print(f"\n  ⭐ Lepton-generation assignment (K_1*=3_1=e, K_2*=5_1=μ, K_3*=6_1):")
         print(f"     variance = {lepton_assignment['variance_max_min']:.4f}")
         for atom, d in lepton_assignment['per_atom'].items():
-            print(f"       {atom}: B_pred = {d['B_pred_MeV']:.4f} MeV, B_AME = {d['B_AME']:.4f} MeV, ratio = {d['ratio']:.4f}")
+            # float() for the console only: these three are stored as strings so
+            # the mpf precision survives into the witness, and `.4f` cannot
+            # format a str.  The record keeps the full-width values.
+            print(f"       {atom}: B_pred = {float(d['B_pred_MeV']):.4f} MeV, "
+                  f"B_AME = {float(d['B_AME']):.4f} MeV, "
+                  f"ratio = {float(d['ratio']):.4f}")
         builder.add_data("lepton_generation_assignment", lepton_assignment)
 
     builder.add_assertion(

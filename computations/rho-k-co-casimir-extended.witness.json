@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T03:14:13.289616+00:00",
-  "commitSha": "f95845fbeebead66495f8647479532544a6a009e",
+  "computedAt": "2026-08-16T12:50:54.368236+00:00",
+  "commitSha": "282f1b5545f3b6a6b0f9112698b744ed12dca42a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 863151,
+  "durationMs": 735985,
   "computation": "rho-k-co-casimir-extended",
   "scriptFile": "rho_k_co_casimir_extended.py",
   "scriptHash": "8e4de27ec5a0",
@@ -19,11 +19,9 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Substrate-derived ρ_K^pred via the Frobenius co-Casimir Option B (Δ_λ := 1/dim_q(λ), forced by thm:frobenius-codim-universal — zero free parameters, τ-invariant). Loads y_λ from EITHER the symbolic Wenzl-bridge witness (n=2..12, sp.Expr in q) OR the numeric Wenzl witness (n=2..30, mp.mpf at q_0) — picks whichever covers the requested n. Per repo-owner directive 2026-05-19 'all nucleotides', DEFAULT_ATOMS extended to A ≤ 10 (5Li, 6Li, 7Li, 7Be, 8Be, 9Be, 10B); gate via --max-A (default 4). Generalises rho_k_h3a_co_casimir.py from D-only. Witness MeV scaling: rows use m_e (CAL-1) as the natural scale for ρ_K^LO and the co-Casimir correction; per-atom 'M_pred_MeV' = ρ_K_pred · m_e · |tr_M|. Note: binding-via-interface-knot.witness.json uses E_0 = Q_β(n) instead — different scale by ~m_e/E_0 ≈ 0.65×.",
   "parameters": {
@@ -710,7 +708,7 @@
             "contribution_y_chi_Delta": "0.0"
           }
         ],
-        "compute_wall_sec": "0.47",
+        "compute_wall_sec": "0.48",
         "status": "ok"
       },
       {
@@ -1189,7 +1187,7 @@
             "contribution_y_chi_Delta": "0.0"
           }
         ],
-        "compute_wall_sec": "0.21",
+        "compute_wall_sec": "0.19",
         "status": "ok"
       },
       {
@@ -2456,7 +2454,7 @@
             "contribution_y_chi_Delta": "0.0"
           }
         ],
-        "compute_wall_sec": "862.09",
+        "compute_wall_sec": "733.73",
         "status": "ok"
       }
     ],

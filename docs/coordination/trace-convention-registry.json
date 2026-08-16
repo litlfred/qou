@@ -238,6 +238,13 @@
         "audit": "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md",
         "bean": "qou-cdh1",
         "scope_note": "The ruling settles WHICH convention. It does not re-derive the ladder, and this is proved, not assumed: QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free) shows any faithful normalised Markov trace at z_C carries y_(1^3) != 0 for every substrate s = sqrt(q) > 1, so 'keep the C-frame ladder' and 'the mass channel's two-row forcing applies here' are MUTUALLY EXCLUSIVE. The ladder must therefore be RE-DERIVED under D, not re-evaluated. The c_3 ~ -974 figure in the audit is what the CURRENT extractor returns when fed z_D -- a sensitivity measurement, NOT a proposed new value of c_3."
+      },
+      "production_source_correction": {
+        "recorded": "2026-08-16 (qou-cdh1 follow-up; raised by a sibling on #5235)",
+        "finding": "`production_source` above says the z_C alpha = (z-1)h/2 'feeds EVERY committed c_k extraction'. That universal is FALSE and was never measured. computations/qbeta/qbeta_ck_cache.py:85 reads `z = q**3 / (q**2 + 1)` -- convention D -- and computes the same ladder phase. The extraction layer is SPLIT, not uniformly C.",
+        "but_the_artifact_is_stale_not_split": "Checked rather than relayed, and the real state is worse than 'two live frames'. The producer is D; its committed witness computations/qbeta/qbeta-ck-cache.witness.json carries the C-frame c_3 (-2.069…), not the D-frame -974.43. Proven stale, not merely suspected: witness scriptHash 88cb1da28b5e vs sha256(producer)[:12] = 9a13a19a1b52, and computedAt is 2026-08-08 -- ONE DAY before the 2026-08-09 ruling. So the -974.43 quoted on #5235 is that producer's RUN OUTPUT, not a committed value. Detector-blindness taxonomy row 10: the producer migrated, the artifact did not.",
+        "consequence": "Both c_3 frames are committed in this corpus -- -2.069… in qbeta-ck-cache/qbeta-c3-three-rung-probe and others, -974.43 in qbeta-c3-ladder-trace-convention-sensitivity and qbeta-kc21-parity-convention-immunity, where it is a deliberate sensitivity measurement. R9 still correctly asserts C for qbeta_utils.markov_parameter; that entry is not wrong, it is just not the whole production layer.",
+        "structural_gap": "`production_source` is PROSE, so no rule can check it. R9/R10/R11 validate `evaluators`, which are structured; a channel's claim about which producers feed it is a free-text string that can assert a universal nobody measured -- which is exactly what happened here. Any future rule wanting to catch this needs production_source to become a list of module/symbol entries the way evaluators already is."
       }
     }
   ],

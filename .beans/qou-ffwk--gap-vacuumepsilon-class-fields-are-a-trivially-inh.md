@@ -493,3 +493,120 @@ Remaining library: `LocalInfinitesimalField` (needs sheaf/scheme machinery for
 `HyperbolicVolumeIndependence`, `BraidGroupNStrand` (class is `MarkovTraceN`,
 wants field-by-field splitting). Plus the six co-located stubs this bean's
 inventory omits.
+
+## 2026-08-16 (5) — tried to close the `OmegaOrder` gap with Mathlib; it does not fit
+
+Branch `claude/ffwk-omegaorder-mathlib-probe-2026-08-16`. **No machinery landed
+— the integration does not go through.** Recording the three obstructions,
+each checked against this build, so the next attempt starts from a
+specification instead of from scratch. Docstring-only change to
+`Asymptotics.lean`.
+
+Context: `SpectralNormalForm` (merged, #5233) records that its satisfiability is
+untested in either direction because `OmegaOrder` has no instance anywhere.
+Mathlib's Hahn-series valuation is the obvious source. It is not usable here.
+
+**1. No degenerate model is available — this is a hard obstruction.**
+`SurrealField` requires `omegaSurreal : K` with
+`omegaSurreal_gt_natCast : ∀ n : ℕ, (n : K) < omegaSurreal`. No real exceeds
+every natural, so **`SurrealField ℝ` is impossible**. The cheap witness that
+would have settled non-emptiness cannot exist; a model has to be genuinely
+non-archimedean. Worth knowing before anyone else spends time looking for a
+shortcut.
+
+**2. The exponent type is self-referential and Mathlib's is not.** `Ow` is typed
+`K → WithTop K` — exponents in the field itself, which is right for `𝐍𝐨`
+(closed under `ω`-exponentiation). Mathlib's leading-exponent valuation is
+`HahnSeries.orderTop : HahnSeries Γ R → WithTop Γ` with `Γ` a **separate**
+ordered group. Bridging needs an additive, order-compatible `Γ ↪ K`, which is a
+design decision rather than a lemma. **Generalising the class to
+`OmegaOrder K Γ` would remove this outright**, and is worth deciding before more
+conditional results are stacked on it.
+
+**3. This build's Hahn API stops short even for the separate-`Γ` reading.**
+Probed directly:
+
+- `CommRing (HahnSeries ℤ ℝ)` — available (noncomputable).
+- `Field (HahnSeries ℤ ℝ)`, `LinearOrder (HahnSeries ℤ ℝ)` — **not** available;
+  the order lives on the `Lex` synonym.
+- `orderTop` multiplicativity — only the **inequality**
+  `x.orderTop + y.orderTop ≤ (x * y).orderTop` (`orderTop_add_le_mul`).
+  `HahnSeries.orderTop_mul`, the equality `Ow_mul` states, **does not exist**
+  here and would have to be proved over a domain first.
+
+**Build order for whoever takes this on:** `orderTop` multiplicativity over a
+domain → `Lex` order transfer → a `birthday` function satisfying the `nadd`
+sub-additivity and midpoint bounds → then obstruction 2.
+
+**Not attempted:** generalising `OmegaOrder`. It is imported widely enough that
+changing its signature is an owner-level call, and doing it silently inside a
+carrier-hygiene bean would be the coordination failure AGENTS.md warns about.
+
+**Also relevant to `LocalInfinitesimalField`** (still on this bean's remaining
+list): its claim is that `ε` is a *sheaf* of infinitesimals across a scheme `X`.
+Mathlib has `Topology.Sheaves` and `AlgebraicGeometry` built in this tree, so
+that one is **not** blocked the way this is — the sheaf machinery genuinely
+exists. It was skipped for the surreal carriers, not because it is impossible.
+
+## Progress 2026-08-16 (6) — `LocalInfinitesimalField`
+
+Branch `claude/ffwk-local-infinitesimal-field-2026-08-16`. Sixth of the ten.
+
+**Correcting my own call from the previous entry.** I said this one was the
+next to take *because* Mathlib's sheaf and scheme machinery is present, having
+assumed it would be needed. Having read the block: it is present, and it is
+**not needed** — using it would have been decoration.
+
+The block sets the conjecture up over a scheme (`ε ∈ Γ(X, 𝔪_X)`, a section of
+the sheaf of infinitesimals, `X` a functor `CRing → Set` evaluated at the
+valuation ring). But **none of its three claims uses that structure**. Read them
+back: `ε(x)` differs from `ε(y)` somewhere; `st(ε(x)) = 0` everywhere; the
+leading coefficient is globally constant. Every one is extensional in the family
+`x ↦ ε(x)`. Restriction, gluing, the structure sheaf and the `X(𝒪) ↠ X(ℝ)` map
+are *setting* — they say where the family comes from and why it matters, and the
+conjecture is neither stronger nor weaker if `X` is a bare type.
+
+So `X` stays abstract and the sheaf framing lives in the docstring. **A
+placeholder asserts too little; decoration asserts too much** — same defect,
+opposite direction, and this bean exists to fix the first without introducing
+the second. If a later result genuinely needs locality (gluing local `ε`s, a
+stalkwise argument) that is the point to introduce the sheaf, and the class
+statement will be what it restricts to.
+
+**The three fields.** Part 2 is encoded as infinitesimality, which is the
+block's own framing, and `standardPart_eq_zero` derives the `st(ε(x)) = 0` form
+from it via the corpus's `standardPart_of_infinitesimal` — a real derivation
+against existing API, not a restatement. Part 1 is genuine non-constancy: a
+*global* `ε` is exactly what the appendix already has, so a carrier permitting a
+constant family would assert nothing new. Part 3 is stated against a
+caller-supplied `leadingCoeff` (the `ω⁻¹` Conway coefficient, which this tree
+does not construct and which is **not** `OmegaOrder.Ow`, the leading *exponent*),
+with `q₀` a parameter rather than the literal `0.11` — writing a substrate pin
+into a carrier would require re-editing it whenever the pin moves.
+
+**Anti-vacuity.** `not_of_subsingleton` refutes the class over a one-point
+index: `local_variation` cannot hold where there is nowhere to vary. Cheap, and
+it is exactly the sense in which the conjecture says more than the existing
+global `ε` — under the old schema the trivial term closed the class even for a
+one-point scheme, so "the substrate fluctuates" had nothing to fail against.
+Non-emptiness is not shown, for the reason recorded in #5244: it needs a
+`SurrealField` instance and only `surrealFieldHyperreal` (a `def`) exists.
+
+Verification: compiles (ok=1); `#print axioms` `[propext, Classical.choice,
+Quot.sound]` on all four, no `sorryAx`; base-ring PASS; wall-side PASS; both
+siblings gates exit 0; orphan gate exit 0; run-validate exit 0. No instance
+added.
+
+Detector count **11 → 10**.
+
+### Running total
+
+Six of ten library carriers done; count 16 → 10. Six carriers, six encodings:
+tolerance parameter, exact equality, structural bridge between two typeclass
+structures, asymmetric one-half-only, and now extensional-over-a-framing. The
+"do not batch-process" instruction keeps earning itself.
+
+Remaining library: `QouInfraDischargesGoncharovZeta5`, `VacuumEpsilon` (blocked
+on its 2026-08-08 docstring finding), `HyperbolicVolumeIndependence`,
+`BraidGroupNStrand` (class is `MarkovTraceN`, wants field-by-field splitting).
+Plus the six co-located stubs this bean's inventory omits.

@@ -51,22 +51,21 @@ These are the remaining pseudometric axioms.  Per AGENTS.md ("if you cannot clos
 a derivation, CREATE A BEAN — not a `sorry`"), they are NOT stated as sorried
 theorems: this file stays 100 % sorry-free, and the gap is tracked in bean
 `qou-322e`.  None is needed for the isometry results (pure pointwise congruences)
-or the geodesic classification.  `dH_comm` has since been CLOSED (above); the two
-below remain open.
+or the geodesic classification.  `dH_comm` and `dH_triangle` have since been
+CLOSED (below); the separation axiom remains open.
 
-* `dH_triangle` (triangle inequality, via path concatenation).  The naive
-  concatenation `η(t) = if t ≤ ½ then γ(2t) else δ(2t−1)` is **not** differentiable
-  at the join `t = ½` (the one-sided velocities `2γ'(1)` and `2δ'(0)` need not
-  match), so it fails `AdmissiblePath`'s everywhere-differentiability.  Closing it
-  needs a zero-speed reparametrisation at the endpoints (a monotone `C¹` `φ` with
-  `φ'(0)=φ'(1)=0`, e.g. `3t²−2t³`) together with reparametrisation length-invariance
-  (a *monotone* Jacobian change of variables, the sibling of `reflect_lintegral_Icc`)
-  AND a two-sided `HasDerivAt` glue at the join — a substantial chunk.
-* Separation `dH x y = 0 → x = y` needs the fundamental theorem of calculus /
-  absolute continuity to bound `pathLenH` below by the endpoint displacement (a
-  Cantor-type continuous path otherwise defeats a naive lower bound, and here the
-  bound must hold under the *infimum*) — the same reason Mathlib has no hyperbolic
-  geometry.
+* Separation `dH x y = 0 → x = y` is **half proved**: the *height coordinate*
+  is CLOSED unconditionally — `dH_eq_zero_height` derives `y₂ = x₂` from the
+  vertical lower bound `dH x y ≥ |log(y₂/x₂)|` (`dH_ge_logHeight`,
+  `pathLenH_ge_logHeight`), via the FTC applied to `t ↦ log(γ(t)₂)`.  Finite
+  length makes `deriv γ` integrable (`hasFiniteIntegral_iff_ofReal`), defeating
+  the Cantor obstruction; `measurable_deriv` supplies measurability with no
+  global-differentiability hypothesis.  The *horizontal coordinates* remain
+  open (bean `qou-v8u3`): they need the height bound `γ(t)₂ ≤ x₂·e^L` (FTC on
+  `[0,t]`) plus the infimum-sequence argument `‖y_h − x_h‖ ≤ x₂·e^L·L → 0`.
+  This vertical half is unconditional — independent of the sibling z-axis route
+  (`HyperbolicGeodesicZAxis`), which reaches separation only through the
+  `HypMinimizerUnique` conjecture.
 
 The carrier is `EuclideanSpace ℝ (Fin 3)` (NOT the plain `Fin 3 → ℝ` of
 `HyperbolicVolumeMeasure`, whose Haar/Lebesgue structure needs the sup-free Pi
@@ -86,6 +85,12 @@ import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 import Mathlib.MeasureTheory.Function.JacobianOneDim
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Calculus.Deriv.Comp
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+import Mathlib.Analysis.Calculus.FDeriv.Measurable
+import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+import Mathlib.Analysis.Calculus.Deriv.Pow
+import Mathlib.Analysis.Calculus.Deriv.Mul
+import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
 namespace QOU.Archimedean.HyperbolicMetric
 
@@ -317,5 +322,447 @@ theorem dH_eq (hinv : Function.Involutive φ) (x y : E) :
   rwa [hinv x, hinv y] at hle
 
 end IsDHIsometry
+
+/-- Smooth monotone reparametrisation profile `s(t) = 3t² − 2t³`. -/
+noncomputable def sprof (t : ℝ) : ℝ := 3 * t ^ 2 - 2 * t ^ 3
+theorem hasDerivAt_sprof (t : ℝ) : HasDerivAt sprof (6 * t * (1 - t)) t := by
+  unfold sprof
+  have p2 : HasDerivAt (fun t : ℝ => t ^ 2) (2 * t) t := by simpa using hasDerivAt_pow 2 t
+  have p3 : HasDerivAt (fun t : ℝ => t ^ 3) (3 * t ^ 2) t := by simpa using hasDerivAt_pow 3 t
+  have h1 : HasDerivAt (fun t : ℝ => 3 * t ^ 2) (3 * (2 * t)) t := p2.const_mul (3:ℝ)
+  have h2 : HasDerivAt (fun t : ℝ => 2 * t ^ 3) (2 * (3 * t ^ 2)) t := p3.const_mul (2:ℝ)
+  have := h1.sub h2
+  convert this using 1; ring
+theorem sprof_zero : sprof 0 = 0 := by unfold sprof; ring
+theorem sprof_one : sprof 1 = 1 := by unfold sprof; ring
+
+/-- **Reparametrisation length invariance (segment form).** -/
+theorem pathLenH_reparam_segment {γ : ℝ → E} {x y : E} (hγ : AdmissiblePath γ x y)
+    {a b : ℝ} (hab : a ≤ b) {ρ ρ' : ℝ → ℝ}
+    (hρd : ∀ t ∈ Set.Icc a b, HasDerivAt ρ (ρ' t) t)
+    (hρnn : ∀ t ∈ Set.Icc a b, 0 ≤ ρ' t)
+    (hρmem : ∀ t ∈ Set.Icc a b, ρ t ∈ Set.Icc (0:ℝ) 1)
+    (hρmono : MonotoneOn ρ (Set.Icc a b))
+    (hρa : ρ a = 0) (hρb : ρ b = 1) :
+    ∫⁻ t in Set.Icc a b,
+        ENNReal.ofReal (‖deriv (fun s => γ (ρ s)) t‖ / (γ (ρ t)) 2)
+      = pathLenH γ 0 1 := by
+  set u : ℝ → ℝ≥0∞ := fun w => ENNReal.ofReal (‖deriv γ w‖ / (γ w) 2) with hu
+  have hcont : ContinuousOn ρ (Set.Icc a b) :=
+    fun t ht => ((hρd t ht).differentiableAt.continuousAt).continuousWithinAt
+  have himg : ρ '' (Set.Icc a b) = Set.Icc (0:ℝ) 1 := by
+    apply Set.Subset.antisymm
+    · rintro w ⟨t, ht, rfl⟩; exact hρmem t ht
+    · have := intermediate_value_Icc hab hcont
+      rw [hρa, hρb] at this; exact this
+  have hcov := lintegral_image_eq_lintegral_deriv_mul_of_monotoneOn
+    (f := ρ) (f' := ρ') measurableSet_Icc
+    (fun t ht => (hρd t ht).hasDerivWithinAt) hρmono u
+  rw [himg] at hcov
+  have hLHS : ∫⁻ w in Set.Icc (0:ℝ) 1, u w = pathLenH γ 0 1 := rfl
+  have hpt : ∀ t ∈ Set.Icc a b,
+      ENNReal.ofReal (‖deriv (fun s => γ (ρ s)) t‖ / (γ (ρ t)) 2)
+        = ENNReal.ofReal (ρ' t) * u (ρ t) := by
+    intro t ht
+    have hγd : HasDerivAt γ (deriv γ (ρ t)) (ρ t) := (hγ.diff (ρ t) (hρmem t ht)).hasDerivAt
+    have hcomp : HasDerivAt (fun s => γ (ρ s)) (ρ' t • deriv γ (ρ t)) t :=
+      hγd.scomp t (hρd t ht)
+    have hd : deriv (fun s => γ (ρ s)) t = ρ' t • deriv γ (ρ t) := hcomp.deriv
+    have hnn := hρnn t ht
+    rw [hd, norm_smul, Real.norm_eq_abs, abs_of_nonneg hnn, hu]
+    simp only []
+    rw [mul_div_assoc, ENNReal.ofReal_mul hnn]
+  rw [setLIntegral_congr_fun measurableSet_Icc hpt, ← hcov, hLHS]
+
+/-- `sprof` maps `[0,1]` into `[0,1]`: `sprof w = w²(3−2w) ≥ 0` and
+`1 − sprof w = (1−w)²(1+2w) ≥ 0`. -/
+theorem sprof_mem {w : ℝ} (hw : w ∈ Set.Icc (0:ℝ) 1) : sprof w ∈ Set.Icc (0:ℝ) 1 := by
+  obtain ⟨h0, h1⟩ := hw
+  constructor
+  · have : sprof w = w ^ 2 * (3 - 2 * w) := by unfold sprof; ring
+    rw [this]; have : (0:ℝ) ≤ 3 - 2 * w := by linarith
+    positivity
+  · have : (1:ℝ) - sprof w = (1 - w) ^ 2 * (1 + 2 * w) := by unfold sprof; ring
+    nlinarith [sq_nonneg (1 - w), h0, h1]
+
+/-- `MonotoneOn` on `Icc a b` from a nonnegative pointwise derivative. -/
+theorem monotoneOn_of_hasDerivAt {a b : ℝ} {ρ ρ' : ℝ → ℝ}
+    (hρd : ∀ t ∈ Set.Icc a b, HasDerivAt ρ (ρ' t) t)
+    (hρnn : ∀ t ∈ Set.Icc a b, 0 ≤ ρ' t) : MonotoneOn ρ (Set.Icc a b) := by
+  apply monotoneOn_of_deriv_nonneg (convex_Icc a b)
+  · exact fun t ht => ((hρd t ht).differentiableAt.continuousAt).continuousWithinAt
+  · intro t ht
+    exact (hρd t (interior_subset ht)).differentiableAt.differentiableWithinAt
+  · intro t ht
+    have hmem := interior_subset ht
+    rw [(hρd t hmem).deriv]; exact hρnn t hmem
+
+
+/-- The zero-speed reparametrised concatenation of `γ` and `δ`. -/
+noncomputable def concat (γ δ : ℝ → E) (t : ℝ) : E :=
+  if t ≤ 1/2 then γ (sprof (2*t)) else δ (sprof (2*t - 1))
+
+/-- Left branch as a standalone function. -/
+noncomputable def concatL (γ : ℝ → E) : ℝ → E := fun s => γ (sprof (2*s))
+/-- Right branch as a standalone function. -/
+noncomputable def concatR (δ : ℝ → E) : ℝ → E := fun s => δ (sprof (2*s - 1))
+
+/-- HasDerivAt for the left branch at points where `sprof (2s) ∈ [0,1]`. -/
+theorem hasDerivAt_concatL {γ : ℝ → E} {x y : E} (hγ : AdmissiblePath γ x y) {s : ℝ}
+    (hs : sprof (2*s) ∈ Set.Icc (0:ℝ) 1) :
+    HasDerivAt (concatL γ) (((6 * (2*s) * (1 - 2*s)) * 2) • deriv γ (sprof (2*s))) s := by
+  have hin : HasDerivAt (fun t : ℝ => 2*t) 2 s := by simpa using (hasDerivAt_id s).const_mul (2:ℝ)
+  have hρ := (hasDerivAt_sprof (2*s)).comp s hin
+  have hγd : HasDerivAt γ (deriv γ (sprof (2*s))) (sprof (2*s)) := (hγ.diff _ hs).hasDerivAt
+  exact hγd.scomp s hρ
+
+/-- HasDerivAt for the right branch at points where `sprof (2s-1) ∈ [0,1]`. -/
+theorem hasDerivAt_concatR {δ : ℝ → E} {y z : E} (hδ : AdmissiblePath δ y z) {s : ℝ}
+    (hs : sprof (2*s - 1) ∈ Set.Icc (0:ℝ) 1) :
+    HasDerivAt (concatR δ) (((6 * (2*s-1) * (1 - (2*s-1))) * 2) • deriv δ (sprof (2*s-1))) s := by
+  have hin : HasDerivAt (fun t : ℝ => 2*t - 1) 2 s := by
+    simpa using ((hasDerivAt_id s).const_mul (2:ℝ)).sub_const 1
+  have hρ := (hasDerivAt_sprof (2*s - 1)).comp s hin
+  have hδd : HasDerivAt δ (deriv δ (sprof (2*s-1))) (sprof (2*s-1)) := (hδ.diff _ hs).hasDerivAt
+  exact hδd.scomp s hρ
+
+/-- The left branch has zero derivative at the join `s = 1/2`. -/
+theorem hasDerivAt_concatL_half {γ : ℝ → E} {x y : E} (hγ : AdmissiblePath γ x y) :
+    HasDerivAt (concatL γ) 0 (1/2) := by
+  have hs : sprof (2*(1/2)) ∈ Set.Icc (0:ℝ) 1 := by
+    have : (2:ℝ)*(1/2) = 1 := by ring
+    rw [this]; exact sprof_mem (by norm_num)
+  have h := hasDerivAt_concatL hγ hs
+  have hz : ((6 * (2*(1/2:ℝ)) * (1 - 2*(1/2))) * 2) = 0 := by ring
+  rw [hz, zero_smul] at h; exact h
+
+/-- The right branch has zero derivative at the join `s = 1/2`. -/
+theorem hasDerivAt_concatR_half {δ : ℝ → E} {y z : E} (hδ : AdmissiblePath δ y z) :
+    HasDerivAt (concatR δ) 0 (1/2) := by
+  have hs : sprof (2*(1/2) - 1) ∈ Set.Icc (0:ℝ) 1 := by
+    have : (2:ℝ)*(1/2) - 1 = 0 := by ring
+    rw [this]; exact sprof_mem (by norm_num)
+  have h := hasDerivAt_concatR hδ hs
+  have hz : ((6 * (2*(1/2:ℝ)-1) * (1 - (2*(1/2)-1))) * 2) = 0 := by ring
+  rw [hz, zero_smul] at h; exact h
+
+
+theorem concat_eq_L (γ δ : ℝ → E) {t : ℝ} (ht : t ≤ 1/2) :
+    concat γ δ t = concatL γ t := by simp only [concat, concatL, if_pos ht]
+
+theorem concat_eq_R (γ δ : ℝ → E) {t : ℝ} (ht : ¬ t ≤ 1/2) :
+    concat γ δ t = concatR δ t := by simp only [concat, concatR, if_neg ht]
+
+/-- On `[1/2, ∞)` the concatenation agrees with the right branch, using the
+join-matching `γ 1 = δ 0`. -/
+theorem concat_eq_R_ge (γ δ : ℝ → E) (hmatch : γ 1 = δ 0) {t : ℝ} (ht : 1/2 ≤ t) :
+    concat γ δ t = concatR δ t := by
+  rcases eq_or_lt_of_le ht with h | h
+  · subst h
+    rw [concat_eq_L γ δ (le_refl _)]
+    simp only [concatL, concatR]
+    rw [show (2:ℝ)*(1/2) = 1 by norm_num, sprof_one, show (1:ℝ) - 1 = 0 by norm_num,
+       sprof_zero, hmatch]
+  · exact concat_eq_R γ δ (by linarith)
+
+/-- **The concatenation is differentiable at the join `1/2`** (both one-sided
+derivatives vanish). -/
+theorem hasDerivAt_concat_half {γ δ : ℝ → E} {x y z : E}
+    (hγ : AdmissiblePath γ x y) (hδ : AdmissiblePath δ y z) :
+    HasDerivAt (concat γ δ) 0 (1/2) := by
+  have hmatch : γ 1 = δ 0 := by rw [hγ.target, hδ.source]
+  have hIic : HasDerivWithinAt (concat γ δ) 0 (Set.Iic (1/2)) (1/2) :=
+    (hasDerivAt_concatL_half hγ).hasDerivWithinAt.congr
+      (fun z hz => concat_eq_L γ δ hz) (concat_eq_L γ δ (le_refl _))
+  have hIci : HasDerivWithinAt (concat γ δ) 0 (Set.Ici (1/2)) (1/2) :=
+    (hasDerivAt_concatR_half hδ).hasDerivWithinAt.congr
+      (fun z hz => concat_eq_R_ge γ δ hmatch hz)
+      (concat_eq_R_ge γ δ hmatch (le_refl _))
+  have := hIic.union hIci
+  rw [Set.Iic_union_Ici, hasDerivWithinAt_univ] at this
+  exact this
+
+/-- **The concatenation is admissible** from `x` to `z`. -/
+theorem concat_admissible {γ δ : ℝ → E} {x y z : E}
+    (hγ : AdmissiblePath γ x y) (hδ : AdmissiblePath δ y z) :
+    AdmissiblePath (concat γ δ) x z where
+  source := by
+    rw [concat_eq_L γ δ (by norm_num)]
+    show γ (sprof (2*0)) = x
+    rw [show (2:ℝ)*0 = 0 by ring, sprof_zero, hγ.source]
+  target := by
+    rw [concat_eq_R γ δ (by norm_num)]
+    show δ (sprof (2*1 - 1)) = z
+    rw [show (2:ℝ)*1 - 1 = 1 by ring, sprof_one, hδ.target]
+  mem := by
+    intro t ht
+    rcases le_or_gt t (1/2) with h | h
+    · rw [concat_eq_L γ δ h]
+      have h2t : (2*t) ∈ Set.Icc (0:ℝ) 1 := ⟨by linarith [ht.1], by linarith⟩
+      exact hγ.mem _ (sprof_mem h2t)
+    · rw [concat_eq_R γ δ (by linarith)]
+      have h2t : (2*t - 1) ∈ Set.Icc (0:ℝ) 1 := ⟨by linarith, by linarith [ht.2]⟩
+      exact hδ.mem _ (sprof_mem h2t)
+  diff := by
+    intro t ht
+    rcases lt_trichotomy t (1/2) with h | h | h
+    · -- t < 1/2 : agrees with concatL near t
+      have hEq : concat γ δ =ᶠ[nhds t] concatL γ :=
+        Filter.eventuallyEq_of_mem (isOpen_Iio.mem_nhds h)
+          (fun y hy => concat_eq_L γ δ (le_of_lt hy))
+      have h2t : sprof (2*t) ∈ Set.Icc (0:ℝ) 1 :=
+        sprof_mem ⟨by linarith [ht.1], by linarith⟩
+      exact (hEq.differentiableAt_iff).mpr (hasDerivAt_concatL hγ h2t).differentiableAt
+    · subst h; exact (hasDerivAt_concat_half hγ hδ).differentiableAt
+    · -- t > 1/2 : agrees with concatR near t
+      have hEq : concat γ δ =ᶠ[nhds t] concatR δ :=
+        Filter.eventuallyEq_of_mem (isOpen_Ioi.mem_nhds h)
+          (fun y hy => concat_eq_R γ δ (by simp only [Set.mem_Ioi] at hy; linarith))
+      have h2t : sprof (2*t - 1) ∈ Set.Icc (0:ℝ) 1 :=
+        sprof_mem ⟨by linarith, by linarith [ht.2]⟩
+      exact (hEq.differentiableAt_iff).mpr (hasDerivAt_concatR hδ h2t).differentiableAt
+
+
+theorem hasDerivAt_rhoL (t : ℝ) :
+    HasDerivAt (fun s => sprof (2*s)) ((6 * (2*t) * (1 - 2*t)) * 2) t := by
+  have hin : HasDerivAt (fun s : ℝ => 2*s) 2 t := by simpa using (hasDerivAt_id t).const_mul (2:ℝ)
+  exact (hasDerivAt_sprof (2*t)).comp t hin
+
+theorem hasDerivAt_rhoR (t : ℝ) :
+    HasDerivAt (fun s => sprof (2*s - 1)) ((6 * (2*t-1) * (1 - (2*t-1))) * 2) t := by
+  have hin : HasDerivAt (fun s : ℝ => 2*s - 1) 2 t := by
+    simpa using ((hasDerivAt_id t).const_mul (2:ℝ)).sub_const 1
+  exact (hasDerivAt_sprof (2*t - 1)).comp t hin
+
+/-- `deriv (concat γ δ) = deriv (concatL γ)` on `[0, 1/2]` (both `0` at the join). -/
+theorem deriv_concat_eq_L {γ δ : ℝ → E} {x y z : E}
+    (hγ : AdmissiblePath γ x y) (hδ : AdmissiblePath δ y z) {t : ℝ}
+    (ht : t ∈ Set.Icc (0:ℝ) (1/2)) : deriv (concat γ δ) t = deriv (concatL γ) t := by
+  rcases eq_or_lt_of_le ht.2 with h | h
+  · rw [h, (hasDerivAt_concat_half hγ hδ).deriv, (hasDerivAt_concatL_half hγ).deriv]
+  · have hEq : concat γ δ =ᶠ[nhds t] concatL γ :=
+      Filter.eventuallyEq_of_mem (isOpen_Iio.mem_nhds h)
+        (fun w hw => concat_eq_L γ δ (le_of_lt hw))
+    exact hEq.deriv_eq
+
+/-- `deriv (concat γ δ) = deriv (concatR δ)` on `(1/2, 1]`. -/
+theorem deriv_concat_eq_R {γ δ : ℝ → E} {t : ℝ} (ht : 1/2 < t) :
+    deriv (concat γ δ) t = deriv (concatR δ) t := by
+  have hEq : concat γ δ =ᶠ[nhds t] concatR δ :=
+    Filter.eventuallyEq_of_mem (isOpen_Ioi.mem_nhds ht)
+      (fun w hw => concat_eq_R γ δ (by simp only [Set.mem_Ioi] at hw; linarith))
+  exact hEq.deriv_eq
+
+/-- **Length additivity of the concatenation.** -/
+theorem pathLenH_concat {γ δ : ℝ → E} {x y z : E}
+    (hγ : AdmissiblePath γ x y) (hδ : AdmissiblePath δ y z) :
+    pathLenH (concat γ δ) 0 1 = pathLenH γ 0 1 + pathLenH δ 0 1 := by
+  have hsplit : Set.Icc (0:ℝ) 1 = Set.Icc 0 (1/2) ∪ Set.Ioc (1/2) 1 :=
+    (Set.Icc_union_Ioc_eq_Icc (by norm_num) (by norm_num)).symm
+  have hdisj : Disjoint (Set.Icc (0:ℝ) (1/2)) (Set.Ioc (1/2) 1) := by
+    rw [Set.disjoint_left]; rintro a ha hb; exact absurd ha.2 (not_le.mpr hb.1)
+  -- left segment reparam
+  have hLeft : ∫⁻ t in Set.Icc (0:ℝ) (1/2),
+      ENNReal.ofReal (‖deriv (concatL γ) t‖ / (concatL γ t) 2) = pathLenH γ 0 1 := by
+    have := pathLenH_reparam_segment hγ (a := 0) (b := 1/2) (by norm_num)
+      (ρ := fun s => sprof (2*s)) (ρ' := fun t => (6 * (2*t) * (1 - 2*t)) * 2)
+      (fun t _ => hasDerivAt_rhoL t)
+      (fun t ht => by
+        have : 0 ≤ 1 - 2*t := by linarith [ht.2]
+        have : (0:ℝ) ≤ 2*t := by linarith [ht.1]
+        positivity)
+      (fun t ht => sprof_mem ⟨by linarith [ht.1], by linarith [ht.2]⟩)
+      (monotoneOn_of_hasDerivAt (fun t _ => hasDerivAt_rhoL t)
+        (fun t ht => by
+          have h1 : 0 ≤ 1 - 2*t := by linarith [ht.2]
+          have h2 : (0:ℝ) ≤ 2*t := by linarith [ht.1]
+          positivity))
+      (by simp only []; rw [show (2:ℝ)*0 = 0 by ring, sprof_zero])
+      (by simp only []; rw [show (2:ℝ)*(1/2) = 1 by norm_num, sprof_one])
+    simpa only [concatL] using this
+  -- right segment reparam
+  have hRightIcc : ∫⁻ t in Set.Icc (1/2:ℝ) 1,
+      ENNReal.ofReal (‖deriv (concatR δ) t‖ / (concatR δ t) 2) = pathLenH δ 0 1 := by
+    have := pathLenH_reparam_segment hδ (a := 1/2) (b := 1) (by norm_num)
+      (ρ := fun s => sprof (2*s - 1)) (ρ' := fun t => (6 * (2*t-1) * (1 - (2*t-1))) * 2)
+      (fun t _ => hasDerivAt_rhoR t)
+      (fun t ht => by
+        have h1 : 0 ≤ 1 - (2*t-1) := by linarith [ht.2]
+        have h2 : (0:ℝ) ≤ 2*t-1 := by linarith [ht.1]
+        positivity)
+      (fun t ht => sprof_mem ⟨by linarith [ht.1], by linarith [ht.2]⟩)
+      (monotoneOn_of_hasDerivAt (fun t _ => hasDerivAt_rhoR t)
+        (fun t ht => by
+          have h1 : 0 ≤ 1 - (2*t-1) := by linarith [ht.2]
+          have h2 : (0:ℝ) ≤ 2*t-1 := by linarith [ht.1]
+          positivity))
+      (by simp only []; rw [show (2:ℝ)*(1/2) - 1 = 0 by norm_num, sprof_zero])
+      (by simp only []; rw [show (2:ℝ)*1 - 1 = 1 by norm_num, sprof_one])
+    simpa only [concatR] using this
+  -- assemble
+  rw [pathLenH, hsplit, lintegral_union measurableSet_Ioc hdisj]
+  congr 1
+  · -- left piece
+    rw [← hLeft]
+    refine setLIntegral_congr_fun measurableSet_Icc (fun t ht => ?_)
+    rw [deriv_concat_eq_L hγ hδ ht, concat_eq_L γ δ ht.2]
+  · -- right piece: Ioc → Icc, then match concatR
+    rw [MeasureTheory.setLIntegral_congr Ioc_ae_eq_Icc, ← hRightIcc]
+    refine setLIntegral_congr_fun measurableSet_Icc (fun t ht => ?_)
+    rcases eq_or_lt_of_le ht.1 with h | h
+    · -- t = 1/2 boundary (null, but prove pointwise anyway)
+      rw [← h, deriv_concat_eq_L hγ hδ (by constructor <;> norm_num),
+         concat_eq_L γ δ (by norm_num)]
+      -- concatL γ (1/2) vs concatR δ (1/2): both derivs 0, values equal via match
+      rw [(hasDerivAt_concatL_half hγ).deriv, (hasDerivAt_concatR_half hδ).deriv]
+      have : concatL γ (1/2) = concatR δ (1/2) := by
+        simp only [concatL, concatR]
+        rw [show (2:ℝ)*(1/2) = 1 by norm_num, sprof_one, show (1:ℝ) - 1 = 0 by norm_num,
+           sprof_zero, hγ.target, hδ.source]
+      rw [this]
+    · rw [deriv_concat_eq_R h, concat_eq_R γ δ (by linarith)]
+
+
+/-- **Triangle inequality** `dH x z ≤ dH x y + dH y z`.  DERIVED via the
+zero-speed reparametrised concatenation: the concatenation of an admissible
+`x → y` path and an admissible `y → z` path is admissible `x → z` and has
+hyperbolic length the sum of the two, so the infimum is subadditive. -/
+theorem dH_triangle (x y z : E) : dH x z ≤ dH x y + dH y z := by
+  refine ENNReal.le_iInf₂_add_iInf₂ (fun γ hγ δ hδ => ?_)
+  calc dH x z ≤ pathLenH (concat γ δ) 0 1 := dH_le_pathLenH (concat_admissible hγ hδ)
+    _ = pathLenH γ 0 1 + pathLenH δ 0 1 := pathLenH_concat hγ hδ
+
+/-- Component `p ↦ p i` as a continuous linear functional on `E`. -/
+noncomputable def coordCLM (i : Fin 3) : E →L[ℝ] ℝ :=
+  (ContinuousLinearMap.proj i).comp (EuclideanSpace.equiv (Fin 3) ℝ).toContinuousLinearMap
+
+@[simp] theorem coordCLM_apply (i : Fin 3) (p : E) : coordCLM i p = p i := rfl
+
+/-- `|p i| ≤ ‖p‖` in Euclidean space. -/
+theorem abs_coord_le_norm (p : E) (i : Fin 3) : |p i| ≤ ‖p‖ := by
+  have := EuclideanSpace.norm_eq p
+  rw [this]
+  have hmem : i ∈ Finset.univ := Finset.mem_univ i
+  have hle : ‖p i‖ ^ 2 ≤ ∑ j, ‖p j‖ ^ 2 :=
+    Finset.single_le_sum (f := fun j => ‖p j‖ ^ 2) (fun j _ => sq_nonneg _) hmem
+  calc |p i| = ‖p i‖ := (Real.norm_eq_abs _).symm
+    _ = Real.sqrt (‖p i‖ ^ 2) := (Real.sqrt_sq (norm_nonneg _)).symm
+    _ ≤ Real.sqrt (∑ j, ‖p j‖ ^ 2) := Real.sqrt_le_sqrt hle
+
+/-- Component derivative: `d/dt (γ t) i = (deriv γ t) i`. -/
+theorem deriv_coord {γ : ℝ → E} {t : ℝ} (hγ : DifferentiableAt ℝ γ t) (i : Fin 3) :
+    HasDerivAt (fun s => (γ s) i) ((deriv γ t) i) t := by
+  have h := hγ.hasDerivAt
+  have := (coordCLM i).hasFDerivAt.comp_hasDerivAt t h
+  simpa [coordCLM_apply] using this
+
+/-- **z-component length lower bound.**  Every admissible path from `x` to `y`
+has hyperbolic length at least `|log (y₂/x₂)|` — the vertical drop is a lower
+bound for the hyperbolic length, via the FTC applied to `t ↦ log (γ(t)₂)`
+(finite length ⇒ the derivative is integrable, defeating the Cantor obstruction).
+Unconditional (no geodesic-uniqueness hypothesis). -/
+theorem pathLenH_ge_logHeight {γ : ℝ → E} {x y : E} (hγ : AdmissiblePath γ x y) :
+    ENNReal.ofReal |Real.log ((y) 2) - Real.log ((x) 2)| ≤ pathLenH γ 0 1 := by
+  by_cases hL : pathLenH γ 0 1 = ∞
+  · rw [hL]; exact le_top
+  -- finite length
+  set g : ℝ → ℝ := fun t => ‖deriv γ t‖ / (γ t) 2 with hg
+  set φ' : ℝ → ℝ := fun t => (deriv γ t) 2 / (γ t) 2 with hφ'
+  set φ : ℝ → ℝ := fun t => Real.log ((γ t) 2) with hφ
+  have hLlt : ∫⁻ t in Set.Icc (0:ℝ) 1, ENNReal.ofReal (g t) < ∞ := lt_top_iff_ne_top.mpr hL
+  -- continuity of γ on Icc, hence of the height coordinate
+  have hγc : ContinuousOn γ (Set.Icc (0:ℝ) 1) :=
+    fun t ht => (hγ.diff t ht).continuousAt.continuousWithinAt
+  have hheightC : ContinuousOn (fun t => (γ t) 2) (Set.Icc (0:ℝ) 1) :=
+    (coordCLM 2).continuous.comp_continuousOn hγc
+  -- measurability of g and φ'
+  have hnumNorm : AEStronglyMeasurable (fun t => ‖deriv γ t‖) (volume.restrict (Set.Icc (0:ℝ) 1)) :=
+    ((measurable_deriv γ).norm).aestronglyMeasurable
+  have hnumCoord : AEStronglyMeasurable (fun t => (deriv γ t) 2) (volume.restrict (Set.Icc (0:ℝ) 1)) :=
+    (((coordCLM 2).measurable.comp (measurable_deriv γ)).aestronglyMeasurable)
+  have hden : AEStronglyMeasurable (fun t => (γ t) 2) (volume.restrict (Set.Icc (0:ℝ) 1)) :=
+    hheightC.aestronglyMeasurable measurableSet_Icc
+  have hgm : AEStronglyMeasurable g (volume.restrict (Set.Icc (0:ℝ) 1)) :=
+    (hnumNorm.aemeasurable.div hden.aemeasurable).aestronglyMeasurable
+  have hφ'm : AEStronglyMeasurable φ' (volume.restrict (Set.Icc (0:ℝ) 1)) :=
+    (hnumCoord.aemeasurable.div hden.aemeasurable).aestronglyMeasurable
+  -- g ≥ 0 a.e. on Icc
+  have hgnn : 0 ≤ᵐ[volume.restrict (Set.Icc (0:ℝ) 1)] g :=
+    (ae_restrict_iff' measurableSet_Icc).mpr
+      (ae_of_all _ (fun t ht => div_nonneg (norm_nonneg _) (le_of_lt (hγ.mem t ht))))
+  -- g integrable on Icc
+  have hgint : IntegrableOn g (Set.Icc (0:ℝ) 1) := by
+    refine ⟨hgm, ?_⟩
+    rw [hasFiniteIntegral_iff_ofReal hgnn]
+    exact hLlt
+  -- |φ' t| ≤ g t on Icc
+  have hbound : ∀ t ∈ Set.Icc (0:ℝ) 1, ‖φ' t‖ ≤ g t := by
+    intro t ht
+    have hz : 0 < (γ t) 2 := hγ.mem t ht
+    rw [hg, hφ', Real.norm_eq_abs, abs_div, abs_of_pos hz, div_le_div_iff_of_pos_right hz]
+    exact abs_coord_le_norm _ 2
+  -- φ' integrable on Icc (dominated by g)
+  have hφ'int : IntegrableOn φ' (Set.Icc (0:ℝ) 1) := by
+    refine Integrable.mono' hgint hφ'm ?_
+    exact (ae_restrict_iff' measurableSet_Icc).mpr (ae_of_all _ hbound)
+  -- FTC
+  have hderiv : ∀ t ∈ Set.uIcc (0:ℝ) 1, HasDerivAt φ (φ' t) t := by
+    intro t ht
+    rw [Set.uIcc_of_le (by norm_num)] at ht
+    exact (deriv_coord (hγ.diff t ht) 2).log (ne_of_gt (hγ.mem t ht))
+  have hii : IntervalIntegrable φ' volume 0 1 := by
+    rw [intervalIntegrable_iff_integrableOn_Icc_of_le (by norm_num)]
+    exact hφ'int
+  have hftc : ∫ t in (0:ℝ)..1, φ' t = φ 1 - φ 0 :=
+    intervalIntegral.integral_eq_sub_of_hasDerivAt hderiv hii
+  -- |φ 1 - φ 0| ≤ ∫_Ioc g
+  have hIoc : ∫ t in (0:ℝ)..1, φ' t = ∫ t in Set.Ioc (0:ℝ) 1, φ' t :=
+    intervalIntegral.integral_of_le (by norm_num)
+  have hgintIoc : IntegrableOn g (Set.Ioc (0:ℝ) 1) :=
+    hgint.mono_set Set.Ioc_subset_Icc_self
+  have hφ'intIoc : IntegrableOn φ' (Set.Ioc (0:ℝ) 1) :=
+    hφ'int.mono_set Set.Ioc_subset_Icc_self
+  have habs : |φ 1 - φ 0| ≤ ∫ t in Set.Ioc (0:ℝ) 1, g t := by
+    rw [← hftc, hIoc, ← Real.norm_eq_abs]
+    calc ‖∫ t in Set.Ioc (0:ℝ) 1, φ' t‖ ≤ ∫ t in Set.Ioc (0:ℝ) 1, ‖φ' t‖ :=
+          norm_integral_le_integral_norm _
+      _ ≤ ∫ t in Set.Ioc (0:ℝ) 1, g t := by
+          refine setIntegral_mono_on hφ'intIoc.norm hgintIoc measurableSet_Ioc (fun t ht => ?_)
+          exact hbound t (Set.Ioc_subset_Icc_self ht)
+  -- bridge real integral to lintegral
+  have hgnnIoc : 0 ≤ᵐ[volume.restrict (Set.Ioc (0:ℝ) 1)] g :=
+    (ae_restrict_iff' measurableSet_Ioc).mpr
+      (ae_of_all _ (fun t ht => div_nonneg (norm_nonneg _)
+        (le_of_lt (hγ.mem t (Set.Ioc_subset_Icc_self ht)))))
+  have hbridge : ENNReal.ofReal (∫ t in Set.Ioc (0:ℝ) 1, g t)
+      = ∫⁻ t in Set.Icc (0:ℝ) 1, ENNReal.ofReal (g t) := by
+    rw [ofReal_integral_eq_lintegral_ofReal hgintIoc hgnnIoc]
+    exact MeasureTheory.setLIntegral_congr Ioc_ae_eq_Icc
+  -- assemble
+  have : ENNReal.ofReal |φ 1 - φ 0| ≤ ENNReal.ofReal (∫ t in Set.Ioc (0:ℝ) 1, g t) :=
+    ENNReal.ofReal_le_ofReal habs
+  rw [hbridge] at this
+  have hφ1 : φ 1 = Real.log ((y) 2) := by rw [hφ]; simp only []; rw [hγ.target]
+  have hφ0 : φ 0 = Real.log ((x) 2) := by rw [hφ]; simp only []; rw [hγ.source]
+  rw [hφ1, hφ0] at this
+  exact this
+
+
+/-- **`dH` dominates the vertical log-drop** — `ofReal |log(y₂/x₂)| ≤ dH x y`. -/
+theorem dH_ge_logHeight (x y : E) :
+    ENNReal.ofReal |Real.log ((y) 2) - Real.log ((x) 2)| ≤ dH x y :=
+  le_iInf₂ (fun _ hγ => pathLenH_ge_logHeight hγ)
+
+/-- **Height-coordinate separation** (unconditional): `dH x y = 0` forces the
+heights to agree, `y₂ = x₂`.  The vertical half of the full separation axiom. -/
+theorem dH_eq_zero_height {x y : E} (hx : x ∈ upperH) (hy : y ∈ upperH)
+    (h : dH x y = 0) : (y) 2 = (x) 2 := by
+  have hle := dH_ge_logHeight x y
+  rw [h, nonpos_iff_eq_zero, ENNReal.ofReal_eq_zero] at hle
+  have hd : Real.log ((y) 2) - Real.log ((x) 2) = 0 := abs_nonpos_iff.mp hle
+  have hlog : Real.log ((y) 2) = Real.log ((x) 2) := by linarith
+  calc (y) 2 = Real.exp (Real.log ((y) 2)) := (Real.exp_log hy).symm
+    _ = Real.exp (Real.log ((x) 2)) := by rw [hlog]
+    _ = (x) 2 := Real.exp_log hx
 
 end QOU.Archimedean.HyperbolicMetric
