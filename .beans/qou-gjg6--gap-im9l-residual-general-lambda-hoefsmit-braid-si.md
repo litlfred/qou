@@ -12,6 +12,8 @@ updated_at: 2026-08-16T14:06:51Z
 updated_at: 2026-08-16T15:28:57Z
 
 updated_at: 2026-08-16T16:43:28Z
+
+updated_at: 2026-08-16T18:00:00Z
 parent: qou-59vq
 ---
 
@@ -1396,3 +1398,38 @@ the Lean proof is the direct braid rewrite, not either of those.
 **Score so far on this branch:** 5 theorems, all sorry-free and axiom-clean.
 Two of the four sorries (`qJM_commute`, `barSymJMSum_central`) now hang on one
 explicit identity at general `k`, with `k = 1` done.
+
+
+### ✅ `qJM_commute` PROVED — sorry discharged (2026-08-16)
+
+`qJM_commute` no longer carries a sorry. Axiom-clean throughout
+(`[propext, Quot.sound]`, no `sorryAx`), `lean`-direct exit 0.
+
+* **`adjacent_step`** — the adjacent case at `k` follows from the adjacent case
+  at `k-1`, using braid + `σ_k`-commutation and **nothing else**. No
+  invertibility, no quadratic relation, no representation.
+* **`qJM_adjacent`** — induction on `k`, base `L_0 = 1`.
+* **`qJM_commute_proved`** — pairwise commutativity via
+  `qJM_commute_of_adjacent`.
+
+**🔻 Correcting my own note from earlier today.** I wrote that the general
+residual "needs `B` to move past `t`, and `s B = B s` gives no such permission",
+concluding a proof must use `σ_quadratic` **or** structure of `L_{k-1}` beyond
+its `σ_k`-commutation. The first half was right; the answer was the *second*
+disjunct — and the structure needed is simply **the previous adjacent instance**,
+which any induction already holds. I had written that disjunct as a distant
+possibility rather than the obvious next thing to try, and it cost a turn.
+
+**The original GAP comment was wrong, as suspected.** It read *"requires the
+seminormal diagonalisation (bean `qou-im9l` / SW-4 residual)"*. Nothing in the
+proof mentions a representation. An agent trusting it would have waited on
+`hoefsmit_seminormal_rep`, which is still open and much harder.
+
+**Also learned:** `hi : i ≤ n` and `hj : j ≤ n` are unnecessary — the statement
+holds for **all** `i, j`, because the recursion freezes above `n`. Left in the
+public signature rather than changing it.
+
+**Branch score: 8 theorems, all sorry-free and axiom-clean; one GAP closed.**
+Remaining in the file: `barSymJMSum_block_eigenvalue` (not provable as stated —
+`q ≠ 0` vs `seminormalRep`'s `0 < q ∧ q ≠ 1`; owner question) and
+`barSymJMSum_central`, which named `qJM_commute` as its blocker — now available.
