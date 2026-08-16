@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-16T13:17:29Z
+updated_at: 2026-08-16T13:22:35Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -241,3 +241,101 @@ caller that swaps only the function gets my -1650%.
 
 Still blocked on: performance (3A=9 does not finish in 20 min, so the
 A-dependence is still unmeasured), and the alpha-vs-E_0 scale decision.
+
+
+---
+
+# The performance blocker: it is the numpy/mpmath dtype leak (qou-5qwb), 642x
+
+Profiled rather than guessed, and my first guess was wrong.
+
+**Not** the seminormal construction — that is fast:
+
+    n=6   11 partitions   _cached_seminormal total  0.01s   sum dim^2 =     720
+    n=9   30 partitions   _cached_seminormal total  0.11s   sum dim^2 = 362,880
+
+It is the matrix loop, `M = M @ (c * sigmas[i] + d * I_lam)`. The braid word
+from `atom_braid_word_3A(1,2)` carries mpf coefficients in **19 of its 35
+steps**:
+
+    c=int  d=int   x16
+    c=int  d=mpf   x17
+    c=mpf  d=mpf   x2
+
+`sigmas[i]` is a float64 ndarray, but `d` is an mpf, so `c*sigma + d*I`
+promotes to **dtype=object** and the matmul leaves BLAS for Python-level
+mpmath arithmetic:
+
+    3 matmuls at dim=162:   as-is 18.928s   forced float64 0.0295s   ratio 642x
+
+That is bean **qou-5qwb**'s exact failure mode, and it explains why 3A=9 does
+not finish while 3A=6 takes 0.6s: n=9 has partitions of dim up to 216 where
+n=6 tops out at 16.
+
+Provenance: the mpf coefficients arrive from `efcaf79ed` — the same NO-FLOAT64
+braid-word commit that cost `atom_per_generator_volumes` 11.5x (qou-53p1).
+Here it costs 642x, because this consumer does real matrix products.
+
+**The dtype-leak gate did not catch it.** `numpy_mpmath_dtype_leak_audit.py` is
+blocking and was GREEN on every run this session. Worth a look on its own.
+
+# "Where else is normalized_plancherel used where it should not be?"
+
+Swept. Four live call sites plus two defaults, and — the bad one — the
+deprecation warning itself recommends it:
+
+    tools/pyhecke/python/pyhecke/atom.py:556        <-- the DeprecationWarning TEXT
+        "Migrate to mass_at_3A_proper.per_generator_V_hat_3A"
+        ... and the audit it cites spells the call with
+        weight_scheme="normalized_plancherel"
+
+    computations/binding_via_interface_knot.py:213,216      explicit, atom + free
+    computations/delta_lambda_v_hat_z_transfer_phase5d_4.py:109,111  explicit
+    computations/trace_convention_reconciliation.py:47      imports the weights directly
+    mass_at_3A_proper.py:479 (per_generator_V_hat_3A)       DEFAULT
+    mass_at_3A_proper.py:675 (binding_3A_tower)             DEFAULT
+
+`trace_convention_reconciliation.py` is the pointed one: a script whose job is
+reconciling trace conventions, built on the weight scheme that its own
+docstring says does not match the canonical Jones z.
+
+**And it was already condemned.** `docs/audits/2026-05-11-plancherel-usage-audit.md`
+line 245 marks `normalized_plancherel_weights_3A` **DEPRECATED**:
+
+> "rescales d_q^2/[n]_q! to force sum = 1 — Marked DEPRECATED — patch around
+> the non-normalised q-deformed weight. The fact that a renormalisation was
+> needed is itself the witness that q-deformed != Plancherel."
+
+Three months on it is still the default, still recommended by the live
+deprecation warning, and still the scheme that puts V_hat at the Phi_q pole.
+
+(The packaged copy `qou-mass/src/qou_mass/_internal/mass_at_3A_proper.py` is
+NOT a diverged fork — it differs from `computations/` only by the
+`_path_bridge` import line.)
+
+# alpha vs E_0 — the repo's own taxonomy answers it
+
+    alpha = m_e * 8G  = 3.744460 MeV
+            m_e is CAL-1; 8G = Vol(L6a4) is an exact hyperbolic identity.
+            DERIVED.
+
+    E_0   = Q_beta(n) = 0.782333 MeV
+            `pyhecke.constants.E_0_CALIBRATION_MEV = _Q_NEUTRON_MEV`, and
+            binding_canonical.py:160 names it "free-neutron beta-decay
+            Q-value, **CAL-3** calibration input".
+            A DECLARED CALIBRATION.
+
+So they are not two candidate values of one constant — they are a derived
+scale and a fitted one. Under the repo's no-free-parameter discipline (there is
+a `no_free_parameter_certificate.py` gate) the derived scale is the one a
+prediction may use; E_0 is an acknowledged anchor, legitimate to calibrate
+AGAINST but not to predict WITH.
+
+That argues for **alpha**, which is also the choice that gives the best
+deuteron measured so far (jones_wenzl + free-baseline + alpha = +37.7%, vs
+-71.2% under E_0).
+
+I am flagging rather than deciding: CAL-3 is an *acknowledged* input, and the
+repo does use acknowledged anchors in places. Whether the binding channel is
+one of them is the owner's call. But the two scales should not both be live in
+the same table on different channels, which is the situation today.
