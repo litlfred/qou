@@ -22,16 +22,23 @@
   contrapositive of `genWronskian_eq_zero_of_dependent` below: a non-zero Wronskian forces
   independence.
 
-  The converse — a vanishing Wronskian forces a dependence — is proved here **at `m = 2`
-  over a characteristic-zero field** (`exists_dependence_of_wronskian_eq_zero`), which is the
-  base case of the induction the general statement needs.
+  The converse — a vanishing Wronskian forces a dependence — is proved here too, at `m = 2`
+  (`exists_dependence_of_wronskian_eq_zero`) and then for **general `m`**
+  (`exists_dependence_of_genWronskian_eq_zero`), giving the iff `genWronskian_eq_zero_iff`.
 
-  ⚠ **General `m` is not proved.**  The induction step needs the ratio argument in the
-  function field and is materially harder.  Characteristic zero is not a convenience: in
-  characteristic `p` the statement is outright false for the naive derivative, since `xᵖ`
-  has all derivatives zero, so `1, xᵖ` are independent with vanishing Wronskian.
+  ⚠ **Characteristic zero is not a convenience.**  In characteristic `p` the converse is
+  outright false for the naive derivative, since `xᵖ` has all derivatives zero, so `1, xᵖ`
+  are independent with vanishing Wronskian.  A characteristic-free statement would have to
+  be phrased over Hasse derivatives.
+
+  ⚠ An earlier draft of this file recorded that general `m` "needs the ratio argument in the
+  function field and is materially harder".  That turned out to be avoidable:
+  `sum_wronskian_combo_eq_zero` multiplies by `c_l` where the classical proof divides by it,
+  which keeps the whole argument inside `K[X]`.  The note is kept because the abandoned
+  route is the one a reader is likely to reconstruct.
 -/
 import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
+import Mathlib.LinearAlgebra.Matrix.Nondegenerate
 import Mathlib.RingTheory.Polynomial.Wronskian
 import Mathlib.RingTheory.EuclideanDomain
 import Mathlib.RingTheory.Polynomial.Content
@@ -134,8 +141,8 @@ Divide by the gcd to reach coprime `a₁, b₁`; the scaling identity kills `g²
 constant; and `b₁ · a − a₁ · b = 0` is then the dependence.
 
 ⚠ Stated for a **field** because the gcd step needs one. The general-`m` statement, which
-Roth's lemma actually consumes, is an induction with this as its base — and the induction
-step is materially harder, needing the ratio argument in the function field. -/
+Roth's lemma actually consumes, is an induction with this as its base; it is proved below as
+`exists_dependence_of_genWronskian_eq_zero`, and consumes this lemma directly. -/
 theorem exists_dependence_of_wronskian_eq_zero {K : Type*} [Field K] [CharZero K]
     [DecidableEq K] {a b : K[X]} (ha : a ≠ 0) (hw : wronskian a b = 0) :
     ∃ c d : K, c ≠ 0 ∧ C c * b + C d * a = 0 := by
@@ -241,30 +248,178 @@ theorem sum_wronskian_combo_eq_zero {m : ℕ} (f c : Fin m → R[X]) (k : ℕ) (
     exact Finset.sum_congr rfl fun j _ => by simp only [wronskian]; ring
   rw [expand, hdesc, horig, mul_zero, mul_zero, sub_zero]
 
+section Converse
+
+open Matrix
+
+/-- The kernel condition on the Wronskian matrix, spelled out as derivative equations.
+The transposition of the two factors is the only content: `mulVec` multiplies on the right,
+the derivative systems above are written with the coefficient on the left. -/
+theorem mulVec_wronskianMatrix_eq_zero_iff {K : Type*} [Field K] {m : ℕ} (g v : Fin m → K[X]) :
+    wronskianMatrix g *ᵥ v = 0 ↔ ∀ i : Fin m, ∑ j, v j * derivative^[(i : ℕ)] (g j) = 0 := by
+  classical
+  rw [funext_iff]
+  refine forall_congr' fun i => ?_
+  simp only [mulVec, dotProduct, wronskianMatrix, Matrix.of_apply, Pi.zero_apply]
+  constructor
+  · intro h; rw [← h]; exact Finset.sum_congr rfl fun j _ => mul_comm _ _
+  · intro h; rw [← h]; exact Finset.sum_congr rfl fun j _ => mul_comm _ _
+
+/-- Peeling the last index off a Wronskian-style sum.  `Fin.init` is definitionally
+precomposition with `castSucc`, which is why this closes by `rfl` after the split. -/
+theorem sum_succ_split {K : Type*} [Field K] {n : ℕ} (v f : Fin (n + 1) → K[X]) (i : ℕ) :
+    ∑ j, v j * derivative^[i] (f j)
+      = (∑ j : Fin n, Fin.init v j * derivative^[i] (Fin.init f j))
+        + v (Fin.last n) * derivative^[i] (f (Fin.last n)) := by
+  rw [Fin.sum_univ_castSucc]; rfl
+
+/-- **Step 1.**  A vanishing generalized Wronskian yields a non-zero *polynomial* kernel
+vector — the same `Matrix.exists_mulVec_eq_zero_iff` the forward direction uses, read in the
+other direction. -/
+theorem exists_kernel_of_genWronskian_eq_zero {K : Type*} [Field K] {m : ℕ} (f : Fin m → K[X])
+    (hW : genWronskian f = 0) :
+    ∃ c : Fin m → K[X], c ≠ 0 ∧ ∀ i : ℕ, i < m → ∑ j, c j * derivative^[i] (f j) = 0 := by
+  classical
+  obtain ⟨c, hc, hmul⟩ := Matrix.exists_mulVec_eq_zero_iff.mpr hW
+  exact ⟨c, hc, fun i hi => (mulVec_wronskianMatrix_eq_zero_iff f c).mp hmul ⟨i, hi⟩⟩
+
+/-- **Steps 4–5.**  Once every `wronskian (c l) (c j)` vanishes and `c l ≠ 0`, the polynomial
+kernel vector collapses to a **constant** one — and that constant vector is non-zero.
+
+⚠ **The non-triviality is the part that is easy to lose.**  Cancelling `c l` gives
+`∑ⱼ C λⱼ · fⱼ = 0` whatever `λ` is, and `λ = 0` satisfies that vacuously — so a proof that
+stops at cancellation has proved nothing.  What rules it out is the relation at `j = l`:
+`c l = C (λ l) * c l` with `c l ≠ 0` in a domain forces `λ l = 1`.  Hence `λ ≠ 0`. -/
+theorem exists_constant_dependence_of_wronskians_vanish {K : Type*} [Field K] [CharZero K]
+    {m : ℕ} (f c : Fin m → K[X]) (l : Fin m) (hl : c l ≠ 0)
+    (hw : ∀ j, wronskian (c l) (c j) = 0) (h0 : ∑ j, c j * f j = 0) :
+    ∃ lam : Fin m → K, lam ≠ 0 ∧ ∑ j, C (lam j) * f j = 0 := by
+  classical
+  -- the `m = 2` converse, applied to each pair `(c l, c j)`
+  have key : ∀ j, ∃ t : K, c j = C t * c l := by
+    intro j
+    obtain ⟨g, d, hg, hgd⟩ := exists_dependence_of_wronskian_eq_zero hl (hw j)
+    refine ⟨-d / g, ?_⟩
+    have hg0 : (C g : K[X]) ≠ 0 := by simpa using hg
+    apply mul_left_cancel₀ hg0
+    have hcollect : C g * (C (-d / g) * c l) = C (g * (-d / g)) * c l := by rw [map_mul]; ring
+    have hval : g * (-d / g) = -d := by field_simp
+    rw [hcollect, hval, map_neg]
+    linear_combination hgd
+  choose lam hlam using key
+  have hlaml : lam l = 1 := by
+    have h := hlam l
+    nth_rewrite 1 [show c l = C 1 * c l by simp] at h
+    exact (C_injective.eq_iff.mp (mul_right_cancel₀ hl h)).symm
+  refine ⟨lam, fun hzero => ?_, ?_⟩
+  · rw [hzero] at hlaml; simp at hlaml
+  · have hfac : c l * ∑ j, C (lam j) * f j = 0 := by
+      rw [Finset.mul_sum, ← h0]
+      exact Finset.sum_congr rfl fun j _ => by rw [hlam j]; ring
+    exact (mul_eq_zero.mp hfac).resolve_left hl
+
+/-- **The converse: a vanishing generalized Wronskian forces a constant linear dependence.**
+
+Induction on `m`.  Either the leading minor already degenerates — and the inductive
+hypothesis finishes, extending by zero — or it does not, and then the kernel vector's last
+entry is non-zero, `sum_wronskian_combo_eq_zero` produces a kernel vector of the
+non-degenerate minor, which is therefore zero, which is exactly the hypothesis of
+`exists_constant_dependence_of_wronskians_vanish`. -/
+theorem exists_dependence_of_genWronskian_eq_zero {K : Type*} [Field K] [CharZero K] :
+    ∀ {m : ℕ}, 0 < m → ∀ f : Fin m → K[X], genWronskian f = 0 →
+      ∃ lam : Fin m → K, lam ≠ 0 ∧ ∑ j, C (lam j) * f j = 0 := by
+  classical
+  intro m
+  induction m with
+  | zero => intro h; exact absurd h (lt_irrefl 0)
+  | succ n ih =>
+    intro _ f hW
+    rcases Nat.eq_zero_or_pos n with rfl | hn
+    · -- `m = 1`: the Wronskian *is* the polynomial
+      refine ⟨fun _ => 1, ?_, ?_⟩
+      · intro h; have := congrFun h 0; simp at this
+      · have h1 : genWronskian f = f 0 := by simp [genWronskian, wronskianMatrix]
+        rw [h1] at hW
+        simp [hW]
+    · by_cases hgW : genWronskian (Fin.init f) = 0
+      · -- the minor already degenerates: extend the shorter dependence by zero
+        obtain ⟨lam', hne, hsum⟩ := ih hn (Fin.init f) hgW
+        refine ⟨Fin.snoc lam' 0, ?_, ?_⟩
+        · intro h
+          refine hne (_root_.funext fun j => ?_)
+          have := congrFun h j.castSucc
+          simpa [Fin.snoc_castSucc] using this
+        · rw [Fin.sum_univ_castSucc]
+          simp only [Fin.snoc_castSucc, Fin.snoc_last, map_zero, zero_mul, add_zero]
+          exact hsum
+      · obtain ⟨c, hc, hker⟩ := exists_kernel_of_genWronskian_eq_zero f hW
+        -- a zero last entry would degenerate the minor, contradicting this branch
+        have hlast : c (Fin.last n) ≠ 0 := by
+          intro h0
+          refine hgW ?_
+          rw [genWronskian, ← Matrix.exists_mulVec_eq_zero_iff]
+          refine ⟨Fin.init c, ?_, ?_⟩
+          · intro hz
+            refine hc (_root_.funext fun j => ?_)
+            induction j using Fin.lastCases with
+            | last => simpa using h0
+            | cast j' => simpa [Fin.init] using congrFun hz j'
+          · rw [mulVec_wronskianMatrix_eq_zero_iff]
+            intro i
+            have hi := hker i (Nat.lt_succ_of_lt i.isLt)
+            rw [sum_succ_split, h0, zero_mul, add_zero] at hi
+            exact hi
+        have hcombo := sum_wronskian_combo_eq_zero f c n (Fin.last n)
+          (fun i hi => hker i (Nat.lt_succ_of_le hi))
+        -- the combination is a kernel vector of a *non-degenerate* minor, hence zero
+        have hw : ∀ j, wronskian (c (Fin.last n)) (c j) = 0 := by
+          have hinit : Fin.init (fun j => wronskian (c (Fin.last n)) (c j)) = 0 := by
+            refine Matrix.eq_zero_of_mulVec_eq_zero (M := wronskianMatrix (Fin.init f)) hgW ?_
+            rw [mulVec_wronskianMatrix_eq_zero_iff]
+            intro i
+            have hi := hcombo i i.isLt
+            rw [sum_succ_split, wronskian_self_eq_zero, zero_mul, add_zero] at hi
+            exact hi
+          intro j
+          induction j using Fin.lastCases with
+          | last => exact wronskian_self_eq_zero _
+          | cast j' => simpa [Fin.init] using congrFun hinit j'
+        exact exists_constant_dependence_of_wronskians_vanish f c (Fin.last n) hlast hw
+          (by simpa using hker 0 (Nat.succ_pos n))
+
+/-- **Linear dependence over the constants is exactly a vanishing generalized Wronskian**,
+in characteristic zero.
+
+This is the form Roth's lemma consumes: a *non-zero* generalized Wronskian is a certificate
+of linear independence. -/
+theorem genWronskian_eq_zero_iff {K : Type*} [Field K] [CharZero K] {m : ℕ}
+    (f : Fin m → K[X]) (hm : 0 < m) :
+    genWronskian f = 0 ↔ ∃ lam : Fin m → K, lam ≠ 0 ∧ ∑ j, C (lam j) * f j = 0 := by
+  refine ⟨exists_dependence_of_genWronskian_eq_zero hm f, ?_⟩
+  rintro ⟨lam, hne, hsum⟩
+  exact genWronskian_eq_zero_of_dependent f lam hne hsum
+
+end Converse
+
 /-! ### Next
 
-**The general-`m` converse now has a route that stays inside `R[X]`.**  Earlier notes in
-this file said it needs the ratio argument in `RatFunc K`; with `sum_wronskian_combo_eq_zero`
-it does not.  Sketch, with the pieces that exist marked:
+**The general-`m` converse is proved** — `genWronskian_eq_zero_iff` above.  The route
+recorded here earlier (kernel vector, induction, Wronskian combination, the `m = 2`
+converse, substitution) went through as stated, and stayed inside `K[X]`: the `RatFunc K`
+ratio argument the first draft of this file called for was never needed.
 
-1. `genWronskian f = 0` over the domain `K[X]` gives a non-zero kernel vector `c` in
-   `K[X]^m` — `Matrix.exists_mulVec_eq_zero_iff`, the same lemma the forward direction uses.
-2. Induct on `m`.  If `W(f₁ … f_{m−1}) = 0`, the inductive hypothesis finishes.  Otherwise
-   that minor is invertible, which forces `c_m ≠ 0`.
-3. **[proved]** `sum_wronskian_combo_eq_zero` gives a kernel vector for the shorter system
-   whose `m`-th entry is `0`; invertibility of the minor makes it **zero**, i.e.
-   `wronskian (c_m) (c_j) = 0` for every `j`.
-4. **[proved]** `exists_dependence_of_wronskian_eq_zero` turns each of those into
-   `c_j = λ_j · c_m` with `λ_j` constant.
-5. Substituting, `c_m · (∑ⱼ λⱼ fⱼ) = 0`, and `c_m ≠ 0` in a domain gives the constant
-   dependence.
+⚠ **One step of that recorded route was wrong, and worth keeping visible.**  Step 5 read
+"substituting, `c_m · (∑ⱼ λⱼ fⱼ) = 0`, and `c_m ≠ 0` in a domain gives the constant
+dependence".  That produces `∑ⱼ λⱼ fⱼ = 0` and says *nothing about `λ ≠ 0`* — but `λ = 0`
+satisfies the conclusion vacuously, so as written the step would have licensed a proof of
+nothing.  The repair comes from a step already proved: applying the `m = 2` converse at
+`j = l` forces `λ_l = 1`.  See the `⚠` on
+`exists_constant_dependence_of_wronskians_vanish`.
 
-So steps 3 and 4 — the two that carry the mathematics — are done, and what is left is the
-matrix bookkeeping of steps 1, 2 and 5.  **This is a materially smaller job than the
-`RatFunc` route it replaces**, and it is why the `m = 2` case was worth proving first:
-step 4 consumes it directly.
+The estimate that steps 1, 2 and 5 were "matrix bookkeeping" did hold: they needed no new
+mathematics, only `Fin.lastCases`/`Fin.snoc` surgery and two structural helpers.
 
-Also still open, and materially harder:
+Still open, and materially harder:
 
 * it is **false in characteristic `p`** for the naive derivative (`xᵖ` has every derivative
   zero, so `1, xᵖ` are independent with vanishing Wronskian), so it needs characteristic
