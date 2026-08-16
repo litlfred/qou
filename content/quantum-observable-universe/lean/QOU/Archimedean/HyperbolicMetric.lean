@@ -24,13 +24,14 @@ isometries (a vertical reflection, an inversion in a boundary sphere) are then
 ## What is PROVED here (sorry-free)
 
 * `dH_self` — `dH x x = 0` (the constant path realises length `0`).
-* `dH_image_le` / `dH_image_eq` — **the isometry engine.**  A map `φ` that is
+* `IsDHIsometry φ` + its methods — **the isometry engine.**  A map `φ` that is
   *conformal with the same factor on the height* — Fréchet derivative `Dφ(p)`
   scaling every tangent vector by `lam(p)` and height by the SAME `lam(p)` —
-  preserves the line element `‖v‖/z` POINTWISE, hence preserves `pathLenH`, hence
-  (as an infimum over a set carried bijectively by `φ`) preserves `dH`.  This is
-  the single reusable lemma that Files `HyperbolicIsometryReflection` (`lam ≡ 1`)
-  and `HyperbolicIsometryInversion` (`lam = R²/‖p-c‖²`) instantiate.
+  preserves the line element `‖v‖/z` POINTWISE (`speed_comp`), hence preserves
+  `pathLenH` (`pathLenH_comp`), hence `dH` (`dH_le`; `dH_eq` for involutions).
+  This is the single reusable interface that Files `HyperbolicIsometryReflection`
+  (`lam ≡ 1`) and `HyperbolicIsometryInversion` (`lam = R²/‖p-c‖²`) instantiate,
+  and that `HyperbolicGeodesic`'s totally-geodesic classification consumes.
 
   The pointwise cancellation is the mathematical content: for the reflection the
   factor is `1` on both norm and height; for the inversion the conformal factor
@@ -132,68 +133,92 @@ theorem dH_self {x : E} (hx : x ∈ upperH) : dH x x = 0 := by
 
 A map `φ : E → E` whose Fréchet derivative `Dφ(p)` scales every tangent vector by
 `lam(p)` and whose height scales by the SAME `lam(p)` preserves the line element
-`‖v‖/z` pointwise.  This is the one reusable lemma behind BOTH boundary
-isometries. -/
+`‖v‖/z` **pointwise**.  We bundle these four facts as `IsDHIsometry φ` and derive
+from them, once and reusably: image-admissibility, length preservation, pointwise
+speed preservation, and finally `dH`-invariance.  Both boundary isometries below
+(reflection, inversion) and the totally-geodesic classification consume this one
+interface. -/
 
-/-- **Isometry engine, `≤` direction.**  If `φ` is conformal with factor `lam`
-(derivative scales norms by `lam`) and scales the height coordinate by the SAME
-`lam`, then `dH (φ x) (φ y) ≤ dH x y`.
+/-- **Conformal height-scaling data for `φ`.**  A choice of derivative field `Dφ`
+and conformal factor `lam` witnessing that `φ` is, on `H³`, differentiable with a
+derivative that scales every tangent norm by `lam(p)` and scales the height
+coordinate by the SAME `lam(p)`.  Carries data (`Dφ`, `lam`), so it is a
+`structure`, not a `Prop`. -/
+structure IsDHIsometry (φ : E → E) where
+  /-- the Fréchet derivative field of `φ`. -/
+  Dφ : E → (E →L[ℝ] E)
+  /-- the conformal factor. -/
+  lam : E → ℝ
+  hderiv : ∀ p ∈ upperH, HasFDerivAt φ (Dφ p) p
+  hlam : ∀ p ∈ upperH, 0 < lam p
+  hconf : ∀ p ∈ upperH, ∀ v, ‖Dφ p v‖ = lam p * ‖v‖
+  hheight : ∀ p ∈ upperH, (φ p) 2 = lam p * (p 2)
 
-The proof is a pointwise cancellation: along any admissible `γ`, the image path
-`φ ∘ γ` is admissible, and at each `t` the chain rule gives
-`‖(φ∘γ)'(t)‖ = lam·‖γ'(t)‖` while the height is `lam·γ(t)_z`, so the ratio
-`‖v‖/z` — hence the whole integrand — is unchanged.  No change of variables. -/
-theorem dH_image_le {φ : E → E} {Dφ : E → (E →L[ℝ] E)} {lam : E → ℝ}
-    (hderiv : ∀ p ∈ upperH, HasFDerivAt φ (Dφ p) p)
-    (hlam : ∀ p ∈ upperH, 0 < lam p)
-    (hconf : ∀ p ∈ upperH, ∀ v, ‖Dφ p v‖ = lam p * ‖v‖)
-    (hheight : ∀ p ∈ upperH, (φ p) 2 = lam p * (p 2))
-    {x y : E} : dH (φ x) (φ y) ≤ dH x y := by
+namespace IsDHIsometry
+
+variable {φ : E → E} (h : IsDHIsometry φ)
+include h
+
+/-- A conformal height-scaling map sends `H³` into `H³` (the height stays
+positive: `lam·z > 0`). -/
+theorem maps {p : E} (hp : p ∈ upperH) : φ p ∈ upperH := by
+  rw [mem_upperH, h.hheight p hp]; exact mul_pos (h.hlam p hp) hp
+
+/-- **The pointwise line-element preservation** — the mathematical heart.  At any
+point of `H³`, the hyperbolic *speed* `‖γ'‖/z` of `φ ∘ γ` equals that of `γ`: the
+conformal factor `lam` multiplies both `‖γ'‖` (via the chain rule + `hconf`) and
+`z` (via `hheight`), and cancels. -/
+theorem speed_comp {γ : ℝ → E}
+    (hdiff : ∀ t ∈ Set.Icc (0 : ℝ) 1, DifferentiableAt ℝ γ t)
+    (hmem : ∀ t ∈ Set.Icc (0 : ℝ) 1, γ t ∈ upperH)
+    {t : ℝ} (ht : t ∈ Set.Icc (0 : ℝ) 1) :
+    ‖deriv (φ ∘ γ) t‖ / ((φ ∘ γ) t) 2 = ‖deriv γ t‖ / (γ t) 2 := by
+  have hp := hmem t ht
+  have hg : HasDerivAt γ (deriv γ t) t := (hdiff t ht).hasDerivAt
+  have hcomp : HasDerivAt (φ ∘ γ) (h.Dφ (γ t) (deriv γ t)) t :=
+    (h.hderiv _ hp).comp_hasDerivAt t hg
+  have hlp : 0 < h.lam (γ t) := h.hlam _ hp
+  have hnorm : ‖deriv (φ ∘ γ) t‖ = h.lam (γ t) * ‖deriv γ t‖ := by
+    rw [hcomp.deriv]; exact h.hconf _ hp _
+  have hht : ((φ ∘ γ) t) 2 = h.lam (γ t) * (γ t) 2 := h.hheight _ hp
+  rw [hnorm, hht, mul_div_mul_left _ _ (ne_of_gt hlp)]
+
+/-- The image of an admissible path under `φ` is admissible (endpoints move by
+`φ`, `H³` is preserved, differentiability is by the chain rule). -/
+theorem admissiblePath_comp {γ : ℝ → E} {x y : E} (hγ : AdmissiblePath γ x y) :
+    AdmissiblePath (φ ∘ γ) (φ x) (φ y) where
+  source := by show φ (γ 0) = φ x; rw [hγ.source]
+  target := by show φ (γ 1) = φ y; rw [hγ.target]
+  mem := fun t ht => h.maps (hγ.mem t ht)
+  diff := fun t ht =>
+    ((h.hderiv _ (hγ.mem t ht)).comp_hasDerivAt t (hγ.diff t ht).hasDerivAt).differentiableAt
+
+/-- `φ` preserves hyperbolic path length: `len (φ∘γ) = len γ` — the integral of
+the pointwise-preserved speed. -/
+theorem pathLenH_comp {γ : ℝ → E}
+    (hdiff : ∀ t ∈ Set.Icc (0 : ℝ) 1, DifferentiableAt ℝ γ t)
+    (hmem : ∀ t ∈ Set.Icc (0 : ℝ) 1, γ t ∈ upperH) :
+    pathLenH (φ ∘ γ) 0 1 = pathLenH γ 0 1 := by
+  unfold pathLenH
+  refine setLIntegral_congr_fun measurableSet_Icc (fun t ht => ?_)
+  rw [h.speed_comp hdiff hmem ht]
+
+/-- **`dH (φ x) (φ y) ≤ dH x y`** — for each admissible `γ`, `φ∘γ` is admissible
+with equal length. -/
+theorem dH_le {x y : E} : dH (φ x) (φ y) ≤ dH x y := by
   refine le_iInf₂ fun γ hγ => ?_
-  -- `φ` maps `H³` into `H³`.
-  have hmaps : ∀ p ∈ upperH, φ p ∈ upperH := by
-    intro p hp
-    rw [mem_upperH, hheight p hp]
-    exact mul_pos (hlam p hp) hp
-  -- the image path is admissible.
-  have hadm : AdmissiblePath (φ ∘ γ) (φ x) (φ y) := by
-    refine { source := ?_, target := ?_, mem := ?_, diff := ?_ }
-    · show φ (γ 0) = φ x; rw [hγ.source]
-    · show φ (γ 1) = φ y; rw [hγ.target]
-    · intro t ht; exact hmaps _ (hγ.mem t ht)
-    · intro t ht
-      have hp := hγ.mem t ht
-      have hg : HasDerivAt γ (deriv γ t) t := (hγ.diff t ht).hasDerivAt
-      exact ((hderiv _ hp).comp_hasDerivAt t hg).differentiableAt
-  -- the lengths agree — the pointwise conformal cancellation.
-  have hlen : pathLenH (φ ∘ γ) 0 1 = pathLenH γ 0 1 := by
-    unfold pathLenH
-    refine setLIntegral_congr_fun measurableSet_Icc (fun t ht => ?_)
-    have hp := hγ.mem t ht
-    have hg : HasDerivAt γ (deriv γ t) t := (hγ.diff t ht).hasDerivAt
-    have hcomp : HasDerivAt (φ ∘ γ) (Dφ (γ t) (deriv γ t)) t :=
-      (hderiv _ hp).comp_hasDerivAt t hg
-    have hlp : 0 < lam (γ t) := hlam _ hp
-    have hnorm : ‖deriv (φ ∘ γ) t‖ = lam (γ t) * ‖deriv γ t‖ := by
-      rw [hcomp.deriv]; exact hconf _ hp _
-    have hht : ((φ ∘ γ) t) 2 = lam (γ t) * (γ t) 2 := hheight _ hp
-    rw [hnorm, hht, mul_div_mul_left _ _ (ne_of_gt hlp)]
-  calc dH (φ x) (φ y) ≤ pathLenH (φ ∘ γ) 0 1 := dH_le_pathLenH hadm
-    _ = pathLenH γ 0 1 := hlen
+  calc dH (φ x) (φ y) ≤ pathLenH (φ ∘ γ) 0 1 :=
+        dH_le_pathLenH (h.admissiblePath_comp hγ)
+    _ = pathLenH γ 0 1 := h.pathLenH_comp hγ.diff hγ.mem
 
-/-- **Isometry engine, equality.**  An involutive (`φ ∘ φ = id`) conformal
-height-scaling map is a `dH`-isometry: `dH (φ x) (φ y) = dH x y`.  Both boundary
-isometries below are involutions, so this is the form they use. -/
-theorem dH_image_eq {φ : E → E} {Dφ : E → (E →L[ℝ] E)} {lam : E → ℝ}
-    (hderiv : ∀ p ∈ upperH, HasFDerivAt φ (Dφ p) p)
-    (hlam : ∀ p ∈ upperH, 0 < lam p)
-    (hconf : ∀ p ∈ upperH, ∀ v, ‖Dφ p v‖ = lam p * ‖v‖)
-    (hheight : ∀ p ∈ upperH, (φ p) 2 = lam p * (p 2))
-    (hinv : ∀ p, φ (φ p) = p) (x y : E) :
+/-- **`dH` is invariant under an involutive conformal height-scaling map.**  Both
+boundary isometries are involutions, so this is the form they use. -/
+theorem dH_eq (hinv : Function.Involutive φ) (x y : E) :
     dH (φ x) (φ y) = dH x y := by
-  refine le_antisymm (dH_image_le hderiv hlam hconf hheight) ?_
-  have h := dH_image_le (φ := φ) (Dφ := Dφ) (lam := lam) hderiv hlam hconf hheight
-      (x := φ x) (y := φ y)
-  rwa [hinv, hinv] at h
+  refine le_antisymm h.dH_le ?_
+  have hle := h.dH_le (x := φ x) (y := φ y)
+  rwa [hinv x, hinv y] at hle
+
+end IsDHIsometry
 
 end QOU.Archimedean.HyperbolicMetric
