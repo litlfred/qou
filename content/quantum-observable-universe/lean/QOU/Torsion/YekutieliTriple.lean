@@ -38,16 +38,24 @@ Note it cannot be stated over `R_q = ℤ[q, q⁻¹]` (the ground ring of the sib
 meaning there. Unifying the two would first require restating the deviation as
 a division-free multiplicative relation, or moving to `R_qˣ`. -/
 
-variable (R : Type*) [GroupWithZero R]
-
 /-- **Yekutieli triple** at level `n` over `Uᵢ ∩ Uⱼ`.
-    LaTeX: `\label{def:yekutieli-triple}` -/
-structure YekutieliTriple (M : Type*) where
+    LaTeX: `\label{def:yekutieli-triple}`
+
+    Requires only `[Zero R]`: the triple is *data* plus one non-degeneracy
+    hypothesis (`twoMorphisms p ≠ 0`), and nothing in it multiplies or inverts.
+    Kept deliberately at that minimum so rings **without** total inverses can
+    instantiate it — in particular `R_q = ℤ[q, q⁻¹]`, which
+    `QOU.LiftingDescent.CosimplicialCrossedGroupoid` builds its cosimplicial
+    tower over. The inverse-using constructions below ask for `GroupWithZero`
+    separately, so the weaker structure is not weakened *for* them. -/
+structure YekutieliTriple (R : Type*) [Zero R] (M : Type*) where
   level : ℕ
   objects : M → M
   oneMorphisms : M → R
   twoMorphisms : M → R
   twoMorphisms_ne_zero : ∀ (p : M), twoMorphisms p ≠ 0
+
+variable (R : Type*) [GroupWithZero R]
 
 /-- Čech 1-cocycle deviation `g_{ijk}`. -/
 noncomputable def cechDeviation {M : Type*}
