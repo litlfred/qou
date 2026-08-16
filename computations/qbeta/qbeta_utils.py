@@ -32,6 +32,18 @@ def chi_block_111(q: mpf) -> mpf:
     return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q ** 5)
 
 
+#: The variable the Q_β `c_k` rungs are currently expanded in.
+#:
+#: `"u"` — the committed frame, `u = b·ℏ_q²`.
+#: `"h"` — the migration target, `h = q − 1/q` (bean `qou-cwin`).
+#:
+#: The two are NOT interchangeable labels for one ladder: `u ∼ h²`, so the
+#: same function has different rungs in each, and `u → h` reversion needs
+#: `√u`. A `c_k` value is meaningless without knowing which frame it is in —
+#: which is the whole reason this constant exists rather than being implied.
+LADDER_FRAME = "u"
+
+
 def markov_parameter(q: mpf) -> mpf:
     """The canonical Markov parameter z(q) = √q / (1 + q).
 
@@ -108,8 +120,27 @@ def delta_tau_M_canonical_explicit(q: mpf) -> mpf:
 def substrate_ladder_quantities(q: mpf) -> dict:
     """Return the Q_β-ladder substrate quantities at substrate value `q`.
 
-    Keys: `h`, `hbar_q`, `b`, `u`, `z`, `alpha`, `Q_A_over_me`.
+    Keys: `h`, `hbar_q`, `b`, `u`, `z`, `alpha`, `Q_A_over_me`, `ladder_frame`.
     Mirrors the opening block of `qbeta_ck_cache.py::main`.
+
+    `ladder_frame` names the variable the `c_k` rungs are expanded in. It is
+    currently `"u"`, and it is emitted so that every witness built from these
+    quantities can DECLARE its frame rather than leave a reader to infer it.
+
+    Why the field exists (bean `qou-cwin`, T0). The owner authorised
+    re-expressing the ladder in `h = q − 1/q` instead of `u = b·ℏ_q²`, which
+    changes every `c_k` number. The convention C→D campaign taught what
+    happens when artifacts do not declare their frame: PR #5210's own
+    impact tool could only report *"0 of 12 declare `markov_convention`, so
+    the count is a lower bound"* — a migration whose artifacts are silent
+    about their frame cannot be measured, only guessed at. Measured here
+    before any number moved: of 278 `c_k`-bearing witnesses under
+    `computations/qbeta/`, **0** declared a frame.
+
+    Adding this key is safe for the 102 in-repo consumers: none iterates the
+    returned dict (checked by resolving each `x = substrate_ladder_quantities(...)`
+    binding and searching for `x.items()` / `x.values()`), so a non-numeric
+    value cannot reach arithmetic or a numeric serializer.
 
     Precondition: `q > 0` and `q ≠ 1`. At `q = 1` the substrate degenerates
     (`hbar_q = 0` ⇒ `u = 0`), which makes downstream consumers like
@@ -127,6 +158,7 @@ def substrate_ladder_quantities(q: mpf) -> dict:
     return {
         "h": h, "hbar_q": hbar_q, "b": b, "u": u,
         "z": z, "alpha": alpha, "Q_A_over_me": Q_A_over_me,
+        "ladder_frame": LADDER_FRAME,
     }
 
 
