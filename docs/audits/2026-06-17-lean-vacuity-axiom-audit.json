@@ -1,22 +1,22 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-10T01:51:53.104Z",
+  "generated": "2026-08-16T01:50:24.169Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 2765,
-  "files_flagged": 169,
-  "total_defects": 94,
-  "total_exempt": 124,
+  "scanned_files": 2906,
+  "files_flagged": 170,
+  "total_defects": 99,
+  "total_exempt": 122,
   "categories": {
     "proof-no-self-assuming-projection": 46,
-    "proof-no-trivial-true": 18,
+    "proof-no-trivial-true": 21,
     "proof-no-provable-axiom": 11,
     "proof-no-unused-hypothesis-rfl": 14,
-    "proof-docstring-sorry-mismatch": 1,
+    "proof-docstring-sorry-mismatch": 3,
     "proof-claims-unencoded": 3,
     "proof-no-decide-masking": 1
   },
   "conjecture_graph": {
-    "total": 248,
+    "total": 242,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -90,18 +90,13 @@
       },
       {
         "name": "BlowupYekutieli",
-        "file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean",
-        "line": 37
-      },
-      {
-        "name": "BlowupYekutieli",
         "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean",
         "line": 79
       },
       {
         "name": "BorelZagierQOU",
         "file": "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
-        "line": 480
+        "line": 489
       },
       {
         "name": "BorelZagierQouVolumes",
@@ -136,7 +131,7 @@
       {
         "name": "BorromeanQuark",
         "file": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean",
-        "line": 258
+        "line": 294
       },
       {
         "name": "BorromeanQuark",
@@ -146,7 +141,7 @@
       {
         "name": "BorromeanQuark",
         "file": "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean",
-        "line": 279
+        "line": 286
       },
       {
         "name": "BorromeanQuark",
@@ -231,7 +226,7 @@
       {
         "name": "Cl_2_PentagonIdentity",
         "file": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean",
-        "line": 145
+        "line": 161
       },
       {
         "name": "ClassicalLimitStpart",
@@ -267,11 +262,6 @@
         "name": "CoordinationEdgeAmplitude",
         "file": "content/quantum-observable-universe/lean/QOU/MassTheory/BraneTowerLevelAmplitude.lean",
         "line": 139
-      },
-      {
-        "name": "CriticalExponent",
-        "file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean",
-        "line": 32
       },
       {
         "name": "CriticalExponent",
@@ -321,7 +311,7 @@
       {
         "name": "DiophantineBirthday",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/DiophantineBirthday.lean",
-        "line": 27
+        "line": 84
       },
       {
         "name": "DirectionSanityGateClass",
@@ -411,7 +401,7 @@
       {
         "name": "GradedTraceResidueSplit",
         "file": "content/quantum-observable-universe/mass-theory/graded-trace-residue-split.lean",
-        "line": 64
+        "line": 67
       },
       {
         "name": "GSOrderMatch",
@@ -451,7 +441,7 @@
       {
         "name": "HasThurstonTriangulation",
         "file": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean",
-        "line": 67
+        "line": 97
       },
       {
         "name": "HasTwoRowCardinality",
@@ -511,7 +501,7 @@
       {
         "name": "HyperbolicVolumeIndependence",
         "file": "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
-        "line": 445
+        "line": 454
       },
       {
         "name": "HyperbolicVolumeIndependence",
@@ -616,7 +606,7 @@
       {
         "name": "MagicABindingFormula",
         "file": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean",
-        "line": 108
+        "line": 107
       },
       {
         "name": "MagicEqualsEmpirical",
@@ -642,11 +632,6 @@
         "name": "MarkovTraceCyclic",
         "file": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.lean",
         "line": 44
-      },
-      {
-        "name": "MarkovTraceUniqueness",
-        "file": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean",
-        "line": 118
       },
       {
         "name": "MassEndomorphism",
@@ -692,11 +677,6 @@
         "name": "MRatioInversionMonotone",
         "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
         "line": 87
-      },
-      {
-        "name": "NSCounterexample",
-        "file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean",
-        "line": 26
       },
       {
         "name": "NSCounterexample",
@@ -761,7 +741,7 @@
       {
         "name": "PSDTrace",
         "file": "content/quantum-observable-universe/mass-theory/t-beta-markov-collapse-general-lift.lean",
-        "line": 93
+        "line": 99
       },
       {
         "name": "PvsNPQou",
@@ -787,11 +767,6 @@
         "name": "q_oper_hecke",
         "file": "content/quantum-observable-universe/lean/QOU/QGeometricLanglands/q_oper_hecke.lean",
         "line": 27
-      },
-      {
-        "name": "QAubinLions",
-        "file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean",
-        "line": 20
       },
       {
         "name": "QAubinLions",
@@ -861,7 +836,7 @@
       {
         "name": "QGeometricLanglandsConjecture",
         "file": "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean",
-        "line": 419
+        "line": 425
       },
       {
         "name": "QIntegerMassFormula",
@@ -891,7 +866,7 @@
       {
         "name": "QSchurYLambdaClosedFormClaim",
         "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QSchurYLambdaClosedForm.lean",
-        "line": 155
+        "line": 171
       },
       {
         "name": "QuantumAPolynomial",
@@ -922,11 +897,6 @@
         "name": "RealisationVolumeCompatibility",
         "file": "content/quantum-observable-universe/lean/QOU/Archimedean/RealisationVolumeCompatibility.lean",
         "line": 50
-      },
-      {
-        "name": "RegularityBreakdown",
-        "file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean",
-        "line": 43
       },
       {
         "name": "RegularityBreakdown",
@@ -1016,7 +986,7 @@
       {
         "name": "SingleVolumeIrrational",
         "file": "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
-        "line": 466
+        "line": 475
       },
       {
         "name": "SingleVolumeIrrational",
@@ -1041,7 +1011,7 @@
       {
         "name": "SymmetricCrystalPairProduction",
         "file": "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean",
-        "line": 174
+        "line": 183
       },
       {
         "name": "SymmetricCrystalPairProduction",
@@ -1609,29 +1579,15 @@
         "detail": "proof is `by\n  rfl`, which uses no hypothesis, yet the statement binds `h_q_ne_one` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
-    "content/quantum-observable-universe/knots-particles-confinement/magic-shell-coupling-kappa.lean": [
-      {
-        "line": 82,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem kappa_closed_form_is_categorical",
-        "decl": "kappa_closed_form_is_categorical",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
-        "detail": "the projected field `c.kappa_closed_eq_empirical` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean": [
       {
-        "line": 111,
+        "line": 120,
         "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-delegates-sorry",
+        "pattern": "doc-claims-sorry-body-has-none",
         "snippet": "theorem kappa_vanishes_iff_chi [ctx : QouObstructionReductionContext] (n : ℕ) :",
         "decl": "kappa_vanishes_iff_chi",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "docstring attributes the `sorry` to another declaration and this file has one"
+        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Appendix/DeltaMaxNumericalScale.lean": [
@@ -1677,7 +1633,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean": [
       {
-        "line": 699,
+        "line": 708,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem tower_noncollapse_implies_independence",
@@ -1727,7 +1683,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean": [
       {
-        "line": 406,
+        "line": 415,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)",
@@ -1738,7 +1694,7 @@
         "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 599,
+        "line": 608,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)",
@@ -1749,7 +1705,7 @@
         "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 709,
+        "line": 718,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1) (hq2 : q < 2)",
@@ -1760,7 +1716,7 @@
         "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 795,
+        "line": 804,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)",
@@ -1921,10 +1877,10 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean": [
       {
-        "line": 94,
+        "line": 114,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
-        "snippet": "theorem gb_residue_spectral_sum [s : GBResidueSpectralSum] :",
+        "snippet": "theorem gb_residue_spectral_sum (R : Type*) [CommRing R] [LinearOrder R]",
         "decl": "gb_residue_spectral_sum",
         "severity": "critical",
         "exempt": true,
@@ -2261,10 +2217,10 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/sorting_color_energy.lean": [
       {
-        "line": 51,
+        "line": 57,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
-        "snippet": "def sorting_color_energy {R : Type*} [Field R] [ctx : SortingColorEnergyContext R] :",
+        "snippet": "def sorting_color_energy {R : Type*} [CommRing R]",
         "decl": "sorting_color_energy",
         "severity": "critical"
       }
@@ -2441,6 +2397,17 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `inst.factorization_identity` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsKnots/nsi_q_deformed_kernel.lean": [
+      {
+        "line": 171,
+        "category": "proof-docstring-sorry-mismatch",
+        "pattern": "doc-claims-sorry-body-has-none",
+        "snippet": "theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]",
+        "decl": "nsi_q_kernel_identification",
+        "severity": "critical",
+        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean": [
@@ -2790,6 +2757,32 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Machinery/H4Cyclicity.lean": [
+      {
+        "line": 194,
+        "category": "proof-no-trivial-true",
+        "pattern": "reflexive-tautology",
+        "snippet": "theorem trM4_cyc_1_1 (z h : R) :",
+        "decl": "trM4_cyc_1_1",
+        "severity": "critical"
+      },
+      {
+        "line": 373,
+        "category": "proof-no-trivial-true",
+        "pattern": "reflexive-tautology",
+        "snippet": "theorem trM4_cyc_2_2 (z h : R) :",
+        "decl": "trM4_cyc_2_2",
+        "severity": "critical"
+      },
+      {
+        "line": 572,
+        "category": "proof-no-trivial-true",
+        "pattern": "reflexive-tautology",
+        "snippet": "theorem trM4_cyc_6_6 (z h : R) :",
+        "decl": "trM4_cyc_6_6",
+        "severity": "critical"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Machinery/KLRAlgebraBasic.lean": [
       {
         "line": 47,
@@ -2968,7 +2961,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean": [
       {
-        "line": 142,
+        "line": 150,
         "category": "proof-docstring-sorry-mismatch",
         "pattern": "doc-delegates-sorry",
         "snippet": "theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :",
@@ -3329,7 +3322,7 @@
     ],
     "content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.lean": [
       {
-        "line": 155,
+        "line": 161,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
         "snippet": "def lepton_mass_ratio_im_q_invariance_at_LO",
@@ -3365,7 +3358,7 @@
     ],
     "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean": [
       {
-        "line": 74,
+        "line": 83,
         "category": "proof-claims-unencoded",
         "pattern": "true-class-field",
         "snippet": "class IsDemazureSubCrystal",
@@ -3376,7 +3369,7 @@
         "detail": "opaque-marker field(s) `: True` (closed_under_kashiwara_raising) — honestly framed; tracked not counted"
       },
       {
-        "line": 112,
+        "line": 128,
         "category": "proof-claims-unencoded",
         "pattern": "true-class-field",
         "snippet": "class HasBlochGroupQuotient (F : Type*) : Prop where",
@@ -3389,7 +3382,7 @@
     ],
     "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.lean": [
       {
-        "line": 62,
+        "line": 87,
         "category": "proof-no-trivial-true",
         "pattern": "reflexive-tautology-ascribed-literal",
         "snippet": "theorem meson_squaring_exponent : (2 : ℕ) = 2 := rfl",
@@ -3508,7 +3501,7 @@
     ],
     "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean": [
       {
-        "line": 151,
+        "line": 168,
         "category": "proof-no-unused-hypothesis-rfl",
         "pattern": "rfl-witness-with-underscored-hypothesis",
         "snippet": "theorem wenzl_annihilator (_n : ℕ) (firstCol : ℕ) (_h : 4 ≤ firstCol) :",
@@ -3558,7 +3551,7 @@
     ],
     "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean": [
       {
-        "line": 99,
+        "line": 108,
         "category": "proof-no-provable-axiom",
         "pattern": "uncited-axiom",
         "snippet": "axiom partitionTranspose {n : ℕ} : Partition n → Partition n",
@@ -3566,7 +3559,7 @@
         "severity": "critical"
       },
       {
-        "line": 161,
+        "line": 170,
         "category": "proof-no-provable-axiom",
         "pattern": "uncited-axiom",
         "snippet": "axiom HeckeNormalForm (n : ℕ) : Type",
@@ -3574,7 +3567,7 @@
         "severity": "critical"
       },
       {
-        "line": 165,
+        "line": 174,
         "category": "proof-no-provable-axiom",
         "pattern": "uncited-axiom",
         "snippet": "axiom barNormalForm {n : ℕ} : HeckeNormalForm n → HeckeNormalForm n",
@@ -3582,7 +3575,7 @@
         "severity": "critical"
       },
       {
-        "line": 169,
+        "line": 178,
         "category": "proof-no-provable-axiom",
         "pattern": "uncited-axiom",
         "snippet": "axiom isPairProductionOutput {n : ℕ} : HeckeNormalForm n → Prop",
@@ -3605,7 +3598,7 @@
     ],
     "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean": [
       {
-        "line": 294,
+        "line": 301,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem q_beta_spectral_conditional [inst : BorromeanQuark] :",
