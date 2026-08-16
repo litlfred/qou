@@ -320,6 +320,50 @@ elan / cache hosts are network-restricted.
 > generator actions with a cone under 10 minutes and never touches the block
 > maps. The addon is only for work needing the Wedderburn blocks themselves.
 
+### Middle case: `release.lean-lang.org` blocked but GitHub releases OPEN (2026-08-16)
+
+**Try this before the vendored-branch restore below** — it is one `curl` and
+needs no orphan branch. The section that follows assumes *both* the elan
+downloader and the GitHub release-asset path are blocked. There is a common
+intermediate sandbox where only the **elan downloader** is denied:
+
+```
+curl -sS "$HTTPS_PROXY/__agentproxy/status"   # → recentRelayFailures
+  connect_rejected   host: release.lean-lang.org:443
+```
+
+…while `https://github.com/leanprover/lean4/releases/download/…` returns
+**200**. `elan toolchain install` still fails, because elan only ever asks the
+release server. Fetch the tarball yourself and put it where elan looks:
+
+```sh
+# 1. compiler, from GitHub (~440 MB for v4.24.0)
+curl -sSL -o /tmp/lean.tar.zst \
+  https://github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-linux.tar.zst
+
+# 2. zstd is NOT installed by default here
+command -v zstd || apt-get install -y zstd
+
+# 3. elan's toolchain dir name is the descriptor with / and : replaced
+TC="$HOME/.elan/toolchains/leanprover--lean4---v4.24.0"
+mkdir -p "$TC" && zstd -dc /tmp/lean.tar.zst | tar -x -C "$TC" --strip-components=1
+"$TC/bin/lean" --version     # → Lean (version 4.24.0, …)
+```
+
+`elan toolchain list` then shows it and `lake --version` works. Continue with
+the olean restore + lean-direct verification above. Verified end to end on
+2026-08-16: `lean` type-checked `QOU/MathlibExt/QPlancherel.lean` at exit 0.
+
+Two traps that cost time that day:
+
+- **`command -v zstd tar`** succeeds when only `tar` exists — it reports on the
+  *last* argument. Probe `zstd` alone, or extraction dies with a bare
+  `tar: Child returned status 2` that looks like a corrupt download.
+- The **discipline at the head of this file was not followed**: Lean was
+  declared unavailable as soon as `elan` 403'd, without first grepping
+  `.claude/skills/` for `release.lean-lang.org`. This file already described
+  the stricter case and would have pointed straight at the fix. Grep first.
+
 ### When even the toolchain *binary* is blocked — vendor it via a git branch (2026-07-11)
 
 The olean restore above assumes a working `lean` **compiler** is already
