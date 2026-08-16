@@ -740,10 +740,20 @@ convention D; that core evaluates at `z_C`). Measured
 decay channel: the mass-channel forcing (two-row cap ⇒ `y_(1³) = 0` ⇒ D) has
 not been examined for the β channel, whose explicit weight instance
 (`y = (z, 1/2−z, z)`) has `y_(1³) ≠ 0`. Settling it — derive C, derive D (and
-re-derive the ladder), or register `disputed` — is bean **`qou-b3nk`**. Until
-then: **any quote of a c₃/S/q*_S value must name the convention** (the
+re-derive the ladder), or register `disputed` — is bean **`qou-b3nk`**.
+
+> **Partly overtaken, 2026-08-16 (`qou-cdh1`).** Of the three options above, the
+> third happened (registered `disputed`, 2026-08-15) and then the **owner ruling
+> of 2026-08-15 settled the convention: D.** The registry channel is now
+> `agreed-migration-pending`. What is **not** done is the part this paragraph
+> lists first — a *derivation*. The ladder must be **re-derived** under D, which
+> is bean **`qou-cds1`**, and `decayLadder_zC_threeRow_ne_zero` proves that is
+> not a z-swap. `qou-b3nk` remains open on its own terms and is untouched here.
+
+Until then: **any quote of a c₃/S/q*_S value must name the convention** (the
 trace-convention registry's own rule: convention-silent trace values are not
-comparable).
+comparable) — and after the ruling, naming it "C" also means naming it
+**excised**.
 
 **Registration addendum (2026-08-15, bean `qou-b3nk` worked).** The channel is
 now **registered `disputed`** in `trace-convention-registry.json`

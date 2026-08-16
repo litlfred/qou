@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: low
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-16T03:11:27Z
+updated_at: 2026-08-16T03:14:32Z
 ---
 
 Parent: `qou-cdx1`.
@@ -100,3 +100,36 @@ Belongs to `qou-9xla` (producer missing for this block's 4 atoms) / `qou-cdh3`
 
 The two registries — 16 C-marker occurrences in `ck-dk-canonical-registry.md`,
 5 in `kernel-constraints-registry.json`. Not started.
+
+
+## Registries: already labelled — measured, not assumed
+
+The bean scopes 16 C-marker occurrences in `ck-dk-canonical-registry.md` and 5
+in `kernel-constraints-registry.json`. Re-measured 2026-08-16: **26 and 3**
+(the counts drifted; the surfaces are the same). Both are **already compliant**:
+
+- **`ck-dk-canonical-registry.md`** — 12 markers lack a per-line label, and
+  *all 12 sit inside §9g or §9h*, which now carry the `🛑 SUPERSEDED IN PART`
+  banner and scope note added by `qou-cdh1`. A section-level label satisfies the
+  rule for its section; adding 12 per-line labels would be noise, and noise that
+  reads like relabel-to-silence.
+- **`kernel-constraints-registry.json`** — all 3 (KC13, KC21, KC22) already
+  carry `CONVENTION NOTE 2026-08-15 (registry 9g)` with correct C-scoping. No
+  edit needed.
+
+**One real staleness fixed** (§9g scope-(a)): the paragraph said settling the
+channel — *"derive C, derive D (and re-derive the ladder), or register
+`disputed`"* — **"is bean `qou-b3nk`"**. The third option happened and the owner
+ruling then settled the convention, so the sentence described an open question
+that is closed. Corrected **additively**: `qou-b3nk` is a sibling's
+`in-progress` bean, so it is named and left intact rather than repointed; a
+note records that the convention is settled (D, channel
+`agreed-migration-pending`) and that the *derivation* half is `qou-cds1`.
+
+Validators after: trace registry `PASS (0 errors, 23 warnings)`;
+`kernel_constraints_registry_validate.py --lint-docs --strict` unchanged at
+`22 rows, 0 errors, 9 warnings → FAIL`, byte-identical to `origin/main`.
+
+**H4 status:** producer sites done (4 labelled, 6 already were), registries done.
+The one open item is deliberately open — `prf:interface-knot-markov-z` stays red
+rather than be laundered, root-caused above to the `qou-j6il` stale binary.
