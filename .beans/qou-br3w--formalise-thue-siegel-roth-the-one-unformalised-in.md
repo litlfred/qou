@@ -213,3 +213,52 @@ Mathlib fork** — the file is import-clean for that.
 2. Generalized Wronskians (`m × m` determinants of differential operators).
 3. Roth's lemma — the induction on variable count. The hard core.
 4. Roth's theorem, via the auxiliary-polynomial contradiction over Mathlib's Siegel lemma.
+
+---
+**2026-08-16 — `index_mul_ge` done. The index API is complete.**
+
+```lean
+index_mul_ge (d : σ → ℕ) (α : σ → R) (P Q : MvPolynomial σ R) :
+  index d α P + index d α Q ≤ index d α (P * Q)
+```
+
+18 declarations in `QOU/Mathlib/RothIndex.lean`, sorry-free, all standard axioms.
+
+The proof is three steps and no analysis: the weight `∑ⱼ iⱼ/dⱼ` is **additive** on
+multi-indices (`idxWeight_add`, via `Finsupp.sum_add_index'`), every monomial of `P·Q` is a
+sum of one from each factor (`support_mul`), so each product monomial's weight splits into
+two, each bounded below by its factor's index.
+
+### This is where the `WithTop` choice pays off
+
+With a junk `index 0 = 0` the statement is **false**: `index 0 + index Q = index Q` would
+have to bound `index 0 = 0`. The design note written when the definition landed predicted
+exactly this, and the lemma is the check on it.
+
+### ⚠ The bound is TIGHT, and that is stronger evidence than the lemma alone
+
+`index_mul_ge` is an inequality, and an inequality can hold for a definition that is
+systematically too small. Both sides are now computed on a case where it binds:
+
+| | value |
+|---|---|
+| `index_X` | `index (X) = 1` |
+| `index_X_sq` | `index (X²) = 2` |
+| `index_mul_ge` at `X · X` | `1 + 1 ≤ 2` — **equality** |
+
+So the definition is not merely consistent with the product law; it saturates it where the
+mathematics says it should. A definition returning `0` everywhere would satisfy
+`index_nonneg`, `index_add_ge` **and** `index_mul_ge`, and fail both computations.
+
+### Remaining, unchanged in shape
+
+2. **Generalized Wronskians** — `m × m` determinants of differential operators applied to
+   `m` polynomials. Mathlib's `wronskian` is the two-polynomial case; this is the next
+   genuinely new construction.
+3. **Roth's lemma** — induction on variable count. The hard core, and the reason this bean
+   is a project.
+4. **Roth's theorem** — auxiliary-polynomial contradiction over Mathlib's existing
+   `exists_ne_zero_int_vec_norm_le`.
+
+Still cannot open the Mathlib PR from this session (scope: `litlfred/qou`). The file remains
+import-clean — Mathlib imports only, no QOU dependency — so upstreaming is a file copy.

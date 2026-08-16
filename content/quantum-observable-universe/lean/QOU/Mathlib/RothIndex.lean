@@ -83,6 +83,21 @@ theorem idxWeight_nonneg (d : σ → ℕ) (i : σ →₀ ℕ) : 0 ≤ idxWeight 
 @[simp]
 theorem idxWeight_zero (d : σ → ℕ) : idxWeight d 0 = 0 := by simp [idxWeight]
 
+/-- The weight is a `Finsupp.sum`, which is what makes it additive. -/
+theorem idxWeight_eq_sum (d : σ → ℕ) (i : σ →₀ ℕ) :
+    idxWeight d i = i.sum fun j n => (n : ℚ) / (d j : ℚ) := rfl
+
+/-- **The weight is additive on multi-indices.**
+
+This is the whole reason the index behaves like an order of vanishing: `∑ⱼ iⱼ/dⱼ` is linear
+in `i`, so a monomial split across a product splits its weight too. -/
+theorem idxWeight_add (d : σ → ℕ) (i k : σ →₀ ℕ) :
+    idxWeight d (i + k) = idxWeight d i + idxWeight d k := by
+  simp only [idxWeight_eq_sum]
+  refine Finsupp.sum_add_index' (fun a => by simp) (fun a b₁ b₂ => ?_)
+  push_cast
+  rw [add_div]
+
 /-- **The index of `P` at `α`, weighted by `d`.**
 
 The least weight of a multi-index occurring in `P(x + α)`; `⊤` when `P = 0`, which is the
@@ -140,6 +155,27 @@ theorem index_add_ge (d : σ → ℕ) (α : σ → R) (P Q : MvPolynomial σ R) 
   · exact le_trans (min_le_left _ _) (Finset.inf_le h)
   · exact le_trans (min_le_right _ _) (Finset.inf_le h)
 
+/-- **The index of a product is at least the sum of the indices.**
+
+The load-bearing algebraic property, and the reason `index` must return `⊤` at `0` rather
+than a junk `0`: with a junk value this is *false*, since `index 0 + index Q = index Q`
+would have to bound `index 0 = 0`.
+
+Every monomial of `P·Q` is a sum of one from `P` and one from `Q`, and the weight is
+additive — so the weight of any monomial of the product is a sum of two weights, each
+bounded below by its factor's index. -/
+theorem index_mul_ge (d : σ → ℕ) (α : σ → R) (P Q : MvPolynomial σ R) :
+    index d α P + index d α Q ≤ index d α (P * Q) := by
+  classical
+  rw [le_index_iff]
+  intro m hm
+  rw [translate_mul] at hm
+  -- `m` splits as `i + k` with `i` from `P`'s support and `k` from `Q`'s
+  obtain ⟨i, hi, k, hk, rfl⟩ := Finset.mem_add.mp (support_mul _ _ hm)
+  rw [idxWeight_add]
+  push_cast
+  exact add_le_add (Finset.inf_le hi) (Finset.inf_le hk)
+
 /-! ### ⚠ The definition computes the right number
 
 `index_nonneg` and `index_add_ge` would both hold of a definition that returned `0`
@@ -148,8 +184,20 @@ of the lemmas above pins the *value*, so a wrong definition would satisfy all of
 
 This does pin it: `X²` vanishes to order two at the origin, and the index says `2`. -/
 
+/-- **Validation.**  At the origin with unit weights, `X` has index exactly `1`. -/
+theorem index_X :
+    index (fun _ : Fin 1 => 1) (fun _ : Fin 1 => (0 : ℚ)) (X 0) = (1 : ℚ) := by
+  have ht : translate (fun _ : Fin 1 => (0 : ℚ)) (X 0) = (X 0 : MvPolynomial (Fin 1) ℚ) := by
+    simp [translate]
+  rw [index, ht, X, support_monomial]
+  simp [idxWeight, Finsupp.single_apply]
+
 /-- **Validation.**  At the origin with unit weights, `X²` has index exactly `2` — the
-order of vanishing, as it should be. -/
+order of vanishing, as it should be.
+
+Together with `index_X` this shows `index_mul_ge` is **tight** at `X · X`: the bound reads
+`1 + 1 ≤ 2` and both sides are computed, not estimated. A product law that merely held
+loosely would be much weaker evidence that the definition is the intended one. -/
 theorem index_X_sq :
     index (fun _ : Fin 1 => 1) (fun _ : Fin 1 => (0 : ℚ)) (X 0 ^ 2) = (2 : ℚ) := by
   have ht : translate (fun _ : Fin 1 => (0 : ℚ)) (X 0 ^ 2)
@@ -163,9 +211,7 @@ theorem index_X_sq :
 
 /-! ### Next, in order
 
-1. `index_mul_ge : index d α P + index d α Q ≤ index d α (P * Q)` — needs the support of a
-   product and a minimal-multi-index argument. The one genuinely load-bearing algebraic
-   property, and the reason `index` must return `⊤` at `0` rather than a junk `0`.
+1. ~~`index_mul_ge`~~ — **done**, above.
 2. **Generalized Wronskians** — `m × m` determinants of differential operators applied to
    `m` polynomials. Mathlib's `wronskian` is the two-polynomial case only.
 3. **Roth's lemma** — the induction on the number of variables. The hard core.
