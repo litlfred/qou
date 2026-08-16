@@ -134,3 +134,54 @@ Note this is a FOURTH parameterisation-dependent reading of the same
 coefficients, reinforcing why the naming fix matters: `tan(alpha)/2` (alpha
 held fixed) and `-sqrt(3)/12` (expanded about u=0, alpha co-varying) are both
 "the u^1 coefficient" of the same function.
+
+## Literature check — the half-integer powers are the VARIABLE's fault, not the eigenphase's
+
+Searched math + physics (paper-search MCP down; WebSearch used).
+
+**Math side.** The Ohtsuki series is a formal power series in `h = q - 1` --
+INTEGER powers of `(q-1)` -- with integral coefficients (conjectured Lawrence,
+proved Rozansky). The Habiro ring is described as a ring of "analytic
+functions at roots of unity", carrying a Taylor series at every root of unity.
+Reparametrisations of LMO are Gevrey. So the literature's natural expansion
+variable is `h`, and in it the series is analytic with integer powers.
+
+**Physics side.** The Kashaev/volume-conjecture asymptotic has the form
+`N^{3/2} * Phi(1/N)`. The `N^{3/2}` -- a half-integer power -- comes from the
+Gaussian saddle-point integration. So half-integer powers are the EXPECTED
+shape there, not an anomaly.
+
+**The synthesis, and it reverses my own prune.** I wrote above that "any
+candidate generating function for the c_k ladder must be analytic in u at
+u=0, and the eigenphase is not." That prune is WRONG as stated. The ladder
+chose `u = b*hbar_q^2`, which is QUADRATIC in the natural variable
+`h = q - 1`. Reverting `u -> h` needs `sqrt(u)`; that is the whole source of
+the half-integer powers. It is a variable-choice artifact, not a property of
+the eigenphase -- the same disease as the phase's branch point, which was an
+artifact of the cos parameterisation.
+
+Measured: expanded in `s = q - 1` the SAME function is perfectly analytic,
+
+    cos(alpha - u/2) = 1 + 0*s - (1/8)s^2 + ((1-sqrt3)/8)s^3
+                         + (-107/384 + 5sqrt3/16)s^4 + ...
+
+integer powers throughout. Note `s^1 = 0` exactly: in the h-variable there is
+NO linear rung. The u^1 rung that started this whole question is an artifact
+of expanding in a squared variable.
+
+Cross-confirmation, unlooked-for: `qbeta_c3_phib_kappa_tower_scale_probe`
+already records "odd rungs carry sqrt3, even rungs pure-rational -- the
+Q(sqrt -3) trace-field". The h-expansion shows exactly that at the first two
+orders: `s^2 = -1/8` is rational, `s^3 = (1-sqrt3)/8` is the first sqrt3.
+(Do not over-read it -- s^4 and s^5 also carry sqrt3, so the parity split is
+not a clean all-orders statement from this data alone.)
+
+**Recommendation: express the ladder in `h` (or `hbar_q`), not in `u`.** Then
+the series is analytic, the rungs are integer-power, the odd/even parity
+question becomes well-posed, and it aligns with the Ohtsuki/Habiro framework
+AGENTS.md already names as the permanent fix ("the Q_beta Habiro element").
+
+Sources: Ohtsuki, asymptotic expansions of the Kashaev invariant (RIMS);
+Garoufalidis-Le, Gevrey series in quantum topology; Habiro, unified quantum
+SO(3) invariant; Garoufalidis-Scholze-Wheeler-Zagier, The Habiro ring of a
+number field.
