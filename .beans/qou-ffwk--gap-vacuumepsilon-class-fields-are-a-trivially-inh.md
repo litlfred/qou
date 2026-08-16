@@ -493,3 +493,57 @@ Remaining library: `LocalInfinitesimalField` (needs sheaf/scheme machinery for
 `HyperbolicVolumeIndependence`, `BraidGroupNStrand` (class is `MarkovTraceN`,
 wants field-by-field splitting). Plus the six co-located stubs this bean's
 inventory omits.
+
+## 2026-08-16 (5) — tried to close the `OmegaOrder` gap with Mathlib; it does not fit
+
+Branch `claude/ffwk-omegaorder-mathlib-probe-2026-08-16`. **No machinery landed
+— the integration does not go through.** Recording the three obstructions,
+each checked against this build, so the next attempt starts from a
+specification instead of from scratch. Docstring-only change to
+`Asymptotics.lean`.
+
+Context: `SpectralNormalForm` (merged, #5233) records that its satisfiability is
+untested in either direction because `OmegaOrder` has no instance anywhere.
+Mathlib's Hahn-series valuation is the obvious source. It is not usable here.
+
+**1. No degenerate model is available — this is a hard obstruction.**
+`SurrealField` requires `omegaSurreal : K` with
+`omegaSurreal_gt_natCast : ∀ n : ℕ, (n : K) < omegaSurreal`. No real exceeds
+every natural, so **`SurrealField ℝ` is impossible**. The cheap witness that
+would have settled non-emptiness cannot exist; a model has to be genuinely
+non-archimedean. Worth knowing before anyone else spends time looking for a
+shortcut.
+
+**2. The exponent type is self-referential and Mathlib's is not.** `Ow` is typed
+`K → WithTop K` — exponents in the field itself, which is right for `𝐍𝐨`
+(closed under `ω`-exponentiation). Mathlib's leading-exponent valuation is
+`HahnSeries.orderTop : HahnSeries Γ R → WithTop Γ` with `Γ` a **separate**
+ordered group. Bridging needs an additive, order-compatible `Γ ↪ K`, which is a
+design decision rather than a lemma. **Generalising the class to
+`OmegaOrder K Γ` would remove this outright**, and is worth deciding before more
+conditional results are stacked on it.
+
+**3. This build's Hahn API stops short even for the separate-`Γ` reading.**
+Probed directly:
+
+- `CommRing (HahnSeries ℤ ℝ)` — available (noncomputable).
+- `Field (HahnSeries ℤ ℝ)`, `LinearOrder (HahnSeries ℤ ℝ)` — **not** available;
+  the order lives on the `Lex` synonym.
+- `orderTop` multiplicativity — only the **inequality**
+  `x.orderTop + y.orderTop ≤ (x * y).orderTop` (`orderTop_add_le_mul`).
+  `HahnSeries.orderTop_mul`, the equality `Ow_mul` states, **does not exist**
+  here and would have to be proved over a domain first.
+
+**Build order for whoever takes this on:** `orderTop` multiplicativity over a
+domain → `Lex` order transfer → a `birthday` function satisfying the `nadd`
+sub-additivity and midpoint bounds → then obstruction 2.
+
+**Not attempted:** generalising `OmegaOrder`. It is imported widely enough that
+changing its signature is an owner-level call, and doing it silently inside a
+carrier-hygiene bean would be the coordination failure AGENTS.md warns about.
+
+**Also relevant to `LocalInfinitesimalField`** (still on this bean's remaining
+list): its claim is that `ε` is a *sheaf* of infinitesimals across a scheme `X`.
+Mathlib has `Topology.Sheaves` and `AlgebraicGeometry` built in this tree, so
+that one is **not** blocked the way this is — the sheaf machinery genuinely
+exists. It was skipped for the surreal carriers, not because it is impossible.
