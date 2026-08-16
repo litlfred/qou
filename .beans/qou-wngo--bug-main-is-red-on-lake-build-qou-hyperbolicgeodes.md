@@ -3,8 +3,9 @@
 title: 'BUG: main is RED on lake build QOU — HyperbolicGeodesicZAxis.lean, 4 errors, 2 of them one-word fixes'
 status: todo
 type: bug
+priority: normal
 created_at: 2026-08-16T14:02:16Z
-updated_at: 2026-08-16T14:02:16Z
+updated_at: 2026-08-16T14:52:36Z
 ---
 
 Found running `prepare-merge` Step 4 on PR #5205. The **only** build errors in
@@ -71,3 +72,53 @@ and the redness is entirely this one file. Per AGENTS.md the whole-library build
 is not the merge gate — `lean`-direct on changed files is — so this does not
 block unrelated branches, but it does mean a red build says nothing about your
 own work until you check which file failed.
+
+
+---
+
+## CORRECTION — six errors, not four; and the unbound-implicit defect is repeated in TWO lemma pairs
+
+I filed this from a **partial read of the build log tail** while the background
+build was still running. The completed log (`EXIT=1`, 8 `error:` lines = 6 real
++ 2 summary) shows two more errors than I reported:
+
+```
+:61:74  Unknown identifier `b`     <-- MISSED
+:64:71  Unknown identifier `a`     <-- MISSED
+:89:56  Unknown identifier `b`
+:92:53  Unknown identifier `a`
+:131:0  (deterministic) timeout at `whnf`, 200000 heartbeats
+:153:8  (kernel) unknown constant 'QOU.Archimedean.admissiblePath_vseg'
+```
+
+**The same copy-paste error appears in two adjacent lemma pairs**, not one:
+
+```lean
+@[simp] theorem heightProfile_zero {a : ℝ} (ha : 0 < a) : heightProfile a b 0 = a
+--                                 ^^^^^^^ binds a, statement uses b
+@[simp] theorem heightProfile_one  {b : ℝ} (hb : 0 < b) : heightProfile a b 1 = b
+--                                 ^^^^^^^ binds b, statement uses a
+@[simp] theorem vseg_zero          {a : ℝ} (ha : 0 < a) : vseg a b 0 = zpt a
+@[simp] theorem vseg_one           {b : ℝ} (hb : 0 < b) : vseg a b 1 = zpt b
+```
+
+So the fix is `{a b : ℝ}` in **four** places, and the shape is a duplicated
+`zero`/`one` lemma pair written twice — worth checking whether the same pair
+pattern recurs further down the file.
+
+The rest of the diagnosis is unchanged and still correct: the `:131` `whnf`
+timeout is the real work, and `:153` is **not** an independent error —
+`admissiblePath_vseg` is defined at `:132`, immediately after the timeout, so it
+never enters the environment.
+
+**Also correcting my own method**, since it produced a second wrong number: the
+command I used to list "files with errors" was
+`grep -oE "QOU/[A-Za-z/]+\.lean" <log> | sort -u`, which matches every module
+name **anywhere** in the log — i.e. everything the build compiled, ~700 files —
+not the files that errored. The authoritative extraction is the `^error:` lines
+alone, and by those the failures are confined to this one file. The confinement
+claim was right; the way I checked it was not.
+
+**Still not fixing it here** — the four-line implicit fix alone does not turn the
+build green (the timeout remains), so a partial fix unblocks nobody and just
+splits ownership of a file mid-repair.
