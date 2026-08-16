@@ -226,6 +226,65 @@ def main() -> int:
   {'with different q-dependence, not a functional identity. A derived phase' if opposed else ''}
   {'would track alpha_required as q moves; this one runs the other way.' if opposed else ''}""")
 
+    # ── Does the slope mismatch ALONE account for the cross-anchor swing? ───
+    #
+    # The c₃ cross-anchor swing (≈0.0491 between the proton and muon pins) is
+    # treated in the corpus as a signature needing explanation — AGENTS.md's
+    # fibre-vs-observable banner reads it as evidence that c₃(q) is a
+    # complex-analytic fibre object sampled at real q₀, and registry §9g
+    # records "REFUTED-as-real-q survives" off it.
+    #
+    # If α_req and α_C simply cross at an angle, the swing is forced with no
+    # fibre content at all: differencing two curves of different slope over an
+    # 11.5 ppb anchor gap. dc₃/dα = tan(α − u/2)/u³ at the solution, so
+    #
+    #     Δc₃  =  [tan(α−u/2)/u³] · (dα_C/dq − dα_req/dq) · Δq
+    #
+    # is a pure prediction from the two slopes. Compare it to the measured
+    # swing. Agreement means the swing carries no information beyond "the two
+    # curves cross transversally".
+    swing = None
+    if live and len(results) > 1:
+        pr, mu = results[0], results[1]
+        s = live[0]
+        alpha_C_p = next(r for r in pr["rows"] if r["convention"] == "C")["alpha"]
+        dc3_dalpha = mp.tan(alpha_C_p - pr["u"] / 2) / pr["u"] ** 3
+        dq = mu["q"] - pr["q"]
+        predicted = dc3_dalpha * (s["d_alpha_C_dq"]
+                                  - s["d_alpha_required_dq"]) * dq
+        observed = (next(r for r in mu["rows"] if r["convention"] == "C")["c3_implied"]
+                    - next(r for r in pr["rows"] if r["convention"] == "C")["c3_implied"])
+        swing = {
+            "dc3_dalpha": dc3_dalpha,
+            "slope_mismatch_rad_per_q": s["d_alpha_C_dq"] - s["d_alpha_required_dq"],
+            "delta_q_muon_minus_proton": dq,
+            "predicted_swing": predicted,
+            "observed_swing": observed,
+            "rel_agreement": mp.fabs(predicted - observed) / mp.fabs(observed),
+        }
+        print("\n" + "=" * 78)
+        print(" Is the cross-anchor c₃ swing anything but the slope mismatch?")
+        print("=" * 78)
+        print(f"""
+  dc₃/dα                            = {mp.nstr(dc3_dalpha, 9)}
+  slope mismatch (dα_C − dα_req)/dq = {mp.nstr(swing['slope_mismatch_rad_per_q'], 9)}
+  Δq (muon − proton)                = {mp.nstr(dq, 9)}
+
+  PREDICTED swing, from slopes only = {mp.nstr(predicted, 9)}
+  OBSERVED  c₃(muon) − c₃(proton)   = {mp.nstr(observed, 9)}
+  agreement                         = {float(swing['rel_agreement']):.3%}
+
+  The swing is the two curves crossing at an angle, differenced over an
+  11.5 ppb anchor gap. Scope-(a): this removes the swing as EVIDENCE FOR
+  fibre-level c₃(q) structure. It does not refute fibre structure.
+
+  It also fixes the S_leak genericity window. S_leak := c₃ + V changes sign
+  across the anchors exactly when V lies between −c₃(p) and −c₃(m), so that
+  window's width IS |c₃(p) − c₃(m)| = the swing = {float(mp.fabs(observed)):.4f} — the 0.049
+  AGENTS.md already flags as making the Vol(4₁) offset non-unique. Same
+  number, same phenomenon, now traced to the slope mismatch.
+""")
+
     p = results[0]
     cC = next(r for r in p["rows"] if r["convention"] == "C")
     cD = next(r for r in p["rows"] if r["convention"] == "D")
@@ -344,6 +403,30 @@ def main() -> int:
                 "identity. A phase derived from the representation would "
                 "track α_req as q moves. Scope-(a): this is a statement about "
                 "the committed ansatz, not a proved exclusion of any frame."
+            ),
+        )
+    if swing is not None:
+        wb.add_data("cross_anchor_swing", {
+            k: fmt(v) for k, v in swing.items()
+        })
+        wb.add_assertion(
+            name="cross_anchor_c3_swing_is_the_slope_mismatch",
+            computed=fmt(swing["predicted_swing"]),
+            expected=fmt(swing["observed_swing"]),
+            tolerance=mp.mpf("1e-3"),
+            source=(
+                "Predicted from the two slopes ALONE — "
+                "Δc₃ = [tan(α−u/2)/u³]·(dα_C/dq − dα_req/dq)·Δq — with no "
+                "fibre content: "
+                f"{mp.nstr(swing['predicted_swing'], 8)} vs measured "
+                f"{mp.nstr(swing['observed_swing'], 8)}, agreeing to "
+                f"{float(swing['rel_agreement']):.2%}. Scope-(a): removes the "
+                "cross-anchor swing as EVIDENCE FOR a complex-analytic "
+                "fibre-level c₃(q) (the reading in AGENTS.md's fibre-vs-"
+                "observable banner and registry §9g's 'REFUTED-as-real-q "
+                "survives'); does NOT refute fibre structure, which stands or "
+                "falls on other grounds. Also fixes the S_leak genericity "
+                "window width, which is |c₃(p) − c₃(m)| by definition."
             ),
         )
     out = wb.save()

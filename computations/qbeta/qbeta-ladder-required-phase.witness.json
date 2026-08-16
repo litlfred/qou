@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-16T10:44:52.286044+00:00",
-  "commitSha": "f476c165744dd4c4da0a94f809490012dc4180ef",
+  "computedAt": "2026-08-16T10:56:00.483925+00:00",
+  "commitSha": "1fb7a6ae6ccfa4a6dcb501b6da8e8e022a78e1fc",
   "assertions": [
     {
       "name": "c3_ratio_equals_cosine_residual_ratio",
@@ -27,14 +27,22 @@
       "passed": true,
       "tolerance": 0,
       "source": "dα_req/dq = 41.525766, dα_C/dq = -0.45475458 (central difference, ±1e-4 relative in q). Opposite signs ⇒ the two curves cross transversally at q₀ rather than coincide, so the 2.3e-5 rad agreement there is a point coincidence, not a functional identity. A phase derived from the representation would track α_req as q moves. Scope-(a): this is a statement about the committed ansatz, not a proved exclusion of any frame."
+    },
+    {
+      "name": "cross_anchor_c3_swing_is_the_slope_mismatch",
+      "computed": "0.0492829876998026093518272127880790450683865089327771237738563",
+      "expected": "0.0491423420939126664973927673638660701199703848027522636578830",
+      "passed": true,
+      "tolerance": "0.001",
+      "source": "Predicted from the two slopes ALONE — Δc₃ = [tan(α−u/2)/u³]·(dα_C/dq − dα_req/dq)·Δq — with no fibre content: 0.049282988 vs measured 0.049142342, agreeing to 0.29%. Scope-(a): removes the cross-anchor swing as EVIDENCE FOR a complex-analytic fibre-level c₃(q) (the reading in AGENTS.md's fibre-vs-observable banner and registry §9g's 'REFUTED-as-real-q survives'); does NOT refute fibre structure, which stands or falls on other grounds. Also fixes the S_leak genericity window width, which is |c₃(p) − c₃(m)| by definition."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "qbeta-ladder-required-phase",
   "scriptFile": "qbeta_ladder_required_phase_probe.py",
-  "scriptHash": "fcf4a895f610",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fd7462029b7d",
+  "scriptCommitSha": "a2707d3c3db4434d8b3c3576fb3668dbdab471ca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -130,6 +138,14 @@
         "slope_ratio": null,
         "note": "no real phase solves the ladder at this step (Q_A < Q_codata ⇒ arccos argument leaves [−1, 1])"
       }
-    ]
+    ],
+    "cross_anchor_swing": {
+      "dc3_dalpha": "-91694.7038579826962696408427586630615026977797393010128404697",
+      "slope_mismatch_rad_per_q": "-41.9805208760726034228137860987146136833735372807761577629272",
+      "delta_q_muon_minus_proton": "0.0000000128027997676899249839987404981187831580851074893939374489719",
+      "predicted_swing": "0.0492829876998026093518272127880790450683865089327771237738563",
+      "observed_swing": "0.0491423420939126664973927673638660701199703848027522636578830",
+      "rel_agreement": "0.00286200453411773450088765944288294753986446471684415734925024"
+    }
   }
 }
