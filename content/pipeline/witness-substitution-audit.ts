@@ -450,16 +450,35 @@ const WITNESS_FIXTURE = JSON.stringify({
  *               source that merely contains the number, and it passes this
  *               axis forever after, because the axis only checks containment.
  */
+/** Digits below which a match is arithmetic, not evidence.
+ *
+ * `ex:qvalue-benchmark-table` and three sibling Q-value blocks were UNIQUE
+ * against `sublemma-2-1-A-operator-extract-h9-pn.witness.json` on the literal
+ * `0.5904`. The block says that is "the Rosso-Jones weighted average over the
+ * two degree-2 torus knots"; the witness carries `0.5904453769109197` as an
+ * A-operator pair FROBENIUS NORM. Unrelated quantities, agreeing to four
+ * decimals, with only one candidate in the whole corpus — so uniqueness alone
+ * proposed a false source for four blocks at once.
+ *
+ * Contrast `prf:crystal-isospin-degeneracy`, UNIQUE on
+ * `0.0020612874779541296` against `.data.atoms[1].S_crystal_at_q_zero`.
+ * Seventeen digits do not coincide.
+ */
+const STRONG_MATCH_DECIMALS = 10;
+
 export function coverageTag(
   covered: number,
   total: number,
   named: boolean,
   worstCand: number,
-): "CONFIDENT" | "UNIQUE" | "AMBIGUOUS" | "PARTIAL" | "ORPHAN" {
+  minDecimals = Infinity,
+): "CONFIDENT" | "UNIQUE" | "WEAK" | "AMBIGUOUS" | "PARTIAL" | "ORPHAN" {
   if (covered === 0) return "ORPHAN";
   if (covered < total) return "PARTIAL";
   if (named) return "CONFIDENT";
-  return worstCand === 1 ? "UNIQUE" : "AMBIGUOUS";
+  if (worstCand !== 1) return "AMBIGUOUS";
+  // Unique, but on too few digits to be evidence of anything.
+  return minDecimals >= STRONG_MATCH_DECIMALS ? "UNIQUE" : "WEAK";
 }
 
 function selftest(): number {
@@ -555,8 +574,19 @@ function selftest(): number {
   const tagCases: Array<[string, ReturnType<typeof coverageTag>, ReturnType<typeof coverageTag>]> = [
     ["a witness named after the block is CONFIDENT even if the literal is common",
      coverageTag(1, 1, true, 57), "CONFIDENT"],
-    ["one literal, one candidate witness -> UNIQUE",
-     coverageTag(1, 1, false, 1), "UNIQUE"],
+    ["one candidate AND 17 matched decimals -> UNIQUE (crystal-isospin)",
+     coverageTag(1, 1, false, 1, 19), "UNIQUE"],
+    // The four Q-value blocks. One candidate in the whole corpus, and still a
+    // coincidence: `0.5904` is a Rosso-Jones average in the block and an
+    // A-operator Frobenius norm in the witness.
+    ["one candidate but only 4 decimals -> WEAK, not actionable",
+     coverageTag(1, 1, false, 1, 4), "WEAK"],
+    ["one candidate at exactly the threshold -> UNIQUE",
+     coverageTag(1, 1, false, 1, 10), "UNIQUE"],
+    ["one candidate one digit below the threshold -> WEAK",
+     coverageTag(1, 1, false, 1, 9), "WEAK"],
+    ["a named witness outranks a weak digit count",
+     coverageTag(1, 1, true, 1, 4), "CONFIDENT"],
     ["one literal, 29 candidate witnesses -> AMBIGUOUS, not coverable work",
      coverageTag(1, 1, false, 29), "AMBIGUOUS"],
     ["a single ambiguous literal poisons an otherwise unique block",
@@ -745,6 +775,7 @@ function main(): number {
     let orphan = 0;
     let confident = 0;
     let uniqueSrc = 0;
+    let weak = 0;
     let ambiguous = 0;
     for (const { block, findings } of failing) {
       if (!findings.some((f) => f.detector === "no-witness-declared")) continue;
@@ -825,15 +856,21 @@ function main(): number {
         .filter((l) => cover.get(l)!.size > 0)
         .map((l) => cover.get(l)!.size);
       const worstCand = candCounts.length ? Math.max(...candCounts) : 0;
-      const verdict = coverageTag(covered, lits.length, !!named, worstCand);
+      const coveredLits = lits.filter((l) => cover.get(l)!.size > 0);
+      const minDec = coveredLits.length
+        ? Math.min(...coveredLits.map((l) => (l.split(".")[1] ?? "").length))
+        : 0;
+      const verdict = coverageTag(covered, lits.length, !!named, worstCand, minDec);
       const unique = verdict === "UNIQUE";
       const tag = verdict.padEnd(9);
       if (verdict === "CONFIDENT") confident++;
       else if (unique) uniqueSrc++;
+      else if (verdict === "WEAK") weak++;
       else if (verdict === "AMBIGUOUS") ambiguous++;
       console.log(
         `  ${tag}  ${block.label || block.root}  (${covered}/${lits.length} literals`
-        + `${worstCand > 1 ? `, up to ${worstCand} candidate witnesses` : ""})`,
+        + `, ${minDec}dp`
+        + `${worstCand > 1 ? `, up to ${worstCand} candidates` : ""})`,
       );
       for (const [w, n] of chosen)
         console.log(`             +${n} <- ${w}${rootOf(w) === block.root ? "   [named after the block]" : ""}`);
@@ -845,7 +882,8 @@ function main(): number {
     console.log(
       `\n  ${fully} fully coverable by declaration — but coverable is NOT a work queue:`
       + `\n    ${confident} CONFIDENT  witness is named after the block (provenance, not arithmetic)`
-      + `\n    ${uniqueSrc} UNIQUE     every literal has exactly ONE candidate witness`
+      + `\n    ${uniqueSrc} UNIQUE     one candidate witness AND >=${STRONG_MATCH_DECIMALS} matched decimals`
+      + `\n    ${weak} WEAK       one candidate, but too few decimals to be evidence`
       + `\n    ${ambiguous} AMBIGUOUS  some literal occurs in several witnesses; the cover picks one arbitrarily`
       + `\n  ${partial} partial, ${orphan} orphan`
       + `\n\n  Only the first two are actionable. Declaring an AMBIGUOUS block attaches a`

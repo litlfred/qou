@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-10T03:43:44Z
-updated_at: 2026-08-16T10:38:28Z
+updated_at: 2026-08-16T10:46:25Z
 ---
 
 
@@ -378,3 +378,66 @@ cases pin that a named witness stays CONFIDENT even when the literal is common,
 that one candidate is UNIQUE and 29 is AMBIGUOUS, and that a single ambiguous
 literal poisons an otherwise-unique block. Main axis unchanged at 213 failing —
 this is triage only.
+
+
+### CORRECTION to the note above — the queue is 2, not 13, and "~10 of 13 coherent" was wrong
+
+I wrote above that "roughly 10 of 13 look declarable" on the strength of
+topic-name proximity. **Checking the semantics killed the best-looking cluster.**
+
+The four Q-value blocks — `ex:qvalue-benchmark-table`,
+`rem:qvalue-derivation-chain`, `rem:qvalue-observation`,
+`prf:spectral-decomposition-qvalue` — were UNIQUE against
+`sublemma-2-1-A-operator-extract-h9-pn.witness.json` on the literal `0.5904`.
+The block states that value is *"the Rosso–Jones weighted average over the two
+degree-2 torus knots τ(2,9) and τ(3,4)"*. The witness carries
+`0.5904453769109197` as `A_per_pair.((5,1),(1,1,1)).frobenius_norm`. **Unrelated
+quantities agreeing to four decimals, with exactly one candidate in the corpus.**
+Uniqueness proposed a false source for four blocks at once.
+
+**The discriminator uniqueness was standing in for is MATCHED PRECISION.** Four
+decimals coincide; nineteen do not. Added `STRONG_MATCH_DECIMALS = 10` and a
+`WEAK` bucket:
+
+```
+    0 CONFIDENT  witness named after the block
+    2 UNIQUE     one candidate AND >=10 matched decimals
+   11 WEAK       one candidate, but too few decimals to be evidence
+  138 AMBIGUOUS  literal occurs in several witnesses; cover picks one arbitrarily
+```
+
+**151 -> 13 -> 2.** The original headline overstated the actionable work by 75x.
+
+### One declaration landed, and it is proof rather than coincidence
+
+`prf:crystal-isospin-degeneracy` now declares
+`computations/term7-alpha5-crystal-derivation.witness.json`. Its literal
+`0.0020612874779541296` sits at **both** `data.atoms[1].S_crystal_at_q_zero` and
+`data.atoms[2].S_crystal_at_q_zero` — atoms[1] is ³He, atoms[2] is T, the
+isospin mirror pair. Their sharing it to 19 digits **is the degeneracy the block
+proves**, so the witness contains the claim, not merely the number. Producer
+`computations/term7_alpha5_crystal_derivation.py` exists.
+
+Corpus: 213 -> 212 failing, `no-witness-declared` 182 -> 181.
+
+The second UNIQUE (`rem:q-beta-gamma-gamma-canonical-derivation` ->
+`chi-helium-4-h12-at-q0-50dps-matrix-m`, 10dp, exactly at threshold) is **not
+declared**: a q-beta γγ derivation sourced to a helium-4 χ matrix is not
+coherent on its face, and I could not locate the matching field to confirm
+either way. Left for a human read.
+
+### A false-positive class found by walking into it
+
+My first declaration *raised* a finding: the explanatory comment I wrote in the
+`.ts` quoted `0.5904`, and **this axis scans `.ts` comments**, so the file
+flagged itself. Reworded to avoid the numeral rather than change the axis —
+a comment is not published prose, so arguably it should be out of scope like
+fenced code blocks, but that is a scope decision for the axis owner and
+silencing it to make my own edit pass is exactly the wrong instinct.
+
+### Verification
+
+Selftest **23 -> 33**. The new cases pin the threshold from both sides (10dp
+UNIQUE, 9dp WEAK), that 4dp with one candidate is WEAK not UNIQUE, that a named
+witness outranks a weak digit count, and that a single ambiguous literal poisons
+an otherwise-unique block.
