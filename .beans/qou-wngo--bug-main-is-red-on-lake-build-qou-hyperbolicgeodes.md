@@ -1,11 +1,11 @@
 ---
 # qou-wngo
 title: 'BUG: main is RED on lake build QOU — HyperbolicGeodesicZAxis.lean, 4 errors, 2 of them one-word fixes'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-16T14:02:16Z
-updated_at: 2026-08-16T14:52:36Z
+updated_at: 2026-08-16T21:45:28Z
 ---
 
 Found running `prepare-merge` Step 4 on PR #5205. The **only** build errors in
@@ -122,3 +122,49 @@ claim was right; the way I checked it was not.
 **Still not fixing it here** — the four-line implicit fix alone does not turn the
 build green (the timeout remains), so a partial fix unblocks nobody and just
 splits ownership of a file mid-repair.
+
+
+---
+
+## FIXED in PR #5261 — and this bean's own diagnosis was wrong (2026-08-16)
+
+Branch `claude/wngo-hyperbolic-zaxis-2026-08-16`. **The fix is four tokens.**
+`autoImplicit` is off, so these never auto-bound:
+
+```
+heightProfile_zero {a : ℝ}  →  {a b : ℝ}
+heightProfile_one  {b : ℝ}  →  {a b : ℝ}
+vseg_zero          {a : ℝ}  →  {a b : ℝ}
+vseg_one           {b : ℝ}  →  {a b : ℝ}
+```
+
+After it: `lean`-direct **exit 0 with ZERO diagnostics** — no errors, no
+warnings. PR diff: 1 file, +4/−4.
+
+### 🔻 Correcting this bean
+
+It said *"the `whnf` heartbeat timeout at `:131` is the real work"*, and I
+repeated that in PR #5205's body. **Wrong.** The timeout was **fallout**: `:131`
+is `admissiblePath_vseg`, whose structure fields are `vseg_zero ha` and
+`vseg_one hb` — the two broken lemmas. With their types metavariable-laden the
+instance elaboration blew up. Fix the signatures and the timeout disappears,
+taking the `:153` unknown-constant with it.
+
+**Worse: I declined to fix this earlier *on that reasoning*** — "the four-line
+fix alone does not turn the build green, so a partial fix unblocks nobody, and
+I would rather not split ownership of a file mid-repair." Every clause was
+downstream of an untested assertion. One four-token edit was the entire repair,
+and `main` stayed red for hours because I predicted a hard part instead of
+testing for one.
+
+Second time today the same habit cost a turn (the other: claiming the general
+adjacent case needed `σ_quadratic`, when it needed the previous induction step).
+**Verify, do not predict.**
+
+### Why nothing caught it
+
+CI is `workflow_dispatch`-only repo-wide, so nothing built it on push. Under
+§"QA is agent-owned" the author's own `lean`-direct run is the gate — and a
+per-file check of a *different* file cannot catch this. **Whole-library
+breakage is the class with no automated catcher**, and this is what that costs:
+a four-token defect, live on `main`, invisible to every gate.
