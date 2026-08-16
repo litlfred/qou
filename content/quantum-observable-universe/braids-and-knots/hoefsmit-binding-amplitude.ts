@@ -13,7 +13,7 @@ export default proposition({
       body:
         "**Base ring minimised (AGENTS.md §7c).** The Lean sibling moved from " +
         "`[Field R]` + `field_simp` to a generic `[CommRing R]` with the " +
-        "modulus carried as a unit `q : Rˣ`, so `↑q⁻¹` is a `Units` coercion " +
+        "modulus carried as a unit `q : Units R`, so `↑q⁻¹` is a `Units` coercion " +
         "rather than a ring inverse; `[2]_q² = h² + 4` and `[3]_q = [2]_q² − 1` " +
         "are each one `linear_combination` against `↑q · ↑q⁻¹ = 1`. The " +
         "amplitude identity is now stated division-free as " +

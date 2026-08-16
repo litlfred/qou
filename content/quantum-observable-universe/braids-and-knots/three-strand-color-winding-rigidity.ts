@@ -22,7 +22,7 @@ export default proposition({
       body:
         "**Base ring minimised (AGENTS.md §7c).** The Lean sibling moved from " +
         "`[Field R]` + `field_simp` to a generic `[CommRing R]` with the " +
-        "modulus carried as a unit `q : Rˣ`. The `M2` Cayley–Hamilton core was " +
+        "modulus carried as a unit `q : Units R`. The `M2` Cayley–Hamilton core was " +
         "already `CommRing`; what moved is the Hoefsmit layer. The " +
         "axial-distance quotient `a₂ = h/(1 − q⁴)` is now carried as its " +
         "defining **relation** `a₂·(1 − q⁴) = h` — the same move already used " +
