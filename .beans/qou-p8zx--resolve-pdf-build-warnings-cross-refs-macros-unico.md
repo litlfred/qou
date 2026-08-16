@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-07-13T01:42:14Z
-updated_at: 2026-08-16T14:19:37Z
+updated_at: 2026-08-16T21:05:44Z
 ---
 
 Warnings to resolve:
@@ -84,3 +84,35 @@ Its known-macro seed needs widening; tracked separately.
 glossary anchors are never emitted. Fixing needs a compact-mode
 reference-detection change — real, but wider blast radius than a build
 fix. Cosmetic: 115 overfull / 126 underfull hbox.
+
+
+
+## Follow-up 2026-08-16 (continued session) — hyper refs now 0 too
+
+Rebased on main (+97 commits), re-verified, then closed the last
+warning class. **Every unresolved-reference class is now zero**:
+errors 0 | citations 0 | \ref 0 | hyper refs 48 -> 0 | multiply-defined 0
+| 1032 pp.
+
+The 48 hyper refs were NOT cosmetic — each was a dead link in the
+published PDF. Three distinct causes:
+
+1. **Labelled `prose` blocks emitted no \label at all** (renderer bug).
+   `case "prose"` pushed only the body, so `[…](#sec:foo)` at a prose
+   block always dangled. 5 sites. Fixed fa#129.
+   - Regression caught: a prose block often IS its section intro and
+     shares the section label -> 15 multiply-defined labels on the first
+     pass. renderBlock now takes the enclosing section label and skips.
+2. **`refterm` was not counted as a reference** by compact mode, whose
+   contract is "excluded UNLESS referenced". Glossary shipped with 24 of
+   27 blocks missing while live appendix-surreals prose linked into it.
+   The `term:` anchor lives in the block BODY, not the label.
+3. **Term refs cross chapter boundaries** — chapters render
+   independently, so fixing (2) alone only moved 48 -> 32. Needed a
+   doc-wide `collectReferencedTerms` pre-pass in build.ts.
+   Compact mode stays compact: glossary 24 -> 18 excluded, i.e. exactly
+   the 6 cited entries restored.
+4. 3 x `tm-*` links simply missing the `sec:` prefix (qou-side, 5 files).
+
+Residual is cosmetic only: 116 overfull / 130 underfull hbox, 14
+newunicodechar redefinitions.
