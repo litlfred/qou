@@ -13,7 +13,7 @@ are these families.  `HyperbolicGeodesic.fixedSet_isTotallyGeodesic` then PROVES
 sorry-free, conditional on a single named conjecture — that the vertical plane
 (`verticalPlaneFix`) and the hemisphere (`hemisphereFix`) are totally geodesic.
 The residual that genuinely remains cited/open is now ONLY **geodesic existence +
-uniqueness in `H³`** (the `HypMinimizerUnique` conjecture, bean `qou-hgeo`); the
+uniqueness in `H³`** (the `HypMinimizerUnique` conjecture, bean `qou-r111`); the
 *exhaustiveness* half of the old citation ("these are the ONLY totally-geodesic
 surfaces") is not part of any downstream obligation and is dropped.
 

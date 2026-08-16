@@ -28,7 +28,7 @@ faces, and File A3 proves the resulting ideal tetrahedron equals the chimney.
 --   `QOU.Archimedean.HyperbolicGeodesic` (`verticalPlaneFix_isTotallyGeodesic`,
 --   `hemisphereFix_isTotallyGeodesic`), via the DERIVED boundary isometries whose
 --   fixed sets these faces are.  What remains cited/open is now ONLY geodesic
---   existence + uniqueness in `H³` (`HypMinimizerUnique`, bean `qou-hgeo`); the
+--   existence + uniqueness in `H³` (`HypMinimizerUnique`, bean `qou-r111`); the
 --   *concrete-model* definitions here still carry no `axiom` and no `sorry`.
 
 ## What is defined here
