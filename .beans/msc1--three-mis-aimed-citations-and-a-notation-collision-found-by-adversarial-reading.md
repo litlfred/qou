@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-10T14:05:00Z
-updated_at: 2026-08-16T01:00:00Z
+updated_at: 2026-08-16T02:00:00Z
 ---
 Found by the adversarial reader on PR #4921 while adjudicating `prn1` tranche-1
 edges. These are **prose defects**, not `uses[]` defects — filed rather than
@@ -192,3 +192,35 @@ minority convention corpus-wide and that the naming decision is the author's.
 Item 5's last two bullets (the two undeclared "By [X]" steps in
 `prf:phi-q-categorical-truncation`, and the consolidation question) are
 untouched.
+
+## The tail — PR #5184 (2026-08-16)
+
+**Step 4's citation, fixed.** `cor:quantum-dilogarithm` states the
+*unstratified* identity `tr_trans(ϱ, p_i) = Φ_q(z_i)` — whole trace, whole
+dilogarithm, no levels. Step 4 cited it alone for the per-level
+`m^(k)|_i = [Φ_q^{≤k} − Φ_q^{≤k−1}]`. The block's own gap-closure section
+already named `prop:quantum-dilogarithm-stratified` as the bridge for exactly
+that step, sixty lines later; Step 4 now cites both and says which does what.
+
+**Both undeclared "By [X]" steps are now declared** — `cor:quantum-dilogarithm`
+and `prop:quantum-dilogarithm-stratified`. The post-batch re-scan leaves this
+block at zero remaining candidates.
+
+**`conj:brane-tower-z-habiro` rejected and ledgered** for both `prf:` blocks
+(reason `future-work`): cited twice as commentary — naming the open target, and
+noting the empirical k=2 sweet spot is *consistent with* k_★ ≤ 2. Corroboration
+is not dependency, and §3b independently bars a proof of a provable-kind parent
+from depending on a conjecture.
+
+## What remains, and why it is not mine
+
+- **Item 3** (`w_λ` vs `\tilde w_λ`) — superseded in scope by the 18–7 census
+  merged in #5013. The register's rule is the *minority* convention corpus-wide,
+  so the choice is which side moves: the register, or eighteen blocks. Author's
+  call, not a fix.
+- **The consolidation question** — whether the two `prf:` blocks should merge.
+  A `proposition-consolidation-audit` call.
+- **Whether word-depth ↔ partition-depth is proved anywhere** — raised in
+  #5183, still unestablished. This is the one genuinely open mathematical
+  question the bean surfaced.
+
