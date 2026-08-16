@@ -73,6 +73,29 @@ VERDICT_TEXT = re.compile(r"\b(match|mismatch|FAIL|PASS|agree|cross-check|"
                           r"disagree|allPassed)\b", re.I)
 
 
+# Agent verdicts. A high-recall axis needs a place to record "looked at it, it
+# is fine", or the same candidates get re-investigated every pass.
+#
+# Triage 2026-08-16: of the 65 `self-check-not-gated` candidates, only TWO have
+# a failing state recorded in a committed witness at all — and both are
+# legitimate. Their single assertion is an EXISTENTIAL,
+# `..._at_least_one_passes_10_ppm`; the per-k `passed: False` entries are the
+# probe's measurement of which (convention, k) pairs meet 10 ppm, not assertions.
+# k4 passes for every convention, so `allPassed: True` is right and the nested
+# False values are data.
+#
+# So the axis currently has near-zero LIVE damage. Its value is forward-looking:
+# it caught the shape in the two cases where it had already bitten (a live
+# convention-split detector, and a 63 %-wrong consumed cache).
+ADJUDICATED_LEGIT = {
+    "computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py":
+        "assertion is existential (at_least_one_passes); per-k False is the "
+        "measurement, not a failed check",
+    "computations/qbeta/qbeta_kashaev_habiro_chain_beta.py":
+        "same existential shape as the alpha probe",
+}
+
+
 def _digest(text: str) -> str:
     return hashlib.sha256(text.encode()).hexdigest()[:12]
 
@@ -286,6 +309,7 @@ def main() -> int:
     self_hash = _digest(Path(__file__).read_text())
     now = datetime.now(timezone.utc).isoformat()
     findings: list[dict] = []
+    adjudicated: list[dict] = []
 
     for p in sorted((ROOT / "computations").rglob("*.py")):
         if "_deprecated" in p.parts or p.name == Path(__file__).name:
@@ -299,10 +323,16 @@ def main() -> int:
         for crit, fn, sev in (("self-check-not-gated", detect_not_gated, "critical"),
                               ("resume-cache-unvalidated", detect_resume_cache, "major")):
             ev = fn(p, src, tree)
-            if ev:
-                findings.append({"script": rel, "criterion": crit,
-                                 "severity": sev, "evidence": ev,
-                                 "source_hash": _digest(src)})
+            if not ev:
+                continue
+            if rel in ADJUDICATED_LEGIT and crit == "self-check-not-gated":
+                adjudicated.append({"script": rel, "criterion": crit,
+                                    "verdict": "legit",
+                                    "why": ADJUDICATED_LEGIT[rel]})
+                continue
+            findings.append({"script": rel, "criterion": crit,
+                             "severity": sev, "evidence": ev,
+                             "source_hash": _digest(src)})
 
     by_crit: dict[str, int] = {}
     for f in findings:
@@ -314,6 +344,7 @@ def main() -> int:
     for c, n in sorted(by_crit.items()):
         print(f"  {c:<28} {n} candidate(s)")
     print(f"  {'total':<28} {len(findings)}")
+    print(f"  {'adjudicated legit':<28} {len(adjudicated)} (agent-reviewed, excluded above)")
 
     # Regression check. Both scripts below carried a REAL defect found by hand,
     # and both have since been repaired — matrix-M got the q₀ resume guard,
@@ -350,6 +381,7 @@ def main() -> int:
         "scriptFile": SELF_ID,
         "data": {"by_criterion": by_crit, "total": len(findings),
                  "regression_repaired_still_flagged": sorted(flagged & set(REPAIRED)),
+                 "adjudicated_legit": adjudicated,
                  "findings": findings},
     }, indent=2) + "\n")
     print(f"\n  witness -> {out.relative_to(ROOT)}")
