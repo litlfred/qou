@@ -5,6 +5,17 @@
 **Beans:** `qou-0pzi`, `qou-pjx4`, `qou-brg3`, `qou-7nwg`, `qou-shts`
 **Status:** scope finding — a negative, consolidated. No repair is proposed.
 
+> **⚠ SUPERSEDED 2026-08-16 by
+> [`2026-08-16-two-nucleon-sector-final-state-eight-closures.md`](2026-08-16-two-nucleon-sector-final-state-eight-closures.md).**
+> Three more routes have since closed — the **entire T-odd class** (the framing
+> cancels in the two-nucleon total, which is floored at `α·log 4`), a **uniform
+> `α` rescale** (empty intersection with the many-body deficit), and full `H₆`
+> (route 6, already retracted in §4b below). §§1–4 of this document stand as
+> written. **§5 and §6 are WITHDRAWN** — see the successor's §5 for why: §5's
+> item 1 cites the very `H₆` analysis that §4b retracts, and §6's
+> "remaining candidates" all route through the interface, which is now closed as
+> a class rather than candidate-by-candidate.
+
 ---
 
 ## 1. The defect
