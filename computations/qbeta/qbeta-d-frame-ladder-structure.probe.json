@@ -1,0 +1,96 @@
+{
+  "pin": "proton/experimental",
+  "q0": "1.10997858275138080759166909561",
+  "dps": 60,
+  "alpha_shift_C_to_D": "0.0118503429275860738800172478247",
+  "c2_tier": "proved (z-free ring identity) \u2014 convention-immune",
+  "c2_emp_C": "-1.01762379751300711670884700237",
+  "c3_fitted_C": "-2.06934257711516783787971951725",
+  "rung_ratio_C": "0.01731983483187870064",
+  "c2_emp_D": "-9.29886287064503418138559059741",
+  "c3_fitted_D": "-974.431887746748422982615210779",
+  "rung_ratio_D": "0.89252471582202913991",
+  "z_star_fitted": "0.499104480184784994190898414448",
+  "z_window_1sigma_halfwidth": "0.0001012830307867875262",
+  "zC_minus_zstar": "0.00021585399890945822254",
+  "zD_minus_zstar": "0.1135835569616802574",
+  "y21_at_zC": "0.000679665816305547586557319742334",
+  "y21_at_zD": "-0.112688037146465251595829863946",
+  "checks": [
+    {
+      "name": "A1 N=2 factor is 1 \u2212 u\u00b2, z-free",
+      "pass": true,
+      "detail": "|1\u2212b\u00b2\u210f\u2074 \u2212 (1\u2212u\u00b2)| = 0.0"
+    },
+    {
+      "name": "A1 \u03b1-shift is exactly (z_D\u2212z_C)\u00b7h/2",
+      "pass": true,
+      "detail": "\u0394(cos arg) = 0.011850342927586"
+    },
+    {
+      "name": "A2 N=2 factor identical in both frames",
+      "pass": true,
+      "detail": "1 \u2212 b\u00b2\u210f_q\u2074 contains no z; the Lean `ring` identity is z-free"
+    },
+    {
+      "name": "A3[C] c\u2083 == (c\u2082^emp+1)/(u(1\u2212u\u00b2)) exactly",
+      "pass": true,
+      "detail": "rel dev 2.14e-56"
+    },
+    {
+      "name": "A3[C] rung ratio == |c\u2082^emp+1|/|c\u2082^emp|",
+      "pass": true,
+      "detail": "ratio = 0.017319835"
+    },
+    {
+      "name": "A3[D] c\u2083 == (c\u2082^emp+1)/(u(1\u2212u\u00b2)) exactly",
+      "pass": true,
+      "detail": "rel dev 4.16e-59"
+    },
+    {
+      "name": "A3[D] rung ratio == |c\u2082^emp+1|/|c\u2082^emp|",
+      "pass": true,
+      "detail": "ratio = 0.89252472"
+    },
+    {
+      "name": "A4[C] Q_N3 == Q_exp exactly (\u21d2 c\u2084 \u2261 0)",
+      "pass": true,
+      "detail": "|Q_N3/Q_exp \u2212 1| = 0.0"
+    },
+    {
+      "name": "A4[D] Q_N3 == Q_exp exactly (\u21d2 c\u2084 \u2261 0)",
+      "pass": true,
+      "detail": "|Q_N3/Q_exp \u2212 1| = 0.0"
+    },
+    {
+      "name": "A5 z* is strictly between z_C and z_D? (reported, not required)",
+      "pass": true,
+      "detail": "z_C=0.4993203342  z*=0.4991044802  z_D=0.6126880371"
+    },
+    {
+      "name": "A6 \u0394c\u2083 is exactly the cos A_C \u2192 cos A_D substitution",
+      "pass": true,
+      "detail": "rel dev 2.28e-58"
+    },
+    {
+      "name": "A7 \u03b1 == \u2212h/4 \u2212 (h/2)\u00b7y_(2,1) (affine in the standard-block weight)",
+      "pass": true,
+      "detail": "identity holds"
+    },
+    {
+      "name": "A7 y_(2,1) > 0 at z_C",
+      "pass": true,
+      "detail": "0.0006796658163"
+    },
+    {
+      "name": "A7 y_(2,1) < 0 at z_D",
+      "pass": true,
+      "detail": "-0.1126880371"
+    },
+    {
+      "name": "A7 y_(2,1) < 0 at z_D for EVERY q in (1, 5] sampled (Lean: all q>1)",
+      "pass": true,
+      "detail": "max over sample = -4.20408"
+    }
+  ]
+}
