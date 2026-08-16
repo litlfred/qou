@@ -108,9 +108,14 @@ period theory:
 **Two related open questions:**
 
 - *Cellular vs iterated-integral depth.* The cellular GB-depth on
-  $Z(H_n(q))$ from
-  [`prop:curvature-rank-gb-stratification`](#prop:curvature-rank-gb-stratification)
-  (max hook of partition) is a **separate** filtration from the
+  $Z(H_n(q))$ — attributed here to
+  [`prop:curvature-rank-gb-stratification`](#prop:curvature-rank-gb-stratification),
+  though **that proposition stratifies by the curvature rank of *words* and
+  mentions no partition**; the max-hook statistic is
+  `QOU.BraidKnot.gbDepth`, a definition, and the step joining them is
+  unestablished (see
+  [`docs/audits/2026-08-16-three-gb-filtrations-one-name.md`](../../../docs/audits/2026-08-16-three-gb-filtrations-one-name.md))
+  — (max hook of partition) is a **separate** filtration from the
   iterated-integral depth used here. Their precise relationship —
   e.g. whether amphichiral self-conjugate cells correspond to
   *even* iterated-integral depths — is open.
