@@ -24,6 +24,13 @@ isometries (a vertical reflection, an inversion in a boundary sphere) are then
 ## What is PROVED here (sorry-free)
 
 * `dH_self` — `dH x x = 0` (the constant path realises length `0`).
+* `dH_comm` — `dH x y = dH y x` (symmetry).  DERIVED (no longer a bean): the
+  reverse path `t ↦ γ(1−t)` is admissible with equal hyperbolic length, the length
+  equality resting on the antitone one-dimensional change of variables
+  (`reflect_lintegral_Icc`, from Mathlib's `JacobianOneDim` reflection Jacobian —
+  which sidesteps the `IsNegInvariant` route and needs no measurability of the
+  integrand).  So `dH y x ≤ pathLenH γ` for every admissible `γ : x → y`, hence
+  `dH y x ≤ dH x y`; symmetric.
 * `IsDHIsometry φ` + its methods — **the isometry engine.**  A map `φ` that is
   *conformal with the same factor on the height* — Fréchet derivative `Dφ(p)`
   scaling every tangent vector by `lam(p)` and height by the SAME `lam(p)` —
@@ -44,16 +51,22 @@ These are the remaining pseudometric axioms.  Per AGENTS.md ("if you cannot clos
 a derivation, CREATE A BEAN — not a `sorry`"), they are NOT stated as sorried
 theorems: this file stays 100 % sorry-free, and the gap is tracked in bean
 `qou-322e`.  None is needed for the isometry results (pure pointwise congruences)
-or the geodesic classification.
+or the geodesic classification.  `dH_comm` has since been CLOSED (above); the two
+below remain open.
 
-* `dH_comm` (symmetry, via path reversal) and `dH_triangle` (triangle inequality,
-  via path concatenation) each need a genuine change of variables /
-  reparametrisation invariance of the set-restricted `lintegral` — a real chunk
-  of measure theory.
+* `dH_triangle` (triangle inequality, via path concatenation).  The naive
+  concatenation `η(t) = if t ≤ ½ then γ(2t) else δ(2t−1)` is **not** differentiable
+  at the join `t = ½` (the one-sided velocities `2γ'(1)` and `2δ'(0)` need not
+  match), so it fails `AdmissiblePath`'s everywhere-differentiability.  Closing it
+  needs a zero-speed reparametrisation at the endpoints (a monotone `C¹` `φ` with
+  `φ'(0)=φ'(1)=0`, e.g. `3t²−2t³`) together with reparametrisation length-invariance
+  (a *monotone* Jacobian change of variables, the sibling of `reflect_lintegral_Icc`)
+  AND a two-sided `HasDerivAt` glue at the join — a substantial chunk.
 * Separation `dH x y = 0 → x = y` needs the fundamental theorem of calculus /
-  absolute continuity to bound `pathLenH` below (a Cantor-type continuous path
-  otherwise defeats a naive lower bound) — the same reason Mathlib has no
-  hyperbolic geometry.
+  absolute continuity to bound `pathLenH` below by the endpoint displacement (a
+  Cantor-type continuous path otherwise defeats a naive lower bound, and here the
+  bound must hold under the *infimum*) — the same reason Mathlib has no hyperbolic
+  geometry.
 
 The carrier is `EuclideanSpace ℝ (Fin 3)` (NOT the plain `Fin 3 → ℝ` of
 `HyperbolicVolumeMeasure`, whose Haar/Lebesgue structure needs the sup-free Pi
@@ -70,6 +83,7 @@ Archimedean (ℝ): `‖·‖`, `deriv`, ordering `0 < z` — §7c.
 
 import Mathlib.MeasureTheory.Integral.Lebesgue.Basic
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+import Mathlib.MeasureTheory.Function.JacobianOneDim
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
@@ -132,6 +146,85 @@ theorem dH_self {x : E} (hx : x ∈ upperH) : dH x x = 0 := by
   refine le_trans (dH_le_pathLenH hadm) ?_
   simp only [pathLenH, deriv_const', norm_zero, zero_div, ENNReal.ofReal_zero,
     lintegral_zero, le_refl]
+
+/-! ### Symmetry `dH_comm` — DERIVED via the reverse path
+
+The reverse path `t ↦ γ(1−t)` of an admissible `γ : x → y` is admissible from `y`
+to `x`, and has the same hyperbolic length — the length equality is the antitone
+one-dimensional change of variables `∫⁻_{[0,1]} F = ∫⁻_{[0,1]} F(1−·)`.  Hence
+`dH` is symmetric.  No `IsNegInvariant` instance and no measurability of the
+integrand are needed: the `JacobianOneDim` reflection Jacobian supplies the
+change of variables for an arbitrary `u : ℝ → ℝ≥0∞`. -/
+
+/-- **Reflection change of variables on `[0,1]`** — `∫⁻_{[0,1]} u = ∫⁻_{[0,1]}
+u(1−·)`, from Mathlib's antitone one-dimensional Jacobian formula applied to the
+reflection `t ↦ 1 − t` (whose derivative is `−1`, `|−1| = 1`, and which maps
+`[0,1]` onto itself).  Holds for ANY `u`, no measurability required. -/
+theorem reflect_lintegral_Icc (u : ℝ → ℝ≥0∞) :
+    ∫⁻ t in Set.Icc (0 : ℝ) 1, u t = ∫⁻ t in Set.Icc (0 : ℝ) 1, u (1 - t) := by
+  have himg : (fun t : ℝ => 1 - t) '' Set.Icc 0 1 = Set.Icc (0 : ℝ) 1 := by
+    ext y; simp only [Set.mem_image, Set.mem_Icc]
+    refine ⟨?_, ?_⟩
+    · rintro ⟨x, ⟨hx0, hx1⟩, rfl⟩; constructor <;> linarith
+    · rintro ⟨hy0, hy1⟩; exact ⟨1 - y, ⟨by linarith, by linarith⟩, by ring⟩
+  have hf' : ∀ x ∈ Set.Icc (0 : ℝ) 1,
+      HasDerivWithinAt (fun t => 1 - t) (-1) (Set.Icc 0 1) x :=
+    fun x _ => ((hasDerivAt_id x).const_sub 1).hasDerivWithinAt
+  have hanti : AntitoneOn (fun t : ℝ => 1 - t) (Set.Icc 0 1) := by
+    intro a _ b _ hab; simp only; linarith
+  have key := lintegral_image_eq_lintegral_deriv_mul_of_antitoneOn measurableSet_Icc hf' hanti u
+  rw [himg] at key
+  simpa only [neg_neg, ENNReal.ofReal_one, one_mul] using key
+
+/-- The reverse path `t ↦ γ(1−t)` of an admissible `γ : x → y` is admissible from
+`y` to `x` (endpoints swap; `H³` and differentiability are preserved because
+`1 − t ∈ [0,1]` whenever `t ∈ [0,1]`). -/
+theorem reverse_admissible {γ : ℝ → E} {x y : E} (hγ : AdmissiblePath γ x y) :
+    AdmissiblePath (fun t => γ (1 - t)) y x where
+  source := by show γ (1 - 0) = y; simpa using hγ.target
+  target := by show γ (1 - 1) = x; simpa using hγ.source
+  mem := fun t ht => hγ.mem (1 - t) ⟨by linarith [ht.2], by linarith [ht.1]⟩
+  diff := fun t ht => by
+    have h1 : DifferentiableAt ℝ (fun s : ℝ => 1 - s) t :=
+      (differentiableAt_const (1 : ℝ)).sub differentiableAt_id
+    exact (hγ.diff (1 - t) ⟨by linarith [ht.2], by linarith [ht.1]⟩).comp t h1
+
+/-- The reversed path's speed matches the original at the reflected point:
+`‖(γ∘(1−·))'(t)‖ = ‖γ'(1−t)‖` (the chain-rule factor `−1` has norm `1`). -/
+theorem norm_deriv_reverse {γ : ℝ → E} {x y : E} (hγ : AdmissiblePath γ x y)
+    {t : ℝ} (ht : t ∈ Set.Icc (0 : ℝ) 1) :
+    ‖deriv (fun s => γ (1 - s)) t‖ = ‖deriv γ (1 - t)‖ := by
+  have h1t : (1 - t) ∈ Set.Icc (0 : ℝ) 1 := ⟨by linarith [ht.2], by linarith [ht.1]⟩
+  have hg : HasDerivAt γ (deriv γ (1 - t)) (1 - t) := (hγ.diff (1 - t) h1t).hasDerivAt
+  have hf : HasDerivAt (fun s : ℝ => 1 - s) (-1) t := by
+    simpa using (hasDerivAt_id t).const_sub 1
+  have hcomp : HasDerivAt (fun s => γ (1 - s)) ((-1 : ℝ) • deriv γ (1 - t)) t := hg.scomp t hf
+  rw [hcomp.deriv, norm_smul]; simp
+
+/-- **Reverse path length preservation** — the reversed path has the same
+hyperbolic length as the original.  The integrand at `t` is the original's
+integrand at `1 − t` (`norm_deriv_reverse` for the numerator; the height is
+`γ(1−t)_z` on both sides), and the reflection change of variables closes it. -/
+theorem pathLenH_reverse {γ : ℝ → E} {x y : E} (hγ : AdmissiblePath γ x y) :
+    pathLenH (fun s => γ (1 - s)) 0 1 = pathLenH γ 0 1 := by
+  unfold pathLenH
+  rw [reflect_lintegral_Icc (fun s => ENNReal.ofReal (‖deriv γ s‖ / (γ s) 2))]
+  refine setLIntegral_congr_fun measurableSet_Icc (fun t ht => ?_)
+  show ENNReal.ofReal (‖deriv (fun s => γ (1 - s)) t‖ / (γ (1 - t)) 2)
+     = ENNReal.ofReal (‖deriv γ (1 - t)‖ / (γ (1 - t)) 2)
+  rw [norm_deriv_reverse hγ ht]
+
+/-- **`dH x y ≤ dH y x`** — each admissible `δ : y → x` reverses to an admissible
+`x → y` path of equal length. -/
+theorem dH_comm_le (x y : E) : dH x y ≤ dH y x := by
+  refine le_iInf₂ (fun δ hδ => ?_)
+  calc dH x y ≤ pathLenH (fun s => δ (1 - s)) 0 1 := dH_le_pathLenH (reverse_admissible hδ)
+    _ = pathLenH δ 0 1 := pathLenH_reverse hδ
+
+/-- **`dH` is symmetric** — `dH x y = dH y x`.  DERIVED (bean `qou-322e`, symmetry
+leg), not adopted. -/
+theorem dH_comm (x y : E) : dH x y = dH y x :=
+  le_antisymm (dH_comm_le x y) (dH_comm_le y x)
 
 /-! ### The isometry engine
 
