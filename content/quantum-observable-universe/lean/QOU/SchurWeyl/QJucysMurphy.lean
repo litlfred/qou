@@ -461,6 +461,94 @@ theorem qJM_one_two_commute (h1 : 1 < n) :
     _ = s * ((t*1*t) * s * (t*1*t)) := e2.symm
     _ = s * (t * 1 * t) * s * (t * 1 * t) := by simp only [mul_assoc]
 
+/-- **The adjacent case at `k` follows from the adjacent case at `k-1`.**
+No invertibility, no quadratic relation — braid, `s`-commutation, and the
+previous adjacent instance. -/
+theorem adjacent_step {R : Type*} [Ring R] (t s B : R)
+    (hbraid : t * s * t = s * t * s) (hcomm : s * B = B * s)
+    (hprev : B * (t*B*t) = (t*B*t) * B) :
+    (t*B*t) * s * ((t*B*t) * s) = s * ((t*B*t) * (s * (t*B*t))) := by
+  have hprev' : B*t*B*t = t*B*t*B := by
+    have := hprev; simp only [mul_assoc] at this ⊢; exact this
+  -- the shared six-letter core
+  have core : B*t*s*B*t*s = t*B*t*s*B*t := by
+    calc B*t*s*B*t*s = B*t*(s*B)*t*s := by simp only [mul_assoc]
+      _ = B*t*(B*s)*t*s := by rw [hcomm]
+      _ = B*t*B*(s*t*s) := by simp only [mul_assoc]
+      _ = B*t*B*(t*s*t) := by rw [← hbraid]
+      _ = (B*t*B*t)*(s*t) := by simp only [mul_assoc]
+      _ = (t*B*t*B)*(s*t) := by rw [hprev']
+      _ = t*B*t*(B*s)*t := by simp only [mul_assoc]
+      _ = t*B*t*(s*B)*t := by rw [← hcomm]
+      _ = t*B*t*s*B*t := by simp only [mul_assoc]
+  calc (t*B*t) * s * ((t*B*t) * s)
+      = t*B*(t*s*t)*B*t*s := by simp only [mul_assoc]
+    _ = t*B*(s*t*s)*B*t*s := by rw [hbraid]
+    _ = t*(B*s)*t*s*B*t*s := by simp only [mul_assoc]
+    _ = t*(s*B)*t*s*B*t*s := by rw [hcomm]
+    _ = (t*s)*(B*t*s*B*t*s) := by simp only [mul_assoc]
+    _ = (t*s)*(t*B*t*s*B*t) := by rw [core]
+    _ = (t*s*t)*(B*t*s*B*t) := by simp only [mul_assoc]
+    _ = (s*t*s)*(B*t*s*B*t) := by rw [hbraid]
+    _ = s*t*(s*B)*t*s*B*t := by simp only [mul_assoc]
+    _ = s*t*(B*s)*t*s*B*t := by rw [hcomm]
+    _ = s*t*B*(s*t*s)*B*t := by simp only [mul_assoc]
+    _ = s*t*B*(t*s*t)*B*t := by rw [← hbraid]
+    _ = s * ((t*B*t) * (s * (t*B*t))) := by simp only [mul_assoc]
+
+/-! ### The induction closes
+
+`adjacent_step` above is the whole content: the adjacent case at `k` follows
+from the adjacent case at `k-1`, using braid, `σ_k`-commutation, and **nothing
+else** — no invertibility, no quadratic relation. With `L_0 = 1` as the base,
+that is a complete induction, and `qJM_commute_of_adjacent` turns it into the
+full pairwise statement. -/
+
+theorem qJM_adjacent : ∀ k : ℕ, k < n →
+    qJM K q qi n k * qJM K q qi n (k + 1)
+      = qJM K q qi n (k + 1) * qJM K q qi n k := by
+  intro k
+  induction k with
+  | zero => intro _; rw [qJM_zero, one_mul, mul_one]
+  | succ k ih =>
+    intro hk1
+    have hk : k < n := by omega
+    have hL1 : qJM K q qi n (k + 1)
+        = σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * σ K q qi n ⟨k, hk⟩ :=
+      qJM_succ K q qi n hk
+    have hL2 : qJM K q qi n (k + 1 + 1)
+        = σ K q qi n ⟨k+1, hk1⟩ * qJM K q qi n (k+1) * σ K q qi n ⟨k+1, hk1⟩ :=
+      qJM_succ K q qi n hk1
+    have hbraid : σ K q qi n ⟨k, hk⟩ * σ K q qi n ⟨k+1, hk1⟩ * σ K q qi n ⟨k, hk⟩
+        = σ K q qi n ⟨k+1, hk1⟩ * σ K q qi n ⟨k, hk⟩ * σ K q qi n ⟨k+1, hk1⟩ := by
+      have := σ_braid K q qi n ⟨k, hk⟩ (by simpa using hk1)
+      simpa using this
+    have hcomm : σ K q qi n ⟨k+1, hk1⟩ * qJM K q qi n k
+        = qJM K q qi n k * σ K q qi n ⟨k+1, hk1⟩ :=
+      qJM_comm_sigma K q qi n ⟨k+1, hk1⟩ k (by simp)
+    have hprev : qJM K q qi n k * (σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * σ K q qi n ⟨k, hk⟩)
+        = (σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * σ K q qi n ⟨k, hk⟩) * qJM K q qi n k := by
+      rw [← hL1]; exact ih hk
+    have key := adjacent_step (σ K q qi n ⟨k, hk⟩) (σ K q qi n ⟨k+1, hk1⟩)
+      (qJM K q qi n k) hbraid hcomm hprev
+    rw [hL2, hL1]
+    simp only [mul_assoc] at key ⊢
+    exact key
+
+/-- **The Murphy elements commute pairwise — unconditionally.** -/
+theorem qJM_commute_proved (i j : ℕ) :
+    qJM K q qi n i * qJM K q qi n j = qJM K q qi n j * qJM K q qi n i := by
+  have hadj : ∀ k : ℕ, qJM K q qi n k * qJM K q qi n (k + 1)
+      = qJM K q qi n (k + 1) * qJM K q qi n k := by
+    intro k
+    by_cases hkn : k < n
+    · exact qJM_adjacent K q qi n k hkn
+    · have h1 : qJM K q qi n (k + 1) = qJM K q qi n k := dif_neg hkn
+      rw [h1]
+  rcases le_total i j with h | h
+  · exact qJM_commute_of_adjacent K q qi n hadj j i h
+  · exact (qJM_commute_of_adjacent K q qi n hadj i j h).symm
+
 end AdjacentReduction
 
 /-- **[GAP] The Murphy elements commute pairwise** — they generate the commutative
@@ -473,10 +561,14 @@ Gelfand–Tsetlin subalgebra `GZ_{n+1} ⊂ H_{n+1}(q)`.
 -- Blocked on: the general seminormal rep (bean SW-4 residual). -/
 theorem qJM_commute (K : Type*) [CommRing K] (q qi : K) (n : ℕ) (i j : ℕ)
     (hi : i ≤ n) (hj : j ≤ n) :
-    qJM K q qi n i * qJM K q qi n j = qJM K q qi n j * qJM K q qi n i := by
-  -- Ref: [murphy1992] — the JM/Murphy operators generate a commutative subalgebra.
-  -- GAP: requires the seminormal diagonalisation (bean qou-im9l / SW-4 residual).
-  sorry
+    qJM K q qi n i * qJM K q qi n j = qJM K q qi n j * qJM K q qi n i :=
+  -- PROVED 2026-08-16 (bean `qou-gjg6`). The GAP note this replaced said
+  -- "requires the seminormal diagonalisation" — it does not. `qJM_commute_proved`
+  -- derives it from the braid relation and far commutation alone, by induction on
+  -- the recursion `L_{k+1} = σ_k L_k σ_k`; no representation, no invertibility,
+  -- and no quadratic relation. The hypotheses `hi`/`hj` are not needed either,
+  -- since the recursion freezes above `n`.
+  qJM_commute_proved K q qi n i j
 
 end SeminormalTheory
 
