@@ -491,6 +491,49 @@ theorem expansion_run_approximates (α : ℝ) (n k : ℕ)
     field_simp at hm ⊢; linarith [hm]
   rwa [hhi, Rat.cast_div, Rat.cast_intCast, Rat.cast_pow, Rat.cast_ofNat] at hmain
 
+/-! ### From a run to an approximation *exponent*
+
+`expansion_run_approximates` bounds the error by `gapₙ / 2ᵏ` against a denominator `2ⁿ`.
+Reading that as an exponent means comparing it to `1 / (2ⁿ)ᵗ`, which needs the run length
+`k` measured **against `n`** rather than absolutely: `k ≥ n·t` is exactly what buys
+exponent `t`.
+
+⚠ `gapₙ ≤ 1` is taken as a hypothesis rather than derived. It is always true at the first
+bracketed step — an unbounded `+` sets `lo := value` and `value := value + 1`, so the
+following `-` bisects an interval of width exactly `1`, and every later gap is smaller —
+but proving "the first bracketed step" requires reasoning about when the bounds first
+appear, which is a separate induction and not needed for the statement below. -/
+
+open scoped Classical in
+/-- **A run of `k ≥ n·t` signs gives approximation exponent `t`.**
+
+The conclusion is the Diophantine form: an explicit rational of denominator `q = 2ⁿ` with
+error at most `1 / qᵗ`. The run length is what supplies `t`; the bisection rate alone
+supplies only `t = 1`, which every real has for free. -/
+theorem approx_exponent_of_run (α : ℝ) (n k t : ℕ)
+    (hb : Bracketed (expandState α n))
+    (hg : (expandState α n).gap ≤ 1)
+    (hrun : ∀ j, j < k → ((expandState α (n + j)).value : ℝ) < α)
+    (hk : n * t ≤ k) :
+    ∃ m : ℤ, |α - (m : ℝ) / 2 ^ n| ≤ 1 / ((2 : ℝ) ^ n) ^ t := by
+  obtain ⟨m, hm⟩ := expansion_run_approximates α n k hb hrun
+  refine ⟨m, hm.trans ?_⟩
+  -- `gapₙ / 2ᵏ ≤ 1 / 2ᵏ ≤ 1 / 2^(n·t) = 1 / (2ⁿ)ᵗ`
+  have hgR : (((expandState α n).gap : ℚ) : ℝ) ≤ 1 := by exact_mod_cast hg
+  have h2k : (0 : ℝ) < 2 ^ k := by positivity
+  have hstep : (((expandState α n).gap / 2 ^ k : ℚ) : ℝ)
+      = (((expandState α n).gap : ℚ) : ℝ) / 2 ^ k := by push_cast; ring
+  rw [hstep]
+  have h1 : (((expandState α n).gap : ℚ) : ℝ) / 2 ^ k ≤ 1 / 2 ^ k := by gcongr
+  refine h1.trans ?_
+  have hpow : ((2 : ℝ) ^ n) ^ t = 2 ^ (n * t) := by rw [← pow_mul]
+  rw [hpow]
+  -- `gcongr` discharges BOTH side conditions from context (`1 ≤ 2` by `norm_num`, and
+  -- `n * t ≤ k` from `hk`).  Supplying them as bullets afterwards fails with "No goals to
+  -- be solved" — the same shape as the cofactor-0 case in the gluing generator, where a
+  -- tactic closing more than expected reads as a broken proof rather than a finished one.
+  gcongr <;> norm_num
+
 /-! ### ⚠ Non-vacuity of the expansion, for the same reason as before
 
 `Brackets` is two implications *guarded* by `hasLo` / `hasHi`, and `dist_le_gap_of_expansion`
@@ -547,5 +590,19 @@ theorem nineTenths_run_approximates :
     ∃ m : ℤ, |(9/10 : ℝ) - (m : ℝ) / 2 ^ 2|
       ≤ (((expandState (9/10 : ℝ) 2).gap / 2 ^ 2 : ℚ) : ℝ) :=
   expansion_run_approximates _ 2 2 expandState_nineTenths_runs.1 expandState_nineTenths_runs.2
+
+open scoped Classical in
+/-- …and the **exponent** form on the same real, discharging its extra `gapₙ ≤ 1`
+hypothesis too. `n = 2`, `k = 2`, `t = 1`: the run is exactly long enough for exponent `1`.
+
+Only `t = 1` here, which is the exponent every real has for free — `9/10` is rational and
+has no long runs to give more. That is the honest witness: it shows the theorem *applies*,
+not that this `α` is interesting. A witness with `t ≥ 2` would need a real chosen for its
+run structure, which is the number theory this lane deliberately does not attempt. -/
+theorem nineTenths_exponent_one :
+    ∃ m : ℤ, |(9/10 : ℝ) - (m : ℝ) / 2 ^ 2| ≤ 1 / ((2 : ℝ) ^ 2) ^ 1 :=
+  approx_exponent_of_run _ 2 2 1 expandState_nineTenths_runs.1
+    (by norm_num [expandState, GonshorState.step, GonshorState.init, GonshorState.gap])
+    expandState_nineTenths_runs.2 (by norm_num)
 
 end QOU.AppendixSurreals

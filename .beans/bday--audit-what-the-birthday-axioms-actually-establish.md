@@ -761,3 +761,56 @@ known. The old form is kept so nothing downstream breaks.
 
 This is the seventh loose or degenerate statement this bean's territory has produced. The
 pattern is now unmistakable: in this area, **read the statement, not the name**.
+
+---
+**2026-08-16 — the run becomes an EXPONENT. `approx_exponent_of_run`.**
+
+```lean
+approx_exponent_of_run (α : ℝ) (n k t : ℕ)
+    (hb : Bracketed (expandState α n)) (hg : (expandState α n).gap ≤ 1)
+    (hrun : ∀ j < k, ((expandState α (n + j)).value : ℝ) < α) (hk : n * t ≤ k) :
+  ∃ m : ℤ, |α − (m : ℝ)/2ⁿ| ≤ 1 / (2ⁿ)ᵗ
+```
+
+The Diophantine form outright: an explicit rational of denominator `q = 2ⁿ` with error at
+most `1/qᵗ`. **The run length measured against `n` is what supplies `t`** — `k ≥ n·t` is the
+whole content, and it is why the bisection rate alone can only ever give `t = 1`.
+
+30 declarations in `GonshorConvergence.lean`, sorry-free, all standard axioms.
+
+### `gapₙ ≤ 1` is a hypothesis, deliberately
+
+It is always true at the first bracketed step: an unbounded `+` sets `lo := value` and
+`value := value + 1`, so the following `-` bisects an interval of width exactly `1`, and
+every later gap is smaller. Proving *"the first bracketed step"* needs an induction on when
+the bounds first appear — a separate lemma the statement does not need. Taken as a
+hypothesis and discharged at the witness by `norm_num`.
+
+### ⚠ The witness only reaches `t = 1`, and that is the honest limit
+
+`nineTenths_exponent_one` discharges every hypothesis at `n = 2, k = 2, t = 1`. But `t = 1`
+is the exponent **every** real has for free — `9/10` is rational and has no long runs to
+give more. So the witness shows the theorem *applies*; it does not show this `α` is
+interesting.
+
+A witness with `t ≥ 2` needs a real chosen for its run structure, and exhibiting one is the
+Diophantine work this lane deliberately does not attempt. Recorded because a reader could
+otherwise take a proved `t = 1` instance as evidence the machinery detects something, when
+`liouvilleWith_one` already gives that for nothing — the same trap the bracket rate sets,
+one level up.
+
+### Trap: `gcongr` closes more than expected
+
+`gcongr` discharged **both** side conditions (`1 ≤ 2`, and `n·t ≤ k` from context), so
+supplying them as follow-up bullets failed with **"No goals to be solved"**. Identical
+shape to the cofactor-`0` case in the gluing generator: a tactic that closes more than
+anticipated reads as a broken proof rather than a finished one. Also cost one cycle to a
+guessed lemma name (`div_le_div_of_nonneg_right'`, which does not exist) — `gcongr` is the
+robust move for monotonicity goals precisely because it removes the guessing.
+
+### What is left for a literal `LiouvilleWith p α`
+
+Only the quantifier now: `∃ᶠ n in atTop` needs *infinitely many* `n` carrying a run of
+length `≥ n·t`, plus the `α ≠ m/q` clause (which wants `α` irrational). Both are properties
+of the individual `α` — precisely the Thue–Siegel–Roth territory recorded above, and not
+reachable by more machinery.
