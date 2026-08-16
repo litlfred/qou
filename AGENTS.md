@@ -730,7 +730,7 @@ corpus — run the **corpus-grep checklist**:
    line will do.
 
    ```sh
-   grep -in <topic> library/INDEX.md              # 341 briefs, ~15k tokens total
+   grep -in <topic> library/INDEX.md              # 320 briefs, ~14k tokens total
    cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
    grep -rln <topic> library/<doc-id>/sections/   # the text itself
    ```
@@ -741,6 +741,18 @@ corpus — run the **corpus-grep checklist**:
    front-matter, so a hit found by the third command is interpretable
    without opening anything else (contextual retrieval: a chunk in
    isolation otherwise loses what makes it mean anything).
+
+   **One line per *work*, not per file.** The library holds 19 works more
+   than once — a preprint beside its published version, or the same PDF
+   ingested under two names — and Neumann–Zagier three times. The extra
+   copies keep their text on disk, so a full-text grep still lands in
+   them; each carries `duplicate_of` in its section front-matter naming
+   the copy to prefer. **Do not read two hits on one work as two
+   sources.** Adjudicated in
+   [`docs/audits/library-duplicate-ledger.json`](docs/audits/library-duplicate-ledger.json);
+   `scripts/library-find-duplicates.py` proposes, but its same-work and
+   different-work score ranges overlap, so a proposal is not a verdict —
+   a sequel sharing its setup sections outscores four true duplicates.
 
    Briefs and summaries are **extractive** — assembled from each
    document's own abstract, section titles and extracted claims, nothing
