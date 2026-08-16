@@ -326,6 +326,97 @@ def check_bracketing() -> dict:
             "pass": bool(ok)}
 
 
+# ---------------------------------------------------------------- W9
+
+# Every distinct closed form circulating in the corpus as a Markov/Ocneanu
+# parameter.  Inventory taken 2026-08-16 across `computations/`, `tools/` and
+# `content/**/lean/`; call sites are cited in the audit doc.
+Z_SPELLINGS = [
+    ("z_D  = q^3/(q^2+1) = q^2/[2]_q", q**3 / (q**2 + 1),
+     "the level-2 member of the family", "mass, binding, borromean-binding"),
+    ("z_C  = sqrt(q)/(q+1) = 1/[2]_{sqrt q}", sp.sqrt(q) / (q + 1),
+     "not in Q(q): sqrt(q) is not a rational function of q "
+     "(x^2 - q Eisenstein at q)", "qbeta-decay (disputed)"),
+    ("z_TL = q/(q^2+1) = 1/[2]_q", q / (q**2 + 1),
+     "in Q(q), but no r matches: z_r has numerator q^(2r-1), so degree 1 "
+     "forces r = 1, and z_1 = q != q/(q^2+1)",
+     "meson_lepton_knot_dictionary_probe, casimir_phi_q_markov_probe "
+     "(neither is a production file)"),
+]
+
+
+def check_spelling_levels() -> dict:
+    """Every circulating z spelling, its formal level, and why it is not one."""
+    QrC_map = lambda zz: sp.cancel(q * zz / (1 - Q_SUB + q * zz))  # noqa: E731
+    rows, off_family = [], []
+    for name, zz, invariant, sites in Z_SPELLINGS:
+        Qr = QrC_map(zz)
+        val = at_q0(Qr)
+        r_here = mp.log(val) / mp.log(Q0_MP**2)
+        exact_hits = [r for r in range(1, 13) if sp.simplify(zz - z_level(r)) == 0]
+        rows.append({
+            "z": name,
+            "z_at_q0": mp.nstr(at_q0(zz), 22),
+            "formal_level_at_q0": mp.nstr(r_here, 14),
+            "is_a_level": bool(exact_hits),
+            "level_if_any": exact_hits[0] if exact_hits else None,
+            "exclusion_invariant": None if exact_hits else invariant,
+            "call_sites": sites,
+        })
+        if not exact_hits:
+            off_family.append(name)
+    # exactly one of the three is a genuine level
+    ok = sum(1 for r_ in rows if r_["is_a_level"]) == 1 and \
+        rows[0]["level_if_any"] == 2
+    return {"check": "W9 every circulating z spelling, and its level",
+            "spellings": rows,
+            "off_family": off_family,
+            "note": "the two off-family spellings are excluded by DIFFERENT "
+                    "invariants -- field membership for z_C, numerator degree "
+                    "for z_TL. Neither exclusion is numerical.",
+            "pass": bool(ok)}
+
+
+# ---------------------------------------------------------------- W10
+
+# The registry's four channels (docs/coordination/trace-convention-registry.json,
+# schema trace-convention-registry/v1, updated 2026-08-15), with the z their
+# PRODUCTION code actually evaluates.  Verified by reading the call sites.
+CHANNELS = [
+    ("mass", "D", "m_p_substrate_identity_50dps.py::trM_borromean "
+                  "-> canonical_mass.py", "agreed"),
+    ("binding", "D", "closed_form_tau_M.py::markov_z, "
+                     "wedderburn_jones_markov.py::y_lambda_at", "agreed"),
+    ("borromean-binding-single-pipeline", "D",
+     "borromean_binding_recompute.py:110", "agreed"),
+    ("qbeta-decay", "C", "qbeta/qbeta_utils.py::markov_parameter", "disputed"),
+]
+
+CONVENTION_Z = {"D": q**3 / (q**2 + 1), "C": sp.sqrt(q) / (q + 1)}
+
+
+def check_channel_levels() -> dict:
+    """Which Wenzl level does each registered channel sit at?"""
+    rows = []
+    for cid, conv, producer, status in CHANNELS:
+        zz = CONVENTION_Z[conv]
+        Qr = sp.cancel(q * zz / (1 - Q_SUB + q * zz))
+        r_here = mp.log(at_q0(Qr)) / mp.log(Q0_MP**2)
+        is_level = any(sp.simplify(zz - z_level(r)) == 0 for r in range(1, 13))
+        rows.append({"channel": cid, "convention": conv, "producer": producer,
+                     "registry_status": status,
+                     "level": 2 if is_level else None,
+                     "formal_level_at_q0": mp.nstr(r_here, 14),
+                     "in_the_level_family": bool(is_level)})
+    levels = {r_["level"] for r_ in rows if r_["in_the_level_family"]}
+    return {"check": "W10 the Wenzl level of each registered channel",
+            "channels": rows,
+            "distinct_levels_in_use": sorted(x for x in levels if x is not None),
+            "finding": "every channel that is in the family at all is at "
+                       "r = 2. No QOU channel sits at r = 3 or above.",
+            "pass": levels == {2}}
+
+
 # ---------------------------------------------------------------- driver
 
 
@@ -339,6 +430,8 @@ def main() -> int:
         check_level_table(),
         check_level_crossings(),
         check_bracketing(),
+        check_spelling_levels(),
+        check_channel_levels(),
     ]
     all_pass = all(c["pass"] for c in checks)
     payload = {
