@@ -167,3 +167,38 @@ truncated series in a variable chosen to make it converge fast.
   `.assertions[0].computed/expected/tolerance`,
   `.data.rows[*].err_ppb_after_this_rung`, `structural_candidates[*].err_pct`).
   Pre-existing, not mine, worth its own bean.
+
+## Reconciled with main's red-team (e83e83ac9) — two extractors, both findings right
+
+Main landed an adversarial audit of the same ladder (bean `qou-cds1`) while
+this branch was working. It says *"c_6/c_7 imposed in extraction
+(self-consistency); c_8 pattern breaks"*, which appears to contradict T0.5's
+"c_4..c_7 are never computed". Both are correct; there are **two** extractors:
+
+| producer | form | c_4+ |
+|---|---|---|
+| `qbeta_ck_cache.py` | greedy sequential, `Q_next = Q_prev(1 + c_k u^k)` | **never computed** — the loop breaks (T0.5; Lean-proved in `GreedyLadderTermination.lean`) |
+| `qbeta_ck_extraction_precision_floor.py` | product `R(u) = prod_k (1 + c_k u^k)` | **computed, but pure noise** |
+
+The second carries a good bound worth citing rather than re-deriving:
+`sigma(c_k) = sigma_R / u^k` with `sigma_R ~ 6e-7` the AME relative precision
+on Q_beta. Since `u^3 ~ 6.2e-7 ~ sigma_R`, `c_3` sits exactly AT the noise
+floor and `c_4` (`u^4 ~ 5.3e-9`) is far below it. Only `c_2` (~0.8%) and
+`c_3` (~48%, marginal) are data-determined.
+
+So the two findings are complementary, not competing: **structurally** the
+greedy ladder cannot have a c_4 (proved), and **statistically** a product-form
+c_4 could not be measured even if it did.
+
+### An over-claim NOT made here, recorded so nobody makes it later
+
+`sigma(c_k) = sigma_R / h^k` with `h > u` gives every h-rung a bigger lever and
+a smaller sigma than its u-index counterpart. It is tempting to read that as
+"more rungs clear the noise floor in h", i.e. the h frame extracting more
+information. **That is wrong.** There is ONE measured scalar (Q_beta), so one
+combination is determined no matter the coordinate. Changing variables
+re-conditions the coefficients; it does not create information. The correct
+statement is only that the h rungs are better *conditioned* per index.
+
+This matters because it would have been the strongest-sounding argument for
+the migration, and it is unsound.
