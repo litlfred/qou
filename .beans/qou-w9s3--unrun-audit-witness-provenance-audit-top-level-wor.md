@@ -112,3 +112,52 @@ per §5.1, a witness written by a gate run is not automatically a refresh.
 
 Flip to blocking once the 2 NOT_A_PRODUCER are drained and the `.lean`/`.rs`
 false-positive class is handled.
+
+## Drained 1 of 2 NOT_A_PRODUCER
+
+**`psl27-irrep-verification` — FIXED.** The witness named
+`psl27_irrep_verification.py` as its producer; the script computed all four
+witnessed quantities (`GL3F2_mats`, `conj_classes`, `sum_d_sq`,
+`irrep_dims`) and emitted nothing. Nothing else wrote it either — the only
+file in the corpus mentioning that witness name was the audit. Wired the
+emission through `WitnessBuilder.wrap_legacy`, so the `scriptFile` claim is
+now true and the file is derived rather than hand-maintained.
+
+Every label — `engine: "python-exact"`, each `source`, each `unit` — is
+reproduced VERBATIM from the committed witness. My first attempt reworded
+them (and downgraded `engine` to `"python"`); that was gratuitous churn
+discarding the original author's wording, and it is reverted. The payload is
+semantically identical; the only content additions are `precisionMetadata`
+and `environment`, which `WitnessBuilder` stamps on everything it writes.
+(The remaining textual diff is `ensure_ascii`: the committed file escaped
+`₂`, the builder writes literal `₂`. Same string.)
+
+**The shape guard caught a real defect in my wiring.** First run recorded
+`durationMs 50 -> 0`, flagged as "the hallmark of a run that was interrupted
+mid-write". Correct: this module does its whole computation at IMPORT (no
+`main()`), so building the witness afterwards measured only the build. Fixed
+by capturing `_T0 = time.monotonic()` at import and passing
+`start_time=_T0` — `durationMs` is now 480 and the guard reports
+`collapsed: 0`. Notably the honest fix was available; `--accept` would have
+silenced a true signal.
+
+**`sigma-all-evaluator` — NOT fixed, and should not be "fixed" by widening
+the audit.** Its witness is a different artifact class:
+`auditOnly: docs/audits/2026-05-03-frob-filter-evaluator-wired.md`, zero
+assertions, and a hand-authored payload (reference table, precision
+schedule, `pipeline_callers_updated` / `..._intentionally_unwired`). It also
+carries `evaluator_module: computations/sigma_all_evaluator.py` — so it
+already has a field for "the module this is about". Its `scriptFile` is
+using that second meaning, while the corpus contract for `scriptFile` is
+"the script that WRITES this". The script's `__main__` is a self-test
+comparing closed form against a symbolic table; it does not produce this
+payload and should not be made to.
+
+Resolution is authorial, one of: drop `scriptFile` (the `evaluator_module`
+field already carries the true relationship), or wire a real producer. I did
+NOT make the audit skip `auditOnly` witnesses — that would suppress a true
+finding by widening the checker, which is the move the precision discipline
+exists to prevent.
+
+Gate now reports 1 NOT_A_PRODUCER, not 2. Flip to blocking once this one and
+the `.lean`/`.rs` SCRIPT_MISSING class are handled.
