@@ -696,3 +696,68 @@ Validator baseline unchanged at 42.
 `RothExponent` is deliberately a `def` of a `Prop`, not a class — a `Prop` taken as a
 hypothesis cannot be discharged by stipulating a field, which is exactly how
 `DiophantineBirthday` went wrong.
+
+---
+**2026-08-16 — the run assembly, done; plus an independence statement that was weaker than
+its name.**
+
+### 1. `expansion_run_approximates` — the assembly I had called "bookkeeping"
+
+```lean
+expansion_run_approximates (α : ℝ) (n k : ℕ)
+    (hb : Bracketed (expandState α n))
+    (hrun : ∀ j < k, ((expandState α (n + j)).value : ℝ) < α) :
+  ∃ m : ℤ, |α − (m : ℝ)/2ⁿ| ≤ ((expandState α n).gap / 2ᵏ : ℚ)
+```
+
+For a **given** real, an **explicit** rational, denominator fixed by `n`, accuracy set by
+the run length `k`. That is the Diophantine shape, and it is the first statement in this
+lane where all three earlier pieces (accuracy, denominator, run) actually meet.
+
+Two bridging lemmas were needed and neither was hard: `expandState_succ_plus` (a step whose
+value undershoots `α` *is* a `+` step — the definition of the greedy rule) and
+`expandState_plus_run` (a window of undershoots is a `List.replicate k Sign.plus` fold,
+which is the shape `run_plus_approximates` consumes).
+
+### ⚠ 2. Vacuity check number five — and this one had real teeth
+
+`expansion_run_approximates` is conditional on the run hypothesis. **At `k = 0` that
+hypothesis is vacuously true** and the theorem degenerates to `dist_le_gap`. So all of the
+content is in whether a *positive* `k` is ever satisfied.
+
+`expandState_nineTenths_runs`: `α = 9/10` reaches the bisection regime at step 2 and then
+undershoots twice (`1/2`, `3/4` both below `9/10`), so the expansion emits `+` twice more.
+`nineTenths_run_approximates` instantiates the headline there, discharging **every**
+hypothesis — which is what makes it applicable rather than merely true.
+
+### ⚠ 3. `birthdayFaithful_independent_of_surrealField_axioms` did not say what it is named
+
+Reading it via `#check` while wiring an exposition block:
+
+```
+(∃ x, True) ∧ ¬∀ (n : ℕ), flatBirthday ↑n = ↑n
+```
+
+My first reading — that the left conjunct is vacuous — was **wrong**: the pretty-printer
+elides the binder type, and the source says `∃ _ : SurrealField.{0,0} ℝ*, True`, which does
+assert the axioms are satisfiable on `ℝ*`.
+
+**But the real defect is next to it.** The two conjuncts are **not linked**. The first says
+*some* `SurrealField` structure exists on `ℝ*`; the second says `flatBirthday` fails the
+mixin. Nothing says these concern the **same** structure — read literally, an unrelated
+witness for each half satisfies it, and that is not independence.
+
+Added `birthdayFaithful_independent_witnessed`:
+
+```lean
+∃ S : SurrealField.{0,0} ℝ*, ¬ ∀ n : ℕ, S.birthday ((n : ℕ) : ℝ*) = (n : Ordinal)
+```
+
+**One** structure, satisfying all six axioms, whose *own* birthday fails the mixin. The
+proof is unchanged — `surrealFieldHyperreal.birthday` **is** `flatBirthday` by definition —
+so the content was always present and only the statement was loose. Worth tightening rather
+than commenting: a reader checking the theorem, not the field assignment, could not have
+known. The old form is kept so nothing downstream breaks.
+
+This is the seventh loose or degenerate statement this bean's territory has produced. The
+pattern is now unmistakable: in this area, **read the statement, not the name**.

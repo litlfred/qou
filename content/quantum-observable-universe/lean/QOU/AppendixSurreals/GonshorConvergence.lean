@@ -340,6 +340,41 @@ theorem run_plus_approximates {α : ℝ} {st : GonshorState} (k : ℕ) (hb : Bra
   push_cast at hlo ⊢
   linarith
 
+/-! ### Runs in `α`'s own expansion
+
+`run_plus_approximates` is stated for an arbitrary `List.replicate k Sign.plus` fold.  To
+apply it to `α`'s *own* expansion one needs to know that the greedy rule actually emitted
+`+` at each of those steps — which it does exactly when the current value undershoots `α`.
+That is the definition of the rule, so the bridge is short; it is stated separately because
+without it the run lemma has nothing to attach to. -/
+
+open scoped Classical in
+/-- A step where the value undershoots `α` is a `+` step. -/
+theorem expandState_succ_plus (α : ℝ) (n : ℕ)
+    (h : ((expandState α n).value : ℝ) < α) :
+    expandState α (n + 1) = (expandState α n).step Sign.plus := by
+  rw [expandState]; simp [h]
+
+open scoped Classical in
+/-- **`α` undershot at every step of the window ⟹ that window is a plus-run.**
+
+The hypothesis is a statement about `α` — it says the expansion's value stayed below `α`
+for `k` consecutive steps — and the conclusion puts `expandState` into the shape
+`run_plus_approximates` consumes. -/
+theorem expandState_plus_run (α : ℝ) (n : ℕ) :
+    ∀ k, (∀ j, j < k → ((expandState α (n + j)).value : ℝ) < α) →
+      expandState α (n + k)
+        = (List.replicate k Sign.plus).foldl GonshorState.step (expandState α n) := by
+  intro k
+  induction k with
+  | zero => intro _; simp
+  | succ k ih =>
+    intro h
+    have hk := ih fun j hj => h j (Nat.lt_succ_of_lt hj)
+    rw [← Nat.add_assoc, expandState_succ_plus α (n + k) (h k (Nat.lt_succ_self k)), hk,
+      List.replicate_succ']
+    simp [List.foldl_append]
+
 /-! ### The denominator invariant — what turns a run into an *exponent*
 
 `run_plus_approximates` says `α` is within `gap / 2ᵏ` of `st.hi`.  To read that as an
@@ -426,6 +461,36 @@ theorem expandState_dyadic (α : ℝ) : ∀ n, DyadicState n (expandState α n) 
   | zero => simpa [expandState] using dyadicState_init
   | succ n ih => rw [expandState]; exact ih.step _
 
+/-! ### The three pieces, assembled
+
+`run_plus_approximates` (accuracy), `expandState_dyadic` (denominator) and
+`expandState_plus_run` (that the window really is a run) each say something partial.  Put
+together they give the shape a Diophantine exponent is read off: an explicit rational
+`m / 2ⁿ` with the error controlled by the *run length* rather than by `n`. -/
+
+open scoped Classical in
+/-- **A run of `k` in `α`'s expansion gives a dyadic of denominator `2ⁿ` accurate to
+`gapₙ / 2ᵏ`.**
+
+Denominator fixed by `n`; accuracy improving with `k`. That is the decoupling an
+approximation exponent above `1` consists of, now stated for a *given* real and an
+*explicit* rational. -/
+theorem expansion_run_approximates (α : ℝ) (n k : ℕ)
+    (hb : Bracketed (expandState α n))
+    (hrun : ∀ j, j < k → ((expandState α (n + j)).value : ℝ) < α) :
+    ∃ m : ℤ, |α - (m : ℝ) / 2 ^ n| ≤ (((expandState α n).gap / 2 ^ k : ℚ) : ℝ) := by
+  obtain ⟨m, hm⟩ := (expandState_dyadic α n).2.2
+  refine ⟨m, ?_⟩
+  have hbr : Brackets α
+      ((List.replicate k Sign.plus).foldl GonshorState.step (expandState α n)) := by
+    rw [← expandState_plus_run α n k hrun]; exact expandState_brackets α (n + k)
+  have hmain := run_plus_approximates k hb hbr
+  -- `hm` is the multiplicative dyadic form; turn it into `hi = m / 2ⁿ`.
+  have h2 : (2 : ℚ) ^ n ≠ 0 := by positivity
+  have hhi : (expandState α n).hi = (m : ℚ) / 2 ^ n := by
+    field_simp at hm ⊢; linarith [hm]
+  rwa [hhi, Rat.cast_div, Rat.cast_intCast, Rat.cast_pow, Rat.cast_ofNat] at hmain
+
 /-! ### ⚠ Non-vacuity of the expansion, for the same reason as before
 
 `Brackets` is two implications *guarded* by `hasLo` / `hasHi`, and `dist_le_gap_of_expansion`
@@ -449,5 +514,38 @@ that state rather than two vacuous implications. -/
 theorem expandState_half_flags :
     (expandState (1/2 : ℝ) 2).hasLo = true ∧ (expandState (1/2 : ℝ) 2).hasHi = true := by
   norm_num [expandState, GonshorState.step, GonshorState.init]
+
+/-! And the same question one level up, for the **run** hypothesis.
+
+`expansion_run_approximates` is conditional on `∀ j < k, value undershoots α`. At `k = 0`
+that is vacuously true and the theorem degenerates to "the value is within one bracket
+width", which is `dist_le_gap` again. So the content is entirely in whether a **positive**
+`k` is ever satisfied, and that needs exhibiting.
+
+`α = 9/10` runs: after `[+, -]` the value is `1/2`, and `1/2` then `3/4` both undershoot
+`9/10`, so the expansion emits `+` twice more. -/
+
+open scoped Classical in
+/-- A real whose expansion genuinely plus-runs, so the run hypothesis is satisfiable at
+`k = 2` and not only at `k = 0`. -/
+theorem expandState_nineTenths_runs :
+    Bracketed (expandState (9/10 : ℝ) 2)
+      ∧ ∀ j, j < 2 → ((expandState (9/10 : ℝ) (2 + j)).value : ℝ) < 9/10 := by
+  refine ⟨⟨?_, ?_, ?_, ?_⟩, ?_⟩
+  · norm_num [expandState, GonshorState.step, GonshorState.init]
+  · norm_num [expandState, GonshorState.step, GonshorState.init]
+  · norm_num [expandState, GonshorState.step, GonshorState.init]
+  · norm_num [expandState, GonshorState.step, GonshorState.init]
+  · intro j hj
+    interval_cases j <;> norm_num [expandState, GonshorState.step, GonshorState.init]
+
+open scoped Classical in
+/-- The headline instantiated on that real: a dyadic of denominator `4` approximating
+`9/10` to within `gap₂ / 4`. Discharges every hypothesis of
+`expansion_run_approximates`, which is what makes it applicable rather than merely true. -/
+theorem nineTenths_run_approximates :
+    ∃ m : ℤ, |(9/10 : ℝ) - (m : ℝ) / 2 ^ 2|
+      ≤ (((expandState (9/10 : ℝ) 2).gap / 2 ^ 2 : ℚ) : ℝ) :=
+  expansion_run_approximates _ 2 2 expandState_nineTenths_runs.1 expandState_nineTenths_runs.2
 
 end QOU.AppendixSurreals

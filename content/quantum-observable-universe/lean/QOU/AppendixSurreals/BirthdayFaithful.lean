@@ -132,4 +132,25 @@ theorem birthdayFaithful_independent_of_surrealField_axioms :
       ∧ ¬ (∀ n : ℕ, HyperrealTransfer.flatBirthday ((n : ℕ) : ℝ*) = (n : Ordinal)) :=
   ⟨⟨HyperrealTransfer.surrealFieldHyperreal, trivial⟩, flatBirthday_not_faithful⟩
 
+/-- **Independence, with the two halves actually joined.**
+
+⚠ The conjunction above is **weaker than its name**, and the gap is easy to miss. Its first
+conjunct says *some* `SurrealField` structure exists on `ℝ*`; its second says `flatBirthday`
+fails the mixin. Nothing in the statement says these concern the **same** structure — read
+literally it would be satisfied by an unrelated witness for each half, which is not
+independence.
+
+This is the honest form: **one** structure, satisfying all six axioms, whose *own* birthday
+fails the mixin. It is what the earlier docstring already claimed ("witnessed by
+`flatBirthday` on `ℝ*`") and what the conjunction did not say.
+
+The proof is unchanged because `surrealFieldHyperreal.birthday` **is** `flatBirthday` by
+definition — so the content was always there, and only the statement was loose. That is
+precisely why it was worth tightening rather than leaving as a comment: a reader checking
+the theorem, not the field assignment, could not have known. -/
+theorem birthdayFaithful_independent_witnessed :
+    ∃ S : SurrealField.{0, 0} ℝ*,
+      ¬ (∀ n : ℕ, S.birthday ((n : ℕ) : ℝ*) = (n : Ordinal)) :=
+  ⟨HyperrealTransfer.surrealFieldHyperreal, flatBirthday_not_faithful⟩
+
 end QOU.AppendixSurreals

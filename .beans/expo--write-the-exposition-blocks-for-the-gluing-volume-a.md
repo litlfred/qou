@@ -195,3 +195,26 @@ Both controls here reverted from an explicit `/tmp` backup instead, and the reve
 verified by grepping the restored ref back. Worth stating as the rule: **a positive control
 on a new file needs a real backup, because the usual revert is a no-op on something git has
 never seen.**
+
+---
+**2026-08-16 — a third block, and it changed the Lean it cites.**
+
+`appendix-surreals/birthday-axioms-do-not-pin-the-birthday.{md,ts}`, registered beside
+`hyperreal-limit-transfer`. Covers the `BirthdayFaithful` result, which had **no paper
+presence**: the six axioms admit a two-valued model, so they bound birthday only from
+above; `birthday(n) ≤ n` is already a theorem while the matching `≥` is unobtainable; the
+fix is an opt-in mixin rather than a change to the carrier; and the independence is proved
+rather than asserted.
+
+**Writing the block improved the theorem.** Wiring `lean.ref` meant reading the cited
+statement, which turned out to be weaker than its name — its two conjuncts were not linked
+to the same structure (see `qou-bday` for the full account). A stronger
+`birthdayFaithful_independent_witnessed` was added and the block cites **that**.
+
+Recording it here because it is an argument for this bean's whole premise: writing the
+exposition is not transcription. Citing a result forces someone to read what it actually
+says, which is a different act from proving it, and it caught something two prior passes
+over that file did not.
+
+Verified as before: ref resolves by `#check`; baseline unchanged at 42; positive control
+42 → 43 on removing the `lean` field, reverted from an explicit backup.
