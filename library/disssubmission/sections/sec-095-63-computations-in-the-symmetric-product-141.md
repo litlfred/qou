@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 149-150
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 in H2c(X). Then θb· η = h∗
 d([Θ]b· µ), so from the projection formula we

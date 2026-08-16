@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 10-11
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 the point-wise multiplication of functions over Young diag rams of size n corresponds to the product in
 the center of the symmetric group algebra. But, in Z(/BV Sn), one has

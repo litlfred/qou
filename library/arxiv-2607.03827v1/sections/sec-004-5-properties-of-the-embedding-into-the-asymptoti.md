@@ -7,6 +7,7 @@ section_number: 5
 pages: 17-22
 source_pdf: 2607.03827v1.pdf
 source_sha256: 965d69603381942a
+doc_brief: "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS — The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical"
 ---
 In this section we will provide further information related with the embedding into the asymptotic
 algebra by considering the restriction functor associated to the embeddingA→bA. Moreover we will

@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-5
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 Given an integerm ≥ 1, anm×m matrixA with coeﬃcients in R is diagonalizable
 if there exist matrices S andT in GLm(R) such that SAT is a diagonal matrix. The

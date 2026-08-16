@@ -7,6 +7,7 @@ section_number: 7
 pages: 29-30
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 In this section we consider the generalized dimensions Dq(λ;a,b ;t) (see (2.4)) in detail.
 We suppress the dependence on the parameters a,b andt as much as possible, so we write

@@ -7,6 +7,7 @@ section_number: 20
 pages: 28-29
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 If χ∈ S (P), then H•(X,Pχ) is not concentrated in degree zero, so (⋆) is
 non-zero in some degreed with|d|≥ g. ButQ is a clean perverse sheaf and

@@ -7,6 +7,7 @@ section_number: 2
 pages: 36-37
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
+doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
 ---
 LetC be the monoidal category of ﬁnite-dimensional modules of Uq(Lg). We as-
 sume q∈ C∗ is not a root of unity. The category C is non semi-simple, and non

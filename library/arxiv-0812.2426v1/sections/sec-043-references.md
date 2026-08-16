@@ -7,6 +7,7 @@ section_number: null
 pages: 19-19
 source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨ uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 [BKLT00] Y. Bespalov, T. Kerler, V. Lyubashenko, and V. Tura ev, Integrals for braided hopf
 algebras, J. Pure Appl. Algebra 148 (2000), no. 2, 113–164.

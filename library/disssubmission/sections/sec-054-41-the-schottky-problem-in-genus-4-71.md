@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 79-81
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 To avoid case distinctions, from now on we putG(g) = SOg!(C) if g is
 odd andG(g) = Spg!(C) if g is even. The main goal of this chapter is to

@@ -7,6 +7,7 @@ section_number: 7
 pages: 2-2
 source_pdf: Kondev_2021_Chinese_Phys._C_45_030001.pdf
 source_sha256: 29b14ce8a7c0ecac
+doc_brief: "Chinese Physics C PAPER • OPEN ACCESS The NUBASE2020 evaluation of nuclear physics properties * To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001 — 31 sections: Physics Division"
 ---
 Abstract: The NUBASE 2020 evaluation contains the recommended values of the main nuclear physics properties for all nuclei in
 their ground and excited, isomeric (T1/2≥100 ns) states. It encompasses all experimental data published in primary (journal articles)

@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 22-25
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 of some order n, which is more interesting. For simplicity assume
 that n ≥ 3 is odd, and let q be a root of unity of order 2 n such

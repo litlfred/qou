@@ -7,6 +7,7 @@ section_number: null
 pages: 2-3
 source_pdf: 2011.12932v2.pdf
 source_sha256: 23709542c5652a29
+doc_brief: "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing"
 ---
 invariants of closed oriented 3-manifolds in terms of Chern–Simons gauge theory,
 and he predicted that these invariants could be understood as part of a TQFT. Fur-

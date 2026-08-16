@@ -7,6 +7,7 @@ section_number: null
 pages: 30-31
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 Let v be a formal parameter. The Gaussian binomial coefficient for m∈ Z, r∈ Z≥0, is
 defined as follows 

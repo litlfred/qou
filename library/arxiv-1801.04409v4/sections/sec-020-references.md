@@ -7,6 +7,7 @@ section_number: null
 pages: 34-35
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 [A] J. L. Alperin, Local representation theory, Modular Represen tations as an
 Introduction to the Local Representation Theory of Finite Group s, Cam-

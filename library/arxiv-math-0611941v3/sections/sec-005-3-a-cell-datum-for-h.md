@@ -7,6 +7,7 @@ section_number: 3
 pages: 7-11
 source_pdf: 0611941v3.pdf
 source_sha256: bf6f2d55c7adee51
+doc_brief: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl gr oup W , deﬁned over a ground ring in which “bad” primes for W are"
 ---
 We keep the notation of the previous sections. In order to show th at H is “cellular” in
 the sense of Graham–Lehrer [16, Deﬁnition 1.1], we must specify a qu adruple (Λ , M, C, ∗)

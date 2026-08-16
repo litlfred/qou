@@ -7,6 +7,7 @@ section_number: 6
 pages: 22-24
 source_pdf: 1004.1533v3.pdf
 source_sha256: 95c1544431e6bf37
+doc_brief: "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
 ---
 In this section we extend the deﬁnition of TV TQFT to surfaces with b oundary
 (and 3-manifolds with corners). Recall that according to general ideas of extended

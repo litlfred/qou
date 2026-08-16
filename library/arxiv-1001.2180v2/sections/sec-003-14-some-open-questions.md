@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 4-5
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 1.4.1. Precise behavior of the ﬁrst line. Proposition 4 (respectively Corollary 6) gives only an upper bound
 for the behavior of the ﬁrst row of the diagrams (respectivel y the length of the longest non-decreasing

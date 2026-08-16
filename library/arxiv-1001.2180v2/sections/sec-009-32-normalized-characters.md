@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 8-10
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 shall use the power sums pk, the normalized characters Σk and their quantizations Σk,q; this section is
 devoted to their presentation.

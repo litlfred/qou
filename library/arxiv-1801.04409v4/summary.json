@@ -1,0 +1,126 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1801.04409v4",
+ "source_sha256": "db61d011e3775aca",
+ "brief": "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury.",
+ "extended": "**ON SEMISIMPLIFICATION OF TENSOR CATEGORIES**\n\n*PA VEL ETINGOF AND VICTOR OSTRIK*\n\n35 pp, 21 sections.\n\n**Abstract.** We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury. In particular, w e compute the semisimpliﬁcation of the category of representations of a ﬁnite group in characteristic p in terms of representations of the normalizer of its Sylow p-subgroup. This allows us to compute the semisimpliﬁcation of the representation category of the sym- metric group Sn+p in characteristic p, where 0 ≤ n ≤ p − 1, and of the Deligne category Rep abSt, where t ∈ N. We also compute the semisimpliﬁcation of the category of representations of the Kac-D e Concini quantum group of the Borel subalgebra of sl2.\n\n**Outline.** 1 Introduction; 2.1 Tensor ideals; 2 Preliminaries; 2.3 Generalization to pivotal Karoubian catego; 3 General results on semisimplification of ten; 3.3 Compatibility of negligible morphisms with; 4.1 The result; 4 Semisimplification of representation categor; 4.2 Proof of Theorem 4.2; 4.3 The case of Sylow subgroup of prime order; 4.4 The case of the symmetric group Sp+n, wher; 5 Semisimplification of some non-symmetric cat; 5.1 Generic q; 5.2 Roots of unity; 6 Surjective symmetric tensor functors between; 7 Objects of finite type in semisimplification; 8 Semisimplification of Tilt(GL(n)) when char(; Appendix A. Categorifications of based rings a",
+ "tokens": {
+  "brief": 35,
+  "extended": 355
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-21-tensor-ideals",
+   "title": "Tensor ideals",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-003-23-generalization-to-pivotal-karoubian-categorie",
+   "title": "Generalization to pivotal Karoubian categories",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-004-3-general-results-on-semisimplification-of-tenso",
+   "title": "General results on semisimplification of tensor categories",
+   "pages": "8-14"
+  },
+  {
+   "id": "sec-005-33-compatibility-of-negligible-morphisms-with-su",
+   "title": "Compatibility of negligible morphisms with surjective tensor functors",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-006-41-the-result",
+   "title": "The result",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-007-4-semisimplification-of-representation-categorie",
+   "title": "Semisimplification of representation categories of finite groups in characteristic p.",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-008-42-proof-of-theorem-42",
+   "title": "Proof of Theorem 4.2",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-009-43-the-case-of-sylow-subgroup-of-prime-order",
+   "title": "The case of Sylow subgroup of prime order",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-010-44-the-case-of-the-symmetric-group-spn-where-np",
+   "title": "The case of the symmetric group Sp+n, where n<p",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-011-5-semisimplification-of-some-non-symmetric-categ",
+   "title": "Semisimplification of some non-symmetric categories",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-012-51-generic-q",
+   "title": "Generic q",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-013-52-roots-of-unity",
+   "title": "Roots of unity",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-014-6-surjective-symmetric-tensor-functors-between-v",
+   "title": "Surjective symmetric tensor functors between Verlinde categories Verp(G)",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-015-7-objects-of-finite-type-in-semisimplifications",
+   "title": "Objects of finite type in semisimplifications",
+   "pages": "26-29"
+  },
+  {
+   "id": "sec-016-8-semisimplification-of-tiltgln-when-chark2",
+   "title": "Semisimplification of Tilt(GL(n)) when char(k)=2",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-017-appendix-a-categorifications-of-based-rings-atta",
+   "title": "Appendix A. Categorifications of based rings attached to SO(3).",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-018-a1",
+   "title": "A.1.",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-019-a2-fusion-categories",
+   "title": "A.2. Fusion categories",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-020-references",
+   "title": "References",
+   "pages": "34-35"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

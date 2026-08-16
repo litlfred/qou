@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 34-35
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 In this section we show that twisting by a characterχ deﬁnes a tensor
 functor ACU in the sense of [86, chapt. I, sect. 4.2.4] on the symmetric

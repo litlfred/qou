@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 147-149
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 In this case the vanishingr6 = r5,1 = 0 can again be checked directly,
 using the observation that

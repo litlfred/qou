@@ -7,6 +7,7 @@ section_number: 1
 pages: 27-28
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
+doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
 ---
 Jacinta Torres
 Let g be a complex, simple Lie algebra, and L(λ) a simple module over the complex

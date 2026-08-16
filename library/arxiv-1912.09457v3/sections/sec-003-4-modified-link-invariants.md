@@ -7,6 +7,7 @@ section_number: 4
 pages: 12-13
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
+doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
 ---
 We deﬁne link invariants for objects in CR. These can be normalized
 according to the nullity of the objects and yield nontrivial link invariants

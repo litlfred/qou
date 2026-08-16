@@ -1,0 +1,166 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "104171-owr-2018-52",
+ "source_sha256": "b33ed36eaa470877",
+ "brief": "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints.",
+ "extended": "**Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018**\n\n*Enveloping Algebras and Geometric Representation Theory*\n\n66 pp, 29 sections.\n\n**Abstract.** The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints. Mathematics Subject Classiﬁcation (2010): 17B35, 17B37, 20G15.\n\n**Outline.** References; 1 Let HC(A) be the quotient of the category HC; 1 (Xreg ) is ﬁnite. For example, for X = V/ Γ,; 1 (Σi\\; 1 (Xreg). The inclusion Σ i\\{ 0}֒→Xreg give ri; 1 Galleries; 1.1 Dimension and properties of galleries. Let; 0.1 Semisimpliﬁcation. Let C denote a k-linear; 0.2 Representation categories. Examples of suc; 0.3 Representations of supergroups. The result; 0.4 The categoryRep(GL(m|n)). LetTm|n be the c; 1 Main question; 2 Quantum Grothendieck ring; 3 Isomorphisms and cluster algebras; 4 Application to the Kazhdan-Lusztig algorithm; 1.1 Crystals. The inﬁnity crystal B(∞) is a co; 1.2 Kashiwara and Saito’s construction. We wil; 1.3 Punch line. About 8 years ago, two things ",
+ "tokens": {
+  "brief": 46,
+  "extended": 263
+ },
+ "sections": [
+  {
+   "id": "sec-000-references",
+   "title": "References",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-001-1-let-hca-be-the-quotient-of-the-category-hc-a-b",
+   "title": "Let HC(A) be the quotient of the category HC( A) by the full subcategory of",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-002-1-xreg-is-ﬁnite-for-example-for-x-v-γ-this-group",
+   "title": "(Xreg ) is ﬁnite. For example, for X = V/ Γ, this group coincides with Γ. So",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-003-1-σi",
+   "title": "(Σi\\",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-1-xreg-the-inclusion-σ-i-0xreg-give-rise-to-a-gr",
+   "title": "(Xreg). The inclusion Σ i\\{ 0}֒→Xreg give rise to a group",
+   "pages": "9-27"
+  },
+  {
+   "id": "sec-005-1-galleries",
+   "title": "Galleries",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-006-11-dimension-and-properties-of-galleries-let-γ-b",
+   "title": "Dimension and properties of galleries. Let γ be a gallery, with nota-",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-007-01-semisimpliﬁcation-let-c-denote-a-k-linear-k-a",
+   "title": "Semisimpliﬁcation. Let C denote a k-linear ( k a ﬁeld) braided rigid",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-008-02-representation-categories-examples-of-such-ca",
+   "title": "Representation categories. Examples of such categories are often coming",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-009-03-representations-of-supergroups-the-results-of",
+   "title": "Representations of supergroups. The results of [AK02] generalize par-",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-010-04-the-categoryrepglmn-lettmn-be-the-category-of",
+   "title": "The categoryRep(GL(m|n)). LetTm|n be the category of ﬁnite dimensional",
+   "pages": "30-36"
+  },
+  {
+   "id": "sec-011-1-main-question",
+   "title": "Main question",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-012-2-quantum-grothendieck-ring",
+   "title": "Quantum Grothendieck ring",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-013-3-isomorphisms-and-cluster-algebras",
+   "title": "Isomorphisms and cluster algebras",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-014-4-application-to-the-kazhdan-lusztig-algorithm",
+   "title": "Application to the Kazhdan-Lusztig algorithm",
+   "pages": "38-44"
+  },
+  {
+   "id": "sec-015-11-crystals-the-inﬁnity-crystal-b-is-a-combinato",
+   "title": "Crystals. The inﬁnity crystal B(∞) is a combinatorial object which, among",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-016-12-kashiwara-and-saitos-construction-we-will-mos",
+   "title": "Kashiwara and Saito’s construction. We will mostly review this using",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-017-13-punch-line-about-8-years-ago-two-things-bothe",
+   "title": "Punch line. About 8 years ago, two things bothered me about this:",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-018-14-symmetrizable-quiver-varieties-consider-eg-b2",
+   "title": "Symmetrizable quiver varieties. Consider e.g. B2, with Dynkin diagram",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-019-15-aﬃne-sl2-this-case-is-symmetric-but-we-have-m",
+   "title": "Aﬃne sl2. This case is symmetric, but we have more freedom to choose the",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-020-16-relation-with-folding-our-construction-is-rel",
+   "title": "Relation with folding. Our construction is related to the method of folding",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-021-17-relation-to-work-of-geiss-leclerc-and-schroer",
+   "title": "Relation to work of Geiss, Leclerc and Schroer. In [4] they consider",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-022-01-let-λ",
+   "title": "Let Λ = ⨁",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-023-02-given-a-reductive-complex-algebraic-group-g-s",
+   "title": "Given a reductive complex algebraic group G, Schieder [9] constructed a",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-024-03-in-order-to-produce-an-isomorphism-a",
+   "title": "In order to produce an isomorphism A",
+   "pages": "48-50"
+  },
+  {
+   "id": "sec-025-1-supports",
+   "title": "Supports",
+   "pages": "50-52"
+  },
+  {
+   "id": "sec-026-3-main-result",
+   "title": "Main result",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-027-4-techniques",
+   "title": "Techniques",
+   "pages": "52-58"
+  },
+  {
+   "id": "sec-028-1-introduction",
+   "title": "Introduction",
+   "pages": "58-66"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

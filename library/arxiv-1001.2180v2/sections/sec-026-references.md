@@ -7,6 +7,7 @@ section_number: null
 pages: 26-27
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 [BDJ99] J. Baik, P. Deift, and K. Johansson. On the distribut ion of the length of the longest increasing subsequence of
 random permutations. J. Amer. Math. Soc. , 12(4):1119–1178, 1999.

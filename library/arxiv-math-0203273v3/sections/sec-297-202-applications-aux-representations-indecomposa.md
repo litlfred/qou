@@ -7,6 +7,7 @@ section_number: 20.2
 pages: 116-117
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 tation ﬁd` ele deG. On note (abusivement) GV une enveloppe r´ eductive deG dans
 GL(V ) (c’est-` a-dire, d’apr` es ce qui pr´ ec` ede, le groupe r´ eductif image dansGL(V )

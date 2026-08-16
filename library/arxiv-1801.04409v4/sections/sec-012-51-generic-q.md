@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 22-22
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 any V ∈ C q, E|V is nilpotent, since E maps eigenvectors of g with
 eigenvalue λ to those with eigenvalue λq. Thus, the indecomposable

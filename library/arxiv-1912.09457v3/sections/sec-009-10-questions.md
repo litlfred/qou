@@ -7,6 +7,7 @@ section_number: 10
 pages: 34-34
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
+doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
 ---
 10.1. Extension to more general categories. It would be interesting to
 extend the deﬁniton of k-negligible morphisms or ideals to other monoidal

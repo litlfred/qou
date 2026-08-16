@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 31-48
 source_pdf: 1409.2799v2.pdf
 source_sha256: 2f2067b7b583e731
+doc_brief: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on"
 ---
 sider diagrammatic categories in the following. We encourage the reader to take a look in the
 rather extensive literature (in the authors opinion, a good start is [37, Section 2]). Although these

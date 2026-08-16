@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 10-10
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 indexing its irreducible representations, one has a ring is omorphism, called abstract Fourier transform,
 between the center of the group algebra and the algebra of fun ctions on G∨:

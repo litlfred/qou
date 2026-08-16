@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-10
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 The category of Compact Quantum Group algebras ( CQG ) is a full subcategory of the
 category of Hopf ∗-algebras that includes the standard noncommutative deformatio ns of

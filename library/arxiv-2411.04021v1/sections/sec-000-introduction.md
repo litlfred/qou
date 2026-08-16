@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: 2411.04021v1.pdf
 source_sha256: f5b6980f08d25394
+doc_brief: "On the Gram determinants of the Specht modules Linda Hoyer ∗ — For every partitionλ of a positive integern, letSλ be the corresponding Specht module of the symmetric group Sn, and let det(λ)∈ Z"
 ---
 Let n be a positive integer and letSn be the symmetric group ofn letters. There
 is a canonical bilinear form on the Specht moduleSλ for a partitionλ of n, arising

@@ -7,6 +7,7 @@ section_number: 7.2.8
 pages: 42-43
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 tatif unitaire dans lequel n! est inversible. Soit R une K-alg`ebre associative non
 unitaire telle que tout ´el´ementx∈R v´eriﬁexn = 0. AlorsR2n−1 = 0.

@@ -7,6 +7,7 @@ section_number: II
 pages: 3-7
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗ — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . ."
 ---
 models, chiral perturbation theory, or other ideas) to expl ain the nuclear force.
 Due to its comprehensive character, the Bonn model provides a sound basis for addressing

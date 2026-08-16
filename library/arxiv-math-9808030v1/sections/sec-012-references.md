@@ -7,6 +7,7 @@ section_number: null
 pages: 17-17
 source_pdf: 9808030v1.pdf
 source_sha256: 7889d6481b876b12
+doc_brief: "Planscherel Measure on Eq(2) — Following the construction of the invariant integral and the scalar p roduct for the quantum Euclidean group Eq(2), we obtained the full matrix elements of its unitary"
 ---
 [1] Ahmedov, H and Duru, I. H., J. Phys. A: Math. Gen., , 31, 5742 (1998).
 [2] Faddev, L. D. and Takhtajan, L. A., Lect. Notes Phys. , 246, 166 (1986).

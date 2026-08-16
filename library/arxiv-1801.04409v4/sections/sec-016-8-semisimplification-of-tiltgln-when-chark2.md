@@ -7,6 +7,7 @@ section_number: 8
 pages: 29-31
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 In this section we describe the category C when C = Tilt(GL(n))
 and char( k) = 2.

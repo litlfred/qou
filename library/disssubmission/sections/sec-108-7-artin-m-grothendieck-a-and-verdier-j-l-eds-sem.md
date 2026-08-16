@@ -7,6 +7,7 @@ section_number: 7
 pages: 177-177
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 alg´ebrique du Bois Marie 1963-64. Th´eorie des topos et cohomologie ´etale des
 sch´emas (SGA 4), Lecture Notes in Math., vol. 269, 270, 305, Springer Verlag, 1972.

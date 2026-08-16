@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 18-21
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 character values) has already been stated by P. Śniady in the case where the characters are small and the
 corresponding diagrams balanced. Here, we have to use diﬀer ent observables and a diﬀerent gradation,

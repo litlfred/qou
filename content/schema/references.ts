@@ -843,14 +843,6 @@ export const references: CSLData[] = [
   // ── CODATA 2022 ───────────────────────────────────────────────
   ref({
     id: "codata2022",
-    library: {
-      docId: "revmodphys97025002pdf",
-      dir: "library/revmodphys97025002pdf",
-      pdf: "library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf",
-      stage: "candidates",
-      pages: 62,
-      sections: 73,
-    },
     type: "dataset",
     title: "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
     author: [
@@ -872,10 +864,6 @@ export const references: CSLData[] = [
   // ── Kronheimer and Mrowka 2004 ────────────────────────────────
   ref({
     id: "kronheimer2004",
-    library: {
-      claimedPath: "library/kronheimer2004.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Witten's conjecture and Property P",
     author: [
@@ -1102,10 +1090,6 @@ export const references: CSLData[] = [
   // ── Lurie 2009 ────────────────────────────────────────────────
   ref({
     id: "lurie2009",
-    library: {
-      claimedPath: "library/lurie2009.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "On the classification of topological field theories",
     author: [
@@ -1174,10 +1158,6 @@ export const references: CSLData[] = [
   // ── Witten 2011 ───────────────────────────────────────────────
   ref({
     id: "witten2011",
-    library: {
-      claimedPath: "library/witten2011.pdf",
-      stage: "missing",
-    },
     type: "chapter",
     title: "Analytic Continuation Of Chern-Simons Theory",
     author: [
@@ -1197,10 +1177,6 @@ export const references: CSLData[] = [
   // ── Yekutieli 2010 ────────────────────────────────────────────
   ref({
     id: "yekutieli2010",
-    library: {
-      claimedPath: "library/yekutieli2010.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Central Extensions of Gerbes",
     author: [
@@ -1219,10 +1195,6 @@ export const references: CSLData[] = [
   // ── Yekutieli 2008 ────────────────────────────────────────────
   ref({
     id: "yekutieli2008",
-    library: {
-      claimedPath: "library/yekutieli2008.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Twisted Deformation Quantization of Algebraic Varieties (Survey)",
     author: [
@@ -1261,10 +1233,6 @@ export const references: CSLData[] = [
   // ── Yekutieli 2009 (published 2012) ───────────────────────────
   ref({
     id: "yekutieli2009",
-    library: {
-      claimedPath: "library/yekutieli2009.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "MC Elements in Pronilpotent DG Lie Algebras",
     author: [
@@ -1283,10 +1251,6 @@ export const references: CSLData[] = [
   // ── Freed, Hopkins, Lurie, Teleman 2010 ───────────────────────
   ref({
     id: "freed2010",
-    library: {
-      claimedPath: "library/freed2010.pdf",
-      stage: "missing",
-    },
     type: "chapter",
     title: "Topological quantum field theories from compact Lie groups",
     author: [
@@ -1510,10 +1474,6 @@ export const references: CSLData[] = [
 
   ref({
     id: "boyd-vandenberghe-2004",
-    library: {
-      claimedPath: "library/boyd-vandenberghe-2004-convex-optimization.pdf",
-      stage: "missing",
-    },
     type: "book",
     title: "Convex Optimization",
     author: [
@@ -2184,10 +2144,6 @@ export const references: CSLData[] = [
   // ── Faddeev 1994 ──────────────────────────────────────────────
   ref({
     id: "faddeev1994",
-    library: {
-      claimedPath: "library/faddeev1994.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Current-like variables in massive and massless integrable models",
     author: [
@@ -2336,10 +2292,6 @@ export const references: CSLData[] = [
   // ── Frenkel & Ben-Zvi 2004 ──────────────────────────────────
   ref({
     id: "frenkel2004",
-    library: {
-      claimedPath: "library/frenkel2004.pdf",
-      stage: "missing",
-    },
     type: "book",
     title: "Vertex Algebras and Algebraic Curves",
     author: [
@@ -2374,10 +2326,6 @@ export const references: CSLData[] = [
   // ── Baez and Lauda 2004 ───────────────────────────────────────
   ref({
     id: "baez2004",
-    library: {
-      claimedPath: "library/baez2004.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Higher-dimensional algebra V: 2-groups",
     author: [
@@ -2408,10 +2356,6 @@ export const references: CSLData[] = [
   // ── Habiro 2008 (published 2008, circulated 2002) ──────────────
   ref({
     id: "habiro2002",
-    library: {
-      claimedPath: "library/habiro2002.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Bottom tangles and universal invariants",
     author: [
@@ -2581,10 +2525,6 @@ export const references: CSLData[] = [
 
   ref({
     id: "madison2000",
-    library: {
-      claimedPath: "library/madison2000.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Vortex formation in a stirred Bose-Einstein condensate",
     author: [
@@ -2638,10 +2578,6 @@ export const references: CSLData[] = [
 
   ref({
     id: "fetter2009",
-    library: {
-      claimedPath: "library/fetter2009.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Rotating trapped Bose-Einstein condensates",
     author: [
@@ -2657,10 +2593,6 @@ export const references: CSLData[] = [
 
   ref({
     id: "navon2021",
-    library: {
-      claimedPath: "library/navon2021.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Quantum gases in optical boxes",
     author: [
@@ -2678,10 +2610,6 @@ export const references: CSLData[] = [
 
   ref({
     id: "gauthier2019",
-    library: {
-      claimedPath: "library/gauthier2019.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Giant vortex clusters in a two-dimensional quantum fluid",
     author: [
@@ -2723,10 +2651,6 @@ export const references: CSLData[] = [
   // ── Nature Physics: Scheeler et al. 2014 ────────────────────────
   ref({
     id: "scheeler2014",
-    library: {
-      claimedPath: "library/scheeler2014.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Helicity conservation by flow across scales in reconnecting vortex links and knots",
     author: [
@@ -2767,10 +2691,6 @@ export const references: CSLData[] = [
   // ── PRL: Aubert et al. 2001 (BaBar CP violation in B mesons) ───
   ref({
     id: "aubert2001",
-    library: {
-      claimedPath: "library/aubert2001.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Observation of CP Violation in the $B^0$ Meson System",
     author: [
@@ -2985,10 +2905,6 @@ export const references: CSLData[] = [
   // ── Freedman-Kitaev-Larsen-Wang 2003: Topological QC ──────────
   ref({
     id: "freedman2003",
-    library: {
-      claimedPath: "library/freedman2003.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Topological Quantum Computation",
     author: [
@@ -3214,10 +3130,6 @@ export const references: CSLData[] = [
   // ── Lloyd 2000: Ultimate physical limits to computation ───────
   ref({
     id: "lloyd2000",
-    library: {
-      claimedPath: "library/lloyd2000.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Ultimate Physical Limits to Computation",
     author: [
@@ -3251,10 +3163,6 @@ export const references: CSLData[] = [
   // ── Jacobson 1995: Thermodynamics of spacetime ────────────────
   ref({
     id: "jacobson1995",
-    library: {
-      claimedPath: "library/jacobson1995.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Thermodynamics of Spacetime: The Einstein Equation of State",
     author: [
@@ -3490,10 +3398,6 @@ export const references: CSLData[] = [
   // ── Shishikura 1998: Dimension of Mandelbrot boundary ─────────
   ref({
     id: "shishikura1998",
-    library: {
-      claimedPath: "library/shishikura1998.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "The Hausdorff Dimension of the Boundary of the Mandelbrot Set and Julia Sets",
     author: [
@@ -3674,10 +3578,6 @@ export const references: CSLData[] = [
   // ── Kitaev 2006 ───────────────────────────────────────────────
   ref({
     id: "kitaev2006",
-    library: {
-      claimedPath: "library/kitaev2006.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Anyons in an exactly solved model and beyond",
     author: [{ family: "Kitaev", given: "Alexei" }],
@@ -3693,10 +3593,6 @@ export const references: CSLData[] = [
   // ── Nayak et al. 2008 ─────────────────────────────────────────
   ref({
     id: "nayak2008",
-    library: {
-      claimedPath: "library/nayak2008.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title:
       "Non-Abelian anyons and topological quantum computation",
@@ -4025,10 +3921,6 @@ export const references: CSLData[] = [
   // ── Frenkel 2007 ────────────────────────────────────────────────
   ref({
     id: "frenkel2007",
-    library: {
-      claimedPath: "library/frenkel2007.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Lectures on the Langlands Program and Conformal Field Theory",
     author: [{ family: "Frenkel", given: "Edward" }],
@@ -4042,10 +3934,6 @@ export const references: CSLData[] = [
   // ── Aganagic–Frenkel–Okounkov 2017 ─────────────────────────────
   ref({
     id: "aganagic2018",
-    library: {
-      claimedPath: "library/aganagic2018.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Quantum $q$-Langlands Correspondence",
     author: [
@@ -4523,10 +4411,6 @@ export const references: CSLData[] = [
   // ── Hu-Mathas 2012 (Graded induction for Specht modules) ─────
   ref({
     id: "hu-mathas2012graded",
-    library: {
-      claimedPath: "library/hu-mathas2012graded.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Graded induction for Specht modules",
     author: [
@@ -4714,10 +4598,6 @@ export const references: CSLData[] = [
   // ── Diaconis--Ram 2000 (random walks on Hecke algebras) ─────
   ref({
     id: "diaconis-ram2000",
-    library: {
-      claimedPath: "library/diaconis-ram2000.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques",
     author: [
@@ -4736,10 +4616,6 @@ export const references: CSLData[] = [
   // ── Bufetov 2020 (ASEP and Hecke algebras) ──────────────────
   ref({
     id: "bufetov2020",
-    library: {
-      claimedPath: "library/bufetov2020.pdf",
-      stage: "missing",
-    },
     type: "article",
     title: "Interacting particle systems and random walks on Hecke algebras",
     author: [
@@ -4886,6 +4762,15 @@ export const references: CSLData[] = [
   // ── Rivin 2003 (combinatorial optimization in geometry) ──────
   ref({
     id: "rivin2003",
+    library: {
+      docId: "arxiv-math-9907032v1",
+      dir: "library/arxiv-math-9907032v1",
+      pdf: "library/arxiv-math-9907032v1/9907032v1.pdf",
+      stage: "candidates",
+      pages: 27,
+      sections: 18,
+      arxiv: "math/9907032v1",
+    },
     type: "article-journal",
     title: "Combinatorial optimization in geometry",
     author: [{ family: "Rivin", given: "Igor" }],
@@ -4904,6 +4789,7 @@ export const references: CSLData[] = [
       "`lp_duality_gap_nonneg`, which is the proved backing for the " +
       "`duality_gap ≥ 0` assertion carried by every QOU LP/SDP-dual witness. " +
       "Cited bibliographically for the abstract duality statement.",
+    note: "PDF library/arxiv-math-9907032v1/ — joined 2026-08-16. This branch had drafted a separate entry [rivin1999] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. ",
   }),
 
   // ── Young 1901 (quantitative substitutional analysis) ─────────
@@ -4931,10 +4817,6 @@ export const references: CSLData[] = [
   // ── Mostow 1968 (rigidity for hyperbolic manifolds) ───────────
   ref({
     id: "mostow1968",
-    library: {
-      claimedPath: "library/mostow1968.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title:
       "Quasi-conformal mappings in n-space and the rigidity of hyperbolic space forms",
@@ -4950,10 +4832,6 @@ export const references: CSLData[] = [
   // ── Gromov 1982 (Volume and bounded cohomology) ───────────────
   ref({
     id: "gromov1982",
-    library: {
-      claimedPath: "library/gromov1982.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Volume and bounded cohomology",
     author: [{ family: "Gromov", given: "Mikhail" }],
@@ -5403,10 +5281,6 @@ export const references: CSLData[] = [
   // ── Berarducci-Mantova 2018 (derivations on surreals) ──────
   ref({
     id: "berarducci-mantova2018",
-    library: {
-      claimedPath: "library/berarducci-mantova-2018-surreal-derivations.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Surreal numbers, derivations and transseries",
     author: [
@@ -6344,10 +6218,6 @@ export const references: CSLData[] = [
   // ── Klein 1888 (icosahedron / Bring's curve) ──────────────────
   ref({
     id: "klein1888",
-    library: {
-      claimedPath: "library/klein1888.pdf",
-      stage: "missing",
-    },
     type: "book",
     title:
       "Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade",
@@ -6580,10 +6450,6 @@ export const references: CSLData[] = [
   // ── Causal Fermion Systems (Finster et al.) ───────────────────
   ref({
     id: "finster2021",
-    library: {
-      claimedPath: "library/finster2021.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "The linear dynamics of wave functions in causal fermion systems",
     author: [
@@ -6601,10 +6467,6 @@ export const references: CSLData[] = [
 
   ref({
     id: "finster2022",
-    library: {
-      claimedPath: "library/finster2022.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "A mechanism of baryogenesis for causal fermion systems",
     author: [
@@ -6623,10 +6485,6 @@ export const references: CSLData[] = [
 
   ref({
     id: "finster2024",
-    library: {
-      claimedPath: "library/finster2024.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Causal fermion systems as an effective collapse theory",
     author: [
@@ -6645,10 +6503,6 @@ export const references: CSLData[] = [
 
   ref({
     id: "dappiaggi2024",
-    library: {
-      claimedPath: "library/dappiaggi2024.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title:
       "Holographic mixing and Fock space dynamics of causal fermion systems",
@@ -6713,10 +6567,6 @@ export const references: CSLData[] = [
   // no cite-site key rewrites are needed.
   ref({
     id: "blitvic2012-clt",
-    library: {
-      claimedPath: "library/blitvic2012.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Two-Parameter Non-Commutative Central Limit Theorem",
     author: [
@@ -6750,10 +6600,6 @@ export const references: CSLData[] = [
   // ── Pham 1965 — generalised Picard-Lefschetz formula ──────────
   ref({
     id: "pham1965",
-    library: {
-      claimedPath: "library/pham1965.pdf",
-      stage: "missing",
-    },
     type: "article-journal",
     title: "Formules de Picard-Lefschetz généralisées et ramification des intégrales",
     author: [{ family: "Pham", given: "Frédéric" }],
@@ -7173,10 +7019,6 @@ export const references: CSLData[] = [
 
   ref({
     id: "oeis-A006752",
-    library: {
-      claimedPath: "library/oeis-A006752.txt",
-      stage: "missing",
-    },
     type: "webpage",
     title: "Decimal expansion of Catalan's constant",
     author: [{ literal: "OEIS Foundation" }],
@@ -10687,25 +10529,6 @@ export const references: CSLData[] = [
   }),
 
   ref({
-    id: "jurgenson-navratil-roth2009",
-    library: {
-      docId: "arxiv-0905.1873v2",
-      dir: "library/arxiv-0905.1873v2",
-      pdf: "library/arxiv-0905.1873v2/0905.1873v2.pdf",
-      stage: "candidates",
-      pages: 4,
-      sections: 2,
-      arxiv: "0905.1873v2",
-    },
-    type: "article",
-    title: "Evolution of nuclear many-body forces with the similarity renormalization group",
-    author: [{ family: "Jurgenson", given: "E. D." }],
-    issued: { "date-parts": [[2009]] },
-    URL: "https://arxiv.org/abs/0905.1873",
-    note: "PDF library/arxiv-0905.1873v2/ — Author list truncated in extraction; only the first author is recorded.",
-  }),
-
-  ref({
     id: "dubois-yamaguchi2012",
     library: {
       docId: "arxiv-0906.1500v4",
@@ -12737,22 +12560,6 @@ export const references: CSLData[] = [
     note: "PDF library/arxiv-math-0502543v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
   ref({
-    id: "arxiv-nucl-th-0610105v2",
-    library: {
-      docId: "arxiv-nucl-th-0610105v2",
-      dir: "library/arxiv-nucl-th-0610105v2",
-      pdf: "library/arxiv-nucl-th-0610105v2/0610105v2.pdf",
-      stage: "candidates",
-      pages: 14,
-      sections: 8,
-      arxiv: "nucl-th/0610105v2",
-    },
-    type: "article",
-    title: "Universal Properties of the Four-Body System with Large Scattering Length",
-    URL: "https://arxiv.org/abs/nucl-th/0610105",
-    note: "PDF library/arxiv-nucl-th-0610105v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
-  }),
-  ref({
     id: "deturck-gluck-electrodynamics2008",
     library: {
       docId: "0510388v1",
@@ -13094,23 +12901,6 @@ export const references: CSLData[] = [
     note: "PDF library/arxiv-math-0603217v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
   ref({
-    id: "rivin1999",
-    library: {
-      docId: "arxiv-math-9907032v1",
-      dir: "library/arxiv-math-9907032v1",
-      pdf: "library/arxiv-math-9907032v1/9907032v1.pdf",
-      stage: "candidates",
-      pages: 27,
-      sections: 18,
-      arxiv: "math/9907032v1",
-    },
-    type: "article",
-    title: "Combinatorial optimization in geometry",
-    author: [{ family: "Rivin", given: "Igor" }],
-    URL: "https://arxiv.org/abs/math/9907032",
-    note: "PDF library/arxiv-math-9907032v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
-  }),
-  ref({
     id: "arxiv-q-alg-9608020v2",
     library: {
       docId: "arxiv-q-alg-9608020v2",
@@ -13262,23 +13052,6 @@ export const references: CSLData[] = [
     author: [{ family: "Hikami", given: "Kazuhiro" }],
     URL: "https://arxiv.org/abs/math-ph/0105039",
     note: "PDF library/arxiv-math-ph-0105039v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
-  }),
-  ref({
-    id: "platter2004",
-    library: {
-      docId: "arxiv-nucl-th-0409040v2",
-      dir: "library/arxiv-nucl-th-0409040v2",
-      pdf: "library/arxiv-nucl-th-0409040v2/0409040v2.pdf",
-      stage: "candidates",
-      pages: 7,
-      sections: 1,
-      arxiv: "nucl-th/0409040v2",
-    },
-    type: "article",
-    title: "On the correlation between the binding energies of the triton and the alpha-particle",
-    author: [{ family: "Platter", given: "L." }],
-    URL: "https://arxiv.org/abs/nucl-th/0409040",
-    note: "PDF library/arxiv-nucl-th-0409040v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
 
   ref({
@@ -13526,6 +13299,15 @@ export const references: CSLData[] = [
   }),
   ref({
     id: "platter2005tjon",
+    library: {
+      docId: "arxiv-nucl-th-0409040v2",
+      dir: "library/arxiv-nucl-th-0409040v2",
+      pdf: "library/arxiv-nucl-th-0409040v2/0409040v2.pdf",
+      stage: "candidates",
+      pages: 7,
+      sections: 1,
+      arxiv: "nucl-th/0409040v2",
+    },
     type: "article-journal",
     title: "On the correlation between the binding energies of the triton and the alpha-particle",
     author: [
@@ -13540,11 +13322,20 @@ export const references: CSLData[] = [
     page: "254-258",
     DOI: "10.1016/j.physletb.2004.12.068",
     URL: "https://arxiv.org/abs/nucl-th/0409040",
-    note: "arXiv:nucl-th/0409040v2; read in full 2026-08-15 from uploads/0409040v2.pdf. Registered to source the premise of QOU.MassTheory.TjonSimplexForm, which had cited it by bare arXiv number with no bib key. The load-bearing claims: (i) at leading order in ℓ/|a| an SU(4)-symmetric ONE-parameter three-nucleon interaction suffices to renormalise the four-nucleon system — no four-nucleon force is needed, and the empirical Tjon correlation 'follows immediately' from that absence, being swept out by variation of the three-body parameter L₃ (abstract; §Summary); (ii) the numbers, p. 5 — inputs B_d = 2.22 MeV and B_t = 8.48 MeV (fixing L₃ = 21.2 fm⁻¹ from a_t, or 19.8 fm⁻¹ from B_d) give B_α = 29.5 MeV (a_t input) or 26.9 MeV (B_d input), against the Coulomb-corrected experimental B_α^exp = 29.0 ± 0.1 MeV, i.e. agreement to within 10% and inside the ~30% LO error estimate; (iii) p. 6 — the LO Tjon line is SHIFTED from the empirical one because finite-range effects are neglected. CAUTION for QOU citers: 'no four-body parameter' is NOT the same statement as the simplex baseline μ₄ = 0. This paper's four-body answer is the Yakubovsky solution, a nonlinear parameter-free function of the two- and three-body inputs; the corpus baseline M(4) = 4M(3) − 6M(2) is a linear inclusion-exclusion form. The two are provably inequivalent: QOU.MassTheory.TjonSimplexForm.universal_ratio_not_in_tjon_baseline (sorry-free) shows the μ₄ = 0 baseline has M(4) < 4M(3) strictly for any μ₂ > 0, so it cannot reach the universal ratio 5 of [hammer2007fourbody]. Cite it for why a nonzero μ₄ is a meaningful signal, never as a derivation of the simplex form.",
+    note: "PDF library/arxiv-nucl-th-0409040v2/ — joined 2026-08-16. This branch had drafted a separate entry [platter2004] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. arXiv:nucl-th/0409040v2; read in full 2026-08-15 from uploads/0409040v2.pdf. Registered to source the premise of QOU.MassTheory.TjonSimplexForm, which had cited it by bare arXiv number with no bib key. The load-bearing claims: (i) at leading order in ℓ/|a| an SU(4)-symmetric ONE-parameter three-nucleon interaction suffices to renormalise the four-nucleon system — no four-nucleon force is needed, and the empirical Tjon correlation 'follows immediately' from that absence, being swept out by variation of the three-body parameter L₃ (abstract; §Summary); (ii) the numbers, p. 5 — inputs B_d = 2.22 MeV and B_t = 8.48 MeV (fixing L₃ = 21.2 fm⁻¹ from a_t, or 19.8 fm⁻¹ from B_d) give B_α = 29.5 MeV (a_t input) or 26.9 MeV (B_d input), against the Coulomb-corrected experimental B_α^exp = 29.0 ± 0.1 MeV, i.e. agreement to within 10% and inside the ~30% LO error estimate; (iii) p. 6 — the LO Tjon line is SHIFTED from the empirical one because finite-range effects are neglected. CAUTION for QOU citers: 'no four-body parameter' is NOT the same statement as the simplex baseline μ₄ = 0. This paper's four-body answer is the Yakubovsky solution, a nonlinear parameter-free function of the two- and three-body inputs; the corpus baseline M(4) = 4M(3) − 6M(2) is a linear inclusion-exclusion form. The two are provably inequivalent: QOU.MassTheory.TjonSimplexForm.universal_ratio_not_in_tjon_baseline (sorry-free) shows the μ₄ = 0 baseline has M(4) < 4M(3) strictly for any μ₂ > 0, so it cannot reach the universal ratio 5 of [hammer2007fourbody]. Cite it for why a nonzero μ₄ is a meaningful signal, never as a derivation of the simplex form.",
   }),
 
   ref({
     id: "hammer2007fourbody",
+    library: {
+      docId: "arxiv-nucl-th-0610105v2",
+      dir: "library/arxiv-nucl-th-0610105v2",
+      pdf: "library/arxiv-nucl-th-0610105v2/0610105v2.pdf",
+      stage: "candidates",
+      pages: 14,
+      sections: 8,
+      arxiv: "nucl-th/0610105v2",
+    },
     type: "article-journal",
     title: "Universal properties of the four-body system with large scattering length",
     author: [
@@ -13558,11 +13349,20 @@ export const references: CSLData[] = [
     page: "113-120",
     DOI: "10.1140/epja/i2006-10301-8",
     URL: "https://arxiv.org/abs/nucl-th/0610105",
-    note: "arXiv:nucl-th/0610105v2; read in full 2026-08-15 from uploads/0610105v2.pdf. The four-boson Yakubovsky calculation whose §III supplies the field's own DIMENSIONLESS Tjon target, which is what makes it usable as a convention-free cross-check of a corpus ladder. Load-bearing claims: (i) §III.B, p. 11 — 'Away from the thresholds, the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01, respectively', i.e. B₄⁽⁰⁾/B₃⁽⁰⁾ ≈ 5 in the universal limit; (ii) §III.B / Figs. 3-4 — the B₃-B₄ correlation is a universal curve, approximately linear away from threshold independent of the sign of a, with POSITIVE curvature for a > 0 and negative curvature for a < 0, the nonlinearity confined to the threshold region; (iii) §II.C, p. 7 — following ref. [12] no four-body parameter is included, the two- and three-body contact interactions being the minimal renormalising set. CAUTION, and the paper says so itself: the LO 'no four-body parameter' claim is CONTESTED. §I p. 3 records that Yamashita et al. found a strong sensitivity of the deepest four-body energy to a four-body subtraction constant and 'concluded that a four-body parameter should generally enter at leading order' — while explicitly EXEMPTING the nuclear case, 'four-body systems of 4He atoms and nucleons (where this sensitivity is absent) are special because repulsive interactions strongly reduce the probability to have four particles close together'. So for nucleons specifically both sides agree, but a QOU citer must not upgrade this to 'no four-body force exists': that is a different statement, and [jurgenson2009srg] puts the 4N force at tens-to-hundreds of keV, small but nonzero. The paper's §IV also stresses that its universality rests on the RG analysis of its ref. [12]. The ratio 5 is the number the corpus operator ladder is scored against in tjon_external_cross_check_probe.py; it is a comparison target and must never be fitted to.",
+    note: "PDF library/arxiv-nucl-th-0610105v2/ — joined 2026-08-16. This branch had drafted a separate entry [arxiv-nucl-th-0610105v2] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. arXiv:nucl-th/0610105v2; read in full 2026-08-15 from uploads/0610105v2.pdf. The four-boson Yakubovsky calculation whose §III supplies the field's own DIMENSIONLESS Tjon target, which is what makes it usable as a convention-free cross-check of a corpus ladder. Load-bearing claims: (i) §III.B, p. 11 — 'Away from the thresholds, the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01, respectively', i.e. B₄⁽⁰⁾/B₃⁽⁰⁾ ≈ 5 in the universal limit; (ii) §III.B / Figs. 3-4 — the B₃-B₄ correlation is a universal curve, approximately linear away from threshold independent of the sign of a, with POSITIVE curvature for a > 0 and negative curvature for a < 0, the nonlinearity confined to the threshold region; (iii) §II.C, p. 7 — following ref. [12] no four-body parameter is included, the two- and three-body contact interactions being the minimal renormalising set. CAUTION, and the paper says so itself: the LO 'no four-body parameter' claim is CONTESTED. §I p. 3 records that Yamashita et al. found a strong sensitivity of the deepest four-body energy to a four-body subtraction constant and 'concluded that a four-body parameter should generally enter at leading order' — while explicitly EXEMPTING the nuclear case, 'four-body systems of 4He atoms and nucleons (where this sensitivity is absent) are special because repulsive interactions strongly reduce the probability to have four particles close together'. So for nucleons specifically both sides agree, but a QOU citer must not upgrade this to 'no four-body force exists': that is a different statement, and [jurgenson2009srg] puts the 4N force at tens-to-hundreds of keV, small but nonzero. The paper's §IV also stresses that its universality rests on the RG analysis of its ref. [12]. The ratio 5 is the number the corpus operator ladder is scored against in tjon_external_cross_check_probe.py; it is a comparison target and must never be fitted to.",
   }),
 
   ref({
     id: "jurgenson2009srg",
+    library: {
+      docId: "arxiv-0905.1873v2",
+      dir: "library/arxiv-0905.1873v2",
+      pdf: "library/arxiv-0905.1873v2/0905.1873v2.pdf",
+      stage: "candidates",
+      pages: 4,
+      sections: 2,
+      arxiv: "0905.1873v2",
+    },
     type: "article-journal",
     title: "Evolution of nuclear many-body forces with the similarity renormalization group",
     author: [
@@ -13577,7 +13377,7 @@ export const references: CSLData[] = [
     page: "082501",
     DOI: "10.1103/PhysRevLett.103.082501",
     URL: "https://arxiv.org/abs/0905.1873",
-    note: "arXiv:0905.1873v2; from uploads/0905.1873v2.pdf. Registered 2026-08-15 to give a bib key to the four-nucleon-force magnitude scale that QOU.MassTheory.TjonSimplexForm's mu4_target_exceeds_n3lo_bound and computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py certify against; both had cited it by bare arXiv number. The abstract's own wording is that ⁴He shows 'a small net contribution of the induced four-body force' — the ~50 keV SRG-induced figure at λ = 2 fm⁻¹ and the 'few hundred keV' N³LO long-range estimate are the scale the corpus target μ₄ = −4.591 (in units of B(D) = 2.224566 MeV, i.e. 10.2 MeV) exceeds by 34×. Note the two figures are different objects: the SRG-induced 4N force is an artifact of the unitary evolution, not a chiral-EFT 4N interaction. Cite for the magnitude scale only.",
+    note: "PDF library/arxiv-0905.1873v2/ — joined 2026-08-16. This branch had drafted a separate entry [jurgenson-navratil-roth2009] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. arXiv:0905.1873v2; from uploads/0905.1873v2.pdf. Registered 2026-08-15 to give a bib key to the four-nucleon-force magnitude scale that QOU.MassTheory.TjonSimplexForm's mu4_target_exceeds_n3lo_bound and computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py certify against; both had cited it by bare arXiv number. The abstract's own wording is that ⁴He shows 'a small net contribution of the induced four-body force' — the ~50 keV SRG-induced figure at λ = 2 fm⁻¹ and the 'few hundred keV' N³LO long-range estimate are the scale the corpus target μ₄ = −4.591 (in units of B(D) = 2.224566 MeV, i.e. 10.2 MeV) exceeds by 34×. Note the two figures are different objects: the SRG-induced 4N force is an artifact of the unitary evolution, not a chiral-EFT 4N interaction. Cite for the magnitude scale only.",
   }),
 ];
 

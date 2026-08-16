@@ -7,6 +7,7 @@ section_number: 11.1.3
 pages: 58-59
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 derburn (cf. d´eﬁnition 2.4.1). Alors il en est de mˆeme deA ⊠KB.
 D´emonstration. En effet, il d´ ecoule du lemme pr´ ec´ edent que pour tout objetA de

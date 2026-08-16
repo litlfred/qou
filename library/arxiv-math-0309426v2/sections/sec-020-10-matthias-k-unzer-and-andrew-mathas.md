@@ -7,6 +7,7 @@ section_number: 10
 pages: 10-10
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 As in section 2, the induced module M (k|n−k) is free as an R–module with ba-
 sis {x(k|n−k)Td |d ∈ D (k,n−k) }. Furthermore, M (k|n−k) possesses a natural non–

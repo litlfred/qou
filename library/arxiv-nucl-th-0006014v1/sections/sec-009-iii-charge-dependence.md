@@ -7,6 +7,7 @@ section_number: III
 pages: 7-10
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗ — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . ."
 ---
 By deﬁnition, charge independence is invariance under any rotation in isospin space.
 A violation of this symmetry is referred to as charge depende nce or charge independence

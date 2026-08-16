@@ -7,6 +7,7 @@ section_number: null
 pages: 5-9
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 It is a pleasure for me to thank my advisor, Professor R. Weissauer, for
 sharing his beautiful ideas in many productive mathematical discussions,

@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 16-19
 source_pdf: 04010141.pdf
 source_sha256: b86b204b05453a5d
+doc_brief: "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras"
 ---
 We shall next explain how to realise the various algebras which have 
 been introduced above by means of diagrams as quotients of Heeke al-

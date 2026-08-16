@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 23-26
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
 ---
 Rep0(St;F ) which “interpolate” the action of the sum of all r-cycles on represen-
 tations of symmetric groups. To begin, let r andd be positive integers with r≤d.

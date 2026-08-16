@@ -7,6 +7,7 @@ section_number: 3.5
 pages: 27-31
 source_pdf: 1409.2799v2.pdf
 source_sha256: 2f2067b7b583e731
+doc_brief: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on"
 ---
 consequences of Theorems 3.11 and 3.12 with respect to the question how the path length grading
 l(·) (see Deﬁnition 3.1) of Khovanov-Seidel’s ∞-quiver algebra relates to the tilting category T.

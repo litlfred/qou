@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 2-2
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
 ---
 gory is anF -linear∗ categoryT along with anF -linear bifunctor⊗ :T×T →T and
 associativity, commutativity, and unit constraints satisfying the triangle, pentagon,

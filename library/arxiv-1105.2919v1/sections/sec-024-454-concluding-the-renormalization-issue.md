@@ -7,6 +7,7 @@ section_number: 4.5.4
 pages: 39-41
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
+doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 Crucial for an EFT are regulator independence (within the range of validity of the EFT) and a power
 counting scheme that allows for order-by-order improvement with decreasing truncation error. The purpose

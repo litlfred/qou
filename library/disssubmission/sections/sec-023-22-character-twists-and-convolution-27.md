@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 35-36
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 by [75, prop. 9.2]. It remains to deal withR = Z/nZ whenn = pr for some
 integerr∈ N. In that case H1(X,Z/nZ)∼= H1(X,Wr)F by [95, prop. 13],

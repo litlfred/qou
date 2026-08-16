@@ -7,6 +7,7 @@ section_number: null
 pages: 7-9
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
+doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
 ---
 [1] P. Achar, How to glue parity sheaves , arXiv:1812.07920.
 [2] P. Achar, S. Makisumi, S. Riche, and G. Williamson, Free-monodromic mixed tilting sheaves

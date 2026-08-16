@@ -7,6 +7,7 @@ section_number: 4.1.8
 pages: 26-26
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 a une famille ﬁnie d’extensions de corps Li/L et une famille ﬁd` ele de foncteurs
 Hi :A→ Vec Li et si l’on suppose que pour tout a∈A (A,A ), le polynˆ ome ca-

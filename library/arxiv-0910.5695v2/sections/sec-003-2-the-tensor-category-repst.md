@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-11
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
 ---
 2.1. Motivation. Let d be a nonnegative integer, and let F be a ﬁeld of charac-
 teristic zero. Let us consider the tensor category Rep( Sd;F ) of ﬁnite dimensional

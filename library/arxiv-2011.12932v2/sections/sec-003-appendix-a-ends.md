@@ -7,6 +7,7 @@ section_number: null
 pages: 20-24
 source_pdf: 2011.12932v2.pdf
 source_sha256: 23709542c5652a29
+doc_brief: "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing"
 ---
 Let us consider the functorK : C× Cop→ C determined by(X,Y )↦→X⊗Y∗.
 A dinatural transformation of targetK is given by an objectU∈ C equipped with

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-5
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
+doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
 ---
 1.1. Negligible morphisms. We are interested in the structure of tensor
 ideals [ Co18] [ Ba05] [ BKN17] [ CH17] in a rigid spherical monoidal category

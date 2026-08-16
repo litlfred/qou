@@ -7,6 +7,7 @@ section_number: 3.5
 pages: 63-65
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 EXAMPLE 3.12. For n∈ Nconsider the kernel X[n] of the multiplication
 morphism[n] : X−→X. This kernel is a quasi-ﬁnite group scheme over S

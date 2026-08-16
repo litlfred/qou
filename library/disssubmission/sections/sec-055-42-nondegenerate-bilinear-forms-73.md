@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 81-82
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 4.2. Nondegenerate bilinear forms
 In the introduction to this chapter we have remarked that conjecture 4.1

@@ -7,6 +7,7 @@ section_number: 1
 pages: 4-7
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
+doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 The theory of nuclear forces has a long history (cf. Table 1). Based upon the seminal idea by Yukawa [1],
 ﬁrst ﬁeld-theoretic attempts to derive the nucleon-nucleon ( NN ) interaction focused on pion exchange.

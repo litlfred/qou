@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 14-14
 source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨ uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 egory. Recall that the center of C is the category Z(C) deﬁned as follows: the
 objects are pairs ( M,σ ), where M is an object of C and σY : M ⊗Y → Y ⊗M

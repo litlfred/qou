@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 5-5
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 submodule of M (λ).
 Proof. Using the Dipper–James basis of S(λ), and the basis {xλTd |d ∈ Dλ } of

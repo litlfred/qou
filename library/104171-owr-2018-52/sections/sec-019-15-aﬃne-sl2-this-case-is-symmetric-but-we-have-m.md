@@ -7,6 +7,7 @@ section_number: 1.5
 pages: 45-46
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
+doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
 ---
 relations in the preprojective algebra than usual, and this gives non -isomorphic
 algebras that can still realize B(∞). Studying those may be interesting.

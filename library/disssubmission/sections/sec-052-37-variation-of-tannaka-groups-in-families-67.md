@@ -7,6 +7,7 @@ section_number: 3.7
 pages: 75-75
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 Proof. Take a geometric generic pointη of S. The set of all torsion
 charactersχη : π1(Xη,0)−→Λ∗ is dense in the character torusΠ(Xη), so

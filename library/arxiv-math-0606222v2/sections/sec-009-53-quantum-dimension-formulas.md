@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 20-21
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 ical Uq-representationsV q
 λ (λ ∈ Λ n) have the following explicit closed expressions.

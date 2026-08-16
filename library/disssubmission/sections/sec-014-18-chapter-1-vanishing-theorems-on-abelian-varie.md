@@ -7,6 +7,7 @@ section_number: 18
 pages: 26-27
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 geometric origin each of the occuring translations can be taken to be torsion
 points of Π(X), see lemma 1.11 below. More generally, for semisimple

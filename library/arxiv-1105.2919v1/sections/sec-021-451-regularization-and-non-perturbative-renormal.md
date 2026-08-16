@@ -7,6 +7,7 @@ section_number: 4.5.1
 pages: 36-37
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
+doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 Iteration of ˆV in the LS equation, Eq. (4.61), requires cutting ˆV oﬀ for high momenta to avoid inﬁnities.
 This is consistent with the fact that ChPT is a low-momentum expansion which is valid only for momenta

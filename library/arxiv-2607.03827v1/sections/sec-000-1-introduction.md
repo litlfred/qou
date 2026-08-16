@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-5
 source_pdf: 2607.03827v1.pdf
 source_sha256: 965d69603381942a
+doc_brief: "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS — The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical"
 ---
 2. Determinants for affine Cellular Algebras 5
 3. Homomorphisms between affine cell ideals. 7

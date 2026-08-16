@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 5-6
 source_pdf: Kondev_2021_Chinese_Phys._C_45_030001.pdf
 source_sha256: 29b14ce8a7c0ecac
+doc_brief: "Chinese Physics C PAPER • OPEN ACCESS The NUBASE2020 evaluation of nuclear physics properties * To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001 — 31 sections: Physics Division"
 ---
 Fig. 2. Nuclear chart displaying isomeric states with T 1/2≥100 ns. For a given isotope where multiple isomers exist, only the
 longest-lived state is plotted.

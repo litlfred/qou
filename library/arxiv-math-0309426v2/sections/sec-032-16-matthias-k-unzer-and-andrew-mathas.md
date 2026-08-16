@@ -7,6 +7,7 @@ section_number: 16
 pages: 16-16
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 Alsoℓ(d(s|t)) = ℓ(d(a|b)) +j − 1, so x(a|b)T1,j−1 =x(s|t). Therefore, by Lemma 6.5
 and Lemma 6.8 and the remarks above,

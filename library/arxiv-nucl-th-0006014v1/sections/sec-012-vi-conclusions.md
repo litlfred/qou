@@ -7,6 +7,7 @@ section_number: VI
 pages: 14-15
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗ — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . ."
 ---
 We have constructed charge-dependent NN potentials, that ﬁt the world proton-proton
 data below 350 MeV (2932 data) with a χ2/datum of 1.01 and the corresponding neutron-

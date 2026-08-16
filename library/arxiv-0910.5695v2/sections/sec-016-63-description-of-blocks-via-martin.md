@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 40-41
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
 ---
 tion of the nontrivial blocks based on the results of Martin. We start by reviewing
 the main result in [Mar96].

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 The notion of the semisimpliﬁcation of a spherical tensor category
 was introduced in [BW], although in the context of algebraic geometry

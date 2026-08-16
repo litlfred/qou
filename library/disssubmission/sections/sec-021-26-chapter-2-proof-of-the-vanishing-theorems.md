@@ -7,6 +7,7 @@ section_number: 26
 pages: 34-34
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 by Gabber’s decomposition theorem into a sum of a perverse sheaf and a
 complexNr which is isomorphic to zero in the quotient categoryD. From

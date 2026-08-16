@@ -7,6 +7,7 @@ section_number: 7
 pages: 26-29
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 Let D be a semisimple tensor category and X ∈ D . Let us say
 thatX is of ﬁnite type if the number of isomorphism classes of simple

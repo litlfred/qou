@@ -7,6 +7,7 @@ section_number: 5.8
 pages: 135-137
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 whereτ∈ Perv(X,C) is some negligible perverse sheaf. In factτ = δX by
 part (a) of the proposition. Furthermorepδ6 = δ0 is a skyscraper sheaf,

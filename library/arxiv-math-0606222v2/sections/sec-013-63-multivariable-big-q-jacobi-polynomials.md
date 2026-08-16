@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 27-29
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 ments of the previous subsection to derive evaluation formulas for multivariable bigq-Jacobi
 polynomials. The monic multivariable big q-Jacobi polynomial

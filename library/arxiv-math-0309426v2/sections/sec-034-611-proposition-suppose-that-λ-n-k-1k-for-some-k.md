@@ -7,6 +7,7 @@ section_number: 6.11
 pages: 16-17
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 the Gram matrix G(λ) of S(λ) is divisibly diagonalizable over Z[q,q −1] with
 (n−2

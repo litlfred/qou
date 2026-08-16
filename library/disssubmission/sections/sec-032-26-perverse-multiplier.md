@@ -7,6 +7,7 @@ section_number: 2.6
 pages: 44-45
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 We now introduce the notion of a multiplier. This will play an important
 role in our proof of theorem 1.1, indeed the theorem essentially amounts

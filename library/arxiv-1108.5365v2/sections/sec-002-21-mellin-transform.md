@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 8-13
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 8
 algebra in Section 4. Then we describe the details of weights and multip lier algebra

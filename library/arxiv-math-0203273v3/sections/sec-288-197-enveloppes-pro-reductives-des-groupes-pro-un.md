@@ -7,6 +7,7 @@ section_number: 19.7
 pages: 113-114
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 groupe pro-unipotent, on sait d´ ej` a quepRed(G) est pro-semi-simple simplement
 connexe (proposition 19.4.2). Nous allons voir que pRed(G) est en g´ en´ eral de di-

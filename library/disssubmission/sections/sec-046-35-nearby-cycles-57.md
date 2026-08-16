@@ -7,6 +7,7 @@ section_number: 3.5
 pages: 65-66
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 cycles functorΨ then sends the Serre subcategoryS(Xη)⊂ P(Xη) into the
 Serre subcategoryS(Xs)⊂ P(Xs) and hence induces a functor

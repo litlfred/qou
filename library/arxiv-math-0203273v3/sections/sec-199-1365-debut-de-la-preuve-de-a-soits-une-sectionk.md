@@ -7,6 +7,7 @@ section_number: 13.6.5
 pages: 72-72
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 tence en est garantie par le th´ eor` eme 12.1.1.
 Comme les End(1)-bimodulesA(A,B ) sont commutatifs par hypoth` ese, il est

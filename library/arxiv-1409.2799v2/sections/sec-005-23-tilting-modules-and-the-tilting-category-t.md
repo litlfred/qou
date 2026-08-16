@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 8-10
 source_pdf: 1409.2799v2.pdf
 source_sha256: 2f2067b7b583e731
+doc_brief: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on"
 ---
 Deﬁnition 2.12. (∆ - and ∇-ﬁltration) We say that a Uq-module M has a ∆ -ﬁltration if there
 exists a descending sequence of Uq-submodules

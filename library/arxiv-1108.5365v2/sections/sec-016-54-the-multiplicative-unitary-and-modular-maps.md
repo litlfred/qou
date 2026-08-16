@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 46-47
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 Under the transformation ξ, we can now express all the operators deﬁned earlier
 on ˆH toH. We have

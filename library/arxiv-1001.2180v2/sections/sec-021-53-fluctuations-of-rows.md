@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 22-23
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 to a Young diagram λ, and by X∞;q the limit probability measure of the Xλ under the q-Plancherel
 measures. If f ∈ C 1([−1, 1]) is a continuously diﬀerentiable function on [−1; 1], we deﬁne the rescaled

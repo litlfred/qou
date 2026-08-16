@@ -7,6 +7,7 @@ section_number: 6.6
 pages: 154-155
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 The recursion formula in theorem 6.1 determines the generic rankrα for
 any partitionα. For future reference we include below a list of these generic

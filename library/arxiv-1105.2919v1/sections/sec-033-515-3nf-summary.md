@@ -7,6 +7,7 @@ section_number: 5.1.5
 pages: 54-54
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
+doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 To make a complicated story short, this is the bottom line concerning 3NF [162]:
 • The leading chiral 3NF (that appears at NNLO) is sizable, improves predictions, but also leaves

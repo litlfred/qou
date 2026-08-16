@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 14-16
 source_pdf: 04010141.pdf
 source_sha256: b86b204b05453a5d
+doc_brief: "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras"
 ---
 Let R be a commutative ring as in §2, and fix elements q, Q E Rx. 
 The various Heeke algebras with which we are concerned all emanate 

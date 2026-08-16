@@ -7,6 +7,7 @@ section_number: 1
 pages: 7-8
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 SoitK un anneau commutatif unitaire. Pour pr´ evenir les paradoxes ensemblistes,
 il est utile de ﬁxer d` es ` a pr´ esent un universU (contenantK). Les ensembles d’objets

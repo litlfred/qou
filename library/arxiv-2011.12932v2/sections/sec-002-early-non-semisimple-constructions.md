@@ -7,6 +7,7 @@ section_number: null
 pages: 3-20
 source_pdf: 2011.12932v2.pdf
 source_sha256: 23709542c5652a29
+doc_brief: "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing"
 ---
 diately sparked a wide interest in the newly born ﬁeld of quantum topology, and
 some natural questions quickly emerged. First of all, is it possible to ﬁgure out

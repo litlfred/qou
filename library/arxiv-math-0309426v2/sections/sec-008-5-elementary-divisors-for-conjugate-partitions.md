@@ -7,6 +7,7 @@ section_number: 5
 pages: 5-5
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 Let R = Z[q,q −1]. Let λ be a partition of n. In this section we relate the Gram
 matrices G(λ) and G(λ′). We start with some mild generalizations of some results

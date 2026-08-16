@@ -7,6 +7,7 @@ section_number: 3.6
 pages: 12-13
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 renormalized q-characters of the Iwahori-Hecke algebras. The theory of ch aracter of Iwahori-Hecke algebra
 is a little more involved than the one of symmetric groups. In deed, given two permutations σ and τ in the

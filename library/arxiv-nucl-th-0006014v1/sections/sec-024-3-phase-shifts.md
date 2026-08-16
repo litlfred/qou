@@ -7,6 +7,7 @@ section_number: 3
 pages: 21-23
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗ — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . ."
 ---
 Phase shifts are determined from the on-energy-shell R-matrix through:
 Spin singlet

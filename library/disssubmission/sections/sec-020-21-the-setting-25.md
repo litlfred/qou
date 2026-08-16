@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 33-34
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 object in the sense that the morphismevK is an isomorphism. Over a base
 ﬁeld k of characteristic zero every invertible object has this form, indeed

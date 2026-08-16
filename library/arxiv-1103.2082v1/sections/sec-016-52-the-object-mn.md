@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 9-10
 source_pdf: 1103.2082v1.pdf
 source_sha256: 0ac5371486b38eac
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 Proposition 5.1. We have the following results about Mn.
 (1) Mn =L((1n)) in Rep(S0) for all n≥ 0.

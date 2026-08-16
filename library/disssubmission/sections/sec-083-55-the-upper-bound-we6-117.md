@@ -7,6 +7,7 @@ section_number: 5.5
 pages: 125-127
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 where the last equality uses thatE6(−1) = K⊥ is primitive inL, being the
 orthocomplement of a sublattice. Altogether then

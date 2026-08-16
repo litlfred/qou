@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-5
 source_pdf: 1103.2082v1.pdf
 source_sha256: 0ac5371486b38eac
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 The authors of [GKP10] deﬁne modiﬁed trace functions for ideals in ribbon categories. In
 this section we give a brief overview of this theory but refer the reader to the above paper

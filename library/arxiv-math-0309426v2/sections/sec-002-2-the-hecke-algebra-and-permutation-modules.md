@@ -7,6 +7,7 @@ section_number: 2
 pages: 1-3
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 Fix a positive integer n and let Sn be the symmetric group of degree n.
 Let R be a commutative domain and let q be an invertible element in R.

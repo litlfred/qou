@@ -7,6 +7,7 @@ section_number: null
 pages: 24-26
 source_pdf: 2011.12932v2.pdf
 source_sha256: 23709542c5652a29
+doc_brief: "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing"
 ---
 [1] H. Andersen,Tensor products of quantized tilting modules, Comm. Math. Phys.149 (1992),
 No. 1, 149–159.

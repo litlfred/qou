@@ -7,6 +7,7 @@ section_number: 8.5
 pages: 85-87
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 Similarly by applying the pairing to the right regular corepresentation we obtain
 Theorem 8.14. The right regular corepresentation is equivalent to

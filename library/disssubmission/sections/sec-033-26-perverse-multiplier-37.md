@@ -7,6 +7,7 @@ section_number: 2.6
 pages: 45-46
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 By assumptionP is an N-multiplier, hencePm∈ N for all m⁄= 0. Via the
 twisting axiom (N2) it follows that for most charactersχ and alln∈ Z,

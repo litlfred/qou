@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 119-121
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 be the quotient of the ﬁnitely generated abelian groupH2(S,Z) by its torsion
 subgroup. Since the intersection form

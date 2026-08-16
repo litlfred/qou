@@ -7,6 +7,7 @@ section_number: 25
 pages: 178-181
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 Compos. Math.58 (1986), 3–11.
 26. , Le lieu des vari´et´es ab´eliennes dont le diviseur thˆeta est singulier a deux

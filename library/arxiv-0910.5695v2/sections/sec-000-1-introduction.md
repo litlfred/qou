@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-1
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
 ---
 LetF be a ﬁeld of characteristic zero and t∈F . Recently P. Deligne introduced
 the tensor category Re p(St) which in a certain precise sense interpolates the cate-

@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 8-9
 source_pdf: 1103.2082v1.pdf
 source_sha256: 0ac5371486b38eac
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 Rep(S0) has a unique nontrivial block. The indecomposables in this block can be described
 explicitly and are denoted by Ln = L((1n)) for n∈ Z≥0. In this section we compute the

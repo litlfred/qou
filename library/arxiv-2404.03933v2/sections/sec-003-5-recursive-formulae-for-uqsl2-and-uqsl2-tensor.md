@@ -7,6 +7,7 @@ section_number: 5
 pages: 13-14
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 Denote by T (lk1 +k0) the indecomposable tilting module over Uq(sl2) of type 1 with the
 highest weight lk1 +k0, with 0≤k0≤l− 1, k1≥ 0. Note that modules T (k) =L(k) =W (k)

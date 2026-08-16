@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 1-2
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
 ---
 category Rep(St) and discuss the relation of Re p(Sd) and Rep(Sd) (this is closely
 Date: October 23, 2018.

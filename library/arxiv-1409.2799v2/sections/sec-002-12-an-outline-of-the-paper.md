@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 5-5
 source_pdf: 1409.2799v2.pdf
 source_sha256: 2f2067b7b583e731
+doc_brief: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on"
 ---
 • Section 2 contains the deﬁnition and some basic properties o f the category of Uq-tilting
 modules T as well as the category of projective endofunctors of it. Mos t of Section 2 is

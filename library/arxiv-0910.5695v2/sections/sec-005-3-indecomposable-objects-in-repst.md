@@ -7,6 +7,7 @@ section_number: 3
 pages: 12-15
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
 ---
 3.1. Classiﬁcation of indecomposable objects of Rep(St). In this section we
 will classify indecomposable objects in Re p(St;F ) for arbitrary t∈ F . To do so,

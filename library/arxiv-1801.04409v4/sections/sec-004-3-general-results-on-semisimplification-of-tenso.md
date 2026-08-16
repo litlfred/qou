@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-14
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 categories
 3.1. Splitting of the semisimpliﬁcation functor for Tannakian

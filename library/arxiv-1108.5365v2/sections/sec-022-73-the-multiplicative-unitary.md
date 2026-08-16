@@ -7,6 +7,7 @@ section_number: 7.3
 pages: 61-66
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 Given two locally compact quantum groups ( M1, ∆ 1) and (M2, ∆ 2), with a match-
 ing m : M1⊗M2−→M1⊗M2, the multiplicative unitary for the double crossed

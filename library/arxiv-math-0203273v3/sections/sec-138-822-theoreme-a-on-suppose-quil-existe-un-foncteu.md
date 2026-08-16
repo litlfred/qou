@@ -7,6 +7,7 @@ section_number: 8.2.2
 pages: 47-47
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 A vers une cat´egorie ab´elienne mono¨ıdale sym´etriqueV, et un foncteur G :V→
 L-Modf v´eriﬁant G(1)⁄= 0 , o `u L est une K-alg`ebre commutative semi-simple.

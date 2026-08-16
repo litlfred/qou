@@ -7,6 +7,7 @@ section_number: 1.3.2
 pages: 10-10
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 queI(A,A )⊂J (A,A ) pour tout objetA deA. AlorsI⊂J .
 D´emonstration. SoientA,B∈A . On aA(A⊕B,A⊕B) =A(A,A )⊕A(A,B )⊕

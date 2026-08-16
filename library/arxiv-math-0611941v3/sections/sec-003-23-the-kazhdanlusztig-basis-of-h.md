@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 4-5
 source_pdf: 0611941v3.pdf
 source_sha256: bf6f2d55c7adee51
+doc_brief: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl gr oup W , deﬁned over a ground ring in which “bad” primes for W are"
 ---
 deﬁned in [25, Theorem 5.2]. We have cw = Tw + ∑
 y py,w Ty where py,w ∈ v−1Z[v−1] and

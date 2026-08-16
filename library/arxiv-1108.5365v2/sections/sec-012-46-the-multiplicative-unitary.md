@@ -7,6 +7,7 @@ section_number: 4.6
 pages: 34-39
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 In this section we will describe the multiplicative unitary W explicitly. Recall (cf.
 (2.30)) that it is deﬁned as a unitary operator on H⊗H by

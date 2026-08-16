@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 16-17
 source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨ uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 be a fusion category over k (see Section 1.8). Then the trivial Hopf monad 1 C is
 centralizable. Its centralizer Z =Z1C is:

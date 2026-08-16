@@ -7,6 +7,7 @@ section_number: 5.5
 pages: 34-37
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
 ---
 To start, given a Young diagramλ we will describe how Liftt(L(λ)) decomposes as a
 sum of indecomposable objects in Re p(ST ;K) (see Lemma 5.20). This description,

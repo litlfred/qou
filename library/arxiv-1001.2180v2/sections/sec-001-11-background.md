@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-1
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 rescaling, there is a limiting continuous object when the si ze tends to inﬁnity. In the case of Young
 diagrams endowed with Plancherel measure, this question ha s been solved in 1977 independently by A.

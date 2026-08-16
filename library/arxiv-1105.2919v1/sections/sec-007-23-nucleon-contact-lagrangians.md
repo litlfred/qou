@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 15-16
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
+doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 Two-nucleon contact interactions consist of four nucleon ﬁelds (four nucleon legs) and no meson ﬁelds.
 Such terms are needed to renormalize loop integrals, to make results reasonably independent of regulators,

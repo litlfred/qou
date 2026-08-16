@@ -7,6 +7,7 @@ section_number: 6
 pages: 25-26
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 Verlinde categories Verp(G)
 Let G be a simple algebraic group over Z, h = h(G) the Coxeter

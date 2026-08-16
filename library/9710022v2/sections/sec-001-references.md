@@ -7,6 +7,7 @@ section_number: null
 pages: 57-60
 source_pdf: 9710022v2.pdf
 source_sha256: e5ff373a1ec6884a
+doc_brief: "Harmonic Analysis on the quan tum Loren tz group E/. Bu/ enoir Lab oratoire de Ph ysique Math / ematique et Th / eorique — This w ork b egins with a review of complexi/ cation and reali/ cation of"
 ---
 /[/1/] A/.Y/.Alekseev/, H/.Grosse/, V/.Sc homerus/, Com binatorial Quan tization of the Hamiltonian
 Chern/-Simons Theory I/, Comm/.Math/.Ph ys/. /1/7/2 /, /3/1/7/-/3/5/8 /(/1/9/9/5/)/. A/.Y/.Alekseev/, H/.Grosse/,

@@ -7,6 +7,7 @@ section_number: null
 pages: 43-44
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 [And92] H.H. Andersen, Tensor products of quantized tilting modules, Comm. Math. Phys. 149, 149-159 (1992)
 [APW1] H.H. Andersen, P. Polo. Wen Kexin, Representations of quantum algebras, Invent. math. 104, 1-59

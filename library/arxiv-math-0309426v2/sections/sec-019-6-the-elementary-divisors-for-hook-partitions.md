@@ -7,6 +7,7 @@ section_number: 6
 pages: 9-10
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 Throughout this section we ﬁx an integer k, with 0 ≤ k < n, and consider the
 Specht module S(λ), where λ = (n −k, 1k). We will show that G(λ) is divisibly

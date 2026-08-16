@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 19-20
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 how to recover a stronger version of the Green-Lazarsfeld theorem as a
 special case of our result. In the remaining sections of this chapter we

@@ -7,6 +7,7 @@ section_number: 6.5
 pages: 152-153
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 To ﬁnish the proof of theorem 6.1 it remains to compute the contribution
 of the negligible complexcδα from the end of section 6.2. Recall that this

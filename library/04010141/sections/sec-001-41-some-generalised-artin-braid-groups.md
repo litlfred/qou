@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 13-14
 source_pdf: 04010141.pdf
 source_sha256: b86b204b05453a5d
+doc_brief: "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras"
 ---
 The generalised Artin group r n of type Bn is well known to be the 
 fundamental group of the space of unordered n-tuples of distinct points 

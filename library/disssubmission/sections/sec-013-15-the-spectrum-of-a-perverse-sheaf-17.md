@@ -7,6 +7,7 @@ section_number: 1.5
 pages: 25-26
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 LEMMA 1.8. With notations as above, dZ≥ 0 for all Z. One has dZ = 1
 iff Z is reduced to a single point. If X is simple, then dZ = 0 iff Z = X.

@@ -7,6 +7,7 @@ section_number: null
 pages: 34-37
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
+doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
 ---
 [AHR17] P. N. Achar and W. Hardesty and S. Riche, On the Humphreys conjecture on
 support varieties of tilting modules , Transform. Groups 24, 3, 2019.

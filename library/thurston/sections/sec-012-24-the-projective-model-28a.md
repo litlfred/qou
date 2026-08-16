@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 24-24
 source_pdf: Thurston.pdf
 source_sha256: 6010919ed83edd81
+doc_brief: "William P. Thurston — 22 sections: Introduction; GEOMETRY AND THREE-MANIFOLDS; Start with the three sphereS3, whi"
 ---
 Evenly spaced lines. The region inside the circle is a plane, with a base line and a family of
 its perpendiculars, spaced at a distance of .051 fundamental units, as measured along the base

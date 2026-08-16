@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 11-14
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 The harmonic analysis corresponding to the complex and real Grass mannian is classical
 by now. It relates to special cases of harmonic analysis on compact symmetric spaces. To

@@ -7,6 +7,7 @@ section_number: 1
 pages: 9-9
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
+doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
 ---
 all bimodules whose support is a proper subvariety of X. Note that HC( A) is a
 monoidal category with respect to the tensor product of bimodule s and HC(A)

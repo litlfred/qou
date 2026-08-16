@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 28-29
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
+doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
 ---
 tion as in (2). A hyperplane H is a load-bearing wall for γ at i∈ [0,r ] if it
 contains the i-th panel pi⊂ H (or the origin v0∈ H if i = 0) and if ai⊂ H −.

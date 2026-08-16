@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 4-4
 source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨ uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 phismθX :X →X satisfying: θX⊗Y = (θX ⊗θY )τY,X τX,Y . If B is braided and au-
 tonomous, a twistθ on B is self-dual if ∨(θX ) = θ∨ X (or, equivalently, (θX )∨ =θX ∨ ).

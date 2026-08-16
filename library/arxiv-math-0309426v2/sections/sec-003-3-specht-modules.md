@@ -7,6 +7,7 @@ section_number: 3
 pages: 3-4
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 We will need two dualities on the category of right H –modules. Both of them
 come from involutions on H . The ﬁrst duality comes from the involution ∗ deﬁned

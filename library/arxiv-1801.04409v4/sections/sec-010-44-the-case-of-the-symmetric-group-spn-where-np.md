@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 18-21
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 p = 2 then we have
 RepkS2 = RepkS3 = Vec k. So consider the

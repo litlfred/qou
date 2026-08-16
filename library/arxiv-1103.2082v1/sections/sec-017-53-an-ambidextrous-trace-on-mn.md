@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 10-14
 source_pdf: 1103.2082v1.pdf
 source_sha256: 0ac5371486b38eac
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 to deﬁne a linear functional on End Rep(St)(Mn) it suﬃces to give the values of the linear
 functional on sn and snxnsn. Let tn be the following linear map:

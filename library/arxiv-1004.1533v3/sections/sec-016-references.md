@@ -7,6 +7,7 @@ section_number: null
 pages: 38-39
 source_pdf: 1004.1533v3.pdf
 source_sha256: 95c1544431e6bf37
+doc_brief: "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
 ---
 [BK2001] Bojko Bakalov and Alexander Kirillov Jr., Lectures on tensor categories and mod-
 ular functors , University Lecture Series, vol. 21, American Mathematica l Society,

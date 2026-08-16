@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 21-24
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 [3], [24] and [28]. The evaluation formulas for the multivariable little q-Jacobi polynomials
 22 URI ONN AND JASPER V. STOKMAN

@@ -7,6 +7,7 @@ section_number: 6
 pages: 14-18
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 Here we reformulate the problem of tensor power decomposition over Uq(sl2) and uq(sl2)
 resolved in the previous section in terms of counting lattice paths on the set of dominant

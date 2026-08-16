@@ -7,6 +7,7 @@ section_number: null
 pages: 34-34
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
+doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
 ---
 The work was started while the ﬁrst author was a Postdoc at the MPI in
 Bonn and the second author a visiting scientist. We thank the MPI for the

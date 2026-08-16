@@ -7,6 +7,7 @@ section_number: 14
 pages: 14-15
 source_pdf: 9310164v2.pdf
 source_sha256: e0972e04667ccc47
+doc_brief: "This paper is a study of monoidal categories with duals where th e ten- sor product need not be commutative. The motivating examples are categories of representations of Hopf algebras."
 ---
 Proposition 3.7. Let A be a spherical Hopf algebra. Let x be a left A-module.
 Then End(x), the endomorphism algebra in the non-degenerate quotient, is semi-

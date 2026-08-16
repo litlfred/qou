@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 16-18
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
+doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 Eﬀective Lagrangians have inﬁnitely many terms, and an unlimited number of Feynman graphs can be
 calculated from them. Therefore, we need a scheme that makes the theory manageable and calculable. This

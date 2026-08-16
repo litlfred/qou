@@ -1,0 +1,130 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "thurston",
+ "source_sha256": "6010919ed83edd81",
+ "brief": "William P. Thurston — 22 sections: Introduction; GEOMETRY AND THREE-MANIFOLDS; Start with the three sphereS3, whi",
+ "extended": "**William P. Thurston**\n\n*The Geometry and Topology of Three-Manifolds*\n\n33 pp, 22 sections.\n\n**Outline.** Introduction; 1 GEOMETRY AND THREE-MANIFOLDS; 0 Start with the three sphereS3, which may be ; 1 Any knot (closed simple curve) or link (unio; 2 Thurston — The Geometry and Topology of 3-Ma; 2 Cut out a tubular neighborhood of a knot or ; 4 Thurston — The Geometry and Topology of 3-Ma; 6 Thurston — The Geometry and Topology of 3-Ma; 2 ELLIPTIC AND HYPERBOLIC GEOMETRY; 10 Thurston — The Geometry and Topology of 3-M; 12 Thurston — The Geometry and Topology of 3-M; 14 Thurston — The Geometry and Topology of 3-M; 2.4 THE PROJECTIVE MODEL. 2.8a; 16 Thurston — The Geometry and Topology of 3-M; 18 Thurston — The Geometry and Topology of 3-M; 1 In Euclidean spaceEn+1,c(X, Y) is the cosine; 2.6.2 If XandY2Hn, thenc(X, Y) = coshd(X, Y),; 20 Thurston — The Geometry and Topology of 3-M",
+ "tokens": {
+  "brief": 28,
+  "extended": 222
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "3-9"
+  },
+  {
+   "id": "sec-001-1-geometry-and-three-manifolds",
+   "title": "GEOMETRY AND THREE-MANIFOLDS",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-002-0-start-with-the-three-spheres3-which-may-be-eas",
+   "title": "Start with the three sphereS3, which may be easily visualized asR3, together",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-003-1-any-knot-closed-simple-curve-or-link-union-of",
+   "title": "Any knot (closed simple curve) or link (union of disjoint closed simple curves)",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-2-thurston-the-geometry-and-topology-of-3-manifo",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-005-2-cut-out-a-tubular-neighborhood-of-a-knot-or-li",
+   "title": "Cut out a tubular neighborhood of a knot or link, and glue it back in by a",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-006-4-thurston-the-geometry-and-topology-of-3-manifo",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-007-6-thurston-the-geometry-and-topology-of-3-manifo",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "13-18"
+  },
+  {
+   "id": "sec-008-2-elliptic-and-hyperbolic-geometry",
+   "title": "ELLIPTIC AND HYPERBOLIC GEOMETRY",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-009-10-thurston-the-geometry-and-topology-of-3-manif",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-010-12-thurston-the-geometry-and-topology-of-3-manif",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-011-14-thurston-the-geometry-and-topology-of-3-manif",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-012-24-the-projective-model-28a",
+   "title": "THE PROJECTIVE MODEL. 2.8a",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-013-16-thurston-the-geometry-and-topology-of-3-manif",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-014-18-thurston-the-geometry-and-topology-of-3-manif",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-015-1-in-euclidean-spaceen1cx-y-is-the-cosine-of-the",
+   "title": "In Euclidean spaceEn+1,c(X, Y) is the cosine of the angle betweenXandY. In",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-016-262-if-xandy2hn-thencx-y-coshdx-y",
+   "title": "If XandY2Hn, thenc(X, Y) = coshd(X, Y),",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-017-20-thurston-the-geometry-and-topology-of-3-manif",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-018-265-xandyare-parallel",
+   "title": "X?andY?are parallel",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-019-266-if-xis-a-point-inhnandya-hyperplane-then",
+   "title": "If Xis a point inHnandY?a hyperplane, then",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-020-22-thurston-the-geometry-and-topology-of-3-manif",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-021-24-thurston-the-geometry-and-topology-of-3-manif",
+   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
+   "pages": "32-33"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

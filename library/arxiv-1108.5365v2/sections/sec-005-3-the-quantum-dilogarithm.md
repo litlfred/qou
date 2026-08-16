@@ -7,6 +7,7 @@ section_number: 3
 pages: 16-19
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 We recall the deﬁnition of the quantum dilogarithm given in [14] (see als o [2]), an
 important special function that will be used throughout the paper .

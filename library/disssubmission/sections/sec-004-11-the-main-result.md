@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 17-18
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 Let X be a complex abelian variety. For charactersχ : π1(X,0)−→C∗
 of the fundamental group we denote byLχ the corresponding local system

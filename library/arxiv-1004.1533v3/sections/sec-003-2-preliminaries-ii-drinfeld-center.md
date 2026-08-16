@@ -7,6 +7,7 @@ section_number: 2
 pages: 6-10
 source_pdf: 1004.1533v3.pdf
 source_sha256: 95c1544431e6bf37
+doc_brief: "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
 ---
 We will also need the notion of Drinfeld center of a spherical fusion ca tegory. Re-
 call that the Drinfeld center Z(C) of a fusion category C is deﬁned as the category

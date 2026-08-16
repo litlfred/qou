@@ -7,6 +7,7 @@ section_number: 8.6
 pages: 87-88
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 It is known that the representation space Pλ,t is actually a nontrivial representation
 for the modular double Uq(gl(2, R))⊗U~q(gl(2, R)). In this section we describe its

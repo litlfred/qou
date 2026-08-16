@@ -7,6 +7,7 @@ section_number: 5.1.3
 pages: 52-54
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
+doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 According to Eq. (5.1), the valueν = 4, which corresponds to N3LO, is obtained for the following classes
 of diagrams.

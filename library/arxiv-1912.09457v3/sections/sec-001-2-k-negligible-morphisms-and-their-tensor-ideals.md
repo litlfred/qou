@@ -7,6 +7,7 @@ section_number: 2
 pages: 5-10
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
+doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
 ---
 2.1. Preliminaries. In the following let R be a local ring with maximal
 ideal m. We assume CR (or sometimes simply C) to be a monoidal rigid

@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 54-58
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
+doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 Formally, the lowest order four-nucleon force (4NF) occurs for two separately interacting nucleon pairs
 with leading vertices and no loops, Fig. 21. This scenario is characterized by A = 4, C = 2, L = 0, and∑

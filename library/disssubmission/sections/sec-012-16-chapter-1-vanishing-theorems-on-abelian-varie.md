@@ -7,6 +7,7 @@ section_number: 16
 pages: 24-25
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 Proof.Via the Riemann-Hilbert correspondence [57] we can considerP
 as a D-module. For Z⊆ X closed and irreducible, letΛZ⊆ T∗X be the

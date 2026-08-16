@@ -7,6 +7,7 @@ section_number: 3
 pages: 28-33
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗ — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . ."
 ---
 Here, we will present the ﬁnal potential expressions in part ial wave decomposition. More
 details concerning their derivation can be found in Appendi x E of Ref. [1]. First, we state

@@ -7,6 +7,7 @@ section_number: 12
 pages: 20-20
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 Choose a pointb∈ Bα(C). Consider the ﬁbre Fb = f−1(b), and for
 any characterχ denote byMb = Pχ|Fb the restriction ofPχ to Fb (in what

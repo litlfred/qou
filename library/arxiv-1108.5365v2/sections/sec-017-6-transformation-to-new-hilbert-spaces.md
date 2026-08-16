@@ -7,6 +7,7 @@ section_number: 6
 pages: 47-47
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 To prepare for the construction of the quantum double, we found it useful to intro-
 duce a transformation of the Hilbert space H as well as ˆH, so that the action of A

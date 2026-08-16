@@ -7,6 +7,7 @@ section_number: 7
 pages: 18-21
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 7.1. Characters of tilting and Weyl modules. We define the character of an Uq(sl2)-
 module V as the Laurent polynomial (see section 2.2) as

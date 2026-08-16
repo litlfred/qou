@@ -7,6 +7,7 @@ section_number: 6
 pages: 6-6
 source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨ uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 transformation ξ = {ξY1,...,Y n : Y1 ⊗ · · · ⊗Yn → Y1 ⊗ · · · ⊗Yn ⊗M }Y1,...,Y n∈Ob(B),
 whereM is an object of B, there exists a unique morphism r :C⊗n →M such that:

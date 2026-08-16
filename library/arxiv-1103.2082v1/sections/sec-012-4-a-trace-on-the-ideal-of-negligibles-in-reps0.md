@@ -7,6 +7,7 @@ section_number: 4
 pages: 7-8
 source_pdf: 1103.2082v1.pdf
 source_sha256: 0ac5371486b38eac
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 We ﬁrst work out the easiest example when the category is Rep(S0). In this case everything
 can be computed explicitly.

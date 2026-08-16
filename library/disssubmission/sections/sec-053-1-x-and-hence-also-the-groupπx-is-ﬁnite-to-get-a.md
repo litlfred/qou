@@ -7,6 +7,7 @@ section_number: 1
 pages: 75-79
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 problem we perform a base change under a ﬁnite´etale cover depending on
 the chosen torsion characterχη. Consider the split exact ﬁbration sequence

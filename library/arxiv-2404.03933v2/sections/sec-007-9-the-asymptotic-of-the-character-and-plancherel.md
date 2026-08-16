@@ -7,6 +7,7 @@ section_number: 9
 pages: 23-28
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 In this section we will compute the asymptotic of the character and the Plancherel measures
 on tilting submodules of T (1)⊗N whenN→∞ . We will start with computing the asymptotic

@@ -7,6 +7,7 @@ section_number: 8
 pages: 22-27
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
+doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
 ---
 By theorem 7.3 thek-negligible ideals are deﬁned for modular and quan-
 tum tilting modules. Contrary to the case of Deligne categor ies, not every

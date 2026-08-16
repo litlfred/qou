@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 17-18
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 consider the simplest nontrivial special case of Theorem 4.2, when t he
 p-Sylow subgroup of G has order p.

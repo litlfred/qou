@@ -7,6 +7,7 @@ section_number: 0.1
 pages: 29-30
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
+doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
 ---
 monoidal category with unit object 1 and End(1) ∼
 = k. For such a category

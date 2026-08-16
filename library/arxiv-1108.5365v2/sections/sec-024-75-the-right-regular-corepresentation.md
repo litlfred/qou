@@ -7,6 +7,7 @@ section_number: 7.5
 pages: 72-75
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 In analogy to the left regular action, there is a notion of a right regu lar action.
 First we consider the quantum plane.

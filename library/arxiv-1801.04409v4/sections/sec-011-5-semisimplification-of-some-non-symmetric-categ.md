@@ -7,6 +7,7 @@ section_number: 5
 pages: 21-22
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 Let char( k) = 0, q ∈ k×, and Hq be the Hopf algebra gener-
 ated by the grouplike element g and element E with deﬁning relation

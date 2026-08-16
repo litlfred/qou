@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 14-16
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 case. In this subsection we ﬁx a non-Archimedean local ﬁeld F. Let O denote the ring
 of integers and p the maximal ideal. The Grassmann representation C

@@ -7,6 +7,7 @@ section_number: 6
 pages: 16-17
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
+doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
 ---
 We review some results about quantized tilting modules whic h are needed
 to show that the category of tilting modules can be obtained a s a mod m

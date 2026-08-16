@@ -7,6 +7,7 @@ section_number: 4
 pages: 4-4
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 Let S(λ)⊥ = {x ∈M (λ) | ⟨x,y ⟩ = 0 for all y ∈S(λ) }. As ⟨, ⟩λ is associative,
 S(λ)⊥ is an H -submodule of M (λ). More precisely, S(λ)⊥ is the kernel of the

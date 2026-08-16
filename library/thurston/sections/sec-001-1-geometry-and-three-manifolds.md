@@ -7,6 +7,7 @@ section_number: 1
 pages: 9-9
 source_pdf: Thurston.pdf
 source_sha256: 6010919ed83edd81
+doc_brief: "William P. Thurston — 22 sections: Introduction; GEOMETRY AND THREE-MANIFOLDS; Start with the three sphereS3, whi"
 ---
 1.1
 The theme I intend to develop is that topology and geometry, in dimensions up

@@ -7,6 +7,7 @@ section_number: null
 pages: 31-33
 source_pdf: 04010141.pdf
 source_sha256: b86b204b05453a5d
+doc_brief: "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras"
 ---
 [ 1) S. Ariki, "On the decomposition numbers of the Heeke algebra of 
 G(m, 1, n)", J. Math. Kyoto Univ. 36 (1996), 789-808. 

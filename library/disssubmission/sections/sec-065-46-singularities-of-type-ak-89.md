@@ -7,6 +7,7 @@ section_number: 4.6
 pages: 97-99
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 say that a pointe in Y is a singularity of typeAk if in a neighborhood ofe
 the hypersurfaceY is deﬁned by an equation of the form

@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 1-4
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 is the number of boxes of the diagram. In particular, the exis tence of a limit shape implies that the
 probability that a random diagram has a long row or column (of length ≫ √n) tends to 0. Therefore the

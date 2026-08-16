@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 47-48
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 In this section, we list the transformations that will be used. They a re all unitary
 transformations on L2(R× R) equipped with the standard Lebesgue measure. For

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 2011.12932v2.pdf
 source_sha256: 23709542c5652a29
+doc_brief: "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing"
 ---
 After the work of Vaughan Jones [30] and Edward Witten [61, 62], Vladimir Tu-
 raev played a key role in the foundation of quantum topology. Together with Nikolai

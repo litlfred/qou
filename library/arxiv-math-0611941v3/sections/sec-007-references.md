@@ -7,6 +7,7 @@ section_number: null
 pages: 15-16
 source_pdf: 0611941v3.pdf
 source_sha256: bf6f2d55c7adee51
+doc_brief: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl gr oup W , deﬁned over a ground ring in which “bad” primes for W are"
 ---
 basic sets for type Bn and any L (where k has characteristic 0) has been established without
 assuming Lusztig’s conjectures on Hecke algebras with unequal pa rameters.

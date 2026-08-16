@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 82-83
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 To ﬁnd sufﬁciently large lower bounds on the Tannaka group of the theta
 divisor on a general ppav, we will study degenerations of ppav’s in terms of

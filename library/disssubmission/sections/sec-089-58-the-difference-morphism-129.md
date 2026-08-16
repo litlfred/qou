@@ -7,6 +7,7 @@ section_number: 5.8
 pages: 137-139
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 one-dimensional trivial representation plus only a single further irreducible
 representation. Now recall that by deﬁnitionG(dn) is a subgroup of the

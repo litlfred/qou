@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-3
 source_pdf: 9808030v1.pdf
 source_sha256: 7889d6481b876b12
+doc_brief: "Planscherel Measure on Eq(2) — Following the construction of the invariant integral and the scalar p roduct for the quantum Euclidean group Eq(2), we obtained the full matrix elements of its unitary"
 ---
 If the space–time is not a diﬀerentiable manifold but a non–commutat ive ge-
 ometry there may be interesting new physical eﬀects. Because of the non ex-

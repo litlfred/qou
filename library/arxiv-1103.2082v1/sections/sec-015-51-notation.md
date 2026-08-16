@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 9-9
 source_pdf: 1103.2082v1.pdf
 source_sha256: 0ac5371486b38eac
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 obtained from the partition diagram for σ by removing all edges adjacent to top vertices
 labelled by elements of I. Also, for i∈{ 1,...,n } we write σi =σ{i}. For example, if

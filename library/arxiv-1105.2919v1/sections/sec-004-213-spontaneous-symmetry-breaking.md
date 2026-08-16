@@ -7,6 +7,7 @@ section_number: 2.1.3
 pages: 10-10
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
+doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 A (continuous) symmetry is said to be spontaneously broken if a symmetry of the Lagrangian is not
 realized in the ground state of the system. There is evidence that the (approximate) chiral symmetry of the

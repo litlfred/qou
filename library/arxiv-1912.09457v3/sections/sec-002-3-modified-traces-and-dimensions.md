@@ -7,6 +7,7 @@ section_number: 3
 pages: 10-12
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
+doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
 ---
 We recall the deﬁnition of a modiﬁed trace function. The exis tence of
 such trace functions on thick ideals is in general diﬃcult an d often only

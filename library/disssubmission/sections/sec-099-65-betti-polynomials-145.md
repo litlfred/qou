@@ -7,6 +7,7 @@ section_number: 6.5
 pages: 153-154
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 We ﬁrst deal with (i). For m∈{ 0,1} this is easily veriﬁed. In general one
 computes that(t−1 +t)·Pm =Pm+1 +Pm−1 andt−1 +t = ξ2−2, so we have

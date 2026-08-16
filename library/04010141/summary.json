@@ -1,0 +1,61 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "04010141",
+ "source_sha256": "b86b204b05453a5d",
+ "brief": "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras",
+ "extended": "**Advanced Studies in Pure Mathematics 40, 2004**\n\n*Representation Theory of Algebraic Groups and Quantum Groups*\n\n33 pp, 8 sections.\n\n**Abstract.** We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras described in terms of diagrams. Cellular algebras are of­ ten generically semisimple, and have non-semisimple specialisations whose representation theory may be discussed by solving problems in linear algebra, which are formulated in the semisimple context, and are therefore tractable in some significant cases. This applies in particular to certain \"Temperley-Lieb\" quotients of Heeke algebras, both finite dimensional and affine, which may be described in terms of bases consisting of diagrams. This leads to the application of cellu­ lar algebra theory to an analysis of their representation theory, with corresponding consequences for the relevant Heeke algebras.\n\n**Outline.** 2.5 (i) If J-L is a diagram and L is a loop wi; 4.1 Some generalised Artin braid groups; 4.2 Some Heeke algebras; 4.3 Temperley-Lieb algebras of various types; 5.1 Commutative diagrams and lifting represent; 5.2 Standard modules for ~(q); 5.3 Lifting cell modules to standard modules; References",
+ "tokens": {
+  "brief": 47,
+  "extended": 317
+ },
+ "sections": [
+  {
+   "id": "sec-000-25-i-if-j-l-is-a-diagram-and-l-is-a-loop-with-no",
+   "title": "(i) If J-L is a diagram and L is a loop with no marks, J-L II L =",
+   "pages": "6-13"
+  },
+  {
+   "id": "sec-001-41-some-generalised-artin-braid-groups",
+   "title": "Some generalised Artin braid groups",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-002-42-some-heeke-algebras",
+   "title": "Some Heeke algebras",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-003-43-temperley-lieb-algebras-of-various-types",
+   "title": "Temperley-Lieb algebras of various types",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-004-51-commutative-diagrams-and-lifting-representati",
+   "title": "Commutative diagrams and lifting representations",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-005-52-standard-modules-for-q",
+   "title": "Standard modules for ~(q)",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-006-53-lifting-cell-modules-to-standard-modules",
+   "title": "Lifting cell modules to standard modules",
+   "pages": "21-31"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "31-33"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -7,6 +7,7 @@ section_number: 4
 pages: 10-11
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 In this section we specialize the general theory of the previous sec tion to the classical
 examples arising from Grassmannians over local ﬁelds.

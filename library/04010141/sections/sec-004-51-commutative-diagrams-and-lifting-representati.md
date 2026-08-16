@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 19-20
 source_pdf: 04010141.pdf
 source_sha256: b86b204b05453a5d
+doc_brief: "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras"
 ---
 Let A and B be R-algebras and 'ljJ : A -+ B be an R-algebra homo­
 morphism. If p: B-+ EndR(M) is a representation of B (where M is a 

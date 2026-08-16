@@ -7,6 +7,7 @@ section_number: null
 pages: 41-42
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
 ---
 As we were unable to ﬁnd an appropriate reference, in this appendix we give
 standard proofs of well-known results on lifting idempotents. Assume F is a ﬁeld,

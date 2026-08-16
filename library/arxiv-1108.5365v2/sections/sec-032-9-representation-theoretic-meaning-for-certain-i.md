@@ -7,6 +7,7 @@ section_number: 9
 pages: 88-89
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
+doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
 ---
 tegral transforms
 In this section, we state without proof certain integral transfor mations of Gb that

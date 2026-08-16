@@ -7,6 +7,7 @@ section_number: 14.2.2
 pages: 82-83
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 (G,µ G) avecG∈X ,µG∈X (G×G,G ) tel queG(X) =X (X,G ) d´ eﬁnisse un
 groupe pour la loi µG(X) = X (X,µ G) quel que soit X∈X . De mˆ eme, unobjet

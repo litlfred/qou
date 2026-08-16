@@ -7,6 +7,7 @@ section_number: 4
 pages: 52-58
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
+doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
 ---
 To prove the main result, we use G. Lusztig’s geometric realization of quantized
 enveloping algebras and their canonical bases [3]. Denoting by Q the linearly

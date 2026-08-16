@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-2
 source_pdf: 0611941v3.pdf
 source_sha256: bf6f2d55c7adee51
+doc_brief: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl gr oup W , deﬁned over a ground ring in which “bad” primes for W are"
 ---
 References for this section are the books [14] and [25]. Let W be a ﬁnite Weyl group, with
 generating set S. Let L : W → Z be a weight function. Thus, we have L(ww ′) = L(w)+L(w′)

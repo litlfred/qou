@@ -7,6 +7,7 @@ section_number: 5.7
 pages: 131-133
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 Proof.For a general ppav we know from theorem 4.2 that the Tannaka
 groupG(δΘ) is either a symplectic or a special orthogonal group and that

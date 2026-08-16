@@ -7,6 +7,7 @@ section_number: 4
 pages: 13-17
 source_pdf: 2607.03827v1.pdf
 source_sha256: 965d69603381942a
+doc_brief: "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS — The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical"
 ---
 In this section, the asymptotic algebra of an affine cellular algebra and the embedding of an affine
 cellular algebra into its asymptotic algebra will be described in detail. Moreover, the asymptotic algebra

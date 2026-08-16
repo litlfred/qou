@@ -7,6 +7,7 @@ section_number: 5
 pages: 26-27
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
 ---
 of Re p(St,F ) in section 5.5. First we state Frobenius’ result on the symmetric
 group:

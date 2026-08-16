@@ -7,6 +7,7 @@ section_number: 8
 pages: 21-23
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 Here we introduce some natural probabilistic measures on indecomposable components of
 T (1)⊗N for big and small quantum sl2 and we show that they are all induced by Markov

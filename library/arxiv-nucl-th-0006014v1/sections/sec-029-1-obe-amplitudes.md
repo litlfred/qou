@@ -7,6 +7,7 @@ section_number: 1
 pages: 25-26
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗ — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . ."
 ---
 The Lagrangians Eqs. (2.1)-(2.5) imply the following OBE am plitudes which we state
 here in terms of i times the Feynman amplitude:

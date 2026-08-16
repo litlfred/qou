@@ -7,6 +7,7 @@ section_number: 3.6
 pages: 67-69
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 pointx in X. The passage to a different choice ofx corresponds to an inner
 automorphism of the fundamental group, which is not seen on the level of

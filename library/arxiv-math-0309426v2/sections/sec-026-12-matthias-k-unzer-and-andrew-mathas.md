@@ -7,6 +7,7 @@ section_number: 12
 pages: 12-12
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 For any (k|n−k)–tableau ( a|b) deﬁne x(a|b) = x(k|n−k)Td(a|b). Here we do not
 assume that ( a|b) is standard. The following lemma is easily veriﬁed.

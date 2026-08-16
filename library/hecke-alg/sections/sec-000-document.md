@@ -7,6 +7,7 @@ section_number: null
 pages: 1-78
 source_pdf: hecke_alg.pdf
 source_sha256: 4ac08dfd165fb366
+doc_brief: "Hec k e algebras and Sc h ur algebras of the symmetric group Andrew Mathas Author address/: — 1 sections: Document"
 ---
 Hec k e algebras and Sc h ur algebras of the
 symmetric group
@@ -104,7 +105,8 @@ semisimple/)/, whic h then allo w us to compute the Gram determinan t of the cel
 basis of the W eyl mo dules/. Essen tially some highest w eigh t theory then allo ws us
 to deduce the sum form ula and so classify b oth the blo c ks of the q /{Sc h ur algebras
 and Iw ahori/{Hec k e algebras/.
-Brie/y /, the structure of these notes is as follo ws/. Chapter /1 b egins b y pro ving
+Brie/
+y /, the structure of these notes is as follo ws/. Chapter /1 b egins b y pro ving
 some basic facts ab out the symmetric group and its Iw ahori/{Hec k e algebra H /. In
 fact/, this is really a c hapter Co xeter groups and general Iw ahori/{Hec k e algebras
 INTR ODUCTION v
@@ -309,7 +311,8 @@ n
 w S w
 /? /1
 /. Then T is the set of
-re/ections in S
+re/
+ections in S
 n
 /(considering S
 n
@@ -1664,7 +1667,8 @@ n
 are all explicitly kno wn /[ /7 /] /(in t yp e A only/)/.
 Notes on Chapter /1
 /1/. The elegan t pro of of the exc hange condition giv en in Section /1 is due to Matthew
-Dy er /[ /2/2 /, /2/3 /]/. Dy er calls the function N a r e/e ction c o cycle and he sho ws that
+Dy er /[ /2/2 /, /2/3 /]/. Dy er calls the function N a r e/
+e ction c o cycle and he sho ws that
 a group W generated a set S of in v olutions is a Co xeter group if and only if
 W p ossesses a map N suc h that /(i/) N /( s /) /= f s g for all s /2 S and /(ii/) for all
 elemen ts v and w in W /, N /( v w /) /= N /( v /)
@@ -3928,7 +3932,8 @@ whic h is a sub expression of some reduced expression of w /. F or example/, /1 
 all w /2 S
 n
 /. By the strong exc hange condition /(/1/./5/)/, v D w if and only if there exist
-re/ections t
+re/
+ections t
 i
 /; /: /: /: /; t
 k
@@ -3947,7 +3952,8 @@ j
 /)
 for j /= /1 /; /2 /; /: /: /: /; k /. /(In fact/, one can sho w that v D w if and only if there exist
 /2/0 /3/. THE MODULAR REPRESENT A TION THEOR Y OF H
-re/ections t
+re/
+ections t
 i
 /; /: /: /: /; t
 k
@@ -7271,12 +7277,15 @@ k
 /; /: /: /: /)/. Let g
 i
 b e the greatest common
-divisor of /[ / /]
+divisor of /[ /
+ /]
 /!
 q
-/, where / runs o v er all partitions of /
+/, where /
+ runs o v er all partitions of /
 i
-suc h that / B /
+suc h that /
+ B /
 i
 /. Finally /, w e
 de/ne g
@@ -14943,7 +14952,8 @@ and W
 F
 are in the same blo c k then / and / ha v e the same e /{core/.
 No w supp ose that / is an e /{core of some partition of n /; then j / j /= n /? ew for
-some w / /0/. Let / /= /( /
+some w / /0/. Let /
+ /= /( /
 /1
 /; /
 /2
@@ -14956,7 +14966,8 @@ some w / /0/. Let / /= /( /
 i
 /= /
 i
-for i /> /1/. Then / has e /{core / /.
+for i /> /1/. Then /
+ has e /{core / /.
 Assume that / /` r and that / has e /{core / /. T o pro v e the theorem it su/ces
 to sho w that W
 /
@@ -14964,7 +14975,8 @@ F
 and W
 /
 F
-are in the same blo c k/. Supp ose that / /6/= / /. Then/, for
+are in the same blo c k/. Supp ose that / /6/= /
+ /. Then/, for
 some /( a/; b /) the rim ho ok R
 /
 ab
@@ -16034,7 +16046,8 @@ n
 n
 /" The sign represen tation of S
 n
-T The set of re/ections in S
+T The set of re/
+ections in S
 n
 /1/./2 H /= H
 R/;q
@@ -16544,8 +16557,10 @@ AMS/./, /(to app ear/)/.
 /[/2/1/] J/. Du and L/. Scott /, The q /{Schur
 /2
 algebr a /, T rans/. AMS/, /(to app ear/)/.
-/[/2/2/] M/. J/. D yer /, R e/e ctions in Coxter gr oups /, PhD thesis/, Univ ersit y of Sydney /, /1/9/8/7/.
-/[/2/3/] M/. J/. D yer /, R e/e ction sub gr oups of Coxeter systems /, J/. Algebra/, /1/3/5 /(/1/9/9/0/)/, /5/7/{/7/3/.
+/[/2/2/] M/. J/. D yer /, R e/
+e ctions in Coxter gr oups /, PhD thesis/, Univ ersit y of Sydney /, /1/9/8/7/.
+/[/2/3/] M/. J/. D yer /, R e/
+e ction sub gr oups of Coxeter systems /, J/. Algebra/, /1/3/5 /(/1/9/9/0/)/, /5/7/{/7/3/.
 /[/2/4/] M/. Geck and G/. Pfeiffer /, On the irr e ducible char acters of He cke algebr as /, Adv ances/, /1/0/2
 /(/1/9/9/3/)/, /7/9/{/9/4/.
 /[/2/5/] J/. J/. Graham /, Mo dular r epr esentations of He cke algebr as and r elate d algebr as /, PhD thesis/,
@@ -16568,7 +16583,8 @@ of unity /, Math/. Researc h Notes/, /(/1/9/9/4/)/, /2/1/5/{/2/1/7/.
 /7/2 BIBLIOGRAPHY
 /[/3/2/] P/. N/. Hoefsmit /, R epr esentations of He cke algebr as of /nite gr oups with B N /{p airs of classic al
 typ e /, PhD thesis/, Univ ersit y of British Colum bia/, /1/9/7/9/.
-/[/3/3/] J/. E/. Humphreys /, R e/e ction Gr oups and Coxeter Gr oups /, Cam bridge Univ ersit y Press/, Cam/-
+/[/3/3/] J/. E/. Humphreys /, R e/
+e ction Gr oups and Coxeter Gr oups /, Cam bridge Univ ersit y Press/, Cam/-
 bridge/, /1/9/9/0/.
 /[/3/4/] N/. Iw ahori /, On the structur e of the He cke ring of a Cheval ley gr oup over a /nite /eld /, J/.
 F ac/. Sci/. U/. T oky o/, /1/0 /(/1/9/6/4/)/, /2/1/4/{/2/3/6/.
@@ -16600,7 +16616,8 @@ Math/./, /5/3 /(/1/9/7/9/)/, /1/6/5/{/1/8/4/.
 /1/9/7/3/.
 /[/4/8/] S/. K
 /
-onig and C/. Xi /, Cel lular algebr as/: in/ations and morita e quivalenc e s /, preprin t/, /(/1/9/9/8/)/.
+onig and C/. Xi /, Cel lular algebr as/: in/
+ations and morita e quivalenc e s /, preprin t/, /(/1/9/9/8/)/.
 /[/4/9/] /, On the numb er of c el ls of a c el lular algebr a /, preprin t/, /(/1/9/9/8/)/.
 /[/5/0/] /, On the structur e of c el lular algebr as /, Pro ceedings of ICRA VI I I/, AMS/, to app ear/.
 /[/5/1/] A/. Lascoux/, B/. Lecler c/, and J/./-Y/. Thibon /, He cke algebr as at r o ots of unity and crystal

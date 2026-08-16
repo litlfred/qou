@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-1
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 The irreducible representations of the symmetric groups and their Iwahori-Hecke
 algebras have been classiﬁed and constructed by James [ 6] and Dipper and James [ 2],

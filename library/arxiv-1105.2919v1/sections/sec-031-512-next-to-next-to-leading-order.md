@@ -7,6 +7,7 @@ section_number: 5.1.2
 pages: 51-52
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
+doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 The power ν = 3 (NNLO) is obtained when there are no loops ( L = 0) and ∑
 i ∆i = 1, i.e., ∆i = 1 for

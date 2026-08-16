@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 110-111
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 So far we have mostly ﬁxed a general pointx∈ X(C). Now let us see
 what happens when this point varies. For the moment the dimensiong can

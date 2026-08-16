@@ -7,6 +7,7 @@ section_number: 20.1.5
 pages: 116-116
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
+doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
 ---
 de l’interpr´ etation deH′ donn´ ee dans la d´ emonstration du th´ eor` eme 20.1.3 que la
 restriction ` aG des repr´ esentations deH′ induit une injection de l’ensemble des

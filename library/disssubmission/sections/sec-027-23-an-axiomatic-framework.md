@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 38-39
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
+doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
 ---
 Since the Tannakian constructions to be given below are of independent
 interest also in more general situations than in the proof of theorem 1.1, for
