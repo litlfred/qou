@@ -8,6 +8,7 @@ pages: 14-14
 source_pdf: milnor_hyperbolic.pdf
 source_sha256: d444d7a61af54c7c
 doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY — 9 sections: JOHN MILNOR; JOHN MILNOR; JOHN MILNOR"
+duplicate_of: "milnor-1982-hyperbolic-geometry-the-first-150-years"
 ---
 For example ^(7r/3) and JI{IT/6) are subject to the Q-linear relation 
 2JI(TT/6) = 3JI(W/3), 

@@ -7,7 +7,8 @@ section_number: 14
 pages: 12-14
 source_pdf: zagier-the-dilogarithm-function-copy-b.pdf
 source_sha256: c584944a501ef0c5
-doc_brief: "The Dilogarithm Function Don Zagier — 57 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+duplicate_of: "zagier-the-dilogarithm-function"
 ---
 In fact, equations (7) and (8) are equivalent, since any 4-tuple of points
 z0,...,z 3 can be brought into the form {∞, 0, 1,z } by the action of some

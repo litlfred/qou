@@ -7,7 +7,8 @@ section_number: 1.1
 pages: 1-4
 source_pdf: state.integrals.qseries.pdf
 source_sha256: a5e86443f35e21c0
-doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written"
+doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topolog y can be"
+duplicate_of: "arxiv-1304.2705v1"
 ---
 1.2. q-diﬀerence equations 4
 1.3. The case of the 4 1 knot 4

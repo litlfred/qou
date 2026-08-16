@@ -7,7 +7,8 @@ section_number: 2.1
 pages: 2-8
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
-doc_brief: "BRING’S CURVE: OLD AND NEW — Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties."
+doc_brief: "RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 matrix and its automorphisms. We begin with two descriptions: one as a model inP4 and the
 second as a plane curve. In particular we shall construct the birational map between these

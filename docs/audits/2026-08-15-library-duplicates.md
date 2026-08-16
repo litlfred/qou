@@ -17,7 +17,7 @@ report; acting on it is a separate step.
 - [`arxiv-2304.12545v1`](../../library/arxiv-2304.12545v1/) · [`hyperbolicandneumann`](../../library/hyperbolicandneumann/)
 - [`milnor-1982-hyperbolic-geometry-the-first-150-years`](../../library/milnor-1982-hyperbolic-geometry-the-first-150-years/) · [`milnor-hyperbolic`](../../library/milnor-hyperbolic/)
 
-## Near-duplicates, score >= 0.6 (14)
+## Near-duplicates, score >= 0.15 (27)
 
 `head` = normalised character-stream similarity, robust to re-typesetting.
 `shingle` = 5-word Jaccard, which misses re-typeset copies entirely.
@@ -26,17 +26,30 @@ when two copies are sectioned in a different order.
 
 | score | via | doc | doc |
 |---|---|---|---|
-| 1.000 | prefix | [`zagier-the-dilogarithm-function`](../../library/zagier-the-dilogarithm-function/) | [`zagier-the-dilogarithm-function-copy-b`](../../library/zagier-the-dilogarithm-function-copy-b/) |
-| 1.000 | prefix | [`neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds`](../../library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/) | [`neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co`](../../library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/) |
-| 1.000 | prefix | [`arxiv-1304.2705v1`](../../library/arxiv-1304.2705v1/) | [`stateintegralsqseries`](../../library/stateintegralsqseries/) |
-| 1.000 | prefix | [`arxiv-1303.5278v1`](../../library/arxiv-1303.5278v1/) | [`topologicalinvariance3dindex`](../../library/topologicalinvariance3dindex/) |
-| 1.000 | prefix | [`arxiv-1206.6004v2`](../../library/arxiv-1206.6004v2/) | [`sigma12-065`](../../library/sigma12-065/) |
-| 1.000 | prefix | [`arxiv-0808.1533v1`](../../library/arxiv-0808.1533v1/) | [`arxiv-0808.1533v3`](../../library/arxiv-0808.1533v3/) |
-| 1.000 | prefix | [`1-s20-0040938385900047-main`](../../library/1-s20-0040938385900047-main/) | [`neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co`](../../library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/) |
-| 1.000 | prefix | [`1-s20-0040938385900047-main`](../../library/1-s20-0040938385900047-main/) | [`neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds`](../../library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/) |
-| 1.000 | prefix | [`0310280v4`](../../library/0310280v4/) | [`gt-v10-n3-p07-p`](../../library/gt-v10-n3-p07-p/) |
-| 1.000 | prefix | [`0306345v1`](../../library/0306345v1/) | [`agt-v3-n1-p17-p`](../../library/agt-v3-n1-p17-p/) |
-| 0.977 | head | [`arxiv-0901.1612v1`](../../library/arxiv-0901.1612v1/) | [`deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin`](../../library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/) |
-| 0.831 | shingle | [`arxiv-1710.04865v2`](../../library/arxiv-1710.04865v2/) | [`cjdoubletwistfinal`](../../library/cjdoubletwistfinal/) |
-| 0.708 | prefix | [`arxiv-2203.17029v1`](../../library/arxiv-2203.17029v1/) | [`modularqholonomicmodules`](../../library/modularqholonomicmodules/) |
-| 0.625 | prefix | [`arxiv-1808.05026v1`](../../library/arxiv-1808.05026v1/) | [`fd58d8e182edda805fed0946606c5ab82f81`](../../library/fd58d8e182edda805fed0946606c5ab82f81/) |
+| 1.000 | chars | [`neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds`](../../library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/) | [`neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co`](../../library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/) |
+| 1.000 | chars | [`1-s20-0040938385900047-main`](../../library/1-s20-0040938385900047-main/) | [`neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co`](../../library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/) |
+| 1.000 | chars | [`1-s20-0040938385900047-main`](../../library/1-s20-0040938385900047-main/) | [`neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds`](../../library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds/) |
+| 0.998 | chars | [`zagier-the-dilogarithm-function`](../../library/zagier-the-dilogarithm-function/) | [`zagier-the-dilogarithm-function-copy-b`](../../library/zagier-the-dilogarithm-function-copy-b/) |
+| 0.997 | chars | [`arxiv-1206.6004v2`](../../library/arxiv-1206.6004v2/) | [`sigma12-065`](../../library/sigma12-065/) |
+| 0.963 | chars | [`arxiv-1710.04865v2`](../../library/arxiv-1710.04865v2/) | [`cjdoubletwistfinal`](../../library/cjdoubletwistfinal/) |
+| 0.918 | chars | [`arxiv-1303.5278v1`](../../library/arxiv-1303.5278v1/) | [`topologicalinvariance3dindex`](../../library/topologicalinvariance3dindex/) |
+| 0.856 | chars | [`arxiv-1304.2705v1`](../../library/arxiv-1304.2705v1/) | [`stateintegralsqseries`](../../library/stateintegralsqseries/) |
+| 0.781 | chars | [`0310280v4`](../../library/0310280v4/) | [`gt-v10-n3-p07-p`](../../library/gt-v10-n3-p07-p/) |
+| 0.755 | chars | [`arxiv-2203.17029v1`](../../library/arxiv-2203.17029v1/) | [`modularqholonomicmodules`](../../library/modularqholonomicmodules/) |
+| 0.746 | chars | [`0306345v1`](../../library/0306345v1/) | [`agt-v3-n1-p17-p`](../../library/agt-v3-n1-p17-p/) |
+| 0.662 | chars | [`arxiv-2109.00379v1`](../../library/arxiv-2109.00379v1/) | [`s40687-023-00400-3`](../../library/s40687-023-00400-3/) |
+| 0.655 | chars | [`arxiv-0901.1612v1`](../../library/arxiv-0901.1612v1/) | [`deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin`](../../library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/) |
+| 0.648 | chars | [`arxiv-2208.13692v1`](../../library/arxiv-2208.13692v1/) | [`s40879-023-00706-0`](../../library/s40879-023-00706-0/) |
+| 0.510 | chars | [`celebratio-mathematica-neumann-hyperbolic-3-manifolds`](../../library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/) | [`hyperbolicandneumann`](../../library/hyperbolicandneumann/) |
+| 0.509 | chars | [`arxiv-2304.12545v1`](../../library/arxiv-2304.12545v1/) | [`celebratio-mathematica-neumann-hyperbolic-3-manifolds`](../../library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/) |
+| 0.484 | chars | [`arxiv-1203.3404v1`](../../library/arxiv-1203.3404v1/) | [`arxiv-1404.2541v1`](../../library/arxiv-1404.2541v1/) |
+| 0.472 | chars | [`agt-v7-n2-p13-s`](../../library/agt-v7-n2-p13-s/) | [`arxiv-math-0611504v1`](../../library/arxiv-math-0611504v1/) |
+| 0.457 | chars | [`arxiv-0808.1533v1`](../../library/arxiv-0808.1533v1/) | [`arxiv-0808.1533v3`](../../library/arxiv-0808.1533v3/) |
+| 0.455 | chars | [`arxiv-1808.05026v1`](../../library/arxiv-1808.05026v1/) | [`fd58d8e182edda805fed0946606c5ab82f81`](../../library/fd58d8e182edda805fed0946606c5ab82f81/) |
+| 0.309 | chars | [`arxiv-1704.01735v4`](../../library/arxiv-1704.01735v4/) | [`arxiv-2009.03688v6`](../../library/arxiv-2009.03688v6/) |
+| 0.304 | chars | [`arxiv-1104.0755v2`](../../library/arxiv-1104.0755v2/) | [`arxiv-1203.3404v1`](../../library/arxiv-1203.3404v1/) |
+| 0.276 | chars | [`104171-qt-83`](../../library/104171-qt-83/) | [`ki52`](../../library/ki52/) |
+| 0.244 | chars | [`pjm-v154-n1-p09-s`](../../library/pjm-v154-n1-p09-s/) | [`the-period-matrix-of-bring-s-curve-1hik02mwva`](../../library/the-period-matrix-of-bring-s-curve-1hik02mwva/) |
+| 0.244 | chars | [`arxiv-1104.0755v2`](../../library/arxiv-1104.0755v2/) | [`arxiv-1404.2541v1`](../../library/arxiv-1404.2541v1/) |
+| 0.183 | chars | [`arxiv-1404.0331v1`](../../library/arxiv-1404.0331v1/) | [`arxiv-2006.02042v1`](../../library/arxiv-2006.02042v1/) |
+| 0.176 | chars | [`arxiv-1808.05026v1`](../../library/arxiv-1808.05026v1/) | [`arxiv-1809.08419v1`](../../library/arxiv-1809.08419v1/) |

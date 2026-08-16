@@ -7,7 +7,8 @@ section_number: 1
 pages: 1-2
 source_pdf: 1808.05026v1.pdf
 source_sha256: 2781e0b34e7889d6
-doc_brief: "GR ¨OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF — For Temperley-Lieb algebras of types B and D, we construct their Gr¨ obner-Shirshov bases and the corresponding standard monomials."
+doc_brief: "Palestine Journal of Mathematics — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another combinatorial"
+duplicate_of: "fd58d8e182edda805fed0946606c5ab82f81"
 ---
 Originally, the Temperley-Lieb algebra appears in the cont ext of statistical mechanics [15],
 and later its structure has been studied in connection with k not theory, where it is known to be

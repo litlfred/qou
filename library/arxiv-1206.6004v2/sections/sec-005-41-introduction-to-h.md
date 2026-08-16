@@ -8,6 +8,7 @@ pages: 6-9
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
 doc_brief: "Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr´ ıguez have provided the most detailed study of the curve thus far via a hyperbolic model."
+duplicate_of: "sigma12-065"
 ---
 Riera and Rodr´ ıguez, in [17], give Bring’s curve as a quotient,H, of the hyperbolic disc. They
 then proceed to calculate a period matrix taking account of the symmetries of the curve.

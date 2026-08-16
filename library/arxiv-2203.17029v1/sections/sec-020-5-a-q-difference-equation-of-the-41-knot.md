@@ -7,7 +7,8 @@ section_number: 5
 pages: 37-40
 source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
-doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised"
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
+duplicate_of: "modularqholonomicmodules"
 ---
 This section is devoted to the proof of Theorem 1.7, Theorem 1.8 and Theorem 1.9.
 5.1. Solutions. The q-diﬀerence equation ( 28) has Newton polygon shown in Figure 4.

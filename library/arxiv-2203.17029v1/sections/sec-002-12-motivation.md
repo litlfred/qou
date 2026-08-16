@@ -7,7 +7,8 @@ section_number: 1.2
 pages: 3-5
 source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
-doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised"
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
+duplicate_of: "modularqholonomicmodules"
 ---
 What does it take to solve a q-diﬀerence equation?
 Solving a linear equation usually means giving a basis of solutions, say at t = 0 and

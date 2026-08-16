@@ -8,6 +8,7 @@ pages: 16-19
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
 doc_brief: "Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr´ ıguez have provided the most detailed study of the curve thus far via a hyperbolic model."
+duplicate_of: "sigma12-065"
 ---
 We now describe how symmetries may be used to restrict the vector of Riemann constants by
 recalling some results we have established elsewhere.

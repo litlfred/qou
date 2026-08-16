@@ -7,7 +7,8 @@ section_number: C
 pages: 26-27
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
-doc_brief: "Jump to Bibliography by Stavros Garoufalidis and Don Zagier Published: 2023 — Wal ter Neu mann — hence forth simply Wal ter — has made huge con tri bu ‐ tions to to po logy, sin gu lar ity the ory"
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+duplicate_of: "arxiv-2304.12545v1"
 ---
 lish ers (Cov entry, UK), 1998. Ded ic ated to Dav id Ep stein on the oc ca sion of his
 60th birth day. MR 1668316 Zbl 0902. 57013 ArXiv math/ 9712226

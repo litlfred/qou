@@ -7,7 +7,8 @@ section_number: 2
 pages: 2-3
 source_pdf: 1808.05026v1.pdf
 source_sha256: 2781e0b34e7889d6
-doc_brief: "GR ¨OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF — For Temperley-Lieb algebras of types B and D, we construct their Gr¨ obner-Shirshov bases and the corresponding standard monomials."
+doc_brief: "Palestine Journal of Mathematics — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another combinatorial"
+duplicate_of: "fd58d8e182edda805fed0946606c5ab82f81"
 ---
 In this section, we recall a basic theory of Gr¨ obner-Shirshov basesfor associative algebras so
 as to make the paper self-contained. There will be some prope rties listed without proofs which

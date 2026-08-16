@@ -7,7 +7,8 @@ section_number: 2.1
 pages: 4-7
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
-doc_brief: "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study"
+doc_brief: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
+duplicate_of: "agt-v7-n2-p13-s"
 ---
 matrix dilogarithms RN (∆( b,w,f,c )) ∈ Aut(CN ⊗ CN ) deﬁned for every odd positive integer N [5].
 Flat/charged-I tetrahedra. Consider the half-space model of the oriented hyperbolic space H3,

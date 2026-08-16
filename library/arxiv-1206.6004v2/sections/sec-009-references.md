@@ -8,6 +8,7 @@ pages: 19-20
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
 doc_brief: "Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr´ ıguez have provided the most detailed study of the curve thus far via a hyperbolic model."
+duplicate_of: "sigma12-065"
 ---
 [1] Berndt B.C., Ramanujan’s notebooks. Part III, Springer-Verlag, New York, 1991.
 [2] Braden H.W., Northover T.P., Klein’s curve, J. Phys. A: Math. Theor. 43 (2010), 434009, 17 pages,

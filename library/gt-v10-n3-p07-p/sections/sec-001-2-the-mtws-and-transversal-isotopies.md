@@ -7,7 +7,8 @@ section_number: 2
 pages: 4-4
 source_pdf: gt-v10-n3-p07-p.pdf
 source_sha256: 1f226aac77351a69
-doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S B IRMAN WILLIAM W M ENASCO The main result of this paper is a negative answer to the question: are all transversal — 12 sec"
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
+duplicate_of: "0310280v4"
 ---
 The goal of this section is to prove Theorem 2, a special and limited version of Theorem
 1, the main result in [6]. Theorem 1 is valid in the topological setting, whereas Theorem

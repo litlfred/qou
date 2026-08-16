@@ -7,7 +7,8 @@ section_number: 2
 pages: 31-35
 source_pdf: zagier-the-dilogarithm-function-copy-b.pdf
 source_sha256: c584944a501ef0c5
-doc_brief: "The Dilogarithm Function Don Zagier — 57 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+duplicate_of: "zagier-the-dilogarithm-function"
 ---
 In Chapter I of this paper we discussed both functional equations of the dilog-
 arithm function and numerical identities involving the values of di logarithms

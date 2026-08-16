@@ -147,9 +147,12 @@ def main() -> int:
         if not (os.path.isdir(d) and os.path.exists(os.path.join(d, "structure.json"))):
             continue
         # A container (a bound issue that has been split) holds the same
-        # pages as its children; ranking both counts them twice.
+        # pages as its children, and a duplicate is another copy of a work
+        # already ranked; either way, ranking both counts one work twice
+        # and inflates its apparent support.
         try:
-            if json.load(open(os.path.join(d, "structure.json"))).get("container"):
+            art = json.load(open(os.path.join(d, "structure.json")))
+            if art.get("container") or art.get("duplicate_of"):
                 continue
         except Exception:
             pass

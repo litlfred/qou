@@ -8,6 +8,7 @@ pages: 4-4
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
 doc_brief: "Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr´ ıguez have provided the most detailed study of the curve thus far via a hyperbolic model."
+duplicate_of: "sigma12-065"
 ---
 The points at infinity for the HC curve (2.1) are given by (the real points) [0 , 1, 0] and [1, 0, 0],
 but the latter is singular. In fact the singularities of the HC curve are [1 , 0, 0] and [ζk,ζ 2k, 1]

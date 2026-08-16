@@ -92,7 +92,10 @@ def build(docdir: str) -> dict | None:
         art = json.load(open(sj))
     except Exception:
         return None
-    if art.get("container"):
+    # A container holds other documents; a duplicate is another copy of one
+    # already in the index. Neither should occupy its own index line — the
+    # point of the scan tier is one line per *work*.
+    if art.get("container") or art.get("duplicate_of"):
         return None
 
     doc_id = art.get("doc_id") or os.path.basename(docdir)
@@ -180,8 +183,14 @@ def build(docdir: str) -> dict | None:
     }
 
 
-def inject_context(docdir: str, brief: str) -> int:
-    """Contextual retrieval: put the document brief in each chunk."""
+def inject_context(docdir: str, brief: str, duplicate_of: str = "") -> int:
+    """Contextual retrieval: put the document brief in each chunk.
+
+    Duplicate copies get this too. They keep their sections on disk and
+    stay greppable, so a hit landing in one needs the same context as any
+    other — plus a pointer saying which copy is canonical, otherwise the
+    reader has no way to tell they are looking at the second of two.
+    """
     n = 0
     for f in sorted(glob.glob(os.path.join(docdir, "sections", "*.md"))):
         raw = open(f, encoding="utf-8", errors="replace").read()
@@ -191,9 +200,12 @@ def inject_context(docdir: str, brief: str) -> int:
         if end == -1:
             continue
         fm, body = raw[4:end], raw[end + 5:]
-        fm = "\n".join(l for l in fm.splitlines() if not l.startswith("doc_brief:"))
+        fm = "\n".join(l for l in fm.splitlines()
+                       if not l.startswith(("doc_brief:", "duplicate_of:")))
         esc = brief.replace('"', "'")
         fm += f'\ndoc_brief: "{esc}"'
+        if duplicate_of:
+            fm += f'\nduplicate_of: "{duplicate_of}"'
         open(f, "w", encoding="utf-8").write("---\n" + fm + "\n---\n" + body)
         n += 1
     return n
@@ -237,8 +249,16 @@ def main() -> int:
     args = ap.parse_args()
 
     rows, injected, kept = [], 0, 0
+    dup_dirs: list[tuple[str, str]] = []
     for d in sorted(glob.glob(os.path.join(LIB, "*"))):
         if not os.path.isdir(d):
+            continue
+        try:
+            dup = json.load(open(os.path.join(d, "structure.json"))).get("duplicate_of")
+        except Exception:
+            dup = None
+        if dup:
+            dup_dirs.append((d, dup))
             continue
         path = os.path.join(d, "summary.json")
         if os.path.exists(path):
@@ -266,6 +286,17 @@ def main() -> int:
             if not args.no_inject:
                 injected += inject_context(d, s["brief"])
 
+    # Duplicate copies carry the canonical's brief so a grep hit inside one
+    # is still interpretable, and a `duplicate_of` line so the reader knows
+    # to prefer the other copy. They get no index line of their own.
+    by_id = {r["doc_id"]: r for r in rows}
+    dup_injected = 0
+    if args.apply and not args.index_only and not args.no_inject:
+        for d, canon in dup_dirs:
+            src = by_id.get(canon)
+            if src:
+                dup_injected += inject_context(d, src["brief"], duplicate_of=canon)
+
     idx = write_index(rows)
     stale = (not os.path.exists(INDEX)) or open(INDEX, encoding="utf-8").read() != idx
     if args.apply or args.index_only:
@@ -278,6 +309,9 @@ def main() -> int:
     print(f"  extended summaries  ~{et:,} tokens total, ~{et//max(len(rows),1)} each")
     if injected:
         print(f"  contextual retrieval: doc_brief injected into {injected} section files")
+    if dup_injected:
+        print(f"  duplicate copies: canonical brief + duplicate_of into {dup_injected} sections "
+              f"across {len(dup_dirs)} copies (no index line of their own)")
     if args.check:
         print("\nindex is", "STALE" if stale else "up to date")
         return 1 if stale else 0

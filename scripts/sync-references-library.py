@@ -96,6 +96,15 @@ def library_index() -> dict[str, dict]:
             if os.path.isdir(sdir) and any(f.endswith(".md") for f in os.listdir(sdir)):
                 stage = "sections"
                 info["sections"] = nsec
+            # Other copies of this same work, so a reader of the entry can
+            # see the library holds it more than once. Derived from the
+            # markers `library-resolve-duplicates.py` writes, not kept by
+            # hand — a hand-added field here would be silently dropped by
+            # `render()`, whose field list is fixed.
+            if art.get("duplicate_copies"):
+                info["alternates"] = sorted(art["duplicate_copies"])
+            elif art.get("duplicate_of"):
+                info["duplicateOf"] = art["duplicate_of"]
         if os.path.exists(os.path.join(d, "candidates.json")):
             stage = "candidates"
         info["stage"] = stage
@@ -165,7 +174,8 @@ def notes_to_doc(text: str) -> dict[str, str]:
 
 
 def render(info: dict, indent: str = "    ") -> str:
-    order = ["docId", "dir", "pdf", "claimedPath", "stage", "pages", "sections", "arxiv"]
+    order = ["docId", "dir", "pdf", "claimedPath", "stage", "pages", "sections", "arxiv",
+             "alternates", "duplicateOf"]
     lines = [f"{indent}{FIELD}: {{"]
     for k in order:
         if k not in info:
@@ -190,6 +200,17 @@ def sync(text: str, mapping: dict[str, str], index: dict[str, dict]) -> tuple[st
             info = {"stage": "missing", "claimedPath": doc_id[len(MISSING):]}
         else:
             info = index.get(doc_id) if doc_id else None
+            # Follow a duplicate to the canonical copy. The join names
+            # whichever file was ingested for this entry, which is not
+            # necessarily the better copy: Riera-Rodríguez was joined to an
+            # extraction that recovered 2 sections of 22 pages while another
+            # copy of the same paper had 8 of 25. Redirect, and keep the
+            # joined path as an alternate so nothing is lost.
+            if info and info.get("duplicateOf"):
+                canon = index.get(info["duplicateOf"])
+                if canon:
+                    info = dict(canon)
+                    info["alternates"] = sorted(set(info.get("alternates", [])) | {doc_id})
 
         insert_at = m.end()
         out.append(text[pos:insert_at])

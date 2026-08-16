@@ -7,7 +7,8 @@ section_number: 4.1
 pages: 20-21
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
-doc_brief: "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study"
+doc_brief: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
+duplicate_of: "agt-v7-n2-p13-s"
 ---
 r > 0, and r > 2 if g = 0, ﬁx a compact closed oriented base surface S of genus g with a set
 V = {v1,...,v r} of r marked points. Denote by −S the same surface with the opposite orientation,

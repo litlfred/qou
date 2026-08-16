@@ -7,7 +7,8 @@ section_number: 1
 pages: 1-3
 source_pdf: HyperbolicAndNeumann.pdf
 source_sha256: 3d66fe4c64bdc62b
-doc_brief: "Second copy of Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — see library/arxiv-2304.12545v1/, which is the same document."
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+duplicate_of: "arxiv-2304.12545v1"
 ---
 2. Volumes and Dehn surgeries 3
 3. The Bloch group and the extended Bloch group 7

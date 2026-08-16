@@ -7,7 +7,8 @@ section_number: 1.3
 pages: 4-5
 source_pdf: state.integrals.qseries.pdf
 source_sha256: a5e86443f35e21c0
-doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written"
+doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topolog y can be"
+duplicate_of: "arxiv-1304.2705v1"
 ---
 and 52 knots is given by [KLV16, AK]
 I1,2 =I41 I2,3 =I52.

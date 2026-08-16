@@ -7,7 +7,8 @@ section_number: 4.2
 pages: 17-17
 source_pdf: 1303.5278v1.pdf
 source_sha256: 92e417c93f8b883a
-doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifoldM (a collection"
+doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
+duplicate_of: "topologicalinvariance3dindex"
 ---
 to q of I∆(m,e ) is given by
 (12) δ(m,e ) = 1

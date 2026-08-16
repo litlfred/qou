@@ -8,6 +8,7 @@ pages: 8-10
 source_pdf: milnor_hyperbolic.pdf
 source_sha256: d444d7a61af54c7c
 doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY — 9 sections: JOHN MILNOR; JOHN MILNOR; JOHN MILNOR"
+duplicate_of: "milnor-1982-hyperbolic-geometry-the-first-150-years"
 ---
 PSL2C which is isomorphic to the multiplicative group C'. Such a representa­
 tion of Z © Z cannot be faithful, with discretely embedded image. For most 

@@ -7,7 +7,8 @@ section_number: 4
 pages: 56-58
 source_pdf: zagier-the-dilogarithm-function-copy-b.pdf
 source_sha256: c584944a501ef0c5
-doc_brief: "The Dilogarithm Function Don Zagier — 57 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+duplicate_of: "zagier-the-dilogarithm-function"
 ---
 In Chapter I we already introduced the higher polylogarithm functions Lim(z),
 their one-valued modiﬁcations Dm(z), and the idea that there might be rela-

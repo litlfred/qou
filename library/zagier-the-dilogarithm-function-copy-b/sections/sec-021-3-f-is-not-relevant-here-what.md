@@ -7,7 +7,8 @@ section_number: 3
 pages: 16-16
 source_pdf: zagier-the-dilogarithm-function-copy-b.pdf
 source_sha256: c584944a501ef0c5
-doc_brief: "The Dilogarithm Function Don Zagier — 57 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+duplicate_of: "zagier-the-dilogarithm-function"
 ---
 is relevant is that this group has been studied by Borel [2], who showe d that
 it is isomorphic (modulo torsion) to Zr2 and that there is a canonical homo-

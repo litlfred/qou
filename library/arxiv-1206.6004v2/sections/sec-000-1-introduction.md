@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
 doc_brief: "Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr´ ıguez have provided the most detailed study of the curve thus far via a hyperbolic model."
+duplicate_of: "sigma12-065"
 ---
 Bring’s curve is the genus 4 Riemann surface with the automorphism group of maximal size, S5
 [3, 9, 10, 19]. It may be expressed as the complete intersection in P4 given by

@@ -7,7 +7,8 @@ section_number: 5
 pages: 17-20
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
-doc_brief: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his"
+doc_brief: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coecients of certain power series considered by Habiro in his"
+duplicate_of: "agt-v3-n1-p17-p"
 ---
 In this last section, we illustrate one use of ω p , namely to give a formula for the
 colored Jones polynomial of twist knots (see Figure 3) in ter ms of the coeﬃcients

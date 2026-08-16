@@ -7,7 +7,8 @@ section_number: 4.6
 pages: 27-30
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
-doc_brief: "BRING’S CURVE: OLD AND NEW — Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties."
+doc_brief: "RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 following diagram. Solid arrows represent a covering map coming from a quotient, whereas
 ‘squiggly’ arrows indicate isomorphisms that are unexplained by group theory alone.

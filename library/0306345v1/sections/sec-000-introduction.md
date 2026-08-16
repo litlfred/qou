@@ -7,7 +7,8 @@ section_number: null
 pages: 1-3
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
-doc_brief: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his"
+doc_brief: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coecients of certain power series considered by Habiro in his"
+duplicate_of: "agt-v3-n1-p17-p"
 ---
 In a talk at the Mittag-Leﬄer Institute in May 1999, K. Habiro announced a
 new approach to computing the colored Jones polynomial of kn ots and quantum

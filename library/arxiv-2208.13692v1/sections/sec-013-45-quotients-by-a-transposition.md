@@ -7,7 +7,8 @@ section_number: 4.5
 pages: 25-27
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
-doc_brief: "BRING’S CURVE: OLD AND NEW — Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties."
+doc_brief: "RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 semi-invariants from the previous sections can also be used to calculate the quotient of
 Bring’s curve by a transposition. We take semi-invariants

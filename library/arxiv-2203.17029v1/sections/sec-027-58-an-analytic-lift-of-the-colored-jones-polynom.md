@@ -7,7 +7,8 @@ section_number: 5.8
 pages: 62-62
 source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
-doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised"
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
+duplicate_of: "modularqholonomicmodules"
 ---
 a proof of Theorem
 1.10. The main observation is that when x = qN , the series ˆf (0)(t, qN , q)

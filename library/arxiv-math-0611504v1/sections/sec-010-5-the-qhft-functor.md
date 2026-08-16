@@ -7,7 +7,8 @@ section_number: 5
 pages: 22-24
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
-doc_brief: "QUANTUM HYPERBOLIC GEOMETRY — W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study"
+doc_brief: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
+duplicate_of: "agt-v7-n2-p13-s"
 ---
 Consider a QHFT bordism B = ( ˜Y, ˜LF,ρ,α ±). For every odd integer N ≥ 1, we associate a ﬁnite
 dimensional complex linear space V (α±) to α±, and a linear map HN (B) : V (α−) → V (α+) to

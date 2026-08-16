@@ -424,6 +424,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 20,
       sections: 8,
+      alternates: ["0306345v1"],
     },
     type: "article-journal",
     title: "Skein-theoretical derivation of some formulas of Habiro",
@@ -4692,6 +4693,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 26,
       sections: 2,
+      alternates: ["neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds", "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co"],
     },
     type: "article-journal",
     title: "Volumes of hyperbolic three-manifolds",
@@ -5731,6 +5733,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 60,
       sections: 22,
+      alternates: ["arxiv-1303.5278v1"],
     },
     type: "article-journal",
     title:
@@ -8756,12 +8759,13 @@ export const references: CSLData[] = [
   ref({
     id: "riera-rodriguez-1992",
     library: {
-      docId: "the-period-matrix-of-bring-s-curve-1hik02mwva",
-      dir: "library/the-period-matrix-of-bring-s-curve-1hik02mwva",
-      pdf: "library/the-period-matrix-of-bring-s-curve-1hik02mwva/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf",
+      docId: "pjm-v154-n1-p09-s",
+      dir: "library/pjm-v154-n1-p09-s",
+      pdf: "library/pjm-v154-n1-p09-s/pjm-v154-n1-p09-s.pdf",
       stage: "candidates",
-      pages: 22,
-      sections: 2,
+      pages: 25,
+      sections: 8,
+      alternates: ["the-period-matrix-of-bring-s-curve-1hik02mwva"],
     },
     type: "article-journal",
     title: "The period matrix of Bring's curve",
@@ -8789,6 +8793,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 20,
       sections: 10,
+      alternates: ["arxiv-1206.6004v2"],
     },
     type: "article-journal",
     title:
@@ -8817,6 +8822,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 46,
       sections: 22,
+      alternates: ["arxiv-2208.13692v1"],
     },
     type: "article",
     title: "Bring's curve: old and new",
@@ -9106,6 +9112,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 33,
       sections: 9,
+      alternates: ["arxiv-0901.1612v1"],
     },
     type: "article",
     title:
@@ -9164,6 +9171,7 @@ export const references: CSLData[] = [
       pages: 30,
       sections: 4,
       arxiv: "0808.1533v3",
+      alternates: ["arxiv-0808.1533v1"],
     },
     type: "article",
     title:
@@ -9335,6 +9343,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 7,
       sections: 16,
+      alternates: ["arxiv-1808.05026v1"],
     },
     type: "article-journal",
     title: "Gröbner-Shirshov bases for Temperley-Lieb algebras",
@@ -9507,6 +9516,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 73,
       sections: 19,
+      alternates: ["arxiv-math-0611504v1"],
     },
     type: "article-journal",
     title: "Quantum hyperbolic geometry",
@@ -9744,6 +9754,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 67,
       sections: 4,
+      alternates: ["ki52"],
     },
     type: "article-journal",
     title: "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot",
@@ -9773,28 +9784,6 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2007]] },
     URL: "https://arxiv.org/abs/0707.3682",
     note: "PDF library/arxiv-0707.3682v2/ — Held copy v2 [math.KT].",
-  }),
-
-  ref({
-    id: "braden-northover2012",
-    library: {
-      docId: "arxiv-1206.6004v2",
-      dir: "library/arxiv-1206.6004v2",
-      pdf: "library/arxiv-1206.6004v2/1206.6004v2.pdf",
-      stage: "candidates",
-      pages: 20,
-      sections: 10,
-      arxiv: "1206.6004v2",
-    },
-    type: "article-journal",
-    title: "Bring's curve: its period matrix and the vector of Riemann constants",
-    author: [{ family: "Braden", given: "Harry W." }, { family: "Northover", given: "Timothy P." }],
-    issued: { "date-parts": [[2012]] },
-    "container-title": "SIGMA",
-    volume: "8",
-    page: "065",
-    DOI: "10.3842/SIGMA.2012.065",
-    note: "PDF library/arxiv-1206.6004v2/ — Bring's curve period matrix — the same object this corpus's H^1(Bring) calibration rests on.",
   }),
 
   ref({
@@ -10022,22 +10011,6 @@ export const references: CSLData[] = [
   }),
 
   ref({
-    id: "ohtsuki-ki52-preprint",
-    library: {
-      docId: "ki52",
-      dir: "library/ki52",
-      pdf: "library/ki52/ki52.pdf",
-      stage: "candidates",
-      pages: 52,
-      sections: 18,
-    },
-    type: "article",
-    title: "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot",
-    author: [{ family: "Ohtsuki", given: "Tomotada" }],
-    note: "PDF library/ki52/ — PREPRINT copy of the same paper as ohtsuki2016 (Quantum Topol. 7, 669-735). Registered separately because the library holds both files; cite ohtsuki2016 in preference.",
-  }),
-
-  ref({
     id: "takata2008",
     library: {
       docId: "kmj-48-2-255",
@@ -10094,26 +10067,6 @@ export const references: CSLData[] = [
   }),
 
   ref({
-    id: "riera-rodriguez1992",
-    library: {
-      docId: "pjm-v154-n1-p09-s",
-      dir: "library/pjm-v154-n1-p09-s",
-      pdf: "library/pjm-v154-n1-p09-s/pjm-v154-n1-p09-s.pdf",
-      stage: "candidates",
-      pages: 25,
-      sections: 8,
-    },
-    type: "article-journal",
-    title: "The period matrix of Bring's curve",
-    author: [{ family: "Riera", given: "Gonzalo" }, { family: "Rodriguez", given: "Rubi" }],
-    issued: { "date-parts": [[1992]] },
-    "container-title": "Pacific Journal of Mathematics",
-    volume: "154",
-    issue: "1",
-    note: "PDF library/pjm-v154-n1-p09-s/ — Bring's curve period matrix; paired with braden-northover2012.",
-  }),
-
-  ref({
     id: "besser-dejeu2008",
     library: {
       docId: "s0025-5718-07-02027-3",
@@ -10163,6 +10116,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 63,
       sections: 56,
+      alternates: ["zagier-the-dilogarithm-function-copy-b"],
     },
     type: "chapter",
     title: "The dilogarithm function",
@@ -10906,6 +10860,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 28,
       sections: 9,
+      alternates: ["gt-v10-n3-p07-p"],
     },
     type: "article-journal",
     title: "Stabilization in the braid groups II: Transversal simplicity of knots",
@@ -11191,6 +11146,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 66,
       sections: 30,
+      alternates: ["arxiv-2203.17029v1"],
     },
     type: "article",
     title: "Modular q-holonomic modules",
@@ -11353,6 +11309,7 @@ export const references: CSLData[] = [
       stage: "candidates",
       pages: 24,
       sections: 19,
+      alternates: ["arxiv-1710.04865v2"],
     },
     type: "article",
     title: "The colored Jones polynomial and Kontsevich-Zagier series for double twist knots",
@@ -11377,25 +11334,6 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1995]] },
     URL: "https://arxiv.org/abs/q-alg/9504015",
     note: "PDF library/arxiv-q-alg-9504015v2/ - Author read from the report number UMTG-183-95 context; verify before citing.",
-  }),
-
-  ref({
-    id: "baseilhac-benedetti2006",
-    library: {
-      docId: "arxiv-math-0611504v1",
-      dir: "library/arxiv-math-0611504v1",
-      pdf: "library/arxiv-math-0611504v1/0611504v1.pdf",
-      stage: "candidates",
-      pages: 40,
-      sections: 17,
-      arxiv: "math/0611504v1",
-    },
-    type: "article",
-    title: "Quantum hyperbolic geometry",
-    author: [{ family: "Baseilhac", given: "Stephane" }, { family: "Benedetti", given: "Riccardo" }],
-    issued: { "date-parts": [[2006]] },
-    URL: "https://arxiv.org/abs/math/0611504",
-    note: "PDF library/arxiv-math-0611504v1/ - The arXiv version of baseilhac-benedetti2007 (AGT 7, 845-917). Two copies of one work; cite the published one.",
   }),
 
   ref({

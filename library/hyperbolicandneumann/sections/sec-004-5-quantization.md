@@ -7,7 +7,8 @@ section_number: 5
 pages: 9-12
 source_pdf: HyperbolicAndNeumann.pdf
 source_sha256: 3d66fe4c64bdc62b
-doc_brief: "Second copy of Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — see library/arxiv-2304.12545v1/, which is the same document."
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+duplicate_of: "arxiv-2304.12545v1"
 ---
 next section, as well as many of the connections to number theory described in Section 6.
 Deﬁne anN×2N matrixH = (AB ) whose rows form a Z-basis for the lattice spanned by

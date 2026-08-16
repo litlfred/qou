@@ -7,7 +7,8 @@ section_number: 2
 pages: 13-13
 source_pdf: the-period-matrix-of-bring-s-curve-1hik02mwva.pdf
 source_sha256: 56f8ce317a00b0f3
-doc_brief: "PACIFI C JOURNA L OF MATHEMATICS — 2 sections: J K; (l"
+doc_brief: "Pacific Journal of Mathematics THE PERIOD MA TRIX OF BRING’S CURVE — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute"
+duplicate_of: "pjm-v154-n1-p09-s"
 ---
 = 
  1 1
