@@ -171,3 +171,31 @@ The re-derivation is NOT done. What a D-frame ladder needs is a phase of a
 DIFFERENT functional form, derived from the representation rather than
 axiomatised. Nothing here supplies one, and the crossing result says the
 C-frame answer is not a template to copy.
+
+## The phase is a BAD COORDINATE (2026-08-16, follow-on)
+
+alpha_req has a square-root branch point at q_b = 1.110663462558, only
+**0.062% above q0**; the law alpha_req - u/2 ~ -sqrt(2*eps(q)) reproduces the
+measured slope to 0.5% (41.30 vs 41.53), where eps = 1 - Q_cod/(Q_A(1-u^2)).
+
+Consequences:
+
+1. **The slope mismatch is structural, not accidental.** alpha_C is analytic
+   near q0; alpha_req is not. No analytic-in-q phase ansatz can equal
+   alpha_req as a FUNCTION -- they can only cross at a point. So the prune
+   extends from "no z-family" to "no analytic phase ansatz at all".
+
+2. **The branch point is a parameterization artifact.** If the true
+   correction is a smooth factor F(q) = Q_beta/Q_A, then writing
+   F = cos(alpha - u/2) manufactures a sqrt singularity wherever F = 1. The
+   cosine INTRODUCES the pathology; it is not in the physics. The natural
+   coordinate is the multiplicative correction F, which is smooth.
+
+3. **c_3 inherits it.** c_3 is defined through the cos parameterization, so
+   its steep anchor-dependence and the S_leak window are downstream of a bad
+   coordinate choice, not of substrate structure.
+
+Recommendation for whoever takes the derivation: work in F, not alpha. The
+eigenphase identification that forces the cosine is AXIOMATISED
+(QOU.Interactions.QBetaCosResummation), so dropping it costs nothing proved.
+Target to DERIVE (not match): 1 - F(q0) = 1.6748e-3.
