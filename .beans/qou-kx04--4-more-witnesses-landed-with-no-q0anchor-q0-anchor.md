@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T22:39:50Z
-updated_at: 2026-08-16T02:51:30Z
+updated_at: 2026-08-16T13:01:18Z
 parent: qou-pq8k
 ---
 
@@ -155,3 +155,34 @@ compromised by this sandbox's stack, not by the edits:
 So the counts are unchanged from the mw1p end state (`Q0_ANCHOR_MISSING 1885`);
 the stamps land on the next run in a sound environment. Withholding them is the
 point: committing either would have shipped an environment artifact as a result.
+
+
+## 2026-08-16 — a standing commitment on the b4/b6 reason wording (PR #5210 churn cone)
+
+#5210 (`qou-cwin`) is authorised to re-express the Q_β precision ladder in
+**h = q − 1/q** instead of **u = b·ℏ_q²**, and named `qbeta_ohtsuki_nz_bridge_b4/b6`
+as in scope. They are explicitly **not** touching these witnesses.
+
+Both `q0AnchorReason` strings name the coordinate:
+
+- b4 — *"Taylor coefficients in a FREE parameter **u** against proved constants…"*
+- b6 — *"Same free-parameter-**u** construction as the b4 sibling…"*
+
+**Not changed, and deliberately.** After a u → h reframe these become mildly
+anachronistic, not false: the audit-relevant claim is *"no substrate value is
+read"*, and that is untouched by a change of coordinate. b4 is robust either way
+— it carries the actual evidence (the proved constants, and the import-cone fact
+that `sdeformed_channel_signflip_probe` imports only json/subprocess/datetime/
+pathlib/mpmath, so the `y_lambda_at` muon-cache straddle is unreachable). b6 is
+the thinner one, being largely by-reference to b4.
+
+Regenerating two witnesses to correct wording that is still true would contradict
+the discipline the rest of this bean was run under (see the two withheld
+witnesses above). **Commitment posted publicly on #5194: if the reframe lands, I
+fix the wording then.** Recorded here so it survives the session.
+
+**The general lesson, which is the part worth keeping.** A free-text reason should
+state the *invariant* — what is or is not read — and not the *incidental
+coordinate*. b4 does this almost by accident (the evidence dominates the variable
+name); b6 does not. Passed to #5210 because a `ladder_frame` reason field would be
+far more exposed: its entire subject *is* the coordinate.
