@@ -1,0 +1,74 @@
+Asymptotics of the quantum invariants for the figure 8 knot 57
+By (B.1) we immediately get that
+
+lane 1 :
+er Per | = exp (« [pect —nt——Im (Lie (ery Te2)))) .
+T
+
+Now by continuity of (t,¢) H Lig enV Tee at) on [0,1] x [0,1] we can remove
+
+the parameter € again by using Lebusgue’s dominated convergence theorem once
+
+1
+dt = [ edt
+0
+
+2
+|L.(r)| < Sar exp(2A + 2Br/r) (1—e*"").
+aT
+
+more. This gives us
+
+1
+lim evant | r@(e+V=Tt)
+e304 Jo
+
+leading to the estimate
+
+Next we estimate [?. By (4.26) we get
+
+1
+[P(n)| < 402" [ lae(VoT + #)]at.
+0
+
+Similarly to the analysis of I we introduce the parameter € and get
+l-e
+[If (r)| < 4exp(2A + 2Br/r)e?"" lim je PVT at,
+204 Je
+Here
+er VT) | = e712) exp (-<im (Lio(e?"e?"¥)) )
+wT
+
+by (B.1), so by Lebesgue’s dominated convergence theorem we get
+1
+|I2.(r)| < 4exp(2A + aBr/rje* [ en" exp (-2im (Lio(e?e*"¥™)) ) dt.
+0 wT
+By definition of the dilogarithm we have
+
+1 seman")
+
+Im (Lio(e eV) __ [ Arg ( ds,
+0
+
+which is non-negative for t € (0, 1/2]. For t € [1/2, 1] we use that
+
+Im (Lis(e?re?"¥) ) —Im (Liev) 4 [ Arg (1 - serv")
+
+loe-2" s
+
+Ss
+
+ds,
+
+where the last integral is positive. The first term is bounded from below by
+-ye ~ = = by (4.24). We therefore end up with
+
+1
+W3(r)| 4exp(2A + 2Br/rje worm | erat
+0
+
+IA
+
+2 5
+= exp(2A + 2Br/r)eO- 1/9)" (e?"7 — 1),
+= exp(2A + 2Br/r)e (e )

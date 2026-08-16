@@ -1,0 +1,29 @@
+I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604 577
+
+3.3. Gog pentagons
+
+In this section, we consider generalizations of Gog trapezoids (so-called Gog pen-
+tagons) that were recently introduced by Biane and Cheballah [4]. In that paper also
+certain Magog-type objects were introduced (so-called GOGAm pentagons) along with
+the conjecture that there is the same number of Gog pentagons of a given type as there
+is of GOGAm pentagons of the same type and that this is still true if we restrict to
+pentagons that have a prescribed bottom entry. In this section, we use Corollary 6 to de-
+rive constant term expressions for various refined countings of Gog pentagons including
+fixing the bottom entry.
+
+Let m,n, kr, kp be non-negative integers with n+1<kp+kpr. An (m,n, kr, kp)-Gog
+pentagon is an arrangement of positive integers of the following form
+
+where n is the number of rows (n = 7 in the example), kz is the number of NE-diagonals
+(k_ = 5 in the example) and kp is the number of SE-diagonals (kp = 6 in the example).
+Moreover, the entries in the i-th NE-diagonal, 1 < i < ky (counted from the left),
+are bounded from below by i and the entries in the i-th SE-diagonal, 1 < i < kr
+(counted from the right), are bounded from above by m +n + 1 —i. The entries are
+weakly increasing along NE-diagonals and SE-diagonals, and strictly increasing along
+rows. (By the strict increase along rows, it suffices to require that the entries in the i-th
+NE-diagonal are bounded from below by i for 1 <i <n—kr+1 and that the entries in
+the i-th SE-diagonal are bounded from above by m+n+1—i forl1<i<n—kz, +1.)
+A (3,7,5,6)-Gog pentagon is displayed next.
+
+Obviously, (m,n,k)-Gog trapezoids are (m,n,k,n)-Gog pentagons. Gog pentagons
+were first defined by Biane and Cheballah in [4]; they use different parameters:

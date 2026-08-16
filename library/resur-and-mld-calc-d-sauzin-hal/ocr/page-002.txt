@@ -1,0 +1,104 @@
+Resurgence and Mould Calculus
+
+D. Sauzin, CNRS — IMCCE, Observatoire de Paris!
+
+Abstract
+
+Resurgence Theory and Mould Calculus were invented by
+J. Ecalle around 1980 in the context of analytic dynamical
+systems and are increasingly more used in the mathemat-
+ical physics community, especially since the 2010s. We
+review the mathematical formalism and touch on the ap-
+plications.
+
+Contents
+1 Introduction... 2.2... .....20004 1
+2 “Simple” version of Resurgence Theory .. 1
+2.1 Simple Q-resurgent series ...... 2
+
+2.2 Stability under product and nonlin-
+
+ear operations... ..........- 3
+2.3 Alien operators. Alien derivations . 3
+2.4 Freeness of the alien derivations and
+
+first hint of mould calculus .... . 4
+
+3 Simple resurgent functions obtained by
+Borel-Laplace summation ..........
+
+on
+
+3.1 Borel-Laplace summation ..... . 5
+3.2 Transseries, symbolic Stokes auto-
+morphism ...........-.00- 6
+
+4 The algebra R of general resurgent singu-
+
+larities . 2. ee ee 7
+41 Relaxing the constraint on the loca-
+tion of singularities. ......... 7
+4.2 Examples from mathematical physics. 8
+4.3 Relaxing the constraint on the na-
+ture of singularities. ......... 8
+5 Mould Calculus... 2... 2. ee 10
+5.1 The mould algebra... .. 2.2... 10
+5.2 The hyperlogarithmic mould. .... 11
+5.3 Mould aspects of the MZV world .. 12
+6 Applications. 2... 2... 20.020 004 12
+
+1File: Resur_and_Mld_Calc_D_SAUZIN_HAL.tex 2023-
+10-23
+
+Keywords: resurgence, alien derivation, analytic con-
+tinuation, asymptotic expansion, Laplace transform, alge-
+braic combinatorics, Hopf algebra, perturbative quantum
+field theory, non-pertubative physics, deformation quanti-
+zation, multizeta values.
+
+1 Introduction
+
+Resurgence Theory, founded in the late 1970s by the
+French mathematician Jean Ecalle in the context of
+dynamical systems, has recently become a fixture in
+the mathematical physics research literature, with a
+burst of activity in applications ranging from quan-
+tum mechanics, wall-crossing phenomena, field the-
+ory and gauge theory to string theory. See [Woo23]
+for a non-technical account of the importance taken
+by Resurgence in current research in Quantum Field
+Theory.
+
+The theory may be seen as a refinement of the Borel-
+Laplace summation method designed to encompass
+the transseries which naturally arise in a variety of
+situations. Typically, a resurgent series is a diver-
+gent power series in one indeterminate that appears as
+the common asymptotic expansion to several analytic
+functions that differ by exponentially small quantities.
+The so-called ‘alien derivations’ are tools designed to
+handle these exponentially small discrepancies at the
+level of the series themselves. In the context of lo-
+cal analytic dynamical systems, they have allowed for
+quite a concrete description of various moduli spaces.
+
+Together with Resurgence, Ecalle also put forward
+Mould Calculus, a rich combinatorial environment
+of Hopf-algebraic nature, designed to deal with the
+infinite-dimensional free associative algebras gener-
+ated by the alien derivations, but whose scope goes
+much beyond; for instance, it provides remarkable
+tools for the study of the so-called ‘multiple zeta val-
+ues’ (MZV).
+
+2 “Simple”
+Theory
+
+version of Resurgence
+
+Resurgence theory [Eca81; Eca85] deals with a certain
+
+C-algebra R over C endowed with a family of C-linear
+derivations
+
+A, € Derc (R), (1)

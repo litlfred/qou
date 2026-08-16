@@ -1,0 +1,47 @@
+hand, the (Poincaré dual of) C;, is of type (2,2) with respect to this complex
+structure, so the second term vanishes identically. As in the proof of Theo-
+rem 3, we then conclude that dg = €, as required.
+
+Q.ED
+
+Remarks. The proof shows that Theorem 4 can be strengthened in two
+directions:
+
+(1) Let 7 = 7—df be the 1-form on J constructed in Lemma 2, satisfying
+dr =o. (The function f is given by formula (6).) Then each normal function
+vy gives an integral manifold of 7, ie. v*7 = 0. (This of course implies
+v*o =0.) Indeed, in the notation of the proof we have v*7 = € andv*f = g,
+so what we show is exactly the vanishing of v*r = € — dg. If we consider
+instead normal functions for 7 over M (suppressing the gauge), we see that
+they are integral manifolds for the contact structure on J given in Remark
+1 after Lemma 2.
+
+(2) The result of Theorem 4 holds for any normal function, not only for
+those coming from cycles. In fact, the condition v*rt = 0 is equivalent to
+Griffiths’ differential equation for a normal function. In this general setting
+we define the function g on 6 as the inner product
+
+g := (7,8)
+of the sections 7 (= the lift of v) and s (= the (3, 0)-form). Its value depends
+only on the partial lift >: B — T*M; we have g = »*f. The crucial formula
+(8) becomes:
+dg = (V7, Vs) + (V7, 8).
+So we have v*r = v*7 — dg = —(V7,s), and the vanishing of v*7 is indeed
+equivalent to the differential equation (7) of a normal function.
+
+We can define the contact structure on 7, and hence the symplectic struc-
+ture on 7, in terms of normal functions: The contact distribution is given at
+a point (Xo,%) € J as the subspace of T/x,,19)J spanned by differentials of
+all normal functions v defined near Xo. If we choose one such v, we obtain
+a splitting
+
+T(Xo,v0)T x F? H?( Xo)" © Tx,M,
+
+in terms of which the contact distribution is
+H? "(Xo)" ® Tx,M,
+and this subspace is independent of the choice of v, by (7).
+
+(3) An example of a “multi-valued” normal function is given by the in-
+clusion v : B — J of the total space 6B of a family of abelian subvarieties,
+
+17

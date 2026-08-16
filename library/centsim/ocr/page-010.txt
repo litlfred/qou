@@ -1,0 +1,49 @@
+260 M. Geck and R. Rouquier
+
+Suppose now that KH is a quasicentral K-algebra. We define the
+map e : Ko(kH) — Ko(KH) as the map dual to d with respect to the
+pairing (-,-), .e., for 7 € Ko(kH) and x € Ro( KH), we have
+
+(n, d(x))e = (e(n), x) K-
+
+Let us now give an alternative definition of e, without using d.
+
+Let O be a strict henselisation of O [Ray, Chapitre VIII]: this is
+an henselian (local) ring, local extension of O, faithfully flat as an O-
+module, with residue field k a separable closure of k. Furthermore, since
+O is integrally closed, the ring O is an integral domain [Ray, Chapitre
+IX, corollaire 1]. Let now © be a valuation ring, local extension of 6,
+contained in the field of fractions K of O, with residue field k’.
+
+Since © is henselian, every idempotent of KH can be lifted to an
+idempotent of | OH, hence every projective kH-module can be lifted to
+a projective OH-module. Let P be a projective kH-module and V a
+KH-module. There exists an O’H-lattice M such that V@K ~ M@K
+and a projective O’H-module Q such that Q @ k’ ~ P @ k’. We have
+
+(IP], 4(V1))e = (Q @ F'), [M ® kx = ([Q], Mo = ([KQ], [KM]) x.
+
+(Note that similarly, ([P], f @ la)e = (e([P]),f @ lala + lk for f €
+CF(H)). Hence, e([P]) = [KQ] (viewed in Ko(KH)). Furthermore, one
+has do cx 0 e([P]) = ce([P]), hence, the following diagram (“Brauer-
+Cartan square”) is commutative:
+
+d
+
+Ro(KH) “+ Ro(kH)
+J ig
+
+Ko(KH) &— Ko(kH)
+
+With the additional assumption that the algebra KH is semi-simple,
+one has Ko(KH) = Ro(KH) and we recover the usual Brauer-Cartan
+triangle (cf [Se, §15]).
+
+3. On the number of simple modules
+
+We keep the assumptions above: We have © an integrally closed local
+domain with residue field & perfect and field of fractions K perfect and
+Hf an O-algebra, free and finitely generated as an O-module.
+
+The following proposition generalizes a theorem of Hattori [CuRe,
+Theorem 32.5] about the injectivity of the Cartan map. In Hattori’s

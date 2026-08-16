@@ -1,0 +1,55 @@
+6 EROL YILMAZ, CENAP OZEL AND UGUR USTAOGLU
+
+Lemma 7. Let w be a reduced word starting with r; fori =1,...,n and lett bea
+reduced word starting with ro. Then wt is also a reduced word.
+
+Proof. The results follows from the following observation. Any leading word start-
+ing with r; fori =1,...,n in G’ do not contains ro. O
+
+Lemma 8. Let wi, w2,...Wk,We+1 be reduced words in the one of the forms given
+in the first three items of Lemma[6 If wyw2... we and waw3...Wwr41 are reduced,
+then wyw2...Wr41 18 also reduced.
+
+Proof. Let w = wiw2...wWr41. The only possible reduced subword of w is in the
+form rw2w3...wks where r and s are subwords of w; and wz+41, respectively. Since
+W2W3...WeWe41 iS reduced word, w2w3...w,8 is also reduced word starting with
+ro. Since r is a subword of wi, 7 is also a reduced word not containing ro. By
+Lemma [7] TW2W3...WzS is also reduced. Hence wyw2...wx+41 must be a reduced
+word. O
+
+Definition 9. Let a; = rorneri for 2<k<n4+1,0<l<nandl—k=i-2.
+Let
+U = (an) (Qn—1)'""7! ... (a)
+where m; > 0 for i = 1,...,n. Furthermore, if a; = rornkri, then aiz1 =
+roTn,k+1P Ul OF Aji—1 = TOTnkTiy—1- Notice that the number of possible u’s is gro,
+We call a;’s the components of the word u.
+
+Definition 10. Let b; = rornprig for 2 << p< n+1 and 0 < q < n satisfying
+q—p<-—l. There are n! such words.
+Let
+VO) = By (dpa) (Bs)
+
+where a; € {0,1}. Furthermore, if bj = rornp,Tig,, then bi-1 = Tornp,_yTiqi_, for
+pi < pi-1 and q > q-1. If pj =n+1 or q = 0, then aj = 0 for j =s,...,i-1.
+For the convenience, we define 1 = rorn,ooT1,-1 and v(1) = 1.
+
+Proposition 11. Let u and v') be words defined above where a1 = rorngris and
+bt = TornpTig. Then the words u, vd and w = uv) are reduced if p > k and
+q<linw.
+
+Proof. The result is easily follows from Lemma [6] and Lemma|8| O
+Figure 1.1 shows every possible reduced words for n = 4.
+Let
+wi = (roragria)™ (rora2ris)"”? (rorasris)"? (rorari3)""*To1
+and
+we = (roragria)”™* (roragria)”? (roraria)””? (roraris)"™ro1-
+Then w,; and wz are two reduced words in Ag. If we take mz = m3 = 0 and
+
+m, = m4 = 1, then the subword (roragri4)(rorari3)ro1 18 written twice. To avoid
+this situation, we define the arranged words.
+
+Definition 12. Let w = uv‘) be a reduced word where b; = roTnpTig and
+u= (ay) (dna) a (a),
+
+For i = 2,...,n2—1, let m; > 1 if aida = rornkrisqi, Gi = ToTnrTiL and
+aj—-1 = Tornrtiru- If a2 = rorneris+i,41 = TornkTu and p > k, then let m, > 1.

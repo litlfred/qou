@@ -1,0 +1,40 @@
+15 | 15
+13
+12 |12
+11j 11
+10
+9
+8 “f°
+
+x
+_
+
+5
+4|]4/4
+313
+
+3
+2 2/2
+1 1} 1
+(0,0)
+
+Fig. 2. Non-intersecting lattice paths.
+
+allowing steps in north direction and east direction is
+
+N((a,b+ 1) > (c,d = 1)) + QN((a + 1,b) > (c,d — 1))+
+PN((a,b+ 1) > (e- 1,d)) + PQN((a+ 1,6) > (c-1,d)),
+
+where N((a,b) — (c,d)) denotes the number of lattice paths starting at (a,b) and ending
+
+at (c,d) (which is equal to (rae). Thus, this generating function is
+
+c+d-—a-—b-2 c+d-—a-—b-2 c+d-—a-—b-2
+( d—b-2 ) +P +a/ d—b-1 ) + Pal d—b ).
+
+which evaluates to
+
+ce+d-—a-b-1 LP ct+d-a-b-1
+d—b-1 d—b
+
+if Q = 1. If we use

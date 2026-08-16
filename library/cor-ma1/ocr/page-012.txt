@@ -1,0 +1,69 @@
+OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES 11
+
+Summing on N we get
+
+= w (83) N git tm(k=i)~ (2)
+Do Fal) = au q ee Toe
+-r yew a Cian (4)n-n(Q)N4n
+
+ght tre) -(3)
+
+= > So aM gC2)(—1/a) (1)
+
+n=—00 N>In| (q)Nn- nl (q)N-4n
+
+_ ae ng? kn24(k—itt)n (=1/a)n |
+SS (-1)"a"¢ Tage
+x (—a9)n(=A) yng? CE) aN
+
+(Q)n-n(Q)N4n
+
+n=—0co
+
+N>|n|
+
+_ > (—1)"a" gh? +0 ittyn (=1/4)n (=49) 0
+(-aq)n — (@)oo
+
+n=—00
+by Proposition
+
+_ Cte non kn2+(k—i+t)n (=1/4)n
+= —1)"a"q ——.
+ey (aa).
+
+n=—0o
+
+This is equation (La) of Theorem
+
+4. PATHS AND SUCCESSIVE RANKS
+
+In this section we prove the case Cx,i(n,j) = Exi(n,j) of Theorem im In fact, we prove a refinement of
+this case:
+
+Proposition 4.1. There exists a one-to-one correspondence between the paths of major index n with j
+south steps counted by Ex,i(n,j) and the overpartitions of n with j non-overlined parts in the bottom line
+of their Frobenius representation and whose successive ranks lie in [—i + 2,2k—i-— 1] counted by Cy,i(n, j).
+This correspondence is such that the paths have N peaks if and only if the Frobenius representation of the
+overpartition has N columns.
+
+This proposition can be proved with a recursive argument. We can show that Ci,i(N ), the generating
+function for overpartitions whose Frobenius representation has N columns and whose successive ranks lie
+in [-i + 2,2k —i— 1], follows the same recurrences as €;,;(N), as done by Burge | f7) for the case of
+partitions. Details are given in B4). We propose here a direct mapping that is a generalization of a bijection
+
+of Bressoud (4.
+
+Given a lattice path which starts at (0,a) and a peak (x,y) with u South steps to its left, we map this
+
+peak to the pair (s,t) where
+
+s=(e+a-y+u)/2
+
+t=(e«-a+y-—2-u)/2
+if there are an even number of East steps to the left of the peak (we then say that the peak is of type 0),
+and
+
+s=(t«+at+y—1+4+u)/2
+
+t=(«-a-—y-—1-—u)/2

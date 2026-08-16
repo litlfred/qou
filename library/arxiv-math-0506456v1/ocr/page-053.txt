@@ -1,0 +1,52 @@
+Asymptotics of the quantum invariants for the figure 8 knot 53
+
+Proof of (4.23) Note first that the integral A,(¢) := thor ape i is conver-
+gent for all ¢ € C with |Re(¢)| < m since
+
+-R ott oo gt
+| ——____dit = -| ——~ dt
+—co Sinh(zt)t? Rr sinh(zt)t?
+
+t
+a Po © eRee- mS = dt.
+Rr sinh(rt)t? | ~ 1—e-?7® Jp
+
+Let b = sign(Im(¢)), where sign(0) can be put to both 1 and —1 in the following.
+Moreover, let h be a positive parameter and let 6, (t) = (1+ib)ht+ibh for t € [-1, 0]
+and let 5/'(t) = (1 — ib)ht + ibh for t € [0,1]. It is elementary to show that the
+integrals Sse aed? converge to zero as h converges to infinity for [Re(¢)| < 7.
+By the residue theorem we conclude that
+
+and
+
+1 — eS
+A,(¢) = pmb Res,=in {a}
+
+n=1
+
+for Im(¢) > 0 and |Re(¢)| < 7 and
+
+1 = eS?
+A = —-—271 Sz=-in L/D
+(6) Ay ™ d Res { sinh(7z)z? \
+for Im(¢) < 0 and |Re(¢)| < 7. Using (A.1) this leads directly to
+
+TT Lie(-e¥") Im(¢) 2 0,
+ws [$ ~ @ -Lin(-e ev)] JIm(¢) <0.
+
+for |Re(¢)| < a. Left is to prove the identity (A.2). To this end, let
+g(6) = 4 — = — Lin(—-e™*) — Lia(—e’*)
+for ¢ €Q:= {¢ € C| |Re(¢)| < 7}. By (4.22) we have
+(6) = 6 +4 (Log(1 + e") — Log(1 + e~“S))
+
+and therefore e’9(S) = 1. Since Q is connected, gis Ct and 9'(0) = 0 we get that
+g’ is identically zero on Q so g is constant on Q. Now g(0) = —4 — 2Lig(—1) and
+
+oo
+Lig (- =o
+
+so g(0) = 0. Finally we note that g is well-defined and continuous on 2 U {+71} so
+
+72
+
+g(+7) = 0 by continuity. o

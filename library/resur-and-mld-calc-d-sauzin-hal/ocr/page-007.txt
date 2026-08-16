@@ -1,0 +1,94 @@
+for any a € C. The summation operator is also an
+algebra homomorphism. Indeed, 4 maps the Cauchy
+product of formal series to convolution in C6 @ C{¢},
+which “7 maps to the pointwise product of functions:
+
+S1 (Gb) = (S7B(F74). (26)
+
+Equations (25)—(26) show that, if we start with ¢(z)
+formal solution to an ordinary differential equation
+or a difference equation, even a nonlinear one, and
+if we can subject it to Borel-Laplace summation, then
+SY? $(z) is an analytic solution to the same equation.
+Notice however that there may exist other solutions
+with the same asymptotic series @, maybe obtained
+by means of Y! with a different interval J’, or by
+some other means...
+
+The Borel-Laplace picture becomes particularly in-
+teresting when we start with a resurgent series ¢(z),
+in which case p’(z) = 7G(z) deserves to be called
+a resurgent function.
+
+Resurgent
+function v7 (z)
+
+1 ee
+cod + G(C) with
+
+|
+I
+I good analytic
+|
+
+Borel 8 —~ continuation
+|
+Resurgent
+
+series ((z)
+
+3.2 Transseries, symbolic Stokes automor-
+phism
+
+Indeed, let us pick a generator w; of 2 and 0, € R
+so that Qt C d := e!4=Ryo (making use of nota-
+tions (2) and (10)). Suppose that $ € Ré, is 1-
+summable in the directions of J, := (0, — 6,0.) as
+well as those of J. := (0:,0, + 6) for some 6 €
+(0,7). We then have two Borel sums at our disposal,
+S 1+ G(z) and .Y/-G(z). Comparing them in the do-
+main 97+ 1 D/- 7 {Re(ze!*) > O}, we find
+
+SH) -F1-H2)= fe GKC)aG (27)
+Tuite
+
+with a contour [gig that can be decomposed in a sum
+of contours [),T2,... as illustrated on Figure (4).
+
+Figure 4: Decomposition of the contour for the differ-
+ence of two Laplace transforms as a sum of contours.
+
+By the Cauchy theorem we thus get
+
+S12) = 7-H) +T | e*G(ehac, (28)
+k>iv Pe
+
+at least if the growth of the relevant branches of @(¢)
+along the [;,’s stays at most exponential and the series
+over k is convergent (if not, (28) still has asymptotic
+meaning upon appropriate truncations). The point is
+that, for each k > 1, in view of (4), (9) and (11),
+the branch of @(¢) that we are using along [, has a
+pole and a monodromy variation precisely described
+by BAL, @, hence
+
+[eS eager 7- AEA) (29)
+Tr
+
+(use the change of variable ¢ = wz + € and (44)—(45)
+below) and, finally,
+
+SI G= SF" G+ Vee ALG. (30)
+
+k>1
+
+The right-hand side of (30) can be interpreted as
+the Borel-Laplace summation of a transseries, i.e. we
+are naturally led to work with expressions of the form
+
+Y= por died, - ERS, (31)
+k>1
+which live in the space
+Rolle = SeRy. (82)
+
+k>0

@@ -1,0 +1,62 @@
+268 C. McMullen
+
+Adopting the notation of the preceding section, we now observe:
+
+Proposition 4.2. If Univ(A, f) is irreducible, then part(J) contains a separator
+K.
+
+Proof. Let F denote the union of the free homotopy classes IK) over all elements
+K of part(J). Since any two elements of part(J) are disjoint, [ can be represented
+by a finite collection of disjoint simple closed curves on @—A. Every [¢] in
+Mod(J, f) maps J to J, so the system of curves I is preserved (up to homotopy)
+by Univ(A, f). (Cf. the Remarks in §3).
+
+If Univ(A, f) is irreducible, P (and hence each ['(K)) contains only peripheral
+curves. Then by Proposition 3.1, part(J) contains a separator. [
+
+Proposition 4.3. Suppose |A|=3, Univ(A, f) fixes no point of A, and K in part(J)
+is a separator. Then
+
+(a) K is a component of the Julia set, and
+(b) f(K)=K.
+
+Proof. Call a set UcEé distinguished if @(U)=U for all ¢ in Mod(J UA, f).
+By hypothesis, no point of A is distinguished.
+
+We claim there is no distinguished component of €—J. Indeed, if U is
+a component of @—J, there is a k such that f*(U) coincides with the immediate
+basin of attraction of some point {a} in A (since f is attractive), and if U
+were distinguished {a} would be too. The proofs of (a) and (b) rely on this
+fact.
+
+(a) |A|23 implies K is the unique separator in part(J). Thus K is distin-
+guished. Since there is no distinguished component of @—J, K is a component
+of J.
+
+(b) Let B denote the union of the immediate basins of attraction of the
+points in A. B is a finite union of open components of €—J, so the same
+is true of f ~"(B) for each n. We have
+
+Bcf '(B)cf~?(B).... and Uf~"(B)=C—J.
+
+For each n, let F, denote the component of the complement of f~"(B) which
+contains the separator K. Then NF,=K. If f(F,4,)¢F, for all n, then f(K)=K
+as claimed.
+
+Otherwise there exists a least n such that f(F,,,)0 F,=@. To complete the
+root we will use this situation to produce a distinguished component U in
+
+—J.
+
+Since K is distinguished, so are F, and f(F,4 ,). There is a unique component
+Vof C-F, which contains f(F,,,). Vis an open disk, and 6VcF,, so Vaf ~"(B)
+consists of a finite number of components of f~"(B); among these there is a
+unique component U such that Vc dU. U is constructed naturally from distin-
+guished objects, so U itself is distinguished. This is the desired contradiction.
+
+The final idea in the proof is that the separator provides a collar constraining
+the motion of the attractor.
+
+Proposition 4.4 If Univ(A, f) is irreducible and fixed-point free, then it is a finite
+group.
+

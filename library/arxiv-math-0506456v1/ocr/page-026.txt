@@ -1,0 +1,47 @@
+26 Asymptotics of the quantum invariants for the figure 8 knot
+
+The integral J in (4.38) is a double contour integral and as such is calcalculated
+by choosing a contour for each variable x and y. We thus have an “inner” integral
+and an “outer” integral and in general the contour for the inner integral can depend
+on where we are on the outer contour. Here we will, however, only consider the
+very simple case where these two contours are independent of each other.
+
+Therefore let a, 8 € S and let 7ya,7¢ : Is 4 C be given by Yo(s) = xo +48,
+ya(s) = yo + Bs, where I; = [—6,6] for a sufficiently small 6 > 0. According to
+the saddle point method the main contributions to the integral (4.38) comes from
+
+integrating over a small neighborhood of SM in Y = Deane We are therefore
+
+lead to consider an integral of the form
+
+K(x0,yo) = | | sin (Ze = 2nd) 2 dy | da
+ya \Jy8 q
+6 ry T ;
+= as | | sin (to + as — 2nd) e2rir¥(cotas.yotB0 dt | ds,
+-6 -6 qd
+
+where © = > as above. (If (xo, yo) is a non-degenerate critical point on the
+boundary of Y, then one or both or the integrals Ls should be replaced by KR (or
+
+Sos) and the contribution coming from that point in Theorem 4 should be multiplied
+by 3 or +) By a Taylor expansion we find that
+
+W(x9 + a8, yo + Bt) = U(x, yo) + s(a( ; ) , ( ; )) + h(s,t),
+
+where A = diag(a, 3)Hdiag(a, 8) and
+
+ry xr _
+(( un )-( ye )) =u + nn
+
+for (x1,y1), (v2, y2) € C?, and where h(s,t) is a remainder term being a sum of
+terms of the form Cm nst", m,n € {0,1,2,...,..}, m+n > 3, Cm € C. We
+search for a and § such that there exists a 6 > 0 satisfying
+
+Re (277i(V (a9 + a8, yo + Bt) — V(x0, yo))) <0
+for all (s,t) € Is x Is \ {(0,0)}. This amounts to finding a and 8 such that
+ma).
+for all (s,t) € R? \ {(0,0)}. Since
+im(a(s)-Ce)) 002.)
+
+this corresponds to finding a and § such that Im(A) is positive definite. It is
+essential for the method that such a and f exist. (If not, the analysis becomes more

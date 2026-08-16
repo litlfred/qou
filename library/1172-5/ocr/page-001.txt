@@ -1,0 +1,55 @@
+OES ATH Fe Dats FUR
+1172 % 2000 4F 70-79
+
+OPTIMISTIC CALCULATIONS ABOUT
+THE WITTEN-RESHETIKHIN-TURAEV INVARIANTS OF
+CLOSED THREE-MANIFOLDS OBTAINED FROM THE
+FIGURE-EIGHT KNOT
+BY INTEGRAL DEHN SURGERIES
+
+HR LRAFASERELEORA ttk # (HITOSHI MURAKAMI)
+
+ABSTRACT. I calculate optimistically asymptotic behaviors of the WRT SU(2)
+invariants for the three-manifolds obtained from the figure-eight knot by p-
+surgeries with p = 0,1,2,..., 10, from which one can extract volumes and the
+Chern-Simons invariants of these closed manifolds. I conjecture that this also
+holds for general closed three-manifolds.
+
+1. INTRODUCTION
+
+In [2] R. Kashaev defined a link invariant by using quantum dilogarithm and
+confirmed that his invariants grow exponentially with the growth rates the hyper-
+bolic volumes (times a constant) for three hyperbolic knots with small numbers of
+crossings. He also conjectured that this holds for every hyperbolic knot.
+
+J. Murakami and I proved that Kashaev’s link invariant is essentially (up to
+normalization) the same as the Jones polynomial colored with N-dimensional rep-
+resentation evaluated at the N-th root of unity. Moreover we generalized Kashaev’s
+conjecture to the following conjecture.
+
+Conjecture 1.1 (Volume Conjecture, [9]). Let Jy(K) be the N-colored Jones
+
+yet), Then
+
+polynomial of a knot K evaluated at exp (
+
+. log|Jn(K)| _ v3,
++ = |K
+where ||K|| is the Gromov norm (or the simplicial volume) of the complement of K
+and v3 is the hyperbolic volume of the regular ideal tetrahedron.
+
+Recent developments toward the Volume Conjecture can be found in [8, 14, 13,
+8, 10].
+
+It is natural to ask whether a similar formula holds for closed three-manifolds re-
+placing the colored Jones polynomial with the Witten—Reshetikhin-Turaev SU (2)
+invariant associated with the N-th root of unity. But an argument using Heegaard
+splitting and Topological Quantum Field Theory tells us that the growth of the
+WRT invariant is a polynomial, showing that a similar limit in the Volume Con-
+jecture vanishes. (After the first attempt of this work I learned this argument from
+D. Thurston and J. Roberts; it was also pointed out by S. Garoufalidis, V. Turaev
+and K. Walker independently.)
+
+Date: 31 May, 2000.
+2000 Mathematics Subject Classification. Primary 57M27; Secondary 57M25, 57M50, 17B37,
+81R50.

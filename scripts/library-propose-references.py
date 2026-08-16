@@ -403,7 +403,12 @@ def main() -> int:
             title = ov["title"]
 
         # Band on the CLEANED title: that is what the entry would carry.
-        b, why = band(md, chars, title)
+        # A hand-verified title outranks the "no text layer" demotion: that
+        # test asks whether the document is READABLE, and an override is an
+        # agent saying it read it. Without this, a document whose title was
+        # recovered by OCR stayed `low` on the strength of its empty
+        # embedded text.
+        b, why = band(md, 10 ** 9 if ov.get("title") else chars, title)
         if ov.get("band"):
             b, why = ov["band"], ov.get("why", "hand-verified override")
         # The byline often lands in the title instead of `authors_raw`; when

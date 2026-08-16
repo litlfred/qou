@@ -1,0 +1,102 @@
+the letters of a and b so as to obtain w while pre-
+serving their internal order in a or b. For instance,
+the condition (19) with a = w; and b = wy says that
+pris + G21 = () and, with a = w; and b = wiw»,
+that 26v1+142 + Gv14241 — (), The interest of alternal
+moulds lies in the following
+
+Proposition 6. For any alternal R%,-valued mould
+(®2)cq’, the operator (16) satisfies
+
+»
+
+wen’ —{o}
+
+A= So OA, =
+
+weg’
+
+ay 8A)
+
+r(w)
+
+(20)
+
+where r(w) denotes the length of the word w and
+
+Aju) = [Aus [---[Aws, Au )-- J) fore = w+ ++ wp
+(21)
+(with the convention Aj...) = Aw, if r = 1). In par-
+ticular, this alien operator is a derivation:
+
+@ alterndd > OA= > OA, € Dere(R§).
+wea’
+(22)
+
+Thus, in view of Theorem 4, when dealing with op-
+erators of the form (20), i.e. in the alternal case, we
+are actually working in the free Lie algebra on 9 (but
+we use an indexation by all the words and restrict to
+coefficients given by alternal moulds, instead of using
+a Lyndon basis or a Hall basis).
+
+3 Simple resurgent functions obtained
+by Borel-Laplace summation
+
+3.1 Borel-Laplace summation
+
+Many resurgent series encountered in practice are use-
+ful because they are also ‘summable’ (or ‘accelero-
+summable’, but we won’t touch on _ accelero-
+summability in this article).
+
+Borel-Laplace summation is the application of
+Laplace transform (or some variant) to (4P)(¢), giv-
+ing rise to a function y(z) for which the formal se-
+ries ((z) appears as asymptotic expansion at infinity;
+but the function y is usually not analytic in a full
+neighbourhood of infinity, only in a sectorial neigh-
+bourhood, because ¢ is usually a divergent series.
+
+A condition is needed for this to be possible. Let J
+denote a real interval. We say that @(z) is 1-summable
+
+a
+
+in the directions of J if the function @(¢) extends ana-
+lytically to the sector {arg ¢ € J} and satisfies there an
+exponential bound, |G(¢)| < Cel! for some c,C > 0.
+Each of the Laplace transforms
+
+id
+
+(L°BS)(z) = co + [ * ere Ad)d6, ET
+
+(23)
+is then analytic in the half-plane {Ite(ze!) > c}. By
+the Cauchy theorem, these functions match and can
+be glued so as to define one function (77A@)(z) an-
+alytic in the union Y of these half-planes—see Fig-
+ure 3. The domain Y can be viewed as a sectorial
+neighbourhood of infinity of opening |.J| + 7 (to be
+considered as a part of the Riemann surface of the
+logarithm if |J| > 7).
+
+Figure 3: Above: Directions for Laplace integration
+with J = (6,62). Below: the union of half-planes 97.
+
+(¢-plane) 2
+
+In that situation, the function 476 = L'BE
+satisfies the asymptotic property (.77¢)(z) ~ G(z)
+as |z| + oo with 1-Gevrey qualification—a classical
+fact that sometimes goes under the name of Watson’s
+lemma, see e.g. [Cos09; MS16]. The operator
+
+SI = LIB (24)
+
+is thus called the Borel-Laplace summation operator
+in the directions of J. One can easily check that
+
+SI = 4 (15) and S"[G(z+a)] = (7 G)(z+a)
+(25)

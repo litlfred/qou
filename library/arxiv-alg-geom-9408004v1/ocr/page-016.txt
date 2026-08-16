@@ -1,0 +1,49 @@
+where V is the Gauss-Manin connection on H?. This condition is inde-
+pendent of the choice of 7, by Griffiths transversality. It is automatically
+satisfied by the Abel-Jacobi image of a family of relative 1-cycles, cf. [G2].
+
+More generally, we can consider multivalued 1-cycles and normal func-
+tions: a map B — M gives a pullback family of CYs over B, and we can
+consider a family of relative, null-homologous 1-cycles in this pullback; this
+determines a normal function over B, and we can consider its image (or that
+of an abstract normal function over B) in 7. We refer to such subvarieties
+(no longer sections) of 7 as multivalued normal functions.
+
+Theorem 4. For the symplectic structure on TF constructed in Theorem
+3, the image v(Ap(X/M)) is isotropic. In other words, the normal func-
+tion of any (multivalued) family of null-homologous 1-cycles on Calabi- Yau
+threefolds gives an isotropic subvariety of g.
+
+Proof.
+
+This is a variation on Step III in the proof of Theorem 3. Say we are
+given a family C — B of null-homologous 1-cycles on gauged Calabi-Yaus;
+this means that there is a map t : B > M such that for b € B, the fiber
+C, is a null-homologous 1-cycle in Xj). The Abel-Jacobi map v : B > TF
+is then a lift of t, and we claim that its image is isotropic. Locally in B we
+choose 3-chains Py such that 01, = C;; this determines local lifts 7 : B — H
+and 7: B + T*M of v. Let 7 be the action 1-form on T*M, so dz is the
+symplectic form. We need to show that € := v*7 is a closed 1-form on B.
+At b € B, € is given by fp,. The new feature here is that instead of 3-cycles
+» € H3(X,, Z) we have the 3-chains Ty, with variable boundary C}.
+
+As before, we think (locally in M) of X as being a fixed C' manifold,
+
+with variable complex structure 0; and 3-form s;,, t € M. We consider the
+function defined locally on B:
+
+g : B—-C
+g(b) -=— Sr, $00);
+we claim that € = dg. This time, both the integrand and the chain in Jp, $26)
+
+depend on b. Let v denote an appropriate normal vector to (the support of)
+C, along [,. (For details, see [Gr2]). We then have:
+
+0 O81»)
+
+(8) 59) = Io Ob + G, v4 816).
+
+But s,) is of type (3,0) with respect to the complex structure Ou); so the
+contraction v|s,y) is of type (2,0), regardless of the type of v. On the other
+
+16

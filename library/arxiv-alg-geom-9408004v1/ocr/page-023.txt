@@ -1,0 +1,48 @@
+(i) An analytically completely integrable Hamiltonian system D—= M,
+which is an extension of another ACIHS J = M by a lattice H!1(Z).
+
+(ii) An indefinite (“Lorentzian”) polarization on the torus fibers of J ~ M
+and a (symmetric, cubic, Z-valued) intersection product on H'1(Z).
+
+(iii) A C*-action on D lifting an action of C* on M.
+
+(iv) A 1-form 7 on D, homogencous of weight 1 with respect to the C*-
+action, satisfying dr = 0 (= the symplectic form on D).
+
+Some further pieces of data may also need to be specified, such as the
+choice of a maximally unipotent degeneration. The above data lets us recover
+the variation of weight-3 Hodge structures over M, and the family of all
+normal functions: these are the integral manifolds for 7. A key question
+which we cannot answer is whether the collection of normal functions coming
+from 1-cycles is determined by the above data, or needs to be specified
+explicitly.
+
+These data certainly seem rich enough that one expects to recover from
+them much of the underlying CY geometry. The hope, which of course we
+are nowhere near realizing, is that when these data satisfy some appropriate
+axioms they can be used to generate a mirror system of the same type. If
+this is so, one must be able to extract both the A- and B-model data (i.e.
+the two partition functions) from a given system. Let us discuss the various
+ingredients.
+
+For the B-model, we need two essential pieces: the Yukawa cubic c and
+the affine structure on M. Now the Yukawa cubic is determined by the
+symplectic form on TF and the polarization on the fibers, by Theorem 1. The
+affine structure used to convert c to a cubic on the fixed vector space V is
+determined by the coordinates ¢;, which by Lemma 3 are the action variables,
+so they too are determined by J. This of course depends on the discrete
+choice of a Lagrangian basis for H3(X,Z); we do not see how to avoid this
+choice, so it must either be built into the axioms, or be deducible somehow
+from knowing the collection of all normal functions (and in particular, their
+monodromy).
+
+For the A-model it seems plausible that the relevant data can be obtained,
+but this leads us to Hodge-theoretic questions which we cannot (yet?) re-
+solve. We need the topological intersection form Topo, which is built into
+the axioms. The essential problem is to recover the coefficients nz. Each
+rational curve on the generic CY in the family gives a (finitely multivalued)
+normal function in D, and each homologous pair gives one in J. The prob-
+lem is that not all normal functions arise in this way. We are led to a series
+of problems.
+
+23

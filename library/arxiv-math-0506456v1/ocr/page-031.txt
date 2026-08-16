@@ -1,0 +1,48 @@
+Asymptotics of the quantum invariants for the figure 8 knot 31
+
+aw = (4 r). Puew=( 4, 2),
+C(t) = (3 i): alta) = ( _ 1):
+
+We note that C,(¢) and D,(t,w) are elements of SL(2,C), v = 1,2. If s is a square
+root of t and V(s) = diag(s, s~') then
+
+V(s)Co(t)V(s)"! = Cy(t), V(s)Da(t,u)V(s)~! = Di(t, wu), (5.58)
+and
+Co(t) = sC2(s),  Do(t, uv) = sDo(s,u). (5.59)
+Let W,(t, u) denote the matrix obtained by replacing x and y by respectively C,(t)
+and D,(t,u) in the expression for w, and let
+
+o(t,u) =Wi + (1-t)Wie,
+
+where W = W(t,u) = Wo(t,u). We let py.) be the assignment x > C2(t),
+y+ Da(t,u). We have the following SL(2, C) version of [28, Theorem 1].
+Theorem 5. Let (s,u) € C* x C. None of the assignments p;s,,) extend to an
+abelian SL(2, C)—representation of G. The assignment ,.,,) extends to a nonabelian
+representation p(s,,) : G — SL(2, C) if and only if
+
+G(s”, u) = 0. (5.60)
+
+Conversely, if 7) : G — SL(2,C) is a nonabelian representation, then there exists a
+pair (s,u) € C* x C satisfying (5.60) such that ~ and p;s,,) are equivalent. When
+w is affine this pair is unique, and when w is not affine the pair (s,u) can only be
+replaced by (s~, u).
+
+Proof. The theorem follows by results of [28], [29]. The assignment ;s,,) extends to
+a SL(2,C)-representation of G if and only if Wo(s,u)C2(s,u) = Do(s,u)Wo(s, u).
+The matrices C2(s) and D2(s,u) commute if and only if s = +1 and u = 0, and
+since C2(+1) = +C2(1) is different from D2(+1,0) = +Do(1,0) we have that the
+assignment (41,0) does not extend to a SL(2,C)-representation of G. (We note
+that if W = W(1,0) then W2; = 0 since the matrices Co(1), Do(1,0) = I and their
+inverses are upper triangular. But we also have that $(1,0) = 0 would imply that
+Wi = 0 contradicting the fact that W is invertible. Therefore (1,0) 4 0.)
+
+Let o = yan ej. Then s?W2(s,u) = W(s?,u). By (the proof of) [28, The-
+orem 1] we have W(s?, u)Co(s?) = Do(s?, u)W(s?, u) if and only if ¢(s?,u) = 0,
+so by (5.59) we find that ps) extends to a (necessarily nonabelian) SL(2,C)—
+representation of G if and only if ¢(s?, u) = 0.
+
+If ~ : G > SL(2,C) is an arbitrary nonabelian representation it follows by [29,
+Lemma 7] and (5.58) that there exists a pair (s,u) € C* x C (necessarily satisfying
+(5.60)) such that ~ and pcs,,) are equivalent. By the above any such pair is different
+from (+1,0) and by [29, Lemma 8] and (5.58) we then get the final statement of
+the theorem. oO

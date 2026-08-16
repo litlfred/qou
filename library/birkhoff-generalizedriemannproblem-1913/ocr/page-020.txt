@@ -1,0 +1,53 @@
+BIRKHOFF.— THE GENERALIZED RIEMANN PROBLEM. 539
+
+By slightly modifying each element of A(x) along a small segment
+near either end of the arc of D within C; for 7 = 1,..., m, it is possible
+to obtain a matrix A(x) whose elements are analytic save at the end
+points of these segments, and unlimitedly differentiable along D.
+Such a matrix A(x) satisfies all of the conditions necessary for the
+application of the preliminary theorem in the case r = 1.
+
+Taking D as the curve and A(z) as the matrix, we can affirm the
+existence of a certain matrix ®(«), possessing in particular the property
+
+(28) sans B(2) = [22'n- ®(@)] A (a),
+
+the approach to the point a; of D being from within and without D
+respectively. Let us choose a = dn.
+
+If we extend @(a) analytically across D between C; and C;,1,
+it becomes ®(2)A; by (28). If we extend this matrix analytically
+back across D between Cj.1 and Cj.2 [Cni2 = C2], it becomes
+[6 (x) Aji] A; or ®(x) T;. That is, the matrix U (a) obtained
+from ®(x) by analytic extension is analytic outside of C1,...,Cn and
+undergoes a transformation to U(x)T; when x makes a positive cir-
+cuit of a; Furthermore the determinant of U(x) is not zero outside
+of C1... .,Cm-
+
+Denote by Z,(v—a,;) the Cauchy matrix belonging to the trans-
+formation 7;, so that Z;(«—a,;) undergoes a transformation to
+Z;(« —a;) T; as x makes a positive circuit of a; Write
+
+29) Y (a) = Z(a) U(Q),
+
+where Y(a) is the solution of the Riemann problem to be constructed.
+
+The elements of Z(v) must in the first place be single-valued and
+analytic outside of Ci,...,Cn, since U(x) undergoes the same trans-
+formation as that prescribed for Y(x) about the points ai,...,@m, and
+| U(x) | #0.
+
+Furthermore within C;,, the elements of Y(x) are to be analytic ex-
+cept at a; where they may become infinite to finite order. Hence the
+elements of the matrix Y(x)Z;-\(e—a;) must be single-valued and
+analytic within C;, by the definition of Z;(v—a,), except for a possi-
+ble pole at x = a;. Along C; this matrix may be written
+
+(30) Zi (a) = Z(x) (U2) ZA (@ — ai] (@@ = 1,2,... m).
+
+If we write ®(x) = Z(x) outside of Ci,...,Cn and also ®(x) = Zee)
+within C for 7 = 1,...,m, the equations (30) may be written
+
+This content downloaded from
+45.67.99.10 on Sat, 01 Aug 2026 11:05:59 UTC
+All use subject to https://about.jstor.org/terms

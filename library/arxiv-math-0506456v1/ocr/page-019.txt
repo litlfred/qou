@@ -1,0 +1,54 @@
+Asymptotics of the quantum invariants for the figure 8 knot 19
+
+In particular
+_ 2nLog(Je(r))
+kim ———*—
+
+= Vol(K)
+
+T—00 r
+
+as predicted by the volume conjecture of Kashaev [14] and Murakami, Murakami
+[24] and as proven by Ekholm and others, see [22]. However, the arguments of
+Ekholm and others can’t see the finer details of the asymptotic behaviour (4.33),
+namely the polynomial part 37!/4r3/2.
+
+Remark 2. The complement $* \ K of the figure 8 knot can be decomposed into
+two ideal hyperbolic tetrahedra each parametrized by a certain complex number.
+This decomposition then defines a hyperbolic structure on this complement if and
+only if a certain set of conditions is satisfied. In fact, if the complex parameters for
+the two tetrahedra are respectively a and 6b, then these conditions are equivalent
+to a = b and b? —b+1 = 0, which is equation (4.32) after substituting b for z.
+We refer to [23, Sec. 3] for more details. This phenomenon, that one finds the
+hyperbolicity equation for the knot complement as the equation for the stationary
+points of the phase function, seems to be a general principal for hyperbolic knots as
+argued by Thurston and Yokota, cf. [32], [35]. However, there are major unsolved
+analytic difficulties in their approach. Basically they conjecture that one can carry
+out an asymptotic analysis similar to the one we carried out above for the figure 8
+knot. To prove their conjecture one first has to show how to give an exact (multi-
+dimensional) contour integral formula for the Jones polynomial of a hyperbolic
+knot like our (3.21). A main part consists of choosing a correct (multi-dimensional)
+contour. Secondly, one has to carry out an asymptotic analysis similar to the one
+leading to (4.31). This analysis is relatively simple for the figure 8 knot due to
+the fact that we have a single (one-dimensional) contour in this case. In general
+one gets a contour of dimension > 1 and the asymptotic analysis is expected to be
+harder (as also illustrated by the asymptotic analysis of the double-contour integral
+expression for the invariant 7,(M,/,) in Lemma 2, see next section.)
+
+4.3. The large r asymptotics of 7-(Mp/q)
+
+In Sec. 5 we will see that the signs of the phases in the asymptotics of T(Mp/q) =
+Tr(Mp/q) agrees with the Chern-Simons values, hence we work with this conjugate
+invariant. Because of (2.16) we can always obtain the asymptotic expansion of
+Tr(Mp/q) by complex conjugation or by replacing either p by —p or q by —q. By
+Lemma 2 we have
+
+T(Mp/q) = Pi(r) > [ cot(rrx) tan(mry) fn. (x, y)dady, (4.34)
+ned /\qlZ” OX C
+
+where
+
+Br(r) = isign(@)r _agsign(pe) exp (-= [ssn - 7 +8 (£)|) (4.35)
+
+4y/|a) q
+

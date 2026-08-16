@@ -1,0 +1,48 @@
+I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604 565,
+
+If A is the permutation matrix of m = (71,..., 7»), then inv’(A) is clearly the number of
+inversions of (7, 7n—1,---,71), and so we have inv(A) + inv’(A) = (3) for permutation
+matrices.
+
+It is a well-known fact [5] that n x n alternating sign matrices correspond to Gelfand—
+Tsetlin patterns with strictly increasing rows and bottom row 1,...,n. Recall that a
+Gelfand—Tsetlin pattern is a triangular array (mj,j)1<j<i<n of integers, where the ele-
+ments are usually arranged as follows
+
+Mn-2,1 see see Mn—-2,n—2
+Mn-1,1 Mn—1,2 ee ee Mn-1,n-1
+Mn, Mn,2 Mn,3 ee ee Mnn
+
+(2.1)
+
+such that there is a weak increase in northeast and southeast direction, i-e., mjti1.j3 <
+mig < Mi41,;41 for all i,j with 1 < 7 <i <n. Throughout this paper, we use the
+indexing of the entries of triangular arrays and partial triangular arrays as given here.
+A Gelfand—Tsetlin pattern in which each row is strictly increasing except for possibly the
+bottom row is said to be a monotone triangle. (This definition deviates from the standard
+definition where also the bottom row needs to be strictly increasing.) Monotone triangles
+of order n where also the bottom row is increasing and the entries are positive integers
+no greater than m + n are just (m,n,n)-Gog trapezoids.
+
+Suppose M = (mij)1<j<i<n is the monotone triangle corresponding to the ASM
+A = (a4,j)1<i,j<n, then it is not hard to see that
+
+inv(A) = #{(i, 7): mij = mist joi} and inv’(A) = 4{(i,7) : mij = mi41,;}-
+
+Since the —1’s of an n x n ASM A correspond to the entries m;,; of the associated
+monotone triangle with i <n and mj41,5 < mij < mi41,j41, it follows that
+
+inv(A) + inv’/(A) = (;) — (# of —1’s in A), (2.2)
+
+We use this to extend the definition of the inversion number and the complementary
+inversion number to all monotone triangles, that is,
+
+inv(M) = #{(i, 7): mig = misijoi} and inv’(M) = #{(i, 7): mij = miz1;}-
+
+In [15, Corollary 3.1], it was shown that the number of monotone triangles with bottom
+row b1,...,6n is the constant term of
+
+[Ia +aj)ia tt Il (a; — aj)(1+ xj + aya). (2.3)
+i=1
+
+1<i<j<n

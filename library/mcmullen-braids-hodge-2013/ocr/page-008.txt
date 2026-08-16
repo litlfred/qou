@@ -1,0 +1,51 @@
+266 C. McMullen
+
+T(K)
+
+Az fa, b,c, d, ef
+
+Fig. 3.1 Construction of IK)
+
+So assume A(K) is either empty or a singleton for all components K; we
+will deduce a contradiction.
+First we simplify the partition to eliminate elements with A(K) empty. Define
+
+fill(K)=€ —U {components of €— K which meet A};
+
+ie. fill(K) is obtained from K by filling in the components of its complement
+which do not meet A. Using plane topology (e.g. [W]), one may check that
+
+fillpart(J) = {fill(K): K is an element of part(K) with A(K) nonempty}
+
+is again a partition of the Riemann sphere into closed and open sets, and A(K)
+is a Singleton for every element of fillpart (J).
+
+Let p: €> A map each K in fillpart(J) to the singleton in A(K). It is straight-
+forward to verify that p is continuous and surjective, contradicting the connectiv-
+ity of €. Therefore part(J) must contain a separator. 1
+
+§4. Locating a separator in the Julia set
+
+Definitions. Let f be an attractive map with Julia set J and attractor A.
+
+If E is closed subset of € such that f(E)=E, then Mod(E, f), the modular
+group of f on E [Mc2, §3], is the group of equivalence classes [~] of maps
+€-=€ such that
+
+(1) ¢ is quasiconformal;
+
+(2) @(E)=E; and
+
+(3) dof (2)=fep(z) for all z in E.
+
+By definition, two maps ¢ and yw are equivalent iff they can be connected
+by an isotopy through homeomorphism enjoying (1-3).
+
+Remarks. We will be mostly concerned with the case E=JUA. For [@] in
+Mod(J UA, f), @ behaves much like a global conjugacy. For example:
+
+(1) [¢] determines a well-defined map ¢|J UA (since periodic points are
+dense in JU A, the values of this map cannot change during isotopy). Similarly,
+if U is a component of @—JUA, the image component $(U) is well-defined,
+and ¢ commutes with the action of f on components.
+

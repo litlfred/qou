@@ -1,0 +1,51 @@
+344 Michihiko Fujii
+
+correspondence between the closed 3-manifolds mentioned above (except the
+PSL»2(R)-manifolds) and some points of finite order on the elliptic curve E.
+In particular, the Haken manifolds mentioned above correspond exactly to the
+rational points of E, which form a cyclic group of order four.
+
+2. Deformation of hyperbolic structures and hyperbolic Dehn fill-
+ing
+
+In this section, we briefly describe a concrete treatment of the deformation
+of hyperbolic structures on 3-manifolds realized by deforming ideal tetrahe-
+dra. We also review some well-known results concerning the hyperbolic Dehn
+filling for the figure-eight knot complement (see Thurston [8}, [9], [10], Cooper-
+Hodgson-Kerckhoff [1] and Neumann-Zagier [7]).
+
+An ideal tetrahedron § is an oriented 3-dimensional simplex in H? U 0H?
+whose vertices are located on OH?. An ideal tetrahedron is determined up to
+an isometry by a single complex number as follows (see Fig. 1 and Ref. [10]).
+Consider an oriented 3-dimensional simplex in H® U0H® whose vertices are on
+OH®. Transform it by application of the unique orientation-preserving isometry
+of H® that sends the first three vertices of the simplex to the points 0, 1 and
+oo in the upper half-space model of H®. Its congruence class is determined by
+the position of the last vertex, which is given by some point z € C — {0,1}.
+Therefore, we write S = S(z). This complex number z is a parameter of
+isometry classes of ideal tetrahedra. The Euclidean triangle cut out of any
+vertex of S(z) by a horosphere section is similar to the triangle in C with
+vertices 0, 1 and z. With each edge of S(z) is associated one of the three
+numbers z, (z — 1)/z and 1/(1 — z). This number is called the modulus of the
+edge. If z is on the real line, then the ideal tetrahedron S(z) is flattened and
+contained within a 2-dimensional hyperbolic subspace of H®. If Im(z) > 0, the
+map of the simplex preserves orientation. Therefore, an ideal tetrahedron $(z)
+with Im(z) > 0 is said to be positive. If Im(z) < 0, the map of the simplex
+reverses orientation, and therefore an ideal tetrahedron S(z) with Im(z) < 0 is
+said to be negative. When we construct hyperbolic 3-manifolds by gluing the
+faces of ideal tetrahedra, we usually use positive ones. Note that S(z), S((z—
+1)/z), $(1/(1— 2)), S(1/z), S(z/(z— 1)) and S(1— z) are transformed among
+each other by orientation-preserving isometries. These orientation-preserving
+isometries change the order of the vertices of the simplex. By contrast, an ideal
+tetrahedra S(Z) is transformed to S(z) by the orientation-reversing isometry
+that is given by the composition of the inverse of the map of the simplex to
+S(Z) and the map of the simplex to $(z).
+
+In this paper, we denote the figure-eight knot in the 3-dimensional sphere
+S° by K. It is well known that its complement, S? — K, admits a complete,
+finite volume hyperbolic structure o... The hyperbolic 3-manifold ($°—K, a0)
+is obtained by gluing the faces of two ideal tetrahedra S(zo.) and S(woo) by
+orientation-reversing isometries according to the diagram in Fig. 2 (see [8]),
+where 25 = Wo = —w? and w = e?7/3. Thus, we write ($3 — K,ax0) =
+S(Z0) US(w). Because all the faces of any ideal tetrahedron are congruent,
+

@@ -1,0 +1,49 @@
+566 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604
+
+(This derivation was based on [11].) In this section, we aim at generalizing this in order
+to obtain a constant term expression for the generating function of monotone triangles
+with respect to the two inversion numbers. For an increasing sequence b = (b1,...,6n),
+
+we define the generating function
+
+MT, (u,v) = 3 yinv(MD) yinv’ (M1) |
+M
+
+where the sum is over all monotone triangles with bottom row b.
+We say that the two non-decreasing sequences b = (b1,..., bn) and a = (a1,...,@n—1)
+
+are interlacing (in symbols: a < b), if
+by Say <b Sag <... S an-1 Sdn.
+
+Consecutive rows of monotone triangles are obviously interlacing sequences, and we can
+
+write down the following recursion for MTp(u, v):
+
+MTp(u,v) = S MT, (u, v) uti: aimbisr} yes aiabit
+
+a<b
+astrictly increasing
+
+We fix some notation that is needed in the following: We use the shift operator E,,
+the forward difference A, and the backward difference A,,, which are defined as follows.
+
+EB, p(x) = ple + 1)
+A, := E,—Id
+A, :=Id-E;!
+We also need the following operator.
+
+Strict, =E,'E, +uA, E, —v E;' A, =uE, +vE;'+(1—u-—v)E;'E,
+
+Moreover, we need to work with the following extended definition of the summation
+
+b f(a) + f(a+1)+...+ f(0), a<b,
+So FO = 40, b=a-l,
+isa —f(b+1)— f(b+2)—...-—fla-1), b+1<a-1
+
+The crucial property of the operator is the following: (Here we use the Iversion bracket,
+i.e., [statement] = 1 if the statement is true and [statement] = 0 otherwise.)
+
+F (ai, a) ule =P] ylaba)
+
+(ai—1,4:) <(6i—1,bi big)
+aj-1<aj

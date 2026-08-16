@@ -1,0 +1,45 @@
+The last section is entirely speculative. We muse on the role which the
+CY integrable system might play in the mirror conjecture: we would like to
+separate the conjecture into a formal part, which deals with a ‘mirror trans-
+form’ for objects consisting of an integrable system together with certain La-
+grangian multisections and other lists of data, and a geometric, Torelli-like
+part, saying that a CY family can be recovered from its integrable system.
+The attempt to read off all relevant data (= the partition functions for the
+A and B models) directly from the system leads to some Hodge theoretic
+questions which we cannot solve, concerning the information encoded in a
+normal function and especially in its infinitesimal invariant.
+
+It is our pleasure to acknowledge beneficial and pleasant conversations
+with R. Bryant, I. Dolgachev, M. Green, P. Griffiths, 5. Katz, L. Katzarkov,
+D. Morrison, T. Pantev and E. Witten.
+
+§1. The cubic condition.
+
+Our goal in this section is to describe the conditions on a given family
+ma: X —U of abelian varieties (or complex tori) for there to exist, locally
+over U, an algebraic (or analytic) symplectic structure o on ¥ such that 7
+is a Lagrangian fibration with respect to o. (In this situation we say that
+the family admits a Lagrangian structure.) What we want is a closed, non-
+degenerate holomorphic 2-form o on 4 such that the fibers X,, := 77!(u)
+are Lagrangian (= maximal isotropic) subvarieties with respect to o.
+
+By way of motivation, let us review the corresponding questions for C'°
+objects. Any C™ family a: Y — U of real tori is locally trivial, i-e. locally
+(over U) isomorphic to U x (S1)". In particular, a Lagrangian structure
+exists whenever dim = n = dim (fibers). Given a C® symplectic mani-
+fold (¥,o) with Lagrangian fibration 7: © — U, there is a natural affine
+structure on the fibers X,, [AG,2.42]; so if these fibers are compact, they
+must be tori. In this case the base Y/ also acquires a natural integral-affine
+structure, i.e. an atlas of coordinate systems which differ on intersections
+by a combination of arbitrary translations and Z-linear transformations. To
+get these coordinates, we choose a basis 71(t),---,7n(w) for the integral ho-
+mology H,(X,,Z), varying smoothly with u in an open subset U/° of U, as
+well as a 1-form 7 on 7 '(U°) satisfying dr = 0. (These always exist.) We
+then let
+
+(1) ti(u) = [ r t=leryn.
+ilu)
+
+The freedom of changing 7 (by a closed 1-form) and the 4; (by the action
+of GL,,(Z)) then allows the ¢; to change by a translation and Z-linear trans-
+formation, respectively. These t; are called action variables. They define

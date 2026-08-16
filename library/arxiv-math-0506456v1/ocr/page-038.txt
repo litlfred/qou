@@ -1,0 +1,46 @@
+38 Asymptotics of the quantum invariants for the figure 8 knot
+
+shows that a(s) indeed plays the role as the a—curve for our path 7,. The @-curve
+should be a piecewise smooth curve 6(s) starting at zero such that
+
+e2716(5) — 41 (e271(5), (s)) (5.75)
+
+for s € [0,1]. We note that 1; (e?""°) ,u(1)) = —1 so we must have B(1) € 4+ Z.
+Since f1/¢,4 extends to a SU(2)-representation of 7(M_3) we get from (5.67) that
+
+1 ; 1 ol
+-2f B(s)al(s)ds — pt 3A) (mod Z)
+
+is a Chern-Simons value of a flat SU(2)-connection on M_3, so So B(s)a’(s)ds is
+real.
+
+We now only have to choose a nice a—curve. Let 6 be a small positive parameter
+less than |a(0)| < 1/6, and let a = a; + a2 + a3, where a; is the line segment
+[a(0), —id], a2 is the part of the circle with centre zero and radius 6 running from —i6
+to 6, and a3 = [5, 1/6]. Here the parameter 6 is introduced to avoid passing through
+zero (so as to avoid parabolic representations). With this choice it is not hard to
+show that there is a unique continuous solution (u(s),8(s)) to d(t(s),u(s)) = 0
+and (5.75) with 6(0) = 0 and B(1) = 4 and to show that So B(s)a'(s)ds = + for
+this solution. (Use that the integral is real and independent of 5 and calculate its
+5 — 04 limit).
+
+Proposition 4 gives a formula for the Chern—Simons invariants of the irreducible
+flat SU(2)-connections on M,/,. Let us also determine the Chern—Simons invari-
+ants of the reducible flat SU(2)-connections on M,/,. Therefore let pj;jp) be as in
+Proposition 3, p # 0, and let a(t) = jt/|p| and 6(t) = 0, t € [0, 1], and get by (5.67)
+that
+
+CS(p;/\p|) = —cepi?/p? = —cj”/p (mod Z), (5.76)
+
+where c is the inverse of —q mod p.
+
+In case p = 0 the moduli space of flat reducible SU(2)—connections on Mo can
+be identified with a closed interval, cf. Proposition 3. Since the Chern—Simons
+functional is constant on each of the connected components of the moduli space
+of flat connections, we conclude that the Chern-Simons invariant of any of the
+reducible SU(2)-connections is equal to the Chern—Simons invariant of the trivial
+connection, i.e. it is equal to zero. This of course also follows from Kirk and Klassen’s
+result. In fact, if pg denotes the abelian representation from Proposition 3, then we
+can put a(t) = 6t and A(t) = 0, t € [0,1], and get by (5.67) that
+
+CS(pe) =0 (mod Z). (5.77)

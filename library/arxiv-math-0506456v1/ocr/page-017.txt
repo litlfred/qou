@@ -1,0 +1,53 @@
+Asymptotics of the quantum invariants for the figure 8 knot 17
+
+Therefore we write
+
+Is(r,e) = +V-1 Gr(x)da + [ (tan(mra) = V—1)g,(x)de.
+
+Cx(€) Cxz(€)
+
+The estimates on tan(mrx) + V/—I1 can be used (see Appendix B) to prove that
+
+1
+> [ (tan(arx) — pV —1)gr(x)dz| < Ki-, (4.28)
+pati? Cule) r
+where Ky is a constant independent of r and ¢. Let now
+__ ti «(ama « (e2nVaie
+O(x) = as (Liste ) = Lig(e )) . (4.29)
+
+Note that ® is analytic on D = C\ {a € C| Re(x) € Z} but not in the points Z, so
+here we see the reason for using the small deformation parameter ¢. We have
+
+[ gr(a)dx = [ Ody
+Cx(¢) Cx(e)
++[ (exp (I, (4 — 2x) — L,(—m + 2nx)) — 1) ec’? de.
+Cx(e)
+However, as we will see in Appendix B, the estimate in Lemma 3 implies that
+
+< KLog(r) ex VolK)
+r
+
+[ (exp (L,(m — 2aa) — L,(—m + 2rx)) — 1)? dex
+Cule)
+
+(4.30)
+for 4s = +1, where K2 is a constant independent of r and ¢. We will see below that
+the estimates (4.28) and (4.30) imply that the leading order large r asymptotics of
+Ji (r) is given by
+
+2
+Jig(r) ~ = [ eh dax -[ cdr | , (4.31)
+c_(e) Cx(2)
+
+to which we can apply the saddle point method, see e.g. [6, Chap. 5]. First we
+determine the stationary points of the phase function ®. On D we have
+
+0! (x) = Log (1 - env) + Log (1 - a) .
+
+If we put z = e2*¥—!*, then ®'(x) = 0 implies that
+2—2z4+1=0. (4.32)
+
+The equation (4.32) has the solutions z+. = e*¥~!*/3, We have 1—z4 = 1/2iv3/2
+which both have norm 1 and are each others conjugate, so
+
+Log (1 — z4.) + Log (1 — z_) = 0.

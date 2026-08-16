@@ -1,0 +1,53 @@
+Asymptotics of the quantum invariants for the figure 8 knot 39
+
+5.3. A comparison between Chern—Simons invariants and critical values
+of the phase functions 6%
+
+The purpose of this section is to combine the Chern—Simons theory described in the
+previous two sections with the asymptotic analysis in Sec. 4.3. First we will describe
+a correspondence between the critical points of the phase functions 6% in (4.36)
+and the nonabelian SL(2,C)-representations of 7(M,/q). Thereafter we will show
+that the set of Chern-Simons invariants of flat irreducible SU(2)-connections on
+Mp/q is a certain subset of the critical values of the functions >. Like in Sec. 4.3
+we will most of the time work with the shifted phase functions U%» in (4.39). We
+refer to Remark 5 below for a comparison between the phase functions ®% and
+2, Recall the set W given by (5.62).
+
+Theorem 7. The map (2,y) +> Periz ,e2niv—-1) gives a surjection y from the set
+of critical points (x,y) of the functions ¥4", a,b,n € Z, with « ¢ Z onto the set
+of representations p(s.) : 7 — SL(2,C), (s,u) € N, which extend to SL(2, C)—
+representations of 77 (Mp /q).
+
+If (x,y) is a critical point, let us say of U%?, then (2 + 2k,y +l) is a critical
+point of Derek for any k,l € Z, so p+ (p(2,y)) = { (w+ 2k, y +l) | k,leZ} if
+cE€Z.
+
+Proof. The last statement follows immediately from (4.40), so let us concentrate on
+the first part. Let ~ : C? + C be given by
+
+wW(z,w) = (1— zw)(w — z) — zu,
+so U(v?,w) = 0 if and only if (v,w) is a solution to (4.42). Then
+W(z,ut 1) = —z¢(z, u)
+
+for (z,u) € C* x C, where ¢ is the function (5.61). It follows that (v, w) is a solution
+to (4.42) if and only if either (v,w) = (0,0) or (v,w—1) EN.
+
+Next assume that (v,u) € NW and put (z,w) = (v?,u+ 1). Since W(z,w) = 0
+and z 4 0 we have that w 4 0 and w — z £0. Therefore 1 — zw = wz/(w — z) and
+(v, w) is a solution to (4.41) if and only if
+
+, )2\9
+ye = (<=) = (wz1 2+ zw)!
+
+WZ
+
+= Ann(v, we 1) —1-24+2w bt+ue+ zi.
+
+But ¥(z,w) =0 and w # 0 implies that —1 — 2? + zw7} + wz+z2=0. Thus (v,w)
+is a solution to (4.41) if and only if (s, uv) = (v, u) is a solution to (5.64).
+
+The above shows together with the discussion around (5.64) that there is a one
+to one correspondence between common nonzero solutions (v,w) to (4.41), (4.42)
+with v? #4 1 and representations P(vw-1) 1 7 > SL(2,C), (v,w—1) € N, which
+extend to SL(2,C)-representations of 7(M,,,). By the remarks following (4.40)
+this proves the theorem. oO

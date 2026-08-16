@@ -1,0 +1,65 @@
+GROBNER-SHIRSHOV BASIS FOR AFFINE WEYL GROUP An 3
+
+of words. After that, we compute the number of the reduced words with respect to
+these classes by means of a generating function. This generating function turns out
+the be same with the well known Poincaré polynomial of the affine Weyl group An.
+Therefore, by the Composition-Diamond Lemma the functions in R’ form Grébner-
+Shirshov basis for the affine Weyl group An. Furthermore, one can easily see that
+this basis is in fact a reduced Grébner-Shirshov basis.
+
+The results of this paper were obtained during M.Sc studies of Ugur Ustaoglu
+at Abant Izzet Baysal University and are also contained in his thesis (14).
+
+2. GROBNER-SHIRSHOV BASIS AND REDUCED WORDS
+
+Definition 3. The affine Weyl group An has a presentation with generators S =
+{ro,71,---, Tn} and defining relations
+
+rer, 1 O0<i<n
+
+rrp =rjri OSi<j-—1<nand (i,j) F (0,n)
+
+rigiri =Tigaririgan OSi<n-1
+
+TOTnTO = TnT0Tn-
+
+Identifying each relation u = v by a polynomial u — v, we define
+FO srr -1 O<i<n
+
+fe? =rrj—rjr O<i<j-—1<nand (i,j) ¥ (0,n)
+
+f Snr Tigris: OSicn-1
+
+fa =Tornto — TnToTn
+Let us define
+
+TiTit1s-T], U< G5
+TiTi-1---Tj, > Js
+rig = Tis t=f3
+1, i=
+1, i=
+
+Lemma 4. Let R= {f1, fo, fs, fa}. A Grobner-Shirshov Basis of A, with respect
+to deglex order with r9 > 11 > +++ > Tn contains the following polynomials.
+A =riygri—riginy OS i<j —1 <n with (i,j) 4 (0.n)
+
+92 = T0nT0Tn — T1TOnTO
+
+gf = TOMnkTj — T]TOT nk 2<j<k-l<n
+
+gg? = POM ng hj 41 — TiTOT ng 2<j<n
+
+g = TornkTo —TrnTolnk 2<k<n
+
+98? = rornrurot —TaToPnKTuTo1-1 l<l<n,2<k<n
+gf? = Tol nkTuTolnk — TPO nkT AUTOM n k+L l<l<k-l<n
+
+gf? = rornKrurorne—1 — ToT nKTuTOnk 3<k<n, k-1<1<n
+
+RRL
+gs d= TOM nkTUTOM ng TUL — TrTOTnkTUTOT Ng? 1-1
+2<k<n-1, k+1<j<n, 1<1<j-2
+RRL
+IB? = rornKrurorngT LA — PaTOPnkTUTOT A;TU
+2<k<n, k<j<n, j-l<l<n-1
+

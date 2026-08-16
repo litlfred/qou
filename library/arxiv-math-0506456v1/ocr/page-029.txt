@@ -1,0 +1,48 @@
+Asymptotics of the quantum invariants for the figure 8 knot 29
+Ajy = An, = aH,
+2
+Aza = BH,
+
+where H is the Hessian in (4.48). We have z = e?7'*° and therefore Hi, =
+Ha, = 2isin(27x9). Moreover, wo € {w+(xo)} using notation from (4.47) and
+Ay, = Ho — oe where
+
+1 r
+= wala) w+(%o) = ¥24[cos#(2na) — cos(272x9) — ..
+IfM= ( : ; is a real symmetric matrix, then M has real eigenvalues, and
+
+is positive definite if and only if both of these eigenvalues are positive, i.e. if and
+only if a and b are both positive and ab > c?. Now assume that M = Im(A). Since
+Re(zo) € [—1, —1/2] we have that Hy, is zero if and only if z) = —1. In that case
+Ao. = V5 which is irrational. Therefore Hi; 4 0 and we can always choose a
+and 8 soa > 0 and b> 0 and hence ab > 0 = c?. Therefore assume in what follows
+that Hi2 4 0. If Hy; and H22 are both positive (meaning that wo = w_(zxo)) we
+can let a = B= eit /4 giving a = Hy, b = Ho andc = 0. If Ay, and Ay are
+both negative (meaning that wo = w+(zo)) then we can let a = 8 = e~'7/* giving
+a= —Hy,b = —Ho andc = 0. If w = sign(Hi1) ¥ sign(H22) we can let a = e'7/4
+and 8 = e~#'"/4 giving a = |Hi1|, b = |Hz2| and c = D, writing Hiz = iD, DER.
+Thus det(/) = — det(#), so if det(H) < 0 this choice of a and £ works. The case
+sign(H,,) 4 sign(H22) and det(H) > 0 is more problematic, and the above analysis
+is actually too simplified as the examples |p/q| € {4/3, 10/3, 16/3, 22/3} show.
+
+One can in an even simpler way see that the above approach is too simplified,
+namely by considering the cases where Hi; = 0 or Ho. = 0. In that case a = 0 or
+b = 0 so Im(A) is not positive definite. We have H22 = 0 if and only if cos(2729) =
+—1/2 and that case occurs if and only if p = 6m + 3 for some integer m.
+
+Since cos(2m29) € [-1,—-1/2] the entry Hy, can not be zero if |p/q| > V20.
+For |p/q| < 20, Hi: = 0 implies that cos(27z9) = § — \/1+ i. Finally note
+that if Hi; = H22 = 0 then p/q = 0, but in that case Ha. ¥ 0 for critical points
+(zo, yo) € S, see Appendix C.
+
+The solution to these problems is to let the contour for the “inner” integral
+depend on the contour for the “outer” integral. We will not give more details here,
+but refer to a later paper. Note that the expression for the matrix A in Definition 1
+in this more general approach is different from the one stated in that definition.
+
+5. Classical Chern—-Simons theory on M)/,
+
+In this section we will describe the classical theory, that is the classical Chern—
+Simons theory on the manifolds M,/,. The SU(2) Chern—Simons functional is a map
+with values in R/Z defined on the set A of gauge equivalence classes of connections
+in a principal SU(2) bundle on M,/, (all such bundles being trivializable). Inside

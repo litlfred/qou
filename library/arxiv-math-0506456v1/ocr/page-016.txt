@@ -1,0 +1,60 @@
+16 Asymptotics of the quantum invariants for the figure 8 knot
+and for |Re(¢)| < 7 we have
+
+[(0)| < 24+ B(1+ePMOR) 4,
+
+where A and B are positive constants only depending on R.
+A proof is given in Appendix A. On the unit circle the imaginary part of the
+dilogarithm is given by Clausen’s function Cly, i.e.
+
+S\ sin(n 8
+tm (Lin(e™)) = Cl(@) = OM —— [tog
+
+n
+
+2Qsin (5) | dt (4.24)
+
+n=1
+for 9 € R. One sees that Cly is increasing on [0, 7/3] U [57/3, 27] and decreasing on
+[x/3, 57/3]. In particular, Cly attains its maximum value at 7/3 and its minimum
+value at 57/3. Moreover
+
+5 7/6
+on Tw ory a T\ 1
+-Ch (=) =Ch (<) = -2[ Log|2sin(¢)|d@ = 2 (=) = 5Vol(K), (4.25)
+
+where J is Lobachevsky’s function and Vol(A) is the hyperbolic volume of the
+complement of the figure 8 knot, see e.g. [25, Sec. 10.4].
+
+4.2. The large r asymptotics of J;,.(r)
+
+We calculate the leading term of the large r asymptotics of Jj,(r), using the saddle
+point method like Kashaev [14]. Our calculation supplements the calculation of
+Kashaev with the required analytic error estimates. Let
+
+C?=C(e) = [V-I+e,-V—-14+e¢]+[-vV—-I+e¢,1-e-v-]]
++[l-e -V—1,1-¢e+ V1] 4+ [l-e+V-Le+ v-I],
+
+where ¢ €]0, 4]. We let C,(e) be the part of the contour C(<) above the real axes
+and C_(e) the part below the real axes. By (3.21) we have
+
+2
+Ie(v) =
+
+(I(r, €) + J(r,€)),
+where
+
+Js(r,€) = I anlar) gr (ade.
+
+Away from the real axis, the factor tan(mrx) can be approximated by +/—T de-
+pending on whether we are in the upper or lower half-plane. In fact we have
+
+4e-27rlm(a) In(a) > +
+tan(mrx) — V—-1| < ; = mr? 4.26
+|tan(are) Is { Qe~2arlm(e) rRe(x) € Z,Im(a) > 0 (4.26)
+
+and
+
+4e27rlm(z) Im(z) < -+,
+tan(mrz) + V—-1|] < , Rr? 4.27
+|tan(nra) Is { ge2rrlm(x) rRe(«) € Z,Im(a) < 0. ( )

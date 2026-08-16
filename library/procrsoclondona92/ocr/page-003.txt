@@ -1,0 +1,61 @@
+Downloaded from http://rspa.royalsocietypublishing.org/ on January 19, 2015
+Helicity and the Calugdreanu invariant 413
+
+consideration to regular isotopy (which he described (p. 179) as ‘non-degenerate
+isotopy’).
+A third strand of inquiry was introduced by Fuller (1971) who defined the total
+twist number Tw for a ribbon by
+1
+
+To = = (N x N):tds, (1.5)
+
+where N = dN/ds. It is easy to show (see §5 below) that
+Tw=TH+, (1.6)
+
+(a result nowhere actually stated by Fuller). Fuller then defines the writhe W
+through
+
+W=n-Twv, (1.7)
+where n is the linking number of the curves C, C* bounding the ribbon, but nowhere
+does he prove that this W is the same as that defined by the Gauss integral (equation
+(4.8) below). This identification is however established by Calugareanu’s result (1.3)
+in conjunction with (1.6). The definition (1.5) of Tw provides a quantity which
+evidently varies continuously under all continuous deformations of the ribbon (i.e.
+under ambient isotopy).
+
+Curiously, Fuller (1972), in a paper dedicated to Calugdreanu (on his 70th
+anniversary), gives White (1969) the credit for the result n = W + Tw, although this
+result (with Tw = 7 + ) can be found clearly stated, and coupled with a tentative
+discussion of the role of inflexion points, in C61. White’s achievement was to place
+this result in the wider context of differentiable manifolds of arbitrary dimension ;
+but the theorem in the form (1.3), or in the equivalent form
+
+n=W+Tw (1.8)
+
+should surely be described as Calugdreanu’s theorem.
+
+We feel it necessary to emphasize this point because in some more recent papers
+and text books, Calugareanu is given less than due credit for his achievement. Thus,
+for example, Pohl (1980) describes (1.8) as ‘White’s formula’, and only rather
+grudgingly states that ‘White’s formula was actually put forward by Georges
+Calugdreanu (1961), originally, for curves C having nowhere vanishing curvature.
+This proof was very complicated and his formulation confusing...’. We question this
+judgement and would simply reiterate that Calugareanu (1961) explicitly considers
+the zero curvature, or inflexional, problem, whereas White (1969) explicitly excludes
+such considerations. A general misunderstanding of Calugareanu’s contribution has
+gradually led people to refer to equation (1.8) as ‘White’s theorem’, so that even in
+text books (e.g. Kauffman 1987, p. 18; 1991, p. 489), references to C59 and C61 have
+gradually disappeared.
+
+Our aim in the present paper is to show that all of these results can be obtained
+in a straightforward manner starting from the helicity invariant of classical fluid
+dynamics. The link between helicity and the Célugdreanu invariant was conjectured
+by Moffatt (1981) and was developed on the basis of the result (1.8) by Berger & Field
+(1984). However, a direct derivation of (1.8) from the invariance of helicity has not
+previously been given. We provide such a direct proof in §§2-6 of this paper. First,
+in §2, basic results concerning the helicity of linked flux tubes are stated. Then in §3,
+it is shown that for a knotted flux tube constructed in such a way that the field lines
+are closed satellites of C, each pair of field lines having linking number 1, the helicity
+Proc. R. Soc. Lond. A (1992)
+
+16-2

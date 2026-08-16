@@ -1,0 +1,46 @@
+12 SYLVIE CORTEEL AND OLIVIER MALLET
+
+if there are an odd number of East steps to the left of the peak (we then say that the peak is of type
+1). Moreover, we overline t if the peak is a NESE peak. In both cases, s and t are integers and we have
+s+t+1=-2. In the case of partitions treated in u is always 0.
+
+Let N be the number of peaks in the path and j the number of South steps of the paths. Let (x;,y;) be
+the coordinates of the i” peak from the right and (s;,t;) be the corresponding pair.
+
+Proposition 4.2. The sequence (51, 82,...,8Nn) is a partition into distinct nonnegative parts and the se-
+quence (t,t2,...,tn) is an overpartition into nonnegative parts with j non-overlined parts.
+
+Proof. We need to prove the following results:
+
+e sy > 0. If the last peak from the right (xy, yn) is of type 0, then sy = (ay +a— yn + un)/2 and
+it is sufficient to prove that ry — yw > —a since uy = 0. It is obvious that any vertex has a greater
+(or equal) value of x — y than the previous vertex in the path. Since the path begins at (0,a), we
+have x — y = —a at the beginning of the path and thus we have x — y > —a for all vertices. Now if
+the peak is of type 1, then xy > 2 and sy = (ty +a+yn —1+un)/2> 0.
+
+e ty > 0. Ifthe last peak from the right (xy, yw) is of type 0, then ty = (ay —a+yn —2—uy)/2. We
+have uy =O and ry > 0. If yw >a, then ty > 0. Otherwise it is easy to see that ry > 2+a—yn
+(see Figure 6) and thus ty > 0. Now if this peak is of type 1, then ty = (ty —a—yn —1—uy)/2.
+We have uy = 0 and there is at least one East step to the left of the peak and therefore at least a
+South-East steps before the East step and at least yy North-East steps after the East step. Hence
+tN —yn—-G@>Oandty >0.
+
+FIGURE 6. We show that ry > 2-+a— yn in the case yy <a.
+
+e The sequence s is a partition into distinct parts. We need to prove that for all i, s; — si41 > 0.
+If the i” peak from the right and the (i + 1)** peak are both of type 0, it is clearly true since
+Xi — Yi > Liar — Yit1 (two peaks cannot have the same value of x — y), and uj > ujz1 (remember
+that u; is the number of South steps to the left of the i*” peak). If the i” peak from the right and
+the (i+ 1)* peak are both of type 1, then 8; — siz1 = (ai + yi tui — Vig — Yio — Ui41)/2. It is easy
+to see that that 2; + yi > vi41 + yin1 and uj > vsti. If the i” peak is of type 0 and the (i + 1)* is
+of type 1, we have s; — s;41 = 5 (ai = X41 —Yi — Yig1 +Ui — Ui41 +1). Since uj; > uj41, it is sufficient
+to prove that x; — %i41 — yi — Yit+1 > 0. This comes from the fact that there is an East step between
+the two peaks (see Figure {7). If the i*” peak is of type 1 and the (i + 1)* is of type 0, the proof is
+similar.
+
+2 Yi
+
+itn v5
+
+FiGurE 7. If the i“ peak of is type 0 and the (i+1)* peak is of type 1, we have x; —2i41 >
+Yi + Yiri-

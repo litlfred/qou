@@ -1,0 +1,47 @@
+X, gives a symplectic structure on Hi(Xu, Z), so the natural thing to do is
+to choose a Lagrangian basis 7;(u),---, (uw), ie. a basis of a continuously
+varying Lagrangian subspace. On the other hand, the choice of a marking
+of the family 7, i.e. a lifting of g to a period map p: U — H,, is equivalent
+to the choice of a dual pair Y1,--+, 7 and Yg41,°-+, Vag of Lagrangian bases.
+Combining this with (1), we get:
+
+Lemma 1. Leta: * — U be a family of abelian varieties with La-
+grangian structure. The choice of Lagrangian basis y1,--+,Yg of the fiber
+homologies determines an affine structure on U. The choice of a mark-
+ing Y1,°°*, 729 (or of a period map p:U — H,) determines a pair of affine
+structures. The affine coordinates {u;}, {t;} corresponding to the Lagrangian
+bases Y1,°+*,Yg and Yg41,°**, 2g, respectively, are related by:
+
+dt; => Se pig (w)du;.
+
+We note that, even with these choices, the angle coordinates y; are still
+multivalued, ie. they can be defined only locally. Their differentials dy;
+are more intrinsic: they correspond symplectically to straight flows (with
+respect to the affine structure) on U. The y; can be uniquely determined on
+the vertical bundle V (= the fiberwise universal cover) by setting y; = 0 on
+the 0-section of V.
+
+We fix once and for all the vector space V & C¥%. Any marked family
+a: X& —U of abelian varieties then comes with a trivialization of its vertical
+bundle,
+
+(4) VxeV@Oy.
+
+We identify H, with an open subset of Sym?V, so the differential of the
+period map becomes
+
+dp: TU — Sym?V @ Oy.
+
+The affine structure on U, determined by 7),---, 7g and a Lagrangian struc-
+ture, is then given by an isomorphism
+
+a:V*@Oy > TU.
+Theorem 2. (Global Cubic Condition) Consider a family 7 :
+xX — U of marked abelian varieties, with period map p:U — Hy, where
+
+U has an affine structure a: V* ® Oy + TU. Then x admits a Lagrangian
+structure which induces a if and only if the composition
+
+dpoa € Hom(V* ® Oy, Sym?V ® Oy) =T(V @ Sym?V @ Oy)
+
+comes from a cubic c € T(Sym?V @ Oy).

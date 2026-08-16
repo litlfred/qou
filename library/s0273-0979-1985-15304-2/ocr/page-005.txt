@@ -1,0 +1,59 @@
+A POLYNOMIAL INVARIANT FOR KNOTS 107
+
+For the trace invariant we have
+THEOREM 12. 1/tV,- —tVp+ = (vt -1/Vt)V.
+COROLLARY 13. For any link L, Vi(—1) = Ax(-1).
+
+That the trace invariant may always be calculated by using Theorem 12
+follows from the proof of the same thing for the Alexander polynomial. We
+urge the reader to try this method on, say, the trefoil knot.
+
+The special nature of the algebras A, when t is a relevant root of unity
+can be exploited to give information about Vz at these values.
+
+THEOREM 14. If K is a knot then Vx(e27*/3) = 1.
+
+THEOREM 15. Vz(1) = (—2)-1, where p is the number of components
+of L.
+
+A more subtle analysis at t = 1 via the Temperley-Lieb-Pimsner-Popa
+representation gives the next result.
+
+THEOREM 16. If K is a knot then d/dtVx(1) = 0.
+
+It is thus sensible to simplify the trace invariant for knots as follows.
+DEFINITION 17. If K is a knot, define Wx to be the Laurent polynomial
+
+Wx(t) = (1—Vie(#))/(1— #)(1 - 1).
+
+Amphicheirality is less obvious for W. In fact, Wx~(t) = 1/t4Wx(1/t). It
+is amusing that for W the unknot is 0 and the trefoil is 1. The connected sum
+is also less easy to see in the W picture. For the record the formula is
+
+Wrigks = Wx, + Wr, — (1—t)(L- 0 )Wx,Wr,.
+COROLLARY 18. Ax(-1) =1 or 5 (mod 8).
+
+When t = i the algebras A, are the complex Clifford algebras. This to-
+gether with a recent result of J. Lannes [13] allows one to show the following.
+
+THEOREM 19. If K 1s a knot the Arf invariant is of K is W(t).
+
+COROLLARY 20. Ax(—1) = 1 or 5 (mod8) when the Arf invariant is 0
+or 1, respectively.
+
+This is an alternate proof of a result in Levine [14]; also see (11, p. 155].
+Note also that Corollary 20 allows one to define an Arf invariant for links as
+V(2). It may be zero and is always plus or minus a power of two otherwise.
+
+The values of V at e”*/3 are also of considerable interest, as the algebra Ay,
+is then related to a kind of cubic Clifford algebra. Also, in this case, r:(B,)
+is always a finite group, so one can obtain a rapid method for calculating
+V(t) without knowing V completely. We have included this value of V in the
+tables. Note that it is always in 1 + 2Z(e’7/3).
+
+There is yet a third way to calculate the trace invariant. The decomposition
+of An as a direct sum of matrix algebras is known [10], and H. Wenzl has
+explicit formulae for the (irreducible) representations of the braid group in
+each direct summand. So in principle this method could always be used.
+This brings in the Burau representation as a direct summand of 7. For
+3 and 4 braids this allows one to deduce some powerful relations with the

@@ -1,0 +1,49 @@
+I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604 571
+
+We extend the definition of the two inversion numbers as follows. Suppose M = (mj,;)
+(using the indexing indicated in (2.1)) is an (s,t)-tree of order n and define
+
+inv(M) = #{m,j regular : mij = mi41j41},
+inv’(M) = #{mji; regular : mij = mi41,;}-
+We define further generalizations of the inversion numbers that are useful for our pur-
+
+poses: The generalization of inv depends on a subset J C {j|t; < tjyi} U {n} of
+exceptional SE-diagonals and is defined as
+
+invy(M) = #{mij regular : mij = mi41 541
+and mj+1,;41 is not the bottom entry of an exceptional SE-diagonal}.
+
+The generalization of the complementary inversion number inv’ depends on a subset
+IC {1} U {i|s;_; > s;} of exceptional NE-diagonals and is defined as
+
+inv}(M) = #{m, regular: mj) = ming
+and mj+1,j is not the bottom entry of an exceptional NE-diagonal}.
+Next we define generalizations of the forward difference operator and of the backward
+
+difference operator, namely the v-forward difference operator A[u],, (w.r.t. the variable x)
+and the u-backward difference operator A{ul,.
+
+Bile =(+(1-v)B,) OB, and Alu, = (1+ (w-A,) 7A
+
+ae
+
+These operators are well-defined in our context, since
+
+oo
+
+(1+ (1=0)A,)-1 = SO(v - A, and (1+(u-DA -y0-w Ana
+
+i=0
+
+and the sums are finite if applied to polynomials, because for each polynomial p(a) of
+degree d we have A',p(x) = A‘p(x) = 0 for all i > d. The following property of Alu], is
+
+crucial:
+Ome ine
+— Afro, Strictya 0 42> . Strict ,«) ) 92) ; S : y f(a)
+a,=b) a2=b9? an—1=b oP =p) <b
+4 x
+=—-A), Strict, ,@ an Strict, 2) y y : _ f(a)
+a1=b1 a2=b9) —1=b2)
+
+1 p52 =o,

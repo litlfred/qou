@@ -1,0 +1,57 @@
+200 T.A. Springer
+
+We can now formulate a result which is valid for p=0 (and for large p). Since
+we have not defined in characteristic 0 Weyl group representations on the H*(B§, E),
+the statement is somewhat less precise than that of 6.10. The notations are as in 6.9.
+
+6.14. Proposition. (p=0 or p large). If V4 g+0 then dy ,=@(1)~' dim Vy 4 is
+the degree of an irreducible representation of W. If A runs through a set of representa-
+tions of the nilpotent G-orbits in g, then each such degree occurs exactly once as
+ad, 4.
+
+This follows from the discussion of 6.13, using 6.7 (ii) and 6.10.
+
+6.15. Corollary. (p=0 or p large). The number of nilpotent G-orbits in G is at
+most equal to the number of conjugacy classes of W.
+
+6.16. Corollary. (p=0 or p large). If C(A) acts trivially on BG then the number
+of irreducible components of B¢ of maximal dimension equals the degree of an
+irreducible representation of W.
+
+7. Examples
+
+In this section we first discuss the representations rf of 4.4 in a few particular
+cases. Then we shall give some details about the Green functions of particular
+groups.
+
+7.1. We use the notations of no. 4. We consider the case that A=0. The
+variety Y§ , is isomorphic to k x G/T x ty, where k acts by translations in the
+first factor. The sheaf (R*7,E), of 4.2 is now the constant sheaf H*(G/T, E). The
+Weyl group Wacts on G/T by
+
+w:-gT=gn,'T
+
+and it follows that the representation p'~?4 of 4.2 (i) is the representation of W
+in Hi(G/T, E) defined by this action.
+
+Let @ be the variety of Borel subgroups of G. The «f of 4.2 (ii) is now an
+isomorphism
+
+H3(G/T, E) ~> H*(&, E) (—24). (1)
+
+Assume, for simplicity, that G is k-split and semi-simple and that T is a k-split
+maximal torus. Then the Borel subgroup B> Tis defined over k, and (1) commutes
+with the Frobenius endomorphisms. One knows that @ is the union of open
+Schubert cells X,, (weW), each of which is a locally closed subvariety, k-iso-
+morphic to affine space of dimension [(w) (where / is the length function on W
+defined by B). It follows readily by looking at the filtration of @ defined by the
+closures of the X,, (which are unions of X,,.) that H?‘(@, E)~ E", where n; is the
+number of elements of W of length i, the other cohomology groups being 0.
+Moreover, F* acts on H?'(@, E) as multiplication by q'. From (1) we deduce
+similar results for H*(G/T, E£). Let F,, be the twisted Frobenius morphism on
+G/T and T, respectively, defined by F,(gT)=gn,'T and F,t=n,'tn,. By
+Grothendieck’s formula for the number of rational points of a k-variety [11]
+we have
+\(G/T)* |= ¥ (—1)' Tr (F* p'(w)-!, Hi(G/T, E)).
+
+izo

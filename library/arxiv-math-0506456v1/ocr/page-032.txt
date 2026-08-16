@@ -1,0 +1,51 @@
+32 Asymptotics of the quantum invariants for the figure 8 knot
+
+If (s,u) € C* x C with ¢(s?,u) = 0 then P(s,u) is affine if and only if C2(s)
+and D2(s,u) have a common eigenvector. But this happens exactly when u = 0 or
+u=(s—s-1)?.
+
+Let us now restrict to the case where G is the figure 8 knot group 7. Then
+
+o(t,u) =u? + (3- (t+ t71)) (w+ 4) (5.61)
+
+so in particular ¢(s?,0) = 3—s?—s~? = 0 if and only if st—3s?+1 = Oi. if and only
+if s = p1\/ (3 + poV5)/2 for some py, po € {£1}. If u=(s—s-+)? = 5? +5-?-2
+then ¢(s?,u) = u? + (3-—u—2)(u+1) = uv? +1-u? =1, so we conclude that pis,)
+is affine if and only if u = 0 and s* — 3s? +1=0. Let
+
+N = Hom(r, SL(2, C))/SL(2, C)
+
+be the space of conjugacy classes of SL(2,C)—representations of 7 and let Nyap be
+the subset consisting of classes represented by nonabelian SL(2, C)-representations.
+Moreover, let
+
+N = {(s,u) € C* x C| d(s?,u) = 0}, (5.62)
+and let ® : N — N be the map which maps (s, wu) to the class represented by P(sju)*
+We have shown
+
+Corollary 1. The image of © is Nj ap. If we let
+
+No = { iy (3 + p2V5)/2,0) | was we € {41} }
+
+then ®|x, : No — N is injective and 6-1(®(s,u)) = {(s,u),(s7!,u)} for any
+(s,u) EN\No. oO
+Recall that M,/, denotes the closed oriented 3—-manifold obtained by surgery on
+S° along the figure 8 knot with rational surgery coefficient p/g. The representation
+P(s,u)> (8,U) € N, extends to a SL(2, C)-representation of 7(M,/,) if and only if
+
+P(s,u) (H)” P(s,u) (A)? = 1.
+
+To analyze this criterion it is an advantage to diagonalize pis,,)(A). Assume in
+the following that (s,u) € N. By a rather long but completely elementary and
+straightforward calculation we find that
+
+P(su)(A) = ( wae) ey )
+
+where
+Aui(s,u) = —1+ 587? — 2s? + 54 + u(s~? — 8?)
+
+and \j2(s,u) = 2u(1 — u) if s? = 1 and
+
+Auir(s, u) — Ars (s7t, w)
+
+M12(s,u) = aT

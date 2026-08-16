@@ -1,0 +1,38 @@
+On Markov’s Theorem 301
+
+pair (X,F). As a move on the pair (X,F) our stabilization move is not the
+inverse of our destabilization move, even though they are mutually inverse
+in terms of their effect on X.
+
+(a)
+
+stabilize
+
+x fy new X
+
+(b) negative singularity
+
+posjtive stabilization
+
+stabilize
+—_—_ >
+
+x new X
+Figure 5: Stabilization along an ab-tile.
+
+Stabilizing along ab tiles: Figure 5 shows a modification in the tiling on
+F, which we call stabilizing along an ab tile. It is realized by pushing X
+along a disc neighborhood of the singular leaf in an ab tile. The boundary
+of the neighborhood may be chosen to be transverse to the foliation, so the
+result is a new closed braid representative of the X, bounding a new surface
+F’ which is tiled, but with one less tile than F. We may visualize the result
+of the isotopy of X as the addition of a trivial loop, as depicted in Figure 5.
+This move increases the number of braid strands. As illustrated in Figure 5,
+its effect on the braid representation of X is to add a “trivial loop” around
+the axis, increasing the braid index by 1. The effect of our move on the
+tiling is to eliminate a negative vertex. This will change any bb tile that is
+adjacent to the negative vertex to an ab tile.
+
+Destabilizing along end tiles: If the tiling has a vertex of valence 1,
+then that vertex must be in an aa-tile which is glued to itself (see Figure 6),
+forming a trivial loop. Call such a tile an end tile. Removing it, we obtain a

@@ -1,0 +1,44 @@
+The range |x| < 1 in an infinite series is extended outside the unit circle in the second integral
+
+form (2-1). We later use the Rogers dilogarithm function defined by
+
+L(z) = Lig(z) + Slow log(1 — z). (2.2)
+
+Based on the integral form of the dilogarithm function, we have the following identities (due
+
+to Euler);
+Lio(z) + Lip(—z) = ; Lig(z*), (2.3)
+Lig(—2) + Lip(—27!) = 2Lig(—1) — 5 (log 2)”, (2.4)
+Lio(z) + Lig(1 — z) = Lig(1) — log z log(1 — z). (2.5)
+
+The first two identities are respectively called the duplication and inversion relations. By setting
+
+z =e'™ in those identities, we get
+1 rid
+Lig(1) = —, Li)(—1) = -—. 2.6
+in(1) 6° i2(—1) D (2.6)
+Besides above equations, we have a two-variable equation, which we call the pentagon identity
+
+(this form was first written by Schaeffer);
+
+—1 2
+Lin( >) = Lin(x) ~ Lis(y) + Lin(2) + Lil) — 5 + log elog(—), (2.7)
+or
+Lx) — Ky) + D2) — EAS) + AE*) ==. (28)
+x l-y! l-y 6
+
+It is known that the variant of the dilogarithm function appears in the 3-dimensional hyperbolic
+geometry. Due to Refs. 6}, the volume of the ideal tetrahedron in the 3-dimensional hyperbolic
+
+space is given by the Bloch—Wigner function D(z), which is defined by
+D(z) = Im Lig(z) + arg(1 — z) - log |z|. (2.9)
+
+Here z is a complex parameter Im z > 0, which parameterizes the ideal tetrahedron; the Euclidean
+
+triangle cut out of any vertex of the ideal tetrahedron is similar to that in Fig. [I]. From eq. (2.3)-
+
+(2:7) we get
+
+D(z) =—D(z"') = -D(1— 2), (2.10a)
+nl _,
+D(x) ~ Dly) + DE) - Di) + DI) = 0. (2.10b)

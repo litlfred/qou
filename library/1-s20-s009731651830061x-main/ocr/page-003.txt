@@ -1,0 +1,47 @@
+562 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604
+
+tor formula for the number of monotone triangles with prescribed bottom row [11]. In
+fact, in order to include as many refinement parameters as possible, we extend the main
+results from [14] and from [11] by introducing the inversion number as well as the com-
+plementary inversion number of ASMs, see Section 2. In order to be able to compare
+Gogs to Magogs, we also derive constant term formulas for refined enumerations of Ma-
+gog trapezoids, see Section 4. In the final section, we mention (and partly extend) some
+known tools that may be helpful to relate constant term formulas for Gogs to those for
+Magogs.
+
+In general, the purpose of our results is twofold: On the one hand, they provide a
+framework for computational proofs of the conjectures of Krattenthaler, and of Biane
+and Cheballah, but, on the other hand, they can also be useful in the (experimental)
+search for statistics on the two classes of objects that have the same distribution to
+eventually construct an explicit bijection between Gogs and Magogs. In particular, the
+presentation aims at illustrating a certain versatility of the result on truncated monotone
+triangles from [14] and possibly indicates how to include other statistics on Gogs when
+it turns out to be useful.
+
+Before we present the preliminaries in Section 2, which are then applied in Section 3
+to derive the constant term formulas for Gogs, we recall the definition of Gog trapezoids
+and Magog trapezoids, and state Krattenthaler’s extension of [28, Conjecture 7’].
+
+1.1. Gog trapezoids, Magog trapezoids and Krattenthaler’s conjecture
+
+1.1.1. Gog trapezoids
+
+In [21,22], Krattenthaler generalizes Zeilberger’s Gog trapezoids [32] (which appeared
+unnamed for the first time in [28, Conjecture 7]) as follows: For m,n, k non-negative
+integers with k <n, an (m,n,k)-Gog trapezoid is defined as an arrangement of positive
+integers of the following form (the bullets correspond to the integers)
+
+e
+e e
+e e e
+e e e e ;
+e ° . e e
+° . e e e
+e e ° e e
+
+where n is the number of rows (n = 7 in the example), k is the number of north-east
+diagonals (k = 5 in the example) and the entries in the i-th south-east diagonal (1 <
+i <n, counted from the left) are bounded from above by m +i such that
+
+¢ the entries are weakly increasing along NE-diagonals and SE-diagonals, and
+¢ strictly increasing along rows.

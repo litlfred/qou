@@ -1,0 +1,52 @@
+Braiding of the attractor 271
+
+It is not hard to see ¢ is a homeomorphism commuting with f and quasiconformal except
+possibly on the Julia set. Quasiconformality on the Julia set follows from the expanding property
+of f [Sul2].
+
+By construction, @ fixes co and cyclically permutes the three finite points in the attractor. The
+map ¢° fixes the petals, and hence is isotopic to the identity on €—A. 1)
+
+Proposition A.5. The monodromy group G contains a half Dehn twist about a simple closed curve
+separating two points in the attractor from the two others.
+
+Proof. Since X is an open subset of Poly,, we may perturb f slightly to a new map g in X, such
+that the critical point x splits into two critical points y and w, still attracted to infinity but lying
+on different leaves of the foliation (Fig. A.2). One of the points, say y, lies on the innermost leaf
+of the two. As in the preceding proof, we can construct a map ¢ in Mod(g) which is the identity
+on the leaf through w and interchanges the two petals on the leaf through y. This map is a half
+twist on the annulus bounded by these two leaves, and hence its mapping class is represented by
+a half twist about the core curve of this annulus.
+
+w fly) flw)
+
+Fig. A.2. The foliations of the perturbed map g
+
+By Proposition A.3 there is a loop in X based at g inducing this monodromy. Joining this
+loop to f by a path only changes the monodromy by an inner automorphism of Mod(A), so there
+is an element of G with the desired properties. (
+
+Completion of the Proof of Theorem A.1. Conjugating the half twist by the element of order 3,
+we obtain two half twists about intersecting simple closed curves. The product of one with the
+inverse of the other is pseudo-Anosov and cyclically permutes the finite points of A. 0
+
+References
+
+[BR] _ Bers, L., Royden, H.: Holomorphic families of injections. Acta Math. 157, 259-286 (1986)
+
+[Bi] Birman, J.: Braids, Links and Mapping Class Groups. Ann Math. Stud. 82, Princeton,
+1974
+
+[Bl] Blanchard, P.: Complex analytic dynamics on the Riemann sphere. Bull. AMS 11, 85-141
+(1984)
+
+[DM] _ Doyle, P., McMullen, C.: Solving the quintic by iteration (In preparation)
+
+[FLP] Fathi, A. Laudenbach, F., Poenaru, V.: Travaux de Thurston sur les Surfaces. Asterisque,
+Vol. 66-67 (1979)
+
+[FS] Flexor, M., Sentenac, P.: Preprint, Orsay
+
+[G] Gilman, J.: Structure of elliptic irreducible subgroups of the modular group. Proc. Lond.
+Math. Soc. 47, 27-42 (1983)
+

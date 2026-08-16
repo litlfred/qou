@@ -1,0 +1,47 @@
+2
+
+Gauss linking integral. The first scientist to realise that the result is not a
+comprehensive description of the linkage between two curves seems to have
+been Clerk Maxwell (1873). In his Electricity and Magnetism, he gives a
+very clear investigation (but without vectors) of the Gauss integral, together
+with an explicit statement that it may vanish even though the curves are
+inseparably linked. What is now called the Whitehead link is drawn out as
+an example of two intertwined curves with an equal number of oppositely
+signed crossings so that the integral (1) is zero.
+
+The physical importance of the Gauss integral arises on interpreting the
+curves C, and C2 as closed circuits running along the axes of two vortex
+or magnetic flux tubes. Pictorially, the curves are enclosed in thin toroidal
+volumes U; and U2 and each torus is filled with unit longitudinal flux. Using
+Ampére’s theorem, the vector potential Az due to U2 is
+
+ata) = =f [ap a? 2 na) (2)
+
+where x1 € C) and x2 € C2. Now, (1) can be simplified to yield a single line
+integral of the form
+
+Ly = } Agdl= f Axdl, (3)
+Cy C2
+
+or reformulated as a volume integral over the helicity density (see e.g., Mof-
+fatt (1978))
+
+ih = | Ap.BydV = | Ay.BodV. (4)
+Uy U2
+
+The significance of the helicity Ly2 (or any linking integral) is that it is an ex-
+act invariant of ideal MHD, where the magnetic field is (Lie) dragged under
+the evolving velocity field and so the topology of magnetic field lines is pre-
+served. The helicity is quadratic in the magnetic fluxes and hence describes
+second order linking. For future comparison, we note that the Gauss integral
+can be written as a surface integral by defining a new field My2 = Ai x Ag
+which is divergence-free everywhere outside U, and U2. Now exploiting the
+divergence theorem gives
+
+Ly = | Myz.adS=— | Myp.Ad5, (5)
+aU, aU2
+where 0U, means the boundary of J; and fi is a unit normal. Full proofs
+of these formulae can be found for example in Moffatt (1978) or Berger &
+Field (1984).
+The problem of finding higher order integral invariants analogous to (1)
+which distinguish between unlinked circuits and linkages for which there is an

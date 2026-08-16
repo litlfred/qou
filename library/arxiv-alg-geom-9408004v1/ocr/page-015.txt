@@ -1,0 +1,43 @@
+(2) The tautological relative 3-form s on X over M induces a relative
+1-form on TF over M. We note that our 1-form 7 on T is a lift of this
+tautological relative 1-form.
+
+Lemma 3. The Hamiltonians t; = Sy, s (cf. remark after Theorem 3)
+are equal (up to sign) to the action variables for J, given by (1).
+
+Proof.
+
+The 3-cycle y; in X determines a 1-cycle, say T;, in J(X). The action
+variables (1) are given as fp,7. By the proof of Lemma 2, 7 pulls back to
+7 — df, where f is given by (6), and 7 vanishes on fibers of 7. Therefore:
+
+[r=-[a=-[s
+Q.E.D
+
+Let A be the group of 1-cycles in X (i.e. the free abelian group generated
+by all curves), and Ap the subgroup of 1-cycles homologous to 0. There is a
+well-defined Abel-Jacobi map:
+
+v:Ay > J(X).
+
+If the cycle C is the boundary of a 3-chain I, then v(C) is the image in J(X)
+of fr, considered as an element of H3(X,C)*. The image is independent of
+the choice of [. (This is the analogue for 1-cycles of the natural map from
+divisors homologous to 0 to Pic®(X) .)
+
+Given a family x : * — M of threefolds and a relative 1-cycle C — M
+in Ap(¥/M) (ie. for each t € M, C; is a 1-cycle homologous to 0 in X;),
+there is a corresponding section
+
+v(C) € HM, J(&/M))
+
+whose value at t € M is v(C;) in J(X;). This is called the normal function
+of the relative cycle C.
+
+Abstractly, a normal function is defined as a section v of Z whose local
+liftings to sections V of R°y,.C = H? satisfy the differential equation
+
+V7 ec F'H?,
+or equivalently
+
+(7) (V7, s) = 0,

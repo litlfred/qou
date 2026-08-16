@@ -1,0 +1,76 @@
+4 SYLVIE CORTEEL AND OLIVIER MALLET
+
+H
+
+Figure 1. Ferrers diagram of the overpartition A = (5, 4,3, 3) of weight 15.
+
+21]
+2
+
+N]}w] rw}
+FR ]r] role
+
+nw} r}rw
+
+FIGURE 2. Example of a 2-modular diagram of weight 28.
+
+The Frobenius representation of an overpartition (Ls. BO) of n is a two-rowed array
+
+@y a2 *'* Gn
+(; bz +: )
+where (a1,...,@y) is a partition into distinct nonnegative parts and (bi,...,by) is an overpartition into
+nonnegative parts where the first occurrence of a part can be overlined and N + )°(a; + b;) =n. Following
+is. we call pg,o(n) the number of such two-rowed arrays. We call this the Frobenius representation of an
+overpartition because it is in bijection with overpartitions. This was proved in [§] and we now recall the
+algorithm used for that proof.
+
+We use the notion of a hook. Given a positive integer a and a non-negative integer b, h(a,b) is the
+hook that corresponds to the partition (a,1,...,1) where there are b ones. Combining a hook h(a,b) and a
+partition a is possible if and only if a > a; and b > l(a), where I(a) denotes the number of parts of a. The
+result of the union is 3 = h(a,b) Ua with 6, =a, 1(8) =b+1 and 6; =a; +1 fori > 1.
+
+Now take a two-rowed array v counted by pg,o(n), increase the entries on the top row by 1 and initialize
+a and £ to the empty object, «. Beginning with the rightmost column of v, we proceed to the left, building
+a into an ordinary partition and @ into a partition into distinct parts. At the i” column, if }; is overlined,
+then we combine the hook h(a;,b;) and a. Otherwise, we add the part b; to a’ (the conjugate of a) and the
+part a; to 3. Joining the parts of a together with the parts of 3 gives the overpartition 4. An example is
+75 4 2 1)
+
+given below starting with v = (( I43T
+
+ao
+
+oo
+woe o
+
+i]
+NYS
+
+n
+
+n
+
+:) (1,1) c
+‘) (2,2,1) (3)
+
+(3,3, 2,1) (5,3)
+
+a
+
+io
+ALO BIO BIO BIO
+
+eee
+
+lo aon
+
+DOOD OA OAS
+
+a
+
+) (6,4,4,3,2) (5,3)
+€ (7,5,5,4,3,1)  (8,5,3)
+
+We get A = (8,7,5,5,5, 4,3, 3, 1). The reverse bijection can be easily described. See |
+We now define the successive ranks.
+
