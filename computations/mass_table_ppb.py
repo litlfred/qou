@@ -77,7 +77,13 @@ from knot_volumes import (  # noqa: E402
     VOL_BORROMEAN_MPF as VOL_BORROMEAN,
     VOL_7_SQ_1_MPF as VOL_7_SQ_1,
 )
-from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from codata_constants import (  # noqa: E402
+    ame_binding_mev,
+    AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION, AME_B_LI5_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION, AME_B_LI7_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 # Knot volumes now imported from `knot_volumes` (canonical mpmath
 # 50dps source). Catalan G + Vol(L6a4) = 8G + Vol(7²_1) literature
@@ -98,24 +104,29 @@ KNOT_VOL = {
 }
 
 # AME2020 light-atom table (B in MeV; positive = binding).
-AME_TABLE = [
-    ("2H",     1,  1,   float(AME_B_DEUTERON_MEV_VALIDATION)),
-    ("3H",     1,  2,   float(AME_B_TRITIUM_MEV_VALIDATION)),
-    ("3He",    2,  1,   float(AME_B_HE3_MEV_VALIDATION)),
-    ("4He",    2,  2,  float(AME_B_HE4_MEV_VALIDATION)),
-    ("6Li",    3,  3,  float(AME_B_LI6_MEV_VALIDATION)),
-    ("7Li",    3,  4,  39.24453),
-    ("8Be",    4,  4,  56.49951),
-    ("9Be",    4,  5,  58.16498),
-    ("11B",    5,  6,  76.20548),
-    ("12C",    6,  6,  92.16175),
-    ("14N",    7,  7, 104.65877),
-    ("16O",    8,  8, 127.61929),
-    ("19F",    9, 10, 147.80137),
-    ("20Ne",  10, 10, 160.64486),
-    ("24Mg",  12, 12, 198.25690),
-    ("40Ca",  20, 20, 342.05212),
+# (symbol, Z, N) only -- NO binding values are typed here.  Every B comes from
+# the vendored AME2020 table via `ame_binding_mev(Z, A)` with `A = Z + N`.
+#
+# What this replaces: five entries read `float(AME_B_*_MEV_VALIDATION)` while
+# the other eleven were hand-typed decimals.  One column, two sources, and they
+# disagreed -- 9Be by 1.6e-5 and 7Li by 1.4e-5 relative against the repo's own
+# vendored table, with 8Be/11B/12C/14N/16O/19F/20Ne/24Mg/40Ca off by less.  A
+# typed literal cannot be re-derived, cannot be corrected when the vendored
+# table is updated, and silently competes with the registry it sits beside.
+#
+# Values stay `mp.mpf`: `ame_binding_mev` parses and divides inside
+# `workdps(>= 50)`, and the old `float(...)` threw that away at the first
+# opportunity -- which is what put a binary64 `B_AME_MeV` into this producer's
+# witness and, from there, into every consumer that lifts it with `mp.mpf`.
+_AME_NUCLIDES = [
+    ("2H",     1,  1), ("3H",     1,  2), ("3He",    2,  1),
+    ("4He",    2,  2), ("6Li",    3,  3), ("7Li",    3,  4),
+    ("8Be",    4,  4), ("9Be",    4,  5), ("11B",    5,  6),
+    ("12C",    6,  6), ("14N",    7,  7), ("16O",    8,  8),
+    ("19F",    9, 10), ("20Ne",  10, 10), ("24Mg",  12, 12),
+    ("40Ca",  20, 20),
 ]
+AME_TABLE = [(sym, Z, N, ame_binding_mev(Z, Z + N)) for sym, Z, N in _AME_NUCLIDES]
 
 # Atom → (knot, nu_sdp, source-label) hypothesis table.
 # ZERO-PARAMETER = the pairing is stated in the framework; the
@@ -146,17 +157,21 @@ ATOM_ASSIGN = {
     # gap row so the witness output makes the missing prediction
     # visible.  See docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md
     # for the knot-census target volumes and candidate paths.
-    "5Li":  {"rule": "gap",      "B_AME_MeV_target": 26.328,
-             "vol_kashaev_target_m_e_units": 26.328 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 26.328 / (2 * M_E_MEV),
+    # 5Li from the registry, not the literal 26.328 that stood here: the
+    # vendored table gives 26.3306625, so the typed value was 1.0e-4 off -- the
+    # largest of the discrepancies in this file.
+    "5Li":  {"rule": "gap",      "B_AME_MeV_target": AME_B_LI5_MEV_VALIDATION,
+             "vol_kashaev_target_m_e_units": AME_B_LI5_MEV_VALIDATION / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": AME_B_LI5_MEV_VALIDATION / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
-    "6Li":  {"rule": "gap",      "B_AME_MeV_target": float(AME_B_LI6_MEV_VALIDATION),
-             "vol_kashaev_target_m_e_units": float(AME_B_LI6_MEV_VALIDATION) / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": float(AME_B_LI6_MEV_VALIDATION) / (2 * M_E_MEV),
+    "6Li":  {"rule": "gap",      "B_AME_MeV_target": AME_B_LI6_MEV_VALIDATION,
+             "vol_kashaev_target_m_e_units": AME_B_LI6_MEV_VALIDATION / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": AME_B_LI6_MEV_VALIDATION / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
-    "7Li":  {"rule": "gap",      "B_AME_MeV_target": 39.24453,
-             "vol_kashaev_target_m_e_units": 39.24453 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 39.24453 / (2 * M_E_MEV),
+    # 7Li likewise: the literal 39.24453 stood against the vendored 39.2450807.
+    "7Li":  {"rule": "gap",      "B_AME_MeV_target": AME_B_LI7_MEV_VALIDATION,
+             "vol_kashaev_target_m_e_units": AME_B_LI7_MEV_VALIDATION / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": AME_B_LI7_MEV_VALIDATION / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
     # 8Be: α-cluster (n_α=2, n_pairs=1)
     "8Be":  {"rule": "alpha",    "n_alpha": 2, "n_pairs": 1,
@@ -275,9 +290,16 @@ def predict(sym: str) -> dict | None:
 
 
 def fmt_ppb(err_abs: float, b_ame: float) -> str:
+    """Format a relative error in ppb for the console.
+
+    `float(...)` on the ratio, not on the inputs: both arrive as `mp.mpf` now
+    that the AME column is sourced from the vendored table, the division is
+    done in mpmath, and only the already-reduced ppb figure is narrowed for
+    display.  mpf has no `__format__`, so every `:+.3f` below would raise.
+    """
     if b_ame <= 0:
         return "—"
-    ppb = abs(err_abs) / b_ame * 1e9
+    ppb = float(abs(err_abs) / b_ame * 1e9)
     if ppb > 1e9:
         return f"{ppb/1e9:+.3g}×10⁹"
     if ppb > 1e6:
@@ -346,11 +368,16 @@ def main() -> int:
         )
     print("=" * 130)
     print("MASS TABLE — AME2020 vs ZERO-FREE-PARAMETER predictions")
-    print(f"  q₀ = {Q0:.10f}   m_e = {M_E_MEV} MeV")
-    print(f"  8G = {VOL_BORROMEAN:.10f}   Vol(7²_1) = {VOL_7_SQ_1:.10f}")
-    print(f"  c_αα (derived = m_e · Vol(7²_1)) = {C_ALPHA_DERIVED:.6f} MeV")
+    # float(Q0) for the console only.  Q0 is an mpf and mpf has no __format__,
+    # so `:.10f` raised TypeError here -- on `main`, before any change in this
+    # commit, which is why this producer could not regenerate its own witness.
+    print(f"  q₀ = {float(Q0):.10f}   m_e = {M_E_MEV} MeV")
+    # Same console-only float() as the q₀ line above, for the same reason.
+    print(f"  8G = {float(VOL_BORROMEAN):.10f}   "
+          f"Vol(7²_1) = {float(VOL_7_SQ_1):.10f}")
+    print(f"  c_αα (derived = m_e · Vol(7²_1)) = {float(C_ALPHA_DERIVED):.6f} MeV")
     print(f"  B(⁴He_derived) = 2m_e · 4·8G = "
-          f"{2*M_E_MEV*4*VOL_BORROMEAN:.6f} MeV   "
+          f"{float(2*M_E_MEV*4*VOL_BORROMEAN):.6f} MeV   "
           f"(AME 4He: {float(AME_B_HE4_MEV_VALIDATION)} MeV)")
     print(f"  NO AME VALUES USED AS INPUTS.")
     if args.shell_correction:
@@ -369,7 +396,7 @@ def main() -> int:
         if pred is None:
             no_assign.append((sym, Z, N, A, B_ame))
             print(f"  {sym:>5} {Z:>3} {N:>3} {A:>3}  "
-                  f"{B_ame:>10.4f}   "
+                  f"{float(B_ame):>10.4f}   "
                   f"[no zero-parameter rule assigned]")
             continue
         B_pred_kashaev = pred["B_pred"]
@@ -388,12 +415,12 @@ def main() -> int:
         l3_marker = f"  [+ε_shell={eps_shell:+.3f}]" if eps_shell != 0.0 else ""
         if B_pred is None:
             print(f"  {sym:>5} {Z:>3} {N:>3} {A:>3}  "
-                  f"{B_ame:>10.4f}   "
+                  f"{float(B_ame):>10.4f}   "
                   f"[GAP — {pred['formula']}]")
         else:
             print(f"  {sym:>5} {Z:>3} {N:>3} {A:>3}  "
-                  f"{B_ame:>10.4f}  {B_pred:>+11.4f}  {err:>+11.6f}  "
-                  f"{pct:>+8.3f}%  {fmt_ppb(err, B_ame):>12}  "
+                  f"{float(B_ame):>10.4f}  {float(B_pred):>+11.4f}  {float(err):>+11.6f}  "
+                  f"{float(pct):>+8.3f}%  {fmt_ppb(err, B_ame):>12}  "
                   f"{pred['formula']}{l3_marker}  [{pred['origin']}]")
         rows.append({
             "sym": sym, "Z": Z, "N": N, "A": A,
@@ -428,7 +455,7 @@ def main() -> int:
 
     mean_pct = sum(abs(r["err_pct"]) for r in ok) / len(ok) if ok else 0.0
     mean_ppb = sum(abs(r["err_ppb"]) for r in ok) / len(ok) if ok else 0.0
-    print(f"    mean |err|:   {mean_pct:.4f}%  =  {mean_ppb:.3e} ppb")
+    print(f"    mean |err|:   {float(mean_pct):.4f}%  =  {float(mean_ppb):.3e} ppb")
 
     builder = (
         WitnessBuilder("mass-table-ppb", engine="python+snappy")
