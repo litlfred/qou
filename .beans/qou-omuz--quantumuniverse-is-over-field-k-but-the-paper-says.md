@@ -1,11 +1,11 @@
 ---
 # qou-omuz
 title: QuantumUniverse is over [Field k] but the paper says commutative ring R — and R_q is not a field
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T03:16:10Z
-updated_at: 2026-08-16T03:16:58Z
+updated_at: 2026-08-16T10:33:29Z
 ---
 
 Raised by the author while reviewing `qou-btq3`: *"why k field, not R ring?"*
@@ -73,3 +73,65 @@ from two directions.
 
 Author decision on 1 (it changes what a quantum universe is); 2 is a
 prose defect and fixable on its own.
+
+
+## RETRACTED 2026-08-16 — items 1 and 3 were wrong, and item 2 was backwards
+
+I recommended relaxing `[Field k]` to `[CommRing R]` and fixing `Vect_R` to
+`R-Mod`. Both are **refuted by evidence already in the corpus**, which I should
+have found before recommending. Recording the retraction rather than quietly
+dropping it.
+
+### The division is real and licensed by `[Field k]`
+
+`dimQ_ne_zero`'s own comment says *"each can be **normalised against**"* —
+i.e. divided by. That is not decoration:
+`mass-theory/frobenius-codim-universal.lean:13,55` computes
+
+    C_dim_q = Σ_λ (1 / (dim_q(λ) · τ(p_λ))) · p_λ
+    c_λ · τ(p_λ) = [1/(dim_q · τ(p_λ))] · τ(p_λ) = 1/dim_q(λ)
+
+and the QU structure's own docstring cites this as the consequence axiom 4
+exists to support. Over a field, `x ≠ 0 ⇒ x⁻¹`. Over a commutative ring, `≠ 0`
+gives nothing. So a naive relax would leave `frobWeight_ne_zero` and
+`dimQ_ne_zero` too weak to license the identity the structure advertises.
+
+### The corpus had already settled this
+
+`braids-and-knots/quantum-su2.lean:20-26`, verbatim:
+
+> The quantum-group relation `[E,F] = (K − K⁻¹)/(q − q⁻¹)` and the `q`-integers
+> `[n]_q = (qⁿ − 1)/(q − 1)` both divide by elements that are *not* invertible
+> in `ℤ[q, q⁻¹]` (which is only a `CommRing`); the field of fractions `ℚ(q)` is
+> the smallest ground ring in which these formal quotients are literal.
+
+So the **two `R_q` meanings are not a defect** — they are a deliberate split,
+and item 3 of this bean was wrong to call for disambiguation-as-cleanup:
+
+| ring | where | why |
+|---|---|---|
+| `ℤ[q,q⁻¹] = LaurentPolynomial ℤ` | knot/skein statements | integrality; Laurent coefficients |
+| `ℚ(q) = RatFunc ℚ` | Wedderburn / Markov normalisation | quantum dimensions must be invertible |
+
+`[Field k]` on `QuantumUniverse` is **correct** for axiom 4. What is
+under-specified is the PROSE: `quantum-universe.md:3` says only "R-linear …
+commutative ring R", which does not admit the division axiom 4 needs.
+
+### Item 2 was backwards too
+
+I said `Vect_R` should become `R-Mod`. If the QU ground ring is a field —
+which the division requires — then **`Vect_R` is the correct notation** and the
+intro's `R-Mod` is the loose one. The opposite of what I filed.
+
+### What the real defect is
+
+Not the Lean. The prose declares a commutative ring where the mathematics needs
+a field, and the intro and definition disagree about which. The honest fix is
+to state the ground-ring requirement at `def:quantum-universe` — that **C** is
+linear over a field (canonically `ℚ(q)`), with a pointer to why
+(`quantum-su2.lean`'s rationale), and reconcile `R-Mod` / `Vect_R` in that
+direction.
+
+That is an author call about the paper's own statement, not a Lean cleanup, and
+it is a different question from the one this bean was opened on. Left for a
+ruling; nothing implemented.
