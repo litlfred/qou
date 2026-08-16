@@ -3,8 +3,9 @@
 title: prop:habiro-residue-sum-equivalence cites a cross-pipeline witness that does not exist
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-15T23:12:20Z
-updated_at: 2026-08-15T23:12:20Z
+updated_at: 2026-08-16T12:50:08Z
 ---
 
 
@@ -133,3 +134,34 @@ evidence anyway. The deprecation was a distraction.
 
 Not doing (2)/(3) here: it is a mass-theory claim, and re-deriving it is
 authorial work rather than provenance repair.
+
+
+---
+
+## 2026-08-16 — the "canonical" path this bean points at is itself convention C
+
+The resolution above ends by saying the block quotes the Schur-Weyl-weighted
+value (`0.177`) while the live witness carries "the canonical one" (`0.388`).
+That second half needs the same scrutiny the first half got.
+
+**`0.388` is the convention-C deuteron `|tr_M|`.** Under the canonical
+convention D the same quantity is `0.5751` — measured in
+`docs/audits/2026-08-15-rho-k-co-casimir-stale-convention-c-needs-d-refresh.md`.
+`term6-full-pole-sum.witness.json` carries
+`.data.atoms[2].tr_M_at_q0_polynomial = 0.3882864240747888`, and
+`scripts/convention-c-witness-audit.py` does **not** flag it.
+
+The caveat in `term6_full_pole_sum.py` is not wrong — it was written 2026-05-03,
+three months before the 2026-08-09 ruling, and its "canonical" means *canonical
+Markov trace as opposed to Schur-Weyl weighted*, a distinction orthogonal to
+C-vs-D. But it now reads as convention-canonical, which it never claimed to be.
+
+So the state of this proposition is worse than "cites the wrong path": **both
+paths it could cite are convention C.** Re-deriving the residue path under D is
+authorial work and is still not done here.
+
+Filed the general gap as **`qou-bvk7`** — the witness audit's two tests both key
+on *weights* (3+-row `y_lambda`, half-integer q powers) and neither can see a
+recorded *trace value*. A block quoting `0.3883` and declaring one of those
+witnesses would pass the witness-substitution axis, the convention-C witness
+audit, and R9/R10/R11, because all four look at either weights or producers.
