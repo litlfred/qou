@@ -274,7 +274,30 @@ def main() -> int:
         computed=int(unique_max),
         expected=1,
     )
-    out_path = builder.save()
+    # q0 anchor: `ambiguous`, and deliberately not one of the two pins.
+    #
+    # `resolve_q0_anchor` returns "ambiguous" for this stem because
+    # `gen_q0_anchor_manifest.py` found BOTH pin signatures and listed it under
+    # the manifest's `ambiguous` set — the manual-ruling queue. The import cone
+    # agrees that q₀ is reachable (19 modules, via hoefsmit_symbolic /
+    # hecke_core / mass_at_3A_proper), so `independent` would be false here
+    # however symbolic the surface looks: bean qou-pin1 reached for that word
+    # and was right to settle instead.
+    #
+    # Declaring `ambiguous` moves this out of Q0_ANCHOR_MISSING (indistinguish-
+    # able from a producer that forgot) into the queue that says a human has to
+    # rule. It is NOT the ruling. No q0Value: there is no single pin to record,
+    # and one here would claim the ruling has been made.
+    out_path = builder.save({
+        "q0Anchor": "ambiguous",
+        "q0AnchorReason": (
+            "manifest lists this stem under `ambiguous`: both pin signatures "
+            "present. q0 IS reachable — 19-module import cone via "
+            "hoefsmit_symbolic / hecke_core / mass_at_3A_proper — so this is "
+            "not q0-free, it is q0-undetermined. Needs a manual ruling on "
+            "which pin the H6 per-irrep pole extraction actually evaluates at."
+        ),
+    })
     print(f"\n  Witness emitted: {out_path}")
     return 0 if success else 1
 
