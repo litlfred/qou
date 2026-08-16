@@ -147,16 +147,25 @@ def main() -> int:
         return 2
 
     y = symbolic_y_lambda(N_STRANDS, q)
+    # Route χ through the PRODUCER's cache rather than recomputing inline.
+    # Two reasons, both learned the hard way on the first run:
+    #   - it costs ~25 min at H_6 under the colour-weighted word (the symbolic
+    #     δ makes entries far larger than the ~155 s the colour-blind estimate
+    #     in that producer's docstring records), so an inline recompute makes
+    #     every diagnostic re-run unaffordable and the result unrepeatable;
+    #   - a second implementation of χ here is exactly the private-copy defect
+    #     this whole arc keeps finding. The producer's loader is now
+    #     convention-guarded, so reading it is safe in the way it was not
+    #     before: a cache built for a different word is discarded, not served.
+    t0 = time.time()
+    from per_irrep_pole_deuteron_h6 import load_or_build_chi_deuteron
+    chis, _ = load_or_build_chi_deuteron(q)
     total = sp.Integer(0)
     chi_floats = 0
-    t0 = time.time()
     for lam in _partitions(N_STRANDS):
-        chi = chi_lambda_symbolic(lam, crossings)
-        chi = sp.cancel(chi)
+        chi = sp.cancel(chis[lam])
         chi_floats += len(chi.atoms(sp.Float))
         total += y[lam] * chi
-        print(f"  λ={str(lam):<18} χ Float atoms={len(chi.atoms(sp.Float))}  "
-              f"({time.time()-t0:.0f}s)", flush=True)
     t_chi = time.time() - t0
     bridge = sp.cancel(sp.together(total))
     print(f"[bridge] {t_chi:.1f}s   Float atoms={len(bridge.atoms(sp.Float))}")
@@ -164,8 +173,45 @@ def main() -> int:
     # ---- the test ------------------------------------------------------
     residual = sp.cancel(sp.together(bridge - peel))
     is_zero = sp.simplify(residual) == 0
-    print(f"\n[residual] {residual if len(str(residual)) < 160 else '(long)'}")
-    print(f"[residual] identically zero: {is_zero}")
+    print(f"\n[residual] identically zero: {is_zero}")
+
+    # DIAGNOSTICS, because "not identically zero" is not yet a finding.
+    # A residual that is LARGE at q₀ means the two sides are different objects
+    # -- a probe bug -- since bridge and peel are known to agree there to
+    # ~1e-50 (atomic-tr-m-mpfr-50dps{,-proton}.witness.json). A residual that
+    # VANISHES at q₀ and not elsewhere would be the real thing: an identity
+    # that holds at the anchor but not as a function of q. Recording the
+    # numbers is what separates those, and the first version of this probe
+    # truncated the residual to 2000 chars and could answer neither.
+    from mpmath import mp as _mp
+    _mp.dps = 60
+    probes = {
+        "proton_q0": "1.1099785827513808075916690956",
+        "muon_q0": "1.109978595557334719899763",
+        "q_1_3": "1.3",
+        "q_0_7": "0.7",
+        "q_2": "2",
+    }
+    f_res = sp.lambdify(q, residual, "mpmath")
+    f_peel = sp.lambdify(q, peel, "mpmath")
+    evals = {}
+    for name, qs in probes.items():
+        qv = _mp.mpf(qs)
+        try:
+            rv, pv = f_res(qv), f_peel(qv)
+            rel = abs(rv) / abs(pv) if pv != 0 else None
+            evals[name] = {"q": qs, "residual": _mp.nstr(rv, 20),
+                           "peel": _mp.nstr(pv, 20),
+                           "relative": _mp.nstr(rel, 12) if rel is not None else None}
+            print(f"  residual({name:10s}) = {_mp.nstr(rv, 14):>24}   "
+                  f"rel {_mp.nstr(rel, 8) if rel is not None else '-'}")
+        except Exception as exc:  # noqa: BLE001
+            evals[name] = {"q": qs, "error": f"{type(exc).__name__}: {exc}"}
+            print(f"  residual({name:10s}) FAILED {exc}")
+    rnum, rden = sp.fraction(residual)
+    deg_num = int(sp.degree(sp.expand(rnum), q))
+    deg_den = int(sp.degree(sp.expand(rden), q))
+    print(f"  residual degrees: num {deg_num} / den {deg_den}")
 
     witness = {
         "computation": "markov-identity-symbolic",
@@ -194,7 +240,12 @@ def main() -> int:
                    "chi_float_atoms_total": chi_floats,
                    "elapsed_sec": f"{t_chi:.2f}"},
         "residual_is_identically_zero": bool(is_zero),
-        "residual": str(residual)[:2000],
+        "residual_degrees": {"numerator": deg_num, "denominator": deg_den},
+        # The EVALUATIONS are the durable record, not the expression string.
+        # A truncated `str(residual)[:2000]` is unparseable and cannot be
+        # re-examined, which is how the first run produced a verdict nobody
+        # could triage.
+        "residual_evaluations": evals,
         "assertions": [
             {"name": "peel_is_float_free", "passed": peel_floats == 0},
             {"name": "chi_is_float_free_after_pr_5209", "passed": chi_floats == 0,
