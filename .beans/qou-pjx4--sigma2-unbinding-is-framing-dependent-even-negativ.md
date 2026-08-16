@@ -65,3 +65,36 @@ the three physically-unbound channels (pp, nn, pn 1S0) sit at negative stacked
 powers while the deuteron (pn 3S1) does not — i.e. whether the bound/unbound
 split is a **writhe-parity** statement. Not tested; the magnitudes above say it
 would not close quantitatively as-is.
+
+## ANSWERED (2026-08-16): does the writhe address the diproton? NO — and it is a sign, not a magnitude
+
+The threshold is exact. `mu_eff = mu*(1-h)^(e/2) > 1` iff `e < 2·ln(1/mu)/ln(1-h)`:
+
+| channel | `mu` | `T3` writhe | `e` to unbind | gap |
+|---|---:|---:|---:|---:|
+| pp | 0.612688 | **+1** | ≤ −4.1776 | −5.18 |
+| pn | 0.508158 | 0 | ≤ −5.7728 | −5.77 |
+| nn | 0.403628 | −1 | ≤ −7.7367 | −6.74 |
+
+All thresholds strictly negative — unbinding needs **negative** writhe.
+
+Nature (Machleidt CD-Bonn Table XI): pp and nn both **unbound**, so both must fall
+below threshold. But the corpus grades by `T3` = crossing sign, which by
+construction gives them **opposite** signs (`sigma` for pp, `sigma^-1` for nn).
+So `T3` hands `pp` a **non-negative** writhe, and a non-negative writhe multiplies
+`mu` by a factor `<= 1` — it binds **harder**.
+
+**`pp` therefore cannot be unbound at ANY magnitude under a `T3` grading.**
+Sorry-free: `QOU.QBeta.t3_grading_cannot_unbind_pp`, via
+`nonneg_writhe_cannot_unbind` (both `[propext, Classical.choice, Quot.sound]`).
+
+`nn` is not excluded by that theorem — its `T3` writhe is negative, the helpful
+direction — but `−1` against a required `−7.74` is ~8× off.
+
+Magnitude plausibility: `beta_Bor` has writhe `0`, a single bond has `±1`. The
+required `|w| >= 5` (pp) / `>= 8` (nn) is 5–8× anything the framework carries.
+
+**Scope.** Scope-(b) for the `pp` half (invariant: a non-negative exponent on a
+base in `(0,1)` cannot exceed 1). The thresholds are a *requirement* measurement,
+not a proposal — reading them as "set `e_pp = -5`" is a fit, and would destroy the
+`T3` identification the writhe earns its place by.
