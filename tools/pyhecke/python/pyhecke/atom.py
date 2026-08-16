@@ -687,8 +687,29 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
                 sp_arr[i] *= c * q0 + d
                 ap_arr[i] *= -c * qi + d
 
-    # Build per-generator V̂_full from accumulators
-    z_mark = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+    # Build per-generator V̂_full from accumulators.
+    #
+    # Convention D. This was `1.0 / (q0 ** 0.5 + qi ** 0.5)` — convention C,
+    # EXCISED 2026-08-09 and re-affirmed 2026-08-15 — and it was the last
+    # convention-C site in the producer layer (bean qou-11wz).
+    #
+    # IT WAS ALSO A SPLIT PAIR, which is why it mattered more than a lone stale
+    # site. `gram.py:888-891` dispatches `atom_per_generator_volumes` to
+    # `pyhecke_native` and FALLS BACK to this Python implementation; the native
+    # arm computes `z_mark` under D. Measured at q_0 for (Z,N) = (1,0) before
+    # this change, the two arms returned:
+    #
+    #     component   python (C)        native (D)
+    #     sym          1.88038767606     1.88038780844     agree
+    #     alt         -0.537616027272   -0.537615990711    agree
+    #     std          1.14610143246     1.2824205802      DIFFER
+    #     full         0.989007228447    1.08021529448     DIFFER
+    #
+    # `std` is precisely `z_mark * a + b`, so the divergence tracked the
+    # convention exactly, and `sym`/`alt` — which do not touch z_mark — agreed
+    # to float64 noise. The consequence: the same function returned different
+    # physics depending on whether the native wheel happened to be installed.
+    z_mark = q0 ** 3 / (q0 ** 2 + 1)
     h_val = q0 - qi
     def q_int(n):
         return (q0 ** n - qi ** n) / h_val if abs(h_val) > 1e-15 else float(n)

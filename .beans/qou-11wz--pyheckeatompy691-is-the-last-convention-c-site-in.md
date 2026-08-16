@@ -1,10 +1,11 @@
 ---
 # qou-11wz
 title: pyhecke/atom.py:691 is the last convention-C site in the producer layer — and it reaches the mass table
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-16T11:18:21Z
-updated_at: 2026-08-16T11:18:21Z
+updated_at: 2026-08-16T11:28:01Z
 ---
 
 Parent: qou-cdx1. Surfaced by qou-2ixd's producer-audit bucket split; left open
@@ -67,3 +68,78 @@ DIRECTION is not in question — but the binding channel already got worse on
 aggregate under D (mean |err| 37.39% -> 43.85%, recorded in the ruling audit as
 the anti-fit discipline working as designed), and a mass-table movement should
 be measured and reported deliberately, not arrive as a side effect.
+
+
+---
+
+## 2026-08-16 — migrated, and gate 1 found something bigger than a stale site
+
+**Gate 1 (the `qou-j6il` shape) fired.** The installed `pyhecke_native` returns
+`markov_z(q₀) = 0.6126880371464652` — convention **D**, matching its Rust source,
+so the stale-`.so` trap itself is resolved. But comparing the two *arms of this
+function* at q₀ for (Z,N) = (1,0), before any change:
+
+| component | python | native |
+|---|---|---|
+| `sym` | 1.88038767606 | 1.88038780844 | agree |
+| `alt` | −0.537616027272 | −0.537615990711 | agree |
+| **`std`** | **1.14610143246** | **1.2824205802** | **DIFFER** |
+| **`full`** | **0.989007228447** | **1.08021529448** | **DIFFER** |
+
+`std` is exactly `z_mark * a + b`, and `sym`/`alt` — which never touch `z_mark` —
+agree to float64 noise. So the divergence tracked the convention precisely.
+
+**And it was not merely native-vs-fallback.** The two import routes are
+permanently split, because `hecke_core` bypasses the dispatcher:
+
+```
+computations/substrate/hecke_core.py:132   from pyhecke.atom import (... atom_per_generator_volumes ...)
+```
+
+- `from hecke_core import …` — `mass_table_comprehensive.py`,
+  `brane_tower_isospin_diagnosis.py`, `li2q_fbor_expansion_probe.py` → the raw
+  **Python** implementation → **convention C**
+- `from pyhecke.gram import …` — `probes/adjacent_vs_full_probe.py` → native
+  dispatch → **convention D**
+
+Two callers of the same named function, getting different physics, decided by
+which module they imported it through. The shipped
+`qou-mass/src/qou_mass/_internal/hecke_core.py:131` carries the same direct
+import, so the package was on the C route too — and since it imports the real
+library rather than vendoring `atom.py`, this fix reaches it.
+
+**After the migration the arms converge:** worst |python − native| across
+(1,0), (0,1), (1,1), (2,1), (2,2) and all four components is **1.3e-7** —
+float64 noise.
+
+`convention-c-producer-audit.py` now reports **ACTIONABLE: 0 sites**. That is a
+measured zero from the detector that scans return forms, closed-form
+specialisations, half-argument reciprocals and registry-derived buckets — not
+the 2026-08-09 "0 actionable" that this campaign spent a week retracting. The
+one remaining closed-form flag, `qbeta_5two…probe.py:132 ocneanu_weights`, is
+the documented false positive: the file declares `t = symbols("t"); q = t**2`,
+so the `sqrt` is its working variable and its `z` is D.
+
+## STILL OPEN — the artifact cascade
+
+The code is consistent; the artifacts are not yet. Five live witnesses name this
+producer and were generated through the **C** route:
+
+```
+computations/pyhecke-h3-vs-h3a-impact-comparison.witness.json
+computations/hecke-core-symbolic-migration.witness.json
+computations/vhat-per-crossing-chain.witness.json
+computations/p2-5-symbolic-q-audit.witness.json
+computations/rho-k-graded-atomic-mass.witness.json
+```
+
+Movement is material: per-generator `std` moves ~+11.9 % at (1,0). Not
+regenerated here — gate 2 (qou-eea0 ordering: producers read each other's
+witnesses, so a stale upstream propagates into a freshly-migrated downstream and
+looks clean) needs a deliberate cascade, and `rho-k-graded-atomic-mass` is in the
+mass chain. Leaving them stale is taxonomy row 10 and is tracked, not ignored.
+
+Note also: `atom_per_generator_volumes` emits a `DeprecationWarning` for A ≥ 2
+("H_3 weights for an A=2 atom; H_{3A}=6 weights are correct — migrate to
+`mass_at_3A_proper.per_generator_V_hat_3A`"), so part of this cascade may be
+better served by retiring callers than by regenerating them.
