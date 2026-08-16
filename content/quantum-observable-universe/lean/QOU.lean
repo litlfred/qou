@@ -880,6 +880,8 @@ import QOU.Mathlib.SchenstedCellsBridge
 import QOU.Mathlib.SchenstedStandardTableau
 import QOU.Mathlib.SchenstedStandardGeneric
 import QOU.Mathlib.SchenstedPairingMap
+-- RSK inverse, brick 1: reverse row insertion and the inversion law.
+import QOU.Mathlib.SchenstedReverseRow
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
