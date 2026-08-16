@@ -866,3 +866,63 @@ theorem gb_filtration_strict_self_dual_bound
   linarith
 
 end QOU.BraidKnot
+
+/-! ## The same identity over an arbitrary commutative ring
+
+The `1/x` above is **notation for "inverse of"**, not arithmetic: the content of
+`codim_block_contribution` is that if `c` is inverse to `d * t`, then `c * t` is
+inverse to `d`.  That is associativity, and it needs no field, no `≠ 0`, and no
+`field_simp`.
+
+This matters because it is the only place the co-Casimir identity appeared to
+force a field on the ground ring.  Stated denominator-free it does not, so the
+ambient ring can stay generic — which keeps `ℤ[q,q⁻¹]` and reduction mod `p` in
+scope.  The `ℝ` section above is the specialisation, kept for its consumers.
+
+Note what is NOT dodged: `C_dim_q` is *defined* by its coefficients, so "the
+element exists" is exactly "each `d λ * t λ` is a unit".  That hypothesis is
+carried where the object is built, rather than imposed on the whole ground ring.
+-/
+
+section GenericBase
+
+variable {R : Type*} [CommRing R]
+
+/-- Inverses are unique, so the two ways of naming `d`'s inverse agree. -/
+-- Ref: [manuscript] `thm:frobenius-codim-universal`
+theorem codim_inv_unique {d x y : R} (hx : d * x = 1) (hy : d * y = 1) :
+    x = y := by
+  calc x = x * (d * y) := by rw [hy, mul_one]
+    _ = (x * d) * y := by ring
+    _ = y := by rw [mul_comm x d, hx, one_mul]
+
+/-- **Per-block contribution, denominator-free.**
+
+    If `c` is inverse to `d * t`, then `c * t` is inverse to `d`.  This is the
+    whole content of `codim_block_contribution`, with no division and over an
+    arbitrary commutative ring. -/
+-- Ref: [manuscript] `thm:frobenius-codim-universal`
+theorem codim_block_contribution_ring (d t c : R) (h : c * (d * t) = 1) :
+    d * (c * t) = 1 := by
+  calc d * (c * t) = c * (d * t) := by ring
+    _ = 1 := h
+
+/-- **Frobenius quantum-co-dimension trace identity over a commutative ring.**
+
+    `∑ c λ * t λ = ∑ u λ`, where `c λ` is the co-Casimir coefficient at block
+    `λ` (inverse to `dim_q(λ) · τ(p_λ)`) and `u λ` is any inverse of
+    `dim_q(λ)`.  Over a field with the `≠ 0` hypotheses this specialises to
+    `τ(C_dim_q) = Σ_λ 1/dim_q(λ)`.
+
+    The invertibility is a hypothesis on the blocks, not a constraint on `R`. -/
+-- Ref: [manuscript] `thm:frobenius-codim-universal`
+theorem frobenius_codim_universal_ring {Λ : Type*} [Fintype Λ]
+    (d t c u : Λ → R)
+    (hc : ∀ lam, c lam * (d lam * t lam) = 1)
+    (hu : ∀ lam, d lam * u lam = 1) :
+    ∑ lam, c lam * t lam = ∑ lam, u lam := by
+  refine Finset.sum_congr rfl ?_
+  intro lam _
+  exact codim_inv_unique (codim_block_contribution_ring _ _ _ (hc lam)) (hu lam)
+
+end GenericBase
