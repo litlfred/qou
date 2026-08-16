@@ -219,3 +219,27 @@ only part not already implied by the algebra side, since `n! ≤ Σ (f^λ)²` is
 takes it should start from `uninsertSteps` + `uninsert_insert`: the inverse machinery is built, so
 surjectivity is "every `(P, Q)` of the right shape arises", i.e. that running the inverse on an
 arbitrary standard pair produces a word whose forward image is that pair.
+
+## Brick 9 DONE — the row-level RIGHT inverse
+
+`QOU/Mathlib/SchenstedRowRightInverse.lean`, sorry-free (**`propext` alone** on both):
+
+- `mem_of_rowUninsert_some` — the displaced value came from the row;
+- **`rowInsert_rowUninsert`** — `rowUninsert r y = (r', some z)` ⇒ `rowInsert r' z = (r, some y)`.
+
+Brick 1 gave `rowUninsert ∘ rowInsert = id`; this gives the other composite. The two rules are
+mutually inverse on their bumping branches — and the reason is worth stating: `rowUninsert` takes
+the **rightmost** entry `< y`, and after the swap everything strictly left of that position is
+`≤ z` while the position holds `y > z`, so `rowInsert`'s search for the **leftmost** entry `> z`
+lands on exactly that cell. The two searches come at the same cell from opposite ends. That is why
+the composite is the identity rather than merely close to it.
+
+**Why this is the surjectivity entry point.** Surjectivity is "every valid `(P, Q)` arises", and
+the induction runs the inverse and then checks the forward map reproduces the pair. Brick 2's
+`uninsert_insert` cannot do that — it is the wrong composite. This is the row-level half of the
+one that can.
+
+**Next:** the cascade-level right inverse, `insert (uninsert T i).1 x = T`. Expect a **corner
+condition** on `i` (row `i+1` strictly shorter than row `i`): removing the last cell of a
+non-corner row breaks column-strictness, so the statement is false without it. That hypothesis is
+the thing to get right before writing the proof.

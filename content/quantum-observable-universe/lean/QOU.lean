@@ -896,6 +896,8 @@ import QOU.Mathlib.SchenstedStandardGeneric
 import QOU.Mathlib.SchenstedPairingMap
 -- RSK inverse, brick 1: reverse row insertion and the inversion law.
 import QOU.Mathlib.SchenstedReverseRow
+-- RSK inverse, brick 9: the row-level RIGHT inverse (redoing an undoing).
+import QOU.Mathlib.SchenstedRowRightInverse
 -- RSK inverse, brick 2: the reverse cascade and its inversion law.
 import QOU.Mathlib.SchenstedReverseCascade
 -- RSK inverse, brick 3: word recovery from the tableau plus the row-index record.
