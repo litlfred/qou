@@ -88,6 +88,38 @@ The algebra common to all of it is `sum_cost_mul_eq`, which needs no
 order on `R` at all and no sign hypotheses — the ordering enters only
 where non-negativity is genuinely required.
 
+## What the substrate actually is (2026-08-16, bean `qou/k4f8`)
+
+Computed exactly in `ℚ(q)` by
+`computations/operator_selection_lp_symbolic_qq.py` — 18/18 checks, no
+floating point, because the question is whether `det G` is *zero*, not
+whether it is small.  For `H₃(q)` (`d = 6`):
+
+- **`t` is row `0` of `G`.**  Not a coincidence: `tⱼ = tr_M(bⱼ) =
+  tr_M(b₀·bⱼ) = G₀ⱼ` whenever the basis contains the identity.  So a
+  certificate always exists — `y₀ = 0`, `s = e₀` — and certificate
+  existence is not, and never was, the obstruction.  What it certifies
+  is `Σⱼtⱼxⱼ ≥ 0` *from the constraint* `(Gx)₀ ≥ 0`, which is the same
+  inequality.  See `dualCertificateExists_of_cost_eq_gram_row`.
+- **`det G = 0` identically**, rank 5, radical spanned by
+  `v = (−q³, q², q², −q, −q, 1) ∼ (−1/q)^len(wᵢ)`, the
+  q-antisymmetriser.  `G` has no inverse, so
+  `dualCertificateExists_of_left_inverse` does not apply here.
+- **`y₀ = 0` is forced** for every dual-feasible pair, at every
+  `q ≠ 1`, since `⟨𝟙,v⟩ = −(q−1)(q²−q+1)`.  See
+  `y_0_eq_zero_of_radical`.  The optimum is attained on the radical
+  itself with objective `0` and every Frobenius constraint tight — see
+  `OperatorSelectionLpContext.ofRadical`.
+- `H₂(q)` is **not** degenerate (`det G = (q⁴+q²+1)/(q²+1)²`), so this
+  is a fact about `H₃`, not about how the LP was written down.
+
+The consequence is a **content** question, not a Lean one: the dual
+objective is `n_target · y₀`, so the optimal value is `0` for every
+`n_target`, and `y₀` cannot be the shadow price of the net constraint.
+Anything dividing by it is `0/0`.  Nothing in this file asserts
+otherwise; the theorems below are exactly as strong as their
+hypotheses.
+
 ## Base ring (§7c)
 
 Nothing in the program is archimedean: feasibility, optimality and
@@ -209,6 +241,80 @@ theorem dualCertificateExists_of_left_inverse (t : Fin d → R) (G K : Fin d →
 
 end DualCertificate
 
+section TraceForm
+
+variable {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] {d : ℕ}
+
+/-- **A cost vector that is a row of the Gram matrix certifies itself.**
+
+For a *trace form* this hypothesis is not an assumption but an
+identity: `tᵢ = tr(bᵢ) = tr(b_{i₀}·bᵢ) = G_{i₀ i}` whenever the basis
+contains the identity element `b_{i₀} = 1`.  The certificate is then
+`y₀ = 0`, `s = e_{i₀}`.
+
+So certificate *existence* is never the obstruction for a trace-form
+LP.  But look at what the certificate bounds: it gives
+`Σⱼ tⱼxⱼ ≥ 0` using the constraint `(Gx)_{i₀} ≥ 0`, and `(Gx)_{i₀}`
+*is* `Σⱼ tⱼxⱼ`.  The objective is bounded below by one of its own
+constraints, and the bound is a tautology. -/
+theorem dualCertificateExists_of_cost_eq_gram_row (t : Fin d → R) (G : Fin d → Fin d → R)
+    (i_0 : Fin d) (ht : ∀ j, t j = G i_0 j) :
+    DualCertificateExists t G := by
+  refine ⟨0, fun i => if i = i_0 then 1 else 0, fun i => ?_, fun j => ?_⟩
+  · by_cases h : i = i_0 <;> simp [h]
+  · simp [ht j, ite_mul]
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **The radical of the form forces the dual variable to vanish.**
+
+Let `v` be annihilated by `G` on the right — `∀ i, Σⱼ Gᵢⱼvⱼ = 0`, i.e.
+`v` spans a radical direction of the trace form — and suppose
+`Σⱼ vⱼ ≠ 0`.  Then *every* dual-feasible `y₀` is `0`.
+
+The dual objective is `n_target · y₀`, so this says the LP's value is
+identically zero however `n_target` is chosen, and `y₀` is **not** a
+shadow price of the net constraint: it cannot respond to the constraint
+it is supposed to price.
+
+Note how little is assumed.  No symmetry of `G`, no non-negativity of
+the slacks, no primal feasibility, no optimality.  Degeneracy is a
+property of the cost vector and the form alone — which is why it
+cannot be repaired by choosing a better `x*`.
+
+The `omit` above is load-bearing documentation, not tidying: this
+statement holds over any commutative ring without zero divisors, with
+no order in sight. -/
+theorem y_0_eq_zero_of_radical [NoZeroDivisors R] {t : Fin d → R}
+    {G : Fin d → Fin d → R} {v : Fin d → R} {i_0 : Fin d} {y_0 : R} {s : Fin d → R}
+    (ht : ∀ j, t j = G i_0 j)
+    (hv : ∀ i, (Finset.univ.sum fun j => G i j * v j) = 0)
+    (hone : (Finset.univ.sum fun j => v j) ≠ 0)
+    (dual : ∀ j, t j = y_0 + Finset.univ.sum (fun i => s i * G i j)) :
+    y_0 = 0 := by
+  have hzero : (Finset.univ.sum fun j => t j * v j) = 0 := by
+    have hj : ∀ j, t j * v j = G i_0 j * v j := fun j => by rw [ht j]
+    rw [Finset.sum_congr rfl (fun j _ => hj j)]
+    exact hv i_0
+  have key : (Finset.univ.sum fun j => t j * v j)
+      = y_0 * (Finset.univ.sum fun j => v j) := by
+    have h1 : ∀ j, t j * v j
+        = y_0 * v j + Finset.univ.sum (fun i => s i * (G i j * v j)) := by
+      intro j
+      rw [dual j, add_mul, Finset.sum_mul]
+      simp [mul_assoc]
+    have h2 : ∀ i, (Finset.univ.sum fun j => s i * (G i j * v j)) = 0 := by
+      intro i
+      rw [← Finset.mul_sum, hv i, mul_zero]
+    rw [Finset.sum_congr rfl (fun j _ => h1 j), Finset.sum_add_distrib, ← Finset.mul_sum,
+      Finset.sum_comm, Finset.sum_congr rfl (fun i _ => h2 i), Finset.sum_const_zero,
+      add_zero]
+  rw [hzero] at key
+  rcases mul_eq_zero.mp key.symm with h | h
+  · exact h
+  · exact absurd h hone
+
+end TraceForm
+
 /-- Data of the operator-selection LP: the cost vector `t`, the
     Frobenius Gram matrix `G`, the target net value `n_target`, a
     candidate primal point `x*`, and the net-constraint dual variable
@@ -274,6 +380,45 @@ def OperatorSelectionLpContext.ofCertificate {R : Type*} [CommRing R] [LinearOrd
   dual_feasible := dual
   x_star_feasible := ⟨net, pos⟩
   zero_gap := zero_gap_of_complementary_slackness dual net cs
+
+/-- **The radical direction, scaled to meet the net constraint, is an
+    optimum — and the optimal value is zero.**
+
+Take `x* = c·v` with `c·Σⱼvⱼ = n_target`.  Then `Gx* = 0`, so every
+Frobenius constraint is *tight*, complementary slackness is trivial,
+and the objective vanishes.
+
+The inputs are three facts about the data and nothing else:
+
+- `ht` — the cost vector is row `i₀` of `G` (automatic for a trace
+  form with `b_{i₀} = 1`),
+- `hv` — `v` is a right radical direction of `G`,
+- `hc` — `c` scales `v` onto the net constraint (solvable exactly when
+  `Σⱼvⱼ ≠ 0`, the same non-degeneracy `y_0_eq_zero_of_radical` needs).
+
+Read together with that theorem this is the whole story for a
+degenerate trace form: `y₀ = 0` is forced, the optimum is `0`, and it
+is attained on the radical — the direction the trace form cannot see. -/
+def OperatorSelectionLpContext.ofRadical {R : Type*} [CommRing R] [LinearOrder R]
+    [IsStrictOrderedRing R] (n d : ℕ) (n_target : R) (t : Fin d → R)
+    (G : Fin d → Fin d → R) (i_0 : Fin d) (v : Fin d → R) (c : R)
+    (ht : ∀ j, t j = G i_0 j)
+    (hv : ∀ i, (Finset.univ.sum fun j => G i j * v j) = 0)
+    (hc : c * (Finset.univ.sum fun j => v j) = n_target) :
+    OperatorSelectionLpContext R := by
+  have hGx : ∀ i, (Finset.univ.sum fun j => G i j * (c * v j)) = 0 := by
+    intro i
+    have hj : ∀ j, G i j * (c * v j) = c * (G i j * v j) :=
+      fun j => by ring
+    rw [Finset.sum_congr rfl (fun j _ => hj j), ← Finset.mul_sum, hv i, mul_zero]
+  refine OperatorSelectionLpContext.ofCertificate n d n_target t G (fun j => c * v j) 0
+    (fun i => if i = i_0 then 1 else 0) (fun i => ?_) (fun j => ?_) ?_ (fun i => ?_)
+    (fun i => ?_)
+  · by_cases h : i = i_0 <;> simp [h]
+  · simp [ht j, ite_mul]
+  · rw [← Finset.mul_sum, hc]
+  · exact le_of_eq (hGx i).symm
+  · rw [hGx i, mul_zero]
 
 namespace OperatorSelectionLpContext
 
