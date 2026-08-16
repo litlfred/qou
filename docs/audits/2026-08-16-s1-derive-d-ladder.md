@@ -34,10 +34,20 @@ in **both** frames:
   identically zero.
 
 Evidence: [`qbeta_d_frame_ladder_structure_probe.py`](../../computations/qbeta/qbeta_d_frame_ladder_structure_probe.py)
-(15/15 assertions, 60 dps, proton pin) and
+(18/18 assertions, 60 dps, proton pin) and
 [`DecayLadderConventionDPositivity.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/DecayLadderConventionDPositivity.lean)
-(sorry-free, `lean`-direct exit 0, `#print axioms` clean on all five
+(sorry-free, `lean`-direct exit 0, `#print axioms` clean on all seven
 declarations).
+
+> **Correction landed 2026-08-16 (see §6).** The repair this document
+> originally proposed for the wall — build the two-row weight vector as the
+> `H_3` formula with `y_(1³)` dropped — is **wrong**, and the theorem above
+> is what rules it out: `(2,1)` *survives* the TL quotient, yet its weight is
+> negative at `z_D`. The weights must be recomputed **inside `TL_3`**. The
+> sorry-free result is unaffected; only the next step changed. §6b adds three
+> machine-verified algebraic facts (`z_D = q²/[2]_q`, `z_C = 1/[2]_{√q}`,
+> `δ − 2 = (q/b)·u`) and §6c records the TL identification as a **hypothesis
+> under test**, not a result.
 
 ---
 
@@ -242,22 +252,135 @@ itself the thing that does not survive into D.
 ## 6. The wall, stated exactly
 
 To derive a genuine D-frame ladder one must derive the D-frame **two-row**
-weight vector `(y_(3), y_(2,1), 0)` and recompute `α` from it, rather than
-substituting `z_D` into a three-row formula. That is open. Specifically:
+weight vector and recompute `α` from it, rather than substituting `z_D` into
+a three-row formula. That is open — and the *obvious* way of building that
+vector has since been ruled out, as the box below records.
 
-1. The two-row forcing sets `y_(1³) = 0`, so the weight vector is **not**
-   `(z, 1/2−z, z)` and the affine relation `α = −h/4 − (h/2)y_(2,1)` — which
-   was derived *from* that instance — no longer follows.
-2. Which partitions survive at `q₀` is plausibly a **cell-module
+> ### ⚠️ SUPERSEDED — the repair below is wrong, and this branch's own theorem is what kills it
+>
+> **The original §6 proposed this repair**, retained verbatim because a
+> wrong-but-recorded finding is re-scoped, not erased (AGENTS.md
+> §"Before declaring refuted"):
+>
+> > 1. The two-row forcing sets `y_(1³) = 0`, so the weight vector is **not**
+> >    `(z, 1/2−z, z)` and the affine relation `α = −h/4 − (h/2)y_(2,1)` —
+> >    which was derived *from* that instance — no longer follows.
+>
+> The **inference** in that item stands: the affine relation does not
+> transport. What is **wrong** is the implied construction — that the
+> D-frame vector is obtained by keeping `y_(2,1) = 1/2 − z` and setting the
+> third entry to zero. It is not, and the reason is internal to this branch:
+>
+> - `(2,1)` is a **two-row** partition, so it **survives** the TL quotient.
+>   `TL_3` annihilates only `(1³)` — corank 1, matching the sibling's
+>   measured n=3 datum.
+> - But `threeRowMiddleWeight_neg_at_zD` (sorry-free, this branch) proves
+>   `y_(2,1) = 1/2 − z_D < 0` for **every** `q > 1`.
+> - A positive trace factoring through `TL_3` requires `y_(2,1) ≥ 0`.
+>
+> The negative weight therefore sits on a **surviving** block, not on the
+> annihilated one — so the two conditions cannot both hold. Hence:
+>
+> > **The D-frame weight vector is NOT the `H_3` three-row formula with
+> > `y_(1³)` dropped. The weights must be recomputed *inside* `TL_3`, where
+> > the normalisation differs.**
+>
+> **The sorry-free theorem is unaffected** — it says exactly what it always
+> said. Only the *proposed next step* changes. Correction of record:
+> [PR #5187 comment](https://github.com/litlfred/qou/pull/5187#issuecomment-5305314459),
+> [PR #5185 comment](https://github.com/litlfred/qou/pull/5185#issuecomment-5305313383).
+
+### 6a. What remains of the wall
+
+1. Which partitions survive at `q₀` is plausibly a **cell-module
    reducibility** question at a non-generic parameter. That is precisely
    what the S2 agent (`claude/s2-gram-radical-quotient-2026-08-16`, PR
    #5185) is measuring. Their result is an input here.
+2. The weight vector must be **recomputed in the quotient**, not restricted
+   from `H_3`. Until that is done there is no D-frame `α`, and extracting a
+   `c₃` beforehand would be another inversion of experimental `Q_β`.
 3. The published treatment of Markov-trace weights as a function of the
    trace parameter is Orellana, *Weights of Markov Traces on Hecke
    Algebras* (arXiv:math/9806163, `uploads/9806163v1.pdf`). **Glyph-collision
    warning:** that paper's "type D" is the Coxeter type `D_n`, which is
    **not** this repo's "convention D". The two are unrelated; the paper's
    type-A reduction is the relevant part.
+
+### 6b. Three exact algebraic facts — machine-verified
+
+These were hand-derived when the originating worktree was unavailable and
+are now **verified numerically** (mpmath, 60 dps, proton pin
+`q₀ = 1.1099785827513808…` read from `qou_substrate.constants.Q_50_DIGIT_STR`;
+`z_C`, `z_D`, `b`, `u` imported verbatim from
+`qbeta_d_frame_ladder_structure_probe.py`). All three are **identities**, so
+they hold at every `q`, not just the pin — each closes to `< 1e-60`, i.e. to
+working precision.
+
+| # | claim | value at `q₀` | residual |
+|---|---|---|---|
+| 1 | `z_D = q²/[2]_q`, `[2]_q = q + q⁻¹` | `0.612688037146465251…` | `7.8e-62` |
+| 2 | `z_C = 1/[2]_{√q}` | `0.499320334183694452…` | `7.8e-62` |
+| 3 | `δ − 2 = (q/b)·u` | `0.0108968667071 = 1.27939023435 × 0.00851723455016` | `6.3e-62` |
+
+Reproducible as assertions **A8** of
+[`qbeta_d_frame_ladder_structure_probe.py`](../../computations/qbeta/qbeta_d_frame_ladder_structure_probe.py)
+(18/18, exit 0). The residuals above were obtained twice — once by a
+standalone check and once inside the probe — by two independent
+implementations that agree to the digit.
+
+Each is a one-line rearrangement, which is why the residuals are at
+round-off:
+
+- **(1)** `[2]_q = (q²+1)/q`, so `q²/[2]_q = q³/(q²+1) = z_D`. Now also
+  **Lean-proved** over a generic field — `QOU.QBeta.zD_eq_qsq_div_bracketTwo`
+  (§7c-compliant: no ordering, no `Real.sqrt`), with the `ℝ`
+  specialisation `zD_eq_qsq_div_bracketTwo_real`.
+- **(2)** with `s = √q`, `1 + q = s·[2]_s`, so `z_C = √q/(1+q) = 1/[2]_s`.
+  Not stated generically — `Real.sqrt` puts it on the archimedean side of
+  the §7c wall.
+- **(3)** `δ − 2 = (q−1)²/q` and `u = b·ℏ_q² = b(q−1)²/q²`, so the ratio is
+  exactly `q/b`.
+
+**What they mean, and what they do not.** `δ = [2]_q` is the Temperley–Lieb
+loop parameter, so (1) says `z_D` is `q²` over that loop parameter — a
+TL-shaped object, reached from the *ladder* side rather than from the Gram
+side. (3) says a TL-organised expansion in `δ−2` is a **rescaling** of the
+ladder's `u`-expansion by the constant `q/b`, not a new series. (2) notes
+that C is `[2]`-flavoured too, but at `√q` rather than `q`.
+
+**These are observations about shape, not evidence of a mechanism.** A
+number being expressible in TL notation does not make the trace factor
+through TL — see §6c.
+
+*Correction to the source comments:* they quote `q²/[2]_q = 0.6126878…`.
+That digit string is a transcription slip; the verified value is
+`0.6126880371464652…`, identical to `z_D` as the identity requires. The
+`z_C` and `δ−2` figures quoted there reproduce exactly.
+
+### 6c. The TL identification is a HYPOTHESIS UNDER TEST
+
+The sibling's D-frame Markov–Gram coranks at `n = 3, 4, 5` are `1, 10, 78`,
+matching `n! − Catalan(n)` = `dim ker(H_n(q) ↠ TL_n(q))` — arithmetic
+re-checked here (`6−5=1`, `24−14=10`, `120−42=78`). If it holds, the radical
+is the Temperley–Lieb ideal and the degeneration is **generic in `q`**, not
+special-parameter reducibility. It would also *derive* the two-row forcing
+that the corpus currently posits, since `TL_3` annihilates exactly `(1³)`.
+
+**Three points fitting a formula is suggestive, not proved.** This is
+recorded as an open hypothesis and **nothing is built on it**. The
+measurement is the sibling's and was not re-derived here.
+
+- **Discriminator:** `n = 6`, where `720 − 132 = 588`.
+- **Cheapest confirming test:** does the sibling's `n = 3` radical land on
+  the `(1³)` block *specifically*? That distinguishes "the radical **is**
+  the TL ideal" from "some other 1-dimensional radical". Asked on #5185.
+
+**Scope of the correction in the box above:** scope-**(a)**, a
+scope-limited negative. What is excluded is one *construction* — building
+the D weight vector by restricting the `H_3` three-row formula — because it
+contradicts a proved sign condition. It does **not** exclude a two-row
+D-frame weight vector as such, nor the TL route; those remain open and are
+the live path.
 
 Tracked as a bean — text in §8.
 
@@ -270,6 +393,10 @@ Tracked as a bean — text in §8.
 | `c₂ = −1` | both (immune) | **proved** (`ring` identity), *identification of the N=2 factor is `asserted`* | `q-beta-c-2-eq-neg-one-structural.lean` |
 | `z_D > 1/2`, `y_(2,1) < 0` at `z_D`, ∀ `q>1` | D | **proved** (sorry-free) | `DecayLadderConventionDPositivity.lean` |
 | `z_C < 1/2`, `y_(2,1) > 0` at `z_C`, ∀ `q>1` | C | **proved** (sorry-free) | same |
+| `z_D = q²/[2]_q` | D | **proved** (sorry-free, generic `[Field R]`) | `zD_eq_qsq_div_bracketTwo`; numerics §6b, `7.8e-62` |
+| `z_C = 1/[2]_{√q}` | C | **symbolic-exact** | §6b, `7.8e-62` (archimedean — not stated generically) |
+| `δ − 2 = (q/b)·u` | both | **symbolic-exact** | §6b, `6.3e-62` |
+| radical `=` TL ideal (coranks `n!−C_n`) | D | **HYPOTHESIS under test** | 3 points only; `n=6` is the discriminator — §6c |
 | `c₃ = (c₂^emp+1)/(u(1−u²))` | both | **symbolic-exact** | probe A3, `2e-56` |
 | `Δc₃` = cos-substitution | C→D | **symbolic-exact** | probe A6, `2e-58` |
 | `c₄…c₇ ≡ 0` | both | **symbolic-exact** | probe A4, exact zero |
@@ -296,8 +423,9 @@ D-frame result.
 > (sorry-free, PR #5187) proves `y_(2,1) < 0` at `z_D` for every `q > 1`,
 > so that instance is not a positive trace anywhere in the substrate regime
 > and the phase formula cannot be transported C→D. Under the two-row cap
-> that forces D, `y_(1³) = 0` and the weight vector is `(y_(3), y_(2,1), 0)`
-> — which α has never been computed for.
+> that forces D, `y_(1³) = 0`; but the surviving entries are **not** the
+> `H_3` ones (see the ruled-out note below), so the D-frame vector has to be
+> computed in the quotient, and α has never been computed for it.
 >
 > *Attempted:* re-extraction of `c₃` under D (gives `−974.43`; meaningless,
 > and now explained: it evaluates the three-row instance outside its
@@ -309,12 +437,35 @@ D-frame result.
 > reducibility question at a non-generic parameter, which is S2's front
 > (PR #5185).
 >
+> *⚠️ Ruled out — the obvious construction (see §6).* An earlier version of
+> this bean said to "build the two-row weight vector `(y_(3), y_(2,1), 0)`",
+> i.e. take the `H_3` formula and drop `y_(1³)`. **That does not work.**
+> `(2,1)` is two-row and therefore *survives* the TL quotient (`TL_3` kills
+> only `(1³)`), while `threeRowMiddleWeight_neg_at_zD` proves
+> `y_(2,1) = 1/2 − z_D < 0` for every `q > 1`. A positive trace through
+> `TL_3` needs `y_(2,1) ≥ 0`, so the negative weight sits on a *surviving*
+> block. The weights must be **recomputed inside `TL_3`**, where the
+> normalisation differs — not restricted from `H_3`. The sorry-free theorem
+> is unaffected; only this next step changed.
+>
 > *Next honest step:* take S2's Gram-radical result; if a cell module is
-> reducible at `q₀`, read off the surviving partitions, build the two-row
-> weight vector from Orellana's type-A weight formula
-> (arXiv:math/9806163, `uploads/9806163v1.pdf`), recompute `α`, and only
-> then ask what `c_k` the resulting series has. Do **not** extract a `c₃`
-> before that — it would be another inversion of experimental `Q_β`.
+> reducible at `q₀`, read off the surviving partitions, then compute the
+> weight vector **in the quotient** — via Orellana's type-A weight formula
+> (arXiv:math/9806163, `uploads/9806163v1.pdf`) applied to `TL_3`'s
+> normalisation, *not* by restricting the `H_3` vector — recompute `α`, and
+> only then ask what `c_k` the resulting series has. Do **not** extract a
+> `c₃` before that — it would be another inversion of experimental `Q_β`.
+>
+> *Open hypothesis, not an input yet:* the sibling's coranks `1, 10, 78` at
+> `n = 3, 4, 5` match `n! − Catalan(n)`, suggesting the radical is the TL
+> ideal. Three points are suggestive, not proved; `n = 6` (`588`) is the
+> discriminator, and the cheap confirming test is whether the `n = 3`
+> radical lands on `(1³)` specifically. Do not build on it before then.
+>
+> *Verified algebra available to the next agent (§6b):* `z_D = q²/[2]_q`
+> (also Lean-proved generically, `QOU.QBeta.zD_eq_qsq_div_bracketTwo`),
+> `z_C = 1/[2]_{√q}`, and `δ − 2 = (q/b)·u` — so a TL expansion in `δ−2` is
+> a rescaling of the `u`-expansion by `q/b`, not a new series.
 >
 > *Also queued from this branch:* correct registry §9g row 3 ("`c₂ = −1` is
 > a C-frame statement" → the coefficient is convention-immune; the
@@ -340,3 +491,24 @@ D-frame result.
 - **Cross-validation:** the probe independently reproduces registry §9g's
   quoted `c₃^C = −2.06934258`, `c₃^D = −974.43`, `c₂^emp` `−1.0176` /
   `−9.299`, and rung ratios `0.017` / `0.89`.
+
+### Correction pass (2026-08-16, same session)
+
+The §6/§8 correction was written after the originating worktree was lost to
+disk cleanup; the algebra had been hand-derived and posted to the PRs to
+survive. This pass **re-verified it on a machine** before writing it down:
+
+- **Numerics:** all three §6b identities re-derived at 60 dps against the
+  proton pin, using `z_C`/`z_D`/`b`/`u` imported verbatim from the branch
+  probe rather than re-implemented. Residuals `7.8e-62`, `7.8e-62`,
+  `6.3e-62`. One transcription slip in the source comments corrected
+  (`q²/[2]_q` was quoted as `0.6126878…`; it is `0.6126880371464652…`).
+  The `n! − Catalan(n)` arithmetic was re-checked for `n = 3,4,5,6`.
+- **Lean:** re-verified `lean`-direct against the pre-existing restored
+  olean cache (6990 Mathlib oleans, used **read-only** — no `lake build`,
+  no second restore), exit 0. `#print axioms` on all seven declarations
+  reports only `propext`, `Classical.choice`, `Quot.sound` — no `sorryAx`.
+- **Added:** `zD_eq_qsq_div_bracketTwo` (generic `[Field R]`, §7c) and its
+  `ℝ` specialisation, both discharged by `field_simp` alone.
+- **Not re-derived:** the sibling's Gram/corank measurement (`1, 10, 78`).
+  That remains their result and is cited, not reproduced.
