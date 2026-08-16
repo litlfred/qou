@@ -65,7 +65,7 @@ theorem genWronskian_two (a b : R[X]) : genWronskian ![a, b] = wronskian a b := 
 /-- A one-polynomial Wronskian is the polynomial itself. -/
 @[simp]
 theorem genWronskian_one (a : R[X]) : genWronskian ![a] = a := by
-  simp [genWronskian, wronskianMatrix, Matrix.det_fin_one]
+  simp [genWronskian, wronskianMatrix]
 
 /-- **A linear dependence kills the generalized Wronskian.**
 
@@ -217,17 +217,54 @@ theorem sum_derivative_descent_witness :
       * derivative^[i] ((![X, X] : Fin 2 → ℚ[X]) j) = 0 :=
   sum_derivative_of_forall_sum_eq_zero _ _ 3 (by intro i _; simp [Fin.sum_univ_two])
 
+/-- **The Wronskian combination of a kernel vector is again a kernel vector** (one row
+shorter), and its `l`-th entry is zero.
+
+`∑ⱼ W(c_l, cⱼ) · fⱼ⁽ⁱ⁾ = c_l · (∑ⱼ cⱼ′ fⱼ⁽ⁱ⁾) − c_l′ · (∑ⱼ cⱼ fⱼ⁽ⁱ⁾)`, and both brackets
+vanish — the first by derivative descent, the second by hypothesis.
+
+⚠ **This is what removes the need for the function field.**  The classical proof normalises
+the kernel vector so that its last entry is `1`, which requires dividing and so forces the
+argument into `RatFunc K`.  Multiplying by `c_l` instead of dividing achieves the same
+cancellation inside `R[X]`, and the resulting entries are literally `wronskian (c l) (c j)`
+— so `exists_dependence_of_wronskian_eq_zero` above applies to them directly. -/
+theorem sum_wronskian_combo_eq_zero {m : ℕ} (f c : Fin m → R[X]) (k : ℕ) (l : Fin m)
+    (h : ∀ i, i ≤ k → ∑ j, c j * derivative^[i] (f j) = 0) :
+    ∀ i, i < k → ∑ j, wronskian (c l) (c j) * derivative^[i] (f j) = 0 := by
+  intro i hi
+  have hdesc := sum_derivative_of_forall_sum_eq_zero f c k h i hi
+  have horig := h i (le_of_lt hi)
+  have expand : ∑ j, wronskian (c l) (c j) * derivative^[i] (f j)
+      = c l * (∑ j, derivative (c j) * derivative^[i] (f j))
+        - derivative (c l) * (∑ j, c j * derivative^[i] (f j)) := by
+    rw [Finset.mul_sum, Finset.mul_sum, ← Finset.sum_sub_distrib]
+    exact Finset.sum_congr rfl fun j _ => by simp only [wronskian]; ring
+  rw [expand, hdesc, horig, mul_zero, mul_zero, sub_zero]
+
 /-! ### Next
 
-The general-`m` converse. The crux — derivative descent — is proved above; what remains is
-the surrounding rank/minor bookkeeping over `RatFunc K`:
+**The general-`m` converse now has a route that stays inside `R[X]`.**  Earlier notes in
+this file said it needs the ratio argument in `RatFunc K`; with `sum_wronskian_combo_eq_zero`
+it does not.  Sketch, with the pieces that exist marked:
 
-* a vanishing determinant gives a kernel vector over the function field (rank argument);
-* the minimality set-up that makes the `(m−1) × (m−1)` minor invertible;
-* iterating `sum_derivative_of_forall_sum_eq_zero` to force every coefficient constant.
+1. `genWronskian f = 0` over the domain `K[X]` gives a non-zero kernel vector `c` in
+   `K[X]^m` — `Matrix.exists_mulVec_eq_zero_iff`, the same lemma the forward direction uses.
+2. Induct on `m`.  If `W(f₁ … f_{m−1}) = 0`, the inductive hypothesis finishes.  Otherwise
+   that minor is invertible, which forces `c_m ≠ 0`.
+3. **[proved]** `sum_wronskian_combo_eq_zero` gives a kernel vector for the shorter system
+   whose `m`-th entry is `0`; invertibility of the minor makes it **zero**, i.e.
+   `wronskian (c_m) (c_j) = 0` for every `j`.
+4. **[proved]** `exists_dependence_of_wronskian_eq_zero` turns each of those into
+   `c_j = λ_j · c_m` with `λ_j` constant.
+5. Substituting, `c_m · (∑ⱼ λⱼ fⱼ) = 0`, and `c_m ≠ 0` in a domain gives the constant
+   dependence.
 
-The remaining pieces are bookkeeping in the sense of *not conceptually new*, not in the
-sense of short. Also still open, and materially harder:
+So steps 3 and 4 — the two that carry the mathematics — are done, and what is left is the
+matrix bookkeeping of steps 1, 2 and 5.  **This is a materially smaller job than the
+`RatFunc` route it replaces**, and it is why the `m = 2` case was worth proving first:
+step 4 consumes it directly.
+
+Also still open, and materially harder:
 
 * it is **false in characteristic `p`** for the naive derivative (`xᵖ` has every derivative
   zero, so `1, xᵖ` are independent with vanishing Wronskian), so it needs characteristic
