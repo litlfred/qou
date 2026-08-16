@@ -24,6 +24,7 @@ Archimedean (ℝ): `exp`, `log`, `‖·‖`, ordering `0 < z` — §7c.
 -/
 
 import QOU.Archimedean.HyperbolicMetric
+import QOU.Archimedean.HyperbolicIsometryAffine
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
 namespace QOU.Archimedean
@@ -154,5 +155,31 @@ theorem dH_zpt_le {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
   have hle := dH_le_pathLenH (admissiblePath_vseg ha hb)
   rw [pathLenH_vseg] at hle
   rwa [Real.log_div (ne_of_gt hb) (ne_of_gt ha)]
+
+/-! ### WALL-2 (partial) — one-point normalization to the z-axis
+
+The full two-point normalization (bean `qou-0a0z`) reduces geodesic uniqueness
+between two arbitrary points of `H³` to the z-axis case, and needs a boundary
+inversion in addition to the boundary-similarity generators.  Its **one-point
+half** is elementary and DERIVED here from WALL-1: a single point `p ∈ H³` is
+carried to the z-axis point `(0,0,p_z)` by the horizontal translation by
+`b = (0,0,p_z) − p` (its height is `p_z − p_z = 0`, so it is genuinely
+horizontal), and that translation preserves `dH` (`dH_horizTranslation`). -/
+
+/-- The horizontal displacement `zpt (p_z) − p` carrying `p` onto the z-axis is
+horizontal (`_z = 0`). -/
+theorem zAxisShift_height (p : E) : (zpt (p 2) - p) 2 = 0 := by
+  rw [PiLp.sub_apply, zpt_height, sub_self]
+
+/-- **WALL-2, one-point half (DERIVED).** Every point `p ∈ H³` is carried onto the
+z-axis point `(0,0,p_z)` by a horizontal translation, which preserves `dH`.  This
+is the elementary half of the normalization; the two-point reduction (bean
+`qou-0a0z`) additionally requires a boundary inversion. -/
+theorem exists_horizTranslation_to_zAxis (p : E) :
+    ∃ b : E, b 2 = 0 ∧ p + b = zpt (p 2) ∧
+      ∀ x y : E, dH (x + b) (y + b) = dH x y := by
+  refine ⟨zpt (p 2) - p, zAxisShift_height p, ?_, ?_⟩
+  · rw [add_sub_cancel]
+  · exact fun x y => dH_horizTranslation (zAxisShift_height p) x y
 
 end QOU.Archimedean
