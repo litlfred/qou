@@ -412,3 +412,91 @@ belongs in Lean, not in a probe:
 and then the general `Σ y_λ·χ^λ(β) = tr_M(β)`. That should gate the weights,
 rather than numerical agreement at a pin. That it took eight refutations to
 notice the defining property was never checked is the argument for the policy.
+
+## CLOSED — the 8.71e-8 was bookkeeping, and three claims above are wrong
+
+`computations/markov/peel_anchor_identification_probe.py` (+ witness, 4/4
+assertions). The residual is not in the weights, not in `χ^λ`, and not in the
+peel recursion. It was a peel value read out of the **muon** witness and
+labelled proton.
+
+### The measurement
+
+The peel returns an **exact integer-coefficient rational function of q** —
+deg-50 numerator over `192·q²³·(q²+1)³`, zero `Float` atoms — so one
+expression evaluates at both pins:
+
+    peel(proton q₀) = 0.5751722439177718708265353439129360075256
+    peel(muon   q₀) = 0.5751723310178838519197902970632253704678
+
+Against the four numbers recorded above:
+
+| recorded as | actually matches |
+|---|---|
+| `bridge(proton y, proton χ)` = 0.575172243917771870826535 | **peel(PROTON) to 5.98e-25** — every digit recorded |
+| "peel (proton, symbolic)" = 0.575172331017883851919791796687 | **peel(MUON) to 2.61e-24** |
+
+The second is verbatim the `peel_check.tr_M_at_q0_50dps` field of
+`atomic-tr-m-mpfr-50dps.witness.json`, whose own `q_0_50dps` field reads
+`1.109978595557334719899763`. The witness is labelled correctly; this bean
+read it as proton. So the anchor-**matched** pairing satisfies the identity to
+all recorded digits, and the paradox — *"mixing anchors satisfies the identity
+exactly; matching them misses by 8.71e-8"* — never happened.
+
+### Three corrections to this bean
+
+1. **The stated obstacle is false.** *"The braid word's `d` values are numeric
+   and pinned. `χ^λ(β_D,q)` therefore cannot be evaluated at an arbitrary q
+   without rebuilding the word at that q."* Not for the peel path.
+   `crossing_from_cd` uses the numeric `(c, d)` only to *identify* which of
+   five canonical templates a crossing is — a q-independent combinatorial
+   choice — and builds the element from the **symbolic** form. Even the colour
+   δ goes in as `(q−1)²(1−q⁻⁴)/3`. No anchor enters `tr_M_atomic` at all; the
+   caller's substitution is the only one the number ever sees.
+2. **Hypothesis 1 was refuted on the wrong grounds.** *"peel is muon-anchored
+   — refuted, imports `Q_MP` (proton)."* It does import `Q_MP`, for the
+   `abs(df + h·(½ − δ/4)) < 1e-9` pattern-match tolerance, which selects a
+   template and is discarded. The import is real; the inference from it is
+   not. The peel is neither muon- nor proton-anchored — it is anchor-free.
+3. **"Both anchor tables regenerated" — one was.**
+   `atomic-tr-m-mpfr-50dps-proton.witness.json` was last computed 2026-08-09,
+   a day *before* the migration commits `de9fd2521` / `e2295f00f`, which
+   touched only its muon sibling. It still carried C (proton 1.065306,
+   deuteron 0.388357). Regenerated: 1.145760 / 0.575172, with `|bridge − peel|`
+   ≈ 1e-50 on proton, neutron, deuteron, tritium and helium-3. So the anchor
+   the 2026-08-07 directive makes the default for all new compute was the
+   stale one, for six days.
+
+### Why it hid, and the mechanism now closed
+
+`markov_peel.tr_M_atomic`'s docstring advertised `z = 1/(q^½ + q^{-½})` —
+convention C — long after the live path moved to
+`hecke_symbolic.z_markov = q³/(q²+1)`. `z` is named nowhere else in that
+module, so the stale line was the only convention statement a reader would
+find in the canonical peel entry point. Corrected, with what the module
+actually guarantees.
+
+Second mechanism, also closed: `WitnessBuilder.stamp_staleness_metadata` wrote
+`q0Anchor` **unconditionally**, while `build()` guards it with
+`if "q0Anchor" not in witness`. Two writers of one field, disagreeing. The new
+probe declares `q0Anchor: "ambiguous"` — honest, since spanning both pins is
+its subject — and had `"proton"` stamped over it from the running script's
+manifest entry. A witness asserting a pin its contents do not carry is exactly
+what the field exists to prevent. Guarded.
+
+### A structural convention check that falls out
+
+`(q²+1)` divides the peel's denominator once per Markov peel, because
+`z = q³/(q²+1)`. Convention C's `z = 1/(√q + q^{-1/2})` cannot produce that —
+it leaves half-integer powers. So *"(q²+1)³ divides the denominator"* is a
+convention test on a symbolic result needing no source reading, no `z` grep,
+and no anchor. Asserted by the probe.
+
+### Still open
+
+`Σ_λ y_λ(q)·χ^λ(β) = tr_M(β)` **identically in q** for a general β. What is
+established is agreement at each of the two pins to ~1e-50, plus the
+normalisation `Σ y_λ·dim V_λ = 1` symbolically at every n from 2 to 6 (and in
+Lean). The general-β symbolic reduction is strictly stronger and untested —
+but it is now tractable rather than blocked, since the peel side is a rational
+function and correction 1 removes the reason this bean gave for not trying.
