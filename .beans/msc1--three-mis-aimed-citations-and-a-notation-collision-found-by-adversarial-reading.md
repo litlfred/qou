@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-10T14:05:00Z
-updated_at: 2026-08-15T23:30:00Z
+updated_at: 2026-08-16T01:00:00Z
 ---
 Found by the adversarial reader on PR #4921 while adjudicating `prn1` tranche-1
 edges. These are **prose defects**, not `uses[]` defects — filed rather than
@@ -151,3 +151,44 @@ or accept the block's weakened phrasing.
   $\mathrm{tr}_M(\Phi_q(z_i) T_w) = \mathrm{tr}_M(\Phi_q^{[\leq k_\star]}(z_i)
   T_w)$, both close on the same open uniform-bound note, and each cites the
   other's parent. Worth a `proposition-consolidation-audit` look.
+
+## Items 1, 2, 5 done — PR #5183 (2026-08-16)
+
+**Item 1 landed as filed.** The section *"Frobenius duality of strata"* is at
+line 32 of `spectral-sequence-collapse-proof.md`; the citation pointed at the
+one-sentence proposition. Retargeted to `#prf:spectral-sequence-collapse`.
+Citing a `prf:` label directly is precedented
+(`q-bessel-second-order-qdifference` does it), so this needed no new convention.
+
+**Item 2 was filed wrongly, and the corpus-grep checklist is what caught it.**
+The scope note asked whether `depth_GB(λ) = max_□ h(□)` is stated anywhere. It
+is — as a **definition**: `QOU.BraidKnot.gbDepth` in
+[`TwoFiltrationBridge.lean`](../content/quantum-observable-universe/lean/QOU/BraidKnot/TwoFiltrationBridge.lean)
+is `μ.cells.sup fun c => hookLength μ c`, a concrete `def`, not a class field.
+So it is definitional, not an unproved claim. I had drafted this up as "a proof
+block leaning on a conjecture" and the checklist stopped it — the exact
+over-claim §"before declaring open" exists to prevent.
+
+The real defect is the **notion**, not the status.
+`prop:curvature-rank-gb-stratification` stratifies by the curvature rank of
+**words** and contains no partition. Word-depth and partition-depth are
+different indexings; Step 3(b)'s reading of `depth_GB(λ)` as a rewrite count is
+the *identification between them*, which that proposition does not supply. The
+block now says so. **Not established:** whether that identification is proved
+elsewhere.
+
+**Item 5 landed as filed** — both `𝔪 = Vol(K)/ℏ_q²` sites now quote
+`prop:hecke-mass-trace`'s actual statement `𝔪 = |tr_M(Φ_mass(β))|`.
+
+**Item 5's second bullet needs no action.** `def:hecke-mass-element` is already
+reachable through `prop:hecke-mass-trace`, which declared it directly in
+tranche 5 (#4995, merged). Adding it now would violate
+immediate-neighbours-only. The reader's recommendation was right when written
+and has been superseded by work that landed since.
+
+**Still open:** item 3 (the `w_λ` / `\tilde w_λ` collision) — superseded in
+scope by the 18–7 census in #5013, which found the register's rule is the
+minority convention corpus-wide and that the naming decision is the author's.
+Item 5's last two bullets (the two undeclared "By [X]" steps in
+`prf:phi-q-categorical-truncation`, and the consolidation question) are
+untouched.
