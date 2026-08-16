@@ -1,0 +1,87 @@
+{
+  "pin": {
+    "name": "proton",
+    "q0": "1.1099785827513808",
+    "source": "qou_substrate.constants.Q"
+  },
+  "tower": "z_r = q^r/[r]_q",
+  "derivations": [
+    "fibre dimension: QOU/BraidsAndKnots/FibreDimensionForcesTL.lean (z*[N]_q = q^N); companion ocneanu_param_from_fibre_dimension.py",
+    "Wenzl level: wenzl_level_tower_verify.py (z_W = Q^r(1-Q)/(1-Q^r), Q = q^2, z_W = q*z) -- same rational function, so N = r"
+  ],
+  "channels": [
+    {
+      "channel": "mass",
+      "site": "m_p_substrate_identity_50dps.py:124 trM_borromean",
+      "z_expression": "no z: Lean closed form in h = q-1/q; value is the D value",
+      "z_value": "0.6126880371464652436505588253357421203012",
+      "level_r": "2.0",
+      "integer_level": true,
+      "level_int": 2
+    },
+    {
+      "channel": "binding",
+      "site": "closed_form_tau_M.py:165 markov_z",
+      "z_expression": "q**3/(q**2+1)",
+      "z_value": "0.6126880371464652436505588253357421203012",
+      "level_r": "2.0",
+      "integer_level": true,
+      "level_int": 2
+    },
+    {
+      "channel": "binding (symbolic twin)",
+      "site": "markov/markov_weights_symbolic.py:99 Z_MARK",
+      "z_expression": "Q**3/(Q**2+1)",
+      "z_value": "0.6126880371464652436505588253357421203012",
+      "level_r": "2.0",
+      "integer_level": true,
+      "level_int": 2
+    },
+    {
+      "channel": "borromean-binding-single-pipeline",
+      "site": "borromean_binding_recompute.py:111",
+      "z_expression": "q**3/(q**2+1)",
+      "z_value": "0.6126880371464652436505588253357421203012",
+      "level_r": "2.0",
+      "integer_level": true,
+      "level_int": 2
+    },
+    {
+      "channel": "qbeta-decay",
+      "site": "qbeta/qbeta_utils.py:41 markov_parameter",
+      "z_expression": "mpsqrt(q)/(1+q)   [= z_C]",
+      "z_value": "0.4993203341836944525024451379720177578436",
+      "level_r": "2.59951553640017695890186155174",
+      "integer_level": false,
+      "level_int": null
+    },
+    {
+      "channel": "pyhecke.gram (registry says C)",
+      "site": "tools/pyhecke/python/pyhecke/gram.py:175",
+      "z_expression": "q0**3/(q0**2+1)   [code is D -- registry STALE]",
+      "z_value": "0.6126880371464652436505588253357421203012",
+      "level_r": "2.0",
+      "integer_level": true,
+      "level_int": 2
+    },
+    {
+      "channel": "colour: bring_color_weighted (PRODUCTION)",
+      "site": "closed_form_tau_M.py:307 via markov_z + delta bond shift",
+      "z_expression": "q**3/(q**2+1) with a p-n bond perturbation, NOT a new z",
+      "z_value": "0.6126880371464652436505588253357421203012",
+      "level_r": "2.0",
+      "integer_level": true,
+      "level_int": 2
+    },
+    {
+      "channel": "colour: N=3 fibre (PROBE FIXTURE ONLY)",
+      "site": "ocneanu_param_from_fibre_dimension.py:189 z_3",
+      "z_expression": "q**5/(q**4+q**2+1) = q**3/[3]_q",
+      "z_value": "0.4493048090902078521850180609408359809173",
+      "level_r": "3.0",
+      "integer_level": true,
+      "level_int": 3
+    }
+  ],
+  "eightfold_verdict": "NO. Production colour (bring_color_weighted) runs z_D = level 2. z_3 exists only as a probe fixture with no production consumer."
+}
