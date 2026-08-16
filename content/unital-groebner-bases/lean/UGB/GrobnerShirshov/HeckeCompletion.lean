@@ -4834,13 +4834,29 @@ positions, and the earlier special cases are only kept because they are already
 used. -/
 
 /-- **Far-commutation transport, rightwards, at any list position.** The mirror
-of `farComm_transport_left`: there a generator below the block moves left, here a
-generator above it moves right. The induction recurses on the head of `w` and
-prepends its step, the opposite end from the leftward version. -/
-theorem farComm_transport_right {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (x : Fin n)
+of `farComm_transport_left_sources`: there a generator below the block moves
+left, here a generator above it moves right. The induction recurses on the head
+of `w` and prepends its step, the opposite end from the leftward version.
+
+As on the left, the collision hypothesis enumerates the intermediate words by
+splitting `w`, and one of those splits names the transport's own *final* word,
+which the proof never needs. **On this side that split is `v = []`, not
+`u = []`** — the two ends swap with the direction of travel, since here the
+moving letter starts at the left of `w` and finishes at its right. Concretely
+`hcol` is used at `u = []` with `v = y :: w` for the single step, which is
+non-empty, and the recursion passes `v` through untouched.
+
+The distinction matters because the bystanding term of the corner chain *is*
+the transport's final word, so the unrestricted hypothesis is false exactly
+where the transport is needed — the same trap §4v hit on the left, and it would
+be hit again here by mirroring the wrong end. `farComm_transport_right` below is
+this with the stronger hypothesis, kept because §4y's callers already supply
+it. -/
+theorem farComm_transport_right_sources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    (x : Fin n)
     (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) :
     ∀ (w a b : Monomial (HeckeGen n)), (∀ y ∈ w, y.index.val + 1 < x.val) →
-      (∀ u v : Monomial (HeckeGen n), u ++ v = w →
+      (∀ u v : Monomial (HeckeGen n), u ++ v = w → v ≠ [] →
           ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
             r ≠ a ++ (u ++ ((⟨x⟩ : HeckeGen n) :: (v ++ b)))) →
       MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
@@ -4861,8 +4877,8 @@ theorem farComm_transport_right {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (x : F
       simp only [HeckeGen.rank] at this
       omega
     have key := ih (a ++ [(⟨yi⟩ : HeckeGen n)]) b (fun t ht => hw t (by simp [ht]))
-      (fun u v huv => by
-        have := hcol ((⟨yi⟩ : HeckeGen n) :: u) v (by rw [List.cons_append, huv])
+      (fun u v huv hv => by
+        have := hcol ((⟨yi⟩ : HeckeGen n) :: u) v (by rw [List.cons_append, huv]) hv
         simpa only [List.append_assoc, List.singleton_append, List.cons_append] using this)
     simp only [List.append_assoc, List.singleton_append] at key
     show MultiStepReduction _ _ (AlgElement.ofTerms
@@ -4875,7 +4891,7 @@ theorem farComm_transport_right {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (x : F
         show (a ++ [(⟨x⟩ : HeckeGen n), (⟨yi⟩ : HeckeGen n)] ++ (w ++ b))
           = a ++ ((⟨x⟩ : HeckeGen n) :: ((⟨yi⟩ : HeckeGen n) :: (w ++ b))) by simp]
       refine ofTerms_coeff_mid L₁ L₂ _ c (fun r hr => ?_)
-      have := hcol [] ((⟨yi⟩ : HeckeGen n) :: w) rfl r hr
+      have := hcol [] ((⟨yi⟩ : HeckeGen n) :: w) rfl (by simp) r hr
       simpa only [List.nil_append, List.cons_append] using this
     refine ⟨farCommRelation x yi, farCommRelation_mem hn hp hy, a, w ++ b, c, ?_, ?_, ?_⟩
     · rw [hv]; exact hc
@@ -4889,6 +4905,25 @@ theorem farComm_transport_right {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (x : F
         List.map_append, List.sum_append, decide_eq_true_eq]
       split_ifs <;>
         simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- The rightward transport with the unrestricted collision hypothesis — every
+split of `w`, including the one naming the final word. Weaker than
+`farComm_transport_right_sources` and kept for §4y's callers, exactly as
+`farComm_transport_left` is kept for §4v's. -/
+theorem farComm_transport_right {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (x : Fin n)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) :
+    ∀ (w a b : Monomial (HeckeGen n)), (∀ y ∈ w, y.index.val + 1 < x.val) →
+      (∀ u v : Monomial (HeckeGen n), u ++ v = w →
+          ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+            r ≠ a ++ (u ++ ((⟨x⟩ : HeckeGen n) :: (v ++ b)))) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          (L₁ ++ (a ++ ((⟨x⟩ : HeckeGen n) :: (w ++ b)), c) :: L₂))
+        (AlgElement.ofTerms
+          (L₁ ++ (a ++ (w ++ ((⟨x⟩ : HeckeGen n) :: b)), c) :: L₂)) :=
+  fun w a b hw hcol =>
+    farComm_transport_right_sources hn hp x c hc L₁ L₂ w a b hw
+      (fun u v huv _ => hcol u v huv)
 
 /-- **The descending run begins with its top index**, whenever it is non-empty.
 Splits on `j = i` (`descWord_self`) and `j < i` (`descWord_cons` at `i − 1`). -/
