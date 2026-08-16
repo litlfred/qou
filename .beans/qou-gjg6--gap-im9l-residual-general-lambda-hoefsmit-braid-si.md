@@ -18,6 +18,8 @@ updated_at: 2026-08-16T18:00:00Z
 updated_at: 2026-08-16T19:15:16Z
 
 updated_at: 2026-08-16T20:28:00Z
+
+updated_at: 2026-08-16T20:46:27Z
 parent: qou-59vq
 ---
 
@@ -1517,3 +1519,28 @@ run against `qJMInv` / `σ⁻¹`.
 **Branch score: 11 theorems, all sorry-free and axiom-clean; one GAP closed
 (`qJM_commute`); one GAP reduced from three open commutations to assembly +
 the inverse half.**
+
+
+### The `L`-half of `barSymJMSum_central` is done (2026-08-16)
+
+* **`qJM_sum_comm_sigma`** — **`Σ_{k≤n} L_k` is central.** The `Finset`
+  assembly: split `range (n+1)` into `{i, i+1}` and its complement; the pair
+  takes `qJM_pair_comm`, every other `k` is `≤ i-1` or `≥ i+2` and takes one of
+  the other two rows.
+* **`σInv_quadratic`** — `σ⁻¹` obeys the same quadratic with `d ↦ -d`, i.e.
+  `(qi−q)·σ⁻¹ + 1` — exactly the shape `pair_comm` consumes.
+* **`comm_σInv_iff`** — commuting with `σ_i` and with `σ_i⁻¹` are the **same
+  condition**, since `σInv = σ − (q−qi)•1` is a polynomial in `σ`.
+
+The last two turn the remaining half into a *transfer*: `qJMInv` has the same
+recursion as `qJM` with `σ ↦ σInv`, so the three rows re-run against it and
+then bridge back to `σ`.
+
+**Self-inflicted bug, recorded so it is not repeated.** I "fixed" a lint warning
+by rewriting `rcases … <;> simp […] <;> omega` as
+`rcases … <;> (simp […]; omega)`. That **broke the proof** — `simp` closes one
+of the two branches outright, leaving `omega` with no goals. The `<;>` form was
+correct and the linter hint was wrong for this proof. Reverted; do not re-apply.
+
+**Branch score: 14 theorems, all sorry-free and axiom-clean. One GAP closed
+(`qJM_commute`); `barSymJMSum_central` reduced to the inverse-family transfer.**
