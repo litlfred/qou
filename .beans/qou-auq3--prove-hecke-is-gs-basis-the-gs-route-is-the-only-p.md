@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-15T12:50:00Z
+updated_at: 2026-08-16T13:42:24Z
 ---
 
 
@@ -2495,3 +2495,64 @@ quadratic-rule pair and a second layer of transport.
 
 The witness now asserts the prefix split, both self-similarity identities, and
 that the quadratic rule is used exactly twice, at every `(a, b)` tested.
+
+### The two quadratic steps, opened up — and `quadStep`
+
+Last turn located the two quadratic steps and read off that everything else in
+the `a ≤ b` chain is a loop pass or a far-commutation. This turn measures the
+steps themselves and supplies the Lean lemma they need.
+
+**Measured** (`computations/hecke_quad_pair_shape.py`, 36 occurrences over
+`a = 2 … 7`, `b ∈ {a, a+1, a+3}`, none failing). Both occurrences apply the
+**same** rule, `heckeRelation j₁`, after the **same** step,
+`yangBaxterRelation j₁ (j₁+1)`; they differ only in their contexts:
+
+    occurrence 1:  L              ++ [σ_{j₁}, σ_{j₁}] ++ descWord (j₁−1) j₂ ++ [σ_i]
+    occurrence 2:  [σ_{i−2}] ++ L ++ [σ_{j₁}, σ_{j₁}] ++ descWord (j₁−1) j₂
+
+    L = descWord (i−1) (j₁+2) ++ descWord i (j₁+3)
+          ++ [σ_{j₁+1}, σ_{j₁+2}, σ_{j₁}, σ_{j₁+1}]
+
+uniformly in `a`, `a = 2` included — both `descWord`s are empty there. Unlike
+the prefix split, this family has no degenerate case, so no `Y`-vs-`B`
+alternative is needed in the check.
+
+A first guess at these contexts, written before the probe ran, was wrong at
+**all 36** occurrences. The formulas are measured then asserted, not derived,
+and the witness caveat says so — the same status as the split formulas, and the
+same reason the check is per `(a, b)`.
+
+**`quadStep`** (§4ah, `HeckeCompletion.lean`). `monicStep` asks for a monic
+*two-word* rule, so a step is a substitution: one term in, one out. The
+quadratic rule has *three* words, so `(a σ_z² b, c)` becomes the **pair**
+`(a σ_z b, h·c)` and `(a b, c)`. `quadStep` is `monicStep`'s statement with that
+output and the same proof shape — `ofTerms_coeff_mid` for the coefficient, then
+`split_ifs <;> ring`. Built first try.
+
+The contexts being *parameters* is what makes one lemma cover both occurrences:
+the assembly supplies the one-letter difference and the step lemma never sees
+it. It also subsumes the five hand-written quadratic steps of §4y, which exist
+only because this lemma was missing.
+
+Sorry-free, standard axioms (`propext, Classical.choice, Quot.sound` — same as
+`monicStep`), `lean`-direct exit 0 on the full file with no warnings, and
+checked non-vacuous by instantiating at rank 4 with a non-empty context at each
+end and a bystander term.
+
+**Scope.** This does **not** close the `a ≤ b` regime. It supplies the one
+piece nothing in the development could reach. The Yang–Baxter half of each pair
+is monic two-word, so `monicStep` already covers it — meaning item (1) of last
+turn's list is now done at the step level.
+
+**Next**, in order: the far-commutation blocks — `small(a)` in the prefix and
+`block(a,b)` twice at top level — as nested transports over
+`farComm_transport_left_sources`, an outer induction over levels with an inner
+transport per level; then the assembly, which is the same `MultiStepReduction.trans`
+wiring the `a > b` regime needed, over a longer list.
+
+**Process note.** The 79 commits of this arc had **no PR** — the branch
+`claude/auq3-quad-left-family` was never opened for review, against the
+ALWAYS-PR rule. Continued on `claude/prefix-self-similarity-fo9avn`, which
+carries those commits plus this turn's, and opened
+[#5247](https://github.com/litlfred/qou/pull/5247) over the whole arc. The
+sibling branch is untouched.
