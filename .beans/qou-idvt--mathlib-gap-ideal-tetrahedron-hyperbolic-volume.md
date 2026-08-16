@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T08:00:00Z
-updated_at: 2026-08-15T22:02:47Z
+updated_at: 2026-08-16T02:35:38Z
 ---
 
 Split out so two beans stop each carrying the same "large Mathlib gap" note.

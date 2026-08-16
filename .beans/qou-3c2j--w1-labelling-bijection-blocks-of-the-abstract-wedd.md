@@ -173,3 +173,123 @@ and the dimension count over it. Mathlib supplies `sSup_isotypicComponents` +
 `sSupIndep_isotypicComponents`; the work is turning that sup into a `finrank` sum indexed
 by `PartitionIndex n`, using `specht_exhausts_irreducibles` to know each component's type
 is a Specht module. That is the next brick and the last one before the identity.
+
+### Brick 4a landed (PR #5162); 4b scoped, with its friction named
+
+`QOU/BraidKnot/SpechtBlockDimension.lean`, sorry-free: `finrank_specht_blocks`
+(`dim ∏_μ End_k(S^μ) = Σ_μ (dim S^μ)²`) and `finrank_group_algebra` (`dim k[S_n] = n!`).
+Both sides of the count, and nothing joining them — deliberately, so the next brick must
+supply a map rather than let adjacency imply the identity.
+
+**Brick 4b — the action map and its injectivity.** All the pieces exist:
+
+- `Pi.algHom k _ (fun i => (spechtRepAt i.property).asAlgebraHom)` gives
+  `Φ : k[S_n] →ₐ[k] ∏_{μ} End_k(S^μ)` (`Representation.asAlgebraHom` and `Pi.algHom` both
+  checked present at this pin);
+- injectivity: `x ∈ ker Φ` acts as zero on every simple `k[S_n]`-module, because every
+  simple is a Specht module (`specht_exhausts_irreducibles`); `k[S_n]` is semisimple so
+  `IsSemisimpleModule.sSup_simples_eq_top` makes it a sup of simple submodules; hence `x`
+  acts as zero on `k[S_n]`, and `x = x • 1 = 0`;
+- injectivity then yields `n! ≤ Σ_μ (dim S^μ)²` from brick 4a. **One inequality, not the
+  identity** — say so when it lands.
+
+**The friction, so the next session budgets for it and does not mistake it for the maths:**
+applying `specht_exhausts_irreducibles` to a simple *submodule* `N ≤ k[S_n]` needs `N` as a
+`Representation k (Perm (Fin n))`. `Representation.ofModule` supplies one, but on
+`RestrictScalars k (MonoidAlgebra k G) ↥N`, and the hypothesis wants
+`IsSimpleModule (MonoidAlgebra k G) (·).asModule`. That `ofModule`/`asModule`/`RestrictScalars`
+round-trip is the whole risk in 4b; the mathematics above is routine. Budget the session for
+the round-trip, not for the argument.
+
+The reverse inequality `Σ_μ (dim S^μ)² ≤ n!` is a separate question — expect it to need the
+isotypic independence, i.e. that the multiplicity spaces the bricks 1–3 count do not overlap.
+
+### Brick 4b landed (PR #5167); 4c is blocked on a named Mathlib gap
+
+`SpechtRegularMultiplicity.finrank_homG_regular_specht` — `dim Hom_G(k[S_n], S^μ) = dim S^μ`,
+sorry-free. That is the per-partition multiplicity statement in the epic's vocabulary.
+
+**4c (injectivity of the action map ⇒ `n! ≤ Σ_μ (dim S^μ)²`) is blocked**, and the blocker is
+plumbing, not mathematics: no transfer of `IsSimpleModule` across the
+`Representation.ofModule` / `asModule` / `RestrictScalars` round-trip exists at this pin
+(verified with `exact?`, not assumed). Tracked as **`qou-ltzf`** with the full sketch. Nothing
+already merged depends on it.
+
+Five bricks merged or open, none carrying a sorry: #5139, #5151, #5156, #5162, #5167.
+
+### Brick 4c landed — `n! ≤ Σ_μ (dim S^μ)²`, sorry-free
+
+`QOU/BraidKnot/SpechtActionInjective.lean`: `spechtProduct` (the product of the Specht
+actions), `spechtProduct_injective`, and `factorial_le_sum_sq`. Two general lemmas carry it and
+are stated for an arbitrary ring / group, not just `S_n`:
+
+- `eq_zero_of_smul_simples_eq_zero` — in a semisimple module, a ring element killing every
+  simple submodule kills everything. The proof uses `Submodule.iSup_induction`, which has **no
+  `smul` case** — that is what makes it work, since `y ↦ x • y = 0` is closed under addition
+  but *not* under multiplying `y` by a ring element (the ring is noncommutative). An earlier
+  plan to run `Submodule.span_induction` over `k[G]` fails exactly there.
+- `asAlgebraHom_of_intertwiner` — a rep-iso intertwines the induced `MonoidAlgebra` actions.
+  The `IsRepIso` hypothesis gives intertwining on *group elements* only; extending to a general
+  `x : k[G]` is a `Finsupp` induction.
+
+**One inequality, not the identity.** The reverse `Σ_μ (dim S^μ)² ≤ n!` needs the blocks not to
+overlap — isotypic independence of the multiplicity spaces bricks 1–4b count — and is the next
+open question. It is what would make `spechtProduct` an isomorphism, i.e. W1+W3 proper.
+
+Elaboration note: `spechtRepAt h` is *definitionally* `(spechtRep μ).comp (transportPermHom h.symm)`,
+but `specht_exhausts_irreducibles` states its conclusion in the unfolded form, so `rw` across
+the two fails on syntax. Bridge with `show`, not with a type ascription — the ascription does
+not survive elaboration (`MonoidHom.comp` wins and `.asAlgebraHom` then fails to resolve).
+
+### Brick 5 — W1+W3 now reduces to ONE NUMBER, and it is combinatorial
+
+`QOU/BraidKnot/SpechtWedderburnCriterion.lean`, sorry-free:
+
+- `spechtProduct_bijective_of_sum_sq` — `spechtProduct` is bijective as soon as
+  `Σ_μ (dim S^μ)² = n!`;
+- `spechtEquiv_of_sum_sq` — the resulting `k[S_n] ≃ₐ[k] ∏_μ End_k(S^μ)`;
+- `sum_sq_of_numSYT` — the hypothesis restated through `dim S^μ = #SYT(μ)`.
+
+**So all three items of the `SnWedderburnPartitionBridge` residual are discharged**: the map is
+partition-indexed by construction (no labelling to choose — W1), each block is `End_k(S^μ)` of
+size `dim S^μ` by construction (W3), and the commutant is the base field (W2, #5139). What is
+left is not representation theory at all: it is
+
+  **`Σ_{μ ⊢ n} (#SYT μ)² = n!`** — the RSK identity, a statement about tableaux.
+
+That reframing is the point of this brick. The remaining work can be attacked
+**combinatorially** (an explicit Robinson–Schensted correspondence) by someone who never touches
+Specht modules, and `spechtEquiv_of_sum_sq` hands them the algebra isomorphism for free.
+
+Note `OVTopAssembly.sum_numSYT_sq_eq_factorial` *states* exactly this identity and carries
+`sorryAx`; this file does not import that cone, so nothing here is circular.
+
+Also proved on the way: `surjective_of_injective_of_finrank_eq` (injective + equal finite
+dimension ⇒ onto). Mathlib has the endomorphism case only; `exact?` fails on the two-space form
+at this pin.
+
+### Brick 6 — the split is UNCONDITIONAL for n ≤ 12
+
+`QOU/BraidKnot/SpechtWedderburnLe12.lean`: `spechtEquiv_le12` — for `n ≤ 12` and any
+characteristic-zero field,
+
+  **`k[S_n] ≃ₐ[k] ∏_{μ ⊢ n} End_k(S^μ)`**
+
+sorry-free AND axiom-free (`#print axioms` = propext / Classical.choice / Quot.sound).
+
+**The number brick 5 reduced everything to is not open at every n.** The corpus already proves
+`Σ_{p ⊢ n} dimSYT(p)² = n!` for `n ≤ 12` — `PartitionsOfBridge.rskBurnsideHolds_le12`,
+`decide`-verified list-model data pushed through the hook-length bridge, with **no RSK
+correspondence anywhere in it**. I did not know this existed until I measured; it is the fifth
+time this session that the corpus turned out to carry more than I credited.
+
+The bridge cost two index changes, both already available:
+`SpechtClassification.partitionEquivYoungIndex` (and its diagram is *definitionally*
+`RSKBurnsideTarget.partitionShape`), and `SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux`
+(the 0-indexed and 1-indexed SYT encodings have the same count).
+
+**Do not confuse this with the general case.** `RSKBridge.RSK_substrate_axiom` is an `axiom`
+asserting the identity for all `n`; nothing here touches it — checked with `#print axioms`, not
+by reading imports. General `n` is the RSK correspondence, under construction in the separate
+Schensted programme (`QOU/Mathlib/SchenstedInsertion.lean`, ~1400 lines, brick 1 of its own
+roadmap done). `sn_isotypic_specht_split` is stated for all `n` and stays open.

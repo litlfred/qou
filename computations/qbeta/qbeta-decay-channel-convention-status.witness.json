@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-15T22:16:50.289353+00:00",
-  "commitSha": "08b6ff7e7de3e8c2db5246d3647b42e1ea71b855",
+  "computedAt": "2026-08-16T00:20:15.303024+00:00",
+  "commitSha": "99e383a2d037dee34e428dc530b9c6abec2b6aee",
   "assertions": [
     {
       "name": "checks_failed",
@@ -13,10 +13,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 199,
+  "durationMs": 221,
   "computation": "qbeta-decay-channel-convention-status",
   "scriptFile": "qbeta_decay_channel_convention_status_probe.py",
-  "scriptHash": "65d1680a3f04",
+  "scriptHash": "a18360a219e9",
   "scriptCommitSha": "0425e4175135fb757bac826bccaacf4246709cd4",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -26,12 +26,9 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Numeric shadow of the qbeta-decay 'disputed' registration: registry cross-check of z_C/z_D and both weight vectors; y_(1^3)(z_C) != 0 as the corrected escape witness (the explicit class inhabitant is not an Ocneanu z-trace: its sigma_0 value is h/2 exactly); exact factorisation of the z_C Jones-pin coincidence locus (empty for s > 1, Lean decayLadder_zC_not_jones); full-bar condition numeric shadow (D holds, C fails by exactly h); N_eff(z_C, q0) = 2.5995... non-integer. Adjudicates NO convention (scope-(a)).",
   "parameters": {
@@ -103,5 +100,7 @@
   "caveats": [
     "Scope-(a): adjudicates no convention. The full-bar exclusion of C is conditional on trace bar-compatibility (tr(bar y) = bar(tr y)) — the standard Ocneanu-trace property, asserted context, not proved. The fibre-integrality exclusion of C is conditional on the decay trace being a categorical fibre trace. Neither premise is derived for the decay channel; no corpus block derives the decay fibre.",
     "A z-swap C->D under the existing ladder is NOT a migration: the 2026-08-15 sensitivity probe measured c_3 -> ~-974, implied c_2 -> -9.3, and rung-convergence collapse. D-adoption requires ladder re-derivation."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

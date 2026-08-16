@@ -8,6 +8,9 @@ export default proposition({
   uses: [
     "rem:hodge-laplacian-relation",
     "prop:kelvin-dispersion-derivation",
+    // The operator the whole proposition is about: its spectrum, its
+    // eigenvalue growth, and the Sobolev space built from it.
+    "rem:q-laplacian-interpretation",
   ],
   tags: [
     "spectral-theory",

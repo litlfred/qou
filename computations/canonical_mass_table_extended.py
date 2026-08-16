@@ -73,19 +73,44 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDA
 
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
+
+#: Columns exposed in the nuclide-keyed view — the scalars a witnessed-value
+#: pin can address. Excludes `knot_operators` / `braid_word_canonical` and the
+#: provenance strings: those are bulk, and duplicating them doubles the file.
+#:
+#: Every numeric column here is a `fmt` STRING, not a float+`_str` pair. The
+#: pair was this branch's earlier design and it is superseded by bean qou-3wqg,
+#: which lifted the prediction chain to mpmath at the root: once `pred` is a
+#: genuine mpf, `fmt` writes digits that exist and the shadow rule has nothing
+#: left to excuse. The pair only ever made sense while `pred` was still a float
+#: — i.e. while the extra digits were binary64 noise wearing a string.
+_PINNABLE_COLUMNS = (
+    "Z", "N", "A", "n_strands",
+    "prediction_type", "prediction_method",
+    "tr_M_q0_canonical_50dps", "prediction_MeV_50dps",
+    "B_AME_MeV", "err_MeV", "err_pct", "err_ppb", "err_ppm",
+)
 # AME 2020 binding energies (MeV) for the canonical atoms.
-B_AME_MEV: dict[tuple[int, int], float] = {
-    (1, 0):  0.0,        # proton (no binding)
-    (0, 1):  0.0,        # neutron (no binding; mass excess separate)
-    (1, 1):  float(AME_B_DEUTERON_MEV_VALIDATION), # D
-    (1, 2):  float(AME_B_TRITIUM_MEV_VALIDATION),  # T
-    (2, 1):  float(AME_B_HE3_MEV_VALIDATION),  # ³He
-    (2, 2): float(AME_B_HE4_MEV_VALIDATION),   # ⁴He
-    (3, 2): 26.328,      # ⁵Li (unstable, half-life ~10⁻²² s)
-    (3, 3): float(AME_B_LI6_MEV_VALIDATION),    # ⁶Li
-    (3, 4): 39.24522,    # ⁷Li
-    (4, 3): 37.6,        # ⁷Be
-    (4, 4): 56.49951,    # ⁸Be
+# mpf throughout (bean qou-3wqg). The five `AME_B_*_MEV_VALIDATION` constants
+# ARE mpf in `codata_constants`; wrapping them in `float()` here truncated them
+# on the way in, and the four literals below were plain floats. `err = pred -
+# ref` is now mpf on both sides, so it carries the precision the port to
+# `mass_table_ppb.py` made available rather than losing it at the subtraction.
+# The literals become strings for the same reason a `mpf(<float literal>)` is
+# flagged elsewhere: `mp.mpf(26.328)` binds the binary64 value, `mp.mpf("26.328")`
+# binds the decimal one.
+B_AME_MEV: dict[tuple[int, int], mp.mpf] = {
+    (1, 0):  mp.mpf(0),  # proton (no binding)
+    (0, 1):  mp.mpf(0),  # neutron (no binding; mass excess separate)
+    (1, 1):  AME_B_DEUTERON_MEV_VALIDATION,  # D
+    (1, 2):  AME_B_TRITIUM_MEV_VALIDATION,   # T
+    (2, 1):  AME_B_HE3_MEV_VALIDATION,   # ³He
+    (2, 2): AME_B_HE4_MEV_VALIDATION,    # ⁴He
+    (3, 2): mp.mpf("26.328"),      # ⁵Li (unstable, half-life ~10⁻²² s)
+    (3, 3): AME_B_LI6_MEV_VALIDATION,     # ⁶Li
+    (3, 4): mp.mpf("39.24522"),    # ⁷Li
+    (4, 3): mp.mpf("37.6"),        # ⁷Be
+    (4, 4): mp.mpf("56.49951"),    # ⁸Be
 }
 
 # Default atom list: full coverage through A=7 via canonical.
@@ -358,7 +383,15 @@ def lookup_b_pred_existing(
         rows = mass_table_ppb.get("data", mass_table_ppb).get("rows", [])
         for r in rows:
             if r.get("Z") == Z and r.get("N") == N:
-                return r.get("B_pred_MeV"), r.get("origin")
+                b = r.get("B_pred_MeV")
+                # `mp.mpf(...)` on the STRING, not `float(...)` (bean qou-3wqg).
+                # `mass_table_ppb.py` used to compute `B = nu * m_e * Vol` in
+                # Python floats and emit a JSON number; it now computes in
+                # mpmath and emits a 44-digit decimal string, so lifting it here
+                # is lossless where a float() would throw the lift away again.
+                # Accepts a bare number too, so a witness written before that
+                # port still loads.
+                return (mp.mpf(b) if b is not None else None), r.get("origin")
         return None, None
     except (KeyError, json.JSONDecodeError):
         return None, None
@@ -451,6 +484,15 @@ def main() -> int:
         ),
     )
     parser.add_argument("--timeout", type=int, default=1500)
+    parser.add_argument(
+        "--allow-partial-canonical",
+        action="store_true",
+        help=(
+            "Permit writing the canonical witness from a RESTRICTED --atoms "
+            "set. Off by default: see the guard below. Only pass this if you "
+            "intend the canonical table to shrink."
+        ),
+    )
     args = parser.parse_args()
 
     # dps policy:
@@ -467,7 +509,11 @@ def main() -> int:
     label_to_ZN.update({"proton": (1, 0), "neutron": (0, 1)})
     requested = [s.strip() for s in args.atoms.split(",") if s.strip()]
 
-    paper_floor_ppb = 780.0
+    # An int: this is the paper's declared CAL-2 propagation floor, a stated
+    # threshold rather than a computed quantity, and `780.0` would otherwise
+    # be the last raw float64 in this witness. `atlas_render_canonical_table`
+    # already reads it through `int(...)`.
+    paper_floor_ppb = 780
     paper_floor_dps = float(-mp.log10(mp.mpf(paper_floor_ppb) * mp.mpf("1e-9")))
     pruning_safe = verify_pruning_safe(args.target_dps, paper_floor_ppb)
 
@@ -536,6 +582,10 @@ def main() -> int:
         pass
 
     records: list[dict] = []
+    #: Labels of the rows that actually landed in `records`, in the same order.
+    #: Kept alongside rather than read back off the records, because a record
+    #: carries (Z, N) but not the `--atoms` label the registry keys on.
+    computed_labels: list[str] = []
     for atom_str in requested:
         if atom_str not in label_to_ZN:
             print(f"  {atom_str:<6} (skip — unknown)")
@@ -578,9 +628,9 @@ def main() -> int:
                 from codata_constants import (  # noqa: E402
                     M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
                 )
-                ref = float(
+                ref = mp.mpf(str(
                     M_P_MEV_VALIDATION if (Z, N) == (1, 0) else M_N_MEV_VALIDATION
-                )
+                ))
             except (ImportError, TypeError, ValueError):
                 ref = None
         else:
@@ -616,21 +666,35 @@ def main() -> int:
             prediction_MeV_50dps=(
                 str(pred) if pred is not None else None
             ),
-            B_AME_MeV=ref,
-            err_MeV=err_val,
-            err_pct=err_pct_val,
-            err_ppb=err_ppb_val,
-            err_ppm=err_ppm_val,
+            # `fmt` (not `str(float(...))`) — bean qou-3wqg. These are mpf now:
+            # `ref` comes from the un-`float()`-ed AME constants above and
+            # `pred` is lifted from mass_table_ppb's 44-digit decimal string, so
+            # the subtraction carries real precision and `fmt` writes it out at
+            # OUTPUT_DPS. This is NOT the stringify-a-float move the audit
+            # forbids — that was the earlier attempt here, and it was reverted
+            # precisely because `pred` was still a float at the time.
+            B_AME_MeV=fmt(ref) if ref is not None else None,
+            err_MeV=fmt(err_val) if err_val is not None else None,
+            err_pct=fmt(err_pct_val) if err_pct_val is not None else None,
+            err_ppb=fmt(err_ppb_val) if err_ppb_val is not None else None,
+            err_ppm=fmt(err_ppm_val) if err_ppm_val is not None else None,
             # Provenance reflects actual method used (Copilot review).
             chi_cache_witness=(
                 f"(computed live via {method_used})"
             ),
         )
         records.append(record.to_dict())
+        computed_labels.append(atom_str)
 
         tr_m_str = fmt(tr_m, dps=15)  # display-only, full precision via fmt
-        pred_str = f"{pred:.4f}" if pred is not None else "—"
-        ame_str = f"{ref:.4f}" if ref is not None else "—"
+        # float() on BOTH console columns is display-only: mpf implements no
+        # `__format__`, so `f"{x:.4f}"` raises once the qou-3wqg lift makes
+        # these mpf, and the console shows 4 decimals either way. The witness
+        # columns take the mpf path above — do not copy either cast into a
+        # record. `pred` needed this the moment the root lift landed; `ref`
+        # needed it when B_AME_MEV stopped being wrapped in float().
+        pred_str = f"{float(pred):.4f}" if pred is not None else "—"
+        ame_str = f"{float(ref):.4f}" if ref is not None else "—"
         origin_str = (origin or "—")[:20]
         print(f"  {atom_str:<6} {A:>2} {n:>3} {tr_m_str:<22} "
               f"{pred_str:>16} {ame_str:>10} {origin_str:<22} "
@@ -674,8 +738,70 @@ def main() -> int:
         .add_parameter("atoms_requested", ",".join(requested))
         .add_parameter("timeout_per_atom_sec", args.timeout)
         .add_data("rows", records)
+        # Nuclide-keyed view of the SAME records, so consumers can address a
+        # row by what it is rather than by where it sits (bean `qou-xwet`).
+        #
+        # `data.rows` is ordered by DEFAULT_ATOMS and a comment has long asked
+        # callers not to reorder it. That guard was never enough: it addresses
+        # reordering, while what actually happened was a second producer
+        # SHRINKING the set, which shifts every index without reordering
+        # anything. `registry.ts`'s `B_2H_AME_MeV` pin at `data.rows.2` then
+        # addressed 3He for eight weeks under a description naming deuterium.
+        #
+        # Keys are the `--atoms` labels (p, n, D, T, 3He, ...). A key is absent
+        # when its row is absent, so a pin against a missing nuclide fails
+        # loudly instead of silently reading its neighbour. `rows` is kept
+        # as-is: it is the ordered presentation, and removing it would break
+        # every existing reader for no gain.
+        #
+        # SCALARS ONLY, deliberately. Mirroring whole records here doubled the
+        # witness (68 KB -> 133 KB) to say everything twice; the bulk is
+        # `knot_operators` and `braid_word_canonical`, which no pin addresses.
+        # This view exists to be ADDRESSED, not to duplicate provenance -- a
+        # reader wanting the full record still goes to `rows`.
+        .add_data("rows_by_nuclide", {
+            label: {k: rec[k] for k in _PINNABLE_COLUMNS if k in rec}
+            for label, rec in zip(computed_labels, records)
+        })
         .add_data("n_atoms_computed", len(records))
     )
+
+    # GUARD — a restricted --atoms run may NOT overwrite the canonical witness
+    # (bean `qou-xwet`).
+    #
+    # The output filename is FIXED (see the module docstring), so ANY run of
+    # this script rewrites `canonical-mass-table-extended.witness.json`
+    # wholesale, including a run that was asked for a handful of atoms. That
+    # is not hypothetical: `low_isotope_mass_table.py` drove this script with
+    # `--atoms p,n,D,T,3He` purely as a speed optimisation, and the resulting
+    # five-row table replaced the canonical nine-row one on `main` — 4He and
+    # every A >= 5 row silently disappeared, committed under two commit
+    # messages that only discussed the low-isotope table.
+    #
+    # It also broke a consumer without tripping anything: `registry.ts` pins
+    # `B_2H_AME_MeV` POSITIONALLY at `data.rows.2.B_AME_MeV`, so the row set
+    # moving underneath it silently repoints that value at a different
+    # nuclide. (The ordering comment on DEFAULT_ATOMS guards against
+    # *reordering the list*; it cannot see a caller shrinking the set.)
+    #
+    # So: refuse. A partial table is fine to compute and print, it is just not
+    # the canonical artifact. Callers that genuinely want a subset should
+    # filter the full table downstream — which is exactly what
+    # `low_isotope_mass_table.project_to_low_isotope()` already does.
+    _default_labels = [label for _, _, label in DEFAULT_ATOMS]
+    _missing = [lab for lab in _default_labels if lab not in requested]
+    if _missing and not args.allow_partial_canonical:
+        print()
+        print("  REFUSING to write the canonical witness from a partial run.")
+        print(f"    requested : {','.join(requested)}")
+        print(f"    missing   : {','.join(_missing)}")
+        print("  The output path is fixed, so this would REPLACE the canonical")
+        print("  table with a subset and silently repoint every positional")
+        print("  consumer of data.rows (see bean qou-xwet).")
+        print("  Run with the full default --atoms set and filter downstream,")
+        print("  or pass --allow-partial-canonical if the shrink is intended.")
+        return 2
+
     out = builder.save()
     print()
     print(f"  Witness: {out.name}")

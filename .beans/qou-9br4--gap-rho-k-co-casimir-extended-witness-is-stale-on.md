@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T20:24:06Z
-updated_at: 2026-08-15T20:24:42Z
+updated_at: 2026-08-15T23:57:50Z
 ---
 
 `computations/rho-k-co-casimir-extended.witness.json` on `main` carries 4 raw
@@ -134,3 +134,117 @@ it is no longer the thing standing between this bean and a finished witness.
 survival are untouched by any of this, and that is the part of this bean that
 stands. Correctness of the switch is verified — rel_diff exactly 0.0 below the
 threshold and 1.26e-16 above, against the pre-switch dense path.
+
+---
+
+## Attempt 3 (this session, 21:12–22:32Z) — independently reproduces the section above
+
+Ran a third attempt before seeing the cross-file from `qou-5qwb`. It reached the
+same conclusion from the same evidence, which is worth recording as an
+independent confirmation rather than as a competing account.
+
+| pid | elapsed | CPU time | %CPU | RSS |
+|---|---|---|---|---|
+| main | 1:20:30 | 11:38 | **14.4 %** | **6.97 GB** |
+| worker | 1:21:53 | 4:31 | 5.5 % | 3.58 GB |
+| worker | 1:19:37 | 1:29 | 1.8 % | 1.37 GB |
+| worker | 1:18:20 | 0:06 | 0.1 % | 90 MB |
+
+~12 GB resident on a 16 GB box at 14 % CPU; killing it freed 14.4 GB. Same
+signature, same verdict: **starved, not slow**.
+
+**Correcting my own entry.** I first wrote that the cause "was me", for running
+this alongside a `lake build`, a 1.6 GB cache extract and two `qa-sweep` runs.
+That is at most half right and the weaker half. The section above has the real
+mechanism — `hoefsmit_matrices_numpy` stores generators dense, so
+`7700² × 8 B × 11 = 5.22 GB` **per worker** at `λ = (5,3,2,1,1)`, and the
+default `n_workers` asks for ~20 GB regardless of what else is running. My
+co-tenancy made an already-doomed allocation fail sooner. The producer would
+have thrashed on an idle box too.
+
+**Consequence for the "do not attempt a fourth" line above.** That was written
+before `--workers 1` (PR #5104) was known to this session. It is superseded: a
+fourth attempt IS worth one shot, under the section above's conditions —
+`--workers 1`, idle box, ~45–60 min — because the memory wall the first three
+hit is removed rather than merely waited out. What is still unproven is whether
+the remaining wall time survives the container.
+
+**One addition to the partial-write warning.** The five-atom-over-six risk is
+worse than either entry first said, and the cross-file has it right: a gutted
+witness scores **zero raw floats**, so the raw-float64 ratchet reads it as a
+*perfect drain*. Run `witness_shape_guard.py` (PR #5089) before committing any
+regenerated witness — the ratchet alone will not catch a truncation.
+
+**A liveness note both entries should carry.** Elapsed time cannot distinguish
+slow from starved. A healthy run sits near 100 % CPU; the three failures all
+sat under 15 %. Check CPU time, not the clock — and never
+`pgrep -c -f rho_k_co_casimir`, which self-matches (it cost this session 76
+minutes of false "still running", independently of the same trap recorded
+above).
+
+---
+
+## Attempt 4 (`--workers 1`, 23:36–23:40Z) — the memory wall IS gone; container lifetime is now the ONLY blocker
+
+First attempt under the `--workers 1` cap from PR #5104. Killed at ~4 min by a
+**container restart**, not by the compute — and this time there is positive
+evidence of health at the moment it died, which is what makes the run worth
+recording despite finishing nothing.
+
+| | attempts 1–3 (default workers) | attempt 4 (`--workers 1`) |
+|---|---|---|
+| main-process %CPU | **14.4 %** | **99.8 %** |
+| main-process RSS | **6.97 GB** | **120 MB** |
+| aggregate RSS | ~12 GB / 16 GB | well under |
+| CPU time over a 25 s sample | flat | **3:42 → 4:07** |
+| how it ended | starved / thrash | container restart |
+
+`--workers 1` does exactly what `qou-5qwb` predicted: 120 MB against 6.97 GB, a
+**58×** reduction in main-process footprint, and the process pegged at ~100 %
+CPU doing real work instead of parked in `futex_do_wait`. The dense-generator
+allocation (`7700² × 8 B × 11` per worker) is no longer the binding constraint.
+
+**So the two failure modes are now cleanly separated**, and only one is left:
+
+* **Memory starvation — SOLVED.** Measured, not inferred. Do not spend further
+  time on it.
+* **Container lifetime — OPEN, and now the whole problem.** The helium-4 leg
+  needs ~45 min of wall time; this container lasted ~4 min into it. Nothing in
+  the producer can fix that.
+
+**What a fifth attempt needs** is therefore not a code change but a *host* that
+survives ~45–60 min: a session that will not be restarted, or a runner outside
+the ephemeral container. Relaunching inside a short-lived container is not
+"trying again", it is re-running a known-failing experiment.
+
+### A third variant of the pgrep trap, worse than the two already recorded
+
+This bean already warns off `pgrep -c -f rho_k_co_casimir`. The trap is broader
+than that phrasing: **the Bash tool wrapper embeds the full command string in
+its own argv**, so *any* `pgrep -f <pattern>` matches the wrapper as well as the
+target. It bit twice more in one session — `ps -p $(pgrep -f … | head -1)`
+returned the **wrapper** (6 MB RSS, 0.0 % CPU, no CPU accumulation) and read as
+a dead or hung job while the real compute sat next to it at 99.8 %.
+
+Reliable forms:
+
+    pgrep -x python3                                    # match the executable
+    pgrep -af 'python3 -u computations/rho_k' | grep -v 'bash -c'
+    ps -o pid=,time=,%cpu=,rss= -p <explicit pid>       # best: take the pid once, reuse it
+
+Had the wrapper reading been trusted, this attempt would have been recorded as
+another starvation failure — the exact opposite of what it shows.
+
+### The partial-write hazard is subtler than "five atoms over six"
+
+The cross-file above warns that a truncated witness scores zero raw floats. The
+in-flight state observed here is worse than that description: the producer
+**preserves the six-atom structure and rewrites atoms in place**, so mid-run the
+file had *all six atoms present*, five freshly recomputed and helium-4 **stale
+from the previous run**, with the raw-float count already down 4 → 1.
+
+An atom-count check therefore **passes** on this state. Committing it would have
+mixed a fresh five-atom computation with a stale helium-4 while looking complete
+and nearly-drained. The reliable gate is `witness_shape_guard.py` plus a
+zero-raw-float count *and* confirmation the producer exited — never the atom
+count alone.

@@ -5,6 +5,10 @@ export default remark({
   label: "rem:q-dilogarithm-pentagon-associator",
   title: "The $q$-dilogarithm pentagon as the monoidal associator axiom",
   tags: ["dilogarithm", "pentagon-identity", "associator", "monoidal"],
-  uses: ["def:q-dilogarithm", "prop:phi-q-aj-machinery-identification"],
+  uses: [
+    "def:q-dilogarithm",
+    "prop:phi-q-aj-machinery-identification",
+    "prop:dilog-pentagon-is-associator",
+  ],
   cites: ["faddeev_kashaev1994"],
 });

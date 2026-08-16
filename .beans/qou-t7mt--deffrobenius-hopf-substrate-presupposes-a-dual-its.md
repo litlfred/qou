@@ -3,8 +3,9 @@
 title: def:frobenius-hopf-substrate presupposes A-dual; its own Lean needs only MonoidalCategory
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-15T00:54:20Z
-updated_at: 2026-08-15T00:54:20Z
+updated_at: 2026-08-15T22:20:56Z
 ---
 
 
@@ -50,3 +51,5 @@ Author decision. Surfaced by the `qou-5r17` audit sweep for blocks asserting
   primitive normalised by the pentagon relation", and the block self-hedges that
   the monodromy datum "remains open". Only the stray word *rigid* was wrong
   (pentagon coherence is a monoidal axiom); fixed in place.
+
+QUEUED-BLOCKED 2026-08-15 (session qou-pq8k): not agent-actionable — the bean itself says 'Author decision' between three rewordings of def:frobenius-hopf-substrate axioms 4-5. Needs owner pick, not agent work.

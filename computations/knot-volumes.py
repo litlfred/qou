@@ -10,7 +10,8 @@ Usage:
     python3 computations/knot-volumes.py
 
 Output:
-    computations/knot-volumes.witness.json
+    computations/substrate/knot-volumes.witness.json
+    (NOT beside this script — see the `output_dir` note at the write site)
 
 Dependencies:
     pip install snappy
@@ -261,11 +262,33 @@ def main():
 
     # Per Copilot review (#581): preserve the SnapPy engine metadata
     # rather than overriding to "python".
+    #
+    # `output_dir` is REQUIRED here and is not cosmetic. Without it,
+    # `WitnessBuilder` defaults the output directory to the caller's own
+    # (`caller_file.parent` — witness.py:690), i.e. `computations/`. But this
+    # witness is consumed from `computations/substrate/`: three content blocks
+    # cite that path as their `witness:` (`knot-volumes-verification`,
+    # `local-substrate-q-proof`, `terminal-resolution-proof`), and
+    # `raw-float64-baseline.json` keys its entry on it.
+    #
+    # The split is an artefact of the Phase-6 reorg (see the `_path_bridge`
+    # import at the top of this file): substrate modules moved into
+    # `substrate/` and this witness went with them, while the script that
+    # writes it stayed here. From then on every run emitted an UNTRACKED
+    # `computations/knot-volumes.witness.json` while the cited copy sat frozen
+    # at 2026-04-07 — which is how it kept a `Vol(4_1) = 3·Cl₂(π/3)` source
+    # string long after this file was corrected.
+    #
+    # Do not "simplify" this by dropping the argument: that silently
+    # disconnects the producer from its consumers again, and the symptom
+    # (a witness that never refreshes) is invisible until someone diffs a
+    # value against its own source. Bean qou-zdz5.
     out_path = (WitnessBuilder.wrap_legacy(
         "knot-volumes", witness,
         script_path=__file__,
         engine="snappea",
         engine_version=f"snappy {snappy.__version__}",
+        output_dir=Path(__file__).resolve().parent / "substrate",
         )
         .save())
     print(f"\nWitness written to {out_path}")

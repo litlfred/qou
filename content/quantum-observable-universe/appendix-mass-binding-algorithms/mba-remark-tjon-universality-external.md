@@ -89,10 +89,27 @@ $$
 $$
 
 which at the nuclear $(\mu_2, \mu_3)$ is $\approx 9.81$ — some $2.6$ times the
-value the nuclear data themselves produce. The four-body moment is therefore
-*largest* in the calculation that contains no four-body input, which is the
-sharpest available statement that $\mu_4$'s magnitude is an artifact of the
-basis rather than a measurement of four-body physics.
+value the nuclear data themselves produce. The fourth moment is therefore
+*largest* in the calculation that contains no four-body input, which is a
+direct statement that $\mu_4$'s magnitude is an artifact of the basis rather
+than a measurement of four-body physics.
+
+There is a blunter way to see the same thing, and it should be stated because
+the name invites the opposite reading. Three moments are fitted to three
+anchors ($A = 2, 3, 4$), so the system is exactly determined and
+
+$$
+  \mu_4 \;:=\; M(4) - 4M(3) + 6M(2)
+$$
+
+is a *definition*, carrying zero residual freedom. Writing $\mu_4$ is therefore
+another way of writing ``the amount by which $M(4)$ exceeds the two-point
+prediction'', and nothing more. It is not a measurement of a four-body
+interaction, and calling it ``the four-body moment'' — as the surrounding
+literature's vocabulary tempts one to — asserts an identification that no step
+above establishes. The corpus rule this instantiates is
+*defined residual $\neq$ derived decomposition*: a residual introduced with
+$:=$ acquires no physical content from the index it is written under.
 
 Both facts are formalised, sorry-free and over a generic commutative ring, in
 `QOU.MassTheory.TjonSimplexForm` — `tjon_baseline_lt_four_ratio`,
@@ -100,5 +117,8 @@ Both facts are formalised, sorry-free and over a generic commutative ring, in
 measured in `computations/deltalambda/tjon_external_cross_check_probe.py`.
 
 The consequence for the magnitude leg is a constraint on citation, not a new
-result: the external literature may be cited as the reason a nonzero $\mu_4$
-is a *meaningful signal*, and never as a derivation of the simplex form.
+result. The external literature may be cited for why a nonzero $\mu_4$ is
+worth attending to at all — it registers a real departure of $M(4)$ from the
+two-point prediction, which is information about the binding curve — and never
+as a derivation of the simplex form, nor as licence to read that departure as
+four-body physics.

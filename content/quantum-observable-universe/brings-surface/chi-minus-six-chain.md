@@ -1,4 +1,4 @@
-The value $\chi(A) = -6$ is derived, not assumed. We present the complete chain.
+We present the chain that fixes $\chi(A) = -6$. Steps 1--4 and 6--7 run forward from the QOU triple. Step 5, which fixes the branch-point count at six, reads that count off the Weierstrass points of Bring's surface — the surface the chain then identifies at Step 7 — so the chain locates the value rather than deriving it from the axioms alone. Step 8 is conditional on [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction).
 
 **Step 1: Start with the QOU triple.** We have $(\mathbf{C}, A, \tau)$ with gauge group $G = \mathrm{SU}(2)$. The object $A$ is the fundamental representation, and $\tau$ is the fibre functor.
 

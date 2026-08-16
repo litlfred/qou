@@ -1,12 +1,15 @@
 ---
 # qou-3bcc
 title: 'TASK: port the two §3b conjecture classes to a generic base ring'
-status: todo
+status: completed
 type: task
 priority: medium
-tags: [lean, wall-side, 7c]
+tags:
+    - lean
+    - wall-side
+    - 7c
 created_at: 2026-08-08T13:00:00Z
-updated_at: 2026-08-08T13:00:00Z
+updated_at: 2026-08-15T14:48:16Z
 ---
 
 Last two survivors of the `wall-side-correct` WEAK-33 read (see
@@ -42,3 +45,15 @@ the compiler decide.
 
 Either both compile generic with every downstream binder updated, or a recorded
 refutation naming what forced `ℝ`.
+
+
+## Verified complete + closed (2026-08-15)
+
+Both target files are **already ported**; the bean's "definition of done" is met. Verified by compile, not by read (per the Method's non-negotiable).
+
+| module | state |
+|---|---|
+| `lean/QOU/QGeometricLanglands/q_gl_classical_limit.lean` | `class q_gl_classical_limit (R : Type*) [Ring R]`; `heckeEigenvalue : R → R → Prop`; `hecke_limit : ∀ T : R, … → (T = 1 ∨ T = -1)`. Exactly the `[Ring R]` target this bean specified (weakest idiomatic class carrying `One` + `Neg`). Carries an explicit §7c base-ring rationale in the module docstring. Its single ℝ grep-hit is **prose** (line 26: "no `Real.*`"), not a type. **COMPILE: `lean-direct-cone` → ok=1.** |
+| `nuclear-interactions/cpt-d6-d7-d8-closure.lean` | `class CPTClosure (R : Type*) [CommRing R]` with `markovTrace : ClosedBraid → R` and `cpt_trace_preserved` over `R`; `def cpt_closure {R : Type*} [CommRing R] [inst : CPTClosure R]`. The Jones-invariant Markov trace now lives over the generic ring, not ℝ — as this bean argued it should. |
+
+Downstream binders intact (`QOU.lean` import + the `…_at_substrate` rename in `QOU/QGeometricLanglands.lean`); no half-port. No code change needed. Closing completed.

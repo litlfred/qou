@@ -15,7 +15,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:meson-octet-decomposition",
   title: "The meson octet via $\\mathbf{3} \\otimes \\bar{\\mathbf{3}}$",
-  md: "meson-octet-decomposition.md",
   uses: [
     "prop:a2-from-three-strands",
     "rem:flavor-charge-assignments",

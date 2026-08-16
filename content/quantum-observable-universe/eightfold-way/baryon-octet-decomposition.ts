@@ -44,7 +44,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:baryon-octet-decomposition",
   title: "The baryon octet and the degeneracy of its weight diagram",
-  md: "baryon-octet-decomposition.md",
   // The ref names the OPERATIVE declaration -- the exclusion, not the table.
   lean: {
     ref: "qou:QOU.Eightfold.OctetWeightDegeneracy.weight_function_cannot_separate_lambda_sigma0",

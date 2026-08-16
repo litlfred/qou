@@ -210,8 +210,43 @@ elan / cache hosts are network-restricted.
 >   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
 >      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
 >   && tar xzf "$TGZ" -C "$ROOT" \
+>   && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
 >   && echo "restored .lake oleans from $BR — NO rebuild needed"
 > ```
+>
+> **🛑 The `touch` is load-bearing, not decoration — read the next paragraph
+> before running `lake build` anywhere near this tree.** A restored tarball
+> carries oleans but **no `.trace` files**, so Lake considers every one of them
+> stale: a subsequent `lake build` rebuilds them from source and **evicts the
+> restore as it goes**. Measured 2026-08-15 (bean `qou-r13s`), running
+> `lake build QOU UGB Fred2005` from the root against a tree restored exactly
+> as above:
+>
+> | | before | during (10 min) | after kill |
+> |---|---|---|---|
+> | root `mathlib` oleans | **6990** | — | **334** |
+> | oleans written | — | 536 (520 of them mathlib/aesop/batteries) | — |
+> | `QOU`/`UGB`/`Fred2005` oleans written | — | **0** | — |
+>
+> Ten minutes, zero paper-library progress, cache destroyed, and **silently** —
+> the output reads as ordinary build progress, so a generous `timeout` will
+> happily burn the whole window producing nothing. Recovery is another 1.6 GB
+> fetch + extract.
+>
+> So on a restored tree: **verify with `lean`-direct, never `lake build`**
+> (§"VERIFY a single file with lean-direct" below; it is the sanctioned gate
+> per AGENTS.md §"QA is agent-owned", not a fallback — 2.4 s vs 50 minutes of
+> nothing). Check the marker before any build step:
+>
+> ```bash
+> [ -f "$(git rev-parse --show-toplevel)/.lake/RESTORED-NO-TRACES" ] \
+>   && echo "RESTORED cache — lean-direct only, do NOT lake build at the root"
+> ```
+>
+> Delete the marker only when the tree has genuinely been rebuilt by Lake.
+> This is the *consumer* face of the same mechanism bean `02kc` records for the
+> **seeding** direction (`lean-olean-cache-seed.sh` refuses lean-direct output
+> because it is untraced); the two are one hazard seen from both ends.
 >
 > The `SLUG` line derives the branch from the pinned toolchain so it never goes
 > stale (`leanprover/lean4:v4.24.0` → `lake-cache/qou-v4-24-0`); the tarball

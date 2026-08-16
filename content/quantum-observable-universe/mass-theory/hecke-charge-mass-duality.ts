@@ -13,6 +13,7 @@ export default remark({
     "vertex-operator",
   ],
   uses: [
+    "def:crossing-energy",
     "prop:hecke-mass-trace",
     "def:frobenius-pairing",
   ],

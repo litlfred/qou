@@ -245,7 +245,14 @@ def main() -> int:
         "re-derivation."
     )
 
-    path = wb.save()
+    # q0 anchor: this probe DOES read the substrate modulus — `q0 = q_at(DPS)`
+    # above, the package-layer (proton-pinned) accessor, per the 2026-08-07
+    # owner directive that new compute defaults to the experimental pin. The
+    # pin was already recorded as an `add_parameter("q0_pin", ...)`, but that
+    # lands under `data` where the audit reading body["q0Anchor"] cannot see
+    # it — which is why this witness counted as MISSING while visibly naming
+    # its pin. Declared here where the audit reads, with the matching value.
+    path = wb.save({"q0Anchor": "proton", "q0Value": mp.nstr(q0, SER)})
 
     print("=" * 70)
     print("Q_beta decay channel convention status — numeric shadow")
