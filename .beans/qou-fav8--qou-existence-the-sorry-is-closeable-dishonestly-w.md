@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T13:56:32Z
-updated_at: 2026-08-16T20:39:03Z
+updated_at: 2026-08-16T20:49:53Z
 ---
 
 ## The sorry
@@ -417,3 +417,70 @@ was never needed, `CommRing` suffices.
 witness proves consistency, not that the axioms are **strong** — a structure
 satisfied by `A = 𝟙` with one block is not thereby saying much. That is a fair
 criticism of the axioms, and this construction is evidence for it.
+
+
+## 2026-08-16 — B3 REFRAMED. "Narrow to fields" is the wrong fix; the field is not load-bearing.
+
+B3 above says the QOU existence statement over-quantifies (`∀ k, [Field k]`
+against a citation constructing over one suitable ground field) and proposes
+narrowing to the fields Kassel §IX covers. **That fix is wrong in direction.**
+Asked where the field is actually needed, ingredient by ingredient:
+
+| ingredient | what it really needs | over a ring? |
+|---|---|---|
+| `U_q(sl₂)` Hopf algebra | `q − q⁻¹` invertible | **yes** — Lusztig integral form |
+| rigidity / duals | f.g. **projective** (not merely f.g.) | **yes** |
+| Wedderburn blocks of `A` | Schur elements non-vanishing | **yes**, as unit conditions |
+| complete reducibility of *every* module | genuinely field-like | no |
+
+Only the last row wants a field, and `QuantumUniverse` **never asks for it** —
+axiom 4 constrains the blocks of `A`, not the whole module category.
+
+**The corpus already frames every one of these as a ring condition, not a field
+condition.** This is not my inference:
+
+- `q-casimir-exists-proof.md` — *"whenever `(q − q⁻¹)` is invertible in the
+  ground ring `R`"*.
+- `descartes-knot-eigenbasis-derivation.md` — semisimplicity of `H_n(q)` follows
+  from *"`6 ∈ R^×` and non-degeneracy of the Frobenius form"* via Jimbo. A
+  **unit condition on `R`**, stated as such.
+- `qou-p-neq-np.md` §companion — semisimplicity is governed by non-vanishing of
+  Schur elements (Geck–Pfeiffer), with `WenzlGeneric` formalising `q^k ≠ 1`
+  *"over a generic monoid"* and `schurElement_ne_zero` proved sorry-free in
+  [`WenzlSchurElement`](../lean/QOU/MathlibExt/WenzlSchurElement.lean).
+- `substrate-parameter-limits-and-lusztig.md` — the algebraic home is
+  *"the Lusztig integral form `𝒰^ℤ_q(su(2))`"*, i.e. over `ℤ[q,q⁻¹]`.
+
+So the framework's own ground ring `R_q = ℤ[q,q⁻¹]` is where the construction
+naturally lives, and `[Field k]` **excludes it**.
+
+### The distinction that makes this coherent
+
+Statability over `R` and constructibility over `R` are different questions.
+`QuantumUniverse` only asks you to **supply** block idempotents and units for
+`A`; it does not ask the ambient category to be semisimple. `ModuleCat ℤ[q,q⁻¹]`
+is not semisimple, and that is no obstacle — `H_n(q)` over `R_q` with Schur
+elements invertible has exactly the blocks the axiom wants.
+
+### Proposed replacement for B3
+
+Not `∀ k, [Field k]` and not a bare `[CommRing R]` either, but
+
+```
+∀ (R) [CommRing R], IsUnit (q - q⁻¹) → WenzlGeneric … → Nonempty (QuantumObservableUniverse R)
+```
+
+— simultaneously **narrower** (excludes rings where the construction fails, which
+the current `∀ field` already gets wrong at e.g. `𝔽₂`, where no generic `q`
+exists) and **broader** (admits `ℤ[q,q⁻¹]`, the framework's actual ground ring).
+It also matches the `IsUnit`-not-`≠ 0` move already made under `qou-w1g8`: the
+same correction, one level up.
+
+**Not implemented.** Changing the hypotheses of an unproved `sorry` alters what
+must eventually be proved, and the right hypothesis list should be read off
+`WenzlSchurElement`'s existing criterion rather than guessed. Flagging as the
+next concrete step on this bean.
+
+Scope **(a)**: this argues the field is *unnecessary* for the named
+ingredients, not that the full construction over `ℤ[q,q⁻¹]` has been carried
+out — nobody has done that here.
