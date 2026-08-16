@@ -228,8 +228,18 @@ def flavor_split_leading(q: mpf, q_inv: mpf | None = None) -> mpf:
     """Δm / M_N leading-order substrate formula (prop:flavor-split-substrate).
 
     Δm / M_N = (q − 1)² · (1 − q⁻⁴) / 3 = ℏ_q² · h_q · [2]_q / 3
+
+    Exact for a SYMBOLIC `q` as well as an `mpf` one. The reciprocal is
+    ``1 / q``, not ``mpf(1) / q``: for an mpf argument the two are identical
+    (mpmath promotes the int exactly), but for a sympy `q` the latter drags
+    `mpf(1)` in as a `Float(1.0)` and the whole expression inherits float
+    contagion — `(q**2 - 1)*(-6*q**4 + (q - 1)**2*(q**4 - 1.0))/(12*q**5)`
+    instead of a rational function. That matters because this is the closed
+    form q-symbolic callers pass as `d_for_ctype(..., delta=...)` precisely to
+    avoid a pinned constant; returning one with a `Float` in it defeats half
+    the point.
     """
-    qi = mpf(1) / q if q_inv is None else q_inv
+    qi = 1 / q if q_inv is None else q_inv
     return (q - 1) ** 2 * (1 - qi ** 4) / 3
 
 

@@ -235,9 +235,27 @@ def _q_character_compute(shape, braid_crossings, q):
             raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
         sigma = matrices[gen_idx]
         from canonical_braid_crossings import d_for_ctype
+        from _li_2_q_util import flavor_split_leading
         # was an inline {sigma, sigma_inv, averaged} map; averaged
         # swallowed the colour-weighted p-n interface.
-        d_val = d_for_ctype(cross_d, h)
+        #
+        # `delta=` is REQUIRED here, not optional. This function's `q` is
+        # always symbolic — it is the symbolic path — so it is exactly the
+        # "q-symbolic caller" `d_for_ctype`'s docstring adds the parameter
+        # for. Taking the default evaluates `_avg_color_delta()` at the
+        # numeric `q_parameter.Q`, so an `averaged_weighted` crossing came
+        # back as `-0.499656072298243*q + 0.499656072298243/q` — two Float
+        # atoms — and every symbolic χ^λ for a word with a p-n interface
+        # (A >= 2: deuteron, tritium, helium-3, ...) silently carried a
+        # q0-pinned coefficient while presenting as a function of q.
+        # Evaluating such a χ at any other q returned a wrong number, which
+        # is the ideal/experimental straddle AGENTS.md rules out regardless
+        # of size.
+        #
+        # `markov_peel.crossing_from_cd` has always done this correctly,
+        # substituting the closed form symbolically; that is why the peel's
+        # tr_M is Float-free and this path's χ was not.
+        d_val = d_for_ctype(cross_d, h, delta=flavor_split_leading(q))
 
         cross = sigma + d_val * sp.eye(dim)
         M = M * cross
