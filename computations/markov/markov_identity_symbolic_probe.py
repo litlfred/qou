@@ -1,0 +1,219 @@
+#!/usr/bin/env python3
+"""
+markov_identity_symbolic_probe.py — is `Σ_λ y_λ(q)·χ^λ(β) = tr_M(β)` an
+identity in `q`, or only an agreement at the substrate anchor?
+
+WHAT IS AND IS NOT ALREADY KNOWN.  Two weaker statements are settled:
+
+  1. The weights are correctly Markov-normalised, symbolically:
+     `Σ_{λ ⊢ n} y_λ(q)·dim V_λ = 1` exactly and identically in q, at every
+     n from 2 to 6, and in Lean (`QOU/MathlibExt/MarkovNormalisation.lean`).
+     That evaluates at the IDENTITY braid, where `χ^λ(1) = dim V_λ`.
+  2. The full identity holds NUMERICALLY at both documented q₀ pins, to
+     ~1e-50, on proton / neutron / deuteron / tritium / helium-3
+     (`atomic-tr-m-mpfr-50dps{,-proton}.witness.json`, bridge vs peel).
+
+Neither implies the general-β statement.  (1) is one point of the braid
+group; (2) is two points of the q-line.  This probe tests the object both
+of them leave alone: a NON-trivial braid, as a function of q.
+
+WHY IT IS TESTABLE NOW.  Two things had to be true first, and the second was
+false until PR #5209:
+
+  - `markov_peel.tr_M_atomic` returns an exact integer-coefficient rational
+    function of q -- no anchor enters it (the numeric `(c, d)` only *select*
+    one of five crossing templates; the element carries the symbolic form).
+    Bean `qou-8x1l` recorded the opposite as a blocking obstacle; that was
+    refuted by `peel_anchor_identification_probe.py`.
+  - `hecke_character_symbolic._q_character_compute` had to stop baking a
+    q₀-pinned δ into `χ^λ` for any word with a p-n interface. It called
+    `d_for_ctype(cross_d, h)` without the `delta=` override that function's
+    own docstring reserves for q-symbolic callers, so an `averaged_weighted`
+    crossing arrived as `-0.4996…*q + 0.4996…/q`. Fixed in #5209.
+
+WHAT THIS PROBE DOES.  For the deuteron word β_D (A=2, n=6, the colour-
+weighted canonical word `atom_braid_word_3A(1, 1)` -- the SAME call
+`markov_peel` makes, so the two sides are the same object):
+
+    residual(q) := Σ_{λ ⊢ 6} y_λ(q)·χ^λ(β_D, q)  −  tr_M_peel(β_D)(q)
+
+and reduces it with `cancel`. The claim under test is `residual ≡ 0` as a
+rational function -- no q₀ anywhere in the statement or the check.
+
+A CACHE THAT LOOKS RIGHT AND IS NOT.  `computations/chi-deuteron-h6.witness.json`
+holds symbolic `χ^λ(β_D)` for all 11 partitions of 6 and would save ~155 s.
+It is tagged `convention: averaged-crossings` -- the colour-BLIND `−h/2`
+interface -- while the peel builds the colour-WEIGHTED `−h(½ − δ/4)` word.
+Pairing them is the same straddle class this arc is about, one level out
+(crossing convention rather than anchor), so this probe recomputes χ rather
+than reading that cache. Do not "optimise" it back in.
+
+Run:
+    python3 computations/markov/markov_identity_symbolic_probe.py
+"""
+from __future__ import annotations
+
+import json
+import pathlib
+import sys
+import time
+
+HERE = pathlib.Path(__file__).resolve().parent
+REPO = HERE.parent.parent
+for _p in ("computations", "computations/markov", "computations/hecke",
+           "computations/substrate"):
+    sys.path.insert(0, str(REPO / _p))
+
+import sympy as sp  # noqa: E402
+
+#: n = 6 (A = 2). The deuteron is the smallest atom that HAS a p-n interface,
+#: so it is the smallest word whose χ the pinned-δ defect touched — and the
+#: smallest non-trivial test of the identity that the normalisation result
+#: does not already cover.
+Z, N = 1, 1
+N_STRANDS = 3 * (Z + N)
+
+
+def _partitions(n):
+    """Partitions of n, each weakly decreasing, in reverse-lex order."""
+    def rec(rem, cap):
+        if rem == 0:
+            yield ()
+            return
+        for part in range(min(rem, cap), 0, -1):
+            for rest in rec(rem - part, part):
+                yield (part,) + rest
+    return list(rec(n, n))
+
+
+def symbolic_y_lambda(n, q):
+    """Convention-D `y_λ(q)` for λ ⊢ n, from the committed symbolic witness.
+
+    Read rather than re-derived: this is the migrated convention-D root
+    (`z = q³/(q²+1)`), and re-deriving it here would be a second
+    implementation of the object under test.
+    """
+    doc = json.loads(
+        (REPO / "computations"
+         / "y-lambda-wenzl-bridge-symbolic-witness.json").read_text())
+    table = doc["tables_by_n"][str(n)]["weights"]
+    out = {}
+    for row in table:
+        # `partition` is serialised inconsistently in this witness — a JSON
+        # string "[3, 2, 1]" for some n, a real list for others. Accept both
+        # rather than assuming, since guessing wrong here fails loudly at
+        # n=6 and SILENTLY (KeyError-free, wrong lookup) nowhere — but the
+        # next reader deserves not to rediscover it.
+        p = row["partition"]
+        lam = tuple(json.loads(p) if isinstance(p, str) else p)
+        out[lam] = sp.sympify(row["y_lambda_symbolic"])
+    return out
+
+
+def main() -> int:
+    q = sp.Symbol("q", positive=True, real=True)
+
+    from markov_peel import tr_M_atomic
+    from mass_at_3A_proper import atom_braid_word_3A
+    from hoefsmit_symbolic import chi_lambda_symbolic
+
+    # ---- the peel side: exact rational function, no anchor -------------
+    t0 = time.time()
+    peel = sp.cancel(sp.together(tr_M_atomic(Z, N, use_fast=False)))
+    t_peel = time.time() - t0
+    peel_floats = len(peel.atoms(sp.Float))
+    print(f"[peel] {t_peel:.1f}s   Float atoms={peel_floats}   "
+          f"rational={peel.is_rational_function(q)}")
+
+    # ---- the bridge side ----------------------------------------------
+    # The SAME word the peel builds. `atom_braid_word_3A` returns (c, d, gen)
+    # triples; the character path wants (gen, ctype), so classify each
+    # crossing rather than re-deriving d.
+    from canonical_braid_crossings import classify_crossing
+    from q_parameter import Q_MP
+
+    word = atom_braid_word_3A(Z, N)
+    h_num = float(Q_MP - 1 / Q_MP)
+    crossings = []
+    for c, d, gen in ((t[0], t[1], t[2]) for t in word):
+        ctype = classify_crossing(float(c), float(d), h_num,
+                                  context="markov_identity_symbolic_probe")
+        crossings.append((gen, ctype))
+    ctypes_seen = sorted({ct for _, ct in crossings})
+    print(f"[word] {len(crossings)} crossings, ctypes={ctypes_seen}")
+    if "averaged_weighted" not in ctypes_seen:
+        print("  ! no colour-weighted interface in this word — the probe "
+              "would not exercise the fixed path; refusing to report a pass")
+        return 2
+
+    y = symbolic_y_lambda(N_STRANDS, q)
+    total = sp.Integer(0)
+    chi_floats = 0
+    t0 = time.time()
+    for lam in _partitions(N_STRANDS):
+        chi = chi_lambda_symbolic(lam, crossings)
+        chi = sp.cancel(chi)
+        chi_floats += len(chi.atoms(sp.Float))
+        total += y[lam] * chi
+        print(f"  λ={str(lam):<18} χ Float atoms={len(chi.atoms(sp.Float))}  "
+              f"({time.time()-t0:.0f}s)", flush=True)
+    t_chi = time.time() - t0
+    bridge = sp.cancel(sp.together(total))
+    print(f"[bridge] {t_chi:.1f}s   Float atoms={len(bridge.atoms(sp.Float))}")
+
+    # ---- the test ------------------------------------------------------
+    residual = sp.cancel(sp.together(bridge - peel))
+    is_zero = sp.simplify(residual) == 0
+    print(f"\n[residual] {residual if len(str(residual)) < 160 else '(long)'}")
+    print(f"[residual] identically zero: {is_zero}")
+
+    witness = {
+        "computation": "markov-identity-symbolic",
+        "description": (
+            "Tests Sum_lambda y_lambda(q)*chi^lambda(beta_D,q) = tr_M(beta_D)(q) "
+            "as an identity of rational functions, with no q0 anywhere. Both "
+            "sides are built from the same colour-weighted canonical word. "
+            "Strictly stronger than the two settled facts it complements: the "
+            "normalisation result evaluates at the identity braid, and the "
+            "~1e-50 bridge-vs-peel agreements are two points of the q-line."
+        ),
+        "scriptFile": "markov/markov_identity_symbolic_probe.py",
+        "q0Anchor": "independent",
+        "q0_independence_note": (
+            "No q0 is read. The peel's numeric (c,d) only select crossing "
+            "templates; chi takes delta as the closed form flavor_split_leading(q). "
+            "classify_crossing needs a numeric h to identify templates, which is "
+            "a q-independent combinatorial choice, not a value entering the result."
+        ),
+        "atom": {"Z": Z, "N": N, "n_strands": N_STRANDS,
+                 "n_crossings": len(crossings), "ctypes": ctypes_seen},
+        "peel": {"float_atoms": peel_floats,
+                 "rational_in_q": bool(peel.is_rational_function(q)),
+                 "elapsed_sec": f"{t_peel:.2f}"},
+        "bridge": {"float_atoms": len(bridge.atoms(sp.Float)),
+                   "chi_float_atoms_total": chi_floats,
+                   "elapsed_sec": f"{t_chi:.2f}"},
+        "residual_is_identically_zero": bool(is_zero),
+        "residual": str(residual)[:2000],
+        "assertions": [
+            {"name": "peel_is_float_free", "passed": peel_floats == 0},
+            {"name": "chi_is_float_free_after_pr_5209", "passed": chi_floats == 0,
+             "note": "before #5209 an averaged_weighted crossing carried a "
+                     "q0-pinned delta, so chi was not a function of q at all"},
+            {"name": "markov_identity_holds_identically_in_q",
+             "passed": bool(is_zero)},
+        ],
+    }
+    witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
+
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__, engine="sympy")
+    out = REPO / "computations" / "markov-identity-symbolic.witness.json"
+    out.write_text(json.dumps(witness, indent=2) + "\n")
+    print(f"\nallPassed = {witness['allPassed']}  -> {out.relative_to(REPO)}")
+    return 0 if witness["allPassed"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
