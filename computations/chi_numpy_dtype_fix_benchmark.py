@@ -159,7 +159,15 @@ def main() -> int:
         "Measures fixed vs pre-fix vs mpmath reference on tritium partitions, "
         "caller-vs-caller in one process. Value is unchanged; only speed moves."
     )
-    w.save()
+    # q0 anchor: this benchmark DOES read q₀ — `Q_50_DIGIT_STR` comes straight
+    # from `q_parameter` in this file. The pin is the experimental/proton one:
+    # `q_parameter` is not unconditionally muon, it is manifest-driven
+    # (`QOU_Q0_ANCHOR` override, else the producer's stem under `ideal_muon`,
+    # else proton), and this stem is absent from
+    # `computations/q0_anchor_manifest.json`, so it takes the standing proton
+    # default of the 2026-08-07 owner directive. Confirmed via
+    # `resolve_q0_anchor`, not inferred from the layer (bean qou-kx04).
+    w.save({"q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR})
     print(f"\n  cross-check within 1e-14 on all partitions: {all_ok}")
     print("Saved witness: chi-numpy-dtype-fix-benchmark.witness.json")
     return 0 if all_ok else 1
