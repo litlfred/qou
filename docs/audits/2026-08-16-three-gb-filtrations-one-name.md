@@ -121,6 +121,37 @@ ambient space, so this is a proved exclusion of the charitable reading — not a
 failed probe. It holds from `n = 4` up, so it is not an exclusion of the
 identification in general.
 
+## 2b. `T_w` is also used two ways, and object 1 needs the second
+
+Observation, **not** a proved defect — flagged because it decides whether the
+one surviving object is viable, and it is cheap for the author to settle.
+
+The symbol `T_w` carries two incompatible jobs in the same proof:
+
+- **(a) a basis element indexed by `w ∈ S_n`.** This is what `mba-step07`'s
+  `span\{T_w : \ell(w) \leq \ell\}` requires — `\ell(w)` is a function of a group
+  element, so `w` must range over `S_n`.
+- **(b) an arbitrary free-algebra word.** This is what Step 2 requires:
+  *"Writing any `T_w` as a free-algebra word, the GB rewriting algorithm reduces
+  `T_w` to normal form."* Something already in normal form is not reduced *to*
+  normal form.
+
+Object 1 — rewrite depth — is non-trivial only under reading (b). Under (a) it
+is **identically zero**, because Step 2's own first sentence says the Bergman
+normal-form theorem *gives the basis*: a basis element is a normal-form word, so
+it needs `0` rewrites, so `r(T_w) = 0` for every `w` and
+`\{T_w : r(T_w) = r\}` is the whole basis at `r = 0` and empty above.
+
+So the survivor survives only on reading (b) — under which `w` is not a group
+element and `\ell(w)` is not defined, which is object 3's requirement. **The two
+readings needed to make objects 1 and 3 each non-degenerate are mutually
+exclusive.**
+
+I have not proved this, because "the `T_w` are the normal-form basis" is read off
+prose rather than a definition — `def:hecke-normal-form` would have to be checked
+against both uses to settle it. It is stated here as the question a repair has to
+answer, not as a result.
+
 ## 3. The dilemma the four blocks are in
 
 Either
