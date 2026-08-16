@@ -9532,6 +9532,27 @@ passes differently but the chain built from these blocks is still a legal
 reduction — a `SingleStepReduction` may rewrite any redex, not only the largest.
 -/
 
+/-- A descending run from below its own floor is empty. -/
+theorem descWord_of_lt {n : ℕ} {i j : Fin n} (hij : i.val < j.val) :
+    descWord i j = [] := by
+  simp only [descWord, List.map_eq_nil_iff, List.reverse_eq_nil_iff,
+    List.filter_eq_nil_iff, decide_eq_true_eq]
+  intro k _
+  omega
+
+/-- `descWord_cons` at the boundary. The original needs the floor to lie at or
+below `i − 1`; this needs it only at or below `i`, the extra case being `j = i`,
+where the tail is empty rather than a shorter run. The corner loop's last pass
+is exactly that case, so it cannot use the original. -/
+theorem descWord_cons_le {n : ℕ} {i' i j : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i.val) :
+    descWord i j = (⟨i⟩ : HeckeGen n) :: descWord i' j := by
+  rcases le_or_gt j.val i'.val with h | h
+  · exact descWord_cons hi h
+  · have hji : j = i := Fin.ext (by omega)
+    subst hji
+    rw [descWord_self, descWord_of_lt h]
+
 namespace CornerBlock
 
 variable {n : ℕ}
@@ -9546,7 +9567,7 @@ the `V` side, `[σᵢ]` on the `U` side). The two collision hypotheses are the o
 must miss the word being rewritten, and must miss every word the transport passes
 through. -/
 theorem blockStep (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ k kd : Fin n}
-    (hk : kd.val + 1 = k.val) (hj₁ : j₁.val ≤ kd.val) (hj₂ : j₂.val ≤ kd.val)
+    (hk : kd.val + 1 = k.val) (hj₁ : j₁.val ≤ kd.val) (hj₂ : j₂.val ≤ k.val)
     (Y R S : Monomial (HeckeGen n))
     (hY : ∀ y ∈ Y, kd.val + 1 < y.index.val)
     (hD : descWord i j₁ = Y ++ ((⟨k⟩ : HeckeGen n) :: descWord kd j₁))
@@ -9569,7 +9590,7 @@ theorem blockStep (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ k kd : Fin n}
     simp only [HeckeGen.rank] at this
     omega
   have hdk : descWord k j₂ = (⟨k⟩ : HeckeGen n) :: descWord kd j₂ :=
-    descWord_cons hk hj₂
+    descWord_cons_le hk hj₂
   have hLR : bsWord₂ kd k j₁ ≠ bsWord₁ k j₁ := by
     rw [bsWord₁_cons hk hj₁, bsWord₂]
     simp [hkdk]
@@ -9608,13 +9629,93 @@ theorem blockStep_top (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ kd : Fin n}
       (AlgElement.ofTerms
         (L₁ ++ (R ++ ((⟨kd⟩ : HeckeGen n)
           :: (descWord i j₁ ++ (descWord kd j₂ ++ S))), c) :: L₂)) := by
-  refine blockStep hn hp hk hj₁ hj₂ [] R S (by simp)
+  refine blockStep hn hp hk hj₁ (by omega) [] R S (by simp)
     (by rw [descWord_cons hk hj₁]; rfl) c hc L₁ L₂ hne ?_
   intro u v huv q hq
   obtain ⟨rfl, rfl⟩ := List.append_eq_nil_iff.mp huv
   have := hneEnd q hq
   rw [descWord_cons hk hj₁] at this
   simpa using this
+
+/-- **The loop.** `blockStep` iterated: `k` walks down from its starting value to
+`e`, one pass per index, and what those passes leave behind is the descending run
+`descWord kd ed` accumulated in front.
+
+The induction is on the number of passes still to come. It carries `Y` — the part
+of the long run lying above `k` — as a parameter rather than as `descWord i (k+1)`,
+so each pass hands the next one `Y ++ [σ_k]` and no index above `k` is ever named.
+
+Stated for a single term, where the collision hypotheses of `blockStep` are
+vacuous. That is the whole combinatorial content of the `a > b` corner: what
+remains for the two-term S-polynomial is bookkeeping about which words the
+bystanding term must avoid, not further rewriting. -/
+theorem loop (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed : Fin n}
+    (hed : ed.val + 1 = e.val) (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ e.val)
+    (S : Monomial (HeckeGen n)) (c : ℝ) (hc : c ≠ 0) :
+    ∀ (m : ℕ) (k kd : Fin n) (A Y : Monomial (HeckeGen n)),
+      kd.val + 1 = k.val → k.val = e.val + m →
+      (∀ y ∈ Y, kd.val + 1 < y.index.val) →
+      descWord i j₁ = Y ++ ((⟨k⟩ : HeckeGen n) :: descWord kd j₁) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms [(A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c)])
+        (AlgElement.ofTerms
+          [(A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)]) := by
+  intro m
+  induction m with
+  | zero =>
+    intro k kd A Y hk hke hY hD
+    have hke' : k.val = e.val := by omega
+    have hj₂k : j₂.val ≤ k.val := by omega
+    have hkde : kd = ed := Fin.ext (by omega)
+    subst hkde
+    have hstep := blockStep hn hp hk hj₁ hj₂k Y A S hY hD c hc [] []
+      (by simp) (by simp)
+    rw [descWord_self]
+    simpa using hstep
+  | succ m ih =>
+    intro k kd A Y hk hke hY hD
+    have hkdlt : kd.val < n := kd.isLt
+    have hkdlow : ed.val ≤ kd.val := by omega
+    have hkdpos : 0 < kd.val := by omega
+    have hj₁kd : j₁.val ≤ kd.val := by omega
+    have hj₂k : j₂.val ≤ k.val := by omega
+    refine MultiStepReduction.trans
+      (blockStep hn hp hk hj₁kd hj₂k Y A S hY hD c hc [] [] (by simp) (by simp)) ?_
+    obtain ⟨kdd, hkdd⟩ : ∃ kdd : Fin n, kdd.val + 1 = kd.val :=
+      ⟨⟨kd.val - 1, by omega⟩, by show kd.val - 1 + 1 = kd.val; omega⟩
+    have hsplit : descWord kd j₁ = (⟨kd⟩ : HeckeGen n) :: descWord kdd j₁ :=
+      descWord_cons_le hkdd (by omega)
+    have hrun : descWord kd ed = (⟨kd⟩ : HeckeGen n) :: descWord kdd ed :=
+      descWord_cons_le hkdd (by omega)
+    have hnext := ih kd kdd (A ++ [(⟨kd⟩ : HeckeGen n)]) (Y ++ [(⟨k⟩ : HeckeGen n)])
+      hkdd (by omega)
+      (by
+        intro y hy
+        rcases List.mem_append.mp hy with hy | hy
+        · have := hY y hy
+          omega
+        · have hyk : y = (⟨k⟩ : HeckeGen n) := by simpa using hy
+          subst hyk
+          show kdd.val + 1 < k.val
+          omega)
+      (by rw [hD, hsplit]; simp)
+    rw [hrun]
+    simpa using hnext
+
+/-- **The loop, entered at the top.** The first pass has `k = i`, so nothing of
+the long run lies above it and `Y` is empty; `m` is the number of passes less one.
+This is the form the corner's two terms are actually reduced by, and it witnesses
+that `loop`'s hypotheses are satisfiable. -/
+theorem loopFromTop (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed idd : Fin n}
+    (m : ℕ) (hed : ed.val + 1 = e.val) (hj₁ : j₁.val ≤ ed.val)
+    (hj₂ : j₂.val ≤ e.val) (hid : idd.val + 1 = i.val) (hm : i.val = e.val + m)
+    (A S : Monomial (HeckeGen n)) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(A ++ (descWord i j₁ ++ (descWord i j₂ ++ S)), c)])
+      (AlgElement.ofTerms
+        [(A ++ (descWord idd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)]) :=
+  loop hn hp hed hj₁ hj₂ S c hc m i idd A [] hid hm (by simp)
+    (by rw [descWord_cons_le hid (by omega)]; simp)
 
 end CornerBlock
 
