@@ -2216,3 +2216,51 @@ re-proving it per pass.
 **Also:** a Lean identifier may not contain `′` (U+2032, PRIME) — only ASCII `'`.
 The parse error lands on the *use* site, not the binder. Third member of this
 family after `₊` and the `rw`-transparency trap.
+
+## §4af cont. — the loop is proved (single term), and what blocks the two-term case
+
+`CornerBlock.loop` and `CornerBlock.loopFromTop`, sorry-free, standard axioms.
+`blockStep` iterated: `k` walks down one index per pass and what the passes leave
+behind is the descending run `descWord kd ed` accumulated in front. The induction
+is on passes remaining and carries `Y` — the part of the long run above `k` — as
+a parameter rather than as `descWord i (k+1)`, so each pass hands the next
+`Y ++ [σ_k]` and no index above `k` is ever named. `loopFromTop` enters at
+`k = i` with `Y = []`, and doubles as a satisfiability witness.
+
+This is the whole combinatorial content of the `a > b` corner. What remains is
+bookkeeping about which words the bystanding term must avoid, not rewriting.
+
+**A boundary case the design surfaced.** The last pass has `k = j₂`, where
+`descWord_cons`'s hypothesis `j₂ ≤ k − 1` is false — but the identity still holds,
+because the tail `descWord (j₂−1) j₂` is empty rather than a shorter run. Hence
+two new lemmas: `descWord_of_lt` (a run from below its own floor is empty; the
+module had no emptiness lemma at all) and `descWord_cons_le`, which needs the
+floor only at or below `i`. `blockStep`'s short-run hypothesis is weakened to
+`j₂ ≤ k` to match.
+
+**The real obstruction to the two-term version, stated precisely.**
+`farComm_transport_left`'s collision hypothesis quantifies over all splits
+`u ++ v = w`, and the two extreme splits are the transport's *start* and its
+*end*. So it demands the bystander differ from the transport's endpoint. In the
+actual chain the bystander during the `V` loop **is** the final word `W`, and the
+last pass's transport ends exactly at `W` — so that hypothesis is false there and
+the lemma cannot be applied to the last pass as it stands.
+
+That is not a flaw in the chain: `monicStep` only ever needs the *source* word to
+be distinct, which is why §4ad and §4ae go through writing their transports out
+as individual steps. Two ways forward, and the choice is the next decision:
+
+* a variant of `farComm_transport_left` whose collision hypothesis covers only
+  the sources — the existing proof already uses only those (the `nil` case
+  discards the hypothesis outright), so this should be a weakening of the
+  statement rather than new work; or
+* peel the last pass off the loop and do its transport by hand.
+
+The first is better if the weakened lemma really does fall out of the existing
+proof, since §4t–§4v's other transport lemmas likely carry the same needlessly
+strong hypothesis.
+
+Also worth noting for the length bound: every rule in this regime preserves word
+length — Bokut–Shiao maps `|descWord k j₁| + 1` letters to `2 + |descWord kd j₁|`,
+which is the same — so length can never be used to separate the bystander from a
+chain word. Distinctness has to come from a letter position, as it did in §4ad.
