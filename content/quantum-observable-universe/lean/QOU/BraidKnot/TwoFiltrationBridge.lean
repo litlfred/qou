@@ -276,4 +276,30 @@ theorem gbDepth_eq_content_spread (μ : YoungDiagram) (h : μ.cells.Nonempty) :
   have hc := colLen0_pos μ h
   omega
 
+/-! ### Where this stops, and why
+
+The natural next step is to read the content spread back inside the algebra.
+The Jucys–Murphy element `L_k` acts on the seminormal basis with eigenvalue
+`q^{2c(k)}` (QOU convention, `QOU/SchurWeyl/QJucysMurphy.lean`), and `c ↦ q^{2c}`
+is injective at generic `q`, so
+
+  gbDepth λ  =  #{ distinct JM eigenvalues on the λ-block }
+
+would be an *intrinsically algebraic* restatement — no diagram, no hook — and
+that is the shape the word side would have to match.
+
+**It is not provable here, and the obstruction is not this file's.** The
+seminormal eigenvalue statement is itself an open GAP in the corpus:
+`QJucysMurphy.lean` records *"Seminormal eigenvalue — GAP: `L_k` acts with
+eigenvalue `q^{2c(k)}` on the seminormal basis"* (Ref: [ram1997] Thm 4.1,
+[murphy1983], [hoefsmit1974]), and the block-eigenvalue statement is a further
+GAP downstream of it.
+
+So the bridge bottoms out in an already-known gap rather than in a new one.
+Closing it needs the seminormal eigenvalue theorem first — after which the
+identity above should follow from `gbDepth_eq_content_spread` plus injectivity
+of `c ↦ q^{2c}`, and the remaining question becomes the well-definedness of the
+word filtration (bean `wpdb`).
+-/
+
 end QOU.BraidKnot
