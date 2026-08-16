@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-15T00:00:00Z
+updated_at: 2026-08-16T02:17:21Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -62,3 +62,39 @@ only thing the dependent blocks rely on.
 `G_INV` is **exported at import**, so every consumer of `pyhecke.gram` is
 affected — that is the 13 re-exporters + 13 consumers of `qou-cdh2`, plus
 whatever imports `gram` directly.
+
+
+---
+
+## ⚠ PREMISE CORRECTION (2026-08-16, `qou-cdh1`) — READ BEFORE STARTING
+
+**The repair this bean names has already shipped.** S2 is scoped as
+"`pyhecke.gram.z` and the Gram singularity", with the named repair *"quotient by
+the radical, `QOU/QBeta/GramSignature.lean`"* and `G_INV = np.linalg.inv(G)`
+running at module import. As of commit `6086572c4` (2026-08-15, *"gram.py:
+convention D, quotient inverse — library core done"*):
+
+- `gram.py:175` → `z = q0 ** 3 / (q0 ** 2 + 1)` — **convention D**
+- **`G_INV` is deleted**, deliberately left undefined and explicitly "not a
+  rename" (`gram.py:20,91,401`); `G` is inverted on the quotient `H₃/rad`
+
+That commit **precedes** the ruling audit's own commit `c8796c283`, so the
+audit's §2.2 premise was already false when written — it was measured from the
+registry's stale `blocked_migrations[0]` row rather than from source. Full
+correction in `resolved_migrations[0].premise_correction`.
+
+**What is actually still open.** Not the float64 `z`, and not `G_INV`. The
+50-dps **mpmath path** is unmigrated and still convention C — `z_mp()` (L622),
+`tr_m_mp()` (L637), `gram_matrix_mp()` (L719), `tr_m_mp_strings()` — with
+`tr_m_mp()`'s docstring still asserting it is "in lockstep" with the float64
+path it now diverges from by 18.5%. `6086572c4`'s own message says **"TWO
+coupled sites found"**. Two live consumers: `computations/atom_dual_q0_mpfr_demo.py:47`
+and `computations/probes/qbeta_braid_nf_sdp_offset_probe.py:127,232`.
+
+The singularity analysis in `resolved_migrations[0].reason` is still the
+clearest statement in the repo of *why* the full Wedderburn Gram cannot be
+inverted under D, and is still true — it is the justification for the quotient,
+not an open question.
+
+**Suggested re-scope:** S2 becomes "migrate the `pyhecke.gram` mpmath path to D",
+and it is not `qou-cdh2`'s blocker.
