@@ -361,3 +361,67 @@ harder case than the ones done so far: it bundles four Markov axioms M1–M4, of
 which `tau_identity = 1` is already substantive and only the cyclic and
 stabilisation residuals are placeholders. It should be split field by field
 rather than replaced wholesale. Not attempted here.
+
+## Progress 2026-08-16 (3) — `SpectralNormalForm`
+
+Branch `claude/ffwk-spectral-normal-form-2026-08-16`. Fourth of the ten, and the
+first that needed **no invented types**: `SurrealField`, `IsInfinitesimal`,
+`IsFinite` and `OmegaOrder.Ow` all already exist, so the conjecture is stated in
+the corpus's own vocabulary rather than against caller-supplied stand-ins.
+
+**What the conjecture is.** The block's three parts share one thing: a bridge
+between two independent structures on `K` — the *order* (infinitesimal, finite,
+from `SurrealField`'s `LinearOrder`) and the *valuation* (`Ow`, the leading
+Conway exponent). `OmegaOrder` axiomatises `Ow`'s multiplicativity and its
+behaviour under real rescaling and **says nothing relating it to the order**.
+The conjecture is exactly that relation, so the two fields are
+
+- part 1 (gap closure) → `IsInfinitesimal x ↔ Ow x < 0`
+- part 3 (singularity) → `¬ IsFinite x ↔ 0 < Ow x`
+
+**The `x ≠ 0` side condition is load-bearing, not decorative.** `0` is
+infinitesimal (`zero_isInfinitesimal`) while `Ow 0 = ⊤` by `Ow_zero`, and `⊤` is
+not `< 0`. Without the hypothesis part 1 is outright **false at zero**; same for
+part 3, where `0` is finite and `⊤` is `> 0`. Caught by checking the statement
+against the existing lemmas rather than by transcribing the block.
+
+**Part 2 is deliberately not a field.** It reads off *rates* — `Ow(Δ) = -n` is
+polynomial closure of order `n`, a value in `(-ω·2, -ω)` signals transcendental
+quantum-dilogarithm behaviour. That classifies the exponent once parts 1 and 3
+are granted; encoding a rate table as fields would claim the classification is
+part of what must be assumed.
+
+**Anti-vacuity, by a different route than the earlier three.** No degenerate
+data is available to refute against here, so instead `Ow_normalises_on_ofReal`
+derives from the two fields that `Ow (ofReal r) = 0` **exactly**, for every
+non-zero real `r`. `OmegaOrder` alone cannot give this: `Ow_ofReal_mul` says
+rescaling by a non-zero real leaves the leading exponent *unchanged*, which
+constrains differences and never fixes an absolute value. So the class demonstrably
+adds content, and an instance cannot be manufactured by adjusting `Ow` freely.
+`not_infinitesimal_and_not_finite` exercises both fields together.
+
+**Non-emptiness is NOT shown, and that is a real gap.** It needs an `OmegaOrder`
+instance and **this tree has none** — `Asymptotics.lean` says so in its own
+header ("Mathlib does not yet expose Conway normal form on `𝐍𝐨`, so neither
+class is populated here"). `HyperrealLimitTransfer.lean` has a `SurrealField ℝ*`
+model but no `Ow` for it. So satisfiability is untested in either direction.
+Recorded rather than papered over with a degenerate instance — which is what the
+old schema effectively was.
+
+Verification: compiles (`lean-direct-cone -k` ok=1); `#print axioms` gives
+`[propext, Classical.choice, Quot.sound]` on both derived theorems, no
+`sorryAx`; `check-base-ring` PASS; `check-wall-side` PASS; both
+`lean-content-siblings` local gates exit 0; orphan gate exit 0; `run-validate`
+exit 0. No instance added.
+
+Detector count **13 → 12**.
+
+### Running total
+
+Four of ten library carriers done (`archimedean_agreement` ×2,
+`BringFigureEightDepth2Witness`, `SpectralNormalForm`); count 16 → 12.
+Remaining library: `DiophantineBirthday`, `LocalInfinitesimalField`,
+`QouInfraDischargesGoncharovZeta5`, `VacuumEpsilon`,
+`HyperbolicVolumeIndependence`, and `BraidGroupNStrand` (whose class is
+`MarkovTraceN`, not `HeckeQuotient` as the inventory says). Plus six co-located
+stubs this bean's inventory omits.
