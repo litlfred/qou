@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T03:12:45Z
-updated_at: 2026-08-16T03:13:30Z
+updated_at: 2026-08-16T03:16:59Z
 ---
 
 Opened while answering a caveat I raised on `qou-w1g8`: *"I have not verified
@@ -79,3 +79,11 @@ Worth considering separately: whether an existence claim discharged by `axiom`
 or `sorry` should be *re-reviewed* whenever its structure gains a field. No
 mechanism does that today, and this is the case that shows why one might want
 one.
+
+
+RELATED 2026-08-16: bean qou-omuz — the same blind spot from the other side.
+QuantumUniverse is typed over [Field k] while the paper says commutative ring R,
+and the framework's own ground ring R_q = LaurentPolynomial Z is NOT a field. An
+over-strong parameter is invisible for exactly the reason recorded here: nothing
+constructs the structure, so nothing has ever tried to instantiate it at a ring
+that fails.
