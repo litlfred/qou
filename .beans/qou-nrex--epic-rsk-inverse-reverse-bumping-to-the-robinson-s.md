@@ -169,3 +169,27 @@ function of `Q(w)`. Brick 3's `word_eq_of_insertWord_eq` wanted exactly that.
 
 **Next:** assemble — equal `(P, Q)` ⇒ equal `rowIndices` (brick 6) ⇒ equal word (brick 3), i.e.
 `rskPair` injective. Then surjectivity, then the count.
+
+## Brick 7 DONE — the RSK map is injective on words
+
+`QOU/Mathlib/SchenstedRSKInjective.lean`, sorry-free:
+
+- `rowIndices_length` — one row index per letter (**depends on no axioms at all**);
+- `rowIndices_eq_of_recording_eq` — equal recording tableaux (at equal length) force equal index
+  records;
+- **`word_eq_of_insertWordRec_eq`** — `(P(w), Q(w))` determines `w`;
+- `insertWordRec_ne_of_ne` — the contrapositive.
+
+Pure assembly: brick 4 (`Q` *is* the fold) → brick 6 (the fold is readable) → equal `rowIndices`
+→ brick 3 (equal `P` + equal indices ⇒ equal word). No new machinery, which is what the six
+previous bricks were for.
+
+**The length hypothesis is real, not decorative.** `qRowOf` constrains only timestamps
+`0 … |w|-1`, so two words of *different* lengths can agree on every timestamp the shorter one
+has. It costs nothing at the use site (`|w| = n` for a permutation of `Fin n`) but it is stated
+rather than hidden.
+
+**Next:** lift to `SchenstedPairingMap.rskPair`, which is typed in `StandardYoungTableau` rather
+than raw `List (List ℕ)`. Expect the work to be the typed wrapper — `wordOfPerm` injectivity and
+the `SYT` casts — not the combinatorics, which is now finished on the raw layer. Then
+surjectivity, then the count.
