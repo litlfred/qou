@@ -216,3 +216,27 @@ plumbing, not mathematics: no transfer of `IsSimpleModule` across the
 already merged depends on it.
 
 Five bricks merged or open, none carrying a sorry: #5139, #5151, #5156, #5162, #5167.
+
+### Brick 4c landed — `n! ≤ Σ_μ (dim S^μ)²`, sorry-free
+
+`QOU/BraidKnot/SpechtActionInjective.lean`: `spechtProduct` (the product of the Specht
+actions), `spechtProduct_injective`, and `factorial_le_sum_sq`. Two general lemmas carry it and
+are stated for an arbitrary ring / group, not just `S_n`:
+
+- `eq_zero_of_smul_simples_eq_zero` — in a semisimple module, a ring element killing every
+  simple submodule kills everything. The proof uses `Submodule.iSup_induction`, which has **no
+  `smul` case** — that is what makes it work, since `y ↦ x • y = 0` is closed under addition
+  but *not* under multiplying `y` by a ring element (the ring is noncommutative). An earlier
+  plan to run `Submodule.span_induction` over `k[G]` fails exactly there.
+- `asAlgebraHom_of_intertwiner` — a rep-iso intertwines the induced `MonoidAlgebra` actions.
+  The `IsRepIso` hypothesis gives intertwining on *group elements* only; extending to a general
+  `x : k[G]` is a `Finsupp` induction.
+
+**One inequality, not the identity.** The reverse `Σ_μ (dim S^μ)² ≤ n!` needs the blocks not to
+overlap — isotypic independence of the multiplicity spaces bricks 1–4b count — and is the next
+open question. It is what would make `spechtProduct` an isomorphism, i.e. W1+W3 proper.
+
+Elaboration note: `spechtRepAt h` is *definitionally* `(spechtRep μ).comp (transportPermHom h.symm)`,
+but `specht_exhausts_irreducibles` states its conclusion in the unfolded form, so `rw` across
+the two fails on syntax. Bridge with `show`, not with a type ascription — the ascription does
+not survive elaboration (`MonoidHom.comp` wins and `.asAlgebraHom` then fails to resolve).
