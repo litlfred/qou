@@ -1282,11 +1282,22 @@ Do not regress either.
 >   R10-waived. **The posture does not change.** Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues five distinct detector-blind spellings, three of which were
+>   catalogues **eleven** distinct detector-blind spellings, three of which were
 >   found *by* detectors written to catch the previous blind spot. So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
 >   is canonical; it does not tell you how much code still disagrees.
+>
+>   **The counter-move, when the result is exact and symbolic: test the ANSWER,
+>   not the source.** Every detector above keys on how the convention was
+>   *written*; the algebraic form of the result keys on what it *is*. The Markov
+>   peel's deuteron denominator factors as `192·q²³·(q²+1)³` — one `(q²+1)` per
+>   peel, because `z = q³/(q²+1)`. Convention C leaves half-integer powers and
+>   cannot produce it, so *"`(q²+1)` divides the denominator"* is a complete
+>   convention test needing no source, no `z` grep and no anchor
+>   (`computations/markov/peel_anchor_identification_probe.py`, #5190). A value
+>   cannot be stale, mislabelled, re-spelled, or inherited from a stale record
+>   and still factor correctly.
 >
 >   Two live examples of why the count is not the answer: `pyhecke/atom.py:691`
 >   binds a C `z_mark` consumed at `:713`, in a module no waiver covers; and a
