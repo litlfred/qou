@@ -2109,3 +2109,54 @@ words also need a *second* abstract run (the `b`-side one) alongside `E`, so the
 `prefix ++ E ++ suffix` discipline becomes `prefix ++ E ++ mid ++ F ++ suffix`.
 That is the next piece of work, and it closes the whole `a > b` regime at once
 rather than one column at a time.
+
+## §4ae — the `b = 3` column, and the generator behind both
+
+`BokutShiaoCornerDepth3.resolves`: hypothesis `j ≤ i − 4`, twenty-three steps,
+all monic, `h` absent, every word `(explicit prefix) ++ E ++ (explicit suffix)`
+with `E = descWord i₄ j` never inspected. Sorry-free, standard axioms, full
+library builds. Generators are named `i₀ … i₄` by distance below the top rather
+than by primes — five levels of `'` was past the point of legibility.
+
+**The cost of one more level, exactly.** Side by side with §4ad:
+
+    b = 2:  B₂₁ F₀₂ │ B₂₁ F₀₂ B₃₂ F₁₃ F₀₃                    │ B₁₀ B₂₁ᵛ │ B₁₀ B₂₁ F₀₂ B₃₂ F₁₃ F₀₃
+    b = 3:  B₂₁ F₀₂ │ B₂₁ F₀₂ B₃₂ F₁₃ F₀₃ ⟨B₄₃ F₂₄ F₁₄ F₀₄⟩  │ B₁₀ B₂₁ᵛ │ B₁₀ B₂₁ F₀₂ B₃₂ F₁₃ F₀₃ ⟨B₄₃ F₂₄ F₁₄ F₀₄⟩
+
+One block, inserted twice — once per term. Confirms the induction shape recorded
+above from the raw trace, now against the emitted Lean.
+
+**The generator** is `scripts/gen-hecke-corner-column.py`, alongside the existing
+`gen-gluing-lean.py`. It derives words, stages, rules and contexts from the
+confluence engine's trace, so nothing is transcribed. Two things it needed that
+the engine does not give:
+
+* The engine's driver `clean`s zero coefficients, so the final stage — where the
+  two words become equal and cancel — is simply absent from its output. The
+  generator carries the two-term pair itself. Every rule reachable in this regime
+  is monic with exactly two words, so a step is just "replace the redex word by
+  the rule's other word"; the generator asserts that rather than assuming it.
+* Because rule names embed the run's bottom index, a rule at the general depth
+  and a rule at a fixed depth print alike. The generator distinguishes them
+  structurally (bottom `= a`, or not) and picks the Bokut–Shiao form over the
+  Yang–Baxter one where both share a leading monomial — the `−1` leading
+  coefficient that cost a full debugging cycle in §4ab.
+
+**Validation.** Re-deriving §4ad from the generator reproduces all seventeen
+words and all fifteen rules and slot assignments exactly, against the table
+worked out by hand. That is what licenses trusting it at `b = 3`.
+
+**`rfl` after `rw`, made deterministic.** `rw` closes a goal by `rfl` only at
+*reducible* transparency, so whether a trailing `rfl` is needed depends on
+whether the rewritten side lands in the same cons/association shape as the
+statement. It does when the statement keeps the `… ++ E ++ [x]` shape (the
+general-bottom rules' `lm`), and does not when the statement is a flat literal
+list (the fixed-depth rules, and the `descWord` splits). Writing `<;> rfl`
+everywhere builds fine but draws a linter warning either way — "would suffice"
+or "does nothing" — which is exactly the oracle needed to pin the rule down. The
+committed output has neither.
+
+**Correction.** §4aa's prose said "nine steps take the second term … six take the
+first", contradicting its own "8 and 7" two paragraphs later; §4ad repeated the
+wrong figures. The split is 8 and 7 — `V0 ⋯ V8` and `U0 ⋯ U7`, meeting at
+`V8 = U7`. Both fixed. At `b = 3` it is 12 and 11.
