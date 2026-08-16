@@ -96,19 +96,33 @@ def load_y_lambda_n6_symbolic(q_sym: sp.Symbol) -> dict[tuple, sp.Expr]:
 
 def load_or_build_chi_deuteron(q_sym: sp.Symbol) -> tuple[dict[tuple, sp.Expr], float]:
     """Load (or compute + cache) symbolic χ^λ_q(β_D) for each λ ⊢ 6."""
+    from canonical_braid_crossings import (  # noqa: E402
+        convention_fingerprint, convention_label,
+    )
+    want = convention_fingerprint(atom_canonical_crossings(1, 1))
     if CHI_CACHE.exists():
         d = json.loads(CHI_CACHE.read_text())
-        out: dict[tuple, sp.Expr] = {}
-        for entry in d["chi_lambda_symbolic"]:
-            lam = tuple(entry["partition"])
-            expr = sp.sympify(entry["chi_q_symbolic"])
-            free = expr.free_symbols
-            if free:
-                other_q = next(iter(free))
-                if other_q is not q_sym:
-                    expr = expr.subs(other_q, q_sym)
-            out[lam] = expr
-        return out, 0.0
+        # The cache USED to be keyed on nothing but its own existence. That is
+        # how it went on serving colour-BLIND chi long after the word gained
+        # the colour-weighted p-n interface: the producer was right, the cache
+        # simply had no way to notice the question had changed. Compare the
+        # ctype multiset the current word actually builds.
+        got = d.get("convention_fingerprint")
+        if got != want:
+            print(f"  chi cache is for a different crossing convention "
+                  f"({got or 'untagged'} != {want}) — recomputing")
+        else:
+            out: dict[tuple, sp.Expr] = {}
+            for entry in d["chi_lambda_symbolic"]:
+                lam = tuple(entry["partition"])
+                expr = sp.sympify(entry["chi_q_symbolic"])
+                free = expr.free_symbols
+                if free:
+                    other_q = next(iter(free))
+                    if other_q is not q_sym:
+                        expr = expr.subs(other_q, q_sym)
+                out[lam] = expr
+            return out, 0.0
     # First-run: compute + emit cache.
     print(f"  (first run — building chi cache, ~150 s ...)")
     t0 = time.time()
@@ -132,6 +146,10 @@ def load_or_build_chi_deuteron(q_sym: sp.Symbol) -> tuple[dict[tuple, sp.Expr], 
             "per_irrep_pole_deuteron_h6.py."
         ),
         "n_partitions": len(cache_entries),
+        # Both DERIVED from the word just used, never hand-set. The tag is for
+        # readers; the fingerprint is what the next run compares against.
+        "convention": convention_label(crossings),
+        "convention_fingerprint": convention_fingerprint(crossings),
         "compute_time_sec": elapsed,
         "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
         "chi_lambda_symbolic": cache_entries,
