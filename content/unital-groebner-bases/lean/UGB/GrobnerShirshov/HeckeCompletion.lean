@@ -9903,6 +9903,315 @@ theorem loopTwoFromTop (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed idd : F
   loopTwo hn hp hed hj₁ hj₂ (by omega) S c c' hc m i idd A [] hid hm (le_refl _)
     (by simp) (by rw [descWord_cons_le hid (by omega)]; simp)
 
+/-- **The loop with a parked term that is not its endpoint.**
+
+`loopTwo` carries the word the loop is heading for. The corner needs the other
+arrangement too: while one term of the S-polynomial runs its loop, the other sits
+parked at a word of its own. Every word any pass rewrites has the form
+`A ++ z` — the accumulator only ever grows on the right of `A` — so a single
+hypothesis, that the parked word is not of that form, discharges every
+obligation of every pass at once. In the corner it holds for the cheapest of
+reasons: the two terms start with different letters. -/
+theorem loopTwoGen (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed : Fin n}
+    (hed : ed.val + 1 = e.val) (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ e.val)
+    (S P : Monomial (HeckeGen n)) (c c' : ℝ) (hc : c ≠ 0) :
+    ∀ (m : ℕ) (k kd : Fin n) (A Y : Monomial (HeckeGen n)),
+      kd.val + 1 = k.val → k.val = e.val + m →
+      (∀ z : Monomial (HeckeGen n), P ≠ A ++ z) →
+      (∀ y ∈ Y, kd.val + 1 < y.index.val) →
+      descWord i j₁ = Y ++ ((⟨k⟩ : HeckeGen n) :: descWord kd j₁) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          [(P, c'), (A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c)])
+        (AlgElement.ofTerms
+          [(P, c'),
+           (A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)]) := by
+  intro m
+  induction m with
+  | zero =>
+    intro k kd A Y hk hke hP hY hD
+    have hj₂k : j₂.val ≤ k.val := by omega
+    have hkde : kd = ed := Fin.ext (by omega)
+    subst hkde
+    have hstep := blockStep hn hp hk hj₁ hj₂k Y A S hY hD c hc [(P, c')] []
+      (by
+        intro q hq
+        simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+          List.not_mem_nil, or_false] at hq
+        subst hq
+        exact hP _)
+      (by
+        intro u v _ _ q hq
+        simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+          List.not_mem_nil, or_false] at hq
+        subst hq
+        exact hP _)
+    simpa [descWord_self] using hstep
+  | succ m ih =>
+    intro k kd A Y hk hke hP hY hD
+    have hkdlt : kd.val < n := kd.isLt
+    have hkdlow : ed.val ≤ kd.val := by omega
+    have hkdpos : 0 < kd.val := by omega
+    have hj₁kd : j₁.val ≤ kd.val := by omega
+    have hj₂k : j₂.val ≤ k.val := by omega
+    refine MultiStepReduction.trans
+      (blockStep hn hp hk hj₁kd hj₂k Y A S hY hD c hc [(P, c')] []
+        (by
+          intro q hq
+          simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+            List.not_mem_nil, or_false] at hq
+          subst hq
+          exact hP _)
+        (by
+          intro u v _ _ q hq
+          simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+            List.not_mem_nil, or_false] at hq
+          subst hq
+          exact hP _)) ?_
+    obtain ⟨kdd, hkdd⟩ : ∃ kdd : Fin n, kdd.val + 1 = kd.val :=
+      ⟨⟨kd.val - 1, by omega⟩, by show kd.val - 1 + 1 = kd.val; omega⟩
+    have hsplit : descWord kd j₁ = (⟨kd⟩ : HeckeGen n) :: descWord kdd j₁ :=
+      descWord_cons_le hkdd (by omega)
+    have hrun : descWord kd ed = (⟨kd⟩ : HeckeGen n) :: descWord kdd ed :=
+      descWord_cons_le hkdd (by omega)
+    have hnext := ih kd kdd (A ++ [(⟨kd⟩ : HeckeGen n)]) (Y ++ [(⟨k⟩ : HeckeGen n)])
+      hkdd (by omega)
+      (fun z => by rw [List.append_assoc]; exact hP _)
+      (by
+        intro y hy
+        rcases List.mem_append.mp hy with hy | hy
+        · have := hY y hy
+          omega
+        · have hyk : y = (⟨k⟩ : HeckeGen n) := by simpa using hy
+          subst hyk
+          show kdd.val + 1 < k.val
+          omega)
+      (by rw [hD, hsplit]; simp)
+    rw [hrun]
+    simpa using hnext
+
 end CornerBlock
+
+/-! ## §4ag  The `a > b` corner at every pair of depths
+
+§4ad and §4ae close the columns `b = 2` and `b = 3` one at a time. §4af replaces
+the quadratic middle of any such column by a loop. What is left is the ends, and
+they are the same four steps whatever the depths are. This section assembles
+them.
+
+The chain runs in three phases, in the order the confluence engine takes them:
+
+* **two setup steps** carry the first term from the S-polynomial to the loop's
+  entry shape, with the second term parked at `U0`;
+* **the second term's whole reduction** — its loop, then a Bokut–Shiao step at
+  top `i` and the fixed-depth one at `(i−2, i−1, j₂−1)` — with the first term
+  parked at `V2`;
+* **the first term's loop**, with the second parked at the word they meet at.
+
+Only the middle of each phase depends on the depths, and that is exactly what
+§4af's loop absorbs. Writing `ed` for `j₂ − 1`, the meeting word is
+`σᵢ₋₂ ++ descWord (i−1) ed ++ descWord i j₁`. -/
+
+namespace CornerGeneral
+
+variable {n : ℕ}
+
+section
+
+variable {i i₁ i₂ j₁ j₂ ed : Fin n}
+
+/-- The S-polynomial's first term. -/
+def V0 (i i₁ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
+  descWord i j₁ ++ ((⟨i₁⟩ : HeckeGen n) :: descWord i j₂)
+
+/-- After the Bokut–Shiao step at top `i−1`. -/
+def V1 (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i⟩ : HeckeGen n)] ++ ((⟨i₂⟩ : HeckeGen n) :: (⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)
+    ++ descWord i j₂
+
+/-- The first term parked at the loop's entry shape. -/
+def V2 (i i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₂⟩ : HeckeGen n)] ++ (descWord i j₁ ++ (descWord i j₂ ++ []))
+
+/-- The S-polynomial's second term. -/
+def U0 (i i₁ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₁⟩ : HeckeGen n)] ++ (descWord i j₁ ++ (descWord i₁ j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+
+/-- The second term begins with `σᵢ₋₁`, the first with `σᵢ`: that is all the
+setup steps need in order to tell them apart. -/
+theorem U0_ne_cons (h₁ : i₁.val + 1 = i.val) (X : Monomial (HeckeGen n)) :
+    U0 i i₁ j₁ j₂ ≠ (⟨i⟩ : HeckeGen n) :: X := by
+  have hgen : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  intro hcon
+  simp only [U0, List.singleton_append] at hcon
+  injection hcon with h _
+  exact hgen h
+
+/-- **Setup step one**: the Bokut–Shiao rule at top `i−1` and the general bottom,
+inside `σᵢ · − · descWord i j₂`. -/
+theorem s1 (hn : 0 < n) (hp : HeckeParams) (h₁ : i₁.val + 1 = i.val)
+    (h₂ : i₂.val + 1 = i₁.val) (hj₁ : j₁.val ≤ i₂.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(V0 i i₁ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)])
+      (AlgElement.ofTerms [(V1 i i₁ i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)]) := by
+  have hgen : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  have hLR : bsWord₂ i₂ i₁ j₁ ≠ bsWord₁ i₁ j₁ := by
+    rw [bsWord₁_cons h₂ hj₁, bsWord₂]
+    simp [hgen]
+  exact monicStep hn hp (bokutShiaoRelation i₂ i₁ j₁)
+    (bokutShiaoRelation_mem hn hp h₂ hj₁)
+    (fun v => rfl) (bokutShiaoRelation_lm h₂ hj₁) hLR
+    [] [(U0 i i₁ j₁ j₂, -1)]
+    [(⟨i⟩ : HeckeGen n)] (descWord i j₂) _ _ 1 one_ne_zero
+    (by simp [V0, bsWord₁, descWord_cons h₁ (show j₁.val ≤ i₁.val by omega)])
+    (by simp [V1, bsWord₂])
+    (by
+      intro q hq
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [V0, descWord_cons h₁ (show j₁.val ≤ i₁.val by omega)]
+      simpa using U0_ne_cons h₁ _)
+
+/-- **Setup step two**: `σᵢσᵢ₋₂ → σᵢ₋₂σᵢ`, which puts the first term into the
+shape the loop is entered in. -/
+theorem s2 (hn : 0 < n) (hp : HeckeParams) (h₁ : i₁.val + 1 = i.val)
+    (h₂ : i₂.val + 1 = i₁.val) (hj₁ : j₁.val ≤ i₂.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(V1 i i₁ i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)])
+      (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)]) := by
+  have hgen : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  exact monicStep hn hp (farCommRelation i i₂)
+    (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i₂ i) (farCommRelation_lm i i₂ (by omega))
+    (by simp [hgen])
+    [] [(U0 i i₁ j₁ j₂, -1)]
+    [] (((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁) ++ descWord i j₂) _ _ 1 one_ne_zero
+    (by simp [V1])
+    (by
+      simp [V2, descWord_cons h₁ (show j₁.val ≤ i₁.val by omega),
+        descWord_cons h₂ hj₁])
+    (by
+      intro q hq
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [V1]
+      simpa using U0_ne_cons h₁ _)
+
+/-- The second term after its loop. -/
+def U1 (i i₁ i₂ j₁ j₂ ed : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ ed ++
+    (descWord i j₁ ++ (descWord ed j₂ ++ [(⟨i⟩ : HeckeGen n)])))
+
+/-- The second term after the Bokut–Shiao step at top `i`. -/
+def U2 (i i₁ i₂ j₁ ed : Fin n) : Monomial (HeckeGen n) :=
+  ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ ed)
+    ++ ((⟨i₁⟩ : HeckeGen n) :: (⟨i⟩ : HeckeGen n) :: descWord i₁ j₁)
+
+/-- The word the two reductions meet at. -/
+def W (i i₁ i₂ j₁ j₂ ed : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₂⟩ : HeckeGen n)] ++ (descWord i₁ ed ++
+    (descWord i j₁ ++ (descWord ed j₂ ++ [])))
+
+/-- The parked first term begins with `σᵢ₋₂`, the second with `σᵢ₋₁`. -/
+theorem V2_ne_cons (h₂ : i₂.val + 1 = i₁.val) (X : Monomial (HeckeGen n)) :
+    V2 i i₂ j₁ j₂ ≠ (⟨i₁⟩ : HeckeGen n) :: X := by
+  have hgen : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  intro hcon
+  simp only [V2, List.singleton_append] at hcon
+  injection hcon with h _
+  exact hgen h
+
+/-- **Closing step one**: the Bokut–Shiao rule at top `i`, at the tail. -/
+theorem s3 (hn : 0 < n) (hp : HeckeParams) (h₁ : i₁.val + 1 = i.val)
+    (h₂ : i₂.val + 1 = i₁.val) (hed : ed.val + 1 = j₂.val)
+    (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ i₂.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U1 i i₁ i₂ j₁ j₂ ed, -1)])
+      (AlgElement.ofTerms
+        [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U2 i i₁ i₂ j₁ ed, -1)]) := by
+  have hedj : descWord ed j₂ = [] := descWord_of_lt (by omega)
+  have hgen : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  have hLR : bsWord₂ i₁ i j₁ ≠ bsWord₁ i j₁ := by
+    rw [bsWord₁_cons h₁ (show j₁.val ≤ i₁.val by omega), bsWord₂]
+    simp [hgen]
+  exact monicStep hn hp (bokutShiaoRelation i₁ i j₁)
+    (bokutShiaoRelation_mem hn hp h₁ (show j₁.val ≤ i₁.val by omega))
+    (fun v => rfl) (bokutShiaoRelation_lm h₁ (show j₁.val ≤ i₁.val by omega)) hLR
+    [(V2 i i₂ j₁ j₂, (1 : ℝ))] []
+    ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ ed) [] _ _ (-1)
+    (neg_ne_zero.mpr one_ne_zero)
+    (by simp [U1, bsWord₁, hedj])
+    (by simp [U2, bsWord₂])
+    (by
+      intro q hq
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [U1]
+      simpa using V2_ne_cons h₂ _)
+
+/-- **Closing step two**: the fixed-depth Bokut–Shiao rule at `(i−2, i−1, j₂−1)`,
+at the head. This lands on the word the first term's loop is heading for. -/
+theorem s4 (hn : 0 < n) (hp : HeckeParams) (h₁ : i₁.val + 1 = i.val)
+    (h₂ : i₂.val + 1 = i₁.val) (hed : ed.val + 1 = j₂.val)
+    (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ i₂.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U2 i i₁ i₂ j₁ ed, -1)])
+      (AlgElement.ofTerms
+        [(V2 i i₂ j₁ j₂, (1 : ℝ)), (W i i₁ i₂ j₁ j₂ ed, -1)]) := by
+  have hedj : descWord ed j₂ = [] := descWord_of_lt (by omega)
+  have hedi₂ : ed.val ≤ i₂.val := by omega
+  have hgen : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  have hLR : bsWord₂ i₂ i₁ ed ≠ bsWord₁ i₁ ed := by
+    rw [bsWord₁_cons h₂ hedi₂, bsWord₂]
+    simp [hgen]
+  exact monicStep hn hp (bokutShiaoRelation i₂ i₁ ed)
+    (bokutShiaoRelation_mem hn hp h₂ hedi₂)
+    (fun v => rfl) (bokutShiaoRelation_lm h₂ hedi₂) hLR
+    [(V2 i i₂ j₁ j₂, (1 : ℝ))] []
+    [] (descWord i j₁) _ _ (-1) (neg_ne_zero.mpr one_ne_zero)
+    (by
+      simp [U2, bsWord₁, descWord_cons h₂ hedi₂,
+        descWord_cons h₁ (show j₁.val ≤ i₁.val by omega)])
+    (by simp [W, bsWord₂, hedj, descWord_cons h₂ hedi₂])
+    (by
+      intro q hq
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [U2]
+      simpa using V2_ne_cons h₂ _)
+
+end
+
+end CornerGeneral
 
 end UGB.GrobnerShirshov.Hecke

@@ -2311,3 +2311,48 @@ the two setup steps that take the first term to the loop's entry shape, the two
 closing steps on the second term (a `B₁₀` and the fixed-depth Bokut–Shiao), and
 the assembly against `oc.spoly`. Roughly the shape of §4ad's ends with its middle
 excised.
+
+## §4ag — the corner's four end steps, and the second loop variant
+
+All four steps that bracket the loop are proved, sorry-free, standard axioms,
+full library builds. Each built first try.
+
+**A second loop variant was needed.** `loopTwo` hardcodes the bystander to be the
+loop's own endpoint, which is right for the first term — it is heading for the
+word the second term ends at. But while the *second* term runs its loop, the
+parked word is the *first* term, `V2`, which is not the loop's endpoint. Hence
+`loopTwoGen`, taking an arbitrary parked word `P` with the single hypothesis
+`∀ z, P ≠ A ++ z`. That discharges every obligation of every pass at once,
+because the accumulator only ever grows on the right of `A`, so every word any
+pass rewrites has that form — and it is preserved by the induction, since
+`(A ++ [σ_kd]) ++ z = A ++ ([σ_kd] ++ z)`. In the corner it holds because the two
+terms start with different letters.
+
+Note the two variants take the parked term in opposite list positions —
+`loopTwo` second, `loopTwoGen` first — because that is the order the phases put
+them in, and `MultiStepReduction.trans` needs the intermediate to match
+syntactically rather than up to `CoeffEq`.
+
+**The four steps**, in the order the chain takes them:
+
+* `s1` Bokut–Shiao at top `i−1`, general bottom, inside `σᵢ · − · descWord i j₂`
+* `s2` `σᵢσᵢ₋₂ → σᵢ₋₂σᵢ`, putting the first term into the loop's entry shape
+* `s3` Bokut–Shiao at top `i`, at the tail
+* `s4` the fixed-depth Bokut–Shiao at `(i−2, i−1, j₂−1)`, at the head
+
+`s3` and `s4` need `descWord ed j₂ = []` — the run below `j₂` is empty — which is
+`descWord_of_lt`, added for the loop's boundary case last time and reused here.
+Every distinctness is again a first letter: `U0_ne_cons` (`σᵢ₋₁` against `σᵢ`)
+for the setup pair, `V2_ne_cons` (`σᵢ₋₂` against `σᵢ₋₁`) for the closing pair.
+
+None of the four rules needed a custom `hrel`/`hlm`: at general depth the words
+are already `descWord`-shaped, so `fun v => rfl` and `bokutShiaoRelation_lm`
+serve directly. That is the payoff for §4ad and §4ae having been written with the
+abstract tail in one slot.
+
+**What remains** is wiring only: `MultiStepReduction.trans` over
+`s1, s2, loopTwoGen, s3, s4, loopTwo`, plus the `OverlapComposition` and its
+`spoly` identity. The S-polynomial is already known to be `V0 − U0`:
+`rule₁ = bokutShiaoRelation i₁ i j₁`, `rule₂ = bokutShiaoRelation i₁ i j₂`,
+`left = descWord i j₁`, `overlap = [σᵢ]`, `right = descWord i₁ j₂ ++ [σᵢ]`, and
+the two leading words cancel because `descWord i j₂ = σᵢ :: descWord i₁ j₂`.
