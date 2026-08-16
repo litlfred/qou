@@ -260,3 +260,55 @@ source would be worse than the flag.
 
 One fixed, one escalated to its own bean, one recorded as genuinely
 provenance-free.
+
+---
+
+## Name correspondence: 152 "coverable" is really 1 confident + 151 to judge
+
+Working the coverable pile showed coverage alone proposes nonsense. Single-
+literal blocks match almost anything — one shared decimal is the whole test:
+
+    rem:collatz-hausdorff-comparison  <- meson-mass-from-hecke.witness.json
+    conj:diophantine-birthday         <- meson-mass-from-hecke.witness.json
+
+Neither has anything to do with meson mass. That is exactly the false
+attribution `--suggest`'s own docstring warns about, arriving in its own output.
+
+The one signal that is not arithmetic is **name correspondence**: when
+`prop:meson-em-sinh-closed-form` is covered by
+`meson-em-sinh-closed-form.witness.json`, the witness is *named after the
+block*. `--suggest` now marks those **CONFIDENT** and prints
+`[named after the block]` on the line.
+
+    152 fully coverable (1 CONFIDENT — witness named after the block), 20 partial, 2 orphan
+
+**1 of 152.** That is the honest reading of the pile: 151 are suggestions a
+human must judge, and exactly one is provenance. Reporting "152 coverable"
+without that split invited precisely the bulk-apply this axis exists to prevent.
+
+### The confident one, declared
+
+`prop:meson-em-sinh-closed-form`. Three independent confirmations, not just
+the decimal:
+
+* the witness is named after the block;
+* the witness's own `computation` field is `meson-em-sinh-closed-form`, the
+  block's slug;
+* the producer `computations/meson_em_sinh_closed_form.py` exists.
+
+Its `alpha_em^-1 ~ 137.0359351` is the witness's `137.03593508992864` rounded —
+and the block states this is the framework's **derived** value, *"No measured
+constant is imported"*, so it is exactly the sort of number that must be
+traceable to a producer rather than waved at CODATA. That was the literal whose
+investigation exposed the key-length bug.
+
+Block: 1 unsourced-literal -> 0. `run-validate` still `✓ Valid`.
+
+## Next
+
+The 151 non-confident coverable blocks need per-block judgement, and the tool
+now says so rather than implying a mechanical pass. A reasonable next cut:
+extend name correspondence to the block's `script` slug and to directory
+proximity, which would likely promote more than one — but each promotion has to
+be justifiable the way this one was, on three signals rather than a shared
+decimal.

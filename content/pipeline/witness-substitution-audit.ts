@@ -687,6 +687,7 @@ function main(): number {
     let fully = 0;
     let partial = 0;
     let orphan = 0;
+    let confident = 0;
     for (const { block, findings } of failing) {
       if (!findings.some((f) => f.detector === "no-witness-declared")) continue;
       const lits = [...new Set(scopedLiterals(block.md).map((l) => l.lit))];
@@ -736,18 +737,37 @@ function main(): number {
       if (covered === lits.length) fully++;
       else if (covered === 0) orphan++;
       else partial++;
-      const tag = covered === lits.length ? "COVERED" : covered === 0 ? "ORPHAN " : "PARTIAL";
+      // NAME CORRESPONDENCE is the only signal here that is not a decimal
+      // coincidence. Coverage alone proposes nonsense on single-literal
+      // blocks: rem:collatz-hausdorff-comparison and conj:diophantine-birthday
+      // are both "covered" by meson-mass-from-hecke.witness.json, because one
+      // shared decimal is all it takes. But when `prop:meson-em-sinh-closed-form`
+      // is covered by `meson-em-sinh-closed-form.witness.json`, the witness is
+      // named after the block, and that is provenance rather than arithmetic.
+      //
+      // So a proposal is CONFIDENT only when a chosen witness's basename
+      // matches the block's file root. Everything else stays a suggestion for
+      // a human, which is what the whole mode is for.
+      const rootOf = (w: string) =>
+        w.split("/").pop()!.replace(/\.witness\.json$/, "");
+      const named = chosen.find(([w]) => rootOf(w) === block.root);
+      const tag = covered === lits.length
+        ? (named ? "CONFIDENT" : "COVERED  ")
+        : covered === 0 ? "ORPHAN   " : "PARTIAL  ";
+      if (named) confident++;
       console.log(
         `  ${tag}  ${block.label || block.root}  (${covered}/${lits.length} literals)`,
       );
-      for (const [w, n] of chosen) console.log(`             +${n} <- ${w}`);
+      for (const [w, n] of chosen)
+        console.log(`             +${n} <- ${w}${rootOf(w) === block.root ? "   [named after the block]" : ""}`);
       if (missing.length)
         console.log(
           `             ${missing.length} literal(s) in NO witness: ${missing.slice(0, 3).join(", ")}`,
         );
     }
     console.log(
-      `\n  ${fully} fully coverable by declaration, ${partial} partial, ${orphan} orphan`,
+      `\n  ${fully} fully coverable by declaration (${confident} CONFIDENT — witness named after the block), `
+      + `${partial} partial, ${orphan} orphan`,
     );
   }
 
