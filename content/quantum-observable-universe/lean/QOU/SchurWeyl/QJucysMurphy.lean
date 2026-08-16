@@ -549,6 +549,60 @@ theorem qJM_commute_proved (i j : ℕ) :
   · exact qJM_commute_of_adjacent K q qi n hadj j i h
   · exact (qJM_commute_of_adjacent K q qi n hadj i j h).symm
 
+
+/-! ### Towards `barSymJMSum_central`: the pair that saves it
+
+`barSymJMSum_central`'s GAP note says it needs *"`qJM_commute` plus the σ_i–L_k
+commutation relations"*. `qJM_commute` is now proved — but it is about **L–L**
+commutation and does not bear on centrality, which is a **σ–L** question. The
+three things centrality actually needs, for a fixed `i`:
+
+| terms | status |
+|---|---|
+| `L_k`, `k ≤ i-1` | **have it** — `qJM_comm_sigma` |
+| `L_i + L_{i+1}` | **have it now** — `qJM_pair_comm` below, needs `q·qi = 1` |
+| `L_k`, `k ≥ i+2` | **open** |
+
+The middle row is the interesting one and the reason a *sum* is central when its
+summands are not: `L_{i+1} = σ_i L_i σ_i`, so those two terms are `A + s A s`,
+and `pair_comm` shows `s` commutes with that as soon as the quadratic relation
+has constant term `1`. Neither `L_i` nor `L_{i+1}` commutes with `σ_i` alone.
+
+The `q·qi = 1` hypothesis is not incidental: the computation leaves a residue
+`(1 − q·qi)(sA − As)`, so it is exactly the standard Hecke normalisation that
+makes the pair work. `Hecke.σUnit` carries the same hypothesis.
+
+**Still open for the third row**, and it is not far commutation: `L_k` for
+`k ≥ i+2` is built from `σ_{k-1}, …` which *includes* `σ_i`, and at `k = i+2`
+the outer generator `σ_{i+1}` is adjacent to `σ_i`. Classically (`q = 1`)
+conjugation by `s_i` permutes the transpositions `(j,k)` with `j < k` among
+themselves whenever `k ≥ i+2`; the q-analogue of that argument is what is
+missing here. The inverse family `L_k⁻¹` needs the same treatment with `σ⁻¹`. -/
+
+theorem pair_comm {K' R : Type*} [CommRing K'] [Ring R] [Algebra K' R]
+    (s A : R) (d : K') (hquad : s * s = d • s + (1 : R)) :
+    s * (A + s * A * s) = (A + s * A * s) * s := by
+  have hL : s * (A + s * A * s) = s * A + (s * s) * (A * s) := by
+    simp only [mul_add, mul_assoc]
+  have hR : (A + s * A * s) * s = A * s + (s * A) * (s * s) := by
+    simp only [add_mul, mul_assoc]
+  rw [hL, hR, hquad]
+  simp only [add_mul, mul_add, smul_mul_assoc, mul_smul_comm, one_mul, mul_one,
+    mul_assoc]
+  abel
+
+/-- **`σ_i` commutes with `L_i + L_{i+1}`** when `q · qi = 1`. Neither summand
+is `σ_i`-invariant; the pair is. -/
+theorem qJM_pair_comm (hqi : q * qi = 1) (i : ℕ) (hi : i < n) :
+    σ K q qi n ⟨i, hi⟩ * (qJM K q qi n i + qJM K q qi n (i + 1))
+      = (qJM K q qi n i + qJM K q qi n (i + 1)) * σ K q qi n ⟨i, hi⟩ := by
+  have hquad : σ K q qi n ⟨i, hi⟩ * σ K q qi n ⟨i, hi⟩
+      = (q - qi) • σ K q qi n ⟨i, hi⟩ + (1 : Hecke K q qi n) := by
+    have := σ_quadratic K q qi n ⟨i, hi⟩
+    rw [hqi] at this; simpa using this
+  rw [qJM_succ K q qi n hi]
+  exact pair_comm _ _ _ hquad
+
 end AdjacentReduction
 
 /-- **[GAP] The Murphy elements commute pairwise** — they generate the commutative
