@@ -2404,3 +2404,52 @@ depths**. Confluence verified computationally to `n = 12`.
    Lean was written.
 2. **The shape enumeration for general `n`** — §4k computes `overlapTriples` by
    `decide` at `n = 4`; a general theorem needs it characterised abstractly.
+
+## The `a ≤ b` regime, measured — and it is not one loop
+
+Same order of work as §4af's blueprint: measure before writing Lean. New artifact
+`computations/hecke_corner_le_regime.py` and its witness.
+
+**The split.**
+
+    prefix(a)     a² + a + 5 steps, depending on `a` alone, containing both
+                  applications of the quadratic rule
+    block(a,b)    ab − a² + 2a − 3 far-commutations, and nothing else
+    two steps
+    block(a,b)    the very same sequence again
+
+    a² + a + 5 + 2[ab − a² + 2a − 3] + 2  =  2ab − a² + 5a + 1   ✓
+
+exactly the fitted length. Checked at every `(a, b)` for `a = 2 … 5`,
+`b = a … a+4`: twenty cases, no failure. Both blocks are far-commutations only,
+they are identical sequences, the two middle steps are not far-commutations, and
+no quadratic step occurs anywhere after the prefix.
+
+**A wrong fit, caught.** My first reading of the chains gave `prefix = 6a − 1`
+and `block = a(b−1) − a(a−1)/2`. Those fit `a = 2` and `a = 3` — and fail from
+`a = 4` on, where the prefix is 25 and not 23. Both are quadratic in `a`, not
+linear. This is why the script checks the *split* at each pair rather than
+inferring it from the length: the length formula was right all along and would
+have hidden the error indefinitely.
+
+**Why this regime is harder than the one just closed.** The block is a **nested
+double loop**, not a single one: `a` levels, level `p` a run of far-commutations
+`F_{p,q}` with `q` ascending to `b`, of lengths `2, 3, 4, …` capped at `b−a+2`.
+
+    a=3 b=5:  F24 F25 | F13 F14 F15 | F02 F03 F04 F05
+    a=4 b=6:  F35 F36 | F24 F25 F26 | F13 F14 F15 F16 | F03 F04 F05 F06
+    a=5 b=7:  F46 F47 | F35 F36 F37 | F24 F25 F26 F27 | F14 F15 F16 F17 | F04 F05 F06 F07
+
+That is the structural reason the length depends on both depths rather than one,
+and it is what `a > b` did not have. Two further differences: the prefix is
+itself `a`-dependent and quadratic, and it contains the quadratic rule twice —
+so `monicStep`, which carried every step of the other regime, does not reach it.
+
+**What this suggests for the Lean.** The two blocks are the same sequence, so one
+lemma serves both, and being pure far-commutations they should be a nested
+application of `farComm_transport_left_sources` — an outer induction over levels
+with an inner transport per level, rather than §4af's single loop. The prefix
+looks like the genuinely new work: quadratic-rule steps at general depth, which
+nothing in the development currently handles in a depth-general way. Measuring
+*its* internal structure is the next step, and it should be done before any Lean,
+on the evidence of the fit that just failed.
