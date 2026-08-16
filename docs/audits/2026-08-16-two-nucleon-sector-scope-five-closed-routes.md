@@ -99,7 +99,54 @@ not by the flipping one.
 
 ## 4. What survives
 
-Two positives, both scoped:
+### 4a. The Lean interface theorems — the durable core
+
+None of these routed through `atom_character_raw`, so none is touched by the
+retraction in §4b. All sorry-free, `lean`-direct exit 0 against the real import
+cone, axioms `[propext, Classical.choice, Quot.sound]` or fewer.
+
+**`QOU/QBeta/SingleCrossingAlwaysBinds.lean`** — 14 declarations. The core of the
+negative result:
+
+| theorem | content |
+|---|---|
+| `markovZ_lt_one` | `z < 1 ⟺ q³ < q² + 1` — the mechanism |
+| `markovZ_sub_heckeH` | `z − h = 1/(q(q²+1))` **exactly**; the family never degenerates |
+| `h_lt_markovZ` | hence `h < z` for every `q > 0`, unconditionally |
+| `interface_mem_Ioo` | `0 < z + d < 1` on the whole admissible interval |
+| `single_crossing_binds` | `−α·log(z+d) > 0`: **every** admissible single crossing binds |
+| `nonneg_writhe_cannot_unbind` | `0 ≤ e`, `0 ≤ c ≤ 1`, `0 < μ < 1` ⟹ `μ·c^e < 1` |
+| `t3_grading_cannot_unbind_pp` | the `T₃` grading gives `pp` a non-negative exponent, so it **cannot** unbind at any magnitude |
+| `unbinding_needs_large_q` | contrapositive: unbinding forces `q² + 1 ≤ q³` |
+| `common_factor_cancels_in_ratio` | a T-blind grading cannot discriminate the channels |
+| `reciprocal_factors_scale_ratio` + `reciprocal_ratio_strictMono` | a reciprocal (T-odd) grading can, strictly monotonically |
+| `writhe_normalisation_binds_harder`, `markovZ_pos`, `substrate_satisfies_hypothesis` | supporting |
+
+**`QOU/MassTheory/ChainBindingNoSaturationPeak.lean`** — `hyperbola_no_interior_max`,
+`chainPerNucleon_eq_hyperbola` (with `c₁` independent of the p/n imbalance `d`),
+`chain_no_saturation_peak`.
+
+**`QOU/MassTheory/OrderTruncationGeometricTail.lean`** — `le_geometric_of_ratio`,
+`le_geometric_of_ratio'`, `tail_lt_of_ratio`: a per-order ratio bound gives an
+explicit truncation order.
+
+**`QOU/Mass/CubeMomentLowerBound.lean`** — step (C) of the tower growth bound
+unconditionally, plus the weakenings reducing (D) to a ratio bound.
+
+**Keystone (`PolynomialShadowRigidity`, `KeystoneRootsOfUnityReduction`,
+`KeystoneFramingTrivialAtRootsOfUnity`)** — rigidity discharged on the rational
+carrier; the archimedean step made free for rational sides; the concrete
+RT/Seifert row closed negatively (`f·c(λ) = 0 ⟹ f = 0`).
+
+**`QOU/Mathlib/BurnsideViaBranching.lean`** — `sum_sq_step`,
+`sum_sq_factorial_of_step` (the latter depends on **no axioms**).
+
+**These theorems are why the negative result is a finding rather than a failed
+attempt.** `single_crossing_binds` and `t3_grading_cannot_unbind_pp` are what turn
+"the diproton comes out wrong" into "the diproton *cannot* come out right in this
+construction, and here is the invariant."
+
+### 4b. The empirical positives — one retracted, one standing
 
 * ~~**`H_6` has the range and the right orientation.**~~ **RETRACTED
   2026-08-16 — this was false, and it was the one positive structural result on
