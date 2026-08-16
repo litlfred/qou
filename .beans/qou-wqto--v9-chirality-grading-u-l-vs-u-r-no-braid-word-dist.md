@@ -107,3 +107,71 @@ DERIVING the involution rather than taking it as given.
 So: 'the mechanism has the right shape' -> 'here is the grading, here is exactly
 when it exists, and it is the corpus's one'. Open on the geometric
 identification.
+
+## V11 (2026-08-16): Type-B folding is NOT untried — and its own reading blocks it
+
+This bean said twice that "Type-B folding (AGENTS.md §7b) remains untried". The
+corpus-grep checklist says to check before declaring an item open, and doing so
+here changes the answer. Type-B folding is already in the corpus:
+
+    content/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.md
+    (+ .ts, .lean, .qa.json)
+
+`conj:type-b-folding-closure` states the folding with the involution
+`ι : α_i ↔ α_{n-i}` on the sl_n Cartan datum, and adds the clause that decides
+the matter:
+
+  > Stable matter = fixed points of the folded crystal; antimatter = the
+  > ι-orbit complement.
+
+That collides with V10's existence criterion, and the collision is a theorem,
+not a preference. V10's `free_of_reeb_odd_grading` says a GLOBALLY ι-odd grading
+forces ι to have NO fixed point. The folding conjecture puts stable matter
+exactly AT the fixed points. One involution cannot do both.
+
+### Formalized: QOU/StandardModel/TypeBFoldingChiralityObstruction.lean
+
+lean-direct exit 0, no warnings. `#print axioms` on all four: "does not depend
+on any axioms" (not even propext). No sorry, no axiom, no native_decide.
+
+  stable_matter_and_global_chirality_incompatible
+      the bare dilemma: no ι both fixes a state and carries a global odd grading
+  no_state_chirality_of_folding_fixed_point
+      the obstruction TRANSFERS along any intertwiner π (π ∘ foldι = stateι ∘ π).
+      One fixed point upstairs kills the grading downstairs. π need be neither
+      injective nor surjective — one point carries it.
+  global_chirality_forces_no_fixed_matter
+      contrapositive, the usable form
+  folding_inducing_gen1_chirality_is_free
+      instantiated: flipChirality is PROVED free (V10, by decide on 8 states),
+      so any folding inducing it is itself fixed-point free — no stable matter
+      in the conjecture's sense
+
+The last one is the sharp form: the separation is not hypothetical. The corpus
+already carries a chirality involution whose fixed-point structure is proved,
+and it is the OPPOSITE of the folding conjecture's.
+
+### Scope — (a), deliberately, per the refuted/ruled-out discipline
+
+EXCLUDED: the Type-B folding involution, read as the conjecture reads it
+(fixed points = stable matter), cannot itself be the chirality involution.
+Backed by a proved fixed-point/parity invariant, so structural FOR THAT
+IDENTIFICATION.
+
+NOT EXCLUDED — do not read this as killing the route: folding keeps every other
+role the conjecture gives it (bar-invariance of GS normal forms, the C/P/T
+decomposition, the crystal structure). Folding may still CONTAIN the chirality
+datum — via an orbit map, a sub-crystal, or a SECOND involution on the folded
+object — just not by its own fixed-point involution serving directly as ι.
+
+### What this does to the search
+
+The bean pointed at Type-B folding as "the natural place to look". That pointer
+is now narrowed, not removed: whatever supplies ι must be fixed-point free on
+the physical states, so it is NOT the folding's matter/antimatter involution.
+Anyone resuming should look for a free involution on the folded object (or an
+orbit-level map), and should NOT try to read chirality off the matter-fixing ι.
+
+Still open, unchanged: the geometric identification of the Reeb involution on
+the physical state space (CR geometry; archimedean-chirality asserts rather than
+derives it). Nothing here is wired to compute and no observable is predicted.

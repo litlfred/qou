@@ -1,0 +1,102 @@
+{
+  "corank": [
+    {
+      "n": 3,
+      "n_fact_minus_catalan": 1,
+      "sum_dim_sq_ge3rows": 1
+    },
+    {
+      "n": 4,
+      "n_fact_minus_catalan": 10,
+      "sum_dim_sq_ge3rows": 10
+    },
+    {
+      "n": 5,
+      "n_fact_minus_catalan": 78,
+      "sum_dim_sq_ge3rows": 78
+    },
+    {
+      "n": 6,
+      "n_fact_minus_catalan": 588,
+      "sum_dim_sq_ge3rows": 588
+    },
+    {
+      "n": 7,
+      "n_fact_minus_catalan": 4611,
+      "sum_dim_sq_ge3rows": 4611
+    },
+    {
+      "n": 8,
+      "n_fact_minus_catalan": 38890,
+      "sum_dim_sq_ge3rows": 38890
+    }
+  ],
+  "lean_definition_transcription": {
+    "all_match": true,
+    "cells_checked": 416
+  },
+  "n3_vs_pr5185": {
+    "111": {
+      "got": "0",
+      "matches_5185": true
+    },
+    "21": {
+      "got": "q**2/(q**2 + 1)**2",
+      "matches_5185": true
+    },
+    "3": {
+      "got": "(q**4 + 1)/(q**2 + 1)**2",
+      "matches_5185": true
+    }
+  },
+  "two_row_vs_lean_yw": {
+    "all_match": true,
+    "checked": 18
+  },
+  "vanishing_iff_three_rows": {
+    "all_ok": true,
+    "levels": [
+      {
+        "n": 1,
+        "partitions": 1
+      },
+      {
+        "n": 2,
+        "partitions": 2
+      },
+      {
+        "n": 3,
+        "partitions": 3
+      },
+      {
+        "n": 4,
+        "partitions": 5
+      },
+      {
+        "n": 5,
+        "partitions": 7
+      },
+      {
+        "n": 6,
+        "partitions": 11
+      },
+      {
+        "n": 7,
+        "partitions": 15
+      },
+      {
+        "n": 8,
+        "partitions": 22
+      }
+    ],
+    "n_range": [
+      1,
+      8
+    ]
+  },
+  "wenzl_level": {
+    "Q_to_the_r": "q**4",
+    "equals_Q_squared": true,
+    "z_D": "q**3/(q**2 + 1)"
+  }
+}

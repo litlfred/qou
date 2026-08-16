@@ -1,10 +1,11 @@
 ---
 # qou-5sg8
 title: 'float64-padding ratchet RED on main: categorical-bypass-volmatch-demo carries 4 padded binary64 after the mpf lift'
-status: todo
+status: in-progress
 type: bug
+priority: normal
 created_at: 2026-08-16T02:03:14Z
-updated_at: 2026-08-16T02:03:14Z
+updated_at: 2026-08-16T03:23:07Z
 ---
 
 Found 2026-08-16 running `scripts/precision-gates.sh` as the prepare-merge §4b
@@ -131,3 +132,127 @@ worth running for real rather than as a precaution.
 **Not fixed here** for the same reason the bean gives — different arc's file,
 actively in flight. The trace above is offered so the owner does not have to
 redo it.
+
+## FIXED (2026-08-16, PR #5204) -- and the bean named only half the cause
+
+    float64-padding ratchet   NEW 4 -> 0, baseline 13 unchanged, exit 0
+    raw-float64 (same file)   69 -> 50, drained as a side effect
+
+The four fields split into TWO causes needing OPPOSITE fixes. This bean, written
+from the audit output alone, described only the first.
+
+### Cause 1 (3 fields) -- lift it
+
+B_AME_MeV read from mass-table-ppb.witness.json, which carries it as a JSON
+float. mp.mpf(<float>) binds the binary64; str() prints the expansion. Fixed by
+sourcing the constants from codata_constants directly.
+
+Root confirmed as this bean guessed: mass_table_ppb.py imports the mpf AME
+constants and wraps each in float(). NOT fixed there -- that flips B_AME_MeV
+from float to string in a witness EIGHT producers read. Still the right wider
+change, still belongs to the qou-3wqg arc, still open.
+
+### Cause 2 (1 field) -- do the OPPOSITE, stop lifting
+
+ratio_direct_to_AME on the electron row is B_pred_direct/1.0, and
+B_pred_direct = M_E_MEV * rho * tr_M. joint-tower-sdp-rust.witness.json stores
+matrix_at_q_0_sym_eigvals as JSON FLOATS, so chi enters at binary64 and caps
+everything downstream. y_lambda IS available at 50 digits -- and load_y_lambda()
+was discarding 34 of them with a float() -- but no amount of lifting raises a cap
+set elsewhere.
+
+So those digits were never real. Fix is to stop claiming 50: the ratios now
+serialize at 17 sig digits, the audit's own second remedy ('or serialize at its
+true precision'). Had I only applied Cause 1's fix, this field would have stayed
+red and the obvious next move -- lift y_lambda too -- would have been wasted
+work.
+
+### Lesson worth keeping
+
+'Fix at the producer' does not always mean 'carry more precision'. When the
+input floor is float64, the honest fix is to EMIT LESS. Diagnose the floor
+before choosing which direction to move: here the two directions were needed in
+the same file, four lines apart.
+
+### Still open on this bean
+
+  1. the wider mass_table_ppb.py float() drop + 8-consumer audit (qou-3wqg arc)
+  2. load_y_lambda()'s float() discards 34 real digits -- harmless while chi caps
+     at f64, live the moment the SDP witness carries better eigenvalues
+
+### Correction to the PR #5163 trace above, on cause (b)
+
+The #5163 trace and mine agree there are two causes and agree on (a). We
+disagree on (b), and the disagreement is worth recording because the
+prescription there would have made the ratchet green while leaving the digits
+fake.
+
+#5163 says of `rows[0].ratio_direct_to_AME`:
+
+> This needs the y_λ read lifted to mpf, not a serialization change.
+
+It does not, and lifting y_λ alone cannot work. That trace found ONE float
+entry point and missed the second:
+
+    y-lambda-wenzl-witness.json      y_lambda_numeric  -> str, 50 digits
+    joint-tower-sdp-rust.witness.json
+                                     matrix_at_q_0_sym_eigvals -> FLOAT
+
+χ_λ is `chi_lambda_from_block`, a sum of those eigenvalues, so χ enters at
+binary64 no matter how y_λ is read. `tr_M = Σ y_λ·χ_λ` is therefore capped at
+~17 digits at the χ factor. Verified against the deuteron block: the eigenvalue
+arrives as the Python float `1.231434090000003`.
+
+Lifting y_λ would make `tr_M` an mpf carrying f64 noise past digit 17 — and
+because such a product generally does NOT round-trip through its own float64
+truncation, the padding audit's heuristic would likely stop flagging it. Green
+ratchet, same fake digits. That is the outcome the ratchet exists to prevent.
+
+So (b)'s honest fix is the serialization change: emit at the true 17 digits.
+Applied in PR #5204.
+
+`load_y_lambda`'s `float()` cast is still a real defect — it discards 34
+available digits — but it is currently *masked* by the χ cap, and fixing it
+alone changes no digit of the output. It goes live the moment the SDP witness
+carries better eigenvalues. Left in place, recorded as follow-up 2 below.
+
+### Follow-up 2 re-scoped: the χ floor is the Rust engine's f64 typing (2026-08-16)
+
+I wrote above that `load_y_lambda`'s `float()` cast "goes live the moment the
+SDP witness carries better eigenvalues", and named lifting χ as the higher-value
+next item. Both understated the size of that job. Traced it:
+
+    joint-tower-sdp-rust.witness.json
+      scriptFile : joint_tower_sdp.rs
+      engine     : hecke-engine 0.8.0 (rust)
+
+    tools/hecke-engine/src/wedderburn_psd.rs:96
+      fn symmetric_eigenvalues(m_in: &[Vec<f64>]) -> Vec<f64>
+
+The eigensolve is f64-in / f64-out **in the engine**, and `joint_tower_sdp.rs`
+types q0, min/max_eigenvalue and b_ame_mev as `f64` throughout. So χ is not
+float64 because of a serialization choice that a producer edit could fix -- it
+is float64 because the compute that produces it is f64.
+
+Consequences, all of which cut AGAINST doing more work here:
+
+  1. The 17-digit serialization applied in PR #5204 is the PERMANENTLY correct
+     answer for these fields, not a stopgap pending a better witness.
+  2. `load_y_lambda`'s float() cast is masked INDEFINITELY, not "for now". It
+     still discards 34 available digits and is still worth fixing for hygiene,
+     but fixing it changes no digit of any current output. Low priority.
+  3. Raising the χ floor means porting the engine's linear algebra to arbitrary
+     precision (nalgebra f64 -> rug/MPFR or equivalent), which is an engine
+     project, not a producer fix -- and it would change no published number
+     unless a downstream consumer actually needs > 17 digits of tr_M. Nothing
+     currently does: the L1 target is cross-method agreement at 1 ppQ (1e-15),
+     which 17 digits meets.
+
+Scope note per the refuted/ruled-out discipline: this is a scope-(a) statement
+about the CURRENT implementation -- the engine is f64-typed today -- not a
+structural impossibility claim. An arbitrary-precision port is possible; it is
+just far larger than "lift the read", and no present consumer justifies it.
+
+Recommendation: do NOT open the engine port off the back of this bean. If a
+future consumer genuinely needs tr_M past 17 digits, that consumer is the
+justification and should carry it.

@@ -3828,6 +3828,14 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF02097372",
   }),
 
+  // Orellana (1998/1999) is NOT registered here. It was already registered
+  // 2026-06-28 further down this file, under the same id `orellana1998` and
+  // with better bibliographic data (the Crelle's J. 508 version, with volume
+  // and pages). S1/PR #5187 added a second `ref({ id: "orellana1998" })`
+  // block at this position — a duplicate key — and it was removed in the
+  // merge pipeline. Its one piece of new content, the type-D glyph-collision
+  // warning, was folded into the surviving entry's note instead.
+
   // ── Kazhdan–Wenzl (1993): Reconstructing monoidal categories ──
   ref({
     id: "kazhdanwenzl1993",
@@ -7337,7 +7345,7 @@ export const references: CSLData[] = [
     page: "157-178",
     issued: { "date-parts": [[1999]] },
     URL: "https://arxiv.org/abs/math/9806163",
-    note: "Verified 2026-06-28 (bib-cite-resolves): Orellana, 'Weights of Markov traces on Hecke algebras', Crelle's J. 508 (1999), 157–178; arXiv:math/9806163 (1998). Computes Markov-trace weights for Hecke algebras of type B and D. The id 'orellana1998' (arXiv submission year) is retained for cross-ref stability though the journal version is 1999. Journal DOI not captured in sandbox; arXiv URL is authoritative.",
+    note: "Verified 2026-06-28 (bib-cite-resolves): Orellana, 'Weights of Markov traces on Hecke algebras', Crelle's J. 508 (1999), 157–178; arXiv:math/9806163 (1998). Computes Markov-trace weights for Hecke algebras of type B and D. The id 'orellana1998' (arXiv submission year) is retained for cross-ref stability though the journal version is 1999. Journal DOI not captured in sandbox; arXiv URL is authoritative. GLYPH-COLLISION WARNING (added 2026-08-16, S1/PR #5187): this paper's 'type D' is the Coxeter type D_n, which is NOT the repo's Markov-trace 'convention D' (z_D = q³/(q²+1)); the two are unrelated and must not be conflated. Relevant to S1/S2 as the published treatment of the weight-vs-trace-parameter dependence that the corpus's y_λ Frobenius-pairing weights instantiate; the method is representations of type-B Hecke onto a reduced type-A Hecke algebra, plus the inclusion H(D_n) ⊂ H(B_n).",
   }),
 
   // ── James 1984 — representation theory of S_n ─────────────────

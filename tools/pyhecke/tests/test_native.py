@@ -82,15 +82,32 @@ def test_bridge_det_uses_native():
     assert abs(det - (-0.3608011166161873)) < 1e-10
 
 
-def test_native_gram_inverse_is_right_inverse():
+def test_native_has_no_gram_inverse_and_quotient_inverse_kills_the_radical():
+    """`pyhecke_native.gram_inverse` is GONE under convention D, and its
+    replacement inverts only on the quotient.
+
+    This replaces `test_native_gram_inverse_is_right_inverse`, which asserted
+    `G @ gram_inverse(q) == I`. Convention D makes that identity false — the
+    form is singular with corank 1 — and the binding was removed rather than
+    repointed, so the old test would now raise AttributeError. It never did,
+    because the module skips when `pyhecke_native` is not installed."""
     import numpy as np
     import pyhecke_native
 
+    assert not hasattr(pyhecke_native, "gram_inverse"), (
+        "gram_inverse must stay removed: under convention D the 6x6 inverse "
+        "does not exist, and repointing the name at the pseudoinverse is how a "
+        "wrong number keeps circulating under a trusted label"
+    )
+
     q = 1.1099785955541805
     G = np.array(pyhecke_native.gram_matrix(q))
-    Gi = np.array(pyhecke_native.gram_inverse(q))
-    prod = G @ Gi
-    assert np.allclose(prod, np.eye(6), atol=1e-10)
+    GP = np.array(pyhecke_native.gram_quotient_inverse(q))
+    rad = np.array(pyhecke_native.gram_radical(q))
+
+    assert np.linalg.norm(G @ rad) < 1e-10
+    assert np.linalg.norm(GP @ rad) < 1e-10
+    assert np.allclose(G @ GP @ G, G, atol=1e-10)
 
 
 def test_native_different_q_differs():

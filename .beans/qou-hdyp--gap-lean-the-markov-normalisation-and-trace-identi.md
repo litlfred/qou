@@ -1,10 +1,11 @@
 ---
 # qou-hdyp
 title: 'GAP: Lean the Markov normalisation and trace identity that gate y_lambda'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-10T19:36:18Z
-updated_at: 2026-08-10T19:36:18Z
+updated_at: 2026-08-16T11:56:18Z
 ---
 
 
@@ -132,3 +133,59 @@ pressure, hence writing it down.
   `fr_weight_normalised` (DepthStratifiedFrobeniusReciprocity), a rearrangement
   for a single Frobenius-pulled-back weight — not a sum over partitions. So
   `markov_normalisation_two`/`_three` and both bridge lemmas stand as new.
+
+## CLOSED — the identity holds identically in q, 2/2 atoms
+
+`computations/markov/markov_identity_symbolic_probe.py` + witness
+(`markov-identity-symbolic.witness.json`, `q0Anchor: independent`).
+
+| atom | H_n | crossings | convention | residual |
+|---|---|---|---|---|
+| proton | 3 | 11 | `averaged-crossings` | **identically 0** |
+| deuteron | 6 | 23 | `colour-weighted-averaged-crossing` | **identically 0** |
+
+`Σ_λ y_λ(q)·χ^λ(β) = tr_M(β)` as an identity of **rational functions** — the
+residual's numerator normalises to exactly 0, and evaluates to exactly 0 at
+every sample point including q = 2, nowhere near either anchor. Zero `Float`
+atoms on both sides and in every `χ`, which is the machine-checkable form of
+"nothing here is pinned".
+
+This is strictly stronger than the two facts it complements. `Σ y_λ·dim V_λ = 1`
+evaluates at the **identity braid** (one point of the braid group); the ~1e-50
+bridge-vs-peel agreements are **two points of the q-line**. The deuteron case
+matters most: it is the smallest word carrying the colour-weighted p–n
+interface.
+
+### What had to be fixed first
+
+The test could not run at all. `hecke_character_symbolic._q_character_compute`
+— the symbolic path, `q` always a Symbol — called `d_for_ctype` without the
+`delta=` override that function's docstring reserves for q-symbolic callers,
+so an `averaged_weighted` crossing arrived as
+`-0.499656072298243*q + 0.499656072298243/q`. **Every symbolic `χ^λ` for an
+A ≥ 2 word held δ frozen at one anchor while presenting as a function of q.**
+PR #5209.
+
+### A retraction worth keeping
+
+The first deuteron run reported "residual not identically zero" after 25
+minutes. That was **my bug**: `sp.sympify` reading `y_λ` from the witness mints
+a bare `Symbol("q")` (`commutative` only) while both other sides use
+`hecke_symbolic.q` (`positive`, `real`, …) — different variables, so the
+difference could never cancel. Caught by running the 0.7 s n=3 control before
+saying anything. The tell: numerically 1.7e-73 relative at q₀ and exactly 0.0
+at q=2, while `simplify` insisted nonzero. **Numerically zero everywhere and
+symbolically nonzero is a symbol or normalisation problem, never a discovery.**
+
+Guards added: bind on read; refuse a verdict when the residual has >1 free
+symbol; and replace `simplify(r) == 0` — not a decision procedure, and it
+failed here even after the symbols agreed — with the degree bound (a nonzero
+rational `p/s` with `deg(p) = d` has at most `d` roots).
+
+### Not claimed
+
+General β, general n. Two atoms is two words. What is shown is that the
+identity is not an accident of the anchor. The cost of going further is now
+measured: the weighted δ makes the bridge 1525.9 s at H₆ against 0.5 s for the
+colour-blind proton, because δ(q) = (q−1)²(1−q⁻⁴)/3 turns a scalar into a
+degree-8 rational function. H₉ and above may not be feasible symbolically.

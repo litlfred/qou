@@ -64,7 +64,7 @@ if str(HERE) not in sys.path:
 import sympy as sp  # noqa: E402
 
 from canonical_braid_crossings import (  # noqa: E402
-    CTYPES, atom_canonical_crossings,
+    CTYPES, atom_canonical_crossings, convention_fingerprint, convention_label,
 )
 from per_irrep_pole_proton_h3 import negative_q_pole_order  # noqa: E402
 from q_parameter import Q as Q0_FLOAT  # noqa: E402  authoritative q_0
@@ -176,6 +176,13 @@ def _write_chi_cache(
         "n_partitions": len(out_str),
         "n_partitions_total": len(parts_of(n)),
         "partial": partial,
+        # DERIVED from the word this run built, never hand-set. `convention`
+        # is for readers; `convention_fingerprint` is what the next run's
+        # resume check compares, and is the reason a stale-convention cache
+        # can no longer look complete.
+        "convention": convention_label(atom_canonical_crossings(Z, N)),
+        "convention_fingerprint": convention_fingerprint(
+            atom_canonical_crossings(Z, N)),
         "compute_time_sec_so_far": f"{elapsed:.3f}",
         "workers": workers_eff,
         "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
@@ -204,13 +211,30 @@ def load_or_build_chi_atom(
     cache_path = HERE / f"chi-{atom_name}-h{n}.witness.json"
     cached_str: dict[tuple, str] = {}
     cached_was_partial = False
+    crossings = atom_canonical_crossings(Z, N)
+    from canonical_braid_crossings import (  # noqa: E402
+        convention_fingerprint, convention_label,
+    )
+    want = convention_fingerprint(crossings)
     if cache_path.exists():
         d = json.loads(cache_path.read_text())
-        for entry in d["chi_lambda_symbolic"]:
-            lam = tuple(entry["partition"])
-            cached_str[lam] = entry["chi_q_symbolic"]
-        cached_was_partial = bool(d.get("partial", False))
-    crossings = atom_canonical_crossings(Z, N)
+        # Resume keyed on partition coverage ALONE was the defect: a cache
+        # written before the colour-weighted p-n interface landed looked
+        # "complete" forever, so this producer kept serving colour-BLIND chi
+        # while building the weighted word. Nothing was wrong with the word.
+        # Compare the ctype multiset instead, and drop the whole cache on a
+        # mismatch rather than resuming into a mixed one -- half-weighted
+        # entries would be worse than either convention consistently applied.
+        got = d.get("convention_fingerprint")
+        if got != want:
+            print(f"  chi cache for {atom_name} is a different crossing "
+                  f"convention ({got or 'untagged'} != {want}) — discarding "
+                  f"{len(d.get('chi_lambda_symbolic', []))} cached partitions")
+        else:
+            for entry in d["chi_lambda_symbolic"]:
+                lam = tuple(entry["partition"])
+                cached_str[lam] = entry["chi_q_symbolic"]
+            cached_was_partial = bool(d.get("partial", False))
     shapes = parts_of(n)
     missing = [sh for sh in shapes if sh not in cached_str]
     workers_eff = workers if workers else max(1, os.cpu_count() or 1)
