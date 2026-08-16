@@ -3,7 +3,7 @@
   "script_path": "computations/delta_lambda_2row_stratum_analysis.py",
   "language": "python",
   "source_hash": "9bf810cb9c04",
-  "updated_at": "2026-08-16T02:19:01.706045+00:00",
+  "updated_at": "2026-08-16T02:29:17.116439+00:00",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -340,9 +340,9 @@
           "kind": "script",
           "id": "computations/audits/silent_self_check_audit.py",
           "version": "v1",
-          "script_hash": "671612b3c692"
+          "script_hash": "f42329b8dcaa"
         },
-        "reviewed_at": "2026-08-16T02:19:01.706045+00:00",
+        "reviewed_at": "2026-08-16T02:29:17.116439+00:00",
         "severity": "critical",
         "evidence": "line 450: assigns verdict `n_match` | line 456: tallies `n_match`"
       }

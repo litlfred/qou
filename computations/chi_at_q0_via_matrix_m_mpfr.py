@@ -138,6 +138,7 @@ def _split_atom_braid(Z: int, N: int) -> tuple[
 def build_chi_cache_at_q0_matrix_m(
     atom_name: str, Z: int, N: int, q_str: str, *, dps: int = 50,
     max_dim: int | None = None,
+    fresh: bool = False,
 ) -> dict:
     """Per-λ χ^λ(β_atomic(Z, N); q_0) via the matrix-M mpfr backend.
 
@@ -182,14 +183,41 @@ def build_chi_cache_at_q0_matrix_m(
     # Filename + payload keys parameterised by dps so --dps=70 doesn't
     # collide with the 50dps cache.
     out_path = HERE / f"chi-{atom_name}-h{n}-at-q0-{dps}dps-matrix-m.witness.json"
-    # Reuse existing cache if present (incremental resume).
+    # Reuse existing cache if present (incremental resume) — but ONLY when it
+    # was computed at this same q₀, and only when not explicitly discarded.
+    #
+    # This used to resume UNCONDITIONALLY ("always reuse (lossless)"), which is
+    # how bean `qou-7bv5` happened: a stale deuteron cache was handed straight
+    # back on every re-run, and the producer's own cross-check then graded those
+    # stale entries against a fresh Rust value and printed `0/11 match` while
+    # exiting 0. Deleting the file by hand was the only way to regenerate it.
+    # Measured on that repair: 0 of 11 per-λ χ values were identical and
+    # `tr_M` moved 63 % (1.33178… → 2.17544…).
+    #
+    # The guard below is not invented here — it is the one
+    # `chi_at_q0_via_hoefsmit_mpfr` has carried since its own version of this
+    # incident, ported across so the two producers of the same χ family behave
+    # the same way. Its comment there is worth repeating: *a stale cache
+    # wearing a fresh label is indistinguishable by inspection; only
+    # recomputation can reveal it* — which is why `--fresh` exists as the
+    # repair path for a cache that was already relabelled.
     already: dict[tuple, dict] = {}
     if out_path.exists():
         try:
             prior = json.loads(out_path.read_text())
-            for entry in prior.get("by_partition", []):
-                key = tuple(entry["partition"])
-                already[key] = entry
+            prev_q = str(prior.get("q_0_50dps", "")).strip()
+            n_prior = len(prior.get("by_partition", []))
+            if fresh:
+                print(f"    --fresh: discarding {n_prior} cached "
+                      f"partition(s) and recomputing from scratch")
+            elif prev_q and prev_q != str(q_str).strip():
+                print(f"    q0 CHANGED ({prev_q[:22]}… -> "
+                      f"{str(q_str)[:22]}…): discarding {n_prior} cached "
+                      f"partition(s) and recomputing")
+            else:
+                for entry in prior.get("by_partition", []):
+                    key = tuple(entry["partition"])
+                    already[key] = entry
         except (json.JSONDecodeError, KeyError):
             pass
 
@@ -382,6 +410,15 @@ def main() -> int:
              "test). One of: " + ", ".join(ATOMS),
     )
     parser.add_argument(
+        "--fresh", action="store_true",
+        help="Discard any existing cache and recompute from scratch. This is "
+             "the repair path for a cache that was already relabelled: the q0 "
+             "guard compares against the STORED q0, so a witness wrongly "
+             "stamped with the current anchor looks self-consistent and would "
+             "resume its stale values forever. Same flag, same reason, as "
+             "chi_at_q0_via_hoefsmit_mpfr.",
+    )
+    parser.add_argument(
         "--dps", type=int, default=50,
         help="Working mpmath precision in decimal places. The substrate "
              "constant Q_50_DIGIT_STR has only 50 digits, so dps > 50 "
@@ -439,6 +476,7 @@ def main() -> int:
             record = build_chi_cache_at_q0_matrix_m(
                 atom_name, Z, N, q_str, dps=args.dps,
                 max_dim=args.max_dim,
+                fresh=args.fresh,
             )
         except Exception as exc:  # noqa: BLE001
             print(f"  {atom_name:>10}  ERROR  {type(exc).__name__}: {exc}")

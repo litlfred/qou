@@ -92,7 +92,18 @@ def _exit_values(fn: ast.FunctionDef) -> list[ast.AST]:
 
 
 def _is_literal_success(node: ast.AST) -> bool:
-    return isinstance(node, ast.Constant) and node.value in (0, None, True)
+    """A literal success exit — `return 0`, `return None`, `sys.exit(0)`.
+
+    NOT `node.value in (0, None, True)`: in Python `1 == True`, so that
+    spelling classified `sys.exit(1)` as a SUCCESS and reported an
+    already-repaired script as still defective. Compare by identity/type.
+    """
+    if not isinstance(node, ast.Constant):
+        return False
+    v = node.value
+    if v is None or v is True:
+        return True
+    return isinstance(v, int) and not isinstance(v, bool) and v == 0
 
 
 def _mentions_verdict(node: ast.AST) -> bool:
@@ -155,11 +166,32 @@ def detect_not_gated(path: Path, src: str, tree: ast.AST) -> list[str]:
     fns = [n for n in ast.walk(tree)
            if isinstance(n, ast.FunctionDef) and n.name in ("main", "run")]
     if not fns:
-        # Module-level script: gated only if it calls sys.exit on a verdict.
+        # Module-level script. Gated either when the exit VALUE mentions the
+        # verdict, or — the common spelling, and the one `qou-9d6h` was fixed
+        # with — when a non-zero exit sits inside an `if` that TESTS it:
+        #
+        #     if not witness["allPassed"]:
+        #         sys.exit(1)
+        #
+        # An earlier cut only inspected exit arguments, so it reported that
+        # already-repaired script as still defective. A false positive on a
+        # fixed file is worse than a miss: it teaches readers to ignore the axis.
         gated = any(_mentions_verdict(a)
                     for n in ast.walk(tree) if isinstance(n, ast.Call)
                     and (getattr(n.func, "attr", None) == "exit")
                     for a in n.args)
+        if not gated:
+            for node in ast.walk(tree):
+                if not isinstance(node, ast.If) or not _mentions_verdict(node.test):
+                    continue
+                for sub in ast.walk(node):
+                    if isinstance(sub, ast.Call) and \
+                            getattr(sub.func, "attr", None) == "exit" and sub.args and \
+                            not _is_literal_success(sub.args[0]):
+                        gated = True
+                        break
+                if gated:
+                    break
         return [] if gated else checks
     for fn in fns:
         vals = _exit_values(fn)
@@ -188,12 +220,23 @@ def detect_resume_cache(path: Path, src: str, tree: ast.AST) -> list[str]:
     if not ev:
         return []
     # ...and that loaded content is used to skip work
-    if re.search(r"\bin (already|existing|cached|prior|seen)\b", src) or \
-       re.search(r"if \w+ in \w*(cache|already|existing)\w*", src):
-        ev.append("reuses those entries to SKIP recomputation "
-                  "(stale entries survive every re-run)")
-        return ev
-    return []
+    reuses = (re.search(r"\bin (already|existing|cached|prior|seen)\b", src)
+              or re.search(r"if \w+ in \w*(cache|already|existing)\w*", src))
+    if not reuses:
+        return []
+    # GUARDED resumes are not the defect. `chi_at_q0_via_hoefsmit_mpfr`
+    # compares the STORED q₀ against the current one and discards on
+    # mismatch, and offers `--fresh` for a cache that was already relabelled.
+    # That is the correct shape, and flagging it would train readers to
+    # ignore this axis. Only an UNCONDITIONAL resume is reported.
+    guarded = (re.search(r"prev_q\b|q0 CHANGED|q_0_50dps.*!=|!=.*q_0_50dps", src)
+               or re.search(r"\bfresh\b.*discard|discard.*\bfresh\b", src, re.I)
+               or re.search(r"source_hash|deps_hash|scriptHash", src))
+    if guarded:
+        return []
+    ev.append("reuses those entries to SKIP recomputation with NO q₀/hash "
+              "guard — a stale cache is served back on every re-run")
+    return ev
 
 
 def main() -> int:
@@ -237,11 +280,22 @@ def main() -> int:
         print(f"  {c:<28} {n} candidate(s)")
     print(f"  {'total':<28} {len(findings)}")
 
-    known = {"computations/chi_at_q0_via_matrix_m_mpfr.py",
-             "computations/substrate/deuteron_tower_fusion_frame_probe.py"}
-    hit = {f["script"] for f in findings} & known
-    print(f"\n  regression check — the two hand-found defects are detected: "
-          f"{len(hit)}/2  {sorted(hit)}")
+    # Regression check. Both scripts below carried a REAL defect found by hand,
+    # and both have since been repaired — matrix-M got the q₀ resume guard,
+    # deuteron_tower got a non-zero exit. So the honest assertion is "each is
+    # either flagged or demonstrably fixed", NOT "each is still flagged": a
+    # bare count reads as a detector regression the moment a repair lands.
+    REPAIRED = {
+        "computations/chi_at_q0_via_matrix_m_mpfr.py":
+            "q₀ resume guard + --fresh ported from the hoefsmit producer",
+        "computations/substrate/deuteron_tower_fusion_frame_probe.py":
+            "exits 1 when allPassed is False (qou-9d6h)",
+    }
+    flagged = {f["script"] for f in findings}
+    print("\n  regression check — each hand-found defect is flagged or fixed:")
+    for s, how in sorted(REPAIRED.items()):
+        state = "still FLAGGED" if s in flagged else f"fixed — {how}"
+        print(f"    {s}\n        {state}")
 
     print("\n  candidates:")
     for f in sorted(findings, key=lambda x: (x['criterion'], x['script']))[:40]:
@@ -260,12 +314,38 @@ def main() -> int:
         "computedAt": now,
         "scriptFile": SELF_ID,
         "data": {"by_criterion": by_crit, "total": len(findings),
-                 "regression_known_defects_detected": sorted(hit),
+                 "regression_repaired_still_flagged": sorted(flagged & set(REPAIRED)),
                  "findings": findings},
     }, indent=2) + "\n")
     print(f"\n  witness -> {out.relative_to(ROOT)}")
 
     if args.write_sidecars:
+        # PRUNE first. A sidecar flag must disappear when the defect does,
+        # or the axis accumulates accusations against repaired code and stops
+        # being readable. This run already dropped 13 entries that a `1 == True`
+        # bug in `_is_literal_success` had invented.
+        ours = {(f["script"], f["criterion"]) for f in findings}
+        CRITS = {"self-check-not-gated", "resume-cache-unvalidated"}
+        n_pruned = 0
+        for side in sorted((ROOT / "computations").rglob("*.script-qa.json")):
+            if "_deprecated" in side.parts:
+                continue
+            try:
+                doc = json.loads(side.read_text())
+            except json.JSONDecodeError:
+                continue
+            sp = doc.get("script_path", "")
+            drop = [c for c in list(doc.get("criteria", {}))
+                    if c in CRITS and (sp, c) not in ours]
+            if not drop:
+                continue
+            for c in drop:
+                del doc["criteria"][c]
+                n_pruned += 1
+            doc["updated_at"] = now
+            side.write_text(json.dumps(doc, indent=2) + "\n")
+        if n_pruned:
+            print(f"  pruned {n_pruned} stale criterion entr(ies)")
         n_side = 0
         for f in findings:
             sp = ROOT / f["script"]

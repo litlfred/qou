@@ -1,18 +1,15 @@
 {
   "computation": "silent-self-check-audit",
   "description": "Producers whose self-check does not reach their exit status, and producers that reuse their own prior output without re-validating it. High-recall candidates; the legit/genuine verdict is an agent call. Motivated by qou-9d6h and qou-7bv5, both of which reported a real defect into a channel nothing gates on.",
-  "computedAt": "2026-08-16T02:19:01.706045+00:00",
+  "computedAt": "2026-08-16T02:29:17.116439+00:00",
   "scriptFile": "computations/audits/silent_self_check_audit.py",
   "data": {
     "by_criterion": {
-      "self-check-not-gated": 76,
-      "resume-cache-unvalidated": 11
+      "self-check-not-gated": 65,
+      "resume-cache-unvalidated": 9
     },
-    "total": 87,
-    "regression_known_defects_detected": [
-      "computations/chi_at_q0_via_matrix_m_mpfr.py",
-      "computations/substrate/deuteron_tower_fusion_frame_probe.py"
-    ],
+    "total": 74,
+    "regression_repaired_still_flagged": [],
     "findings": [
       {
         "script": "computations/alpha_em/alpha_em_count_carrying_object_probe.py",
@@ -40,76 +37,6 @@
           "line 246: assigns verdict `mismatch`"
         ],
         "source_hash": "467c024d1267"
-      },
-      {
-        "script": "computations/audits/weight_factor_audit.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 268: assigns verdict `n_fail`"
-        ],
-        "source_hash": "f342e20b24f3"
-      },
-      {
-        "script": "computations/bound_state_observable_validator.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 155: assigns verdict `failures`"
-        ],
-        "source_hash": "f3788016c90c"
-      },
-      {
-        "script": "computations/chi_at_q0_via_hoefsmit_mpfr.py",
-        "criterion": "resume-cache-unvalidated",
-        "severity": "major",
-        "evidence": [
-          "line 200: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
-        ],
-        "source_hash": "c36a8a393fcd"
-      },
-      {
-        "script": "computations/chi_at_q0_via_matrix_m_mpfr.py",
-        "criterion": "resume-cache-unvalidated",
-        "severity": "major",
-        "evidence": [
-          "line 187: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
-        ],
-        "source_hash": "d67acd7e9d5c"
-      },
-      {
-        "script": "computations/chi_convention_audit.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 326: assigns verdict `mismatch`"
-        ],
-        "source_hash": "e2179462ad3f"
-      },
-      {
-        "script": "computations/cross_check_trM_1ppb.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 185: assigns verdict `n_fail`",
-          "line 534: records verdict field `n_fail`",
-          "line 530: records verdict field `n_fail`",
-          "line 509: records verdict field `n_fail`",
-          "line 482: records verdict field `n_fail`"
-        ],
-        "source_hash": "c384baaf7323"
-      },
-      {
-        "script": "computations/crystal_basis.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 655: records verdict field `all_passed`",
-          "line 675: records verdict field `all_passed`"
-        ],
-        "source_hash": "72a8d50049b5"
       },
       {
         "script": "computations/delta_lambda_2row_stratum_analysis.py",
@@ -156,7 +83,7 @@
         "severity": "major",
         "evidence": [
           "line 74: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
+          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "4d1ac3538815"
       },
@@ -166,18 +93,9 @@
         "severity": "major",
         "evidence": [
           "line 114: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
+          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "3a9c8232b957"
-      },
-      {
-        "script": "computations/gb_filtration_jet_tracker.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 465: assigns verdict `failures`"
-        ],
-        "source_hash": "bd7e931b0329"
       },
       {
         "script": "computations/gram_transfer_quadratic.py",
@@ -187,36 +105,6 @@
           "line 556: assigns verdict `all_passed`"
         ],
         "source_hash": "43cbad1d0d66"
-      },
-      {
-        "script": "computations/homflypt_reference_qa.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 178: assigns verdict `n_fail`",
-          "line 208: tallies `n_fail`",
-          "line 253: tallies `n_fail`"
-        ],
-        "source_hash": "d29123b9f9b1"
-      },
-      {
-        "script": "computations/kazhdan_lusztig.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 730: records verdict field `all_passed`"
-        ],
-        "source_hash": "e18dd312256e"
-      },
-      {
-        "script": "computations/lp_dual_witness_validator.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 203: assigns verdict `failures`",
-          "line 210: assigns verdict `failures`"
-        ],
-        "source_hash": "16c500b04319"
       },
       {
         "script": "computations/mass_tower_operator_valued_chain.py",
@@ -260,7 +148,7 @@
         "severity": "major",
         "evidence": [
           "line 355: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
+          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "212d1134945f"
       },
@@ -270,7 +158,7 @@
         "severity": "major",
         "evidence": [
           "line 268: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
+          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "e52e3f1a50d3"
       },
@@ -280,7 +168,7 @@
         "severity": "major",
         "evidence": [
           "line 154: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
+          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "e376dec214d2"
       },
@@ -290,7 +178,7 @@
         "severity": "major",
         "evidence": [
           "line 29: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
+          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "07620da51879"
       },
@@ -302,15 +190,6 @@
           "line 424: assigns verdict `all_passed`"
         ],
         "source_hash": "13eab7c662b2"
-      },
-      {
-        "script": "computations/probe_option_e_phase2_crystal_vertex_candidates.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 220: assigns verdict `all_passed`"
-        ],
-        "source_hash": "597b8fc13964"
       },
       {
         "script": "computations/probes/aoperator_a5_crosscheck.py",
@@ -626,16 +505,6 @@
         "source_hash": "fdd970e670c3"
       },
       {
-        "script": "computations/substrate/deuteron_tower_fusion_frame_probe.py",
-        "criterion": "self-check-not-gated",
-        "severity": "critical",
-        "evidence": [
-          "line 192: records verdict field `allPassed`",
-          "line 176: records verdict field `allPassed`"
-        ],
-        "source_hash": "dd5b1cdf819f"
-      },
-      {
         "script": "computations/substrate/frakV_zeta4_fibre_vs_observable_probe.py",
         "criterion": "self-check-not-gated",
         "severity": "critical",
@@ -803,7 +672,7 @@
         "severity": "major",
         "evidence": [
           "line 242: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
+          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "f4eaa3c599c6"
       },
@@ -813,7 +682,7 @@
         "severity": "major",
         "evidence": [
           "line 439: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
+          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "2a327eaa7507"
       },
@@ -823,7 +692,7 @@
         "severity": "major",
         "evidence": [
           "line 93: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation (stale entries survive every re-run)"
+          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "28e9f8a12320"
       }

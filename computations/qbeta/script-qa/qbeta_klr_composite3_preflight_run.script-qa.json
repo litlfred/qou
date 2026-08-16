@@ -3,7 +3,7 @@
   "script_path": "computations/qbeta/qbeta_klr_composite3_preflight_run.py",
   "language": "python",
   "source_hash": "d8bbbaa137f1",
-  "updated_at": "2026-08-16T02:19:01.706045+00:00",
+  "updated_at": "2026-08-16T02:29:17.116439+00:00",
   "criteria": {
     "compute_no_mpf_to_float_cast": [
       {
@@ -47,9 +47,9 @@
           "kind": "script",
           "id": "computations/audits/silent_self_check_audit.py",
           "version": "v1",
-          "script_hash": "671612b3c692"
+          "script_hash": "f42329b8dcaa"
         },
-        "reviewed_at": "2026-08-16T02:19:01.706045+00:00",
+        "reviewed_at": "2026-08-16T02:29:17.116439+00:00",
         "severity": "critical",
         "evidence": "line 115: assigns verdict `mismatch`"
       }

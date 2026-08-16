@@ -3,7 +3,7 @@
   "script_path": "computations/y_lambda_pole_order_cache.py",
   "language": "python",
   "source_hash": "28e9f8a12320",
-  "updated_at": "2026-08-16T02:19:01.706045+00:00",
+  "updated_at": "2026-08-16T02:29:17.116439+00:00",
   "references": [],
   "criteria": {
     "does_not_default_to_float": [
@@ -331,11 +331,11 @@
           "kind": "script",
           "id": "computations/audits/silent_self_check_audit.py",
           "version": "v1",
-          "script_hash": "671612b3c692"
+          "script_hash": "f42329b8dcaa"
         },
-        "reviewed_at": "2026-08-16T02:19:01.706045+00:00",
+        "reviewed_at": "2026-08-16T02:29:17.116439+00:00",
         "severity": "major",
-        "evidence": "line 93: loads its own prior output when the file exists | reuses those entries to SKIP recomputation (stale entries survive every re-run)"
+        "evidence": "line 93: loads its own prior output when the file exists | reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
       }
     ]
   }
