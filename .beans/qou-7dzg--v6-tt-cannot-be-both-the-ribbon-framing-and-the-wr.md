@@ -158,3 +158,51 @@ rests on an unformalized sentence.
 
 Scope (a): a statement about what this file proves versus what it says. It does
 not refute the hypercharge programme and does not touch tr_M.
+
+## The missing formalization now exists (2026-08-16)
+
+`QOU/StandardModel/TwistSeparationContent.lean` — lean-direct exit 0, no
+warnings, no sorry / axiom / native_decide. Library file, no sidecar, so my own
+verification is the gate (AGENTS.md §QA is agent-owned).
+
+I said the test the original skips is "state the claim with the braid in the
+type". Done, and the result is sharper than expected:
+
+  separation_at_fixed_word
+      the docstring's sentence, formalised WITH a word and a writhe present:
+      at a fixed word beta, two framings of beta differ in total twist, and the
+      pair is writhe-degenerate by construction. Proved for an ARBITRARY `Word`
+      type and an ARBITRARY `writhe : Word -> Z`, both entirely UNUSED in the
+      proof. The hypotheses are not there to be used.
+
+  separation_holds_with_one_word
+      the concrete kill: instantiate Word := Unit. ONE word, constant writhe,
+      and the separation still holds. A statement that survives collapsing the
+      braid group to a point is not evidence about braid groups.
+
+  factoring_twist_cannot_separate
+      the other horn: a twist factoring through the writhe (as a canonical
+      ribbon twist does) is constant on writhe-degenerate pairs. V9's
+      chirality_not_a_function_of_crossing argument applied to the twist.
+
+  twist_dilemma
+      the two horns as one statement.
+
+`#print axioms`: factoring_twist_cannot_separate depends on NOTHING; the other
+three on [propext, Classical.choice, Quot.sound] only — standard Mathlib, from
+`by_cases`/`push_neg` and `Finset.sum`, not laundering.
+
+### What this settles
+
+The independence claim is TRUE and BRAID-FREE. Not false, not vacuous in the
+`: True` sense — it simply cannot be evidence for a property of braid framings,
+because it holds with no braid in sight. So the hypercharge candidacy cannot
+rest on it, and the corpus faces the dilemma: free twist (separating power put
+in by hand) or canonical twist (separates nothing).
+
+### Untouched by both horns — the live route
+
+A twist datum DERIVED from the braid word (qou-kebu, T2b) is neither free nor a
+function of the writhe alone, so neither horn applies to it. That is the route
+with content left in it. This file narrows the search; it does not close it, and
+it does not refute conj:sm-hypercharge-invariant.
