@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: low
 created_at: 2026-08-16T11:00:00Z
-updated_at: 2026-08-16T11:32:35Z
+updated_at: 2026-08-16T13:12:12Z
 ---
 
 Found while adding a sixth — caught in review of my own PR (#5205, bean `wpdb`).
@@ -113,3 +113,50 @@ a Mathlib API — not upstream Mathlib, which has *zero* occurrences of
 several minutes. A `QOU/Mathlib/` directory reads as "from Mathlib" to anyone
 who has not checked, and that is exactly the wrong inference for deciding what
 still has to be built.
+
+
+---
+
+## 2026-08-16 (drain, part 2) — bridges landed, and the "each is `rfl`" claim was wrong twice
+
+`QOU/MathlibExt/YoungDiagramCellsBridges.lean` — **13 bridges, 12 `rfl` + 1
+conditional.** Sorry-free, `lean`-direct exit 0, axiom-clean (the pure-`rfl`
+ones depend on **no axioms at all**). Purely additive: no existing file changes.
+
+I wrote the file specifically to **test** the claim I had been repeating here
+and in two commit messages — *"eight copies, each is definitionally equal, so
+every bridge is `rfl`"*. It falsified that in three ways:
+
+1. **Two copies are unreachable, not merely un-drained.**
+   `QOU.BraidsAndKnots.cellContent` (`y-lambda-recipe-from-partition.lean`) and
+   `QOU.BraidKnot.cellContent` (`jucys-murphy-central-elements-qou.lean`) live
+   in **standalone content-block siblings**, not library modules — nothing can
+   import them, so no bridge is expressible. The second is *unbridgeable by
+   construction*: it is the clash partner, and importing it alongside the
+   library declaration is exactly the duplicate-name error the bridge would
+   have to survive. Draining those two requires **promoting a content-block
+   sibling to a library module first**, which is a different and larger task
+   than a `rfl` lemma.
+2. **`hookLength` is not `rfl`.** `TwoFiltrationBridge.hookLength` is `ℕ`-valued
+   with **truncated** subtraction, so it agrees with the `ℤ`-valued `hook` only
+   **on cells of the diagram** — off-diagram the `ℕ` version saturates at `0`
+   while the `ℤ` one goes negative. It carries a hypothesis `c ∈ μ`.
+3. **My own first docstring for the file miscounted**, saying "six of eight
+   bridge by `rfl`" while **twelve** `rfl` bridges had just compiled — it
+   conflated the 8 `content` copies with the two arm/leg/hook sets. Replaced
+   with a table, since one number was hiding two different countings.
+
+### Corrected migration budget
+
+| | count | cost |
+|---|---|---|
+| `content` copies reachable + `rfl` | 6 | free |
+| `arm`/`leg`/`hook` bridges | 6 lemmas | free |
+| `hookLength` | 1 | conditional (`c ∈ μ`) |
+| standalone siblings | 2 | **blocked** — needs library promotion |
+
+So the remaining drain is not "eight `rfl` bridges". It is: rewrite call sites
+in six library modules along the twelve bridges now available (mechanical, but
+touches proofs, so one module per commit), and separately decide whether the
+two content-block siblings should become library modules at all — the second of
+which cannot coexist with `QOU.BraidKnot` as currently named regardless.
