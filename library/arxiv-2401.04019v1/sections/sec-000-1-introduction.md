@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-5
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
-doc_brief: "TRUNCA TED THETA SERIES RELA TED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru"
+doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru ncated"
 ---
 A partition λ of n is a non-increasing sequence λ = (λ1,λ 2,...,λ ℓ) of positive
 integers that add up to n. We refer to the integers λi as the parts of λ. As usual,

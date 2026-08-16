@@ -7,7 +7,7 @@ section_number: 4.2
 pages: 9-12
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
-doc_brief: "VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is"
+doc_brief: "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true"
 ---
 algebro-geometric invariant of the 3-manifolds K(p/q) resulting from the ( p, q) Dehn surgery along
 a hyperbolic knot complement in S3. A Casson type SL2(C) invariant for K(p/q) is also established.

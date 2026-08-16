@@ -7,7 +7,7 @@ section_number: 2
 pages: 4-6
 source_pdf: 1102.3530v1.pdf
 source_sha256: ad3edab19f3dc404
-doc_brief: "THE COLORED JONES POL YNOMIAL, THE CHERN–SIMONS — W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight knot we can extr act the Chern– Simons"
+doc_brief: "THE COLORED JONES POLYNOMIAL, THE CHERN–SIMONS — W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight knot we can extr act the Chern– Simons"
 ---
 In this section we use the quantum dilogarithm function to express t he colored
 Jones polynomial of the ﬁgure-eight knot as an integral. We mainly fo llow [1].

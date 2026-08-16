@@ -7,7 +7,7 @@ section_number: 4
 pages: 22-23
 source_pdf: cJdoubletwistfinal.pdf
 source_sha256: a1e18db5232b39f4
-doc_brief: "THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p)"
+doc_brief: "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and"
 ---
 The work in this paper may be compared with that of Hikami and the ﬁrst author in [14, 15,
 18], where one ﬁnds generalized Kontsevich-Zagier functions Ft(q) and generalized U-functions

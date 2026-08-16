@@ -7,7 +7,7 @@ section_number: null
 pages: 20-23
 source_pdf: 0901.1612v1.pdf
 source_sha256: b4f3efcadd1e5caf
-doc_brief: "© 2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor"
+doc_brief: "© 2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor"
 duplicate_of: "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin"
 ---
 [1820] Jean-Baptiste Biot and Felix Savart, Note sur le magnetisme de la pile de Volta, Annales

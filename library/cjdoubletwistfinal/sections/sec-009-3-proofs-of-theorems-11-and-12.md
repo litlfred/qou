@@ -7,7 +7,7 @@ section_number: 3
 pages: 12-14
 source_pdf: cJdoubletwistfinal.pdf
 source_sha256: a1e18db5232b39f4
-doc_brief: "THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p)"
+doc_brief: "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and"
 ---
 Proof of Theorem 1.1. As (1.7) reduces to (1.8) when m = 1 and this case was proven in [28],
 we assume m ≥ 2. Using Lemmas 2.2 and 2.3, one can check that for l = 4mp− 1 and

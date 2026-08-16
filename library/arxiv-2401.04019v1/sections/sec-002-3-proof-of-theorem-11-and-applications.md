@@ -7,7 +7,7 @@ section_number: 3
 pages: 6-12
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
-doc_brief: "TRUNCA TED THETA SERIES RELA TED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru"
+doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru ncated"
 ---
 Proof of Theorem 1.1. Let R ≥ 2 and 0 < S < R. First we consider the case
 S ⁄= R/2. Recall that Conjecture 1 states that, for all k ≥ 1, the sequence ak(n)

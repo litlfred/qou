@@ -7,7 +7,7 @@ section_number: 3
 pages: 4-5
 source_pdf: 9909088v1.pdf
 source_sha256: 52cfb568951f195f
-doc_brief: "THE GAUSS MAP AND A NONCOMP ACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEA VES ON SEMIABELIAN VARIETIES — For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as"
+doc_brief: "THE GAUSS MAP AND A NONCOMPACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEAVES ON SEMIABELIAN VARIETIES — For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as the"
 ---
 A non-intrinsic way to ﬁnd χ(U, F) where U is a noncompact manifold, is to
 apply (1.1) to Rj∗F where j :֒→X is a smooth compactiﬁcation. We will indeed

@@ -7,7 +7,7 @@ section_number: 9.2
 pages: 30-30
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
-doc_brief: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+doc_brief: "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 has been calculated by Morifuji [Mo01, Theorem 1.1] for the b raid groups Bn with ψ :
 Bn → Z the abelianization map and together with the Burau represen tation. Morifuji

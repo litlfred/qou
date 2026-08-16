@@ -7,7 +7,7 @@ section_number: 4
 pages: 14-15
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "THE COLORED JONES POL YNOMIALS OF THE — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
+doc_brief: "THE COLORED JONES POLYNOMIALS OF THE — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
 ---
 In this section we will prove the main theorem.
 First we will calculate the derivative of H(u) := H(y, m2).

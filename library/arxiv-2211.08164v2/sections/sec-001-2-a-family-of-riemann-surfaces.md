@@ -7,7 +7,7 @@ section_number: 2
 pages: 2-3
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
-doc_brief: "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
+doc_brief: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
 ---
 We recall that the moduli space M3 of compact Riemann surfaces of genus g = 3 is
 a complex analytic space of dimension six and that its singular locus agr ees with the

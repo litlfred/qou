@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-7
 source_pdf: 1203.6531v1.pdf
 source_sha256: 29541f28c1c62d8f
-doc_brief: "AMERICAN MA THEMA TICAL SOCIETY — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and classify all reduced words of the aﬃne"
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and classify all reduced words of the aﬃne Weyl"
 ---
 Gr¨ obner-Shirshov bases and normal form of the elements were already found for
 the Coxeter groups of type An,Bn andDn in [1]. They also proposed a conjecture

@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-7
 source_pdf: 0905.0228v4.pdf
 source_sha256: 1744545d0f210949
-doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POL YNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
+doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
 ---
 2. The q-Hermite polynomials Hn(x, s |q) 4
 3. The rescaled discrete q-Hermite polynomials II 7

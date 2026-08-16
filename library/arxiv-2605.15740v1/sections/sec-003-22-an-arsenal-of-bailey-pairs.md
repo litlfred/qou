@@ -7,7 +7,7 @@ section_number: 2.2
 pages: 8-10
 source_pdf: 2605.15740v1.pdf
 source_sha256: aa7f99d6633113c6
-doc_brief: "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
+doc_brief: "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
 ---
 proof of Theorem 1.2. There are eight Bailey pairs that we cite from the literature – six Bailey
 pairs relative toqand two Bailey pairs relative toq 2. First, we have four Bailey pairs relative

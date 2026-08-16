@@ -7,7 +7,7 @@ section_number: 5.3
 pages: 15-16
 source_pdf: 2109.04664v4.pdf
 source_sha256: 639cd40a29752e3f
-doc_brief: "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
+doc_brief: "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
 ---
 T , and {µ,λ } be generators of π1(T ). For a representation ρ : π1(M ) → SL(2; C),
 we can deﬁne the Chern–Simons invariant as follows.

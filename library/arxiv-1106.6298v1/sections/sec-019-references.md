@@ -7,7 +7,7 @@ section_number: null
 pages: 17-18
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
-doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INV ARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
+doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
 ---
 [1] G. Andrews, q–series: their development and applications in analysis, number theory, combina-
 torics, physics, and computer algebra , regional conference series in mathematics, Amer. Math.

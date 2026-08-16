@@ -7,7 +7,7 @@ section_number: 3
 pages: 4-14
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "THE COLORED JONES POL YNOMIALS OF THE — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
+doc_brief: "THE COLORED JONES POLYNOMIALS OF THE — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
 ---
 K. Habiro [2] and T. Le showed that the colored Jones polynomial JN (E; t) of
 the ﬁgure-eight knot E is given as follows (see also [6]).

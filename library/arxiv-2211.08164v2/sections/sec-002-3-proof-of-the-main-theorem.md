@@ -7,7 +7,7 @@ section_number: 3
 pages: 3-6
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
-doc_brief: "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
+doc_brief: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
 ---
 The proof of the main theorem will be a consequence of the following f our facts.
 Fact 1. Let X be a non-hyperelliptic compact Riemann surface of genus g = 3. If the

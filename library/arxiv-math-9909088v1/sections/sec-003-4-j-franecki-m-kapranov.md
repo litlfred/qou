@@ -7,7 +7,7 @@ section_number: 4
 pages: 4-4
 source_pdf: 9909088v1.pdf
 source_sha256: 52cfb568951f195f
-doc_brief: "THE GAUSS MAP AND A NONCOMP ACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEA VES ON SEMIABELIAN VARIETIES — For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as"
+doc_brief: "THE GAUSS MAP AND A NONCOMPACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEAVES ON SEMIABELIAN VARIETIES — For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as the"
 ---
 We now specialize to the case M = Z, V = g, n = dim( G) and f = Γ Z . The
 number deg(Γ Z) will be denoted by gdeg( Z) and called the Gaussian degree of Z.

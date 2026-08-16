@@ -7,7 +7,7 @@ section_number: 1.2
 pages: 3-4
 source_pdf: 0006111v2.pdf
 source_sha256: cd99f45d686eb6e2
-doc_brief: "APPROXIMATE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
+doc_brief: "APPROXIMATE FACTORIZATION AND CONCENTRATION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
 ---
 positive deﬁnite function on Sq. By Fourier analysis on Sq, one can expand ψ as a
 convex linear combination of normalized characters

@@ -7,7 +7,7 @@ section_number: 4
 pages: 4-4
 source_pdf: 0104249v1.pdf
 source_sha256: c2fcdefc73b8df24
-doc_brief: "IRRA TIONALITY OF VALUES OF ZETA-FUNCTION W. Zudilin 1. Introduction. The irrationality of values of the zeta-function ζ(s) at odd integers s ≥ 3 is one of the most attractive problems in number theor"
+doc_brief: "IRRATIONALITY OF VALUES OF ZETA-FUNCTION W. Zudilin 1. Introduction. The irrationality of values of the zeta-function ζ(s) at odd integers s ≥ 3 is one of the most attractive problems in number theory"
 ---
 where the function ϕc(x,y ) = ⌊cx +y⌋ + ⌊cx −y⌋ −c⌊x +y⌋ −c⌊x −y⌋ is periodic
 (of period 1) with respect to each of its arguments, and ⌊ · ⌋ is the integral part of a

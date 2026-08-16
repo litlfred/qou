@@ -7,7 +7,7 @@ section_number: null
 pages: 18-19
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
-doc_brief: "VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is"
+doc_brief: "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true"
 ---
 [BW] Brittenham, M., Wu, Y-Q., The classiﬁcation of exceptional Dehn surgeries on 2-bridge knots , Comm. Anal.
 Geom. 9 (2001), no. 1, 97–113.

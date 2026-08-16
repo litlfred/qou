@@ -7,7 +7,7 @@ section_number: null
 pages: 26-27
 source_pdf: 2109.04664v4.pdf
 source_sha256: 639cd40a29752e3f
-doc_brief: "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
+doc_brief: "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial"
 ---
 [1] J. E. Andersen and S. K. Hansen, Asymptotics of the quantum invariants for surgeries on
 the ﬁgure 8 knot , J. Knot Theory Ramiﬁcations 15 (2006), no. 4, 479–548. MR 2221531

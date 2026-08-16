@@ -7,7 +7,7 @@ section_number: 2
 pages: 2-2
 source_pdf: 1172-3.pdf
 source_sha256: e9c32f59e9db7970
-doc_brief: "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS KAZUO HABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Progress Towards the V"
+doc_brief: "ON THECOLOREDJONESPOLYNOMIALSOF SOMESIMPLELINKS KAZUOHABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Progress Towards the Volume C"
 ---
 Let us recall the deﬁnition of the Kauﬀman bracket skein module $B$
 of a connected oriented 3-manifold.

@@ -7,7 +7,7 @@ section_number: 2
 pages: 2-3
 source_pdf: 1809.08419v1.pdf
 source_sha256: 7ebca632544a6ea4
-doc_brief: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYST ALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨ obner- Shirshov bases and the corresponding standard"
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨ obner- Shirshov bases and the corresponding standard"
 ---
 In this section, we recall a basic theory of Gr¨ obner-Shirshov basesfor associative algebras to
 make the paper self-contained.

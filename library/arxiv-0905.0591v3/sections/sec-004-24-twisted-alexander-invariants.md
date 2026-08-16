@@ -7,7 +7,7 @@ section_number: 2.4
 pages: 6-7
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
-doc_brief: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+doc_brief: "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 GL(k,R [F ]) be a representation with R a Noetherian UFD. Similarly to Section 2.1 we
 deﬁne the R[F ]–chain complex C∗( ˜N ) ⊗Z[π1(N )]R[F ]k. For i ≥ 0, we deﬁne the i-th twisted

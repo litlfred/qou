@@ -7,7 +7,7 @@ section_number: null
 pages: 10-17
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
-doc_brief: "© 2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor"
+doc_brief: "© 2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor"
 ---
 Starting with a link in the 3-sphere, consider the delta move shown in
 Figure 3, which may be thought of as a higher order variant of a crossing

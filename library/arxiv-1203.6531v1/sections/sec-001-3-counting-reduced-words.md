@@ -7,7 +7,7 @@ section_number: 3
 pages: 7-10
 source_pdf: 1203.6531v1.pdf
 source_sha256: 29541f28c1c62d8f
-doc_brief: "AMERICAN MA THEMA TICAL SOCIETY — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and classify all reduced words of the aﬃne"
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and classify all reduced words of the aﬃne Weyl"
 ---
 Theorem 14. Let ˆw = aisais−1...a i1v(bt) where aij = r0rnkjrnlj .Then aij ’s are
 marked components of an arranged wordw =uv(bt) wherebt =r0rnpr1q if and only

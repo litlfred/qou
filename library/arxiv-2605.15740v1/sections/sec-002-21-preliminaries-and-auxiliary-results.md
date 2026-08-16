@@ -7,7 +7,7 @@ section_number: 2.1
 pages: 6-8
 source_pdf: 2605.15740v1.pdf
 source_sha256: aa7f99d6633113c6
-doc_brief: "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
+doc_brief: "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
 ---
 sequences (αn,βn)n≥0 satisfying
 βn =

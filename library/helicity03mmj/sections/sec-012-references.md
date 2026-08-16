@@ -7,7 +7,7 @@ section_number: null
 pages: 22-23
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
-doc_brief: "MOSCOW MA THEMA TICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
+doc_brief: "MOSCOW MATHEMATICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
 ---
 [1] V. I. Arnold, The asymptotic Hopf invariant and its applications , Proc. Summer School in
 Diﬀ. Equations at Dilizhan (Erevan), 1973, English translation in: Selecta Math. Soviet. 5

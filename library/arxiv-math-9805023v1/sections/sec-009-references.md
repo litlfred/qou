@@ -7,7 +7,7 @@ section_number: null
 pages: 19-20
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
-doc_brief: "q-LAGUERRE POL YNOMIALS AND BIG q-BESSEL — The q-Laguerre polynomials correspond to an indetermined moment probl em."
+doc_brief: "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL — The q-Laguerre polynomials correspond to an indetermined moment probl em."
 ---
 1. N.I. Akhiezer, The Classical Moment Problem and Some Related Questions in A nalysis, Hafner, 1965.
 2. J.M. Berezanski ˘ ı,Expansions in Eigenfunctions of Selfadjoint Operators , Transl. Math. Monographs

@@ -7,7 +7,7 @@ section_number: 3
 pages: 10-12
 source_pdf: 0104249v1.pdf
 source_sha256: c2fcdefc73b8df24
-doc_brief: "IRRA TIONALITY OF VALUES OF ZETA-FUNCTION W. Zudilin 1. Introduction. The irrationality of values of the zeta-function ζ(s) at odd integers s ≥ 3 is one of the most attractive problems in number theor"
+doc_brief: "IRRATIONALITY OF VALUES OF ZETA-FUNCTION W. Zudilin 1. Introduction. The irrationality of values of the zeta-function ζ(s) at odd integers s ≥ 3 is one of the most attractive problems in number theory"
 ---
 nye parametry a,b,c , c /greaterorequalslant3 i a > b(c − 1), i dlꦪ kaжdogo celogo poloжi-
 telьnogo nۈ

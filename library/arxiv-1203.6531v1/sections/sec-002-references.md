@@ -7,7 +7,7 @@ section_number: null
 pages: 10-11
 source_pdf: 1203.6531v1.pdf
 source_sha256: 29541f28c1c62d8f
-doc_brief: "AMERICAN MA THEMA TICAL SOCIETY — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and classify all reduced words of the aﬃne"
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and classify all reduced words of the aﬃne Weyl"
 ---
 [1] L.A. Bokut and L.S. Shiao, Gr¨ obner-Shirshov bases for Coxeter groups, Comm. Algebra 29
 (2001), 4305–4319.

@@ -7,7 +7,7 @@ section_number: 3.2
 pages: 14-21
 source_pdf: 2605.15740v1.pdf
 source_sha256: aa7f99d6633113c6
-doc_brief: "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
+doc_brief: "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
 ---
 (p1,p 2,p 3) of pairwise coprime positive integers andℓ= (ℓ 1,ℓ 2,ℓ 3)∈Z 3 satisfying 0<ℓ j <p j,
 we definem(ϵ)∈{0,...,2P−1}such that

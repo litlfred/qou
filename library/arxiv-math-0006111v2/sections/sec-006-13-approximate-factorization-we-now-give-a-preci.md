@@ -7,7 +7,7 @@ section_number: 1.3
 pages: 4-5
 source_pdf: 0006111v2.pdf
 source_sha256: cd99f45d686eb6e2
-doc_brief: "APPROXIMATE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
+doc_brief: "APPROXIMATE FACTORIZATION AND CONCENTRATION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
 ---
 imate factorization property (0.1).
 Deﬁnition 1.3. Letn be a positive integer, let c = (cl)l≥1 be a sequence of positive

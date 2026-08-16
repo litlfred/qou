@@ -7,7 +7,7 @@ section_number: 5.1
 pages: 16-17
 source_pdf: 0905.0228v4.pdf
 source_sha256: 1744545d0f210949
-doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POL YNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
+doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
 ---
 onal polynomials (see [2, 18, 17]). Let pn(x) be a sequence of polynomials which satisﬁes the
 three term recurrence relation
