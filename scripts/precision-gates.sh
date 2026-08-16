@@ -88,6 +88,27 @@ GATES=(
   # and anything NEW landing there shows up immediately. Flip to blocking
   # once the five are drained. Bean qou-irzg.
   "audits-tree raw-float64 (advisory)|computations/witness_raw_float64_audit.py|--scan-root docs/audits/scripts --strict|no|no"
+  # ADVISORY, and it starts red on purpose — same terms as the audits-tree
+  # entry above. `witness_provenance_audit.py` was written, works (27/27
+  # self-test), ships --strict/--list, and was in NO array, so nothing ran it.
+  # That is the second instance of the qou-j6gb pattern this file already
+  # warns about at the top; wiring it here is the half that makes it a gate.
+  #
+  # It asks the question no other gate asks: does a witness's `scriptFile`
+  # actually WRITE that witness? `scriptFile` is treated everywhere as "the
+  # producer" — run_pipeline regenerates through it — and nothing checked it.
+  # Confirms the class by finding the bug #5170 fixed BY HAND: a producer
+  # whose output path had drifted from the witness naming it.
+  #
+  # Red on arrival at 7: 2 NOT_A_PRODUCER (psl27-irrep-verification,
+  # sigma-all-evaluator — both named scripts contain "witness" zero times, so
+  # they provably cannot write them) and 5 SCRIPT_MISSING, of which at least 2
+  # are false positives naming legitimate non-Python producers (a .lean and
+  # joint_tower_sdp.rs). Advisory rather than blocking because a gate that is
+  # red on arrival gets skipped, which is how a checker goes quiet. Flip to
+  # blocking once the 2 NOT_A_PRODUCER are drained and the .lean/.rs
+  # false-positive class is handled. Bean qou-w9s3.
+  "witness scriptFile provenance (advisory)|computations/witness_provenance_audit.py|--strict|yes|no"
   "no-free-parameter cert|computations/no_free_parameter_certificate.py|--strict|yes|no"
 )
 
