@@ -9487,4 +9487,135 @@ theorem resolves (hp : HeckeParams) {i₀ i₁ i₂ i₃ i₄ j : Fin n} (hn : 0
 
 end BokutShiaoCornerDepth3
 
+/-! ## §4af  The block that drives the whole `a > b` corner
+
+§4ad and §4ae close the corner's `b = 2` and `b = 3` columns by writing their
+fifteen and twenty-three steps out one at a time. That does not scale: the chain
+is `b² + 3b + 5` steps long, so column `b` needs a longer script than column
+`b − 1` and no fixed script covers them all.
+
+It does not have to. Setting the two columns side by side shows the chain is not
+a flat list of steps but **a loop over a single index**, and this section proves
+the body of that loop once and for all.
+
+Write `D = descWord i j₁` for the long run and `j₂` for the short one. The claim
+is that both terms of the S-polynomial march down through the invariants
+
+    V side:   R ++ D ++ descWord k j₂                →  (R ++ [σ_{k−1}]) ++ D ++ descWord (k−1) j₂
+    U side:   Q ++ D ++ descWord k j₂ ++ [σᵢ]        →  (Q ++ [σ_{k−1}]) ++ D ++ descWord (k−1) j₂ ++ [σᵢ]
+
+as `k` runs from `i` down past `j₂`, and that each pass is the same two moves:
+
+* one **Bokut–Shiao step at top `k`**, which is available because the letter `σ_k`
+  ending `descWord k j₁` inside `D` is immediately followed by the `σ_k` that
+  heads `descWord k j₂` — the two runs meet exactly there, which is what makes
+  the redex `bsWord₁ k j₁`; and
+* one **leftward transport** of the newly exposed `σ_{k−1}` across the letters of
+  `D` lying above `k`, which is `farComm_transport_left` (§4v), its side
+  condition supplied by `descWord_index_ge` (every letter of a descending run
+  from `i` down to `k+1` has index `> (k−1) + 1`).
+
+`blockStep` below is that pass. The part of `D` above `k` enters as an abstract
+`Y` rather than as `descWord i (k+1)`, which costs nothing and avoids naming
+`k + 1` — needed, since the first pass has `k = i` and no such index exists.
+
+The counts this predicts are exactly the measured ones. The `V` side runs the
+loop for `k = i` down to `j₂`, preceded by two setup steps; the `U` side runs it
+for `k = i−1` down to `j₂` and is followed by two closing steps. Each pass at
+depth `d = i − k` costs `1 + d`, so
+
+    V = 2 + (b+1) + b(b+1)/2,   U = b + b(b+1)/2 + 2,   V + U = b² + 3b + 5
+
+matching the confluence engine at every `b` from 2 to 7 and every `a > b`,
+including `a = b + 1`, where the engine's own deg-lex strategy interleaves the
+passes differently but the chain built from these blocks is still a legal
+reduction — a `SingleStepReduction` may rewrite any redex, not only the largest.
+-/
+
+namespace CornerBlock
+
+variable {n : ℕ}
+
+/-- **One pass of the corner loop**: a Bokut–Shiao step at top `k`, then the
+newly exposed `σ_{k−1}` carried left across `Y`.
+
+`Y` is the part of the long run `descWord i j₁` lying above `k`; `R` is whatever
+has already accumulated to the left, `S` whatever trails on the right (empty on
+the `V` side, `[σᵢ]` on the `U` side). The two collision hypotheses are the ones
+`monicStep` and `farComm_transport_left` ask for: the other terms of the element
+must miss the word being rewritten, and must miss every word the transport passes
+through. -/
+theorem blockStep (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ k kd : Fin n}
+    (hk : kd.val + 1 = k.val) (hj₁ : j₁.val ≤ kd.val) (hj₂ : j₂.val ≤ kd.val)
+    (Y R S : Monomial (HeckeGen n))
+    (hY : ∀ y ∈ Y, kd.val + 1 < y.index.val)
+    (hD : descWord i j₁ = Y ++ ((⟨k⟩ : HeckeGen n) :: descWord kd j₁))
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (hne : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ R ++ (descWord i j₁ ++ (descWord k j₂ ++ S)))
+    (hcol : ∀ u v : Monomial (HeckeGen n), u ++ v = Y →
+      ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+        q ≠ R ++ (u ++ ((⟨kd⟩ : HeckeGen n) ::
+          (v ++ (((⟨k⟩ : HeckeGen n) :: descWord kd j₁) ++ (descWord kd j₂ ++ S)))))) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        (L₁ ++ (R ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c) :: L₂))
+      (AlgElement.ofTerms
+        (L₁ ++ (R ++ ((⟨kd⟩ : HeckeGen n)
+          :: (descWord i j₁ ++ (descWord kd j₂ ++ S))), c) :: L₂)) := by
+  have hkdk : (⟨kd⟩ : HeckeGen n) ≠ ⟨k⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  have hdk : descWord k j₂ = (⟨k⟩ : HeckeGen n) :: descWord kd j₂ :=
+    descWord_cons hk hj₂
+  have hLR : bsWord₂ kd k j₁ ≠ bsWord₁ k j₁ := by
+    rw [bsWord₁_cons hk hj₁, bsWord₂]
+    simp [hkdk]
+  -- the word after the Bokut–Shiao step, before anything is transported
+  refine MultiStepReduction.head
+    (g := AlgElement.ofTerms (L₁ ++ (R ++ (Y ++ ((⟨kd⟩ : HeckeGen n) ::
+      (((⟨k⟩ : HeckeGen n) :: descWord kd j₁) ++ (descWord kd j₂ ++ S)))), c) :: L₂))
+    ?_ ?_
+  · exact monicStep hn hp (bokutShiaoRelation kd k j₁)
+      (bokutShiaoRelation_mem hn hp hk hj₁)
+      (fun v => rfl) (bokutShiaoRelation_lm hk hj₁) hLR
+      L₁ L₂ (R ++ Y) (descWord kd j₂ ++ S) _ _ c hc
+      (by rw [hD, hdk, bsWord₁, descWord_cons hk hj₁]; simp)
+      (by rw [bsWord₂]; simp)
+      (by simpa using hne)
+  · have := farComm_transport_left hn hp kd c hc L₁ L₂ Y R
+      (((⟨k⟩ : HeckeGen n) :: descWord kd j₁) ++ (descWord kd j₂ ++ S)) hY hcol
+    rw [hD]
+    simpa using this
+
+/-- **The loop's first pass**, where `k = i` and nothing lies above it: `Y` is
+empty and the transport is the identity, so the pass is the Bokut–Shiao step
+alone. Only two non-collision facts are needed, one per endpoint — with `Y` empty
+the transport passes through no intermediate word. -/
+theorem blockStep_top (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ kd : Fin n}
+    (hk : kd.val + 1 = i.val) (hj₁ : j₁.val ≤ kd.val) (hj₂ : j₂.val ≤ kd.val)
+    (R S : Monomial (HeckeGen n)) (c : ℝ) (hc : c ≠ 0)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (hne : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ R ++ (descWord i j₁ ++ (descWord i j₂ ++ S)))
+    (hneEnd : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ R ++ ((⟨kd⟩ : HeckeGen n) :: (descWord i j₁ ++ (descWord kd j₂ ++ S)))) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        (L₁ ++ (R ++ (descWord i j₁ ++ (descWord i j₂ ++ S)), c) :: L₂))
+      (AlgElement.ofTerms
+        (L₁ ++ (R ++ ((⟨kd⟩ : HeckeGen n)
+          :: (descWord i j₁ ++ (descWord kd j₂ ++ S))), c) :: L₂)) := by
+  refine blockStep hn hp hk hj₁ hj₂ [] R S (by simp)
+    (by rw [descWord_cons hk hj₁]; rfl) c hc L₁ L₂ hne ?_
+  intro u v huv q hq
+  obtain ⟨rfl, rfl⟩ := List.append_eq_nil_iff.mp huv
+  have := hneEnd q hq
+  rw [descWord_cons hk hj₁] at this
+  simpa using this
+
+end CornerBlock
+
 end UGB.GrobnerShirshov.Hecke
