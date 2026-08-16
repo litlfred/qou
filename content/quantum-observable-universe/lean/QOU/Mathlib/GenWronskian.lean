@@ -167,10 +167,67 @@ theorem exists_dependence_of_wronskian_eq_zero {K : Type*} [Field K] [CharZero K
   · rw [map_neg, ← hga, ← hgb, ← hac, ← hbc]
     ring
 
+/-! ### The crux of the general-`m` induction: derivative descent
+
+The general converse (a vanishing Wronskian forces a **constant** dependence, any `m`) goes
+classically like this: the vanishing determinant gives a kernel vector `c` over the
+*function field*, so `∑ⱼ cⱼ · fⱼ⁽ⁱ⁾ = 0` for `i = 0, …, m−1`; one then shows the `cⱼ` are
+constants, which is what upgrades a `K(X)`-dependence to the `K`-dependence wanted.
+
+That upgrade is the mathematical content, and it is the lemma below. Everything else in the
+induction is rank and minor bookkeeping over `RatFunc K`.
+
+Stated over a plain commutative ring — no field, no characteristic hypothesis — because the
+argument is only the product rule plus re-indexing. -/
+
+/-- **Derivative descent.**  If a coefficient vector annihilates the first `k + 1`
+derivative rows, its own derivative annihilates the first `k`.
+
+Differentiating the `i`-th relation gives `∑ⱼ cⱼ′ fⱼ⁽ⁱ⁾ + ∑ⱼ cⱼ fⱼ⁽ⁱ⁺¹⁾ = 0`, and the
+second sum *is* the `(i+1)`-st relation, hence zero — **which is exactly why the hypothesis
+must reach one row further than the conclusion.**
+
+Iterating this is what forces every `cⱼ` to be constant in the classical proof. -/
+theorem sum_derivative_of_forall_sum_eq_zero {m : ℕ} (f c : Fin m → R[X]) (k : ℕ)
+    (h : ∀ i, i ≤ k → ∑ j, c j * derivative^[i] (f j) = 0) :
+    ∀ i, i < k → ∑ j, derivative (c j) * derivative^[i] (f j) = 0 := by
+  intro i hi
+  have hnext : ∑ j, c j * derivative^[i + 1] (f j) = 0 := h (i + 1) hi
+  have hdiff : derivative (∑ j, c j * derivative^[i] (f j)) = 0 := by
+    rw [h i (le_of_lt hi), map_zero]
+  rw [map_sum] at hdiff
+  simp only [derivative_mul] at hdiff
+  rw [Finset.sum_add_distrib] at hdiff
+  -- the second block is the `(i+1)`-st relation, re-indexed
+  have h2 : ∑ j, c j * derivative (derivative^[i] (f j)) = 0 := by
+    simpa [Function.iterate_succ_apply'] using hnext
+  rw [h2, add_zero] at hdiff
+  exact hdiff
+
+/-- ⚠ **The hypothesis is satisfiable with a non-constant `c`**, so the lemma is not about
+an empty range.
+
+At `k = 0` the conclusion quantifies over `i < 0` and says nothing, so the content lives
+entirely at `k ≥ 1` — and a reader could reasonably wonder whether the hypothesis can hold
+that far with `c` non-constant, since for *independent* `f` it cannot. It can when the `f`
+are dependent, which is exactly the situation the induction is in: `f = ![X, X]` with
+`c = ![X, −X]` annihilates every derivative row. -/
+theorem sum_derivative_descent_witness :
+    ∀ i, i < 3 → ∑ j, derivative ((![X, -X] : Fin 2 → ℚ[X]) j)
+      * derivative^[i] ((![X, X] : Fin 2 → ℚ[X]) j) = 0 :=
+  sum_derivative_of_forall_sum_eq_zero _ _ 3 (by intro i _; simp [Fin.sum_univ_two])
+
 /-! ### Next
 
-The converse — **linear independence forces some generalized Wronskian to be non-zero** —
-is the half Roth's lemma also needs, and it is materially harder:
+The general-`m` converse. The crux — derivative descent — is proved above; what remains is
+the surrounding rank/minor bookkeeping over `RatFunc K`:
+
+* a vanishing determinant gives a kernel vector over the function field (rank argument);
+* the minimality set-up that makes the `(m−1) × (m−1)` minor invertible;
+* iterating `sum_derivative_of_forall_sum_eq_zero` to force every coefficient constant.
+
+The remaining pieces are bookkeeping in the sense of *not conceptually new*, not in the
+sense of short. Also still open, and materially harder:
 
 * it is **false in characteristic `p`** for the naive derivative (`xᵖ` has every derivative
   zero, so `1, xᵖ` are independent with vanishing Wronskian), so it needs characteristic

@@ -377,3 +377,53 @@ converse was "not proved here"; corrected to say which case is and which is not.
 | generalized Wronskian, converse at general `m` | open |
 | Roth's lemma | open — the hard core |
 | Roth's theorem | open |
+
+---
+**2026-08-16 — the crux of the general-`m` induction, isolated and proved.**
+
+The full general-`m` converse needs rank arguments over `RatFunc K` and is a multi-day
+development. Rather than start it and leave it half-built, I isolated its **mathematical
+content** and proved that:
+
+```lean
+sum_derivative_of_forall_sum_eq_zero (f c : Fin m → R[X]) (k : ℕ)
+    (h : ∀ i ≤ k, ∑ j, c j * derivative^[i] (f j) = 0) :
+  ∀ i < k, ∑ j, derivative (c j) * derivative^[i] (f j) = 0
+```
+
+**Derivative descent.** Differentiating the `i`-th relation gives
+`∑ cⱼ′ fⱼ⁽ⁱ⁾ + ∑ cⱼ fⱼ⁽ⁱ⁺¹⁾ = 0`, and the second sum *is* the `(i+1)`-st relation, hence
+zero. That asymmetry is why the hypothesis must reach **one row further** than the
+conclusion, and it is the whole reason the classical proof works.
+
+This is the step that upgrades a `K(X)`-dependence to the `K`-dependence actually wanted:
+iterating it forces every coefficient to be constant. Everything else in the induction —
+getting the kernel vector from the vanishing determinant, the minimality set-up making the
+`(m−1) × (m−1)` minor invertible — is rank and minor bookkeeping.
+
+**Proved over a plain commutative ring.** No field, no characteristic hypothesis: the
+argument is only the product rule plus re-indexing. That is worth noting because the
+*surrounding* induction does need char 0 — so this piece is reusable in settings where the
+rest is not.
+
+### ⚠ Non-vacuity, again with teeth
+
+At `k = 0` the conclusion quantifies over `i < 0` and says nothing, so all content is at
+`k ≥ 1`. And a reader might reasonably doubt the hypothesis can hold that far with `c`
+**non-constant** — for *independent* `f` it cannot. It can when the `f` are dependent, which
+is exactly the situation the induction is in. `sum_derivative_descent_witness`:
+`f = ![X, X]`, `c = ![X, −X]` annihilates every derivative row, and the lemma applies.
+
+### ⚠ Honest scoping of what "remains"
+
+The file's `Next` section previously called the rest "materially harder" without saying
+what it is. Now enumerated: kernel vector from vanishing determinant; the minimality
+set-up; iterating the descent lemma. **These are bookkeeping in the sense of "not
+conceptually new", not in the sense of "short"** — the distinction matters, and conflating
+them is how a multi-day job gets scheduled as an afternoon.
+
+### Standing
+
+11 declarations in `GenWronskian.lean`, sorry-free, standard axioms. Combined with
+`RothIndex.lean` (18), that is **29 declarations of Roth prerequisites**, none of which
+existed in Mathlib.
