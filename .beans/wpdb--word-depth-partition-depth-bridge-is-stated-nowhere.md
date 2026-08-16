@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T02:30:00Z
-updated_at: 2026-08-16T11:31:08Z
+updated_at: 2026-08-16T12:40:19Z
 ---
 
 Surfaced in #5183 as an open question, investigated and confirmed. Full
@@ -143,3 +143,74 @@ case from *both* directions — the partition grading is degenerate at `n = 3`
 (`gbDepth_const_on_H3`) and separates at `n = 4`, and `(2,2)` is independently
 the cell `computations/gb_depth_period_bring_fig8.py` flags as where the two
 filtrations were observed to disagree.
+
+
+---
+
+## 2026-08-16 (later) — read the PROOF block, not just the statement. Three findings, two of them corrections to me.
+
+Reading `curvature-rank-gb-stratification-proof.md` and
+`mba-step07-gb-filtration.md` changes this bean's finding. `J^•` is **three
+inequivalent objects under one symbol**, and two of the three are excluded.
+Full write-up: `docs/audits/2026-08-16-three-gb-filtrations-one-name.md`.
+
+| # | definition | where | status |
+|---|---|---|---|
+| 1 | "elements requiring at least ℓ applications of `R_H`, `R_YB`" | proof Step 2, 1st sentence | the survivor; well-definedness open |
+| 2 | "**Equivalently**, the image of `I^ℓ` under the quotient map" | proof Step 2, same sentence | **provably `⊥` for ℓ ≥ 1** |
+| 3 | `F_ℓ = span{T_w : ℓ(w) ≤ ℓ}` (Coxeter length) | `mba-step07` | well defined; **fails a dimension count at n ≤ 3** |
+
+### 🔺 I UNDER-claimed the Lean I landed this morning
+
+`WordFiltrationObstruction.lean` described the ideal-power reading as *"the
+tempting reading"* — a hypothetical. **It is not hypothetical: Step 2 of the
+proof asserts it as an "equivalently".** So that file does not exclude a
+strawman I invented; it refutes a clause the corpus actually contains, inside
+the proof of the very proposition four blocks cite. Docstring corrected in
+place. Correcting an under-claim upward is the same duty as correcting an
+over-claim downward, and this direction is the more consequential one — a reader
+of the original file would have concluded the obstruction was academic.
+
+### 🔻 I over-claimed the well-definedness objection
+
+I wrote here that `r` is "on the face of it" not well defined on the quotient.
+**Wrong for object 3**: `T_w` is indexed by `w ∈ S_n` and `ℓ(w)` is Coxeter
+length, well defined by Matsumoto. Retracted. (It *does* still apply to object
+1: "requiring at least ℓ applications" describes a *word*, and the minimum over
+representing words is 0 for every element — so object 1 needs a **chosen**
+normal form as data, not just a rank function.)
+
+### New: object 3 fails a dimension count exactly at the single-nucleon case
+
+With `r = ℓ` pinned the comparison is pure counting — the `e_λ` are independent,
+the `T_w` are a basis, so `Z^{(k)} ⊆ gr_k` needs
+`#{λ ⊢ n : gbDepth λ = k} ≤ #{w ∈ S_n : ℓ(w) = k}`.
+Measured (`docs/audits/scripts/curvature_rank_vs_gbdepth_dimension_count.py`):
+
+* **n = 2 — FAILS.** needs `dim gr_2 ≥ 2`; `gr_2` is empty.
+* **n = 3 — FAILS.** gbDepth ≡ 3 on all three partitions, so needs
+  `dim gr_3 ≥ 3`; only the longest element of `S_3` has length 3, so
+  `dim gr_3 = 1`.
+* **n = 4..7 — holds.**
+
+`n = 3` is `H_3`, the single-nucleon case — where `m_p` / `m_n` live.
+
+### The dilemma this leaves the four citing blocks in
+
+Either the identification means compatibility with the length filtration (**and
+is excluded at n ≤ 3, precisely where the physics is**), or `Z^{(k)}` is just a
+labelling of the centre with no compatibility claim (**and the citation to
+`prop:curvature-rank-gb-stratification` does no work**, which is this bean's
+original finding). No third branch.
+
+**Not claimed:** that any mass result is wrong; that the proposition's
+*statement* is false; that `prop:gb-spectral-sequence` is affected. All three
+untouched and unexamined.
+
+### Next
+
+Not "state the well-definedness question" any more — that is answered per
+object. The live item is the repair: give `J^•` **one** definition and say
+which. Deleting the false "equivalently" clause is necessary but repairs
+nothing on its own; the three-way ambiguity is what let a provably-zero object
+sit unnoticed inside a load-bearing proof.
