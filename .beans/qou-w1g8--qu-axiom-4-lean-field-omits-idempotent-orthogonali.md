@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:23:28Z
-updated_at: 2026-08-15T22:20:56Z
+updated_at: 2026-08-16T03:13:30Z
 ---
 
 
@@ -63,3 +63,15 @@ Note the axiom is now meaningfully stronger than it was: with orthogonality,
 the blocks genuinely do not mix. What is missing is only that they *span*.
 
 QUEUED-BLOCKED 2026-08-15 (session qou-pq8k): blocked on owner's Preadditive decision per the originating discussion. Not dispatched.
+
+
+CAVEAT ANSWERED 2026-08-16 (bean qou-btq3): 'will existing instances still
+typecheck under Preadditive/Linear' has no force — there are NO constructions of
+QuantumUniverse. Existence is an axiom; QuantumObservableUniverse's is a cited
+sorry. Both absorb a new structure field for free, with no proof obligation and
+no checker firing. So the decision is not about breakage, it is about
+strengthening an axiomatised existence claim silently. Also recorded there: the
+structure ALREADY leans on k-linearity it does not carry (frobWeight/dimQ land
+in k 'via the standard identification of End(1) with the ground ring of a
+k-linear category'), so the gap is load-bearing today, independent of the
+completeness question.
