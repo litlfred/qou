@@ -1,7 +1,7 @@
 ---
 # qou-k4ul
 title: operator_selection_lp is false as stated, not merely unproved
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-16T11:20:00Z
@@ -93,3 +93,33 @@ shape the docstring says it was aiming for.
       **content** finding about the claimed optimum, not a Lean one)
 - [ ] Sweep for the same shape: other conditional classes that carry data with
       no hypotheses and conclude something about it
+
+## 2026-08-16 — FIXED, and the sorry is closed
+
+The class now carries the dual certificate as hypotheses about the data:
+`s` (dual slack), `s_nonneg`, `dual_feasible` (`tⱼ = y₀ + Σᵢ sᵢGᵢⱼ`),
+`x_star_feasible`, `zero_gap`. None is the block's own conclusion, so §3b-cond
+item 5 is respected — this is the shape the module was already using for
+`MatrixFarkas`.
+
+`operator_selection_lp` is **proved, sorry-free**, by the weak-duality
+computation inlined: for any feasible `x`,
+
+    Σⱼ tⱼxⱼ = y₀·n_target + Σᵢ sᵢ(Gx)ᵢ ≥ y₀·n_target = Σⱼ tⱼx*ⱼ
+
+since `sᵢ ≥ 0` and `(Gx)ᵢ ≥ 0`. `lean` exits **0** on the file; no
+"declaration uses 'sorry'" warning. Imports gained
+`BigOperators.Ring.Finset`, `Order.BigOperators.Group.Finset`, `Linarith`,
+`Ring` — the same set `LPWeakDuality` already uses, all present in the cache.
+
+**Farkas was never needed.** `kl8z` stands for *general* strong duality; it does
+not gate this block. Verifying an exhibited certificate is not optimisation.
+
+Stale docstring rewritten: it claimed the theorem "ends in `sorry` … requires
+the LP strong-duality theorem", which was wrong on both counts.
+
+### Still open, and it is a content question
+
+Whether the substrate's concrete `x*`/`y₀*` actually satisfy the new
+hypotheses. If they do not, the claimed optimum is wrong — a finding about the
+mathematics, not the formalisation. Nothing here asserts they do.

@@ -1,6 +1,10 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Data.Fintype.Fin
+import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.ParticleInteractions.operator_selection_lp
@@ -30,11 +34,35 @@ forbidden by AGENTS.md §3b-cond item 5).
 
 `operator_selection_lp` states the genuine conclusion — `x*` is
 primal-feasible AND optimal among all feasible points AND strong
-duality holds — and ends in `sorry` (disposition B): proving it
-requires the LP strong-duality theorem for feasible bounded programs,
-which is not yet available in the `QOU` library / Mathlib.  The
+duality holds — and is now **proved, sorry-free**.  The
 feasible-set definition `IsFeasible` is genuine (no opaque `Prop`
 field projected).
+
+**2026-08-16.** The previous version ended in `sorry`, citing the LP
+strong-duality theorem as missing infrastructure.  That was the wrong
+diagnosis twice over.
+
+First, the statement was **false**: stripping the conclusions out of the
+class (rightly, per §3b-cond item 5) left the class carrying *only data*
+and *no* hypotheses, so the theorem asserted `IsFeasible x_star` for an
+arbitrary `x_star`.  With `d = 1`, `n_target = 1`, `x_star = 0` the first
+conjunct reads `0 = 1`, and `False` was derivable.  See bean `qou/k4ul`.
+
+Second, no strong-duality theorem is needed.  `x*` is a *given* candidate
+and `y₀*` a *given* dual variable, so this is certificate verification,
+not optimisation: the class now carries the dual slack `s ≥ 0`, the dual
+equality `tⱼ = y₀ + Σᵢ sᵢGᵢⱼ`, primal feasibility of `x*`, and the
+zero-gap identity — all hypotheses **about the data**, never the block's
+own conclusion.  Optimality then follows by the weak-duality computation
+inlined below: for any feasible `x`,
+
+    Σⱼ tⱼxⱼ = y₀·n_target + Σᵢ sᵢ(Gx)ᵢ ≥ y₀·n_target = Σⱼ tⱼx*ⱼ ,
+
+since `sᵢ ≥ 0` and `(Gx)ᵢ ≥ 0`.  Farkas' lemma is irrelevant here (it is
+still the open input for *general* strong duality — see bean `qou/kl8z`).
+
+If the substrate's concrete `x*`/`y₀*` do not satisfy these hypotheses,
+that is a **content** finding about the claimed optimum, not a Lean one.
 
 ## Base ring (§7c)
 
@@ -66,6 +94,18 @@ class OperatorSelectionLpContext (R : Type*) [CommRing R] [LinearOrder R]
   x_star : Fin d → R
   /-- The Markov-trace dual variable `y₀* : R`. -/
   y_0_star : R
+  /-- Dual slack for the Frobenius-positivity constraints. -/
+  s : Fin d → R
+  /-- Dual feasibility: the slacks are non-negative. -/
+  s_nonneg : ∀ i, 0 ≤ s i
+  /-- Dual feasibility: `tⱼ = y₀ + Σᵢ sᵢ Gᵢⱼ`. -/
+  dual_feasible : ∀ j, t j = y_0_star + Finset.univ.sum (fun i => s i * G i j)
+  /-- `x*` is primal feasible. -/
+  x_star_feasible :
+    (Finset.univ.sum fun i => x_star i) = n_target ∧
+    (∀ i, 0 ≤ Finset.univ.sum fun j => G i j * x_star j)
+  /-- Zero duality gap at `x*`. -/
+  zero_gap : (Finset.univ.sum fun i => t i * x_star i) = n_target * y_0_star
 
 namespace OperatorSelectionLpContext
 
@@ -103,11 +143,28 @@ theorem operator_selection_lp {R : Type*} [CommRing R] [LinearOrder R]
         OperatorSelectionLpContext.objective x) ∧
     OperatorSelectionLpContext.objective ctx.x_star
       = ctx.n_target * ctx.y_0_star := by
-  -- Missing infra: the LP strong-duality theorem (no duality gap for
-  -- feasible, bounded linear programs) and the simplex/vertex
-  -- optimality argument selecting x*. Not yet formalised in QOU/Mathlib.
-  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  -- Honest sorry: LP strong duality + vertex-optimality not yet formalised.
-  sorry
+  refine ⟨ctx.x_star_feasible, ?_, ctx.zero_gap⟩
+  intro x hx
+  obtain ⟨hsum, hpos⟩ := hx
+  have expand : OperatorSelectionLpContext.objective x
+      = ctx.y_0_star * ctx.n_target
+        + Finset.univ.sum (fun i => ctx.s i * Finset.univ.sum fun j => ctx.G i j * x j) := by
+    unfold OperatorSelectionLpContext.objective
+    have h1 : ∀ j, ctx.t j * x j
+        = ctx.y_0_star * x j + Finset.univ.sum (fun i => ctx.s i * (ctx.G i j * x j)) := by
+      intro j
+      rw [ctx.dual_feasible j, add_mul, Finset.sum_mul]
+      simp [mul_assoc]
+    rw [Finset.sum_congr rfl (fun j _ => h1 j), Finset.sum_add_distrib,
+      ← Finset.mul_sum, hsum, Finset.sum_comm]
+    congr 1
+    exact Finset.sum_congr rfl (fun i _ => by rw [Finset.mul_sum])
+  have hgap : OperatorSelectionLpContext.objective ctx.x_star
+      = ctx.n_target * ctx.y_0_star := ctx.zero_gap
+  rw [hgap, expand]
+  have hnn : 0 ≤ Finset.univ.sum (fun i => ctx.s i * Finset.univ.sum fun j => ctx.G i j * x j) :=
+    Finset.sum_nonneg (fun i _ => mul_nonneg (ctx.s_nonneg i) (hpos i))
+  rw [mul_comm ctx.n_target ctx.y_0_star]
+  exact le_add_of_nonneg_right hnn
 
 end QOU.ParticleInteractions
