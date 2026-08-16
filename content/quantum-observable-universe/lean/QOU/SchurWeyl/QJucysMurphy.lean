@@ -34,10 +34,10 @@ the basis vector indexed by a standard Young tableau `T` with eigenvalue
   coincide up to a bar-even scalar and a λ-independent shift (see bean `qou-8vt2`).
 
 * **Seminormal eigenvalue** — GAP: `L_k` acts with eigenvalue `q^{2c(k)}` on the
-  seminormal basis. Ref: [ram1997] Theorem 4.1; [murphy1983]; [hoefsmit1974].
+  seminormal basis. Ref: [ram1997] Theorem 4.1; [murphy1992]; [hoefsmit1974].
 
 * **Commutativity** — GAP: the Murphy elements commute pairwise, generating the
-  Gelfand–Tsetlin subalgebra. Ref: [murphy1983] §2.
+  Gelfand–Tsetlin subalgebra. Ref: [murphy1992] §2; [murphy1981] for the q = 1 case.
 
 * **Bar-symmetrised sum** (`barSymJMSum`): `Σ_{k=0}^{n} (L_k + L_k⁻¹)`, the bar-even
   central element whose block eigenvalue is `Σ_{c ∈ λ} (q^{2c} + q^{−2c})`.
@@ -69,7 +69,9 @@ differ by `q ↔ q²` and by sign across the literature.
 
 NB: earlier drafts cited a non-existent `[murphy1983]` key (broken `-- Ref:` per AGENTS.md §1);
 the correct in-corpus keys are `[murphy1992]` (Hecke Murphy operators) and `[murphy1981]`
-(seminormal construction).
+(seminormal construction). **That note was added and the three live citations below were
+left on the broken key anyway** — fixed 2026-08-16. A note recording a defect is not a
+fix, and this one sat directly above the uses it described.
 -/
 
 namespace QOU.SchurWeyl
@@ -280,7 +282,7 @@ normalisation `σ² = (q − q⁻¹)σ + 1` with eigenvalues `{q, −q⁻¹}`.  
 Kazhdan–Lusztig normalisation `T² = (q−1)T + q` (eigenvalues `{q, −1}`), the
 eigenvalue would be `q^c`.  The factor-of-2 difference is pure convention.
 
-Refs: [ram1997] Theorem 4.1; [murphy1983] Theorem 1.1; [hoefsmit1974] §3.
+Refs: [ram1997] Theorem 4.1; [murphy1992] Theorem 1.1; [hoefsmit1974] §3.
 -/
 
 /-- **[GAP] The Murphy elements commute pairwise** — they generate the commutative
