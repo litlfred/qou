@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-15T00:00:00Z
+updated_at: 2026-08-16T12:07:21Z
 ---
 
 Parent: `qou-cdx1`. Successor to the `qou-eea0` cascade, which drained the bulk.
@@ -57,3 +57,37 @@ computations/y-lambda-macdonald-telescope.witness.json         (symbolic, 14)
   stored non-recomputed value, a preserved historical field. Count deltas by
   kind; treat surviving fingerprints as a triage queue.
 - **Separate structural zeros from genuine shifts from q₀-refresh noise.**
+
+
+---
+
+## ⚠ Two constraints from #5209 (recorded 2026-08-16, `qou-2ixd` campaign)
+
+**1. SIX of the tagged witnesses are CORRECTLY colour-blind and must NOT be
+migrated.** Free words (`include_inter=False`), dineutron, diproton and single
+nucleons have **no p–n bond to weight**, so colour-blind `χ` is the right answer
+for them. A regeneration sweep that pattern-matches on filenames will migrate
+them and be wrong.
+
+The distinction is only visible from the WORD, not the filename: the sibling's
+fix derives `convention_fingerprint` / `convention_label` in
+`canonical_braid_crossings` from what a run actually builds
+(`sigma:11+sigma_inv:7+averaged:4+averaged_weighted:1` for the deuteron) and
+compares it on cache read. Use that, not a name pattern.
+
+**2. The caches are the hazard, not the producers.** Nine committed witnesses
+carry colour-blind `χ` for words that DO have a p–n interface, and no producer
+is at fault — `atom_canonical_crossings` emits the right crossing every time.
+`per_irrep_pole_deuteron_h6` returns on `CHI_CACHE.exists()`, and
+`per_irrep_pole_atom` resumes keyed on **partition coverage alone**. Neither
+knows which word produced the cached entries, so a pre-colour-weighting cache
+looks complete forever. Recorded as **row 12** of the detector-blindness
+taxonomy: the convention tag on those nine is *accurate about the bytes and
+silent about the drift*.
+
+**3. Cost, which may decide feasibility.** `δ(q) = (q−1)²(1−q⁻⁴)/3` turns a
+scalar `−h/2` into a degree-8 rational function, so colour-weighted symbolic χ
+is far more expensive: **~25 min at H₆** against ~155 s colour-blind, and
+**tritium at H₉ reached 1 of 30 partitions in ~15 min**. At H₉ and above this
+may not be feasible symbolically at all — which bears directly on this tranche's
+existing gate about `delta_lambda_2row_stratum_analysis.py` never completing.

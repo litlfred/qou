@@ -14,7 +14,7 @@ form**, and thereby being unable to see the same fact expressed in a different
 form. The blind spot is never a missing case in a list. It is the shape of the
 question.
 
-## The eleven
+## The twelve
 
 | # | detector keyed on | blind to | exposed by |
 |---|---|---|---|
@@ -29,9 +29,47 @@ question.
 | 9 | **static** analysis | a derived form drifting from its own `z` | `TR_M[5] = z³` (2026-05-19) |
 | 10 | **the producer** | a *per-anchor artifact* going stale on its own | `atomic-tr-m-mpfr-50dps-proton.witness.json` (#5190) |
 | 11 | the **live code path** | prose that is the module's only convention statement | `markov_peel.tr_M_atomic`'s docstring (#5190) |
+| 12 | the artifact's own **convention tag** | a tag accurate about the bytes and silent about currency | 9 colour-blind `chi-*` witnesses (#5209) |
 
-Rows 10 and 11 came from a sibling on #5190, not from this branch — recorded here
-because this is the list, and because 10 breaks an assumption the other ten share.
+Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
+recorded here because this is the list, and because 10 and 12 each break an
+assumption the rest share.
+
+### 12 — a correct label on stale data
+
+The hardest one so far, because **nothing in the artifact is wrong**. Nine
+committed witnesses carry colour-**blind** `χ` for words that have a p–n
+interface. No producer is at fault: `atom_canonical_crossings` emits exactly one
+`averaged_weighted` crossing for every canonical Z≥1, N≥1 word. The **caches**
+kept the old answer alive:
+
+```
+per_irrep_pole_deuteron_h6   if CHI_CACHE.exists(): return d
+per_irrep_pole_atom          resume keyed on PARTITION COVERAGE alone
+```
+
+Neither has any notion of *which word* produced the cached entries, so a cache
+written before colour-weighting looks complete forever.
+
+**And the convention tag cannot catch it.** Those nine are tagged
+`averaged-crossings` by `chi_convention_audit.py --fix` — a tag that is
+*accurate about the bytes and silent about the drift*, because it records what an
+auditing pass concluded about stored data, not what the current builder would
+emit. Every row above is a detector failing to *find* a convention; this is a
+detector finding one, reading it correctly, and being wrong anyway.
+
+The repair is the same move as this document's counter-move, applied to caches:
+derive the label from what the run actually built rather than from what is
+stored. `convention_fingerprint` / `convention_label` in
+`canonical_braid_crossings` are computed from the word
+(`sigma:11+sigma_inv:7+averaged:4+averaged_weighted:1` for the deuteron) and
+compared on cache read; it fired immediately on tritium.
+
+**Carry this into any regeneration sweep.** Six of the tagged witnesses are
+*correctly* colour-blind and must **not** be migrated — free words
+(`include_inter=False`), dineutron, diproton and single nucleons have no p–n
+bond to weight. Which is exactly why the label has to come from the word and not
+from a filename pattern. Relevant to `qou-cdh3` and `qou-pvem`.
 
 ### 10 — "the producer is migrated" does not mean "every anchor's witness is"
 

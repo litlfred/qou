@@ -1282,7 +1282,7 @@ Do not regress either.
 >   R10-waived. **The posture does not change.** Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **eleven** distinct detector-blind spellings, three of which were
+>   catalogues **twelve** distinct detector-blind spellings, four of which were
 >   found *by* detectors written to catch the previous blind spot. So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
