@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T22:39:50Z
-updated_at: 2026-08-16T13:01:18Z
+updated_at: 2026-08-16T15:20:51Z
 parent: qou-pq8k
 ---
 
@@ -186,3 +186,21 @@ state the *invariant* — what is or is not read — and not the *incidental
 coordinate*. b4 does this almost by accident (the evidence dominates the variable
 name); b6 does not. Passed to #5210 because a `ladder_frame` reason field would be
 far more exposed: its entire subject *is* the coordinate.
+
+
+### 2026-08-16 15:1x — the commitment did NOT fire; strings stand
+
+The #5210 work landed (`#5235 → e2d68dcdc`, `#5210 → 4f542c4d4`) with **much
+reduced scope**: `LADDER_FRAME = "u"` in `qbeta_utils` plus a `ladder_frame` key
+on `substrate_ladder_quantities`. **No `c_k` value changed and no witness was
+regenerated** — the `c₄…` churn that PR originally warned about does not exist,
+and `greedy_later_rungs_vanish` now proves it sorry-free.
+
+So the frame **stayed `u`**. It landed a *declaration of* the u-frame, not a
+move to h. The b4/b6 `q0AnchorReason` strings naming *"a FREE parameter u"*
+describe a variable the producers still have; they are accurate and there is
+nothing to fix.
+
+The commitment stays live for a future PR that actually moves the rungs to h.
+Recorded as a checked non-event rather than left looking pending — a standing
+commitment nobody re-checks is indistinguishable from one nobody honoured.
