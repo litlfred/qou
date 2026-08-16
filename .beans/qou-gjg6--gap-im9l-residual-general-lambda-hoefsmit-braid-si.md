@@ -20,6 +20,8 @@ updated_at: 2026-08-16T19:15:16Z
 updated_at: 2026-08-16T20:28:00Z
 
 updated_at: 2026-08-16T20:46:27Z
+
+updated_at: 2026-08-16T20:53:54Z
 parent: qou-59vq
 ---
 
@@ -1544,3 +1546,51 @@ correct and the linter hint was wrong for this proof. Reverted; do not re-apply.
 
 **Branch score: 14 theorems, all sorry-free and axiom-clean. One GAP closed
 (`qJM_commute`); `barSymJMSum_central` reduced to the inverse-family transfer.**
+
+
+### `barSymJMSum` centrality PROVED — and the stated theorem omits its hypothesis (2026-08-16)
+
+Eight more sorry-free axiom-clean theorems. The `barSymJMSum_central` GAP is
+resolved, though not by discharging its sorry — see below.
+
+* `comm_inv_of_comm` — commuting with a two-sided unit transfers to its inverse.
+* `qJMInv_comm_sigma`, `qJMInv_comm_sigma_high` — rows 1 and 3 for the inverse
+  family, via that transfer rather than re-running the inductions
+  (`qJM_mul_qJMInv` / `qJMInv_mul_qJM` were already proved under `q·qi = 1`).
+* `qJMInv_pair_comm` — row 2 for the inverse family, via `pair_comm` at `σ⁻¹`
+  plus `comm_σInv_iff`.
+* `sum_comm_of_rows` — the generic `Finset` assembly, stated once for any family
+  with the three-row property, so both halves share it.
+* `qJM_sum_comm_sigma'`, `qJMInv_sum_comm_sigma` — both power sums central.
+* **`barSymJMSum_central'`** — the GAP, **proved**, given `q·qi = 1`.
+
+**🔴 The stated theorem is NOT provable as stated.** `barSymJMSum_central`
+carries **no hypothesis** on `q, qi`, and it needs `q·qi = 1`:
+
+* `σ_i` commutes with `L_i + L_{i+1}` only up to a residue
+  `(1 − q·qi)(σ_i L_i − L_i σ_i)` (`pair_comm`); and
+* without it `qJMInv` is not an inverse of `qJM` at all, so the second half of
+  the sum has no structure to exploit.
+
+The sorry therefore **stays**, with its GAP note rewritten to say exactly this.
+Same defect class as `barSymJMSum_block_eigenvalue` (assumes `q ≠ 0` while the
+construction needs `0 < q ∧ q ≠ 1`): **a statement written before the
+hypothesis it requires was known.** Two of the file's original four sorries are
+of this kind, which is worth the owner knowing — they are not proof debt, they
+are statement debt.
+
+Its old GAP note claimed it *"needs `qJM_commute` plus the σ_i–L_k commutation
+relations"*. `qJM_commute` is proved and **irrelevant** here (L–L, not σ–L), and
+all three σ–L rows are now proved. **The missing piece was never a commutation.**
+
+Also dropped the `hi1` side-condition from the sum lemmas — derivable inside the
+only branch that uses it (`k ≤ n` and `k ≥ i+2` force `i+1 < n`). Without that,
+they would not have applied at `i = n-1`.
+
+**Branch score: 22 theorems, all sorry-free and axiom-clean. One GAP closed by
+discharge (`qJM_commute`); one resolved mathematically but blocked on a missing
+hypothesis in its own statement (`barSymJMSum_central`).**
+
+**Owner decision needed:** may the two under-hypothesised statements be amended
+(`barSymJMSum_central` += `q·qi = 1`; `barSymJMSum_block_eigenvalue`'s `q ≠ 0`
+→ `0 < q ∧ q ≠ 1`)? Both are public signatures, so I have not changed them.
