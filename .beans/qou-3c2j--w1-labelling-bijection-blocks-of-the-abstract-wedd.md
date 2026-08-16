@@ -240,3 +240,30 @@ Elaboration note: `spechtRepAt h` is *definitionally* `(spechtRep μ).comp (tran
 but `specht_exhausts_irreducibles` states its conclusion in the unfolded form, so `rw` across
 the two fails on syntax. Bridge with `show`, not with a type ascription — the ascription does
 not survive elaboration (`MonoidHom.comp` wins and `.asAlgebraHom` then fails to resolve).
+
+### Brick 5 — W1+W3 now reduces to ONE NUMBER, and it is combinatorial
+
+`QOU/BraidKnot/SpechtWedderburnCriterion.lean`, sorry-free:
+
+- `spechtProduct_bijective_of_sum_sq` — `spechtProduct` is bijective as soon as
+  `Σ_μ (dim S^μ)² = n!`;
+- `spechtEquiv_of_sum_sq` — the resulting `k[S_n] ≃ₐ[k] ∏_μ End_k(S^μ)`;
+- `sum_sq_of_numSYT` — the hypothesis restated through `dim S^μ = #SYT(μ)`.
+
+**So all three items of the `SnWedderburnPartitionBridge` residual are discharged**: the map is
+partition-indexed by construction (no labelling to choose — W1), each block is `End_k(S^μ)` of
+size `dim S^μ` by construction (W3), and the commutant is the base field (W2, #5139). What is
+left is not representation theory at all: it is
+
+  **`Σ_{μ ⊢ n} (#SYT μ)² = n!`** — the RSK identity, a statement about tableaux.
+
+That reframing is the point of this brick. The remaining work can be attacked
+**combinatorially** (an explicit Robinson–Schensted correspondence) by someone who never touches
+Specht modules, and `spechtEquiv_of_sum_sq` hands them the algebra isomorphism for free.
+
+Note `OVTopAssembly.sum_numSYT_sq_eq_factorial` *states* exactly this identity and carries
+`sorryAx`; this file does not import that cone, so nothing here is circular.
+
+Also proved on the way: `surjective_of_injective_of_finrank_eq` (injective + equal finite
+dimension ⇒ onto). Mathlib has the endomorphism case only; `exact?` fails on the two-space form
+at this pin.
