@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/phi-q-categorical-truncation-proof.md"
   },
   "source_hashes": {
-    "md": "4dcce2cdda3a",
-    "ts": "0a29691199ac"
+    "md": "bec6780c78ab",
+    "ts": "edabd50f6c4d"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -1046,19 +1046,20 @@
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "4dcce2cdda3a",
-          "ts": "0a29691199ac"
+          "md": "bec6780c78ab",
+          "ts": "edabd50f6c4d",
+          "graph": "7f5276b33758"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+          "script_hash": "ebf2e2e1821c",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-10T13:12:41.086Z",
-        "reviewed_sha": "e990048baff1454c626f99e871a48b9bc0de8cb9"
+        "reviewed_at": "2026-08-16T01:47:05.170Z",
+        "reviewed_sha": "d7274ddc00276ef1d05c332ef2da3b1ea789a374"
       }
     ],
     "detangler-section-band": [
@@ -1119,30 +1120,31 @@
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "4dcce2cdda3a",
-          "ts": "0a29691199ac"
+          "md": "bec6780c78ab",
+          "ts": "edabd50f6c4d",
+          "graph": "7f5276b33758"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+          "script_hash": "bb579f7e1778",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-10T13:12:41.086Z",
-        "reviewed_sha": "e990048baff1454c626f99e871a48b9bc0de8cb9",
+        "reviewed_at": "2026-08-16T01:47:05.170Z",
+        "reviewed_sha": "d7274ddc00276ef1d05c332ef2da3b1ea789a374",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
           "tanglement_score": 0,
-          "out_degree": 2,
+          "out_degree": 4,
           "in_degree": 0,
-          "cone_size": 4,
-          "depth": 3,
-          "pagerank": 0.000079,
-          "edge_span_max": 2,
-          "edge_span_mean": 2,
+          "cone_size": 48,
+          "depth": 20,
+          "pagerank": 0.000077,
+          "edge_span_max": 7,
+          "edge_span_mean": 4.5,
           "worst_target": ""
         }
       }
@@ -1150,19 +1152,20 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "4dcce2cdda3a",
-          "ts": "0a29691199ac"
+          "md": "bec6780c78ab",
+          "ts": "edabd50f6c4d",
+          "graph": "7f5276b33758"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+          "script_hash": "7d1408341441",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-10T13:12:41.086Z",
-        "reviewed_sha": "e990048baff1454c626f99e871a48b9bc0de8cb9",
+        "reviewed_at": "2026-08-16T01:47:05.170Z",
+        "reviewed_sha": "d7274ddc00276ef1d05c332ef2da3b1ea789a374",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1191,19 +1194,20 @@
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "4dcce2cdda3a",
-          "ts": "0a29691199ac"
+          "md": "bec6780c78ab",
+          "ts": "edabd50f6c4d",
+          "graph": "7f5276b33758"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+          "script_hash": "e6e7d97bee66",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-10T13:12:41.086Z",
-        "reviewed_sha": "e990048baff1454c626f99e871a48b9bc0de8cb9"
+        "reviewed_at": "2026-08-16T01:47:05.170Z",
+        "reviewed_sha": "d7274ddc00276ef1d05c332ef2da3b1ea789a374"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1551,5 +1555,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-16T01:47:05.170Z"
 }
