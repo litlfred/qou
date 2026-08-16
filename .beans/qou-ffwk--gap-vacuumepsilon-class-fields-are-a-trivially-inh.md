@@ -361,3 +361,252 @@ harder case than the ones done so far: it bundles four Markov axioms M1–M4, of
 which `tau_identity = 1` is already substantive and only the cyclic and
 stabilisation residuals are placeholders. It should be split field by field
 rather than replaced wholesale. Not attempted here.
+
+## Progress 2026-08-16 (3) — `SpectralNormalForm`
+
+Branch `claude/ffwk-spectral-normal-form-2026-08-16`. Fourth of the ten, and the
+first that needed **no invented types**: `SurrealField`, `IsInfinitesimal`,
+`IsFinite` and `OmegaOrder.Ow` all already exist, so the conjecture is stated in
+the corpus's own vocabulary rather than against caller-supplied stand-ins.
+
+**What the conjecture is.** The block's three parts share one thing: a bridge
+between two independent structures on `K` — the *order* (infinitesimal, finite,
+from `SurrealField`'s `LinearOrder`) and the *valuation* (`Ow`, the leading
+Conway exponent). `OmegaOrder` axiomatises `Ow`'s multiplicativity and its
+behaviour under real rescaling and **says nothing relating it to the order**.
+The conjecture is exactly that relation, so the two fields are
+
+- part 1 (gap closure) → `IsInfinitesimal x ↔ Ow x < 0`
+- part 3 (singularity) → `¬ IsFinite x ↔ 0 < Ow x`
+
+**The `x ≠ 0` side condition is load-bearing, not decorative.** `0` is
+infinitesimal (`zero_isInfinitesimal`) while `Ow 0 = ⊤` by `Ow_zero`, and `⊤` is
+not `< 0`. Without the hypothesis part 1 is outright **false at zero**; same for
+part 3, where `0` is finite and `⊤` is `> 0`. Caught by checking the statement
+against the existing lemmas rather than by transcribing the block.
+
+**Part 2 is deliberately not a field.** It reads off *rates* — `Ow(Δ) = -n` is
+polynomial closure of order `n`, a value in `(-ω·2, -ω)` signals transcendental
+quantum-dilogarithm behaviour. That classifies the exponent once parts 1 and 3
+are granted; encoding a rate table as fields would claim the classification is
+part of what must be assumed.
+
+**Anti-vacuity, by a different route than the earlier three.** No degenerate
+data is available to refute against here, so instead `Ow_normalises_on_ofReal`
+derives from the two fields that `Ow (ofReal r) = 0` **exactly**, for every
+non-zero real `r`. `OmegaOrder` alone cannot give this: `Ow_ofReal_mul` says
+rescaling by a non-zero real leaves the leading exponent *unchanged*, which
+constrains differences and never fixes an absolute value. So the class demonstrably
+adds content, and an instance cannot be manufactured by adjusting `Ow` freely.
+`not_infinitesimal_and_not_finite` exercises both fields together.
+
+**Non-emptiness is NOT shown, and that is a real gap.** It needs an `OmegaOrder`
+instance and **this tree has none** — `Asymptotics.lean` says so in its own
+header ("Mathlib does not yet expose Conway normal form on `𝐍𝐨`, so neither
+class is populated here"). `HyperrealLimitTransfer.lean` has a `SurrealField ℝ*`
+model but no `Ow` for it. So satisfiability is untested in either direction.
+Recorded rather than papered over with a degenerate instance — which is what the
+old schema effectively was.
+
+Verification: compiles (`lean-direct-cone -k` ok=1); `#print axioms` gives
+`[propext, Classical.choice, Quot.sound]` on both derived theorems, no
+`sorryAx`; `check-base-ring` PASS; `check-wall-side` PASS; both
+`lean-content-siblings` local gates exit 0; orphan gate exit 0; `run-validate`
+exit 0. No instance added.
+
+Detector count **13 → 12**.
+
+### Running total
+
+Four of ten library carriers done (`archimedean_agreement` ×2,
+`BringFigureEightDepth2Witness`, `SpectralNormalForm`); count 16 → 12.
+Remaining library: `DiophantineBirthday`, `LocalInfinitesimalField`,
+`QouInfraDischargesGoncharovZeta5`, `VacuumEpsilon`,
+`HyperbolicVolumeIndependence`, and `BraidGroupNStrand` (whose class is
+`MarkovTraceN`, not `HeckeQuotient` as the inventory says). Plus six co-located
+stubs this bean's inventory omits.
+
+## Progress 2026-08-16 (4) — `DiophantineBirthday`
+
+Branch `claude/ffwk-diophantine-birthday-2026-08-16`. Fifth of the ten.
+
+**Only one of the block's four parts is encoded, and that is the point.**
+
+- **Part 1 (algebraic rigidity)** — "if `α` is algebraic of degree `d` then
+  `b_α(n) = O(log n)`" — is unhedged and is the field. The implied constant is
+  existential and `α`-dependent because the block ties it to the degree; a
+  single global constant would claim more than the block does.
+- **Part 2 (transcendental depth) is deliberately NOT encoded.** The block says
+  "if `α` is transcendental *(of 'generic' type, e.g. Liouville number)*". The
+  parenthesis is a hedge — the claim is for a generic subclass, not for every
+  transcendental. Writing `∀ α, Transcendental ℚ α → …` would assert the
+  unhedged converse the corpus does not. Inventing an `IsGenericTranscendental`
+  predicate to carry the hedge would be worse: a stand-in with no definition
+  anywhere.
+- **Parts 3 and 4** (Roth threshold, continued-fraction correspondence) need the
+  continued-fraction expansion, which nothing in this library constructs.
+
+**The discrimination survives on the unhedged half alone.**
+`transcendental_of_not_logarithmic` derives from part 1 that a number whose
+trajectory outruns every logarithmic bound cannot be algebraic. That *is* the
+block's title — "algebraic vs transcendental numbers are separated by birthday
+trajectory". Encoding part 2 would have added a converse the separation does not
+need. Worth remembering as a general move: when a block hedges half a
+biconditional, check whether the headline follows from the unhedged half before
+reaching for a stand-in predicate.
+
+**`trajectory` is caller-supplied**, like the `archimedean_agreement` pipelines:
+`b_α` is defined in the block by minimisation over bounded-denominator rational
+approximations, and this library constructs no such function.
+
+**Anti-vacuity, both directions, and this time both are concrete:**
+
+- `nonempty_of_const_zero` — the identically-zero trajectory satisfies the class
+  (`0 ≤ 1·log n + 1` for `n ≥ 1`), so openness is not an artefact of emptiness.
+- `not_of_quadratic` — the quadratic trajectory is **refuted**: `0` is algebraic
+  and `n²` outruns every `C·log n + C`, via `log n ≤ n − 1`. A genuine
+  countermodel, not just a restatement — which is what the earlier
+  `SpectralNormalForm` could not have, since no `OmegaOrder` instance exists to
+  build one from.
+
+Also fixed a wrong docstring link: it pointed into `appendix-surreals/` and the
+block lives in `appendix-surreals-archimedean/`.
+
+Verification: compiles (ok=1); `#print axioms` `[propext, Classical.choice,
+Quot.sound]` on all three, no `sorryAx`; base-ring PASS; wall-side PASS; both
+siblings gates exit 0; orphan gate exit 0; run-validate exit 0. No instance
+added.
+
+Detector count **12 → 11**.
+
+### Running total
+
+Five of ten library carriers done; count 16 → 11. Each needed a **different**
+encoding — tolerance parameter, exact equality, structural bridge between two
+typeclass structures, and now an asymmetric one-half-only encoding — which is
+why this bean's "do not batch-process" instruction is right.
+
+Remaining library: `LocalInfinitesimalField` (needs sheaf/scheme machinery for
+"ε is a sheaf across a scheme X" — likely blocked the way
+`GBDepthPeriodCorrespondence` was), `QouInfraDischargesGoncharovZeta5`,
+`VacuumEpsilon` (blocked on its 2026-08-08 docstring finding),
+`HyperbolicVolumeIndependence`, `BraidGroupNStrand` (class is `MarkovTraceN`,
+wants field-by-field splitting). Plus the six co-located stubs this bean's
+inventory omits.
+
+## 2026-08-16 (5) — tried to close the `OmegaOrder` gap with Mathlib; it does not fit
+
+Branch `claude/ffwk-omegaorder-mathlib-probe-2026-08-16`. **No machinery landed
+— the integration does not go through.** Recording the three obstructions,
+each checked against this build, so the next attempt starts from a
+specification instead of from scratch. Docstring-only change to
+`Asymptotics.lean`.
+
+Context: `SpectralNormalForm` (merged, #5233) records that its satisfiability is
+untested in either direction because `OmegaOrder` has no instance anywhere.
+Mathlib's Hahn-series valuation is the obvious source. It is not usable here.
+
+**1. No degenerate model is available — this is a hard obstruction.**
+`SurrealField` requires `omegaSurreal : K` with
+`omegaSurreal_gt_natCast : ∀ n : ℕ, (n : K) < omegaSurreal`. No real exceeds
+every natural, so **`SurrealField ℝ` is impossible**. The cheap witness that
+would have settled non-emptiness cannot exist; a model has to be genuinely
+non-archimedean. Worth knowing before anyone else spends time looking for a
+shortcut.
+
+**2. The exponent type is self-referential and Mathlib's is not.** `Ow` is typed
+`K → WithTop K` — exponents in the field itself, which is right for `𝐍𝐨`
+(closed under `ω`-exponentiation). Mathlib's leading-exponent valuation is
+`HahnSeries.orderTop : HahnSeries Γ R → WithTop Γ` with `Γ` a **separate**
+ordered group. Bridging needs an additive, order-compatible `Γ ↪ K`, which is a
+design decision rather than a lemma. **Generalising the class to
+`OmegaOrder K Γ` would remove this outright**, and is worth deciding before more
+conditional results are stacked on it.
+
+**3. This build's Hahn API stops short even for the separate-`Γ` reading.**
+Probed directly:
+
+- `CommRing (HahnSeries ℤ ℝ)` — available (noncomputable).
+- `Field (HahnSeries ℤ ℝ)`, `LinearOrder (HahnSeries ℤ ℝ)` — **not** available;
+  the order lives on the `Lex` synonym.
+- `orderTop` multiplicativity — only the **inequality**
+  `x.orderTop + y.orderTop ≤ (x * y).orderTop` (`orderTop_add_le_mul`).
+  `HahnSeries.orderTop_mul`, the equality `Ow_mul` states, **does not exist**
+  here and would have to be proved over a domain first.
+
+**Build order for whoever takes this on:** `orderTop` multiplicativity over a
+domain → `Lex` order transfer → a `birthday` function satisfying the `nadd`
+sub-additivity and midpoint bounds → then obstruction 2.
+
+**Not attempted:** generalising `OmegaOrder`. It is imported widely enough that
+changing its signature is an owner-level call, and doing it silently inside a
+carrier-hygiene bean would be the coordination failure AGENTS.md warns about.
+
+**Also relevant to `LocalInfinitesimalField`** (still on this bean's remaining
+list): its claim is that `ε` is a *sheaf* of infinitesimals across a scheme `X`.
+Mathlib has `Topology.Sheaves` and `AlgebraicGeometry` built in this tree, so
+that one is **not** blocked the way this is — the sheaf machinery genuinely
+exists. It was skipped for the surreal carriers, not because it is impossible.
+
+## Progress 2026-08-16 (6) — `LocalInfinitesimalField`
+
+Branch `claude/ffwk-local-infinitesimal-field-2026-08-16`. Sixth of the ten.
+
+**Correcting my own call from the previous entry.** I said this one was the
+next to take *because* Mathlib's sheaf and scheme machinery is present, having
+assumed it would be needed. Having read the block: it is present, and it is
+**not needed** — using it would have been decoration.
+
+The block sets the conjecture up over a scheme (`ε ∈ Γ(X, 𝔪_X)`, a section of
+the sheaf of infinitesimals, `X` a functor `CRing → Set` evaluated at the
+valuation ring). But **none of its three claims uses that structure**. Read them
+back: `ε(x)` differs from `ε(y)` somewhere; `st(ε(x)) = 0` everywhere; the
+leading coefficient is globally constant. Every one is extensional in the family
+`x ↦ ε(x)`. Restriction, gluing, the structure sheaf and the `X(𝒪) ↠ X(ℝ)` map
+are *setting* — they say where the family comes from and why it matters, and the
+conjecture is neither stronger nor weaker if `X` is a bare type.
+
+So `X` stays abstract and the sheaf framing lives in the docstring. **A
+placeholder asserts too little; decoration asserts too much** — same defect,
+opposite direction, and this bean exists to fix the first without introducing
+the second. If a later result genuinely needs locality (gluing local `ε`s, a
+stalkwise argument) that is the point to introduce the sheaf, and the class
+statement will be what it restricts to.
+
+**The three fields.** Part 2 is encoded as infinitesimality, which is the
+block's own framing, and `standardPart_eq_zero` derives the `st(ε(x)) = 0` form
+from it via the corpus's `standardPart_of_infinitesimal` — a real derivation
+against existing API, not a restatement. Part 1 is genuine non-constancy: a
+*global* `ε` is exactly what the appendix already has, so a carrier permitting a
+constant family would assert nothing new. Part 3 is stated against a
+caller-supplied `leadingCoeff` (the `ω⁻¹` Conway coefficient, which this tree
+does not construct and which is **not** `OmegaOrder.Ow`, the leading *exponent*),
+with `q₀` a parameter rather than the literal `0.11` — writing a substrate pin
+into a carrier would require re-editing it whenever the pin moves.
+
+**Anti-vacuity.** `not_of_subsingleton` refutes the class over a one-point
+index: `local_variation` cannot hold where there is nowhere to vary. Cheap, and
+it is exactly the sense in which the conjecture says more than the existing
+global `ε` — under the old schema the trivial term closed the class even for a
+one-point scheme, so "the substrate fluctuates" had nothing to fail against.
+Non-emptiness is not shown, for the reason recorded in #5244: it needs a
+`SurrealField` instance and only `surrealFieldHyperreal` (a `def`) exists.
+
+Verification: compiles (ok=1); `#print axioms` `[propext, Classical.choice,
+Quot.sound]` on all four, no `sorryAx`; base-ring PASS; wall-side PASS; both
+siblings gates exit 0; orphan gate exit 0; run-validate exit 0. No instance
+added.
+
+Detector count **11 → 10**.
+
+### Running total
+
+Six of ten library carriers done; count 16 → 10. Six carriers, six encodings:
+tolerance parameter, exact equality, structural bridge between two typeclass
+structures, asymmetric one-half-only, and now extensional-over-a-framing. The
+"do not batch-process" instruction keeps earning itself.
+
+Remaining library: `QouInfraDischargesGoncharovZeta5`, `VacuumEpsilon` (blocked
+on its 2026-08-08 docstring finding), `HyperbolicVolumeIndependence`,
+`BraidGroupNStrand` (class is `MarkovTraceN`, wants field-by-field splitting).
+Plus the six co-located stubs this bean's inventory omits.

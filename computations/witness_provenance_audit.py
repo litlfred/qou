@@ -329,6 +329,36 @@ def classify(source: str, witness_filename: str) -> str:
     return "UNCONFIRMED" if ".witness.json" in source else "NOT_A_PRODUCER"
 
 
+# Producers that are not Python, and not under `computations/`. A witness may
+# legitimately be written by a Rust binary or carry a Lean file as its
+# provenance, and the Python index below can never resolve either — so before
+# this, every such witness was SCRIPT_MISSING *by construction*, which asserts
+# "the claim cannot be true" about a script that is sitting in the repo.
+#
+# Measured: 2 of the 5 SCRIPT_MISSING were this artefact —
+# `joint_tower_sdp.rs` (tools/hecke-engine/src/bin/) and
+# `DeuteronFirstOrderCluster.lean` (content/…/MassTheory/). The other 3 are
+# real: those `.py` files exist nowhere in the tree.
+#
+# Resolved ones become UNCONFIRMED, never WRITES: `classify()` reads Python —
+# WitnessBuilder names, write sinks — so it can neither confirm nor deny a
+# `.rs`/`.lean` producer. UNCONFIRMED is exactly the audit's documented middle
+# verdict for "cannot confirm, cannot deny", and claiming WRITES here would be
+# the laundering this tool exists to catch. Bean qou-w9s3.
+_NON_PY_PRODUCER_SUFFIXES = (".rs", ".lean")
+
+
+def _find_non_py_producer(root: Path, name: str) -> Path | None:
+    """Locate a non-Python producer anywhere in the tree, by basename."""
+    if not name.endswith(_NON_PY_PRODUCER_SUFFIXES):
+        return None
+    skip = {".git", "node_modules", ".lake", "_deprecated", "__pycache__"}
+    for cand in root.rglob(name):
+        if not skip & set(cand.parts):
+            return cand
+    return None
+
+
 def scan(root: Path) -> list[dict]:
     comp = root / "computations"
     scripts = {p.name: p for p in comp.rglob("*.py") if "_deprecated" not in p.parts}
@@ -348,6 +378,14 @@ def scan(root: Path) -> list[dict]:
             continue
         src_path = scripts.get(Path(sf).name)
         if src_path is None:
+            # A non-Python producer that EXISTS is not a missing script; this
+            # tool simply cannot read it. See _find_non_py_producer.
+            if _find_non_py_producer(root, Path(sf).name) is not None:
+                out.append({"witness": w.relative_to(root).as_posix(),
+                            "scriptFile": sf, "verdict": "UNCONFIRMED",
+                            "note": "non-Python producer found in tree; "
+                                    "not statically analysable by this audit"})
+                continue
             out.append({"witness": w.relative_to(root).as_posix(), "scriptFile": sf,
                         "verdict": "SCRIPT_MISSING"})
             continue

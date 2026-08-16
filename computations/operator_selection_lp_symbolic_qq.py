@@ -226,12 +226,6 @@ class R:
             return pstr(self.n)
         return f"({pstr(self.n)})/({pstr(self.d)})"
 
-    def evalf(self, x):
-        """Float value. Reporting only — never a decision procedure."""
-        num = sum(float(c) * x ** i for i, c in enumerate(self.n))
-        den = sum(float(c) * x ** i for i, c in enumerate(self.d))
-        return num / den
-
 
 def _co(o):
     return o if isinstance(o, R) else R.const(o)
