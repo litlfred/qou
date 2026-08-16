@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T01:49:31Z
-updated_at: 2026-08-16T02:48:35Z
+updated_at: 2026-08-16T10:57:34Z
 ---
 
 ## Triage answer: NOT broken. Slow — and hiding something much worse.
@@ -199,3 +199,179 @@ makes it. The speed regression is a separate question — whether an 11.5x cost
 on 31 call sites is the accepted price of the braid-word precision fix is also
 not mine to decide, but it should be decided knowingly rather than by nobody
 noticing for eight days.
+
+
+---
+
+# Finding 3 RESOLVED: convention C -> D, owner-ruled, and already queued
+
+Owner called it: this is the trace convention. Confirmed by A/B, not inferred.
+
+`33a6c7aa4` (2026-08-09) *"excise convention C from the binding channel — the
+trace is now D everywhere"*, step 3 of 3 of the owner ruling:
+
+    closed_form_tau_M::markov_z    1/(sqrt q + 1/sqrt q)  ->  q^3/(q^2+1)
+    wedderburn_jones_markov::y_lambda_at    C weights -> D (SU(2) quantum dims)
+
+Reverting **only** those two files to `33a6c7aa4^` and recomputing the symbolic
+channel directly (no witness write):
+
+           markov_z(q0)      D        T      3He      4He      7Li      16O
+    D  (now)   0.6126880   2.0715   5.5149   3.3964   6.8398  15.0515  35.4496
+    C  (pre)   0.4993203   3.0168   7.6948   5.1078   9.7858  21.2329  50.4001
+    JULY witness            3.5423   8.4732   absent   absent  23.0623  54.6043
+
+The D column reproduces today's regenerated witness **exactly**. So C->D is the
+dominant cause and it is settled.
+
+### It is not the ONLY cause — a residual remains
+
+Convention C does not restore July: D is 3.0168 vs July's 3.5423 (~17%), 16O is
+50.40 vs 54.60 (~8%). Non-constant, so a second real change. It is **not** in
+`closed_form_tau_M.py`, `wedderburn_jones_markov.py` or `binding_canonical.py`
+— reverting all three together to `d156e8d50` gives the same C column. Since
+`d156e8d50` is 2026-08-02 and the witness is 2026-07-07, the residual lives in
+the Jul 7 -> Aug 2 gap in some other file. Unattributed, and smaller than the
+convention effect.
+
+(The July witness also has **no 3He and no 4He rows** at all — bean qou-48is.
+The old table was structurally different too, not just numerically.)
+
+### The degradation was known and recorded AT THE TIME
+
+`markov_z`'s own docstring says it outright:
+
+> "NOT decided by which value matches experiment. For the record it does NOT
+> flatter the binding table: mean |err| over {2H,3H,3He,4He,6Li,7Li} moves
+> 37.39% -> 43.85%. It does fix 2H (+74.85% -> +27.36%)"
+
+My independent measurement over 61 measured rows — median |B_err| 57.6% ->
+72.1%, deuteron +59.2% -> -6.9%, 60 of 61 rows worse — is the same phenomenon
+on a wider row set. Nothing here is a surprise to the ruling.
+
+The selection is **forced**, not fitted: `lem:feynman-eigenbasis-decomposition`
+puts the row cap ell(lambda) <= 2 in the mass channel's own decomposition, and
+`markovWeights_eq_jones_of_threeRow_eq_zero` (sorry-free) then makes the
+faithful normalised Markov trace unique and equal to q^3/(q^2+1).
+
+## CORRECTION to what I filed earlier
+
+I wrote "nothing catches this". **Wrong** — it was caught, queued, and simply
+not done:
+
+- `33a6c7aa4`'s own message: *"96 witnesses still need regenerating; that is
+  the next step, not done here."*
+- `.work/convention-d-blast-radius.json` lists `mass_table_comprehensive.py` as
+  **producer #93 of 146**, reading `y-lambda-mpfr-witness.json` and
+  `y-lambda-wenzl-bridge-symbolic-witness.json`, writing this witness.
+
+So this is a **known item on an existing regeneration queue** (qou-c6xo wave-4
+sweep, qou-lt8x blast-radius gap), not an undetected regression. What is new
+here is only the measurement of how far this particular one moved.
+
+Worth flagging to qou-c6xo: that sweep ran `--timeout 900`, and this producer
+now takes **657 s**. It is inside the timeout but no longer comfortably, and
+the cause is the 11.5x above — the two findings interact.
+
+## "Are other masses that bad?" — NO. Masses are fine; this is one crude channel
+
+The 70% figure is the **symbolic binding** column only. Everything else:
+
+    m_p, m_n in THIS SAME TABLE      938.272089 / 939.565423 vs CODATA
+                                     938.27208943 / 939.56542194   -> ~ppb
+    canonical-mass-table-extended    D +1.09%, T -0.156%, 3He -2.97%, 4He +5.87%
+    this table, MASS err% (symbolic) 0.53%  -> 0.66%
+    this table, MASS err% (q-CLT)    UNCHANGED — bit-identical, 0 of 63 rows moved
+    this table, BINDING err% (sym)   57.6% -> 72.1%     <- the only 70% anywhere
+
+The nucleon masses are at ppb *inside this very witness*. The q-CLT mass column
+did not move at all. The convention change touched exactly one channel: the
+symbolic binding `B = -alpha * ln|tau_M|` with `alpha = m_e * 8 * G`, which is a
+much cruder object than the canonical binding chain.
+
+So "masses were improving" is correct and untouched by any of this.
+
+
+---
+
+# The 11.5x: mechanism, and the remedy options
+
+## Mechanism
+
+`pyhecke.atom.atom_per_generator_volumes` builds the atom's braid word and sums
+per-generator Wedderburn volumes. Before `efcaf79ed` the braid word and
+`pyhecke.gram.h` were Python floats, so that inner arithmetic ran as C doubles
+at ~ns/op. After, they are mpf, so it runs in Python at ~us/op — and because
+some operands stayed float, **every operation also pays a conversion**:
+
+    per 400 rows            per row
+    2,724,573  __mul__      ~6,800     mpmath multiplications
+    1,753,032  convert
+    1,126,208  from_float   ~2,800     float -> mpf conversions
+
+80% of total runtime (20.6 s of 25.7 s over 400 rows). Confirmed by swapping
+only that one file: 14,972 rows in <150 s at `efcaf79ed^`, 5,615 at HEAD.
+
+**It is not precision.** dps 18 vs 70 is a 1.6% difference; mpmath 1.3.0 vs
+1.4.1 is 1.16x. It is the op COUNT and the per-op Python overhead.
+
+## The complication that should drive the decision
+
+`atom_per_generator_volumes` carries a **KNOWN BUG banner** in its own
+docstring: it uses hardcoded H_3 Wedderburn weights regardless of atom size,
+so for every A > 1 atom the weights are systematically wrong
+(docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md). The canonical
+replacement `mass_at_3A_proper.per_generator_V_hat_3A` exists; the migration is
+queued and not done. That is the DeprecationWarning this producer emits ~15,000
+times per run.
+
+So we are now paying an 11.5x precision premium to compute a quantity that is
+already known to be wrong for every composite atom. Whatever is chosen below,
+that pairing is the thing to look at first.
+
+## Options
+
+**A. Accept.** The precision fix is correct and the affected producers are
+diagnostics. Cost: 31 call sites got ~11.5x slower, and the qou-c6xo wave-4
+sweep's `--timeout 900` no longer has comfortable headroom (this producer:
+657 s). Zero work, but the sweep gets fragile.
+
+**B. Hoist the constants (free win, no value change).** 2,800 `from_float`
+calls per row means float and mpf operands are mixed inside the loop. Lifting
+the loop-invariant constants to mpf once at module scope removes the conversion
+without changing a single value. Bounded by the profile: `from_float` +
+`convert` are ~7.5 s of 25.7 s, so the ceiling is roughly 1.4x. Cheap, safe,
+and it does not need a ruling — but it does not get the 11.5x back.
+
+**C. Memoize.** 14,972 calls with only (Z, N) varying. If the per-generator
+volumes depend on a coarser key than (Z, N) — braid shape, crossing count, A —
+the cache collapses most of the calls. **Unmeasured**: I have not checked how
+large the distinct key space actually is, and if it is ~14,972 this buys
+nothing.
+
+**D. A declared float64 tier (my recommendation for the scanning consumers).**
+Add `allow_float64=True`-style opt-in so a consumer that is scanning 14,972
+nuclei at 0.5% accuracy can take the f64 path, while the precision consumers
+keep mpf. This is **already the idiom in this file** — `reject_float64_q` has
+exactly that escape, and the raw-float64 audit already honours a declared
+`precision_tier='float64-integrator'` carve-out. The NO-FLOAT64 directive
+exists to stop *laundering* f64 as high precision; a declared tier is the
+sanctioned opposite of laundering. Recovers the full 11.5x for the consumers
+that genuinely do not need 50 dps.
+
+**E. Vectorize with numpy.** Effectively blocked — the numpy/mpmath dtype-leak
+gate exists because an mpf in a numpy array demotes it to dtype=object and
+leaves BLAS (bean qou-5qwb, measured at ~4000x). Only viable after dropping to
+f64, which is option D.
+
+## Recommendation
+
+**D for the scanning consumers, plus B as a free win**, and measure C before
+building it. Not A alone: the sweep-timeout headroom is real and this producer
+already sits at 657 s of a 900 s budget.
+
+But the prior question is whether `atom_per_generator_volumes` should be on the
+critical path at all, given its own H_3-vs-H_{3A} bug banner. If the
+`mass_at_3A_proper` migration is going to happen, tuning the deprecated
+function first would be wasted work — that ordering is an owner call, which is
+why this is filed rather than fixed.
