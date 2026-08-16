@@ -39,6 +39,28 @@ to use the same rule; only a run passing all four is a transport.
 This covers the loop passes' far-commutations too, not just the blocks, so it
 says something about the whole chain rather than the part being built next.
 
+## The block's level structure — the "nested double loop" also overstates it
+
+Measured over all 20 pairs `a = 2 … 6`, `b = a … a+3`, the levels are:
+
+    b > a:   `a` levels; level `k` (high letter `j₁+k`) passes
+             `min(b−a−1+k, b−a+2)` letters — **exactly two** short levels,
+             every other level at the cap.
+    b = a:   `a−1` levels; level `k` passes `min(k, 2)` — **one** short level,
+             the rest at the cap.
+
+So the outer structure is not a genuinely nested loop with a growing inner run:
+it is a *fixed* number of irregular levels (two, or one on the diagonal)
+followed by a **uniform** loop whose every pass transports one letter past the
+same run `descWord (j₁+1) j₂`. That is the single-index shape §4af's loop
+already has, so the outer induction should be the same kind of object, not a
+new one — which is a materially smaller piece of Lean than "nested double
+loop" suggests.
+
+The diagonal `b = a` being its own case is the same coincidence that runs
+through this arc: it is where the two `B₁₀` markers of the prefix carry the
+same bottom.
+
 Emits `hecke-block-transport-shape.witness.json`. Bean qou-auq3.
 """
 from __future__ import annotations
@@ -195,6 +217,32 @@ def main():
                     "transport_shape_holds": s_ok,
                 })
 
+    # --- the block's level structure, which decides the outer induction -------
+    lvl_rows, lvl_bad = [], 0
+    for a in range(2, 7):
+        for b in range(a, a + 4):
+            n, i = a + b + 3, a + b + 1
+            if i >= n or i - b < 0:
+                continue
+            retune(n)
+            steps = chain(i, a, b)
+            pre, blk = a * a + a + 5, a * b - a * a + 2 * a - 3
+            runs = [r for r in far_runs(steps) if pre <= r[0] < pre + blk]
+            got = [(i - x, len(run)) for (_, x, run) in runs]
+            cap = b - a + 2
+            if b > a:
+                pred = [(a - k, min(b - a - 1 + k, cap)) for k in range(1, a + 1)]
+            else:
+                pred = [(a - 1 - k, min(k, cap)) for k in range(1, a)]
+            ok = got == pred and sum(L for _, L in got) == blk
+            lvl_bad += not ok
+            lvl_rows.append({
+                "a": a, "b": b, "levels": len(got), "cap": cap,
+                "short_levels": sum(1 for _, L in got if L < cap),
+                "levels_high_and_length": [list(t) for t in got],
+                "structure_holds": ok,
+            })
+
     w = WitnessBuilder("hecke-block-transport-shape", engine="sympy",
                        start_time=started)
     w.set_description(
@@ -215,8 +263,20 @@ def main():
                     computed=str(bad_far), expected="0")
     w.add_assertion("runs_whose_net_effect_is_not_the_transport_shape",
                     computed=str(bad_shape), expected="0")
+    w.add_assertion("blocks_whose_level_structure_does_not_match",
+                    computed=str(lvl_bad), expected="0")
+    w.add_parameter(
+        "block_levels_off_diagonal",
+        "b > a: a levels, level k (high = j1+k) passes min(b-a-1+k, b-a+2) "
+        "letters -- exactly 2 short levels, all the rest at the cap")
+    w.add_parameter(
+        "block_levels_on_diagonal",
+        "b = a: a-1 levels, level k passes min(k, 2) letters -- 1 short level, "
+        "the rest at the cap")
     w.add_data("runs_checked", len(rows))
     w.add_data("runs", rows)
+    w.add_data("blocks_checked", len(lvl_rows))
+    w.add_data("block_levels", lvl_rows)
     w.add_caveat(
         "Measured over a = 2..6 and b in {a, a+1, a+3} only, and against the "
         "reduction the engine's deg-lex strategy happens to produce. A Lean "
@@ -244,9 +304,15 @@ def main():
                       and r["far_hypothesis_holds"] and r["transport_shape_holds"]) else "  <-- FAILS"
         print(f" {r['a']:>2}  {r['b']:>2}  {r['first_step']:>5} {r['length']:>4}"
               f"  {r['high_letter_rel_i']:>4}  {r['passed_rel_i']}{flag}")
-    total_bad = bad_position + bad_letter + bad_far + bad_shape
+    print("\nblock levels (high letter rel i, run length):")
+    for r in lvl_rows:
+        print(f"  a={r['a']} b={r['b']}: {r['levels_high_and_length']}"
+              f"   cap={r['cap']} short={r['short_levels']}"
+              f"   {'ok' if r['structure_holds'] else 'FAILS'}")
+    total_bad = bad_position + bad_letter + bad_far + bad_shape + lvl_bad
     print(f"\nruns: {len(rows)}   failing: position {bad_position}, "
           f"letter {bad_letter}, far {bad_far}, shape {bad_shape}")
+    print(f"blocks: {len(lvl_rows)}   level-structure failing: {lvl_bad}")
     print(f"witness -> {path}")
     return 0 if not total_bad else 1
 

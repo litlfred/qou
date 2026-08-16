@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-16T13:50:13.149172+00:00",
-  "commitSha": "b9e2dd564593ad36ae9f1ed10e54a11b87dd2823",
+  "computedAt": "2026-08-16T14:01:47.284071+00:00",
+  "commitSha": "d7af446ec3ca95ba9fda8ad4acb87ceae43a0034",
   "assertions": [
     {
       "name": "runs_whose_position_does_not_advance_by_one",
@@ -27,14 +27,20 @@
       "computed": "0",
       "expected": "0",
       "passed": true
+    },
+    {
+      "name": "blocks_whose_level_structure_does_not_match",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 169,
+  "durationMs": 362,
   "computation": "hecke-block-transport-shape",
   "scriptFile": "hecke_block_transport_shape.py",
-  "scriptHash": "595d0c9029dd",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b9040d94f7c6",
+  "scriptCommitSha": "8e5152c2cd464189b2cbbddff7fd6a36364b8393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,7 +56,9 @@
   "description": "Every maximal run of consecutive far-commutations sharing a high letter, in the Bokut-Shiao corner's a <= b chain, is a RIGHT transport: the high letter sits at the rewrite position throughout, the position advances by exactly one per step, every letter passed is at least two below it, and the run's net effect is a ++ (x :: (w ++ b)) -> a ++ (w ++ (x :: b)). That is farComm_transport_right, NOT farComm_transport_left.",
   "parameters": {
     "lean_lemma": "UGB.GrobnerShirshov.Hecke.farComm_transport_right",
-    "transport_direction": "rightwards: high letter moves right"
+    "transport_direction": "rightwards: high letter moves right",
+    "block_levels_off_diagonal": "b > a: a levels, level k (high = j1+k) passes min(b-a-1+k, b-a+2) letters -- exactly 2 short levels, all the rest at the cap",
+    "block_levels_on_diagonal": "b = a: a-1 levels, level k passes min(k, 2) letters -- 1 short level, the rest at the cap"
   },
   "data": {
     "runs_checked": 275,
@@ -4714,6 +4722,509 @@
         "high_letter_at_position": true,
         "far_hypothesis_holds": true,
         "transport_shape_holds": true
+      }
+    ],
+    "blocks_checked": 20,
+    "block_levels": [
+      {
+        "a": 2,
+        "b": 2,
+        "levels": 1,
+        "cap": 2,
+        "short_levels": 1,
+        "levels_high_and_length": [
+          [
+            0,
+            1
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 2,
+        "b": 3,
+        "levels": 2,
+        "cap": 3,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 2,
+        "b": 4,
+        "levels": 2,
+        "cap": 4,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 2,
+        "b": 5,
+        "levels": 2,
+        "cap": 5,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "levels": 2,
+        "cap": 2,
+        "short_levels": 1,
+        "levels_high_and_length": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 3,
+        "b": 4,
+        "levels": 3,
+        "cap": 3,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 3,
+        "b": 5,
+        "levels": 3,
+        "cap": 4,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "levels": 3,
+        "cap": 5,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 4,
+        "b": 4,
+        "levels": 3,
+        "cap": 2,
+        "short_levels": 1,
+        "levels_high_and_length": [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 4,
+        "b": 5,
+        "levels": 4,
+        "cap": 3,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 4,
+        "b": 6,
+        "levels": 4,
+        "cap": 4,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 4,
+        "b": 7,
+        "levels": 4,
+        "cap": 5,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 5,
+        "b": 5,
+        "levels": 4,
+        "cap": 2,
+        "short_levels": 1,
+        "levels_high_and_length": [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 5,
+        "b": 6,
+        "levels": 5,
+        "cap": 3,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 5,
+        "b": 7,
+        "levels": 5,
+        "cap": 4,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 5,
+        "b": 8,
+        "levels": 5,
+        "cap": 5,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            4,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "levels": 5,
+        "cap": 2,
+        "short_levels": 1,
+        "levels_high_and_length": [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 6,
+        "b": 7,
+        "levels": 6,
+        "cap": 3,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 6,
+        "b": 8,
+        "levels": 6,
+        "cap": 4,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            5,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "structure_holds": true
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "levels": 6,
+        "cap": 5,
+        "short_levels": 2,
+        "levels_high_and_length": [
+          [
+            5,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "structure_holds": true
       }
     ]
   },
