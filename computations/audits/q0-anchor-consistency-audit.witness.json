@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T23:24:02.783319+00:00",
-  "commitSha": "a58b7e61ad552e9093cd0191575d937e9f17d23b",
+  "computedAt": "2026-08-16T03:22:10.618523+00:00",
+  "commitSha": "1e84788ca2fd04fb151e12516e91698136cc6a0e",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
@@ -37,11 +37,11 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 649,
-      "Q0_AMBIGUOUS": 16,
+      "Q0_OK": 651,
+      "Q0_AMBIGUOUS": 15,
       "Q0_ANCHOR_MISSING": 1891,
       "Q0_VALUE_MISSING": 1,
-      "Q0_AUDIT_EXEMPT": 70,
+      "Q0_AUDIT_EXEMPT": 71,
       "Q0_PARSE_ERROR": 1,
       "Q0_FLIP": 0
     },
@@ -1045,6 +1045,14 @@
           "detail": ""
         },
         {
+          "witness": "chi-at-q0-matrix-m-helium-3.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-at-q0-matrix-m-helium-4.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-at-q0-matrix-m-tritium.witness.json",
           "detail": ""
         },
@@ -1073,15 +1081,11 @@
           "detail": ""
         },
         {
+          "witness": "chi-deuteron-h6-at-q0-90dps-matrix-m.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-deuteron-h6.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-dineutron-h6-at-q0-50dps.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-diproton-h6-at-q0-50dps.witness.json",
           "detail": ""
         },
         {
@@ -1133,15 +1137,7 @@
           "detail": ""
         },
         {
-          "witness": "chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "chi-numpy-dtype-fix-benchmark.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-proton-h3-at-q0-50dps-matrix-m.witness.json",
           "detail": ""
         },
         {
@@ -1150,6 +1146,10 @@
         },
         {
           "witness": "chi-tritium-free-h9-at-qinv-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
           "detail": ""
         },
         {
@@ -8403,6 +8403,14 @@
           "detail": ""
         },
         {
+          "witness": "chi-dineutron-h6-at-q0-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-diproton-h6-at-q0-50dps.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
           "detail": ""
         },
@@ -10241,10 +10249,6 @@
           "detail": ""
         },
         {
-          "witness": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "deuteron-binding-interface-closure.witness.json",
           "detail": ""
         },
@@ -10392,6 +10396,10 @@
         },
         {
           "witness": "rho-k-proton-substrate-audit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "silent-self-check-audit.witness.json",
           "detail": ""
         },
         {

@@ -80,7 +80,14 @@ NUCLEI = {
 
 
 def strong(bonds, fmap):
-    return float(E0 * mp.fsum(n * mp.log(1 / fmap[b]) for b, n in bonds.items()))
+    # Stays mpf.  This used to `float(...)` the result, which cost the whole
+    # 50-dps computation and then handed a float64 back into mpf arithmetic
+    # (`b1 - ec`, with `coulomb_energy_mev` returning mpf).  The product is an
+    # mpf carrying nothing but a float64's exact binary expansion, and the
+    # witness serializes it at 50 dps — 2.833754824119470328014358528889715…,
+    # of which only the first 17 digits are a measurement.  That is the
+    # float64-padding defect, caught by `witness_float64_padding_audit.py`.
+    return E0 * mp.fsum(n * mp.log(1 / fmap[b]) for b, n in bonds.items())
 
 
 def main() -> int:
@@ -91,7 +98,7 @@ def main() -> int:
           f"f_nn={float(f_nn):.4f}  (isoscalar = f_pn)\n")
 
     def row(nm, Z, A, bonds):
-        ame = float(_ame_binding_mev(Z, A))
+        ame = _ame_binding_mev(Z, A)   # mpf from the AME string — keep it
         ec = coulomb_energy_mev(Z, A)
         b1 = strong(bonds, broken)                 # broken, no Coulomb
         b2 = b1 - ec                               # broken + Coulomb (double-count)
@@ -145,7 +152,7 @@ def main() -> int:
                 "(2,1)/SU(4) mechanism, still on the charge-breaking kernel) must be re-run "
                 "charge-symmetric. Verified split win, not a closure. Scope-(a), no wiring."
                 % (split('symm_c'), split('broken'), split('broken_c'), ame_split))
-            wb.add_data("E0_MeV", float(E0))
+            wb.add_data("E0_MeV", E0)      # mpf: m_e/(q(q−1)), not a float64
             wb.add_data("nuclei", {nm: R[nm] for nm in NUCLEI})
             wb.add_data("mirror_split", {"AME": ame_split, "broken": split('broken'),
                                          "broken_plus_coulomb": split('broken_c'),

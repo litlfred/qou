@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T02:25:11.730631+00:00",
-  "commitSha": "bf08aa3ecd67bba125b8f5ae5a4fd00201da560c",
+  "computedAt": "2026-08-16T03:36:48.131895+00:00",
+  "commitSha": "1e84788ca2fd04fb151e12516e91698136cc6a0e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 154,
+  "durationMs": 120,
   "computation": "chi-at-q0-matrix-m-deuteron",
   "scriptFile": "chi_at_q0_via_matrix_m_mpfr.py",
-  "scriptHash": "789b0c5644f9",
-  "scriptCommitSha": "4e126c6f41e3b9645abe8c4bd369c6256401da48",
+  "scriptHash": "b7dee1a17d13",
+  "scriptCommitSha": "1ac0dadaa4cc2541d6423e7e273d89e96f1a1e69",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,8 +38,8 @@
     "N": 1,
     "n_strands": 6,
     "n_partitions": 11,
-    "tr_M_at_q0": "2.1754468169362366623539329747085993345690863092213",
-    "compute_time_sec": 0.05,
-    "cache_path": "/home/user/qou/computations/chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json"
+    "tr_M_at_q0": "2.17544681693623666235393297470859933456908630922125157789138352826797140849152506372320243",
+    "compute_time_sec": "0.05",
+    "cache_path": "/home/user/qou/computations/chi-deuteron-h6-at-q0-90dps-matrix-m.witness.json"
   }
 }

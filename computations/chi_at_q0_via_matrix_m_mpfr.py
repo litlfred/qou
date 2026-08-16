@@ -258,7 +258,12 @@ def build_chi_cache_at_q0_matrix_m(
                 "y_lambda": "skipped-max-dim",
                 "chi_lambda": "skipped-max-dim",
                 "contribution": "0",
-                "compute_time_sec": 0.0,
+                # Wall clock, not a measurement.  Serialized as a string for
+                # the same reason `chi_at_q0_via_hoefsmit_mpfr.py` does it:
+                # it keeps raw float64 out of the witness (the raw-float64
+                # ratchet counts every one) and stops per-run timing jitter
+                # from rewriting the file on an otherwise identical rerun.
+                "compute_time_sec": "0.000",
             })
             continue
         # y_lam check BEFORE the expensive block-table precompute and
@@ -283,7 +288,7 @@ def build_chi_cache_at_q0_matrix_m(
             "y_lambda": str(y_lam),
             "chi_lambda": str(chi),
             "contribution": str(contrib),
-            "compute_time_sec": round(time.time() - t_part, 3),
+            "compute_time_sec": f"{time.time() - t_part:.3f}",
         }
         per_partition.append(entry)
 
@@ -326,7 +331,7 @@ def build_chi_cache_at_q0_matrix_m(
         _save_partial(out_path,
                       _payload(resume_partial=len(per_partition) < len(shapes)))
         print(f"    λ={shape_t!s:25} dim={dim:>3}  "
-              f"+{entry['compute_time_sec']:>6.3f}s  "
+              f"+{entry['compute_time_sec']:>6}s  "
               f"({len(per_partition)}/{len(shapes)})", flush=True)
 
     elapsed = time.time() - t0
@@ -354,7 +359,7 @@ def build_chi_cache_at_q0_matrix_m(
         "n_skipped_max_dim": n_skipped,
         "tr_M_partial": n_skipped > 0,
         "partial": False,
-        "compute_time_sec": round(elapsed, 2),
+        "compute_time_sec": f"{elapsed:.2f}",
         "tr_M_at_q0": str(running_total),
         "by_partition": per_partition,
     }
@@ -368,7 +373,7 @@ def build_chi_cache_at_q0_matrix_m(
         "n_skipped_max_dim": n_skipped,
         "tr_M_partial": n_skipped > 0,
         "tr_M_at_q0": str(running_total),
-        "compute_time_sec": round(elapsed, 2),
+        "compute_time_sec": f"{elapsed:.2f}",
         "out_path": str(out_path),
     }
 
@@ -486,7 +491,7 @@ def main() -> int:
         tr_m_short = record["tr_M_at_q0"][:22]
         print(f"  {atom_name:>10}  {record['n_strands']:>3}  "
               f"{n_parts:>10}  {tr_m_short:>22}  "
-              f"{record['compute_time_sec']:>9.2f}s")
+              f"{record['compute_time_sec']:>9}s")
         last_record = record
 
         # Cross-validate against Rust chi_q_via_gp at q_0 (the
