@@ -104,11 +104,23 @@ GATES=(
   # sigma-all-evaluator — both named scripts contain "witness" zero times, so
   # they provably cannot write them) and 5 SCRIPT_MISSING, of which at least 2
   # are false positives naming legitimate non-Python producers (a .lean and
-  # joint_tower_sdp.rs). Advisory rather than blocking because a gate that is
-  # red on arrival gets skipped, which is how a checker goes quiet. Flip to
-  # blocking once the 2 NOT_A_PRODUCER are drained and the .lean/.rs
-  # false-positive class is handled. Bean qou-w9s3.
-  "witness scriptFile provenance (advisory)|computations/witness_provenance_audit.py|--strict|yes|no"
+  # joint_tower_sdp.rs). It ran advisory rather than blocking because a gate
+  # that is red on arrival gets skipped, which is how a checker goes quiet.
+  #
+  # BLOCKING as of 2026-08-16 — the stated flip condition is met, all seven
+  # drained (bean qou-w9s3, then qou-zdz5):
+  #   - .lean/.rs false-positive class handled: a non-Python producer found in
+  #     the tree now scores UNCONFIRMED, not SCRIPT_MISSING. 5 -> 3.
+  #   - the 3 real SCRIPT_MISSING reconstructed. Two producers existed on
+  #     branches that never merged (one an exact scriptHash match); the third
+  #     was never committed at all and rebuilt from its recorded values, which
+  #     it reproduces to every digit. 3 -> 0.
+  #   - both NOT_A_PRODUCER wired to emit the witness naming them
+  #     (psl27 in #5179, sigma-all here). 2 -> 0.
+  # --strict exits 0 and the self-test is 27/27. UNCONFIRMED (31) is not a
+  # failure class: it means the audit cannot statically prove the write, which
+  # is the honest verdict for a non-Python producer or a dynamic output path.
+  "witness scriptFile provenance|computations/witness_provenance_audit.py|--strict|yes|yes"
   "no-free-parameter cert|computations/no_free_parameter_certificate.py|--strict|yes|no"
 )
 

@@ -485,7 +485,12 @@ if __name__ == "__main__":
     # Pinning both sides here makes the test survive every future re-pin. The
     # witness IS emitted at the live proton q_0, per the standing
     # experimental-anchor directive -- the two anchors are deliberate.
-    _SELFTEST_Q0 = mp.mpf("1.1099785955541805752815940796095093779932822799587")
+    # Kept as a STRING, not an mpf. `mp.mpf(<49-digit literal>)` here would be
+    # built at the ambient dps (15 by default) and truncated at construction --
+    # the value would already be wrong before it is used. `sigma_all_closed`
+    # does its own `mp.mpf(q)` inside `mp.workdps(dps)`, so handing it the
+    # string defers the conversion to full working precision.
+    _SELFTEST_Q0 = "1.1099785955541805752815940796095093779932822799587"
 
     expected = {
         1:  0.5295037320168715,
@@ -497,7 +502,7 @@ if __name__ == "__main__":
     }
 
     print(f"Σ_all closed-form evaluator self-test at the table's q_0 = "
-          f"{mp.nstr(_SELFTEST_Q0, 20)}")
+          f"{_SELFTEST_Q0}")
     print(f"{'A':>3} {'closed-form':>22} {'symbolic-table':>22} {'rel err':>12}")
     print("-" * 64)
     max_rel = 0.0
