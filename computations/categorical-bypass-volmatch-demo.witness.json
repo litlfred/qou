@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T23:37:51.082028+00:00",
-  "commitSha": "b393679b5ba10c0aa16a8d421800e30e52a8019d",
+  "computedAt": "2026-08-16T10:30:08.791272+00:00",
+  "commitSha": "4a1714ce0c7be32bd4a32d619f187b1f32fdcc7f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 13,
   "computation": "categorical-bypass-volmatch-demo",
   "scriptFile": "categorical_bypass_volmatch_demo.py",
-  "scriptHash": "b07e186820ec",
-  "scriptCommitSha": "67b2d3d8df8dfd813fd64527bb9c995ffe2ced3e",
+  "scriptHash": "4d736c59717b",
+  "scriptCommitSha": "fa57dd560698e630af7d95748fe85b3e2ae3cc79",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,7 +21,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
@@ -29,7 +29,7 @@
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
     "q_0": 1.1099785827513808,
-    "m_e_MeV": 0.51099895069
+    "m_e_MeV": "0.51099895069"
   },
   "data": {
     "rows": [
@@ -40,11 +40,11 @@
         "n_native": 2,
         "rho": 1,
         "tr_M_direct": 0.8476155316216548,
-        "B_pred_direct_MeV": 0.4331306472472121,
+        "B_pred_direct_MeV": "0.4331306472472121252316608852606094615111942403018474578857421875",
         "B_volmatch_MeV": null,
         "B_AME_MeV": "1.0",
         "ratio_direct_to_volmatch": null,
-        "ratio_direct_to_AME": "0.433130647247212119399506491390638984739780426025390625",
+        "ratio_direct_to_AME": "0.43313064724721213",
         "wedderburn_terms": [
           {
             "partition": [
@@ -75,11 +75,11 @@
         "n_native": 3,
         "rho": 1,
         "tr_M_direct": 0.40923483493978274,
-        "B_pred_direct_MeV": 0.20911857124002434,
+        "B_pred_direct_MeV": "0.209118571240024331209076198234697585576213896274566650390625",
         "B_volmatch_MeV": "2.2488207979013089793867766275070607662200927734375",
-        "B_AME_MeV": "2.2245661999999999380861481768079102039337158203125",
-        "ratio_direct_to_volmatch": "0.09299032249932155183986788148606909931492544911138592978632483077225704",
-        "ratio_direct_to_AME": "0.09400420236539795608360923627958758669961840798016038487166292880435009",
+        "B_AME_MeV": "2.2245662",
+        "ratio_direct_to_volmatch": "0.092990322499321549",
+        "ratio_direct_to_AME": "0.094004202365397951",
         "wedderburn_terms": [
           {
             "partition": [
@@ -121,11 +121,11 @@
         "n_native": 5,
         "rho": 2,
         "tr_M_direct": 0.035297917348310774,
-        "B_pred_direct_MeV": 0.03607439745305831,
+        "B_pred_direct_MeV": "0.0360743974530583056743580620817635207231433014385402202606201171875",
         "B_volmatch_MeV": "8.46859839796813821730813259591741370968520641326904296875",
-        "B_AME_MeV": "8.4817961999999997857457856298424303531646728515625",
-        "ratio_direct_to_volmatch": "0.00425978370419756815499576719812737228974617066002901372477242816119816",
-        "ratio_direct_to_AME": "0.004253155416898405099789115581170070564724993167874300882405338638320913",
+        "B_AME_MeV": "8.4817962",
+        "ratio_direct_to_volmatch": "0.004259783704197568",
+        "ratio_direct_to_AME": "0.0042531554168984048",
         "wedderburn_terms": [
           {
             "partition": [
@@ -213,11 +213,11 @@
         "n_native": 3,
         "rho": 2,
         "tr_M_direct": 0.9985760982172549,
-        "B_pred_direct_MeV": 1.0205426767462633,
+        "B_pred_direct_MeV": "1.02054267674626327103288668585179266301565803587436676025390625",
         "B_volmatch_MeV": "7.488919319883220649523483346950944430489904861364072529740693311161264",
-        "B_AME_MeV": "7.71804132000000020497054720181040465831756591796875",
-        "ratio_direct_to_volmatch": "0.1362736909231620970345538527822530129574965083884646678413938672445369",
-        "ratio_direct_to_AME": "0.1322281955269790242270761787363561367064595276779637796767648739025814",
+        "B_AME_MeV": "7.71804132",
+        "ratio_direct_to_volmatch": "0.13627369092316209",
+        "ratio_direct_to_AME": "0.13222819552697902",
         "wedderburn_terms": [
           {
             "partition": [

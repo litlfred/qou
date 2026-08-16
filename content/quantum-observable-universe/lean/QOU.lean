@@ -884,6 +884,12 @@ import QOU.Mathlib.SchenstedPairingMap
 import QOU.Mathlib.SchenstedReverseRow
 -- RSK inverse, brick 2: the reverse cascade and its inversion law.
 import QOU.Mathlib.SchenstedReverseCascade
+-- RSK inverse, brick 3: word recovery from the tableau plus the row-index record.
+import QOU.Mathlib.SchenstedWordRecovery
+-- RSK inverse, brick 4: the recording tableau IS the row-index record.
+import QOU.Mathlib.SchenstedRecordingIndex
+-- RSK inverse, brick 5: reading the row index back off the recording tableau.
+import QOU.Mathlib.SchenstedReadback
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype

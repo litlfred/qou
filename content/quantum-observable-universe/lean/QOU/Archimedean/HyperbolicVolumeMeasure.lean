@@ -55,6 +55,17 @@
     makes the group act transitively and is not reachable from these two.  So
     the measure is **not** yet known invariant under all hyperbolic isometries.
     **No metric, no geodesics, no isometry group** is defined here at all.
+
+    **Cross-ref (T2 metric backfill).**  A genuine metric now DOES exist:
+    `QOU.Archimedean.HyperbolicMetric.dH` derives the hyperbolic *distance* as an
+    infimum of path lengths, and `HyperbolicIsometryInversion.dH_boundaryInversion`
+    proves the boundary INVERSION is a `dH`-isometry (the transitive generator).
+    This does NOT transfer to `hypVolume` for free -- the volume's invariance under
+    inversion is a separate change-of-variables computation on this measure, still
+    to be done -- but the isometry itself is no longer missing, only its action on
+    THIS measure.  (`dH`, the two isometries, and geodesics live in the
+    `EuclideanSpace ℝ (Fin 3)` carrier, which -- unlike this `Fin 3 → ℝ` -- carries
+    the inner product the metric needs.)
   * **No ideal tetrahedron** (H3), and **no `Vol = Λ-sum`** (H4 = `qou-idvt`
     T2).  In particular this file does NOT connect to
     `IdealTetrahedronVolumeConcavity.volChart`, which remains DEFINED as the

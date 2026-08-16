@@ -69,3 +69,80 @@ Also proved on the way: `rowInsert_eq_append_of_none` — a no-bump insertion is
 free — it is where the *largest* recording timestamp sits, and `SchenstedRecording`'s
 `insertWordRec_snd_content` (content is exactly `range |w|`, each timestamp once) is what makes
 "the largest" well-defined. Expect the work to be locating that cell, not the undoing.
+
+## Brick 3 DONE — word recovery
+
+`QOU/Mathlib/SchenstedWordRecovery.lean`, sorry-free (`propext`, `Classical.choice`,
+`Quot.sound`):
+
+- `rowIndices T w` — the row where each step appended its cell, recorded along the same fold
+  `insertWord` runs;
+- `uninsertSteps T is` — peel the steps of `is` off the final tableau;
+- **`uninsertSteps_foldl`** / **`uninsertSteps_insertWord`** — the inversion law:
+  `uninsertSteps (insertWord w) (rowIndices [] w) = ([], w)`;
+- `word_eq_of_insertWord_eq` — equal insertion tableau + equal index record ⇒ equal word.
+
+**The ordering trick that made it a one-liner induction.** `uninsertSteps T (i :: rest)` undoes
+`rest` — the *later* steps — before `i`. That keeps it a plain structural recursion on the
+**forward** index list, so the induction on `w` lines up with `insertWord`'s fold: the IH applies
+to the inner fold unchanged and brick 2 closes the outer step. Defining it over a reversed list
+instead would have forced an induction from the right; the file compiled first try because it
+does not.
+
+**So the `P` side of the RSK inverse is complete**, conditional on being handed the index list.
+
+**Next (brick 4): the recording tableau supplies `rowIndices`.** `Q(w)`'s cell holding timestamp
+`s` sits in the row that step `s` appended to — that is the definitional content of `insertRec`'s
+Q-branches. `SchenstedRecording.insertWordRec_snd_content` (content is exactly `range |w|`, each
+timestamp once) is what makes "the row holding `s`" a function. With that,
+`word_eq_of_insertWord_eq` upgrades to injectivity of `rskPair`, and the same machinery run
+forwards gives surjectivity.
+
+## Brick 4 DONE — the recording tableau IS the row-index record
+
+`QOU/Mathlib/SchenstedRecordingIndex.lean`, sorry-free (`propext`, `Quot.sound`):
+
+- `qAppend Q i s` — write timestamp `s` at the end of `Q`'s row `i`, with the same `headD`/`tail`
+  reading `insertRec` uses;
+- **`insertRec_snd_eq_qAppend`** — one step: `(insertRec P Q x s).2 = qAppend Q (newRowIndex P x) s`;
+- `qAppendSteps` + **`insertWordRecAux_snd_eq_qAppendSteps`** / `insertWordRec_snd_eq_qAppendSteps`
+  — the whole fold, and its form at the empty tableau.
+
+**The finding worth keeping:** the row `insertRec` writes the timestamp into is *literally*
+`newRowIndex P x`, the index brick 2 defined from `insert`'s own recursion. There are not two
+notions of "which row grew" needing reconciliation — the `Q`-branches of `insertRec` and the
+branches of `newRowIndex` are the same case split, so the identification is a rewrite, not an
+argument. Brick 3's index list was never side information.
+
+Consequence: brick 3's `word_eq_of_insertWord_eq` wanted equal `P` **and** equal index records;
+the index record is now a function of the construction of `Q`.
+
+**Next:** invert `qAppendSteps` — read `rowIndices` back off a given `Q`. This is where
+`SchenstedRecording`'s timestamp content (`insertWordRec_snd_content`: exactly `range |w|`, each
+once) finally earns its keep: it is what makes "the row holding `s`" well defined, so the read-back
+is a function rather than a search. After that, `rskPair` injectivity, then surjectivity, then the
+count.
+
+## Brick 5 DONE — the single-step read-back
+
+`QOU/Mathlib/SchenstedReadback.lean`, sorry-free (`propext`, `Quot.sound`), first-try compile:
+
+- `qRowOf Q t` — the index of the first row of `Q` holding `t`;
+- **`qRowOf_qAppend_self`** — a *fresh* timestamp lands in the row it was written to;
+- **`qRowOf_qAppend_of_ne`** — appending disturbs no other timestamp's row;
+- `qRowOf_eq_none` — absent everywhere ⇒ not located.
+
+**The freshness hypothesis is load-bearing, not bookkeeping.** `qRowOf` returns the *first* row
+containing `t`, so a pre-existing copy of `t` would shadow the append and the read-back would
+locate the wrong row. Freshness is what makes it a function rather than a search with ties.
+
+In the RSK setting freshness is supplied by `SchenstedRecording.insertWordRec_snd_content` — the
+recording content is exactly `range |w|` with each timestamp occurring **once**. That theorem has
+been sitting in the corpus with no consumer; this is what it was for. Worth noting because it is
+the second time in this epic that an apparently-idle earlier result turned out to be precisely the
+missing hypothesis (the first: brick 2's `NoEmptyRows`).
+
+**Next (brick 6):** thread the two lemmas along `qAppendSteps` under the freshness invariant
+(timestamps strictly increase, so every step is fresh for what came before) to recover the whole
+index list from `Q`. Then `rskPair` injectivity follows from brick 3's
+`word_eq_of_insertWord_eq`.
