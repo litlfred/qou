@@ -19,17 +19,21 @@ faces, and File A3 proves the resulting ideal tetrahedron equals the chimney.
 --   Euclidean planes (perpendicular to `∂H³`) and the Euclidean hemispheres
 --   centred on `∂H³`.  This file ADOPTS the concrete model to define the faces.
 --
--- **Status update (T2 metric backfill).**  The two adoptions this comment used to
---   lean on alongside — `HyperbolicVolume.hypVolume := dx dy dz / z³` and
---   `hypAngle` — are joined by a genuinely DERIVED distance `dH`
---   (`QOU.Archimedean.HyperbolicMetric`, an infimum of hyperbolic path lengths),
---   and the vertical-plane / hemisphere totally-geodesic property is now PROVED
---   sorry-free, conditional on a single named conjecture, in
---   `QOU.Archimedean.HyperbolicGeodesic` (`verticalPlaneFix_isTotallyGeodesic`,
---   `hemisphereFix_isTotallyGeodesic`), via the DERIVED boundary isometries whose
---   fixed sets these faces are.  What remains cited/open is now ONLY geodesic
---   existence + uniqueness in `H³` (`HypMinimizerUnique`, bean `qou-r111`); the
---   *concrete-model* definitions here still carry no `axiom` and no `sorry`.
+-- **Status update (T2 metric backfill, drained to the corpus faces).**  The two
+--   adoptions this comment used to lean on alongside — `HyperbolicVolume.hypVolume
+--   := dx dy dz / z³` and `hypAngle` — are joined by a genuinely DERIVED distance
+--   `dH` (`QOU.Archimedean.HyperbolicMetric`, an infimum of hyperbolic path
+--   lengths), and the vertical-plane / hemisphere totally-geodesic property is now
+--   PROVED sorry-free, conditional on a single named conjecture, for the CONCRETE
+--   corpus faces themselves — `verticalPlane n d` (any unit normal, any offset) and
+--   `hemisphere R` — in `QOU.Archimedean.TotallyGeodesicFaces`
+--   (`verticalPlane_isTotallyGeodesic`, `hemisphere_isTotallyGeodesic`), which feeds
+--   the DERIVED boundary isometries into `HyperbolicGeodesic.fixedSet_isTotallyGeodesic`.
+--   `verticalPlaneThrough b c` is such a vertical plane, so the geodesic-ness of the
+--   faces cut here is drained (modulo the one wall).  What remains cited/open is now
+--   ONLY geodesic existence + uniqueness in `H³` (`HypMinimizerUnique`, bean
+--   `qou-r111`); the *concrete-model* definitions here still carry no `axiom` and no
+--   `sorry`.
 
 ## What is defined here
 

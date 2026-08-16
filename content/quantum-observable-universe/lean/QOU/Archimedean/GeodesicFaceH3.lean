@@ -5,29 +5,39 @@ The totally-geodesic surfaces of the upper half-space model `H³` are exactly th
 **vertical planes** (perpendicular to `∂H³`) and the **hemispheres centred on
 `∂H³`** (Thurston, Ch. 2 §2.3).
 
-**Status update (T2 metric backfill).**  This classification is no longer taken
-wholesale as cited-not-proved.  `HyperbolicMetric` now DERIVES the hyperbolic
-distance `dH` (an infimum of path lengths), and `HyperbolicIsometryReflection` /
-`HyperbolicIsometryInversion` DERIVE the two boundary isometries whose fixed sets
-are these families.  `HyperbolicGeodesic.fixedSet_isTotallyGeodesic` then PROVES —
-sorry-free, conditional on a single named conjecture — that the vertical plane
-(`verticalPlaneFix`) and the hemisphere (`hemisphereFix`) are totally geodesic.
-The residual that genuinely remains cited/open is now ONLY **geodesic existence +
-uniqueness in `H³`** (the `HypMinimizerUnique` conjecture, bean `qou-r111`); the
-*exhaustiveness* half of the old citation ("these are the ONLY totally-geodesic
-surfaces") is not part of any downstream obligation and is dropped.
+**Status update (T2 metric backfill, drained to the corpus faces).**  This
+classification is no longer taken wholesale as cited-not-proved.  `HyperbolicMetric`
+now DERIVES the hyperbolic distance `dH` (an infimum of path lengths), and
+`HyperbolicIsometryReflection` / `HyperbolicIsometryInversion` DERIVE the two
+boundary isometries whose fixed sets are these families.
+`HyperbolicGeodesic.fixedSet_isTotallyGeodesic` PROVES — sorry-free, conditional on
+a single named conjecture — that the *fixed sets* of those isometries are totally
+geodesic, and `TotallyGeodesicFaces` then DRAINS this to **the concrete faces
+defined below**: `verticalPlane_isTotallyGeodesic` proves `IsTotallyGeodesic` for
+`verticalPlane n d` at ANY unit base normal `n` and ANY offset `d` (via a general
+Householder vertical-plane reflection, a `dH`-isometry), and
+`hemisphere_isTotallyGeodesic` proves it for `hemisphere R` (via the boundary
+inversion centred at the origin).  So the vertical-plane / hemisphere
+totally-geodesic property now holds for the EXACT faces the ideal tetrahedron
+intersects, not merely fixed-set variants.  The residual that genuinely remains
+cited/open is now ONLY **geodesic existence + uniqueness in `H³`** (the
+`HypMinimizerUnique` conjecture, bean `qou-r111`); the *exhaustiveness* half of the
+old citation ("these are the ONLY totally-geodesic surfaces") is not part of any
+downstream obligation and is dropped.
 
 This file defines the two families as concrete Euclidean subsets of `ℝ³` together
-with their Euclidean unit normals; the geodesic-ness *theorem* now lives in
-`HyperbolicGeodesic` (on the `EuclideanSpace ℝ (Fin 3)` carrier, as fixed sets of
-the derived isometries).
+with their Euclidean unit normals; the geodesic-ness *theorem* for these exact
+faces (transported to the `EuclideanSpace ℝ (Fin 3)` carrier by the
+coordinate-identity `EuclideanSpace.equiv`) lives in `TotallyGeodesicFaces`.
 
   -- Ref: [thurston1978] Ch. 2 §2.3 (the upper half-space model), p. 10: "a
   --   hyperbolic two-plane is a Euclidean sphere orthogonal to [the boundary]".
   --   Cf. [ratcliffe] §4.6–4.7.  The vertical-plane / hemisphere totally-geodesic
-  --   classification is now PROVED conditional on `HypMinimizerUnique` in
-  --   `QOU.Archimedean.HyperbolicGeodesic`; only geodesic existence+uniqueness
-  --   remains open (Mathlib 4.24.0 still has no hyperbolic Riemannian geometry).
+  --   classification is now PROVED conditional on `HypMinimizerUnique` — for the
+  --   concrete `verticalPlane n d` / `hemisphere R` of THIS file in
+  --   `QOU.Archimedean.TotallyGeodesicFaces`, via `HyperbolicGeodesic`'s
+  --   `fixedSet_isTotallyGeodesic`; only geodesic existence+uniqueness remains open
+  --   (Mathlib 4.24.0 still has no hyperbolic Riemannian geometry).
 
 The chimney `chimney (inscribedTriangle 1 t α β γ) 1` of `IdealTetrahedronRegion`
 is bounded by three vertical planes (over the three chords) and one hemisphere
