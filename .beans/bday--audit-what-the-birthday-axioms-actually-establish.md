@@ -814,3 +814,54 @@ Only the quantifier now: `∃ᶠ n in atTop` needs *infinitely many* `n` carryin
 length `≥ n·t`, plus the `α ≠ m/q` clause (which wants `α` irrational). Both are properties
 of the individual `α` — precisely the Thue–Siegel–Roth territory recorded above, and not
 reachable by more machinery.
+
+---
+**2026-08-16 — THE BRIDGE IS CLOSED. `liouvilleWith_of_frequent_runs`.**
+
+```lean
+liouvilleWith_of_frequent_runs (α : ℝ) (t : ℕ) (hirr : Irrational α)
+    (hfreq : ∀ N, ∃ n ≥ N, Bracketed (expandState α n) ∧ (expandState α n).gap ≤ 1
+                ∧ ∀ j < n * t, ((expandState α (n + j)).value : ℝ) < α) :
+  LiouvilleWith (t : ℝ) α
+```
+
+The trajectory picture's central assertion — **run structure in the sign expansion controls
+the Diophantine exponent** — is now a proved implication rather than a slogan, and it is
+stated in **Mathlib's** vocabulary, so the lane's claim is checkable against the literature
+instead of only internally consistent.
+
+Chain, end to end, all sorry-free on standard axioms:
+
+| step | statement |
+|---|---|
+| bracket halves per sign | `Bracketed.step` |
+| expansion of a real brackets it | `expandState_brackets` |
+| bounds are dyadic over `2ⁿ` | `expandState_dyadic` |
+| a run freezes an endpoint | `run_plus_approximates` |
+| run of `n·t` ⟹ exponent `t` | `approx_exponent_of_run` |
+| **frequent runs ⟹ `LiouvilleWith t`** | **`liouvilleWith_of_frequent_runs`** |
+
+`Irrational α` is not a technicality: a rational `α` eventually **is** one of its own dyadic
+approximants, and `LiouvilleWith`'s `x ≠ m/n` clause excludes that case by definition.
+
+### ⚠ What this is and is not
+
+It is a **bridge**, not a decision procedure. The hypothesis quantifies over infinitely many
+`n`, which is `LiouvilleWith`'s own `∃ᶠ` and cannot be removed — whether a given `α`
+satisfies it is a fact about that `α` (bounded runs for an algebraic irrational by
+Thue–Siegel–Roth, unbounded for a Liouville number). **No amount of further machinery
+reaches it**, which is the same wall recorded two entries above and not a new one.
+
+### A placement correction
+
+First written into `GonshorConvergence.lean`, which does not import the Liouville files —
+`Unknown identifier LiouvilleWith`. Moved to `DiophantineBirthdayTrajectory.lean`, which
+already had them, with `GonshorConvergence` added as an import. Better architecturally too:
+`GonshorConvergence` stays about the expansion machinery and dependency-light, and the
+Liouville statement lives beside the other Liouville statements.
+
+The exposition block was updated to state the implication; it previously stopped at the
+decoupling and left the conclusion implicit.
+
+**The formal lane is complete.** What remains is Thue–Siegel–Roth, which is a formalisation
+project of its own, not an increment here.

@@ -100,6 +100,7 @@
 import Mathlib.NumberTheory.Transcendental.Liouville.LiouvilleWith
 import Mathlib.NumberTheory.Transcendental.Liouville.LiouvilleNumber
 import QOU.AppendixSurreals.DiophantineBirthdayScope
+import QOU.AppendixSurreals.GonshorConvergence
 
 namespace QOU.AppendixSurreals
 
@@ -200,6 +201,48 @@ whose form suggests content it does not carry. -/
 theorem slowApproximation_vacuous_at_one : SlowApproximationImpliesAlgebraic 1 := by
   intro x hx
   exact absurd (liouvilleWith_one x) hx
+
+/-! ### §3b — the bridge, closed: runs give `LiouvilleWith`
+
+`GonshorConvergence` proves that a run of `k ≥ n·t` signs in `α`'s own expansion yields an
+explicit dyadic `m/2ⁿ` with error at most `1/(2ⁿ)ᵗ`. That is the Diophantine shape in this
+development's vocabulary; the theorem below states it in **Mathlib's**, which is what makes
+the lane's claim checkable against the literature rather than only internally consistent.
+
+⚠ The hypothesis quantifies over **infinitely many** `n` — that is `LiouvilleWith`'s own
+`∃ᶠ` and it cannot be removed. Whether a given `α` satisfies it is a fact about that `α`:
+bounded runs for an algebraic irrational (Thue–Siegel–Roth, §4), unbounded for a Liouville
+number. So this is a **bridge**, not a decision procedure. -/
+
+open scoped Classical in
+/-- **Infinitely many runs of length `n·t` ⟹ `LiouvilleWith t`.**
+
+The implication the trajectory picture always asserted, now proved: run structure in the
+sign expansion controls the Diophantine exponent.
+
+`Irrational α` is required by `LiouvilleWith`'s own `x ≠ m / n` clause — a rational `α`
+eventually *is* one of its dyadic approximants, and the predicate excludes that case by
+definition rather than by accident. -/
+theorem liouvilleWith_of_frequent_runs (α : ℝ) (t : ℕ) (hirr : Irrational α)
+    (hfreq : ∀ N : ℕ, ∃ n, N ≤ n ∧ Bracketed (expandState α n)
+      ∧ (expandState α n).gap ≤ 1
+      ∧ ∀ j, j < n * t → ((expandState α (n + j)).value : ℝ) < α) :
+    LiouvilleWith (t : ℝ) α := by
+  refine ⟨2, Filter.frequently_atTop.mpr fun a => ?_⟩
+  obtain ⟨n, hn, hb, hg, hrun⟩ := hfreq a
+  obtain ⟨m, hm⟩ := approx_exponent_of_run α n (n * t) t hb hg hrun (le_refl _)
+  refine ⟨2 ^ n, le_trans hn (Nat.le_of_lt Nat.lt_two_pow_self), m, ?_, ?_⟩
+  · -- `α ≠ m / 2ⁿ`: the right-hand side is rational and `α` is not.
+    intro h
+    exact hirr ⟨(m : ℚ) / 2 ^ n, by rw [h]; push_cast; ring⟩
+  · -- `|α − m/2ⁿ| ≤ 1/(2ⁿ)ᵗ < 2/(2ⁿ)ᵗ`.
+    have hcast : ((2 ^ n : ℕ) : ℝ) = (2 : ℝ) ^ n := by push_cast; ring
+    rw [hcast, Real.rpow_natCast]
+    have hpos : (0 : ℝ) < ((2 : ℝ) ^ n) ^ t := by positivity
+    calc |α - (m : ℝ) / (2 : ℝ) ^ n|
+        ≤ 1 / ((2 : ℝ) ^ n) ^ t := hm
+      _ < 2 / ((2 : ℝ) ^ n) ^ t := by
+          rw [div_lt_div_iff_of_pos_right hpos]; norm_num
 
 /-! ### §4 — the remaining input is a THEOREM, not a conjecture
 

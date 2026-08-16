@@ -49,6 +49,18 @@ $$
 
 with the denominator pinned by the invariant that every bound after $n$ steps is a dyadic over $2^n$. Accuracy decouples from denominator, which is precisely what an approximation exponent above $1$ means.
 
+Measuring the run against $n$ rather than absolutely turns this into an exponent: a run of length $k \ge n t$ gives $\lvert \alpha - m/2^n \rvert \le 1/(2^n)^t$. And that closes the loop to the standard predicate —
+
+$$
+  \Bigl(\text{runs of length } \ge n t \text{ for infinitely many } n\Bigr)
+  \;\wedge\;
+  \alpha \notin \mathbb{Q}
+  \quad\Longrightarrow\quad
+  \mathrm{LiouvilleWith}\ t\ \alpha .
+$$
+
+So the trajectory picture's central assertion — that run structure in the sign expansion controls the Diophantine exponent — is a proved implication, not a slogan. Irrationality is not a technicality here: a rational $\alpha$ eventually *is* one of its own dyadic approximants, and the standard predicate excludes that case by definition.
+
 ## ⚠ The remaining input is a theorem, not a conjecture
 
 What makes the criterion separate is **Thue–Siegel–Roth**: an algebraic irrational has approximation exponent exactly $2$, hence is not approximable to any order $p > 2$. Granting that, "approximable to order $3$" does what a separation must — it fails on *every* algebraic irrational and holds on an exhibited transcendental:
