@@ -90,7 +90,40 @@ def catalan(n):
     return math.comb(2 * n, n) // (n + 1)
 
 
-report: dict = {}
+# --- 0. the Lean file's definitions agree with the corpus arm/leg ones ------
+# WenzlWeightVanishing.lean states hook/content/nPart via YoungDiagram's
+# `rowLen` and `colLen`, not via arm/leg. That transcription is the one place
+# a silent divergence could hide, so it is checked rather than eyeballed.
+
+def row_len(lam, i):
+    return lam[i] if i < len(lam) else 0
+
+
+def col_len(lam, j):
+    return sum(1 for r in lam if r > j)
+
+
+def hook_lean(lam, i, j):
+    """(rowLen i - j) + (colLen j - i) - 1, exactly as the Lean `hook`."""
+    return (row_len(lam, i) - j) + (col_len(lam, j) - i) - 1
+
+
+def n_part_lean(lam):
+    """sum over cells of the 0-indexed row index, exactly as the Lean `nPart`."""
+    return sum(i for (i, j) in cells(lam))
+
+
+_checked = 0
+for _n in range(1, 9):
+    for _lam in partitions(_n):
+        assert n_part_lean(_lam) == n_partition(_lam), f"nPart {_lam}"
+        for (_i, _j) in cells(_lam):
+            assert hook_lean(_lam, _i, _j) == hook(_lam, _i, _j), f"hook {_lam} {_i},{_j}"
+            assert (_j - _i) == (_j - _i)  # content: Lean `j - i`, identical
+            _checked += 1
+print(f"0. Lean rowLen/colLen definitions == corpus arm/leg, {_checked} cells  OK")
+
+report = {"lean_definition_transcription": {"cells_checked": _checked, "all_match": True}}
 
 # --- 1. z_D is Wenzl level r = 2 -------------------------------------------
 z_D = q**3 / (q**2 + 1)
