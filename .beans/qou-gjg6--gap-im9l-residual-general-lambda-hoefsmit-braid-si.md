@@ -6,6 +6,8 @@ type: task
 priority: normal
 created_at: 2026-08-11T01:05:26Z
 updated_at: 2026-08-16T14:03:02Z
+
+updated_at: 2026-08-16T14:06:51Z
 parent: qou-59vq
 ---
 
@@ -1281,3 +1283,50 @@ bound from the top cell downward. Then cellOf T j = (0, j-1) for EVERY T, hence 
 tableaux agree, hence #SYT = 1. Estimated 40-60 lines.
 
 Also still needed, independent of this chain: (shape lam).cells.card = N.
+
+
+### Takeover assessment — the dependency graph is mis-stated, and 2 of 4 sorries are NOT blocked
+
+Four `sorry`s on the branch. The comments say all four chain to one root
+(`hoefsmit_seminormal_rep`). **Two of them do not.**
+
+| # | site | comment says | actually |
+|---|---|---|---|
+| 1 | `HoefsmitRep:433` `hoefsmit_seminormal_rep` | the root GAP | **root, correct** — and blocked on a genuine owner question (below) |
+| 2 | `QJucysMurphy:299` `qJM_commute` | *"Blocked on: the general seminormal rep"* | **NOT blocked** — see below |
+| 3 | `QJucysMurphy:520` `barSymJMSum_block_eigenvalue` | needs root + per-element eigenvalue | correct, and **not provable as stated** (below) |
+| 4 | `QJucysMurphy:530` `barSymJMSum_central` | needs `qJM_commute` | correct — so it is one step behind #2, not behind the root |
+
+**#2 is the reroute.** `qJM` is defined by the standard multiplicative
+recursion `L_{k+1} = σ_k · L_k · σ_k` (`QJucysMurphy:95`). Commutativity of the
+Murphy family from *that* recursion is an **algebraic induction on the Hecke
+relations** — it needs no representation at all. The comment names the
+seminormal-diagonalisation proof, which is *a* sufficient route, as if it were
+*the* route.
+
+Both ingredients the induction needs are already in the tree and sorry-free, in
+`SchurWeyl/HeckeAlgebra.lean`:
+
+* `σ_braid` (`:107`) — `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`
+* `σ_commute` (`:115`) — far commutation, `j + 2 ≤ i`
+
+So the route is concretely open, not merely plausible. Closing #2 also closes
+#4, taking **two of the four sorries off the hard root** — and neither needs the
+general-λ construction, the index reindex, or any decision about `q`.
+
+This matters beyond bookkeeping: an agent reading the existing comment waits for
+the *harder* thing. Same shape as the mis-stated blockers found across `wpdb`
+this session.
+
+**#3 is not provable as stated, and that is the PR's own finding.** Its
+signature assumes only `(hq : q ≠ 0)`, while `seminormalRep` requires `0 < q`
+**and** `q ≠ 1` — `seminormalParam` has a pole where `q^{-2d} = 1`, and at
+`q = -1` the formula degenerates (`SeminormalParam.lean` records `S1`'s entry as
+`-1/(2q) ≠ 0` there while the formula gives `0/0`). So closing #3 needs either a
+**weakened hypothesis in the statement** or a **different construction at roots
+of unity**. That is an owner-facing question, correctly escalated by the
+original session and left alone here.
+
+**Next step for this branch:** prove `qJM_commute` by induction on the
+recursion, then `barSymJMSum_central` from it. Do **not** wait on
+`hoefsmit_seminormal_rep` for either.
