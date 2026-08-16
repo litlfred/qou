@@ -523,7 +523,7 @@ publisher landing page (doi.org, journal site, etc.):
 Verified arxiv-mirror finds during the 2026-05-19 22-paper batch:
 `faddeev_kashaev1994` (hep-th/9310070), `baez2004` (math/0307200),
 `hu-mathas2012graded` (1008.1462), `freed2010` (0905.0731),
-`berarducci2018` (1503.00315), `yekutieli2008` (0801.3233),
+`berarducci-mantova2018` (1503.00315), `yekutieli2008` (0801.3233),
 `leitnerpawloski2004` (math/0409565), `bilsonthompson2005` (hep-ph/0503213),
 `bufetov2020` (2003.02730), `blitvic2012` (1205.4003),
 `finster2021/2022/2024` + `dappiaggi2024` (all arxiv-natives).

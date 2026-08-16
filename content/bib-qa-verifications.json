@@ -246,7 +246,7 @@
    }
   },
   {
-   "id": "berarducci2018",
+   "id": "berarducci-mantova2018",
    "status": "verified-clean",
    "verified_at": "2026-05-19T06:23:00Z",
    "verified_by": {
@@ -2441,12 +2441,12 @@
    "local_pdf": "library/habiro2004.pdf",
    "relevance": {
     "verdict": "undetermined",
-    "rationale": "BROKEN SOURCE JOIN: the named file does not exist. DUPLICATE-KEY DEFECT: the ids 'habiro2004' (references.ts:2113) and 'habiro2008' (references.ts:2142) name the SAME work — identical descriptive fields, identical DOI, identical preprint id — and the 2004-named id is itself registered with an issue date four years later than its own name implies. The one real source, library/arxiv-math-0605314v1/0605314v1.pdf, is joined in this same slice to 'habiro2008'. DOI CONTRADICTIONS AT SITES: no citation site uses the registered DOI. mass-theory/full-pole-structure-mass-trace.lean:31/104/145/165 and mass-theory/habiro-residue-sum-equivalence.lean:39 attach one DOI; mass-theory/q-beta-q-eq-one-shadow-gate.lean:33, q-beta-radius-of-convergence-gate.lean:36, q-beta-c-k-recursion-from-habiro-q-difference.lean:30 and q-beta-bar-even-kernel-invariant.lean:42 attach a second, different one. Three DOIs, one id. CLAIM CHECK, partially resolvable: mass-theory/full-pole-structure-mass-trace-proof.md:1-6 cites this id for the statement that the Habiro ring is by definition the inverse limit lim_n Z[q]/((q;q)_n). I verified in library/arxiv-math-0605314v1/0605314v1.pdf that its section 1.2 does state Zhat[q] = lim_n Z[q]/((q)_n), so the claim IS present in the cited work — but that work's own bibliography attributes the construction to the cyclotomic-completions paper, which this corpus registers separately as 'habiro2004cyclotomic' and whose source is present at library/arxiv-math-0209324v1/0209324v1.pdf. The citation is supportable but points at the recollection rather than the source.",
+    "rationale": "BROKEN SOURCE JOIN: the named file does not exist. DUPLICATE-KEY DEFECT: the ids 'habiro2004' (references.ts:2113) and 'habiro2004' (references.ts:2142) name the SAME work — identical descriptive fields, identical DOI, identical preprint id — and the 2004-named id is itself registered with an issue date four years later than its own name implies. The one real source, library/arxiv-math-0605314v1/0605314v1.pdf, is joined in this same slice to 'habiro2004'. DOI CONTRADICTIONS AT SITES: no citation site uses the registered DOI. mass-theory/full-pole-structure-mass-trace.lean:31/104/145/165 and mass-theory/habiro-residue-sum-equivalence.lean:39 attach one DOI; mass-theory/q-beta-q-eq-one-shadow-gate.lean:33, q-beta-radius-of-convergence-gate.lean:36, q-beta-c-k-recursion-from-habiro-q-difference.lean:30 and q-beta-bar-even-kernel-invariant.lean:42 attach a second, different one. Three DOIs, one id. CLAIM CHECK, partially resolvable: mass-theory/full-pole-structure-mass-trace-proof.md:1-6 cites this id for the statement that the Habiro ring is by definition the inverse limit lim_n Z[q]/((q;q)_n). I verified in library/arxiv-math-0605314v1/0605314v1.pdf that its section 1.2 does state Zhat[q] = lim_n Z[q]/((q)_n), so the claim IS present in the cited work — but that work's own bibliography attributes the construction to the cyclotomic-completions paper, which this corpus registers separately as 'habiro2004cyclotomic' and whose source is present at library/arxiv-math-0209324v1/0209324v1.pdf. The citation is supportable but points at the recollection rather than the source.",
     "keyResults": [],
     "proposedActions": [
      {
       "action": "new-remark",
-      "rationale": "Merge habiro2004 into habiro2008 (one work, two ids), reconcile the two site-level DOIs against the registered one, and re-point the Habiro-ring-definition citation at habiro2004cyclotomic where the ring is introduced.",
+      "rationale": "Merge habiro2004 into habiro2004 (one work, two ids), reconcile the two site-level DOIs against the registered one, and re-point the Habiro-ring-definition citation at habiro2004cyclotomic where the ring is introduced.",
       "target": "prop:full-pole-structure-mass-trace",
       "bean": "qou-f13w"
      }
@@ -3661,7 +3661,7 @@
      },
      {
       "action": "cite-in-block",
-      "rationale": "Clauses (1)/(2) of the block cite kerov1981 + biane1998 + feray2010; the concentration result they actually lean on is this paper's Thm 1/Thm 2.",
+      "rationale": "Clauses (1)/(2) of the block cite vershik-kerov1977 + biane1998 + feray2010; the concentration result they actually lean on is this paper's Thm 1/Thm 2.",
       "target": "prop:q-plancherel-asymptotic-skeleton",
       "bean": "qou-femd"
      },
@@ -5728,7 +5728,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0605314v1/0605314v1.pdf"
    },
-   "id": "habiro2008",
+   "id": "habiro2004",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",

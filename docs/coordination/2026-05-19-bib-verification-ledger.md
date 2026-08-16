@@ -50,7 +50,7 @@ environment for repo `litlfred/qou`.
 | 4 | `yekutieli2008` | 2 .lean + 2 .md | pending | Twisted deformation quantization. | — |
 | 5 | `zink2002` | 1 .lean + 1 .md | pending | Display of formal p-divisible group. | — |
 | 6 | `freed2010` | 1 .lean + 1 .md | pending | Topological QFTs from compact Lie groups. | — |
-| 7 | `berarducci2018` | 1 .lean | pending | Surreal numbers, derivations and transseries. | — |
+| 7 | `berarducci-mantova2018` | 1 .lean | pending | Surreal numbers, derivations and transseries. | — |
 | 8 | `faddeev_kashaev1994` | 1 .lean | pending | Quantum dilogarithm. | — |
 | 9 | `baez2004` | 1 .lean | pending | Higher-dimensional algebra V: 2-groups. | — |
 | 10 | `hu-mathas2012graded` | 1 .lean | pending | Graded induction for Specht modules. | — |
@@ -97,7 +97,7 @@ PR #781) which round-trips against this exact file.
 | 2026-05-19 06:23 | `baez2004` | Claude (`claude-opus-4-7`) | Confirmed paper is "Higher-Dimensional Algebra V: 2-Groups"; INN construction is canonical content | verified-clean. arXiv:math/0307200. |
 | 2026-05-19 06:23 | `hu-mathas2012graded` | Claude (`claude-opus-4-7`) | Title "Graded Induction for Specht Modules" is verbatim the citation text | verified-clean. arXiv:1008.1462 (preprint 2010; published 2012). |
 | 2026-05-19 06:23 | `freed2010` | Claude (`claude-opus-4-7`) | Title-only citation in Glossary; paper is Freed-Hopkins-Lurie-Teleman "TQFTs from Compact Lie Groups" | verified-clean. arXiv:0905.0731. |
-| 2026-05-19 06:23 | `berarducci2018` | Claude (`claude-opus-4-7`) | §2 contains the cited surreal-field polynomial-extension content (sub-§§ Order/simplicity, Field operations) | verified-clean. arXiv:1503.00315. |
+| 2026-05-19 06:23 | `berarducci-mantova2018` | Claude (`claude-opus-4-7`) | §2 contains the cited surreal-field polynomial-extension content (sub-§§ Order/simplicity, Field operations) | verified-clean. arXiv:1503.00315. |
 | 2026-05-19 06:23 | `pham1965` | Claude (`claude-opus-4-7`) | Title "Formules de Picard-Lefschetz généralisées..." verbatim matches citation text | verified-clean. Bull. SMF 93, 1965. |
 | 2026-05-19 06:23 | `zink2002` | Claude (`claude-opus-4-7`) | `library/zink2002.pdf` is Astérisque vol 278 PRELIMINARY PAGES (pp. I-XII), NOT Zink's actual paper | **paper-mismatch**. URL in references.ts points at vol prelims, not the Zink chapter. The QOU citation intent is correct (Dist(Ĝ) free ℤ_p-module IS Zink's content); just the local PDF needs replacement. |
 | 2026-05-19 06:26 | `yekutieli2008` | Claude (`claude-opus-4-7`) | §2 = "Poisson Deformations of Algebraic Varieties" — matches citation scope in global-gluing.lean + Torsion/GlobalGluing.lean | verified-clean. arXiv:0801.3233. |

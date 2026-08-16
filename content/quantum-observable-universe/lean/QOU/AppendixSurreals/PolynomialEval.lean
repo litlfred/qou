@@ -49,7 +49,7 @@ variable {K : Type u} [SurrealField K]
     embedding `ofReal : ℝ →+* K`.
 
     This is `Polynomial.eval₂` specialized to `ofReal`. -/
--- Ref: [conway1976] §1 (real subfield of `No`); [berarducci2018]
+-- Ref: [conway1976] §1 (real subfield of `No`); [berarducci-mantova2018]
 noncomputable def polySurrealEval (p : ℝ[X]) (x : K) : K :=
   p.eval₂ (SurrealField.ofReal (K := K)) x
 
@@ -202,7 +202,7 @@ theorem isInfinitesimal_pow_diff
     `ClassicalLimitIsStandardPart`: applied with `a := ofReal r` and
     `δ := ε`, it shows that polynomial extensions of real polynomials
     automatically satisfy hypothesis (2) of the conjecture. -/
--- Ref: [berarducci2018] §2
+-- Ref: [berarducci-mantova2018] §2
 theorem polySurrealEval_isInfinitesimal_diff (p : ℝ[X])
     {a δ : K} (ha : IsFinite a) (hδ : IsInfinitesimal δ) :
     IsInfinitesimal (polySurrealEval p (a + δ) - polySurrealEval p a) := by

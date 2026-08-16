@@ -36,7 +36,7 @@ of which #4365 is the `Σ(2,3,5)` case) nor that `bwS0` is a bounded-degree
 polynomial (Habiro rigidity, cited).  No `c_k`; no fit; nothing wired.
 
 -- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
--- Ref: [habiro2008] https://doi.org/10.1007/s00222-007-0071-0
+-- Ref: [habiro2004] https://doi.org/10.1007/s00222-007-0071-0
 -/
 import QOU.BraidKnot.KeystoneGaugeRowRigidity
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic

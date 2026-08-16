@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   cites: [
-    "kerov1981",
+    "vershik-kerov1977",
     "biane1998",
     "feray2010",
   ],
