@@ -337,6 +337,17 @@ def global_wedderburn_sum_jones_markov(
     total = sp.Integer(0)
     for lam in shapes:
         y = y_vals[lam]
+        # TL_n restriction: under convention D the Ocneanu weight y_λ is
+        # EXACTLY zero for every λ with ≥ 3 rows — proved sorry-free for all
+        # n by QOU.QBeta.WenzlWeight.conventionD_weight_eq_zero_iff (see
+        # docs/audits/2026-08-16-tl-all-n-weight-vanishing.md). Those blocks
+        # span ker(H_n ↠ TL_n), of dimension n! − Catalan(n) (1, 10, 78, 588,
+        # 4611, 38890 at n = 3..8). Their contribution y·χ is identically 0,
+        # so skipping them BEFORE the expensive character build changes no
+        # value — it only avoids computing χ_λ in the radical. This is a
+        # speed change, not a correctness fix.
+        if sp.sympify(y).is_zero:
+            continue  # zero Ocneanu weight ⇒ y·χ = 0 (TL_n radical)
         if char_kind == "mn-atom":
             chi = specht_character_atomic(
                 lam, Z, N, include_inter, m_pp, m_pn, m_nn
