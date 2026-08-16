@@ -56,7 +56,18 @@ including the exact gap `z − h = 1/(q(q²+1))`.
 | 2 | `T₃`-graded writhe | `T₃` gives `pp` a **non-negative** exponent; non-negative exponents on a base in `(0,1)` bind *harder* | **Lean**, scope-(b) |
 | 3 | stacked powers `σ^m` | the writhe factor is common to both channels and **cancels in the ratio**; the surviving `q^{2m}` orders them backwards (need `m > −5.33` and `m ≤ −21.98`) | measured + **Lean** ratio lemmas |
 | 4 | writhe-derived framing `f` | every candidate (`interface`, `full word`, `nucleon sum`) leaves **nn** at `f = 1–2` against a required `f ≥ 3` | measured, 3 candidates |
-| 5 | operator-selection LP | on **projectors**: orthogonal ⇒ Gram diagonal ⇒ no discrimination (10–11 of 11 active at every target). On **sub-words**: discriminates stably (7 of 11) but on *braid adjacency*, uncorrelated with block support (active 0.241 vs rejected 0.271 wide-fraction) | measured, both bases |
+| 5 | operator-selection LP | on **projectors**: orthogonal ⇒ Gram diagonal ⇒ no discrimination (10–11 of 11 active at every target; well-posed, gap 3.8e-13). On **sub-words and production templates**: the Frobenius form is **indefinite** (eigenvalues −1.579, −1.140), so the program is unbounded and the solver returns a box corner (`max\|x*\| = 3.6e6` vs `M_bound = 1e6`) — it does not validly select at all | measured, both bases |
+
+> **Correction (2026-08-16).** An earlier revision of this row read the sub-word
+> basis as "discriminates stably, 7 of 11, but on braid adjacency" and compared
+> block support (0.241 active vs 0.271 rejected). That was an **artifact of the
+> box constraint**, not a selection, and is retracted — the apparent *stability*
+> across targets was the corner not moving. The production interface templates
+> are worse still: their Gram has **rank 6 of 11**, because `{c·σ_g + d·1}` spans
+> only `span{1, σ_g}` and the `d`-offsets add no direction beyond the identity.
+> The correct statement is stronger than the retracted one: the LP's core premise
+> — Frobenius positivity — **fails** on the two-nucleon operator set, so the
+> question "which operators does it select" has no well-posed answer there.
 
 Route 2 deserves emphasis: the corpus's `T₃` grading is *principled* — crossing
 sign is the writhe, and the writhe carries `I₃`. It is aimed at the **small**
