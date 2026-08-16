@@ -56,8 +56,13 @@ projection
 
 *Step 4 ($\Phi_q$-product representation).* By
 [quantum dilogarithm = localized torsion volume](#cor:quantum-dilogarithm),
-the analytic representation of the curvature-rank-$k$ stratum on the
-$i$-th exceptional divisor is
+the transient trace contribution at $p_i$ evaluates to $\Phi_q(z_i)$.
+That identity is **unstratified** — it equates the whole transient
+trace with the whole dilogarithm and says nothing about levels. The
+level-by-level refinement this step needs is
+[partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified),
+and with it the analytic representation of the curvature-rank-$k$
+stratum on the $i$-th exceptional divisor is
 
 $$
   \mathfrak{m}^{(k)}_{q,\mathcal{K}}\big|_{i\text{-th divisor}}
