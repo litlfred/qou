@@ -1,0 +1,26 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "computations/substrate/deuteron_tower_fusion_frame_probe.py",
+  "language": "python",
+  "source_hash": "dd5b1cdf819f",
+  "updated_at": "2026-08-16T02:19:01.706045+00:00",
+  "criteria": {
+    "self-check-not-gated": [
+      {
+        "field_hash": {
+          "py": "dd5b1cdf819f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "computations/audits/silent_self_check_audit.py",
+          "version": "v1",
+          "script_hash": "671612b3c692"
+        },
+        "reviewed_at": "2026-08-16T02:19:01.706045+00:00",
+        "severity": "critical",
+        "evidence": "line 192: records verdict field `allPassed` | line 176: records verdict field `allPassed`"
+      }
+    ]
+  }
+}
