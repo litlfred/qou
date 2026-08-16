@@ -22,7 +22,7 @@ genuine conjugate involution `YoungDiagram.transpose` (self-conjugacy =
 definition** `gbDepth` = max hook length over cells (built here from the
 real `rowLen`/`colLen`/`cells` API) — no longer an abstract `dGB` class
 field. Only the QOU-specific iterated-integral depth-lift `dII` and the
-chiral-pair predicate remain abstract (the open conjectural content). The
+chiral-pair predicate remain abstract (the open conjectural cellContent). The
 faithful conditional form is
 `QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral`.
 -/
@@ -215,8 +215,21 @@ partition-depth bridge (bean `wpdb`) — it relocates the partition side onto th
 axis the algebra side is indexed by, which is what a proof would have to match.
 -/
 
-/-- The content (diagonal index) of a cell. -/
-def content (c : ℕ × ℕ) : ℤ := (c.2 : ℤ) - (c.1 : ℤ)
+/-- The content (diagonal index) of a cell.
+
+**This is the fifth copy of this one-line definition in the Lean tree**, and I
+added it. The others are `QOU.SchurWeyl.cellContent` (`HoefsmitRep`),
+`QOU.BraidKnot.IdentityAArmLeg.content`, `QOU.BraidKnot.JucysMurphy.cellContent`
+and `QOU.BraidKnot.PieceA.contentZ` — all `(c.2 : ℤ) - (c.1 : ℤ)`, verbatim.
+There is no name clash (each sits in its own sub-namespace) so nothing breaks,
+but consolidating them onto one definition is bean `qou-cdup`. Kept local here
+rather than importing, to avoid pulling a large cone into this file for a
+one-line definition; the duplication is recorded rather than hidden.
+
+Named `cellContent` to match the corpus's commonest spelling, and so this does
+not occupy the bare `QOU.BraidKnot.content` slot that `open QOU.BraidKnot`
+would otherwise shadow. -/
+def cellContent (c : ℕ × ℕ) : ℤ := (c.2 : ℤ) - (c.1 : ℤ)
 
 theorem rowLen0_pos (μ : YoungDiagram) (h : μ.cells.Nonempty) : 0 < μ.rowLen 0 := by
   obtain ⟨c, hc⟩ := h
@@ -228,16 +241,16 @@ theorem colLen0_pos (μ : YoungDiagram) (h : μ.cells.Nonempty) : 0 < μ.colLen 
 
 /-- The largest content is the corner's arm, attained on the first row. -/
 theorem sup_content (μ : YoungDiagram) (h : μ.cells.Nonempty) :
-    μ.cells.sup' h content = (μ.rowLen 0 : ℤ) - 1 := by
+    μ.cells.sup' h cellContent = (μ.rowLen 0 : ℤ) - 1 := by
   apply le_antisymm
   · refine Finset.sup'_le h _ fun c hc => ?_
     have hj : c.2 < μ.rowLen c.1 := (mem_iff_lt_rowLen).mp hc
     have hj0 : μ.rowLen c.1 ≤ μ.rowLen 0 := rowLen_anti μ 0 c.1 (Nat.zero_le _)
-    unfold content; omega
+    unfold cellContent; omega
   · have hr := rowLen0_pos μ h
     have hmem : ((0 : ℕ), μ.rowLen 0 - 1) ∈ μ.cells := (mem_iff_lt_rowLen).mpr (by omega)
-    have hle := Finset.le_sup' (f := content) hmem
-    have hcast : content ((0 : ℕ), μ.rowLen 0 - 1) = (μ.rowLen 0 : ℤ) - 1 := by
+    have hle := Finset.le_sup' (f := cellContent) hmem
+    have hcast : cellContent ((0 : ℕ), μ.rowLen 0 - 1) = (μ.rowLen 0 : ℤ) - 1 := by
       show ((μ.rowLen 0 - 1 : ℕ) : ℤ) - ((0 : ℕ) : ℤ) = (μ.rowLen 0 : ℤ) - 1
       omega
     rw [hcast] at hle
@@ -245,12 +258,12 @@ theorem sup_content (μ : YoungDiagram) (h : μ.cells.Nonempty) :
 
 /-- The smallest content is minus the corner's leg, attained on the first column. -/
 theorem inf_content (μ : YoungDiagram) (h : μ.cells.Nonempty) :
-    μ.cells.inf' h content = -((μ.colLen 0 : ℤ) - 1) := by
+    μ.cells.inf' h cellContent = -((μ.colLen 0 : ℤ) - 1) := by
   apply le_antisymm
   · have hc0 := colLen0_pos μ h
     have hmem : (μ.colLen 0 - 1, (0 : ℕ)) ∈ μ.cells := (mem_iff_lt_colLen).mpr (by omega)
-    have hle := Finset.inf'_le (f := content) hmem
-    have hcast : content (μ.colLen 0 - 1, (0 : ℕ)) = -((μ.colLen 0 : ℤ) - 1) := by
+    have hle := Finset.inf'_le (f := cellContent) hmem
+    have hcast : cellContent (μ.colLen 0 - 1, (0 : ℕ)) = -((μ.colLen 0 : ℤ) - 1) := by
       show ((0 : ℕ) : ℤ) - ((μ.colLen 0 - 1 : ℕ) : ℤ) = -((μ.colLen 0 : ℤ) - 1)
       omega
     rw [hcast] at hle
@@ -258,11 +271,11 @@ theorem inf_content (μ : YoungDiagram) (h : μ.cells.Nonempty) :
   · refine Finset.le_inf' h _ fun c hc => ?_
     have hi : c.1 < μ.colLen c.2 := (mem_iff_lt_colLen).mp hc
     have hi0 : μ.colLen c.2 ≤ μ.colLen 0 := colLen_anti μ 0 c.2 (Nat.zero_le _)
-    unfold content; omega
+    unfold cellContent; omega
 
 /-- **The GB-depth counts the diagonals `λ` meets.**
 
-`gbDepth μ = (max content − min content) + 1`. Since the contents of a Young
+`gbDepth μ = (max content − min cellContent) + 1`. Since the contents of a Young
 diagram fill the whole range between their extremes — the first row supplies
 `0 … λ₁-1` and the first column `-(λ'₁-1) … 0` — this is exactly the number of
 distinct contents.
@@ -270,7 +283,7 @@ distinct contents.
 This is the same number as the corner hook, said in the algebra's coordinates
 rather than the diagram's. -/
 theorem gbDepth_eq_content_spread (μ : YoungDiagram) (h : μ.cells.Nonempty) :
-    (gbDepth μ : ℤ) = μ.cells.sup' h content - μ.cells.inf' h content + 1 := by
+    (gbDepth μ : ℤ) = μ.cells.sup' h cellContent - μ.cells.inf' h cellContent + 1 := by
   rw [sup_content μ h, inf_content μ h, gbDepth_eq_corner μ h]
   have hr := rowLen0_pos μ h
   have hc := colLen0_pos μ h
