@@ -888,6 +888,8 @@ import QOU.Mathlib.SchenstedReverseCascade
 import QOU.Mathlib.SchenstedWordRecovery
 -- RSK inverse, brick 4: the recording tableau IS the row-index record.
 import QOU.Mathlib.SchenstedRecordingIndex
+-- RSK inverse, brick 5: reading the row index back off the recording tableau.
+import QOU.Mathlib.SchenstedReadback
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
