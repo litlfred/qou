@@ -295,6 +295,48 @@ theorem dualCertificateExists_of_cost_eq_gram_row (t : Fin d → R) (G : Fin d �
   · simp [ht j, ite_mul]
 
 omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **The degeneracy criterion, in the only form that is really needed.**
+
+Strip everything away and dual feasibility for the `x`-block of *any*
+conic program has the shape
+
+    tⱼ = y₀ + cⱼ
+
+where `c` is whatever the constraints contribute.  For a linear
+program `cⱼ = Σᵢ sᵢGᵢⱼ`; for an SDP with lift `M₀ + Σₖ xₖMₖ ⪰ 0` and
+dual `Z ⪰ 0` it is `cⱼ = ⟨Z, Mⱼ⟩`; for a moment relaxation it picks up
+the moment block as well.
+
+Whatever it is, `y₀ = 0` follows as soon as the contribution is
+orthogonal to `v`.  So the question to ask of any proposed
+reformulation is exactly one thing:
+
+> **does the constraint map annihilate the radical?**
+
+If it does, the reformulation is degenerate before it is solved.  For
+the LP that is `Gv = 0`; for a dense PSD lift it is `Σⱼ vⱼMⱼ = 0`.
+Bean `qou/ndsa`. -/
+theorem y_0_eq_zero_of_contribution_perp_radical [NoZeroDivisors R]
+    {t v c : Fin d → R} {y_0 : R}
+    (htv : (Finset.univ.sum fun j => t j * v j) = 0)
+    (hcv : (Finset.univ.sum fun j => c j * v j) = 0)
+    (hone : (Finset.univ.sum fun j => v j) ≠ 0)
+    (dual : ∀ j, t j = y_0 + c j) :
+    y_0 = 0 := by
+  have key : (Finset.univ.sum fun j => t j * v j)
+      = y_0 * (Finset.univ.sum fun j => v j)
+        + Finset.univ.sum fun j => c j * v j := by
+    have h1 : ∀ j, t j * v j = y_0 * v j + c j * v j := by
+      intro j
+      rw [dual j, add_mul]
+    rw [Finset.sum_congr rfl (fun j _ => h1 j), Finset.sum_add_distrib,
+      ← Finset.mul_sum]
+  rw [htv, hcv, add_zero] at key
+  rcases mul_eq_zero.mp key.symm with h | h
+  · exact h
+  · exact absurd h hone
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
 /-- **The radical of the form forces the dual variable to vanish.**
 
 Three hypotheses, and *none of them says where the Gram came from*:
@@ -328,23 +370,18 @@ theorem y_0_eq_zero_of_cost_perp_radical [NoZeroDivisors R] {t : Fin d → R}
     (hone : (Finset.univ.sum fun j => v j) ≠ 0)
     (dual : ∀ j, t j = y_0 + Finset.univ.sum (fun i => s i * G i j)) :
     y_0 = 0 := by
-  have key : (Finset.univ.sum fun j => t j * v j)
-      = y_0 * (Finset.univ.sum fun j => v j) := by
-    have h1 : ∀ j, t j * v j
-        = y_0 * v j + Finset.univ.sum (fun i => s i * (G i j * v j)) := by
-      intro j
-      rw [dual j, add_mul, Finset.sum_mul]
-      simp [mul_assoc]
-    have h2 : ∀ i, (Finset.univ.sum fun j => s i * (G i j * v j)) = 0 := by
-      intro i
-      rw [← Finset.mul_sum, hv i, mul_zero]
-    rw [Finset.sum_congr rfl (fun j _ => h1 j), Finset.sum_add_distrib, ← Finset.mul_sum,
-      Finset.sum_comm, Finset.sum_congr rfl (fun i _ => h2 i), Finset.sum_const_zero,
-      add_zero]
-  rw [htv] at key
-  rcases mul_eq_zero.mp key.symm with h | h
-  · exact h
-  · exact absurd h hone
+  refine y_0_eq_zero_of_contribution_perp_radical
+    (c := fun j => Finset.univ.sum fun i => s i * G i j) htv ?_ hone dual
+  have h1 : ∀ j, (Finset.univ.sum fun i => s i * G i j) * v j
+      = Finset.univ.sum fun i => s i * (G i j * v j) := by
+    intro j
+    rw [Finset.sum_mul]
+    exact Finset.sum_congr rfl (fun i _ => by ring)
+  have h2 : ∀ i, (Finset.univ.sum fun j => s i * (G i j * v j)) = 0 := by
+    intro i
+    rw [← Finset.mul_sum, hv i, mul_zero]
+  rw [Finset.sum_congr rfl (fun j _ => h1 j), Finset.sum_comm,
+    Finset.sum_congr rfl (fun i _ => h2 i), Finset.sum_const_zero]
 
 omit [LinearOrder R] [IsStrictOrderedRing R] in
 /-- The trace-form instance of the above: when the cost vector is row
@@ -608,6 +645,36 @@ theorem zero_gap_iff_complementary_slackness (x : Fin ctx.d → R) (hx : IsFeasi
     exact h
   · intro h
     rw [h, add_zero]
+
+/-- **A tightening buys nothing if the optimum survives it.**
+
+`Tighter` is an arbitrary refinement of `IsFeasible` — a PSD lift, a
+Lasserre moment relaxation, extra cuts, anything at all.  The only
+hypotheses are that it *is* a refinement (`hsub`) and that `x*` still
+satisfies it (`hstar`).  Then `x*` is optimal for the tightened
+program too, at the same value.
+
+This is what settles the third candidate in bean `qou/ndsa`.  The
+moment lift in `computations/sdp_moment_lift.py` keeps `Gx ≥ 0` and
+adds `M ⪰ 0`, `X ⪰ 0`, `tr(GX) ≥ 0`, so `hsub` holds by inspection.
+And `x*` lifts: take the rank-one moment matrix `X = x*x*ᵀ`, which is
+PSD by construction and satisfies `tr(GX) = x*ᵀ(Gx*) = 0` because
+`Gx* = 0` — every Frobenius constraint is tight at the radical
+optimum.  So `hstar` holds too, and the SDP's optimal value is the
+LP's.
+
+The lesson is not about semidefinite programming.  A tightening can
+only help when it *cuts off* the incumbent optimum, and this one
+cannot: `x*` is the point where all the constraints already hold with
+equality. -/
+theorem tightening_preserves_optimum {Tighter : (Fin ctx.d → R) → Prop}
+    (hsub : ∀ x, Tighter x → IsFeasible x) (hstar : Tighter ctx.x_star) :
+    Tighter ctx.x_star ∧
+      ∀ x, Tighter x → objective ctx.x_star ≤ objective x := by
+  refine ⟨hstar, fun x hx => ?_⟩
+  have hgap : objective ctx.x_star = ctx.n_target * ctx.y_0_star := ctx.zero_gap
+  rw [hgap]
+  exact dual_bound_le_objective x (hsub x hx)
 
 /-- Complementary slackness holds at `x*`, as a consequence of the
     class's `zero_gap` field.  This is the per-index statement a
