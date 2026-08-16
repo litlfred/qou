@@ -81,7 +81,7 @@ Q0_OK **649 -> 650**, Q0_FLIP 0. The -3 splits exactly 2 independent + 1 OK.
 bean flagged, but the expectation was not the evidence.
 
 **convention-status was not neglect.** It already recorded a q0_pin parameter
-naming the proton pin; that lands under  where the audit reading
+naming the proton pin; that lands under `data`, where the audit reading
 body q0Anchor cannot see it — the fcdefee4ed trap, confirmed live.
 
 **Method note for whoever takes the rest:** the cone is asymmetric. NO q0 in the
