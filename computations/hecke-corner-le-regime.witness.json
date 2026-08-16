@@ -1,0 +1,269 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-16T12:51:04.048199+00:00",
+  "commitSha": "930a5960ae2baac57c0576c624667b33fbfdbabb",
+  "assertions": [
+    {
+      "name": "cases_where_the_decomposition_fails",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 236,
+  "computation": "hecke-corner-le-regime",
+  "scriptFile": "hecke_corner_le_regime.py",
+  "scriptHash": "d72a400cfe2a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The Bokut-Shiao corner's a <= b regime splits as prefix(a) . block(a,b) . two steps . block(a,b), with prefix = a^2 + a + 5 and block = ab - a^2 + 2a - 3 far-commutations, summing to the fitted 2ab - a^2 + 5a + 1. Both quadratic; the block is a nested double loop.",
+  "parameters": {
+    "prefix_formula": "a^2 + a + 5",
+    "block_formula": "ab - a^2 + 2a - 3",
+    "total_formula": "2ab - a^2 + 5a + 1",
+    "lean_theorem_for_the_other_regime": "UGB.GrobnerShirshov.Hecke.CornerGeneral.resolves"
+  },
+  "data": {
+    "cases_checked": 20,
+    "cases": [
+      {
+        "a": 2,
+        "b": 2,
+        "n": 7,
+        "i": 5,
+        "steps": 15,
+        "predicted_steps": 15,
+        "prefix": 11,
+        "block": 1,
+        "decomposition_holds": true
+      },
+      {
+        "a": 2,
+        "b": 3,
+        "n": 8,
+        "i": 6,
+        "steps": 19,
+        "predicted_steps": 19,
+        "prefix": 11,
+        "block": 3,
+        "decomposition_holds": true
+      },
+      {
+        "a": 2,
+        "b": 4,
+        "n": 9,
+        "i": 7,
+        "steps": 23,
+        "predicted_steps": 23,
+        "prefix": 11,
+        "block": 5,
+        "decomposition_holds": true
+      },
+      {
+        "a": 2,
+        "b": 5,
+        "n": 10,
+        "i": 8,
+        "steps": 27,
+        "predicted_steps": 27,
+        "prefix": 11,
+        "block": 7,
+        "decomposition_holds": true
+      },
+      {
+        "a": 2,
+        "b": 6,
+        "n": 11,
+        "i": 9,
+        "steps": 31,
+        "predicted_steps": 31,
+        "prefix": 11,
+        "block": 9,
+        "decomposition_holds": true
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "n": 9,
+        "i": 7,
+        "steps": 25,
+        "predicted_steps": 25,
+        "prefix": 17,
+        "block": 3,
+        "decomposition_holds": true
+      },
+      {
+        "a": 3,
+        "b": 4,
+        "n": 10,
+        "i": 8,
+        "steps": 31,
+        "predicted_steps": 31,
+        "prefix": 17,
+        "block": 6,
+        "decomposition_holds": true
+      },
+      {
+        "a": 3,
+        "b": 5,
+        "n": 11,
+        "i": 9,
+        "steps": 37,
+        "predicted_steps": 37,
+        "prefix": 17,
+        "block": 9,
+        "decomposition_holds": true
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "n": 12,
+        "i": 10,
+        "steps": 43,
+        "predicted_steps": 43,
+        "prefix": 17,
+        "block": 12,
+        "decomposition_holds": true
+      },
+      {
+        "a": 3,
+        "b": 7,
+        "n": 13,
+        "i": 11,
+        "steps": 49,
+        "predicted_steps": 49,
+        "prefix": 17,
+        "block": 15,
+        "decomposition_holds": true
+      },
+      {
+        "a": 4,
+        "b": 4,
+        "n": 11,
+        "i": 9,
+        "steps": 37,
+        "predicted_steps": 37,
+        "prefix": 25,
+        "block": 5,
+        "decomposition_holds": true
+      },
+      {
+        "a": 4,
+        "b": 5,
+        "n": 12,
+        "i": 10,
+        "steps": 45,
+        "predicted_steps": 45,
+        "prefix": 25,
+        "block": 9,
+        "decomposition_holds": true
+      },
+      {
+        "a": 4,
+        "b": 6,
+        "n": 13,
+        "i": 11,
+        "steps": 53,
+        "predicted_steps": 53,
+        "prefix": 25,
+        "block": 13,
+        "decomposition_holds": true
+      },
+      {
+        "a": 4,
+        "b": 7,
+        "n": 14,
+        "i": 12,
+        "steps": 61,
+        "predicted_steps": 61,
+        "prefix": 25,
+        "block": 17,
+        "decomposition_holds": true
+      },
+      {
+        "a": 4,
+        "b": 8,
+        "n": 15,
+        "i": 13,
+        "steps": 69,
+        "predicted_steps": 69,
+        "prefix": 25,
+        "block": 21,
+        "decomposition_holds": true
+      },
+      {
+        "a": 5,
+        "b": 5,
+        "n": 13,
+        "i": 11,
+        "steps": 51,
+        "predicted_steps": 51,
+        "prefix": 35,
+        "block": 7,
+        "decomposition_holds": true
+      },
+      {
+        "a": 5,
+        "b": 6,
+        "n": 14,
+        "i": 12,
+        "steps": 61,
+        "predicted_steps": 61,
+        "prefix": 35,
+        "block": 12,
+        "decomposition_holds": true
+      },
+      {
+        "a": 5,
+        "b": 7,
+        "n": 15,
+        "i": 13,
+        "steps": 71,
+        "predicted_steps": 71,
+        "prefix": 35,
+        "block": 17,
+        "decomposition_holds": true
+      },
+      {
+        "a": 5,
+        "b": 8,
+        "n": 16,
+        "i": 14,
+        "steps": 81,
+        "predicted_steps": 81,
+        "prefix": 35,
+        "block": 22,
+        "decomposition_holds": true
+      },
+      {
+        "a": 5,
+        "b": 9,
+        "n": 17,
+        "i": 15,
+        "steps": 91,
+        "predicted_steps": 91,
+        "prefix": 35,
+        "block": 27,
+        "decomposition_holds": true
+      }
+    ]
+  },
+  "caveats": [
+    "Measured over a = 2..5 and b = a..a+4 only, and against the reduction the engine's deg-lex strategy happens to produce. A Lean proof may follow a different chain, as it does in the a > b regime at a = b + 1.",
+    "The formulas are fitted and checked, not derived. An earlier fit for the prefix, linear in a, matched a = 2 and 3 and failed at a = 4."
+  ]
+}
