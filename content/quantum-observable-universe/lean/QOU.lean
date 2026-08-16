@@ -558,6 +558,11 @@ import QOU.BraidsAndKnots.BorromeanTraceConventionSplit
 -- Canonical trC(β_Bor) derived from the Markov-forced values (rational
 -- seminormal (2,1) rep + Cayley–Hamilton + unique weights); sorry-free.
 import QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation
+-- qou-n1dj: re-sources the `N = 2` hypothesis of the D-forcing chain from the
+-- QOU definition's own categorical volume constraint instead of from
+-- thm:su2-emergence, whose lean.ref is unresolved and whose Lean carries no
+-- rank content. Records both readings of the constraint and which one forces.
+import QOU.BraidsAndKnots.VolumeConstraintForcesFibreTwo
 -- D6-upstream color-tube channel class (conj:inter-nucleon-channel-color-tube):
 -- content-bearing §3b-cond weight-tensor class + ε rule + uniform-projection
 -- satisfiability witness + T₁ fiber wiring. Wired so CI type-checks it.
