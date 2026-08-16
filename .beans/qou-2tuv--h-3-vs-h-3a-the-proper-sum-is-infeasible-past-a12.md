@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-16T13:22:35Z
+updated_at: 2026-08-16T13:44:56Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -339,3 +339,119 @@ I am flagging rather than deciding: CAL-3 is an *acknowledged* input, and the
 repo does use acknowledged anchors in places. Whether the binding channel is
 one of them is the owner's call. But the two scales should not both be live in
 the same table on different channels, which is the situation today.
+
+
+---
+
+# CAL-1/2/3: the corpus, and what binding_canonical.py gets wrong
+
+## What the corpus says
+
+`docs/precision-goals.md` states the triple explicitly, in the error
+decomposition:
+
+    sigma_total(O) = sigma_theory(O, N)  (+)  sigma_CAL(O)
+                     |__ framework's own      |__ propagated experimental error
+                         formula residual         of the CAL-1/2/3 inputs
+                                                  (m_e, q0<-m_p, m_pi)
+
+So **CAL-1 = m_e, CAL-2 = q0 <- m_p, CAL-3 = m_pi.**
+
+And Q_beta is **scored as a prediction**, not consumed as an input.
+`docs/precision-goals.md` L214:
+
+    | Q_beta | prediction (CAL-3 cross-check) | 0.78 ppm | 7.8 ppb |
+    | 1279 ppb (1.28 ppm) | misses ~164x (de-fitted; N=5 ladder was a fit) |
+
+`docs/observable-sector-tracker.md` L64 is blunter still:
+
+    | Q_beta | derived (CAL-1+2; **not** CAL-3 — CAL-3 is m_pi) | 1248 ppb |
+
+## What binding_canonical.py says
+
+It says both things, in the same file:
+
+  - **L69** — correct: *"the 3 calibrations are CAL-1 m_e, CAL-2 D_beta,
+    CAL-3 D_pi"*.
+  - **L160** — wrong: *"Q_beta(n) = 0.78233341 MeV (free-neutron beta-decay
+    Q-value, **CAL-3** per prop:three-calibration-inputs)"*.
+  - **L519** — repeats the wrong one into the witness text: *"CAL-3
+    calibration input"*.
+
+Q_beta is not CAL-3. CAL-3 is m_pi. Q_beta is a framework OUTPUT carrying a
+1248-1279 ppb residual that misses its 100x target by ~164x.
+
+## The reconciliation
+
+The file already contains its own answer, two paragraphs below the mislabel:
+
+  - **Naming note (2026-05-17)**: *"This binding-scale parameter is the
+    beta-decay Q-value Q_beta(n), **NOT** the canonical energy scale
+    E_0 = m_e/(q_0(q_0-1)) ~ 4.186 MeV (a different quantity, ~5x larger).
+    Earlier revisions misnamed this parameter `E_0`."*
+  - **Witness text**: *"DIAGNOSTIC ONLY: predicted B values are 5-40x smaller
+    than AME **because Q_beta is the wrong energy scale**."*
+
+So `binding_canonical.py` knows Q_beta is the wrong scale, declares itself
+diagnostic-only, and points at `canonical-mass-table-extended` as the real
+pipeline. The only thing to fix in it is the CAL-3 label at L160/L519 — a
+docstring and a witness string, no numerics.
+
+**But `mass_at_3A_proper` repeats the exact naming error the note says was
+fixed.** `pyhecke.constants.E_0_CALIBRATION_MEV = _Q_NEUTRON_MEV`, i.e. the
+name `E_0` is bound to Q_beta — 0.782 MeV, not the canonical 4.186 MeV. Every
+`binding_3A` / `binding_3A_tower` result is therefore scaled by a quantity the
+codebase has already ruled the wrong one, under a name that says otherwise.
+
+# The three scales, measured
+
+    alpha  = m_e * 8G          = 3.744460 MeV   8G = Vol(Borromean), exact geometry
+    E_0    = m_e/(q0*(q0-1))   = 4.185981 MeV   CANONICAL per binding_canonical
+    Q_beta = beta-decay Q      = 0.782333 MeV   "the wrong energy scale"
+
+    E_0/alpha = 1.1179   alpha/Q_beta = 4.7863   E_0/Q_beta = 5.3506
+    (E_0/alpha is close to q0 = 1.10998 but NOT equal — 0.7% off, so it is not
+     a q0 factor; do not read one in.)
+
+Deuteron, jones_wenzl volumes + free-baseline (AME 2.22452):
+
+         scale        B_MeV      err%
+         alpha       3.0641     +37.7      <-- best
+     E_0 canon       3.4254     +54.0
+        Q_beta       0.6402     -71.2      <-- what the code uses today
+
+All three are derived from CAL-1 (m_e) except Q_beta, which is a scored
+prediction. Using Q_beta as the binding scale feeds a 1248-ppb framework
+output back in as an input — circular, and it is also the worst fit.
+
+**Recommendation: alpha or the canonical E_0; never Q_beta.** Choosing between
+alpha and E_0 is a real physics question (Borromean volume scale vs the
+q0-pole energy scale) and is the owner's. Q_beta is not a third option — it is
+a mislabel with a ruling already against it.
+
+# Resolving the channels in one table
+
+`mass-table-comprehensive` publishes two binding columns side by side that
+disagree on all three axes:
+
+    column     trace convention    weights      scale       state after this branch
+    B_sym      D (closed_form)     n/a          alpha       ok
+    B_qCLT     C -> now D          H_3          alpha       convention fixed (qou-jm5i)
+
+and the neighbouring pipelines add a third and fourth combination:
+
+    binding_canonical             D             n/a         Q_beta   self-declared diagnostic
+    mass_at_3A_proper             D (jones_wenzl only)  H_3A  Q_beta-as-"E_0"  mislabelled
+
+The resolution is one rule per axis, and two of the three are already decided:
+
+  1. **Convention** — D everywhere. Owner ruling 2026-08-09. This branch closed
+     the last unregistered C site (qou-jm5i). DONE.
+  2. **Scale** — one scale for every binding channel, and not Q_beta. OPEN,
+     owner's call between alpha and E_0.
+  3. **Weights** — H_3 is wrong for A > 1 but H_{3A} is unaffordable past
+     A ~ 2 today (qou-2tuv). Until that is resolved, a table spanning A = 1..418
+     must DECLARE the approximation rather than imply a prediction; this branch
+     added that caveat.
+
+Axis 2 is the one blocking, and it is one decision.

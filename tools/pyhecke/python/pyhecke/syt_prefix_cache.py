@@ -62,6 +62,24 @@ class BlockCache:
         return entry
 
 
+def _value_dtype(vals):
+    """float64 if every entry is a plain float/int, else object.
+
+    The seminormal entries inherit their type from `q`: an f64 `q` yields
+    Python floats and a `dtype=object` array would only cost speed for no
+    precision, while an mpf `q` yields mpf entries that a float64 array
+    silently truncates to 53 bits. Deciding from the values rather than from a
+    flag keeps both callers correct without a new argument.
+    """
+    import numbers
+    for v in vals:
+        if not isinstance(v, (float, int, numbers.Integral)):
+            return object
+        if isinstance(v, numbers.Real) and type(v) not in (float, int, bool):
+            return object
+    return float
+
+
 def build_seminormal_matrices_cached(shape, *, cache: BlockCache,
                                         sparse=None,
                                         q_val: float = None):
@@ -133,7 +151,24 @@ def build_seminormal_matrices_cached(shape, *, cache: BlockCache,
             M = sp_sparse.csr_matrix(
                 (vals, (rows, cols)), shape=(dim, dim))
         else:
-            M = np.zeros((dim, dim))
+            # `np.zeros((dim, dim))` is float64, and `M[r, c] = v` with an mpf
+            # `v` DOWNCASTS IT SILENTLY. That made the seminormal matrices f64
+            # no matter what `q_val` was handed in: callers passing
+            # `q_parameter.Q_MP` got the same 53-bit rep as callers passing the
+            # f64 `Q`, and the extra digits were destroyed at this assignment.
+            #
+            # Downstream the damage compounds. `mass_at_3A_proper` multiplies
+            # these against an mpf braid word (`c * sigmas[i] + d * I`), which
+            # promotes the RESULT to dtype=object — so the computation pays
+            # full mpmath cost (measured 642x at dim=162, bean qou-5qwb's
+            # failure mode) while carrying only float64 information. Worst of
+            # both: laundered precision AND the slow path.
+            #
+            # Fixed at the allocation, not by casting the braid word down —
+            # that would be the direction the NO-FLOAT64 directive forbids.
+            # An f64 `q` still allocates float64 and still hits BLAS, so
+            # existing f64 callers are bit-identical and no slower.
+            M = np.zeros((dim, dim), dtype=_value_dtype(vals))
             for r, c, v in zip(rows, cols, vals):
                 M[r, c] = v
         sigmas.append(M)
