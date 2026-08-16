@@ -102,12 +102,42 @@ is positive (`(2,1^4)/-1.52` vs `(5,1)/+3.76`, `(2,2,1,1)/-0.33` vs `(4,2)/+3.15
 and so on). The mechanism is the sign representation — taller partitions are more
 sign-like, and the sign rep contributes `-1/q` per crossing.
 
-This SHARPENS the obstruction rather than explaining it away. Wide = symmetric =
-`T=1`-like is where the unbinding sits and where `r > 0`, so those blocks have a
-well-defined energy. Tall = antisymmetric = `T=0`-like is the deuteron's side —
-and it is exactly there that `r < 0` and the per-block energy does not exist. The
-undefined blocks are not a random 7 of 11; they are the channel that has to come
-out BOUND.
+> **CORRECTED (2026-08-16) — the obstruction largely dissolves.** This section
+> read: *"the undefined blocks are not a random 7 of 11; they are the channel
+> that has to come out BOUND"*, and treated that as the blocker facing any
+> per-block decomposition. It is not, because those blocks are **not in the
+> trace**.
+>
+> Convention D *is* SU(2) Wenzl level 2 (`5cf16c8f16`, re-derived over ℚ(q)), and
+> at level 2 the Markov weight vanishes on every partition with **≥ 3 rows**.
+> From the corpus's own live closed form
+> (`schur_principal_mpmath.y_lambda_at_q0_mpmath`) at n = 6:
+>
+>     (6,)   y = 0.1153242249      (4,1,1)      y = 0
+>     (5,1)  y = 0.0789529625      (3,2,1)      y = 0
+>     (4,2)  y = 0.0460324347      (3,1,1,1)    y = 0
+>     (3,3)  y = 0.0151238101      (2,2,2)      y = 0
+>                                  (2,2,1,1)    y = 0
+>                                  (2,1,1,1,1)  y = 0
+>                                  (1^6)        y = 0
+>
+> The 7 sign-flipped blocks are **exactly** the ≥3-row ones. They carry zero
+> weight and contribute nothing to `tr_M`. The obstruction was on blocks that do
+> not exist.
+>
+> What survives of it: **one** block, `(3,3)` — the rectangular two-row survivor,
+> sign-flipped in all three systems (−0.018 / −0.042 / −0.269). One block, not
+> seven, and why it flips while the other three survivors do not is open
+> (bean `qou-8zjc`).
+>
+> The trace therefore sees four blocks, and **three of the four unbind in all
+> three systems**. The wide/tall reading below is superseded in its conclusion —
+> the orientation observation stands, but "tall blocks are the obstruction" does
+> not, because there are no tall blocks in the trace.
+
+The original reading, retained for the record: wide = symmetric = `T=1`-like is
+where the unbinding sits and where `r > 0`; tall = antisymmetric = `T=0`-like is
+the deuteron's side, and it is there that `r < 0`.
 
 ## What this establishes, and what it does NOT
 
@@ -117,9 +147,22 @@ stacking routes are provably not.
 
 **Does NOT establish** any of the following, and none should be read into it:
 
-* that the aggregate binding comes out right — it does not. The aggregate
-  total is still `+2.54 MeV` for pp, i.e. still a bound diproton. The unbinding
-  blocks are outweighed by the bound ones in the full trace.
+* that the aggregate binding comes out right — it does not. The exact trace
+  ratio is `tr_atom/tr_free = mu = 0.6127 < 1` for pp, i.e. still a **bound**
+  diproton, and that is not an approximation: `tr_free/tr_atom = 1/mu` holds to
+  `1e-30` for all three interfaces (the Markov property at the trace level).
+
+  **"Three of the four surviving blocks unbind" does NOT mean the system
+  unbinds, and the arithmetic is the reason.** The aggregate is a RATIO OF SUMS,
+
+      r_total = (sum_l y_l chi_l(atom)) / (sum_l y_l chi_l(free))
+
+  not a weighted mean of the per-block ratios `r_l`. A ratio of sums is not the
+  mean of the ratios unless every `chi_l(free)` is equal, and they are not — they
+  differ across blocks by orders of magnitude. So `{1.110, 3.759, 3.150, -0.018}`
+  with weights `{0.115, 0.079, 0.046, 0.015}` aggregating to `0.6127` is not a
+  contradiction; it is what a ratio of sums does. Anyone reading the block table
+  as "mostly unbinding, therefore nearly unbound" is making exactly this error.
 * that any SELECTION PRINCIPLE picks the unbinding blocks for the pp/nn channels.
   The corpus does have machinery of the right type — the operator-selection
   LP/SDP (`prop:operator-selection-lp`), whose dual shadow prices identify which
@@ -209,10 +252,13 @@ def main() -> int:
         print("  -- the symmetric end -- while tall blocks bind or flip sign. Wide =")
         print("  symmetric = T=1-like is where nature puts the unbound channels.")
     flips = max(v[1] for v in results.values())
-    print(f"\n  OBSTRUCTION: up to {flips} of {len(six)} blocks have r_lambda < 0 --")
-    print("  the character changes sign between atom and free, so -alpha*ln(r) is")
-    print("  UNDEFINED there and a per-block binding energy does not exist. Any")
-    print("  per-block decomposition must say what a negative character ratio means.")
+    print(f"\n  SIGN FLIPS: {flips} of {len(six)} blocks have r_lambda < 0, so -alpha*ln(r)")
+    print("  is undefined there. But at convention D = Wenzl level 2 the Markov weight")
+    print("  y_lambda VANISHES on every partition with >= 3 rows, which is exactly that")
+    print("  set -- they contribute nothing to tr_M. Only 4 blocks carry weight:")
+    print("     (6,) 0.1153   (5,1) 0.0790   (4,2) 0.0460   (3,3) 0.0151")
+    print("  THREE OF THE FOUR UNBIND in all three systems. The residue of the")
+    print("  obstruction is one block, (3,3), sign-flipped and unexplained (qou-8zjc).")
 
     print("\n## Scope\n")
     print("  ESTABLISHES range only: H_6 is big enough, span{1,sigma} is not.")
