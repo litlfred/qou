@@ -1,11 +1,52 @@
 /-
-  # Convention D is incompatible with the Q_β ladder's three-row weight instance
+  # The Q_β ladder's affine phase coefficient `1/2 − z` at `z_C` and `z_D`
 
   S1 (PR #5187), owner instruction "derive D ladder", following the
   2026-08-15 ruling that convention D (`z_D = q³/(q²+1)`) is canonical and
   C (`z_C = √q/(1+q)`) is excised for the registered channels.
 
-  ## What this file settles, and why it is the answer to "derive the D ladder"
+  ## ⚠️ RETRACTED: `1/2 − z` is NOT the Wedderburn weight `y_(2,1)`
+
+  **This file originally claimed** that `1/2 − z` is the standard-block
+  Wedderburn weight `y_(2,1)` of an explicit three-row instance
+  `y = (z, 1/2 − z, z)` of `CanonicalMarkovWeightsH3`, and concluded from
+  `1/2 − z_D < 0` that convention D has a **strictly negative Wedderburn
+  weight**, hence no positive-trace reading.
+
+  **That identification is false, and the conclusion inverts.**  S2
+  (PR #5185, `claude/s2-gram-radical-quotient-2026-08-16`) solved the
+  corpus's own three defining conditions for the `H₃(q)` Markov weights —
+  the ones `TemperleyLiebTower.conventionD_kills_antisymmetriser` takes as
+  hypotheses — symbolically over ℚ(q) at `z = z_D`:
+
+  | λ | rows | `y_λ` under D | sign for `q > 1` |
+  |---|---|---|---|
+  | `(3)`  | 1 | `(q⁴+1)/(q²+1)²` | **positive** |
+  | `(2,1)`| 2 | `q²/(q²+1)²`     | **positive** |
+  | `(1³)` | 3 | `0`              | identically zero |
+
+  The vector `(z, 1/2 − z, z)` satisfies **only** the normalisation
+  condition `h1`; it **fails** `h2` and `h3`, the remaining defining
+  conditions.  So it is not a weight vector of `H₃(q)` at all, and
+  `1/2 − z_D` is simply not `y_(2,1)`.  At `q ≈ 1.11` the two differ in
+  sign as well as magnitude: `1/2 − z_D ≈ −0.1127`, while the actual
+  `y_(2,1) ≈ +0.2473`.
+
+  **The corrected picture, from S2 and cited not re-derived:** under
+  convention D the surviving weights are both **strictly positive** and the
+  single dead weight `y_(1³)` is **exactly zero**, not negative — a
+  **positive semidefinite** form of signature `(5, 0, 1)`.  Far from arguing
+  against D, that is what a Temperley–Lieb trace should look like.
+  Convention D does **not** fail positivity.
+
+  This was a **symbol-collision / claim-shape failure** in the sense of
+  AGENTS.md §"Grep the claim SHAPE, not only the topic": a formula was given
+  the *name* of an object whose defining conditions it does not satisfy.
+  Grepping the topic (`y_(2,1)`, Markov weights) found plenty; checking
+  whether *this* expression satisfies the *defining conditions* of that
+  object was the step that was skipped.
+
+  ## What this file actually proves — unchanged and correct
 
   The Q_β precision ladder is
 
@@ -13,60 +54,45 @@
       α = (z − 1)·h/2,   u = b·ℏ_q²,
 
   and `α` is the **only** place a Markov-trace convention enters it — `Q_A`,
-  `h`, `ℏ_q`, `b`, `u` and the N=2 factor `1 − b²ℏ_q⁴` are all z-free.  That
-  `α` is built from the explicit three-row weight instance
+  `h`, `ℏ_q`, `b`, `u` and the N=2 factor `1 − b²ℏ_q⁴` are all z-free.  The
+  phase is affine in the coefficient `1/2 − z`:
 
-      y = (y_(3), y_(2,1), y_(1³)) = (z, 1/2 − z, z)
+      α = −h/4 − (h/2)·(1/2 − z)                     (pure algebra)
 
-  of `CanonicalMarkovWeightsH3`; indeed `α = −h/4 − (h/2)·y_(2,1)`, so `α` is
-  an affine functional of the standard-block weight **alone**.
+  and this file locates that coefficient's sign for each convention:
 
-  So the question "what ladder does convention D support?" reduces to: what
-  is `y_(2,1)` at `z_D`?  This file answers it.
+  * **`z_D(q) > 1/2` for every `q > 1`** (`zD_gt_half`), hence
+    `1/2 − z_D(q) < 0` (`ladderPhaseCoeff_neg_at_zD`);
+  * **`z_C(q) < 1/2` for every `q > 1`** (`zC_lt_half`), hence
+    `1/2 − z_C(q) > 0` (`ladderPhaseCoeff_pos_at_zC`).
 
-  **`z_D(q) > 1/2` for every `q > 1`** (`zD_gt_half`), hence
+  Both statements are true and were never in question.  What they establish
+  is that the two conventions place the **ladder ansatz's phase** on
+  opposite sides of the point `z = 1/2`, so the C ladder's phase formula
+  does not transport to D by substituting the parameter.
 
-      y_(2,1) = 1/2 − z_D(q) < 0   for every substrate value q > 1
-
-  (`threeRowMiddleWeight_neg_at_zD`).  A Markov trace with a **strictly
-  negative** Wedderburn weight is not a positive trace, so the ladder's `α`
-  formula has no positive-trace reading at `z_D` — not merely at the pin
-  `q₀ ≈ 1.10998`, but on the whole substrate regime.  Convention C is the
-  opposite case: `z_C(q) < 1/2` for every `q > 1` (`zC_lt_half`), so
-  `y_(2,1) > 0` there (`threeRowMiddleWeight_pos_at_zC`).
-
-  ## Relation to the existing exclusion
-
-  `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` shows the mirror obstruction:
-  at `z_C` the sign-block weight `y_(1³)` is nonzero, so convention C is
-  incompatible with the two-row cap that forces D in the mass channel.  Read
-  together:
-
-  * the three-row weight instance — the one the ladder's `α` is derived
-    from — **admits C and excludes D** (this file);
-  * the two-row forcing **admits D and excludes C** (the existing theorem).
-
-  Therefore the D-frame ladder is **not** obtained by substituting `z_D` into
-  `α = (z−1)h/2`.  That substitution evaluates the three-row instance outside
-  its positivity domain.  Deriving a genuine D ladder requires first deriving
-  the D-frame **two-row** weight vector and recomputing `α` from it; that is
-  open (see the S1 audit doc).
+  **The sign of `1/2 − z` carries no trace-positivity content whatsoever.**
+  It is a threshold crossing of an affine coefficient in one ansatz, not a
+  Wedderburn weight, and nothing about the positivity of any Markov trace
+  may be inferred from it.
 
   ## Scope
 
-  Scope-(b) **structural exclusion** in the sense of AGENTS.md
-  §"Before declaring refuted": the excluded object is named (the three-row
-  instance `(z, 1/2−z, z)` at `z_D`) and the invariant forbidding it is a
-  proved sign condition, not a numerical miss.  It excludes **that weight
-  instance at that parameter**; it does not exclude convention D for the
-  decay channel, which stays `disputed` per registry §9g.
+  Scope-**(a)** scope-limited negative in the sense of AGENTS.md
+  §"Before declaring refuted".  What is excluded is the *transport* of one
+  ansatz's phase formula from C to D.  This is **not** a structural
+  exclusion of convention D, and the earlier scope-(b) claim to that effect
+  is withdrawn: the invariant it cited (a negative Wedderburn weight) does
+  not exist.  Convention D's status in the decay channel stays `disputed`
+  per registry §9g, on other grounds.
 
   Sorry-free.
 
   Ref: [jones1987] https://doi.org/10.2307/1971403
        [wenzl1988] https://doi.org/10.1007/BF02101492
        docs/coordination/ck-dk-canonical-registry.md §9g
-       docs/audits/2026-08-16-s1-derive-d-ladder.md
+       docs/audits/2026-08-16-s1-derive-d-ladder.md §4
+       docs/audits/2026-08-16-s2-gram-radical-independent-revalidation.md §3bis
        computations/qbeta/qbeta_d_frame_ladder_structure_probe.py
 -/
 
@@ -82,13 +108,21 @@ noncomputable def zD (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
 /-- The convention-C Markov parameter, `z_C(q) = √q/(1+q)`. -/
 noncomputable def zC (q : ℝ) : ℝ := Real.sqrt q / (1 + q)
 
-/-- The standard-block (`λ = (2,1)`) weight of the explicit three-row
-    instance `y = (z, 1/2 − z, z)` of `CanonicalMarkovWeightsH3`.
+/-- The Q_β ladder's **affine phase coefficient**, `1/2 − z`.
 
-    The Q_β ladder's phase is the affine functional
-    `α = −h/4 − (h/2)·threeRowMiddleWeight z`, so this is the single
-    quantity through which a Markov-trace convention reaches the ladder. -/
-noncomputable def threeRowMiddleWeight (z : ℝ) : ℝ := 1 / 2 - z
+    The ladder's phase satisfies `α = (z−1)h/2 = −h/4 − (h/2)·(1/2 − z)`,
+    pure algebra, so this is the single quantity through which the Markov
+    parameter `z` reaches the ladder.
+
+    **This is not a Wedderburn weight.**  It was previously named
+    `threeRowMiddleWeight` and identified with the standard-block weight
+    `y_(2,1)` of `H₃(q)`; that identification is retracted — see the module
+    docstring.  The vector `(z, 1/2 − z, z)` satisfies only the
+    normalisation condition of `CanonicalMarkovWeightsH3` and fails the
+    other two, and the actual `y_(2,1)` under convention D is
+    `q²/(q²+1)² > 0`.  No positivity claim about any Markov trace follows
+    from the sign of this coefficient. -/
+noncomputable def ladderPhaseCoeff (z : ℝ) : ℝ := 1 / 2 - z
 
 /-- **`z_D(q) > 1/2` on the whole substrate regime `q > 1`.**
 
@@ -101,18 +135,22 @@ theorem zD_gt_half (q : ℝ) (hq : 1 < q) : 1 / 2 < zD q := by
   rw [zD, lt_div_iff₀ hden]
   nlinarith [sq_nonneg q, sq_nonneg (q - 1), sq_nonneg (q + 1)]
 
-/-- **The three-row middle weight is strictly negative at `z_D`, for every
-    `q > 1`.**
+/-- **The ladder's affine phase coefficient is strictly negative at `z_D`,
+    for every `q > 1`.**
 
-    Immediate from `zD_gt_half`.  Its content: the explicit three-row weight
-    instance the ladder's phase is built from fails positivity at the
-    convention-D Markov parameter throughout the substrate regime, so the
-    phase `α = (z_D − 1)h/2` is not the phase of any positive Markov trace
-    in that instance. -/
-theorem threeRowMiddleWeight_neg_at_zD (q : ℝ) (hq : 1 < q) :
-    threeRowMiddleWeight (zD q) < 0 := by
+    Immediate from `zD_gt_half`.  Its content is exactly that `z_D` lies
+    above `1/2` throughout the substrate regime, so the ladder ansatz's
+    phase `α = (z_D − 1)h/2` sits on the far side of `−h/4` from where
+    convention C puts it.
+
+    **No trace-positivity content.**  `1/2 − z` is not a Wedderburn weight
+    (module docstring); the actual convention-D weight `y_(2,1) = q²/(q²+1)²`
+    is strictly *positive*.  Do not read this as "convention D has a negative
+    weight" — that reading is retracted. -/
+theorem ladderPhaseCoeff_neg_at_zD (q : ℝ) (hq : 1 < q) :
+    ladderPhaseCoeff (zD q) < 0 := by
   have := zD_gt_half q hq
-  simp only [threeRowMiddleWeight]
+  simp only [ladderPhaseCoeff]
   linarith
 
 /-- **`z_C(q) < 1/2` on the whole substrate regime `q > 1`.**
@@ -129,23 +167,30 @@ theorem zC_lt_half (q : ℝ) (hq : 1 < q) : zC q < 1 / 2 := by
   rw [zC, div_lt_iff₀ hden]
   nlinarith [sq_nonneg (Real.sqrt q - 1)]
 
-/-- **The three-row middle weight is strictly positive at `z_C`, for every
-    `q > 1`** — the mirror of `threeRowMiddleWeight_neg_at_zD`. -/
-theorem threeRowMiddleWeight_pos_at_zC (q : ℝ) (hq : 1 < q) :
-    0 < threeRowMiddleWeight (zC q) := by
+/-- **The ladder's affine phase coefficient is strictly positive at `z_C`,
+    for every `q > 1`** — the mirror of `ladderPhaseCoeff_neg_at_zD`, and
+    likewise carrying no trace-positivity content. -/
+theorem ladderPhaseCoeff_pos_at_zC (q : ℝ) (hq : 1 < q) :
+    0 < ladderPhaseCoeff (zC q) := by
   have := zC_lt_half q hq
-  simp only [threeRowMiddleWeight]
+  simp only [ladderPhaseCoeff]
   linarith
 
-/-- **The two conventions sit on opposite sides of the positivity boundary.**
+/-- **The two conventions sit on opposite sides of `z = 1/2`.**
 
-    Capstone: for every substrate value `q > 1` the three-row middle weight
-    is positive at `z_C` and negative at `z_D`.  There is no `q > 1` at which
-    both readings are positive, so the ladder's three-row phase formula
-    cannot be transported from C to D by substituting the parameter. -/
-theorem threeRow_positivity_separates_zC_zD (q : ℝ) (hq : 1 < q) :
-    0 < threeRowMiddleWeight (zC q) ∧ threeRowMiddleWeight (zD q) < 0 :=
-  ⟨threeRowMiddleWeight_pos_at_zC q hq, threeRowMiddleWeight_neg_at_zD q hq⟩
+    Capstone: for every substrate value `q > 1` the ladder's affine phase
+    coefficient is positive at `z_C` and negative at `z_D`.  There is no
+    `q > 1` at which the two agree in sign, so the C ladder's phase formula
+    cannot be transported to D by substituting the parameter.
+
+    **This is a statement about one ansatz's phase, not about either
+    trace.**  The earlier reading — that it separates the conventions by
+    *positivity of a Wedderburn weight* — is retracted (module docstring):
+    under convention D the `H₃(q)` weights are positive semidefinite,
+    signature `(5, 0, 1)`, per S2 (PR #5185). -/
+theorem ladderPhaseCoeff_sign_separates_zC_zD (q : ℝ) (hq : 1 < q) :
+    0 < ladderPhaseCoeff (zC q) ∧ ladderPhaseCoeff (zD q) < 0 :=
+  ⟨ladderPhaseCoeff_pos_at_zC q hq, ladderPhaseCoeff_neg_at_zD q hq⟩
 
 /-! ### `z_D` in Temperley–Lieb form
 
