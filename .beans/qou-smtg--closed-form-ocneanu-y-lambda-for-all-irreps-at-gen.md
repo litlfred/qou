@@ -3,8 +3,9 @@
 title: Closed-form Ocneanu y_lambda for ALL irreps at general z (and at z_D)
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-10T17:43:03Z
-updated_at: 2026-08-10T17:43:03Z
+updated_at: 2026-08-16T12:56:32Z
 ---
 
 
@@ -108,3 +109,59 @@ A closed form for `y_λ(q,z)` valid for all λ ⊢ n, all n in 2..12, with the
 machinery at n ≥ 4, and the shipped symbolic root either confirmed or
 regenerated from it. Formalize-first applies: the vanishing claim in step 2 is
 a Lean target, alongside the existing `ConventionPinning` section.
+
+
+---
+
+## UPDATE 2026-08-16 — step 2 is PROVED. Steps 1, 3, 4 remain open.
+
+**Step 2 of "The task" above** — *"Specialise at `z_D = q³/(q²+1)` and **prove**
+that every `ℓ(λ) ≥ 3` weight vanishes identically — currently asserted from the
+n=3 case plus the TL identification, not proved for general n"* — **landed in
+PR #5217**, sorry-free, in
+[`QOU/QBeta/WenzlWeightVanishing.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/WenzlWeightVanishing.lean).
+
+What was proved, and it is stronger than step 2 asked for:
+
+- `schurPrincipal_eq_zero_iff` — the level-`r` principal specialisation
+  vanishes **iff** `ℓ(λ) > r`. Quantified over **every** `YoungDiagram` and
+  **every** level `r`; `n` does not appear in the statement.
+- `wenzlLevel_conventionD` — convention D **is** Wenzl level `r = 2`, exactly
+  (`Q^r = q⁴ = Q²` at `Q = q²`, `z_W = q·z_D`). An algebraic identity, proved.
+- `conventionD_weight_eq_zero_iff` — the `r = 2` corollary: `y_λ = 0 ⟺ λ has
+  ≥ 3 rows`.
+
+The mechanism is a single cell: the numerator factor `1 − Q^{r+c(x)}` vanishes
+exactly at content `c(x) = −r`, the cell `(r,0)` exists exactly when the diagram
+has more than `r` rows, and Young diagrams are down-left closed so no other cell
+can do it first. At `r = 2` that is `(2,0)`, of content `−2` — the TL row cap.
+
+Non-vacuity is proved rather than asserted: the genericity hypothesis holds at
+every positive `Q ≠ 1` (so at the substrate `Q = q₀² ≈ 1.232`), and
+`discriminates_at_n_three` derives that `(1³)` dies while `(2,1)` survives.
+
+### Read the conditionality before citing this
+
+The proof is about `schurPrincipal`, the hook-content product. The bridge from
+that formula to the **actual Ocneanu weight** is Wenzl (1988), which is an
+external input — cited in #5217, and **axiomatised** in PR #5230 as the class
+`IsOcneanuWeightSystem`. So the statement about the actual weight,
+`conventionD_ocneanuWeight_eq_zero_iff_of_wenzl`, is *proved conditional on
+Wenzl 1988*, not proved outright. Cite it that way. The route to unconditional
+(formalising `H_n(q)` + the Ocneanu trace) is scoped in its own bean.
+
+### What this bean still owns
+
+Steps 1, 3 and 4 are untouched by #5217:
+
+1. the general-`n` closed form at **general `z`** — the content → linear-factor
+   map `f_c(z)`, the hook-product denominator, the q-power, and both
+   recursions. #5217 proves vanishing *at* Wenzl's parameter; it does not
+   derive the weights at arbitrary `z`.
+3. checking the specialisation reproduces `[n−2k+1]_q/[2]_q^n` on two-row `λ` —
+   the probe verifies this at `n = 2..7` but it is not proved.
+4. the per-weight numerical verification at `n = 4,5,6` against the seminormal
+   machinery via `tr(xσ) = z·tr(x)` on random `x`.
+
+The "close condition" is therefore **not** met. Do not close this bean on the
+strength of #5217.
