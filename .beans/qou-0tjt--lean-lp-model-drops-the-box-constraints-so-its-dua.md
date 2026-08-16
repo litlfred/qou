@@ -1,7 +1,7 @@
 ---
 # qou-0tjt
 title: Lean LP model drops the box constraints, so its dual is an equality not an inequality
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-16T12:35:00Z
@@ -79,3 +79,50 @@ prose. Whether a witness carries them was not established.
 - [ ] Locate the concrete `x*`, `y₀*`, `t`, `G` for the substrate instance
 - [ ] Check `x*ᵢ > -M` (option 3), or pick between 1 and 2
 - [ ] Verify the three `k4ul` hypotheses hold at those values
+
+## 2026-08-16 — RESOLVED, and this bean overstated the problem
+
+Option 3 is what the narrative already asserts. `operator-selection-lp.md`:
+
+> "For large $M$, the slack variables $s_i$ are **driven to zero at
+> optimality**. The effective dual simplifies to …"
+
+Those `sᵢ` are the multipliers on the box constraints `xᵢ ≥ -M`. In the dual of
+`min tᵀx  s.t.  Σxᵢ = n_target, (Gx)ᵢ ≥ 0, xⱼ ≥ -M`, the box multiplier `μⱼ ≥ 0`
+enters as
+
+```
+y₀ + Σᵢ Gⱼᵢ yᵢ + μⱼ = tⱼ        hence        y₀ + Σᵢ Gⱼᵢ yᵢ ≤ tⱼ
+```
+
+so the narrative's `≤` **is** the equality with the box multiplier carried. The
+paper then says those multipliers vanish at the optimum — which is the box being
+non-binding, and which makes the `≤` **tight**:
+
+```
+tⱼ = y₀ + Σᵢ Gⱼᵢ yᵢ
+```
+
+That is exactly `k4ul`'s `dual_feasible`. There is no conflict: the equality is
+the *optimality* condition the paper itself asserts, and dropping the box in the
+Lean model is the faithful reduction rather than a divergence.
+
+**What this bean got wrong.** It framed the `≤`/`=` difference as "two different
+programs", implying the Lean theorem verifies something other than the paper's
+claim. It does not — it verifies the paper's claim under the paper's own stated
+condition. The three options are moot; option 3 was already in the text and I
+did not read far enough before filing.
+
+**What remains true and worth keeping.** "Driven to zero for large `M`" is an
+*assertion*, not a derivation — the paper does not exhibit an `M`, prove the
+polyhedron bounded, or show the multipliers vanish. `k4ul`'s `dual_feasible` is
+the formal counterpart of that assertion, so the Lean layer now states the
+assumption explicitly where the prose left it implicit. That is an improvement
+in honesty, not a gap.
+
+Still unlocated, and still worth knowing: no computation or witness pins the
+concrete `x*`, `y₀*`, `t`, `G`, or `M` — the narrative is generic in `n` and
+`d = n!`, and the only LP script in the repo (`computations/_deprecated/
+symbolic-lp.py`) is deprecated. So the hypotheses cannot be *checked* against
+substrate values, only assumed. That is the real open item, and it is smaller
+than this bean originally claimed.
