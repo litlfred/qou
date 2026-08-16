@@ -193,3 +193,29 @@ rather than hidden.
 than raw `List (List ℕ)`. Expect the work to be the typed wrapper — `wordOfPerm` injectivity and
 the `SYT` casts — not the combinatorics, which is now finished on the raw layer. Then
 surjectivity, then the count.
+
+## Brick 8 DONE — RSK separates permutations
+
+`QOU/Mathlib/SchenstedPermInjective.lean`, sorry-free:
+
+- `wordOfPerm_length` — `|wordOfPerm σ| = n`, which is exactly the length hypothesis brick 7 needs;
+- `wordOfPerm_injective`;
+- **`insertWordRec_wordOfPerm_injective`** — distinct permutations of `Fin n` have distinct
+  `(P, Q)` pairs.
+
+**The injectivity half of Robinson–Schensted is now proved**, at the raw `List (List ℕ)` level.
+
+**Deliberately NOT the typed `rskPair`.** `SchenstedPairingMap.rskPair` is typed in
+`StandardYoungTableau` and built from the raw tableaux by `listStandardYT`; lifting brick 7 through
+it needs a typed→raw retraction the corpus does not carry, and the *content* would be identical —
+the wrapper repackages the same data. Measured the typed layer first (`SchenstedStandardGeneric`
+has three declarations, `SchenstedStandardTableau` four; no retraction among them) rather than
+starting the lift and discovering it midway. The typed corollary can follow whenever a retraction
+appears; nothing here claims it.
+
+**Remaining: surjectivity.** That is now the *whole* residue of the epic — and note it is also the
+only part not already implied by the algebra side, since `n! ≤ Σ (f^λ)²` is proved twice over
+(here by injectivity, and independently by `SpechtActionInjective.factorial_le_sum_sq`). Whoever
+takes it should start from `uninsertSteps` + `uninsert_insert`: the inverse machinery is built, so
+surjectivity is "every `(P, Q)` of the right shape arises", i.e. that running the inverse on an
+arbitrary standard pair produces a word whose forward image is that pair.
