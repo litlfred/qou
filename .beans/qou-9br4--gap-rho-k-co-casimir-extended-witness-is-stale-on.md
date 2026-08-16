@@ -1,11 +1,11 @@
 ---
 # qou-9br4
 title: 'GAP: rho-k-co-casimir-extended witness is stale on main — needs a ~45min re-run'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T20:24:06Z
-updated_at: 2026-08-16T02:38:54Z
+updated_at: 2026-08-16T03:15:55Z
 ---
 
 `computations/rho-k-co-casimir-extended.witness.json` on `main` carries 4 raw
