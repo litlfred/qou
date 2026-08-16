@@ -101,12 +101,28 @@ not by the flipping one.
 
 Two positives, both scoped:
 
-* **`H_6` has the range and the right orientation.** The full Wedderburn
-  decomposition carries `r_λ = χ_λ(atom)/χ_λ(free)` up to **6.46**, where the
-  2-dim subalgebra is capped at `0.6127`. The unbinding sits in the **wide**
-  (symmetric, `T=1`-like) blocks `(6,)`, `(5,1)`, `(4,2)` — where nature puts the
-  unbound channels. So the shared premise of routes 1–3 (a 2-dimensional
-  interface) was the blocker, not the substrate anchor.
+* ~~**`H_6` has the range and the right orientation.**~~ **RETRACTED
+  2026-08-16 — this was false, and it was the one positive structural result on
+  the axis.** The per-block characters came from `pyhecke.trace.atom_character_raw`;
+  production uses `chi_all_lambda_reduced_block` (fine-Bratteli transfer) and the
+  two are different objects — agreeing exactly on the 1-dim blocks, disagreeing on
+  every multi-dim one with no consistent factor (−3.80, −2.24, −154.5, …). The
+  transfer routine is correct: `Σ y_λ χ_λ` over it reproduces `tr_free/tr_atom`
+  exactly for all three systems.
+
+  Corrected, with the same `y_λ`: `(6,) 1.110/1.006/0.901`,
+  `(5,1) 0.611/0.542/0.408`, `(4,2) 0.328/0.186/0.111`, `(3,3) 0.928/0.919/0.934`.
+  **Three of the four surviving blocks BIND.** The only one above 1 is the trivial
+  rep at `r = q = 1.110`, which is forced for a 1-dim rep with one extra crossing
+  and is therefore not a finding. So `H_6` does **not** carry the range
+  `span{1,σ}` lacks — the weighted maximum is `q ≈ 1.11`, not 6.46 — and
+  **route 6 (drop the 2-dim subalgebra) joins the closed list.**
+
+  How it got past me: the probe validated the characters against the Hecke
+  eigenvalues on the 1-dim blocks and passed to every digit. Those are precisely
+  the two blocks where the routines agree — a validation exercising only the
+  1-dim blocks cannot detect a defect in the multi-dim ones, and produced false
+  confidence rather than none.
 * **The ribbon twist is `T`-odd.** `θ_λ = q^{c(λ)}` with `c(λ') = −c(λ)` gives the
   symmetric block `q^{+f}` and the antisymmetric `q^{−f}` — reciprocal, so the
   ratio moves as `q^{2f}` and the channels **can** be reordered. This is the
