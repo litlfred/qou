@@ -2,9 +2,9 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://folio.litlfred.org/schemas/hecke-engine/gram.schema.json",
   "title": "Gram matrix certificate",
-  "description": "Output of `hecke-gram` — the 6x6 Gram matrix of H_3(q) on the NF basis, its inverse, and the Markov trace weights, at a given q.",
+  "description": "Output of `hecke-gram` — the 6x6 Gram matrix of H_3(q) on the NF basis, its inverse ON THE QUOTIENT H_3(q)/rad, the null direction, and the Markov trace weights, at a given q. Under convention D the form is singular (corank 1, the three-strand q-antisymmetriser), so there is no 6x6 inverse and the certificate does not offer one.",
   "type": "object",
-  "required": ["q", "z", "h", "n", "basis", "trace_weights", "matrix", "inverse", "determinant"],
+  "required": ["q", "z", "h", "n", "basis", "trace_weights", "matrix", "quotient_inverse", "radical", "determinant"],
   "properties": {
     "q": { "type": "number", "exclusiveMinimum": 0 },
     "z": { "type": "number" },
@@ -33,7 +33,8 @@
       "minItems": 6,
       "maxItems": 6
     },
-    "inverse": {
+    "quotient_inverse": {
+      "description": "Moore-Penrose inverse of `matrix`, which for a symmetric form with a one-dimensional kernel IS the inverse on the orthogonal complement of that kernel — i.e. on the quotient H_3(q)/rad. RENAMED from `inverse` (2026-08-15) when convention D made the 6x6 inverse nonexistent; the rename is deliberate so a consumer keyed on the old name fails loudly rather than silently receiving a matrix that differs exactly on the radical.",
       "type": "array",
       "items": {
         "type": "array",
@@ -44,6 +45,16 @@
       "minItems": 6,
       "maxItems": 6
     },
-    "determinant": { "type": "number" }
+    "radical": {
+      "description": "The null direction of `matrix`, in closed form: the three-strand q-antisymmetriser (-1/q)^len(w) over the NF basis. Verified exactly over Q at n = 3, 4, 5 in computations/probes/gram_radical_cellular_revalidation.py.",
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "determinant": {
+      "description": "Determinant of `matrix`. Under convention D this is ZERO exactly (proved over Q(q)); a nonzero value here is f64 noise, not a resolved determinant.",
+      "type": "number"
+    }
   }
 }
