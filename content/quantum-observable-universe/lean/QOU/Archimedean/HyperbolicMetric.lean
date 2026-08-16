@@ -54,11 +54,18 @@ theorems: this file stays 100 % sorry-free, and the gap is tracked in bean
 or the geodesic classification.  `dH_comm` and `dH_triangle` have since been
 CLOSED (below); the separation axiom remains open.
 
-* Separation `dH x y = 0 → x = y` needs the fundamental theorem of calculus /
-  absolute continuity to bound `pathLenH` below by the endpoint displacement (a
-  Cantor-type continuous path otherwise defeats a naive lower bound, and here the
-  bound must hold under the *infimum*) — the same reason Mathlib has no hyperbolic
-  geometry.
+* Separation `dH x y = 0 → x = y` is **half proved**: the *height coordinate*
+  is CLOSED unconditionally — `dH_eq_zero_height` derives `y₂ = x₂` from the
+  vertical lower bound `dH x y ≥ |log(y₂/x₂)|` (`dH_ge_logHeight`,
+  `pathLenH_ge_logHeight`), via the FTC applied to `t ↦ log(γ(t)₂)`.  Finite
+  length makes `deriv γ` integrable (`hasFiniteIntegral_iff_ofReal`), defeating
+  the Cantor obstruction; `measurable_deriv` supplies measurability with no
+  global-differentiability hypothesis.  The *horizontal coordinates* remain
+  open (bean `qou-v8u3`): they need the height bound `γ(t)₂ ≤ x₂·e^L` (FTC on
+  `[0,t]`) plus the infimum-sequence argument `‖y_h − x_h‖ ≤ x₂·e^L·L → 0`.
+  This vertical half is unconditional — independent of the sibling z-axis route
+  (`HyperbolicGeodesicZAxis`), which reaches separation only through the
+  `HypMinimizerUnique` conjecture.
 
 The carrier is `EuclideanSpace ℝ (Fin 3)` (NOT the plain `Fin 3 → ℝ` of
 `HyperbolicVolumeMeasure`, whose Haar/Lebesgue structure needs the sup-free Pi
@@ -78,6 +85,9 @@ import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 import Mathlib.MeasureTheory.Function.JacobianOneDim
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Calculus.Deriv.Comp
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+import Mathlib.Analysis.Calculus.FDeriv.Measurable
+import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
@@ -621,5 +631,138 @@ theorem dH_triangle (x y z : E) : dH x z ≤ dH x y + dH y z := by
   refine ENNReal.le_iInf₂_add_iInf₂ (fun γ hγ δ hδ => ?_)
   calc dH x z ≤ pathLenH (concat γ δ) 0 1 := dH_le_pathLenH (concat_admissible hγ hδ)
     _ = pathLenH γ 0 1 + pathLenH δ 0 1 := pathLenH_concat hγ hδ
+
+/-- Component `p ↦ p i` as a continuous linear functional on `E`. -/
+noncomputable def coordCLM (i : Fin 3) : E →L[ℝ] ℝ :=
+  (ContinuousLinearMap.proj i).comp (EuclideanSpace.equiv (Fin 3) ℝ).toContinuousLinearMap
+
+@[simp] theorem coordCLM_apply (i : Fin 3) (p : E) : coordCLM i p = p i := rfl
+
+/-- `|p i| ≤ ‖p‖` in Euclidean space. -/
+theorem abs_coord_le_norm (p : E) (i : Fin 3) : |p i| ≤ ‖p‖ := by
+  have := EuclideanSpace.norm_eq p
+  rw [this]
+  have hmem : i ∈ Finset.univ := Finset.mem_univ i
+  have hle : ‖p i‖ ^ 2 ≤ ∑ j, ‖p j‖ ^ 2 :=
+    Finset.single_le_sum (f := fun j => ‖p j‖ ^ 2) (fun j _ => sq_nonneg _) hmem
+  calc |p i| = ‖p i‖ := (Real.norm_eq_abs _).symm
+    _ = Real.sqrt (‖p i‖ ^ 2) := (Real.sqrt_sq (norm_nonneg _)).symm
+    _ ≤ Real.sqrt (∑ j, ‖p j‖ ^ 2) := Real.sqrt_le_sqrt hle
+
+/-- Component derivative: `d/dt (γ t) i = (deriv γ t) i`. -/
+theorem deriv_coord {γ : ℝ → E} {t : ℝ} (hγ : DifferentiableAt ℝ γ t) (i : Fin 3) :
+    HasDerivAt (fun s => (γ s) i) ((deriv γ t) i) t := by
+  have h := hγ.hasDerivAt
+  have := (coordCLM i).hasFDerivAt.comp_hasDerivAt t h
+  simpa [coordCLM_apply] using this
+
+/-- **z-component length lower bound.**  Every admissible path from `x` to `y`
+has hyperbolic length at least `|log (y₂/x₂)|` — the vertical drop is a lower
+bound for the hyperbolic length, via the FTC applied to `t ↦ log (γ(t)₂)`
+(finite length ⇒ the derivative is integrable, defeating the Cantor obstruction).
+Unconditional (no geodesic-uniqueness hypothesis). -/
+theorem pathLenH_ge_logHeight {γ : ℝ → E} {x y : E} (hγ : AdmissiblePath γ x y) :
+    ENNReal.ofReal |Real.log ((y) 2) - Real.log ((x) 2)| ≤ pathLenH γ 0 1 := by
+  by_cases hL : pathLenH γ 0 1 = ∞
+  · rw [hL]; exact le_top
+  -- finite length
+  set g : ℝ → ℝ := fun t => ‖deriv γ t‖ / (γ t) 2 with hg
+  set φ' : ℝ → ℝ := fun t => (deriv γ t) 2 / (γ t) 2 with hφ'
+  set φ : ℝ → ℝ := fun t => Real.log ((γ t) 2) with hφ
+  have hLlt : ∫⁻ t in Set.Icc (0:ℝ) 1, ENNReal.ofReal (g t) < ∞ := lt_top_iff_ne_top.mpr hL
+  -- continuity of γ on Icc, hence of the height coordinate
+  have hγc : ContinuousOn γ (Set.Icc (0:ℝ) 1) :=
+    fun t ht => (hγ.diff t ht).continuousAt.continuousWithinAt
+  have hheightC : ContinuousOn (fun t => (γ t) 2) (Set.Icc (0:ℝ) 1) :=
+    (coordCLM 2).continuous.comp_continuousOn hγc
+  -- measurability of g and φ'
+  have hnumNorm : AEStronglyMeasurable (fun t => ‖deriv γ t‖) (volume.restrict (Set.Icc (0:ℝ) 1)) :=
+    ((measurable_deriv γ).norm).aestronglyMeasurable
+  have hnumCoord : AEStronglyMeasurable (fun t => (deriv γ t) 2) (volume.restrict (Set.Icc (0:ℝ) 1)) :=
+    (((coordCLM 2).measurable.comp (measurable_deriv γ)).aestronglyMeasurable)
+  have hden : AEStronglyMeasurable (fun t => (γ t) 2) (volume.restrict (Set.Icc (0:ℝ) 1)) :=
+    hheightC.aestronglyMeasurable measurableSet_Icc
+  have hgm : AEStronglyMeasurable g (volume.restrict (Set.Icc (0:ℝ) 1)) :=
+    (hnumNorm.aemeasurable.div hden.aemeasurable).aestronglyMeasurable
+  have hφ'm : AEStronglyMeasurable φ' (volume.restrict (Set.Icc (0:ℝ) 1)) :=
+    (hnumCoord.aemeasurable.div hden.aemeasurable).aestronglyMeasurable
+  -- g ≥ 0 a.e. on Icc
+  have hgnn : 0 ≤ᵐ[volume.restrict (Set.Icc (0:ℝ) 1)] g :=
+    (ae_restrict_iff' measurableSet_Icc).mpr
+      (ae_of_all _ (fun t ht => div_nonneg (norm_nonneg _) (le_of_lt (hγ.mem t ht))))
+  -- g integrable on Icc
+  have hgint : IntegrableOn g (Set.Icc (0:ℝ) 1) := by
+    refine ⟨hgm, ?_⟩
+    rw [hasFiniteIntegral_iff_ofReal hgnn]
+    exact hLlt
+  -- |φ' t| ≤ g t on Icc
+  have hbound : ∀ t ∈ Set.Icc (0:ℝ) 1, ‖φ' t‖ ≤ g t := by
+    intro t ht
+    have hz : 0 < (γ t) 2 := hγ.mem t ht
+    rw [hg, hφ', Real.norm_eq_abs, abs_div, abs_of_pos hz, div_le_div_iff_of_pos_right hz]
+    exact abs_coord_le_norm _ 2
+  -- φ' integrable on Icc (dominated by g)
+  have hφ'int : IntegrableOn φ' (Set.Icc (0:ℝ) 1) := by
+    refine Integrable.mono' hgint hφ'm ?_
+    exact (ae_restrict_iff' measurableSet_Icc).mpr (ae_of_all _ hbound)
+  -- FTC
+  have hderiv : ∀ t ∈ Set.uIcc (0:ℝ) 1, HasDerivAt φ (φ' t) t := by
+    intro t ht
+    rw [Set.uIcc_of_le (by norm_num)] at ht
+    exact (deriv_coord (hγ.diff t ht) 2).log (ne_of_gt (hγ.mem t ht))
+  have hii : IntervalIntegrable φ' volume 0 1 := by
+    rw [intervalIntegrable_iff_integrableOn_Icc_of_le (by norm_num)]
+    exact hφ'int
+  have hftc : ∫ t in (0:ℝ)..1, φ' t = φ 1 - φ 0 :=
+    intervalIntegral.integral_eq_sub_of_hasDerivAt hderiv hii
+  -- |φ 1 - φ 0| ≤ ∫_Ioc g
+  have hIoc : ∫ t in (0:ℝ)..1, φ' t = ∫ t in Set.Ioc (0:ℝ) 1, φ' t :=
+    intervalIntegral.integral_of_le (by norm_num)
+  have hgintIoc : IntegrableOn g (Set.Ioc (0:ℝ) 1) :=
+    hgint.mono_set Set.Ioc_subset_Icc_self
+  have hφ'intIoc : IntegrableOn φ' (Set.Ioc (0:ℝ) 1) :=
+    hφ'int.mono_set Set.Ioc_subset_Icc_self
+  have habs : |φ 1 - φ 0| ≤ ∫ t in Set.Ioc (0:ℝ) 1, g t := by
+    rw [← hftc, hIoc, ← Real.norm_eq_abs]
+    calc ‖∫ t in Set.Ioc (0:ℝ) 1, φ' t‖ ≤ ∫ t in Set.Ioc (0:ℝ) 1, ‖φ' t‖ :=
+          norm_integral_le_integral_norm _
+      _ ≤ ∫ t in Set.Ioc (0:ℝ) 1, g t := by
+          refine setIntegral_mono_on hφ'intIoc.norm hgintIoc measurableSet_Ioc (fun t ht => ?_)
+          exact hbound t (Set.Ioc_subset_Icc_self ht)
+  -- bridge real integral to lintegral
+  have hgnnIoc : 0 ≤ᵐ[volume.restrict (Set.Ioc (0:ℝ) 1)] g :=
+    (ae_restrict_iff' measurableSet_Ioc).mpr
+      (ae_of_all _ (fun t ht => div_nonneg (norm_nonneg _)
+        (le_of_lt (hγ.mem t (Set.Ioc_subset_Icc_self ht)))))
+  have hbridge : ENNReal.ofReal (∫ t in Set.Ioc (0:ℝ) 1, g t)
+      = ∫⁻ t in Set.Icc (0:ℝ) 1, ENNReal.ofReal (g t) := by
+    rw [ofReal_integral_eq_lintegral_ofReal hgintIoc hgnnIoc]
+    exact MeasureTheory.setLIntegral_congr Ioc_ae_eq_Icc
+  -- assemble
+  have : ENNReal.ofReal |φ 1 - φ 0| ≤ ENNReal.ofReal (∫ t in Set.Ioc (0:ℝ) 1, g t) :=
+    ENNReal.ofReal_le_ofReal habs
+  rw [hbridge] at this
+  have hφ1 : φ 1 = Real.log ((y) 2) := by rw [hφ]; simp only []; rw [hγ.target]
+  have hφ0 : φ 0 = Real.log ((x) 2) := by rw [hφ]; simp only []; rw [hγ.source]
+  rw [hφ1, hφ0] at this
+  exact this
+
+
+/-- **`dH` dominates the vertical log-drop** — `ofReal |log(y₂/x₂)| ≤ dH x y`. -/
+theorem dH_ge_logHeight (x y : E) :
+    ENNReal.ofReal |Real.log ((y) 2) - Real.log ((x) 2)| ≤ dH x y :=
+  le_iInf₂ (fun _ hγ => pathLenH_ge_logHeight hγ)
+
+/-- **Height-coordinate separation** (unconditional): `dH x y = 0` forces the
+heights to agree, `y₂ = x₂`.  The vertical half of the full separation axiom. -/
+theorem dH_eq_zero_height {x y : E} (hx : x ∈ upperH) (hy : y ∈ upperH)
+    (h : dH x y = 0) : (y) 2 = (x) 2 := by
+  have hle := dH_ge_logHeight x y
+  rw [h, nonpos_iff_eq_zero, ENNReal.ofReal_eq_zero] at hle
+  have hd : Real.log ((y) 2) - Real.log ((x) 2) = 0 := abs_nonpos_iff.mp hle
+  have hlog : Real.log ((y) 2) = Real.log ((x) 2) := by linarith
+  calc (y) 2 = Real.exp (Real.log ((y) 2)) := (Real.exp_log hy).symm
+    _ = Real.exp (Real.log ((x) 2)) := by rw [hlog]
+    _ = (x) 2 := Real.exp_log hx
 
 end QOU.Archimedean.HyperbolicMetric
