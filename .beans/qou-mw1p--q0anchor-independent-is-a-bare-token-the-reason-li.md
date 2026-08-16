@@ -1,11 +1,11 @@
 ---
 # qou-mw1p
 title: q0Anchor 'independent' is a bare token; the reason lives only in source comments
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T02:14:02Z
-updated_at: 2026-08-16T02:14:42Z
+updated_at: 2026-08-16T02:40:15Z
 ---
 
 ## Where it came from
@@ -63,3 +63,28 @@ free text would need care). The audit + `WitnessBuilder` guard added in
 `b4b293fc` / `e6cc6ac5` are the touch points.
 
 Not urgent — nothing is wrong on main. This makes a correct record legible.
+
+
+## RESOLVED 2026-08-16 (PR #5194)
+
+`q0AnchorReason` (free text) now rides beside `q0Anchor`, and all five
+witnesses carrying the bare token have been re-run with a reason specific to
+that producer — a generic string would have reproduced the same emptiness.
+
+**Design question, decided: a separate field, not a widened token.** The
+audit's `classify()` matches exact tokens and maps anything unrecognised to
+`Q0_FLIP`, so folding free text into `q0Anchor` would have made every reasoned
+declaration a flip. The token stays machine-checkable; the reason sits beside
+it.
+
+**Made visible in the count**, applying the same principle one level down:
+`Q0_INDEPENDENT_NO_REASON` counts declarations that omit it, so a thin
+declaration cannot pass as a complete one. End state
+`Q0_INDEPENDENT 5 / Q0_INDEPENDENT_NO_REASON 0 / Q0_FLIP 0`.
+
+**Dropped with its anchor.** A reason outliving the anchor it explains would
+read as provenance for a claim the witness no longer makes — worse than none.
+Two new tests cover carry and drop.
+
+Not gating: `--strict` still exits only on `Q0_FLIP`, so the new verdict
+reports without blocking.

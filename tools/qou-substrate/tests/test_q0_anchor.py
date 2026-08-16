@@ -254,6 +254,77 @@ def test_save_drops_independent_when_payload_gains_a_q0():
             "records a proton q0")
 
 
+def test_save_carries_forward_the_reason_with_the_anchor():
+    """`q0AnchorReason` rides with the anchor it explains.
+
+    The token alone is a thin record — a reader who finds only `"independent"`
+    has to re-derive the import cone to check it, which is the work the
+    declaration exists to save (bean `qou-mw1p`).
+    """
+    import json
+    from pathlib import Path as _P
+
+    with _tmpdir() as d:
+        tmp = _P(d)
+        script = tmp / "qfree_with_reason.py"
+        script.write_text("# a producer that never reads q0\n")
+        out = tmp / "reasoned.witness.json"
+        out.write_text(json.dumps({
+            "computation": "reasoned",
+            "scriptFile": "qfree_with_reason.py",
+            "allPassed": True,
+            "assertions": [],
+            "q0Anchor": "independent",
+            "q0AnchorReason": "free parameter u; no substrate value read",
+        }) + "\n")
+
+        b = w.WitnessBuilder(name="reasoned", _script_path=str(script),
+                             output_dir=str(tmp))
+        b.save()
+
+        got = json.loads(out.read_text())
+        assert got["q0Anchor"] == "independent"
+        assert got.get("q0AnchorReason") == (
+            "free parameter u; no substrate value read"
+        ), "the reason was dropped while its anchor survived"
+
+
+def test_save_drops_the_reason_with_the_anchor():
+    """A reason must not outlive the anchor it explains.
+
+    Left behind, it would explain a label that is no longer on the witness —
+    worse than no reason at all, because it reads as provenance for a claim
+    nothing is making.
+    """
+    import json
+    from pathlib import Path as _P
+
+    with _tmpdir() as d:
+        tmp = _P(d)
+        script = tmp / "grew_a_dep.py"
+        script.write_text("# this producer grew a q0 dependency\n")
+        out = tmp / "orphan.witness.json"
+        out.write_text(json.dumps({
+            "computation": "orphan",
+            "scriptFile": "grew_a_dep.py",
+            "allPassed": True,
+            "assertions": [],
+            "q0Anchor": "independent",
+            "q0AnchorReason": "no substrate value read",
+        }) + "\n")
+
+        b = w.WitnessBuilder(name="orphan", _script_path=str(script),
+                             output_dir=str(tmp))
+        b.add_data("q0", "1.1099785827513808075916690956107688798744991218736")
+        b.save()
+
+        got = json.loads(out.read_text())
+        assert "q0Anchor" not in got
+        assert "q0AnchorReason" not in got, (
+            "the reason outlived the anchor it explains — it now reads as "
+            "provenance for a claim the witness no longer makes")
+
+
 # RETRACTED 2026-08-15. Two tests stood here asserting the muon label must
 # equal `q_muon_at()`, on the premise that re-running `q_pinning_50_digit.py`
 # would flip the label to a proton value. That premise is FALSE — the producer

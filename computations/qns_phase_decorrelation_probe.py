@@ -348,7 +348,16 @@ def main() -> None:
     # to prevent. Via save(extra=...) and NOT add_data(), which nests under
     # `data` where the audit reading body["q0Anchor"] cannot see it. No
     # q0Value — there is no value, and one here is a Q0_FLIP.
-    w.save({"q0Anchor": "independent"})
+    w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Sabra/DN shell model: the only q here is the shell-spacing ratio "
+            "q = 1 + eps swept over EPS_SWEEP, not the substrate modulus. "
+            "eps = 1e-1 gives q = 1.1, adjacent to q0 = 1.10998 — coincidence, "
+            "and the reason this needs stating rather than inferring. Import "
+            "cone reaches no q_parameter and no qou_substrate.constants."
+        ),
+    })
     print("Saved witness: qns-phase-decorrelation-probe.witness.json")
 
 

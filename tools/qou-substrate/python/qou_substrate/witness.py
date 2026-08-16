@@ -72,6 +72,25 @@ def _repo_root() -> Path:
 #                 appearing alongside this label is a contradiction the audit
 #                 reports as Q0_FLIP.
 #
+# `q0AnchorReason` (free text) states WHY, and belongs with every
+# `independent` — and with `ambiguous`, where it names what is undetermined.
+# The token alone is a weak record: a reader opening the witness sees
+# `"independent"` and has no way to check it without re-deriving the import
+# cone, which is the work the declaration was supposed to save them. Compare
+# the `<!-- literal-source: … -->` convention on the same axis, where the
+# marker is worth almost nothing and the sentence after the colon is the whole
+# value. So:
+#
+#   w.save({"q0Anchor": "independent",
+#           "q0AnchorReason": "Sabra shell-spacing ratio q = 1 + eps over "
+#                             "EPS_SWEEP; no substrate value read"})
+#
+# is the shape to write, not the bare token. `Q0_INDEPENDENT_NO_REASON` in
+# `q0_anchor_consistency_audit.py` counts the ones that omit it, so a thin
+# declaration stays visible instead of reading as a complete one. Recorded as
+# bean `qou-mw1p`, from design advice on PR #5124: a positive declaration has
+# to survive the next reader, and `true` does not.
+#
 # `independent` is producer-declared only: `w.save({"q0Anchor": "independent"})`.
 # It cannot be inferred, and the manifest generator must not try. Its scan sees
 # this class already and drops it (`# neither: no q₀ field — omit`), because
@@ -1309,7 +1328,11 @@ class WitnessBuilder:
                     except Exception:  # noqa: BLE001
                         _stale = False
             if not _stale:
-                for _k in ("q0Anchor", "q0Value"):
+                # `q0AnchorReason` rides with the anchor it explains, and is
+                # dropped with it: a reason carried past a dropped anchor would
+                # explain a label that is no longer there, which is worse than
+                # no reason at all.
+                for _k in ("q0Anchor", "q0Value", "q0AnchorReason"):
                     if _k not in witness and _k in existing:
                         witness[_k] = existing[_k]
 
