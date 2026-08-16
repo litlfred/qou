@@ -85,3 +85,76 @@ does not touch tr_M's correctness (tr_M's framing is unambiguous).
 Formalize the separation lemma (small, mirrors V9's, no new Mathlib), then take
 the (A)/(B) disposition to the owner -- it is a published-claim change, not an
 agent call.
+
+## CORRECTION to my own V6 above: (B) was never proved (2026-08-16)
+
+The section above treats (A) and (B) as two established claims in tension.
+That is wrong about (B), and the correction makes the finding stronger, not
+weaker. I read the Lean sibling.
+
+### The independence theorem does not mention a braid
+
+`appendix-standard-model/strand-twist-datum.lean`:
+
+    def TwistDatum (n : ℕ) : Type := Fin n → ℤ
+
+    theorem exists_same_writhe_ne_totalTwist (n : ℕ) (hn : 0 < n) :
+        ∃ t₁ t₂ : TwistDatum n, totalTwist t₁ ≠ totalTwist t₂ := by
+      refine ⟨fun _ => 0, fun i => if i = ⟨0, hn⟩ then 1 else 0, ?_⟩
+
+Its real content is "there exist two ℤ-valued functions with different sums",
+witnessed by the zero function and delta_0. That is true of ℤ-valued functions
+on ANY nonempty index type. There is no braid word, no writhe, and no fixed-word
+hypothesis anywhere in the TYPE -- the name says `same_writhe` and the type
+never mentions it.
+
+Verified over the whole file: every occurrence of braid / writhe / word is in a
+comment or docstring (lines 11, 13, 26-29, 91-93, 134, 180-182). The imports are
+`Mathlib.GroupTheory.Perm.Basic`, `Mathlib.Data.Fintype.Perm`, `Mathlib.Tactic`
+-- no braid group, no knot theory, no category theory. The file's entire
+mathematical content is functions Fin n → ℤ, their sums, multisets, a
+permutation action, and negation.
+
+### So the model assumes the answer
+
+Independence is not a discovered property of ribbon framings here. It is true BY
+CONSTRUCTION: once the framing is modelled as an arbitrary `Fin n → ℤ`,
+independence from the crossing data is immediate and contentless. Which is
+exactly (A)'s problem stated from the other side -- a freely-chosen function is
+not the ribbon category's canonical twist.
+
+This lands in AGENTS.md's documented `proof-claims-unencoded` family: the
+docstring asserts "over any fixed braid word (hence fixed writhe) there exist
+framings with distinct total twist" while the Lean proves a triviality about
+integer functions. The theorem is TRUE; it simply does not support the claim its
+name and docstring make. (Not `: True`-vacuous -- worth stating precisely, since
+the vacuity detectors key on that shape and would not fire here.)
+
+### What this does to the disposition
+
+My (A)-or-(B) disposition above was two-sided. It is one-sided:
+
+  - dropping (A) does NOT rescue the hypercharge candidacy, because the property
+    that would rescue it -- (B), separation at fixed braid word -- was never
+    established.
+  - the candidate's qualifying property is docstring-only.
+
+`conj:sm-hypercharge-invariant`'s factorization criterion requires a coordinate
+separating a writhe-degenerate PAIR OF STATES. `exists_same_writhe_ne_totalTwist`
+exhibits two FUNCTIONS, not two states of a common braid. Those are different
+claims, and only the second one would qualify the datum.
+
+### The test the file skips, and it is small
+
+State the claim with the braid in the type:
+
+    ∀ (β : braid word), ∃ t₁ t₂ : TwistDatum n,
+        (t₁, t₂ both arise as framings OF β) ∧ totalTwist t₁ ≠ totalTwist t₂
+
+The content is entirely in the conjunct the current file omits -- what it means
+for a framing to BE a framing of β. Supply that and independence is either a
+theorem or false; as written it is neither. Until then the hypercharge candidacy
+rests on an unformalized sentence.
+
+Scope (a): a statement about what this file proves versus what it says. It does
+not refute the hypercharge programme and does not touch tr_M.
