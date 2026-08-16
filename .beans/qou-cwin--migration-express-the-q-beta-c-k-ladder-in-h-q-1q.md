@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-16T12:45:00Z
-updated_at: 2026-08-16T12:45:00Z
+updated_at: 2026-08-16T23:20:59Z
 ---
 
 Owner-authorised 2026-08-16: *"bean up and start = express the ladder in h"*.
@@ -202,3 +202,38 @@ statement is only that the h rungs are better *conditioned* per index.
 
 This matters because it would have been the strongest-sounding argument for
 the migration, and it is unsound.
+
+
+## T2 DONE (2026-08-16, PR #5258) — Lean first, then the registry
+
+Per the owner's 'go carefully. lean formalize and prove first', the theorem was
+written BEFORE the registry rows it justifies, so the naming rests on a proof
+rather than on a symbolic run.
+
+Lean (both sorry-free, lean-direct exit 0, #print axioms clean on all 12 decls):
+  LadderFrameChange.lean          T1, generic Field  (4 theorems)
+  LadderCoeffNormalisation.lean   T2, R per §7c      (8 declarations)
+
+Registry:
+  §2   c-tilde_k and c_2^even rows added
+  §9i  new subsection: theorem + three-way table + withdrawn contradiction
+  §3   FRAME DECLARATION, not a frame column -- every rung is u-frame and
+       factor-normalised, so a column repeating that 7x carries no information.
+       Replaced by the discipline: any row in a different frame or
+       normalisation must say so in its own cell.
+  notation-collisions.md   c_k / c-tilde_k / c_k^even split at the lookup point
+
+Verification: ck_dk_registry_validate.py OK (wired rungs ['2'], flip-flop guard
+satisfied).  Content validate exit 0, 4 pre-existing warnings, none on the
+touched block -- and the block IS in the chapter manifest (notation.ts:37), so
+the render/AST gate genuinely covered it.
+
+RETRACTED mid-task: I briefly cited 'bun run render-latex.ts <block>' as a
+pipeline render.  It validated nothing -- that module exits 0 on no arguments
+AND on a nonexistent path.  Caught by testing the negative controls before
+recording the pass.  The real gate is scripts/run-validate.ts.
+
+## Remaining
+
+T3 (AGENTS.md line 1062) and T4 (downstream content blocks in F/h coordinate)
+both need OWNER SIGN-OFF and are deliberately not started.
