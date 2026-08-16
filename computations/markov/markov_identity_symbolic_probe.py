@@ -255,7 +255,13 @@ def main() -> int:
         ),
         "scriptFile": "markov/markov_identity_symbolic_probe.py",
         "q0Anchor": "independent",
-        "q0_independence_note": (
+        # Field renamed from `q0_independence_note` to the canonical
+        # `q0AnchorReason` (bean qou-mw1p). The prose below was already
+        # exactly right — this producer independently reached the same
+        # token-plus-reason design — but under a name the audit does not
+        # read, so `q0_anchor_consistency_audit` scored it
+        # Q0_INDEPENDENT_NO_REASON despite the reason being present.
+        "q0AnchorReason": (
             "No q0 is read. The peel's numeric (c, d) only SELECT one of five "
             "crossing templates -- a q-independent combinatorial choice -- and "
             "chi takes delta as the closed form flavor_split_leading(q)."

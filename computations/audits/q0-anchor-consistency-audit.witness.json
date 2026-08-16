@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T04:23:50.217802+00:00",
-  "commitSha": "284ce75bbb45900ebcc8331b646c8628e55868b8",
+  "computedAt": "2026-08-16T14:09:17.494223+00:00",
+  "commitSha": "634e141de5fbd534aaa0b32e03595e4dff0828ca",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 7,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "33ccaac86640",
-  "scriptCommitSha": "202bbd07b14e230880a29eeb691eb435a69bb8d9",
+  "scriptCommitSha": "607c9f54966713806ecee3e5787b2ffc1b9b67bc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,13 +35,13 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 651,
-      "Q0_AMBIGUOUS": 16,
+      "Q0_OK": 652,
+      "Q0_AMBIGUOUS": 15,
       "Q0_INDEPENDENT": 5,
-      "Q0_INDEPENDENT_NO_REASON": 0,
-      "Q0_ANCHOR_MISSING": 1885,
+      "Q0_INDEPENDENT_NO_REASON": 1,
+      "Q0_ANCHOR_MISSING": 1887,
       "Q0_VALUE_MISSING": 1,
-      "Q0_AUDIT_EXEMPT": 70,
+      "Q0_AUDIT_EXEMPT": 71,
       "Q0_PARSE_ERROR": 1,
       "Q0_FLIP": 0
     },
@@ -1045,6 +1045,14 @@
           "detail": ""
         },
         {
+          "witness": "chi-at-q0-matrix-m-helium-3.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-at-q0-matrix-m-helium-4.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-at-q0-matrix-m-tritium.witness.json",
           "detail": ""
         },
@@ -1073,15 +1081,11 @@
           "detail": ""
         },
         {
+          "witness": "chi-deuteron-h6-at-q0-90dps-matrix-m.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-deuteron-h6.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-dineutron-h6-at-q0-50dps.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-diproton-h6-at-q0-50dps.witness.json",
           "detail": ""
         },
         {
@@ -1133,15 +1137,7 @@
           "detail": ""
         },
         {
-          "witness": "chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "chi-numpy-dtype-fix-benchmark.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-proton-h3-at-q0-50dps-matrix-m.witness.json",
           "detail": ""
         },
         {
@@ -1153,7 +1149,15 @@
           "detail": ""
         },
         {
+          "witness": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-tritium-h9-at-qinv-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-tritium-h9.witness.json",
           "detail": ""
         },
         {
@@ -5893,6 +5897,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-d-frame-eigenphase-bar-parity.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-daha-macdonald.witness.json",
           "detail": ""
         },
@@ -8383,6 +8391,14 @@
           "detail": ""
         },
         {
+          "witness": "chi-dineutron-h6-at-q0-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-diproton-h6-at-q0-50dps.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
           "detail": ""
         },
@@ -8416,10 +8432,6 @@
         },
         {
           "witness": "chi-tritium-h9-at-q0-50dps.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-tritium-h9.witness.json",
           "detail": ""
         },
         {
@@ -10221,10 +10233,6 @@
           "detail": ""
         },
         {
-          "witness": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "deuteron-binding-interface-closure.witness.json",
           "detail": ""
         },
@@ -10376,6 +10384,10 @@
         },
         {
           "witness": "rho-k-proton-substrate-audit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "silent-self-check-audit.witness.json",
           "detail": ""
         },
         {
@@ -10553,6 +10565,12 @@
         {
           "witness": "iterative-knot-builder.witness.json",
           "detail": "root is not an object"
+        }
+      ],
+      "Q0_INDEPENDENT_NO_REASON": [
+        {
+          "witness": "markov-identity-symbolic.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
         }
       ],
       "Q0_INDEPENDENT": [
