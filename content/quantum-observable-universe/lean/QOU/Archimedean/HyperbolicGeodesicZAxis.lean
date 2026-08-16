@@ -156,6 +156,31 @@ theorem dH_zpt_le {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
   rw [pathLenH_vseg] at hle
   rwa [Real.log_div (ne_of_gt hb) (ne_of_gt ha)]
 
+/-- **WALL-3 (lower bound).** Every admissible path between two z-axis points has
+hyperbolic length at least `|log(b/a)|`, so the distance is bounded below by it.
+DERIVED by specialising the unconditional vertical log-drop bound
+`dH_ge_logHeight` to the z-axis points, whose heights are exactly `a` and `b`. -/
+theorem dH_zpt_ge {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
+    ENNReal.ofReal |Real.log (b / a)| ≤ dH (zpt a) (zpt b) := by
+  have h := dH_ge_logHeight (zpt a) (zpt b)
+  rw [zpt_height, zpt_height] at h
+  rwa [Real.log_div (ne_of_gt hb) (ne_of_gt ha)]
+
+/-- **WALL-3 (exact z-axis distance).** `dH (0,0,a) (0,0,b) = |log(b/a)|`, from the
+upper bound (`dH_zpt_le`, the vertical segment realises it) and the lower bound
+(`dH_zpt_ge`, the FTC vertical log-drop).  The 1-D core of geodesic uniqueness:
+the vertical segment is a genuine length-minimiser between z-axis points. -/
+theorem dH_zpt {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
+    dH (zpt a) (zpt b) = ENNReal.ofReal |Real.log (b / a)| :=
+  le_antisymm (dH_zpt_le ha hb) (dH_zpt_ge ha hb)
+
+/-- **The vertical segment is a length-minimiser** between two z-axis points: its
+hyperbolic length equals `dH (zpt a) (zpt b)`.  (Existence of a minimiser on the
+z-axis, DERIVED — the length equality is `pathLenH_vseg` matched to `dH_zpt`.) -/
+theorem pathLenH_vseg_eq_dH {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
+    pathLenH (vseg a b) 0 1 = dH (zpt a) (zpt b) := by
+  rw [pathLenH_vseg, dH_zpt ha hb, Real.log_div (ne_of_gt hb) (ne_of_gt ha)]
+
 /-! ### WALL-2 (partial) — one-point normalization to the z-axis
 
 The full two-point normalization (bean `qou-0a0z`) reduces geodesic uniqueness
