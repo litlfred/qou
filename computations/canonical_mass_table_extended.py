@@ -687,10 +687,13 @@ def main() -> int:
         computed_labels.append(atom_str)
 
         tr_m_str = fmt(tr_m, dps=15)  # display-only, full precision via fmt
-        pred_str = f"{pred:.4f}" if pred is not None else "—"
-        # float() here is display-only: mpf has no `.4f` format support, and
-        # the console column is 4 decimals regardless. The witness columns take
-        # the mpf path above; do not copy this cast into the record.
+        # float() on BOTH console columns is display-only: mpf implements no
+        # `__format__`, so `f"{x:.4f}"` raises once the qou-3wqg lift makes
+        # these mpf, and the console shows 4 decimals either way. The witness
+        # columns take the mpf path above — do not copy either cast into a
+        # record. `pred` needed this the moment the root lift landed; `ref`
+        # needed it when B_AME_MEV stopped being wrapped in float().
+        pred_str = f"{float(pred):.4f}" if pred is not None else "—"
         ame_str = f"{float(ref):.4f}" if ref is not None else "—"
         origin_str = (origin or "—")[:20]
         print(f"  {atom_str:<6} {A:>2} {n:>3} {tr_m_str:<22} "
