@@ -14,7 +14,7 @@ form**, and thereby being unable to see the same fact expressed in a different
 form. The blind spot is never a missing case in a list. It is the shape of the
 question.
 
-## The twelve
+## The thirteen
 
 | # | detector keyed on | blind to | exposed by |
 |---|---|---|---|
@@ -30,10 +30,48 @@ question.
 | 10 | **the producer** | a *per-anchor artifact* going stale on its own | `atomic-tr-m-mpfr-50dps-proton.witness.json` (#5190) |
 | 11 | the **live code path** | prose that is the module's only convention statement | `markov_peel.tr_M_atomic`'s docstring (#5190) |
 | 12 | the artifact's own **convention tag** | a tag accurate about the bytes and silent about currency | 9 colour-blind `chi-*` witnesses (#5209) |
+| 13 | **`scriptHash`** — the staleness check itself | staleness arriving through a *dependency* | `pyhecke-h3-vs-h3a-impact-comparison` (qou-11wz) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
 assumption the rest share.
+
+### 13 — the staleness check said "current" about a stale witness
+
+Every artifact here carries a `scriptHash`: `sha256(producer)[:12]`, compared
+against the file on disk. It is the corpus's answer to *"is this witness stale?"*,
+and it is used that way — a mismatch is how `qbeta-ck-cache.witness.json` was
+proved frozen at convention C (row 10, with the hash as the proof).
+
+It has a hole, and the hole is structural rather than a bug: **`scriptHash`
+covers the producer FILE, not what the producer imports.**
+
+`pyhecke-h3-vs-h3a-impact-comparison.witness.json` was materially stale after
+`pyhecke/atom.py:691` migrated C → D, because that producer reaches it through
+`from hecke_core import atom_per_generator_volumes`. Regenerating moved ten
+payload fields:
+
+```
+.results[*].max_abs_delta   0.31762140405498  ->  0.40882936812595   (+28.7%)
+.results[*].max_rel_pct     32.115175189754   ->  37.847030013816
+```
+
+and `scriptHash` read **`2b01c1d6a433` before and `2b01c1d6a433` after**. The
+producer file never changed. The check that exists to answer "is this stale"
+answered *no*, correctly by its own definition and wrongly in fact.
+
+**Why this is worse than rows 6 and 10 rather than another instance of them.**
+Row 6 is a *record* going stale; row 10 is an *artifact* going stale. Both are
+caught by asking a checker. This is the **checker** going stale — a green
+staleness gate over a stale artifact, which is the one configuration where
+looking harder does not help, because the instrument agrees with the wrong
+answer.
+
+The repair is the same counter-move as everywhere else in this document: hash
+what the run actually *depended on* rather than the one file it started from —
+the transitive import closure, or at minimum the library modules the producer
+resolves at run time. Until then, treat a matching `scriptHash` as evidence the
+producer is unchanged, **never** as evidence the witness is current.
 
 ### 12 — a correct label on stale data
 

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:18:21Z
-updated_at: 2026-08-16T12:39:58Z
+updated_at: 2026-08-16T15:06:15Z
 ---
 
 Parent: qou-cdx1. Surfaced by qou-2ixd's producer-audit bucket split; left open
@@ -185,3 +185,57 @@ Two of the three published counts in this campaign that turned out wrong were
 mine and were caught by me before anyone acted on them; the discipline that
 catches them is checking a suggestion that looks *right*, not only one that
 looks wrong.
+
+
+---
+
+## CASCADE COMPLETE 2026-08-16 — both C-route consumers regenerated
+
+| witness | result |
+|---|---|
+| `pyhecke-h3-vs-h3a-impact-comparison` | regenerated after **2 h** of compute (D, T, ³He, ⁴He at H₁₂). Ten payload fields moved: `max_rel_pct` 32.115 → 37.847, `max_abs_delta` +28.7 %. |
+| `rho-k-graded-atomic-mass` | regenerated in seconds. All five assertions pass. |
+
+Both verified: `scriptHash` matches `sha256(producer)[:12]`, shape guard 1
+modified / 0 collapsed, each diffed against a scratchpad snapshot taken before
+any other command ran.
+
+### The fit got worse, and that is the honest headline
+
+`rho-k-graded-atomic-mass`'s two numeric assertions are **error metrics against
+an expected 0.0**, and both degraded:
+
+```
+single_gen_mean_abs_err_pct   0.19417797975754 -> 0.31012197793723
+single_gen_max_abs_err_pct    0.29598094064313 -> 0.41310743187684
+```
+
+They still pass, on a tolerance loose enough to absorb it. This matches what the
+ruling audit already records for the binding channel under D (mean |err| 37.39 %
+→ 43.85 %) and the reason it gives: the convention was chosen on a structural
+forcing **against** the aggregate fit. A migration that improved every number
+would have been the surprising outcome.
+
+### Three sources were conflated in that diff and are separated in the commit
+
+Of 68 changed fields: the two error metrics are mine; `engineVersion` /
+`environment.mpmath` `1.3.0 → 1.4.1` is the container (pre-existing — `pip
+install gmpy2` reported only gmpy2, and the *committed* witness is the one from
+the older environment); and `m_p_facade_MeV` moving `938.2720881603788 →
+938.2720894273243` is a **calibrated facade** shifting at rel 1.35e-11, not the
+CODATA input (`M_P_MEV = 938.27208816`, unchanged).
+
+### What this cost, and what it bought — taxonomy row 13
+
+`scriptHash` on `pyhecke-h3-vs-h3a-impact-comparison` read **`2b01c1d6a433`
+before and `2b01c1d6a433` after**. The producer file never changed; the
+staleness came through `pyhecke/atom.py`, a **dependency**. So the corpus's
+staleness check answered *"current"* about a witness that was materially wrong —
+correctly by its own definition, and wrongly in fact.
+
+That is worse than rows 6 and 10 rather than another instance of them: those are
+a record and an artifact going stale, both catchable by asking a checker. This
+is the **checker** going stale. Recorded as row 13, with the repair — hash the
+transitive import closure, not the entry file — and the interim rule: a matching
+`scriptHash` is evidence the producer is unchanged, **never** that the witness is
+current.
