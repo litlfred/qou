@@ -14,6 +14,8 @@ updated_at: 2026-08-16T15:28:57Z
 updated_at: 2026-08-16T16:43:28Z
 
 updated_at: 2026-08-16T18:00:00Z
+
+updated_at: 2026-08-16T19:15:16Z
 parent: qou-59vq
 ---
 
@@ -1433,3 +1435,45 @@ public signature rather than changing it.
 Remaining in the file: `barSymJMSum_block_eigenvalue` (not provable as stated —
 `q ≠ 0` vs `seminormalRep`'s `0 < q ∧ q ≠ 1`; owner question) and
 `barSymJMSum_central`, which named `qJM_commute` as its blocker — now available.
+
+
+### `barSymJMSum_central`: the crux found, the GAP note wrong again (2026-08-16)
+
+Two more sorry-free axiom-clean theorems:
+
+* **`pair_comm`** — in any algebra whose quadratic relation has constant term
+  `1`, `s` commutes with `A + s A s`.
+* **`qJM_pair_comm`** — the instance: **`σ_i` commutes with `L_i + L_{i+1}`**,
+  given `q·qi = 1`. Since `L_{i+1} = σ_i L_i σ_i`, those two terms of the sum
+  are exactly `A + s A s`. **Neither summand commutes with `σ_i` alone** — this
+  is why a *sum* is central when its summands are not, and it was not
+  identified anywhere in the corpus.
+
+**🔻 The GAP note names the wrong blocker — third time today.** It says
+centrality needs *"`qJM_commute` plus the σ_i–L_k commutation relations"*.
+`qJM_commute` is now proved and **does not bear on this at all**: it is **L–L**
+commutation, centrality is a **σ–L** question. Anyone who closed `qJM_commute`
+expecting this to fall out would have found nothing had moved.
+
+What centrality actually needs, for fixed `i`:
+
+| terms | status |
+|---|---|
+| `L_k`, `k ≤ i-1` | **have** — `qJM_comm_sigma` |
+| `L_i + L_{i+1}` | **have** — `qJM_pair_comm` |
+| `L_k`, `k ≥ i+2` | **OPEN** |
+
+`q·qi = 1` is not incidental: the computation leaves a residue
+`(1 − q·qi)(sA − As)`, so it is exactly the standard Hecke normalisation that
+makes the pair work. `Hecke.σUnit` carries the same hypothesis.
+
+**NOT claimed: that `barSymJMSum_central` is nearly done.** The third row is
+real work. `L_k` for `k ≥ i+2` is built from generators *including* `σ_i`, and
+at `k = i+2` the outer generator `σ_{i+1}` is **adjacent** to `σ_i`, so far
+commutation does not reach it. Classically, conjugation by `s_i` permutes the
+transpositions `(j,k)` with `j < k` among themselves whenever `k ≥ i+2`; the
+q-analogue of that argument is what is missing. The inverse family `L_k⁻¹`
+needs the same treatment with `σ⁻¹`.
+
+**Branch score: 10 theorems, all sorry-free and axiom-clean; one GAP closed
+(`qJM_commute`); one GAP reduced to a single named row.**
