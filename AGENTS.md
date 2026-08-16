@@ -1043,6 +1043,22 @@ When working on math-affecting code or content, **trace the change to a step in 
 > **Route every absolute nucleon/atom mass through the single facade [`computations/canonical_mass.py`](computations/canonical_mass.py)** (`proton_mass_mev` / `neutron_mass_mev` / `nucleon_mass_mev`). `mass_vol_density` / `vol_density_borromean` / `linking_weight_family_a` (=λ_A) are **deprecated for absolute mass** (emit `DeprecationWarning`); `vol_density_per_block` stays valid for **binding ratios only** (scale cancels). Read first: [`docs/canonical-mass-formula-guardrail.md`](docs/canonical-mass-formula-guardrail.md). Why it recurred: this very banner read with `K=𝓑₃` *is* the wrong form — that's the trap the facade closes.
 
 > **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is PROVED Taylor-exact; `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` swings up to 3.47 % at m_p-pin q₀ (≈ 3 % cross-anchor)), with the N=4 → N=5 non-monotonicity as the experimental signature. Report TIERED (`proved` / `near-match` / `fitted`), never binary wired/dropped — the four-session wire/un-wire flip-flop (#1452 ↔ #1479) came from conflating "N=3 beats 100× experimental" (true) with "c_3 = -2 is Taylor-exact" (false). **Canonical reference (read before any `c_k` wire/un-wire decision): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).** Permanent fix is the Q_β Habiro element (parallel α_EM `[2]_q·(1−h²α)` in PR #1511). **2026-05-31 c_3 SETTLED** (PR #1580 verdict audit + flip-flop history table now at 6 entries in [`docs/coordination/1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md)); Li_2^q × spectral combiner refuted as mech #7 (PR #1609); Δtr_M bar-decomposition recorded as structural observation (PR #1615) — none of these wire to production.
+>
+> **🛑 CONVENTION LABEL (2026-08-15 ruling) — every number in this banner is
+> CONVENTION-C-frame.** `c_2 = -1`, `c_3 = -2 = J_Hopf(q=1)`, the 3.47 % swing,
+> and the whole `c_k` ladder were derived with the Markov parameter
+> `z = √q/(q+1)` (convention C). The owner ruling of 2026-08-15 makes
+> **convention D (`z = q³/(q²+1)`) canonical**. The values above are **correct
+> for C** and are kept as recorded — they need *scoping*, not correction; do
+> **not** "fix" them. **The ladder must be RE-DERIVED under D, and that is not
+> a z-swap** — `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`
+> ([`MarkovZFullBarCondition.lean`](content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
+> sorry-free) makes the C-frame ladder and the mass channel's three-row forcing
+> mutually exclusive, so substituting `z_D` into the existing ladder is not a
+> valid move. Until the re-derivation lands, treat every `c_k` conclusion —
+> including the downstream `c₃^even = −Vol(4₁)`, `[3]_q/25`, `J − ℏ²`, `S_leak`
+> and `q*_S` facts — as **C-conditional**. Tranche S1, bean `qou-cds1`;
+> §S1 of [`docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md`](docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md).
 
 > **⚠ Critical framing — Im(q) at fibre vs observable level (2026-06-01).** A recurrent source of confusion in the c_k flip-flop saga and the (1+q)/2 Option-E v9 near-match: distinguish two levels of "Im(q)":
 >
