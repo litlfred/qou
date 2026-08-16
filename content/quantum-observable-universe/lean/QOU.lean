@@ -1046,3 +1046,7 @@ import QOU.Mathlib.RothIndex
 -- qou-br3w — staged for upstream Mathlib: generalized (m x m) Wronskians.  Mathlib has the
 -- two-polynomial case only; genWronskian_two pins the generalisation to it.
 import QOU.Mathlib.GenWronskian
+-- qou-br3w — staged for upstream Mathlib: the same in SEVERAL variables, which is what
+-- Roth's lemma actually consumes (its auxiliary polynomial is multivariate).  The operator
+-- family is an explicit parameter because in several variables there is no canonical row.
+import QOU.Mathlib.MvGenWronskian

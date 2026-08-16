@@ -24,7 +24,9 @@
   | Hasse derivative, `MvPolynomial.pderiv` | **present** |
   | Wronskian | present, but **two polynomials only** |
   | **index at a point** | **absent — this file** |
-  | generalized Wronskians | absent |
+  | generalized Wronskians | absent in Mathlib — supplied in `QOU.Mathlib.GenWronskian`
+    (univariate, with the dependence iff) and `QOU.Mathlib.MvGenWronskian` (several
+    variables, the direction Roth's lemma consumes) |
   | Roth's lemma, Roth's theorem | absent |
 
   ═══ THE DEFINITION, AND WHY IT AVOIDS DERIVATIVES ═══
@@ -46,6 +48,7 @@
   alternative (a junk value of `0` at `P = 0`) would make `index_mul_ge` below false.
 -/
 import Mathlib.Algebra.MvPolynomial.Equiv
+import Mathlib.Algebra.MvPolynomial.PDeriv
 import Mathlib.Algebra.Order.Ring.Rat
 
 namespace MvPolynomial
@@ -209,13 +212,64 @@ theorem index_X_sq :
   rw [support_monomial]
   simp [idxWeight, Finsupp.single_apply]
 
+/-! ### Differentiation
+
+Roth's lemma estimates the index of *derivatives* of the auxiliary polynomial, so the index
+has to interact with `pderiv`. Because `index` is defined through the support of the
+**translate**, everything of that kind rests on the commutation below. -/
+
+/-- Translation is an algebra map, so it fixes constants. -/
+@[simp]
+theorem translate_C (α : σ → R) (a : R) : translate α (C a) = C a := by
+  simp [translate]
+
+/-- Translation sends `xⱼ` to `xⱼ + αⱼ` — the defining property, worth a simp lemma so the
+proofs below never unfold `translate`. -/
+@[simp]
+theorem translate_X (α : σ → R) (j : σ) : translate α (X j) = X j + C (α j) := by
+  simp [translate]
+
+/-- **Translation commutes with partial differentiation:** `(∂ⱼP)(x + α) = ∂ⱼ(P(x + α))`.
+
+This is the chain rule for a translation, whose Jacobian is the identity. Mathlib has no
+chain rule for `aeval`, so it goes by induction on `P`; the multiplicative step is the only
+one with content, and it splits on whether the differentiated variable is the multiplied
+one.
+
+⚠ **Why this is the gateway lemma.** `index` is a minimum over the support of the
+*translate*, so any statement about the index of a derivative has to move `pderiv` across
+`translate` before the support is visible at all. Without this, no
+index-under-differentiation estimate can even be stated in terms of the definition used
+here. -/
+theorem translate_pderiv [DecidableEq σ] (α : σ → R) (i : σ) (P : MvPolynomial σ R) :
+    translate α (pderiv i P) = pderiv i (translate α P) := by
+  classical
+  induction P using MvPolynomial.induction_on with
+  | C a => simp
+  | add p q hp hq => simp [hp, hq]
+  | mul_X p j hp =>
+    by_cases h : i = j
+    · subst h
+      simp only [Derivation.leibniz, smul_eq_mul, pderiv_X_self, mul_one, translate_add,
+        translate_mul, translate_X, map_add, pderiv_C, add_zero, hp]
+    · simp only [Derivation.leibniz, smul_eq_mul, pderiv_X_of_ne (Ne.symm h), mul_zero,
+        zero_add, translate_mul, translate_X, map_add, pderiv_C, add_zero, hp]
+
 /-! ### Next, in order
 
 1. ~~`index_mul_ge`~~ — **done**, above.
-2. **Generalized Wronskians** — `m × m` determinants of differential operators applied to
-   `m` polynomials. Mathlib's `wronskian` is the two-polynomial case only.
-3. **Roth's lemma** — the induction on the number of variables. The hard core.
-4. **Roth's theorem** itself, by the auxiliary-polynomial contradiction, using Mathlib's
+2. ~~**Generalized Wronskians**~~ — **done**. Univariate, with the full dependence criterion
+   `genWronskian_eq_zero_iff`, in `QOU.Mathlib.GenWronskian`; several variables, with the
+   direction Roth's lemma consumes, in `QOU.Mathlib.MvGenWronskian`.
+3. **The index under differentiation** — `index d α P ≤ index d α (pderiv i P) + 1/dᵢ`.
+   `translate_pderiv` above is the gateway; what remains is that the support of `pderiv i Q`
+   sits inside the shift of `Q`'s support by `-eᵢ`, and that `idxWeight` drops by exactly
+   `1/dᵢ` under that shift. ⚠ Note the `ℕ`-subtraction: `s - eᵢ = s` when `sᵢ = 0`, and the
+   statement is rescued only because `pderiv_monomial` carries a factor `sᵢ` that kills
+   exactly those monomials.
+4. **Roth's lemma** — the induction on the number of variables. The hard core, and the one
+   step where no part of it is bookkeeping.
+5. **Roth's theorem** itself, by the auxiliary-polynomial contradiction, using Mathlib's
    existing `exists_ne_zero_int_vec_norm_le` (Siegel's lemma) for the construction. -/
 
 end MvPolynomial
