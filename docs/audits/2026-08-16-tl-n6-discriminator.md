@@ -168,11 +168,22 @@ higher n.
 
 ## Provenance of the reused code
 
-S2's module was **not importable** in this worktree (PR #5185 is not yet on
-`main`), so the entry-for-entry cross-check ran against a vendored copy of
-S2's builder rather than against the module object. That copy was verified
-mechanically to be S2's code and not a paraphrase — AST-level comparison of
-the 15 shared declarations:
+The probe carries a vendored copy of S2's builder, clearly delimited, and
+*additionally* imports S2's module and cross-checks against it entry for entry
+whenever that module is present. **#5185 has since landed on `main`
+(`b7bc9cb2f8`), so both halves of that check now run**, and the results are
+unchanged:
+
+```
+S2's module importable (lands with PR #5185): True
+n=3 N=  6  identical=True  vs S2 module=True
+n=4 N= 24  identical=True  vs S2 module=True
+n=5 N=120  identical=True  vs S2 module=True
+```
+
+Before #5185 landed, only the vendored half could run, and the copy was
+verified mechanically to be S2's code and not a paraphrase — AST-level
+comparison of the 15 shared declarations:
 
 - **14/15 byte-identical.** `QQ` differs only by two unused `staticmethod`
   lambdas (`add`, `mul`) that are dead in S2's source too.
@@ -180,8 +191,17 @@ the 15 shared declarations:
   removal of a dead local (`cur`, assigned and `del`'d, never read). No
   semantic difference.
 
-The probe imports S2's module and cross-checks against it directly when
-present, so the check strengthens automatically once #5185 lands.
+That AST argument is now superseded by the direct comparison — it is recorded
+because it is what licensed the n = 6 run at the time, not because the result
+still depends on it.
+
+**The vendored copy is not dead code and is not removed.** It supplies the
+probe's whole arithmetic substrate (`QQ`/`GFp`/`SymQ`, `hmul`, `trace_table`,
+`antisymmetriser`, and `slow_gram` itself), so the probe stays runnable
+standalone; and `slow_gram` is the *independent reference* that `fast_gram` is
+validated against. Deleting it would make the probe's correctness rest on a
+module it does not own and would collapse a three-way agreement
+(fast / vendored reference / S2's module) into a two-way one.
 
 ## Method
 
