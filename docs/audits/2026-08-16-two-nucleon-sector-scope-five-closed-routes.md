@@ -69,6 +69,27 @@ including the exact gap `z − h = 1/(q(q²+1))`.
 > — Frobenius positivity — **fails** on the two-nucleon operator set, so the
 > question "which operators does it select" has no well-posed answer there.
 
+> **Convergence with `qou-k4ul` (sibling, merged as #5216, 2026-08-16).** A
+> sibling independently found the Lean `operator_selection_lp` was **false as
+> stated** — its context carried only data and no hypotheses, so it asserted
+> `IsFeasible x_star` for every instance, `0 = 1` included. The fix makes it
+> **conditional**, carrying the dual certificate as hypotheses about the data
+> (`s_nonneg`, `dual_feasible`, `x_star_feasible`, `zero_gap`), and closes with
+> the open question:
+>
+> > *"If the substrate's concrete `x*`/`y₀*` do not satisfy these hypotheses, the
+> > claimed optimum is wrong."*
+>
+> **This audit supplies that measurement for the two-nucleon instance: they are
+> not satisfied.** The Frobenius Gram is indefinite (`−1.579, −1.140`), so the
+> program is unbounded and the solver returns a box corner at
+> `max|x*| = 3.6e6` against `M_bound = 1e6` — there is no optimal `x*` for a
+> certificate to certify, and `zero_gap` / `x_star_feasible` have nothing to hold
+> of. The two findings are the same defect from opposite ends: theirs that the
+> theorem asserted more than its hypotheses could support, mine that the
+> substrate instance cannot supply those hypotheses. Neither result depends on
+> the other, and together they close the route from both sides.
+
 Route 2 deserves emphasis: the corpus's `T₃` grading is *principled* — crossing
 sign is the writhe, and the writhe carries `I₃`. It is aimed at the **small**
 effect. Across `T₃` at fixed `T=1` the scattering lengths vary ~25 %
