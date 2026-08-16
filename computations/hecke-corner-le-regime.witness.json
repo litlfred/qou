@@ -1,22 +1,28 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-16T12:51:04.048199+00:00",
-  "commitSha": "930a5960ae2baac57c0576c624667b33fbfdbabb",
+  "computedAt": "2026-08-16T12:58:48.035560+00:00",
+  "commitSha": "7e2b8f04e3d341f3e93524b597eab4a19ee1efca",
   "assertions": [
     {
       "name": "cases_where_the_decomposition_fails",
       "computed": "0",
       "expected": "0",
       "passed": true
+    },
+    {
+      "name": "chains_not_using_the_quadratic_rule_exactly_twice",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 236,
+  "durationMs": 258,
   "computation": "hecke-corner-le-regime",
   "scriptFile": "hecke_corner_le_regime.py",
-  "scriptHash": "d72a400cfe2a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "67959049f63f",
+  "scriptCommitSha": "7e2b8f04e3d341f3e93524b597eab4a19ee1efca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,6 +41,12 @@
     "prefix_formula": "a^2 + a + 5",
     "block_formula": "ab - a^2 + 2a - 3",
     "total_formula": "2ab - a^2 + 5a + 1",
+    "prefix_split": "A . B10 . C . D",
+    "prefix_A_formula": "(a^2 - 3a + 10)/2",
+    "prefix_C_formula": "a(a+1)/2",
+    "prefix_D_formula": "2a - 1",
+    "self_similarity": "C = A[2:] ++ small(a),  D = [B10,B21] ++ small(a)",
+    "small_block": "2a - 3",
     "lean_theorem_for_the_other_regime": "UGB.GrobnerShirshov.Hecke.CornerGeneral.resolves"
   },
   "data": {
@@ -49,6 +61,10 @@
         "predicted_steps": 15,
         "prefix": 11,
         "block": 1,
+        "quadratic_steps": 2,
+        "prefix_A": 4,
+        "prefix_C": 3,
+        "prefix_D": 3,
         "decomposition_holds": true
       },
       {
@@ -60,6 +76,10 @@
         "predicted_steps": 19,
         "prefix": 11,
         "block": 3,
+        "quadratic_steps": 2,
+        "prefix_A": 4,
+        "prefix_C": 3,
+        "prefix_D": 3,
         "decomposition_holds": true
       },
       {
@@ -71,6 +91,10 @@
         "predicted_steps": 23,
         "prefix": 11,
         "block": 5,
+        "quadratic_steps": 2,
+        "prefix_A": 4,
+        "prefix_C": 3,
+        "prefix_D": 3,
         "decomposition_holds": true
       },
       {
@@ -82,6 +106,10 @@
         "predicted_steps": 27,
         "prefix": 11,
         "block": 7,
+        "quadratic_steps": 2,
+        "prefix_A": 4,
+        "prefix_C": 3,
+        "prefix_D": 3,
         "decomposition_holds": true
       },
       {
@@ -93,6 +121,10 @@
         "predicted_steps": 31,
         "prefix": 11,
         "block": 9,
+        "quadratic_steps": 2,
+        "prefix_A": 4,
+        "prefix_C": 3,
+        "prefix_D": 3,
         "decomposition_holds": true
       },
       {
@@ -104,6 +136,10 @@
         "predicted_steps": 25,
         "prefix": 17,
         "block": 3,
+        "quadratic_steps": 2,
+        "prefix_A": 5,
+        "prefix_C": 6,
+        "prefix_D": 5,
         "decomposition_holds": true
       },
       {
@@ -115,6 +151,10 @@
         "predicted_steps": 31,
         "prefix": 17,
         "block": 6,
+        "quadratic_steps": 2,
+        "prefix_A": 5,
+        "prefix_C": 6,
+        "prefix_D": 5,
         "decomposition_holds": true
       },
       {
@@ -126,6 +166,10 @@
         "predicted_steps": 37,
         "prefix": 17,
         "block": 9,
+        "quadratic_steps": 2,
+        "prefix_A": 5,
+        "prefix_C": 6,
+        "prefix_D": 5,
         "decomposition_holds": true
       },
       {
@@ -137,6 +181,10 @@
         "predicted_steps": 43,
         "prefix": 17,
         "block": 12,
+        "quadratic_steps": 2,
+        "prefix_A": 5,
+        "prefix_C": 6,
+        "prefix_D": 5,
         "decomposition_holds": true
       },
       {
@@ -148,6 +196,10 @@
         "predicted_steps": 49,
         "prefix": 17,
         "block": 15,
+        "quadratic_steps": 2,
+        "prefix_A": 5,
+        "prefix_C": 6,
+        "prefix_D": 5,
         "decomposition_holds": true
       },
       {
@@ -159,6 +211,10 @@
         "predicted_steps": 37,
         "prefix": 25,
         "block": 5,
+        "quadratic_steps": 2,
+        "prefix_A": 7,
+        "prefix_C": 10,
+        "prefix_D": 7,
         "decomposition_holds": true
       },
       {
@@ -170,6 +226,10 @@
         "predicted_steps": 45,
         "prefix": 25,
         "block": 9,
+        "quadratic_steps": 2,
+        "prefix_A": 7,
+        "prefix_C": 10,
+        "prefix_D": 7,
         "decomposition_holds": true
       },
       {
@@ -181,6 +241,10 @@
         "predicted_steps": 53,
         "prefix": 25,
         "block": 13,
+        "quadratic_steps": 2,
+        "prefix_A": 7,
+        "prefix_C": 10,
+        "prefix_D": 7,
         "decomposition_holds": true
       },
       {
@@ -192,6 +256,10 @@
         "predicted_steps": 61,
         "prefix": 25,
         "block": 17,
+        "quadratic_steps": 2,
+        "prefix_A": 7,
+        "prefix_C": 10,
+        "prefix_D": 7,
         "decomposition_holds": true
       },
       {
@@ -203,6 +271,10 @@
         "predicted_steps": 69,
         "prefix": 25,
         "block": 21,
+        "quadratic_steps": 2,
+        "prefix_A": 7,
+        "prefix_C": 10,
+        "prefix_D": 7,
         "decomposition_holds": true
       },
       {
@@ -214,6 +286,10 @@
         "predicted_steps": 51,
         "prefix": 35,
         "block": 7,
+        "quadratic_steps": 2,
+        "prefix_A": 10,
+        "prefix_C": 15,
+        "prefix_D": 9,
         "decomposition_holds": true
       },
       {
@@ -225,6 +301,10 @@
         "predicted_steps": 61,
         "prefix": 35,
         "block": 12,
+        "quadratic_steps": 2,
+        "prefix_A": 10,
+        "prefix_C": 15,
+        "prefix_D": 9,
         "decomposition_holds": true
       },
       {
@@ -236,6 +316,10 @@
         "predicted_steps": 71,
         "prefix": 35,
         "block": 17,
+        "quadratic_steps": 2,
+        "prefix_A": 10,
+        "prefix_C": 15,
+        "prefix_D": 9,
         "decomposition_holds": true
       },
       {
@@ -247,6 +331,10 @@
         "predicted_steps": 81,
         "prefix": 35,
         "block": 22,
+        "quadratic_steps": 2,
+        "prefix_A": 10,
+        "prefix_C": 15,
+        "prefix_D": 9,
         "decomposition_holds": true
       },
       {
@@ -258,6 +346,10 @@
         "predicted_steps": 91,
         "prefix": 35,
         "block": 27,
+        "quadratic_steps": 2,
+        "prefix_A": 10,
+        "prefix_C": 15,
+        "prefix_D": 9,
         "decomposition_holds": true
       }
     ]

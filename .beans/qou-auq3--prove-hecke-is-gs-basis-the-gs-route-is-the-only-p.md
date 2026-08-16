@@ -2453,3 +2453,45 @@ looks like the genuinely new work: quadratic-rule steps at general depth, which
 nothing in the development currently handles in a depth-general way. Measuring
 *its* internal structure is the next step, and it should be done before any Lean,
 on the evidence of the fit that just failed.
+
+### The prefix, measured — and the regime is far less alien than it looked
+
+Measured to `a = 7`, and the previous turn's assessment ("the prefix is the
+genuinely new work; nothing handles it depth-generally") was too pessimistic.
+
+**The prefix splits as `A · B₁₀ · C · D`** with
+
+    A = (a² − 3a + 10)/2      C = a(a+1)/2      D = 2a − 1
+
+and it is **self-similar with the whole chain**: `C = A[2:] ++ small(a)` and
+`D = [B₁₀, B₂₁] ++ small(a)`, where `small(a)` is a far-commutation block of
+length `2a − 3`. That is the same `block · two steps · block` shape the top level
+has, one scale down. Both identities hold for every `a` from 3 to 7; at `a = 2`
+the rule in `D`'s second slot is named `Y₂₁` rather than `B₂₁⟨2⟩` because at that
+depth the Bokut–Shiao word degenerates to the braid word — the §4aa
+coincidence again, not a structural exception, and the check accepts either.
+
+**`A` is the loop I already have.** Writing it out at `a = 6`:
+
+    B₂₁ F₀₂ │ B₃₂ F₁₃ F₀₃ │ B₄₃ F₂₄ F₁₄ F₀₄ │ B₅₄ │ Y₆₅ Q₆
+
+after an initial `B₂₁ F₀₂`. Each group is exactly a pass of §4af's loop: a
+Bokut–Shiao step at top `d`, then `d` far-commutations carrying the exposed
+letter left. So `blockStep` and the loop lemmas apply here too, at `d = 1 … a−3`.
+
+**What is actually new is two steps.** The chain uses the quadratic rule exactly
+twice — end of `A`, end of `C`'s non-block part — and each time it is preceded by
+a Yang–Baxter step, as `Y_{a,a−1} Q_a`. Everything else in the whole chain is a
+loop pass or a far-commutation. So the new Lean content for this regime is:
+
+1. the `Y_{a,a−1} Q_a` pair at general depth — the only place `monicStep` cannot
+   reach, since the quadratic rule has three words;
+2. the far-commutation blocks, `small(a)` and `block(a,b)`, as nested transports
+   over `farComm_transport_left_sources`.
+
+Both are bounded pieces of work, and (1) is two steps rather than a family. The
+`a ≤ b` regime is not a second development; it is the one already built plus a
+quadratic-rule pair and a second layer of transport.
+
+The witness now asserts the prefix split, both self-similarity identities, and
+that the quadratic rule is used exactly twice, at every `(a, b)` tested.
