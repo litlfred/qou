@@ -1,12 +1,13 @@
 ---
 # wpdb
-title: 'The curvature-rank chain assumes a word-depth -> partition-depth bridge that is stated nowhere'
-status: todo
+title: The curvature-rank chain assumes a word-depth -> partition-depth bridge that is stated nowhere
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T02:30:00Z
-updated_at: 2026-08-16T03:30:00Z
+updated_at: 2026-08-16T11:31:08Z
 ---
+
 Surfaced in #5183 as an open question, investigated and confirmed. Full
 evidence:
 [`2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md`](../docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md).
@@ -89,3 +90,56 @@ the four hooks.
 well-defined on `H_n(R,q)` — as a filtration by *ideals* of the algebra, not by
 rewrite counts on representatives. Until then the bridge has no well-formed
 statement, which is a sharper diagnosis than "unproved".
+
+
+---
+
+## 2026-08-16 — partition side closed to one named GAP; the free word-side route is dead (#5205)
+
+**Partition side — done, and localised.**
+
+* `content_image_eq_range` / `card_content_image` (unconditional, sorry-free):
+  the contents of `λ` are an unbroken integer interval, so
+  `gbDepth λ = #{distinct contents}` — an *equality*, not the `2·card − 1` bound
+  I first wrote and discarded as useless.
+* `SeminormalEigenvalue` (§3b-cond, no instance) carries the open seminormal
+  eigenvalue theorem as *hypotheses*. `card_eigen_image` /
+  `gbDepth_eq_card_eigen` **derive** `gbDepth λ = #{distinct JM eigenvalues on
+  the λ-block}` from those fields alone — no diagram, no hook, no cell survives
+  in the statement.
+
+So the whole remaining partition-side debt is one named class, and it is an
+*existing* corpus GAP, not a new one: bean `qou-ck0g` item 2, whose substrate
+(the sorry-free `seminormalRep`) is landing in PR #5076.
+
+**Word side — the free route is provably not it.**
+`QOU/BraidKnot/WordFiltrationObstruction.lean`: since `H_n(R,q) = R⟨σ⟩/I`, the
+tempting reading of `J^r` is the r-th power of the image of `I`. But that image
+is `⊥`, so every positive power vanishes (`map_pow_eq_bot`) and the filtration
+has **two strata** — everything in degree 0, nothing above. `gbDepth` already
+takes two values on partitions of 4 (`gbDepth_ne_on_H4`: `[4] ↦ 4`,
+`[2,2] ↦ 3`), so a one-stratum grading cannot be it.
+
+**Scope-(b), of a READING.** Proved invariant ⇒ structural exclusion — but of
+one candidate meaning of `J^r`, not of the proposition. The two live readings
+are filtrations of *vector spaces* (word length in a GS normal form; rewrite
+depth to normal form) and neither is touched. Not evidence the bridge is false;
+evidence the cheap route to it does not exist.
+
+## What is still open — the sharper question
+
+**Is `r` even well defined on the quotient?** Both surviving readings are
+defined on a *word*, and a word is not an element of `H_n(q)`. A grading needs
+`r` constant on the fibres of `R⟨σ⟩ ↠ H_n(q)`, and the Hecke relation
+`σ² = (q − q⁻¹)σ + 1` relates words of different lengths. On the face of it, it
+is not — which would mean `prop:curvature-rank-gb-stratification` needs a
+*chosen normal form* as part of its data, not just a rank function.
+
+Next step is to state that as a Lean question against a GS normal-form
+selector, rather than to keep asserting the filtration exists.
+
+Also worth noting for whoever picks this up: `n = 4` is now the first testable
+case from *both* directions — the partition grading is degenerate at `n = 3`
+(`gbDepth_const_on_H3`) and separates at `n = 4`, and `(2,2)` is independently
+the cell `computations/gb_depth_period_bring_fig8.py` flags as where the two
+filtrations were observed to disagree.

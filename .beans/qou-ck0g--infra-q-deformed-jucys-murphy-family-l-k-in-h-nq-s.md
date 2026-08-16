@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-10T19:02:23Z
-updated_at: 2026-08-15T15:03:21Z
+updated_at: 2026-08-16T11:30:00Z
 ---
 
 
@@ -89,3 +89,43 @@ Builds clean (3095 jobs, 0 errors). Wired into QOU.lean aggregate.
 - qJM_commute: deep — requires seminormal diagonalization (SW-4 residual).
 
 Status: in-progress (need to push and close).
+
+
+---
+
+## 2026-08-16 — a second consumer, and a Mathlib check that came back empty (#5205)
+
+**Item 2 of this bean now has a named downstream dependent.**
+`QOU.BraidKnot.SeminormalEigenvalue` in
+`QOU/BraidKnot/TwoFiltrationBridge.lean` is a §3b-cond class carrying exactly
+item 2's content as *hypotheses* — the assignment `c ↦ q^{2c}` and its
+injectivity — with no instance. Discharging item 2 discharges that class, and
+with it `card_eigen_image` / `gbDepth_eq_card_eigen`, which are the partition
+side of bean `wpdb` stated inside the algebra. So this bean is not only
+upstream of `qou-8vt2`'s heat-kernel rates; it is also the single remaining
+partition-side debt of the word-depth/partition-depth bridge.
+
+**"Add the Mathlib Hecke seminormal representation" is not available.**
+Checked against the pinned Mathlib (`rev f897ebcf72`, Lean 4.24.0):
+
+| looked for | found |
+|---|---|
+| Hecke algebra | **nothing** — the sole `Hecke` string in Mathlib is an unrelated mention in `NumberTheory/FLT/Basic.lean` |
+| seminormal / Young's orthogonal form | nothing |
+| Specht modules | nothing |
+| `StandardYoungTableau` | **nothing** — Mathlib has `YoungDiagram` and `SemistandardTableau` only |
+
+So there is no upstream to import and no upstream to mirror. The `SYT` used
+throughout SchurWeyl is QOU's own (`QOU/SchurWeyl/YoungTableaux.lean`, over
+`QOU/Hecke/Hoefsmit.lean`'s structure) — and is itself defined **four separate
+times** in the tree (`QOU/Mathlib/`, `QOU/BraidKnot/`, `QOU/Hecke/`, plus the
+`SYT` abbrev), which is the `qou-cdup` pattern one level up from cell contents.
+
+**Coordination: this is PR #5076's work, not mine.** #5076
+(`claude/seminormal-quadratic-2026-08-15`) builds
+`seminormalRep : Hecke ℝ q q⁻¹ n →ₐ[ℝ] Matrix (SYT μ) (SYT μ) ℝ` with all three
+Hecke relations proved unconditionally and sorry-free — which is the substrate
+item 2 needs. Its own notes flag the convention point that matters here: the JM
+eigenvalue `q^{2c}` is a per-cell *content* while `genMat`'s diagonal is a
+content *difference*. I am **not** attempting item 2; #5205 stops at the
+conditional class and says so.
