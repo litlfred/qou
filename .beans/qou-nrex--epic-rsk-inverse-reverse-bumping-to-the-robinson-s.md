@@ -146,3 +146,26 @@ missing hypothesis (the first: brick 2's `NoEmptyRows`).
 (timestamps strictly increase, so every step is fresh for what came before) to recover the whole
 index list from `Q`. Then `rskPair` injectivity follows from brick 3's
 `word_eq_of_insertWord_eq`.
+
+## Brick 6 DONE — the whole index list is a function of `Q`
+
+`QOU/Mathlib/SchenstedReadbackFold.lean`, sorry-free (`propext`, `Quot.sound`):
+
+- `AllLt Q s` — every entry of `Q` is `< s`, the freshness invariant *in the form that
+  propagates*;
+- `mem_qAppend` / `allLt_qAppend` — an append adds only `s`, so the invariant survives with `s+1`;
+- `qRowOf_qAppendSteps_of_lt` — later appends never move an earlier timestamp;
+- **`qRowOf_qAppendSteps`** — `qRowOf (qAppendSteps Q is s) (s + k) = some (is.getD k 0)`, plus
+  `qRowOf_qAppendSteps_zero` at the empty tableau.
+
+**Why the invariant had to be `AllLt` rather than plain freshness.** "s ∉ Q" is what brick 5's
+lemma consumes, but it does not propagate: after writing `s` you need `s+1 ∉ qAppend Q i s`, which
+needs to know the *old* entries were below `s`, not merely `≠ s`. Stating the invariant as a bound
+rather than a non-membership is what makes the induction go through in one pass — and it is true
+for free, because timestamps are `0, 1, 2, …` by construction.
+
+With brick 4 (`Q(w)` **is** `qAppendSteps [] (rowIndices [] w) 0`), the index list is now a
+function of `Q(w)`. Brick 3's `word_eq_of_insertWord_eq` wanted exactly that.
+
+**Next:** assemble — equal `(P, Q)` ⇒ equal `rowIndices` (brick 6) ⇒ equal word (brick 3), i.e.
+`rskPair` injective. Then surjectivity, then the count.
