@@ -94,8 +94,13 @@ def main() -> int:
         sp.simplify(s1.inv() - (s1 - h * ident)) == sp.zeros(2, 2)
     )
 
-    z_C = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
-    z_D = q**3 / (q**2 + 1)
+    # Convention C is EXCISED (owner ruling 2026-08-09, re-affirmed 2026-08-15);
+    # D is canonical. Both stay because this probe tests the bar condition
+    # AGAINST each -- and its result is one of the reasons the ruling reads the
+    # way it does: bar(z) = z - h holds exactly for z_D and fails for any
+    # bar-even z, hence for z_C, away from q^2 = 1.
+    z_C = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))   # EXCISED — kept as the comparison arm
+    z_D = q**3 / (q**2 + 1)                    # CANONICAL
 
     # The two candidate conditions.
     def coef_half_invariant(z):

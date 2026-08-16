@@ -116,8 +116,16 @@ def main() -> int:
     )
 
     # ---- The two named conventions, placed in the family. -------------------
-    z_C_expr = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))     # binding + 8 corpus sites
-    z_D_expr = q**3 / (q**2 + 1)                      # Jones / SU_q(2)
+    # Convention C is EXCISED (owner ruling 2026-08-09, re-affirmed 2026-08-15).
+    # It stays here because this probe COMPARES the two conventions -- removing
+    # the excised one would remove the thing being compared.
+    #
+    # The "binding + 8 corpus sites" attribution was already stale when written:
+    # the binding channel moved to D on 2026-08-09. Left as recorded history
+    # rather than re-counted, because re-inventorying belongs to qou-cdh3 and a
+    # fresh count in a probe comment would only go stale again.
+    z_C_expr = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))     # EXCISED (attribution stale)
+    z_D_expr = q**3 / (q**2 + 1)                      # CANONICAL — Jones / SU_q(2)
 
     # D is exactly N = 2.
     checks["z_D_is_rank_2_exactly"] = (
