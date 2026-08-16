@@ -64,6 +64,30 @@ still the open input for *general* strong duality — see bean `qou/kl8z`).
 If the substrate's concrete `x*`/`y₀*` do not satisfy these hypotheses,
 that is a **content** finding about the claimed optimum, not a Lean one.
 
+## Checking a certificate index by index
+
+The zero-gap hypothesis is a single equation over the whole data,
+which a symbolic evaluation cannot discharge without summing `d`
+products.  `zero_gap_iff_complementary_slackness` replaces it, for
+feasible points, with the equivalent **per-index** condition
+
+    ∀ i,  sᵢ · (Gx)ᵢ = 0
+
+— each Frobenius constraint is inactive (`sᵢ = 0`) or tight
+(`(Gx)ᵢ = 0`).  Both directions matter and are used differently:
+
+- **`.mp`** (`complementary_slackness_x_star`) extracts the per-index
+  facts from a context that has already been built, so an evaluation
+  can check them one at a time.
+- **`zero_gap_of_complementary_slackness`** runs the other way and is
+  stated over *raw data*, not over the class: `zero_gap` is a field,
+  so a lemma assuming `OperatorSelectionLpContext` could never supply
+  it.  This is what an instantiation for concrete `t`, `G`, `x*` uses.
+
+The algebra common to all of it is `sum_cost_mul_eq`, which needs no
+order on `R` at all and no sign hypotheses — the ordering enters only
+where non-negativity is genuinely required.
+
 ## Base ring (§7c)
 
 Nothing in the program is archimedean: feasibility, optimality and
@@ -73,6 +97,117 @@ scalars are therefore a generic `R`, and the substrate evaluation is
 the instantiation `R := ℝ`. -/
 
 namespace QOU.ParticleInteractions
+
+section RawData
+
+variable {R : Type*} [CommRing R] {d : ℕ}
+
+/-- **Dual decomposition** of the objective, over raw LP data.
+
+For any `x` meeting the net constraint, dual feasibility rewrites the
+objective as the dual bound plus the *slack pairing* `Σᵢ sᵢ (Gx)ᵢ`:
+
+    Σⱼ tⱼ xⱼ = y₀ · n_target + Σᵢ sᵢ (Gx)ᵢ .
+
+This is pure algebra — no order on `R` is used, and neither `sᵢ ≥ 0`
+nor `(Gx)ᵢ ≥ 0` is assumed.  Both the optimality bound and the
+complementary-slackness equivalence below are corollaries of this one
+identity. -/
+theorem sum_cost_mul_eq {t : Fin d → R} {G : Fin d → Fin d → R} {s : Fin d → R}
+    {n_target y_0_star : R} (x : Fin d → R)
+    (dual_feasible : ∀ j, t j = y_0_star + Finset.univ.sum (fun i => s i * G i j))
+    (net : (Finset.univ.sum fun j => x j) = n_target) :
+    (Finset.univ.sum fun j => t j * x j)
+      = y_0_star * n_target
+        + Finset.univ.sum (fun i => s i * Finset.univ.sum fun j => G i j * x j) := by
+  have h1 : ∀ j, t j * x j
+      = y_0_star * x j + Finset.univ.sum (fun i => s i * (G i j * x j)) := by
+    intro j
+    rw [dual_feasible j, add_mul, Finset.sum_mul]
+    simp [mul_assoc]
+  rw [Finset.sum_congr rfl (fun j _ => h1 j), Finset.sum_add_distrib,
+    ← Finset.mul_sum, net, Finset.sum_comm]
+  congr 1
+  exact Finset.sum_congr rfl (fun i _ => by rw [Finset.mul_sum])
+
+/-- **Certificate builder.** Over raw LP data, the zero-gap identity
+    follows from dual feasibility, the net constraint, and *per-index*
+    complementary slackness `sᵢ (Gx*)ᵢ = 0`.
+
+This is the form an instantiation needs.  `zero_gap` is a *field* of
+`OperatorSelectionLpContext`, so a lemma assuming the class cannot be
+used to supply it; this one assumes only the data.  Checking `d`
+scalar products vanish is decidable on concrete symbolic `t`, `G`,
+`x*`, whereas the global sum identity is not. -/
+theorem zero_gap_of_complementary_slackness {t : Fin d → R} {G : Fin d → Fin d → R}
+    {s : Fin d → R} {n_target y_0_star : R} {x_star : Fin d → R}
+    (dual_feasible : ∀ j, t j = y_0_star + Finset.univ.sum (fun i => s i * G i j))
+    (net : (Finset.univ.sum fun j => x_star j) = n_target)
+    (cs : ∀ i, s i * (Finset.univ.sum fun j => G i j * x_star j) = 0) :
+    (Finset.univ.sum fun j => t j * x_star j) = n_target * y_0_star := by
+  rw [sum_cost_mul_eq x_star dual_feasible net, Finset.sum_eq_zero (fun i _ => cs i),
+    add_zero, mul_comm]
+
+end RawData
+
+section DualCertificate
+
+variable {R : Type*} [CommRing R] [PartialOrder R] {d : ℕ}
+
+/-- A **dual certificate** for cost vector `t` and Gram matrix `G`: a
+    scalar `y₀` together with non-negative slacks `s` satisfying
+    `t = y₀·𝟙 + sᵀG`.
+
+Existence is *not* automatic.  It asks whether `t` lies in the cone
+`{y₀·𝟙 + sᵀG : y₀ ∈ R, s ≥ 0}` — `d` equations in `d+1` unknowns with
+a sign constraint, a genuine Farkas-type question about the substrate
+data.  Bean `qou/k4f8`. -/
+def DualCertificateExists (t : Fin d → R) (G : Fin d → Fin d → R) : Prop :=
+  ∃ (y_0 : R) (s : Fin d → R), (∀ i, 0 ≤ s i) ∧
+    ∀ j, t j = y_0 + Finset.univ.sum (fun i => s i * G i j)
+
+/-- **Reduction to a one-parameter sign condition.**
+
+If `K` is a left inverse of `G` — `Σᵢ K k i · G i j = δₖⱼ` — then the
+dual equation `t = y₀·𝟙 + sᵀG` determines `s` outright:
+
+    s i = Σₖ (t k − y₀) · K k i .
+
+So a certificate exists as soon as *some single scalar* `y₀` makes all
+`d` of those entries non-negative.  A `d`-dimensional feasibility
+problem collapses to a search over one parameter.
+
+This is the statement the symbolic stage answers: invert `G` over
+`ℚ(q)`, form `s(y₀)`, and ask for which `y₀` every entry is `≥ 0`.
+Note the hypothesis is a *given* left inverse, not `G⁻¹` — so no
+invertibility API, no determinant, and the symbolic stage supplies
+`K` explicitly and checks `hK` by multiplication. -/
+theorem dualCertificateExists_of_left_inverse (t : Fin d → R) (G K : Fin d → Fin d → R)
+    (hK : ∀ k j, (Finset.univ.sum fun i => K k i * G i j) = if k = j then 1 else 0)
+    (y_0 : R)
+    (hsign : ∀ i, 0 ≤ Finset.univ.sum fun k => (t k - y_0) * K k i) :
+    DualCertificateExists t G := by
+  have assoc : ∀ k i j, (t k - y_0) * K k i * G i j = (t k - y_0) * (K k i * G i j) :=
+    fun k i j => mul_assoc _ _ _
+  have step : ∀ k j, (Finset.univ.sum fun i => (t k - y_0) * K k i * G i j)
+      = if k = j then t k - y_0 else 0 := by
+    intro k j
+    rw [Finset.sum_congr rfl (fun i _ => assoc k i j), ← Finset.mul_sum, hK k j]
+    by_cases h : k = j <;> simp [h]
+  have distrib : ∀ i j, (Finset.univ.sum fun k => (t k - y_0) * K k i) * G i j
+      = Finset.univ.sum fun k => (t k - y_0) * K k i * G i j :=
+    fun i j => Finset.sum_mul _ _ _
+  have main : ∀ j, (Finset.univ.sum fun i =>
+      (Finset.univ.sum fun k => (t k - y_0) * K k i) * G i j) = t j - y_0 := by
+    intro j
+    rw [Finset.sum_congr rfl (fun i _ => distrib i j), Finset.sum_comm,
+      Finset.sum_congr rfl (fun k _ => step k j)]
+    simp
+  refine ⟨y_0, fun i => Finset.univ.sum fun k => (t k - y_0) * K k i, hsign, fun j => ?_⟩
+  simp only [main j]
+  ring
+
+end DualCertificate
 
 /-- Data of the operator-selection LP: the cost vector `t`, the
     Frobenius Gram matrix `G`, the target net value `n_target`, a
@@ -107,6 +242,39 @@ class OperatorSelectionLpContext (R : Type*) [CommRing R] [LinearOrder R]
   /-- Zero duality gap at `x*`. -/
   zero_gap : (Finset.univ.sum fun i => t i * x_star i) = n_target * y_0_star
 
+/-- **Build a context from a dual certificate and a primal point.**
+
+This is the constructor an instantiation should use.  It takes only
+facts that are *checkable on concrete data* — slack signs, the dual
+equation, the net constraint, Frobenius positivity, and per-index
+complementary slackness — and derives `zero_gap` rather than
+demanding it.
+
+That the gap is derived, not supplied, is the point: `zero_gap` is the
+one field that looks like the block's own conclusion, and building it
+by hand is where a self-assuming instance would creep back in. -/
+def OperatorSelectionLpContext.ofCertificate {R : Type*} [CommRing R] [LinearOrder R]
+    [IsStrictOrderedRing R] (n d : ℕ) (n_target : R) (t : Fin d → R)
+    (G : Fin d → Fin d → R) (x_star : Fin d → R) (y_0 : R) (s : Fin d → R)
+    (s_nonneg : ∀ i, 0 ≤ s i)
+    (dual : ∀ j, t j = y_0 + Finset.univ.sum (fun i => s i * G i j))
+    (net : (Finset.univ.sum fun j => x_star j) = n_target)
+    (pos : ∀ i, 0 ≤ Finset.univ.sum fun j => G i j * x_star j)
+    (cs : ∀ i, s i * (Finset.univ.sum fun j => G i j * x_star j) = 0) :
+    OperatorSelectionLpContext R where
+  n := n
+  d := d
+  n_target := n_target
+  t := t
+  G := G
+  x_star := x_star
+  y_0_star := y_0
+  s := s
+  s_nonneg := s_nonneg
+  dual_feasible := dual
+  x_star_feasible := ⟨net, pos⟩
+  zero_gap := zero_gap_of_complementary_slackness dual net cs
+
 namespace OperatorSelectionLpContext
 
 variable {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
@@ -125,6 +293,71 @@ def IsFeasible (x : Fin (ctx.d) → R) : Prop :=
 /-- The objective value `Σᵢ tᵢ xᵢ` of a candidate `x`. -/
 def objective (x : Fin (ctx.d) → R) : R :=
   Finset.univ.sum fun i : Fin ctx.d => ctx.t i * x i
+
+/-- The **slack pairing** `Σᵢ sᵢ (Gx)ᵢ` — the amount by which a
+    feasible point's objective exceeds the dual bound. -/
+def slackPairing (x : Fin (ctx.d) → R) : R :=
+  Finset.univ.sum fun i : Fin ctx.d =>
+    ctx.s i * Finset.univ.sum fun j : Fin ctx.d => ctx.G i j * x j
+
+/-- Dual decomposition, specialised to the class: `objective x` is the
+    dual bound plus the slack pairing.  Only the net constraint is
+    used, not Frobenius positivity. -/
+theorem objective_eq_dual_add_slackPairing (x : Fin ctx.d → R) (hx : IsFeasible x) :
+    objective x = ctx.y_0_star * ctx.n_target + slackPairing x :=
+  sum_cost_mul_eq x ctx.dual_feasible hx.1
+
+/-- The slack pairing is non-negative on feasible points: `sᵢ ≥ 0` by
+    dual feasibility and `(Gx)ᵢ ≥ 0` by primal feasibility. -/
+theorem slackPairing_nonneg (x : Fin ctx.d → R) (hx : IsFeasible x) :
+    0 ≤ slackPairing x :=
+  Finset.sum_nonneg fun i _ => mul_nonneg (ctx.s_nonneg i) (hx.2 i)
+
+/-- **Weak duality.** Every feasible point's objective is bounded below
+    by the dual value `n_target · y₀*`. -/
+theorem dual_bound_le_objective (x : Fin ctx.d → R) (hx : IsFeasible x) :
+    ctx.n_target * ctx.y_0_star ≤ objective x := by
+  rw [objective_eq_dual_add_slackPairing x hx, mul_comm ctx.n_target ctx.y_0_star]
+  exact le_add_of_nonneg_right (slackPairing_nonneg x hx)
+
+/-- The slack pairing vanishes exactly when every index contributes
+    zero — a sum of non-negative terms is zero iff each term is. -/
+theorem slackPairing_eq_zero_iff (x : Fin ctx.d → R) (hx : IsFeasible x) :
+    slackPairing x = 0
+      ↔ ∀ i, ctx.s i * (Finset.univ.sum fun j => ctx.G i j * x j) = 0 := by
+  rw [slackPairing,
+    Finset.sum_eq_zero_iff_of_nonneg fun i _ => mul_nonneg (ctx.s_nonneg i) (hx.2 i)]
+  exact ⟨fun h i => h i (Finset.mem_univ i), fun h i _ => h i⟩
+
+/-- **Complementary slackness is the whole content of the zero gap.**
+
+For a feasible `x`, attaining the dual bound is *equivalent* to the
+per-index condition `sᵢ (Gx)ᵢ = 0` for every `i`: each Frobenius
+constraint is either inactive (`sᵢ = 0`) or tight (`(Gx)ᵢ = 0`).
+
+This is the reduction that makes the certificate checkable.  The
+global identity `Σⱼ tⱼxⱼ = n_target · y₀*` is one equation in the
+whole data; the right-hand side is `d` independent scalar equations,
+each of which a symbolic evaluation can discharge index by index. -/
+theorem zero_gap_iff_complementary_slackness (x : Fin ctx.d → R) (hx : IsFeasible x) :
+    objective x = ctx.n_target * ctx.y_0_star
+      ↔ ∀ i, ctx.s i * (Finset.univ.sum fun j => ctx.G i j * x j) = 0 := by
+  rw [← slackPairing_eq_zero_iff x hx, objective_eq_dual_add_slackPairing x hx,
+    mul_comm ctx.n_target ctx.y_0_star]
+  constructor
+  · intro h
+    refine add_left_cancel (a := ctx.y_0_star * ctx.n_target) ?_
+    rw [add_zero]
+    exact h
+  · intro h
+    rw [h, add_zero]
+
+/-- Complementary slackness holds at `x*`, as a consequence of the
+    class's `zero_gap` field.  This is the per-index statement a
+    substrate evaluation can check directly. -/
+theorem complementary_slackness_x_star :
+    ∀ i, ctx.s i * (Finset.univ.sum fun j => ctx.G i j * ctx.x_star j) = 0 :=
+  (zero_gap_iff_complementary_slackness ctx.x_star ctx.x_star_feasible).mp ctx.zero_gap
 
 end OperatorSelectionLpContext
 
@@ -145,26 +378,9 @@ theorem operator_selection_lp {R : Type*} [CommRing R] [LinearOrder R]
       = ctx.n_target * ctx.y_0_star := by
   refine ⟨ctx.x_star_feasible, ?_, ctx.zero_gap⟩
   intro x hx
-  obtain ⟨hsum, hpos⟩ := hx
-  have expand : OperatorSelectionLpContext.objective x
-      = ctx.y_0_star * ctx.n_target
-        + Finset.univ.sum (fun i => ctx.s i * Finset.univ.sum fun j => ctx.G i j * x j) := by
-    unfold OperatorSelectionLpContext.objective
-    have h1 : ∀ j, ctx.t j * x j
-        = ctx.y_0_star * x j + Finset.univ.sum (fun i => ctx.s i * (ctx.G i j * x j)) := by
-      intro j
-      rw [ctx.dual_feasible j, add_mul, Finset.sum_mul]
-      simp [mul_assoc]
-    rw [Finset.sum_congr rfl (fun j _ => h1 j), Finset.sum_add_distrib,
-      ← Finset.mul_sum, hsum, Finset.sum_comm]
-    congr 1
-    exact Finset.sum_congr rfl (fun i _ => by rw [Finset.mul_sum])
   have hgap : OperatorSelectionLpContext.objective ctx.x_star
       = ctx.n_target * ctx.y_0_star := ctx.zero_gap
-  rw [hgap, expand]
-  have hnn : 0 ≤ Finset.univ.sum (fun i => ctx.s i * Finset.univ.sum fun j => ctx.G i j * x j) :=
-    Finset.sum_nonneg (fun i _ => mul_nonneg (ctx.s_nonneg i) (hpos i))
-  rw [mul_comm ctx.n_target ctx.y_0_star]
-  exact le_add_of_nonneg_right hnn
+  rw [hgap]
+  exact OperatorSelectionLpContext.dual_bound_le_objective x hx
 
 end QOU.ParticleInteractions
