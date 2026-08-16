@@ -11,12 +11,20 @@
 
   Two separate defects, and they need separating.
 
-  **1. The formalisation is degenerate.**  The class's fields are `residual : ℝ` and
-  `residual_eq_zero : residual = 0`, so `⟨0, rfl⟩` inhabits it.  Its comment says *"No
-  instance is provided — that is the honest open state"*, but withholding an instance
-  encodes nothing when the only available instance stipulates the answer.  Recorded in
-  bean `bday`; the file's own docstring already admits the shape is *"a structural
-  placeholder"*.
+  **1. The formalisation was degenerate — FIXED UPSTREAM, bean `qou-ffwk` (#5238).**
+  The class used to carry a scalar field plus a field asserting that it vanishes, so a
+  one-line anonymous constructor inhabited it.  Its comment said *"No instance is
+  provided — that is the honest open state"*, but withholding an instance encodes
+  nothing when the only available instance stipulates the answer.  Recorded in bean
+  `bday`.  `qou-ffwk` replaced the schema with
+  `DiophantineBirthday (trajectory : ℝ → ℕ → ℕ) : Prop`, whose single field is the
+  block's algebraic-rigidity bound, and proved that inhabitation now depends on the
+  data (`not_of_quadratic` refutes it at `n²`).  Defect 1 is therefore **closed**; it
+  is kept here because defect 2 was diagnosed alongside it and reads as its sequel.
+
+  **Defect 2 is untouched by that fix** — it is about the *target*, not the encoding,
+  and the new class dodges it only by taking `trajectory` as a parameter rather than
+  computing it from the birthday.
 
   **2. The separation cannot be by the birthday of the number.**  That is this module.
 

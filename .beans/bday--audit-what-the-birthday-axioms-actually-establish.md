@@ -865,3 +865,38 @@ decoupling and left the conclusion implicit.
 
 **The formal lane is complete.** What remains is Thue–Siegel–Roth, which is a formalisation
 project of its own, not an increment here.
+
+---
+**2026-08-16 — the `DiophantineBirthday` sub-finding is CLOSED upstream, by `qou-ffwk`.**
+
+Merging `origin/main` (`cbb49a1a35`) into `claude/fivetwo-level7-ladder-numerators`
+brought in `f92876c99c` (*"ffwk: make DiophantineBirthday assert something"*, #5238),
+which is the *"Fix required (not done here)"* named above, done. The class is now
+
+```lean
+class DiophantineBirthday (trajectory : ℝ → ℕ → ℕ) : Prop where
+  algebraic_logarithmic :
+    ∀ α : ℝ, IsAlgebraic ℚ α →
+      ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ, 1 ≤ n → (trajectory α n : ℝ) ≤ C * Real.log n + C
+```
+
+— the trajectory is a parameter rather than something the class picks, so the
+"stipulates the answer" degeneracy is gone, and `not_of_quadratic` **refutes** the class
+at `fun _ n => n ^ 2`, which is the property the old schema could not have: under it no
+choice of anything could fail. `nonempty_of_const_zero` records that it is not
+over-corrected into emptiness. Neither is an `instance`, so nothing discharges a
+downstream `[DiophantineBirthday]` by resolution.
+
+It also took the redirection this bean argued for: the separation is not by the birthday
+of the number (finding 2 below, `DiophantineBirthdayScope.no_birthday_only_separation`) —
+`trajectory` enters as caller-supplied data precisely because nothing in the library
+constructs it from the birthday.
+
+**Scope of this closure.** Only the `DiophantineBirthday` sub-finding closes. This bean's
+main claim — that the six `SurrealField` birthday axioms admit the two-valued
+`flatBirthday` model, so birthday-derived results prove less than they read as — is
+untouched and stays `in-progress`.
+
+Stale prose corrected in the same integration: `DiophantineBirthdayScope.lean` §1 and
+`DiophantineBirthdayTrajectory.lean` §3 both described the old field schema in the
+present tense.

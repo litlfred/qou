@@ -159,9 +159,12 @@ theorem liouvilleNumber_two_transcendental : Transcendental ℤ (liouvilleNumber
 /-! ### §3 — the shape of what remains
 
 Stated as a definition so the open content has a name, **not** as a class with a
-stipulated field.  `DiophantineBirthday`'s defect was that `residual := 0` with `rfl`
-asserts exactly what the conjecture is supposed to claim, so withholding an instance
-encoded nothing.  A `def` of a `Prop` cannot be inhabited by stipulation. -/
+stipulated field.  `DiophantineBirthday`'s defect was that its class fields chose their
+own witness, asserting exactly what the conjecture is supposed to claim, so withholding
+an instance encoded nothing.  (Fixed upstream by bean `qou-ffwk`, #5238 — that class now
+takes the trajectory as a parameter and its inhabitation depends on it.  The reason for
+using a `def` here stands regardless: a `def` of a `Prop` cannot be inhabited by
+stipulation at all.) -/
 
 /-- The naive converse of `liouville_trajectory_direction_settled`: that slow rational
 approximation is enough for algebraicity.
@@ -196,8 +199,9 @@ theorem** whose statement reads like the conjecture and which says nothing — w
 the false version, because it carries a proof.
 
 This is the same failure mode as `birthday_avg_le` in `Basic.lean` (satisfied vacuously
-under any bounded birthday) and as `DiophantineBirthday`'s stipulated field: a statement
-whose form suggests content it does not carry. -/
+under any bounded birthday) and as `DiophantineBirthday`'s **former** stipulated field
+(since replaced upstream, bean `qou-ffwk`): a statement whose form suggests content it
+does not carry. -/
 theorem slowApproximation_vacuous_at_one : SlowApproximationImpliesAlgebraic 1 := by
   intro x hx
   exact absurd (liouvilleWith_one x) hx
