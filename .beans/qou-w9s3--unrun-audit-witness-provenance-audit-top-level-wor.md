@@ -79,3 +79,36 @@ non-blocking, with the backlog named, to be flipped once drained.
 Not wired here: siblings are actively editing that array right now (#5159
 adds a fourth gate, #5124 adds two more), so a concurrent edit would collide.
 Wire it after those land.
+
+## Wired (advisory) — the hold condition cleared
+
+Recorded as "not wired: #5159 and #5124 are editing that array". Re-checked:
+
+- **#5159 merged** (22:10). Notably its own "deliberately not done" section
+  describes the SAME output-path clobber bug, scoped out for its own PR — so
+  four sessions hit that one independently tonight (this one, #5159, #5124,
+  and #5141 which actually landed the fix).
+- **#5124 still open, but does NOT touch `precision-gates.sh`** — its own
+  precision-gates fix was superseded by #5141 and resolved `--theirs`, so the
+  file dropped out of its diff (verified against its head: 32 files, none
+  matching `precision-gates` or `witness_provenance`).
+
+The hold was specifically about colliding on the GATES array. That risk is
+gone, so the gate is wired here.
+
+**Entry** (same terms as the `audits-tree raw-float64 (advisory)` precedent):
+
+```
+"witness scriptFile provenance (advisory)|computations/witness_provenance_audit.py|--strict|yes|no"
+```
+
+Verified: `bash -n` clean; appears in `--list` as non-blocking; a full run
+puts it under `ADVISORY (not gating)` and the `RED:` line still names only
+the pre-existing `raw-float64 ratchet`, so **this adds no new red**.
+Self-test 27/27.
+
+The four audit witnesses the run regenerated were reverted, not committed —
+per §5.1, a witness written by a gate run is not automatically a refresh.
+
+Flip to blocking once the 2 NOT_A_PRODUCER are drained and the `.lean`/`.rs`
+false-positive class is handled.
