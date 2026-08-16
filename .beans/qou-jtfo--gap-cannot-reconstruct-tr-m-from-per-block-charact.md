@@ -48,3 +48,39 @@ Honest note: I do not understand the normalisation well enough to assemble the
 trace, and five guesses failed. Recording it as a gap rather than continuing to
 try weightings until one lands — that procedure would find a "match" eventually
 and it would mean nothing.
+
+## Hypothesis REFUTED, and the measurement gave something better (2026-08-16)
+
+The disconnected-normalisation hypothesis is **wrong**:
+
+    tf(2,0) / tf(1,0)^2 = 1.0000000000     exactly
+
+The free trace is multiplicative with no `z`-power correction, so that is not
+where the discrepancy comes from.
+
+What the same run did establish, unasked:
+
+    tr_free / tr_atom  ==  1 / mu       exactly, all three interfaces
+
+| sys | true `tf/ta` | `1/mu` | diff |
+|---|---|---|---|
+| pp | 1.63215199150517517 | 1.63215199150517517 | 4.9e-31 |
+| pn | 1.96761390399082486 | 1.96761390399082486 | 7.2e-31 |
+| nn | 2.477530419702766 | 2.477530419702766 | 1.1e-30 |
+
+(`mu = z + d`, the interface scalar. Residuals are the `dps=50` precision floor;
+an initial `1e-30` tolerance flagged `nn` spuriously.)
+
+### Three consequences
+
+1. **The trace side is sound**, independently confirmed. The Markov property
+   `tr_M(W·sigma) = mu·tr_M(W)` holds exactly for all three interfaces.
+2. **The gap is entirely on my per-block side** — not in the corpus's machinery.
+   And the reconstruction now has an EXACT target to hit rather than a
+   heuristic one.
+3. **`SingleCrossingAlwaysBinds` describes the exact trace, not an idealisation.**
+   The theorem's content is `mu <= z < 1 => B = -alpha*ln(mu) > 0`. Since the
+   measured two-nucleon trace ratio *is* `1/mu` to 1e-30, the scope-(b) exclusion
+   applies to the exact object with no approximation in between. That is a
+   strengthening of the committed result, obtained by trying to debug something
+   else.
