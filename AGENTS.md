@@ -1244,16 +1244,26 @@ Do not regress either.
 > `owner_decision_required`.
 >
 > - **R1 — convention D (`z = q³/(q²+1)`) canonical; C (`z = √q/(q+1)`)
->   excised.** **This is mostly a RE-AFFIRMATION.** The 2026-08-09 ruling had
->   already excised C, and [`scripts/convention-c-producer-audit.py`](scripts/convention-c-producer-audit.py)
->   reports **0 actionable C producers** — the only live C sites are 3 in
->   `tools/pyhecke` that the registry blocks *by design* plus 9 deliberately
->   C-named comparisons. **R1 does not open a fresh corpus-wide excision
->   sweep; at producer level there is nothing left to excise.** What it
->   settles is the two surviving carve-outs: the `qbeta-decay` channel and
->   the registry's `owner_decision_required`. It removes the *convention*
->   question from `tools/pyhecke/gram.py::z` but **not** the Gram
->   singularity under D — that is a numerical blocker, bean `qou-cds2`.
+>   excised.** **Largely a RE-AFFIRMATION** — the 2026-08-09 ruling had
+>   already excised C. R1's new work is the two surviving carve-outs: the
+>   `qbeta-decay` channel registered `disputed` (PR #5111) and the registry's
+>   one `owner_decision_required`. It removes the *convention* question from
+>   `tools/pyhecke/gram.py::z` but **not** the Gram singularity under D —
+>   that is a numerical blocker, bean `qou-cds2`.
+>
+>   **A clean detector run is NOT evidence the C surface is clear.**
+>   [`scripts/convention-c-producer-audit.py`](scripts/convention-c-producer-audit.py)
+>   reports **0 actionable C producers** (3 blocked-by-design sites in
+>   `tools/pyhecke`, 9 labelled comparisons). That count is real but
+>   **narrow**: it keys on *assignment targets*, so a convention-C value
+>   **returned from a function** is structurally invisible to it. Measured
+>   2026-08-16 — **7 files** return `1/(√q + 1/√q)`, which is `√q/(q+1) = z_C`
+>   *exactly* (`0.49932…` against D's `0.61268…`). PR #5124 catalogues five
+>   such detector-blind spellings and retracts the earlier "0 actionable"
+>   reading outright. So: **treat the remaining C surface as UNMEASURED
+>   rather than clear — and do not launch a corpus-wide sweep off either
+>   number.** R1 settles which convention is canonical; it does not tell you
+>   how much code still disagrees.
 > - **R2 — proton pin canonical.** Reaffirms the 2026-08-07 directive
 >   immediately below; nothing in that directive changes. The *ideal CAL-2
 >   definition* (`𝔇_β`, proxy `m_μ/m_e`) is untouched — R2 governs which pin
