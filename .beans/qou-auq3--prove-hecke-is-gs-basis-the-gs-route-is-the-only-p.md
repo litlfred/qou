@@ -2550,9 +2550,15 @@ turn's list is now done at the step level.
 transport per level; then the assembly, which is the same `MultiStepReduction.trans`
 wiring the `a > b` regime needed, over a longer list.
 
-**Process note.** The 79 commits of this arc had **no PR** — the branch
+**Process note.** This arc's 29 commits had **no PR** — the branch
 `claude/auq3-quad-left-family` was never opened for review, against the
-ALWAYS-PR rule. Continued on `claude/prefix-self-similarity-fo9avn`, which
+ALWAYS-PR rule. (Recorded here first as "79 commits", which was wrong: that
+came from `git rev-list origin/main..` in a **shallow** clone, where the
+merge-base is unresolvable and the count is meaningless. Recomputed after
+deepening: 29 arc commits, 36 with this session's, matching GitHub's count.
+Worth remembering — a shallow clone silently returns plausible garbage from
+any range query, and the first symptom here was a `git diff main...branch`
+that failed outright with "no merge base".) Continued on `claude/prefix-self-similarity-fo9avn`, which
 carries those commits plus this turn's, and opened
 [#5247](https://github.com/litlfred/qou/pull/5247) over the whole arc. The
 sibling branch is untouched.
