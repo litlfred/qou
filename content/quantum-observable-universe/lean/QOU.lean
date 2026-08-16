@@ -986,3 +986,8 @@ import QOU.BraidKnot.DepthStratifiedFrobeniusReciprocityVariance
 -- ordering), now recorded in a §7c banner. Was orphaned from this root, so
 -- nothing built it. Verifies lean-direct ok=1.
 import QOU.AlgebraicSubstrate.QChebyshevFunction
+-- qou-q7cm (§7c split): MassComputationChainRoadmap was never registered here,
+-- so nothing built it. Registering it also pulls in QOU.TypedCrossingsEncoding
+-- (the generic [Field A] theorem split out of it), since the roadmap imports
+-- that module. Both verify lean-direct ok=1.
+import QOU.MassComputationChainRoadmap
