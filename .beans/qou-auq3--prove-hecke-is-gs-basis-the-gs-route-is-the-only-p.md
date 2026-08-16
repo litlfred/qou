@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-16T13:42:24Z
+updated_at: 2026-08-16T14:02:46Z
 ---
 
 
@@ -2556,3 +2556,66 @@ ALWAYS-PR rule. Continued on `claude/prefix-self-similarity-fo9avn`, which
 carries those commits plus this turn's, and opened
 [#5247](https://github.com/litlfred/qou/pull/5247) over the whole arc. The
 sibling branch is untouched.
+
+### The far-commutation blocks — two corrections, and the transport lemma
+
+`computations/hecke_block_transport_shape.py` + witness. The earlier conjecture
+that the blocks are "a nested application of `farComm_transport_left_sources`"
+is wrong twice over, and both corrections make the remaining work smaller.
+
+**Correction 1 — the direction.** Within a level the *high* letter is fixed and
+passes successively lower ones, so the shape is
+`a ++ (x :: (w ++ b)) → a ++ (w ++ (x :: b))` — `farComm_transport_right`
+(§4y), **not** `farComm_transport_left` (§4v). The two are mirrors and not
+interchangeable.
+
+Checked positionally rather than by restating rule names: a transport of one
+letter across `k` others is `k` steps whose rewrite position advances by exactly
+one, with the high letter at that position throughout, every letter passed at
+least two below it, and the net effect the source → target shape. All four hold
+for all **275** runs, over the whole chain rather than only the blocks.
+
+**Correction 2 — the nesting.** "Nested double loop" describes the rule list
+accurately but overstates the Lean. Over all 20 pairs `a = 2 … 6`,
+`b = a … a+3`:
+
+    b > a:  a levels;   level k passes min(b−a−1+k, b−a+2) letters
+    b = a:  a−1 levels; level k passes min(k, 2)
+
+so the number of **short** levels is fixed at two (one on the diagonal), and
+every remaining level transports one letter past the *same* run
+`descWord (j₁+1) j₂`. That is a fixed prologue plus a **uniform single-index
+loop** — the shape §4af's loop already has — not a nested loop with a growing
+inner run.
+
+**`farComm_transport_right_sources`** (§4y). The blocks need the rightward
+transport with the relaxed collision hypothesis, for the reason §4v needed it on
+the left: the corner chain's bystanding term *is* the transport's final word, so
+the unrestricted hypothesis is false exactly where the transport is wanted.
+
+The end that relaxes is **not** the mirror image of the left one. On the left
+the final word is the split `u = []`; on the right it is `v = []`, because the
+moving letter starts at the left of `w` and finishes at its right, so the two
+ends swap with the direction of travel. Mirroring `u ≠ []` verbatim would have
+relaxed the *source* split and left the real obstruction in place.
+`farComm_transport_right` is now a two-line corollary, so §4y's callers are
+untouched. Sorry-free, standard axioms, `lean`-direct exit 0, no warnings, and
+checked **strictly stronger** — an instance whose bystander is the transport's
+final word, where `_sources` applies and `farComm_transport_right` provably
+cannot.
+
+**A probe bug worth remembering.** Runs must be grouped by *same-term
+continuation*, not by high letter alone: an element becomes multi-term the
+moment the quadratic rule fires, so adjacent chain steps can rewrite different
+terms. Grouping without that test welded two unrelated `F(0,2)` steps — on words
+of length 6 and 5 — into one bogus run and reported it as a structural failure.
+
+**Still open, and now the whole of what remains.** The outer induction over the
+levels, and then the assembly. The per-level lemma exists
+(`farComm_transport_right_sources`), the level structure is measured, and the
+quadratic steps are covered by `quadStep` — so the assembly is
+`MultiStepReduction.trans` over: prefix loop passes, the two `Y·Q` pairs, the
+two blocks, and the closing steps, with the `OverlapComposition` and its `spoly`
+identity at the end. Same wiring the `a > b` regime needed, over a longer list.
+No new *kind* of object is known to be missing; that claim is only as good as
+the measurements above, which cover `a ≤ 7` and a sample of `b`.
