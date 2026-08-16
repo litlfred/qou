@@ -13,12 +13,22 @@ for all `n`**.
 
 The argument has two halves, and only the first is an external input.
 
-* **Cited** — Wenzl's theorem that the Ocneanu/Markov trace weights on
-  `H_n(Q)` at Markov parameter `z_W = Q^r(1−Q)/(1−Q^r)` are the principal
-  specialisations `s_λ(1, Q, …, Q^{r−1})` of the Schur function, normalised
-  so that `Σ_λ f^λ y_λ = tr(1) = 1`. See `-- Ref:` on `schurPrincipal`.
+* **Cited, and since #5230 also axiomatised** — Wenzl's theorem that the
+  Ocneanu/Markov trace weights on `H_n(Q)` at Markov parameter
+  `z_W = Q^r(1−Q)/(1−Q^r)` are the principal specialisations
+  `s_λ(1, Q, …, Q^{r−1})` of the Schur function, normalised so that
+  `Σ_λ f^λ y_λ = tr(1) = 1`. See `-- Ref:` on `schurPrincipal`, and the class
+  `IsOcneanuWeightSystem` in the *Wenzl's theorem as a hypothesis* section
+  below, which carries it as an explicit `[Instance]` hypothesis on every
+  statement that talks about the *actual* weight rather than the formula.
   This is the "Ocneanu-trace weight formula" of #5207's phrasing: the *given*,
   not the thing to be shown.
+
+  **Axiomatising it upgrades nothing** (AGENTS.md §"Axiomatization is NOT a
+  Proof"). Statements carrying `[IsOcneanuWeightSystem …]` are *proved
+  conditional on Wenzl 1988*, which is what they already were. The change is
+  that the compiler now tracks the dependency instead of a reader having to
+  notice a comment.
 
 * **Proved here, sorry-free, for all `n` and all `λ`** — everything else:
 
@@ -66,6 +76,7 @@ import Mathlib.Algebra.GroupWithZero.Units.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.LinearCombination
 
 namespace QOU.QBeta.WenzlWeight
 
@@ -209,13 +220,20 @@ theorem schurPrincipal_eq_zero_iff {Q : R} (hQ0 : Q ≠ 0)
 
 /-! ## The Temperley–Lieb corollary -/
 
-/-- **The all-`n` Temperley–Lieb weight-vanishing lemma.**
+/-- **The all-`n` Temperley–Lieb weight-vanishing lemma, at the level of the
+formula.**
 
 At convention D — equivalently, by `wenzlLevel_conventionD`, at Wenzl level
-`r = 2` — the Ocneanu weight of `λ` vanishes **iff** `λ` has at least three
-rows. `Z` is the normaliser `Σ_μ f^μ s_μ` enforcing `Σ_λ f^λ y_λ = tr(1) = 1`;
-only its non-vanishing is used, so the statement is independent of which
-normalisation convention is in force.
+`r = 2` — the normalised level-2 principal specialisation of `λ` vanishes
+**iff** `λ` has at least three rows. `Z` is the normaliser `Σ_μ f^μ s_μ`
+enforcing `Σ_λ f^λ y_λ = tr(1) = 1`; only its non-vanishing is used, so the
+statement is independent of which normalisation convention is in force.
+
+**Unconditional, and about `schurPrincipal` — not about the Ocneanu weight.**
+This says nothing about the Markov trace on `H_n(Q)`; it is a fact about the
+hook-content product. The bridge to the actual weight is Wenzl 1988, carried by
+`IsOcneanuWeightSystem`; the corresponding statement about the weight itself is
+`conventionD_ocneanuWeight_eq_zero_iff_of_wenzl`, which is conditional.
 
 This is the statement PR #5207 named. It holds for every `n` and every `λ`,
 and it is the reason `radical = ⟨E⁽³⁾⟩`: the blocks the trace annihilates are
@@ -294,5 +312,240 @@ theorem discriminates_at_n_three :
   · rw [Ne, conventionD_weight_eq_zero_iff (by norm_num) hQ one_ne_zero,
       colLen_ofRowLens_two_one]
     norm_num
+
+/-! ## Wenzl's theorem as a hypothesis
+
+Everything above is about `schurPrincipal`, a function this file *defines*. To
+say anything about the **actual Ocneanu/Markov-trace weights** one needs the
+external input — Wenzl (1988) — that those weights *are* this function. Below,
+that input stops being a comment and becomes a class threaded through the
+signature of every statement that depends on it (AGENTS.md §3b-cond).
+
+**This proves nothing new.** Per AGENTS.md §"Axiomatization is NOT a Proof",
+axiomatising an input does not discharge it: a `class` is an assumption wearing
+infrastructure. The statements below are *proved conditional on Wenzl 1988* and
+must be cited that way. What the change buys is that the dependency is
+machine-tracked — a downstream declaration cannot use the weight-vanishing fact
+without `IsOcneanuWeightSystem` appearing in its type, where `#check` and code
+review will both see it.
+
+**Why a `class` and not an `axiom`.** An `axiom` would assert Wenzl's theorem
+globally and irrevocably; it could never be discharged, and it would have to be
+stated at some fixed `(Q, z, r)` or else quantified over a Hecke-algebra
+formalisation this repo does not have. The class form is parameterised, is
+*satisfiable* and *falsifiable* (both proved below), and — the deciding
+property — can one day be **discharged**: whoever formalises `H_n(Q)` and its
+Markov trace supplies the instance, and every conditional statement below
+becomes unconditional with no edit to this file. The cost is that the
+dependency does not appear in `#print axioms`; it appears in the *type*
+instead, which is why the conditional lemmas wear `_of_wenzl` in their names.
+
+**No instance is provided, and none should be** except by proving Wenzl's
+theorem. The satisfiability witness below is deliberately *not* registered as
+an `instance`, so typeclass search can never silently discharge the hypothesis.
+-/
+
+/-- **Wenzl (1988), as an explicit hypothesis: `y` is the Ocneanu weight system
+at level `r`.**
+
+The class carries Wenzl's *hypothesis*, not the vanishing conclusion. Its two
+fields say:
+
+1. `markovParameter_eq` — the trace's Markov parameter `z` is Wenzl's at level
+   `r`, i.e. `z = Q^r(1−Q)/(1−Q^r)`, cleared of denominators.
+2. `weight_eq_schurPrincipal` — **the external input.** At that parameter the
+   weights are the level-`r` principal specialisations, up to the normaliser
+   `Z` fixed by `Σ_λ f^λ y_λ = tr(1) = 1`. Only `Z ≠ 0` is used, so the
+   statement does not depend on which normalisation convention is in force.
+
+Nothing about *vanishing* appears here. The conclusion `y μ = 0 ↔ ℓ(λ) > r` is
+**derived** — from this class plus the unconditional
+`schurPrincipal_eq_zero_iff` — rather than projected out of a field. That is
+the §3b-cond non-degeneracy requirement, and it is the whole point: the
+mathematical content of the vanishing lemma stays where it was proved, and the
+class supplies only the bridge.
+
+`y` is opaque. Lean cannot yet see the Hecke algebra or its trace, so the class
+cannot *quantify over* the actual Ocneanu weight — it can only name the
+property a candidate `y` would have to have. Producing an instance for the real
+trace weights is exactly Wenzl's theorem, and is exactly what remains
+unformalised.
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457
+   Wenzl, "Hecke algebras of type $A_n$ and subfactors", Invent. Math. 92
+   (1988) 349–383. -/
+class IsOcneanuWeightSystem (Q z : R) (r : ℕ) (y : YoungDiagram → R) : Prop where
+  /-- The trace's Markov parameter is Wenzl's at level `r`, denominators
+  cleared: `z(1 − Q^r) = Q^r(1 − Q)`. -/
+  markovParameter_eq : z * (1 - Q ^ r) = Q ^ r * (1 - Q)
+  /-- **Wenzl 1988.** The weights are the level-`r` principal specialisations,
+  up to a nonzero normaliser. -/
+  weight_eq_schurPrincipal :
+    ∃ Z : R, Z ≠ 0 ∧ ∀ μ : YoungDiagram, y μ = schurPrincipal r Q μ / Z
+
+/-! ### Recovering the level from the Markov parameter (unconditional) -/
+
+/-- Wenzl's parameter relation, solved for `Q^r`: `Q^r(1 − Q + z) = z`.
+
+Pure algebra — no hypothesis at all, not even `Q ≠ 0`. This is the inversion
+`Q^r = z/(1 − Q + z)` quoted in the file header, in the form that avoids
+dividing. -/
+theorem pow_level_mul_eq_of_markovParameter {Q z : R} {r : ℕ}
+    (h : z * (1 - Q ^ r) = Q ^ r * (1 - Q)) :
+    Q ^ r * (1 - Q + z) = z := by linear_combination -h
+
+/-- **`Q^r` is determined by the Markov parameter, and hence so is `r`.**
+
+If two levels `r` and `s` sit at the same parameter `z` then `r = s`, for `Q`
+not a root of unity. So "which Wenzl level is this trace at?" has at most one
+answer — which is what lets `level_eq_two_of_conventionD` below turn convention
+D's parameter into the *integer* 2 rather than merely into `Q^r = Q²`. -/
+theorem level_unique_of_markovParameter {Q z : R} {r s : ℕ} (hQ0 : Q ≠ 0)
+    (hQ : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1)
+    (hr : z * (1 - Q ^ r) = Q ^ r * (1 - Q))
+    (hs : z * (1 - Q ^ s) = Q ^ s * (1 - Q)) : r = s := by
+  have hQ1 : Q ≠ 1 := fun h => hQ 1 one_ne_zero (by rw [h]; simp)
+  -- `1 − Q + z ≠ 0`: otherwise `z = Q − 1` and the relation collapses to `Q = 1`
+  have hne : 1 - Q + z ≠ 0 := by
+    intro hz0
+    have hzv : z = Q - 1 := by linear_combination hz0
+    subst hzv
+    exact hQ1 (by linear_combination hr)
+  have hpow : Q ^ r = Q ^ s :=
+    mul_right_cancel₀ hne ((pow_level_mul_eq_of_markovParameter hr).trans
+      (pow_level_mul_eq_of_markovParameter hs).symm)
+  -- `Q^(r−s) = 1` in `ℤ`-exponents, so `r = s`
+  have hz : Q ^ ((r : ℤ) - (s : ℤ)) = 1 := by
+    rw [zpow_sub₀ hQ0, zpow_natCast, zpow_natCast, hpow]
+    exact div_self (pow_ne_zero _ hQ0)
+  by_contra hrs
+  exact hQ _ (by omega) hz
+
+/-- **Convention D pins the level to the integer `r = 2`.**
+
+Given that a trace's Markov parameter is Wenzl's at level `r`, and that the
+parameter is convention D's (`Q = q²`, `z = q·z_D`, the factor `q` being the
+Hecke-normalisation shift of `wenzlLevel_conventionD`), the level *is* `2`.
+
+Unconditional: this is `wenzlLevel_conventionD`'s algebra plus
+`level_unique_of_markovParameter`. It is what
+`conventionD_ocneanuWeight_eq_zero_iff_of_wenzl` uses to consume the class's
+`markovParameter_eq` field — so that field does real work rather than
+decorating the class. -/
+theorem level_eq_two_of_conventionD {q z : R} {r : ℕ} (hq0 : q ≠ 0)
+    (hq2 : q ^ 2 + 1 ≠ 0)
+    (hQ : ∀ k : ℤ, k ≠ 0 → (q ^ 2) ^ k ≠ 1)
+    (hz : z = q * (q ^ 3 / (q ^ 2 + 1)))
+    (h : z * (1 - (q ^ 2) ^ r) = (q ^ 2) ^ r * (1 - q ^ 2)) : r = 2 := by
+  subst hz
+  refine level_unique_of_markovParameter (pow_ne_zero 2 hq0) hQ h ?_
+  field_simp
+  ring
+
+/-! ### The vanishing criterion for the actual Ocneanu weight (conditional) -/
+
+/-- **The weight-vanishing criterion, conditional on Wenzl 1988.**
+
+`y μ = 0 ↔ ℓ(μ) > r`, for the *actual* Ocneanu weight system `y` — as opposed
+to `schurPrincipal_eq_zero_iff`, which says the same of the formula and is
+unconditional.
+
+Derived, not projected: the class supplies `y = schurPrincipal / Z`, and all
+the mathematical content comes from `schurPrincipal_eq_zero_iff`.
+
+`z` is an explicit argument: it appears in the hypothesis but not in the
+conclusion, so typeclass resolution cannot recover it. -/
+theorem ocneanuWeight_eq_zero_iff_of_wenzl {Q : R} (z : R) {r : ℕ}
+    {y : YoungDiagram → R} [hw : IsOcneanuWeightSystem Q z r y] (hQ0 : Q ≠ 0)
+    (hQ : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) (μ : YoungDiagram) :
+    y μ = 0 ↔ r < μ.colLen 0 := by
+  obtain ⟨Z, hZ, hy⟩ := hw.weight_eq_schurPrincipal
+  rw [hy, div_eq_zero_iff]
+  simp only [hZ, or_false]
+  exact schurPrincipal_eq_zero_iff hQ0 hQ r μ
+
+/-- **The all-`n` Temperley–Lieb weight-vanishing lemma for the actual Ocneanu
+weight — conditional on Wenzl 1988.**
+
+At convention D, `y_λ = 0 ⟺ λ has at least three rows`. This is the statement
+#5207 named, stated about the object #5207 meant (the trace's Wedderburn
+weights) rather than about the hook-content formula, and it is **conditional**:
+the `[IsOcneanuWeightSystem]` hypothesis is Wenzl's theorem.
+
+Both class fields are consumed, neither trivially:
+
+* `markovParameter_eq` → `level_eq_two_of_conventionD` turns convention D's
+  parameter into the integer `r = 2`;
+* `weight_eq_schurPrincipal` → transports the unconditional vanishing criterion
+  to `y`.
+
+Cite as *"proved conditional on Wenzl 1988"*, never as *"proved"*.
+
+`z` and `r` are explicit: neither appears in the conclusion, so typeclass
+resolution cannot recover them. -/
+theorem conventionD_ocneanuWeight_eq_zero_iff_of_wenzl {q : R} (z : R) (r : ℕ)
+    {y : YoungDiagram → R} [hw : IsOcneanuWeightSystem (q ^ 2) z r y]
+    (hq0 : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0)
+    (hQ : ∀ k : ℤ, k ≠ 0 → (q ^ 2) ^ k ≠ 1)
+    (hz : z = q * (q ^ 3 / (q ^ 2 + 1))) (μ : YoungDiagram) :
+    y μ = 0 ↔ 3 ≤ μ.rowLens.length := by
+  have hr : r = 2 :=
+    level_eq_two_of_conventionD hq0 hq2 hQ hz hw.markovParameter_eq
+  subst hr
+  rw [ocneanuWeight_eq_zero_iff_of_wenzl (r := 2) z (pow_ne_zero 2 hq0) hQ μ,
+    YoungDiagram.length_rowLens]
+  omega
+
+/-- The surviving side for the actual weight — conditional on Wenzl 1988.
+A diagram with at most two rows has nonzero Ocneanu weight. -/
+theorem conventionD_ocneanuWeight_ne_zero_of_two_rows_of_wenzl {q : R} (z : R)
+    (r : ℕ) {y : YoungDiagram → R} [IsOcneanuWeightSystem (q ^ 2) z r y]
+    (hq0 : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0)
+    (hQ : ∀ k : ℤ, k ≠ 0 → (q ^ 2) ^ k ≠ 1)
+    (hz : z = q * (q ^ 3 / (q ^ 2 + 1))) (μ : YoungDiagram)
+    (h : μ.rowLens.length ≤ 2) : y μ ≠ 0 := by
+  rw [Ne, conventionD_ocneanuWeight_eq_zero_iff_of_wenzl z r hq0 hq2 hQ hz μ]
+  omega
+
+/-! ### The class is satisfiable, and it is not vacuous
+
+A conditional theorem behind an *unsatisfiable* hypothesis proves nothing, and
+one behind a hypothesis satisfied by *everything* constrains nothing. Both are
+ruled out below: some `y` meet the class, and some `y` demonstrably do not.
+-/
+
+/-- **The class is satisfiable** — the hypothesis is not empty, so the
+conditional theorems above are not vacuous.
+
+**This does not discharge Wenzl's theorem, and must not be read as doing so.**
+It says only that the *defined function* `schurPrincipal` satisfies, by
+`rfl`, the property of being its own principal specialisation. Wenzl's content
+is that the **Markov trace's** weights have this form — a statement about an
+object this file cannot name. Deliberately **not** an `instance`, so typeclass
+resolution can never use it to silently discharge an
+`[IsOcneanuWeightSystem …]` hypothesis. -/
+theorem isOcneanuWeightSystem_schurPrincipal (r : ℕ) {Q : R}
+    (hQr : (1 : R) - Q ^ r ≠ 0) :
+    IsOcneanuWeightSystem Q (Q ^ r * (1 - Q) / (1 - Q ^ r)) r
+      (fun μ => schurPrincipal r Q μ / 1) where
+  markovParameter_eq := by field_simp
+  weight_eq_schurPrincipal := ⟨1, one_ne_zero, fun _ => rfl⟩
+
+/-- **The class is not vacuous: it rules things out.**
+
+The constant function `1` is *not* an Ocneanu weight system at `Q = 2` in `ℚ`,
+at any level `2` and any parameter — because it fails to vanish on the
+three-row diagram `(1³)`, which `ocneanuWeight_eq_zero_iff_of_wenzl` forces it
+to. So the class genuinely constrains `y`; it is not a label that any function
+can wear. Together with `isOcneanuWeightSystem_schurPrincipal` this brackets
+the hypothesis from both sides. -/
+theorem not_isOcneanuWeightSystem_const_one (z : ℚ) :
+    ¬ IsOcneanuWeightSystem (2 : ℚ) z 2 (fun _ => 1) := by
+  intro hw
+  have hQ : ∀ k : ℤ, k ≠ 0 → (2 : ℚ) ^ k ≠ 1 :=
+    not_root_of_unity_of_pos_ne_one (by norm_num) (by norm_num)
+  have := (ocneanuWeight_eq_zero_iff_of_wenzl (hw := hw) z (by norm_num) hQ
+    (YoungDiagram.ofRowLens [1, 1, 1] (by decide))).mpr
+    (by rw [colLen_ofRowLens_one_one_one]; norm_num)
+  norm_num at this
 
 end QOU.QBeta.WenzlWeight
