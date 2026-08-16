@@ -69,3 +69,31 @@ Also proved on the way: `rowInsert_eq_append_of_none` — a no-bump insertion is
 free — it is where the *largest* recording timestamp sits, and `SchenstedRecording`'s
 `insertWordRec_snd_content` (content is exactly `range |w|`, each timestamp once) is what makes
 "the largest" well-defined. Expect the work to be locating that cell, not the undoing.
+
+## Brick 3 DONE — word recovery
+
+`QOU/Mathlib/SchenstedWordRecovery.lean`, sorry-free (`propext`, `Classical.choice`,
+`Quot.sound`):
+
+- `rowIndices T w` — the row where each step appended its cell, recorded along the same fold
+  `insertWord` runs;
+- `uninsertSteps T is` — peel the steps of `is` off the final tableau;
+- **`uninsertSteps_foldl`** / **`uninsertSteps_insertWord`** — the inversion law:
+  `uninsertSteps (insertWord w) (rowIndices [] w) = ([], w)`;
+- `word_eq_of_insertWord_eq` — equal insertion tableau + equal index record ⇒ equal word.
+
+**The ordering trick that made it a one-liner induction.** `uninsertSteps T (i :: rest)` undoes
+`rest` — the *later* steps — before `i`. That keeps it a plain structural recursion on the
+**forward** index list, so the induction on `w` lines up with `insertWord`'s fold: the IH applies
+to the inner fold unchanged and brick 2 closes the outer step. Defining it over a reversed list
+instead would have forced an induction from the right; the file compiled first try because it
+does not.
+
+**So the `P` side of the RSK inverse is complete**, conditional on being handed the index list.
+
+**Next (brick 4): the recording tableau supplies `rowIndices`.** `Q(w)`'s cell holding timestamp
+`s` sits in the row that step `s` appended to — that is the definitional content of `insertRec`'s
+Q-branches. `SchenstedRecording.insertWordRec_snd_content` (content is exactly `range |w|`, each
+timestamp once) is what makes "the row holding `s`" a function. With that,
+`word_eq_of_insertWord_eq` upgrades to injectivity of `rskPair`, and the same machinery run
+forwards gives surjectivity.
