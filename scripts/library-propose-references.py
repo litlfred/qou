@@ -88,6 +88,10 @@ RE_DEDICATION = re.compile(
     r"[^.]*\b(?:BIRTHDAY|ANNIVERSARY|RETIREMENT)\b\s*", re.I)
 
 
+def norm_title(t: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", (t or "").lower())[:60]
+
+
 def strip_byline_line(md: dict) -> tuple[str, list[dict]]:
     """Use `metadata.title_lines` to split a byline off the title.
 
@@ -119,6 +123,16 @@ def strip_byline_line(md: dict) -> tuple[str, list[dict]]:
     if whole and len(" ".join(head).split()) >= 3 and len(last.split()) <= 6:
         return " ".join(head), au
     return " ".join(lines), []
+
+
+# Stripping a run-on journal masthead generically was tried and does not
+# work. The furniture does not end at the volume/year marker — Kirby's
+# offprint reads "Inventiones math. 45, 35- 56 (1978) mathematicae 9 by
+# Springer-Verlag 197 A Calculus for Framed Links", with three more
+# fragments after the year — and a rule loose enough to reach the title
+# also cut a Communications in Mathematical Physics masthead down to
+# "Mathematical Physics Springer-Verlag 1986" and called it a title.
+# These go in the override file instead, one document at a time.
 
 
 def clean_title(t: str, authors: list[dict] | None = None) -> str:
@@ -341,13 +355,24 @@ def slug_id(md: dict, doc: str, authors: list[dict]) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Draft references.ts entries for unregistered library documents")
-    ap.add_argument("--band", choices=["high", "medium", "low"])
+    ap.add_argument("--band", choices=["high", "medium", "low", "registered"])
     ap.add_argument("--emit", action="store_true", help="print TypeScript for the selected band")
     args = ap.parse_args()
 
     refs = open(REFS, encoding="utf-8").read()
     overrides = (json.load(open(OVERRIDES, encoding="utf-8")).get("overrides", {})
                  if os.path.exists(OVERRIDES) else {})
+    # Titles already in the bibliography. A document can be unregistered in
+    # the sense that no entry names its doc-id, while the *work* is very
+    # much registered — the entry simply was never joined to the library.
+    # Proposing it again creates a duplicate: batch 4 did exactly that once,
+    # re-registering Bokut-Chen-Li under a second id.
+    existing_titles = {}
+    for m in re.finditer(r'id:\s*"([^"]+)"', refs):
+        blk = refs[m.start():refs.find("\n  }),", m.start())]
+        mt = re.search(r'title:\s*\n?\s*"([^"]+)"', blk)
+        if mt:
+            existing_titles.setdefault(norm_title(mt.group(1)), m.group(1))
     registered = set(re.findall(r'docId: "([^"]+)"', refs))
     existing_ids = set(re.findall(r'id:\s*"([^"]+)"', refs))
 
@@ -376,8 +401,7 @@ def main() -> int:
         ov = overrides.get(doc) or {}
         if ov.get("title"):
             title = ov["title"]
-        if ov.get("authors"):
-            au = ov["authors"]
+
         # Band on the CLEANED title: that is what the entry would carry.
         b, why = band(md, chars, title)
         if ov.get("band"):
@@ -389,14 +413,26 @@ def main() -> int:
             au = split_authors(tail)
         if not authors_trustworthy(au, md.get("authors_raw") or md.get("title") or ""):
             au = []
+        # Overrides last, after every fallback — an earlier position was
+        # silently undone by the "no authors yet, try the title tail" step
+        # below it, which refilled a list the override had just cleared.
+        if ov.get("authors"):
+            au = ov["authors"]
+        elif ov.get("drop_authors"):
+            # The field held something else entirely — the title, or a
+            # masthead — so the parse is meaningless, not just imprecise.
+            au = []
+        already = existing_titles.get(norm_title(title))
+        if already:
+            b, why = "registered", f"already registered as [{already}] — join it to this doc, do not add a second entry"
         rows.append({"doc": doc, "band": b, "why": why, "md": md, "title": title,
                      "pages": art.get("source", {}).get("pages"),
                      "sections": len(art.get("sections") or []), "authors": au})
 
     sel = [r for r in rows if not args.band or r["band"] == args.band]
-    counts = {b: sum(1 for r in rows if r["band"] == b) for b in ("high", "medium", "low")}
+    counts = {b: sum(1 for r in rows if r["band"] == b) for b in ("high", "medium", "low", "registered")}
     print(f"{len(rows)} unregistered: "
-          + ", ".join(f"{b}={counts[b]}" for b in ("high", "medium", "low")) + "\n")
+          + ", ".join(f"{b}={counts[b]}" for b in ("high", "medium", "low", "registered")) + "\n")
 
     if not args.emit:
         for r in sel:

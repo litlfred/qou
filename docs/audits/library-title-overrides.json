@@ -5,7 +5,9 @@
   "A `title` override may only REMOVE text that is visibly not part of the title (a byline, a series banner) or repair spacing damage in text that is present. It may not supply a title the document does not contain.",
   "When the document does not contain its own title — a journal offprint whose masthead replaced it — record `band: \"low\"` with a reason instead of guessing. arXiv, which would settle it, returns 403 from this environment.",
   "Say what was removed in `why`, so a reviewer can check the call without opening the PDF.",
-  "An `authors` override replaces a parsed author list. Same rule as titles: it may only repair names visible in the document (a kerning split, an affiliation letter welded to a surname), never supply names the document does not show."
+  "An `authors` override replaces a parsed author list. Same rule as titles: it may only repair names visible in the document (a kerning split, an affiliation letter welded to a surname), never supply names the document does not show.",
+  "A `title` accompanied by `title_source` came from OUTSIDE the document text — normally the filename an uploader assigned — and is only permitted when the document's own content corroborates it (author, journal, volume, year all agreeing). Say so in `title_source`. Without corroboration, demote instead.",
+  "`drop_authors: true` discards a parsed author list outright, for documents where the author field held something else — the title, or a masthead — so the parse is meaningless rather than imprecise."
  ],
  "overrides": {
   "arxiv-1203.6531v1": {
@@ -111,6 +113,96 @@
    ],
    "id": "mironov2023",
    "why_authors": "The byline is 'A. Mironovb,c,d 1, A. Morozova,c,d 2' — the affiliation letters run into the surnames. Only one name reached the parser, so the two-or-more test that catches this house style could not fire. Repair of visible text."
+  },
+  "1-s20-s0097316524000426-main": {
+   "title": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
+   "authors": [
+    {
+     "family": "Yao",
+     "given": "Olivia X.M."
+    }
+   ],
+   "id": "yao2024",
+   "why": "title_lines splits the title across two lines with the byline on a third; the parser joined all three. Author taken from that third line."
+  },
+  "9-81": {
+   "title": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+   "authors": [
+    {
+     "family": "Kamei",
+     "given": "Satoshi"
+    }
+   ],
+   "id": "kamei-9-81",
+   "why": "Title spans two lines. The byline extracts as 'KAMEISatoshi' — surname and given name welded, a Japanese-convention byline set without a space."
+  },
+  "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari": {
+   "title": "Theta Functions, Modular Invariance, and Strings",
+   "why": "The title landed in `authors_raw` while `title_lines` holds only the Communications in Mathematical Physics masthead. Text moved between fields, nothing invented. Authors NOT set: the byline is not in the extracted text, only in the filename.",
+   "drop_authors": true,
+   "why_authors": "authors_raw held the TITLE, so the parse produced 'Functions, Theta; Invariance, Modular'. The real byline is not in the extracted text."
+  },
+  "ft-dpm-quaternion-kernel-ieee-tit-2014": {
+   "title": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
+   "why": "Second half of the title ('Existence and Uniqueness Conditions') was classified as the author line; first half sits behind the IEEE masthead in title_lines. Reassembled from both, nothing invented."
+  },
+  "invariant-eigendistributions-2": {
+   "title": "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
+   "authors": [
+    {
+     "family": "Rossmann",
+     "given": "W."
+    }
+   ],
+   "id": "rossmann-invariant-eigendistributions-2",
+   "why": "title_lines carries a running head ('REPRESENTATIONSOFWEYL GROUPS 1') above the real title, which spans three further lines, with the byline last."
+  },
+  "kirbycal": {
+   "title": "A Calculus for Framed Links in S^3",
+   "authors": [
+    {
+     "family": "Kirby",
+     "given": "Robion"
+    }
+   ],
+   "id": "kirby1978",
+   "why": "title_lines is ['Inventiones math. 45, 35- 56 (1978)', 'mathematicae ... Springer-Verlag 197', 'A Calculus for Framed Links in S 3', 'Robion Kirby*'] — two masthead lines, then the title, then the byline. Superscript 3 written as ^3."
+  },
+  "1172-4": {
+   "title": "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function",
+   "why": "The RIMS scan is JIS-encoded and the title's second line survives only as TeX escapes: '$\\\\mathrm{O}\\\\mathrm{u}\\\\mathrm{a}\\\\mathrm{n}\\\\mathrm{t}\\\\mathrm{u}\\\\sim \\\\mathrm{m}$Dilogarithm Function', i.e. 'Quantum Dilogarithm Function' with Q misread as O. Transcription of visible characters. A third line of mojibake (the Japanese affiliation) is dropped."
+  },
+  "milnor-1982-hyperbolic-geometry-the-first-150-years": {
+   "title": "Hyperbolic geometry: The first 150 years",
+   "title_source": "Filename. The title string appears in NEITHER copy's extracted text (checked both this and library/milnor-hyperbolic/). Corroborated by the document itself: section 'JOHN MILNOR', and title_lines giving Bulletin (New Series) of the AMS with authors_raw 'Volume 6, Number 1, January 1982' — which is exactly where Milnor's survey appeared (Bull. AMS 6 (1982) 9-24).",
+   "why": "Extracted title is the AMS masthead only.",
+   "drop_authors": true,
+   "id": "milnor1982",
+   "why_authors": "The parse read 'SOCIETY, THEMATICAL' out of the AMS masthead. Milnor's name is in the document (a section heading reads 'JOHN MILNOR') but not as a parseable byline, so the field is left empty rather than hand-filled from the filename."
+  },
+  "birkhoff-generalizedriemannproblem-1913": {
+   "band": "low",
+   "why": "title_lines holds only JSTOR boilerplate ('American Academy of Arts & Sciences is collaborating with JSTOR...') and a download stamp. The paper's title is not in the extracted text. The filename suggests Birkhoff's generalized Riemann problem, but the scan carries no author or title line to corroborate it against."
+  },
+  "fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh": {
+   "band": "low",
+   "why": "title_lines is ['Michihiko Fujii', '1. Introduction'] — the byline and the first section heading, with no title line between them. Not in the extracted text."
+  },
+  "ojm27-03-04": {
+   "band": "low",
+   "why": "title_lines is the Osaka institutional-repository banner repeated three times. The paper's own front matter did not extract."
+  },
+  "s00601-022-01745-1": {
+   "band": "low",
+   "why": "title_lines holds the opening sentences of an editorial ('This special issue of the journal Few-Body Systems celebrates Steven Weinberg's article...'). This is body text; the piece's own title did not extract."
+  },
+  "s0273-0979-1985-15304-2": {
+   "band": "low",
+   "why": "title_lines holds only the Bulletin of the AMS masthead, with authors_raw 'Volume 12, Number 1, January 1985'. Unlike the Milnor case there is no filename asserting a title to corroborate."
+  },
+  "1172-5": {
+   "band": "low",
+   "why": "The RIMS scan is JIS-encoded. The readable part is 'OPTIMISTIC CALCULATIONS ABOUT THE WITTEN-RESHETIKHIN-TURAEV INVARIANTS OF' — the title is cut mid-phrase and its remainder is mojibake, so it cannot be completed from the document."
   }
  }
 }

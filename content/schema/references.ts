@@ -1350,6 +1350,13 @@ export const references: CSLData[] = [
     page: "111-195",
     publisher: "Birkh\u00e4user",
     DOI: "10.1007/978-0-8176-4576-2_4",
+    // Merged 2026-08-16 with deligne2007, a second entry for the same
+    // chapter — same title, same pages 111-195 — recorded against the 2007
+    // Modern Birkhauser Classics reprint (DOI 10.1007/978-0-8176-4575-5_3)
+    // rather than the 1990 original kept here. Both DOIs are real; one work.
+    // The pair escaped an earlier duplicate-title sweep because one title
+    // was written with a \u00e9 escape and the other with a literal e-acute,
+    // so they differed as raw text and matched only once parsed.
   }),
 
   // ── Alexander 1923 ─────────────────────────────────────────────
@@ -3404,6 +3411,15 @@ export const references: CSLData[] = [
   // ── Milnor 1982 ────────────────────────────────────────────────
   ref({
     id: "milnor1982",
+    library: {
+      docId: "milnor-1982-hyperbolic-geometry-the-first-150-years",
+      dir: "library/milnor-1982-hyperbolic-geometry-the-first-150-years",
+      pdf: "library/milnor-1982-hyperbolic-geometry-the-first-150-years/milnor-1982-hyperbolic-geometry-the-first-150-years.pdf",
+      stage: "candidates",
+      pages: 16,
+      sections: 9,
+      alternates: ["milnor-hyperbolic"],
+    },
     type: "article-journal",
     title: "Hyperbolic geometry: The first 150 years",
     author: [{ family: "Milnor", given: "John W." }],
@@ -3421,6 +3437,7 @@ export const references: CSLData[] = [
       "analytic half of the latter is formalized in " +
       "`QOU.Archimedean.IdealTetrahedronConcavity.volChart_isMaxOn_regular`; " +
       "the volume identification itself is bean qou-5gai H4 (open).",
+    note: "PDF library/milnor-1982-hyperbolic-geometry-the-first-150-years/ — joined 2026-08-16: the library held this paper unlinked, so it read as an unregistered document. ",
   }),
 
   // ── Thurston 1978 ──────────────────────────────────────────────
@@ -3544,18 +3561,6 @@ export const references: CSLData[] = [
   }),
 
   // ── Deligne 2007 ──────────────────────────────────────────────
-  ref({
-    id: "deligne2007",
-    type: "chapter",
-    title: "Catégories tannakiennes",
-    author: [{ family: "Deligne", given: "Pierre" }],
-    "container-title": "The Grothendieck Festschrift",
-    publisher: "Birkhäuser Boston",
-    volume: "II",
-    page: "111-195",
-    DOI: "10.1007/978-0-8176-4575-5_3",
-    issued: { "date-parts": [[2007]] },
-  }),
 
   // ── Kauffman 1991 ─────────────────────────────────────────────
   ref({
@@ -7278,6 +7283,15 @@ export const references: CSLData[] = [
   // one-object case is precisely UGB's setting.
   ref({
     id: "bokutchenli2011",
+    library: {
+      docId: "arxiv-1101.1563v1",
+      dir: "library/arxiv-1101.1563v1",
+      pdf: "library/arxiv-1101.1563v1/1101.1563v1.pdf",
+      stage: "candidates",
+      pages: 20,
+      sections: 3,
+      arxiv: "1101.1563v1",
+    },
     type: "article",
     title: "Gröbner-Shirshov bases for categories",
     author: [
@@ -7287,7 +7301,7 @@ export const references: CSLData[] = [
     ],
     issued: { "date-parts": [[2011]] },
     URL: "https://arxiv.org/abs/1101.1563",
-    note: "Establishes the Composition-Diamond lemma for small categories presented by a graph (quiver) plus defining relations, working in the free category partial algebra kC(X) of uniform (matching source/target) partial words. Theorem 4.4: S is a Gröbner-Shirshov basis <=> every f in Id(S) has leading word divisible as a·s̄·b <=> Irr(S) is a linear basis of kC(X)/Id(S). Also gives GS bases for the simplicial and cyclic categories. arXiv:1101.1563v1 [math.RA].",
+    note: "PDF library/arxiv-1101.1563v1/ — joined 2026-08-16: the library held this paper unlinked, so it read as an unregistered document. Establishes the Composition-Diamond lemma for small categories presented by a graph (quiver) plus defining relations, working in the free category partial algebra kC(X) of uniform (matching source/target) partial words. Theorem 4.4: S is a Gröbner-Shirshov basis <=> every f in Id(S) has leading word divisible as a·s̄·b <=> Irr(S) is a linear basis of kC(X)/Id(S). Also gives GS bases for the simplicial and cyclic categories. arXiv:1101.1563v1 [math.RA].",
   }),
 
   // ── Khovanov 2000 (categorification of Jones polynomial) ──────
@@ -8917,12 +8931,12 @@ export const references: CSLData[] = [
   ref({
     id: "deturck-gluck2008",
     library: {
-      docId: "0510388v1",
-      dir: "library/0510388v1",
-      pdf: "library/0510388v1/0510388v1.pdf",
+      docId: "0406276v1",
+      dir: "library/0406276v1",
+      pdf: "library/0406276v1/0406276v1.pdf",
       stage: "candidates",
-      pages: 108,
-      sections: 10,
+      pages: 40,
+      sections: 1,
     },
     type: "article-journal",
     title:
@@ -8935,7 +8949,7 @@ export const references: CSLData[] = [
     volume: "49",
     issued: { "date-parts": [[2008]] },
     URL: "https://arxiv.org/abs/math/0406276",
-    note: "arXiv:math/0406276 (published under the title 'Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space', J. Math. Phys. 49, 023504). Supplies the H³ Gauss linking integral (Thm 1(3), kernel csch α), the H³ Biot–Savart operator (Thm 2(3)), and — the object the EM-linking attack needs — the H³ Laplacian Green's function φ₀(α) = −coth(α)/4π, the exact hyperbolic analogue of 1/r. Read in full 2026-08-01; findings and the two structural obstructions in docs/audits/2026-08-01-em-linking-reads-round1.md. Note there is NO interaction-energy formula, no compact-quotient theory, and no H³ Green's operator on vector fields (Thm 3 is S³-only). Uploaded library/0406276v1/0406276v1.pdf.",
+    note: "PDF library/0406276v1/ — joined 2026-08-16: the library held this paper unlinked, so it read as an unregistered document. arXiv:math/0406276 (published under the title 'Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space', J. Math. Phys. 49, 023504). Supplies the H³ Gauss linking integral (Thm 1(3), kernel csch α), the H³ Biot–Savart operator (Thm 2(3)), and — the object the EM-linking attack needs — the H³ Laplacian Green's function φ₀(α) = −coth(α)/4π, the exact hyperbolic analogue of 1/r. Read in full 2026-08-01; findings and the two structural obstructions in docs/audits/2026-08-01-em-linking-reads-round1.md. Note there is NO interaction-energy formula, no compact-quotient theory, and no H³ Green's operator on vector fields (Thm 3 is S³-only). Uploaded library/0406276v1/0406276v1.pdf.",
   }),
 
   // ── DeTurck–Gluck–Komendarczyk–Melvin–Shonkwiler–Vela-Vick ────
@@ -10300,6 +10314,14 @@ export const references: CSLData[] = [
 
   ref({
     id: "alvarez-gaume-moore-vafa1986",
+    library: {
+      docId: "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+      dir: "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+      pdf: "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf",
+      stage: "candidates",
+      pages: 40,
+      sections: 36,
+    },
     type: "article-journal",
     title: "Theta functions, modular invariance, and strings",
     author: [{ family: "Alvarez-Gaumé", given: "Luis" }, { family: "Moore", given: "Gregory" }, { family: "Vafa", given: "Cumrun" }],
@@ -10307,7 +10329,7 @@ export const references: CSLData[] = [
     "container-title": "Communications in Mathematical Physics",
     volume: "106",
     page: "1-40",
-    note: "PDF library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-forms-and/ — Cited from 4 sites in computations/ (alpha-em Quillen-curvature probes).",
+    note: "PDF library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/ — joined 2026-08-16: the library held this paper unlinked, so it read as an unregistered document. PDF library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-forms-and/ — Cited from 4 sites in computations/ (alpha-em Quillen-curvature probes).",
   }),
 
   ref({
@@ -11430,23 +11452,6 @@ export const references: CSLData[] = [
     note: "PDF library/arxiv-0706.2213v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
   ref({
-    id: "bokut2011",
-    library: {
-      docId: "arxiv-1101.1563v1",
-      dir: "library/arxiv-1101.1563v1",
-      pdf: "library/arxiv-1101.1563v1/1101.1563v1.pdf",
-      stage: "candidates",
-      pages: 20,
-      sections: 3,
-      arxiv: "1101.1563v1",
-    },
-    type: "article",
-    title: "Gröbner-Shirshov bases for categories",
-    author: [{ family: "Bokut", given: "L. A." }],
-    URL: "https://arxiv.org/abs/1101.1563",
-    note: "PDF library/arxiv-1101.1563v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
-  }),
-  ref({
     id: "fuji2012",
     library: {
       docId: "arxiv-1203.2182v1",
@@ -12485,6 +12490,170 @@ export const references: CSLData[] = [
     title: "Universal Properties of the Four-Body System with Large Scattering Length",
     URL: "https://arxiv.org/abs/nucl-th/0610105",
     note: "PDF library/arxiv-nucl-th-0610105v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "deturck-gluck-electrodynamics2008",
+    library: {
+      docId: "0510388v1",
+      dir: "library/0510388v1",
+      pdf: "library/0510388v1/0510388v1.pdf",
+      stage: "candidates",
+      pages: 108,
+      sections: 10,
+    },
+    type: "article",
+    title:
+      "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space",
+    author: [
+      { family: "DeTurck", given: "Dennis" },
+      { family: "Gluck", given: "Herman" },
+    ],
+    issued: { "date-parts": [[2008]] },
+    URL: "https://arxiv.org/abs/math/0510388",
+    note: "PDF library/0510388v1/ — split out 2026-08-16 from [deturck-gluck2008], which had two source-ledger rows claiming it: one for this 108-page paper and one for the 40-page 'The Gauss linking integral on the 3-sphere and in hyperbolic 3-space'. They are different papers — the duplicate detector scored the pair 0.038 and it was adjudicated different-work in docs/audits/library-duplicate-ledger.json — so the entry described one and linked the other. Title extracted from the PDF, not verified against the publisher record.",
+  }),
+
+  // ── Library intake batch 5 (2026-08-16) ─────────────────────────────
+  // 9 documents with no arXiv id, so identity rests on the title alone.
+  // Seven carry hand-verified corrections in
+  // docs/audits/library-title-overrides.json: their titles were split
+  // across lines, or sat behind a journal masthead, or landed in the
+  // author field. Same caveat as batch 4 — extracted, not verified
+  // against the publisher record.
+  ref({
+    id: "yao2024",
+    library: {
+      docId: "1-s20-s0097316524000426-main",
+      dir: "library/1-s20-s0097316524000426-main",
+      pdf: "library/1-s20-s0097316524000426-main/1-s2.0-S0097316524000426-main.pdf",
+      stage: "candidates",
+      pages: 10,
+      sections: 7,
+    },
+    type: "article",
+    title: "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
+    author: [{ family: "Yao", given: "Olivia X.M." }],
+    DOI: "10.1016/j.jcta.2024.105903",
+    note: "PDF library/1-s20-s0097316524000426-main/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "1172-4",
+    library: {
+      docId: "1172-4",
+      dir: "library/1172-4",
+      pdf: "library/1172-4/1172-4.pdf",
+      stage: "candidates",
+      pages: 26,
+      sections: 13,
+    },
+    type: "article",
+    title: "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function",
+    note: "PDF library/1172-4/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "kamei-9-81",
+    library: {
+      docId: "9-81",
+      dir: "library/9-81",
+      pdf: "library/9-81/9_81.pdf",
+      stage: "candidates",
+      pages: 7,
+      sections: 5,
+    },
+    type: "article",
+    title: "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+    author: [{ family: "Kamei", given: "Satoshi" }],
+    note: "PDF library/9-81/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "ft-dpm-quaternion-kernel-ieee-tit-2014",
+    library: {
+      docId: "ft-dpm-quaternion-kernel-ieee-tit-2014",
+      dir: "library/ft-dpm-quaternion-kernel-ieee-tit-2014",
+      pdf: "library/ft-dpm-quaternion-kernel-ieee-tit-2014/FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf",
+      stage: "candidates",
+      pages: 14,
+      sections: 9,
+    },
+    type: "article",
+    title: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
+    DOI: "10.1109/TIT.2014.2333734",
+    note: "PDF library/ft-dpm-quaternion-kernel-ieee-tit-2014/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "ihpmay2025",
+    library: {
+      docId: "ihpmay2025",
+      dir: "library/ihpmay2025",
+      pdf: "library/ihpmay2025/IHPMay2025.pdf",
+      stage: "candidates",
+      pages: 41,
+      sections: 30,
+    },
+    type: "article",
+    title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS",
+    author: [{ family: "CANARY", given: "RICHARD D." }],
+    note: "PDF library/ihpmay2025/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "rossmann-invariant-eigendistributions-2",
+    library: {
+      docId: "invariant-eigendistributions-2",
+      dir: "library/invariant-eigendistributions-2",
+      pdf: "library/invariant-eigendistributions-2/Invariant_eigendistributions_2.pdf",
+      stage: "candidates",
+      pages: 33,
+      sections: 25,
+    },
+    type: "article",
+    title: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
+    author: [{ family: "Rossmann", given: "W." }],
+    note: "PDF library/invariant-eigendistributions-2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "ki6c",
+    library: {
+      docId: "ki6c",
+      dir: "library/ki6c",
+      pdf: "library/ki6c/ki6c.pdf",
+      stage: "candidates",
+      pages: 72,
+      sections: 37,
+    },
+    type: "article",
+    title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings",
+    author: [{ family: "Ohtsuki", given: "Tomotada" }, { family: "Yokota", given: "Yoshiyuki" }],
+    note: "PDF library/ki6c/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "kirby1978",
+    library: {
+      docId: "kirbycal",
+      dir: "library/kirbycal",
+      pdf: "library/kirbycal/kirbycal.pdf",
+      stage: "candidates",
+      pages: 22,
+      sections: 3,
+    },
+    type: "article",
+    title: "A Calculus for Framed Links in S^3",
+    author: [{ family: "Kirby", given: "Robion" }],
+    note: "PDF library/kirbycal/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "lee-vanderveen-colored-jones-polynomials-wit",
+    library: {
+      docId: "lee-vanderveen-colored-jones-polynomials-without-tails",
+      dir: "library/lee-vanderveen-colored-jones-polynomials-without-tails",
+      pdf: "library/lee-vanderveen-colored-jones-polynomials-without-tails/lee-vanderveen-colored-jones-polynomials-without-tails.pdf",
+      stage: "candidates",
+      pages: 5,
+      sections: 7,
+    },
+    type: "article",
+    title: "COLORED JONES POLYNOMIALS WITHOUT TAILS",
+    author: [{ family: "LEE", given: "CHRISTINE RUEY SHAN" }, { family: "VEEN", given: "ROLAND VAN DER" }],
+    note: "PDF library/lee-vanderveen-colored-jones-polynomials-without-tails/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
 ];
 
