@@ -31,16 +31,34 @@ Shape-matching, not spelling-matching.
   A variable that says it is convention C is a labelled comparison, not a defect
   — the same principle the content axis uses for `C_LABEL`.
 * **`tools/pyhecke/`** is reported separately, but the excuse comes from the
-  REGISTRY, not from the path. A site is "BLOCKED on C by design" only while a
-  `blocked_migrations` row names that exact file; anything else under
-  `tools/pyhecke/` is reported as **C with NO registry row (unexplained)** and
-  counts as actionable.
+  REGISTRY, not from the path. Three buckets, in order of how well accounted
+  the site is, and **only the first is excused from the actionable count**:
+
+  1. **BLOCKED on C by design** — a `blocked_migrations` row names that exact
+     file.
+  2. **DECLARED C in `evaluators.z`, R10-waived** — the symbol is a registered
+     C evaluator whose module is listed in `intra_module_split_waivers`. R9
+     imports it and asserts its value numerically on every run, so this is a
+     *stronger* record than a blocked row, which is only prose. It is still
+     **actionable**: the waiver says in terms that the split is "an open
+     defect, not an approved design". Declaring a thing does not fix it, and a
+     declaration that shrinks the count is a way to make the inventory smaller
+     without making the corpus better.
+  3. **C with NO registry row (unexplained)** — anything else under
+     `tools/pyhecke/`. Actionable.
 
   The path-prefix version was too generous. One row covered `gram.py::z`, and
   three *function-local* C definitions sheltered under the same label — two of
   them inside `gram.py` itself. When `z` migrated to D on 2026-08-15 (bean
   `qou-w8zz`) and the row was resolved, a prefix classifier would have gone on
   calling those three "by design" indefinitely.
+
+  Bucket 2 exists because resolving that row correctly — emptying
+  `blocked_migrations` — reclassified four fully-registered sites as
+  "unexplained", so the registry and this detector disagreed about the same
+  four while both worked as designed. Splitting them also stopped the blanket
+  label hiding a real one: `pyhecke/atom.py:691` is a live C `z_mark`, consumed
+  at :713, in a module (`pyhecke.atom`) that **no** waiver covers.
 * `_deprecated/` is skipped entirely.
 
 Results are stratified, because the layers carry very different risk: a probe
@@ -174,6 +192,56 @@ def _module_path_of(file: str) -> str:
         i = len(parts) - 1 - parts[::-1].index(pkg)
         return ".".join(parts[i:])
     return parts[-1] if parts else file
+
+
+def declared_c_files(repo: pathlib.Path):
+    """Files whose C is DECLARED in the registry — registered, not unexplained.
+
+    `blocked_migrations` is no longer the only way the registry accounts for a
+    convention-C symbol. A site can also be recorded as a C entry under
+    `evaluators.z`, where R9 imports it and asserts its value numerically, with
+    its module listed in `intra_module_split_waivers`. That is a STRONGER
+    record than a blocked row ever was: a blocked row is prose, an evaluator
+    entry is checked against the running code on every validator run.
+
+    Without this, emptying `blocked_migrations` -- which is what resolving the
+    gram.py row correctly DID -- silently reclassifies four fully-registered
+    sites as "NO registry row (unexplained)". The registry and this detector
+    then disagree about the same four sites while both are working as designed.
+
+    Declared does NOT mean excused. The R10 waiver says in terms that the split
+    is "an open defect, not an approved design", so these stay ACTIONABLE and
+    stay in the count; only the LABEL changes. A positive declaration has to be
+    visible in the count rather than swallowed by it, or the declaration
+    becomes a way to make the inventory smaller without making the corpus
+    better.
+    """
+    reg = repo / "docs/coordination/trace-convention-registry.json"
+    try:
+        r = json.loads(reg.read_text())
+    except (OSError, json.JSONDecodeError):
+        return {}
+    waived = set(r.get("intra_module_split_waivers", []))
+    out: dict[str, list] = {}
+    for e in r.get("evaluators", {}).get("z", []):
+        if e.get("convention") != "C":
+            continue
+        mod, sym = e.get("module", ""), e.get("symbol", "")
+        if mod not in waived:
+            continue
+        f = e.get("file") or _file_of_module(repo, mod)
+        if f:
+            out.setdefault(f, []).append(sym)
+    return {f: sorted(set(syms)) for f, syms in out.items()}
+
+
+def _file_of_module(repo: pathlib.Path, mod: str):
+    """Best-effort module dotted-path -> repo-relative file."""
+    tail = mod.replace(".", "/") + ".py"
+    for cand in repo.rglob("*/" + tail):
+        if "_deprecated" not in str(cand) and "node_modules" not in str(cand):
+            return str(cand.relative_to(repo))
+    return None
 
 
 def blocked_symbols(repo: pathlib.Path):
@@ -541,7 +609,7 @@ def is_c_form_reciprocal(node: ast.AST, half_vars: set):
     return None
 
 
-def classify(path: str, blocked_files=()) -> str:
+def classify(path: str, blocked_files=(), declared_files=()) -> str:
     """Bucket a site. `blocked_files` comes from the registry, not from here.
 
     This used to label EVERY site under `tools/pyhecke/` "BLOCKED on C by
@@ -557,6 +625,9 @@ def classify(path: str, blocked_files=()) -> str:
     """
     if path in blocked_files:
         return "tools/pyhecke — BLOCKED on C by design (registry)"
+    if path in declared_files:
+        return ("tools/pyhecke — DECLARED C in evaluators.z, R10-waived "
+                "(open defect, still actionable)")
     if path.startswith(BLOCKED_BY_DESIGN):
         return "tools/pyhecke — C with NO registry row (unexplained)"
     # computations/from_scratch/README.md declares the whole directory
@@ -577,7 +648,7 @@ def classify(path: str, blocked_files=()) -> str:
     return "computations — live producers"
 
 
-def scan(roots=ROOTS, blocked_files=()):
+def scan(roots=ROOTS, blocked_files=(), declared_files=()):
     """Yield (path, lineno, target_name, source, bucket, deliberate)."""
     for r in roots:
         base = pathlib.Path(r)
@@ -606,7 +677,8 @@ def scan(roots=ROOTS, blocked_files=()):
                     continue
                 nm = names[0]
                 yield (sp, n.lineno, nm, ast.unparse(n.value),
-                       classify(sp, blocked_files), bool(DELIBERATE.search(nm)))
+                       classify(sp, blocked_files, declared_files),
+                       bool(DELIBERATE.search(nm)))
 
             # RETURNED, not assigned. The scan above keys off an assignment
             # TARGET, so a function that computes the convention straight into
@@ -656,7 +728,7 @@ def scan(roots=ROOTS, blocked_files=()):
                     yield (sp, r.lineno, f"{fn.name}() -> return",
                            ast.unparse(val),
                            "convention dispatcher (returns C and D) — labelled comparison"
-                           if dispatcher else classify(sp, blocked_files),
+                           if dispatcher else classify(sp, blocked_files, declared_files),
                            bool(DELIBERATE.search(fn.name)) or dispatcher)
 
 
@@ -806,6 +878,36 @@ def selftest() -> int:
          _returns_found("def z_mp(d):\n    return q ** 3 / (q ** 2 + 1)\n") == 0),
         ("a function whose name has no z is left alone",
          _returns_found("def loop(q):\n    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))\n") == 0),
+        # The three pyhecke buckets. Only a blocked_migrations row excuses a
+        # site; a registry DECLARATION accounts for it without excusing it,
+        # which is the distinction that stopped four registered sites reading
+        # as "unexplained" when blocked_migrations was correctly emptied.
+        ("a blocked_migrations row excuses a site",
+         classify("tools/pyhecke/python/pyhecke/gram.py",
+                  blocked_files={"tools/pyhecke/python/pyhecke/gram.py"})
+         .startswith("tools/pyhecke — BLOCKED")),
+        ("a DECLARED site is labelled as declared, not unexplained",
+         "DECLARED C in evaluators.z" in
+         classify("tools/pyhecke/python/pyhecke/gram.py",
+                  declared_files={"tools/pyhecke/python/pyhecke/gram.py"})),
+        ("declaring a site does NOT excuse it -- it stays actionable",
+         "still actionable" in
+         classify("tools/pyhecke/python/pyhecke/gram.py",
+                  declared_files={"tools/pyhecke/python/pyhecke/gram.py"})),
+        ("an undeclared pyhecke site is still unexplained",
+         classify("tools/pyhecke/python/pyhecke/atom.py",
+                  declared_files={"tools/pyhecke/python/pyhecke/gram.py"})
+         .endswith("(unexplained)")),
+        ("a blocked row outranks a declaration for the same file",
+         classify("tools/pyhecke/python/pyhecke/gram.py",
+                  blocked_files={"tools/pyhecke/python/pyhecke/gram.py"},
+                  declared_files={"tools/pyhecke/python/pyhecke/gram.py"})
+         .startswith("tools/pyhecke — BLOCKED")),
+        # declared_c_files reads the LIVE registry: a C evaluator whose module
+        # is NOT waived must not be silently treated as declared.
+        ("an unwaived C evaluator does not count as declared",
+         "pyhecke/atom.py" not in
+         " ".join(declared_c_files(pathlib.Path(".")))),
         # A convention DISPATCHER is a labelled comparison by construction.
         # qbeta_kc21_parity_convention_immunity_probe.z_of returns C, D and an
         # X control (q/(1+q^2), "in no channel"); the half-argument matcher
@@ -853,7 +955,9 @@ def main() -> int:
                      __import__("json").loads(
                          pathlib.Path("docs/coordination/trace-convention-registry.json")
                          .read_text()).get("blocked_migrations", [])}
-    rows = list(scan(blocked_files=blocked_files))
+    declared_files = declared_c_files(pathlib.Path("."))
+    rows = list(scan(blocked_files=blocked_files,
+                     declared_files=set(declared_files)))
     live = [r for r in rows if not r[5]]
     deliberate = [r for r in rows if r[5]]
 

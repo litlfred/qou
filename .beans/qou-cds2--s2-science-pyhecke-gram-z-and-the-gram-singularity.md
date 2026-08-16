@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-16T02:17:21Z
+updated_at: 2026-08-16T02:35:18Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -98,3 +98,32 @@ not an open question.
 
 **Suggested re-scope:** S2 becomes "migrate the `pyhecke.gram` mpmath path to D",
 and it is not `qou-cdh2`'s blocker.
+
+
+### Addendum (2026-08-16, `qou-cdh1`) — a fourth C site, in a module no waiver covers
+
+Surfaced by splitting the producer audit's pyhecke bucket into
+*blocked* / *declared* / *unexplained*. The old blanket "unexplained" label was
+hiding it behind `gram.py`'s three:
+
+```
+tools/pyhecke/python/pyhecke/atom.py:691   z_mark = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+                                    :713   Vs = z_mark * a_arr[i] + b_arr[i]
+```
+
+**Live and consumed**, inside `atom_per_generator_volumes(Z, N, ...)`. It is in
+`pyhecke.atom`, **not** `pyhecke.gram` — so `intra_module_split_waivers`
+(`["pyhecke.gram"]`) does not cover it, it has no `blocked_migrations` row, and
+it is not in `evaluators.z`. Nothing declares it anywhere.
+
+It has reach: `atom_per_generator_volumes` is in `gram.py`'s `__all__` (:501)
+and `gram.py:888-891` dispatches to the native implementation and **falls back
+to the Python one**, with `hecke_core.py:138` and the generated
+`qou-mass/src/qou_mass/_internal/hecke_core.py` both importing it. Note that
+the native/Python fallback pair is exactly the `qou-j6il` hazard shape — a
+binary returning one convention while its source reads another — so the two
+implementations should be compared at `q₀` before either is trusted.
+
+Not migrated here: `pyhecke` is your scope. Recorded so the count stops
+understating it — the producer audit now reports it as `1 site / 1 file,
+tools/pyhecke — C with NO registry row (unexplained)`, ACTIONABLE.
