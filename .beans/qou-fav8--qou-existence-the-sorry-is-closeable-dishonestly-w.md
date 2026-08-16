@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T13:56:32Z
-updated_at: 2026-08-16T20:03:28Z
+updated_at: 2026-08-16T20:39:03Z
 ---
 
 ## The sorry
@@ -363,3 +363,57 @@ non-trivial `A`, which is what its Kassel §IX citation was always about.
 
 Scope **(a)**: items 1–3 are measured-plausible, not proved. Item 4's failure
 prediction is reasoning, not measurement.
+
+
+## 2026-08-16 — DONE: `QuantumUniverse` is inhabited, sorry-free. The axiom is retired.
+
+`QOU/QuantumObservableUniverse/TrivialWitness.lean`. `C := ModuleCat R`,
+`A := 𝟙`, one block. `quantum-universe-exists.lean`'s `axiom` is **deleted**;
+the claim is now a theorem deriving from the witness.
+
+```
+#print axioms QOU.TrivialWitness.nonempty_quantumUniverse
+  --> [propext, Classical.choice, Quot.sound]
+```
+
+Lean's own three. No `sorryAx`, no repo axiom. **The corpus's first construction
+of either structure** (`qou-btq3` measured zero).
+
+### Three things I got wrong on the way, all worth keeping
+
+1. **Wrong category.** I reached for `FGModuleCat K` because I had rigidity on
+   the brain from B1, and burned several probes fighting its full-subcategory
+   `smul` API (`ModuleCat.hom_smul` does not fire there). `QuantumUniverse`
+   does **not** require rigidity, and the paper says **R-Mod**, not f.g.
+   modules. `ModuleCat R` is both easier and what was actually written down.
+2. **Stale olean.** The first assembly failed `failed to synthesize Field R`
+   although `CategoricalFoundations.lean` had said `CommRing R` for hours.
+   `lean`-direct verifies the **source you hand it**; `import` resolves against
+   **built oleans**. Rebuilding that one olean with `lean -o` cleared it.
+   *Verifying a file does not update what importers see* — this will bite
+   anyone doing multi-file lean-direct work.
+3. **`simp` is not `coherence`.** The three `FrobeniusHopfData` equations at
+   `A = 𝟙` are pure coherence; `simp` leaves goals, `coherence` closes them.
+
+### The prediction held
+
+Last pass I predicted `adjoint_nontrivial` would fail at `A = 𝟙` because the
+augmentation ideal vanishes, so the trivial witness gives a `QuantumUniverse`
+but **not** a `QuantumObservableUniverse`. That is exactly the outcome — and it
+is what the step-1 field was added to produce. Before it, this same witness
+would have satisfied the observability axiom via `adjointObj := 0` and I would
+have "closed" the QOU sorry with something meaningless.
+
+### What this does and does not settle
+
+**Does:** the `QuantumUniverse` axioms are mutually consistent; the five fields
+added under `qou-w1g8` (`Preadditive`, `Linear R`, `IsUnit`,
+`centralIdem_complete`, `unitEndEquiv`) are satisfiable — they were
+unfalsifiable this morning and are now exercised by a real term; and `Field`
+was never needed, `CommRing` suffices.
+
+**Does not:** say anything about QOU existence, which still rests on its cited
+`sorry` with B3 (the `∀ k` over-quantification) unaddressed. And a *trivial*
+witness proves consistency, not that the axioms are **strong** — a structure
+satisfied by `A = 𝟙` with one block is not thereby saying much. That is a fair
+criticism of the axioms, and this construction is evidence for it.
