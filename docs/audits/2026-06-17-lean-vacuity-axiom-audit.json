@@ -1,8 +1,8 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-16T01:50:24.169Z",
+  "generated": "2026-08-15T23:26:52.147Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 2906,
+  "scanned_files": 2911,
   "files_flagged": 170,
   "total_defects": 99,
   "total_exempt": 122,
@@ -16,7 +16,7 @@
     "proof-no-decide-masking": 1
   },
   "conjecture_graph": {
-    "total": 242,
+    "total": 243,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -311,7 +311,7 @@
       {
         "name": "DiophantineBirthday",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/DiophantineBirthday.lean",
-        "line": 84
+        "line": 27
       },
       {
         "name": "DirectionSanityGateClass",
@@ -662,6 +662,11 @@
         "name": "ModularSTransformQQTilde",
         "file": "content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean",
         "line": 113
+      },
+      {
+        "name": "MostowIdealTetVolume",
+        "file": "content/quantum-observable-universe/lean/QOU/Archimedean/MostowIdealTetVolume.lean",
+        "line": 104
       },
       {
         "name": "MotivicSubstrate",

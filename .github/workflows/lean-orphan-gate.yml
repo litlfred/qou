@@ -1,14 +1,26 @@
 name: lean-orphan-gate
 
 # Fails a PR that ADDS a `.lean` module under the QOU library tree which nothing
-# imports — because `lake build` compiles only `QOU.lean`'s transitive import
-# closure, so such a module is never compiled by anything, ever.
+# imports — i.e. a module outside `QOU.lean`'s umbrella.
 #
-# The lakefile declares `[[lean_lib]] name = "QOU"` with `srcDir = "."` and no
-# `globs`. Lake's default glob is `Glob.one` of `roots`, and `roots` defaults to
-# the library name — so the target is the single module `QOU`. `srcDir` sets
-# where Lake LOOKS, not what it BUILDS. A file nothing imports is not in the
-# library.
+# ⚠ CORRECTION 2026-08-15 (bean qou-kljb): the ORIGINAL rationale below — "so
+# such a module is never compiled by anything, ever" — NO LONGER HOLDS. The
+# lakefile now sets `globs = ["QOU", "QOU.+"]` (bean qou-rc7b), and `QOU.+` is
+# `Glob.andSubmodules`, so the library target covers the whole tree and an
+# unimported module IS compiled. Verified by direct experiment (throwaway
+# package, v4.24.0, globs set): `lake build` prints "✔ Built Lib.Orphan" for a
+# module nothing imports.
+#
+# The gate is still worth keeping, for the NARROWER reason that an unreferenced
+# module is invisible to everything that walks imports — blueprint, doc-gen,
+# dependency analysis, import-cone builds rooted at `QOU`. It is not invisible
+# to the compiler. Do not quote this gate as evidence about build coverage.
+#
+# HISTORICAL (pre-`globs`): the lakefile declared `[[lean_lib]] name = "QOU"`
+# with `srcDir = "."` and no `globs`. Lake's default glob is `Glob.one` of
+# `roots`, and `roots` defaults to the library name — so the target was the
+# single module `QOU`. `srcDir` sets where Lake LOOKS, not what it BUILDS. A
+# file nothing imported was not in the library, and was never compiled.
 #
 # Measured 2026-08-07: 756 of 1600 modules (47.3%) are orphaned. A 153-module
 # sample compiled 2026-08-08 was 94.8% green, so this is not mainly a story about

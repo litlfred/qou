@@ -210,8 +210,43 @@ elan / cache hosts are network-restricted.
 >   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
 >      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
 >   && tar xzf "$TGZ" -C "$ROOT" \
+>   && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
 >   && echo "restored .lake oleans from $BR — NO rebuild needed"
 > ```
+>
+> **🛑 The `touch` is load-bearing, not decoration — read the next paragraph
+> before running `lake build` anywhere near this tree.** A restored tarball
+> carries oleans but **no `.trace` files**, so Lake considers every one of them
+> stale: a subsequent `lake build` rebuilds them from source and **evicts the
+> restore as it goes**. Measured 2026-08-15 (bean `qou-r13s`), running
+> `lake build QOU UGB Fred2005` from the root against a tree restored exactly
+> as above:
+>
+> | | before | during (10 min) | after kill |
+> |---|---|---|---|
+> | root `mathlib` oleans | **6990** | — | **334** |
+> | oleans written | — | 536 (520 of them mathlib/aesop/batteries) | — |
+> | `QOU`/`UGB`/`Fred2005` oleans written | — | **0** | — |
+>
+> Ten minutes, zero paper-library progress, cache destroyed, and **silently** —
+> the output reads as ordinary build progress, so a generous `timeout` will
+> happily burn the whole window producing nothing. Recovery is another 1.6 GB
+> fetch + extract.
+>
+> So on a restored tree: **verify with `lean`-direct, never `lake build`**
+> (§"VERIFY a single file with lean-direct" below; it is the sanctioned gate
+> per AGENTS.md §"QA is agent-owned", not a fallback — 2.4 s vs 50 minutes of
+> nothing). Check the marker before any build step:
+>
+> ```bash
+> [ -f "$(git rev-parse --show-toplevel)/.lake/RESTORED-NO-TRACES" ] \
+>   && echo "RESTORED cache — lean-direct only, do NOT lake build at the root"
+> ```
+>
+> Delete the marker only when the tree has genuinely been rebuilt by Lake.
+> This is the *consumer* face of the same mechanism bean `02kc` records for the
+> **seeding** direction (`lean-olean-cache-seed.sh` refuses lean-direct output
+> because it is untraced); the two are one hazard seen from both ends.
 >
 > The `SLUG` line derives the branch from the pinned toolchain so it never goes
 > stale (`leanprover/lean4:v4.24.0` → `lake-cache/qou-v4-24-0`); the tarball
@@ -284,6 +319,50 @@ elan / cache hosts are network-restricted.
 > of this**: `QOU/Machinery/H4Cyclicity.lean` proves `trM4_cyclic` from the
 > generator actions with a cone under 10 minutes and never touches the block
 > maps. The addon is only for work needing the Wedderburn blocks themselves.
+
+### Middle case: `release.lean-lang.org` blocked but GitHub releases OPEN (2026-08-16)
+
+**Try this before the vendored-branch restore below** — it is one `curl` and
+needs no orphan branch. The section that follows assumes *both* the elan
+downloader and the GitHub release-asset path are blocked. There is a common
+intermediate sandbox where only the **elan downloader** is denied:
+
+```
+curl -sS "$HTTPS_PROXY/__agentproxy/status"   # → recentRelayFailures
+  connect_rejected   host: release.lean-lang.org:443
+```
+
+…while `https://github.com/leanprover/lean4/releases/download/…` returns
+**200**. `elan toolchain install` still fails, because elan only ever asks the
+release server. Fetch the tarball yourself and put it where elan looks:
+
+```sh
+# 1. compiler, from GitHub (~440 MB for v4.24.0)
+curl -sSL -o /tmp/lean.tar.zst \
+  https://github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-linux.tar.zst
+
+# 2. zstd is NOT installed by default here
+command -v zstd || apt-get install -y zstd
+
+# 3. elan's toolchain dir name is the descriptor with / and : replaced
+TC="$HOME/.elan/toolchains/leanprover--lean4---v4.24.0"
+mkdir -p "$TC" && zstd -dc /tmp/lean.tar.zst | tar -x -C "$TC" --strip-components=1
+"$TC/bin/lean" --version     # → Lean (version 4.24.0, …)
+```
+
+`elan toolchain list` then shows it and `lake --version` works. Continue with
+the olean restore + lean-direct verification above. Verified end to end on
+2026-08-16: `lean` type-checked `QOU/MathlibExt/QPlancherel.lean` at exit 0.
+
+Two traps that cost time that day:
+
+- **`command -v zstd tar`** succeeds when only `tar` exists — it reports on the
+  *last* argument. Probe `zstd` alone, or extraction dies with a bare
+  `tar: Child returned status 2` that looks like a corrupt download.
+- The **discipline at the head of this file was not followed**: Lean was
+  declared unavailable as soon as `elan` 403'd, without first grepping
+  `.claude/skills/` for `release.lean-lang.org`. This file already described
+  the stricter case and would have pointed straight at the fix. Grep first.
 
 ### When even the toolchain *binary* is blocked — vendor it via a git branch (2026-07-11)
 

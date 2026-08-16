@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:17:42.117041+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-16T03:36:48.131895+00:00",
+  "commitSha": "1e84788ca2fd04fb151e12516e91698136cc6a0e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 72,
+  "durationMs": 120,
   "computation": "chi-at-q0-matrix-m-deuteron",
   "scriptFile": "chi_at_q0_via_matrix_m_mpfr.py",
-  "scriptHash": "ba5ec9152c53",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "b7dee1a17d13",
+  "scriptCommitSha": "1ac0dadaa4cc2541d6423e7e273d89e96f1a1e69",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,8 +20,10 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Per-λ χ^λ(β_atomic(1, 1); q_0) cache for deuteron via the matrix-M mpfr backend. Format matches `chi_at_q0_via_hoefsmit_mpfr.py` so downstream consumers swap transparently. NO f64 in compute path.",
   "data": {
@@ -36,8 +38,8 @@
     "N": 1,
     "n_strands": 6,
     "n_partitions": 11,
-    "tr_M_at_q0": "1.331782555055782735209145221967158590016601407687",
-    "compute_time_sec": 0.0,
-    "cache_path": "/home/user/qou/computations/chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json"
+    "tr_M_at_q0": "2.17544681693623666235393297470859933456908630922125157789138352826797140849152506372320243",
+    "compute_time_sec": "0.05",
+    "cache_path": "/home/user/qou/computations/chi-deuteron-h6-at-q0-90dps-matrix-m.witness.json"
   }
 }

@@ -14,7 +14,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:borromean-decuplet",
   title: "The baryon decuplet as symmetric Borromean channel",
-  md: "borromean-decuplet-derivation.md",
   uses: [
     "prop:schur-weyl-eightfold",
     "def:borromean-baryon",

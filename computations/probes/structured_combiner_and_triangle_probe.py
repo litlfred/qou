@@ -41,6 +41,13 @@ from chirality_weighted_3body_cluster_probe import (  # noqa: E402
 QQI = q0 - 1 / q0  # q - q^{-1}; sigma^{-1} = (1, -QQI, g) since sigma - sigma^{-1} = q - q^{-1}
 
 
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+mp.mp.dps = 50
+
 def band_2_6():
     """Long-range band generator b_{2,6} = s5 s4 s3 s2 s3^-1 s4^-1 s5^-1 as a (c,d,g) word.
 

@@ -97,7 +97,7 @@ Probe [`qbeta_ohtsuki_figure_eight_ladder.py`](scripts/qbeta_ohtsuki_figure_eigh
 `J_N(4₁) = Σ_{k<N} ∏_{j≤k}(2 sin(πj/N))²` and fits its asymptotics:
 
 - **Volume conjecture recovered to rel err `2.4×10⁻¹²`**: `2π·(slope) = 2.0298832128`
-  vs `Vol(4₁) = 2Λ(π/3) = 2.0298832128`. The quantum object `J_N` (the 𝔙_q side)
+  vs `Vol(4₁) = 2·Cl₂(π/3) = 2.0298832128`. The quantum object `J_N` (the 𝔙_q side)
   has exponential rate = the **classical** `𝔙(4₁)` — the 𝔙_q↔𝔙 bridge, concrete.
 - **Leading constant `b = −¼ log 3`** exactly (measured `−0.274653`), i.e. the
   `3^(−1/4)` prefactor — the **same √3/hexagonal ζ₃ constant** that appears in the

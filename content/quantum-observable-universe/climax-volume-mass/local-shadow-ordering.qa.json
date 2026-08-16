@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.lean"
   },
   "source_hashes": {
-    "ts": "b7ae85cecb60",
     "md": "2de94e964a20",
-    "lean": "1ba49780bb4e"
+    "ts": "b7ae85cecb60",
+    "lean": "1ba49780bb4e",
+    "lean_statement": "d657c7a921d6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -298,26 +299,6 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T03:16:30.139Z",
-        "reviewed_sha": "5c2ccd2ba2b82b6b96d12b58baa3eeffa29972cb"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "2de94e964a20",
-          "ts": "b7ae85cecb60",
-          "lean": "1ba49780bb4e",
-          "lean_statement": "d657c7a921d6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
         "reviewed_at": "2026-08-10T03:16:30.139Z",
@@ -2043,7 +2024,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "2de94e964a20",
+          "ts": "b7ae85cecb60",
+          "lean": "1ba49780bb4e",
+          "lean_statement": "d657c7a921d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.090Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

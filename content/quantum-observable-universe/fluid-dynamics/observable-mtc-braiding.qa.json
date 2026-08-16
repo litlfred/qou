@@ -605,25 +605,6 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "db37cbca82fe",
-          "ts": "a702aac5e035"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
-        "notes": "block has no .lean sibling"
-      }
-    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -1578,7 +1559,26 @@
         "evidence": "Adverb-stacked noun chains stall aloud: 'The resulting geometric shadow projected exactly upon the genus-2 curve ... safely isolates either distinct regime, relying entirely on its fifth-roots-of-unity active branch set.'",
         "notes": "Structural. Proposed: plain rewrite, e.g. 'The genus-2 curve X_5 of def:hyperelliptic-quintic separates the two regimes through its branch set of fifth roots of unity: at q=1 the zeta_5^k mark classical phase defects on a single U(1) tube; at q=zeta_5 they label the anyonic fusion channels of C_any(5).'"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "db37cbca82fe",
+          "ts": "a702aac5e035"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-15T11:10:18.836Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T10:16:36.178151+00:00",
-  "commitSha": "72cf6d63bf3796a3c9415432f0fc4fed58facc88",
+  "computedAt": "2026-08-15T22:35:36.669395+00:00",
+  "commitSha": "e6cc6ac564a2de5b7e86d061894acb7ffdbe3efa",
   "assertions": [
     {
       "name": "phase decorrelation does NOT amplify the tail: the scramble ratio s_n = sup|u_n|(scrambled)/sup|u_n|(coherent) <= 1 on every excited tail rung, at both cadences (every-step and 0.1-eddy) and every eps — the coherent evolution is the in-model worst case, so the SF arc's fully-coherent real-amplitude models are CONSERVATIVE with respect to sweeping/decorrelation, and SF10's cross-model amplification is attributable to triad structure, not phase coherence",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34511,
+  "durationMs": 46244,
   "computation": "qns-phase-scramble-probe",
   "scriptFile": "qns_phase_scramble_probe.py",
-  "scriptHash": "c728c9457e21",
-  "scriptCommitSha": "72cf6d63bf3796a3c9415432f0fc4fed58facc88",
+  "scriptHash": "4ed6775c156e",
+  "scriptCommitSha": "b0e9951c865931c8446ccf7e7daeed57d681320c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,8 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
   },
   "description": "SF11 (bean qou-ougq): isolates the phase effect from SF10's triad-structure confound by comparing the complex Sabra q-shell against itself with deterministically hash-scrambled phases (moduli untouched, energy preserved by the scramble) at two cadences. s_n <= 1 means decorrelation weakens tail excitation and the coherent model is the worst case. Scope (a); float64 complex RK2 exploratory tier; sweeping in full NS also advects structures spatially, which no shell model represents — the residual caveat, now narrowed to spatial advection only.",
   "data": {
@@ -63,5 +64,6 @@
     },
     "n_cap": 400,
     "n_data": 4
-  }
+  },
+  "q0Anchor": "independent"
 }

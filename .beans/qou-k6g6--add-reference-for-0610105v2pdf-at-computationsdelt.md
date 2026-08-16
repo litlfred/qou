@@ -1,10 +1,11 @@
 ---
 # qou-k6g6
 title: Add reference for 0610105v2.pdf at computations/deltalambda/gap10_tjon_correlation_probe.py
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:02Z
-updated_at: 2026-08-08T23:36:02Z
+updated_at: 2026-08-15T15:02:38Z
 ---
 
 The Tjon correlation is the sole scoring observable of an active probe and of a sorry-free Lean file, and has no ref() entry and no citation anywhere in the corpus.

@@ -254,47 +254,52 @@ def test_pyhecke_gram_has_native_exported():
 
 
 # ──────────────────────────────────────────────────────────────────
-# Convention guard on the native (Rust) dispatch
+# Native (Rust) dispatch — convergence self-check (qou-m7py RESOLVED)
 # ──────────────────────────────────────────────────────────────────
-# The Rust crate is on convention D like this module, but diverges in the
-# trace rule (z^3 vs h*z^2 + z) and the anchor (muon vs proton) -- bean
-# qou-m7py. Before the C -> D migration both sides agreed, so dispatching
-# was merely faster; now installing the wheel would silently change
-# results. These tests pin the refusal.
+# The crate + every language binding are on convention D as of the
+# qou-m7py port (2026-08-15): trace_weights ends h*z^2 + z, Q_0 is the
+# proton pin, gram_inverse -> gram_quotient_inverse + gram_radical. So a
+# freshly-built wheel is ENABLED by default. The only residual risk is an
+# OLD wheel (build date unknowable), which `_native_ok()` catches with a
+# runtime convergence self-check against TR_M/G at q0 and refuses loudly.
+# QOU_DISABLE_NATIVE=1 is the explicit opt-out. These tests pin that.
 
 def test_native_ok_false_when_wheel_absent():
     """No wheel -> no dispatch, and no exception either."""
     if pyhecke_gram.has_native():
-        pytest.skip("wheel installed; see the raise-path test below")
+        pytest.skip("wheel installed; see the self-check tests below")
     assert pyhecke_gram._native_ok() is False
 
 
-def test_native_dispatch_refuses_until_the_wheel_is_rebuilt(monkeypatch):
-    """The dispatch must RAISE while the wheel's build date is unknowable.
+def test_native_dispatch_enabled_when_convergent(monkeypatch):
+    """A wheel that passes the convention-D self-check is ENABLED.
 
-    The CRATE was fixed 2026-08-15 (trace_weights ends h*z^2 + z, Q_0 is the
-    proton pin) and now matches this module bit-identically. But a wheel built
-    before that lands is still divergent, and nothing in the wheel reports its
-    build — so the guard cannot distinguish them and keeps refusing. Rebuild
-    and set QOU_ALLOW_NATIVE_DIVERGENCE=1 to opt in."""
+    Post-qou-m7py the crate matches this module, so the self-check passes and
+    `_native_ok()` returns True (the ~100x native path). We stub the check to
+    True to keep this test independent of whether a real wheel is installed in
+    this environment."""
     monkeypatch.setattr(pyhecke_gram, "_HAS_NATIVE", True)
-    monkeypatch.delenv("QOU_ALLOW_NATIVE_DIVERGENCE", raising=False)
-    with pytest.raises(RuntimeError, match="pyhecke_native is installed"):
-        pyhecke_gram._native_ok()
-    # And the refusal must reach the public entry points, not just the
-    # private helper -- that is the whole point of the guard.
-    with pytest.raises(RuntimeError, match="pyhecke_native is installed"):
-        pyhecke_gram.build_atom_nf(1, 0)
-    with pytest.raises(RuntimeError, match="pyhecke_native is installed"):
-        pyhecke_gram.atom_per_generator_volumes(2, 2)
-
-
-def test_native_convention_guard_is_overridable(monkeypatch):
-    """The escape hatch exists and is explicit -- an opt-in env var, so
-    a divergent native result is never returned by accident."""
-    monkeypatch.setattr(pyhecke_gram, "_HAS_NATIVE", True)
-    monkeypatch.setenv("QOU_ALLOW_NATIVE_DIVERGENCE", "1")
+    monkeypatch.setattr(pyhecke_gram, "_NATIVE_VERIFIED", True)
+    monkeypatch.delenv("QOU_DISABLE_NATIVE", raising=False)
     assert pyhecke_gram._native_ok() is True
+
+
+def test_native_can_be_disabled_explicitly(monkeypatch):
+    """QOU_DISABLE_NATIVE=1 forces the pure-Python path even when a
+    convergent wheel is installed."""
+    monkeypatch.setattr(pyhecke_gram, "_HAS_NATIVE", True)
+    monkeypatch.setattr(pyhecke_gram, "_NATIVE_VERIFIED", True)
+    monkeypatch.setenv("QOU_DISABLE_NATIVE", "1")
+    assert pyhecke_gram._native_ok() is False
+
+
+def test_native_dispatch_refuses_a_divergent_wheel(monkeypatch):
+    """An OLD/divergent wheel (self-check fails) is refused loudly, never
+    silently returning divergent numbers."""
+    monkeypatch.setattr(pyhecke_gram, "_HAS_NATIVE", True)
+    monkeypatch.setattr(pyhecke_gram, "_NATIVE_VERIFIED", False)
+    monkeypatch.delenv("QOU_DISABLE_NATIVE", raising=False)
+    assert pyhecke_gram._native_ok() is False
 
 
 # ──────────────────────────────────────────────────────────────────

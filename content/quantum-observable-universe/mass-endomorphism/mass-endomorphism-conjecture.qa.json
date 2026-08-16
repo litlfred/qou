@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean"
   },
   "source_hashes": {
-    "md": "1d5523eaea25",
+    "md": "3eb154d47241",
     "ts": "9483045ba9e2",
     "lean": "f8545ec8a6eb",
     "lean_statement": "742d2f1255d3"
@@ -1037,26 +1037,6 @@
         "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "1d5523eaea25",
-          "ts": "9483045ba9e2",
-          "lean": "f8545ec8a6eb",
-          "lean_statement": "035849c12d06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
-      }
-    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -1943,7 +1923,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2",
+          "lean": "f8545ec8a6eb",
+          "lean_statement": "742d2f1255d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.033Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke_native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-28T14:09:52.356044+00:00",
-  "commitSha": "fd055f5656b5a4a1c1cb2a032e0953dc99065d16",
+  "computedAt": "2026-08-15T20:42:04.738096+00:00",
+  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
   "assertions": [
     {
       "name": "assembly_identity_holds",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 18,
   "computation": "ursell-slot-alignment",
   "scriptFile": "ursell_slot_alignment_probe.py",
-  "scriptHash": "7800845279fc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c4347d9e7c63",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,9 +38,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "GAP-7 (bean qou-6ind, epic qou-xu6t): tests — and REFUTES — the reading of GAP-3's triple Ursell Δ³g as a 4-body coefficient c₄ comparable against μ₄ (or, as the bean framed it, against μ₃'s sign). The residual-simplex moments μ_k are indexed by PARTICLE count via M(A) = Σ_k μ_k C(A,k); the mixed differences Δᵐg are indexed by BOND count. For three particles the bonds 0↔1, 1↔2, 0↔2 form a triangle — three bonds, three vertices — so Δ³g is a 3-BODY object, and no 3-particle measurement constrains μ₄ at any bond order because the C(A,4) column vanishes for A<4 (Lean QOU.MassTheory.UrsellSlotAlignment.mu4_unconstrained_below_four, sorry-free). The correct μ₃ comparand is the assembled moment ΣΔ²g + Δ³g (Lean triangle_moment_decomp), verified here numerically against its direct definition to <1e-20 on both isotopes. Neither shortcut is valid: measured, the omitted terms do not cancel. RESULT: the correction is large (T: 0.4225 → 0.9040 in g-units, ~2.1×) but the three positive pair differences outweigh the negative triple, so the assembled moment keeps their sign — #4404's sign obstruction SURVIVES the slot correction (Lean moment_pos_of_triple_dominated), and the magnitude gap against the derived μ₃=+0.4708 WIDENS from 3.76×/2.99× to 8.04×/7.70×. CORRECTION OF RECORD: the bean's 'c₃ negative / c₄ positive sign alternation' is one 3-body moment split into two pieces read separately, not evidence of a ladder alternation; A=3 data contains no 4-body information. A genuine μ₄ comparand requires A=4 (H₁₂, 6 bonds, 64 subset traces) and is NOT done here. Reuses the GAP-3 kernel unchanged. Scope-(a) negative. No Δ_λ, no μ fitted, nothing wired.",
   "contentBlock": "conj:binding-manybody-eq-jet-filtration",
@@ -53,36 +55,36 @@
       "results": {
         "T": {
           "pair_diffs": [
-            0.42254733975683445,
-            0.38976397826584674,
-            0.4196726581870658
+            0.3278398323471174,
+            0.2977717301788815,
+            0.32783983234711706
           ],
-          "triple_ursell": -0.3279882658445112,
-          "mu3_slot_direct": 0.9039957103652357,
-          "mu3_slot_assembled": 0.9039957103652357,
-          "identity_residual": 9.860761315262648e-32,
-          "c_minus_convention_MeV": -3.784109196087028,
-          "c_plus_convention_MeV": 3.784109196087028,
-          "old_pair_only_c3_MeV": -1.768775289331768,
-          "ratio_to_mu3_corrected": 8.038145724697301,
-          "ratio_to_mu3_old_pair_only": 3.7572048778598197,
+          "triple_ursell": -0.18121931262144292,
+          "mu3_slot_direct": 0.7722320822516731,
+          "mu3_slot_assembled": 0.7722320822516731,
+          "identity_residual": 0.0,
+          "c_minus_convention_MeV": -3.23254910444359,
+          "c_plus_convention_MeV": 3.23254910444359,
+          "old_pair_only_c3_MeV": -1.3723314283506187,
+          "ratio_to_mu3_corrected": 6.866530382005327,
+          "ratio_to_mu3_old_pair_only": 2.915085012628841,
           "sign_preserved_by_slot_correction": true
         },
         "3He": {
           "pair_diffs": [
-            0.3357455132617763,
-            0.3623482585977731,
-            0.41427511325273964
+            0.2469758401131259,
+            0.26490377914484026,
+            0.3135853589867506
           ],
-          "triple_ursell": -0.24588852851849796,
-          "mu3_slot_direct": 0.8664803565937911,
-          "mu3_slot_assembled": 0.8664803565937911,
-          "identity_residual": 0.0,
-          "c_minus_convention_MeV": -3.6270706243623616,
-          "c_plus_convention_MeV": 3.6270706243623616,
-          "old_pair_only_c3_MeV": -1.4054244613235343,
-          "ratio_to_mu3_corrected": 7.704566840338868,
-          "ratio_to_mu3_old_pair_only": 2.9853807170402176,
+          "triple_ursell": -0.11698842370438983,
+          "mu3_slot_direct": 0.7084765545403269,
+          "mu3_slot_assembled": 0.7084765545403269,
+          "identity_residual": 2.6727647100921956e-51,
+          "c_minus_convention_MeV": -2.965669653636891,
+          "c_plus_convention_MeV": 2.965669653636891,
+          "old_pair_only_c3_MeV": -1.0338362638975414,
+          "ratio_to_mu3_corrected": 6.299629215746779,
+          "ratio_to_mu3_old_pair_only": 2.196058864600992,
           "sign_preserved_by_slot_correction": true
         }
       },

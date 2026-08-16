@@ -23,7 +23,6 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:vector-meson-nonet",
   title: "The vector nonet: singlet–octet mixing is the content-bearing target",
-  md: "vector-meson-nonet.md",
   interprets: "prop:meson-octet-decomposition",
   // The ref names a DECLARATION, not the module, following the pattern of
   // rem:meson-mass-splitting and rem:decuplet-equal-spacing.

@@ -67,6 +67,11 @@ pub struct WitnessCertificate {
     // Identification
     pub isotope: IsotopeInfo,
     pub engine: EngineInfo,
+    /// How this certificate was generated — argv, anchor, and a ready-to-run
+    /// command. `Option` so older certificates without it still deserialize;
+    /// every NEW certificate carries it. See `crate::provenance`.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub generation: Option<crate::provenance::Generation>,
 
     // The 4 summary polynomials (exact in t = q^{1/2} over ℤ)
     pub tr_alt: SparsePoly,

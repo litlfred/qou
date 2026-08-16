@@ -140,7 +140,26 @@ def secondMomentKernel (k : ℕ) : ℤ :=
 an **exact** identity, not conjectural. It isolates the open kernel as the *first-order response to the
 extra dimension factor*: `cov(k) = Σ (f^λ)³ ω₃ = k!·Cov_Planch(f^λ, ω₃)`, a genuine dimension-tilt
 covariance (Ivanov–Olshanski Prop 5.1; the `dim³` weight has one surplus `dim` beyond column
-orthogonality, so — unlike this `dim²` total — it lies outside the polynomial-function algebra `A`). -/
+orthogonality, so — unlike this `dim²` total — it lies outside the polynomial-function algebra `A`).
+
+**Why `3 ≤ k ≤ 7` is a Lean artifact, and exactly what would remove it.** The identity holds for
+every `k`, and the shortest route is Jucys–Murphy rather than Prop 5.1. Writing `X_i = Σ_{j<i} (i j)`,
+the JM theorem gives that `Σ_i X_i²` is **central**, acting on the irrep `λ` by the eigenvalue
+`Σ_□ c(□)²` (each standard-tableau basis vector picks up `c(□)²` box by box). Expanding the square,
+`(i j)² = 1` contributes `C(k,2)·1`, and every cross term `(i j)(i l)` with `j ≠ l` is a **3-cycle**:
+
+  `Σ_i X_i² = C(k,2)·1 + (3-cycle class sum)`.
+
+Reading off eigenvalues, `Σ_□ c(□)² = C(k,2) + const·ω^λ_{(3)}`, so
+`Σ_λ (f^λ)² ω₃(λ) ∝ Σ_λ f^λ χ^λ(3-cyc) = 0` by **column orthogonality** — the whole identity is that
+one vanishing, with no asymptotics anywhere.
+
+Lifting `interval_cases … decide` to a general-`k` proof therefore needs exactly three imports from
+the Specht/`S_n` epic (`sp00`), and nothing else: (i) the JM elements with their content
+eigenvalues, (ii) centrality of `Σ_i X_i^m`, (iii) column orthogonality `Σ_λ f^λ χ^λ(σ) = 0` for
+`σ ≠ 1`. That is the concrete `sp00` dependency for this lemma; the `k ≤ 7` bound is a `decide`
+budget, not a mathematical frontier. (Recorded 2026-08-15 while attacking `qou-v8t7`; the reduction
+is standard, the point here is naming the three inputs so `sp00` can be aimed at them.) -/
 theorem secondMomentKernel_eq_zero_of_le_seven (k : ℕ) (hk : 3 ≤ k) (hk' : k ≤ 7) :
     secondMomentKernel k = 0 := by
   interval_cases k <;> decide

@@ -3,11 +3,15 @@
 By [spectral sequence collapse](#prop:spectral-sequence-collapse),
 $\mathrm{HH}^k(H_n(R, q)) = 0$ for $k \geq 1$ at generic $q$, so only
 $\mathrm{HH}^0 = Z(H_n(R, q)) = \bigoplus_\lambda R \cdot e_\lambda$
-survives the GB-filtration spectral sequence. By
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
-$e_\lambda$ has GB-depth $\mathrm{depth}(\lambda)$, so the centre
-splits as $Z = \bigoplus_{k} Z_k$ with $Z_k$ the depth-$k$ direct
-summand. The block-restricted Frobenius integral
+survives the GB-filtration spectral sequence.
+[Curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+stratifies $H_n(R, q)$ by the curvature rank of **words**; that
+$e_\lambda$ carries a GB-depth $\mathrm{depth}(\lambda)$ indexed by the
+*partition* is a further identification, not stated there and assumed
+here (see
+`docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md`).
+Granting it, the centre splits as $Z = \bigoplus_{k} Z_k$ with $Z_k$ the
+depth-$k$ direct summand. The block-restricted Frobenius integral
 $\int_{A_\lambda} = \int_A \circ\, e_\lambda$
 ([Markov–Frobenius pairing](#conj:knot-factor-frobenius-pairing))
 extracts the $\lambda$-component. Wedderburn-weighted logarithms of

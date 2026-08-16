@@ -80,14 +80,40 @@ theorem treeSearch_haltsObserved_not_polyObservable (d : ℕ) :
 Why does the provable lower bound stay confined to the decision-tree model? The
 structural reason: **any polynomial-time shortcut to the observation refutes
 `hcost`.** `treeSearch` survives only because its observation is a *black-box*
-counter — no shortcut exists. An **algebraic** observation (the Jones polynomial
-/ Markov trace) is, by contrast, an efficiently-evaluable object: evaluating it
-directly is exactly such a shortcut, so it *cannot* carry the `3^{len}` lower
-bound a P≠NP separation needs. This is the machine-checkable core of the
-algebrization barrier (Aaronson–Wigderson 2008): to cross it, the separating
-invariant must be genuinely **non-algebraic** — the χ(A) cohomological residue
-the bridge's `separation_of_residue_nonzero` takes as its `res ≠ 0` hypothesis,
-not polynomial data. -/
+counter — no shortcut exists, so `hcost` is inhabited there and nowhere yet in
+the Skein setting.
+
+**Correction (2026-08-15).** This paragraph previously read: *"An algebraic
+observation (the Jones polynomial / Markov trace) is, by contrast, an
+efficiently-evaluable object: evaluating it directly is exactly such a
+shortcut."* That is **false at the substrate point**, and contradicts a result
+the corpus itself cites: exact evaluation of the Jones polynomial at all but
+finitely many `q` is `#P`-hard (Jaeger–Vertigan–Welsh, `[jaeger1990]`, restated
+in `conj:qou-p-neq-np`), and `q₀` is strictly non-torsion. The Markov trace at
+`q₀` is precisely *not* efficiently evaluable, so "it is shortcuttable" cannot be
+the reason an algebraic observation fails to carry the bound.
+
+**No replacement reason is offered, because none is on record.** With the
+tractability argument gone, nothing currently establishes that `hcost` *fails*
+in the Skein setting — it is simply not established there either way. Note the
+deleted premise in fact points the other way: if exact Jones evaluation at `q₀`
+is `#P`-hard, that is prima facie evidence *for* an exponential arrival time,
+not against one. Stating the gap is the honest disposition.
+
+Do not substitute the genericity argument here. That argument
+(`ObstructionGenericity`: a nonzero polynomial obstruction has cofinite
+non-vanishing locus, so its non-vanishing is cheap) concerns the separating
+**invariant** in `conj:qou-p-neq-np`, a different object from `hcost`; nothing
+about the root locus of a polynomial in `q` bears on whether an observation's
+arrival time is exponentially bounded below. Keeping the conclusion while
+swapping in an unrelated premise is how the original error survived.
+
+The lemma below is unaffected: it is hypothetical in `PolyObservable` and takes
+the shortcut as an assumption rather than asserting one exists. Only the prose
+justifying it was wrong.
+
+-- Ref: [jaeger1990] https://doi.org/10.1017/S0305004100068936
+-- Ref: [aaronsonwigderson2009] https://doi.org/10.1145/1490270.1490272 -/
 
 /-- **A polynomial shortcut refutes the horizon lower bound.** If the observation
     is reachable within a budget `poly` the horizon exceeds

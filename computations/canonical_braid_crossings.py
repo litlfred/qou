@@ -209,6 +209,25 @@ def d_for_ctype(ctype: str, h_val, *, delta=None):
     if ctype == "averaged_weighted":
         # -h(1/2 - delta/4), written so h_val's type drives the arithmetic.
         d = _avg_color_delta() if delta is None else delta
+        # Honour the "caller's type carries through" contract above. The other
+        # three ctypes return whatever `h_val` is; this one used to return an
+        # `mpf` REGARDLESS, because the cached δ is an mpf and mpmath wins the
+        # promotion. So the single ctype this whole arc is about was the one
+        # that broke the function's own documented contract.
+        #
+        # It was not free. Downstream numpy code builds `sigma + d*eye` in a
+        # float64 array; one mpf promotes the array to dtype=object and the
+        # per-matmul cost jumps, measured on tritium where the first
+        # averaged_weighted crossing lands at index 11 of 35. Three call sites
+        # now carry a `float(d_for_ctype(...))` workaround for this
+        # (hoefsmit_numpy, and the two numpy dtype audits), and
+        # numpy_mpmath_dtype_leak_audit exists partly to police it.
+        #
+        # Downcast ONLY for a plain-float caller, who has already declared
+        # float precision by passing one. mpf and sympy callers are untouched,
+        # so nothing that wanted 50 dps loses a digit.
+        if isinstance(h_val, float):
+            d = float(d)
         return -h_val * (1 - d / 2) / 2
     raise ValueError(f"unknown ctype {ctype!r}")
 

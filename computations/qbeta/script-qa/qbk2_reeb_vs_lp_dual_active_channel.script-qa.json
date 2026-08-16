@@ -1,0 +1,26 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "computations/qbeta/qbk2_reeb_vs_lp_dual_active_channel.py",
+  "language": "python",
+  "source_hash": "7d27df08654d",
+  "updated_at": "2026-08-16T02:29:17.116439+00:00",
+  "criteria": {
+    "self-check-not-gated": [
+      {
+        "field_hash": {
+          "py": "7d27df08654d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "computations/audits/silent_self_check_audit.py",
+          "version": "v1",
+          "script_hash": "f42329b8dcaa"
+        },
+        "reviewed_at": "2026-08-16T02:29:17.116439+00:00",
+        "severity": "critical",
+        "evidence": "line 120: assigns verdict `all_passed`"
+      }
+    ]
+  }
+}

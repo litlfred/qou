@@ -1,10 +1,11 @@
 ---
 # qou-l4cm
 title: Cross-check 0409040v2.pdf at computations/deltalambda/gap10_tjon_correlation_probe.py
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:04Z
-updated_at: 2026-08-08T23:37:04Z
+updated_at: 2026-08-15T15:02:38Z
 ---
 
 Cross-check the corpus's fractional Tjon deviation mu4/M(4) against the LO-EFT Tjon slope and the B_alpha = 29.5 MeV prediction. The external number is a comparison target only and must not be adopted or fitted to.

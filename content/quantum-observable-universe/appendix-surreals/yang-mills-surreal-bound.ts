@@ -3,6 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:yang-mills-surreal-bound",
   uses: [
+    "def:q-from-epsilon",
     "def:reeb-epsilon",
     "lem:surreal-squeeze",
     "prop:surreal-rate-calculus",

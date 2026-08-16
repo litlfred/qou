@@ -7,6 +7,7 @@ export default proof({
   uses: [
     "prop:atom-knot-mass-derivation",
     "def:archimedean-realization-functor",
+    "thm:jones-markov-trace",
   ],
   cites: [
     "gromov1982",

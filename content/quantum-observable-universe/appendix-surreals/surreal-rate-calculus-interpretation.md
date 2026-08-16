@@ -1,6 +1,6 @@
 Item (4) of the [surreal rate calculus](#prop:surreal-rate-calculus) is
-the mechanism underlying every millennium-problem squeeze in Chapter~8
-and Chapter~7: the "cost" of any standard-scale perturbation (a rogue
+the mechanism underlying every millennium-problem squeeze in Chapter 8
+and Chapter 7: the "cost" of any standard-scale perturbation (a rogue
 zero off the critical line, a rogue vortex spike, a rogue Collatz
 trajectory, a rogue oracle separation) **strictly exceeds** the
 available mass-gap dissipation. The cost is transfinite, the

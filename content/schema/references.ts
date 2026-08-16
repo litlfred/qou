@@ -2761,6 +2761,123 @@ export const references: CSLData[] = [
     DOI: "10.1017/S0305004100068936",
   }),
 
+  // ── Complexity-theoretic barriers ─────────────────────────────
+  // The three classical barriers plus the algebraic-natural-proofs
+  // refinement.
+  //
+  // Aaronson-Wigderson is named by author in FOUR Lean docstrings:
+  // SkeinObservationBridge, SkeinHorizonLowerBound, CocenterTraceFactor,
+  // PhysicalIntractability. (PNeqNpWallUnification and
+  // MagnitudeTraceCommutator say only "algebrization" with no author;
+  // an earlier version of this comment miscounted them as citing sites.)
+  // Razborov-Rudich is named in OptionBCountingTransfer;
+  // Burgisser-Ikenmeyer-Panova and Mulmuley-Sohoni in
+  // GCTMultiplicityObstruction. Baker-Gill-Solovay completes the
+  // three-barrier set and is not yet cited from any block.
+  //
+  // Note those docstrings carry the PUBLICATION years the authors are
+  // usually cited by (A-W "2008", BIP "2016" for the arXiv preprint);
+  // the keys below use the journal years, 2009 and 2019.
+  ref({
+    id: "bakergillsolovay1975",
+    type: "article-journal",
+    title: "Relativizations of the P =? NP Question",
+    author: [
+      { family: "Baker", given: "T." },
+      { family: "Gill", given: "J." },
+      { family: "Solovay", given: "R." },
+    ],
+    "container-title": "SIAM Journal on Computing",
+    volume: 4,
+    issue: 4,
+    page: "431-442",
+    issued: { "date-parts": [[1975]] },
+    DOI: "10.1137/0204037",
+  }),
+
+  ref({
+    id: "razborovrudich1997",
+    type: "article-journal",
+    title: "Natural Proofs",
+    author: [
+      { family: "Razborov", given: "A. A." },
+      { family: "Rudich", given: "S." },
+    ],
+    "container-title": "Journal of Computer and System Sciences",
+    volume: 55,
+    issue: 1,
+    page: "24-35",
+    issued: { "date-parts": [[1997]] },
+    DOI: "10.1006/jcss.1997.1494",
+  }),
+
+  ref({
+    id: "aaronsonwigderson2009",
+    type: "article-journal",
+    title: "Algebrization: A New Barrier in Complexity Theory",
+    author: [
+      { family: "Aaronson", given: "S." },
+      { family: "Wigderson", given: "A." },
+    ],
+    "container-title": "ACM Transactions on Computation Theory",
+    volume: 1,
+    issue: 1,
+    page: "2:1-2:54",
+    issued: { "date-parts": [[2009]] },
+    DOI: "10.1145/1490270.1490272",
+  }),
+
+  ref({
+    id: "grochow2017",
+    type: "article",
+    title:
+      "Towards an algebraic natural proofs barrier via polynomial identity testing",
+    author: [
+      { family: "Grochow", given: "J. A." },
+      { family: "Kumar", given: "M." },
+      { family: "Saks", given: "M." },
+      { family: "Saraf", given: "S." },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2017]] },
+    URL: "https://arxiv.org/abs/1701.01717",
+  }),
+
+  // ── Geometric Complexity Theory: the programme and its limit ──
+  ref({
+    id: "mulmuleysohoni2001",
+    type: "article-journal",
+    title:
+      "Geometric Complexity Theory I: An Approach to the P vs. NP and Related Problems",
+    author: [
+      { family: "Mulmuley", given: "K. D." },
+      { family: "Sohoni", given: "M." },
+    ],
+    "container-title": "SIAM Journal on Computing",
+    volume: 31,
+    issue: 2,
+    page: "496-526",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1137/S009753970038715X",
+  }),
+
+  ref({
+    id: "burgisser2019",
+    type: "article-journal",
+    title: "No occurrence obstructions in geometric complexity theory",
+    author: [
+      { family: "Bürgisser", given: "P." },
+      { family: "Ikenmeyer", given: "C." },
+      { family: "Panova", given: "G." },
+    ],
+    "container-title": "Journal of the American Mathematical Society",
+    volume: 32,
+    issue: 1,
+    page: "163-193",
+    issued: { "date-parts": [[2019]] },
+    DOI: "10.1090/jams/908",
+  }),
+
   // ── Aharonov-Jones-Landau 2009: BQP approx of Jones ───────────
   ref({
     id: "aharonov2009",
@@ -3198,6 +3315,45 @@ export const references: CSLData[] = [
       "decomposition of hyperbolic 3-manifolds and the Bloch-Wigner " +
       "volume formula $V = \\sum D(z_i)$ used in the crossing-graded " +
       "expansion of the categorical mass endomorphism.",
+  }),
+
+  // ── Ratcliffe (Foundations of Hyperbolic Manifolds) ───────────
+  ref({
+    id: "ratcliffe",
+    type: "book",
+    title: "Foundations of Hyperbolic Manifolds",
+    author: [{ family: "Ratcliffe", given: "John G." }],
+    publisher: "Springer",
+    "collection-title": "Graduate Texts in Mathematics 149",
+    edition: "3",
+    issued: { "date-parts": [[2019]] },
+    DOI: "10.1007/978-3-030-31597-9",
+    note:
+      "Source (§4.6–4.7) for the classification of totally-geodesic " +
+      "planes of the upper half-space model $H^3$: they are exactly the " +
+      "Euclidean vertical planes and the Euclidean hemispheres centred on the " +
+      "boundary $\\partial H^3$. Adopted as the concrete geodesic-plane model " +
+      "in `QOU.Archimedean.IdealBoundaryGeodesicPlane` (the single cited " +
+      "geometric input of the T2 ideal-tetrahedron development; not proved " +
+      "from a Riemannian metric, which Mathlib 4.24.0 lacks).",
+  }),
+
+  // ── Benedetti–Petronio (Lectures on Hyperbolic Geometry) ──────
+  ref({
+    id: "benedetti-petronio",
+    type: "book",
+    title: "Lectures on Hyperbolic Geometry",
+    author: [
+      { family: "Benedetti", given: "Riccardo" },
+      { family: "Petronio", given: "Carlo" },
+    ],
+    publisher: "Springer",
+    "collection-title": "Universitext",
+    issued: { "date-parts": [[1992]] },
+    DOI: "10.1007/978-3-642-58158-8",
+    note:
+      "Alternative reference (Appendix A / Ch. B) for the geodesic subspaces " +
+      "of the upper half-space model and Milnor's ideal-simplex volume.",
   }),
 
   // ── Bring 1786 ────────────────────────────────────────────────
@@ -3875,8 +4031,8 @@ export const references: CSLData[] = [
     type: "article-journal",
     title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures",
     author: [
-      { family: "Wang", given: "Meng" },
       { family: "Huang", given: "W. J." },
+      { family: "Wang", given: "Meng" },
       { family: "Kondev", given: "F. G." },
       { family: "Audi", given: "Georges" },
       { family: "Naimi", given: "Sarah" },
@@ -3888,6 +4044,26 @@ export const references: CSLData[] = [
     page: "030002",
     DOI: "10.1088/1674-1137/abddb0",
     URL: "https://doi.org/10.1088/1674-1137/abddb0",
+    note: "Author order CORRECTED 2026-08-15 (bean qou-wy51): the entry carried the title, page and DOI of paper (I) but the author order of paper (II) — Wang first instead of Huang. The header of uploads/mass_1.mas20.txt states it directly: paper (I) at Chin. Phys. C45 030002 is 'by W.J.Huang, M.Wang, F.G.Kondev, G.Audi and S.Naimi', paper (II) at 030003 'by M.Wang, W.J.Huang, ...'. Corroborated by qou-mass/src/qou_mass/data/ame2020.json's _metadata, which records Huang-first for 030002. This is the paper covering mass.mas20 — the file computations/deltalambda/tjon_external_cross_check_probe.py parses for B(2H), B(3H), B(4He); see ame2020tables for the companion (II).",
+  }),
+
+  ref({
+    id: "ame2020tables",
+    type: "article-journal",
+    title: "The AME 2020 atomic mass evaluation (II)",
+    author: [
+      { family: "Wang", given: "Meng" },
+      { family: "Huang", given: "W. J." },
+      { family: "Kondev", given: "F. G." },
+      { family: "Audi", given: "Georges" },
+      { family: "Naimi", given: "Sarah" },
+    ],
+    "container-title": "Chinese Physics C",
+    issued: { "date-parts": [[2021]] },
+    volume: "45",
+    issue: "3",
+    page: "030003",
+    note: "The companion volume to ame2020, added 2026-08-15 (bean qou-wy51) because the corpus cites tabulated binding energies, which are paper (II)'s content rather than (I)'s input-data-and-adjustment-procedures. EVERY field here is read verbatim off the header of uploads/mass_1.mas20.txt ('\"The Ame2020 atomic mass evaluation (II)\" by M.Wang, W.J.Huang, F.G.Kondev, G.Audi and S.Naimi / Chinese Physics C45, 030003, March 2021'). The subtitle and the DOI are DELIBERATELY OMITTED rather than guessed: api.crossref.org is blocked by the sandbox egress proxy, so neither could be verified. Fill them in when a session with network access next touches this entry — do not supply them from memory.",
   }),
 
   // ── NUBASE 2020 (companion to AME 2020) ───────────────────────
@@ -4386,6 +4562,29 @@ export const references: CSLData[] = [
       "manifold volume is bean qou-idvt T2 (open). The 1994 Annals text " +
       "itself is paywalled (not read in-repo); cited bibliographically for " +
       "the theorem statement.",
+  }),
+
+  // ── Rivin 2003 (combinatorial optimization in geometry) ──────
+  ref({
+    id: "rivin2003",
+    type: "article-journal",
+    title: "Combinatorial optimization in geometry",
+    author: [{ family: "Rivin", given: "Igor" }],
+    "container-title": "Advances in Applied Mathematics",
+    volume: "31",
+    issue: "1",
+    page: "242-271",
+    issued: { "date-parts": [[2003]] },
+    DOI: "10.1016/S0196-8858(03)00093-9",
+    note:
+      "Recasts hyperbolic-geometry realization problems (angle structures, " +
+      "circle patterns, Delaunay/Voronoi metric problems) as linear and " +
+      "convex programs; §3 develops the linear-programming duality used to " +
+      "certify feasibility. Source for the LP weak-duality inequality " +
+      "formalized sorry-free in `QOU.Optimization.lp_weak_duality` / " +
+      "`lp_duality_gap_nonneg`, which is the proved backing for the " +
+      "`duality_gap ≥ 0` assertion carried by every QOU LP/SDP-dual witness. " +
+      "Cited bibliographically for the abstract duality statement.",
   }),
 
   // ── Young 1901 (quantitative substitutional analysis) ─────────
@@ -8395,6 +8594,62 @@ export const references: CSLData[] = [
     publisher: "Palestine Polytechnic University-PPU",
     issued: { "date-parts": [[2018]] },
     note: "No DOI, ISSN or URL is printed on the article; venue read off the title page and running head, no lookup performed. Read in full 2026-08-09. The folio-relevant part is §3, the type A_{n-1} review: T(A_{n-1}) generated by E₁,…,E_{n-1} with E_i² = δE_i, E_iE_j = E_jE_i for i > j+1, E_iE_jE_i = E_i for j = i±1 (δ ∈ ℂ a free parameter, the E_iE_jE_i relation UN-rescaled — the convention this folio adopted, e_i := q − σ_i with e_i² = [2]_q e_i and δ = [2]_q). Prop. 3.1 gives a Gröbner–Shirshov basis whose standard monomials number C_n, i.e. dim TL_n = Catalan(n), and note that the basis needs two families BEYOND the defining relations (E_{i,j}E_i − E_{i−2,j}E_i and E_jE_{i,j} − E_jE_{i,j+2}) — the same completion phenomenon that makes def:hecke-normal-form's confluence claim false (bean qou-43co). Prop. 3.1 is QUOTED from Kang–Lee–Lee–Oh, J. Algebra 252 (2002) 258-292, Prop. 6.2, the primary, which is not yet in this file (bean qou-qspu). The paper's own theorem (dim T(B_n) = (n+2)C_n − 1) has no consumer here. A close sibling exists — the same authors' arXiv:1808.05026, 'GS bases for Temperley-Lieb algebras of types B and D', whose §3 is verbatim this same review — deliberately NOT registered separately; see the ledger row for uploads/1808.05026v1.pdf.",
+  }),
+
+  ref({
+    id: "platter2005tjon",
+    type: "article-journal",
+    title: "On the correlation between the binding energies of the triton and the alpha-particle",
+    author: [
+      { family: "Platter", given: "L." },
+      { family: "Hammer", given: "H.-W." },
+      { family: "Meißner", given: "Ulf-G." },
+    ],
+    "container-title": "Physics Letters B",
+    issued: { "date-parts": [[2005]] },
+    volume: "607",
+    issue: "3-4",
+    page: "254-258",
+    DOI: "10.1016/j.physletb.2004.12.068",
+    URL: "https://arxiv.org/abs/nucl-th/0409040",
+    note: "arXiv:nucl-th/0409040v2; read in full 2026-08-15 from uploads/0409040v2.pdf. Registered to source the premise of QOU.MassTheory.TjonSimplexForm, which had cited it by bare arXiv number with no bib key. The load-bearing claims: (i) at leading order in ℓ/|a| an SU(4)-symmetric ONE-parameter three-nucleon interaction suffices to renormalise the four-nucleon system — no four-nucleon force is needed, and the empirical Tjon correlation 'follows immediately' from that absence, being swept out by variation of the three-body parameter L₃ (abstract; §Summary); (ii) the numbers, p. 5 — inputs B_d = 2.22 MeV and B_t = 8.48 MeV (fixing L₃ = 21.2 fm⁻¹ from a_t, or 19.8 fm⁻¹ from B_d) give B_α = 29.5 MeV (a_t input) or 26.9 MeV (B_d input), against the Coulomb-corrected experimental B_α^exp = 29.0 ± 0.1 MeV, i.e. agreement to within 10% and inside the ~30% LO error estimate; (iii) p. 6 — the LO Tjon line is SHIFTED from the empirical one because finite-range effects are neglected. CAUTION for QOU citers: 'no four-body parameter' is NOT the same statement as the simplex baseline μ₄ = 0. This paper's four-body answer is the Yakubovsky solution, a nonlinear parameter-free function of the two- and three-body inputs; the corpus baseline M(4) = 4M(3) − 6M(2) is a linear inclusion-exclusion form. The two are provably inequivalent: QOU.MassTheory.TjonSimplexForm.universal_ratio_not_in_tjon_baseline (sorry-free) shows the μ₄ = 0 baseline has M(4) < 4M(3) strictly for any μ₂ > 0, so it cannot reach the universal ratio 5 of [hammer2007fourbody]. Cite it for why a nonzero μ₄ is a meaningful signal, never as a derivation of the simplex form.",
+  }),
+
+  ref({
+    id: "hammer2007fourbody",
+    type: "article-journal",
+    title: "Universal properties of the four-body system with large scattering length",
+    author: [
+      { family: "Hammer", given: "H.-W." },
+      { family: "Platter", given: "L." },
+    ],
+    "container-title": "The European Physical Journal A",
+    issued: { "date-parts": [[2007]] },
+    volume: "32",
+    issue: "1",
+    page: "113-120",
+    DOI: "10.1140/epja/i2006-10301-8",
+    URL: "https://arxiv.org/abs/nucl-th/0610105",
+    note: "arXiv:nucl-th/0610105v2; read in full 2026-08-15 from uploads/0610105v2.pdf. The four-boson Yakubovsky calculation whose §III supplies the field's own DIMENSIONLESS Tjon target, which is what makes it usable as a convention-free cross-check of a corpus ladder. Load-bearing claims: (i) §III.B, p. 11 — 'Away from the thresholds, the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01, respectively', i.e. B₄⁽⁰⁾/B₃⁽⁰⁾ ≈ 5 in the universal limit; (ii) §III.B / Figs. 3-4 — the B₃-B₄ correlation is a universal curve, approximately linear away from threshold independent of the sign of a, with POSITIVE curvature for a > 0 and negative curvature for a < 0, the nonlinearity confined to the threshold region; (iii) §II.C, p. 7 — following ref. [12] no four-body parameter is included, the two- and three-body contact interactions being the minimal renormalising set. CAUTION, and the paper says so itself: the LO 'no four-body parameter' claim is CONTESTED. §I p. 3 records that Yamashita et al. found a strong sensitivity of the deepest four-body energy to a four-body subtraction constant and 'concluded that a four-body parameter should generally enter at leading order' — while explicitly EXEMPTING the nuclear case, 'four-body systems of 4He atoms and nucleons (where this sensitivity is absent) are special because repulsive interactions strongly reduce the probability to have four particles close together'. So for nucleons specifically both sides agree, but a QOU citer must not upgrade this to 'no four-body force exists': that is a different statement, and [jurgenson2009srg] puts the 4N force at tens-to-hundreds of keV, small but nonzero. The paper's §IV also stresses that its universality rests on the RG analysis of its ref. [12]. The ratio 5 is the number the corpus operator ladder is scored against in tjon_external_cross_check_probe.py; it is a comparison target and must never be fitted to.",
+  }),
+
+  ref({
+    id: "jurgenson2009srg",
+    type: "article-journal",
+    title: "Evolution of nuclear many-body forces with the similarity renormalization group",
+    author: [
+      { family: "Jurgenson", given: "E. D." },
+      { family: "Navrátil", given: "P." },
+      { family: "Furnstahl", given: "R. J." },
+    ],
+    "container-title": "Physical Review Letters",
+    issued: { "date-parts": [[2009]] },
+    volume: "103",
+    issue: "8",
+    page: "082501",
+    DOI: "10.1103/PhysRevLett.103.082501",
+    URL: "https://arxiv.org/abs/0905.1873",
+    note: "arXiv:0905.1873v2; from uploads/0905.1873v2.pdf. Registered 2026-08-15 to give a bib key to the four-nucleon-force magnitude scale that QOU.MassTheory.TjonSimplexForm's mu4_target_exceeds_n3lo_bound and computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py certify against; both had cited it by bare arXiv number. The abstract's own wording is that ⁴He shows 'a small net contribution of the induced four-body force' — the ~50 keV SRG-induced figure at λ = 2 fm⁻¹ and the 'few hundred keV' N³LO long-range estimate are the scale the corpus target μ₄ = −4.591 (in units of B(D) = 2.224566 MeV, i.e. 10.2 MeV) exceeds by 34×. Note the two figures are different objects: the SRG-induced 4N force is an artifact of the unitary evolution, not a chiral-EFT 4N interaction. Cite for the magnitude scale only.",
   }),
 
 ];

@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "benign": 13,
-      "advisory-cast": 12
+      "advisory-cast": 14
     },
     "defects": [],
     "rows": [
@@ -99,7 +99,23 @@
       },
       {
         "file": "computations/hoefsmit_numpy.py",
-        "line": 177,
+        "line": 193,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "return mp.mpf(float(np.trace(M)))",
+        "fix": null
+      },
+      {
+        "file": "computations/hoefsmit_numpy.py",
+        "line": 320,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "return mp.mpf(float(np.trace(M)))",
+        "fix": null
+      },
+      {
+        "file": "computations/hoefsmit_sparse_prototype_probe.py",
+        "line": 151,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "return mp.mpf(float(np.trace(M)))",

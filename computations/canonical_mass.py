@@ -113,6 +113,14 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
     This is the theory error bar: a model deviation (err m_sym) far exceeding
     σ_pred is a genuine formula systematic, not calibration noise."""
     import mpmath as mp
+    # Raised HERE, not at module scope, because `mp` is imported inside this
+    # function — there is no module-level binding to assign to. Every mpmath
+    # value below (q, m_e, the CAL sigmas) was otherwise built at mpmath's
+    # default 15 dps, so what this producer emitted was honestly float64: no
+    # fake precision to detect and no constant built too early, which is why the
+    # padding / raw-float64 / import-time gates all passed it.
+    # Gate: never_raises_dps_audit.py (bean qou-j6gb).
+    mp.mp.dps = 50
     from m_p_substrate_identity_50dps import F_Bor
     from q_parameter import Q_MP as q0, vol_4_1_at
     from codata_constants import M_E_MEV

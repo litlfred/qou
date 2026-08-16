@@ -167,3 +167,83 @@ markup commits stay honest about their scope:
     forward ref to `conj:sm-hypercharge-invariant` in the SM appendix.
   - 5 blocks with `uses-editorial-hygiene` WARN, 1-2 transitively
     redundant edges each.
+
+---
+
+## CORRECTION (2026-08-15): most of the remainder is BROKEN MATH, not raw LaTeX
+
+This bean was opened describing the defect as *"raw LaTeX in `.md` prose is
+escaped, not passed through"* — an authoring error against AGENTS.md rule 3.
+That is accurate for the eightfold-way chapter (fixed, PR #5075). It is
+**not** accurate for the rest, and the rest is worse.
+
+**The dominant remaining class is a markdown LIST-PARSER HIJACK of valid
+math.** A multi-line inline `$...$` span whose continuation line begins with
+`+`, `-` or `*` is parsed as a list item. The math span is split, an `\item`
+is emitted mid-formula, and the remainder of the expression is escaped into
+literal text.
+
+AGENTS.md's render-QA rule already warns about this for `$$...$$` (*"no line
+starting with `+`/`-`/`*` inside `$$…$$` — markdown list-parser hijack"*). It
+happens in multi-line **inline** math too, which the rule does not mention.
+
+Consequences that change how this drain should be run:
+
+- **The author did nothing wrong** in these files. The math is correct, the
+  authoring is legal, only the line-wrap position is wrong.
+- **The fix is one line** — move the operator to the end of the previous
+  line. No symbol of mathematics changes.
+- **It corrupts MATHEMATICS, not formatting.** `q-ns-proof-details`' entire
+  uniqueness argument (the Gronwall energy estimate) was rendering as
+  escaped text with a stray `\item` in the middle.
+
+Eight such edits took the corpus **204 -> 104** occurrences, **53 -> 45**
+files. Highest-leverage work in this bean by a wide margin.
+
+### Detection — two things that do NOT work
+
+Both learned by getting them wrong:
+
+1. **Grepping for lines starting with `+`/`-`/`*` is not a detector.** Most
+   are ordinary markdown lists — `notation-collisions` has 46 and is fine.
+2. **Keying on "an escaped output line contains `\item`" also miscounts**,
+   because a genuine list containing math that escapes for some other reason
+   matches too. An A/B classifier built on this reported 132/71; do not trust
+   that split.
+
+**The renderer is the only reliable oracle.** Render with `markdownToLatex`,
+count `textbackslash|textasciitilde` in the output, print the offending
+OUTPUT lines, and read back to the source. `where.ts` in the session
+scratchpad does exactly this and is worth re-creating: it prints each
+escaped output line, which makes the cause obvious in one look.
+
+### One file needs a different repair
+
+`mass-theory/phi-q-tower-algebraic-stratification-proof.md` (17) is **not** a
+line-wrap case. Its **source** is already corrupted, carrying escaped `\$` and
+`\_` from some earlier bad pass:
+
+```
+   \$\bigl\lvert\prod\_i \hat V\_i\bigr\rvert + \sum\_{i} \Phi\_q(|\hat V\_i|)
+   * z^2 \sum\_{(i,j)} \Phi\_q(|\hat V\_i \hat V\_j|)$.
+```
+
+That needs the original expression reconstructed, not shuffled. Left alone
+deliberately. Worth checking whether other files carry the same `\$`/`\_`
+signature — it implies a bad escaping pass ran over the corpus at some point.
+
+### State after this pass
+
+**104 occurrences across 45 files.** Remaining top offenders:
+
+```
+  17  mass-theory/phi-q-tower-algebraic-stratification-proof  (corrupted source, see above)
+  12  predicted-spectra/bloch-group-quotient-construction
+   9  observations/w-boson-mass-discrepancy-table3-data
+   7  observations/w-boson-mass-discrepancy-table5-data
+   6  appendix-surreals/spectral-normal-form
+```
+
+Note also: `lean/.lake/...` appears in the raw scan and is a **build
+artifact**, not corpus content — exclude `-not -path '*/.lake/*'` so it is
+not in the denominator.

@@ -84,8 +84,25 @@ from hecke_core import (  # noqa: E402
     Phi_q,
 )
 from experimental_constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).parent
+
+# This producer never raised working precision, so EVERY mpmath value in it —
+# including the 50-dps strings it lifts out of upstream witnesses — was built at
+# mpmath's default 15 dps. The clearest symptom is in `load_tr_M_50dps` below:
+#
+#     out[r["atom"]] = abs(mp.mpf(r["tr_M_at_q0_50dps"]))
+#
+# a field whose NAME says 50 dps, truncated to 15 on the way in. The emitted
+# witness contained no decimal string longer than 25 digits anywhere.
+#
+# Nothing here was "fake precision" and no constant was built too early, so the
+# padding, raw-float64 and import-time gates all passed it cleanly — the numbers
+# were honestly float64. That is the blind spot never_raises_dps_audit.py exists
+# for (bean qou-j6gb). Idempotent, and at module scope so it also covers the
+# `mp.mpf(str(...))` constants immediately below.
+set_compute_dps()
 
 Q0 = Q_MP
 # `z_mark`, `h_val` are float64 in `hecke_core` (see `q_parameter.py`).
@@ -1321,6 +1338,15 @@ if __name__ == "__main__":
         except FileNotFoundError as _exc:
             print(f"  ⚠ upstream missing: {_exc}")
 
+    # `M_P_MEV_VALIDATION` was referenced BARE here while the file only ever
+    # imports it aliased, and function-scoped at that (`as _M_P_CODATA`, twice).
+    # So this line raised NameError and the producer was dead — not slow, not
+    # skipped: it could not run at all. Imported here rather than at module
+    # scope to match the convention the other two sites state explicitly:
+    # validation-only CODATA, used to report fit residuals, never as a
+    # prediction input. The neighbouring entries are plain CODATA floats, which
+    # is what this one was meant to be.
+    from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
     ISOTOPES = [
         ("p",   1, 0, False,  float(M_P_MEV_VALIDATION)),
         ("n",   0, 1, False,  939.565),

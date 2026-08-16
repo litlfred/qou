@@ -86,7 +86,12 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
             return {"atom": atom, "n_strands": n, "Z": Z, "N": N,
                     "n_partitions": cached["n_partitions"],
                     "tr_M_at_q0": cached["tr_M_at_q0"],
-                    "compute_time_sec": int(cached.get("compute_time_sec", 0) or 0),
+                    # `float(...)` first: this filename is also written by
+                    # `chi_at_q0_via_matrix_m_mpfr.py`, which serializes the
+                    # wall clock as a string ("0.05").  A bare `int(...)` on
+                    # that raises ValueError, so whichever producer wrote the
+                    # cache, read it through float.
+                    "compute_time_sec": int(float(cached.get("compute_time_sec", 0) or 0)),
                     "cache_path": str(out), "reused": True}
 
     _ensure_y_lambda(n)                 # arbitrary n: extend the y_λ tower on-demand

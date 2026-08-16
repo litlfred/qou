@@ -39,6 +39,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 del _sys, _Path, _bridge
 
 import json
@@ -366,6 +367,13 @@ def load_a_m(slug, sym, witness_dir=None, *, allow_failed_reconstruction=False):
         )
     return out
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def analyse_atomic_braid(label, Z, N, include_inter, q):
     print(f"\n── {label} (Z={Z}, N={N}) ──")

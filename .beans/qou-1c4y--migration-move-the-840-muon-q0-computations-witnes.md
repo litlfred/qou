@@ -105,3 +105,80 @@ Sequencing that keeps it reviewable:
 `y_lambda_at` is unlikely to be the only accessor with the "matches the package
 constant ⇒ serve the cache" shape. Grep for other witness caches gated on
 `q_parameter.Q` and apply the same fix (gate on the artifact's own recorded q₀).
+
+## 2026-08-15 — the inventory rests on a field that could flip (PR #5082)
+
+**Re-scope this before running the sweep.** The premise is "move the ~840
+muon-q0 witnesses to proton", which presumes you can tell which witnesses are
+muon-anchored. That identification was not sound.
+
+### 1. ~~The muon LABEL was about to flip~~ — RETRACTED 2026-08-15
+
+**This section asserted a claim that is FALSE. Struck rather than deleted, so
+the error is visible to anyone who read the earlier version.**
+
+I claimed that re-running `q_pinning_50_digit.py` would make every
+muon-anchored witness stamp a PROTON value, because that script sets
+`Q = q_at(mp.dps)`. It does not. `q_pinning_50_digit` is listed in
+`computations/q0_anchor_manifest.json` under `ideal_muon`, so `q_parameter`
+resolves the anchor from the argv stem and rebinds `q_at` to return the
+witness string. Verified under the producer's real argv:
+`q_at(70)` -> `1.10997859555733471989…`. **The producer is a FIXED POINT;
+re-running it changes nothing.**
+
+The "fix" I built on that claim — deriving the muon label from `q_muon_at()`
+— was a REGRESSION and is reverted: it made the stamped label disagree with
+the value the producer actually computes with (1.1099785955541805 stamped vs
+1.1099785955573347 computed), which is the exact misread the field exists to
+prevent.
+
+**The real defect, which that story obscured: the muon 50-dps constant is
+CIRCULAR** — its producer reads, via `q_at`, the witness it writes. It has
+never been derived from a closed form. Breaking that loop must move the LABEL
+and the COMPUTED VALUE together, or it reintroduces the disagreement above.
+
+Note also: `computations/substrate/q_parameter.py` asserts the witness starts
+with `1.109978595557`, so substituting the canonical string there hard-fails
+all 257 `ideal_muon` producers, and a second copy of that guard ships in the
+published `qou_mass` package. Any proton migration has to deal with both.
+
+### 2. The real inventory, measured (not "~840")
+
+**Do not quote a count from this bean.** Run it:
+
+    python3 computations/q0_provenance_audit.py --json
+
+Three generations of this census were live at once — 406/709/1978 here,
+470/799/2453 in `qou-xm91`, and different numbers again from the script. Each
+was correct when written and none was marked superseded, so they read as
+disagreement about the corpus when they were really successive fixes to the
+audit's anchor-key pattern and its false-precision test. The frozen table that
+stood here is deleted rather than refreshed, because refreshing it would just
+mint a fourth generation.
+
+**What survives, and does not depend on the exact counts:**
+
+* The migration's headline "~840 muon witnesses" is wrong in both directions.
+  The muon-labelled group is smaller than that.
+* The far larger group **records no anchor at all** — roughly half the corpus.
+  For those, "is this muon?" cannot be answered from the file; it needs the
+  producer. A sweep scoped to "the muon ones" silently leaves them in an
+  unknown state. See `qou-xm91`, and read its CORRECTION section: most of that
+  gap is a deliberately-tolerated state, not a defect.
+
+### 3. Scope calibration on the 243
+
+They are a REPRODUCIBILITY defect, not accuracy: the gap is 2.842e-12, which
+is **431x smaller** than the CODATA uncertainty on q_muon itself (m_mu/m_e is
+known to ~7 sig figs, capping q_muon at ~8). No physical quantity moves.
+Do not report it as a precision problem — an earlier version of my own note
+did, and that was an overclaim.
+
+### Suggested re-scope
+
+1. Land the derived-label fix (#5082) first — otherwise the sweep's own
+   identification step can flip mid-run.
+2. Decide what to do about the **1978 unrecorded** witnesses; that is the
+   actual bulk, and it is a producer-side question, not a witness-rewrite.
+3. Only then consider the 709 labelled-muon files, and only where a producer
+   re-run is genuinely wanted — not as a string substitution.

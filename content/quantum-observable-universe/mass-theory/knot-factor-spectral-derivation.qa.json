@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorSpectralDerivation.lean"
   },
   "source_hashes": {
-    "ts": "3bf6bcad6d22",
     "md": "630a8d1e372d",
-    "lean": "a1e82c236fca"
+    "ts": "3bf6bcad6d22",
+    "lean": "a1e82c236fca",
+    "lean_statement": "dab19023f49d"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -1003,26 +1004,6 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-09T22:54:43.739Z",
-        "reviewed_sha": "da6ab6d46385a7a771d8a2acbdf3c712f8718cb9"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "630a8d1e372d",
-          "ts": "3bf6bcad6d22",
-          "lean": "a1e82c236fca",
-          "lean_statement": "dab19023f49d"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
         "reviewed_at": "2026-08-09T22:54:43.739Z",
@@ -2160,7 +2141,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "630a8d1e372d",
+          "ts": "3bf6bcad6d22",
+          "lean": "a1e82c236fca",
+          "lean_statement": "dab19023f49d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.815Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

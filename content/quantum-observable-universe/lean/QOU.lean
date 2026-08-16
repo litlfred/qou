@@ -171,6 +171,7 @@ import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FigureEightTriangulation
+import QOU.Knot.AngleStructureUniqueness
 import QOU.Knot.IdealTetLawOfSines
 import QOU.Knot.KummerDilogHalf
 import QOU.Knot.KummerRadial
@@ -430,6 +431,31 @@ import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.SpechtCrossDominance
 import QOU.BraidKnot.SpechtCrossKappa
+-- Absolute irreducibility (W2 of the Wedderburn epic): the commutant of every
+-- simple `k[S_n]`-module is the base field. Sorry-free, so it belongs in the
+-- build closure. Pulls `SpechtClassification` in transitively.
+import QOU.BraidKnot.SpechtAbsolutelyIrreducible
+-- W1+W3 brick 1: the Schur diagonal `dim Hom_G(S^μ, S^μ) = 1`, i.e. the Specht
+-- characters are orthonormal over ℚ and not merely orthogonal.
+import QOU.BraidKnot.SpechtSchurDiagonal
+-- W1+W3 brick 3: `Hom_G(k[G], V) ≃ V` — the multiplicity of an irreducible in the
+-- regular representation is its dimension. General; no S_n, no Specht modules.
+import QOU.MathlibExt.RegularHom
+-- The ofModule/asModule round-trip (bean qou-ltzf): a k[G]-module viewed as a
+-- representation and back is itself, k[G]-linearly; simplicity transfers.
+import QOU.MathlibExt.OfModuleAsModule
+-- W1+W3 brick 4a: the two sides of the Wedderburn dimension count.
+import QOU.BraidKnot.SpechtBlockDimension
+-- W1+W3 brick 4b: the multiplicity of S^μ in the regular representation is dim S^μ.
+import QOU.BraidKnot.SpechtRegularMultiplicity
+-- W1+W3 brick 4c: the Specht action map is injective, giving n! <= sum (dim S^mu)^2.
+import QOU.BraidKnot.SpechtActionInjective
+-- W1+W3 brick 5: the whole split follows from one number, and that number is the
+-- combinatorial RSK identity sum_mu (#SYT mu)^2 = n!.
+import QOU.BraidKnot.SpechtWedderburnCriterion
+-- W1+W3 brick 6: the split UNCONDITIONALLY for n <= 12, via the corpus's own
+-- decide-verified RSK/Burnside count. No RSK correspondence, no axiom.
+import QOU.BraidKnot.SpechtWedderburnLe12
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
@@ -854,6 +880,12 @@ import QOU.Mathlib.SchenstedCellsBridge
 import QOU.Mathlib.SchenstedStandardTableau
 import QOU.Mathlib.SchenstedStandardGeneric
 import QOU.Mathlib.SchenstedPairingMap
+-- RSK inverse, brick 1: reverse row insertion and the inversion law.
+import QOU.Mathlib.SchenstedReverseRow
+-- RSK inverse, brick 2: the reverse cascade and its inversion law.
+import QOU.Mathlib.SchenstedReverseCascade
+-- RSK inverse, brick 3: word recovery from the tableau plus the row-index record.
+import QOU.Mathlib.SchenstedWordRecovery
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
@@ -975,3 +1007,19 @@ import QOU.AppendixSurreals.DiophantineBirthday
 import QOU.AppendixSurreals.DiophantineBirthdayScope
 import QOU.AppendixSurreals.DiophantineBirthdayTrajectory
 import QOU.AppendixSurreals.GonshorConvergence
+-- qou-oc4v (§7c split, PR #5113): the depth-stratified FR module was split into
+-- an algebraic half ({R : Type*} [Field R]) and an archimedean sibling holding
+-- the empirical decimal variance records. Registering the sibling puts BOTH
+-- under the build — it imports the algebraic module — so the split does not
+-- grow the qou-orph orphan set (lean-orphan-gate). Verifies lean-direct ok=1.
+import QOU.BraidKnot.DepthStratifiedFrobeniusReciprocityVariance
+-- qou-e4ri (§7c adjudication, PR #5113): ψ_q's ℝ is legitimately archimedean
+-- (its Λ_q summands are a Real.rpow weight; the cut-off `N m ≤ X` is an
+-- ordering), now recorded in a §7c banner. Was orphaned from this root, so
+-- nothing built it. Verifies lean-direct ok=1.
+import QOU.AlgebraicSubstrate.QChebyshevFunction
+-- qou-q7cm (§7c split): MassComputationChainRoadmap was never registered here,
+-- so nothing built it. Registering it also pulls in QOU.TypedCrossingsEncoding
+-- (the generic [Field A] theorem split out of it), since the roadmap imports
+-- that module. Both verify lean-direct ok=1.
+import QOU.MassComputationChainRoadmap

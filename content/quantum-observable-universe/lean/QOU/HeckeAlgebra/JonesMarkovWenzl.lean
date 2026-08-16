@@ -39,6 +39,32 @@ three were opaque `axiom`s, which left the identification an equation between
 two unconstrained functions — no content whatsoever, while the module header
 advertised "the Wenzl 1988 §3 closed form".
 
+## Base ring (AGENTS.md §7c) — `ℝ` here is required, not a gratuitous specialisation
+
+Every `q` in this module carries a **half-integer exponent**: the q-integer is
+`[k]_q = (q^{k/2} − q^{−k/2}) / (q^{1/2} − q^{−1/2})` and the Markov parameter is
+`z = 1/(q^{1/2} + q^{−1/2})`.  A square root of `q` does not exist in a generic
+`CommRing`, so these are `Real.rpow` applications (hence the
+`Mathlib.Analysis.SpecialFunctions.Pow.Real` import) and the module is
+archimedean by construction — it sits on the observation side of the
+substrate→archimedean wall.
+
+**The generic content is not missing; it lives elsewhere and this module is its
+archimedean realisation.** The base-ring-generic q-integer is
+`QOU.QInteger.qIntBal` in `QOU.MathlibExt.QIntegerCanonical`, and the bridge is
+proved here as `qInteger_eq_canonical`:
+
+    qInteger k q = QOU.QInteger.qIntBal (q ^ ((1 : ℝ) / 2)) k     (for 0 ≤ q)
+
+i.e. this file is exactly `qIntBal` instantiated at the **real** square root of
+the substrate parameter.  Rewriting it over `{R : Type*} [CommRing R]` would be
+unfaithful — there is no `√q` to instantiate at, and the Wenzl closed form would
+have to be restated in a variable meaning `q^{1/2}`, which is what `qIntBal`
+already is.
+
+Recorded so §7c sweeps stop re-flagging this file: a bare grep sees ~26 `ℝ`s in
+a `HeckeAlgebra` module and scores it a base-ring candidate, which it is not.
+
 ## Categorical content
 
 The Wenzl closed form is one half of the q-Hecke / q-Plancherel

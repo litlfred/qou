@@ -5,9 +5,20 @@ export default conjecture({
   title:
     "The $q$-Collatz conjecture: Skein-module crossing resolution",
   lean: { ref: "qou:QOU.AppendixSurreals.QCollatz", validation: "stub" },
+  // Two entries removed 2026-08-15 to break editorial cycles.
+  //
+  // `rem:skein-filtration-trichotomy` synthesises across three problems of
+  // which this conjecture is one, and lists this conjecture in its own
+  // `uses[]`. A problem statement does not require the remark that discusses
+  // it; the reader meets the conjecture first and the synthesis after.
+  //
+  // `prop:ns-kummer-specialisation` is cited here as a parallel, not a
+  // prerequisite — "Compare the same caveat on … the Navier--Stokes leg" — and
+  // it lists this conjecture transitively. A comparison is not a dependency.
   uses: [
     "rem:substrate-gm-torsion",
     "thm:qou-obstruction-reduction",
+    "conj:qou-p-neq-np",
   ],
   tags: [
     "tier:famous",
@@ -21,7 +32,13 @@ export default conjecture({
     "jones-polynomial",
     "markov-trace",
   ],
-  cites: ["collatz1937", "lagarias2010"],
+  cites: [
+    "collatz1937",
+    "lagarias2010",
+    "aaronsonwigderson2009",
+    "grochow2017",
+    "razborovrudich1997",
+  ],
   authorNotes: [
     {
       kind: "note",

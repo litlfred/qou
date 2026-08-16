@@ -3535,3 +3535,74 @@ Scope-(a); no convention adjudicated; no `c_k` wired; no tier flips. Bean
 stays **in-progress** (closing is a human action); settlement routes in the
 audit §4 (derive the decay fibre, or prove/refute
 `conj:binding-qbeta-complex-volume` / bar-compatibility).
+
+## 2026-08-15 — KC21's parity immunity: it was ASSERTED; now VERIFIED, and its stated mechanism was wrong (bean `qou-kc21im`, PR #5123)
+
+**Trigger:** reading the **owner-redirect entry** above (*"c₃ refutation chain
+audited against the C→D trace-convention flip"*, PR #5107 — not the `qou-b3nk`
+entry immediately preceding, which landed separately) back against the sentence
+it added. That audit's own logic splits the c₃ record into a C-conditional value
+layer and a structural layer, and the structural sentence reads *"the structural parity
+statement (`S(−ε)=−S(ε)`) and the `1/u³` result are convention-immune."* The
+`1/u³` half was **measured** (swing ratio D/C = 1.0052). The parity half was
+not — and it is exactly the kind of claim that needs measuring, since `c₃(q)`
+is *defined by* an extractor consuming the convention-C `z`, and under D that
+extractor is a different function (c₃ ≈ −974).
+
+**Probe:** [`qbeta-kc21-parity-convention-immunity`](../../computations/qbeta/qbeta_kc21_parity_convention_immunity_probe.py)
+— 12/12, exit 0, 60 dps, proton pin.
+**Lean:** [`LadderParityReflection.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderParityReflection.lean)
+— `lean`-direct exit 0, sorry-free, no `sorryAx`.
+**Audit:** [2026-08-15 KC21 parity convention-immunity](../audits/2026-08-15-kc21-parity-convention-immunity-audit.md).
+**Registry:** new **§9h**; KC21 row + JSON twin relabelled.
+
+**Verdict, tiered:**
+
+- **VERIFIED-immune (`ε`-parity).** Re-derived under D: `Im` odd / `Re` even to
+  `1e-45` relative over `ε ∈ [10⁻³⁰, 10⁻²]`, non-vacuously
+  (`Im c₃^D(q₀+10⁻⁸i) = 0.0386`), while the C→D shift moves the value by 972 =
+  **470× \|c₃^C\|**. A parity that survives a 470× reframing of its own object
+  is not riding on the frame.
+- **The reduction is stronger than "z-free".** `z` *does* enter — it just
+  cannot matter. The parity is **Schwarz reflection**, whose only hypothesis on
+  the Markov parameter is that `z` be **real-valued on the real q-axis**; it
+  never reads `z`'s formula. Every ingredient (`h`, `ℏ_q`, `b`, `u`, `Q_A`,
+  `z_C`, `z_D`, `cos`) is reflective, and the class is closed under the field
+  operations and composition. A control convention `z_X = q/(1+q²)`, in **no**
+  channel, has the parity too. Formalized quantified over conventions:
+  `alphaPhase_im_odd_of_reflective_markov`.
+- **Correction 1 — the literal statement is FALSE.** `Re S` is even and nonzero
+  (`−0.0394593` at the proton pin), so `S(−ε) = −S(ε)` read of the full complex
+  value cannot hold. The statement is about **`Im S`** / the decay projection.
+  Registry corrected; `reflective_re_even` makes the failure a theorem.
+- **Correction 2 — the parity is NOT evidence for bar-oddness.** KC21 and the
+  2026-07-12 capstone derive it as *"bar-odd ⇒ odd in ε"*.
+  `ImQDecayLinearResponse`'s actual chain is `fig8TraceC_conj`: **real
+  coefficients** ⇒ conjugation commutes ⇒ `Im` odd in `ε`. Bar-oddness is never
+  used, and the bar-**even** `Q_A` has the identical `ε`-parity (measured). So
+  *"the sign-flip is structural because `S` is bar-odd"* should read *"because
+  `S` is real-analytic in `q`"* — a premise satisfied by essentially every
+  ladder ingredient, which says correspondingly little about which channel `S`
+  lives in. The immunity stands; the evidential weight attached to it does not.
+- **The BAR involution is untouched, and is now the more pressing question.**
+  `σ: q ↦ q⁻¹` is a *different* involution from complex conjugation.
+  `bar(z_D) = q⁻⁴·z_D` and the `z_C` full-bar-condition failure (PR #5111)
+  stand as stated, and **the `h·D(ũ)` bar-split inherits none of the
+  `ε`-parity's immunity.** Correction 2 removes the `ε`-parity as support for
+  the bar-odd reading, so the companion question — whether trace-derived
+  quantities carry clean *bar* parity at all now — is left open and sharper
+  than before.
+
+Scope-(a) throughout; no convention adjudicated for the Q_β channel (`qou-b3nk`
+unchanged); no C-conditional value revived; no `c_k` wired; no tier flipped in
+either direction (KC21 stays `proved-lean`, the value layer stays
+C-conditional). Adjacent: the NO-FLOAT64 ratchet's NEW-dirty count drained
+**2 → 0** — a `round()` float64 in this branch's own probe, fixed at the
+producer here; and one left by the #5107 probe, which this branch also fixed
+but which `main` had **independently fixed first**, in the better form. Both
+carried the duration as a float; this branch serialized it as the string
+`durationSec`, `main` as integer `durationMs`. Only `durationMs` is in
+`_EPHEMERAL_META_FIELDS`, so `durationSec` would have left an unmasked
+wall-clock field drifting on every re-run. On rebase this branch's version of
+that one fix was **dropped in favour of main's** (convergent fix, superseded);
+the leak is drained either way.

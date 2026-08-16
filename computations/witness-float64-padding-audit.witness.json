@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 13,
-    "distinct_values": 10,
-    "files": 6,
-    "live_files": 1,
-    "new_not_baselined": 0,
+    "occurrences": 17,
+    "distinct_values": 14,
+    "files": 7,
+    "live_files": 2,
+    "new_not_baselined": 4,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -86,6 +86,30 @@
         "field": "data.rows[26].hits[4].literal",
         "value": "0.51099894999999995182093925905064679682254791259766",
         "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/categorical-bypass-volmatch-demo.witness.json",
+        "field": "data.rows[0].ratio_direct_to_AME",
+        "value": "0.433130647247212119399506491390638984739780426025390625",
+        "real_value": "0.4331306472472121"
+      },
+      {
+        "file": "computations/categorical-bypass-volmatch-demo.witness.json",
+        "field": "data.rows[1].B_AME_MeV",
+        "value": "2.2245661999999999380861481768079102039337158203125",
+        "real_value": "2.2245662"
+      },
+      {
+        "file": "computations/categorical-bypass-volmatch-demo.witness.json",
+        "field": "data.rows[2].B_AME_MeV",
+        "value": "8.4817961999999997857457856298424303531646728515625",
+        "real_value": "8.4817962"
+      },
+      {
+        "file": "computations/categorical-bypass-volmatch-demo.witness.json",
+        "field": "data.rows[3].B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875",
+        "real_value": "7.71804132"
       }
     ]
   }
