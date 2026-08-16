@@ -51,7 +51,7 @@ this direct sum; in each Wedderburn block, it is a single matrix
 unit times a scalar coefficient. The Markov trace on a matrix unit
 in $\mathrm{End}(S^\lambda_q)$ is (by uniqueness up to scalar) a
 fixed multiple of the standard trace, with proportionality constant
-$\tilde w_\lambda$. The product factorisation then follows from the
+$w_\lambda(q)$. The product factorisation then follows from the
 multiplicativity of the standard trace on products of matrix units
 in distinct positions of the same block: at each normal-form
 generator $e_{j_i}$, the local contribution is exactly the
@@ -60,7 +60,7 @@ data of the GS coefficient $(a_i, b_i)$.
 
 Specifically, Wenzl 1988 establishes:
 - The Wedderburn-block weight
-  $\tilde w_\lambda = \prod_{x \in \lambda}
+  $w_\lambda(q) = \prod_{x \in \lambda}
   \bigl(z\,q^{c(x)} - z_{-}\,q^{-c(x)}\bigr)/\bigl(q^{h(x)} - q^{-h(x)}\bigr)$
   is the canonical proportionality constant, where $c(x)$ and $h(x)$
   are the content and hook length of the cell $x$ and
