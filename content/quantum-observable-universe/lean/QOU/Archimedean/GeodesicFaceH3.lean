@@ -3,7 +3,7 @@
 
 The totally-geodesic surfaces of the upper half-space model `H³` are exactly the
 **vertical planes** (perpendicular to `∂H³`) and the **hemispheres centred on
-`∂H³`** (Thurston, Ch. 7).  This is the ONE fact this whole T2 development takes
+`∂H³`** (Thurston, Ch. 2 §2.3).  This is the ONE fact this whole T2 development takes
 as cited-not-proved: Mathlib has no hyperbolic Riemannian geometry, so
 "totally geodesic" cannot be stated, let alone proved.  Everything ELSE — the
 angles, and the volume identity — is proved in Lean.
@@ -12,11 +12,14 @@ This file therefore defines the two families as concrete Euclidean subsets of
 `ℝ³` together with their Euclidean unit normals, and records the geodesic
 classification in a doc comment.  It makes no geodesic-ness *claim* as a theorem.
 
-  -- Ref: [thurston1978] Ch. 7
-  --   The complete totally-geodesic surfaces of H³ (upper half-space model) are
-  --   the Euclidean vertical planes and the Euclidean hemispheres centred on the
-  --   bounding plane z = 0.  This classification is the cited geometric input; it
-  --   is NOT proved here (Mathlib has no hyperbolic metric).
+  -- Ref: [thurston1978] Ch. 2 (Elliptic and Hyperbolic Geometry) §2.3 (the upper
+  --   half-space model), p. 10: "a hyperbolic two-plane is a Euclidean sphere
+  --   orthogonal to [the boundary]".  In the upper half-space model the complete
+  --   totally-geodesic surfaces of H³ are therefore the Euclidean vertical planes
+  --   (spheres through ∞) and the Euclidean hemispheres centred on the bounding
+  --   plane z = 0.  This classification is the cited geometric input; it is NOT
+  --   proved here (Mathlib 4.24.0 has no hyperbolic metric).  Cf. [ratcliffe]
+  --   §4.6–4.7 for the same theorem stated for the upper half-space model directly.
 
 The chimney `chimney (inscribedTriangle 1 t α β γ) 1` of `IdealTetrahedronRegion`
 is bounded by three vertical planes (over the three chords) and one hemisphere
