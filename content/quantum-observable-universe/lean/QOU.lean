@@ -448,6 +448,8 @@ import QOU.MathlibExt.OfModuleAsModule
 import QOU.BraidKnot.SpechtBlockDimension
 -- W1+W3 brick 4b: the multiplicity of S^μ in the regular representation is dim S^μ.
 import QOU.BraidKnot.SpechtRegularMultiplicity
+-- W1+W3 brick 4c: the Specht action map is injective, giving n! <= sum (dim S^mu)^2.
+import QOU.BraidKnot.SpechtActionInjective
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
