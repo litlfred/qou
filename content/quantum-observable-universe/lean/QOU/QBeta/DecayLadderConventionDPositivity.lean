@@ -147,4 +147,33 @@ theorem threeRow_positivity_separates_zC_zD (q : ℝ) (hq : 1 < q) :
     0 < threeRowMiddleWeight (zC q) ∧ threeRowMiddleWeight (zD q) < 0 :=
   ⟨threeRowMiddleWeight_pos_at_zC q hq, threeRowMiddleWeight_neg_at_zD q hq⟩
 
+/-! ### `z_D` in Temperley–Lieb form
+
+The Markov parameter of convention D is `q²` divided by the quantum integer
+`[2]_q = q + q⁻¹` — the loop parameter `δ` of the Temperley–Lieb algebra.
+The identity is purely algebraic: `q + q⁻¹ = (q² + 1)/q`, so
+`q²/(q + q⁻¹) = q³/(q² + 1) = z_D`.
+
+This is recorded because it is the shape of `z_D`, not evidence for a
+mechanism.  Whether the D-frame trace actually *factors through* `TL_n` is a
+hypothesis under test (S2's front, PR #5185, corank data at `n = 3, 4, 5`
+only); this lemma is one algebraic input to that question and settles none
+of it.  See the audit doc §6.
+
+Stated over a generic field per AGENTS.md §7c — no ordering, no `Real.sqrt`,
+nothing archimedean is involved.  The `ℝ` corollary is the specialisation.
+(The convention-C mirror `z_C = 1/[2]_{√q}` is *not* stated generically: it
+needs `Real.sqrt`, so it lives on the archimedean side of the wall.) -/
+theorem zD_eq_qsq_div_bracketTwo {R : Type*} [Field R] (q : R)
+    (hq : q ≠ 0) (hden : q ^ 2 + 1 ≠ 0) :
+    q ^ 3 / (q ^ 2 + 1) = q ^ 2 / (q + q⁻¹) := by
+  field_simp
+
+/-- **`z_D(q) = q²/[2]_q`** — the archimedean specialisation of
+`zD_eq_qsq_div_bracketTwo`, matching the definition `zD`. -/
+theorem zD_eq_qsq_div_bracketTwo_real (q : ℝ) (hq : 0 < q) :
+    zD q = q ^ 2 / (q + q⁻¹) := by
+  have hden : q ^ 2 + 1 ≠ 0 := by positivity
+  exact zD_eq_qsq_div_bracketTwo q (ne_of_gt hq) hden
+
 end QOU.QBeta
