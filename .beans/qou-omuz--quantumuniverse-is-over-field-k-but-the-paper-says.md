@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T03:16:10Z
-updated_at: 2026-08-16T10:33:29Z
+updated_at: 2026-08-16T12:45:35Z
 ---
 
 Raised by the author while reviewing `qou-btq3`: *"why k field, not R ring?"*
@@ -135,3 +135,53 @@ direction.
 That is an author call about the paper's own statement, not a Lean cleanup, and
 it is a different question from the one this bean was opened on. Left for a
 ruling; nothing implemented.
+
+
+## 2026-08-16 — the prose already says the RIGHT generic-R condition, and it is not `≠ 0`
+
+Surfaced by an author question about spherical categories, which sent me to
+`quantum-universes/quantum-universe.md`. Axiom 4 there reads:
+
+> Each block λ ∈ Â carries a central idempotent p_λ whose Frobenius weight
+> ∫_A p_λ is **invertible in R**, and a quantum dimension dim_q(λ)
+> **invertible in R**.
+
+The Lean carries this as
+
+    frobWeight_ne_zero : ∀ b, frobWeight b ≠ 0
+    dimQ_ne_zero       : ∀ b, dimQ b ≠ 0
+
+**Over a field these agree; over a commutative ring they do not.** `2 ≠ 0` in
+ℤ and 2 is not a unit. So `≠ 0` is not merely the field-flavoured spelling of
+the prose condition — it is a strictly *weaker* statement that happens to
+coincide only under `[Field k]`. The prose is the correct one.
+
+This sharpens the bean rather than adding to it. The fix is not "swap `Field k`
+for `CommRing R` and keep the fields": that would silently weaken axiom 4 from
+what the paper states. It is
+
+    dimQ_isUnit : ∀ b, IsUnit (dimQ b)
+
+which over a field is definitionally the old condition (`isUnit_iff_ne_zero`)
+and over a ring is what the prose asks for. Same for `frobWeight`.
+
+**This is already the idiom the co-Casimir generalisation uses.** In
+`frobenius_codim_universal_ring` (landed this branch, `e71b71cf`) the
+hypotheses are exactly per-block unit conditions — `hc : c λ * (d λ * t λ) = 1`,
+`hu : d λ * u λ = 1` — carried where the object is built rather than imposed on
+the ground ring. So the two halves agree on the right shape; only
+`QuantumUniverse` still spells it `≠ 0`.
+
+**Relation to the `dimQ_ne_zero` docstring commit (`6fc13610`, this branch).**
+That commit is about *which λ the field ranges over* (the non-negligible ones)
+and stands. But it understated the defect: the field is not only mis-*read*, it
+is mis-*typed*. Both corrections are needed and they are independent.
+
+Also confirms, from the same file, two things this bean already recorded from
+elsewhere: line 5 sends τ to `Vect_R` (the `R-Mod` vs `Vect_R` tension), and
+line 3 asks only for an "R-linear braided monoidal category" — R-linear, not
+k-linear. The prose is consistent about R throughout; it is the Lean that
+narrowed.
+
+Not changed here — the author framed the spherical question as discussion, and
+retyping an axiom field is not a docstring edit.
