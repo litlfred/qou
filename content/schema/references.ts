@@ -3828,6 +3828,30 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF02097372",
   }),
 
+  // ── Orellana (1998): Weights of Markov traces on Hecke algebras ──
+  ref({
+    id: "orellana1998",
+    type: "article",
+    title: "Weights of Markov Traces on Hecke Algebras",
+    author: [{ family: "Orellana", given: "Rosa C." }],
+    issued: { "date-parts": [[1998, 6, 30]] },
+    URL: "https://arxiv.org/abs/math/9806163",
+    note:
+      "arXiv:math/9806163 [math.CO], 30 Jun 1998. Computes the weights — " +
+      "the values of the Markov trace at the minimal idempotents — for the " +
+      "Hecke algebras of Coxeter type B_n and type D_n, via representations " +
+      "of type-B Hecke onto a reduced type-A Hecke algebra, and the " +
+      "inclusion H(D_n) ⊂ H(B_n). Registered 2026-08-16 (S1, PR #5187) as " +
+      "the published treatment of the weight-vs-trace-parameter dependence " +
+      "that the corpus's y_λ Frobenius-pairing weights instantiate. " +
+      "GLYPH-COLLISION WARNING: this paper's 'type D' is the Coxeter type " +
+      "D_n, which is NOT the repo's Markov-trace 'convention D' " +
+      "(z_D = q³/(q²+1)); the two are unrelated and must not be conflated. " +
+      "Title, author, date and abstract read directly from " +
+      "uploads/9806163v1.pdf (stream-extracted; the sandbox PDF renderer is " +
+      "unavailable). No DOI — preprint.",
+  }),
+
   // ── Kazhdan–Wenzl (1993): Reconstructing monoidal categories ──
   ref({
     id: "kazhdanwenzl1993",
