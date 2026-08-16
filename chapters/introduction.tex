@@ -2,6 +2,7 @@
 \chapter*{Introduction}
 \label{chap:introduction}
 
+\addcontentsline{toc}{chapter}{Introduction}
 \chapterannot{quantum-observable-universe/introduction}{chap:introduction}
 \section{Overview}
 \label{sec:introduction-overview}
@@ -98,7 +99,7 @@ Specific knots uniquely map to particle identities: the unknot $0_1$ acts as the
 
 \hyperref[chap:mass-endomorphism]{\emph{The Mass Endomorphism}} systematically extracts mass from the spectral data of a single categorical endomorphism. Mass firmly behaves as a categorical invariant: the Markov trace $\mathrm{tr}_M$ of a distinguished Hecke element. A recursive Gröbner–Shirshov reduction evaluates this trace, culminating in the \textbf{mass endomorphism conjecture} which analytically resums the brane tower.
 
-\hyperref[chap:particle-interactions]{\emph{Particle Interactions and Nuclear Structure}} develops the exact interaction-selection mechanism. A \textbf{semidefinite program} precisely selects the unique transfer operator minimizing the categorical action at each vertex. Bring's surface embeddability bound rigorously limits these operators to a strictly \textbf{six-dimensional} basis in $H_3(q)$, capturing identity, $\beta$-decay, photon handling, and pair production without free parameters.
+\hyperref[chap:nuclear-interactions]{\emph{Nuclear Interactions and Binding}} develops the exact interaction-selection mechanism. A \textbf{semidefinite program} precisely selects the unique transfer operator minimizing the categorical action at each vertex. Bring's surface embeddability bound rigorously limits these operators to a strictly \textbf{six-dimensional} basis in $H_3(q)$, capturing identity, $\beta$-decay, photon handling, and pair production without free parameters.
 
 \hyperref[chap:climax-volume-mass]{\emph{$q$-Hyperbolic Geometry}} formally defines the topological mass formula:
 
@@ -138,7 +139,7 @@ The framework requires \textbf{exactly three} calibration inputs—$m_e$, $\math
 \section{Author's note}
 \label{sec:authors-note}
 \sectionannot{sec:authors-note}
-Every proof in this paper possesses a corresponding Lean 4 formalisation, except where explicitly citing external references for large prior results. \textbf{614 of 676 (90.8\%) provable claims} (theorems, lemmas, propositions, corollaries) carry \textbf{full Lean proofs} (sorry-free); the remainder bear the \texttt{sorry} marker against an explicit bibliographic reference. The paper poses \textbf{70 primary open conjectures} of its own—famous external open problems it connects to, and conjectures conditional on those primaries, are tallied separately—of which \textbf{62 (88.6\%) are class-axiomatised in Lean} using the conditional-class convention. This allows downstream results to persist as fully verified conditional theorems. All computations—braid-word reductions, Gröbner–Shirshov normal forms, linear programs, hyperbolic volumes—execute symbolically in the substrate parameter $q$ and attach as witnesses to their supporting proofs. The Rust and Python implementations, alongside the Lean sources, reside at \href{https://github.com/litlfred/qou}{https://github.com/litlfred/qou}. Large language models assisted the drafting and formalisation process, necessitated by a physical disability preventing sustained typing and deployed for Lean proof engineering. Human adjudication remains incomplete.
+Every proof in this paper possesses a corresponding Lean 4 formalisation, except where explicitly citing external references for large prior results. \textbf{686 of 721 (95.1\%) provable claims} (theorems, lemmas, propositions, corollaries) carry \textbf{full Lean proofs} (sorry-free); the remainder bear the \texttt{sorry} marker against an explicit bibliographic reference. The paper poses \textbf{80 primary open conjectures} of its own—famous external open problems it connects to, and conjectures conditional on those primaries, are tallied separately—of which \textbf{71 (88.8\%) are class-axiomatised in Lean} using the conditional-class convention. This allows downstream results to persist as fully verified conditional theorems. All computations—braid-word reductions, Gröbner–Shirshov normal forms, linear programs, hyperbolic volumes—execute symbolically in the substrate parameter $q$ and attach as witnesses to their supporting proofs. The Rust and Python implementations, alongside the Lean sources, reside at \href{https://github.com/litlfred/qou}{https://github.com/litlfred/qou}. Large language models assisted the drafting and formalisation process, necessitated by a physical disability preventing sustained typing and deployed for Lean proof engineering. Human adjudication remains incomplete.
 
 \begin{quote}
 \emph{Je n'ai fait celle-ci plus longue que parce que je n'ai pas eu le loisir de la faire plus courte.}
