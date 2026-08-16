@@ -1,11 +1,11 @@
 ---
 # qou-bid3
 title: 'GAP: the two-nucleon energy scale alpha is ~2.7x too large, and that is now the only surviving direction'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T13:57:06Z
-updated_at: 2026-08-16T13:57:40Z
+updated_at: 2026-08-16T15:15:49Z
 ---
 
 Successor to qou-brg3, which closed the last two-nucleon repair route (T-odd
@@ -37,3 +37,43 @@ questions instead:
 
 **Do not** propose an α-rescaling ansatz before (2) is measured. That is the
 seventh-Δ_λ-ansatz failure mode in a new place.
+
+
+## 2026-08-16 — CLOSED as stated. NEGATIVE: it is not one scale error.
+
+The gate this bean carried ('measure whether the same 2.70x appears in the
+many-body sum BEFORE proposing any alpha ansatz') has been run. Answer: no, and
+the two constraints point in opposite directions.
+
+Chain closed form vs AME2020 at the current alpha (production _bond_type_L,
+convention D, proton pin — from collective_term_budget_probe):
+
+    2H     1.27x OVER      12C    0.35x under
+    3H     0.72x under     56Fe   0.33x under
+    4He    0.31x under     208Pb  0.38x under
+
+**The chain over-binds exactly ONE nucleus — the deuteron — and under-binds
+every other by ~3x.** The sign flips between A=2 and A=3.
+
+B_chain is LINEAR in alpha, so a uniform rescale moves every row together:
+
+    two-nucleon floor  needs  alpha <= 1.5516 MeV
+    many-body A >= 12  needs  alpha LARGER
+
+At alpha = 1.5516 the 56Fe under-binding goes 3.03x -> 8.18x. **The admissible
+interval for a uniform alpha is empty.**
+
+So the 2.70x two-nucleon over-binding is NOT a global miscalibration of E_0. It
+is specific to the two-nucleon sector, where the sign structure is also wrong —
+the two defects are the same defect.
+
+The gate earned its keep: proposing alpha ~ 1.55 to fit the deuteron would have
+multiplied the many-body error by 2.7x somewhere the two-nucleon probe does not
+look.
+
+Scope-(a). Excluded: a UNIFORM alpha rescale. Not excluded: a channel- or
+A-dependent alpha (a function, not a constant — strictly harder than what it
+replaces); a binding law other than -alpha log mu; the many-body collective term
+(R/alpha = 1.3240 per nucleon, mixed-sign in A), which is its own open item.
+
+Probe: computations/probes/alpha_direction_two_sided_squeeze_probe.py
