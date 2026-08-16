@@ -285,6 +285,106 @@ eigenvalue would be `q^c`.  The factor-of-2 difference is pure convention.
 Refs: [ram1997] Theorem 4.1; [murphy1992] Theorem 1.1; [hoefsmit1974] §3.
 -/
 
+section AdjacentReduction
+
+variable (K : Type*) [CommRing K] (q qi : K) (n : ℕ)
+
+/-! ### Reducing commutativity to the adjacent case
+
+`qJM_commute` below is commented *"Blocked on: the general seminormal rep"*.
+It is not. `qJM` is the multiplicative recursion `L_{k+1} = σ_k L_k σ_k`, and
+commutativity from that recursion is an induction on the **Hecke relations** —
+no representation is involved. The two results here carry it as far as it goes
+without new mathematics, and isolate exactly what is left.
+
+**What is left is the adjacent case** `L_k L_{k+1} = L_{k+1} L_k`, and it is not
+a base case that falls out: the general case *reduces to* it rather than around
+it, because peeling `σ_{j-1}` off `L_j` needs `i + 1 ≤ j - 1`, which fails
+precisely when `i = j - 1`. -/
+
+/-- `σ_m` commutes with `L_k` whenever `k + 1 ≤ m`. -/
+theorem qJM_comm_sigma (m : Fin n) :
+    ∀ k : ℕ, k + 1 ≤ (m : ℕ) →
+      σ K q qi n m * qJM K q qi n k = qJM K q qi n k * σ K q qi n m := by
+  intro k
+  induction k with
+  | zero => intro _; rw [qJM_zero]; rw [mul_one, one_mul]
+  | succ k ih =>
+    intro hm
+    by_cases hk : k < n
+    · rw [qJM_succ K q qi n hk]
+      have hfar : (⟨k, hk⟩ : Fin n).val + 2 ≤ (m : ℕ) := by simpa using hm
+      have h1 : σ K q qi n m * σ K q qi n ⟨k, hk⟩
+              = σ K q qi n ⟨k, hk⟩ * σ K q qi n m := σ_commute K q qi n m ⟨k, hk⟩ hfar
+      have h2 := ih (by omega)
+      calc σ K q qi n m * (σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * σ K q qi n ⟨k, hk⟩)
+          = (σ K q qi n m * σ K q qi n ⟨k, hk⟩) * qJM K q qi n k * σ K q qi n ⟨k, hk⟩ := by
+            simp only [mul_assoc]
+        _ = (σ K q qi n ⟨k, hk⟩ * σ K q qi n m) * qJM K q qi n k * σ K q qi n ⟨k, hk⟩ := by
+            rw [h1]
+        _ = σ K q qi n ⟨k, hk⟩ * (σ K q qi n m * qJM K q qi n k) * σ K q qi n ⟨k, hk⟩ := by
+            simp only [mul_assoc]
+        _ = σ K q qi n ⟨k, hk⟩ * (qJM K q qi n k * σ K q qi n m) * σ K q qi n ⟨k, hk⟩ := by
+            rw [h2]
+        _ = σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * (σ K q qi n m * σ K q qi n ⟨k, hk⟩) := by
+            simp only [mul_assoc]
+        _ = σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * (σ K q qi n ⟨k, hk⟩ * σ K q qi n m) := by
+            rw [h1]
+        _ = σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * σ K q qi n ⟨k, hk⟩ * σ K q qi n m := by
+            simp only [mul_assoc]
+    · have : qJM K q qi n (k + 1) = qJM K q qi n k := dif_neg hk
+      rw [this]; exact ih (by omega)
+
+/-- **Full commutativity follows from the adjacent case alone.**
+
+Everything except `L_k L_{k+1} = L_{k+1} L_k` is bookkeeping: `σ_{j-1}` commutes
+with `L_i` as soon as `i + 1 ≤ j - 1` (`qJM_comm_sigma`), which peels one step
+off `L_j = σ_{j-1} L_{j-1} σ_{j-1}` and hands the rest to the induction. -/
+theorem qJM_commute_of_adjacent
+    (hadj : ∀ k : ℕ, qJM K q qi n k * qJM K q qi n (k + 1)
+                   = qJM K q qi n (k + 1) * qJM K q qi n k) :
+    ∀ j i : ℕ, i ≤ j →
+      qJM K q qi n i * qJM K q qi n j = qJM K q qi n j * qJM K q qi n i := by
+  intro j
+  induction j with
+  | zero => intro i hi; interval_cases i; rfl
+  | succ j ih =>
+    intro i hi
+    rcases Nat.lt_or_ge i (j + 1) with hlt | hge
+    · -- i ≤ j
+      have hij : i ≤ j := Nat.lt_succ_iff.mp hlt
+      rcases Nat.eq_or_lt_of_le hij with rfl | hij'
+      · -- i = j : the adjacent case, supplied as a hypothesis
+        exact hadj i
+      · -- i < j : peel sigma off L_{j+1} and use the induction hypothesis
+        by_cases hk : j < n
+        · have hsig : i + 1 <= (⟨j, hk⟩ : Fin n).val := by simpa using hij'
+          have hs := qJM_comm_sigma K q qi n ⟨j, hk⟩ i hsig
+          have hL := ih i (le_of_lt hij')
+          rw [qJM_succ K q qi n hk]
+          calc qJM K q qi n i * (σ K q qi n ⟨j, hk⟩ * qJM K q qi n j * σ K q qi n ⟨j, hk⟩)
+              = (qJM K q qi n i * σ K q qi n ⟨j, hk⟩) * qJM K q qi n j * σ K q qi n ⟨j, hk⟩ := by
+                simp only [mul_assoc]
+            _ = (σ K q qi n ⟨j, hk⟩ * qJM K q qi n i) * qJM K q qi n j * σ K q qi n ⟨j, hk⟩ := by
+                rw [← hs]
+            _ = σ K q qi n ⟨j, hk⟩ * (qJM K q qi n i * qJM K q qi n j) * σ K q qi n ⟨j, hk⟩ := by
+                simp only [mul_assoc]
+            _ = σ K q qi n ⟨j, hk⟩ * (qJM K q qi n j * qJM K q qi n i) * σ K q qi n ⟨j, hk⟩ := by
+                rw [hL]
+            _ = σ K q qi n ⟨j, hk⟩ * qJM K q qi n j * (qJM K q qi n i * σ K q qi n ⟨j, hk⟩) := by
+                simp only [mul_assoc]
+            _ = σ K q qi n ⟨j, hk⟩ * qJM K q qi n j * (σ K q qi n ⟨j, hk⟩ * qJM K q qi n i) := by
+                rw [hs]
+            _ = σ K q qi n ⟨j, hk⟩ * qJM K q qi n j * σ K q qi n ⟨j, hk⟩ * qJM K q qi n i := by
+                simp only [mul_assoc]
+        · have hfrz : qJM K q qi n (j + 1) = qJM K q qi n j := dif_neg hk
+          rw [hfrz]; exact ih i (le_of_lt hij')
+    · -- i = j + 1
+      have : i = j + 1 := le_antisymm hi hge
+      rw [this]
+
+end AdjacentReduction
+
 /-- **[GAP] The Murphy elements commute pairwise** — they generate the commutative
 Gelfand–Tsetlin subalgebra `GZ_{n+1} ⊂ H_{n+1}(q)`.
 
