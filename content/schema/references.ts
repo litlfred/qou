@@ -3317,6 +3317,45 @@ export const references: CSLData[] = [
       "expansion of the categorical mass endomorphism.",
   }),
 
+  // ── Ratcliffe (Foundations of Hyperbolic Manifolds) ───────────
+  ref({
+    id: "ratcliffe",
+    type: "book",
+    title: "Foundations of Hyperbolic Manifolds",
+    author: [{ family: "Ratcliffe", given: "John G." }],
+    publisher: "Springer",
+    "collection-title": "Graduate Texts in Mathematics 149",
+    edition: "3",
+    issued: { "date-parts": [[2019]] },
+    DOI: "10.1007/978-3-030-31597-9",
+    note:
+      "Source (§4.6–4.7) for the classification of totally-geodesic " +
+      "planes of the upper half-space model $H^3$: they are exactly the " +
+      "Euclidean vertical planes and the Euclidean hemispheres centred on the " +
+      "boundary $\\partial H^3$. Adopted as the concrete geodesic-plane model " +
+      "in `QOU.Archimedean.IdealBoundaryGeodesicPlane` (the single cited " +
+      "geometric input of the T2 ideal-tetrahedron development; not proved " +
+      "from a Riemannian metric, which Mathlib 4.24.0 lacks).",
+  }),
+
+  // ── Benedetti–Petronio (Lectures on Hyperbolic Geometry) ──────
+  ref({
+    id: "benedetti-petronio",
+    type: "book",
+    title: "Lectures on Hyperbolic Geometry",
+    author: [
+      { family: "Benedetti", given: "Riccardo" },
+      { family: "Petronio", given: "Carlo" },
+    ],
+    publisher: "Springer",
+    "collection-title": "Universitext",
+    issued: { "date-parts": [[1992]] },
+    DOI: "10.1007/978-3-642-58158-8",
+    note:
+      "Alternative reference (Appendix A / Ch. B) for the geodesic subspaces " +
+      "of the upper half-space model and Milnor's ideal-simplex volume.",
+  }),
+
   // ── Bring 1786 ────────────────────────────────────────────────
   ref({
     id: "bring1786",
