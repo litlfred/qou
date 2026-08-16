@@ -13,7 +13,8 @@ faces, and File A3 proves the resulting ideal tetrahedron equals the chimney.
 
 ## The ONE cited-not-proved fact (honest, adopted as a DEFINITION — not axiomatised)
 
--- Ref: [ratcliffe] §4.6–4.7 / [thurston1978] Ch. 7 / [benedetti-petronio] §A —
+-- Ref: [thurston1978] Ch. 2 §2.3 p. 10 ("a hyperbolic two-plane is a Euclidean
+--   sphere orthogonal to [the boundary]") / [ratcliffe] §4.6–4.7 / [benedetti-petronio] §A —
 --   in the upper half-space model the totally-geodesic planes ARE the vertical
 --   Euclidean planes (perpendicular to `∂H³`) and the Euclidean hemispheres
 --   centred on `∂H³`.  We ADOPT this concrete model — on exactly the same footing
