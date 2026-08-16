@@ -450,6 +450,9 @@ import QOU.BraidKnot.SpechtBlockDimension
 import QOU.BraidKnot.SpechtRegularMultiplicity
 -- W1+W3 brick 4c: the Specht action map is injective, giving n! <= sum (dim S^mu)^2.
 import QOU.BraidKnot.SpechtActionInjective
+-- W1+W3 brick 5: the whole split follows from one number, and that number is the
+-- combinatorial RSK identity sum_mu (#SYT mu)^2 = n!.
+import QOU.BraidKnot.SpechtWedderburnCriterion
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
