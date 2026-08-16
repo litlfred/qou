@@ -1,10 +1,11 @@
 ---
 # qou-5sg8
 title: 'float64-padding ratchet RED on main: categorical-bypass-volmatch-demo carries 4 padded binary64 after the mpf lift'
-status: todo
+status: in-progress
 type: bug
+priority: normal
 created_at: 2026-08-16T02:03:14Z
-updated_at: 2026-08-16T02:03:14Z
+updated_at: 2026-08-16T03:10:52Z
 ---
 
 Found 2026-08-16 running `scripts/precision-gates.sh` as the prepare-merge §4b
