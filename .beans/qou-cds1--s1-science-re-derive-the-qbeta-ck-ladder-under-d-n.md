@@ -1,7 +1,7 @@
 ---
 # qou-cds1
 title: 'S1 (SCIENCE): re-derive the Q_beta c_k ladder under D — not a z-swap, and that is proved'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
