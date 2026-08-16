@@ -114,42 +114,15 @@ theorem verticalHalfSpaceThrough_disjoint_plane (b c i : ℝ × ℝ) :
   rw [hpl, mul_zero] at hp
   exact lt_irrefl 0 hp
 
-/-! ### The geodesic plane through three boundary points -/
+/-! ### The geodesic faces used downstream
 
-/-- **The totally-geodesic plane of `H³` spanned by three boundary points.**
-
-* one argument `∞` ⇒ the **vertical plane** over the Euclidean line through the
-  other two (finite) points;
-* all three finite ⇒ for the Milnor-normalized target this is the **unit
-  hemisphere** `hemisphere 1` (the general circumscribed hemisphere is DEFERRED, see
-  the `TODO`);
-* two or three arguments `∞` ⇒ degenerate (the points do not span a plane); returns
-  `∅`.
-
-TODO (general circumhemisphere, deferred — NOT needed for the T2 target).  For three
-finite boundary points not on the unit circle, the geodesic plane is the hemisphere
-centred at their Euclidean *circumcentre* with their *circumradius*.  Building that
-general hemisphere needs the circumcircle of three points; it is unnecessary here
-because in Milnor's normalized position the three finite ideal vertices lie on the
-unit circle, so their circumcircle is the unit circle and the geodesic face is
-exactly `hemisphere 1`.  We therefore give the unit hemisphere for the finite-triple
-slot and defer the general centre/radius to a follow-up.  This is a scope choice, not
-a `sorry`: no theorem below claims `geodesicPlaneThrough a b c` is the geodesic face
-for finite `a b c` OFF the unit circle. -/
-def geodesicPlaneThrough : BdryPoint → BdryPoint → BdryPoint → Set (Fin 3 → ℝ)
-  | ∞, .some b, .some c => verticalPlaneThrough b c
-  | .some b, ∞, .some c => verticalPlaneThrough b c
-  | .some b, .some c, ∞ => verticalPlaneThrough b c
-  | .some _, .some _, .some _ => hemisphere 1
-  | _, _, _ => ∅
-
-/-- `geodesicPlaneThrough ∞ b c` is the vertical plane through the two finite
-points — the defining reduction, restated for `rw`. -/
-@[simp] theorem geodesicPlaneThrough_infty_left (b c : ℝ × ℝ) :
-    geodesicPlaneThrough ∞ (b : BdryPoint) (c : BdryPoint) = verticalPlaneThrough b c := rfl
-
-/-- The all-finite slot is the unit hemisphere (Milnor-normalized target). -/
-@[simp] theorem geodesicPlaneThrough_finite (a b c : ℝ × ℝ) :
-    geodesicPlaneThrough (a : BdryPoint) (b : BdryPoint) (c : BdryPoint) = hemisphere 1 := rfl
+The load-bearing geodesic faces are `verticalPlaneThrough` / `verticalHalfSpaceThrough`
+(above) and `hemisphere` / `hemisphereExterior` (`GeodesicFaceH3`); `idealTetrahedron`
+(`IdealTetFromVertices`) is their intersection.  A general
+`geodesicPlaneThrough a b c` three-boundary-point constructor was removed as unused
+infrastructure (nothing downstream consumed it, and its finite-triple slot was only
+correct in Milnor normalization).  The upcoming hyperbolic-metric backfill (draining
+the totally-geodesic *citation* into a *proof*) rebuilds this layer directly on the
+metric. -/
 
 end QOU.Archimedean
