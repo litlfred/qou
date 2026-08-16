@@ -178,7 +178,7 @@ def main() -> int:
         },
         "atoms": rows,
         "_provenance": {
-            "kernel": "f_pp=z, f_nn=z-h, f_pn=z-h(1/2-delta/4), z=sqrt(q)/(q+1)",
+            "kernel": "f_pp=z, f_nn=z-h, f_pn=z-h(1/2-delta/4), z=q^3/(q^2+1)",
             "E0": "m_e/(q0(q0-1))",
             "binding_form": "B = E0 * sum_crossings sign * log(1/f_bond)",
             "graph": "canonical complete graph: n_pp=C(Z,2), n_pn=Z*N, n_nn=C(N,2)",

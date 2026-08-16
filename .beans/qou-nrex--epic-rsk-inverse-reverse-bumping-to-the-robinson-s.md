@@ -43,3 +43,29 @@ The `n ≤ 12` case of that split is already unconditional (PR #5197) via
 
 Also note `RSKBridge.RSK_substrate_axiom` is a real `axiom` asserting brick 5's statement. Closing
 brick 5 lets it be deleted; until then, check `#print axioms` on anything claiming the identity.
+
+## Brick 2 DONE — the reverse cascade
+
+`QOU/Mathlib/SchenstedReverseCascade.lean`, sorry-free (`uninsert_insert` axioms: `propext`,
+`Quot.sound`; the two helpers: `propext` alone):
+
+- `newRowIndex T x` — which row `insert T x` appends to, by the same recursion `insert` uses, so
+  it records rather than searches;
+- `uninsert T i` — remove the last cell of row `i`, push the displaced value up through rows
+  `i-1 … 0` by `rowUninsert`;
+- **`uninsert_insert`** — `uninsert (insert T x) (newRowIndex T x) = (T, some x)`.
+
+**Two side conditions, both needed and both preserved.** `RowsSorted` is what brick 1's
+`rowUninsert_rowInsert` consumes on each undone row. `NoEmptyRows` is what lets `uninsert` decide
+at the target row between *shortening* a row and *deleting* it — a row that had one cell and loses
+it must go, or the tableau grows a spurious empty row and shapes stop matching. `insert` preserves
+both (`insert_rowsSorted` upstream; `insert_noEmptyRows` added here), so the cascade composes and
+brick 3 can iterate it without re-establishing them.
+
+Also proved on the way: `rowInsert_eq_append_of_none` — a no-bump insertion is literally
+`r ++ [x]`, which is what makes `dropLast`/`getLast?` the right inverse at the target row.
+
+**Next (brick 3):** iterate `uninsert` to invert `insertWordRec`. The row index to undo at is not
+free — it is where the *largest* recording timestamp sits, and `SchenstedRecording`'s
+`insertWordRec_snd_content` (content is exactly `range |w|`, each timestamp once) is what makes
+"the largest" well-defined. Expect the work to be locating that cell, not the undoing.

@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T19:09:49.926267+00:00",
-  "commitSha": "d0db8243bbe470f72ec0c4b82a32035f538139f7",
+  "computedAt": "2026-08-16T02:08:25.308748+00:00",
+  "commitSha": "dea2ca9972221326a5ce3daf73e89a43612cf915",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 14995,
+  "durationMs": 204,
   "computation": "chi-at-q0-matrix-m-tritium",
   "scriptFile": "chi_at_q0_via_matrix_m_mpfr.py",
-  "scriptHash": "334e85b6d2e9",
-  "scriptCommitSha": "d0db8243bbe470f72ec0c4b82a32035f538139f7",
+  "scriptHash": "d67acd7e9d5c",
+  "scriptCommitSha": "4e126c6f41e3b9645abe8c4bd369c6256401da48",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,21 +20,26 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Per-λ χ^λ(β_atomic(1, 2); q_0) cache for tritium via the matrix-M mpfr backend. Format matches `chi_at_q0_via_hoefsmit_mpfr.py` so downstream consumers swap transparently. NO f64 in compute path.",
   "data": {
     "atom": "tritium",
+    "lean_uniqueness_ref": {
+      "nucleus": "tritium",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    },
     "Z": 1,
     "N": 2,
     "n_strands": 9,
     "n_partitions": 30,
-    "tr_M_at_q0": "1.0860463545992615032388774912288800811388820114837",
-    "compute_time_sec": 14.99,
+    "tr_M_at_q0": "1.0860240058218428921913699499413612355786846551455",
+    "compute_time_sec": 0.0,
     "cache_path": "/home/user/qou/computations/chi-tritium-h9-at-q0-50dps-matrix-m.witness.json"
-  },
-  "convention": "sign-only-crossings",
-  "convention_inferred_by": "chi_convention_audit.py --fix (producer:chi_at_q0_via_matrix_m_mpfr.py)"
+  }
 }

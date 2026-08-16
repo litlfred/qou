@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T21:15:50.381475+00:00",
-  "commitSha": "fdc111342d6ed6cff17ce3c428710ced67733620",
+  "computedAt": "2026-08-16T10:51:33.548151+00:00",
+  "commitSha": "7859043ba743d0c34bc31cd233ba03d1dbc11960",
   "assertions": [
     {
       "name": "writhe_pp_eq_+2",
@@ -71,11 +71,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 975,
+  "durationMs": 477,
   "computation": "inter-nucleon-linked-channel",
   "scriptFile": "inter_nucleon_linked_channel.py",
   "scriptHash": "7ab4f5bd0065",
-  "scriptCommitSha": "1fdce2fb1db954f73cd9f904beeb77b7709771e2",
+  "scriptCommitSha": "b827a8bf9e1d083d89539601f6aecb5971c0ad41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

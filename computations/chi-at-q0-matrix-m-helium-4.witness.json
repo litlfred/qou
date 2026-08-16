@@ -1,0 +1,45 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-16T03:36:48.929524+00:00",
+  "commitSha": "1e84788ca2fd04fb151e12516e91698136cc6a0e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "chi-at-q0-matrix-m-helium-4",
+  "scriptFile": "chi_at_q0_via_matrix_m_mpfr.py",
+  "scriptHash": "b7dee1a17d13",
+  "scriptCommitSha": "1ac0dadaa4cc2541d6423e7e273d89e96f1a1e69",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Per-λ χ^λ(β_atomic(2, 2); q_0) cache for helium-4 via the matrix-M mpfr backend. Format matches `chi_at_q0_via_hoefsmit_mpfr.py` so downstream consumers swap transparently. NO f64 in compute path.",
+  "data": {
+    "atom": "helium-4",
+    "lean_uniqueness_ref": {
+      "nucleus": "helium-4",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    },
+    "Z": 2,
+    "N": 2,
+    "n_strands": 12,
+    "n_partitions": 77,
+    "tr_M_at_q0": "0.8856162869365208101087947910150776213083638619632",
+    "compute_time_sec": "0.00",
+    "cache_path": "/home/user/qou/computations/chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json"
+  }
+}

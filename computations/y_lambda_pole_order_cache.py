@@ -42,6 +42,7 @@ sys.setrecursionlimit(50000)
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: hecke_* moved into hecke/
 from hecke_characters import partitions_of  # noqa: E402
 
 WENZL = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
