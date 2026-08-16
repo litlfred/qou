@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-10T14:05:00Z
-updated_at: 2026-08-10T14:05:00Z
+updated_at: 2026-08-15T23:30:00Z
 ---
 Found by the adversarial reader on PR #4921 while adjudicating `prn1` tranche-1
 edges. These are **prose defects**, not `uses[]` defects — filed rather than
@@ -94,6 +94,38 @@ so the inequality **fails strictly** — it does not become an equality. The blo
 then draws *"Therefore, the only excitation with zero cost is the trivial one"*
 from that mis-described limit. The conclusion may well survive a correct
 statement of the limit, but as written the step does not support it.
+
+## Item 4 done, and the diagnosis changed — PR (msc1 squeeze branch), 2026-08-15
+
+The arithmetic in the filing is right: at $\delta = 0$ the squeeze fails
+strictly rather than degenerating. But the cause is not a mis-described limit.
+
+[`lem:surreal-squeeze`](../content/quantum-observable-universe/appendix-surreals/surreal-squeeze.md)
+is stated for *"$\delta > 0$ a **standard real** number"*. That hypothesis is
+the whole content — a standard real beats any infinitesimal. The Yang–Mills
+block invokes it at **two values that are not standard reals**: $\delta = 0$,
+and again in its conclusion, which quantifies over excitations with
+$\delta \asymp \varepsilon^3$. This is the
+"conditional-proved ≠ premise-established" family, not a wording slip.
+
+Two further facts, both machine-checked
+([`yang_mills_squeeze_threshold.py`](../docs/audits/scripts/yang_mills_squeeze_threshold.py)):
+
+- **The marginal-equality case is real and sits at $\delta = \varepsilon^2$**
+  (solve $\delta^2/\varepsilon = \varepsilon^3$). The block had true content
+  attached to the wrong $\delta$.
+- **The threshold is $\varepsilon^2$, the asserted gap is $\varepsilon^3$** —
+  smaller by a factor of $\varepsilon$. An excitation at the asserted gap does
+  **not** clear the squeeze, so *"every non-trivial excitation has
+  $\delta \geq \Delta_q$"* does not follow from it.
+
+Scope-(a). The gap $\Delta_q \asymp \varepsilon^3 > 0$ is established earlier
+in the block by a different route and is untouched; nothing here excludes a
+squeeze with an $\varepsilon^3$ threshold. What is fixed is the block claiming
+this one supplies it.
+
+Still open (author's call): supply the squeeze that does reach $\varepsilon^3$,
+or accept the block's weakened phrasing.
 
 ## 5. Smaller items
 
