@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T13:56:32Z
-updated_at: 2026-08-16T18:53:52Z
+updated_at: 2026-08-16T20:03:28Z
 ---
 
 ## The sorry
@@ -283,3 +283,83 @@ observability conditions, and — because of the step-1 work — those can no lo
 be satisfied by a degenerate `adjointObj`. That ordering turned out to matter:
 had B1 been checked first and B2 not fixed, the newly-reachable witness would
 have had the vacuous escape still open.
+
+
+## 2026-08-16 — the witness is MOSTLY BUILT. Measured obligations, with proofs.
+
+Attempted the paper's own *"Trivial witness: R-Mod with A = R"* against the
+**strengthened** `QuantumUniverse` (the `Preadditive`/`Linear`/`IsUnit`/
+`centralIdem_complete`/`unitEndEquiv` fields added earlier today). Every result
+below is `lean`-direct measured, not reasoned.
+
+### DISCHARGED — the instances today's strengthening demands
+
+```lean
+noncomputable example : Preadditive (FGModuleCat K) := inferInstance   -- exit 0
+noncomputable example : Linear K (FGModuleCat K)    := inferInstance   -- exit 0
+```
+
+Both resolve. **This is the falsifiability test today's commit needed and did
+not have**: `qou-btq3` established nothing constructs the structure, so the new
+fields were unfalsifiable. They are not vacuous — the intended witness supplies
+them off the shelf. (`RigidCategory (FGModuleCat K)` likewise, from the B1
+refutation above.)
+
+### DISCHARGED — all three `FrobeniusHopfData` equations at `A = 𝟙`, generically
+
+`simp` does **not** close these (measured: two unsolved goals). `coherence`
+does, and over an arbitrary monoidal category rather than just `FGModuleCat`:
+
+```lean
+import Mathlib.Tactic.CategoryTheory.Coherence
+open CategoryTheory MonoidalCategory
+
+-- snake-left
+example (C : Type) [Category C] [MonoidalCategory C] :
+    (ρ_ (𝟙_ C)).inv ≫ ((𝟙_ C) ◁ (λ_ (𝟙_ C)).inv) ≫ (α_ (𝟙_ C) (𝟙_ C) (𝟙_ C)).inv
+      ≫ (((λ_ (𝟙_ C)).hom ≫ 𝟙 (𝟙_ C)) ▷ (𝟙_ C)) ≫ (λ_ (𝟙_ C)).hom = 𝟙 (𝟙_ C) := by
+  coherence
+
+-- snake-right
+example (C : Type) [Category C] [MonoidalCategory C] :
+    (λ_ (𝟙_ C)).inv ≫ ((λ_ (𝟙_ C)).inv ▷ (𝟙_ C)) ≫ (α_ (𝟙_ C) (𝟙_ C) (𝟙_ C)).hom
+      ≫ ((𝟙_ C) ◁ ((λ_ (𝟙_ C)).hom ≫ 𝟙 (𝟙_ C))) ≫ (ρ_ (𝟙_ C)).hom = 𝟙 (𝟙_ C) := by
+  coherence
+
+-- Frobenius relation, μ = (λ_).hom, Δ = (λ_).inv
+example (C : Type) [Category C] [MonoidalCategory C] :
+    (λ_ (𝟙_ C)).hom ≫ (λ_ (𝟙_ C)).inv
+      = ((λ_ (𝟙_ C)).inv ▷ (𝟙_ C)) ≫ (α_ (𝟙_ C) (𝟙_ C) (𝟙_ C)).hom
+        ≫ ((𝟙_ C) ◁ (λ_ (𝟙_ C)).hom) := by
+  coherence
+```
+
+`lean`-direct **exit 0**, no `sorry`. Data: `μ = (λ_ 𝟙).hom`, `η = 𝟙`,
+`Δ = (λ_ 𝟙).inv`, `ε = 𝟙`, `S = 𝟙`, `λ = 𝟙`, `coev = (λ_ 𝟙).inv`.
+
+### REMAINING, in rough order of expected cost
+
+1. `unitEndEquiv : K ≃+* End (𝟙_ (FGModuleCat K))` — `exact?` **timed out at
+   120 s**; not attempted further. `𝟙_ (FGModuleCat K)` is `K` as a module over
+   itself and `End K ≅ K`, so the content exists; the work is finding or
+   building the `≃+*`.
+2. `frobenius_symmetric` — `leftTrace f = rightTrace f` for `f : 𝟙 ⟶ 𝟙`. Not
+   pure coherence (`f` is arbitrary) but should fall to unitor naturality.
+3. Block data — `blocks := Unit`, `centralIdem _ := 𝟙`, orthogonality vacuous,
+   `centralIdem_complete` a one-element sum, `frobWeight = dimQ = 1` with
+   `IsUnit 1`. Expected easy.
+4. The QOU layer — rigidity is free, but `adjointIncl`/`adjoint_mono`/
+   `adjoint_augmented`/`adjoint_nontrivial` now have to be *satisfied*. At
+   `A = 𝟙` the augmentation ideal is `0`, so `adjoint_nontrivial` should
+   **fail** — meaning the trivial witness gives a `QuantumUniverse` but **not**
+   a `QuantumObservableUniverse`.
+
+**That last point is the design working.** Before the step-1 fix, `A = 𝟙` would
+have satisfied QOU via `adjointObj := 0`. It no longer can. So the honest
+reading is: the *trivial* witness should discharge
+`QuantumUniverse.exists_instance_axiom` — replacing an axiom with a theorem —
+while `QuantumObservableUniverse.exists_instance` still needs a genuinely
+non-trivial `A`, which is what its Kassel §IX citation was always about.
+
+Scope **(a)**: items 1–3 are measured-plausible, not proved. Item 4's failure
+prediction is reasoning, not measurement.
