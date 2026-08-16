@@ -16,6 +16,8 @@ updated_at: 2026-08-16T16:43:28Z
 updated_at: 2026-08-16T18:00:00Z
 
 updated_at: 2026-08-16T19:15:16Z
+
+updated_at: 2026-08-16T20:28:00Z
 parent: qou-59vq
 ---
 
@@ -1477,3 +1479,41 @@ needs the same treatment with `σ⁻¹`.
 
 **Branch score: 10 theorems, all sorry-free and axiom-clean; one GAP closed
 (`qJM_commute`); one GAP reduced to a single named row.**
+
+
+### All three commutation rows now proved (2026-08-16)
+
+**`qJM_comm_sigma_high`** — `σ_i` commutes with `L_k` for every `k ≥ i+2`.
+Sorry-free, axiom-clean.
+
+| terms | status |
+|---|---|
+| `L_k`, `k ≤ i-1` | **have** — `qJM_comm_sigma` |
+| `L_i + L_{i+1}` | **have** — `qJM_pair_comm` (needs `q·qi = 1`) |
+| `L_k`, `k ≥ i+2` | **have** — `qJM_comm_sigma_high` |
+
+The base case `k = i+2` is the whole content and is **not** far commutation:
+`L_{i+2} = σ_{i+1} σ_i L_i σ_i σ_{i+1}`, and `σ_{i+1}` is **adjacent** to
+`σ_i`. It closes on the **braid relation** — the two `σ_{i+1}` conjugations
+absorb the adjacency — plus `σ_{i+1}` commuting with `L_i`, which
+`qJM_comm_sigma` supplies at exactly that index. The step for `k ≥ i+3` is
+ordinary far commutation.
+
+**Prediction I got wrong:** I expected this row to be the harder of the two and
+to need `q·qi = 1` as well. It needs **no quadratic relation at all** — it is
+the *easier* row. Only the pair row needs the normalisation.
+
+**Boundary caught while stating it:** the claim is **false** without `i+1 < n`.
+At `i = n-1` the recursion has frozen, `L_{i+2} = L_{i+1} = σ_i L_i σ_i`, and
+the claim would require `σ_i` to commute with `L_i` — precisely the excluded
+case. Harmless for the sum (`k ≤ n` and `k ≥ i+2` force `i+1 < n`), but the
+hypothesis must be present.
+
+**What remains for `barSymJMSum_central` is no longer a missing commutation:**
+(a) the `Finset` assembly splitting `range (n+1)` into `{i, i+1}` and its
+complement, and (b) the **inverse family** `L_k⁻¹`, needing the same three rows
+run against `qJMInv` / `σ⁻¹`.
+
+**Branch score: 11 theorems, all sorry-free and axiom-clean; one GAP closed
+(`qJM_commute`); one GAP reduced from three open commutations to assembly +
+the inverse half.**
