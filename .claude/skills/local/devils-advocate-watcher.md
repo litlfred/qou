@@ -246,13 +246,31 @@ inference, matches the same signature as the version that committed it. It
 detects the *topic*, not the *defect*, because the discriminating fact (does the
 index bind across the equivalence? is the symbol level-indexed in its Lean type?
 are the two legs the same instance?) is semantic and not lexically visible.
-Measured actionable precision ≈ 10 % (3 of 29 corpus hits worth an agent look).
+Measured actionable precision: **0 %** on the corpus as of 2026-08-16.
+
+An earlier revision of this paragraph said "≈ 10 % (3 of 29 corpus hits worth an
+agent look)". That figure was a *triage* estimate — three hits that looked worth
+opening — not an adjudication. The three were then adjudicated, and **all three
+are legit**:
+
+| candidate | verdict | why |
+|---|---|---|
+| `q-gl-obstruction-calc.md:13` | legit | *"At Kummer level `n`, `κ₀ mod n` vanishes iff `n ∣ χ(A)`"* — the index `n` **binds on both sides**. This is the *correct* form, and the exact contrast with the error the criterion exists to catch. |
+| `HeckeTauAssignmentGaugeGate.lean:80` | legit | the Lean is `(∀ v u, …) ↔ (∀ u, … ↔ …)`; both sides are universal closures, and the docstring's "pointwise" faithfully names the right-hand side. Fired on "pointwise" + "iff" co-occurring. |
+| `LevelMixingBridge.lean:77` | legit | `DiagonalScalar` is `∀ n, mas n = r * blk (n+k)`; the docstring names two *shapes searched* (B1.3, B1.4′), not a collapsed family. Fired on "per-level" + "single scalar". |
+
+So the first real agent pass over this scanner's output found **0 defects in 29
+candidates**. That does not retire the criterion — the four historical instances
+were real, and the *discipline* is what catches them — but it does sharpen the
+tooling verdict: the scanner is a topic-locator whose hit list, on a corpus that
+has already been swept, is currently all noise. Do not quote 10 %.
 
 So the scanner ships as a **PR-scoped candidate lister**
 ([`scripts/arity-conflation-candidates.py`](../../../scripts/arity-conflation-candidates.py)),
 never as a sidecar-writing gate: 26 of 29 corpus hits would enter the
-`needs-agent` backlog for ~3 real findings. Its honest job is to say which
-paragraphs to ask an agent about. Record a `da-arity-conflation` entry only when
+`needs-agent` backlog for **zero** real findings, on the measurement above. Its
+honest job is to say which paragraphs to ask an agent about — and on a
+already-swept corpus the answer so far is "none of them". Record a `da-arity-conflation` entry only when
 an agent renders a verdict, exactly as the rest of the `da-*` family works.
 
 > **Retraction records re-fire permanently.** A correction note that *quotes* the
