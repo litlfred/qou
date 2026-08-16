@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T01:49:31Z
-updated_at: 2026-08-16T02:28:26Z
+updated_at: 2026-08-16T02:48:35Z
 ---
 
 ## Triage answer: NOT broken. Slow — and hiding something much worse.
@@ -124,3 +124,78 @@ Finding 3 needs an owner decision before anything is committed. Findings 1 and
 the L363 ordering bug are both small, mechanical, and safe to fix — but fixing
 1 means deciding whether the ppb upstream should be *read* or the declaration
 *dropped*, which is again not mine to pick unilaterally.
+
+
+---
+
+## Root cause of the 11.5x: FOUND, and it is not what I guessed four times
+
+`efcaf79ed` (2026-08-08) — *"NO FLOAT64: the braid word was f64 at source;
+dashboards re-anchored"* — moved the braid-word arithmetic inside
+`pyhecke.atom.atom_per_generator_volumes` from float64 to mpmath.
+
+Measured directly, not inferred. Same commit, same everything, only
+`tools/pyhecke/python/pyhecke/atom.py` swapped for its pre-`efcaf79ed` content,
+150 s budget each:
+
+    atom.py at efcaf79ed^   14,972 rows   (the FULL table, finished inside 150 s)
+    atom.py at HEAD          5,615 rows
+
+That is the whole regression, and it matches the 57 s baseline.
+
+The profile says why. `atom_per_generator_volumes` is **80% of total runtime**
+(20.6 s of 25.7 s over 400 rows), and underneath it:
+
+    2,724,573  mpmath __mul__        per 400 rows  (~6,800/row)
+    1,753,032  mpmath convert
+    1,126,208  mpf from_float        (~2,800/row — floats converted every op)
+
+Every one of those was a C double multiply before. The precision fix is
+correct; its cost was never advertised.
+
+### Blast radius is not this producer
+
+**31 files** call `atom_per_generator_volumes`, including `canonical_tower.py`,
+`substrate/hecke_core.py`, `pn_alpha_lp_dual.py` and the brane-tower probes.
+Anything on that path took the same hit. This bean measured one of them because
+it happened to have a committed `durationMs` to compare against.
+
+### Four hypotheses this killed, recorded so nobody re-runs them
+
+1. **My own `set_compute_dps()` additions** (qou-hqjf) raising global `mp.dps`
+   via the lazy `alpha.alpha_cluster_recursion` import inside the row loop.
+   A/B at `d7274ddc0` vs current main: 5663 vs 5642 rows. Noise.
+2. **`record_upstream` in the row loop** re-reading and hashing an upstream per
+   row. The file is 2,931 bytes and `record_upstream` is a bare `append` —
+   ~0.15 s total.
+3. **mpmath 1.3.0 -> 1.4.1.** Real but small: 6568 vs 5638 rows, **1.16x**.
+   Tested by shadowing 1.3.0 through `pip --target`, everything else identical.
+4. **Global `mp.dps` 15 -> 70.** Importing the producer really does raise dps to
+   70 (COMPUTE_DPS) — but at dps 18 the run gives 5707 rows vs 5615. **1.6%.**
+   It is the NUMBER of mpf ops that costs, not their precision.
+
+## Correction: `efcaf79ed` does NOT explain the value change
+
+I expected the same commit to account for finding 3. It does not. The
+pre-`efcaf79ed` run prints **today's** values, not July's:
+
+           PRE-efcaf79ed run    today (current atom.py)    committed (July)
+      D         2.071536              2.071536                 3.542303
+      T         5.514920              5.514920                 8.473201
+    7Li        15.051502             15.051502                23.062339
+    16O        35.449573             35.449573                54.604288
+
+So these are **two independent regressions**. The speed one is identified and
+measured. The value one — 14,970 of 14,972 rows, tritium -0.10% -> -34.98% —
+happened somewhere between 2026-07-07 and 2026-08-08 and is **still
+unattributed**. Bisecting it needs `git fetch --unshallow`; the witness's own
+`commitSha` (85da4f43133) is unreachable in this shallow clone.
+
+## Still owner's call
+
+Nothing here changes what I said about finding 3: which table is correct is a
+physics decision, and the regenerated witness stays out-of-tree until someone
+makes it. The speed regression is a separate question — whether an 11.5x cost
+on 31 call sites is the accepted price of the braid-word precision fix is also
+not mine to decide, but it should be decided knowingly rather than by nobody
+noticing for eight days.
