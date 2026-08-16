@@ -202,6 +202,26 @@ if [ ! -e "$CLONE_ABS/content/schema/references.ts" ]; then
     || info "could not bridge references.ts — bib-cite-resolves will false-fail"
 fi
 
+# The platform imports the bibliography by TWO different paths, and
+# bridging only the one above leaves the other broken:
+#
+#   qa-checkers-extended.ts  → <clone>/content/schema/references  (above)
+#   export-bibtex.ts         → <clone>/schemas/references         (here)
+#
+# Without this second link, regenerating references.bib dies with
+# "Cannot find module '../../schemas/references'", the .bib silently
+# stays stale, and every \cite{} added since the last successful export
+# renders as an undefined citation in the PDF. Measured 2026-08-16: 16
+# keys present in references.ts were missing from references.bib, for
+# 23 "Citation ... undefined" warnings in the full build.
+if [ ! -e "$CLONE_ABS/schemas/references.ts" ]; then
+  mkdir -p "$CLONE_ABS/schemas"
+  ln -s "$ROOT/content/schema/references.ts" \
+    "$CLONE_ABS/schemas/references.ts" \
+    && info "bridged schemas/references.ts into platform clone" \
+    || info "could not bridge schemas/references.ts — export-bibtex will fail"
+fi
+
 # --- best-effort: install the platform's own deps ------------------------
 if [ "${FOLIO_SKIP_INSTALL:-0}" != "1" ] && [ -f "$CLONE_ABS/package.json" ]; then
   if command -v bun >/dev/null 2>&1; then
