@@ -1028,3 +1028,6 @@ import QOU.MassComputationChainRoadmap
 -- (Mathlib imports only), so it lifts out verbatim when a Mathlib PR is possible; it is
 -- registered here so the orphan gate covers it in the meantime.
 import QOU.Mathlib.RothIndex
+-- qou-br3w — staged for upstream Mathlib: generalized (m x m) Wronskians.  Mathlib has the
+-- two-polynomial case only; genWronskian_two pins the generalisation to it.
+import QOU.Mathlib.GenWronskian

@@ -262,3 +262,61 @@ mathematics says it should. A definition returning `0` everywhere would satisfy
 
 Still cannot open the Mathlib PR from this session (scope: `litlfred/qou`). The file remains
 import-clean — Mathlib imports only, no QOU dependency — so upstreaming is a file copy.
+
+---
+**2026-08-16 — generalized Wronskians. Second prerequisite done.**
+
+`QOU/Mathlib/GenWronskian.lean`, sorry-free, standard axioms. Mathlib imports only.
+
+```lean
+wronskianMatrix (f : Fin m → R[X]) : Matrix (Fin m) (Fin m) R[X] := fun i j => derivative^[i] (f j)
+genWronskian (f : Fin m → R[X]) : R[X] := (wronskianMatrix f).det
+
+genWronskian_eq_zero_of_dependent [IsDomain R] (f) (c) (hc : c ≠ 0)
+    (h : ∑ j, C (c j) * f j = 0) : genWronskian f = 0
+```
+
+The proof is short once framed right: a dependence differentiated `i` times says the
+constant vector `c` lies in the kernel of the Wronskian matrix, and over a domain
+`Matrix.exists_mulVec_eq_zero_iff` turns a kernel vector into a vanishing determinant.
+No analysis, no induction.
+
+**The direction Roth's lemma consumes is the contrapositive** — a non-zero generalized
+Wronskian certifies linear independence.
+
+### ⚠ Two pinning checks, because the theorem alone does not pin anything
+
+`genWronskian_eq_zero_of_dependent` is satisfied by a definition returning `0` identically,
+and every downstream use would still typecheck. Two computations rule that out:
+
+| check | content |
+|---|---|
+| `genWronskian_two` | `genWronskian ![a, b] = wronskian a b` — **agrees with Mathlib's existing two-polynomial definition on the nose**, so this is a generalisation rather than a look-alike |
+| `genWronskian_one_X` | `genWronskian ![1, X] = 1` — a **non-zero** Wronskian exists, so the contrapositive certifies something |
+
+The first is the one I would not want to skip: without it the file defines *a* determinant
+of derivatives, and nothing says it is the Wronskian.
+
+### ⚠ The converse is NOT proved, and is not a formality
+
+*Independence ⟹ some generalized Wronskian is non-zero* is the other half Roth needs, and
+it is materially harder:
+
+- **false in characteristic `p`** for the naive derivative — `1, xᵖ` are independent and
+  every derivative of `xᵖ` vanishes — so it needs characteristic zero, or restating over
+  Hasse derivatives;
+- in several variables it needs *generalized* operators (products of partials of bounded
+  total order), not the iterated single derivative used here, plus a choice of which `m`.
+
+Stated in the file rather than assumed, so nothing downstream can quietly consume it.
+
+### Progress against the original scoping
+
+| prerequisite | status |
+|---|---|
+| Siegel's lemma | present in Mathlib (this bean's inventory was wrong) |
+| **index at a point** | **done** — `RothIndex.lean`, 18 decls |
+| **generalized Wronskians (vanishing direction)** | **done** — this file |
+| generalized Wronskians (independence direction) | open, needs char 0 |
+| Roth's lemma | open — the hard core |
+| Roth's theorem | open |
