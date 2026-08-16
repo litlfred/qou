@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-15T22:34:57.905022+00:00",
-  "commitSha": "e6cc6ac564a2de5b7e86d061894acb7ffdbe3efa",
+  "computedAt": "2026-08-16T02:32:47.492919+00:00",
+  "commitSha": "151a1a22060801fa50abb638233a9d8eb0d68e83",
   "assertions": [
     {
       "name": "a2_matches_proved",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 621,
+  "durationMs": 602,
   "computation": "qbeta-ohtsuki-nz-bridge-b4",
   "scriptFile": "qbeta_ohtsuki_nz_bridge_b4_probe.py",
-  "scriptHash": "761b49878f5a",
-  "scriptCommitSha": "86eefc8b7661613483a7ff9a33cc4153576f292d",
+  "scriptHash": "aa4a6fdf0c8a",
+  "scriptCommitSha": "69e6123f1614192675ebca40909ff2bf370baf3c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,6 +27,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0"
   },
@@ -66,5 +67,6 @@
       "im_ratio": "1.0"
     }
   },
-  "q0Anchor": "independent"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Taylor coefficients in a FREE parameter u against proved constants: pi, sqrt(3), the exact Ohtsuki rungs k1 = 11*sqrt(3)*pi/108 and k2 = 2*pi^2/27, and 4_1 geometry via t2.V41_integrated. No substrate value is read. The one non-trivial import, probes/sdeformed_channel_signflip_probe.py, imports only json/subprocess/datetime/pathlib/mpmath, so wedderburn_jones_markov.y_lambda_at — and its muon-cache straddle — is unreachable from here."
 }

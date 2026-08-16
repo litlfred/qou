@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T22:35:36.669395+00:00",
-  "commitSha": "e6cc6ac564a2de5b7e86d061894acb7ffdbe3efa",
+  "computedAt": "2026-08-16T02:32:46.686056+00:00",
+  "commitSha": "151a1a22060801fa50abb638233a9d8eb0d68e83",
   "assertions": [
     {
       "name": "phase decorrelation does NOT amplify the tail: the scramble ratio s_n = sup|u_n|(scrambled)/sup|u_n|(coherent) <= 1 on every excited tail rung, at both cadences (every-step and 0.1-eddy) and every eps — the coherent evolution is the in-model worst case, so the SF arc's fully-coherent real-amplitude models are CONSERVATIVE with respect to sweeping/decorrelation, and SF10's cross-model amplification is attributable to triad structure, not phase coherence",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 46244,
+  "durationMs": 42854,
   "computation": "qns-phase-scramble-probe",
   "scriptFile": "qns_phase_scramble_probe.py",
-  "scriptHash": "4ed6775c156e",
-  "scriptCommitSha": "b0e9951c865931c8446ccf7e7daeed57d681320c",
+  "scriptHash": "702724f55f20",
+  "scriptCommitSha": "69e6123f1614192675ebca40909ff2bf370baf3c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,6 +33,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0"
   },
@@ -65,5 +66,6 @@
     "n_cap": 400,
     "n_data": 4
   },
-  "q0Anchor": "independent"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Sabra/DN shell model: the only q here is the shell-spacing ratio q = 1 + eps swept over EPS_SWEEP, not the substrate modulus. eps = 1e-1 gives q = 1.1, adjacent to q0 = 1.10998 — coincidence, and the reason this needs stating rather than inferring. Import cone reaches no q_parameter and no qou_substrate.constants."
 }
