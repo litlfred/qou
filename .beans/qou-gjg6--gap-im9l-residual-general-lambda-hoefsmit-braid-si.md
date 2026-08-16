@@ -1,10 +1,11 @@
 ---
 # qou-gjg6
 title: 'GAP (im9l residual): general-lambda Hoefsmit braid — size-6 S3-orbit Yang-Baxter identity'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-11T01:05:26Z
-updated_at: 2026-08-11T01:05:26Z
+updated_at: 2026-08-16T14:03:02Z
 parent: qou-59vq
 ---
 
@@ -388,3 +389,42 @@ STEP (ii) REMAINING after this:
   - per-orbit basis correspondence onto the explicit index orderings of Orbit3Braid /
     Orbit6Braid;
   - the block-diagonal assembly itself.
+
+
+---
+
+## 2026-08-16 — TAKEOVER of the branch backing PR #5076 (stalled-claim protocol)
+
+Owner instruction: *"take over 5076"*.
+
+**Staleness confirmed** per AGENTS.md §2 stalled-claim takeover:
+
+| check | value |
+|---|---|
+| branch | `claude/seminormal-quadratic-2026-08-15` |
+| last commit SHA | `3a50fd4e7d6134ee9a2303fd2734f475a124b8b3` |
+| last commit | *"lean(qou-gjg6): connectivity step 3 — and the hook-length shortcut for step 4 is blocked"* |
+| age | **16 h** (threshold is 3 h) |
+| newer PR activity | none since 2026-08-15T21:51Z |
+| in-flight CI | none possible — CI is `workflow_dispatch`-only repo-wide, so a long build cannot be mistaken for a stall |
+
+**Will continue from that branch's tip. Will NOT force-push over it** — the one
+rule the protocol is emphatic about.
+
+**This bean was at `todo`, not `in-progress`** — so the branch was doing 29
+commits of work against an unclaimed bean. Claiming it now.
+
+**Note on scope drift between bean and PR.** This bean's title is the *size-6
+S₃-orbit Yang–Baxter identity*, described as the residual after the SW-4-gen
+pass. PR #5076 states that identity is **done** — the braid relation holds
+unconditionally via three admissibility flags dispatching to seven shape
+theorems, sorry-free. So the bean title understates what the branch achieved,
+and the residual it names may already be closed. First task of the takeover is
+to establish what is actually left, rather than to resume against a stale
+description.
+
+**Downstream consumer, for whoever reads this next.** #5205 added
+`QOU.BraidKnot.SeminormalEigenvalue`, a §3b-cond class with no instance,
+carrying the seminormal eigenvalue statement as hypotheses. Discharging it is
+`qou-ck0g` item 2, and its substrate is this branch's `seminormalRep`. So this
+work has a named dependent now.
