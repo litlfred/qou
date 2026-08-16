@@ -899,6 +899,8 @@ import QOU.Mathlib.SchenstedReadback
 import QOU.Mathlib.SchenstedReadbackFold
 -- RSK inverse, brick 7: the RSK map is injective on words of fixed length.
 import QOU.Mathlib.SchenstedRSKInjective
+-- RSK inverse, brick 8: RSK separates permutations.
+import QOU.Mathlib.SchenstedPermInjective
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
