@@ -1,10 +1,11 @@
 ---
 # qou-n1dj
 title: 'GAP: does the MASS fibre functor land in Rep(SU_q(2))~TL or full H_3(q)? (corpus self-contradiction, D vs C, 197 ppm on m_p)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-08T09:50:22Z
-updated_at: 2026-08-08T14:30:00Z
+updated_at: 2026-08-16T02:51:11Z
 ---
 
 > **Status reverted to `todo` by the parent session (2026-08-08).** The research
@@ -299,3 +300,119 @@ characterised object. It is the narrower claim that D's *selection over C* does
 not currently rest on an established premise, and that the corpus is
 self-inconsistent about it.
 
+## Progress 2026-08-16 — the bean's own framing is stale; and link 1 does not carry weight
+
+Branch `claude/n1dj-fibre-premise-2026-08-16`. New sorry-free Lean:
+[`QOU/BraidsAndKnots/VolumeConstraintForcesFibreTwo.lean`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/VolumeConstraintForcesFibreTwo.lean).
+**No production numerical value changed. Bean stays open** — see the last section.
+
+### First: two things above are no longer true of the corpus
+
+Both are owner actions of **2026-08-09**, one day after this bean's last update,
+and nothing above records them.
+
+- **"The paper says C" — no longer.** `rem:markov-axioms-primitive` now fixes
+  `z = q³/(q²+1)`, **convention D**, and says in terms that the earlier
+  `z = 1/(q^{1/2}+q^{-1/2})` "is **convention C** … It is no longer the
+  framework's trace".
+- **"The corpus disagrees with itself" — no longer.** The Scope note of
+  `rem:h3-markov-wenzl-weights-context`, identified above as the wrong side, has
+  been rewritten: "the owner ruling of 2026-08-09 excised convention C. There is
+  now **one** trace in the framework", and "the production mass channel uses
+  convention D".
+
+So the §"Why it matters" table, the "Production uses D / the paper says C"
+split, and sub-task 2's conclusion that "the corpus **defines** the mass trace
+as C" are all superseded. **The 197 ppm dispute is closed by ruling.** What
+survives is narrower and is the honest remainder: *D's selection rests on the
+row cap, the row cap rests on `dim V = 2`, and nothing establishes that.*
+
+### Link 1 of the forcing chain does not carry weight
+
+`markovWeights_eq_jones_of_fibre_categorical` takes `hN : N = 2` as an explicit
+hypothesis "supplied by `thm:su2-emergence`". Chasing that citation:
+
+- **The prose proof assumes the rank it is cited for.** `prf:su2-emergence`
+  composes two lemmas *stated* as `G ⊆ SL(2, ℂ)` and `G ⊆ U(2)`. The `2` is an
+  input to both. What is proved is which subgroup of a rank-2 general linear
+  group survives — not the rank. `VolumeForm.lean` agrees in its own section
+  heading: "SU(2) from **rank-2** + dagger".
+- **Its `lean.ref` did not resolve.** `qou:QOU.RankOneGaugeData` — no such
+  declaration exists anywhere in the tree; the canonical resolver returns
+  unresolved. Before folio-assistant **PR #121** (merged 2026-08-16) it fell
+  back to the import-only library root and every checker passed vacuously, which
+  is why a dangling ref on link 1 of this chain survived unnoticed. **Repointed**
+  to `qou:QOU.SU2Emergence`, which carries the theorem's own
+  `\label{thm:su2-emergence}` — the label was the evidence, the ref's name was
+  not. (Same failure mode, and same repair, as `qou-qc6s`.)
+- **The Lean that does exist carries no rank content.** `QOU.SU2Emergence` has
+  three fields: `gaugeGroupType : Type*`, `ext_sq_action`, and
+  `det_one : ∀ g, ext_sq_action g = 𝟙 exteriorSquare`. It says a group acts
+  trivially on the exterior square. It does not mention `SU(2)` and does not
+  mention the rank; `exteriorSquare` is an unconstrained parameter. The two
+  supporting lemmas are single-field classes restating their own conclusions
+  (`SU2EmergenceVolumeDeterminant (det_g : ℝ) where det_eq_one : det_g = 1`),
+  with docstrings recording the witness as pending Mathlib.
+
+An `authorNote` on `thm:su2-emergence` now records this at the block, so the
+next reader does not re-chase it.
+
+### The framework already contains a source for the rank — now formalised
+
+`def:quantum-observable-universe` condition (v), the **categorical volume
+constraint**, posits a non-degenerate epimorphism `ε : Λ²V → 𝟙` preserved by all
+tensor automorphisms. Read at the fibre that is a statement about `dim Λ²V =
+C(N,2)`, and the two readings differ in strength — which is the point:
+
+| reading of ε | dimension statement | forces |
+|---|---|---|
+| epimorphism (target hit) | `C(N,2) ≠ 0` | `N ≥ 2` only — admits the colour fibre `N = 3` |
+| **iso** `Λ²V ≅ 𝟙` | `C(N,2) = 1` | **`N = 2`** |
+
+Both are proved (`exteriorSquareDim_ne_zero_iff`, `exteriorSquareDim_eq_one_iff`),
+stated in the same binomial idiom `RowCapObstruction` uses for the same `N`, so
+the two constraints compose without a translation step.
+`markovWeights_eq_jones_of_volume_constraint` and
+`ocneanu_eq_jones_of_volume_constraint` are the forcing theorems re-sourced onto
+`hvol` in place of `hN`. `weak_volume_reading_admits_three` is the anti-vacuity
+check that the two readings genuinely differ in consequence.
+
+This also puts the "colour does not infect mass" observation on a proof:
+`exteriorSquareDim_three_ne_one` — the same axiom pins the two channels to
+different ranks, so no re-tuning connects them.
+
+Sorry-free: `#print axioms` gives `[propext, Classical.choice, Quot.sound]` on
+all four, and **no axioms at all** on `weak_volume_reading_admits_three`. No
+`sorryAx`. `check-base-ring` PASS, `check-wall-side` PASS, orphan gate exit 0,
+`run-validate` exit 0. Registered in the `QOU.lean` umbrella.
+
+This is **strictly better sourcing, not a discharge**: `N = 2` now comes from a
+stated axiom of the framework rather than from a citation with no formal
+content, and it is independent of every measured quantity — nothing in the file
+mentions a numerical substrate value or compares against one.
+
+### What is still open — and one item is newly visible
+
+1. **The premise itself, unchanged.** `MassTraceIsFibreCategorical` — that the
+   mass channel's trace *is* the categorical trace of the fibre action — is
+   untouched. Everything above is about the *other* hypothesis.
+2. **Which reading of condition (v) the author intends.** The forcing needs
+   `Λ²V ≅ 𝟙`; the definition writes "non-degenerate epimorphism". Editorial, and
+   not something Lean can settle. If the weak reading is intended, condition (v)
+   gives only `N ≥ 2` and the rank is still unsourced.
+3. **NEW — the formalised condition (v) is vacuous.** In
+   `CategoricalFoundations.lean` it is `exteriorSquare : C` plus
+   `volumeForm : exteriorSquare ⟶ (𝟙_ C)`, with nothing tying `exteriorSquare`
+   to `Λ²(fundamentalObj)` and no non-degeneracy, epi, or invariance hypothesis.
+   `QuantumUniverse` carries a `HasZeroMorphisms C` instance (needed for block
+   orthogonality), so `volumeForm := 0` inhabits the field for *any*
+   `exteriorSquare`. The formalised axiom therefore constrains nothing at all,
+   and `QOU.SU2Emergence` inherits the same free parameter. Honest placeholders
+   rather than errors — but a placeholder cannot be the source of a rank, so
+   closing item 2 in the affirmative would still leave the Lean side to do.
+4. **Do not use the `z·[N]_q = q^N` injectivity route to close this.** "D gives
+   `N = 2` exactly, C gives `N ≈ 2.5995`, no integer fibre" already presumes the
+   trace is the categorical trace of a fibre action of *some* integer dimension —
+   which is premise 1. It is a good consistency check and a bad closure argument.
+   The volume-constraint route above is independent of it because it never routes
+   through the trace.
