@@ -14,8 +14,11 @@
   "z_window_1sigma_halfwidth": "0.0001012830307867875262",
   "zC_minus_zstar": "0.00021585399890945822254",
   "zD_minus_zstar": "0.1135835569616802574",
-  "y21_at_zC": "0.000679665816305547586557319742334",
-  "y21_at_zD": "-0.112688037146465251595829863946",
+  "ladder_phase_coeff_at_zC": "0.000679665816305547586557319742334",
+  "ladder_phase_coeff_at_zD": "-0.112688037146465251595829863946",
+  "y21_at_zD_actual_S2": "0.24729788674803459840622064838",
+  "y3_at_zD_actual_S2": "0.50540422650393080318755870324",
+  "y1cubed_at_zD_actual_S2": "0",
   "bracket2_q_delta": "2.01089686670712229975249197809",
   "zD_over_TL_check": "0.612688037146465251595829863946",
   "zC_over_TL_check": "0.499320334183694452413442680258",
@@ -79,24 +82,34 @@
       "detail": "rel dev 2.28e-58"
     },
     {
-      "name": "A7 \u03b1 == \u2212h/4 \u2212 (h/2)\u00b7y_(2,1) (affine in the standard-block weight)",
+      "name": "A7 \u03b1 == \u2212h/4 \u2212 (h/2)\u00b7\u03ba(z), \u03ba(z) = 1/2 \u2212 z (affine in the phase coeff)",
       "pass": true,
       "detail": "identity holds"
     },
     {
-      "name": "A7 y_(2,1) > 0 at z_C",
+      "name": "A7 \u03ba > 0 at z_C",
       "pass": true,
       "detail": "0.0006796658163"
     },
     {
-      "name": "A7 y_(2,1) < 0 at z_D",
+      "name": "A7 \u03ba < 0 at z_D",
       "pass": true,
       "detail": "-0.1126880371"
     },
     {
-      "name": "A7 y_(2,1) < 0 at z_D for EVERY q in (1, 5] sampled (Lean: all q>1)",
+      "name": "A7 \u03ba < 0 at z_D for EVERY q in (1, 5] sampled (Lean: all q>1)",
       "pass": true,
       "detail": "max over sample = -4.20408"
+    },
+    {
+      "name": "A7r D-frame weights are positive semidefinite: y_(3)>0, y_(2,1)>0, y_(1\u00b3)=0",
+      "pass": true,
+      "detail": "y_(3)=0.5054042265  y_(2,1)=0.2472978867  y_(1\u00b3)=0  \u2192 signature (5,0,1); convention D does NOT fail positivity"
+    },
+    {
+      "name": "A7r the retracted identification is false: \u03ba(z_D) != y_(2,1) under D",
+      "pass": true,
+      "detail": "\u03ba(z_D)=-0.1126880371 < 0 < 0.2472978867=y_(2,1); |diff|=0.3599859239"
     },
     {
       "name": "A8 z_D == q\u00b2/[2]_q (TL loop parameter)",
