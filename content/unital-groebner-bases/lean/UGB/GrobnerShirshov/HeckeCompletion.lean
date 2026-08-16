@@ -3445,11 +3445,20 @@ its left end, one far-commutation application per letter, inside any contexts
 The induction recurses on the *head* of `w` and appends its step at the end,
 which is the opposite end from `farComm_transport`: there the moving letter
 leads, here it trails. The collision hypothesis enumerates the intermediate words
-by splitting `w`, exactly as in §4u. -/
-theorem farComm_transport_left {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (z : Fin n)
+by splitting `w`, exactly as in §4u.
+
+That enumeration includes the split `u = []`, which names the transport's *final*
+word — and the proof never uses it: `hcol` is applied only with a cons-headed
+first argument, and the `nil` case discards it outright. So `u ≠ []` suffices,
+and it matters. In the corner chain of §4af the bystanding term *is* the final
+word, so the unrestricted hypothesis is false exactly where the transport is
+needed. `farComm_transport_left` below is this with the stronger hypothesis,
+kept because §4v's callers already supply it. -/
+theorem farComm_transport_left_sources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    (z : Fin n)
     (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) :
     ∀ (w a b : Monomial (HeckeGen n)), (∀ y ∈ w, z.val + 1 < y.index.val) →
-      (∀ u v : Monomial (HeckeGen n), u ++ v = w →
+      (∀ u v : Monomial (HeckeGen n), u ++ v = w → u ≠ [] →
           ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
             r ≠ a ++ (u ++ ((⟨z⟩ : HeckeGen n) :: (v ++ b)))) →
       MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
@@ -3470,8 +3479,9 @@ theorem farComm_transport_left {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (z : Fi
       simp only [HeckeGen.rank] at this
       omega
     have key := ih (a ++ [(⟨yi⟩ : HeckeGen n)]) b (fun t ht => hw t (by simp [ht]))
-      (fun u v huv => by
+      (fun u v huv _ => by
         have := hcol ((⟨yi⟩ : HeckeGen n) :: u) v (by rw [List.cons_append, huv])
+          (by simp)
         simpa only [List.append_assoc, List.singleton_append, List.cons_append] using this)
     simp only [List.append_assoc, List.singleton_append] at key
     show MultiStepReduction _ _ (AlgElement.ofTerms
@@ -3484,7 +3494,7 @@ theorem farComm_transport_left {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (z : Fi
         show (a ++ [(⟨yi⟩ : HeckeGen n), (⟨z⟩ : HeckeGen n)] ++ (w ++ b))
           = a ++ ((⟨yi⟩ : HeckeGen n) :: ((⟨z⟩ : HeckeGen n) :: (w ++ b))) by simp]
       refine ofTerms_coeff_mid L₁ L₂ _ c (fun r hr => ?_)
-      have := hcol [(⟨yi⟩ : HeckeGen n)] w rfl r hr
+      have := hcol [(⟨yi⟩ : HeckeGen n)] w rfl (by simp) r hr
       simpa only [List.singleton_append, List.cons_append] using this
     refine ⟨farCommRelation yi z, farCommRelation_mem hn hp hy, a, w ++ b, c, ?_, ?_, ?_⟩
     · rw [hv]; exact hc
@@ -3498,6 +3508,24 @@ theorem farComm_transport_left {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (z : Fi
         List.map_append, List.sum_append, decide_eq_true_eq]
       split_ifs <;>
         simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- The transport with the unrestricted collision hypothesis — every split of `w`,
+including the one naming the final word. Weaker than
+`farComm_transport_left_sources` and kept for §4v's callers. -/
+theorem farComm_transport_left {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (z : Fin n)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) :
+    ∀ (w a b : Monomial (HeckeGen n)), (∀ y ∈ w, z.val + 1 < y.index.val) →
+      (∀ u v : Monomial (HeckeGen n), u ++ v = w →
+          ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+            r ≠ a ++ (u ++ ((⟨z⟩ : HeckeGen n) :: (v ++ b)))) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          (L₁ ++ (a ++ (w ++ ((⟨z⟩ : HeckeGen n) :: b)), c) :: L₂))
+        (AlgElement.ofTerms
+          (L₁ ++ (a ++ ((⟨z⟩ : HeckeGen n) :: (w ++ b)), c) :: L₂)) :=
+  fun w a b hw hcol =>
+    farComm_transport_left_sources hn hp z c hc L₁ L₂ w a b hw
+      (fun u v huv _ => hcol u v huv)
 
 namespace CyclicFarCommLow
 
@@ -9574,7 +9602,7 @@ theorem blockStep (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ k kd : Fin n}
     (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
     (hne : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
       q ≠ R ++ (descWord i j₁ ++ (descWord k j₂ ++ S)))
-    (hcol : ∀ u v : Monomial (HeckeGen n), u ++ v = Y →
+    (hcol : ∀ u v : Monomial (HeckeGen n), u ++ v = Y → u ≠ [] →
       ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
         q ≠ R ++ (u ++ ((⟨kd⟩ : HeckeGen n) ::
           (v ++ (((⟨k⟩ : HeckeGen n) :: descWord kd j₁) ++ (descWord kd j₂ ++ S)))))) :
@@ -9606,7 +9634,7 @@ theorem blockStep (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ k kd : Fin n}
       (by rw [hD, hdk, bsWord₁, descWord_cons hk hj₁]; simp)
       (by rw [bsWord₂]; simp)
       (by simpa using hne)
-  · have := farComm_transport_left hn hp kd c hc L₁ L₂ Y R
+  · have := farComm_transport_left_sources hn hp kd c hc L₁ L₂ Y R
       (((⟨k⟩ : HeckeGen n) :: descWord kd j₁) ++ (descWord kd j₂ ++ S)) hY hcol
     rw [hD]
     simpa using this
@@ -9621,8 +9649,7 @@ theorem blockStep_top (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ kd : Fin n}
     (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
     (hne : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
       q ≠ R ++ (descWord i j₁ ++ (descWord i j₂ ++ S)))
-    (hneEnd : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
-      q ≠ R ++ ((⟨kd⟩ : HeckeGen n) :: (descWord i j₁ ++ (descWord kd j₂ ++ S)))) :
+    :
     MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
       (AlgElement.ofTerms
         (L₁ ++ (R ++ (descWord i j₁ ++ (descWord i j₂ ++ S)), c) :: L₂))
@@ -9631,11 +9658,8 @@ theorem blockStep_top (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ kd : Fin n}
           :: (descWord i j₁ ++ (descWord kd j₂ ++ S))), c) :: L₂)) := by
   refine blockStep hn hp hk hj₁ (by omega) [] R S (by simp)
     (by rw [descWord_cons hk hj₁]; rfl) c hc L₁ L₂ hne ?_
-  intro u v huv q hq
-  obtain ⟨rfl, rfl⟩ := List.append_eq_nil_iff.mp huv
-  have := hneEnd q hq
-  rw [descWord_cons hk hj₁] at this
-  simpa using this
+  intro u v huv hu
+  exact absurd (List.append_eq_nil_iff.mp huv).1 hu
 
 /-- **The loop.** `blockStep` iterated: `k` walks down from its starting value to
 `e`, one pass per index, and what those passes leave behind is the descending run
@@ -9716,6 +9740,168 @@ theorem loopFromTop (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed idd : Fin 
         [(A ++ (descWord idd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)]) :=
   loop hn hp hed hj₁ hj₂ S c hc m i idd A [] hid hm (by simp)
     (by rw [descWord_cons_le hid (by omega)]; simp)
+
+/-! ### Carrying a bystanding term through the loop
+
+The corner's S-polynomial has two terms, so each pass of the loop rewrites one
+while the other sits by, and `blockStep` must be told the bystander is not the
+word being rewritten. Two facts make that uniform.
+
+First, **the bystander does not move**. At pass `k` it is
+`A ++ descWord kd ed ++ ⋯`, and after the pass `A` has grown by `σ_kd` while the
+run has shortened to `descWord kdd ed` — so `A ++ [σ_kd] ++ descWord kdd ed` is
+again `A ++ descWord kd ed`. It is literally the same word at every pass.
+
+Second, **every word a pass rewrites begins, after `A`, with `σ_i`**, the head of
+the long run: the pass's own source is `A ++ (descWord i j₁ ++ ⋯)`, and each word
+the transport visits is `A ++ (u ++ ⋯)` with `u` a non-empty prefix of the part of
+the long run above `k`. The bystander instead begins with `σ_kd`, and `kd < i`.
+So one letter separates the bystander from everything in sight. -/
+
+/-- Two words with a common prefix differ as soon as the next letter does. -/
+theorem append_cons_ne {n : ℕ} {A B C : Monomial (HeckeGen n)} {x y : HeckeGen n}
+    (hxy : x ≠ y) : A ++ (x :: B) ≠ A ++ (y :: C) := by
+  intro hcon
+  have h := List.append_cancel_left hcon
+  injection h with h1 _
+  exact hxy h1
+
+/-- The bystander is not the word the pass rewrites. -/
+theorem pass_hne {n : ℕ} {i j₁ j₂ k kd ed : Fin n} (hji : j₁.val ≤ i.val)
+    (hedkd : ed.val ≤ kd.val) (hkdi : kd.val < i.val)
+    (A S : Monomial (HeckeGen n)) (c' : ℝ) :
+    ∀ q ∈ (([] : List (Monomial (HeckeGen n) × ℝ)) ++
+        [(A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c')]).map
+        Prod.fst,
+      q ≠ A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)) := by
+  intro q hq
+  simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+    List.not_mem_nil, or_false] at hq
+  subst hq
+  obtain ⟨T, hT⟩ := descWord_head hedkd
+  obtain ⟨Dt, hDt⟩ := descWord_head hji
+  have hgen : (⟨kd⟩ : HeckeGen n) ≠ ⟨i⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  rw [hT, hDt]
+  simp only [List.cons_append]
+  exact append_cons_ne hgen
+
+/-- The bystander is not any word the pass's transport visits. Each such word
+starts, after `A`, with a letter of the run above `k`, and every one of those is
+more than one above `σ_kd`. -/
+theorem pass_hcol {n : ℕ} {i j₁ j₂ k kd ed : Fin n} (hedkd : ed.val ≤ kd.val)
+    (A S Y : Monomial (HeckeGen n)) (c' : ℝ)
+    (hY : ∀ y ∈ Y, kd.val + 1 < y.index.val) :
+    ∀ u v : Monomial (HeckeGen n), u ++ v = Y → u ≠ [] →
+      ∀ q ∈ (([] : List (Monomial (HeckeGen n) × ℝ)) ++
+          [(A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c')]).map
+          Prod.fst,
+        q ≠ A ++ (u ++ ((⟨kd⟩ : HeckeGen n) ::
+          (v ++ (((⟨k⟩ : HeckeGen n) :: descWord kd j₁) ++ (descWord kd j₂ ++ S))))) := by
+  intro u v huv hu q hq
+  simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+    List.not_mem_nil, or_false] at hq
+  subst hq
+  obtain ⟨y₀, u', rfl⟩ := List.exists_cons_of_ne_nil hu
+  have hy₀ : y₀ ∈ Y := by rw [← huv]; simp
+  have hlt := hY y₀ hy₀
+  have hgen : (⟨kd⟩ : HeckeGen n) ≠ y₀ := by
+    intro hcon
+    have h2 : y₀.index = kd := by rw [← hcon]
+    rw [h2] at hlt
+    omega
+  obtain ⟨T, hT⟩ := descWord_head hedkd
+  rw [hT]
+  simp only [List.cons_append]
+  exact append_cons_ne hgen
+
+/-- **The loop, with the S-polynomial's other term riding along.** Same walk as
+`loop`, but the element carries a second term throughout — the word the loop is
+heading for, which is what the corner's two reductions meet at. Because the
+bystander does not move (see above), it is one fixed word and the two
+distinctness obligations of each pass are discharged uniformly by `pass_hne` and
+`pass_hcol`. -/
+theorem loopTwo (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed : Fin n}
+    (hed : ed.val + 1 = e.val) (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ e.val)
+    (hji : j₁.val ≤ i.val) (S : Monomial (HeckeGen n)) (c c' : ℝ) (hc : c ≠ 0) :
+    ∀ (m : ℕ) (k kd : Fin n) (A Y : Monomial (HeckeGen n)),
+      kd.val + 1 = k.val → k.val = e.val + m → k.val ≤ i.val →
+      (∀ y ∈ Y, kd.val + 1 < y.index.val) →
+      descWord i j₁ = Y ++ ((⟨k⟩ : HeckeGen n) :: descWord kd j₁) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          [(A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c),
+           (A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c')])
+        (AlgElement.ofTerms
+          [(A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c),
+           (A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c')]) := by
+  intro m
+  induction m with
+  | zero =>
+    intro k kd A Y hk hke hki hY hD
+    have hj₂k : j₂.val ≤ k.val := by omega
+    have hkdi : kd.val < i.val := by omega
+    have hkde : kd = ed := Fin.ext (by omega)
+    subst hkde
+    have hstep := blockStep hn hp hk hj₁ hj₂k Y A S hY hD c hc []
+      [(A ++ (descWord kd kd ++ (descWord i j₁ ++ (descWord kd j₂ ++ S))), c')]
+      (pass_hne hji (le_refl _) hkdi A S c')
+      (pass_hcol (le_refl _) A S Y c' hY)
+    simpa [descWord_self] using hstep
+  | succ m ih =>
+    intro k kd A Y hk hke hki hY hD
+    have hkdlt : kd.val < n := kd.isLt
+    have hkdlow : ed.val ≤ kd.val := by omega
+    have hkdpos : 0 < kd.val := by omega
+    have hj₁kd : j₁.val ≤ kd.val := by omega
+    have hj₂k : j₂.val ≤ k.val := by omega
+    have hkdi : kd.val < i.val := by omega
+    refine MultiStepReduction.trans
+      (blockStep hn hp hk hj₁kd hj₂k Y A S hY hD c hc []
+        [(A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c')]
+        (pass_hne hji hkdlow hkdi A S c')
+        (pass_hcol hkdlow A S Y c' hY)) ?_
+    obtain ⟨kdd, hkdd⟩ : ∃ kdd : Fin n, kdd.val + 1 = kd.val :=
+      ⟨⟨kd.val - 1, by omega⟩, by show kd.val - 1 + 1 = kd.val; omega⟩
+    have hsplit : descWord kd j₁ = (⟨kd⟩ : HeckeGen n) :: descWord kdd j₁ :=
+      descWord_cons_le hkdd (by omega)
+    have hrun : descWord kd ed = (⟨kd⟩ : HeckeGen n) :: descWord kdd ed :=
+      descWord_cons_le hkdd (by omega)
+    have hnext := ih kd kdd (A ++ [(⟨kd⟩ : HeckeGen n)]) (Y ++ [(⟨k⟩ : HeckeGen n)])
+      hkdd (by omega) (by omega)
+      (by
+        intro y hy
+        rcases List.mem_append.mp hy with hy | hy
+        · have := hY y hy
+          omega
+        · have hyk : y = (⟨k⟩ : HeckeGen n) := by simpa using hy
+          subst hyk
+          show kdd.val + 1 < k.val
+          omega)
+      (by rw [hD, hsplit]; simp)
+    rw [hrun]
+    simpa using hnext
+
+/-- `loopTwo` entered at the top, where `Y` is empty. This is the shape in which
+each of the corner's two terms is actually reduced: `A` is what already sits to
+the left of the long run, `S` what trails it (empty for the first term, `[σᵢ]` for
+the second), and the second listed term is the word they meet at. -/
+theorem loopTwoFromTop (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed idd : Fin n}
+    (m : ℕ) (hed : ed.val + 1 = e.val) (hj₁ : j₁.val ≤ ed.val)
+    (hj₂ : j₂.val ≤ e.val) (hid : idd.val + 1 = i.val) (hm : i.val = e.val + m)
+    (A S : Monomial (HeckeGen n)) (c c' : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(A ++ (descWord i j₁ ++ (descWord i j₂ ++ S)), c),
+         (A ++ (descWord idd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c')])
+      (AlgElement.ofTerms
+        [(A ++ (descWord idd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c),
+         (A ++ (descWord idd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c')]) :=
+  loopTwo hn hp hed hj₁ hj₂ (by omega) S c c' hc m i idd A [] hid hm (le_refl _)
+    (by simp) (by rw [descWord_cons_le hid (by omega)]; simp)
 
 end CornerBlock
 
