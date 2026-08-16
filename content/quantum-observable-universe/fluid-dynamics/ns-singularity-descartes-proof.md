@@ -31,4 +31,4 @@ Non-degenerate Levi form implies bounded core aspect ratio,
 which gives the [vorticity lower
 bound](#prop:vorticity-lower-bound)
 $\|\omega\|_\infty \geq c/(T^*-t)$, which gives
-[BKM divergence](#thm:q-bkm) $\int \|\omega\|_\inftydt = \infty$.
+[BKM divergence](#thm:q-bkm) $\int \|\omega\|_\infty \, dt = \infty$.
