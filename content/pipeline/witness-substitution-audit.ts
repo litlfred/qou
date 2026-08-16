@@ -432,6 +432,36 @@ const WITNESS_FIXTURE = JSON.stringify({
   ],
 });
 
+/** How much is a `--suggest` proposal actually worth?
+ *
+ * Coverage alone is nearly worthless: on a single-literal block, ANY witness
+ * that happens to contain that decimal "covers" it. `def:jet-stratified-reduction`
+ * quotes `1.1097`, which 29 witnesses carry, and the greedy cover prints one of
+ * them as though it were the source.
+ *
+ * Two signals separate provenance from arithmetic, in descending strength:
+ *   CONFIDENT — the witness is NAMED AFTER the block. Not a coincidence.
+ *   UNIQUE    — every literal has exactly one candidate witness in the corpus.
+ *               Strong, but NOT proof: two blocks can independently quote the
+ *               same rare constant, and `rem:q-beta-gamma-gamma-canonical-derivation`
+ *               is UNIQUE against a helium-4 chi matrix it has nothing to do
+ *               with. Subject-matter coherence is the remaining human check.
+ *   AMBIGUOUS — everything else. Not actionable: declaring one attaches a
+ *               source that merely contains the number, and it passes this
+ *               axis forever after, because the axis only checks containment.
+ */
+export function coverageTag(
+  covered: number,
+  total: number,
+  named: boolean,
+  worstCand: number,
+): "CONFIDENT" | "UNIQUE" | "AMBIGUOUS" | "PARTIAL" | "ORPHAN" {
+  if (covered === 0) return "ORPHAN";
+  if (covered < total) return "PARTIAL";
+  if (named) return "CONFIDENT";
+  return worstCand === 1 ? "UNIQUE" : "AMBIGUOUS";
+}
+
 function selftest(): number {
   const V = witnessDecimalsFromText(WITNESS_FIXTURE);
 
@@ -518,10 +548,36 @@ function selftest(): number {
   console.log(`  ${twoWitness ? "ok  " : "FAIL"}  a two-element witness array parses as two witnesses`);
   bad += twoWitness ? 0 : 1;
 
-  const total = matchCases.length + scopeCases.length + attributionCases.length + 2;
+  // `--suggest` triage. These exist because "151 fully coverable" read as a
+  // work queue when 138 of the 151 were arbitrary picks, and acting on it would
+  // have attached false provenance that this axis could never afterwards
+  // detect. The distinction is the whole value of the mode, so it gets tests.
+  const tagCases: Array<[string, ReturnType<typeof coverageTag>, ReturnType<typeof coverageTag>]> = [
+    ["a witness named after the block is CONFIDENT even if the literal is common",
+     coverageTag(1, 1, true, 57), "CONFIDENT"],
+    ["one literal, one candidate witness -> UNIQUE",
+     coverageTag(1, 1, false, 1), "UNIQUE"],
+    ["one literal, 29 candidate witnesses -> AMBIGUOUS, not coverable work",
+     coverageTag(1, 1, false, 29), "AMBIGUOUS"],
+    ["a single ambiguous literal poisons an otherwise unique block",
+     coverageTag(3, 3, false, 12), "AMBIGUOUS"],
+    ["partial coverage is PARTIAL regardless of candidate count",
+     coverageTag(1, 2, false, 1), "PARTIAL"],
+    ["nothing covered is ORPHAN",
+     coverageTag(0, 2, false, 0), "ORPHAN"],
+  ];
+  for (const [name, got, want] of tagCases) {
+    const ok = got === want;
+    bad += ok ? 0 : 1;
+    console.log(`  ${ok ? "ok  " : "FAIL"}  ${name}${ok ? "" : ` (got ${got}, want ${want})`}`);
+  }
+
+  const total = matchCases.length + scopeCases.length + attributionCases.length
+    + tagCases.length + 2;
   console.log(
     `selftest: ${total - bad}/${total}` +
-      (bad ? "" : " — sources a literal the witness carries, flags one it does not."),
+      (bad ? "" : " — sources a literal the witness carries, flags one it does not,"
+        + " and separates provenance from a decimal coincidence."),
   );
   return bad;
 }
@@ -688,6 +744,8 @@ function main(): number {
     let partial = 0;
     let orphan = 0;
     let confident = 0;
+    let uniqueSrc = 0;
+    let ambiguous = 0;
     for (const { block, findings } of failing) {
       if (!findings.some((f) => f.detector === "no-witness-declared")) continue;
       const lits = [...new Set(scopedLiterals(block.md).map((l) => l.lit))];
@@ -751,12 +809,31 @@ function main(): number {
       const rootOf = (w: string) =>
         w.split("/").pop()!.replace(/\.witness\.json$/, "");
       const named = chosen.find(([w]) => rootOf(w) === block.root);
-      const tag = covered === lits.length
-        ? (named ? "CONFIDENT" : "COVERED  ")
-        : covered === 0 ? "ORPHAN   " : "PARTIAL  ";
-      if (named) confident++;
+
+      // AMBIGUITY is the second non-coincidental signal, and without it the
+      // "fully coverable" count reads as a work queue when it is mostly noise.
+      // `def:jet-stratified-reduction` quotes one literal, `1.1097`, which
+      // occurs in 57 witnesses; the greedy cover above picks one of the 57 and
+      // prints it as though it were the source. Declaring that would attach
+      // FALSE PROVENANCE — and it would pass this axis forever after, because
+      // the axis only asks whether the declared witness CONTAINS the number.
+      //
+      // So report how many witnesses could have supplied each literal. One
+      // candidate is evidence; fifty-seven is a coin flip. `cover` already
+      // holds the candidate sets — the count was computed and thrown away.
+      const candCounts = lits
+        .filter((l) => cover.get(l)!.size > 0)
+        .map((l) => cover.get(l)!.size);
+      const worstCand = candCounts.length ? Math.max(...candCounts) : 0;
+      const verdict = coverageTag(covered, lits.length, !!named, worstCand);
+      const unique = verdict === "UNIQUE";
+      const tag = verdict.padEnd(9);
+      if (verdict === "CONFIDENT") confident++;
+      else if (unique) uniqueSrc++;
+      else if (verdict === "AMBIGUOUS") ambiguous++;
       console.log(
-        `  ${tag}  ${block.label || block.root}  (${covered}/${lits.length} literals)`,
+        `  ${tag}  ${block.label || block.root}  (${covered}/${lits.length} literals`
+        + `${worstCand > 1 ? `, up to ${worstCand} candidate witnesses` : ""})`,
       );
       for (const [w, n] of chosen)
         console.log(`             +${n} <- ${w}${rootOf(w) === block.root ? "   [named after the block]" : ""}`);
@@ -766,8 +843,14 @@ function main(): number {
         );
     }
     console.log(
-      `\n  ${fully} fully coverable by declaration (${confident} CONFIDENT — witness named after the block), `
-      + `${partial} partial, ${orphan} orphan`,
+      `\n  ${fully} fully coverable by declaration — but coverable is NOT a work queue:`
+      + `\n    ${confident} CONFIDENT  witness is named after the block (provenance, not arithmetic)`
+      + `\n    ${uniqueSrc} UNIQUE     every literal has exactly ONE candidate witness`
+      + `\n    ${ambiguous} AMBIGUOUS  some literal occurs in several witnesses; the cover picks one arbitrarily`
+      + `\n  ${partial} partial, ${orphan} orphan`
+      + `\n\n  Only the first two are actionable. Declaring an AMBIGUOUS block attaches a`
+      + `\n  source that merely happens to contain the number — and it passes this axis`
+      + `\n  permanently afterwards, because the axis only checks containment.`,
     );
   }
 

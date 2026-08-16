@@ -3,8 +3,9 @@
 title: 'AXIS: witness-substitution -- 217 blocks quote numbers no declared witness carries'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-10T03:43:44Z
-updated_at: 2026-08-10T03:43:44Z
+updated_at: 2026-08-16T10:38:28Z
 ---
 
 
@@ -312,3 +313,68 @@ extend name correspondence to the block's `script` slug and to directory
 proximity, which would likely promote more than one — but each promotion has to
 be justifiable the way this one was, on three signals rather than a shared
 decimal.
+
+
+---
+
+## 2026-08-16 — "151 fully coverable" was not a work queue. The real queue is 13.
+
+`--suggest` reported **151 fully coverable / 0 CONFIDENT**, which reads as 151
+blocks waiting to be declared. It is not. Coverage alone is nearly worthless on
+a single-literal block: *any* witness containing that decimal "covers" it.
+
+Measured on `def:jet-stratified-reduction`, which quotes one literal, `1.1097`:
+**29 witnesses carry it** under the axis's own matching rule. The greedy cover
+picked `higgs-h6-correction-probe.witness.json` — a Higgs probe, for a
+Gröbner-basis jet-reduction block — and printed it as though it were the source.
+
+**Declaring that would attach false provenance, and this axis could never
+afterwards detect it**, because the axis only asks whether the declared witness
+*contains* the number. A wrong declaration passes forever. That is the same
+shape as every other trap in this campaign: a check satisfiable by something
+other than the truth.
+
+### The fix: report ambiguity, which was computed and thrown away
+
+`cover` already held each literal's candidate set; only its *size* was unused.
+`--suggest` now buckets:
+
+```
+151 fully coverable by declaration — but coverable is NOT a work queue:
+    0 CONFIDENT  witness is named after the block (provenance, not arithmetic)
+   13 UNIQUE     every literal has exactly ONE candidate witness
+  138 AMBIGUOUS  some literal occurs in several witnesses; the cover picks one arbitrarily
+```
+
+**The actionable set is 13, not 151** — an 11.6x correction, and the same
+magnitude of error as the earlier "53 orphans -> 3".
+
+### UNIQUE is necessary, not sufficient — do not batch-declare the 13 either
+
+Uniqueness says the number is rare in the corpus, not that the block took it
+from there. Two blocks can independently quote the same rare constant. Of the 13:
+
+- **Coherent, worth declaring after a read:** four Q-value blocks
+  (`ex:qvalue-benchmark-table`, `rem:qvalue-derivation-chain`,
+  `rem:qvalue-observation`, `prf:spectral-decomposition-qvalue`) all resolve to
+  `sublemma-2-1-A-operator-extract-h9-pn.witness.json`; two Hausdorff blocks to
+  `A-operator-extract-h9-pp.witness.json`; `prf:crystal-isospin-degeneracy` to
+  `term7-alpha5-crystal-derivation.witness.json`; `rem:F3-eps6-leading-eq-neg-2b-cubed`
+  to `qbeta-ck-sseries-exact-rational.witness.json`.
+- **UNIQUE but subject-matter implausible — do NOT declare:**
+  `rem:q-beta-gamma-gamma-canonical-derivation` resolves to
+  `chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json`. Unique, and unrelated.
+  Also weak: `conj:n-v-bring-action` -> `binding-reeb-phase-decomposition`,
+  `rem:groebner-nf-computation` -> `joint-tower-sdp-rust`.
+
+So the remaining check is **subject-matter coherence**, which is judgement, not
+arithmetic — roughly 10 of 13 look declarable, and that is the honest queue.
+
+### Verification
+
+`coverageTag()` extracted as a pure function so the distinction is testable
+rather than buried in the `--suggest` branch. Selftest **23 -> 29**; the six new
+cases pin that a named witness stays CONFIDENT even when the literal is common,
+that one candidate is UNIQUE and 29 is AMBIGUOUS, and that a single ambiguous
+literal poisons an otherwise-unique block. Main axis unchanged at 213 failing —
+this is triage only.

@@ -1,10 +1,11 @@
 ---
 # qou-ft3p
 title: markov_trace_canonical.py is cited as a reproducer but emits no witness
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-15T20:40:26Z
-updated_at: 2026-08-15T20:40:26Z
+updated_at: 2026-08-16T10:38:28Z
 ---
 
 
@@ -77,3 +78,35 @@ suppress the later table rows, because `MARKER_WINDOW` is 400 characters and
 the check looks for the marker's OPENING within that span. Shortened the marker
 and moved the explanation into the prose rather than widening the window — the
 window is a deliberate scope line, not an accident.
+
+
+---
+
+## Summary of Changes (completed 2026-08-16)
+
+`computations/markov/markov_trace_canonical.py` is cited **by name** in
+`prf:categorical-mass-markov` as the way to reproduce its table, and emitted no
+witness — so the block had nothing to put in `computation.witness`, and its nine
+quoted values were traceable only by coincidence (they matched decimals in
+`alpha-k-jones-markov-h3` and `gram-matrix-dual`, neither of which the block
+cites). A script cited as authoritative while emitting nothing is unfalsifiable
+by the pipeline: the 1e-40 gate was real inside the file and invisible outside it.
+
+Done:
+- `WitnessBuilder("markov-trace-canonical", engine="sympy")`, emitting
+  `computations/markov/markov-trace-canonical.witness.json`, declared at
+  `categorical-mass-markov-proof.ts:16`.
+- Six prop-table assertions at 1e-40 — chosen over 1e-9 because at 50 dps a 1e-9
+  gate would pass both a convention flip (C vs D differ by 0.11 on z) and an f64
+  regression.
+- `raise SystemExit(1 if failures else 0)`. It previously printed a tick column
+  and exited 0 regardless, so a convention flip would have shown as a row of
+  crosses that nothing acted on.
+- Fixed a stale annotation while there: the figure-8 line read *"prop says
+  ~0.182"*, which is the **convention-C** column of that same table. Under D the
+  value is 0.280195642273. The annotation had stayed on C when the computation
+  moved to D — the exact stale-annotation failure the table documents.
+
+Verified: witness present (2481 bytes), declared in the block, producer carries
+builder + assertions + exit gate. `engine` is `sympy`, not `mpmath+sympy`, which
+`content_validate` rejected as outside the schema enum.
