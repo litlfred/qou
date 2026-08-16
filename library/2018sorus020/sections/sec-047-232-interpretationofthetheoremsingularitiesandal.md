@@ -7,7 +7,7 @@ section_number: 2.3.2
 pages: 58-65
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad"
+doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
 ---
 der module
 The aim of this section is to provide a geometric signiﬁcation to the length of the

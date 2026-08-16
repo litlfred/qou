@@ -7,7 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: Birkhoff-GeneralizedRiemannProblem-1913.pdf
 source_sha256: bd728603454b989b
-doc_brief: "American Academy of Arts & Sciences is collaborating with JSTOR to digitize, preserve and extend access to Proceedings of the American Academy of Arts and Sciences This content downloaded from — 49 se"
+doc_brief: "The Generalized Riemann Problem for Linear Differential Equations and the Allied — 49 sections: The Generalized Riemann Problem fo; Proceedings of the American Academ; 522"
 ---
 Problems for Linear Difference and q-Difference Equations  
 Author(s): George D. Birkhoff

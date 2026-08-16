@@ -7,7 +7,7 @@ section_number: null
 pages: 13-14
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
+doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
 ---
 [AMU] J.E. Andersen, G. Masbaum, K. Ueno: Topological quantum ﬁe ld theory and the Nielsen-Thurston
 classiﬁcation of M(0,4), Math. Proc. Cambridge Philos. Soc. 141 (20 06), no. 3, 477-488.

@@ -7,7 +7,7 @@ section_number: 5
 pages: 15-16
 source_pdf: sigma12-065.pdf
 source_sha256: a6e0e0da5cc5ff9b
-doc_brief: "Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr´ ıguez have provided the most detailed study of the curve thus far via a hyperbolic model."
+doc_brief: "Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5."
 ---
 5 Vector of Riemann constants
 We shall now calculate the vector of Riemann constants for Bring’s curve determining various

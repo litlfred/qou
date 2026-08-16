@@ -7,7 +7,7 @@ section_number: 3
 pages: 60-63
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "Steklov Mathematical Institute — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 K3(F ), i.e. the cokernel of the product map K1(F )⊗3→K3(F )) using the relative group
 K2 of projective line over F modulo two points and the solutions of the Bether-ansatz-li ke

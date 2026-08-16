@@ -7,7 +7,7 @@ section_number: 4
 pages: 36-42
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
-doc_brief: "L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
+doc_brief: "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
 ---
 We call generic q-Gevrey series a power series ˆf ∈ C[[x]] satisfying a
 q-diﬀerence equation ∆ ˆf ∈ C{x} for some analytic q-diﬀerence operator ∆

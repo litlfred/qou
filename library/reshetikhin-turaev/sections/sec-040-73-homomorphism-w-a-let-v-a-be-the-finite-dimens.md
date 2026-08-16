@@ -7,7 +7,7 @@ section_number: 7.3
 pages: 22-23
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 U = Uh~ with the highest weight. Let (Va) Y be the dual representation (3.2./). Put 
 ;~* = - wo()0, where wo is the element of the Well group of maximal length with 

@@ -7,7 +7,7 @@ section_number: 2
 pages: 3-5
 source_pdf: 4GEO-DEDI-REV.pdf
 source_sha256: e4d52947b71a3f37
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: ST ´EPHANE BASEILHAC1, RICCARDO B"
+doc_brief: "HAL Id: hal-01812027 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: ST ´EPHANE B"
 ---
 • The local representations are reducible, but more suited to perform the usual cut-and-paste
 operations of topological quantum ﬁeld theories. In this framework, it is natural to restrict

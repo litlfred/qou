@@ -7,7 +7,7 @@ section_number: 2
 pages: 3-6
 source_pdf: 0110001v3.pdf
 source_sha256: f30f603ac1c555e0
-doc_brief: "Published: 19 June 2003 A geometric interpretation of Milnor’s triple linking numbers Blake Mellor Paul Melvin — Milnor’s triple linking numbers of a link in the 3-sphere are interpreted"
+doc_brief: "A geometric interpretation of Milnor’s triple linking numbers Blake Mellor Paul Melvin — Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the"
 ---
 Fix three components Li, Lj, Lk of L, with δ the greatest common divisor
 of their pairwise linking numbers, and choose any associate d oriented Seifert

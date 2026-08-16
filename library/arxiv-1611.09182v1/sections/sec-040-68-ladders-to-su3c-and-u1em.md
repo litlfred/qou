@@ -7,7 +7,7 @@ section_number: 6.8
 pages: 58-61
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
+doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
 ---
 We will now ﬁnd a compact way of describing the generators of the MTIS symmetries,
 su(3) and u(1), and apply them to our minimal left ideals.

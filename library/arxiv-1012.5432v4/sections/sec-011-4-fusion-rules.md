@@ -7,7 +7,7 @@ section_number: 4
 pages: 32-36
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
-doc_brief: "arxiv-1012.5432v4 — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
+doc_brief: "quant-ph Towards Topological Quantum Computation? - — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 The fusion rules for A5 can be found in the following pages. Once again every particle is
 its own antiparticle. Note that, unlike in the S3 case, there are multiple ways of obtaining

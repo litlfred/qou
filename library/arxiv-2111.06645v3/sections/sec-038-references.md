@@ -7,7 +7,7 @@ section_number: null
 pages: 84-87
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C)"
+doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
 ---
 [1] Andersen J.E., Kashaev R., A TQFT from quantum Teichm¨ uller theory, Comm. Math. Phys. 330 (2014),
 887–934, arXiv:1109.6295.

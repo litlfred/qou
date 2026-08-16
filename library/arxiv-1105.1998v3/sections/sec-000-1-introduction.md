@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
-doc_brief: "We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity. We introduce the q-Borel transformation and the q-Laplace transformation following C."
+doc_brief: "A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
 ---
 In this paper, we show a connection formula of the Hahn–Exton q-Bessel function J (3)
 ν (x; q). At

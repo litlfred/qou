@@ -7,7 +7,7 @@ section_number: null
 pages: 3-4
 source_pdf: 0005296v1.pdf
 source_sha256: 1714653ecfdf01bc
-doc_brief: "λn(M )(t − 1)n ∈ Q[[t − 1]] for rational homology 3-sphere M . R.Lawrence [La] conjectured that λn(M ) ∈ — Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not"
+doc_brief: "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant ∗ — Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s"
 ---
 [RT] Reshetikhin, N.Yu., Turaev, V.G.: Invariants of 3-man ifolds via link polynomials
 and quantum groups, Invent. Math. 103 (1991), 547-597

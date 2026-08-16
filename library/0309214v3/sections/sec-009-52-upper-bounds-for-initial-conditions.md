@@ -7,7 +7,7 @@ section_number: 5.2
 pages: 18-19
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "School of Mathematics, Georgia Institute of Technology — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l"
+doc_brief: "The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q L ˆ — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its"
 ---
 In another direction, one may ask the following question: if a q –holonomic
 function satisﬁes a nontrivial recursion relation, it foll ows that it is uniquely

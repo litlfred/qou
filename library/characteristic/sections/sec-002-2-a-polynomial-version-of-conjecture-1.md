@@ -7,6 +7,6 @@ section_number: 2
 pages: 4-4
 source_pdf: characteristic.pdf
 source_sha256: 42bd31da2754488f
-doc_brief: "gure eight knots — The colored Jones function of a knot is a sequence of Laurent polynomials in one variable, whose nth term is the Jones polynomial of the knot colored with the n-dimensional"
+doc_brief: "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT STAVROS GAROUFALIDIS Dedicated to A. Casson on the occasion of his 60th birthday — The colored Jones function of a knot is a sequence of"
 ---
 

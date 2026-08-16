@@ -7,7 +7,7 @@ section_number: 3.1
 pages: 6-6
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
+doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
 ---
 modules, i.e. the set of dominant weights of sl2, is in bijection with the set of positive integers
 N. We ﬁx an integer l ≥ 1, called the level, and introduce the set Pl = {λ ∈ N |λ ≤l}. Given

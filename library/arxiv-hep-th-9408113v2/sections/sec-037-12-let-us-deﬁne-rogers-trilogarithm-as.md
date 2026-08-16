@@ -7,7 +7,7 @@ section_number: 12
 pages: 33-34
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "Steklov Mathematical Institute — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 L3(x) = Li 3(x)− log|x|L(x)− 1
 6 log2|x| log(1−x).

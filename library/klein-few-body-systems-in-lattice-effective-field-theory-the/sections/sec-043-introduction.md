@@ -7,7 +7,7 @@ section_number: null
 pages: 75-76
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Bonn, November 2018 — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
+doc_brief: "Few-Body Systems in Lattice Effective Field Theory Dissertation Erlangung des Doktorgrades (Dr. rer. nat.) Mathematisch-Naturwissenschaftlichen Fakultät Rheinischen Friedrich-Wilhelms-Universität Bonn"
 ---
 Lattice simulations based on the framework of eﬀective ﬁeld theory (EFT) have been used in the study
 of nuclear forces [116, 138], nuclear structure [34, 35, 108, 129, 139, 140], as well as scattering and

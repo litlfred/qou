@@ -7,7 +7,7 @@ section_number: null
 pages: 28-28
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sec"
 ---
 To define the analytic weight functions that drive the state-integral invariant, we
 now introduce an angle-deformed quantum dilogarithm Ψa,c derived from the primitive

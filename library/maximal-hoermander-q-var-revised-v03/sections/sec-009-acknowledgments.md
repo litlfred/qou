@@ -7,7 +7,7 @@ section_number: null
 pages: 36-43
 source_pdf: Maximal-Hoermander-q-Var-revised-v03.pdf
 source_sha256: 135332c04a1b3bb8
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 10 sections: Introduction; R-boundedness; Prel"
+doc_brief: "HAL Id: hal-04526930 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 10 sections: Introduction"
 ---
 The authors acknowledge ﬁnancial support through the research program ANR-18-CE40-0021
 (project HASCON). They also respectively acknowledge ﬁnancial support through the research

@@ -7,7 +7,7 @@ section_number: 4
 pages: 4-6
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "Steklov Mathematical Institute — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 There exist also the proofs of Coxeter’s relations based on L ewin’s single-variable ([Le4]
 and Theorem 1) and Ray’s multivariable ([Ray] and Propositi on E) functional equations.

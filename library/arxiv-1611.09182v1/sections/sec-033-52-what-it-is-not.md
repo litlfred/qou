@@ -7,7 +7,7 @@ section_number: 5.2
 pages: 43-43
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
+doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
 ---
 If the standard model is to be faulted for anything, that fault would lie almost exclusively
 in its incompleteness. The ﬁrst legitimate fracture in the standard model came with the

@@ -7,7 +7,7 @@ section_number: 2.3
 pages: 4-4
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 equivalent to a strict monoidal category C[] (cf. [Ma]). The objects of C[] are finite 
 sequences V1 ..... Vk (including the empty sequence 0) of objects of C. The 

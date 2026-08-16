@@ -7,7 +7,7 @@ section_number: 8.2
 pages: 71-76
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
+doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
 ---
 It turns out that there is a very eﬃcient way of describing the standard model’s fermions,
 which is helpful in understanding SU (5), Spin(10), Pati-Salam theories, and incidentally,

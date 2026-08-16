@@ -15,16 +15,19 @@
    "stamp_date": "24 Jun 2024"
   },
   "doi": "10.3842/SIGMA.2024.055",
-  "title": null,
-  "authors_raw": null,
-  "abstract": "We introduce an invariant of a hyperbolic knot which is a map \u03b17\u2192 \u03a6\u03b1(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C) representations of the fundamental group of the knot. These matrix invariants have a rich structure: (a) their (\u03c30,\u03c3 1) entry, where\u03c30 is the trivial and\u03c31 the geometric representation, is the power series expansion of the Kashaev invariant of the knot around the root of unity e 2\u03c0i\u03b1 as an element of the Habiro ring, and the remaining entries belong to generalized Habiro rings of number fields; (b) the first column is given by the perturbative power series of Dimofte\u2013Garoufalidis; (c) the columns of \u03a6 are fundamental solutions of a linear q-difference equation; (d) the matrix defines an SL 2(Z)-cocycle W\u03b3 in matrix-valued functions on Q that conjecturally extends to a smooth function on R and even to holomorphic functions on suitable complex cut planes, lifting the factorially divergent series \u03a6(h) to actual functions. The two invariants \u03a6 and W\u03b3 are related by a refined quantum modularity conjecture which we illustrate in detail for the three simplest hyperbolic knots, the 4 1, 5 2 and (\u22122, 3, 7) pretzel knots. This paper has two sequels, one giving a different realization of our invariant as a matrix of convergent q-series with integer coefficients and the other studying its Habiro-like arithmetic properties in more depth.",
+  "title": "Knots, Perturbative Series and Quantum Modularity",
+  "authors_raw": "Stavros GAROUFALIDIS a and Don ZAGIER bc",
+  "abstract": "We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C) representations of the fundamental group of the knot. These matrix invariants have a rich structure: (a) their (σ0,σ 1) entry, whereσ0 is the trivial andσ1 the geometric representation, is the power series expansion of the Kashaev invariant of the knot around the root of unity e 2πiα as an element of the Habiro ring, and the remaining entries belong to generalized Habiro rings of number fields; (b) the first column is given by the perturbative power series of Dimofte–Garoufalidis; (c) the columns of Φ are fundamental solutions of a linear q-difference equation; (d) the matrix defines an SL 2(Z)-cocycle Wγ in matrix-valued functions on Q that conjecturally extends to a smooth function on R and even to holomorphic functions on suitable complex cut planes, lifting the factorially divergent series Φ(h) to actual functions. The two invariants Φ and Wγ are related by a refined quantum modularity conjecture which we illustrate in detail for the three simplest hyperbolic knots, the 4 1, 5 2 and (−2, 3, 7) pretzel knots. This paper has two sequels, one giving a different realization of our invariant as a matrix of convergent q-series with integer coefficients and the other studying its Habiro-like arithmetic properties in more depth.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20240625010158Z",
    "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.25",
    "Title": ""
-  }
+  },
+  "title_lines": [
+   "Knots, Perturbative Series and Quantum Modularity"
+  ]
  },
  "toc": [
   {
@@ -211,7 +214,7 @@
   },
   {
    "level": 2,
-   "title": "Ideal triangulations and the Neumann\u2013Zagier equations",
+   "title": "Ideal triangulations and the Neumann–Zagier equations",
    "page": 47,
    "source": "outline",
    "number": "6.2"
@@ -596,7 +599,7 @@
   {
    "id": "sec-022-62-ideal-triangulations-and-the-neumannzagier-eq",
    "number": "6.2",
-   "title": "Ideal triangulations and the Neumann\u2013Zagier equations",
+   "title": "Ideal triangulations and the Neumann–Zagier equations",
    "level": 2,
    "page_start": 47,
    "page_end": 49,

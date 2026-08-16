@@ -7,7 +7,7 @@ section_number: 3.5
 pages: 18-19
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
+doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
 ---
 the hermitian invariant-action, mh(a,b )≡aba†,
 and quaternionic invariant-action, mq(a,b )≡ab~a.

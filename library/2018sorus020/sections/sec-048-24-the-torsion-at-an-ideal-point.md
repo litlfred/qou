@@ -7,7 +7,7 @@ section_number: 2.4
 pages: 65-66
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad"
+doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
 ---
 In this section we considerv∈ Y an ideal point. We denote byt an uniforming
 parameter of the valuation ringOv.

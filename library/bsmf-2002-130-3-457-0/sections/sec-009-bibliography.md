@@ -7,7 +7,7 @@ section_number: null
 pages: 34-35
 source_pdf: BSMF_2002__130_3_457_0.pdf
 source_sha256: 63f79235d0c13ba8
-doc_brief: "3 .W e c l a s s i f y h y p e r i d e a l p o l y h e d r a , u p t o i s o m e t r i e s o f 3 ,i nt e r m so ft h e i r combinatorial type and of their dihedral angles. Résumé (Polyèdres hyperidéau"
+doc_brief: "Bull. Soc. math. France 130 (3), 2002, p. 457–491 HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon — —A h y p e r i d e a l p o l y h e d r o n i s a n o n - c o m p a c t"
 ---
 [1] Alexandrow (A.D.) – Konvexe Polyeder ,A k a d e m i e - V e r l a g ,B e r l i n ,
 1958.

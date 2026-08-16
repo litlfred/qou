@@ -7,7 +7,7 @@ section_number: 0
 pages: 19-21
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad"
+doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
 ---
 Tr(A) Tr(B) + Tr(A−1) Tr(B) = 0, and the result follows.
 Theorem 1.1.8([Pro87]). The algebra given byB[Γ] =k[Yγ,γ∈ Γ]/(Ye−2,YγYδ−

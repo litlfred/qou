@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-8
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
-doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry ISSN 2073-8994 www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive"
+doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive, Rancho Palos V"
 ---
 There are eleven sections in this paper. The firs t six sections—not quite ha lf of the paper—develop 
 the subject model. Section 7 relate s and contrasts that model with th e Standard Model in terms of the 

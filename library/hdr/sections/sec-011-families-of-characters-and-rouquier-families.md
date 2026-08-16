@@ -7,7 +7,7 @@ section_number: null
 pages: 29-30
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
+doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
 ---
 Let ϕm :vC,j↦→qmC,j be a cyclotomic specialisation and let Hϕm(W ) be the corresponding cyclotomic
 Hecke algebra associated with W . How can we deﬁne families of characters for Hϕm(W )? We cannot

@@ -7,7 +7,7 @@ section_number: 7.1.6
 pages: 27-29
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "School of Mathematics, Georgia Institute of Technology — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l"
+doc_brief: "The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q L ˆ — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its"
 ---
 For x, y ∈ U homogeneous let us deﬁne
 [x, y]q := xy − v(|x|,|y|)yx.

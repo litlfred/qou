@@ -7,7 +7,7 @@ section_number: 4.3
 pages: 19-26
 source_pdf: 1172-2.pdf
 source_sha256: 390665341d5b7522
-doc_brief: "1 =x>O 2 1.1 $O$8$a$K. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 12 $*Ni$N8@MU. . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 2 $L^{2}$-torsion4 2.1 =tDj5A. . . . . . . . ."
+doc_brief: "$L^{2}$-torsion of 3-manifolds KLLn98O/* ( El5~9)6HBg3X) 9bBt8wI'( El5~9)6HBg3X) ?9F#9'G7\dagger( El5~Bg3X) 2000 G/7 7n 20 F| 1 =x>O 2 1.1 $O$8$a$K. . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ---
 <!$K$\rho_{2}$$K$D$$$FD4$Y$F$_$^$7$?!#$3$l$O72$\pi_{a}$$K!V@8@.85$x$$H$y$$O2D49$G
 $"$k!W$H$$$&4X78;R$rF~$l$?72>e$N$\pi_{a}$$NI=8=$r9M$($k;v$K$J$j$^$9!#

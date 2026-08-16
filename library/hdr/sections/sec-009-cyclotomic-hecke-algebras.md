@@ -7,7 +7,7 @@ section_number: null
 pages: 26-28
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
+doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
 ---
 Cyclotomic Hecke algebras generalise the notion of Iwahori–Hecke algebras to the case of complex reﬂec-
 tion groups. For any positive integer e we will write ζe for exp(2πi/e)∈ C.

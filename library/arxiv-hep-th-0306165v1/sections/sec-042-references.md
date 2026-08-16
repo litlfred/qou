@@ -7,7 +7,7 @@ section_number: null
 pages: 62-67
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
-doc_brief: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an infinite-d"
+doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
 ---
 [1] E. Witten, “Quantization Of Chern-Simons Gauge Theory W ith Complex Gauge
 Group,” Commun. Math. Phys. 137, 29 (1991).

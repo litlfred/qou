@@ -7,7 +7,7 @@ section_number: 4.6
 pages: 39-41
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
-doc_brief: "b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 field theories associated to 3-manifolds can be thought of as theories that describe boundary conditions"
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 As our ﬁnal example, we consider the theory associated to a manifold with a torus cusp
 boundary: the complement of the ﬁgure-eight knot M =S3\41.

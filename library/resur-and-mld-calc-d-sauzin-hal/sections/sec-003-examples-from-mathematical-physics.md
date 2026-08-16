@@ -7,7 +7,7 @@ section_number: null
 pages: 9-11
 source_pdf: Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf
 source_sha256: b33f24cc76102f33
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 9 sections: Introduction; Alien operators. Ali"
+doc_brief: "HAL Id: hal-04253203 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 9 sections: Introduction"
 ---
 In [GK21], the logarithm of Faddeev’s quantum dilog-
 arithm Φ b(x) (a special function that plays a key

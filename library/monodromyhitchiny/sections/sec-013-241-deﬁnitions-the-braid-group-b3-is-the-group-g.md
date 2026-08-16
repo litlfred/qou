@@ -7,7 +7,7 @@ section_number: 2.4.1
 pages: 5-5
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
+doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
 ---
 one relation
 g1g2g1 =g2g1g2.

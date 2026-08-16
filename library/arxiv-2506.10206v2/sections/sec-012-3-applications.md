@@ -7,7 +7,7 @@ section_number: 3
 pages: 7-7
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
-doc_brief: "5), and Q(√−7) — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open"
+doc_brief: "Analytic dilogarithm identities Cetin Hakimoglu-Brown — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured"
 ---
 Using Theorem 1, we derive evaluations for accelerated 4F3-series and dilogarithm identities,
 as below.

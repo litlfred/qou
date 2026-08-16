@@ -7,7 +7,7 @@ section_number: 2.2.3
 pages: 51-54
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad"
+doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
 ---
 We give a relation between the torsion form as we deﬁned it above and the previous
 work of J.Porti and then J.Dubois in [Por97, Dub06, DHY09]. As Dubois computed

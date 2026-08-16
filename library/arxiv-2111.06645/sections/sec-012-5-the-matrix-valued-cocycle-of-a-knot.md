@@ -7,7 +7,7 @@ section_number: 5
 pages: 21-22
 source_pdf: 2304.09377v2.pdf
 source_sha256: 76ae6c6058f4a9f9
-doc_brief: "We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state integral of a knot complement with"
+doc_brief: "Knots and Their Related q-Series — We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state"
 ---
 In this section, we extend the observations of the previous sections to matrix-valued analytic
 functions which naturally give rise to a cocycle on on the set of matrix-valued piece-wise analytic

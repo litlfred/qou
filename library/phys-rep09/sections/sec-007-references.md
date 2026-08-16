@@ -7,7 +7,7 @@ section_number: null
 pages: 85-88
 source_pdf: phys-rep09.pdf
 source_sha256: cd345d3df9358efc
-doc_brief: "TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗ aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeValencia,E-46022Valencia,Spain bDepartamentdeMatem"
+doc_brief: "PhysicsReports470(2009)151–238 PhysicsReports TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗ aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeVale"
 ---
 [1] W.Abikoff,J.S.Birman,K.Kuiken(Eds.),TheMathematicalLegacyofWilhelmMagnus.Groups,GeometryandSpecialFunctions,American
 MathematicalSociety,1994.

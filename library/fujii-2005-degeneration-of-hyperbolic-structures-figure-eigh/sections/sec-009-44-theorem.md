@@ -7,7 +7,7 @@ section_number: 4.4
 pages: 9-10
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
-doc_brief: "Michihiko Fujii 1. Introduction — 12 sections: Introduction; Deformation of hyperbolic structur; A birational map from the deformat"
+doc_brief: "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343–354 Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve Michihiko Fujii — 12 sectio"
 ---
 Summerizing the results obtained above, we have the following theorem.
 Theorem. Let K be the ﬁgure-eight knot in the 3-dimensional sphere

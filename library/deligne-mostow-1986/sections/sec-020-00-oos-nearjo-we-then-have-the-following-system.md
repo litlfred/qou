@@ -7,7 +7,7 @@ section_number: 00
 pages: 50-64
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
-doc_brief: "deligne-mostow-1986 — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
+doc_brief: "PUBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 on the choice of a representative d{G) in each coset G:
 a) the jy{d{C)) —^o(^(C)), for C not the coset of a, b or c\

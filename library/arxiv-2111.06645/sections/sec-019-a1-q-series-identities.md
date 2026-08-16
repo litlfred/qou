@@ -7,7 +7,7 @@ section_number: null
 pages: 26-27
 source_pdf: 2304.09377v2.pdf
 source_sha256: 76ae6c6058f4a9f9
-doc_brief: "We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state integral of a knot complement with"
+doc_brief: "Knots and Their Related q-Series — We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state"
 ---
 We begin by giving the proof of the two identities of equation (2.6), as communicated to us by
 Sander Zwegers. We will use the identity (A.17) and

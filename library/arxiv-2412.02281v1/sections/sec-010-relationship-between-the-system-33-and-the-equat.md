@@ -7,7 +7,7 @@ section_number: null
 pages: 14-14
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
-doc_brief: "u + A — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1, 0;b1,...,b n−1;q,z ) by using the q-Borel resummation."
+doc_brief: "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1"
 ---
 The computation of the connection matrix and q-Stokes matrix of (33) can be transformed into the connectio n
 problem of the equation (5). In this subsection, we clarify t he relationship between the system (33) and the

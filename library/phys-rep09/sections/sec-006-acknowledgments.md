@@ -7,7 +7,7 @@ section_number: null
 pages: 84-85
 source_pdf: phys-rep09.pdf
 source_sha256: cd345d3df9358efc
-doc_brief: "TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗ aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeValencia,E-46022Valencia,Spain bDepartamentdeMatem"
+doc_brief: "PhysicsReports470(2009)151–238 PhysicsReports TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗ aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeVale"
 ---
 Oneofus(J.A.O)wasintroducedtothefieldofMagnusexpansionbyProf.SilvioKlarsfeld(Orsay)towhomwealso
 acknowledgehiscontinuousinterestinourwork.EncouragingcommentsbyProf.A.J.Dragt(Maryland)inearlystagesof

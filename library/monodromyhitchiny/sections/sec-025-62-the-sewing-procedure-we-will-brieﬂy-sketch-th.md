@@ -7,7 +7,7 @@ section_number: 6.2
 pages: 10-11
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
+doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
 ---
 phism and give some of its properties (for the details see [TUY] or [U]).
 We consider two versal families ~F and FR parameterized by the base varieties B and BR as in

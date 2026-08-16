@@ -7,7 +7,7 @@ section_number: 7.3
 pages: 65-66
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
+doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
 ---
 Now that we have constructed a minimal right ideal, we would like to see how it transforms
 under the MTIS symmetries for this Cliﬀord algebra, as deﬁned in Section 6.7.

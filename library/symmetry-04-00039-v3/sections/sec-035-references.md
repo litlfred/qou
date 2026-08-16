@@ -7,7 +7,7 @@ section_number: null
 pages: 76-77
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
-doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry ISSN 2073-8994 www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive"
+doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive, Rancho Palos V"
 ---
 1. Avrin, J.S. A Visualizable Repres entation of the Elementary Particles. J. Knot Theory Ramif.  
 2005, 14, 131–176. 

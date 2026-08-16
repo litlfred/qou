@@ -7,7 +7,7 @@ section_number: 2.1
 pages: 11-13
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
+doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
 ---
 Suppose for a moment that nature were represented by an algebra, A. We will start, then,
 simply with an unevaluated algebraic expression. Consider for example

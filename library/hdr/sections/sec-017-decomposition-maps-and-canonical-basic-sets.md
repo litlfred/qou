@@ -7,7 +7,7 @@ section_number: null
 pages: 36-38
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
+doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
 ---
 A few of the results in this section have been brieﬂy discussed in§3.4. They are repeated here for reasons
 of completeness.

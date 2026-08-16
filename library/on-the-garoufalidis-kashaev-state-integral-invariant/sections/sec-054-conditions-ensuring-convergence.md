@@ -7,7 +7,7 @@ section_number: null
 pages: 55-55
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sec"
 ---
 From Lemma 2, the function Ψa,c is a tempered distribution on A under:
 0< ˙a, ˙b, ˙c< 1, ˙a + ˙b + ˙c = 1.

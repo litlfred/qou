@@ -7,7 +7,7 @@ section_number: null
 pages: 1-9
 source_pdf: 0407052v1.pdf
 source_sha256: 4624ea2fb4d318ad
-doc_brief: "where lP is the Planck length and A is the black hole horizon area. According to the common belief, the entropy is always connected with th e logarithm of the number of microscopic states realizing a"
+doc_brief: "Black hole entropy in Loop Quantum Gravity Krzysztof A. Meissner — We calculate the black hole entropy in Loop Quantum Gravity a s a function of the horizon area and provide the exact formula fo r"
 ---
 We calculate the black hole entropy in Loop Quantum Gravity a s a
 function of the horizon area and provide the exact formula fo r the

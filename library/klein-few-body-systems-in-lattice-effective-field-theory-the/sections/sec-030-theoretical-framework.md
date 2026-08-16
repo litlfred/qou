@@ -7,7 +7,7 @@ section_number: null
 pages: 57-63
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Bonn, November 2018 — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
+doc_brief: "Few-Body Systems in Lattice Effective Field Theory Dissertation Erlangung des Doktorgrades (Dr. rer. nat.) Mathematisch-Naturwissenschaftlichen Fakultät Rheinischen Friedrich-Wilhelms-Universität Bonn"
 ---
 In the two-body sector we solve the LO non-pertubatively and we include the NLO and N2LO corrections
 perturbatively. For the free part of the Hamiltonian, we use anO(a4)-improved version

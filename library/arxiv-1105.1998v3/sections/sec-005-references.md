@@ -7,7 +7,7 @@ section_number: null
 pages: 11-11
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
-doc_brief: "We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity. We introduce the q-Borel transformation and the q-Laplace transformation following C."
+doc_brief: "A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
 ---
 [1] Birkhoff G.D., The generalized Riemann problem for line ar differential equations and the allied problems
 for linear difference and q-difference equations, Proc. Amer. Acad. 49 (1913), 521–568.

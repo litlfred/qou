@@ -7,7 +7,7 @@ section_number: 4.4
 pages: 11-13
 source_pdf: 1011.1343v1.pdf
 source_sha256: 7d50e5e28e695191
-doc_brief: "Institut für Kernphysik, Institute for Advanced Simulatio n and JCHP — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
+doc_brief: "Chiral symmetry, nuclear forces and all that Ulf-G. Meißner — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
 ---
 As told in section 1, I started my career calculating meson-e xchange currents based on the
 method of unitary transformations. It is quite a nice turn of events that in chiral nuclear

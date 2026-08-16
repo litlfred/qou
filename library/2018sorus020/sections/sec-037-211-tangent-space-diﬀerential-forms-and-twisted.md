@@ -7,7 +7,7 @@ section_number: 2.1.1
 pages: 48-50
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad"
+doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
 ---
 logy
 The results of this section can be found in [Mar15]. It’s a well-known result [LM85,

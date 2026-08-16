@@ -7,7 +7,7 @@ section_number: 2.1
 pages: 8-11
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
-doc_brief: "b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 field theories associated to 3-manifolds can be thought of as theories that describe boundary conditions"
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 ated by Thurston [ 6]. More precisely, we wish to build 3-manifolds that support irreducible
 ﬂat SL(2, C) connectionsA. For this purpose, it is often convenient to replace ﬂat SL(2, C)

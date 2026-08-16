@@ -7,7 +7,7 @@ section_number: 7.2
 pages: 35-37
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
-doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry ISSN 2073-8994 www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive"
+doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive, Rancho Palos V"
 ---
 For example, consider the creation of delta par ticles by the excitation of nucleons operated upon by 
 pions (or conversely, delta decay into  nucleons) as summarized in Figure 36 ( cf. [1]). This figure is 

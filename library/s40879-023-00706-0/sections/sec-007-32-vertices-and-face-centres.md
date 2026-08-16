@@ -7,7 +7,7 @@ section_number: 3.2
 pages: 22-23
 source_pdf: s40879-023-00706-0.pdf
 source_sha256: 4c5af312d2e5d6a7
-doc_brief: "RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+doc_brief: "European Journal of Mathematics (2024) 10:3 RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
 ---
 Using [8, Figure 2] we are able to link the Petrie polygon to the R&R model of the
 curve, and this gives us a concrete expression for the remaining geometric points.

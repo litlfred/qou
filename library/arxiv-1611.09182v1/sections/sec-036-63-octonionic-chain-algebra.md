@@ -7,7 +7,7 @@ section_number: 6.3
 pages: 50-53
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
+doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
 ---
 As a non-associative algebra, the octonions can at times seem temperamental. Equations
 involving this algebra can quickly become unwieldy, due to the need to repeatedly specify

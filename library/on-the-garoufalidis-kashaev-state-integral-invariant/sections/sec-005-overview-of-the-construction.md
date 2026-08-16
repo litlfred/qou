@@ -7,7 +7,7 @@ section_number: null
 pages: 12-12
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sec"
 ---
 The construction proceeds by associating combinatorial and algebraic data to a
 triangulated 3-manifold M: In the following F denotes a local field (see 2.4), F× =

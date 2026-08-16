@@ -7,7 +7,7 @@ section_number: 1
 pages: 8-9
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
-doc_brief: "L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
+doc_brief: "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
 ---
 The series
 Eq(x) =

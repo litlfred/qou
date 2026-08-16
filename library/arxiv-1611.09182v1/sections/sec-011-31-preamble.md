@@ -7,7 +7,7 @@ section_number: 3.1
 pages: 16-17
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
+doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
 ---
 A signiﬁcant challenge within causal set programs has been to explain the existence of
 3+1 dimensions. That is, any causal set chosen at random is highly unlikely to have this

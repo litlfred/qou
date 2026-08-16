@@ -7,7 +7,7 @@ section_number: 6.1
 pages: 20-22
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "School of Mathematics, Georgia Institute of Technology — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l"
+doc_brief: "The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q L ˆ — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its"
 ---
 knots
 The twist knots Kp for integer p are shown in Figure 2. Their planar projec-

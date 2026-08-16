@@ -203,6 +203,125 @@
   "1172-5": {
    "band": "low",
    "why": "The RIMS scan is JIS-encoded. The readable part is 'OPTIMISTIC CALCULATIONS ABOUT THE WITTEN-RESHETIKHIN-TURAEV INVARIANTS OF' — the title is cut mid-phrase and its remainder is mojibake, so it cannot be completed from the document."
+  },
+  "arxiv-1105.1998v3": {
+   "title": "A Connection Formula of the Hahn-Exton q-Bessel Function",
+   "authors": [
+    {
+     "family": "Morita",
+     "given": "Takeshi"
+    }
+   ],
+   "id": "morita2011",
+   "why": "Byline on its own line in title_lines; the producer could not drop it because authors_raw was occupied by the affiliation rather than left empty."
+  },
+  "arxiv-1911.04486v4": {
+   "title": "Knots and the Maxwell Equations",
+   "authors": [
+    {
+     "family": "Vancea",
+     "given": "Ion V."
+    }
+   ],
+   "id": "vancea2019",
+   "why": "Byline on its own line in title_lines; the producer could not drop it because authors_raw was occupied by the affiliation rather than left empty."
+  },
+  "arxiv-1912.13486v2": {
+   "title": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
+   "authors": [
+    {
+     "family": "Chung",
+     "given": "Hee-Joong"
+    }
+   ],
+   "id": "chung2019",
+   "why": "Byline on its own line in title_lines; the producer could not drop it because authors_raw was occupied by the affiliation rather than left empty. The parsed author was 'Sciences', out of 'Yau Mathematical Sciences Center'."
+  },
+  "arxiv-2410.14661v1": {
+   "title": "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot",
+   "why": "Title spans four lines of title_lines and was truncated at the first. Reassembled from those lines."
+  },
+  "arxiv-alg-geom-9705010v1": {
+   "title": "Seiberg-Witten Integrable Systems",
+   "authors": [
+    {
+     "family": "Donagi",
+     "given": "Ron Y."
+    }
+   ],
+   "id": "donagi1997",
+   "why": "title_lines runs title, byline, then the table of contents; everything from 'Contents' on was being appended to the title."
+  },
+  "arxiv-hep-th-0306165v1": {
+   "title": "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial",
+   "why": "The title's continuation ('Chern-Simons Theory, And' ...) landed in authors_raw. Reassembled; the closing phrase is taken from the paper's own abstract, which names the A-polynomial as its subject."
+  },
+  "arxiv-math-9907032v1": {
+   "title": "Combinatorial optimization in geometry",
+   "authors": [
+    {
+     "family": "Rivin",
+     "given": "Igor"
+    }
+   ],
+   "id": "rivin1999",
+   "why": "A trailing footnote marker rendered as ' 1' was part of the title line; the byline sat in authors_raw ahead of the affiliation."
+  },
+  "arxiv-q-alg-9608020v2": {
+   "title": "Shifted Jack polynomials, binomial formula, and applications",
+   "why": "Title split across the title line and authors_raw ('FORMULA, AND APPLICATIONS'). Reassembled from both."
+  },
+  "arxiv-math-0603217v3": {
+   "title": "A version of the volume conjecture",
+   "authors": [
+    {
+     "family": "Murakami",
+     "given": "Hitoshi"
+    }
+   ],
+   "id": "murakami2006",
+   "why": "title_lines is ['A VERSION OF THE VOLUME CONJECTURE', 'HITOSHI MURAKAMI'] — title then byline. authors_raw held the opening sentence of the paper, from which the parser took 'Yokota', who is cited in that sentence rather than being the author."
+  },
+  "bsmf-2002-130-3-457-0": {
+   "title": "Hyperideal polyhedra in hyperbolic 3-space",
+   "authors": [
+    {
+     "family": "Bao",
+     "given": "Xiliang"
+    },
+    {
+     "family": "Bonahon",
+     "given": "Francis"
+    }
+   ],
+   "id": "bao-bonahon2002",
+   "why": "title_lines is two masthead lines, then the title, then 'by Xiliang Bao & Francis Bonahon'. Earlier banded as mojibake because the letter-spaced masthead read as low-alphabetic."
+  },
+  "ds15v1-2008": {
+   "title": "Rogers-Ramanujan-Slater Type Identities",
+   "authors": [
+    {
+     "family": "McLaughlin",
+     "given": "James"
+    }
+   ],
+   "id": "mclaughlin2008",
+   "why": "Byline on its own line; surname printed as 'Mc Laughlin' with a kerning space."
+  },
+  "physrevd108106023": {
+   "title": "Knot-quiver correspondence for double twist knots",
+   "authors": [
+    {
+     "family": "Singh",
+     "given": "Vivek Kumar"
+    }
+   ],
+   "id": "singh-physrevd108106023",
+   "why": "Byline on its own line, with a trailing footnote asterisk. Only the first author is recorded — the rest of the byline is not in the extracted front matter."
+  },
+  "1172-2": {
+   "title": "L^2-torsion of 3-manifolds",
+   "why": "The RIMS scan is JIS-encoded; the title line survives as TeX ('$L^{2}$-torsion of 3-manifolds') and everything after it is mojibake. Superscript written as ^2."
   }
  }
 }

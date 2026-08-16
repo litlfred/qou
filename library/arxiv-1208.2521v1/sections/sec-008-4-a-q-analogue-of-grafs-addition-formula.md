@@ -7,7 +7,7 @@ section_number: 4
 pages: 10-12
 source_pdf: 1208.2521v1.pdf
 source_sha256: 8d0281aa84043865
-doc_brief: "1. Introduction Several possible q-analogues of the Bessel function (1.1) Jα (x) := (−1)k (x/ 2)α +2k k! Γ( α + k + 1) have been considered in the literature. Best known are two re lated q-Bessel func"
+doc_brief: "ON q-ANALOGUES OF THE FOURIER — For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H."
 ---
 In this section we will generalize the considerations which led to the orthogonality
 relations in Proposition 2.6. The resulting formula will tu rn out to be a q-analogue

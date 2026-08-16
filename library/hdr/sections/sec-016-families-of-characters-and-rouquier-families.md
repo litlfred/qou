@@ -7,7 +7,7 @@ section_number: null
 pages: 35-36
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
+doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
 ---
 The Rouquier families for cyclotomic Hecke algebras associated with the complex reﬂection group
 G(l, 1,n ), that is, cyclotomic Ariki–Koike algebras, have been ﬁrst determined by Brou´ e and Kim [BrKi],

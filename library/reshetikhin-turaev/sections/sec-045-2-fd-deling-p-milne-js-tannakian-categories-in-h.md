@@ -7,7 +7,7 @@ section_number: 2
 pages: 25-25
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 varieties. Lecture Notes in Mathematics, vol. 900. Berlin, Heidelberg, New York: Springer 
 1982 

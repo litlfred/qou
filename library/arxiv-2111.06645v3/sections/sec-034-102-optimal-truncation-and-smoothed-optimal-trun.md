@@ -7,7 +7,7 @@ section_number: 10.2
 pages: 74-75
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C)"
+doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
 ---
 One of the main numerical aspects concerns smoothed optimal truncation, which was originally
 an appendix to an earlier draft of this paper but has now been relegated to a planned independent

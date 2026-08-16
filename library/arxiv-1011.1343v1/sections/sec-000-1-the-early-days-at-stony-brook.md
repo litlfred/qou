@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: 1011.1343v1.pdf
 source_sha256: 7d50e5e28e695191
-doc_brief: "Institut für Kernphysik, Institute for Advanced Simulatio n and JCHP — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
+doc_brief: "Chiral symmetry, nuclear forces and all that Ulf-G. Meißner — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
 ---
 I ﬁrst met Gerry on the occasion of the Erice school in 1981, wh ere he and Mannque
 Rho were giving quite interesting lectures on the chiral bag model and related issues. At

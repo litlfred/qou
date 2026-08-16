@@ -7,7 +7,7 @@ section_number: 5
 pages: 8-9
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
+doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
 ---
 We denote byρl the restriction of the monodromy representation ~ρl to the subgroupπ1(M0,4,x )
 ρl :π1(M0,4,x ) → GL(2, C).

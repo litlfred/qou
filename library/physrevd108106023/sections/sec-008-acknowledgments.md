@@ -7,7 +7,7 @@ section_number: null
 pages: 8-11
 source_pdf: PhysRevD.108.106023.pdf
 source_sha256: 50c7980e88cd21a0
-doc_brief: "I. INTRODUCTION Knot-quiver correspondence (KQC) conjectured by Kucharski-Reineke-Stosic-Sulkowski [1] provides a new encoding of HOMFLY-PT invariants of knots in terms of the representation theory of"
+doc_brief: "Knot-quiver correspondence for double twist knots Vivek Kumar Singh * — 9 sections: INTRODUCTION; DOUBLE TWIST KNOTS; Fk ˜Fk /C1/C1/C1 /C1/C1/C1 Fk ˜Fk"
 ---
 The work of V . K. S. is supported by “Tamkeen under
 the NYU Abu Dhabi Research Institute Grant No. CG008

@@ -7,7 +7,7 @@ section_number: 7.1
 pages: 21-21
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
-doc_brief: "5), and Q(√−7) — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open"
+doc_brief: "Analytic dilogarithm identities Cetin Hakimoglu-Brown — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured"
 ---
 We will derive a two-term cubic dilogarithm ladder identity where both terms are real. These
 are uncommon, compared to three-term and above series or series with 2 or more complex

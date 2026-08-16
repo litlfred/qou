@@ -7,7 +7,7 @@ section_number: null
 pages: 21-23
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of Finite Type; Blocks"
+doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
 ---
 From now on, set R := Z[q,q−1] and let K⊆ C be a ﬁeld such that he algebra K(q)Hq(W,L ) is split
 semisimple.

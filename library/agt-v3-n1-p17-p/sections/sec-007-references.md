@@ -7,7 +7,7 @@ section_number: null
 pages: 20-20
 source_pdf: agt-v3-n1-p17-p.pdf
 source_sha256: df196f0a732ad6b9
-doc_brief: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coecients of certain power series considered by Habiro in his"
+doc_brief: "Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coecients of certain power series considered by Habiro in his theory ofsl2 invariants of"
 ---
 [A] H. Abchir. TQFT invariants at in
 nity for the Whitehead manifold. In: Knots

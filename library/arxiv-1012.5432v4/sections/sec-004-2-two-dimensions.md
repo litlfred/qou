@@ -7,7 +7,7 @@ section_number: 2
 pages: 14-21
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
-doc_brief: "arxiv-1012.5432v4 — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
+doc_brief: "quant-ph Towards Topological Quantum Computation? - — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 Indistinguishable Particles: Braid Group On the other hand, in two dimensions
 the fundamental group of the conﬁguration space of a system ofn identical particles is given

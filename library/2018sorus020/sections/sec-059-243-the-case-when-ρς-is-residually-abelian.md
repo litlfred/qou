@@ -7,7 +7,7 @@ section_number: 2.4.3
 pages: 79-79
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad"
+doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
 ---
 In this section we treat the case when the residual reducible representation¯ρΣ is
 abelian. This case is motivated by the example of the ﬁgure-eight knot complement,

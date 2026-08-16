@@ -7,7 +7,7 @@ section_number: 24
 pages: 21-23
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
-doc_brief: "deligne-mostow-1986 — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
+doc_brief: "PUBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 (3.8) Fix a base point o e Q^. The section w^ can then be viewed as a multi-
 valued map from Qto B(a)o. More precisely, let C[be the covering of (^corresponding

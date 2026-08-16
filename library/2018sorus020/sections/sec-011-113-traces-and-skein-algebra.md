@@ -7,7 +7,7 @@ section_number: 1.1.3
 pages: 19-19
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad"
+doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
 ---
 Deﬁnition 1.1.6.For anyγ∈ Γ, we deﬁne thetrace functiontγ : R(Γ)→ k by
 tγ(ρ) = Tr(ρ(γ)). Those functions are invariant under the action ofSL2, thus they

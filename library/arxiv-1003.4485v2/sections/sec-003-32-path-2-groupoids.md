@@ -7,7 +7,7 @@ section_number: 3.2
 pages: 14-15
 source_pdf: 1003.4485v2.pdf
 source_sha256: 714d73873cecd73a
-doc_brief: "email: baez@math.ucr.edu huerta@math.ucr.edu — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles."
+doc_brief: "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles."
 ---
 Path groupoids play a big though often neglected role in physics: the path
 groupoid of a spacetime manifold describes all the possible motions of a point

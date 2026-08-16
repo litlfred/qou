@@ -7,7 +7,7 @@ section_number: null
 pages: 1-19
 source_pdf: procrsoclondona92.pdf
 source_sha256: 3d48c956e2e5408d
-doc_brief: "on January 19, 2015http://rspa.royalsocietypublishing.org/Downloaded from — 1 sections: Document"
+doc_brief: "The Royal Society is collaborating with JSTOR to digitize, preserve, and extend access to — 1 sections: Document"
 ---
 The Royal Society is collaborating with JSTOR to digitize, preserve, and extend access to
 Proceedings: Mathematical and Physical Sciences.

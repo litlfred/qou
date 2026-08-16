@@ -7,7 +7,7 @@ section_number: I
 pages: 2-3
 source_pdf: 9408045v1.pdf
 source_sha256: a9786c0f44a4e659
-doc_brief: "We quantize the Einstein gravity in the formalism of weak gra vitational ﬁelds by using the constrained Hamiltonian method."
+doc_brief: "Constrained analysis of topologically massive gravity — We quantize the Einstein gravity in the formalism of weak gra vitational ﬁelds by using the constrained Hamiltonian method."
 ---
 One of the ultimate goals of the quantum ﬁeld theory (QFT) is t he quantization
 of gravity. It is well-known that usual rules of quantizatio n when applied to the Einstein

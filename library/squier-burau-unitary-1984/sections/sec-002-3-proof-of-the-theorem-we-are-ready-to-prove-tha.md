@@ -7,7 +7,7 @@ section_number: 3
 pages: 3-3
 source_pdf: squier-burau-unitary-1984.pdf
 source_sha256: 5087ee3cb48679d1
-doc_brief: "AMERICAN MATHEMATICAL SOCIETY — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
+doc_brief: "THE BURAU REPRESENTATION IS UNITARY CRAIG C. SQUIEr' — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
 ---
 Hermitian form which we now define. Let J be the matrix
 (6) J = (s + s-l)I-^(ea_Xa + eaa+x),

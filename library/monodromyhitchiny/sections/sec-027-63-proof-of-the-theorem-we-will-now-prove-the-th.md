@@ -7,7 +7,7 @@ section_number: 6.3
 pages: 12-13
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND"
+doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
 ---
 theorem will be a corollary of the following more general result (Theo rem 6.7) since we know by
 [L] assuming g ≥ 3 that there is a projectively ﬂat isomorphism between the two proj ectivized

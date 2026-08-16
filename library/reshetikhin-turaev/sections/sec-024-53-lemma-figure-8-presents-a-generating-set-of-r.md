@@ -7,7 +7,7 @@ section_number: 5.3
 pages: 13-15
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 HCDR(A) given by Lemma 5.2. 
 Note that all the relations Rel~-Rel~3 of Fig. 8 may be written purely 

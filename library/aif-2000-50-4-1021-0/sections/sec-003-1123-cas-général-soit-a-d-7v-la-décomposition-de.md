@@ -7,7 +7,7 @@ section_number: 1.1.2.3
 pages: 13-18
 source_pdf: AIF_2000__50_4_1021_0.pdf
 source_sha256: a7ca398590a266d8
-doc_brief: "aif-2000-50-4-1021-0 — 7 sections: Cas d'une matrice unipotente. — So; Notation; Cas d'une matrice semi-simple. — P"
+doc_brief: "ANNALES DE L ’ INSTITUT FOURIER JACQUES SAULOY Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie — 7 sections: Cas d'une matrice unipotente. — So; No"
 ---
 d'une matrice A ç Mn(C) : D est semi-simple, N est niipotente et
 [D, N} = 0 (les matrices D et N commutent). Ces conditions spécifient

@@ -7,7 +7,7 @@ section_number: 6.1
 pages: 17-18
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 oriented smooth circles imbedded in R 3. The circles are called the components of 
 the link. Fix a ribbon Hopf algebra A. An A-colouring of the link is a function 

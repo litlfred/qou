@@ -7,7 +7,7 @@ section_number: 2
 pages: 5-9
 source_pdf: agt-v3-n1-p17-p.pdf
 source_sha256: df196f0a732ad6b9
-doc_brief: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coecients of certain power series considered by Habiro in his"
+doc_brief: "Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coecients of certain power series considered by Habiro in his theory ofsl2 invariants of"
 ---
 Habiro’s proof of Theorem 1.1 uses the relationship with the quantum group
 Uqsl2 . Here is another proof, using the method of orthogonal polynomials as in

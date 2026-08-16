@@ -7,7 +7,7 @@ section_number: null
 pages: 9-163
 source_pdf: 2108.11825v1.pdf
 source_sha256: 1c2a4b317d6239c5
-doc_brief: "for the award of Doctor of Philosophy of Loughborough University — 1 sections: Introduction"
+doc_brief: "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups Joseph Cook A Doctoral Thesis for the award of Doctor of Philosophy of Loughborough University — 1 sections: Introduction"
 ---
 2 Background 25
 2.1 Spectral theory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25

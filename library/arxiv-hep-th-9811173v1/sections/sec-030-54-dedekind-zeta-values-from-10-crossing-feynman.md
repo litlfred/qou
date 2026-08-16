@@ -7,7 +7,7 @@ section_number: 5.4
 pages: 19-23
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace fieldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of th"
+doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
 ---
 We found that 7 of the 84 knots with less than 10 crossings have rat ional Dedekind-zeta
 invariants. The 6 distinct values of (1) are

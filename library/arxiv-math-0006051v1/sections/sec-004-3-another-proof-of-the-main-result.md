@@ -7,7 +7,7 @@ section_number: 3
 pages: 5-6
 source_pdf: 0006051v1.pdf
 source_sha256: 10483e75bd3655ea
-doc_brief: "logarithm”) in [Kon]. The finite logarithm is the case n = 1 of the n-th poly- logarithm li n ∈ Z/p [z] defined by li n(z) = ∑ p− 1 k=1 zk/k n. In loc. cit. Kontsevich proved that the finite logarithm"
+doc_brief: "FINITE AND p-ADIC POLYLOGARITHMS AMNON BESSER 1. Introduction The finite logarithm was introduced by Kontsevich (under the name “ The 1 1 logarithm”) in [Kon]. The finite logarithm is the case n = 1 o"
 ---
 In this section we sketch another proof of the main result. This pro of has two
 interesting features: First of all, it proves directly the formula for Fn in terms of

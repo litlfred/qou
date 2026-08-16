@@ -7,7 +7,7 @@ section_number: 3
 pages: 4-5
 source_pdf: 9504020v1.pdf
 source_sha256: 0baef40fa9934c91
-doc_brief: "∗On leave from St. Petersburg Branch of the Steklov Mathemati cal Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associée à l’E.N.S. de Lyon, et à l’Universitè de Savoie — T"
+doc_brief: "A Link Invariant from Quantum Dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Théoriqueenslapp† — The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix"
 ---
 Let linkL inS3 is given by a two-strand tangle. Consider some non-singular (i.e.
 with only simple intersection points) planar projection of this tangle. Denote by

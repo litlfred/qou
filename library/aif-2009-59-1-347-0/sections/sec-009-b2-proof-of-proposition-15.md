@@ -7,7 +7,7 @@ section_number: null
 pages: 28-28
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
-doc_brief: "L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
+doc_brief: "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
 ---
 The equality 1φ1(q;q;q,X ) = ( X;q)∞, plus ( B.13), where we have set
 a =q, implies the following formula:

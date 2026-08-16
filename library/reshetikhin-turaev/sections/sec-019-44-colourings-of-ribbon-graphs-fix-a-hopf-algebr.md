@@ -7,7 +7,7 @@ section_number: 4.4
 pages: 10-11
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 class of A-modules of finite dimension over the ground field. Denote by N = N(A) 
 the class of finite sequences (V1,~1), ...,(Vk, ek) where V 1, ..., VkeA and 51, "",~k 

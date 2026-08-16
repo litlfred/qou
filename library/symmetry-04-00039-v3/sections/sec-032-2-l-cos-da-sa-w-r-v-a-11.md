@@ -7,7 +7,7 @@ section_number: 2
 pages: 59-72
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
-doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry ISSN 2073-8994 www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive"
+doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive, Rancho Palos V"
 ---
 where the integrand has the dimensions of energy volume density. The corresponding Euler equation is  
 22d/ d ( 1 / )  s i n 0sw r     (A-12)

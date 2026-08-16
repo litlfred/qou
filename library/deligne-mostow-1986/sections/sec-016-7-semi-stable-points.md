@@ -7,7 +7,7 @@ section_number: 7
 pages: 36-38
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
-doc_brief: "deligne-mostow-1986 — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
+doc_brief: "PUBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 (7.1) The notation and assumptions (4.0) are in force in this section; we assume
 also N^4. Let (S(i), S(2)) be a partition of S, such that S a, = i. We wantses(i)lo

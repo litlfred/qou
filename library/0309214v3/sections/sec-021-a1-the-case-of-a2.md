@@ -7,7 +7,7 @@ section_number: null
 pages: 37-38
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "School of Mathematics, Georgia Institute of Technology — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l"
+doc_brief: "The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q L ˆ — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its"
 ---
 There are two fundamental roots denoted by α and β . The set of positive roots
 is {α, β, α+ β}. The reduced representations of the longest element of the W eyl

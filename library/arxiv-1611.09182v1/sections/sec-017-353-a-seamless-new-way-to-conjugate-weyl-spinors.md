@@ -7,7 +7,7 @@ section_number: 3.5.3
 pages: 21-22
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "arxiv-1611.09182v1 — 57 sections: Abstract; Acknowledgements; Introduction"
+doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
 ---
 In quantum ﬁeld theory textbooks, it is typically explained that a left handed Weyl spinor,
 ΨL, can be conjugated so as to give a right-handed Weyl spinor. The procedure necessary
