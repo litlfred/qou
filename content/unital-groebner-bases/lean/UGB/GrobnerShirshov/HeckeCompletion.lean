@@ -4315,6 +4315,62 @@ theorem monicStep {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
     split_ifs <;>
       simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
 
+/-! ### §4ah  The same, for the quadratic rule
+
+`monicStep` above asks the rule to be monic with **two** words, `L − R`, so that
+a step is a substitution: one term in, one term out. The quadratic rule
+`σ_z² − h·σ_z − 1` has **three**, so a step by it is not a substitution — the
+term `(a σ_z² b, c)` becomes the *pair* `(a σ_z b, h·c)` and `(a b, c)`. That is
+the whole reason `monicStep` does not reach the corner's two quadratic steps,
+and the eight-step chain of §4y writes five of its steps out by hand.
+
+`quadStep` is the missing companion. It is `monicStep`'s statement with the
+one-term output replaced by the two-term one, and its proof is the same shape:
+the coefficient at the targeted word is read off by `ofTerms_coeff_mid`, and the
+`CoeffEq` obligation is a `split_ifs <;> ring` once both sides are unfolded.
+
+**One lemma covers both occurrences.** `hecke_quad_pair_shape.py` measured the
+two quadratic steps of the `a ≤ b` regime and found they apply the *same* rule,
+`heckeRelation j₁`, after the *same* Yang–Baxter step, differing only in their
+contexts — the second has `σ_{i−2}` prepended on the left and lacks a trailing
+`σ_i` on the right. Since the contexts here are parameters, that difference
+costs nothing: the assembly supplies them and the step lemma never sees it. -/
+
+/-- **One step of a chain, by the quadratic rule.** Unlike `monicStep` the
+output has one more term than the input: the quadratic rule has three words, so
+the targeted term is replaced by two, with coefficients `c·(q − q⁻¹)` and `c`.
+
+The contexts `a`, `b` and the surrounding terms `L₁`, `L₂` are arbitrary, and
+`W` is tied to the rule's leading word by an equation rather than being it on
+the nose, so consecutive steps compose without their decompositions having to
+agree syntactically — the same reason `monicStep` is stated that way. -/
+theorem quadStep {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (z : Fin n)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (a b W : Monomial (HeckeGen n)) (c : ℝ) (hc : c ≠ 0)
+    (hW : W = a ++ [(⟨z⟩ : HeckeGen n), ⟨z⟩] ++ b)
+    (hne : ∀ w ∈ (L₁ ++ L₂).map Prod.fst, w ≠ W) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (W, c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++ (a ++ [(⟨z⟩ : HeckeGen n)] ++ b,
+          c * (hp.q - hp.q⁻¹)) :: (a ++ b, c) :: L₂)) := by
+  have hv : (AlgElement.ofTerms (L₁ ++ (W, c) :: L₂)).coeff
+      (a ++ (heckeRelation z hp).lm (heckeOrder n) ++ b) = c := by
+    rw [heckeRelation_lm, ← hW]
+    exact ofTerms_coeff_mid L₁ L₂ W c hne
+  refine ⟨heckeRelation z hp, heckeRelation_mem hn hp z, a, b, c, ?_, ?_, ?_⟩
+  · rw [hv]; exact hc
+  · rw [hv, heckeRelation_lc]; ring
+  · intro m
+    show _ = _ - c * (AlgElement.contextMul a (heckeRelation z hp).relation b).coeff m
+    subst hW
+    simp only [heckeRelation, AlgElement.contextMul_ofTerms_coeff,
+      List.map_cons, List.map_nil, List.append_nil,
+      AlgElement.ofTerms_coeff, List.filter_append,
+      List.filter_cons, List.filter_nil, List.map_append, List.sum_append,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
 namespace BokutShiaoBraid
 
 variable {n : ℕ}
