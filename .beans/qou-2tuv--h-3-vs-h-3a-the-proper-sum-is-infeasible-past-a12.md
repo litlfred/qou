@@ -1,11 +1,11 @@
 ---
 # qou-2tuv
 title: 'H_3 vs H_{3A}: the proper sum is infeasible past A~12, so substitution cannot fix the heavy-atom rows'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-16T11:43:16Z
+updated_at: 2026-08-16T13:01:36Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -83,3 +83,66 @@ ceiling, and each point is minutes not hours.
 - The A = 3..12 sweep above.
 - Migrating the nine A-bounded callers.
 - `atom_mass_derived.py` (audit §6, "DO NOT TRUST OUTPUT", production-wired).
+
+
+---
+
+# MEASURED: the proper H_{3A} weights make the binding channel WORSE, not better
+
+This bean asked whether the H_3 → H_{3A} fix is the missing scaling factor.
+Measured, at the one A where both sides are computable in reasonable time:
+
+    atom  A  3A  t_proper  ratio    B_legacy   B_proper   B_AME   err%_leg  err%_proper
+       D  2   6      0.6s  8.843       4.402     38.924   2.225     +97.9      +1649.8
+
+`B = -alpha * sum ln|V|` with `alpha = m_e * 8 * G = 3.744 MeV` (the q-CLT
+scale), legacy = `pyhecke.atom.atom_per_generator_volumes` (H_3 weights),
+proper = `mass_at_3A_proper.per_generator_V_hat_3A` (full H_{3A} sum).
+
+**The answer is no.** At A = 2 the correct weights multiply the binding by 8.84
+and take the deuteron from +98% to **+1650%** — seventeen times worse. The H_3
+bug is real and the H_{3A} weights are the mathematically correct ones, but
+substituting them into THIS formula does not repair the table; it destroys the
+one atom that was closest.
+
+That is a genuine negative result and it constrains the answer to the wider
+question (qou-53p1: "wrong scaling factor? what missing?"). It rules out the
+most attractive hypothesis — that the heavy-A ~3.5x under-prediction and the
+H_3 weight error are the same defect. They are not: the weight error pushes
+binding UP by ~9x at A = 2, while the heavy-A rows need ~3.5x UP and the light
+rows need to come DOWN. No single weight correction does both.
+
+The per-generator detail shows why it is not a smooth rescale:
+
+    legacy (H_3)   V = [1.08022, 0.94694, 0.34000, 0.94109, 0.94310]
+    proper (H_3A)  V = [0.67139, 1.05511, 0.00007, 0.55166, 1.08837]
+
+Generator 3 moves from 0.34 to 7e-05 — four orders of magnitude, and since the
+sum is over `ln|V|` that single entry dominates the whole change. A near-zero
+V̂ is exactly the row-cap structure convention D's forcing argument predicts
+(`y_(1^3) = 0`), so the H_{3A} answer is not obviously wrong — but a log-sum
+formula is maximally sensitive to it, which suggests the FORMULA is the wrong
+consumer of these volumes, not that the volumes are wrong.
+
+## Practical feasibility is far worse than the module claims
+
+`mass_at_3A_proper.py`'s header says "full p(3A) enumeration fails for
+3A >~ 35". Measured in this container:
+
+    3A = 6  (A=2, D)     0.6 s
+    3A = 9  (A=3, T)     > 20 min, did not complete
+
+So the practical ceiling is **A = 2**, not A = 12. p(9) is only 30 partitions;
+the cost is in building the seminormal matrices, not the partition count. Any
+plan that says "migrate the A-bounded callers to per_generator_V_hat_3A" needs
+to confront that the implementation is unusable at A = 3 as it stands.
+
+This makes the nine migration candidates listed above **blocked on performance
+work**, not merely queued.
+
+## Status
+
+Left `todo`, not completed. What is measured: the A = 2 point, the direction,
+and the practical ceiling. What is NOT measured: the A-dependence, because the
+A = 3 point does not finish. Getting it needs `per_generator_V_hat_3A` profiled
+and sped up first — which is now the actual next step, ahead of any migration.
