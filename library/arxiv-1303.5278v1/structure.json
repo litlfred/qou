@@ -17,14 +17,19 @@
   "doi": null,
   "title": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD",
   "authors_raw": "STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN",
-  "abstract": "In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifoldM (a collection ofq-series with integer coe\ufb03cients, intro- duced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic 3-manifolds. To achieve our goal we show that (a)T admits an index structure if and only if T is 1-e\ufb03cient and (b) ifM is hyperbolic, it has a canonical set of 1-e\ufb03cient ideal triangu- lations related by 2-3 and 0-2 moves which preserve the 3D index. We illustrate our results with several examples.",
+  "abstract": "In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifoldM (a collection ofq-series with integer coeﬃcients, intro- duced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic 3-manifolds. To achieve our goal we show that (a)T admits an index structure if and only if T is 1-eﬃcient and (b) ifM is hyperbolic, it has a canonical set of 1-eﬃcient ideal triangu- lations related by 2-3 and 0-2 moves which preserve the 3D index. We illustrate our results with several examples.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20181031152126Z",
    "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
    "Title": ""
-  }
+  },
+  "title_prev": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC3-MANIFOLD",
+  "title_lines": [
+   "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED",
+   "HYPERBOLIC 3-MANIFOLD"
+  ]
  },
  "toc": [
   {
@@ -71,7 +76,7 @@
   },
   {
    "level": 1,
-   "title": "Index structures and 1\u2013efficiency",
+   "title": "Index structures and 1–efficiency",
    "page": 9,
    "source": "outline",
    "number": "3"
@@ -141,7 +146,7 @@
   },
   {
    "level": 1,
-   "title": "Invariance of index under the 0\u20132 move",
+   "title": "Invariance of index under the 0–2 move",
    "page": 29,
    "source": "outline",
    "number": "5"
@@ -155,7 +160,7 @@
   },
   {
    "level": 2,
-   "title": "Subdivisions of the Epstein\u2013Penner decomposition",
+   "title": "Subdivisions of the Epstein–Penner decomposition",
    "page": 32,
    "source": "outline",
    "number": "6.1"
@@ -169,14 +174,14 @@
   },
   {
    "level": 2,
-   "title": "Interpreting flip moves using 2\u20133 moves",
+   "title": "Interpreting flip moves using 2–3 moves",
    "page": 39,
    "source": "outline",
    "number": "6.3"
   },
   {
    "level": 2,
-   "title": "Moving paths in the 1\u2013skeleton of the associahedron using 2\u20133 and 0\u20132 moves",
+   "title": "Moving paths in the 1–skeleton of the associahedron using 2–3 and 0–2 moves",
    "page": 41,
    "source": "outline",
    "number": "6.4"
@@ -246,7 +251,7 @@
   },
   {
    "level": 1,
-   "title": "Appendix A. The 2\u20133 move",
+   "title": "Appendix A. The 2–3 move",
    "page": 51,
    "source": "outline",
    "number": null
@@ -314,7 +319,7 @@
   {
    "id": "sec-005-3-index-structures-and-1efficiency",
    "number": "3",
-   "title": "Index structures and 1\u2013efficiency",
+   "title": "Index structures and 1–efficiency",
    "level": 1,
    "page_start": 9,
    "page_end": 16,
@@ -404,7 +409,7 @@
   {
    "id": "sec-014-5-invariance-of-index-under-the-02-move",
    "number": "5",
-   "title": "Invariance of index under the 0\u20132 move",
+   "title": "Invariance of index under the 0–2 move",
    "level": 1,
    "page_start": 29,
    "page_end": 32,
@@ -414,7 +419,7 @@
   {
    "id": "sec-015-61-subdivisions-of-the-epsteinpenner-decompositi",
    "number": "6.1",
-   "title": "Subdivisions of the Epstein\u2013Penner decomposition",
+   "title": "Subdivisions of the Epstein–Penner decomposition",
    "level": 2,
    "page_start": 32,
    "page_end": 34,
@@ -434,7 +439,7 @@
   {
    "id": "sec-017-64-moving-paths-in-the-1skeleton-of-the-associah",
    "number": "6.4",
-   "title": "Moving paths in the 1\u2013skeleton of the associahedron using 2\u20133 and 0\u20132 moves",
+   "title": "Moving paths in the 1–skeleton of the associahedron using 2–3 and 0–2 moves",
    "level": 2,
    "page_start": 41,
    "page_end": 43,
@@ -464,7 +469,7 @@
   {
    "id": "sec-020-appendix-a-the-23-move",
    "number": null,
-   "title": "Appendix A. The 2\u20133 move",
+   "title": "Appendix A. The 2–3 move",
    "level": 1,
    "page_start": 51,
    "page_end": 57,
@@ -490,5 +495,5 @@
   "chars_total": 134812
  },
  "duplicate_of": "topologicalinvariance3dindex",
- "duplicate_note": "Same work as library/topologicalinvariance3dindex/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted \u2014 existing citations may point here \u2014 but skipped by the ranking and the summary index so one work is not counted twice."
+ "duplicate_note": "Same work as library/topologicalinvariance3dindex/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
 }

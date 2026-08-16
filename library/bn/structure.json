@@ -12,13 +12,18 @@
   "doi": null,
   "title": "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009",
   "authors_raw": null,
-  "abstract": "This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their connections with ergodic theory, complex re\ufb02ection groups, moduli spaces of 1-forms and open problems in s ur- face topology.",
+  "abstract": "This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their connections with ergodic theory, complex reﬂection groups, moduli spaces of 1-forms and open problems in s ur- face topology.",
   "docinfo": {
    "Producer": "GPL Ghostscript 9.19",
    "CreationDate": "D:20201116004241-05'00'",
    "Creator": "dvips(k) 5.991 Copyright 2011 Radical Eye Software",
    "Title": "bn.dvi"
-  }
+  },
+  "title_lines": [
+   "Braid groups and Hodge theory",
+   "Curtis T. McMullen",
+   "25 April, 2009"
+  ]
  },
  "toc": [
   {
@@ -30,49 +35,49 @@
   },
   {
    "level": 1,
-   "title": "The \ufb01nite case. Let q be a primitive dth root of unity. In \u00a78 we show",
+   "title": "The ﬁnite case. Let q be a primitive dth root of unity. In §8 we show",
    "page": 4,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "The complex hyperbolic case. In \u00a710 we turn the case where H 1(X)q",
+   "title": "The complex hyperbolic case. In §10 we turn the case where H 1(X)q",
    "page": 5,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "The hyperelliptic case. In \u00a712 we discuss the hyperelliptic case, where",
+   "title": "The hyperelliptic case. In §12 we discuss the hyperelliptic case, where",
    "page": 6,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "The period map fq is an in\ufb01nite-to-one local homeomorphism, but not",
+   "title": "The period map fq is an inﬁnite-to-one local homeomorphism, but not",
    "page": 6,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "It transports the discrete action of Bn on T \u2217",
+   "title": "It transports the discrete action of Bn on T ∗",
    "page": 6,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "The complement of the image fq(T \u2217",
+   "title": "The complement of the image fq(T ∗",
    "page": 7,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "(x \u2212bi)\u2212\u00b5 idx have been studied since the time of Euler; the present",
+   "title": "(x −bi)−µ idx have been studied since the time of Euler; the present",
    "page": 8,
    "source": "inferred",
    "number": "1"
@@ -86,7 +91,7 @@
   },
   {
    "level": 1,
-   "title": "(z \u2212bi). There is a unique homomor-",
+   "title": "(z −bi). There is a unique homomor-",
    "page": 11,
    "source": "inferred",
    "number": "1"
@@ -114,35 +119,35 @@
   },
   {
    "level": 1,
-   "title": "(ei) = \u2212T \u2217(ei) = \u2212qei",
+   "title": "(ei) = −T ∗(ei) = −qei",
    "page": 20,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "(dz) = dz +d Imz =dz \u2212",
+   "title": "(dz) = dz +d Imz =dz −",
    "page": 20,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "(dz \u2212dz),",
+   "title": "(dz −dz),",
    "page": 20,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Complex re\ufb02ection groups",
+   "title": "Complex reﬂection groups",
    "page": 22,
    "source": "inferred",
    "number": "5"
   },
   {
    "level": 1,
-   "title": "If s and t are joined by an edge of \u0393, then sts = tst (we say s and t",
+   "title": "If s and t are joined by an edge of Γ, then sts = tst (we say s and t",
    "page": 22,
    "source": "inferred",
    "number": "1"
@@ -163,21 +168,21 @@
   },
   {
    "level": 1,
-   "title": "U(\u039b n,q ) is an arithmetic lattice in U(r,s ), or",
+   "title": "U(Λ n,q ) is an arithmetic lattice in U(r,s ), or",
    "page": 32,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "We have q = \u22121, and U(\u039b n,q ) \u223c",
+   "title": "We have q = −1, and U(Λ n,q ) ∼",
    "page": 32,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "We \ufb01rst note that the real points of the centralizer factor as follows:",
+   "title": "We ﬁrst note that the real points of the centralizer factor as follows:",
    "page": 34,
    "source": "inferred",
    "number": "1"
@@ -191,7 +196,7 @@
   },
   {
    "level": 1,
-   "title": "Let \u03a6 e(x) denote the cyclotomic polynomial for the primitive e-th",
+   "title": "Let Φ e(x) denote the cyclotomic polynomial for the primitive e-th",
    "page": 34,
    "source": "inferred",
    "number": "3"
@@ -212,7 +217,7 @@
   },
   {
    "level": 1,
-   "title": "Suppose q =\u03b6 k",
+   "title": "Suppose q =ζ k",
    "page": 35,
    "source": "inferred",
    "number": "6"
@@ -261,7 +266,7 @@
   },
   {
    "level": 1,
-   "title": "De\ufb01nite integrals",
+   "title": "Deﬁnite integrals",
    "page": 40,
    "source": "inferred",
    "number": "9"
@@ -289,28 +294,28 @@
   },
   {
    "level": 1,
-   "title": "The map Bn \u2192 Sp(X)T",
+   "title": "The map Bn → Sp(X)T",
    "page": 50,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "The map Mod(X)T \u2192 Sp(X)T",
+   "title": "The map Mod(X)T → Sp(X)T",
    "page": 50,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "There is a primitive dth root of unity q such that \u03c1q(Bn) has \ufb01nite",
+   "title": "There is a primitive dth root of unity q such that ρq(Bn) has ﬁnite",
    "page": 50,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "(see \u00a710), we \ufb01nd:",
+   "title": "(see §10), we ﬁnd:",
    "page": 51,
    "source": "inferred",
    "number": "18"
@@ -324,7 +329,7 @@
   },
   {
    "level": 1,
-   "title": "Polygons and Teichm\u00a8 uller curves",
+   "title": "Polygons and Teichm¨ uller curves",
    "page": 55,
    "source": "inferred",
    "number": "13"
@@ -350,9 +355,9 @@
    "n_words": 1355
   },
   {
-   "id": "sec-001-1-the-\ufb01nite-case-let-q-be-a-primitive-dth-root-o",
+   "id": "sec-001-1-the-ﬁnite-case-let-q-be-a-primitive-dth-root-o",
    "number": "1",
-   "title": "The \ufb01nite case. Let q be a primitive dth root of unity. In \u00a78 we show",
+   "title": "The ﬁnite case. Let q be a primitive dth root of unity. In §8 we show",
    "level": 1,
    "page_start": 4,
    "page_end": 5,
@@ -362,7 +367,7 @@
   {
    "id": "sec-002-2-the-complex-hyperbolic-case-in-10-we-turn-the",
    "number": "2",
-   "title": "The complex hyperbolic case. In \u00a710 we turn the case where H 1(X)q",
+   "title": "The complex hyperbolic case. In §10 we turn the case where H 1(X)q",
    "level": 1,
    "page_start": 5,
    "page_end": 6,
@@ -372,7 +377,7 @@
   {
    "id": "sec-003-3-the-hyperelliptic-case-in-12-we-discuss-the-hy",
    "number": "3",
-   "title": "The hyperelliptic case. In \u00a712 we discuss the hyperelliptic case, where",
+   "title": "The hyperelliptic case. In §12 we discuss the hyperelliptic case, where",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
@@ -380,9 +385,9 @@
    "n_words": 104
   },
   {
-   "id": "sec-004-1-the-period-map-fq-is-an-in\ufb01nite-to-one-local-h",
+   "id": "sec-004-1-the-period-map-fq-is-an-inﬁnite-to-one-local-h",
    "number": "1",
-   "title": "The period map fq is an in\ufb01nite-to-one local homeomorphism, but not",
+   "title": "The period map fq is an inﬁnite-to-one local homeomorphism, but not",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
@@ -392,7 +397,7 @@
   {
    "id": "sec-005-2-it-transports-the-discrete-action-of-bn-on-t",
    "number": "2",
-   "title": "It transports the discrete action of Bn on T \u2217",
+   "title": "It transports the discrete action of Bn on T ∗",
    "level": 1,
    "page_start": 6,
    "page_end": 7,
@@ -402,7 +407,7 @@
   {
    "id": "sec-006-3-the-complement-of-the-image-fqt",
    "number": "3",
-   "title": "The complement of the image fq(T \u2217",
+   "title": "The complement of the image fq(T ∗",
    "level": 1,
    "page_start": 7,
    "page_end": 8,
@@ -410,9 +415,9 @@
    "n_words": 338
   },
   {
-   "id": "sec-007-1-x-bi\u00b5-idx-have-been-studied-since-the-time-of",
+   "id": "sec-007-1-x-biµ-idx-have-been-studied-since-the-time-of",
    "number": "1",
-   "title": "(x \u2212bi)\u2212\u00b5 idx have been studied since the time of Euler; the present",
+   "title": "(x −bi)−µ idx have been studied since the time of Euler; the present",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
@@ -432,7 +437,7 @@
   {
    "id": "sec-009-1-z-bi-there-is-a-unique-homomor",
    "number": "1",
-   "title": "(z \u2212bi). There is a unique homomor-",
+   "title": "(z −bi). There is a unique homomor-",
    "level": 1,
    "page_start": 11,
    "page_end": 14,
@@ -472,7 +477,7 @@
   {
    "id": "sec-013-1-ei-t-ei-qei",
    "number": "1",
-   "title": "(ei) = \u2212T \u2217(ei) = \u2212qei",
+   "title": "(ei) = −T ∗(ei) = −qei",
    "level": 1,
    "page_start": 20,
    "page_end": 20,
@@ -482,7 +487,7 @@
   {
    "id": "sec-014-1-dz-dz-d-imz-dz",
    "number": "1",
-   "title": "(dz) = dz +d Imz =dz \u2212",
+   "title": "(dz) = dz +d Imz =dz −",
    "level": 1,
    "page_start": 20,
    "page_end": 20,
@@ -492,7 +497,7 @@
   {
    "id": "sec-015-2-dz-dz",
    "number": "2",
-   "title": "(dz \u2212dz),",
+   "title": "(dz −dz),",
    "level": 1,
    "page_start": 20,
    "page_end": 22,
@@ -500,9 +505,9 @@
    "n_words": 647
   },
   {
-   "id": "sec-016-5-complex-re\ufb02ection-groups",
+   "id": "sec-016-5-complex-reﬂection-groups",
    "number": "5",
-   "title": "Complex re\ufb02ection groups",
+   "title": "Complex reﬂection groups",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
@@ -510,9 +515,9 @@
    "n_words": 58
   },
   {
-   "id": "sec-017-1-if-s-and-t-are-joined-by-an-edge-of-\u03b3-then-sts",
+   "id": "sec-017-1-if-s-and-t-are-joined-by-an-edge-of-γ-then-sts",
    "number": "1",
-   "title": "If s and t are joined by an edge of \u0393, then sts = tst (we say s and t",
+   "title": "If s and t are joined by an edge of Γ, then sts = tst (we say s and t",
    "level": 1,
    "page_start": 22,
    "page_end": 27,
@@ -540,9 +545,9 @@
    "n_words": 125
   },
   {
-   "id": "sec-020-1-u\u03bb-nq-is-an-arithmetic-lattice-in-urs-or",
+   "id": "sec-020-1-uλ-nq-is-an-arithmetic-lattice-in-urs-or",
    "number": "1",
-   "title": "U(\u039b n,q ) is an arithmetic lattice in U(r,s ), or",
+   "title": "U(Λ n,q ) is an arithmetic lattice in U(r,s ), or",
    "level": 1,
    "page_start": 32,
    "page_end": 32,
@@ -550,9 +555,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-021-2-we-have-q-1-and-u\u03bb-nq",
+   "id": "sec-021-2-we-have-q-1-and-uλ-nq",
    "number": "2",
-   "title": "We have q = \u22121, and U(\u039b n,q ) \u223c",
+   "title": "We have q = −1, and U(Λ n,q ) ∼",
    "level": 1,
    "page_start": 32,
    "page_end": 34,
@@ -560,9 +565,9 @@
    "n_words": 589
   },
   {
-   "id": "sec-022-1-we-\ufb01rst-note-that-the-real-points-of-the-centr",
+   "id": "sec-022-1-we-ﬁrst-note-that-the-real-points-of-the-centr",
    "number": "1",
-   "title": "We \ufb01rst note that the real points of the centralizer factor as follows:",
+   "title": "We ﬁrst note that the real points of the centralizer factor as follows:",
    "level": 1,
    "page_start": 34,
    "page_end": 34,
@@ -580,9 +585,9 @@
    "n_words": 51
   },
   {
-   "id": "sec-024-3-let-\u03c6-ex-denote-the-cyclotomic-polynomial-for",
+   "id": "sec-024-3-let-φ-ex-denote-the-cyclotomic-polynomial-for",
    "number": "3",
-   "title": "Let \u03a6 e(x) denote the cyclotomic polynomial for the primitive e-th",
+   "title": "Let Φ e(x) denote the cyclotomic polynomial for the primitive e-th",
    "level": 1,
    "page_start": 34,
    "page_end": 35,
@@ -610,9 +615,9 @@
    "n_words": 18
   },
   {
-   "id": "sec-027-6-suppose-q-\u03b6-k",
+   "id": "sec-027-6-suppose-q-ζ-k",
    "number": "6",
-   "title": "Suppose q =\u03b6 k",
+   "title": "Suppose q =ζ k",
    "level": 1,
    "page_start": 35,
    "page_end": 36,
@@ -680,9 +685,9 @@
    "n_words": 530
   },
   {
-   "id": "sec-034-9-de\ufb01nite-integrals",
+   "id": "sec-034-9-deﬁnite-integrals",
    "number": "9",
-   "title": "De\ufb01nite integrals",
+   "title": "Deﬁnite integrals",
    "level": 1,
    "page_start": 40,
    "page_end": 45,
@@ -722,7 +727,7 @@
   {
    "id": "sec-038-1-the-map-bn-spxt",
    "number": "1",
-   "title": "The map Bn \u2192 Sp(X)T",
+   "title": "The map Bn → Sp(X)T",
    "level": 1,
    "page_start": 50,
    "page_end": 50,
@@ -732,7 +737,7 @@
   {
    "id": "sec-039-2-the-map-modxt-spxt",
    "number": "2",
-   "title": "The map Mod(X)T \u2192 Sp(X)T",
+   "title": "The map Mod(X)T → Sp(X)T",
    "level": 1,
    "page_start": 50,
    "page_end": 50,
@@ -742,7 +747,7 @@
   {
    "id": "sec-040-3-there-is-a-primitive-dth-root-of-unity-q-such",
    "number": "3",
-   "title": "There is a primitive dth root of unity q such that \u03c1q(Bn) has \ufb01nite",
+   "title": "There is a primitive dth root of unity q such that ρq(Bn) has ﬁnite",
    "level": 1,
    "page_start": 50,
    "page_end": 51,
@@ -750,9 +755,9 @@
    "n_words": 423
   },
   {
-   "id": "sec-041-18-see-10-we-\ufb01nd",
+   "id": "sec-041-18-see-10-we-ﬁnd",
    "number": "18",
-   "title": "(see \u00a710), we \ufb01nd:",
+   "title": "(see §10), we ﬁnd:",
    "level": 1,
    "page_start": 51,
    "page_end": 52,
@@ -772,7 +777,7 @@
   {
    "id": "sec-043-13-polygons-and-teichm-uller-curves",
    "number": "13",
-   "title": "Polygons and Teichm\u00a8 uller curves",
+   "title": "Polygons and Teichm¨ uller curves",
    "level": 1,
    "page_start": 55,
    "page_end": 58,

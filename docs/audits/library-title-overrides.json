@@ -1,0 +1,116 @@
+{
+ "_schema": "library-title-override/v1",
+ "_note": "Hand-verified corrections to extracted titles, applied by scripts/library-propose-references.py after all mechanical cleanup. Each entry records a title an agent read out of the document itself, or a demotion where the document does not contain its own title at all. This exists because the last few per cent of extraction defects are not worth another heuristic: a rule general enough to fix them starts eating real titles, which is how 'Modular curves, invariant theory and E8' briefly lost its E8.",
+ "_rules": [
+  "A `title` override may only REMOVE text that is visibly not part of the title (a byline, a series banner) or repair spacing damage in text that is present. It may not supply a title the document does not contain.",
+  "When the document does not contain its own title — a journal offprint whose masthead replaced it — record `band: \"low\"` with a reason instead of guessing. arXiv, which would settle it, returns 403 from this environment.",
+  "Say what was removed in `why`, so a reviewer can check the call without opening the PDF.",
+  "An `authors` override replaces a parsed author list. Same rule as titles: it may only repair names visible in the document (a kerning split, an affiliation letter welded to a surname), never supply names the document does not show."
+ ],
+ "overrides": {
+  "arxiv-1203.6531v1": {
+   "band": "low",
+   "why": "The extracted title is the AMS masthead ('TRANSACTIONS OF THE AMERICAN MATHEMATICAL SOCIETY') and the paper's own title appears nowhere in the extracted text — title_lines holds only the masthead. The abstract is about reduced Groebner-Shirshov bases of the affine Weyl group A~n, which identifies the subject but not the title. Not registrable offline; arXiv:1203.6531 would settle it and returns 403 here."
+  },
+  "arxiv-1301.4504v4": {
+   "title": "Quantum Computation vs. Firewalls",
+   "why": "Removed the byline 'Daniel Harlowa Patrick Haydenb aPrinceton' — JHEP style suffixes an affiliation letter to each surname, so the names run into the title with no separator the cleaner can see."
+  },
+  "arxiv-1504.07260v3": {
+   "title": "Fricke S-duality in CHL models",
+   "why": "Removed the trailing author 'Daniel Persson'."
+  },
+  "arxiv-1810.11563v1": {
+   "title": "Three Lectures on Complexity and Black Holes",
+   "why": "Removed the trailing author 'Leonard Susskind'."
+  },
+  "arxiv-2002.07369v2": {
+   "title": "Groebner-Shirshov bases for the Coxeter groups of the types G2, F4, E6, E7 and E8",
+   "why": "Spacing repair only: the extraction produced 'TYPESG2,F 4,E 6,E 7 ANDE 8', which is the same characters with the kerning lost. No text added or removed."
+  },
+  "arxiv-2208.14188v2": {
+   "title": "Resurgence in complex Chern-Simons theory at generic levels",
+   "why": "Removed the byline 'Zhihao Duana Jie Gub aKorea' — again JHEP affiliation letters welded to the surnames."
+  },
+  "arxiv-2301.02038v1": {
+   "title": "Vinogradov's Cohomological Geometry of Partial Differential Equations",
+   "why": "Removed the series banner 'Contemporary Mathematics' printed above the title."
+  },
+  "arxiv-2507.13873v1": {
+   "title": "Probing the singularity at the holographic screen via q-holography",
+   "why": "Removed the trailing author 'Andreas Belaey'."
+  },
+  "arxiv-hep-th-0206161v1": {
+   "title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING",
+   "why": "Removed the trailing author 'Nikita A. Nekrasov'."
+  },
+  "arxiv-nucl-th-0610105v2": {
+   "title": "Universal Properties of the Four-Body System with Large Scattering Length",
+   "why": "Removed the trailing author 'H.-W. Hammer'."
+  },
+  "arxiv-2305.14884v2": {
+   "title": "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS",
+   "why": "Spacing repair only: 'INV ARIANTS' -> 'INVARIANTS'. The automatic rejoin could not fire because the word is broken in the title AND everywhere else the document sets it in caps, so the joined form is never attested at a higher count than its fragments.",
+   "authors": [
+    {
+     "family": "Garoufalidis",
+     "given": "Stavros"
+    },
+    {
+     "family": "Storzer",
+     "given": "Matthias"
+    },
+    {
+     "family": "Wheeler",
+     "given": "Campbell"
+    }
+   ],
+   "id": "garoufalidis2023",
+   "why_authors": "Same 'GAROUF ALIDIS' kerning split as arxiv-1304.2705v1."
+  },
+  "arxiv-2604.16077v1": {
+   "title": "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT",
+   "why": "Spacing repair only: 'INV ARIANTS' -> 'INVARIANTS', same cause as arxiv-2305.14884v2."
+  },
+  "arxiv-hep-ph-0103325v4": {
+   "title": "Quantum algebras in phenomenological description of particle properties",
+   "why": "Spacing repair 'parti cle' -> 'particle' (the split is in lower case, which the caps rejoin does not cover), and removed the byline 'A.M. Gavrilik a'."
+  },
+  "arxiv-alg-geom-9408004v1": {
+   "band": "low",
+   "why": "The extracted title is the author's own name: title_lines holds ['Eyal Markman 2', 'University of Michigan'], i.e. the byline and affiliation, with no title line above them. The paper's title is not in the extracted text. Not registrable offline; arXiv:alg-geom/9408004 would settle it and returns 403 here."
+  },
+  "arxiv-2304.12545v1": {
+   "title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN",
+   "why": "Restored the title's second line. The producer classified 'AND THE WORK OF WALTER NEUMANN' as the author line — it is capitalised and contains 'AND', which is the author-line test — so the title was truncated at 'THE BLOCH GROUP'. Text restored from title_lines + authors_raw, nothing invented."
+  },
+  "arxiv-1304.2705v1": {
+   "authors": [
+    {
+     "family": "Garoufalidis",
+     "given": "Stavros"
+    },
+    {
+     "family": "Kashaev",
+     "given": "Rinat"
+    }
+   ],
+   "id": "garoufalidis2013",
+   "why_authors": "The byline extracts as 'STA VROS GAROUF ALIDIS AND RINAT KASHAEV'; the parser read the second fragment as the surname, giving family 'ALIDIS' and a reference id of alidis2013. Repair of a visible kerning split, not new information."
+  },
+  "arxiv-2302.05903v2": {
+   "authors": [
+    {
+     "family": "Mironov",
+     "given": "A."
+    },
+    {
+     "family": "Morozov",
+     "given": "A."
+    }
+   ],
+   "id": "mironov2023",
+   "why_authors": "The byline is 'A. Mironovb,c,d 1, A. Morozova,c,d 2' — the affiliation letters run into the surnames. Only one name reached the parser, so the two-or-more test that catches this house style could not fire. Repair of visible text."
+  }
+ }
+}

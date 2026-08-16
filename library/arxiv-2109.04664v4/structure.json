@@ -15,15 +15,21 @@
    "stamp_date": "16 Aug 2022"
   },
   "doi": null,
-  "title": "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER",
+  "title": "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER",
   "authors_raw": "HITOSHI MURAKAMI AND ANH T. TRAN",
-  "abstract": "W e study the asymptotic behavior of the N -dimensional colored Jones polynomial evaluated at exp( \u03be/N ) for a real number \u03be greater than a certain constant. W e prove that, from the asymptotic behavi or, we can extract the SL(2; C) Chern\u2013Simons invariant and the Reidemeister torsion twis ted by the adjoint action both associated with a representation de termined by \u03be.",
+  "abstract": "W e study the asymptotic behavior of the N -dimensional colored Jones polynomial evaluated at exp( ξ/N ) for a real number ξ greater than a certain constant. W e prove that, from the asymptotic behavi or, we can extract the SL(2; C) Chern–Simons invariant and the Reidemeister torsion twis ted by the adjoint action both associated with a representation de termined by ξ.",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220816205916-04'00'",
    "Creator": "dvips(k) 2020.1 Copyright 2020 Radical Eye Software",
    "Title": "arXiv:2109.04664v4  [math.GT]  16 Aug 2022"
-  }
+  },
+  "title_prev": "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER",
+  "title_lines": [
+   "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES",
+   "POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED",
+   "WITH A REAL NUMBER"
+  ]
  },
  "toc": [
   {
@@ -91,7 +97,7 @@
   },
   {
    "level": 1,
-   "title": "(1 \u2212\u03d5 (\u03be)/\u03be ) sin\u03b8. De\ufb01ne",
+   "title": "(1 −ϕ (ξ)/ξ ) sinθ. Deﬁne",
    "page": 11,
    "source": "inferred",
    "number": "2"
@@ -126,14 +132,14 @@
   },
   {
    "level": 2,
-   "title": "Adjoint Reidemeister torsion. For a representation \u03c1 : \u03c01(X) \u2192",
+   "title": "Adjoint Reidemeister torsion. For a representation ρ : π1(X) →",
    "page": 15,
    "source": "inferred",
    "number": "5.2"
   },
   {
    "level": 2,
-   "title": "Chern\u2013Simons invariant. LetM be a three-manifold with boundary a torus",
+   "title": "Chern–Simons invariant. LetM be a three-manifold with boundary a torus",
    "page": 15,
    "source": "inferred",
    "number": "5.3"
@@ -168,7 +174,7 @@
   },
   {
    "level": 1,
-   "title": "(1 \u2212e\u22122 cos\u03b8) Re",
+   "title": "(1 −e−2 cosθ) Re",
    "page": 20,
    "source": "inferred",
    "number": "2"
@@ -182,14 +188,14 @@
   },
   {
    "level": 1,
-   "title": "(1 \u2212e\u22122 cos\u03b8 )",
+   "title": "(1 −e−2 cosθ )",
    "page": 20,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(z \u2208 R), that is, when Im z \u2265 0 (Recall that we assume 0 < Re(ze",
+   "title": "(z ∈ R), that is, when Im z ≥ 0 (Recall that we assume 0 < Re(ze",
    "page": 21,
    "source": "inferred",
    "number": "1"
@@ -316,9 +322,9 @@
    "n_words": 553
   },
   {
-   "id": "sec-009-2-1-\u03d5-\u03be\u03be-sin\u03b8-de\ufb01ne",
+   "id": "sec-009-2-1-ϕ-ξξ-sinθ-deﬁne",
    "number": "2",
-   "title": "(1 \u2212\u03d5 (\u03be)/\u03be ) sin\u03b8. De\ufb01ne",
+   "title": "(1 −ϕ (ξ)/ξ ) sinθ. Deﬁne",
    "level": 1,
    "page_start": 11,
    "page_end": 12,
@@ -368,7 +374,7 @@
   {
    "id": "sec-014-52-adjoint-reidemeister-torsion-for-a-representa",
    "number": "5.2",
-   "title": "Adjoint Reidemeister torsion. For a representation \u03c1 : \u03c01(X) \u2192",
+   "title": "Adjoint Reidemeister torsion. For a representation ρ : π1(X) →",
    "level": 2,
    "page_start": 15,
    "page_end": 15,
@@ -378,7 +384,7 @@
   {
    "id": "sec-015-53-chernsimons-invariant-letm-be-a-three-manifol",
    "number": "5.3",
-   "title": "Chern\u2013Simons invariant. LetM be a three-manifold with boundary a torus",
+   "title": "Chern–Simons invariant. LetM be a three-manifold with boundary a torus",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
@@ -436,9 +442,9 @@
    "n_words": 267
   },
   {
-   "id": "sec-021-2-1-e2-cos\u03b8-re",
+   "id": "sec-021-2-1-e2-cosθ-re",
    "number": "2",
-   "title": "(1 \u2212e\u22122 cos\u03b8) Re",
+   "title": "(1 −e−2 cosθ) Re",
    "level": 1,
    "page_start": 20,
    "page_end": 20,
@@ -446,9 +452,9 @@
    "n_words": 25
   },
   {
-   "id": "sec-022-2-1-e2-cos\u03b8",
+   "id": "sec-022-2-1-e2-cosθ",
    "number": "2",
-   "title": "(1 \u2212e\u22122 cos\u03b8 )",
+   "title": "(1 −e−2 cosθ )",
    "level": 1,
    "page_start": 20,
    "page_end": 21,
@@ -458,7 +464,7 @@
   {
    "id": "sec-023-1-z-r-that-is-when-im-z-0-recall-that-we-assume",
    "number": "1",
-   "title": "(z \u2208 R), that is, when Im z \u2265 0 (Recall that we assume 0 < Re(ze",
+   "title": "(z ∈ R), that is, when Im z ≥ 0 (Recall that we assume 0 < Re(ze",
    "level": 1,
    "page_start": 21,
    "page_end": 22,

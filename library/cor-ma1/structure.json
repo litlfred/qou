@@ -19,7 +19,12 @@
    "Author": "Sylvie Corteel, Olivier Mallet",
    "Producer": "PDFLaTeX",
    "CreationDate": "D:20260712140347+02'00'"
-  }
+  },
+  "title_lines": [
+   "HAL is a multi-disciplinary open access archive",
+   "for the deposit and dissemination of scientific re-",
+   "search documents, whether they are published or not"
+  ]
  },
  "toc": [
   {
@@ -87,7 +92,7 @@
   },
   {
    "level": 1,
-   "title": "(xi\u2212 xi+1\u2212 yi\u2212 yi+1 + ui\u2212 ui+1 + 1). Since ui\u2265 ui+1, it is su\ufb03cient",
+   "title": "(xi− xi+1− yi− yi+1 + ui− ui+1 + 1). Since ui≥ ui+1, it is suﬃcient",
    "page": 13,
    "source": "inferred",
    "number": "2"
@@ -108,7 +113,7 @@
   },
   {
    "level": 2,
-   "title": "A generating function proof. LetBk,i(a, q) =\u2211",
+   "title": "A generating function proof. LetBk,i(a, q) =∑",
    "page": 15,
    "source": "inferred",
    "number": "5.1"
@@ -270,9 +275,9 @@
    "n_words": 580
   },
   {
-   "id": "sec-009-2-xi-xi1-yi-yi1-ui-ui1-1-since-ui-ui1-it-is-su\ufb03c",
+   "id": "sec-009-2-xi-xi1-yi-yi1-ui-ui1-1-since-ui-ui1-it-is-suﬃc",
    "number": "2",
-   "title": "(xi\u2212 xi+1\u2212 yi\u2212 yi+1 + ui\u2212 ui+1 + 1). Since ui\u2265 ui+1, it is su\ufb03cient",
+   "title": "(xi− xi+1− yi− yi+1 + ui− ui+1 + 1). Since ui≥ ui+1, it is suﬃcient",
    "level": 1,
    "page_start": 13,
    "page_end": 14,
@@ -302,7 +307,7 @@
   {
    "id": "sec-012-51-a-generating-function-proof-letbkia-q",
    "number": "5.1",
-   "title": "A generating function proof. LetBk,i(a, q) =\u2211",
+   "title": "A generating function proof. LetBk,i(a, q) =∑",
    "level": 2,
    "page_start": 15,
    "page_end": 17,

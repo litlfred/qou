@@ -10,16 +10,20 @@
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Poincar\u00e9 Disc Model Danijela Simi\u0107 Filip Mari\u0107 Pierre Boutry",
+  "title": "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry",
   "authors_raw": "February 6, 2026",
-  "abstract": "We describe formalization of the Poincar\u00e9 disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is de\ufb01ned within the extended complex plane (one dimensional complex projective space CP 1), formalized in the AFP entry \u201cComplex Geometry\u201d [ 6]. Points, lines, congruence of pairs of points, betweenness of triples of points, circles, and isometries are de\ufb01ned within the model. It is shown that the model satis\ufb01es all Tarski\u2019s axioms except the Euclid\u2019s axiom. It is shown that it satis\ufb01es its negation and the limiting parallels axiom (which proves it to be a model of hyperbolic geometry).",
+  "abstract": "We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is deﬁned within the extended complex plane (one dimensional complex projective space CP 1), formalized in the AFP entry “Complex Geometry” [ 6]. Points, lines, congruence of pairs of points, betweenness of triples of points, circles, and isometries are deﬁned within the model. It is shown that the model satisﬁes all Tarski’s axioms except the Euclid’s axiom. It is shown that it satisﬁes its negation and the limiting parallels axiom (which proves it to be a model of hyperbolic geometry).",
   "docinfo": {
    "Author": "",
    "Title": "",
    "Creator": "LaTeX with hyperref",
    "Producer": "LuaTeX-1.14.0",
    "CreationDate": "D:20260206214343+11'00'"
-  }
+  },
+  "title_lines": [
+   "Poincaré Disc Model",
+   "Danijela Simić Filip Marić Pierre Boutry"
+  ]
  },
  "toc": [
   {
@@ -52,7 +56,7 @@
   },
   {
    "level": 1,
-   "title": "H-lines in the Poincar\u00e9 model",
+   "title": "H-lines in the Poincaré model",
    "page": 5,
    "source": "outline",
    "number": null
@@ -192,7 +196,7 @@
   },
   {
    "level": 1,
-   "title": "H-distance in the Poincar\u00e9 model",
+   "title": "H-distance in the Poincaré model",
    "page": 44,
    "source": "outline",
    "number": null
@@ -220,7 +224,7 @@
   },
   {
    "level": 1,
-   "title": "H-circles in the Poincar\u00e9 model",
+   "title": "H-circles in the Poincaré model",
    "page": 67,
    "source": "outline",
    "number": null
@@ -241,7 +245,7 @@
   },
   {
    "level": 1,
-   "title": "H-betweenness in the Poincar\u00e9 model",
+   "title": "H-betweenness in the Poincaré model",
    "page": 77,
    "source": "outline",
    "number": null
@@ -311,7 +315,7 @@
   },
   {
    "level": 1,
-   "title": "Intersection of h-lines with the x-axis in the Poincar\u00e9 model",
+   "title": "Intersection of h-lines with the x-axis in the Poincaré model",
    "page": 96,
    "source": "outline",
    "number": null
@@ -332,14 +336,14 @@
   },
   {
    "level": 2,
-   "title": "Check if a Poincar\u00e9 line intersects the y-axis",
+   "title": "Check if a Poincaré line intersects the y-axis",
    "page": 100,
    "source": "outline",
    "number": null
   },
   {
    "level": 2,
-   "title": "Intersection point of a Poincar\u00e9 line with the x-axis in the unit disc",
+   "title": "Intersection point of a Poincaré line with the x-axis in the unit disc",
    "page": 101,
    "source": "outline",
    "number": null
@@ -374,14 +378,14 @@
   },
   {
    "level": 1,
-   "title": "H-perpendicular h-lines in the Poincar\u00e9 model",
+   "title": "H-perpendicular h-lines in the Poincaré model",
    "page": 114,
    "source": "outline",
    "number": null
   },
   {
    "level": 1,
-   "title": "Poincar\u00e9 disc model types",
+   "title": "Poincaré disc model types",
    "page": 124,
    "source": "outline",
    "number": null
@@ -430,7 +434,7 @@
   },
   {
    "level": 1,
-   "title": "Poincar\u00e9 model satisfies Tarski axioms",
+   "title": "Poincaré model satisfies Tarski axioms",
    "page": 127,
    "source": "outline",
    "number": null
@@ -542,9 +546,9 @@
    "n_words": 527
   },
   {
-   "id": "sec-004-h-lines-in-the-poincar\u00e9-model",
+   "id": "sec-004-h-lines-in-the-poincaré-model",
    "number": null,
-   "title": "H-lines in the Poincar\u00e9 model",
+   "title": "H-lines in the Poincaré model",
    "level": 1,
    "page_start": 5,
    "page_end": 7,
@@ -712,9 +716,9 @@
    "n_words": 1518
   },
   {
-   "id": "sec-021-h-distance-in-the-poincar\u00e9-model",
+   "id": "sec-021-h-distance-in-the-poincaré-model",
    "number": null,
-   "title": "H-distance in the Poincar\u00e9 model",
+   "title": "H-distance in the Poincaré model",
    "level": 1,
    "page_start": 44,
    "page_end": 48,
@@ -752,9 +756,9 @@
    "n_words": 884
   },
   {
-   "id": "sec-025-h-circles-in-the-poincar\u00e9-model",
+   "id": "sec-025-h-circles-in-the-poincaré-model",
    "number": null,
-   "title": "H-circles in the Poincar\u00e9 model",
+   "title": "H-circles in the Poincaré model",
    "level": 1,
    "page_start": 67,
    "page_end": 71,
@@ -782,9 +786,9 @@
    "n_words": 1071
   },
   {
-   "id": "sec-028-h-betweenness-in-the-poincar\u00e9-model",
+   "id": "sec-028-h-betweenness-in-the-poincaré-model",
    "number": null,
-   "title": "H-betweenness in the Poincar\u00e9 model",
+   "title": "H-betweenness in the Poincaré model",
    "level": 1,
    "page_start": 77,
    "page_end": 77,
@@ -884,7 +888,7 @@
   {
    "id": "sec-038-intersection-of-h-lines-with-the-x-axis-in-the-p",
    "number": null,
-   "title": "Intersection of h-lines with the x-axis in the Poincar\u00e9 model",
+   "title": "Intersection of h-lines with the x-axis in the Poincaré model",
    "level": 1,
    "page_start": 96,
    "page_end": 96,
@@ -912,9 +916,9 @@
    "n_words": 1029
   },
   {
-   "id": "sec-041-check-if-a-poincar\u00e9-line-intersects-the-y-axis",
+   "id": "sec-041-check-if-a-poincaré-line-intersects-the-y-axis",
    "number": null,
-   "title": "Check if a Poincar\u00e9 line intersects the y-axis",
+   "title": "Check if a Poincaré line intersects the y-axis",
    "level": 2,
    "page_start": 100,
    "page_end": 101,
@@ -922,9 +926,9 @@
    "n_words": 365
   },
   {
-   "id": "sec-042-intersection-point-of-a-poincar\u00e9-line-with-the-x",
+   "id": "sec-042-intersection-point-of-a-poincaré-line-with-the-x",
    "number": null,
-   "title": "Intersection point of a Poincar\u00e9 line with the x-axis in the unit disc",
+   "title": "Intersection point of a Poincaré line with the x-axis in the unit disc",
    "level": 2,
    "page_start": 101,
    "page_end": 105,
@@ -972,9 +976,9 @@
    "n_words": 788
   },
   {
-   "id": "sec-047-h-perpendicular-h-lines-in-the-poincar\u00e9-model",
+   "id": "sec-047-h-perpendicular-h-lines-in-the-poincaré-model",
    "number": null,
-   "title": "H-perpendicular h-lines in the Poincar\u00e9 model",
+   "title": "H-perpendicular h-lines in the Poincaré model",
    "level": 1,
    "page_start": 114,
    "page_end": 124,
@@ -982,9 +986,9 @@
    "n_words": 3547
   },
   {
-   "id": "sec-048-poincar\u00e9-disc-model-types",
+   "id": "sec-048-poincaré-disc-model-types",
    "number": null,
-   "title": "Poincar\u00e9 disc model types",
+   "title": "Poincaré disc model types",
    "level": 1,
    "page_start": 124,
    "page_end": 124,

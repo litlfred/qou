@@ -16,14 +16,18 @@
   },
   "doi": null,
   "title": "The Aldous property for normal Cayley graphs on symmetric groups",
-  "authors_raw": "Chenhui Lv\u22171 and Sanming Zhou 2",
-  "abstract": "Aldous\u2019 spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same spectral gap, or, equivalently, the second largest eigenvalue of any connected Cayley graph on the symmetric groupS n with respect to a set of transpositions is achieved by the standard representation ofS n. This celebrated conjecture, proved in its general form in 2010, has inspired much interest in searching for other Cayley graphs onS n possessing this property, now known as the Aldous property. In this paper, we first prove that forn\u22655 at most one of a normal Cayley graph onSn and its complement can possess the Aldous property except when these two graphs are 2K n!/2 andK n!/2,n!/2 respectively. We then determine, for sufficiently largen, all normal Cayley graphs Cay(Sn, S) that have the Aldous property, except for the case whenScontains a permutation with support size in{2,3, . . . , n\u22122} and a permutation with support size in{n\u22121, n}, but not all permutations with support sizenare contained inS. In particular, we show that a non-complete normal Cayley graph Cay(Sn, S) does not have the Aldous property if all permutations inShave support sizen\u22121 orn, or all permutations with support sizenare contained inS, thereby solving an open problem posed by Li, Xia and Zhou in 2023. Along the way we determine all normal Cayley graphs onS n that are line graphs, and classify all normal Cayley graphs onS n with the strictly second largest eigenvalue at most 1.",
+  "authors_raw": "Chenhui Lv∗1 and Sanming Zhou 2",
+  "abstract": "Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same spectral gap, or, equivalently, the second largest eigenvalue of any connected Cayley graph on the symmetric groupS n with respect to a set of transpositions is achieved by the standard representation ofS n. This celebrated conjecture, proved in its general form in 2010, has inspired much interest in searching for other Cayley graphs onS n possessing this property, now known as the Aldous property. In this paper, we first prove that forn≥5 at most one of a normal Cayley graph onSn and its complement can possess the Aldous property except when these two graphs are 2K n!/2 andK n!/2,n!/2 respectively. We then determine, for sufficiently largen, all normal Cayley graphs Cay(Sn, S) that have the Aldous property, except for the case whenScontains a permutation with support size in{2,3, . . . , n−2} and a permutation with support size in{n−1, n}, but not all permutations with support sizenare contained inS. In particular, we show that a non-complete normal Cayley graph Cay(Sn, S) does not have the Aldous property if all permutations inShave support sizen−1 orn, or all permutations with support sizenare contained inS, thereby solving an open problem posed by Li, Xia and Zhou in 2023. Along the way we determine all normal Cayley graphs onS n that are line graphs, and classify all normal Cayley graphs onS n with the strictly second largest eigenvalue at most 1.",
   "docinfo": {
    "Author": "Chenhui Lv; Sanming Zhou",
    "Creator": "arXiv GenPDF (tex2pdf:8def8d8)",
    "Producer": "pikepdf 8.15.1",
    "Title": "The Aldous property for normal Cayley graphs on symmetric groups"
-  }
+  },
+  "title_lines": [
+   "The Aldous property for normal Cayley graphs on",
+   "symmetric groups"
+  ]
  },
  "toc": [
   {
@@ -42,7 +46,7 @@
   },
   {
    "level": 2,
-   "title": "Aldous\u2019 spectral gap conjecture",
+   "title": "Aldous’ spectral gap conjecture",
    "page": 2,
    "source": "inferred",
    "number": "1.1"
@@ -126,7 +130,7 @@
   {
    "id": "sec-001-11-aldous-spectral-gap-conjecture",
    "number": "1.1",
-   "title": "Aldous\u2019 spectral gap conjecture",
+   "title": "Aldous’ spectral gap conjecture",
    "level": 2,
    "page_start": 1,
    "page_end": 2,

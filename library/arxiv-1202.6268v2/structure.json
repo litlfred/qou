@@ -17,14 +17,17 @@
   "doi": null,
   "title": "THE QUANTUM CONTENT OF THE GLUING EQUATIONS",
   "authors_raw": "TUDOR DIMOFTE AND STA VROS GAROUF ALIDIS",
-  "abstract": "The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that describe the complete hyperbolic structure of M and its deformations. Given a Neumann-Zagier datum (comprising the shapes together with the gluing equations in a partic ular canonical form) we de\ufb01ne a formal power series with coe\ufb03cients in the invariant trace \ufb01 eld of M that should (a) agree with the asymptotic expansion of the Kashaev invariant to all orders, and (b) contain the nonabelian Reidemeister-Ray-Singer torsion of M as its \ufb01rst subleading \u201c1-loop\u201d term. As a case study, we prove topological invariance of the 1-loop part of the constructed series and extend it into a formal power series of rational functions on th e PSL(2 , C) character variety of M . We provide a computer implementation of the \ufb01rst three terms of t he series using the standard SnapPy toolbox and check numerically the agreement of our torsion with the Reidemeister-Ray-Singer for all 59924 hyperbolic knots wit h at most 14 crossings. Finally, we explain how the de\ufb01nition of our series follows from the quan tization of 3d hyperbolic geometry, using principles of Topological Quantum Field Th eory. Our results have a straightforward extension to any 3-manifold M with torus boundary components (not necessarily hyperbolic) that admits a regular ideal triangulatio n with respect to some PSL(2, C) representation.",
+  "abstract": "The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that describe the complete hyperbolic structure of M and its deformations. Given a Neumann-Zagier datum (comprising the shapes together with the gluing equations in a partic ular canonical form) we deﬁne a formal power series with coeﬃcients in the invariant trace ﬁ eld of M that should (a) agree with the asymptotic expansion of the Kashaev invariant to all orders, and (b) contain the nonabelian Reidemeister-Ray-Singer torsion of M as its ﬁrst subleading “1-loop” term. As a case study, we prove topological invariance of the 1-loop part of the constructed series and extend it into a formal power series of rational functions on th e PSL(2 , C) character variety of M . We provide a computer implementation of the ﬁrst three terms of t he series using the standard SnapPy toolbox and check numerically the agreement of our torsion with the Reidemeister-Ray-Singer for all 59924 hyperbolic knots wit h at most 14 crossings. Finally, we explain how the deﬁnition of our series follows from the quan tization of 3d hyperbolic geometry, using principles of Topological Quantum Field Th eory. Our results have a straightforward extension to any 3-manifold M with torus boundary components (not necessarily hyperbolic) that admits a regular ideal triangulatio n with respect to some PSL(2, C) representation.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20180625120028-04'00'",
    "Title": "",
    "Creator": "LaTeX with hyperref package",
    "Author": ""
-  }
+  },
+  "title_lines": [
+   "THE QUANTUM CONTENT OF THE GLUING EQUATIONS"
+  ]
  },
  "toc": [
   {
@@ -197,7 +200,7 @@
   },
   {
    "level": 2,
-   "title": "Invariance under 2\u20133 moves",
+   "title": "Invariance under 2–3 moves",
    "page": 19,
    "source": "outline",
    "number": "3.6"
@@ -576,7 +579,7 @@
   {
    "id": "sec-020-36-invariance-under-23-moves",
    "number": "3.6",
-   "title": "Invariance under 2\u20133 moves",
+   "title": "Invariance under 2–3 moves",
    "level": 2,
    "page_start": 19,
    "page_end": 22,

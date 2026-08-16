@@ -45,6 +45,7 @@ import unicodedata
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIB = os.path.join(REPO, "library")
 REFS = os.path.join(REPO, "content", "schema", "references.ts")
+OVERRIDES = os.path.join(REPO, "docs", "audits", "library-title-overrides.json")
 
 # Boilerplate that is not a title. Every one of these was observed leading
 # an extracted title in this library.
@@ -105,9 +106,16 @@ def strip_byline_line(md: dict) -> tuple[str, list[dict]]:
     if len(lines) < 2 or (md.get("authors_raw") or "").strip():
         return " ".join(lines) if lines else (md.get("title") or ""), []
     head, last = lines[:-1], lines[-1]
+    # A digit means the line still carries title content. "E8 Lei Yang" is
+    # a byline preceded by the last word of the title, and dropping the
+    # whole line cost "Modular curves, invariant theory and E8" its E8.
+    if re.search(r"\d", last):
+        return " ".join(lines), []
     au = split_authors(last)
+    # Every token of the line must be accounted for by the parsed names.
+    # A tolerance of even one token is what let the E8 through.
     whole = au and len(" ".join(a["given"] + " " + a["family"] for a in au).split()) \
-        >= len(last.split()) - 1
+        == len(last.split())
     if whole and len(" ".join(head).split()) >= 3 and len(last.split()) <= 6:
         return " ".join(head), au
     return " ".join(lines), []
@@ -142,7 +150,11 @@ def clean_title(t: str, authors: list[dict] | None = None) -> str:
     # STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS ANH T. TRAN".
     words = t.split()
     if len(words) > 5 and not t.isupper():
+        # A digit means it is a mathematical object, not a surname: E8, K3,
+        # SU2, AdS5 all end titles legitimately, and stripping them cost
+        # "Modular curves, invariant theory and E8" its subject.
         while (len(words) > 5 and words[-1].isupper()
+               and not any(c.isdigit() for c in words[-1])
                and len(re.sub(r"[^\w]", "", words[-1])) <= 8):
             words.pop()
         t = " ".join(words)
@@ -251,17 +263,80 @@ def split_authors(raw: str) -> list[dict]:
     return out[:8]
 
 
-def slug_id(md: dict, doc: str) -> str:
-    au = split_authors(md.get("authors_raw") or "")
-    fam = re.sub(r"[^a-z]", "", (au[0]["family"] if au else "").lower())
-    yr = ""
-    m = re.search(r"\b(19|20)\d{2}\b", (md.get("title") or "") + " " + doc)
-    if m:
-        yr = m.group(0)
+def arxiv_year(ax: str) -> str:
+    """Year from an arXiv id. New-style ids are YYMM.NNNNN; old-style ones
+    carry YYMMNNN after the slash. Both are unambiguous back to 1991, which
+    predates every paper here."""
+    m = re.match(r"(\d{2})(\d{2})\.", ax or "")
+    if not m:
+        m = re.search(r"/(\d{2})(\d{2})\d{3}", ax or "")
+    if not m:
+        return ""
+    yy = int(m.group(1))
+    return str(1900 + yy if yy >= 91 else 2000 + yy)
+
+
+# Words that are not surnames. Each was emitted as one by the parser: a
+# city standing in for a university, a department, a stray fragment.
+NOT_A_SURNAME = {
+    "physics", "mathematics", "institute", "institut", "university", "bonn",
+    "kiev", "moscow", "princeton", "korea", "japan", "china", "germany",
+    "department", "faculty", "school", "centre", "center", "theory",
+}
+# JHEP and several other houses suffix the affiliation marker directly to
+# the surname — "Adam R. Browna", "Marcos Mariñob" — and print the
+# affiliations as "aPrinceton", "bKorea". The suffix is indistinguishable
+# from a real final letter in one name; what gives it away is the byline
+# carrying the matching lower-case-then-capital affiliation tokens.
+RE_AFFIL_MARKER = re.compile(r"\b[a-z][A-Z\u00c0-\u00de]")
+
+
+def authors_trustworthy(authors: list[dict], raw: str) -> bool:
+    """Reject a parsed author list rather than emit a wrong one.
+
+    An entry carrying a correct title, arXiv id and library pointer with no
+    authors is honest and useful. One naming "Bonn" or "Browna" is wrong,
+    and it propagates: the reference id is built from the first surname.
+    """
+    if not authors:
+        return False
+    for a in authors:
+        fam = a["family"]
+        if len(re.sub(r"[^\w]", "", fam)) < 2:
+            return False
+        if fam.lower() in NOT_A_SURNAME or a["given"].lower() in NOT_A_SURNAME:
+            return False
+    if RE_AFFIL_MARKER.search(raw or ""):
+        return False
+    # The affiliation marker is often only visible as a pattern across the
+    # list: "Browna", "Robertsb", "Susskinda" are three surnames ending in
+    # a stray a/b. One such name is a coincidence; two are a house style.
+    suffixed = sum(1 for a in authors
+                   if re.search(r"[a-z\u00e0-\u00ff][abcde]$", a["family"]))
+    if suffixed >= 2:
+        return False
+    # A kerning-split surname ("GAROUF ALIDIS" -> family "ALIDIS") is NOT
+    # detectable here and is left to the override file. The obvious test —
+    # is this family preceded by another token? — is true of every author
+    # that has a given name, and rejected 54 of 64 lists when tried.
+    return True
+
+
+def slug_id(md: dict, doc: str, authors: list[dict]) -> str:
+    """`family` + year, matching the ids already in references.ts.
+
+    The year comes from the arXiv id rather than from the text: a year
+    scraped out of a title is as likely to be a cited work's date as the
+    paper's own.
+    """
+    fam = re.sub(r"[^a-z]", "", (authors[0]["family"] if authors else "").lower())
     ax = (md.get("arxiv") or {}).get("id") or ""
-    if fam:
-        return f"{fam}{yr}" if yr else f"{fam}-{ax or doc}"[:40]
-    return re.sub(r"[^a-z0-9.-]", "", doc.lower())[:40]
+    yr = arxiv_year(ax)
+    if fam and yr:
+        return f"{fam}{yr}"
+    if fam and ax:
+        return f"{fam}-{re.sub(r'[^a-z0-9.]', '', ax.lower())}"
+    return re.sub(r"[^a-z0-9.-]", "", doc.lower())[:44]
 
 
 def main() -> int:
@@ -271,6 +346,8 @@ def main() -> int:
     args = ap.parse_args()
 
     refs = open(REFS, encoding="utf-8").read()
+    overrides = (json.load(open(OVERRIDES, encoding="utf-8")).get("overrides", {})
+                 if os.path.exists(OVERRIDES) else {})
     registered = set(re.findall(r'docId: "([^"]+)"', refs))
     existing_ids = set(re.findall(r'id:\s*"([^"]+)"', refs))
 
@@ -293,13 +370,25 @@ def main() -> int:
         raw_title, byline_au = strip_byline_line(md)
         au = au or byline_au
         title = clean_title(raw_title, au)
+        # A hand-verified correction wins over every heuristic above. The
+        # last few per cent of defects are not worth another rule: one
+        # general enough to fix them starts eating real titles.
+        ov = overrides.get(doc) or {}
+        if ov.get("title"):
+            title = ov["title"]
+        if ov.get("authors"):
+            au = ov["authors"]
         # Band on the CLEANED title: that is what the entry would carry.
         b, why = band(md, chars, title)
+        if ov.get("band"):
+            b, why = ov["band"], ov.get("why", "hand-verified override")
         # The byline often lands in the title instead of `authors_raw`; when
         # it does, the tail the cleaner removed is where the names are.
         if not au:
             tail = (md.get("title") or "")[len(title):]
             au = split_authors(tail)
+        if not authors_trustworthy(au, md.get("authors_raw") or md.get("title") or ""):
+            au = []
         rows.append({"doc": doc, "band": b, "why": why, "md": md, "title": title,
                      "pages": art.get("source", {}).get("pages"),
                      "sections": len(art.get("sections") or []), "authors": au})
@@ -325,7 +414,7 @@ def main() -> int:
 
     for r in sel:
         md, doc = r["md"], r["doc"]
-        rid = slug_id(md, doc)
+        rid = (overrides.get(doc) or {}).get("id") or slug_id(md, doc, r["authors"])
         while rid in existing_ids:
             rid += "a"
         existing_ids.add(rid)

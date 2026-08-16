@@ -15,9 +15,13 @@
   "abstract": "We derive a formula for the colored Jones polynomial of 2-bridge knots. For a twist knot, a more explicit formula is given and it leads to a relation between the degree of the colored Jones polynomial and the crossing number.",
   "docinfo": {
    "Creator": " TeX output 2008.04.22:1711",
-   "Producer": "dvipdfm 0.13.2c, Copyright \u00a9 1998, by Mark A. Wicks",
+   "Producer": "dvipdfm 0.13.2c, Copyright © 1998, by Mark A. Wicks",
    "CreationDate": "D:20080422171138+09'00'"
-  }
+  },
+  "title_lines": [
+   "A Formula for the Colored Jones Polynomial of 2-Bridge Knots",
+   "Toshie Takata"
+  ]
  },
  "toc": [
   {
@@ -29,14 +33,14 @@
   },
   {
    "level": 1,
-   "title": "(\u03c3p\u2032 + 1)mp\u2032 \u2212",
+   "title": "(σp′ + 1)mp′ −",
    "page": 3,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(\u03c3ik \u2212 \u03c3ik\u2032 )(mik \u2212 mik\u22121)(mik\u2032 \u2212 mik\u2032 \u22121)",
+   "title": "(σik − σik′ )(mik − mik−1)(mik′ − mik′ −1)",
    "page": 3,
    "source": "inferred",
    "number": "2"
@@ -57,49 +61,49 @@
   },
   {
    "level": 1,
-   "title": "(\u2212lik ),",
+   "title": "(−lik ),",
    "page": 10,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(\u03c3ik \u2212 \u03c3ik\u2032 )lik lik\u2032",
+   "title": "(σik − σik′ )lik lik′",
    "page": 11,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(\u03c3ik \u2212 \u03c3ik\u2032 )lik lik\u2032 ,",
+   "title": "(σik − σik′ )lik lik′ ,",
    "page": 13,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(\u2212lik )",
+   "title": "(−lik )",
    "page": 13,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(\u03c3ik \u2212 \u03c3ik\u2032 )lik lik\u2032 }",
+   "title": "(σik − σik′ )lik lik′ }",
    "page": 13,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(n\u2212mj \u22121)q",
+   "title": "(n−mj −1)q",
    "page": 15,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(\u03c3p\u2032 + \u03c31)mp\u2032 \u2212",
+   "title": "(σp′ + σ1)mp′ −",
    "page": 16,
    "source": "inferred",
    "number": "2"
@@ -120,14 +124,14 @@
   },
   {
    "level": 1,
-   "title": "(k+b+1\u22122j)),",
+   "title": "(k+b+1−2j)),",
    "page": 24,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(2n \u2212 1 \u2212 m2p1+1)m2p1+1 \u2265 \u2212 1",
+   "title": "(2n − 1 − m2p1+1)m2p1+1 ≥ − 1",
    "page": 25,
    "source": "inferred",
    "number": "2"
@@ -153,9 +157,9 @@
    "n_words": 702
   },
   {
-   "id": "sec-001-2-\u03c3p-1mp",
+   "id": "sec-001-2-σp-1mp",
    "number": "2",
-   "title": "(\u03c3p\u2032 + 1)mp\u2032 \u2212",
+   "title": "(σp′ + 1)mp′ −",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
@@ -163,9 +167,9 @@
    "n_words": 57
   },
   {
-   "id": "sec-002-2-\u03c3ik-\u03c3ik-mik-mik1mik-mik-1",
+   "id": "sec-002-2-σik-σik-mik-mik1mik-mik-1",
    "number": "2",
-   "title": "(\u03c3ik \u2212 \u03c3ik\u2032 )(mik \u2212 mik\u22121)(mik\u2032 \u2212 mik\u2032 \u22121)",
+   "title": "(σik − σik′ )(mik − mik−1)(mik′ − mik′ −1)",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
@@ -195,7 +199,7 @@
   {
    "id": "sec-005-2-lik",
    "number": "2",
-   "title": "(\u2212lik ),",
+   "title": "(−lik ),",
    "level": 1,
    "page_start": 10,
    "page_end": 11,
@@ -203,9 +207,9 @@
    "n_words": 193
   },
   {
-   "id": "sec-006-2-\u03c3ik-\u03c3ik-lik-lik",
+   "id": "sec-006-2-σik-σik-lik-lik",
    "number": "2",
-   "title": "(\u03c3ik \u2212 \u03c3ik\u2032 )lik lik\u2032",
+   "title": "(σik − σik′ )lik lik′",
    "level": 1,
    "page_start": 11,
    "page_end": 13,
@@ -215,7 +219,7 @@
   {
    "id": "sec-007-2-lik",
    "number": "2",
-   "title": "(\u2212lik )",
+   "title": "(−lik )",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
@@ -223,9 +227,9 @@
    "n_words": 51
   },
   {
-   "id": "sec-008-2-\u03c3ik-\u03c3ik-lik-lik",
+   "id": "sec-008-2-σik-σik-lik-lik",
    "number": "2",
-   "title": "(\u03c3ik \u2212 \u03c3ik\u2032 )lik lik\u2032 ,",
+   "title": "(σik − σik′ )lik lik′ ,",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
@@ -233,9 +237,9 @@
    "n_words": 90
   },
   {
-   "id": "sec-009-2-\u03c3ik-\u03c3ik-lik-lik",
+   "id": "sec-009-2-σik-σik-lik-lik",
    "number": "2",
-   "title": "(\u03c3ik \u2212 \u03c3ik\u2032 )lik lik\u2032 }",
+   "title": "(σik − σik′ )lik lik′ }",
    "level": 1,
    "page_start": 13,
    "page_end": 15,
@@ -245,7 +249,7 @@
   {
    "id": "sec-010-2-nmj-1q",
    "number": "2",
-   "title": "(n\u2212mj \u22121)q",
+   "title": "(n−mj −1)q",
    "level": 1,
    "page_start": 15,
    "page_end": 16,
@@ -253,9 +257,9 @@
    "n_words": 317
   },
   {
-   "id": "sec-011-2-\u03c3p-\u03c31mp",
+   "id": "sec-011-2-σp-σ1mp",
    "number": "2",
-   "title": "(\u03c3p\u2032 + \u03c31)mp\u2032 \u2212",
+   "title": "(σp′ + σ1)mp′ −",
    "level": 1,
    "page_start": 16,
    "page_end": 19,
@@ -285,7 +289,7 @@
   {
    "id": "sec-014-2-kb12j",
    "number": "2",
-   "title": "(k+b+1\u22122j)),",
+   "title": "(k+b+1−2j)),",
    "level": 1,
    "page_start": 24,
    "page_end": 25,
@@ -295,7 +299,7 @@
   {
    "id": "sec-015-2-2n-1-m2p11m2p11-1",
    "number": "2",
-   "title": "(2n \u2212 1 \u2212 m2p1+1)m2p1+1 \u2265 \u2212 1",
+   "title": "(2n − 1 − m2p1+1)m2p1+1 ≥ − 1",
    "level": 1,
    "page_start": 25,
    "page_end": 26,

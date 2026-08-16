@@ -10,15 +10,19 @@
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Motivic periods and P1\\{ 0, 1, \u221e} Francis Brown\u2217",
+  "title": "Motivic periods and P1\\{ 0, 1, ∞} Francis Brown∗",
   "authors_raw": null,
-  "abstract": "This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta values. Mathematics Subject Classi\ufb01cation (2010). Primary 11M32; Secondary 14C15.",
+  "abstract": "This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta values. Mathematics Subject Classiﬁcation (2010). Primary 11M32; Secondary 14C15.",
   "docinfo": {
    "Producer": "GPL Ghostscript 8.57",
    "CreationDate": "D:20140719090749Z",
    "Creator": "dvips(k) 5.96 Copyright 2005 Radical Eye Software",
    "Title": "MotivicPeriodsandP1minus3pointsv3.dvi"
-  }
+  },
+  "title_lines": [
+   "Motivic periods and P1\\{ 0, 1, ∞}",
+   "Francis Brown∗"
+  ]
  },
  "toc": [
   {
@@ -51,7 +55,7 @@
   },
   {
    "level": 1,
-   "title": "The pro-unipotent completion \u03c0un",
+   "title": "The pro-unipotent completion πun",
    "page": 2,
    "source": "inferred",
    "number": "2"
@@ -79,7 +83,7 @@
   },
   {
    "level": 3,
-   "title": "Motivic MZV\u2019s. Let T = MT (Z). The Betti and de Rham realisations",
+   "title": "Motivic MZV’s. Let T = MT (Z). The Betti and de Rham realisations",
    "page": 4,
    "source": "inferred",
    "number": "1.3.1"
@@ -93,21 +97,21 @@
   },
   {
    "level": 1,
-   "title": "A \ufb01nite-dimensional Q-vector space MB equipped with an increasing \ufb01ltra-",
+   "title": "A ﬁnite-dimensional Q-vector space MB equipped with an increasing ﬁltra-",
    "page": 5,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "A \ufb01nite-dimensional Q-vector space MdR equipped with an increasing \ufb01ltra-",
+   "title": "A ﬁnite-dimensional Q-vector space MdR equipped with an increasing ﬁltra-",
    "page": 5,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "An isomorphism comp B,dR : MdR \u2297 C",
+   "title": "An isomorphism comp B,dR : MdR ⊗ C",
    "page": 5,
    "source": "inferred",
    "number": "3"
@@ -121,49 +125,49 @@
   },
   {
    "level": 3,
-   "title": "Multiple modular values. Therefore, in the \ufb01nal part of this talk I want",
+   "title": "Multiple modular values. Therefore, in the ﬁnal part of this talk I want",
    "page": 6,
    "source": "inferred",
    "number": "1.4.1"
   },
   {
    "level": 2,
-   "title": "Contents. In \u00a72, I review the motivic fundamental group of X from its",
+   "title": "Contents. In §2, I review the motivic fundamental group of X from its",
    "page": 6,
    "source": "inferred",
    "number": "1.5"
   },
   {
    "level": 1,
-   "title": "The motivic fundamental group of P1\\{ 0, 1, \u221e}",
+   "title": "The motivic fundamental group of P1\\{ 0, 1, ∞}",
    "page": 7,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(Betti). A collection of schemes \u03c0B",
+   "title": "(Betti). A collection of schemes πB",
    "page": 7,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "(X, x, y) which are de\ufb01ned over Q, and",
+   "title": "(X, x, y) which are deﬁned over Q, and",
    "page": 7,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "(X, x, y) \u00d7 \u03c0B",
+   "title": "(X, x, y) × πB",
    "page": 7,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "(X, y, z) \u2212 \u2192\u03c0B",
+   "title": "(X, y, z) − →πB",
    "page": 7,
    "source": "inferred",
    "number": "1"
@@ -177,7 +181,7 @@
   },
   {
    "level": 1,
-   "title": "(X, x, y) \u2212 \u2192\u03c0B",
+   "title": "(X, x, y) − →πB",
    "page": 7,
    "source": "inferred",
    "number": "1"
@@ -191,7 +195,7 @@
   },
   {
    "level": 1,
-   "title": "(de Rham). An a\ufb03ne group scheme 4 over Q denoted by \u03c0dR",
+   "title": "(de Rham). An aﬃne group scheme 4 over Q denoted by πdR",
    "page": 7,
    "source": "inferred",
    "number": "2"
@@ -205,14 +209,14 @@
   },
   {
    "level": 1,
-   "title": "(X, x, y) \u00d7Q C",
+   "title": "(X, x, y) ×Q C",
    "page": 7,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "(X) \u00d7Q C . (2.2)",
+   "title": "(X) ×Q C . (2.2)",
    "page": 7,
    "source": "inferred",
    "number": "1"
@@ -226,7 +230,7 @@
   },
   {
    "level": 1,
-   "title": "(X, x, y ) = \u03c0 dR",
+   "title": "(X, x, y ) = π dR",
    "page": 7,
    "source": "inferred",
    "number": "1"
@@ -261,14 +265,14 @@
   },
   {
    "level": 1,
-   "title": "(Betti). The Betti fundamental groupoid is de\ufb01ned to be th e pro-unipotent",
+   "title": "(Betti). The Betti fundamental groupoid is deﬁned to be th e pro-unipotent",
    "page": 8,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "(X(C), x)] \u2212 \u2192Q \u2212 \u21920",
+   "title": "(X(C), x)] − →Q − →0",
    "page": 8,
    "source": "inferred",
    "number": "1"
@@ -296,21 +300,21 @@
   },
   {
    "level": 1,
-   "title": "(de Rham). When X = P1\\{0, 1, \u221e}, one veri\ufb01es that",
+   "title": "(de Rham). When X = P1\\{0, 1, ∞}, one veriﬁes that",
    "page": 9,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(X)) \u223c",
+   "title": "(X)) ∼",
    "page": 9,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 2,
-   "title": "Periods. The periods of the motivic fundamental groupoid of P1\\{0, 1, \u221e}",
+   "title": "Periods. The periods of the motivic fundamental groupoid of P1\\{0, 1, ∞}",
    "page": 9,
    "source": "inferred",
    "number": "2.1"
@@ -380,14 +384,14 @@
   },
   {
    "level": 1,
-   "title": "(P1\\{0, 1, \u221e},",
+   "title": "(P1\\{0, 1, ∞},",
    "page": 14,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 2,
-   "title": "Canonical generators. Recall that the unipotent zeta values \u03b6u are",
+   "title": "Canonical generators. Recall that the unipotent zeta values ζu are",
    "page": 15,
    "source": "inferred",
    "number": "3.1"
@@ -415,7 +419,7 @@
   },
   {
    "level": 1,
-   "title": "(P1\\{0, \u00b11, \u221e},",
+   "title": "(P1\\{0, ±1, ∞},",
    "page": 17,
    "source": "inferred",
    "number": "1"
@@ -471,7 +475,7 @@
   },
   {
    "level": 2,
-   "title": "Regularisation. The theory of tangential base points ([10], \u00a715) gives",
+   "title": "Regularisation. The theory of tangential base points ([10], §15) gives",
    "page": 21,
    "source": "inferred",
    "number": "6.2"
@@ -499,14 +503,14 @@
   },
   {
    "level": 1,
-   "title": "The coe\ufb03cients of CS can be interpreted as certain periods of the relative",
+   "title": "The coeﬃcients of CS can be interpreted as certain periods of the relative",
    "page": 22,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "In \u2018geometric\u2019 situations, one expects the relative comp letion to be the Betti",
+   "title": "In ‘geometric’ situations, one expects the relative comp letion to be the Betti",
    "page": 22,
    "source": "inferred",
    "number": "2"
@@ -583,9 +587,9 @@
    "n_words": 147
   },
   {
-   "id": "sec-004-2-the-pro-unipotent-completion-\u03c0un",
+   "id": "sec-004-2-the-pro-unipotent-completion-πun",
    "number": "2",
-   "title": "The pro-unipotent completion \u03c0un",
+   "title": "The pro-unipotent completion πun",
    "level": 1,
    "page_start": 2,
    "page_end": 2,
@@ -625,7 +629,7 @@
   {
    "id": "sec-008-131-motivic-mzvs-let-t-mt-z-the-betti-and-de-rha",
    "number": "1.3.1",
-   "title": "Motivic MZV\u2019s. Let T = MT (Z). The Betti and de Rham realisations",
+   "title": "Motivic MZV’s. Let T = MT (Z). The Betti and de Rham realisations",
    "level": 3,
    "page_start": 4,
    "page_end": 5,
@@ -643,9 +647,9 @@
    "n_words": 29
   },
   {
-   "id": "sec-010-1-a-\ufb01nite-dimensional-q-vector-space-mb-equipped",
+   "id": "sec-010-1-a-ﬁnite-dimensional-q-vector-space-mb-equipped",
    "number": "1",
-   "title": "A \ufb01nite-dimensional Q-vector space MB equipped with an increasing \ufb01ltra-",
+   "title": "A ﬁnite-dimensional Q-vector space MB equipped with an increasing ﬁltra-",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
@@ -653,9 +657,9 @@
    "n_words": 10
   },
   {
-   "id": "sec-011-2-a-\ufb01nite-dimensional-q-vector-space-mdr-equippe",
+   "id": "sec-011-2-a-ﬁnite-dimensional-q-vector-space-mdr-equippe",
    "number": "2",
-   "title": "A \ufb01nite-dimensional Q-vector space MdR equipped with an increasing \ufb01ltra-",
+   "title": "A ﬁnite-dimensional Q-vector space MdR equipped with an increasing ﬁltra-",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
@@ -665,7 +669,7 @@
   {
    "id": "sec-012-3-an-isomorphism-comp-bdr-mdr-c",
    "number": "3",
-   "title": "An isomorphism comp B,dR : MdR \u2297 C",
+   "title": "An isomorphism comp B,dR : MdR ⊗ C",
    "level": 1,
    "page_start": 5,
    "page_end": 6,
@@ -683,9 +687,9 @@
    "n_words": 167
   },
   {
-   "id": "sec-014-141-multiple-modular-values-therefore-in-the-\ufb01na",
+   "id": "sec-014-141-multiple-modular-values-therefore-in-the-ﬁna",
    "number": "1.4.1",
-   "title": "Multiple modular values. Therefore, in the \ufb01nal part of this talk I want",
+   "title": "Multiple modular values. Therefore, in the ﬁnal part of this talk I want",
    "level": 3,
    "page_start": 6,
    "page_end": 6,
@@ -695,7 +699,7 @@
   {
    "id": "sec-015-15-contents-in-2-i-review-the-motivic-fundamenta",
    "number": "1.5",
-   "title": "Contents. In \u00a72, I review the motivic fundamental group of X from its",
+   "title": "Contents. In §2, I review the motivic fundamental group of X from its",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
@@ -705,7 +709,7 @@
   {
    "id": "sec-016-2-the-motivic-fundamental-group-of-p1-0-1",
    "number": "2",
-   "title": "The motivic fundamental group of P1\\{ 0, 1, \u221e}",
+   "title": "The motivic fundamental group of P1\\{ 0, 1, ∞}",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -713,9 +717,9 @@
    "n_words": 31
   },
   {
-   "id": "sec-017-1-betti-a-collection-of-schemes-\u03c0b",
+   "id": "sec-017-1-betti-a-collection-of-schemes-πb",
    "number": "1",
-   "title": "(Betti). A collection of schemes \u03c0B",
+   "title": "(Betti). A collection of schemes πB",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -723,9 +727,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-018-1-x-x-y-which-are-de\ufb01ned-over-q-and",
+   "id": "sec-018-1-x-x-y-which-are-deﬁned-over-q-and",
    "number": "1",
-   "title": "(X, x, y) which are de\ufb01ned over Q, and",
+   "title": "(X, x, y) which are deﬁned over Q, and",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -733,9 +737,9 @@
    "n_words": 10
   },
   {
-   "id": "sec-019-1-x-x-y-\u03c0b",
+   "id": "sec-019-1-x-x-y-πb",
    "number": "1",
-   "title": "(X, x, y) \u00d7 \u03c0B",
+   "title": "(X, x, y) × πB",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -743,9 +747,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-020-1-x-y-z-\u03c0b",
+   "id": "sec-020-1-x-y-z-πb",
    "number": "1",
-   "title": "(X, y, z) \u2212 \u2192\u03c0B",
+   "title": "(X, y, z) − →πB",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -763,9 +767,9 @@
    "n_words": 13
   },
   {
-   "id": "sec-022-1-x-x-y-\u03c0b",
+   "id": "sec-022-1-x-x-y-πb",
    "number": "1",
-   "title": "(X, x, y) \u2212 \u2192\u03c0B",
+   "title": "(X, x, y) − →πB",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -783,9 +787,9 @@
    "n_words": 26
   },
   {
-   "id": "sec-024-2-de-rham-an-a\ufb03ne-group-scheme-4-over-q-denoted",
+   "id": "sec-024-2-de-rham-an-aﬃne-group-scheme-4-over-q-denoted",
    "number": "2",
-   "title": "(de Rham). An a\ufb03ne group scheme 4 over Q denoted by \u03c0dR",
+   "title": "(de Rham). An aﬃne group scheme 4 over Q denoted by πdR",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -805,7 +809,7 @@
   {
    "id": "sec-026-1-x-x-y-q-c",
    "number": "1",
-   "title": "(X, x, y) \u00d7Q C",
+   "title": "(X, x, y) ×Q C",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -815,7 +819,7 @@
   {
    "id": "sec-027-1-x-q-c-22",
    "number": "1",
-   "title": "(X) \u00d7Q C . (2.2)",
+   "title": "(X) ×Q C . (2.2)",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -833,9 +837,9 @@
    "n_words": 9
   },
   {
-   "id": "sec-029-1-x-x-y-\u03c0-dr",
+   "id": "sec-029-1-x-x-y-π-dr",
    "number": "1",
-   "title": "(X, x, y ) = \u03c0 dR",
+   "title": "(X, x, y ) = π dR",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -883,9 +887,9 @@
    "n_words": 54
   },
   {
-   "id": "sec-034-1-betti-the-betti-fundamental-groupoid-is-de\ufb01ned",
+   "id": "sec-034-1-betti-the-betti-fundamental-groupoid-is-deﬁned",
    "number": "1",
-   "title": "(Betti). The Betti fundamental groupoid is de\ufb01ned to be th e pro-unipotent",
+   "title": "(Betti). The Betti fundamental groupoid is deﬁned to be th e pro-unipotent",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
@@ -895,7 +899,7 @@
   {
    "id": "sec-035-1-xc-x-q-0",
    "number": "1",
-   "title": "(X(C), x)] \u2212 \u2192Q \u2212 \u21920",
+   "title": "(X(C), x)] − →Q − →0",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
@@ -933,9 +937,9 @@
    "n_words": 17
   },
   {
-   "id": "sec-039-2-de-rham-when-x-p10-1-one-veri\ufb01es-that",
+   "id": "sec-039-2-de-rham-when-x-p10-1-one-veriﬁes-that",
    "number": "2",
-   "title": "(de Rham). When X = P1\\{0, 1, \u221e}, one veri\ufb01es that",
+   "title": "(de Rham). When X = P1\\{0, 1, ∞}, one veriﬁes that",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
@@ -945,7 +949,7 @@
   {
    "id": "sec-040-1-x",
    "number": "1",
-   "title": "(X)) \u223c",
+   "title": "(X)) ∼",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
@@ -955,7 +959,7 @@
   {
    "id": "sec-041-21-periods-the-periods-of-the-motivic-fundamenta",
    "number": "2.1",
-   "title": "Periods. The periods of the motivic fundamental groupoid of P1\\{0, 1, \u221e}",
+   "title": "Periods. The periods of the motivic fundamental groupoid of P1\\{0, 1, ∞}",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
@@ -1055,7 +1059,7 @@
   {
    "id": "sec-051-1-p10-1",
    "number": "1",
-   "title": "(P1\\{0, 1, \u221e},",
+   "title": "(P1\\{0, 1, ∞},",
    "level": 1,
    "page_start": 14,
    "page_end": 15,
@@ -1065,7 +1069,7 @@
   {
    "id": "sec-052-31-canonical-generators-recall-that-the-unipoten",
    "number": "3.1",
-   "title": "Canonical generators. Recall that the unipotent zeta values \u03b6u are",
+   "title": "Canonical generators. Recall that the unipotent zeta values ζu are",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
@@ -1105,7 +1109,7 @@
   {
    "id": "sec-056-1-p10-1",
    "number": "1",
-   "title": "(P1\\{0, \u00b11, \u221e},",
+   "title": "(P1\\{0, ±1, ∞},",
    "level": 1,
    "page_start": 17,
    "page_end": 17,
@@ -1185,7 +1189,7 @@
   {
    "id": "sec-064-62-regularisation-the-theory-of-tangential-base",
    "number": "6.2",
-   "title": "Regularisation. The theory of tangential base points ([10], \u00a715) gives",
+   "title": "Regularisation. The theory of tangential base points ([10], §15) gives",
    "level": 2,
    "page_start": 21,
    "page_end": 21,
@@ -1223,9 +1227,9 @@
    "n_words": 11
   },
   {
-   "id": "sec-068-1-the-coe\ufb03cients-of-cs-can-be-interpreted-as-cer",
+   "id": "sec-068-1-the-coeﬃcients-of-cs-can-be-interpreted-as-cer",
    "number": "1",
-   "title": "The coe\ufb03cients of CS can be interpreted as certain periods of the relative",
+   "title": "The coeﬃcients of CS can be interpreted as certain periods of the relative",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
@@ -1235,7 +1239,7 @@
   {
    "id": "sec-069-2-in-geometric-situations-one-expects-the-relati",
    "number": "2",
-   "title": "In \u2018geometric\u2019 situations, one expects the relative comp letion to be the Betti",
+   "title": "In ‘geometric’ situations, one expects the relative comp letion to be the Betti",
    "level": 1,
    "page_start": 22,
    "page_end": 22,

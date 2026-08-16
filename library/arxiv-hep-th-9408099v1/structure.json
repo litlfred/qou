@@ -23,7 +23,11 @@
    "CreationDate": "D:20241126154523-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "Title": "arXiv:hep-th/9408099v1  17 Aug 1994"
-  }
+  },
+  "title_lines": [
+   "E. Witten",
+   "Institute for Advanced Study"
+  ]
  },
  "toc": [
   {
@@ -84,7 +88,7 @@
   },
   {
    "level": 1,
-   "title": "A \ufb01rst look at the quantum theory",
+   "title": "A ﬁrst look at the quantum theory",
    "page": 14,
    "source": "inferred",
    "number": "4"
@@ -98,7 +102,7 @@
   },
   {
    "level": 2,
-   "title": "A \ufb01rst look at the quantum moduli space",
+   "title": "A ﬁrst look at the quantum moduli space",
    "page": 15,
    "source": "inferred",
    "number": "4.2"
@@ -112,7 +116,7 @@
   },
   {
    "level": 1,
-   "title": "(nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 \u00d7 Z2. The",
+   "title": "(nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 × Z2. The",
    "page": 20,
    "source": "inferred",
    "number": "2"
@@ -189,21 +193,21 @@
   },
   {
    "level": 1,
-   "title": "(m1 +m2 \u2212m3 \u2212m4)",
+   "title": "(m1 +m2 −m3 −m4)",
    "page": 37,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(m1 \u2212m2 +m3 \u2212m4)",
+   "title": "(m1 −m2 +m3 −m4)",
    "page": 37,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(m1 \u2212m2 \u2212m3 +m4)",
+   "title": "(m1 −m2 −m3 +m4)",
    "page": 37,
    "source": "inferred",
    "number": "2"
@@ -231,14 +235,14 @@
   },
   {
    "level": 1,
-   "title": "(u \u00b1",
+   "title": "(u ±",
    "page": 40,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(\u039b 2 \u00b1 \u039b",
+   "title": "(Λ 2 ± Λ",
    "page": 41,
    "source": "inferred",
    "number": "2"
@@ -343,21 +347,21 @@
   },
   {
    "level": 1,
-   "title": "Holomorphy of F is needed in order for the coe\ufb03cient \u03c4 (u, m i, \u039b) in front of W\u03b1",
+   "title": "Holomorphy of F is needed in order for the coeﬃcient τ (u, m i, Λ) in front of Wα",
    "page": 57,
    "source": "inferred",
    "number": "9"
   },
   {
    "level": 1,
-   "title": "(1,\u03c4 ) for Nf = 4 and",
+   "title": "(1,τ ) for Nf = 4 and",
    "page": 59,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(1,\u03c4 ) for N = 4 and (since",
+   "title": "(1,τ ) for N = 4 and (since",
    "page": 59,
    "source": "inferred",
    "number": "2"
@@ -371,14 +375,14 @@
   },
   {
    "level": 1,
-   "title": "(e3 \u2212e2). In this form it is easy to study the weak coupling",
+   "title": "(e3 −e2). In this form it is easy to study the weak coupling",
    "page": 62,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "For weak coupling and in the N = 4 normalization this is at u \u2248 1",
+   "title": "For weak coupling and in the N = 4 normalization this is at u ≈ 1",
    "page": 63,
    "source": "inferred",
    "number": "2"
@@ -392,7 +396,7 @@
   },
   {
    "level": 1,
-   "title": "In the Nf = 4 normalization this means that it is at u \u2248 2a2 =m2. Hence,",
+   "title": "In the Nf = 4 normalization this means that it is at u ≈ 2a2 =m2. Hence,",
    "page": 65,
    "source": "inferred",
    "number": "2"
@@ -434,21 +438,21 @@
   },
   {
    "level": 1,
-   "title": "(m1 +m2 +m3 \u2212m4)",
+   "title": "(m1 +m2 +m3 −m4)",
    "page": 80,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(m1 +m2 \u2212m3 +m4)",
+   "title": "(m1 +m2 −m3 +m4)",
    "page": 80,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(m1 \u2212m2 +m3 +m4)",
+   "title": "(m1 −m2 +m3 +m4)",
    "page": 80,
    "source": "inferred",
    "number": "2"
@@ -462,21 +466,21 @@
   },
   {
    "level": 1,
-   "title": "(\u03b1 +\u03b2)",
+   "title": "(α +β)",
    "page": 85,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(e3 \u2212e2) = 1",
+   "title": "(e3 −e2) = 1",
    "page": 85,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(\u03b2 \u2212\u03b1) to derive (17.58). Actually, to agree with section 16, it is",
+   "title": "(β −α) to derive (17.58). Actually, to agree with section 16, it is",
    "page": 85,
    "source": "inferred",
    "number": "2"
@@ -576,9 +580,9 @@
    "n_words": 1104
   },
   {
-   "id": "sec-007-4-a-\ufb01rst-look-at-the-quantum-theory",
+   "id": "sec-007-4-a-ﬁrst-look-at-the-quantum-theory",
    "number": "4",
-   "title": "A \ufb01rst look at the quantum theory",
+   "title": "A ﬁrst look at the quantum theory",
    "level": 1,
    "page_start": 14,
    "page_end": 14,
@@ -596,9 +600,9 @@
    "n_words": 277
   },
   {
-   "id": "sec-009-42-a-\ufb01rst-look-at-the-quantum-moduli-space",
+   "id": "sec-009-42-a-ﬁrst-look-at-the-quantum-moduli-space",
    "number": "4.2",
-   "title": "A \ufb01rst look at the quantum moduli space",
+   "title": "A ﬁrst look at the quantum moduli space",
    "level": 2,
    "page_start": 15,
    "page_end": 17,
@@ -618,7 +622,7 @@
   {
    "id": "sec-011-2-nm-2ne-for-nf-4-the-universal-cover-is-spin8-w",
    "number": "2",
-   "title": "(nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 \u00d7 Z2. The",
+   "title": "(nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 × Z2. The",
    "level": 1,
    "page_start": 20,
    "page_end": 20,
@@ -728,7 +732,7 @@
   {
    "id": "sec-022-2-m1-m2-m3-m4",
    "number": "2",
-   "title": "(m1 +m2 \u2212m3 \u2212m4)",
+   "title": "(m1 +m2 −m3 −m4)",
    "level": 1,
    "page_start": 37,
    "page_end": 37,
@@ -738,7 +742,7 @@
   {
    "id": "sec-023-2-m1-m2-m3-m4",
    "number": "2",
-   "title": "(m1 \u2212m2 +m3 \u2212m4)",
+   "title": "(m1 −m2 +m3 −m4)",
    "level": 1,
    "page_start": 37,
    "page_end": 37,
@@ -748,7 +752,7 @@
   {
    "id": "sec-024-2-m1-m2-m3-m4",
    "number": "2",
-   "title": "(m1 \u2212m2 \u2212m3 +m4)",
+   "title": "(m1 −m2 −m3 +m4)",
    "level": 1,
    "page_start": 37,
    "page_end": 37,
@@ -788,7 +792,7 @@
   {
    "id": "sec-028-2-u",
    "number": "2",
-   "title": "(u \u00b1",
+   "title": "(u ±",
    "level": 1,
    "page_start": 40,
    "page_end": 41,
@@ -796,9 +800,9 @@
    "n_words": 534
   },
   {
-   "id": "sec-029-2-\u03bb-2-\u03bb",
+   "id": "sec-029-2-λ-2-λ",
    "number": "2",
-   "title": "(\u039b 2 \u00b1 \u039b",
+   "title": "(Λ 2 ± Λ",
    "level": 1,
    "page_start": 41,
    "page_end": 43,
@@ -948,7 +952,7 @@
   {
    "id": "sec-044-9-holomorphy-of-f-is-needed-in-order-for-the-coe",
    "number": "9",
-   "title": "Holomorphy of F is needed in order for the coe\ufb03cient \u03c4 (u, m i, \u039b) in front of W\u03b1",
+   "title": "Holomorphy of F is needed in order for the coeﬃcient τ (u, m i, Λ) in front of Wα",
    "level": 1,
    "page_start": 57,
    "page_end": 59,
@@ -956,9 +960,9 @@
    "n_words": 403
   },
   {
-   "id": "sec-045-4-1\u03c4-for-nf-4-and",
+   "id": "sec-045-4-1τ-for-nf-4-and",
    "number": "4",
-   "title": "(1,\u03c4 ) for Nf = 4 and",
+   "title": "(1,τ ) for Nf = 4 and",
    "level": 1,
    "page_start": 59,
    "page_end": 59,
@@ -966,9 +970,9 @@
    "n_words": 2
   },
   {
-   "id": "sec-046-2-1\u03c4-for-n-4-and-since",
+   "id": "sec-046-2-1τ-for-n-4-and-since",
    "number": "2",
-   "title": "(1,\u03c4 ) for N = 4 and (since",
+   "title": "(1,τ ) for N = 4 and (since",
    "level": 1,
    "page_start": 59,
    "page_end": 60,
@@ -988,7 +992,7 @@
   {
    "id": "sec-048-2-e3-e2-in-this-form-it-is-easy-to-study-the-wea",
    "number": "2",
-   "title": "(e3 \u2212e2). In this form it is easy to study the weak coupling",
+   "title": "(e3 −e2). In this form it is easy to study the weak coupling",
    "level": 1,
    "page_start": 62,
    "page_end": 63,
@@ -998,7 +1002,7 @@
   {
    "id": "sec-049-2-for-weak-coupling-and-in-the-n-4-normalization",
    "number": "2",
-   "title": "For weak coupling and in the N = 4 normalization this is at u \u2248 1",
+   "title": "For weak coupling and in the N = 4 normalization this is at u ≈ 1",
    "level": 1,
    "page_start": 63,
    "page_end": 65,
@@ -1018,7 +1022,7 @@
   {
    "id": "sec-051-2-in-the-nf-4-normalization-this-means-that-it-i",
    "number": "2",
-   "title": "In the Nf = 4 normalization this means that it is at u \u2248 2a2 =m2. Hence,",
+   "title": "In the Nf = 4 normalization this means that it is at u ≈ 2a2 =m2. Hence,",
    "level": 1,
    "page_start": 65,
    "page_end": 70,
@@ -1078,7 +1082,7 @@
   {
    "id": "sec-057-2-m1-m2-m3-m4",
    "number": "2",
-   "title": "(m1 +m2 +m3 \u2212m4)",
+   "title": "(m1 +m2 +m3 −m4)",
    "level": 1,
    "page_start": 80,
    "page_end": 80,
@@ -1088,7 +1092,7 @@
   {
    "id": "sec-058-2-m1-m2-m3-m4",
    "number": "2",
-   "title": "(m1 +m2 \u2212m3 +m4)",
+   "title": "(m1 +m2 −m3 +m4)",
    "level": 1,
    "page_start": 80,
    "page_end": 80,
@@ -1098,7 +1102,7 @@
   {
    "id": "sec-059-2-m1-m2-m3-m4",
    "number": "2",
-   "title": "(m1 \u2212m2 +m3 +m4)",
+   "title": "(m1 −m2 +m3 +m4)",
    "level": 1,
    "page_start": 80,
    "page_end": 81,
@@ -1116,9 +1120,9 @@
    "n_words": 843
   },
   {
-   "id": "sec-061-2-\u03b1-\u03b2",
+   "id": "sec-061-2-α-β",
    "number": "2",
-   "title": "(\u03b1 +\u03b2)",
+   "title": "(α +β)",
    "level": 1,
    "page_start": 84,
    "page_end": 85,
@@ -1128,7 +1132,7 @@
   {
    "id": "sec-062-2-e3-e2-1",
    "number": "2",
-   "title": "(e3 \u2212e2) = 1",
+   "title": "(e3 −e2) = 1",
    "level": 1,
    "page_start": 85,
    "page_end": 85,
@@ -1136,9 +1140,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-063-2-\u03b2-\u03b1-to-derive-1758-actually-to-agree-with-sect",
+   "id": "sec-063-2-β-α-to-derive-1758-actually-to-agree-with-sect",
    "number": "2",
-   "title": "(\u03b2 \u2212\u03b1) to derive (17.58). Actually, to agree with section 16, it is",
+   "title": "(β −α) to derive (17.58). Actually, to agree with section 16, it is",
    "level": 1,
    "page_start": 85,
    "page_end": 85,

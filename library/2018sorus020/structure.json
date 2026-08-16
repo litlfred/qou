@@ -16,10 +16,15 @@
   "docinfo": {
    "Creator": "HAL",
    "Title": "Reidemeister torsion on character varieties",
-   "Author": "L\u00e9o B\u00e9nard",
+   "Author": "Léo Bénard",
    "Producer": "PDFLaTeX",
    "CreationDate": "D:20260804130517+02'00'"
-  }
+  },
+  "title_lines": [
+   "HAL is a multi-disciplinary open access archive",
+   "for the deposit and dissemination of scientific re-",
+   "search documents, whether they are published or not"
+  ]
  },
  "toc": [
   {
@@ -31,35 +36,35 @@
   },
   {
    "level": 1,
-   "title": "(\u22121)i+1",
+   "title": "(−1)i+1",
    "page": 8,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "ByH\u2217(M, Ad\u25e6\u03c1) (respectivelyH\u2217(M,\u03c1 )), we denote the twisted cohomology",
+   "title": "ByH∗(M, Ad◦ρ) (respectivelyH∗(M,ρ )), we denote the twisted cohomology",
    "page": 9,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "Whenever \u03c1 :\u03c01(M)\u2192 SL2(Ov), we denote byH\u2217(M, Ad\u25e6\u03c1)v (respectively",
+   "title": "Whenever ρ :π1(M)→ SL2(Ov), we denote byH∗(M, Ad◦ρ)v (respectively",
    "page": 9,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "In this case, we denote by\u00af\u03c1 : \u03c01(M)\u2192 SL2(k) the composition of\u03c1 with",
+   "title": "In this case, we denote by¯ρ : π1(M)→ SL2(k) the composition ofρ with",
    "page": 9,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "For\u03bb :\u03c01(M)\u2192k\u2217, we denote byH\u2217(M,\u03bb ) the twisted cohomology groups",
+   "title": "Forλ :π1(M)→k∗, we denote byH∗(M,λ ) the twisted cohomology groups",
    "page": 9,
    "source": "inferred",
    "number": "4"
@@ -108,7 +113,7 @@
   },
   {
    "level": 1,
-   "title": "After right-multiplying byA\u22121B and taking the trace, one obtains Tr(AB)\u2212",
+   "title": "After right-multiplying byA−1B and taking the trace, one obtains Tr(AB)−",
    "page": 19,
    "source": "inferred",
    "number": "0"
@@ -122,7 +127,7 @@
   },
   {
    "level": 3,
-   "title": "Saito\u2019s Theorem and some consequences",
+   "title": "Saito’s Theorem and some consequences",
    "page": 23,
    "source": "inferred",
    "number": "1.1.5"
@@ -178,7 +183,7 @@
   },
   {
    "level": 3,
-   "title": "The SL2 action : stabilizers of vertices, \ufb01xed points and",
+   "title": "The SL2 action : stabilizers of vertices, ﬁxed points and",
    "page": 31,
    "source": "inferred",
    "number": "1.3.3"
@@ -213,7 +218,7 @@
   },
   {
    "level": 1,
-   "title": "For each component\u03a3i of \u03a3, the homomorphism\u03c01(\u03a3i)\u2192 \u03c01(M) induced",
+   "title": "For each componentΣi of Σ, the homomorphismπ1(Σi)→ π1(M) induced",
    "page": 36,
    "source": "inferred",
    "number": "2"
@@ -248,7 +253,7 @@
   },
   {
    "level": 1,
-   "title": "For the \ufb01gure-eight knot, the component of irreducible type and the com-",
+   "title": "For the ﬁgure-eight knot, the component of irreducible type and the com-",
    "page": 43,
    "source": "inferred",
    "number": "2"
@@ -262,21 +267,21 @@
   },
   {
    "level": 3,
-   "title": "First de\ufb01nition",
+   "title": "First deﬁnition",
    "page": 43,
    "source": "inferred",
    "number": "1.5.1"
   },
   {
    "level": 3,
-   "title": "Second de\ufb01nition : the Euler isomorphism",
+   "title": "Second deﬁnition : the Euler isomorphism",
    "page": 44,
    "source": "inferred",
    "number": "1.5.2"
   },
   {
    "level": 3,
-   "title": "Third de\ufb01nition : torsion of an exact complex (Cayley",
+   "title": "Third deﬁnition : torsion of an exact complex (Cayley",
    "page": 45,
    "source": "inferred",
    "number": "1.5.3"
@@ -290,7 +295,7 @@
   },
   {
    "level": 3,
-   "title": "Tangent space, di\ufb00erential forms and twisted cohomo-",
+   "title": "Tangent space, diﬀerential forms and twisted cohomo-",
    "page": 48,
    "source": "inferred",
    "number": "2.1.1"
@@ -304,14 +309,14 @@
   },
   {
    "level": 2,
-   "title": "The adjoint torsion as a di\ufb00erential form",
+   "title": "The adjoint torsion as a diﬀerential form",
    "page": 50,
    "source": "inferred",
    "number": "2.2"
   },
   {
    "level": 3,
-   "title": "The torsion of an Ad\u25e6\u03c1-twisted cellular complex",
+   "title": "The torsion of an Ad◦ρ-twisted cellular complex",
    "page": 50,
    "source": "inferred",
    "number": "2.2.1"
@@ -332,21 +337,21 @@
   },
   {
    "level": 1,
-   "title": "Wheny\u2192 2,x\u2192\u221e , we have a double point of type\u201dy2\u2212x6\u201d, its\u03b4-invariant",
+   "title": "Wheny→ 2,x→∞ , we have a double point of type”y2−x6”, itsδ-invariant",
    "page": 54,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "When y,x\u2192\u221e , we have a double point of type\u201dy2\u2212x8\u201d, its\u03b4-invariant is",
+   "title": "When y,x→∞ , we have a double point of type”y2−x8”, itsδ-invariant is",
    "page": 54,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 2,
-   "title": "The torsion at a \ufb01nite point",
+   "title": "The torsion at a ﬁnite point",
    "page": 54,
    "source": "inferred",
    "number": "2.3"
@@ -381,7 +386,7 @@
   },
   {
    "level": 1,
-   "title": "Finally, the hypothesis that the irreducible tautological representation\u03c1 :",
+   "title": "Finally, the hypothesis that the irreducible tautological representationρ :",
    "page": 66,
    "source": "inferred",
    "number": "3"
@@ -395,21 +400,21 @@
   },
   {
    "level": 1,
-   "title": "If the upper-right entry of\u03c1(a) was 0, then again\u03c1 would be reducible, hence we",
+   "title": "If the upper-right entry ofρ(a) was 0, then againρ would be reducible, hence we",
    "page": 67,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "(\u2202t)} in{H,E,F }. A direct computation shows that Ad\u03c1(a)F\u2212F = \u2202t,",
+   "title": "(∂t)} in{H,E,F }. A direct computation shows that Adρ(a)F−F = ∂t,",
    "page": 70,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 3,
-   "title": "Proof of theorem 2.0.2, the case when \u03c1\u03a3 is not resi-",
+   "title": "Proof of theorem 2.0.2, the case when ρΣ is not resi-",
    "page": 73,
    "source": "inferred",
    "number": "2.4.2"
@@ -423,28 +428,28 @@
   },
   {
    "level": 1,
-   "title": "Since \u03c1\u03a3 is residually non abelian and so are\u03c11,\u03c1\u2032",
+   "title": "Since ρΣ is residually non abelian and so areρ1,ρ′",
    "page": 75,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "Un =U\u22121",
+   "title": "Un =U−1",
    "page": 75,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "In\u2212r0",
+   "title": "In−r0",
    "page": 76,
    "source": "inferred",
    "number": "0"
   },
   {
    "level": 3,
-   "title": "The case when \u03c1\u03a3 is residually abelian",
+   "title": "The case when ρΣ is residually abelian",
    "page": 79,
    "source": "inferred",
    "number": "2.4.3"
@@ -472,7 +477,7 @@
   },
   {
    "level": 2,
-   "title": "The case of a \ufb01nite character",
+   "title": "The case of a ﬁnite character",
    "page": 87,
    "source": "inferred",
    "number": "3.2"
@@ -507,14 +512,14 @@
   },
   {
    "level": 1,
-   "title": "The complement of any\u03a3i in M is the disjoint union of two handlebodies",
+   "title": "The complement of anyΣi in M is the disjoint union of two handlebodies",
    "page": 92,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "We will denote by \u00af\u03c1i,\u03a3 the restriction of",
+   "title": "We will denote by ¯ρi,Σ the restriction of",
    "page": 95,
    "source": "inferred",
    "number": "2"
@@ -528,49 +533,49 @@
   },
   {
    "level": 1,
-   "title": "If\u03b41,...,\u03b4 m\u2208Vh such that\u03b4i\u03b4j\u2208Vh for anyi<j , then for any permutation",
+   "title": "Ifδ1,...,δ m∈Vh such thatδiδj∈Vh for anyi<j , then for any permutation",
    "page": 100,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "We haveh(\u03b3\u03b4) =\u03c6(\u03b3)h(\u03b4)\u2212h(\u03b3\u22121\u03b4) buth(\u03b4) = 0 andh(\u03b3\u22121\u03b4)+h(\u03b4\u22121\u03b3) = 0,",
+   "title": "We haveh(γδ) =φ(γ)h(δ)−h(γ−1δ) buth(δ) = 0 andh(γ−1δ)+h(δ−1γ) = 0,",
    "page": 101,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "We \ufb01rst remark that Equation (A.1) implies that if\u03b4i,\u03b4j,\u03b4i\u03b4j \u2208 Vh, so is",
+   "title": "We ﬁrst remark that Equation (A.1) implies that ifδi,δj,δiδj ∈ Vh, so is",
    "page": 101,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "For any\u03b3\u2208 \u0393,",
+   "title": "For anyγ∈ Γ,",
    "page": 103,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Letusprovethatforany \u03b3\u03b4\u2208 \u0393,\u03c1 (\u03b3\u03b4) =\u03c1(\u03b3)\u03c1(\u03b4).Let C =",
+   "title": "Letusprovethatforany γδ∈ Γ,ρ (γδ) =ρ(γ)ρ(δ).Let C =",
    "page": 103,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "A direct computation shows thatT\u03b32 =\u03c6(\u03b3)T\u03b3 +Te = 0, in particular\u03c1(\u03b3)2\u2212",
+   "title": "A direct computation shows thatTγ2 =φ(γ)Tγ +Te = 0, in particularρ(γ)2−",
    "page": 104,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "Finally, we prove the unicity as follows : for any representation\u03c1\u2032 that satis\ufb01es",
+   "title": "Finally, we prove the unicity as follows : for any representationρ′ that satisﬁes",
    "page": 104,
    "source": "inferred",
    "number": "5"
@@ -591,7 +596,7 @@
   {
    "id": "sec-001-2-1i1",
    "number": "2",
-   "title": "(\u22121)i+1",
+   "title": "(−1)i+1",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
@@ -599,9 +604,9 @@
    "n_words": 427
   },
   {
-   "id": "sec-002-1-byhm-ad\u03c1-respectivelyhm\u03c1-we-denote-the-twisted",
+   "id": "sec-002-1-byhm-adρ-respectivelyhmρ-we-denote-the-twisted",
    "number": "1",
-   "title": "ByH\u2217(M, Ad\u25e6\u03c1) (respectivelyH\u2217(M,\u03c1 )), we denote the twisted cohomology",
+   "title": "ByH∗(M, Ad◦ρ) (respectivelyH∗(M,ρ )), we denote the twisted cohomology",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
@@ -609,9 +614,9 @@
    "n_words": 9
   },
   {
-   "id": "sec-003-2-whenever-\u03c1-\u03c01m-sl2ov-we-denote-byhm-ad\u03c1v-respe",
+   "id": "sec-003-2-whenever-ρ-π1m-sl2ov-we-denote-byhm-adρv-respe",
    "number": "2",
-   "title": "Whenever \u03c1 :\u03c01(M)\u2192 SL2(Ov), we denote byH\u2217(M, Ad\u25e6\u03c1)v (respectively",
+   "title": "Whenever ρ :π1(M)→ SL2(Ov), we denote byH∗(M, Ad◦ρ)v (respectively",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
@@ -619,9 +624,9 @@
    "n_words": 10
   },
   {
-   "id": "sec-004-3-in-this-case-we-denote-by\u03c1-\u03c01m-sl2k-the-compos",
+   "id": "sec-004-3-in-this-case-we-denote-byρ-π1m-sl2k-the-compos",
    "number": "3",
-   "title": "In this case, we denote by\u00af\u03c1 : \u03c01(M)\u2192 SL2(k) the composition of\u03c1 with",
+   "title": "In this case, we denote by¯ρ : π1(M)→ SL2(k) the composition ofρ with",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
@@ -629,9 +634,9 @@
    "n_words": 19
   },
   {
-   "id": "sec-005-4-for\u03bb-\u03c01mk-we-denote-byhm\u03bb-the-twisted-cohomolo",
+   "id": "sec-005-4-forλ-π1mk-we-denote-byhmλ-the-twisted-cohomolo",
    "number": "4",
-   "title": "For\u03bb :\u03c01(M)\u2192k\u2217, we denote byH\u2217(M,\u03bb ) the twisted cohomology groups",
+   "title": "Forλ :π1(M)→k∗, we denote byH∗(M,λ ) the twisted cohomology groups",
    "level": 1,
    "page_start": 9,
    "page_end": 11,
@@ -701,7 +706,7 @@
   {
    "id": "sec-012-0-after-right-multiplying-bya1b-and-taking-the-t",
    "number": "0",
-   "title": "After right-multiplying byA\u22121B and taking the trace, one obtains Tr(AB)\u2212",
+   "title": "After right-multiplying byA−1B and taking the trace, one obtains Tr(AB)−",
    "level": 1,
    "page_start": 19,
    "page_end": 21,
@@ -721,7 +726,7 @@
   {
    "id": "sec-014-115-saitos-theorem-and-some-consequences",
    "number": "1.1.5",
-   "title": "Saito\u2019s Theorem and some consequences",
+   "title": "Saito’s Theorem and some consequences",
    "level": 3,
    "page_start": 23,
    "page_end": 24,
@@ -799,9 +804,9 @@
    "n_words": 133
   },
   {
-   "id": "sec-022-133-the-sl2-action-stabilizers-of-vertices-\ufb01xed",
+   "id": "sec-022-133-the-sl2-action-stabilizers-of-vertices-ﬁxed",
    "number": "1.3.3",
-   "title": "The SL2 action : stabilizers of vertices, \ufb01xed points and",
+   "title": "The SL2 action : stabilizers of vertices, ﬁxed points and",
    "level": 3,
    "page_start": 31,
    "page_end": 32,
@@ -849,9 +854,9 @@
    "n_words": 856
   },
   {
-   "id": "sec-027-2-for-each-component\u03c3i-of-\u03c3-the-homomorphism\u03c01\u03c3i",
+   "id": "sec-027-2-for-each-componentσi-of-σ-the-homomorphismπ1σi",
    "number": "2",
-   "title": "For each component\u03a3i of \u03a3, the homomorphism\u03c01(\u03a3i)\u2192 \u03c01(M) induced",
+   "title": "For each componentΣi of Σ, the homomorphismπ1(Σi)→ π1(M) induced",
    "level": 1,
    "page_start": 36,
    "page_end": 37,
@@ -889,9 +894,9 @@
    "n_words": 1405
   },
   {
-   "id": "sec-031-2-for-the-\ufb01gure-eight-knot-the-component-of-irre",
+   "id": "sec-031-2-for-the-ﬁgure-eight-knot-the-component-of-irre",
    "number": "2",
-   "title": "For the \ufb01gure-eight knot, the component of irreducible type and the com-",
+   "title": "For the ﬁgure-eight knot, the component of irreducible type and the com-",
    "level": 1,
    "page_start": 43,
    "page_end": 43,
@@ -909,9 +914,9 @@
    "n_words": 56
   },
   {
-   "id": "sec-033-151-first-de\ufb01nition",
+   "id": "sec-033-151-first-deﬁnition",
    "number": "1.5.1",
-   "title": "First de\ufb01nition",
+   "title": "First deﬁnition",
    "level": 3,
    "page_start": 43,
    "page_end": 44,
@@ -919,9 +924,9 @@
    "n_words": 163
   },
   {
-   "id": "sec-034-152-second-de\ufb01nition-the-euler-isomorphism",
+   "id": "sec-034-152-second-deﬁnition-the-euler-isomorphism",
    "number": "1.5.2",
-   "title": "Second de\ufb01nition : the Euler isomorphism",
+   "title": "Second deﬁnition : the Euler isomorphism",
    "level": 3,
    "page_start": 44,
    "page_end": 45,
@@ -929,9 +934,9 @@
    "n_words": 183
   },
   {
-   "id": "sec-035-153-third-de\ufb01nition-torsion-of-an-exact-complex",
+   "id": "sec-035-153-third-deﬁnition-torsion-of-an-exact-complex",
    "number": "1.5.3",
-   "title": "Third de\ufb01nition : torsion of an exact complex (Cayley",
+   "title": "Third deﬁnition : torsion of an exact complex (Cayley",
    "level": 3,
    "page_start": 45,
    "page_end": 48,
@@ -949,9 +954,9 @@
    "n_words": 15
   },
   {
-   "id": "sec-037-211-tangent-space-di\ufb00erential-forms-and-twisted",
+   "id": "sec-037-211-tangent-space-diﬀerential-forms-and-twisted",
    "number": "2.1.1",
-   "title": "Tangent space, di\ufb00erential forms and twisted cohomo-",
+   "title": "Tangent space, diﬀerential forms and twisted cohomo-",
    "level": 3,
    "page_start": 48,
    "page_end": 50,
@@ -969,9 +974,9 @@
    "n_words": 246
   },
   {
-   "id": "sec-039-22-the-adjoint-torsion-as-a-di\ufb00erential-form",
+   "id": "sec-039-22-the-adjoint-torsion-as-a-diﬀerential-form",
    "number": "2.2",
-   "title": "The adjoint torsion as a di\ufb00erential form",
+   "title": "The adjoint torsion as a diﬀerential form",
    "level": 2,
    "page_start": 50,
    "page_end": 50,
@@ -979,9 +984,9 @@
    "n_words": 36
   },
   {
-   "id": "sec-040-221-the-torsion-of-an-ad\u03c1-twisted-cellular-compl",
+   "id": "sec-040-221-the-torsion-of-an-adρ-twisted-cellular-compl",
    "number": "2.2.1",
-   "title": "The torsion of an Ad\u25e6\u03c1-twisted cellular complex",
+   "title": "The torsion of an Ad◦ρ-twisted cellular complex",
    "level": 3,
    "page_start": 50,
    "page_end": 51,
@@ -1011,7 +1016,7 @@
   {
    "id": "sec-043-1-wheny-2x-we-have-a-double-point-of-typey2x6-it",
    "number": "1",
-   "title": "Wheny\u2192 2,x\u2192\u221e , we have a double point of type\u201dy2\u2212x6\u201d, its\u03b4-invariant",
+   "title": "Wheny→ 2,x→∞ , we have a double point of type”y2−x6”, itsδ-invariant",
    "level": 1,
    "page_start": 54,
    "page_end": 54,
@@ -1021,7 +1026,7 @@
   {
    "id": "sec-044-2-when-yx-we-have-a-double-point-of-typey2x8-its",
    "number": "2",
-   "title": "When y,x\u2192\u221e , we have a double point of type\u201dy2\u2212x8\u201d, its\u03b4-invariant is",
+   "title": "When y,x→∞ , we have a double point of type”y2−x8”, itsδ-invariant is",
    "level": 1,
    "page_start": 54,
    "page_end": 54,
@@ -1029,9 +1034,9 @@
    "n_words": 117
   },
   {
-   "id": "sec-045-23-the-torsion-at-a-\ufb01nite-point",
+   "id": "sec-045-23-the-torsion-at-a-ﬁnite-point",
    "number": "2.3",
-   "title": "The torsion at a \ufb01nite point",
+   "title": "The torsion at a ﬁnite point",
    "level": 2,
    "page_start": 54,
    "page_end": 55,
@@ -1081,7 +1086,7 @@
   {
    "id": "sec-050-3-finally-the-hypothesis-that-the-irreducible-ta",
    "number": "3",
-   "title": "Finally, the hypothesis that the irreducible tautological representation\u03c1 :",
+   "title": "Finally, the hypothesis that the irreducible tautological representationρ :",
    "level": 1,
    "page_start": 66,
    "page_end": 66,
@@ -1099,9 +1104,9 @@
    "n_words": 239
   },
   {
-   "id": "sec-052-1-if-the-upper-right-entry-of\u03c1a-was-0-then-again",
+   "id": "sec-052-1-if-the-upper-right-entry-ofρa-was-0-then-again",
    "number": "1",
-   "title": "If the upper-right entry of\u03c1(a) was 0, then again\u03c1 would be reducible, hence we",
+   "title": "If the upper-right entry ofρ(a) was 0, then againρ would be reducible, hence we",
    "level": 1,
    "page_start": 67,
    "page_end": 70,
@@ -1109,9 +1114,9 @@
    "n_words": 628
   },
   {
-   "id": "sec-053-1-t-inhef-a-direct-computation-shows-that-ad\u03c1aff",
+   "id": "sec-053-1-t-inhef-a-direct-computation-shows-that-adρaff",
    "number": "1",
-   "title": "(\u2202t)} in{H,E,F }. A direct computation shows that Ad\u03c1(a)F\u2212F = \u2202t,",
+   "title": "(∂t)} in{H,E,F }. A direct computation shows that Adρ(a)F−F = ∂t,",
    "level": 1,
    "page_start": 70,
    "page_end": 73,
@@ -1119,9 +1124,9 @@
    "n_words": 717
   },
   {
-   "id": "sec-054-242-proof-of-theorem-202-the-case-when-\u03c1\u03c2-is-not",
+   "id": "sec-054-242-proof-of-theorem-202-the-case-when-ρς-is-not",
    "number": "2.4.2",
-   "title": "Proof of theorem 2.0.2, the case when \u03c1\u03a3 is not resi-",
+   "title": "Proof of theorem 2.0.2, the case when ρΣ is not resi-",
    "level": 3,
    "page_start": 73,
    "page_end": 74,
@@ -1139,9 +1144,9 @@
    "n_words": 17
   },
   {
-   "id": "sec-056-3-since-\u03c1\u03c2-is-residually-non-abelian-and-so-are\u03c1",
+   "id": "sec-056-3-since-ρς-is-residually-non-abelian-and-so-areρ",
    "number": "3",
-   "title": "Since \u03c1\u03a3 is residually non abelian and so are\u03c11,\u03c1\u2032",
+   "title": "Since ρΣ is residually non abelian and so areρ1,ρ′",
    "level": 1,
    "page_start": 75,
    "page_end": 75,
@@ -1151,7 +1156,7 @@
   {
    "id": "sec-057-2-un-u1",
    "number": "2",
-   "title": "Un =U\u22121",
+   "title": "Un =U−1",
    "level": 1,
    "page_start": 75,
    "page_end": 76,
@@ -1161,7 +1166,7 @@
   {
    "id": "sec-058-0-inr0",
    "number": "0",
-   "title": "In\u2212r0",
+   "title": "In−r0",
    "level": 1,
    "page_start": 76,
    "page_end": 79,
@@ -1169,9 +1174,9 @@
    "n_words": 622
   },
   {
-   "id": "sec-059-243-the-case-when-\u03c1\u03c2-is-residually-abelian",
+   "id": "sec-059-243-the-case-when-ρς-is-residually-abelian",
    "number": "2.4.3",
-   "title": "The case when \u03c1\u03a3 is residually abelian",
+   "title": "The case when ρΣ is residually abelian",
    "level": 3,
    "page_start": 79,
    "page_end": 79,
@@ -1209,9 +1214,9 @@
    "n_words": 987
   },
   {
-   "id": "sec-063-32-the-case-of-a-\ufb01nite-character",
+   "id": "sec-063-32-the-case-of-a-ﬁnite-character",
    "number": "3.2",
-   "title": "The case of a \ufb01nite character",
+   "title": "The case of a ﬁnite character",
    "level": 2,
    "page_start": 87,
    "page_end": 87,
@@ -1259,9 +1264,9 @@
    "n_words": 129
   },
   {
-   "id": "sec-068-2-the-complement-of-any\u03c3i-in-m-is-the-disjoint-u",
+   "id": "sec-068-2-the-complement-of-anyσi-in-m-is-the-disjoint-u",
    "number": "2",
-   "title": "The complement of any\u03a3i in M is the disjoint union of two handlebodies",
+   "title": "The complement of anyΣi in M is the disjoint union of two handlebodies",
    "level": 1,
    "page_start": 92,
    "page_end": 95,
@@ -1269,9 +1274,9 @@
    "n_words": 731
   },
   {
-   "id": "sec-069-2-we-will-denote-by-\u03c1i\u03c3-the-restriction-of",
+   "id": "sec-069-2-we-will-denote-by-ρiσ-the-restriction-of",
    "number": "2",
-   "title": "We will denote by \u00af\u03c1i,\u03a3 the restriction of",
+   "title": "We will denote by ¯ρi,Σ the restriction of",
    "level": 1,
    "page_start": 95,
    "page_end": 96,
@@ -1289,9 +1294,9 @@
    "n_words": 812
   },
   {
-   "id": "sec-071-3-if\u03b41\u03b4-mvh-such-that\u03b4i\u03b4jvh-for-anyij-then-for-a",
+   "id": "sec-071-3-ifδ1δ-mvh-such-thatδiδjvh-for-anyij-then-for-a",
    "number": "3",
-   "title": "If\u03b41,...,\u03b4 m\u2208Vh such that\u03b4i\u03b4j\u2208Vh for anyi<j , then for any permutation",
+   "title": "Ifδ1,...,δ m∈Vh such thatδiδj∈Vh for anyi<j , then for any permutation",
    "level": 1,
    "page_start": 100,
    "page_end": 101,
@@ -1299,9 +1304,9 @@
    "n_words": 23
   },
   {
-   "id": "sec-072-2-we-haveh\u03b3\u03b4-\u03c6\u03b3h\u03b4h\u03b31\u03b4-buth\u03b4-0-andh\u03b31\u03b4h\u03b41\u03b3-0",
+   "id": "sec-072-2-we-havehγδ-φγhδhγ1δ-buthδ-0-andhγ1δhδ1γ-0",
    "number": "2",
-   "title": "We haveh(\u03b3\u03b4) =\u03c6(\u03b3)h(\u03b4)\u2212h(\u03b3\u22121\u03b4) buth(\u03b4) = 0 andh(\u03b3\u22121\u03b4)+h(\u03b4\u22121\u03b3) = 0,",
+   "title": "We haveh(γδ) =φ(γ)h(δ)−h(γ−1δ) buth(δ) = 0 andh(γ−1δ)+h(δ−1γ) = 0,",
    "level": 1,
    "page_start": 101,
    "page_end": 101,
@@ -1309,9 +1314,9 @@
    "n_words": 3
   },
   {
-   "id": "sec-073-3-we-\ufb01rst-remark-that-equation-a1-implies-that-i",
+   "id": "sec-073-3-we-ﬁrst-remark-that-equation-a1-implies-that-i",
    "number": "3",
-   "title": "We \ufb01rst remark that Equation (A.1) implies that if\u03b4i,\u03b4j,\u03b4i\u03b4j \u2208 Vh, so is",
+   "title": "We ﬁrst remark that Equation (A.1) implies that ifδi,δj,δiδj ∈ Vh, so is",
    "level": 1,
    "page_start": 101,
    "page_end": 102,
@@ -1319,9 +1324,9 @@
    "n_words": 224
   },
   {
-   "id": "sec-074-2-for-any\u03b3-\u03b3",
+   "id": "sec-074-2-for-anyγ-γ",
    "number": "2",
-   "title": "For any\u03b3\u2208 \u0393,",
+   "title": "For anyγ∈ Γ,",
    "level": 1,
    "page_start": 102,
    "page_end": 103,
@@ -1329,9 +1334,9 @@
    "n_words": 337
   },
   {
-   "id": "sec-075-3-letusprovethatforany-\u03b3\u03b4-\u03b3\u03c1-\u03b3\u03b4-\u03c1\u03b3\u03c1\u03b4let-c",
+   "id": "sec-075-3-letusprovethatforany-γδ-γρ-γδ-ργρδlet-c",
    "number": "3",
-   "title": "Letusprovethatforany \u03b3\u03b4\u2208 \u0393,\u03c1 (\u03b3\u03b4) =\u03c1(\u03b3)\u03c1(\u03b4).Let C =",
+   "title": "Letusprovethatforany γδ∈ Γ,ρ (γδ) =ρ(γ)ρ(δ).Let C =",
    "level": 1,
    "page_start": 103,
    "page_end": 104,
@@ -1339,9 +1344,9 @@
    "n_words": 235
   },
   {
-   "id": "sec-076-4-a-direct-computation-shows-thatt\u03b32-\u03c6\u03b3t\u03b3-te-0-i",
+   "id": "sec-076-4-a-direct-computation-shows-thattγ2-φγtγ-te-0-i",
    "number": "4",
-   "title": "A direct computation shows thatT\u03b32 =\u03c6(\u03b3)T\u03b3 +Te = 0, in particular\u03c1(\u03b3)2\u2212",
+   "title": "A direct computation shows thatTγ2 =φ(γ)Tγ +Te = 0, in particularρ(γ)2−",
    "level": 1,
    "page_start": 104,
    "page_end": 104,
@@ -1351,7 +1356,7 @@
   {
    "id": "sec-077-5-finally-we-prove-the-unicity-as-follows-for-an",
    "number": "5",
-   "title": "Finally, we prove the unicity as follows : for any representation\u03c1\u2032 that satis\ufb01es",
+   "title": "Finally, we prove the unicity as follows : for any representationρ′ that satisﬁes",
    "level": 1,
    "page_start": 104,
    "page_end": 110,

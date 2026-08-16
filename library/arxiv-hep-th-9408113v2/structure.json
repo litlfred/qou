@@ -17,13 +17,16 @@
   "doi": null,
   "title": "Steklov Mathematical Institute",
   "authors_raw": "Fontanka 27, St.Petersburg, 191011, Russia",
-  "abstract": "We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view. We prove that a lot of dilogarithm identities (hypothetically all!) can be obtained by using the \ufb01ve-term relation only. Amon g those the Coxeter, Lewin, Loxton and Browkin ones are contained. Accessibility of Lewin\u2019s one v ariable and Ray\u2019s multivariable (here for n\u2264 2 only) functional equations is given. For odd levels the \u02c6sl2 case of Kuniba-Nakanishi\u2019s dilogarithm conjecture is proven and additional results about remainder term are obtained. The connections between dilogarithm identities and Rogers-Ramanujan-Andrews-Gordon type partition identities via their asymp- totic behavior are discussed. Some new results about the string functions for levelk vacuum representation of the a\ufb03ne Lie algebra \u02c6sln are obtained. Connection between dilogarithm identities and algebraic K- theory (torsion in K3(R)) is discussed. Relations between crystal basis, branching fu nctionsbk\u039b 0 \u03bb (q) and Kostka-Foulkes polynomials (Lusztig\u2019s q-analog of weight multiplicity) are considered. The Melzer an d Milne conjectures are proven. In some special cases we are proving that the branching functions bk\u039b 0 \u03bb (q) are equal to an appropriate limit of Kostka polynomials (the so- called Thermodynamic Bethe Ansatz limit). Connection between \u201d\ufb01nite-dimensional part of cryst al base\u201d and Robinson-Schensted-Knuth cor- respondence is considered. 0. Introduction. In this paper we consider mainly the properties of dilogarit hm related to the so-called accessibility problem, representation theory of Virasoro and Kac-Moody algebras, and Conformal Field Theory (CFT). The remarkable and mysteriou s dilogarithm [Za2], [Za3] will be the main hero of our paper, but we start with de\ufb01nition and list some applications of more general and may be even more amazing functions: polylogarithm and hyperlogarithm. De\ufb01nition 1 (G. Leibnitz, 1696; L. Euler, 1768). The polylogar",
+  "abstract": "We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view. We prove that a lot of dilogarithm identities (hypothetically all!) can be obtained by using the ﬁve-term relation only. Amon g those the Coxeter, Lewin, Loxton and Browkin ones are contained. Accessibility of Lewin’s one v ariable and Ray’s multivariable (here for n≤ 2 only) functional equations is given. For odd levels the ˆsl2 case of Kuniba-Nakanishi’s dilogarithm conjecture is proven and additional results about remainder term are obtained. The connections between dilogarithm identities and Rogers-Ramanujan-Andrews-Gordon type partition identities via their asymp- totic behavior are discussed. Some new results about the string functions for levelk vacuum representation of the aﬃne Lie algebra ˆsln are obtained. Connection between dilogarithm identities and algebraic K- theory (torsion in K3(R)) is discussed. Relations between crystal basis, branching fu nctionsbkΛ 0 λ (q) and Kostka-Foulkes polynomials (Lusztig’s q-analog of weight multiplicity) are considered. The Melzer an d Milne conjectures are proven. In some special cases we are proving that the branching functions bkΛ 0 λ (q) are equal to an appropriate limit of Kostka polynomials (the so- called Thermodynamic Bethe Ansatz limit). Connection between ”ﬁnite-dimensional part of cryst al base” and Robinson-Schensted-Knuth cor- respondence is considered. 0. Introduction. In this paper we consider mainly the properties of dilogarit hm related to the so-called accessibility problem, representation theory of Virasoro and Kac-Moody algebras, and Conformal Field Theory (CFT). The remarkable and mysteriou s dilogarithm [Za2], [Za3] will be the main hero of our paper, but we start with deﬁnition and list some applications of more general and may be even more amazing functions: polylogarithm and hyperlogarithm. Deﬁnition 1 (G. Leibnitz, 1696; L. Euler, 1768). The polylogar",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "CreationDate": "D:20241126154526-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "Title": "arXiv:hep-th/9408113v2  25 Aug 1994"
-  }
+  },
+  "title_lines": [
+   "Steklov Mathematical Institute"
+  ]
  },
  "toc": [
   {
@@ -63,7 +66,7 @@
   },
   {
    "level": 1,
-   "title": "L(x) +L(1\u2212x) = \u03c02",
+   "title": "L(x) +L(1−x) = π2",
    "page": 6,
    "source": "inferred",
    "number": "1"
@@ -91,7 +94,7 @@
   },
   {
    "level": 1,
-   "title": "(3\u2212",
+   "title": "(3−",
    "page": 10,
    "source": "inferred",
    "number": "2"
@@ -119,7 +122,7 @@
   },
   {
    "level": 1,
-   "title": "L(1), 2L(\u03b3) +L(\u03b32) = 8",
+   "title": "L(1), 2L(γ) +L(γ2) = 8",
    "page": 16,
    "source": "inferred",
    "number": "7"
@@ -147,14 +150,14 @@
   },
   {
    "level": 1,
-   "title": "Lewin [Le2] who observed the parallel with Watson\u2019s three identities and conjectured",
+   "title": "Lewin [Le2] who observed the parallel with Watson’s three identities and conjectured",
    "page": 18,
    "source": "inferred",
    "number": "L"
   },
   {
    "level": 1,
-   "title": "L(y) + 6L(1) = 6L(1)\u2212 16",
+   "title": "L(y) + 6L(1) = 6L(1)− 16",
    "page": 19,
    "source": "inferred",
    "number": "3"
@@ -182,7 +185,7 @@
   },
   {
    "level": 3,
-   "title": "Lewin\u2019s dilogarithm identity related with x = 1",
+   "title": "Lewin’s dilogarithm identity related with x = 1",
    "page": 20,
    "source": "inferred",
    "number": "1.2.3"
@@ -245,7 +248,7 @@
   },
   {
    "level": 1,
-   "title": "Prove the following \ufb01ve-term, two-variable functional equ ations",
+   "title": "Prove the following ﬁve-term, two-variable functional equ ations",
    "page": 31,
    "source": "inferred",
    "number": "2"
@@ -259,7 +262,7 @@
   },
   {
    "level": 1,
-   "title": "Prove (L(r,\u03b8 ) := ReL(rei\u03b8), r,\u03b8\u2208 R)",
+   "title": "Prove (L(r,θ ) := ReL(reiθ), r,θ∈ R)",
    "page": 31,
    "source": "inferred",
    "number": "4"
@@ -287,21 +290,21 @@
   },
   {
    "level": 1,
-   "title": "(We use the notation of Section 1.5). Let us de\ufb01ne for a given p ositive rational",
+   "title": "(We use the notation of Section 1.5). Let us deﬁne for a given p ositive rational",
    "page": 33,
    "source": "inferred",
    "number": "11"
   },
   {
    "level": 1,
-   "title": "Let us de\ufb01ne Rogers\u2019 trilogarithm as",
+   "title": "Let us deﬁne Rogers’ trilogarithm as",
    "page": 33,
    "source": "inferred",
    "number": "12"
   },
   {
    "level": 1,
-   "title": "(5\u2212",
+   "title": "(5−",
    "page": 34,
    "source": "inferred",
    "number": "2"
@@ -315,7 +318,7 @@
   },
   {
    "level": 1,
-   "title": "Reduction to \ufb01nite dimensional (polynomial) case. Note th at it is su\ufb03cient to",
+   "title": "Reduction to ﬁnite dimensional (polynomial) case. Note th at it is suﬃcient to",
    "page": 35,
    "source": "inferred",
    "number": "10"
@@ -350,28 +353,28 @@
   },
   {
    "level": 1,
-   "title": "Using the result of Exercise 2, prove the Ramanujan 1\u03c81 summation formula",
+   "title": "Using the result of Exercise 2, prove the Ramanujan 1ψ1 summation formula",
    "page": 42,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "Deduce from Ramanujan\u2019s 1\u03c81-summation formula the following identities",
+   "title": "Deduce from Ramanujan’s 1ψ1-summation formula the following identities",
    "page": 42,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "Let [x] denote the largest integer \u2264x. Prove",
+   "title": "Let [x] denote the largest integer ≤x. Prove",
    "page": 42,
    "source": "inferred",
    "number": "5"
   },
   {
    "level": 1,
-   "title": "(N\u2212 5k) +a",
+   "title": "(N− 5k) +a",
    "page": 42,
    "source": "inferred",
    "number": "2"
@@ -385,14 +388,14 @@
   },
   {
    "level": 1,
-   "title": "(2l+3)m(m+1)\u2212(l+2+j)m",
+   "title": "(2l+3)m(m+1)−(l+2+j)m",
    "page": 44,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "B(N\u22121)",
+   "title": "B(N−1)",
    "page": 47,
    "source": "inferred",
    "number": "2"
@@ -427,14 +430,14 @@
   },
   {
    "level": 1,
-   "title": "(1\u2212aq2i)(aq)i+j\u22121(q)\u22121",
+   "title": "(1−aq2i)(aq)i+j−1(q)−1",
    "page": 51,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(1\u2212aq2n)(a)n",
+   "title": "(1−aq2n)(a)n",
    "page": 52,
    "source": "inferred",
    "number": "2"
@@ -448,7 +451,7 @@
   },
   {
    "level": 1,
-   "title": "(ck\u2212 24h(j)",
+   "title": "(ck− 24h(j)",
    "page": 58,
    "source": "inferred",
    "number": "3"
@@ -469,7 +472,7 @@
   },
   {
    "level": 1,
-   "title": "K\u03bbN ,(1|\u03bb N |)(q) = qn(\u03bb\u2032)",
+   "title": "KλN ,(1|λ N |)(q) = qn(λ′)",
    "page": 63,
    "source": "inferred",
    "number": "2"
@@ -483,7 +486,7 @@
   },
   {
    "level": 1,
-   "title": "Kac ([Kac], (14.12.10)): for the in\ufb01nite rank a\ufb03ne algebr a of type A\u221e",
+   "title": "Kac ([Kac], (14.12.10)): for the inﬁnite rank aﬃne algebr a of type A∞",
    "page": 63,
    "source": "inferred",
    "number": "V"
@@ -497,14 +500,14 @@
   },
   {
    "level": 3,
-   "title": "Levelk vacuum representation k\u039b 0 of the a\ufb03ne Lie algebra \u02c6sl2",
+   "title": "Levelk vacuum representation kΛ 0 of the aﬃne Lie algebra ˆsl2",
    "page": 70,
    "source": "inferred",
    "number": "2.4.3"
   },
   {
    "level": 1,
-   "title": "(n(\u00b5\u2032)\u2212N). (2.44)\u00b5",
+   "title": "(n(µ′)−N). (2.44)µ",
    "page": 70,
    "source": "inferred",
    "number": "2"
@@ -518,14 +521,14 @@
   },
   {
    "level": 1,
-   "title": "Let \u00b5 be a composition, l(\u00b5) = n. Consider the set",
+   "title": "Let µ be a composition, l(µ) = n. Consider the set",
    "page": 76,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "Given two partitions \u03bb and \u00b5,|\u03bb| =|\u00b5|, and a natural number k. Let us consider",
+   "title": "Given two partitions λ and µ,|λ| =|µ|, and a natural number k. Let us consider",
    "page": 77,
    "source": "inferred",
    "number": "3"
@@ -546,42 +549,42 @@
   },
   {
    "level": 1,
-   "title": "Let us consider a function \u03d5(a)",
+   "title": "Let us consider a function ϕ(a)",
    "page": 82,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "Let us consider the theta-function \u03b8(a) := [\u03d5(a)\u03d5(a\u22121)]\u22121. Show that",
+   "title": "Let us consider the theta-function θ(a) := [ϕ(a)ϕ(a−1)]−1. Show that",
    "page": 83,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Let us consider a function f (a) := f (z,a ) = \u03d5(za)/\u03d5(a). Show that",
+   "title": "Let us consider a function f (a) := f (z,a ) = ϕ(za)/ϕ(a). Show that",
    "page": 83,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "Let us consider a function \u03c0(a) := \u03c0(z,a ) = \u03d5(za)\u03d5(za\u22121). Show that",
+   "title": "Let us consider a function π(a) := π(z,a ) = ϕ(za)ϕ(za−1). Show that",
    "page": 83,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "Let us consider a function (cf. [FV]) r(z,a ) = \u03b8(a)\u03c0(z,a ). Show that",
+   "title": "Let us consider a function (cf. [FV]) r(z,a ) = θ(a)π(z,a ). Show that",
    "page": 85,
    "source": "inferred",
    "number": "6"
   },
   {
    "level": 1,
-   "title": "Let Wq be the algebra over the \ufb01eld of rational functions C(q) generated by a and",
+   "title": "Let Wq be the algebra over the ﬁeld of rational functions C(q) generated by a and",
    "page": 85,
    "source": "inferred",
    "number": "7"
@@ -595,7 +598,7 @@
   },
   {
    "level": 1,
-   "title": "(Quantum polylogarithm). Let us de\ufb01ne the quantum polyloga rithm as the following",
+   "title": "(Quantum polylogarithm). Let us deﬁne the quantum polyloga rithm as the following",
    "page": 86,
    "source": "inferred",
    "number": "9"
@@ -654,9 +657,9 @@
    "n_words": 259
   },
   {
-   "id": "sec-005-1-lx-l1x-\u03c02",
+   "id": "sec-005-1-lx-l1x-π2",
    "number": "1",
-   "title": "L(x) +L(1\u2212x) = \u03c02",
+   "title": "L(x) +L(1−x) = π2",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
@@ -696,7 +699,7 @@
   {
    "id": "sec-009-2-3",
    "number": "2",
-   "title": "(3\u2212",
+   "title": "(3−",
    "level": 1,
    "page_start": 10,
    "page_end": 12,
@@ -734,9 +737,9 @@
    "n_words": 70
   },
   {
-   "id": "sec-013-7-l1-2l\u03b3-l\u03b32-8",
+   "id": "sec-013-7-l1-2lγ-lγ2-8",
    "number": "7",
-   "title": "L(1), 2L(\u03b3) +L(\u03b32) = 8",
+   "title": "L(1), 2L(γ) +L(γ2) = 8",
    "level": 1,
    "page_start": 16,
    "page_end": 16,
@@ -776,7 +779,7 @@
   {
    "id": "sec-017-l-lewin-le2-who-observed-the-parallel-with-watso",
    "number": "L",
-   "title": "Lewin [Le2] who observed the parallel with Watson\u2019s three identities and conjectured",
+   "title": "Lewin [Le2] who observed the parallel with Watson’s three identities and conjectured",
    "level": 1,
    "page_start": 18,
    "page_end": 19,
@@ -796,7 +799,7 @@
   {
    "id": "sec-019-3-ly-6l1-6l1-16",
    "number": "3",
-   "title": "L(y) + 6L(1) = 6L(1)\u2212 16",
+   "title": "L(y) + 6L(1) = 6L(1)− 16",
    "level": 1,
    "page_start": 19,
    "page_end": 20,
@@ -826,7 +829,7 @@
   {
    "id": "sec-022-123-lewins-dilogarithm-identity-related-with-x-1",
    "number": "1.2.3",
-   "title": "Lewin\u2019s dilogarithm identity related with x = 1",
+   "title": "Lewin’s dilogarithm identity related with x = 1",
    "level": 3,
    "page_start": 20,
    "page_end": 22,
@@ -914,9 +917,9 @@
    "n_words": 29
   },
   {
-   "id": "sec-031-2-prove-the-following-\ufb01ve-term-two-variable-func",
+   "id": "sec-031-2-prove-the-following-ﬁve-term-two-variable-func",
    "number": "2",
-   "title": "Prove the following \ufb01ve-term, two-variable functional equ ations",
+   "title": "Prove the following ﬁve-term, two-variable functional equ ations",
    "level": 1,
    "page_start": 31,
    "page_end": 31,
@@ -934,9 +937,9 @@
    "n_words": 101
   },
   {
-   "id": "sec-033-4-prove-lr\u03b8-relrei\u03b8-r\u03b8-r",
+   "id": "sec-033-4-prove-lrθ-relreiθ-rθ-r",
    "number": "4",
-   "title": "Prove (L(r,\u03b8 ) := ReL(rei\u03b8), r,\u03b8\u2208 R)",
+   "title": "Prove (L(r,θ ) := ReL(reiθ), r,θ∈ R)",
    "level": 1,
    "page_start": 31,
    "page_end": 32,
@@ -964,9 +967,9 @@
    "n_words": 249
   },
   {
-   "id": "sec-036-11-we-use-the-notation-of-section-15-let-us-de\ufb01n",
+   "id": "sec-036-11-we-use-the-notation-of-section-15-let-us-deﬁn",
    "number": "11",
-   "title": "(We use the notation of Section 1.5). Let us de\ufb01ne for a given p ositive rational",
+   "title": "(We use the notation of Section 1.5). Let us deﬁne for a given p ositive rational",
    "level": 1,
    "page_start": 33,
    "page_end": 33,
@@ -974,9 +977,9 @@
    "n_words": 69
   },
   {
-   "id": "sec-037-12-let-us-de\ufb01ne-rogers-trilogarithm-as",
+   "id": "sec-037-12-let-us-deﬁne-rogers-trilogarithm-as",
    "number": "12",
-   "title": "Let us de\ufb01ne Rogers\u2019 trilogarithm as",
+   "title": "Let us deﬁne Rogers’ trilogarithm as",
    "level": 1,
    "page_start": 33,
    "page_end": 34,
@@ -986,7 +989,7 @@
   {
    "id": "sec-038-2-5",
    "number": "2",
-   "title": "(5\u2212",
+   "title": "(5−",
    "level": 1,
    "page_start": 34,
    "page_end": 34,
@@ -1004,9 +1007,9 @@
    "n_words": 321
   },
   {
-   "id": "sec-040-10-reduction-to-\ufb01nite-dimensional-polynomial-cas",
+   "id": "sec-040-10-reduction-to-ﬁnite-dimensional-polynomial-cas",
    "number": "10",
-   "title": "Reduction to \ufb01nite dimensional (polynomial) case. Note th at it is su\ufb03cient to",
+   "title": "Reduction to ﬁnite dimensional (polynomial) case. Note th at it is suﬃcient to",
    "level": 1,
    "page_start": 35,
    "page_end": 35,
@@ -1056,7 +1059,7 @@
   {
    "id": "sec-045-3-using-the-result-of-exercise-2-prove-the-raman",
    "number": "3",
-   "title": "Using the result of Exercise 2, prove the Ramanujan 1\u03c81 summation formula",
+   "title": "Using the result of Exercise 2, prove the Ramanujan 1ψ1 summation formula",
    "level": 1,
    "page_start": 42,
    "page_end": 42,
@@ -1064,9 +1067,9 @@
    "n_words": 11
   },
   {
-   "id": "sec-046-4-deduce-from-ramanujans-1\u03c81-summation-formula-t",
+   "id": "sec-046-4-deduce-from-ramanujans-1ψ1-summation-formula-t",
    "number": "4",
-   "title": "Deduce from Ramanujan\u2019s 1\u03c81-summation formula the following identities",
+   "title": "Deduce from Ramanujan’s 1ψ1-summation formula the following identities",
    "level": 1,
    "page_start": 42,
    "page_end": 42,
@@ -1076,7 +1079,7 @@
   {
    "id": "sec-047-5-let-x-denote-the-largest-integer-x-prove",
    "number": "5",
-   "title": "Let [x] denote the largest integer \u2264x. Prove",
+   "title": "Let [x] denote the largest integer ≤x. Prove",
    "level": 1,
    "page_start": 42,
    "page_end": 42,
@@ -1086,7 +1089,7 @@
   {
    "id": "sec-048-2-n-5k-a",
    "number": "2",
-   "title": "(N\u2212 5k) +a",
+   "title": "(N− 5k) +a",
    "level": 1,
    "page_start": 42,
    "page_end": 43,
@@ -1106,7 +1109,7 @@
   {
    "id": "sec-050-2-2l3mm1l2jm",
    "number": "2",
-   "title": "(2l+3)m(m+1)\u2212(l+2+j)m",
+   "title": "(2l+3)m(m+1)−(l+2+j)m",
    "level": 1,
    "page_start": 44,
    "page_end": 47,
@@ -1116,7 +1119,7 @@
   {
    "id": "sec-051-2-bn1",
    "number": "2",
-   "title": "B(N\u22121)",
+   "title": "B(N−1)",
    "level": 1,
    "page_start": 47,
    "page_end": 50,
@@ -1156,7 +1159,7 @@
   {
    "id": "sec-055-2-1aq2iaqij1q1",
    "number": "2",
-   "title": "(1\u2212aq2i)(aq)i+j\u22121(q)\u22121",
+   "title": "(1−aq2i)(aq)i+j−1(q)−1",
    "level": 1,
    "page_start": 51,
    "page_end": 52,
@@ -1166,7 +1169,7 @@
   {
    "id": "sec-056-2-1aq2nan",
    "number": "2",
-   "title": "(1\u2212aq2n)(a)n",
+   "title": "(1−aq2n)(a)n",
    "level": 1,
    "page_start": 52,
    "page_end": 55,
@@ -1186,7 +1189,7 @@
   {
    "id": "sec-058-3-ck-24hj",
    "number": "3",
-   "title": "(ck\u2212 24h(j)",
+   "title": "(ck− 24h(j)",
    "level": 1,
    "page_start": 58,
    "page_end": 60,
@@ -1214,9 +1217,9 @@
    "n_words": 843
   },
   {
-   "id": "sec-061-2-k\u03bbn-1\u03bb-n-q-qn\u03bb",
+   "id": "sec-061-2-kλn-1λ-n-q-qnλ",
    "number": "2",
-   "title": "K\u03bbN ,(1|\u03bb N |)(q) = qn(\u03bb\u2032)",
+   "title": "KλN ,(1|λ N |)(q) = qn(λ′)",
    "level": 1,
    "page_start": 63,
    "page_end": 63,
@@ -1234,9 +1237,9 @@
    "n_words": 46
   },
   {
-   "id": "sec-063-v-kac-kac-141210-for-the-in\ufb01nite-rank-a\ufb03ne-algeb",
+   "id": "sec-063-v-kac-kac-141210-for-the-inﬁnite-rank-aﬃne-algeb",
    "number": "V",
-   "title": "Kac ([Kac], (14.12.10)): for the in\ufb01nite rank a\ufb03ne algebr a of type A\u221e",
+   "title": "Kac ([Kac], (14.12.10)): for the inﬁnite rank aﬃne algebr a of type A∞",
    "level": 1,
    "page_start": 63,
    "page_end": 68,
@@ -1254,9 +1257,9 @@
    "n_words": 743
   },
   {
-   "id": "sec-065-243-levelk-vacuum-representation-k\u03bb-0-of-the-a\ufb03n",
+   "id": "sec-065-243-levelk-vacuum-representation-kλ-0-of-the-aﬃn",
    "number": "2.4.3",
-   "title": "Levelk vacuum representation k\u039b 0 of the a\ufb03ne Lie algebra \u02c6sl2",
+   "title": "Levelk vacuum representation kΛ 0 of the aﬃne Lie algebra ˆsl2",
    "level": 3,
    "page_start": 70,
    "page_end": 70,
@@ -1264,9 +1267,9 @@
    "n_words": 42
   },
   {
-   "id": "sec-066-2-n\u00b5n-244\u00b5",
+   "id": "sec-066-2-nµn-244µ",
    "number": "2",
-   "title": "(n(\u00b5\u2032)\u2212N). (2.44)\u00b5",
+   "title": "(n(µ′)−N). (2.44)µ",
    "level": 1,
    "page_start": 70,
    "page_end": 71,
@@ -1284,9 +1287,9 @@
    "n_words": 1737
   },
   {
-   "id": "sec-068-1-let-\u00b5-be-a-composition-l\u00b5-n-consider-the-set",
+   "id": "sec-068-1-let-µ-be-a-composition-lµ-n-consider-the-set",
    "number": "1",
-   "title": "Let \u00b5 be a composition, l(\u00b5) = n. Consider the set",
+   "title": "Let µ be a composition, l(µ) = n. Consider the set",
    "level": 1,
    "page_start": 76,
    "page_end": 77,
@@ -1294,9 +1297,9 @@
    "n_words": 414
   },
   {
-   "id": "sec-069-3-given-two-partitions-\u03bb-and-\u00b5\u03bb-\u00b5-and-a-natural",
+   "id": "sec-069-3-given-two-partitions-λ-and-µλ-µ-and-a-natural",
    "number": "3",
-   "title": "Given two partitions \u03bb and \u00b5,|\u03bb| =|\u00b5|, and a natural number k. Let us consider",
+   "title": "Given two partitions λ and µ,|λ| =|µ|, and a natural number k. Let us consider",
    "level": 1,
    "page_start": 77,
    "page_end": 78,
@@ -1324,9 +1327,9 @@
    "n_words": 767
   },
   {
-   "id": "sec-072-1-let-us-consider-a-function-\u03d5a",
+   "id": "sec-072-1-let-us-consider-a-function-ϕa",
    "number": "1",
-   "title": "Let us consider a function \u03d5(a)",
+   "title": "Let us consider a function ϕ(a)",
    "level": 1,
    "page_start": 82,
    "page_end": 83,
@@ -1334,9 +1337,9 @@
    "n_words": 58
   },
   {
-   "id": "sec-073-2-let-us-consider-the-theta-function-\u03b8a-\u03d5a\u03d5a11-s",
+   "id": "sec-073-2-let-us-consider-the-theta-function-θa-ϕaϕa11-s",
    "number": "2",
-   "title": "Let us consider the theta-function \u03b8(a) := [\u03d5(a)\u03d5(a\u22121)]\u22121. Show that",
+   "title": "Let us consider the theta-function θ(a) := [ϕ(a)ϕ(a−1)]−1. Show that",
    "level": 1,
    "page_start": 83,
    "page_end": 83,
@@ -1344,9 +1347,9 @@
    "n_words": 28
   },
   {
-   "id": "sec-074-3-let-us-consider-a-function-f-a-f-za-\u03d5za\u03d5a-show",
+   "id": "sec-074-3-let-us-consider-a-function-f-a-f-za-ϕzaϕa-show",
    "number": "3",
-   "title": "Let us consider a function f (a) := f (z,a ) = \u03d5(za)/\u03d5(a). Show that",
+   "title": "Let us consider a function f (a) := f (z,a ) = ϕ(za)/ϕ(a). Show that",
    "level": 1,
    "page_start": 83,
    "page_end": 83,
@@ -1354,9 +1357,9 @@
    "n_words": 60
   },
   {
-   "id": "sec-075-4-let-us-consider-a-function-\u03c0a-\u03c0za-\u03d5za\u03d5za1-show",
+   "id": "sec-075-4-let-us-consider-a-function-πa-πza-ϕzaϕza1-show",
    "number": "4",
-   "title": "Let us consider a function \u03c0(a) := \u03c0(z,a ) = \u03d5(za)\u03d5(za\u22121). Show that",
+   "title": "Let us consider a function π(a) := π(z,a ) = ϕ(za)ϕ(za−1). Show that",
    "level": 1,
    "page_start": 83,
    "page_end": 85,
@@ -1364,9 +1367,9 @@
    "n_words": 337
   },
   {
-   "id": "sec-076-6-let-us-consider-a-function-cf-fv-rza-\u03b8a\u03c0za-sho",
+   "id": "sec-076-6-let-us-consider-a-function-cf-fv-rza-θaπza-sho",
    "number": "6",
-   "title": "Let us consider a function (cf. [FV]) r(z,a ) = \u03b8(a)\u03c0(z,a ). Show that",
+   "title": "Let us consider a function (cf. [FV]) r(z,a ) = θ(a)π(z,a ). Show that",
    "level": 1,
    "page_start": 85,
    "page_end": 85,
@@ -1374,9 +1377,9 @@
    "n_words": 126
   },
   {
-   "id": "sec-077-7-let-wq-be-the-algebra-over-the-\ufb01eld-of-rationa",
+   "id": "sec-077-7-let-wq-be-the-algebra-over-the-ﬁeld-of-rationa",
    "number": "7",
-   "title": "Let Wq be the algebra over the \ufb01eld of rational functions C(q) generated by a and",
+   "title": "Let Wq be the algebra over the ﬁeld of rational functions C(q) generated by a and",
    "level": 1,
    "page_start": 85,
    "page_end": 86,
@@ -1394,9 +1397,9 @@
    "n_words": 116
   },
   {
-   "id": "sec-079-9-quantum-polylogarithm-let-us-de\ufb01ne-the-quantum",
+   "id": "sec-079-9-quantum-polylogarithm-let-us-deﬁne-the-quantum",
    "number": "9",
-   "title": "(Quantum polylogarithm). Let us de\ufb01ne the quantum polyloga rithm as the following",
+   "title": "(Quantum polylogarithm). Let us deﬁne the quantum polyloga rithm as the following",
    "level": 1,
    "page_start": 86,
    "page_end": 96,

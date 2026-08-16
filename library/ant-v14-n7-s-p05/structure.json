@@ -10,12 +10,15 @@
  "metadata": {
   "arxiv": null,
   "doi": "10.2140/ant.2020.14.1801",
-  "title": "Motivic Gauss\u2013Bonnet formulas",
+  "title": "Motivic Gauss–Bonnet formulas",
   "authors_raw": "Marc Levine and Arpon Raksit",
   "abstract": null,
   "docinfo": {
    "Producer": "pypdf"
-  }
+  },
+  "title_lines": [
+   "Motivic Gauss–Bonnet formulas"
+  ]
  },
  "toc": [
   {
@@ -27,21 +30,21 @@
   },
   {
    "level": 1,
-   "title": "TX/B(p\u2217",
+   "title": "TX/B(p∗",
    "page": 10,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "TX/B(1X\u00d7B X)",
+   "title": "TX/B(1X×B X)",
    "page": 10,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "TX/B(1X\u00d7B X))\u2243\u03c0X\u266f6\u2212TX/B p1\u266f(1X\u00d7B X)\u2243\u03c0X! p1\u266f p\u2217",
+   "title": "TX/B(1X×B X))≃πX♯6−TX/B p1♯(1X×B X)≃πX! p1♯ p∗",
    "page": 10,
    "source": "inferred",
    "number": "1"
@@ -62,7 +65,7 @@
   },
   {
    "level": 1,
-   "title": "Motivic Gauss\u2013Bonnet",
+   "title": "Motivic Gauss–Bonnet",
    "page": 26,
    "source": "inferred",
    "number": "5"
@@ -76,7 +79,7 @@
   },
   {
    "level": 1,
-   "title": "L\u2297 p\u2217",
+   "title": "L⊗ p∗",
    "page": 27,
    "source": "inferred",
    "number": "1"
@@ -104,7 +107,7 @@
   },
   {
    "level": 1,
-   "title": "(X;\u03c9X/k)= Hd(X, KMW",
+   "title": "(X;ωX/k)= Hd(X, KMW",
    "page": 40,
    "source": "inferred",
    "number": "0"
@@ -125,7 +128,7 @@
   },
   {
    "level": 1,
-   "title": "(k)\u2243 GW(k). \u25a1",
+   "title": "(k)≃ GW(k). □",
    "page": 45,
    "source": "inferred",
    "number": "0"
@@ -160,7 +163,7 @@
   {
    "id": "sec-001-1-txb1xb-x",
    "number": "1",
-   "title": "TX/B(1X\u00d7B X)",
+   "title": "TX/B(1X×B X)",
    "level": 1,
    "page_start": 9,
    "page_end": 10,
@@ -170,7 +173,7 @@
   {
    "id": "sec-002-1-txbp",
    "number": "1",
-   "title": "TX/B(p\u2217",
+   "title": "TX/B(p∗",
    "level": 1,
    "page_start": 10,
    "page_end": 10,
@@ -178,9 +181,9 @@
    "n_words": 51
   },
   {
-   "id": "sec-003-1-txb1xb-x\u03c0x6txb-p11xb-x\u03c0x-p1-p",
+   "id": "sec-003-1-txb1xb-xπx6txb-p11xb-xπx-p1-p",
    "number": "1",
-   "title": "TX/B(1X\u00d7B X))\u2243\u03c0X\u266f6\u2212TX/B p1\u266f(1X\u00d7B X)\u2243\u03c0X! p1\u266f p\u2217",
+   "title": "TX/B(1X×B X))≃πX♯6−TX/B p1♯(1X×B X)≃πX! p1♯ p∗",
    "level": 1,
    "page_start": 10,
    "page_end": 13,
@@ -210,7 +213,7 @@
   {
    "id": "sec-006-5-motivic-gaussbonnet",
    "number": "5",
-   "title": "Motivic Gauss\u2013Bonnet",
+   "title": "Motivic Gauss–Bonnet",
    "level": 1,
    "page_start": 25,
    "page_end": 27,
@@ -240,7 +243,7 @@
   {
    "id": "sec-009-1-l-p",
    "number": "1",
-   "title": "L\u2297 p\u2217",
+   "title": "L⊗ p∗",
    "level": 1,
    "page_start": 27,
    "page_end": 31,
@@ -268,9 +271,9 @@
    "n_words": 1958
   },
   {
-   "id": "sec-012-0-x\u03c9xk-hdx-kmw",
+   "id": "sec-012-0-xωxk-hdx-kmw",
    "number": "0",
-   "title": "(X;\u03c9X/k)= Hd(X, KMW",
+   "title": "(X;ωX/k)= Hd(X, KMW",
    "level": 1,
    "page_start": 40,
    "page_end": 41,
@@ -300,7 +303,7 @@
   {
    "id": "sec-015-0-k-gwk",
    "number": "0",
-   "title": "(k)\u2243 GW(k). \u25a1",
+   "title": "(k)≃ GW(k). □",
    "level": 1,
    "page_start": 45,
    "page_end": 50,

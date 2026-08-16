@@ -15,15 +15,18 @@
    "stamp_date": "19 Jun 2025"
   },
   "doi": null,
-  "title": "5), and Q(\u221a\u22127)",
+  "title": "5), and Q(√−7)",
   "authors_raw": "Moreover, single-term dilogarithm evaluations are introduced and derived",
-  "abstract": "We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open problems given by both Bytsko and Campbell, and that we further apply to construct and prove new ladder relations with quartic and sextic bases. We also apply our method to introduce and prove two-term Li 2-relations and ladder-like identities with arguments in algebraic number fields such asQ( \u221a 2), Q( \u221a 3), Q( \u221a 5), and Q(\u221a\u22127). Moreover, single-term dilogarithm evaluations are introduced and derived.",
+  "abstract": "We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open problems given by both Bytsko and Campbell, and that we further apply to construct and prove new ladder relations with quartic and sextic bases. We also apply our method to introduce and prove two-term Li 2-relations and ladder-like identities with arguments in algebraic number fields such asQ( √ 2), Q( √ 3), Q( √ 5), and Q(√−7). Moreover, single-term dilogarithm evaluations are introduced and derived.",
   "docinfo": {
    "Author": "Cetin Hakimoglu-Brown",
    "Creator": "arXiv GenPDF (tex2pdf:)",
    "Producer": "pikepdf 8.15.1",
    "Title": "Analytic Dilogarithm Identities"
-  }
+  },
+  "title_lines": [
+   "5), and Q(√−7)"
+  ]
  },
  "toc": [
   {
@@ -42,7 +45,7 @@
   },
   {
    "level": 1,
-   "title": "(7\u03b6(3) + (3\u2212 2G)\u03c0\u2212 12)",
+   "title": "(7ζ(3) + (3− 2G)π− 12)",
    "page": 1,
    "source": "inferred",
    "number": "2"
@@ -56,21 +59,21 @@
   },
   {
    "level": 1,
-   "title": "Li(x) + 2 Li(\u2212x) = Li(x2), (5)",
+   "title": "Li(x) + 2 Li(−x) = Li(x2), (5)",
    "page": 3,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Li2(x)\u2212 1",
+   "title": "Li2(x)− 1",
    "page": 3,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Li2(\u2212x) = 1",
+   "title": "Li2(−x) = 1",
    "page": 3,
    "source": "inferred",
    "number": "2"
@@ -84,7 +87,7 @@
   },
   {
    "level": 1,
-   "title": "(1\u2212y)2n+1, (15)",
+   "title": "(1−y)2n+1, (15)",
    "page": 4,
    "source": "inferred",
    "number": "2"
@@ -133,7 +136,7 @@
   },
   {
    "level": 2,
-   "title": "Zagier\u2019s four-term identity",
+   "title": "Zagier’s four-term identity",
    "page": 9,
    "source": "inferred",
    "number": "3.3"
@@ -168,21 +171,21 @@
   },
   {
    "level": 1,
-   "title": "Hypergeometric series for \u03c02",
+   "title": "Hypergeometric series for π2",
    "page": 15,
    "source": "inferred",
    "number": "5"
   },
   {
    "level": 1,
-   "title": "(\u03c0\u2212 2 arctan(h))2 + ln2",
+   "title": "(π− 2 arctan(h))2 + ln2",
    "page": 16,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "A proof of Campbell\u2019s conjecture",
+   "title": "A proof of Campbell’s conjecture",
    "page": 16,
    "source": "inferred",
    "number": "6"
@@ -217,42 +220,42 @@
   },
   {
    "level": 1,
-   "title": "Li2(2z\u2212z2) +\u03c02",
+   "title": "Li2(2z−z2) +π2",
    "page": 21,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Li2(z2) + 6 Li2(z) =\u2212 ln2(z\u2212z2)\u2212 6 ln(z) ln(z + 1) +\u03c02",
+   "title": "Li2(z2) + 6 Li2(z) =− ln2(z−z2)− 6 ln(z) ln(z + 1) +π2",
    "page": 22,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "Applications of Roger\u2019s identity",
+   "title": "Applications of Roger’s identity",
    "page": 23,
    "source": "inferred",
    "number": "8"
   },
   {
    "level": 1,
-   "title": "Li2(u) + 3 Li2((u\u2212 1)2)",
+   "title": "Li2(u) + 3 Li2((u− 1)2)",
    "page": 23,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "(u4\u2212 3u3 + 4u2\u2212 2u + 1)",
+   "title": "(u4− 3u3 + 4u2− 2u + 1)",
    "page": 24,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Derivation of the Loxton\u2013Lewin \u03c0",
+   "title": "Derivation of the Loxton–Lewin π",
    "page": 26,
    "source": "inferred",
    "number": "9"
@@ -266,7 +269,7 @@
   },
   {
    "level": 2,
-   "title": "Derivation of the Loxton-Lewin four-term \u03c0",
+   "title": "Derivation of the Loxton-Lewin four-term π",
    "page": 27,
    "source": "inferred",
    "number": "9.1"
@@ -287,21 +290,21 @@
   },
   {
    "level": 1,
-   "title": "Li2(2u\u2212u2) + Li2",
+   "title": "Li2(2u−u2) + Li2",
    "page": 30,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(u4\u2212 3u3 + 4u2\u2212 2u + 1) =z",
+   "title": "(u4− 3u3 + 4u2− 2u + 1) =z",
    "page": 30,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(u4\u2212 3u3 + 4u2\u2212 2u + 1) = 1",
+   "title": "(u4− 3u3 + 4u2− 2u + 1) = 1",
    "page": 30,
    "source": "inferred",
    "number": "2"
@@ -343,7 +346,7 @@
   },
   {
    "level": 2,
-   "title": "A modified Watson \u03c0",
+   "title": "A modified Watson π",
    "page": 33,
    "source": "inferred",
    "number": "11.5"
@@ -371,21 +374,21 @@
   },
   {
    "level": 1,
-   "title": "Li2(h2) + 4 Li2(h)\u2212 3",
+   "title": "Li2(h2) + 4 Li2(h)− 3",
    "page": 35,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Li2(h4) + 4 Li2(h3)\u2212 1",
+   "title": "Li2(h4) + 4 Li2(h3)− 1",
    "page": 35,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Li2(h6) = 5\u03c02",
+   "title": "Li2(h6) = 5π2",
    "page": 35,
    "source": "inferred",
    "number": "2"
@@ -399,14 +402,14 @@
   },
   {
    "level": 1,
-   "title": "Li2(h8)\u2212 3",
+   "title": "Li2(h8)− 3",
    "page": 36,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Li2(h6) + 4 Li2(h4) + 4 Li2(h3)\u2212 3",
+   "title": "Li2(h6) + 4 Li2(h4) + 4 Li2(h3)− 3",
    "page": 36,
    "source": "inferred",
    "number": "2"
@@ -420,7 +423,7 @@
   },
   {
    "level": 2,
-   "title": "Using the \u201cradius method\u201d to derive new ladders",
+   "title": "Using the “radius method” to derive new ladders",
    "page": 37,
    "source": "inferred",
    "number": "12.4"
@@ -434,14 +437,14 @@
   },
   {
    "level": 1,
-   "title": "Li2(\u2212r3)",
+   "title": "Li2(−r3)",
    "page": 37,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "Li2(r6)\u2212 1",
+   "title": "Li2(r6)− 1",
    "page": 37,
    "source": "inferred",
    "number": "2"
@@ -462,7 +465,7 @@
   },
   {
    "level": 1,
-   "title": "Li2(r2)\u2212 4 Li2(r) + 11",
+   "title": "Li2(r2)− 4 Li2(r) + 11",
    "page": 37,
    "source": "inferred",
    "number": "2"
@@ -505,9 +508,9 @@
    "n_words": 297
   },
   {
-   "id": "sec-002-2-7\u03b63-3-2g\u03c0-12",
+   "id": "sec-002-2-7ζ3-3-2gπ-12",
    "number": "2",
-   "title": "(7\u03b6(3) + (3\u2212 2G)\u03c0\u2212 12)",
+   "title": "(7ζ(3) + (3− 2G)π− 12)",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
@@ -527,7 +530,7 @@
   {
    "id": "sec-004-2-lix-2-lix-lix2-5",
    "number": "2",
-   "title": "Li(x) + 2 Li(\u2212x) = Li(x2), (5)",
+   "title": "Li(x) + 2 Li(−x) = Li(x2), (5)",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
@@ -537,7 +540,7 @@
   {
    "id": "sec-005-2-li2x-1",
    "number": "2",
-   "title": "Li2(x)\u2212 1",
+   "title": "Li2(x)− 1",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
@@ -547,7 +550,7 @@
   {
    "id": "sec-006-2-li2x-1",
    "number": "2",
-   "title": "Li2(\u2212x) = 1",
+   "title": "Li2(−x) = 1",
    "level": 1,
    "page_start": 3,
    "page_end": 4,
@@ -567,7 +570,7 @@
   {
    "id": "sec-008-2-1y2n1-15",
    "number": "2",
-   "title": "(1\u2212y)2n+1, (15)",
+   "title": "(1−y)2n+1, (15)",
    "level": 1,
    "page_start": 4,
    "page_end": 5,
@@ -637,7 +640,7 @@
   {
    "id": "sec-015-33-zagiers-four-term-identity",
    "number": "3.3",
-   "title": "Zagier\u2019s four-term identity",
+   "title": "Zagier’s four-term identity",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
@@ -685,9 +688,9 @@
    "n_words": 445
   },
   {
-   "id": "sec-020-5-hypergeometric-series-for-\u03c02",
+   "id": "sec-020-5-hypergeometric-series-for-π2",
    "number": "5",
-   "title": "Hypergeometric series for \u03c02",
+   "title": "Hypergeometric series for π2",
    "level": 1,
    "page_start": 15,
    "page_end": 16,
@@ -695,9 +698,9 @@
    "n_words": 522
   },
   {
-   "id": "sec-021-4-\u03c0-2-arctanh2-ln2",
+   "id": "sec-021-4-π-2-arctanh2-ln2",
    "number": "4",
-   "title": "(\u03c0\u2212 2 arctan(h))2 + ln2",
+   "title": "(π− 2 arctan(h))2 + ln2",
    "level": 1,
    "page_start": 16,
    "page_end": 16,
@@ -707,7 +710,7 @@
   {
    "id": "sec-022-6-a-proof-of-campbells-conjecture",
    "number": "6",
-   "title": "A proof of Campbell\u2019s conjecture",
+   "title": "A proof of Campbell’s conjecture",
    "level": 1,
    "page_start": 16,
    "page_end": 18,
@@ -755,9 +758,9 @@
    "n_words": 49
   },
   {
-   "id": "sec-027-2-li22zz2-\u03c02",
+   "id": "sec-027-2-li22zz2-π2",
    "number": "2",
-   "title": "Li2(2z\u2212z2) +\u03c02",
+   "title": "Li2(2z−z2) +π2",
    "level": 1,
    "page_start": 21,
    "page_end": 22,
@@ -765,9 +768,9 @@
    "n_words": 76
   },
   {
-   "id": "sec-028-3-li2z2-6-li2z-ln2zz2-6-lnz-lnz-1-\u03c02",
+   "id": "sec-028-3-li2z2-6-li2z-ln2zz2-6-lnz-lnz-1-π2",
    "number": "3",
-   "title": "Li2(z2) + 6 Li2(z) =\u2212 ln2(z\u2212z2)\u2212 6 ln(z) ln(z + 1) +\u03c02",
+   "title": "Li2(z2) + 6 Li2(z) =− ln2(z−z2)− 6 ln(z) ln(z + 1) +π2",
    "level": 1,
    "page_start": 22,
    "page_end": 23,
@@ -777,7 +780,7 @@
   {
    "id": "sec-029-8-applications-of-rogers-identity",
    "number": "8",
-   "title": "Applications of Roger\u2019s identity",
+   "title": "Applications of Roger’s identity",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
@@ -787,7 +790,7 @@
   {
    "id": "sec-030-3-li2u-3-li2u-12",
    "number": "3",
-   "title": "Li2(u) + 3 Li2((u\u2212 1)2)",
+   "title": "Li2(u) + 3 Li2((u− 1)2)",
    "level": 1,
    "page_start": 23,
    "page_end": 24,
@@ -797,7 +800,7 @@
   {
    "id": "sec-031-2-u4-3u3-4u2-2u-1",
    "number": "2",
-   "title": "(u4\u2212 3u3 + 4u2\u2212 2u + 1)",
+   "title": "(u4− 3u3 + 4u2− 2u + 1)",
    "level": 1,
    "page_start": 24,
    "page_end": 26,
@@ -805,9 +808,9 @@
    "n_words": 610
   },
   {
-   "id": "sec-032-9-derivation-of-the-loxtonlewin-\u03c0",
+   "id": "sec-032-9-derivation-of-the-loxtonlewin-π",
    "number": "9",
-   "title": "Derivation of the Loxton\u2013Lewin \u03c0",
+   "title": "Derivation of the Loxton–Lewin π",
    "level": 1,
    "page_start": 26,
    "page_end": 27,
@@ -825,9 +828,9 @@
    "n_words": 183
   },
   {
-   "id": "sec-034-91-derivation-of-the-loxton-lewin-four-term-\u03c0",
+   "id": "sec-034-91-derivation-of-the-loxton-lewin-four-term-π",
    "number": "9.1",
-   "title": "Derivation of the Loxton-Lewin four-term \u03c0",
+   "title": "Derivation of the Loxton-Lewin four-term π",
    "level": 2,
    "page_start": 27,
    "page_end": 29,
@@ -857,7 +860,7 @@
   {
    "id": "sec-037-2-li22uu2-li2",
    "number": "2",
-   "title": "Li2(2u\u2212u2) + Li2",
+   "title": "Li2(2u−u2) + Li2",
    "level": 1,
    "page_start": 30,
    "page_end": 30,
@@ -867,7 +870,7 @@
   {
    "id": "sec-038-2-u4-3u3-4u2-2u-1-z",
    "number": "2",
-   "title": "(u4\u2212 3u3 + 4u2\u2212 2u + 1) =z",
+   "title": "(u4− 3u3 + 4u2− 2u + 1) =z",
    "level": 1,
    "page_start": 30,
    "page_end": 30,
@@ -877,7 +880,7 @@
   {
    "id": "sec-039-2-u4-3u3-4u2-2u-1-1",
    "number": "2",
-   "title": "(u4\u2212 3u3 + 4u2\u2212 2u + 1) = 1",
+   "title": "(u4− 3u3 + 4u2− 2u + 1) = 1",
    "level": 1,
    "page_start": 30,
    "page_end": 31,
@@ -935,9 +938,9 @@
    "n_words": 159
   },
   {
-   "id": "sec-045-115-a-modified-watson-\u03c0",
+   "id": "sec-045-115-a-modified-watson-π",
    "number": "11.5",
-   "title": "A modified Watson \u03c0",
+   "title": "A modified Watson π",
    "level": 2,
    "page_start": 33,
    "page_end": 33,
@@ -977,7 +980,7 @@
   {
    "id": "sec-049-2-li2h2-4-li2h-3",
    "number": "2",
-   "title": "Li2(h2) + 4 Li2(h)\u2212 3",
+   "title": "Li2(h2) + 4 Li2(h)− 3",
    "level": 1,
    "page_start": 35,
    "page_end": 35,
@@ -987,7 +990,7 @@
   {
    "id": "sec-050-2-li2h4-4-li2h3-1",
    "number": "2",
-   "title": "Li2(h4) + 4 Li2(h3)\u2212 1",
+   "title": "Li2(h4) + 4 Li2(h3)− 1",
    "level": 1,
    "page_start": 35,
    "page_end": 35,
@@ -995,9 +998,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-051-2-li2h6-5\u03c02",
+   "id": "sec-051-2-li2h6-5π2",
    "number": "2",
-   "title": "Li2(h6) = 5\u03c02",
+   "title": "Li2(h6) = 5π2",
    "level": 1,
    "page_start": 35,
    "page_end": 35,
@@ -1017,7 +1020,7 @@
   {
    "id": "sec-053-2-li2h8-3",
    "number": "2",
-   "title": "Li2(h8)\u2212 3",
+   "title": "Li2(h8)− 3",
    "level": 1,
    "page_start": 36,
    "page_end": 36,
@@ -1027,7 +1030,7 @@
   {
    "id": "sec-054-2-li2h6-4-li2h4-4-li2h3-3",
    "number": "2",
-   "title": "Li2(h6) + 4 Li2(h4) + 4 Li2(h3)\u2212 3",
+   "title": "Li2(h6) + 4 Li2(h4) + 4 Li2(h3)− 3",
    "level": 1,
    "page_start": 36,
    "page_end": 37,
@@ -1037,7 +1040,7 @@
   {
    "id": "sec-055-124-using-the-radius-method-to-derive-new-ladder",
    "number": "12.4",
-   "title": "Using the \u201cradius method\u201d to derive new ladders",
+   "title": "Using the “radius method” to derive new ladders",
    "level": 2,
    "page_start": 37,
    "page_end": 37,
@@ -1057,7 +1060,7 @@
   {
    "id": "sec-057-3-li2r3",
    "number": "3",
-   "title": "Li2(\u2212r3)",
+   "title": "Li2(−r3)",
    "level": 1,
    "page_start": 37,
    "page_end": 37,
@@ -1067,7 +1070,7 @@
   {
    "id": "sec-058-2-li2r6-1",
    "number": "2",
-   "title": "Li2(r6)\u2212 1",
+   "title": "Li2(r6)− 1",
    "level": 1,
    "page_start": 37,
    "page_end": 37,
@@ -1097,7 +1100,7 @@
   {
    "id": "sec-061-2-li2r2-4-li2r-11",
    "number": "2",
-   "title": "Li2(r2)\u2212 4 Li2(r) + 11",
+   "title": "Li2(r2)− 4 Li2(r) + 11",
    "level": 1,
    "page_start": 37,
    "page_end": 38,

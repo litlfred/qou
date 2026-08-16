@@ -15,15 +15,27 @@
    "stamp_date": "8 Sep 1997"
   },
   "doi": null,
-  "title": "\u2202x i + (n \u2212j)\u03b8 +u 1\u2264i,j \u2264n D(u;\u03b8)P\u03bb (x;\u03b8) = ( \u220f (\u03bb i + (n \u2212i)\u03b8 +u) P\u03bb (x;\u03b8),(1.1) where V (x) =\u220f i<j(xi \u2212xj) is the Vandermonde determinant and u is a parame- ter. The operators {D(u;\u03b8),u \u2208 C} generate a commutative algebra; denote it by",
+  "title": "∂x i + (n −j)θ +u 1≤i,j ≤n D(u;θ)Pλ (x;θ) = ( ∏ (λ i + (n −i)θ +u) Pλ (x;θ),(1.1) where V (x) =∏ i<j(xi −xj) is the Vandermonde determinant and u is a parame- ter. The operators {D(u;θ),u ∈ C} generate a commutative algebra; denote it by",
   "authors_raw": null,
-  "abstract": "In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St]). In this note we use the parameter \u03b8 = 1/\u03b1 inverse to the standard parameter \u03b1 for Jack polynomials. Jack symmetric poly- nomials P\u03bb (x1,...,x n;\u03b8) are eigenfunctions of Sekiguchi di\ufb00erential operators D(u;\u03b8) = V (x)\u22121 det [ xn\u2212j i ( xi \u2202 \u2202x i + (n \u2212j)\u03b8 +u )] 1\u2264i,j \u2264n , D(u;\u03b8)P\u03bb (x;\u03b8) = ( \u220f i (\u03bb i + (n \u2212i)\u03b8 +u) ) P\u03bb (x;\u03b8),(1.1) where V (x) =\u220f i<j(xi \u2212xj) is the Vandermonde determinant and u is a parame- ter. The operators {D(u;\u03b8),u \u2208 C} generate a commutative algebra; denote it by D(n;\u03b8). We normalize P\u03bb (x1,...,x n;\u03b8) so that P\u03bb (x1,...,x n;\u03b8) = x\u03bb 1 1 ...x \u03bb n n +... , where dots stand for lower monomials in lexicographic order . Then one has (1.2) P(\u03bb 1+1,...,\u03bb n+1)(x;\u03b8) = ( \u220f xi ) P\u03bb (x;\u03b8). Using (1.2) one can de\ufb01ne Jack rational functions for any int egers \u03bb 1 \u2265 \u00b7 \u00b7 \u00b7 \u2265 \u03bb n and still (1.1), and hence the binomial theorem below, will h old. Note that the eigenvalues in (1.1) are symmetric in variable s\u03bb i \u2212\u03b8i,i = 1,...,n . The authors were supported by the Russian Basic Research Foundat ion (grant 95-01-00814). The \ufb01rst author was supported by the NSF grant DMS 9304580. 1Institute for Advanced Study, Princeton, NJ 08540. Current add ress: Dept. of Mathematics, University of Chicago, 5734 South University Ave., Chicago, I L 60637-1546. E-mail address: okounkov@math.uchicago.edu 2Institute for Problems of Information Transmission, Bolshoy K aretny 19, 101447 Moscow GSP\u20134, Russia. E-mail address: olsh@ippi.ac.msk.su Typeset by AMS-TEX 1",
+  "abstract": "In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St]). In this note we use the parameter θ = 1/α inverse to the standard parameter α for Jack polynomials. Jack symmetric poly- nomials Pλ (x1,...,x n;θ) are eigenfunctions of Sekiguchi diﬀerential operators D(u;θ) = V (x)−1 det [ xn−j i ( xi ∂ ∂x i + (n −j)θ +u )] 1≤i,j ≤n , D(u;θ)Pλ (x;θ) = ( ∏ i (λ i + (n −i)θ +u) ) Pλ (x;θ),(1.1) where V (x) =∏ i<j(xi −xj) is the Vandermonde determinant and u is a parame- ter. The operators {D(u;θ),u ∈ C} generate a commutative algebra; denote it by D(n;θ). We normalize Pλ (x1,...,x n;θ) so that Pλ (x1,...,x n;θ) = xλ 1 1 ...x λ n n +... , where dots stand for lower monomials in lexicographic order . Then one has (1.2) P(λ 1+1,...,λ n+1)(x;θ) = ( ∏ xi ) Pλ (x;θ). Using (1.2) one can deﬁne Jack rational functions for any int egers λ 1 ≥ · · · ≥ λ n and still (1.1), and hence the binomial theorem below, will h old. Note that the eigenvalues in (1.1) are symmetric in variable sλ i −θi,i = 1,...,n . The authors were supported by the Russian Basic Research Foundat ion (grant 95-01-00814). The ﬁrst author was supported by the NSF grant DMS 9304580. 1Institute for Advanced Study, Princeton, NJ 08540. Current add ress: Dept. of Mathematics, University of Chicago, 5734 South University Ave., Chicago, I L 60637-1546. E-mail address: okounkov@math.uchicago.edu 2Institute for Problems of Information Transmission, Bolshoy K aretny 19, 101447 Moscow GSP–4, Russia. E-mail address: olsh@ippi.ac.msk.su Typeset by AMS-TEX 1",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181024043119-04'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "Title": "arXiv:q-alg/9608020v2  8 Sep 1997"
-  }
+  },
+  "title_lines": [
+   "∂x i",
+   "+ (n −j)θ +u",
+   "1≤i,j ≤n",
+   "D(u;θ)Pλ (x;θ) =",
+   "( ∏",
+   "(λ i + (n −i)θ +u)",
+   "Pλ (x;θ),(1.1)",
+   "where V (x) =∏",
+   "i<j(xi −xj) is the Vandermonde determinant and u is a parame-",
+   "ter. The operators {D(u;θ),u ∈ C} generate a commutative algebra; denote it by"
+  ]
  },
  "toc": [
   {
@@ -42,14 +54,14 @@
   },
   {
    "level": 1,
-   "title": "Shifted Jack polynomials ( [S1,OO,Ok1,KS,Ok3]). Denote by \u039b \u03b8 (n) the al-",
+   "title": "Shifted Jack polynomials ( [S1,OO,Ok1,KS,Ok3]). Denote by Λ θ (n) the al-",
    "page": 2,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Binomial formula. Given a partition \u00b5 and a number t set",
+   "title": "Binomial formula. Given a partition µ and a number t set",
    "page": 3,
    "source": "inferred",
    "number": "3"
@@ -84,14 +96,14 @@
   },
   {
    "level": 1,
-   "title": "F ormula for \u03b8-dimension of a skew diagram \u03bb/\u00b5 . De\ufb01ne the \u03b8-dimension",
+   "title": "F ormula for θ-dimension of a skew diagram λ/µ . Deﬁne the θ-dimension",
    "page": 6,
    "source": "inferred",
    "number": "5"
   },
   {
    "level": 1,
-   "title": "Integral representation of Jack polynomials. Write\u03bd \u227a\u03bb if",
+   "title": "Integral representation of Jack polynomials. Writeν ≺λ if",
    "page": 7,
    "source": "inferred",
    "number": "6"
@@ -143,7 +155,7 @@
   {
    "id": "sec-002-2-shifted-jack-polynomials-s1oook1ksok3-denote-b",
    "number": "2",
-   "title": "Shifted Jack polynomials ( [S1,OO,Ok1,KS,Ok3]). Denote by \u039b \u03b8 (n) the al-",
+   "title": "Shifted Jack polynomials ( [S1,OO,Ok1,KS,Ok3]). Denote by Λ θ (n) the al-",
    "level": 1,
    "page_start": 2,
    "page_end": 3,
@@ -151,9 +163,9 @@
    "n_words": 609
   },
   {
-   "id": "sec-003-3-binomial-formula-given-a-partition-\u00b5-and-a-num",
+   "id": "sec-003-3-binomial-formula-given-a-partition-µ-and-a-num",
    "number": "3",
-   "title": "Binomial formula. Given a partition \u00b5 and a number t set",
+   "title": "Binomial formula. Given a partition µ and a number t set",
    "level": 1,
    "page_start": 3,
    "page_end": 4,
@@ -201,9 +213,9 @@
    "n_words": 290
   },
   {
-   "id": "sec-008-5-f-ormula-for-\u03b8-dimension-of-a-skew-diagram-\u03bb\u00b5",
+   "id": "sec-008-5-f-ormula-for-θ-dimension-of-a-skew-diagram-λµ",
    "number": "5",
-   "title": "F ormula for \u03b8-dimension of a skew diagram \u03bb/\u00b5 . De\ufb01ne the \u03b8-dimension",
+   "title": "F ormula for θ-dimension of a skew diagram λ/µ . Deﬁne the θ-dimension",
    "level": 1,
    "page_start": 6,
    "page_end": 7,
@@ -213,7 +225,7 @@
   {
    "id": "sec-009-6-integral-representation-of-jack-polynomials-wr",
    "number": "6",
-   "title": "Integral representation of Jack polynomials. Write\u03bd \u227a\u03bb if",
+   "title": "Integral representation of Jack polynomials. Writeν ≺λ if",
    "level": 1,
    "page_start": 7,
    "page_end": 8,
