@@ -128,6 +128,12 @@ everything: over `ℚ` at `Q = 2` it derives that `(1³)` has weight zero and
 
 ### Verification
 
+> **Snapshot note.** The declaration table above and the axiom block below
+> record the file **as of #5217** (11 declarations). #5230 added the
+> `IsOcneanuWeightSystem` class and eight further declarations without changing
+> any of these; the current full list is in
+> [`2026-08-16-ocneanu-weight-axiomatisation.md`](2026-08-16-ocneanu-weight-axiomatisation.md).
+
 `lean`-direct against the real import cone, **exit 0**, no warnings, 2.0 s.
 Not via `lake build`: this tree is a cache restore with no `.trace` files, and
 `lake build` would evict it (bean `qou-r13s`). Mathlib olean count **6990**
@@ -163,10 +169,25 @@ argument.**
 > specialisations `s_λ(1, Q, …, Q^{r−1})`.
 
 That is the "Ocneanu-trace weight formula" of #5207's own phrasing — the
-*route* it named, supplied as the given. It is cited with `-- Ref:`, not
-axiomatised: no Lean `axiom`, no conditional `class`, nothing in the
-signature carrying it. Quoted from Orellana p. 17, read locally
-(`uploads/9806163v1.pdf`).
+*route* it named, supplied as the given. Quoted from Orellana p. 17, read
+locally (`uploads/9806163v1.pdf`).
+
+> **Superseded 2026-08-16 by [#5230](https://github.com/litlfred/qou/pull/5230).**
+> This paragraph read: *"It is cited with `-- Ref:`, not axiomatised: no Lean
+> `axiom`, no conditional `class`, nothing in the signature carrying it."*
+> That was true when written and is **now false**. On owner direction the input
+> has been **axiomatised** as the class `IsOcneanuWeightSystem`, threaded as an
+> explicit `[Instance]` hypothesis (AGENTS.md §3b-cond).
+>
+> **Nothing became more proved.** The statements in the table above are still
+> exactly as proved as they were. What changed is that the three statements
+> about the **actual Ocneanu weight** — as opposed to the `schurPrincipal`
+> formula — now carry the dependency in their types and wear `_of_wenzl` in
+> their names, and must be cited as *"proved conditional on Wenzl 1988"*.
+> The unconditional core, `schurPrincipal_eq_zero_iff` included, is untouched.
+> Class design, the conditional/unconditional boundary, and a scoping of the
+> route to unconditional:
+> [`2026-08-16-ocneanu-weight-axiomatisation.md`](2026-08-16-ocneanu-weight-axiomatisation.md).
 
 Two things soften the dependence without removing it:
 
