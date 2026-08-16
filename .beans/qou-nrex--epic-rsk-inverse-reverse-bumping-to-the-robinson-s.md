@@ -122,3 +122,27 @@ the index record is now a function of the construction of `Q`.
 once) finally earns its keep: it is what makes "the row holding `s`" well defined, so the read-back
 is a function rather than a search. After that, `rskPair` injectivity, then surjectivity, then the
 count.
+
+## Brick 5 DONE — the single-step read-back
+
+`QOU/Mathlib/SchenstedReadback.lean`, sorry-free (`propext`, `Quot.sound`), first-try compile:
+
+- `qRowOf Q t` — the index of the first row of `Q` holding `t`;
+- **`qRowOf_qAppend_self`** — a *fresh* timestamp lands in the row it was written to;
+- **`qRowOf_qAppend_of_ne`** — appending disturbs no other timestamp's row;
+- `qRowOf_eq_none` — absent everywhere ⇒ not located.
+
+**The freshness hypothesis is load-bearing, not bookkeeping.** `qRowOf` returns the *first* row
+containing `t`, so a pre-existing copy of `t` would shadow the append and the read-back would
+locate the wrong row. Freshness is what makes it a function rather than a search with ties.
+
+In the RSK setting freshness is supplied by `SchenstedRecording.insertWordRec_snd_content` — the
+recording content is exactly `range |w|` with each timestamp occurring **once**. That theorem has
+been sitting in the corpus with no consumer; this is what it was for. Worth noting because it is
+the second time in this epic that an apparently-idle earlier result turned out to be precisely the
+missing hypothesis (the first: brick 2's `NoEmptyRows`).
+
+**Next (brick 6):** thread the two lemmas along `qAppendSteps` under the freshness invariant
+(timestamps strictly increase, so every step is fresh for what came before) to recover the whole
+index list from `Q`. Then `rskPair` injectivity follows from brick 3's
+`word_eq_of_insertWord_eq`.
