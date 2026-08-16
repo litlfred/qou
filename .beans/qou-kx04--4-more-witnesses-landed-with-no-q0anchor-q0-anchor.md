@@ -1,11 +1,11 @@
 ---
 # qou-kx04
 title: 4 more witnesses landed with no q0Anchor (Q0_ANCHOR_MISSING 1885 -> 1889)
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T22:39:50Z
-updated_at: 2026-08-16T00:24:17Z
+updated_at: 2026-08-16T01:58:10Z
 parent: qou-pq8k
 ---
 
@@ -106,3 +106,10 @@ hand.
 ENVIRONMENT: sympy (needed by convention-status) pins mpmath<1.4 and silently
 downgraded 1.4.1 -> 1.3.0 on install. Restored to 1.4.1; all three witnesses
 here produced under it. snappy installed for dt-crossknot.
+
+
+UNCLAIMED 2026-08-16: progress above (3 of 6) is landed on main via PR #5164.
+Set back to todo rather than left in-progress, since no agent is currently on
+it — an in-progress bean with nobody working it is the state the work-plan
+policy exists to prevent. The remaining two are described above; read the
+method note on cone asymmetry before starting.
