@@ -383,6 +383,84 @@ theorem qJM_commute_of_adjacent
       have : i = j + 1 := le_antisymm hi hge
       rw [this]
 
+
+/-! ### How far braid + far-commutation reach, and where they stop
+
+`adjacent_reduce` collapses both sides of `L_k L_{k+1} = L_{k+1} L_k` to one
+word conjugated by `s`, using **only** the braid relation and `σ_k B = B σ_k`.
+So the adjacent case is equivalent to `s` commuting with
+`X = σ_{k-1} σ_k L_{k-1} σ_{k-1} σ_k L_{k-1} σ_{k-1}`.
+
+At `k = 1` that closes: `B = L_0 = 1`, `X = (ts)²t`, and the residual is
+`(ts)³ = (st)³` — `braid_pow_three`, braid alone. Hence
+`qJM_one_two_commute`, unconditional.
+
+**It does not close for general `k`, and the hypotheses above are why.** After
+cancelling, the residual asks for `B · t s B t s = t · B t s B t`: the left word
+begins with `B`, the right with `t`. Deriving one from the other requires moving
+`B` past `t`, and `s * B = B * s` gives no such permission — `B` and `t` do not
+commute (`L_{k-1}` is built from `σ_{k-1}` among others). So any proof of the
+general adjacent case must use something the reduction deliberately avoids:
+either `σ_quadratic`, or structure of `L_{k-1}` beyond commuting with `σ_k`.
+
+That is a statement about *these* hypotheses, not a claim that the adjacent case
+is hard in general — the `k = 1` instance shows the shape can close. -/
+
+/-- **The adjacent case, reduced.** Both sides of `L_k L_{k+1} = L_{k+1} L_k`
+collapse — using *only* the braid relation and `σ_k`-commutation — to one word
+conjugated by `s`. Here `t = σ_{k-1}`, `s = σ_k`, `B = L_{k-1}`, `A = t B t`. -/
+theorem adjacent_reduce {R : Type*} [Ring R] (t s B : R)
+    (hbraid : t * s * t = s * t * s) (hcomm : s * B = B * s) :
+    (t*B*t) * s * (t*B*t) * s = (t*s*B*t*s*B*t) * s
+  ∧ s * ((t*B*t) * s * (t*B*t)) = s * (t*s*B*t*s*B*t) := by
+  constructor
+  · calc (t*B*t) * s * (t*B*t) * s
+        = t*B*(t*s*t)*B*t*s := by simp only [mul_assoc]
+      _ = t*B*(s*t*s)*B*t*s := by rw [hbraid]
+      _ = t*(B*s)*t*s*B*t*s := by simp only [mul_assoc]
+      _ = t*(s*B)*t*s*B*t*s := by rw [hcomm]
+      _ = (t*s*B*t*s*B*t) * s := by simp only [mul_assoc]
+  · calc s * ((t*B*t) * s * (t*B*t))
+        = s*t*B*(t*s*t)*B*t := by simp only [mul_assoc]
+      _ = s*t*B*(s*t*s)*B*t := by rw [hbraid]
+      _ = s*t*(B*s)*t*s*B*t := by simp only [mul_assoc]
+      _ = s*t*(s*B)*t*s*B*t := by rw [hcomm]
+      _ = s * (t*s*B*t*s*B*t) := by simp only [mul_assoc]
+
+/-- The residual commutation at `B = 1`, i.e. `(ts)³ = (st)³`. Braid alone. -/
+theorem braid_pow_three {R : Type*} [Ring R] (t s : R)
+    (hbraid : t * s * t = s * t * s) :
+    (t*s*t*s*t) * s = s * (t*s*t*s*t) := by
+  calc (t*s*t*s*t) * s = (t*s*t)*(s*t*s) := by simp only [mul_assoc]
+    _ = (s*t*s)*(t*s*t) := by rw [hbraid]
+    _ = s * (t*s*t*s*t) := by simp only [mul_assoc]
+
+/-- **`L_1` and `L_2` commute — unconditionally, from the braid relation alone.**
+The `k = 1` instance of the adjacent case, where `B = L_0 = 1`. -/
+theorem qJM_one_two_commute (h1 : 1 < n) :
+    qJM K q qi n 1 * qJM K q qi n 2 = qJM K q qi n 2 * qJM K q qi n 1 := by
+  have h0 : 0 < n := by omega
+  set t := σ K q qi n ⟨0, h0⟩ with ht
+  set s := σ K q qi n ⟨1, h1⟩ with hs
+  have hbraid : t * s * t = s * t * s := by
+    have := σ_braid K q qi n ⟨0, h0⟩ (by simpa using h1)
+    simpa [ht, hs] using this
+  have hL1 : qJM K q qi n 1 = t * (1 : Hecke K q qi n) * t := by
+    rw [qJM_one K q qi n h0]; simp [ht]
+  have hL2 : qJM K q qi n 2 = s * qJM K q qi n 1 * s := by
+    have := qJM_succ K q qi n (k := 1) h1
+    simpa [hs] using this
+  rw [hL2, hL1]
+  obtain ⟨e1, e2⟩ := adjacent_reduce (R := Hecke K q qi n) t s 1 hbraid (by simp)
+  calc t * 1 * t * (s * (t * 1 * t) * s)
+      = (t*1*t) * s * (t*1*t) * s := by simp only [mul_assoc]
+    _ = (t*s*1*t*s*1*t) * s := e1
+    _ = (t*s*t*s*t) * s := by simp
+    _ = s * (t*s*t*s*t) := braid_pow_three t s hbraid
+    _ = s * (t*s*1*t*s*1*t) := by simp
+    _ = s * ((t*1*t) * s * (t*1*t)) := e2.symm
+    _ = s * (t * 1 * t) * s * (t * 1 * t) := by simp only [mul_assoc]
+
 end AdjacentReduction
 
 /-- **[GAP] The Murphy elements commute pairwise** — they generate the commutative
