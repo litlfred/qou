@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T20:32:39Z
-updated_at: 2026-08-15T23:15:40Z
+updated_at: 2026-08-16T02:27:50Z
 ---
 
 Found while adjudicating `def:yekutieli-triple` (session `qou-xz6t`, branch `claude/mtcx-7c-verify-close-2026-08-15`).
@@ -132,3 +132,35 @@ So there is nothing to de-duplicate. The only defect is that the *ref* `qou:QOU.
 So the honest reading is that this block's stated construction is **not formalised yet**, and `MassFormulaCategorical` is at best an archimedean realisation of a downstream special case. Repointing the ref at it would assert an equivalence the corpus does not currently prove — the §7c/`R`-vs-`ℝ` gap is exactly the kind of thing this session found being papered over elsewhere.
 
 **Recommended disposition (author's call):** treat as backlog alongside the other 57 — i.e. leave the ref honest-`n/a` — unless the author intends `def:mass-identity` to be the categorical-trace statement that `MassFormulaCategorical` specialises, in which case the right fix is a new Lean declaration stating it over `R`, with the Hecke formula derived from it.
+
+
+## ⚠ CORRECTION 2026-08-16 — I over-stated the blast radius by ~75×
+
+Everything above that quotes "65 blocks resolve to the aggregator", "~304 of 1220 — a quarter of the corpus", or "319 → 558 unresolved" is **measured wrong**. The real numbers are far smaller.
+
+**The error.** My scans called `qa-utils.resolveCanonicalLean(ref)` directly. That function resolves **candidates 2 and 3 only** — the library-tree module path and the basename/decl fallbacks. It does **not** look for a co-located sibling `<block>.lean`. But the QA pipeline does not call it directly: `walkBlocks` checks the **sibling first** (candidate 1, AGENTS.md §0a) and only calls the resolver when there is no sibling. So every block that owns a sibling `.lean` was counted as "unresolved / aggregator" by my scan while the pipeline was happily auditing its sibling all along.
+
+**Measured correctly** (sibling check first, then the resolver — i.e. what `walkBlocks` actually does):
+
+| | count |
+|---|---|
+| blocks carrying a `qou:` ref | 1220 |
+| resolved by **sibling** (candidate 1) | **880** — never touched by the resolver change |
+| resolved via the library tree (candidates 2/3) | 336 |
+| **truly unresolved after the fix** | **4** |
+| sidecar verdicts that would flip `pass` → `n/a` | **12** |
+
+The four:
+
+- `braids-and-knots/figure-eight-reeb-theta-value.ts` → `qou:QOU.BraidsAndKnots.figure_eight_classical_reeb`
+- `observations/crossing-energy-pair-cancellation.ts` → `qou:QOU.Braiding.pair_cancellation`
+- `mass-endomorphism/channel-rotation-askey-lit.ts` → `qou:QOU.MassEndomorphism.rotation_step`
+- `mass-endomorphism/complex-volume-character-variety-path.ts` → `qou:QOU.MassEndomorphism.AWDeformationPath`
+
+**What stands, and what does not.**
+
+- *Stands:* the defect is real. A ref naming a nonexistent decl did fall back to an import-only aggregator, and those blocks did pass vacuously. The fix is right and the regression test is right.
+- *Does not stand:* the scale. It is **4 blocks and 12 verdicts**, not 304 blocks. QA coverage will move by a rounding error, not visibly. The "expect coverage to drop / this needs a corpus re-sweep before adoption" warning was written against the wrong number and is **withdrawn** — a normal sweep suffices.
+- *Also does not stand:* "63 blocks name declarations that exist nowhere" as a statement about *vacuous passing*. Those 57–63 refs are still genuinely unformalised (`qou-2u26` is unaffected — it is about refs naming absent declarations, which is true regardless of how they resolved), but most of them have sibling `.lean` files, so they were being audited against a real file, not an import list.
+
+**Lesson worth keeping:** when measuring a pipeline's behaviour, drive the pipeline's own entry point (`walkBlocks`), not the helper it happens to call. Calling the helper in isolation silently dropped candidate 1 and inflated every number by the 880 blocks that own a sibling.
