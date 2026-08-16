@@ -312,7 +312,7 @@ binary.
    trace *not* being the TL trace. Those numbers are not approximations to
    D-era ones — the two differ exactly on the radical.
 4. **The corank is not "1".** It is `n! − Catalan(n)`, which grows fast
-   (1, 10, 78, 573 at n = 6). Any n ≥ 4 code that treats the degeneracy as
+   (1, 10, 78, 588 at n = 6). Any n ≥ 4 code that treats the degeneracy as
    "one bad direction" is wrong at scale. The n = 3 case being corank 1 is
    a small-n coincidence of `3! − 5 = 1`.
 5. **Skipped tests hid a live contract break** for the whole C → D
