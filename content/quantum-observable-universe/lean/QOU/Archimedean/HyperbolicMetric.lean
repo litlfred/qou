@@ -38,18 +38,22 @@ isometries (a vertical reflection, an inversion in a boundary sphere) are then
   `R²/‖p-c‖²` and the height factor are literally the SAME real number, so the
   ratio `‖v‖/z` is untouched.  No change of variables, no cited geometry.
 
-## What is NOT proved here (honest walls, each cited + beaned)
+## What is NOT proved here (honest walls, tracked as a bean, NOT stubbed)
 
-* `dH_comm` / `dH_triangle` — symmetry (path reversal) and the triangle
-  inequality (path concatenation) are the remaining pseudometric axioms.  Both
-  need a genuine change of variables / reparametrisation invariance of the
-  set-restricted `lintegral`, which is a real chunk of measure theory; stated
-  with an honest `sorry` + `-- Ref:` + bean `qou-hmet`.  They are NOT needed for
-  the isometry results, which are pure pointwise congruences.
+These are the remaining pseudometric axioms.  Per AGENTS.md ("if you cannot close
+a derivation, CREATE A BEAN — not a `sorry`"), they are NOT stated as sorried
+theorems: this file stays 100 % sorry-free, and the gap is tracked in bean
+`qou-322e`.  None is needed for the isometry results (pure pointwise congruences)
+or the geodesic classification.
+
+* `dH_comm` (symmetry, via path reversal) and `dH_triangle` (triangle inequality,
+  via path concatenation) each need a genuine change of variables /
+  reparametrisation invariance of the set-restricted `lintegral` — a real chunk
+  of measure theory.
 * Separation `dH x y = 0 → x = y` needs the fundamental theorem of calculus /
   absolute continuity to bound `pathLenH` below (a Cantor-type continuous path
   otherwise defeats a naive lower bound) — the same reason Mathlib has no
-  hyperbolic geometry.  Left to bean `qou-hmet` as well.
+  hyperbolic geometry.
 
 The carrier is `EuclideanSpace ℝ (Fin 3)` (NOT the plain `Fin 3 → ℝ` of
 `HyperbolicVolumeMeasure`, whose Haar/Lebesgue structure needs the sup-free Pi
@@ -61,7 +65,7 @@ Archimedean (ℝ): `‖·‖`, `deriv`, ordering `0 < z` — §7c.
 
   -- Ref: [thurston1978] Ch. 2 §2.3 p. 12 (the metric `ds² = (dx²+dy²+dz²)/z²`)
   -- Ref: [milnor1982] §1 (upper half-space model, isometries by boundary inversion)
-  -- Ref: [manuscript] beans qou-473l (T2), qou-idvt (T2), qou-hmet (metric-axiom walls)
+  -- Ref: [manuscript] beans qou-473l (T2), qou-idvt (T2), qou-322e (metric-axiom walls)
 -/
 
 import Mathlib.MeasureTheory.Integral.Lebesgue.Basic
