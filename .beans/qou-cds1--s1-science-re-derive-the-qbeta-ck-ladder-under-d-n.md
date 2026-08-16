@@ -1,7 +1,7 @@
 ---
 # qou-cds1
 title: 'S1 (SCIENCE): re-derive the Q_beta c_k ladder under D — not a z-swap, and that is proved'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
@@ -70,3 +70,42 @@ Per-claim:
 DOF-vs-precision: ladder fits ONE experimental scalar (Q_beta) with unboundedly many residual-absorbing coefficients; only c_3 carries signal (~2 digits) and those swing 3% across anchors. No high-precision identification exists.
 
 Do NOT: re-quote any C-frame c_k as a D result; resurrect c_3=-2=J_Hopf as a derivation (that is flip-flop #5).
+
+## Step 1 done (2026-08-16) — the formalize-first prune this bean asked for
+
+PROVED, sorry-free, generic CommRing (MarkovZFullBarCondition.lean):
+  eigenphase_barOdd_of_barEven      bar(z)=z    => bar(2a)+2a = 0
+  eigenphase_bar_defect_of_fullBar  bar(z)=z-h  => bar(2a)+2a = h^2
+axioms: [propext, Quot.sound] on both; lean-direct exit 0.
+
+The ladder eigenphase a = (z-1)h/2 is bar-odd EXACTLY when z is bar-even.
+z_C is bar-even, so eigenphase_bar_involution holds -- as a C statement.
+z_D satisfies the full-bar condition, so under D the eigenphase is NOT
+bar-odd and the defect is exactly h^2/2. That is a structural reason the
+C->D move cannot be a z-substitution, independent of any number: the swap
+keeps the formula while breaking the parity its consumers assume.
+
+The defect is z-INDEPENDENT, so no member of the full-bar family restores
+bar-oddness. The bar-odd projection is therefore forced with no free
+parameter: a_odd = a - h^2/4.
+
+MEASURED (probe qbeta-d-frame-eigenphase-bar-parity, both anchors):
+  frame                     implied c2      c3      rung gain
+  C (alpha_C)                  -1.018    -2.069        57.7x
+  D z-swap                     -9.299  -974.43         1.12x
+  D bar-odd projection         -1.733   -86.08         2.36x
+
+Scope-(a): NECESSARY and derived, but NOT sufficient. Do not search for
+further corrections until one lands near -1; that is a fit.
+
+## Remaining piece
+
+The two-row cap. WenzlWeightVanishing.lean landed 2026-08-16 (sorry-free,
+all n; z_D is Wenzl level r=2 exactly), supplying exactly the input
+qbeta_c3_ladder_trace_convention_sensitivity_probe named as its own open
+item ('the two-row cap argument has not been examined for the decay
+channel'). Under D the >=3-row blocks are annihilated, so chi_(1,1,1)
+drops from the H_3 decomposition. NOT folded in yet: the ladder as
+written exposes z only through alpha, not through the per-block
+characters, so folding it in means going back to where the (z-1)h/2 form
+is derived.

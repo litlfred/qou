@@ -3,8 +3,9 @@
 title: 'GAP WALL-5: assemble HypMinimizerUnique instance (needs WALL-2 + WALL-4)'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-16T13:03:26Z
-updated_at: 2026-08-16T13:03:26Z
+updated_at: 2026-08-16T14:01:54Z
 ---
 
 T2 geodesic-uniqueness, WALL-5 — the capstone. Produce the REAL instance
@@ -27,3 +28,17 @@ NO instance (the wall is OPEN). Existence of minimisers is ALSO part of the wall
 (WALL-3 lower bound qou-i0sr gives vseg's `minimal` field ⇒ existence on the z-axis;
 WALL-2 transports existence to general points). Until WALL-2+WALL-4 land, the
 instance stays absent and the classification stays conditional — as it is now.
+
+
+
+---
+UPDATE 2026-08-16 (PR #5253): STILL OPEN — instance deliberately NOT fabricated. Both
+prerequisites remain open: xidi (z-axis constant-speed uniqueness, equality-case analysis)
+and 0a0z (two-point boundary-inversion normalization). HypMinimizerUnique stays a
+content-bearing conjecture class with NO instance (correct honest state). The assembly
+(transport uniqueness through the normalizing isometry via IsDHIsometry.pathLenH_comp/
+speed_comp) is mechanical GIVEN xidi+0a0z, but neither has landed, so the classification
+(verticalPlaneFix/hemisphereFix_isTotallyGeodesic) stays conditional on [HypMinimizerUnique].
+Landed toward the wall this session (PR #5253): dH is now a CERTIFIED METRIC (dH_eq_zero_eq,
+unconditional) and the EXACT z-axis distance dH_zpt. These are the metric foundation the
+uniqueness argument sits on, but do not by themselves close WALL-4/WALL-5.

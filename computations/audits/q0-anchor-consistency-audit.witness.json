@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T03:47:06.333624+00:00",
-  "commitSha": "34a33389a24eac9d7f2aaa50f84cad7bcfb82f9a",
+  "computedAt": "2026-08-16T13:25:42.095312+00:00",
+  "commitSha": "0798f23d6e746d52ef1efc64103e0ab48d838f54",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 10,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "805ec171e06b",
@@ -28,19 +28,17 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 653,
+      "Q0_OK": 652,
       "Q0_AMBIGUOUS": 15,
-      "Q0_INDEPENDENT": 5,
-      "Q0_ANCHOR_MISSING": 1885,
+      "Q0_INDEPENDENT": 6,
+      "Q0_ANCHOR_MISSING": 1887,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 71,
       "Q0_PARSE_ERROR": 1,
@@ -1155,6 +1153,10 @@
         },
         {
           "witness": "chi-tritium-h9-at-qinv-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-tritium-h9.witness.json",
           "detail": ""
         },
         {
@@ -5894,6 +5896,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-d-frame-eigenphase-bar-parity.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-daha-macdonald.witness.json",
           "detail": ""
         },
@@ -8428,10 +8434,6 @@
           "detail": ""
         },
         {
-          "witness": "chi-tritium-h9.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "chirality-avg-content-atomic.witness.json",
           "detail": ""
         },
@@ -10565,6 +10567,10 @@
         }
       ],
       "Q0_INDEPENDENT": [
+        {
+          "witness": "markov-identity-symbolic.witness.json",
+          "detail": ""
+        },
         {
           "witness": "dt-crossknot-snappy-slope-hardening.witness.json",
           "detail": ""
