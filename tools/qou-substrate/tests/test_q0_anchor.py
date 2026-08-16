@@ -53,6 +53,61 @@ def test_explicit_anchor_overrides_resolution():
     assert payload["q0Anchor"] == "proton"
 
 
+def test_stamp_does_not_overwrite_a_declared_anchor():
+    """A `q0Anchor` the producer already wrote WINS over manifest resolution.
+
+    `build()` has always had this guard (`if "q0Anchor" not in witness`);
+    `stamp_staleness_metadata` did not, so the two writers of one field
+    disagreed and this path silently relabelled explicit declarations.
+
+    The case that caught it is `"ambiguous"` — a producer that evaluates at
+    BOTH pins on purpose, which is not resolvable from the manifest and can
+    only be declared. `markov/peel_anchor_identification_probe.py` declares it
+    and got `"proton"` stamped over it from the running script's manifest
+    entry. A witness asserting a pin its contents do not carry is precisely
+    what this field exists to prevent, so the relabel defeated the mechanism
+    while looking like it was applying it.
+    """
+    payload = {"q0Anchor": "ambiguous", "result": 1.0}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="python",
+    )
+    assert payload["q0Anchor"] == "ambiguous"
+    # No `q0Value` is invented alongside a declaration that has none: an
+    # ambiguous payload spans both pins, so asserting either one is wrong.
+    assert "q0Value" not in payload
+
+
+def test_stamp_still_fills_in_an_undeclared_anchor():
+    """The guard must not turn the stamper into a no-op.
+
+    Most producers never touch `q0Anchor` and rely on the stamper to resolve
+    it. Guarding the overwrite is only correct if THIS path is untouched —
+    otherwise the fix trades a rare mislabel for a mass regression to
+    Q0_ANCHOR_MISSING.
+    """
+    payload = {"result": 1.0}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="python",
+    )
+    assert payload["q0Anchor"] in ("muon", "proton")
+
+
+def test_explicit_kwarg_still_wins_on_an_undeclared_payload():
+    """`q0_anchor=` is the same declaration, one call frame out.
+
+    The guard keys on the PAYLOAD, so an explicit argument must keep beating
+    manifest resolution when the payload itself declares nothing.
+    """
+    payload = {"result": 1.0}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="python",
+        q0_anchor="muon", q0_value="1.10997859555",
+    )
+    assert payload["q0Anchor"] == "muon"
+    assert payload["q0Value"] == "1.10997859555"
+
+
 
 
 def test_save_carries_forward_a_recorded_pin(tmp_path):
