@@ -46,12 +46,27 @@ cannot respond to it. Consequences to adjudicate:
 3. `prop:mass-coefficient-shadow-price` is the block that reads `y₀*` as a
    shadow price. That reading is what is in question, not the LP algebra.
 
-## Likely connection worth checking
+## `qou/pin3` is NOT this — checked, and my guess was wrong
 
-`qou/pin3` — "regeneration picks a DIFFERENT optimal LP dual vertex" — is
-exactly what a degenerate dual produces: the dual optimum is a face, not a
-vertex, so any solver may land anywhere on it. Check whether `pin3` is this
-same degeneracy seen from the numerics side before treating them separately.
+When this bean was filed I flagged `pin3` ("regeneration picks a DIFFERENT
+optimal LP dual vertex") as plausibly the same degeneracy seen from the
+numerics side. **It is not**, and the reasoning that suggested it does not
+transfer. Checked in `computations/alpha_5_lp_dual_crystal_closed_form.py`:
+
+`alpha_5_lp_dual_crystal.py` builds `G = diag(|weight_λ|)` — a *diagonal*
+matrix, not a trace form — and its `t` is `q`-content of shapes, unrelated to
+`G`. Neither hypothesis of `y_0_eq_zero_of_radical` holds there: no weight is
+zero (min `|w|` = 2.2e-06), so there is **no radical at all**, and `t` is not
+a row of `G`, so `⟨t,v⟩ = 0` would fail even if there were one.
+
+That LP is in fact solvable in closed form — `x* = n_target·e_argmin(t)`,
+`y₀* = min_j t_j`, `s*_j = (t_j − min t)/|w_j|` — verified against every field
+of every stratum of the committed witness. Its dual optimum is a **unique
+point**, so `pin3`'s own "different vertex" diagnosis is wrong too. The real
+cause there is that `s*` divides by `|w| ~ 1e-06`, amplifying a
+solver-tolerance error in `y₀*` by ~1e+05. Written up in `pin3`.
+
+Keep the two separate. The only thing they share is the word "degenerate".
 
 ## Not claimed here
 
@@ -63,5 +78,5 @@ mechanical check's.
 ## Next
 
 - [ ] Owner decision on `prop:mass-coefficient-shadow-price`
-- [ ] Check `qou/pin3` against this — same degeneracy or different?
+- [x] Check `qou/pin3` against this — **different**, see above
 - [ ] Re-read the `a_K` extraction chain for other divisions by `y₀*`
