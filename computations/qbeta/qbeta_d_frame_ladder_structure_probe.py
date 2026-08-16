@@ -243,27 +243,64 @@ def main() -> int:
     chk("A6 Δc₃ is exactly the cos A_C → cos A_D substitution",
         rel < mp.mpf("1e-45"), f"rel dev {mp.nstr(rel, 3)}")
 
-    # ── A7: POSITIVITY — the three-row weight instance at z_D ────────────
-    # Lean: QOU.QBeta.threeRow_positivity_separates_zC_zD (sorry-free).
-    # α = (z−1)h/2 is built from y = (z, 1/2−z, z); so α = −h/4 − (h/2)·y_(2,1).
-    print("\nA7 — POSITIVITY of the weight instance the ladder's α is built from")
-    chk("A7 α == −h/4 − (h/2)·y_(2,1) (affine in the standard-block weight)",
+    # ── A7: the ladder's AFFINE PHASE COEFFICIENT κ(z) = 1/2 − z ──────────
+    # Lean: QOU.QBeta.ladderPhaseCoeff_sign_separates_zC_zD (sorry-free).
+    # α = (z−1)h/2 = −h/4 − (h/2)·κ(z) — pure algebra.
+    #
+    # ⚠️ RETRACTED (2026-08-16): this block previously called κ(z) = 1/2 − z
+    # the standard-block Wedderburn weight "y_(2,1)", and read κ(z_D) < 0 as
+    # "convention D has a negative Wedderburn weight / fails positivity".
+    # THAT IDENTIFICATION IS FALSE and the conclusion inverts — see A7r below
+    # and audit §4. κ is an affine coefficient in one ansatz's phase; its sign
+    # carries NO trace-positivity content. Naming it y_(2,1) was a
+    # symbol-collision failure (AGENTS.md §"Grep the claim SHAPE").
+    print("\nA7 — the ladder's affine phase coefficient κ(z) = 1/2 − z")
+    print("     (NOT a Wedderburn weight — see A7r; sign has no positivity content)")
+    chk("A7 α == −h/4 − (h/2)·κ(z), κ(z) = 1/2 − z (affine in the phase coeff)",
         mp.fabs(((zc - 1) * h / 2) - (-h / 4 - (h / 2) * (mp.mpf(1) / 2 - zc)))
         < mp.mpf("1e-55"), "identity holds")
-    y21_C, y21_D = mp.mpf(1) / 2 - zc, mp.mpf(1) / 2 - zd
-    print(f"   y_(2,1) at z_C = {mp.nstr(y21_C, 14)}   (positive)")
-    print(f"   y_(2,1) at z_D = {mp.nstr(y21_D, 14)}   (NEGATIVE)")
-    chk("A7 y_(2,1) > 0 at z_C", y21_C > 0, f"{mp.nstr(y21_C, 10)}")
-    chk("A7 y_(2,1) < 0 at z_D", y21_D < 0, f"{mp.nstr(y21_D, 10)}")
+    kappa_C, kappa_D = mp.mpf(1) / 2 - zc, mp.mpf(1) / 2 - zd
+    print(f"   κ at z_C = {mp.nstr(kappa_C, 14)}   (positive)")
+    print(f"   κ at z_D = {mp.nstr(kappa_D, 14)}   (negative)")
+    chk("A7 κ > 0 at z_C", kappa_C > 0, f"{mp.nstr(kappa_C, 10)}")
+    chk("A7 κ < 0 at z_D", kappa_D < 0, f"{mp.nstr(kappa_D, 10)}")
     # and it is not a pin artefact — sweep the substrate regime
     worst = min((mp.mpf(1) / 2 - z_D(mp.mpf(1) + mp.mpf(k) / 10))
                 for k in range(1, 40))
     allneg = all((mp.mpf(1) / 2 - z_D(mp.mpf(1) + mp.mpf(k) / 100)) < 0
                  for k in range(1, 400))
-    chk("A7 y_(2,1) < 0 at z_D for EVERY q in (1, 5] sampled (Lean: all q>1)",
+    chk("A7 κ < 0 at z_D for EVERY q in (1, 5] sampled (Lean: all q>1)",
         allneg, f"max over sample = {mp.nstr(worst, 6)}")
-    out["y21_at_zC"] = mp.nstr(y21_C, 30)
-    out["y21_at_zD"] = mp.nstr(y21_D, 30)
+    out["ladder_phase_coeff_at_zC"] = mp.nstr(kappa_C, 30)
+    out["ladder_phase_coeff_at_zD"] = mp.nstr(kappa_D, 30)
+
+    # ── A7r: RETRACTION GUARD — κ(z_D) is NOT the Wedderburn weight ───────
+    # The actual H₃(q) Markov weights under convention D, from S2 (PR #5185,
+    # audit §3bis). Their symbolic solve of the corpus's own three defining
+    # conditions is CITED, NOT RE-DERIVED here; these closed forms are merely
+    # evaluated at q₀ as a guard so the conflation cannot silently return.
+    #   y_(3)  = (q⁴+1)/(q²+1)²   y_(2,1) = q²/(q²+1)²   y_(1³) = 0
+    # S1's vector (z, 1/2−z, z) satisfies only the normalisation condition and
+    # FAILS the other two, so it is not a weight vector of H₃(q) at all.
+    print("\nA7r — RETRACTION GUARD: the ACTUAL D-frame weights (S2 #5185, cited)")
+    den = (q**2 + 1) ** 2
+    y3_D = (q**4 + 1) / den
+    y21_D_actual = q**2 / den
+    y1c3_D = mp.mpf(0)
+    print(f"   y_(3)   = {mp.nstr(y3_D, 14)}   y_(2,1) = {mp.nstr(y21_D_actual, 14)}"
+          f"   y_(1³) = {mp.nstr(y1c3_D, 4)}")
+    print(f"   vs the retracted claim κ(z_D) = {mp.nstr(kappa_D, 14)}  — different sign AND magnitude")
+    chk("A7r D-frame weights are positive semidefinite: y_(3)>0, y_(2,1)>0, y_(1³)=0",
+        y3_D > 0 and y21_D_actual > 0 and y1c3_D == 0,
+        f"y_(3)={mp.nstr(y3_D,10)}  y_(2,1)={mp.nstr(y21_D_actual,10)}  y_(1³)=0"
+        "  → signature (5,0,1); convention D does NOT fail positivity")
+    chk("A7r the retracted identification is false: κ(z_D) != y_(2,1) under D",
+        mp.fabs(kappa_D - y21_D_actual) > mp.mpf("1e-3") and kappa_D < 0 < y21_D_actual,
+        f"κ(z_D)={mp.nstr(kappa_D,10)} < 0 < {mp.nstr(y21_D_actual,10)}=y_(2,1); "
+        f"|diff|={mp.nstr(mp.fabs(kappa_D - y21_D_actual),10)}")
+    out["y21_at_zD_actual_S2"] = mp.nstr(y21_D_actual, 30)
+    out["y3_at_zD_actual_S2"] = mp.nstr(y3_D, 30)
+    out["y1cubed_at_zD_actual_S2"] = "0"
 
     # ── A8: Temperley–Lieb SHAPE of the two Markov parameters ────────────
     # Three exact rearrangements, recorded because they are the algebraic
