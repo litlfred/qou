@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T13:56:32Z
-updated_at: 2026-08-16T17:44:32Z
+updated_at: 2026-08-16T18:53:52Z
 ---
 
 ## The sorry
@@ -230,3 +230,56 @@ reading.
 
 **Not done:** the structural fix itself. That is the real work and is bigger
 than this bean's step 1.
+
+
+## 2026-08-16 — B1 IS REFUTED. `FGModuleCat K` is already rigid off the shelf.
+
+B1 above says: *"Mathlib gives `FGModuleCat K` only `rightRigidCategory`; there
+is no `LeftRigidCategory` instance. So the most trivial rigid witness imaginable
+is not available off the shelf."* **That is wrong.** Asked Lean directly:
+
+```lean
+import Mathlib.Algebra.Category.FGModuleCat.Basic
+import Mathlib.CategoryTheory.Monoidal.Rigid.Braided
+open CategoryTheory
+noncomputable example (K : Type) [Field K] : RightRigidCategory (FGModuleCat K) := inferInstance
+noncomputable example (K : Type) [Field K] : BraidedCategory   (FGModuleCat K) := inferInstance
+noncomputable example (K : Type) [Field K] : SymmetricCategory (FGModuleCat K) := inferInstance
+noncomputable example (K : Type) [Field K] : LeftRigidCategory (FGModuleCat K) := inferInstance
+noncomputable example (K : Type) [Field K] : RigidCategory     (FGModuleCat K) := inferInstance
+```
+
+`lean`-direct **exit 0**. All five resolve.
+
+The derivation Mathlib already ships is
+`Monoidal/Rigid/Braided.lean:88` —
+`instance leftRigidCategoryOfRightRigidCategory [RightRigidCategory C] : LeftRigidCategory C`
+— plus `:100` `rigidCategoryOfLeftRigidCategory`. In a **braided** category
+right-rigid gives left-rigid gives rigid, and `FGModuleCat K` is symmetric.
+Nothing needs building. Nothing needs a `Module.evalEquiv` double-dual transport
+either, which is where I was heading next.
+
+### The method error, because it is the second of its kind this session
+
+I grepped `FGModuleCat/Basic.lean` for a `LeftRigidCategory` instance, found
+none, and concluded it did not exist — without checking whether Mathlib
+*derives* it generically. It does, two files away, for every braided category.
+**`inferInstance` settles this in one step and I should have run it first.**
+
+This is the same shape as the `GaugeTheory.FiberAdjointInvolution` retraction
+one pass earlier: reasoning from where I expected a thing to be declared instead
+of testing whether it is reachable. For instance-availability questions the test
+is cheap and decisive; the grep is neither.
+
+### Consequence for the sorry
+
+The blocker list drops from three to two. B2 (the degenerate-witness hole) is
+**closed** — `adjointObj` is now constrained. B3 (the statement over-quantifies
+its citation, `∀ k` vs a construction over one suitable ground field) stands.
+
+So an honest witness attempt is closer than this bean claimed. The category is
+available; what is missing is the `FrobeniusHopfData` on it plus the QOU
+observability conditions, and — because of the step-1 work — those can no longer
+be satisfied by a degenerate `adjointObj`. That ordering turned out to matter:
+had B1 been checked first and B2 not fixed, the newly-reachable witness would
+have had the vacuous escape still open.
