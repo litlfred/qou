@@ -1,14 +1,14 @@
 {
   "computation": "silent-self-check-audit",
   "description": "Producers whose self-check does not reach their exit status, and producers that reuse their own prior output without re-validating it. High-recall candidates; the legit/genuine verdict is an agent call. Motivated by qou-9d6h and qou-7bv5, both of which reported a real defect into a channel nothing gates on.",
-  "computedAt": "2026-08-16T02:45:16.436531+00:00",
+  "computedAt": "2026-08-16T02:57:09.439144+00:00",
   "scriptFile": "computations/audits/silent_self_check_audit.py",
   "data": {
     "by_criterion": {
       "self-check-not-gated": 65,
-      "resume-cache-unvalidated": 5
+      "resume-cache-unvalidated": 3
     },
-    "total": 70,
+    "total": 68,
     "regression_repaired_still_flagged": [],
     "findings": [
       {
@@ -82,20 +82,10 @@
         "criterion": "resume-cache-unvalidated",
         "severity": "major",
         "evidence": [
-          "line 74: loads its own prior output when the file exists",
+          "line 74: loads the file it also WRITES, when it exists",
           "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "4d1ac3538815"
-      },
-      {
-        "script": "computations/deuteron_tr_M_symbolic.py",
-        "criterion": "resume-cache-unvalidated",
-        "severity": "major",
-        "evidence": [
-          "line 114: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
-        ],
-        "source_hash": "3a9c8232b957"
       },
       {
         "script": "computations/gram_transfer_quadratic.py",
@@ -143,21 +133,11 @@
         "source_hash": "d66a5499d99a"
       },
       {
-        "script": "computations/nucleus_real_sdp.py",
-        "criterion": "resume-cache-unvalidated",
-        "severity": "major",
-        "evidence": [
-          "line 154: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
-        ],
-        "source_hash": "e376dec214d2"
-      },
-      {
         "script": "computations/ordering_cache.py",
         "criterion": "resume-cache-unvalidated",
         "severity": "major",
         "evidence": [
-          "line 29: loads its own prior output when the file exists",
+          "line 29: loads the file it also WRITES, when it exists",
           "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
         "source_hash": "07620da51879"
@@ -651,10 +631,10 @@
         "criterion": "resume-cache-unvalidated",
         "severity": "major",
         "evidence": [
-          "line 93: loads its own prior output when the file exists",
+          "line 94: loads the file it also WRITES, when it exists",
           "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
         ],
-        "source_hash": "28e9f8a12320"
+        "source_hash": "235b4bade0d8"
       }
     ]
   }

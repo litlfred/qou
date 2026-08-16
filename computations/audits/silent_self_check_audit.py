@@ -225,8 +225,33 @@ def detect_resume_cache(path: Path, src: str, tree: ast.AST) -> list[str]:
             # ignored.
             if re.search(r"\bBASELINE\b|baseline", seg):
                 continue
-            ev.append(f"line {node.lineno}: loads its own prior output "
-                      f"when the file exists")
+            # The read must be of the file this script WRITES. Reading an
+            # UPSTREAM input on `.exists()` is ordinary dependency loading, not
+            # a resume cache — `nucleus_real_sdp` reads the y_λ witnesses,
+            # `deuteron_tr_M_symbolic` reads chi-deuteron-h6. Neither resumes
+            # anything of its own, and flagging them is the same category error
+            # as flagging the ratchets for reading a baseline.
+            #
+            # Proxy: the path expression guarding the load must also appear in
+            # a write. Cheap and conservative — it misses a resume cache whose
+            # read and write name the path differently, which is a miss rather
+            # than a false accusation.
+            paths = {n.id for n in ast.walk(node.test) if isinstance(n, ast.Name)}
+            paths |= {n.attr for n in ast.walk(node.test) if isinstance(n, ast.Attribute)}
+            # `open(P, "w")` counts as a write. Restricting to `.write_text(`
+            # and `json.dump(` MISSED `ordering_cache`, which writes with
+            # `with open(CACHE_FILE, "w") as f: json.dump(..., f)` — the path
+            # and the dump are on different lines. That is the miss this
+            # comment predicted, found by checking the drop rather than
+            # trusting it.
+            if not any(re.search(rf"\b{re.escape(p)}\b[^\n]*"
+                                 rf"(\.write_text\(|json\.dump\()|"
+                                 rf"(write_text|json\.dump)\([^\n]*\b{re.escape(p)}\b|"
+                                 rf"open\(\s*{re.escape(p)}\s*,\s*[\"']w",
+                                 src) for p in paths if p):
+                continue
+            ev.append(f"line {node.lineno}: loads the file it also WRITES, "
+                      f"when it exists")
     if not ev:
         return []
     # ...and that loaded content is used to skip work
