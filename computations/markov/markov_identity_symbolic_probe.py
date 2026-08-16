@@ -92,6 +92,19 @@ def symbolic_y_lambda(n, q):
     Read rather than re-derived: this is the migrated convention-D root
     (`z = q³/(q²+1)`), and re-deriving it here would be a second
     implementation of the object under test.
+
+    **`locals={"q": q}` is load-bearing.** `sp.sympify("q**2/(q**2+1)")` mints
+    a BARE `Symbol("q")` carrying only `commutative=True`, while `markov_peel`
+    and `chi_lambda_symbolic` both work in `hecke_symbolic.q`, which carries
+    `positive`/`real`/`nonzero`/... . Sympy treats those as DIFFERENT
+    variables, so `y[λ] * χ` silently became a product across two symbols and
+    the residual could never cancel: 2 free symbols instead of 1, and a
+    verdict of "not identically zero" that was pure artefact. Binding here is
+    what makes the two sides expressions in one variable.
+
+    This cost a full 25-minute n=6 run and a false negative that looked like a
+    mathematical finding. The tell is cheap and worth keeping in mind:
+    `len(residual.free_symbols)` must be 1 (or 0 when it vanishes), never 2.
     """
     doc = json.loads(
         (REPO / "computations"
@@ -106,12 +119,17 @@ def symbolic_y_lambda(n, q):
         # next reader deserves not to rediscover it.
         p = row["partition"]
         lam = tuple(json.loads(p) if isinstance(p, str) else p)
-        out[lam] = sp.sympify(row["y_lambda_symbolic"])
+        out[lam] = sp.sympify(row["y_lambda_symbolic"], locals={"q": q})
     return out
 
 
 def main() -> int:
-    q = sp.Symbol("q", positive=True, real=True)
+    # THE canonical symbol, imported rather than re-declared. A locally minted
+    # `sp.Symbol("q", positive=True, real=True)` happens to compare equal to
+    # this one, but nothing guarantees that and the failure it produces is
+    # silent -- see `symbolic_y_lambda`'s note on the assumption-free `q` that
+    # `sympify` mints.
+    from hecke_symbolic import q  # noqa: E402
 
     from markov_peel import tr_M_atomic
     from mass_at_3A_proper import atom_braid_word_3A
@@ -171,9 +189,41 @@ def main() -> int:
     print(f"[bridge] {t_chi:.1f}s   Float atoms={len(bridge.atoms(sp.Float))}")
 
     # ---- the test ------------------------------------------------------
-    residual = sp.cancel(sp.together(bridge - peel))
-    is_zero = sp.simplify(residual) == 0
-    print(f"\n[residual] identically zero: {is_zero}")
+    residual = sp.cancel(sp.together(sp.expand(bridge - peel)))
+
+    # GUARD: both sides must be expressions in ONE variable. Two means a
+    # symbol-identity bug upstream (an assumption-free `q` from `sympify`
+    # against `hecke_symbolic.q`), and the residual is then meaningless rather
+    # than merely nonzero. Refuse to report a verdict instead of publishing an
+    # artefact, which is exactly what the first run of this probe did.
+    nfree = len(residual.free_symbols)
+    if nfree > 1:
+        print(f"\n  ! residual has {nfree} free symbols {residual.free_symbols} "
+              f"— the two sides are not in the same variable. Refusing to "
+              f"report an identity verdict.")
+        return 2
+
+    # `sp.simplify(r) == 0` is NOT a decision procedure and demonstrably fails
+    # on these expressions. Use the degree bound: a nonzero rational p/s with
+    # deg(p) = d has at most d roots, so vanishing at d+1 DISTINCT points
+    # forces p == 0. Exact rationals throughout — no floating point, no appeal
+    # to simplify.
+    num, den = sp.fraction(residual)
+    num = sp.expand(num)
+    if num == 0:
+        is_zero, method = True, "normalised-numerator"
+    else:
+        deg = int(sp.degree(num, q))
+        pts, k = [], 2
+        while len(pts) < deg + 1:
+            c = sp.Rational(k, 7)
+            if den.subs(q, c) != 0:
+                pts.append(c)
+            k += 1
+        nonzero_at = [c for c in pts if sp.cancel(num.subs(q, c)) != 0]
+        is_zero = not nonzero_at
+        method = f"degree-bound (deg {deg}, {len(pts)} exact points)"
+    print(f"\n[residual] identically zero: {is_zero}   via {method}")
 
     # DIAGNOSTICS, because "not identically zero" is not yet a finding.
     # A residual that is LARGE at q₀ means the two sides are different objects
