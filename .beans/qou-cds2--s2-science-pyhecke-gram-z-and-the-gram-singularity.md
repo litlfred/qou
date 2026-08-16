@@ -1,11 +1,11 @@
 ---
 # qou-cds2
 title: 'S2 (SCIENCE): pyhecke.gram.z and the Gram singularity — the ruling answers the convention, not the singularity'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-16T11:16:56Z
+updated_at: 2026-08-16T11:29:16Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the

@@ -1,11 +1,11 @@
 ---
 # qou-2ixd
 title: 'R9 is RED on main: gram.py moved to convention D, the registry still says C'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T12:46:10Z
-updated_at: 2026-08-15T12:51:32Z
+updated_at: 2026-08-16T11:28:48Z
 ---
 
 
@@ -783,3 +783,43 @@ all four remaining are pyhecke (`qou-w8zz`).
 
 Selftest 42 -> 44, with fixtures pinning both directions: a C+D function is a
 dispatcher, a C-only function is not.
+
+
+---
+
+## Summary of Changes (completed 2026-08-16)
+
+Opened because R9 was RED on `main` — the registry said `pyhecke.gram.z` was
+convention C and the code returned D. That is fixed, and the arc it opened is
+finished: **`convention-c-producer-audit.py` now reports ACTIONABLE: 0 sites**,
+and this time it is a measured zero from a detector that scans return forms,
+closed-form specialisations, half-argument reciprocals and registry-derived
+buckets — not the 2026-08-09 "0 actionable" that took a week to retract.
+
+**Three registry rules added**, each closing a hole the previous one revealed:
+- **R9 function-level** — `callable_no_arg` / `callable_index` / `callable_q_index`.
+  R9 reached only module attributes, which is exactly where `gram.py`'s
+  high-precision path was not.
+- **R10 — one module, one convention.** R9 checks entries independently, so a
+  module whose symbols disagree passes entry by entry. A caller imports a module.
+- **R11 — a derived quantity must match its own `z`.** Negative-tested against
+  the historical `TR_M[5] = z³` bug; it fired on my own incomplete migration in
+  `qou-cds2`, which is what it exists for.
+- Plus **`agreed-migration-pending`** (`qou-cdh1`) and `RC8`/`RC9`/`RC10`.
+
+**Detector-blindness taxonomy: eleven spellings**, three of which were found by
+detectors written to catch the previous blind spot, plus the counter-move that
+beats all eleven — check the algebraic form of the RESULT, not the source.
+
+**The corrections matter as much as the fixes**, and most were mine: `qou-76a6`
+retracted entirely (25 sites measured against a five-day-stale checkout); 53
+orphans → 3; the closed-form detector's 50 false positives → 4; "151 coverable"
+→ 13 → 2; "two mpmath consumers" → four; "~10 of 13 declarable" → wrong, killed
+by checking semantics; and a verified 40-minute run destroyed by my own
+`git checkout -- computations/*.witness.json` glob.
+
+**Everything still open has its own bean** and none of it belongs here:
+`qou-11wz` (the five-witness cascade from the atom.py migration), `qou-a28x`
+(the 11 WEAK provenance candidates), `qou-cdh3`, `qou-cds1`, `qou-cds3`,
+`qou-cds4`, `qou-cds5`, `qou-pvem`, and `prf:interface-knot-markov-z` left
+deliberately red under `qou-cdh4`.

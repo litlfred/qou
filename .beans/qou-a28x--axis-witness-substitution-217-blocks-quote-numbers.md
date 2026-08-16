@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-10T03:43:44Z
-updated_at: 2026-08-16T10:46:25Z
+updated_at: 2026-08-16T11:31:13Z
 ---
 
 
@@ -441,3 +441,49 @@ Selftest **23 -> 33**. The new cases pin the threshold from both sides (10dp
 UNIQUE, 9dp WEAK), that 4dp with one candidate is WEAK not UNIQUE, that a named
 witness outranks a weak digit count, and that a single ambiguous literal poisons
 an otherwise-unique block.
+
+
+---
+
+## 2026-08-16 (cont.) — the WEAK bucket is exhausted: 0 of 11 declarable
+
+Every one of the 11 WEAK candidates matches at **4 or 5 decimal places**. Not
+some — all. Two were checked semantically, chosen as the most plausible, and
+both are false:
+
+**The Q-value cluster (4 of the 11, 4dp).** `ex:qvalue-benchmark-table`,
+`rem:qvalue-derivation-chain`, `rem:qvalue-observation`,
+`prf:spectral-decomposition-qvalue` → `sublemma-2-1-A-operator-extract-h9-pn`
+on `0.5904`. The block calls it *"the Rosso–Jones weighted average over the two
+degree-2 torus knots"*; the witness stores `0.5904453769109197` as
+`A_per_pair.((5,1),(1,1,1)).frobenius_norm`. Already recorded above.
+
+**`rem:F3-eps6-leading-eq-neg-2b-cubed` (5dp) — and this one is a NEW failure
+class.** The block writes `≈ −1.29904`; the witness has
+`.data.c1_inclusive_rungs_numeric.1 = 1.2990381056766579701`. The signs differ,
+and the value is **`3√3/4 = 1.299038105676658`** — a pure geometric constant.
+
+That is not a decimal coincidence in the earlier sense. Both quantities
+*genuinely equal* `3√3/4`, for unrelated reasons, because both live over ℚ(√3).
+**A match can be arbitrarily exact and still carry no provenance when the shared
+value is a constant the corpus derives independently in many places.** Precision
+does not rescue that: pushing `STRONG_MATCH_DECIMALS` higher would not have
+caught it, because the agreement is real.
+
+### Where that leaves the axis
+
+Coverage-based triage is **exhausted**. Across 151 nominally coverable blocks it
+produced exactly **one** declarable result — `prf:crystal-isospin-degeneracy`,
+declared, and it succeeded on a signal none of the others had: 19 matched digits
+*plus* the witness carrying the block's actual claim (³He and T sharing
+`S_crystal_at_q_zero`, which IS the degeneracy being proved).
+
+So the remaining 212 failing blocks will not be closed by matching numbers. What
+would close them is provenance stated at the source — a block naming the script
+it took its values from, or a producer declaring which blocks consume its
+outputs. That is a different mechanism, not a better threshold, and it should be
+scoped as its own bean rather than pursued by tightening this one.
+
+**No further declarations made.** Batch-declaring the WEAK bucket would have
+attached eleven false sources that this axis could never afterwards detect,
+which is the failure mode the whole triage exists to prevent.
