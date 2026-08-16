@@ -1,0 +1,87 @@
+---
+# qou-7dzg
+title: 'V6: T(t) cannot be BOTH the ribbon framing AND the writhe-separating coordinate -- the block''s two load-bearing sentences are incompatible'
+status: todo
+type: task
+created_at: 2026-08-16T13:33:51Z
+updated_at: 2026-08-16T13:33:51Z
+---
+
+
+## Answers V5 (qou-a6ma), and the answer costs the candidate its pedigree
+
+V5 asked: are the tr_M framing and T(t) the same framing? Explored 2026-08-16.
+The answer is NO, the corpus does carry two framing notions (V5's branch (b)) --
+but establishing that also breaks the block's own justification for the datum.
+
+### The two load-bearing sentences
+
+`appendix-standard-model/strand-twist-datum.md` asserts BOTH:
+
+  (A) "the datum is **the framing that the ribbon structure of the braided
+       category carries** in addition to the crossing data of beta"
+
+  (B) "the framing is genuinely **independent** of the crossing data: over any
+       fixed braid word -- hence any fixed writhe w -- there exist framings with
+       distinct total twist"
+
+and (B) is explicitly the load-bearing one: "This last point is what qualifies
+the datum as a candidate for the hypercharge invariant."
+
+### They cannot both hold
+
+In a genuine ribbon category the twist theta is CANONICAL -- determined by the
+braiding, not freely assignable. For Hecke its exponent is the content sum. So:
+
+  - If (A): the datum is determined by the object/word. Fixing the braid word
+    FIXES it. That directly contradicts (B).
+  - If (B): the datum varies at fixed word, so it is not determined by the
+    braiding, so it is NOT the ribbon structure's framing. It is an extra free
+    label -- the fit risk already proved in TwistBatteryVacuity.
+
+### Why that settles V5
+
+tr_M's framing IS a function of the braid word: `markov-axioms-primitive.md`
+puts the writhe prefactor OUTSIDE the trace to restore link invariance, so tr_M
+alone is a framed (regular-isotopy) invariant with framing determined by w.
+
+(B) says T(t) varies while w is held fixed. A quantity that varies at fixed w is
+not a function of w. Therefore T(t) is NOT tr_M's framing -- two different
+framings on the same object, exactly V5's branch (b). The corpus must say so
+explicitly rather than calling T(t) "the framing the ribbon structure carries".
+
+### The Lean-shaped statement (V9's argument, reused)
+
+This is the same shape as `chirality_not_a_function_of_crossing`
+(ChiralityIndependentOfCrossing.lean): a datum that FACTORS THROUGH the crossing
+data cannot separate states that share it. Here:
+
+    a twist that is a function of the braid word cannot separate a
+    writhe-degenerate pair
+
+and the block's own factorization criterion requires the hypercharge invariant to
+separate exactly such a pair. Hence the CANONICAL ribbon twist cannot be the
+hypercharge separator. Independently consistent with theta = contentSum/3 having
+been TESTED AND FAILED
+(computations/ribbon_twist_charge_quantum_probe.py; n=3 gives {+1,0,-1}, no
+n<=8 gives both quark charges).
+
+### Disposition -- the block must drop (A) or (B)
+
+  drop (B): T(t) is the canonical ribbon twist, word-determined, and the
+            hypercharge candidacy COLLAPSES (it cannot separate).
+  drop (A): the candidacy survives, but T(t) is reclassified as a free label
+            with proved vacuity risk -- NOT "the ribbon structure", and V2's
+            (qou-m4fp) free/independent row applies, where the framing must be
+            pinned by something else or it is a fit.
+
+Either way one published sentence is wrong as written. Scope (a): this is an
+internal-consistency finding about two claims in one block plus one in
+markov-axioms-primitive; it does not refute the hypercharge programme, and it
+does not touch tr_M's correctness (tr_M's framing is unambiguous).
+
+### Next
+
+Formalize the separation lemma (small, mirrors V9's, no new Mathlib), then take
+the (A)/(B) disposition to the owner -- it is a published-claim change, not an
+agent call.
