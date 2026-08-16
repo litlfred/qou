@@ -196,6 +196,36 @@ theorem gbDepth_const_on_H3 :
     gbDepth p3 = gbDepth p21 ∧ gbDepth p21 = gbDepth p111 :=
   ⟨by rw [gbDepth_p3, gbDepth_p21], by rw [gbDepth_p21, gbDepth_p111]⟩
 
+/-- Two partitions of `4`, chosen because this is where the grading first
+separates: `[4]` has corner hook `4`. -/
+def p4 : YoungDiagram := ofRowLens [4] (by decide)
+
+/-- The self-conjugate `(2,2)` cell — the one the compute script flags as where
+the two filtrations were observed to disagree. Corner hook `3`. -/
+def p22 : YoungDiagram := ofRowLens [2, 2] (by decide)
+
+theorem gbDepth_p4 : gbDepth p4 = 4 := by
+  rw [p4, gbDepth_eq_corner _ (cells_ne _ (by decide) (by decide)),
+      rowLen_ofRowLens _ (by decide) (by decide),
+      colLen_ofRowLens _ (by decide)]
+  decide
+
+theorem gbDepth_p22 : gbDepth p22 = 3 := by
+  rw [p22, gbDepth_eq_corner _ (cells_ne _ (by decide) (by decide)),
+      rowLen_ofRowLens _ (by decide) (by decide),
+      colLen_ofRowLens _ (by decide)]
+  decide
+
+/-- **At `n = 4` the partition grading has at least two strata.**
+
+The counterpart to `gbDepth_const_on_H3`: the grading is degenerate at `n = 3`
+and non-degenerate at `n = 4`. That is what makes `n = 4` the first place any
+candidate word-side filtration can be tested against it — and, via
+`WordFiltrationObstruction`, the first place the naive ideal-power reading is
+provably not it. -/
+theorem gbDepth_ne_on_H4 : gbDepth p4 ≠ gbDepth p22 := by
+  rw [gbDepth_p4, gbDepth_p22]; decide
+
 end H3
 
 /-! ### `gbDepth` is the content spread — the form the algebra side can meet
