@@ -1,14 +1,14 @@
 {
   "computation": "silent-self-check-audit",
   "description": "Producers whose self-check does not reach their exit status, and producers that reuse their own prior output without re-validating it. High-recall candidates; the legit/genuine verdict is an agent call. Motivated by qou-9d6h and qou-7bv5, both of which reported a real defect into a channel nothing gates on.",
-  "computedAt": "2026-08-16T02:29:17.116439+00:00",
+  "computedAt": "2026-08-16T02:45:16.436531+00:00",
   "scriptFile": "computations/audits/silent_self_check_audit.py",
   "data": {
     "by_criterion": {
       "self-check-not-gated": 65,
-      "resume-cache-unvalidated": 9
+      "resume-cache-unvalidated": 5
     },
-    "total": 74,
+    "total": 70,
     "regression_repaired_still_flagged": [],
     "findings": [
       {
@@ -141,26 +141,6 @@
           "line 209: records verdict field `allPassed`"
         ],
         "source_hash": "d66a5499d99a"
-      },
-      {
-        "script": "computations/mpf_import_time_dps_audit.py",
-        "criterion": "resume-cache-unvalidated",
-        "severity": "major",
-        "evidence": [
-          "line 355: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
-        ],
-        "source_hash": "212d1134945f"
-      },
-      {
-        "script": "computations/never_raises_dps_audit.py",
-        "criterion": "resume-cache-unvalidated",
-        "severity": "major",
-        "evidence": [
-          "line 268: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
-        ],
-        "source_hash": "e52e3f1a50d3"
       },
       {
         "script": "computations/nucleus_real_sdp.py",
@@ -665,26 +645,6 @@
           "line 92: assigns verdict `n_fail`"
         ],
         "source_hash": "7d2901109036"
-      },
-      {
-        "script": "computations/witness_float64_padding_audit.py",
-        "criterion": "resume-cache-unvalidated",
-        "severity": "major",
-        "evidence": [
-          "line 242: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
-        ],
-        "source_hash": "f4eaa3c599c6"
-      },
-      {
-        "script": "computations/witness_raw_float64_audit.py",
-        "criterion": "resume-cache-unvalidated",
-        "severity": "major",
-        "evidence": [
-          "line 439: loads its own prior output when the file exists",
-          "reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
-        ],
-        "source_hash": "2a327eaa7507"
       },
       {
         "script": "computations/y_lambda_pole_order_cache.py",
