@@ -1,11 +1,11 @@
 ---
 # qou-n1dj
 title: 'GAP: does the MASS fibre functor land in Rep(SU_q(2))~TL or full H_3(q)? (corpus self-contradiction, D vs C, 197 ppm on m_p)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-08T09:50:22Z
-updated_at: 2026-08-16T02:51:11Z
+updated_at: 2026-08-16T03:04:29Z
 ---
 
 > **Status reverted to `todo` by the parent session (2026-08-08).** The research
@@ -416,3 +416,8 @@ mentions a numerical substrate value or compares against one.
    which is premise 1. It is a good consistency check and a bad closure argument.
    The volume-constraint route above is independent of it because it never routes
    through the trace.
+
+> **Status returned to `todo` (2026-08-16).** The slice above is finished and
+> pushed on `claude/n1dj-fibre-premise-2026-08-16`; no session is holding this
+> bean. The four open items in the preceding section are unclaimed and the next
+> agent should take them without waiting.
