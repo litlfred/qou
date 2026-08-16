@@ -7,7 +7,7 @@ section_number: null
 pages: 22-26
 source_pdf: 1172-4.pdf
 source_sha256: ffc47732ce0138e9
-doc_brief: "Notes on Construction of the Knot Invariant from $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$Dilogarithm Function El5~Bg3XBg3X1!N#>8Ln8&5f2JJ*N#3XUs96 — 13 sections: D"
+doc_brief: "Hikami, Notes on construction of the knot invariant from the quantum dilogarithm function (RIMS Kôkyûroku) — knot invariants built from Faddeev's quantum dilogarithm."
 ---
 [1] A. Anton ov: Universal $R$-matrix and quantum Volterra model, Theor. Math. Phys.
 113, 1520-1529 (1997).

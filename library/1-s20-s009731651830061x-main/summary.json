@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "1-s20-s009731651830061x-main",
  "source_sha256": "8d591fe7f1673c52",
- "brief": "Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Constant term formulas for",
- "extended": "**Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Constant term formulas for reﬁned enumerations**\n\n45 pp, 21 sections.\n\n**Outline.** Constant term formulas for reﬁned enumerations; 1 Introduction; 1.1.1 Gog trapezoids; 1.1.2 Magog trapezoids; 1.1 Gog trapezoids, Magog trapezoids and Kratt; 2 Preliminaries: monotone triangles and trunca; 2.1 Inversion numbers; 2.2 Reﬁned enumeration with respect to the top; 3 Application: constant term formula for the g; 3.1 Inversion numbers; 3.2 Minima and maxima; 3.3 Gog pentagons; 3.4 Inversion numbers; 3.5 Minima and maxima; 4.1 First version; 4.2 Second version; 5 Connecting Gogs and Magogs; 5.1 A variant of Theorem 16 and its applicatio\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: in [15]c a n be generalized as follows.\n- Theorem 2: Suppose b =( b1, ..., bn) is a strictly increasing sequence of integers, then\n- Theorem 4: Suppose b =( b1, ..., bn) is a strictly increasing sequence of integers and\n- Theorem 5: Let n, l, r be non-negative integers with l + r ≤ n. Suppose b1, ..., bn is\n- Theorem 7: The number of (m, n, k)-Gog trapezoids with bottom row b1, ..., bk is the\n- Theorem 8: The generating function of (m, n, k)-Gog trapezoids with bottom row",
+ "brief": "Fischer, Constant term formulas for refined enumerations of Gog and Magog trapezoids (JCTA 158, 2018, 560–604) — alternating sign matrices, plane partitions, constant-term methods.",
+ "extended": "**Constant term formulas for refined enumerations of Gog and Magog trapezoids** — Ilse Fischer, Universität Wien. Journal of Combinatorial Theory, Series A 158 (2018) 560–604.\n\nKeywords as printed: alternating sign matrix, plane partition, Gog trapezoid, Magog trapezoid, constant term. Refined enumeration results obtained by constant-term methods.\n\n**Why it may bear here.** ASM / plane-partition enumeration is adjacent to the partition-indexed Wedderburn and character machinery this corpus uses, but the connection is thematic rather than established.",
  "tokens": {
-  "brief": 50,
-  "extended": 338
+  "brief": 45,
+  "extended": 139
  },
  "sections": [
   {
@@ -116,11 +116,11 @@
   }
  ],
  "provenance": {
-  "kind": "extractive",
+  "kind": "agent",
   "from": [
-   "section-titles",
-   "candidates"
+   "title-page",
+   "opening-text"
   ],
-  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
  }
 }

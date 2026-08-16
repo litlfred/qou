@@ -7,7 +7,7 @@ section_number: null
 pages: 17-19
 source_pdf: HyperbolicAndNeumann.pdf
 source_sha256: 3d66fe4c64bdc62b
-doc_brief: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP — 7 sections: Ideal triangulations and the gluin; Volumes and Dehn surgeries; The Bloch group and the extended B"
+doc_brief: "Second copy of Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — see library/arxiv-2304.12545v1/, which is the same document."
 ---
 [1] Spencer Bloch. Applications of the dilogarithm function in algebraic K-theory and algebraic geometry.
 In Proceedings of the International Symposium on Algebraic Geometry (Kyoto Univ., Kyoto, 1977) ,

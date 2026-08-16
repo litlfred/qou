@@ -7,7 +7,7 @@ section_number: 3
 pages: 11-16
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
-doc_brief: "The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka — 6 sections: Introduction; Preliminaries; (b) (c)"
+doc_brief: "Fujii, Hyperbolic 3-manifolds with totally geodesic boundary (Osaka J. Math. 27(3), 1990, 539–553)."
 ---
 with totally geodesic boundary of genus g
 In this section we construct infinitely many mutually non-isometric hyper-

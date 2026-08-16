@@ -7,7 +7,7 @@ section_number: 1
 pages: 3-3
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
-doc_brief: "The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka — 6 sections: Introduction; Preliminaries; (b) (c)"
+doc_brief: "Fujii, Hyperbolic 3-manifolds with totally geodesic boundary (Osaka J. Math. 27(3), 1990, 539–553)."
 ---
 We start with describing a main constituent element of hyperbolic 3-
 manifolds with boundaries, called a hyperbolic truncated tetrahedron with one ideal

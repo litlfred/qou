@@ -7,7 +7,7 @@ section_number: 1
 pages: 2-2
 source_pdf: 9612303v1.pdf
 source_sha256: 5311d7faf2b3e005
-doc_brief: "The q-deformed quark model : quantum isospin and q-hadrons — 5 sections: Introduction; The quantum isospin group and its ; Do not confuse the baryons ∆ ++, ∆"
+doc_brief: "Klein-Kreisler & Ruiz-Altaba, The q-deformed quark model: quantum isospin and q-hadrons (1996) — treats SU(2) isospin as a quantum group and builds π-meson and nucleon wavefunctions from a q-quark…"
 ---
 One of the most beautiful and old ideas in particle physics is the isospin invariance
 of strong interactions, discovered by Heisenberg. It const itutes one of the keystones of

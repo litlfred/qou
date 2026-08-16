@@ -7,7 +7,7 @@ section_number: 24
 pages: 25-25
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 22 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
+doc_brief: "Corteel & Mallet, Overpartitions, lattice paths, and Rogers-Ramanujan identities (HAL hal-00017295) — extends Andrews, Bressoud and Burge to overpartitions via successive ranks and generalized…"
 ---
 • The number of paths that use four kinds of unitary steps with s pecial (k, i)-conditions where n is
 twice the sum of the x-coordinates of the peaks minus the number of South steps.

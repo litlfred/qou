@@ -7,7 +7,7 @@ section_number: 5.1
 pages: 34-38
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
-doc_brief: "Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Constant term formulas for"
+doc_brief: "Fischer, Constant term formulas for refined enumerations of Gog and Magog trapezoids (JCTA 158, 2018, 560–604) — alternating sign matrices, plane partitions, constant-term methods."
 ---
 Next we state a theorem that is similar to Theorem 16 and that can be proven 
 analogously.

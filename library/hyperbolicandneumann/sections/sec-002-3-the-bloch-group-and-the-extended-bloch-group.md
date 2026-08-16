@@ -7,7 +7,7 @@ section_number: 3
 pages: 7-9
 source_pdf: HyperbolicAndNeumann.pdf
 source_sha256: 3d66fe4c64bdc62b
-doc_brief: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP — 7 sections: Ideal triangulations and the gluin; Volumes and Dehn surgeries; The Bloch group and the extended B"
+doc_brief: "Second copy of Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — see library/arxiv-2304.12545v1/, which is the same document."
 ---
 The Bloch group of a ﬁeld is an analogue of its multiplicative group, but with the relation
 [xy] = [x] + [y] satisﬁed by the logarithm function replaced by the functional equation of

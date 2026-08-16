@@ -7,7 +7,7 @@ section_number: 4
 pages: 12-13
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 22 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
+doc_brief: "Corteel & Mallet, Overpartitions, lattice paths, and Rogers-Ramanujan identities (HAL hal-00017295) — extends Andrews, Bressoud and Burge to overpartitions via successive ranks and generalized…"
 ---
 In this section we prove the case C k,i(n, j) = Ek,i(n, j) of Theorem 1.4. In fact, we prove a reﬁnement of
 this case:

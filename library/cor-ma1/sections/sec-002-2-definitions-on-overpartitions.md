@@ -7,7 +7,7 @@ section_number: 2
 pages: 4-7
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 22 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
+doc_brief: "Corteel & Mallet, Overpartitions, lattice paths, and Rogers-Ramanujan identities (HAL hal-00017295) — extends Andrews, Bressoud and Burge to overpartitions via successive ranks and generalized…"
 ---
 We will deﬁne all the notions in terms of overpartitions. We r efer to [3] for deﬁnitions for partitions. In
 all of the cases the deﬁnitions coincide when the overpartit ion has no overlined parts.

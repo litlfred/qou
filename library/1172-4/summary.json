@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "1172-4",
  "source_sha256": "ffc47732ce0138e9",
- "brief": "Notes on Construction of the Knot Invariant from $\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$Dilogarithm Function El5~Bg3XBg3X1!N#>8Ln8&5f2JJ*N#3XUs96 — 13 sections: D",
- "extended": "**Notes on Construction of the Knot Invariant from $\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$Dilogarithm Function El5~Bg3XBg3X1!N#>8Ln8&5f2JJ*N#3XUs96**\n\n26 pp, 13 sections.\n\n**Outline.** 2 Dilogarithm Function; 1 Introduction; 4 Quantum Dilogarithm Function II; 5 Representation; 5.1 Momentum Space; 5.2 Asymptotic Behavior; 6 Knot Invariant; 6.1 Braid $G$roup; 6.2 Three Dlmenslonal Picture; 7 Simple Examples; 7.1 Figure-Eight Knot; 8 Concluding Remarks; References",
+ "brief": "Hikami, Notes on construction of the knot invariant from the quantum dilogarithm function (RIMS Kôkyûroku) — knot invariants built from Faddeev's quantum dilogarithm.",
+ "extended": "**Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function** — Kazuhiro Hikami. RIMS Kôkyûroku proceedings.\n\nConstruction of knot invariants from the quantum dilogarithm, following the line from the Jones polynomial through the quantum-group invariants (HOMFLY, colored Jones, Kauffman) to the dilogarithmic ones.\n\n**Why it may bear here.** The quantum dilogarithm is the object this corpus's Φ_q / Li₂^q material is written in, and Kashaev's original link invariant (kashaev1995) is the paper this one builds on.\n\n**Extraction caveat.** The held scan is a RIMS volume with a broken text encoding — Japanese runs render as mojibake and TeX escapes appear literally, so the body is not reliably machine-readable and grep over its sections will miss things.",
  "tokens": {
-  "brief": 50,
-  "extended": 125
+  "brief": 41,
+  "extended": 194
  },
  "sections": [
   {
@@ -76,10 +76,11 @@
   }
  ],
  "provenance": {
-  "kind": "extractive",
+  "kind": "agent",
   "from": [
-   "section-titles"
+   "title-page",
+   "opening-text"
   ],
-  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
  }
 }

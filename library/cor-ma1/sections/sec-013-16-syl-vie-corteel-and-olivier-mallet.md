@@ -7,7 +7,7 @@ section_number: 16
 pages: 17-18
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 22 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
+doc_brief: "Corteel & Mallet, Overpartitions, lattice paths, and Rogers-Ramanujan identities (HAL hal-00017295) — extends Andrews, Bressoud and Burge to overpartitions via successive ranks and generalized…"
 ---
 • else if ℓ > 1, remove the overlining of fm+ℓ−1 and overline fm,
 • fm+ℓ← fm+ℓ− 1, and

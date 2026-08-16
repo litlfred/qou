@@ -7,7 +7,7 @@ section_number: 2
 pages: 13-14
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 22 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
+doc_brief: "Corteel & Mallet, Overpartitions, lattice paths, and Rogers-Ramanujan identities (HAL hal-00017295) — extends Andrews, Bressoud and Burge to overpartitions via successive ranks and generalized…"
 ---
 to prove that xi− xi+1− yi− yi+1≥ 0. This comes from the fact that there is an East step between
 the two peaks (see Figure 7). If the ith peak is of type 1 and the ( i + 1)st is of type 0, the proof is

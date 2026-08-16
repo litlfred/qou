@@ -7,7 +7,7 @@ section_number: 6
 pages: 9-9
 source_pdf: S0273-0979-1985-15304-2.pdf
 source_sha256: bcae6367fee9babd
-doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY — 5 sections: Rudolf [21]. Also, if the conditio; References; J. H. Conway, An enumeration of kn"
+doc_brief: "Jones, A polynomial invariant for knots via von Neumann algebras (Bull. AMS 12:1, 1985) — the original Jones polynomial paper, via the trace on a type II_1 factor and the braid group."
 ---
 Algebra, Pergamon, New York, 1970, pp. 329-358. 
 7. H. Coxeter, Regular complex polytopes, Cambridge Univ. Press, 1974. 

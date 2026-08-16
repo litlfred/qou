@@ -7,7 +7,7 @@ section_number: 19
 pages: 9-9
 source_pdf: S0273-0979-1985-15304-2.pdf
 source_sha256: bcae6367fee9babd
-doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY — 5 sections: Rudolf [21]. Also, if the conditio; References; J. H. Conway, An enumeration of kn"
+doc_brief: "Jones, A polynomial invariant for knots via von Neumann algebras (Bull. AMS 12:1, 1985) — the original Jones polynomial paper, via the trace on a type II_1 factor and the braid group."
 ---
 Neumann algebras, Ann. of Math. (2) 86 (1967), 138-171. 
 20. D. Rolfsen, Knots and links, Publish or Perish Math. Lecture Ser., 1976. 

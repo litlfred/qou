@@ -7,7 +7,7 @@ section_number: 2
 pages: 3-7
 source_pdf: 2304.12545v1.pdf
 source_sha256: bfc3c2be395b1b2d
-doc_brief: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP — 7 sections: Ideal triangulations and the gluin; Volumes and Dehn surgeries; The Bloch group and the extended B"
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
 ---
 As already stated, the original main purpose of [31] was to study the arithmetic of the set
 of volumes of all hyperbolic 3-manifolds. It had been observed by Thurston, using earlier

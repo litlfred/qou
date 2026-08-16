@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2304.12545v1",
  "source_sha256": "bfc3c2be395b1b2d",
- "brief": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP — 7 sections: Ideal triangulations and the gluin; Volumes and Dehn surgeries; The Bloch group and the extended B",
- "extended": "**HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP**\n\n*AND THE WORK OF WALTER NEUMANN*\n\n19 pp, 7 sections.\n\n**Outline.** 1 Ideal triangulations and the gluing equation; 2 Volumes and Dehn surgeries; 3 The Bloch group and the extended Bloch group; 4 Symplectic properties; 5 Quantization; 6 Connections to number theory; References",
+ "brief": "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization.",
+ "extended": "**Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann** — Stavros Garoufalidis and Don Zagier.\n\nA survey of Neumann's contributions, organised as: ideal triangulations and the gluing equations; volumes and Dehn surgeries; the Bloch group and the extended Bloch group; symplectic properties; quantization; connections to number theory.\n\n**Why it may bear here.** Every one of those six headings names machinery this corpus uses — gluing equations, hyperbolic volume, the (extended) Bloch group, and the quantization step. As a survey it is the orientation text rather than a source of results.\n\n**Duplicate.** `library/hyperbolicandneumann/` is a second copy of this same document, byte-different but identical in content.",
  "tokens": {
-  "brief": 38,
-  "extended": 80
+  "brief": 49,
+  "extended": 185
  },
  "sections": [
   {
@@ -46,10 +46,11 @@
   }
  ],
  "provenance": {
-  "kind": "extractive",
+  "kind": "agent",
   "from": [
-   "section-titles"
+   "title-page",
+   "opening-text"
   ],
-  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
  }
 }

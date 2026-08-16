@@ -7,7 +7,7 @@ section_number: 6.2
 pages: 14-19
 source_pdf: 1172-4.pdf
 source_sha256: ffc47732ce0138e9
-doc_brief: "Notes on Construction of the Knot Invariant from $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$Dilogarithm Function El5~Bg3XBg3X1!N#>8Ln8&5f2JJ*N#3XUs96 — 13 sections: D"
+doc_brief: "Hikami, Notes on construction of the knot invariant from the quantum dilogarithm function (RIMS Kôkyûroku) — knot invariants built from Faddeev's quantum dilogarithm."
 ---
 $\mathrm{F}o$llowing Ref. 16, we give three dimensional picture for our knot invariant which was
 deﬁned by eq. (6.3) in a limit $\gammaarrow 0$with the $R$-matrix (5.13). A key point is that the

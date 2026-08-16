@@ -7,7 +7,7 @@ section_number: 0
 pages: 2-3
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
-doc_brief: "The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka — 6 sections: Introduction; Preliminaries; (b) (c)"
+doc_brief: "Fujii, Hyperbolic 3-manifolds with totally geodesic boundary (Osaka J. Math. 27(3), 1990, 539–553)."
 ---
 In this paper, we study compact oriented hyperbolic 3-manifolds each of
 which has a totally geodesic boundary. By a hyperbolic manifold, we mean a

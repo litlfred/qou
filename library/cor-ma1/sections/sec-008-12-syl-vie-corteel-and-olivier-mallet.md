@@ -7,7 +7,7 @@ section_number: 12
 pages: 13-13
 source_pdf: cor-ma1.pdf
 source_sha256: d90c91dcd82bfcab
-doc_brief: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 22 sections: SYL VIE CORTEEL AND OLIVIER MALLE"
+doc_brief: "Corteel & Mallet, Overpartitions, lattice paths, and Rogers-Ramanujan identities (HAL hal-00017295) — extends Andrews, Bressoud and Burge to overpartitions via successive ranks and generalized…"
 ---
 if there are an odd number of East steps to the left of the peak ( we then say that the peak is of type
 1 ). Moreover, we overline t if the peak is a NESE peak. In both cases, s and t are integers and we have

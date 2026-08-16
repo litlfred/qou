@@ -7,7 +7,7 @@ section_number: null
 pages: 8-9
 source_pdf: S0273-0979-1985-15304-2.pdf
 source_sha256: bcae6367fee9babd
-doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY — 5 sections: Rudolf [21]. Also, if the conditio; References; J. H. Conway, An enumeration of kn"
+doc_brief: "Jones, A polynomial invariant for knots via von Neumann algebras (Bull. AMS 12:1, 1985) — the original Jones polynomial paper, via the trace on a type II_1 factor and the braid group."
 ---
 1. J. W. Alexander, A lemma on systems of knotted curves, Proc. Nat. Acad. 9 (1923), 
 93-95. 

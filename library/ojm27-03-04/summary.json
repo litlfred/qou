@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "ojm27-03-04",
  "source_sha256": "b357cc8378dae3fd",
- "brief": "The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka — 6 sections: Introduction; Preliminaries; (b) (c)",
- "extended": "**The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka**\n\n17 pp, 6 sections.\n\n**Outline.** 0 Introduction; 1 Preliminaries; 00 (b) (c); 2 A £-fold branched covering of the Whitehead ; 3 Infinitely many mutually non-isometric hyper; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.3: Let g be an integer greater than or equal to 2. Let Ml be\n- Proposition 1.1: For polygons in the hyperbolic plane H2, as indicated in\n- Proposition 3.1: The above construction gives a complete hyperbolic struc-\n- Proposition 3.2: Let M3 be a non-singular hyperbolic 3-",
+ "brief": "Fujii, Hyperbolic 3-manifolds with totally geodesic boundary (Osaka J. Math. 27(3), 1990, 539–553).",
+ "extended": "**Hyperbolic 3-manifolds with totally geodesic boundary** — Michihiko Fujii. Osaka Journal of Mathematics 27(3), 1990, 539–553. DOI 10.18910/11468.\n\n**Why it may bear here.** Geodesic-boundary hyperbolic 3-manifolds are the setting of the Frigerio deformation result (frigerio2006) also held, and of the fundamental-shadow-link complements this corpus uses. Distinct from fujii1992 (Kodai Math. J. 15, 244–257), a different paper by the same author also in the library.",
  "tokens": {
-  "brief": 50,
-  "extended": 168
+  "brief": 24,
+  "extended": 117
  },
  "sections": [
   {
@@ -41,11 +41,11 @@
   }
  ],
  "provenance": {
-  "kind": "extractive",
+  "kind": "agent",
   "from": [
-   "section-titles",
-   "candidates"
+   "title-page",
+   "opening-text"
   ],
-  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
  }
 }

@@ -7,7 +7,7 @@ section_number: 2
 pages: 2-5
 source_pdf: 9_81.pdf
 source_sha256: 12a83d647032306e
-doc_brief: "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges KAMEISatoshi — 5 sections: Introduction; Locally Euclidean Structures; Singular Euclidean Structures"
+doc_brief: "Kamei, Singular Euclidean structures on a simplicial complex with weighted edges (2003) — extends Rivin's geometric structures on a 2-simplicial complex to weighted-edge assignments."
 ---
 Inthissection,weconsideranecessaryandsuﬃcientconditionofaweightofabranchedsurfaceinorderforthe
 branched surfacetoadmitlocallyEuclideanstructures,whichisstatedinthefollowingdeﬁnition.
