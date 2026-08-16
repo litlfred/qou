@@ -265,6 +265,53 @@ def main() -> int:
     out["y21_at_zC"] = mp.nstr(y21_C, 30)
     out["y21_at_zD"] = mp.nstr(y21_D, 30)
 
+    # ── A8: Temperley–Lieb SHAPE of the two Markov parameters ────────────
+    # Three exact rearrangements, recorded because they are the algebraic
+    # inputs to the TL hypothesis (audit §6b/§6c). They are IDENTITIES, so
+    # they hold at every q — the pin values are reported for reference only.
+    #
+    # NOT EVIDENCE OF A MECHANISM. That z_D is expressible over the TL loop
+    # parameter does not make the D trace factor through TL; that is a
+    # hypothesis under test on the sibling's front (PR #5185), resting on
+    # three corank points (n=3,4,5) with n=6 as the discriminator.
+    print("\nA8 — Temperley–Lieb SHAPE of z_D and z_C (identities, not evidence)")
+    delta = q + 1 / q                      # [2]_q — the TL loop parameter
+    sq = mp.sqrt(q)
+    bracket2_sq = sq + 1 / sq              # [2]_{√q}
+    tol = mp.mpf("1e-50")
+
+    # z_D = q²/[2]_q, since [2]_q = (q²+1)/q. Lean: zD_eq_qsq_div_bracketTwo.
+    d1 = mp.fabs(zd - q**2 / delta)
+    print(f"   z_D = {mp.nstr(zd, 20)}   q²/[2]_q = {mp.nstr(q**2 / delta, 20)}")
+    chk("A8 z_D == q²/[2]_q (TL loop parameter)", d1 < tol,
+        f"|diff| = {mp.nstr(d1, 3)}")
+
+    # z_C = 1/[2]_{√q}, since 1+q = √q·[2]_{√q}.
+    d2 = mp.fabs(zc - 1 / bracket2_sq)
+    print(f"   z_C = {mp.nstr(zc, 20)}   1/[2]_√q = {mp.nstr(1 / bracket2_sq, 20)}")
+    chk("A8 z_C == 1/[2]_{√q}", d2 < tol, f"|diff| = {mp.nstr(d2, 3)}")
+
+    # δ−2 = (q/b)·u exactly: δ−2 = (q−1)²/q and u = b(q−1)²/q².
+    # ⇒ a TL expansion in δ−2 is a RESCALING of the u-expansion by q/b,
+    #   not a new series.
+    b = s["b"]
+    d3 = mp.fabs((delta - 2) - (q / b) * u)
+    print(f"   δ−2 = {mp.nstr(delta - 2, 14)}   u = {mp.nstr(u, 14)}   "
+          f"q/b = {mp.nstr(q / b, 14)}")
+    chk("A8 δ−2 == (q/b)·u exactly (TL expansion is a rescaled u-expansion)",
+        d3 < tol, f"|diff| = {mp.nstr(d3, 3)}")
+
+    out["bracket2_q_delta"] = mp.nstr(delta, 30)
+    out["zD_over_TL_check"] = mp.nstr(q**2 / delta, 30)
+    out["zC_over_TL_check"] = mp.nstr(1 / bracket2_sq, 30)
+    out["delta_minus_2"] = mp.nstr(delta - 2, 30)
+    out["q_over_b"] = mp.nstr(q / b, 30)
+    out["tl_identification_tier"] = (
+        "HYPOTHESIS under test — coranks 1,10,78 at n=3,4,5 match n!−C_n "
+        "(sibling PR #5185, not re-derived here); n=6 (588) is the "
+        "discriminator. These A8 identities are shape, not mechanism."
+    )
+
     out["checks"] = checks
     n_pass = sum(1 for c in checks if c["pass"])
     print("\n" + "=" * 74)

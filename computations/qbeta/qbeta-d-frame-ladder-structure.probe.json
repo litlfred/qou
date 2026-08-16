@@ -16,6 +16,12 @@
   "zD_minus_zstar": "0.1135835569616802574",
   "y21_at_zC": "0.000679665816305547586557319742334",
   "y21_at_zD": "-0.112688037146465251595829863946",
+  "bracket2_q_delta": "2.01089686670712229975249197809",
+  "zD_over_TL_check": "0.612688037146465251595829863946",
+  "zC_over_TL_check": "0.499320334183694452413442680258",
+  "delta_minus_2": "0.0108968667071222997524919780919",
+  "q_over_b": "1.27939023434813509513937935616",
+  "tl_identification_tier": "HYPOTHESIS under test \u2014 coranks 1,10,78 at n=3,4,5 match n!\u2212C_n (sibling PR #5185, not re-derived here); n=6 (588) is the discriminator. These A8 identities are shape, not mechanism.",
   "checks": [
     {
       "name": "A1 N=2 factor is 1 \u2212 u\u00b2, z-free",
@@ -91,6 +97,21 @@
       "name": "A7 y_(2,1) < 0 at z_D for EVERY q in (1, 5] sampled (Lean: all q>1)",
       "pass": true,
       "detail": "max over sample = -4.20408"
+    },
+    {
+      "name": "A8 z_D == q\u00b2/[2]_q (TL loop parameter)",
+      "pass": true,
+      "detail": "|diff| = 7.78e-62"
+    },
+    {
+      "name": "A8 z_C == 1/[2]_{\u221aq}",
+      "pass": true,
+      "detail": "|diff| = 7.78e-62"
+    },
+    {
+      "name": "A8 \u03b4\u22122 == (q/b)\u00b7u exactly (TL expansion is a rescaled u-expansion)",
+      "pass": true,
+      "detail": "|diff| = 6.32e-62"
     }
   ]
 }
