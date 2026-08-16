@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-16T13:01:36Z
+updated_at: 2026-08-16T13:17:29Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -146,3 +146,98 @@ Left `todo`, not completed. What is measured: the A = 2 point, the direction,
 and the practical ceiling. What is NOT measured: the A-dependence, because the
 A = 3 point does not finish. Getting it needs `per_generator_V_hat_3A` profiled
 and sped up first — which is now the actual next step, ahead of any migration.
+
+
+---
+
+# CORRECTION: the weights were fine. I fed them to the wrong package.
+
+The section above concluded "the proper H_{3A} weights make the binding WORSE"
+and called the hypothesis refuted. **That was wrong**, and the owner's instinct
+— "maybe missing something else that goes with those weights?" — was right.
+Three things go with them, and I had supplied none of them.
+
+## Measured, deuteron (AME 2.22452 MeV)
+
+                  volumes                    consumer   scale      B_MeV      err%
+    normalized_plancherel        log-sum, no baseline   alpha    38.9241   +1649.8
+    normalized_plancherel      log-sum, free-baseline   alpha    35.7229   +1505.9
+    normalized_plancherel      log-sum, free-baseline     E_0     7.4636    +235.5
+    normalized_plancherel  Phi_q tower, free-baseline     E_0  2258066.5  +1.0e8
+
+              jones_wenzl        log-sum, no baseline   alpha    74.7505   +3260.3
+              jones_wenzl      log-sum, free-baseline   alpha     3.0641     +37.7   <-- BEST
+              jones_wenzl      log-sum, free-baseline     E_0     0.6402     -71.2
+              jones_wenzl  Phi_q tower, free-baseline     E_0     0.3248     -85.4
+
+               legacy H_3        log-sum, no baseline   alpha     4.4015     +97.9   <-- production today
+               legacy H_3      log-sum, free-baseline   alpha     4.0396     +81.6
+               legacy H_3      log-sum, free-baseline     E_0     0.8440     -62.1
+               legacy H_3  Phi_q tower, free-baseline     E_0   21506.79    +9.7e5
+
+**The H_{3A} weights beat the H_3 weights once their package is supplied:
++37.7% against production's +97.9%.** My -1650% was `normalized_plancherel`
+volumes in a consumer that expects neither that scheme nor a baseline.
+
+## The three things, and how much each is worth
+
+**1. The weight scheme — this is the big one.**
+`per_generator_V_hat_3A` defaults to `weight_scheme="normalized_plancherel"`,
+whose own docstring concedes it is a fudge: it rescales to sum = 1 "even if it
+doesn't match the canonical Jones parameter z for tr_M(sigma_i)". It also
+claims to keep V_hat "in the physical range [-1, 1] at our q0, which is what
+the Phi_q tower needs". **It does not.** Measured on the deuteron:
+
+              scheme                max|V_hat|   > 1 ?   >= Phi_q cap (1.087779) ?
+              legacy H_3               1.08022     yes    no
+    normalized_plancherel               1.08837     yes    YES
+               plancherel               1.07866     yes    no
+              jones_wenzl               0.06979      no    no
+
+`normalized_plancherel` puts a generator AT the saturation cap, which is
+exactly why `binding_3A_tower` returns 1e7 MeV. `jones_wenzl` — the Ocneanu
+weights built on z = q^3/(q^2+1), i.e. **convention D** — is the only scheme
+that leaves the tower's own precondition intact.
+
+So the default weight scheme is inconsistent with the owner's trace-convention
+ruling, and it silently breaks the consumer the volumes exist to feed.
+
+**2. The free-baseline subtraction.** `B ∝ (free − atom)`, W_free =
+`include_inter=False`. Worth **86x** for jones_wenzl (+3260% -> +37.7%);
+almost nothing for legacy (+97.9% -> +81.6%). That asymmetry is itself
+informative — the H_3 volumes barely change between the free and atom words,
+which is what an A-independent weighting would do.
+
+**3. The scale, and it is unresolved.** Two live scales differing by 4.79x:
+
+    alpha = m_e * 8G = 3.744460 MeV   (Catalan; the q-CLT proxy)
+    E_0             = 0.782333 MeV   (free-neutron beta-decay Q; "no Catalan")
+
+Which is correct flips the deuteron from **+37.7% to -71.2%**. alpha is a
+derived volume scale (8G = Vol(Borromean)); E_0 is a calibration. Having both
+in the same table, on different channels, is a third incoherence alongside the
+convention split (qou-jm5i) and the H_3/H_{3A} split. **This is the open
+question and it is a physics call, not a code one.**
+
+## Also found
+
+`mass_from_tower_safe` imports `z_mark` from `mass_endomorphism`, which is
+already convention **D** (`q0**3/(q0**2+1)`) — so that is NOT a third C site.
+The 2026-04-20 infrastructure audit describes it as C, but that doc predates
+the migration.
+
+The free baselines are structurally incompatible between implementations:
+`include_inter=False` returns **5** generators from `per_generator_V_hat_3A`
+(3A-1, empty words contributing V_hat = sum w = 1) but **4** from
+`atom_per_generator_volumes` (2A). Any cross-implementation comparison of free
+words has to account for that.
+
+## Revised status
+
+Not refuted, and not a dead end. The H_{3A} migration is worth doing, but it is
+a **package swap** — weights + scheme + baseline + scale — not a drop-in
+substitution of `per_generator_V_hat_3A` for `atom_per_generator_volumes`. A
+caller that swaps only the function gets my -1650%.
+
+Still blocked on: performance (3A=9 does not finish in 20 min, so the
+A-dependence is still unmeasured), and the alpha-vs-E_0 scale decision.
