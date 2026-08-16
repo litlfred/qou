@@ -215,3 +215,44 @@ Applied in PR #5204.
 available digits — but it is currently *masked* by the χ cap, and fixing it
 alone changes no digit of the output. It goes live the moment the SDP witness
 carries better eigenvalues. Left in place, recorded as follow-up 2 below.
+
+### Follow-up 2 re-scoped: the χ floor is the Rust engine's f64 typing (2026-08-16)
+
+I wrote above that `load_y_lambda`'s `float()` cast "goes live the moment the
+SDP witness carries better eigenvalues", and named lifting χ as the higher-value
+next item. Both understated the size of that job. Traced it:
+
+    joint-tower-sdp-rust.witness.json
+      scriptFile : joint_tower_sdp.rs
+      engine     : hecke-engine 0.8.0 (rust)
+
+    tools/hecke-engine/src/wedderburn_psd.rs:96
+      fn symmetric_eigenvalues(m_in: &[Vec<f64>]) -> Vec<f64>
+
+The eigensolve is f64-in / f64-out **in the engine**, and `joint_tower_sdp.rs`
+types q0, min/max_eigenvalue and b_ame_mev as `f64` throughout. So χ is not
+float64 because of a serialization choice that a producer edit could fix -- it
+is float64 because the compute that produces it is f64.
+
+Consequences, all of which cut AGAINST doing more work here:
+
+  1. The 17-digit serialization applied in PR #5204 is the PERMANENTLY correct
+     answer for these fields, not a stopgap pending a better witness.
+  2. `load_y_lambda`'s float() cast is masked INDEFINITELY, not "for now". It
+     still discards 34 available digits and is still worth fixing for hygiene,
+     but fixing it changes no digit of any current output. Low priority.
+  3. Raising the χ floor means porting the engine's linear algebra to arbitrary
+     precision (nalgebra f64 -> rug/MPFR or equivalent), which is an engine
+     project, not a producer fix -- and it would change no published number
+     unless a downstream consumer actually needs > 17 digits of tr_M. Nothing
+     currently does: the L1 target is cross-method agreement at 1 ppQ (1e-15),
+     which 17 digits meets.
+
+Scope note per the refuted/ruled-out discipline: this is a scope-(a) statement
+about the CURRENT implementation -- the engine is f64-typed today -- not a
+structural impossibility claim. An arbitrary-precision port is possible; it is
+just far larger than "lift the read", and no present consumer justifies it.
+
+Recommendation: do NOT open the engine port off the back of this bean. If a
+future consumer genuinely needs tr_M past 17 digits, that consumer is the
+justification and should carry it.
