@@ -164,8 +164,28 @@ structure QuantumUniverse (k : Type*) [Field k] where
 
       Encoded here: a `Fintype` of blocks, an idempotent endomorphism of `A`
       per block, their mutual orthogonality, and non-vanishing of each block's
-      Frobenius weight and quantum dimension.  Orthogonality needs only a zero
-      morphism, so `HasZeroMorphisms` is carried as an instance field.
+      Frobenius weight and quantum dimension.
+
+      **`blocks` indexes the NON-NEGLIGIBLE blocks, and vanishing elsewhere is
+      permitted.**  `dimQ_ne_zero` below is therefore a specification of what
+      `blocks` ranges over, NOT a prohibition on the ambient category.  This
+      matters at a root of unity (and in char p), where some `dim_q(λ)` really
+      does vanish: those λ are *negligible* — they form a tensor ideal, the
+      categorical trace kills anything factoring through them, and the standard
+      construction quotients by that ideal (semisimplification) before reading
+      off blocks.  Read as a prohibition, the field would exclude the
+      root-of-unity categories outright; read as an index specification, it
+      says the decomposition is that of the semisimplified quotient.
+
+      The corpus already relies on this shape elsewhere: `y_(1^3) ≡ 0` in
+      `h3-markov-wenzl-weights` (the Temperley-Lieb quotient kills the 3-row
+      partition), and `tr_M = Σ_λ y_λ χ^λ` sums over all λ with zero weights on
+      some.  That vanishing is a DIFFERENT mechanism from negligibility — a row
+      cap at generic q, not a root-of-unity phenomenon — but it is the same
+      pattern, and it is why no sum over blocks needs re-indexing here.
+
+      Orthogonality needs only a zero morphism, so `HasZeroMorphisms` is
+      carried as an instance field.
 
       STILL NOT encoded: completeness `Σ p_b = 𝟙`.  That needs additive
       hom-sets and a finite sum (`Preadditive`), which is a larger change —
