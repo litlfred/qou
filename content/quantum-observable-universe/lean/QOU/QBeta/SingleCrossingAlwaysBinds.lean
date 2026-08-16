@@ -160,6 +160,44 @@ theorem writhe_normalisation_binds_harder {μ c : ℝ}
       _ = μ := mul_one μ
       _ < 1 := hμ1
 
+/-- **A non-negative writhe exponent can never unbind.** The writhe grading sends
+`μ ↦ μ · (1-h)^(e/2)` with `0 < 1-h < 1`. For `e ≥ 0` that factor is `≤ 1`, so a
+channel already in `(0,1)` stays there.
+
+This is the general form of `writhe_normalisation_binds_harder`, stated on the
+real exponent so it applies to a whole grading rather than one factor. -/
+theorem nonneg_writhe_cannot_unbind {μ c e : ℝ}
+    (hc0 : 0 ≤ c) (hc1 : c ≤ 1) (he : 0 ≤ e)
+    (hμ0 : 0 < μ) (hμ1 : μ < 1) :
+    μ * c ^ e < 1 := by
+  have hpow_le : c ^ e ≤ 1 := Real.rpow_le_one hc0 hc1 he
+  have hpow_nn : 0 ≤ c ^ e := Real.rpow_nonneg hc0 e
+  calc μ * c ^ e ≤ μ * 1 := by
+        exact mul_le_mul_of_nonneg_left hpow_le (le_of_lt hμ0)
+    _ = μ := mul_one μ
+    _ < 1 := hμ1
+
+/-- **The `T₃` grading provably cannot unbind the `pp` channel.**
+
+The corpus grades the strong-isospin interface by crossing sign — `σ` (positive
+writhe) for `pp`, `σ⁻¹` (negative) for `nn` — i.e. by `T₃`
+(`QOU.ParticleInteractions.WeakIsospinT3Grading`). A `T₃` grading therefore hands
+`pp` a **non-negative** writhe exponent, and by `nonneg_writhe_cannot_unbind` any
+non-negative exponent keeps the channel bound.
+
+So the failure is not that the framework picked the wrong magnitude for `pp`: it
+picked a sign that makes unbinding **impossible**, whatever the magnitude. Nature
+has `a^N_pp = −17.3 fm` — unbound.
+
+The `nn` side is not excluded by this (its `T₃` writhe is negative, the helpful
+direction) — but it is quantitatively far off: unbinding `nn` needs `e ≤ −7.74`
+at the substrate anchor against the `T₃` assignment's `e = −1`. -/
+theorem t3_grading_cannot_unbind_pp {q e : ℝ} (hq : 0 < q)
+    (hz : q ^ 3 < q ^ 2 + 1) (hh0 : 0 ≤ 1 - heckeH q) (hh1 : 1 - heckeH q ≤ 1)
+    (hT3 : 0 ≤ e) :
+    markovZ q * (1 - heckeH q) ^ e < 1 :=
+  nonneg_writhe_cannot_unbind hh0 hh1 hT3 (markovZ_pos hq) (markovZ_lt_one hq hz)
+
 /-- **Contrapositive: unbinding needs a large `q`.** If some admissible single
 crossing fails to bind, then `q² + 1 ≤ q³` — i.e. `q` is at least the real root
 of `q³ = q² + 1` (`≈ 1.46557`). The substrate anchor `q₀ ≈ 1.10998` is 24 % below
