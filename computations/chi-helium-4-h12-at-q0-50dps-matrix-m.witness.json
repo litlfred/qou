@@ -1,7 +1,7 @@
 {
   "computation": "chi-helium-4-h12-at-q0-50dps-matrix-m",
-  "description": "Lossless per-λ χ^λ(β_atomic(2,2))=⁴He at q_0, 50 dps, ALL 77 partitions of S_12 via the canonical Rust chi_q_via_gp path (sign-only crossings; matches the matrix-M backend to the 50-dps floor, PR #2062 §8). No max_dim cap — infeasible partitions for pure-Python matrix-M computed in ms by Rust, independent of dim V_λ.",
-  "producer": "rust-chi-q-via-gp-lossless",
+  "description": "Numerical χ^λ_q(β_atomic(2, 2)) = helium-4 per partition λ ⊢ 12 at q_0, 50 dps, matrix-M mpfr backend. Lossless (every λ) unless max_dim is set.",
+  "producer": "matrix-m-chi-q-via-gp",
   "convention": "sign-only-crossings",
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "dps": 50,
@@ -15,7 +15,7 @@
   "n_skipped_max_dim": 0,
   "tr_M_partial": false,
   "partial": false,
-  "compute_time_sec": "4.74",
+  "compute_time_sec": 0.0,
   "tr_M_at_q0": "0.8856162869365208101087947910150776213083638619632",
   "by_partition": [
     {

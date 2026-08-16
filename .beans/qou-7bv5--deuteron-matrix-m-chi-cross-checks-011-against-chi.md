@@ -117,3 +117,48 @@ picking a constant.
 
 **Still true and still worth fixing separately:** the producer prints the 0/11
 and exits 0, so the harness cannot see it (same shape as `qou-9d6h`).
+
+## CORRECTION 2026-08-16 — my "under-precises n=6" conclusion was WRONG
+
+I recorded above that the producer loses ~43 digits at n=6. That is not what
+happens, and the correction matters because the real defect is worse.
+
+**Measured digit loss at working precision P exactly** (build called directly,
+`mp.mp.dps = P`):
+
+| atom | P=51 | P=60 | P=70 |
+|---|---|---|---|
+| deuteron (n=6) | lost 2.26 | lost 2.29 | lost 2.49 |
+| helium-3 (n=9) | lost 4.25 | lost 3.99 | lost 3.71 |
+
+Roughly **constant, ~2–4 digits** — not 43, and not scaling with n. At P=50 a
+fresh deuteron build has ~48 good digits, comfortably inside the 1e-45
+tolerance. `main()` sets `mp.mp.dps = args.dps` and builds `q_mpf` after it, so
+neither the build nor the cross-check is under-precised. **No guard-digit fix
+is needed; do not add one.**
+
+## The actual defect: a resume cache that serves stale entries
+
+`build_chi_cache_at_q0_matrix_m` lines 186–206: if the output file exists it
+loads existing entries into `already` and **skips recomputing them**, filling
+only gaps. So a stale cache is handed straight back, and the producer's own
+cross-check then compares those stale entries against a fresh Rust value.
+
+Deleting the deuteron cache and re-running:
+
+```
+before   cross-check 0/11 match      tr_M = 1.33178255505578273520...
+after    cross-check 11/11 match     tr_M = 2.17544681693623666235...
+```
+
+**0 of 11 per-λ χ values were identical**, and `tr_M` moved **63 %**. The cache
+was not slightly stale — it was a different object entirely, and every consumer
+of that χ cache has been reading it.
+
+**Blast radius is bounded**: tritium 30/30 and helium-4 77/77 on their existing
+caches, so the deuteron was the only stale member.
+
+**The severity is the silence.** The producer prints `0/11` and exits 0, so the
+harness records `ok`. Two independent detectors — this cross-check and
+`qou-9d6h`'s probe — both reported real defects into a channel nothing reads.
+That is the pattern worth fixing generally, not the deuteron number.
