@@ -191,12 +191,23 @@ def crossing_element(gen_idx: int, cross_type: str) -> SymbolicHeckeElement:
     `averaged_weighted` and raised on it (qou-8zjd), while `word_to_element`
     below -- the production path -- has carried the weighted form all along.
     Two spellings of one mapping is exactly how they drift apart.
+
+    `delta=` is what keeps this wrapper agreeing with production. `HA` is
+    symbolic, so without it `d_for_ctype` returns the colour-weighted shift
+    with delta evaluated at the numeric `q_parameter.Q`, while
+    `crossing_from_cd` -- the path production actually takes -- substitutes
+    the closed form in q. The tests would then be validating against an
+    element production never builds, on the one ctype this whole arc is
+    about. Same drift the docstring above warns of, arriving through the
+    shared helper's default rather than through a private table.
     """
     from canonical_braid_crossings import d_for_ctype
+    from _li_2_q_util import flavor_split_leading
     sigma = SymbolicHeckeElement({(gen_idx,): sp.Integer(1)})
     if cross_type == "sigma":
         return sigma
-    return sigma + SymbolicHeckeElement({(): d_for_ctype(cross_type, HA)})
+    d = d_for_ctype(cross_type, HA, delta=flavor_split_leading(q_sym))
+    return sigma + SymbolicHeckeElement({(): d})
 
 
 def word_to_element(word) -> SymbolicHeckeElement:

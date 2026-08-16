@@ -558,6 +558,11 @@ import QOU.BraidsAndKnots.BorromeanTraceConventionSplit
 -- Canonical trC(β_Bor) derived from the Markov-forced values (rational
 -- seminormal (2,1) rep + Cayley–Hamilton + unique weights); sorry-free.
 import QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation
+-- qou-n1dj: re-sources the `N = 2` hypothesis of the D-forcing chain from the
+-- QOU definition's own categorical volume constraint instead of from
+-- thm:su2-emergence, whose lean.ref is unresolved and whose Lean carries no
+-- rank content. Records both readings of the constraint and which one forces.
+import QOU.BraidsAndKnots.VolumeConstraintForcesFibreTwo
 -- D6-upstream color-tube channel class (conj:inter-nucleon-channel-color-tube):
 -- content-bearing §3b-cond weight-tensor class + ε rule + uniform-projection
 -- satisfiability witness + T₁ fiber wiring. Wired so CI type-checks it.
@@ -890,6 +895,12 @@ import QOU.Mathlib.SchenstedWordRecovery
 import QOU.Mathlib.SchenstedRecordingIndex
 -- RSK inverse, brick 5: reading the row index back off the recording tableau.
 import QOU.Mathlib.SchenstedReadback
+-- RSK inverse, brick 6: the whole index list, read back off Q.
+import QOU.Mathlib.SchenstedReadbackFold
+-- RSK inverse, brick 7: the RSK map is injective on words of fixed length.
+import QOU.Mathlib.SchenstedRSKInjective
+-- RSK inverse, brick 8: RSK separates permutations.
+import QOU.Mathlib.SchenstedPermInjective
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
