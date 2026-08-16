@@ -45,6 +45,20 @@ symmetric end — while the tall blocks bind or flip sign. Wide = symmetric =
 `T=1`-like is exactly where nature puts the unbound channels (pp, nn, np-1S0),
 so the block structure is oriented correctly, not merely large enough.
 
+## Validation — the 1-dim blocks reproduce the Hecke eigenvalues exactly
+
+`(6,)` is the trivial rep (`sigma -> q`) and `(1^6)` the sign rep
+(`sigma -> -1/q`). Each two-nucleon system has exactly ONE crossing more than its
+free reference, so `r` on those blocks must be the eigenvalue itself:
+
+    pp  (6,)    +1.10997858   predicted +q     = +1.10997858   exact
+    pp  (1^6)   -0.90091828   predicted -1/q   = -0.90091828   exact
+    nn  (6,)    +0.90091828   predicted +1/q   = +0.90091828   exact
+    nn  (1^6)   -1.10997858   predicted -q     = -1.10997858   exact
+
+(`nn`'s interface is `sigma^-1`, hence the swap.) This is an independent check on
+the whole character computation, and it passes to every digit.
+
 ## An obstruction this exposes, worth recording
 
 **6 or 7 of the 11 blocks have `r_lambda < 0`** — the character changes SIGN
@@ -52,6 +66,24 @@ between the atom and free words. For those blocks `-alpha*ln(r)` is undefined, s
 a per-block "binding energy" does not exist at all. Anyone building a per-block
 binding decomposition has to say what a negative character ratio means first;
 this is not a detail that can be deferred.
+
+**And the flip is not scattered — it is sorted by conjugation.** Counting
+negatives by shape, identically in all three systems:
+
+    WIDE (<= 2 rows)   1 of 4 negative
+    TALL (>= 4 rows)   4 of 4 negative
+
+Every conjugate pair shows it: the tall member is negative where the wide member
+is positive (`(2,1^4)/-1.52` vs `(5,1)/+3.76`, `(2,2,1,1)/-0.33` vs `(4,2)/+3.15`,
+and so on). The mechanism is the sign representation — taller partitions are more
+sign-like, and the sign rep contributes `-1/q` per crossing.
+
+This SHARPENS the obstruction rather than explaining it away. Wide = symmetric =
+`T=1`-like is where the unbinding sits and where `r > 0`, so those blocks have a
+well-defined energy. Tall = antisymmetric = `T=0`-like is the deuteron's side —
+and it is exactly there that `r < 0` and the per-block energy does not exist. The
+undefined blocks are not a random 7 of 11; they are the channel that has to come
+out BOUND.
 
 ## What this establishes, and what it does NOT
 
