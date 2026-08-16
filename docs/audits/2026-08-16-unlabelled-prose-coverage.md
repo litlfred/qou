@@ -57,7 +57,24 @@ indistinguishable from a passing one. It is the same signature as `mcp1` (a
 mis-parse that returned `pass`), `pzdv` (gates over an empty corpus) and `9giz`
 (a stale ref that reported zero drift).
 
-## The decision
+## RESOLVED 2026-08-16 — folio-assistant #127, option 3
+
+`walkBlocks(root, { includeUnlabelled })`, default **false** so the dependency
+graph is untouched; `qa-sweep` opts in. Unlabelled blocks are yielded under
+their slug, the identity their sidecars already use.
+
+**The prediction below was wrong and is left standing as written.** Measured
+across the 63: **1286 applicable criterion runs, 819 skipped by `applies_to`,
+and 0 failures.** Cheap *and* quiet — the prose was clean, it simply could not
+be seen to be. Weighing the options on the guess instead of the measurement
+would have argued for the most expensive one.
+
+(A first attempt measured 126 failures, which would have supported the guess.
+That was an error: the checkers were invoked directly, bypassing the
+`applies_to` filter `qa-sweep` applies, so two compute criteria fired on prose
+that is not a proposition.)
+
+## The decision, as originally written
 
 Three ways out, and they are not equivalent:
 
