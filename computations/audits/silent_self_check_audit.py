@@ -214,9 +214,19 @@ def detect_resume_cache(path: Path, src: str, tree: ast.AST) -> list[str]:
         # `if <path>.exists():` guarding a load
         if isinstance(node, ast.If):
             seg = ast.get_source_segment(src, node) or ""
-            if ".exists()" in seg and ("json.load" in seg or "read_text" in seg):
-                ev.append(f"line {node.lineno}: loads its own prior output "
-                          f"when the file exists")
+            if not (".exists()" in seg and ("json.load" in seg or "read_text" in seg)):
+                continue
+            # A BASELINE read is not a resume cache. The ratchet audits
+            # (`witness_raw_float64_audit`, `never_raises_dps_audit`, …) load a
+            # *separate* baseline file to report drift against — they are not
+            # skipping work, and the loaded file is not the one they write.
+            # Four of the nine candidates were this, and flagging a ratchet for
+            # reading its own ratchet is exactly the noise that gets an axis
+            # ignored.
+            if re.search(r"\bBASELINE\b|baseline", seg):
+                continue
+            ev.append(f"line {node.lineno}: loads its own prior output "
+                      f"when the file exists")
     if not ev:
         return []
     # ...and that loaded content is used to skip work
