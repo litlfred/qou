@@ -1234,22 +1234,37 @@ Do not regress either.
 
 ### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)
 
-> **🛑 OWNER RULING 2026-08-15 — proton pin canonical; convention D canonical,
-> convention C excised; colour weighting canonical.** Verbatim: *"convention D is
+> **🛑 OWNER RULING 2026-08-15 — convention D canonical (C excised); proton pin
+> canonical; colour weighting canonical.** Verbatim: *"convention D is
 > convention. excise convention C."* / *"similarly, use proton pin and color
-> wighting"*. **READ FIRST:**
-> [`docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md`](docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md)
-> — the ruling record, the measured blast radius, and the ordered tranche plan
-> (hygiene vs SCIENCE). It supersedes the `disputed` registration of the
-> `qbeta-decay` trace channel (PR #5111) and answers the trace-convention
-> registry's one `owner_decision_required`.
+> wighting"*. Record, measured blast radius, and ordered tranche plan:
+> [`docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md`](docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md).
+> It supersedes the `disputed` registration of the `qbeta-decay` trace channel
+> (PR #5111) and answers the trace-convention registry's one
+> `owner_decision_required`.
 >
-> **This section's tables and rules below are NOT yet updated to the ruling** —
-> the audit doc §6 lists exactly which lines must change, pending owner approval
-> of the wording. In particular the "~840 muon-q₀ witnesses" figure in rule 2 is
-> **measured at 870** (801 muon-only, 69 carrying both pins). Until those edits
-> land, follow the 2026-08-07 directive below, which the ruling reinforces
-> rather than reverses.
+> - **R1 — convention D (`z = q³/(q²+1)`) canonical; C (`z = √q/(q+1)`)
+>   excised.** **This is mostly a RE-AFFIRMATION.** The 2026-08-09 ruling had
+>   already excised C, and [`scripts/convention-c-producer-audit.py`](scripts/convention-c-producer-audit.py)
+>   reports **0 actionable C producers** — the only live C sites are 3 in
+>   `tools/pyhecke` that the registry blocks *by design* plus 9 deliberately
+>   C-named comparisons. **R1 does not open a fresh corpus-wide excision
+>   sweep; at producer level there is nothing left to excise.** What it
+>   settles is the two surviving carve-outs: the `qbeta-decay` channel and
+>   the registry's `owner_decision_required`. It removes the *convention*
+>   question from `tools/pyhecke/gram.py::z` but **not** the Gram
+>   singularity under D — that is a numerical blocker, bean `qou-cds2`.
+> - **R2 — proton pin canonical.** Reaffirms the 2026-08-07 directive
+>   immediately below; nothing in that directive changes. The *ideal CAL-2
+>   definition* (`𝔇_β`, proxy `m_μ/m_e`) is untouched — R2 governs which pin
+>   code **evaluates** at, not what the calibration **is**.
+> - **R3 — `bring_color_weighted` canonical** as the p/n convention. Six live
+>   non-comparison files are still off-canon (bean `qou-cds4`).
+>
+> **The Q_β `c_k` ladder is convention-C-frame throughout and has not been
+> re-derived** (bean `qou-cds1`) — see the convention note on the `c_k`
+> truncation-order banner earlier in this document before wiring or
+> un-wiring any `c_k`.
 
 > **🟧 OWNER DIRECTIVE (2026-08-07) — ALL AGENTS AND ALL PRODUCTION CODE
 > DEFAULT TO THE EXPERIMENTAL (PROTON) ANCHOR.** When any code, probe,
