@@ -1,11 +1,11 @@
 ---
 # qou-8x1l
 title: 'y_lambda symbolic witnesses are convention C (sqrt-q): blocks rho_k_h3a_refinement Schur-Weyl and 5 downstream'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T13:25:49Z
-updated_at: 2026-08-10T13:26:24Z
+updated_at: 2026-08-16T02:37:59Z
 ---
 
 
