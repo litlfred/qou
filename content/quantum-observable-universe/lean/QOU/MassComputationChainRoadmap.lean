@@ -4,6 +4,7 @@ import Mathlib.LinearAlgebra.Matrix.Defs
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Tactic
 import QOU.MathlibExt.QIntegerCanonical
+import QOU.TypedCrossingsEncoding
 
 /-!
 # Mass-computation chain stubs — m_n + higher atoms/isotopes
@@ -180,30 +181,13 @@ is forced. But the `c=1, d=-H_A/2` ud-average is a convention.
 
 -- Ref: [manuscript] prop:typed-crossings-quark-content
 -- Ref: [manuscript] §four-term-pair-nucleon
-/-- **Typed-crossings encoding (derived).**
-
-Work in a field `A` (the Hecke algebra image, where the `½` average
-makes sense), with `σ` the positive crossing and `H_A = q − q⁻¹`
-(here a scalar `h`).  The Skein form of the Hecke quadratic relation
-gives `σ⁻¹ = σ − H_A · 1` (hypothesis `hinv`).  Each typed crossing
-`c·σ + d·1` then has its `(c, d)` pair **forced**:
-
-* `uu = σ` → `(c, d) = (1, 0)`;
-* `dd = σ⁻¹ = σ − H_A·1` → `(c, d) = (1, −H_A)` (forced by `hinv`);
-* `ud = ½(σ + σ⁻¹) = σ − ½H_A·1` → `(c, d) = (1, −H_A/2)`.
-
-The `ud`-average identity is derived here by `ring` from `hinv`; this
-is the genuine computation underlying gap 3 (the `½` averaging is the
-sole convention, the rest is forced). -/
-theorem typed_crossings_encoding_unique
-    {A : Type*} [Field A] (h2 : (2 : A) ≠ 0) (σ σinv : A) (h : A)
-    (hinv : σinv = σ - h * 1) :
-    σinv = σ - h ∧ (1 / 2 : A) * (σ + σinv) = σ - (h / 2) := by
-  -- Ref: [manuscript] prop:typed-crossings-quark-content
-  refine ⟨by rw [hinv]; ring, ?_⟩
-  rw [hinv]
-  field_simp
-  ring
+--
+-- The theorem discharging this gap, `typed_crossings_encoding_unique`, is
+-- generic over `[Field A]` and so sits on the algebraic side of the §7c
+-- wall: it now lives in `QOU.TypedCrossingsEncoding` (same namespace,
+-- imported above). Moved out by bean `qou-q7cm` — it was the sole
+-- generic-ring declaration in this archimedean roadmap, and the reason
+-- `wall-side-correct` reported the file MIXED.
 
 /-! ## Gap 4: Φ_q tower convergence (extends existing sorry)
 

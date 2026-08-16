@@ -978,3 +978,19 @@ import QOU.MassTheory.GermConnectionGaugeCovariance
 -- here, so nothing built them. Both verify lean-direct exit 0.
 import QOU.MassTheory.GermRootVectorGaugeFixing
 import QOU.MassTheory.TransversePairingClusterDecomposition
+-- qou-oc4v (§7c split, PR #5113): the depth-stratified FR module was split into
+-- an algebraic half ({R : Type*} [Field R]) and an archimedean sibling holding
+-- the empirical decimal variance records. Registering the sibling puts BOTH
+-- under the build — it imports the algebraic module — so the split does not
+-- grow the qou-orph orphan set (lean-orphan-gate). Verifies lean-direct ok=1.
+import QOU.BraidKnot.DepthStratifiedFrobeniusReciprocityVariance
+-- qou-e4ri (§7c adjudication, PR #5113): ψ_q's ℝ is legitimately archimedean
+-- (its Λ_q summands are a Real.rpow weight; the cut-off `N m ≤ X` is an
+-- ordering), now recorded in a §7c banner. Was orphaned from this root, so
+-- nothing built it. Verifies lean-direct ok=1.
+import QOU.AlgebraicSubstrate.QChebyshevFunction
+-- qou-q7cm (§7c split): MassComputationChainRoadmap was never registered here,
+-- so nothing built it. Registering it also pulls in QOU.TypedCrossingsEncoding
+-- (the generic [Field A] theorem split out of it), since the roadmap imports
+-- that module. Both verify lean-direct ok=1.
+import QOU.MassComputationChainRoadmap

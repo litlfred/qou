@@ -1,12 +1,16 @@
 ---
 # qou-mtcx
 title: 'TASK: MarkovTraceContext generic base ring — 16 extenders'
-status: in-progress
+status: completed
 type: task
 priority: medium
-tags: [lean, wall-side, 7c, refactor]
+tags:
+    - lean
+    - wall-side
+    - 7c
+    - refactor
 created_at: 2026-08-08T13:00:00Z
-updated_at: 2026-08-08T18:00:00Z
+updated_at: 2026-08-15T14:43:47Z
 ---
 
 `lean/QOU/BraidsAndKnots/qmn_recursive_memoized.lean` is a genuine base-ring
@@ -135,3 +139,20 @@ hardcoded and unconditional:
 not a replacement for it, so overriding the variable cannot switch
 `autoImplicit` back on. No fix is required; a pointer comment was added to the
 shell script so the next reader does not re-derive the false alarm.
+
+
+## Verified complete + closed — stalled-claim takeover (2026-08-15)
+
+Taken over per the stalled-claim policy (AGENTS.md work-plan §2, added today): this bean sat `in-progress` for a week with no live branch, and a PR search for MarkovTraceContext / wedderburn_bratteli / wenzl_qmn_synergy / mtcx returned **0 open PRs**. No sibling was on it.
+
+**Finding: the §7c family is already complete; no code change is needed.** All 15 descendants of the (already-generic) parent are accounted for:
+
+- **4 already generic** (no change): explicit_alpha_k_h4, pentagon_uv_commutation, curvature_rank_gb_stratification, exterior_square_borromean.
+- **4 legitimately ℝ** (post-wall, recorded correct): deuteron_binding_energy, reeb_operations_per_planck, toffoli_transfer_matrix, strangelet_crossing_energy.
+- **7 "port to inherited R" — all done on main:**
+  - qmn_recursive_memoized, y_lambda_recipe_from_partition, confinement_categorical, antiparticle_crossing_reversal — no gratuitous ℝ remains (ℝ-hits=0).
+  - wedderburn_bratteli_recursion — y_lambda over inherited R; remaining ℝ (ratio / q_content_sign / z_real / diagonal_ratio_n + the ε-N limit) is legitimately archimedean with a §7c banner; z_real is USED (claim_iii), not dead. COMPILE: lean-direct-cone → ok=5.
+  - wenzl_qmn_synergy — z : R on inherited ring; the *_speedup : ℝ are measured wall-clock ratios with ≤-comparisons (archimedean, banner'd). COMPILE: ok.
+  - mobius_energy — q on inherited R via `haveI := ringR` (q_real shadow removed); energies legit-ℝ (classical functional). COMPILE: ok.
+
+The raw ℝ-hits (4/5/4) were the §7c false-positive trap (already-ported vs legit-archimedean). Content- + compile-verified, no mass-fix, per §7c discipline. Closing completed.
