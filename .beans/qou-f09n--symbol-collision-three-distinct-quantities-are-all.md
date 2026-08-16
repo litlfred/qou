@@ -1,10 +1,11 @@
 ---
 # qou-f09n
 title: 'SYMBOL COLLISION: three distinct quantities are all called c_2, and AGENTS.md calls the wrong one Taylor-exact'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-16T11:48:34Z
-updated_at: 2026-08-16T11:48:34Z
+updated_at: 2026-08-16T23:20:34Z
 ---
 
 
@@ -185,3 +186,50 @@ Sources: Ohtsuki, asymptotic expansions of the Kashaev invariant (RIMS);
 Garoufalidis-Le, Gevrey series in quantum topology; Habiro, unified quantum
 SO(3) invariant; Garoufalidis-Scholze-Wheeler-Zagier, The Habiro ring of a
 number field.
+
+
+## T2 landed (2026-08-16, PR #5258) — naming registered, backed by a theorem
+
+Item 1 (do not change any number): honoured — no number changed.
+
+Item 2 (register the three meanings): DONE, with SHORT names per the owner
+ruling rather than my proposed superscripts:
+
+  c_2        = -1        explicit-factor coefficient   (hardcoded)
+  c-tilde_2  = -9/8      normalised-series coefficient (measured)
+  c_2^even   ~ -8.00641  bar-even part, exact in Q(sqrt 3)
+
+Landed in ck-dk-canonical-registry §2 (rows), §9i (new subsection), and
+notation-collisions.md (the symbol-lookup point).
+
+**And the relation is now PROVED rather than measured** —
+QOU/QBeta/LadderCoeffNormalisation.lean, sorry-free, #print axioms clean:
+
+  normalisedQuadCoeff_eq         c-tilde_2 = c_2 - 1/8, for every A with cos A != 0
+  normalisedQuadCoeff_at_neg_one c_2 = -1  =>  c-tilde_2 = -9/8
+
+The -1/8 comes from the HALF-argument in cos(A - x/2): second derivative at 0
+is -cos A / 4, quadratic Taylor coefficient -cos A / 8.  The A-dependence
+CANCELS in the normalisation, which is the part worth a theorem -- the offset
+is a clean rational, not an anchor-dependent quantity.  That is what makes the
+two names legitimate rather than a papered-over discrepancy.
+
+Item 4 (withdraw the 'contradiction' framing): done here, on #5210, and now in
+the registry §9i itself.
+
+## Item 3 (AGENTS.md line 1062) — STILL OPEN, owner sign-off
+
+Not applied.  It is a STRICT banner in a contested channel.
+
+Partial, defensible action taken instead: notation-collisions.md carried the
+same 'proved Taylor-exact' phrase on the SYMBOL line, and that adjective is
+removed there as a symbol-level claim, with an explicit note saying so.  No
+tier changed anywhere -- the registry's c_2 row keeps its tier and its §9g
+convention scoping untouched.  AGENTS.md is unmodified and awaits the owner.
+
+## One correction to my own draft
+
+I first justified the tilde as 'following the register's existing w_lambda /
+w-tilde_lambda convention'.  That precedent is NOT available: the same register
+retired the w-tilde pairing on the same day (owner ruling, further down the
+same file).  The tilde device is fine; the citation was wrong and now says so.
