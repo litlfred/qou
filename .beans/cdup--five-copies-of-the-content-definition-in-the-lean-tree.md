@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: low
 created_at: 2026-08-16T11:00:00Z
-updated_at: 2026-08-16T13:12:12Z
+updated_at: 2026-08-16T13:37:08Z
 ---
 
 Found while adding a sixth — caught in review of my own PR (#5205, bean `wpdb`).
@@ -160,3 +160,62 @@ in six library modules along the twelve bridges now available (mechanical, but
 touches proofs, so one module per commit), and separately decide whether the
 two content-block siblings should become library modules at all — the second of
 which cannot coexist with `QOU.BraidKnot` as currently named regardless.
+
+
+---
+
+## 2026-08-16 (drain, part 3) — measured the call-site rewrite, and it should NOT be done
+
+I said last pass the remaining drain was "mechanical, one module per commit".
+**Measured, it is not, and it is not worth doing.** Recording the numbers so
+this is a decision on evidence rather than a task someone picks up later
+assuming it is tidy-up.
+
+### The measurement
+
+| host | uses of its own copy |
+|---|---|
+| `JucysMurphy.cellContent` | **39** |
+| `IdentityAArmLeg.content` | 16 |
+| `TableauContent.content` | 12 |
+| `WenzlSchurElement.cellContent` | 6 |
+| `PieceA.contentZ` | 6 |
+| `QPartitionCombinatorics.cellContent` | 3 |
+
+Plus **cross-module consumers**: `HookProductHLF.lean` uses
+`PieceA.armZ` / `legZ` (including `simp only [PieceA.armZ]`, and the
+`armZ_eq_card` / `legZ_eq_card` lemmas), and `SeminormalBaseExists.lean` uses
+`JucysMurphy.cellContent` — including `rw [QOU.BraidKnot.JucysMurphy.cellContent, …]`.
+
+**There is no free deletion.** Not one of the eight copies is unused; the
+smallest has three uses. The total rewrite is 80+ occurrences across eight
+files, and several are `rw` / `simp only` **definitional unfolds inside live
+sorry-free proofs** — precisely where substituting a differently-named but
+defeq constant changes proof behaviour silently.
+
+### Why stop
+
+The value this bean was opened for is *"the copies cannot share lemmas"*. That
+value is **already delivered** by the 13 bridges, at zero risk to any existing
+proof. What remains is deleting definitions — which buys nothing mathematical,
+costs 80+ rewrites through live proof code, and carries real regression risk on
+a sorry-free base. That is churn, not cleanup.
+
+**Recommendation: close the drain half.** Keep the bridges; leave the copies in
+place; require *new* code to use `QOU.MathlibExt.YoungDiagramCells`. If a future
+change already has to touch one of these files for its own reasons, migrate that
+file then — the bridges make it a rewrite rather than a re-proof.
+
+### The one thing that WAS worth fixing, and is fixed
+
+The genuine hazard was never the duplication — it was the **same-name /
+incompatible-signature clash** on `QOU.BraidKnot.cellContent`, which I created
+in `84a9aefdc`. **Verified resolved:** that name is now declared exactly once
+in the tree (the standalone sibling `jucys-murphy-central-elements-qou.lean`);
+the library-side copy went when `TwoFiltrationBridge` migrated onto
+`YoungDiagramCells`. The other two `cellContent`s sit in
+`QOU.BraidKnot.JucysMurphy` and `QOU.BraidsAndKnots` — different namespaces, no
+clash.
+
+So: hazard fixed, lemma-sharing delivered, cosmetic dedup declined with the
+numbers on the table.
