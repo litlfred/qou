@@ -1,6 +1,7 @@
 import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.NormNum
+import QOU.MathlibExt.YoungDiagramCells
 
 /-!
 # QOU.BraidKnot.TwoFiltrationBridge — conjectural class (§3b)
@@ -22,7 +23,7 @@ genuine conjugate involution `YoungDiagram.transpose` (self-conjugacy =
 definition** `gbDepth` = max hook length over cells (built here from the
 real `rowLen`/`colLen`/`cells` API) — no longer an abstract `dGB` class
 field. Only the QOU-specific iterated-integral depth-lift `dII` and the
-chiral-pair predicate remain abstract (the open conjectural cellContent). The
+chiral-pair predicate remain abstract (the open conjectural content). The
 faithful conditional form is
 `QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral`.
 -/
@@ -215,67 +216,29 @@ partition-depth bridge (bean `wpdb`) — it relocates the partition side onto th
 axis the algebra side is indexed by, which is what a proof would have to match.
 -/
 
-/-- The content (diagonal index) of a cell.
+/-! The content, its extremes, and the corner-positivity lemmas were originally
+defined **locally here** — a sixth copy of a one-line definition already present
+five times in the tree. Worse, the spelling chosen to dodge a shadowing problem
+(`cellContent`, so as not to occupy the bare `QOU.BraidKnot.content` slot that
+`open QOU.BraidKnot` would shadow) collided head-on with
+`QOU.BraidKnot.cellContent` in the standalone sibling
+`mass-theory/jucys-murphy-central-elements-qou.lean`: the *same* fully-qualified
+name at an incompatible signature. Shadowing is a readability hazard; a
+duplicate declaration is a hard error the moment anything imports both. The
+rename traded down.
 
-**This is the fifth copy of this one-line definition in the Lean tree**, and I
-added it. The others are `QOU.SchurWeyl.cellContent` (`HoefsmitRep`),
-`QOU.BraidKnot.IdentityAArmLeg.content`, `QOU.BraidKnot.JucysMurphy.cellContent`
-and `QOU.BraidKnot.PieceA.contentZ` — all `(c.2 : ℤ) - (c.1 : ℤ)`, verbatim.
-There is no name clash (each sits in its own sub-namespace) so nothing breaks,
-but consolidating them onto one definition is bean `qou-cdup`. Kept local here
-rather than importing, to avoid pulling a large cone into this file for a
-one-line definition; the duplication is recorded rather than hidden.
+Both are now gone: this file imports
+[`QOU.MathlibExt.YoungDiagramCells`](../MathlibExt/YoungDiagramCells.lean) and
+uses its `content` / `sup_content` / `inf_content` / `rowLen0_pos` /
+`colLen0_pos`. That module is the single home for the nine copies (bean
+`qou-cdup`); this is the first migration onto it. -/
 
-Named `cellContent` to match the corpus's commonest spelling, and so this does
-not occupy the bare `QOU.BraidKnot.content` slot that `open QOU.BraidKnot`
-would otherwise shadow. -/
-def cellContent (c : ℕ × ℕ) : ℤ := (c.2 : ℤ) - (c.1 : ℤ)
-
-theorem rowLen0_pos (μ : YoungDiagram) (h : μ.cells.Nonempty) : 0 < μ.rowLen 0 := by
-  obtain ⟨c, hc⟩ := h
-  exact (mem_iff_lt_rowLen).mp (μ.up_left_mem (Nat.zero_le _) (Nat.zero_le _) hc)
-
-theorem colLen0_pos (μ : YoungDiagram) (h : μ.cells.Nonempty) : 0 < μ.colLen 0 := by
-  obtain ⟨c, hc⟩ := h
-  exact (mem_iff_lt_colLen).mp (μ.up_left_mem (Nat.zero_le _) (Nat.zero_le _) hc)
-
-/-- The largest content is the corner's arm, attained on the first row. -/
-theorem sup_content (μ : YoungDiagram) (h : μ.cells.Nonempty) :
-    μ.cells.sup' h cellContent = (μ.rowLen 0 : ℤ) - 1 := by
-  apply le_antisymm
-  · refine Finset.sup'_le h _ fun c hc => ?_
-    have hj : c.2 < μ.rowLen c.1 := (mem_iff_lt_rowLen).mp hc
-    have hj0 : μ.rowLen c.1 ≤ μ.rowLen 0 := rowLen_anti μ 0 c.1 (Nat.zero_le _)
-    unfold cellContent; omega
-  · have hr := rowLen0_pos μ h
-    have hmem : ((0 : ℕ), μ.rowLen 0 - 1) ∈ μ.cells := (mem_iff_lt_rowLen).mpr (by omega)
-    have hle := Finset.le_sup' (f := cellContent) hmem
-    have hcast : cellContent ((0 : ℕ), μ.rowLen 0 - 1) = (μ.rowLen 0 : ℤ) - 1 := by
-      show ((μ.rowLen 0 - 1 : ℕ) : ℤ) - ((0 : ℕ) : ℤ) = (μ.rowLen 0 : ℤ) - 1
-      omega
-    rw [hcast] at hle
-    exact hle
-
-/-- The smallest content is minus the corner's leg, attained on the first column. -/
-theorem inf_content (μ : YoungDiagram) (h : μ.cells.Nonempty) :
-    μ.cells.inf' h cellContent = -((μ.colLen 0 : ℤ) - 1) := by
-  apply le_antisymm
-  · have hc0 := colLen0_pos μ h
-    have hmem : (μ.colLen 0 - 1, (0 : ℕ)) ∈ μ.cells := (mem_iff_lt_colLen).mpr (by omega)
-    have hle := Finset.inf'_le (f := cellContent) hmem
-    have hcast : cellContent (μ.colLen 0 - 1, (0 : ℕ)) = -((μ.colLen 0 : ℤ) - 1) := by
-      show ((0 : ℕ) : ℤ) - ((μ.colLen 0 - 1 : ℕ) : ℤ) = -((μ.colLen 0 : ℤ) - 1)
-      omega
-    rw [hcast] at hle
-    exact hle
-  · refine Finset.le_inf' h _ fun c hc => ?_
-    have hi : c.1 < μ.colLen c.2 := (mem_iff_lt_colLen).mp hc
-    have hi0 : μ.colLen c.2 ≤ μ.colLen 0 := colLen_anti μ 0 c.2 (Nat.zero_le _)
-    unfold cellContent; omega
+open QOU.MathlibExt.YoungDiagramCells (content sup_content inf_content
+  rowLen0_pos colLen0_pos)
 
 /-- **The GB-depth counts the diagonals `λ` meets.**
 
-`gbDepth μ = (max content − min cellContent) + 1`. Since the contents of a Young
+`gbDepth μ = (max content − min content) + 1`. Since the contents of a Young
 diagram fill the whole range between their extremes — the first row supplies
 `0 … λ₁-1` and the first column `-(λ'₁-1) … 0` — this is exactly the number of
 distinct contents.
@@ -283,11 +246,107 @@ distinct contents.
 This is the same number as the corner hook, said in the algebra's coordinates
 rather than the diagram's. -/
 theorem gbDepth_eq_content_spread (μ : YoungDiagram) (h : μ.cells.Nonempty) :
-    (gbDepth μ : ℤ) = μ.cells.sup' h cellContent - μ.cells.inf' h cellContent + 1 := by
-  rw [sup_content μ h, inf_content μ h, gbDepth_eq_corner μ h]
-  have hr := rowLen0_pos μ h
-  have hc := colLen0_pos μ h
+    (gbDepth μ : ℤ) = μ.cells.sup' h content - μ.cells.inf' h content + 1 := by
+  rw [sup_content h, inf_content h, gbDepth_eq_corner μ h]
+  have hr := rowLen0_pos h
+  have hc := colLen0_pos h
   omega
+
+/-- The contents of `λ` are exactly the integers `j - (λ'₁ - 1)` for
+`0 ≤ j < gbDepth λ` — an unbroken interval, no gaps.
+
+Both inclusions are cheap and neither is vacuous. Forward: every cell's content
+lies between `-(λ'₁-1)` and `λ₁-1` because its row and column lengths are
+dominated by the corner's. Backward: a non-negative target is hit by a cell of
+the *first row* and a negative one by a cell of the *first column*, and the
+bound `j < λ₁+λ'₁-1` is exactly what puts the witness inside the diagram. -/
+theorem content_image_eq_range (μ : YoungDiagram) (h : μ.cells.Nonempty) :
+    μ.cells.image content
+      = (Finset.range (gbDepth μ)).image (fun j : ℕ => (j : ℤ) - ((μ.colLen 0 : ℤ) - 1)) := by
+  have hr := rowLen0_pos (μ := μ) h
+  have hc := colLen0_pos (μ := μ) h
+  have hgb : gbDepth μ = μ.rowLen 0 + μ.colLen 0 - 1 := gbDepth_eq_corner μ h
+  ext x
+  simp only [Finset.mem_image, Finset.mem_range]
+  constructor
+  · rintro ⟨c, hcm, rfl⟩
+    have hj : c.2 < μ.rowLen 0 :=
+      lt_of_lt_of_le ((YoungDiagram.mem_iff_lt_rowLen).mp hcm)
+        (YoungDiagram.rowLen_anti μ 0 c.1 (Nat.zero_le _))
+    have hi : c.1 < μ.colLen 0 :=
+      lt_of_lt_of_le ((YoungDiagram.mem_iff_lt_colLen).mp hcm)
+        (YoungDiagram.colLen_anti μ 0 c.2 (Nat.zero_le _))
+    refine ⟨c.2 + μ.colLen 0 - 1 - c.1, by omega, ?_⟩
+    unfold content; omega
+  · rintro ⟨j, hj, rfl⟩
+    rcases le_or_gt (μ.colLen 0 - 1) j with hcase | hcase
+    · -- non-negative content: witness on the first row
+      refine ⟨((0 : ℕ), j - (μ.colLen 0 - 1)), (YoungDiagram.mem_iff_lt_rowLen).mpr (by omega), ?_⟩
+      unfold content; omega
+    · -- negative content: witness on the first column
+      refine ⟨((μ.colLen 0 - 1) - j, (0 : ℕ)), (YoungDiagram.mem_iff_lt_colLen).mpr (by omega), ?_⟩
+      unfold content; omega
+
+/-- **The GB-depth counts the *distinct contents* `λ` carries.**
+
+Stated on the image rather than on the extremes, because that is the form the
+algebra side has to match: the JM eigenvalues are a *set*, one per content, and
+what a bridge would have to reproduce is its cardinality. See
+`card_eigen_image` below. -/
+theorem card_content_image (μ : YoungDiagram) (h : μ.cells.Nonempty) :
+    (μ.cells.image content).card = gbDepth μ := by
+  rw [content_image_eq_range μ h,
+    Finset.card_image_of_injective _ (fun a b hab => by omega), Finset.card_range]
+
+/-! ### The algebraic restatement, conditional on the seminormal eigenvalue GAP -/
+
+/-- **The seminormal eigenvalue theorem, carried as a §3b-cond hypothesis.**
+
+The content is: the Jucys–Murphy element `L_k` acts on the seminormal basis of
+the `λ`-block by a scalar depending only on the content of the cell added at
+step `k` — `q^{2c}` in the QOU convention — and that assignment is injective at
+generic `q`. This is **not proved in the corpus**: `QJucysMurphy.lean` records it
+as an open GAP (Ref: [ram1997] Thm 4.1, [murphy1992], [hoefsmit1974]).
+
+Per §3b-cond the class carries the *hypotheses*, never the conclusion. The two
+fields are the eigenvalue assignment and its injectivity; `card_eigen_image`
+below **derives** the count from them rather than asserting it. Discharging this
+class is option A of bean `wpdb` and would make the results downstream of it
+unconditional; it is deliberately left without an instance, which is the honest
+representation of an open statement. -/
+class SeminormalEigenvalue (K : Type*) where
+  /-- The eigenvalue `L_k` acts by, as a function of the added cell's content. -/
+  eigenOfContent : ℤ → K
+  /-- At generic `q` the assignment `c ↦ q^{2c}` separates contents. -/
+  eigenOfContent_injective : Function.Injective eigenOfContent
+
+variable {K : Type*} [SeminormalEigenvalue K] [DecidableEq K]
+
+/-- The Jucys–Murphy eigenvalue attached to a cell. -/
+def eigen (c : ℕ × ℕ) : K := SeminormalEigenvalue.eigenOfContent (content c)
+
+/-- The `λ`-block carries as many distinct JM eigenvalues as `λ` has contents.
+
+Pure consequence of injectivity — the eigenvalue map does not collapse any two
+diagonals — so nothing about `H_n(q)` is smuggled in beyond the class fields. -/
+theorem card_eigen_image (μ : YoungDiagram) :
+    (μ.cells.image (eigen (K := K))).card = (μ.cells.image content).card := by
+  have himg : μ.cells.image (eigen (K := K))
+      = (μ.cells.image content).image SeminormalEigenvalue.eigenOfContent := by
+    rw [Finset.image_image]; rfl
+  rw [himg,
+    Finset.card_image_of_injective _ SeminormalEigenvalue.eigenOfContent_injective]
+
+/-- **`gbDepth λ` is the number of distinct JM eigenvalues on the `λ`-block** —
+conditional on `SeminormalEigenvalue`.
+
+This is the partition side of bean `wpdb` said entirely inside the algebra: no
+diagram, no hook, no cell. It is *not* the bridge — the word side is still
+unrelated to it — but it is the shape the word side would have to match, and it
+localises the whole remaining partition-side debt in one named open class. -/
+theorem gbDepth_eq_card_eigen (μ : YoungDiagram) (h : μ.cells.Nonempty) :
+    (μ.cells.image (eigen (K := K))).card = gbDepth μ := by
+  rw [card_eigen_image, card_content_image μ h]
 
 /-! ### Where this stops, and why
 
@@ -305,7 +364,7 @@ that is the shape the word side would have to match.
 seminormal eigenvalue statement is itself an open GAP in the corpus:
 `QJucysMurphy.lean` records *"Seminormal eigenvalue — GAP: `L_k` acts with
 eigenvalue `q^{2c(k)}` on the seminormal basis"* (Ref: [ram1997] Thm 4.1,
-[murphy1983], [hoefsmit1974]), and the block-eigenvalue statement is a further
+[murphy1992], [hoefsmit1974]), and the block-eigenvalue statement is a further
 GAP downstream of it.
 
 So the bridge bottoms out in an already-known gap rather than in a new one.
