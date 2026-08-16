@@ -1,0 +1,80 @@
+{
+  "computation": "qbeta-d-frame-eigenphase-bar-parity",
+  "description": "The Q_beta ladder eigenphase alpha = (z-1)h/2 is bar-odd exactly when z is bar-even. Under convention C it is; under convention D (full-bar, bar(z) = z - h) it is not, with an exact z-independent defect bar(alpha)+alpha = h^2/2. So eigenphase_bar_involution \u2014 which every bar-parity fact in the c_k record sits downstream of \u2014 is a convention-C statement. The forced bar-odd projection alpha - h^2/4 improves the D-frame extraction substantially but does NOT restore the C-frame numbers: necessary, not sufficient.",
+  "audit_only": true,
+  "tier": "symbolic-exact (structural claim) + numeric (measured consequence)",
+  "scope": "scope-(a). Nothing wired; no c_k value or tier changes. This does NOT license searching for further corrections until one lands near the proved c_2 = -1 \u2014 that would be a fit.",
+  "computedAt": "2026-08-16T13:08:01.562827+00:00",
+  "commitSha": "4ccb9606a77eda1831cec6719c8c7a9bd716859e",
+  "engine": "sympy+mpmath",
+  "engineVersion": "sympy 1.14.0, mpmath 1.3.0",
+  "scriptFile": "qbeta_d_frame_eigenphase_bar_parity_probe.py",
+  "scriptHash": "0f33a05de657",
+  "assertions": [
+    {
+      "name": "1_C_eigenphase_is_bar_odd",
+      "passed": true,
+      "detail": "bar(alpha)+alpha = 0 under convention C (z_C bar-even) \u2014 eigenphase_bar_involution holds"
+    },
+    {
+      "name": "2_D_eigenphase_defect_is_exactly_h_squared_over_2",
+      "passed": true,
+      "detail": "bar(alpha)+alpha = (q - 1)**2*(q + 1)**2/(2*q**2) under convention D \u2014 not bar-odd"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "symbolic": {
+      "bar_h_plus_h": "0",
+      "bar_zC_minus_zC": "0",
+      "bar_zD_minus_fullbar": "0",
+      "bar_alpha_plus_alpha_C": "0",
+      "bar_alpha_plus_alpha_D": "(q - 1)**2*(q + 1)**2/(2*q**2)",
+      "h_squared_over_2": "(q - 1)**2*(q + 1)**2/(2*q**2)"
+    },
+    "measured_ladder": {
+      "proton": {
+        "C_alpha_C": {
+          "c2_implied": "-1.01762379751",
+          "c3": "-2.06934257712",
+          "rung_gain": "57.7372711522"
+        },
+        "D_z_swap": {
+          "c2_implied": "-9.29886287065",
+          "c3": "-974.431887747",
+          "rung_gain": "1.12041715179"
+        },
+        "D_bar_odd_projection": {
+          "c2_implied": "-1.73311882542",
+          "c3": "-86.0809935206",
+          "rung_gain": "2.36386386381"
+        }
+      },
+      "muon": {
+        "C_alpha_C": {
+          "c2_implied": "-1.01720527464",
+          "c3": "-2.02020023502",
+          "rung_gain": "59.1174221054"
+        },
+        "D_z_swap": {
+          "c2_implied": "-9.29844390222",
+          "c3": "-974.382488778",
+          "rung_gain": "1.12042323499"
+        },
+        "D_bar_odd_projection": {
+          "c2_implied": "-1.73270034478",
+          "c3": "-86.0318384857",
+          "rung_gain": "2.36464287385"
+        }
+      }
+    },
+    "derived_correction": "alpha_odd = alpha - h^2/4 (bar-odd projection; no free parameter)",
+    "verdict": "The C->D move cannot be a z-substitution: swapping z into the C-frame alpha keeps the formula while breaking the bar parity its downstream consumers assume. The bar-odd projection is the forced correction and is insufficient alone; the two-row (Wenzl level r=2) cap is not folded in here and is the remaining piece of qou-cds1."
+  },
+  "context": {
+    "lean": "QOU.QBeta.eigenphase_barOdd_of_barEven, QOU.QBeta.eigenphase_bar_defect_of_fullBar (MarkovZFullBarCondition.lean, sorry-free)",
+    "bean": "qou-cds1",
+    "open_input_now_available": "WenzlWeightVanishing.lean (2026-08-16) \u2014 z_D is Wenzl level r=2, >=3-row blocks annihilated for all n",
+    "flip_flop_guard": "registry section 8 \u2014 no c_k wired"
+  }
+}
