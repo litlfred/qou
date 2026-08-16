@@ -1023,3 +1023,8 @@ import QOU.AlgebraicSubstrate.QChebyshevFunction
 -- (the generic [Field A] theorem split out of it), since the roadmap imports
 -- that module. Both verify lean-direct ok=1.
 import QOU.MassComputationChainRoadmap
+-- qou-br3w — staged for upstream Mathlib: the index of a multivariate polynomial at a
+-- point, the first missing Thue-Siegel-Roth prerequisite.  Depends on nothing from QOU
+-- (Mathlib imports only), so it lifts out verbatim when a Mathlib PR is possible; it is
+-- registered here so the orphan gate covers it in the meantime.
+import QOU.Mathlib.RothIndex

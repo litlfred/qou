@@ -127,3 +127,89 @@ positive on this one name** — grep for `Thue` or `Siegel–Roth`, never bare `
 Nothing here reduces the work; it removes the hope that the work might already be done.
 The next real move is the one the bean scopes — auxiliary polynomial, Wronskian/index
 argument, Roth's lemma — none of which Mathlib has.
+
+---
+**2026-08-16 — started. First prerequisite built; and this bean's own inventory was WRONG.**
+
+### ⚠ Correcting this bean: Mathlib already has Siegel's lemma
+
+The scoping section above says Roth's proof *"needs an auxiliary polynomial in many
+variables, a Wronskian/index argument, and Roth's lemma on the index of a polynomial at a
+rational point — **none of which Mathlib has**."*
+
+**Siegel's lemma is in Mathlib**, in exactly the form the auxiliary-polynomial construction
+needs:
+
+```
+Mathlib/NumberTheory/SiegelsLemma.lean
+  exists_ne_zero_int_vec_norm_le :
+    non-zero m × n integer matrix A with m < n ⟹ a non-zero integer solution t
+    with ‖t‖ ≤ (n * ‖A‖) ^ (m / (n - m))
+```
+
+Authors Barroero, Capuano, Turchet — Diophantine-geometry people — with a docstring saying
+it is *"a fundamental tool in diophantine approximation and transcendence"*. It was
+contributed **toward** results of this kind. Measured inventory:
+
+| prerequisite | status |
+|---|---|
+| Siegel's lemma | **present** |
+| house of an algebraic number (`NumberField.house`) | **present** |
+| Mahler measure | **present** |
+| Hasse derivative, `MvPolynomial.pderiv` | **present** |
+| Wronskian | present, **two polynomials only** |
+| index of a polynomial at a point | **absent → built, this entry** |
+| generalized Wronskians | absent |
+| Roth's lemma, Roth's theorem | absent |
+
+The estimate stands as a large project, but "none of which Mathlib has" was wrong and
+would have led someone to rebuild Siegel's lemma.
+
+### Built: `QOU/Mathlib/RothIndex.lean`
+
+14 declarations, sorry-free, all standard axioms. Written in **Mathlib style with Mathlib
+imports only** — no QOU dependency — so it lifts out verbatim.
+
+`index d α P : WithTop ℚ`, the least weight `∑ⱼ iⱼ/dⱼ` over multi-indices occurring in
+`P(x + α)`, with `index 0 = ⊤`.
+
+**Two design choices worth keeping.**
+
+*Translate rather than differentiate.* The textbook index minimises over `i` with
+`∂ⁱP(α) ≠ 0`. Formalised directly that drags in iterated partials and, outside
+characteristic zero, the factorials that make `∂ⁱ` the wrong object. Translating instead,
+the same data is the **support** of `P(x + α)` — a `Finset` — with no derivative and no
+characteristic hypothesis.
+
+*`WithTop ℚ`, not `ℚ` with a junk value.* `index 0 = ⊤` is the honest value (the zero
+polynomial vanishes to infinite order) and `Finset.inf` over the empty support returns it
+unaided, so no `P ≠ 0` hypothesis threads through the API. A junk `0` would make the
+product law `index P + index Q ≤ index (P*Q)` **false**.
+
+Proved: `index_zero`, `index_nonneg`, `index_eq_top_iff`, `le_index_iff` (the workhorse —
+lower bounds are checked on the support), `index_add_ge`, plus `translate_{zero,add,mul}`.
+
+### ⚠ A validation the lemmas do not give
+
+`index_nonneg` and `index_add_ge` both hold of a definition returning `0` everywhere, and
+`index_eq_top_iff` of one returning `⊤` off zero. **None of the lemmas pins the value**, so
+a wrong definition satisfies the whole API. `index_X_sq` pins it: `X²` at the origin with
+unit weights has index exactly `2`, the order of vanishing.
+
+This is the same discipline as the five vacuity checks in `qou-bday`, applied to a
+*definition* rather than a theorem — and it is the more dangerous case, because a wrong
+definition makes every downstream proof meaningless while all of them still typecheck.
+
+### ⚠ Cannot open the Mathlib PR from here
+
+GitHub access is scoped to `litlfred/qou`; there is no route to
+`leanprover-community/mathlib4`. The file is staged in this repo and registered in
+`QOU.lean` so the orphan gate covers it meanwhile. **Upstreaming needs someone with a
+Mathlib fork** — the file is import-clean for that.
+
+### Next, in order
+
+1. `index_mul_ge` — the one load-bearing algebraic property, and the reason for `WithTop`.
+2. Generalized Wronskians (`m × m` determinants of differential operators).
+3. Roth's lemma — the induction on variable count. The hard core.
+4. Roth's theorem, via the auxiliary-polynomial contradiction over Mathlib's Siegel lemma.
