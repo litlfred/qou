@@ -453,6 +453,9 @@ import QOU.BraidKnot.SpechtActionInjective
 -- W1+W3 brick 5: the whole split follows from one number, and that number is the
 -- combinatorial RSK identity sum_mu (#SYT mu)^2 = n!.
 import QOU.BraidKnot.SpechtWedderburnCriterion
+-- W1+W3 brick 6: the split UNCONDITIONALLY for n <= 12, via the corpus's own
+-- decide-verified RSK/Burnside count. No RSK correspondence, no axiom.
+import QOU.BraidKnot.SpechtWedderburnLe12
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
