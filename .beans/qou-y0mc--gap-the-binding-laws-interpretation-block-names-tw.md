@@ -1,11 +1,11 @@
 ---
 # qou-y0mc
 title: 'GAP: the binding law''s interpretation block names two inequivalent objects (trace-ratio free energy vs channel-measure entropy)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T16:27:01Z
-updated_at: 2026-08-16T16:27:59Z
+updated_at: 2026-08-16T20:42:16Z
 ---
 
 Opened from the L2 binding axis after six repair routes and the alpha direction
@@ -52,3 +52,49 @@ Secondary, cheap: reconcile or scope the block's own two sentences regardless of
 which wins — as written it is self-inconsistent for any 2-channel split.
 
 Probe: computations/probes/binding_law_surprisal_vs_entropy_ambiguity_probe.py
+
+
+## 2026-08-16 — RESOLVED by extensivity. H is excluded; S is confirmed.
+
+Resolved the way the bean demanded — a structural invariant, not a better fit.
+
+**Locating the question in the derivation chain is what settled it.** S-vs-H is
+the definition of the STEP-7 archimedean functor (trace -> MeV). Put H there and
+it becomes a single entropy of the block measure for the WHOLE nucleus, hence
+capped by log(#accessible blocks). Convention D is Wenzl level 2
+(traceSum_eq_twoRow_of_wenzl), so the blocks for n=3A are the <=2-row partitions
+of 3A: exactly floor(3A/2)+1.
+
+    iso    blocks   a*log(blocks)   B_AME     short by
+    2H          4           5.80     2.22     viable
+    4He         7           8.15    28.30      3.5x
+    12C        19          12.33    92.16      7.5x
+    56Fe       85          18.60   492.26       26x
+    208Pb     313          24.05  1636.44       68x
+
+S sums over the chain's A-1 bonds -> EXTENSIVE. H <= alpha*log(#blocks) ->
+grows like log A. Binding energy is extensive; log A is not.
+
+**This goes AGAINST the better fit** — H looked 1.09x on the two-nucleon total
+where S looked 3.27x, and H is the excluded one. That is the opposite of the
+laundering this bean guarded against. The 2H row is the tell: H is viable only
+where the block count is comparable to the nucleon count, i.e. the single case
+that motivated it.
+
+**Consequences:**
+1. S confirmed as the step-7 functional -> the two-nucleon floor stands as
+   proved and the 3.27x over-binding is REAL, not a functional-form artifact.
+2. R := B_AME/A - B_chain/A is now WELL-DEFINED. R was DOWNSTREAM of this bean,
+   not independent of it — its definition was in doubt while y0mc was open.
+   This is why attacking R with an ansatz would have been fitting a residual
+   whose definition was unsettled.
+3. Residual doc task: the interpretation block is still self-inconsistent as
+   written and should be scoped to say the channel-measure sentence is an
+   analogy, not the functional. Cheap; not done here.
+
+Scope-(b), invariant named: extensivity vs a logarithmic cap on any entropy over
+floor(3A/2)+1 atoms. Not excluded: a functional that is neither S nor H, an
+A-dependent mixture, or a channel measure over something other than Wedderburn
+blocks.
+
+Probe: computations/probes/binding_functional_extensivity_prune_probe.py
