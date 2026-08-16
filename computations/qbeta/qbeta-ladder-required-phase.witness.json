@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-16T10:56:00.483925+00:00",
-  "commitSha": "1fb7a6ae6ccfa4a6dcb501b6da8e8e022a78e1fc",
+  "computedAt": "2026-08-16T12:24:20.224783+00:00",
+  "commitSha": "dc72de26dd4f66d2fcfc7ec263da3bf5c6c3a6c5",
   "assertions": [
     {
       "name": "c3_ratio_equals_cosine_residual_ratio",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "qbeta-ladder-required-phase",
   "scriptFile": "qbeta_ladder_required_phase_probe.py",
   "scriptHash": "fd7462029b7d",
-  "scriptCommitSha": "a2707d3c3db4434d8b3c3576fb3668dbdab471ca",
+  "scriptCommitSha": "0b6a90c5dd3ad36269665ac468ca24baef71ed49",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
