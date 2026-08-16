@@ -393,7 +393,7 @@ def main() -> None:
     print(f"[m_tau_complex_volume] hbar_q = {fmt(HBAR_Q, 30)}")
 
     # muon sanity: Vol(4_1)/hbar_q^2 = m_mu/m_e, AND CS(4_1)=0 (amphichiral).
-    # Use the canonical high-precision Vol(4_1) = 2*Im(Li_2(e^{i pi/3})) = 2*Lambda(pi/3)
+    # Use the canonical high-precision Vol(4_1) = 2*Im(Li_2(e^{i pi/3})) = 2*Cl_2(pi/3)
     # (Bloch-Wigner form), NOT SnapPy's platform-dependent float, and keep the gate
     # at 1e-6 to match the real-volume probe.
     vol41 = 2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3)))

@@ -69,6 +69,8 @@
 
   Archimedean (ℝ): trigonometry and ordering throughout — §7c.
 
+  -- Ref: [rivin1994] https://doi.org/10.2307/2118572 (concavity of hyperbolic
+  --      volume on the angle-structure polytope — the qou-krvm (iv) source)
   -- Ref: [manuscript] beans qou-idvt (T3), qou-krvm (iv)
 -/
 

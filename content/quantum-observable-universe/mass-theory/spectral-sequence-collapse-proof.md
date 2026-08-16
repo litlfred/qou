@@ -14,14 +14,14 @@ $\int_A : A \to R$ with the centre via the Wedderburn decomposition
 
 $$
   \mathfrak{m}_{q,\mathcal{K}}
-  \;=\; \sum_{\lambda \,\vdash\, n} \tilde w_\lambda \cdot \frac{\chi_\lambda(\rho(\beta_\mathcal{K}))}{\dim_q V_\lambda},
-  \qquad \tilde w_\lambda = \frac{\dim_q^2 V_\lambda}{[n]_q!},
+  \;=\; \sum_{\lambda \,\vdash\, n} w_\lambda(q) \cdot \frac{\chi_\lambda(\rho(\beta_\mathcal{K}))}{\dim_q V_\lambda},
+  \qquad w_\lambda(q) = \frac{\dim_q^2 V_\lambda}{[n]_q!},
 $$
 
-*q-deformed Wedderburn weights $\tilde w_\lambda$, bounded but
-$\sum \tilde w_\lambda \neq 1$ at $q \neq 1$ in general (cf.
+*q-deformed Wedderburn weights $w_\lambda(q)$, bounded but
+$\sum w_\lambda(q) \neq 1$ at $q \neq 1$ in general (cf.
 [`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)
-for the classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$
+for the classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$
 that does sum to $1$).  Binning by GB-depth
 ([curvature-rank stratification](#prop:curvature-rank-gb-stratification))
 gives the curvature-rank decomposition

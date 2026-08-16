@@ -314,7 +314,7 @@ witness) · `conditional` (Lean implication; hypothesis named, NOT established)
 | KC13 | `z` exactly bar-even; `κ_{(2,1)}` exactly bar-odd; no scalar z-functional sources the odd channel. **C-scoped (2026-08-15, §9g):** proved for the convention-C `z = √q/(1+q)` (`ZBarParity.lean:59-79`); under convention D `bar(z_D) = q⁻⁴·z_D` **exactly** (not bar-invariant), so the no-scalar-z-source prune does not transfer to D as stated — re-examination under D is open (bean `qou-b3nk`), not a result | proved-lean (`z_bar_invariant`, `kappa21_bar_odd`, ZBarParity) | even resp. odd / `1/2` resp. `0` | PR #3449 |
 | KC14 | `f(z)·κ_{(2,1)}` order-blocked at q=1 (odd total order vs finite nonzero shadow) | symbolic-exact | — | PR #3449 (T3 witness) |
 | KC20 | bar-ODD carrier is **not a root-of-unity object**: `num = (q²−1)·R₁₂` (cyclotomic content exactly `q²−1`; `Φ₄=q²+1 ∤ num`, remainder `−64`), and `R₁₂ = q⁶·C(q²+q⁻²)` with `C(y)=y³−4y²+3y−2` **irreducible** (no rational root among RRT candidates). Degree-3 field ⇒ no quadratic anchor (golden `y=3`, silver `y=6`, q=1 `y=2`) is a root ⇒ real-q/quadratic `c_3` closures structurally excluded. **proved-lean**: the factorisation, `Φ₄ ∤ num`, the trace-cubic reduction, `C = C_Hopf + C_unknot`, and no-rational-root of `C`/`C_Hopf`. **symbolic-exact** (witness, not Lean): the sector attribution (the cubic is the **Hopf (2-crossing)** sector `C_Hopf=y³−6y²+10y−6`; unknot adds `C_unknot=2y²−7y+4`; virtual+trefoil vanish). The discriminants (`C: −152=−2³·19`, `C_Hopf: −76=−2²·19`, shared prime 19) are **Lean-certified since 2026-07-13** (`cubicDisc` + `cubicC_disc`/`cubicC_Hopf_disc`/`disc_shared_prime_19`, generic `CommRing`) | proved-lean (`numOdd_factor`, `numOdd_at_phi4_root`, `R12_eq_cubic_trace`, `cubicC_sector_decomp`, `cubicC_rrt_candidates_all_nonzero`, `cubicC_Hopf_rrt_candidates_all_nonzero`, `cubicC_disc`, `cubicC_Hopf_disc`, `disc_shared_prime_19`) + symbolic-exact (sector attribution) | — / — | PR #3467 ([audit](../audits/2026-07-07-zeta4-residue-lean-certificate-and-surviving-cubic.md); refines [2026-07-04 ζ₄ refutation](../audits/2026-07-04-zeta4-fibre-cyclotomic-refutation.md); complements KC19 affine ladder, PR #3473) |
-| KC21 | **the c₃ bar-odd part factors `S = h·D(ũ)`** — `h = q−q⁻¹` the anchor-blind bar-odd carrier, `D(ũ)` a bar-even ℚ(√3) ladder — and the "wall" is a representation artifact: the `dc₃/dq ≈ 4.66×10⁶` hypersensitivity is the `1/u³` ladder inversion over a **smooth** zero (`S′(q*_S) = 2.37×(1/u³)`); the sign-flip is **structural** (bar-odd: with `q = q₀+iε`, `S(−ε) = −S(ε)`, so no real q₀ produces it); the `S=0` point **`q*_S` ≈ 1.10998** (**NOT** KC22's `q*_ρ ≈ 1.48989` — see the glyph note under this table) is **NOT an independent determination of q₀** — it is the root of `c₃ + Vol(4₁)` and so presupposes (H1); the ~~"third, decay-sector determination"~~ reading is **WITHDRAWN 2026-08-15**, see **§9f**; the Φ_b state-integral saddle supplies the `\|S\|` scale from geometry (`Im 𝔙 = 0` at real substrate, volume deficit `0.0094 ≈ \|S(muon)\|`) — but that scale match is **muon-only and anchor-selective**, see the scale caveat below. **Convention note (2026-08-15, §9g):** the ladder behind `S`/`D(ũ)` consumes the convention-C `z` via `α=(z−1)h/2` (`qbeta_ck_sseries_exact_rational.py:20,248`), so the value-level `S`/`q*_S` facts are **C-conditional**; the structural parity statement (`S(−ε)=−S(ε)`) and the `1/u³` result are convention-immune | proved-lean (`fig8Trace_im_odd`, `fig8Trace_im_real_zero`) + symbolic-exact (`S = h·D` split, `1/u³` prefactor, Φ_b saddle) | odd / `0` | PRs #3600/#3636/#3654 ([capstone](../audits/2026-07-12-c3-wall-resolution-capstone.md); [1/u³ audit](../audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md)) |
+| KC21 | **the c₃ bar-odd part factors `S = h·D(ũ)`** — `h = q−q⁻¹` the anchor-blind bar-odd carrier, `D(ũ)` a bar-even ℚ(√3) ladder — and the "wall" is a representation artifact: the `dc₃/dq ≈ 4.66×10⁶` hypersensitivity is the `1/u³` ladder inversion over a **smooth** zero (`S′(q*_S) = 2.37×(1/u³)`); the sign-flip is **structural** (bar-odd: with `q = q₀+iε`, `S(−ε) = −S(ε)`, so no real q₀ produces it); the `S=0` point **`q*_S` ≈ 1.10998** (**NOT** KC22's `q*_ρ ≈ 1.48989` — see the glyph note under this table) is **NOT an independent determination of q₀** — it is the root of `c₃ + Vol(4₁)` and so presupposes (H1); the ~~"third, decay-sector determination"~~ reading is **WITHDRAWN 2026-08-15**, see **§9f**; the Φ_b state-integral saddle supplies the `\|S\|` scale from geometry (`Im 𝔙 = 0` at real substrate, volume deficit `0.0094 ≈ \|S(muon)\|`) — but that scale match is **muon-only and anchor-selective**, see the scale caveat below. **Convention note (2026-08-15, §9g):** the ladder behind `S`/`D(ũ)` consumes the convention-C `z` via `α=(z−1)h/2` (`qbeta_ck_sseries_exact_rational.py:20,248`), so the value-level `S`/`q*_S` facts are **C-conditional**; the structural parity statement and the `1/u³` result are convention-immune. **Parity immunity VERIFIED 2026-08-15 (§9h, bean `qou-kc21im`)** — it was *asserted* when added here, and is now measured (re-derived under D: holds to `1e-45` over eight decades of `ε` while the frame moves `c₃` by 470× its own magnitude) and *reduced*: the parity is Schwarz reflection, which reads only that `z` is **real-valued on the real q-axis** and never `z`'s formula, so it is immune to conventions beyond the two registered ones (`alphaPhase_im_odd_of_reflective_markov`, sorry-free, quantified over every reflective `z`). **Two corrections the verification forced.** (i) The statement is about **`Im S`**: the literal full-value reading `S(−ε)=−S(ε)` is **false**, since `Re S` is even and nonzero (`−0.0394593` at the proton pin). (ii) The operative hypothesis is **real coefficients, not bar-oddness** — the bar-**even** `Q_A` has the identical `ε`-parity — so this parity is **NOT evidence that the channel carrying it is bar-odd**, and the row's "bar-odd ⇒ odd in ε" reading of the Lean is superseded by "reflective ⇒ `Im` odd in ε" (`fig8TraceC_conj` is the operative lemma). Complex conjugation is **not** the bar involution `σ: q↦q⁻¹`; nothing here bears on `bar(z_D) = q⁻⁴·z_D` or the `z_C` full-bar-condition failure | proved-lean (`fig8Trace_im_odd`, `fig8Trace_im_real_zero`, `reflective_im_odd`, `alphaPhase_im_odd_of_reflective_markov`, `zD_reflective`) + symbolic-exact (`S = h·D` split, `1/u³` prefactor, Φ_b saddle) | odd / `0` | PRs #3600/#3636/#3654 ([capstone](../audits/2026-07-12-c3-wall-resolution-capstone.md); [1/u³ audit](../audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md)) |
 | KC22 | **`D(ũ)` is NOT low-order (q-)holonomic in any tested class** — exact `d_k = a_k + b_k√3 ∈ ℚ(√3)` through `k=21`, **convergent, radius `ρ = 0.142799996644689688905720885779` (CORRECTED 2026-08-09)** — `ρ = ũ(q*_ρ)`, **`q*_ρ` ≈ 1.48989** the unique real root > 1 of the irreducible degree-12 factor of the `Δ_net` numerator, a **`Q_b` zero** the 2026-07-12 singularity search omitted (**NOT** KC21's `q*_S` ≈ 1.10998 — see the glyph note under this table); the `≈0.143` ratio was the radius all along, not a `(k!)^C` shadow: no ℚ P-finite recurrence (separated `a_k`, `b_k`), no **coupled ℚ(√3)** matrix P-recurrence (`r≤2, D≤4`; `r=3, D≤3`; `r=4, D≤2` — exact, over-determined), no **q-holonomic** recurrence in base `3`, `1/3`, or classical `k` (`r≤3, E≤3`, prime-certified full rank) — even though the denominators are 3-smooth (`v₃(den d_k) ~ 1.5k`, Ohtsuki–Habiro). Denominator **2-adic valuation is parity-graded** (proved window `K=5`; conjecture class beyond; `p=3` ungraded ⇒ **2 is the unique graded prime**). Consequence: the (q-)holonomic search class is closed — that part stands, and is unaffected by the radius correction (a convergent series need not be holonomic; `φ(w)log(1−w/ρ) + ψ(w)` with algebraic `φ`, `ψ` over a degree-12 field is exactly the sort of element that is not low-order P-finite). ~~the odd-channel element is transcendental/**resurgent** (Écalle acceleration class), not a q-difference equation~~ — **the resurgent/Écalle inference is WITHDRAWN 2026-08-09**: it was drawn from the divergence, and the ladder is convergent (`k²Δ²log|d_k| → 1`, `kΔ² → 0`, so `κ = 0`). Closed form `D(w) = φ(w)log(1−w/ρ) + ψ(w)`, `φ(ρ) = 1/(2h*_ρ)`, `h*_ρ = q*_ρ − 1/q*_ρ = 0.818706471352` (**NOT** KC21's `h*_S = 0.2090603174197`), hence `d_k = −(1/(2h*_ρ))ρ^{−k}/k(1+O(1/k))` with no free parameters. The exact non-holonomicity, the 2-adic parity grading, and the Lean anchors are all untouched. **Log-closure loophole also closed (2026-07-14, owner-suggested):** `log D` and `ũD′/D` (exact `ℓ_k ∈ ℚ(√3)`, k≤20) are likewise not low-order coupled-ℚ(√3) P-finite nor q-holonomic in base `3`/`1/3`/`k` (same windows, prime-certified) — so `D` is not the exp of a low-order (q-)holonomic element either. **Convention note (2026-08-15, §9g):** the `d_k` are Taylor data of the **convention-C** ladder (`z_C` at `qbeta_ck_sseries_exact_rational.py:20,248`); the radius object `R₁₂`/`Δ_net` is itself z-free (even powers of q only, KC20) | symbolic-exact (exact rational linear algebra + prime-certified rank) + proved-lean 2-adic anchor (`DLadderTwoAdicGrading.bDen_two_adic_graded`; `three_not_parity_graded`; open `DLadderGradingConjecture`) | — / — | PR #3737 ([coupled-recurrence + 2-adic audit](../audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md); [divergence correction](../audits/2026-07-12-dladder-divergence-correction.md); **[convergence correction 2026-08-09](../audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md)**) |
 
 ### 9a. Glyph note — `q*`, `h*`, `ũ(q*)` name TWO points (added 2026-08-14)
@@ -699,7 +699,9 @@ The 2026-08-09 owner ruling excised Markov-trace **convention C**
 channel is not registered there**, and its ladder consumes `z` in the N=1
 rung phase `α = (z−1)h/2`
 ([`qbeta_utils.py:124-125`](../../computations/qbeta/qbeta_utils.py); same
-`z_C` in the KC21/KC22 D-ladder core and in `ZBarParity.lean`). Measured
+`z_C` in the KC21/KC22 `D(ũ)`-ladder core and in `ZBarParity.lean` — note
+that the `D` in "`D(ũ)`-ladder" is KC21's bar-even ℚ(√3) function `D`, **not**
+convention D; that core evaluates at `z_C`). Measured
 (probe [`qbeta-c3-ladder-trace-convention-sensitivity`](../../computations/qbeta/qbeta_c3_ladder_trace_convention_sensitivity_probe.py),
 9/9 assertions; full pillar table:
 [validity audit](../audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md)):
@@ -720,3 +722,96 @@ re-derive the ladder), or register `disputed` — is bean **`qou-b3nk`**. Until
 then: **any quote of a c₃/S/q*_S value must name the convention** (the
 trace-convention registry's own rule: convention-silent trace values are not
 comparable).
+
+**Registration addendum (2026-08-15, bean `qou-b3nk` worked).** The channel is
+now **registered `disputed`** in `trace-convention-registry.json`
+(`channels.qbeta-decay`: definitional `null` — the decay blocks write the
+excised-C value while naming it "the Markov–Jones parameter", whose referent
+has read D since 2026-08-09 — production `C`; an R9 evaluator on
+`qbeta_utils.markov_parameter` asserts the C-state mechanically). Two upgrades
+to the paragraph above:
+
+1. **The escape is now proved, and unconditional in the parameter** — Lean
+   `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free): *any* faithful
+   normalised Markov trace at the ladder's `z_C` carries `y_(1³) ≠ 0` for every
+   substrate `s = √q > 1`, so the two-row forcing and the C-frame ladder are
+   **mutually exclusive** — the forcing cannot transfer by a z-swap. (The
+   explicit instance `y = (z, 1/2−z, z)` cited above was the *wrong witness*
+   for this: its `σ₀` functional value is `h/2` exactly, z-independently — it
+   is a class inhabitant, not an Ocneanu `z_C`-trace. Conclusion unchanged,
+   witness corrected.)
+2. **The full-bar condition is now in Lean**: `bar(z) = z − h` holds for `z_D`
+   exactly (`zD_full_bar_covariant`) and fails for any bar-even `z` — hence
+   for `z_C` — away from `q² = 1` (`barEven_fullBar_forces_classical`,
+   `zC_fails_fullBar`); premise (trace bar-compatibility) named, not proved.
+
+Neither C nor D is *derived* for the decay channel; the full analysis and the
+two honest settlement routes:
+[`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md).
+
+### 9h. The KC21 parity immunity is VERIFIED — and its stated mechanism was wrong (added 2026-08-15, `qou-kc21im`)
+
+§9g above closed with the sentence *"the structural parity statement
+(`S(−ε)=−S(ε)`) and the `1/u³` result are convention-immune."* The `1/u³` half
+carried a measurement (swing ratio D/C = 1.0052). **The parity half carried
+none** — it was asserted, and the assertion is not obvious: `c₃(q)` is not a
+convention-free object but is *defined by* an extractor whose N=1 rung consumes
+the convention-C `z`, and under D that extractor is a different function
+(`c₃ ≈ −974`). Parity of `f_C` does not transfer to `f_D` because both are
+spelled `c₃`.
+
+Probe [`qbeta-kc21-parity-convention-immunity`](../../computations/qbeta/qbeta_kc21_parity_convention_immunity_probe.py)
+(12/12, exit 0, 60 dps, proton pin) settles it by **both** available routes.
+
+| route | result |
+|---|---|
+| **re-derive under D** | parity holds to `1e-45` relative over `ε ∈ [10⁻³⁰, 10⁻²]`, non-vacuously (`Im c₃^D(q₀+10⁻⁸i) = 0.0386 ≠ 0`) — while the C→D shift moves the value by 972, i.e. **470× \|c₃^C\|** |
+| **the reduction** | every ingredient (`h`, `ℏ_q`, `b`, `u`, `Q_A`, `z_C`, `z_D`, `cos`) is **Schwarz-reflective**, `f(conj q) = conj f(q)`; the class is closed under the field operations and composition, so the composite inherits it |
+
+**Why it is immune, stated exactly.** The parity is Schwarz reflection. Its
+only hypothesis on the Markov parameter is that `z` be **real-valued on the
+real q-axis** near `q₀` (equivalently: holomorphic on a conjugate-symmetric
+neighbourhood, real on the interval). It never reads `z`'s *formula*. So the
+immunity is not a C-vs-D coincidence but a property of the whole class — a
+control convention `z_X = q/(1+q²)`, present in no channel, has the parity too.
+Formalized sorry-free in
+[`LadderParityReflection.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderParityReflection.lean):
+`alphaPhase_im_odd_of_reflective_markov` is quantified over *every* reflective
+`z`, with `zD_reflective` the concrete D instance. Only a convention whose `z`
+carries an explicit `i`, or introduces a branch point/pole inside the disc used,
+could break it; neither C nor D does (`z_C`'s branch point sits at `q = 0`,
+`z_D`'s poles at `q = ±i`, both far from `q₀ ≈ 1.11`).
+
+**Correction 1 — the statement is about `Im S`, and the literal reading is
+false.** `Re S` is even in `ε` and nonzero (`−0.0394593` at the proton pin), so
+the full complex value is *not* an odd function of `ε`; `S(−ε) = −S(ε)` written
+of the value is wrong. The true statement, and the one the Lean proves, is
+`Im S(q₀−iε) = −Im S(q₀+iε)` — the decay projection. The KC21 row is corrected
+accordingly.
+
+**Correction 2 — the parity is not evidence for bar-oddness.** KC21 derives it
+as *"bar-odd ⇒ odd in ε."* That is not what the Lean chain proves. The operative
+lemma is `fig8TraceC_conj`: **real coefficients ⇒ conjugation commutes ⇒ `Im`
+odd in `ε`** — a hypothesis about real-analyticity that says nothing about
+`σ: q↦q⁻¹`. Measured consequence: the manifestly bar-**even** `Q_A` has the
+identical `ε`-parity. So every real-analytic ingredient of the ladder has this
+property, bar-odd or not, and observing it in `S` does **not** discriminate the
+bar-odd channel. The conclusion (immunity) stands; the reason given for it was
+the wrong one, and it was doing evidential work it cannot do.
+
+**Scope-(a), and three things this does NOT do.** It adjudicates **no**
+convention for the Q_β channel (`qou-b3nk` is untouched by this section: the
+addendum to §9g above registers the channel `disputed`, which records the
+disagreement rather than settling it — neither C nor D is derived, and nothing
+here changes that). It
+revives **no** C-conditional value — `c₃`, (H1), `[3]_q/25`, `J−ℏ²`, `S_leak`,
+`q*_S` stay C-conditional per §9g. And it does **not** touch the **bar
+involution**, which is a *different* involution from complex conjugation:
+`bar(z_D) = q⁻⁴·z_D` (§9g) and the `z_C` full-bar-condition failure both stand
+exactly as stated, so the bean's companion question — whether trace-derived
+quantities still carry clean *bar* parity — is untouched here and stays open.
+Per §"Defined residual ≠ derived decomposition", `S = c₃ + Vol(4₁)` remains a
+residual of a C-frame extraction; the `h·D(ũ)` bar-split is a separate claim
+from the `ε`-parity verified above and inherits none of its immunity.
+
+Audit: [2026-08-15 KC21 parity convention-immunity](../audits/2026-08-15-kc21-parity-convention-immunity-audit.md).

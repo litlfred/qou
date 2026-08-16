@@ -209,6 +209,25 @@ def d_for_ctype(ctype: str, h_val, *, delta=None):
     if ctype == "averaged_weighted":
         # -h(1/2 - delta/4), written so h_val's type drives the arithmetic.
         d = _avg_color_delta() if delta is None else delta
+        # Honour the "caller's type carries through" contract above. The other
+        # three ctypes return whatever `h_val` is; this one used to return an
+        # `mpf` REGARDLESS, because the cached δ is an mpf and mpmath wins the
+        # promotion. So the single ctype this whole arc is about was the one
+        # that broke the function's own documented contract.
+        #
+        # It was not free. Downstream numpy code builds `sigma + d*eye` in a
+        # float64 array; one mpf promotes the array to dtype=object and the
+        # per-matmul cost jumps, measured on tritium where the first
+        # averaged_weighted crossing lands at index 11 of 35. Three call sites
+        # now carry a `float(d_for_ctype(...))` workaround for this
+        # (hoefsmit_numpy, and the two numpy dtype audits), and
+        # numpy_mpmath_dtype_leak_audit exists partly to police it.
+        #
+        # Downcast ONLY for a plain-float caller, who has already declared
+        # float precision by passing one. mpf and sympy callers are untouched,
+        # so nothing that wanted 50 dps loses a digit.
+        if isinstance(h_val, float):
+            d = float(d)
         return -h_val * (1 - d / 2) / 2
     raise ValueError(f"unknown ctype {ctype!r}")
 
@@ -245,7 +264,71 @@ def sign_for_ctype(ctype: str) -> int:
     raise ValueError(f"unknown ctype {ctype!r}")
 
 
+def convention_fingerprint(crossings) -> str:
+    """A stable label for the crossing convention a WORD ACTUALLY USES.
+
+    `"sigma:11+sigma_inv:7+averaged:4+averaged_weighted:1"` — the ctype
+    multiset, in `CTYPES` order, from the word itself rather than from a
+    hand-written tag.
+
+    This exists because the symbolic-χ caches keyed on nothing but the file's
+    existence. `per_irrep_pole_deuteron_h6` is literally
+    `if CHI_CACHE.exists(): return d`, and `per_irrep_pole_atom` resumes on
+    partition coverage alone. Neither has any notion of which word produced
+    the cached entries, so when the colour-weighted p-n interface landed, the
+    caches written before it kept being served — and nine committed witnesses
+    with a p-n bond still carry colour-BLIND χ while their producers build the
+    weighted word. The producers were never wrong; the caches simply could not
+    tell that the question had changed.
+
+    A convention tag hand-set by an auditing pass cannot close that: it
+    records what someone concluded about the stored data, not what the current
+    builder would emit. Deriving the fingerprint from `crossings` makes the
+    two directly comparable, which is the whole point — see
+    `convention_label` for the human-facing name.
+    """
+    from collections import Counter
+    counts = Counter(ct for _, ct in crossings)
+    unknown = set(counts) - set(CTYPES)
+    if unknown:
+        raise ValueError(f"unknown ctype(s) in word: {sorted(unknown)}")
+    return "+".join(f"{ct}:{counts[ct]}" for ct in CTYPES if counts.get(ct))
+
+
+def convention_label(crossings) -> str:
+    """The human-facing convention name for a word, derived not declared.
+
+    Matches the strings already in the corpus' `convention` witness field, so
+    a regenerated witness stays comparable with the ones already tagged:
+
+      `colour-weighted-averaged-crossing`  the word carries the colour-weighted
+                                           p-n interface (every canonical
+                                           Z>=1,N>=1 word has exactly one)
+      `averaged-crossings`                 averaged crossings, none weighted —
+                                           correct for a free word
+                                           (`include_inter=False`), a
+                                           dineutron/diproton, or a single
+                                           nucleon, all of which have no p-n
+                                           bond to weight
+      `sign-only-crossings`                no averaged crossing of either kind
+
+    Note the corpus also contains `bring_color_weighted-averaged-crossings`,
+    a second spelling of the first. Do not add a third: read this function.
+    """
+    counts = {ct: 0 for ct in CTYPES}
+    for _, ct in crossings:
+        if ct not in counts:
+            raise ValueError(f"unknown ctype {ct!r}")
+        counts[ct] += 1
+    if counts["averaged_weighted"]:
+        return "colour-weighted-averaged-crossing"
+    if counts["averaged"]:
+        return "averaged-crossings"
+    return "sign-only-crossings"
+
+
 __all__ = [
     "atom_canonical_crossings", "classify_crossing", "d_for_ctype",
     "sign_for_ctype", "CTYPES",
+    "convention_fingerprint", "convention_label",
 ]

@@ -11,10 +11,78 @@
     "ts": "44b4cd4c5bb3"
   },
   "criteria": {
-    "da-overclaim": [],
-    "da-false-claim": [],
-    "da-reproducibility": [],
-    "da-referee-verdict": [],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ec1825b1b1bd",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "notes": "PASS AFTER AMENDMENT; one found, and it is a scope error on a PROVED result. The block wrote the pairwise cumulant as 'proved-capped at rho_A <= C(A,2)' -- general A -- citing exchangeDet_pow_two_le_four. That file contains EXACTLY ONE theorem, a single-variable polynomial inequality (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], and its own header scopes itself 'The cap (this file, A=4)'. No general-A cap exists anywhere in QOU/MassTheory. Corrected to state the A=4 cap as proved, to say what the file's header asserts versus what it proves, and to note that a general-A cap would be a stronger result not currently in the corpus. The EXCLUSION SURVIVES INTACT: it is run at the deuteron and 4He, where A=4 is all that is needed -- a scope correction, not a refutation.",
+        "reviewed_at": "2026-08-15T22:10:49.442266Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ec1825b1b1bd",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "notes": "Both headline claims checked against the Lean, not taken on trust. (1) VALUE: 'PROVED, sorry-free, general-n' via QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional -- CONFIRMED. The theorem takes an arbitrary sorted partition list with no n<=5 hypothesis and its file carries no sorry; it is a composition of two imported results, which its own docstring states ('cosmetic bundle'). (2) CAP: see da-overclaim -- the scope was wrong and is corrected in this pass. rho_4~13>6 is consistent with rho_strong[4]=13.0316 and C(4,2)=6. Cited paths resolve.",
+        "reviewed_at": "2026-08-15T22:10:49.442266Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ec1825b1b1bd",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "notes": "Claims are traceable to named declarations that exist and can be re-checked independently: dtEuler_eq_deltaLambda_unconditional (BraidsAndKnots/DeltaLambdaGeneralNUnconditional.lean) and exchangeDet_pow_two_le_four (MassTheory/BindingSaturationCapA4.lean), both sorry-free, the latter carrying its Bernstein certificate inline in the docstring. The witness contract names computations/delta-lambda-witness.json and its consumer binding_K_direct.py. CAUTION for a re-checker: `grep -c sorry` on BindingSaturationCapA4.lean returns 1 and the file is nonetheless sorry-free -- the hit is the phrase 'proved sorry-free' in its own docstring.",
+        "reviewed_at": "2026-08-15T22:10:49.442266Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ec1825b1b1bd",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "notes": "The block's epistemic bookkeeping is its strongest feature and is unusually careful: it separates a proved VALUE from an open MAGNITUDE, names the six refuted ansatze with what each was refuted on, and states why a per-block weight cannot supply an extensive term (intensive/extensive mismatch) rather than merely asserting the ansatze failed. A referee's fair objections: (i) the exclusion rests on the pairwise-cumulant cap, which is proved only at A=4 -- now said plainly rather than implied for general A; (ii) 'Both are substrate-derived -- not fitted' is asserted rather than argued in this block, and a reader must follow the citation to judge it; (iii) the open magnitude has no candidate construction here, only a shape (additive, extensive, super-pairwise), so the block closes a question about what Delta_lambda IS without opening a route to what is missing. None of these is a defect in what the block claims.",
+        "reviewed_at": "2026-08-15T22:10:49.442266Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
     "milnor-amalgamated-flow": [],
     "voice-branch-jargon": [
       {
@@ -906,5 +974,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-15T22:10:49.442266Z"
 }

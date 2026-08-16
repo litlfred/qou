@@ -1,0 +1,540 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "104171-owr-2018-52",
+ "source": {
+  "file": "10.4171-owr-2018-52.pdf",
+  "sha256": "b33ed36eaa470877bc6cfb5b45b1019564f568925ea9d94e8dc7ee355879976e",
+  "bytes": 756610,
+  "pages": 66,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.4171/OWR/2018/52",
+  "title": "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018",
+  "authors_raw": "Enveloping Algebras and Geometric Representation Theory",
+  "title_lines": [
+   "Mathematisches Forschungsinstitut Oberwolfach",
+   "Report No. 52/2018"
+  ],
+  "abstract": "The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints. Mathematics Subject Classi\ufb01cation (2010): 17B35, 17B37, 20G15.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 9.26",
+   "CreationDate": "D:20191209094213+01'00'",
+   "Creator": "dvips(k) 5.997 Copyright 2017 Radical Eye Software",
+   "Title": "../52/Report-52_2018.dvi"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "References",
+   "page": 7,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Let HC(A) be the quotient of the category HC( A) by the full subcategory of",
+   "page": 9,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(Xreg ) is \ufb01nite. For example, for X = V/ \u0393, this group coincides with \u0393. So",
+   "page": 9,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(\u03a3i\\",
+   "page": 9,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(Xreg). The inclusion \u03a3 i\\{ 0}\u0592\u2192Xreg give rise to a group",
+   "page": 9,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Galleries",
+   "page": 27,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Dimension and properties of galleries. Let \u03b3 be a gallery, with nota-",
+   "page": 28,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Semisimpli\ufb01cation. Let C denote a k-linear ( k a \ufb01eld) braided rigid",
+   "page": 29,
+   "source": "inferred",
+   "number": "0.1"
+  },
+  {
+   "level": 2,
+   "title": "Representation categories. Examples of such categories are often coming",
+   "page": 30,
+   "source": "inferred",
+   "number": "0.2"
+  },
+  {
+   "level": 2,
+   "title": "Representations of supergroups. The results of [AK02] generalize par-",
+   "page": 30,
+   "source": "inferred",
+   "number": "0.3"
+  },
+  {
+   "level": 2,
+   "title": "The categoryRep(GL(m|n)). LetTm|n be the category of \ufb01nite dimensional",
+   "page": 30,
+   "source": "inferred",
+   "number": "0.4"
+  },
+  {
+   "level": 1,
+   "title": "Main question",
+   "page": 36,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Quantum Grothendieck ring",
+   "page": 36,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Isomorphisms and cluster algebras",
+   "page": 37,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Application to the Kazhdan-Lusztig algorithm",
+   "page": 38,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Crystals. The in\ufb01nity crystal B(\u221e) is a combinatorial object which, among",
+   "page": 44,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Kashiwara and Saito\u2019s construction. We will mostly review this using",
+   "page": 44,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Punch line. About 8 years ago, two things bothered me about this:",
+   "page": 45,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Symmetrizable quiver varieties. Consider e.g. B2, with Dynkin diagram",
+   "page": 45,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "A\ufb03ne sl2. This case is symmetric, but we have more freedom to choose the",
+   "page": 45,
+   "source": "inferred",
+   "number": "1.5"
+  },
+  {
+   "level": 2,
+   "title": "Relation with folding. Our construction is related to the method of folding",
+   "page": 46,
+   "source": "inferred",
+   "number": "1.6"
+  },
+  {
+   "level": 2,
+   "title": "Relation to work of Geiss, Leclerc and Schroer. In [4] they consider",
+   "page": 46,
+   "source": "inferred",
+   "number": "1.7"
+  },
+  {
+   "level": 2,
+   "title": "Let \u039b = \u2a01",
+   "page": 46,
+   "source": "inferred",
+   "number": "0.1"
+  },
+  {
+   "level": 2,
+   "title": "Given a reductive complex algebraic group G, Schieder [9] constructed a",
+   "page": 47,
+   "source": "inferred",
+   "number": "0.2"
+  },
+  {
+   "level": 2,
+   "title": "In order to produce an isomorphism A",
+   "page": 48,
+   "source": "inferred",
+   "number": "0.3"
+  },
+  {
+   "level": 1,
+   "title": "Supports",
+   "page": 50,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Linear degenerations",
+   "page": 51,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Main result",
+   "page": 52,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Techniques",
+   "page": 52,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 58,
+   "source": "inferred",
+   "number": "1"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 6336,
+   "n_words": 1082
+  },
+  {
+   "id": "sec-001-1-let-hca-be-the-quotient-of-the-category-hc-a-b",
+   "number": "1",
+   "title": "Let HC(A) be the quotient of the category HC( A) by the full subcategory of",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 359,
+   "n_words": 62
+  },
+  {
+   "id": "sec-002-1-xreg-is-\ufb01nite-for-example-for-x-v-\u03b3-this-group",
+   "number": "1",
+   "title": "(Xreg ) is \ufb01nite. For example, for X = V/ \u0393, this group coincides with \u0393. So",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1215,
+   "n_words": 237
+  },
+  {
+   "id": "sec-003-1-\u03c3i",
+   "number": "1",
+   "title": "(\u03a3i\\",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 17,
+   "n_words": 5
+  },
+  {
+   "id": "sec-004-1-xreg-the-inclusion-\u03c3-i-0xreg-give-rise-to-a-gr",
+   "number": "1",
+   "title": "(Xreg). The inclusion \u03a3 i\\{ 0}\u0592\u2192Xreg give rise to a group",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 27,
+   "n_chars": 43780,
+   "n_words": 7559
+  },
+  {
+   "id": "sec-005-1-galleries",
+   "number": "1",
+   "title": "Galleries",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2593,
+   "n_words": 486
+  },
+  {
+   "id": "sec-006-11-dimension-and-properties-of-galleries-let-\u03b3-b",
+   "number": "1.1",
+   "title": "Dimension and properties of galleries. Let \u03b3 be a gallery, with nota-",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 2539,
+   "n_words": 476
+  },
+  {
+   "id": "sec-007-01-semisimpli\ufb01cation-let-c-denote-a-k-linear-k-a",
+   "number": "0.1",
+   "title": "Semisimpli\ufb01cation. Let C denote a k-linear ( k a \ufb01eld) braided rigid",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 605,
+   "n_words": 114
+  },
+  {
+   "id": "sec-008-02-representation-categories-examples-of-such-ca",
+   "number": "0.2",
+   "title": "Representation categories. Examples of such categories are often coming",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 1004,
+   "n_words": 173
+  },
+  {
+   "id": "sec-009-03-representations-of-supergroups-the-results-of",
+   "number": "0.3",
+   "title": "Representations of supergroups. The results of [AK02] generalize par-",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 1119,
+   "n_words": 171
+  },
+  {
+   "id": "sec-010-04-the-categoryrepglmn-lettmn-be-the-category-of",
+   "number": "0.4",
+   "title": "The categoryRep(GL(m|n)). LetTm|n be the category of \ufb01nite dimensional",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 36,
+   "n_chars": 17125,
+   "n_words": 2755
+  },
+  {
+   "id": "sec-011-1-main-question",
+   "number": "1",
+   "title": "Main question",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 653,
+   "n_words": 104
+  },
+  {
+   "id": "sec-012-2-quantum-grothendieck-ring",
+   "number": "2",
+   "title": "Quantum Grothendieck ring",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 2927,
+   "n_words": 484
+  },
+  {
+   "id": "sec-013-3-isomorphisms-and-cluster-algebras",
+   "number": "3",
+   "title": "Isomorphisms and cluster algebras",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 955,
+   "n_words": 140
+  },
+  {
+   "id": "sec-014-4-application-to-the-kazhdan-lusztig-algorithm",
+   "number": "4",
+   "title": "Application to the Kazhdan-Lusztig algorithm",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 44,
+   "n_chars": 16580,
+   "n_words": 2764
+  },
+  {
+   "id": "sec-015-11-crystals-the-in\ufb01nity-crystal-b-is-a-combinato",
+   "number": "1.1",
+   "title": "Crystals. The in\ufb01nity crystal B(\u221e) is a combinatorial object which, among",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 806,
+   "n_words": 128
+  },
+  {
+   "id": "sec-016-12-kashiwara-and-saitos-construction-we-will-mos",
+   "number": "1.2",
+   "title": "Kashiwara and Saito\u2019s construction. We will mostly review this using",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 1366,
+   "n_words": 251
+  },
+  {
+   "id": "sec-017-13-punch-line-about-8-years-ago-two-things-bothe",
+   "number": "1.3",
+   "title": "Punch line. About 8 years ago, two things bothered me about this:",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 952,
+   "n_words": 161
+  },
+  {
+   "id": "sec-018-14-symmetrizable-quiver-varieties-consider-eg-b2",
+   "number": "1.4",
+   "title": "Symmetrizable quiver varieties. Consider e.g. B2, with Dynkin diagram",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 1357,
+   "n_words": 265
+  },
+  {
+   "id": "sec-019-15-a\ufb03ne-sl2-this-case-is-symmetric-but-we-have-m",
+   "number": "1.5",
+   "title": "A\ufb03ne sl2. This case is symmetric, but we have more freedom to choose the",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 186,
+   "n_words": 27
+  },
+  {
+   "id": "sec-020-16-relation-with-folding-our-construction-is-rel",
+   "number": "1.6",
+   "title": "Relation with folding. Our construction is related to the method of folding",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 315,
+   "n_words": 52
+  },
+  {
+   "id": "sec-021-17-relation-to-work-of-geiss-leclerc-and-schroer",
+   "number": "1.7",
+   "title": "Relation to work of Geiss, Leclerc and Schroer. In [4] they consider",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 1766,
+   "n_words": 285
+  },
+  {
+   "id": "sec-022-01-let-\u03bb",
+   "number": "0.1",
+   "title": "Let \u039b = \u2a01",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 1703,
+   "n_words": 310
+  },
+  {
+   "id": "sec-023-02-given-a-reductive-complex-algebraic-group-g-s",
+   "number": "0.2",
+   "title": "Given a reductive complex algebraic group G, Schieder [9] constructed a",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 3463,
+   "n_words": 689
+  },
+  {
+   "id": "sec-024-03-in-order-to-produce-an-isomorphism-a",
+   "number": "0.3",
+   "title": "In order to produce an isomorphism A",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 4459,
+   "n_words": 753
+  },
+  {
+   "id": "sec-025-1-supports",
+   "number": "1",
+   "title": "Supports",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 3715,
+   "n_words": 670
+  },
+  {
+   "id": "sec-026-3-main-result",
+   "number": "3",
+   "title": "Main result",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 487,
+   "n_words": 93
+  },
+  {
+   "id": "sec-027-4-techniques",
+   "number": "4",
+   "title": "Techniques",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 58,
+   "n_chars": 14815,
+   "n_words": 2478
+  },
+  {
+   "id": "sec-028-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 66,
+   "n_chars": 16300,
+   "n_words": 2644
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 30,
+  "sections": 29,
+  "chars_total": 149497
+ }
+}

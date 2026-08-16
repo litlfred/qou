@@ -1,0 +1,85 @@
+{
+  "computation": "qbeta-modular-double-reciprocity",
+  "description": "Option B (bean qou-dvlt): the modular dual's ~1e-165 suppression at the substrate is INTRINSIC, not an arg-b artifact. With b^2 = i y the reciprocity log q * log q~ = 4 pi^2 holds identically in y \u2014 the y cancels \u2014 so demanding a real q leaves no convention to re-choose. Measured at the substrate: Re(b^2) = 0 exactly, q = 1/q0 exactly, reciprocity to 0.0 relative error. The double balances at |log q| = 2pi (q = e^-2pi ~ 0.00187); the substrate's |log q| = 0.10434 is 60.2x too close to 1, forcing |log q~| = 378.3 and |q~| ~ 4.8e-165. For the dual merely to clear double precision one would need q0 > 2.92. This closes front (a) as stated: PR #5093 proved the parity read-off needs a PAIR, and the pair's second entry is numerically absent at the substrate \u2014 with q0 an input, nothing can be re-chosen. Scope-(b); says nothing about (H1).",
+  "audit_only": true,
+  "tier": "exact identity + numerical confirmation (no fit)",
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "computedAt": "2026-08-15T11:44:11.105963+00:00",
+  "commitSha": "9cb49ff2b590fa0e683f9caa35f7273f2d93757a",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_modular_double_reciprocity.py",
+  "scriptHash": "7bfafe648c81",
+  "assertions": [
+    {
+      "name": "b_squared_is_purely_imaginary",
+      "passed": true
+    },
+    {
+      "name": "q_equals_inverse_q0",
+      "passed": true
+    },
+    {
+      "name": "reciprocity_log_q_times_log_qdual_eq_4pi2",
+      "passed": true,
+      "detail": "rel err 0.0"
+    },
+    {
+      "name": "product_independent_of_y",
+      "passed": true
+    },
+    {
+      "name": "substrate_far_from_balanced_point",
+      "passed": true,
+      "detail": "60.218x too close to 1"
+    },
+    {
+      "name": "dual_below_double_precision_at_substrate",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "q0": "1.109978582751380807591669",
+    "ln_q0": "0.1043407203195195123159063",
+    "b_squared_imag": "0.016606341404620495298",
+    "b_squared_real_abs": "0.0",
+    "q": "0.9009182839557414921608229",
+    "abs_q_dual": "4.78717166576e-165",
+    "log10_abs_q_dual": "-164.319921",
+    "log_q_times_log_q_dual": "39.47841760435743447533796",
+    "four_pi_squared": "39.47841760435743447533796",
+    "reciprocity_relative_error": "0.0",
+    "y_independence_check": [
+      {
+        "y": "0.001",
+        "product": "39.478417604357434475"
+      },
+      {
+        "y": "1.0",
+        "product": "39.478417604357434475"
+      },
+      {
+        "y": "17.25",
+        "product": "39.478417604357434475"
+      }
+    ],
+    "balanced_abs_log_q": "6.283185307179586",
+    "substrate_abs_log_q": "0.1043407203195195",
+    "shortfall_factor": "60.2179598525",
+    "balanced_q_value": "0.001867442731707989",
+    "forced_abs_log_q_dual": "378.360600573",
+    "q0_needed_for_dual_above_1e_minus_16": "2.919985593"
+  },
+  "context": {
+    "axis": "front (a) triage, option B \u2014 is the dual degeneracy intrinsic?",
+    "lean": "QOU.QBeta.ModularDoubleReciprocity (sorry-free, 4 declarations)",
+    "inputs": [
+      "computations/qbeta/phi_b_evaluator.py (the substrate b convention)",
+      "tools/qou-substrate/.../constants.py::q_at (proton pin)"
+    ],
+    "closes": "front (a) as stated \u2014 build the GZ pair at the substrate. The pair exists in phi_b_evaluator but its second entry is 1e-165 there.",
+    "scope": "Scope-(b), invariant named (the reciprocity, identical in y). Does NOT exclude the state integral at other q, and does not bear on (H1) c_3^even = -Vol(4_1)."
+  }
+}

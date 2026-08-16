@@ -250,7 +250,21 @@ def main() -> None:
     w.add_data("cadences_eddy", {k2: _f(v) for k2, v in CADENCES.items()})
     w.add_data("n_cap", N_CAP)
     w.add_data("n_data", N_DATA)
-    w.save()
+    # AGENTS.md §"q0 anchor convention" rule 4: say which pin you used. This
+    # probe uses NONE. The `q` here is the Sabra/DN shell-spacing ratio
+    # q = 1 + eps with eps in EPS_SWEEP — a ladder parameter of the turbulence
+    # model, nothing to do with the substrate modulus. That eps = 1e-1 puts it
+    # at 1.1, next door to q_0 ~ 1.10998, is a coincidence and exactly why this
+    # needs saying out loud rather than being left to a reader's inference.
+    # Nothing in the import cone (_path_bridge — sys.path only; qou_substrate.
+    # witness; _precision) reads q_parameter, constants.Q, or y_lambda_at.
+    #
+    # So the honest record is `independent`, not the standing proton default:
+    # stamping a pin the compute never read is the misrecord this field exists
+    # to prevent. Via save(extra=...) and NOT add_data(), which nests under
+    # `data` where the audit reading body["q0Anchor"] cannot see it. No
+    # q0Value — there is no value, and one here is a Q0_FLIP.
+    w.save({"q0Anchor": "independent"})
     print("Saved witness: qns-phase-scramble-probe.witness.json")
 
 

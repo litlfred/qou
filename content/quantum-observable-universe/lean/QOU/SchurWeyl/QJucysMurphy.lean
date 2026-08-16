@@ -1,5 +1,6 @@
 import QOU.SchurWeyl.HeckeAlgebra
 import QOU.SchurWeyl.HoefsmitRep
+import QOU.SchurWeyl.TableauCells
 import Mathlib.Tactic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
@@ -56,13 +57,19 @@ differ by `q ↔ q²` and by sign across the literature.
 
 ## Refs
 
-- [murphy1983] G. E. Murphy, *The idempotents of the symmetric group and Nakayama's
-  conjecture*, J. Algebra 81 (1983), 258–265.
+- [murphy1992] G. E. Murphy, *On the representation theory of the symmetric groups and
+  associated Hecke algebras*, J. Algebra 152 (1992), 492–513 — the q-deformed Murphy operators.
+- [murphy1981] G. E. Murphy, *A new construction of Young's seminormal representation of the
+  symmetric groups*, J. Algebra 69 (1981), 287–297.
 - [ram1997] A. Ram, *Seminormal representations of Weyl groups and Iwahori–Hecke algebras*,
   Proc. LMS (1997), https://doi.org/10.1112/S0024611597000282.
 - [hoefsmit1974] P. N. Hoefsmit, PhD thesis, UBC (1974).
 - [dipper-james1986] R. Dipper & G. James, *Representations of Hecke algebras of general
   linear groups*, Proc. LMS (1986).
+
+NB: earlier drafts cited a non-existent `[murphy1983]` key (broken `-- Ref:` per AGENTS.md §1);
+the correct in-corpus keys are `[murphy1992]` (Hecke Murphy operators) and `[murphy1981]`
+(seminormal construction).
 -/
 
 namespace QOU.SchurWeyl
@@ -167,13 +174,13 @@ theorem qJM_mul_qJMInv (hqi : q * qi = 1) :
              (σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩)
           = σ K q qi n ⟨k, h⟩ * qJM K q qi n k *
             (σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩) *
-            qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by ring
+            qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = σ K q qi n ⟨k, h⟩ * qJM K q qi n k * 1 *
             qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by rw [hσσi]
         _ = σ K q qi n ⟨k, h⟩ * (qJM K q qi n k * qJMInv K q qi n k) *
-            σInv K q qi n ⟨k, h⟩ := by ring
+            σInv K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = σ K q qi n ⟨k, h⟩ * 1 * σInv K q qi n ⟨k, h⟩ := by rw [ih]
-        _ = σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩ := by ring
+        _ = σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = 1 := hσσi
     · -- k ≥ n: recursion freezes, reduces to the k-th case
       push_neg at h
@@ -194,13 +201,13 @@ theorem qJMInv_mul_qJM (hqi : q * qi = 1) :
              (σ K q qi n ⟨k, h⟩ * qJM K q qi n k * σ K q qi n ⟨k, h⟩)
           = σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k *
             (σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩) *
-            qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by ring
+            qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k * 1 *
             qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by rw [hσiσ]
         _ = σInv K q qi n ⟨k, h⟩ * (qJMInv K q qi n k * qJM K q qi n k) *
-            σ K q qi n ⟨k, h⟩ := by ring
+            σ K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = σInv K q qi n ⟨k, h⟩ * 1 * σ K q qi n ⟨k, h⟩ := by rw [ih]
-        _ = σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩ := by ring
+        _ = σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩ := by noncomm_ring
         _ = 1 := hσiσ
     · push_neg at h; omega
 
@@ -279,15 +286,16 @@ Refs: [ram1997] Theorem 4.1; [murphy1983] Theorem 1.1; [hoefsmit1974] §3.
 /-- **[GAP] The Murphy elements commute pairwise** — they generate the commutative
 Gelfand–Tsetlin subalgebra `GZ_{n+1} ⊂ H_{n+1}(q)`.
 
--- Ref: [murphy1983] §2, Lemma 2.1.  Also [ram1997] Corollary 2.4.
+-- Ref: [murphy1992] — the q-deformed Murphy operators generate a maximal commutative
+-- subalgebra of `H_{n+1}(q)`.  Also [ram1997] Corollary 2.4.
 -- The classical proof (the `L_k` are simultaneously diagonalised by the
 -- seminormal basis) lifts verbatim to the q-deformed setting.
 -- Blocked on: the general seminormal rep (bean SW-4 residual). -/
 theorem qJM_commute (K : Type*) [CommRing K] (q qi : K) (n : ℕ) (i j : ℕ)
     (hi : i ≤ n) (hj : j ≤ n) :
     qJM K q qi n i * qJM K q qi n j = qJM K q qi n j * qJM K q qi n i := by
-  -- Ref: [murphy1983] Lemma 2.1 — the JM elements generate a commutative subalgebra.
-  -- GAP: requires the seminormal diagonalisation (bean SW-4 residual).
+  -- Ref: [murphy1992] — the JM/Murphy operators generate a commutative subalgebra.
+  -- GAP: requires the seminormal diagonalisation (bean qou-im9l / SW-4 residual).
   sorry
 
 end SeminormalTheory
@@ -338,5 +346,189 @@ The formal statement would quantify over Partition N, SYT, etc.; we leave
 it as a docstring-level specification until the general seminormal rep lands. -/
 
 end BarSymSum
+
+/-! ## Seminormal eigenvalue grounded on the concrete representations (sorry-free)
+
+The `q^{2c}` convention (§ Convention above) is not left as an assertion: it is *computed*
+sorry-free on every seminormal representation that the corpus currently constructs.
+
+* On the **trivial** (one-row shape `(N)`) representation `ρ_triv`, entry `m` sits in cell
+  `(0, m−1)` of content `m−1`, and `L_k` acts by `q^{2k}` — the symmetric channel, contents
+  `0, 1, …, n`.
+* On the **sign** (one-column shape `(1^N)`) representation `ρ_sign`, entry `m` sits in cell
+  `(m−1, 0)` of content `−(m−1)`, and `L_k` acts by `qi^{2k} = q^{−2k}` (once `q·qi = 1`) — the
+  antisymmetric channel, contents `0, −1, …, −n`.
+* On the genuine `2×2` **`(2,1)`** representation `ρ_{(2,1)}`, `L_1 = σ_0²` acts as
+  `diag(q², q⁻²) = diag(q^{2·(+1)}, q^{2·(−1)})` — the two SYT of `(2,1)` whose entry `2`
+  occupies cells of content `+1` resp. `−1`.
+
+Together these exhibit `q^{2c}` for contents `c ∈ {−n, …, n}` with the correct sign structure,
+grounding the convention in real representation matrices rather than a docstring.
+Ref: [ram1997] Theorem 4.1; [murphy1992]; [murphy1981]; [hoefsmit1974]. -/
+
+section EigenvalueGrounding
+
+variable (K : Type*) [CommRing K] (q qi : K) (n : ℕ)
+
+/-- `ρ_triv(σ_i⁻¹) = qi` (sorry-free): `σ_i⁻¹ = σ_i − (q − qi)·1 ↦ q − (q − qi) = qi`. -/
+@[simp] theorem rhoTriv_σInv (i : Fin n) :
+    rhoTriv K q qi n (σInv K q qi n i) = qi := by
+  simp only [σInv, map_sub, map_smul, rhoTriv_σ, map_one, smul_eq_mul, mul_one]
+  ring
+
+/-- `ρ_sign(σ_i⁻¹) = −q` (sorry-free): `σ_i⁻¹ ↦ (−qi) − (q − qi) = −q`. -/
+@[simp] theorem rhoSign_σInv (i : Fin n) :
+    rhoSign K q qi n (σInv K q qi n i) = -q := by
+  simp only [σInv, map_sub, map_smul, rhoSign_σ, map_one, smul_eq_mul, mul_one]
+  ring
+
+/-- **Trivial-rep eigenvalue** (sorry-free): `ρ_triv(L_k) = q^{2k}` for `k ≤ n`.
+The Murphy element `L_k` acts on the (unique) SYT of the one-row shape `(N)` by `q^{2c}` with
+`c = k` the content of the cell holding entry `k+1`.  Realises the `q^{2c}` convention on the
+symmetric channel.  Ref: [ram1997] Thm 4.1; [murphy1992]. -/
+theorem qJM_rhoTriv : ∀ k, k ≤ n → rhoTriv K q qi n (qJM K q qi n k) = q ^ (2 * k)
+  | 0, _ => by simp
+  | k + 1, hk => by
+    have h : k < n := Nat.lt_of_succ_le hk
+    rw [qJM_succ K q qi n h, map_mul, map_mul, rhoTriv_σ, qJM_rhoTriv k h.le]
+    ring
+
+/-- **Trivial-rep eigenvalue of the inverse Murphy element** (sorry-free): `ρ_triv(L_k⁻¹) = qi^{2k}`
+for `k ≤ n`.  With `q·qi = 1` this is `q^{−2k}`, the bar-partner of `qJM_rhoTriv`. -/
+theorem qJMInv_rhoTriv : ∀ k, k ≤ n → rhoTriv K q qi n (qJMInv K q qi n k) = qi ^ (2 * k)
+  | 0, _ => by simp
+  | k + 1, hk => by
+    have h : k < n := Nat.lt_of_succ_le hk
+    rw [qJMInv_succ K q qi n h, map_mul, map_mul, rhoTriv_σInv, qJMInv_rhoTriv k h.le]
+    ring
+
+/-- **Sign-rep eigenvalue** (sorry-free): `ρ_sign(L_k) = qi^{2k}` for `k ≤ n`.
+On the one-column shape `(1^N)` the cell holding entry `k+1` has content `−k`, so once `q·qi = 1`
+this reads `q^{2·(−k)} = q^{−2k}` — the `q^{2c}` convention on the antisymmetric channel.
+Ref: [ram1997] Thm 4.1; [murphy1992]. -/
+theorem qJM_rhoSign : ∀ k, k ≤ n → rhoSign K q qi n (qJM K q qi n k) = qi ^ (2 * k)
+  | 0, _ => by simp
+  | k + 1, hk => by
+    have h : k < n := Nat.lt_of_succ_le hk
+    rw [qJM_succ K q qi n h, map_mul, map_mul, rhoSign_σ, qJM_rhoSign k h.le]
+    ring
+
+/-- **Block eigenvalue of `Θ` on the trivial rep** (sorry-free): `ρ_triv(Θ_n) = Σ_{k=0}^{n}(q^{2k}+qi^{2k})`.
+This is the "cosh" block eigenvalue `Σ_{c∈λ}(q^{2c}+q^{−2c})` realised concretely for the one-row
+shape `(N)` (contents `c = 0, …, n`) — the bar-even scalar that bean `qou-8vt2` consumes. -/
+theorem barSymJMSum_rhoTriv :
+    rhoTriv K q qi n (barSymJMSum K q qi n)
+      = ∑ k ∈ Finset.range (n + 1), (q ^ (2 * k) + qi ^ (2 * k)) := by
+  rw [barSymJMSum, map_sum]
+  refine Finset.sum_congr rfl (fun k hk => ?_)
+  have hk' : k ≤ n := Nat.lt_succ_iff.mp (Finset.mem_range.mp hk)
+  rw [map_add, qJM_rhoTriv K q qi n k hk', qJMInv_rhoTriv K q qi n k hk']
+
+end EigenvalueGrounding
+
+/-- **`(2,1)` eigenvalue** (sorry-free, over `ℝ`): `ρ_{(2,1)}(L_1) = diag(q², q⁻²)`.
+`L_1 = σ_0²` and `ρ_{(2,1)}(σ_0) = S0 = diag(q, −q⁻¹)`, so `ρ_{(2,1)}(L_1) = S0² = diag(q², q⁻²)`.
+The diagonal entries are `q^{2·(+1)}` and `q^{2·(−1)}`: the two SYT of `(2,1)` whose cell holding
+entry `2` has content `+1` (row-sharing) resp. `−1` (column-sharing).  This is the first
+*genuinely 2-dimensional* witness of the `q^{2c}` convention.  Ref: [ram1997] Thm 4.1. -/
+theorem qJM_seminormalRep21_one (q : ℝ) (hq : q ≠ 0) :
+    seminormalRep21 q hq (qJM ℝ q q⁻¹ 2 1) = !![q ^ 2, 0; 0, (q⁻¹) ^ 2] := by
+  have h1 : qJM ℝ q q⁻¹ 2 1 = σ ℝ q q⁻¹ 2 0 * σ ℝ q q⁻¹ 2 0 :=
+    qJM_one ℝ q q⁻¹ 2 (by norm_num)
+  rw [h1, map_mul, seminormalRep21_σ0 q hq]
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [S0, Matrix.mul_apply, Fin.sum_univ_two] <;> ring
+
+/-! ## Block-level cosh–bracket identity and the cell-content sum (sorry-free)
+
+The `Finset`-level lift of `cosh_eq_sq_bracket_add_two`, and its instantiation over the cells of a
+partition `λ` — the "one free identity" of bean `qou-ck0g`, showing the two bar-even brackets
+`Σ_{c∈λ}(q^{2c}+q^{−2c})` and `Σ_{c∈λ}(q^{c}−q^{−c})²` differ only by the λ-independent shift `2n`
+(and, after factoring `[c]_q`, the bar-even scalar `(q−q⁻¹)²`). -/
+
+section CellSum
+
+/-- **Block-level cosh–bracket identity** (sorry-free).  For `a, b : ι → R` with `a i · b i = 1`
+on `s`: `Σ_{i∈s}(a i² + b i²) = Σ_{i∈s}(a i − b i)² + 2·|s|`.  The `Finset` sum of
+`cosh_eq_sq_bracket_add_two`. -/
+theorem barSym_block_sum_eq {R : Type*} [CommRing R] {ι : Type*} (s : Finset ι)
+    (a b : ι → R) (hab : ∀ i ∈ s, a i * b i = 1) :
+    (∑ i ∈ s, (a i ^ 2 + b i ^ 2)) = (∑ i ∈ s, (a i - b i) ^ 2) + 2 * (s.card : R) := by
+  have h : ∀ i ∈ s, a i ^ 2 + b i ^ 2 = (a i - b i) ^ 2 + 2 :=
+    fun i hi => cosh_eq_sq_bracket_add_two (a i) (b i) (hab i hi)
+  rw [Finset.sum_congr rfl h, Finset.sum_add_distrib, Finset.sum_const, nsmul_eq_mul]
+  ring
+
+variable {R : Type*} [Field R] {N : ℕ}
+
+/-- **The cosh sum over the cells of `λ`** — the block eigenvalue candidate for `barSymJMSum` on the
+irreducible `ρ_λ`: `Σ_{c∈λ}(q^{2c} + q^{−2c})`, `c = cellContent` the content of each cell (a
+`ℤ`-power, so the base ring is a `Field` — §7c: this is the archimedean/observation side, `q ≠ 0`). -/
+noncomputable def cellContentCoshSum (lam : Partition N) (q : R) : R :=
+  ∑ c ∈ (shape lam).cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c)))
+
+/-- **`cellContentCoshSum` in bracket form** (sorry-free): with `q ≠ 0`,
+  `Σ_{c∈λ}(q^{2c}+q^{−2c}) = Σ_{c∈λ}(q^{c}−q^{−c})² + 2·|λ|`.
+After factoring `[c]_q = (q^{c}−q^{−c})/(q−q⁻¹)` this is `(q−q⁻¹)²·Σ_c[c]_q² + 2n`: the two bar-even
+brackets coincide up to the bar-even scalar `(q−q⁻¹)²` and the λ-independent shift `2n = 2|λ|`, so
+**neither is a spectral degree of freedom** (bean `qou-ck0g` / `qou-8vt2`). -/
+theorem cellContentCoshSum_eq_bracket (lam : Partition N) (q : R) (hq : q ≠ 0) :
+    cellContentCoshSum lam q
+      = (∑ c ∈ (shape lam).cells, (q ^ (cellContent c) - q ^ (-(cellContent c))) ^ 2)
+        + 2 * ((shape lam).cells.card : R) := by
+  have hsq : ∀ m : ℤ, q ^ (2 * m) = (q ^ m) ^ 2 := fun m => by
+    rw [two_mul, zpow_add₀ hq, pow_two]
+  have hab : ∀ c ∈ (shape lam).cells,
+      q ^ (cellContent c) * q ^ (-(cellContent c)) = 1 :=
+    fun c _ => by rw [← zpow_add₀ hq, add_neg_cancel, zpow_zero]
+  have key := barSym_block_sum_eq (shape lam).cells
+    (fun c => q ^ (cellContent c)) (fun c => q ^ (-(cellContent c))) hab
+  have hL : cellContentCoshSum lam q
+      = ∑ c ∈ (shape lam).cells, ((q ^ (cellContent c)) ^ 2 + (q ^ (-(cellContent c))) ^ 2) := by
+    rw [cellContentCoshSum]
+    refine Finset.sum_congr rfl (fun c _ => ?_)
+    rw [hsq (cellContent c),
+        show -(2 * cellContent c) = 2 * (-(cellContent c)) by ring, hsq (-(cellContent c))]
+  rw [hL, key]
+
+end CellSum
+
+/-! ## General-`λ` block eigenvalue and centrality — honest `sorry` + `-- Ref:`
+
+The remaining two statements need the **general** Hoefsmit seminormal representation, which is
+itself a documented GAP (`hoefsmit_seminormal_rep`, bean `qou-im9l` / SW-4 residual).  The scalar
+they evaluate to is computed sorry-free above (`cellContentCoshSum`); only the bridge
+"the central element acts by that scalar on the irreducible block" awaits the general rep. -/
+
+section GeneralGap
+
+/-- **Block eigenvalue of `Θ` on the irreducible `ρ_λ` — GAP.**  For every `λ ⊢ N` there is a
+seminormal representation `ρ_λ : H_N(q) →ₐ M_{d_λ}` on which the central bar-symmetrised sum
+`Θ = barSymJMSum` acts as the scalar `cellContentCoshSum λ q = Σ_{c∈λ}(q^{2c}+q^{−2c})·1`.
+The scalar is sorry-free (`cellContentCoshSum` + `cellContentCoshSum_eq_bracket`); the bridge
+`ρ_λ(Θ) = scalar·1` needs the general seminormal construction and the per-element eigenvalue
+`L_k ↦ q^{2·cellContent}`. -/
+theorem barSymJMSum_block_eigenvalue {N : ℕ} (q : ℝ) (hq : q ≠ 0) (lam : Partition N) :
+    ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
+      ρ (barSymJMSum ℝ q q⁻¹ (N - 1))
+        = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
+  -- Ref: [ram1997] Theorem 4.1 (seminormal eigenvalues q^{2c}); [murphy1992] (the Murphy operators
+  --   are central and act by scalars on the irreducibles); [hoefsmit1974].
+  -- GAP: needs `hoefsmit_seminormal_rep` (bean qou-im9l, a documented sorry) plus the per-element
+  --   eigenvalue `L_k ↦ q^{2·cellContent}`.  The scalar itself is proved sorry-free above.
+  sorry
+
+/-- **The bar-symmetrised sum is central — GAP.**  `Θ = barSymJMSum` commutes with every generator
+`σ_i`, hence lies in `Z(H_{n+1}(q))`.  As a sum of power sums `p_1(L) + p_1(L⁻¹)` of the pairwise
+commuting Murphy elements, it is a symmetric function of the JM family, and symmetric functions of
+the JM family are central. -/
+theorem barSymJMSum_central (K : Type*) [CommRing K] (q qi : K) (n : ℕ) (i : Fin n) :
+    barSymJMSum K q qi n * σ K q qi n i = σ K q qi n i * barSymJMSum K q qi n := by
+  -- Ref: [murphy1992] — symmetric functions of the JM/Murphy operators are central.
+  -- GAP: needs `qJM_commute` plus the σ_i–L_k commutation relations (bean qou-im9l / SW-4 residual).
+  sorry
+
+end GeneralGap
 
 end QOU.SchurWeyl

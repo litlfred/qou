@@ -320,7 +320,10 @@ def main() -> int:
                 "whether the two-row forcing transfers to the decay channel is an "
                 "OPEN item (new bean). No c_k wired; no tier change."),
         },
-        "durationSec": round(time.monotonic() - t0, 3),
+        # int ms, not float sec: a float64 duration is the one raw-float64
+        # ratchet hit this witness had (NO-FLOAT64 discipline; WitnessBuilder
+        # convention is integer durationMs, masked as ephemeral meta).
+        "durationMs": int((time.monotonic() - t0) * 1000),
     }
 
     out = HERE / "qbeta-c3-ladder-trace-convention-sensitivity.witness.json"

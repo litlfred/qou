@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "aae61b5f8f8b",
     "ts": "c9436295b1ba",
-    "lean": "6d83c154e99c",
+    "lean": "342971b58dd5",
     "lean_statement": "6cc9669d3231"
   },
   "criteria": {
@@ -331,26 +331,6 @@
           "version": "v1",
           "script_hash": "14c0eb8908a2",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
-        },
-        "reviewed_at": "2026-08-09T18:41:29.553Z",
-        "reviewed_sha": "25003edd6e0c0ebc2016675c7ac88fad64b506d8"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "aae61b5f8f8b",
-          "ts": "c9436295b1ba",
-          "lean": "6d83c154e99c",
-          "lean_statement": "6cc9669d3231"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
         "reviewed_at": "2026-08-09T18:41:29.553Z",
         "reviewed_sha": "25003edd6e0c0ebc2016675c7ac88fad64b506d8"
@@ -1372,7 +1352,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "aae61b5f8f8b",
+          "ts": "c9436295b1ba",
+          "lean": "342971b58dd5",
+          "lean_statement": "6cc9669d3231"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.730Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

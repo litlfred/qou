@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic.lean"
   },
   "source_hashes": {
-    "ts": "f90a646a8d66",
     "md": "ca9e4c47a9b5",
-    "lean": "c365be5e13cc"
+    "ts": "f90a646a8d66",
+    "lean": "c365be5e13cc",
+    "lean_statement": "fee7a4e0337d"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -321,26 +322,6 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T03:35:21.449Z",
-        "reviewed_sha": "096e8e0634fad5cd341f1612591d0221f325b073"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "ca9e4c47a9b5",
-          "ts": "f90a646a8d66",
-          "lean": "c365be5e13cc",
-          "lean_statement": "fee7a4e0337d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
         "reviewed_at": "2026-08-10T03:35:21.449Z",
@@ -2164,7 +2145,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "ca9e4c47a9b5",
+          "ts": "f90a646a8d66",
+          "lean": "c365be5e13cc",
+          "lean_statement": "fee7a4e0337d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.691Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

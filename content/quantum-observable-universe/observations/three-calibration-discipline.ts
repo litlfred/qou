@@ -17,6 +17,7 @@ export default proposition({
   uses: [
     "prop:substrate-consistency-window",
     "prop:calibration-cohomology-alignment",
+    "thm:jones-markov-trace",
   ],
   cites: [
     "jones1985",

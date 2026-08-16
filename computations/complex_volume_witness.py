@@ -30,6 +30,7 @@ Run:  python3 -u computations/complex_volume_witness.py 2>&1 | tee /tmp/cv.log
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — substrate/ subdir bridge
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import math
 import sys
 
@@ -53,6 +54,13 @@ ISOTOPES = [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 # AME binding ground truth (MeV) for the Re cross-check
 B_AME = {"2H": float(AME_B_DEUTERON_MEV_VALIDATION), "3H": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION), "4He": float(AME_B_HE4_MEV_VALIDATION)}
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def complex_volume(Z: int, N: int):
     """𝔙 = 𝔈_bind + i·𝔔_β for the (Z,N) bound knot. Im is the single

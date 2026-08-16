@@ -598,19 +598,30 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: "MeV",
     }),
 
-    // NOTE: `data.rows.2` indexes the deuteron row. The row order
-    // in `canonical-mass-table-extended.witness.json` is fixed by
-    // DEFAULT_ATOMS in canonical_mass_table_extended.py and must
-    // not be reordered (proton=0, neutron=1, D=2, T=3, ³He=4,
-    // ⁴He=5, ⁵Li=6, ⁶Li=7). A (Z, N)-keyed lookup is the long-term
-    // fix; tracked as a follow-up. See Gemini #781 review.
+    // Addressed by NUCLIDE, not by position (bean `qou-xwet`).
+    //
+    // This pin used to read `data.rows.2.B_AME_MeV`, guarded only by a comment
+    // asking nobody to reorder DEFAULT_ATOMS. Reordering was never the risk:
+    // `low_isotope_mass_table.py` drove the producer with a restricted
+    // `--atoms` set, and because the output filename is fixed, the canonical
+    // witness was overwritten by a five-row table. Every index shifted without
+    // anything being reordered, and from 2026-06-22 to 2026-08-15 `rows.2` was
+    // ³He — so this entry returned 7.71804132 MeV, 3.47× the deuteron's, under
+    // the description below. Nothing caught it; it was restored by a second
+    // clobber rather than by a fix.
+    //
+    // `rows_by_nuclide` is keyed by the `--atoms` label, so a missing row is a
+    // missing key and fails loudly. Both halves of the guard are now real: the
+    // producer refuses to write a partial canonical table, and
+    // `registry_witness_pin_validator.py` checks that any surviving positional
+    // pin still addresses the nuclide its name claims.
     B_2H_AME_MeV: Object.freeze({
       name: "B_2H_AME_MeV",
       description: "AME experimental binding energy of deuterium (2H).",
       symbol: "B_{\\mathrm{AME}}(\\mathrm{D})",
       witnessFile:
         "computations/canonical-mass-table-extended.witness.json",
-      witnessPath: "data.rows.2.B_AME_MeV",
+      witnessPath: "data.rows_by_nuclide.D.B_AME_MeV",
       defaultPrecision: 5,
       units: "MeV",
     }),

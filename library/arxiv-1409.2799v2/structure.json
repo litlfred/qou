@@ -1,0 +1,309 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1409.2799v2",
+ "source": {
+  "file": "1409.2799v2.pdf",
+  "sha256": "2f2067b7b583e731e0baec27574c5f7cd189c7bcd3493cfbf9533aa0d44e48eb",
+  "bytes": 673028,
+  "pages": 50,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1409.2799",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "31 Dec 2015"
+  },
+  "doi": null,
+  "title": "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY",
+  "authors_raw": "HENNING HAAHR ANDERSEN AND DANIEL TUBBENHAUER",
+  "title_lines": [
+   "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY"
+  ],
+  "abstract": "We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on T. This grading is a \u201croot of unity phenomenon\u201d and might lead to new insights about link and3-manifold invariants deduced fromT. We also give a diagrammatic category for the (graded) projective endofunctors on T, indicate how our results could generalize and collect some \u201cwell-known\u201d facts to give a reasonably self-contained exposition.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20171116143639-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "Diagram categories for Uq-tilting modules at roots of unity",
+   "Author": "Henning Haahr Andersen and Daniel Tubbenhauer"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "The framework",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "An outline of the paper",
+   "page": 5,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "The tilting category T",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Quantum groups at roots of unity",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Weyl modules, dual Weyl modules and simple modules",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Tilting modules and the tilting category T",
+   "page": 8,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "The linkage principle and blocks",
+   "page": 10,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Translation functors",
+   "page": 14,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "The Khovanov-Seidel quiver algebra and gradings",
+   "page": 17,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The quiver algebras Qm and Ain",
+   "page": 17,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Combinatorics of the graded, right Qm- and Ain-modules",
+   "page": 19,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Endofunctors on pMod-Qm and pMod-Qin",
+   "page": 20,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Ain and the tilting category T",
+   "page": 22,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "The tilting category T and its graded counterpart Tgr",
+   "page": 27,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Diagrams for the graded tilting category Tgr",
+   "page": 31,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
+   "page": 31,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The dihedral cathedral Dinfty",
+   "page": 32,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "The quotient QDinfty",
+   "page": 37,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "QDinfty and the tilting category Tgr",
+   "page": 41,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Diagram categories for Endo(Tgrl)",
+   "page": 46,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-the-framework",
+   "number": "1.1",
+   "title": "The framework",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 12949,
+   "n_words": 2130
+  },
+  {
+   "id": "sec-002-12-an-outline-of-the-paper",
+   "number": "1.2",
+   "title": "An outline of the paper",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2383,
+   "n_words": 398
+  },
+  {
+   "id": "sec-003-21-quantum-groups-at-roots-of-unity",
+   "number": "2.1",
+   "title": "Quantum groups at roots of unity",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2121,
+   "n_words": 500
+  },
+  {
+   "id": "sec-004-22-weyl-modules-dual-weyl-modules-and-simple-mod",
+   "number": "2.2",
+   "title": "Weyl modules, dual Weyl modules and simple modules",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3518,
+   "n_words": 740
+  },
+  {
+   "id": "sec-005-23-tilting-modules-and-the-tilting-category-t",
+   "number": "2.3",
+   "title": "Tilting modules and the tilting category T",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 8044,
+   "n_words": 1593
+  },
+  {
+   "id": "sec-006-24-the-linkage-principle-and-blocks",
+   "number": "2.4",
+   "title": "The linkage principle and blocks",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 9144,
+   "n_words": 1885
+  },
+  {
+   "id": "sec-007-25-translation-functors",
+   "number": "2.5",
+   "title": "Translation functors",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 27,
+   "n_chars": 34795,
+   "n_words": 6942
+  },
+  {
+   "id": "sec-008-35-the-tilting-category-t-and-its-graded-counter",
+   "number": "3.5",
+   "title": "The tilting category T and its graded counterpart Tgr",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 31,
+   "n_chars": 15071,
+   "n_words": 2891
+  },
+  {
+   "id": "sec-009-41-the-basics-diagrammatic-categories-additive-c",
+   "number": "4.1",
+   "title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 48,
+   "n_chars": 37486,
+   "n_words": 7443
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 10868,
+   "n_words": 1365
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 11,
+  "chars_total": 136379
+ }
+}

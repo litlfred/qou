@@ -76,7 +76,7 @@ def writhe_from_word(word):
 
 def z_factor(q):
     """Markov stabilization factor z = 1/(q^{1/2} + q^{-1/2})."""
-    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    return q ** 3 / (q ** 2 + 1)   # convention D (was C: 1/(sqrt q + 1/sqrt q))
 
 
 def trM_sigma1_sq(q):

@@ -165,6 +165,23 @@ user's last message, not the most recently mentioned file.
    when the user explicitly says so ("stop", "drop that", "switch
    to X first"). Inferred urgency is not enough.
 
+   > **Stalled-claim takeover (standing policy, 2026-08-15).** Assume
+   > agents can stall — a container is reclaimed, a session dies, a
+   > branch is abandoned mid-task. A bean at `in-progress` whose
+   > **backing branch has had no new commit for > 3 h** is presumed
+   > abandoned and MAY be taken over. **Scope (read or you will clobber
+   > live work):** this applies ONLY to the branch backing a *live
+   > in-progress bean* — NOT to the thousands of long-idle `claude/*`
+   > branches, which are permanently stale and are never takeover
+   > targets by age alone. Before taking over: confirm the branch is
+   > genuinely stale (last commit > 3 h AND no newer PR activity / no
+   > in-flight CI — a long build is not a stall), re-claim the bean with
+   > a `--body-append` noting the takeover + the stale branch's last
+   > SHA, and continue from that branch's tip or from `main` — **never
+   > force-push over a sibling's branch.** This is the one sanctioned
+   > exception to "never touch a sibling's claim". Protocol:
+   > [`local/todo-manager` §Stalled-claim takeover](.claude/skills/local/todo-manager.md).
+
 3. **Say which bean you are on — every turn.** Claiming a bean records
    the work; *reporting* it is what lets the user steer and a sibling
    session avoid you. Both are required.
@@ -782,6 +799,42 @@ originating file itself) may you declare the item open. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
 
+### Grep the claim SHAPE, not only the topic (STRICT, 2026-08-15)
+
+The four paths above answer *"has anyone worked this topic?"*. They do
+**not** answer *"does the corpus actually assert the proposition I am
+about to reason from?"* — and that second question is where a whole
+class of errors lives. Before writing any equivalence, identification,
+or exclusion into a durable artifact, resolve the symbols to their Lean
+declarations and check the **arity**:
+
+1. **One proposition, or a family?** Read the declaration's type.
+   `kappa_vanishes : ℕ → Prop` is a *level-indexed family*; there is no
+   single truth value to be faithful to.
+2. **Pointwise, or the universal closure?** `∀ P, v ↔ Pred P` and
+   `v ↔ ∀ P, Pred P` are different claims, and the second is
+   **trivially inhabited**. Refuting the first says nothing about it.
+3. **Shared type, or shared instance?** A theorem fixing one `sys` and
+   one `P` couples two questions *within one instance*; it says nothing
+   about two legs instantiated as different values — and the other
+   instance may not even satisfy the hypothesis.
+4. **Set-level premise, truth-value conclusion?** "Undecidable", "not
+   cut out by an ideal", "cofinite locus" are facts about sets or loci,
+   logically independent of whether a scalar is equivalent to a single
+   proposition.
+
+History: four separate instances of this one conflation reached durable
+artifacts in a single session (2026-08-15) — a retracted "the corpus is
+inconsistent" claim, a "no scalar can be faithful to halting"
+over-claim, a "q-NS blow-up witness *is* a q-Collatz divergence
+witness" cross-leg identification, and a set-level-to-truth-value
+inference written into a content block *while the audit doc three files
+away named that exact fallacy*. Each survived a topic-grep. Recorded as
+the `da-arity-conflation` criterion in
+[`local/devils-advocate-watcher`](.claude/skills/local/devils-advocate-watcher.md),
+which carries the worked examples and the measured reason a machine
+checker cannot do this for you.
+
 **Scope note (2026-06-10):** this checklist gates *factual
 corpus-status claims*. Skeptical assessments — "this looks fitted",
 outside-view critique of a derivation, reception/publishability
@@ -1022,7 +1075,11 @@ The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetim
 All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-plane scale + modulus + one orthogonal class; 2+1=3) — **not** three distinct degrees H⁰/H¹/H² (per `calibration-cohomology-alignment`, Lean `QOU.Mass.calibrations_eq_cohomology` — a count/alignment claim, unchanged). The canonical inputs are **weak-sector observables** (m_e, 𝔇_β, 𝔇_π); their proxies are the masses (m_e, m_π) plus the Q-value Q_β. m_e sets the unit; since q₀ is dimensionless it is pinned by m_μ *in that unit* — the ratio m_μ/m_e, the most precise CAL-2 anchor. The exact maps:
 
 - **q₀** ← CAL-2 (𝔇_β), pinned numerically via CAL-1 + the lepton ratio:  `m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2·Cl₂(π/3) = 6Λ(π/3) ≈ 2.0299`  ⇒ invert for `q₀ ≈ 1.10998`.
-  (**Λ vs Cl₂ — do not swap the coefficient.** `Λ(θ) = Cl₂(2θ)/2`, so one regular ideal tetrahedron is `Cl₂(π/3) = 3Λ(π/3) ≈ 1.01494` and the two-tetrahedron figure-eight complement is `2·Cl₂(π/3) = 6Λ(π/3)`. The forms `2Λ(π/3) ≈ 0.6766` and `3·Cl₂(π/3) ≈ 3.0448` are **both wrong** and both were live in the corpus until 2026-08-10 — they arise from keeping one function's coefficient while writing the other function's name.)
+  (**Λ vs Cl₂ — do not swap the coefficient.** `Λ(θ) = Cl₂(2θ)/2`, so one regular ideal tetrahedron is `Cl₂(π/3) = 3Λ(π/3) ≈ 1.01494` and the two-tetrahedron figure-eight complement is `2·Cl₂(π/3) = 6Λ(π/3)`. The forms `2Λ(π/3) ≈ 0.6766` and `3·Cl₂(π/3) ≈ 3.0448` are **both wrong** — they arise from keeping one function's coefficient while writing the other function's name.
+
+  **Both are still live, and this line previously said they were not.** It read "both were live in the corpus until 2026-08-10", i.e. an all-clear. The 2026-08-10 drain (#4886 → #4901 → #4917, reported as "14 sites across 12 files, corpus-wide") swept `content/` only. Measured 2026-08-15 with fixed-string grep: **54 sites across 35 files** remain — 5 in `content/`, 28 in `computations/`, 21 in `docs/` (25 `.py`, 17 `.md`, 12 `.json`; **0** in `.lean`/`.ts`, which the drain did clear). Do not read this guard as "already fixed"; assume the file you are editing still carries it, and check. Tracked as `qou-zdz5`.
+
+  Most survivors compute the RIGHT value under the WRONG name — e.g. `VOL41 = 2*mp.clsin(2, mp.pi/3)` is `2·Cl₂(π/3) = 2.0299` ✓ annotated `# Vol(4₁) = 2Λ(π/3)` ✗. So a grep for the bad *name* does not imply a bad *number*; check the arithmetic beside it before "fixing" a value.)
 - **Q_β** (the CAL-2 proxy):  `Q_β = ℏ/𝔇_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π. 𝔇_β **is** CAL-2; because the modulus is overdetermined and pinned most precisely by m_μ/m_e, Q_β reproduced from q₀ is a 0.17% **cross-check**, not a fourth input.
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
@@ -1054,6 +1111,22 @@ When working on math-affecting code or content, **trace the change to a step in 
 > **Route every absolute nucleon/atom mass through the single facade [`computations/canonical_mass.py`](computations/canonical_mass.py)** (`proton_mass_mev` / `neutron_mass_mev` / `nucleon_mass_mev`). `mass_vol_density` / `vol_density_borromean` / `linking_weight_family_a` (=λ_A) are **deprecated for absolute mass** (emit `DeprecationWarning`); `vol_density_per_block` stays valid for **binding ratios only** (scale cancels). Read first: [`docs/canonical-mass-formula-guardrail.md`](docs/canonical-mass-formula-guardrail.md). Why it recurred: this very banner read with `K=𝓑₃` *is* the wrong form — that's the trap the facade closes.
 
 > **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is PROVED Taylor-exact; `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` swings up to 3.47 % at m_p-pin q₀ (≈ 3 % cross-anchor)), with the N=4 → N=5 non-monotonicity as the experimental signature. Report TIERED (`proved` / `near-match` / `fitted`), never binary wired/dropped — the four-session wire/un-wire flip-flop (#1452 ↔ #1479) came from conflating "N=3 beats 100× experimental" (true) with "c_3 = -2 is Taylor-exact" (false). **Canonical reference (read before any `c_k` wire/un-wire decision): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).** Permanent fix is the Q_β Habiro element (parallel α_EM `[2]_q·(1−h²α)` in PR #1511). **2026-05-31 c_3 SETTLED** (PR #1580 verdict audit + flip-flop history table now at 6 entries in [`docs/coordination/1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md)); Li_2^q × spectral combiner refuted as mech #7 (PR #1609); Δtr_M bar-decomposition recorded as structural observation (PR #1615) — none of these wire to production.
+>
+> **🛑 CONVENTION LABEL (2026-08-15 ruling) — every number in this banner is
+> CONVENTION-C-frame.** `c_2 = -1`, `c_3 = -2 = J_Hopf(q=1)`, the 3.47 % swing,
+> and the whole `c_k` ladder were derived with the Markov parameter
+> `z = √q/(q+1)` (convention C). The owner ruling of 2026-08-15 makes
+> **convention D (`z = q³/(q²+1)`) canonical**. The values above are **correct
+> for C** and are kept as recorded — they need *scoping*, not correction; do
+> **not** "fix" them. **The ladder must be RE-DERIVED under D, and that is not
+> a z-swap** — `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`
+> ([`MarkovZFullBarCondition.lean`](content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
+> sorry-free) makes the C-frame ladder and the mass channel's three-row forcing
+> mutually exclusive, so substituting `z_D` into the existing ladder is not a
+> valid move. Until the re-derivation lands, treat every `c_k` conclusion —
+> including the downstream `c₃^even = −Vol(4₁)`, `[3]_q/25`, `J − ℏ²`, `S_leak`
+> and `q*_S` facts — as **C-conditional**. Tranche S1, bean `qou-cds1`;
+> §S1 of [`docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md`](docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md).
 
 > **⚠ Critical framing — Im(q) at fibre vs observable level (2026-06-01).** A recurrent source of confusion in the c_k flip-flop saga and the (1+q)/2 Option-E v9 near-match: distinguish two levels of "Im(q)":
 >
@@ -1229,6 +1302,48 @@ Do not regress either.
 
 ### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)
 
+> **🛑 OWNER RULING 2026-08-15 — convention D canonical (C excised); proton pin
+> canonical; colour weighting canonical.** Verbatim: *"convention D is
+> convention. excise convention C."* / *"similarly, use proton pin and color
+> wighting"*. Record, measured blast radius, and ordered tranche plan:
+> [`docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md`](docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md).
+> It supersedes the `disputed` registration of the `qbeta-decay` trace channel
+> (PR #5111) and answers the trace-convention registry's one
+> `owner_decision_required`.
+>
+> - **R1 — convention D (`z = q³/(q²+1)`) canonical; C (`z = √q/(q+1)`)
+>   excised.** **Largely a RE-AFFIRMATION** — the 2026-08-09 ruling had
+>   already excised C. R1's new work is the two surviving carve-outs: the
+>   `qbeta-decay` channel registered `disputed` (PR #5111) and the registry's
+>   one `owner_decision_required`. It removes the *convention* question from
+>   `tools/pyhecke/gram.py::z` but **not** the Gram singularity under D —
+>   that is a numerical blocker, bean `qou-cds2`.
+>
+>   **A clean detector run is NOT evidence the C surface is clear.**
+>   [`scripts/convention-c-producer-audit.py`](scripts/convention-c-producer-audit.py)
+>   reports **0 actionable C producers** (3 blocked-by-design sites in
+>   `tools/pyhecke`, 9 labelled comparisons). That count is real but
+>   **narrow**: it keys on *assignment targets*, so a convention-C value
+>   **returned from a function** is structurally invisible to it. Measured
+>   2026-08-16 — **7 files** return `1/(√q + 1/√q)`, which is `√q/(q+1) = z_C`
+>   *exactly* (`0.49932…` against D's `0.61268…`). PR #5124 catalogues five
+>   such detector-blind spellings and retracts the earlier "0 actionable"
+>   reading outright. So: **treat the remaining C surface as UNMEASURED
+>   rather than clear — and do not launch a corpus-wide sweep off either
+>   number.** R1 settles which convention is canonical; it does not tell you
+>   how much code still disagrees.
+> - **R2 — proton pin canonical.** Reaffirms the 2026-08-07 directive
+>   immediately below; nothing in that directive changes. The *ideal CAL-2
+>   definition* (`𝔇_β`, proxy `m_μ/m_e`) is untouched — R2 governs which pin
+>   code **evaluates** at, not what the calibration **is**.
+> - **R3 — `bring_color_weighted` canonical** as the p/n convention. Six live
+>   non-comparison files are still off-canon (bean `qou-cds4`).
+>
+> **The Q_β `c_k` ladder is convention-C-frame throughout and has not been
+> re-derived** (bean `qou-cds1`) — see the convention note on the `c_k`
+> truncation-order banner earlier in this document before wiring or
+> un-wiring any `c_k`.
+
 > **🟧 OWNER DIRECTIVE (2026-08-07) — ALL AGENTS AND ALL PRODUCTION CODE
 > DEFAULT TO THE EXPERIMENTAL (PROTON) ANCHOR.** When any code, probe,
 > witness, dashboard, or agent needs a numerical `q₀`, the default is the
@@ -1322,7 +1437,14 @@ muon; muon-anchor → ~4000σ on proton).
    - **`computations/` layer** historically carries **muon-q₀**
      witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
      `1.10997859555733471…` (−11.5 ppb), feeding ~72 producers /
-     ~840 witnesses — the canonical 3-CAL (muon) derivation witnesses.
+     **870** witnesses — the canonical 3-CAL (muon) derivation witnesses.
+     (Re-measured 2026-08-15 and again 2026-08-16 over the 2941 tracked
+     `computations/*.witness.json`: **870** carry the muon fingerprint —
+     **801 muon-only** and **69 also carrying the proton pin**. The
+     previous figure here was "~840"; the error was **low, not
+     stale-high**. A both-pin witness is either a deliberate comparison
+     or a layer straddle — see the straddling hazard above; triage is
+     bean `qou-cds3`.)
      These remain **valid as recorded** (they are what they say they are)
      but are **no longer the default an agent should reach for**; see
      rule 4 for the migration posture.
@@ -1333,12 +1455,26 @@ muon; muon-anchor → ~4000σ on proton).
    (m_μ ≈ 105.6583978, 963.6×) is the **canonical** value; a fresh run
    that reads the muon-q₀ Borromean witness (≈ 105.6583756, 1.36 ppb)
    is the symptom.
-4. **Migration posture for the ~840 muon-q₀ `computations/` witnesses
-   (updated 2026-08-07).** The owner directive above sets the *target end
-   state*: experimental (proton) everywhere in compute. It does **not**
-   authorise a bulk rewrite as an idle-drain — that sweep is large, is
-   tracked under bean `tnjb`, and still needs scoped sign-off before it
-   runs. Concretely:
+4. **Migration posture for the 870 muon-q₀ `computations/` witnesses
+   (updated 2026-08-07; count re-measured 2026-08-16).** The owner
+   directive above sets the *target end state*: experimental (proton)
+   everywhere in compute. It does **not** authorise a bulk rewrite as an
+   idle-drain — that sweep is large, is tracked under bean **`qou-1c4y`**,
+   and still needs scoped sign-off before it runs. **The 2026-08-15 ruling
+   (R2) does not change this.** R2 restates the end state; it does not
+   scope the sweep, so the sign-off requirement stands. If the owner
+   intends R2 to authorise the bulk migration, that has to be said here
+   explicitly — do not infer it from R2's wording. Concretely:
+
+   > **Bean reference corrected 2026-08-15.** This paragraph previously
+   > said the sweep is "tracked under bean `tnjb`". It is not, and the
+   > mis-reference is worse than a typo: `tnjb` is *completed* and is
+   > about a **dashboard** defect (`per-observable-100x-status.witness.json`
+   > scoring the muon tautology as the m_μ prediction — see item 3 above,
+   > where the `tnjb` citation is correct). An agent following this
+   > paragraph to find the migration lands on a closed, unrelated bean and
+   > can reasonably conclude the sweep has already run. The live tracker is
+   > `qou-1c4y` (in-progress); its predecessor `z5vu` is completed.
    - **New / touched code: use proton.** Any probe, producer, or witness
      you write or modify defaults to the experimental pin. No sign-off
      needed — that is the standing directive.
@@ -2832,7 +2968,20 @@ SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> 
 git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
-  && tar xzf "$TGZ" -C "$ROOT" && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
+  && tar xzf "$TGZ" -C "$ROOT" \
+  && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
+  && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3; lean-direct ONLY, see below"
+
+# 🛑 A RESTORED tree has oleans but NO .trace files, so Lake treats every one as
+# stale: a later `lake build` rebuilds them from source AND EVICTS THE RESTORE.
+# Measured 2026-08-15 (bean qou-r13s) running `lake build QOU UGB Fred2005` at
+# the root against a tree restored exactly as above: root mathlib oleans
+# 6990 -> 334, and of the 536 oleans written in ten minutes, 520 were
+# mathlib/aesop/batteries and ZERO were QOU/UGB/Fred2005. It is silent — the
+# output reads as ordinary build progress. Verify with lean-direct instead
+# (2.4 s vs 50 minutes of nothing); guard any build step with:
+#     [ -f "$ROOT/.lake/RESTORED-NO-TRACES" ] && echo "restored — do NOT lake build"
+# Delete the marker only once Lake has genuinely rebuilt the tree.
 
 # Step 1: Shallow-clone mathlib locally (~144 MB).  [fallback if Step 0 misses]
 cd .. && git clone --depth 1 https://github.com/leanprover-community/mathlib4.git
@@ -2949,7 +3098,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
 | `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 70 in-repo importers. |
 | `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 89 in-repo importers. |
-| `tools/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. 3 in-repo importers. |
+| `schemas/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. **Under `schemas/`, not `tools/`** — moved back from folio-assistant by `e2ded2c607`. Install the package root (`pip install -e schemas/witness-schema`); `python/` under it holds the module but no `pyproject.toml`. |
 
 > **Importer counts are measured, not maintained.** The five above were
 > `1 / 7 / 19 / 15 / 1` and were wrong by up to two orders of magnitude
@@ -2975,7 +3124,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 > a live defect: `test_ephemeral_mask_sync` exists to detect mirror divergence
 > and was green only because the mirror was stale. Run `--check` after any
 > change to a module in the cone; it is the gate.
-| `tools/block-qa-schema/` | Cross-language QA-sidecar interchange schemas (`<block>.qa.json` block-qa/v1 + `<criterion-id>.script.json` qa-script/v1): canonical JSON Schema + Zod + Pydantic mirrors, corpus-validated. Packaged for npm (`@litlfred/block-qa-schema`) + PyPI (`block-qa-schema`); not yet published to registries. Producing types: `folio-assistant/schemas/block-qa.ts`. |
+| ~~`tools/block-qa-schema/`~~ | **No longer in this repo.** The QA-sidecar interchange schemas (`<block>.qa.json` block-qa/v1 + `<criterion-id>.script.json` qa-script/v1) left with the platform code in `39fc90f6d6` (miga) and live in `litlfred/folio-assistant`; producing types are `folio-assistant/schemas/block-qa.ts`, reachable here via [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh). Do not look for it under `tools/` — this row described an in-repo path for weeks after the directory was deleted. |
 | `tools/hecke-engine/` | `hecke-engine` Rust crate — Layer 1 canonical compute core (Gröbner-Shirshov reducer, Hoefsmit, Markov trace, Clarabel SDP backend). |
 | `tools/hecke-engine-{wasm,node,r,jvm,c}/` | Multi-language bindings of `hecke-engine` (WASM, Node napi-rs, R/JVM/C — last three Tier-3). |
 | `folio.config.json` | Adapter config (content type, adapter module, feedback dir) |

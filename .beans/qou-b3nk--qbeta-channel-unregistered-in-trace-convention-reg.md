@@ -1,7 +1,7 @@
 ---
 # qou-b3nk
 title: 'Q_beta channel UNREGISTERED in the trace-convention registry — the ladder is convention-C end-to-end; settle its convention'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T13:30:00Z
@@ -66,3 +66,38 @@ Do not pick the convention by which one makes a downstream number look
 better. C currently "works" numerically because the ladder was BUILT in the
 C frame — that is provenance, not evidence. The convention must come from the
 channel's representation theory, exactly as the mass channel's did.
+
+## Session note (2026-08-15, claude/qbeta-channel-convention-2026-08-15, PR #5111)
+
+Outcome (c) of the three, leaning (b): NEITHER convention is derived for the
+decay channel. Registered `channels.qbeta-decay` DISPUTED (definitional null —
+the decay blocks write the excised-C value while naming it "the Markov--Jones
+parameter", whose referent has read D since 2026-08-09; production C) +
+R9 tripwire on qbeta_utils.markov_parameter (CONFIRMED C, |d|=1.9e-51).
+
+Proved (Lean, sorry-free, lean-direct exit 0, no sorryAx —
+QOU/QBeta/MarkovZFullBarCondition.lean):
+
+- decayLadder_zC_threeRow_ne_zero: any faithful normalised Markov trace at
+  the ladder's z_C has y_(1^3) != 0 for ALL s = sqrt(q) > 1. So option 2 of
+  this bean (forcing transfers) and "keep the C ladder" are MUTUALLY
+  EXCLUSIVE — proved, not observed. D-adoption = ladder re-derivation.
+- Full-bar condition bar(z) = z - h in Lean: D holds exactly
+  (zD_full_bar_covariant); any bar-even z (= C) fails away from q^2 = 1.
+  Premise (trace bar-compatibility) named, not proved.
+
+Witness correction to this bean's own framing: the explicit instance
+y = (z, 1/2-z, z) is NOT an Ocneanu z_C-trace (sigma_0 value = h/2 exactly,
+z-independent) — it inhabits a normalisation-only class. The correct
+y_(1^3) != 0 witness is C's own Ocneanu solve (0.02274 at q0) + the Lean.
+Conclusion (third row present under C) unchanged.
+
+What remains open (the honest residue): the decay channel's FIBRE — no
+corpus block derives it (corpus-grep clean); D is conditional on
+conj:binding-qbeta-complex-volume (same-object identification) or trace
+bar-compatibility; C is conditional on the decay trace being neither
+bar-compatible nor a fibre trace, and even then z_C itself is underived
+(third-row presence leaves z a one-parameter family). Routes in audit §4:
+docs/audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md.
+
+Status stays in-progress; closing is a human action.

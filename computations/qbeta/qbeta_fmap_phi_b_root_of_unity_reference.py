@@ -10,7 +10,7 @@ factor F_odd of the ladder element F(q) = F_even·F_odd must live.
 Points (chosen by CORPUS STRUCTURE, not by numerical matching):
   * b² = 1/4  ⇒ q = i = ζ₄        — the corpus's PROVED ζ₄ residue structure
   * b² = 2/5  ⇒ q = e^{4πi/5} = ζ₅² — the ζ₅ / Galois locus (cl3-zeta5 thread)
-  * b² = 1/6  ⇒ q = e^{πi/3} = ζ₆  — the Vol(4₁) = 2Λ(π/3) angle π/3
+  * b² = 1/6  ⇒ q = e^{πi/3} = ζ₆  — the Vol(4₁) = 2·Cl₂(π/3) angle π/3
   * b² = 1    ⇒ q = 1 (self-dual point b = 1/b) — degenerate control
 
 At each point: Φ_b(z) for a few small real z, each row GATED by a local shift-

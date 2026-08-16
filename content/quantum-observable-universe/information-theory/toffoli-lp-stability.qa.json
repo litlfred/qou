@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean"
   },
   "source_hashes": {
-    "md": "b1669d9fc22a",
+    "md": "ac50a5bfab1c",
     "ts": "cc4bffbb32f6",
     "lean": "a6e1884a5a96",
     "lean_statement": "a4bbadeeb882"
@@ -331,26 +331,6 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "b1669d9fc22a",
-          "ts": "cc4bffbb32f6",
-          "lean": "a6e1884a5a96",
-          "lean_statement": "a4bbadeeb882"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
@@ -2115,7 +2095,27 @@
         "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
         "evidence": "full-block agent read; no such construction present"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6",
+          "lean": "a6e1884a5a96",
+          "lean_statement": "a4bbadeeb882"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T12:04:33.216Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

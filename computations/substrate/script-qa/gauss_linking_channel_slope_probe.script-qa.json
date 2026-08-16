@@ -1,0 +1,26 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "computations/substrate/gauss_linking_channel_slope_probe.py",
+  "language": "python",
+  "source_hash": "ed2cc00e52a5",
+  "updated_at": "2026-08-16T02:29:17.116439+00:00",
+  "criteria": {
+    "self-check-not-gated": [
+      {
+        "field_hash": {
+          "py": "ed2cc00e52a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "computations/audits/silent_self_check_audit.py",
+          "version": "v1",
+          "script_hash": "f42329b8dcaa"
+        },
+        "reviewed_at": "2026-08-16T02:29:17.116439+00:00",
+        "severity": "critical",
+        "evidence": "line 161: records verdict field `allPassed`"
+      }
+    ]
+  }
+}

@@ -49,7 +49,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 DPS = set_compute_dps()
 
-# Structural θ choices (corpus-fixed, NOT fitted): π/3 = Vol(4₁) = 2Λ(π/3) angle;
+# Structural θ choices (corpus-fixed, NOT fitted): π/3 = Vol(4₁) = 2·Cl₂(π/3) angle;
 # π/2 = ζ₄; 2π/5 = ζ₅ Galois locus. All appear in the merged root-of-unity set.
 # Evaluated inside an explicit precision context (unary + re-rounds).
 with mp.workdps(DPS):

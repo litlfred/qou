@@ -5,12 +5,12 @@
   "tier": "convention-provenance audit (exact symbolic + 60-dps measurement; no fit)",
   "q0Anchor": "proton",
   "q0Value": "1.109978582751380807591669",
-  "computedAt": "2026-08-15T13:04:50.125158+00:00",
-  "commitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "computedAt": "2026-08-15T22:16:49.685442+00:00",
+  "commitSha": "08b6ff7e7de3e8c2db5246d3647b42e1ea71b855",
   "engine": "mpmath+sympy",
-  "engineVersion": "1.3.0",
+  "engineVersion": "1.4.1",
   "scriptFile": "qbeta_c3_ladder_trace_convention_sensitivity_probe.py",
-  "scriptHash": "a5c32c5f0db4",
+  "scriptHash": "1f28c719f07a",
   "assertions": [
     {
       "name": "C_frame_regression_matches_committed_corpus_values",
@@ -116,5 +116,5 @@
     ],
     "scope": "Scope-(a). No convention is adjudicated for the Q_beta channel; C's excision from mass/binding (owner 2026-08-09) is untouched; whether the two-row forcing transfers to the decay channel is an OPEN item (new bean). No c_k wired; no tier change."
   },
-  "durationSec": 0.156
+  "durationMs": 290
 }

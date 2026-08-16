@@ -79,12 +79,32 @@ pub const NF_NAMES: [&str; 6] = ["gamma", "sigma_0", "sigma_1", "L_plus", "L_min
 /// which is now EXACTLY the `pyhecke.gram.z` value. The crate and the Python
 /// mirror no longer straddle the ideal/experimental layer boundary.
 ///
-/// Scope note: this is the only *production* muon literal in the crate. The
-/// remaining occurrences (`rational_round`, `precision_scalar`,
-/// `laurent_poly_q`) are test inputs exercising rounding and precision
-/// machinery, not the substrate anchor, and their tolerances (down to 1e-4)
-/// are orders of magnitude larger than the 1.15e-8 re-pin. Changing them
-/// would be churn, not a migration.
+/// Scope note — CORRECTED. An earlier version of this note claimed this was
+/// "the only *production* muon literal in the crate", counting only the
+/// `1.1099785955541805` spelling. It is not: five live binaries hardcode the
+/// 5-significant-digit `1.10998`, which is 1277 ppb from this anchor — a
+/// hundred times further off than the re-pin the note was about, and the
+/// distance `provenance::classify_pin` labels `"truncated-5-digit"`.
+///
+/// Still open, each feeding real compute rather than a diagnostic, so each
+/// needs its output re-verified rather than a blind substitution:
+///
+/// | site | reaches |
+/// |---|---|
+/// | `bin/v14_hapower.rs:309` | `ha_val = q − 1/q`, and `t = √q` |
+/// | `bin/v6.rs:484` | `Engine::new(Q0)` |
+/// | `bin/v8.rs:682` | `t0_val`, and the printed report |
+/// | `bin/h9_beta.rs:376` | the β-decay reduction |
+/// | `main.rs:370` | `HeckeEngine::new(...)` |
+///
+/// Fixed here: `bin/v9.rs:888`, whose value reached only a stderr jet-bundle
+/// diagnostic — no certificate content moved. The `src/archive/v2..v7` copies
+/// are frozen history and stay as they are.
+///
+/// The genuinely-out-of-scope occurrences remain `rational_round`,
+/// `precision_scalar` and `laurent_poly_q`: test inputs exercising rounding
+/// and precision machinery, not the substrate anchor, with tolerances (down
+/// to 1e-4) orders of magnitude larger than the 1.15e-8 re-pin.
 pub const Q_0: f64 = 1.1099785827513808;
 
 /// z = q³/(q² + 1) — Markov closure parameter, **trace convention D**
@@ -789,7 +809,10 @@ pub fn certificate_at(q: f64) -> GramCertificate {
         h: hecke_h(q),
         n: 3,
         basis: NF_NAMES.iter().map(|s| s.to_string()).collect(),
-        trace_weights: trace_weights(q).to_vec(),
+        // Convention D (qou-m7py): report the production Markov trace
+        // (`h·z² + z`), matching `matrix`/`quotient_inverse`/`radical` below.
+        // The legacy `z³` weights live in `trace_weights` for reference only.
+        trace_weights: trace_weights_markov(q).to_vec(),
         matrix: g.iter().map(|r| r.to_vec()).collect(),
         quotient_inverse: qinv.iter().map(|r| r.to_vec()).collect(),
         radical: gram_radical(q).to_vec(),

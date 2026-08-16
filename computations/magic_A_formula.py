@@ -43,19 +43,33 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+import mpmath as mp  # noqa: E402
+
+from _precision import fmt, set_compute_dps  # noqa: E402
+
+set_compute_dps()  # before the constants are multiplied together, not after
+
 # CODATA 2022
-from codata_constants import M_E_MEV  # CODATA-2022 full precision
+from codata_constants import M_E_MEV  # noqa: E402 — CODATA-2022 full precision (mpf)
 
 # Catalan's constant + Vol(L6a4) = Vol(Borromean rings) = 8G now
 # imported from the canonical knot_volumes module (mpmath 50dps source).
 # Pre-refactor (PR #781 knot-vol _precision propagation): these were
 # f64-hardcoded literals here AND in mass_table_ppb.py / etc. Now
 # all consumers share a single source of truth.
-from knot_volumes import CATALAN_G, VOL_BORROMEAN  # noqa: E402
+#
+# The `_MPF` variants, not the back-compat f64 aliases: `M_E_MEV` is an
+# mpf, so `m_e · A · 8G` against an f64 volume yields an mpf carrying only
+# ~16 honest digits — which `fmt` would then print at 50, laundering
+# float64 into a long decimal. Same migration mass_table_ppb.py took.
+from knot_volumes import (  # noqa: E402
+    CATALAN_G_MPF as CATALAN_G,
+    VOL_BORROMEAN_MPF as VOL_BORROMEAN,
+)
 
 # AME2020 reference values for verification
 AME_BA_MEV = {
-    (2, 2): 28.295674,    # ⁴He doubly magic (Z=2, N=2)
+    (2, 2): mp.mpf("28.295674"),  # ⁴He doubly magic (Z=2, N=2)
     # Other doubly-magic: (8,8)=¹⁶O 127.62; (20,20)=⁴⁰Ca 342.05; (20,28)=⁴⁸Ca; (82,126)=²⁰⁸Pb
     # These are NOT magic-A in the framework — they use recursive-on-4He.
 }
@@ -79,7 +93,20 @@ def is_magic_A_atom(Z: int, N: int) -> bool:
     return (Z, N) == (2, 2)
 
 
-def magic_A_binding(Z: int, N: int, rho_F: float = 2.0) -> dict:
+def _mpf_default(o):
+    """`json.dumps(default=…)` hook: mpmath values at output precision.
+
+    Every numeric here descends from `codata_constants.M_E_MEV` and the
+    `_MPF` knot volumes, so it arrives as an mpf that `json` cannot encode.
+    Serialize with `_precision.fmt`, never `float(...)` — the point of
+    carrying mpf this far is that the f64 tail is wrong.
+    """
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+
+
+def magic_A_binding(Z: int, N: int, rho_F: int = 2) -> dict:
     """Compute B(magic-A) = ρ_F · m_e · A · 8G.
 
     Args:
@@ -117,7 +144,7 @@ def magic_A_binding(Z: int, N: int, rho_F: float = 2.0) -> dict:
     if B_AME is not None:
         out["B_AME_MeV"] = B_AME
         out["err_MeV"] = B_pred - B_AME
-        out["err_pct"] = 100.0 * (B_pred - B_AME) / B_AME
+        out["err_pct"] = mp.mpf(100) * (B_pred - B_AME) / B_AME
     return out
 
 
@@ -166,7 +193,7 @@ def main() -> int:
             "magic_numbers": sorted(MAGIC_NUMBERS),
         },
         "rows": rows,
-    }, indent=2, ensure_ascii=False) + "\n")
+    }, indent=2, ensure_ascii=False, default=_mpf_default) + "\n")
     print(f"Wrote: {out_path}")
     return 0
 

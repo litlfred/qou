@@ -58,14 +58,71 @@ def _repo_root() -> Path:
 # resolved from the SAME source the runtime uses to pick q₀
 # (`computations/q0_anchor_manifest.json` + the QOU_Q0_ANCHOR env override), so
 # the stamped label always matches the value the producer actually computed.
+#
+# THE VOCABULARY (`q0Anchor`) has four values. The last one is not resolvable
+# from the manifest and must be declared by the producer:
+#
+#   "muon"        ideal / canonical 3-CAL pin; carries the muon `q0Value`
+#   "proton"      experimental / Physical-Observations pin (the standing
+#                 default for new compute, owner directive 2026-08-07)
+#   "ambiguous"   the compute DEPENDS on q₀ but the pin is undetermined —
+#                 `gen_q0_anchor_manifest.py` assigns this when a witness
+#                 carries BOTH signatures. A queue for a manual ruling.
+#   "independent" the compute NEVER READS q₀. No `q0Value` exists, and one
+#                 appearing alongside this label is a contradiction the audit
+#                 reports as Q0_FLIP.
+#
+# `independent` is producer-declared only: `w.save({"q0Anchor": "independent"})`.
+# It cannot be inferred, and the manifest generator must not try. Its scan sees
+# this class already and drops it (`# neither: no q₀ field — omit`), because
+# "the witness serializes no q₀" does not imply "the compute never used q₀" — a
+# producer can use q₀ and simply not record it. Inferring independence there
+# would mint false claims of layer-freedom at scale. An agent reads the import
+# cone and asserts it; the audit then distinguishes a q₀-free producer from one
+# that merely forgot, which before this value it could not (bean qou-rw91, and
+# earlier qou-pin1 on the purely symbolic `chi-deuteron-h6`).
 
 _Q0_VALUE_CACHE: dict = {}
 
 
 def _q0_value_for_anchor(anchor: str) -> Optional[str]:
     """The 50-digit q₀ string for a given anchor (cached). muon ← the committed
-    q-pinning witness; proton ← the package constant. None if unavailable or the
-    anchor is not one of {muon, proton}."""
+    q-pinning witness; proton ← the package constant.
+
+    REVERTED 2026-08-15, same day, after a red-team pass. I had changed the
+    muon branch to DERIVE from ``q_muon_at()``. That was a regression, and the
+    reasoning behind it was false. Both are recorded because the second error
+    is subtle and someone will try the same fix again.
+
+    **The change broke the field's purpose.** ``q0Value`` records the value the
+    producer actually computed with. A muon-tagged producer computes with the
+    witness string, so deriving the label made the stamp disagree with the
+    compute — measured 1.1099785955573347 computed vs 1.1099785955541805
+    stamped. Before the change they agreed. That is exactly the misread this
+    field exists to prevent, introduced while claiming to prevent it.
+
+    **The justification was also wrong.** I claimed re-running
+    ``q_pinning_50_digit.py`` would flip every muon stamp to a PROTON value,
+    since that script sets ``Q = q_at(mp.dps)``. It does not.
+    ``q_pinning_50_digit`` is listed in ``computations/q0_anchor_manifest.json``
+    under ``ideal_muon``, so ``q_parameter`` resolves the anchor from the argv
+    stem and rebinds ``q_at`` to return the witness string. Verified under the
+    producer's real argv: ``q_at(70)`` -> ``1.10997859555733471989…``. The
+    producer is a FIXED POINT; re-running it changes nothing.
+
+    **The real defect, which that story obscured, is CIRCULARITY.** The muon
+    50-dps constant certifies itself — the producer reads, via ``q_at``, the
+    witness it writes. It has never been derived from a closed form, which is
+    exactly why ``q_muon_at()`` does not reproduce it. Breaking the loop means
+    giving the muon anchor a real derivation and re-running its dependents; it
+    must move the LABEL and the COMPUTED VALUE together, or it reintroduces the
+    disagreement above.
+
+    Note ``computations/substrate/q_parameter.py`` asserts the witness starts
+    with ``1.109978595557``, so substituting the canonical string there
+    hard-fails all 257 ``ideal_muon`` producers, and a second copy of that
+    guard ships in the published ``qou_mass`` package.
+    """
     if anchor in _Q0_VALUE_CACHE:
         return _Q0_VALUE_CACHE[anchor]
     val: Optional[str] = None
@@ -127,6 +184,11 @@ def resolve_q0_anchor(
     (``ideal_muon`` ⇒ muon, ``physical_proton`` ⇒ proton, ``ambiguous`` ⇒
     ambiguous, and — matching the runtime default — anything else ⇒ proton).
     ``q0_value`` is the matching 50-digit string, or ``None`` for ambiguous.
+
+    Never returns ``"independent"``. That value states the compute does not read
+    q₀ at all, which no manifest lookup can establish (see the vocabulary note
+    at the top of this module) — a producer declares it via
+    ``save({"q0Anchor": "independent"})``.
     """
     environ = os.environ if env is None else env
     e = (environ.get("QOU_Q0_ANCHOR", "") or "").strip().lower()
@@ -994,9 +1056,24 @@ class WitnessBuilder:
             q0_anchor, _rv = resolve_q0_anchor(spath)
             if q0_value is None:
                 q0_value = _rv
-        payload["q0Anchor"] = q0_anchor
-        if q0_value is not None:
-            payload["q0Value"] = q0_value
+        # A q0Anchor the producer already wrote into the payload WINS over the
+        # one resolved from the manifest/env. `build()` has always had this
+        # guard (`if "q0Anchor" not in witness`); this path did not, so the two
+        # writers of one field disagreed, and this one silently relabelled an
+        # explicit declaration. A producer that spans both layers on purpose --
+        # e.g. `markov/peel_anchor_identification_probe.py`, whose whole subject
+        # is telling the pins apart -- declares `q0Anchor: "ambiguous"`, a
+        # category the anchor audit has precisely for this, and got "proton"
+        # stamped over it from the running script's manifest entry. That is the
+        # exact failure mode the field exists to prevent: a witness asserting a
+        # pin its contents do not carry.
+        #
+        # An explicit `q0_anchor=` argument still wins over both, since a caller
+        # passing it is making the same declaration one call frame out.
+        if "q0Anchor" not in payload:
+            payload["q0Anchor"] = q0_anchor
+            if q0_value is not None:
+                payload["q0Value"] = q0_value
         return payload
 
     def is_fresh(self) -> bool:
@@ -1207,9 +1284,18 @@ class WitnessBuilder:
         # established — the very thing the "preserve only" rule above exists to
         # prevent — and Q0_ANCHOR_MISSING is explicitly tolerated. A producer
         # that wants a positive label calls `stamp_staleness_metadata`.
+        #
+        # A carried-forward `independent` can go false the same way, so it gets
+        # the mirror of check (1): the label says the compute never reads q₀,
+        # and the payload now carries a recognisable q₀. Only payload evidence
+        # applies here — (2) cannot, since `resolve_q0_anchor` never yields
+        # `independent` and would "contradict" every such witness with its
+        # proton default.
         if isinstance(existing, dict):
             _recorded = existing.get("q0Anchor")
             _stale = False
+            if _recorded == "independent":
+                _stale = _q0_anchor_from_payload(witness) is not None
             if _recorded in ("muon", "proton"):
                 _actual = _q0_anchor_from_payload(witness)
                 if _actual is not None and _actual != _recorded:
@@ -1264,6 +1350,19 @@ class WitnessBuilder:
 #   - commitSha, scriptCommitSha — change on every commit; would
 #     trigger CI drift loops if comparison were exact
 #   - computedAt, durationMs — wall-clock metadata; not numeric content
+#   - durationSeconds, duration_sec — the seconds-valued spellings of
+#     durationMs. `durationMs` (integer ms) is the WitnessBuilder
+#     convention and is overwhelmingly the majority (2423 witness JSONs
+#     vs 3 + 2 for these two), but the seconds spellings exist and
+#     carry identical wall-clock semantics, so they are masked too
+#     rather than left to be compared as substantive content.
+#
+#     Spelling note — there is NO `durationSec` in this corpus. That
+#     name appears only in prose (a producer comment, and bean
+#     qou-pg2r, which took the shorthand from it); as a JSON key it
+#     occurs zero times. Masking the string "durationSec" would be a
+#     silent no-op. The real keys are the two above; measure with
+#     `grep -rl '"<key>"' --include=*.json .` before adding another.
 #   - environment — Python + numeric-library versions; tracked for
 #     attribution (see `capture_environment` docstring above) but a
 #     runtime swap alone (e.g. 3.11.15 ↔ 3.12.3) shouldn't trigger
@@ -1290,6 +1389,7 @@ class WitnessBuilder:
 # `test_ephemeral_mask_sync` test in `tools/qou-substrate/tests/`.
 _EPHEMERAL_META_FIELDS = frozenset({
     "commitSha", "scriptCommitSha", "computedAt", "durationMs",
+    "durationSeconds", "duration_sec",
     "environment", "elapsed_seconds", "elapsed_sec",
 })
 
@@ -1311,8 +1411,8 @@ def _witnesses_substantively_equal(a: dict, b: dict) -> bool:
     Substantive content includes: assertions, allPassed, computation,
     description, data payload (minus per-item timing), parameters,
     scriptFile, scriptHash, engineVersion. Ephemeral (masked):
-    commitSha, scriptCommitSha, computedAt, durationMs, environment,
-    elapsed_seconds, elapsed_sec.
+    commitSha, scriptCommitSha, computedAt, durationMs, durationSeconds,
+    duration_sec, environment, elapsed_seconds, elapsed_sec.
 
     Python-version swaps + per-item timing differences alone don't
     trigger witness rewrites of otherwise-identical numeric content.

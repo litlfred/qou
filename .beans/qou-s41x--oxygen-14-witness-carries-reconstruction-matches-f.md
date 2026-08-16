@@ -1,11 +1,11 @@
 ---
 # qou-s41x
 title: 'oxygen-14 witness carries reconstruction_matches: false — pre-existing, undecided, two live readers'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T02:36:17Z
-updated_at: 2026-08-10T12:14:06Z
+updated_at: 2026-08-15T12:42:37Z
 ---
 
 
@@ -356,3 +356,59 @@ are currently no offenders" is not an answer to "should a reader trust a
 witness that flagged itself". It is a design call about consumer contracts,
 and closing this bean on the strength of the count would quietly convert an
 open decision into a decision nobody made. Left for the owner.
+
+---
+
+## Summary of Changes — COMPLETED
+
+Verified on `main` at `ebc21d1ae`, measured rather than assumed:
+
+    reconstruction_matches across the habiro family:  true=25  false=0
+        (was true=4, false=21)
+
+    habiro-coefficients-mass-table-summary, all 7 mirror pairs:
+
+        pair                              A   phi_8   2⌊(A−1)/2⌋
+        proton − neutron                  1     0         0
+        helium-3 − tritium                3     2         2
+        lithium-5 − helium-5              5     4         4
+        beryllium-7 − lithium-7           7     6         6
+        boron-8 − lithium-8               8     6         6
+        boron-9 − beryllium-9             9     8         8
+        carbon-10 − beryllium-10         10     8         8
+
+Seven for seven, including A=7 and A=8 which were never tested while
+diagnosing — those two are independent confirmation rather than a restatement
+of the five pairs the fix was validated on.
+
+**What the bean turned out to be.** Opened as "is `reconstruction_matches: false`
+expected at A=14?". It was not an A=14 question, nor a "why are four files true"
+question. `reconstruct` sympified the `a_m` strings with only `check_q` in
+`locals`, so every `u`-rendered string resolved to a fresh `Symbol('u')` carrying
+no assumptions — not the caller's `Symbol('u', positive=True, real=True)` — and
+`diff == 0` was false for every atom regardless of size. Root cause is bean
+`qou-0ndb`; this was its fourth and most expensive instance, because the same
+`reconstruct` feeds `mirror_pair_diff`, which then divided by cyclotomic
+polynomials in the caller's symbol and returned multiplicity 0 for everything.
+
+The published witness reported `phi_8_mult: 0` across the board for the quantity
+the repo's own refined scaling law is about. The two scripts whose purpose is
+testing that law — `extend_even_a_mirror_pair_test.py` and
+`topic2_mirror_pair_phi8_boundary_scan.py` — never used the shared helper and
+had the two-name `locals` right, so they computed it correctly the whole time,
+beside a summary publishing zeros.
+
+**Two hypotheses were tested and killed on the way, both recorded above so they
+are not re-run:** that the split was A=14-specific (it was not — `false` was the
+norm at 21 of 25), and that `reconstruct`'s `max_m=20` truncated the check (it
+does not — `max_m` is vestigial, the loop iterates `coeffs_data`).
+
+Regeneration landed via #4926; the fix itself via #4903's commits, content-merged
+into the same PR.
+
+## Follow-ups deferred, not dropped
+
+Both live on other beans rather than here: retiring the two-name `locals`
+workaround once every witness has been regenerated (`qou-0ndb`), and the second
+`to_u_polynomial` copy that emits canonical text by luck rather than by
+construction (`qou-0ndb`).

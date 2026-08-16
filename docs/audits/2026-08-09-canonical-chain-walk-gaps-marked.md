@@ -36,7 +36,7 @@ These are inputs. Nothing here is a prediction, and the corpus says so.
 
 ## Step 1 — q₀ from CAL-2 · **CAL + DERIVED**, with an **owner-gated fork**
 
-`m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2Λ(π/3) ≈ 2.0299`,
+`m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2·Cl₂(π/3) ≈ 2.0299`,
 inverted for `q₀ ≈ 1.10998`.
 
 **Fork (declared, not a defect):** production pins q₀ on the *proton* ratio

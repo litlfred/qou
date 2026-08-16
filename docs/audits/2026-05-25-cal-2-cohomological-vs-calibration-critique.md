@@ -331,7 +331,7 @@ follow-ups are:
    - q_0 from spectral collapse condition of the Wenzl/Hecke
      spectral sequence at a unique value
    - q_0 from K-theoretic / motivic period identity (the
-     `Vol(4_1) = 2 Λ(π/3)` side already lives in this world)
+     `Vol(4_1) = 2·Cl₂(π/3)` side already lives in this world)
    - q_0 as the algebraic-K-theory class fixed by the Bring
      surface χ = −6 condition
 3. **Extend PR #1127's "Q_β droppability" workplan to all 3 CALs.**

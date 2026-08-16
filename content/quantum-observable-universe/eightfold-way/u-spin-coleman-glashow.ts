@@ -32,7 +32,6 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:u-spin-coleman-glashow",
   title: "U-spin and the Coleman–Glashow relation: a third null result",
-  md: "u-spin-coleman-glashow.md",
   interprets: "prop:borromean-decuplet",
   // The ref names a DECLARATION, following rem:meson-mass-splitting and
   // rem:decuplet-equal-spacing. `cg_cannot_discriminate` is the negative

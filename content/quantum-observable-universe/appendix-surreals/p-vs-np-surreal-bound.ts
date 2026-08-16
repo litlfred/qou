@@ -4,6 +4,7 @@ export default remark({
   label: "rem:p-vs-np-surreal-bound",
   uses: [
     "conj:p-vs-np-qou",
+    "def:q-from-epsilon",
     "def:reeb-epsilon",
     "lem:surreal-squeeze",
     "prop:surreal-rate-calculus",

@@ -8,7 +8,7 @@ $Z(A) = \bigoplus_{k \geq 0} Z^{(k)}(A)$. The Frobenius pairing
 $\langle a, b \rangle = \int_A a \cdot b$ restricts to $Z(A)$ as a
 non-degenerate bilinear form, and the depth strata $Z^{(k)}(A)$ are
 mutually orthogonal under this pairing
-([Frobenius duality of strata](#prop:spectral-sequence-collapse)
+([Frobenius duality of strata](#prf:spectral-sequence-collapse)
 "§Frobenius duality of strata"):
 
 $$
@@ -45,8 +45,8 @@ depth-$k$ centre stratum $Z^{(k)}(A)$ via the $q$-content / hook-length
 structure:
 
 (a) The q-deformed Wedderburn-block weight is
-$\tilde w_\lambda = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
-classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$ —
+$w_\lambda(q) = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
+classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$ —
 the two coincide at $q = 1$; see
 [`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)),
 where
@@ -56,13 +56,19 @@ integer
 ([Hoefsmit pipeline](#conj:hoefsmit-scattering-pipeline)).
 
 (b) The hook lengths $h(\square)$ for $\square \in \lambda$ encode
-the partition's depth in the GB filtration: by
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification)
-Step 3, the GB-depth of $\lambda$ is
+the partition's depth in the GB filtration. Here
 $\mathrm{depth}_{\mathrm{GB}}(\lambda) = \max_{\square \in \lambda} h(\square)$
-(the partition's **maximum hook length**), which is the minimal
-number of $R_H, R_{YB}$ rewrites required to express any element of
-the $\lambda$-isotypic component in NF.
+(the partition's **maximum hook length**) is a *definition* — it is
+`QOU.BraidKnot.gbDepth`, the supremum of the hook length over the
+cells of $\lambda$ — not a consequence of
+[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
+which stratifies $J^{\,r}/J^{\,r+1}$ by the curvature rank $r(T_w)$ of
+**words** and mentions no partition. The two are different indexings of
+depth, and the reading of $\mathrm{depth}_{\mathrm{GB}}(\lambda)$ as
+the minimal number of $R_H, R_{YB}$ rewrites needed to put any element
+of the $\lambda$-isotypic component in NF is the identification of the
+partition grading with the word filtration, which that proposition does
+not supply.
 
 (c) Therefore $\dim_q V_\lambda$ has a factor of $[k]_q$ in its
 hook-length expansion exactly when $\lambda$ contains a box with

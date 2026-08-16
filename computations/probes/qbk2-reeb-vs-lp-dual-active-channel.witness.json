@@ -11,8 +11,16 @@
           5,
           1
         ],
-        "qbk2_share": 0.7190042184036948,
+        "qbk2_share": 0.7727173673820563,
         "y_star": 0.6921531742118898,
+        "active": true
+      },
+      {
+        "block": [
+          6
+        ],
+        "qbk2_share": 0.11408317953722837,
+        "y_star": 1.8036943373270138,
         "active": true
       },
       {
@@ -20,34 +28,16 @@
           3,
           3
         ],
-        "qbk2_share": 0.10152473833063617,
+        "qbk2_share": 0.08726768471911324,
         "y_star": 1.0543054256675402,
         "active": true
-      },
-      {
-        "block": [
-          6
-        ],
-        "qbk2_share": 0.07295427324663344,
-        "y_star": 1.8036943373270138,
-        "active": true
-      },
-      {
-        "block": [
-          3,
-          2,
-          1
-        ],
-        "qbk2_share": 0.04610087467385615,
-        "y_star": 0.0,
-        "active": false
       },
       {
         "block": [
           4,
           2
         ],
-        "qbk2_share": 0.028276459365513745,
+        "qbk2_share": 0.025931768361602096,
         "y_star": 0.2257943908355624,
         "active": true
       },
@@ -57,9 +47,30 @@
           1,
           1
         ],
-        "qbk2_share": 0.01997047899947693,
+        "qbk2_share": 0.0,
         "y_star": 0.09545924560799289,
         "active": true
+      },
+      {
+        "block": [
+          3,
+          2,
+          1
+        ],
+        "qbk2_share": 0.0,
+        "y_star": 0.0,
+        "active": false
+      },
+      {
+        "block": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "qbk2_share": 0.0,
+        "y_star": 0.0,
+        "active": false
       },
       {
         "block": [
@@ -67,7 +78,7 @@
           2,
           2
         ],
-        "qbk2_share": 0.005095265357650255,
+        "qbk2_share": 0.0,
         "y_star": 3.035160436276261,
         "active": true
       },
@@ -78,7 +89,7 @@
           1,
           1
         ],
-        "qbk2_share": 0.004609153575313452,
+        "qbk2_share": 0.0,
         "y_star": 0.0,
         "active": false
       },
@@ -90,23 +101,12 @@
           1,
           1
         ],
-        "qbk2_share": 0.002051383892691793,
+        "qbk2_share": 0.0,
         "y_star": 29.706509833656146,
         "active": true
       },
       {
         "block": [
-          3,
-          1,
-          1,
-          1
-        ],
-        "qbk2_share": 0.0003906931878392728,
-        "y_star": 0.0,
-        "active": false
-      },
-      {
-        "block": [
           1,
           1,
           1,
@@ -114,7 +114,7 @@
           1,
           1
         ],
-        "qbk2_share": 2.2460966694018462e-05,
+        "qbk2_share": 0.0,
         "y_star": 0.0,
         "active": false
       }
@@ -183,8 +183,8 @@
     ],
     "five_one_active": true,
     "five_one_y_star": 0.6921531742118898,
-    "qbk2_weight_in_active_blocks": 0.948876817596297,
-    "qbk2_weight_in_inactive_blocks": 0.051123182403702894,
+    "qbk2_weight_in_active_blocks": 1.0,
+    "qbk2_weight_in_inactive_blocks": 0.0,
     "largest_block": [
       3,
       2,
@@ -208,12 +208,5 @@
     "(2) qbk2 correction is SUPPORTED on the active set (>85% of weight)": true
   },
   "allPassed": true,
-  "verdict": "CONFIRMED (multi-channel). Deuteron binding is genuinely MULTI-CHANNEL — the LP-dual has 7 active blocks, not one — so the right test is multi-channel SUPPORT, not a single dominant channel. [5,1] IS one of the active channels (y_star=0.692>0), and 95% of the qbk2 +1/2 form-B correction is supported on the active set; the inactive blocks (including the LARGEST, [3, 2, 1] dim 16) carry only 5.1% — so the qbk2 correction lives on the active binding manifold and is NOT merely tracking dimension. The qbk2 propagator and the LP shadow prices weight that shared manifold differently (qbk2 peaks [5, 1]; shadow price peaks [2, 1, 1, 1, 1] where y_λ is tiny), as expected for two distinct quantities on a multi-channel state. So the [5,1]-concentration is NOT a fragile artifact: it is the qbk2 correction sitting on the multi-channel active binding manifold. No fit; canonical duals consumed, not re-solved.",
-  "scriptHash": "7d27df08654d",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "engine": "python",
-  "computedAt": "2026-07-18T19:19:22.542690+00:00",
-  "durationMs": 0,
-  "scriptFile": "qbk2_reeb_vs_lp_dual_active_channel.py"
+  "verdict": "CONFIRMED (multi-channel). Deuteron binding is genuinely MULTI-CHANNEL — the LP-dual has 7 active blocks, not one — so the right test is multi-channel SUPPORT, not a single dominant channel. [5,1] IS one of the active channels (y_star=0.692>0), and 100% of the qbk2 +1/2 form-B correction is supported on the active set; the inactive blocks (including the LARGEST, [3, 2, 1] dim 16) carry only 0.0% — so the qbk2 correction lives on the active binding manifold and is NOT merely tracking dimension. The qbk2 propagator and the LP shadow prices weight that shared manifold differently (qbk2 peaks [5, 1]; shadow price peaks [2, 1, 1, 1, 1] where y_λ is tiny), as expected for two distinct quantities on a multi-channel state. So the [5,1]-concentration is NOT a fragile artifact: it is the qbk2 correction sitting on the multi-channel active binding manifold. No fit; canonical duals consumed, not re-solved."
 }

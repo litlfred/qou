@@ -8,8 +8,8 @@ $\Delta_q$ is formally self-adjoint with respect to
 $\langle\cdot,\cdot\rangle_\varTheta$ by the
 [Hodge--Laplacian relation](#rem:hodge-laplacian-relation):
 $\langle \Delta_q\alpha, \beta\rangle_\varTheta
-= \langle d_q\alpha, d_q\beta\rangle_\varTheta
-+ \langle \delta_q\alpha, \delta_q\beta\rangle_\varTheta
+= \langle d_q\alpha, d_q\beta\rangle_\varTheta +
+\langle \delta_q\alpha, \delta_q\beta\rangle_\varTheta
 = \langle \alpha, \Delta_q\beta\rangle_\varTheta$.
 This follows from the [Hodge--Laplacian relation](#rem:hodge-laplacian-relation).
 

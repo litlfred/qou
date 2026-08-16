@@ -1,0 +1,196 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0611941v3",
+ "source": {
+  "file": "0611941v3.pdf",
+  "sha256": "bf6f2d55c7adee5154d88e2f923c5598f9cf7f0439d1eb0be1c51706d3be1426",
+  "bytes": 247380,
+  "pages": 16,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0611941",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "19 Mar 2007"
+  },
+  "doi": null,
+  "title": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK",
+  "authors_raw": null,
+  "title_lines": [
+   "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR",
+   "MEINOLF GECK"
+  ],
+  "abstract": "Let H be the one-parameter Hecke algebra associated to a \ufb01nite Weyl gr oup W , de\ufb01ned over a ground ring in which \u201cbad\u201d primes for W are invertible. Using deep properties of the Kazhdan\u2013Lusztig basis of H and Lusztig\u2019s a-function, we show that H has a natural cellular structure in the sense of Graham and Lehrer. Th us, we obtain a general theory of \u201cSpecht modules\u201d for Hecke algebras of \ufb01nite type. Pre viously, a general cellular structure was only known to exist in types An and Bn.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210922170542-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Kazhdan\u2013Lusztig theory and the asymptotic ring",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Irreducible representations of W and H",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The integers a and f",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The Kazhdan\u2013Lusztig basis of H",
+   "page": 4,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Lusztig's conjectures and the asymptotic ring J",
+   "page": 4,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Representations of J",
+   "page": 5,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "A cell datum for H",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Examples and applications to modular representations",
+   "page": 11,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3515,
+   "n_words": 574
+  },
+  {
+   "id": "sec-001-2-kazhdanlusztig-theory-and-the-asymptotic-ring",
+   "number": "2",
+   "title": "Kazhdan\u2013Lusztig theory and the asymptotic ring",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 779,
+   "n_words": 175
+  },
+  {
+   "id": "sec-002-21-irreducible-representations-of-w-and-h",
+   "number": "2.1",
+   "title": "Irreducible representations of W and H",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 2322,
+   "n_words": 501
+  },
+  {
+   "id": "sec-003-23-the-kazhdanlusztig-basis-of-h",
+   "number": "2.3",
+   "title": "The Kazhdan\u2013Lusztig basis of H",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2791,
+   "n_words": 565
+  },
+  {
+   "id": "sec-004-25-representations-of-j",
+   "number": "2.5",
+   "title": "Representations of J",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4428,
+   "n_words": 933
+  },
+  {
+   "id": "sec-005-3-a-cell-datum-for-h",
+   "number": "3",
+   "title": "A cell datum for H",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 11,
+   "n_chars": 7712,
+   "n_words": 1698
+  },
+  {
+   "id": "sec-006-4-examples-and-applications-to-modular-represent",
+   "number": "4",
+   "title": "Examples and applications to modular representations",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 15,
+   "n_chars": 9400,
+   "n_words": 2050
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 5887,
+   "n_words": 986
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 8,
+  "chars_total": 36834
+ }
+}

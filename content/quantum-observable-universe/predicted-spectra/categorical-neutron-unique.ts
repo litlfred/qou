@@ -7,6 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
+    "def:categorical-neutron",
     "prop:categorical-neutron-exists",
     "prop:hadron-unique",
   ],

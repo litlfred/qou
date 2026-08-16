@@ -1,10 +1,11 @@
 ---
 # qou-sjjq
 title: Add reference for 0409040v2.pdf at QOU.MassTheory.TjonSimplexForm
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:04Z
-updated_at: 2026-08-08T23:37:04Z
+updated_at: 2026-08-15T15:28:02Z
 ---
 
 Core and orphan; TjonSimplexForm.lean quotes its result verbatim in prose with no citation.

@@ -1,11 +1,11 @@
 ---
 # qou-v8t7
 title: 'ATTACK PLAN: prove Delta_lambda covariance kernel Cov(f,Sc2)<=0'
-status: todo
+status: in-progress
 type: feature
 priority: high
 created_at: 2026-07-25T03:29:34Z
-updated_at: 2026-07-25T03:30:08Z
+updated_at: 2026-08-15T23:07:07Z
 parent: qou-x631
 ---
 

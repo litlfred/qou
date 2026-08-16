@@ -80,7 +80,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 50
 Q0 = mpf("1.1099785955541805")
-MURAKAMI_PDF = ROOT.parent / "uploads" / "2205.01282v2.pdf"
+MURAKAMI_PDF = ROOT.parent / "library" / "arxiv-2205.01282v2" / "2205.01282v2.pdf"
 
 
 def qint(m, q=Q0):

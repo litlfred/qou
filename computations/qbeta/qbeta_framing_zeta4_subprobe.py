@@ -73,7 +73,7 @@ def main():
     print("  FRAMING ζ_4 sub-probe — genuine Φ_8(√q)→ζ_4(q), or only Φ_4(√q)→ζ_2(q)?")
     print("=" * 80)
 
-    z = sp.sqrt(q) / (q + 1)          # = 1/(√q + 1/√q)
+    z = q ** 3 / (q ** 2 + 1)         # convention D (was C: 1/(√q + 1/√q))
     h = q - 1 / q                      # bar-odd
     alpha = sp.cancel((z - 1) * h / 2)
     two_q = 1 + q

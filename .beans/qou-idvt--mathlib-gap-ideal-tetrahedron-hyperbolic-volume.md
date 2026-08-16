@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T08:00:00Z
-updated_at: 2026-08-08T08:00:00Z
+updated_at: 2026-08-16T02:35:38Z
 ---
 
 Split out so two beans stop each carrying the same "large Mathlib gap" note.
@@ -175,3 +175,104 @@ T1 **DONE** → T2 (`Vol` = the Λ-sum; GEOMETRIC, still open) → T3-core **DON
 
 Still NOT closed, and not axiomatised anywhere per this bean's GUARD: T2 and
 T3-plumbing. Bean stays open.
+
+
+
+--------
+
+## 2026-08-15 (PR #5142) — T2 packaged as a §3b-cond conditional class; STILL OPEN
+
+New file QOU/Archimedean/MostowIdealTetVolume.lean (lean-direct exit 0,
+#print axioms = [propext, Classical.choice, Quot.sound], NO sorryAx).
+Does NOT close T2 and does NOT close qou-krvm (iv). It records the exact
+remaining gap and packages it honestly.
+
+**Sharpened gap statement.** The bean's older notes framed T2 as "Vol =
+the Λ-sum (GEOMETRIC, still open)". Measured against the corpus, the
+gap is narrower than that: the ANALYTIC identity is ALREADY PROVED,
+sorry-free, against the genuine dx dy dz/z³ measure —
+`hypVolume_chimney_inscribedTriangle` (OrthoschemeTiling):
+  hypVolume (chimney (inscribedTriangle R t α β γ) R) = ofReal(Λα+Λβ+Λγ).
+So "the Λ-sum IS the real hyperbolic volume of a concrete region" is
+done (Milnor circumcentre subdivision, OrthoschemeLambdaSum + Tiling).
+The ONE remaining piece is Milnor's geometric identification: that the
+chimney over the inscribed triangle IS the ideal tetrahedron of dihedral
+angles (α,β,γ). Mathlib has no ideal simplices — that cannot yet be
+stated, let alone proved (qou-5gai H-tier).
+
+**What the class does (§3b-cond, non-laundering).**
+- class MostowIdealTetVolume — PRIMARY conjecture; content field
+  `region_eq_chimney` axiomatises the geometric INPUT (region = chimney),
+  NOT the volume conclusion.
+- idealTetVolume_eq_lambda_sum [MostowIdealTetVolume] — DERIVES
+  Vol = Λα+Λβ+Λγ by rw-ing the region identity and applying the PROVED
+  analytic theorem. Genuine derivation, not a self-assuming projection.
+- Non-vacuity is an `example : Nonempty ...` (region = a chimney,
+  shape-witness) — deliberately NOT a global instance, so the theorem
+  stays conditional and cannot fire on any real ideal tetrahedron.
+- NO instance for the framework's genuine ideal tetrahedron — the honest
+  open state. region_eq_chimney_is_restrictive gives §3b-tax non-degen.
+
+**qou-krvm (iv) is now conditional-on-class, not proved.** Its analytic
+half (concavity+invariance of the Λ-sum) was already done
+(tetVol_strictConcaveOn); T2 was the geometric half, now conditional.
+
+Bean STAYS OPEN. The GUARD holds: no instance discharges the geometric
+input; the class is the labelled open conjecture, not a close.
+
+--------
+
+## 2026-08-15 (PR #5157) — T2 attempt: region_eq_chimney NOT dischargeable; verdict OPEN. Unconditional volume bridge added.
+
+ATTEMPT to discharge `MostowIdealTetVolume.region_eq_chimney` and provide the
+real instance (which would close T2 + qou-krvm (iv)).
+
+**VERDICT: region_eq_chimney is NOT provable on main; NO genuine instance is
+possible.** Sharpened reason: *the subject does not exist as a defined object.*
+`tetRegion` is an ABSTRACT class field, so not even a single `⊆` containment is
+statable, let alone `tetRegion = chimney`. There is no independent definition of
+"the ideal tetrahedron of dihedral angles (α,β,γ) as a REGION of H³" anywhere:
+
+- `IdealTetrahedronRegion.lean`: `chimney` is over an ARBITRARY base; the
+  region↔tetrahedron identification is explicitly "not provable without
+  hyperbolic geometry Mathlib does not have".
+- `MathlibExt/IdealTriangulation.lean`: `IdealTetrahedron` is only a shape
+  parameter z:ℂ; `IdealTetrahedron.volume := BlochWigner_lob z` is a NUMBER, not
+  a region ("the identification with a hyperbolic volume in the metric sense is
+  not available").
+- 0 hyperbolic-geometry modules: no ideal vertices of ∂H³, no geodesic
+  planes/half-spaces, no dihedral angle of an ideal simplex.
+
+The §3b-cond conditional-class packaging in MostowIdealTetVolume is the correct
+honest open state; the GUARD holds — no instance was fabricated.
+
+**EXACT remaining step:** DEFINE the region `T_{αβγ} ⊆ upperHalfSpace` as the
+intersection of four hyperbolic geodesic half-spaces (one hemisphere face + three
+vertical faces from the inscribed triangle's chords), whose bounding planes meet
+at IDEAL vertices on ∂H³ with dihedral angles (α,β,γ); then prove
+`T_{αβγ} = chimney(inscribedTriangle 1 t α β γ) 1`. The geodesic-plane primitive
+and the ideal-vertex/dihedral-angle notions are the missing Mathlib
+infrastructure. NOTE: decomposing the chimney into its four bounding half-spaces
+is trivial unfolding and is NOT progress — calling those pieces "geodesic" is
+unbacked naming (that IS the missing metric content).
+
+**qou-krvm (iv): unchanged — conditional-on-class, NOT proved.** Analytic half
+(concavity+invariance of the Λ-sum) already done (`tetVol_strictConcaveOn`);
+geometric half is T2, conditional via `idealTetVolume_eq_lambda_sum`.
+
+**GENUINE PARTIAL added** (PR #5157, `IdealTetVolumeChimneyBridge.lean`;
+lean-direct exit 0; `#print axioms` = [propext, Classical.choice, Quot.sound],
+NO sorryAx / NO added axiom): `blochWigner_lob_eq_hypVolume_chimney` — for acute
+shapes, `hypVolume(chimney(inscribedTriangle 1 t (α z)(β z)(γ z)) 1) =
+ENNReal.ofReal (BlochWigner_lob z)`. The Bloch–Wigner ideal-tet volume D(z) (=
+`IdealTetrahedron.volume`) IS the genuine dx dy dz/z³ measure of the concrete
+normalized chimney. Composes the proved `hypVolume_chimney_inscribedTriangle`
+with the def of `BlochWigner_lob`; joins the Archimedean-measure and
+Knot/Bloch–Wigner subsystems and upgrades `IdealTetrahedron.volume`'s "not a
+metric volume" apology for acute shapes.
+
+**GUARD on the partial: it is a VOLUME equality, NOT a REGION equality.** Equal
+volume ≠ equal set — it does NOT prove the ideal tetrahedron IS the chimney;
+region_eq_chimney (T2) stays OPEN; (iv) not discharged; no instance/axiom.
+
+Bean STAYS OPEN.

@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/information-theory/information-speed-of-light.lean"
   },
   "source_hashes": {
+    "md": "dd068df624b4",
     "ts": "e1e39dc7b3ae",
-    "md": "561420a7a838",
-    "lean": "8097bbfcb1b5"
+    "lean": "8097bbfcb1b5",
+    "lean_statement": "5fac7c1d5f6b"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -331,26 +332,6 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T03:18:33.902Z",
-        "reviewed_sha": "5c2ccd2ba2b82b6b96d12b58baa3eeffa29972cb"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "561420a7a838",
-          "ts": "e1e39dc7b3ae",
-          "lean": "8097bbfcb1b5",
-          "lean_statement": "5fac7c1d5f6b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
         "reviewed_at": "2026-08-10T03:18:33.902Z",
@@ -1889,7 +1870,27 @@
         "evidence": "final sentence: 42-word apposition chain (coordinate/ratio/velocity/fibre-count)",
         "notes": "fixed: split at 'quantum spin. This is the Lieb--Robinson velocity of the causal cone: ...'"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "dd068df624b4",
+          "ts": "e1e39dc7b3ae",
+          "lean": "8097bbfcb1b5",
+          "lean_statement": "5fac7c1d5f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T11:39:05.116Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

@@ -1093,7 +1093,7 @@ function detectDocstringSorryMismatch(
 // `strangelet_double_beta` writes `by\n  unfold double_beta_rate\n  rfl` and was
 // missed by a `;`-only pattern.
 const RFL_BODY =
-  /^(?:rfl|by\s+rfl|by\s+(?:unfold|delta|show|simp\s+only|with_unfolding_all)\b[^;\n]*[;\n]\s*rfl)\s*$/;
+  /^(?:rfl|by\s+rfl|by\s+(?:unfold|delta|show|simp\s+only|with_unfolding_all|intros?)\b[^;\n]*[;\n]\s*rfl)\s*$/;
 /**
  * The same blindness, wearing an existential.
  *
@@ -1156,6 +1156,145 @@ function detectUnusedHypothesisRfl(d: Decl): Hit | undefined {
     `proof is \`${body}\`, which uses no hypothesis, yet the statement binds ` +
     `${unused.map((n) => `\`${n}\``).join(", ")} — absent from the conclusion, so ` +
     `the claim holds for every value of ${unused.length > 1 ? "them" : "it"}`;
+  return h;
+}
+
+/**
+ * Split a proposition into its `∀`-telescope, its arrow hypotheses, and the
+ * final conclusion.
+ *
+ * `detectUnusedHypothesisRfl` above scans only *parenthesised binders before
+ * the colon* (`theorem foo (h : P) : C`). A statement can carry exactly the
+ * same decoration inside its type instead —
+ *
+ *     theorem foo : ∀ (p : ℕ), Odd p → ∀ (s : R_q), s ≠ 0 → C p
+ *
+ * — and then `head` is empty, nothing is scanned, and no hit is possible.
+ * That is the shape this splitter exists to expose.
+ *
+ * Scanning is bracket-aware, so an arrow inside `(a → b)` or a comma inside
+ * `(x : Fin (n, m))` does not terminate a segment. The iteration bound is a
+ * guard against pathological input, not a semantic limit.
+ */
+function telescopeParts(ty: string): {
+  bound: string[];
+  hyps: string[];
+  concl: string;
+} {
+  const OPEN = "([{⦃";
+  const CLOSE = ")]}⦄";
+  const bound: string[] = [];
+  const hyps: string[] = [];
+  let rest = ty.trim();
+  for (let guard = 0; guard < 64; guard++) {
+    rest = rest.trim();
+    if (rest.startsWith("∀")) {
+      let depth = 0;
+      let i = 1;
+      for (; i < rest.length; i++) {
+        const c = rest[i];
+        if (OPEN.includes(c)) depth++;
+        else if (CLOSE.includes(c)) depth--;
+        else if (c === "," && depth === 0) break;
+      }
+      const binderText = rest.slice(1, i);
+      // Grouped binders `(x y : T)` / `{x : T}` / `[inst]`.
+      for (const m of binderText.matchAll(
+        /[({[⦃]\s*([^:()[\]{}⦃⦄]+?)\s*:[^)}\]⦄]*[)}\]⦄]/g,
+      )) {
+        for (const n of m[1].trim().split(/\s+/)) {
+          if (/^_?[a-zA-Z_][\w']*$/.test(n)) bound.push(n);
+        }
+      }
+      // Bare binders `∀ n, …` (no parentheses, no ascription).
+      const bare = binderText.replace(/[({[⦃][^)}\]⦄]*[)}\]⦄]/g, " ");
+      for (const n of bare.trim().split(/\s+/)) {
+        if (n && /^_?[a-zA-Z_][\w']*$/.test(n)) bound.push(n);
+      }
+      rest = rest.slice(i + 1);
+      continue;
+    }
+    let depth = 0;
+    let arrow = -1;
+    for (let i = 0; i < rest.length; i++) {
+      const c = rest[i];
+      if (OPEN.includes(c)) depth++;
+      else if (CLOSE.includes(c)) depth--;
+      else if (c === "→" && depth === 0) {
+        arrow = i;
+        break;
+      }
+    }
+    if (arrow >= 0) {
+      hyps.push(rest.slice(0, arrow).trim());
+      rest = rest.slice(arrow + 1);
+      continue;
+    }
+    break;
+  }
+  return { bound, hyps, concl: rest.trim() };
+}
+
+/**
+ * The telescope twin of `detectUnusedHypothesisRfl`.
+ *
+ * A `rfl`-closed theorem consults no hypothesis, so anything its *type*
+ * quantifies over is decoration: the claim holds for every value of it. When
+ * the decoration sits in a `∀`-telescope rather than in named binders, the
+ * older detector cannot see it.
+ *
+ * Worked instance (bean `qou-wcff`), which every checker missed:
+ *
+ *     theorem chebyshev_degree_eq_genus :
+ *         ∀ (p : ℕ), Odd p → 2 ≤ p → ∀ (s : R_q), s ≠ 0 →
+ *         seifertGenus_T2p p = (p - 1) / 2 := by
+ *       intros; rfl
+ *
+ * `s` and all three hypotheses are absent from the conclusion, which unfolds
+ * to `(p-1)/2 = (p-1)/2`. It escaped on two counts: `RFL_BODY` did not list
+ * `intros`, and the binders were not where the scan looked. Both are fixed
+ * here — this is a recall gap, not a one-off.
+ */
+function detectTelescopeVacuousRfl(d: Decl): Hit | undefined {
+  if (!PROVABLE_KINDS.test(d.kind)) return undefined;
+  const body = d.body.trim();
+  const collapsed = body.replace(/\s+/g, " ").trim();
+  if (!RFL_BODY.test(collapsed)) return undefined;
+  const ty = conclusionTypeAscription(d.sig);
+  if (!ty || !/∀|→/.test(ty)) return undefined;
+  const { bound, hyps, concl } = telescopeParts(ty);
+  if (!concl) return undefined;
+  const occurs = (n: string, s: string) =>
+    new RegExp(
+      `(^|[^\\w'])${n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^\\w']|$)`,
+    ).test(s);
+  const unused = bound.filter(
+    (n) => n !== "_" && !occurs(n, concl) && !occurs(n, body),
+  );
+  // A `rfl` body discharges no hypothesis, so a surviving arrow hypothesis is
+  // as much decoration as an unused ∀-binder. Either alone is a candidate.
+  if (unused.length === 0 && hyps.length === 0) return undefined;
+  const pat =
+    unused.length > 0
+      ? "rfl-with-unused-telescope-binder"
+      : "rfl-with-discarded-telescope-hypothesis";
+  const h = mk(d, "proof-no-unused-hypothesis-rfl", pat, false);
+  const parts: string[] = [];
+  if (unused.length > 0) {
+    parts.push(
+      `quantifies over ${unused.map((n) => `\`${n}\``).join(", ")}, absent from the conclusion`,
+    );
+  }
+  if (hyps.length > 0) {
+    parts.push(
+      `assumes ${hyps.length} hypothes${hyps.length > 1 ? "es" : "is"} ` +
+        `(${hyps.map((x) => `\`${x}\``).join(", ")})`,
+    );
+  }
+  h.detail =
+    `proof is \`${collapsed}\`, which consults no hypothesis, yet the type ` +
+    `${parts.join(" and ")} — so the claim reduces to \`${concl}\` and holds ` +
+    `regardless`;
   return h;
 }
 
@@ -1781,6 +1920,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     push(detectSelfAssuming(d, carrierDecls));
     push(detectDocstringSorryMismatch(d, doc, fileHasSorryCode));
     push(detectUnusedHypothesisRfl(d));
+    push(detectTelescopeVacuousRfl(d));
     push(detectDecideMasking(d));
     push(detectFalsePremise(d));
     push(detectProvableAxiom(d, origLines));

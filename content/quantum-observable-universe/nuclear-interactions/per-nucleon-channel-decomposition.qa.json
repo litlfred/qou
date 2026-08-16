@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/nuclear-interactions/per-nucleon-channel-decomposition.lean"
   },
   "source_hashes": {
-    "ts": "0fad354dd8b7",
     "md": "98be99fc106f",
-    "lean": "3a3682d6260c"
+    "ts": "0fad354dd8b7",
+    "lean": "3a3682d6260c",
+    "lean_statement": "2adf82b0f6d8"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -1994,26 +1995,6 @@
         "reviewed_sha": "d410f902106fdf2891eefc2d1ae74814bbe4d806"
       }
     ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "98be99fc106f",
-          "ts": "0fad354dd8b7",
-          "lean": "3a3682d6260c",
-          "lean_statement": "2adf82b0f6d8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c32929b594d2",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-10T04:46:11.420Z",
-        "reviewed_sha": "d410f902106fdf2891eefc2d1ae74814bbe4d806"
-      }
-    ],
     "wall-side-correct": [
       {
         "field_hash": {
@@ -2243,7 +2224,27 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "98be99fc106f",
+          "ts": "0fad354dd8b7",
+          "lean": "3a3682d6260c",
+          "lean_statement": "2adf82b0f6d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.314Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

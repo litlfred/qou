@@ -1,4 +1,5 @@
 import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
+import Mathlib.LinearAlgebra.Matrix.Rank
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import QOU.QBeta.TemperleyLiebTower
 
@@ -193,6 +194,95 @@ theorem corank_five : 120 - (1 ^ 2 + 4 ^ 2 + 5 ^ 2) = 6 ^ 2 + 5 ^ 2 + 4 ^ 2 + 1 
   norm_num
 
 end RankAccounting
+
+section SharpCorank
+
+/-! ### From "some radical element" to the sharp corank
+
+`gram_det_eq_zero_of_radical_combination` above spends a *single* radical vector
+and concludes `det G = 0` — i.e. corank `≥ 1`. That is all the eleven blocks
+needed refuting, but it is strictly weaker than what is true, and the gap is
+exactly where the arithmetic of `RankAccounting` was left hanging: `corank_three`
+and friends are `norm_num` identities about numbers. Nothing connected them to
+the rank of any actual matrix, so "corank 10 at `n = 4`" was, in Lean, an
+assertion about `24 - 14`.
+
+This section supplies the missing link. A radical **subspace** of dimension `d`
+forces corank `≥ d`, by rank–nullity: every such coefficient vector is in
+`ker (G *ᵥ ·)`, so the kernel is at least `d`-dimensional and the rank is at most
+`card ι - d`. Combined with a matching lower bound on the rank the corank is
+pinned exactly, which is how the measurement in
+`computations/probes/gram_radical_cellular_revalidation.py` is made rigorous
+rather than merely observed.
+
+Stated over a `Field` because rank–nullity is: `finrank` of a kernel is only
+well-behaved over a division ring. That is a genuine archimedean-free
+requirement (§7c) — no ordering, no `Real`, any field will do, including the
+rational function field `ℚ(q)` in which the degeneracy is *generic*. -/
+
+variable {R : Type*} [Field R]
+variable {A : Type*} [Ring A] [Algebra R A]
+variable {ι : Type*} [Fintype ι] [DecidableEq ι]
+
+omit [DecidableEq ι] in
+/-- **A radical combination is a kernel vector of `G`.**
+
+The algebra-side condition (`Σ c_j b_j` pairs to zero against every `b_i`) and
+the matrix-side condition (`c ∈ ker (G *ᵥ ·)`) are the same statement read
+through `gram_mulVec`. -/
+theorem mem_ker_mulVecLin_of_radical (tau : A →ₗ[R] R) (b : ι → A) {c : ι → R}
+    (hrad : ∀ i, tau (b i * ∑ j, c j • b j) = 0) :
+    c ∈ LinearMap.ker (gram tau b).mulVecLin := by
+  have h : (gram tau b) *ᵥ c = 0 := by
+    funext i
+    exact (gram_mulVec tau b c i).trans (hrad i)
+  simpa [LinearMap.mem_ker, Matrix.mulVecLin_apply] using h
+
+omit [DecidableEq ι] in
+/-- **A radical subspace of dimension `d` costs the Gram matrix `d` of its rank.**
+
+`rank G + dim W ≤ card ι` for any subspace `W` of coefficient vectors whose
+combinations all lie in the radical of the pairing. Equivalently
+`corank G ≥ dim W`.
+
+This is the general form of the convention-D degeneracy. Instantiated with `W`
+the image of the Temperley–Lieb ideal `ker(H_n(q) ↠ TL_n(q))` — which is a
+radical subspace precisely because the radical is a two-sided ideal
+(`TemperleyLiebTower.traceRadical_two_sided`) containing the three-strand
+`q`-antisymmetriser — it gives `rank G ≤ Catalan n`, the upper half of the
+corank determination. Nothing here is special to convention D, to `H_n(q)`, or
+to any particular `q`: it is rank–nullity, and it is why the degeneracy cannot
+be a precision artefact. -/
+theorem gram_rank_add_le_card (tau : A →ₗ[R] R) (b : ι → A)
+    (W : Submodule R (ι → R))
+    (hW : ∀ c ∈ W, ∀ i, tau (b i * ∑ j, c j • b j) = 0) :
+    (gram tau b).rank + Module.finrank R W ≤ Fintype.card ι := by
+  have hle : W ≤ LinearMap.ker (gram tau b).mulVecLin := fun c hc =>
+    mem_ker_mulVecLin_of_radical tau b (hW c hc)
+  have hmono : Module.finrank R W
+      ≤ Module.finrank R (LinearMap.ker (gram tau b).mulVecLin) :=
+    Submodule.finrank_mono hle
+  have hrk := LinearMap.finrank_range_add_finrank_ker (gram tau b).mulVecLin
+  have hcard : Module.finrank R (ι → R) = Fintype.card ι :=
+    Module.finrank_fintype_fun_eq_card R
+  have hrank : (gram tau b).rank
+      = Module.finrank R (LinearMap.range (gram tau b).mulVecLin) := rfl
+  omega
+
+omit [DecidableEq ι] in
+/-- **The rank bound, as a bound on the surviving dimension.**
+
+The quotient `H_n / rad τ` is what carries the non-degenerate Frobenius pairing,
+and this says its dimension is at most `card ι - dim W`. Read with `W` the
+Temperley–Lieb ideal: what survives is `TL_n`, of dimension `Catalan n`. -/
+theorem gram_rank_le_card_sub (tau : A →ₗ[R] R) (b : ι → A)
+    (W : Submodule R (ι → R))
+    (hW : ∀ c ∈ W, ∀ i, tau (b i * ∑ j, c j • b j) = 0) :
+    (gram tau b).rank ≤ Fintype.card ι - Module.finrank R W := by
+  have := gram_rank_add_le_card tau b W hW
+  omega
+
+end SharpCorank
 
 
 section LiveChannels

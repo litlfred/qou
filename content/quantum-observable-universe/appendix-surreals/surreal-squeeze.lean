@@ -56,6 +56,9 @@
 
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
 
 namespace QOU.AlgebraicSubstrate
 
@@ -95,5 +98,77 @@ It is also what distinguishes this from the tautology it replaces. -/
 theorem surreal_squeeze_needs_domination :
     ∃ ε δ : ℚ, 0 < ε ∧ ε < 1 ∧ ¬ (ε ^ 3 < δ ^ 2 * ε⁻¹) := by
   refine ⟨9 / 10, 1 / 10, by norm_num, by norm_num, by norm_num⟩
+
+/-! ### The sharp criterion, and what it excludes
+
+`surreal_squeeze` above gives a *sufficient* condition (`ε < δ²`). The
+inequality has an exact criterion, and pinning it down settles three questions
+`rem:yang-mills-surreal-bound` answers wrongly. Added 2026-08-15, bean `msc1`
+item 4; the Python probe this replaces is
+`docs/audits/scripts/yang_mills_squeeze_threshold.py`.
+-/
+
+/-- **The squeeze, exactly.**  Clearing `ε⁻¹` reduces the inequality to a
+comparison of `ε⁴` against `δ²` — no infinitesimality or domination hypothesis
+needed, only `0 < ε` so the multiplication preserves the order. -/
+theorem surreal_squeeze_iff (ε δ : K) (hε : 0 < ε) :
+    ε ^ 3 < δ ^ 2 * ε⁻¹ ↔ ε ^ 4 < δ ^ 2 := by
+  rw [← div_eq_mul_inv, lt_div_iff₀ hε, ← pow_succ]
+
+/-- **The threshold is `ε²`.**  The squeeze holds precisely for `|δ| > ε²`.
+
+This is the fact that matters downstream: the millennium-bound remarks read the
+squeeze as certifying a gap, and the gap they assert is `ε³`, which is *below*
+this threshold. See `surreal_squeeze_fails_at_eps_cubed`. -/
+theorem surreal_squeeze_threshold (ε δ : K) (hε : 0 < ε) :
+    ε ^ 3 < δ ^ 2 * ε⁻¹ ↔ ε ^ 2 < |δ| := by
+  rw [surreal_squeeze_iff ε δ hε]
+  have h1 : ε ^ 4 = (ε ^ 2) ^ 2 := by ring
+  have h2 : δ ^ 2 = |δ| ^ 2 := (sq_abs δ).symm
+  rw [h1, h2]
+  exact pow_lt_pow_iff_left₀ (by positivity) (abs_nonneg δ) (by norm_num)
+
+/-- **At `δ = 0` the squeeze FAILS; it does not degenerate to an equality.**
+
+`rem:yang-mills-surreal-bound` said it "degenerates to the marginal equality at
+`δ = 0`". The left side is `0` and the right side is `ε³ > 0`, so the inequality
+is false there, with no equality anywhere near it. The block's conclusion —
+that the only zero-cost excitation is the trivial one — survives, but by this
+failure rather than by a degeneracy. -/
+theorem surreal_squeeze_fails_at_zero (ε : K) (hε : 0 < ε) :
+    ¬ (ε ^ 3 < (0 : K) ^ 2 * ε⁻¹) := by
+  rw [surreal_squeeze_iff ε 0 hε]
+  simp only [ne_eq, OfNat.ofNat_ne_zero, not_false_eq_true, zero_pow, not_lt]
+  positivity
+
+omit [IsStrictOrderedRing K] in
+/-- **The marginal case is real, and it sits at `δ = ε²`** — an exact equality,
+which is what `δ = 0` was mistakenly credited with. -/
+theorem surreal_squeeze_marginal_at_eps_sq (ε : K) (hε : 0 < ε) :
+    (ε ^ 2) ^ 2 * ε⁻¹ = ε ^ 3 := by
+  field_simp
+
+/-- **The asserted mass gap `Δ_q ≍ ε³` does not clear the squeeze.**
+
+At `δ = ε³` the cost is `ε⁵`, strictly *below* the budget `ε³` — the opposite of
+what the squeeze is invoked to show. So "every non-trivial excitation has
+`δ ≥ Δ_q`" does not follow from this inequality.
+
+Scope-(a) (AGENTS.md §"Before declaring refuted"): this refutes the *inference*,
+not the gap. `Δ_q ≍ ε³ > 0` is established in that block by a separate route and
+is untouched here, and nothing excludes a squeeze whose threshold is `ε³`. -/
+theorem surreal_squeeze_fails_at_eps_cubed (ε : K) (hε : 0 < ε) (hε1 : ε < 1) :
+    (ε ^ 3) ^ 2 * ε⁻¹ < ε ^ 3 := by
+  have h : (ε ^ 3) ^ 2 * ε⁻¹ = ε ^ 5 := by field_simp
+  rw [h]
+  exact pow_lt_pow_right_of_lt_one₀ hε hε1 (by norm_num)
+
+/-- **`surreal_squeeze`'s hypothesis is sufficient but not necessary**, so the
+sharp criterion is a genuine strengthening rather than a restatement. At
+`ε = δ = 1/2` the criterion `ε⁴ < δ²` holds while `ε < δ²` fails, so the
+original lemma misses a case the squeeze actually covers. -/
+theorem surreal_squeeze_hypothesis_not_necessary :
+    ∃ ε δ : ℚ, 0 < ε ∧ ε < 1 ∧ ε ^ 4 < δ ^ 2 ∧ ¬ (ε < δ ^ 2) := by
+  refine ⟨1 / 2, 1 / 2, by norm_num, by norm_num, by norm_num, by norm_num⟩
 
 end QOU.AlgebraicSubstrate

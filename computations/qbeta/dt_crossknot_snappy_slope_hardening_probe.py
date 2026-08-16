@@ -142,7 +142,14 @@ def main() -> int:
                      computed=str(bool(ok_vol)), expected="True",
                      tolerance="1e-9 per knot",
                      source="SnapPy float64 volume vs corpus 50-digit values")
-    wb.save()
+    # q0 anchor: this probe never reads the substrate modulus. Verified by
+    # transitive import cone (3 modules), not by reading this file alone —
+    # nothing in the cone reaches q_parameter or qou_substrate.constants.
+    # So the honest record is `independent`; stamping the standing proton
+    # default would assert a pin the compute never read. Via save(extra=...)
+    # and NOT add_data(), which nests under `data` where the audit reading
+    # body["q0Anchor"] cannot see it. No q0Value — one here is a Q0_FLIP.
+    wb.save({"q0Anchor": "independent"})
 
     ok = ok_41 and ok_52 and ok_vol
     print(f"\n  RESULT: {'HARDENED — literature recall confirmed' if ok else 'MISMATCH — see above'}")

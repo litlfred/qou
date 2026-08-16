@@ -1,0 +1,194 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2011.12932v2",
+ "source": {
+  "file": "2011.12932v2.pdf",
+  "sha256": "23709542c5652a295267b45764c1bf95a1b6f9e78cf73baeb5936b58aee93c9c",
+  "bytes": 799718,
+  "pages": 26,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2011.12932",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "22 May 2021"
+  },
+  "doi": null,
+  "title": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY",
+  "authors_raw": "CHRISTIAN BLANCHET AND MARCO DERENZI",
+  "title_lines": [
+   "MODULAR CATEGORIES AND TQFTS BEYOND",
+   "SEMISIMPLICITY"
+  ],
+  "abstract": "Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing 3-dimensional Topological Quantum Field Theories (TQFTs for short) con- taining invariants of links in 3-manifolds such as Witten\u2013Reshetikhin\u2013Turaev ones. In recent years, generalized notions of modular categories, which relax the semisimplicity requirement, have been successfully used to extend Turaev\u2019s construction to various non-semisimple settings. We report on these recent de- velopments in the domain, showing the richness of Vladimir\u2019s lineage.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210525013034Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Historical overview",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Definition of TQFT",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Semisimple constructions",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Early non-semisimple constructions",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Renormalized non-semisimple constructions",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Turaev's notion of modular category",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Semisimple quantum invariants and TQFTs",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "T-modular categories from small quantum sl(2)",
+   "page": 9,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Lyubashenko's notion of modular category",
+   "page": 12,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Non-semisimple quantum invariants and TQFTs",
+   "page": 16,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "L-modular categories from small quantum sl(2)",
+   "page": 18,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Ends",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3823,
+   "n_words": 599
+  },
+  {
+   "id": "sec-001-semisimple-constructions",
+   "number": null,
+   "title": "Semisimple constructions",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3022,
+   "n_words": 435
+  },
+  {
+   "id": "sec-002-early-non-semisimple-constructions",
+   "number": null,
+   "title": "Early non-semisimple constructions",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 20,
+   "n_chars": 45785,
+   "n_words": 7568
+  },
+  {
+   "id": "sec-003-appendix-a-ends",
+   "number": null,
+   "title": "Appendix A. Ends",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 24,
+   "n_chars": 6624,
+   "n_words": 1135
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 9609,
+   "n_words": 1281
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 5,
+  "chars_total": 68863
+ }
+}

@@ -285,7 +285,7 @@
 | [prop:antiparticle-crossing-reversal](#prop:antiparticle-crossing-reversal) | Antiparticles from crossing reversal | Ch 12 | `qou:QOU.Torsion.antiparticle_crossing_reversal` |
 | [prop:markov-trace-antipode-polynomial-symmetry](#prop:markov-trace-antipode-polynomial-symmetry) | Antipode-induced polynomial symmetry $q^{20} p(1/q) = -p(q)$ of the proton Markov trace closed form | Ch 7 | `qou:QOU.BraidKnot.markovTraceAntipodePolynomialSymmetry` |
 | [prop:wenzl-bridge-applicability-qou](#prop:wenzl-bridge-applicability-qou) | Applicability of the Wenzl-bridge $y_\lambda$ formula in QOU: Schur--Weyl + 1-dim trace space | Ch 10 | `qou:QOU.BraidsAndKnots.wenzl_bridge_applicability_qou` |
-| [prop:q-plancherel-asymptotic-skeleton](#prop:q-plancherel-asymptotic-skeleton) | Asymptotic skeleton of the q-Plancherel measure $\tilde w_\lambda$ — convergence on a continuous Young-diagram space | Ch 13 | `qou:QOU.Observations.QPlancherelAsymptoticSkeleton` |
+| [prop:q-plancherel-asymptotic-skeleton](#prop:q-plancherel-asymptotic-skeleton) | Asymptotic skeleton of the q-Plancherel measure $w_\lambda(q)$ — convergence on a continuous Young-diagram space | Ch 13 | `qou:QOU.Observations.QPlancherelAsymptoticSkeleton` |
 | [prop:atomic-nf-witness](#prop:atomic-nf-witness) | Atomic braid normal form witness | Ch 8 | `qou:QOU.ParticleInteractions.atomic_nf_witness` |
 | [prop:atomic-mass-gb-nf](#prop:atomic-mass-gb-nf) | Atomic mass as Markov trace of the Gröbner–Shirshov normal form | Ch 7 | `qou:QOU.BraidKnot.atomicMassGBNF` |
 | [prop:bar-involution-invariance](#prop:bar-involution-invariance) | Bar-involution invariance of Plancherel weights and Type-B-folded normal forms | Ch 8 | `qou:QOU.ParticleInteractions.bar_involution_invariance` |
@@ -305,7 +305,7 @@
 | [prop:qou-canonical-action](#prop:qou-canonical-action) | Canonical action of a quantum observable universe | Ch 2 | `qou:QOU.qou_canonical_action` |
 | [prop:braiding-induced-ordering](#prop:braiding-induced-ordering) | Canonical admissible ordering on the Hecke basis induced by braiding | Ch 2 | `qou:QOU.braiding_induced_ordering` |
 | [prop:rj-canonical-inner-product](#prop:rj-canonical-inner-product) | Canonical inner product on $R(H_r(q))$ via Schur orthogonality | Ch 12 | `qou:QOU.Archimedean.rj_canonical_inner_product` |
-| [prop:wedderburn-weight-canonical](#prop:wedderburn-weight-canonical) | Canonical q-deformed Wedderburn-block weight $\tilde w_\lambda$ and named scalings (BW, LP for all $\lambda$; Wenzl-bridge on the self-conjugate stratum) | Ch 10 | `qou:QOU.BraidKnot.wedderburnWeightCanonical` |
+| [prop:wedderburn-weight-canonical](#prop:wedderburn-weight-canonical) | Canonical q-deformed Wedderburn-block weight $w_\lambda(q)$ and named scalings (BW, LP for all $\lambda$; Wenzl-bridge on the self-conjugate stratum) | Ch 10 | `qou:QOU.BraidKnot.wedderburnWeightCanonical` |
 | [conj:bohr-radius-categorical](#conj:bohr-radius-categorical) | Categorical Bohr radius $a_0^{\mathrm{cat}} = \hbar/(m_e c\,\alpha_{EM})$ (transported from QED virial-balance; categorical derivation open) | Ch 12 | `qou:QOU.Archimedean.bohr_radius_categorical` |
 | [prop:helicity-conservation](#prop:helicity-conservation) | Categorical helicity conservation | Ch 16 | `qou:QOU.FluidDynamics.helicity_conservation` |
 | [prop:categorical-lichnerowicz](#prop:categorical-lichnerowicz) | Categorical Lichnerowicz: $\Delta_\nabla^q = \mathfrak{D}_\nabla^2 + \tfrac{1}{4}\,\mathrm{Sc}_q$ | Ch 2 | `qou:QOU.Lichnerowicz.qDirac` |
@@ -535,7 +535,7 @@
 | [prop:q-heat-kernel-peter-weyl](#prop:q-heat-kernel-peter-weyl) | Peter--Weyl decomposition of the $q$-heat kernel (archimedean) | Ch 18 | `qou:QOU.qHeatKernelPeterWeyl` |
 | [prop:phase-transition-boundary](#prop:phase-transition-boundary) | Phase transitions as $S^3$ boundary actions | Ch 18 | `qou:QOU.Information.gasLiquidCriticalTemp` |
 | [prop:knot-indexed-convolution-grid](#prop:knot-indexed-convolution-grid) | Placement of paper's existing knot-indexed convolutions in the bi-filtration grid | Ch 10 | `qou:QOU.BraidKnot.KnotIndexedConvolutionGrid.grid_placement` |
-| [prop:plancherel-weight-boundedness](#prop:plancherel-weight-boundedness) | Plancherel weights define a probability distribution: $\sum_\lambda w_\lambda = 1$, $0 \leq w_\lambda \leq 1$ | Ch 10 | `qou:QOU.BraidKnot.plancherel_weight_boundedness` |
+| [prop:plancherel-weight-boundedness](#prop:plancherel-weight-boundedness) | Plancherel weights define a probability distribution: $\sum_\lambda w_\lambda(1) = 1$, $0 \leq w_\lambda(1) \leq 1$ | Ch 10 | `qou:QOU.BraidKnot.plancherel_weight_boundedness` |
 | [prop:alpha-shift-torus-knot](#prop:alpha-shift-torus-knot) | Pole order at $q=0$ of the torus-knot character: $\alpha_{\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$ | Ch 10 | `qou:QOU.BraidKnot.AlphaShiftTorus.alpha_shift_torus_knot` |
 | [prop:p-bandwidth-bound](#prop:p-bandwidth-bound) | Polynomial computation as sub-horizon bandwidth | Ch 18 | `qou:QOU.Information.p_bandwidth_bound` |
 | [prop:positron-correction](#prop:positron-correction) | Positron correction to the Q-value | Ch 8 | `qou:QOU.ParticleInteractions.positron_correction` |

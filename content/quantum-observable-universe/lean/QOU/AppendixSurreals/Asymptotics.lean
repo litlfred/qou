@@ -18,6 +18,44 @@ class is populated here — both are intended to be instantiated by
 downstream modules that construct or axiomatise a specific surreal
 carrier (e.g.\ via a Hahn embedding).
 
+## Why the Hahn route does not currently close this (checked 2026-08-16)
+
+`OmegaOrder` has **no instance anywhere in this tree**, which leaves every
+`[OmegaOrder K]`-conditional result untested for satisfiability — see bean
+`qou-ffwk` and `SpectralNormalForm`. An attempt to supply one from Mathlib's
+Hahn-series API found **three independent obstructions**, recorded so the next
+attempt starts from a specification rather than from scratch.
+
+1. **No degenerate model is available.** `SurrealField` requires
+   `omegaSurreal : K` with `omegaSurreal_gt_natCast : ∀ n : ℕ, (n : K) < _`.
+   No real exceeds every natural, so `SurrealField ℝ` is **impossible** — the
+   cheap witness that would settle non-emptiness cannot exist. A model must be
+   genuinely non-archimedean.
+
+2. **The exponent type is self-referential, and Mathlib's is not.** `Ow` is
+   typed `K → WithTop K`: exponents live in the field itself. That is right for
+   `𝐍𝐨`, which is closed under `ω`-exponentiation. Mathlib's canonical
+   leading-exponent valuation is
+   `HahnSeries.orderTop : HahnSeries Γ R → WithTop Γ`, with `Γ` a **separate**
+   ordered group. So `OmegaOrder` cannot be instantiated from that API without
+   an extra `Γ ↪ K` that is additive and order-compatible; supplying one is a
+   design decision, not a lemma. Generalising this class to
+   `OmegaOrder K Γ` would remove the obstruction and is worth considering
+   before more conditional results are stacked on it.
+
+3. **This build's Hahn API stops short even for the separate-`Γ` reading.**
+   `CommRing (HahnSeries ℤ ℝ)` is available (noncomputable), but `Field` and
+   `LinearOrder` on `HahnSeries Γ R` are not — the order lives on the `Lex`
+   synonym — and multiplicativity of `orderTop` is available only as the
+   **inequality** `x.orderTop + y.orderTop ≤ (x * y).orderTop`
+   (`orderTop_add_le_mul`). The equality that `Ow_mul` states does not exist
+   here, so it would have to be proved over a domain first.
+
+What must be built, in order: `orderTop` multiplicativity over a domain; the
+`Lex` order transfer; a `birthday` function satisfying the `nadd`
+sub-additivity and midpoint bounds `SurrealField` demands; and a decision on
+obstruction 2.
+
 Notation: in LaTeX we write `$O_\omega$` (Big-O register, via the
 `\ordw` macro).  In Lean the identifier is `Ow` for ASCII usability.
 

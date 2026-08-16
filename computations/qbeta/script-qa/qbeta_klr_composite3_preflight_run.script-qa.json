@@ -3,7 +3,7 @@
   "script_path": "computations/qbeta/qbeta_klr_composite3_preflight_run.py",
   "language": "python",
   "source_hash": "d8bbbaa137f1",
-  "updated_at": "2026-06-09T03:47:37.719Z",
+  "updated_at": "2026-08-16T02:29:17.116439+00:00",
   "criteria": {
     "compute_no_mpf_to_float_cast": [
       {
@@ -35,6 +35,23 @@
         },
         "reviewed_at": "2026-06-09T03:47:37.719Z",
         "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
+      }
+    ],
+    "self-check-not-gated": [
+      {
+        "field_hash": {
+          "py": "51051fcfb1e7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "computations/audits/silent_self_check_audit.py",
+          "version": "v1",
+          "script_hash": "f42329b8dcaa"
+        },
+        "reviewed_at": "2026-08-16T02:29:17.116439+00:00",
+        "severity": "critical",
+        "evidence": "line 115: assigns verdict `mismatch`"
       }
     ]
   }
