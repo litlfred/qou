@@ -288,3 +288,76 @@ and should be read before attempting it — its docstring states the claim being
 > I did exactly that on 2026-08-16 and caught it only because `git status`
 > showed `A` instead of `M`. Resolve the path with
 > `ls .beans/ | grep <id>`, never by slugifying the title.
+## Progress 2026-08-16 (2) — `BringFigureEightDepth2Witness`
+
+Branch `claude/ffwk-bring-fig8-carrier-2026-08-16`. Third of the ten.
+
+**Which half is the conjecture.** The block asserts a chain,
+`Vol(S³\4₁) = std(2 Im Li₂^q(e^{iπ/3})) = 2 Cl₂(π/3)`, and its own status note
+splits it: the evaluation is *"numerically discharged at 50 digits via mpmath"*
+with a committed witness, and only the **structural identification** is
+conjectural. So the class carries **one** field. Folding the evaluation in as a
+second field would mark verified work as conjectural — the mirror image of the
+defect this bean exists to fix. It enters instead as a hypothesis of
+`evaluates_to`, so the two halves' provenance stays distinct.
+
+**Exact equality, not a tolerance** — unlike the `gs-archimedean-agreement-*`
+carriers done earlier today. Those blocks write `≈` and record agreement "to
+machine precision", so a tolerance parameter is faithful. This block writes `=`,
+and its 50-digit figure is *evidence for* the identity rather than a claim that
+it holds only approximately. Same bean, opposite encoding, because the blocks
+differ.
+
+**Depth is not a field.** Both sides carry depth 2, but the block derives that
+match "by construction of the Bloch–Wigner regulator" — a fact the conjecture is
+stated against, not part of what it asserts. Encoding it would over-claim.
+
+### New gap surfaced: the conditionality cannot be expressed
+
+The block says the conjecture is *"conditional on
+`conj:gb-depth-period-correspondence`"*. That is exactly the §3b-cond instance-
+parameter shape — and it **cannot be written**, because the corresponding class
+`QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence` exists only as a
+**co-located stub** (`mass-theory/gb-depth-period-correspondence.lean`), which
+per `QOU.GroundRingAnnotations` is documentation that `lake` does not compile.
+A library module under `lean/QOU/` cannot import one.
+
+So an instance of `BringFigureEightDepth2Witness` does **not** discharge the
+correspondence it rests on, and the elaborator cannot enforce that it is
+carried. Documented in the file rather than dropped. Making it enforceable means
+promoting that carrier into the library tree — separate work, not attempted.
+
+This is the second instance of the same structural problem: the earlier pair
+could not name a Habiro-polynomial type or a Gröbner–Shirshov mass functional
+because neither exists in the library. **Library carriers cannot depend on
+content-directory stubs**, and several conjectures are stated in terms that only
+exist there. Worth its own bean if a third case appears.
+
+### Two stale statements corrected in passing
+
+The old header said "the `noncomputable instance` is the conjectural witness
+whose `sorry` represents the open conjecture" while the body two paragraphs
+below said no instance is provided — the axiom-and-instance pair had been
+removed without the header following. And what was removed was an `axiom`, not a
+`sorry`; the distinction matters because a `sorry` at least surfaces as
+`sorryAx`.
+
+### Verification
+
+`lean-direct-cone -k` ok=1; `#print axioms` on all three declarations gives
+`[propext, Classical.choice, Quot.sound]`, no `sorryAx`; `check-base-ring` PASS;
+`check-wall-side` PASS; both `lean-content-siblings` local gates exit 0.
+Anti-vacuity both directions (`nonempty_of_eq`, `not_of_ne`), neither an
+`instance`. No instance added — open state preserved.
+
+Detector count: main is at 16 files; this branch takes it to 15, and the
+`archimedean_agreement` branch takes it to 14. Both landed together give 13.
+
+### `HeckeQuotient` — the inventory names the wrong class
+
+The row `BraidGroupNStrand.lean | HeckeQuotient` is misattributed. The class in
+that file carrying the vanishing-scalar shape is **`MarkovTraceN`**, and it is a
+harder case than the ones done so far: it bundles four Markov axioms M1–M4, of
+which `tau_identity = 1` is already substantive and only the cyclic and
+stabilisation residuals are placeholders. It should be split field by field
+rather than replaced wholesale. Not attempted here.
