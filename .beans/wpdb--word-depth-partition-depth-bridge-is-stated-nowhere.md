@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T02:30:00Z
-updated_at: 2026-08-16T12:40:19Z
+updated_at: 2026-08-16T12:55:34Z
 ---
 
 Surfaced in #5183 as an open question, investigated and confirmed. Full
@@ -214,3 +214,89 @@ object. The live item is the repair: give `J^•` **one** definition and say
 which. Deleting the false "equivalently" clause is necessary but repairs
 nothing on its own; the three-way ambiguity is what let a provably-zero object
 sit unnoticed inside a load-bearing proof.
+
+
+---
+
+## 2026-08-16 (owner fork answered: 1 + 4 + 3) — and option 3 is dead on arrival
+
+Owner picked options **1**, **4**, **3**, and asked for the Coxeter-length
+impact in more detail.
+
+### Option 1 — DONE
+
+The false "Equivalently, `J^ℓ` = image of `I^ℓ`" clause is removed from Step 2
+of `curvature-rank-gb-stratification-proof.md`, with an explicit Gap note that
+**Step 3 depends on it and is incomplete as written**. The refutation is Step 1
+of the same proof: it states `I = ker π`, so `π(I^ℓ) = 0` for `ℓ ≥ 1`. The proof
+contained its own refutation two steps apart.
+
+**Sidecar staled and NOT refreshed** — `content/pipeline/qa-sweep.ts` moved to
+folio-assistant in the miga migration with no standalone replacement, so no
+honest refresh exists in this checkout. Declared, not hand-edited.
+
+### Option 3 — REFUTED before starting, so not started
+
+`def:hecke-normal-form` settles the `T_w` question **against** the rewrite
+reading. It says normal form is *"of an element `h`"*, is **unique**, the
+reduction is **confluent**, and *"the resulting basis elements correspond
+bijectively to the symmetric group `S_n`"*.
+
+So `T_w` is the normal-form basis indexed by `S_n` — and a normal-form element
+requires **zero** rewrites. Therefore `r(T_w) = 0` identically, and
+`{T_w : r(T_w) = r}` is the whole basis at `r = 0` and empty above. **The
+rewrite-depth reading is degenerate on exactly the set the proposition applies
+it to.**
+
+This also resolves §2b of the audit: reading (a) is correct, so the two readings
+are not merely "mutually exclusive" — (a) is *the* reading, and it is the one
+that kills object 1.
+
+**All three readings of `J^•` are now excluded**, each for a different reason:
+`⊥` by proved invariant (object 2); dimension count at `n ≤ 3` (object 3);
+identically zero given `def:hecke-normal-form` (object 1). I did not do option
+3's work, because its premise is refuted — reporting the negative rather than
+manufacturing progress on a dead branch.
+
+### Option 4 — SCOPE CORRECTED, not yet executed
+
+**The blast radius is 10 citing sites across 8 blocks, not the 5 I reported.**
+My audit grepped for blocks *asserting the identification*; the full citation
+count also reaches `confinement-categorical-proof`,
+`gb-depth-period-correspondence`, `plancherel-term-7-formulation-proof` and
+`spectral-sequence-collapse-proof`. Those cite the proposition for *different*
+things, so option 4 needs per-site judgement, not a blanket edit — mechanical
+editing across sites whose uses differ is how this class of defect got in.
+Deliberately left for the next tranche rather than done badly under time.
+
+### Coxeter-length impact, in detail (the owner's question)
+
+`F_ℓ = span{T_w : ℓ(w) ≤ ℓ}` filters `H_n(q)` by **vector spaces**;
+`dim gr_ℓ = #{w : ℓ(w) = ℓ}` (Mahonian). `Z(H_n(q))` has dim `p(n)`. For the
+citation to do work, `Z^{(k)}` must be `(Z ∩ F_k)/(Z ∩ F_{k-1})`, which injects
+into `gr_k` (kernel `= Z ∩ F_k ∩ F_{k-1} = Z ∩ F_{k-1}`). Hence the count.
+
+**At n = 3, concretely.** `dim H_3 = 6`; lengths `0,1,1,2,2,3` so
+`dim F_• = 1,3,5,6`. Centre dim 3. Each `e_λ` has generically nonzero
+`T_{w_0}`-coefficient, so all three lie in `F_3 \ F_2`; `Z ∩ F_2` is cut by
+**one** linear condition, dim ≥ 2, leaving
+`dim((Z ∩ F_3)/(Z ∩ F_2)) ≤ 1`. The blocks need all three idempotents there.
+
+**Does NOT reach:** Wedderburn, Markov trace, `tr_M`, `y_λ`, the idempotents
+themselves, `gbDepth`, `prop:gb-spectral-sequence`, or the `E₂`-collapse claim.
+No mass is evaluated anywhere in the argument.
+
+**Confined to n ≤ 3, holds cleanly n = 4..7** — Mahonian numbers grow fast while
+`p(n)` stays small, so the constraint is tight only for small `n`. **The
+multi-nucleon binding work at H₄+ is unaffected.** It hits exactly `H_3`, the
+single-nucleon case — which independently already had `gbDepth` constant there,
+making `k⋆` vacuous. Two unrelated defects on the same `n` is the part worth
+weighting highest.
+
+### Observed, not claimed
+
+`curvature-rank-gb-stratification-proof.qa.json` carries `da-false-claim`,
+`da-circular`, `da-overclaim` and `da-vacuous`. All four ran. All four returned
+**zero findings** on a proof containing a clause its own Step 1 refutes. One
+miss is not evidence a checker is useless, but it is worth knowing before
+relying on `da-*` as coverage.
