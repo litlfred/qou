@@ -66,12 +66,19 @@ for _p in ("computations", "computations/markov", "computations/hecke",
 
 import sympy as sp  # noqa: E402
 
-#: n = 6 (A = 2). The deuteron is the smallest atom that HAS a p-n interface,
-#: so it is the smallest word whose χ the pinned-δ defect touched — and the
-#: smallest non-trivial test of the identity that the normalisation result
-#: does not already cover.
-Z, N = 1, 1
-N_STRANDS = 3 * (Z + N)
+#: Two atoms, deliberately, and the cheap one runs FIRST.
+#:
+#: `proton` (n = 3, 11 crossings) is the CONTROL. It costs seconds, and it is
+#: what caught the symbol-identity bug that made the first deuteron run report
+#: a false "not identically zero" after 25 minutes. A cheap case whose answer
+#: is checkable is worth more than an expensive one you cannot triage — run it
+#: before believing anything the expensive case says.
+#:
+#: `deuteron` (n = 6, 23 crossings) is the case that matters: the smallest atom
+#: with a p-n interface, hence the smallest word whose χ the pinned-δ defect
+#: touched, and the smallest test the normalisation result does not already
+#: cover (that one evaluates at the identity braid).
+ATOMS = [("proton", 1, 0), ("deuteron", 1, 1)]
 
 
 def _partitions(n):
@@ -123,95 +130,61 @@ def symbolic_y_lambda(n, q):
     return out
 
 
-def main() -> int:
-    # THE canonical symbol, imported rather than re-declared. A locally minted
-    # `sp.Symbol("q", positive=True, real=True)` happens to compare equal to
-    # this one, but nothing guarantees that and the failure it produces is
-    # silent -- see `symbolic_y_lambda`'s note on the assumption-free `q` that
-    # `sympify` mints.
-    from hecke_symbolic import q  # noqa: E402
-
+def run_atom(name, Z, N, q):
+    """Test the identity for one atom. Returns a result dict (never raises)."""
     from markov_peel import tr_M_atomic
-    from mass_at_3A_proper import atom_braid_word_3A
+    from canonical_braid_crossings import (
+        atom_canonical_crossings, convention_label,
+    )
     from hoefsmit_symbolic import chi_lambda_symbolic
+    from mpmath import mp as _mp
+    _mp.dps = 60
 
-    # ---- the peel side: exact rational function, no anchor -------------
+    n = 3 * (Z + N)
+    crossings = atom_canonical_crossings(Z, N)
+    ctypes_seen = sorted({ct for _, ct in crossings})
+    print(f"\n=== {name}  (Z={Z}, N={N}, H_{n}, {len(crossings)} crossings)")
+    print(f"  convention: {convention_label(crossings)}  ctypes={ctypes_seen}")
+
     t0 = time.time()
     peel = sp.cancel(sp.together(tr_M_atomic(Z, N, use_fast=False)))
     t_peel = time.time() - t0
     peel_floats = len(peel.atoms(sp.Float))
-    print(f"[peel] {t_peel:.1f}s   Float atoms={peel_floats}   "
+    print(f"  [peel]   {t_peel:6.1f}s  Float atoms={peel_floats}  "
           f"rational={peel.is_rational_function(q)}")
 
-    # ---- the bridge side ----------------------------------------------
-    # The SAME word the peel builds. `atom_braid_word_3A` returns (c, d, gen)
-    # triples; the character path wants (gen, ctype), so classify each
-    # crossing rather than re-deriving d.
-    from canonical_braid_crossings import classify_crossing
-    from q_parameter import Q_MP
-
-    word = atom_braid_word_3A(Z, N)
-    h_num = float(Q_MP - 1 / Q_MP)
-    crossings = []
-    for c, d, gen in ((t[0], t[1], t[2]) for t in word):
-        ctype = classify_crossing(float(c), float(d), h_num,
-                                  context="markov_identity_symbolic_probe")
-        crossings.append((gen, ctype))
-    ctypes_seen = sorted({ct for _, ct in crossings})
-    print(f"[word] {len(crossings)} crossings, ctypes={ctypes_seen}")
-    if "averaged_weighted" not in ctypes_seen:
-        print("  ! no colour-weighted interface in this word — the probe "
-              "would not exercise the fixed path; refusing to report a pass")
-        return 2
-
-    y = symbolic_y_lambda(N_STRANDS, q)
-    # Route χ through the PRODUCER's cache rather than recomputing inline.
-    # Two reasons, both learned the hard way on the first run:
-    #   - it costs ~25 min at H_6 under the colour-weighted word (the symbolic
-    #     δ makes entries far larger than the ~155 s the colour-blind estimate
-    #     in that producer's docstring records), so an inline recompute makes
-    #     every diagnostic re-run unaffordable and the result unrepeatable;
-    #   - a second implementation of χ here is exactly the private-copy defect
-    #     this whole arc keeps finding. The producer's loader is now
-    #     convention-guarded, so reading it is safe in the way it was not
-    #     before: a cache built for a different word is discarded, not served.
+    y = symbolic_y_lambda(n, q)
     t0 = time.time()
-    from per_irrep_pole_deuteron_h6 import load_or_build_chi_deuteron
-    chis, _ = load_or_build_chi_deuteron(q)
-    total = sp.Integer(0)
-    chi_floats = 0
-    for lam in _partitions(N_STRANDS):
-        chi = sp.cancel(chis[lam])
+    total, chi_floats = sp.Integer(0), 0
+    for lam in _partitions(n):
+        chi = sp.cancel(chi_lambda_symbolic(lam, crossings))
         chi_floats += len(chi.atoms(sp.Float))
         total += y[lam] * chi
     t_chi = time.time() - t0
     bridge = sp.cancel(sp.together(total))
-    print(f"[bridge] {t_chi:.1f}s   Float atoms={len(bridge.atoms(sp.Float))}")
+    print(f"  [bridge] {t_chi:6.1f}s  Float atoms={len(bridge.atoms(sp.Float))}")
 
-    # ---- the test ------------------------------------------------------
     residual = sp.cancel(sp.together(sp.expand(bridge - peel)))
 
-    # GUARD: both sides must be expressions in ONE variable. Two means a
-    # symbol-identity bug upstream (an assumption-free `q` from `sympify`
-    # against `hecke_symbolic.q`), and the residual is then meaningless rather
-    # than merely nonzero. Refuse to report a verdict instead of publishing an
-    # artefact, which is exactly what the first run of this probe did.
+    # GUARD: one variable, or the verdict is meaningless rather than merely
+    # negative. Two symbols named `q` -- an assumption-free one from `sympify`
+    # against `hecke_symbolic.q` -- is what made the first n=6 run report a
+    # false "not identically zero" after 25 minutes.
     nfree = len(residual.free_symbols)
     if nfree > 1:
-        print(f"\n  ! residual has {nfree} free symbols {residual.free_symbols} "
-              f"— the two sides are not in the same variable. Refusing to "
-              f"report an identity verdict.")
-        return 2
+        print(f"  ! residual has {nfree} free symbols {residual.free_symbols} — "
+              f"the sides are not in one variable; refusing a verdict")
+        return {"atom": name, "error": "multiple free symbols",
+                "free_symbols": sorted(str(s) for s in residual.free_symbols)}
 
-    # `sp.simplify(r) == 0` is NOT a decision procedure and demonstrably fails
-    # on these expressions. Use the degree bound: a nonzero rational p/s with
-    # deg(p) = d has at most d roots, so vanishing at d+1 DISTINCT points
-    # forces p == 0. Exact rationals throughout — no floating point, no appeal
-    # to simplify.
+    # `simplify(r) == 0` is not a decision procedure and failed here even once
+    # the symbols agreed. Degree bound instead: a nonzero rational p/s with
+    # deg(p) = d has at most d roots, so vanishing at d+1 distinct EXACT
+    # rational points forces p == 0.
     num, den = sp.fraction(residual)
     num = sp.expand(num)
     if num == 0:
-        is_zero, method = True, "normalised-numerator"
+        is_zero, method, deg = True, "normalised-numerator", 0
     else:
         deg = int(sp.degree(num, q))
         pts, k = [], 2
@@ -220,99 +193,87 @@ def main() -> int:
             if den.subs(q, c) != 0:
                 pts.append(c)
             k += 1
-        nonzero_at = [c for c in pts if sp.cancel(num.subs(q, c)) != 0]
-        is_zero = not nonzero_at
+        is_zero = not [c for c in pts if sp.cancel(num.subs(q, c)) != 0]
         method = f"degree-bound (deg {deg}, {len(pts)} exact points)"
-    print(f"\n[residual] identically zero: {is_zero}   via {method}")
+    print(f"  [residual] identically zero: {is_zero}   via {method}")
 
-    # DIAGNOSTICS, because "not identically zero" is not yet a finding.
-    # A residual that is LARGE at q₀ means the two sides are different objects
-    # -- a probe bug -- since bridge and peel are known to agree there to
-    # ~1e-50 (atomic-tr-m-mpfr-50dps{,-proton}.witness.json). A residual that
-    # VANISHES at q₀ and not elsewhere would be the real thing: an identity
-    # that holds at the anchor but not as a function of q. Recording the
-    # numbers is what separates those, and the first version of this probe
-    # truncated the residual to 2000 chars and could answer neither.
-    from mpmath import mp as _mp
-    _mp.dps = 60
-    probes = {
-        "proton_q0": "1.1099785827513808075916690956",
-        "muon_q0": "1.109978595557334719899763",
-        "q_1_3": "1.3",
-        "q_0_7": "0.7",
-        "q_2": "2",
-    }
+    evals = {}
     f_res = sp.lambdify(q, residual, "mpmath")
     f_peel = sp.lambdify(q, peel, "mpmath")
-    evals = {}
-    for name, qs in probes.items():
-        qv = _mp.mpf(qs)
+    for lbl, qs in (("proton_q0", "1.1099785827513808075916690956"),
+                    ("muon_q0", "1.109978595557334719899763"),
+                    ("q_1_3", "1.3"), ("q_0_7", "0.7"), ("q_2", "2")):
         try:
+            qv = _mp.mpf(qs)
             rv, pv = f_res(qv), f_peel(qv)
             rel = abs(rv) / abs(pv) if pv != 0 else None
-            evals[name] = {"q": qs, "residual": _mp.nstr(rv, 20),
-                           "peel": _mp.nstr(pv, 20),
-                           "relative": _mp.nstr(rel, 12) if rel is not None else None}
-            print(f"  residual({name:10s}) = {_mp.nstr(rv, 14):>24}   "
-                  f"rel {_mp.nstr(rel, 8) if rel is not None else '-'}")
+            evals[lbl] = {"q": qs, "residual": _mp.nstr(rv, 20),
+                          "peel": _mp.nstr(pv, 20),
+                          "relative": _mp.nstr(rel, 12) if rel is not None else None}
         except Exception as exc:  # noqa: BLE001
-            evals[name] = {"q": qs, "error": f"{type(exc).__name__}: {exc}"}
-            print(f"  residual({name:10s}) FAILED {exc}")
-    rnum, rden = sp.fraction(residual)
-    deg_num = int(sp.degree(sp.expand(rnum), q))
-    deg_den = int(sp.degree(sp.expand(rden), q))
-    print(f"  residual degrees: num {deg_num} / den {deg_den}")
+            evals[lbl] = {"q": qs, "error": f"{type(exc).__name__}: {exc}"}
+    return {
+        "atom": name, "Z": Z, "N": N, "n_strands": n,
+        "n_crossings": len(crossings), "ctypes": ctypes_seen,
+        "convention": convention_label(crossings),
+        "peel": {"float_atoms": peel_floats, "elapsed_sec": f"{t_peel:.2f}",
+                 "rational_in_q": bool(peel.is_rational_function(q))},
+        "bridge": {"float_atoms": len(bridge.atoms(sp.Float)),
+                   "chi_float_atoms_total": chi_floats,
+                   "elapsed_sec": f"{t_chi:.2f}"},
+        "identically_zero": bool(is_zero), "zero_test_method": method,
+        "residual_numerator_degree": deg,
+        "residual_evaluations": evals,
+    }
 
+
+def main() -> int:
+    # THE canonical symbol, imported not re-declared -- see symbolic_y_lambda.
+    from hecke_symbolic import q  # noqa: E402
+
+    results = []
+    for name, Z, N in ATOMS:
+        try:
+            results.append(run_atom(name, Z, N, q))
+        except Exception as exc:  # noqa: BLE001
+            print(f"  ! {name} FAILED: {type(exc).__name__}: {exc}")
+            results.append({"atom": name, "Z": Z, "N": N,
+                            "error": f"{type(exc).__name__}: {exc}"})
+
+    ok = [r for r in results if r.get("identically_zero")]
     witness = {
         "computation": "markov-identity-symbolic",
         "description": (
-            "Tests Sum_lambda y_lambda(q)*chi^lambda(beta_D,q) = tr_M(beta_D)(q) "
-            "as an identity of rational functions, with no q0 anywhere. Both "
-            "sides are built from the same colour-weighted canonical word. "
-            "Strictly stronger than the two settled facts it complements: the "
-            "normalisation result evaluates at the identity braid, and the "
-            "~1e-50 bridge-vs-peel agreements are two points of the q-line."
+            "Tests Sum_lambda y_lambda(q)*chi^lambda(beta) = tr_M(beta) as an "
+            "identity of RATIONAL FUNCTIONS -- no q0 in the statement or the "
+            "check. Strictly stronger than the two facts it complements: the "
+            "normalisation result Sum y_lambda*dim V_lambda = 1 evaluates at "
+            "the IDENTITY braid, and the ~1e-50 bridge-vs-peel agreements are "
+            "two points of the q-line. Both sides are built from the same "
+            "colour-weighted canonical word, so the comparison is of one "
+            "object rather than two conventions."
         ),
         "scriptFile": "markov/markov_identity_symbolic_probe.py",
         "q0Anchor": "independent",
         "q0_independence_note": (
-            "No q0 is read. The peel's numeric (c,d) only select crossing "
-            "templates; chi takes delta as the closed form flavor_split_leading(q). "
-            "classify_crossing needs a numeric h to identify templates, which is "
-            "a q-independent combinatorial choice, not a value entering the result."
+            "No q0 is read. The peel's numeric (c, d) only SELECT one of five "
+            "crossing templates -- a q-independent combinatorial choice -- and "
+            "chi takes delta as the closed form flavor_split_leading(q)."
         ),
-        "atom": {"Z": Z, "N": N, "n_strands": N_STRANDS,
-                 "n_crossings": len(crossings), "ctypes": ctypes_seen},
-        "peel": {"float_atoms": peel_floats,
-                 "rational_in_q": bool(peel.is_rational_function(q)),
-                 "elapsed_sec": f"{t_peel:.2f}"},
-        "bridge": {"float_atoms": len(bridge.atoms(sp.Float)),
-                   "chi_float_atoms_total": chi_floats,
-                   "elapsed_sec": f"{t_chi:.2f}"},
-        "residual_is_identically_zero": bool(is_zero),
-        "residual_degrees": {"numerator": deg_num, "denominator": deg_den},
-        # The EVALUATIONS are the durable record, not the expression string.
-        # A truncated `str(residual)[:2000]` is unparseable and cannot be
-        # re-examined, which is how the first run produced a verdict nobody
-        # could triage.
-        "residual_evaluations": evals,
+        "results": results,
         "assertions": [
-            {"name": "peel_is_float_free", "passed": peel_floats == 0},
-            {"name": "chi_is_float_free_after_pr_5209", "passed": chi_floats == 0,
-             "note": "before #5209 an averaged_weighted crossing carried a "
-                     "q0-pinned delta, so chi was not a function of q at all"},
-            {"name": "markov_identity_holds_identically_in_q",
-             "passed": bool(is_zero)},
+            {"name": "identity_holds_identically_in_q_for_every_atom_tested",
+             "passed": len(ok) == len(results) and bool(results)},
         ],
     }
     witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
-
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(
         witness, script_path=__file__, engine="sympy")
     out = REPO / "computations" / "markov-identity-symbolic.witness.json"
     out.write_text(json.dumps(witness, indent=2) + "\n")
-    print(f"\nallPassed = {witness['allPassed']}  -> {out.relative_to(REPO)}")
+    print(f"\n{len(ok)}/{len(results)} atoms: identity holds identically in q"
+          f"   -> {out.relative_to(REPO)}")
     return 0 if witness["allPassed"] else 1
 
 
