@@ -381,6 +381,45 @@ def _bond_type_L():
         return {k: float(-_mp.log(zx + v) - de[k] / 2 * lw) for k, v in d.items()}
 
 
+def _chain_writhe_shift(Z, N, alpha):
+    """Total writhe normalisation carried by the closed-form chain for (Z, N).
+
+    `_bond_type_L` returns writhe-NORMALISED per-bond suppressions
+    `L_XY - (delta_e/2)*ln(1-h)`; `tr_m_atom_zn` returns the UN-normalised trace.
+    This is the difference between them, summed over the chain's bonds, so that
+    the two can be compared on the same footing:
+
+        shift = -alpha * ln(1-h)/2 * [ (Z-1)*de_pp + de_pn + (N-1)*de_nn ]
+
+    with `de_pp = +1`, `de_nn = -1`, and `de_pn = 2t-1 ~ -6.9e-4` for the p-n
+    colour superposition. The pp and nn terms cancel whenever `#pp = #nn`, i.e.
+    on the `N = Z` line; off it the shift is ~0.4909 MeV per unit of `d = N-Z`.
+
+    Returns the SIGNED amount to ADD to the un-normalised exact trace to make it
+    commensurable with the normalised chain (the sign is already carried by
+    `n_de`, so the caller adds it rather than choosing a direction). Sign
+    convention checked against 3H/3He, where it must cancel a residual of
+    -0.491214/+0.490539 exactly; getting it backwards DOUBLES the residual
+    instead of clearing it, which is the diagnostic to watch for.
+
+    Derived, not fitted -- every factor
+    comes from `WritheNormalisation.lean` (`writhe_factor_sq`,
+    `writhe_factor_unique_up_to_sign`), which fixes it up to sign with no freedom.
+    """
+    import mpmath as _mp
+    from q_parameter import Q_50_DIGIT_STR as _Q50
+    from _li_2_q_util import flavor_split_leading
+    with _mp.workdps(max(_mp.mp.dps, 60)):
+        q0x = _mp.mpf(str(_Q50))
+        hx = q0x - 1 / q0x
+        dx = flavor_split_leading(q0x)
+        de_pn = 2 * (_mp.mpf(1) / 2 - dx / 4) - 1
+        n_de = (max(Z - 1, 0) * _mp.mpf(1)
+                + (de_pn if (Z >= 1 and N >= 1) else _mp.mpf(0))
+                + max(N - 1, 0) * _mp.mpf(-1))
+        return float(-_mp.mpf(str(alpha)) * _mp.log(1 - hx) / 2 * n_de)
+
+
 def _nucleon_msym(alpha):
     """Per-nucleon Kashaev mass m_sym(W) = −α·ln tr_M(W) for the free proton and
     neutron (A=1 sub-braids; cheap). The free atom word factorizes
@@ -530,7 +569,23 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
         ta, tf = float(ta), float(tf)
         B_sym_exact = alpha * math.log(tf / ta)
-        chain_resid = abs(B_sym - B_sym_exact)
+        # WRITHE-COMMENSURABILITY (fixed 2026-08-15). `_bond_type_L` applies the
+        # Lean-proved writhe normalisation L_XY -> L_XY - (delta_e/2)*ln(1-h)
+        # (owner directive 2026-08-09, QOU/QBeta/WritheNormalisation.lean), and
+        # `tr_m_atom_zn` does NOT. Differencing them directly therefore measures
+        # the writhe factor, not the factorisation: the shift is
+        # alpha*|ln(1-h)|/2 = 0.4908765 MeV per PURE crossing, equal-and-opposite
+        # on pp (delta_e=+1) vs nn (delta_e=-1). It cancels exactly when
+        # #pp = #nn -- i.e. on the N = Z line -- and is +/-0.4909 per unit of the
+        # imbalance d = N-Z otherwise. That is why 2H and 4He agreed to 3.4e-04
+        # while 3H and 3He were off by -/+0.4909: not noise, and not an A-growing
+        # error either. The footnote used to call this "float64 dashboard noise",
+        # which is wrong by ~12 orders of magnitude and made the ONLY
+        # non-circular check on the production chain unable to pass off N = Z.
+        # Add the same normalisation to the trace side so the residual tests the
+        # per-bond factorisation, which is what this check is for.
+        _writhe = _chain_writhe_shift(Z, N, alpha)
+        chain_resid = abs(B_sym - (B_sym_exact + _writhe))
         # entanglement (sibling d5f247b40d/23a0019e7f): bar-involution (q↦q⁻¹)
         # split — bar-even (cosh) = RETAINED binding/volume; bar-odd (sinh) =
         # EMITTED/radiated (Chern–Simons / γγ̄). E_multilink = bar-odd of the
@@ -977,9 +1032,13 @@ def main(argv=None) -> int:
         mx = max(v[1] for v in val)
         print(f"\n  B_sym closed-form chain ≡ exact p(3A) trace: max|Δ| = "
               f"{mx:.1e} MeV over {{{', '.join(v[0] for v in val)}}} "
-              f"(n=3A ≤ {args.max_strands}; float64 dashboard noise — the chain "
-              f"≡ trace to the 50-dps floor through ¹²C, audit "
-              f"2026-06-16-b-sym-linear-chain-closed-form.md). Chain used for all A.")
+              f"(n=3A ≤ {args.max_strands}; writhe-normalised on BOTH sides — the "
+              f"chain carries the Lean-proved (1−h)^(δe/2) factor and the raw "
+              f"trace does not, so comparing them un-normalised measures that "
+              f"factor (±0.4909 MeV per unit of d = N−Z) rather than the "
+              f"factorisation. Audit 2026-06-16-b-sym-linear-chain-closed-form.md "
+              f"predates both the writhe normalisation and convention D). "
+              f"Chain used for all A.")
 
     # 3b. ENTANGLEMENT  (bar-involution q↦q⁻¹ split of the atom trace, via the
     #     q-parameterised core): bar-even (cosh) = retained binding/volume;

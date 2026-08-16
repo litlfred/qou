@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T13:33:47.787653+00:00",
-  "commitSha": "2f6d741a4cd96ac034e96ead44946422a65fd9e8",
+  "computedAt": "2026-08-16T15:14:26.374201+00:00",
+  "commitSha": "cc84f92393996d962dc1ebad6402870d6f03eb59",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 23,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
@@ -25,7 +25,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1338,
+    "files_scanned": 1341,
     "patterns": [
       "P15",
       "P16",
@@ -39,8 +39,8 @@
       "P15": 291,
       "P16": 638,
       "P21": 25,
-      "P30": 176,
-      "P31": 5
+      "P30": 177,
+      "P31": 6
     },
     "top_files": [
       {
@@ -575,6 +575,13 @@
         "line": 381,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P30",
+        "file": "alpha_5_lp_dual_crystal_closed_form.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P16",
@@ -2346,6 +2353,13 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P31",
+        "file": "delta_lambda_k_star_variance_phase5d_5b.py",
+        "line": 219,
+        "snippet": "CODATA literal \"0.51099895\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P15",
