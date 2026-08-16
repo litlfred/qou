@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-10T14:05:00Z
-updated_at: 2026-08-16T02:00:00Z
+updated_at: 2026-08-16T02:45:00Z
 ---
 Found by the adversarial reader on PR #4921 while adjudicating `prn1` tranche-1
 edges. These are **prose defects**, not `uses[]` defects — filed rather than
@@ -223,4 +223,34 @@ from depending on a conjecture.
 - **Whether word-depth ↔ partition-depth is proved anywhere** — raised in
   #5183, still unestablished. This is the one genuinely open mathematical
   question the bean surfaced.
+
+## Consolidation question — answered: DO NOT consolidate (2026-08-16)
+
+The filing suggested the two `prf:` blocks might merge, on the grounds that
+"both prove `tr_M(Φ_q(z_i) T_w) = tr_M(Φ_q^{[≤k_★]}(z_i) T_w)`". Read against
+the two parents, that is not what they do.
+
+| block | statement |
+|---|---|
+| `prop:quantum-dilogarithm-stratified` | `tr_M(Φ_q(z_i)·T_w) = Σ_k ⟨φ_q^(k)(z_i), T_w⟩` — the Frobenius-pairing depth expansion, with the truncation identity as its **corollary** |
+| `prop:phi-q-categorical-truncation` | `m^tower(T_w) = Σ_k α_k m^(k)(T_w) = Σ_i Φ_q^{[≤k_★]}(z_i)` — the **mass-tower** decomposition of a confined particle |
+
+Different statements. The second carries content the first does not: the `α_k`
+weights and the sum over exceptional divisors.
+
+**And phi-q does not prove the shared identity — it consumes it.** Its own
+gap-closure section says the truncation identity "is now provided by"
+`prop:quantum-dilogarithm-stratified`. So the relationship is **lemma →
+application**, which is a proper dependency, not redundancy.
+
+**No circularity either.** phi-q's proof cites stratified three times and now
+declares it in `uses[]`; stratified's proof cites phi-q **once**, and that one
+is *"the open part of prop:phi-q-categorical-truncation"* — naming where the
+same uniform-bound gap resurfaces downstream, not leaning on it.
+`detangler-no-dependency-cycle` passes.
+
+Merging them would collapse a lemma into its application and lose the `α_k` /
+divisor-sum content. The shared "open uniform-bound note" that made them look
+alike is one gap appearing in both, which is what a lemma and its application
+should look like.
 
