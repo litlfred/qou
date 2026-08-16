@@ -13,25 +13,25 @@
     "pinning": {
       "binding_trace": "J_L = tr_M(\u03c1(\u03b2_L)) \u2014 Markov trace (\u00a77a); unique up to normalization",
       "derived_weight": "y_\u03bb (Wenzl Schur principal specialization), solved from the Markov axiom (wedderburn_jones_markov / markov_weights_symbolic.solve_y_lambda)",
-      "y_lambda_source": "verified-cache",
+      "y_lambda_source": "canonical-module",
       "schur_weyl_is_not_markov": "the d_q\u00b2/[n]! form is 'NOT the Markov-trace weight' (canonical module docstring)"
     },
     "check1_y_ne_W": {
       "rows_n3": {
         "(3,)": {
-          "y_lambda": "0.41539579",
+          "y_lambda": "0.50540423",
           "W_lambda": "0.14181151",
-          "y_over_W": "2.92921"
+          "y_over_W": "3.56392"
         },
         "(2, 1)": {
-          "y_lambda": "0.28092963",
+          "y_lambda": "0.24729789",
           "W_lambda": "0.63134619",
-          "y_over_W": "0.444969"
+          "y_over_W": "0.391699"
         },
         "(1, 1, 1)": {
-          "y_lambda": "0.022744946",
+          "y_lambda": "0.0",
           "W_lambda": "0.14181151",
-          "y_over_W": "0.160389"
+          "y_over_W": "0.0"
         }
       },
       "y_ne_W": true
@@ -42,8 +42,8 @@
       "mechanism": "hook multiset is transpose-invariant \u21d2 d_q(\u03bb)=d_q(\u03bb') \u21d2 W_\u03bb=W_{\u03bb'}"
     },
     "check3_y_asymmetric_binding_needs_it": {
-      "y_(3)": "0.41539579",
-      "y_(1,1,1)": "0.022744946",
+      "y_(3)": "0.50540423",
+      "y_(1,1,1)": "0.0",
       "y_is_asymmetric": true,
       "W_is_symmetric": true,
       "binding_needs_asymmetry": "GAP-1: a conjugation-symmetric \u0394_\u03bb gives g\u2082=0 for even A; the chiral binding requires the \u03bb\u2194\u03bb' asymmetry y_\u03bb carries and W_\u03bb washes out. \u21d2 W_\u03bb excluded (scope-b, proved invariant)."
@@ -65,5 +65,5 @@
     "bean": "qou-3q7t",
     "no_fit": true
   },
-  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87"
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c"
 }

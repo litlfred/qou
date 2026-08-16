@@ -113,7 +113,7 @@ def writhe(word):
 
 def z_factor(qv):
     """Markov stabilization factor z = 1/(q^{1/2}+q^{-1/2})."""
-    return 1 / (mp.sqrt(qv) + 1 / mp.sqrt(qv))
+    return qv ** 3 / (qv ** 2 + 1)   # convention D (was C: 1/(sqrt q + 1/sqrt q))
 
 
 # ---------------------------------------------------------------------------

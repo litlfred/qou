@@ -90,13 +90,26 @@ ATOMS = {
     "lithium-7": (3, 4),
     "beryllium-8": (4, 4),
     "beryllium-9": (4, 5),
+    # UNBOUND channels.  These are two-nucleon systems that do NOT bind
+    # (no bound ²He, no bound ²n), carried here so the χ producers can
+    # build their per-irrep traces: |tr_M(β)| is defined by the braid,
+    # not by whether the nucleus is bound.  A sweep that treats every
+    # ATOMS row as a bound nucleus — a mass table, a binding-energy
+    # comparison against AME — must exclude these two, or it will emit
+    # rows that look like predictions for states nature does not have.
+    "diproton":  (2, 0),
+    "dineutron": (0, 2),
 }
+
+#: Subset of `ATOMS` that are not bound states.  Iterate
+#: `set(ATOMS) - UNBOUND_CHANNELS` in any binding/mass sweep.
+UNBOUND_CHANNELS = frozenset({"diproton", "dineutron"})
 
 ATOM_ALIASES = {
     "p": "proton", "n": "neutron", "D": "deuteron", "T": "tritium",
     "3He": "helium-3", "4He": "helium-4", "5Li": "lithium-5",
     "6Li": "lithium-6", "7Li": "lithium-7", "8Be": "beryllium-8",
-    "9Be": "beryllium-9",
+    "9Be": "beryllium-9", "2p": "diproton", "2n": "dineutron",
 }
 
 

@@ -1,10 +1,11 @@
 ---
 # qou-5wpk
 title: 'Document class A: pyhecke gram.py C/D split is live (native wheel is D, gram.z is C)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-11T11:21:05Z
-updated_at: 2026-08-11T11:21:05Z
+updated_at: 2026-08-15T22:22:29Z
 ---
 
 

@@ -136,7 +136,7 @@ def ocneanu_weights():
     t = sp.symbols("t", positive=True)
     q = t ** 2
     h = q - 1 / q
-    z = 1 / (t + 1 / t)
+    z = q ** 3 / (q ** 2 + 1)   # convention D (was C: 1/(t + 1/t), t = sqrt q)
 
     c3 = lambda w: q ** e_sum(w)
     c111 = lambda w: (-1 / q) ** e_sum(w)

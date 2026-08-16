@@ -91,7 +91,7 @@ def main() -> int:
     def hbar(qq): return (qq - 1) / qq
     def bsub(qq): return mp.sqrt(qq**4 + qq**2 + 1) / (qq**2 + 1)
     def uf(qq): return bsub(qq) * hbar(qq)**2
-    def zf(qq): return 1 / (mp.sqrt(qq) + 1/mp.sqrt(qq))
+    def zf(qq): return qq ** 3 / (qq ** 2 + 1)   # convention D
     def hf(qq): return qq - 1/qq
     def alpha_eff(qq): return (zf(qq) - 1)*hf(qq)/2 - uf(qq)/2
     def QA_over_me(qq): return (2*qq + 1 - qq**2)*(qq + 1)/(2*qq**3)

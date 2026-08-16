@@ -314,3 +314,44 @@ cascade restarted, 36 producers / 30 to run / 4 orphans.
 the full 2400 s timeout on every attempt and has never completed. It is first in
 topo order among the remaining, so every cascade restart pays 40 minutes before
 producer 2. Undiagnosed.
+
+## `--impact-vs-main` — the gate, run 2026-08-15
+
+12 witness files differ from `origin/main`. `delta kinds: q0_refresh=2, shift=166`.
+`convention-D collapse: 0` — expected, since none of the 12 is a `y_λ` table;
+the weights that collapse to exactly zero already landed via #4928.
+
+**Provenance caveat, stated by the tool itself:** 0 of 12 declare a
+`markov_convention` field, so the work-list count is a LOWER BOUND. A trace or a
+derived scalar looks identical under either convention; only the producer knows.
+
+### The result worth keeping — and it is not mine
+
+`log-delta-categorical-derivation` compares three weight forms in the unified
+curvature-rank mass formula across {D, T, ³He, ⁴He}. Convention D collapses one
+of them to near-constant:
+
+| form | max/min C → D | mean log abs ratio C → D | |
+|---|---|---|---|
+| `y_lambda` | 207.61 → 85.89 | −4.4093 → −3.7645 | improved, still bad |
+| `w_lambda` | **43.46 → 1.557** | **−0.8700 → +0.0568** | **near-constant** |
+| `identity` | 4.64 → 5.513 | 2.8291 → 3.3562 | WORSE |
+
+The probe's own verdict now reads *"PROMISING — w_lambda gives max/min = 1.56
+(close to constant)"*.
+
+**Why this is more than menu-picking.** The improvement is *within* the `w_λ`
+form (43× → 1.56× under the same form), not a switch between forms, and the
+shift is **discriminating rather than uniform**: `identity` got worse, `y_lambda`
+improved but stays two orders out. Only `w_λ` collapses.
+
+**Why it is still only "promising".** A 1.56× spread is not 1.00; the formula
+predicts a constant. Three forms are on the table, and one landing near unity
+deserves the fitted-shape question even when the mechanism is not a fit. This is
+a probe verdict, not a derivation.
+
+**Provenance: this did not come from my edits.** My only change to that producer
+is line 166, the *recorded* `z_mark` parameter; its compute (line 90) was already
+convention D on `main`. The 46 deltas came from the upstream tables moving. So
+it is an independent signal from a probe that was not designed to test
+conventions.
