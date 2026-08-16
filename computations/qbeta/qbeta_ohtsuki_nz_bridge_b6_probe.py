@@ -159,7 +159,15 @@ def main() -> int:
     wb.add_assertion("a4_matches_e1", computed=mp.nstr(e4, 10),
                      expected="0", tolerance="1e-8",
                      source="4-point Richardson a4 vs E1's i*sqrt(3)/24")
-    wb.save()
+    # q0 anchor: this probe never reads the substrate modulus. Verified here
+    # by transitive import cone (4 modules) rather than inherited from the b4
+    # sibling — b4 was found q0-free under qou-rw91 and b6 was *expected* to
+    # match, but an expectation is not a verdict and bean qou-kx04 says so
+    # explicitly. The cone confirms it independently.
+    # Via save(extra=...) and NOT add_data(), which nests under `data` where
+    # the audit reading body["q0Anchor"] cannot see it. No q0Value — one here
+    # is a Q0_FLIP.
+    wb.save({"q0Anchor": "independent"})
 
     ok = e2 < mp.mpf("1e-8") and e4 < mp.mpf("1e-8")
     print(f"\n  RESULT: {'method validated; verdict recorded' if ok else 'VALIDATION FAILED'}")
