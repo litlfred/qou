@@ -294,15 +294,51 @@ def load_y_lambda_n6():
     return out
 
 
+#: The tr_M table this script must read. PROTON, matching `Q_MP` — the pin at
+#: which this script evaluates `y_λ` and `χ^λ`.
+#:
+#: It read the MUON table (`atomic-tr-m-mpfr-50dps.witness.json`) until
+#: 2026-08-16, and that single mismatch WAS the Schur-Weyl failure. Measured:
+#:
+#:     stored (muon table)   0.57517232916588433221594741758
+#:     peel at proton q0     0.5751722439177718708265353439129
+#:     |difference|          8.524811246e-8
+#:     reported |residual|   8.52481e-8          <- the same number
+#:
+#: So the script computed `Σ_λ y_λ·χ^λ` correctly at the proton anchor and
+#: compared it against a muon-anchored `tr_M`. The gap is the μ–p substrate
+#: tension (~1.48e-7 relative here), not a defect in the character path.
+#:
+#: Bean `qou-8x1l` concluded the opposite — "by elimination the residual is in
+#: the refinement's own live χ path" — after eight hypotheses. That conclusion
+#: is retracted. The χ path was never wrong. What made the elimination fail is
+#: that it treated "which witness file" as fixed background rather than as one
+#: of the anchors in play.
+#:
+#: The proton table only became usable on 2026-08-15: before then it was itself
+#: stale convention C (deuteron 0.388357), regenerated to D in PR #5190. So
+#: this read could not have been corrected earlier without also fixing that.
+_TR_M_WITNESS = "atomic-tr-m-mpfr-50dps-proton.witness.json"
+
+
 def load_deuteron_tr_M():
-    """Load |tr_M(β_D)| at q_0 from atomic-tr-m-mpfr-50dps.witness.json."""
-    path = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    """Load |tr_M(β_D)| at the PROTON q₀ — the anchor this script evaluates at."""
+    path = _pb.witness_path(_TR_M_WITNESS, HERE)
     d = json.loads(path.read_text())
+    # Refuse a table from the other layer rather than silently straddling: the
+    # whole point of this read is that the anchor matches `Q_MP`.
+    q0 = str(d.get("q_0_50dps", ""))
+    if q0 and not q0.startswith("1.10997858275"):
+        raise RuntimeError(
+            f"{_TR_M_WITNESS} carries q_0 = {q0[:24]}…, which is not the "
+            f"proton pin. This script evaluates y_λ and χ^λ at Q_MP (proton); "
+            f"reading a muon-anchored tr_M is the straddle that produced the "
+            f"8.52e-8 Schur-Weyl residual.")
     for r in d["results"]:
         if r["atom"] == "deuteron":
             tr = mp.mpf(r["tr_M_at_q0_50dps"])
             return tr
-    raise RuntimeError("deuteron entry not found in atomic-tr-m-mpfr-50dps")
+    raise RuntimeError(f"deuteron entry not found in {_TR_M_WITNESS}")
 
 
 def evaluate_at_q0(expr) -> mp.mpf:
