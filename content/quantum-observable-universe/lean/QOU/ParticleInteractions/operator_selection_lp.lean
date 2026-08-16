@@ -120,6 +120,36 @@ Anything dividing by it is `0/0`.  Nothing in this file asserts
 otherwise; the theorems below are exactly as strong as their
 hypotheses.
 
+## Rebuilding `G` does not help (bean `qou/ndsa`)
+
+`ndsa` proposes breaking the confinement LP's homogeneity by getting
+the braid into the objective `t` or the Gram `G` rather than only into
+`n_target`.  Two of its candidates are ruled out here.
+
+`y_0_eq_zero_of_cost_perp_radical` is the reason, and it is stated so
+that **nothing in its hypotheses mentions where `G` came from**: a
+right radical direction, a cost vector orthogonal to it, and
+`Σⱼvⱼ ≠ 0`.  For a Gram of the form `G^w_{ij} = tr_M(bᵢ w bⱼ)` — any
+fixed algebra element `w`, so any braid — both survive: `V = Σⱼvⱼbⱼ`
+spans a two-sided ideal (the sign block), so `G^w v = 0`; and
+`⟨t,v⟩ = tr_M(V) = 0` is a fact about the *cost* vector and the
+radical, independent of the Gram.  Verified exactly in `ℚ(q)` for nine
+braid words on both sides by
+`computations/confinement_lp_braid_gram_probe.py`, rank 5/6 throughout.
+
+The equality-constrained variant fares worse: by
+`objective_eq_demand_coord`, `t·x = u_{i₀}` for *every* feasible `x`,
+so the program has nothing to optimise and a knot-dependent `u` buys a
+knot-dependent answer only by reading a coordinate of its own input
+back out.  `demand_perp_radical` adds that `u` is not even free — it
+must be orthogonal to the radical for a feasible point to exist.
+
+So the degeneracy is not a property of `G`.  It is the conjunction of
+"the cost vector is the Markov trace vector" and "the Gram annihilates
+the trace form's radical", and the second is automatic for anything
+built from `tr_M`.  A formulation that survives has to change the
+**objective**.
+
 ## Base ring (§7c)
 
 Nothing in the program is archimedean: feasibility, optimality and
@@ -267,9 +297,13 @@ theorem dualCertificateExists_of_cost_eq_gram_row (t : Fin d → R) (G : Fin d �
 omit [LinearOrder R] [IsStrictOrderedRing R] in
 /-- **The radical of the form forces the dual variable to vanish.**
 
-Let `v` be annihilated by `G` on the right — `∀ i, Σⱼ Gᵢⱼvⱼ = 0`, i.e.
-`v` spans a radical direction of the trace form — and suppose
-`Σⱼ vⱼ ≠ 0`.  Then *every* dual-feasible `y₀` is `0`.
+Three hypotheses, and *none of them says where the Gram came from*:
+
+- `hv` — `v` is a right radical direction, `∀ i, Σⱼ Gᵢⱼvⱼ = 0`;
+- `htv` — the cost vector is orthogonal to it, `Σⱼ tⱼvⱼ = 0`;
+- `hone` — `Σⱼ vⱼ ≠ 0`.
+
+Then *every* dual-feasible `y₀` is `0`.
 
 The dual objective is `n_target · y₀`, so this says the LP's value is
 identically zero however `n_target` is chosen, and `y₀` is **not** a
@@ -279,22 +313,21 @@ it is supposed to price.
 Note how little is assumed.  No symmetry of `G`, no non-negativity of
 the slacks, no primal feasibility, no optimality.  Degeneracy is a
 property of the cost vector and the form alone — which is why it
-cannot be repaired by choosing a better `x*`.
+cannot be repaired by choosing a better `x*`, and (bean `qou/ndsa`)
+why it cannot be repaired by rebuilding `G` either: see
+`y_0_eq_zero_of_radical` below for the version whose `htv` comes for
+free.
 
 The `omit` above is load-bearing documentation, not tidying: this
 statement holds over any commutative ring without zero divisors, with
 no order in sight. -/
-theorem y_0_eq_zero_of_radical [NoZeroDivisors R] {t : Fin d → R}
-    {G : Fin d → Fin d → R} {v : Fin d → R} {i_0 : Fin d} {y_0 : R} {s : Fin d → R}
-    (ht : ∀ j, t j = G i_0 j)
+theorem y_0_eq_zero_of_cost_perp_radical [NoZeroDivisors R] {t : Fin d → R}
+    {G : Fin d → Fin d → R} {v : Fin d → R} {y_0 : R} {s : Fin d → R}
     (hv : ∀ i, (Finset.univ.sum fun j => G i j * v j) = 0)
+    (htv : (Finset.univ.sum fun j => t j * v j) = 0)
     (hone : (Finset.univ.sum fun j => v j) ≠ 0)
     (dual : ∀ j, t j = y_0 + Finset.univ.sum (fun i => s i * G i j)) :
     y_0 = 0 := by
-  have hzero : (Finset.univ.sum fun j => t j * v j) = 0 := by
-    have hj : ∀ j, t j * v j = G i_0 j * v j := fun j => by rw [ht j]
-    rw [Finset.sum_congr rfl (fun j _ => hj j)]
-    exact hv i_0
   have key : (Finset.univ.sum fun j => t j * v j)
       = y_0 * (Finset.univ.sum fun j => v j) := by
     have h1 : ∀ j, t j * v j
@@ -308,10 +341,89 @@ theorem y_0_eq_zero_of_radical [NoZeroDivisors R] {t : Fin d → R}
     rw [Finset.sum_congr rfl (fun j _ => h1 j), Finset.sum_add_distrib, ← Finset.mul_sum,
       Finset.sum_comm, Finset.sum_congr rfl (fun i _ => h2 i), Finset.sum_const_zero,
       add_zero]
-  rw [hzero] at key
+  rw [htv] at key
   rcases mul_eq_zero.mp key.symm with h | h
   · exact h
   · exact absurd h hone
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- The trace-form instance of the above: when the cost vector is row
+    `i₀` of `G`, orthogonality to the radical is automatic, since
+    `Σⱼ tⱼvⱼ = Σⱼ G_{i₀j}vⱼ = 0` is just `hv` at `i₀`. -/
+theorem y_0_eq_zero_of_radical [NoZeroDivisors R] {t : Fin d → R}
+    {G : Fin d → Fin d → R} {v : Fin d → R} {i_0 : Fin d} {y_0 : R} {s : Fin d → R}
+    (ht : ∀ j, t j = G i_0 j)
+    (hv : ∀ i, (Finset.univ.sum fun j => G i j * v j) = 0)
+    (hone : (Finset.univ.sum fun j => v j) ≠ 0)
+    (dual : ∀ j, t j = y_0 + Finset.univ.sum (fun i => s i * G i j)) :
+    y_0 = 0 :=
+  y_0_eq_zero_of_cost_perp_radical hv
+    (by
+      have hj : ∀ j, t j * v j = G i_0 j * v j := fun j => by rw [ht j]
+      rw [Finset.sum_congr rfl (fun j _ => hj j)]
+      exact hv i_0)
+    hone dual
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **Fixing `Gx` fixes the objective.**
+
+The *equality*-constrained variant of the program — `min t·x` subject
+to `1·x = n_target` and `Gx = u` — has nothing to optimise when the
+cost vector is row `i₀` of `G`:
+
+    t·x = Σⱼ G_{i₀j}xⱼ = (Gx)_{i₀} = u_{i₀} .
+
+Every feasible point scores the same, and the score is a coordinate of
+the demand vector the caller passed in.  Making `u` depend on a knot
+therefore makes the "optimum" depend on the knot only by reading one
+component of its own input back out.
+
+Bean `qou/ndsa` names this formulation as the cheapest candidate for
+breaking the confinement LP's homogeneity.  This is why it does not. -/
+theorem objective_eq_demand_coord {t : Fin d → R} {G : Fin d → Fin d → R}
+    {u x : Fin d → R} {i_0 : Fin d}
+    (ht : ∀ j, t j = G i_0 j)
+    (hGx : ∀ i, (Finset.univ.sum fun j => G i j * x j) = u i) :
+    (Finset.univ.sum fun j => t j * x j) = u i_0 := by
+  have hj : ∀ j, t j * x j = G i_0 j * x j := fun j => by rw [ht j]
+  rw [Finset.sum_congr rfl (fun j _ => hj j)]
+  exact hGx i_0
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- Two points with the same demand score the same — the objective is
+    constant on each fibre of `x ↦ Gx`, so "optimal" is vacuous. -/
+theorem objective_constant_on_demand_fibre {t : Fin d → R} {G : Fin d → Fin d → R}
+    {u x x' : Fin d → R} {i_0 : Fin d}
+    (ht : ∀ j, t j = G i_0 j)
+    (hx : ∀ i, (Finset.univ.sum fun j => G i j * x j) = u i)
+    (hx' : ∀ i, (Finset.univ.sum fun j => G i j * x' j) = u i) :
+    (Finset.univ.sum fun j => t j * x j)
+      = Finset.univ.sum fun j => t j * x' j := by
+  rw [objective_eq_demand_coord ht hx, objective_eq_demand_coord ht hx']
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **A demand profile has to be orthogonal to the radical to be
+    feasible at all.**
+
+If `v` is a *left* radical direction then `Gx = u` forces `⟨u,v⟩ = 0`.
+So a knot-derived `u` is not free: it must satisfy this linear
+condition before the program has any feasible point.  (For a symmetric
+Gram the left and right radicals coincide, so this is the same `v` as
+everywhere else here.) -/
+theorem demand_perp_radical {G : Fin d → Fin d → R} {u x v : Fin d → R}
+    (hvl : ∀ j, (Finset.univ.sum fun i => v i * G i j) = 0)
+    (hGx : ∀ i, (Finset.univ.sum fun j => G i j * x j) = u i) :
+    (Finset.univ.sum fun i => v i * u i) = 0 := by
+  have h1 : ∀ i, v i * u i = Finset.univ.sum fun j => v i * (G i j * x j) := by
+    intro i
+    rw [← Finset.mul_sum, hGx i]
+  have h2 : ∀ j, (Finset.univ.sum fun i => v i * (G i j * x j)) = 0 := by
+    intro j
+    have hi : ∀ i, v i * (G i j * x j) = (v i * G i j) * x j :=
+      fun i => by ring
+    rw [Finset.sum_congr rfl (fun i _ => hi i), ← Finset.sum_mul, hvl j, zero_mul]
+  rw [Finset.sum_congr rfl (fun i _ => h1 i), Finset.sum_comm,
+    Finset.sum_congr rfl (fun j _ => h2 j), Finset.sum_const_zero]
 
 end TraceForm
 
