@@ -143,11 +143,19 @@ _QDEF = re.compile(
     r"w_\\lambda(?:\(q\))?\s*(?::?=)\s*[^.\n]{0,40}?"
     r"(?:\\dim_q|d_q|\[n\]_q!|\[k\]_q!|H_q)"
 )
-_CDEF = re.compile(
-    r"w_\\lambda(?:\(q\))?\s*(?::?=)\s*[^.\n]{0,40}?"
-    r"(?:\(\\dim V_\\lambda\)\^2\s*/\s*n!|\\dim V_\\lambda\)\^2/n!)"
+# Post-2026-08-16 convention: the classical measure is the q=1 SPECIALISATION,
+# written w_lambda(1). A bare w_lambda now means the q-deformed weight, so the
+# classical bucket is keyed on the explicit (1) rather than on the definition.
+_CDEF = re.compile(r"w_\\lambda\(1\)")
+# An ASSERTION that the weights sum to one. Must not match a DENIAL: the
+# corrective prose added by the convention-B migration says "do not sum to 1"
+# and "is not $1$", and an earlier version of this regex scored those as
+# defects -- the checker reading its own fix as the bug it fixed.
+_SUM1 = re.compile(
+    r"(?<!not )(?<!n't )\\sum[^$\n]{0,40}w_\\lambda\s*=\s*1"
+    r"|(?<!not )(?<!do not )sum to \$?1"
 )
-_SUM1 = re.compile(r"\\sum[^$\n]{0,40}w_\\lambda\s*=\s*1|sum to \$?1")
+_DENIAL = re.compile(r"do(?:es)? \*?\*?not\*?\*? sum to|is \*?\*?not\*?\*? \$1\$|\\neq 1")
 
 
 def census() -> dict:
@@ -155,16 +163,14 @@ def census() -> dict:
     for f in sorted(glob(str(REPO / "content/quantum-observable-universe/*/*.md"))):
         src = Path(f).read_text()
         rel = os.path.relpath(f, REPO)
-        # A `\tilde w_\lambda` match is the OTHER family; skip it.
-        has_q = any(
-            "tilde w" not in src[max(0, m.start() - 8) : m.start() + 3]
-            for m in _QDEF.finditer(src)
-        )
+        # Convention B (2026-08-16): no tilde survives. A q-deformed
+        # definition on the bare symbol is now CORRECT, not a collision.
+        has_q = bool(_QDEF.search(src))
         if has_q:
             qdef.append(rel)
         if _CDEF.search(src):
             cdef.append(rel)
-        if has_q and _SUM1.search(src):
+        if has_q and _SUM1.search(src) and not _DENIAL.search(src):
             claims.append(rel)
     return {
         "defines_q_deformed": qdef,
