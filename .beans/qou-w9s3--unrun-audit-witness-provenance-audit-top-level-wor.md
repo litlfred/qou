@@ -161,3 +161,39 @@ exists to prevent.
 
 Gate now reports 1 NOT_A_PRODUCER, not 2. Flip to blocking once this one and
 the `.lean`/`.rs` SCRIPT_MISSING class are handled.
+
+## SCRIPT_MISSING triaged: 2 false positives fixed, 3 real findings kept
+
+I had guessed "at least 2 look like false positives". Checked rather than
+assumed — searched the whole tree for each of the 5 named producers:
+
+| named producer | exists? | verdict |
+|---|---|---|
+| `DeuteronFirstOrderCluster.lean` | `content/…/QOU/MassTheory/` | **false positive** |
+| `joint_tower_sdp.rs` | `tools/hecke-engine/src/bin/` | **false positive** |
+| `phase_transition_sdp_derivation.py` | nowhere | **real** |
+| `qbeta_c3_faddeev_rogers_probe.py` | nowhere | **real** |
+| `qbeta_w_odd_categorical_net_probe.py` | nowhere | **real** |
+
+**Cause of the false positives is structural.** `scan()` indexes
+`comp.rglob("*.py")` — Python only, under `computations/` only — so a `.rs`
+or `.lean` producer can never resolve, and SCRIPT_MISSING fires *by
+construction*. That verdict asserts "the claim cannot be true" about a script
+sitting in the repo.
+
+**Fix:** resolve non-Python producers by basename across the tree, and give
+them **UNCONFIRMED, never WRITES**. `classify()` reads Python — WitnessBuilder
+names, write sinks — so it can neither confirm nor deny a Rust or Lean
+producer, and UNCONFIRMED is precisely the audit's documented middle verdict.
+Claiming WRITES would be the laundering this tool exists to catch.
+
+Result: SCRIPT_MISSING 5 -> 3, UNCONFIRMED 29 -> 31, NOT_A_PRODUCER
+unchanged at 1, self-test still 27/27. **No true finding was suppressed** —
+the 3 survivors are witnesses naming `.py` files that exist nowhere.
+
+## Remaining before the gate can flip to blocking
+
+1. **`sigma-all-evaluator`** (NOT_A_PRODUCER) — authorial; its `scriptFile`
+   means "module documented" and it already carries `evaluator_module`.
+2. **3 SCRIPT_MISSING** — each names an absent `.py`. Needs per-witness
+   investigation: renamed, deleted, or never existed. Not mechanical.
