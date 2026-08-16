@@ -1359,7 +1359,14 @@ muon; muon-anchor → ~4000σ on proton).
    - **`computations/` layer** historically carries **muon-q₀**
      witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
      `1.10997859555733471…` (−11.5 ppb), feeding ~72 producers /
-     ~840 witnesses — the canonical 3-CAL (muon) derivation witnesses.
+     **870** witnesses — the canonical 3-CAL (muon) derivation witnesses.
+     (Re-measured 2026-08-15 and again 2026-08-16 over the 2941 tracked
+     `computations/*.witness.json`: **870** carry the muon fingerprint —
+     **801 muon-only** and **69 also carrying the proton pin**. The
+     previous figure here was "~840"; the error was **low, not
+     stale-high**. A both-pin witness is either a deliberate comparison
+     or a layer straddle — see the straddling hazard above; triage is
+     bean `qou-cds3`.)
      These remain **valid as recorded** (they are what they say they are)
      but are **no longer the default an agent should reach for**; see
      rule 4 for the migration posture.
@@ -1370,12 +1377,16 @@ muon; muon-anchor → ~4000σ on proton).
    (m_μ ≈ 105.6583978, 963.6×) is the **canonical** value; a fresh run
    that reads the muon-q₀ Borromean witness (≈ 105.6583756, 1.36 ppb)
    is the symptom.
-4. **Migration posture for the ~840 muon-q₀ `computations/` witnesses
-   (updated 2026-08-07).** The owner directive above sets the *target end
-   state*: experimental (proton) everywhere in compute. It does **not**
-   authorise a bulk rewrite as an idle-drain — that sweep is large, is
-   tracked under bean **`qou-1c4y`**, and still needs scoped sign-off
-   before it runs. Concretely:
+4. **Migration posture for the 870 muon-q₀ `computations/` witnesses
+   (updated 2026-08-07; count re-measured 2026-08-16).** The owner
+   directive above sets the *target end state*: experimental (proton)
+   everywhere in compute. It does **not** authorise a bulk rewrite as an
+   idle-drain — that sweep is large, is tracked under bean **`qou-1c4y`**,
+   and still needs scoped sign-off before it runs. **The 2026-08-15 ruling
+   (R2) does not change this.** R2 restates the end state; it does not
+   scope the sweep, so the sign-off requirement stands. If the owner
+   intends R2 to authorise the bulk migration, that has to be said here
+   explicitly — do not infer it from R2's wording. Concretely:
 
    > **Bean reference corrected 2026-08-15.** This paragraph previously
    > said the sweep is "tracked under bean `tnjb`". It is not, and the
