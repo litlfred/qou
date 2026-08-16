@@ -2,8 +2,15 @@
 
 **Date:** 2026-08-16
 **Branch:** `claude/s1-derive-d-ladder-2026-08-16` (PR #5187)
-**Status:** RESULT — a structural exclusion, sorry-free in Lean, plus a
-named wall. No D-frame `c_k` is derived, and none is claimed.
+**Status:** ⚠️ **HEADLINE RETRACTED 2026-08-16** — the claim that convention
+D has a negative Wedderburn weight and fails positivity is **withdrawn**;
+it rested on a false identification (`1/2 − z` is not `y_(2,1)`). D is
+positive semidefinite, signature `(5,0,1)`. What survives is a scope-(a)
+negative — the C ladder's phase formula does not transport to D by
+parameter substitution — plus three `z`-free findings and a named wall.
+The Lean is sound and sorry-free throughout; only the interpretation was
+wrong. No D-frame `c_k` is derived, and none is claimed. **Read the
+Summary box first.**
 
 Owner instruction: *"derive D ladder"*, following the 2026-08-15 ruling
 that convention D (`z_D = q³/(q²+1)`) is canonical and C
@@ -13,41 +20,99 @@ that convention D (`z_D = q³/(q²+1)`) is canonical and C
 
 ## Summary
 
-**The D ladder does not exist in the shape the C ladder has, and the
-reason is structural rather than numerical.**
+> ### 🛑 HEADLINE RETRACTED 2026-08-16 — convention D does **not** fail positivity
+>
+> **This document's original headline claim is withdrawn.** It asserted that
+> `1/2 − z` is the standard-block Wedderburn weight `y_(2,1)`, that this
+> weight is strictly negative at `z_D`, and therefore that the D-frame phase
+> has **no positive-trace reading**. The identification is false and the
+> conclusion **inverts**.
+>
+> **What is actually true**, established by S2
+> ([PR #5185](https://github.com/litlfred/qou/pull/5185), audit
+> [§3bis](2026-08-16-s2-gram-radical-independent-revalidation.md)) and cited
+> here rather than re-derived: solving the corpus's own three defining
+> conditions for the `H₃(q)` Markov weights at `z = z_D` gives
+>
+> | λ | rows | `y_λ` under D | sign for `q > 1` |
+> |---|---|---|---|
+> | `(3)` | 1 | `(q⁴+1)/(q²+1)²` | **positive** |
+> | `(2,1)` | 2 | `q²/(q²+1)²` | **positive** |
+> | `(1³)` | 3 | `0` | identically zero |
+>
+> — **positive semidefinite, signature `(5, 0, 1)`**. The surviving weights
+> are both strictly positive and the single dead weight is *exactly zero,
+> not negative*. That is what a Temperley–Lieb trace should look like, so
+> the weight structure under D **confirms** the TL identification instead of
+> arguing against it.
+>
+> **Why the original claim was wrong — the durable lesson.** The vector
+> `(z, 1/2 − z, z)` satisfies **only** the normalisation condition of
+> `CanonicalMarkovWeightsH3`; it **fails** the other two defining
+> conditions. So it is not a weight vector of `H₃(q)` at all, and
+> `1/2 − z_D` is simply not `y_(2,1)`. At `q ≈ 1.11` the two differ in sign
+> as well as magnitude — `1/2 − z_D ≈ −0.1127` versus the actual
+> `y_(2,1) ≈ +0.2473`.
+>
+> This is a **symbol-collision / claim-shape failure**, precisely the class
+> AGENTS.md §"Grep the claim SHAPE, not only the topic" exists to catch: *a
+> formula was given the name of an object whose defining conditions it does
+> not satisfy.* Grepping the topic (`y_(2,1)`, Markov weights,
+> `CanonicalMarkovWeightsH3`) returned plenty and looked like corroboration.
+> The step that was skipped is the one that mattered — checking whether
+> **this expression** satisfies the **defining conditions** of the object
+> whose name it was given. No amount of topic-grep would have caught it.
+>
+> **The Lean theorem stands and is untouched.** `1/2 − z_D < 0` for `q > 1`
+> is true, sorry-free, and was never in question. Only the *interpretation*
+> was wrong. The declaration has been **renamed** — `threeRowMiddleWeight`
+> → `ladderPhaseCoeff`, and correspondingly
+> `threeRowMiddleWeight_neg_at_zD` → `ladderPhaseCoeff_neg_at_zD` — so the
+> name describes what it actually proves (the sign of an affine phase
+> coefficient) rather than a Wedderburn weight it is not.
+>
+> **Scope reclassified (b) → (a).** The original scope-(b) *structural
+> exclusion* of convention D is withdrawn: the invariant it cited — a
+> negative Wedderburn weight — does not exist. What survives is a
+> scope-(a) scope-limited negative about the *transport of one ansatz's
+> phase formula*, below.
+>
+> Superseded text is retained in marked boxes rather than deleted, per
+> AGENTS.md §"Before declaring refuted": the numerical results stand; only
+> the identification and its scope were wrong.
 
-The ladder's phase `α = (z−1)h/2` is an affine functional of a single
-Wedderburn weight — the standard-block weight `y_(2,1) = 1/2 − z` of the
-explicit three-row instance `y = (z, 1/2−z, z)`. At `z_D` that weight is
-**strictly negative for every `q > 1`**, so the phase has no positive-trace
-reading anywhere in the substrate regime. Substituting `z_D` into
-`α = (z−1)h/2` evaluates the three-row instance outside its positivity
-domain; that is why the resulting numbers are meaningless, and it is a
-sharper statement than "the rungs stop shrinking".
+### What survives
 
-Three further findings fell out, all of which sharpen what the ladder *is*
-in **both** frames:
+**The C ladder's phase formula does not transport to D by substituting the
+parameter** — a scope-**(a)** result about the ansatz, carrying no claim
+about either trace's positivity.
+
+The ladder's phase is affine in the coefficient `1/2 − z`:
+`α = (z−1)h/2 = −h/4 − (h/2)·(1/2 − z)`, pure algebra. That coefficient is
+**positive at `z_C` and negative at `z_D`, for every `q > 1`** (sorry-free),
+so the two conventions place the ansatz's phase on opposite sides of
+`z = 1/2`. The `−974.43` obtained by substituting `z_D` remains meaningless
+— but because the substitution transports a formula out of the frame it was
+derived in, **not** because any weight goes negative.
+
+Three further findings are unaffected by the retraction — all concern the
+`z`-free part of the ladder and sharpen what it *is* in **both** frames:
 
 - `c₂ = −1` is **convention-immune**, not "a C-frame statement".
 - `c₃` is **not an independent rung** in either frame.
 - The ladder **terminates at `k = 3` by construction**; `c₄…c₇` are
   identically zero.
 
-Evidence: [`qbeta_d_frame_ladder_structure_probe.py`](../../computations/qbeta/qbeta_d_frame_ladder_structure_probe.py)
-(18/18 assertions, 60 dps, proton pin) and
-[`DecayLadderConventionDPositivity.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/DecayLadderConventionDPositivity.lean)
-(sorry-free, `lean`-direct exit 0, `#print axioms` clean on all seven
-declarations).
+§6b's three algebraic identities (`z_D = q²/[2]_q`, `z_C = 1/[2]_{√q}`,
+`δ − 2 = (q/b)·u`) are likewise unaffected, and §6c's status for the TL
+identification is unchanged: a **hypothesis under test**, not a result.
 
-> **Correction landed 2026-08-16 (see §6).** The repair this document
-> originally proposed for the wall — build the two-row weight vector as the
-> `H_3` formula with `y_(1³)` dropped — is **wrong**, and the theorem above
-> is what rules it out: `(2,1)` *survives* the TL quotient, yet its weight is
-> negative at `z_D`. The weights must be recomputed **inside `TL_3`**. The
-> sorry-free result is unaffected; only the next step changed. §6b adds three
-> machine-verified algebraic facts (`z_D = q²/[2]_q`, `z_C = 1/[2]_{√q}`,
-> `δ − 2 = (q/b)·u`) and §6c records the TL identification as a **hypothesis
-> under test**, not a result.
+Evidence: [`qbeta_d_frame_ladder_structure_probe.py`](../../computations/qbeta/qbeta_d_frame_ladder_structure_probe.py)
+(20/20 assertions, 60 dps, proton pin — A7 relabelled to `κ(z) = 1/2 − z`
+and **A7r** added as a retraction guard) and
+[`DecayLadderConventionDPositivity.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/DecayLadderConventionDPositivity.lean)
+(sorry-free, `lean`-direct exit 0, `#print axioms` clean on all ten
+declarations).
 
 ---
 
@@ -157,17 +222,55 @@ number past `c₂`.
 
 ---
 
-## 4. The structural result — positivity separates C from D
+## 4. The sign of the ladder's affine phase coefficient
 
-Because `y_(2,1) = 1/2 − z`, the phase is affine in the standard-block
-weight:
+> ### 🛑 RETRACTED — this section originally read the sign below as a Wedderburn-weight positivity failure
+>
+> **The superseded claim, retained verbatim** (AGENTS.md §"Before declaring
+> refuted" — re-scope, do not delete):
+>
+> > Because `y_(2,1) = 1/2 − z`, the phase is affine in the standard-block
+> > weight: `α = −h/4 − (h/2)·y_(2,1)`. … **Scope-(b) structural
+> > exclusion**: the invariant is a proved sign condition, and the excluded
+> > object is named precisely — the three-row weight instance `(z, 1/2−z, z)`
+> > evaluated at `z_D`. A Markov trace with a strictly negative Wedderburn
+> > weight is not a positive trace, so the ladder's `α` formula has no
+> > positive-trace reading at `z_D` …
+> >
+> > | | three-row instance (the ladder's `α`) | two-row forcing (the mass channel) |
+> > |---|---|---|
+> > | **convention C** | admits (`y_(2,1) > 0`) | **excludes** (`y_(1³) ≠ 0`) |
+> > | **convention D** | **excludes** (`y_(2,1) < 0`) | admits |
+>
+> **`1/2 − z` is not `y_(2,1)`.** The vector `(z, 1/2 − z, z)` satisfies
+> only the normalisation condition of `CanonicalMarkovWeightsH3` and fails
+> the other two, so it is not a weight vector of `H₃(q)`. The actual
+> convention-D weights are `y_(3) = (q⁴+1)/(q²+1)²`,
+> `y_(2,1) = q²/(q²+1)²`, `y_(1³) = 0` — **positive semidefinite, signature
+> `(5, 0, 1)`** (S2, [PR #5185](https://github.com/litlfred/qou/pull/5185)
+> [§3bis](2026-08-16-s2-gram-radical-independent-revalidation.md); cited,
+> not re-derived). At `q ≈ 1.11`, `1/2 − z_D ≈ −0.1127` while the actual
+> `y_(2,1) ≈ +0.2473`.
+>
+> So **the "excludes (`y_(2,1) < 0`)" cell of that table is wrong**, and
+> with it the whole D column's positivity reading. Convention D does not
+> fail positivity; its weight structure is exactly what a Temperley–Lieb
+> trace should look like, which **supports** the TL identification rather
+> than arguing against it. The scope-(b) structural exclusion is
+> **withdrawn** — the invariant it cited does not exist.
+>
+> **Class of error:** symbol collision — a formula given the name of an
+> object whose defining conditions it does not satisfy. See the Summary box.
+
+**What the Lean actually proves**, unchanged and correct. The ladder's
+phase is affine in the coefficient `κ(z) := 1/2 − z`:
 
 $$
-\alpha \;=\; -\frac{h}{4} \;-\; \frac{h}{2}\,y_{(2,1)} .
+\alpha \;=\; \frac{(z-1)h}{2} \;=\; -\frac{h}{4} \;-\; \frac{h}{2}\,\kappa(z),
 $$
 
-(Verified exactly, probe A7.) So "what ladder does D support?" is the
-question "what is `y_(2,1)` at `z_D`?".
+pure algebra (probe A7). The two conventions place `κ` on opposite sides of
+zero:
 
 **Theorem** (`QOU.QBeta.zD_gt_half`, sorry-free). For every `q > 1`,
 `z_D(q) = q³/(q²+1) > 1/2`.
@@ -175,48 +278,52 @@ question "what is `y_(2,1)` at `z_D`?".
 *Proof.* `2q³ − q² − 1 = (q−1)(2q² + q + 1)`, and `2q² + q + 1 > 0` for all
 real `q`. ∎
 
-**Corollary** (`threeRowMiddleWeight_neg_at_zD`, sorry-free). For every
-`q > 1`, `y_(2,1) = 1/2 − z_D(q) < 0`.
+**Corollary** (`ladderPhaseCoeff_neg_at_zD`, sorry-free). For every
+`q > 1`, `κ(z_D) = 1/2 − z_D(q) < 0`.
 
-**Mirror** (`zC_lt_half`, `threeRowMiddleWeight_pos_at_zC`, sorry-free).
-For every `q > 1`, `z_C(q) = √q/(1+q) < 1/2` — with `s = √q`, this is
-`0 < (s−1)²` — hence `y_(2,1) > 0` at `z_C`.
+**Mirror** (`zC_lt_half`, `ladderPhaseCoeff_pos_at_zC`, sorry-free). For
+every `q > 1`, `z_C(q) = √q/(1+q) < 1/2` — with `s = √q`, this is
+`0 < (s−1)²` — hence `κ(z_C) > 0`.
 
-**Capstone** (`threeRow_positivity_separates_zC_zD`). The two conventions
-sit on opposite sides of the positivity boundary at every substrate value.
+**Capstone** (`ladderPhaseCoeff_sign_separates_zC_zD`). The two conventions
+sit on opposite sides of `z = 1/2` at every substrate value.
 
-At the proton pin: `y_(2,1) = +0.000680` at `z_C`, `−0.112688` at `z_D`.
+At the proton pin: `κ = +0.000680` at `z_C`, `−0.112688` at `z_D`.
+
+> **The sign of `κ` carries no trace-positivity content.** It is a threshold
+> crossing of an affine coefficient in one ansatz. Nothing about the
+> positivity of any Markov trace follows from it, in either direction.
+> Machine-guarded as probe assertion **A7r**.
 
 ### What this excludes, and what it does not
 
-**Scope-(b) structural exclusion** per AGENTS.md §"Before declaring
-refuted": the invariant is a proved sign condition, and the excluded object
-is named precisely — **the three-row weight instance `(z, 1/2−z, z)`
-evaluated at `z_D`**. A Markov trace with a strictly negative Wedderburn
-weight is not a positive trace, so the ladder's `α` formula has no
-positive-trace reading at `z_D`, on the whole regime `q > 1` and not merely
-at the pin.
+**Scope-(a) scope-limited negative** per AGENTS.md §"Before declaring
+refuted" (downgraded from the withdrawn scope-(b) above). What is excluded
+is the **transport** of the C ladder's phase formula into D by substituting
+the parameter: `α = (z−1)h/2` was derived in the C frame, and `κ` changes
+sign between the frames, so the substitution carries the formula outside
+the regime it was derived in. That is why the resulting `−974.43` is
+meaningless.
 
-It does **not** exclude convention D for the decay channel. That channel is
-registered `disputed` (§9g) and stays so. What is excluded is the
-*transport* of the C ladder's phase formula into D — which is exactly the
-move the task brief identified as meaningless, now with a reason.
+It does **not** exclude convention D — for the decay channel or at all.
+That channel is registered `disputed` (§9g) and stays so, on other grounds.
+It does not exclude a D-frame ladder; it says only that one is not obtained
+by parameter substitution.
 
 ### Relation to the existing exclusion
 
 `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free, pre-existing)
-proves the mirror obstruction: at `z_C` the sign-block weight `y_(1³)` is
-nonzero, so C is incompatible with the two-row cap that forces D in the
-mass channel. Together:
+proves that at `z_C` the sign-block weight `y_(1³)` is nonzero, so C is
+incompatible with the two-row cap that forces D in the mass channel. With
+the retraction above, that result now reads **alongside** S2's rather than
+against it: under D the same `y_(1³)` is exactly zero, so the two-row cap
+is satisfied and the D weights are positive semidefinite. Both point the
+same way — toward D and toward the TL identification.
 
-| | three-row instance (the ladder's `α`) | two-row forcing (the mass channel) |
-|---|---|---|
-| **convention C** | admits (`y_(2,1) > 0`) | **excludes** (`y_(1³) ≠ 0`) |
-| **convention D** | **excludes** (`y_(2,1) < 0`) | admits |
-
-The ladder's phase belongs to the three-row row of that table. So there is
-no D ladder of this shape, and the two exclusions are not in tension — they
-are the same fact seen from two sides.
+The earlier two-column table claiming the ladder's `α` "excludes D" on
+positivity grounds is withdrawn (see the box). The surviving asymmetry is
+narrower and is not about positivity: the ansatz's phase formula was
+derived in the C frame and does not transport.
 
 ---
 
@@ -251,54 +358,76 @@ itself the thing that does not survive into D.
 
 ## 6. The wall, stated exactly
 
-To derive a genuine D-frame ladder one must derive the D-frame **two-row**
-weight vector and recompute `α` from it, rather than substituting `z_D` into
-a three-row formula. That is open — and the *obvious* way of building that
-vector has since been ruled out, as the box below records.
+**The wall has moved, and it is narrower than this section originally
+claimed.** The D-frame weight vector is **no longer open** — S2 computed it
+(Summary box; cited, not re-derived), and it is positive semidefinite with
+`y_(1³) = 0`, so the two-row cap is satisfied automatically rather than
+needing to be imposed.
 
-> ### ⚠️ SUPERSEDED — the repair below is wrong, and this branch's own theorem is what kills it
+What is open is the **phase**: the relation `α = −h/4 − (h/2)·y_(2,1)` was
+read off the bogus instance `(z, 1/2−z, z)`, so there is **no established
+relation between the ladder's `α` and the actual Wedderburn weights in
+either frame**. The affine-in-`y_(2,1)` story was an artefact of the wrong
+instance, and removing it leaves the ansatz's phase without a derivation
+from weights at all. That — not the weight vector — is the wall.
+
+> ### 🛑 DOUBLY SUPERSEDED — first box's *conclusion* survives, its *reason* does not
 >
-> **The original §6 proposed this repair**, retained verbatim because a
-> wrong-but-recorded finding is re-scoped, not erased (AGENTS.md
+> **The original §6 proposed this repair**, retained verbatim (AGENTS.md
 > §"Before declaring refuted"):
 >
 > > 1. The two-row forcing sets `y_(1³) = 0`, so the weight vector is **not**
 > >    `(z, 1/2−z, z)` and the affine relation `α = −h/4 − (h/2)y_(2,1)` —
 > >    which was derived *from* that instance — no longer follows.
 >
-> The **inference** in that item stands: the affine relation does not
-> transport. What is **wrong** is the implied construction — that the
-> D-frame vector is obtained by keeping `y_(2,1) = 1/2 − z` and setting the
-> third entry to zero. It is not, and the reason is internal to this branch:
+> **The first correction pass then argued** (also retained, also wrong):
 >
-> - `(2,1)` is a **two-row** partition, so it **survives** the TL quotient.
->   `TL_3` annihilates only `(1³)` — corank 1, matching the sibling's
->   measured n=3 datum.
-> - But `threeRowMiddleWeight_neg_at_zD` (sorry-free, this branch) proves
->   `y_(2,1) = 1/2 − z_D < 0` for **every** `q > 1`.
-> - A positive trace factoring through `TL_3` requires `y_(2,1) ≥ 0`.
+> > - `(2,1)` is a **two-row** partition, so it **survives** the TL quotient.
+> > - But `threeRowMiddleWeight_neg_at_zD` proves `y_(2,1) = 1/2 − z_D < 0`
+> >   for **every** `q > 1`.
+> > - A positive trace factoring through `TL_3` requires `y_(2,1) ≥ 0`.
+> > - The negative weight therefore sits on a **surviving** block … hence the
+> >   weights **must be recomputed inside `TL_3`, where the normalisation
+> >   differs.**
 >
-> The negative weight therefore sits on a **surviving** block, not on the
-> annihilated one — so the two conditions cannot both hold. Hence:
+> **That reasoning is void**, because its second bullet is the retracted
+> identification: `1/2 − z_D` is not `y_(2,1)`, so there is no negative
+> weight on a surviving block and no contradiction to resolve. The first and
+> third bullets are correct and stand.
 >
-> > **The D-frame weight vector is NOT the `H_3` three-row formula with
-> > `y_(1³)` dropped. The weights must be recomputed *inside* `TL_3`, where
-> > the normalisation differs.**
+> **Nor is its conclusion established.** The weights do **not** need to be
+> recomputed "inside `TL_3` where the normalisation differs" — S2 obtained
+> them by solving the `H₃(q)` conditions **at `z = z_D` directly**, and
+> `y_(1³) = 0` falls out. No separate `TL_3` normalisation was required.
 >
-> **The sorry-free theorem is unaffected** — it says exactly what it always
-> said. Only the *proposed next step* changes. Correction of record:
+> **What survives from both boxes** is the original item 1's inference, on
+> its own terms: the D-frame vector is not `(z, 1/2−z, z)` with the third
+> entry zeroed, and the affine relation `α = −h/4 − (h/2)y_(2,1)` does not
+> transport. That was right for a simpler reason than either box gave — the
+> vector was never a weight vector in the first place.
+>
+> Correction of record:
 > [PR #5187 comment](https://github.com/litlfred/qou/pull/5187#issuecomment-5305314459),
-> [PR #5185 comment](https://github.com/litlfred/qou/pull/5185#issuecomment-5305313383).
+> [PR #5185 comment](https://github.com/litlfred/qou/pull/5185#issuecomment-5305313383);
+> retraction landed on this branch 2026-08-16.
 
 ### 6a. What remains of the wall
 
-1. Which partitions survive at `q₀` is plausibly a **cell-module
-   reducibility** question at a non-generic parameter. That is precisely
-   what the S2 agent (`claude/s2-gram-radical-quotient-2026-08-16`, PR
-   #5185) is measuring. Their result is an input here.
-2. The weight vector must be **recomputed in the quotient**, not restricted
-   from `H_3`. Until that is done there is no D-frame `α`, and extracting a
-   `c₃` beforehand would be another inversion of experimental `Q_β`.
+1. ~~Which partitions survive at `q₀` is plausibly a **cell-module
+   reducibility** question at a non-generic parameter.~~ **Answered, and
+   the framing was wrong.** S2 measured the degeneration to be **generic in
+   `q`** — `det G ≡ 0` identically over ℚ(q), corank unchanged across 12
+   rational `q` — so no cell module is degenerating and no re-pin can move
+   it. The surviving partitions under D are `(3)` and `(2,1)`, with
+   `y_(1³) = 0` identically. See their audit §3.
+2. ~~The weight vector must be **recomputed in the quotient**, not restricted
+   from `H_3`.~~ **No longer open.** S2 obtained the D-frame weights by
+   solving the `H₃(q)` defining conditions at `z = z_D` directly (Summary
+   box). What remains open is the **phase**: with the affine-in-`y_(2,1)`
+   relation retracted, there is no derivation of the ladder's `α` from the
+   actual weights in *either* frame. Until there is, there is no D-frame
+   `α`, and extracting a `c₃` beforehand would still be another inversion of
+   experimental `Q_β`.
 3. The published treatment of Markov-trace weights as a function of the
    trace parameter is Orellana, *Weights of Markov Traces on Hecke
    Algebras* (arXiv:math/9806163, `uploads/9806163v1.pdf`). **Glyph-collision
@@ -324,7 +453,7 @@ working precision.
 
 Reproducible as assertions **A8** of
 [`qbeta_d_frame_ladder_structure_probe.py`](../../computations/qbeta/qbeta_d_frame_ladder_structure_probe.py)
-(18/18, exit 0). The residuals above were obtained twice — once by a
+(20/20, exit 0). The residuals above were obtained twice — once by a
 standalone check and once inside the probe — by two independent
 implementations that agree to the digit.
 
@@ -375,12 +504,23 @@ measurement is the sibling's and was not re-derived here.
   the `(1³)` block *specifically*? That distinguishes "the radical **is**
   the TL ideal" from "some other 1-dimensional radical". Asked on #5185.
 
+**Bearing of the retraction on this hypothesis: it strengthens it.** The
+weight structure S2 measured under D — `y_(3), y_(2,1) > 0` and
+`y_(1³) = 0` exactly, signature `(5,0,1)` — is what a Temperley–Lieb trace
+looks like: positive on the `≤ 2`-row blocks, zero on the rest. The
+retracted claim pointed the other way, so removing it removes an apparent
+counter-indication.
+
+**It is still not a proof.** The corank data remains three points fitting
+`n! − Catalan(n)`, and a positive semidefinite weight vector with the right
+zero is *consistent with* the TL identification without establishing it.
+`n = 6` (`588`) is still the discriminator, and the block-identity question
+above is still the cheap test. Nothing is built on it.
+
 **Scope of the correction in the box above:** scope-**(a)**, a
-scope-limited negative. What is excluded is one *construction* — building
-the D weight vector by restricting the `H_3` three-row formula — because it
-contradicts a proved sign condition. It does **not** exclude a two-row
-D-frame weight vector as such, nor the TL route; those remain open and are
-the live path.
+scope-limited negative. What is excluded is the *transport* of the C
+ladder's phase formula into D by parameter substitution. It does **not**
+exclude convention D, nor a D-frame ladder, nor the TL route.
 
 Tracked as a bean — text in §8.
 
@@ -391,8 +531,10 @@ Tracked as a bean — text in §8.
 | quantity | frame | tier | basis |
 |---|---|---|---|
 | `c₂ = −1` | both (immune) | **proved** (`ring` identity), *identification of the N=2 factor is `asserted`* | `q-beta-c-2-eq-neg-one-structural.lean` |
-| `z_D > 1/2`, `y_(2,1) < 0` at `z_D`, ∀ `q>1` | D | **proved** (sorry-free) | `DecayLadderConventionDPositivity.lean` |
-| `z_C < 1/2`, `y_(2,1) > 0` at `z_C`, ∀ `q>1` | C | **proved** (sorry-free) | same |
+| `z_D > 1/2`, so `κ = 1/2 − z_D < 0`, ∀ `q>1` | D | **proved** (sorry-free) | `DecayLadderConventionDPositivity.lean` |
+| `z_C < 1/2`, so `κ = 1/2 − z_C > 0`, ∀ `q>1` | C | **proved** (sorry-free) | same |
+| ~~`κ` *is* the Wedderburn weight `y_(2,1)`~~ | — | **RETRACTED** — false; `(z,1/2−z,z)` fails 2 of 3 defining conditions | Summary box; S2 [#5185 §3bis](2026-08-16-s2-gram-radical-independent-revalidation.md) |
+| D-frame weights `y_(3),y_(2,1) > 0`, `y_(1³) = 0`; signature `(5,0,1)` | D | **measured** (exact, S2's symbolic solve) — **cited, not re-derived** | S2 [#5185 §3bis](2026-08-16-s2-gram-radical-independent-revalidation.md); guarded here as probe A7r |
 | `z_D = q²/[2]_q` | D | **proved** (sorry-free, generic `[Field R]`) | `zD_eq_qsq_div_bracketTwo`; numerics §6b, `7.8e-62` |
 | `z_C = 1/[2]_{√q}` | C | **symbolic-exact** | §6b, `7.8e-62` (archimedean — not stated generically) |
 | `δ − 2 = (q/b)·u` | both | **symbolic-exact** | §6b, `6.3e-62` |
@@ -414,53 +556,59 @@ D-frame result.
 
 ## 8. Bean text (for the owner to mint — no ID hand-assigned)
 
-> **GAP: derive the convention-D two-row Markov weight vector and the
-> ladder phase α it induces.**
+> **GAP: derive the Q_β ladder phase `α` from the actual Wedderburn
+> weights — in either frame.**
 >
-> The Q_β ladder's phase is `α = (z−1)h/2 = −h/4 − (h/2)·y_(2,1)`, an
-> affine functional of the standard-block weight of the *three-row*
-> instance `y = (z, 1/2−z, z)`. `QOU.QBeta.threeRowMiddleWeight_neg_at_zD`
-> (sorry-free, PR #5187) proves `y_(2,1) < 0` at `z_D` for every `q > 1`,
-> so that instance is not a positive trace anywhere in the substrate regime
-> and the phase formula cannot be transported C→D. Under the two-row cap
-> that forces D, `y_(1³) = 0`; but the surviving entries are **not** the
-> `H_3` ones (see the ruled-out note below), so the D-frame vector has to be
-> computed in the quotient, and α has never been computed for it.
+> The ladder's phase was believed to be `α = −h/4 − (h/2)·y_(2,1)`, an
+> affine functional of the standard-block weight of the "three-row instance"
+> `y = (z, 1/2−z, z)`. **That instance is not a weight vector of `H₃(q)`** —
+> it satisfies only the normalisation condition and fails the other two — so
+> the affine relation is retracted and **there is now no derivation of `α`
+> from weights in either frame**. That is the gap.
+>
+> The D-frame weight vector itself is **not** the gap: S2 (PR #5185, audit
+> §3bis) solved the `H₃(q)` conditions at `z = z_D` and obtained
+> `y_(3) = (q⁴+1)/(q²+1)²`, `y_(2,1) = q²/(q²+1)²`, `y_(1³) = 0` —
+> positive semidefinite, signature `(5,0,1)`, with the two-row cap satisfied
+> automatically.
 >
 > *Attempted:* re-extraction of `c₃` under D (gives `−974.43`; meaningless,
-> and now explained: it evaluates the three-row instance outside its
-> positivity domain). Genericity check on `z` (the `z` reproducing `Q_β` is
-> `z* ≈ 0.499104`, neither `z_C` at 2.1σ nor `z_D` at 1121σ).
+> because it transports a C-frame phase formula by parameter substitution).
+> Genericity check on `z` (the `z` reproducing `Q_β` is `z* ≈ 0.499104`,
+> neither `z_C` at 2.1σ nor `z_D` at 1121σ).
 >
-> *Why it stalled:* deriving the two-row weight vector needs to know which
-> partitions survive at `q₀` under D — plausibly a cell-module
-> reducibility question at a non-generic parameter, which is S2's front
-> (PR #5185).
+> *⚠️ RETRACTED — do not revive either of these (see §4, §6).* Two earlier
+> versions of this bean are wrong and are recorded so a later agent does not
+> re-derive them:
+> 1. *"`y_(2,1) = 1/2 − z_D < 0`, so D is not a positive trace."* **False
+>    premise.** `1/2 − z` is not `y_(2,1)`; the actual `y_(2,1)` under D is
+>    `q²/(q²+1)² > 0`. **Convention D does not fail positivity.**
+> 2. *"The weights must be recomputed inside `TL_3`, where the normalisation
+>    differs."* **Not established** — and unnecessary. S2 got them from the
+>    `H₃(q)` conditions at `z_D` directly.
 >
-> *⚠️ Ruled out — the obvious construction (see §6).* An earlier version of
-> this bean said to "build the two-row weight vector `(y_(3), y_(2,1), 0)`",
-> i.e. take the `H_3` formula and drop `y_(1³)`. **That does not work.**
-> `(2,1)` is two-row and therefore *survives* the TL quotient (`TL_3` kills
-> only `(1³)`), while `threeRowMiddleWeight_neg_at_zD` proves
-> `y_(2,1) = 1/2 − z_D < 0` for every `q > 1`. A positive trace through
-> `TL_3` needs `y_(2,1) ≥ 0`, so the negative weight sits on a *surviving*
-> block. The weights must be **recomputed inside `TL_3`**, where the
-> normalisation differs — not restricted from `H_3`. The sorry-free theorem
-> is unaffected; only this next step changed.
+> The Lean is sound throughout; only the reading of it was wrong. The
+> declaration is now named `ladderPhaseCoeff_neg_at_zD` — it proves
+> `1/2 − z_D < 0`, a statement about an affine phase coefficient with **no**
+> trace-positivity content.
 >
-> *Next honest step:* take S2's Gram-radical result; if a cell module is
-> reducible at `q₀`, read off the surviving partitions, then compute the
-> weight vector **in the quotient** — via Orellana's type-A weight formula
-> (arXiv:math/9806163, `uploads/9806163v1.pdf`) applied to `TL_3`'s
-> normalisation, *not* by restricting the `H_3` vector — recompute `α`, and
-> only then ask what `c_k` the resulting series has. Do **not** extract a
-> `c₃` before that — it would be another inversion of experimental `Q_β`.
+> *Next honest step:* start from S2's D-frame weights (above) and ask
+> whether the ladder ansatz's phase `α = (z−1)h/2` can be derived from them
+> at all — via Orellana's type-A weight formula (arXiv:math/9806163,
+> `uploads/9806163v1.pdf`), noting its "type D" is the Coxeter type `D_n`
+> and unrelated to convention D. If no such derivation exists, the honest
+> conclusion is that the ansatz's `z`-dependence is not weight-derived in
+> *either* frame — which would also explain why `z*` matches neither `z_C`
+> nor `z_D`. Do **not** extract a `c₃` before that — it would be another
+> inversion of experimental `Q_β`.
 >
 > *Open hypothesis, not an input yet:* the sibling's coranks `1, 10, 78` at
 > `n = 3, 4, 5` match `n! − Catalan(n)`, suggesting the radical is the TL
-> ideal. Three points are suggestive, not proved; `n = 6` (`588`) is the
-> discriminator, and the cheap confirming test is whether the `n = 3`
-> radical lands on `(1³)` specifically. Do not build on it before then.
+> ideal. The `(5,0,1)` signature is consistent with it and removes an
+> apparent counter-indication, but three points are suggestive, not proved;
+> `n = 6` (`588`) is the discriminator, and the cheap confirming test is
+> whether the `n = 3` radical lands on `(1³)` specifically. Do not build on
+> it before then.
 >
 > *Verified algebra available to the next agent (§6b):* `z_D = q²/[2]_q`
 > (also Lean-proved generically, `QOU.QBeta.zD_eq_qsq_div_bracketTwo`),
@@ -512,3 +660,46 @@ survive. This pass **re-verified it on a machine** before writing it down:
   `ℝ` specialisation, both discharged by `field_simp` alone.
 - **Not re-derived:** the sibling's Gram/corank measurement (`1, 10, 78`).
   That remains their result and is cited, not reproduced.
+
+### Retraction pass (2026-08-16, same session)
+
+The headline claim was withdrawn after S2 (PR #5185 §3bis) showed the
+`y_(2,1)` identification is false. See the Summary box for the full
+statement; recorded here is what was changed and re-verified.
+
+- **Retracted:** that `1/2 − z` is the Wedderburn weight `y_(2,1)`, that
+  the weight is negative at `z_D`, and that convention D therefore has no
+  positive-trace reading. **Convention D does not fail positivity** — its
+  `H₃(q)` weights are positive semidefinite, signature `(5,0,1)`.
+  Scope reclassified **(b) → (a)**.
+- **Not retracted:** every numerical and Lean result. `1/2 − z_D < 0` for
+  `q > 1` is true and sorry-free; the §6b identities, the `c₂`/`c₃`/`c₄…c₇`
+  findings, and the genericity table are untouched.
+- **Lean renamed** so the names describe what is proved:
+  `threeRowMiddleWeight` → `ladderPhaseCoeff`,
+  `threeRowMiddleWeight_neg_at_zD` → `ladderPhaseCoeff_neg_at_zD`,
+  `threeRowMiddleWeight_pos_at_zC` → `ladderPhaseCoeff_pos_at_zC`,
+  `threeRow_positivity_separates_zC_zD` →
+  `ladderPhaseCoeff_sign_separates_zC_zD`. Statements and proof terms are
+  byte-for-byte unchanged apart from the identifiers.
+- **Re-verified after the rename:** `lean`-direct exit 0 against the
+  pre-existing restored olean cache (6990 Mathlib oleans, **read-only** — no
+  `lake build`, no second restore; count unchanged before and after).
+  `#print axioms` on **all ten** declarations reports only `propext`,
+  `Classical.choice`, `Quot.sound` — no `sorryAx`. Zero occurrences of
+  `sorry` in the file.
+- **Probe:** A7 relabelled from `y_(2,1)` to `κ(z) = 1/2 − z` (the
+  arithmetic was always right; only the name was wrong), and **A7r** added
+  as a retraction guard — it evaluates S2's closed forms at `q₀`, asserts
+  the D weights are positive semidefinite, and asserts
+  `κ(z_D) < 0 < y_(2,1)`, so the conflation cannot silently return.
+  **18/18 → 20/20**, exit 0.
+- **Cited, not re-derived:** S2's symbolic solve of the three defining
+  conditions. A7r evaluates their published closed forms as a guard; it
+  does not reproduce the solve.
+- **Audit witnesses not committed.** Running the precision gate regenerates
+  three tree-wide audit witnesses (`q0-anchor-consistency`,
+  `witness-float64-padding`, `witness-raw-float64--docs-audits-scripts`)
+  whose committed counts are stale for reasons unrelated to this branch —
+  the offenders live in `computations/_deprecated/`. They were **reverted
+  rather than committed**, as on the previous pass (bean `qou-pgdw`).
