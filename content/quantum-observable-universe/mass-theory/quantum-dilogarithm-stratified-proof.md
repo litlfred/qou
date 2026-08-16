@@ -161,10 +161,9 @@ correspondence to the standard $q$-content / hook-length formula plus
 [curvature-rank stratification §Step 3](#prop:curvature-rank-gb-stratification)
 (GB-depth = max hook length), so the structural identification is now
 explicit — **but "explicit" here means *written down*, not *established*.
-This paragraph previously read as though the citation supplied the
-identification, which contradicts the passage above at "not a consequence of
-[curvature-rank stratification] … which … mentions no partition" in this same
-proof. The passage above is the correct one.** The remaining open piece in Step 3 is **(d)'s product
+The citation does not supply the identification; the passage above, at
+"not a consequence of [curvature-rank stratification] … which … mentions no
+partition", states the position of this proof.** The remaining open piece in Step 3 is **(d)'s product
 expansion** $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)} \cdot u_n(q)$:
 the existence of such an expansion follows from finiteness of
 $\dim_q^{-1}$ as a Laurent polynomial and unique factorisation in
