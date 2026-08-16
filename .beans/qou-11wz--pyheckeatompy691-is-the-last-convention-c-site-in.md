@@ -1,11 +1,11 @@
 ---
 # qou-11wz
 title: pyhecke/atom.py:691 is the last convention-C site in the producer layer — and it reaches the mass table
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T11:18:21Z
-updated_at: 2026-08-16T15:06:15Z
+updated_at: 2026-08-16T15:06:32Z
 ---
 
 Parent: qou-cdx1. Surfaced by qou-2ixd's producer-audit bucket split; left open
