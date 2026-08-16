@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T02:34:25.825284+00:00",
-  "commitSha": "151a1a22060801fa50abb638233a9d8eb0d68e83",
+  "computedAt": "2026-08-16T04:23:50.217802+00:00",
+  "commitSha": "284ce75bbb45900ebcc8331b646c8628e55868b8",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "33ccaac86640",
-  "scriptCommitSha": "e20f33130b2e552fdd043e4b45c3f8d0a19fb1bf",
+  "scriptCommitSha": "202bbd07b14e230880a29eeb691eb435a69bb8d9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,6 +27,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0"
@@ -35,7 +36,7 @@
   "data": {
     "counts": {
       "Q0_OK": 651,
-      "Q0_AMBIGUOUS": 15,
+      "Q0_AMBIGUOUS": 16,
       "Q0_INDEPENDENT": 5,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_ANCHOR_MISSING": 1885,
@@ -10241,6 +10242,10 @@
         },
         {
           "witness": "option-e-deuteron-delta-lambda-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "peel-anchor-identification.witness.json",
           "detail": ""
         },
         {
