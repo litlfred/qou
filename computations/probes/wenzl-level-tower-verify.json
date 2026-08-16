@@ -1,0 +1,73 @@
+{
+  "symbolic": {
+    "general_r_difference": "0",
+    "general_r_identity_holds": true,
+    "z_r_closed_form": "q**(2*r - 1)*(q**2 - 1)/(q**(2*r) - 1)",
+    "per_r": {
+      "1": {
+        "z_r_exact": "q",
+        "matches_wenzl": true
+      },
+      "2": {
+        "z_r_exact": "q**3/(q**2 + 1)",
+        "matches_wenzl": true
+      },
+      "3": {
+        "z_r_exact": "q**5/(q**4 + q**2 + 1)",
+        "matches_wenzl": true
+      },
+      "4": {
+        "z_r_exact": "q**7/(q**6 + q**4 + q**2 + 1)",
+        "matches_wenzl": true
+      },
+      "5": {
+        "z_r_exact": "q**9/(q**8 + q**6 + q**4 + q**2 + 1)",
+        "matches_wenzl": true
+      },
+      "6": {
+        "z_r_exact": "q**11/(q**10 + q**8 + q**6 + q**4 + q**2 + 1)",
+        "matches_wenzl": true
+      },
+      "7": {
+        "z_r_exact": "q**13/(q**12 + q**10 + q**8 + q**6 + q**4 + q**2 + 1)",
+        "matches_wenzl": true
+      },
+      "8": {
+        "z_r_exact": "q**15/(q**14 + q**12 + q**10 + q**8 + q**6 + q**4 + q**2 + 1)",
+        "matches_wenzl": true
+      }
+    },
+    "z_1_exact": "q",
+    "z_2_exact": "q**3/(q**2 + 1)",
+    "z_2_equals_z_D": true,
+    "z_in_T_matches_z_r": true,
+    "z_inf_limit": "q - 1/q",
+    "z_inf_equals_h": true
+  },
+  "pin": {
+    "name": "proton",
+    "q0": "1.1099785827513808",
+    "source": "qou_substrate.constants.Q"
+  },
+  "tower": {
+    "1": "1.1099785827513808",
+    "2": "0.612688037146465243650558825336",
+    "3": "0.449304809090207852185018060941",
+    "4": "0.369360232235604909756242514891",
+    "5": "0.322749650471015781630763493587",
+    "6": "0.292763411980020637362146076056",
+    "inf": "0.209060298795639301677370394164"
+  },
+  "conventions": {
+    "z_D": {
+      "expr": "q^3/(q^2+1)",
+      "value": "0.61268803714646524365055882533574212030119024569427",
+      "level_r": "2.0"
+    },
+    "z_C": {
+      "expr": "sqrt(q)/(q+1)",
+      "value": "0.49932033418369445250244513797201775784357572563217",
+      "level_r": "2.59951553640017695890186155174"
+    }
+  }
+}
