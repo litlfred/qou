@@ -669,6 +669,73 @@ theorem qJM_comm_sigma_high (i : Fin n) (hi1 : (i : ℕ) + 1 < n) :
     · have e : qJM K q qi n (k + 1) = qJM K q qi n k := dif_neg hkn
       rw [e]; exact ih
 
+
+/-! ### The assembly, and the inverse half
+
+`qJM_sum_comm_sigma` below splits `Finset.range (n+1)` into `{i, i+1}` and its
+complement: the pair takes `qJM_pair_comm`, and every remaining `k` is either
+`≤ i-1` or `≥ i+2`, so it takes one of the other two rows. **That settles the
+`L`-half of `barSymJMSum_central`.**
+
+The remaining half is the inverse family. Two facts make it a transfer rather
+than a re-derivation: `σInv = σ - (q-qi)•1` is a *polynomial in `σ`*, so
+`comm_σInv_iff` says commuting with one is commuting with the other; and
+`σInv_quadratic` shows `σ⁻¹` obeys the same quadratic with `d ↦ -d`, which is
+exactly the shape `pair_comm` consumes. `qJMInv` has the same recursion as
+`qJM` with `σ ↦ σInv`, so the three rows should re-run verbatim against it. -/
+
+/-- **The first Murphy power sum `Σ_{k≤n} L_k` is central.** -/
+theorem qJM_sum_comm_sigma (hqi : q * qi = 1) (i : Fin n) (hi1 : (i : ℕ) + 1 < n) :
+    σ K q qi n i * (∑ k ∈ Finset.range (n + 1), qJM K q qi n k)
+      = (∑ k ∈ Finset.range (n + 1), qJM K q qi n k) * σ K q qi n i := by
+  classical
+  set s := σ K q qi n i with hs
+  set P : Finset ℕ := {(i : ℕ), (i : ℕ) + 1} with hP
+  have hsub : P ⊆ Finset.range (n + 1) := by
+    intro x hx
+    simp only [hP, Finset.mem_insert, Finset.mem_singleton] at hx
+    rcases hx with rfl | rfl <;> simp [Finset.mem_range] <;> omega
+  have hsplit := Finset.sum_sdiff (f := fun k => qJM K q qi n k) hsub
+  -- the pair
+  have hpair : s * (∑ k ∈ P, qJM K q qi n k) = (∑ k ∈ P, qJM K q qi n k) * s := by
+    have hne : (i : ℕ) ≠ (i : ℕ) + 1 := by omega
+    have : (∑ k ∈ P, qJM K q qi n k)
+        = qJM K q qi n (i : ℕ) + qJM K q qi n ((i : ℕ) + 1) := by
+      simp [hP, Finset.sum_insert, Finset.mem_singleton]
+    rw [this]
+    exact qJM_pair_comm K q qi n hqi (i : ℕ) i.isLt
+  -- everything else, termwise
+  have hrest : s * (∑ k ∈ Finset.range (n + 1) \ P, qJM K q qi n k)
+      = (∑ k ∈ Finset.range (n + 1) \ P, qJM K q qi n k) * s := by
+    rw [Finset.mul_sum, Finset.sum_mul]
+    refine Finset.sum_congr rfl fun k hk => ?_
+    simp only [Finset.mem_sdiff, Finset.mem_range, hP, Finset.mem_insert,
+      Finset.mem_singleton, not_or] at hk
+    obtain ⟨_, hki, hki1⟩ := hk
+    rcases Nat.lt_or_ge k (i : ℕ) with hlt | hge
+    · exact qJM_comm_sigma K q qi n i k (by omega)
+    · exact qJM_comm_sigma_high K q qi n i hi1 k (by omega)
+  rw [← hsplit, mul_add, add_mul, hpair, hrest]
+
+/-- `σ_i⁻¹` satisfies the same quadratic with `d ↦ -d`: `σ⁻¹² = (qi-q)·σ⁻¹ + 1`
+when `q·qi = 1`. -/
+theorem σInv_quadratic (hqi : q * qi = 1) (i : Fin n) :
+    σInv K q qi n i * σInv K q qi n i
+      = (qi - q) • σInv K q qi n i + (1 : Hecke K q qi n) := by
+  have hq := σ_quadratic K q qi n i
+  rw [hqi] at hq
+  simp only [σInv, sub_mul, mul_sub, smul_mul_assoc, mul_smul_comm, one_mul,
+    mul_one, hq, smul_smul, sub_smul, smul_sub]
+  abel_nf
+  module
+
+/-- **Commuting with `σ_i` and with `σ_i⁻¹` are the same condition** — `σInv` is
+`σ - (q-qi)•1`, a polynomial in `σ`, so the two differ by a central term. -/
+theorem comm_σInv_iff (i : Fin n) (x : Hecke K q qi n) :
+    x * σInv K q qi n i = σInv K q qi n i * x ↔ x * σ K q qi n i = σ K q qi n i * x := by
+  simp only [σInv, mul_sub, sub_mul, mul_smul_comm, smul_mul_assoc, mul_one, one_mul]
+  exact sub_left_inj
+
 end AdjacentReduction
 
 /-- **[GAP] The Murphy elements commute pairwise** — they generate the commutative
