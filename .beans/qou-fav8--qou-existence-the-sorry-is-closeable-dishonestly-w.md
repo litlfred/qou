@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T13:56:32Z
-updated_at: 2026-08-16T13:57:27Z
+updated_at: 2026-08-16T16:32:01Z
 ---
 
 ## The sorry
@@ -101,3 +101,70 @@ still free, and `0` still satisfies `adjoint_vanishing`.
 
 Found while answering the owner's question *"what QOU has cited sorry? how
 resolve?"* (2026-08-16).
+
+
+## 2026-08-16 — STEP 1 DONE: `adjointObj` constrained; B2 closed
+
+`adjointObj` was a free field. Three fields now tie it to `frobHopf`:
+
+```lean
+adjointIncl        : adjointObj ⟶ frobHopf.obj
+adjoint_mono       : Mono adjointIncl
+adjoint_augmented  : adjointIncl ≫ frobHopf.counit = 0
+adjoint_nontrivial : adjointIncl ≠ 0
+```
+
+`adjointObj := 0` now fails on `adjoint_nontrivial` — the only morphism out of
+the zero object is zero. So the degenerate witness is gone and
+`adjoint_vanishing` is a statement with content.
+
+`lean`-direct exit 0 on the library file. Applied to both copies carrying the
+QOU structure. Consumers all *project* (`Q.adjointObj`) rather than construct,
+so nothing broke; per `qou-btq3` there is still nothing constructing the
+structure at all.
+
+### Why `ker ε` and not `A` — the corpus settled this, and it matters
+
+I first considered requiring `adjointObj = frobHopf.obj`, since for a Hopf
+algebra the adjoint action is `H` acting on itself. **That is wrong here**, and
+would have made condition (ii) FALSE rather than merely weak: `A` always
+contains the unit `η : 𝟙 → A`, so `Hom(𝟙, A) = 0` fails for every nontrivial
+`A`. Under that reading the axiom would be unsatisfiable — a worse defect than
+the one being fixed.
+
+The corpus is explicit that the trivial part is stripped:
+
+- `brings-qou-axiom-map.md:7` — *"`Ad(A) ≅ V₁ ⊕ V₂ ⊕ ⋯` with **no spin-0
+  summand**"*
+- `brings-is-qou.lean:40` — *"Ad(A) ≅ V₂ (spin-1, dim 3), so Hom(𝟙, Ad(A)) = 0"*
+- `q-bsd-rank-zero.md:17` — *"the **Lie algebra** has no `G`-fixed vectors"*
+
+For `SU(2)`, `M₂ = 1 ⊕ 3` and `Ad` is the **3**, the traceless part. That is the
+augmentation ideal `ker ε`, which the adjoint action preserves because `ε` is an
+algebra map. Hence `adjoint_augmented`.
+
+**Scope (a):** the fields assert `Ad(A) ⊆ ker ε`, mono, nonzero — not that it
+*is* `ker ε`. Containment is what the corpus evidence supports and is already
+enough to kill the degeneracy; asserting equality would go past the evidence.
+
+### NEW FINDING — the same hole is replicated in four more structures
+
+The free-`adjointObj` + `Subsingleton (𝟙 ⟶ adjointObj)` pattern appears
+independently in:
+
+| file | field |
+|---|---|
+| `QOU/ChannelSeparation.lean:73` | `adjointObj : C` + `:75` `adjoint_vanishing` |
+| `QOU/GradedFrobeniusHopf.lean:119` | `(adjointObj : C)` + `:120` `adj_vanishing` |
+| `QOU/QuantumObservableUniverse/Instanton.lean:111` | `(adjointObj : C)` + `:114` `subsingleton` |
+| `QOU/QuantumObservableUniverse/GaugeTheory.lean:46` | `adjointObj : C` |
+
+Each declares its own, unconnected to any `frobHopf`. Every one is satisfiable
+at `adjointObj := 0` by the same argument, so each carries the same vacuity.
+`GaugeTheory`'s is the mildest — it has `orbit_embed : projLine ⟶ adjointObj`
+and an `involution`, which constrain it somewhat, though not away from zero.
+
+**Not fixed here** — out of scope for this bean and each needs its own read of
+what its `adjointObj` is for. Tracked as the natural follow-on. The lesson is
+that the fix has to travel: patching the one structure the sorry mentions leaves
+four copies of the same hole standing.

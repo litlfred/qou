@@ -291,14 +291,45 @@ structure QuantumObservableUniverse (R : Type*) [CommRing R]
       duals, with `ev`/`coev` satisfying the snake identities. -/
   [rigidInst : @CategoryTheory.RigidCategory C catInst monInst]
   /-- The adjoint object `Ad(A)` in `C`, carrying the adjoint action of the
-      Hopf algebra `A` on itself.  In a braided monoidal category this is
-      constructed from `(A, μ, Δ, S)` and the braiding; here it is provided
-      abstractly. -/
+      Hopf algebra `A` on itself.  In a braided monoidal category it is
+      constructed from `(A, μ, Δ, S)` and the braiding; that construction is
+      not available here, so the object is provided together with the three
+      fields below, which pin down enough of its relationship to `A` that a
+      degenerate choice cannot satisfy them.
+
+      **This was previously a free field**, with nothing linking it to
+      `frobHopf`.  That made `adjoint_vanishing` satisfiable by taking
+      `adjointObj := 0` — the zero object has `Hom(𝟙, 0) = 0` trivially — so
+      an instance could satisfy "no hidden global symmetries" by having no
+      adjoint object at all.  See bean `qou-fav8`. -/
   adjointObj : C
+  /-- `Ad(A)` sits inside `A`.  The adjoint action is an action of `A` on
+      itself, so its carrier is part of `A` rather than an unrelated object. -/
+  adjointIncl : adjointObj ⟶ frobHopf.obj
+  /-- The inclusion is a subobject inclusion. -/
+  adjoint_mono : CategoryTheory.Mono adjointIncl
+  /-- **`Ad(A)` carries no trivial summand**: it lands in `ker ε`.
+
+      This is what makes condition (ii) a statement with content.  The full
+      `A` always contains the unit `η : 𝟙 → A`, so `Hom(𝟙, A) = 0` is false
+      for any nontrivial `A` and cannot be what the axiom means.  The corpus
+      is explicit that the trivial part is excluded: `Ad(A)` decomposes "with
+      no spin-0 summand" (`brings-qou-axiom-map.md`) and is `≅ V₂`, the
+      3-dimensional traceless part, for `SU_q(2)` (`brings-is-qou.lean`).
+      That reduced adjoint is the augmentation ideal `ker ε`, which the
+      adjoint action preserves because `ε` is an algebra map. -/
+  adjoint_augmented : adjointIncl ≫ frobHopf.counit = 0
+  /-- `Ad(A)` is not the zero object.  Together with the two fields above this
+      is what `adjointObj := 0` fails: the only morphism out of the zero
+      object is zero. -/
+  adjoint_nontrivial : adjointIncl ≠ 0
   /-- **Adjoint vanishing** (condition ii): all morphisms `𝟙 → Ad(A)` in
       `C` are equal.  In an `R`-linear category this is equivalent to
       `Hom_C(𝟙, Ad(A)) = 0`, since the zero morphism is always present
-      and all others must equal it. -/
+      and all others must equal it.
+
+      Read with the three fields above, this now says what the paper says:
+      the *reduced* adjoint has no invariants. -/
   adjoint_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)
   /-- The fundamental object `V` of categorical dimension 2. -/
   fundamentalObj : C
