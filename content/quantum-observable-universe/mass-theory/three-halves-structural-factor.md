@@ -36,7 +36,7 @@ $\frac{[5]_q \cdot [3]_q}{[6]_q} = \frac{[5]_q}{[2]_q \cdot (1 + h^2)}$.
 All five identities are proved in
 [`three-halves-structural-factor.lean`](three-halves-structural-factor.lean)
 over a generic commutative ring `[CommRing R]` with the modulus carried
-as a unit `q : Rˣ`, each by a single `linear_combination` against
+as a unit `q : Units R`, each by a single `linear_combination` against
 `↑q * ↑q⁻¹ = 1` — no `field_simp`, no division, no ordering. A field is
 used only in the `RatioForm` section, where the two quotient
 presentations are recovered from the cross-multiplied identities by

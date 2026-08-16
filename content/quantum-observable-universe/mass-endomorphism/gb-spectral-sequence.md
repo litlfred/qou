@@ -2,11 +2,13 @@
 *The Hecke algebra $H_n(R, q)$ with the confinement filtration $J^\bullet(q)$ ([confinement level](#def:confinement-level)) carries a natural differential $d$ induced by three Gröbner–Shirshov rewriting rules — the Hecke relation, far commutativity, and Yang–Baxter ([Hecke normal form](#def:hecke-normal-form)):*
 
 ```tex
+\[
 \begin{aligned}
   &d_{\mathrm{H}}(\sigma_i^2) = (q - q^{-1})\sigma_i + \mathbf{1}, \\
   &d_{\mathrm{F}}(\sigma_i \sigma_j) = \sigma_j \sigma_i \quad (|i - j| \geq 2), \\
   &d_{\mathrm{YB}}(\sigma_i \sigma_{i+1} \sigma_i) = \sigma_{i+1} \sigma_i \sigma_{i+1}.
 \end{aligned}
+\]
 ```
 
 *Each rule lowers filtration degree. The direct sum $d = d_H + d_F + d_{YB}$ satisfies $d \circ d = 0$ on the filtered complex. This makes $(H_n(R, q), J^\bullet, d)$ a filtered differential algebra.*
