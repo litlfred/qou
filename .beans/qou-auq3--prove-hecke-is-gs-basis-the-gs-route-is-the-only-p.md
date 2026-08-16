@@ -2356,3 +2356,51 @@ abstract tail in one slot.
 `rule₁ = bokutShiaoRelation i₁ i j₁`, `rule₂ = bokutShiaoRelation i₁ i j₂`,
 `left = descWord i j₁`, `overlap = [σᵢ]`, `right = descWord i₁ j₂ ++ [σᵢ]`, and
 the two leading words cancel because `descWord i j₂ = σᵢ :: descWord i₁ j₂`.
+
+## §4ag — the `a > b` regime is closed, at every pair of depths
+
+`CornerGeneral.resolves`: the Bokut–Shiao rule at bottom `j₁` composed with the
+one at bottom `j₂` reduces to zero whenever `j₁ < j₂ ≤ i − 2`. No bound on either
+depth. Sorry-free, standard axioms, full library builds. Checked non-vacuous by
+instantiating at rank 5, `a = 3`, `b = 2` — §4aa's case, now an instance.
+
+**What the assembly amounted to.** Six pieces, in the order the engine takes them:
+
+    s1 → s2 → loopTwoGen (second term's loop) → s3 → s4 → loopTwoFromTop (first term's)
+
+and the two terms coincide. The chain length — `b² + 3b + 5`, quadratic in the
+depths — is carried entirely by the two loop invocations; everything else is four
+fixed steps. Wiring it was mechanical because the word definitions had been
+chosen to match the loop lemmas' shapes syntactically, which matters:
+`MultiStepReduction.trans` needs the intermediate to match on the nose, not up to
+`CoeffEq`. Had `V2`, `U0`, `U1`, `W` been written in any other associativity the
+chain would have needed bridging lemmas at every seam.
+
+The composition is `rule₁ = bokutShiaoRelation i₁ i j₁`,
+`rule₂ = bokutShiaoRelation i₁ i j₂`, `left = descWord i j₁`, `overlap = [σᵢ]`,
+`right = descWord i₁ j₂ ++ [σᵢ]`; the two leading words cancel because the short
+run splits as `descWord i j₂ = σᵢ :: descWord i₁ j₂`, which *is* the overlap.
+
+**Scope, precisely.** This subsumes §4aa (`(3,2)`), §4ad (`b = 2`, all `a`) and
+§4ae (`b = 3`, all `a`) — all of them `a > b`. It does **not** subsume §4z
+`(2,2)`, §4ab `(2,3)` or §4ac `(3,3)`: those are `a ≤ b`, the other regime, where
+the quadratic rule appears twice and the length is `2ab − a² + 5a + 1`. Those
+three remain fixed-depth cases.
+
+## Where the arc stands now
+
+**Done.** All 92 overlap and 22 inclusion compositions at `n = 4`, sorry-free.
+Every family general in `n`. The corner's **`a > b` regime general in both
+depths**. Confluence verified computationally to `n = 12`.
+
+**Open, in order of size.**
+
+1. **The corner's `a ≤ b` regime**, general in both depths. Structurally harder
+   than the one just closed: the quadratic rule appears twice, so the chain is
+   not all-monic and `monicStep` does not reach every step; and the length
+   `2ab − a² + 5a + 1` depends on *both* depths, so a single loop over one index
+   will not do. Whether it factors as two nested loops is not yet known — that is
+   the first thing to measure, the way §4af's blueprint was measured before any
+   Lean was written.
+2. **The shape enumeration for general `n`** — §4k computes `overlapTriples` by
+   `decide` at `n = 4`; a general theorem needs it characterised abstractly.
