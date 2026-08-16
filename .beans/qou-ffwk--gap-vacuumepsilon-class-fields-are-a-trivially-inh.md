@@ -425,3 +425,71 @@ Remaining library: `DiophantineBirthday`, `LocalInfinitesimalField`,
 `HyperbolicVolumeIndependence`, and `BraidGroupNStrand` (whose class is
 `MarkovTraceN`, not `HeckeQuotient` as the inventory says). Plus six co-located
 stubs this bean's inventory omits.
+
+## Progress 2026-08-16 (4) — `DiophantineBirthday`
+
+Branch `claude/ffwk-diophantine-birthday-2026-08-16`. Fifth of the ten.
+
+**Only one of the block's four parts is encoded, and that is the point.**
+
+- **Part 1 (algebraic rigidity)** — "if `α` is algebraic of degree `d` then
+  `b_α(n) = O(log n)`" — is unhedged and is the field. The implied constant is
+  existential and `α`-dependent because the block ties it to the degree; a
+  single global constant would claim more than the block does.
+- **Part 2 (transcendental depth) is deliberately NOT encoded.** The block says
+  "if `α` is transcendental *(of 'generic' type, e.g. Liouville number)*". The
+  parenthesis is a hedge — the claim is for a generic subclass, not for every
+  transcendental. Writing `∀ α, Transcendental ℚ α → …` would assert the
+  unhedged converse the corpus does not. Inventing an `IsGenericTranscendental`
+  predicate to carry the hedge would be worse: a stand-in with no definition
+  anywhere.
+- **Parts 3 and 4** (Roth threshold, continued-fraction correspondence) need the
+  continued-fraction expansion, which nothing in this library constructs.
+
+**The discrimination survives on the unhedged half alone.**
+`transcendental_of_not_logarithmic` derives from part 1 that a number whose
+trajectory outruns every logarithmic bound cannot be algebraic. That *is* the
+block's title — "algebraic vs transcendental numbers are separated by birthday
+trajectory". Encoding part 2 would have added a converse the separation does not
+need. Worth remembering as a general move: when a block hedges half a
+biconditional, check whether the headline follows from the unhedged half before
+reaching for a stand-in predicate.
+
+**`trajectory` is caller-supplied**, like the `archimedean_agreement` pipelines:
+`b_α` is defined in the block by minimisation over bounded-denominator rational
+approximations, and this library constructs no such function.
+
+**Anti-vacuity, both directions, and this time both are concrete:**
+
+- `nonempty_of_const_zero` — the identically-zero trajectory satisfies the class
+  (`0 ≤ 1·log n + 1` for `n ≥ 1`), so openness is not an artefact of emptiness.
+- `not_of_quadratic` — the quadratic trajectory is **refuted**: `0` is algebraic
+  and `n²` outruns every `C·log n + C`, via `log n ≤ n − 1`. A genuine
+  countermodel, not just a restatement — which is what the earlier
+  `SpectralNormalForm` could not have, since no `OmegaOrder` instance exists to
+  build one from.
+
+Also fixed a wrong docstring link: it pointed into `appendix-surreals/` and the
+block lives in `appendix-surreals-archimedean/`.
+
+Verification: compiles (ok=1); `#print axioms` `[propext, Classical.choice,
+Quot.sound]` on all three, no `sorryAx`; base-ring PASS; wall-side PASS; both
+siblings gates exit 0; orphan gate exit 0; run-validate exit 0. No instance
+added.
+
+Detector count **12 → 11**.
+
+### Running total
+
+Five of ten library carriers done; count 16 → 11. Each needed a **different**
+encoding — tolerance parameter, exact equality, structural bridge between two
+typeclass structures, and now an asymmetric one-half-only encoding — which is
+why this bean's "do not batch-process" instruction is right.
+
+Remaining library: `LocalInfinitesimalField` (needs sheaf/scheme machinery for
+"ε is a sheaf across a scheme X" — likely blocked the way
+`GBDepthPeriodCorrespondence` was), `QouInfraDischargesGoncharovZeta5`,
+`VacuumEpsilon` (blocked on its 2026-08-08 docstring finding),
+`HyperbolicVolumeIndependence`, `BraidGroupNStrand` (class is `MarkovTraceN`,
+wants field-by-field splitting). Plus the six co-located stubs this bean's
+inventory omits.
