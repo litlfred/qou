@@ -1,10 +1,11 @@
 ---
 # qou-49ug
 title: diproton/dineutron chi have no real producer — they are absent from the shared ATOMS registry
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-16T02:44:33Z
-updated_at: 2026-08-16T02:44:33Z
+updated_at: 2026-08-16T03:43:16Z
 ---
 
 
