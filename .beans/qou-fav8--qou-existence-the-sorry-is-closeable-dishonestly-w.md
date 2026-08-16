@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T13:56:32Z
-updated_at: 2026-08-16T16:32:01Z
+updated_at: 2026-08-16T17:44:32Z
 ---
 
 ## The sorry
@@ -168,3 +168,65 @@ and an `involution`, which constrain it somewhat, though not away from zero.
 what its `adjointObj` is for. Tracked as the natural follow-on. The lesson is
 that the fix has to travel: patching the one structure the sorry mentions leaves
 four copies of the same hole standing.
+
+
+## 2026-08-16 — CORRECTION to my own "four replicated holes" note, and what they actually are
+
+The note above said the free-`adjointObj` + `Subsingleton` pattern is replicated
+in four structures and *"every one is satisfiable at `adjointObj := 0` by the
+same argument, so each carries the same vacuity."* **That was too broad and I
+retract it.** Inspected individually they are three different things, and one is
+a false positive.
+
+### RETRACTED — `GaugeTheory.FiberAdjointInvolution` is fine
+
+It carries `orbit_embed : projLine ⟶ adjointObj`, `involution`,
+`involution_sq`, `orbit_involution_compat` and `orbit_mono`. Genuinely
+constrained, and it makes **no adjoint-vanishing claim at all** — so there is no
+vacuous conclusion resting on the object. I grouped it by the `adjointObj : C`
+field alone, which is exactly the "grep the topic, not the shape" error
+`AGENTS.md` warns about. Nothing to fix here.
+
+### WORSE THAN A FREE FIELD — three `P → P` theorems
+
+These do not merely permit a degenerate witness; they **prove nothing at all**,
+returning their own hypothesis while the docstring claims a substantive result.
+
+| decl | binder that is pure decoration | docstring claims |
+|---|---|---|
+| `ChannelSeparation.adjoint_vanishing_propagation` | `(k : ℕ)` | vanishing at *all jet levels* `Ad(J^k(A))` |
+| `ChannelSeparation.jet_preserves_channel_separation` | `(jfpg : JetFiltrationPreservesGrading)` | separation *preserved under prolongation* |
+| `GradedFrobeniusHopf.adjoint_has_no_degree_zero` | — | the *degree-0 component of Ad(A)* is trivial |
+
+Each body is the hypothesis verbatim (`jgcs.adjoint_vanishing`,
+`adj_vanishing`, `adj_vanishing`). **The compiler already knew**: building the
+file emits `warning: unused variable 'k'` and `warning: unused variable 'jfpg'`.
+The third instance was found *by* that linter output, not by my grep — worth
+noting as a cheaper detector than reading.
+
+### The gap is STRUCTURAL, not a proof gap — do not try to "prove" these
+
+- `JetGradedChannelSeparation` carries exactly **one** `GradedFrobeniusHopf`
+  (`base`, level 0) and one `adjointObj`, despite its own docstring promising
+  *"a graded Frobenius–Hopf object at each jet level"*. There is no
+  `Ad(J^k(A))` in the data, so no `k`-dependent conclusion is even statable.
+- `adjoint_has_no_degree_zero` takes a bare `adjointObj : C` with no grading, so
+  it has no `symComponent` to be about. `GradedFrobeniusHopf` *does* carry
+  `symComponent` — so the real statement is expressible, but only once the
+  adjoint object carries the grading too.
+
+So the fix is to give the structures the data their docstrings already claim
+(a jet-indexed family; a graded adjoint), and only then state the theorems.
+Restating them on the current data is impossible, and "proving" them by any
+other route would be laundering.
+
+### DONE this pass
+
+Docstrings on all three corrected to say what is and is not proved, with the
+structural reason. `lean`-direct **exit 0** on both files. Names left alone
+deliberately — `adjoint_vanishing_propagation` propagates nothing, but renaming
+has consumer blast radius and the marker is now impossible to miss while
+reading.
+
+**Not done:** the structural fix itself. That is the real work and is bigger
+than this bean's step 1.
