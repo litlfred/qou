@@ -1056,9 +1056,24 @@ class WitnessBuilder:
             q0_anchor, _rv = resolve_q0_anchor(spath)
             if q0_value is None:
                 q0_value = _rv
-        payload["q0Anchor"] = q0_anchor
-        if q0_value is not None:
-            payload["q0Value"] = q0_value
+        # A q0Anchor the producer already wrote into the payload WINS over the
+        # one resolved from the manifest/env. `build()` has always had this
+        # guard (`if "q0Anchor" not in witness`); this path did not, so the two
+        # writers of one field disagreed, and this one silently relabelled an
+        # explicit declaration. A producer that spans both layers on purpose --
+        # e.g. `markov/peel_anchor_identification_probe.py`, whose whole subject
+        # is telling the pins apart -- declares `q0Anchor: "ambiguous"`, a
+        # category the anchor audit has precisely for this, and got "proton"
+        # stamped over it from the running script's manifest entry. That is the
+        # exact failure mode the field exists to prevent: a witness asserting a
+        # pin its contents do not carry.
+        #
+        # An explicit `q0_anchor=` argument still wins over both, since a caller
+        # passing it is making the same declaration one call frame out.
+        if "q0Anchor" not in payload:
+            payload["q0Anchor"] = q0_anchor
+            if q0_value is not None:
+                payload["q0Value"] = q0_value
         return payload
 
     def is_fresh(self) -> bool:

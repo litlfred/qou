@@ -332,7 +332,28 @@ def tr_M_atomic(
     the canonical Markov trace via Markov-axiom recursive ascent.
 
     Returns a sympy expression in the symbolic substrate parameter
-    `q` (and the derived `h = q − q⁻¹`, `z = 1/(q^½ + q^{-½})`).
+    `q` (and the derived `h = q − q⁻¹`, `z = q³/(q² + 1)`).
+
+    **Exact in `q` — no anchor enters here.** The result is an
+    integer-coefficient rational function; for the deuteron it is a
+    degree-50 numerator over `192·q²³·(q² + 1)³`, and that `(q² + 1)³`
+    is the convention-D `z` appearing once per Markov peel. The numeric
+    `(c, d)` from `atom_braid_word_3A` are used by `crossing_from_cd`
+    only to *identify* which of five canonical templates a crossing is;
+    the element it builds carries the **symbolic** form — including the
+    colour weighting, whose δ is substituted as
+    `(q − 1)²(1 − q⁻⁴)/3`, not as a float. So a caller may evaluate the
+    returned expression at any `q` whatever, and whichever `q₀` the
+    caller substitutes is the only anchor the number ever sees.
+
+    This docstring said `z = 1/(q^½ + q^{-½})` — convention C — until
+    2026-08-16. The live path has been D since `hecke_symbolic.z_markov`
+    moved, and `z` is not named anywhere else in this module, so the
+    stale line was the only convention statement a reader would find
+    here. It cost a session: an 8.71e-8 residual was attributed to a
+    defect in the weights, when a peel value read out of the *ideal
+    (muon)* witness had been labelled proton. Against `peel(proton q₀)`
+    the anchor-matched bridge agrees to 5.3e-25.
 
     Parameters
     ----------
