@@ -58,10 +58,10 @@ noncomputable def heightProfile (a b t : ℝ) : ℝ := Real.exp (logInterp a b t
 
 theorem heightProfile_pos (a b t : ℝ) : 0 < heightProfile a b t := Real.exp_pos _
 
-@[simp] theorem heightProfile_zero {a : ℝ} (ha : 0 < a) : heightProfile a b 0 = a := by
+@[simp] theorem heightProfile_zero {a b : ℝ} (ha : 0 < a) : heightProfile a b 0 = a := by
   simp only [heightProfile, logInterp, zero_mul, add_zero]; exact Real.exp_log ha
 
-@[simp] theorem heightProfile_one {b : ℝ} (hb : 0 < b) : heightProfile a b 1 = b := by
+@[simp] theorem heightProfile_one {a b : ℝ} (hb : 0 < b) : heightProfile a b 1 = b := by
   simp only [heightProfile, logInterp, one_mul]
   rw [add_sub_cancel]; exact Real.exp_log hb
 
@@ -86,10 +86,10 @@ theorem hasDerivAt_heightProfile (a b t : ℝ) :
 `(0,0,b)`. -/
 noncomputable def vseg (a b t : ℝ) : E := EuclideanSpace.single 2 (heightProfile a b t)
 
-@[simp] theorem vseg_zero {a : ℝ} (ha : 0 < a) : vseg a b 0 = zpt a := by
+@[simp] theorem vseg_zero {a b : ℝ} (ha : 0 < a) : vseg a b 0 = zpt a := by
   simp [vseg, zpt, heightProfile_zero ha]
 
-@[simp] theorem vseg_one {b : ℝ} (hb : 0 < b) : vseg a b 1 = zpt b := by
+@[simp] theorem vseg_one {a b : ℝ} (hb : 0 < b) : vseg a b 1 = zpt b := by
   simp [vseg, zpt, heightProfile_one hb]
 
 @[simp] theorem vseg_height (a b t : ℝ) : (vseg a b t) 2 = heightProfile a b t := by
