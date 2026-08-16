@@ -57,3 +57,29 @@ Posting intent on the relevant sibling PRs is cheaper than a collision.
 It is not a math gap, it is a gate outage. Every agent running the standard
 pre-commit checks currently sees a red validate they did not cause, which
 trains people to ignore it — the expensive failure mode.
+
+## Verified fixed on main 2026-08-16 — closing evidence, not a new fix
+
+`bun run scripts/run-validate.ts content/quantum-observable-universe` on
+`main @ 84ea022e18` exits **0**: `✓ Valid — 27 issue(s)`, all advisory
+(`no Lean declaration yet`, dangling-remark, unknown-field). **Zero errors.**
+Ran it both with and without the path argument; same result.
+
+Checked it was fixed rather than suppressed. Three of the four named labels are
+still absent from the corpus — so the repair was on the referring side, and it
+was done the way this bean asked ("corpus-grep before creating a new one"):
+
+| block | then | now |
+|---|---|---|
+| `a2-from-three-strands` | `def:hecke-algebra` (absent) | `def:braid-group`, `rem:hecke-algebra-from-braiding` — existing blocks |
+| `meson-mass-splitting` | `prop:q-deformation-weight-lattice` | `rem:q-deformation-weight-lattice` — the label was `rem:`, not `prop:` |
+| `schur-weyl-eightfold` | `def:hecke-algebra` | `prop:a2-from-three-strands` |
+| `color-su3-from-g2` | `def:octonion-algebra` (absent) | `uses: []` with an in-file comment recording that the octonion algebra is used but never defined as a block, and a bean (`qou-8fl1`) |
+| `mba-sidecar-mirror-cancellation` | `alg:delta-lambda-closure` unresolved | `alg:delta-lambda-closure` now exists (`appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.ts`) |
+
+No block was deleted and no dependency was silently dropped — `color-su3-from-g2`
+is the only one that lost an edge, and it is documented in place rather than
+quietly removed.
+
+Left at `todo`: closing is an owner action (AGENTS.md §4a). Nothing remains to
+do on the symptom.
