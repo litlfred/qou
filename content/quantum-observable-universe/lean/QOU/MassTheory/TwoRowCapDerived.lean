@@ -3,6 +3,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 Released under Apache 2.0 license.
 -/
 import QOU.QBeta.WenzlWeightVanishing
+import QOU.BraidsAndKnots.FibreDimensionForcesTL
 
 /-!
 # The mass channel's two-row cap, derived rather than posited
@@ -218,19 +219,57 @@ theorem two_one_survives_filter :
     (YoungDiagram.ofRowLens [2, 1] (by decide)).colLen 0 ≤ 2 := by
   rw [colLen_ofRowLens_two_one]
 
-/-- **The two routes to the cap agree at the discriminating case.**
-
-`(1,1,1)` is dropped by the Wenzl/Schur route proved here, and it is the same
-shape the moment route kills at `n = 3`
-(`TemperleyLiebTower.conventionD_kills_antisymmetriser`, whose conclusion is
-`y₍₁³₎ = 0`). The routes have different weak points — this one cites Wenzl's
-weight formula, that one needs an ordered field and a propagation argument —
-so their agreement on the case that discriminates convention D from C is worth
-recording rather than assuming. -/
-theorem cap_agrees_with_moment_route_of_wenzl {Q Z : R} (hQ0 : Q ≠ 0)
+/-- The Wenzl/Schur route's value for the three-row weight at `n = 3`. -/
+theorem schur_route_three_row_eq_zero_of_wenzl {Q Z : R} (hQ0 : Q ≠ 0)
     (hQ : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) (hZ : Z ≠ 0) :
     schurPrincipal 2 Q (YoungDiagram.ofRowLens [1, 1, 1] (by decide)) / Z = 0 := by
   refine massWeight_eq_zero_of_three_rows_of_wenzl hQ0 hQ hZ _ ?_
   rw [colLen_ofRowLens_one_one_one]
+
+/-! ### The two routes agree
+
+There are two independent derivations of `y₍₁³₎ = 0` at convention D, and they
+share no premise beyond convention D itself:
+
+* the **moment route**, `BraidsAndKnots.threeRow_eq_zero_of_jones_ocneanu` —
+  from the three Markov moment equations against the `H₃(q)` character table
+  plus the Ocneanu value `z·[2]_q = q²`. It never mentions Schur functions and
+  cites no external theorem.
+* the **Schur route**, proved above — from `schurPrincipal_eq_zero_iff` at the
+  level `wenzlLevel_conventionD` pins. It never mentions the moment equations,
+  and it costs one citation (Wenzl's weight formula).
+
+Neither is derivable from the other as stated, so their agreeing is a real
+check rather than a restatement. It is also the one place the Wenzl citation
+can be independently corroborated inside the corpus: the moment route reaches
+the same value without it. -/
+
+/-- **The moment route and the Schur route assign the same three-row weight.**
+
+Given a weight vector satisfying the `H₃(q)` Markov moment equations at
+convention D's Ocneanu value, its three-row entry equals the convention-D
+Schur weight of `(1,1,1)` — both being zero, each derived without reference to
+the other.
+
+The hypotheses are the *union* of the two routes' own hypotheses and nothing
+more: no step assumes the conclusion of the other route. In particular this is
+**not** a discharge of `markovWeights_eq_jones_of_threeRow_eq_zero`'s `hTL`;
+that lemma concludes `z·[2]_q = q²`, so feeding it a convention-D weight would
+assume what it proves. The direction here is safe because both sides are
+*consequences* of convention D rather than premises for it. -/
+theorem moment_and_schur_routes_agree_of_wenzl {Q Z : R} (hQ0 : Q ≠ 0)
+    (hQ : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) (hZ : Z ≠ 0)
+    (q qi z y₃ y₂₁ y₁₃ : R)
+    (hqi : q * qi = 1)
+    (hnorm : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (hsigma : q * y₃ + (q - qi) * y₂₁ + (-qi) * y₁₃ = z)
+    (hsigmasigma : q ^ 2 * y₃ + (-1) * y₂₁ + qi ^ 2 * y₁₃ = z ^ 2)
+    (hzD : z * (q + qi) = q ^ 2)
+    (hb2ne : q + qi ≠ 0)
+    (h3ne : (q + qi) ^ 2 - 1 ≠ 0) :
+    y₁₃ = schurPrincipal 2 Q (YoungDiagram.ofRowLens [1, 1, 1] (by decide)) / Z := by
+  rw [schur_route_three_row_eq_zero_of_wenzl hQ0 hQ hZ]
+  exact QOU.BraidsAndKnots.threeRow_eq_zero_of_jones_ocneanu
+    q qi z y₃ y₂₁ y₁₃ hqi hnorm hsigma hsigmasigma hzD hb2ne h3ne
 
 end QOU.MassTheory.TwoRowCap
