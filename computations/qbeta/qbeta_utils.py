@@ -45,7 +45,25 @@ LADDER_FRAME = "u"
 
 
 def markov_parameter(q: mpf) -> mpf:
-    """The canonical Markov parameter z(q) = √q / (1 + q).
+    """The Q_β channel's **convention-C** Markov parameter z(q) = √q/(1 + q).
+
+    **NOT canonical.** This docstring read "the canonical Markov parameter"
+    until 2026-08-16; convention C was excised by owner ruling 2026-08-09 and
+    re-affirmed 2026-08-15, and the canonical parameter is D's q³/(q²+1).
+
+    The value is deliberately still C and this function is deliberately not
+    migrated: the registry records `channels.qbeta-decay` as
+    `agreed-migration-pending` — convention settled to D, code not yet moved —
+    and `evaluators.z` registers this symbol as C so that **R9 calls it and
+    asserts z_C numerically on every validator run**. Flipping it before the
+    ladder is re-derived would put the registry in contradiction with its own
+    evaluator, and the re-derivation is bean `qou-cds1`, not a z-swap:
+    `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free) proves the C-frame
+    ladder and the two-row forcing are mutually exclusive.
+
+    So "C" here is a recorded, gated state — not drift. What was wrong was
+    calling it canonical, which is the label defect the C→D campaign kept
+    finding: a description that outlived the ruling it predates.
 
     Mirrors `markov_parameter` in
     `QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`.
