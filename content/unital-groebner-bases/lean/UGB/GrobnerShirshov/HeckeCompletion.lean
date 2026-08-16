@@ -10212,6 +10212,138 @@ theorem s4 (hn : 0 < n) (hp : HeckeParams) (h₁ : i₁.val + 1 = i.val)
 
 end
 
+noncomputable def T0 (i i₁ j₁ j₂ : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V0 i i₁ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)]
+
+noncomputable def T1 (i i₁ i₂ j₁ j₂ : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V1 i i₁ i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)]
+
+noncomputable def T2 (i i₁ i₂ j₁ j₂ : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)]
+
+noncomputable def T3 (i i₁ i₂ j₁ j₂ ed : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U1 i i₁ i₂ j₁ j₂ ed, -1)]
+
+noncomputable def T4 (i i₁ i₂ j₁ j₂ ed : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U2 i i₁ i₂ j₁ ed, -1)]
+
+noncomputable def T5 (i i₁ i₂ j₁ j₂ ed : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (W i i₁ i₂ j₁ j₂ ed, -1)]
+
+noncomputable def T6 (i i₁ i₂ j₁ j₂ ed : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(W i i₁ i₂ j₁ j₂ ed, (1 : ℝ)), (W i i₁ i₂ j₁ j₂ ed, -1)]
+
+theorem T6_isZero (i i₁ i₂ j₁ j₂ ed : Fin n) : (T6 i i₁ i₂ j₁ j₂ ed).isZero := by
+  intro m
+  simp only [T6, AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+    decide_eq_true_eq]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]
+  ring
+
+section
+
+variable {i i₁ i₂ j₁ j₂ ed : Fin n}
+
+/-- **The whole chain.** Two setup steps, the second term's loop, its two closing
+steps, then the first term's loop — and the two terms coincide. -/
+theorem chain (hn : 0 < n) (hp : HeckeParams) (h₁ : i₁.val + 1 = i.val)
+    (h₂ : i₂.val + 1 = i₁.val) (hed : ed.val + 1 = j₂.val)
+    (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ i₂.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (T6 i i₁ i₂ j₁ j₂ ed) := by
+  have hsetup : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) (T0 i i₁ j₁ j₂) (T2 i i₁ i₂ j₁ j₂) :=
+    ((MultiStepReduction.refl _).step (s1 hn hp h₁ h₂ (by omega))).step
+      (s2 hn hp h₁ h₂ (by omega))
+  have hloopU : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) (T2 i i₁ i₂ j₁ j₂)
+      (T3 i i₁ i₂ j₁ j₂ ed) :=
+    CornerBlock.loopTwoGen hn hp hed hj₁ (le_refl _) [(⟨i⟩ : HeckeGen n)] (V2 i i₂ j₁ j₂)
+      (-1) 1 (neg_ne_zero.mpr one_ne_zero)
+      (i₁.val - j₂.val) i₁ i₂ [(⟨i₁⟩ : HeckeGen n)] [(⟨i⟩ : HeckeGen n)]
+      h₂ (by omega)
+      (fun z => by simpa using V2_ne_cons h₂ z)
+      (by
+        intro y hy
+        have hyi : y = (⟨i⟩ : HeckeGen n) := by simpa using hy
+        subst hyi
+        show i₂.val + 1 < i.val
+        omega)
+      (by
+        rw [descWord_cons h₁ (show j₁.val ≤ i₁.val by omega),
+          descWord_cons h₂ (show j₁.val ≤ i₂.val by omega)]
+        simp)
+  have hclose : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) (T3 i i₁ i₂ j₁ j₂ ed)
+      (T5 i i₁ i₂ j₁ j₂ ed) :=
+    ((MultiStepReduction.refl _).step (s3 hn hp h₁ h₂ hed hj₁ hj₂)).step
+      (s4 hn hp h₁ h₂ hed hj₁ hj₂)
+  have hloopV : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) (T5 i i₁ i₂ j₁ j₂ ed)
+      (T6 i i₁ i₂ j₁ j₂ ed) :=
+    CornerBlock.loopTwoFromTop hn hp (i.val - j₂.val) hed hj₁ (le_refl _) h₁ (by omega)
+      [(⟨i₂⟩ : HeckeGen n)] [] 1 (-1) one_ne_zero
+  exact (hsetup.trans hloopU).trans (hclose.trans hloopV)
+
+end
+
+/-- The composition: the Bokut–Shiao rule at the deeper bottom `j₁` against the
+one at `j₂`, overlapping in the trailing `σᵢ`. -/
+noncomputable def oc (i i₁ j₁ j₂ : Fin n) (h₁ : i₁.val + 1 = i.val)
+    (hj₁ : j₁.val ≤ i₁.val) (hj₂ : j₂.val ≤ i₁.val) :
+    OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := bokutShiaoRelation i₁ i j₁
+  rule₂ := bokutShiaoRelation i₁ i j₂
+  left := descWord i j₁
+  overlap := [(⟨i⟩ : HeckeGen n)]
+  right := descWord i₁ j₂ ++ [(⟨i⟩ : HeckeGen n)]
+  lm₁_decomp := by rw [bokutShiaoRelation_lm h₁ hj₁]; rfl
+  lm₂_decomp := by
+    rw [bokutShiaoRelation_lm h₁ hj₂, bsWord₁, descWord_cons h₁ hj₂]
+    simp
+  overlap_nonempty := by simp
+
+/-- **The S-polynomial** is `V0 − U0`. The two leading words cancel because the
+short run splits as `descWord i j₂ = σᵢ :: descWord (i−1) j₂`, which is exactly
+the overlap. -/
+theorem oc_spoly_coeff {i i₁ j₁ j₂ : Fin n} (h₁ : i₁.val + 1 = i.val)
+    (hj₁ : j₁.val ≤ i₁.val) (hj₂ : j₂.val ≤ i₁.val) (m : Monomial (HeckeGen n)) :
+    (oc i i₁ j₁ j₂ h₁ hj₁ hj₂).spoly.coeff m = (T0 i i₁ j₁ j₂).coeff m := by
+  show (bokutShiaoRelation i₁ i j₂).lc (heckeOrder n)
+      * (AlgElement.contextMul [] (bokutShiaoRelation i₁ i j₁).relation
+          (descWord i₁ j₂ ++ [(⟨i⟩ : HeckeGen n)])).coeff m
+    - (bokutShiaoRelation i₁ i j₁).lc (heckeOrder n)
+      * (AlgElement.contextMul (descWord i j₁)
+          (bokutShiaoRelation i₁ i j₂).relation []).coeff m
+    = _
+  rw [bokutShiaoRelation_lc h₁ hj₂, bokutShiaoRelation_lc h₁ hj₁, one_mul, one_mul]
+  simp only [T0, V0, U0, bokutShiaoRelation, bsWord₁, bsWord₂,
+    descWord_cons h₁ hj₂, descWord_cons h₁ hj₁,
+    AlgElement.contextMul_ofTerms_coeff, List.map_cons, List.map_nil,
+    List.nil_append, List.append_nil, List.cons_append, List.append_assoc,
+    AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+    decide_eq_true_eq]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- **The `a > b` corner, at every pair of depths.** The Bokut–Shiao rule at
+bottom `j₁` composed with the one at bottom `j₂`, whenever `j₁ < j₂ ≤ i − 2`,
+reduces to zero. No bound on either depth, and the chain's length — quadratic in
+them — is carried entirely by §4af's loop. -/
+theorem resolves (hp : HeckeParams) {i i₁ i₂ j₁ j₂ ed : Fin n} (hn : 0 < n)
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hed : ed.val + 1 = j₂.val) (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ i₂.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc i i₁ j₁ j₂ h₁ (by omega) (by omega)).spoly nf ∧ nf.isZero := by
+  refine reducesToZero_congr ⟨T6 i i₁ i₂ j₁ j₂ ed,
+    ⟨chain hn hp h₁ h₂ hed hj₁ hj₂,
+      isNormalForm_of_isZero (T6_isZero i i₁ i₂ j₁ j₂ ed)⟩,
+    T6_isZero i i₁ i₂ j₁ j₂ ed⟩ ?_
+  intro m
+  exact oc_spoly_coeff h₁ (by omega) (by omega) m
+
 end CornerGeneral
 
 end UGB.GrobnerShirshov.Hecke
