@@ -45,6 +45,30 @@ symmetric end — while the tall blocks bind or flip sign. Wide = symmetric =
 `T=1`-like is exactly where nature puts the unbound channels (pp, nn, np-1S0),
 so the block structure is oriented correctly, not merely large enough.
 
+## WEIGHT WARNING — `wedderburn_weight` is the PLANCHEREL weight, not `y_lambda`
+
+The `wedderburn_weight` field on the partition table is
+`W_lambda = d_q(lambda)^2 / [n]_q!` — a function of `q` alone. It is **not** the
+Markov weight `y_lambda` that the Markov trace needs: `tr_M = sum_l y_l chi_l`
+with `y_l` depending on the Markov parameter `z`. Measured, the difference is
+not subtle:
+
+    sum W_l chi_l : free/atom ratio  15.857   (pp)
+    true tr_M     : free/atom ratio   1.632   (pp)
+
+So anything that *weights* the characters with this field is wrong. That includes
+an additive per-block decomposition of `tr_free - tr_atom` attempted here, which
+came out with the wrong SIGN (implying an unbound diproton by a route that
+contradicts the dashboard's own `B_sym > 0`) — caught by validating the
+reconstruction against `tr_m_atom_zn` before interpreting it, and discarded.
+
+**Nothing in this probe's VERDICT depends on the weight.** The block ratio
+`r_lambda = chi_lambda(atom) / chi_lambda(free)` is a ratio of characters in the
+same block, so any weight cancels identically. The unbinding finding, the
+wide/tall orientation and the sign-flip structure are all weight-free. The
+`y_lambda` COLUMN printed in the table below is the Plancherel weight and is
+labelled as such; it is informational and enters no conclusion.
+
 ## Validation — the 1-dim blocks reproduce the Hecke eigenvalues exactly
 
 `(6,)` is the trivial rep (`sigma -> q`) and `(1^6)` the sign rep
@@ -93,7 +117,7 @@ stacking routes are provably not.
 
 **Does NOT establish** any of the following, and none should be read into it:
 
-* that the aggregate binding comes out right — it does not. The `y_lambda`-weighted
+* that the aggregate binding comes out right — it does not. The aggregate
   total is still `+2.54 MeV` for pp, i.e. still a bound diproton. The unbinding
   blocks are outweighed by the bound ones in the full trace.
 * that any SELECTION PRINCIPLE picks the unbinding blocks for the pp/nn channels.
@@ -144,7 +168,7 @@ def main() -> int:
     results = {}
     for lbl, Z, N in SYSTEMS:
         print(f"=== {lbl}")
-        print("  | lambda             | dim | y_lambda   | r_lambda   | verdict   |")
+        print("  | lambda             | dim | W_l (Planch)| r_lambda   | verdict   |")
         print("  | ------------------ | --: | ---------: | ---------: | :-------- |")
         nunb = nflip = 0
         for e in sorted(six, key=lambda x: tuple(x["partition"])):
@@ -193,7 +217,7 @@ def main() -> int:
     print("\n## Scope\n")
     print("  ESTABLISHES range only: H_6 is big enough, span{1,sigma} is not.")
     print("  Does NOT establish that the aggregate is right -- it is not; the")
-    print("  y_lambda-weighted total is still +2.54 MeV for pp, a bound diproton.")
+    print("  aggregate is still +2.54 MeV for pp, a bound diproton (dashboard value,")
     print("  Does NOT supply a selection principle picking the unbinding blocks. The")
     print("  corpus has machinery of the right type (operator-selection LP/SDP, whose")
     print("  duals identify saturated blocks) but nothing here connects it.")
