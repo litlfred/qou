@@ -15,6 +15,6 @@ export default proof({
     "woronowicz1988",
     "reshetikhin1991",
     "kassel1995",
-    "chari1994",
+    "chari1994guide",
   ],
 });

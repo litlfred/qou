@@ -85,7 +85,7 @@ operator-valued type once Hoefsmit lands.
 
 Refs:
 - [hoefsmit1974] PhD thesis, UBC. Seminormal basis for Iwahori-Hecke
-- [halverson-1998-markov-weights] DOI 10.1006/jabr.1998.7437
+- [orellana1998] DOI 10.1006/jabr.1998.7437
 - [wenzl1988] DOI 10.1007/BF01404457
 - [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 - [manuscript] content/.../hecke-branching-trace-decomposition.md

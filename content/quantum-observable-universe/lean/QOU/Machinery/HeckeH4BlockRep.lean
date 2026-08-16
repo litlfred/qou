@@ -45,7 +45,7 @@ archimedean construct.  Genericity hypotheses as needed per theorem:
 `q ≠ 0`, `q ^ 2 + 1 ≠ 0`, `q ^ 4 + q ^ 2 + 1 ≠ 0`.
 
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01239526
--- Ref: [geck2000] https://doi.org/10.1093/oso/9780198502500.001.0001
+-- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001
 -/
 
 namespace QOU.Machinery.H4

@@ -31,7 +31,7 @@ open QOU.Braiding
        by the irreducible summands (no metric completion is used).
 
     LaTeX: `\label{prop:knot-eigenbasis-complete}` -/
--- Ref: [chari1994] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
+-- Ref: [chari1994guide] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
 -- Ref: [alexander1923] J.W. Alexander, Proc. Natl. Acad. Sci. USA 9 (1923)
 -- Ref: [jones1987] V.F.R. Jones, Annals of Mathematics 126 (1987)
 structure KnotEigenbasisComplete where

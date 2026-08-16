@@ -19,7 +19,7 @@
 
   Built on Mathlib's `Real.cos_pi_div_five`; unconditional, sorry-free.
 
-  -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron
+  -- Ref: [klein1888] Klein, Lectures on the Icosahedron
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 

@@ -53,7 +53,7 @@ already encodes the trace as a class field per the .md status note).
 Refs:
 - [jones1987] DOI 10.2307/2691504
 - [wenzl1988] DOI 10.1007/BF01404457
-- [halverson-1998-markov-weights] DOI 10.1006/jabr.1998.7437
+- [orellana1998] DOI 10.1006/jabr.1998.7437
 - [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
 

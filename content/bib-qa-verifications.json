@@ -649,7 +649,7 @@
    }
   },
   {
-   "id": "bilsonthompson2005",
+   "id": "bilson-thompson2005",
    "status": "verified-clean",
    "verified_at": "2026-05-19T16:40:00Z",
    "verified_by": {
@@ -657,12 +657,12 @@
     "model": "claude-opus-4-7"
    },
    "fixes_applied": 0,
-   "note": "PDF verified: 'A topological model of composite preons' by Sundance O. Bilson-Thompson (arXiv:hep-ph/0503213, ADP-05-05/T615). Title matches references.ts. Bib orphan — no QOU citation. Likely candidate for citation alongside QOU's knot-particle model (braids-and-knots/ chapters); the Bilson-Thompson preon-as-braid construction parallels QOU's topological-particle approach. Decision pending. | Re-classified from `uncited`: 3 citation sites (\\cite{bilsonthompson2005,bilsonthompson2007} in breit-wheeler-vertex-literature.md + vertex-factorisation-intro.md + cites: in .ts). PDF verified.",
+   "note": "PDF verified: 'A topological model of composite preons' by Sundance O. Bilson-Thompson (arXiv:hep-ph/0503213, ADP-05-05/T615). Title matches references.ts. Bib orphan — no QOU citation. Likely candidate for citation alongside QOU's knot-particle model (braids-and-knots/ chapters); the Bilson-Thompson preon-as-braid construction parallels QOU's topological-particle approach. Decision pending. | Re-classified from `uncited`: 3 citation sites (\\cite{bilson-thompson2005,bilsonthompson2007} in breit-wheeler-vertex-literature.md + vertex-factorisation-intro.md + cites: in .ts). PDF verified.",
    "source": {
     "kind": "upload",
-    "file": "library/bilsonthompson2005.pdf"
+    "file": "library/bilson-thompson2005.pdf"
    },
-   "local_pdf": "library/bilsonthompson2005.pdf",
+   "local_pdf": "library/bilson-thompson2005.pdf",
    "relevance": {
     "verdict": "undetermined",
     "rationale": "BROKEN SOURCE JOIN: the named file does not exist. The real source for this work is library/arxiv-hep-ph-0503213v2/0503213v2.pdf, which the ledger already carries as a separate unreviewed row. DUPLICATE-KEY DEFECT, the significant finding here: content/schema/references.ts registers the same work twice, under the id in this row (references.ts:5412) and under a hyphenated variant id (references.ts:7900), with identical descriptive fields. Every substantive prose citation uses the HYPHENATED variant: eightfold-way/flavor-charge-assignments.md:37, appendix-standard-model/strand-twist-datum.md:11, appendix-standard-model/sm-gauge-truncation.md:13, appendix-standard-model/sm-hypercharge-invariant.md:11, and appendix-standard-model/sm-hypercharge-invariant.lean:30. The un-hyphenated id in this row is referenced only from one .ts cites array (mass-theory/breit-wheeler-vertex-literature.ts:20) and from no prose at all, which is why it scans as a bib orphan. The two entries should be merged onto one id; until then any citation-count or orphan audit over either id is wrong.",
@@ -1582,7 +1582,7 @@
    }
   },
   {
-   "id": "chari1994",
+   "id": "chari1994guide",
    "status": "partial",
    "verified_at": "2026-05-19T15:51:00Z",
    "verified_by": {
@@ -2956,7 +2956,7 @@
    },
    "fixes_applied": 5,
    "fix_commit": "(this commit)",
-   "note": "Fulton & Harris, 'Representation Theory: A First Course' (Springer GTM 129, 1991). New bib entry split from fulton1991 (which stays as 'Young Tableaux' LMS Student Texts 35). 5 .lean Ref lines in baryon-product-from-alt.lean re-keyed from fulton1991 → fulton-harris1991 (all reference Repn Theory §2 / §2.1 Frobenius character).",
+   "note": "Fulton & Harris, 'Representation Theory: A First Course' (Springer GTM 129, 1991). New bib entry split from fulton1997 (which stays as 'Young Tableaux' LMS Student Texts 35). 5 .lean Ref lines in baryon-product-from-alt.lean re-keyed from fulton1997 → fulton-harris1991 (all reference Repn Theory §2 / §2.1 Frobenius character).",
    "source": {
     "kind": "external",
     "url": "https://doi.org/10.1007/978-1-4612-0979-9"
@@ -3383,7 +3383,7 @@
    }
   },
   {
-   "id": "halverson-1998-markov-weights",
+   "id": "orellana1998",
    "status": "verified-clean",
    "verified_at": "2026-05-19T18:45:33Z",
    "verified_by": {
@@ -5527,7 +5527,7 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
-    "rationale": "Not an orphan — but the bibliography around it is broken in a way worth flagging separately. The entry exists as bilsonthompson2007 (references.ts L5424+) with zero citation sites in content/ or Lean. Meanwhile the same author's earlier preon paper is registered TWICE under two keys: bilsonthompson2005 at L5411-5422 (zero citation sites) and bilson-thompson2005 at L7898-7905 (four citation sites: eightfold-way/flavor-charge-assignments.md, appendix-standard-model/strand-twist-datum.md, sm-gauge-truncation.md, sm-hypercharge-invariant.md). That duplicate-key pair is a corpus defect independent of this triage. On this document itself: I read the abstract and §I and it is the braided-ribbon-graph upgrade of the preon model — local excitations of background-independent quantum spacetime states, identified as noiseless subsystems, mapped to first-generation Standard Model fermions, with the explicit caveat that interactions are NOT reproduced. The four blocks that already cite the 2005 preon paper are exactly the blocks whose premise this 2007 paper strengthens (braid-to-fermion assignment, strand twist datum). Supporting rather than core: it supplies conserved-quantum-number structure and a stability argument, not a theorem the folio derives from.",
+    "rationale": "Not an orphan — but the bibliography around it is broken in a way worth flagging separately. The entry exists as bilsonthompson2007 (references.ts L5424+) with zero citation sites in content/ or Lean. Meanwhile the same author's earlier preon paper is registered TWICE under two keys: bilson-thompson2005 at L5411-5422 (zero citation sites) and bilson-thompson2005 at L7898-7905 (four citation sites: eightfold-way/flavor-charge-assignments.md, appendix-standard-model/strand-twist-datum.md, sm-gauge-truncation.md, sm-hypercharge-invariant.md). That duplicate-key pair is a corpus defect independent of this triage. On this document itself: I read the abstract and §I and it is the braided-ribbon-graph upgrade of the preon model — local excitations of background-independent quantum spacetime states, identified as noiseless subsystems, mapped to first-generation Standard Model fermions, with the explicit caveat that interactions are NOT reproduced. The four blocks that already cite the 2005 preon paper are exactly the blocks whose premise this 2007 paper strengthens (braid-to-fermion assignment, strand twist datum). Supporting rather than core: it supplies conserved-quantum-number structure and a stability argument, not a theorem the folio derives from.",
     "keyResults": [
      {
       "locator": "Abstract; §I",
@@ -5548,7 +5548,7 @@
      },
      {
       "action": "no-action",
-      "rationale": "Recording separately (not as a bean against this document): references.ts contains duplicate entries bilsonthompson2005 (L5411, uncited) and bilson-thompson2005 (L7898, 4 citation sites) for the same 2005 preon paper. That is a bibliography defect for the bib-audit queue, not a relevance finding.",
+      "rationale": "Recording separately (not as a bean against this document): references.ts contains duplicate entries bilson-thompson2005 (L5411, uncited) and bilson-thompson2005 (L7898, 4 citation sites) for the same 2005 preon paper. That is a bibliography defect for the bib-audit queue, not a relevance finding.",
       "target": "content/schema/references.ts"
      }
     ],
@@ -6068,7 +6068,7 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
-    "rationale": "SLq(2) knot model of elementary particles: the closest published analogue to QOU's own knot-as-particle construction, and an explicitly owner-requested read (docs/audits/2026-08-03-eightfold-way-a2-q-deformation-dialog-assessment.md line 532 lists it under 'Want'). It supplies a CANDIDATE, not a result QOU consumes: an explicit second diagram invariant (the rotation/Whitney number r) alongside the writhe w, with a published charge assignment Q_e = -(e/6)(w + r + 1). That is exactly the shape of the missing datum named in conj:sm-hypercharge-invariant ('Y does not factor through the writhe'; the currently-recorded candidate is the ribbon-framing twist, cite bilson-thompson2005). Held to 'supporting' rather than 'core' because Finkelstein's correspondence is FITTED, not derived: he states (p.5) that the trefoil-to-family ordering is chosen so that a single k = e/3 works ('If one aligns the trefoils and the families in any other relative order, one needs more than one value of k'). Per the block's own rule, a candidate that requires tuning a coupling is a fit and does not instantiate the class. QOU may adopt the INVARIANT (r) as a candidate to run through the two batteries; it must not adopt the numerology. No ref() entry exists; the corpus's only preon entries are the two duplicate Bilson-Thompson keys (bilsonthompson2005 line 5363, bilson-thompson2005 line 7784).",
+    "rationale": "SLq(2) knot model of elementary particles: the closest published analogue to QOU's own knot-as-particle construction, and an explicitly owner-requested read (docs/audits/2026-08-03-eightfold-way-a2-q-deformation-dialog-assessment.md line 532 lists it under 'Want'). It supplies a CANDIDATE, not a result QOU consumes: an explicit second diagram invariant (the rotation/Whitney number r) alongside the writhe w, with a published charge assignment Q_e = -(e/6)(w + r + 1). That is exactly the shape of the missing datum named in conj:sm-hypercharge-invariant ('Y does not factor through the writhe'; the currently-recorded candidate is the ribbon-framing twist, cite bilson-thompson2005). Held to 'supporting' rather than 'core' because Finkelstein's correspondence is FITTED, not derived: he states (p.5) that the trefoil-to-family ordering is chosen so that a single k = e/3 works ('If one aligns the trefoils and the families in any other relative order, one needs more than one value of k'). Per the block's own rule, a candidate that requires tuning a coupling is a fit and does not instantiate the class. QOU may adopt the INVARIANT (r) as a candidate to run through the two batteries; it must not adopt the numerology. No ref() entry exists; the corpus's only preon entries are the two duplicate Bilson-Thompson keys (bilson-thompson2005 line 5363, bilson-thompson2005 line 7784).",
     "keyResults": [
      {
       "locator": "eq. (2.7), §2",

@@ -8,9 +8,9 @@ axioms of
 For $q \in \mathbb{C}^{\times}$ not a non-trivial root of unity, take
 $\mathbf{C} := \mathbf{Rep}(U_{q}(\mathfrak{g}))$ — the rigid ribbon
 :refterm[braided monoidal category]{#braided-monoidal-category} of finite-dimensional type-I representations
-of the Drinfeld--Jimbo quantum group \cite{chari1994, kassel1995};
+of the Drinfeld--Jimbo quantum group \cite{chari1994guide, kassel1995};
 $A := \mathcal{O}_{q}(G)$ — the restricted dual Hopf algebra of matrix
-coefficients \cite{woronowicz1988, chari1994}, with
+coefficients \cite{woronowicz1988, chari1994guide}, with
 $\int_{A} := h$ the unique faithful invariant Haar state
 \cite{woronowicz1987}; and $\tau \colon \mathbf{C} \to
 \mathrm{Vect}_{\mathbb{C}}$ the (faithful) forgetful functor.

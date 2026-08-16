@@ -17,7 +17,7 @@ export default remark({
   ],
   uses: ["rem:breit-wheeler-vertex"],
   cites: [
-    "bilsonthompson2005",
+    "bilson-thompson2005",
     "bilsonthompson2007",
     "kauffman1991",
     "sugic2021",

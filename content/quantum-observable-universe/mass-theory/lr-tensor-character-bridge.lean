@@ -39,7 +39,7 @@
     - [macdonald1995] Macdonald, "Symmetric Functions and Hall
       Polynomials" §I.5 (self-dual PSH structure of Sym; Schur basis
       diagonalises product + coproduct).
-    - [geck-pfeiffer2000] Geck–Pfeiffer, "Characters of finite Coxeter
+    - [geckpfeiffer2000] Geck–Pfeiffer, "Characters of finite Coxeter
       groups and Iwahori–Hecke algebras" §9.1.5 (parabolic
       induction/restriction for type-A Hecke).
     - [ram1991] Ram, "A Frobenius formula for the characters of the

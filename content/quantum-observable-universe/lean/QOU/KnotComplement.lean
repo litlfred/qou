@@ -22,7 +22,7 @@ content of QOU.  Consumers import directly via
 ## References
 
 - SnapPea kernel: https://snappy.computop.org/
-- [thurston1979] W. Thurston, *The Geometry and Topology of 3-Manifolds*,
+- [thurston1978] W. Thurston, *The Geometry and Topology of 3-Manifolds*,
   Princeton Lecture Notes, 1979 — §4 hyperbolic structures on knot
   complements.
 -/
@@ -58,7 +58,7 @@ structure FundamentalGroupPresentation where
     cusp shape, π₁ presentation, first homology rank) into a single
     serialisable record.  All fields are populated at runtime by
     the SnapPea kernel; this Lean structure pins the schema. -/
--- Ref: [thurston1979] §4 hyperbolic structures on knot complements
+-- Ref: [thurston1978] §4 hyperbolic structures on knot complements
 structure KnotComplement where
   /-- Display name of the knot (e.g. `"4_1"`, `"trefoil"`, `"5_2"`). -/
   name             : String

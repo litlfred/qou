@@ -1319,19 +1319,6 @@ export const references: CSLData[] = [
   }),
 
   // ── Chari and Pressley 1994 (alias) ────────────────────────────
-  ref({
-    id: "chari1994",
-    type: "book",
-    title: "A Guide to Quantum Groups",
-    author: [
-      { family: "Chari", given: "Vyjayanthi" },
-      { family: "Pressley", given: "Andrew" },
-    ],
-    publisher: "Cambridge University Press",
-    issued: { "date-parts": [[1994]] },
-    ISBN: "978-0-521-55884-6",
-    URL: "https://doi.org/10.1017/CBO9780511622670",
-  }),
 
   // ── Tannaka 1939 ──────────────────────────────────────────────
   ref({
@@ -3029,19 +3016,6 @@ export const references: CSLData[] = [
   }),
 
   // ── Geck-Pfeiffer 2000: Schur elements / symmetrizing trace ───
-  ref({
-    id: "geck2000",
-    type: "book",
-    title:
-      "Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras",
-    author: [
-      { family: "Geck", given: "M." },
-      { family: "Pfeiffer", given: "G." },
-    ],
-    publisher: "Oxford University Press",
-    issued: { "date-parts": [[2000]] },
-    ISBN: "9780198502500",
-  }),
 
   // ── Arora-Barak 2009: complexity textbook (NP ⊆ P^#P) ─────────
   ref({
@@ -4358,20 +4332,6 @@ export const references: CSLData[] = [
   }),
 
   // ── Geck-Pfeiffer 2000 (Characters of finite Coxeter groups) ─
-  ref({
-    id: "geck-pfeiffer2000",
-    type: "book",
-    title: "Characters of Finite Coxeter Groups and Iwahori–Hecke Algebras",
-    author: [
-      { family: "Geck", given: "Meinolf" },
-      { family: "Pfeiffer", given: "Götz" },
-    ],
-    publisher: "Oxford University Press",
-    issued: { "date-parts": [[2000]] },
-    "collection-title": "London Mathematical Society Monographs",
-    "collection-number": 21,
-    ISBN: "9780198502500",
-  }),
 
   // ── Bach et al. 2013 (controlled double-slit diffraction) ────
   ref({
@@ -6006,22 +5966,6 @@ export const references: CSLData[] = [
   // Removed 2026-05-19 during bib audit triage of uncited orphans.
 
   // ── Bilson-Thompson 2005 ──────────────────────────────────────
-  ref({
-    id: "bilsonthompson2005",
-    library: {
-      claimedPath: "library/bilsonthompson2005.pdf",
-      stage: "missing",
-    },
-    type: "report",
-    title: "A topological model of composite preons",
-    author: [
-      { family: "Bilson-Thompson", given: "Sundance O." },
-    ],
-    publisher: "arXiv",
-    issued: { "date-parts": [[2005]] },
-    number: "hep-ph/0503213",
-    URL: "https://arxiv.org/abs/hep-ph/0503213",
-  }),
 
   // ── Bilson-Thompson, Markopoulou, Smolin 2007 ─────────────────
   ref({
@@ -6136,8 +6080,9 @@ export const references: CSLData[] = [
     author: [
       { family: "Klein", given: "Felix" },
     ],
-    publisher: "Teubner",
-    issued: { "date-parts": [[1888]] },
+    publisher: "B. G. Teubner",
+    issued: { "date-parts": [[1884]] },
+    "publisher-place": "Leipzig",
     URL: "https://archive.org/details/vorlesungenber00kleiuoft",
   }),
 
@@ -6659,24 +6604,9 @@ export const references: CSLData[] = [
     DOI: "10.1016/0021-8693(81)90205-2",
   }),
 
-  ref({
-    // Key in .lean files reads "fulton1991" (LMS Student Texts 35 first
-    // appeared in 1991/97 — kept the .lean key; metadata reflects the
-    // 1997 CUP reprint which is the standard reference.).
-    id: "fulton1991",
-    type: "book",
-    title: "Young Tableaux: With Applications to Representation Theory and Geometry",
-    author: [{ family: "Fulton", given: "William" }],
-    issued: { "date-parts": [[1997]] },
-    publisher: "Cambridge University Press",
-    "publisher-place": "Cambridge",
-    "collection-title": "London Mathematical Society Student Texts",
-    "collection-number": "35",
-    ISBN: "9780521567244",
-  }),
 
   // ── Fulton & Harris 1991 (Representation Theory: A First Course) ──
-  // Distinct from fulton1991 (Young Tableaux). Added during bib audit
+  // Distinct from fulton1997 (Young Tableaux). Added during bib audit
   // triage on 2026-05-19 because content/.../baryon-product-from-alt.lean
   // cites '[fulton1991] Representation Theory: A First Course, §2'
   // (i.e. Fulton-Harris); per user's "keep LMS w/ yt" directive, the
@@ -7099,29 +7029,6 @@ export const references: CSLData[] = [
   }),
 
   ref({
-    id: "halverson-1998-markov-weights",
-    library: {
-      docId: "arxiv-math-9806163v1",
-      dir: "library/arxiv-math-9806163v1",
-      pdf: "library/arxiv-math-9806163v1/9806163v1.pdf",
-      stage: "candidates",
-      pages: 23,
-      sections: 25,
-      arxiv: "math/9806163v1",
-    },
-    type: "article-journal",
-    title: "Weights of Markov Traces on Hecke Algebras",
-    author: [
-      { family: "Orellana", given: "Rosa C." },
-    ],
-    issued: { "date-parts": [[1998]] },
-    "container-title": "Journal of Algebra",
-    DOI: "10.1006/jabr.1998.7437",
-    URL: "https://arxiv.org/abs/math/9806163",
-    note: "arXiv:math/9806163; J. Algebra (1998), DOI 10.1006/jabr.1998.7437. AUTHOR CORRECTED 2026-06-04: this is R.C. ORELLANA's paper, not Halverson's — both the arXiv ID and the DOI resolve to Orellana, 'Weights of Markov Traces on Hecke Algebras'. The id 'halverson-1998-markov-weights' is a legacy misnomer kept to avoid re-keying 5 citers (MarkovTrace.lean, Hoefsmit.lean, hecke-branching-trace-decomposition.{lean,ts}, wedderburn-weight-canonical.ts); rename in a dedicated pass. FLAG: the hecke-branching citer invokes a 'Murnaghan–Nakayama-type rule', better served by [ram1991]/[hoefsmit1974] than this weights paper — review citation appropriateness separately.",
-  }),
-
-  ref({
     id: "franecki-kapranov-1999",
     library: {
       docId: "arxiv-math-9909088v1",
@@ -7333,17 +7240,6 @@ export const references: CSLData[] = [
 
   // ── Thurston — Princeton notes on 3-manifold geometry/topology ─
   // (merged from main via PR #736 — kept verbatim from origin/main)
-  ref({
-    id: "thurston1979",
-    type: "manuscript",
-    title: "The Geometry and Topology of Three-Manifolds",
-    author: [{ family: "Thurston", given: "William P." }],
-    publisher: "Princeton University (lecture notes)",
-    "publisher-place": "Princeton, NJ",
-    issued: { "date-parts": [[1979]] },
-    URL: "https://library.msri.org/books/gt3m/",
-    note: "Cited for the hyperbolic-structure theory of knot complements (§4)",
-  }),
 
   // ── Bokut & Chen — Gröbner-Shirshov bases (survey) ──────────────
   // (merged from main via PR #736 — kept verbatim from origin/main)
@@ -7725,6 +7621,15 @@ export const references: CSLData[] = [
   // ── Orellana 1999 — weights of Markov traces on Hecke algebras ─
   ref({
     id: "orellana1998",
+    library: {
+      docId: "arxiv-math-9806163v1",
+      dir: "library/arxiv-math-9806163v1",
+      pdf: "library/arxiv-math-9806163v1/9806163v1.pdf",
+      stage: "candidates",
+      pages: 23,
+      sections: 25,
+      arxiv: "math/9806163v1",
+    },
     type: "article-journal",
     title: "Weights of Markov traces on Hecke algebras",
     author: [
@@ -7736,6 +7641,14 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1999]] },
     URL: "https://arxiv.org/abs/math/9806163",
     note: "Verified 2026-06-28 (bib-cite-resolves): Orellana, 'Weights of Markov traces on Hecke algebras', Crelle's J. 508 (1999), 157–178; arXiv:math/9806163 (1998). Computes Markov-trace weights for Hecke algebras of type B and D. The id 'orellana1998' (arXiv submission year) is retained for cross-ref stability though the journal version is 1999. Journal DOI not captured in sandbox; arXiv URL is authoritative.",
+    // Merged 2026-08-16 with halverson-1998-markov-weights, which recorded
+    // the same paper (same title, author and arXiv id) against *Journal of
+    // Algebra* with DOI 10.1006/jabr.1998.7437. The two disagree on the
+    // journal. This entry survives because its note carries an explicit
+    // 2026-06-28 verification for Crelle 508 (1999) 157-178; the J. Algebra
+    // DOI is unresolved and was deliberately NOT carried over, rather than
+    // assert two venues for one paper. The merged id also named Halverson,
+    // who is not an author of it.
   }),
 
   // ── James 1984 — representation theory of S_n ─────────────────
@@ -7757,17 +7670,6 @@ export const references: CSLData[] = [
   }),
 
   // ── Klein 1884 — Vorlesungen über das Ikosaeder ───────────────
-  ref({
-    id: "klein1884vorlesungen",
-    type: "book",
-    title:
-      "Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade",
-    author: [{ family: "Klein", given: "Felix" }],
-    publisher: "B. G. Teubner",
-    "publisher-place": "Leipzig",
-    issued: { "date-parts": [[1884]] },
-    note: "Verified 2026-06-23 (doth): Klein's Vorlesungen — original treatise on the icosahedral group and the quintic, B. G. Teubner (Leipzig) 1884. Pre-DOI archival source. Cited in S5SO3FiberAction.lean. (An English translation by G. G. Morrice, 'Lectures on the Icosahedron', exists as a Dover reprint; this entry records the 1884 German original.) See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F.",
-  }),
 
   // ── Lusztig 1990 — canonical bases / Hecke algebras ───────────
   ref({
