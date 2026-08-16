@@ -1,6 +1,6 @@
 This data table supports the Cobalt-60 example (Example 7,
 ${}^{60}\mathrm{Co} \to {}^{60}\mathrm{Ni}$ $\beta^-$ decay) in
-[Heavy-atom worked examples](#tm-heavy-atom-examples), where it is the
+[Heavy-atom worked examples](#sec:tm-heavy-atom-examples), where it is the
 input to the shell-correction step; it is supporting data, not a
 free-standing argument.  Here $\tau(n)$ is the torus-knot Markov trace
 at outer-shell occupancy $n$ (the transfer weight for that shell), and

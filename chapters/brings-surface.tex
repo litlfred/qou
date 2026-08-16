@@ -19,6 +19,7 @@ These three observations are consequences of a single topological constraint: th
 \section{Physical regimes and limiting context}
 \label{sec:physical-regimes}
 \sectionannot{sec:physical-regimes}
+\phantomsection\label{sec:physical-regimes-preamble}
 We now develop physical regimes and limiting context, tracing the construction from the unit circle bundle onward.
 
 \phantomsection\label{ex:brings-surface}% compact-mode: block excluded
@@ -27,6 +28,7 @@ We now develop physical regimes and limiting context, tracing the construction f
 \section{Bring's surface algebraic substructure}
 \label{sec:bring-algebraic-substructure}
 \sectionannot{sec:bring-algebraic-substructure}
+\phantomsection\label{sec:bring-algebraic-substructure-preamble}
 This section develops the algebraic substructure of Bring's surface. The construction proceeds from the $\mathrm{SU}(2)$ generators.
 
 \begin{definition}[{$\mathrm{SU}(2)$ generators of $\mathrm{Dic}_3$}]
@@ -162,6 +164,7 @@ decomposition.  $\square$
 \section{Bring's surface as a QOU}
 \label{sec:brings-surface-qou}
 \sectionannot{sec:brings-surface-qou}
+\phantomsection\label{sec:brings-surface-qou-intro}
 The preamble establishes that three colors, a Reeb flow, and a $\chi = -6$ ledger force a unique surface. We now define that surface. We begin with Bring's surface (the $S_5$-symmetric quartic-and-quadric in $\mathbb{P}^4$), followed by its geometric realisations and physics interpretations. The central claim is the proposition that Bring's surface is a quantum observable universe. It constructs a QOU 4-tuple and computes the required invariants via the categorical Euler characteristic of $\mathcal{O}_q(\mathrm{SU}(2))$ and the Riemann–Hurwitz count for the canonical map $\Sigma_4 \to \mathbb{P}(V)$.
 
 We conclude by explicitly packaging the QOU 4-tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$ for downstream use. We then describe the braid-group action on the resolvents. The resolvent variables transform under $B_5$; the $S_5$-invariant combinations selected by that action furnish the color tube coordinates.
@@ -350,6 +353,7 @@ When Bring's curve is viewed as a branched cover $\mathcal{S}\to\mathbb{P}^1$, a
 \section{Color tube coordinates}
 \label{sec:color-tube-coords}
 \sectionannot{sec:color-tube-coords}
+\phantomsection\label{sec:color-tube-coords-intro}
 The braid-group action on the resolvents isolates three $S_5$-invariants. We now adopt those invariants as the coordinate system. We introduce the variables $c_r, c_g, c_b$ and their aggregates. We identify named combinations ($\hat c$, total charge) required for the subsequent analysis. We then reformulate the Bring quadric and cubic as identities among these aggregates.
 
 The three tubes correspond to the three color charges. Pure-color loci correspond to confinement. We specify the residual $C_5$ symmetry that survives the $S_5$ quotient. We then extract the intrinsic color cubic pairing. This pairing furnishes the defining datum of the elliptic structure $\mathcal{E}_q$ constructed in the next section.
@@ -390,6 +394,7 @@ The shift $\sigma = w_1 - z$ is distinguished. It measures the deviation of the 
 \section{Color fibration and elliptic curves}
 \label{sec:color-fibration-elliptic}
 \sectionannot{sec:color-fibration-elliptic}
+\phantomsection\label{sec:color-fibration-elliptic-intro}
 The intrinsic color cubic supplies the data to identify an elliptic curve over the color parameter. We establish this in the proposition that the generic color fibre carries the Weierstrass structure $\mathcal{E}_q$. The color elliptic curve exhibits self-duality, possessing a $T$-duality that pairs $q \leftrightarrow q^{-1}$. We translate the elliptic data back into the tube coordinates and demonstrate how the $T$-duality acts on the tubes themselves.
 
 The closing blocks isolate the confinement geometry. We identify the discriminant locus where the elliptic fibre degenerates. We extract the explicit constraint a pure-color state must satisfy. This structure underpins the bundle smoothness analysis on $\mathbb{P}^1$ in the next section.
@@ -483,6 +488,7 @@ As varieties, $R_z \cong G_z \cong B_z$ is isomorphic to the color elliptic fibe
 \section{Bundle structures and smoothness}
 \label{sec:brings-smoothness}
 \sectionannot{sec:brings-smoothness}
+\phantomsection\label{sec:brings-smoothness-intro}
 The color fibration is well-defined generically, but the geometry requires a smooth bundle to support the spectral resolvents. We package the color data as a spectral curve carrying a spinor bundle. We then establish that Bring's surface is smooth and that its projection singularities resolve intrinsically; no external blow-up is needed.
 
 The base-to-fibre interpretation dominates the middle of this section. The exceptional-divisor and Thurston-relaxation expositions situate the base manifold $M$ and the brane-point fibres $\mathcal{S}_p$ inside a single geometric framework. We introduce the Briggs–Klein affine chart for explicit computation and the radial projection of Bring's surface as its geometric counterpart.
@@ -537,6 +543,7 @@ While the projection map develops a ramification cusp, $\delta$ passes smoothly 
 The DFT mixes all five $x_j$ into every resolvent $w_k$ (\hyperref[rem:lagrange-resolvents]{Lagrange resolvents}). Thus no single $w_k$ vanishes at a branch point. The Briggs--Klein chart (\hyperref[def:briggs-klein-chart]{Briggs--Klein chart}) remains smooth throughout $0<r<\infty$. The radial parameter $r=\lvert w_1\rvert^2$ is regular on $\mathcal{S}$, and the $C_5$ orbits $w_k\mapsto\zeta^k w_k$ foliate the surface without fixed points. The infinite torsion and eigenvalue crossings visible in the base $\mathbb{P}^1(\mathbb{C})$ are artefacts of projecting away the internal degrees of freedom that the $w_k$ retain.
 \end{remark}
 
+\phantomsection\label{sec:approach-to-exceptional-divisor}
 \paragraph{Approach: from base $M$ to fibre $\mathcal{S}_p$}
 
 In the QOU archimedean tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$, the base manifold $M$ carries the smooth metric in which two free vortices propagate. As the vortex cores approach a brane point $p \in M$, the smooth metric becomes degenerate. The base coordinate ratio $z = \sqrt{q} - 1/\sqrt{q}$ drives the exceptional divisor $\mathcal{S}_p$ (\hyperref[def:exceptional-divisor]{state bundle fibre}) into the foreground. "Below Planck scale" in QOU is a \textbf{categorical} statement, not a metric one. The relevant geometry switches from the base $M$ to the fibre $\mathcal{S}_p$, where the morphisms are knot operators (\hyperref[def:knot-operator-energy]{knot-operator energy}).
@@ -551,6 +558,7 @@ The encounter unfolds in three moments:
 
 After moment (3), the encounter constitutes a knot-theoretic problem. The merged complement admits a hyperbolic structure (\hyperref[sec:thurston-relaxation]{Thurston relaxation}). The SDP/LP machinery of \hyperref[chap:nuclear-interactions]{Chapter 11} selects the lowest-energy link representative (SDP as thimble flow). Mostow rigidity (geometric confinement) makes the resulting topology—and hence the mass—discrete.
 
+\phantomsection\label{sec:thurston-relaxation}
 \paragraph{Thurston relaxation: SDP as a hyperbolic Newton solver}
 
 Once the two vortex cores merge inside a tubular neighbourhood $U \subset M$, the operative geometry is the complement $U \setminus K$. Thurston's hyperbolisation programme proves that, excluding a finite list of exceptions, $U \setminus K$ admits a complete finite-volume hyperbolic structure. A triangulation into ideal tetrahedra $\Delta_{z_k}$ and a system of \emph{gluing equations} in the shape parameters $z_k$ encode this structure.
@@ -581,6 +589,7 @@ Let $r=\lvert w_1\rvert^2$ denote the squared modulus of the first resolvent coo
 \section{Spectral resolvents and gauge structures}
 \label{sec:spectral-gauge}
 \sectionannot{sec:spectral-gauge}
+\phantomsection\label{sec:spectral-gauge-intro}
 With the smooth Bring surface and its cyclotomic reduction established, we construct the gauge data. We introduce the quaternionic spectral resolvents, tying the resolvent basis $\{\omega_k\}$ to the quaternionic structure on the spectral bundle. We state the algebraic identities these resolvents satisfy and specify the $\mathrm{Sp}(1)$ action that organises their evolution.
 
 We construct the Seiberg–Witten data on this basis. We parametrise the Seiberg–Witten differential by lepton generation. We compute the lepton mass integrals. We then provide the abelianisation required to evaluate those integrals via the nonabelian multiplicative integral on exceptional divisors and the Cartan reduction.
@@ -1016,6 +1025,7 @@ by direct expansion.  $\square$
 \section{The Descartes condition $\\chi = -6$}
 \label{sec:archimedean-condition-statement}
 \sectionannot{sec:archimedean-condition-statement}
+\phantomsection\label{sec:archimedean-condition-intro}
 The Descartes elliptic curve $\mathcal{E}_q$ names a structure. The Descartes condition selects its Euler characteristic. We explain the descent of the spectral data to a zero-dimensional locus. We state the condition $\chi(A) = -6$ on the algebraic substrate. The derivation chain illustrates how three colors, Reeb flow, and Calabi–Yau compatibility force this single value. We record concrete instances and the one-dimensional descent. We then compute the resulting genus.
 
 The lepton spectrum follows directly. We identify the lepton families with Reeb-orientation strata on Bring's curve and their chirality assignments with trefoil subgroups.
@@ -1060,6 +1070,7 @@ The Descartes condition gives $\mathrm{tr}(\mathrm{id}_A) = -6$.  Under the fibr
 \section{Descartes condition: leptons and chirality}
 \label{sec:archimedean-condition-leptons}
 \sectionannot{sec:archimedean-condition-leptons}
+\phantomsection\label{sec:archimedean-condition-leptons-preamble}
 The preceding sub-section stated the Descartes condition $\chi = -6$ and proved that its descent chain forces a maximally-descended genus. This sub-section extracts the immediate physical consequences: the lepton spectrum, the chirality assignment that distinguishes leptons from anti-leptons, the affine-light-cone parameterisation underlying the chirality measurement, and the trefoil-chirality correspondence that anchors the chirality assignment in braid data. The Brings-curve block closes the sub-section by pointing forward to the genus-completeness derivation that the next sub-section unfolds.
 
 \phantomsection\label{rem:archimedean-leptons}% compact-mode: block excluded
@@ -1088,6 +1099,7 @@ The chirality of the observable universe—manifest in the three colour charges 
 \section{Descartes condition: torus-knot generators and genus completeness}
 \label{sec:archimedean-condition-genus-completeness}
 \sectionannot{sec:archimedean-condition-genus-completeness}
+\phantomsection\label{sec:archimedean-condition-genus-preamble}
 Having identified the lepton spectrum and chirality assignment, we now determine which closed-braid generators populate the maximally-descended genus, and establish the completeness of this generation system. This completeness serves as the anchor for the lepton-spectrum derivation.
 
 \begin{proposition}[{Finiteness of the $T_{m,n}$ generator set}]
@@ -1328,6 +1340,7 @@ $\square$
 \section{The genus-ideal filtration}
 \label{sec:archimedean-condition-genus-completeness-genus-ideal-characterisation}
 \sectionannot{sec:archimedean-condition-genus-completeness-genus-ideal-characterisation}
+\phantomsection\label{sec:archimedean-condition-genus-completeness-genus-ideal-characterisation-preamble}
 Continuing the previous derivation, we now characterise the genus ideal—the set of categorical genus invariants isolated by the archimedean condition—as a finitely generated ideal identified by the Yekutieli leading coefficient. The leading coefficient fixes the generator set, while the genus filtration interprets the ideal as a structured cover of the torus-embeddable subspace. We conclude by showing that every torus-embeddable categorical knot lies in the generation closure of the genus ideal, making the Descartes condition equivalent to a finite combinatorial classification.
 
 \begin{lemma}[{Genus-filtration ideal in Hecke coordinates}]
@@ -1610,6 +1623,7 @@ landscape within the genus bound.
 \section{The unit particle as a cohomological defect}
 \label{sec:cohomological-defect}
 \sectionannot{sec:cohomological-defect}
+\phantomsection\label{sec:cohomological-defect-preamble}
 Where does matter arise? The Frobenius structure of $A$ is globally non-degenerate, but it can fail locally. Matter emerges where a non-degenerate Levi form obstructs the Frobenius pairing. The unit particle is the fundamental cohomological defect, a generator of the local cohomology at the singular point $z = 1$.
 
 \begin{definition}[{Matter as Frobenius failure via the Levi form}]
@@ -1671,6 +1685,7 @@ Because $\varTheta$ vanishes, the defect is maximally tangent to the contact dis
 \section{The Descartes theorem}
 \label{sec:descartes-theorem}
 \sectionannot{sec:descartes-theorem}
+\phantomsection\label{sec:descartes-theorem-intro}
 The atomic and nuclear spectra derived previously are consequences of a single structural choice: $\chi(A) = -6$. The Descartes theorem formalizes this observation into a uniqueness statement, proving that among quantum observable universes satisfying the Descartes condition, Bring's surface is the terminal object.
 
 \begin{theorem}[{Descartes theorem}]
@@ -1718,6 +1733,7 @@ In the realization tower of the motivic substrate, the perpetual non-vanishing $
 \section{Orbital Symmetry and Cohomological Embedding}
 \label{sec:orbital-symmetry-embedding}
 \sectionannot{sec:orbital-symmetry-embedding}
+\phantomsection\label{sec:orbital-symmetry-embedding-intro}
 We now determine which cohomological room the topological mass spectrum occupies. The orbital space at shell $n$ identifies as a space of sections of the normal bundle, allowing quantum numbers to be read directly from Fourier decompositions. We demonstrate that torus knot representations exhaust the first cohomology of the genus-$g$ surface, ensuring the knot generators fill the available cohomological space without redundancy.
 
 \begin{conjecture}[{The orbital space at shell $n$ is the space of framing-$k$ sections of the normal bundle}]
@@ -1972,6 +1988,7 @@ This concludes the Descartes-universe chapter, fixing Bring's surface ($\chi = -
 \section{Bring fibres, the inter-nucleon channel, and charge conjugation}
 \label{sec:brings-surface-orphan-reconnect}
 \sectionannot{sec:brings-surface-orphan-reconnect}
+\phantomsection\label{sec:brings-surface-orphan-reconnect-intro}
 Two views of the Bring fibre — at the substrate parameter $q_0$ and at its square root $q_0^{1/2}$ — set up the geometry that the remaining blocks of this section use. The inter-nucleon channel is then read as a colour tube on that surface, and charge conjugation is identified with the colour-sheet flavour swap.
 
 \begin{figure}[htbp]
