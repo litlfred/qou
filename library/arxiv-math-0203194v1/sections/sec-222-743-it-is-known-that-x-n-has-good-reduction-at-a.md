@@ -7,7 +7,7 @@ section_number: 7.4.3
 pages: 104-105
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODU"
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
 ---
 does not divide the discriminant d(B) of B nor the level N (Y. Morita).
 If instead p is critical (but still does not divide N ), as we shall assume

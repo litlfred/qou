@@ -7,7 +7,7 @@ section_number: null
 pages: 2-4
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
-doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
+doc_brief: "Seiberg-Witten Integrable Systems Ron Y. Donagi Contents Introduction §1. Some physics background Electromagnetism Yang-Mills theory Quantization Supersymmetry N = 2 super Yang-Mills — 17 sections: RO"
 ---
 Introduction
 While many mathematicians are aware of the monopole equatio ns [ W] and of

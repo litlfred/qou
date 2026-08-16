@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: ant-v14-n7-s-p01.pdf
 source_sha256: 976199bfca4ac086
-doc_brief: "p-adic Asai L-functions of Bianchi modular forms David Loeﬄerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction to"
+doc_brief: "p-adic Asai L-functions of Bianchi modular forms David Loefflerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction"
 ---
 1A. Background. Several of the most important conjectures in modern number theory, such as the
 Bloch–Kato and Beilinson conjectures, relate the special values of L-functions to arithmetic data. In

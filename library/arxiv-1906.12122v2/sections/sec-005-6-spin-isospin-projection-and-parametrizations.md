@@ -7,7 +7,7 @@ section_number: 6
 pages: 13-15
 source_pdf: 1906.12122v2.pdf
 source_sha256: 955e3eda48672e28
-doc_brief: "Nuclear eﬀective ﬁeld theory: status and perspectives H.-W. Hammer∗ Institut f¨ ur Kernphysik, Technische Universit¨ at Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI — 34 sections"
+doc_brief: "Nuclear effective field theory: status and perspectives H.-W. Hammer∗ Institut für Kernphysik, Technische Universität Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI — 34 sections: C"
 ---
 For a ﬁxedNN channel it is convenient to use the eﬀec-
 tive Lagrangian (11), withψ a nucleon ﬁeld for which the

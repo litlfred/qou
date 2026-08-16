@@ -7,7 +7,7 @@ section_number: 1.2
 pages: 1-4
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
-doc_brief: "A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
+doc_brief: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
 ---
 1.3. Acknowledgement 4
 2. The zeta function of a graph and the quantum MacMahon Master Theorem 4

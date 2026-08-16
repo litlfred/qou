@@ -7,7 +7,7 @@ section_number: null
 pages: 39-41
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
-doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
+doc_brief: "Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden 2Theory Group, SLAC National Accelerator Laborat"
 ---
 The properties of the CHL models under the T-dualities in type IIA and heterotic frame,
 described in section 3, generalize to the case whereλ > 1. The heterotic and type IIA

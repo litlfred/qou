@@ -7,7 +7,7 @@ section_number: 5.1.3
 pages: 180-180
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODU"
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
 ---
 the upper half-plane bijectively onto a curvilinear triang leT with vertices
 τ (0),τ (1),τ (∞) and respective angles π/e0,π/e 1,π/e∞. By the Schwarz re-

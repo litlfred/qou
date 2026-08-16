@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
-doc_brief: "VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER V ARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is"
+doc_brief: "VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is"
 ---
 It is a very important question in the knot theory to ﬁnd the ge ometric and topological inter-
 pretation of the Jones polynomial of a knot. Observed by Kash aev [Kas], H. Murakami and J.

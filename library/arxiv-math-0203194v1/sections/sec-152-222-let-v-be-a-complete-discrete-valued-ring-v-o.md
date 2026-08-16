@@ -7,7 +7,7 @@ section_number: 2.2.2
 pages: 77-78
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODU"
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
 ---
 (0,p ). Let Nil v denote the category of locally noetherian v-schemes S on
 which p is locally nilpotent. For any S in Nil v, the ideal of deﬁnition J =

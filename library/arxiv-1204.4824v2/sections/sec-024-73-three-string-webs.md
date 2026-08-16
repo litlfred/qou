@@ -7,7 +7,7 @@ section_number: 7.3
 pages: 45-46
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 When we go beyond K = 2, we encounter many new and varied phenomena.
 The simplest new possibility is shown in Figure 29. Near the critical phase ϑ =ϑc, we

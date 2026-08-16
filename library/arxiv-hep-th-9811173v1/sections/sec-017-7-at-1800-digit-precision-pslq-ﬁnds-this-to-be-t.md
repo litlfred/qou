@@ -7,7 +7,7 @@ section_number: 7
 pages: 11-11
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the"
+doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace fieldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of th"
 ---
 lation between the 6 Clausen values. The combination on the left is sele cted by hyperbolic
 geometry; that on the right by the Dirichlet character. Thus the r ational Dedekind-zeta

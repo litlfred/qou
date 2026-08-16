@@ -7,7 +7,7 @@ section_number: 16
 pages: 23-23
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the"
+doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace fieldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of th"
 ---
 crossings, in territory charted by Dale Rolfsen [26] and predecess ors.
 Table 23 gives the hyperbolic alternating and non-alternating 22 knots of maximal sym-

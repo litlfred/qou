@@ -7,7 +7,7 @@ section_number: 3.5
 pages: 8-8
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 some EEA, E#I. In view of (3.3.3) E generates a two-dimensional Hopf 
 subalgebra, say,/~ of A with the basis { 1, E}. Clearly, .4 = A | E in the class of Hopf 

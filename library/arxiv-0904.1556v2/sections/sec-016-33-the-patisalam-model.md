@@ -7,7 +7,7 @@ section_number: 3.3
 pages: 48-55
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
-doc_brief: "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
+doc_brief: "The Algebra of Grand Unified Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
 ---
 Next we turn to a uniﬁed theory that is not so ‘grand’: its gauge grou p is not a simple
 Lie group, as it was for the SU(5) and Spin(10) theories. This theor y is called the

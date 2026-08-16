@@ -7,7 +7,7 @@ section_number: 2.4
 pages: 6-7
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
-doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
+doc_brief: "Équations aux q-différences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 sait que toute transformation de jauge lin´eaire inversible X = FY d´eﬁnit un
 nouveau syst`eme δY = BY ,o `u B = −F −1δF + F −1AF. Un rapide calcul

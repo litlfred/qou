@@ -7,7 +7,7 @@ section_number: 6
 pages: 8-8
 source_pdf: 0104249v1.pdf
 source_sha256: c2fcdefc73b8df24
-doc_brief: "IRRA TIONALITY OF V ALUES OF ZET A-FUNCTION W. Zudilin 1. Introduction. The irrationality of values of the zeta-function ζ(s) at odd integers s ≥ 3 is one of the most attractive problems in number the"
+doc_brief: "IRRA TIONALITY OF VALUES OF ZETA-FUNCTION W. Zudilin 1. Introduction. The irrationality of values of the zeta-function ζ(s) at odd integers s ≥ 3 is one of the most attractive problems in number theor"
 ---
 then there exists at least one irrational number among value s of ζ(s), where s is odd
 and b < s < a+b. Taking a = 19, b = 3, c = 3; a = 33, b = 5, c = 3, and

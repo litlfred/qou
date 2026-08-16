@@ -7,7 +7,7 @@ section_number: 3
 pages: 27-41
 source_pdf: 1803.04009v2.pdf
 source_sha256: 8b34299b739cd2b0
-doc_brief: "Prepared for submission to JHEP IPMU-18-0045 — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
+doc_brief: "Symmetry enhancement and closing of knots in 3d/3d correspondence — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
 ---
 Using the proposed 6d interpretation of TDGG[N,XA] in (2.84), we will determine the
 symmetry enhancement pattern of theU(1)XA symmetry associated to the knot based on

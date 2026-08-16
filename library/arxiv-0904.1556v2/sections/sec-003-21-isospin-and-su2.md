@@ -7,7 +7,7 @@ section_number: 2.1
 pages: 6-13
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
-doc_brief: "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
+doc_brief: "The Algebra of Grand Unified Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
 ---
 Because like charges repel, it is remarkable that the atomic nucleus s tays together.
 After all, the protons are all positively charged and are repelled fro m each other

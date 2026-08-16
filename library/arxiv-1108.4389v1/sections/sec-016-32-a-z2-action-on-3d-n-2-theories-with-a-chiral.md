@@ -7,7 +7,7 @@ section_number: 3.2
 pages: 24-25
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
-doc_brief: "b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 ﬁeld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions a"
+doc_brief: "b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 field theories associated to 3-manifolds can be thought of as theories that describe boundary conditions"
 ---
 The basic “matter” action on 3d N = 2 theories begins with a theory that has a coupling to
 a background 3d chiral multiplet φ. In practice, what we mean is a choice of chiral operator

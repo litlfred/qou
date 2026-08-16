@@ -7,7 +7,7 @@ section_number: 3.4
 pages: 10-10
 source_pdf: 0006156v1.pdf
 source_sha256: b799d4ef150291cf
-doc_brief: "STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with"
+doc_brief: "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with"
 ---
 tion 1.6 gives an idea why. In fact, they are better served by t hose cross-
 ratio-splitting variables h and Hirota’s lattice Liouville equation which we

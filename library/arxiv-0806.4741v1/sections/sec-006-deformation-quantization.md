@@ -7,7 +7,7 @@ section_number: null
 pages: 11-13
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
-doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium"
+doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium — We"
 ---
 3.1 The space of star products on the Poincar´ e orbit M := SO(1, 1)× R2/R
 It is proven in [30] that every Poincar´ e invariant star product on M is realized as a formal asymptotic

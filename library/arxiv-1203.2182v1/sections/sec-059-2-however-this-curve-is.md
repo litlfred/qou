@@ -7,7 +7,7 @@ section_number: 2
 pages: 62-62
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
-doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero"
+doc_brief: "Volume Conjecture: Refined and Categorified — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the"
 ---
 completely diﬀerent than the reﬁned curve which we found now i n (4.22). It is desirable to
 understand the relation between these two deformed classic al curves, and between the two

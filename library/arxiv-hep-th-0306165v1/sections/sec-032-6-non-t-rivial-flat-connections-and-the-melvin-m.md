@@ -7,7 +7,7 @@ section_number: 6
 pages: 45-45
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
-doc_brief: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an inﬁnite-di"
+doc_brief: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an infinite-d"
 ---
 The volume conjecture and its generalization discussed in t he previous section imply
 that, for generic values of a, the asymptotic behavior of the colored Jones polynomial is

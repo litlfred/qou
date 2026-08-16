@@ -7,7 +7,7 @@ section_number: 2.2
 pages: 12-14
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
-doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
+doc_brief: "Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden 2Theory Group, SLAC National Accelerator Laborat"
 ---
 In this paper, we discuss certain four dimensional CHL models with16 supersymmetries.
 These models are obtained by orbifolding the heterotic string onT 6≡ T 4×S1× ˜S1 (or,

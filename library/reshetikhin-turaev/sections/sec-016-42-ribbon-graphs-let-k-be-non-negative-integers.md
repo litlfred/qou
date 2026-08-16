@@ -7,7 +7,7 @@ section_number: 4.2
 pages: 8-10
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 oriented surface S imbedded in R 2 x [0,1] and decomposed as the union of finite 
 collection of bands and annuli, each band being provided with a "type" 1 or 2, so 

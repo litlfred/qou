@@ -7,7 +7,7 @@ section_number: 6
 pages: 13-19
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
-doc_brief: "The Stokes phenomenon for the Ramanujan’s q-diﬀerence equation and its higher order extension Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu - jan equation between the"
+doc_brief: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu - jan equation between"
 ---
 In this section, we show a connection formula of the divergent serie s 2ϕ 0.
 This series appears in the second solution of the Ramanujan equatio n (12).

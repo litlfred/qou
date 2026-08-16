@@ -7,7 +7,7 @@ section_number: 6.2.2
 pages: 196-200
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODU"
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
 ---
 q.g.(1 +i)ǫ2(3i +j +ij)ǫ3,
 whereq∈ Q, g∈SL1(B), ǫm = 0 or 1, cf. [Mic84]. The quotient group

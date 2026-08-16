@@ -7,7 +7,7 @@ section_number: 3
 pages: 2-3
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
-doc_brief: "C. R. Acad. Sci. Paris, Ser. I 349 (2011) 1037–1039 Contents lists available at SciVerse ScienceDirect — Van der Put and Reversat described the form of a pure q-difference module with non integral"
+doc_brief: "C. R. Acad. Sci. Paris, Ser. I www.sciencedirect.com Équations différentielles Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put"
 ---
 3. Opérateurs de Stokes
 A un module aux q-différences M = (K n,Φ A) où, sans perte de généralité, la matrice A est peut-être prise dans

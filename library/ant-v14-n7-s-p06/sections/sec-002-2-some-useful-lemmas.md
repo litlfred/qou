@@ -7,7 +7,7 @@ section_number: 2
 pages: 6-11
 source_pdf: ant-v14-n7-s-p06.pdf
 source_sha256: 4881141ef679dd5a
-doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function ﬁelds — 24 sections: Introduction and statement of resu; L′(; Some useful lemmas"
+doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function fields — 24 sections: Introduction and statement of resu; L′(; Some useful lemmas"
 ---
 In this section we will gather a few useful lemmas we will need throughout the paper.
 Recall that q is a prime power with q≡ 1(mod 4) and(q, 6)= 1. Let M denote the set of monic

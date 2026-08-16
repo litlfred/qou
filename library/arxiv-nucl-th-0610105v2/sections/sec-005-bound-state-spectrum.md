@@ -7,7 +7,7 @@ section_number: null
 pages: 7-10
 source_pdf: 0610105v2.pdf
 source_sha256: 5f3bd6d31a419d4d
-doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut f¨ ur Strahlen- und Kernphysik (Theori e) — Few-body systems with large scattering length"
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut für Strahlen- und Kernphysik (Theori e) — Few-body systems with large scattering length"
 ---
 spectrum in detail, since such a discussion can be found in Refs. [3, 7, 12].
 A. Bound State Spectrum

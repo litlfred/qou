@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-5
 source_pdf: 2008.09788v2.pdf
 source_sha256: 460f4f5432cb1f0c
-doc_brief: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETR Y — This paper surveys results related to well-known works of B. Plotkin and V."
+doc_brief: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY — This paper surveys results related to well-known works of B. Plotkin and V."
 ---
 2. Model-theoretical aspects 5
 2.1. Algebraic geometry over algebraic systems 5

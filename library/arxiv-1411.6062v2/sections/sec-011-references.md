@@ -7,7 +7,7 @@ section_number: null
 pages: 16-18
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
-doc_brief: "EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
+doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
 ---
 [AK] Jørgen E. Andersen and Rinat M. Kashaev, Complex Quantum Chern-Simons , arXiv:1409.1208,
 Preprint 2014.

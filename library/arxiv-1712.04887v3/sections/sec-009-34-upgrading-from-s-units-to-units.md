@@ -7,7 +7,7 @@ section_number: 3.4
 pages: 20-20
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
-doc_brief: "BLOCH GROUPS, ALGEBRAIC K-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
+doc_brief: "BLOCH GROUPS, ALGEBRAICK-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
 ---
 Lemma 3.4.
 Lemma 3.5. Suppose that any prime divisor p ofn is odd and divides neither the discrimi-

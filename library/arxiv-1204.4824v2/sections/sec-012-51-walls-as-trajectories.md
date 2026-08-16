@@ -7,7 +7,7 @@ section_number: 5.1
 pages: 23-23
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Suppose theS-wallp supports the charge ¯a∈ Γij (by which we mean more precisely that
 every pointz∈p supports a charge ¯a(z)∈ Γij(z,z )). Then e−iϑZ¯a is real everywhere along

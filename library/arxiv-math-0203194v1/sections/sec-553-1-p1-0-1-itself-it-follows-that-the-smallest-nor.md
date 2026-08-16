@@ -7,7 +7,7 @@ section_number: 1
 pages: 205-206
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODU"
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
 ---
 the discrete group ∆ 2(2, 4, 6) containing ¯γ1, ¯γ∞ is ∆ 2(2, 4, 6) itself. It thus
 suﬃces to show that if we where in the case D6∗D 2 D4∼

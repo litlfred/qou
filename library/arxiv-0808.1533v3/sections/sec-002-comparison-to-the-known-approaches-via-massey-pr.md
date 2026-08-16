@@ -7,7 +7,7 @@ section_number: null
 pages: 25-29
 source_pdf: 0808.1533v3.pdf
 source_sha256: 3e003cc35a4e5711
-doc_brief: "The third order helicity of magnetic ﬁelds via link maps. R. Komendarczyk ∗† — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us"
+doc_brief: "The third order helicity of magnetic fields via link maps. R. Komendarczyk ∗† — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us"
 ---
 products.
 In several prior works [5, 13, 25, 27] helicities were developed via th e Massey product for-

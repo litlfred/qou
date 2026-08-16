@@ -7,7 +7,7 @@ section_number: 2.2.1
 pages: 16-16
 source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
-doc_brief: "Non-Abelian Stokes theorem in action Bogus/suppress law Broda1 Department of Theoretical Physics University of /suppress L´ od´ z Pomorska 149/153 PL 90–236 /suppress L´ od´ z Poland — In this short"
+doc_brief: "Non-Abelian Stokes theorem in action Bogus/suppress law Broda1 Department of Theoretical Physics University of /suppress Lódź Pomorska 149/153 PL 90–236 /suppress Lódź Poland — In this short review"
 ---
 approach. In the literature, the both approaches occur in few, a bit diﬀerent,
 incarnations. Also, the both have found applications in diﬀerent are as of math-

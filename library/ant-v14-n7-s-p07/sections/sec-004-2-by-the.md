@@ -7,7 +7,7 @@ section_number: 2
 pages: 12-14
 source_pdf: ant-v14-n7-s-p07.pdf
 source_sha256: c5a749ef6be194fd
-doc_brief: "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds — 7 sections: Introduction; For the similar Theorem 1.7, the 𝓁; Main theorem and proof"
+doc_brief: "Nonvanishing of hyperelliptic zeta functions over finite fields — 7 sections: Introduction; For the similar Theorem 1.7, the 𝓁; Main theorem and proof"
 ---
 This identiﬁcation is equivariant for the Frobenius action on both sides, so it allows us to describe the
 mod 2 Galois representation afforded by J(C) in terms of the permutationπ which Frobenius induces on

@@ -7,7 +7,7 @@ section_number: 10
 pages: 10-12
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
-doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
+doc_brief: "Seiberg-Witten Integrable Systems Ron Y. Donagi Contents Introduction §1. Some physics background Electromagnetism Yang-Mills theory Quantization Supersymmetry N = 2 super Yang-Mills — 17 sections: RO"
 ---
 transform as a scalar under p0. This is unsatisfactory, since some free theories (e.g.
 of one real scalar ﬁeld plus one real vector ﬁeld, [ F r]; such theories are not covered

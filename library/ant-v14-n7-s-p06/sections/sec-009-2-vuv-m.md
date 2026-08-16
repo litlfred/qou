@@ -7,7 +7,7 @@ section_number: 2
 pages: 21-22
 source_pdf: ant-v14-n7-s-p06.pdf
 source_sha256: 4881141ef679dd5a
-doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function ﬁelds — 24 sections: Introduction and statement of resu; L′(; Some useful lemmas"
+doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function fields — 24 sections: Introduction and statement of resu; L′(; Some useful lemmas"
 ---
 )
 uniformly for|α|,|β|≤ 1/g, where M(u,v, m) and V(u,v, m) are given by (4-9) and (4-11) respectively.

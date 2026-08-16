@@ -7,7 +7,7 @@ section_number: null
 pages: 16-16
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
-doc_brief: "EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
+doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
 ---
 The quantum dilogarithm Φ b(x) is deﬁned by [ Fad95]
 (75) Φ b(x) = (e2πb(x+cb); q)∞

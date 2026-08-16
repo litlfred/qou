@@ -7,7 +7,7 @@ section_number: 5.1
 pages: 8-9
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
-doc_brief: "A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
+doc_brief: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
 ---
 with r + 1 crossings. We order the arcs of K so that they appear in increasing order as we walk in the
 direction of the knot, and we denote by K the long knot obtained by breaking the arc ar+1. We also order

@@ -7,7 +7,7 @@ section_number: 3
 pages: 7-8
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the"
+doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace fieldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of th"
 ---
 Now we turn to the study of cusped manifolds, complementary to kn ots and links. Pack-
 aged with SnapPea [21], there are the 4,815 orientable cusped manifo lds of the Hildebrand–

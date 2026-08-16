@@ -7,7 +7,7 @@ section_number: null
 pages: 22-26
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
-doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium"
+doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium — We"
 ---
 1 Group type structures. To obtain the expressions (33) and (34), we proceed as follows. Consider
 for instance the hyperbolic plane D = SL2(R)/SO(2) =: G/K. Consider the following usual presentation

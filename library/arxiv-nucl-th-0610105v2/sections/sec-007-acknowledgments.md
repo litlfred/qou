@@ -7,7 +7,7 @@ section_number: null
 pages: 13-14
 source_pdf: 0610105v2.pdf
 source_sha256: 5f3bd6d31a419d4d
-doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut f¨ ur Strahlen- und Kernphysik (Theori e) — Few-body systems with large scattering length"
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut für Strahlen- und Kernphysik (Theori e) — Few-body systems with large scattering length"
 ---
 We thank Eric Braaten for discussions. This research was support ed by the U.S. Depart-
 ment of Energy under grant DE-FG02-93ER40756, by the DFG thr ough funds provided to

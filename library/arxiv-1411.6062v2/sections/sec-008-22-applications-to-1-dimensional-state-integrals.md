@@ -7,7 +7,7 @@ section_number: 2.2
 pages: 10-13
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
-doc_brief: "EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
+doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
 ---
 section we prove Theorem 1.1. Fix integers A and B with B > A > 0. The values of
 particular interest are ( A, B ) = (1 , 2) and (1 , 3) which correspond to the state-integrals of

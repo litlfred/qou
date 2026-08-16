@@ -7,7 +7,7 @@ section_number: 2
 pages: 3-9
 source_pdf: 1-s2.0-S0097316524000426-main.pdf
 source_sha256: 76a8ab857163aa09
-doc_brief: "Journal of Combinatorial Theory, Series A 206 (2024) 105903 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A journal homepage: www.elsevier.com/locate/jcta — 7 secti"
+doc_brief: "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions Olivia X.M. Yao — 7 sections: Proof of a conjecture of Ballantin; Introduction; Proofs of Theorem 1.3 and Coroll"
 ---
 In order to prove Conjecture 1.1, we need a formula of p3(n) due to Cayley [5], where 
 p3(n) denotes the number of partitions of n into parts not exceeding 3. The generating 

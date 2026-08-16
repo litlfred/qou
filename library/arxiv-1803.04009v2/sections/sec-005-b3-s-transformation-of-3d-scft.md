@@ -7,7 +7,7 @@ section_number: null
 pages: 52-59
 source_pdf: 1803.04009v2.pdf
 source_sha256: 8b34299b739cd2b0
-doc_brief: "Prepared for submission to JHEP IPMU-18-0045 — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
+doc_brief: "Symmetry enhancement and closing of knots in 3d/3d correspondence — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
 ---
 Now it is clear why theSU (2) andSO(3) types are exchanged under the Gaiotto-Witten’s
 S∈ SL(2, Z) transformation of 3d SCFT. We start from some 3d theoryT . Then, theS

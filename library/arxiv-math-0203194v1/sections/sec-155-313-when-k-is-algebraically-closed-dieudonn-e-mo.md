@@ -7,7 +7,7 @@ section_number: 3.1.3
 pages: 79-79
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODU"
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
 ---
 pletely classiﬁed by Dieudonn´ e (this provides a classiﬁca tion of p-divisible
 groups overk up to isogeny). They are classiﬁed by their slopesλ∈ [0, 1]∩Q

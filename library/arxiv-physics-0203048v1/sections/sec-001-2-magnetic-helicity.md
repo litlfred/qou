@@ -7,7 +7,7 @@ section_number: 2
 pages: 2-4
 source_pdf: 0203048v1.pdf
 source_sha256: 47204f32280e91a3
-doc_brief: "Towards a third-order topological invariant for magnetic ﬁelds — An expression for a third-order link integral of three magne tic ﬁelds is presented."
+doc_brief: "Towards a third-order topological invariant for magnetic fields — An expression for a third-order link integral of three magne tic ﬁelds is presented."
 ---
 in recent years (see e.g. Brown et al 1999). Magnetic helicity, which measures the
 linkage of magnetic ﬂux, is only a lowest order topological measure. I t fails for instance

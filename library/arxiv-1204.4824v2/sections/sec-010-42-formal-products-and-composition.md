@@ -7,7 +7,7 @@ section_number: 4.2
 pages: 20-20
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Suppose a and b are the relative homology classes of two open paths on ˜Σ. If the end
 of a coincides with the start of b, we let a +b denote the relative homology class of the

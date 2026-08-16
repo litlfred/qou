@@ -7,7 +7,7 @@ section_number: 4
 pages: 3-4
 source_pdf: squier-burau-unitary-1984.pdf
 source_sha256: 5087ee3cb48679d1
-doc_brief: "PROCEEDINGS OF THE AMERICAN MATHEMATICAL SOCIETY — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
 ---
 obtained by substituting for t any complex number of norm 1. Then p becomes the
 usual complex conjugate of p. Let rk denote a primitive k th root of unity and let ß(k)

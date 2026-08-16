@@ -7,7 +7,7 @@ section_number: 5
 pages: 24-27
 source_pdf: ant-v14-n7-s-p01.pdf
 source_sha256: 976199bfca4ac086
-doc_brief: "p-adic Asai L-functions of Bianchi modular forms David Loeﬄerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction to"
+doc_brief: "p-adic Asai L-functions of Bianchi modular forms David Loefflerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction"
 ---
 In the previous sections, we have deﬁned compatible systems of classes in the Betti cohomology of
 the spaces Y∗

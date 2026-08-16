@@ -7,7 +7,7 @@ section_number: 22
 pages: 22-24
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
-doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm V alues at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
+doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm Values at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
 ---
 N 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
 δ 1 1 1 1 1 2 2 3 2 3 3 5 3 6 4 5 4

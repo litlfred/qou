@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: ant-v14-n7-s-p06.pdf
 source_sha256: 4881141ef679dd5a
-doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function ﬁelds — 24 sections: Introduction and statement of resu; L′(; Some useful lemmas"
+doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function fields — 24 sections: Introduction and statement of resu; L′(; Some useful lemmas"
 ---
 The values of L-functions at the central point of the critical strip have been the subject of considerable
 interest in recent years. One way to study these central values is by considering moments in families

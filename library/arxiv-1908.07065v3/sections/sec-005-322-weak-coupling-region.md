@@ -7,7 +7,7 @@ section_number: 3.2.2
 pages: 15-18
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
-doc_brief: "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN ="
+doc_brief: "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills"
 ---
 Let us now consider the region outside the curve of marginal stability. The spectrum consists of
 dyons with charge±γn, where

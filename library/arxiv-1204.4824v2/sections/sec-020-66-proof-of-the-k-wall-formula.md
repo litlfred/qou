@@ -7,7 +7,7 @@ section_number: 6.6
 pages: 40-42
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Here we provide the proofs omitted in §6.3.
 First let us explain why L(γ) as deﬁned in (6.12) is indeed a 1-cycle, i.e. has no

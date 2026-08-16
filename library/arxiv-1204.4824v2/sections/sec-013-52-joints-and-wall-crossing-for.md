@@ -7,7 +7,7 @@ section_number: 5.2
 pages: 23-30
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Deﬁne a joint to be a point z ∈ C where at least two S-walls intersect. A joint thus
 supports at least two charges, say ¯a∈ Γij(z,z ) and ¯b∈ Γkl(z,z ).

@@ -7,7 +7,7 @@ section_number: 7
 pages: 34-34
 source_pdf: BSMF_2002__130_3_457_0.pdf
 source_sha256: 63f79235d0c13ba8
-doc_brief: "3 .W e c l a s s i f y h y p e r i d e a l p o l y h e d r a , u p t o i s o m e t r i e s o f 3 ,i nt e r m so ft h e i r combinatorial type and of their dihedral angles. R´esum´e (Poly`edres hyperid"
+doc_brief: "3 .W e c l a s s i f y h y p e r i d e a l p o l y h e d r a , u p t o i s o m e t r i e s o f 3 ,i nt e r m so ft h e i r combinatorial type and of their dihedral angles. Résumé (Polyèdres hyperidéau"
 ---
 We are now ready to complete the pro of of Theorems 1 and 2, by considering
 again the map Θ : PΓ → KΓ ⊂ RE ,w h i c ht oah y p e r i d e a lp o l y h e d r o na s s o c i a t e s

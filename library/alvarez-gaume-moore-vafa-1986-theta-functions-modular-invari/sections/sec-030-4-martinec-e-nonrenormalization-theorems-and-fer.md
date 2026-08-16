@@ -7,7 +7,7 @@ section_number: 4
 pages: 38-39
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
-doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
+doc_brief: "Commun. Math. Phys. 106, 1-40 (1986) Mathematical Physics© Springer-Verlag 1986 — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some"
 ---
 preprint
 5. Gross, D.J., Harvey, J.A., Martinec, E., Rohm, R.: Phys. Rev. Lett. 54,502 (1985);Nucl. Phys.

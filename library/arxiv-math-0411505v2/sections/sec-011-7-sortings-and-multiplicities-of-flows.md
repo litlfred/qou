@@ -7,7 +7,7 @@ section_number: 7
 pages: 12-13
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
-doc_brief: "A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
+doc_brief: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
 ---
 7.1. Sortings. In this section we introduce one of our key tools, which is a categoriﬁ cation of multiplicities
 of the ﬂows on GK . Let f be a ﬂow on GK. If e is an edge of GK then we let F (e)⊂ F be the set of f (e)

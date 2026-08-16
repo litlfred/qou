@@ -7,7 +7,7 @@ section_number: 2.16
 pages: 23-24
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
-doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et"
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ Résumé.Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le grou"
 ---
 base ` a k′”: M ↦→M(k′) de MT(k) dans MT( k′). L’existence et les propri´ et´ es du morphisme
 “norme” en K-th´ eorie assurent par application de (0.4) que

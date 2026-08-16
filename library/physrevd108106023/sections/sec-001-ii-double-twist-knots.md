@@ -7,7 +7,7 @@ section_number: II
 pages: 2-5
 source_pdf: PhysRevD.108.106023.pdf
 source_sha256: 50c7980e88cd21a0
-doc_brief: "I. INTRODUCTION Knot-quiver correspondence (KQC) conjectured by Kucharski-Reineke-Stosic-Sulkowski [1] provides a new encoding of HOMFL Y -PT invariants of knots in terms of the representation theory"
+doc_brief: "I. INTRODUCTION Knot-quiver correspondence (KQC) conjectured by Kucharski-Reineke-Stosic-Sulkowski [1] provides a new encoding of HOMFLY-PT invariants of knots in terms of the representation theory of"
 ---
 by two variables, denoted as Kðp; −mÞ, illustrated in Fig. 1.
 Note p; m ∈ Zþ denote the number of full twists, and the

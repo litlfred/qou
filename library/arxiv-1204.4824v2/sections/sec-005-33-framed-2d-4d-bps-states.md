@@ -7,7 +7,7 @@ section_number: 3.3
 pages: 15-16
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Our approach to the BPS spectrum will involve an auxiliary device, theframed BPS states.
 These were introduced in the pure 4d context in [21], and in the 2d-4d context in [5]. Our

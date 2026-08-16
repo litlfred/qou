@@ -7,7 +7,7 @@ section_number: 2.3
 pages: 14-16
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
-doc_brief: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden — We consider"
+doc_brief: "Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden 2Theory Group, SLAC National Accelerator Laborat"
 ---
 In order for the model to be consistent, the level matching condition has to be satisﬁed,
 namely the eigenvalues ofL0− ¯L0 in eachgr-twisted sector should take values inZ/ ˆN Z,

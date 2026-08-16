@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0006051v1",
  "source_sha256": "10483e75bd3655ea",
- "brief": "logarithm”) in [Kon]. The ﬁnite logarithm is the case n = 1 of the n-th poly- logarithm li n ∈ Z/p [z] deﬁned by li n(z) = ∑ p− 1 k=1 zk/k n. In loc. cit. Kontsevich proved that the ﬁnite logarithm sa",
- "extended": "**logarithm”) in [Kon]. The ﬁnite logarithm is the case n = 1 of the n-th poly- logarithm li n ∈ Z/p [z] deﬁned by li n(z) = ∑ p− 1 k=1 zk/k n. In loc. cit. Kontsevich proved that the ﬁnite logarithm satisﬁes a 4-term functional equa tion, known as**\n\n8 pp, 8 sections.\n\n**Outline.** 2 AMNON BESSER; 1 Introduction; 2 The proof; 4 AMNON BESSER; 3 Another proof of the main result; 6 AMNON BESSER; 8 AMNON BESSER; References\n\n**Extracted claims (proposals, not verified).**\n- Proposition 2.3: Let α be a root of unity in X. Set ~Lin(α ) = p− n Lin(α ). Then\n- Proposition 3.1: We deﬁne a sequence of functions fk(z, S ) inductively as fol-\n- Corollary 2.2: Let α ∈ X be a root of unity. Then we have Lin(α ) ∈ pnW and\n- Lemma 2.4: In the situation above we have vp(ak) ≥ − vp(k!), where vp is the\n- Lemma 3.2: Suppose z ∈ X and w ∈ W . Then\n- Lemma 3.3: If z, S ∈ X and z ≡ S (mod p) then pk|Dfk(z, S ).",
+ "brief": "logarithm”) in [Kon]. The finite logarithm is the case n = 1 of the n-th poly- logarithm li n ∈ Z/p [z] defined by li n(z) = ∑ p− 1 k=1 zk/k n. In loc. cit. Kontsevich proved that the finite logarithm",
+ "extended": "**logarithm”) in [Kon]. The finite logarithm is the case n = 1 of the n-th poly- logarithm li n ∈ Z/p [z] defined by li n(z) = ∑ p− 1 k=1 zk/k n. In loc. cit. Kontsevich proved that the finite logarithm satisfies a 4-term functional equa tion, known as**\n\n8 pp, 8 sections.\n\n**Outline.** 2 AMNON BESSER; 1 Introduction; 2 The proof; 4 AMNON BESSER; 3 Another proof of the main result; 6 AMNON BESSER; 8 AMNON BESSER; References\n\n**Extracted claims (proposals, not verified).**\n- Proposition 2.3: Let α be a root of unity in X. Set ~Lin(α ) = p− n Lin(α ). Then\n- Proposition 3.1: We deﬁne a sequence of functions fk(z, S ) inductively as fol-\n- Corollary 2.2: Let α ∈ X be a root of unity. Then we have Lin(α ) ∈ pnW and\n- Lemma 2.4: In the situation above we have vp(ak) ≥ − vp(k!), where vp is the\n- Lemma 3.2: Suppose z ∈ X and w ∈ W . Then\n- Lemma 3.3: If z, S ∈ X and z ≡ S (mod p) then pk|Dfk(z, S ).",
  "tokens": {
   "brief": 50,
-  "extended": 225
+  "extended": 226
  },
  "sections": [
   {

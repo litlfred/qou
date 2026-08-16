@@ -7,7 +7,7 @@ section_number: 2.3.4
 pages: 27-28
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
-doc_brief: "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
+doc_brief: "The Algebra of Grand Unified Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
 ---
 There is one more fundamental force in the Standard Model: the strong force .
 We have already met this force, as the force that keeps the nucleu s together, but we

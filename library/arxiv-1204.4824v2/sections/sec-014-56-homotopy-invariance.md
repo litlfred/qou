@@ -7,7 +7,7 @@ section_number: 5.6
 pages: 30-34
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Now let us consider a key consistency check of our story so far. We have claimed on general
 physical grounds that F (℘,ϑ ) should be a homotopy invariant of ℘, or more precisely a

@@ -7,7 +7,7 @@ section_number: 3
 pages: 10-12
 source_pdf: ant-v14-n7-s-p07.pdf
 source_sha256: c5a749ef6be194fd
-doc_brief: "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds — 7 sections: Introduction; For the similar Theorem 1.7, the 𝓁; Main theorem and proof"
+doc_brief: "Nonvanishing of hyperelliptic zeta functions over finite fields — 7 sections: Introduction; For the similar Theorem 1.7, the 𝓁; Main theorem and proof"
 ---
 We can use the above reasoning to bound the number of quadratic L-functions over function ﬁelds
 which vanish at a speciﬁed point on the critical line. For the rest of this section we ﬁx an odd prime p

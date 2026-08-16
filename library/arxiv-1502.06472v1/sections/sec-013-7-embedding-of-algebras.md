@@ -7,7 +7,7 @@ section_number: 7
 pages: 8-13
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
-doc_brief: "Gr¨ obner-Shirshov bases and PBW theorems∗ L. A. Bokut † — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for"
+doc_brief: "Gröbner-Shirshov bases and PBW theorems∗ L. A. Bokut † — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for"
 ---
 In Bokut-Chen-Mo [23], we were dealing with the problem of embedding of countably
 generated associative and Lie algebras, groups, semigroups, Ω-a lgebras into (simple) 2-

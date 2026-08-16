@@ -7,7 +7,7 @@ section_number: 6
 pages: 5-7
 source_pdf: ant-v14-n7-s-p04.pdf
 source_sha256: 6abd838a4c933311
-doc_brief: "Elliptic curves over totally real cubic ﬁelds are modular — 10 sections: Introduction; Images mod 3, 5, 7 and modularity; Modular curves"
+doc_brief: "Elliptic curves over totally real cubic fields are modular — 10 sections: Introduction; Images mod 3, 5, 7 and modularity; Modular curves"
 ---
 We shall henceforth restrict our attention toX(b5, ns7). To simplify the notation we write X= X(b5, ns7).
 We denote the Jacobian of X by J= J(b5, ns7). The curve X and its Jacobian J are studied in Le

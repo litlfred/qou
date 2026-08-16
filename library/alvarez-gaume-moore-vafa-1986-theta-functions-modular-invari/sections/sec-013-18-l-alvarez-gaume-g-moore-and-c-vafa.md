@@ -7,7 +7,7 @@ section_number: 18
 pages: 18-18
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
-doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
+doc_brief: "Commun. Math. Phys. 106, 1-40 (1986) Mathematical Physics© Springer-Verlag 1986 — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some"
 ---
 case there are six odd spin structures associated to the theta functions
 ioj

@@ -7,7 +7,7 @@ section_number: 5.3
 pages: 18-19
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the"
+doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace fieldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of th"
 ---
 The rationale for the underlinings in (19) should now be clear: it was th ese 10 imaginary-
 quadratic ﬁelds that had been distinguished by the Feynman orthos chemes of Table 22,

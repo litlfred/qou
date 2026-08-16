@@ -7,7 +7,7 @@ section_number: 2
 pages: 3-8
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
-doc_brief: "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN ="
+doc_brief: "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills"
 ---
 particular against high order results for the expansion of the quantum periods. We also comment
 on how to use these TBA equations to compute Borel resummations of the quantum periods.

@@ -7,7 +7,7 @@ section_number: 1
 pages: 2-21
 source_pdf: 1803.04009v2.pdf
 source_sha256: 8b34299b739cd2b0
-doc_brief: "Prepared for submission to JHEP IPMU-18-0045 — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
+doc_brief: "Symmetry enhancement and closing of knots in 3d/3d correspondence — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
 ---
 2 3d N = 2 Superconformal ﬁeld theories labelled by 3-manifolds 4
 2.1 6d A1 (2,0) theory on 3-manifolds :T 6d and T 6d

@@ -7,7 +7,7 @@ section_number: 4
 pages: 34-34
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
-doc_brief: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an inﬁnite-di"
+doc_brief: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an infinite-d"
 ---
 As was already pointed out earlier, the deﬁnition of the Cher n-Simons path integral
 (1.4) is independent on the choice of metric on M , even in the quantum theory. Hence,

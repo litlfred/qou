@@ -7,7 +7,7 @@ section_number: null
 pages: 1-5
 source_pdf: 1302.0342v1.pdf
 source_sha256: ec2ca6ba7896456d
-doc_brief: "Tying knots in light ﬁelds — 1 sections: Document"
+doc_brief: "Tying knots in light fields — 1 sections: Document"
 ---
 Tying knots in light ﬁelds
 Hridesh Kedia,1,∗ Iwo Bialynicki-Birula,2 Daniel Peralta-Salas,3 and William T.M. Irvine 1

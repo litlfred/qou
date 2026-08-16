@@ -7,7 +7,7 @@ section_number: 2
 pages: 2-3
 source_pdf: squier-burau-unitary-1984.pdf
 source_sha256: 5087ee3cb48679d1
-doc_brief: "PROCEEDINGS OF THE AMERICAN MATHEMATICAL SOCIETY — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
 ---
 generators a,, a2,... ,a„_, and relations all appropriate
 (1) a,a,i+1"/ + \aiai+\< °j°i> ■j\>2.

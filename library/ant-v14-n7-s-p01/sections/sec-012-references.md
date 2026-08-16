@@ -7,7 +7,7 @@ section_number: null
 pages: 41-42
 source_pdf: ant-v14-n7-s-p01.pdf
 source_sha256: 976199bfca4ac086
-doc_brief: "p-adic Asai L-functions of Bianchi modular forms David Loeﬄerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction to"
+doc_brief: "p-adic Asai L-functions of Bianchi modular forms David Loefflerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction"
 ---
 [Ash and Stevens 1986] A. Ash and G. Stevens, “Modular forms in characteristic l and special values of their L-functions”,
 Duke Math. J. 53:3 (1986), 849–868. MR Zbl

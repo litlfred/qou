@@ -7,7 +7,7 @@ section_number: 3.2
 pages: 4-5
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
-doc_brief: "VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER V ARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is"
+doc_brief: "VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is"
 ---
 surface. Let f , g be two meromorphic functions on X. Denote by S(f ) (resp. S(g)) the set of zeros
 and poles of f (resp. g). Notice that S(f ) ∪ S(g) is a ﬁnite set. Put X ′ = X \ (S(f ) ∪ S(g)).

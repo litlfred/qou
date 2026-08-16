@@ -7,7 +7,7 @@ section_number: null
 pages: 82-84
 source_pdf: phys-rep09.pdf
 source_sha256: cd345d3df9358efc
-doc_brief: "PhysicsReports470(2009)151–238 Contents lists available at ScienceDirect PhysicsReports journal homepage: www.elsevier.com/locate/physrep TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas"
+doc_brief: "TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗ aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeValencia,E-46022Valencia,Spain bDepartamentdeMatem"
 ---
 Inthereviewpaper[ 228]onecanfindreferencestosomeearlyapplicationsofMEtoOptics.Forexample,toHamiltonians
 involvingthegeneratorsofSU (2),SU(1,1)andHeisenberg–Weylgroups,withapplicationstolaser-plasmascatteringand

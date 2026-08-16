@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-7
 source_pdf: 1101.1563v1.pdf
 source_sha256: 0c45b250fc4a2a49
-doc_brief: "Gr¨ obner-Shirshov bases for categories∗ L. A. Bokut † — In this paper we establish Composition-Diamond lemma for small categ ories."
+doc_brief: "Gröbner-Shirshov bases for categories∗ L. A. Bokut † — In this paper we establish Composition-Diamond lemma for small categ ories."
 ---
 This paper devotes to Gr¨ obner-Shirshov bases for small catego ries (all categories below
 are supposed to be small) presented by a graph (=quiver) and deﬁn ing relations (see,

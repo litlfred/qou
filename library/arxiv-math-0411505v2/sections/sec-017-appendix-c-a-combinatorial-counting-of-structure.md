@@ -7,7 +7,7 @@ section_number: null
 pages: 20-22
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
-doc_brief: "A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
+doc_brief: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
 ---
 In this section we consider structures on a set [ k] ={1, . . . , k}, and their combinatorial countings.
 Deﬁnition C.1. Let k be a positive integer. A k-structure is a pair S = (A, B) such that

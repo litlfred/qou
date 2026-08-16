@@ -7,7 +7,7 @@ section_number: 2.3.3
 pages: 25-27
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
-doc_brief: "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
+doc_brief: "The Algebra of Grand Unified Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
 ---
 In the Standard Model, electromagnetism and the weak force are u niﬁed into the
 electroweak force. This is is a U(1) × SU(2) gauge theory, and without saying

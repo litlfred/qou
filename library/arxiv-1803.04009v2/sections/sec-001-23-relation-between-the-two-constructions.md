@@ -7,7 +7,7 @@ section_number: 2.3
 pages: 21-27
 source_pdf: 1803.04009v2.pdf
 source_sha256: 8b34299b739cd2b0
-doc_brief: "Prepared for submission to JHEP IPMU-18-0045 — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
+doc_brief: "Symmetry enhancement and closing of knots in 3d/3d correspondence — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
 ---
 One basic characteristic of theTDGG[N,XA] theory is that [19]
 Mparameter(TDGG[N,XA] on R2×S1) =D[N,T ]⊇χ0(N). (2.74)

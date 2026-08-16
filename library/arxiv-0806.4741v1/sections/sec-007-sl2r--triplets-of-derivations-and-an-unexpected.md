@@ -7,7 +7,7 @@ section_number: null
 pages: 13-13
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
-doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium"
+doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium — We"
 ---
 Let us now consider any Poincar´ e invariant formal star⋆ product on the contracted plane M. Denote
 by Der(⋆) its algebra of derivations. Note that from formal equivalence with Moyal, every derivation is

@@ -7,7 +7,7 @@ section_number: 0
 pages: 73-74
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
-doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero"
+doc_brief: "Volume Conjecture: Refined and Categorified — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the"
 ---
 (−1 +z0)(t3x +z0)(t2 −xz0) ,
 y(x,t ) = (−1 +x)x2p+1(t3x +z0)(1 +txz0)

@@ -7,7 +7,7 @@ section_number: 5
 pages: 28-28
 source_pdf: ki52.pdf
 source_sha256: 35ad4ee5a00d4a18
-doc_brief: "DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot T omotada Ohtsuki1 — We give a presentation of the asymptotic"
+doc_brief: "DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot Tomotada Ohtsuki1 — We give a presentation of the asymptotic"
 duplicate_of: "104171-qt-83"
 ---
 In this section, we give a proof of Theorem 1.1. In Section 5.1, we give a proof of the

@@ -16,8 +16,8 @@
   },
   "doi": null,
   "title": "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS",
-  "authors_raw": "MACIEJ DO\u0141 \u02db EGA AND PIOTR \u00b4SNIADY",
-  "abstract": "We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y oung diagram ensembles; a deformation which is related to Jack polynomials and Jack characters. We show that each such a random Y oung diagram converges asymptotically to some limit shape and that the \ufb02uctuations around the limit are asymptotically Gaussi an. 1. I NTRODUCTION 1.1. Random partitions. . . An integer partition , called also a Young di- agram, is a weakly decreasing \ufb01nite sequence \u03bb = ( \u03bb1, . . . , \u03bbl) of posi- tive integers \u03bb1 \u2265 \u00b7 \u00b7 \u00b7 \u2265 \u03bbl > 0. We also say that \u03bb is a partition of |\u03bb| := \u03bb1 + \u00b7 \u00b7 \u00b7 + \u03bbl. Random partitions occur in mathematics and physics in a wide variety of contexts, in particular in the Gromov\u2013Witten and Seiberg\u2013W itten theories, see the overview articles of Okounkov [Oko03] and V ershik [Ver95]. 1.2. . . . and random matrices. Certain random partitions can be regarded as discrete counterparts of some interesting ensembles of r andom matrices. We shall explore this link on a particular example of random matrices called \u03b2-ensembles or \u03b2-log gases [For10], i.e. the probability distributions on Rn with the density of the form p(x1, . . . , xn) = 1 Z eV (x1)+\u00b7\u00b7\u00b7+V (xn)\u220f i<j |xi \u2212 xj|\u03b2, where V is some real-valued function and Z is the normalization constant. In the special cases \u03b2 \u2208 { 1, 2, 4} they describe the joint distribution of the eigenvalues of random matrices with natural symmetries; th e investigation of such ensembles for a generic value of \u03b2 is motivated, among others, by statistical mechanics. In this general case the problem o f computing",
+  "authors_raw": "MACIEJ DOŁ ˛ EGA AND PIOTR ŚNIADY",
+  "abstract": "We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y oung diagram ensembles; a deformation which is related to Jack polynomials and Jack characters. We show that each such a random Y oung diagram converges asymptotically to some limit shape and that the ﬂuctuations around the limit are asymptotically Gaussi an. 1. I NTRODUCTION 1.1. Random partitions. . . An integer partition , called also a Young di- agram, is a weakly decreasing ﬁnite sequence λ = ( λ1, . . . , λl) of posi- tive integers λ1 ≥ · · · ≥ λl > 0. We also say that λ is a partition of |λ| := λ1 + · · · + λl. Random partitions occur in mathematics and physics in a wide variety of contexts, in particular in the Gromov–Witten and Seiberg–W itten theories, see the overview articles of Okounkov [Oko03] and V ershik [Ver95]. 1.2. . . . and random matrices. Certain random partitions can be regarded as discrete counterparts of some interesting ensembles of r andom matrices. We shall explore this link on a particular example of random matrices called β-ensembles or β-log gases [For10], i.e. the probability distributions on Rn with the density of the form p(x1, . . . , xn) = 1 Z eV (x1)+···+V (xn)∏ i<j |xi − xj|β, where V is some real-valued function and Z is the normalization constant. In the special cases β ∈ { 1, 2, 4} they describe the joint distribution of the eigenvalues of random matrices with natural symmetries; th e investigation of such ensembles for a generic value of β is motivated, among others, by statistical mechanics. In this general case the problem o f computing",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181109185705-05'00'",
@@ -36,14 +36,14 @@
   },
   {
    "level": 2,
-   "title": "Random partitions\u2026",
+   "title": "Random partitions…",
    "page": 1,
    "source": "outline",
    "number": "1.1"
   },
   {
    "level": 2,
-   "title": "\u2026and random matrices",
+   "title": "…and random matrices",
    "page": 1,
    "source": "outline",
    "number": "1.2"

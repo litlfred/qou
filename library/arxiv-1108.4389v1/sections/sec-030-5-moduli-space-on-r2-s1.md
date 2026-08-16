@@ -7,7 +7,7 @@ section_number: 5
 pages: 41-42
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
-doc_brief: "b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 ﬁeld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions a"
+doc_brief: "b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 field theories associated to 3-manifolds can be thought of as theories that describe boundary conditions"
 ---
 One simple way to test the correspondence M ←→TM is to associate a moduli space to
 each side. In the analogous construction [ 1] of the 4d N = 2 superconformal theory from

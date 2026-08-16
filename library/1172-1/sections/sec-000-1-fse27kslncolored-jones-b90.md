@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 1172-1.pdf
 source_sha256: f067a1bfa4c60df0
-doc_brief: "Fs=E2=7k$SL\$Ncolored Jones B?9`<0$a7W;;J}K!$K$D$$$F @;?4=w;RBg3X2,K\H~@c(Mﬁyuki Okamoto) 0lHL$N7k$SL\$NFs=E2=7k$SL\$K4X$9$kcolored Jones B?9`<0$r, Whitehead Mm$_ L\$Ncolored Jones B?9`<0$rMQ$$$F7W;;$"
+doc_brief: "Fs=E2=7k$SL\$Ncolored Jones B?9`<0$a7W;;J}K!$K$D$$$F @;?4=w;RBg3X2,K\H~@c(Mfiyuki Okamoto) 0lHL$N7k$SL\$NFs=E2=7k$SL\$K4X$9$kcolored Jones B?9`<0$r, Whitehead Mm$_ L\$Ncolored Jones B?9`<0$rMQ$$$F7W"
 ---
 @;?4=w;RBg3X2,K\H~@c(Mﬁyuki Okamoto)
 0lHL$N7k$SL\$NFs=E2=7k$SL\$K4X$9$kcolored Jones B?9`<0$r, Whitehead Mm$_

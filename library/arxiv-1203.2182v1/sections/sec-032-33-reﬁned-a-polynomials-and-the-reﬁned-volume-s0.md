@@ -7,7 +7,7 @@ section_number: 3.3
 pages: 38-39
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
-doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero"
+doc_brief: "Volume Conjecture: Refined and Categorified — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the"
 ---
 One next goal is to test the second new conjecture of the prese nt paper – namely, the re-
 ﬁnement of the generalized volume conjecture (2.6a) – in a la rge class of examples associated

@@ -7,7 +7,7 @@ section_number: 2.5
 pages: 19-20
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
-doc_brief: "b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 ﬁeld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions a"
+doc_brief: "b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 field theories associated to 3-manifolds can be thought of as theories that describe boundary conditions"
 ---
 We have explained, in principle, how to construct 3-manifolds M, phase spaces P∂M , and
 LagrangiansLM by gluing together ideal tetrahedra ∆ i. It would be useful to verify that

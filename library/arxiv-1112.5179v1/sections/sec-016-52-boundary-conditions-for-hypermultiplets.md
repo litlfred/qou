@@ -7,7 +7,7 @@ section_number: 5.2
 pages: 51-52
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
-doc_brief: "Prepared for submission to JHEP 3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Ca"
+doc_brief: "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK — We"
 ---
 So far, we have consideredU(1)N vector multiplets coupled to a boundary theoryTM. Gener-
 ically, the 4d theoriesT [∂M ] arising from a geodesic boundary M will also involve hypermul-

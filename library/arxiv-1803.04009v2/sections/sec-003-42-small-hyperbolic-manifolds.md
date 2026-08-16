@@ -7,7 +7,7 @@ section_number: 4.2
 pages: 41-51
 source_pdf: 1803.04009v2.pdf
 source_sha256: 8b34299b739cd2b0
-doc_brief: "Prepared for submission to JHEP IPMU-18-0045 — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
+doc_brief: "Symmetry enhancement and closing of knots in 3d/3d correspondence — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
 ---
 Let us discuss the case of closed 3-manifoldsM =Weeks, a oriented hyperbolic closed 3-
 manifold with smallest hyperbolic volume. This was already discussed in [23] and here we

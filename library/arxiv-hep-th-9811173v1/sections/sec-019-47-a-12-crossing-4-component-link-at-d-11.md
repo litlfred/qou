@@ -7,7 +7,7 @@ section_number: 4.7
 pages: 11-11
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the"
+doc_brief: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace fieldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of th"
 ---
 In [7] it was noted that neither the closed nor the cusped census en tails the ﬁeld Q(√−11).
 In [1] it was observed that the 12-crossing 4-component link of Fig. 7, with braid word

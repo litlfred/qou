@@ -7,7 +7,7 @@ section_number: 3.8
 pages: 35-36
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
-doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et"
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ Résumé.Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le grou"
 ---
 m le complexe des cocha ˆ ınes singuli` eres deX m. Il ne rentre
 pas tout ` a fait dans le cadre pr´ ec´ edent, mais on peut l’y ra mener: si S∗

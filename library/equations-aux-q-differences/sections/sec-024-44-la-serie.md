@@ -7,7 +7,7 @@ section_number: 4.4
 pages: 24-26
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
-doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
+doc_brief: "Équations aux q-différences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 n≥0 qn(n−1)/2xn)2 n ’est pas sommable d’un seul
 niveau !

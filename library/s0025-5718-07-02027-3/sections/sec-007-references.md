@@ -7,7 +7,7 @@ section_number: null
 pages: 29-30
 source_pdf: S0025-5718-07-02027-3.pdf
 source_sha256: 080b5ac8542ff19c
-doc_brief: "MA THEMA TICS OF COMPUT A TION — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
+doc_brief: "MA THEMA TICS OF COMPUTATION — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
 ---
 [1] A. A. Beilinson. Higher regulators and values of L-functions. J. Sov. Math. , 30:2036–2070,
 1985. MR760999 (86h:11103)

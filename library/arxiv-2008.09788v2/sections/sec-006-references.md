@@ -7,7 +7,7 @@ section_number: null
 pages: 28-31
 source_pdf: 2008.09788v2.pdf
 source_sha256: 460f4f5432cb1f0c
-doc_brief: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETR Y — This paper surveys results related to well-known works of B. Plotkin and V."
+doc_brief: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY — This paper surveys results related to well-known works of B. Plotkin and V."
 ---
 [1] N. Avni, A. Lubotzky and C. Meiri, First order rigidity of non-uniform higher-rank arithmetic
 groups, Invent. Math. (2019), 219-240.

@@ -7,7 +7,7 @@ section_number: 7
 pages: 37-47
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
-doc_brief: "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN ="
+doc_brief: "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills"
 ---
 In this paper we have used non-perturbative techniques inspired by supersymmetric gauge theory
 and topological string theory to study the quantization of the Seiberg–Witten curve of N =

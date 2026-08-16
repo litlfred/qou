@@ -7,7 +7,7 @@ section_number: 2.6
 pages: 7-7
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
-doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
+doc_brief: "Équations aux q-différences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 ﬁcation locale et globale des ´equations `a coeﬃcients rationnels. Dans le cas
 complexe, sous l’hypoth`ese |q| ⁄= 1, on peut remarquer que toute matrice F

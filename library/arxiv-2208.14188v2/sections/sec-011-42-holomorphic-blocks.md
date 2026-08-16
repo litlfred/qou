@@ -7,7 +7,7 @@ section_number: 4.2
 pages: 30-32
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
-doc_brief: "Prepared for submission to JHEP KIAS-P22064 Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455"
+doc_brief: "Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455, Korea bSchool of Phyiscs and Shing-Tung Yau"
 ---
 As in the example of knot 41, here we introduce descendants of the state integral and
 demonstrate their property of factorisation into holomorphic blocks.

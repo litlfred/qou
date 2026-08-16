@@ -7,7 +7,7 @@ section_number: 26
 pages: 39-40
 source_pdf: alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf
 source_sha256: c99ca1cd756f7aa6
-doc_brief: "Communications in — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory."
+doc_brief: "Commun. Math. Phys. 106, 1-40 (1986) Mathematical Physics© Springer-Verlag 1986 — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some"
 ---
 27. Atiyah, M.: Riemann surfaces and spin structures. Ann. Sci. Ec. Norm. Super. 4 (1971)
 28. In fact, more is true: the number of zero modes is given by the multiplicity of the zero of S. See

@@ -7,7 +7,7 @@ section_number: 7
 pages: 33-34
 source_pdf: ant-v14-n7-s-p06.pdf
 source_sha256: 4881141ef679dd5a
-doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function ﬁelds — 24 sections: Introduction and statement of resu; L′(; Some useful lemmas"
+doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function fields — 24 sections: Introduction and statement of resu; L′(; Some useful lemmas"
 ---
 Following Lemma 2.2, for X< 2g, we deﬁne
 M1,E(X):=(1+ϵ)

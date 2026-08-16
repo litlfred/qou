@@ -7,7 +7,7 @@ section_number: null
 pages: 4-4
 source_pdf: squier-burau-unitary-1984.pdf
 source_sha256: 5087ee3cb48679d1
-doc_brief: "PROCEEDINGS OF THE AMERICAN MATHEMATICAL SOCIETY — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
 ---
 1. E. Artin, Theorie der Zopfe, Hamburg Abh. 4 ( 1925), 47-72.
 2. J. S. Birman, Braids, links and mapping class groups, Ann. of Math. Studies, No. 82, Princeton Univ.

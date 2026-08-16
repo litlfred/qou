@@ -7,7 +7,7 @@ section_number: 4
 pages: 27-28
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
-doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
+doc_brief: "Équations aux q-différences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 consid´ererons que des ´equations aux q-diﬀ´erences `ac o e ﬃ c i e n t sd a n sQ(x). En fait, les ´enonc´es
 qui suivent sont prouv´es dans [DV02a] pour des ´equations aux q-diﬀ´erences d´eﬁnies sur

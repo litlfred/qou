@@ -7,7 +7,7 @@ section_number: 2.5
 pages: 13-16
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
-doc_brief: "Prepared for submission to JHEP 3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Ca"
+doc_brief: "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK — We"
 ---
 In [8] (see also [9, 19]), we encountered a certain universal structure common to 3d N = 2
 theories withU(1)N ﬂavor symmetry. Upon compactiﬁcation on R2×S1, the moduli space of

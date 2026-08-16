@@ -7,7 +7,7 @@ section_number: null
 pages: 25-63
 source_pdf: 10.4171-qt-83.pdf
 source_sha256: d95b9363de2766d2
-doc_brief: "DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot T omotada Ohtsuki1 — We give a presentation of the asymptotic"
+doc_brief: "DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot Tomotada Ohtsuki1 — We give a presentation of the asymptotic"
 ---
 In this section, we calculate the sums corresponding to the i ntegrals of the propo-
 sitions in the previous section by the Poisson summation for mula. Corresponding

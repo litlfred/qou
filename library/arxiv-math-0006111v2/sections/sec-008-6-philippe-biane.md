@@ -7,7 +7,7 @@ section_number: 6
 pages: 6-8
 source_pdf: 0006111v2.pdf
 source_sha256: cd99f45d686eb6e2
-doc_brief: "APPROXIMA TE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
+doc_brief: "APPROXIMATE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
 ---
 depends only on the set J of places where ik or jk is 0, and the partition of the
 set ( {1, 2,...,n 1} ∪ { 1′, 2′,... ,n ′

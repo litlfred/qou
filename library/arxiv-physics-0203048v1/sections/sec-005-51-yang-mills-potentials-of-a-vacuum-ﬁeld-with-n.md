@@ -7,7 +7,7 @@ section_number: 5.1
 pages: 7-8
 source_pdf: 0203048v1.pdf
 source_sha256: 47204f32280e91a3
-doc_brief: "Towards a third-order topological invariant for magnetic ﬁelds — An expression for a third-order link integral of three magne tic ﬁelds is presented."
+doc_brief: "Towards a third-order topological invariant for magnetic fields — An expression for a third-order link integral of three magne tic ﬁelds is presented."
 ---
 AnSU (2) Yang-Mills vacuum ﬁeld is now constructed on a time slice IR3 ofIR4 using
 the mapping g :IR3 →SU (2) (see e.g. Frankel 1997, Itzykson and Zuber 1980)

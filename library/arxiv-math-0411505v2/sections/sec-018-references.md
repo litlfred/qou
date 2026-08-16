@@ -7,7 +7,7 @@ section_number: null
 pages: 22-22
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
-doc_brief: "A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
+doc_brief: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
 ---
 [A] J.W. Alexander, Topological invariants of knots and links , Trans. Amer. Math. Soc. 30 (1928) 275–306.
 [BG] D. Bar-Natan and S. Garoufalidis, On the Melvin-Morton-Rozansky conjecture , Inventiones, 125 (1996) 103–133.

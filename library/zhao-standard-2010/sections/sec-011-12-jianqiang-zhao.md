@@ -7,7 +7,7 @@ section_number: 12
 pages: 12-14
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
-doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm V alues at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
+doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm Values at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
 ---
 we assume σ1 ⁄= 1 and σp ⁄= 0. Set (σ1, . . . , σp, {0}n) = ( σ1, . . . , σq). Then
 C({1}m, σ1, . . . , σp, {0}n)

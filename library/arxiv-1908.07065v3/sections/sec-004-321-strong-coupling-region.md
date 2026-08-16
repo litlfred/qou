@@ -7,7 +7,7 @@ section_number: 3.2.1
 pages: 11-15
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
-doc_brief: "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN ="
+doc_brief: "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills"
 ---
 region or chamberW outsideC [27, 36, 37]. As we move from the strong coupling region to the
 weak coupling region, the spectrum of BPS states changes drastically by the famous wall-crossing

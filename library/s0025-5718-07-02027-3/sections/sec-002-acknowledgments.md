@@ -7,7 +7,7 @@ section_number: null
 pages: 2-6
 source_pdf: S0025-5718-07-02027-3.pdf
 source_sha256: 080b5ac8542ff19c
-doc_brief: "MA THEMA TICS OF COMPUT A TION — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
+doc_brief: "MA THEMA TICS OF COMPUTATION — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
 ---
 tute for a productive stay during the autumn of 2002, during which this paper
 germinated and a ﬁrst version of an implementation of the algorithm was written.

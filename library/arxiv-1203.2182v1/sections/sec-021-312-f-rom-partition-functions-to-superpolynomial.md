@@ -7,7 +7,7 @@ section_number: 3.1.2
 pages: 21-23
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
-doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero"
+doc_brief: "Volume Conjecture: Refined and Categorified — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the"
 ---
 As we already explained around (3.7), the reduced colored su perpolynomial P R(K;a,q,t ) is
 deﬁned as the Poincar´ e polynomial of the triply graded homology HR

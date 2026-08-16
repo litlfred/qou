@@ -7,7 +7,7 @@ section_number: 3.2.2
 pages: 34-36
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
-doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero"
+doc_brief: "Volume Conjecture: Refined and Categorified — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the"
 ---
 Our next task is to derive reﬁned recursion relations for the trefoil. Similarly as in the unknot
 case, we will be able to determine these relations from the structure of thesl(2) specialization

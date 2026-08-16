@@ -7,7 +7,7 @@ section_number: 6
 pages: 6-8
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
-doc_brief: "Proceedings of Symposia in Pure Mathematics — 17 sections: RON Y. DONAGI; Introduction; References"
+doc_brief: "Seiberg-Witten Integrable Systems Ron Y. Donagi Contents Introduction §1. Some physics background Electromagnetism Yang-Mills theory Quantization Supersymmetry N = 2 super Yang-Mills — 17 sections: RO"
 ---
 derivatives of a given collection of ﬁelds. The classical th eory considers extrema of
 L, while the quantum theory averages the action over all possi ble ﬁelds. The largest

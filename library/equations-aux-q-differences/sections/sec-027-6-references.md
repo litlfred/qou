@@ -7,7 +7,7 @@ section_number: 6
 pages: 28-30
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
-doc_brief: "´Equations aux q-diﬀ´erences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
+doc_brief: "Équations aux q-différences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO"
 ---
 [Ada29] C. R. Adams. On the linear ordinary q-diﬀerence equations. A n n .M a t h .S e r .I I,
 30(2), 195–205, 1929.

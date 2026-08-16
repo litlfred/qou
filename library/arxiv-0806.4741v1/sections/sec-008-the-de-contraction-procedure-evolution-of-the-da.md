@@ -7,7 +7,7 @@ section_number: null
 pages: 13-15
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
-doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium"
+doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium — We"
 ---
 Let us now consider an invariant formal star product ♯ on the hyperbolic plane D. This star product is in
 particular S-invariant. One knows from [8], that the set of S-equivariant equivalence classes of S-invariant

@@ -7,7 +7,7 @@ section_number: 5
 pages: 29-30
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
-doc_brief: "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN ="
+doc_brief: "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills"
 ---
 Let O be an operator on L2(R) such that O−1 is of trace class. Then, O has a discrete spectrum
 {En}n≥0, and its Fredholm determinant

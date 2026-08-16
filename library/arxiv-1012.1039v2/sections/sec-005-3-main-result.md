@@ -7,7 +7,7 @@ section_number: 3
 pages: 8-14
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
-doc_brief: "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume — Let M be a"
+doc_brief: "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn filling of a 3–manifold d oes not increase hyperbolic volume — Let M be a"
 ---
 In this section we prove the main result, Theorem 1.5. The strategy is to modify
 an eﬃcient relative fundamental cycle for ( M,∂M ) to a fundamental cycle on the

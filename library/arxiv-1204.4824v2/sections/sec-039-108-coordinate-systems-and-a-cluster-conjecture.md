@@ -7,7 +7,7 @@ section_number: 10.8
 pages: 71-72
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Let us consider a spectral network W for which (10.25) is saturated. In this case, as we
 have noted, ΨW is at least locally one-to-one. Thus the holonomies ˜Y˜γ of∇ab = Ψ−1

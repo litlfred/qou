@@ -7,7 +7,7 @@ section_number: 3.2
 pages: 6-9
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
-doc_brief: "REPRESENTATIONS OF WEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMANN1 — 25 sections: In"
+doc_brief: "REPRESENTATIONSOFWEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMANN1 — 25 sections: Intr"
 ---
 H2e(ν)(Bν)A(ν) →H2e(ν)(B),e (ν)=d i mCBν,
 is an isomorphism onto its image.

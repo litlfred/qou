@@ -7,7 +7,7 @@ section_number: null
 pages: 14-16
 source_pdf: ant-v14-n7-s-p07.pdf
 source_sha256: c5a749ef6be194fd
-doc_brief: "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds — 7 sections: Introduction; For the similar Theorem 1.7, the 𝓁; Main theorem and proof"
+doc_brief: "Nonvanishing of hyperelliptic zeta functions over finite fields — 7 sections: Introduction; For the similar Theorem 1.7, the 𝓁; Main theorem and proof"
 ---
 [Andrade and Baluyot 2020] J. Andrade and S. Baluyot, “Small zeros of Dirichlet L-functions of quadratic characters of prime
 modulus”, Res. Number Theory 6:2 (2020), 1–20. MR

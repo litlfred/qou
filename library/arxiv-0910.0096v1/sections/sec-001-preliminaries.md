@@ -7,7 +7,7 @@ section_number: null
 pages: 1-21
 source_pdf: 0910.0096v1.pdf
 source_sha256: 805a75c337599adc
-doc_brief: "Gr¨ obner-Shirshov bases for Coxeter groups I∗ — A conjecture of Gr¨ obner-Shirshov basis of any Coxeter group h as proposed by L.A. Bokut and L.-S. Shiao [4]."
+doc_brief: "Gröbner-Shirshov bases for Coxeter groups I∗ — A conjecture of Gr¨ obner-Shirshov basis of any Coxeter group h as proposed by L.A. Bokut and L.-S. Shiao [4]."
 ---
 We ﬁrst cite some concepts and results from the literature [9, 2, 3 ] which are related to
 Gr¨ obner-Shirshov bases for associative algebras. A notion of th e pre-Gr¨ obner-Shirshov

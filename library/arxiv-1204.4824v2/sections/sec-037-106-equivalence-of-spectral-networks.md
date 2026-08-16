@@ -7,7 +7,7 @@ section_number: 10.6
 pages: 68-70
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Prepared for submission to JHEP Spectral networks — We introduce new geometric objects called spectral networks."
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Given a nondegenerate spectral network W we have constructed a corresponding non-
 abelianization map ΨW. It is natural to ask how this map depends on W.

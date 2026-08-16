@@ -7,7 +7,7 @@ section_number: 1
 pages: 1-7
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
-doc_brief: "The Stokes phenomenon for the Ramanujan’s q-diﬀerence equation and its higher order extension Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu - jan equation between the"
+doc_brief: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu - jan equation between"
 ---
 In this papar, we deal with the Ramanujan equation
 qxu(q2x) −u(qx) +u(x) = 0, ∀x ∈ C∗. (1)

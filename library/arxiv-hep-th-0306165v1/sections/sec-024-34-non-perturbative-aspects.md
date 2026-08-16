@@ -7,7 +7,7 @@ section_number: 3.4
 pages: 31-34
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
-doc_brief: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an inﬁnite-di"
+doc_brief: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an infinite-d"
 ---
 We found the semi-classical expression for the partition fu nction Z(M ) and brieﬂy
 discussed higher-order perturbative corrections. Howeve r, using the eﬀective quantum

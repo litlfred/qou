@@ -7,7 +7,7 @@ section_number: 5
 pages: 17-20
 source_pdf: 2104.06067v1.pdf
 source_sha256: 750303181ca019ba
-doc_brief: "ON IRREDUCIBLE CHARACTERS OF THE IW AHORI-HECKE ALGEBRA IN TYPE A — We use vertex operators to compute irreducible characters o f the Iwahori-Hecke algebra of type A."
+doc_brief: "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN TYPE A — We use vertex operators to compute irreducible characters o f the Iwahori-Hecke algebra of type A."
 ---
 The Hecke algebra Hn(q) is a ( Hn(q), Hn(q))-bimodule under the left and right regular actions, and
 the two actions mutually commute with each other. As a result

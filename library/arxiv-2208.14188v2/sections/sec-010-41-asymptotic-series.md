@@ -7,7 +7,7 @@ section_number: 4.1
 pages: 24-30
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
-doc_brief: "Prepared for submission to JHEP KIAS-P22064 Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455"
+doc_brief: "Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455, Korea bSchool of Phyiscs and Shing-Tung Yau"
 ---
 The state integral of knot 52 at level k is given as a one-dimensional integral in [13]
 χ(k)

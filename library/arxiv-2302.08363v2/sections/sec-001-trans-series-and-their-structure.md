@@ -7,7 +7,7 @@ section_number: null
 pages: 3-5
 source_pdf: 2302.08363v2.pdf
 source_sha256: c2244e03b17048fb
-doc_brief: "Prepared for submission to JHEP On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the"
+doc_brief: "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically"
 ---
 In this paper we will consider trans-series involving two small parameters: a coupling constant g
 and an exponentially small term of the form

@@ -7,7 +7,7 @@ section_number: 3.5
 pages: 62-65
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
-doc_brief: "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
+doc_brief: "The Algebra of Grand Unified Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
 ---
 We now have two routes to the Spin(10) theory. In Section 3.2 we sa w how to reach
 it via the SU(5) theory:
