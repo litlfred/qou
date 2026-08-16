@@ -2264,3 +2264,50 @@ Also worth noting for the length bound: every rule in this regime preserves word
 length — Bokut–Shiao maps `|descWord k j₁| + 1` letters to `2 + |descWord kd j₁|`,
 which is the same — so length can never be used to separate the bystander from a
 chain word. Distinctness has to come from a letter position, as it did in §4ad.
+
+## §4af cont. — the two-term loop, and the transport hypothesis that blocked it
+
+`CornerBlock.loopTwo` and `loopTwoFromTop`: the corner loop with the
+S-polynomial's other term riding along. Sorry-free, standard axioms, full library
+builds. The obstruction recorded last time is cleared.
+
+**The weakening, and why it was available.** `farComm_transport_left`'s collision
+hypothesis quantifies over all splits `u ++ v = w`, and the split `u = []` names
+the transport's *final* word — which is exactly the bystander in the corner
+chain, so the hypothesis is false where it is needed. Reading the proof: `hcol`
+is applied only with a cons-headed first argument (`⟨yi⟩ :: u`, and `[⟨yi⟩]`),
+and the `nil` case discards it outright. So `u ≠ []` suffices. Split into
+`farComm_transport_left_sources` (the real proof, weak hypothesis) and
+`farComm_transport_left` (a two-line corollary with the old statement), so §4v's
+callers are untouched. `blockStep` now asks only for the weak form, and
+`blockStep_top` consequently loses a hypothesis: with `Y` empty there is no split
+with `u ≠ []` at all, so its collision obligation is vacuous.
+
+**Two facts make the bystander uniform.**
+
+* **It does not move.** At pass `k` it is `A ++ descWord kd ed ++ ⋯`; after the
+  pass `A` has grown by `σ_kd` and the run shortened to `descWord kdd ed`, and
+  `A ++ [σ_kd] ++ descWord kdd ed` is again `A ++ descWord kd ed`. Literally the
+  same word at every pass, so the induction carries it unchanged.
+* **Every word a pass rewrites begins, after `A`, with `σ_i`** — the pass's own
+  source is `A ++ (descWord i j₁ ++ ⋯)`, and each word the transport visits is
+  `A ++ (u ++ ⋯)` with `u` a *non-empty* prefix of the run above `k`, whose head
+  is the run's head. The bystander begins with `σ_kd`, and `kd < i`. One letter
+  separates it from everything in sight.
+
+Hence `pass_hne` and `pass_hcol`, discharging both obligations of every pass from
+data the loop already carries; the second needs only `hY`, since every letter
+above `k` is more than one above `σ_kd` and so is not `σ_kd`. Both built first
+try, as did `loopTwo` and its entry point. Helper `append_cons_ne`: two words
+with a common prefix differ as soon as the next letter does.
+
+Worth noting the earlier observation about lengths was the right warning and the
+wrong tool — every rule here preserves length, so length is useless, but a single
+*position* does the job, and it is the same position at every pass.
+
+**What is left for the whole `a > b` regime.** The loop is the quadratic part and
+it is done. Remaining is a fixed, small amount of work independent of `a` and `b`:
+the two setup steps that take the first term to the loop's entry shape, the two
+closing steps on the second term (a `B₁₀` and the fixed-depth Bokut–Shiao), and
+the assembly against `oc.spoly`. Roughly the shape of §4ad's ends with its middle
+excised.
