@@ -24,9 +24,22 @@ inferring it from the length.
 
 The block is itself a **nested double loop**: `a` levels, level `p` a run of
 far-commutations `F_{p,q}` with `q` ascending to `b`, of lengths `2, 3, 4, …`
-capped at `b − a + 2`. That is the structural difference from the `a > b`
-regime, where one loop over one index sufficed, and it is why the length depends
-on both depths rather than one.
+capped at `b − a + 2`. That is why the length depends on both depths rather than
+one, which the `a > b` regime did not.
+
+The prefix, in turn, splits as `A · B₁₀ · C · D` with
+
+    A = (a² − 3a + 10)/2      C = a(a+1)/2      D = 2a − 1
+
+and it is **self-similar**: `C = A[2:] ++ small(a)` and
+`D = [B₁₀, B₂₁] ++ small(a)`, where `small(a)` is a far-commutation block of
+length `2a − 3` — the same "block · two steps · block" shape the whole chain has.
+More: `A` is `[B₂₁ F₀₂]`, then passes of exactly the `a > b` regime's loop — a
+Bokut–Shiao step at top `d` followed by `d` far-commutations, for `d = 1 … a−3` —
+then one more Bokut–Shiao step, then `Y_{a,a−1} Q_a`. So the loop already proved
+in Lean recurs inside this regime, and the only steps in the whole chain that are
+not loop passes or far-commutations are those two: the chain uses the quadratic
+rule exactly twice, at the end of `A` and at the end of `C`'s non-block part.
 
 Rule names are resolved through a map replayed from the engine's own
 `build_rules` rather than parsed from the strings, which are ambiguous once an
@@ -127,15 +140,36 @@ def main():
             b1 = c[pre:pre + blk]
             mid = c[pre + blk:pre + blk + 2]
             b2 = c[pre + blk + 2:]
+            # the prefix's own split, and its self-similarity
+            P = c[:pre]
+            # the two B10 steps bracket C; on the diagonal b = a they carry the
+            # same bottom, so take the first and the last rather than match on it
+            bpos = [k for k, r in enumerate(P)
+                    if r[0] == "B" and r[1] == 1 and r[2] == 0]
+            apos, dpos = bpos[0], bpos[-1]
+            A, C, D = P[:apos], P[apos + 1:dpos], P[dpos:]
+            small = 2 * a - 3
+            # at a = 2 the rule at top i-1 degenerates to the braid word, and the
+            # engine names it Y rather than B; both are in the system
+            toprule = D[1] in (("B", 2, 1, a), ("Y", 2, 1))
+            selfsim = (len(A) == (a * a - 3 * a + 10) // 2
+                       and len(C) == a * (a + 1) // 2 and len(D) == 2 * a - 1
+                       and C == A[2:] + C[len(C) - small:]
+                       and D[0] == ("B", 1, 0, b) and toprule
+                       and D[2:] == C[len(C) - small:])
             good = (len(c) == pred and pre + 2 * blk + 2 == pred
                     and len(b2) == blk and b1 == b2
                     and all(r[0] == "F" for r in b1 + b2)
                     and all(r[0] != "F" for r in mid)
                     and sum(1 for r in c if r[0] == "Q") == 2
-                    and all(r[0] != "Q" for r in c[pre:]))
+                    and all(r[0] != "Q" for r in c[pre:])
+                    and selfsim)
             bad += not good
             rows.append({"a": a, "b": b, "n": n, "i": i, "steps": len(c),
                          "predicted_steps": pred, "prefix": pre, "block": blk,
+                         "quadratic_steps": sum(1 for r in c if r[0] == "Q"),
+                         "prefix_A": len(A), "prefix_C": len(C),
+                         "prefix_D": len(D),
                          "decomposition_holds": good})
 
     w = WitnessBuilder("hecke-corner-le-regime", engine="sympy",
@@ -148,10 +182,19 @@ def main():
     w.add_parameter("prefix_formula", "a^2 + a + 5")
     w.add_parameter("block_formula", "ab - a^2 + 2a - 3")
     w.add_parameter("total_formula", "2ab - a^2 + 5a + 1")
+    w.add_parameter("prefix_split", "A . B10 . C . D")
+    w.add_parameter("prefix_A_formula", "(a^2 - 3a + 10)/2")
+    w.add_parameter("prefix_C_formula", "a(a+1)/2")
+    w.add_parameter("prefix_D_formula", "2a - 1")
+    w.add_parameter("self_similarity", "C = A[2:] ++ small(a),  D = [B10,B21] ++ small(a)")
+    w.add_parameter("small_block", "2a - 3")
     w.add_parameter("lean_theorem_for_the_other_regime",
                     "UGB.GrobnerShirshov.Hecke.CornerGeneral.resolves")
     w.add_assertion("cases_where_the_decomposition_fails",
                     computed=str(bad), expected="0")
+    w.add_assertion("chains_not_using_the_quadratic_rule_exactly_twice",
+                    computed=str(sum(1 for r in rows if r["quadratic_steps"] != 2)),
+                    expected="0")
     w.add_data("cases_checked", len(rows))
     w.add_data("cases", rows)
     w.add_caveat(
