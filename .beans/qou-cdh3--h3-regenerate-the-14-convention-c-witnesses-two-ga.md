@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-16T12:07:21Z
+updated_at: 2026-08-16T13:21:37Z
 ---
 
 Parent: `qou-cdx1`. Successor to the `qou-eea0` cascade, which drained the bulk.
@@ -91,3 +91,33 @@ is far more expensive: **~25 min at H₆** against ~155 s colour-blind, and
 **tritium at H₉ reached 1 of 30 partitions in ~15 min**. At H₉ and above this
 may not be feasible symbolically at all — which bears directly on this tranche's
 existing gate about `delta_lambda_2row_stratum_analysis.py` never completing.
+
+
+## A possible ~10× saving at H₁₂ — and the reason it may not apply (2026-08-16, from #5209/#5217)
+
+#5217 proved, **all-`n` and sorry-free**, that at convention D
+`y_λ = 0 ⟺ ℓ(λ) ≥ 3`, *identically in q*. For any consumer that only forms
+`Σ_λ y_λ·χ^λ`, the three-or-more-row blocks cannot contribute at all:
+
+```
+  n=6    7 of 11 blocks dead
+  n=9   25 of 30 dead
+  n=12  70 of 77 dead      <- roughly a 10x saving
+```
+
+That would bear directly on the cost gate recorded above (colour-weighted
+symbolic χ measured at **1525.9 s at H₆** against 0.5 s colour-blind, tritium at
+H₉ at 1-of-30 in ~15 min, helium-4 at H₁₂ not attempted), and might make a
+regeneration currently called likely-infeasible actually tractable.
+
+**The catch, and it is decisive for these particular caches.** The two live
+consumers are **per-irrep pole-order** analyses: they examine `χ^λ` block by
+block *before* any weighting is applied, so a block with `y_λ = 0` is still a
+block they read. `per_irrep_pole_deuteron_h6`'s own docstring singles out
+**λ = (4,1,1) — three rows — as the unique pole maximiser**, which is exactly a
+block the saving would discard.
+
+So: **the saving is per-CONSUMER, not per-cache.** Anything downstream that
+contracts to `Σ_λ y_λ·χ^λ` can skip the dead blocks; anything that inspects
+blocks individually cannot, and the pole-order analyses are in the second class.
+Do not apply it cache-wide on the strength of the n=12 ratio.
