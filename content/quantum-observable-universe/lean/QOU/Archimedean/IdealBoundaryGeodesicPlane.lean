@@ -11,20 +11,25 @@ of `H³` spanned by three boundary points — with NO reference to `chordHalfpla
 `inscribedTriangle`.  File A2 then DERIVES the chords from these vertex-defined
 faces, and File A3 proves the resulting ideal tetrahedron equals the chimney.
 
-## The ONE cited-not-proved fact (honest, adopted as a DEFINITION — not axiomatised)
+## The residual cited fact (now narrowed — see status update)
 
 -- Ref: [thurston1978] Ch. 2 §2.3 p. 10 ("a hyperbolic two-plane is a Euclidean
 --   sphere orthogonal to [the boundary]") / [ratcliffe] §4.6–4.7 / [benedetti-petronio] §A —
 --   in the upper half-space model the totally-geodesic planes ARE the vertical
 --   Euclidean planes (perpendicular to `∂H³`) and the Euclidean hemispheres
---   centred on `∂H³`.  We ADOPT this concrete model — on exactly the same footing
---   as `HyperbolicVolume.hypVolume := dx dy dz / z³` and `hypAngle` are adopted in
---   this corpus — and we do NOT prove it from a Riemannian metric (Mathlib 4.24.0
---   has no hyperbolic metric).  Crucially this is a DEFINITION with a citation:
---   there is no `axiom` and no `sorry` here.  A reader who declines the citation
---   reads every downstream theorem as a statement about the concrete Euclidean
---   sets defined below; a reader who grants it reads them as statements about
---   genuine geodesic faces of `H³`.
+--   centred on `∂H³`.  This file ADOPTS the concrete model to define the faces.
+--
+-- **Status update (T2 metric backfill).**  The two adoptions this comment used to
+--   lean on alongside — `HyperbolicVolume.hypVolume := dx dy dz / z³` and
+--   `hypAngle` — are joined by a genuinely DERIVED distance `dH`
+--   (`QOU.Archimedean.HyperbolicMetric`, an infimum of hyperbolic path lengths),
+--   and the vertical-plane / hemisphere totally-geodesic property is now PROVED
+--   sorry-free, conditional on a single named conjecture, in
+--   `QOU.Archimedean.HyperbolicGeodesic` (`verticalPlaneFix_isTotallyGeodesic`,
+--   `hemisphereFix_isTotallyGeodesic`), via the DERIVED boundary isometries whose
+--   fixed sets these faces are.  What remains cited/open is now ONLY geodesic
+--   existence + uniqueness in `H³` (`HypMinimizerUnique`, bean `qou-hgeo`); the
+--   *concrete-model* definitions here still carry no `axiom` and no `sorry`.
 
 ## What is defined here
 
