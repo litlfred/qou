@@ -1,10 +1,11 @@
 ---
 # qou-jtfo
 title: 'GAP: cannot reconstruct tr_M from per-block characters — 5 weight/normalisation variants all fail (recon 2.30 vs true 1.63 at pp)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-16T12:33:24Z
-updated_at: 2026-08-16T12:33:24Z
+updated_at: 2026-08-16T13:00:03Z
 ---
 
 
@@ -84,3 +85,27 @@ an initial `1e-30` tolerance flagged `nn` spuriously.)
    applies to the exact object with no approximation in between. That is a
    strengthening of the committed result, obtained by trying to debug something
    else.
+
+## CLOSED (2026-08-16) — the cause was a wrong character routine, and it refutes the H₆ result
+
+`sum_l y_l chi_l` now reproduces `tr_free/tr_atom` **exactly** for all three
+systems. The gap was neither a weight nor a normalisation: I sourced χ from
+`pyhecke.trace.atom_character_raw`, while production uses
+`chi_all_lambda_reduced_block` (fine-Bratteli transfer). They agree exactly on the
+two 1-dim blocks and disagree on every multi-dimensional one, with no consistent
+factor (−3.80, −2.24, −154.5, …).
+
+**The cost is larger than the fix.** The H₆ "unbinding blocks" result on this
+branch was built on the wrong routine and is **refuted** — corrected, three of the
+four surviving blocks BIND, and the weighted maximum is `q ≈ 1.11` (the trivial
+rep, forced), not the 6.46 claimed. Route C is closed.
+
+**The lesson, which is the reusable part.** The probe validated its characters
+against the Hecke eigenvalues on the 1-dim blocks and passed to every digit — and
+those are exactly the two blocks where the two routines agree. A validation that
+exercises only the 1-dim blocks cannot detect a defect in the multi-dim ones. It
+did not merely fail to catch the error; it *manufactured confidence* in it, and I
+cited it as independent confirmation twice.
+
+Better check, had I run it: reconstruct the aggregate and compare against
+`tr_m_atom_zn`. That is one line, it is the actual consumer, and it fails loudly.

@@ -1,5 +1,57 @@
 #!/usr/bin/env python3
 """
+RETRACTED (2026-08-16) — THE CENTRAL RESULT OF THIS PROBE IS FALSE.
+
+This probe reported that the full H_6 decomposition "DOES contain unbinding
+blocks", with r_lambda up to 6.46 and the unbinding sitting in the wide blocks
+(5,1) and (4,2). **That is wrong.** It sourced per-block characters from
+`pyhecke.trace.atom_character_raw`; production uses
+`chi_all_lambda_reduced_block` (the fine-Bratteli transfer), and the two are NOT
+the same object. On the pp atom word they agree exactly on the two 1-dim blocks
+and disagree on every multi-dimensional one, with no consistent factor:
+
+    lambda      transfer         atom_character_raw     ratio
+    (6,)         2.1214920103     2.1214920103           1.0000
+    (1^6)       -0.4923081365    -0.4923081365           1.0000
+    (5,1)        4.2211832744    -1.1115295916          -3.7976
+    (4,2)        3.3394913299    -1.4939847165          -2.2353
+    (3,3)        4.8041012721    -0.0310868753        -154.5379
+
+The transfer routine is correct: `sum y_l chi_l` over it reproduces
+`tr_free/tr_atom` EXACTLY for all three systems.
+
+CORRECTED TABLE (same y_lambda, production chi):
+
+    lambda   y_lambda      pp      pn      nn
+    (6,)     0.1153242   1.110   1.006   0.901
+    (5,1)    0.0789530   0.611   0.542   0.408
+    (4,2)    0.0460324   0.328   0.186   0.111
+    (3,3)    0.0151238   0.928   0.919   0.934
+
+THREE OF THE FOUR SURVIVORS ARE BOUND — the opposite of what was reported. The
+only block above 1 is the trivial rep at r = q = 1.110, and `r_(6,) = q` is
+forced for a 1-dim rep with one extra crossing, so it is not a finding.
+
+CONSEQUENCE: **option C is refuted.** H_6 does not have the range that
+`span{1,sigma}` lacks. The weighted maximum is q ~ 1.11, against the 2-dim
+interface cap of z = 0.6127 — larger, but nowhere near the 6.46 claimed, and
+every weighted block except the trivial rep binds.
+
+HOW IT GOT PAST ME, since this is the reusable lesson: the "Validation" section
+below checks the 1-dim blocks against the Hecke eigenvalues and passes to every
+digit. Those are exactly the two blocks where the two routines agree. **A
+validation that only exercises the 1-dim blocks cannot detect a defect in the
+multi-dim ones**, and this one did not — it produced false confidence rather than
+no confidence.
+
+WHAT SURVIVES: the Wenzl y_lambda = 0 for >= 3 rows (corpus closed form, never
+mine); the exact identity tr_free/tr_atom = 1/mu; the no-conjugate-pair-survives
+result at n = 6. None of those routed through atom_character_raw.
+
+The original text is retained below unaltered, as the record of what was claimed.
+
+=====================================================================
+
 Probe — the full H_6 Wedderburn decomposition DOES contain unbinding blocks.
 
 Three routes through the 2-dimensional interface subalgebra `span{1, sigma}` are
