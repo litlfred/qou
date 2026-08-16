@@ -2160,3 +2160,59 @@ committed output has neither.
 first", contradicting its own "8 and 7" two paragraphs later; §4ad repeated the
 wrong figures. The split is 8 and 7 — `V0 ⋯ V8` and `U0 ⋯ U7`, meeting at
 `V8 = U7`. Both fixed. At `b = 3` it is 12 and 11.
+
+## §4af — the corner is a loop, and its body is proved
+
+Writing columns out one at a time does not scale: column `b` is `b² + 3b + 5`
+steps, so each needs a longer script than the last. It does not have to. Setting
+§4ad against §4ae shows the chain is **a loop over a single index**, and the body
+of that loop is now proved: `CornerBlock.blockStep`, sorry-free, standard axioms.
+
+**The invariant.** With `D = descWord i j₁` the long run and `j₂` the short one,
+both terms march down through
+
+    V:  R ++ D ++ descWord k j₂           →  (R ++ [σ_{k−1}]) ++ D ++ descWord (k−1) j₂
+    U:  Q ++ D ++ descWord k j₂ ++ [σᵢ]   →  (Q ++ [σ_{k−1}]) ++ D ++ descWord (k−1) j₂ ++ [σᵢ]
+
+as `k` runs from `i` down past `j₂`. Each pass is two moves: a Bokut–Shiao step
+at top `k` — available because the `σ_k` ending `descWord k j₁` inside `D` is
+immediately followed by the `σ_k` heading `descWord k j₂`, which is exactly where
+the two runs meet and exactly what makes the redex — and a leftward transport of
+the newly exposed `σ_{k−1}` across the part of `D` above `k`. So the block is one
+`monicStep` plus one `farComm_transport_left` (§4v), its side condition from
+`descWord_index_ge`. It built first try.
+
+`Y`, the part of `D` above `k`, enters abstractly rather than as
+`descWord i (k+1)`. That costs nothing and avoids naming `k + 1`, which matters:
+the first pass has `k = i` and no such index need exist. `blockStep_top` is that
+pass, and doubles as a witness that the hypotheses are satisfiable — worth having
+for a statement with this many parameters, since a wrong index relation would
+leave it true and unusable.
+
+**Validated before writing.** `computations/hecke_corner_block_blueprint.py`
+builds the block-decomposed chain from the invariant and checks every consecutive
+pair really is one rule applied in one context: 48 cases, `b = 2 … 7`,
+`a = b+1 … b+4`, no illegal step, endpoints meeting, lengths exactly
+`b² + 3b + 5`. Predicted per side and confirmed:
+
+    V = 2 + (b+1) + b(b+1)/2      U = b + b(b+1)/2 + 2
+
+**A distinction that had to be got right.** At `a = b + 1` the engine does *not*
+follow these blocks for `b ≥ 5`: the Bokut–Shiao step of pass `d` exposes a redex
+that deg-lex prefers over finishing pass `d`'s transport, so the engine
+interleaves. That is not a counterexample — a `SingleStepReduction` may rewrite
+any redex, not only the largest — and the checker confirms the block chain is
+legal there too. Checking the blueprint against *the engine's ordering* would
+have reported a failure that was not one; checking it against *legality* is the
+right test and is what the committed script does.
+
+**Left to do for the whole `a > b` regime:** assemble the passes. The loop runs
+`k` from `i` down past `j₂`, so it is an induction on `k.val − j₂.val` in the
+style of `descWord_split_aux` (§4w). What needs care is the collision hypotheses:
+each pass needs the bystander term to miss every word the pass passes through,
+and the assembled statement has to carry that through the induction rather than
+re-proving it per pass.
+
+**Also:** a Lean identifier may not contain `′` (U+2032, PRIME) — only ASCII `'`.
+The parse error lands on the *use* site, not the binder. Third member of this
+family after `₊` and the `rw`-transparency trap.
