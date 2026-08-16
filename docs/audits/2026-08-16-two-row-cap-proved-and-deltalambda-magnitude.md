@@ -114,7 +114,13 @@ load-bearing ones:
 | `docs/audits/2026-08-07-binding-is-three-row-dominated-hypothesis-refuted.md` | title asserts binding is **≥3-row dominated** | contradicted — needs a superseded banner |
 | `docs/audits/2026-08-07-two-row-projection-is-the-pairwise-cap.md:38` | "**13.4 %** of the trace is projected to zero, measured, not estimated" | convention-C measurement |
 
-**No content blocks were mass-edited**, per scope.
+**No content blocks were edited at all** — not even the two or three one-line
+citation swaps the scope allowed. Reason: every one of these blocks carries a
+`.qa.json` sidecar, and any `.md` edit drifts `source_hashes.md`, which needs
+`qa-sweep` to refresh. `folio-assistant/` is not set up in this sandbox and
+cloning it would spend most of the 1.3 GB of free disk. A stale sidecar I
+cannot refresh is worse than a listed finding, so the whole inventory is left
+as a list. Tracked as a bean.
 
 ### `prop:he4-two-row-dominance` — the withdrawn 86.6 % is worse than withdrawn
 
