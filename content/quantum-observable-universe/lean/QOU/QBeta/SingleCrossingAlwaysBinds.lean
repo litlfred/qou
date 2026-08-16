@@ -210,6 +210,45 @@ theorem unbinding_needs_large_q {q d : ℝ} (hq : 0 < q)
   obtain ⟨_, hlt⟩ := interface_mem_Ioo hq hlo hhi hcon
   linarith
 
+/-! ### T-blind vs T-odd gradings
+
+The two-nucleon sector needs the symmetric channel (`T = 1`) unbound and the
+antisymmetric one (`T = 0`) bound. Whether a grading can *express* that at all is
+decided by how it acts on the two channels' ratio. -/
+
+/-- **A T-blind grading cannot discriminate the channels.** If both channels are
+scaled by the same factor `c ≠ 0`, their ratio is unchanged — so no common
+grading can change which channel is closer to the unbinding threshold.
+
+This is the writhe: the normalisation `(1-h)^(e/2)` depends on the exponent sum,
+which is a property of the *word*, not of the Wedderburn block, so both channels
+receive it identically and it cancels here. -/
+theorem common_factor_cancels_in_ratio {a b c : ℝ} (hc : c ≠ 0) (hb : b ≠ 0) :
+    (a * c) / (b * c) = a / b := by
+  field_simp
+
+/-- **A reciprocal (T-odd) grading does move the ratio.** If the two channels
+receive `t` and `t⁻¹`, the ratio is multiplied by `t²` — strictly monotone in `t`,
+so the channels can be reordered.
+
+This is the ribbon twist: `θ_λ = q^{c(λ)}` with `c(λ') = -c(λ)`
+(`QOU.BraidKnot.KeystoneModularTwist`), so at `n = 2` the symmetric block gets
+`q^{f}` and the antisymmetric block `q^{-f}`. -/
+theorem reciprocal_factors_scale_ratio {a b t : ℝ} (ht : t ≠ 0) (hb : b ≠ 0) :
+    (a * t) / (b * t⁻¹) = (a / b) * t ^ 2 := by
+  field_simp
+
+/-- **The consequence, as an ordering statement.** With `0 < b < a` (the corpus's
+forced ordering `μ₋ < μ₊`), a common factor keeps the symmetric channel the
+larger one; only a reciprocal grading can lift the ratio further. Stated as the
+strict monotonicity that makes the threshold in the probe well-defined. -/
+theorem reciprocal_ratio_strictMono {a b : ℝ} (ha : 0 < a) (hb : 0 < b)
+    {t u : ℝ} (ht : 0 < t) (htu : t < u) :
+    (a / b) * t ^ 2 < (a / b) * u ^ 2 := by
+  have hab : 0 < a / b := div_pos ha hb
+  have hsq : t ^ 2 < u ^ 2 := by nlinarith
+  exact mul_lt_mul_of_pos_left hsq hab
+
 /-- **Non-vacuity at the substrate anchor.** `q₀ ≈ 1.10998` satisfies the
 hypothesis with room: `q³ ≈ 1.3676` against `q² + 1 ≈ 2.2321`. Stated on a
 rational bracket so it is checkable by `norm_num`. -/
