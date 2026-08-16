@@ -128,12 +128,50 @@ objective, which is a stronger statement of the bean's own "the braid's
 content never reaches the part of the program that could break the
 degeneracy": for the confinement LP, the Gram is *not* such a part.
 
-### Candidate 3 is untouched
+### Candidate 3 — the dense-PSD lift — also fails, for a third reason
 
-The dense-PSD lift (`operator_selection_sdp.rs`) is not covered by any of
-this: the argument above is about a *linear* program over a degenerate
-bilinear form, and a PSD lift changes the feasible set rather than the form.
-It is now the only one of the three candidates still open.
+Read the lift as actually written (`computations/sdp_moment_lift.py:194-208`).
+The Lasserre moment relaxation **keeps every LP constraint** — `A_eq x = b_eq`,
+`Gx ≥ 0`, the box — and *adds* `M = [[1,xᵀ],[x,X]] ⪰ 0`, `X ⪰ 0`,
+`tr(GX) ≥ 0`. So its feasible `x`-set is a **subset** of the LP's, and
+`min_SDP ≥ min_LP`.
+
+That much says the SDP cannot do *worse*. What settles it is that the LP
+optimum **survives the lift**: take the rank-one moment matrix `X = x*x*ᵀ`,
+PSD by construction, and
+
+```
+tr(GX) = x*ᵀ(Gx*) = 0        because Gx* = 0
+```
+
+— every Frobenius constraint is already tight at the radical optimum, so
+`tr(GX) ≥ 0` holds with equality and nothing is cut off. Hence
+`min_SDP = min_LP = 0`, attained at the same `x*`.
+
+Lean: `tightening_preserves_optimum`, stated for an **arbitrary** refinement
+`Tighter` of `IsFeasible`. Only two hypotheses: it refines feasibility, and
+`x*` still satisfies it. Neither mentions semidefiniteness. A tightening can
+only help when it *cuts off* the incumbent optimum, and this one cannot,
+because `x*` is exactly where all the constraints hold with equality.
+
+Note the dual story is genuinely different here — worth recording so nobody
+re-derives it. The moment block contributes `2Z₀ⱼ` to the `x`-block dual
+equation, and `Σⱼ vⱼ·(∂M/∂xⱼ) ≠ 0`, so the moment lift **does** break the
+`y₀ = 0` *forcing*. It just does not change the optimal *value*. Escaping the
+dual argument is not the same as escaping the degeneracy.
+
+### The criterion, for whatever is proposed next
+
+`y_0_eq_zero_of_contribution_perp_radical` reduces all of this to one
+question. Dual feasibility for the `x`-block of any conic program reads
+`tⱼ = y₀ + cⱼ`, with `cⱼ = Σᵢ sᵢGᵢⱼ` for an LP, `cⱼ = ⟨Z,Mⱼ⟩` for an SDP with
+lift `M₀ + Σₖ xₖMₖ`. Then:
+
+> **`y₀ = 0` as soon as the constraint map annihilates the radical.**
+
+So the one thing to check of any reformulation is whether `Σⱼ vⱼMⱼ = 0`. And
+per candidate 3, even a formulation that passes that test still has to cut off
+`x*` to change anything.
 
 ### Not claimed
 
@@ -141,8 +179,23 @@ That no confinement formulation can work — only that these two cannot, and
 that Gram-decoration is the wrong axis. The acceptance bar (both θ values
 absolutely, on the A-free curve) is untouched by this and remains the target.
 
+## All three candidates are now closed
+
+| candidate | why it fails |
+|---|---|
+| 1. `u_demand` profile | `t·x = u₀` for every feasible `x` — the objective is constant on the feasible set, so there is nothing to optimise |
+| 2. braid-built Gram | `V` spans a two-sided ideal, so `G^w v = 0` for every `w`; `⟨t,v⟩ = tr_M(V) = 0` regardless of the Gram |
+| 3. dense-PSD / moment lift | keeps `Gx ≥ 0` and only adds constraints, and `x*` lifts (rank-one `X = x*x*ᵀ`, `tr(GX) = 0`), so it cuts off nothing |
+
+The common thread, which is the bean's own diagnosis sharpened: the braid's
+content has to reach the **objective**. Candidates 1–3 all leave `t` alone.
+
 ## Next
 
-- [ ] Candidate 3: the dense-PSD lift — the only surviving candidate
-- [ ] If pursuing an objective change instead: it must break `⟨t,v⟩ = 0`,
-      i.e. stop being the Markov trace vector on this basis
+- [ ] The only remaining axis is a genuinely different objective — one that
+      breaks `⟨t,v⟩ = 0`, i.e. stops being the Markov trace vector on this
+      basis. Whether such a thing is *motivated* rather than merely
+      degeneracy-breaking is an owner question, not a mechanical one.
+- [ ] Related: `qou/8na1` asks whether `prop:mass-coefficient-shadow-price`
+      should read `y₀*` as a shadow price at all, given it is provably zero.
+      That decision plausibly subsumes this bean's framing.
