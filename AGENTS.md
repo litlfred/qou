@@ -165,6 +165,23 @@ user's last message, not the most recently mentioned file.
    when the user explicitly says so ("stop", "drop that", "switch
    to X first"). Inferred urgency is not enough.
 
+   > **Stalled-claim takeover (standing policy, 2026-08-15).** Assume
+   > agents can stall — a container is reclaimed, a session dies, a
+   > branch is abandoned mid-task. A bean at `in-progress` whose
+   > **backing branch has had no new commit for > 3 h** is presumed
+   > abandoned and MAY be taken over. **Scope (read or you will clobber
+   > live work):** this applies ONLY to the branch backing a *live
+   > in-progress bean* — NOT to the thousands of long-idle `claude/*`
+   > branches, which are permanently stale and are never takeover
+   > targets by age alone. Before taking over: confirm the branch is
+   > genuinely stale (last commit > 3 h AND no newer PR activity / no
+   > in-flight CI — a long build is not a stall), re-claim the bean with
+   > a `--body-append` noting the takeover + the stale branch's last
+   > SHA, and continue from that branch's tip or from `main` — **never
+   > force-push over a sibling's branch.** This is the one sanctioned
+   > exception to "never touch a sibling's claim". Protocol:
+   > [`local/todo-manager` §Stalled-claim takeover](.claude/skills/local/todo-manager.md).
+
 3. **Say which bean you are on — every turn.** Claiming a bean records
    the work; *reporting* it is what lets the user steer and a sibling
    session avoid you. Both are required.
