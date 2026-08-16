@@ -433,10 +433,8 @@
     }
   ],
   "blocked_migrations": [],
-  "intra_module_split_waivers": [
-    "pyhecke.gram"
-  ],
-  "intra_module_split_waivers_note": "R10 fails a module whose registered z-carrying symbols disagree with each other, because a caller imports a MODULE, not a registry entry. `pyhecke.gram` is listed here as an OPEN DEFECT, not an approved design: its float64 `z` is convention D (migrated 2026-08-15, bean qou-w8zz) while the 50-dps mpmath path -- z_mp(), tr_m_mp(), tr_m_mp_strings(), gram_matrix_mp() -- is still convention C, an 18.5% divergence behind one import, with tr_m_mp()'s docstring still asserting the two are 'in lockstep'. Note which way the risk runs: the FLOAT64 path is correct and the NO-FLOAT64 path is not, so the more precise answer is the wrong-convention one. Waived rather than left red so the gate stays usable for unrelated work; waiving downgrades to a WARNING, which is counted in the summary line and stays visible until the split is closed. Tracked in bean qou-2ixd; the repair belongs to qou-w8zz, whose scope gram.py is. Remove this entry when the mpmath path moves to D.",
+  "intra_module_split_waivers": [],
+  "intra_module_split_waivers_note": "EMPTY as of 2026-08-16 (bean qou-cds2). R10 fails a module whose registered z-carrying symbols disagree with each other, because a caller imports a MODULE, not a registry entry. `pyhecke.gram` was the only entry: its float64 `z` was convention D while its 50-dps mpmath path (z_mp, tr_m_mp, tr_m_mp_strings, gram_matrix_mp) was still C -- and the risk ran the unintuitive way, with the NO-FLOAT64 path carrying the wrong convention, so the more precise answer was the incorrect one. The mpmath path is now D and the split is closed, so this list is empty rather than waived. Keep it that way: a waiver was always meant to be a visible open defect (it downgrades to a WARNING, counted in the summary line), never an approved design.",
   "resolved_migrations": [
     {
       "file": "tools/pyhecke/python/pyhecke/gram.py",
@@ -530,7 +528,7 @@
       },
       {
         "id": "pyhecke.gram.z_mp",
-        "convention": "C",
+        "convention": "D",
         "module": "pyhecke.gram",
         "symbol": "z_mp",
         "kind": "callable_no_arg",
@@ -539,11 +537,12 @@
           "computations/substrate"
         ],
         "abs_tol": "1e-40",
-        "note": "STILL C, and that is the finding rather than the design. gram.py's module-level `z` moved to D on 2026-08-15, but the 50-dps mpmath path did not: z_mp() returns 0.4993203341836944524134427 where gram.z is 0.6126880371464652. The docstring on tr_m_mp() says the mpmath path is 'in lockstep with the module's z' -- it is not, and has not been since the migration. Registered so R9 ASSERTS the split instead of leaving it invisible; R10 reports it as an intra-module divergence. Nothing is fixed by this entry: gram.py is bean qou-w8zz's active scope and the repair belongs there. Note which way round the risk runs -- the float64 path is D and the NO-FLOAT64 path is C, so the more precise answer is the wrong-convention one."
+        "note": "Was convention C, justified in its own docstring as being 'in lockstep with the module's float64 z'. That justification outlived its premise: the float64 z moved to D on 2026-08-15 (6086572c4) and this did not, so the module exported two conventions 18.5% apart behind one import while every docstring in it claimed lockstep. Now genuinely in lockstep -- z_mp() and the float64 z agree to 4.1e-18, i.e. to float64's own limit.",
+        "migrated": "2026-08-16 (qou-cds2)"
       },
       {
         "id": "pyhecke.gram.tr_m_mp[1]",
-        "convention": "C",
+        "convention": "D",
         "module": "pyhecke.gram",
         "symbol": "tr_m_mp",
         "kind": "callable_index",
@@ -553,7 +552,8 @@
           "computations/substrate"
         ],
         "abs_tol": "1e-40",
-        "note": "tr_m_mp() returns the Markov trace on the NF basis at 50 dps as [1, z, z, z^2, z^2, h*z^2+z]; index 1 IS z. Registered separately from z_mp because it is the exported vector callers actually consume (tr_m_mp_strings() and gram_matrix_mp() are built the same way), so a repair that fixed z_mp alone would leave this one C and R9 would say so."
+        "note": "Was convention C, justified in its own docstring as being 'in lockstep with the module's float64 z'. That justification outlived its premise: the float64 z moved to D on 2026-08-15 (6086572c4) and this did not, so the module exported two conventions 18.5% apart behind one import while every docstring in it claimed lockstep. Now genuinely in lockstep -- z_mp() and the float64 z agree to 4.1e-18, i.e. to float64's own limit.",
+        "migrated": "2026-08-16 (qou-cds2)"
       },
       {
         "id": "qbeta_utils.markov_parameter",
@@ -582,7 +582,7 @@
     "derived": [
       {
         "id": "pyhecke.gram.tr_m_mp[3]",
-        "convention": "C",
+        "convention": "D",
         "module": "pyhecke.gram",
         "symbol": "tr_m_mp",
         "kind": "callable_index",
@@ -593,11 +593,12 @@
           "computations/substrate"
         ],
         "abs_tol": "1e-40",
-        "note": "R11 -- THE DERIVED CHECK. R9 checks z itself; this checks that a quantity DERIVED from z still matches the z it was derived from. TR_M is [1, z, z, z^2, z^2, h*z^2+z], so index 3 must be z^2 for whatever z the module uses. Registered under C because the mpmath path IS still C (see the intra_module_split_waivers note); if that path migrates to D and this vector is rebuilt consistently, only the `convention` field here changes."
+        "note": "R11 -- THE DERIVED CHECK. R9 checks z itself; this checks that a quantity DERIVED from z still matches the z it was derived from. TR_M is [1, z, z, z^2, z^2, h*z^2+z], so index 3 must be z^2 for whatever z the module uses. Registered under C because the mpmath path IS still C (see the intra_module_split_waivers note); if that path migrates to D and this vector is rebuilt consistently, only the `convention` field here changes.",
+        "migrated": "2026-08-16 (qou-cds2)"
       },
       {
         "id": "pyhecke.gram.tr_m_mp[5]",
-        "convention": "C",
+        "convention": "D",
         "module": "pyhecke.gram",
         "symbol": "tr_m_mp",
         "kind": "callable_index",
@@ -608,7 +609,8 @@
           "computations/substrate"
         ],
         "abs_tol": "1e-40",
-        "note": "The longest element e^- = sigma_0 sigma_1 sigma_0 evaluates to h*z^2 + z by cyclicity plus the Hecke quadratic, NOT z^3. This exact entry was z^3 until docs/audits/2026-05-19-trm5-markov-bug.md, and main carries the follow-on commit 'flip trace_weights to h*z^2 + z -- Rust and Python finally agree'. A static scanner cannot catch it: z^3 and h*z^2+z are both perfectly ordinary expressions in z, differing only in being right and wrong. Only evaluation distinguishes them, which is the whole argument for R9/R11 over R4/R5."
+        "note": "The longest element e^- = sigma_0 sigma_1 sigma_0 evaluates to h*z^2 + z by cyclicity plus the Hecke quadratic, NOT z^3. This exact entry was z^3 until docs/audits/2026-05-19-trm5-markov-bug.md, and main carries the follow-on commit 'flip trace_weights to h*z^2 + z -- Rust and Python finally agree'. A static scanner cannot catch it: z^3 and h*z^2+z are both perfectly ordinary expressions in z, differing only in being right and wrong. Only evaluation distinguishes them, which is the whole argument for R9/R11 over R4/R5.",
+        "migrated": "2026-08-16 (qou-cds2)"
       },
       {
         "id": "c_3_categorical_derivation_attempt.trM_hopf",

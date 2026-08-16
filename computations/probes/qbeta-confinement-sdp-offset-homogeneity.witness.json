@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke+clarabel-mpfr+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T09:43:24.228562+00:00",
-  "commitSha": "117d45e8adc3582aba35d8c7754c81f8683cd462",
+  "computedAt": "2026-08-16T11:13:35.301291+00:00",
+  "commitSha": "172db58562df57100bd1572f88a8498fffcd0455",
   "assertions": [
     {
       "name": "confinement_lp_is_homogeneous",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 7,
   "computation": "qbeta-confinement-sdp-offset-homogeneity",
   "scriptFile": "qbeta_confinement_sdp_offset_homogeneity_probe.py",
   "scriptHash": "5f881bbb26bf",
-  "scriptCommitSha": "40a3d32fb3dacd4744bc64b13918ede17a6b0262",
+  "scriptCommitSha": "c9559926089d25f13c00a66ae0b7c382feef2b9a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Tests whether the confinement operator-selection LP's solution offset can carry theta_K. Two independent reasons it cannot. (1) The Frobenius constraint Gx >= 0 and the net constraint 1^T x = n are both homogeneous, so feasible(n) = n * feasible(1) as an IDENTITY (verified on the constraint functions at 50 dps, no solver); with t and G knot-independent and only n_target = |tr_M(K)| varying, two knots give parallel offsets, so the pair (magnitude, angle) is ratio-shaped and unfalsifiable by AfreeThetaConstraint.ratio_attained. (2) The objective is DEGENERATE: min t.x = 0 and y0* = 0 at every n, so the optimal face is not a point and x* is not determined by the LP — 'the offset' is a solver artifact. Supersedes this witness's earlier x*(n) = (n/n0)x*(n0) measurement, which read scipy/HiGHS's vertex selection rather than a property of the program. Escape: a formulation with knot-dependent t or G is not homogeneous and is not excluded. Nothing fitted.",
   "contentBlock": "conj:im-q-physical-role",
@@ -70,40 +73,40 @@
     "per_scale": [
       {
         "n_target": "1.0",
-        "primal_obj": "4.785e-14",
-        "y0_star": "-1.985e-14",
-        "duality_gap": "6.77e-14",
-        "offset_norm_solver_dependent": "40.5566025937097",
+        "primal_obj": "3.815e-16",
+        "y0_star": "-6.618e-19",
+        "duality_gap": "3.821e-16",
+        "offset_norm_solver_dependent": "524680.465870401",
         "active_set": [
           0
         ]
       },
       {
         "n_target": "2.0",
-        "primal_obj": "6.448e-14",
-        "y0_star": "-1.45e-14",
-        "duality_gap": "9.349e-14",
-        "offset_norm_solver_dependent": "83.890378702121",
+        "primal_obj": "3.814e-16",
+        "y0_star": "-6.625e-19",
+        "duality_gap": "3.827e-16",
+        "offset_norm_solver_dependent": "524667.380493823",
         "active_set": [
           0
         ]
       },
       {
         "n_target": "3.7067",
-        "primal_obj": "6.542e-14",
-        "y0_star": "-9.442e-15",
-        "duality_gap": "1.004e-13",
-        "offset_norm_solver_dependent": "161.777779120682",
+        "primal_obj": "3.812e-16",
+        "y0_star": "-6.629e-19",
+        "duality_gap": "3.837e-16",
+        "offset_norm_solver_dependent": "524645.048132008",
         "active_set": [
           0
         ]
       },
       {
         "n_target": "100.0",
-        "primal_obj": "3.905e-14",
-        "y0_star": "-1.638e-16",
-        "duality_gap": "5.543e-14",
-        "offset_norm_solver_dependent": "5255.61014548145",
+        "primal_obj": "3.716e-16",
+        "y0_star": "-6.556e-19",
+        "duality_gap": "4.372e-16",
+        "offset_norm_solver_dependent": "523386.098140444",
         "active_set": [
           0
         ]
@@ -113,7 +116,7 @@
     "lp_precision": {
       "backend": "clarabel MPFR @ 167 bits (~50 dps)",
       "inputs": "gram_matrix_mp_strings / tr_m_mp_strings — no f64 anywhere",
-      "max_duality_gap": "1.004e-13",
+      "max_duality_gap": "4.372e-16",
       "reported_digits": 15,
       "why": "the interior-point solver's convergence gap, not float arithmetic, is the accuracy floor; values are reported to 15 digits, inside it. The previous version solved this LP with scipy/HiGHS in float64 and published 17."
     },
@@ -125,6 +128,6 @@
     },
     "why_it_matters": "homogeneity makes the offset direction knot-independent and the magnitude proportional to tr_M(K); the pair is therefore ratio-shaped and unfalsifiable by ratio_attained. Degeneracy makes the offset undefined in the first place.",
     "the_only_escape": "put the braid's operator content into the OBJECTIVE t or the GRAM G, not merely the net constraint n_target; that breaks homogeneity and is not excluded here",
-    "verdict": "THE CONFINEMENT LP CANNOT CARRY ϑ_K, and the reason is stronger than the one this probe originally recorded. TWO FACTS, established separately. (1) HOMOGENEITY, now as an IDENTITY rather than a measurement: 1^T x = n and G x >= 0 are both homogeneous, so feasible(n) = n * feasible(1) exactly — checked on the constraint functions at 50 dps to 2.32e-69, with no solver involved. Since t and G are knot-INDEPENDENT (properties of the H_3 basis at q0) and only n_target = |tr_M(K)| varies, two knots give PARALLEL offsets: the ANGLE carries zero knot information and the MAGNITUDE is a fixed constant times tr_M(K), so the pair supplies ONE knot-dependent number and its content is the ratio tr_M(K1)/tr_M(K2). AfreeThetaConstraint.ratio_attained proves a ratio-shaped candidate is unfalsifiable. (2) WORSE: the objective is DEGENERATE. min t·x = 0 and y0* = 0 at every tested n (to 1.0e-13, the solver's duality gap), so the optimal face is not a point and the LP does not determine x* at all. 'The offset from the lattice saddle' is therefore not a well-defined function of the knot even before homogeneity is invoked — it is whatever point on a zero-objective face the solver happens to return. RETRACTED, and this is the reason the second fact surfaced: the earlier version reported x*(n) = (n/n0) x*(n0) to 1e-9 as the measurement establishing homogeneity. That number was an artifact of scipy/HiGHS crossing over to a VERTEX — vertices of n*P are n times vertices of P, so any vertex-returning solver reproduces the scaling regardless. Re-run against clarabel's interior point the same LP 'fails' it. The conclusion was right; the evidence was solver-dependent and has been replaced by the identity above. THE ESCAPE, unchanged and still the only one: a formulation whose t or G is itself knot-dependent is NOT homogeneous and is NOT excluded — the braid's operator content must enter the OBJECTIVE or the GRAM, not merely the net constraint. SCOPE (a): this excludes the canonical scalar-net formulation as the corpus builds it, not the proposal. Nothing fitted; nothing wired."
+    "verdict": "THE CONFINEMENT LP CANNOT CARRY ϑ_K, and the reason is stronger than the one this probe originally recorded. TWO FACTS, established separately. (1) HOMOGENEITY, now as an IDENTITY rather than a measurement: 1^T x = n and G x >= 0 are both homogeneous, so feasible(n) = n * feasible(1) exactly — checked on the constraint functions at 50 dps to 2.32e-69, with no solver involved. Since t and G are knot-INDEPENDENT (properties of the H_3 basis at q0) and only n_target = |tr_M(K)| varies, two knots give PARALLEL offsets: the ANGLE carries zero knot information and the MAGNITUDE is a fixed constant times tr_M(K), so the pair supplies ONE knot-dependent number and its content is the ratio tr_M(K1)/tr_M(K2). AfreeThetaConstraint.ratio_attained proves a ratio-shaped candidate is unfalsifiable. (2) WORSE: the objective is DEGENERATE. min t·x = 0 and y0* = 0 at every tested n (to 4.37e-16, the solver's duality gap), so the optimal face is not a point and the LP does not determine x* at all. 'The offset from the lattice saddle' is therefore not a well-defined function of the knot even before homogeneity is invoked — it is whatever point on a zero-objective face the solver happens to return. RETRACTED, and this is the reason the second fact surfaced: the earlier version reported x*(n) = (n/n0) x*(n0) to 1e-9 as the measurement establishing homogeneity. That number was an artifact of scipy/HiGHS crossing over to a VERTEX — vertices of n*P are n times vertices of P, so any vertex-returning solver reproduces the scaling regardless. Re-run against clarabel's interior point the same LP 'fails' it. The conclusion was right; the evidence was solver-dependent and has been replaced by the identity above. THE ESCAPE, unchanged and still the only one: a formulation whose t or G is itself knot-dependent is NOT homogeneous and is NOT excluded — the braid's operator content must enter the OBJECTIVE or the GRAM, not merely the net constraint. SCOPE (a): this excludes the canonical scalar-net formulation as the corpus builds it, not the proposal. Nothing fitted; nothing wired."
   }
 }
