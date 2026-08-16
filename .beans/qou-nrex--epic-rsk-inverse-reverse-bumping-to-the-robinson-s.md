@@ -97,3 +97,28 @@ Q-branches. `SchenstedRecording.insertWordRec_snd_content` (content is exactly `
 timestamp once) is what makes "the row holding `s`" a function. With that,
 `word_eq_of_insertWord_eq` upgrades to injectivity of `rskPair`, and the same machinery run
 forwards gives surjectivity.
+
+## Brick 4 DONE — the recording tableau IS the row-index record
+
+`QOU/Mathlib/SchenstedRecordingIndex.lean`, sorry-free (`propext`, `Quot.sound`):
+
+- `qAppend Q i s` — write timestamp `s` at the end of `Q`'s row `i`, with the same `headD`/`tail`
+  reading `insertRec` uses;
+- **`insertRec_snd_eq_qAppend`** — one step: `(insertRec P Q x s).2 = qAppend Q (newRowIndex P x) s`;
+- `qAppendSteps` + **`insertWordRecAux_snd_eq_qAppendSteps`** / `insertWordRec_snd_eq_qAppendSteps`
+  — the whole fold, and its form at the empty tableau.
+
+**The finding worth keeping:** the row `insertRec` writes the timestamp into is *literally*
+`newRowIndex P x`, the index brick 2 defined from `insert`'s own recursion. There are not two
+notions of "which row grew" needing reconciliation — the `Q`-branches of `insertRec` and the
+branches of `newRowIndex` are the same case split, so the identification is a rewrite, not an
+argument. Brick 3's index list was never side information.
+
+Consequence: brick 3's `word_eq_of_insertWord_eq` wanted equal `P` **and** equal index records;
+the index record is now a function of the construction of `Q`.
+
+**Next:** invert `qAppendSteps` — read `rowIndices` back off a given `Q`. This is where
+`SchenstedRecording`'s timestamp content (`insertWordRec_snd_content`: exactly `range |w|`, each
+once) finally earns its keep: it is what makes "the row holding `s`" well defined, so the read-back
+is a function rather than a search. After that, `rskPair` injectivity, then surjectivity, then the
+count.
