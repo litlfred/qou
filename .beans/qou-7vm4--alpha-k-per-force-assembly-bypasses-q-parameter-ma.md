@@ -3,8 +3,9 @@
 title: 'alpha_k_per_force_assembly bypasses q_parameter: manifest says ideal_muon, code imports q_at directly (proton), and the except-fallback silently picks muon if the import fails'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-11T10:31:47Z
-updated_at: 2026-08-11T10:31:47Z
+updated_at: 2026-08-15T22:32:50Z
 ---
 
 
@@ -73,3 +74,24 @@ right. What remains is not staleness but this tag-vs-code inconsistency, plus th
 rather than the 80.51 ppb muon evaluation. See
 `docs/audits/2026-08-11-alpha-em-anchor-dominance.md`. Whatever is decided in (1)
 should not silently move the ladder.
+
+
+STATUS 2026-08-15 (reorientation pass): DEFECT 2 FIXED, DEFECT 1 STILL OPEN.
+
+Defect 2 (the anchor was chosen by whether an import succeeded) landed with
+PR #4961 (6e101ea1bf). At main 08b6ff7e7d the producer now WARNS on the fallback
+path and RECORDS which path it took as q0_source / q0_anchor in the witness
+payload, so a witness produced in a constrained environment can no longer
+silently carry a different anchor. The fallback itself is retained -- the
+producer must still run without qou_substrate.
+
+Defect 1 is UNCHANGED and is an owner call, deliberately not decided in code:
+q0_anchor_manifest.json lists this producer under ideal_muon, but the code
+imports q_at directly (proton) rather than routing through q_parameter, so the
+manifest tag cannot fire. Either honour the tag (muon; reproduces the committed
+witness; zero numbers move) or re-tag to physical_proton (regenerate; every
+delta_q_value_at_q0 moves 114-148 ppb and 1/alpha_EM moves -78.96 ppb). The
+2026-08-07 directive says TOUCHED code defaults to proton, but a manifest tag is
+a deliberate per-producer assignment and this producer is on the alpha_EM path.
+
+This bean now tracks defect 1 only.

@@ -27,8 +27,8 @@ For each partition $\lambda$ the witness records:
 - $\mathrm{depth}(\lambda)$, $\mathrm{height}(\lambda)$
 - $\mathrm{signed\_content}(\lambda) = \sum_{(i, j) \in \lambda}
   (j - i)$ (chirality marker; $= 0$ marks chirality cells)
-- Plancherel weight $w_\lambda = (\dim V_\lambda)^2 / n!$
-- $q$-deformed alternative $\widetilde w_\lambda = \dim_q^2 V_\lambda /
+- Plancherel weight $w_\lambda(1) = (\dim V_\lambda)^2 / n!$
+- $q$-deformed alternative $w_\lambda(q) = \dim_q^2 V_\lambda /
   [n]_q!$ (does not sum to $1$ at finite $q \neq 1$ —
   [Plancherel remark](#prop:plancherel-weight-boundedness))
 

@@ -45,8 +45,8 @@ depth-$k$ centre stratum $Z^{(k)}(A)$ via the $q$-content / hook-length
 structure:
 
 (a) The q-deformed Wedderburn-block weight is
-$\tilde w_\lambda = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
-classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$ —
+$w_\lambda(q) = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
+classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$ —
 the two coincide at $q = 1$; see
 [`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)),
 where

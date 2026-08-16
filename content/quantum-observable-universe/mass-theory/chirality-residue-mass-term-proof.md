@@ -60,8 +60,11 @@ with no fitting input.*
 
 **Plancherel-boundedness of the chirality sub-sum.**
 
-*By [plancherel-weight-boundedness](#prop:plancherel-weight-boundedness),
-$\sum_{\lambda \in \Lambda_k} w_\lambda \leq 1$, so the chirality
+*[plancherel-weight-boundedness](#prop:plancherel-weight-boundedness) bounds
+the **classical** weights, $\sum_{\lambda \in \Lambda_k} w_\lambda(1) \leq 1$.
+The weights used above are $q$-deformed, and $\sum_\lambda w_\lambda(q)$
+exceeds $1$ for $n \geq 7$, so that proposition does not supply the bound
+here; a $q$-deformed boundedness result is needed. Granting it, the chirality
 sub-sum
 $\sum_{\substack{\lambda \in \Lambda_k \\ c_\lambda = 0}} w_\lambda$
 is also bounded by $1$.  The chirality residue

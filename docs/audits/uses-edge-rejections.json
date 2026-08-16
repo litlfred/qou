@@ -1,9 +1,9 @@
 {
   "schema": "uses-edge-rejections/v1",
-  "purpose": "Candidate uses[] edges that were considered and REJECTED on editorial grounds. Scans that propose uses[] restorations (prose-corroboration, empty-uses completeness, declares-some-names-more, the §3b-cond rule-4 banner scan) must filter their candidates against this ledger, or they re-propose settled work every run. An entry here is a claim that a human or agent READ the blocks and concluded the edge does not belong -- it is not a claim that the target is unrelated.",
+  "purpose": "Candidate uses[] edges that were considered and REJECTED on editorial grounds. Scans that propose uses[] restorations (prose-corroboration, empty-uses completeness, declares-some-names-more, the \u00a73b-cond rule-4 banner scan) must filter their candidates against this ledger, or they re-propose settled work every run. An entry here is a claim that a human or agent READ the blocks and concluded the edge does not belong -- it is not a claim that the target is unrelated.",
   "why_this_exists": "Forward-pointing candidates were triaged by DIRECTION and never by CONTENT, so a wrong edge could sit in the 'correct but blocked' pile indefinitely. rem:bsd-surreal-bound -> rem:rh-surreal-bound did exactly that for a whole work-arc: it was held as 'correct but forward' across three audits before anyone read the sentence that produced it, which turned out to say the two results GENERALIZE one another rather than depend.",
   "reasons": {
-    "overview-source": "Source is a chapter overview (§0) block, typically a remark, that NAMES later results without depending on them. A survey previews; it does not require. Detected by reductio: satisfying such an edge proposes moving the target ahead of the introduction that previews it.",
+    "overview-source": "Source is a chapter overview (\u00a70) block, typically a remark, that NAMES later results without depending on them. A survey previews; it does not require. Detected by reductio: satisfying such an edge proposes moving the target ahead of the introduction that previews it.",
     "generalisation": "Source generalises, specialises, or compares itself to the target. A generalisation does not depend on its own special case.",
     "wrong-direction": "The dependency is real but runs the other way; the reverse edge is the correct one.",
     "restates-target": "Source restates the target's entire content inline, so the reader need not leave the block.",
@@ -57,7 +57,7 @@
       "source": "rem:q-metric-contact-deformation",
       "target": "thm:q-ns-wellposedness",
       "reason": "overview-source",
-      "note": "This block sits at fluid-dynamics §0 and names five results developed across §3-§6. Satisfying these five proposed moving def:ns-obstruction from §4 to before position 9 -- a definition relocated ahead of the introduction that previews it.",
+      "note": "This block sits at fluid-dynamics \u00a70 and names five results developed across \u00a73-\u00a76. Satisfying these five proposed moving def:ns-obstruction from \u00a74 to before position 9 -- a definition relocated ahead of the introduction that previews it.",
       "settled": "2026-08-10",
       "refiled_as": "foreshadows",
       "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
@@ -178,6 +178,18 @@
       "reason": "mis-aimed",
       "note": "The cited section 'Frobenius duality of strata' appears zero times in the proposition and at line 32 of prf:spectral-sequence-collapse. The same edge is ACCEPTED for prf:phi-q-categorical-truncation, whose Step 1 uses what the one-sentence proposition states.",
       "settled": "2026-08-10"
+    },
+    {
+      "source": "prf:phi-q-categorical-truncation",
+      "target": "conj:brane-tower-z-habiro",
+      "reason": "future-work",
+      "note": "Cited twice in the prose, both times as commentary rather than a prerequisite: once naming conj:brane-tower-z-habiro as the open target of the remaining uniform-bound gap, once observing that the empirical k=2 subtractive sweet spot is *consistent with* k_star <= 2 under this proposition. Corroboration and an open-target pointer are not dependencies. Independently barred: AGENTS.md \u00a73b forbids a proof of a provable-kind parent from depending on a conjecture, so declaring this would demote the parent."
+    },
+    {
+      "source": "prf:quantum-dilogarithm-stratified",
+      "target": "conj:brane-tower-z-habiro",
+      "reason": "future-work",
+      "note": "Cited twice in the prose, both times as commentary rather than a prerequisite: once naming conj:brane-tower-z-habiro as the open target of the remaining uniform-bound gap, once observing that the empirical k=2 subtractive sweet spot is *consistent with* k_star <= 2 under this proposition. Corroboration and an open-target pointer are not dependencies. Independently barred: AGENTS.md \u00a73b forbids a proof of a provable-kind parent from depending on a conjecture, so declaring this would demote the parent."
     }
   ],
   "refiling_note": "Seven overview-source rows carry refiled_as: \"foreshadows\" -- rejected as dependencies, re-declared as forward pointers. A row with refiled_as absent or \"none\" has NOT been re-declared anywhere and remains simply rejected. Scans must keep filtering on ALL rows regardless of refiled_as: the point is that none of them is a uses[] edge.",

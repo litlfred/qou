@@ -1,11 +1,11 @@
 ---
 # qou-qia8
 title: 'EPIC: writhe level-of-definition -- (w-n) mod 2 is the link-level shadow'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T19:30:50Z
-updated_at: 2026-08-10T19:30:52Z
+updated_at: 2026-08-15T22:31:26Z
 ---
 
 OWNER RULINGS (2026-08-10), authoritative:
@@ -30,3 +30,9 @@ BOTTOM OF THE TOWER / on normal forms, but are NOT functions on links. The
 minimal level is the braid index (a link invariant) and the surviving moves there
 are conjugation/exchange, which preserve the writhe -- so nothing numerical
 changes; only the LEVEL at which claims are stated.
+
+
+EPIC RESOLVED 2026-08-11 via PR #4961 (merged). All 18 commits landed. Children:
+ap47 V7 done, cvoq V8 done, wqto V9 scope-(a) landed but the datum is still open,
+rhfy V10 done, yz26 V11 done, owft V12 DECLINED (see that bean).
+Bean was left at 'todo' after the merge; closed here on the reorientation pass.
