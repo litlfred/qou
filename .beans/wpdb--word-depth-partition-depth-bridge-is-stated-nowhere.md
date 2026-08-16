@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T02:30:00Z
-updated_at: 2026-08-16T02:30:00Z
+updated_at: 2026-08-16T03:30:00Z
 ---
 Surfaced in #5183 as an open question, investigated and confirmed. Full
 evidence:
@@ -46,3 +46,46 @@ depth. All of it is conditional on a step nobody has written down.
 a statement that says what they use. If it is conjectural, the three `prf:`
 blocks become downstream of a conjecture and §3b applies — which is precisely
 why it should be named rather than left inside a citation.
+
+## Attempted the proof — NOT closed, but the partition side is now measured (2026-08-16)
+
+Tried to prove the bridge. Did not close it. What the attempt did establish,
+sorry-free, is a sharp fact about the partition side that bears directly on the
+downstream use — `QOU/BraidKnot/TwoFiltrationBridge.lean`:
+
+| theorem | content |
+|---|---|
+| `gbDepth_eq_corner` | `gbDepth μ = rowLen 0 + colLen 0 - 1` — the max hook is always the **corner** hook |
+| `gbDepth_eq_of_border_eq` | two diagrams sharing a first row and column have the same depth, however different their interiors |
+| `four_le_card_of_mem_one_one` | a non-hook needs ≥ 4 cells, so every partition of `n ≤ 3` is a hook |
+| `gbDepth_const_on_H3` | all three `H₃` blocks have depth `3` |
+
+**The last one is the point.** `prop:phi-q-categorical-truncation` sets
+`k⋆(T_w) := max{gbDepth λ : λ ∈ supp(T_w)}` and states the truncation depth is
+*"structurally locked to the NF support of `T_w`"*. At `n = 3` that maximum is
+`3` for **every** `T_w` with nonempty support — constant, so it locks onto
+nothing. And `n = 3` is the single-nucleon case (`schur-weyl-mass-decomposition`:
+the symmetric / standard / antisymmetric blocks), not a toy.
+
+Scope-(a): the grading is degenerate at `n ≤ 3`, not the truncation false. It
+becomes non-trivial from `n = 4`, where `(2,2)` has depth `3` against `4` for
+the four hooks.
+
+**Why the bridge itself did not yield.** Two obstructions, neither dissolved:
+
+1. **Well-definedness.** `r(T_w)` is "the number of `R_H`/`R_YB` rewrites needed
+   to reach normal form" — a property of a **word**, not of its image in
+   `H_n(R,q)`. Different words for the same algebra element need different
+   counts. The proof's own Step 2 says `J^ℓ` is *"the image of `I^ℓ` under the
+   quotient map"*, and `H_n = ℂ⟨σ⟩/I`, so that image is **zero** for `ℓ ≥ 1`.
+   As written the filtration is either trivial or not a function on the
+   quotient. This needs resolving before there is a statement to prove.
+2. **Coarseness mismatch.** `gbDepth` is determined by `(λ₁, λ'₁ )` alone
+   (`gbDepth_eq_of_border_eq`), taking values in `[2√n − 1, n]`. Any candidate
+   word-side rank would have to be equally blind to the interior of `λ`, which
+   is a strong constraint on what `r(T_w)` could be.
+
+**Next honest step:** fix the definition of the word filtration so it is
+well-defined on `H_n(R,q)` — as a filtration by *ideals* of the algebra, not by
+rewrite counts on representatives. Until then the bridge has no well-formed
+statement, which is a sharper diagnosis than "unproved".
