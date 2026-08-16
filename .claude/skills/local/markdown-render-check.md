@@ -32,7 +32,7 @@ Run the pipeline render where available
 (`bun run content/pipeline/render-latex.ts <paper>` after
 `scripts/setup-folio-assistant.sh`). **When it cannot run** (e.g. the
 `folio-assistant` clone is firewalled in a sandbox), run the grep battery
-(§2) + the expository pass (§2a) by hand, and **say in the commit/PR that
+(§2) + the expository pass (§2c) by hand, and **say in the commit/PR that
 the change was not machine-validated** — never report a math edit as
 render-checked when only CI would have caught a break.
 
@@ -63,8 +63,68 @@ changed files; any hit is a likely failure.
 | Bare `_` outside math | `grep -nE '[^$\\][_][^$]' file.md` | LaTeX subscript trigger; wrap identifier in backticks or `$...$`. |
 | Unbalanced delimiters | `python3 -c "import re,sys;s=open(sys.argv[1]).read();b=re.sub(r'\x60\x60\x60.*?\x60\x60\x60','',s,flags=re.S);print('fences',s.count('\x60\x60\x60'),'\$\$',b.count('\$\$'),'lone\$',re.sub(r'\$\$','',b).count('\$'),'{}',s.count('{'),s.count('}'))" file.md` | Each count must be even / equal. An odd `$` or `$$`, or `{`≠`}`, breaks the whole block (and often the rest of the file). Also check `\bigl`=`\bigr`, `\Bigl`=`\Bigr`, `\left`=`\right`, `\begin{`=`\end{`. |
 | `aligned`/`align` inside `$$` | `awk '/^\$\$/{m=!m} m && /\\begin\{align/' file.md` | Align-family environments belong in a fenced ` ```tex ` block (AGENTS.md §"TeX authoring patterns" item 5), not inline `$$…$$` — the unified-latex AST validator and KaTeX both choke on some forms. |
+| **Inner math env with no envelope** (BUILD-FATAL) | `bun run content/pipeline/qa-sweep.ts <block> --only render-math-mode-envelope` | See §2b — moving an align-family env into a ` ```tex ` fence per the row above is only half the job; it still needs a math envelope. |
+| **Unicode with no LaTeX setup** (BUILD-FATAL) | see §2b | A char with no `\newunicodechar` mapping *and* no `utf8.def` declaration aborts pdflatex in prose, `\texttt` and math alike. |
 
-### 2a. Expository pass — notation introduced before use
+### 2b. The two build-fatal classes (run the criterion, don't eyeball)
+
+These two abort the whole 1000-page compile, and both have recurred
+after being fixed — so they are now mechanical criteria rather than
+review advice. Run them on any block you touch:
+
+```bash
+bun run content/pipeline/qa-sweep.ts <path-to-block> --only render-math-mode-envelope
+```
+
+**1. Inner-only math env with no envelope.** LaTeX splits math
+environments into two kinds, and the distinction is invisible until the
+build dies:
+
+- **outer** — `equation`, `align`, `alignat`, `gather`, `multline`,
+  `flalign`, `displaymath`, and the `$$…$$` / `\[…\]` delimiters. These
+  *enter* math mode.
+- **inner** — `aligned`, `gathered`, `split`, `cases`, `matrix` and its
+  delimiter variants, `smallmatrix`, `array`, `subarray`. These typeset
+  a sub-box and are legal *only inside* math mode.
+
+A ` ```tex ` fence is raw passthrough. A fence that opens directly with
+an inner env therefore lands in horizontal mode:
+
+````md
+```tex
+\begin{aligned}          ← BUILD-FATAL: three errors from one slip
+  a &= b \\ c &= d
+\end{aligned}
+```
+````
+
+gives `! Package amsmath Error: \begin{aligned} allowed only in math
+mode` plus two `! Missing $ inserted`. Fix by wrapping in `\[ … \]`
+(keeps `aligned`), or by switching to the outer `align`/`align*` form.
+
+> **Do not hand-roll this grep.** `\begin{align` is a *prefix* of
+> `\begin{aligned}`, so the obvious "is an outer env present?" guard
+> matches the very thing it is meant to catch and passes on every real
+> defect. A scan written that way reported **0** corpus hits against a
+> true count of **2**. Also, inline `$…$` legitimately spans newlines
+> (§"TeX authoring patterns" item 2), so a line-bounded stripper
+> mis-flags every multi-line inline formula. The criterion handles both.
+
+**2. Unicode with no LaTeX setup.** *"Unmapped" is not the same as
+"crashes"* — LaTeX's own `utf8.def` declares a large set, so `↑` is
+fine while `∇` and `ˣ` abort with `Unicode character … not set up for
+use with LaTeX`. Do not try to judge a char by eye or by grepping the
+preamble's `\newunicodechar` list alone.
+
+As of the render-crash-guards change (folio-assistant#129), fenced code
+**and** inline code are both transliterated, so `` `q : Rˣ` `` now
+renders as `R^x` instead of killing the build. The residual risk is a
+crash-class char in **plain prose or a block title**, where no
+transliteration applies. If you paste a Lean/Unicode-heavy identifier
+into prose or a `.ts` `title:`, put it in backticks or replace the char
+with its ASCII form.
+
+### 2c. Expository pass — notation introduced before use
 
 A block that compiles can still read as gibberish to someone who has not
 read the rest of the paper. For survey / overview / self-contained blocks

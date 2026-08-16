@@ -666,7 +666,31 @@ the pipeline render where available
 `\bigl`-`\bigr`/`\begin`-`\end`; no `\operatorname{}` (KaTeX rejects → use
 `\mathrm{}`); no line starting with `+`/`-`/`*` inside `$$…$$` (markdown
 list-parser hijack); align-family environments (`aligned`, `align`) fenced as
-` ```tex `, not inline `$$`. Then run the **expository pass**: every symbol
+` ```tex `, not inline `$$`.
+
+> **Fencing an align-family env is only HALF the rule — the other half
+> is build-fatal (2026-08-16).** `aligned`/`gathered`/`split`/`cases`/
+> the matrix family/`array` are **inner** environments: legal only
+> *inside* math mode. A ` ```tex ` fence is raw passthrough, so a fence
+> that opens directly with `\begin{aligned}` lands in horizontal mode
+> and aborts pdflatex — `! Package amsmath Error: \begin{aligned}
+> allowed only in math mode` plus two `! Missing $ inserted`, three
+> errors from one slip. Wrap it in `\[ … \]`, or use the **outer**
+> `align`/`gather` form. This is now the mechanical criterion
+> **`render-math-mode-envelope`** (severity critical) — run
+> `qa-sweep … --only render-math-mode-envelope` rather than grepping by
+> hand: `\begin{align` is a *prefix* of `\begin{aligned}`, so the
+> obvious guard matches the very thing it should catch (a scan written
+> that way reported 0 hits against a true 2). Recurring class — fixed in
+> `afdf60d667`, returned in two further blocks.
+>
+> **Companion rule — unicode.** *"Unmapped" ≠ "crashes"*: LaTeX's own
+> `utf8.def` declares a large set, so `↑` is fine while `∇`/`ˣ` abort.
+> Inline **and** fenced code are transliterated as of
+> folio-assistant#129, so the residual risk is a crash-class char in
+> plain **prose** or a `.ts` **`title:`**, where nothing transliterates.
+
+Then run the **expository pass**: every symbol
 and term is introduced before first use, and no symbol is silently reused for
 two meanings (e.g. `λ = ln q` vs the partition `λ ⊢ n`; rename one). When the
 pipeline render cannot run (e.g. the `folio-assistant` clone is firewalled in
