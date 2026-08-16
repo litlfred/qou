@@ -68,3 +68,62 @@ kept so nobody walks into it.
 **Better first move than starting the proof:** check whether Roth has landed in Mathlib
 upstream, or in a community project (there has been periodic interest). Discharging
 `RothExponent` from an upstream result is a one-line change here; proving it is a year.
+
+---
+**2026-08-16 — the upstream check this bean recommended: DONE, and the answer is no.**
+
+The bean said the better first move than starting the proof is to check whether Roth has
+landed upstream, since discharging from an upstream result is a one-line change here.
+Checked, against **current Mathlib master**, not only the pinned revision:
+
+| probe | result |
+|---|---|
+| `Mathlib/NumberTheory/DiophantineApproximation/Basic.lean` (master, 551 lines) | **no** Roth/Thue/Siegel content |
+| `…/Transcendental/Liouville/LiouvilleWith.lean` (master, 340 lines) | line 27 **only** — the same docstring aside, not a theorem |
+| `…/DiophantineApproximation/Roth.lean` | HTTP **404** |
+| `…/Transcendental/Roth.lean` | HTTP **404** |
+| `…/DiophantineApproximation/ThueSiegelRoth.lean` | HTTP **404** |
+| local pinned Mathlib `f897ebcf` | same — docstring aside only |
+
+(`Basic.lean` returning 200 is the control: the probe finds files that exist.)
+
+**So the cheap route is foreclosed.** `RothExponent` stays a hypothesis, and
+`roth_separates` stays conditional. Nothing to change in the corpus.
+
+### ⚠ Mathlib's own 1000-theorem tracker says so too — but do NOT price work off it
+
+`docs/1000.yaml` on master carries
+
+```yaml
+Q751120:
+  title: Thue–Siegel–Roth theorem
+```
+
+with **no `decl` field**, where a formalised neighbour looks like
+
+```yaml
+Q752375:
+  title: Extreme value theorem
+  decl: IsCompact.exists_isMinOn
+```
+
+That agrees with the source grep — **but it is weak evidence on its own**, and this is worth
+recording before anyone leans on it. `Q576478` *"Liouville's theorem (complex analysis)"*
+also has **no `decl`**, and Mathlib certainly proves that. Of 1179 entries only ~192 carry a
+declaration immediately after the title, so **absence of `decl` means "not recorded",
+not "not formalised"**. The conclusion above rests on the source grep; the tracker merely
+does not contradict it.
+
+### ⚠ A third substring collision in this lane
+
+`grep -i roth` matches **"zeroth"**. Three files under `Mathlib/NumberTheory/` appeared to
+mention Roth and every hit was `zeroth convergent` / `zeroth Pythagorean triple`. Added to
+the two already recorded here (Mathlib's *other* "Roth's theorem" on arithmetic
+progressions; the *Siegel upper half-space* beans). **Three different ways to get a false
+positive on this one name** — grep for `Thue` or `Siegel–Roth`, never bare `roth`.
+
+### Status unchanged: still open, and still a project
+
+Nothing here reduces the work; it removes the hope that the work might already be done.
+The next real move is the one the bean scopes — auxiliary polynomial, Wronskian/index
+argument, Roth's lemma — none of which Mathlib has.
