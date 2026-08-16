@@ -32,8 +32,37 @@ nothing.
 import mpmath as mp
 
 mp.mp.dps = 25
-Q0 = mp.mpf("1.1099785955541805")
-# canonical tr_M(β_K) from the #2635 run (y_lambda_at q₀ + chi_all_lambda)
+
+# ── FROZEN #2635 DATASET — MUON-anchored and CONVENTION C. Labelled 2026-08-16
+# (bean qou-khac). Q0 and TRM below are a MATCHED PAIR from that one run;
+# changing either alone makes them inconsistent, which is why neither has been
+# "corrected" in place.
+#
+#   Q0    is the MUON anchor, and it is CURRENT, not stale: it is a 17-digit
+#         truncation of `qou_substrate.constants.q_muon_at()`, which derives
+#         q = 1/(1 − √(Vol(4_1)/(m_μ/m_e))) = 1.109978595554180575281594…
+#         from today's constants. (Do not "fix" it towards the hand-typed
+#         Q_MUON = 1.10997859555733…: that constant is the stale one, frozen
+#         against a Vol(4_1) 1.05e-10 from the current value — see qou-khac.)
+#         What Q0 is NOT is the canonical anchor: the owner ruling of
+#         2026-08-15 makes the PROTON pin canonical, and this sits 1.28e-8 away.
+#
+#   TRM   is CONVENTION C. `TRM["D"] = 0.38835725751524` is the convention-C
+#         deuteron |tr_M|; under the canonical convention D the same quantity is
+#         0.5751 (measured, docs/audits/2026-08-15-rho-k-co-casimir-stale-
+#         convention-c-needs-d-refresh.md). Convention C was excised 2026-08-09
+#         and re-affirmed 2026-08-15.
+#
+# CONSEQUENCE, stated rather than left for a reader to infer: the A3-overshoot
+# trend this file tests is a C-FRAME, MUON-anchored result. That does not make the
+# robustness argument wrong — it is a statement about sensitivity, and the
+# sensitivity may well survive — but the conclusion may not be quoted as a
+# convention-D fact without re-deriving it. Re-deriving is authorial work and is
+# NOT done here; a 3.15e-12 pin shift moves derived numbers in the 12th figure,
+# above the 1e-40 tolerances the trace gates use and below what any assertion
+# here checks, so nothing in this file would fail if it were simply wrong.
+Q0 = mp.mpf("1.1099785955541805")            # muon anchor (current) — see above
+# tr_M(β_K) from the #2635 run (y_lambda_at q₀ + chi_all_lambda) — CONVENTION C
 TRM = {"D": mp.mpf("0.38835725751524"), "3He": mp.mpf("0.20657850"),
        "4He": mp.mpf("0.05535844")}
 VOL = {"D": mp.mpf("12.776"), "3He": mp.mpf("12.554"), "4He": mp.mpf("12.554")}

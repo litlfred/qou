@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:18:21Z
-updated_at: 2026-08-16T11:28:01Z
+updated_at: 2026-08-16T12:39:58Z
 ---
 
 Parent: qou-cdx1. Surfaced by qou-2ixd's producer-audit bucket split; left open
@@ -143,3 +143,45 @@ Note also: `atom_per_generator_volumes` emits a `DeprecationWarning` for A ≥ 2
 ("H_3 weights for an A=2 atom; H_{3A}=6 weights are correct — migrate to
 `mass_at_3A_proper.per_generator_V_hat_3A`"), so part of this cascade may be
 better served by retiring callers than by regenerating them.
+
+
+---
+
+## CORRECTION 2026-08-16 — the cascade is TWO witnesses, not five
+
+I wrote "five live witnesses name this producer and were generated through the C
+route" in the commit and above. **Three of the five are not in the cascade at
+all**, and I would have regenerated them without checking:
+
+| witness | status |
+|---|---|
+| `pyhecke-h3-vs-h3a-impact-comparison` | **affected** — `pyhecke_h3_vs_h3a_impact_comparison.py:54` does `from hecke_core import atom_per_generator_volumes`, calls it at `:92`. The C route. |
+| `rho-k-graded-atomic-mass` | **affected** — same import at `:54`, called at `:68`. The C route. |
+| `vhat-per-crossing-chain` | **not affected.** Its only hit is a *note string* at `:253` naming `terms_2_3_atom_per_gen_mpfr_50dps.atom_per_generator_volumes_mpfr` — a different function in a different module. It imports `_PROTON_G0/_G1`, `_NEUTRON_G0/_G1`, `vertex_volume` from `pyhecke.atom` and never touches the changed surface; `z_mark` is function-local. |
+| `hecke-core-symbolic-migration` | **cannot be regenerated** — its own provenance reads *"legacy — no matching producer found; provenance pending manual triage"*. |
+| `p2-5-symbolic-q-audit` | **cannot be regenerated** — `scriptFile: None`. |
+
+### The error, and it is the third of its kind today
+
+The list came from `grep -rl "atom_per_generator_volumes" --include=*.witness.json`.
+That matches a **mention**. It does not distinguish:
+
+- a witness whose producer *calls* the function (2),
+- a witness whose producer merely *names* it in a note (1),
+- a witness with **no producer at all** (2).
+
+Three instances this session of the same disease — **a count taken from a text
+match rather than a dependency check**:
+
+1. *"151 fully coverable"* — coverage by numeric match, which is not provenance. Real: 2.
+2. *"two mpmath consumers"* — grepped `tr_m_mp*` and missed the `gram_matrix_mp` callers. Real: 4. (**Under**-count.)
+3. *"five stale witnesses"* — `grep -rl` on a name. Real: 2. (**Over**-count.)
+
+Text matching is wrong in **both directions**, which is why "the grep looked
+about right" is never evidence. The fix each time was the same and is cheap:
+resolve the import, then check the call site.
+
+Two of the three published counts in this campaign that turned out wrong were
+mine and were caught by me before anyone acted on them; the discipline that
+catches them is checking a suggestion that looks *right*, not only one that
+looks wrong.

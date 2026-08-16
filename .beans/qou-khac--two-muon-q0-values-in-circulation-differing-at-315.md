@@ -3,8 +3,9 @@
 title: Two muon q0 values in circulation, differing at 3.15e-12
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-15T21:19:10Z
-updated_at: 2026-08-15T21:19:10Z
+updated_at: 2026-08-16T12:45:42Z
 ---
 
 
@@ -114,3 +115,72 @@ owns #2635, not a guess from me.
    control probes import, rather than being retyped (twice at full precision,
    once truncated, once as `1.1099785955541810` — four spellings of one
    superseded value).
+
+
+---
+
+## ⚠ CORRECTION 2026-08-16 — this bean has it BACKWARDS. The "variant" is the live value.
+
+The bean calls `1.10997859555418…` *"a second muon value"* / *"the variant"* and
+`Q_MUON = 1.10997859555733…` *"muon-canonical"*. **It is the other way round.**
+
+`qou_substrate.constants.q_muon_at()` does not store a pin — it **derives** one:
+
+```
+q = 1/(1 − √(Vol(4_1)/(m_μ/m_e)))
+```
+
+Evaluated at today's constants (`Vol(4_1) = 2.029883212819307250042405`,
+`m_μ/m_e = 206.7682830`) that returns
+
+```
+  closed form      1.109978595554180575281594…
+  q_muon_at()      1.109978595554180575281594…   identical
+```
+
+— which is **the "variant"**. Meanwhile the hand-typed `Q_MUON` implies
+`Vol(4_1) = 2.029883212924203479151486`, **1.05e-10** from the current value. So
+`Q_MUON` is the frozen one, stranded against a superseded Vol(4₁), and the three
+files this bean flagged were faithfully carrying the *live* derivation.
+
+**Root cause, and it is the reason this could happen at all: the muon pin has no
+canonical home.** The proton pin has exactly one — `q_parameter.Q_50_DIGIT_STR`.
+The muon pin has a derivation in the substrate and **three independent
+hand-typed copies** with two different truncations:
+
+```
+computations/deltalambda/mu3_anchor_consistency_probe.py:78   Q_MUON = "1.10997859555733471989976322048322502665620840878015405145269"
+computations/probes/baldfn_theta_limit_probe.py:677           Q_MUON = "1.10997859555733471"
+computations/probes/qbeta_5two_higher_cable_qstar_probe.py:58 Q_MUON = mp.mpf("1.10997859555733471")
+```
+
+A literal cannot drift from a source it does not have — and these have none.
+That is this bean's actual finding, and it is the opposite of "someone typed a
+wrong number".
+
+### Done here
+
+- **`gap_a3_overshoot_robustness_check.py`** — labelled. Its `Q0` is a 17-digit
+  truncation of the *current* derived muon anchor, so it is **not** stale; what
+  it is not is canonical (the 2026-08-15 ruling makes the proton pin canonical,
+  1.28e-8 away). **And its cached `TRM` is CONVENTION C** — `TRM["D"] =
+  0.38835725751524` is the C deuteron |tr_M|, against 0.5751 under D. `Q0` and
+  `TRM` are a matched #2635 pair; changing either alone breaks the pairing,
+  which is why both are labelled rather than "fixed". Its A3-overshoot trend is
+  therefore a C-frame, muon-anchored result — stated in the file so it cannot be
+  quoted as a convention-D fact by accident.
+- **`probes/flavor_split_alpha_dilog_expansion_probe.py`** — the `except` branch
+  returned a hand-typed copy of the derived value. Now **raises**. A duplicated
+  constant in a fallback is the worst kind: silent, fires only when the import
+  is unavailable, and strands itself the moment Vol(4₁) or m_μ/m_e is refined —
+  which is exactly what happened to `Q_MUON`.
+- **`per_basis_row_invariants_probe.py`** — **no defect.** It names its literal
+  `Q0_STALE_MUON_PIN` and imports `Q_50_DIGIT_STR` separately. A correctly
+  labelled control, and the bean should not have counted it as one of "three".
+
+### Still open
+
+Give the muon pin a canonical home and convert the three `Q_MUON` copies to
+imports. That is a substrate change (`q_parameter`), it moves values by 3.15e-12
+in whatever consumes them, and it wants its own scope — not folded into a
+labelling pass.
