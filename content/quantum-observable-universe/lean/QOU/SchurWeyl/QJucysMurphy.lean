@@ -736,6 +736,93 @@ theorem comm_σInv_iff (i : Fin n) (x : Hecke K q qi n) :
   simp only [σInv, mul_sub, sub_mul, mul_smul_comm, smul_mul_assoc, mul_one, one_mul]
   exact sub_left_inj
 
+/-- Commuting with a two-sided unit transfers to its inverse. -/
+theorem comm_inv_of_comm {R : Type*} [Ring R] (s A A' : R)
+    (hAA' : A * A' = 1) (hA'A : A' * A = 1) (h : s * A = A * s) :
+    s * A' = A' * s := by
+  calc s * A' = (A' * A) * (s * A') := by rw [hA'A, one_mul]
+    _ = A' * (A * s) * A' := by simp only [mul_assoc]
+    _ = A' * (s * A) * A' := by rw [h]
+    _ = A' * s * (A * A') := by simp only [mul_assoc]
+    _ = A' * s := by rw [hAA', mul_one]
+
+/-- Row 1 for the inverse family. -/
+theorem qJMInv_comm_sigma (hqi : q * qi = 1) (m : Fin n) (k : ℕ)
+    (hk : k + 1 ≤ (m : ℕ)) (hkn : k ≤ n) :
+    σ K q qi n m * qJMInv K q qi n k = qJMInv K q qi n k * σ K q qi n m :=
+  comm_inv_of_comm _ _ _ (qJM_mul_qJMInv K q qi n hqi k hkn)
+    (qJMInv_mul_qJM K q qi n hqi k hkn) (qJM_comm_sigma K q qi n m k hk)
+
+/-- Row 3 for the inverse family. -/
+theorem qJMInv_comm_sigma_high (hqi : q * qi = 1) (i : Fin n) (hi1 : (i : ℕ) + 1 < n)
+    (k : ℕ) (hk : (i : ℕ) + 2 ≤ k) (hkn : k ≤ n) :
+    σ K q qi n i * qJMInv K q qi n k = qJMInv K q qi n k * σ K q qi n i :=
+  comm_inv_of_comm _ _ _ (qJM_mul_qJMInv K q qi n hqi k hkn)
+    (qJMInv_mul_qJM K q qi n hqi k hkn) (qJM_comm_sigma_high K q qi n i hi1 k hk)
+
+/-- Row 2 for the inverse family: `σ_i` commutes with `L_i⁻¹ + L_{i+1}⁻¹`. -/
+theorem qJMInv_pair_comm (hqi : q * qi = 1) (i : ℕ) (hi : i < n) :
+    σ K q qi n ⟨i, hi⟩ * (qJMInv K q qi n i + qJMInv K q qi n (i + 1))
+      = (qJMInv K q qi n i + qJMInv K q qi n (i + 1)) * σ K q qi n ⟨i, hi⟩ := by
+  have hq := σInv_quadratic K q qi n hqi ⟨i, hi⟩
+  rw [qJMInv_succ K q qi n hi]
+  have hpc := pair_comm (σInv K q qi n ⟨i, hi⟩) (qJMInv K q qi n i) (qi - q) hq
+  exact ((comm_σInv_iff K q qi n ⟨i, hi⟩ _).mp hpc.symm).symm
+
+/-- Generic Finset assembly: a family `F` whose `{i,i+1}` pair commutes with
+`σ_i` and whose other members commute individually has a central sum. -/
+theorem sum_comm_of_rows (i : Fin n) (F : ℕ → Hecke K q qi n)
+    (hpair : σ K q qi n i * (F (i : ℕ) + F ((i : ℕ) + 1))
+           = (F (i : ℕ) + F ((i : ℕ) + 1)) * σ K q qi n i)
+    (hlow : ∀ k, k < (i : ℕ) → σ K q qi n i * F k = F k * σ K q qi n i)
+    (hhigh : ∀ k, (i : ℕ) + 2 ≤ k → k ≤ n → σ K q qi n i * F k = F k * σ K q qi n i) :
+    σ K q qi n i * (∑ k ∈ Finset.range (n + 1), F k)
+      = (∑ k ∈ Finset.range (n + 1), F k) * σ K q qi n i := by
+  classical
+  set P : Finset ℕ := {(i : ℕ), (i : ℕ) + 1} with hP
+  have hsub : P ⊆ Finset.range (n + 1) := by
+    intro x hx
+    simp only [hP, Finset.mem_insert, Finset.mem_singleton] at hx
+    have := i.isLt
+    rcases hx with rfl | rfl <;> simp [Finset.mem_range] <;> omega
+  have hsplit := Finset.sum_sdiff (f := F) hsub
+  have hpairsum : (∑ k ∈ P, F k) = F (i : ℕ) + F ((i : ℕ) + 1) := by
+    have hne : (i : ℕ) ≠ (i : ℕ) + 1 := by omega
+    simp [hP, Finset.sum_insert, Finset.mem_singleton]
+  have hrest : σ K q qi n i * (∑ k ∈ Finset.range (n + 1) \ P, F k)
+      = (∑ k ∈ Finset.range (n + 1) \ P, F k) * σ K q qi n i := by
+    rw [Finset.mul_sum, Finset.sum_mul]
+    refine Finset.sum_congr rfl fun k hk => ?_
+    simp only [Finset.mem_sdiff, Finset.mem_range, hP, Finset.mem_insert,
+      Finset.mem_singleton, not_or] at hk
+    obtain ⟨hkr, hki, hki1⟩ := hk
+    rcases Nat.lt_or_ge k (i : ℕ) with hlt | hge
+    · exact hlow k hlt
+    · exact hhigh k (by omega) (by omega)
+  rw [← hsplit, hpairsum, mul_add, add_mul, hpair, hrest]
+
+/-- **`Σ_{k≤n} L_k⁻¹` is central.** -/
+theorem qJMInv_sum_comm_sigma (hqi : q * qi = 1) (i : Fin n) :
+    σ K q qi n i * (∑ k ∈ Finset.range (n + 1), qJMInv K q qi n k)
+      = (∑ k ∈ Finset.range (n + 1), qJMInv K q qi n k) * σ K q qi n i := by
+  refine sum_comm_of_rows K q qi n i _ ?_ ?_ ?_
+  · have := qJMInv_pair_comm K q qi n hqi (i : ℕ) i.isLt
+    simpa using this
+  · intro k hk
+    exact qJMInv_comm_sigma K q qi n hqi i k (by omega) (by have := i.isLt; omega)
+  · intro k hk hkn
+    exact qJMInv_comm_sigma_high K q qi n hqi i (by omega) k hk hkn
+
+/-- **`Σ_{k≤n} L_k` is central**, with no side hypothesis on `i`. -/
+theorem qJM_sum_comm_sigma' (hqi : q * qi = 1) (i : Fin n) :
+    σ K q qi n i * (∑ k ∈ Finset.range (n + 1), qJM K q qi n k)
+      = (∑ k ∈ Finset.range (n + 1), qJM K q qi n k) * σ K q qi n i := by
+  refine sum_comm_of_rows K q qi n i _ ?_ ?_ ?_
+  · have := qJM_pair_comm K q qi n hqi (i : ℕ) i.isLt
+    simpa using this
+  · intro k hk; exact qJM_comm_sigma K q qi n i k (by omega)
+  · intro k hk hkn; exact qJM_comm_sigma_high K q qi n i (by omega) k hk
+
 end AdjacentReduction
 
 /-- **[GAP] The Murphy elements commute pairwise** — they generate the commutative
@@ -978,6 +1065,19 @@ theorem barSymJMSum_block_eigenvalue {N : ℕ} (q : ℝ) (hq : q ≠ 0) (lam : P
   --   eigenvalue `L_k ↦ q^{2·cellContent}`.  The scalar itself is proved sorry-free above.
   sorry
 
+section BarSymCentral
+
+variable (K : Type*) [CommRing K] (q qi : K) (n : ℕ)
+
+/-- **`barSymJMSum` is central** — the GAP, closed, given `q · qi = 1`. -/
+theorem barSymJMSum_central' (hqi : q * qi = 1) (i : Fin n) :
+    barSymJMSum K q qi n * σ K q qi n i = σ K q qi n i * barSymJMSum K q qi n := by
+  have hL := qJM_sum_comm_sigma' K q qi n hqi i
+  have hI := qJMInv_sum_comm_sigma K q qi n hqi i
+  simp only [barSymJMSum, Finset.sum_add_distrib, add_mul, mul_add, hL, hI]
+
+end BarSymCentral
+
 /-- **The bar-symmetrised sum is central — GAP.**  `Θ = barSymJMSum` commutes with every generator
 `σ_i`, hence lies in `Z(H_{n+1}(q))`.  As a sum of power sums `p_1(L) + p_1(L⁻¹)` of the pairwise
 commuting Murphy elements, it is a symmetric function of the JM family, and symmetric functions of
@@ -985,7 +1085,16 @@ the JM family are central. -/
 theorem barSymJMSum_central (K : Type*) [CommRing K] (q qi : K) (n : ℕ) (i : Fin n) :
     barSymJMSum K q qi n * σ K q qi n i = σ K q qi n i * barSymJMSum K q qi n := by
   -- Ref: [murphy1992] — symmetric functions of the JM/Murphy operators are central.
-  -- GAP: needs `qJM_commute` plus the σ_i–L_k commutation relations (bean qou-im9l / SW-4 residual).
+  -- NOT PROVABLE AS STATED (2026-08-16, bean `qou-gjg6`). The statement omits
+  -- `q * qi = 1`, and it genuinely needs it: `σ_i` commutes with `L_i + L_{i+1}`
+  -- only up to a residue `(1 − q·qi)(σ_i L_i − L_i σ_i)` (see `pair_comm`), and
+  -- without it `qJMInv` is not an inverse of `qJM` at all. Add the hypothesis and
+  -- the theorem is `barSymJMSum_central'` above, proved sorry-free.
+  -- The old GAP note here read "needs `qJM_commute` plus the σ_i–L_k commutation
+  -- relations". `qJM_commute` is now proved and is irrelevant to this — it is L–L
+  -- commutation, while centrality is a σ–L question. All three σ–L rows are proved
+  -- (`qJM_comm_sigma`, `qJM_pair_comm`, `qJM_comm_sigma_high`); the missing piece
+  -- was never a commutation, it was this hypothesis.
   sorry
 
 end GeneralGap
