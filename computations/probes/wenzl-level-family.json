@@ -254,6 +254,90 @@
       "z_2_at_q0": "0.6126880371464652436505588",
       "ordering": "z_3 < z_C < z_2",
       "pass": true
+    },
+    {
+      "check": "W9 every circulating z spelling, and its level",
+      "spellings": [
+        {
+          "z": "z_D  = q^3/(q^2+1) = q^2/[2]_q",
+          "z_at_q0": "0.6126880371464652436506",
+          "formal_level_at_q0": "2.0",
+          "is_a_level": true,
+          "level_if_any": 2,
+          "exclusion_invariant": null,
+          "call_sites": "mass, binding, borromean-binding"
+        },
+        {
+          "z": "z_C  = sqrt(q)/(q+1) = 1/[2]_{sqrt q}",
+          "z_at_q0": "0.4993203341836944525024",
+          "formal_level_at_q0": "2.5995155364002",
+          "is_a_level": false,
+          "level_if_any": null,
+          "exclusion_invariant": "not in Q(q): sqrt(q) is not a rational function of q (x^2 - q Eisenstein at q)",
+          "call_sites": "qbeta-decay (disputed)"
+        },
+        {
+          "z": "z_TL = q/(q^2+1) = 1/[2]_q",
+          "z_at_q0": "0.4972905456049155563494",
+          "formal_level_at_q0": "2.6136240175381",
+          "is_a_level": false,
+          "level_if_any": null,
+          "exclusion_invariant": "in Q(q), but no r matches: z_r has numerator q^(2r-1), so degree 1 forces r = 1, and z_1 = q != q/(q^2+1)",
+          "call_sites": "meson_lepton_knot_dictionary_probe, casimir_phi_q_markov_probe (neither is a production file)"
+        }
+      ],
+      "off_family": [
+        "z_C  = sqrt(q)/(q+1) = 1/[2]_{sqrt q}",
+        "z_TL = q/(q^2+1) = 1/[2]_q"
+      ],
+      "note": "the two off-family spellings are excluded by DIFFERENT invariants -- field membership for z_C, numerator degree for z_TL. Neither exclusion is numerical.",
+      "pass": true
+    },
+    {
+      "check": "W10 the Wenzl level of each registered channel",
+      "channels": [
+        {
+          "channel": "mass",
+          "convention": "D",
+          "producer": "m_p_substrate_identity_50dps.py::trM_borromean -> canonical_mass.py",
+          "registry_status": "agreed",
+          "level": 2,
+          "formal_level_at_q0": "2.0",
+          "in_the_level_family": true
+        },
+        {
+          "channel": "binding",
+          "convention": "D",
+          "producer": "closed_form_tau_M.py::markov_z, wedderburn_jones_markov.py::y_lambda_at",
+          "registry_status": "agreed",
+          "level": 2,
+          "formal_level_at_q0": "2.0",
+          "in_the_level_family": true
+        },
+        {
+          "channel": "borromean-binding-single-pipeline",
+          "convention": "D",
+          "producer": "borromean_binding_recompute.py:110",
+          "registry_status": "agreed",
+          "level": 2,
+          "formal_level_at_q0": "2.0",
+          "in_the_level_family": true
+        },
+        {
+          "channel": "qbeta-decay",
+          "convention": "C",
+          "producer": "qbeta/qbeta_utils.py::markov_parameter",
+          "registry_status": "disputed",
+          "level": null,
+          "formal_level_at_q0": "2.5995155364002",
+          "in_the_level_family": false
+        }
+      ],
+      "distinct_levels_in_use": [
+        2
+      ],
+      "finding": "every channel that is in the family at all is at r = 2. No QOU channel sits at r = 3 or above.",
+      "pass": true
     }
   ],
   "all_pass": true
