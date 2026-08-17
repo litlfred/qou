@@ -11,10 +11,12 @@ satisfying the following four axioms:
 4. **(Wedderburn semisimplicity)** $A$ is semisimple, with a finite index set $\widehat{A}$ of blocks. Each block $\lambda \in \widehat{A}$ carries a central idempotent $p_\lambda$, and these
 
 ```tex
+\[
 \begin{aligned}
 \text{do not mix:} && p_\lambda \circ p_\mu &= 0 && (\lambda \neq \mu), \\
 \text{and span:}   && \textstyle\sum_{\lambda \in \widehat{A}} p_\lambda &= \mathrm{id}_A. &&
 \end{aligned}
+\]
 ```
 
    Each block further carries a Frobenius weight $\int_A p_\lambda$ invertible in $R$, and a quantum dimension $\dim_q(\lambda)$ invertible in $R$.
