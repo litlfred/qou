@@ -79,8 +79,21 @@ three things:
 1. an extensive piece, ~1.207 alpha per nucleon, scaling-identified but
    structure-degenerate;
 2. shell structure (the N=50 peak);
-3. a large negative piece at high `Z` consistent with Coulomb — which the
-   framework does not model **at all**.
+3. a large negative piece at high `Z` consistent with Coulomb.
+
+   > **CORRECTED 2026-08-17.** This item originally read "...consistent with
+   > Coulomb — which the framework does not model **at all**." **That is false**,
+   > and it was written without running the corpus-grep checklist. `def:coulomb-charge`
+   > derives a Coulomb charge `Q = (1/2)(n_+ - n_-)` with `Coulomb/strong =
+   > tanh(ln q0) = 0.103964`; `magic-shell-coupling-kappa`, `docs/coordination/alpha-em.md`
+   > and three deprecated Coulomb/shell probes also exist.
+   >
+   > The corrected statement is sharper: on the framework's own words
+   > `Q = 2Z + 3.4393e-04` (constant offset from the colour-weighted `pn` bond),
+   > so the EM term is **linear in charge** while electrostatic energy is
+   > **quadratic** — the shortfall runs 1.0x at 4He to 12.1x at 208Pb. The
+   > framework has a charge; it has no charge-charge interaction energy.
+   > See `coulomb_charge_is_linear_in_z_probe.py`.
 
 Only (1) is plausibly a categorical object to derive. (2) and (3) are ordinary
 nuclear physics absent from the construction, and no single derived term will
