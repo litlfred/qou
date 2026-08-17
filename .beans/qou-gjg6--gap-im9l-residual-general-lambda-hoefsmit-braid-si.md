@@ -22,6 +22,8 @@ updated_at: 2026-08-16T20:28:00Z
 updated_at: 2026-08-16T20:46:27Z
 
 updated_at: 2026-08-16T20:53:54Z
+
+updated_at: 2026-08-17T00:44:11Z
 parent: qou-59vq
 ---
 
@@ -1594,3 +1596,34 @@ hypothesis in its own statement (`barSymJMSum_central`).**
 **Owner decision needed:** may the two under-hypothesised statements be amended
 (`barSymJMSum_central` += `q·qi = 1`; `barSymJMSum_block_eigenvalue`'s `q ≠ 0`
 → `0 < q ∧ q ≠ 1`)? Both are public signatures, so I have not changed them.
+
+
+### Wiring status — the module is a LEAF (2026-08-17)
+
+Checked after the fact, because I had verified `QJucysMurphy.lean` itself but
+never its consumers, and I had both discharged a sorry and added a new section
+there. Measured:
+
+* `QOU.lean` (root aggregator) imports it at **line 332** — so it **is**
+  compiled by `lake build QOU`, and the 22 theorems are real library content.
+* **No other module imports it.** `grep` for `SchurWeyl.QJucysMurphy` across
+  `QOU/` returns only the file's own header.
+* **Nothing references `qJM`, `qJMInv` or `barSymJMSum` by name outside the
+  file.**
+
+So the verification hole is closed — my changes cannot break a consumer,
+because there is none — but the same measurement **tempers what the work
+buys**. Nothing downstream currently consumes any of it. `qou-ck0g`'s stated
+purpose was to supply the per-mode rates `μ_λ(q)` to `qou-8vt2`'s q-heat
+kernel; that wiring **does not exist yet**.
+
+Concretely, this corrects an impression my own reporting could have left. When
+I wrote that closing `qJM_commute` "also closes `barSymJMSum_central` behind
+it", that was true — but both live in *this same file*, and neither reaches
+anything else in the tree. The theorems are correct, sorry-free, axiom-clean and
+compiled; their value is **potential**, contingent on the `qou-8vt2` wiring
+being built.
+
+Not a defect and not a reason to stop — `qou-ck0g` explicitly framed this as
+formalisation groundwork. But "one GAP closed" should be read as *one GAP
+closed in a leaf module*, not as unblocking live compute.
