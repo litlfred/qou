@@ -1,11 +1,11 @@
 ---
 # qou-gzs0
 title: 'Downstream: can the ribbon axioms close mass/binding derivation gaps'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T01:45:48Z
-updated_at: 2026-08-17T06:44:21Z
+updated_at: 2026-08-17T17:40:29Z
 ---
 
 ## 2026-08-17 — first pass: the twist reaches the mass chain, but is ONE AXIOM SHORT
