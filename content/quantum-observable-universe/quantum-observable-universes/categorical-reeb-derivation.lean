@@ -1,3 +1,4 @@
+import Mathlib.CategoryTheory.Endomorphism
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
 

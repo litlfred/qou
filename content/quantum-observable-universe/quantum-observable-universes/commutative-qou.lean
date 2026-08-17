@@ -35,6 +35,6 @@ class CommutativeQOU
     (A : C) (μ : A ⊗ A ⟶ A) : Prop where
   /-- The multiplication is invariant under the braiding on A ⊗ A. -/
   -- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
-  mul_commutes : β_ A A |>.hom ≫ μ = μ
+  mul_commutes : (β_ A A).hom ≫ μ = μ
 
 end QOU
