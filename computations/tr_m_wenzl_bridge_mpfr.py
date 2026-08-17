@@ -399,7 +399,32 @@ def tr_M_via_wenzl_bridge_mpfr(
     """
     with mp.workdps(dps):
         q = mp.mpf(q_str)
-        y_table = _load_y_lambda(n, y_lambda_path)
+        # Pick the y_λ table by the LAYER OF q_str, not by the module default.
+        #
+        # This used to be a bare `_load_y_lambda(n, y_lambda_path)`, whose
+        # `None` default is `_Y_LAMBDA_DEFAULT` = the PROTON table. Every
+        # caller evaluating at the muon pin therefore combined proton y_λ with
+        # muon χ — the exact straddle `load_y_lambda_for_q0` was written to
+        # refuse, bypassed by calling the raw loader instead of it. Measured on
+        # the deuteron: the committed `atomic-tr-m-mpfr-50dps` primary is
+        # reproduced to 0.0 with the proton table and moves 1.852e-9 with the
+        # muon one, landing on the independent `markov_peel` cross-check to
+        # 4.97e-51 (the 50-dps floor). The 11.54 ppb μ–p tension on y_λ ≈ 0.115
+        # is ≈1.3e-9 absolute, which is the size observed. Bean qou-tzsp.
+        #
+        # An explicit `y_lambda_path` still wins — callers that deliberately
+        # pin a table keep doing so. Only the implicit default is layer-aware.
+        if y_lambda_path is not None:
+            y_table = _load_y_lambda(n, y_lambda_path)
+        elif anchor_of_q0(q_str) is not None:
+            y_table = load_y_lambda_for_q0(n, q_str)
+        else:
+            # q belongs to neither documented pin — a q-sweep, a probe at an
+            # arbitrary substrate value. There is no "matching layer" to pick,
+            # so keep the historical default rather than refuse: raising here
+            # would break every sweep, and a sweep is not straddling anything
+            # it could be warned about meaningfully.
+            y_table = _load_y_lambda(n, None)
 
         # n_gens needed in any partition's representation = max generator
         # index in the word + 1 (because g is 0-indexed for σ_{g+1}).
