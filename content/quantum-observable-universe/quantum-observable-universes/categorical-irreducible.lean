@@ -26,12 +26,12 @@ universe u v
 
 /-- The adjoint hom-space is either empty or a singleton.
 
-    In a quantum observable universe over a field `k`, condition (ii)
+    In a quantum observable universe over a commutative ring `R`, condition (ii)
     requires `Hom_C(𝟙, Ad(A))` to be trivial (a subsingleton). This is
     exactly the bundled `adjoint_vanishing` field. -/
 -- Ref: [manuscript] §1
-theorem adjoint_hom_subsingleton {k : Type*} [Field k]
-    (qou : QuantumObservableUniverse.{u, v} k) :
+theorem adjoint_hom_subsingleton {R : Type*} [CommRing R]
+    (qou : QuantumObservableUniverse.{u, v} R) :
     letI := qou.catInst
     letI := qou.monInst
     Subsingleton ((𝟙_ qou.C) ⟶ qou.adjointObj) :=
@@ -39,13 +39,13 @@ theorem adjoint_hom_subsingleton {k : Type*} [Field k]
 
 /-- **Irreducibility of categorical instantons**.
 
-    In a quantum observable universe `(C, A, ω)` over a field `k`,
+    In a quantum observable universe `(C, A, ω)` over a commutative ring `R`,
     condition (ii) makes `Hom_C(𝟙, Ad(A))` a subsingleton. Hence every
     categorical instanton is irreducible: there are no nontrivial
     gauge-invariant endomorphisms `𝟙 → Ad(A)`. -/
 -- Ref: [manuscript] §1
-theorem categorical_irreducible {k : Type*} [Field k]
-    (qou : QuantumObservableUniverse.{u, v} k)
+theorem categorical_irreducible {R : Type*} [CommRing R]
+    (qou : QuantumObservableUniverse.{u, v} R)
     (f g : (letI := qou.catInst; letI := qou.monInst; (𝟙_ qou.C) ⟶ qou.adjointObj)) :
     f = g :=
   letI := qou.catInst
