@@ -2,6 +2,7 @@ import QOU.Basic
 import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+import QOU.BraidKnot.KeystoneBalancedRibbon
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.Limits.Shapes.ZeroMorphisms
@@ -163,6 +164,35 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
       what make an interaction independent of the order in which its
       pairwise crossings are written. -/
   [braidedInst : @CategoryTheory.BraidedCategory C catInst monInst]
+  /-- **The balancing twist** `θ_X : X ⟶ X` (axiom 1, categorical half).
+
+      This is what makes the substrate parameter `q` *derivable rather than
+      carried*.  On the defining representation the twist axiom forces
+      `θ_V = q^{1/2} · id_V` (`rem:sqrt-q-ribbon-structure`), so `q` is read
+      off the structure; there is deliberately **no `q` field**, since a
+      distinguished element would smuggle in as data the thing the framework
+      claims to derive.
+
+      Three further things it supplies, none of which the previous
+      `[BraidedCategory]` alone gave:
+
+      1. **Framing.**  Without a twist a braid closure is only a *framed* link
+         invariant — `tr_M(β)` depends on the writhe of the braid word rather
+         than on the knot.  Since masses are read off knots, that dependence
+         would be fatal.
+      2. **Sphericality on all of `C`.**  Axiom 3 gives left-trace =
+         right-trace on `End(A)` only, but the Markov trace closes strands of
+         `V^{⊗n}`, not of `A`.  Ribbon = braided + spherical extends it to the
+         objects the knot theory actually uses.
+      3. **A legible classical boundary.**  `BalancedCategory.ofSymmetric`
+         proves every symmetric category is balanced with `θ = 𝟙`, so the
+         classical case is `θ = 𝟙`, i.e. `q = 1` — a *describable member*, not
+         an excluded one.  This is why the fix is "add the twist", not "forbid
+         symmetric": `q → 1` must stay inside the category it is a limit of.
+
+      Uses the in-repo `BalancedCategory` (bean `rtrb`, sorry-free) since
+      Mathlib has no ribbon layer. -/
+  [balancedInst : @QOU.BraidKnot.Balanced.BalancedCategory C catInst monInst braidedInst]
   /-- The Frobenius–Hopf object `A` in `C`. -/
   frobHopf : @FrobeniusHopfData C catInst monInst
   /-- The fibre functor `τ : C → Type*` (abstracting `Vect_R` / `R-Mod`).
