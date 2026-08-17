@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T13:56:32Z
-updated_at: 2026-08-17T01:10:36Z
+updated_at: 2026-08-17T01:33:37Z
 ---
 
 ## The sorry
@@ -626,3 +626,67 @@ content actually lives. Both outcomes are worth more than an unfinished `U_q`.
 
 Owner call, since "which witness to attempt" is a scope decision and the
 successful outcome is a critical result.
+
+
+## 2026-08-17 — the classical case is not excluded, and axiom 1 is not encoded at all
+
+Two measurements on `CategoricalFoundations.lean`, both of which sharpen the
+"nothing forces quantum" finding:
+
+1. **Axiom 1 is entirely absent from the type.** `def:quantum-universe` axiom 1
+   is *"the ordering `≺_c` induced by the braiding on the Hecke basis of `A` is
+   well-founded"*. Grep for `WellFounded` / `≺` / `prec` in the structure:
+   **nothing**. The only trace is `[braidedInst : BraidedCategory C]`, whose own
+   docstring says the braiding is *"not required to be symmetric"* — i.e. it
+   records that symmetric is **permitted**. So of four prose axioms, the type
+   encodes 2, 3 and 4; axiom 1 is prose only.
+
+2. **`QuantumUniverse` carries no `q`.** No substrate-parameter field anywhere.
+   The framework is *about* a modulus `q₀`; the structure meant to formalise its
+   categorical layer does not mention one. `unitEndEquiv` names the ground ring
+   but nothing distinguishes an element of it.
+
+**And encoding axiom 1 would not fix it.** At `q = 1` the Hecke algebra is
+`k[S_n]` and the induced order is Coxeter word length, which *is* well-founded.
+So well-foundedness holds classically; it is not the discriminator.
+
+### Why "just forbid symmetric" is probably the wrong fix
+
+The obvious patch — a field asserting `∃ X Y, β_{Y,X} ∘ β_{X,Y} ≠ 𝟙` — has a
+cost the framework may not want to pay: the corpus treats the symmetric case as
+the **classical limit** (`quantum-universe-axiom-motivation.md`: *"A symmetric
+braiding forgets the difference, and that is the classical limit"*), and the
+classical-limit chapter reasons about `q → 1` as a limit **of** QOUs. Excluding
+symmetric puts the limit outside the category it is a limit of. It is also a
+negative, very weak condition — "somewhere non-symmetric" permits arbitrarily
+mild deformation.
+
+### Options, with the trade-off that decides each
+
+| | change | keeps `q→1` in scope? | cost |
+|---|---|---|---|
+| **A** | forbid symmetric braiding | **no** — limit leaves the category | 1 field; weak, negative |
+| **B** | require a ribbon twist `θ ≠ 𝟙` | no, same boundary problem | ribbon absent from Mathlib (repo has `KeystoneRibbonCategory`) |
+| **C** | **carry `q : R` + the Hecke relation on the braiding** | **yes** — classical is `q = 1`, a boundary not an exclusion | 2 fields; needs the σ-eigenvalue statement |
+| **D** | accept, re-scope the claim | yes | none, but concedes the axioms do not produce the physics |
+
+**C is the recommendation.** It is positive rather than negative, it is verbatim
+`AGENTS.md` §7a (the Hecke-skein convention `(σ − q)(σ + q⁻¹) = 0` — the corpus's
+own stated convention), it repairs gap 2 above as a side effect, and it keeps
+`q = 1` as a describable boundary rather than banishing the classical limit.
+
+**D deserves to stay on the table honestly.** The framework's numbers all come
+from *evaluating* at `q₀ ≈ 1.10998`, an input; the categorical axioms supply the
+*shape* (Hecke, Markov trace, blocks). If that is the real epistemic structure,
+saying so is better than bolting on a field to make the axioms look like they do
+more than they do.
+
+### The classical witness is now the falsification test, not just a criticism
+
+Whichever option is chosen, `FDRep k G` with `A = End(V)` is how you check it
+worked. Under **C** that witness has `σ² = 𝟙`, i.e. `q = 1`, so it is excluded
+exactly and for the right reason. Under **D** it should succeed and be
+documented as an intended model. Under **A**/**B** it should fail on the new
+field. Building it tests the fix rather than merely embarrassing the axioms.
+
+Owner decision. Not implemented.
