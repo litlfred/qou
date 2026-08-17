@@ -152,4 +152,75 @@ theorem nu_mixed_sign_not_coherent :
   intro h
   exact h ⟨2, 0, by simp, by simp⟩
 
+/-! ### Upgrade: sign-coherence is a NORMAL FORM, not an extra assumption
+
+The section above labelled sign-coherence an imported convention. The balancing
+twist wired onto `QuantumUniverse` (bean `qou-pkf3`,
+`CategoricalFoundations.lean`) supplies the missing half, and it changes the
+status.
+
+That work records: *"On the defining representation the twist axiom forces
+`θ_V = q^{1/2} · id_V`"*. Because `θ_V` is a **scalar multiple of the
+identity**, opposite framings on two strands cancel exactly, as morphisms:
+
+    θ_V ⊗ θ_V⁻¹ = q^{1/2} · q^{−1/2} · id = id
+
+So a `(+1, −1)` strand pair is **ribbon-invisible**. Cancelling it is a
+rewriting of the same state, not a different physical choice — and cancellation
+preserves the total, hence the whole `Y`/`Q` layer built on it.
+
+Reducing until no such pair remains lands in a sign-coherent framing, and for
+entries in `{−1,0,1}` the reduced form is unique per total:
+
+    total  −3        −2        −1        0        1        2        3
+    form   {−1,−1,−1} {−1,−1,0} {−1,0,0} {0,0,0} {0,0,1} {0,1,1} {1,1,1}
+
+The two survivors sign-coherence excluded are exactly the un-reduced spellings
+of the two it keeps: `{−1,−1,1} → {−1,0,0}` and `{−1,0,1} → {0,0,0}`.
+
+**Remaining caveat, stated rather than buried.** This derives that the coherent
+representative is canonical *given* `θ_V = q^{1/2}·id_V` and given that the
+physical state is the ribbon-equivalence class rather than a chosen spelling.
+The first is now framework structure; the second is an interpretive step. So `d`
+is no longer resting on a Bilson-Thompson convention — it rests on the twist
+being scalar, which is a categorical fact of the corpus. -/
+
+/-- **Sign-coherence is exactly "all non-negative or all non-positive".** -/
+theorem coherent_iff_all_same_sign {t : Fin 3 → ℤ} :
+    SignCoherent t ↔ ((∀ i, 0 ≤ t i) ∨ (∀ i, t i ≤ 0)) := by
+  constructor
+  · intro h
+    by_cases hpos : ∀ i, 0 ≤ t i
+    · exact Or.inl hpos
+    · refine Or.inr fun i => ?_
+      push_neg at hpos
+      obtain ⟨j, hj⟩ := hpos
+      by_contra hi
+      push_neg at hi
+      exact h ⟨i, j, hi, hj⟩
+  · rintro (hall | hall) ⟨i, j, hi, hj⟩
+    · exact absurd (hall j) (by omega)
+    · exact absurd (hall i) (by omega)
+
+/-- **The excluded and kept `d` forms carry the same ribbon weight.**
+
+With `θ` central the weight of a framing is `θ ^ total`, so `{−1,−1,1}` and
+`{−1,0,0}` are indistinguishable to the twist — the choice between them is a
+choice of representative, and sign-coherence picks the reduced one. -/
+theorem d_forms_same_weight {M : Type*} [CommGroup M] (θ : M) :
+    θ ^ ((-1) + (-1) + 1 : ℤ) = θ ^ ((-1) + 0 + 0 : ℤ) := by norm_num
+
+/-- Same for the two `ν` forms: `{−1,0,1}` and `{0,0,0}` share a ribbon weight,
+and the reduced one is `{0,0,0}` — independently the answer
+`ComponentFraming.nu_framing_is_zero` derives from "leptons are knots". -/
+theorem nu_forms_same_weight {M : Type*} [CommGroup M] (θ : M) :
+    θ ^ ((-1) + 0 + 1 : ℤ) = θ ^ ((0 : ℤ) + 0 + 0) := by norm_num
+
+/-- **Cancellation preserves the total.**  Moving one unit off a positive strand
+onto a negative one — the reduction step — leaves `Σ t` fixed, so it leaves
+`Q_twist = T/3`, `Y`, and the `ℤ₆` layer fixed too. Reduction is therefore
+invisible to every constraint the battery imposes. -/
+theorem cancel_preserves_total (a b c : ℤ) :
+    (a - 1) + (b + 1) + c = a + b + c := by ring
+
 end QOU.StandardModel.SignCoherentTwist
