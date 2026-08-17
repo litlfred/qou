@@ -5,6 +5,11 @@ import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Group.Basic
+-- Supplies `LaurentPolynomial` / `LaurentPolynomial.T` for the `R_q` ground-ring
+-- declarations below.  Its absence made this file fail to elaborate with three
+-- `unknownIdentifier` errors; nothing caught it, because content-block `.lean`
+-- siblings have no CI (workflow_dispatch-only) and no `.qa.json` compile gate.
+import Mathlib.Algebra.Polynomial.Laurent
 
 
 /-!
@@ -51,9 +56,29 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     object has categorical dimension 2, the volume form forces determinant 1,
     and adjoint vanishing forces the gauge group to be rank 1.
 
-    This packages the three constraints that together force SU(2).
-    The actual theorem (`su2_emergence`) proves the conclusion from
-    these hypotheses. -/
+    **Scope warning — only one of the three fields constrains the QOU.**
+    The narrative above describes three constraints "that together force
+    SU(2)"; the type delivers one:
+
+    * `fund_dim_two` is an arithmetic fact about the *literal*
+      `{ twice_j := 1 }` and is discharged by `decide`.  It never mentions
+      `qou`, so it does **not** say that this QOU's fundamental object has
+      dimension 2 — the intended tie to `qou.fundamentalObj` is missing.
+    * `volume_nondeg` is a genuine constraint on `qou.volumeForm`.
+    * `adjoint_trivial` carries the default value `qou.adjoint_vanishing`,
+      so every QOU satisfies it automatically; it restates a QOU axiom
+      rather than adding a hypothesis.
+
+    The encoding gap in `fund_dim_two` is structural, not a typo: tying it
+    to `qou.fundamentalObj` needs the spin indexing that `SpinDecomposition`
+    supplies, and that is the *conclusion* `su2_emergence` produces — so the
+    hypothesis cannot reference it without circularity.  Restructuring is
+    tracked as a bean; it is deliberately not done inline, because this is
+    the most depended-upon declaration on the critical path.
+
+    Consequently `su2_emergence` should be read as "volume non-degeneracy
+    (plus the QOU axioms) yields a spin decomposition", not as a
+    three-legged derivation. -/
 structure RankOneGaugeData (k : Type*) [Field k] where
   /-- The underlying QOU. -/
   qou : QuantumObservableUniverse.{u, v} k
