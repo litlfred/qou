@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-10T02:20:19Z
-updated_at: 2026-08-10T02:21:04Z
+updated_at: 2026-08-17T01:48:51Z
 ---
 
 
@@ -151,3 +151,37 @@ regardless of what either real stem was declared as.
 `physical_proton` membership cannot change a value — `q_parameter` tests only
 `ideal_muon` membership and treats everything else as proton — so those two are
 stamping-only declarations, safe to make on evidence without a re-run.
+
+
+## Sub-finding (2026-08-16, from qou-cwin): the vocabulary has NO label for a
+## deliberate cross-anchor comparison, so such probes land in ANCHOR_MISSING
+
+The count in this bean's title moved 1887 -> 1891 on my branch, and all four
+new entries are mine.  They are not forgetful producers -- they are probes that
+read BOTH anchors ON PURPOSE (a c_3 cross-anchor swing measurement, the h-frame
+rungs at both pins, the h-vs-u stability comparison, the required-phase probe).
+
+Reading the vocabulary in tools/qou-substrate/python/qou_substrate/witness.py:56-80,
+none of the four values fits:
+
+  muon / proton   wrong -- there is no single pin; the comparison IS the point
+  independent     wrong -- and would be a FALSE claim of layer-freedom; the
+                  compute reads q0 twice
+  ambiguous       descriptively true (both signatures present) but the docstring
+                  defines it as 'the pin is UNDETERMINED ... a queue for a manual
+                  ruling'.  A deliberate comparison is not undetermined, and
+                  filing it into a manual-ruling queue mislabels it for whoever
+                  drains that queue.
+
+So I did NOT stamp one.  Improvising a label here would either mint a false
+independence claim or pollute the ruling queue -- both worse than the honest
+ANCHOR_MISSING the audit already reports (which its own docstring calls
+'pre-backfill; not a failure').
+
+Suggested fix, for whoever takes this bean: add a fifth producer-declared value,
+e.g. 'comparison' -- the compute reads MORE THAN ONE anchor deliberately, and
+records each value under its own key.  It is distinguishable from 'ambiguous'
+by being producer-asserted rather than manifest-inferred, exactly as
+'independent' already is.  That also gives the audit a way to separate 'this
+witness straddles two layers by accident' (a real defect, per the AGENTS.md
+straddling hazard) from 'this witness compares two layers on purpose'.

@@ -131,9 +131,15 @@ def main() -> int:
     rung_rows = []
     for k, c in enumerate(coeffs):
         reach = "even ✓" if k % 2 == 0 else "ODD ✗"
-        val = float(c) if c != 0 else 0.0
-        print(f"  {'h^' + str(k):>7} {str(c):>34} {val:>16.10f} {reach:>11}")
-        rung_rows.append({"order": k, "exact": str(c), "numeric": fmt(mp.mpf(val)),
+        # Evaluate the exact ℚ(√3) coefficient at COMPUTE precision.  This used
+        # to go through `float(c)` and then re-promote with `mp.mpf(...)`, which
+        # collapsed the exact value to float64 and then serialized 50 digits of
+        # it — fake precision, caught by the float64-padding ratchet.  sympy's
+        # `N(c, 60)` keeps the value exact to well past the 50-dps serialization
+        # width; `float(c)` survives only for the aligned console column.
+        mval = mp.mpf(str(sp.N(c, 60)))
+        print(f"  {'h^' + str(k):>7} {str(c):>34} {float(c):>16.10f} {reach:>11}")
+        rung_rows.append({"order": k, "exact": str(c), "numeric": fmt(mval),
                           "reachable_from_u_ladder": (k % 2 == 0)})
 
     odd_nonzero = [k for k, c in enumerate(coeffs) if k % 2 == 1 and c != 0]

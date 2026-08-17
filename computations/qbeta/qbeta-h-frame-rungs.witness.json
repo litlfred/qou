@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T20:46:57.522118+00:00",
-  "commitSha": "4f542c4d449221d7483e79adb818336b42cc4a96",
+  "computedAt": "2026-08-17T01:40:49.494555+00:00",
+  "commitSha": "6fb0cfe112aeb8bb771bff2721f5b172b59d23d5",
   "assertions": [
     {
       "name": "frame_change_is_an_exact_identity",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 14,
   "computation": "qbeta-h-frame-rungs",
   "scriptFile": "qbeta_h_frame_rungs_probe.py",
-  "scriptHash": "e8bf9d63a60d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c67e318d75e5",
+  "scriptCommitSha": "4cd9dd4033abf0c4c62ced013702a10751d8491d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -76,31 +76,31 @@
       {
         "order": 3,
         "exact": "-sqrt(3)/64",
-        "numeric": "-0.0270632938682637061433844394287007162347435951232910156250000",
+        "numeric": "-0.0270632938682637077113663490860292557334813320907871973133720",
         "reachable_from_u_ladder": false
       },
       {
         "order": 4,
         "exact": "-47/6144 + sqrt(3)/128",
-        "numeric": "0.00588190735079852089484120369888842105865478515625000000000000",
+        "numeric": "0.00588190735079852052234984120968129453340733271206026532335266",
         "reachable_from_u_ladder": true
       },
       {
         "order": 5,
         "exact": "3/512 - sqrt(3)/512",
-        "numeric": "0.00247646326646703673207694507141241047065705060958862304687500",
+        "numeric": "0.00247646326646703653607920636424634303331483348865160033582850",
         "reachable_from_u_ladder": false
       },
       {
         "order": 6,
         "exact": "-6781/2949120",
-        "numeric": "-0.00229932996961805568084113993165829015197232365608215332031250",
+        "numeric": "-0.00229932996961805555555555555555555555555555555555555555555556",
         "reachable_from_u_ladder": true
       },
       {
         "order": 7,
         "exact": "5/16384 + 317*sqrt(3)/983040",
-        "numeric": "0.000863708603921848651341353075849838205613195896148681640625000",
+        "numeric": "0.000863708603921848655241089365903077738770415512550751402886648",
         "reachable_from_u_ladder": false
       }
     ],

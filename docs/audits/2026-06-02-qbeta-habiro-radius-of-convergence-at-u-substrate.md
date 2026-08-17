@@ -35,6 +35,9 @@ Asymptotic value at k=8,9,10 matches `1/u_substrate = 117.40900` to 4 significan
 
 This finding sharpens that framing: the fibre-level F(u) has a singularity at the substrate evaluation point u = u_substrate. The c_k cross-anchor swing (2.98 % between q_proton and q_muon, documented in 2026-05-31-qbeta-c3-q0-stability-verdict.md) is exactly what you'd expect when probing a complex-analytic function NEAR a pole — the "value" you measure depends sensitively on which anchor you pick because each anchor is a different ray approaching the singularity.
 
+> **Correction 2026-08-16.** The `2.98 %` cross-anchor swing cited here is against a **superseded** muon `c_3 = −2.0097` (pre-#1422). The current pair gives **2.3748 %** (proton-normalised). The conclusion is unaffected — 2.3748 % is still vast beside the 10⁻⁵⁰ compute precision — but quote the current figure. Measured: [`qbeta_c3_crossanchor_swing_provenance_probe.py`](../../computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py).
+
+
 ## What this rules out
 
 - ❌ **2-term constant-coefficient linear recurrence** `c_{k+1} = α·c_k + β·c_{k-1}` with α, β constant. Tested across k=3..6; α-spread 318×, β-spread 766×. Refuted.

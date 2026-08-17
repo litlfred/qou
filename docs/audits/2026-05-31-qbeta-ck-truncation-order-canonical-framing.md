@@ -41,6 +41,29 @@ binary decision**:
   −2.0693 at m_p-pin q₀ — a 3.47% m_p-pin swing, 2.98% cross-anchor
   swing per the probe's Part D). ✓
 
+> **⚠ CORRECTION 2026-08-16 — the three percentages in FACT B are computed
+> against a SUPERSEDED muon `c_3`, and the conclusion is unaffected.** This
+> doc's "−2.0097 at muon-pin q₀" has since been re-extracted as
+> **−2.02020024** (registry §9g; reproduced independently by
+> [`qbeta_c3_crossanchor_swing_provenance_probe.py`](../../computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py),
+> 3/3 assertions). Against the current anchor pair the **cross-anchor swing is
+> 2.3748 %** (proton-normalised) or 2.4571 % (normalised by the candidate
+> `−2`) — **not 2.98 %**. Two further notes, because both are traps this doc's
+> readers keep hitting:
+>
+> - The corpus's **2.98 % and 2.88 %** are the *same* stale gap under two
+>   normalisations (`÷2` and `÷|c_3^proton|`), not two measurements. So are the
+>   **3.47 % / 3.35 %** pair for the proton gap. Do not "fix" either into the
+>   other — state the denominator.
+> - The stale `−2.00973976` and the *candidate model* `J_Hopf − ℏ_q² =
+>   −2.00981718` agree to **four decimals** while being different objects
+>   (they differ at 7.7×10⁻⁵). An earlier pass of this very correction
+>   identified them and had to retract. Do not identify them by eye.
+>
+> **Scope-(a): the evidence moved, the verdict did not.** 2.3748 % is smaller
+> than the quoted 2.98 % but still vast beside the 10⁻⁵⁰ compute precision, so
+> FACT B stands and `c_3` remains a q₀-dependent NEAR-MATCH. No tier changes.
+
 **Both are true.** Treating "wire c_k?" as yes/no forces a false choice.
 This doc replaces that with the correct framing.
 
@@ -86,10 +109,16 @@ Per-rung sizes (canonical c_k forms, NOT fitted):
 The **q₀-stability test** discriminates exact from near-match: a true
 Taylor coefficient of a convergent series is **q₀-anchor-independent**.
 
-- `c_2 = -1` — Taylor-exact at compute precision (10⁻⁵⁰), q₀-stable.
-  **PROVED.**
-- `c_3 = -2` — swings 0.49% (muon-pin) → 3.47% (m_p-pin); cross-anchor
-  swing 2.98%. **NEAR-MATCH.**
+- `c_2 = -1` — the exact `u²` coefficient of the explicit-factor product
+  `∏_{k≥2}(1 + c_k u^k)`, hence trivially q₀-stable. **STRUCTURAL**, not
+  **PROVED**: `N2_factor` is a definition with no theorem deriving it, and the
+  Lean identity only re-reads it. (The normalised series, with the cosine
+  factor inside, has `c̃_2 = c_2 − 1/8 = −9/8` — say which series.)
+- `c_3 = -2` — gap to the candidate is 3.47% at the proton pin (`÷2`; the
+  ladder witness reports the same gap as 3.35%, normalised by the extracted
+  `c_3`) and 1.01% at the muon pin. Cross-anchor swing **2.3748%**
+  (proton-normalised). **NEAR-MATCH.** The `0.49%` / `2.98%` that stood here
+  are against the superseded muon `c_3 = −2.0097`; see the correction above.
 - `c_4, c_5` — inherit c_3's near-match status; the **N=4→N=5
   non-monotonicity** (+0.055 → +0.63 ppb) is the experimental signature:
   a convergent series with *exact* c_k would be **monotone**.

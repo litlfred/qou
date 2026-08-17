@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-17T01:54:30.975102+00:00",
-  "commitSha": "66053780cb58146b144fb0767933029c91be434d",
+  "computedAt": "2026-08-17T01:37:51.391014+00:00",
+  "commitSha": "6fb0cfe112aeb8bb771bff2721f5b172b59d23d5",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
-  "scriptHash": "33ccaac86640",
-  "scriptCommitSha": "4f648f821e21cf8d5c8a76024419246fb0570fc8",
+  "scriptHash": "805ec171e06b",
+  "scriptCommitSha": "e20f33130b2e552fdd043e4b45c3f8d0a19fb1bf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,18 +28,19 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "sympy": "1.14.0",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
       "Q0_OK": 652,
       "Q0_AMBIGUOUS": 15,
-      "Q0_INDEPENDENT": 5,
-      "Q0_INDEPENDENT_NO_REASON": 1,
-      "Q0_ANCHOR_MISSING": 1889,
+      "Q0_INDEPENDENT": 6,
+      "Q0_ANCHOR_MISSING": 1891,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 72,
       "Q0_PARSE_ERROR": 1,
@@ -5597,6 +5598,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-c3-crossanchor-swing-provenance.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-c3-exact-volume-boost-enhancement.witness.json",
           "detail": ""
         },
@@ -6042,6 +6047,10 @@
         },
         {
           "witness": "qbeta-geometric-boost-udeform.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-h-frame-rungs.witness.json",
           "detail": ""
         },
         {
@@ -10579,13 +10588,11 @@
           "detail": "root is not an object"
         }
       ],
-      "Q0_INDEPENDENT_NO_REASON": [
+      "Q0_INDEPENDENT": [
         {
           "witness": "markov-identity-symbolic.witness.json",
-          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
-        }
-      ],
-      "Q0_INDEPENDENT": [
+          "detail": ""
+        },
         {
           "witness": "dt-crossknot-snappy-slope-hardening.witness.json",
           "detail": ""
