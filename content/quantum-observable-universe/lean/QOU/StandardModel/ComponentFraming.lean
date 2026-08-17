@@ -218,4 +218,87 @@ theorem d_residual_not_separated_at_swap :
     IsComponentFraming (Equiv.swap (0 : Fin 3) 1) ![(0 : ℤ), 0, -1] := by
   constructor <;> (intro i; fin_cases i <;> simp [Equiv.swap_apply_def])
 
+/-! ### The ν residual, closed
+
+`knot-particle-dictionary.md:4` supplies the missing input:
+
+> *"Fermions (n odd) are **knots (1 component**, half-integer spin) … **Quarks
+> are Borromean-linked unknots** in the exceptional divisor."*
+
+so leptons close to **one** component and quarks sit in the **three**-component
+Borromean braid. Checked on the words themselves:
+
+| word in `B₃` | permutation | components |
+|---|---|---|
+| `σ₁σ₂` | 3-cycle | 1 — the unknot |
+| `(σ₁σ₂)²` | 3-cycle | 1 — the trefoil |
+| `(σ₁σ₂⁻¹)³` | identity | 3 — Borromean |
+
+A one-component closure has transitive π, so `constant_of_transitive` applies to
+every lepton — and combined with the pinned total it fixes the multiset outright.
+Quarks are exempt: identity π gives three orbits and a free value on each, which
+is what leaves `u = {0,1,1}` available. -/
+
+/-- **Lepton framing is determined**: transitive π forces constancy, and the
+pinned total `3Q` then fixes the common value to `Q`.
+
+This is the step that turns the `ν` ambiguity into a decision. -/
+theorem lepton_framing_determined {π : Equiv.Perm (Fin 3)} {t : Fin 3 → ℤ}
+    (h : IsComponentFraming π t)
+    (htrans : ∀ i j : Fin 3, ∃ k : ℕ, (π ^ k) i = j)
+    (Q : ℤ) (htot : t 0 + t 1 + t 2 = 3 * Q) :
+    ∀ i, t i = Q := by
+  have hc := constant_of_transitive h htrans
+  have h1 : t 1 = t 0 := hc 1 0
+  have h2 : t 2 = t 0 := hc 2 0
+  rw [h1, h2] at htot
+  have h0 : t 0 = Q := by omega
+  intro i
+  rw [hc i 0, h0]
+
+/-- **ν = {0,0,0}.**  `ν` is a lepton, so its closure is a knot (transitive π),
+and `Q(ν) = 0` gives total twist `0`. Hence every strand carries twist `0`. -/
+theorem nu_framing_is_zero {π : Equiv.Perm (Fin 3)} {t : Fin 3 → ℤ}
+    (h : IsComponentFraming π t)
+    (htrans : ∀ i j : Fin 3, ∃ k : ℕ, (π ^ k) i = j)
+    (htot : t 0 + t 1 + t 2 = 0) :
+    ∀ i, t i = 0 := by
+  have := lepton_framing_determined h htrans 0 (by simpa using htot)
+  simpa using this
+
+/-- **`ν = {−1,0,1}` is excluded.**  A knot closure forces a constant framing,
+which is not injective on three strands — so the all-distinct survivor cannot be
+`ν`'s multiset.
+
+This closes the half of `htw2`'s `1·2·2·1` residual that no total-only
+invariant could reach: `Y`, the `ℤ₆` condition and bar-negation all see only the
+total, and both `ν`-survivors have total `0`. -/
+theorem nu_distinct_multiset_excluded {π : Equiv.Perm (Fin 3)} {t : Fin 3 → ℤ}
+    (h : IsComponentFraming π t)
+    (htrans : ∀ i j : Fin 3, ∃ k : ℕ, (π ^ k) i = j) :
+    ¬ Function.Injective t := by
+  intro hinj
+  have hc := constant_of_transitive h htrans
+  have : (0 : Fin 3) = 1 := hinj (hc 0 1)
+  exact absurd this (by decide)
+
+/-- **e = {−1,−1,−1}, derived rather than enumerated.**  Same argument at
+`Q(e) = −1`: the battery's unique `e`-survivor is forced, not selected. -/
+theorem e_framing_is_neg_one {π : Equiv.Perm (Fin 3)} {t : Fin 3 → ℤ}
+    (h : IsComponentFraming π t)
+    (htrans : ∀ i j : Fin 3, ∃ k : ℕ, (π ^ k) i = j)
+    (htot : t 0 + t 1 + t 2 = -3) :
+    ∀ i, t i = -1 := by
+  have := lepton_framing_determined h htrans (-1) (by simpa using htot)
+  simpa using this
+
+/-- **Quarks are exempt, and must be.**  The Borromean word `(σ₁σ₂⁻¹)³` has
+identity permutation, so its three strands are three separate components and a
+component framing may take a different value on each. `u = {0,1,1}` is therefore
+available — as it must be, since a transitive π would have forced it constant
+and killed it. -/
+theorem u_multiset_available_at_identity :
+    IsComponentFraming (1 : Equiv.Perm (Fin 3)) ![(0 : ℤ), 1, 1] := by
+  intro i; fin_cases i <;> rfl
+
 end QOU.StandardModel.ComponentFraming

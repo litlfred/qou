@@ -116,3 +116,55 @@ against 3Q.
 
 lean-direct exit 0; #print axioms clean on all eight decls (const_ is
 [Quot.sound] only); no sorry / axiom / native_decide.
+
+## ν RESOLVED: the framed braid word, and {-1,0,1} refuted (2026-08-17)
+
+The missing input was in the corpus. `knot-particle-dictionary.md:4`:
+
+  > "Fermions (n odd) are KNOTS (1 component, half-integer spin) ... Quarks are
+  >  Borromean-linked unknots in the exceptional divisor."
+
+Leptons close to ONE component; quarks sit in the THREE-component Borromean
+braid. Verified on the words themselves (permutation of the braid word):
+
+    sigma1 sigma2          3-cycle    1 component   the unknot
+    (sigma1 sigma2)^2      3-cycle    1 component   the trefoil
+    (sigma1 sigma2^-1)^3   identity   3 components  Borromean
+
+### The framed braid word for nu
+
+    beta_nu = sigma1 sigma2  in B_3,  framing t = (0,0,0)
+
+Its closure is the unknot -- one component, transitive permutation -- so
+component-constancy forces a CONSTANT framing, and the pinned total 3Q(nu) = 0
+fixes the common value to 0.
+
+### Lean (all sorry-free, lean-direct exit 0)
+
+    lepton_framing_determined     transitive pi + total 3Q  =>  t == Q
+    nu_framing_is_zero            Q = 0  =>  nu = {0,0,0}
+    nu_distinct_multiset_excluded a knot closure cannot have an injective
+                                  framing  =>  {-1,0,1} is REFUTED
+    e_framing_is_neg_one          Q = -1  =>  e = {-1,-1,-1}, derived not enumerated
+    u_multiset_available_at_identity  Borromean identity-pi keeps {0,1,1} available
+
+So the residual is 1.2.2.1 -> 1.2.1.1: nu's ambiguity is CLOSED, d's remains
+(both d-survivors share shape (2,1); see d_residual_not_separated_at_swap).
+
+### What is now derived vs still anchored -- do not overstate
+
+DERIVED: given the total, the lepton multiset is FORCED, not selected. e's
+unique survivor and nu's {0,0,0} both follow from "leptons are knots" plus
+component-constancy. The exclusion of {-1,0,1} needs no total at all -- a knot
+closure simply cannot carry an injective framing.
+
+STILL ANCHORED: the TOTAL twist is pinned by the SM target (3Q), exactly as htw2
+item 1 says. This does not derive Q(f), and conj:sm-hypercharge-invariant stays
+open. What changed is that the strand-refinement residual -- the part htw2 shows
+hypercharge provably cannot reach -- is now decided for the leptons by framework
+structure rather than left to enumeration.
+
+The u/quark side is CONSISTENT rather than derived: identity-pi leaves {0,1,1}
+available, and a transitive pi would have KILLED it. That the corpus assigns
+quarks to the 3-component Borromean braid is what makes the battery's u-answer
+survivable at all -- a nontrivial cross-check that passes.
