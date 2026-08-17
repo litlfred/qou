@@ -115,11 +115,27 @@ Independently of that: the block is **self-inconsistent as written** for any
 Exactly two items, and neither is a two-nucleon item:
 
 1. **The many-body collective term.** `R(A) := B_AME/A − B_chain/A`, with
-   `R/α = 1.3240` per nucleon at plateau, **mixed-sign in `A`** (`−0.3041` at ²H,
-   `> 0` at all 13 heavier rows). Three screens already constrain it: magnitude
-   (1.90× the chain's own asymptote), sign (kills anything non-negative *by
-   construction*), scaling (kills an unsuppressed all-pairs term). This is the
-   many-body side's own open item.
+   `R/α = 1.3240` per nucleon at plateau. Two screens constrain it: magnitude
+   (1.90× the chain's own asymptote) and scaling (kills an unsuppressed
+   all-pairs term). This is the many-body side's own open item, tracked as
+   `qou-ls86`.
+
+   > **The third screen — "mixed-sign in `A`" — is WITHDRAWN as stated
+   > (2026-08-17).** It was measured on a 14-isotope convenience sample and used
+   > to exclude "anything manifestly non-negative by construction — an entropy, a
+   > KL divergence, a dimension count, a positive Plancherel weight". Over the
+   > full AME2020 table (3554 nuclides) **7 rows have `R < 0`, and every one has
+   > `B_AME/A < 1.73` MeV/nucleon** — six of them particle-unbound drip-line
+   > exotics (⁵Be, ⁷H, ⁶H, ⁴Li, ⁵H, ⁴H), the seventh the deuteron. Among the
+   > **3519 nuclides with `B_AME/A > 5` (99.0 % of the chart) there are zero
+   > negatives**, and `R ∈ [+2.10, +5.89]`.
+   >
+   > Those negatives re-measure the *already-proved* interface defect rather than
+   > the collective term: `B_sym` is positive for every `(Z,N)`, so wherever
+   > nature has ~zero binding the chain must over-bind. **Replacement, scope-(a):**
+   > on the well-bound regime `R` is strictly positive and bounded, and
+   > non-negative candidates are **not** excluded there. Do not cite the old
+   > screen against them.
 2. **`qou-y0mc`** — the `S`-vs-`H` derivation above.
 
 **The predecessor's §5 obstruction list is withdrawn.** Its item 1 ("7 of 11 `H₆`
