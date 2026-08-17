@@ -29,7 +29,7 @@ into eigenspaces requires:
 3. The identification Λ²V ≅ 𝟙 (from the volume constraint) to
    get a scalar eigenvalue in End(𝟙) ≅ k.
 
-Once the eigenvalues λ_sym, λ_anti are extracted (wall), the rest
+Once the eigenvalues lamSym, lamAnti are extracted (wall), the rest
 is pure algebra over ℝ (proved here without sorry).
 
 LaTeX label: `prop:braiding-eigenvalue-extraction`
@@ -48,9 +48,10 @@ open CategoryTheory MonoidalCategory
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -108,8 +109,8 @@ axiom spectral_decomposition_of_braiding
     (h_volume : Prop)
     -- The category is semisimple
     (h_semisimple : Prop)
-    : ∃ (λ_sym λ_anti : R_q),
-        λ_sym ≠ 0 ∧ λ_anti ≠ 0 ∧ λ_sym * λ_anti = -1
+    : ∃ (lamSym lamAnti : R_q),
+        lamSym ≠ 0 ∧ lamAnti ≠ 0 ∧ lamSym * lamAnti = -1
 
 /-! ## Part 3: Pure algebra (no sorry, no axiom)
 
@@ -129,24 +130,24 @@ below is proved by Lean's `field_simp`, `ring`, and `linarith`. -/
 --      DOI: 10.1007/978-1-4612-0783-2
 structure BraidingEigenvalueData where
   /-- Eigenvalue on the symmetric summand S²V. -/
-  λ_sym : R_q
+  lamSym : R_q
   /-- Eigenvalue on the antisymmetric summand Λ²V ≅ 𝟙. -/
-  λ_anti : R_q
+  lamAnti : R_q
   /-- The braiding is non-degenerate: both eigenvalues are nonzero. -/
-  λ_sym_ne_zero : λ_sym ≠ 0
-  λ_anti_ne_zero : λ_anti ≠ 0
-  /-- Hecke product condition: λ_sym · λ_anti = -1.
+  lamSym_ne_zero : lamSym ≠ 0
+  lamAnti_ne_zero : lamAnti ≠ 0
+  /-- Hecke product condition: lamSym · lamAnti = -1.
       This is the product of roots of the Hecke polynomial
       (T - q)(T + q⁻¹) = T² - (q - q⁻¹)T - 1, whose constant
       term is -1.  Note: this is *not* the 4D determinant of
       c_{V,V} on V ⊗ V (which would be q³·(-q⁻¹) = -q²), but
       rather the product of the two *distinct* eigenvalues. -/
-  det_constraint : λ_sym * λ_anti = -1
+  det_constraint : lamSym * lamAnti = -1
 
 /-- The deformation parameter q extracted from braiding eigenvalues.
-    By convention, q := λ_sym (the symmetric eigenvalue). -/
+    By convention, q := lamSym (the symmetric eigenvalue). -/
 noncomputable def BraidingEigenvalueData.q (bed : BraidingEigenvalueData) : R_q :=
-  bed.λ_sym
+  bed.lamSym
 
 /-- The antisymmetric eigenvalue is forced to be -q⁻¹ by the
     determinant constraint. -/
@@ -155,9 +156,9 @@ noncomputable def BraidingEigenvalueData.q (bed : BraidingEigenvalueData) : R_q 
 --      DOI: 10.1007/978-1-4612-0783-2
 theorem BraidingEigenvalueData.anti_eq_neg_inv
     (bed : BraidingEigenvalueData) :
-    bed.λ_anti = -(bed.λ_sym)⁻¹ := by
+    bed.lamAnti = -(bed.lamSym)⁻¹ := by
   have h := bed.det_constraint
-  have hne := bed.λ_sym_ne_zero
+  have hne := bed.lamSym_ne_zero
   field_simp at h ⊢
   linarith
 
@@ -167,24 +168,24 @@ theorem BraidingEigenvalueData.anti_eq_neg_inv
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
 theorem hecke_polynomial_roots (bed : BraidingEigenvalueData) :
-    (bed.λ_sym - bed.q) * (bed.λ_sym + bed.q⁻¹) = 0
-    ∧ (bed.λ_anti - bed.q) * (bed.λ_anti + bed.q⁻¹) = 0 := by
+    (bed.lamSym - bed.q) * (bed.lamSym + bed.q⁻¹) = 0
+    ∧ (bed.lamAnti - bed.q) * (bed.lamAnti + bed.q⁻¹) = 0 := by
   unfold BraidingEigenvalueData.q
   constructor
   · ring_nf; simp
   · rw [bed.anti_eq_neg_inv]
-    have hne := bed.λ_sym_ne_zero
+    have hne := bed.lamSym_ne_zero
     field_simp
     ring
 
 /-- Classical limit: symmetric braiding (c² = id) forces q = 1. -/
 theorem classical_limit (bed : BraidingEigenvalueData)
-    (hsym : bed.λ_sym = 1) : bed.λ_anti = -1 := by
+    (hsym : bed.lamSym = 1) : bed.lamAnti = -1 := by
   rw [bed.anti_eq_neg_inv, hsym]; simp
 
 /-- Quantum regime: non-symmetric braiding forces q ≠ 1. -/
 theorem quantum_regime (bed : BraidingEigenvalueData)
-    (hnsym : bed.λ_sym ≠ 1) : bed.q ≠ 1 := by
+    (hnsym : bed.lamSym ≠ 1) : bed.q ≠ 1 := by
   unfold BraidingEigenvalueData.q; exact hnsym
 
 /-- The full extraction: from eigenvalues + det constraint, derive
@@ -193,17 +194,17 @@ theorem quantum_regime (bed : BraidingEigenvalueData)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
 theorem braiding_eigenvalue_extraction
-    (λ_sym λ_anti : R_q)
-    (hλs : λ_sym ≠ 0)
-    (hλa : λ_anti ≠ 0)
-    (hdet : λ_sym * λ_anti = -1)
+    (lamSym lamAnti : R_q)
+    (hλs : lamSym ≠ 0)
+    (hλa : lamAnti ≠ 0)
+    (hdet : lamSym * lamAnti = -1)
     : ∃ (bed : BraidingEigenvalueData),
-        bed.q = λ_sym
-        ∧ bed.λ_anti = -(λ_sym)⁻¹
-        ∧ (bed.λ_anti - bed.λ_sym) * (bed.λ_anti + (bed.λ_sym)⁻¹) = 0 := by
-  have h_anti_val : λ_anti = -(λ_sym)⁻¹ := by
+        bed.q = lamSym
+        ∧ bed.lamAnti = -(lamSym)⁻¹
+        ∧ (bed.lamAnti - bed.lamSym) * (bed.lamAnti + (bed.lamSym)⁻¹) = 0 := by
+  have h_anti_val : lamAnti = -(lamSym)⁻¹ := by
     field_simp at hdet ⊢; linarith
-  refine ⟨⟨λ_sym, λ_anti, hλs, hλa, hdet⟩, rfl, h_anti_val, ?_⟩
+  refine ⟨⟨lamSym, lamAnti, hλs, hλa, hdet⟩, rfl, h_anti_val, ?_⟩
   · rw [h_anti_val]
     field_simp
     ring
