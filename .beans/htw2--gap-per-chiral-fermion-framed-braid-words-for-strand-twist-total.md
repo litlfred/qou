@@ -168,3 +168,58 @@ The u/quark side is CONSISTENT rather than derived: identity-pi leaves {0,1,1}
 available, and a transitive pi would have KILLED it. That the corpus assigns
 quarks to the 3-component Borromean braid is what makes the battery's u-answer
 survivable at all -- a nontrivial cross-check that passes.
+
+## d closed -- CONDITIONALLY, and the condition is named (2026-08-17)
+
+`QOU/StandardModel/SignCoherentTwist.lean` -- lean-direct exit 0, no sorry /
+axiom / native_decide, #print axioms standard-Mathlib only.
+
+Component-constancy is PROVABLY blind to d (both survivors have shape (2,1)),
+so separating d needs a constraint on which VALUE sits where. Exactly one
+uniform rule does it:
+
+    SignCoherent t  :=  no strand pair carries twists of opposite sign
+
+Applied to the pinned totals it collapses the residual completely:
+
+    u   2   {0,1,1}                 coherent          1
+    d  -1   {-1,-1,1} / {-1,0,0}    NO  / yes         2 -> 1
+    nu  0   {-1,0,1}  / {0,0,0}     NO  / yes         2 -> 1
+    e  -3   {-1,-1,-1}              coherent          1
+
+    1.2.2.1  ->  1.1.1.1
+
+  no_positive_of_negative_total  coherence + negative total => no positive strand
+                                 (this is the whole mechanism: {-1,-1,1} dies
+                                 because it carries +1 while its total is -1)
+  d_multiset_forced              range + total -1 + coherence => {-1,0,0}
+  d_mixed_sign_not_coherent      the excluded survivor, named
+  {d,u,e,nu}_survivor_coherent   the rule destroys NOTHING else -- uniformity
+
+### Status: ASSUMPTION, not derivation -- do not launder this
+
+SignCoherent is the HELON-MODEL structure (Bilson-Thompson, already cited in the
+corpus for the 1/3 normalisation): a fermion's helons carry twists of a single
+sign. A corpus grep finds NO framework statement of it. Its physical reading --
+that a state carrying +1 and -1 on different strands contains an internal
+bar-conjugate pair, since bar negates the twist -- is suggestive, not a proof.
+
+So d = {-1,0,0} is CONDITIONAL on adopting sign-coherence. Under the anti-fit
+discipline that import must be named, and it is, in the file's own docstring and
+here. It is not wired to anything.
+
+### The corroboration, and why it is only that
+
+Sign-coherence independently forces nu = {0,0,0} -- the SAME answer
+ComponentFraming.nu_framing_is_zero DERIVES from "leptons are knots". The two
+routes are epistemically different (derived vs imported) and agree where they
+overlap. That is evidence the convention is the right one; it is NOT a
+derivation of it. d is where only the assumed route reaches, which is precisely
+why d stays labelled conditional while nu does not.
+
+### What would upgrade it
+
+Deriving sign-coherence from the framework -- most plausibly from the bar
+involution (bar negates the twist, so a mixed-sign state is bar-composite) plus
+whatever forbids a fundamental fermion from carrying an internal conjugate pair.
+That is a real, well-posed target and it is NOT done here.
