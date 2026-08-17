@@ -223,3 +223,63 @@ Deriving sign-coherence from the framework -- most plausibly from the bar
 involution (bar negates the twist, so a mixed-sign state is bar-composite) plus
 whatever forbids a fundamental fermion from carrying an internal conjugate pair.
 That is a real, well-posed target and it is NOT done here.
+
+## UPGRADE: sign-coherence is a NORMAL FORM, not an import (2026-08-17)
+
+The section above labelled sign-coherence a Bilson-Thompson convention and said
+the well-posed upgrade was deriving it. A sibling branch
+(claude/agent-discussions-queue-gibk4e, bean qou-pkf3, commit 97d45b51ca) landed
+the missing half hours later:
+
+  > "On the defining representation the twist axiom forces theta_V = q^{1/2} . id_V"
+  > "Without a twist a braid closure is only a FRAMED link"
+
+Because theta_V is a SCALAR multiple of the identity, opposite framings on two
+strands cancel EXACTLY, as morphisms:
+
+    theta_V (x) theta_V^{-1} = q^{1/2} . q^{-1/2} . id = id
+
+So a (+1,-1) strand pair is RIBBON-INVISIBLE. Cancelling it rewrites the same
+state; it is not a different physical choice. And cancellation preserves the
+total (cancel_preserves_total), hence preserves Q_twist = T/3, Y, and the Z6
+layer -- so reduction is invisible to every constraint the battery imposes.
+
+Reducing until no such pair remains lands in a sign-coherent framing, and for
+entries in {-1,0,1} the reduced form is UNIQUE per total (verified over all 27
+assignments; reduction preserves the total in every case):
+
+    total  -3         -2        -1       0       1       2       3
+    form   {-1,-1,-1} {-1,-1,0} {-1,0,0} {0,0,0} {0,0,1} {0,1,1} {1,1,1}
+
+The two survivors sign-coherence excluded are exactly the UN-REDUCED SPELLINGS
+of the two it keeps:
+
+    d  {-1,-1,1} -> {-1,0,0}
+    nu {-1,0,1}  -> {0,0,0}
+
+### Lean
+
+  coherent_iff_all_same_sign  coherent <-> all non-negative or all non-positive
+  d_forms_same_weight         the excluded and kept d forms carry the SAME
+                              ribbon weight theta^total -- the choice between
+                              them is a choice of representative
+  nu_forms_same_weight        same for nu
+  cancel_preserves_total      the reduction step leaves the total fixed
+
+lean-direct exit 0; #print axioms [propext] / [propext, Quot.sound]; no sorry /
+axiom / native_decide.
+
+### Status change, precisely
+
+WAS: d = {-1,0,0} conditional on an imported helon convention.
+NOW: d = {-1,0,0} follows from theta_V being scalar -- categorical structure of
+the corpus -- plus the interpretive step that the physical state is the
+ribbon-equivalence class rather than a chosen spelling.
+
+The remaining caveat is that second step, and it is stated rather than buried.
+It is much weaker than the original import: it is a statement about what counts
+as the same state, not a borrowed rule about helon signs.
+
+Cross-check unchanged and now better motivated: sign-coherence forces
+nu = {0,0,0}, the same answer ComponentFraming.nu_framing_is_zero DERIVES from
+"leptons are knots". Two routes, agreeing.
