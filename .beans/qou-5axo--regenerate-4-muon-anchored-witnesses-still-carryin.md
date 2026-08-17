@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-17T01:01:34Z
-updated_at: 2026-08-17T01:44:20Z
+updated_at: 2026-08-17T01:54:38Z
 ---
 
 ## Origin (PR #5260, bean qou-tzsp)
@@ -89,3 +89,29 @@ it is not caused by the bridge fix. A 13 % move is far too large to be the
 1e-9 straddle and needs its own diagnosis.
 
 Both are filed separately rather than folded in here.
+
+
+---
+
+## The CONCLUSION stands; the REASON I gave for it was wrong (2026-08-17)
+
+Blast radius is still **1**, but not for the reason recorded above.
+
+I wrote: "all three producers call the bridge with `Q_50_DIGIT_STR`, and that
+value is proton". **False.** `q_parameter` auto-selects by the running
+producer's stem, and all three are in the manifest's `ideal_muon`, so in a real
+producer run that constant is **muon** — see bean qou-l1wd, refuted for the
+same reason.
+
+The actual reason those four witnesses are unaffected: **the bridge is never
+called.** `binding_canonical.py` reaches `tr_M_via_wenzl_bridge_mpfr` only
+under `use_closed_form`, which defaults to **False**; its default run's log has
+zero bridge mentions, as does `wedderburn_lp_ew_wiring`'s.
+
+Re-verified the right way — running each producer with and without the branch's
+changes and diffing the witnesses modulo ephemeral fields:
+
+    wedderburn_lp_ew_wiring:  with-fix == without-fix  -> True
+
+So: unaffected because they do not exercise the changed code path, not because
+they compute at a different pin. Same conclusion, sound basis.
