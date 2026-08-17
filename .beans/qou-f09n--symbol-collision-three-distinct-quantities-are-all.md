@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:48:34Z
-updated_at: 2026-08-16T23:20:34Z
+updated_at: 2026-08-17T00:51:45Z
 ---
 
 
@@ -233,3 +233,41 @@ I first justified the tilde as 'following the register's existing w_lambda /
 w-tilde_lambda convention'.  That precedent is NOT available: the same register
 retired the w-tilde pairing on the same day (owner ruling, further down the
 same file).  The tilde device is fine; the citation was wrong and now says so.
+
+
+## RETRACTION of this bean's own central claim (2026-08-16, owner-authorised T3/T4)
+
+This bean said AGENTS.md line 1062 was 'wrong on both halves'.  Measured: only
+ONE half is.  The bean's wording was:
+
+  'Under the natural reading of "Taylor" -- the Taylor coefficient of the
+   ladder series -- the u^2 coefficient is -9/8, not -1.'
+
+That is A reading presented as THE reading.  Symbolically (sympy):
+
+  u^2 coeff of prod_{k>=2}(1 + c_k u^k)            =  c_2        <- trivially
+  u^2 coeff of [cos(A - u/2) * prod] / value_at_0  =  c_2 - 1/8
+
+So c_2 = -1 IS a genuine Taylor coefficient -- of the explicit-factor product.
+There is no k=1 factor, so nothing else contributes at order 2.  It is -9/8
+only when the cosine is inside the series.  'Taylor-exact' is therefore
+UNDER-SPECIFIED, not false, and the rule is SAY WHICH SERIES, never delete the
+word.  I nearly swept 12 published sites deleting a correct claim.
+
+The OTHER half stands and was the real defect.  Corpus-grepped: N2_factor is a
+bare def in QBetaCategoricalPrecisionLadder.lean with NO theorem deriving it --
+every use merely unfolds it, and the Kashiwara f-tilde_1 provenance lives in a
+docstring.  The Lean proves only the re-reading.  So 'PROVED' overstates;
+'structural' is right, and is what the source block itself already claimed.
+The over-compression happened in AGENTS.md, not in the block.
+
+## A third claim checked and deliberately LEFT ALONE
+
+The banner's '3.47%' looked stale.  It is not: 3.4671% = |-2 - c_3| / 2, while
+the ladder witness's own err_pct reports 3.3509% -- the SAME gap normalised by
+the extracted c_3 = -2.06934258.  Neither should be rewritten into the other.
+
+That this normalisation trap sits in the same banner as the c_2 / c-tilde_2 one
+is the lesson of this bean, and I walked into it twice in one session.
+
+The 'approx 3% cross-anchor' does measure loose: 2.3748% proton-normalised.

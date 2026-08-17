@@ -877,11 +877,26 @@ coefficients are not the same coefficients.
 value (`−1` remains fixed by construction, not derived), **no** derivation of
 `α` (un-derived in both Markov conventions — §9g), and **no** accuracy claim.
 
-**One owed item, deliberately not taken unilaterally.** AGENTS.md's `c_k`
-truncation-order banner says *"`c_2 = −1` is PROVED Taylor-exact"*, which is
-wrong on **both** halves under the natural reading: the ladder series' `u²`
-Taylor coefficient is `c̃₂ = −9/8`, and the `−1` is hardcoded rather than
-derived (the Lean lemma about it is a ring-true renaming per PR #5187, with
-the substantive identification asserted). It is a STRICT banner in a contested
-channel, so the re-wording is **queued for owner sign-off**, not applied — see
-bean `qou-f09n`.
+**The owed AGENTS.md item — done 2026-08-16 (owner-authorised), and half my
+diagnosis was wrong.** The `c_k` truncation-order banner said *"`c_2 = −1` is
+PROVED Taylor-exact"*. Bean `qou-f09n` claimed that was wrong on **both**
+halves. Measured, only one half is:
+
+- **"Taylor" is UNDER-SPECIFIED, not false — RETRACTED.** The `u²` coefficient
+  of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂`,
+  trivially, since there is no `k = 1` factor. So `c₂ = −1` **is** a Taylor
+  coefficient — of *that* series. The bean called the normalised-series reading
+  *"the natural reading"*; that was a reading presented as **the** reading. The
+  rule is therefore **say which series**, never delete the word.
+- **"PROVED" is wrong, and stands.** `N2_factor` is a bare `def` in
+  `QBetaCategoricalPrecisionLadder.lean` with **no** theorem deriving it —
+  every use `unfold`s it, and the Kashiwara provenance is a docstring. The Lean
+  identity proves only the re-reading. The banner now says **"structural"**,
+  which is what the source block itself claims and is defensible (no fit, no
+  CODATA, no q₀); the over-compression happened in AGENTS.md, not in the block.
+
+A third banner claim was checked and **left alone**: the `c_3 = −2` gap quoted
+as `3.47 %` is `|−2 − c₃|/2`, while the ladder witness reports `3.3509 %` for
+the same gap normalised by the extracted `c₃`. Neither is stale; neither should
+be "fixed" into the other. That this normalisation trap sits in the same banner
+as the `c₂`/`c̃₂` one is the whole lesson.
