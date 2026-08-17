@@ -1,11 +1,11 @@
 ---
 # qou-tzsp
 title: 'atomic-tr-m-mpfr-50dps: primary tr_M disagrees with its own peel_cross_check by 1.85e-9'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T21:23:42Z
-updated_at: 2026-08-17T00:56:47Z
+updated_at: 2026-08-17T01:02:37Z
 ---
 
 ## Evidence (PR #5260, rho_k_h3a_residual_decomposition.py)
