@@ -1,3 +1,3 @@
 *Any candidate Habiro element $F(q)$ generating the $\mathfrak{Q}_\beta$ ladder must satisfy the classical-limit shadows $\lim_{q \to 1} c_2(q) = -1$ and $\lim_{q \to 1} c_3(q) = -2$. A candidate failing either shadow is structurally REFUTED.*
 
-This enforces the $q=1$ shadow formalize-first gate. The seed $c_2 = -1$ is Taylor-exact. The term $c_3 \to -2$ is the canonical Hopf-Jones limit. A candidate whose Taylor expansion disagrees with either anchor fails this invariant.
+This enforces the $q=1$ shadow formalize-first gate. The seed $c_2 = -1$ is Taylor-exact *for the explicit-factor product* $\prod_{k\ge2}(1 + c_k u^k)$ — the normalised series (cosine factor inside) has $\tilde c_2 = c_2 - 1/8 = -9/8$, so the series must be named. The term $c_3 \to -2$ is the canonical Hopf-Jones limit. A candidate whose Taylor expansion disagrees with either anchor fails this invariant.

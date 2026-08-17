@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-16T12:45:00Z
-updated_at: 2026-08-16T23:20:59Z
+updated_at: 2026-08-17T00:53:07Z
 ---
 
 Owner-authorised 2026-08-16: *"bean up and start = express the ladder in h"*.
@@ -237,3 +237,38 @@ recording the pass.  The real gate is scripts/run-validate.ts.
 
 T3 (AGENTS.md line 1062) and T4 (downstream content blocks in F/h coordinate)
 both need OWNER SIGN-OFF and are deliberately not started.
+
+
+## T3 + T4 DONE (2026-08-16, owner-authorised 'go t3 t4')
+
+T3 -- AGENTS.md line 1062 banner corrected.  Three claims examined; the
+detailed record and the retraction are in qou-f09n.  Headline: only ONE of the
+two halves the bean named was actually wrong ('PROVED'), 'Taylor-exact' is
+under-specified rather than false, and a third figure I expected to be stale
+turned out to be a normalisation difference and was LEFT ALONE.
+
+T4 -- downstream content blocks.  Scope was measured, not assumed: 13 sites
+across 10 files carry 'Taylor-exact' on c_2.  The T4 shape CHANGED as a result
+of the T3 finding: it is NOT 'replace Taylor-exact everywhere' (that would have
+deleted a correct claim from 12 published statements).  It is:
+
+  * 8 sites carrying 'proved/PROVED' -> reworded to 'structural' (real defect)
+  * 2 bare-'Taylor-exact' seed sites -> which-series pointer added
+  * 3 sites LEFT deliberately:
+      - phi-b-bar-parity-interpretation.md:32 is correct as written, and its
+        2.375% swing matches my own measurement exactly
+      - complex-volume-ladder-intro.md:3 names a DIFFERENT series (the
+        fibre-level complex V(q)); I cannot verify its normalisation, so I did
+        not touch it
+      - q-beta-q-eq-one-shadow-gate-proof.md:25 'a Taylor-exact constant' --
+        referent not confirmed
+
+Also FIXED two artifacts I had landed earlier the same session which carried
+the now-retracted framing: notation-collisions.md and registry §9i both said
+'Taylor-exact is wrong'.  Both now say it is under-specified.
+
+FLAGGED, not fixed: qbeta-ck-truncation-canonical.ts says 'cross-anchor 2.98%'
+where the registry §9g anchor pair gives 2.3748% (proton-normalised).  Dated
+2026-05-31, so plausibly pre-re-pin -- but NOT verified, and I had just been
+wrong about a 'stale' percentage, so it is recorded as a named open item rather
+than silently corrected.

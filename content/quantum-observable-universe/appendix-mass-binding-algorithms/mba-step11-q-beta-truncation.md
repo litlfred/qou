@@ -23,7 +23,8 @@ $N$ chosen by the target precision.*
    modulo the binding-energy contribution.
 2. Compute u = b · ℏ_q² where ℏ_q is the q-quantum constant.
 3. For k = 2, …, N:
-   c_2 = -1                  (Taylor-exact, PROVED).
+   c_2 = -1                  (structural: exact u^2 coefficient of the
+                              explicit-factor product; not derived).
    c_k for k ≥ 3 are q_0-dependent NEAR-MATCHES; N is a truncation
      order, not an inclusion/exclusion criterion.
    Multiply Q_base by (1 + c_k · u^k).
@@ -37,7 +38,11 @@ establishes the precision ladder and the convergence rate.*
 
 *The $c_k$ coefficients are **tiered**:*
 
-- *$c_2 = -1$: **proved** Taylor-exact.*
+- *$c_2 = -1$: **structural** — the exact $u^2$ coefficient of the
+  explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, with no fit, no
+  CODATA and no $q_0$. Not **proved**: the Lean re-reads the $N{=}2$
+  factor rather than deriving it. State which series — the normalised
+  series' coefficient is $\tilde c_2 = c_2 - 1/8 = -9/8$.*
 - *$c_k$ for $k \geq 3$: **near-match** with $q_0$-dependent
   swings (e.g. $c_3 = -2 = J_{\mathrm{Hopf}}(q = 1)$ within
   $\sim 3\%$ at the m_p-pin $q_0$).*
