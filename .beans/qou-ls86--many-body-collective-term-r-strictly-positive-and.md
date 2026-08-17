@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T00:44:48Z
-updated_at: 2026-08-17T01:40:08Z
+updated_at: 2026-08-17T01:52:17Z
 ---
 
 Opened working the many-body R term at owner direction ('go on many body').
@@ -112,3 +112,63 @@ pure-surface excluded. NOT established: which extensive count, the residual's
 decomposition, or that a categorical object supplies (1).
 
 Probe: computations/probes/collective_term_shape_degeneracy_probe.py
+
+
+## 2026-08-17 — RETRACTION + where Coulomb IS derived in QOU
+
+**Retraction.** My shape-degeneracy probe said the high-Z residual is 'consistent
+with Coulomb, which the framework does not model AT ALL'. **False. I skipped the
+corpus-grep checklist.** The corpus carries def:coulomb-charge
+(content/.../knots-particles-confinement/coulomb-charge.{md,ts,lean}),
+magic-shell-coupling-kappa (shell, identification withdrawn),
+docs/coordination/alpha-em.md, docs/audits/2026-08-01-em-linking-reads-round1.md,
+and deprecated per_braid_tower_coulomb.py / coulomb_subtracted_binding.py /
+term_7_shell_correction_test.py.
+
+**What QOU actually derives.** def:coulomb-charge splits the crossing energy into
+bar-even (strong) and bar-odd (Coulomb) parts:
+
+    E_cross = (1/2)(n+ + n-)(q + 1/q)  +  Q (q - 1/q),   Q = (1/2)(n+ - n-)
+
+Coulomb/strong = tanh(ln q0) = 0.103964 (block states ~0.104).
+
+**Q = 2Z + eps on the framework's own words**, eps = 3.4393e-04 a CONSTANT
+(spread 1.4e-14 across 2H..208Pb). Structural reason: writhe = 3Z + N + (Z-1)(+1)
++ (N-1)(-1) + e_pn = 4Z + e_pn, so N cancels entirely. The offset is the single
+colour-weighted pn bond: under canonical bring_color_weighted its
+d = -0.104458248 rather than the midpoint -h/2 = -0.104530149, giving crossing
+sign e_pn = +6.878e-04 instead of 0. One per nucleus, hence constant.
+(I first wrote 'Q = 2Z exactly' off a 2-decimal table; the probe's assertion
+caught it. Colour weighting breaks exact integrality of the Coulomb charge by a
+fixed universal amount — the corrected version is the more informative one.)
+
+**THE GAP: linear vs quadratic.** Framework EM = tanh(ln q0) x strong; physical
+Coulomb = a_C Z(Z-1)/A^(1/3):
+
+    4He 1.0x | 12C 2.7x | 40Ca 6.5x | 56Fe 7.0x | 90Zr 8.8x | 208Pb 12.1x
+
+Exact at 4He, diverging monotonically — the Z vs Z(Z-1) signature. **The framework
+has a CHARGE; it has no charge-charge interaction energy.** Q*h is linear in the
+charge; electrostatics is a pair energy and needs a quadratic term.
+
+**The EM sector IS the writhe grading (route 2).** Q = (1/2)(n+ - n-) is half the
+writhe, so the corpus's Coulomb correction and the T_3/writhe grading I closed as
+route 2 are the SAME object. That is a consistency, not a failure: EM should be
+small (10.4%), and route 2's conclusion (the writhe cannot fix the STRONG sign
+structure) is correct physics.
+
+**Prior art on shell, with a warning for me.** magic-shell-coupling-kappa proposed
+a magic-shell coupling and WITHDREW it: its two anchors (3He, 3H) disagreed in
+sign by a factor 5.3, and restoring the electrostatic energy of 3He's pp pair
+removed the discord, leaving an excess coefficient of ZERO. An apparent SHELL
+effect turned out to be electrostatics. Direct caution against reading my
+residual's N=50 peak as shell structure.
+
+**Where a quadratic term could live.** A single interface generates only the
+2-dimensional span{1, sigma} (sigma^2 = h sigma + 1), so every single-bond
+quantity is affine in the crossing — a Q^2 term CANNOT live at one bond. It could
+live in the multi-bond word where distinct bonds' crossings pair, which is the
+same structural place the many-body term must live. Not excluded by anything
+proved; also not established.
+
+Probe: computations/probes/coulomb_charge_is_linear_in_z_probe.py
