@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-17T01:37:51.391014+00:00",
-  "commitSha": "6fb0cfe112aeb8bb771bff2721f5b172b59d23d5",
+  "computedAt": "2026-08-17T02:00:32.374559+00:00",
+  "commitSha": "8e4adab223d1f3cff4a0f9932eedd0bbe722997a",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -17,8 +17,8 @@
   "durationMs": 3,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
-  "scriptHash": "805ec171e06b",
-  "scriptCommitSha": "e20f33130b2e552fdd043e4b45c3f8d0a19fb1bf",
+  "scriptHash": "33ccaac86640",
+  "scriptCommitSha": "353658c0b003ff269fcbaea0bdb85fd4a999a52f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,8 @@
     "counts": {
       "Q0_OK": 652,
       "Q0_AMBIGUOUS": 15,
-      "Q0_INDEPENDENT": 6,
+      "Q0_INDEPENDENT": 5,
+      "Q0_INDEPENDENT_NO_REASON": 1,
       "Q0_ANCHOR_MISSING": 1891,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 72,
@@ -10588,11 +10589,13 @@
           "detail": "root is not an object"
         }
       ],
-      "Q0_INDEPENDENT": [
+      "Q0_INDEPENDENT_NO_REASON": [
         {
           "witness": "markov-identity-symbolic.witness.json",
-          "detail": ""
-        },
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
+        }
+      ],
+      "Q0_INDEPENDENT": [
         {
           "witness": "dt-crossknot-snappy-slope-hardening.witness.json",
           "detail": ""
