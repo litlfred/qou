@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T13:56:32Z
-updated_at: 2026-08-16T20:49:53Z
+updated_at: 2026-08-17T00:45:44Z
 ---
 
 ## The sorry
@@ -484,3 +484,74 @@ next concrete step on this bean.
 Scope **(a)**: this argues the field is *unnecessary* for the named
 ingredients, not that the full construction over `ℤ[q,q⁻¹]` has been carried
 out — nobody has done that here.
+
+
+## 2026-08-17 — the QOU witness cannot be a module category. Proved, sorry-free.
+
+Given the go-ahead to attempt the Drinfeld–Jimbo representation category, I ran
+the **formalize-first** step first: look for the invariant that prunes the
+search before running it. There is one, and it is decisive.
+
+[`QOU/QuantumObservableUniverse/WitnessObstruction.lean`](../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/WitnessObstruction.lean),
+`lean`-direct **exit 0**:
+
+```lean
+theorem qou_needs_nongenerating_unit
+    {C : Type*} [Category C] [MonoidalCategory C] [Limits.HasZeroMorphisms C]
+    {adjointObj A : C} (incl : adjointObj ⟶ A)
+    (hvanish : Subsingleton ((𝟙_ C) ⟶ adjointObj))     -- observability axiom
+    (hnontrivial : incl ≠ 0)                            -- adjoint_nontrivial
+    (hgen : ∀ W : C, Subsingleton ((𝟙_ C) ⟶ W) → IsZero W) : False
+
+theorem moduleCat_unit_generates (R) [CommRing R] (W : ModuleCat R) :
+    Subsingleton ((𝟙_ (ModuleCat R)) ⟶ W) → IsZero W
+
+theorem no_qou_on_moduleCat …  -- the composite
+```
+
+### What it says
+
+The QOU observability axiom (`Subsingleton (𝟙 ⟶ Ad(A))`) and
+`adjoint_nontrivial` are **jointly contradictory in any monoidal category where
+`Hom(𝟙, −)` reflects zero objects**. `ModuleCat R` is such a category —
+`Hom(R, W) ≅ W` by evaluation at 1 — so no module category carries a QOU.
+
+This is a *shape* argument about two fields. It is independent of `R`, of the
+choice of `A`, and of everything else in the structure.
+
+### Why this is the useful result rather than a detour
+
+It is a **necessary condition on any witness, obtained without attempting the
+construction**: the unit must not generate. That is precisely what separates a
+representation category from a plain module category — in `Rep(G)`,
+`Hom(𝟙, W) = W^G` can vanish for `W ≠ 0`.
+
+So `[kassel1995]` §IX naming `Rep(SU_q(2))` is **not** a convenience choice: no
+module category could ever have worked. The citation is now explained rather
+than merely deferred to.
+
+It also further validates the `qou-fav8` step-1 field. `adjoint_nontrivial` is
+doing real work here — it is exactly the half that makes the pair
+contradictory. Without it, `ModuleCat R` with `adjointObj := 0` would satisfy
+observability and the obstruction would not exist.
+
+### Contrast with the QU witness
+
+`QOU.TrivialWitness` puts a `QuantumUniverse` on `ModuleCat R`. This file shows
+the *same category* cannot be upgraded to a QOU. The two results together
+locate the QU/QOU boundary concretely: it is not a matter of adding more data
+to the same category, it requires a categorically different one.
+
+### Scope
+
+**(a)**: rules out module categories. Does **not** show a QOU exists anywhere,
+and is **not** progress toward discharging
+`QuantumObservableUniverse.exists_instance` — that `sorry` is untouched.
+
+### On the Drinfeld–Jimbo construction itself
+
+Not started. This result changes its shape: the target is not "build an algebra"
+but "build a category whose unit does not generate", and the honest next
+question is whether Mathlib has enough representation-category infrastructure to
+carry `Rep(U_q(sl₂))` at all. That is a scoping question worth answering before
+writing code.
