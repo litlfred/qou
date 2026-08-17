@@ -98,7 +98,7 @@ def FrobeniusHopfData.nonDegeneratePairing
 -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md
 noncomputable def FrobeniusHopfData.frobeniusForm_exists
-    {k : Type*} [Field k] (qu : QuantumUniverse.{u, v} k) :
+    {R : Type*} [CommRing R] (qu : QuantumUniverse.{u, v} R) :
     Nonempty
       (@NonDegenerateFrobeniusPairing qu.C qu.catInst qu.monInst qu.frobHopf) :=
   letI := qu.catInst
