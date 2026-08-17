@@ -14,7 +14,7 @@ group from `GL(2)` to `SL(2)`.
 The Lake module
 [`lean/QOU/QuantumObservableUniverse/CategoricalFoundations.lean`](../../lean/QOU/QuantumObservableUniverse/CategoricalFoundations.lean)
 encodes this as the `volumeForm` field of the
-`QuantumObservableUniverse k` structure.  This sibling extracts
+`QuantumObservableUniverse R` structure.  This sibling extracts
 that field as the named lemma matching the URI's expected decl.
 
 LaTeX label: `lem:qou-exists-axiom-4`
@@ -30,7 +30,7 @@ namespace QOU.QuantumObservableUniverse
 
 /-- **Axiom 4 — categorical volume constraint.**
 
-    Any `QuantumObservableUniverse k` carries the `volumeForm`
+    Any `QuantumObservableUniverse R` carries the `volumeForm`
     field — a morphism `Λ²V → 𝟙` realising the non-degenerate
     epimorphism that pins the categorical determinant.  This is
     the categorical formulation of the `SL(2)` gauge restriction. -/
@@ -39,14 +39,14 @@ namespace QOU.QuantumObservableUniverse
 -- is a `Type _` (morphisms are data, not propositions).  Per Copilot
 -- review on PR #794.
 def exists_axiom_4_volume_data
-    {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
+    {R : Type*} [CommRing R] (Q : QOU.QuantumObservableUniverse.{u, v} R) :
     letI := Q.catInst
     letI := Q.monInst
     Q.exteriorSquare ⟶ (𝟙_ Q.C) :=
   Q.volumeForm
 
 lemma exists_axiom_4_volume
-    {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
+    {R : Type*} [CommRing R] (Q : QOU.QuantumObservableUniverse.{u, v} R) :
     letI := Q.catInst
     letI := Q.monInst
     Nonempty (Q.exteriorSquare ⟶ (𝟙_ Q.C)) :=
