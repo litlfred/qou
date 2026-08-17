@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T13:56:32Z
-updated_at: 2026-08-17T00:45:44Z
+updated_at: 2026-08-17T01:10:36Z
 ---
 
 ## The sorry
@@ -555,3 +555,74 @@ but "build a category whose unit does not generate", and the honest next
 question is whether Mathlib has enough representation-category infrastructure to
 carry `Rep(U_q(sl₂))` at all. That is a scoping question worth answering before
 writing code.
+
+
+## 2026-08-17 — Mathlib scoping for a QOU witness, and a finding that cuts against the framework
+
+Scoped what Mathlib actually carries before writing any construction code.
+Read-only; nothing built.
+
+### `Rep(U_q(sl₂))` is not feasible
+
+**Mathlib has no quantum groups at all.** No `U_q`, no Drinfeld–Jimbo, no
+`RepresentationTheory/Quantum*`; the only `Drinfeld` hits are
+`Monoidal/Center.lean` (Drinfeld *centre*, unrelated) and `Braided/Basic.lean`.
+Building `U_q(sl₂)` and its representation category is a Mathlib-scale project,
+not a session.
+
+### `FDRep k G` — the *classical* representation category — is fully equipped
+
+| requirement | Mathlib | where |
+|---|---|---|
+| `MonoidalCategory` | ✅ | `FDRep.lean:159` |
+| `Preadditive`, `Linear R`, `MonoidalLinear` | ✅ | `FDRep.lean:72,75,163` |
+| `RightRigidCategory` | ✅ | `FDRep.lean:202` |
+| ⇒ `RigidCategory` | ✅ | braided + right-rigid, per the B1 refutation above |
+| `SymmetricCategory` | ✅ | `Rep.lean:840` |
+| semisimplicity | ✅ | `Maschke.lean` |
+| `Hom(𝟙, −) = invariants` | ✅ | `Invariants.lean` (`mem_invariants_iff_comm`) |
+
+That last row is the one that matters: it is exactly the *"unit does not
+generate"* property the obstruction theorem above says a witness needs. `FDRep`
+has it; `ModuleCat` provably does not.
+
+### THE FINDING: nothing in the QOU axioms forces q-deformation
+
+If `FDRep k G` — ordinary finite-group representation theory, no `q` anywhere —
+satisfies every QOU field, then **the axioms do not pin down anything quantum.**
+
+The shape works out. `A = 𝟙` fails (`Ad = 0`, the obstruction). `A = k[G]` also
+fails, for a *different* reason worth recording: the adjoint invariants are the
+centre, of dimension = #conjugacy classes > 1, so `Hom(𝟙, Ad(A)) = 0` is false.
+But `A = End(V)` for `V` an irreducible faithful rep **does** fit: `End(V)` is
+central simple, so `Ad(A)` is the traceless part, and its invariants vanish
+precisely when `G` acts irreducibly.
+
+And that is *literally the corpus's own description*: `brings-is-qou.lean` says
+**"Ad(A) ≅ V₂ (spin-1, dim 3), so Hom(𝟙, Ad(A)) = 0"** — `M₂ = 1 ⊕ 3`. That
+decomposition is identical for classical `SU(2)` and for `SU_q(2)`; the `q` does
+no work in it.
+
+So the honest reading: the QOU axioms as formalized look satisfiable by a
+classical witness, and the framework's quantum content — if any — lives in
+things the axioms do not currently say. Braided-but-not-symmetric is the
+obvious candidate for what *should* be doing that work, and `QuantumUniverse`
+does not require it (`quantum-universe-axiom-motivation.md` even notes a
+symmetric braiding is "the classical limit", but nothing in the type excludes
+it).
+
+**Scope (a).** The instances exist and the shape matches. I have **not** built
+the classical witness, so this is "appears satisfiable", not "is satisfiable".
+Building it is the decisive test and it is now the cheapest one available —
+much cheaper than `U_q`, and far more informative, because a *success* would be
+a substantive criticism of the axioms rather than a confirmation of them.
+
+### Recommendation
+
+Do **not** start Drinfeld–Jimbo. Build the classical `FDRep k G` witness
+instead. Either it succeeds — and the axioms need strengthening to exclude it —
+or it fails on a specific field, and that field is where the framework's quantum
+content actually lives. Both outcomes are worth more than an unfinished `U_q`.
+
+Owner call, since "which witness to attempt" is a scope decision and the
+successful outcome is a critical result.
