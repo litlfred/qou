@@ -41,7 +41,7 @@ theorem degLex_wellOrdered (n : ℕ) :
   have hwf : WellFounded
       (InvImage (Prod.Lex (· < ·) (List.Lex (· < ·)))
         (fun w : List (Fin n) => (w.length, w))) :=
-    InvImage.wf _ (Prod.lex_wf Nat.lt_wfRel.wf List.wellFoundedLT.wf)
+    InvImage.wf _ (Nat.lt_wfRel.wf.prod_lex List.wellFoundedLT.wf)
   apply Subrelation.wf _ hwf
   intro w w' h
   rcases h with h | ⟨he, hl⟩
@@ -58,8 +58,29 @@ theorem degLex_admissible_length {α : Type*} [LT α]
     (u ++ w ++ v).length < (u ++ w' ++ v).length := by
   simp [List.length_append]; omega
 
+/-- Appending a common **suffix** preserves `List.Lex`, provided the two
+    words have equal length.
+
+    Mathlib supplies only the common-*prefix* direction
+    (`List.Lex.append_left`); there is no suffix lemma, and the suffix
+    statement is **false** without the length hypothesis: with
+    `w = []`, `w' = [0]`, `v = [1]` we have `Lex (· < ·) [] [0]` by
+    `Lex.nil`, yet `Lex (· < ·) [1] [0, 1]` fails — the heads `1` and `0`
+    are unequal and `1 < 0` is false.  Equal length rules that case out:
+    the `Lex.nil` constructor forces `w = []` and `w' ≠ []`, which
+    contradicts `hlen`.  The remaining two constructors carry the suffix
+    through unchanged. -/
+-- Ref: [manuscript] §2/braiding-induced-ordering
+theorem lex_append_suffix {α : Type*} {R : α → α → Prop} :
+    ∀ {w w' : List α}, List.Lex R w w' → w.length = w'.length →
+      ∀ v : List α, List.Lex R (w ++ v) (w' ++ v)
+  | _, _, List.Lex.nil, hlen, _ => by simp at hlen
+  | _, _, List.Lex.cons h, hlen, v =>
+      List.Lex.cons (lex_append_suffix h (by simpa using hlen) v)
+  | _, _, List.Lex.rel h, _, _ => List.Lex.rel h
+
 /-- Admissibility (lex component): concatenation with a common
-    prefix preserves the lex ordering. -/
+    prefix and a common suffix preserves the lex ordering. -/
 -- Ref: [manuscript] §2/braiding-induced-ordering
 theorem degLex_admissible_lex {α : Type*} [LT α]
     (u v w w' : List α) (h : List.Lex (· < ·) w w')
@@ -68,7 +89,7 @@ theorem degLex_admissible_lex {α : Type*} [LT α]
   induction u with
   | nil =>
     simp only [List.nil_append]
-    exact List.append_left h v
+    exact lex_append_suffix h hlen v
   | cons a us ih =>
     simp only [List.cons_append]
     exact List.Lex.cons ih
