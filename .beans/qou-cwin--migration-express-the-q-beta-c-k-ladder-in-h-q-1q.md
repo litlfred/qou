@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-16T12:45:00Z
-updated_at: 2026-08-17T00:53:07Z
+updated_at: 2026-08-17T01:53:02Z
 ---
 
 Owner-authorised 2026-08-16: *"bean up and start = express the ladder in h"*.
@@ -272,3 +272,49 @@ where the registry §9g anchor pair gives 2.3748% (proton-normalised).  Dated
 2026-05-31, so plausibly pre-re-pin -- but NOT verified, and I had just been
 wrong about a 'stale' percentage, so it is recorded as a named open item rather
 than silently corrected.
+
+
+## The flagged 2.98% is RESOLVED (2026-08-16)
+
+It was the one loose thread I named at the end of T4.  Answer: STALE, not
+mis-normalised -- and my first sharper theory about it was wrong.
+
+  extracted c_3 proton  -2.06934258
+  extracted c_3 muon    -2.02020024   <- current
+  superseded muon value -2.0097       <- what 2.98% was computed against
+
+  swing                        /|c_p|      /2
+  CURRENT                     2.3748%   2.4571%
+  STALE (pre-#1422 muon)      2.8803%   2.9801%   <- the corpus's 2.88% and 2.98%
+
+So 2.88% and 2.98% are ONE stale gap under two normalisations, exactly like the
+3.47%/3.35% pair for the proton gap and exactly like c_2 vs c-tilde_2.  Third
+instance of the same trap in this bean.
+
+WRONG TURN, recorded: I first identified -2.0097 as the candidate model
+J_Hopf - hbar_q^2 = -2.00981718, because all three published percentages
+reproduced from it to 3 s.f.  A corpus grep killed it -- the corpus value is
+-2.00973976, a DIFFERENT object that agrees to four decimals (differs at
+7.7e-5), and one doc explicitly labels it 'muon-pin (stale, pre-#1422)'.  My
+ORIGINAL 'plausibly pre-re-pin' flag was right and I talked myself out of it.
+The coincidence is now an explicit assertion in the probe so the next reader
+does not repeat it.
+
+VERDICT UNCHANGED (scope-(a)): 2.3748% is smaller than 2.98% but still vast
+beside 1e-50 compute precision, so c_3 stays a q0-dependent NEAR-MATCH.  No
+tier moves.
+
+Landed: new probe + witness (3/3), the canonical framing audit (correction
+banner + the FACT B rule list), the red-team doc dated today (which had the
+CORRECT anchor pair but the STALE percentage), the truncation-canonical
+authorNote and its block title, and the AGENTS.md clause.
+
+## Also fixed: a float64-padding regression I committed in T1
+
+The precision preflight went RED on my OWN T1 witness.  qbeta_h_frame_rungs_probe
+did float(c) on the exact Q(sqrt 3) coefficients and then re-promoted with
+mp.mpf, serializing 50 digits of a float64.  Same regression class I had fixed
+in charge_symmetric_coulomb_binding earlier this session, committed again three
+commits later.  Fixed at the producer with sp.N(c, 60); padding 18 -> 13
+(= baseline), NEW 0.  The h^3 digits now diverge from the old ones at digit 17,
+confirming the old tail was fabricated.

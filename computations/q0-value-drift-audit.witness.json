@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 313,
-      "proton-pin": 803,
+      "proton-pin": 804,
       "canonical": 607,
       "unknown": 25
     },
@@ -10301,6 +10301,13 @@
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/qbeta/qbeta-F-coordinate-bridge-audit.witness.json",
+        "field": "data.q0",
+        "value": "1.10997858275138080759166909561076887987449912187357873607281",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-alpha-eff-hoefsmit-symbolic-probe.witness.json",

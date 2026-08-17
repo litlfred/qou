@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:qbeta-ck-truncation-canonical",
   title:
-    "Canonical closed form for the $\\mathfrak{Q}_\\beta$ truncation coefficients $c_k$ ($k\\geq 3$): only $c_2=-1$ is proved; $c_3=-2=J_{\\mathrm{Hopf}}(q{=}1)$ is a near-match; $c_{k\\geq 3}$ are cal-anchored (open)",
+    "Canonical closed form for the $\\mathfrak{Q}_\\beta$ truncation coefficients $c_k$ ($k\\geq 3$): only $c_2=-1$ is structural; $c_3=-2=J_{\\mathrm{Hopf}}(q{=}1)$ is a near-match; $c_{k\\geq 3}$ are cal-anchored (open)",
   lean: {
     ref: "qou:QOU.BraidKnot.QbetaCkTruncationCanonicalClass",
     validation: "not_checked",
@@ -51,16 +51,19 @@ export default conjecture({
       kind: "note",
       date: "2026-08-16",
       body:
-        "**Two numbers above need a normalisation label, and one disagrees with the registry — flagged, not \"fixed\".** " +
-        "(a) The `3.47%` is `|−2 − c_3| / 2`; the ladder witness's own `err_pct` field reports `3.3509%` for the SAME gap, " +
-        "normalised by the extracted `c_3 = −2.06934258` instead. Both are live and correct; neither should be rewritten " +
-        "into the other. (b) The `cross-anchor 2.98%` does NOT reproduce: from the registry §9g anchor pair " +
-        "(`−2.06934258` proton / `−2.02020024` muon) the swing is `0.0491423`, i.e. **2.3748%** proton-normalised or " +
-        "**2.4326%** muon-normalised. This note predates the figures now in §9g, so the discrepancy is most likely a " +
-        "pre-re-pin value — but that is NOT verified here, and an earlier guess that a neighbouring percentage was " +
-        "\"stale\" turned out to be a normalisation difference instead. Resolve by re-deriving 2.98% from a named " +
-        "anchor pair and normalisation before editing it.",
-      see: "docs/coordination/ck-dk-canonical-registry.md",
+        "**RESOLVED — the `2.98%` above is stale, and the `3.47%` is not.** " +
+        "(a) `cross-anchor 2.98%` was computed against a SUPERSEDED muon `c_3 = −2.0097` " +
+        "(pre-#1422). Today's muon extraction is `−2.02020024`, giving a cross-anchor swing of " +
+        "**2.3748%** proton-normalised (2.4571% normalised by the candidate −2). The corpus's " +
+        "`2.88%` is the SAME stale gap under the other normalisation — one gap, not two " +
+        "measurements. (b) The `3.47%` is correct and must NOT be changed: it is `|−2 − c_3|/2`, " +
+        "and the ladder witness's `err_pct` reports `3.3509%` for the same gap normalised by the " +
+        "extracted `c_3`. (c) The `0.49%` muon figure is likewise against the superseded value; " +
+        "the current muon gap is `1.0100%`. " +
+        "**The NEAR-MATCH verdict is unchanged** — 2.3748% is smaller than 2.98% but still vast " +
+        "beside the 10⁻⁵⁰ compute precision. Scope-(a) correction to the evidence, no tier moves. " +
+        "Measured in `computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py` (3/3).",
+      see: "computations/qbeta/qbeta-c3-crossanchor-swing-provenance.witness.json",
     },
     {
       kind: "caveat",
