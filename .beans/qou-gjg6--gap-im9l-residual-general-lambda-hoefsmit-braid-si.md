@@ -1627,3 +1627,54 @@ being built.
 Not a defect and not a reason to stop — `qou-ck0g` explicitly framed this as
 formalisation groundwork. But "one GAP closed" should be read as *one GAP
 closed in a leaf module*, not as unblocking live compute.
+
+### Both under-hypothesised signatures answered by the owner (2026-08-17)
+
+The two remaining sorries in `QJucysMurphy.lean` were **statement debt, not
+proof debt** — I put both to the owner with the exact signatures. Both are
+now resolved, and they resolved *differently*, which is the point:
+
+**(a) `barSymJMSum_central` — deleted, primed version renamed onto the name.**
+The hypothesis-free statement is not provable by this route and was never
+proof debt. `σ_i` commutes with the pair `L_i + L_{i+1}` only up to the
+residue `(1 − q·qi)(σ_i L_i − L_i σ_i)` (`pair_comm`), and without
+`q · qi = 1` the element `qJMInv` is not an inverse of `qJM` at all. Keeping
+it as a `sorry` was advertising a gap in the proof when the gap was in the
+statement. Scope-(a): not provable **by this route**; **not** shown false.
+
+**(b) `barSymJMSum_block_eigenvalue` — re-scoped `q ≠ 0` → `0 < q ∧ q ≠ 1`,
+excluded regime recorded.** Both owner selections ("re-scope to `0 < q ∧
+q ≠ 1`" and "split: prove generic q, record the gap") are the same move:
+`0 < q ∧ q ≠ 1` *is* the concrete-ℝ reading of *generic q*. So one theorem,
+narrower hypotheses, plus an explicit written record of what the narrowing
+excludes.
+
+**Correcting my own earlier framing in this bean.** I had filed both as "the
+statement omits a hypothesis", as if they were the same defect. They are not:
+
+| | old hypothesis | what was actually missing |
+|---|---|---|
+| (a) `barSymJMSum_central` | none | `q · qi = 1` — the **algebra** needs it |
+| (b) `barSymJMSum_block_eigenvalue` | `q ≠ 0` | nothing about the algebra — at `Hecke ℝ q q⁻¹` the normalisation `q · q⁻¹ = 1` is already free from `q ≠ 0`. The **representation** is what fails to exist |
+
+For (b) the seminormal matrix entries carry denominators `1 − q^{−2d}` over
+content differences `d`, so the rep degenerates exactly where `q^{2d} = 1`
+for some `d ≠ 0`: at `q = 1` for every `d`, and at `q = −1` for every even
+`d` (where it is `0/0`).
+
+**The excluded regime is recorded, not deferred.** At a root of unity
+`H_N(q)` is not semisimple, `λ ⊢ N` no longer indexes the irreducibles, and
+the statement's *shape* — one `d_λ`-dimensional block per partition, `Θ`
+scalar on it — is what fails. That case needs a **different** statement via
+cellular/Specht theory. Nothing claims it true; nothing claims it false.
+
+**Verification** (CI dispatch-only; agent verification is the gate):
+`lean`-direct `QJucysMurphy.lean` EXIT=0; `#print axioms` gives
+`barSymJMSum_central → [propext, Classical.choice, Quot.sound]` and
+`qJM_commute → [propext, Quot.sound]` (both sorry-free), with `sorryAx`
+surviving only on `barSymJMSum_block_eigenvalue`. File sorries **2 → 1**.
+
+**What this does not buy.** The module is still a leaf (imported only by
+`QOU.lean`); nothing consumes either theorem. Closing statement debt does not
+make the remaining gap smaller — `hoefsmit_seminormal_rep` (bean `qou-im9l`)
+is untouched and is still the blocker for the one surviving sorry.
