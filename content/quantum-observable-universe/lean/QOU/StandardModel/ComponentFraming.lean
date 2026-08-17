@@ -162,4 +162,60 @@ theorem nu_multiset_forces_trivial_perm
     π = 1 :=
   eq_one_of_injective h hinj
 
+/-! ### Against the `1·2·2·1` residual of `htw2`
+
+`htw2` reduces the battery's four survivors to a sharp statement: the SM
+spectrum pins each fermion's **total** twist (`(u,d,ν,e) = (2,−1,0,−3) = 3Q`),
+and the four survivors are just the `{−1,0,1}`-multisets realising those
+totals — `1·2·2·1`. It then records what the residual needs:
+
+> *"A separating constraint must see the **per-strand** assignment … That is
+> the whole gap."*
+
+Component-constancy is such a constraint: it is sensitive to the multiset's
+*shape*, where `Y`, the `ℤ₆` condition and bar-negation are all total-only. So
+it is worth testing against the two ambiguous pairs. It separates one and is
+blind to the other, and both halves are recorded. -/
+
+/-- A constant framing is a component framing for **every** `π` — so the
+constant survivors (`ν = {0,0,0}`, `e = {-1,-1,-1}`) are compatible with any
+braid, and carry no constraint. -/
+theorem const_isComponentFraming (π : Equiv.Perm (Fin n)) (c : ℤ) :
+    IsComponentFraming π (fun _ => c) := fun _ => rfl
+
+/-- **The `ν` residual IS separated.**
+
+Its two survivors have different shapes — `{−1,0,1}` is all-distinct, `{0,0,0}`
+is constant — so any `π ≠ 1` admits the second and forbids the first.
+
+Stated at `π = swap 0 1`: the constant framing is component-compatible, while
+**no** component framing of that `π` is injective. Consequently, if `ν`'s
+closure is not totally split, `ν = {0,0,0}` is forced and `{−1,0,1}` is
+excluded — a constraint no total-only invariant can supply. -/
+theorem nu_residual_separated_at_swap :
+    IsComponentFraming (Equiv.swap (0 : Fin 3) 1) (fun _ => (0 : ℤ)) ∧
+    ¬ ∃ t : Fin 3 → ℤ,
+        IsComponentFraming (Equiv.swap (0 : Fin 3) 1) t ∧ Function.Injective t := by
+  refine ⟨const_isComponentFraming _ _, ?_⟩
+  rintro ⟨t, h, hinj⟩
+  have hswap : Equiv.swap (0 : Fin 3) 1 = 1 := eq_one_of_injective h hinj
+  have : (Equiv.swap (0 : Fin 3) 1) 0 = 1 := Equiv.swap_apply_left 0 1
+  rw [hswap] at this
+  exact absurd this (by decide)
+
+/-- **The `d` residual is NOT separated — an honest negative.**
+
+Both `d`-survivors have shape `(2,1)`, so at a `π` whose orbits are `{0,1}` and
+`{2}` *both* are realisable as component framings: `{−1,−1,1}` with the doubled
+value on the 2-orbit, and `{−1,0,0}` with the doubled value `0` there.
+
+Component-constancy therefore cannot narrow `d`'s ambiguity. Separating it needs
+something finer than orbit shape — which *value* sits on which orbit — and that
+is not supplied by the framing condition alone. Recorded so this constraint is
+not over-sold as closing the whole residual. -/
+theorem d_residual_not_separated_at_swap :
+    IsComponentFraming (Equiv.swap (0 : Fin 3) 1) ![(-1 : ℤ), -1, 1] ∧
+    IsComponentFraming (Equiv.swap (0 : Fin 3) 1) ![(0 : ℤ), 0, -1] := by
+  constructor <;> (intro i; fin_cases i <;> simp [Equiv.swap_apply_def])
+
 end QOU.StandardModel.ComponentFraming

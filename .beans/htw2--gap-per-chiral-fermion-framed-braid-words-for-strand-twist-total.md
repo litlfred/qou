@@ -59,3 +59,60 @@ level-k string extension recorded in the 2026-08-01 uploads-round-2
 audit), then COMPUTE its total twist and check `= 3Q` — rather than
 inverting the SM spectrum. Until then Y stays enumerated, not derived,
 and `conj:sm-hypercharge-invariant` stays open.
+
+## A separating constraint exists, and it is shape-sensitive (2026-08-17)
+
+This bean asks for exactly one thing:
+
+  > "A separating constraint must see the PER-STRAND assignment -- i.e. the
+  >  braid word / colour structure of item 1. That is the whole gap."
+
+Component-constancy (bean qou-kebu,
+`QOU/StandardModel/ComponentFraming.lean`) is such a constraint. It is
+sensitive to the multiset's SHAPE, where Y, the Z6 condition and bar-negation
+are all total-only -- so it can see what they provably cannot. Tested against
+this bean's own 1.2.2.1 residual, it separates one ambiguous pair and is blind
+to the other. Both halves recorded; the negative matters as much as the
+positive.
+
+    fermion  total  survivors                 shape(s)          separated?
+    u         2     {0,1,1}                   (2,1)             n/a (unique)
+    d        -1     {-1,-1,1} / {-1,0,0}      (2,1) / (2,1)     NO  -- blind
+    nu        0     {-1,0,1} / {0,0,0}        (1,1,1) / (3)     YES
+    e        -3     {-1,-1,-1}                (3)               n/a (unique)
+
+### nu IS separated
+
+`nu_residual_separated_at_swap`: at pi = swap 0 1 the constant framing {0,0,0}
+is component-compatible, while NO component framing of that pi is injective. So
+{-1,0,1} requires pi = 1 (totally split), and:
+
+    if nu's closure is not totally split, nu = {0,0,0} is FORCED
+
+That is a falsifiable narrowing of the residual this bean calls unnarrowable by
+hypercharge -- and it is unnarrowable by hypercharge, correctly; it just is not
+unnarrowable in general.
+
+### d is NOT separated -- honest negative
+
+`d_residual_not_separated_at_swap`: both d-survivors have shape (2,1), so at a
+pi with orbits {0,1} and {2} BOTH are realisable -- {-1,-1,1} with the doubled
+value on the 2-orbit, {-1,0,0} with 0 there. Separating d needs which VALUE sits
+on which orbit, which the framing condition alone does not supply. So this
+constraint halves the residual (2.2 -> 2.1), it does not close it.
+
+### What this does and does not change
+
+Does NOT change: the totals are still PINNED BY THE SM TARGET, not computed
+(item 1 stands). Y stays enumerated, not derived, and
+conj:sm-hypercharge-invariant stays open. This adds no braid word.
+
+Does change: the residual is no longer a free choice among enumerated survivors.
+Half of it is now a PREDICTION about the braid -- "nu's closure is totally split
+iff nu = {-1,0,1}" -- testable the moment the framed braid words of item 1
+exist. The next honest step in this bean is unchanged, but its payoff is larger:
+those words now decide a recorded question rather than merely being checked
+against 3Q.
+
+lean-direct exit 0; #print axioms clean on all eight decls (const_ is
+[Quot.sound] only); no sorry / axiom / native_decide.
