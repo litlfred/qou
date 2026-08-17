@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T14:09:17.494223+00:00",
-  "commitSha": "634e141de5fbd534aaa0b32e03595e4dff0828ca",
+  "computedAt": "2026-08-17T01:54:30.975102+00:00",
+  "commitSha": "66053780cb58146b144fb0767933029c91be434d",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "33ccaac86640",
-  "scriptCommitSha": "607c9f54966713806ecee3e5787b2ffc1b9b67bc",
+  "scriptCommitSha": "4f648f821e21cf8d5c8a76024419246fb0570fc8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,9 +39,9 @@
       "Q0_AMBIGUOUS": 15,
       "Q0_INDEPENDENT": 5,
       "Q0_INDEPENDENT_NO_REASON": 1,
-      "Q0_ANCHOR_MISSING": 1887,
+      "Q0_ANCHOR_MISSING": 1889,
       "Q0_VALUE_MISSING": 1,
-      "Q0_AUDIT_EXEMPT": 71,
+      "Q0_AUDIT_EXEMPT": 72,
       "Q0_PARSE_ERROR": 1,
       "Q0_FLIP": 0
     },
@@ -6045,6 +6045,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-h-vs-u-frame-stability.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-h4-connected-sigma2.witness.json",
           "detail": ""
         },
@@ -6182,6 +6186,10 @@
         },
         {
           "witness": "qbeta-kc19-phib-departure-bridge.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ladder-required-phase.witness.json",
           "detail": ""
         },
         {
@@ -10504,6 +10512,10 @@
         },
         {
           "witness": "q0-value-drift-audit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-F-coordinate-bridge-audit.witness.json",
           "detail": ""
         },
         {
