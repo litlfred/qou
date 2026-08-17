@@ -109,6 +109,19 @@ exist yet, so every reference is undefined by construction. Quoting those
 numbers overstates the damage by ~10× (a first-pass log once read
 "177 citations / 2672 hyper refs" against true values of 23 / 48).
 
+Two classes are expected and should **not** be chased:
+
+- **`Package newunicodechar Warning: Redefining Unicode character`** (14
+  of them). These are *intentional* overrides: the preamble redefines
+  chars that LaTeX's `utf8.def` already declares (`°`, `×`, `→`, …) with
+  math-safe versions via `\unimathsafe{…}`, so they also work inside math
+  mode. The package emits the warning whenever you override a known
+  character and offers no silent variant, so the warning IS the feature
+  working. They are not duplicate declarations — verified: zero chars are
+  declared twice in `main.tex`.
+- **Overfull / underfull `\hbox`** — never fatal. Rank them (below)
+  rather than treating them as one lump.
+
 Overfull boxes are ranked and located by:
 
 ```bash
