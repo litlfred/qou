@@ -45,33 +45,38 @@ class RibbonCategory (C : Type*) [Category C] [MonoidalCategory C]
   /-- `θ_{Xᘁ} = (θ_X)ᘁ`. -/
   twist_dual : ∀ X : C, twist (Xᘁ) = (twist X)ᘁ
 
-/-! ### Non-vacuity is NOT yet instantiated — and the obstacle is known
+/-! ### Non-vacuity
 
-`RibbonCategory.ofSymmetric` (θ = 𝟙, whose mate is 𝟙, so `twist_dual` holds on
-the nose) is the obvious inhabitant, and it does **not** elaborate here.  It
-fails on the instance diamond `KeystonePivotalSpherical` already documents:
+An earlier revision of this file recorded the instance as blocked, saying the
+`KeystonePivotalSpherical` dodge — omitting `[BraidedCategory C]` so the
+braiding comes from `SymmetricCategory` — "does not transfer directly" because
+`RightRigidCategory` and `BalancedCategory` both want the braiding as a
+parameter.
 
-```
-BalancedCategory.twist_tensor  has  (@BraidedCategory.braiding C _ _ SymmetricCategory.toBraidedCategory X Y).hom
-                              wants (@BraidedCategory.braiding C _ _ inst✝³              X Y).hom
-```
-
-`SymmetricCategory` carries its own `toBraidedCategory`, which does not unify
-with a separate `[BraidedCategory C]` binder.  `KeystonePivotalSpherical` hit
-this exact wall and solved it by *omitting* the `[BraidedCategory C]` binder so
-the braiding comes from `SymmetricCategory` — but `RightRigidCategory` and
-`BalancedCategory` both want the braiding as a parameter here, so the same
-dodge does not transfer directly.
-
-**This is stated rather than papered over.**  A `class` with no instance is the
-honest encoding of "not yet inhabited"; fabricating one — or weakening
-`twist_dual` until something typechecks — is the §3b-tax anti-pattern.  The
-mathematics is not in doubt (a symmetric rigid category is ribbon with the
-trivial twist); the elaboration is.  Tracked as the next step on bean `rtrb`.
-
-Until it is inhabited, `RibbonCategory` supplies the *statement* of the missing
-axiom and nothing more — in particular it does **not** yet discharge `rtqd`'s
-`hSpherical`, which was the point of adding it.
+**That was wrong, and it is retracted.** The dodge transfers exactly. Declaring
+the section without a `[BraidedCategory C]` binder resolves the diamond with
+`[RightRigidCategory C]` present, and the instance below elaborates. The error
+was reasoning about what the elaborator would do instead of asking it.
 -/
+
+section Symmetric
+
+variable {C : Type*} [Category C] [MonoidalCategory C] [SymmetricCategory C]
+  [RightRigidCategory C]
+
+/-- **A symmetric rigid category is ribbon, with the trivial twist.**
+
+    `ofSymmetric` supplies `θ = 𝟙`, and the mate of an identity is an identity,
+    so `twist_dual` holds on the nose. This is the non-vacuity witness for
+    `RibbonCategory`, and it is what keeps the classical limit *inside* the
+    category: `θ = 𝟙` means `q = 1`, a describable member rather than an
+    exclusion. -/
+instance (priority := 100) ribbonOfSymmetric : RibbonCategory C where
+  __ := BalancedCategory.ofSymmetric
+  twist_dual := fun X => by
+    show 𝟙 (Xᘁ) = (𝟙 X)ᘁ
+    simp
+
+end Symmetric
 
 end QOU.BraidKnot.Balanced
