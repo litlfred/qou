@@ -36,13 +36,17 @@ the basis vector indexed by a standard Young tableau `T` with eigenvalue
 * **Seminormal eigenvalue** — GAP: `L_k` acts with eigenvalue `q^{2c(k)}` on the
   seminormal basis. Ref: [ram1997] Theorem 4.1; [murphy1992]; [hoefsmit1974].
 
-* **Commutativity** — GAP: the Murphy elements commute pairwise, generating the
-  Gelfand–Tsetlin subalgebra. Ref: [murphy1992] §2; [murphy1981] for the q = 1 case.
+* **Commutativity** — the Murphy elements commute pairwise, generating the
+  Gelfand–Tsetlin subalgebra. **Proved** (`qJM_commute`, via `qJM_commute_proved`)
+  from the braid and far-commutation relations alone.
+  Ref: [murphy1992] §2; [murphy1981] for the q = 1 case.
 
 * **Bar-symmetrised sum** (`barSymJMSum`): `Σ_{k=0}^{n} (L_k + L_k⁻¹)`, the bar-even
   central element whose block eigenvalue is `Σ_{c ∈ λ} (q^{2c} + q^{−2c})`.
-  **Definition sorry-free; block eigenvalue is a GAP** (follows from the per-element
-  eigenvalue GAP).
+  **Definition sorry-free; centrality proved** given `q · qi = 1`
+  (`barSymJMSum_central`); **the block eigenvalue is the one remaining GAP** in this
+  file, and it is stated at generic `q` (`0 < q`, `q ≠ 1`) — see its docstring for
+  why the roots-of-unity regime is excluded rather than deferred.
 
 ## Convention
 
@@ -552,10 +556,10 @@ theorem qJM_commute_proved (i j : ℕ) :
 
 /-! ### Towards `barSymJMSum_central`: the pair that saves it
 
-`barSymJMSum_central`'s GAP note says it needs *"`qJM_commute` plus the σ_i–L_k
-commutation relations"*. `qJM_commute` is now proved — but it is about **L–L**
-commutation and does not bear on centrality, which is a **σ–L** question. The
-three things centrality actually needs, for a fixed `i`:
+`barSymJMSum_central`'s GAP note used to say it needs *"`qJM_commute` plus the
+σ_i–L_k commutation relations"*. `qJM_commute` is now proved — but it is about
+**L–L** commutation and does not bear on centrality, which is a **σ–L** question.
+The three things centrality actually needs, for a fixed `i`:
 
 | terms | status |
 |---|---|
@@ -579,10 +583,11 @@ base case `k = i+2` on the **braid relation** (the two `σ_{i+1}` conjugations
 absorb the adjacency) and the step on far commutation. It needs no quadratic
 relation — unlike the pair row, which does.
 
-**What is left for `barSymJMSum_central`** is therefore no longer a missing
-commutation: it is (a) the `Finset` assembly splitting `range (n+1)` into
+**What was left for `barSymJMSum_central`** was therefore never a missing
+commutation: it was (a) the `Finset` assembly splitting `range (n+1)` into
 `{i, i+1}` and its complement, and (b) the **inverse family** `L_k⁻¹`, which
-needs the same three rows run against `qJMInv` / `σ⁻¹`. -/
+needs the same three rows run against `qJMInv` / `σ⁻¹`. Both are done below;
+the theorem is sorry-free given `q · qi = 1`. -/
 
 theorem pair_comm {K' R : Type*} [CommRing K'] [Ring R] [Algebra K' R]
     (s A : R) (d : K') (hquad : s * s = d • s + (1 : R)) :
@@ -1042,20 +1047,43 @@ end CellSum
 
 /-! ## General-`λ` block eigenvalue and centrality — honest `sorry` + `-- Ref:`
 
-The remaining two statements need the **general** Hoefsmit seminormal representation, which is
+One statement remains here.  It needs the **general** Hoefsmit seminormal representation, which is
 itself a documented GAP (`hoefsmit_seminormal_rep`, bean `qou-im9l` / SW-4 residual).  The scalar
-they evaluate to is computed sorry-free above (`cellContentCoshSum`); only the bridge
-"the central element acts by that scalar on the irreducible block" awaits the general rep. -/
+it evaluates to is computed sorry-free above (`cellContentCoshSum`); only the bridge
+"the central element acts by that scalar on the irreducible block" awaits the general rep.
+
+Centrality used to be the second statement in this section and is no longer a gap: it is proved
+sorry-free as `barSymJMSum_central` below, given `q · qi = 1`. -/
 
 section GeneralGap
 
-/-- **Block eigenvalue of `Θ` on the irreducible `ρ_λ` — GAP.**  For every `λ ⊢ N` there is a
-seminormal representation `ρ_λ : H_N(q) →ₐ M_{d_λ}` on which the central bar-symmetrised sum
-`Θ = barSymJMSum` acts as the scalar `cellContentCoshSum λ q = Σ_{c∈λ}(q^{2c}+q^{−2c})·1`.
+/-- **Block eigenvalue of `Θ` on the irreducible `ρ_λ`, at generic `q` — GAP.**  For every `λ ⊢ N`
+there is a seminormal representation `ρ_λ : H_N(q) →ₐ M_{d_λ}` on which the central bar-symmetrised
+sum `Θ = barSymJMSum` acts as the scalar `cellContentCoshSum λ q = Σ_{c∈λ}(q^{2c}+q^{−2c})·1`.
 The scalar is sorry-free (`cellContentCoshSum` + `cellContentCoshSum_eq_bracket`); the bridge
 `ρ_λ(Θ) = scalar·1` needs the general seminormal construction and the per-element eigenvalue
-`L_k ↦ q^{2·cellContent}`. -/
-theorem barSymJMSum_block_eigenvalue {N : ℕ} (q : ℝ) (hq : q ≠ 0) (lam : Partition N) :
+`L_k ↦ q^{2·cellContent}`.
+
+**Hypotheses re-scoped 2026-08-17 (bean `qou-gjg6`), `q ≠ 0` → `0 < q ∧ q ≠ 1`.**  The old `q ≠ 0`
+was under-hypothesised, and not in the same way `barSymJMSum_central` was: at `Hecke ℝ q q⁻¹` the
+normalisation `q · q⁻¹ = 1` is already free from `q ≠ 0`, so centrality is not what was missing.
+What was missing is that the *seminormal representation itself* does not exist at every nonzero
+real `q`.  Its matrix entries carry denominators `1 − q^{−2d}` indexed by content differences `d`,
+so it degenerates exactly where `q^{2d} = 1` for some `d ≠ 0` — i.e. at `q = 1` (every `d`) and at
+`q = −1` (every even `d`, and there `0/0`).  `0 < q` excludes the negative branch and `q ≠ 1`
+excludes the classical point; together they are the concrete-`ℝ` reading of *generic `q`*, which is
+the regime in which [ram1997] and [hoefsmit1974] construct the representation at all.
+
+**Recorded gap, not silently dropped: the roots-of-unity regime.**  The excluded `q` are not a
+technicality to be relaxed later by a better proof of the same statement.  At a root of unity
+`H_N(q)` is no longer semisimple, the `λ ⊢ N` no longer index the irreducibles, and the statement's
+whole shape (one `d_λ`-dimensional block per partition, `Θ` acting by a scalar on it) is the thing
+that fails — so the excluded case needs a *different* statement, via cellular/Specht theory rather
+than seminormal form.  Nothing here claims that case is true, and nothing here claims it is false.
+It is open and is tracked as such; do not read the `0 < q` hypothesis as an artefact of this proof
+route. -/
+theorem barSymJMSum_block_eigenvalue {N : ℕ} (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1)
+    (lam : Partition N) :
     ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
       ρ (barSymJMSum ℝ q q⁻¹ (N - 1))
         = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
@@ -1069,33 +1097,20 @@ section BarSymCentral
 
 variable (K : Type*) [CommRing K] (q qi : K) (n : ℕ)
 
-/-- **`barSymJMSum` is central** — the GAP, closed, given `q · qi = 1`. -/
-theorem barSymJMSum_central' (hqi : q * qi = 1) (i : Fin n) :
+/-- **`barSymJMSum` is central**, given `q · qi = 1` — sorry-free.
+
+The hypothesis is not decoration.  `σ_i` commutes with the pair `L_i + L_{i+1}` only up to the
+residue `(1 − q·qi)(σ_i L_i − L_i σ_i)` (see `pair_comm`), and without `q · qi = 1` the element
+`qJMInv` is not an inverse of `qJM` at all.  A hypothesis-free version of this statement was
+carried here as a `sorry` until 2026-08-17 (bean `qou-gjg6`); it is not provable by this route,
+and it was deleted rather than left standing as proof debt it never was. -/
+theorem barSymJMSum_central (hqi : q * qi = 1) (i : Fin n) :
     barSymJMSum K q qi n * σ K q qi n i = σ K q qi n i * barSymJMSum K q qi n := by
   have hL := qJM_sum_comm_sigma' K q qi n hqi i
   have hI := qJMInv_sum_comm_sigma K q qi n hqi i
   simp only [barSymJMSum, Finset.sum_add_distrib, add_mul, mul_add, hL, hI]
 
 end BarSymCentral
-
-/-- **The bar-symmetrised sum is central — GAP.**  `Θ = barSymJMSum` commutes with every generator
-`σ_i`, hence lies in `Z(H_{n+1}(q))`.  As a sum of power sums `p_1(L) + p_1(L⁻¹)` of the pairwise
-commuting Murphy elements, it is a symmetric function of the JM family, and symmetric functions of
-the JM family are central. -/
-theorem barSymJMSum_central (K : Type*) [CommRing K] (q qi : K) (n : ℕ) (i : Fin n) :
-    barSymJMSum K q qi n * σ K q qi n i = σ K q qi n i * barSymJMSum K q qi n := by
-  -- Ref: [murphy1992] — symmetric functions of the JM/Murphy operators are central.
-  -- NOT PROVABLE AS STATED (2026-08-16, bean `qou-gjg6`). The statement omits
-  -- `q * qi = 1`, and it genuinely needs it: `σ_i` commutes with `L_i + L_{i+1}`
-  -- only up to a residue `(1 − q·qi)(σ_i L_i − L_i σ_i)` (see `pair_comm`), and
-  -- without it `qJMInv` is not an inverse of `qJM` at all. Add the hypothesis and
-  -- the theorem is `barSymJMSum_central'` above, proved sorry-free.
-  -- The old GAP note here read "needs `qJM_commute` plus the σ_i–L_k commutation
-  -- relations". `qJM_commute` is now proved and is irrelevant to this — it is L–L
-  -- commutation, while centrality is a σ–L question. All three σ–L rows are proved
-  -- (`qJM_comm_sigma`, `qJM_pair_comm`, `qJM_comm_sigma_high`); the missing piece
-  -- was never a commutation, it was this hypothesis.
-  sorry
 
 end GeneralGap
 
