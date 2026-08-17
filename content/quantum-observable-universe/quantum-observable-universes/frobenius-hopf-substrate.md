@@ -6,10 +6,12 @@ Let $\mathbf{C}$ be a monoidal category. A **Frobenius--Hopf substrate** is a se
 4. **Non-degeneracy:** Write $\mathrm{ev} = \lambda \circ \mu \colon A \otimes A \to \mathbf{1}$ for the Frobenius pairing $\langle a, b \rangle_F = \lambda(\mu(a \otimes b))$. There is a morphism $\mathrm{coev} \colon \mathbf{1} \to A \otimes A$ such that both snake identities hold:
 
 ```tex
+\[
 \begin{aligned}
 (\mathrm{id}_A \otimes \mathrm{ev}) \circ (\mathrm{coev} \otimes \mathrm{id}_A) &= \mathrm{id}_A, \\
 (\mathrm{ev} \otimes \mathrm{id}_A) \circ (\mathrm{id}_A \otimes \mathrm{coev}) &= \mathrm{id}_A,
 \end{aligned}
+\]
 ```
 
    each read modulo the unitors and the associator of $\mathbf{C}$.
