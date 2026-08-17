@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-17T01:45:48Z
-updated_at: 2026-08-17T01:59:29Z
+updated_at: 2026-08-17T06:44:21Z
 ---
 
 ## 2026-08-17 — first pass: the twist reaches the mass chain, but is ONE AXIOM SHORT
@@ -74,3 +74,60 @@ laundering rules exist to catch.
    a bare hypothesis either, if the pivotal transport also follows.
 
 Coordinate with `rtrb` (in-progress since 2026-08-02, stale) before starting.
+
+
+## 2026-08-17 — HANDOFF: RibbonCategory landed; hSpherical is the next proof, NOT started
+
+`RibbonFromBalanced.lean` (PR #5262, `244f3cf8`) has `RibbonCategory =
+BalancedCategory + twist_dual`, stated **and inhabited** (`ribbonOfSymmetric`,
+lean-direct exit 0).
+
+### What remains, precisely
+
+`KeystonePivotalSpherical` needs `hSpherical : leftQDim X = qDimObj X`. The two
+differ in exactly one factor:
+
+```lean
+qDimObj  X = η_ X Xᘁ ≫ (β_ X Xᘁ).hom ≫ ε_ X Xᘁ
+leftQDim X = η_ X Xᘁ ≫ (β_ Xᘁ X).inv ≫ ε_ X Xᘁ
+```
+
+so the goal reduces to relating `(β_ X Xᘁ).hom` and `(β_ Xᘁ X).inv` *under the
+coevaluation/evaluation sandwich*. In the **symmetric** case they are equal
+outright (`braiding_inv_eq_hom_of_symmetric`, already proved) — which is why
+proving only the symmetric case would be **zero progress**: it needs no ribbon
+structure at all.
+
+The braided case is the real theorem (ribbon ⇒ spherical, Deligne/Yetter,
+Bakalov–Kirillov ch. 2). It is a string-diagram argument in which the twist
+mediates: `twist_dual` is what lets `θ` be pushed across the dual so the two
+sandwiches become comparable. It needs several intermediate lemmas — at
+minimum a `twist`-vs-`ev`/`coev` compatibility and a slide lemma — and is a
+session of work, not a tactic call.
+
+### Do not
+
+- Prove the symmetric case and report it as progress. It was already provable.
+- Add `leftQDim_eq` as a *field* of `RibbonCategory`. That is the §3b-cond
+  rule-5 self-assuming projection: the class would carry the conclusion and the
+  "theorem" would be `ctx.leftQDim_eq`. `SphericalStructure` already exists as
+  the honest place for the hypothesis; the job is to *derive* it.
+
+### Two method notes, because the same error happened twice this session
+
+1. **B1** — I claimed Mathlib lacked `LeftRigidCategory (FGModuleCat K)` having
+   grepped for the declaration. `inferInstance` proved it derivable in one step.
+2. **The diamond** — I committed that the `KeystonePivotalSpherical` dodge "does
+   not transfer". A 10-line probe showed it transfers exactly.
+
+Both were "X is not available / does not work" judgements reached by reasoning
+about the elaborator instead of asking it. **Test first.** The probe is seconds;
+the retraction costs a commit and the reader's trust.
+
+### Scope reminder for whoever continues
+
+This whole arc is **derivation correctness**, not accuracy. `qDim_conj` is an
+unproved input the Gram-inverse derivation leans on; closing it does not move
+`m_p`, `Δ_λ`, or any `c_k`. The owner's actual question — mass and binding
+accuracy — is still untouched and lives in the `Δ_λ` magnitude and the `c_k`
+ladder, neither of which this arc reaches.
