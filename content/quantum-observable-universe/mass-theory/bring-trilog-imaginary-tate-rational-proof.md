@@ -50,8 +50,8 @@ Verified by the canonical formalism
 
 | Quantity | Value (50 dps) |
 |---|---|
-| Direct: $\mathrm{Im}\,\mathrm{Li}_3(\zeta_5)$ via `exact algebraic structures.polylog` | $0.99220085376959424561524208214724464647120923410832\ldots$ |
-| Closed form: $4 \pi^3 / 125$ | $0.99220085376959424561524208214724464647120923410832\ldots$ |
+| Direct: $\mathrm{Im}\,\mathrm{Li}_3(\zeta_5)$ via `exact algebraic structures.polylog` | $0.9922008537\,6959424561\,5242082147\,2446464712\,0923410832\ldots$ |
+| Closed form: $4 \pi^3 / 125$ | $0.9922008537\,6959424561\,5242082147\,2446464712\,0923410832\ldots$ |
 | Residual | $1.34 \times 10^{-51}$ |
 | Kummer formula LHS vs RHS residual | $5.35 \times 10^{-51}$ |
 
