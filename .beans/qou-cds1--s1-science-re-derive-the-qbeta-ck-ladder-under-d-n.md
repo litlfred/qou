@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-16T13:22:34Z
+updated_at: 2026-08-18T21:52:03Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -199,3 +199,55 @@ Recommendation for whoever takes the derivation: work in F, not alpha. The
 eigenphase identification that forces the cosine is AXIOMATISED
 (QOU.Interactions.QBetaCosResummation), so dropping it costs nothing proved.
 Target to DERIVE (not match): 1 - F(q0) = 1.6748e-3.
+
+## Progress 2026-08-18 (PR #5283) — two-row cap folded in; c_k shown to be a bad coordinate
+
+TWO-ROW CAP: FOLDED IN, and it does NOT supply the correction. This closes the
+'Remaining piece' item above. Measured at n=3, both anchors:
+    dim*y_(1,1,1) in C = 0.0227449  = 13.6x the target 1.6748e-3
+    sum dim*y = 1 in BOTH frames (C on three blocks, D on two)
+So the cap is an order too big AND leaves no residue -- each frame is already a
+complete normalised trace on its own support. The D two-row weights close by
+themselves: y_(3)=(q^4+1)/(q^2+1)^2, y_(2,1)=q^2/(q^2+1)^2, 1*y_(3)+2*y_(2,1)=1
+exactly. Class 'F = two-row restriction fraction of the n=3 trace' pruned with
+NO search over it. Scope-(a): no invariant proved; the cap is not excluded as
+one ingredient of a multi-term closure.
+
+c_k IS A BAD COORDINATE, exactly like the phase, and by an EXACT factor:
+
+    c_2 + 1 = (F_required - F_N2) / (F_N1 * u^2)      [verified ~1e-47, 50 dps]
+
+magnifier 1/u^2 = 13785, FIXED, carrying no model information -- the same role
+the 1/u^3 magnifier plays for c_3. A 1% F-error becomes a 137.6 shift in c_2.
+
+CONSEQUENCE FOR THIS BEAN'S OWN TABLE. The forced bar-odd projection is recorded
+above as 'implied c2 = -1.733', which reads as a 73% catastrophe. In F:
+    C                  -0.076 %
+    D z-swap           -35.9  %
+    D bar-odd (forced) - 3.17 %
+The forced projection buys ~11x over the z-swap. The c_2 coordinate concealed
+it. Judging D-frame progress in c_k units overstates the failure by ~1e4.
+
+NOT A CLOSURE. -3.17% is five orders from L2 (~7.8 ppb for Q_beta). This bean's
+verdict on the bar-odd projection is UNCHANGED -- necessary, derived, not
+sufficient -- and its instruction not to search for further corrections until
+one lands near -1 stands. The finding is about MEASUREMENT, not progress.
+
+Chain validated against this bean's three recorded numbers BEFORE concluding
+anything: -1.0176 / -9.2989 / -1.7331 reproduce -1.018 / -9.299 / -1.733. It
+also reproduces the committed dashboard's Q_beta miss to 163.98x vs 164.0x.
+
+SHARPENING of my own 2026-08-18 accuracy audit: 'the 164x floor is
+C-conditional' is understated. Correct statement -- under D there is currently
+NO Q_beta prediction at all, because no D-frame ladder has been derived. The
+only D number available is from the refuted z-swap (77263x) and is a
+sensitivity measurement, not a value.
+
+STILL OPEN, unchanged: a correction of a DIFFERENT functional form, derived
+from the representation rather than axiomatised. Note the cosine-forcing
+eigenphase identification is axiomatised (QOU.Interactions.QBetaCosResummation)
+so dropping the cosine costs nothing proved -- and the c_k readout should be
+dropped alongside it, since both coordinates distort the residual by fixed
+magnifiers.
+
+Audit: docs/audits/2026-08-18-convention-d-two-row-cap-and-ck-magnifier.md
