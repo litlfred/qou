@@ -1,0 +1,61 @@
+{
+  "name": "aomega-m3-adjoint-index-set",
+  "description": "Route C M3: tests whether the knot-independent core of the DT index set is the sl_2 adjoint weight set; includes two adversarial checks and the Lean-proved forced remainder.",
+  "computation": "aomega-m3-adjoint-index-set",
+  "engine": "python",
+  "scriptFile": "computations/probes/aomega_m3_adjoint_index_set.py",
+  "scriptCommitSha": "4c908d7e3623fe21ba227bb58fefdfa7e192ac34",
+  "computedAt": "2026-08-18T20:45:16Z",
+  "durationMs": 3,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
+  "parameters": {
+    "s_exponents_M2": [
+      1,
+      0,
+      -1
+    ],
+    "s_multiplicities_M2": [
+      1,
+      1,
+      1
+    ],
+    "adjoint_exponents": [
+      1,
+      0,
+      -1
+    ],
+    "dt_vector_4_1_5_2": [
+      3,
+      4
+    ],
+    "lean": "QOU.QBeta.AdjointIndexSetM3"
+  },
+  "data": {
+    "forced_extra_4_1": 0,
+    "forced_extra_5_2": 1,
+    "verdict": "M3 REFRAMED and partially advanced, NOT closed. (i) M2's abelian finding means M3's target is the INDEX SET, not a CoHA \u2014 a materially sharper goal. (ii) H_Ad reproduces M2's s(x) exactly, multiplicity-free, with no free parameter, and predicts the knot-independence that defeated every knot-specific reading. (iii) H_Ad is NOT a scalar answer (it fails the (3,4) vector like blockCountH3) \u2014 its content is the GRADING, not the count. (iv) The 3-element palindromic shape is generic, so H_Ad rests on its mechanism (Ad = the deformation-theory coefficient system; Ad = Sym^2 V = the H_2(q) partition-(2) block), not on pattern-matching. (v) Lean-proved: a knot-independent core FORCES a knot-dependent unit remainder, pinned to (0,1) under H_Ad \u2014 so the '5_2 extra state' is a structural requirement with a definite value, which any completion must derive independently. H_Ad remains a HYPOTHESIS; no derivation of the DT spectrum from Hecke data is claimed."
+  },
+  "assertions": [
+    {
+      "name": "T1-adjoint-character-equals-s(x)",
+      "passed": true,
+      "note": "chi_Ad(x) = x+1+1/x reproduces M2's index polynomial exactly, multiplicity-free, with NO free parameter to adjust."
+    },
+    {
+      "name": "T2-knot-independence-predicted-and-observed",
+      "passed": true,
+      "note": "This is H_Ad's one non-trivial already-satisfied prediction. Every knot-SPECIFIC invariant (Driver14's eight, plus Route A's R1) fails precisely here."
+    },
+    {
+      "name": "T3-H_Ad-is-NOT-a-scalar-answer",
+      "passed": true,
+      "note": "H_Ad FAILS as a scalar, exactly as Driver14's blockCountH3 does. Its content is therefore NOT the number 3 \u2014 it is the GRADING (which charges carry the states). Recording this prevents H_Ad being mis-sold as a count."
+    },
+    {
+      "name": "T4-shape-alone-is-generic-so-mechanism-is-load-bearing",
+      "passed": true,
+      "note": "The 3-element palindromic SHAPE is generic (any {a,0,-a}). So the shape alone proves nothing; what distinguishes H_Ad is the MECHANISM (Ad governs H^1(M,Ad rho), the deformation theory the Borel singularities live on) plus the a=1 normalization forced by x=m^2. Stated so H_Ad cannot be defended on pattern-matching alone."
+    }
+  ]
+}
