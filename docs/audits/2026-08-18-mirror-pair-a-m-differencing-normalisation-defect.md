@@ -119,11 +119,24 @@ Three further claims in that doc do not survive:
 law it proposes is the one that now holds 10/10. Its five-point table and its
 `Φ₁/Φ₂/Φ₄` secondary findings are C-frame and computed on the a_m-difference.
 
-**`2026-06-01-mirror-pair-phi8-universal-boundaries.md`** — `M_first_Φ₈ = 7` and
-`M_first_Φ₈² = 15` are computed on partial sums of the same a_m-difference. The
-boundary claim is **not re-measured here**; `topic2_mirror_pair_phi8_boundary_scan.py`
-is corrected and its witness regenerated, so the numbers in that doc should be
-read against the regenerated witness rather than trusted as-is.
+**`2026-06-01-mirror-pair-phi8-universal-boundaries.md`** — **its claims
+SURVIVE, and are now better supported than when they were made.** `M_first_Φ₈`
+and `M_first_Φ₈²` were computed on partial sums of the same a_m-difference, so
+they had to be re-measured; on the corrected difference,
+
+```
+M_first_Φ₈  = 7   for 9/9 pairs with mult(Φ₈) > 0
+M_first_Φ₈² = 15  for 9/9
+```
+
+including ⁶He−⁶Be and ¹⁴O−¹⁴C, which under the old differencing were the two
+anomalies. So the boundary structure is genuinely universal while the
+multiplicity read off the same object was not — a useful separation: the
+boundary is a property of where Φ₈ enters the partial sums, which the
+denominator gap shifts far less than it shifts the total multiplicity.
+
+This is the one place where correcting the defect **strengthened** an existing
+conclusion rather than replacing it.
 
 ## Producers drained
 

@@ -21,10 +21,13 @@
 > not survive:
 > [`2026-08-18-mirror-pair-a-m-differencing-normalisation-defect.md`](2026-08-18-mirror-pair-a-m-differencing-normalisation-defect.md).
 
-> **`M_first_Φ₈ = 7` / `M_first_Φ₈² = 15` are NOT re-measured in the new
-> analysis.** They are partial sums of the same a_m-difference.
-> `topic2_mirror_pair_phi8_boundary_scan.py` is corrected and its witness
-> regenerated — read the boundary numbers against that witness.
+> **This doc's two claims SURVIVE the correction.** They were computed on
+> partial sums of the a_m-difference and so had to be re-measured; on the
+> corrected trace difference `M_first_Φ₈ = 7` holds **9/9** and
+> `M_first_Φ₈² = 15` holds **9/9**, now including ⁶He−⁶Be and ¹⁴O−¹⁴C, which
+> were the two anomalies under the old differencing. The boundary structure is
+> genuinely universal even though the multiplicity read off the same object was
+> not. Only the `mult(Φ_8)` column below is superseded.
 
 
 ## TL;DR
