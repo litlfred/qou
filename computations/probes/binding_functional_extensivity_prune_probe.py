@@ -111,10 +111,10 @@ def main() -> int:
         cap = E0 * mp.log(blocks)
         need = mp.mpf(bpn) * A
         ok = cap >= need
-        viable.append((lab, ok, float(need / cap)))
+        viable.append((lab, ok, need / cap))
         print(f"| {lab:>5} | {A:3d} | {n:7d} | {blocks:6d} | {float(cap):13.2f} "
               f"| {float(need):9.2f} | {'yes' if ok else 'NO':<8} |")
-    print("\n  short by:  " + ",  ".join(f"{l} {r:.1f}x" for l, ok, r in viable if not ok))
+    print("\n  short by:  " + ",  ".join(f"{l} {mp.nstr(r, 3)}x" for l, ok, r in viable if not ok))
     print("\n  S = sum over A-1 bonds   -> EXTENSIVE, grows like A")
     print("  H <= alpha*log(#blocks)  -> grows like log A")
     print("  Binding energy is extensive. log A is not. The deficit widens without limit.\n")

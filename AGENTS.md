@@ -653,6 +653,47 @@ carry the value as `mpmath.mpf` from its source and serialize with
 `_precision.fmt`. Adding a file to `raw-float64-baseline.json`, `--rebaseline`,
 or hand-editing a number defeats the mechanism. Baselines drain, never grow.
 
+**PROBES ARE NOT EXEMPT. "It emits no witness" is not an exemption (STRICT,
+owner directive 2026-08-18).** A probe is a `computations/` script and is
+covered by every gate above. The reasoning *"no witness by design, so precision
+does not matter"* is **wrong and is banned** — it inverts the actual risk. A
+witness is a number that gets re-derived; a probe conclusion is an **argument**
+that gets written into a bean, an audit doc, a PR body and a content block,
+where nothing re-derives it. Float64 in a probe corrupts *analysis*, which is
+the expensive kind of wrong.
+
+Concretely, in any `computations/` script including probes:
+
+1. **Never compute in `float`.** Carry `mpmath.mpf` end to end. `float(x)` is
+   permitted **only** inside an f-string for display, and even then prefer
+   `mp.nstr`. `hf = float(G.h)` followed by arithmetic against it is a
+   computation, not a display, and is a defect.
+2. **Never aggregate with `statistics` / `math` over floats.** `st.mean`,
+   `st.pstdev`, `math.sqrt`, `sum()` over a list of `float` all accumulate
+   error across a large sample. Use `mpmath` equivalents, or `Fraction` when
+   the quantity is exact.
+3. **A float64 input poisons the whole result.** If a probe reads a float64
+   table (e.g. `pyhecke.trace.TR_M`), the output resolves to ~1e-16 **no matter
+   what is true**. Do not "note it as a limitation" and ship — either find the
+   exact-arithmetic route (symbolic `ℚ(q)`, `Fraction`, the NF/GS basis over an
+   exact ring) or state that the question is **unanswered**, not answered with a
+   caveat.
+4. **Never report a float64 agreement as "exact", "identical", or "to N
+   digits".** Agreement at 1e-16 in float64 is the *floor* of the arithmetic,
+   not evidence about the mathematics. The honest phrasing is "agrees to the
+   limit of the arithmetic used, which cannot distinguish X from Y".
+5. **Run [`scripts/precision-gates.sh`](scripts/precision-gates.sh) before
+   committing a probe**, exactly as for a producer. `--changed` makes it cheap.
+
+History: added 2026-08-18 after an agent shipped eight probes on the L2 binding
+axis with `float(G.h)` in the Coulomb-charge arithmetic and `statistics.mean`
+over 3519 float64 rows, and — the case that prompted the directive — ran a
+Markov-trace multiplicativity test against the **float64** `TR_M` table, wrote
+"the product formula is exact ... interleaved − product = 7.4e-17", and recorded
+the float64 resolution as a scope caveat rather than as a reason the test could
+not answer the question. The owner had asked for no-float multiple times before
+this.
+
 **Render-QA gate for math-bearing `.md` (STRICT, 2026-06-30).** Any commit
 that creates or edits a `.md` content block containing math (`$…$`,
 `$$…$$`, or fenced ` ```tex ` blocks) **must** be render-QA'd before commit

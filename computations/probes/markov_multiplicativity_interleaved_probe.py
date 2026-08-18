@@ -42,49 +42,52 @@ algebra, not a per-generator product. The basis contains the **interleaved** wor
 formula depends only on the per-generator *multiset*, so it must give the same
 answer for `sigma0 sigma1 sigma0` and for `sigma0^2 sigma1`.
 
-## Result — they agree, so there is no cross-generator term
+## Result — they agree IDENTICALLY, and the float64 test that first "showed" it
+## was vacuous
 
-At the substrate anchor, with `sigma0^2 sigma1 = h*(sigma0 sigma1) + sigma1` by
-the Hecke relation:
+**RETRACTED METHOD (2026-08-18, owner directive).** The first revision of this
+probe evaluated `nf_tr` against `pyhecke.trace.TR_M`, which is a **float64**
+table, and reported
 
-    tr_M( sigma0 sigma1 sigma0 )   INTERLEAVED   0.6911664783584446
-    tr_M( sigma0^2 sigma1 )        SEQUENTIAL    0.6911664783584445
-    (z*h + 1) * z                  PRODUCT       0.6911664783584445
+    interleaved - product = 7.4e-17   ->  "the product formula is EXACT"
 
-    interleaved - product = 7.4e-17
+That is not a result. Agreement at `1e-16` is the **floor of float64
+arithmetic**, obtained no matter what is true, so the test could not have
+distinguished the hypotheses. It was recorded as a "scope limit" and shipped —
+which is exactly the move the NO-FLOAT64 directive forbids (AGENTS.md,
+"PROBES ARE NOT EXEMPT").
 
-All three coincide. The product formula is **exact** for the interleaved word, so
-`log tr` is strictly additive over generators and **no term quadratic in crossings
-across distinct bonds exists** at `n = 3`.
+**The conclusion survives, by exact algebra rather than by measurement.** On
+`H_3`, from the Markov trace's defining properties — normalisation `tr(1)=1`,
+the Markov property `tr(x sigma_last) = z tr(x)`, cyclicity, and the Hecke
+relation `sigma^2 = h sigma + 1` — with no numbers at all:
 
-## Consequence
+    tr(s0)        = z
+    tr(s0 s1)     = z * tr(s0) = z^2            [Markov property]
+    tr(s0 s1 s0)  = tr(s0^2 s1)                 [cyclicity]
+                  = h tr(s0 s1) + tr(s1)        [Hecke relation]
+                  = h z^2 + z
+    product formula:  (z h + 1) * z = h z^2 + z
 
-The last named lead for both the Coulomb order-deficit and the many-body
-collective term is closed at the smallest interleaved case. A `Q^2`-like pair
-energy cannot be extracted from this trace by going multi-bond, because the trace
-does not couple distinct bonds at all.
+    interleaved - product = 0,  identically in (q, z, h)
 
-## Scope — narrow, and stated as such
+Not "agrees to 1e-16" — **equal as rational functions**.
 
-**Scope-(a).** Established: at `n = 3`, on the one interleaved basis word, the
-product formula reproduces the independent NF-basis Markov trace. Two real
-limits:
+## Why this SHARPENS the n = 3 caveat rather than removing it
 
-* **`n = 3` only.** `H_3` has a 6-element NF basis with exactly one interleaved
-  word. Multiplicativity in general `H_n` is not established here; it is standard
-  for far-apart generators (the Markov property `tr(x sigma_n) = z tr(x)` iterated
-  down the tower), and this probe adds the adjacent-generator case at the smallest
-  `n`.
-* **float64 resolution.** `TR_M` is a float64 table, so the agreement resolves
-  only to `~1e-16`. A cross term smaller than that would be invisible. Nothing
-  here rules out a term at that scale — but a term at `1e-16` cannot supply a
-  12.1x Coulomb shortfall.
+The exact derivation shows *why* it works: cyclicity moves the trailing `s0` to
+the front, where the Hecke relation collapses `s0^2` back into `span{1, s0}`. So
+the single interleaved word of `H_3` is reducible to a sequential one **by
+cyclicity alone**. That is a property of `H_3` being small — its NF basis has
+exactly one interleaved word, and it happens to be a cyclic rotation of a
+sequential one.
 
-NOT established: multiplicativity for every word in every `H_n`; that no pair
-term exists anywhere in the framework. Only that this route does not supply one.
+For larger `n` there are interleaved words with no such rotation (e.g.
+`s0 s1 s0 s2 s1`), and nothing here says the product formula survives them. The
+general-`n` question is **open**, and this probe is evidence only at `n = 3`.
 
-NO WITNESS: two evaluations of an existing linear functional on the NF basis;
-the table reproduces it.
+NO WITNESS: an exact symbolic identity in `sympy` over the rational function
+field; no floating-point arithmetic anywhere.
 
 Bean qou-ls86; L2 binding axis.
 """
@@ -94,66 +97,71 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent.parent / "tools" / "pyhecke" / "python"))
 del _Path, _bridge
 
 import sys
 
-import mpmath as mp
-from q_parameter import Q_50_DIGIT_STR as Q50
+import sympy as sp
 
 
 def main() -> int:
-    mp.mp.dps = 40
-    import pyhecke.gram as G
-    from pyhecke.trace import nf_tr, TR_M
+    # EXACT throughout: symbols over the rational function field, no floats.
+    z, h = sp.symbols("z h")
 
-    q = mp.mpf(str(Q50))
-    h = q - 1 / q
-    z = q ** 3 / (q ** 2 + 1)
+    # Markov trace on H_3 from its defining properties:
+    #   tr(1) = 1 ; tr(x sigma_last) = z tr(x) ; cyclicity ; sigma^2 = h sigma + 1
+    tr_1 = sp.Integer(1)
+    tr_s0 = z
+    tr_s1 = z
+    tr_s0s1 = sp.expand(z * tr_s0)              # Markov property, x = s0 in H_2
+    tr_s1s0 = tr_s0s1                           # cyclicity
+    # interleaved: cyclicity rotates the trailing s0 forward, Hecke collapses s0^2
+    tr_s0s1s0 = sp.expand(h * tr_s0s1 + tr_s1)
+    product_formula = sp.expand((z * h + 1) * z)
 
-    print("Is the Markov trace multiplicative over generators? Independent check.\n")
+    print("Is the Markov trace multiplicative over generators? EXACT check.\n")
     print("  The production trace ASSUMES it (`tr_M *= Vs` per generator), so testing")
-    print("  factorisation against markov_trace_at_q would be CIRCULAR. Using the")
-    print("  Groebner-Shirshov normal-form functional nf_tr instead.\n")
-    print(f"  NF basis: {G.NF_BASIS}")
-    print(f"  names   : {G.NF_NAMES}\n")
+    print("  factorisation against markov_trace_at_q would be CIRCULAR.")
+    print("  And evaluating nf_tr against pyhecke.trace.TR_M would be VACUOUS —")
+    print("  TR_M is float64, so any such test agrees to ~1e-16 regardless of truth.")
+    print("  Both routes rejected; this derives the traces symbolically instead.\n")
 
-    nf_inter = [0, 0, 0, 0, 0, 1]          # sigma0 sigma1 sigma0
-    nf_seq = [0, 0, 1, h, 0, 0]            # sigma0^2 sigma1 = h*(s0 s1) + s1
-    ti = mp.mpf(str(nf_tr(nf_inter)))
-    ts = mp.mpf(str(nf_tr(nf_seq)))
-    prod = (z * h + 1) * z
+    print("  Markov trace on H_3, exact in (z, h):\n")
+    print(f"    tr(1)          = {tr_1}")
+    print(f"    tr(s0)         = {tr_s0}")
+    print(f"    tr(s0 s1)      = {tr_s0s1}          [Markov property]")
+    print(f"    tr(s1 s0)      = {tr_s1s0}          [cyclicity]")
+    print(f"    tr(s0 s1 s0)   = {tr_s0s1s0}   <-- INTERLEAVED")
+    print(f"    (z h + 1) * z  = {product_formula}   <-- PRODUCT FORMULA\n")
 
-    print("  The product formula sees only the per-generator MULTISET, so it cannot")
-    print("  distinguish these two words. The NF functional can.\n")
-    print("| word                    | kind        | tr_M                |")
-    print("| ----------------------- | ----------- | ------------------- |")
-    print(f"| sigma0 sigma1 sigma0    | INTERLEAVED | {mp.nstr(ti, 16):<19} |")
-    print(f"| sigma0^2 sigma1         | sequential  | {mp.nstr(ts, 16):<19} |")
-    print(f"| (z*h + 1) * z           | PRODUCT     | {mp.nstr(prod, 16):<19} |")
-    print(f"\n  interleaved - product = {mp.nstr(ti - prod, 8)}")
-    print(f"  interleaved - sequential = {mp.nstr(ti - ts, 8)}\n")
+    delta = sp.simplify(tr_s0s1s0 - product_formula)
+    print(f"  interleaved - product = {delta}")
+    print("  -> EQUAL AS RATIONAL FUNCTIONS, identically in (q, z, h).")
+    print("     Not 'agrees to 1e-16' — there is no numeric comparison here.\n")
+
+    print("## Derivation, in full\n")
+    print("    tr(s0 s1 s0) = tr(s0^2 s1)          cyclicity")
+    print("                 = h tr(s0 s1) + tr(s1) Hecke: s0^2 = h s0 + 1")
+    print("                 = h z^2 + z            Markov property")
+    print("    (z h + 1) z  = h z^2 + z\n")
 
     print("## Consequence\n")
-    print("  All three coincide: the product formula is EXACT for the interleaved")
-    print("  word, so log tr is strictly additive over generators and NO term")
-    print("  quadratic in crossings across distinct bonds exists at n = 3.")
-    print("  The last named lead for both the Coulomb order-deficit and the")
-    print("  many-body collective term is closed at the smallest interleaved case:")
-    print("  the trace does not couple distinct bonds at all.\n")
-    print("## Scope — narrow, stated as such\n")
-    print("  Scope-(a). n = 3 ONLY: H_3's NF basis has exactly one interleaved word.")
-    print("  Multiplicativity in general H_n is not established here (it is standard")
-    print("  for far-apart generators via tr(x sigma_n) = z tr(x); this adds the")
-    print("  adjacent case at the smallest n).")
-    print("  float64 resolution: TR_M is a float64 table, so agreement resolves only")
-    print("  to ~1e-16. A cross term below that is invisible — but a 1e-16 term")
-    print("  cannot supply a 12.1x Coulomb shortfall.")
-    print("\n(no witness by design — two evaluations of an existing NF functional.)")
+    print("  log tr is strictly additive over generators on H_3, so NO term quadratic")
+    print("  in crossings across distinct bonds exists there. The trace does not")
+    print("  couple distinct bonds. The last named lead for both the Coulomb")
+    print("  order-deficit and the many-body collective term is closed at n = 3.\n")
 
-    assert abs(ti - prod) < mp.mpf("1e-14"), "interleaved must match the product formula"
-    assert abs(ti - ts) < mp.mpf("1e-14"), "the two orderings must agree"
+    print("## Why this SHARPENS the n = 3 caveat\n")
+    print("  The derivation shows WHY it works: cyclicity rotates the trailing s0")
+    print("  forward, where the Hecke relation collapses s0^2 into span{1, s0}. So")
+    print("  H_3's single interleaved word is a cyclic rotation of a sequential one.")
+    print("  That is a property of H_3 being small. For larger n there are interleaved")
+    print("  words with no such rotation (e.g. s0 s1 s0 s2 s1), and nothing here says")
+    print("  the product formula survives them. General n is OPEN.\n")
+    print("(no witness by design — an exact symbolic identity, no floating point.)")
+
+    assert delta == 0, "the identity must hold exactly, not approximately"
+    assert isinstance(tr_s0s1s0, sp.Expr), "traces must stay symbolic"
     return 0
 
 
