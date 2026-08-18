@@ -1334,3 +1334,53 @@ e(1−w) computed from a *different* 𝔽₂₅ generator — the two differ by 
 unit rescale, and the check went red. Fixed by doing that comparison in
 one convention. The lattice test is unaffected: μ* is invariant under
 the rescale, since gcd(m, u·g) = gcd(m, g) for a unit u mod 24.
+
+## Addendum 29 (2026-08-18) — m = 3 closed for one and two relations: no element-level representative meets both conditions
+
+`gswz_epsm_m3_one_two_relation_closure_probe.py`, **8/8**. Addendum 28
+left m = 3 as the only level where the two-condition criterion was
+*residue-level* feasible; residue feasibility is only **necessary**
+(Addendum 25), so the question was whether an element-level
+representative actually exists. It does not, for one or two relations.
+
+**The mechanism, measured:**
+
+- μ*(z₁) = μ*(z₂) = **3**, and ξ carries them at multiplicities 2 and 1
+  — so both need moving.
+- The maximum in-relation repetition of any argument is **2, never 3**
+  (over 1097 distinct relations containing the actual z₁ or z₂). For a
+  non-special argument u, μ*_u | c·k_u with k_u ∈ {1,2} therefore forces
+  **3 | c**.
+- Hence a relation usable with c ∦ 3 needs *every distinct* non-target
+  argument special — and **0 of 1097 qualify** (only 3 of 23 residues
+  are special at m = 3).
+
+**Result:**
+
+| search | coverage | solutions |
+|---|---|---|
+| one relation | exhaustive, 1097 | **0** |
+| two relations sharing a non-special argument | exhaustive: 307 590 pairs, 2 460 720 coefficient combos, 13 s | **0** |
+| two relations with disjoint non-special arguments | excluded structurally (each c_i ≡ 0 mod 3, so z₂ stays 1 mod 3) | — |
+
+The pair search finished in 13 s against a 300 s budget, so no cutoff
+hid anything — asserted as a check.
+
+**Open, and explicitly not searched:** three or more relations forming a
+**chain** of shared non-special arguments. The mechanism does not
+exclude those, and the pair result is not evidence about triples beyond
+showing no two-relation chain closes.
+
+**Scope.** Combined with Addendum 28 this says: the D_ζ descent with χ_B
+and *freely chosen* m-th roots yields no well-defined ε_m at any m ≥ 3
+within one or two relations. It says nothing about ε_m as a map, and
+nothing about a construction that **pins** the roots (CGZ's η-elements)
+rather than choosing them — which is now the only route left standing.
+
+**A check that failed for a coding reason, not a mathematical one.** The
+"no relation has all others special" gate first went red. The claim was
+*true* (the measured count is 0); the predicate was miscoded —
+accumulating `max(0, specials − len)` from a sentinel of 0 and then
+requiring `< 0`, which cannot hold when nothing qualifies. Recorded
+because at a glance that is indistinguishable from a mathematical
+failure, and I briefly wrote it up as one.
