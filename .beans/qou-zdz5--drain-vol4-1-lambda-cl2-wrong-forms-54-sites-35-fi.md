@@ -1,10 +1,11 @@
 ---
 # qou-zdz5
 title: 'DRAIN: Vol(4_1) Lambda-Cl2 wrong forms — 54 sites / 35 files still live (computations/ + docs/ never swept)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-15T15:22:10Z
-updated_at: 2026-08-15T15:22:10Z
+updated_at: 2026-08-18T08:22:36Z
 ---
 
 
@@ -290,3 +291,46 @@ April copy.
 
 Not attempted. Two reversed diagnoses on this one item is the signal to hand
 it over with the full picture rather than take a third swing.
+
+
+## Re-measured 2026-08-18: the live wrong-form count is 6 sites, not 54
+
+The bean's own lesson applied to itself -- I re-measured instead of trusting
+the number.  Fixed-string ripgrep for every wrong spelling across
+content/computations/docs/tools:
+
+    2Λ(π/3)              1 file
+    2\\Lambda(\\pi/3)        1 file
+    3·Cl₂(π/3)           3 files
+    2*Lambda(pi/3)       2 files
+    3Cl₂(π/3)            0
+    3*Cl_2(pi/3)         0
+    2 Lambda(pi/3)       0
+
+Six sites total.  The 54/35 figure does not reproduce; PR #5119 and later work
+drained most of it, or the original count included correct usages.
+
+## And HALF the survivors are the guardrail, not the defect
+
+    GUARD (do NOT touch -- deleting these deletes the warning):
+      computations/knot-particle-generation.py:29   'Both halves were wrong: 3·Cl₂(π/3) ≈ 3.0448'
+      computations/sigma_all_evaluator.py:372       'NOT 2Λ(π/3) and NOT 3·Cl₂(π/3)'
+      computations/knot-volumes.py:279              history note on a former bad source string
+
+    GENUINE (fixed this pass):
+      docs/audits/2026-06-03-m-tau-knot-prediction-falsification.md:18
+      computations/probes/qbeta_ck_basis_constrained_pslq.py:313 (dict key)
+
+Both genuine sites were WRONG NAME / RIGHT NUMBER, exactly as the bean
+predicts.  A mechanical sed over the bad name would have destroyed three
+guard comments -- worth recording as the reason this drain must be read, not
+swept.
+
+## Blocked remainder
+
+The .py key fix should regenerate qbeta-ck-basis-constrained-pslq.witness.json,
+but re-running that producer exposed an UNDISCLOSED convention C->D flip in the
+same probe (bean qou-580o).  I did not commit the regenerated witness, because
+doing so would ratify that flip and wire c_3 = -974 into the corpus.  So the
+witness keeps the old key until qou-580o resolves.  Naming fix landed; witness
+regeneration deferred with a named reason.
