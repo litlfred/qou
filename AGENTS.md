@@ -1151,7 +1151,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | 2/7 met (m_e, m_K/m_π) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -1175,9 +1175,20 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   tower `(1+46u⁴)(1+4u⁵)(1−29u⁶)` landed it on CODATA to 0.0004 ppb. That
   tower was a muon-era fit left applied to the proton-pinned q₀ (a live
   +242 ppb regression) and was **dropped**; the honest documented-pin
-  round-trip is +1.35 ppb, a ~437× miss. So the authoritative count is now
-  **2/7** (m_e, m_K/m_π), per `beats_100x_count=2`. Full analysis:
+  round-trip is +1.35 ppb, a ~437× miss. Full analysis:
   [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
+- **🛑 The authoritative count is 1/5 SCOREABLE, not 2/7 (corrected
+  2026-08-18).** `beats_100x_count = 2` counts **calibration inputs**
+  alongside predictions. The dashboard already excludes `m_p` from scoring
+  as an anchor round-trip ("the framework content cancels"), but **scores
+  `m_e`**, whose `err_ppb` is not measured but *defined* zero — `m_e` is the
+  CAL-1 input that fixes the MeV unit, so its ratio to itself is 1 by
+  construction. That is the same argument `m_p` is excluded for, only
+  stronger. Separating inputs from predictions, **1 of 5 scoreable
+  predictions meets L2, and it is `m_K/m_π`** — the only *ratio* among the
+  five. Quote `beats_100x_scoreable` / `scoreable_total` from the witness,
+  **never** bare `beats_100x_count`. Full analysis:
+  [`docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md`](docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
@@ -1422,9 +1433,14 @@ muon; muon-anchor → ~4000σ on proton).
    prediction (963.6×, FAIL), never "exact / ~0 ppb / MET".** An m_μ
    value ≈ CODATA computed at the muon q₀ is the CAL-2 calibration
    tautology ("equality by construction"), **not** an accuracy win.
-   The canonical L2 count is **2/7** (m_e, m_K/m_π) since 2026-07-04
-   (m_p dropped when its fitted Habiro tower was removed — de-fitted
-   round-trip +1.35 ppb, ~437× miss); **not** 3/7 or 4/7.
+   **The same rule applies at CAL-1, and was not being applied.** `m_e` is
+   the CAL-1 input that fixes the MeV unit; its `err_ppb` is *defined*
+   zero, not measured. Scoring it as a "beat" is the identical tautology
+   this rule forbids one line above. The canonical L2 count is therefore
+   **1/5 scoreable** — `m_K/m_π` alone — **not** 2/7, and not 3/7 or 4/7.
+   Quote `beats_100x_scoreable` / `scoreable_total`; `beats_100x_count = 2`
+   is retained in the witness for consumer compatibility and **must not be
+   quoted as an accuracy result** (corrected 2026-08-18).
 2. **Two q₀ live in the repo; do not conflate them, and default to the
    proton one (owner directive above):**
    - **Package layer** `tools/qou-substrate/.../constants.py` (`Q`,

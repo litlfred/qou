@@ -30,20 +30,50 @@ namespace QOU
 
 noncomputable section
 
-/-! ### Ground ring: this file is on the **archimedean** side of the wall
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
+abbrev R_q := LaurentPolynomial ℤ
 
-The `R_q = ℤ[q, q⁻¹]` boilerplate that used to sit here has been removed, and
-the archimedean hypotheses that a migration had commented out are restored.
+/-- The canonical indeterminate `q` of `R_q`. -/
+def q_param : R_q := LaurentPolynomial.T 1
 
-`SubstrateParameter` (in `QOU.QuantumObservableUniverse.SubstrateParameter`)
-is *defined* with `field : M → ℝ` and carries the ordering fields
-`field_pos : 0 < field p` and `field_ge_one : 1 ≤ field p`. Per AGENTS.md §7c
-an ordering predicate puts a declaration on the ℝ side; `R_q` has no order, so
-these constructors cannot be stated over it. The earlier migration applied the
-"keep a generic ring `R` as long as possible" directive to a structure that
-sits past the wall, commented the fields out as *"not meaningful over R_q"*,
-and left the declarations unbuildable — the `q₀` binder was deleted while the
-bodies still referenced it. Nothing here was ever generic-`R`-able. -/
+/-- The inverse indeterminate `q⁻¹` of `R_q`. -/
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
+/-! ### Why `ℝ` appears below, and what it is *not*
+
+`ℝ` here is the **codomain of the archimedean evaluation**
+`ι : R_q → ℝ, q ↦ q₀` — the specialisation this repo names in the ground-ring
+note carried by every `braids-and-knots` block. It is **not** the ground ring of
+the theory, and this file is **not** "archimedean throughout": the categorical
+content upstream of `ι` stays over `R_q` (or a generic `R`). What lives here is
+the *evaluated* parameter `q₀ = ι(q) ≈ 1.10998`, which is a real number, and
+statements about it.
+
+`SubstrateParameter` (in `QOU.QuantumObservableUniverse.SubstrateParameter`) is
+declared with `field : M → ℝ`, so any constructor producing one produces
+evaluated values; that is what forces `ℝ` in the signatures below. Its three
+axioms do **not** all sit on the same side of `ι`:
+
+| axiom | needs | side of `ι` |
+|---|---|---|
+| `not_root_of_unity : field p ^ k ≠ 1` | ring only | **categorical** — this is the Hecke semisimplicity condition and is meaningful over `R_q` itself |
+| `field_pos : 0 < field p` | linear order | evaluated |
+| `field_ge_one : 1 ≤ field p` | linear order | evaluated |
+
+So the structure **conflates one ring-level condition with two evaluation-level
+ones**. A cleaner split would state `not_root_of_unity` over `R_q` upstream and
+keep only the two ordering bounds on the image of `ι`; that is a change to the
+library structure, not to this block, and is recorded rather than made here.
+
+What the earlier migration got wrong was narrower than "wrong ring". It applied
+*"keep a generic ring `R` as long as possible"* to the two **ordering** axioms —
+which are genuinely order-requiring and cannot be stated over `R_q` — and, when
+they would not typecheck, commented them out as *"not meaningful over R_q"*
+rather than recognising that they are conditions on `ι(q)`, not on `q`. It then
+left the file unbuildable: the `q₀` binder was deleted while the bodies still
+used it, three declaration *headers* were commented out leaving their bodies
+orphaned, and a `}` was swallowed by a comment. -/
 
 universe u
 

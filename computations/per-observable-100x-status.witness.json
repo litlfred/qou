@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T21:09:59.867239+00:00",
-  "commitSha": "92047cba5eb08f92e2e1f277d085ad94f8c15fec",
+  "computedAt": "2026-08-18T21:17:03.520813+00:00",
+  "commitSha": "bbd303e50b8b2634402c2ff713ad935b388c81ce",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 4,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "bee524b1e4c7",
-  "scriptCommitSha": "4e3cfd3121dfc9eca5cba5906667f4b87c7f45e0",
+  "scriptHash": "5c23174fce55",
+  "scriptCommitSha": "e54ffbca0a1b5171dcbdaf5873075129af9b12ba",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,10 +28,9 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "contentBlock": "rem:per-observable-100x-status-dashboard",
@@ -177,7 +176,13 @@
     "summary": {
       "total": 7,
       "beats_1x_count": 2,
-      "beats_100x_count": 2
+      "beats_100x_count": 2,
+      "scoreable_total": 5,
+      "beats_100x_scoreable": 1,
+      "calibration_inputs": [
+        "m_p",
+        "m_e"
+      ]
     },
     "anchor_layer_qbeta": {
       "status": "matched",
