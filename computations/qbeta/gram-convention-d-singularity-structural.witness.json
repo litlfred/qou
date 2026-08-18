@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-18T08:32:45.373736+00:00",
-  "commitSha": "70b10900e3c64ad905736dc416ea64e585ca3855",
+  "computedAt": "2026-08-18T21:15:23.610308+00:00",
+  "commitSha": "6db536e5b13beef7aad4697ad33bbb9ddb04fe80",
   "assertions": [
     {
       "name": "convention_D_determinant_is_exactly_zero_at_every_precision",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 8,
   "computation": "gram-convention-d-singularity-structural",
   "scriptFile": "gram_convention_d_singularity_structural_probe.py",
-  "scriptHash": "777e54ea0116",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b1e9ce25570f",
+  "scriptCommitSha": "dd15e7fcc0fec03874ecfc921c02ed5a2acf845b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -149,5 +149,6 @@
       }
     ]
   },
-  "q0Anchor": "proton"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

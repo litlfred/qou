@@ -56,7 +56,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import NF_BASIS, _nf_of_word_mp  # noqa: E402
-from qou_substrate.constants import q_at  # noqa: E402
+from qou_substrate.constants import q_at, Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
 
@@ -211,7 +211,7 @@ def main() -> int:
     # Single-anchor probe (proton only), so unlike the cross-anchor comparison
     # probes this one CAN honestly declare its pin — see bean qou-po7i for the
     # vocabulary gap that leaves genuine two-anchor comparisons unlabelled.
-    out = wb.save({"q0Anchor": "proton"})
+    out = wb.save({"q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR})
     print(f"Witness: {out}")
     return 0
 
