@@ -794,3 +794,39 @@ qbeta-d-frame-eigenphase-bar-parity stands: hunting further phase
 corrections is fitting until one lands with the structural standing of
 c_2 = -1. cds1 is NOT closed — the ladder re-derivation under D still needs
 the c_k rungs, and the Gram singularity (cds2) still blocks the H_3 route.
+
+
+### Sharpened, same day (commit 78c089e1d): bar EXCHANGES the two loop values
+
+Reading `z_D - bar(z_D) = h` with the Markov axioms (`tr(x s) = z tr(x)`,
+`tr(x s^-1) = (z-h) tr(x)`) gives:
+
+    bar(z_D) = z_D - h = the NEGATIVE-stabilisation loop value.
+
+Under D the bar involution **exchanges the two Markov loop values** — what
+mirror must do, since mirroring exchanges positive and negative crossings.
+Convention C's z is bar-FIXED, i.e. mirror-BLIND, missing the exchange by
+exactly h.
+
+**I had the value judgement backwards** in the entry above: D does not
+"fail" a parity test that C "passes". The h^2/2 anomaly is the signature
+that D tracks the crossing-sign exchange, while the phase formula
+alpha = (z-1)h/2 — written in the C frame where z is bar-fixed — was carried
+over unchanged. It is the phase FORMULA that needed re-deriving under D, not
+the convention. Both facts in the entry above are correct; only the reading
+was wrong.
+
+And the re-derivation is not a shift:
+
+    alpha_D - h^2/4 = ((z_D + (z_D - h))/2 - 1) * h/2
+
+the SAME formula at the MEAN of the two loop values — which under D equals
+the bar-mean (zD_bar_mean_eq_loop_mean). Symmetrising over the mirror and
+over the crossing sign are one operation in this frame; that is why no
+freedom remains.
+
+Lean §4: loopMeanTwice, phaseTwice_projected_eq_loopMean,
+zD_bar_eq_negative_loop, zD_bar_mean_eq_loop_mean. Probe now 5/5.
+
+Incidentally an argument FOR the 2026-08-15 D ruling on structural grounds,
+reached independently of it. Scope unchanged — still closes nothing.
