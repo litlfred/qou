@@ -50,6 +50,7 @@ verifying them against independent data remains open on qou-xx9f.
 """
 
 import json
+import pathlib
 import sys
 
 import sympy as sp
@@ -153,7 +154,7 @@ witness = {
         "recorded for xx9f; C_r value extraction open"
     ),
 }
-with open("computations/probes/gswz_52_galois_norm.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_52_galois_norm.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

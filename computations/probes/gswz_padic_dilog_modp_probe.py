@@ -51,6 +51,7 @@ precision, and for D5 on non-root-of-unity arguments like the printed
 """
 
 import json
+import pathlib
 import sys
 
 D = 6
@@ -182,7 +183,7 @@ witness = {
     },
     "scope": "scope-(a): mod-p dilog layer (finite polylog + Prop 3.2) vs printed (273); full Coleman Li2 queued",
 }
-with open("computations/probes/gswz_padic_dilog_modp.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_padic_dilog_modp.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

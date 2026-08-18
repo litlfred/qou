@@ -50,6 +50,7 @@ it. Bean qou-9p9y stays in-progress for that layer.
 """
 
 import json
+import pathlib
 import sys
 
 D = 6
@@ -216,7 +217,7 @@ witness = {
     "missing_ingredient": "Besser-de Jeu overconvergent Li2 expansion (GSWZ ref [8]) — not in uploads/; dilog layer is mod-5^3-exact until it lands",
     "scope": "scope-(a): harness v1 assembled; Bloch decomposition (Theorem 9 instance) verified mod 5^3 from printed data; full-precision Coleman + eps_m queued",
 }
-with open("computations/probes/gswz_membership_harness_v1.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_membership_harness_v1.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)
