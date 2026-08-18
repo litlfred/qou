@@ -1,81 +1,109 @@
 ---
 # qou-janf
-title: y_lambda_at raises global mp.dps 40->50, and the old qbeta witnesses were cache-served not live
+title: y_lambda_at's FIRST call raises global mp.dps 40->50 via a lazy module-scope import (y_lambda_su_n:269, deliberate) — cache-served straddle since RESOLVED
 status: todo
 type: task
 priority: normal
 created_at: 2026-08-11T11:09:11Z
-updated_at: 2026-08-11T11:10:50Z
+updated_at: 2026-08-18T20:48:38Z
 ---
 
-Two coupled facts, both measured, found while draining the `qbeta/qbessel_*`
-`Q0` cluster in PR #4975.
+## Corrected finding (3rd measurement — supersedes the body this bean had)
 
-## 1. `y_lambda_at` raises global `mp.dps` as a side effect
+The 40 → 50 shift is real, but **both my earlier accounts of the cause were
+wrong, in opposite directions**, and this one is traced rather than inferred.
+
+### What is actually true
+
+Traced with a watcher on every write to `mp.mp.dps`:
 
 ```
-dps before y_lambda_at: 40
-dps after  y_lambda_at: 50
+first write -> dps=50
+    <frozen importlib._bootstrap> _find_and_load_unlocked
+    y_lambda_su_n.py:269 <module>
+    precision.py:125 set_compute_dps
 ```
 
-Measured directly (`wedderburn_jones_markov.y_lambda_at(6, Q_MP)` with
-`mp.dps = 40` set beforehand). It is the **call** that moves it, on the live
-path — not any import.
+1. **It is a LAZY IMPORT, not the call's arithmetic.** The first
+   `y_lambda_at(...)` pulls `y_lambda_su_n`, whose **module scope** runs
+   `set_compute_dps(50)`.
+2. **It is first-call-only.** Measured: `n=6` first call → 50; `n=6` again →
+   stays 40; `n=3` → stays 40. Once-per-process, not per-call.
+3. **The `set_compute_dps(50)` is DELIBERATE AND CORRECT — do not remove it.**
+   Its own comment says why: it must precede the `mpf()` registry literals or
+   `REG_ZC` / `REG_ZD` are parsed at mpmath's default 15 dps, rounded to 53
+   bits, and are **already wrong when built**. It names
+   `module_const_precision_audit --strict`, which flags exactly those two.
+   This is a **fix** for the `qou-j6gb` module-const defect class, not an
+   instance of it.
 
-This matters because callers set their own working precision and reasonably
-assume it holds. `qbessel_reeb_order_justification.py` sets `mp.dps = 40` at
-line 63 and reports `"compute_dps": mp.dps` at write time (line 232), so its
-witness records **50** while the file declares 40. The value is not wrong — the
-later arithmetic really does run at 50 — but the file's declared precision is
-not the precision it computes at, and nothing says so.
+### Correction history — three passes, and read this before trusting any of them
 
-## 2. The pre-existing witnesses in that cluster were CACHE-served, not live
+| where | claim | verdict |
+|---|---|---|
+| commit `40b89a61d` | 40→50 because importing `q_parameter` pulls `set_compute_dps` | **mechanism right, module wrong** — it is module-scope `set_compute_dps` on import, but in `y_lambda_su_n`, not `q_parameter` |
+| PR #4975 body | "the effect **does not occur**" | **wrong** — measured `mp.dps` across an import of the *innocent* module |
+| this bean, 1st body | "it is the **call**, on the live path — not any import" | **wrong the other way** — it IS an import, a *lazy* one fired by the first call |
+| this body | lazy import of `y_lambda_su_n`, module-scope, first-call-only | **traced** (stack above) |
 
-This is the larger fact, and it is why the dps moved at all.
+My first bisect missed it because I called `_load_y_lambda_at_q0_witness()`
+explicitly as step one, which consumed the one-time effect; every later step
+then showed 40 and looked innocent. A once-per-process side effect is invisible
+to exactly the probe you would reach for first.
 
-`y_lambda_at`'s fast path serves `y-lambda-at-q0.witness.json`, which is built
-at the **muon** pin. The gate **used to** compare the caller's `q` against
-`q_parameter.Q` — the **proton** pin, 11.54 ppb away — so a proton-anchored
-caller satisfied it *trivially* and was handed ideal-layer data with no signal
-that a layer boundary had been crossed. That is the straddle AGENTS.md warns
-about in bold under §q₀ anchor convention.
+### The cache-served straddle has been RESOLVED at the source
 
-**The guard has since been fixed**: the gate now compares against
-`_Y_LAMBDA_AT_Q0_WITNESS_Q0`, the witness's own recorded q₀. A proton-anchored
-caller now falls through to live computation. Verified in
-`wedderburn_jones_markov.py` around lines 208-227, comment included.
+The original body's larger claim — that the cached witness is muon-built and was
+being served to proton-anchored callers — **no longer holds**. Measured now:
 
-Consequence for the cluster: the committed witness that read `compute_dps: 40`
-was produced via the **cache fast path** (which never touches dps). The re-run
-in #4975 is the **first one actually computed live at the proton pin** — hence
-50. So the drain's real effect on those witnesses is larger than a constant
-swap: it is cache-served ideal-layer → live experimental-layer.
+```
+_Y_LAMBDA_AT_Q0_WITNESS_Q0 = 1.1099785827513808   (PROTON pin)
+gate hit for Q_MP          = True
+```
 
-## Why this is recorded rather than fixed here
+The witness has since been regenerated at the proton pin, so the gate hits and
+serves *experimental*-layer data to an *experimental*-layer caller. No straddle.
+The guard fix (gating on the witness's own recorded q₀ rather than
+`q_parameter.Q`) plus the re-pinned witness together closed it.
 
-Nothing here is broken. The guard holds, the values are live and correct, and
-50 dps is better than 40. What is missing is that **none of it is stated
-anywhere** — a reader of `qbessel_reeb_order_justification.py` sees `mp.dps =
-40` and has no way to learn the file finishes at 50, or that its previous
-witness came from a different layer.
+## Landed in this bean
 
-Worth doing, in rough priority:
+Documentation only — nothing behavioural, because nothing here is broken:
 
-1. Have `y_lambda_at` **restore** the caller's dps on exit, or document the
-   side effect in its docstring. Silently mutating global precision from a
-   value-returning function is the surprising part.
-2. Audit which other witnesses were produced on the cache fast path before the
-   gate fix. Any of them may carry ideal-layer numbers under an
-   experimental-layer heading. The cheap tell is a `compute_dps` that differs
-   from the producer's declared `mp.dps`.
+- `wedderburn_jones_markov.y_lambda_at` docstring: the first-call dps side
+  effect, its real cause, why the cause must not be removed, and the concrete
+  consequence (a producer declaring 40 records `compute_dps: 50`).
+- `substrate/_precision` docstring: **importing it does not set `mp.dps`** —
+  measured, it stays at mpmath's default 15. Requested twice by the #5023
+  sibling; closes their half. Both directions noted together, since they
+  present identically ("the number looks fine, at the wrong precision").
 
-## Correction history — read this before trusting either earlier statement
+## Not done here
 
-- Commit `40b89a61d` disclosed the 40→50 shift, attributing it to
-  `set_compute_dps()` being pulled in by importing `q_parameter`. **The
-  observation was right, the attribution was wrong.**
-- PR #4975's body then said the effect **"does not occur"**, on the strength of
-  measuring `mp.dps` across an *import* of `q_parameter`. **That correction is
-  itself wrong** — it tested the wrong operation. The import is innocent; the
-  call is not.
-- This bean is the third pass and the measured one.
+**Making `y_lambda_at` restore the caller's dps.** Tempting, but it is a
+behavioural change with witness churn: producers that currently finish at 50
+would drop to 40 and their recorded values would move. That deserves its own
+scoped change, not a drive-by on a documentation bean.
+
+## Item 2 (audit which witnesses were cache-served) — downgraded, with the reason
+
+I called this "the one with reach". It is worth less than I said:
+
+- The straddle it was chasing is **resolved at the source** (above), so the
+  ideal-layer-under-experimental-heading hazard is closed going forward.
+- `qou-j6gb` has since landed a **gate** for the causally-related defect
+  (module-scope `mpf` built before precision is raised, now in
+  `precision-gates.sh`'s `GATES` array).
+- My proposed tell — "recorded `compute_dps` differs from declared `mp.dps`" —
+  returned **74** witnesses on a raw pass. That is high-recall: as this very
+  bean shows, a deliberate module-scope raise produces the mismatch with
+  nothing wrong. Publishing 74 as a defect count would repeat the error this
+  bean is about.
+- The #5022 sibling adds a real refinement: `qbeta-c3-phib-saddle-state-integral`
+  and `qbeta-c3-qstar-k31-repin` record both anchors in `data` with **no
+  top-level `q0Anchor`**, so an anchor-key scan misses them. Any formalised
+  audit needs that second tell too.
+
+Honest next step if anyone picks it up: intersect the 74 against `qou-j6gb`'s
+coverage and against the top-level-`q0Anchor` scan, and triage the residue by
+hand. Do not report the raw count.
