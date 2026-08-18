@@ -43,19 +43,28 @@ later agent repeating this will hit both:
 
 ### Disposition
 
-**Now `exit 0` (7).** `su2-emergence`, `categorical-fourier-transform`,
-`u1-equivariant-reduction`, `commutative-qou`, `categorical-reeb-derivation`,
-`categorical-jet`, `poisson-object`.
+**All 11 now elaborate** (`lean`-direct exit 0, no bare sorries), verified
+across the 20 `.lean` files this branch touches.
 
-**Still failing (4), all substantive — none mechanical.**
-`braiding-eigenvalue-extraction` and `categorical-q-ext-deriv` (F1, `Inv R_q`);
-`braiding-induced-ordering` (F6, unsound strategy); `substrate-parameter-exists`
-(F8, half-finished migration).
+The four that needed real work rather than a mechanical fix:
 
-Error counts **rose** on two files while they were being worked
-(`substrate-parameter-exists` 3 → 11, `braiding-eigenvalue-extraction` 3 → 9),
-because a parse error hides every line after it. That is better diagnosis, not
-a better file — and it is why the raw count is a poor progress metric here.
+| file | what it actually needed |
+|---|---|
+| `braiding-eigenvalue-extraction`, `categorical-q-ext-deriv` | F1 — restate `x⁻¹` multiplicatively over the ring |
+| `braiding-induced-ordering` | F6 — a **new, sound** well-foundedness proof (axiom 1) |
+| `substrate-parameter-exists` | F8 — rebuild over `ℝ`; see the correction below |
+
+Error counts **rose** on two files mid-work (`substrate-parameter-exists`
+3 → 11, `braiding-eigenvalue-extraction` 3 → 9) because a parse error hides
+every line after it. That was better diagnosis, not a worse file — and it is
+why the raw count is a poor progress metric here.
+
+> **Correction to this document's own first reading of F8.** An earlier
+> revision called `substrate-parameter-exists` *"a half-finished `R_q`
+> migration needing a signature decision"* and left it. The decision turns out
+> to be **forced, and in the opposite direction from the one the migration
+> assumed** — see F8 below. Recorded rather than silently overwritten, because
+> the wrong reading is the more tempting one.
 
 ## Why nothing caught this
 
@@ -150,12 +159,12 @@ rests on a proof that does not compile and could not compile as written.
 
 `(β_ A A).hom` works.
 
-### F8 — a comment that swallowed its own closing delimiter (SUBSTANTIVE)
+### F8 — an archimedean structure migrated to a ring that has no order (SUBSTANTIVE)
 
-`substrate-parameter-exists` is a **half-finished `R_q` migration**, and it is
-worse than its error count suggested. A previous edit commented out the
-archimedean fields of a structure literal **and took the closing brace with
-them**:
+`substrate-parameter-exists` was the last file to fall, and the reason is worth
+stating precisely, because the obvious reading is wrong.
+
+The surface symptom is a **comment that swallowed its own closing delimiter**:
 
 ```lean
   { field := fun _ => q₀
@@ -163,16 +172,62 @@ them**:
     -- not_root_of_unity := fun _ k hk => hq_root k hk }   -- ← the `}` is INSIDE the comment
 ```
 
-so the literal never closes. Restoring the brace does **not** fix the file: the
-same edit deleted the `(q₀ : R_q)` and `(hq_pos …)` binders of
-`SubstrateParameter.ofReebDecomposition` while the body still references both,
-and left a `/-- … -/` docstring inside a parameter list (only `--` and `/- -/`
-are legal between binders). Completing it requires **deciding the signature**,
-which is a content call, so it is beaned rather than guessed at.
+so the structure literal never closes. Worth generalising on its own: commenting
+out the *last* field of a `{ … }` literal, or the last argument of an
+application, silently eats the delimiter that closes it, and the resulting error
+points at the **next** declaration rather than at the comment. The same edit also
+commented out three *declaration headers* while leaving their bodies as orphaned
+text, deleted the `q₀` binder while the bodies still referenced it, and left a
+`/-- … -/` docstring between binders (only `--` is legal there).
 
-Worth generalising: commenting out the *last* field of a `{ … }` literal, or
-the last argument of an application, silently eats the delimiter that closes
-it. The resulting error points at the *next* declaration, not at the comment.
+But restoring the brace fixes nothing, and *"decide the new signature"* — this
+document's first reading — mis-states the problem. **The signature is forced.**
+`SubstrateParameter` is defined in the library as
+
+```lean
+structure SubstrateParameter (M : Type*) where
+  field         : M → ℝ
+  field_pos     : ∀ p, 0 < field p
+  field_ge_one  : ∀ p, 1 ≤ field p
+  not_root_of_unity : ∀ p k, k ≥ 1 → field p ^ k ≠ 1
+```
+
+Those are **ordering predicates**, so by §7c this structure lives *past* the
+substrate→archimedean wall, and `R_q = ℤ[q,q⁻¹]` has no order at all. The
+migration applied *"keep a generic ring `R` as long as possible"* to a structure
+that **cannot be stated over one**, and then, when the fields would not typecheck,
+commented them out as *"not meaningful over `R_q`"* rather than concluding that
+the premise was wrong.
+
+So the repair is to **restore, not to migrate further**: everything here is back
+over `ℝ` with its archimedean hypotheses, and the misleading `R_q` ground-ring
+banner is replaced by a note recording why nothing in the file was ever
+generic-`R`-able.
+
+**The general lesson is the one worth keeping.** "Keep `R` generic" is a
+directive about the *substrate* side of the wall. When a declaration will not
+typecheck over `R_q`, the two candidate conclusions are *"weaken the
+declaration"* and *"this object is archimedean"* — and commenting out an
+ordering axiom to make the error go away silently picks the first without
+checking. Check which side of the wall the **target structure** is defined on
+before migrating anything into it.
+
+#### A prose-over-type finding uncovered by the repair
+
+`SubstrateParameter.ofReebDecomposition` **discards its Reeb input.** Its
+docstring describes a three-step construction, but the term binds `_interp` and
+`wd_reeb_compat` to `_` and never uses them; the result is
+`{ field := fun _ => q₀, … }` — definitionally the value `ofConstant` returns.
+It is therefore *not* an existence proof "from the Reeb decomposition": `wd`,
+`reeb`, and the compatibility proof are inert hypotheses. A scope warning now
+says so in the file. Do not cite it as evidence that the Reeb data determines
+`q₀`.
+
+`WeightDecomposition` and `CategoricalReeb` exist only in *sibling* content
+blocks, which cannot be imported, so both are mirrored into the file **in full**
+— every field of the canonical definitions, so the hypothesis is no weaker than
+the real one. This is the device `su2-emergence.lean` already uses for
+`SpinDecomposition`.
 
 ### F9 — a transparent type ascription loses its instance (mechanical)
 
@@ -323,4 +378,4 @@ Stated plainly so the next agent does not read more into it than was measured:
 | `qou-mbar` | F1 — `Inv R_q`: restate the eigenvalue/`q`-ext-deriv results multiplicatively or over a localisation (2 files) |
 | `qou-qk51` | F6 — reprove `degLex_wellOrdered` (axiom 1) via a base-`n` encoding; current route is unsound |
 | `qou-0tiw` | P1 — restructure `RankOneGaugeData` so `fund_dim_two` constrains `qou`, breaking the circularity |
-| `qou-hg2z` | F8 — `substrate-parameter-exists`: finish the abandoned `R_q` migration (decide the signature). The other three files on this bean now elaborate. |
+| — | **All four beans discharged.** All 11 files elaborate; see the per-bean notes for what each needed. |

@@ -1,11 +1,11 @@
 ---
 # qou-mbar
 title: 'GAP: Inv R_q -- braiding eigenvalue + q-ext-deriv written over a field, ground ring is now Z[q,q^-1]'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-17T22:44:34Z
-updated_at: 2026-08-17T22:45:35Z
+updated_at: 2026-08-18T20:58:40Z
 ---
 
 Found by the ch1+ch2 elaboration sweep (qou-n4jv), 2026-08-17.
