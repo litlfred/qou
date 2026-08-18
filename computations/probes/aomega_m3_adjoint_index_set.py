@@ -71,9 +71,17 @@ def main():
     print("     H_Ad PREDICTS s(x) is knot-independent (Ad depends on sl_2, not on K).")
     print("     OBSERVED: the same s(x) governs 5_2 (GGM eqs 239/277/307).")
     chk("T2-knot-independence-predicted-and-observed", True,
-        note="This is H_Ad's one non-trivial already-satisfied prediction. Every "
-             "knot-SPECIFIC invariant (Driver14's eight, plus Route A's R1) fails "
-             "precisely here.")
+        note="This is H_Ad's one non-trivial already-satisfied prediction. "
+             "CORRECTION (self, this run): an earlier version of this note said "
+             "'Driver14's eight, PLUS Route A's R1, fail precisely here'. That is "
+             "wrong about R1 and is retracted. R1 does NOT fail on the counts: it "
+             "hits the dtMax vector (4_1,5_2)->(3,4) EXACTLY "
+             "(docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md "
+             "S6). R1's proved failure is a different one -- it is single-valued "
+             "per knot while the 5_2 datum is the 2-element set {3,4} "
+             "(Driver14CharacterVarietyDTMenu.no_scalar_matches_chirality_split_"
+             "datum). Conflating 'fails knot-independence' with 'fails "
+             "set-valuedness' would have hidden T5 below.")
 
     # T3 (ADVERSARIAL): H_Ad as a SCALAR must fail, exactly like blockCountH3.
     dt_vector = (3, 4)          # (4_1, 5_2) certified S+ counts
@@ -99,6 +107,66 @@ def main():
              "singularities live on) plus the a=1 normalization forced by x=m^2. "
              "Stated so H_Ad cannot be defended on pattern-matching alone.")
 
+    # ---- T5: WHICH projection is H_Ad? (the adversarial R1-vs-H_Ad question) ----
+    # Certified chirality-split data: 4_1 is amphichiral so its bar-odd part
+    # vanishes -> (S+,S-) = (3,3); 5_2 is chiral -> (S+,S-) = (4,3).
+    chir = {"4_1": (3, 3), "5_2": (4, 3)}
+    dtmax = {k: max(v) for k, v in chir.items()}
+    dtmin = {k: min(v) for k, v in chir.items()}
+    print("\n[T5] R1 vs H_Ad -- are they the same reading?")
+    print(f"     chirality data (S+,S-): {chir}")
+    print(f"     dtMax = {dtmax}   <- this is R1 (#flat connections = A-poly L-degree)")
+    print(f"     dtMin = {dtmin}   <- this is H_Ad's knot-independent core")
+    chk("T5-H_Ad-is-dtMin-and-R1-is-dtMax",
+        list(dtmax.values()) == [3, 4] and set(dtmin.values()) == {3},
+        note="They are DIFFERENT halves of the same chirality-split datum, not the "
+             "same half twice. R1 reads the larger chirality count on both knots; "
+             "H_Ad's core equals the smaller on both. So H_Ad is not a "
+             "re-description of R1 -- and the PAIR (H_Ad,R1) reconstructs the full "
+             "set-valued datum {3,4} that no single scalar can equal (no tension "
+             "with no_scalar_matches_chirality_split_datum, which excludes ONE "
+             "scalar, not two). Lean: r1_is_the_dtmax_projection / "
+             "h_ad_is_the_dtmin_projection / min_max_pair_reconstructs_datum / "
+             "two_scalars_name_what_one_cannot.")
+
+    # ---- T6 (ADVERSARIAL): how much evidence is there for the core, really? ----
+    degenerate = [k for k in chir if chir[k][0] == chir[k][1]]
+    informative = [k for k in chir if chir[k][0] != chir[k][1]]
+    print("\n[T6] ADVERSARIAL: how thin is the evidence for 'core = 3'?")
+    print(f"     amphichiral (dtMin == dtMax, so no evidence beyond R1): {degenerate}")
+    print(f"     chiral (dtMin != dtMax, genuinely informative):         {informative}")
+    chk("T6-support-is-one-non-degenerate-observation",
+        degenerate == ["4_1"] and informative == ["5_2"],
+        note="4_1's amphichirality COLLAPSES the two projections there, so it "
+             "supplies no evidence for H_Ad independent of R1. The entire empirical "
+             "support for 'the core is knot-independently 3' is the single "
+             "observation S-(5_2) = 3. ONE data point, not two. Recorded so H_Ad is "
+             "not read as twice-confirmed. Lean: "
+             "fourone_is_a_degenerate_observation.")
+
+    # ---- T7 (ADVERSARIAL): the rival that the data cannot exclude ----
+    # H_floor: the knot-independent core is the {0, g, gbar} triple that EVERY
+    # hyperbolic knot carries -- i.e. the universal floor of R1 itself, no sl_2.
+    h_floor_core = 3
+    h_ad_core = 3
+    print("\n[T7] ADVERSARIAL: rival hypothesis H_floor (no sl_2 at all)")
+    print("     H_floor: core = |{0, g, gbar}| = the 3 boundary-parabolic flat")
+    print("              connections EVERY hyperbolic knot has = R1's universal floor.")
+    print(f"     H_floor core = {h_floor_core}; H_Ad core = {h_ad_core}")
+    chk("T7-H_Ad-not-distinguished-from-H_floor", h_floor_core == h_ad_core,
+        note="PASSES as an ADVERSARIAL check: the cores are EQUAL, so the two "
+             "hypotheses impose identical constraints on any completion and the "
+             "certified data cannot separate them. The coincidence "
+             "3 = dim sl_2 = |{0,g,gbar}| is therefore NOT evidence for the adjoint "
+             "reading. Worse for T4: H_floor also supplies a 3-element palindromic "
+             "grading (Chern-Simons values {0,+V,-V}), so the palindromic shape "
+             "cannot arbitrate either. Only the GRADING VARIABLE could -- meridian "
+             "x=m^2 (H_Ad) vs Chern-Simons value (H_floor). GGM's s(x) is written "
+             "in the meridian variable, which weakly favours H_Ad; 'weakly' is the "
+             "honest word and no separation is claimed. Lean: "
+             "h_ad_and_h_floor_are_indistinguishable / "
+             "palindromic_shape_does_not_arbitrate.")
+
     # The forced remainder (Lean: AdjointIndexSetM3.adjoint_core_pins_remainder)
     extra_41 = dt_vector[0] - 3
     extra_52 = dt_vector[1] - 3
@@ -107,24 +175,36 @@ def main():
     print("     remainder differing by exactly 1. Under H_Ad it is pinned to (0,1).")
     print("     => any completion of H_Ad must DERIVE that one extra 5_2 ray.")
     print("     Candidate (NOT verified here): 5_2 has 4 boundary-parabolic flat")
-    print("     connections vs 4_1's 3 — the extra ray would be the additional")
-    print("     geometric connection. Testing that is the next M3 step.")
+    print("     connections vs 4_1's 3 -- the extra ray would be the additional")
+    print("     geometric connection. NOTE (self-correction, this run): that")
+    print("     candidate IS R1. So completing H_Ad that way does not add a new")
+    print("     mechanism -- it makes the count exactly (dtMin from H_Ad, dtMax")
+    print("     from R1). That is a real gain (the PAIR names the set-valued datum")
+    print("     no scalar can) but it is a COMPOSITION of two imported readings,")
+    print("     not a derivation from Hecke data. Saying otherwise would launder.")
 
     verdict = (
-        "M3 REFRAMED and partially advanced, NOT closed. (i) M2's abelian finding "
-        "means M3's target is the INDEX SET, not a CoHA — a materially sharper "
-        "goal. (ii) H_Ad reproduces M2's s(x) exactly, multiplicity-free, with no "
-        "free parameter, and predicts the knot-independence that defeated every "
-        "knot-specific reading. (iii) H_Ad is NOT a scalar answer (it fails the "
-        "(3,4) vector like blockCountH3) — its content is the GRADING, not the "
-        "count. (iv) The 3-element palindromic shape is generic, so H_Ad rests on "
-        "its mechanism (Ad = the deformation-theory coefficient system; "
-        "Ad = Sym^2 V = the H_2(q) partition-(2) block), not on pattern-matching. "
-        "(v) Lean-proved: a knot-independent core FORCES a knot-dependent unit "
-        "remainder, pinned to (0,1) under H_Ad — so the '5_2 extra state' is a "
-        "structural requirement with a definite value, which any completion must "
-        "derive independently. H_Ad remains a HYPOTHESIS; no derivation of the DT "
-        "spectrum from Hecke data is claimed."
+        "M3 REFRAMED and SHARPENED; still a HYPOTHESIS, and this run makes the "
+        "case both stronger and thinner than the previous one claimed. STRONGER: "
+        "(i) M2's abelian finding means M3's target is the INDEX SET, not a CoHA. "
+        "(ii) H_Ad is the dtMin projection and Route A's R1 is the dtMax "
+        "projection of the SAME chirality-split datum -- different halves, so H_Ad "
+        "is NOT a re-description of R1, and the PAIR reconstructs the 2-element "
+        "set {3,4} that no single scalar can equal (no tension with "
+        "no_scalar_matches_chirality_split_datum, which excludes one scalar, not "
+        "two). (iii) Lean-proved: a knot-independent core FORCES a knot-dependent "
+        "unit remainder, pinned to (0,1) under H_Ad. THINNER: (iv) 4_1 is "
+        "amphichiral, so its dtMin collapses onto dtMax and supplies NO evidence "
+        "independent of R1 -- the whole support for 'core = 3' is the single "
+        "observation S-(5_2)=3. (v) A rival H_floor (core = the {0,g,gbar} triple "
+        "every hyperbolic knot carries = R1's universal floor, no sl_2 anywhere) "
+        "reproduces every H_Ad prediction AND a palindromic 3-element grading, so "
+        "the data cannot separate them; only the grading variable (meridian x=m^2 "
+        "vs Chern-Simons value) could, and that is not settled here. (vi) "
+        "Self-correction: the previously proposed completion -- '5_2 has one extra "
+        "flat connection' -- IS R1, so it composes two imported readings rather "
+        "than deriving anything from Hecke data. No derivation of the DT spectrum "
+        "is claimed; nothing wired."
     )
     print(f"\n verdict: {verdict}")
 
