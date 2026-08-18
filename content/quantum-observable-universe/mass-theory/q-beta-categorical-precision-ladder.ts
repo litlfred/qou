@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "$\\mathfrak{Q}_\\beta$ categorical-derivation precision ladder: $\\mathfrak{Q}_\\beta^A \\cdot \\cos(\\alpha - b\\hbar_q^2/2) \\cdot (1 - b^2 \\hbar_q^4) \\cdot (1 - 2 b^3 \\hbar_q^6) \\cdot (1 + (b^2 + 1/2) b^4 \\hbar_q^8)$ from Kashiwara crystal + Hopf-Jones at q=1, $-0.0066$ ppm against CODATA at $N=3$",
+    "$\\mathfrak{Q}_\\beta$ categorical-derivation precision ladder",
   uses: [],
   cites: [
     "jones1985",
