@@ -139,3 +139,61 @@ that is answered, /q^3 remains a normalisation convention carrying 37 % of m_p.
 
 Scope (a). Does not refute F_Bor and does not touch the Lean-proved
 |tr_M(beta_Bor)|.
+
+## Second derivation attempt: the corpus's OWN rule predicts no q-power (2026-08-18)
+
+### What "double centering" means, stated exactly
+
+P(q) = 1 + 2q^2 + 2q^4 + q^6 is the Poincare polynomial of S_3 in q^2,
+SUM_w q^{2 l(w)} -- one-sided, degrees 0..6, palindromic. Centering means
+multiplying by q^{-l(w_0)} = q^-3 to spread it symmetrically about q^0:
+
+    P(q)  --/q^3-->  q^-3 + 2q^-1 + 2q + q^3   = [3]_q!^bal   SYMMETRIC
+          --/q^3-->  1 + 2q^-2 + 2q^-4 + q^-6  = the code's factor
+
+The second division overshoots the symmetric point by exactly the amount that
+reached it, landing one-sided again on the negative side. Sharpest form
+(verified symbolically, residual 0):
+
+    [3]_q!^bal / q^3  =  P(1/q)
+
+i.e. the code's normalisation is the BAR-CONJUGATE of the Poincare polynomial.
+That is what "double centering" means: raw -> symmetric -> bar-conjugate.
+
+### What the sanctioned normalisations give -- all of them say "no q-power"
+
+beta_Bor = (sigma_1^-1 sigma_2)^3 (borromean-markov-trace-closed-form.md:2):
+6 crossings, 3 negative + 3 positive, so **writhe e(beta) = 0**.
+
+  - CORPUS RULE. markov-axioms-primitive.md:13 states link invariance "is
+    restored by the WRITHE PREFACTOR OUTSIDE THE TRACE". Any writhe prefactor at
+    e = 0 is 1. So the corpus's own Markov axioms predict NO q-power for
+    beta_Bor.
+  - JONES/TL. V = (-A^3)^{-w} <L>/delta; at w = 0 the framing factor is 1.
+  - HOMFLY (Jones 1987). prefactor ((1-lambda q)/(sqrt(lambda)(1-q)))^{n-1} .
+    sqrt(lambda)^{e(beta)}: the framing half dies at e = 0, and the (n-1) half is
+    a delta-factor (delta = [2]_q = q + q^-1), NOT a pure q-power.
+
+None yields q^-3. The one rule the corpus itself sanctions gives exactly 1.
+
+CAVEAT ON SOURCES: the paper-search MCP was disconnected, so the Jones/HOMFLY
+statements are standard-reference knowledge plus in-repo text, NOT a fresh
+literature fetch. The CORPUS-internal half (markov-axioms-primitive.md, the
+braid word) is directly cited and is the load-bearing part.
+
+### Verdict: derivation FAILED, and now for a reason
+
+Attempt 1 (Poincare centering) identified the exponent as l(w_0) but showed it
+is applied twice. Attempt 2 shows the corpus's own normalisation rule -- writhe
+prefactor -- gives 1 for this braid, because its writhe is 0.
+
+So /q^3 is not merely unjustified; it CONFLICTS with the normalisation rule the
+corpus states, on the corpus's own braid word. That is a stronger negative than
+"no derivation trail".
+
+UNTESTED CANDIDATE, recorded not claimed: q^-3 = q^{-l(w_0)} is also
+q^{-writhe(Delta)} for the Garside half-twist Delta of B_3 (3 crossings). If the
+intended normalisation were "divide by the Garside element's writhe" rather than
+the braid's own, that would produce 3. beta_Bor is not Delta and the corpus
+states the rule in terms of the braid's writhe, so this is a guess at intent,
+not a derivation.
