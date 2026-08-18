@@ -330,6 +330,7 @@ import QOU.SchurWeyl.HeckeInclusion
 import QOU.SchurWeyl.HeckeMarkov3
 import QOU.SchurWeyl.HeckeWedderburn3
 import QOU.SchurWeyl.HoefsmitRep
+import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.SytAdmissible
