@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T22:10:02.535702+00:00",
-  "commitSha": "eae9009f7097f24f01c2d529577f9cb6f762b813",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-18T16:06:33.943485+00:00",
+  "commitSha": "0ae4375720aa50b6c641c3c22fed3cb491b1ce9d",
   "assertions": [
     {
       "name": "paper_qsqrt7_example5_verified",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 10,
   "computation": "qbeta-5two-dilog-qsqrt7-closed-form",
   "scriptFile": "qbeta_5two_dilog_qsqrt7_closed_form_probe.py",
-  "scriptHash": "68faf22b7b0c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fcea9f621e5b",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,11 +31,15 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
-  "description": "The det(5_2)=7 dilog closed-form home for the bar-odd c3 action: verify the owner's paper's Q(sqrt-7) Example 5, and show the verified 5_2 complex volume = 3|D| with D(z1)=D(z2) (a Q(sqrt-7) dilog value). Theorem-3 route to the archimedean action stated (real-u face, elementary; analog of 4_1's pi^2/5).",
-  "auditOnly": "docs/audits/2026-07-18-5two-dilog-qsqrt7-bar-odd-action-home.md",
+  "description": "PREMISE RETRACTED 2026-08-11 (qou-ynff): titled as the 'Q(sqrt-7) home' for the bar-odd c3 action, but 5_2's trace field is the cubic of disc -23 and Q(sqrt-7) cannot embed in it (tower law). Q(sqrt-7) is the Alexander layer. What survives: the paper's Q(sqrt-7) Example 5 verifies (a fact about the PAPER, which never claimed a 5_2 connection), and Vol(5_2)=3|D| holds but is forced by z2=1/(1-z1) and carries no field information. No action VALUE was claimed or is retracted.",
+  "auditOnly": "docs/audits/2026-08-11-5two-trace-field-is-disc-minus-23.md",
   "data": {
     "example5_lhs": "0.370077589664251",
     "example5_rhs_ReLi2": "0.370077589664251",
@@ -46,6 +50,6 @@
     "cs_re_complex_volume": "1.91067382404",
     "paper": "uploads/2506.10206v2.pdf (Hakimoglu-Brown, arXiv 2506.10206v2)",
     "route": "Theorem 3 L(u)=E(u) elementary at real-u substrate face = bar-odd action",
-    "verdict": "5_2 DILOG CLOSED-FORM HOME = Q(sqrt-7), via the owner's dilog-identities paper (scope-(a)/(b)). VERIFIED: (1) the paper's Q(sqrt-7) Example 5 to 22+ digits (toolbox correct); (2) the corpus-verified 5_2 complex volume decomposes as Vol(5_2)=3*|D(z1)| with D(z1)=D(z2) EXACTLY (Vol/|D|=3) -- the two distinct 5_2 tetrahedron shapes carry equal Bloch-Wigner dilog, a Q(sqrt-7) value. ROUTE to the bar-odd c3 ACTION: the paper's Theorem 3 gives the 3-tetrahedron sum L(u)=Li2(z_a)+Li2(z_b)+Li2(u)=E(u) ELEMENTARY for real u>0; the 5_2 bar-odd archimedean action is E(u) at the substrate real-u face -- the direct analog of 4_1's elementary pi^2/5. This REDUCES the gate from unknown 5_2 cyclotomic coefficients (Masbaum) to identifying the substrate real-u in Theorem 3. ANTI-LAUNDERING: the geometric Vol(5_2) is anchor-SMOOTH (corpus: not the c3 swing); no bar-odd ACTION value is claimed here (needs the real-u evaluation). No fit; no c_k; no tier change."
+    "verdict": "PREMISE RETRACTED 2026-08-11 (qou-ynff): this probe was written as '5_2 dilog closed-form home = Q(sqrt-7)'. 5_2's invariant trace field is the CUBIC of discriminant -23; Q(sqrt-7) cannot embed in it ([Q(sqrt-7):Q]=2 does not divide [K:Q]=3, tower law -- a scope-(b) structural exclusion). Q(sqrt-7) is 5_2's ALEXANDER layer (disc(2t^2-3t+2) = -7, det = 7), not its geometric one. See qbeta_5two_trace_field_disc23_not_qsqrt7.py. WHAT THIS PROBE STILL SHOWS, unchanged: (1) the paper's Q(sqrt-7) Example 5 to 22+ digits (toolbox correct); (2) the corpus-verified 5_2 complex volume decomposes as Vol(5_2)=3*|D(z1)| with D(z1)=D(z2) EXACTLY (Vol/|D|=3) -- the two distinct 5_2 tetrahedron shapes carry equal Bloch-Wigner dilog -- though this is FORCED by z2 = 1/(1-z1) and carries no field information. The ROUTE stated below is likewise NOT established: it was argued by solving L(u) = Li2(z1)+2Li2(z2) numerically for u -- one equation in one unknown in an analytic function -- and matching a sum's VALUE is not matching the TRIPLE. Original text follows: the paper's Theorem 3 gives the 3-tetrahedron sum L(u)=Li2(z_a)+Li2(z_b)+Li2(u)=E(u) ELEMENTARY for real u>0; the 5_2 bar-odd archimedean action is E(u) at the substrate real-u face -- the direct analog of 4_1's elementary pi^2/5. This REDUCES the gate from unknown 5_2 cyclotomic coefficients (Masbaum) to identifying the substrate real-u in Theorem 3. ANTI-LAUNDERING: the geometric Vol(5_2) is anchor-SMOOTH (corpus: not the c3 swing); no bar-odd ACTION value is claimed here (needs the real-u evaluation). No fit; no c_k; no tier change."
   }
 }

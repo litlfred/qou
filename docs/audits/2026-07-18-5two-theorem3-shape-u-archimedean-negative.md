@@ -1,5 +1,29 @@
 # Theorem 3 IS the 5₂ dilog closed form; the naive real-u archimedean identification is ruled out
 
+> **⚠ INHERITED PREMISE CORRECTED (2026-08-11).** The prior step this document
+> builds on named ℚ(√−7) as the bar-odd action's home. That is wrong: 5₂'s
+> invariant trace field is the **cubic of discriminant −23**, and ℚ(√−7) cannot
+> embed in it (`[ℚ(√−7):ℚ] = 2 ∤ [K:ℚ] = 3` — the tower law). ℚ(√−7) belongs to
+> 5₂'s **Alexander** layer (`Δ = 2t²−3t+2`, `disc = −7`, `det = 7`), not its
+> geometric one.
+>
+> **This document's own result is unaffected.** Its content is a *negative* — the
+> naive real-`u` archimedean identification is ruled out — and that negative was
+> established by evaluation, not by any property of the field. Correcting the
+> field does not revive the ruled-out identification; if anything it removes a
+> reason the identification was expected to work.
+>
+> What does need re-reading is the §Setup sentence below, corrected in place, and
+> the *positive* half of the title. "Theorem 3 IS the 5₂ dilog closed form" was
+> argued by solving `L(u) = Li₂(z₁) + 2Li₂(z₂)` numerically for `u` — one equation,
+> one unknown, in an analytic function, which essentially always has solutions.
+> Matching a sum's *value* is not matching the *triple*. Treat that half as
+> unestablished pending a check that the arguments themselves correspond.
+>
+> Correction: [`2026-08-11-5two-trace-field-is-disc-minus-23.md`](2026-08-11-5two-trace-field-is-disc-minus-23.md)
+> · certification: [`qbeta_5two_trace_field_disc23_not_qsqrt7.py`](../../computations/probes/qbeta_5two_trace_field_disc23_not_qsqrt7.py)
+> · bean `qou-ynff`.
+
 **Date:** 2026-07-18 · **Axis:** c₃ / Q_β bar-odd swing / 1ppQ · **Tier:** numerical
 scope-(a) (one positive confirmation + one honest negative) · **Discipline:** no fit,
 no c_k wired, nothing to production, no tier change.
@@ -7,7 +31,8 @@ no c_k wired, nothing to production, no tier change.
 ## Setup
 
 The prior step ([`…-5two-dilog-qsqrt7-bar-odd-action-home.md`](2026-07-18-5two-dilog-qsqrt7-bar-odd-action-home.md))
-established the bar-odd action's home = ℚ(√−7) and pointed at Theorem 3 of the owner's
+established the bar-odd action's home = ℚ(√−7) [**retracted 2026-08-11 — the trace
+field is the cubic of disc −23; ℚ(√−7) is the Alexander layer**] and pointed at Theorem 3 of the owner's
 dilog paper ([`uploads/2506.10206v2.pdf`](../../uploads/2506.10206v2.pdf)):
 `L(u) = Li₂(z_a)+Li₂(z_b)+Li₂(u) = E(u)`, with `E` elementary for real `u>0`. This step
 tests whether that yields the bar-odd archimedean action directly.

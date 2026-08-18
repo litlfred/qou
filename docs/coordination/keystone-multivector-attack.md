@@ -55,7 +55,12 @@ the bar-odd face moved off 4₁ onto 5₂.
 ### V2 — Bar-odd 5₂ chiral geometry  *(the G3 decay datum)*
 - **Open piece.** Exhibit the argument whose archimedean evaluation reproduces
   `S(muon)=+0.00968298`, `S(proton)=−0.03945936`, sourced from the **chiral 5₂**
-  (non-amphichiral, CS≠0, home field ℚ(√−7), Vol(5₂)=3·D).
+  (non-amphichiral, CS≠0, trace field the **cubic of disc −23**, Vol(5₂)=3·D).
+  *(Corrected 2026-08-11: this said "home field ℚ(√−7)". The tower law forbids
+  it — 2 ∤ 3. ℚ(√−7) is 5₂'s Alexander layer; the quadratic attached to the trace
+  field is ℚ(√−23), which is the line the A6 σ-pair tower already records. Note the
+  `Vol(5₂)=3·D` factor is forced by `z₂ = 1/(1−z₁)` and carries no field information.
+  Bean `qou-ynff`.)*
 - **Landed toward it.** Masbaum 5₂ cyclotomic coefficients `C_{5₂,1..3}` verified
   + Lean-formalized bar-asymmetric (`c6efbf64`/`4b0852b1`/`4cae2d63`); 5₂ exact-Z
   Theorem-22 blocks (`57f97aed`); `FiveTwoSaddleCurve.lean` (complex singularity
