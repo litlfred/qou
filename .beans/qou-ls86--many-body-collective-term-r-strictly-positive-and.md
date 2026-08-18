@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T00:44:48Z
-updated_at: 2026-08-18T05:59:11Z
+updated_at: 2026-08-18T16:09:37Z
 ---
 
 Opened working the many-body R term at owner direction ('go on many body').
@@ -223,3 +223,42 @@ different functional, or physics the framework does not represent (shell,
 electrostatics). No candidate is proposed.
 
 Probe: computations/probes/markov_multiplicativity_interleaved_probe.py
+
+
+## 2026-08-18 — CORRECTION: the multiplicativity result was measured in float64
+
+The 2026-08-18 entry above reports the multi-bond test as
+'interleaved - product = 7.4e-17' from nf_tr against pyhecke.trace.TR_M.
+**That test was VACUOUS.** TR_M is a float64 table, so any comparison through it
+agrees to ~1e-16 regardless of what is true. I recorded the float64 resolution
+as a scope caveat and shipped, which is exactly the move the owner has now
+banned (AGENTS.md, 'PROBES ARE NOT EXEMPT', 2026-08-18).
+
+**The conclusion survives, by exact algebra instead of measurement.** On H_3,
+from tr(1)=1, the Markov property tr(x sigma_last) = z tr(x), cyclicity, and the
+Hecke relation sigma^2 = h sigma + 1 — with no numbers at all:
+
+    tr(s0 s1)    = z * tr(s0) = z^2
+    tr(s0 s1 s0) = tr(s0^2 s1)            [cyclicity]
+                 = h tr(s0 s1) + tr(s1)   [Hecke]
+                 = h z^2 + z
+    (z h + 1) z  = h z^2 + z
+    difference   = 0, IDENTICALLY in (q, z, h)
+
+Equal as rational functions — not 'agrees to 1e-16'.
+
+**And the exact route SHARPENS the n=3 caveat.** It works because cyclicity
+rotates the trailing s0 forward, where the Hecke relation collapses s0^2 back
+into span{1, s0}. H_3's single interleaved word is a cyclic rotation of a
+sequential one — a property of H_3 being small. For larger n there are
+interleaved words with no such rotation (e.g. s0 s1 s0 s2 s1). **General n is
+OPEN**, and the earlier entry's confidence was not earned.
+
+**Also corrected in this bean's earlier entries:** the Coulomb offset was
+computed with hf = float(pyhecke.gram.h). Recomputed at 50 dps it survives as
+0.000343927701756774002 with spread 8.4e-48 (not 1.4e-14). The shape-degeneracy
+figures were statistics.mean/pstdev over 3519 float64 rows; recomputed with
+mpmath they are unchanged (9.733%, 1.2197, 110.1%, 17.44%, ~1.207 collapse), so
+those conclusions stand.
+
+Probes now mpmath/sympy end-to-end; precision-gates.sh --changed green.
