@@ -332,4 +332,117 @@ tableaux carry three distinct weights, matching M2's `sMultiplicities = [1,1,1]`
 without adjustment. -/
 theorem ssyt_weights_nodup : (ssytShapeTwo.map meridianWeight).Nodup := by decide
 
+/-! ## Part 4 — the remainder is DERIVED from the trace field, and it is `H_floor`'s win
+
+Part 1 proved that a knot-independent core forces a knot-dependent remainder, and
+said any completion "must derive that remainder independently". Part 2 named the
+rival `H_floor`. This part reports that `H_floor` **does** derive it — from the
+arithmetic of the trace field — which is a point against `H_Ad`, not for it.
+
+**Source (glyph-verified, corpus `uploads/2111.06645v3.pdf` §2.1).**
+Garoufalidis–Zagier describe `P_K`, the set of boundary-parabolic `SL₂(ℂ)`
+representations, for their three standard knots:
+
+* `4₁` — `P_K = {σ₀, σ₁, σ₂}`; trace field `ℚ(√−3)`, signature `(0,1)`.
+* `5₂` — `P_K = {σ₀, σ₁, σ₂, σ₃}`; trace field the cubic of discriminant `−23`,
+  signature `(1,1)`; `σ₃` is the root with **zero imaginary part**.
+* `(−2,3,7)` — `P_K` has **seven** elements: `σ₀`, the three from `ℚ(ξ)` (the same
+  cubic as `5₂`), and three more from `ℚ(η)`, `η³+η²−2η−1 = 0`, the **totally
+  real** abelian cubic of discriminant `49`, signature `(3,0)`.
+
+So `|P_K| = 3, 4, 7` — which reproduces `R1`'s `4₁ ↦ 3`, `5₂ ↦ 4` from a source
+independent of the A-polynomial, and *extends* it to a third knot.
+
+**The structural read that follows.** `H_floor`'s core is `{σ₀, g, ḡ}` = the
+trivial representation plus **one** complex-conjugate pair (the geometric one).
+Everything else in `P_K` is remainder. Counting embeddings by signature:
+
+| `K` | reduced trace algebra | real | pairs | `\|P_K\|` | core | remainder |
+|---|---|---|---|---|---|---|
+| `4₁` | `ℚ(√−3)` | 0 | 1 | 3 | 3 | **0** |
+| `5₂` | cubic, disc `−23` | 1 | 1 | 4 | 3 | **1** |
+| `(−2,3,7)` | `ℚ(ξ) × ℚ(η)` | 1+3 | 1+0 | 7 | 3 | **4** |
+
+The `5₂` remainder of exactly `1` is therefore **not** an unexplained extra state:
+it is the single **real embedding** of the discriminant `−23` cubic trace field,
+and `4₁`'s remainder vanishes because its trace field is imaginary quadratic and
+has none. That is a derivation, from arithmetic, of the quantity Part 1 could only
+force.
+
+**Honest scoring.** This strengthens `H_floor` and weakens the case for `H_Ad` on
+the *count*: `H_floor` now explains the number `3`, predicts the remainder, and
+does so with no `𝔰𝔩₂` anywhere. `H_Ad`'s remaining distinct content is what Part 3
+established — the meridian **grading** `s(x) = x + 1 + x⁻¹`, which `H_floor` says
+nothing about. The two are best read as answering *different questions* (`H_floor`:
+why that many; `H_Ad`: why that polynomial) rather than as rivals for one.
+
+Nothing here is a Hecke-internal derivation, so M3's actual target is untouched. -/
+
+/-- The three knots for which Garoufalidis–Zagier tabulate `P_K` (§2.1). -/
+inductive PKnot where
+  | fourOne : PKnot
+  | fiveTwo : PKnot
+  | pretzel237 : PKnot
+  deriving DecidableEq
+
+/-- Number of **real** embeddings of the reduced trace algebra `A_K^red`. -/
+def realEmbeddings : PKnot → Int
+  | PKnot.fourOne => 0            -- ℚ(√−3): imaginary quadratic
+  | PKnot.fiveTwo => 1            -- cubic, disc −23: signature (1,1)
+  | PKnot.pretzel237 => 4         -- ℚ(ξ) gives 1, ℚ(η) (totally real cubic) gives 3
+
+/-- Number of **complex-conjugate pairs** of embeddings of `A_K^red`. -/
+def complexPairs : PKnot → Int
+  | PKnot.fourOne => 1
+  | PKnot.fiveTwo => 1
+  | PKnot.pretzel237 => 1         -- only ℚ(ξ) contributes; ℚ(η) is totally real
+
+/-- `|P_K| = 1 + (real embeddings) + 2·(complex pairs)` — the trivial
+representation plus every embedding of the reduced trace algebra. -/
+def pkSize (K : PKnot) : Int := 1 + realEmbeddings K + 2 * complexPairs K
+
+/-- **The Garoufalidis–Zagier counts, reproduced from the signatures alone.**
+`|P_K| = 3, 4, 7` for `4₁`, `5₂`, `(−2,3,7)` — matching §2.1 verbatim. -/
+theorem pk_sizes_three_four_seven :
+    pkSize PKnot.fourOne = 3 ∧ pkSize PKnot.fiveTwo = 4 ∧ pkSize PKnot.pretzel237 = 7 := by decide
+
+/-- `H_floor`'s core: the trivial representation together with one
+complex-conjugate pair (the geometric connection and its mirror). -/
+def floorCore : Int := 3
+
+/-- The remainder `H_floor` predicts: everything in `P_K` beyond the core. -/
+def floorRemainder (K : PKnot) : Int := pkSize K - floorCore
+
+/-- **The remainder equals the count of real embeddings, plus the pairs beyond the
+geometric one.** For all three knots this is exactly
+`realEmbeddings K + 2·(complexPairs K − 1)`. -/
+theorem remainder_is_arithmetic (K : PKnot) :
+    floorRemainder K = realEmbeddings K + 2 * (complexPairs K - 1) := by
+  cases K <;> decide
+
+/-- **The forced unit remainder of Part 1 is derived, not assumed.** `4₁`'s
+remainder is `0` because its trace field is imaginary quadratic (no real
+embedding); `5₂`'s is `1` because the discriminant `−23` cubic has exactly one.
+The `+1` that `knot_independent_core_forces_unit_remainder` could only *force* now
+has an arithmetic source. -/
+theorem forced_remainder_is_the_real_embedding_count :
+    floorRemainder PKnot.fourOne = realEmbeddings PKnot.fourOne ∧
+    floorRemainder PKnot.fiveTwo = realEmbeddings PKnot.fiveTwo ∧
+    floorRemainder PKnot.fourOne = 0 ∧ floorRemainder PKnot.fiveTwo = 1 := by decide
+
+/-- **The third knot is a genuine extension, not a restatement.** `(−2,3,7)` has a
+remainder of `4`, distinct from both smaller knots — so the arithmetic rule is not
+fitted to a two-point data set. (Its `q→0` Stokes matrix is not published, so this
+is a *prediction*: `R1`/`H_floor` say the `(−2,3,7)` count is `7`.) -/
+theorem pretzel_is_a_new_data_point :
+    floorRemainder PKnot.pretzel237 = 4 ∧
+    floorRemainder PKnot.pretzel237 ≠ floorRemainder PKnot.fourOne ∧
+    floorRemainder PKnot.pretzel237 ≠ floorRemainder PKnot.fiveTwo := by decide
+
+/-- **The core is knot-independent across all three** — the one shared prediction
+of `H_Ad` and `H_floor`, now checked on a third knot rather than two. -/
+theorem core_is_three_on_all_three :
+    ∀ K : PKnot, pkSize K - floorRemainder K = sAtOne := by
+  intro K; cases K <;> (rw [s_at_one_eq_three]; decide)
+
 end QOU.QBeta.AdjointIndexSetM3

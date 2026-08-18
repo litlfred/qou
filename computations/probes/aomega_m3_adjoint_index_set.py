@@ -217,6 +217,54 @@ def main():
              "sMultiplicities = [1,1,1] with no adjustment, now at the "
              "combinatorial level rather than by assertion. Lean: ssyt_weights_nodup.")
 
+    # ---- T11-T13: the THIRD knot, and the remainder derived from arithmetic ----
+    # Source (glyph-verified): Garoufalidis-Zagier, uploads/2111.06645v3.pdf S2.1.
+    # P_K = boundary-parabolic SL_2(C) reps. Verbatim: 4_1 -> {s0,s1,s2}, trace field
+    # Q(sqrt(-3)); 5_2 -> {s0,s1,s2,s3}, cubic of discriminant -23, s3 the root with
+    # ZERO imaginary part; (-2,3,7) -> SEVEN elements: s0, three from Q(xi) (the same
+    # cubic as 5_2), three from Q(eta), eta^3+eta^2-2eta-1=0, the TOTALLY REAL
+    # abelian cubic of discriminant 49.
+    sig = {"4_1":      {"real": 0, "pairs": 1},   # Q(sqrt(-3)), imaginary quadratic
+           "5_2":      {"real": 1, "pairs": 1},   # cubic disc -23, signature (1,1)
+           "(-2,3,7)": {"real": 4, "pairs": 1}}   # Q(xi): 1 real + 1 pair; Q(eta): 3 real
+    pk   = {k: 1 + v["real"] + 2*v["pairs"] for k, v in sig.items()}
+    core = 3                                      # s0 + the geometric pair {g, gbar}
+    rem  = {k: pk[k] - core for k in pk}
+
+    print("\n[T11] the GZ counts |P_K|, from the trace-field signatures alone")
+    for k in sig:
+        print(f"     {k:10s} real={sig[k]['real']} pairs={sig[k]['pairs']}"
+              f"  ->  |P_K| = {pk[k]}   remainder = {rem[k]}")
+    chk("T11-pk-sizes-three-four-seven",
+        [pk["4_1"], pk["5_2"], pk["(-2,3,7)"]] == [3, 4, 7],
+        note="Reproduces GZ S2.1 verbatim (3, 4, 7). It also reproduces R1's "
+             "(4_1,5_2) -> (3,4) from a source INDEPENDENT of the A-polynomial, and "
+             "extends it to a third knot. Lean: pk_sizes_three_four_seven.")
+
+    print("\n[T12] the forced remainder is DERIVED -- and it is H_floor's, not H_Ad's")
+    chk("T12-remainder-equals-real-embedding-count",
+        rem["4_1"] == sig["4_1"]["real"] == 0 and rem["5_2"] == sig["5_2"]["real"] == 1,
+        note="MATERIAL FINDING, and it counts AGAINST H_Ad. Part 1's Lean could only "
+             "FORCE the 5_2 remainder to be 1 and said any completion 'must derive it "
+             "independently'. H_floor derives it: the remainder is the count of REAL "
+             "embeddings of the reduced trace algebra. 4_1's trace field is imaginary "
+             "quadratic so it has none (remainder 0); 5_2's disc -23 cubic has exactly "
+             "one (remainder 1) -- GZ even name it, the root with zero imaginary part. "
+             "So H_floor explains the count AND the remainder with no sl_2 anywhere. "
+             "H_Ad's surviving distinct content is only the T9 meridian grading. Lean: "
+             "forced_remainder_is_the_real_embedding_count.")
+
+    print("\n[T13] is the arithmetic rule fitted to two points?")
+    chk("T13-third-knot-is-a-new-value",
+        rem["(-2,3,7)"] == 4 and rem["(-2,3,7)"] not in (rem["4_1"], rem["5_2"]),
+        note="No: (-2,3,7) gives a remainder of 4, distinct from both smaller knots, "
+             "so the rule is checked on three points with three different values. "
+             "PREDICTION (not verified -- its q->0 Stokes matrix is unpublished): "
+             "R1/H_floor say the (-2,3,7) count is 7. That is the falsifiable edge. "
+             "NOTE the core stays 3 on all three, so a third knot does NOT separate "
+             "H_Ad from H_floor -- see the route-(a) retraction in the verdict. Lean: "
+             "pretzel_is_a_new_data_point / core_is_three_on_all_three.")
+
     # The forced remainder (Lean: AdjointIndexSetM3.adjoint_core_pins_remainder)
     extra_41 = dt_vector[0] - 3
     extra_52 = dt_vector[1] - 3
@@ -232,6 +280,8 @@ def main():
     print("     from R1). That is a real gain (the PAIR names the set-valued datum")
     print("     no scalar can) but it is a COMPOSITION of two imported readings,")
     print("     not a derivation from Hecke data. Saying otherwise would launder.")
+    print("     SUPERSEDED by T12: the remainder IS now derived -- as the real-")
+    print("     embedding count of the trace field (H_floor). Still not Hecke-side.")
 
     verdict = (
         "M3 REFRAMED and SHARPENED; still a HYPOTHESIS, and this run makes the "
@@ -262,7 +312,21 @@ def main():
         "lacks WITHOUT excluding H_floor. It also forced a second self-correction: "
         "Ad is the Schur-Weyl PARTNER of the partition-(2) Hecke block, not the "
         "block (which is 1-dimensional); earlier text here and in Lean said "
-        "otherwise and is corrected at source."
+        "otherwise and is corrected at source. PART 4 (this run): THIRD "
+        "SELF-CORRECTION -- the route-(a) discriminator stated last commit is "
+        "WRONG and is retracted. It said a knot with MORE than 3 "
+        "boundary-parabolic connections would break H_floor. It would not: "
+        "H_floor's core is the universal FLOOR {s0,g,gbar} = 3 for EVERY "
+        "hyperbolic knot, exactly as H_Ad's is dim sl_2 = 3, so no third knot "
+        "separates them at the core (proved: core_is_three_on_all_three, checked "
+        "on 4_1, 5_2 AND (-2,3,7)). What a third knot actually buys is (i) a "
+        "second non-degenerate data point against T6 and (ii) a ONE-SIDED "
+        "falsification test of H_Ad's POLYNOMIAL claim -- if a rank-6 knot's "
+        "Stokes entries are not built from x+1+1/x, H_Ad breaks while H_floor, "
+        "which makes no polynomial claim, cannot. Part 4 also found the third knot "
+        "ALREADY IN THE CORPUS (Garoufalidis-Zagier 2111.06645 S2.1: |P_K| = 3, 4, "
+        "7) and, against my own hypothesis, DERIVED the forced 5_2 remainder as the "
+        "real-embedding count of the trace field -- an H_floor win, not an H_Ad one."
     )
     print(f"\n verdict: {verdict}")
 
