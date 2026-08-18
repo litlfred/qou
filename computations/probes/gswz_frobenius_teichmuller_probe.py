@@ -40,6 +40,7 @@ corrections) is NOT implemented here and stays queued on bean qou-1hlh.
 """
 
 import json
+import pathlib
 import sys
 
 D = 6
@@ -177,7 +178,7 @@ witness = {
     "zeta24_coords_const_alpha_alpha2": [c0, c1, c2],
     "scope": "scope-(a): Frobenius/Teichmuller layer verified vs printed Example 4.3; p-adic dilog layer queued on qou-1hlh",
 }
-with open("computations/probes/gswz_frobenius_teichmuller.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_frobenius_teichmuller.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

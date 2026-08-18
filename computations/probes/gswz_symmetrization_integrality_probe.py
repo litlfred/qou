@@ -36,6 +36,7 @@ independent recomputation of Phi(h) from formal Gaussian integration
 """
 
 import json
+import pathlib
 import sys
 from fractions import Fraction
 
@@ -112,7 +113,7 @@ witness = {
     "gate_demo_broken_denominator_support": sorted(denom_primes(c2f)),
     "scope": "scope-(a): verifies printed GSWZ data + symmetrization structure at supported orders; independent Phi recomputation not claimed",
 }
-with open("computations/probes/gswz_symmetrization_integrality.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_symmetrization_integrality.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)
