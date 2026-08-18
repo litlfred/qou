@@ -252,11 +252,25 @@ def validate_chain(chain_path: Path) -> ChainResult:
 
 # ── Witness trust audit ────────────────────────────────────────
 
+def _scan(root: Path, pattern: str) -> list[Path]:
+    """Recursively collect `pattern` under `root`, skipping the retired-producer
+    archive `_deprecated/`.
+
+    Previously these scans used a NON-recursive `glob`, so every witness and
+    chain living in a subdirectory (`probes/`, `qbeta/`, `deltalambda/`,
+    `alpha_em/`, ...) was invisible to the trust audit — ~1.25k live witnesses,
+    i.e. the audit's "computational-only" headline *understated* the real gap
+    rather than overstating it. A coverage hole in a gap-measuring tool is the
+    one defect that hides itself, so the scan is recursive.
+    """
+    return sorted(q for q in root.rglob(pattern) if "_deprecated" not in q.parts)
+
+
 def collect_referenced_scripts(chains_dir: Path) -> set[str]:
     """Walk every chain JSON and collect the set of script paths
     referenced via `script: <path>` in any step's `notes`."""
     refs: set[str] = set()
-    for cp in sorted(chains_dir.glob("*.derivation.json")):
+    for cp in _scan(chains_dir, "*.derivation.json"):
         with cp.open("r", encoding="utf-8") as f:
             data = json.load(f)
         for s in data.get("steps", []):
@@ -281,7 +295,7 @@ def collect_fully_trusted_scripts(chains_dir: Path) -> set[str]:
     derivation-fully-trusted (the chain proves their output from
     first principles, no computational shortcuts)."""
     fully: set[str] = set()
-    for cp in sorted(chains_dir.glob("*.derivation.json")):
+    for cp in _scan(chains_dir, "*.derivation.json"):
         with cp.open("r", encoding="utf-8") as f:
             data = json.load(f)
         steps = data.get("steps", [])
@@ -312,7 +326,7 @@ def audit_witness_trust(chains_dir: Path) -> dict:
         guessed = _expected_script_for_witness(witness_name)
         return guessed in basenames
 
-    for wp in sorted(chains_dir.glob("*.witness.json")):
+    for wp in _scan(chains_dir, "*.witness.json"):
         # Skip the audit's own output to avoid self-reference noise.
         if wp.name == AUDIT_WITNESS_NAME:
             continue
@@ -346,7 +360,7 @@ def audit_witness_trust(chains_dir: Path) -> dict:
 # ── Main ───────────────────────────────────────────────────────
 
 def main() -> int:
-    chain_files = sorted(HERE.glob("*.derivation.json"))
+    chain_files = _scan(HERE, "*.derivation.json")
     if not chain_files:
         print("No *.derivation.json files found.")
         return 1
