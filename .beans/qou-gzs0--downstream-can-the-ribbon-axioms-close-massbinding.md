@@ -131,3 +131,68 @@ unproved input the Gram-inverse derivation leans on; closing it does not move
 `m_p`, `Δ_λ`, or any `c_k`. The owner's actual question — mass and binding
 accuracy — is still untouched and lives in the `Δ_λ` magnitude and the `c_k`
 ladder, neither of which this arc reaches.
+updated_at: 2026-08-18T15:59:31Z
+---
+
+
+## ANSWERED: no for precision, yes for percent-level systematics (2026-08-18)
+
+`computations/ribbon_framing_ladder_scale_probe.py` +
+`ribbon-framing-ladder-scale.witness.json` (2 assertions, both pass).
+
+### The setup
+
+The balancing twist wired onto QuantumUniverse (qou-pkf3) forces
+`theta_V = q^{1/2} . id_V` on the defining representation. Because that is a
+SCALAR, a framing T on a mass-carrying object contributes exactly one factor
+
+    weight(T) = theta^T = q^{T/2},   T integer
+
+and that is the ONLY free parameter the ribbon layer adds to a mass or binding
+evaluation. T is an integer, so the effect is a discrete LADDER.
+
+### Q1 -- can it close the L2 gaps?  NO, by four orders of magnitude
+
+    one framing unit = 5.35552 %   <- the ladder quantum
+
+    Q_beta    gap 1279 ppb    ladder is    41 873x too coarse
+    m_n       gap 1400 ppb    ladder is    38 254x too coarse
+    Delta_pn  gap 1200 ppb    ladder is    44 629x too coarse
+    L2 target  7.8 ppb        ladder is 6 866 050x too coarse
+
+The smallest nonzero framing change overshoots every L2 gap by ~4e4. So the
+ribbon axioms CANNOT supply the corrections those misses need -- not because the
+axioms are wrong, but because their only adjustable parameter is quantised far
+too coarsely. This is a structural prune, not a numerical failure.
+
+Corollary worth stating: the 2.96% m_p discrepancy is ALSO unreachable. No
+integer T gives 2.96% (T=1 gives 5.36%, T=0 gives 0), so framing cannot explain
+that gap either.
+
+### Q2 -- the mass path already carries a factor of exactly this shape
+
+`canonical_mass` uses `F_Bor = |tr_M(beta_Bor)| . [3]_q! / q^3`, and
+
+    q^-3  =  q^{T/2}  at  T = -6      EXACT match, not approximate
+                                      i.e. -2 per Borromean component
+
+The Borromean word (s1 s2^-1)^3 has writhe 0, so this factor is NOT q^writhe.
+It has framing shape. Whether that is the intended reading is a question for the
+corpus/owner -- I am recording an exact structural identification, NOT claiming
+the derivation was framing-motivated.
+
+If it IS a framing, the mass formula's framing is already fixed at -2 per
+component and there is no free knob left. If it is NOT, then there is an
+unaccounted framing DOF sitting on a 5.36% ladder, which would be a
+percent-scale systematic. Either way the answer to Q1 is unchanged.
+
+### Verdict for this bean
+
+The ribbon axioms CANNOT close the mass/binding precision gaps. They CAN move a
+result at the percent level, so a mis-set framing is a percent-scale systematic
+rather than a ppb-scale knob. The L2 work stays where qou-rwhj put it: the
+convention-D re-derivation (qou-cds1), not the ribbon layer.
+
+Scope (b) on the exclusion -- it rests on a proved invariant (theta scalar =>
+weight is q^{T/2} with T integer) plus arithmetic, not on a failed search.
+Scope (a) on the Q2 identification, which is an observation awaiting a ruling.
