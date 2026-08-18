@@ -1,15 +1,15 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T12:13:32.800155+00:00",
-  "commitSha": "18d7b4a3c798ecf64cbe6b9a900284f83ab1db99",
+  "computedAt": "2026-08-18T16:06:31.943005+00:00",
+  "commitSha": "06f7907c98af57a87635b879184d4156351546eb",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-neutron",
   "scriptFile": "_habiro_coefficient_extract.py",
   "scriptHash": "eec999ddb8d7",
-  "scriptCommitSha": "18d7b4a3c798ecf64cbe6b9a900284f83ab1db99",
+  "scriptCommitSha": "dd6f059cdbd12df2b306a33644593f2972ed0862",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,64 +47,64 @@
   "habiro_coefficients": [
     {
       "m": 0,
-      "a_m": "4",
+      "a_m": "2",
       "deg_a_m": 0,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 1,
-      "a_m": "-64*u - 64",
+      "a_m": "-34*u - 34",
       "deg_a_m": 1,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 2,
-      "a_m": "276*u**2 + 296*u + 316",
+      "a_m": "131*u**2 + 142*u + 153",
       "deg_a_m": 2,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 3,
-      "a_m": "-580*u**3 - 646*u**2 - 712*u - 782",
+      "a_m": "-239*u**3 - 272*u**2 - 299*u - 337",
       "deg_a_m": 3,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 4,
-      "a_m": "696*u**4 + 787*u**3 + 893*u**2 + 1010*u + 1139",
+      "a_m": "228*u**4 + 264*u**3 + 309*u**2 + 354*u + 410",
       "deg_a_m": 4,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 5,
-      "a_m": "-448*u**5 - 531*u**4 - 621*u**3 - 729*u**2 - 849*u - 988",
+      "a_m": "-112*u**5 - 134*u**4 - 165*u**3 - 197*u**2 - 239*u - 283",
       "deg_a_m": 5,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 6,
-      "a_m": "133*u**6 + 167*u**5 + 211*u**4 + 261*u**3 + 323*u**2 + 394*u + 479",
+      "a_m": "23*u**6 + 31*u**5 + 40*u**4 + 52*u**3 + 66*u**2 + 85*u + 106",
       "deg_a_m": 6,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 7,
-      "a_m": "-12*u**7 - 17*u**6 - 24*u**5 - 34*u**4 - 48*u**3 - 63*u**2 - 84*u - 110",
+      "a_m": "-u**7 - 2*u**6 - 3*u**5 - 4*u**4 - 6*u**3 - 9*u**2 - 12*u - 19",
       "deg_a_m": 7,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 8,
-      "a_m": "u**4 + 2*u**3 + 3*u**2 + 5*u + 7",
-      "deg_a_m": 4,
+      "a_m": "1",
+      "deg_a_m": 0,
       "integral": true,
       "remainder_nonzero": false
     }
@@ -114,16 +114,16 @@
   "A": 1,
   "interface_kinds": [],
   "include_inter": true,
-  "tr_M_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) - q**(25/2) - q**(21/2) + q**(19/2) + q**(15/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 4*q**10 - q**2 + 1)/(4*q**(19/2)*(q + 1))",
+  "tr_M_in_q": "(q**18 - q**16 + 2*q**14 - 2*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + q**2 - 1)/(4*q**9)",
   "shift": 0,
-  "denom_in_u": "4*u**21 + 4*u**19",
-  "p_in_u": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 + 4*u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-  "deg_p_u": 40,
+  "denom_in_u": "4*u**18",
+  "p_in_u": "u**36 - u**32 + 2*u**28 - 2*u**24 + 4*u**20 - 3*u**16 + 3*u**12 - 2*u**8 + u**4 - 1",
+  "deg_p_u": 36,
   "n_nonzero": 9,
   "all_integral": true,
   "reconstruction_matches": true,
-  "tr_M_at_q0": 0.9232332299116371,
-  "tr_M_at_q0_via_u_poly": 0.9232332299116371,
+  "tr_M_at_q0": 0.9877436881158096,
+  "tr_M_at_q0_via_u_poly": 0.9877436881158096,
   "tr_M_at_q0_rel_err": 0.0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
