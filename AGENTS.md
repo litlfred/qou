@@ -689,6 +689,18 @@ list-parser hijack); align-family environments (`aligned`, `align`) fenced as
 > Inline **and** fenced code are transliterated as of
 > folio-assistant#129, so the residual risk is a crash-class char in
 > plain **prose** or a `.ts` **`title:`**, where nothing transliterates.
+>
+> **A char can be safe in prose and still break in math — the two
+> questions are separate.** "Crash-class" above is about chars `utf8.def`
+> never declares at all. A char it *does* declare can still fail, because
+> what it declares may be **text-mode only**: every accented Latin letter
+> maps to a text accent (`ï` → `\"i`), and `\"` is invalid in math. So
+> `naïve` in prose is fine while `$y^{\mathrm{naïve}}$` emits *"Command
+> `\"` invalid in math mode"* and then **drops the glyph** — a hole in the
+> typeset page, from markdown that looks correct. Fixed at the preamble as
+> of folio-assistant#129 (`\unitextsafe`, U+00C0–U+017F, all 161 verified
+> in text *and* math), so no authoring rule is needed for accented names —
+> recorded because the fix is easy to undo by "tidying" the block away.
 
 Then run the **expository pass**: every symbol
 and term is introduced before first use, and no symbol is silently reused for
