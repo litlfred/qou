@@ -65,6 +65,19 @@ one between the two knots. This converts the otherwise-unfalsifiable move "add
 one more state for `5₂`" into a structural requirement with a definite value,
 which any completion of `H_Ad` must independently derive.
 
+Part 2 then answers the obvious adversarial objection — *"isn't `H_Ad` just Route
+A's `R1` again?"* — and the answer cuts both ways. It is **not**: `R1` is the
+`dtMax` projection of the chirality-split datum and `H_Ad`'s core is `dtMin`, so
+they read different halves, and the *pair* reconstructs the 2-element set `{3,4}`
+that `no_scalar_matches_chirality_split_datum` forbids any *single* scalar from
+naming. But the evidence is thinner than that makes it sound: `4₁`'s
+amphichirality collapses `dtMin` onto `dtMax`, so the entire support for a
+knot-independent core is **one** observation (`S⁻(5₂) = 3`); and a rival
+hypothesis with no `𝔰𝔩₂` in it at all — the core is the `{0, g, ḡ}` triple every
+hyperbolic knot carries, i.e. `R1`'s own universal floor — reproduces every
+`H_Ad` prediction, including a palindromic 3-element grading. Both are proved
+below. `H_Ad` stays a hypothesis, and it is not the only one standing.
+
 -- Ref: [manuscript] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md (Route C, M3)
 -/
 
@@ -143,5 +156,101 @@ theorem no_purely_knot_independent_count
     (core : Int)
     (h41 : core = 3) (h52 : core = 4) : False := by
   omega
+
+/-! ## Part 2 — WHICH projection `H_Ad` is, and the rival hypothesis it cannot beat
+
+The obvious adversarial objection to `H_Ad` is that it may be a re-description of
+Route A's surviving reading `R1` (`DT integer = #boundary-parabolic `SL₂(ℂ)` flat
+connections = A-polynomial `L`-degree`), since both hand back `3` for `4₁`. This
+part settles that, and the answer is *two-sided*.
+
+The certified chirality-split data (`FiveTwoDTSpectrumSplit`, `AomegaM2BPSCohomology`):
+`4₁` is amphichiral, so its bar-odd part vanishes and `(S⁺, S⁻) = (3, 3)`; `5₂` is
+chiral with `(S⁺, S⁻) = (4, 3)`. -/
+
+/-- The `S⁺` (bar-positive chirality) DT count. -/
+def dtPlus : KKnot → Int
+  | fourOne => 3
+  | fiveTwo => 4
+
+/-- The `S⁻` (bar-negative chirality) DT count. Amphichirality forces
+`dtMinus 4₁ = dtPlus 4₁`. -/
+def dtMinus : KKnot → Int
+  | fourOne => 3
+  | fiveTwo => 3
+
+/-- The smaller of the two chirality counts. -/
+def dtMin (K : KKnot) : Int := if dtPlus K ≤ dtMinus K then dtPlus K else dtMinus K
+
+/-- The larger of the two chirality counts. -/
+def dtMax (K : KKnot) : Int := if dtPlus K ≤ dtMinus K then dtMinus K else dtPlus K
+
+/-- **`R1` is the `dtMax` projection.** Route A's surviving reading assigns
+`4₁ ↦ 3`, `5₂ ↦ 4` — precisely the larger chirality count, on both knots. -/
+theorem r1_is_the_dtmax_projection :
+    dtMax fourOne = 3 ∧ dtMax fiveTwo = 4 := by decide
+
+/-- **`H_Ad` is the `dtMin` projection.** The knot-independent adjoint core `s(1)=3`
+equals the *smaller* chirality count on both knots. So `H_Ad` and `R1` are reading
+**different halves** of the same chirality-split datum, not the same half twice. -/
+theorem h_ad_is_the_dtmin_projection :
+    dtMin fourOne = sAtOne ∧ dtMin fiveTwo = sAtOne := by decide
+
+/-- **Complementarity: the two projections together reconstruct the datum.** Listing
+each knot's chirality counts in increasing order gives exactly `[dtMin, dtMax]`. So
+the pair `(H_Ad, R1)` recovers the full set-valued DT datum for both knots. -/
+theorem min_max_pair_reconstructs_datum :
+    [dtMinus fourOne, dtPlus fourOne] = [dtMin fourOne, dtMax fourOne] ∧
+    [dtMinus fiveTwo, dtPlus fiveTwo] = [dtMin fiveTwo, dtMax fiveTwo] := by decide
+
+/-- **No tension with the scalar-impossibility theorem.**
+`Driver14CharacterVarietyDTMenu.no_scalar_matches_chirality_split_datum` rules out a
+**single** scalar equalling the set-valued `5₂` datum; it says nothing about a
+*pair*. Stated here as the general fact: two scalars suffice to name a 2-element set
+that neither can name alone. -/
+theorem two_scalars_name_what_one_cannot
+    (f g : KKnot → Int)
+    (hf : f fiveTwo = 3) (hg : g fiveTwo = 4) :
+    [f fiveTwo, g fiveTwo] = [3, 4] ∧ f fiveTwo ≠ g fiveTwo := by
+  refine ⟨?_, ?_⟩ <;> rw [hf, hg] <;> decide
+
+/-! ### The cost side: how thin the evidence for the core actually is -/
+
+/-- **`4₁` supplies no evidence for `H_Ad` independent of `R1`.** Amphichirality
+collapses the two projections there (`dtMin = dtMax`), while they genuinely differ at
+`5₂`. So the whole empirical support for "the core is knot-independently `3`" is the
+**single** observation `dtMinus 5₂ = 3`: one non-degenerate data point, not two. -/
+theorem fourone_is_a_degenerate_observation :
+    dtMin fourOne = dtMax fourOne ∧ dtMin fiveTwo ≠ dtMax fiveTwo := by decide
+
+/-- The rival hypothesis `H_floor`: the knot-independent core is the triple of flat
+connections `{0, g, ḡ}` that **every** hyperbolic knot carries — i.e. the universal
+floor of `R1` itself, with no `𝔰𝔩₂` adjoint anywhere. -/
+def hyperbolicConnectionFloor : Int := 3
+
+/-- **`H_Ad` and `H_floor` are observationally indistinguishable on the certified
+data.** Their cores are equal, so they impose *identical* constraints on any
+completion — the same remainder, the same forcing, the same predictions. The
+numerical agreement `3 = dim 𝔰𝔩₂ = |{0, g, ḡ}|` is therefore not evidence for the
+adjoint reading over the connection-floor reading; only the **grading variable**
+(meridian `x = m²` for `H_Ad`, Chern–Simons value for `H_floor`) could separate them,
+and that separation is not made here. -/
+theorem h_ad_and_h_floor_are_indistinguishable
+    (extra : KKnot → Int) :
+    (hyperbolicConnectionFloor + extra fourOne = 3 ∧
+       hyperbolicConnectionFloor + extra fiveTwo = 4)
+    ↔ (sAtOne + extra fourOne = 3 ∧ sAtOne + extra fiveTwo = 4) := by
+  unfold hyperbolicConnectionFloor
+  rw [s_at_one_eq_three]
+
+/-- **Both rivals also fail `T4`'s genericity screen the same way.** `H_floor`'s
+Chern–Simons values `{0, +𝔙, −𝔙}` form a 3-element palindromic set exactly as the
+adjoint weights `{1, 0, −1}` do, so the palindromic shape — already known generic —
+cannot arbitrate either. Recorded as the shape identity that makes the point. -/
+theorem palindromic_shape_does_not_arbitrate :
+    adjointExponents.length = 3 ∧
+    (∀ e ∈ adjointExponents, (-e) ∈ adjointExponents) ∧
+    hyperbolicConnectionFloor = adjointExponents.length := by
+  refine ⟨by decide, by decide, by decide⟩
 
 end QOU.QBeta.AdjointIndexSetM3

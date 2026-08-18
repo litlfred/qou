@@ -4,8 +4,8 @@
   "computation": "aomega-m3-adjoint-index-set",
   "engine": "python",
   "scriptFile": "computations/probes/aomega_m3_adjoint_index_set.py",
-  "scriptCommitSha": "4c908d7e3623fe21ba227bb58fefdfa7e192ac34",
-  "computedAt": "2026-08-18T20:45:16Z",
+  "scriptCommitSha": "33b7977a1416b1c2cb154ad28b6b58508af31594",
+  "computedAt": "2026-08-18T20:57:55Z",
   "durationMs": 3,
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
@@ -34,7 +34,7 @@
   "data": {
     "forced_extra_4_1": 0,
     "forced_extra_5_2": 1,
-    "verdict": "M3 REFRAMED and partially advanced, NOT closed. (i) M2's abelian finding means M3's target is the INDEX SET, not a CoHA \u2014 a materially sharper goal. (ii) H_Ad reproduces M2's s(x) exactly, multiplicity-free, with no free parameter, and predicts the knot-independence that defeated every knot-specific reading. (iii) H_Ad is NOT a scalar answer (it fails the (3,4) vector like blockCountH3) \u2014 its content is the GRADING, not the count. (iv) The 3-element palindromic shape is generic, so H_Ad rests on its mechanism (Ad = the deformation-theory coefficient system; Ad = Sym^2 V = the H_2(q) partition-(2) block), not on pattern-matching. (v) Lean-proved: a knot-independent core FORCES a knot-dependent unit remainder, pinned to (0,1) under H_Ad \u2014 so the '5_2 extra state' is a structural requirement with a definite value, which any completion must derive independently. H_Ad remains a HYPOTHESIS; no derivation of the DT spectrum from Hecke data is claimed."
+    "verdict": "M3 REFRAMED and SHARPENED; still a HYPOTHESIS, and this run makes the case both stronger and thinner than the previous one claimed. STRONGER: (i) M2's abelian finding means M3's target is the INDEX SET, not a CoHA. (ii) H_Ad is the dtMin projection and Route A's R1 is the dtMax projection of the SAME chirality-split datum -- different halves, so H_Ad is NOT a re-description of R1, and the PAIR reconstructs the 2-element set {3,4} that no single scalar can equal (no tension with no_scalar_matches_chirality_split_datum, which excludes one scalar, not two). (iii) Lean-proved: a knot-independent core FORCES a knot-dependent unit remainder, pinned to (0,1) under H_Ad. THINNER: (iv) 4_1 is amphichiral, so its dtMin collapses onto dtMax and supplies NO evidence independent of R1 -- the whole support for 'core = 3' is the single observation S-(5_2)=3. (v) A rival H_floor (core = the {0,g,gbar} triple every hyperbolic knot carries = R1's universal floor, no sl_2 anywhere) reproduces every H_Ad prediction AND a palindromic 3-element grading, so the data cannot separate them; only the grading variable (meridian x=m^2 vs Chern-Simons value) could, and that is not settled here. (vi) Self-correction: the previously proposed completion -- '5_2 has one extra flat connection' -- IS R1, so it composes two imported readings rather than deriving anything from Hecke data. No derivation of the DT spectrum is claimed; nothing wired."
   },
   "assertions": [
     {
@@ -45,7 +45,7 @@
     {
       "name": "T2-knot-independence-predicted-and-observed",
       "passed": true,
-      "note": "This is H_Ad's one non-trivial already-satisfied prediction. Every knot-SPECIFIC invariant (Driver14's eight, plus Route A's R1) fails precisely here."
+      "note": "This is H_Ad's one non-trivial already-satisfied prediction. CORRECTION (self, this run): an earlier version of this note said 'Driver14's eight, PLUS Route A's R1, fail precisely here'. That is wrong about R1 and is retracted. R1 does NOT fail on the counts: it hits the dtMax vector (4_1,5_2)->(3,4) EXACTLY (docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md S6). R1's proved failure is a different one -- it is single-valued per knot while the 5_2 datum is the 2-element set {3,4} (Driver14CharacterVarietyDTMenu.no_scalar_matches_chirality_split_datum). Conflating 'fails knot-independence' with 'fails set-valuedness' would have hidden T5 below."
     },
     {
       "name": "T3-H_Ad-is-NOT-a-scalar-answer",
@@ -56,6 +56,21 @@
       "name": "T4-shape-alone-is-generic-so-mechanism-is-load-bearing",
       "passed": true,
       "note": "The 3-element palindromic SHAPE is generic (any {a,0,-a}). So the shape alone proves nothing; what distinguishes H_Ad is the MECHANISM (Ad governs H^1(M,Ad rho), the deformation theory the Borel singularities live on) plus the a=1 normalization forced by x=m^2. Stated so H_Ad cannot be defended on pattern-matching alone."
+    },
+    {
+      "name": "T5-H_Ad-is-dtMin-and-R1-is-dtMax",
+      "passed": true,
+      "note": "They are DIFFERENT halves of the same chirality-split datum, not the same half twice. R1 reads the larger chirality count on both knots; H_Ad's core equals the smaller on both. So H_Ad is not a re-description of R1 -- and the PAIR (H_Ad,R1) reconstructs the full set-valued datum {3,4} that no single scalar can equal (no tension with no_scalar_matches_chirality_split_datum, which excludes ONE scalar, not two). Lean: r1_is_the_dtmax_projection / h_ad_is_the_dtmin_projection / min_max_pair_reconstructs_datum / two_scalars_name_what_one_cannot."
+    },
+    {
+      "name": "T6-support-is-one-non-degenerate-observation",
+      "passed": true,
+      "note": "4_1's amphichirality COLLAPSES the two projections there, so it supplies no evidence for H_Ad independent of R1. The entire empirical support for 'the core is knot-independently 3' is the single observation S-(5_2) = 3. ONE data point, not two. Recorded so H_Ad is not read as twice-confirmed. Lean: fourone_is_a_degenerate_observation."
+    },
+    {
+      "name": "T7-H_Ad-not-distinguished-from-H_floor",
+      "passed": true,
+      "note": "PASSES as an ADVERSARIAL check: the cores are EQUAL, so the two hypotheses impose identical constraints on any completion and the certified data cannot separate them. The coincidence 3 = dim sl_2 = |{0,g,gbar}| is therefore NOT evidence for the adjoint reading. Worse for T4: H_floor also supplies a 3-element palindromic grading (Chern-Simons values {0,+V,-V}), so the palindromic shape cannot arbitrate either. Only the GRADING VARIABLE could -- meridian x=m^2 (H_Ad) vs Chern-Simons value (H_floor). GGM's s(x) is written in the meridian variable, which weakly favours H_Ad; 'weakly' is the honest word and no separation is claimed. Lean: h_ad_and_h_floor_are_indistinguishable / palindromic_shape_does_not_arbitrate."
     }
   ]
 }

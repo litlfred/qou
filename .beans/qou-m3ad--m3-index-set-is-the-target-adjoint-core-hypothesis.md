@@ -1,6 +1,6 @@
 ---
 # qou-m3ad
-title: 'M3 reframed: the target is the INDEX SET (not a CoHA); H_Ad = adjoint-weight core, with the 5_2 remainder Lean-forced to 1'
+title: 'M3: H_Ad is the dtMin projection (R1 is dtMax) -- not a re-description; but support is ONE data point and rival H_floor survives'
 status: in-progress
 type: task
 priority: high
@@ -8,7 +8,7 @@ tags:
     - g3-aomega
     - route-c
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-08-18T21:00:00Z
+updated_at: 2026-08-18T22:30:00Z
 parent: qou-rtec
 ---
 
@@ -57,10 +57,54 @@ partition-(2) Wedderburn block of H_2(q), so it is expressible in Hecke language
 This converts the otherwise-unfalsifiable move "add one more state for 5_2" into a
 structural requirement with a definite value.
 
+## Part 2 (2026-08-18): is H_Ad just R1 again? -- answered, both ways
+
+The adversarial objection was that H_Ad might be a re-description of Route A's
+surviving reading R1 (DT integer = #boundary-parabolic SL_2(C) flat connections =
+A-polynomial L-degree), since both hand back 3 for 4_1. Settled, using the certified
+chirality-split data (4_1 amphichiral -> (S+,S-)=(3,3); 5_2 chiral -> (4,3)):
+
+ NO, IT IS NOT (T5). R1 is the dtMax projection; H_Ad's core is dtMin. Different
+   halves of the same datum. And the PAIR reconstructs the 2-element set {3,4} --
+   which is NOT in tension with no_scalar_matches_chirality_split_datum, because that
+   theorem excludes ONE scalar equalling a 2-set, not two scalars naming it between
+   them. This is the sharpest positive structural statement M3 has produced.
+
+ BUT THE EVIDENCE IS ONE DATA POINT (T6). 4_1's amphichirality collapses dtMin onto
+   dtMax, so 4_1 gives NO evidence for H_Ad independent of R1. The entire support for
+   "the core is knot-independently 3" is the single observation S-(5_2) = 3.
+
+ AND A RIVAL SURVIVES (T7). H_floor: the core is the {0, g, gbar} triple that EVERY
+   hyperbolic knot carries -- i.e. R1's own universal floor, with no sl_2 anywhere.
+   Its core is also 3, so it imposes identical constraints and makes identical
+   predictions; and its Chern-Simons values {0,+V,-V} give a palindromic 3-element
+   grading too, so T4's shape screen cannot arbitrate either. The data CANNOT
+   separate H_Ad from H_floor. Only the grading VARIABLE could (meridian x=m^2 vs
+   Chern-Simons value); GGM's s(x) is written in the meridian variable, which weakly
+   favours H_Ad -- "weakly" is the honest word.
+
+ SELF-CORRECTIONS made at source (probe + Lean):
+   - T2's note claimed R1 "fails precisely here" (knot-independence). WRONG, retracted.
+     R1 hits the dtMax vector (3,4) exactly; its proved failure is single-valuedness
+     against a set-valued datum. Conflating the two failure modes would have hidden T5.
+   - The previously-proposed completion ("5_2 has one extra flat connection") IS R1.
+     So that completion composes two imported readings; it derives nothing from Hecke
+     data. Recorded so it is not later mis-sold as a derivation.
+
+Lean added (same file, core Int, lean-direct exit 0, sorry-free): dtPlus / dtMinus /
+dtMin / dtMax, r1_is_the_dtmax_projection, h_ad_is_the_dtmin_projection,
+min_max_pair_reconstructs_datum, two_scalars_name_what_one_cannot,
+fourone_is_a_degenerate_observation, h_ad_and_h_floor_are_indistinguishable,
+palindromic_shape_does_not_arbitrate. Probe now 7/7 (T5/T6/T7 added).
+
 ## NEXT STEP (the open piece)
 
-Derive the single extra 5_2 ray independently. Candidate (NOT verified): 5_2 has 4
-boundary-parabolic flat connections vs 4_1's 3, so the extra ray would be the
-additional geometric connection. If that lands, H_Ad + that = the full index set, and
-M3 becomes a derivation rather than a hypothesis. Until then: HYPOTHESIS ONLY, and no
-derivation of the DT spectrum from Hecke data is claimed.
+Separate H_Ad from H_floor -- that, not "find the extra 5_2 ray", is now the live
+question, since the extra ray is just R1. The discriminator is the grading variable:
+H_Ad grades the index set by meridian eigenvalue x = m^2, H_floor by Chern-Simons
+value. Two ways in: (a) a THIRD knot -- if some hyperbolic K has more than 3
+boundary-parabolic connections while its s(x) core stays x+1+1/x, H_floor breaks and
+H_Ad survives (GGM covers 4_1 and 5_2; Gu-Marino-type data on 6_1/7_2 would decide);
+(b) show the QOU-side Ad = Sym^2 V = partition-(2) block of H_2(q) reproduces the
+meridian grading, which H_floor has no route to. Until one lands: HYPOTHESIS ONLY,
+now with a NAMED RIVAL, and no derivation of the DT spectrum from Hecke data claimed.
