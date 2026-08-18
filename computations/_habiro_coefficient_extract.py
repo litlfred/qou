@@ -377,22 +377,30 @@ def mirror_pair_diff(x: dict, y: dict, u: sp.Symbol) -> dict:
 
     Returns dict with phi_1 / phi_2 / phi_4 / phi_8 multiplicities,
     plus the full factored form (truncated for storage)."""
-    by_m_x = {entry["m"]: entry["a_m"] for entry in x["habiro_coefficients"]}
-    by_m_y = {entry["m"]: entry["a_m"] for entry in y["habiro_coefficients"]}
-    m_max = max(
-        max(by_m_x.keys()) if by_m_x else -1,
-        max(by_m_y.keys()) if by_m_y else -1,
-    )
+    # Difference the TRACES over a common denominator, not the a_m.
+    #
+    # p_X(u) = u^{shift_X}·denom_X(u)·tr_X(u²) by construction, so
+    # Σ Δa_m·(u;u)_m = p_X − p_Y = denom_X·tr_X − denom_Y·tr_Y, which is
+    # proportional to (tr_X − tr_Y) ONLY when denom_X == denom_Y. Under
+    # convention C the mirror partners happened to share a denominator and the
+    # coefficient shortcut was silently valid. Under D they do not — all seven
+    # canonical pairs differ — so the old form subtracted two differently
+    # normalised objects and destroyed the cyclotomic structure, reporting
+    # Φ_1 = Φ_2 = Φ_4 = Φ_8 = 0 on every pair. Φ_1 = 0 was the tell: at q = 1
+    # the mirror halves coincide, so (u−1) MUST divide a true difference.
+    #
+    # Differencing the traces is correct in both conventions and is what the
+    # Φ_k multiplicity is defined on (bean qou-0ndb).
+    q_local = sp.Symbol('q', positive=True, real=True)
 
-    delta_coeffs = []
-    for m in range(m_max + 1):
-        a_x = _coeff_to_sympy(by_m_x.get(m, "0"), u)
-        a_y = _coeff_to_sympy(by_m_y.get(m, "0"), u)
-        delta = sp.expand(a_x - a_y)
-        delta_coeffs.append({"m": m, "a_m": str(delta), "integral": True,
-                             "deg_a_m": 0})
+    def _num_den(entry):
+        tr = sp.sympify(entry["tr_M_in_q"], locals={"q": q_local})
+        tr_u = sp.powsimp(sp.expand(tr.subs(q_local, u ** 2)), force=True)
+        return sp.fraction(sp.together(tr_u))
 
-    diff_expr = sp.expand(reconstruct(delta_coeffs, u))
+    nx, dx = _num_den(x)
+    ny, dy = _num_den(y)
+    diff_expr = sp.expand(sp.expand(nx * dy) - sp.expand(ny * dx))
     if diff_expr == 0:
         return {
             "diff_zero": True,

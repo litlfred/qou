@@ -432,3 +432,60 @@ number that reads as a finding when it is an artifact of an inapplicable
 construction. Either the mirror-pair Φ_k analysis needs redoing in the right
 variable for D, or it needs a guard that says "not applicable" rather than 0.
 Flagged, not silently shipped.
+
+## RETRACTED — the Φ_k structure DOES survive D. The zeros were a bug in `mirror_pair_diff`.
+
+The section above concluded that the Φ_k mirror structure "does not survive"
+the C→D migration and left the cause open. **That was wrong**, and the owner
+caught it in one question: *"aren't the D ladder rings supposed to be
+cyclotomic? I thought we wrote those specifically to be such."*
+
+They are. `def:habiro-ring` says so outright — the ring is
+`lim ℤ[q]/((q;q)_n)`, whose whole point is that it *"completes the polynomial
+ring ℤ[q] **at the cyclotomic ideals**."* Cyclotomic structure is the defining
+property, so its total absence was a defect signal, not a result. I read a
+zero as a finding — the exact failure this bean's own arc exists to correct.
+
+### The bug
+
+`mirror_pair_diff` differenced the **a_m coefficients**:
+
+    Σ Δa_m·(u;u)_m  =  p_X − p_Y  =  denom_X·tr_X − denom_Y·tr_Y
+
+which is proportional to `tr_X − tr_Y` **only when `denom_X == denom_Y`**.
+Measured: under D that fails on **all seven** canonical pairs. Under C the
+mirror partners happened to share a denominator, so the shortcut was silently
+valid and the law came out clean. It was never differencing what it claimed to.
+
+`Φ_1 = 0` was the tell and I under-read it: at q = 1 the two mirror halves
+coincide, so `(u−1)` MUST divide any true difference. Under the broken form
+the p−n difference evaluated to **6** at u = 1.
+
+### Fixed, and the law holds 7/7 under D
+
+Difference the traces over a common denominator (correct in both conventions):
+
+    A    pair                        Φ_1  Φ_2  Φ_4  Φ_8    2⌊(A−1)/2⌋
+    1    proton − neutron              1    1    1    0        0  ✓
+    3    helium-3 − tritium            1    1    3    2        2  ✓
+    5    lithium-5 − helium-5          1    1    5    4        4  ✓
+    7    beryllium-7 − lithium-7       1    1    7    6        6  ✓
+    8    boron-8 − lithium-8           1    1    8    6        6  ✓
+    9    boron-9 − beryllium-9         1    1    9    8        8  ✓
+   10    carbon-10 − beryllium-10      1    1   10    8        8  ✓
+
+**D is cleaner than C, not worse:**
+
+* `Φ_1 = 1` universally — the classical-limit kill, now holding by construction
+  rather than coincidence.
+* `Φ_2 = 1` **universally**, where under C it held only at A ∈ {1, 8, 10}. The
+  audit doc's "Φ_2 is specific to A = 1" reading is a C artifact of the same
+  denominator bug.
+* `Φ_4 = A` **exactly**, on every pair — a regularity C did not show at all.
+
+### Also withdrawn
+
+The "u = √q is vestigial under D" mechanism recorded above. It is false in
+general: for A ≥ 2 the Markov interface `z(q) = 1/(√q + 1/√q)` puts genuine
+half-integer powers into tr_M regardless of convention (`q**(125/2)` appears
+in the family). u is needed; the denominators were the problem.
