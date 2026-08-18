@@ -625,3 +625,57 @@ it removes is the impression that D is disqualified on the numbers.
    c_3 to absorb.  The un-derived alpha is open in C exactly as much as in D,
    which is why there is no C-frame derivation to port.  That is the real
    content of this bean.
+
+
+## Formalize-first prune on the PHASE (2026-08-18) — narrow licence, not a block
+
+Probe: computations/qbeta/qbeta_alpha_entropy_bound_probe.py (3/3).
+
+Before attempting to derive alpha, I asked of the phase the question PROBE 4
+asked of c_3: invert the ladder for alpha_required, then count reliable digits
+against the PSLQ entropy floor n*log10(2H).
+
+    cos(alpha_eff_req) = Q_codata / (Q_A (1 - u^2))
+    sigma(alpha_eff)   = cot(alpha_eff) * sigma_rel(Q_beta)
+
+MY HYPOTHESIS WAS WRONG.  I predicted a blanket entropy block and asserted
+best-case D_eff < cheapest floor.  It FAILED: 5.61 > 3.90.  The phase is NOT
+as noise-starved as c_3.  Third refuted prediction in this tranche; the
+measurement beat the guess each time.
+
+What is true, as a per-(sigma, basis) grid:
+
+    D_eff(alpha)  experimental sigma 7.8e-7 : 3.61427 digits
+    D_eff(alpha)  optimistic   sigma 7.8e-9 : 5.61427 digits
+
+    basis                floor    experimental   optimistic
+    minimal n=3 H<=10    3.903    NO             yes
+    standard n=4 H<=100  9.204    NO             NO
+    wide n=6 H<=100     13.81     NO             NO
+
+Identifying alpha by matching alpha_required is permitted by entropy ONLY for a
+3-term height<=10 basis AND only under a sigma nobody claims.  Every realistic
+basis is blocked at both readings (deficit 3.59 digits even at the optimistic
+sigma).  A narrow licence, not a green light -- worth stating before anyone
+runs a wide search.
+
+## The amplifier on the phase is NOT 1/u^3
+
+cot(alpha_eff) = 17.6436.  The rung's amplifier is 1/u^3 = 1.6e6 (now proved
+exactly: QOU.QBeta.c3Of_sub_mul_u_cubed).  Two different amplifiers; conflating
+them misattributes the phase's noise budget.  The cot is large for a structural
+reason -- alpha_eff is small, so the ladder reads the phase through the FLAT
+part of the cosine.
+
+## Corrects my own earlier note in this bean
+
+I recorded alpha_required as 'anchor-stable to 0.0005 %' as though that were a
+structural fact.  It is not: with ~3.6 honest digits there is not enough
+resolution for the two anchors to disagree, and D_eff comes out IDENTICAL at
+both.  The stability is a resolution artifact, not evidence.
+
+## Still open, unchanged
+
+alpha is asserted in both conventions and derived in neither.  This bounds one
+ROUTE (fitting the anchor); a categorical derivation is not limited by
+sigma(Q_beta) and remains the open item.
