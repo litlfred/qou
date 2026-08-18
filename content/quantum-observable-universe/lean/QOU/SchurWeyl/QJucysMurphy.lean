@@ -1081,7 +1081,18 @@ whole shape (one `d_λ`-dimensional block per partition, `Θ` acting by a scalar
 that fails — so the excluded case needs a *different* statement, via cellular/Specht theory rather
 than seminormal form.  Nothing here claims that case is true, and nothing here claims it is false.
 It is open and is tracked as such; do not read the `0 < q` hypothesis as an artefact of this proof
-route. -/
+route.
+
+**The `0 < q` half is stronger than the construction needs — recorded, not silently changed.**
+When this hypothesis was put to the owner I described the constraint as `0 < q ∧ q ≠ 1`. That was
+my reading, and it was not sharp: `SeminormalRep.seminormalRep` and `hoefsmit_seminormal_rep` both
+take `(hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)`, which over `ℝ` says exactly *`q` is not a root of unity* —
+the genericity condition `[ram1997]` presupposes — and which **admits negative `q`**.  `0 < q ∧
+q ≠ 1` implies both (`q > 0` with `q ^ 2 = 1` forces `q = 1`), so the statement below is **sound,
+just narrower than necessary**: it excludes the whole `q < 0` branch that the construction handles.
+The owner's ruling is kept as given rather than quietly widened; when the `sorry` is discharged
+from `seminormalRep`, the hypotheses can be relaxed to `q ≠ 0 ∧ q ^ 2 ≠ 1` and the discharge
+becomes direct instead of needing a strengthening step. -/
 theorem barSymJMSum_block_eigenvalue {N : ℕ} (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1)
     (lam : Partition N) :
     ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
