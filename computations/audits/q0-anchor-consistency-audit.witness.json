@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T20:58:01.994068+00:00",
-  "commitSha": "4f542c4d449221d7483e79adb818336b42cc4a96",
+  "computedAt": "2026-08-18T21:39:17.442311+00:00",
+  "commitSha": "ef606abbd858428dacfc2f9167b1dfedcbee47ca",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -36,7 +36,7 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 653,
+      "Q0_OK": 654,
       "Q0_AMBIGUOUS": 15,
       "Q0_INDEPENDENT": 6,
       "Q0_ANCHOR_MISSING": 1889,
@@ -7696,6 +7696,10 @@
         },
         {
           "witness": "atom-braid-active-partitions.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "atom-dual-q0-mpfr-demo.witness.json",
           "detail": ""
         },
         {
