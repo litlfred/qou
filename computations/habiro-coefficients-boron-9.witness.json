@@ -1,14 +1,14 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-18T16:09:03.907352+00:00",
-  "commitSha": "06f7907c98af57a87635b879184d4156351546eb",
+  "computedAt": "2026-08-18T16:49:57.723152+00:00",
+  "commitSha": "b838c46c628d8da8be8b3c4d1d0afa309d28764f",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-boron-9",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "eec999ddb8d7",
+  "scriptHash": "38a8e150e5d2",
   "scriptCommitSha": "dd6f059cdbd12df2b306a33644593f2972ed0862",
   "precisionMetadata": {
     "compute_dps": 70,
