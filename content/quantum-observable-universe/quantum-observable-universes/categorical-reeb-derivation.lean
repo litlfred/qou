@@ -62,8 +62,11 @@ structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
     LaTeX: `\label{def:categorical-reeb-derivation}` -/
 structure CategoricalReebDerivation (C : Type u) [Category.{v} C]
     [MonoidalCategory C] extends FrobeniusHopfSubstrate C where
-  /-- The Reeb derivation `ξ_q : A → A`. -/
-  reeb : obj ⟶ obj
+  /-- The Reeb derivation `ξ_q : A → A`, carried as an element of the
+      endomorphism monoid `End obj` so that the periodicity field below
+      can use its monoid power.  `End obj` unfolds to `obj ⟶ obj`, so
+      `reeb ≫ contact` still elaborates. -/
+  reeb : End obj
   /-- The contact form `θ : A → 𝟙`. -/
   contact : obj ⟶ (𝟙_ C)
   /-- The period of the Reeb flow. -/

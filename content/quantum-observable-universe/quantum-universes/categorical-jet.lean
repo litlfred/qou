@@ -1,3 +1,4 @@
+import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.CategoryTheory.Preadditive.Basic
 import QOU.Basic
 import QOU.Glossary
