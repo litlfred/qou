@@ -48,6 +48,15 @@ constraint this file tests the two conventions against.
    (equivalently `bar(alpha_D) + alpha_D = h²/2`), and
 6. `phaseTwiceD_sub_hsq_bar_odd` — the **bar-odd part** of the D-frame
    phase is `2 alpha_D - h²/2`, i.e. `alpha_D - h²/4`.
+7. §4 — what the anomaly *is*. `zD_bar_eq_negative_loop`: under D,
+   `bar(z_D) = z_D - h` is the **negative-stabilisation loop value**, so bar
+   exchanges the two Markov loop values — exactly what mirror must do, since
+   mirroring exchanges positive and negative crossings. C's `z` is bar-FIXED,
+   i.e. mirror-*blind*. And `phaseTwice_projected_eq_loopMean`: the item-6
+   projection is not a shift but the same phase evaluated at the **mean of the
+   two loop values**, which under D (`zD_bar_mean_eq_loop_mean`) coincides with
+   the bar-mean. So it is the phase *formula*, written in the bar-fixed C
+   frame, that needed re-deriving under D — not the convention.
 
 ## Scope — what this does NOT do
 
@@ -192,5 +201,68 @@ theorem phaseTwiceD_sub_hsq_bar_odd (q : F) (hq : q ≠ 0) (hd : q ^ 2 + 1 ≠ 0
       = -(2 * phaseTwice (zD q) (q - q⁻¹) - (q - q⁻¹) ^ 2) := by
   have hanom := phaseTwiceD_bar_anomaly q hq hd
   linear_combination 2 * hanom
+
+/-! ## §4. What the D-frame anomaly actually *is*: bar exchanges the two loop values
+
+§3 says `z_D - bar(z_D) = h`. Read with the Markov axioms that is a much
+sharper statement than "D fails a parity test", and it reverses the naive
+reading of §2-§3.
+
+The two stabilisation loop values are `tr(x sigma_n) = z tr(x)` and
+`tr(x sigma_n⁻¹) = (z - h) tr(x)` (block
+`prop:jones-markov-trace-stabilisation`). So `z_D - bar(z_D) = h` says exactly
+
+  `bar(z_D) = z_D - h`  =  the NEGATIVE-stabilisation loop value.
+
+**Under convention D the bar involution exchanges the two loop values** — which
+is precisely what mirror symmetry must do, since mirroring a link exchanges
+positive and negative crossings, hence exchanges the two stabilisation moves.
+Convention C's parameter is bar-FIXED (§2), i.e. mirror-*blind*: it does not
+see the crossing-sign exchange at all.
+
+So D is the convention in which `z` transforms correctly under mirror, and the
+`h²/2` phase anomaly is not a defect of D — it is the signature that D
+implements mirror ↔ crossing-sign exchange while the phase formula
+`alpha = (z-1)h/2`, which was written in the bar-fixed C frame, was carried
+over unchanged. It is the *phase formula* that needed re-deriving under D, not
+the convention.
+
+And the re-derivation is forced: `phaseTwice_projected_eq_loopMean` below shows
+the §3 projection is not a shift at all but the same phase evaluated at the
+**mean of the two loop values** `(z + (z-h))/2`, which under D
+(`zD_bar_mean_eq_loop_mean`) is the same thing as the bar-mean. Symmetrising
+over the mirror and symmetrising over the crossing sign are one operation in
+this frame. -/
+
+/-- Twice the mean of the two Markov stabilisation loop values `z` and `z - h`:
+    `loopMeanTwice z h = 2z - h`. Kept doubled so §4 stays division-free. -/
+def loopMeanTwice (z h : R) : R := 2 * z - h
+
+/-- **The §3 projection is the phase at the mean loop value, not a shift.**
+    `2·(2 alpha) - h² = (loopMeanTwice z h - 2)·h`, i.e. removing the bar
+    anomaly from `alpha = (z-1)h/2` gives exactly `((z + (z-h))/2 - 1)·h/2` —
+    the same formula with the positive-stabilisation loop value `z` replaced by
+    the mean of the two. Pure `ring`, true in any `CommRing` and for any `z`. -/
+theorem phaseTwice_projected_eq_loopMean (z h : R) :
+    2 * phaseTwice z h - h ^ 2 = (loopMeanTwice z h - 2) * h := by
+  unfold phaseTwice loopMeanTwice; ring
+
+/-- **Under convention D, bar sends `z` to the negative-stabilisation loop
+    value.** `bar(z_D) = z_D - h`. Mirroring a link exchanges positive and
+    negative crossings, hence exchanges the two stabilisation moves, and D's
+    Markov parameter tracks that exchange exactly. (Convention C's does not:
+    `z_C` is bar-fixed, so `bar(z_C) - (z_C - h) = h ≠ 0`.) -/
+theorem zD_bar_eq_negative_loop (q : F) (hq : q ≠ 0) (hd : q ^ 2 + 1 ≠ 0) :
+    zD q⁻¹ = zD q - (q - q⁻¹) := by
+  linear_combination -(zD_sub_bar_eq_h q hq hd)
+
+/-- **Under D the bar-mean and the loop-mean coincide**:
+    `z_D + bar(z_D) = 2 z_D - h = loopMeanTwice z_D h`. Symmetrising over the
+    mirror and symmetrising over the crossing sign are the same operation in
+    this frame — which is why the §3 projection has no residual freedom. -/
+theorem zD_bar_mean_eq_loop_mean (q : F) (hq : q ≠ 0) (hd : q ^ 2 + 1 ≠ 0) :
+    zD q + zD q⁻¹ = loopMeanTwice (zD q) (q - q⁻¹) := by
+  unfold loopMeanTwice
+  linear_combination zD_bar_eq_negative_loop q hq hd
 
 end QOU.QBeta
