@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-18T20:48:45.304594+00:00",
-  "commitSha": "d721f1fc350d783fdbdaaea9cb5c34fd8c5cfddb",
+  "computedAt": "2026-08-18T16:21:42.295150+00:00",
+  "commitSha": "a7db1ffa29276e931fdd34d1a981483253b716be",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "33ccaac86640",
@@ -37,9 +37,9 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 653,
+      "Q0_OK": 652,
       "Q0_AMBIGUOUS": 15,
-      "Q0_INDEPENDENT": 5,
+      "Q0_INDEPENDENT": 6,
       "Q0_INDEPENDENT_NO_REASON": 1,
       "Q0_ANCHOR_MISSING": 1891,
       "Q0_VALUE_MISSING": 1,
@@ -2527,6 +2527,10 @@
           "detail": ""
         },
         {
+          "witness": "items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "jet-algebraic-independence.witness.json",
           "detail": ""
         },
@@ -4080,10 +4084,6 @@
         },
         {
           "witness": "gswz_padic_dilog_modp.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "gswz_program_convention_immunity.witness.json",
           "detail": ""
         },
         {
@@ -9057,10 +9057,6 @@
           "detail": ""
         },
         {
-          "witness": "items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "iterative-lp-dual-h6-deuteron.witness.json",
           "detail": ""
         },
@@ -10600,6 +10596,10 @@
         }
       ],
       "Q0_INDEPENDENT": [
+        {
+          "witness": "qbeta-5two-trace-field-disc23-not-qsqrt7.witness.json",
+          "detail": ""
+        },
         {
           "witness": "dt-crossknot-snappy-slope-hardening.witness.json",
           "detail": ""
