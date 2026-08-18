@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T00:44:48Z
-updated_at: 2026-08-17T01:52:17Z
+updated_at: 2026-08-18T05:59:11Z
 ---
 
 Opened working the many-body R term at owner direction ('go on many body').
@@ -172,3 +172,54 @@ same structural place the many-body term must live. Not excluded by anything
 proved; also not established.
 
 Probe: computations/probes/coulomb_charge_is_linear_in_z_probe.py
+
+
+## 2026-08-18 — the multi-bond quadratic lead is CLOSED at n=3
+
+The last named lead: a Q^2-like pair term cannot live at one bond (single
+interface = 2-dim span{1,sigma}), so it would have to live at MULTI-BOND level.
+That is also the one place the many-body collective term could come from.
+
+**A circular test, avoided.** Feeding a multi-bond word to
+pyhecke.trace.markov_trace_at_q and checking factorisation is CIRCULAR — the
+production trace is *implemented as* a bare product over generators
+(`tr_M *= Vs` in the per-generator loop), and its docstring says so ('Only the
+descended term = Pi V_i'). All three entry points (markov_trace_at_q,
+markov_trace_symbolic_eval, tr_M_at_q0_via_crt) carry the same 'descended'
+wording. Same shape as the circular CHECK-1 in the hyperbola probe.
+
+**The independent route** is pyhecke.trace.nf_tr — a linear functional on the
+Groebner-Shirshov normal-form basis of H_3,
+NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)] — which contains the
+INTERLEAVED word (0,1,0). The product formula depends only on the per-generator
+multiset, so it must give the same answer for sigma0 sigma1 sigma0 and for
+sigma0^2 sigma1. The NF functional can tell them apart.
+
+**Result — it doesn't:**
+
+    sigma0 sigma1 sigma0   INTERLEAVED   0.6911664783584446
+    sigma0^2 sigma1        sequential    0.6911664783584445
+    (z*h + 1) * z          PRODUCT       0.6911664783584445
+    interleaved - product = 7.4e-17
+
+The product formula is EXACT for the interleaved word. So log tr is strictly
+additive over generators and NO term quadratic in crossings across distinct
+bonds exists at n=3. The trace does not couple distinct bonds at all.
+
+**Scope-(a), narrow, and the limits are real:**
+* n = 3 ONLY — H_3's NF basis has exactly one interleaved word. General-n
+  multiplicativity is not established here; it is standard for far-apart
+  generators (Markov property iterated down the tower), and this adds the
+  adjacent case at the smallest n.
+* float64 resolution — TR_M is a float64 table, so agreement resolves only to
+  ~1e-16. A cross term below that is invisible. But a 1e-16 term cannot supply a
+  12.1x Coulomb shortfall.
+
+**Where this leaves the axis.** Both open items on qou-ls86 now have their named
+lead closed: the Coulomb order-deficit (linear vs quadratic in charge) and the
+many-body collective term were to share a multi-bond quadratic source, and this
+trace has none. What remains is outside the trace: a different word class, a
+different functional, or physics the framework does not represent (shell,
+electrostatics). No candidate is proposed.
+
+Probe: computations/probes/markov_multiplicativity_interleaved_probe.py
