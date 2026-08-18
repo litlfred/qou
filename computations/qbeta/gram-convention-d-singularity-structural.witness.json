@@ -1,0 +1,153 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-18T08:32:45.373736+00:00",
+  "commitSha": "70b10900e3c64ad905736dc416ea64e585ca3855",
+  "assertions": [
+    {
+      "name": "convention_D_determinant_is_exactly_zero_at_every_precision",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|det| under D is exactly 0 at 30, 60 and 120 dps. Not small — zero. An ill-conditioned but invertible form cannot do that at any precision, let alone all three."
+    },
+    {
+      "name": "convention_D_null_eigenvalue_tracks_working_precision",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "min|eig| under D: 4.33951e-32 (30 dps) -> 1.26988e-61 (60) -> 2.6656e-121 (120) — falling ~30 orders per 30-dps step, i.e. pinned to epsilon rather than converging to a nonzero limit. That is an exact null direction being resolved — the signature float64 (cond 4.9e16) could not distinguish."
+    },
+    {
+      "name": "convention_C_gram_stays_non_singular",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|det| under C is 0.189205 at 120 dps — bounded away from zero, so the collapse above is attributable to z alone (the only line that differs between the two builds)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "gram-convention-d-singularity-structural",
+  "scriptFile": "gram_convention_d_singularity_structural_probe.py",
+  "scriptHash": "777e54ea0116",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Bean qou-cds2. Separates the two readings the bean holds at once: the convention-D Markov-Gram det = 3.998e-17 / cond 4.9e16 in float64 is consistent BOTH with an exactly singular form seen through f64 epsilon and with a merely ill-conditioned one, and the bean itself notes np.linalg.inv is 'inverting rounding noise'. Rebuilding the 6x6 Gram at 30/60/120 dps from pyhecke's own _nf_of_word_mp / NF_BASIS with z_D = q^3/(q^2+1) swapped for the hardcoded C spelling (gram.py has no D path; both gram_matrix_mp and z_mp hardcode 1/(sqrt q + sqrt(1/q)), a detector-blind C spelling) shows |det| collapsing with working precision under D while C stays non-singular -- i.e. the singularity is STRUCTURAL, an exact zero, not a conditioning artifact. This validates the aim of the named repair (quotient by the trace radical). Switches no convention, touches gram.py not at all, and proposes no value.",
+  "data": {
+    "anchor": "proton",
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "z_C": "0.499320334183694452413442680257666303751948164041532194568092",
+    "z_D": "0.612688037146465251595829863945899248026308391545064759724287",
+    "spectra": [
+      {
+        "convention": "C",
+        "dps": 30,
+        "abs_det": "0.189205219144036750533636703513356789149574303338587840643090",
+        "cond": "34.1558302097900756584725607736208871467134031546362569684017",
+        "min_abs_eigenvalue": "0.101796670849872896354039426387578728779004960892406381776974",
+        "eigenvalues": [
+          "-0.855067262129865331133318897110364204629718791359075449480575",
+          "0.101796670849872896354039426387578728779004960892406381776974",
+          "0.855067262129865331133318897110068381790260911932046051268594",
+          "0.855067262129865331133318897110068381790260911932046051268594",
+          "0.855067262129865331133318897110364204629718791359075449480575",
+          "3.47694980547014544885165366031793780094343421975842552525343"
+        ]
+      },
+      {
+        "convention": "C",
+        "dps": 60,
+        "abs_det": "0.189205219144036750533636703513817827927227327481940632444329",
+        "cond": "34.1558302097900756584725607735815290274674073613686329201742",
+        "min_abs_eigenvalue": "0.101796670849872896354039426387677501487188196988014660143089",
+        "eigenvalues": [
+          "-0.855067262129865331133318897110105755596103129618630367672803",
+          "0.101796670849872896354039426387677501487188196988014660143089",
+          "0.855067262129865331133318897110105755596103129618630367672803",
+          "0.855067262129865331133318897110105755596103129618630367672803",
+          "0.855067262129865331133318897110105755596103129618630367672803",
+          "3.47694980547014544885165366031739067325849202504548432778935"
+        ]
+      },
+      {
+        "convention": "C",
+        "dps": 120,
+        "abs_det": "0.189205219144036750533636703513817827927227327481940632444329",
+        "cond": "34.1558302097900756584725607735815290274674073613686329201742",
+        "min_abs_eigenvalue": "0.101796670849872896354039426387677501487188196988014660143089",
+        "eigenvalues": [
+          "-0.855067262129865331133318897110105755596103129618630367672803",
+          "0.101796670849872896354039426387677501487188196988014660143089",
+          "0.855067262129865331133318897110105755596103129618630367672803",
+          "0.855067262129865331133318897110105755596103129618630367672803",
+          "0.855067262129865331133318897110105755596103129618630367672803",
+          "3.47694980547014544885165366031739067325849202504548432778935"
+        ]
+      },
+      {
+        "convention": "D",
+        "dps": 30,
+        "abs_det": "0",
+        "cond": "97484229561687201786384205433552.0000000000000000000000000000",
+        "min_abs_eigenvalue": "4.33951136922439603421777030016342881202792106532656335460274e-32",
+        "eigenvalues": [
+          "-0.752702113251965401593779351620026142179960117523059512581875",
+          "-4.33951136922439603421777030016342881202792106532656335460274e-32",
+          "0.752702113251965401593779351620026142179960117523059512581875",
+          "0.752702113251965401593779351620321965019417996950088910793856",
+          "0.752702113251965401593779351620420572632570623425765376864516",
+          "4.23033922503022573486228705243168623557825600220832792215057"
+        ]
+      },
+      {
+        "convention": "D",
+        "dps": 60,
+        "abs_det": "0",
+        "cond": "3.33129608885805795058887161693768996020074754061772474330721e+61",
+        "min_abs_eigenvalue": "1.26987788301950448574489971336703138757329808955187131513422e-61",
+        "eigenvalues": [
+          "-0.752702113251965401593779351620236137830175598874904681326028",
+          "-1.26987788301950448574489971336703138757329808955187131513422e-61",
+          "0.752702113251965401593779351620236137830175598874904681326028",
+          "0.752702113251965401593779351620236137830175598874904681326028",
+          "0.752702113251965401593779351620236137830175598874904681326028",
+          "4.23033922503022573486228705243309214823165904931616666225196"
+        ]
+      },
+      {
+        "convention": "D",
+        "dps": 120,
+        "abs_det": "0",
+        "cond": "1.58701328895304546466610086290258106508477708168160504814172e+121",
+        "min_abs_eigenvalue": "2.66559785886921306284822634685588580084064617543519525058217e-121",
+        "eigenvalues": [
+          "-0.752702113251965401593779351620236137830175598874904681326028",
+          "2.66559785886921306284822634685588580084064617543519525058217e-121",
+          "0.752702113251965401593779351620236137830175598874904681326028",
+          "0.752702113251965401593779351620236137830175598874904681326028",
+          "0.752702113251965401593779351620236137830175598874904681326028",
+          "4.23033922503022573486228705243309214823165904931616666225196"
+        ]
+      }
+    ]
+  },
+  "q0Anchor": "proton"
+}
