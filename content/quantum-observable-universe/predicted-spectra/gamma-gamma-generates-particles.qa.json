@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.lean"
   },
   "source_hashes": {
-    "md": "4ff6ce1c5894",
+    "md": "2077253ac4da",
     "ts": "f46e23f5fa14",
     "lean": "34cd5987c2f7",
     "lean_statement": "3b29b561ce94"
@@ -2318,7 +2318,27 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "2077253ac4da",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7",
+          "lean_statement": "3b29b561ce94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-18T22:01:41.822Z",
+        "reviewed_sha": "3b960e3e91f735a3e65dabf01f9d712d0006ea6f"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-18T22:01:41.822Z"
 }
