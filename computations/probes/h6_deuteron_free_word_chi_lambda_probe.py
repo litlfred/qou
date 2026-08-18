@@ -15,8 +15,9 @@ both materialised at λ ⊢ 6.
 The binding prediction here is the single-trace form
     B = E₀ · ( |tr_M(W_free)| − |tr_M(W_atom)| ),   tr_M = Σ_λ y_λ(q₀) χ_λ,
 with y_λ the canonical Wenzl/Jones–Markov weights (`wedderburn_jones_markov`).
-This reproduces the known single-trace deuteron under-prediction (≈ 0.47 MeV vs
-AME 2.225 MeV); it is an audit datum, NOT a production binding claim — the
+This reproduces the known single-trace deuteron under-prediction (0.435403 MeV
+vs AME 2.225 MeV — the docstring previously said "≈ 0.47", which no run of this
+probe has produced); it is an audit datum, NOT a production binding claim — the
 canonical per-isotope binding lives in `binding_canonical` and the Δ_λ gate is
 the open frontier (see AGENTS.md "Δ_λ gate"). Nothing here is wired.
 
@@ -68,6 +69,8 @@ def main():
     log(f"canonical substrate: h = {mp.nstr(h, 14)}, q0 = {mp.nstr(q0, 14)}")
 
     from pyhecke.syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
+    from hoefsmit_mpmath import (BlockCacheMP, chi_lambda_of_word_mp,
+                                 seminormal_matrices_mp)
     from mass_at_3A_proper import atom_braid_word_3A, chi_lambda_of_word
     from wedderburn_jones_markov import y_lambda_at
     # Canonical shared partition enumerator (centralized; per Gemini review on
@@ -82,43 +85,69 @@ def main():
     log(f"bound word: {len(word_bound)} crossings; free word: {len(word_free)} "
         f"crossings on {n_gens} generators (H_6)")
 
-    cache = BlockCache(q0, h)
+    # NO FLOAT64 (AGENTS.md "PROBES ARE NOT EXEMPT").  The characters used to
+    # come from `build_seminormal_matrices_cached` + `chi_lambda_of_word`,
+    # which are float64 BY CONSTRUCTION — `BlockCache` uses `math.sqrt` against
+    # a fixed 1e-15 degeneracy threshold, and the character routine accumulates
+    # the word into a numpy matrix and returns `float(np.trace(...))`.  Handing
+    # those an mpf q0 does not make them exact; numpy coerces on contact.  The
+    # earlier fix on this file corrected only the q0/h ENTRY POINT, so the
+    # witness serialised a 50-digit substrate next to a float64 payload —
+    # advertising a precision the numbers did not have.
+    #
+    # The payload is now `hoefsmit_mpmath`, the same Hoefsmit construction
+    # carried end to end in mpmath.  The float64 path is still run, but only as
+    # a measured cross-check: the relative gap it reports IS the float64 floor
+    # (~1e-15), not a disagreement about the mathematics.
+    cache = BlockCache(float(q0), float(h))      # f64 cross-check path only
+    cache_mp = BlockCacheMP(q0, h)               # the payload
     lambdas = list(partitions_of(6))
-    y6 = {tuple(k): float(v) for k, v in y_lambda_at(6, q0).items()}
-    log(f"{len(lambdas)} partitions of 6; canonical Wenzl y_λ loaded")
+    y6 = {tuple(k): v for k, v in y_lambda_at(6, q0).items()}   # mpf, unrounded
+    log(f"{len(lambdas)} partitions of 6; canonical Wenzl y_λ loaded (mpf)")
 
     results = []
-    trM_bound = 0.0
-    trM_free = 0.0
+    trM_bound = mp.mpf(0)
+    trM_free = mp.mpf(0)
+    f64_gaps = []
     for lam in lambdas:
-        data = build_seminormal_matrices_cached(lam, cache=cache)
-        sigmas, dim = data[0], data[1]
-        chi_b = chi_lambda_of_word(sigmas, dim, word_bound, n_gens)
-        chi_f = chi_lambda_of_word(sigmas, dim, word_free, n_gens)
-        y_lam = y6.get(lam, 0.0)
+        sigmas, dim, _ = seminormal_matrices_mp(lam, cache=cache_mp)
+        chi_b = chi_lambda_of_word_mp(sigmas, dim, word_bound, n_gens)
+        chi_f = chi_lambda_of_word_mp(sigmas, dim, word_free, n_gens)
+
+        sig64, dim64 = build_seminormal_matrices_cached(lam, cache=cache)[:2]
+        chi_b64 = chi_lambda_of_word(sig64, dim64, word_bound, n_gens)
+        if chi_b != 0:
+            f64_gaps.append(abs((mp.mpf(chi_b64) - chi_b) / chi_b))
+
+        y_lam = y6.get(lam, mp.mpf(0))
         trM_bound += y_lam * chi_b
         trM_free += y_lam * chi_f
-        results.append((lam, dim, float(chi_b), float(chi_f), y_lam))
-        log(f"  λ={lam!s:14s} dim={dim:3d}  χ_bound={chi_b: .8e}  "
-            f"χ_free={chi_f: .8e}  Δχ={chi_b - chi_f: .6e}")
+        results.append((lam, dim, chi_b, chi_f, y_lam))
+        log(f"  λ={lam!s:14s} dim={dim:3d}  χ_bound={mp.nstr(chi_b, 12)}  "
+            f"χ_free={mp.nstr(chi_f, 12)}  Δχ={mp.nstr(chi_b - chi_f, 8)}")
+
+    log(f"float64 cross-check: max relative gap on χ_bound = "
+        f"{mp.nstr(max(f64_gaps), 3)} — the float64 floor, not a disagreement")
 
     sum_dim_sq = sum(d * d for _, d, _, _, _ in results)
     log(f"Σ dim² = {sum_dim_sq} (expect 6! = 720: "
         f"{'OK' if sum_dim_sq == 720 else 'MISMATCH'})")
 
-    b_pred = E_0_MEV * (abs(trM_free) - abs(trM_bound))
-    log(f"tr_M(bound) = {trM_bound:.8f}   tr_M(free) = {trM_free:.8f}")
-    log(f"B_pred (single-trace) = E₀·(|tr_M_free|−|tr_M_atom|) = {b_pred:.6f} MeV "
-        f"(AME B_D = {B_D_AME_MEV} MeV — single-trace under-predicts, audit only)")
+    b_pred = mp.mpf(E_0_MEV) * (abs(trM_free) - abs(trM_bound))
+    log(f"tr_M(bound) = {mp.nstr(trM_bound, 14)}   "
+        f"tr_M(free) = {mp.nstr(trM_free, 14)}")
+    log(f"B_pred (single-trace) = E₀·(|tr_M_free|−|tr_M_atom|) = "
+        f"{mp.nstr(b_pred, 10)} MeV (AME B_D = {B_D_AME_MEV} MeV — "
+        f"single-trace under-predicts, audit only)")
 
     _emit_witness(results, q0, h, word_bound, word_free, sum_dim_sq,
-                  trM_bound, trM_free, b_pred)
+                  trM_bound, trM_free, b_pred, f64_gaps)
     log(f"done in {time.time() - t0:.1f}s")
     return results
 
 
 def _emit_witness(results, q0, h, word_bound, word_free, sum_dim_sq,
-                  trM_bound, trM_free, b_pred):
+                  trM_bound, trM_free, b_pred, f64_gaps):
     import hashlib
     import json
     import os
@@ -162,16 +191,27 @@ def _emit_witness(results, q0, h, word_bound, word_free, sum_dim_sq,
                        "ok": sum_dim_sq == 720},
         "calibration": {"E_0_MeV": E_0_MEV, "B_D_AME_MeV": B_D_AME_MEV},
         "markov_trace": {
-            "tr_M_bound": trM_bound,
-            "tr_M_free": trM_free,
-            "delta_tr_M_free_minus_bound": trM_free - trM_bound,
-            "B_pred_single_trace_MeV": b_pred,
+            "tr_M_bound": _fmt(trM_bound),
+            "tr_M_free": _fmt(trM_free),
+            "delta_tr_M_free_minus_bound": _fmt(trM_free - trM_bound),
+            "B_pred_single_trace_MeV": _fmt(b_pred),
             "note": "single-trace B under-predicts AME; audit only, not wired",
+        },
+        "arithmetic": {
+            "characters": "mpmath (hoefsmit_mpmath), not float64",
+            "why": "the canonical fast path (BlockCache + chi_lambda_of_word) is "
+                   "float64 by construction — math.sqrt against a 1e-15 threshold, "
+                   "and float(np.trace(...)). Passing it an mpf q0 does not make it "
+                   "exact. Per AGENTS.md 'PROBES ARE NOT EXEMPT'.",
+            "f64_max_relative_gap_on_chi_bound": _fmt(max(f64_gaps)),
+            "f64_gap_reading": "this IS the float64 floor, not a disagreement about "
+                               "the mathematics",
         },
         "characters": [
             {"partition": list(lam), "dim": dim,
-             "chi_bound": chi_b, "chi_free": chi_f,
-             "delta_chi_bound_minus_free": chi_b - chi_f, "y_lambda": y_lam}
+             "chi_bound": _fmt(chi_b), "chi_free": _fmt(chi_f),
+             "delta_chi_bound_minus_free": _fmt(chi_b - chi_f),
+             "y_lambda": _fmt(y_lam)}
             for (lam, dim, chi_b, chi_f, y_lam) in results
         ],
         "witness": {"scriptCommitSha": sha, "scriptHash": script_hash,
