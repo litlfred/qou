@@ -577,3 +577,51 @@ WHAT OF MY ENTRIES SURVIVES:
                                                             a FIFTH, at weights level
 
 All six of my probes re-run post-rebase: ASSERTIONS PASS.
+
+
+## MEASURED 2026-08-18: -974 is 1/u^3 amplification, not evidence D breaks
+
+Probe: computations/qbeta/qbeta_alpha_required_c_vs_d_probe.py (4/4).
+
+alpha_required -- the phase making the N=2 ladder hit CODATA with NO c_3 rung --
+is convention-INDEPENDENT: b and u are built from the Hoefsmit couplings
+(d1 = q^3/(q^2+1), d2 = -1/(q(q^2+1))), never from z.  (d1 is numerically
+identical to z_D while being a different object; do not read that as 'the Gram
+already uses D'.)  So one fixed target scores both frames fairly.
+
+Residual the c_3 rung must absorb, proton anchor:
+    C frame  0.11321204
+    D frame  0.10136170        ratio D/C = 0.8953
+
+MY PREDICTION WAS WRONG.  I wrote the probe expecting the D residual to be
+ORDERS larger and asserted ratio > 10.  It failed.  D is 0.895x -- slightly
+BETTER than C.  Retracted.
+
+Where -974 actually comes from:
+    cos(alpha_eff) differs C -> D by  0.000601154  (relative)
+    1/u^3                          =  1618468.2
+    product                        =  972.94833
+    actual |c_3(D) - c_3(C)|       =  972.36255
+    agreement                      =  0.06 %
+
+The entire c_3 gap is the ladder's own 1/u^3 = 1.6e6 amplifier acting on a
+0.06 % difference in cos.  This is the SAME amplification behind
+sigma(c_k) = sigma_R/u^k, which the corpus already knows makes extracted c_k
+noise-dominated.  Quoting -974 as though convention D were catastrophic
+overstates what the number shows -- it measures the amplifier, not the physics.
+
+This does NOT reinstate D-by-substitution: decayLadder_zC_threeRow_ne_zero
+still proves the re-derivation requirement, and the probe wires nothing.  What
+it removes is the impression that D is disqualified on the numbers.
+
+## Two further facts for whoever derives the phase
+
+1. THE PHASE IS NOT WHERE THE ANCHOR INSTABILITY LIVES.  The residual drifts
+   0.00046 % (C) / 0.00052 % (D) between anchors, while extracted c_3 swings
+   2.37 %.  Both asserted phases are anchor-stable to ~5e-4 %.  A derived phase
+   will not, by itself, fix the cross-anchor swing.
+
+2. NEITHER asserted phase reproduces CODATA at N=2 -- both leave ~0.1 rad for
+   c_3 to absorb.  The un-derived alpha is open in C exactly as much as in D,
+   which is why there is no C-frame derivation to port.  That is the real
+   content of this bean.
