@@ -772,6 +772,13 @@ arithmetic. This executes the "twisted test" queued on `qou-9p9y` by
 the classical gate run (`habiro_tail_membership_gate_probe.py`) and
 the U2 payoff promised on `qou-1hlh`.
 
+> **⚠ SCOPE ADDED by Addendum 26 (2026-08-18).** The gate verdicts below
+> are **VALID-immune** — exact Laurent/cyclotomic arithmetic, measured to
+> contain no trace parameter and no anchor. But the *identification* of
+> these elements as "the corpus's named c_k / α_EM candidates" is
+> **C-CONDITIONAL**: that provenance comes from the convention-C-frame
+> ladder, which the 2026-08-15 ruling leaves un-re-derived (`qou-cds1`).
+
 **Candidates (the corpus's actual named fibre-level objects):**
 J_Hopf(q) = −(q+1/q) (the c₃ fibre candidate); [2]_q (the α_EM
 element's q-factor); D(4) (binding Habiro tail control). Exact anchor:
@@ -1143,3 +1150,59 @@ strictly harder, and a per-element solution would imply the
 residue-level one — so the residue "yes" is *consistent with*, but no
 evidence for, a per-element solution. The ε_m values at m ≥ 3 remain
 uncomputed.
+
+## Addendum 26 (2026-08-18) — convention-immunity of this programme, measured; and the one C-conditional label in my merged wording
+
+`gswz_program_convention_immunity_probe.py`, **7/7** (both controls
+fire). Written after the week's rulings — convention **D** canonical and
+**C excised** (2026-08-15), proton pin reaffirmed, and the standing
+AGENTS.md warning that the Q_β `c_k` ladder is C-frame throughout and
+**not re-derived** (`qou-cds1`), so every `c_k` conclusion is
+C-conditional until it is.
+
+The question for this programme is whether *its* results inherit that
+conditionality. Answered by **measurement**, following the template of
+[`2026-08-15-c3-refutation-chain-convention-validity-audit.md`](2026-08-15-c3-refutation-chain-convention-validity-audit.md):
+
+| measured over the 20 programme probes | result |
+|---|---|
+| imports of `pyhecke` / a Gram module / Markov-trace machinery | **none** |
+| references to `z_C`, `z_D`, `√q/(q+1)`, `q³/(q²+1)` | **none** |
+| references to `q_parameter`, `q0`, the 50-digit pin, `qou_substrate` | **none** |
+
+Convention C vs D is a statement about the **Markov parameter z** and
+the Gram form built from it; a chain that never touches that layer
+cannot be C- or D-framed. Likewise, a chain that never evaluates at a
+substrate modulus is untouched by the proton-pin directive. The `q` that
+*does* appear in five probes is the **quantum variable, not z** — under
+C ↔ D it is z that changes *as a function of* q, while q is unchanged,
+so a Laurent element in q is the same element in both conventions
+(verified: the candidates are integer Laurent elements of ℤ[q,1/q], a
+ring in which no convention choice is even expressible).
+
+**Classification:**
+
+| result | verdict |
+|---|---|
+| ε_m descent chain, all layers (Addenda 17, 18, 21–25) | **VALID-immune** — no q, no z, no anchor |
+| the c_k membership **gates** (Addendum 19) | **VALID-immune** — exact Laurent/cyclotomic arithmetic |
+| the c_k candidate **provenance** (Addendum 19) | **C-CONDITIONAL** — the identification of J_Hopf(q) and [2]_q as *the corpus's named c_k / α_EM candidates* comes from the C-frame ladder; the gate verdicts are unaffected |
+
+Addendum 19 now carries that scope banner in place. This audit does
+**not** claim the c_k ladder survives convention D — that is
+`qou-cds1`'s question and is untouched here.
+
+**Kept as a standing gate**, not a one-off: the probe fires the moment a
+z-dependent or anchor-dependent input is wired into this chain, which is
+the drift it exists to catch.
+
+**Also this pass — a real defect a sibling found in my code.** `qou-kx04`
+(commit `0f50c3d2`) fixed `gswz_epsm_descent_m4to24_probe.py`, whose
+witness path was the repo-root-relative literal
+`computations/probes/…`: run from its own directory — which is how the
+regeneration harness invokes every producer — it died with
+`FileNotFoundError` **after** completing a 69-second compute. **Eleven
+more of my probes carried the same defect**; all are now anchored to
+`pathlib.Path(__file__).resolve().parent`, verified by running from
+`computations/probes/` (the failing cwd): 5/5, 7/7, 7/7, 18/18 green.
+Same cwd-assumption class as the `parents[2]` bug fixed in 12 scripts.
