@@ -1,11 +1,11 @@
 ---
 # qou-janf
 title: y_lambda_at's FIRST call raises global mp.dps 40->50 via a lazy module-scope import (y_lambda_su_n:269, deliberate) — cache-served straddle since RESOLVED
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-11T11:09:11Z
-updated_at: 2026-08-18T20:48:38Z
+updated_at: 2026-08-18T21:09:59Z
 ---
 
 ## Corrected finding (3rd measurement — supersedes the body this bean had)

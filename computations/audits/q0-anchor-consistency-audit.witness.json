@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-18T21:04:50.510987+00:00",
-  "commitSha": "5c76cf15bbe139cde3a149f791d64270a8eeafd4",
+  "computedAt": "2026-08-18T21:15:21.792790+00:00",
+  "commitSha": "e8528a66952188087a6bd999ac9c67c02549a9cf",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "33ccaac86640",
@@ -39,7 +39,7 @@
     "counts": {
       "Q0_OK": 653,
       "Q0_AMBIGUOUS": 15,
-      "Q0_INDEPENDENT": 6,
+      "Q0_INDEPENDENT": 7,
       "Q0_INDEPENDENT_NO_REASON": 1,
       "Q0_ANCHOR_MISSING": 1891,
       "Q0_VALUE_MISSING": 1,
@@ -10600,6 +10600,10 @@
         }
       ],
       "Q0_INDEPENDENT": [
+        {
+          "witness": "knot-trace-field-degree-guard-counterexample.witness.json",
+          "detail": ""
+        },
         {
           "witness": "qbeta-5two-trace-field-disc23-not-qsqrt7.witness.json",
           "detail": ""
