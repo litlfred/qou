@@ -121,10 +121,31 @@ audit doc asserted a field that cannot exist, is the useful lesson here.
 
 A quantity genuinely attached to the knot (`det = 7`) was promoted to a quantity it is
 not (the geometric trace field), and the coincidence that an available paper had ℚ(√−7)
-identities supplied the confirmation. The general guard: **a field claim about a
-hyperbolic knot needs a degree check** — the trace field of an `n`-tetrahedron
-hyperbolic knot is generically degree `n`, and a quadratic cannot sit inside an odd
-degree.
+identities supplied the confirmation.
+
+> **🛑 The guard this section originally gave was itself an over-claim — corrected
+> 2026-08-18.** It read: *"the trace field of an `n`-tetrahedron hyperbolic knot is
+> generically degree `n`, and a quadratic cannot sit inside an odd degree."* The
+> **second** clause is the tower law and is rigorous — it is what excludes ℚ(√−7)
+> from the 5₂ cubic, so **everything above stands.** The **first** clause is
+> **false**: the Whitehead link (4 tetrahedra = one regular ideal octahedron) and the
+> Borromean rings (8 = two octahedra) both have trace field **ℚ(i), degree 2**. The
+> count does not bound the degree from below, and "generically" does not rescue it —
+> these are two of the most-cited links in the subject, and the Whitehead is
+> [a corpus worked case](2026-08-02-whitehead-c-sigma-closed-form-2-pow-minus-3-4.md)
+> that already states ℚ(i) here.
+>
+> The heuristic held for exactly the two knots this audit was looking at, 4₁ and 5₂ —
+> **a coincidence promoted to a rule, inside the correction written to fix a
+> coincidence promoted to a rule.** Certification:
+> [`knot_trace_field_degree_guard_counterexample.py`](../../computations/probes/knot_trace_field_degree_guard_counterexample.py)
+> (5/5). Bean `qou-5gh6`.
+
+**The usable guard.** A field claim about a hyperbolic knot needs a degree check, and
+the degree must be **computed, not inferred**: solve the gluing equations, recover a
+shape's minimal polynomial, take its degree — which is what the certification probe
+above actually does, and why the 5₂ result holds independently of the bad heuristic.
+Then apply the tower law: a quadratic cannot sit inside an odd degree.
 
 ## Cross-references
 

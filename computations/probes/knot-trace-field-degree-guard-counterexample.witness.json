@@ -1,0 +1,73 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-18T21:14:50.457610+00:00",
+  "commitSha": "e8528a66952188087a6bd999ac9c67c02549a9cf",
+  "assertions": [
+    {
+      "name": "whitehead_complement_is_one_regular_ideal_octahedron",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "borromean_complement_is_two_regular_ideal_octahedra",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "octahedral_shape_field_is_quadratic",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "tetrahedron_count_does_not_determine_trace_field_degree",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "tower_law_clause_survives_unchanged",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "knot-trace-field-degree-guard-counterexample",
+  "scriptFile": "knot_trace_field_degree_guard_counterexample.py",
+  "scriptHash": "23550a662642",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Counterexamples to the tetrahedron-count heuristic for trace-field degree, correcting the guard printed in the 2026-08-11 5_2 trace-field audit. Whitehead (4 tet) and Borromean (8 tet) both have degree-2 trace field Q(i). The audit's tower-law clause is unaffected and the 5_2 result stands.",
+  "auditOnly": "docs/audits/2026-08-11-5two-trace-field-is-disc-minus-23.md",
+  "data": {
+    "vol_regular_ideal_octahedron": "3.663862376708876060218414",
+    "vol_whitehead": "3.663862376708876060218414",
+    "vol_borromean": "7.327724753417752120436828",
+    "octahedral_shape": "1+i, min poly z^2-2z+2, disc -4 -> Q(i)",
+    "count_vs_degree": "4_1 figure-eight: 2 tet, deg 2; 5_2: 3 tet, deg 3; Whitehead link: 4 tet, deg 2; Borromean rings: 8 tet, deg 2",
+    "clause_1_first": "FALSE — corrected",
+    "clause_2_tower_law": "rigorous — unchanged; 5_2 result stands",
+    "verdict": "The guard's FIRST clause is FALSE and is corrected at source: the trace field of an n-tetrahedron hyperbolic knot is NOT generically degree n. Whitehead (4 tetrahedra = 1 regular ideal octahedron) and Borromean (8 = 2 octahedra) both have trace field Q(i), degree 2. The heuristic held for exactly the two knots the audit was looking at, 4_1 and 5_2 -- a coincidence promoted to a rule, which is the same failure mode that audit was written to correct. The SECOND clause, the tower law, is rigorous and unchanged, so the 5_2 result (Q(sqrt-7) cannot embed in a cubic) STANDS. Usable rule: do not infer the degree, COMPUTE the shape field -- solve the gluing equations, recover a shape's minimal polynomial, take its degree."
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Hyperbolic volumes (Lobachevsky/Catalan) and one exact quadratic minimal polynomial. No substrate modulus enters; the import cone reaches no q_parameter, no qou_substrate.constants, no y_lambda_at."
+}
