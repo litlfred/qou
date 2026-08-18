@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-18T15:59:34.118666+00:00",
-  "commitSha": "4c908d7e3623fe21ba227bb58fefdfa7e192ac34",
+  "computedAt": "2026-08-18T20:43:48.301194+00:00",
+  "commitSha": "4b64f356eb66f33879e8f7fea6672b9b5ee1738b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -12,10 +12,10 @@
     },
     {
       "name": "leaf_value[D-tau-M-q0.derivation]",
-      "computed": 0.3882864715477134,
-      "expected": 0.3882864715477134,
+      "computed": "0.3882864715477134",
+      "expected": "0.3882864715477134",
       "passed": true,
-      "tolerance": 3.8828647154771337e-07
+      "tolerance": "0.0000003882864715477134"
     },
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -25,10 +25,10 @@
     },
     {
       "name": "leaf_value[D-tr-M-q0.derivation]",
-      "computed": 0.3882864715477134,
-      "expected": 0.3882864715477134,
+      "computed": "0.3882864715477134",
+      "expected": "0.3882864715477134",
       "passed": true,
-      "tolerance": 3.882864715477134e-10
+      "tolerance": "0.0000000003882864715477134"
     },
     {
       "name": "chain_valid[alpha-k-h3-0.derivation]",
@@ -38,10 +38,10 @@
     },
     {
       "name": "leaf_value[alpha-k-h3-0.derivation]",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1.0",
+      "expected": "1.0",
       "passed": true,
-      "tolerance": 1e-12
+      "tolerance": "0.000000000001"
     },
     {
       "name": "chain_valid[alpha-k-h3-1.derivation]",
@@ -51,10 +51,10 @@
     },
     {
       "name": "leaf_value[alpha-k-h3-1.derivation]",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": 1e-12
+      "tolerance": "0.000000000001"
     },
     {
       "name": "chain_valid[alpha-k-h3-2.derivation]",
@@ -64,10 +64,10 @@
     },
     {
       "name": "leaf_value[alpha-k-h3-2.derivation]",
-      "computed": 0.24932079597942414,
-      "expected": 0.24932079597942414,
+      "computed": "0.24932079597942414",
+      "expected": "0.24932079597942414",
       "passed": true,
-      "tolerance": 2.493207959794241e-13
+      "tolerance": "0.00000000000024932079597942414"
     },
     {
       "name": "chain_valid[alpha-k-h3-3.derivation]",
@@ -77,10 +77,10 @@
     },
     {
       "name": "leaf_value[alpha-k-h3-3.derivation]",
-      "computed": 0.5514434199198297,
-      "expected": 0.5514434199198297,
+      "computed": "0.5514434199198297",
+      "expected": "0.5514434199198297",
       "passed": true,
-      "tolerance": 5.514434199198297e-13
+      "tolerance": "0.0000000000005514434199198297"
     },
     {
       "name": "chain_valid[atomic-braid-recipe-4he-canonical.derivation]",
@@ -108,10 +108,10 @@
     },
     {
       "name": "leaf_value[atomic-braid-recipe-d.derivation]",
-      "computed": 23.0,
-      "expected": 23.0,
+      "computed": "23.0",
+      "expected": "23.0",
       "passed": true,
-      "tolerance": 0.0
+      "tolerance": "0.0"
     },
     {
       "name": "chain_valid[atomic-braid-recipe-n-canonical.derivation]",
@@ -127,10 +127,10 @@
     },
     {
       "name": "leaf_value[atomic-braid-recipe-n.derivation]",
-      "computed": 11.0,
-      "expected": 11.0,
+      "computed": "11.0",
+      "expected": "11.0",
       "passed": true,
-      "tolerance": 0.0
+      "tolerance": "0.0"
     },
     {
       "name": "chain_valid[atomic-braid-recipe-p-canonical.derivation]",
@@ -146,10 +146,10 @@
     },
     {
       "name": "leaf_value[atomic-braid-recipe-p.derivation]",
-      "computed": 11.0,
-      "expected": 11.0,
+      "computed": "11.0",
+      "expected": "11.0",
       "passed": true,
-      "tolerance": 0.0
+      "tolerance": "0.0"
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
@@ -159,10 +159,10 @@
     },
     {
       "name": "leaf_value[c-q-q0.derivation]",
-      "computed": 9.092678397394828,
-      "expected": 9.092678397394828,
+      "computed": "9.092678397394828",
+      "expected": "9.092678397394828",
       "passed": true,
-      "tolerance": 9.092678397394828e-12
+      "tolerance": "0.000000000009092678397394828"
     },
     {
       "name": "chain_valid[hoefsmit-rep-21-sigma1.derivation]",
@@ -184,10 +184,10 @@
     },
     {
       "name": "leaf_value[markov-trace-assembly-deuteron.derivation]",
-      "computed": 0.3882864240747888,
-      "expected": 0.3882864240747888,
+      "computed": "0.3882864240747888",
+      "expected": "0.3882864240747888",
       "passed": true,
-      "tolerance": 3.882864240747888e-10
+      "tolerance": "0.0000000003882864240747888"
     },
     {
       "name": "chain_valid[markov-trace-assembly-neutron.derivation]",
@@ -197,10 +197,10 @@
     },
     {
       "name": "leaf_value[markov-trace-assembly-neutron.derivation]",
-      "computed": 0.9232332299116371,
-      "expected": 0.9232332299116371,
+      "computed": "0.9232332299116371",
+      "expected": "0.9232332299116371",
       "passed": true,
-      "tolerance": 9.232332299116372e-10
+      "tolerance": "0.0000000009232332299116371"
     },
     {
       "name": "chain_valid[markov-trace-assembly-proton.derivation]",
@@ -210,10 +210,10 @@
     },
     {
       "name": "leaf_value[markov-trace-assembly-proton.derivation]",
-      "computed": 1.0653062285923893,
-      "expected": 1.0653062285923893,
+      "computed": "1.0653062285923893",
+      "expected": "1.0653062285923893",
       "passed": true,
-      "tolerance": 1.0653062285923893e-09
+      "tolerance": "0.0000000010653062285923893"
     },
     {
       "name": "chain_valid[n-tr-M-q0.derivation]",
@@ -223,10 +223,10 @@
     },
     {
       "name": "leaf_value[n-tr-M-q0.derivation]",
-      "computed": 0.9232332971695838,
-      "expected": 0.9232332971695838,
+      "computed": "0.9232332971695838",
+      "expected": "0.9232332971695838",
       "passed": true,
-      "tolerance": 9.232332971695838e-10
+      "tolerance": "0.0000000009232332971695838"
     },
     {
       "name": "chain_valid[p-tr-M-q0.derivation]",
@@ -236,10 +236,10 @@
     },
     {
       "name": "leaf_value[p-tr-M-q0.derivation]",
-      "computed": 1.0653062285923893,
-      "expected": 1.0653062285923893,
+      "computed": "1.0653062285923893",
+      "expected": "1.0653062285923893",
       "passed": true,
-      "tolerance": 1.0653062285923893e-09
+      "tolerance": "0.0000000010653062285923893"
     },
     {
       "name": "chain_valid[bwhk-st-matrix-corroboration.derivation]",
@@ -255,10 +255,10 @@
     },
     {
       "name": "leaf_value[proton-mass-50dps.derivation]",
-      "computed": 938.2720881603788,
-      "expected": 938.2720881603788,
+      "computed": "938.2720881603788142358888",
+      "expected": "938.2720881603788142358888",
       "passed": true,
-      "tolerance": 9.382720881603788
+      "tolerance": "9.382720881603788142358888"
     },
     {
       "name": "chain_valid[q0-anchor.derivation]",
@@ -268,10 +268,10 @@
     },
     {
       "name": "leaf_value[q0-anchor.derivation]",
-      "computed": 1.1099785827513808,
-      "expected": 1.1099785827513808,
+      "computed": "1.1099785827513808",
+      "expected": "1.1099785827513808",
       "passed": true,
-      "tolerance": 1.109978582751381e-15
+      "tolerance": "0.0000000000000011099785827513808"
     },
     {
       "name": "chain_valid[schur-weyl-weight-111.derivation]",
@@ -545,10 +545,10 @@
     },
     {
       "name": "leaf_value[sigma-shell-A2-closed-form.derivation]",
-      "computed": 0.03748824144743201,
-      "expected": 0.03748824144743201,
+      "computed": "0.0374882414474320101048710547827",
+      "expected": "0.0374882414474320101048710547827",
       "passed": true,
-      "tolerance": 3.7488241447432005e-14
+      "tolerance": "0.0000000000000374882414474320101048710547827"
     },
     {
       "name": "chain_valid[term7-s-crystal-4he.derivation]",
@@ -558,18 +558,18 @@
     },
     {
       "name": "leaf_value[term7-s-crystal-4he.derivation]",
-      "computed": -0.99124115660574,
-      "expected": -0.99124115660574,
+      "computed": "-0.99124115660574",
+      "expected": "-0.99124115660574",
       "passed": true,
-      "tolerance": 9.9124115660574e-11
+      "tolerance": "0.000000000099124115660574"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
-  "scriptHash": "4b77b3adf71f",
-  "scriptCommitSha": "399ff7c799682b4371e7f4cfaaf604f5c9324ed9",
+  "scriptHash": "59892be0388c",
+  "scriptCommitSha": "4b64f356eb66f33879e8f7fea6672b9b5ee1738b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -587,8 +587,8 @@
       {
         "chain": "D-tau-M-q0.derivation.json",
         "target": "τ_M(D, q_0)  [canonical Jones-Markov, Wenzl-bridge]",
-        "target_value": 0.3882864715477134,
-        "computed_value": 0.3882864715477134,
+        "target_value": "0.3882864715477134",
+        "computed_value": "0.3882864715477134",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -605,8 +605,8 @@
       {
         "chain": "D-tr-M-q0.derivation.json",
         "target": "tr_M(D, q_0)  [canonical Wenzl-bridge, post-PR #612]",
-        "target_value": 0.3882864715477134,
-        "computed_value": 0.3882864715477134,
+        "target_value": "0.3882864715477134",
+        "computed_value": "0.3882864715477134",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -622,8 +622,8 @@
       {
         "chain": "alpha-k-h3-0.derivation.json",
         "target": "α_0(q)  at H_3(R, q)",
-        "target_value": 1.0,
-        "computed_value": 1.0,
+        "target_value": "1.0",
+        "computed_value": "1.0",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -637,8 +637,8 @@
       {
         "chain": "alpha-k-h3-1.derivation.json",
         "target": "α_1(q)  at H_3(R, q)",
-        "target_value": 0.0,
-        "computed_value": 0.0,
+        "target_value": "0.0",
+        "computed_value": "0.0",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -652,8 +652,8 @@
       {
         "chain": "alpha-k-h3-2.derivation.json",
         "target": "α_2(q)  at H_3(R, q)",
-        "target_value": 0.24932079597942414,
-        "computed_value": 0.24932079597942414,
+        "target_value": "0.24932079597942414",
+        "computed_value": "0.24932079597942414",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -667,8 +667,8 @@
       {
         "chain": "alpha-k-h3-3.derivation.json",
         "target": "α_3(q)  at H_3(R, q)",
-        "target_value": 0.5514434199198297,
-        "computed_value": 0.5514434199198297,
+        "target_value": "0.5514434199198297",
+        "computed_value": "0.5514434199198297",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1022,8 +1022,8 @@
       {
         "chain": "atomic-braid-recipe-d.derivation.json",
         "target": "β_D (deuteron canonical σ-word; total crossing count)",
-        "target_value": 23.0,
-        "computed_value": 23.0,
+        "target_value": "23.0",
+        "computed_value": "23.0",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1097,8 +1097,8 @@
       {
         "chain": "atomic-braid-recipe-n.derivation.json",
         "target": "β_n (neutron canonical σ-word; total crossing count)",
-        "target_value": 11.0,
-        "computed_value": 11.0,
+        "target_value": "11.0",
+        "computed_value": "11.0",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1172,8 +1172,8 @@
       {
         "chain": "atomic-braid-recipe-p.derivation.json",
         "target": "β_p (proton canonical σ-word; total crossing count)",
-        "target_value": 11.0,
-        "computed_value": 11.0,
+        "target_value": "11.0",
+        "computed_value": "11.0",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1187,8 +1187,8 @@
       {
         "chain": "c-q-q0.derivation.json",
         "target": "c_q(q_0)",
-        "target_value": 9.092678397394828,
-        "computed_value": 9.092678397394828,
+        "target_value": "9.092678397394828",
+        "computed_value": "9.092678397394828",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1232,8 +1232,8 @@
       {
         "chain": "markov-trace-assembly-deuteron.derivation.json",
         "target": "tr_M(D, q_0)",
-        "target_value": 0.3882864240747888,
-        "computed_value": 0.3882864240747888,
+        "target_value": "0.3882864240747888",
+        "computed_value": "0.3882864240747888",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1248,8 +1248,8 @@
       {
         "chain": "markov-trace-assembly-neutron.derivation.json",
         "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]",
-        "target_value": 0.9232332299116371,
-        "computed_value": 0.9232332299116371,
+        "target_value": "0.9232332299116371",
+        "computed_value": "0.9232332299116371",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1263,8 +1263,8 @@
       {
         "chain": "markov-trace-assembly-proton.derivation.json",
         "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
-        "target_value": 1.0653062285923893,
-        "computed_value": 1.0653062285923893,
+        "target_value": "1.0653062285923893",
+        "computed_value": "1.0653062285923893",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1278,8 +1278,8 @@
       {
         "chain": "n-tr-M-q0.derivation.json",
         "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]",
-        "target_value": 0.9232332971695838,
-        "computed_value": 0.9232332971695838,
+        "target_value": "0.9232332971695838",
+        "computed_value": "0.9232332971695838",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1295,8 +1295,8 @@
       {
         "chain": "p-tr-M-q0.derivation.json",
         "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
-        "target_value": 1.0653062285923893,
-        "computed_value": 1.0653062285923893,
+        "target_value": "1.0653062285923893",
+        "computed_value": "1.0653062285923893",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1328,8 +1328,8 @@
       {
         "chain": "proton-mass-50dps.derivation.json",
         "target": "m_p (MeV)",
-        "target_value": 938.2720881603788,
-        "computed_value": 938.2720881603788,
+        "target_value": "938.2720881603788142358888",
+        "computed_value": "938.2720881603788142358888",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1343,8 +1343,8 @@
       {
         "chain": "q0-anchor.derivation.json",
         "target": "q_0",
-        "target_value": 1.1099785827513808,
-        "computed_value": 1.1099785827513808,
+        "target_value": "1.1099785827513808",
+        "computed_value": "1.1099785827513808",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -2018,8 +2018,8 @@
       {
         "chain": "sigma-shell-A2-closed-form.derivation.json",
         "target": "C_{(3,2,1)}(q_0)",
-        "target_value": 0.03748824144743201,
-        "computed_value": 0.03748824144743201,
+        "target_value": "0.0374882414474320101048710547827",
+        "computed_value": "0.0374882414474320101048710547827",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -2034,8 +2034,8 @@
       {
         "chain": "term7-s-crystal-4he.derivation.json",
         "target": "S_crystal(⁴He)",
-        "target_value": -0.99124115660574,
-        "computed_value": -0.99124115660574,
+        "target_value": "-0.99124115660574",
+        "computed_value": "-0.99124115660574",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
