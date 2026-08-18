@@ -1,11 +1,11 @@
 ---
 # qou-lnog
 title: Drain the a_m-differencing defect from the Q_beta Habiro-element cluster
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-18T21:53:54Z
-updated_at: 2026-08-18T21:54:31Z
+updated_at: 2026-08-18T23:16:02Z
 ---
 
 ## Scope

@@ -148,10 +148,10 @@ conclusion rather than replacing it.
 | `shell_closure_phi8_correlation_test.py` | 4 | no — its witnesses are absent, so nothing was published |
 | `probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py` | 3 atomic-step | yes |
 
-## The Q_β cluster — same defect, different consequence, NOT yet drained
+## The Q_β cluster — measured, and my first reading of it was wrong
 
-Four more scripts subtract coefficients, all on `Δa_m := a_m(n) − a_m(p)`, "the
-Q_β-relevant Habiro element":
+Four more scripts subtract coefficients, on `Δa_m := a_m(n) − a_m(p)` ("the
+Q_β-relevant Habiro element") and on the atomic-step pairs:
 
 ```
 qbeta/qbeta_habiro_delta_am_factorization.py     publishes
@@ -161,33 +161,78 @@ qbeta/qbeta_habiro_phase5q_dn_refactorize.py     reads only
 probes/qbeta_habiro_element_probe.py             publishes
 ```
 
-For n−p the two objects are not close:
+**RETRACTED.** An earlier revision of this doc said these witnesses "published
+refutations computed on the wrong object", on the strength of a measurement
+showing the two objects have disjoint cyclotomic factor sets for n−p. That
+measurement used the **current, convention-D** atomic witness. The three
+witnesses were computed **2026-06-02 and 2026-07-07**, in the convention-C era,
+and the C-era denominators are not the D-era ones. The right test was to recover
+them from git history, which I had not done.
 
-| | `Σ Δa_m (u;u)_m` (what was computed) | numerator of `t_n − t_p` |
+Recovered from `cf5318a97b` (2026-08-09, the last commit before p/n moved to D
+at `deg_p_u` 40/40 → 44/36):
+
+| pair | convention-C denominators | a_m-differencing |
 |---|---|---|
-| degree | 44 | 54 |
-| cyclotomic factors | **{Φ₃, Φ₆, Φ₁₂}** | **{Φ₁, Φ₂, Φ₄, Φ₁₆}** |
-| integer content | 1 | 4 |
+| **n − p** | `4u¹⁹(u²+1)` vs `4u¹⁹(u²+1)` — **identical** | **VALID** |
+| D − n | `32u⁴⁰(u²+1)³` vs `4u¹⁹(u²+1)` | invalid |
+| ³He − D | `64u⁵⁵(u²+1)⁵` vs `32u⁴⁰(u²+1)³` | invalid |
+| ⁴He − ³He | `256u⁷⁶(u²+1)⁷` vs `64u⁵⁵(u²+1)⁵` | invalid |
 
-Disjoint factor sets, and not proportional. Note the correct object is divisible
-by Φ₁ — it must be, since a mirror pair's two traces coincide at q = 1 — and the
-computed one is not.
+So the split is sharp, and it is not the one I first reported:
 
-**These three witnesses record NEGATIVE / PARTIAL verdicts, so the defect did
-not publish a false positive here; it published refutations computed on the
-wrong object.** That is the over-narrowing failure mode of
-AGENTS.md §"Before declaring refuted / ruled out / dead end", and it is the
-reason this section exists rather than a bare "also broken" line.
+- **The n−p element was computed on the right object.** Under C the two
+  denominators are *identical*, so `Σ Δa_m (u;u)_m = d·(t_n − t_p)` — the pair
+  difference up to a fixed common normalisation. `delta_am_factorization`,
+  `element_probe`, and the n−p reference leg of `cross_pair_factorization` are
+  **correct as computed**. They need convention-scoping, not a defect label.
+- **The atomic-step pairs were never valid**, under C or D. `D − n`, `³He − D`,
+  `⁴He − ³He` have differing denominators in both conventions.
+- **Under D, n−p needs the fix too** — p/n diverged at the 2026-08-15 migration
+  (`4u¹⁸(u⁴+1)²` vs `4u¹⁸`). The same script is right under C and wrong under D
+  with no edit in between, which is why the guard below is a runtime check
+  rather than a rule anyone can apply by reading the code.
 
-Re-measured on the correct object, the headline negative of
-`qbeta-habiro-delta-am-factorization` — *"no single polynomial factor unites all
-m; the conjecture in C6 of the prior audit is FALSIFIED"* — **survives**: the
-gcd across the corrected Δa_m is the constant 4, not a polynomial. Its published
-`integer_content_gcd: 1` is **4** on the correct object, and the support moves
-from m = 0..8 to m = 1..9. So the conclusion stands and the evidence needs
-re-basing. Draining this cluster is a separate tranche; it is not done here, and
-the C6 falsification should not be re-opened on the strength of this defect
-alone.
+### Does any published conclusion move? No — and two are now better supported
+
+`cross_pair_factorization`'s verdict is **SPECIFIC**: the `Φ₁·Φ₂` prefactor is
+specific to the isospin doublet rather than universal across atomic-number
+jumps. That conclusion rested entirely on the two broken legs, so it was the one
+genuinely at risk. Re-measured on the correct trace difference:
+
+| pair | cyclotomic content | Φ₁·Φ₂ |
+|---|---|---|
+| n − p | {Φ₁, Φ₂, Φ₄, Φ₁₆} | **present** |
+| D − n | {} | absent |
+| ³He − D | {Φ₈³} | absent |
+| ⁴He − ³He | {Φ₄², Φ₈⁴} | absent |
+
+**SPECIFIC is confirmed**, and it now has a structural reason instead of an
+empirical one: `mirror_traceDiff_eq_zero_of_tau_eq` says `Φ₁ = (u−1)` divides a
+difference exactly where the two traces coincide at `q = 1`. That holds for the
+mirror pair n/p (`τ_p(1) = τ_n(1) = 1/2`, measured) and for none of the
+atomic-number jumps, which have different mass numbers. The presence of Φ₁ for
+n−p and its absence from every jump is *forced*.
+
+`delta_am_factorization`'s C6 falsification (*"no single polynomial factor
+unites all m"*) also survives: the gcd across the corrected Δa_m is the constant
+4, not a polynomial.
+
+So **no published claim in this cluster is overturned.**
+
+### What was changed instead: a guard
+
+Since the conclusions stand, rewriting five scripts to work under D would be
+churn for no result. What was missing is the thing that would have caught this
+on day one, so that is what was added —
+`habiro_coefficients_atomic.require_am_differenceable(tr_x, tr_y)`, which
+compares the two denominators and raises `AmDifferenceInvalid` rather than let a
+plausible-but-wrong polynomial through. All five scripts call it as a preflight
+and **fail loudly under D**, verified by running them.
+
+A producer that refuses to emit a wrong number is better than one that emits it.
+Porting them to D means expanding `trace_diff_numerator` instead of differencing
+two expansions — a restructure these files have not had, tracked in `qou-lnog`.
 
 ## Why it survived
 

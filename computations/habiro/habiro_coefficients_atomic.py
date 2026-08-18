@@ -438,6 +438,57 @@ def mirror_trace_diff_numerator(slug_x, slug_y, sym, witness_dir=None,
                                 label=f"{slug_x} - {slug_y}")
 
 
+def am_difference_is_valid(tr_x, tr_y, sym=None):
+    """Is subtracting two witnesses' a_m a valid way to form their difference?
+
+    Only when the two denominators AGREE. A witness's a_m expand its own
+    denominator-cleared numerator `p = d*t`, so `Sum (a_m^X - a_m^Y)(u;u)_m` is
+    `d_X*t_X - d_Y*t_Y`; that is proportional to `t_X - t_Y` iff `d_X = d_Y`
+    (`QOU/Habiro/MirrorPairNormalisation.lean`, `coeffDiff_of_common_denom` /
+    `coeffDiff_at_coincidence`, sorry-free).
+
+    Whether it holds is a property of the CONVENTION, not of the code, which is
+    why this is a runtime check rather than a rule anyone can apply by reading:
+
+        convention C   d_p = d_n = 4u^19(u^2+1)          IDENTICAL -> valid
+        convention D   d_p = 4u^18(u^4+1)^2, d_n = 4u^18  DIFFER   -> invalid
+
+    So the same script is correct under C and wrong under D with no edit in
+    between. Under C the atomic-STEP pairs (D-n, 3He-D, 4He-3He) already
+    differed and were never valid. Measured, bean qou-lnog.
+    """
+    u_can = U_CANONICAL
+    q_local = sp.Symbol('q', positive=True, real=True)
+
+    def _den(tr_str):
+        tr = sp.sympify(tr_str, locals={"q": q_local})
+        tr_s = sp.powdenest(sp.expand(tr.subs(q_local, u_can ** 2)), force=True)
+        return sp.fraction(sp.together(tr_s))[1]
+
+    return sp.simplify(_den(tr_x) - _den(tr_y)) == 0
+
+
+def require_am_differenceable(tr_x, tr_y, *, label="pair"):
+    """Raise unless `am_difference_is_valid`. Preflight for a_m-differencing.
+
+    Fails loudly instead of returning a plausible wrong polynomial. Nothing
+    raises on its own here: the coefficient difference factors, carries
+    cyclotomic content, and prints fine -- it is simply not the pair's. The
+    honest fix at a call site that trips this is `trace_diff_numerator`.
+    """
+    if not am_difference_is_valid(tr_x, tr_y):
+        raise AmDifferenceInvalid(
+            f"{label}: the two witnesses' denominators differ, so subtracting "
+            f"their a_m builds d_X*t_X - d_Y*t_Y, not the pair difference. "
+            f"Use trace_diff_numerator(tr_x, tr_y, sym) and expand THAT "
+            f"(bean qou-0ndb / qou-lnog)."
+        )
+
+
+class AmDifferenceInvalid(ValueError):
+    """Raised when a_m-differencing would silently build the wrong object."""
+
+
 def trace_diff_numerator(tr_x, tr_y, sym, *, label="pair"):
     """Numerator of `tr_x - tr_y` over a common denominator, in `sym`.
 
