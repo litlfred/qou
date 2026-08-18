@@ -1,11 +1,11 @@
 ---
 # qou-hg2z
 title: 'GAP: remaining non-elaborating ch1+ch2 lean siblings (reeb-derivation, categorical-jet, substrate-parameter-exists, poisson-object)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-17T22:44:34Z
-updated_at: 2026-08-18T00:06:05Z
+updated_at: 2026-08-18T20:58:40Z
 ---
 
 Found by the ch1+ch2 elaboration sweep (qou-n4jv), 2026-08-17.
@@ -69,3 +69,27 @@ Generalisable lesson worth keeping: commenting out the LAST field of a { ... }
 literal (or the last argument of an application) silently eats the delimiter
 that closes it, and the error then points at the NEXT declaration rather than
 at the comment.
+
+RESOLVED 2026-08-18 (commit de122a0c). substrate-parameter-exists now elaborates.
+
+The signature was NOT a free choice -- it is FORCED, and in the opposite
+direction from the one the migration assumed. SubstrateParameter is defined in
+the library with field : M -> R plus field_pos (0 < field p) and field_ge_one
+(1 <= field p). Ordering predicates => section 7c puts it PAST the archimedean
+wall. R_q has no order, so these constructors cannot be stated over it at all.
+The migration applied 'keep generic R' to a structure that cannot take it, then
+commented out the offending axioms rather than concluding the premise was wrong.
+
+Repair: restore over R (ofConstant, InterpolatedDifferential, mk',
+quantum_regime, ofReebDecomposition), plus the swallowed closing brace, a
+/-- -/ docstring between binders, an unclosed noncomputable section, and
+missing imports. WeightDecomposition and CategoricalReeb are mirrored in full
+from their sibling blocks (siblings cannot import each other).
+
+NEW FINDING recorded in the file: ofReebDecomposition DISCARDS its Reeb input
+-- binds _interp and wd_reeb_compat to _ and returns the same value ofConstant
+does. Not an existence proof 'from the Reeb decomposition'.
+
+LESSON: 'keep R generic' governs the SUBSTRATE side. When something will not
+typecheck over R_q, check which side of the wall the TARGET structure is
+defined on before weakening the declaration.
