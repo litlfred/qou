@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 313,
-      "proton-pin": 804,
+      "proton-pin": 805,
       "canonical": 607,
       "unknown": 25
     },
@@ -7064,6 +7064,13 @@
       {
         "file": "computations/items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
         "field": "parameters.Q_0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
+        "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
