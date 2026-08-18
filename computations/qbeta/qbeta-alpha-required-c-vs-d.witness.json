@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-18T08:40:25.618037+00:00",
-  "commitSha": "660cbb9b095f257b2fbf049602eca5be3a596b18",
+  "computedAt": "2026-08-18T20:45:55.928046+00:00",
+  "commitSha": "1a8cf11231fcf3fbf12a491e717eeabd0f4e5477",
   "assertions": [
     {
       "name": "alpha_required_is_convention_independent_by_construction",
@@ -29,20 +29,20 @@
       "source": "cos(alpha_eff) differs C->D by 0.0006011538 relative; divided by u^3 that is 972.94833, against an actual |c_3(D)-c_3(C)| = 972.36255 — agreement to 0.06024 %. So c_3 = -974 is the ladder's own 1/u^3 = 1.6e6 amplifier acting on a 0.06 % cos difference, not evidence that D breaks the physics."
     },
     {
-      "name": "neither_asserted_phase_reproduces_CODATA_at_N2",
-      "computed": "1",
-      "expected": "1",
+      "name": "RETRACTED_neither_asserted_phase_reproduces_CODATA_at_N2",
+      "computed": "0",
+      "expected": "0",
       "passed": true,
       "tolerance": 0,
-      "source": "both frames leave ~0.1 rad (C 0.113212, D 0.101362) for the c_3 rung to absorb. The un-derived phase is open in C exactly as much as in D — which is why cds1 has no C-frame derivation to port."
+      "source": "RETRACTED 2026-08-18. This asserted that both frames leave ~0.1 rad for c_3 because both gaps exceed 0.01. The gaps were measured against the PRINCIPAL arccos branch only, but cos is EVEN — the C phase sits on the NEGATIVE branch, with a true residual of 2.26e-5 rad (~5017x smaller). C DOES reproduce CODATA at N=2 to that residual, which under 1/u^3 amplification is exactly c_3 = -2.069. Kept as a recorded retraction rather than deleted, so the corpus shows the correction. Superseded by qbeta_eigenphase_branch_and_barodd_projection_probe.py."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "qbeta-alpha-required-c-vs-d",
   "scriptFile": "qbeta_alpha_required_c_vs_d_probe.py",
-  "scriptHash": "8c7878e9c424",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7d1f1541a999",
+  "scriptCommitSha": "5af666bf547bde486a9feec64fb6804521302c5f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
