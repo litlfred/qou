@@ -375,6 +375,113 @@ def load_a_m(slug, sym, witness_dir=None, *, allow_failed_reconstruction=False):
 # Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
 set_compute_dps()
 
+def mirror_trace_diff_numerator(slug_x, slug_y, sym, witness_dir=None,
+                                *, allow_failed_reconstruction=False):
+    """Numerator of `tr_X - tr_Y`, in `sym` (= u, with q -> sym**2).
+
+    THE THING NOT TO DO is subtract Habiro coefficients. `p = d * t` is the
+    denominator-cleared numerator of a trace, so
+
+        Sum d_a_m (sym;sym)_m  =  p_X - p_Y  =  d_X*t_X - d_Y*t_Y
+
+    which is proportional to `t_X - t_Y` only when the denominators agree AT
+    THE EVALUATION POINT. Proved in
+    `QOU/Habiro/MirrorPairNormalisation.lean` (sorry-free):
+
+        coeffDiff_at_coincidence : dX*t - dY*t = (dX - dY)*t
+
+    so where the traces coincide the coefficient-difference collapses to the
+    denominator GAP times the common value, and vanishes iff dX = dY there.
+
+    Measured: under convention C, dX(1) = dY(1) on all seven canonical mirror
+    pairs, so the shortcut was accidentally valid and the published C results
+    stand as computed. Under convention D they differ by exactly a factor of 4
+    on all seven, and every cyclotomic multiplicity collapses to 0 — including
+    Phi_1, which MUST divide a true mirror difference because the halves
+    coincide at q = 1.
+
+    This helper is convention-agnostic: it differences the traces themselves,
+    over a common denominator, which is correct in C and D alike (qou-0ndb).
+    """
+    import json
+    from pathlib import Path
+
+    q_local = sp.Symbol('q', positive=True, real=True)
+    # Build in the CANONICAL positive `u`, not in whatever `sym` the caller
+    # passed, and map to `sym` only at the end. An atomic tr_M lives in
+    # Z[q^{1/2}, q^{-1/2}] (module docstring), so q -> sym**2 produces
+    # (sym**2)**(k/2) for odd k; sympy denests that to sym**k ONLY when the
+    # symbol is known positive. Against a bare Symbol('u') it stays nested and
+    # every downstream Poly call dies with
+    #     PolynomialError: (u**2)**(3/2) contains an element of the set of
+    #     generators
+    # Both callers construct their `u` with sp.symbols('u') — assumption-free —
+    # so the helper cannot rely on the caller's symbol carrying the assumption.
+    # This is the same defect class as qou-0ndb itself (a symbol that prints
+    # identically but is a different sympy object), which is why the fix is the
+    # same shape as `str_in_u` above: normalise inside, translate at the edge.
+    def _load(slug):
+        base = Path(witness_dir) if witness_dir is not None else Path(__file__).resolve().parent
+        path = Path(base) / f"habiro-coefficients-{slug}.witness.json"
+        if not path.exists():
+            alt = Path(base).parent / f"habiro-coefficients-{slug}.witness.json"
+            if alt.exists():
+                path = alt
+        d = json.loads(path.read_text())
+        if d.get("reconstruction_matches") is False and not allow_failed_reconstruction:
+            raise HabiroReconstructionFailed(
+                f"{path.name} carries reconstruction_matches: false — refusing."
+            )
+        return d["tr_M_in_q"]
+
+    return trace_diff_numerator(_load(slug_x), _load(slug_y), sym,
+                                label=f"{slug_x} - {slug_y}")
+
+
+def trace_diff_numerator(tr_x, tr_y, sym, *, label="pair"):
+    """Numerator of `tr_x - tr_y` over a common denominator, in `sym`.
+
+    Core of `mirror_trace_diff_numerator`, taking the two `tr_M_in_q` STRINGS
+    directly so it also serves callers reading the combined atomic witness
+    (`habiro-coefficients-atomic.witness.json`, whose entries are nested under
+    `results` rather than living in per-slug files).
+    """
+    q_local = sp.Symbol('q', positive=True, real=True)
+    # Build in the CANONICAL positive `u`, not in whatever `sym` the caller
+    # passed, and map to `sym` only at the end. An atomic tr_M lives in
+    # Z[q^{1/2}, q^{-1/2}] (module docstring), so q -> sym**2 produces
+    # (sym**2)**(k/2) for odd k; sympy denests that to sym**k ONLY when the
+    # symbol is known positive. Against a bare Symbol('u') it stays nested and
+    # every downstream Poly call dies with
+    #     PolynomialError: (u**2)**(3/2) contains an element of the set of
+    #     generators
+    # Every caller builds its `u` with sp.symbols('u') — assumption-free — so
+    # the helper cannot rely on the caller's symbol carrying the assumption.
+    # This is the same defect class as qou-0ndb itself (a symbol that prints
+    # identically but is a different sympy object), which is why the fix has the
+    # same shape as `str_in_u` above: normalise inside, translate at the edge.
+    u_can = U_CANONICAL
+
+    def _num_den(tr_str):
+        tr = sp.sympify(tr_str, locals={"q": q_local})
+        tr_s = sp.powdenest(sp.expand(tr.subs(q_local, u_can ** 2)), force=True)
+        return sp.fraction(sp.together(tr_s))
+
+    nx, dx = _num_den(tr_x)
+    ny, dy = _num_den(tr_y)
+    out = sp.expand(sp.expand(nx * dy) - sp.expand(ny * dx))
+    if out.has(sp.Rational(1, 2)) or any(
+        not e.is_Integer for e in out.atoms(sp.Pow)
+        if e.base == u_can and not e.exp.is_Integer
+    ):
+        raise ValueError(
+            f"{label}: half-integer powers of u survived denesting; "
+            "the difference is not in Z[u, u^-1] and the cyclotomic expansion "
+            "would be meaningless"
+        )
+    return out.subs(u_can, sym) if sym != u_can else out
+
+
 def analyse_atomic_braid(label, Z, N, include_inter, q):
     print(f"\n── {label} (Z={Z}, N={N}) ──")
     p_q = markov_trace_symbolic(Z, N, q, include_inter=include_inter)
