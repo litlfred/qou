@@ -1,10 +1,11 @@
 ---
 # qou-i5wd
 title: 'GAP: items-1-2-3-mw-strongforce witness stale by +1.350 ppb after the m_e drain (PR #4975)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-11T10:47:29Z
-updated_at: 2026-08-11T10:47:29Z
+updated_at: 2026-08-11T11:23:32Z
 ---
 
 ## What is open
