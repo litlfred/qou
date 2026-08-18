@@ -1,11 +1,11 @@
 ---
 # qou-cp1w
 title: atom_dual_q0_mpfr_demo calls wb.write(); WitnessBuilder only has save() — never emitted a witness
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-18T16:24:41Z
-updated_at: 2026-08-18T20:39:34Z
+updated_at: 2026-08-18T21:15:59Z
 ---
 
 ## Evidence (PR #5260)
@@ -87,3 +87,39 @@ a deferred judgement call):
 Ordering matters: doing (3) first in an environment without the backend commits
 an all-None witness asserting `strong_duality_gap_small`, which is worse than
 emitting nothing.
+
+
+---
+
+## FIXED (PR #5260) — and the typo was the least of it
+
+Landed in the re-scoped order: loud skip, narrowed swallow, dropped hasattr
+guards, then `write()` -> `save()`.
+
+  * `main()` now checks `res.get("error")` before the banner. The error string
+    with the exact `cargo build` line was already there — it was simply never
+    read. Backend absent: prints the reason, emits nothing, exits **2**.
+  * The bare `except Exception` is narrowed to `ImportError` on the import
+    alone. That catch-all is the actual defect: it is why a method name that
+    never existed survived for the life of the file.
+  * The `hasattr(wb, ...)` guards are gone. They are the same pattern — had
+    `wb.write` been guarded like its neighbours, it would have emitted nothing
+    *silently* and this would still be invisible.
+
+**One more f64 leak found while verifying**, directly against the owner's "no
+f64 path": the assertion did `abs(float(res["duality_gap"]))`, truncating an
+MPFR decimal string to float64 **inside the script whose whole purpose is the
+no-float64 path**. A populated run showed 3 raw float64 fields would enter the
+witness. Now `mpmath.mpf` + `_precision.fmt`, matching `add_assertion`'s own
+documented string convention ("the drained convention (qou-t0rf)"). Warning
+gone.
+
+**Verified both branches** rather than reasoning about them: absent -> exit 2,
+no file; stubbed-populated -> witness emitted, 1 assertion passed, exit 0, no
+float64 warning. The stubbed witness was deleted, not committed.
+
+**Still true:** this emits nothing in this sandbox, because the MPFR backend is
+not built. The "gram_matrix_mp has no consumer" gap the header claims to close
+stays open until someone builds `clarabel-operator-selection-lp` — but the
+script now says so instead of reporting success. Building it belongs to
+qou-q7f1.
