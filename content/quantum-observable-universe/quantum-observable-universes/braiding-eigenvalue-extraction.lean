@@ -30,7 +30,9 @@ into eigenspaces requires:
    get a scalar eigenvalue in End(𝟙) ≅ k.
 
 Once the eigenvalues lamSym, lamAnti are extracted (wall), the rest
-is pure algebra over ℝ (proved here without sorry).
+is pure algebra over the ground ring `R_q` (proved here without sorry).
+Note `R_q` is a **ring, not a field**: it has no `Inv` instance, so the
+narrative's `q⁻¹` spellings are carried multiplicatively below.
 
 LaTeX label: `prop:braiding-eigenvalue-extraction`
 
@@ -149,39 +151,64 @@ structure BraidingEigenvalueData where
 noncomputable def BraidingEigenvalueData.q (bed : BraidingEigenvalueData) : R_q :=
   bed.lamSym
 
-/-- The antisymmetric eigenvalue is forced to be -q⁻¹ by the
-    determinant constraint. -/
+/-- **The antisymmetric eigenvalue is the negated inverse of the symmetric
+    one**, stated multiplicatively.
+
+    The narrative form is `λ₋ = -q⁻¹`. That form is **not well-typed here**:
+    the ground ring is `R_q = ℤ[q, q⁻¹]`, which has no `Inv` instance — the
+    *indeterminate* `q` is invertible in `R_q`, but a general element is not,
+    so there is no `⁻¹` operation to apply to `lamSym`. The equivalent
+    product identity carries the same content and survives the ring:
+    `-λ₋` is a two-sided inverse of `λ₊`.
+
+    This is exactly `det_constraint` rearranged; the `⁻¹` spelling added no
+    information over a field either. -/
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
-theorem BraidingEigenvalueData.anti_eq_neg_inv
+theorem BraidingEigenvalueData.symm_mul_neg_anti
     (bed : BraidingEigenvalueData) :
-    bed.lamAnti = -(bed.lamSym)⁻¹ := by
+    bed.lamSym * (-bed.lamAnti) = 1 := by
   have h := bed.det_constraint
-  have hne := bed.lamSym_ne_zero
-  field_simp at h ⊢
-  linarith
+  rw [mul_neg, h, neg_neg]
 
-/-- Both eigenvalues of c_{V,V} are roots of the Hecke polynomial
-    (X - q)(X + q⁻¹) = 0. -/
+/-- Consequently `λ₊` is a **unit** of `R_q`, witnessed by `-λ₋`.
+
+    Over a field this would be the content of `lamSym ≠ 0`; over a ring
+    "invertible" is strictly stronger than "nonzero", and it is the stronger
+    statement that the braiding actually supplies. -/
+theorem BraidingEigenvalueData.isUnit_lamSym
+    (bed : BraidingEigenvalueData) : IsUnit bed.lamSym :=
+  isUnit_of_mul_eq_one _ _ bed.symm_mul_neg_anti
+
+/-- **Both eigenvalues of `c_{V,V}` are roots of the Hecke polynomial**, in
+    its `q`-cleared form.
+
+    The narrative polynomial is `(X - q)(X + q⁻¹)`. Multiplying the second
+    factor by the unit `q` clears the inverse without changing the root set,
+    giving `(X - q)(qX + 1)` — well-typed over `R_q`, where `⁻¹` is not
+    available (see `symm_mul_neg_anti`).
+
+    Root set is unchanged because `q` is a unit (`isUnit_lamSym`): `qX + 1`
+    and `X + q⁻¹` differ by that unit factor, so they vanish together. -/
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
 theorem hecke_polynomial_roots (bed : BraidingEigenvalueData) :
-    (bed.lamSym - bed.q) * (bed.lamSym + bed.q⁻¹) = 0
-    ∧ (bed.lamAnti - bed.q) * (bed.lamAnti + bed.q⁻¹) = 0 := by
+    (bed.lamSym - bed.q) * (bed.q * bed.lamSym + 1) = 0
+    ∧ (bed.lamAnti - bed.q) * (bed.q * bed.lamAnti + 1) = 0 := by
   unfold BraidingEigenvalueData.q
-  constructor
-  · ring_nf; simp
-  · rw [bed.anti_eq_neg_inv]
-    have hne := bed.lamSym_ne_zero
-    field_simp
-    ring
+  refine ⟨by ring, ?_⟩
+  have hzero : bed.lamSym * bed.lamAnti + 1 = 0 := by
+    rw [bed.det_constraint]; ring
+  rw [hzero, mul_zero]
 
 /-- Classical limit: symmetric braiding (c² = id) forces q = 1. -/
 theorem classical_limit (bed : BraidingEigenvalueData)
     (hsym : bed.lamSym = 1) : bed.lamAnti = -1 := by
-  rw [bed.anti_eq_neg_inv, hsym]; simp
+  have h := bed.det_constraint
+  rw [hsym, one_mul] at h
+  exact h
 
 /-- Quantum regime: non-symmetric braiding forces q ≠ 1. -/
 theorem quantum_regime (bed : BraidingEigenvalueData)
@@ -195,18 +222,18 @@ theorem quantum_regime (bed : BraidingEigenvalueData)
 --      DOI: 10.1007/978-1-4612-0783-2
 theorem braiding_eigenvalue_extraction
     (lamSym lamAnti : R_q)
-    (hλs : lamSym ≠ 0)
-    (hλa : lamAnti ≠ 0)
+    (hlamS : lamSym ≠ 0)
+    (hlamA : lamAnti ≠ 0)
     (hdet : lamSym * lamAnti = -1)
     : ∃ (bed : BraidingEigenvalueData),
         bed.q = lamSym
-        ∧ bed.lamAnti = -(lamSym)⁻¹
-        ∧ (bed.lamAnti - bed.lamSym) * (bed.lamAnti + (bed.lamSym)⁻¹) = 0 := by
-  have h_anti_val : lamAnti = -(lamSym)⁻¹ := by
-    field_simp at hdet ⊢; linarith
-  refine ⟨⟨lamSym, lamAnti, hλs, hλa, hdet⟩, rfl, h_anti_val, ?_⟩
-  · rw [h_anti_val]
-    field_simp
-    ring
+        ∧ bed.lamSym * (-bed.lamAnti) = 1
+        ∧ (bed.lamAnti - bed.lamSym) * (bed.lamSym * bed.lamAnti + 1) = 0 := by
+  refine ⟨⟨lamSym, lamAnti, hlamS, hlamA, hdet⟩, rfl, ?_, ?_⟩
+  · rw [mul_neg, hdet, neg_neg]
+  · have hzero : lamSym * lamAnti + 1 = 0 := by rw [hdet]; ring
+    rw [hzero, mul_zero]
+
+end   -- noncomputable section
 
 end QOU

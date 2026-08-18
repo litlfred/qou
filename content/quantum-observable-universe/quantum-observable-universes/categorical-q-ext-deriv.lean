@@ -54,9 +54,20 @@ structure CategoricalQExtDeriv (C : Type u) [CategoryTheory.Category.{v} C]
   d_classical : frobHopf.obj ⟶ frobHopf.obj
   /-- The vertical projection `π_V`. -/
   proj_V : frobHopf.obj ⟶ frobHopf.obj
-  /-- The deformation parameter `q` (non-zero). -/
+  /-- The deformation parameter `q`. -/
   q : R_q
-  q_ne_zero : q ≠ 0
+  /-- A two-sided inverse for `q`, carried as **data**.
+
+      The ground ring `R_q = ℤ[q, q⁻¹]` is a ring, not a field: it has no
+      `Inv` instance, so `q⁻¹` cannot be *written* even though the
+      indeterminate `q` is invertible in it. Carrying the inverse
+      explicitly, with its defining relation below, is the same move the
+      QOU existence statement makes (`(q qinv : R) (hq : q * qinv = 1)`),
+      and it is strictly stronger than the `q ≠ 0` it replaces —
+      over a ring, invertible is not implied by nonzero. -/
+  qinv : R_q
+  /-- `qinv` is the inverse of `q`. Replaces the former `q_ne_zero`. -/
+  q_mul_qinv : q * qinv = 1
   /-- Idempotency of the vertical projection: `π_V ∘ π_V = π_V`. -/
   proj_V_idem : proj_V ≫ proj_V = proj_V
 
@@ -74,8 +85,8 @@ noncomputable def CategoricalQExtDeriv.dq {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R_q C]
     (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
-  -- d_q = q⁻¹ · d + (1 − q⁻¹) · (π_V ≫ d)
-  (cqd.q⁻¹) • cqd.d_classical + (1 - cqd.q⁻¹) • (cqd.proj_V ≫ cqd.d_classical)
+  -- d_q = q⁻¹ · d + (1 − q⁻¹) · (π_V ≫ d), with `q⁻¹` supplied by `qinv`
+  cqd.qinv • cqd.d_classical + (1 - cqd.qinv) • (cqd.proj_V ≫ cqd.d_classical)
 
 /-- When `q = 1`, `d_q` reduces to `d`. -/
 theorem CategoricalQExtDeriv.dq_classical {C : Type u}
@@ -83,7 +94,13 @@ theorem CategoricalQExtDeriv.dq_classical {C : Type u}
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R_q C]
     (cqd : CategoricalQExtDeriv C) (hq : cqd.q = 1) :
     cqd.dq = cqd.d_classical := by
-  simp [dq, hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
+  -- `q = 1` forces `qinv = 1` through the defining relation, rather than
+  -- through `inv_one` (which needs an `Inv` instance `R_q` does not have).
+  have hqinv : cqd.qinv = 1 := by
+    have h := cqd.q_mul_qinv
+    rw [hq, one_mul] at h
+    exact h
+  simp [dq, hqinv, sub_self, zero_smul, one_smul, add_zero]
 
 end
 
