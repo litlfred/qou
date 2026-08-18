@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-18T21:31:43.580122+00:00",
-  "commitSha": "a935593d232e9568cce6d2558221df051168b5a3",
+  "computedAt": "2026-08-18T21:41:57.410907+00:00",
+  "commitSha": "f6b727ed07ed2f9379fb6e95a2e5116db277ba04",
   "assertions": [
     {
       "name": "zD_minus_bar_zD_is_exactly_h",
@@ -27,14 +27,30 @@
       "passed": true,
       "tolerance": 0,
       "source": "z_C is exactly bar-fixed and alpha_C exactly bar-odd; the projected D phase (alpha_D - h^2/4) is exactly bar-odd; the RAW D phase is not (its bar-sum is h^2/2 != 0). The three together are the iff of phaseTwice_bar_odd_iff_z_bar_fixed instantiated at both conventions."
+    },
+    {
+      "name": "bar_exchanges_the_two_loop_values_under_D_but_not_under_C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "bar(z_D) - (z_D - h) simplifies to exactly 0: under D the bar involution sends z to the NEGATIVE-stabilisation loop value, which is what mirror must do since mirroring exchanges positive and negative crossings. Under C the same difference is exactly h (0.2090603 at the proton anchor): C's z is bar-FIXED, i.e. mirror-blind. This reverses the naive reading -- the h^2/2 phase anomaly is not a defect of D, it is the signature that D tracks the crossing-sign exchange while the phase FORMULA, written in the bar-fixed C frame, was carried over unchanged."
+    },
+    {
+      "name": "projection_is_the_phase_at_the_mean_loop_value_not_a_shift",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "alpha_D - h^2/4 = ((z_D + (z_D - h))/2 - 1)*h/2 exactly -- the SAME formula with the positive-stabilisation loop value replaced by the mean of the two. So the projection is not an ad-hoc shift but a re-derivation of the phase in the mirror-symmetric loop value, and under D the loop-mean and the bar-mean coincide (QOU.QBeta.zD_bar_mean_eq_loop_mean). Lean: QOU.QBeta.phaseTwice_projected_eq_loopMean."
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 16,
   "computation": "qbeta-ladder-phase-mirror-covariance",
   "scriptFile": "qbeta_ladder_phase_mirror_covariance_probe.py",
-  "scriptHash": "b0312f5aed47",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "50867ba8a6d8",
+  "scriptCommitSha": "0a2cf2b56d586ca730c7819246ac68548a5aa4e7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,7 +66,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Closed form for the Q_beta ladder phase's bar-anomaly, backing the numerically-measured D-frame projection. For alpha = (z-1)h/2 with h bar-odd, bar(alpha)+alpha = h*(z - bar z)/2 for ANY z, so the phase is mirror-covariant iff z is exactly bar-fixed (QOU.QBeta.phaseTwice_bar_odd_iff_z_bar_fixed, sorry-free). Convention C's z = sqrt(q)/(1+q) IS bar-fixed (corpus lemma z_bar_invariant_field, PR #3449) so alpha_C is bar-odd by structure. Convention D's z = q^3/(q^2+1) is not, and its anomaly is EXACTLY h: z_D - bar(z_D) = q - 1/q, symbolically and at both anchors. Hence bar(alpha_D)+alpha_D = h^2/2 and the projection alpha_D - h^2/4 is the UNIQUE mirror-covariant part -- forced, not fitted (QOU.QBeta.phaseTwiceD_sub_hsq_bar_odd). Motivation for using bar-parity as the test: the Ocneanu trace needs a writhe-dependent framing prefactor (Jones 1987 Sec. 5) and writhe is mirror-odd (WritheMarkovInvariance.writhe_inv), so a framing phase must be bar-odd. SCOPE: closes nothing. The projected D phase still leaves a residual ~42x the C-frame one; that residual is untouched and the standing fence against hunting further phase corrections holds. No value wired, no tier moved, D stays canonical.",
+  "description": "Closed form for the Q_beta ladder phase's bar-anomaly, backing the numerically-measured D-frame projection. For alpha = (z-1)h/2 with h bar-odd, bar(alpha)+alpha = h*(z - bar z)/2 for ANY z, so the phase is mirror-covariant iff z is exactly bar-fixed (QOU.QBeta.phaseTwice_bar_odd_iff_z_bar_fixed, sorry-free). Convention C's z = sqrt(q)/(1+q) IS bar-fixed (corpus lemma z_bar_invariant_field, PR #3449) so alpha_C is bar-odd by structure. Convention D's z = q^3/(q^2+1) is not, and its anomaly is EXACTLY h: z_D - bar(z_D) = q - 1/q, symbolically and at both anchors. Hence bar(alpha_D)+alpha_D = h^2/2 and the projection alpha_D - h^2/4 is the UNIQUE mirror-covariant part -- forced, not fitted (QOU.QBeta.phaseTwiceD_sub_hsq_bar_odd). Sec.4 sharpens what the anomaly IS: bar(z_D) = z_D - h is the NEGATIVE-stabilisation loop value, so under D bar EXCHANGES the two Markov loop values -- exactly what mirror must do, since mirroring exchanges positive and negative crossings -- while C's bar-fixed z is mirror-BLIND and misses the exchange by h. The h^2/2 anomaly is therefore not a defect of D but the signature that D tracks the crossing-sign exchange while the phase FORMULA was carried over unchanged from the C frame. And the projection is not a shift: alpha_D - h^2/4 is the same formula at the MEAN of the two loop values, which under D equals the bar-mean (phaseTwice_projected_eq_loopMean, zD_bar_mean_eq_loop_mean). Motivation for using bar-parity as the test: the Ocneanu trace needs a writhe-dependent framing prefactor (Jones 1987 Sec. 5) and writhe is mirror-odd (WritheMarkovInvariance.writhe_inv), so a framing phase must be bar-odd. SCOPE: closes nothing. The projected D phase still leaves a residual ~42x the C-frame one; that residual is untouched and the standing fence against hunting further phase corrections holds. No value wired, no tier moved, D stays canonical.",
   "data": {
     "phase_convention": "alpha = (z - 1) * h / 2, h = q - 1/q",
     "symbolic_exact": {
@@ -58,7 +74,10 @@
       "zD_anomaly_minus_h": "0",
       "alphaC_bar_sum": "0",
       "alphaD_bar_sum_minus_hsq_half": "0",
-      "projected_D_bar_sum": "0"
+      "projected_D_bar_sum": "0",
+      "zD_bar_minus_negative_loop": "0",
+      "zC_bar_minus_negative_loop": "0",
+      "projection_minus_loopmean_phase": "0"
     },
     "lean_declarations": [
       "QOU.QBeta.phaseTwice_bar_anomaly",
@@ -67,7 +86,10 @@
       "QOU.QBeta.phaseTwiceC_bar_odd",
       "QOU.QBeta.zD_sub_bar_eq_h",
       "QOU.QBeta.phaseTwiceD_bar_anomaly",
-      "QOU.QBeta.phaseTwiceD_sub_hsq_bar_odd"
+      "QOU.QBeta.phaseTwiceD_sub_hsq_bar_odd",
+      "QOU.QBeta.phaseTwice_projected_eq_loopMean",
+      "QOU.QBeta.zD_bar_eq_negative_loop",
+      "QOU.QBeta.zD_bar_mean_eq_loop_mean"
     ],
     "anchors": {
       "proton": {
@@ -79,7 +101,10 @@
         "alphaD_bar_sum": "0.0218531042662609947010096678386941548841069803567530545179754",
         "alphaD_residual_vs_hsq_half": "1.13195988485333904593863991136097397258531639976739227369783e-72",
         "alphaC_bar_sum_abs": "0.0",
-        "projected_bar_sum_abs": "1.13195988485333904593863991136097397258531639976739227369783e-72"
+        "projected_bar_sum_abs": "1.13195988485333904593863991136097397258531639976739227369783e-72",
+        "zD_bar_vs_negative_loop": "4.52783953941335618375455964544389589034126559906956909479131e-72",
+        "zC_bar_vs_negative_loop": "0.209060298795639315430846213129674943859757495263024555381696",
+        "projection_vs_loopmean_phase": "5.65979942426669522969319955680486986292658199883696136848913e-73"
       },
       "muon": {
         "q": "1.10997859555418057528159407960950937799328227995868622546675",
@@ -90,7 +115,10 @@
         "alphaD_bar_sum": "0.0218531091152560388791399441373124622003162010499405737300995",
         "alphaD_residual_vs_hsq_half": "0.0",
         "alphaC_bar_sum_abs": "1.13195988485333904593863991136097397258531639976739227369783e-72",
-        "projected_bar_sum_abs": "0.0"
+        "projected_bar_sum_abs": "0.0",
+        "zD_bar_vs_negative_loop": "4.52783953941335618375455964544389589034126559906956909479131e-72",
+        "zC_bar_vs_negative_loop": "0.209060321989879461101608422297921906461756303916458683983049",
+        "projection_vs_loopmean_phase": "0.0"
       }
     },
     "source_residual_ratio_projectedD_over_C": "41.94",

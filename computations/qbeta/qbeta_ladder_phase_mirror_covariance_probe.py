@@ -104,6 +104,14 @@ def _symbolic() -> dict[str, str]:
         "projected_D_bar_sum": sp.simplify(
             (bar(alpha(zD)) - h ** 2 / 4) + (alpha(zD) - h ** 2 / 4)
         ),
+        # Sec.4: bar exchanges the two Markov loop values under D ...
+        "zD_bar_minus_negative_loop": sp.simplify(bar(zD) - (zD - h)),
+        # ... and C's bar-fixed z misses that exchange by exactly h.
+        "zC_bar_minus_negative_loop": sp.simplify(bar(zC) - (zC - h) - h),
+        # ... so the projection IS the phase at the mean of the two loop values.
+        "projection_minus_loopmean_phase": sp.simplify(
+            alpha(zD) - h ** 2 / 4 - alpha((zD + (zD - h)) / 2)
+        ),
     }
 
 
@@ -115,6 +123,7 @@ def _numeric(q):
     zC = mp.sqrt(q) / (1 + q)
     zCbar = mp.sqrt(1 / q) / (1 + 1 / q)
     aD, aDbar = (zD - 1) * h / 2, (zDbar - 1) * (-h) / 2
+    loop_mean = (zD + (zD - h)) / 2
     aC, aCbar = (zC - 1) * h / 2, (zCbar - 1) * (-h) / 2
     return {
         "q": q, "h": h,
@@ -125,6 +134,11 @@ def _numeric(q):
         "alphaD_residual_vs_hsq_half": abs((aDbar + aD) - h ** 2 / 2),
         "alphaC_bar_sum_abs": abs(aCbar + aC),
         "projected_bar_sum_abs": abs((aDbar - h ** 2 / 4) + (aD - h ** 2 / 4)),
+        "zD_bar_vs_negative_loop": abs(zDbar - (zD - h)),
+        "zC_bar_vs_negative_loop": abs(zCbar - (zC - h)),
+        "projection_vs_loopmean_phase": abs(
+            (aD - h ** 2 / 4) - (loop_mean - 1) * h / 2
+        ),
     }
 
 
@@ -143,7 +157,9 @@ def main() -> int:
     print("  " + "-" * 74)
     for key in ("zD_minus_bar", "h", "zD_anomaly_residual", "zC_minus_bar",
                 "alphaD_bar_sum", "alphaD_residual_vs_hsq_half",
-                "alphaC_bar_sum_abs", "projected_bar_sum_abs"):
+                "alphaC_bar_sum_abs", "projected_bar_sum_abs",
+                "zD_bar_vs_negative_loop", "zC_bar_vs_negative_loop",
+                "projection_vs_loopmean_phase"):
         p, m = rows["proton"][key], rows["muon"][key]
         print(f"  {'':<9}{key:<32}{mp.nstr(p, 12):>26}{mp.nstr(m, 12):>26}")
 
@@ -158,6 +174,16 @@ def main() -> int:
   than a shift chosen to fit. Convention C's phase is bar-odd for the
   structural reason that z_C is exactly bar-fixed (z_bar_invariant_field),
   not because the anchor happened to cooperate.
+
+  And the anomaly is not a defect of D. bar(z_D) = z_D - h IS the negative-
+  stabilisation loop value, so under D the bar involution EXCHANGES the two
+  Markov loop values -- which is what mirror must do, since mirroring a link
+  exchanges positive and negative crossings. C's bar-fixed z is mirror-BLIND
+  and misses that exchange by exactly h. So it is the phase FORMULA, written
+  in the C frame where z does not move under bar, that needed re-deriving --
+  and the re-derivation is forced: alpha_D - h^2/4 is not a shift at all but
+  the SAME formula evaluated at the mean of the two loop values, which under
+  D coincides with the bar-mean.
 
   This does NOT close cds1. The projected D phase still leaves a residual
   {SOURCE_RESIDUAL_RATIO}x the C-frame one (source witness); the fence against hunting
@@ -177,7 +203,18 @@ def main() -> int:
         "z_D - bar(z_D) = q - 1/q, symbolically and at both anchors. Hence "
         "bar(alpha_D)+alpha_D = h^2/2 and the projection alpha_D - h^2/4 is "
         "the UNIQUE mirror-covariant part -- forced, not fitted "
-        "(QOU.QBeta.phaseTwiceD_sub_hsq_bar_odd). Motivation for using "
+        "(QOU.QBeta.phaseTwiceD_sub_hsq_bar_odd). Sec.4 sharpens what the "
+        "anomaly IS: bar(z_D) = z_D - h is the NEGATIVE-stabilisation loop "
+        "value, so under D bar EXCHANGES the two Markov loop values -- exactly "
+        "what mirror must do, since mirroring exchanges positive and negative "
+        "crossings -- while C's bar-fixed z is mirror-BLIND and misses the "
+        "exchange by h. The h^2/2 anomaly is therefore not a defect of D but "
+        "the signature that D tracks the crossing-sign exchange while the "
+        "phase FORMULA was carried over unchanged from the C frame. And the "
+        "projection is not a shift: alpha_D - h^2/4 is the same formula at the "
+        "MEAN of the two loop values, which under D equals the bar-mean "
+        "(phaseTwice_projected_eq_loopMean, zD_bar_mean_eq_loop_mean). "
+        "Motivation for using "
         "bar-parity as the test: the Ocneanu trace needs a writhe-dependent "
         "framing prefactor (Jones 1987 Sec. 5) and writhe is mirror-odd "
         "(WritheMarkovInvariance.writhe_inv), so a framing phase must be "
@@ -196,6 +233,9 @@ def main() -> int:
         "QOU.QBeta.zD_sub_bar_eq_h",
         "QOU.QBeta.phaseTwiceD_bar_anomaly",
         "QOU.QBeta.phaseTwiceD_sub_hsq_bar_odd",
+        "QOU.QBeta.phaseTwice_projected_eq_loopMean",
+        "QOU.QBeta.zD_bar_eq_negative_loop",
+        "QOU.QBeta.zD_bar_mean_eq_loop_mean",
     ])
     wb.add_data("anchors", {
         lab: {k: fmt(v) for k, v in r.items()} for lab, r in rows.items()
@@ -238,6 +278,38 @@ def main() -> int:
                "RAW D phase is not (its bar-sum is h^2/2 != 0). The three "
                "together are the iff of phaseTwice_bar_odd_iff_z_bar_fixed "
                "instantiated at both conventions.",
+    )
+    wb.add_assertion(
+        name="bar_exchanges_the_two_loop_values_under_D_but_not_under_C",
+        computed=str(int(sym["zD_bar_minus_negative_loop"] == 0
+                         and sym["zC_bar_minus_negative_loop"] == 0
+                         and rows["proton"]["zD_bar_vs_negative_loop"] < tol
+                         and rows["proton"]["zC_bar_vs_negative_loop"] > mp.mpf("0.2"))),
+        expected="1", tolerance=0,
+        source="bar(z_D) - (z_D - h) simplifies to exactly 0: under D the bar "
+               "involution sends z to the NEGATIVE-stabilisation loop value, "
+               "which is what mirror must do since mirroring exchanges positive "
+               "and negative crossings. Under C the same difference is exactly "
+               f"h ({mp.nstr(rows['proton']['zC_bar_vs_negative_loop'], 8)} at "
+               "the proton anchor): C's z is bar-FIXED, i.e. mirror-blind. This "
+               "reverses the naive reading -- the h^2/2 phase anomaly is not a "
+               "defect of D, it is the signature that D tracks the crossing-sign "
+               "exchange while the phase FORMULA, written in the bar-fixed C "
+               "frame, was carried over unchanged.",
+    )
+    wb.add_assertion(
+        name="projection_is_the_phase_at_the_mean_loop_value_not_a_shift",
+        computed=str(int(sym["projection_minus_loopmean_phase"] == 0
+                         and rows["proton"]["projection_vs_loopmean_phase"] < tol
+                         and rows["muon"]["projection_vs_loopmean_phase"] < tol)),
+        expected="1", tolerance=0,
+        source="alpha_D - h^2/4 = ((z_D + (z_D - h))/2 - 1)*h/2 exactly -- the "
+               "SAME formula with the positive-stabilisation loop value replaced "
+               "by the mean of the two. So the projection is not an ad-hoc shift "
+               "but a re-derivation of the phase in the mirror-symmetric loop "
+               "value, and under D the loop-mean and the bar-mean coincide "
+               "(QOU.QBeta.zD_bar_mean_eq_loop_mean). Lean: "
+               "QOU.QBeta.phaseTwice_projected_eq_loopMean.",
     )
     out = wb.save({"q0Anchor": "ambiguous"})
     print(f"Witness: {out}")
