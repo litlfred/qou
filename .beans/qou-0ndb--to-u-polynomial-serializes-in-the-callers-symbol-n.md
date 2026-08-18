@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-10T02:36:12Z
-updated_at: 2026-08-10T18:46:22Z
+updated_at: 2026-08-18T22:10:15Z
 ---
 
 
@@ -543,3 +543,63 @@ re-proposed.
 
 Both universal across every pair measured, canonical and open — and Φ_1 now has
 a proof (`mirror_traceDiff_eq_zero_of_tau_eq`) rather than an observation.
+
+
+## 2026-08-18 — corpus sweep for "any other issues like this?"
+
+Two defect classes, swept separately.
+
+### Class 1 — differencing a_m across two witnesses (the qou-0ndb defect)
+
+Nine producers. Confirmed the mechanism against the witness fields directly:
+`Sum a_m (u;u)_m == p_in_u == denom_in_u * tr_M(u^2) * u^shift`, True on every
+entry, so a_m expand the CLEARED NUMERATOR and the coefficient difference is
+`d_X*t_X - d_Y*t_Y`.
+
+Sharpest form of the finding: the denominators are BUILT OUT OF Phi_4 and Phi_8,
+the very factors being measured, to different powers per pair member --
+proton Phi_8^2 vs neutron none; 6He Phi_8^4 vs 6Be Phi_8^8; 14O Phi_8^16 vs
+14C Phi_8^12. So the published multiplicity was substantially a property of the
+normalisation.
+
+Drained: `_habiro_coefficient_extract`, `extend_even_a_mirror_pair_test`,
+`topic2_mirror_pair_phi8_boundary_scan`, `shell_closure_phi8_correlation_test`,
+`probes/qbeta_habiro_phi8_squared_from_z_squared_probe`.
+NOT drained: the five qbeta Habiro-element scripts -> bean qou-lnog.
+
+### Class 2 — q -> sym**2 into an assumption-free symbol
+
+Found in my own helper: it built the difference in the CALLER's symbol, and
+every caller passes `sp.symbols('u')` with no assumptions, so `(u**2)**(k/2)`
+never denested and all three even-A pairs died with PolynomialError. `powsimp`
+does not denest a nested power; `powdenest` does. Fixed by normalising to
+U_CANONICAL inside and translating at the edge, plus a guard that raises if a
+half-integer power survives.
+
+Swept the corpus: 13 files substitute `q -> sym**2`; three have a genuine
+half-integer-power source (`a4_brunnian_deficit_closed_form`,
+`per_irrep_pole_atom_crystal`, `probes/qbeta_borromean_cyclotomic_probe`) and
+ALL THREE ARE CLEAN -- each already substitutes into an explicitly-positive
+symbol, one carrying the comment "so sqrt(u^2) -> u". Class 2 was confined to
+my helper.
+
+### Result
+
+All ten mirror pairs under D: Phi_1 = Phi_2 = 1, Phi_4 = A, and
+Phi_8 = 2floor((A-1)/2) on 10/10. Both corpus REFUTES entries (A=6, A=14) gone.
+Boundary claims M_first_Phi_8 = 7 / M_first_Phi_8^2 = 15 re-measured and hold
+9/9 -- the one place the correction strengthened an existing conclusion.
+
+Phi_4 = A is an OBSERVATION on ten points. No proof, wired to nothing. Do not
+cite it as established.
+
+### Two of my own claims in this PR corrected
+
+- "A=6 -> Phi_8 = 0, the sole open anomaly; law 9/10" -- both figures came
+  through the un-denested path. 10/10, no anomaly.
+- "Phi_4 = A REFUTED (A=6 -> 5, A=12 -> 23, A=14 -> 27)" -- same path.
+  Refutation withdrawn; Phi_4 = A holds exactly on all ten.
+
+Also fixed `witness_shape_guard`: it flagged a witness as COLLAPSED on
+`durationMs: 1 -> 0` while that witness GAINED content. Floored at 1 s, at the
+guard rather than --accept-ing past it.
