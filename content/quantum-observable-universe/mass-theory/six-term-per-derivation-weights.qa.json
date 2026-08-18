@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/SixTermPerDerivationWeights.lean"
   },
   "source_hashes": {
-    "md": "c75e9ab287de",
+    "md": "d0b3ffc27928",
     "ts": "8e413d3b2751",
     "lean": "4565e351d4e5",
     "lean_statement": "cfb2b32e58f7"
@@ -1963,7 +1963,27 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751",
+          "lean": "4565e351d4e5",
+          "lean_statement": "cfb2b32e58f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "a9b97ea341b2",
+          "script_commit_sha": "3c2848a5f7fd8883290c754251f18e6d4bc4f03b"
+        },
+        "reviewed_at": "2026-08-18T20:53:29.964Z",
+        "reviewed_sha": "4d55d6b9c937999705442bdeaf8788e53d1118b5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-18T20:53:29.964Z"
 }

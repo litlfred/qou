@@ -46,6 +46,9 @@ from typing import Any, Optional
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import FirstPrinciple, Q_0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from mpmath import mp, mpf  # noqa: E402 — chain values are carried as mpf, never float64
+
+mp.dps = 50
 
 
 HERE = Path(__file__).parent
@@ -86,8 +89,9 @@ class ChainResult:
     chain_path: Path
     target: str
     target_value: Any
-    target_tolerance: float
-    computed_value: Optional[float]
+    target_is_numeric: bool
+    target_tolerance: Any
+    computed_value: Optional[Any]
     structural_ok: bool
     leaf_matches: bool
     issues: list[str]
@@ -106,19 +110,35 @@ def _eval_simple_algebra(operation: str, q: float) -> Optional[float]:
     return None
 
 
+def _ser(v: Any) -> Any:
+    """Serialize a carried value for the witness.
+
+    `mpf` is not JSON-serializable, and `float(v)` would reintroduce exactly the
+    float64 downcast this module now avoids, so numeric values leave as
+    full-precision decimal text.  `WitnessBuilder.add_assertion` documents
+    strings as the drained convention (qou-t0rf) and still coerces with
+    `float()` for the pass/fail decision, so nothing downstream changes.
+    """
+    return mp.nstr(v, mp.dps) if isinstance(v, mpf) else v
+
+
 def validate_chain(chain_path: Path) -> ChainResult:
     with chain_path.open("r", encoding="utf-8") as f:
-        chain_data = json.load(f)
+        # `parse_float=str` keeps every JSON float literal as its exact source
+        # text, so `mpf` below reads the authored digits rather than a value
+        # already rounded through float64.  Without this the downcast happens
+        # inside `json`, before this module ever sees the number.
+        chain_data = json.load(f, parse_float=str)
 
     target = chain_data["target"]
     target_value_raw = chain_data["target_value"]
     try:
-        target_value: Any = float(target_value_raw)
+        target_value: Any = mpf(str(target_value_raw))
         target_is_numeric = True
     except (TypeError, ValueError):
         target_value = target_value_raw
         target_is_numeric = False
-    target_tolerance = float(chain_data.get("target_tolerance", 1e-9))
+    target_tolerance = mpf(str(chain_data.get("target_tolerance", "1e-9")))
     steps = chain_data["steps"]
 
     # 1. Structural well-formedness re-check (defended by the schema,
@@ -210,7 +230,7 @@ def validate_chain(chain_path: Path) -> ChainResult:
     else:
         last = leaves[-1]
         try:
-            computed = float(last["output_value"])
+            computed = mpf(str(last["output_value"]))
         except (TypeError, ValueError):
             structural_issues.append(
                 f"COMPUTATIONAL leaf {last['name']!r} output_value not "
@@ -240,6 +260,7 @@ def validate_chain(chain_path: Path) -> ChainResult:
         chain_path=chain_path,
         target=target,
         target_value=target_value,
+        target_is_numeric=target_is_numeric,
         target_tolerance=target_tolerance,
         computed_value=computed,
         structural_ok=structural_ok,
@@ -317,6 +338,7 @@ def audit_witness_trust(chains_dir: Path) -> dict:
     out: dict[str, list[str]] = {
         "derivation-fully-trusted": [],
         "derivation-backed": [],
+        "audit-only-exempt": [],
         "computational-only": [],
     }
 
@@ -348,10 +370,21 @@ def audit_witness_trust(chains_dir: Path) -> dict:
             )
         else:
             script_file = None
+        # A witness that declares `auditOnly` records a QA/audit tool's FINDING,
+        # not a derivation of a physical target — demanding a first-principles
+        # chain for the output of a sorry-counter is a category error. This is the
+        # same basis on which the audit already skips its own witness above; it is
+        # reported in a dedicated bucket, never dropped, so the exemption stays
+        # visible and auditable rather than shrinking the denominator silently.
+        audit_only = isinstance(data, dict) and bool(
+            data.get("auditOnly") or data.get("audit_only") or data.get("auditOnlyDoc")
+        )
         if _is_in_set(wp.name, script_file, fully_trusted_basenames, fully_trusted):
             out["derivation-fully-trusted"].append(wp.name)
         elif _is_in_set(wp.name, script_file, referenced_basenames, referenced):
             out["derivation-backed"].append(wp.name)
+        elif audit_only:
+            out["audit-only-exempt"].append(wp.name)
         else:
             out["computational-only"].append(wp.name)
     return out
@@ -392,8 +425,8 @@ def main() -> int:
         {
             "chain": r.chain_path.name,
             "target": r.target,
-            "target_value": r.target_value,
-            "computed_value": r.computed_value,
+            "target_value": _ser(r.target_value),
+            "computed_value": _ser(r.computed_value),
             "structural_ok": r.structural_ok,
             "leaf_matches": r.leaf_matches,
             "issues": r.issues,
@@ -415,7 +448,7 @@ def main() -> int:
         # chains declare tighter values).  Symbolic chains (no
         # COMPUTATIONAL leaf) skip this — they are validated purely
         # structurally + via `chain_valid[...]` above.
-        if isinstance(r.target_value, (int, float)) and r.computed_value is not None:
+        if r.target_is_numeric and r.computed_value is not None:
             abs_tol = (
                 abs(r.target_value) * r.target_tolerance
                 if r.target_value != 0
@@ -423,9 +456,9 @@ def main() -> int:
             )
             w.add_assertion(
                 f"leaf_value[{r.chain_path.stem}]",
-                computed=r.computed_value,
-                expected=r.target_value,
-                tolerance=abs_tol,
+                computed=_ser(r.computed_value),
+                expected=_ser(r.target_value),
+                tolerance=_ser(abs_tol),
             )
     w.save()
 
@@ -442,10 +475,11 @@ def main() -> int:
     n_full = len(audit["derivation-fully-trusted"])
     n_backed = len(audit["derivation-backed"])
     n_comp = len(audit["computational-only"])
+    n_exempt = len(audit["audit-only-exempt"])
     print(
         f"\nWitness trust audit: "
         f"fully-trusted={n_full}, derivation-backed={n_backed}, "
-        f"computational-only={n_comp}"
+        f"audit-only-exempt={n_exempt}, computational-only={n_comp}"
     )
     if audit["derivation-fully-trusted"]:
         print("  derivation-fully-trusted witnesses:")

@@ -1,0 +1,74 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_root_ambiguity_criterion_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_root_ambiguity_criterion_probe.py",
+ "commitSha": "ed2d29afc4e6c345b37936848ca5df61925cf56f",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 \u00a77 circular units p.33; GSWZ arXiv:2412.04241v2 eqn (270); shift law QOU.Machinery.CyclicQuantumDilog (#4964); Addendum 27",
+ "checks": {
+  "alpha_line_identities": true,
+  "representative_rebuilt_matches_addendum27": true,
+  "ambiguity_closed_form_matches_all_measured_twists": true,
+  "closed_form_is_nontrivial": true,
+  "no_special_symbols_at_8_12_24": true,
+  "obstructed_at_4_6_8_12_24": true,
+  "m3_door_open": true,
+  "control_weaker_condition_still_feasible": true,
+  "control_tester_rejects": true
+ },
+ "result": {
+  "closed_form_check": {
+   "3": {
+    "mult": 2,
+    "e_1_minus_w": 2,
+    "predicted": 2,
+    "measured": 2
+   },
+   "22": {
+    "mult": -3,
+    "e_1_minus_w": 13,
+    "predicted": 0,
+    "measured": 0
+   },
+   "12": {
+    "mult": -2,
+    "e_1_minus_w": 6,
+    "predicted": 0,
+    "measured": 0
+   },
+   "15": {
+    "mult": -4,
+    "e_1_minus_w": 10,
+    "predicted": 1,
+    "measured": 1
+   }
+  },
+  "special_symbol_counts": {
+   "3": 3,
+   "4": 2,
+   "6": 3,
+   "8": 0,
+   "12": 0,
+   "24": 0
+  },
+  "five_term_relations": 506,
+  "combined_condition_feasible": {
+   "3": true,
+   "4": false,
+   "6": false,
+   "8": false,
+   "12": false,
+   "24": false
+  },
+  "weaker_condition_control": {
+   "3": true,
+   "24": true
+  }
+ },
+ "scope": "The root ambiguity has the closed form Delta_j = -n_j e(1-w_j) mod m (verified against every measured twist), giving a SECOND condition m | n_j e(1-w_j) alongside Addendum 27's m | n_j e(w_j) -- together mu*_w | n_w with mu* = m/gcd(m, gcd(e(w), e(1-w))). This is the shape of CGZ's own D*[zeta_D] elements, whose multiplicity exists for exactly this reason. Residue-level infeasibility is a SOUND element-level obstruction (element solutions merge into residue ones; the converse is the Addendum-25 error and is not used): the combined condition is INFEASIBLE at m = 4, 6, 8, 12, 24 -- excluding THIS construction there, not eps_m as a map -- and FEASIBLE at m = 3, where an element-level representative meeting both conditions still has to be exhibited (the single-relation family contains none)."
+}

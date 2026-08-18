@@ -14,11 +14,12 @@ We inhabit a universe in which three facts are immediately apparent:
   \item \textbf{Spatial isotropy.} Spatial rotations are governed by $\mathrm{SO}(3)$. In the categorical framework, this emerges from the fiber adjoint involution acting on the weight decomposition. The three real generators of $\mathfrak{so}(3)$ correspond to the three independent Reeb degrees on the genus-4 surface.
 \end{enumerate}
 
-These three observations are not independent. They are consequences of a single topological constraint: the Euler characteristic $\chi(A) = -6$. Bring's surface, with genus $g = 4$ and $\chi = 2 - 2g = -6$, is the unique algebraic surface that realises all three simultaneously.
+These three observations are consequences of a single topological constraint: the Euler characteristic $\chi(A) = -6$. Bring's surface, with genus $g = 4$ and $\chi = 2 - 2g = -6$, is the unique algebraic surface that realises all three simultaneously.
 
 \section{Physical regimes and limiting context}
 \label{sec:physical-regimes}
 \sectionannot{sec:physical-regimes}
+\phantomsection\label{sec:physical-regimes-preamble}
 We now develop physical regimes and limiting context, tracing the construction from the unit circle bundle onward.
 
 \phantomsection\label{ex:brings-surface}% compact-mode: block excluded
@@ -27,6 +28,7 @@ We now develop physical regimes and limiting context, tracing the construction f
 \section{Bring's surface algebraic substructure}
 \label{sec:bring-algebraic-substructure}
 \sectionannot{sec:bring-algebraic-substructure}
+\phantomsection\label{sec:bring-algebraic-substructure-preamble}
 This section develops the algebraic substructure of Bring's surface. The construction proceeds from the $\mathrm{SU}(2)$ generators.
 
 \begin{definition}[{$\mathrm{SU}(2)$ generators of $\mathrm{Dic}_3$}]
@@ -49,7 +51,7 @@ with $\alpha^3=\beta^2=-I$, dihedral relation $\beta\alpha\beta^{-1}=\alpha^{-1}
 
 \begin{definition}[{The hyperelliptic quintic $\mathcal{X}_5 \colon y^2 = x^5 - 1$}]
   \label{def:hyperelliptic-quintic}
-  \blockannot[compiled]{def:hyperelliptic-quintic}{QOU.HyperellipticQuintic}{quantum-observable-universe/brings-surface/hyperelliptic-quintic.md}
+  \blockannot[compiled]{def:hyperelliptic-quintic}{QOU.HyperellipticQuintic.zeta5_residue_monodromy.HyperellipticQuintic}{quantum-observable-universe/brings-surface/hyperelliptic-quintic.md}
   \uses{prop:lagrange-resolvent-transform}
 Let $\mathcal{X}_5$ denote the smooth projective completion of the affine curve
 
@@ -162,6 +164,7 @@ decomposition.  $\square$
 \section{Bring's surface as a QOU}
 \label{sec:brings-surface-qou}
 \sectionannot{sec:brings-surface-qou}
+\phantomsection\label{sec:brings-surface-qou-intro}
 The preamble establishes that three colors, a Reeb flow, and a $\chi = -6$ ledger force a unique surface. We now define that surface. We begin with Bring's surface (the $S_5$-symmetric quartic-and-quadric in $\mathbb{P}^4$), followed by its geometric realisations and physics interpretations. The central claim is the proposition that Bring's surface is a quantum observable universe. It constructs a QOU 4-tuple and computes the required invariants via the categorical Euler characteristic of $\mathcal{O}_q(\mathrm{SU}(2))$ and the Riemann–Hurwitz count for the canonical map $\Sigma_4 \to \mathbb{P}(V)$.
 
 We conclude by explicitly packaging the QOU 4-tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$ for downstream use. We then describe the braid-group action on the resolvents. The resolvent variables transform under $B_5$; the $S_5$-invariant combinations selected by that action furnish the color tube coordinates.
@@ -188,23 +191,10 @@ defined by the vanishing of the first three power sums. Over any algebraically c
   \label{prop:brings-is-qou}
   \blockannot[compiled]{prop:brings-is-qou}{QOU.Brings.brings_is_qou}{quantum-observable-universe/brings-surface/brings-is-qou.md}
   \uses{def:brings-surface, thm:qu-to-qou}
-Bring's surface $\Sigma_4$ (\hyperref[def:brings-surface]{Bring's surface}) determines a quantum observable universe over $R$ (with $30 \in R^{\times}$):
-
-\begin{enumerate}
-  \item \emph{Quantum universe.}  Set $\mathbf{C} =\allowbreak{} \mathrm{Rep}(\mathrm{SU}_{q}(2))$ over $R$, $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the Haar state, and $\tau$ the forgetful functor to $R$-$\mathrm{Mod}$. The differential calculus $\Omega^1(A)$ is the Woronowicz $3$-dimensional calculus.
-  \item \emph{Observability.} $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) =\allowbreak{} 0$ by the quantum Schur lemma. $\mathrm{SU}_q(2)$ has no non-trivial invariants in the adjoint representation.
-  \item \emph{Quantum lifting.}  The brane tower satisfies the quantum lifting condition (\hyperref[prop:yekutieli-lifting]{quantum lifting}). The obstruction classes $\kappa_n \neq 0$ persist at every level by \hyperref[conj:motivic-perpetual-obstruction]{motivic perpetual obstruction} applied with $\chi(A) = -6$.
-  \item \emph{Euler characteristic.}  By \hyperref[thm:qu-to-qou]{QU-to-QOU lifting}, $\chi(A) =\allowbreak{} \mathrm{tr}(\mathrm{id}_A) =\allowbreak{} 2 -\allowbreak{} 2g =\allowbreak{} -6$.
-  \item \emph{Geometric \refterm{descent}} (for $n = 1$, $\dim M_S = 3$):
-\[
-  M_S \xrightarrow{ \mathrm{Reeb}} \Sigma_4
-  \xrightarrow{\pi} \mathbb{P}(V)
-  \xrightarrow{ \mathrm{branch}} \{6 \text{ points}\}.
-\]
-The degree-$4$ covering $\pi$ has $6$ branch points with total ramification $R_{\mathrm{tot}} = 14$ (Riemann–Hurwitz). The ramification profile is determined by the $S_5$-symmetry.
-\end{enumerate}
+Bring's surface $\Sigma_4$ (\hyperref[def:brings-surface]{Bring's surface}) determines a quantum observable universe over $R$ (with $30 \in R^{\times}$).
 \end{proposition}
 
+\phantomsection\label{rem:brings-is-qou-verification}% compact-mode: block excluded
 \begin{lemma}[{Categorical Euler characteristic of $\mathcal{O}_q(\mathrm{SU}(2))$ on Bring's surface}]
   \label{lem:brings-euler-characteristic}
   \blockannot[compiled]{lem:brings-euler-characteristic}{QOU.ArchimedeanUniverse.brings_euler_characteristic}{quantum-observable-universe/brings-surface/brings-euler-characteristic.md}
@@ -363,9 +353,10 @@ When Bring's curve is viewed as a branched cover $\mathcal{S}\to\mathbb{P}^1$, a
 \section{Color tube coordinates}
 \label{sec:color-tube-coords}
 \sectionannot{sec:color-tube-coords}
-The braid-group action on the resolvents isolates three $S_5$-invariants. We now adopt those invariants as the coordinate system. We introduce the variables $c_r, c_g, c_b$ and their aggregates. We identify named combinations ($\hat c$, total charge) required for the subsequent analysis. We then reformulate the Bring quadric and cubic as identities among these aggregates. This change of coordinates clarifies the underlying structure.
+\phantomsection\label{sec:color-tube-coords-intro}
+The braid-group action on the resolvents isolates three $S_5$-invariants. We now adopt those invariants as the coordinate system. We introduce the variables $c_r, c_g, c_b$ and their aggregates. We identify named combinations ($\hat c$, total charge) required for the subsequent analysis. We then reformulate the Bring quadric and cubic as identities among these aggregates.
 
-The structural payoff emerges through the color tube interpretation. The three tubes correspond to the three color charges. Pure-color loci correspond to confinement. We specify the residual $C_5$ symmetry that survives the $S_5$ quotient. We then extract the intrinsic color cubic pairing. This pairing furnishes the defining datum of the elliptic structure $\mathcal{E}_q$ constructed in the next section.
+The three tubes correspond to the three color charges. Pure-color loci correspond to confinement. We specify the residual $C_5$ symmetry that survives the $S_5$ quotient. We then extract the intrinsic color cubic pairing. This pairing furnishes the defining datum of the elliptic structure $\mathcal{E}_q$ constructed in the next section.
 
 \begin{definition}[{Color tube coordinates}]
   \label{def:color-tube-coordinates}
@@ -403,6 +394,7 @@ The shift $\sigma = w_1 - z$ is distinguished. It measures the deviation of the 
 \section{Color fibration and elliptic curves}
 \label{sec:color-fibration-elliptic}
 \sectionannot{sec:color-fibration-elliptic}
+\phantomsection\label{sec:color-fibration-elliptic-intro}
 The intrinsic color cubic supplies the data to identify an elliptic curve over the color parameter. We establish this in the proposition that the generic color fibre carries the Weierstrass structure $\mathcal{E}_q$. The color elliptic curve exhibits self-duality, possessing a $T$-duality that pairs $q \leftrightarrow q^{-1}$. We translate the elliptic data back into the tube coordinates and demonstrate how the $T$-duality acts on the tubes themselves.
 
 The closing blocks isolate the confinement geometry. We identify the discriminant locus where the elliptic fibre degenerates. We extract the explicit constraint a pure-color state must satisfy. This structure underpins the bundle smoothness analysis on $\mathbb{P}^1$ in the next section.
@@ -496,6 +488,7 @@ As varieties, $R_z \cong G_z \cong B_z$ is isomorphic to the color elliptic fibe
 \section{Bundle structures and smoothness}
 \label{sec:brings-smoothness}
 \sectionannot{sec:brings-smoothness}
+\phantomsection\label{sec:brings-smoothness-intro}
 The color fibration is well-defined generically, but the geometry requires a smooth bundle to support the spectral resolvents. We package the color data as a spectral curve carrying a spinor bundle. We then establish that Bring's surface is smooth and that its projection singularities resolve intrinsically; no external blow-up is needed.
 
 The base-to-fibre interpretation dominates the middle of this section. The exceptional-divisor and Thurston-relaxation expositions situate the base manifold $M$ and the brane-point fibres $\mathcal{S}_p$ inside a single geometric framework. We introduce the Briggs–Klein affine chart for explicit computation and the radial projection of Bring's surface as its geometric counterpart.
@@ -521,16 +514,16 @@ The $\mathrm{SO}(3)$ images $R_\alpha,R_\beta$ act on the triple $(\omega_1,\ome
 \begin{proposition}[{Smoothness of the Bring's surface and intrinsic resolution of projection singularities}]
   \label{prop:brings-smoothness-resolution}
   \blockannot[compiled]{prop:brings-smoothness-resolution}{QOU.BringsSurface.brings_smoothness_resolution}{quantum-observable-universe/brings-surface/brings-smoothness-resolution.md}
-  \uses{rem:color-bundles, def:briggs-klein-chart}
-Let $\mathcal{S}$ denote the Bring's surface (\hyperref[def:brings-surface]{Bring's surface}) and $\pi \colon \mathcal{S} \to\allowbreak{} \mathbb{P}^1(\mathbb{C})$ the color projection.
+  \uses{rem:color-bundles}
+Let $\mathcal{S}$ be the Bring's surface (\hyperref[def:brings-surface]{Bring's surface}) with color projection $\pi \colon \mathcal{S} \to\allowbreak{} \mathbb{P}^1(\mathbb{C})$.
 
 \begin{enumerate}
-  \item \textbf{Smoothness.} The three power-sum constraints are transverse in $\mathbb{P}^4$. Consequently, $\mathcal{S}$ is a smooth algebraic variety lacking singular points.
-  \item \textbf{Intrinsic resolution.} At each branch point $z = z_c$ where two color sheets $x_i, x_j$ collide, the local color coordinate $\delta = x_i - x_j$ satisfies $z - z_c \sim \delta^2$. The exceptional divisor of the blow-up at each ramification point is already embedded in the color coordinates. No external resolution is required.
-  \item \textbf{Regularity of the Briggs--Klein chart.} The radial parameter $r = \lvert w_1 \rvert^2$ constitutes a regular function on $\mathcal{S}$. The $C_5$ orbits $w_k \mapsto \zeta^k w_k$ foliate the surface without fixed points for $0 < r < \infty$.
+  \item \textbf{Smoothness.} The three power-sum constraints are transverse in $\mathbb{P}^4$, so $\mathcal{S}$ is smooth.
+  \item \textbf{Intrinsic resolution.} At each branch point $z = z_c$ where two color sheets $x_i, x_j$ collide, the local coordinate $\delta = x_i - x_j$ satisfies $z - z_c \sim \delta^2$; the blow-up's exceptional divisor is already embedded in the color coordinates, so no external resolution is required.
 \end{enumerate}
 \end{proposition}
 
+\phantomsection\label{rem:brings-smoothness-chart-regularity}% compact-mode: block excluded
 \begin{remark}[{Smoothness of Bring's surface and resolution of spacetime defects}]
   \label{rem:brings-smoothness}
   \blockannot[drafted]{rem:brings-smoothness}{}{quantum-observable-universe/brings-surface/brings-smoothness.md}
@@ -550,6 +543,7 @@ While the projection map develops a ramification cusp, $\delta$ passes smoothly 
 The DFT mixes all five $x_j$ into every resolvent $w_k$ (\hyperref[rem:lagrange-resolvents]{Lagrange resolvents}). Thus no single $w_k$ vanishes at a branch point. The Briggs--Klein chart (\hyperref[def:briggs-klein-chart]{Briggs--Klein chart}) remains smooth throughout $0<r<\infty$. The radial parameter $r=\lvert w_1\rvert^2$ is regular on $\mathcal{S}$, and the $C_5$ orbits $w_k\mapsto\zeta^k w_k$ foliate the surface without fixed points. The infinite torsion and eigenvalue crossings visible in the base $\mathbb{P}^1(\mathbb{C})$ are artefacts of projecting away the internal degrees of freedom that the $w_k$ retain.
 \end{remark}
 
+\phantomsection\label{sec:approach-to-exceptional-divisor}
 \paragraph{Approach: from base $M$ to fibre $\mathcal{S}_p$}
 
 In the QOU archimedean tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$, the base manifold $M$ carries the smooth metric in which two free vortices propagate. As the vortex cores approach a brane point $p \in M$, the smooth metric becomes degenerate. The base coordinate ratio $z = \sqrt{q} - 1/\sqrt{q}$ drives the exceptional divisor $\mathcal{S}_p$ (\hyperref[def:exceptional-divisor]{state bundle fibre}) into the foreground. "Below Planck scale" in QOU is a \textbf{categorical} statement, not a metric one. The relevant geometry switches from the base $M$ to the fibre $\mathcal{S}_p$, where the morphisms are knot operators (\hyperref[def:knot-operator-energy]{knot-operator energy}).
@@ -562,13 +556,14 @@ The encounter unfolds in three moments:
   \item \textbf{Merging of fundamental groups.} The two vortex cores become parallel strands in a single braid. Their independent fundamental groups $\pi_1(\nu_1)$ and $\pi_1(\nu_2)$ amalgamate into the fundamental group $\pi_1(U \setminus K)$ of the merged knot complement. Here $U$ is a tubular neighbourhood of $p$, and $K$ is the link formed by the two strands inside it.
 \end{enumerate}
 
-After moment (3), the encounter constitutes a knot-theoretic problem. The merged complement admits a hyperbolic structure (\hyperref[sec:thurston-relaxation]{Thurston relaxation}). The SDP/LP machinery of \hyperref[chap:particle-interactions]{Chapter 12} selects the lowest-energy link representative (SDP as thimble flow). Mostow rigidity (geometric confinement) makes the resulting topology—and hence the mass—discrete.
+After moment (3), the encounter constitutes a knot-theoretic problem. The merged complement admits a hyperbolic structure (\hyperref[sec:thurston-relaxation]{Thurston relaxation}). The SDP/LP machinery of \hyperref[chap:nuclear-interactions]{Chapter 11} selects the lowest-energy link representative (SDP as thimble flow). Mostow rigidity (geometric confinement) makes the resulting topology—and hence the mass—discrete.
 
+\phantomsection\label{sec:thurston-relaxation}
 \paragraph{Thurston relaxation: SDP as a hyperbolic Newton solver}
 
 Once the two vortex cores merge inside a tubular neighbourhood $U \subset M$, the operative geometry is the complement $U \setminus K$. Thurston's hyperbolisation programme proves that, excluding a finite list of exceptions, $U \setminus K$ admits a complete finite-volume hyperbolic structure. A triangulation into ideal tetrahedra $\Delta_{z_k}$ and a system of \emph{gluing equations} in the shape parameters $z_k$ encode this structure.
 
-The algebraic SDP solver of \hyperref[chap:particle-interactions]{Chapter 12} is \textbf{not separate from the hyperbolic-geometry calculation}. It is its $\mathbb{Z}[q^{\pm 1/2}]$-shadow. We establish this via three correspondences:
+The algebraic SDP solver of \hyperref[chap:nuclear-interactions]{Chapter 11} is \textbf{not separate from the hyperbolic-geometry calculation}. It is its $\mathbb{Z}[q^{\pm 1/2}]$-shadow. We establish this via three correspondences:
 
 \begin{itemize}
   \item \textbf{Cusps from poles.} The roots of the $q$-Pochhammer denominator $\Phi_n(x; q) =\allowbreak{} \prod_{k=0}^{n-1}(1 -\allowbreak{} x q^k)^{-1}$ seed the Frobenius positivity constraints in the SDP. These roots are in bijection with the ideal vertices of the tetrahedral triangulation of the $\Phi_q$-piece $K_S$ (\hyperref[conj:algebraic-geometric-dilog-equivalence]{pole-to-cusp bijection}(1)).
@@ -594,11 +589,12 @@ Let $r=\lvert w_1\rvert^2$ denote the squared modulus of the first resolvent coo
 \section{Spectral resolvents and gauge structures}
 \label{sec:spectral-gauge}
 \sectionannot{sec:spectral-gauge}
-With the smooth Bring surface and its cyclotomic reduction established, we construct the gauge data. We define the quaternionic spectral resolvents, tying the resolvent basis $\{\omega_k\}$ to the quaternionic structure on the spectral bundle. We state the algebraic identities these resolvents satisfy and specify the $\mathrm{Sp}(1)$ action that organises their evolution.
+\phantomsection\label{sec:spectral-gauge-intro}
+With the smooth Bring surface and its cyclotomic reduction established, we construct the gauge data. We introduce the quaternionic spectral resolvents, tying the resolvent basis $\{\omega_k\}$ to the quaternionic structure on the spectral bundle. We state the algebraic identities these resolvents satisfy and specify the $\mathrm{Sp}(1)$ action that organises their evolution.
 
 We construct the Seiberg–Witten data on this basis. We parametrise the Seiberg–Witten differential by lepton generation. We compute the lepton mass integrals. We then provide the abelianisation required to evaluate those integrals via the nonabelian multiplicative integral on exceptional divisors and the Cartan reduction.
 
-The closing blocks bridge to the subsequent section. We fix the color sectorisation in resolvent variables via coordinates $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$. We extract the categorical braid action and the knot eigenbasis from the spectral data. We define the Descartes elliptic curve $\mathcal{E}_q$ over the spectral plane, which the Descartes condition pins down via $\chi = -6$.
+The closing blocks bridge to the subsequent section. We fix the color sectorisation in resolvent variables via coordinates $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$. We extract the categorical braid action and the knot eigenbasis from the spectral data. We construct the Descartes elliptic curve $\mathcal{E}_q$ over the spectral plane, which the Descartes condition pins down via $\chi = -6$.
 
 \begin{definition}[{Quaternionic spectral resolvents}]
   \label{def:quaternionic-spectral-resolvents}
@@ -663,7 +659,7 @@ Let $\mathcal{S}_c \cong\allowbreak{} \mathbb{P}^1(\mathbb{C})$ be the exception
 
 where $\lVert\cdot\rVert_{J^n}$ denotes the Killing-form norm projected onto the $n$-th jet component, and $\lambda_{\mathrm{SW}}^{(n)}$ is the $n$-th prolonged Seiberg--Witten differential.
 
-\textbf{Archimedean specialisation (§7c).} This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+\textbf{Archimedean specialisation.} What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
 \end{proposition}
 
 \begin{lemma}[{Cartan reduction recovers the SW differential}]
@@ -841,7 +837,7 @@ is exact.
 
 Exactness kills residues: in a local coordinate $t$ at any $p \in \Sigma$, write $X^{(n-1)} = \sum_k c_k t^k$ with finite principal part; then $d(X^{(n-1)}) =\allowbreak{} \sum_k k\,c_k\,t^{k-1}\,dt$ contains no $t^{-1}\,dt$ term (the $k = 0$ term differentiates to zero and every other term lands away from $t^{-1}$), so $\mathrm{Res}_p\,\lambda_{\mathrm{SW}}^{(n)} =\allowbreak{} 0$. Exactness kills periods: $\oint_\gamma d(X^{(n-1)}) = 0$ for every closed cycle $\gamma$ avoiding the poles of $X^{(n-1)}$, by Stokes' theorem on the curve. The residue-sum period of \hyperref[prop:sw-period-residue-sum]{\texttt{prop:\allowbreak{}sw-\allowbreak{}period-\allowbreak{}residue-\allowbreak{}sum}} is $2\pi i$ times a sum of these vanishing residues, hence zero at every vertical degree $n \ge 1$.
 
-The final claim follows because the classical binding period is nonzero: at $q = 1$, $a_D^{(m)} =\allowbreak{} \mathrm{lw}(m-\allowbreak{}1) =\allowbreak{} I(m)/m >\allowbreak{} 0$ with $I(m)$ the involution numbers (Lean \texttt{involutionNumber\_\allowbreak{}pos}), and a vanishing period cannot equal a nonzero number. The Lean witness \texttt{QOU.\allowbreak{}Brings.\allowbreak{}classical\_\allowbreak{}jet\_\allowbreak{}period\_\allowbreak{}zero} proves the coefficient-level core (\texttt{fresidue\_\allowbreak{}fderiv}: the $t^{-1}$ coefficient of a termwise derivative vanishes, over a generic commutative ring) and composes it with the residue-sum hypothesis; \texttt{classical\_\allowbreak{}jet\_\allowbreak{}period\_\allowbreak{}ne\_\allowbreak{}lw} concludes the non-realisability. $\qquad\blacksquare$
+The final claim follows because the classical binding period is nonzero: at $q = 1$, $a_D^{(m)} =\allowbreak{} \mathrm{lw}(m-\allowbreak{}1) =\allowbreak{} I(m)/m >\allowbreak{} 0$ with $I(m)$ the involution numbers (Lean \texttt{involution\allowbreak{}Number\_\allowbreak{}pos}), and a vanishing period cannot equal a nonzero number. The Lean witness \texttt{QOU.\allowbreak{}Brings.\allowbreak{}classical\_\allowbreak{}jet\_\allowbreak{}period\_\allowbreak{}zero} proves the coefficient-level core (\texttt{fresidue\_\allowbreak{}fderiv}: the $t^{-1}$ coefficient of a termwise derivative vanishes, over a generic commutative ring) and composes it with the residue-sum hypothesis; \texttt{classical\_\allowbreak{}jet\_\allowbreak{}period\_\allowbreak{}ne\_\allowbreak{}lw} concludes the non-realisability. $\qquad\blacksquare$
 \end{proof}
 
 \begin{proposition}[{The Seiberg–Witten differential is the jet decomposition of the Archimedean realisation}]
@@ -928,7 +924,6 @@ Let $(\mathbf{C}, A, \tau)$ be a Descartes universe (\hyperref[def:archimedean-c
   \item The braiding of $\mathbf{C} =\allowbreak{} \mathrm{Rep}(\mathrm{SU}_q(2))$ induces a faithful representation $\rho_3\colon B_3 \to\allowbreak{} \mathrm{Aut}_{\mathbf{C}}(V^{\otimes 3})$ on the fundamental representation $V$ (\hyperref[prop:braid-action-tensor]{braid action on tensor products}).
   \item The image of $\rho_3$ in $\mathrm{SU}(2)$ (via the fibre functor $\tau$) is the binary dihedral group $\mathrm{Dic}_3$ of order $12$ (\hyperref[def:su2-generators]{SU(2) generators}).
   \item The composite $B_3 \xrightarrow{\rho_3} \mathrm{Dic}_3 \twoheadrightarrow S_3$ recovers the three copies of $S_3$ inside $S_5 = \mathrm{Aut}(\Sigma_4)$ (\hyperref[rem:chirality-trefoil]{chirality and trefoil}), mapping one to each colour sector.
-  \item This structure holds over any base ring $R$ with $30 \in R^{\times}$. It applies directly to the $\mathfrak{p}$-adic realisation (\hyperref[ex:p-adic-realisation]{$p$-adic realisation}), where knot complements and skein relations remain unavailable.
 \end{enumerate}
 \end{corollary}
 
@@ -967,20 +962,15 @@ with $30 \in R^{\times}$
 input beyond the hexagon axioms.
 \end{proof}
 
+\phantomsection\label{rem:descartes-braid-structure-generality}% compact-mode: block excluded
 \begin{corollary}[{Knot eigenbasis completeness for a Descartes universe}]
   \label{cor:descartes-knot-eigenbasis}
   \blockannot[compiled]{cor:descartes-knot-eigenbasis}{QOU.Archimedean.descartes_knot_eigenbasis}{quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.md}
   \uses{cor:descartes-braid-structure, thm:jones-markov-trace, prop:knot-eigenbasis-complete}
-Let $(\mathbf{C}, A, \tau)$ be a Descartes universe (\hyperref[def:archimedean-condition]{Descartes condition}) with $\mathbf{C} =\allowbreak{} \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental representation. The knot-type eigenbasis is complete:
-
-\begin{enumerate}
-  \item \textbf{(Iwahori--Hecke algebra instantiation.)} The Descartes condition forces $\chi(A) = -6$. This sets the genus $g = 4$ and gauge group $\mathrm{SU}_q(2)$ to rank $2$. The $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$ (\hyperref[rem:r-matrix-braiding]{$R$-matrix braiding}) supplies a braiding $c_{V,V}$ on $\mathbf{C}$ with eigenvalues $q$ and $-q^{-1}$. The quotient by the quadratic relation $(c_{V,V} - q)(c_{V,V} + q^{-1}) = 0$ yields the Iwahori--Hecke algebra $H_n(q)$ acting on $V^{\otimes n}$.
-  \item \textbf{(Schur--Weyl decomposition.)} The Descartes condition demands $q$ not be a root of unity (via $6 \in R^{\times}$ and non-degeneracy of the Frobenius form). Consequently, $H_n(q)$ is semisimple (Jimbo's theorem). The $q$-Schur--Weyl decomposition (\hyperref[prop:knot-eigenbasis-complete]{knot eigenbasis completeness}(1)) applies: every $V^{\otimes n}$ decomposes into irreducible summands labelled by two-part partitions $\lambda \vdash n$.
-  \item \textbf{(Braid representation.)} The faithful representation $\rho_3 \colon B_3 \to\allowbreak{} \mathrm{Aut}_{\mathbf{C}}(V^{\otimes 3})$ (\hyperref[cor:descartes-braid-structure]{braid-group structure}(1)) extends to $\rho_n \colon B_n \to\allowbreak{} \mathrm{Aut}_{\mathbf{C}}(V^{\otimes n})$ for all $n$ via \hyperref[prop:braid-action-tensor]{braid action on tensor products}. The Markov trace on the Iwahori--Hecke algebra tower detects every irreducible summand.
-  \item \textbf{(Completeness.)} By the combining theorem (\hyperref[prop:knot-eigenbasis-complete]{knot eigenbasis completeness}), the three inputs—Schur--Weyl decomposition, Alexander surjectivity, and Markov trace detection—yield a complete knot-type eigenbasis for the algebraic direct limit $V_{\mathrm{phys}} =\allowbreak{} \varinjlim V^{\otimes n}$. A finite categorical trace over knot-labelled summands replaces the Feynman path integral.
-\end{enumerate}
+Let $(\mathbf{C}, A, \tau)$ be a Descartes universe (\hyperref[def:archimedean-condition]{Descartes condition}) with $\mathbf{C} =\allowbreak{} \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental representation. The knot-type eigenbasis of the algebraic direct limit $V_{\mathrm{phys}} =\allowbreak{} \varinjlim V^{\otimes n}$ is complete.
 \end{corollary}
 
+\phantomsection\label{rem:descartes-knot-eigenbasis-derivation}% compact-mode: block excluded
 \begin{proposition}[{The Descartes elliptic curve $\mathcal{E}_q$}]
   \label{prop:descartes-elliptic-curve}
   \blockannot[compiled]{prop:descartes-elliptic-curve}{QOU.Archimedean.descartes_elliptic_curve}{quantum-observable-universe/brings-surface/descartes-elliptic-curve.md}
@@ -1035,6 +1025,7 @@ by direct expansion.  $\square$
 \section{The Descartes condition $\\chi = -6$}
 \label{sec:archimedean-condition-statement}
 \sectionannot{sec:archimedean-condition-statement}
+\phantomsection\label{sec:archimedean-condition-intro}
 The Descartes elliptic curve $\mathcal{E}_q$ names a structure. The Descartes condition selects its Euler characteristic. We explain the descent of the spectral data to a zero-dimensional locus. We state the condition $\chi(A) = -6$ on the algebraic substrate. The derivation chain illustrates how three colors, Reeb flow, and Calabi–Yau compatibility force this single value. We record concrete instances and the one-dimensional descent. We then compute the resulting genus.
 
 The lepton spectrum follows directly. We identify the lepton families with Reeb-orientation strata on Bring's curve and their chirality assignments with trefoil subgroups.
@@ -1079,6 +1070,7 @@ The Descartes condition gives $\mathrm{tr}(\mathrm{id}_A) = -6$.  Under the fibr
 \section{Descartes condition: leptons and chirality}
 \label{sec:archimedean-condition-leptons}
 \sectionannot{sec:archimedean-condition-leptons}
+\phantomsection\label{sec:archimedean-condition-leptons-preamble}
 The preceding sub-section stated the Descartes condition $\chi = -6$ and proved that its descent chain forces a maximally-descended genus. This sub-section extracts the immediate physical consequences: the lepton spectrum, the chirality assignment that distinguishes leptons from anti-leptons, the affine-light-cone parameterisation underlying the chirality measurement, and the trefoil-chirality correspondence that anchors the chirality assignment in braid data. The Brings-curve block closes the sub-section by pointing forward to the genus-completeness derivation that the next sub-section unfolds.
 
 \phantomsection\label{rem:archimedean-leptons}% compact-mode: block excluded
@@ -1107,6 +1099,7 @@ The chirality of the observable universe—manifest in the three colour charges 
 \section{Descartes condition: torus-knot generators and genus completeness}
 \label{sec:archimedean-condition-genus-completeness}
 \sectionannot{sec:archimedean-condition-genus-completeness}
+\phantomsection\label{sec:archimedean-condition-genus-preamble}
 Having identified the lepton spectrum and chirality assignment, we now determine which closed-braid generators populate the maximally-descended genus, and establish the completeness of this generation system. This completeness serves as the anchor for the lepton-spectrum derivation.
 
 \begin{proposition}[{Finiteness of the $T_{m,n}$ generator set}]
@@ -1145,6 +1138,90 @@ $(3,5)$ & $4$ & $10_{124}$ & $10$ \\
 \end{adjustbox}
 \end{table}
 
+\begin{proposition}[{Cohomological embedding: torus knot representations exhaust $H^1(\Sigma_g)$}]
+  \label{prop:cohomological-embedding}
+  \blockannot[compiled]{prop:cohomological-embedding}{QOU.Archimedean.cohomological_embedding}{quantum-observable-universe/brings-surface/cohomological-embedding.md}
+  \uses{rem:fivefold-symmetry}
+The torus knots embeddable on the moduli surface $\Sigma_g$ form a complete set of representations, exhausting the available cohomology and spanning the space of knot observables.
+
+\textbf{(i)} \emph{Embeddability = representation.} A torus knot $T_{r,s}$ with $\gcd(r, s) = 1$ admits a representation in $\mathbf{C}$ if and only if its Seifert rank embeds in the first cohomology of $\Sigma_g$:
+
+\[
+  \mathrm{rank} H_1(\mathrm{Seifert}(T_{r,s}))
+  =  \frac{(r-1)(s-1)}{2}  \leq  g
+\]
+
+\textbf{(ii)} \emph{Fiber degree.} The maximum fiber degree for $T_{r, p^k}$ on $\Sigma_g$ is:
+
+\[
+  k_{\max}(r, p, g)
+  = \max\!\left\{k : \frac{(r-1)(p^k - 1)}{2} \leq g\right\}
+\]
+
+\textbf{(iii)} \emph{Completeness.} The Jones polynomials of embeddable torus knots span the space of knot invariants on $\Sigma_g$.
+
+\textbf{(iv)} \emph{Genus 4 is forced.} The QOU axioms require $T_{2,3}$ and $T_{2,9}$ to embed, but $T_{2,11}$ must not. This uniquely forces $g = 4$ and $\chi = -6$.
+
+See \hyperref[tbl:cohomological-embedding-table1-data]{Table 1}.
+
+The cohomology of $\Sigma_4$ admits a knot basis:
+
+\[
+  H^*(\Sigma_4)
+  = \underbrace{H^0 \oplus H^2}_{\dim 2} \oplus \underbrace{H^{1,0}}_{\dim 4} \oplus \underbrace{H^{0,1}}_{\dim 4}
+\]
+
+See \hyperref[tbl:cohomological-embedding-table2-data]{Table 2}.
+
+The $6$ embeddable knots form a complete basis spanning the $5$-dimensional space of irrep characters. Every observable hadron is a composite of these 6 blocks, and every interaction is mediated by the 7 associated transfer matrices (including free propagation). Genus $4$ is the unique minimal environment that supports $\mathrm{SU}_2$ reconstruction and strong binding without introducing unobserved spurious matter.
+\end{proposition}
+
+% table: tbl:cohomological-embedding-table1-data
+\begin{table}[htbp]
+  \centering
+  \caption{Data table 1 from prop:cohomological-embedding}
+  \label{tbl:cohomological-embedding-table1-data}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{c c c c c c}
+\toprule
+Knot & $r$ & $s$ & Seifert rank & Degree $k$ & Genus needed \\
+\midrule
+$T_{2,3}$ & $2$ & $3 = 3^1$ & $1$ & $1$ & $1$ \\
+$T_{2,5}$ & $2$ & $5 = 5^1$ & $2$ & $1$ & $2$ \\
+$T_{2,7}$ & $2$ & $7 = 7^1$ & $3$ & $1$ & $3$ \\
+$T_{2,9}$ & $2$ & $9 = 3^2$ & $4$ & $2$ & $4$ \\
+$T_{3,4}$ & $3$ & $4 = 2^2$ & $3$ & $2$ & $3$ \\
+$T_{3,5}$ & $3$ & $5 = 5^1$ & $4$ & $1$ & $4$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+% table: tbl:cohomological-embedding-table2-data
+\begin{table}[htbp]
+  \centering
+  \caption{Data table 2 from prop:cohomological-embedding}
+  \label{tbl:cohomological-embedding-table2-data}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{ccc>{\raggedright\arraybackslash}p{0.246\linewidth}>{\raggedright\arraybackslash}p{0.39\linewidth}}
+\toprule
+Cohomology & dim & Degree & Knot basis element & Knot-particle / force \\
+\midrule
+$H^0$ & $1$ & $0$ & Point (trivial knot) & $\gamma$ (photon) \\
+$H^2$ & $1$ & $0$ & $\tau(1,0)$ (unknot) & $\nu / \nu^{\sigma}$ (neutrino) \\
+$H^{1,0}$ & $1$ & $1$ & $\tau(2,3)$ (trefoil) & $e^- / e^+$; on divisor: $\mathfrak{u}/\mathfrak{d}$ \\
+$H^{1,0}$ & $1$ & $1$ & $\tau(2,5)$ (cinquefoil) & $\mu$; on divisor: gen-$2$ quarks \\
+$H^{1,0}$ & $1$ & $1$ & $\tau(2,7)$ (septafoil) & $\tau$-lepton; on divisor: gen-$3$ quarks \\
+$H^{1,0}$ & $1$ & $1$ & $\tau(3,5)$ & Weak force ($\beta$-decay vertex) \\
+$H^{0,1}$ & $1$ & $2$ & $\tau(2,9) = \tau(2,3^2)$ & Strong binding (gluon) \\
+$H^{0,1}$ & $1$ & $2$ & $\tau(3,4) = \tau(3,2^2)$ & Hopf\allowbreak{}${}^2$ binding (color) \\
+$H^{0,1}$ & $1$ & $2$ & $4_1$ (figure-eight) & Higgs field (mass mechanism) \\
+$H^{0,1}$ & $1$ & $2$ & $4_1^{-1} = 4_1$ (amphichiral) & Higgs field $=$ own antiparticle \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
 \phantomsection\label{rem:torus-knot-generators-interpretation}% compact-mode: block excluded
 \begin{theorem}[{Embeddability closure under knot-particle generation}]
   \label{thm:embeddability-closure}
@@ -1153,34 +1230,18 @@ $(3,5)$ & $4$ & $10_{124}$ & $10$ \\
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with $\chi(A) = -6$ and fiber genus $g(\Sigma_4) = 4$. Let $K$ be any knot type appearing as a component of a link produced by a finite sequence of Hopf linkings $\ell_H$, color-tube threadings $\ell_c$, and Skein crossing changes $\sigma$ applied to generators in $\mathcal{G}$. Then:
 
 \begin{enumerate}
-  \item The Seifert genus of $K$ satisfies $g(K) \leq 4$.
+  \item The Seifert genus of $K$ satisfies
+\[
+  g(K) \leq 4.
+\]
   \item $K$ admits a localized knot structure $(c, K) \in \mathrm{Hom}(\mathbf{1}, A^{\mathrm{co}T}) \times \mathrm{Knot}$ at some point $c$.
   \item The localized knot $(c, K)$ descends under $\tau$ to an observable morphism in $\mathbf{C}$: every generated particle interacts with every other generated particle via the categorical braiding.
 \end{enumerate}
 
-No generated knot is "dark"—the generation scheme is closed under observability.
-
-\emph{Hopf linking $\ell_H$ and Color-tube threading $\ell_c$} preserve each component's knot type and Seifert genus. The structures live in the total space and do not increase the genus of any individual component.
-
-\emph{Skein crossing change $\sigma$} alters the Seifert genus by at most $\pm 1$:
-
-\[
-  |g(L_+) - g(L_-)| \leq 1, \qquad
-  g(L_0) \leq \max\{g(L_+), g(L_-)\}.
-\]
-
-While a crossing change might produce a knot of genus $5$, Bring's surface imposes a spectral filter: only knots with $g(K) \leq 4$ admit localized knot structures. The physical state space $V_{\mathrm{phys}} =\allowbreak{} \varinjlim V^{\otimes n}$ vanishes for $g = 5$ descendants because the fibre functor $\tau$ cannot evaluate them.
-
-This spectral filter acts directly at the level of the Skein resolution:
-
-\[
-  q  [L_+] - q^{-1} [L_-]
-  = (q^{1/2} - q^{-1/2}) [L_0].
-\]
-
-Terms with $g > 4$ lie in the kernel of the mass functional $\mathfrak{m}$. The physical mass receives contributions only from embeddable terms. Every knot in the standard dictionary has $g(K) \leq 4$. Skein descendants like $4_1$ typically exhibit lower genus than their parent generators.
+The generation scheme is thus closed under observability.
 \end{theorem}
 
+\phantomsection\label{rem:embeddability-closure-spectral-filter}% compact-mode: block excluded
 % table: tbl:embeddability-closure-table-data
 \begin{table}[htbp]
   \centering
@@ -1279,6 +1340,7 @@ $\square$
 \section{The genus-ideal filtration}
 \label{sec:archimedean-condition-genus-completeness-genus-ideal-characterisation}
 \sectionannot{sec:archimedean-condition-genus-completeness-genus-ideal-characterisation}
+\phantomsection\label{sec:archimedean-condition-genus-completeness-genus-ideal-characterisation-preamble}
 Continuing the previous derivation, we now characterise the genus ideal—the set of categorical genus invariants isolated by the archimedean condition—as a finitely generated ideal identified by the Yekutieli leading coefficient. The leading coefficient fixes the generator set, while the genus filtration interprets the ideal as a structured cover of the torus-embeddable subspace. We conclude by showing that every torus-embeddable categorical knot lies in the generation closure of the genus ideal, making the Descartes condition equivalent to a finite combinatorial classification.
 
 \begin{lemma}[{Genus-filtration ideal in Hecke coordinates}]
@@ -1352,84 +1414,10 @@ that both characterisations agree.  $\square$
   \label{prop:genus-filtration-ideal}
   \blockannot[compiled]{prop:genus-filtration-ideal}{QOU.Archimedean.genus_filtration_ideal}{quantum-observable-universe/brings-surface/genus-filtration-ideal.md}
   \uses{prop:cohomological-embedding, prop:categorical-dq-squared}
-The genus of the moduli surface is not assumed; it is determined by the Iwahori--Hecke algebra. The QOU axioms force $g = 4$ through a completeness condition on the irreducible representations of $H_2(q) \oplus H_3(q)$. The genus-filtration ideal $\mathfrak{I}_4 = (u^5)$ serves as the algebraic obstruction that kills $T_{2,p}$ for all primes $p \geq 11$.
-
-\paragraph{Part 0: the genus is determined by the algebra}
-
-Let $(\mathbf{C}, A, \tau)$ be a QOU with $G = \mathrm{SU}_q(2)$. The braiding on $V_1^{\otimes n}$ yields the Iwahori--Hecke algebra $H_n(q)$. The relevant strand counts $n = 2$ and $n = 3$ provide $5$ irreducible representations:
-
-\begin{itemize}
-  \item $H_2(q)$ has $2$ irreps: $(2)$ trivial, $(1,1)$ sign.
-  \item $H_3(q)$ has $3$ irreps: $(3)$, $(1,1,1)$, $(2,1)$.
-\end{itemize}
-
-At genus $g$, the embeddable torus knots $T_{r,s}$ with $(r-1)(s-1) \leq 2g$ and $\gcd(r,s) = 1$ are those whose Jones polynomials evaluate on $\Sigma_g$. Completeness requires these evaluations to span all $5$ irrep characters: the evaluation matrix $M_{ij} = \chi_{\lambda_j}(\sigma_i)$ must have rank $5$.
-
-Strand counts $m \geq 4$ contribute no new valid knots under the constraints. Thus, $H_2(q) \oplus H_3(q)$ forms the complete Hecke algebra of the QOU.
-
-See \hyperref[tbl:genus-filtration-ideal-table1-data]{Table 1}.
-
-\begin{itemize}
-  \item At $g = 3$: only $4$ knots are available. The rank is $\leq 4 < 5$, so the set is incomplete. This violates observability.
-  \item At $g = 4$: $T_{2,9}$ and $T_{3,5}$ bring the total to $6$ knots spanning $5$ irreps. The rank is $5$, satisfying completeness.
-  \item At $g \geq 5$: further knots embed but add no new irreps. This redundancy predicts unobserved particles and violates minimality.
-\end{itemize}
-
-Therefore, $g = 4$ is the unique minimal genus where Hecke completeness holds.
-
-\paragraph{Part I: Chebyshev degree = Seifert genus}
-
-The Iwahori--Hecke algebra $H_2(q)$ is generated by $T$ with $T^2 = sT + 1$ where $s = q - q^{-1}$. The generator $T$ has eigenvalues $q$ and $-q^{-1}$. The $p$-th power reduces as:
-
-\[
-  T^p =  a_p \cdot T +  a_{p-1} \cdot \mathbf{1}
-\]
-
-The coefficients $a_n$ satisfy the Chebyshev recurrence $a_{n+1} = s \cdot a_n + a_{n-1}$ with $a_0 = 0$, $a_1 = 1$. Here, $a_p = U_{p-1}(s/2)$. For odd $p$, letting $u = s^2$:
-
-\[
-  a_p(u) = \sum_{j=0}^{(p-1)/2} c_j u^j
-\]
-
-with leading coefficient $c_{(p-1)/2} = 1$. The polynomial degree $\deg_u a_p$ precisely matches the Seifert genus $g(T_{2,p})$:
-
-\[
-  \deg_u a_p =  \frac{p-1}{2} =  g(T_{2,p}).
-\]
-
-Each monomial $u^k$ in $a_p$ represents an independent $1$-cycle of the Seifert surface. When $\deg_u a_p > g$, the polynomial encodes more topology than the surface can hold. This Chebyshev overflow indicates the knot does not fit.
-
-See \hyperref[tbl:genus-filtration-ideal-table2-data]{Table 2}.
-
-The saturation at $a_9$ (degree $4$) and the overflow at $a_{11}$ (degree $5$) reflect the Hecke completeness condition.
-
-\paragraph{Part II: the genus-filtration ideal}
-
-Define the genus-$g$ filtration ideal $\mathfrak{I}_g \subset \mathbb{Z}[u]$ by:
-
-\[
-  \mathfrak{I}_g
-  = \bigl\{ f(u) \in \mathbb{Z}[u] : \deg f > g \bigr\}
-  = (u^{g+1}).
-\]
-
-A torus knot $T_{2,p}$ admits a localized knot structure on $\Sigma_g$ if and only if $a_p \notin \mathfrak{I}_g$. For $g = 4$, $\mathfrak{I}_4 = (u^5)$. Every $T_{2,p}$ with $p \geq 11$ has $a_p \in (u^5)$ because $\deg_u a_p \geq 5$.
-
-\paragraph{Part III: obstruction = leading coefficient}
-
-The obstruction class $\kappa(T_{2,p}) \in H^2(\Sigma_g, \mathbb{Z})$ is the image of the leading monomial of $a_p$ under projection $\pi_g$:
-
-\[
-  \kappa(T_{2,p})
-  = \begin{cases}
-    0 & \text{if } (p-1)/2 \leq g, \\[6pt]
-    c_{(p-1)/2} \cdot [u^{(p-1)/2}] \neq 0 & \text{if } (p-1)/2 > g.
-  \end{cases}
-\]
-
-Since $c_{(p-1)/2} = 1$ for all odd $p$, the obstruction is nonzero for every prime $p \geq 2g + 3 = 11$.
+The genus of the moduli surface is fixed by the Iwahori--Hecke algebra rather than chosen: $g = 4$ is the least genus at which the embeddable torus knots $T_{r,s}$, $r \in \{2, 3\}$, number at least the five irreducibles of $H_2(q) \oplus H_3(q)$ (\hyperref[lem:genus-from-hecke-completeness]{genus from Hecke completeness}). The embeddability count is proved; that the six evaluations available at $g = 4$ actually span the five-dimensional representation is verified numerically, so the value of $g$ rests on that rank condition. The genus-filtration ideal $\mathfrak{I}_4 = (u^5)$ serves as the algebraic obstruction that kills $T_{2,p}$ for all primes $p \geq 11$.
 \end{proposition}
 
+\phantomsection\label{rem:genus-filtration-ideal-derivation}% compact-mode: block excluded
 % table: tbl:genus-filtration-ideal-table2-data
 \begin{table}[htbp]
   \centering
@@ -1473,7 +1461,7 @@ $5$ & $+ T_{2,11}$ & $7$ & $5$ & Yes (redundant) \\
 \begin{proof}[{Proof of genus-filtration ideal characterisation}]
   \label{prf:genus-filtration-ideal}
   \blockannot[drafted]{prf:genus-filtration-ideal}{}{quantum-observable-universe/brings-surface/genus-filtration-ideal-proof.md}
-  \uses{lem:yekutieli-leading-coefficient}
+  \uses{prop:genus-filtration-ideal, lem:yekutieli-leading-coefficient}
 \textbf{Proof.}
 The argument decomposes into four steps.  By
 (\hyperref[lem:genus-from-hecke-completeness]{genus from Hecke completeness}),
@@ -1635,6 +1623,7 @@ landscape within the genus bound.
 \section{The unit particle as a cohomological defect}
 \label{sec:cohomological-defect}
 \sectionannot{sec:cohomological-defect}
+\phantomsection\label{sec:cohomological-defect-preamble}
 Where does matter arise? The Frobenius structure of $A$ is globally non-degenerate, but it can fail locally. Matter emerges where a non-degenerate Levi form obstructs the Frobenius pairing. The unit particle is the fundamental cohomological defect, a generator of the local cohomology at the singular point $z = 1$.
 
 \begin{definition}[{Matter as Frobenius failure via the Levi form}]
@@ -1696,6 +1685,7 @@ Because $\varTheta$ vanishes, the defect is maximally tangent to the contact dis
 \section{The Descartes theorem}
 \label{sec:descartes-theorem}
 \sectionannot{sec:descartes-theorem}
+\phantomsection\label{sec:descartes-theorem-intro}
 The atomic and nuclear spectra derived previously are consequences of a single structural choice: $\chi(A) = -6$. The Descartes theorem formalizes this observation into a uniqueness statement, proving that among quantum observable universes satisfying the Descartes condition, Bring's surface is the terminal object.
 
 \begin{theorem}[{Descartes theorem}]
@@ -1738,10 +1728,12 @@ Bring's surface satisfies QU-to-QOU lifting with $\chi(A) = -6$. The non-vanishi
 In the realization tower of the motivic substrate, the perpetual non-vanishing $\kappa_n \neq 0$ implies that the Frobenius character of Bring's surface is non-trivial at every finite place $p \nmid 6$. The three lepton generations then correspond to the orbits of the cyclotomic Galois group on the six branch points. The fact that there are exactly three generations is a Galois-theoretic statement, not an analytic count.
 \end{example}
 
+\phantomsection\label{rem:lattice-qcd-from-qou}% compact-mode: block excluded
 \phantomsection\label{rem:observation-brings}% compact-mode: block excluded
 \section{Orbital Symmetry and Cohomological Embedding}
 \label{sec:orbital-symmetry-embedding}
 \sectionannot{sec:orbital-symmetry-embedding}
+\phantomsection\label{sec:orbital-symmetry-embedding-intro}
 We now determine which cohomological room the topological mass spectrum occupies. The orbital space at shell $n$ identifies as a space of sections of the normal bundle, allowing quantum numbers to be read directly from Fourier decompositions. We demonstrate that torus knot representations exhaust the first cohomology of the genus-$g$ surface, ensuring the knot generators fill the available cohomological space without redundancy.
 
 \begin{conjecture}[{The orbital space at shell $n$ is the space of framing-$k$ sections of the normal bundle}]
@@ -1892,90 +1884,6 @@ Klein's icosahedral generators on $\mathbb{P}(V)$ incorporate the $\zeta_5$ pent
 The $\zeta_5$ pentad and the colour trefoil are both parity-even, generating $A_5$. The EM involution $z\mapsto 1/z$ is parity-odd, falling in the coset $S_5\setminus A_5$. This establishes that the weak/colour sector corresponds to the even $A_5$ group, while EM relates to the odd coset. The single remaining component is the spectral identification associating the $\zeta_5$ pentad coordinate ratio $w$ to the spectral ratio $\eta$.
 \end{conjecture}
 
-\begin{proposition}[{Cohomological embedding: torus knot representations exhaust $H^1(\Sigma_g)$}]
-  \label{prop:cohomological-embedding}
-  \blockannot[compiled]{prop:cohomological-embedding}{QOU.Archimedean.cohomological_embedding}{quantum-observable-universe/brings-surface/cohomological-embedding.md}
-  \uses{rem:fivefold-symmetry}
-The torus knots embeddable on the moduli surface $\Sigma_g$ form a complete set of representations, exhausting the available cohomology and spanning the space of knot observables.
-
-\textbf{(i) Embeddability = representation.} A torus knot $T_{r,s}$ with $\gcd(r, s) = 1$ admits a representation in $\mathbf{C}$ if and only if its Seifert rank embeds in the first cohomology of $\Sigma_g$:
-
-\[
-  \mathrm{rank} H_1(\mathrm{Seifert}(T_{r,s}))
-  =  \frac{(r-1)(s-1)}{2}  \leq  g
-\]
-
-\textbf{(ii) Fiber degree.} The maximum fiber degree for $T_{r, p^k}$ on $\Sigma_g$ is:
-
-\[
-  k_{\max}(r, p, g)
-  = \max\!\left\{k : \frac{(r-1)(p^k - 1)}{2} \leq g\right\}
-\]
-
-\textbf{(iii) Completeness.} The Jones polynomials of embeddable torus knots span the space of knot invariants on $\Sigma_g$.
-
-\textbf{(iv) Genus 4 is forced.} The QOU axioms require $T_{2,3}$ and $T_{2,9}$ to embed, but $T_{2,11}$ must not. This uniquely forces $g = 4$ and $\chi = -6$.
-
-See \hyperref[tbl:cohomological-embedding-table1-data]{Table 1}.
-
-The cohomology of $\Sigma_4$ admits a knot basis:
-
-\[
-  H^*(\Sigma_4)
-  = \underbrace{H^0 \oplus H^2}_{\dim 2} \oplus \underbrace{H^{1,0}}_{\dim 4} \oplus \underbrace{H^{0,1}}_{\dim 4}
-\]
-
-See \hyperref[tbl:cohomological-embedding-table2-data]{Table 2}.
-
-The $6$ embeddable knots form a complete basis spanning the $5$-dimensional space of irrep characters. Every observable hadron is a composite of these 6 blocks, and every interaction is mediated by the 7 associated transfer matrices (including free propagation). Genus $4$ is the unique minimal environment that supports $\mathrm{SU}_2$ reconstruction and strong binding without introducing unobserved spurious matter.
-\end{proposition}
-
-% table: tbl:cohomological-embedding-table1-data
-\begin{table}[htbp]
-  \centering
-  \caption{Data table 1 from prop:cohomological-embedding}
-  \label{tbl:cohomological-embedding-table1-data}
-\begin{adjustbox}{max width=\linewidth}
-\begin{tabular}{c c c c c c}
-\toprule
-Knot & $r$ & $s$ & Seifert rank & Degree $k$ & Genus needed \\
-\midrule
-$T_{2,3}$ & $2$ & $3 = 3^1$ & $1$ & $1$ & $1$ \\
-$T_{2,5}$ & $2$ & $5 = 5^1$ & $2$ & $1$ & $2$ \\
-$T_{2,7}$ & $2$ & $7 = 7^1$ & $3$ & $1$ & $3$ \\
-$T_{2,9}$ & $2$ & $9 = 3^2$ & $4$ & $2$ & $4$ \\
-$T_{3,4}$ & $3$ & $4 = 2^2$ & $3$ & $2$ & $3$ \\
-$T_{3,5}$ & $3$ & $5 = 5^1$ & $4$ & $1$ & $4$ \\
-\bottomrule
-\end{tabular}
-\end{adjustbox}
-\end{table}
-
-% table: tbl:cohomological-embedding-table2-data
-\begin{table}[htbp]
-  \centering
-  \caption{Data table 2 from prop:cohomological-embedding}
-  \label{tbl:cohomological-embedding-table2-data}
-\begin{adjustbox}{max width=\linewidth}
-\begin{tabular}{ccc>{\raggedright\arraybackslash}p{0.246\linewidth}>{\raggedright\arraybackslash}p{0.39\linewidth}}
-\toprule
-Cohomology & dim & Degree & Knot basis element & Knot-particle / force \\
-\midrule
-$H^0$ & $1$ & $0$ & Point (trivial knot) & $\gamma$ (photon) \\
-$H^2$ & $1$ & $0$ & $\tau(1,0)$ (unknot) & $\nu / \nu^{\sigma}$ (neutrino) \\
-$H^{1,0}$ & $1$ & $1$ & $\tau(2,3)$ (trefoil) & $e^- / e^+$; on divisor: $\mathfrak{u}/\mathfrak{d}$ \\
-$H^{1,0}$ & $1$ & $1$ & $\tau(2,5)$ (cinquefoil) & $\mu$; on divisor: gen-$2$ quarks \\
-$H^{1,0}$ & $1$ & $1$ & $\tau(2,7)$ (septafoil) & $\tau$-lepton; on divisor: gen-$3$ quarks \\
-$H^{1,0}$ & $1$ & $1$ & $\tau(3,5)$ & Weak force ($\beta$-decay vertex) \\
-$H^{0,1}$ & $1$ & $2$ & $\tau(2,9) = \tau(2,3^2)$ & Strong binding (gluon) \\
-$H^{0,1}$ & $1$ & $2$ & $\tau(3,4) = \tau(3,2^2)$ & Hopf\allowbreak{}${}^2$ binding (color) \\
-$H^{0,1}$ & $1$ & $2$ & $4_1$ (figure-eight) & Higgs field (mass mechanism) \\
-$H^{0,1}$ & $1$ & $2$ & $4_1^{-1} = 4_1$ (amphichiral) & Higgs field $=$ own antiparticle \\
-\bottomrule
-\end{tabular}
-\end{adjustbox}
-\end{table}
-
 \phantomsection\label{rem:knot-basis-color-content}% compact-mode: block excluded
 \phantomsection\label{rem:trivial-knot-photon-interpretation}% compact-mode: block excluded
 % table: tbl:trivial-knot-photon-interpretation-table5-data
@@ -2010,7 +1918,7 @@ $e^-$ & $\varphi_{01}\psi_0 +\allowbreak{} \varphi_1\psi_{01} +\allowbreak{} \va
 Term & Product & NF & Interpretation \\
 \midrule
 (13) & $\varphi_{01}L_+ \cdot \mathbf{1}$ & $\varphi_{01}L_+$ & Hopf dressing passes through core; unchanged. \\
-(14) & $\varphi_{01}L_+\allowbreak{} \cdot \psi_0\sigma_0$ & $\varphi_{01}\psi_0 e^-$ & \textbf{Hopf dressing meets horizontal polarization: electron production.} Via $\sigma_0\sigma_1 \cdot \sigma_0 =\allowbreak{} \sigma_0\sigma_1\sigma_0 =\allowbreak{} e^-\allowbreak{}$. The Hopf content of one photon combines with the horizontal crossing of the other to form a trefoil. This is the second of three mechanisms for electron production under $T_{1,0}$. \\
+(14) & $\varphi_{01}L_+\allowbreak{} \cdot \psi_0\sigma_0$ & $\varphi_{01}\psi_0 e^-$ & \textbf{Hopf dressing meets horizontal polarization: electron production.} Via $\sigma_0\sigma_1 \cdot \sigma_0 =\allowbreak{} \sigma_0\sigma_1\sigma_0 =\allowbreak{} e^-\allowbreak{}$. The Hopf content of one photon combines with the horizontal crossing of the other to form a trefoil. This is the second of three mechanisms for electron production under $\mathbf{1}$. \\
 (15) & $\varphi_{01}L_+\allowbreak{} \cdot \psi_1\sigma_1$ & $\varphi_{01}\psi_1\sigma_0 +\allowbreak{} \varphi_{01}\psi_1 h\,L_+\allowbreak{}$ & \textbf{Twist meets vertical polarization.} Via $\sigma_0\sigma_1 \cdot \sigma_1 =\allowbreak{} \sigma_0\sigma_1^2 =\allowbreak{} \sigma_0(h\sigma_1 +\allowbreak{} \mathbf{1}) =\allowbreak{} h L_+\allowbreak{} + \sigma_0$: the twist absorbs the vertical crossing (Hecke relation on $\sigma_1^2$) and emits the orthogonal polarization $\sigma_0$. Compare term (8) --- the twist acts as a \textbf{polarization rotator} in both directions. \\
 (16) & $\varphi_{01}L_+ \cdot \psi_{01}L_+$ & $\varphi_{01}\psi_{01} L_-\allowbreak{} + \varphi_{01}\psi_{01} h\,e^-\allowbreak{}$ & \textbf{Two Hopf dressings collide.} Via $(\sigma_0\sigma_1)^2 = L_- + he^-$: the self-product of the Hopf link produces the reversed link $L_-$ plus an electron channel weighted by $h$. Two pre-twisted photons interacting through their twist content alone generate both chirality reversal and pair production. \\
 \bottomrule
@@ -2031,7 +1939,7 @@ Term & Product & NF & Interpretation \\
 (9) & $\varphi_1\sigma_1 \cdot \mathbf{1}$ & $\varphi_1\sigma_1$ & Vertical passes through core; unchanged. \\
 (10) & $\varphi_1\sigma_1 \cdot \psi_0\sigma_0$ & $\varphi_1\psi_0 L_-$ & \textbf{Cross-polarization linking (reversed).} Vertical meets horizontal and they link into $L_- = \sigma_1\sigma_0$. Compare term (7): the ordering of which photon contributes which polarization determines the \textbf{chirality} of the link ($L_+$ vs $L_-$). \\
 (11) & $\varphi_1\sigma_1 \cdot \psi_1\sigma_1$ & $\varphi_1\psi_1\gamma +\allowbreak{} \varphi_1\psi_1 h\,\sigma_1$ & \textbf{Same-axis collision} (vertical). Identical structure to term (6): partial annihilation to vacuum plus residual polarization. \\
-(12) & $\varphi_1\sigma_1 \cdot \psi_{01}L_+\allowbreak{}$ & $\varphi_1\psi_{01} e^-$ & \textbf{Vertical polarization meets Hopf dressing: electron production.} Via Yang--Baxter: $\sigma_1 \cdot \sigma_0\sigma_1 =\allowbreak{} \sigma_1\sigma_0\sigma_1 =\allowbreak{} e^-\allowbreak{}$. The vertical crossing of one photon completes the Hopf dressing of the other into a trefoil. This is one of three mechanisms by which $T_{1,0}$ opens the electron channel. \\
+(12) & $\varphi_1\sigma_1 \cdot \psi_{01}L_+\allowbreak{}$ & $\varphi_1\psi_{01} e^-$ & \textbf{Vertical polarization meets Hopf dressing: electron production.} Via Yang--Baxter: $\sigma_1 \cdot \sigma_0\sigma_1 =\allowbreak{} \sigma_1\sigma_0\sigma_1 =\allowbreak{} e^-\allowbreak{}$. The vertical crossing of one photon completes the Hopf dressing of the other into a trefoil. This is one of three mechanisms by which $\mathbf{1}$ opens the electron channel. \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
@@ -2077,10 +1985,11 @@ Term & Product & NF & Interpretation \\
 
 This concludes the Descartes-universe chapter, fixing Bring's surface ($\chi = -6$) as the spacetime base. The substrate parameter $q_0$, the gauge coupling $\alpha_{\mathrm{EM}}$, and the five-fold symmetric basis are now established. The subsequent particle-interactions chapter applies this basis and machinery to compute mass spectra and interaction dynamics under the Gröbner–Shirshov formalisms.
 
-\section{Reconnected orphan blocks (Phase 7)}
+\section{Bring fibres, the inter-nucleon channel, and charge conjugation}
 \label{sec:brings-surface-orphan-reconnect}
 \sectionannot{sec:brings-surface-orphan-reconnect}
-These blocks were reconnected during the Phase 7 orphan audit. They address supplementary Bring's-surface results awaiting thematic placement.
+\phantomsection\label{sec:brings-surface-orphan-reconnect-intro}
+Two views of the Bring fibre — at the substrate parameter $q_0$ and at its square root $q_0^{1/2}$ — set up the geometry that the remaining blocks of this section use. The inter-nucleon channel is then read as a colour tube on that surface, and charge conjugation is identified with the colour-sheet flavour swap.
 
 \begin{figure}[htbp]
   \centering
@@ -2137,9 +2046,9 @@ where:
 
 \paragraph{Color-tube weighting as the load-bearing missing structure}
 
-The low-isotope sign-flip diagnostic (\href{../../computations/low-isotope-sign-flip-diagnostic.witness.json}{\texttt{low-\allowbreak{}isotope-\allowbreak{}sign-\allowbreak{}flip-\allowbreak{}diagnostic.\allowbreak{}witness.\allowbreak{}json}}, PR \href{https://github.com/litlfred/qou/pull/1089}{\#1089}) shows that the per-isotope error correlates with inter-nucleon arc \textbf{count} at $R^2 = 0.83$, not with the signed-h weight ($R^2 = 0.26$). This indicates the \textbf{uniform-flavor projection} is missing a per-arc structural detail. The color-pair weight $W_{c_1 c_2}$ encodes exactly this detail.
+The low-isotope sign-flip diagnostic (\href{../../computations/low-isotope-sign-flip-diagnostic.witness.json}{\texttt{low-\allowbreak{}isotope-\allowbreak{}sign-\allowbreak{}flip-\allowbreak{}diagnostic.\allowbreak{}witness.\allowbreak{}json}}) shows that the per-isotope error correlates with inter-nucleon arc \textbf{count} at $R^2 = 0.83$, not with the signed-h weight ($R^2 = 0.26$). This indicates the \textbf{uniform-flavor projection} is missing a per-arc structural detail. The color-pair weight $W_{c_1 c_2}$ encodes exactly this detail.
 
-The empirical match between the (now-purged) $\lambda_{\mathrm{scale}}$ literal $2.4599527869$ and the color-tube Faddeev resummation $1/(1 -\allowbreak{} h_q \cdot q_0^{10}) \approx\allowbreak{} 2.450$ (per \href{../../docs/audits/-lambda-scale-canonical-unification.md}{\texttt{docs/\allowbreak{}audits/\allowbreak{}-\allowbreak{}lambda-\allowbreak{}scale-\allowbreak{}canonical-\allowbreak{}unification.\allowbreak{}md}}) provides independent evidence that 10-fold color-tube averaging is the categorical structure behind the historical numerology.
+The empirical match between the (now-purged) $\lambda_{\mathrm{scale}}$ literal $2.4599527869$ and the color-tube Faddeev resummation $1/(1 -\allowbreak{} h_q \cdot q_0^{10}) \approx\allowbreak{} 2.450$ provides independent evidence that 10-fold color-tube averaging is the categorical structure behind the historical numerology.
 
 Probe scripts \href{../../computations/probe_pn_flavor_asymmetry.py}{\texttt{probe\_\allowbreak{}pn\_\allowbreak{}flavor\_\allowbreak{}asymmetry.\allowbreak{}py}} and \href{../../computations/probe_per_sheet_flavor_nonin.py}{\texttt{probe\_\allowbreak{}per\_\allowbreak{}sheet\_\allowbreak{}flavor\_\allowbreak{}nonin.\allowbreak{}py}} report that Scheme 4 (per-sheet PL integration on Bring's surface with quark-content weighting) reproduces $\Delta m_{n-p}$ to ${\sim}0.14\%$. This dramatically improves on the uniform-flavor projection's ${\sim}305\,\mathrm{ppm}$ flavor split ratio.
 
@@ -2147,9 +2056,9 @@ The \textbf{gg-production collapse} isolates the cost of the projection directly
 
 \paragraph{Conditional structure}
 
-This conjecture remains conditional on \texttt{conj:\allowbreak{}s5-\allowbreak{}so3-\allowbreak{}fiber-\allowbreak{}action} (PR \href{https://github.com/litlfred/qou/pull/1081}{\#1081} Task 3) being formalised as a Lean class. Once available, the weight matrix $W_{c_1 c_2}$ derives as a tensor in the SO(3)-fiber data over Bring, with no remaining degrees of freedom. The conjecture will then promote to a \texttt{proposition} block under the AGENTS.md §3b-cond conditional-class convention.
+This conjecture remains conditional on \texttt{conj:\allowbreak{}s5-\allowbreak{}so3-\allowbreak{}fiber-\allowbreak{}action} being formalised as a Lean class. Once available, the weight matrix $W_{c_1 c_2}$ derives as a tensor in the SO(3)-fiber data over Bring, with no remaining degrees of freedom. The statement then becomes unconditional: it is a conjecture only for as long as that upstream class is uninhabited.
 
-\paragraph{Lean axiomatisation (sketch)}
+\paragraph{Lean axiomatisation (sketch)}\mbox{}\par
 
 \begin{verbatim}
 -- Conditional on the S_5<->SO(3) fiber-action class:
@@ -2167,7 +2076,7 @@ class InterNucleonChannelColorTube
         = flavor_only_hecke (flavor_of C_1) (flavor_of C_2)
 \end{verbatim}
 
-The class becomes inhabited by the $S_{5}$/SO(3) fiber data once \texttt{conj:\allowbreak{}s5-\allowbreak{}so3-\allowbreak{}fiber-\allowbreak{}action} lands.
+The class becomes inhabited by the $S_{5}$/SO(3) fiber data once \texttt{conj:\allowbreak{}s5-\allowbreak{}so3-\allowbreak{}fiber-\allowbreak{}action} is established.
 
 \paragraph{Consumers}
 
@@ -2198,17 +2107,14 @@ With $q = e^{\eta}$, the $\mathrm{SU}(2)_q$ doublet character is $[2]_q = 2\cosh
   [3]_q \;=\; [2]_q^{\,2} - 1,
 \]
 
-formalised as \texttt{so3\_\allowbreak{}adjoint\_\allowbreak{}eq\_\allowbreak{}chebyshev} in \href{../lean/QOU/Mass/MassVolDensity.lean}{\texttt{MassVolDensity.\allowbreak{}lean}} §6. The $\mathrm{SO}(3)$ characters are exactly the polynomials in $[2]_q$ invariant under the $\mathbb{Z}_2$ quotient. Any admissible $\epsilon$ rule must be a section of this same $\mathbb{Z}_2$-grading. A valid $\epsilon$ cannot assign $-1$ to a color-sheet pair whose combined flavor content sits in the integer-spin (tensor) sector. The explicit map from color-sheet pairs $(c_1, c_2)$ to the $\mathbb{Z}_2$-grade still requires the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber action of \texttt{conj:\allowbreak{}s5-\allowbreak{}so3-\allowbreak{}fiber-\allowbreak{}action}.
+formalised as \texttt{so3\_\allowbreak{}adjoint\_\allowbreak{}eq\_\allowbreak{}chebyshev} in \href{../lean/QOU/Mass/MassVolDensity.lean}{\texttt{Mass\allowbreak{}Vol\allowbreak{}Density.\allowbreak{}lean}} §6. The $\mathrm{SO}(3)$ characters are exactly the polynomials in $[2]_q$ invariant under the $\mathbb{Z}_2$ quotient. Any admissible $\epsilon$ rule must be a section of this same $\mathbb{Z}_2$-grading. A valid $\epsilon$ cannot assign $-1$ to a color-sheet pair whose combined flavor content sits in the integer-spin (tensor) sector. The explicit map from color-sheet pairs $(c_1, c_2)$ to the $\mathbb{Z}_2$-grade still requires the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber action of \texttt{conj:\allowbreak{}s5-\allowbreak{}so3-\allowbreak{}fiber-\allowbreak{}action}.
 
 \paragraph{Cross-references}
 
 \begin{itemize}
-  \item Parent sign-flip audit: \href{../../docs/audits/-sign-flip-interpretation.md}{\texttt{docs/\allowbreak{}audits/\allowbreak{}-\allowbreak{}sign-\allowbreak{}flip-\allowbreak{}interpretation.\allowbreak{}md}}
-  \item ${}^{4}\mathrm{He}$ magic-shell color-tube reading: \href{../../docs/audits/-4he-magic-shell-color-tube-audit.md}{\texttt{docs/\allowbreak{}audits/\allowbreak{}-\allowbreak{}4he-\allowbreak{}magic-\allowbreak{}shell-\allowbreak{}color-\allowbreak{}tube-\allowbreak{}audit.\allowbreak{}md}}
-  \item Bring color-tube weighted averaging cheat-sheet entry: \href{../../docs/canonical-derivation-cheat-sheet.md}{\texttt{docs/\allowbreak{}canonical-\allowbreak{}derivation-\allowbreak{}cheat-\allowbreak{}sheet.\allowbreak{}md} §"Bring color-tube weighted averaging"}
   \item Existing color-tube infrastructure: \href{../archimedean-universe/color-tube-coordinates.md}{\texttt{color-\allowbreak{}tube-\allowbreak{}coordinates.\allowbreak{}md}}, \href{../archimedean-universe/color-tube-fibers.md}{\texttt{color-\allowbreak{}tube-\allowbreak{}fibers.\allowbreak{}md}}, \href{../archimedean-universe/color-tube-cubic.md}{\texttt{color-\allowbreak{}tube-\allowbreak{}cubic.\allowbreak{}md}}
-  \item Supplier class (PR \href{https://github.com/litlfred/qou/pull/1081}{\#1081} Task 3): \texttt{conj:\allowbreak{}s5-\allowbreak{}so3-\allowbreak{}fiber-\allowbreak{}action}
-  \item $\mathrm{SO}(3)_q =\allowbreak{} \mathrm{SU}(2)_q/\mathbb{Z}_2$ level structure: \href{../lean/QOU/Mass/MassVolDensity.lean}{\texttt{MassVolDensity.\allowbreak{}lean}} §6 (\texttt{so3\_\allowbreak{}adjoint\_\allowbreak{}eq\_\allowbreak{}chebyshev})
+  \item Supplier class: \texttt{conj:\allowbreak{}s5-\allowbreak{}so3-\allowbreak{}fiber-\allowbreak{}action}
+  \item $\mathrm{SO}(3)_q =\allowbreak{} \mathrm{SU}(2)_q/\mathbb{Z}_2$ level structure: \href{../lean/QOU/Mass/MassVolDensity.lean}{\texttt{Mass\allowbreak{}Vol\allowbreak{}Density.\allowbreak{}lean}} §6 (\texttt{so3\_\allowbreak{}adjoint\_\allowbreak{}eq\_\allowbreak{}chebyshev})
   \item Empirical probe scripts: \href{../../computations/probe_pn_flavor_asymmetry.py}{\texttt{probe\_\allowbreak{}pn\_\allowbreak{}flavor\_\allowbreak{}asymmetry.\allowbreak{}py}}, \href{../../computations/probe_per_sheet_flavor_nonin.py}{\texttt{probe\_\allowbreak{}per\_\allowbreak{}sheet\_\allowbreak{}flavor\_\allowbreak{}nonin.\allowbreak{}py}}
 \end{itemize}
 \end{conjecture}
@@ -2217,7 +2123,7 @@ formalised as \texttt{so3\_\allowbreak{}adjoint\_\allowbreak{}eq\_\allowbreak{}c
   \label{conj:c-from-color-flavor-swap}
   \blockannot[compiled]{conj:c-from-color-flavor-swap}{QOU.BraidsAndKnots.CFromColorFlavorSwap}{quantum-observable-universe/brings-surface/c-from-color-flavor-swap.md}
   \uses{conj:cpt-d6-d7-d8-closure, conj:inter-nucleon-channel-color-tube, conj:cpt-orbit-closure-density, def:bar-involution}
-\textbf{Conjecture (D6 charge-conjugation closure, conditional on \hyperref[conj:inter-nucleon-channel-color-tube]{\texttt{conj:\allowbreak{}inter-\allowbreak{}nucleon-\allowbreak{}channel-\allowbreak{}color-\allowbreak{}tube}}).}
+\textbf{Conjecture (charge conjugation as the color-sheet flavor swap; conditional on \hyperref[conj:inter-nucleon-channel-color-tube]{\texttt{conj:\allowbreak{}inter-\allowbreak{}nucleon-\allowbreak{}channel-\allowbreak{}color-\allowbreak{}tube}}).}
 \emph{Within the QOU framework, charge conjugation $C$ acts as the \textbf{flavor swap on color sheets} that exchanges each quark flavor with its antimatter-conjugate:}
 
 \[
@@ -2230,7 +2136,7 @@ formalised as \texttt{so3\_\allowbreak{}adjoint\_\allowbreak{}eq\_\allowbreak{}c
 
 \emph{applied independently to each of the three color sheets of every nucleon-coloured braid strand. The proton flavor triple $(u, u, d)$ maps to $(\bar u, \bar u, \bar d)$ (the antiproton); the neutron flavor triple $(u, d, d)$ maps to $(\bar u, \bar d, \bar d)$ (the antineutron). $C$ is an involution ($C^2 = \mathrm{id}$) and commutes with the color-tube weighted averaging of \hyperref[conj:inter-nucleon-channel-color-tube]{\texttt{conj:\allowbreak{}inter-\allowbreak{}nucleon-\allowbreak{}channel-\allowbreak{}color-\allowbreak{}tube}}.}
 
-\paragraph{Disentanglement of D6 from CPT}
+\paragraph{Separating $C$ from the CPT composite}
 
 \hyperref[conj:cpt-orbit-closure-density]{\texttt{conj:\allowbreak{}cpt-\allowbreak{}orbit-\allowbreak{}closure-\allowbreak{}density}} formalises the \textbf{composite} CPT action. The framework historically collapses C, P, T into the single bar-involution \hyperref[def:bar-involution]{\texttt{def:\allowbreak{}bar-\allowbreak{}involution}} on Hecke generators ($q \mapsto q^{-1}$ together with $\sigma_i \mapsto \sigma_i^{-1}$). That conflation suppresses the \textbf{distinct categorical sources} of the three discrete symmetries:
 
@@ -2240,13 +2146,13 @@ formalised as \texttt{so3\_\allowbreak{}adjoint\_\allowbreak{}eq\_\allowbreak{}c
 Symmetry & Categorical source & Acts on \\
 \midrule
 \textbf{C} (this conjecture) & flavor swap on color sheets & quark-flavor content of nucleon braid strands \\
-\textbf{P} & mirror reflection of braid diagram & writhe / signed-crossing classification (\href{bar-involution.md#tbl:bar-involution-table3-data}{\texttt{bar-\allowbreak{}involution-\allowbreak{}table3-\allowbreak{}data}}) \\
+\textbf{P} & mirror reflection of braid diagram & writhe / signed-crossing classification (\href{../stochastic-mechanics/bar-involution-table3-data.md}{\texttt{bar-\allowbreak{}involution-\allowbreak{}table3-\allowbreak{}data}}) \\
 \textbf{T} & Markov-trace word reversal & trace-cyclicity dual \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
 
-The bar-involution $q \mapsto q^{-1}$, $\sigma_i \mapsto \sigma_i^{-1}$ acts as the \textbf{composite CPT} in this categorisation, not as C alone. This conjecture locates the C-component on the color sheets—orthogonal to P (braid-diagram mirror) and T (trace reversal).
+The bar-involution $q \mapsto q^{-1}$, $\sigma_i \mapsto \sigma_i^{-1}$ acts as the \textbf{composite CPT} in this categorisation, not as C alone. This conjecture locates the C-component on the color sheets, orthogonal to P (braid-diagram mirror) and T (trace reversal).
 
 \paragraph{The conjectural content}
 
@@ -2255,22 +2161,20 @@ The proposition relies on the color-sheet flavor structure established in \hyper
 \begin{enumerate}
   \item \textbf{C is well-defined.} The flavor-content map $(F_1, F_2) \mapsto\allowbreak{} (\bar F_1, \bar F_2)$ commutes with the color-tube weight tensor $W_{c_1 c_2}(F_1, F_2)$—i.e. $W_{c_1 c_2}(\bar F_1, \bar F_2) =\allowbreak{} W_{c_1 c_2}(F_1, F_2)$ (the weights are flavor-conjugation invariant).
   \item \textbf{C is an involution.} Each color sheet flips back to its original flavor under two applications.
-  \item \textbf{C commutes with bar-involution on the algebraic side.} This forces $\mathrm{CP} \cdot \mathrm{T}$ and $\mathrm{C} \cdot \mathrm{PT}$ to reduce to the bar-involution identity classified in \href{bar-involution.md}{\texttt{bar-\allowbreak{}involution.\allowbreak{}md}} §Bar-symmetric.
+  \item \textbf{C commutes with bar-involution on the algebraic side.} This forces $\mathrm{CP} \cdot \mathrm{T}$ and $\mathrm{C} \cdot \mathrm{PT}$ to reduce to the bar-involution identity classified in \href{../braids-and-knots/bar-involution.md}{\texttt{bar-\allowbreak{}involution.\allowbreak{}md}} §Bar-symmetric.
 \end{enumerate}
 
-When all three hold, $C$ constitutes the well-defined Z/2 categorical symmetry on the color-sheet flavor data. The CPT composite of \hyperref[conj:cpt-orbit-closure-density]{\texttt{conj:\allowbreak{}cpt-\allowbreak{}orbit-\allowbreak{}closure-\allowbreak{}density}} factors as $\mathrm{CPT} = C \cdot P \cdot T$ in the natural order—three commuting Z/2 actions on the color-tube structure.
+When all three hold, $C$ constitutes the well-defined Z/2 categorical symmetry on the color-sheet flavor data. The CPT composite of \hyperref[conj:cpt-orbit-closure-density]{\texttt{conj:\allowbreak{}cpt-\allowbreak{}orbit-\allowbreak{}closure-\allowbreak{}density}} factors as $\mathrm{CPT} = C \cdot P \cdot T$ in the natural order, as three commuting Z/2 actions on the color-tube structure.
 
-\paragraph{Diagnostics}
-
-Per \href{../../../.claude/skills/local/canonical-watcher.md}{\texttt{.\allowbreak{}claude/\allowbreak{}skills/\allowbreak{}local/\allowbreak{}canonical-\allowbreak{}watcher.\allowbreak{}md}} §Slot J:
+\paragraph{Structural position}
 
 \begin{itemize}
-  \item \textbf{GB filtration level}: N/A—claim addresses a Z/2 categorical symmetry on color-sheet metadata, not Hecke elements at a particular Coxeter length.
-  \item \textbf{Jet order}: $h^0$ (the C-action is independent of $q$; the flavor-conjugation map forms a structural Z/2 lifting through the color-tube tensor).
-  \item \textbf{Bar-symmetry status}: $C$ is bar-symmetric. It preserves $q$ and commutes with $\sigma_i \leftrightarrow \sigma_i$ (it acts on color-sheet labels, not on Hecke generators). C composed with PT yields the bar-involution. C itself is bar-trivial in \href{bar-involution.md#tbl:bar-involution-table4-data}{\texttt{bar-\allowbreak{}involution-\allowbreak{}table4-\allowbreak{}data}}.
+  \item \textbf{GB filtration level.} None: the claim addresses a Z/2 categorical symmetry on color-sheet metadata, not Hecke elements at a particular Coxeter length.
+  \item \textbf{Jet order.} $h^0$: the $C$-action is independent of $q$, and the flavor-conjugation map forms a structural Z/2 lifting through the color-tube tensor.
+  \item \textbf{Bar-symmetry.} $C$ is bar-symmetric. It preserves $q$ and commutes with $\sigma_i \leftrightarrow \sigma_i$, since it acts on color-sheet labels and not on Hecke generators. It is $C$ composed with $PT$ that yields the bar-involution; $C$ itself is bar-trivial in \href{../stochastic-mechanics/bar-involution-table4-data.md}{\texttt{bar-\allowbreak{}involution-\allowbreak{}table4-\allowbreak{}data}}.
 \end{itemize}
 
-\paragraph{Lean axiomatisation (sketch)}
+\paragraph{Lean axiomatisation (sketch)}\mbox{}\par
 
 \begin{verbatim}
 -- Conditional on the color-tube channel-assignment class:
@@ -2297,27 +2201,23 @@ The class becomes inhabited by the color-tube data once \hyperref[conj:inter-nuc
 \paragraph{Consumers / downstream}
 
 \begin{itemize}
-  \item \hyperref[conj:cpt-orbit-closure-density]{\texttt{conj:\allowbreak{}cpt-\allowbreak{}orbit-\allowbreak{}closure-\allowbreak{}density}} becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once D6, D7, D8 close.
+  \item \hyperref[conj:cpt-orbit-closure-density]{\texttt{conj:\allowbreak{}cpt-\allowbreak{}orbit-\allowbreak{}closure-\allowbreak{}density}} becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once the charge-conjugation, parity and time-reversal components close jointly—the content of \hyperref[conj:cpt-d6-d7-d8-closure]{\texttt{conj:\allowbreak{}cpt-\allowbreak{}d6-\allowbreak{}d7-\allowbreak{}d8-\allowbreak{}closure}}.
   \item The matter/antimatter sheet structure on Bring's quintic surface (\href{color-tube-fibers.md}{\texttt{def:\allowbreak{}color-\allowbreak{}tube-\allowbreak{}fibers}}) acquires a natural C-action that descends to the SO(3) fiber.
-  \item Type-B folding for chirality / CPT (AGENTS.md §7b, \textbf{D22} in the duality tracker) emerges as the symmetric-crystal analogue of this conjecture. Folding the $\mathfrak{sl}_n$ Cartan datum to Type B realises C as a symmetric-crystal structure.
+  \item Type-B folding for chirality and CPT (\texttt{conj:\allowbreak{}type-\allowbreak{}b-\allowbreak{}folding-\allowbreak{}cpt}) is the symmetric-crystal analogue of this conjecture. Folding the $\mathfrak{sl}_n$ Cartan datum to Type B realises C as a symmetric-crystal structure.
 \end{itemize}
 
-\paragraph{Open R\&D}
+\paragraph{Numerical cross-check and open content}
 
-\begin{enumerate}
-  \item \textbf{Compute prototype}: \texttt{verify\_\allowbreak{}c\_\allowbreak{}color\_\allowbreak{}swap.\allowbreak{}py}—verify numerically at $q_0$ that the flavor-conjugation involution on the proton/neutron color-tube tensor leaves the canonical Hecke generator invariant.
-  \item \textbf{Close D7 and D8}—author \texttt{conj:\allowbreak{}p-\allowbreak{}from-\allowbreak{}braid-\allowbreak{}mirror} and \texttt{conj:\allowbreak{}t-\allowbreak{}from-\allowbreak{}trace-\allowbreak{}cyclicity} to complete the CPT decomposition.
-  \item \textbf{Promote to proposition} once \hyperref[conj:inter-nucleon-channel-color-tube]{\texttt{conj:\allowbreak{}inter-\allowbreak{}nucleon-\allowbreak{}channel-\allowbreak{}color-\allowbreak{}tube}} and the $S_{5}$$\leftrightarrow$SO(3) fiber-action class (PR \href{https://github.com/litlfred/qou/pull/1081}{\#1081} supplier) resolve.
-\end{enumerate}
+At the 50-digit substrate $q_0$, the flavor-conjugation involution leaves the color-tube weighted inter-nucleon Hecke generator invariant for all sixteen nucleon pairs drawn from $\{p, n, \bar p, \bar n\}$, in two two-dimensional Hecke representations (the diagonal eigenvalue model and a non-diagonal conjugate of it), with the $\epsilon$ and $W$ tables invariant cell by cell (\href{../../computations/verify_c_color_swap.py}{\texttt{verify\_\allowbreak{}c\_\allowbreak{}color\_\allowbreak{}swap.\allowbreak{}py}}, \href{../../computations/verify-c-color-swap.witness.json}{\texttt{verify-\allowbreak{}c-\allowbreak{}color-\allowbreak{}swap.\allowbreak{}witness.\allowbreak{}json}}). The check runs the uniform projection $W = 1/9$—the only realisation of $W$ available while its closed form remains open—so it corroborates the derivation rather than testing the conjectural Bring-derived $W$. No parameter is fitted.
+
+The statement is conjectural only for as long as \hyperref[conj:inter-nucleon-channel-color-tube]{\texttt{conj:\allowbreak{}inter-\allowbreak{}nucleon-\allowbreak{}channel-\allowbreak{}color-\allowbreak{}tube}} and the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber-action class \texttt{conj:\allowbreak{}s5-\allowbreak{}so3-\allowbreak{}fiber-\allowbreak{}action} remain uninhabited; supplying both makes it unconditional.
 
 \paragraph{Cross-references}
 
 \begin{itemize}
-  \item \href{../../docs/duality-tracker.md}{\texttt{docs/\allowbreak{}duality-\allowbreak{}tracker.\allowbreak{}md}} §1 D6 (this conjecture) + §2 Cluster A (CPT decomposition D5 $\to$ D6 + D7 + D8)
-  \item Upstream class: \hyperref[conj:inter-nucleon-channel-color-tube]{\texttt{conj:\allowbreak{}inter-\allowbreak{}nucleon-\allowbreak{}channel-\allowbreak{}color-\allowbreak{}tube}} (PR \href{https://github.com/litlfred/qou/pull/1111}{\#1111} merged)
-  \item \hyperref[conj:cpt-orbit-closure-density]{\texttt{conj:\allowbreak{}cpt-\allowbreak{}orbit-\allowbreak{}closure-\allowbreak{}density}} (CPT composite already formalised)
-  \item \href{bar-involution.md}{\texttt{bar-\allowbreak{}involution.\allowbreak{}md}}—the bar-involution = CPT composite identification at the algebraic level
-  \item AGENTS.md §7b—Type-B folding for chirality / CPT (symmetric-crystal authoring shortcut, D22)
+  \item Upstream class: \hyperref[conj:inter-nucleon-channel-color-tube]{\texttt{conj:\allowbreak{}inter-\allowbreak{}nucleon-\allowbreak{}channel-\allowbreak{}color-\allowbreak{}tube}}
+  \item \hyperref[conj:cpt-orbit-closure-density]{\texttt{conj:\allowbreak{}cpt-\allowbreak{}orbit-\allowbreak{}closure-\allowbreak{}density}}—the CPT composite, already formalised
+  \item \href{../braids-and-knots/bar-involution.md}{\texttt{bar-\allowbreak{}involution.\allowbreak{}md}}—the bar-involution = CPT composite identification at the algebraic level
 \end{itemize}
 \end{conjecture}
 
