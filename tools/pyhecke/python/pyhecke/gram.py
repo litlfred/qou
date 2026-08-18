@@ -43,6 +43,22 @@ except ImportError:
         Q as q0, Q_INV as qi, HA as h,
     )
 
+# ⚠ `q0`, `qi`, `h` above are the **float64** path. They are deliberately
+# bit-stable — `constants.py` says "Don't change them — downstream f64
+# callers depend on stability" — so they are correct for existing witness
+# scripts and must not be converted.
+#
+# They are ALSO an entry point into float64 for anything doing exact work:
+# `h` differs from q₀ − q₀⁻¹ by 5.0e-17, and a caller who writes
+# `float(G.h)` or drops `G.h` into mpmath arithmetic silently pins the
+# whole computation to double precision with no signal.
+#
+# **The mpf counterparts already exist in this module** — use them:
+#     h_mp(dps=50)   z_mp(dps=50)   tr_m_mp(dps=50)   gram_matrix_mp(dps=50)
+# `h_mp()` agrees with q₀ − q₀⁻¹ to the last bit (1.3e-51 at 50 dps).
+#
+# Bean qou-jtbo; AGENTS.md "PROBES ARE NOT EXEMPT" (2026-08-18).
+
 
 # ══════════════════════════════════════════════════════════════
 # Scalar constants
