@@ -679,3 +679,70 @@ both.  The stability is a resolution artifact, not evidence.
 alpha is asserted in both conventions and derived in neither.  This bounds one
 ROUTE (fitting the anchor); a categorical derivation is not limited by
 sigma(Q_beta) and remains the open item.
+
+
+## RESEARCH (2026-08-18): the corpus-grep found a constraint I did not know,
+## and it exposed an ELEMENTARY error in my own earlier result
+
+### First: the four-path corpus grep was overdue and it paid
+
+I had been repeating 'alpha is asserted, derived nowhere' from my own earlier
+session rather than from a fresh grep.  Running it found
+qbeta-d-frame-eigenphase-bar-parity (2026-08-16), which I did not know about
+and which changes the problem:
+
+  * under C the eigenphase is BAR-ODD: bar(alpha) + alpha = 0
+  * under D (full-bar bar(z) = z - h) it is NOT, with a Z-INDEPENDENT defect
+    bar(alpha) + alpha = h^2/2 = (q-1)^2(q+1)^2/(2q^2)   [symbolic-exact]
+  * so the FORCED bar-odd projection is alpha - h^2/4, taking c_3 from
+    -974.43 to -86.08, recorded there as 'improves substantially but does NOT
+    restore'
+
+So alpha is not derived, but it IS structurally constrained, and one correction
+is already forced rather than fitted.  I would have started cold without this.
+
+### RETRACTION of my own claim from earlier today
+
+qbeta_alpha_required_c_vs_d_probe reported that both conventions leave '~0.1
+rad' for c_3 and concluded 'NEITHER asserted phase reproduces CODATA at N=2'.
+WRONG, elementarily: cos is EVEN and mp.acos returns only the PRINCIPAL
+branch, so alpha_eff_req has two solutions.  The C phase sits on the NEGATIVE
+branch.
+
+    distance to the + branch (what I reported) : 0.11321204
+    distance to the - branch (the real one)    : 2.2563251e-5
+    overstatement                              : 5017.54x
+
+C DOES reproduce CODATA at N=2, to 2.26e-5 rad -- which amplified by
+1/u^3 = 1.6e6 is exactly the observed c_3 = -2.069.  That consistency check
+would have caught it immediately and I did not run it.
+
+The C-vs-D RATIO (0.895) is branch-independent and stands; only the absolute
+gaps and the conclusion were wrong.  The offending assertion is now recorded
+as RETRACTED in the probe itself rather than deleted, and the prose is fixed.
+
+### The actual research result
+
+Re-expressing the ALREADY-DERIVED bar-odd projection in the amplifier-free
+coordinate (justified by the proved QOU.QBeta.c3Of_sub_mul_u_cubed):
+
+    D phase gap             0.011872906
+    after alpha - h^2/4     0.00094635405
+    closed                  92.03 % of the D gap
+    residual                41.94x the C-frame residual
+
+Through c_3 the projection reads as a failure (-974 -> -86, still nothing like
+-2).  In phase space it recovers 92 % of the discrepancy.  ONE
+structurally-forced correction -- forced by requiring the bar-oddness that
+holds identically under C -- gets most of the way there.
+
+This STRENGTHENS the D programme: the D phase is not wild, it is one derived
+correction and a ~42x residual away from the frame that works.
+
+### Discipline
+
+Proposes NO correction and searches NO space.  The source witness explicitly
+fences further correction-hunting as fitting ('does NOT license searching for
+further corrections until one lands near the proved c_2 = -1'), and this
+respects it -- it adds a coordinate, not a candidate.  alpha remains asserted
+in both frames and derived in neither.

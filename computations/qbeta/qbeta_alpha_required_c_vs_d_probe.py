@@ -2,6 +2,25 @@
 """qbeta_alpha_required_c_vs_d_probe.py — how far is each convention's ASSERTED
 ladder phase from the phase the ladder actually requires?
 
+*** PARTIALLY RETRACTED 2026-08-18 — read this first. ***
+
+This probe originally reported that BOTH conventions leave "~0.1 rad" for the
+c_3 rung to absorb, and concluded that "NEITHER asserted phase reproduces
+CODATA at N=2". That is WRONG. `cos` is EVEN and `mp.acos` returns only the
+principal branch, so `alpha_eff_req` has TWO solutions, `+` and `-`. The
+convention-C phase sits on the NEGATIVE branch: its true residual is
+`2.26e-5` rad, not `0.113` — an overstatement of ~5017x. Amplified by
+1/u^3 that residual IS the observed c_3 = -2.069, the consistency check the
+old framing could not have passed.
+
+The C-vs-D RATIO result below (0.895, refuting my "orders worse" prediction)
+is unaffected: both phases were compared to the same branch, so the ratio is
+branch-independent. Only the ABSOLUTE gaps and the "neither reproduces CODATA"
+conclusion were wrong, and the offending assertion is replaced below.
+
+Corrected treatment, with both branches:
+`qbeta_eigenphase_branch_and_barodd_projection_probe.py`.
+
 Bean `qou-cds1`. The ruling makes convention D canonical and
 `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` proves the C-frame ladder and the
 two-row forcing are mutually exclusive, so the ladder must be RE-DERIVED under
@@ -154,9 +173,13 @@ def main() -> int:
   while extracted c_3 swings 2.37 %. Both asserted phases are anchor-stable to
   ~5e-4 %; the instability is downstream of them.
 
-  What DOES stand: both frames leave ~0.1 rad for c_3 to absorb, so NEITHER
-  asserted phase reproduces CODATA at N=2. That is the real open item -- and it
-  is open in C exactly as much as in D.
+  ** RETRACTED (2026-08-18): ** this block used to conclude "both frames leave
+  ~0.1 rad ... NEITHER asserted phase reproduces CODATA at N=2". Wrong -- the
+  gaps above are to the PRINCIPAL arccos branch only, and cos is even. The C
+  phase sits on the NEGATIVE branch with a residual of 2.26e-5 rad, and C DOES
+  reproduce CODATA at N=2 to that. The ratio result (0.895) is branch-
+  independent and stands; the absolute gaps do not. See
+  qbeta_eigenphase_branch_and_barodd_projection_probe.py.
 
   NOTHING IS DERIVED HERE. No phase proposed, no value wired, no convention
   settled.
@@ -212,14 +235,17 @@ def main() -> int:
                "evidence that D breaks the physics.",
     )
     wb.add_assertion(
-        name="neither_asserted_phase_reproduces_CODATA_at_N2",
-        computed=str(int(abs(mp.mpf(p["gap_C"])) > mp.mpf("0.01")
-                         and abs(mp.mpf(p["gap_D"])) > mp.mpf("0.01"))),
-        expected="1", tolerance=0,
-        source=f"both frames leave ~0.1 rad (C {mp.nstr(mp.mpf(p['gap_C']), 6)}, "
-               f"D {mp.nstr(mp.mpf(p['gap_D']), 6)}) for the c_3 rung to absorb. "
-               "The un-derived phase is open in C exactly as much as in D — which "
-               "is why cds1 has no C-frame derivation to port.",
+        name="RETRACTED_neither_asserted_phase_reproduces_CODATA_at_N2",
+        computed="0", expected="0", tolerance=0,
+        source="RETRACTED 2026-08-18. This asserted that both frames leave "
+               "~0.1 rad for c_3 because both gaps exceed 0.01. The gaps were "
+               "measured against the PRINCIPAL arccos branch only, but cos is "
+               "EVEN — the C phase sits on the NEGATIVE branch, with a true "
+               "residual of 2.26e-5 rad (~5017x smaller). C DOES reproduce "
+               "CODATA at N=2 to that residual, which under 1/u^3 amplification "
+               "is exactly c_3 = -2.069. Kept as a recorded retraction rather "
+               "than deleted, so the corpus shows the correction. Superseded by "
+               "qbeta_eigenphase_branch_and_barodd_projection_probe.py.",
     )
     out = wb.save({"q0Anchor": "ambiguous"})
     print(f"Witness: {out}")
