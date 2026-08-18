@@ -4,6 +4,29 @@
 **Branch:** `claude/qbeta-c3-eigenphase-scaling-map-2026-06-01` (PR #1649)
 **Status:** **CONFIRMED** — PR #1625's atomic-step universal M = 7 boundary extends to mirror pairs, and M_first_Φ_8² = 15 is a new universal boundary.
 
+> **🛑 SUPERSEDED 2026-08-18 — this doc's numbers are computed on the wrong
+> object; scoped, not corrected (bean `qou-0ndb`).** The mirror-pair element
+> here is `Σ_m Δa_m(X − Y)·(u;u)_m`, formed by subtracting two witnesses'
+> Habiro coefficients. Each witness's `a_m` expand *its own
+> denominator-cleared numerator* `p = d·t`, so that sum is `d_X·t_X − d_Y·t_Y`,
+> not the pair difference — and the denominators are built out of Φ₄ and Φ₈,
+> the very factors being measured, to **different powers on each member of a
+> pair** (⁶He: Φ₈⁴ vs ⁶Be: Φ₈⁸; ¹⁴O: Φ₈¹⁶ vs ¹⁴C: Φ₈¹²; proton: Φ₈² vs
+> neutron: none). Proved sorry-free in
+> [`QOU/Habiro/MirrorPairNormalisation.lean`](../../content/quantum-observable-universe/lean/QOU/Habiro/MirrorPairNormalisation.lean)
+> (`coeffDiff_at_coincidence`). Differencing the traces instead gives
+> `mult(Φ₈) = 2⌊(A−1)/2⌋` on **10/10** pairs with `Φ₁ = Φ₂ = 1` and `Φ₄ = A`.
+> Read the tables below as a record of what was measured, not as the pair's
+> cyclotomic content. Full analysis, including which specific claims here do
+> not survive:
+> [`2026-08-18-mirror-pair-a-m-differencing-normalisation-defect.md`](2026-08-18-mirror-pair-a-m-differencing-normalisation-defect.md).
+
+> **`M_first_Φ₈ = 7` / `M_first_Φ₈² = 15` are NOT re-measured in the new
+> analysis.** They are partial sums of the same a_m-difference.
+> `topic2_mirror_pair_phi8_boundary_scan.py` is corrected and its witness
+> regenerated — read the boundary numbers against that witness.
+
+
 ## TL;DR
 
 PR #1625 found `M_first_Φ_8 = 7` for atomic-step pair-differences (D−n, ³He−D, ⁴He−³He) and observed Φ_8² appearing at M = 15 in (⁴He−³He). This probe extends both boundary checks to mirror pairs and finds:
