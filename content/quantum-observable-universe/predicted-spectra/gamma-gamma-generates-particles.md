@@ -13,13 +13,16 @@ $$
 We reduce $\gamma_1\cdot\gamma_2$ with the Hecke relation $\sigma_i^2 = (q-q^{-1})\sigma_i + \mathbf{1}$. This places five of the six basis operators in the three-term product (where $\varphi_{01}=\psi_{01}=0$):
 
 $$
+\begin{aligned}
   \mathrm{NF}(\gamma_1\gamma_2)
-  = \underbrace{(1+\varphi_0\psi_0+\varphi_1\psi_1)}_{\mathbf{1}}
+  \;=\;& \underbrace{(1+\varphi_0\psi_0+\varphi_1\psi_1)}_{\mathbf{1}}
   + \underbrace{(\varphi_0+\psi_0+\varphi_0\psi_0\,h)}_{\sigma_0}\sigma_0
   + \underbrace{(\varphi_1+\psi_1+\varphi_1\psi_1\,h)}_{\sigma_1}\sigma_1
-  + \underbrace{\varphi_0\psi_1}_{L_+}\sigma_0\sigma_1
+  \\[2pt]
+  &+ \underbrace{\varphi_0\psi_1}_{L_+}\sigma_0\sigma_1
   + \underbrace{\varphi_1\psi_0}_{L_-}\sigma_1\sigma_0 ,
   \qquad h = q-q^{-1}.
+\end{aligned}
 $$
 
 The two chiral operators are generated independently. The $L_+$ coefficient is the cross-color product $\varphi_0\psi_1$. The $L_-$ coefficient is $\varphi_1\psi_0$. For any target pair $(a,b)$, the weights $(\varphi_0,\varphi_1,\psi_0,\psi_1)=(a,b,1,1)$ realise $L_+=a$ and $L_-=b$. The operator $L_-=\sigma_1\sigma_0$ is absent from any single photon. The single photon support is $\{\mathbf{1},\sigma_0,\sigma_1,\sigma_0\sigma_1\}$. The two-photon cross term produces $L_-$. Restoring the four-term coupling $\varphi_{01}\neq 0$ opens the remaining basis operator $e^-=\sigma_0\sigma_1\sigma_0$. This completes the basis.
