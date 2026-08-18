@@ -620,34 +620,46 @@ def _q0_50dps_str() -> str:
 
 
 def z_mp(dps: int = _GRAM_MP_DPS) -> "_mp.mpf":
-    """z = 1/(q^½ + q^−½) at 50-dps mpmath (irrational; no float64).
+    """z = q³/(q²+1) at 50-dps mpmath (no float64).
 
-    **Convention C.** Held here deliberately, in lockstep with the module's
-    float64 `z` — see the blocking note at that definition. Splitting the
-    mpmath mirror from the f64 original would be strictly worse than the
-    stale convention. Under D this would be q³/(q²+1), and rational, so the
-    "irrational" note would no longer apply.
+    **Convention D**, in lockstep with the module's float64 `z` (line ~175).
+
+    It was left on convention C when the f64 `z` moved to D on 2026-08-15, and
+    the docstring here went on asserting the lockstep that had just been
+    broken. The stated principle was right — "splitting the mpmath mirror from
+    the f64 original would be strictly worse than the stale convention" — and
+    it is exactly what argues for this change now that `z` is D: keeping C here
+    IS the split it warned against.
+
+    Measured before the fix: `z` = 0.6126880371464652 (D) against `z_mp()` =
+    0.4993203341836945 (C), 18.5 % apart, and `gram_matrix_mp` disagreed with
+    the f64 `G` by 3.36e-01 where its own docstring promised ~1e-15. The
+    50-dps path is the one the NO-FLOAT64 precision discipline steers callers
+    to, so the superseded convention was reaching precisely the code that had
+    been most careful. Bean qou-h4ab.
+
+    Under C this was irrational at q = 111/100; under D it is rational, so the
+    "irrational" caveat that used to sit here no longer applies.
     """
     with _mp.workdps(dps):
         q = _mp.mpf(_q0_50dps_str())
-        qi_ = 1 / q
-        return +(1 / (_mp.sqrt(q) + _mp.sqrt(qi_)))  # unary + pins precision
+        return +(q ** 3 / (q ** 2 + 1))  # unary + pins precision
 
 
 def tr_m_mp(dps: int = _GRAM_MP_DPS) -> list:
     """Markov trace TR_M on the NF basis at 50-dps mpmath (NO float64).
 
     Mirrors the float64 `TR_M` exactly: [1, z, z, z², z², h·z²+z] with
-    h = q − q⁻¹ and z the irrational Markov weight at 50 dps.
+    h = q − q⁻¹ and z the Markov weight at 50 dps.
 
-    **Convention C**, in lockstep with the module's `z` — see the blocking
-    note at that definition (bean qou-wgta item 11).
+    **Convention D**, in lockstep with the module's `z` — see `z_mp`, which
+    carries the measurement of what the C/D split cost while it was live.
     """
     with _mp.workdps(dps):
         q = _mp.mpf(_q0_50dps_str())
         qi_ = 1 / q
         hh = q - qi_
-        z_ = 1 / (_mp.sqrt(q) + _mp.sqrt(qi_))
+        z_ = q ** 3 / (q ** 2 + 1)
         return [_mp.mpf(1), +z_, +z_, +(z_ ** 2), +(z_ ** 2),
                 +(hh * z_ ** 2 + z_)]
 
@@ -722,8 +734,9 @@ def gram_matrix_mp(dps: int = _GRAM_MP_DPS, q=None) -> list:
     Computed entirely at the TRUE substrate q_0 (Q_50_DIGIT_STR): the NF
     of the product word b_i·b_j is built by the left-fold `_hm_mp` with
     h = q_0 − q_0⁻¹ at 50 dps, and contracted with the 50-dps Markov
-    weights `tr_m_mp` (which carry the irrational z).  Returns a
-    list-of-lists of `mpmath.mpf`.
+    weights of `tr_m_mp` (recomputed inline below, because the `q` override
+    needs them at an arbitrary modulus — keep the two formulas identical).
+    Returns a list-of-lists of `mpmath.mpf`.
 
     This is the float64-free analogue of the canonical `G`: it agrees with
     `G` to ~1e-15 (both are at q_0).  Do NOT confuse with the
@@ -743,7 +756,13 @@ def gram_matrix_mp(dps: int = _GRAM_MP_DPS, q=None) -> list:
         q = _mp.mpf(_q0_50dps_str()) if q is None else _mp.mpf(q)
         qi_ = 1 / q
         h_mp = q - qi_
-        z_ = 1 / (_mp.sqrt(q) + _mp.sqrt(qi_))
+        # Convention D, matching `tr_m_mp` and the module's f64 `z`. This was
+        # the LAST convention-C site in the file and the one that actually
+        # broke the "agrees with G to ~1e-15" promise five lines up: fixing
+        # `z_mp` and `tr_m_mp` alone left the disagreement at 3.36e-01,
+        # because this function never called them — it inlines its own
+        # weights, while the docstring said it contracted with `tr_m_mp`.
+        z_ = q ** 3 / (q ** 2 + 1)
         trm = [_mp.mpf(1), +z_, +z_, +(z_ ** 2), +(z_ ** 2),
                +(h_mp * z_ ** 2 + z_)]
         Gm = [[_mp.mpf(0)] * 6 for _ in range(6)]
