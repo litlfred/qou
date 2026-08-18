@@ -50,6 +50,7 @@ import QOU.Archimedean.BranchIntegerPinning
 -- Sorry-free, so it is wired here for CI type-checking (unlike
 -- HadamardFactorization itself, which still carries PI-3 / the full theorem).
 import QOU.Mathlib.WeierstrassFactorEstimate
+import QOU.Mathlib.YoungDiagramCard
 -- Algebraic skeleton of the Dimofte-Garoufalidis 1-loop invariant: the shape
 -- identity ζ+ζ'+ζ''=0, the CUSP-NUMBER-FREE degeneracy of the edge rows, the
 -- lattice-basis determinant lemmas, and the proof that the per-cusp factor
