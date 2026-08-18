@@ -1272,3 +1272,65 @@ everything excluded so far — CGZ's square-argument η-elements (their
 Thm 7.4, whose arguments are squares precisely to sidestep root
 choices) are the natural candidate mechanism. The ε_m **values** at
 m ≥ 3 remain uncomputed as invariants.
+
+## Addendum 28 (2026-08-18) — the root ambiguity has a closed form: a second condition, an obstruction at m ≥ 4, and a door still open at m = 3
+
+`gswz_epsm_root_ambiguity_criterion_probe.py`, **9/9**. Explains
+Addendum 27's non-invariance exactly, and turns it into a criterion.
+
+**The closed form.** Twisting one root x_j → ζ_m·x_j changes D(x_j) by
+the Lean-proved shift law at r = 1, D(ζx)/D(x) = (1−x)^m/(1−w). So P
+changes by [(1−x_j)^m/(1−w_j)]^{n_j}, and χ_B kills the m-th power
+(χ_B(u^m) = teich(u)²⁴ = 1), leaving
+
+$$\Delta_j \;=\; -\,n_j\, e(1-w_j) \pmod m .$$
+
+**Verified against all four measured twists** of the Addendum-27
+representative — including the two that left the value fixed.
+
+**The criterion.** A well-defined ε_m needs **both**:
+
+| | condition | what it buys |
+|---|---|---|
+| **C1** | m \| n_j·e(w_j) | canonical cocycle integral (Addendum 27) |
+| **C2** | m \| n_j·e(1−w_j) | value root-choice invariant (**new**) |
+
+equivalently μ*_w \| n_w with μ*_w = m/gcd(m, gcd(e(w), e(1−w))).
+
+**This is the shape of CGZ's own construction.** Their Bloch elements
+are **D·[ζ_D]** (§7 circular units, p. 33) — a root-of-unity symbol
+carrying a *multiplicity*, whose R_ζ images are literally
+∏(1−ζᵏζ_D)ᵏ. The multiplier is not decoration: C2 is what it is for.
+
+**The obstruction, and why a residue-level negative is valid here.** The
+conditions depend only on residues, and an element-level representative
+**merges into** a residue-level one satisfying the same conditions
+(m | n_j·a for each j gives m | (Σ n_j)·a over a fixed residue). So
+*residue-infeasible ⟹ element-infeasible* — the sound direction. (The
+converse is unsound and is precisely the Addendum-25 error; it is not
+used.) Measured over 23 symbols and 506 relations:
+
+| m | 3 | 4 | 6 | 8 | 12 | 24 |
+|---|---|---|---|---|---|---|
+| ξ ∈ L*_m + R | **TRUE** | false | false | false | false | false |
+| special symbols (μ* = 1) | 3/23 | 2/23 | 3/23 | 0 | 0 | 0 |
+
+A control confirms the *weaker* C1-only condition still succeeds at
+m = 3 and 24, so the infeasibility is C2 biting rather than a broken
+test.
+
+**Scope (strict).** The m ≥ 4 result excludes **this construction** —
+the D_ζ descent with χ_B and freely chosen m-th roots — **not** the
+existence of ε_m as a map; a route that *pins* the roots rather than
+choosing them is untouched. And m = 3 having the necessary condition
+satisfied is **not a value**: an element-level representative meeting
+both conditions still has to be exhibited, and the single-relation
+family (550 relations containing the actual z₂, every coefficient)
+contains none.
+
+**A convention trap, caught by this probe's own check.** The first run
+compared measured twists (whose dlogs use the p-adic g₂₄ = ζ₆₂₄²⁶) with
+e(1−w) computed from a *different* 𝔽₂₅ generator — the two differ by a
+unit rescale, and the check went red. Fixed by doing that comparison in
+one convention. The lattice test is unaffected: μ* is invariant under
+the rescale, since gcd(m, u·g) = gcd(m, g) for a unit u mod 24.
