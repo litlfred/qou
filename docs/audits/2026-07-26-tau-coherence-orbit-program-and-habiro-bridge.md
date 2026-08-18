@@ -1206,3 +1206,69 @@ more of my probes carried the same defect**; all are now anchored to
 `pathlib.Path(__file__).resolve().parent`, verified by running from
 `computations/probes/` (the failing cwd): 5/5, 7/7, 7/7, 18/18 green.
 Same cwd-assumption class as the `parents[2]` bug fixed in 12 scripts.
+
+## Addendum 27 (2026-08-18) — a per-element representative EXISTS at m = 3 and 6, the canonical cocycle closes there — and the value is still not an invariant
+
+`gswz_epsm_per_element_representative_probe.py`, **16/16**. Answers the
+question Addendum 25 reopened (bean `qou-w4gn`), and then finds the next
+obstruction rather than a value.
+
+**Why the earlier search found nothing.** The single-relation negative
+(bean note, 2026-08-11) placed z₂ only in the **seed** slot, used
+coefficient **1**, and assumed z₂ appears **once**. Widening all three:
+
+- **Position** — z₂ can occupy any of the five slots, each reachable by
+  construction (slot 3 via y = α/x, since 1−xy = 1−α = z₂ exactly;
+  slots 2 and 4 by solving for the partner seed).
+- **Coefficient** — with general c the demand is m | (1−ck)·e(z₂) plus
+  m | c·e(w), strictly weaker than the c = 1 case.
+- **Multiplicity** — z₂ can appear **twice** in one relation, and that
+  is exactly what the survivors do.
+
+**Result.** Of 550 relations built containing the actual z₂, exactly
+**2** contain it twice. For both, **c = 2** makes ξ′ = ξ − 2R
+per-element divisible at **m = 3 and m = 6**:
+
+| element | mult | e(w) | mult·e |
+|---|---|---|---|
+| z₁ | +2 | 3 | +6 |
+| z₂ | −3 | 22 | −66 |
+| w_a | −2 | 12 | −24 |
+| w_b | −4 | 15 | −60 |
+
+Four distinct field elements, every product divisible by 3 and by 6.
+**m = 4, 8, 12, 24 have no candidate** at this level — they also need z₁
+fixed (2·e(z₁) = 6 divides by none of them), which a relation touching
+only z₂ cannot do.
+
+**A trap avoided, having been caught by it once.** A residue-level
+search with seeds lifted afterwards produced five apparent m = 3
+candidates that **evaporated**: in the field their z₂ multiplicity was
+**0**, not 2 — lifting a residue yields *some* element of that class,
+not the specific z₂. Every candidate here is built so the slot **is**
+the actual z₂, and the representative is verified element-by-element in
+the p-adic ring.
+
+**The descent then closes — a first at m ≥ 3.** With every canonical
+exponent integral *by* the per-element property, the cocycle needs no
+root choice, and the gate **c_canon³ = σ(P)/P holds exactly**. The
+Hilbert-90 resolvent, the splice law, the σ-fixed certificate and χ_B
+all follow, giving **ε₃ = ω¹**.
+
+**But that value is not an invariant.** The m-th roots x_j remain
+choices, and re-running the *whole* canonical chain under
+x_j → ζ₃^t·x_j moves the class through **all of μ₃** (measured: twists
+on the e = 3 and e = 15 symbols give 0 and 2; twists on e = 22 and
+e = 12 leave it at 1). So **ε₃ = ω¹ is CONVENTIONAL** under the
+teich-dlog pinning — the same lesson as the m = 2 abstract layer, one
+construction deeper. Recorded as an asserted check, so a future
+construction that genuinely pins the x_j would break it and be noticed.
+
+**Net.** The per-element criterion was necessary but **not sufficient**
+for a well-defined value. What the canonical cocycle removed was the
+*U-root* choice; what remains is the *x_j* choice. That is now the
+precise remaining obstruction, and it is a different object from
+everything excluded so far — CGZ's square-argument η-elements (their
+Thm 7.4, whose arguments are squares precisely to sidestep root
+choices) are the natural candidate mechanism. The ε_m **values** at
+m ≥ 3 remain uncomputed as invariants.
