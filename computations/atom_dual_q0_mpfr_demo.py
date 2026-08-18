@@ -65,8 +65,22 @@ def solve_atom_dual_q0_mpfr(prec_bits: int = 167) -> dict:
     return out
 
 
-def main():
+def main() -> int:
     res = solve_atom_dual_q0_mpfr()
+
+    # SURFACE THE MISSING BACKEND INSTEAD OF PRINTING OVER IT.
+    # `solve_atom_dual_q0_mpfr` has always returned {"error": ...} with the
+    # exact cargo line when the binary is absent, and main() never looked. So
+    # the run printed a "NO-FLOAT64 path" banner above a table of Nones and
+    # exited 0 — a demo that advertises a precision guarantee it did not
+    # deliver, and reports success either way. Check first, say so, exit
+    # non-zero. Bean qou-cp1w.
+    if res.get("error"):
+        print("H_3(q) atom LP dual — NOT RUN")
+        print(f"  {res['error']}")
+        print("  No witness emitted: there is no result to record.")
+        return 2
+
     print("=" * 70)
     print("H_3(q) atom LP dual — NO-FLOAT64 path (50-dps strings → clarabel-MPFR)")
     print("=" * 70)
@@ -81,28 +95,54 @@ def main():
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
+    # Narrowed from a bare `except Exception`. That catch-all is why
+    # `wb.write()` survived: WitnessBuilder has only ever had `save()`, so every
+    # run raised AttributeError, printed one line, and continued — for as long
+    # as the file has existed. Only the import is allowed to fail softly now
+    # (qou-substrate genuinely may be absent); anything else is a real bug and
+    # is raised.
     try:
+        import mpmath as mp  # noqa: F401
+        from _precision import fmt  # noqa: F401
         from witness_base import WitnessBuilder  # type: ignore
-        wb = WitnessBuilder("atom-dual-q0-mpfr-demo", engine="rust")
-        if hasattr(wb, "set_description"):
-            wb.set_description(
-                "End-to-end no-float64 LP dual on the H_3(q) atomic Gram: "
-                "50-dps mpmath Gram/trace strings -> clarabel-MPFR. Consumer "
-                "of gram_matrix_mp. Degenerate H_3 dual (y0~0); pipeline demo.")
-        if hasattr(wb, "set_audit_only"):
-            wb.set_audit_only("docs/audits/2026-06-16-gram-q-approximation-audit.md")
-        if hasattr(wb, "add_data"):
-            wb.add_data("dual", res)
-        if hasattr(wb, "add_assertion"):
-            wb.add_assertion("strong_duality_gap_small",
-                             computed=abs(float(res.get("duality_gap", 1))),
-                             expected=0.0, tolerance=1e-6,
-                             source="clarabel-MPFR on 50-dps string Gram")
-        out_path = wb.write("atom-dual-q0-mpfr-demo")
-        print(f"\nWitness: {out_path}")
-    except Exception as e:  # noqa: BLE001
-        print(f"\n(witness emission skipped: {e})")
+    except ImportError as e:
+        print(f"\n(witness emission skipped: qou-substrate unavailable: {e})")
+        return 0
+
+    # The `hasattr(wb, ...)` guards that used to wrap each of these are gone.
+    # They are the same silent-skip pattern as the swallow above: had
+    # `wb.write` been guarded too, it would have quietly emitted nothing
+    # instead of raising, and this bug would still be invisible. The
+    # WitnessBuilder API is in-repo and stable; call it directly and let a
+    # genuine breakage surface.
+    wb = WitnessBuilder("atom-dual-q0-mpfr-demo", engine="rust")
+    wb.set_description(
+        "End-to-end no-float64 LP dual on the H_3(q) atomic Gram: "
+        "50-dps mpmath Gram/trace strings -> clarabel-MPFR. Consumer "
+        "of gram_matrix_mp. Degenerate H_3 dual (y0~0); pipeline demo.")
+    wb.set_audit_only("docs/audits/2026-06-16-gram-q-approximation-audit.md")
+    wb.add_data("dual", res)
+    # STRINGS, not floats. `add_assertion` documents this as "the drained
+    # convention (qou-t0rf)" precisely so a value stays out of float64 — and
+    # the old line did `abs(float(res["duality_gap"]))`, truncating an MPFR
+    # decimal to f64 inside the one script whose entire purpose is the
+    # no-float64 path. Measured on a populated run: 3 raw float64 fields would
+    # have entered the witness (.assertions[0].computed / .expected /
+    # .tolerance). The gap crosses the FFI as a decimal string; keep it one.
+    with mp.workdps(50):
+        gap = abs(mp.mpf(str(res.get("duality_gap", 1))))
+    wb.add_assertion("strong_duality_gap_small",
+                     computed=fmt(gap),
+                     expected="0", tolerance="1e-6",
+                     source="clarabel-MPFR on 50-dps string Gram")
+    # `save()`, not `write()` — the latter has never existed on WitnessBuilder.
+    # Reached only when `res` is populated, because an all-None payload would
+    # emit a witness asserting `strong_duality_gap_small` about a solve that
+    # never ran.
+    out_path = wb.save()
+    print(f"\nWitness: {out_path}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
