@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/mass-theory/spin-involution-lp-dual-invariance-proof.md"
   },
   "source_hashes": {
-    "md": "1fc678bb9e37",
+    "md": "e1b167737c5d",
     "ts": "5aba3af4decd"
   },
   "criteria": {
@@ -1551,7 +1551,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "a9b97ea341b2",
+          "script_commit_sha": "3c2848a5f7fd8883290c754251f18e6d4bc4f03b"
+        },
+        "reviewed_at": "2026-08-18T20:54:17.430Z",
+        "reviewed_sha": "4d55d6b9c937999705442bdeaf8788e53d1118b5"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-18T20:54:17.430Z"
 }
