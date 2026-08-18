@@ -423,6 +423,29 @@ theorem axialDist_trichotomy (T : StandardYoungTableau μ) {k : ℕ}
     · exact Or.inr (Or.inr ⟨hrow, hcol⟩)
 
 
+/-! ## The axial distance under the swap
+
+The swap exchanges the cells of `k` and `k+1`, so it **negates** the axial distance.  This
+is the fact that turns a size-`2` orbit `{T, s_k·T}` into a `seminormalBlock` at parameters
+`a(d)`, `a(-d)`: the two diagonal entries of the block are the seminormal parameters at
+opposite axial distances.  It is the missing prerequisite for the quadratic relation of
+`SeminormalRep.genMat` (bean `qou-gjg6`).
+-/
+
+/-- Axial distance is antisymmetric: swapping the two cells negates it. -/
+theorem axialDistance_swap (c d : ℕ × ℕ) : axialDistance d c = - axialDistance c d := by
+  simp only [axialDistance, cellContent]
+  ring
+
+/-- **The swap negates the axial distance**: `axialDist (s_k·T) k = - axialDist T k`.
+Immediate from `cellOf_swapTableau_self` / `_succ`, which exchange the two cells. -/
+theorem axialDist_swapTableau (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hadm : SwapAdmissible T k) :
+    axialDist (swapTableau T k hk hkn hadm) k = - axialDist T k := by
+  unfold axialDist
+  rw [cellOf_swapTableau_self T hk hkn hadm, cellOf_swapTableau_succ T hk hkn hadm]
+  exact axialDistance_swap _ _
+
 end TableauCells
 
 end QOU.SchurWeyl
