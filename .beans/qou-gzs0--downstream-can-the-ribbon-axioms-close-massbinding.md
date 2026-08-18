@@ -196,3 +196,41 @@ convention-D re-derivation (qou-cds1), not the ribbon layer.
 Scope (b) on the exclusion -- it rests on a proved invariant (theta scalar =>
 weight is q^{T/2} with T integer) plus arithmetic, not on a failed search.
 Scope (a) on the Q2 identification, which is an observation awaiting a ruling.
+
+## Follow-up: can T = 0 be PROVED?  No -- and that is itself a theorem
+
+`QOU/StandardModel/FramingIsAChoice.lean` -- lean-direct exit 0, no sorry /
+axiom / native_decide, #print axioms [propext] (+ Quot.sound on the two
+Fin-indexed ones).
+
+    framing_unobservable_iff_trivial_twist
+        (forall T, theta^T = 1)  <->  theta = 1
+
+So the framing is blind to T EXACTLY when the twist is trivial. At q != 1 --
+the whole substrate regime, q_0 ~ 1.11 -- distinct T give distinct weights, so
+the framing is OBSERVABLE. A quantity that changes the prediction cannot be
+fixed by the axioms that leave it free: "T = 0" is a normalisation CONVENTION to
+be declared, not a proposition to be derived. The converse is the classical
+boundary (theta = 1 is q = 1), consistent with BalancedCategory.ofSymmetric.
+
+    exists_framing_pair_distinguished
+        theta != 1  =>  some framing pair is separated (sharper form)
+
+### Where T = 0 IS derivable
+
+    bar_invariant_forces_zero    t = -t pointwise  =>  t = 0
+    bar_invariant_total_zero     hence total 0, weight 1
+
+The bar involution negates the twist, so a SELF-CONJUGATE state has zero framing
+and needs no convention at all. That is a genuine derivation of T = 0 -- on the
+bar-invariant sector only (amphichirality), not for the nucleon.
+
+### The caveat that redirects the question
+
+Q2 above found F_Bor's /q^3 is EXACTLY q^{T/2} at T = -6. If that factor is the
+framing, the mass path's operative convention is T = -6, NOT 0 -- and proving
+T = 0 would CONTRADICT the working formula rather than support it.
+
+So the target is not "prove T = 0". It is "DECLARE which framing the mass path
+uses", which is a corpus/owner ruling and not a Lean obligation. This file makes
+the choice visible as a choice.
