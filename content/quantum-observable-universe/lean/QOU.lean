@@ -331,6 +331,7 @@ import QOU.SchurWeyl.HeckeWedderburn3
 import QOU.SchurWeyl.HoefsmitRep
 -- SYT rigidity: #SYT >= 2 forces a movable tableau (the non-scalarity input to
 -- hoefsmit_seminormal_rep). Pulls TableauCells into the umbrella's import closure.
+import QOU.SchurWeyl.HoefsmitGeneral
 import QOU.SchurWeyl.SytRigidity
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.Irreducibility

@@ -1,29 +1,11 @@
 ---
 # qou-gjg6
 title: 'GAP (im9l residual): general-lambda Hoefsmit braid — size-6 S3-orbit Yang-Baxter identity'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-11T01:05:26Z
-updated_at: 2026-08-16T14:03:02Z
-
-updated_at: 2026-08-16T14:06:51Z
-
-updated_at: 2026-08-16T15:28:57Z
-
-updated_at: 2026-08-16T16:43:28Z
-
-updated_at: 2026-08-16T18:00:00Z
-
-updated_at: 2026-08-16T19:15:16Z
-
-updated_at: 2026-08-16T20:28:00Z
-
-updated_at: 2026-08-16T20:46:27Z
-
-updated_at: 2026-08-16T20:53:54Z
-
-updated_at: 2026-08-17T00:44:11Z
+updated_at: 2026-08-18T21:44:16Z
 parent: qou-59vq
 ---
 

@@ -1,11 +1,11 @@
 ---
 # qou-im9l
 title: 'SW-4-gen: general-λ Hoefsmit seminormal rep + braid (Yang-Baxter/axial-distance) — the residual sorry in HoefsmitRep.lean'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T20:13:08Z
-updated_at: 2026-08-18T21:07:11Z
+updated_at: 2026-08-18T21:44:16Z
 parent: qou-59vq
 blocked_by:
     - qou-rsbf
@@ -38,3 +38,14 @@ Then SW-5-gen (irreducibility, general λ) and the general Wedderburn iso follow
 Ref: [hoefsmit1974] (thesis), [ram1997] (axial-distance formulas), [wenzl1988].
 Honest scope: research project, not a one-session grind. Concrete (2,1) template
 is in HoefsmitRep.lean/Irreducibility.lean/BurnsideSpan.lean as the pattern to generalize.
+
+
+
+## CLOSED 2026-08-18 — general-λ Hoefsmit rep PROVED sorry-free (takeover, owner-authorised)
+hoefsmit_seminormal_rep_general (HoefsmitGeneral.lean): ∀ λ ⊢ N, ∃ ρ : H_{N-1}(q) →ₐ[ℝ] M_{d_λ}(ℝ), and d_λ ≥ 2 → some generator is non-scalar. #print axioms → [propext, Classical.choice, Quot.sound], NO sorryAx. HoefsmitRep.lean is now 0-sorry (the cited stub retired; it could not be discharged in place — its proof runs through SeminormalRep, which imports HoefsmitRep, so the theorem lives downstream).
+
+What I contributed on top of the prior owner's work (they had proved genMat_quadratic/far_comm/braid + seminormalRepFin):
+- SytRigidity.lean (new): syt_eq_of_cellOf_eq, cellOf_col_succ_of_row/_row_succ_of_col, cellOf_eq_of_row/_of_col, and the target exists_admissible_of_ne — '#SYT ≥ 2 ⇒ some generator moves some tableau', the non-scalarity input the owner's GAP note named as missing. Route: an immovable tableau is pinned to the single row (0,j-1) or single column (j-1,0) (using left-justification to force the start at 0); same orientation ⇒ equal, mixed ⇒ value 2 at both (0,1) and (1,0), impossible. Avoids the full SYT-connectivity theorem.
+- card_shape : |shape λ| = N, and the assembly (reindex injectivity + genMat_ne_scalar).
+
+Also wired SytRigidity/HoefsmitGeneral into QOU.lean — the general-λ files (TableauCells, SeminormalParam, SeminormalRep, Orbit3/6Braid, HeckeWedderburnData3) were NOT in the umbrella, so nothing type-checked them there (the qou-orph pattern).
