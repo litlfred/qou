@@ -7,7 +7,7 @@
     "thm:knot-mass-formula-unified",
     "prop:e-infinity-page-identifications"
   ],
-  "timestamp": "2026-08-15T20:42:14.995344+00:00",
+  "timestamp": "2026-08-18T16:04:42.102373+00:00",
   "parameters": {
     "q_0": 1.1099785827513808,
     "engine": "sympy Poly + sequential cyclotomic division"
@@ -173,114 +173,121 @@
       "Z": 1,
       "N": 1,
       "include_inter": true,
-      "tr_M_in_q": "(-2*q**(85/2) + 4*q**(81/2) + 6*q**(77/2) - 4*q**(75/2) + 4*q**(73/2) - 9*q**(71/2) + 8*q**(69/2) - 7*q**(67/2) + 8*q**(65/2) - 6*q**(63/2) + 10*q**(61/2) - 14*q**(59/2) + 12*q**(57/2) - 13*q**(55/2) + 14*q**(53/2) - 15*q**(51/2) + 12*q**(49/2) - 12*q**(47/2) + 20*q**(45/2) + 20*q**(41/2) - 12*q**(39/2) + 12*q**(37/2) - 15*q**(35/2) + 14*q**(33/2) - 13*q**(31/2) + 12*q**(29/2) - 14*q**(27/2) + 10*q**(25/2) - 6*q**(23/2) + 8*q**(21/2) - 7*q**(19/2) + 8*q**(17/2) - 9*q**(15/2) + 4*q**(13/2) - 4*q**(11/2) + 6*q**(9/2) + 4*q**(5/2) - 2*sqrt(q) - q**43 - 2*q**42 + 6*q**41 + 2*q**40 - 2*q**39 - 6*q**38 + 2*q**37 + q**36 - 3*q**35 + q**33 + 3*q**32 + 15*q**31 - q**30 + 19*q**29 - 15*q**28 + 17*q**27 - 18*q**26 + 7*q**25 - 14*q**24 + 7*q**23 + 6*q**22 - 6*q**21 - 7*q**20 + 14*q**19 - 7*q**18 + 18*q**17 - 17*q**16 + 15*q**15 - 19*q**14 + q**13 - 15*q**12 - 3*q**11 - q**10 + 3*q**8 - q**7 - 2*q**6 + 6*q**5 + 2*q**4 - 2*q**3 - 6*q**2 + 2*q + 1)/(32*q**23 + 96*q**22 + 96*q**21 + 32*q**20)",
+      "tr_M_in_q": "(q**50 - 2*q**49 + 7*q**48 + q**46 - 2*q**45 + 25*q**44 + 2*q**42 - 4*q**41 + 62*q**40 - 2*q**38 + 4*q**37 + 93*q**36 + 2*q**35 - 8*q**34 + 2*q**33 + 111*q**32 + 4*q**31 - 37*q**30 + 10*q**29 + 89*q**28 + 4*q**27 - 78*q**26 - 4*q**25 + 66*q**24 - 8*q**23 - 110*q**22 + 41*q**20 - 10*q**19 - 88*q**18 - 6*q**17 + 33*q**16 - 50*q**14 + 4*q**13 + 26*q**12 + 4*q**11 - 14*q**10 + 16*q**8 + 4*q**7 - 2*q**6 + 6*q**4 + q**2 - 2*q + 1)/(192*q**29 + 576*q**27 + 576*q**25 + 192*q**23)",
       "shift": 0,
-      "denom_in_u": "32*check_q**46 + 96*check_q**44 + 96*check_q**42 + 32*check_q**40",
-      "p_in_u": "-check_q**86 - 2*check_q**85 - 2*check_q**84 + 6*check_q**82 + 4*check_q**81 + 2*check_q**80 - 2*check_q**78 + 6*check_q**77 - 6*check_q**76 - 4*check_q**75 + 2*check_q**74 + 4*check_q**73 + check_q**72 - 9*check_q**71 - 3*check_q**70 + 8*check_q**69 - 7*check_q**67 + check_q**66 + 8*check_q**65 + 3*check_q**64 - 6*check_q**63 + 15*check_q**62 + 10*check_q**61 - check_q**60 - 14*check_q**59 + 19*check_q**58 + 12*check_q**57 - 15*check_q**56 - 13*check_q**55 + 17*check_q**54 + 14*check_q**53 - 18*check_q**52 - 15*check_q**51 + 7*check_q**50 + 12*check_q**49 - 14*check_q**48 - 12*check_q**47 + 7*check_q**46 + 20*check_q**45 + 6*check_q**44 - 6*check_q**42 + 20*check_q**41 - 7*check_q**40 - 12*check_q**39 + 14*check_q**38 + 12*check_q**37 - 7*check_q**36 - 15*check_q**35 + 18*check_q**34 + 14*check_q**33 - 17*check_q**32 - 13*check_q**31 + 15*check_q**30 + 12*check_q**29 - 19*check_q**28 - 14*check_q**27 + check_q**26 + 10*check_q**25 - 15*check_q**24 - 6*check_q**23 - 3*check_q**22 + 8*check_q**21 - check_q**20 - 7*check_q**19 + 8*check_q**17 + 3*check_q**16 - 9*check_q**15 - check_q**14 + 4*check_q**13 - 2*check_q**12 - 4*check_q**11 + 6*check_q**10 + 6*check_q**9 + 2*check_q**8 - 2*check_q**6 + 4*check_q**5 - 6*check_q**4 + 2*check_q**2 - 2*check_q + 1",
-      "deg_p_u": 86,
+      "denom_in_u": "192*u**58 + 576*u**54 + 576*u**50 + 192*u**46",
+      "p_in_u": "u**100 - 2*u**98 + 7*u**96 + u**92 - 2*u**90 + 25*u**88 + 2*u**84 - 4*u**82 + 62*u**80 - 2*u**76 + 4*u**74 + 93*u**72 + 2*u**70 - 8*u**68 + 2*u**66 + 111*u**64 + 4*u**62 - 37*u**60 + 10*u**58 + 89*u**56 + 4*u**54 - 78*u**52 - 4*u**50 + 66*u**48 - 8*u**46 - 110*u**44 + 41*u**40 - 10*u**38 - 88*u**36 - 6*u**34 + 33*u**32 - 50*u**28 + 4*u**26 + 26*u**24 + 4*u**22 - 14*u**20 + 16*u**16 + 4*u**14 - 2*u**12 + 6*u**8 + u**4 - 2*u**2 + 1",
+      "deg_p_u": 100,
       "habiro_coefficients": [
         {
           "m": 0,
-          "a_m": "32",
+          "a_m": "192",
           "deg_a_m": 0,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 1,
-          "a_m": "-1072*check_q - 1104",
+          "a_m": "-8544*u - 8544",
           "deg_a_m": 1,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 2,
-          "a_m": "10852*check_q**2 + 11192*check_q + 11556",
+          "a_m": "111443*u**2 + 114293*u + 117080",
           "deg_a_m": 2,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 3,
-          "a_m": "-49200*check_q**3 - 51684*check_q**2 - 54364*check_q - 57152",
+          "a_m": "-655879*u**3 - 683754*u**2 - 710207*u - 739447",
           "deg_a_m": 3,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 4,
-          "a_m": "121387*check_q**4 + 130272*check_q**3 + 139535*check_q**2 + 149320*check_q + 159666",
+          "a_m": "2089133*u**4 + 2209456*u**3 + 2335901*u**2 + 2466525*u + 2603529",
           "deg_a_m": 4,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 5,
-          "a_m": "-179141*check_q**5 - 195879*check_q**4 - 213968*check_q**3 - 233399*check_q**2 - 254230*check_q - 276545",
+          "a_m": "-3950424*u**5 - 4247785*u**4 - 4569085*u**3 - 4903225*u**2 - 5263265*u - 5637472",
           "deg_a_m": 5,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 6,
-          "a_m": "163337*check_q**6 + 182478*check_q**5 + 203461*check_q**4 + 226489*check_q**3 + 251736*check_q**2 + 279375*check_q + 309539",
+          "a_m": "4646264*u**6 + 5093119*u**5 + 5572931*u**4 + 6093323*u**3 + 6651099*u**2 + 7254437*u + 7900073",
           "deg_a_m": 6,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 7,
-          "a_m": "-90879*check_q**7 - 104213*check_q**6 - 119110*check_q**5 - 135818*check_q**4 - 154523*check_q**3 - 175625*check_q**2 - 199063*check_q - 225170",
+          "a_m": "-3454106*u**7 - 3865423*u**6 - 4312527*u**5 - 4810976*u**4 - 5351559*u**3 - 5951902*u**2 - 6602380*u - 7322003",
           "deg_a_m": 7,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 8,
-          "a_m": "28805*check_q**8 + 34129*check_q**7 + 40383*check_q**6 + 47612*check_q**5 + 55906*check_q**4 + 65420*check_q**3 + 76440*check_q**2 + 89024*check_q + 103370",
+          "a_m": "1604571*u**8 + 1835161*u**7 + 2097431*u**6 + 2389989*u**5 + 2721378*u**4 + 3089970*u**3 + 3505504*u**2 + 3966828*u + 4484907",
           "deg_a_m": 8,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 9,
-          "a_m": "-4162*check_q**9 - 5286*check_q**8 - 6625*check_q**7 - 8243*check_q**6 - 10225*check_q**5 - 12597*check_q**4 - 15410*check_q**3 - 18745*check_q**2 - 22725*check_q - 27433",
+          "a_m": "-445163*u**9 - 522987*u**8 - 615273*u**7 - 719528*u**6 - 842230*u**5 - 980659*u**4 - 1142617*u**3 - 1324859*u**2 - 1536689*u - 1774678",
           "deg_a_m": 9,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 10,
-          "a_m": "9*check_q**10 + 65*check_q**9 + 156*check_q**8 + 292*check_q**7 + 466*check_q**6 + 680*check_q**5 + 970*check_q**4 + 1363*check_q**3 + 1851*check_q**2 + 2443*check_q + 3201",
+          "a_m": "66795*u**10 + 81980*u**9 + 99488*u**8 + 121114*u**7 + 146178*u**6 + 176706*u**5 + 212013*u**4 + 254691*u**3 + 303939*u**2 + 363056*u + 431043",
           "deg_a_m": 10,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 11,
-          "a_m": "32*check_q**11 + 46*check_q**10 + 56*check_q**9 + 65*check_q**8 + 72*check_q**7 + 84*check_q**6 + 94*check_q**5 + 100*check_q**4 + 95*check_q**3 + 98*check_q**2 + 90*check_q + 71",
+          "a_m": "-4446*u**11 - 5835*u**10 - 7402*u**9 - 9559*u**8 - 12053*u**7 - 15461*u**6 - 19308*u**5 - 24409*u**4 - 30334*u**3 - 38011*u**2 - 46847*u - 58137",
           "deg_a_m": 11,
           "integral": true,
           "remainder_nonzero": false
         },
         {
           "m": 12,
-          "a_m": "-check_q**8 - 3*check_q**7 - 6*check_q**6 - 9*check_q**5 - 9*check_q**4 - 13*check_q**3 - 17*check_q**2 - 23*check_q - 30",
-          "deg_a_m": 8,
+          "a_m": "75*u**12 + 102*u**11 + 173*u**10 + 225*u**9 + 325*u**8 + 440*u**7 + 625*u**6 + 826*u**5 + 1130*u**4 + 1482*u**3 + 2047*u**2 + 2638*u + 3508",
+          "deg_a_m": 12,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 13,
+          "a_m": "-u**9 - u**8 - u**6 - 8*u**5 - 8*u**4 - 15*u**3 - 22*u**2 - 36*u - 50",
+          "deg_a_m": 9,
           "integral": true,
           "remainder_nonzero": false
         }
       ],
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0": "0.388286471559408430387350108504"
+      "tr_M_at_q0": "0.575172243917771819191554664609"
     }
   },
   "scriptHash": "3aae79b3b695",
-  "scriptCommitSha": "7bcfeb61d33f8e706f5d7a3f84f3a6a0dbb86614",
-  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
+  "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
+  "commitSha": "06f7907c98af57a87635b879184d4156351546eb",
   "engine": "mpmath",
-  "computedAt": "2026-08-15T20:42:15.072648+00:00",
+  "computedAt": "2026-08-18T16:04:42.256921+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",

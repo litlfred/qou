@@ -369,3 +369,66 @@ regeneration, not assumed to carry over.
 missed set is the nuclear layer: deuteron at H₆, helium-3 at H₉…"*. The
 deuteron row is therefore already on its list. This stays sequenced behind
 that campaign; nothing here is for this bean to run.
+
+## D-only directive executed (owner, 2026-08-18) — and the Φ_k structure does NOT survive
+
+Owner: *"no C family. D only."* Done, in two steps.
+
+**1. The mixed atomic witness is fixed.** Re-ran with `HABIRO_WITH_DEUTERON=1`.
+All three rows now convention D, zero `check_q`, all `reconstruction_matches`
+true. Deuteron `deg_p_u` 86 → 100, coefficients 13 → 14. That removes the
+straddle `path_b_habiro_mass_probe` was reading (it calibrates α_M off the D
+row).
+
+**2. The 26-witness family regenerated under D.** 316 s, 0 failures, 20/20
+reconstructions true with `tr_M_at_q0_rel_err = 0.0` throughout — so the
+serialization fix and the refuse-guard both hold under D.
+
+### The result nobody should skim past
+
+Every Φ_k multiplicity is **0 on all seven mirror pairs** under D, with
+`diff_zero: false` — the differences are nonzero, they simply carry no
+cyclotomic structure:
+
+    A    pair                          Φ_1  Φ_2  Φ_4  Φ_8      (C had:)
+    1    proton − neutron                0    0    0    0       1 1 0 0
+    3    helium-3 − tritium              0    0    0    0       1 0 0 2
+    5    lithium-5 − helium-5            0    0    0    0       1 0 0 4
+    7    beryllium-7 − lithium-7         0    0    0    0       1 0 0 6
+    8    boron-8 − lithium-8             0    0    0    0       1 1 0 6
+    9    boron-9 − beryllium-9           0    0    0    0       1 0 0 8
+   10    carbon-10 − beryllium-10        0    0    0    0       1 1 0 8
+
+**Φ_1 is the alarming one.** Its universality under C had a *structural*
+justification — at q=1 the two mirror halves coincide, so `(u−1)` must divide
+their difference. Under D it does not: the p−n difference factors as
+
+    u^4·(u^2−u+1)·(u^2+u+1)·(u^4−u^2+1)·(u^32+3u^20−2u^16+3u^12−4u^8+3u^4−2)
+
+which evaluates to **6 at u = 1**. The classical-limit coincidence fails.
+Note the factors present are Φ_6, Φ_3, Φ_12 — Φ_8 does not appear at all.
+
+### What this is, and what it is NOT
+
+**It is NOT a refutation of `Φ_8 = 2⌊(A−1)/2⌋`.** Scope-(a): this construction,
+as written, yields no cyclotomic structure under D. Whether the law was a
+convention-C artifact, or the u-parametrisation is simply the wrong reading
+under D, is **open** — and I do not have an established explanation.
+
+One partial mechanism, recorded with its own limit: under D `tr_M_in_q` has
+integer q powers where C had half-integer, so `u = √q` is at least partly
+vestigial — the proton's `p_in_u` is all-even under D (exponents 4,8,16,…)
+versus mixed parity under C (4,5,7,9,…), and an even `P(u) = R(u²)` divides by
+`(u−1)` only if it vanishes at u=1. **But this does not generalise**: only
+**4 of 25** family witnesses are all-even. I checked, and it does not explain
+the other 21. Do not cite parity as the explanation.
+
+### Do not publish the zeros as a result
+
+The summary witness now carries `phi_8_mult: 0` for all seven pairs — the same
+uniform-zero shape that this arc spent PR #4926 correcting. It is the correct
+output of the current producer under D, and it is also exactly the kind of
+number that reads as a finding when it is an artifact of an inapplicable
+construction. Either the mirror-pair Φ_k analysis needs redoing in the right
+variable for D, or it needs a guard that says "not applicable" rather than 0.
+Flagged, not silently shipped.
