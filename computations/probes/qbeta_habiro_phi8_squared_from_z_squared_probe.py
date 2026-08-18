@@ -58,6 +58,8 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from habiro_coefficients_atomic import trace_diff_numerator as _trace_diff  # noqa: E402
+from habiro_coefficients_atomic import cyclotomic_expansion as _cyc_expand  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -281,45 +283,42 @@ def extract_helium_witnesses(u):
     he3 = record_upstream(he3_path, _UPSTREAM_RECORDS) if he3_path.exists() else None
     he4 = record_upstream(he4_path, _UPSTREAM_RECORDS) if he4_path.exists() else None
 
-    def parse_coeffs(coeffs_list):
-        """Parse list of {m, a_m} into dict {m: sympy_expr}."""
-        result = {}
-        for e in coeffs_list:
-            m = e["m"]
-            # BOTH names, and this function in particular must have both: it
-            # is applied to the atomic witness (strings in `check_q`) AND to
-            # helium-3 / helium-4 (strings in `u`), and the pairs below
-            # SUBTRACT one from the other. With `check_q` mapped alone, a
-            # "u"-string parsed to a fresh Symbol('u') carrying no
-            # assumptions — not equal to the `u` above, which is positive and
-            # real — so the two operands were different symbols that both
-            # print as "u", and the difference never collected:
-            #     he3.a_1 − D.a_1  =  -3392*u + 1072*u - 2288   (2 symbols)
-            #     correct          =  -2320*u - 2288            (1 symbol)
-            # The wrong form reads as merely uncollected terms, which is why
-            # it survived: nothing raises, and the display looks plausible.
-            a_m = sp.sympify(e["a_m"].replace("^", "**"),
-                             locals={"u": u, "check_q": u})
-            result[m] = a_m
-        return result
+    # `parse_coeffs` lived here. It is gone with the a_m-differencing it fed:
+    # its own docstring records that it had to map BOTH "u" and "check_q" to one
+    # symbol precisely because the pairs below subtracted coefficients from two
+    # differently-serialized witnesses. Differencing the traces instead removes
+    # the subtraction, and with it the need for that reconciliation (qou-0ndb).
 
-    n_coeffs = parse_coeffs(atomic["results"]["n (neutron, A=1)"]["habiro_coefficients"])
-    d_coeffs = parse_coeffs(atomic["results"]["D (deuteron, A=2)"]["habiro_coefficients"])
+    # Carry the TRACES, not the a_m. A witness's a_m expand its own
+    # DENOMINATOR-CLEARED numerator p = d*t, so Sum (a_m^X - a_m^Y)(u;u)_m
+    # reconstructs d_X*t_X - d_Y*t_Y, which is proportional to the pair
+    # difference t_X - t_Y only where the denominators agree at the evaluation
+    # point. Proved sorry-free in QOU/Habiro/MirrorPairNormalisation.lean
+    # (coeffDiff_at_coincidence: dX*t - dY*t = (dX - dY)*t), so a mismatch
+    # contributes the denominator GAP times the common value and the cyclotomic
+    # multiplicities read off it are not the pair's. Bean qou-0ndb.
+    n_tr = atomic["results"]["n (neutron, A=1)"]["tr_M_in_q"]
+    d_tr = atomic["results"]["D (deuteron, A=2)"]["tr_M_in_q"]
 
     pairs = []
-    pairs.append(("(D − n)", d_coeffs, n_coeffs))
+    pairs.append(("(D − n)", d_tr, n_tr))
 
     if he3 is not None:
-        he3_coeffs = parse_coeffs(he3["habiro_coefficients"])
-        pairs.append(("(³He − D)", he3_coeffs, d_coeffs))
+        pairs.append(("(³He − D)", he3["tr_M_in_q"], d_tr))
     if he4 is not None and he3 is not None:
-        he4_coeffs = parse_coeffs(he4["habiro_coefficients"])
-        pairs.append(("(⁴He − ³He)", he4_coeffs, he3_coeffs))
+        pairs.append(("(⁴He − ³He)", he4["tr_M_in_q"], he3["tr_M_in_q"]))
 
     results = []
-    for label, big, small in pairs:
+    for label, big_tr, small_tr in pairs:
         log(f"\n  --- Δa_m {label} ---")
-        max_m = max(max(big.keys(), default=0), max(small.keys(), default=0))
+        # Habiro-expand the TRUE difference; M_first is defined on that
+        # expansion, so the correct object is the expansion OF the difference,
+        # not a difference of two expansions (qou-0ndb).
+        diff = _trace_diff(big_tr, small_tr, u, label=label)
+        big = {c["m"]: sp.sympify(c["a_m"], locals={"u": u})
+               for c in _cyc_expand(diff, u)}
+        small = {}
+        max_m = max(big.keys(), default=0)
 
         # Track WHERE Φ_8 first enters: compute running prefix sums and
         # find smallest M such that Σ_{m=0..M} Δa_m·(u;u)_m carries Φ_8.
