@@ -81,3 +81,61 @@ does not currently have one.
 
 Until then /q^3 should be labelled a normalisation CONVENTION carrying 37 % of
 m_p, not "the natural categorical observable".
+
+## Tried to prove it: the exponent IS canonical, but it is applied TWICE (2026-08-18)
+
+`QOU/MassTheory/PoincareCenteringOfQ3.lean` -- lean-direct exit 0, four
+theorems, #print axioms standard-Mathlib only, no sorry / axiom / native_decide.
+
+### The candidate derivation, and it half-works
+
+The UNBALANCED [n]_q! is the Poincare polynomial of S_n,
+
+    [n]_q!^unbal = SUM_{w in S_n} q^{l(w)},   deg = l(w_0) = n(n-1)/2
+
+so q^{-l(w_0)} is its canonical CENTERING. Converting to the balanced
+convention carries exactly that factor -- verified symbolically n = 1..6:
+
+    [n]_q!^bal  =  q^{-n(n-1)/2} . [n]_{q^2}!^unbal
+
+At n = 3 that is q^{-3}: the exponent in question. So it is NOT arbitrary --
+3 = l(w_0), the length of the longest element of S_3, which is a canonical
+Hecke-theoretic quantity.
+
+### But the code already uses balanced integers, so /q^3 centers a SECOND time
+
+`m_p_substrate_identity_50dps.q_int` is (q^n - q^-n)/(q - q^-1) -- BALANCED. So
+`qfact_three` is already the once-centered object and F_Bor divides again:
+
+    balanced_is_already_centered   [3]_q!^bal      = P(q) / q^3
+    code_form_is_doubly_centered   [3]_q!^bal/q^3  = P(q) / q^6
+
+with P(q) = 1 + 2q^2 + 2q^4 + q^6 the Poincare polynomial of S_3 in q^2. The
+code's object sits at q^{-2 l(w_0)} -- twice the canonical centering.
+
+That is also exactly WHY the bar-symmetry breaks: `balanced_is_bar_symmetric`
+shows the once-centered form IS invariant under q -> q^-1, and the second
+division destroys it. The two findings are the same fact seen twice.
+
+### Why one instance cannot settle it
+
+`ell_w0_eq_n_iff_three` : n(n-1) = 2n  <->  n = 0 or n = 3.
+
+l(w_0) coincides with n EXACTLY at n = 3. So the corpus's single 3-strand
+observable cannot distinguish "center by l(w_0)" from "one power per strand" --
+they agree there and nowhere else. A 2- or 4-strand F-observable would decide
+it; none exists.
+
+### VERDICT: identified, not derived
+
+I did not prove the /q^3. What I proved is what it IS: a second Poincare
+centering, applied on top of the one already inside the balanced convention, and
+that second application is the step that breaks bar-symmetry. No standard
+convention calls for it.
+
+The numerics still require it (dropping it moves m_p to +37.0 %), so the open
+question is sharpened rather than closed: what derives a DOUBLE centering? Until
+that is answered, /q^3 remains a normalisation convention carrying 37 % of m_p.
+
+Scope (a). Does not refute F_Bor and does not touch the Lean-proved
+|tr_M(beta_Bor)|.
