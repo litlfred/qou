@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-18T21:12:50.875550+00:00",
-  "commitSha": "203cc1bb4bbf48d6c28ffa7a835b6610cb0d98e2",
+  "computedAt": "2026-08-18T21:32:23.928048+00:00",
+  "commitSha": "0cdf0424af6ff9c03354ff2eca8377f91135870b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -571,11 +571,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 6,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "af669b5b2374",
-  "scriptCommitSha": "203cc1bb4bbf48d6c28ffa7a835b6610cb0d98e2",
+  "scriptCommitSha": "0cdf0424af6ff9c03354ff2eca8377f91135870b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2717,6 +2717,7 @@
         "qbeta-5two-sigma3-anchor-test.witness.json",
         "qbeta-5two-sigma3-nodd-shape.witness.json",
         "qbeta-5two-theorem3-shape-u.witness.json",
+        "qbeta-5two-trace-field-disc23-not-qsqrt7.witness.json",
         "qbeta-borel-conformal-pade.witness.json",
         "qbeta-borromean-cyclotomic.witness.json",
         "qbeta-ck-qholonomic-recurrence-test.witness.json",
@@ -3958,11 +3959,13 @@
         "gswz_epsm_descent_m4to24.witness.json",
         "gswz_epsm_global_symbols.witness.json",
         "gswz_epsm_kummer_level.witness.json",
+        "gswz_epsm_per_element_representative.witness.json",
         "gswz_epsm_representative_obstruction.witness.json",
         "gswz_epsm_residue_model_insufficient.witness.json",
         "gswz_frobenius_teichmuller.witness.json",
         "gswz_membership_harness_v1.witness.json",
         "gswz_padic_dilog_modp.witness.json",
+        "gswz_program_convention_immunity.witness.json",
         "gswz_psi_section_division.witness.json",
         "gswz_symmetrization_integrality.witness.json",
         "h1-exponent-location.witness.json",
