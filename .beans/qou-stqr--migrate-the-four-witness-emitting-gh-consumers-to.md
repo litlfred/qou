@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-18T21:10:08Z
-updated_at: 2026-08-18T21:43:13Z
+updated_at: 2026-08-18T22:12:04Z
 ---
 
 Follow-up to qou-jtbo (resolved). `pyhecke.gram.h` is the float64 path and is
@@ -84,3 +84,24 @@ this exact trap at its own `workdps(60)`. Fixed by matching that pattern.
 5.19e-14 (a ~1e-16 h error amplified through the H_6 characters). Two ratchet
 effects, both improvements, both committed: `q0-value-drift` now records q0 at
 60 digits instead of 16, and `witness-raw-float64` drained_files 35 -> 36.
+
+
+## Correction (2026-08-18, post-close) — h6's PAYLOAD was still float64
+
+I closed this bean reporting h6 fixed. The fix was **cosmetic**: it corrected
+the q0/h ENTRY POINT while the characters still came from
+`build_seminormal_matrices_cached` + `chi_lambda_of_word`, which are float64
+by construction — `math.sqrt` against a fixed 1e-15 threshold, and
+`float(np.trace(...))` over a numpy matrix. An mpf q0 does not survive contact
+with numpy. The witness then serialised a 50-digit substrate beside a float64
+payload, which is the exact failure the directive names.
+
+Two further leaks were live on the same path: `float(v)` on every Wenzl y_lambda,
+and `0.0` trace seeds.
+
+Fixed properly by new module `computations/hoefsmit_mpmath.py` (BlockCacheMP with
+mp.sqrt and a precision-scaled threshold, seminormal_matrices_mp,
+chi_lambda_of_word_mp), same SYT ordering as the cached builder. The float64 path
+still runs as a MEASURED cross-check: max relative gap on chi_bound = 8.71e-15,
+recorded as the float64 floor rather than as a disagreement (rule 4). Values
+unchanged to that floor, now at full precision. 1.7s for the H_6 sweep.
