@@ -328,7 +328,36 @@ def main() -> int:
     wb.add_data("im_z1_over_sqrt23_disc_squarefree_part", str(sqfree23))
     wb.add_data("exclusion_scope", "(b) structural -- tower law, [Q(sqrt-7):Q]=2 nmid [K:Q]=3")
     wb.add_data("verdict", verdict)
-    wb.save()
+
+    # q0 anchor: `independent`, and stated rather than left to inference.
+    #
+    # Nothing here reads the substrate modulus. The saddle is solved at m = 1 --
+    # the complete hyperbolic structure of the 5_2 complement, a fixed geometric
+    # object -- and every field-theoretic conclusion is exact integer arithmetic
+    # on recovered polynomial coefficients. The one place a reader might expect
+    # a pin is the `Im(z1)/sqrt(23)` control, but that sqrt is the field's
+    # discriminant, not a modulus.
+    #
+    # Import cone: _path_bridge (sys.path only), mpmath, witness_base, and
+    # qbeta_5two_quantum_volume_probe -- none of which reads q_parameter,
+    # constants.Q, or y_lambda_at.
+    #
+    # So `independent` is the honest record, NOT the standing proton default:
+    # stamping a pin this compute never read is precisely the misrecord the
+    # field exists to prevent. Via save(extra=...) rather than add_data(), which
+    # would nest it under `data` where the audit reading body["q0Anchor"] cannot
+    # see it. No q0Value -- there is no value, and one here would be a Q0_FLIP.
+    wb.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Pure hyperbolic geometry + exact integer arithmetic. The 5_2 saddle "
+            "is solved at m = 1 (the complete structure, a fixed object), minimal "
+            "polynomials are recovered by PSLQ, and discriminants are computed "
+            "over Z. No substrate modulus enters: the import cone reaches no "
+            "q_parameter, no qou_substrate.constants, no y_lambda_at. The sqrt(23) "
+            "in the paired control is the field discriminant, not a pin."
+        ),
+    })
     return 0 if all_passed else 1
 
 
