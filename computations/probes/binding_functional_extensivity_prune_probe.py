@@ -112,8 +112,8 @@ def main() -> int:
         need = mp.mpf(bpn) * A
         ok = cap >= need
         viable.append((lab, ok, need / cap))
-        print(f"| {lab:>5} | {A:3d} | {n:7d} | {blocks:6d} | {float(cap):13.2f} "
-              f"| {float(need):9.2f} | {'yes' if ok else 'NO':<8} |")
+        print(f"| {lab:>5} | {A:3d} | {n:7d} | {blocks:6d} | {mp.nstr(cap, 4)} "
+              f"| {mp.nstr(need, 4)} | {'yes' if ok else 'NO':<8} |")
     print("\n  short by:  " + ",  ".join(f"{l} {mp.nstr(r, 3)}x" for l, ok, r in viable if not ok))
     print("\n  S = sum over A-1 bonds   -> EXTENSIVE, grows like A")
     print("  H <= alpha*log(#blocks)  -> grows like log A")

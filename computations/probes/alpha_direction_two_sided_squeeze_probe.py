@@ -114,9 +114,9 @@ def main() -> int:
     scale = amax / E0
 
     print("The alpha direction is squeezed from BOTH sides — qou-bid3 negative.\n")
-    print(f"  two-nucleon floor requires   alpha <= {float(amax):.4f} MeV")
-    print(f"  framework has                E_0    = {float(E0):.4f} MeV")
-    print(f"  ratio                                 {float(scale):.4f}\n")
+    print(f"  two-nucleon floor requires   alpha <= {mp.nstr(amax, 6)} MeV")
+    print(f"  framework has                E_0    = {mp.nstr(E0, 6)} MeV")
+    print(f"  ratio                                 {mp.nstr(scale, 6)}\n")
 
     print("Chain closed form vs AME2020 at the CURRENT alpha, and at the required one:\n")
     print("| iso   |   A | B_AME/A | chain/A | chain/AME | chain/A @1.5516 | ratio @1.5516 |")
@@ -130,8 +130,8 @@ def main() -> int:
         ch2 = ch * scale
         r2 = ch2 / ame
         (over if r > 1 else under).append((lab, r, r2))
-        print(f"| {lab:<5} | {A:3d} | {float(ame):7.4f} | {float(ch):7.4f} "
-              f"| {float(r):8.2f}x | {float(ch2):15.4f} | {float(r2):12.2f}x |")
+        print(f"| {lab:<5} | {A:3d} | {mp.nstr(ame, 6)} | {mp.nstr(ch, 6)} "
+              f"| {mp.nstr(r, 4)}x | {mp.nstr(ch2, 6)} | {mp.nstr(r2, 4)}x |")
 
     print(f"\n  OVER-bound at current alpha : {[l for l, _, _ in over]}")
     print(f"  UNDER-bound at current alpha: {[l for l, _, _ in under]}\n")
@@ -143,10 +143,10 @@ def main() -> int:
     print("## The squeeze\n")
     print("  B_chain is LINEAR in alpha (alpha times a sum of derived per-bond L's),")
     print("  so rescaling alpha rescales every row uniformly:\n")
-    print(f"    two-nucleon floor    needs  alpha <= {float(amax):.4f}")
+    print(f"    two-nucleon floor    needs  alpha <= {mp.nstr(amax, 6)}")
     print("    many-body A >= 12    needs  alpha LARGER (or a big positive collective term)\n")
-    print(f"  At alpha = {float(amax):.4f} the 56Fe under-binding goes from "
-          f"{float(1/fe_now):.2f}x to {float(1/fe_req):.2f}x.")
+    print(f"  At alpha = {mp.nstr(amax, 6)} the 56Fe under-binding goes from "
+          f"{mp.nstr(1/fe_now, 4)}x to {mp.nstr(1/fe_req, 4)}x.")
     print("  The admissible interval for a uniform alpha is EMPTY.\n")
 
     print("## Consequence for qou-bid3\n")

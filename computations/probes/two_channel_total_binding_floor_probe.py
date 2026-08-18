@@ -113,7 +113,7 @@ def main() -> int:
     nature = D - V
 
     print("The two-nucleon TOTAL binding: framing-invariant, and floored.\n")
-    print(f"  q0    = {mp.nstr(q, 12)}    alpha = E_0 = {float(E0):.6f} MeV")
+    print(f"  q0    = {mp.nstr(q, 12)}    alpha = E_0 = {mp.nstr(E0, 8)} MeV")
     print(f"  mu+   = {mp.nstr(mup, 12)}   (T=1, symmetric)")
     print(f"  mu-   = {mp.nstr(mum, 12)}   (T=0, antisymmetric)")
     print(f"  mu+ + mu- = {mp.nstr(mup + mum, 30)}   <- EXACTLY 1, identically in q,z")
@@ -128,38 +128,38 @@ def main() -> int:
     print("   | ---------: | ----------: | ----------: | :----------------------------- |")
     totals = []
     for lab, f in (("0", mp.mpf(0)), ("3", mp.mpf(3)), ("10", mp.mpf(10)),
-                   (f"{float(f_deut):.3f}", f_deut)):
+                   (f"{mp.nstr(f_deut, 5)}", f_deut)):
         e1 = mup * q ** f
         e0 = mum * q ** (-f)
         b1 = -E0 * mp.log(e1)
         b0 = -E0 * mp.log(e0)
         totals.append(b1 + b0)
-        print(f"   | {lab:>10} | {float(b1):+11.4f} | {float(b0):+11.4f} "
+        print(f"   | {lab:>10} | {mp.nstr(b1, 6)} | {mp.nstr(b0, 6)} "
               f"| {mp.nstr(b1 + b0, 22):<30} |")
     spread = max(totals) - min(totals)
     print(f"\n   spread across all four framings: {mp.nstr(spread, 6)}  -> invariant")
     print(f"   (the last row is the f that reproduces the deuteron ALONE: "
-          f"{float(f_deut):.3f},")
+          f"{mp.nstr(f_deut, 5)},")
     print("    on the wrong side of the f > 2.7227 unbinding threshold by 11 units)\n")
 
     # ---- 2. the floor ------------------------------------------------------
     print("2. THE FLOOR — mu+ + mu- = 1 caps the product at 1/4 (AM-GM)\n")
     floor = E0 * mp.log(4)
     subst = -E0 * mp.log(mup * mum)
-    print(f"   floor      alpha * log 4         = {float(floor):8.4f} MeV"
+    print(f"   floor      alpha * log 4         = {mp.nstr(floor, 6)} MeV"
           "   (any convex pair)")
-    print(f"   substrate  -alpha * log(mu+ mu-) = {float(subst):8.4f} MeV"
-          f"   (mu+ mu- = {float(mup*mum):.6f})")
-    print(f"   nature     B(3S1) + B(1S0)       = {float(nature):8.4f} MeV"
-          f"   ({float(D):+.4f} {float(-V):+.4f})\n")
-    print(f"   substrate over-binds by {float(subst / nature):.2f}x")
-    print(f"   the FLOOR over-binds by {float(floor / nature):.2f}x "
+    print(f"   substrate  -alpha * log(mu+ mu-) = {mp.nstr(subst, 6)} MeV"
+          f"   (mu+ mu- = {mp.nstr(mup*mum, 8)})")
+    print(f"   nature     B(3S1) + B(1S0)       = {mp.nstr(nature, 6)} MeV"
+          f"   ({mp.nstr(D, 6)} {mp.nstr(-V, 6)})\n")
+    print(f"   substrate over-binds by {mp.nstr(subst / nature, 4)}x")
+    print(f"   the FLOOR over-binds by {mp.nstr(floor / nature, 4)}x "
           "— whatever the projector scalars are")
-    print(f"   satisfying the floor needs alpha <= {float(nature / mp.log(4)):.4f} MeV"
-          f"  (framework has {float(E0):.4f})\n")
+    print(f"   satisfying the floor needs alpha <= {mp.nstr(nature / mp.log(4), 6)} MeV"
+          f"  (framework has {mp.nstr(E0, 6)})\n")
     print("   robustness: even taking B(T=1) = 0 exactly, nature's total is "
-          f"{float(D):.4f}")
-    print(f"   and the floor still over-binds by {float(floor / D):.2f}x. The"
+          f"{mp.nstr(D, 6)}")
+    print(f"   and the floor still over-binds by {mp.nstr(floor / D, 4)}x. The"
           " conclusion does not")
     print("   rest on the virtual-state number.\n")
 
@@ -172,7 +172,7 @@ def main() -> int:
     print("   Under mu+ + mu- = s the cap is mu+ mu- <= s^2/4, which SHRINKS with s,")
     print("   so a smaller normalisation makes the product smaller and the binding")
     print("   LARGER. Reaching nature's total needs\n")
-    print(f"       s >= 2*exp(-total/(2*alpha)) = {float(s_req):.4f}   > 1\n")
+    print(f"       s >= 2*exp(-total/(2*alpha)) = {mp.nstr(s_req, 6)}   > 1\n")
     print("   and a projector decomposition of a single normalised trace cannot")
     print("   exceed 1. Tabulated:\n")
     print("   |    s | max mu+ mu- = s^2/4 | floor = -a log(s^2/4) | vs nature |")
@@ -180,8 +180,8 @@ def main() -> int:
     for s in (mp.mpf("0.5"), mp.mpf("0.75"), mp.mpf(1), s_req):
         cap = s ** 2 / 4
         fl = -E0 * mp.log(cap)
-        print(f"   | {float(s):4.2f} | {float(cap):19.6f} | {float(fl):21.4f} "
-              f"| {float(fl / nature):8.2f}x |")
+        print(f"   | {mp.nstr(s, 4)} | {mp.nstr(cap, 8)} | {mp.nstr(fl, 6)} "
+              f"| {mp.nstr(fl / nature, 4)}x |")
     print("\n   More channels does not help either: for k channels sharing the unit")
     print("   normalisation the cap is prod <= k^-k and the floor is a*k*log k,")
     print("   which RISES with k (k=2: 5.803, k=3: 13.80, k=4: 23.21 MeV).")

@@ -177,7 +177,7 @@ def main() -> int:
     print("  checklist. Withdrawn; what follows replaces it.\n")
     print("## What def:coulomb-charge gives\n")
     print("  E_cross = (1/2)(n+ + n-)(q + 1/q)  +  Q (q - 1/q),   Q = (1/2)(n+ - n-)")
-    print(f"  Coulomb/strong = tanh(ln q0) = {float(ratio):.6f}   (block states ~0.104)\n")
+    print(f"  Coulomb/strong = tanh(ln q0) = {mp.nstr(ratio, 8)}   (block states ~0.104)\n")
 
     print("## 1. Q = 2Z + eps, eps a fixed constant — N cancels\n")
     print("  writhe = 3Z + N + (Z-1)(+1) + (N-1)(-1) + e_pn = 4Z + e_pn")
@@ -207,8 +207,8 @@ def main() -> int:
         strong = a * ((Z - 1) * L["pp"] + L["pn"] + (N - 1) * L["nn"])
         fw = ratio * strong
         phys = aC * Z * (Z - 1) / mp.cbrt(A)
-        print(f"| {lab:<7} | {Z:2d} | {A:3d} | {2*Z:5d} | {float(fw):9.2f} "
-              f"| {float(phys):12.2f} | {float(phys/fw):8.1f}x |")
+        print(f"| {lab:<7} | {Z:2d} | {A:3d} | {2*Z:5d} | {mp.nstr(fw, 4)} "
+              f"| {mp.nstr(phys, 4)} | {mp.nstr(phys/fw, 3)}x |")
     print("\n  Exact at 4He, diverging monotonically with Z — the signature of Z vs")
     print("  Z(Z-1). The framework has a CHARGE; it has no charge-charge interaction.\n")
 

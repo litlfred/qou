@@ -130,14 +130,14 @@ def main() -> int:
     print("## Measurement\n")
     print("| quantity | nats | bound | MeV | vs nature |")
     print("| :------- | ---: | ----: | --: | --------: |")
-    print(f"| S (implemented) | {float(S):.6f} | floor {float(2*ln2):.6f} "
-          f"| {float(E0*S):.4f} | {float(E0*S/nature):.2f}x |")
-    print(f"| H (named)       | {float(H):.6f} | ceil  {float(ln2):.6f} "
-          f"| {float(E0*H):.4f} | {float(E0*H/nature):.2f}x |")
-    print(f"| nature          | {float(nature/E0):.6f} | — "
-          f"| {float(nature):.4f} | 1.00x |")
+    print(f"| S (implemented) | {mp.nstr(S, 8)} | floor {mp.nstr(2*ln2, 8)} "
+          f"| {mp.nstr(E0*S, 6)} | {mp.nstr(E0*S/nature, 4)}x |")
+    print(f"| H (named)       | {mp.nstr(H, 8)} | ceil  {mp.nstr(ln2, 8)} "
+          f"| {mp.nstr(E0*H, 6)} | {mp.nstr(E0*H/nature, 4)}x |")
+    print(f"| nature          | {mp.nstr(nature/E0, 8)} | — "
+          f"| {mp.nstr(nature, 6)} | 1.00x |")
     print(f"\n  Nature's total is OUTSIDE S's range and INSIDE H's. H misses by "
-          f"{float((E0*H-nature)/nature*100):+.2f}%.\n")
+          f"{mp.nstr((E0*H-nature)/nature*100, 4)}%.\n")
 
     print("## THIS IS NOT A RESULT — four reasons, all applicable\n")
     print("  1. POST-HOC. I looked for an alternative form only after the floor")
@@ -145,15 +145,15 @@ def main() -> int:
     print("  2. IT DOES NOT FIX THE SIGN — the primary defect. -a*mu*log(mu) > 0")
     print("     for every 0 < mu < 1, so under H both channels still BIND:")
     for lab, m in (("T=1 (pp, nn, 1S0)", mup), ("T=0 (deuteron)", mum)):
-        print(f"        {lab:<18} {float(-E0*m*mp.log(m)):+8.4f} MeV")
+        print(f"        {lab:<18} {mp.nstr(-E0*m*mp.log(m), 6)} MeV")
     print("     The sector is qualitatively wrong in H exactly as in S. H improves")
     print("     a magnitude and leaves the thing that was actually broken.\n")
     lo, hi = nature * mp.mpf("0.9"), nature * mp.mpf("1.1")
     frac = (hi - lo) / E0 / ln2
     print("  3. THE WINDOW IS NOT TIGHT. Landing within 10% needs H in")
-    print(f"     [{float(lo/E0):.4f}, {float(hi/E0):.4f}] nats out of [0, log 2] —")
-    print(f"     {float(frac*100):.1f}% of the available range. An 8.85% miss inside a")
-    print(f"     {float(frac*100):.1f}% window is weak evidence, not a near-hit.\n")
+    print(f"     [{mp.nstr(lo/E0, 6)}, {mp.nstr(hi/E0, 6)}] nats out of [0, log 2] —")
+    print(f"     {mp.nstr(frac*100, 3)}% of the available range. An 8.85% miss inside a")
+    print(f"     {mp.nstr(frac*100, 3)}% window is weak evidence, not a near-hit.\n")
     print("  4. THE HEADLINE FORMULA IS S. dF = kT ln(Z1/Z2) is the equation; the")
     print("     channel-measure sentence is a secondary remark. Promoting H because")
     print("     it fits better would launder a fit through an ambiguity.\n")
