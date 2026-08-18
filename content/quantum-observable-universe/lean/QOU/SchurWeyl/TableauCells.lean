@@ -446,6 +446,21 @@ theorem axialDist_swapTableau (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 �
   rw [cellOf_swapTableau_self T hk hkn hadm, cellOf_swapTableau_succ T hk hkn hadm]
   exact axialDistance_swap _ _
 
+/-- **An admissible swap moves the tableau**: `s_k·T ≠ T`.  At the cell holding `k` in `T`
+the swapped tableau holds `k+1`.  `genMat_swap` takes this as a hypothesis; it is a
+theorem, not an assumption. -/
+theorem swapTableau_ne_self (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hadm : SwapAdmissible T k) :
+    swapTableau T k hk hkn hadm ≠ T := by
+  have hk0 : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  intro hEq
+  have h1 : (swapTableau T k hk hkn hadm).entry (cellOf T k).1 (cellOf T k).2
+      = swapVal k (T.entry (cellOf T k).1 (cellOf T k).2) := rfl
+  rw [entry_cellOf T hk0] at h1
+  rw [show swapVal k k = k + 1 by unfold swapVal; rw [if_pos rfl]] at h1
+  rw [hEq, entry_cellOf T hk0] at h1
+  omega
+
 end TableauCells
 
 end QOU.SchurWeyl
