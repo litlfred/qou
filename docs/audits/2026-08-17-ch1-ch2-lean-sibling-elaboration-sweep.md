@@ -43,18 +43,19 @@ later agent repeating this will hit both:
 
 ### Disposition
 
-**Now `exit 0` (4).** `su2-emergence`, `categorical-fourier-transform`,
-`u1-equivariant-reduction`, `commutative-qou`.
+**Now `exit 0` (7).** `su2-emergence`, `categorical-fourier-transform`,
+`u1-equivariant-reduction`, `commutative-qou`, `categorical-reeb-derivation`,
+`categorical-jet`, `poisson-object`.
 
-**Advanced but still failing (5).** `braiding-eigenvalue-extraction`,
-`braiding-induced-ordering`, `substrate-parameter-exists`,
-`categorical-reeb-derivation`, `categorical-jet`. The outermost defect is fixed
-and the inner ones are now *visible* rather than masked. Error counts **rose**
-(`substrate-parameter-exists` 3 → 11, `braiding-eigenvalue-extraction` 3 → 9)
+**Still failing (4), all substantive — none mechanical.**
+`braiding-eigenvalue-extraction` and `categorical-q-ext-deriv` (F1, `Inv R_q`);
+`braiding-induced-ordering` (F6, unsound strategy); `substrate-parameter-exists`
+(F8, half-finished migration).
+
+Error counts **rose** on two files while they were being worked
+(`substrate-parameter-exists` 3 → 11, `braiding-eigenvalue-extraction` 3 → 9),
 because a parse error hides every line after it. That is better diagnosis, not
-a better file: these remain broken.
-
-**Still failing, untouched (2).** `categorical-q-ext-deriv`, `poisson-object`.
+a better file — and it is why the raw count is a poor progress metric here.
 
 ## Why nothing caught this
 
@@ -71,7 +72,7 @@ elaborated. That is the failure mode this sweep exists to measure, and it is the
 same argument as §"QA is agent-owned; CI is a backup" — with CI down, the
 agent's own verification *is* the gate, and no agent had run this one.
 
-## Root causes — seven families, not eleven bugs
+## Root causes — ten families, not eleven bugs
 
 ### F1 — `Inv R_q` (SUBSTANTIVE)
 
@@ -148,6 +149,48 @@ rests on a proof that does not compile and could not compile as written.
 ### F7 — `β_ A A |>.hom` misparses (mechanical)
 
 `(β_ A A).hom` works.
+
+### F8 — a comment that swallowed its own closing delimiter (SUBSTANTIVE)
+
+`substrate-parameter-exists` is a **half-finished `R_q` migration**, and it is
+worse than its error count suggested. A previous edit commented out the
+archimedean fields of a structure literal **and took the closing brace with
+them**:
+
+```lean
+  { field := fun _ => q₀
+    -- field_pos := fun _ => hq_pos              -- (archimedean; not meaningful over R_q)
+    -- not_root_of_unity := fun _ k hk => hq_root k hk }   -- ← the `}` is INSIDE the comment
+```
+
+so the literal never closes. Restoring the brace does **not** fix the file: the
+same edit deleted the `(q₀ : R_q)` and `(hq_pos …)` binders of
+`SubstrateParameter.ofReebDecomposition` while the body still references both,
+and left a `/-- … -/` docstring inside a parameter list (only `--` and `/- -/`
+are legal between binders). Completing it requires **deciding the signature**,
+which is a content call, so it is beaned rather than guessed at.
+
+Worth generalising: commenting out the *last* field of a `{ … }` literal, or
+the last argument of an application, silently eats the delimiter that closes
+it. The resulting error points at the *next* declaration, not at the comment.
+
+### F9 — a transparent type ascription loses its instance (mechanical)
+
+`categorical-reeb-derivation` wrote `reeb : obj ⟶ obj` and then
+`(reeb : End obj) ^ period = 1`. `End obj` is *definitionally* `obj ⟶ obj`, so
+the ascription is transparent: elaboration unfolds it and instance search asks
+for `HPow (obj ⟶ obj) ℕ _`, which does not exist. Typing the **field** as
+`End obj` fixes it; `reeb ≫ contact` still elaborates, because that unfolding
+goes the harmless way.
+
+### F10 — a sibling not importing the library (mechanical)
+
+`categorical-jet` and `poisson-object` used `FrobeniusHopfData` /
+`CategoricalConnection` without importing them. Content-block siblings cannot
+import *each other*, but they **can** import the library tree — the two live in
+`QOU.QuantumObservableUniverse.CategoricalFoundations` and
+`…GaugeTheory`. One import cascaded through all four of `categorical-jet`'s
+errors.
 
 ## Incidental Mathlib gap filled
 
@@ -280,4 +323,4 @@ Stated plainly so the next agent does not read more into it than was measured:
 | `qou-mbar` | F1 — `Inv R_q`: restate the eigenvalue/`q`-ext-deriv results multiplicatively or over a localisation (2 files) |
 | `qou-qk51` | F6 — reprove `degLex_wellOrdered` (axiom 1) via a base-`n` encoding; current route is unsound |
 | `qou-0tiw` | P1 — restructure `RankOneGaugeData` so `fund_dim_two` constrains `qou`, breaking the circularity |
-| `qou-hg2z` | remaining non-elaborating siblings: `categorical-reeb-derivation`, `categorical-jet`, `substrate-parameter-exists`, `poisson-object` |
+| `qou-hg2z` | F8 — `substrate-parameter-exists`: finish the abandoned `R_q` migration (decide the signature). The other three files on this bean now elaborate. |
