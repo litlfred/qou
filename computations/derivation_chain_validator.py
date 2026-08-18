@@ -338,6 +338,7 @@ def audit_witness_trust(chains_dir: Path) -> dict:
     out: dict[str, list[str]] = {
         "derivation-fully-trusted": [],
         "derivation-backed": [],
+        "audit-only-exempt": [],
         "computational-only": [],
     }
 
@@ -369,10 +370,21 @@ def audit_witness_trust(chains_dir: Path) -> dict:
             )
         else:
             script_file = None
+        # A witness that declares `auditOnly` records a QA/audit tool's FINDING,
+        # not a derivation of a physical target — demanding a first-principles
+        # chain for the output of a sorry-counter is a category error. This is the
+        # same basis on which the audit already skips its own witness above; it is
+        # reported in a dedicated bucket, never dropped, so the exemption stays
+        # visible and auditable rather than shrinking the denominator silently.
+        audit_only = isinstance(data, dict) and bool(
+            data.get("auditOnly") or data.get("audit_only") or data.get("auditOnlyDoc")
+        )
         if _is_in_set(wp.name, script_file, fully_trusted_basenames, fully_trusted):
             out["derivation-fully-trusted"].append(wp.name)
         elif _is_in_set(wp.name, script_file, referenced_basenames, referenced):
             out["derivation-backed"].append(wp.name)
+        elif audit_only:
+            out["audit-only-exempt"].append(wp.name)
         else:
             out["computational-only"].append(wp.name)
     return out
@@ -463,10 +475,11 @@ def main() -> int:
     n_full = len(audit["derivation-fully-trusted"])
     n_backed = len(audit["derivation-backed"])
     n_comp = len(audit["computational-only"])
+    n_exempt = len(audit["audit-only-exempt"])
     print(
         f"\nWitness trust audit: "
         f"fully-trusted={n_full}, derivation-backed={n_backed}, "
-        f"computational-only={n_comp}"
+        f"audit-only-exempt={n_exempt}, computational-only={n_comp}"
     )
     if audit["derivation-fully-trusted"]:
         print("  derivation-fully-trusted witnesses:")
