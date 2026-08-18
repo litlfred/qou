@@ -204,6 +204,50 @@ Wedderburn block of `H₂(q)`" — a conflation of the two sides of Schur–Weyl
 duality, corrected at all three sources, with both dimensions now *derived* in
 Lean from the weakly- vs strictly-increasing filling conditions.
 
+### Part 4 — the remainder is derived from the trace field, and it is `H_floor`'s win
+
+Part 1 forced the `5₂` remainder to be `1` and said any completion "must derive
+it independently". `H_floor` **does**, from arithmetic already sitting in the
+corpus. Garoufalidis–Zagier (`uploads/2111.06645v3.pdf` §2.1, glyph-verified)
+give `P_K`, the boundary-parabolic `SL₂(ℂ)` representations, for three knots:
+
+| `K` | reduced trace algebra | real | pairs | `\|P_K\|` | core | remainder |
+|---|---|---|---|---|---|---|
+| `4₁` | `ℚ(√−3)` (imag. quadratic) | 0 | 1 | 3 | 3 | **0** |
+| `5₂` | cubic, disc `−23`, sig `(1,1)` | 1 | 1 | 4 | 3 | **1** |
+| `(−2,3,7)` | `ℚ(ξ) × ℚ(η)`, `η` totally real | 1+3 | 1 | 7 | 3 | **4** |
+
+`|P_K| = 3, 4, 7` reproduces `R1`'s `(4₁,5₂) ↦ (3,4)` **from a source independent
+of the A-polynomial** and extends it to a third knot. And the remainder is the
+count of **real embeddings** of the reduced trace algebra: `4₁`'s trace field is
+imaginary quadratic and has none (remainder 0); `5₂`'s disc `−23` cubic has
+exactly one — GZ even name it, the root with zero imaginary part (remainder 1).
+
+**This counts against `H_Ad`, not for it.** `H_floor` now explains the number `3`,
+*predicts* the remainder, and does so with no `𝔰𝔩₂` anywhere. `H_Ad`'s surviving
+distinct content is the Part-3 meridian **grading**, which `H_floor` says nothing
+about. Read them as answering different questions — `H_floor`: why that many;
+`H_Ad`: why that polynomial — rather than as rivals for one.
+
+**Retraction — route (a) as previously stated is wrong.** The earlier text said a
+knot with *more* than 3 boundary-parabolic connections would break `H_floor`. It
+would not: `H_floor`'s core is the universal **floor** `{σ₀, g, ḡ} = 3` for every
+hyperbolic knot, exactly as `H_Ad`'s is `dim 𝔰𝔩₂ = 3`. No third knot separates
+them at the core — now *proved* on all three (`core_is_three_on_all_three`). What
+a third knot actually buys: (i) a second non-degenerate data point against the
+one-observation problem, and (ii) a **one-sided** falsification test of `H_Ad`'s
+*polynomial* claim — if a rank-6 knot's Stokes entries are not built from
+`x+1+x⁻¹`, `H_Ad` breaks while `H_floor`, which makes no polynomial claim, cannot.
+
+**Literature status (measured, not assumed).** All 371 corpus PDFs were text-
+extracted and swept; 47 mention "Stokes". GGM 2012.00062 and GGMW 2111.04763 treat
+**only** `4₁` and `5₂` — GGMW §1.4 is literally "Illustration with the two
+simplest hyperbolic knots"; every `6₁`/`7₂` string in both is a page number.
+Garoufalidis–Zagier 2111.06645 covers `(−2,3,7)` but for *perturbative series and
+quantum modularity*, with two occurrences of "Stokes" and no Stokes matrices. So
+**no `q→0` Stokes matrix for a third hyperbolic knot exists in the corpus**, and
+the `(−2,3,7)` count `7` stands as a *prediction* of `R1`/`H_floor`, not a check.
+
 ### Where M3 now stands
 
 **Open, with a named rival.** The live question is no longer "find the extra `5₂`
@@ -218,6 +262,6 @@ connections whose `s(x)` core stays `x+1+x⁻¹` would break `H_floor` (whose co
 genuine derivation still needs that ray to come out of the Hecke side.
 
 Artifacts: `QOU.QBeta.AdjointIndexSetM3` (core `Int`, `lean`-direct exit 0,
-sorry-free), `computations/probes/aomega_m3_adjoint_index_set.py` (10/10, four
+sorry-free), `computations/probes/aomega_m3_adjoint_index_set.py` (13/13, four
 adversarial). Bean `qou-m3ad`. Nothing wired; `A_ω = 3` remains
 certified-as-GGM-DT-count, conditionally adopted.
