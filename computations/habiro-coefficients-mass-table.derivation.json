@@ -1,0 +1,66 @@
+{
+  "target": "Habiro / cyclotomic expansion of the mass-table trace: tr_M(K, q) = Σ_m a_m·(u;u)_m, u = q^{1/2}",
+  "target_value": "tr_M(K, q) = Σ_m a_m(u)·(u;u)_m with every a_m ∈ ℤ[u] (all_integral), reconstruction exact (reconstruction_matches), per canonical atom K = (Z, N)",
+  "target_tolerance": 0.0,
+  "content_block": "prop:full-pole-structure-mass-trace",
+  "description": "Derivation chain for the mass-table-wide Habiro coefficient extraction (27 per-atom witnesses habiro-coefficients-<atom>, plus the collating summary). For each canonical atom the Phase 5q closed form supplies tr_M(K,q) = τ_p^Z · τ_n^N · Π_i interface_factor(kind_i, q); the extractor rewrites it in u = q^{1/2} as an exact rational p(u)/denom(u) and performs sequential cyclotomic division against the Habiro basis (u;u)_m, yielding integer-coefficient a_m(u). The witnesses carry their own falsifiable checks: `all_integral` (every a_m ∈ ℤ[u] — the Habiro-integrality claim) and `reconstruction_matches` with `tr_M_at_q0_rel_err = 0` (the expansion reproduces the closed form exactly at q₀). Trust profile {axiom: 1, derived: 1, script-cited: 2}: the cyclotomic division is symbolic and exact (sympy Poly), so this chain is a genuine extraction, not a numerical fit. Anchor: q0Anchor = proton (the experimental pin, per the 2026-08-07 directive). Scope: the chain records how the coefficients are obtained and checked; it does NOT assert a closed form for a_m, nor that any Habiro element identified from them is derived — the Q_β Habiro-element search these feed remains open.",
+  "steps": [
+    {
+      "name": "q-integer and the balanced Hecke scale",
+      "operation": "Define [k]_q := (q^k − q^{-k})/(q − q^{-1}); the (q − q^{-1}) denominator is the per-crossing Hecke energy. Fixes the ring in which the trace and its expansion live.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "q_integer",
+      "output_value": "[k]_q := (q^k − q^{-k}) / (q − q^{-1})",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Phase 5q closed form for tr_M(K, q)",
+      "operation": "For an atom K = (Z, N), the closed form factorises the Markov trace over its constituents and interfaces: tr_M(K, q) = τ_p^Z · τ_n^N · Π_i interface_factor(kind_i, q), where canonical_interface_kinds(Z, N) selects the ±/averaged interface kinds under the production chi_lambda_braid p/n convention. The per-atom witness records the resulting exact expression as `tr_M_in_q`.",
+      "inputs": [
+        "q_integer",
+        "FiniteJones",
+        "Wedderburn"
+      ],
+      "output_name": "trM_closed_form",
+      "output_value": "tr_M(K,q) = τ_p^Z · τ_n^N · Π_i interface_factor(kind_i, q)",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript",
+      "notes": "script: computations/closed_form_tau_M.py — supplies the closed form and the interface-kind selection. The τ_p, τ_n inputs are themselves taken from habiro-coefficients-atomic.witness.json, recorded in each witness's `parameters.source`."
+    },
+    {
+      "name": "Half-power substitution u = q^{1/2}: exact rational form",
+      "operation": "Substitute u = q^{1/2} and clear denominators, giving tr_M as an exact rational function p(u)/denom(u) over ℤ (the witness records `p_in_u`, `denom_in_u`, `deg_p_u`, `shift`, `n_nonzero`). Pure symbolic algebra on the previous step — the half-power is what makes the Habiro basis (u;u)_m available; no numerical evaluation enters.",
+      "inputs": [
+        "trM_closed_form"
+      ],
+      "output_name": "trM_rational_in_u",
+      "output_value": "tr_M = p(u)/denom(u), p ∈ ℤ[u], u = q^{1/2}",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "notes": "Exact rewriting: the trace is a ratio of Laurent polynomials in q^{1/2} by construction, so this step loses nothing and introduces no approximation."
+    },
+    {
+      "name": "Sequential cyclotomic division into the Habiro basis",
+      "operation": "Divide p(u)/denom(u) sequentially against the Habiro basis elements (u;u)_m = Π_{j=1..m}(1 − u^j), reading off the coefficients a_m(u) ∈ ℤ[u]. Each witness records the full coefficient list with per-m `integral` and `remainder_nonzero` flags, and the two global checks: `all_integral` (Habiro integrality holds) and `reconstruction_matches` together with `tr_M_at_q0_rel_err = 0` (re-summing the expansion reproduces the closed form exactly at the substrate anchor).",
+      "inputs": [
+        "trM_rational_in_u"
+      ],
+      "output_name": "habiro_coefficients",
+      "output_value": "tr_M(K,q) = Σ_m a_m(u)·(u;u)_m, a_m ∈ ℤ[u]",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "habiro2008",
+      "notes": "script: computations/_habiro_coefficient_extract.py — the mass-table-wide extractor and the step that claims this family for the trust audit (the audit matches producers by basename, so this note covers all per-atom witnesses). The division is symbolic (sympy Poly), so integrality is decided exactly rather than to a tolerance; the witnesses would falsify the claim by reporting all_integral = false or a nonzero remainder."
+    }
+  ]
+}
