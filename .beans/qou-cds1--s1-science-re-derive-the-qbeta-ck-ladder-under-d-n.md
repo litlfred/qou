@@ -746,3 +746,51 @@ fences further correction-hunting as fitting ('does NOT license searching for
 further corrections until one lands near the proved c_2 = -1'), and this
 respects it -- it adds a coordinate, not a candidate.  alpha remains asserted
 in both frames and derived in neither.
+
+
+## 2026-08-18 — the D-frame phase anomaly is a CLOSED FORM (writhe/ribbon avenue)
+
+Commit `0a2cf2b56`, PR #5265. Lean
+`QOU/QBeta/LadderPhaseMirrorCovariance.lean` (sorry-free, 7 decls, axioms
+clean, lean-direct exit 0) + probe
+`computations/qbeta/qbeta_ladder_phase_mirror_covariance_probe.py` (3/3).
+
+**Why bar-parity is the right test (this is the new part).** The Ocneanu
+trace is not a link invariant alone: the two stabilisation loop values are
+z and z-h, and invariance is restored by a writhe-dependent prefactor
+OUTSIDE the trace (Jones 1987 §5, block
+prop:jones-markov-trace-stabilisation). Writhe is mirror-ODD and that is
+already proved in this corpus generically —
+WritheMarkovInvariance.writhe_inv : writhe (inv a) = -writhe a — and mirror
+is q -> 1/q on the Hecke side. So a framing phase MUST be bar-odd.
+
+**The result.** For alpha = (z-1)h/2 with h bar-odd,
+
+    bar(alpha) + alpha = h * (z - bar z) / 2     for ANY z
+
+(phaseTwice_bar_anomaly, one ring line), hence the phase is bar-odd IFF z is
+exactly bar-fixed (phaseTwice_bar_odd_iff_z_bar_fixed — an iff, so it
+excludes as well as certifies). Then:
+
+- C passes by structure: z_C bar-fixed is the corpus's own
+  z_bar_invariant_field (ZBarParity, PR #3449), which the new file now
+  IMPORTS rather than restates. My earlier "alpha_C is bar-odd" measurement
+  was not an anchor coincidence.
+- D fails with a closed form: z_D - bar(z_D) = (q^4-1)/(q(1+q^2)) = q - 1/q
+  = h, EXACTLY (zD_sub_bar_eq_h). Hence bar(alpha_D)+alpha_D = h^2/2.
+- So the bar-odd part is alpha_D - h^2/4, and h^2 is bar-EVEN so the same
+  constant comes off both sides — the shift is UNIQUE
+  (phaseTwiceD_sub_hsq_bar_odd).
+
+**What changed.** alpha_D - h^2/4 is the projection I applied last session
+on numerical grounds (it closed 92.03% of the D gap in the amplifier-free
+coordinate). It is now DERIVED — the unique mirror-covariant part. Epistemic
+status moved; the value did not. That is the whole difference between this
+and a seventh fitted ansatz.
+
+**Still open, unchanged.** The projected D phase leaves a residual 41.94x
+the C-frame one. Untouched here. The fence from
+qbeta-d-frame-eigenphase-bar-parity stands: hunting further phase
+corrections is fitting until one lands with the structural standing of
+c_2 = -1. cds1 is NOT closed — the ladder re-derivation under D still needs
+the c_k rungs, and the Gram singularity (cds2) still blocks the H_3 route.
