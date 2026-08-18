@@ -489,3 +489,57 @@ The "u = √q is vestigial under D" mechanism recorded above. It is false in
 general: for A ≥ 2 the Markov interface `z(q) = 1/(√q + 1/√q)` puts genuine
 half-integer powers into tr_M regardless of convention (`q**(125/2)` appears
 in the family). u is needed; the denominators were the problem.
+
+## Lean-proved, and the law tested beyond the seven pairs
+
+### Proved (sorry-free, `lean`-direct exit 0, `#print axioms` clean)
+
+`QOU/Habiro/MirrorPairNormalisation.lean` — six theorems, generic
+`CommRing`/`CommMonoid` per §7c (no ordering, no `ℝ`, no archimedean input):
+
+    coeffDiff_of_common_denom          d*tX - d*tY = d*(tX - tY)
+    coeffDiff_at_coincidence           dX*t - dY*t = (dX - dY)*t
+    coeffDiff_eq_zero_iff              = 0 <-> dX = dY \/ t = 0
+    coeffDiff_ne_zero_at_coincidence   dX≠dY -> t≠0 -> ≠ 0
+    mirror_trace_eq_of_tau_eq          τp = τn -> tr(Z,N) = tr(N,Z)
+    mirror_traceDiff_eq_zero_of_tau_eq
+
+Four depend only on `[propext, Quot.sound]`; two on **no axioms at all**.
+
+Every hypothesis of the coincidence theorem was **measured before being
+assumed**: at q=1 all three interface kinds (`z`, `z−h`, `z−h/2`) equal `1/2`;
+`τ_p(1) = τ_n(1) = 1/2`; and the interface count is invariant under
+`(Z,N) ↦ (N,Z)` on every pair checked.
+
+### The Φ_8 law, on all TEN pairs under D
+
+    A     pair                       Φ_8(D)  2⌊(A−1)/2⌋   C gave
+    1,3,5,7,8,9,10  canonical (7)    0,2,4,6,6,8,8   ✓ all    ✓ all
+    12    ¹²N − ¹²B                    10        10  ✓        10  ✓
+    14    ¹⁴O − ¹⁴C                    12        12  ✓         4  ✗
+     6    ⁶He − ⁶Be                     0         4  ✗         2  ✗
+
+**9 of 10 under D against 8 of 10 under C.** The A=14 anomaly — recorded as
+REFUTES in `2026-06-01-qbeta-habiro-phi8-mirror-multiplicity-scaling.md` and in
+`even-a-mirror-pair-phi8-scaling-test` — **resolves under D with the corrected
+differencing**. A=6 is the sole survivor and is now the only open anomaly.
+
+### Φ_4 = A is REFUTED — my own claim, withdrawn
+
+I raised `Φ_4 = A` as "a new clean regularity" on the strength of the seven
+canonical pairs (1,3,5,7,8,9,10 — exactly A each time) while explicitly noting
+it was untested. Tested now, on the three open pairs:
+
+    A= 6   Φ_4 =  5   (≠ 6)
+    A=12   Φ_4 = 23   (≠ 12)
+    A=14   Φ_4 = 27   (≠ 14)
+
+So it is a seven-point coincidence over the canonical set, not a law. What
+survives is narrower and should be stated as such: **Φ_4 = A on the canonical
+mirror pairs**, with no extension to the open ones. Recorded so it is not
+re-proposed.
+
+### Φ_1 = Φ_2 = 1 holds on all ten
+
+Both universal across every pair measured, canonical and open — and Φ_1 now has
+a proof (`mirror_traceDiff_eq_zero_of_tau_eq`) rather than an observation.
