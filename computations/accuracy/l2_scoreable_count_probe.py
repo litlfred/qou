@@ -65,8 +65,12 @@ def main() -> int:
     print(f"  Q_beta chain (one root)  : {sorted(fails & qbeta_chain)}")
     print(f"  independent (mu-p)       : {sorted(fails - qbeta_chain)}")
 
+    # The producer now emits the scoreable counts alongside the legacy ones.
     ok = (len(met) == 1 and len(preds) == 5
           and summary["beats_100x_count"] == 2
+          and summary.get("beats_100x_scoreable") == len(met)
+          and summary.get("scoreable_total") == len(preds)
+          and set(summary.get("calibration_inputs", [])) == {r["obs"] for r in anchors}
           and fails >= qbeta_chain)
     print()
     print("ASSERTIONS PASS" if ok else "ASSERTIONS FAILED")

@@ -46,9 +46,11 @@ honest discipline call (DERIVED / PARTIAL / OPEN / NUMEROLOGY).
 > to the proton-pinned q₀ (a live +242 ppb regression). The tower was
 > **dropped** (PR #3280); the honest documented-pin round-trip is
 > **+1.35 ppb**, a **~437× miss** of the 100× target. Authoritative L2
-> count: **2/7** (m_e, m_K/m_π) per
+> count: **1/5 scoreable** (`m_K/m_π` alone) per
 > `computations/per-observable-100x-status.witness.json`
-> (`beats_100x_count=2`). Full analysis:
+> (`beats_100x_scoreable=1`, `scoreable_total=5`). `beats_100x_count=2`
+> counts the calibration **inputs** `m_p` and `m_e` and must not be quoted
+> as an accuracy result (corrected 2026-08-18). Full analysis:
 > [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
 > Table + m_p rows below corrected 2026-07-06; Q_β/m_n/Δ_pn residuals
 > refreshed from the live witness at the same time.
@@ -65,7 +67,9 @@ honest discipline call (DERIVED / PARTIAL / OPEN / NUMEROLOGY).
 | m_n | validation | 2.389 ppb | 0.5747 ppb | ✗ (~416×) | ✗ |
 | Δ_pn | validation | 755.6 ppb | 473.9 ppb | ✗ | ✗ |
 
-**Net: 2/7 beat 100×, 2/7 beat 1× experimental** (m_e, m_K/m_π).
+**Net: 1/5 scoreable predictions beat 100×** — `m_K/m_π` alone. (`m_p` and
+`m_e` are calibration inputs, not predictions; the raw `2/7` counts them.
+Corrected 2026-08-18.)
 m_p was dropped 2026-07-04: its "0.0004 ppb" was the fitted Habiro
 tower (see banner above); de-fitted it is +1.35 ppb, a ~437× miss.
 m_μ is a **9.5σ proton-anchored prediction** (209.8 ppb — the μ–p

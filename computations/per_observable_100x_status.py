@@ -643,9 +643,52 @@ def main() -> dict:
             "total": len(rows),
             "beats_1x_count": sum(1 for r in rows if r.get("beats_1x_experimental")),
             "beats_100x_count": sum(1 for r in rows if r.get("beats_100x_experimental")),
+            # --- scoreable counts (added 2026-08-18) -------------------------
+            # `beats_100x_count` counts CALIBRATION INPUTS alongside
+            # predictions, and so overstates the accuracy result. m_e is a
+            # CAL-1 anchor whose err_ppb is not measured but DEFINED zero (it
+            # is the input that fixes the MeV unit, so its ratio to itself is 1
+            # by construction) -- yet it is scored True. That is the same
+            # reasoning m_p is EXCLUDED for as an anchor round-trip ("the
+            # framework content cancels"), only stronger: m_p at least carries
+            # a nonzero round-trip residual.
+            #
+            # The keys below score only genuine PREDICTIONS. Quote these.
+            # `beats_100x_count` is retained unchanged so existing consumers do
+            # not silently shift meaning.
+            "scoreable_total": _scoreable_total(rows),
+            "beats_100x_scoreable": _beats_100x_scoreable(rows),
+            "calibration_inputs": [
+                r["obs"] for r in rows if _is_calibration_input(r)
+            ],
         },
     }
 
+
+
+def _is_calibration_input(row: dict) -> bool:
+    """True for CAL anchors, whose "error" is definitional rather than measured.
+
+    Both anchors are inputs: `m_e` (CAL-1) fixes the MeV unit, and `m_p` is the
+    CAL-2 numerical pin for q_0. Neither is a prediction, so neither belongs in
+    an accuracy score. The dashboard already excludes `m_p` via
+    `is_anchor_roundtrip`; this catches `m_e` on the same grounds.
+    """
+    return "anchor" in (row.get("role") or "").lower()
+
+
+def _scoreable_total(rows: list) -> int:
+    """Number of genuine predictions (all rows that are not calibration inputs)."""
+    return sum(1 for r in rows if not _is_calibration_input(r))
+
+
+def _beats_100x_scoreable(rows: list) -> int:
+    """Genuine predictions meeting the L2 100x target."""
+    return sum(
+        1
+        for r in rows
+        if not _is_calibration_input(r) and r.get("beats_100x_experimental") is True
+    )
 
 if __name__ == "__main__":
     out = main()
@@ -670,10 +713,15 @@ if __name__ == "__main__":
             f"{('Y' if r['beats_100x_experimental'] else 'N'):>5}"
         )
     print("-" * 128)
-    print(f"Summary: {out['summary']['beats_100x_count']} / {out['summary']['total']} "
-          f"observables beat 100× experimental target.")
-    print(f"         {out['summary']['beats_1x_count']} / {out['summary']['total']} "
-          f"beat 1× experimental.")
+    print(f"HEADLINE: {out['summary']['beats_100x_scoreable']} / "
+          f"{out['summary']['scoreable_total']} SCOREABLE predictions beat the "
+          f"100× target.")
+    print(f"          calibration inputs, not scored: "
+          f"{out['summary']['calibration_inputs']}")
+    print(f"raw     : {out['summary']['beats_100x_count']} / {out['summary']['total']} "
+          f"counting calibration inputs — do NOT quote as an accuracy result.")
+    print(f"          {out['summary']['beats_1x_count']} / {out['summary']['total']} "
+          f"beat 1× experimental (same caveat).")
     _al = out.get("anchor_layer_qbeta", {})
     if _al.get("status") == "STRADDLE":
         print()

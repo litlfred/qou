@@ -192,25 +192,43 @@ structure SubstrateParameter (M : Type*) where
   not_root_of_unity : ∀ p k, k ≥ 1 → field p ^ k ≠ 1
 ```
 
-Those are **ordering predicates**, so by §7c this structure lives *past* the
-substrate→archimedean wall, and `R_q = ℤ[q,q⁻¹]` has no order at all. The
-migration applied *"keep a generic ring `R` as long as possible"* to a structure
-that **cannot be stated over one**, and then, when the fields would not typecheck,
-commented them out as *"not meaningful over `R_q`"* rather than concluding that
-the premise was wrong.
+> **Correction (owner question, 2026-08-18).** An earlier revision of this
+> section said *"this structure lives past the wall"* and *"the file is
+> archimedean throughout"*, and removed the `R_q` ground-ring banner as
+> misleading. **That over-framed it, and the banner was right.** `ℝ` here is the
+> **codomain of the archimedean evaluation** `ι : R_q → ℝ, q ↦ q₀` — the
+> specialisation named in the standard ground-ring note carried by every
+> `braids-and-knots` block — **not** the ground ring of the theory. The
+> categorical content upstream of `ι` stays over `R_q`. The banner has been
+> restored and the framing corrected in the file.
 
-So the repair is to **restore, not to migrate further**: everything here is back
-over `ℝ` with its archimedean hypotheses, and the misleading `R_q` ground-ring
-banner is replaced by a note recording why nothing in the file was ever
-generic-`R`-able.
+The three axioms do **not** all sit on the same side of `ι`:
 
-**The general lesson is the one worth keeping.** "Keep `R` generic" is a
-directive about the *substrate* side of the wall. When a declaration will not
-typecheck over `R_q`, the two candidate conclusions are *"weaken the
-declaration"* and *"this object is archimedean"* — and commenting out an
-ordering axiom to make the error go away silently picks the first without
-checking. Check which side of the wall the **target structure** is defined on
-before migrating anything into it.
+| axiom | needs | side of `ι` |
+|---|---|---|
+| `not_root_of_unity : field p ^ k ≠ 1` | ring only | **categorical** — the Hecke semisimplicity condition, meaningful over `R_q` itself |
+| `field_pos : 0 < field p` | linear order | evaluated |
+| `field_ge_one : 1 ≤ field p` | linear order | evaluated |
+
+So `SubstrateParameter` **conflates one ring-level condition with two
+evaluation-level ones**. A cleaner split would state `not_root_of_unity`
+upstream over `R_q` and keep only the two ordering bounds on the image of `ι`.
+That is a change to the *library* structure, and is recorded rather than made.
+
+What the migration actually got wrong is narrower than "wrong ring": it applied
+*"keep a generic ring `R` as long as possible"* to the two **ordering** axioms —
+which genuinely require an order and cannot be stated over `R_q` — and, when they
+would not typecheck, commented them out as *"not meaningful over R_q"* rather
+than recognising that they are conditions on `ι(q)`, not on `q`.
+
+**The lesson, restated correctly.** "Keep `R` generic" governs content *upstream*
+of `ι`. When a declaration will not typecheck over `R_q`, the candidate
+conclusions are *"weaken it"*, *"this is a condition on the evaluation `ι(q)`"*,
+and *"this object is genuinely archimedean"* — and commenting out an ordering
+axiom silently picks the first. The right question is not "which side of the wall
+is this structure on" (my first framing, too coarse) but **"is this axiom a
+condition on `q`, or on `ι(q)`?"** — which can differ field by field inside one
+structure, as it does here.
 
 #### A prose-over-type finding uncovered by the repair
 
