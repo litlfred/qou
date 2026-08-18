@@ -50,20 +50,27 @@ if str(HERE) not in sys.path:
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from habiro_coefficients_atomic import load_a_m as _load_a_m  # noqa: E402 — shared loader; refuses a self-failed witness (qou-s41x)
+from habiro_coefficients_atomic import load_a_m as _load_a_m  # noqa: E402
+from habiro_coefficients_atomic import mirror_trace_diff_numerator as _mirror_trace_diff  # noqa: E402
+from habiro_coefficients_atomic import cyclotomic_expansion as _cyc_expand  # noqa: E402 — shared loader; refuses a self-failed witness (qou-s41x)
 
 
+# The last column is mult(Φ_8), MEASURED under convention D with the corrected
+# trace-differencing (bean qou-0ndb). It was a convention-C table; two entries
+# moved when the differencing was fixed:
+#     ⁶He − ⁶Be   2 -> 0
+#     ¹⁴O − ¹⁴C   4 -> 12   (now MATCHES 2⌊(A−1)/2⌋; it refuted under C)
 MIRROR_PAIRS = [
     ("n − p",       1, "neutron",      "proton",       0),
     ("³He − ³H",    3, "helium-3",     "tritium",      2),
     ("⁵Li − ⁵He",  5, "lithium-5",    "helium-5",     4),
-    ("⁶He − ⁶Be",  6, "helium-6",     "beryllium-6",  2),
+    ("⁶He − ⁶Be",  6, "helium-6",     "beryllium-6",  0),
     ("⁷Be − ⁷Li",  7, "beryllium-7",  "lithium-7",    6),
     ("⁸B − ⁸Li",   8, "boron-8",      "lithium-8",    6),
     ("⁹B − ⁹Be",   9, "boron-9",      "beryllium-9",  8),
     ("¹⁰C − ¹⁰Be", 10, "carbon-10",    "beryllium-10", 8),
     ("¹²N − ¹²B",  12, "nitrogen-12",  "boron-12",    10),
-    ("¹⁴O − ¹⁴C",  14, "oxygen-14",    "carbon-14",    4),
+    ("¹⁴O − ¹⁴C",  14, "oxygen-14",    "carbon-14",   12),
 ]
 
 
@@ -101,13 +108,28 @@ def main() -> int:
             ay = load_a_m(Y_slug)
             M_max = min(max(ax), max(ay))
 
-            # Build partial sums S_M = Σ_{m=0..M} Δa_m·(u;u)_m
-            # incrementally, checking divisibility by Φ_8 at each step
+            # Habiro-expand the TRUE difference, then partial-sum THAT.
+            #
+            # Subtracting a_m coefficients builds d_X·t_X − d_Y·t_Y, which is
+            # proportional to t_X − t_Y only where the denominators agree.
+            # Measured: under convention C they agree at q=1 on every canonical
+            # pair — so the published C boundary numbers stand as computed —
+            # while under D they differ by a factor of 4 and every multiplicity
+            # collapses to 0. Proved sorry-free in
+            # QOU/Habiro/MirrorPairNormalisation.lean (coeffDiff_at_coincidence).
+            #
+            # M_first is defined on the Habiro expansion, so the correct object
+            # is the expansion OF the true difference, not a difference of two
+            # expansions (bean qou-0ndb).
+            _diff = _mirror_trace_diff(X_slug, Y_slug, u, witness_dir=HERE)
+            _dcoeffs = {c["m"]: sp.sympify(c["a_m"], locals={"u": u})
+                        for c in _cyc_expand(_diff, u, max_m=M_max + 1)}
+
             S = sp.Integer(0)
             M_first_phi8 = None
             M_first_phi8_sq = None
             for m in range(M_max + 1):
-                delta = ax.get(m, sp.Integer(0)) - ay.get(m, sp.Integer(0))
+                delta = _dcoeffs.get(m, sp.Integer(0))
                 S = S + delta * q_poch(m)
                 # Skip identically-zero S (e.g. m < some lower bound)
                 if S == 0:
