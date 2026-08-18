@@ -28,6 +28,10 @@ Run:  PYTHONPATH=computations:tools/pyhecke/python:tools/qou-substrate/python:co
         python3 -u computations/probes/h6_deuteron_free_word_chi_lambda_probe.py
 """
 import math
+
+import mpmath as mp
+
+from _precision import fmt as _fmt
 import sys
 import time
 
@@ -44,10 +48,24 @@ B_D_AME_MEV = 2.224573  # AME2020 deuteron binding (audit comparison only)
 
 
 def main():
-    from pyhecke.gram import h as gram_h
-    h = float(gram_h)
-    q0 = (h + math.sqrt(h * h + 4.0)) / 2.0  # h = q − 1/q ⇒ q = (h+√(h²+4))/2
-    log(f"canonical substrate: h = {h:.12f}, q0 = {q0:.12f}")
+    # NO FLOAT64 (AGENTS.md "PROBES ARE NOT EXEMPT", bean qou-stqr).
+    # Was:  h = float(pyhecke.gram.h); q0 = (h + math.sqrt(h*h + 4))/2
+    # Two leaks in two lines — `gram.h` is the float64 module constant (5.0e-17
+    # off exact), and q0 was then recovered from it by inverting h = q − 1/q
+    # through a float64 math.sqrt. The inversion is also backwards: q0 is the
+    # primitive the corpus publishes at 50 digits, h is the derived quantity.
+    # Now taken in the canonical direction, exactly.
+    from q_parameter import Q_50_DIGIT_STR as _Q50
+    # Built at >= 60 dps regardless of ambient precision: an mpf keeps the
+    # precision it was CREATED at, so mpf(str(q0)) under mpmath's default
+    # (dps=15) bakes in a 15-digit q0 (3.0e-17 error) which _precision.fmt
+    # then PADS to 60 digits — a float64-padding artifact, and strictly worse
+    # than the honest float it replaced. Same trap mass_at_3A_proper.py
+    # documents at its own workdps(60).
+    with mp.workdps(max(mp.mp.dps, 60)):
+        q0 = +mp.mpf(str(_Q50))
+        h = +(q0 - 1 / q0)
+    log(f"canonical substrate: h = {mp.nstr(h, 14)}, q0 = {mp.nstr(q0, 14)}")
 
     from pyhecke.syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
     from mass_at_3A_proper import atom_braid_word_3A, chi_lambda_of_word
@@ -128,7 +146,11 @@ def _emit_witness(results, q0, h, word_bound, word_free, sum_dim_sq,
                        "(Δ_λ gate is the open frontier). Nothing wired.",
         "auditOnly": True,
         "probe": True,
-        "substrate": {"q0": q0, "h": h, "q0_pin": "proton (canonical)"},
+        # mpf -> output-precision strings via the canonical serializer
+        # (AGENTS.md: "carry the value as mpmath.mpf from its source and
+        # serialize with _precision.fmt"). Previously these were float64.
+        "substrate": {"q0": _fmt(q0), "h": _fmt(h),
+                      "q0_pin": "proton (canonical)"},
         "word": {"isotope": "deuteron", "Z": 1, "N": 1, "A": 2,
                  "strands": 6, "generators": 5,
                  "n_crossings_bound": len(word_bound),
@@ -157,6 +179,7 @@ def _emit_witness(results, q0, h, word_bound, word_free, sum_dim_sq,
     }
     import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
     _sys.path.insert(0, os.path.join(here, "..", "substrate"))
+    from _precision import fmt as _fmt_unused  # noqa: E402,F401
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__, engine="python")
     out["scriptFile"] = os.path.basename(__file__)

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-18T20:53:26Z
-updated_at: 2026-08-18T20:54:17Z
+updated_at: 2026-08-18T21:43:12Z
 ---
 
 Found by running the FULL `scripts/precision-gates.sh` (not `--changed`) on
@@ -34,3 +34,12 @@ during the #4973 prepare-merge.
 mpmath 1.4.1 present, so only the count moves. Then either give
 gswz_program_convention_immunity a q0 anchor (if it should have one) or confirm
 it is legitimately anchor-free and the count is correct at 1892.
+
+
+**Update 2026-08-18 (later run):** the offending witness has CHANGED as main
+moved. It was `gswz_program_convention_immunity.witness.json`; a full gates run
+after rebasing now names `gswz_epsm_per_element_representative.witness.json`.
+The count is still 1891 -> 1892 — so this is a recurring class (the gswz/epsm
+programme emits witnesses without a q0 anchor), not a single stale entry.
+Reverted again for the same reason: not mine, and regenerating here downgrades
+the environment block.
