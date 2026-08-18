@@ -4,8 +4,8 @@
   "computation": "aomega-m3-adjoint-index-set",
   "engine": "python",
   "scriptFile": "computations/probes/aomega_m3_adjoint_index_set.py",
-  "scriptCommitSha": "33b7977a1416b1c2cb154ad28b6b58508af31594",
-  "computedAt": "2026-08-18T20:57:55Z",
+  "scriptCommitSha": "99c8d561ff414e1544cae35cba9a928c95395ec4",
+  "computedAt": "2026-08-18T21:07:26Z",
   "durationMs": 3,
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
@@ -34,7 +34,7 @@
   "data": {
     "forced_extra_4_1": 0,
     "forced_extra_5_2": 1,
-    "verdict": "M3 REFRAMED and SHARPENED; still a HYPOTHESIS, and this run makes the case both stronger and thinner than the previous one claimed. STRONGER: (i) M2's abelian finding means M3's target is the INDEX SET, not a CoHA. (ii) H_Ad is the dtMin projection and Route A's R1 is the dtMax projection of the SAME chirality-split datum -- different halves, so H_Ad is NOT a re-description of R1, and the PAIR reconstructs the 2-element set {3,4} that no single scalar can equal (no tension with no_scalar_matches_chirality_split_datum, which excludes one scalar, not two). (iii) Lean-proved: a knot-independent core FORCES a knot-dependent unit remainder, pinned to (0,1) under H_Ad. THINNER: (iv) 4_1 is amphichiral, so its dtMin collapses onto dtMax and supplies NO evidence independent of R1 -- the whole support for 'core = 3' is the single observation S-(5_2)=3. (v) A rival H_floor (core = the {0,g,gbar} triple every hyperbolic knot carries = R1's universal floor, no sl_2 anywhere) reproduces every H_Ad prediction AND a palindromic 3-element grading, so the data cannot separate them; only the grading variable (meridian x=m^2 vs Chern-Simons value) could, and that is not settled here. (vi) Self-correction: the previously proposed completion -- '5_2 has one extra flat connection' -- IS R1, so it composes two imported readings rather than deriving anything from Hecke data. No derivation of the DT spectrum is claimed; nothing wired."
+    "verdict": "M3 REFRAMED and SHARPENED; still a HYPOTHESIS, and this run makes the case both stronger and thinner than the previous one claimed. STRONGER: (i) M2's abelian finding means M3's target is the INDEX SET, not a CoHA. (ii) H_Ad is the dtMin projection and Route A's R1 is the dtMax projection of the SAME chirality-split datum -- different halves, so H_Ad is NOT a re-description of R1, and the PAIR reconstructs the 2-element set {3,4} that no single scalar can equal (no tension with no_scalar_matches_chirality_split_datum, which excludes one scalar, not two). (iii) Lean-proved: a knot-independent core FORCES a knot-dependent unit remainder, pinned to (0,1) under H_Ad. THINNER: (iv) 4_1 is amphichiral, so its dtMin collapses onto dtMax and supplies NO evidence independent of R1 -- the whole support for 'core = 3' is the single observation S-(5_2)=3. (v) A rival H_floor (core = the {0,g,gbar} triple every hyperbolic knot carries = R1's universal floor, no sl_2 anywhere) reproduces every H_Ad prediction AND a palindromic 3-element grading, so the data cannot separate them; only the grading variable (meridian x=m^2 vs Chern-Simons value) could, and that is not settled here. (vi) Self-correction: the previously proposed completion -- '5_2 has one extra flat connection' -- IS R1, so it composes two imported readings rather than deriving anything from Hecke data. No derivation of the DT spectrum is claimed; nothing wired. PART 3 (this run): the meridian grading is now DERIVED -- the shape-(2) semistandard Young tableaux carry m-weights (2,0,-2) = twice the adjoint x-exponents, i.e. exactly x = m^2, so s(x) is the character of S^(2)(C^2) in the meridian variable from Young-tableau combinatorics with nothing fitted. That gives H_Ad a mechanism H_floor lacks WITHOUT excluding H_floor. It also forced a second self-correction: Ad is the Schur-Weyl PARTNER of the partition-(2) Hecke block, not the block (which is 1-dimensional); earlier text here and in Lean said otherwise and is corrected at source."
   },
   "assertions": [
     {
@@ -71,6 +71,21 @@
       "name": "T7-H_Ad-not-distinguished-from-H_floor",
       "passed": true,
       "note": "PASSES as an ADVERSARIAL check: the cores are EQUAL, so the two hypotheses impose identical constraints on any completion and the certified data cannot separate them. The coincidence 3 = dim sl_2 = |{0,g,gbar}| is therefore NOT evidence for the adjoint reading. Worse for T4: H_floor also supplies a 3-element palindromic grading (Chern-Simons values {0,+V,-V}), so the palindromic shape cannot arbitrate either. Only the GRADING VARIABLE could -- meridian x=m^2 (H_Ad) vs Chern-Simons value (H_floor). GGM's s(x) is written in the meridian variable, which weakly favours H_Ad; 'weakly' is the honest word and no separation is claimed. Lean: h_ad_and_h_floor_are_indistinguishable / palindromic_shape_does_not_arbitrate."
+    },
+    {
+      "name": "T8-adjoint-is-the-schur-weyl-partner-not-the-hecke-block",
+      "passed": true,
+      "note": "SELF-CORRECTION. Earlier text in this probe and in the Lean docstring said Ad = 'the partition-(2) Wedderburn block of H_2(q)'. That conflates the two sides of Schur-Weyl duality: the (2) block is 1-DIMENSIONAL (#SYT=1); the 3-dimensional object is its PARTNER S^(2)(C^2) on the U_q(sl_2) side of V^(x)2 = sum_lam S^lam(V) (x) M_lam. The 3 lives on the quantum-group factor paired with the (2) block, never in the block itself. Lean: hecke_block_one_schur_partner_three."
+    },
+    {
+      "name": "T9-meridian-grading-derived-from-tableaux",
+      "passed": true,
+      "note": "The shape-(2) semistandard tableaux carry m-weights (2,0,-2) = exactly TWICE the adjoint x-exponents (1,0,-1) -- i.e. precisely x = m^2. So s(x) = x + 1 + 1/x is the character of S^(2)(C^2) in the MERIDIAN variable, read off Young-tableau combinatorics with nothing fitted. This is the discriminator T7 asked for: H_Ad's grading variable follows from QOU-native Schur-Weyl data, which H_floor (Chern-Simons-graded) has no route to. It does NOT exclude H_floor -- supplying H_Ad a mechanism H_floor lacks is weaker and different. Lean: ssyt_meridian_weights_are_twice_adjoint."
+    },
+    {
+      "name": "T10-tableau-weights-multiplicity-free",
+      "passed": true,
+      "note": "Three tableaux, three DISTINCT weights -- matching M2's sMultiplicities = [1,1,1] with no adjustment, now at the combinatorial level rather than by assertion. Lean: ssyt_weights_nodup."
     }
   ]
 }

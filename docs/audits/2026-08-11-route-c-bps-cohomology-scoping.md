@@ -180,17 +180,44 @@ This is the sharpest positive structural statement Route C has produced.
   imported readings* rather than deriving anything from Hecke data. It must not
   be presented as a derivation.
 
+### The meridian grading is derived (route (b), same PR)
+
+The one discriminator Part 2 named — the grading *variable* — is now supplied on
+the `H_Ad` side from QOU-native Schur–Weyl data. The shape-`(2)` **semistandard**
+Young tableaux over `{1,2}` are `{11, 12, 22}`, and their `m`-weights are
+`(2, 0, −2)` — exactly **twice** the adjoint `x`-exponents `(1, 0, −1)`, i.e.
+precisely `x = m²`. So `s(x) = x + 1 + x⁻¹` is the character of `S^{(2)}(ℂ²)` in
+the **meridian** variable, read off Young-tableau combinatorics with nothing
+fitted, and the three weights are distinct (so M2's `sMultiplicities = [1,1,1]`
+becomes combinatorial rather than asserted).
+
+**Scope (a), stated plainly:** this gives `H_Ad` a mechanism `H_floor` lacks. It
+does **not** exclude `H_floor` — "one hypothesis has a derivation the other
+lacks" is weaker and different from "the other is refuted".
+
+**Third correction, forced by doing this.** `Ad` is the Schur–Weyl **partner** of
+the partition-`(2)` Hecke block, *not* the block: `#SYT((2)) = 1` (the `H₂(q)`
+block is one-dimensional) while `#SSYT((2)) = 3` (the partner `S^{(2)}(ℂ²)` on the
+`U_q(𝔰𝔩₂)` side of `V^{⊗2} ≅ ⨁_λ S^λ(V) ⊗ M_λ`). Earlier text in the Lean
+docstring, the probe docstring and the bean all said "the partition-`(2)`
+Wedderburn block of `H₂(q)`" — a conflation of the two sides of Schur–Weyl
+duality, corrected at all three sources, with both dimensions now *derived* in
+Lean from the weakly- vs strictly-increasing filling conditions.
+
 ### Where M3 now stands
 
 **Open, with a named rival.** The live question is no longer "find the extra `5₂`
-ray" (that is `R1`) but **separate `H_Ad` from `H_floor`**. Two routes: (a) a
-*third* knot — a hyperbolic `K` with more than 3 boundary-parabolic connections
-whose `s(x)` core stays `x+1+x⁻¹` breaks `H_floor` and leaves `H_Ad` standing
-(GGM covers `4₁`/`5₂`; Gu–Mariño-type data on `6₁`/`7₂` would decide); (b) show
-the QOU-side `Ad ≅ Sym²V` reproduces the *meridian* grading, which `H_floor` has
-no route to.
+ray" (that is `R1`) but **separate `H_Ad` from `H_floor`**. Route (b) — derive the
+meridian grading from Schur–Weyl — is delivered above. Route **(a)** is what
+remains: a *third* knot. A hyperbolic `K` with more than 3 boundary-parabolic
+connections whose `s(x)` core stays `x+1+x⁻¹` would break `H_floor` (whose core
+*is* the connection floor by construction) and leave `H_Ad` standing. GGM covers
+`4₁` and `5₂` only, so this is a **literature ask, not a compute**: published
+`q→0` Stokes constants for a third hyperbolic knot (Gu–Mariño-type data on `6₁` /
+`7₂`). The second remaining piece is unchanged — the extra `5₂` ray is `R1`, so a
+genuine derivation still needs that ray to come out of the Hecke side.
 
 Artifacts: `QOU.QBeta.AdjointIndexSetM3` (core `Int`, `lean`-direct exit 0,
-sorry-free), `computations/probes/aomega_m3_adjoint_index_set.py` (7/7, four
+sorry-free), `computations/probes/aomega_m3_adjoint_index_set.py` (10/10, four
 adversarial). Bean `qou-m3ad`. Nothing wired; `A_ω = 3` remains
 certified-as-GGM-DT-count, conditionally adopted.
