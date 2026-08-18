@@ -47,8 +47,11 @@ Why this is a *mechanism* and not a numerical coincidence:
   `sMultiplicities = [1,1,1]` without adjustment.
 * It **predicts** knot-independence, which is the observed fact no knot-specific
   invariant could produce.
-* In QOU-native terms `Ad ≅ Sym²V`, the partition-`(2)` Wedderburn block of
-  `H₂(q)` — so the hypothesis is expressible in Hecke language.
+* In QOU-native terms `Ad ≅ Sym²V = S^{(2)}(ℂ²)`, the **Schur–Weyl partner** of
+  the partition-`(2)` Wedderburn block of `H₂(q)` — so the hypothesis is
+  expressible in Hecke language. (Partner, *not* the block: the block itself is
+  1-dimensional. See Part 3, where both dimensions are derived and this
+  file's own earlier conflation of the two is corrected.)
 
 **`H_Ad` is a hypothesis, not a derivation.** Identifying the index set with a
 rep-theoretic object that is standard in the deformation theory is a structural
@@ -252,5 +255,81 @@ theorem palindromic_shape_does_not_arbitrate :
     (∀ e ∈ adjointExponents, (-e) ∈ adjointExponents) ∧
     hyperbolicConnectionFloor = adjointExponents.length := by
   refine ⟨by decide, by decide, by decide⟩
+
+/-! ## Part 3 — the meridian grading, derived from Young-tableau combinatorics
+
+Part 2 left exactly one discriminator between `H_Ad` and its rival `H_floor`: the
+**grading variable**. `H_floor` grades by Chern–Simons value; `H_Ad` grades by
+meridian eigenvalue `x = m²`. If the meridian grading falls out of QOU-native
+Hecke/Schur–Weyl data, `H_Ad` has a route `H_floor` does not.
+
+It does — and getting there corrects an imprecision in this file's own earlier
+prose.
+
+**CORRECTION.** Part 1's docstring said "`Ad ≅ Sym²V`, the partition-`(2)`
+Wedderburn block of `H₂(q)`". That conflates the two sides of Schur–Weyl duality.
+The partition-`(2)` block of `H₂(q)` has dimension `#SYT((2)) = 1`; it is
+**one**-dimensional, not three. What is three-dimensional is its Schur–Weyl
+*partner* `S^{(2)}(ℂ²) = Sym²V` on the quantum-group side of
+`V^{⊗2} ≅ ⨁_λ S^λ(V) ⊗ M_λ`. The `3` therefore lives on the `U_q(𝔰𝔩₂)` factor
+paired with the `(2)` block — not in the block itself. Both dimensions are derived
+below so the distinction cannot be lost again.
+
+The payoff: the weight basis of `S^{(2)}(ℂ²)` is the set of semistandard Young
+tableaux of shape `(2)` on the alphabet `{1,2}`, and each tableau's weight is read
+off directly in the **meridian** variable — entry `1` contributes `m`, entry `2`
+contributes `m⁻¹`. So the meridian grading is *combinatorial*, not assumed. -/
+
+/-- All fillings of the shape-`(2)` row by the alphabet `{1,2}`. -/
+def shapeTwoFillings : List (Nat × Nat) := [(1, 1), (1, 2), (2, 1), (2, 2)]
+
+/-- The semistandard tableaux of shape `(2)`: rows weakly increase. -/
+def ssytShapeTwo : List (Nat × Nat) := [(1, 1), (1, 2), (2, 2)]
+
+/-- The standard tableaux of shape `(2)`: each of `1,2` used once, strictly
+increasing along the row. -/
+def sytShapeTwo : List (Nat × Nat) := [(1, 2)]
+
+/-- **The semistandard tableaux are exactly the weakly-increasing fillings** — the
+`3` is *derived* from the tableau condition, not asserted. -/
+theorem ssyt_from_weakly_increasing :
+    shapeTwoFillings.filter (fun t => decide (t.1 ≤ t.2)) = ssytShapeTwo := by decide
+
+/-- **The standard tableaux are exactly the strictly-increasing fillings** — the
+`1` is likewise derived. -/
+theorem syt_from_strictly_increasing :
+    shapeTwoFillings.filter (fun t => decide (t.1 < t.2)) = sytShapeTwo := by decide
+
+/-- **The correction, as a theorem.** `dim M_{(2)} = #SYT((2)) = 1` while
+`dim S^{(2)}(ℂ²) = #SSYT((2)) = 3`. The adjoint's `3` is the Schur–Weyl *partner*
+of the `(2)` Hecke block, never the block's own dimension. -/
+theorem hecke_block_one_schur_partner_three :
+    sytShapeTwo.length = 1 ∧ ssytShapeTwo.length = 3 ∧
+      sytShapeTwo.length ≠ ssytShapeTwo.length := by decide
+
+/-- The **meridian** weight of a tableau, in exponents of `m`: entry `1` contributes
+`m¹`, entry `2` contributes `m⁻¹`. -/
+def meridianWeight (t : Nat × Nat) : Int :=
+  (if t.1 = 1 then 1 else -1) + (if t.2 = 1 then 1 else -1)
+
+/-- **The meridian grading is derived, not assumed.** The shape-`(2)` semistandard
+tableaux carry `m`-weights `(2, 0, −2)`, i.e. exactly **twice** the adjoint
+`x`-exponents `(1, 0, −1)` — which is precisely the substitution `x = m²`. So
+`s(x) = x + 1 + x⁻¹` is the character of `S^{(2)}(ℂ²)` in the meridian variable,
+read off Young-tableau combinatorics with nothing fitted.
+
+This is the discriminator Part 2 asked for: `H_Ad`'s grading variable follows from
+QOU-native Schur–Weyl data, while `H_floor` (whose grading is by Chern–Simons
+value) has no route to it. It does **not** by itself decide between them — it
+supplies `H_Ad` with a mechanism `H_floor` lacks, which is a weaker and different
+thing than excluding `H_floor`. -/
+theorem ssyt_meridian_weights_are_twice_adjoint :
+    ssytShapeTwo.map meridianWeight = adjointExponents.map (fun e => 2 * e) := by
+  decide
+
+/-- **The grading is multiplicity-free at the tableau level too** — the three
+tableaux carry three distinct weights, matching M2's `sMultiplicities = [1,1,1]`
+without adjustment. -/
+theorem ssyt_weights_nodup : (ssytShapeTwo.map meridianWeight).Nodup := by decide
 
 end QOU.QBeta.AdjointIndexSetM3

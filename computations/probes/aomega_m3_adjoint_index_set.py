@@ -18,7 +18,11 @@ Mechanism (why this is not a numerology pick): in complex Chern-Simons the Borel
 singularities are differences of complex volumes of flat connections, and the
 deformation theory of a flat connection is governed by H^1(M, Ad rho) — the
 adjoint local system is the canonical coefficient object, not a chosen one.
-In QOU terms Ad = Sym^2 V = the partition-(2) Wedderburn block of H_2(q).
+In QOU terms Ad = Sym^2 V = S^(2)(C^2), the SCHUR-WEYL PARTNER of the
+partition-(2) Wedderburn block of H_2(q) -- partner, NOT the block: the block
+itself is 1-dimensional (#SYT((2))=1) while the partner is 3-dimensional
+(#SSYT((2))=3). An earlier version of this docstring said 'the block'; that is
+corrected here and both dimensions are now derived in Lean (Part 3).
 
 This probe runs four checks, including two adversarial ones designed to fail if
 H_Ad is empty.
@@ -167,6 +171,52 @@ def main():
              "h_ad_and_h_floor_are_indistinguishable / "
              "palindromic_shape_does_not_arbitrate.")
 
+    # ---- T8-T10: the meridian grading, from Young-tableau combinatorics ----
+    # Part 2 left ONE discriminator between H_Ad and H_floor: the grading VARIABLE.
+    # H_floor grades by Chern-Simons value; H_Ad by meridian eigenvalue x = m^2.
+    # Here the meridian grading is DERIVED from QOU-native Schur-Weyl data.
+    fillings = [(a, b) for a in (1, 2) for b in (1, 2)]
+    ssyt = [t for t in fillings if t[0] <= t[1]]          # semistandard: weakly incr
+    syt  = [t for t in fillings if t[0] <  t[1]]          # standard: strictly incr
+    m_weight = lambda t: sum(1 if e == 1 else -1 for e in t)
+    ssyt_weights = [m_weight(t) for t in ssyt]
+
+    print("\n[T8] CORRECTION: which side of Schur-Weyl carries the 3?")
+    print(f"     SYT((2))  = {syt}   -> dim M_(2) (the H_2(q) BLOCK)        = {len(syt)}")
+    print(f"     SSYT((2)) = {ssyt} -> dim S^(2)(C^2) (the PARTNER) = {len(ssyt)}")
+    chk("T8-adjoint-is-the-schur-weyl-partner-not-the-hecke-block",
+        len(syt) == 1 and len(ssyt) == 3,
+        note="SELF-CORRECTION. Earlier text in this probe and in the Lean docstring "
+             "said Ad = 'the partition-(2) Wedderburn block of H_2(q)'. That "
+             "conflates the two sides of Schur-Weyl duality: the (2) block is "
+             "1-DIMENSIONAL (#SYT=1); the 3-dimensional object is its PARTNER "
+             "S^(2)(C^2) on the U_q(sl_2) side of V^(x)2 = sum_lam S^lam(V) (x) "
+             "M_lam. The 3 lives on the quantum-group factor paired with the (2) "
+             "block, never in the block itself. Lean: "
+             "hecke_block_one_schur_partner_three.")
+
+    print("\n[T9] the meridian grading, DERIVED (not assumed)")
+    print(f"     m-weights of SSYT((2)): {ssyt_weights}  (entry 1 -> m, entry 2 -> 1/m)")
+    print(f"     twice the adjoint x-exponents: {[2*e for e in adj_exponents]}")
+    chk("T9-meridian-grading-derived-from-tableaux",
+        ssyt_weights == [2*e for e in adj_exponents],
+        note="The shape-(2) semistandard tableaux carry m-weights (2,0,-2) = exactly "
+             "TWICE the adjoint x-exponents (1,0,-1) -- i.e. precisely x = m^2. So "
+             "s(x) = x + 1 + 1/x is the character of S^(2)(C^2) in the MERIDIAN "
+             "variable, read off Young-tableau combinatorics with nothing fitted. "
+             "This is the discriminator T7 asked for: H_Ad's grading variable "
+             "follows from QOU-native Schur-Weyl data, which H_floor "
+             "(Chern-Simons-graded) has no route to. It does NOT exclude H_floor -- "
+             "supplying H_Ad a mechanism H_floor lacks is weaker and different. "
+             "Lean: ssyt_meridian_weights_are_twice_adjoint.")
+
+    print("\n[T10] multiplicity-freeness at the tableau level")
+    chk("T10-tableau-weights-multiplicity-free",
+        len(set(ssyt_weights)) == len(ssyt_weights),
+        note="Three tableaux, three DISTINCT weights -- matching M2's "
+             "sMultiplicities = [1,1,1] with no adjustment, now at the "
+             "combinatorial level rather than by assertion. Lean: ssyt_weights_nodup.")
+
     # The forced remainder (Lean: AdjointIndexSetM3.adjoint_core_pins_remainder)
     extra_41 = dt_vector[0] - 3
     extra_52 = dt_vector[1] - 3
@@ -204,7 +254,15 @@ def main():
         "Self-correction: the previously proposed completion -- '5_2 has one extra "
         "flat connection' -- IS R1, so it composes two imported readings rather "
         "than deriving anything from Hecke data. No derivation of the DT spectrum "
-        "is claimed; nothing wired."
+        "is claimed; nothing wired. PART 3 (this run): the meridian grading is now "
+        "DERIVED -- the shape-(2) semistandard Young tableaux carry m-weights "
+        "(2,0,-2) = twice the adjoint x-exponents, i.e. exactly x = m^2, so s(x) is "
+        "the character of S^(2)(C^2) in the meridian variable from Young-tableau "
+        "combinatorics with nothing fitted. That gives H_Ad a mechanism H_floor "
+        "lacks WITHOUT excluding H_floor. It also forced a second self-correction: "
+        "Ad is the Schur-Weyl PARTNER of the partition-(2) Hecke block, not the "
+        "block (which is 1-dimensional); earlier text here and in Lean said "
+        "otherwise and is corrected at source."
     )
     print(f"\n verdict: {verdict}")
 

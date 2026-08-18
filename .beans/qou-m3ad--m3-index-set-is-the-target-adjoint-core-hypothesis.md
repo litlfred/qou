@@ -8,7 +8,7 @@ tags:
     - g3-aomega
     - route-c
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-08-18T22:30:00Z
+updated_at: 2026-08-18T23:10:00Z
 parent: qou-rtec
 ---
 
@@ -30,8 +30,9 @@ chi_Ad(x) = x + 1 + 1/x = s(x) exactly and chi_Ad(1) = 3 = dim sl_2.
 MECHANISM (why not numerology): in complex Chern-Simons the Borel singularities are
 differences of complex volumes of flat connections, and the deformation theory of a
 flat connection is governed by H^1(M, Ad rho) — the adjoint local system is the
-CANONICAL coefficient object, not a chosen one. In QOU terms Ad = Sym^2 V = the
-partition-(2) Wedderburn block of H_2(q), so it is expressible in Hecke language.
+CANONICAL coefficient object, not a chosen one. In QOU terms Ad = Sym^2 V = S^(2)(C^2), the SCHUR-WEYL PARTNER of the
+partition-(2) Hecke block (partner, NOT the block -- see Part 3), so it is
+expressible in Hecke language.
 
 ## What was tested (probe: computations/probes/aomega_m3_adjoint_index_set.py, 4/4)
 
@@ -97,14 +98,47 @@ min_max_pair_reconstructs_datum, two_scalars_name_what_one_cannot,
 fourone_is_a_degenerate_observation, h_ad_and_h_floor_are_indistinguishable,
 palindromic_shape_does_not_arbitrate. Probe now 7/7 (T5/T6/T7 added).
 
+## Part 3 (2026-08-18): route (b) DELIVERED -- the meridian grading is derived
+
+Part 2 left exactly one discriminator between H_Ad and H_floor: the grading VARIABLE
+(H_Ad grades by meridian eigenvalue x = m^2, H_floor by Chern-Simons value). Route
+(b) -- get the meridian grading out of QOU-native Schur-Weyl data -- now lands:
+
+ T9 The shape-(2) SEMISTANDARD Young tableaux over {1,2} are {11, 12, 22}, and their
+    m-weights are (2, 0, -2) = exactly TWICE the adjoint x-exponents (1, 0, -1) --
+    i.e. precisely the substitution x = m^2. So s(x) = x + 1 + 1/x is the character
+    of S^(2)(C^2) IN THE MERIDIAN VARIABLE, read off Young-tableau combinatorics with
+    nothing fitted. H_floor (Chern-Simons-graded) has no route to this.
+ T10 The three tableaux carry three DISTINCT weights, so M2's sMultiplicities =
+    [1,1,1] is now combinatorial rather than asserted.
+
+SCOPE (a), stated plainly: this gives H_Ad a mechanism H_floor lacks. It does NOT
+exclude H_floor -- "one hypothesis has a derivation the other lacks" is weaker and
+different from "the other is refuted", and no exclusion is claimed.
+
+ SECOND SELF-CORRECTION forced by doing this: Ad is the SCHUR-WEYL PARTNER of the
+   partition-(2) Hecke block, NOT the block. #SYT((2)) = 1 (the H_2(q) block is
+   ONE-dimensional); #SSYT((2)) = 3 (the partner S^(2)(C^2) on the U_q(sl_2) side of
+   V^(x)2 = sum_lam S^lam(V) (x) M_lam). Earlier text in the Lean docstring, the
+   probe docstring and this bean said "the partition-(2) Wedderburn block of H_2(q)"
+   -- a conflation of the two sides of Schur-Weyl duality, corrected at all three
+   sources. Both dimensions are now DERIVED in Lean (from the weakly- vs
+   strictly-increasing filling conditions), so the distinction cannot be lost again.
+
+Lean added: shapeTwoFillings / ssytShapeTwo / sytShapeTwo, ssyt_from_weakly_increasing,
+syt_from_strictly_increasing, hecke_block_one_schur_partner_three,
+ssyt_meridian_weights_are_twice_adjoint, ssyt_weights_nodup. Probe now 10/10.
+
 ## NEXT STEP (the open piece)
 
-Separate H_Ad from H_floor -- that, not "find the extra 5_2 ray", is now the live
-question, since the extra ray is just R1. The discriminator is the grading variable:
-H_Ad grades the index set by meridian eigenvalue x = m^2, H_floor by Chern-Simons
-value. Two ways in: (a) a THIRD knot -- if some hyperbolic K has more than 3
-boundary-parabolic connections while its s(x) core stays x+1+1/x, H_floor breaks and
-H_Ad survives (GGM covers 4_1 and 5_2; Gu-Marino-type data on 6_1/7_2 would decide);
-(b) show the QOU-side Ad = Sym^2 V = partition-(2) block of H_2(q) reproduces the
-meridian grading, which H_floor has no route to. Until one lands: HYPOTHESIS ONLY,
-now with a NAMED RIVAL, and no derivation of the DT spectrum from Hecke data claimed.
+Route (a) is what remains: a THIRD knot. If some hyperbolic K has more than 3
+boundary-parabolic flat connections while its s(x) core stays x + 1 + 1/x, H_floor
+breaks (its core is by construction the connection floor) and H_Ad survives. GGM
+covers 4_1 and 5_2 only; Gu-Marino-type resurgent data on 6_1 / 7_2 would decide it.
+That is a LITERATURE ask, not a compute: we need published q->0 Stokes constants for
+a third hyperbolic knot. Second remaining piece, unchanged: the extra 5_2 ray is R1,
+so composing H_Ad with it derives nothing from Hecke data -- a genuine derivation
+still needs the ray to come out of the Hecke side.
+
+Until one lands: HYPOTHESIS ONLY, with a NAMED RIVAL that the data cannot exclude,
+and no derivation of the DT spectrum from Hecke data claimed.
