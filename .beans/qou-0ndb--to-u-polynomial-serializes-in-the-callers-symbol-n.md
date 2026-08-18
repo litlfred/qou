@@ -293,3 +293,79 @@ always used, and verified the coefficients came back byte-identical. The Φ_8
 correction there was to the *verification* code and is orthogonal to which
 convention the coefficients encode. But the family being convention-C is a
 real item, and it is material to qou-eea0's "total impact" accounting.
+
+---
+
+## Re-measured 2026-08-18, +1260 commits on. Still blocked — and the predicted mixed witness landed.
+
+### The retirement condition has not moved
+
+    witnesses with PARSED check_q:  19  ->  20      fields: ~750 -> 767
+
+Not progress. The two-name `locals` still protects 20 readers and must stay.
+
+### The mixed C/D atomic witness I warned about is now live on main
+
+`qou-eea0` reached `habiro-coefficients-atomic.witness.json` (regenerated
+2026-08-15, `scriptCommitSha 7bcfeb61d3`). It is **internally inconsistent**:
+
+    row                 deg_p_u   symbol      convention
+    p (proton, A=1)        44     u           D
+    n (neutron, A=1)       36     u           D
+    D (deuteron, A=2)      86     check_q     C     <-- stale row
+
+This is exactly the failure recorded on this bean on 2026-08-10 and posted to
+PR #4924 at the time:
+
+> the default run computes **only p, n** and merge-preserves D from the prior
+> file, so a default invocation would leave a *mixed* C/D witness — the
+> deuteron flag is needed for a clean one.
+
+A default run was used, `merge-preserve` kept the convention-C deuteron, and
+the mixed file is on main. `HABIRO_WITH_DEUTERON=1` is what produces a clean
+one.
+
+Why it matters beyond tidiness: the merge-preserve comment in the producer
+says `path_b_habiro_mass_probe` calibrates α_M off the **D row**. That reader
+now takes a convention-C deuteron while τ_p / τ_n beside it are convention-D —
+a straddle inside one witness, which AGENTS.md forbids by name.
+
+### The 26-witness family is convention-C by descent, and now DISAGREES with its upstream
+
+Measured, not inferred:
+
+    family  proton tr_M_in_q :  q**(39/2) + q**(35/2) - ...   half-integer  = C
+    atomic  proton tr_M_in_q :  q**22 + q**20 + 2*q**18 ...   integer       = D
+    MATCH: False
+
+Independently corroborated by the migration's own table in `b86f406962`:
+
+    atom      C          D
+    proton    1.065306   1.145760
+
+and the family's committed `tr_M_at_q0` for the proton is `1.0653061442…` —
+the C column exactly. So the family is C, unambiguously.
+
+Before eea0 reached the atomic witness, atomic and family were both C, i.e.
+*consistent*. They are now inconsistent. All 26 say `u` in their serialized
+symbol (this bean's fix), which is why a `check_q` grep does not find them —
+the symbol was normalised, the mathematics was not migrated. **A count of
+files carrying a direct C fingerprint undercounts this family by 26**, which
+is the point flagged to #4924 and still unaddressed.
+
+### What this does to the Φ_8 result (PR #4926)
+
+It stands **as a convention-C result** and is not retracted: it was computed
+from a self-consistent C family, and the correction it made was to the
+*verification* code (a mixed-symbol `sympify`), which is orthogonal to
+convention. What is now true and was not then: the family is stale against its
+own upstream, so regenerating it under D will move the coefficients and may
+move Φ_8. The `2⌊(A−1)/2⌋` agreement should be re-checked after that
+regeneration, not assumed to carry over.
+
+### Sequencing, unchanged
+
+`qou-eea0` is still `in-progress` and its own bean names the gap — *"The
+missed set is the nuclear layer: deuteron at H₆, helium-3 at H₉…"*. The
+deuteron row is therefore already on its list. This stays sequenced behind
+that campaign; nothing here is for this bean to run.
