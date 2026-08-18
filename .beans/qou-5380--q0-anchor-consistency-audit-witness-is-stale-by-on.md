@@ -1,11 +1,11 @@
 ---
 # qou-5380
 title: q0-anchor-consistency audit witness is stale by one count -- gswz_program_convention_immunity lacks a q0 anchor
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-18T20:53:26Z
-updated_at: 2026-08-18T21:43:12Z
+updated_at: 2026-08-18T22:13:49Z
 ---
 
 Found by running the FULL `scripts/precision-gates.sh` (not `--changed`) on
@@ -43,3 +43,12 @@ The count is still 1891 -> 1892 — so this is a recurring class (the gswz/epsm
 programme emits witnesses without a q0 anchor), not a single stale entry.
 Reverted again for the same reason: not mine, and regenerating here downgrades
 the environment block.
+
+
+## Closed 2026-08-18 — regenerated on the merged tree (PR #5264)
+
+Q0_ANCHOR_MISSING 1892 -> 1893. The merged tree carries main's
+knot-trace-field-degree-guard-counterexample, this branch's
+gswz_epsm_per_element_representative, and main's
+gswz_epsm_root_ambiguity_criterion — so neither side's count was right for
+it. Regenerated rather than hand-picked, since it is a generated audit output.
