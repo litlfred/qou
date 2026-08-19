@@ -328,6 +328,36 @@ user's last message, not the most recently mentioned file.
       §0b-idle-time-backlog-policy-5-minute-trigger`](.claude/skills/local/integration-watcher.md#0b-idle-time-backlog-policy-5-minute-trigger).
       This sits above cross-cutting cleanups because stale
       sidecars mislead all four watcher children's reads.
+
+      **Before spending the witness half of that budget, run
+      [`witness_staleness_triage.py`](computations/witness_staleness_triage.py)
+      — measured, the answer is usually "spend it on sidecars instead."**
+      It normalises both producer versions through `ast.unparse` (comments,
+      docstrings and formatting gone) and reports which drifts can actually
+      move a number. Re-measured three times across 1564 commits of `main`,
+      **zero** of ~700 self-stale witnesses were safe to refresh. Source-
+      identical is necessary but not sufficient, and the two extra gates are
+      the ones that bite:
+
+      - **Environment.** A producer may branch on what is *installed*, so the
+        same source writes a different payload with no crash and no warning.
+        Measured: `binding_canonical.py` without `pyhecke_native` gives
+        `tr_M_atom = 0.575` where the committed witness has `0.388` — a 48 %
+        move under an unchanged AST. Refreshing it replaces a Rust-backed
+        value with a pure-Python fallback under a `chore(witness)` message.
+        Check the witness's own `environment` block before re-running.
+      - **Bare producers.** Some producers never emit provenance; the
+        `scriptHash` / `commitSha` on disk was added downstream. Re-running
+        one *deletes the field this audit keys on* (measured: 15 keys in, 7
+        and 9 out). Fix the producer to emit provenance first.
+
+      And ~48 % of the backlog is `rewritten` — the recorded `commitSha`
+      resolves to nothing, because rebase-merge (rule 8) rewrote the branch
+      sha the witness was written under. This is the same effect the
+      `scriptCommitSha` ruling above describes, one field over: **"diff the
+      producer first" is unrunnable for half the queue**, and hand-patching
+      the sha (13 such commits on `main` in one 8-day window) buys only the
+      interval until the next merge.
    5. **Cross-cutting cleanups** — bare-URL `-- Ref:` upgrades,
       `validate-bib` deferred items, glossary backfills, doc
       currency. Lowest priority because they're not gated on any

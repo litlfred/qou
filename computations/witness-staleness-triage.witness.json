@@ -2,42 +2,44 @@
  "computation": "witness-staleness-triage",
  "scriptFile": "witness_staleness_triage.py",
  "scriptHash": "56e95693797b",
- "commitSha": "adec866daaa5ed638fb5a1ae73e1a41e443bdd3a",
+ "commitSha": "6ee378f6cdbef86e4c3cd1c9de62257d5b4b402f",
  "description": "Splits self-stale witnesses by whether re-running the producer could change the payload. Normalisation drops comments, docstrings and formatting via ast.unparse; equality of the normalised sources means a re-run is bookkeeping only.",
  "scope": "scope-(a): decides only whether a re-run can move the payload. Says nothing about whether a witness is numerically correct, and ignores scriptCommitSha, which rebase-merge rewrites.",
  "counts": {
   "cosmetic": 0,
-  "cosmetic_env_differs": 1,
-  "cosmetic_strips_provenance": 2,
-  "substantive": 242,
-  "rewritten": 329,
-  "unresolvable": 107,
+  "cosmetic_env_differs": 2,
+  "cosmetic_strips_provenance": 1,
+  "substantive": 256,
+  "rewritten": 338,
+  "unresolvable": 103,
   "unparseable": 0
  },
  "data": {
   "cosmetic": [],
   "cosmetic_env_differs": [
    {
-    "witness": "computations/binding-canonical.witness.json",
-    "producer": "computations/binding_canonical.py",
-    "recorded": "a6326ab91322",
-    "current": "55d683d8c551",
+    "witness": "computations/habiro/habiro-taylor-extraction.witness.json",
+    "producer": "computations/habiro/habiro_exact_taylor_extraction.py",
+    "recorded": "67d063ec3310",
+    "current": "376be8da9282",
     "env_gap": {
-     "scipy": "witness 1.17.1, NOT INSTALLED here",
-     "mpmath": "witness 1.4.1, here 1.3.0",
-     "pyhecke_native": "witness 0.9.0, NOT INSTALLED here",
-     "clarabel": "witness 0.11.1, NOT INSTALLED here"
+     "python": "witness 3.13.12, here 3.11",
+     "numpy": "witness 2.5.0, here 2.4.6",
+     "scipy": "witness 1.18.0, NOT INSTALLED here",
+     "pyhecke_native": "witness 0.9.0, NOT INSTALLED here"
+    }
+   },
+   {
+    "witness": "computations/qbeta/qbeta-c4-qhermite-entry-gate.witness.json",
+    "producer": "computations/qbeta/qbeta_c4_qhermite_entry_gate_probe.py",
+    "recorded": "4235f4e36d8d",
+    "current": "dcfe9ac029ce",
+    "env_gap": {
+     "scipy": "witness 1.17.1, NOT INSTALLED here"
     }
    }
   ],
   "cosmetic_strips_provenance": [
-   {
-    "witness": "computations/d-u-closed-form-proof.witness.json",
-    "producer": "computations/d_u_closed_form_proof.py",
-    "recorded": "b82e67ad7cf7",
-    "current": "bd6443df3108",
-    "reason": "producer writes no provenance \u2014 a re-run would strip it"
-   },
    {
     "witness": "computations/yekutieli-volume-join.witness.json",
     "producer": "computations/yekutieli_volume_join.py",
@@ -84,12 +86,6 @@
     "current": "17d6ad30d3e7"
    },
    {
-    "witness": "computations/atomic-tr-m-mpfr-50dps.witness.json",
-    "producer": "computations/atomic_tr_m_mpfr_50dps.py",
-    "recorded": "05d29134aca4",
-    "current": "07c0c3650b40"
-   },
-   {
     "witness": "computations/audits/incomplete-coverage-audit.witness.json",
     "producer": "computations/audits/incomplete_coverage_audit.py",
     "recorded": "8bbbf32c5338",
@@ -106,12 +102,6 @@
     "producer": "computations/bar_pairing_binding_observable.py",
     "recorded": "1e9518e4eef9",
     "current": "520d681a8145"
-   },
-   {
-    "witness": "computations/binding-alpha-shift-witness.witness.json",
-    "producer": "computations/binding_alpha_shift_witness.py",
-    "recorded": "f8d231e3ad2f",
-    "current": "c9615170dbf1"
    },
    {
     "witness": "computations/binding-bstar-bridge.witness.json",
@@ -888,10 +878,28 @@
     "current": "15935ae47e84"
    },
    {
-    "witness": "computations/categorical-q-decay-ba-low-isotopes.witness.json",
-    "producer": "computations/categorical_q_decay_ba_low_isotopes.py",
-    "recorded": "b15d0bd336fb",
-    "current": "b048150dfb30"
+    "witness": "computations/canonical-tr-m-via-chi-cache.witness.json",
+    "producer": "computations/canonical_tr_m_via_chi_cache.py",
+    "recorded": "039783b86297",
+    "current": "eb10fdea2659"
+   },
+   {
+    "witness": "computations/catalan-binding.witness.json",
+    "producer": "computations/catalan_binding.py",
+    "recorded": "4c5be5728ff9",
+    "current": "b7869de546d1"
+   },
+   {
+    "witness": "computations/chi-at-q0-binding-lossless-helium-4.witness.json",
+    "producer": "computations/chi_4he_binding_lossless.py",
+    "recorded": "581778d19a7e",
+    "current": "f6c14ecf744f"
+   },
+   {
+    "witness": "computations/chi-at-q0-matrix-m-tritium.witness.json",
+    "producer": "computations/chi_at_q0_via_matrix_m_mpfr.py",
+    "recorded": "d67acd7e9d5c",
+    "current": "b7dee1a17d13"
    },
    {
     "witness": "computations/chi-convention-audit.witness.json",
@@ -906,22 +914,16 @@
     "current": "520d681a8145"
    },
    {
-    "witness": "computations/chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
-    "producer": "computations/chi_via_rust_lossless.py",
-    "recorded": "9dec1cdfee64",
-    "current": "fa6f74b15644"
+    "witness": "computations/chi-deuteron-h6-at-qinv-50dps.witness.json",
+    "producer": "computations/chi_at_q_inv_via_native_mpfr.py",
+    "recorded": "94cf3688a91a",
+    "current": "bc9dac0fd124"
    },
    {
     "witness": "computations/chi-helium-4-free-h12-at-q0-50dps.witness.json",
     "producer": "computations/bar_pairing_binding_observable.py",
     "recorded": "1e9518e4eef9",
     "current": "520d681a8145"
-   },
-   {
-    "witness": "computations/chi-helium-4-h12-at-q0-50dps-binding.witness.json",
-    "producer": "computations/chi_4he_binding_lossless.py",
-    "recorded": "212c59d7c56f",
-    "current": "098fae9b1319"
    },
    {
     "witness": "computations/chi-lambda-he4-full-partition-table.witness.json",
@@ -933,19 +935,19 @@
     "witness": "computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
     "producer": "computations/chi_via_rust_lossless.py",
     "recorded": "9dec1cdfee64",
-    "current": "fa6f74b15644"
+    "current": "8d38b71496d3"
    },
    {
     "witness": "computations/chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
     "producer": "computations/chi_via_rust_lossless.py",
     "recorded": "9dec1cdfee64",
-    "current": "fa6f74b15644"
+    "current": "8d38b71496d3"
    },
    {
-    "witness": "computations/chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
+    "witness": "computations/chi-via-rust-lossless-general.witness.json",
     "producer": "computations/chi_via_rust_lossless.py",
-    "recorded": "9dec1cdfee64",
-    "current": "fa6f74b15644"
+    "recorded": "fa6f74b15644",
+    "current": "8d38b71496d3"
    },
    {
     "witness": "computations/chirality-weighted-3body-cluster.witness.json",
@@ -972,6 +974,12 @@
     "current": "33f64f7297e5"
    },
    {
+    "witness": "computations/d-u-closed-form-proof.witness.json",
+    "producer": "computations/d_u_closed_form_proof.py",
+    "recorded": "b82e67ad7cf7",
+    "current": "1e7bcb5853a2"
+   },
+   {
     "witness": "computations/delta-lambda-borromean-ascaling.witness.json",
     "producer": "computations/delta_lambda_borromean_ascaling.py",
     "recorded": "11ebf6581efb",
@@ -988,12 +996,6 @@
     "producer": "computations/delta_lambda_full_variance_phase5e_1.py",
     "recorded": "6d093b3266ff",
     "current": "3dc5136c43fc"
-   },
-   {
-    "witness": "computations/delta-lambda-two-factor-phase2.witness.json",
-    "producer": "computations/delta_lambda_two_factor_phase2.py",
-    "recorded": "f26310e3abff",
-    "current": "1995a3225d9e"
    },
    {
     "witness": "computations/deltalambda/wlambda-nuclear-braid-connected.witness.json",
@@ -1056,16 +1058,28 @@
     "current": "61f72b9b06a8"
    },
    {
+    "witness": "computations/gram-transfer-quadratic.witness.json",
+    "producer": "computations/gram_transfer_quadratic.py",
+    "recorded": "b1fcdedbc047",
+    "current": "43cbad1d0d66"
+   },
+   {
     "witness": "computations/h2-integer-lp.witness.json",
     "producer": "computations/h2-integer-lp.py",
     "recorded": "a747ab3a0377",
     "current": "f0d2b7ca011b"
    },
    {
-    "witness": "computations/habiro/habiro-coefficients-atomic.witness.json",
-    "producer": "computations/habiro/habiro_coefficients_atomic.py",
-    "recorded": "8d2281c23446",
-    "current": "be0396b5a5d0"
+    "witness": "computations/h6-deuteron-free-word-chi-lambda.witness.json",
+    "producer": "computations/probes/h6_deuteron_free_word_chi_lambda_probe.py",
+    "recorded": "56c807ccf9fc",
+    "current": "47a5bbb64dab"
+   },
+   {
+    "witness": "computations/habiro/habiro-coefficients-interpolate.witness.json",
+    "producer": "computations/habiro/habiro_coefficients_interpolate.py",
+    "recorded": "1714e7d2d762",
+    "current": "0238d3b24dd7"
    },
    {
     "witness": "computations/hadron-knot-table.witness.json",
@@ -1098,12 +1112,6 @@
     "current": "cb4cf8b89e36"
    },
    {
-    "witness": "computations/items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
-    "producer": "computations/items_1_2_3_mw_strongforce_anchor_asymmetry.py",
-    "recorded": "22f775ca3035",
-    "current": "3372fa0eca0f"
-   },
-   {
     "witness": "computations/l2-row-independence.witness.json",
     "producer": "computations/l2_row_independence_probe.py",
     "recorded": "ac277e7a9d30",
@@ -1134,10 +1142,16 @@
     "current": "9897c7de6391"
    },
    {
+    "witness": "computations/low-isotope-mass-table.witness.json",
+    "producer": "computations/low_isotope_mass_table.py",
+    "recorded": "fe01308fbd59",
+    "current": "0f0dc10eed5a"
+   },
+   {
     "witness": "computations/m-tau-knot-prediction.witness.json",
     "producer": "computations/m_tau_knot_prediction.py",
     "recorded": "498774c72cd0",
-    "current": "4d87c0436965"
+    "current": "6c751c07916c"
    },
    {
     "witness": "computations/m-tau-volume-target.witness.json",
@@ -1146,10 +1160,16 @@
     "current": "877447ec0bd7"
    },
    {
+    "witness": "computations/markov/markov_weights_symbolic.witness.json",
+    "producer": "computations/markov/markov_weights_symbolic.py",
+    "recorded": "23861b203a83",
+    "current": "1793d29585d0"
+   },
+   {
     "witness": "computations/mass-table-comprehensive.witness.json",
     "producer": "computations/mass_table_comprehensive.py",
     "recorded": "6feba4c3f142",
-    "current": "20c0b329882b"
+    "current": "ea24a1286ec6"
    },
    {
     "witness": "computations/meson-gen3-eta-phi.witness.json",
@@ -1234,6 +1254,18 @@
     "producer": "computations/probes/pentagon_rt_torus_knot_higgs_probe.py",
     "recorded": "3c8718efac91",
     "current": "b88bccc668dc"
+   },
+   {
+    "witness": "computations/per-irrep-pole-deuteron-h6.witness.json",
+    "producer": "computations/per_irrep_pole_atom.py",
+    "recorded": "e1b63069c0fd",
+    "current": "12c9329bd5a0"
+   },
+   {
+    "witness": "computations/per-irrep-pole-proton-h3.witness.json",
+    "producer": "computations/per_irrep_pole_atom.py",
+    "recorded": "e1b63069c0fd",
+    "current": "12c9329bd5a0"
    },
    {
     "witness": "computations/per-knot-density-borromean-q-locality-probe.witness.json",
@@ -1326,6 +1358,12 @@
     "current": "765bf4fa2729"
    },
    {
+    "witness": "computations/probes/homflypt-operator-valued-probe.witness.json",
+    "producer": "computations/probes/homflypt_operator_valued_probe.py",
+    "recorded": "daa19d86b840",
+    "current": "9b669462905f"
+   },
+   {
     "witness": "computations/probes/ksel2-favard-jacobi.witness.json",
     "producer": "computations/probes/ksel2_favard_jacobi_probe.py",
     "recorded": "14954fc89c7a",
@@ -1356,6 +1394,12 @@
     "current": "b432df659745"
    },
    {
+    "witness": "computations/probes/option-e-isospin-probe.witness.json",
+    "producer": "computations/probes/option_e_isospin_probe.py",
+    "recorded": "219dd7cd6356",
+    "current": "24c4cbd6f2df"
+   },
+   {
     "witness": "computations/probes/phi-q-regularization-probe.witness.json",
     "producer": "computations/probes/phi_q_regularization_probe.py",
     "recorded": "3fb204f4c509",
@@ -1383,7 +1427,7 @@
     "witness": "computations/probes/qbeta-habiro-element-probe.witness.json",
     "producer": "computations/probes/qbeta_habiro_element_probe.py",
     "recorded": "6cd682db7cbe",
-    "current": "791ab14d1147"
+    "current": "d9336f5c4c04"
    },
    {
     "witness": "computations/probes/r2core-schwinger-measure-explore.witness.json",
@@ -1419,7 +1463,13 @@
     "witness": "computations/qbeta/qbeta-c3-barodd-tetraplectic-reduction.witness.json",
     "producer": "computations/qbeta/qbeta_c3_barodd_tetraplectic_reduction_probe.py",
     "recorded": "c96da3239bbc",
-    "current": "00fc5cc1777d"
+    "current": "b7df829c7936"
+   },
+   {
+    "witness": "computations/qbeta/qbeta-c3-faddeev-rogers-transformation.witness.json",
+    "producer": "computations/qbeta/qbeta_c3_faddeev_rogers_probe.py",
+    "recorded": "7fa824f3edea",
+    "current": "94c38a842bdb"
    },
    {
     "witness": "computations/qbeta/qbeta-c4even-exact-sseries.witness.json",
@@ -1458,6 +1508,12 @@
     "current": "ffe45c43e487"
    },
    {
+    "witness": "computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json",
+    "producer": "computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py",
+    "recorded": "caf44ff2b99d",
+    "current": "8f6b9f552ccc"
+   },
+   {
     "witness": "computations/qbeta/qbeta-habiro-tower-1ppq.witness.json",
     "producer": "computations/qbeta/qbeta_habiro_tower_1ppq.py",
     "recorded": "a826f1675cb7",
@@ -1482,16 +1538,46 @@
     "current": "5b005bcdd12d"
    },
    {
+    "witness": "computations/real-star-lift-candidates.witness.json",
+    "producer": "computations/real_star_lift_candidate_scanner.py",
+    "recorded": "7f1369dd4281",
+    "current": "b7c090e0fabb"
+   },
+   {
+    "witness": "computations/rho-k-h3a-refinement.witness.json",
+    "producer": "computations/rho_k_h3a_refinement.py",
+    "recorded": "18703bbada3d",
+    "current": "97fb1def6b7e"
+   },
+   {
+    "witness": "computations/signed-crossing-feasibility.witness.json",
+    "producer": "computations/probes/signed_crossing_feasibility_probe.py",
+    "recorded": "e1bd6586cc3f",
+    "current": "d15f339273ef"
+   },
+   {
     "witness": "computations/substrate/binding-qbeta-aw-recurrence-probe.witness.json",
     "producer": "computations/substrate/binding_qbeta_aw_recurrence_probe.py",
     "recorded": "36a8b3983516",
     "current": "36f36f2fd269"
    },
    {
+    "witness": "computations/v-hat-z-transfer-phase5d-4.witness.json",
+    "producer": "computations/delta_lambda_v_hat_z_transfer_phase5d_4.py",
+    "recorded": "e389632b77e0",
+    "current": "ba4383ceb7e8"
+   },
+   {
     "witness": "computations/xi-ell-phi-q-probe.witness.json",
     "producer": "computations/xi_ell_phi_q_probe.py",
     "recorded": "39b942183c2d",
     "current": "4395a7f8d746"
+   },
+   {
+    "witness": "computations/y-lambda-at-q0.witness.json",
+    "producer": "computations/y_lambda_at_q0_cache.py",
+    "recorded": "b88ffe51a43d",
+    "current": "a92c44feba0a"
    },
    {
     "witness": "computations/yardstick-free-phase-binding.witness.json",
@@ -1572,13 +1658,6 @@
     "reason": "commit 417e511ad not in the repository"
    },
    {
-    "witness": "computations/alpha/alpha-star-vs-binding-gap.witness.json",
-    "producer": "computations/alpha/alpha_star_vs_binding_gap.py",
-    "recorded": "61e1f4aafcff",
-    "current": "b44c90edf717",
-    "reason": "commit 417e511ad not in the repository"
-   },
-   {
     "witness": "computations/alpha-basis-knot-couplings.witness.json",
     "producer": "computations/alpha_basis_knot_couplings.py",
     "recorded": "f24ac5a6b801",
@@ -1607,6 +1686,13 @@
     "reason": "commit cae0becd6 not in the repository"
    },
    {
+    "witness": "computations/alpha-k-per-force-assembly.witness.json",
+    "producer": "computations/alpha_k_per_force_assembly.py",
+    "recorded": "7b1afa37157f",
+    "current": "1cd2a0da8a68",
+    "reason": "commit cae0becd6 not in the repository"
+   },
+   {
     "witness": "computations/alpha-k-selection-rule-conditional.witness.json",
     "producer": "computations/alpha_k_selection_rule_conditional.py",
     "recorded": "6e98d5a2cb59",
@@ -1626,6 +1712,20 @@
     "recorded": "a57f005cecac",
     "current": "ad1cf6f7e1df",
     "reason": "commit 5dee38b80 not in the repository"
+   },
+   {
+    "witness": "computations/atom-braid-active-partitions.witness.json",
+    "producer": "computations/atom_braid_active_partitions.py",
+    "recorded": "bd3249bd226e",
+    "current": "639ef8808a87",
+    "reason": "commit cae0becd6 not in the repository"
+   },
+   {
+    "witness": "computations/atom-level-wedderburn-tower.witness.json",
+    "producer": "computations/atom_level_wedderburn_tower.py",
+    "recorded": "0fe8ddbf8916",
+    "current": "39da12dc17e3",
+    "reason": "commit cae0becd6 not in the repository"
    },
    {
     "witness": "computations/atomic-chirality-residue.witness.json",
@@ -1680,7 +1780,7 @@
     "witness": "computations/audits/witness-provenance-audit.witness.json",
     "producer": "computations/witness_provenance_audit.py",
     "recorded": "78954454e283",
-    "current": "c0c6a0078375",
+    "current": "30de8676bd82",
     "reason": "commit 65d2418d1 not in the repository"
    },
    {
@@ -1775,20 +1875,6 @@
     "reason": "commit 6949424f7 not in the repository"
    },
    {
-    "witness": "computations/binding-observe-last.witness.json",
-    "producer": "computations/binding_observe_last.py",
-    "recorded": "c56a11c9eebf",
-    "current": "1fcfbbe12220",
-    "reason": "commit b2e3a803b not in the repository"
-   },
-   {
-    "witness": "computations/binding-perblock-bond-type-a3.witness.json",
-    "producer": "computations/binding_perblock_bond_type_a3.py",
-    "recorded": "3b057c3fad0d",
-    "current": "c7e8fa9a13e4",
-    "reason": "commit d7a30bb9a not in the repository"
-   },
-   {
     "witness": "computations/binding-qhyperbolic-weight-probe.witness.json",
     "producer": "computations/binding_qhyperbolic_weight_probe.py",
     "recorded": "f31b92620570",
@@ -1808,6 +1894,13 @@
     "recorded": "4e82685cd967",
     "current": "d1b153de0f01",
     "reason": "commit faa944dd5 not in the repository"
+   },
+   {
+    "witness": "computations/binding-wn-link-volume-probe.witness.json",
+    "producer": "computations/binding_wn_link_volume_probe.py",
+    "recorded": "7529a2b00607",
+    "current": "606707977eeb",
+    "reason": "commit 784663830 not in the repository"
    },
    {
     "witness": "computations/borromean-axial-coupling.witness.json",
@@ -1848,7 +1941,7 @@
     "witness": "computations/bring-zero-mode-bloch-hunt.witness.json",
     "producer": "computations/bring_zero_mode_bloch_hunt.py",
     "recorded": "6b4c9ad93cf5",
-    "current": "868b15aeb3d3",
+    "current": "f40fdf5eb4bd",
     "reason": "commit 77f2b68af not in the repository"
    },
    {
@@ -1866,11 +1959,11 @@
     "reason": "commit d7a30bb9a not in the repository"
    },
    {
-    "witness": "computations/canonical-derivation-pipeline-compliance.witness.json",
-    "producer": "computations/canonical_derivation_pipeline_compliance.py",
-    "recorded": "b856bad69b60",
-    "current": "06ce65957245",
-    "reason": "commit 4f2075887 not in the repository"
+    "witness": "computations/canonical-tr-m-via-rust.witness.json",
+    "producer": "computations/canonical_tr_m_via_rust.py",
+    "recorded": "d2c349f5d06c",
+    "current": "2f4643fa1228",
+    "reason": "commit ce39b659e not in the repository"
    },
    {
     "witness": "computations/ch-bond-writhe-lp.witness.json",
@@ -1880,20 +1973,6 @@
     "reason": "commit 75362d0bd not in the repository"
    },
    {
-    "witness": "computations/charge-coulomb-tn3he-derived.witness.json",
-    "producer": "computations/charge_coulomb_tn3he_derived.py",
-    "recorded": "cc996f27abd8",
-    "current": "4859c7ac6eaa",
-    "reason": "commit 6a44f6c11 not in the repository"
-   },
-   {
-    "witness": "computations/chi-at-q0-binding-lossless-helium-4.witness.json",
-    "producer": "computations/chi_4he_binding_lossless.py",
-    "recorded": "4e6a5f0197e8",
-    "current": "098fae9b1319",
-    "reason": "commit d82fa8628 not in the repository"
-   },
-   {
     "witness": "computations/chi-lambda-multi-block-first-measurement.witness.json",
     "producer": "computations/chi_lambda_multi_block_first_measurement.py",
     "recorded": "37a17c3d707a",
@@ -1901,18 +1980,11 @@
     "reason": "commit 8cbb97fc3 not in the repository"
    },
    {
-    "witness": "computations/chirality-avg-content-atomic.witness.json",
-    "producer": "computations/chirality_avg_content_atomic.py",
-    "recorded": "0aaa990d6da0",
-    "current": "c32bbf7d7a9a",
-    "reason": "commit ce39b659e not in the repository"
-   },
-   {
-    "witness": "computations/chirality-avg-content-chiral.witness.json",
-    "producer": "computations/chirality_avg_content_chiral.py",
-    "recorded": "2cdcec8db68c",
-    "current": "23e6d4afb6c0",
-    "reason": "commit 5905014c3 not in the repository"
+    "witness": "computations/chi-numpy-dtype-fix-benchmark.witness.json",
+    "producer": "computations/chi_numpy_dtype_fix_benchmark.py",
+    "recorded": "41e443db69f6",
+    "current": "6dc5acf9d758",
+    "reason": "commit 73f8fafac not in the repository"
    },
    {
     "witness": "computations/chirality-braid-average.witness.json",
@@ -1936,13 +2008,6 @@
     "reason": "commit 77083bddb not in the repository"
    },
    {
-    "witness": "computations/complex-volume-unification.witness.json",
-    "producer": "computations/complex_volume_witness.py",
-    "recorded": "fec3ee0407e0",
-    "current": "9f501d50c1eb",
-    "reason": "commit 342efc235 not in the repository"
-   },
-   {
     "witness": "computations/confined-knot-binding.witness.json",
     "producer": "computations/confined_knot_binding.py",
     "recorded": "00043dba54e8",
@@ -1955,6 +2020,13 @@
     "recorded": "a37f3f4f91e8",
     "current": "ddf116510b1f",
     "reason": "commit 77f2b68af not in the repository"
+   },
+   {
+    "witness": "computations/crystal-shift-nf-atomic.witness.json",
+    "producer": "computations/crystal_shift_nf_atomic.py",
+    "recorded": "66c9678b3a1d",
+    "current": "7c6a94ecf3e7",
+    "reason": "commit ce39b659e not in the repository"
    },
    {
     "witness": "computations/cyclotomic-depth3-dimension-pslq.witness.json",
@@ -1971,13 +2043,6 @@
     "reason": "commit 417e511ad not in the repository"
    },
    {
-    "witness": "computations/delta-lambda-2row-stratum.witness.json",
-    "producer": "computations/delta_lambda_2row_stratum_analysis.py",
-    "recorded": "7868e9152c15",
-    "current": "32ade7b87e5f",
-    "reason": "commit ce39b659e not in the repository"
-   },
-   {
     "witness": "computations/delta-lambda-canonical-residual.witness.json",
     "producer": "computations/delta_lambda_canonical_residual.py",
     "recorded": "c8493283280b",
@@ -1992,18 +2057,18 @@
     "reason": "commit ce39b659e not in the repository"
    },
    {
+    "witness": "computations/delta-lambda-feed-analysis.witness.json",
+    "producer": "computations/delta_lambda_feed_analysis.py",
+    "recorded": "263ae3991b7e",
+    "current": "1a7d566b5f3d",
+    "reason": "commit ce39b659e not in the repository"
+   },
+   {
     "witness": "computations/delta-lambda-imme-quartet.witness.json",
     "producer": "computations/delta_lambda_imme_quartet.py",
     "recorded": "36259da08bbb",
     "current": "f70b03d2e642",
     "reason": "commit dbe953a9e not in the repository"
-   },
-   {
-    "witness": "computations/delta-lambda-jsj-phase3.witness.json",
-    "producer": "computations/delta_lambda_jsj_phase3.py",
-    "recorded": "775664dc0a48",
-    "current": "74cbf0849f4f",
-    "reason": "commit c930a8b42 not in the repository"
    },
    {
     "witness": "computations/delta-lambda-z-coefficient-and-slope.witness.json",
@@ -2023,15 +2088,15 @@
     "witness": "computations/deltalambda/a4-brunnian-deficit-closed-form.witness.json",
     "producer": "computations/deltalambda/a4_brunnian_deficit_closed_form.py",
     "recorded": "a78199e32f8d",
-    "current": "e956aa52f8a3",
+    "current": "25a5de787c21",
     "reason": "commit d81c639e5 not in the repository"
    },
    {
-    "witness": "computations/deltalambda/gap10-tjon-correlation.witness.json",
-    "producer": "computations/deltalambda/gap10_tjon_correlation_probe.py",
-    "recorded": "c8b5104d6bab",
-    "current": "a78a4aeda942",
-    "reason": "commit 778fe617f not in the repository"
+    "witness": "computations/deltalambda/carrier-saturation-mechanism.witness.json",
+    "producer": "computations/deltalambda/carrier_saturation_mechanism_probe.py",
+    "recorded": "0d25fcf48239",
+    "current": "501a19c13c1b",
+    "reason": "commit 0da5917d5 not in the repository"
    },
    {
     "witness": "computations/deltalambda/helium4-mu4-cluster-moment.witness.json",
@@ -2039,6 +2104,13 @@
     "recorded": "461823a1926a",
     "current": "3242736f183f",
     "reason": "commit 9f85421be not in the repository"
+   },
+   {
+    "witness": "computations/deltalambda/li6-h18-amplification-discriminator.witness.json",
+    "producer": "computations/deltalambda/li6_h18_amplification_discriminator_probe.py",
+    "recorded": "603a8695984f",
+    "current": "b67b75aa5051",
+    "reason": "commit a94700961 not in the repository"
    },
    {
     "witness": "computations/deltalambda/mu3-frechet-perblock.witness.json",
@@ -2060,6 +2132,13 @@
     "recorded": "8f1ca94f93eb",
     "current": "3e45d7ccfe92",
     "reason": "commit bc402561b not in the repository"
+   },
+   {
+    "witness": "computations/deltalambda/tjon-external-cross-check.witness.json",
+    "producer": "computations/deltalambda/tjon_external_cross_check_probe.py",
+    "recorded": "2d6c35115a75",
+    "current": "7fd9b6d6ef08",
+    "reason": "commit 81da8a0d4 not in the repository"
    },
    {
     "witness": "computations/deltalambda/triangle-bond-submodularity.witness.json",
@@ -2167,13 +2246,6 @@
     "reason": "commit 6949424f7 not in the repository"
    },
    {
-    "witness": "computations/even-a-mirror-pair-phi8-scaling-test.witness.json",
-    "producer": "computations/extend_even_a_mirror_pair_test.py",
-    "recorded": "744169d22fdd",
-    "current": "7acd3683788c",
-    "reason": "commit 725417255 not in the repository"
-   },
-   {
     "witness": "computations/family-a-per-partition-h-decomposition-50dps.witness.json",
     "producer": "computations/family_a_per_partition_h_decomposition_50dps.py",
     "recorded": "1318643e53a3",
@@ -2228,6 +2300,13 @@
     "recorded": "1ad9c683756c",
     "current": "9a39ef1c0bfb",
     "reason": "commit d7a30bb9a not in the repository"
+   },
+   {
+    "witness": "computations/habiro/habiro-coefficients-atomic.witness.json",
+    "producer": "computations/habiro/habiro_coefficients_atomic.py",
+    "recorded": "3aae79b3b695",
+    "current": "eea700f30297",
+    "reason": "commit 06f7907c9 not in the repository"
    },
    {
     "witness": "computations/habiro/habiro-correction-shadow-price-test.witness.json",
@@ -2335,13 +2414,6 @@
     "reason": "commit c63457c87 not in the repository"
    },
    {
-    "witness": "computations/inter-nucleon-linked-channel.witness.json",
-    "producer": "computations/inter_nucleon_linked_channel.py",
-    "recorded": "aae72a8fd5cf",
-    "current": "5d8d113eb7f1",
-    "reason": "commit ce39b659e not in the repository"
-   },
-   {
     "witness": "computations/iterative-lp-dual-levels.witness.json",
     "producer": "computations/iterative_lp_dual_levels.py",
     "recorded": "9613fd589e3d",
@@ -2361,13 +2433,6 @@
     "recorded": "9cc891df3160",
     "current": "2f2cedeed3d8",
     "reason": "commit a50e64794 not in the repository"
-   },
-   {
-    "witness": "computations/k-star-variance-phase5d-5b.witness.json",
-    "producer": "computations/delta_lambda_k_star_variance_phase5d_5b.py",
-    "recorded": "d2d93e8cbda6",
-    "current": "a6d74927b95e",
-    "reason": "commit 8aafaf248 not in the repository"
    },
    {
     "witness": "computations/kummer-reflection-zeta5.witness.json",
@@ -2440,13 +2505,6 @@
     "reason": "commit e118c2a5c not in the repository"
    },
    {
-    "witness": "computations/log-delta-categorical-derivation.witness.json",
-    "producer": "computations/log_delta_categorical_derivation.py",
-    "recorded": "d510d3833a7f",
-    "current": "1f34ec42214f",
-    "reason": "commit 2a099a3af not in the repository"
-   },
-   {
     "witness": "computations/log-delta-full-mass-subtract.witness.json",
     "producer": "computations/log_delta_full_mass_subtract.py",
     "recorded": "13ef8e4b2c0a",
@@ -2485,7 +2543,7 @@
     "witness": "computations/m-tau-complex-volume-search.witness.json",
     "producer": "computations/m_tau_complex_volume_search.py",
     "recorded": "070ee5cbc2c1",
-    "current": "84550e72c2d9",
+    "current": "f22518ca48d4",
     "reason": "commit 985015eea not in the repository"
    },
    {
@@ -2508,6 +2566,20 @@
     "recorded": "7a4233ae624a",
     "current": "713e55ef1ae3",
     "reason": "commit be0f420da not in the repository"
+   },
+   {
+    "witness": "computations/markov/markov-trace-via-wenzl-lr.witness.json",
+    "producer": "computations/markov/markov_trace_via_wenzl_lr.py",
+    "recorded": "a886018fc611",
+    "current": "f0108a4c7fc1",
+    "reason": "commit ce39b659e not in the repository"
+   },
+   {
+    "witness": "computations/markov-identity-symbolic.witness.json",
+    "producer": "computations/markov/markov_identity_symbolic_probe.py",
+    "recorded": "8c762139e330",
+    "current": "84e17f3dbe66",
+    "reason": "commit 847c4435e not in the repository"
    },
    {
     "witness": "computations/mass-sweep-bar-sym-h2-coefficient.witness.json",
@@ -2552,6 +2624,13 @@
     "reason": "commit d7a30bb9a not in the repository"
    },
    {
+    "witness": "computations/molecular-frobenius-lp.witness.json",
+    "producer": "computations/molecular-frobenius-lp.py",
+    "recorded": "569eacbb1559",
+    "current": "90faf543267e",
+    "reason": "commit 073cc38ed not in the repository"
+   },
+   {
     "witness": "computations/molecular-trefoil-scan.witness.json",
     "producer": "computations/molecular-trefoil-scan.py",
     "recorded": "0bf20659e12f",
@@ -2571,6 +2650,13 @@
     "recorded": "f863d922715f",
     "current": "124067b7043f",
     "reason": "commit a6297c619 not in the repository"
+   },
+   {
+    "witness": "computations/ocneanu-cancellation-derivation.witness.json",
+    "producer": "computations/ocneanu_cancellation_derivation.py",
+    "recorded": "f6e545d07306",
+    "current": "5320e2f88997",
+    "reason": "commit eced91dc7 not in the repository"
    },
    {
     "witness": "computations/option-e-phase1-gram-h6.witness.json",
@@ -2601,13 +2687,6 @@
     "reason": "commit dd7f0ed7b not in the repository"
    },
    {
-    "witness": "computations/per-atom-hyperbolic-volume.witness.json",
-    "producer": "computations/per_atom_hyperbolic_volume_witness.py",
-    "recorded": "fbdee4b58881",
-    "current": "79eeeb72e18d",
-    "reason": "commit 078d896bb not in the repository"
-   },
-   {
     "witness": "computations/per-atom-rho-deviation.witness.json",
     "producer": "computations/per_atom_rho_deviation.py",
     "recorded": "79e8a73f7526",
@@ -2629,6 +2708,20 @@
     "reason": "commit 56e0d96d0 not in the repository"
    },
    {
+    "witness": "computations/per-irrep-pole-atom-crystal.witness.json",
+    "producer": "computations/per_irrep_pole_atom_crystal.py",
+    "recorded": "26b39bf85022",
+    "current": "c803172af497",
+    "reason": "commit 41f1b2a40 not in the repository"
+   },
+   {
+    "witness": "computations/per-irrep-pole-neutron-h3.witness.json",
+    "producer": "computations/per_irrep_pole_atom.py",
+    "recorded": "e1b63069c0fd",
+    "current": "12c9329bd5a0",
+    "reason": "commit 802516eed not in the repository"
+   },
+   {
     "witness": "computations/per-knot-density-per-block-wiring.witness.json",
     "producer": "computations/per_knot_density_per_block_wiring.py",
     "recorded": "ff10560725ae",
@@ -2641,6 +2734,13 @@
     "recorded": "cf81c650e944",
     "current": "ec78b68c1ebc",
     "reason": "commit 56e0d96d0 not in the repository"
+   },
+   {
+    "witness": "computations/per-nucleon-shift-derivation.witness.json",
+    "producer": "computations/per_nucleon_shift_derivation.py",
+    "recorded": "6a2c3804473a",
+    "current": "13eab7c662b2",
+    "reason": "commit c0eb9e057 not in the repository"
    },
    {
     "witness": "computations/per-pair-wedderburn-enumeration.witness.json",
@@ -2699,6 +2799,13 @@
     "reason": "commit 417e511ad not in the repository"
    },
    {
+    "witness": "computations/photon-ir-zero-mode-bring.witness.json",
+    "producer": "computations/photon_ir_zero_mode_bring.py",
+    "recorded": "7c81efce2452",
+    "current": "064663dd67cc",
+    "reason": "commit f3841feed not in the repository"
+   },
+   {
     "witness": "computations/photon-operator-table.witness.json",
     "producer": "computations/photon_operator_table.py",
     "recorded": "912ac3bd013d",
@@ -2716,7 +2823,7 @@
     "witness": "computations/probe-4-li6-rectangular-python-targeted.witness.json",
     "producer": "computations/probe_4_li6_rectangular_python.py",
     "recorded": "34d94c2b8cdb",
-    "current": "5dc91c7e5b75",
+    "current": "ffd9596ddbfc",
     "reason": "commit e84339ede not in the repository"
    },
    {
@@ -2839,13 +2946,6 @@
     "reason": "commit d7a30bb9a not in the repository"
    },
    {
-    "witness": "computations/probes/categorical_linking_reeb_flow_attack.witness.json",
-    "producer": "computations/probes/categorical_linking_reeb_flow_probe.py",
-    "recorded": "e22d82bb5f1a",
-    "current": "a6616bb1e6c5",
-    "reason": "commit 6f6cf1d3c not in the repository"
-   },
-   {
     "witness": "computations/probes/cyclotomic-cl3-orbit-sum-general-probe.witness.json",
     "producer": "computations/probes/cyclotomic_cl3_orbit_sum_general_probe.py",
     "recorded": "d0c27cbddd6f",
@@ -2921,6 +3021,13 @@
     "recorded": "1c1ea0d90629",
     "current": "1053605a2d91",
     "reason": "commit d7a30bb9a not in the repository"
+   },
+   {
+    "witness": "computations/probes/gg-production-bond-probe.witness.json",
+    "producer": "computations/probes/gg_production_bond_probe.py",
+    "recorded": "8f612f57ff24",
+    "current": "10affb22a484",
+    "reason": "commit b8f884c4f not in the repository"
    },
    {
     "witness": "computations/probes/gram-norm-binding-probe.witness.json",
@@ -3135,9 +3242,9 @@
    {
     "witness": "computations/probes/qbeta-5two-categorical-markov-volume.witness.json",
     "producer": "computations/probes/qbeta_5two_categorical_markov_volume_probe.py",
-    "recorded": "69141d2c0d02",
-    "current": "816dbbd65a71",
-    "reason": "commit aa193157b not in the repository"
+    "recorded": "93fa4132f6ff",
+    "current": "692edfe2b5f2",
+    "reason": "commit 9d8cb5b54 not in the repository"
    },
    {
     "witness": "computations/probes/qbeta-5two-median-borel-resummation.witness.json",
@@ -3171,7 +3278,7 @@
     "witness": "computations/probes/qbeta-habiro-integrality-kill-test.witness.json",
     "producer": "computations/probes/qbeta_habiro_integrality_kill_test.py",
     "recorded": "bb3c24b120f2",
-    "current": "8d7e6227e6e4",
+    "current": "a3a021205a8d",
     "reason": "commit 8012d26cc not in the repository"
    },
    {
@@ -3180,6 +3287,13 @@
     "recorded": "auto",
     "current": "2d4b",
     "reason": "commit auto not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
+    "producer": "computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py",
+    "recorded": "36bfe8f318e2",
+    "current": "ed33de3d417b",
+    "reason": "commit d89f444fd not in the repository"
    },
    {
     "witness": "computations/probes/qbeta-habiro-recursion.witness.json",
@@ -3395,8 +3509,15 @@
     "witness": "computations/qbeta/qbeta-ck-sseries-exact-rational.witness.json",
     "producer": "computations/qbeta/qbeta_ck_sseries_exact_rational.py",
     "recorded": "ac65a21d6684",
-    "current": "a1dc45cb2537",
+    "current": "2ef8bd8b5bc9",
     "reason": "commit 45676495c not in the repository"
+   },
+   {
+    "witness": "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json",
+    "producer": "computations/qbeta/qbeta_ck_sseries_operator_match_probe.py",
+    "recorded": "77bcb895709c",
+    "current": "f53deb839350",
+    "reason": "commit b19405a53 not in the repository"
    },
    {
     "witness": "computations/qbeta/qbeta-ck-wedderburn-decomposition-scope-probe.witness.json",
@@ -3455,6 +3576,13 @@
     "reason": "commit 829bbbc82 not in the repository"
    },
    {
+    "witness": "computations/qbeta/qbeta-fmap-phi-b-root-of-unity-reference.witness.json",
+    "producer": "computations/qbeta/qbeta_fmap_phi_b_root_of_unity_reference.py",
+    "recorded": "ee20f44a8478",
+    "current": "fd03d5849c7c",
+    "reason": "commit 71dddb293 not in the repository"
+   },
+   {
     "witness": "computations/qbeta/qbeta-h4-crossing-locus.witness.json",
     "producer": "computations/qbeta/qbeta_h4_crossing_locus_probe.py",
     "recorded": "946f0ce8d4df",
@@ -3486,7 +3614,7 @@
     "witness": "computations/qbeta/qbeta-habiro-delta-a-m-pattern-probe.witness.json",
     "producer": "computations/qbeta/qbeta_habiro_delta_a_m_pattern_probe.py",
     "recorded": "2675632fa031",
-    "current": "d97c3c5d0463",
+    "current": "e203f9193fe2",
     "reason": "commit 479a91eb2 not in the repository"
    },
    {
@@ -3703,7 +3831,7 @@
     "witness": "computations/sweeps/light-isotope-sweep.witness.json",
     "producer": "computations/sweeps/light_isotope_sweep.py",
     "recorded": "64be69537e0e",
-    "current": "6b19401e7288",
+    "current": "ea7603025a69",
     "reason": "commit 219170700 not in the repository"
    },
    {
@@ -3763,6 +3891,13 @@
     "reason": "commit 6949424f7 not in the repository"
    },
    {
+    "witness": "computations/tr-m-q-hecke-seminormal.witness.json",
+    "producer": "computations/tr_m_q_hecke_seminormal.py",
+    "recorded": "2e09fee63ac7",
+    "current": "ae2d73dbbdc4",
+    "reason": "commit 6949424f7 not in the repository"
+   },
+   {
     "witness": "computations/tritium-h5-psd-feasibility.witness.json",
     "producer": "computations/tritium_h5_psd_feasibility_witness.py",
     "recorded": "323b41beade7",
@@ -3775,6 +3910,13 @@
     "recorded": "c39c2af77b8e",
     "current": "72352830e062",
     "reason": "commit 58d7abe89 not in the repository"
+   },
+   {
+    "witness": "computations/unified-low-isotope-predictor.witness.json",
+    "producer": "computations/unified_low_isotope_predictor.py",
+    "recorded": "eba70b193ab6",
+    "current": "a84f7373d484",
+    "reason": "commit 6949424f7 not in the repository"
    },
    {
     "witness": "computations/unified-mass-molecular.witness.json",
@@ -3803,6 +3945,13 @@
     "recorded": "e3dbb4103394",
     "current": "1bf55601cde7",
     "reason": "commit 58d7abe89 not in the repository"
+   },
+   {
+    "witness": "computations/wenzl-lr-convention-adapter.witness.json",
+    "producer": "computations/wenzl_lr_convention_adapter.py",
+    "recorded": "258b74f8a97a",
+    "current": "ffcbef9849ab",
+    "reason": "commit 6949424f7 not in the repository"
    }
   ],
   "unresolvable": [
@@ -3880,7 +4029,7 @@
     "witness": "computations/a_operator/a-operator-categorical-preflight.witness.json",
     "producer": "computations/a_operator/a_operator_categorical.py",
     "recorded": "aa0db682111e",
-    "current": "11e1cb6cc599",
+    "current": "cec06129a0fe",
     "reason": "producer not at this path in 7dd28a8dc (renamed/moved)"
    },
    {
@@ -3891,10 +4040,10 @@
     "reason": "producer not at this path in d59d4e9f2 (renamed/moved)"
    },
    {
-    "witness": "computations/all-nuclides-wedderburn-spectral-v2.witness.json",
-    "producer": "computations/all_nuclides_wedderburn_spectral_v2.py",
-    "recorded": "1659f1531431",
-    "current": "1d96b1a2dfe7",
+    "witness": "computations/all-nuclides-sdp-admissibility.witness.json",
+    "producer": "computations/all_nuclides_sdp_admissibility.py",
+    "recorded": "c25a5fe7ca25",
+    "current": "531f54aad74d",
     "reason": "producer not at this path in 8fa41bb06 (renamed/moved)"
    },
    {
@@ -3933,13 +4082,6 @@
     "reason": "producer not at this path in 0fa83306d (renamed/moved)"
    },
    {
-    "witness": "computations/borromean-markov-trace-h-expansion-50dps.witness.json",
-    "producer": "computations/borromean_markov_trace_h_expansion_50dps.py",
-    "recorded": "69d9b8206f9d",
-    "current": "1b3920937fda",
-    "reason": "producer not at this path in 8a2bbbb68 (renamed/moved)"
-   },
-   {
     "witness": "computations/bring-homology-pairing-integration.witness.json",
     "producer": "computations/bring_homology_pairing_integration.py",
     "recorded": "a63dd3349d5d",
@@ -3947,32 +4089,11 @@
     "reason": "producer not at this path in b532e3ab8 (renamed/moved)"
    },
    {
-    "witness": "computations/c-alpha-alpha-categorical-via-jones-markov.witness.json",
-    "producer": "computations/c_alpha_alpha_categorical_via_jones_markov.py",
-    "recorded": "d657a5d01a43",
-    "current": "1c6d35c7ba33",
-    "reason": "producer not at this path in 134aa60f3 (renamed/moved)"
-   },
-   {
     "witness": "computations/canonical-braid-interface-composition.witness.json",
     "producer": "computations/probe_canonical_braid_interface_composition.py",
     "recorded": "bee7bb2ea0ac",
     "current": "5b76d69a5062",
     "reason": "producer not at this path in a79a8e9d2 (renamed/moved)"
-   },
-   {
-    "witness": "computations/categorical-bypass-volmatch-demo.witness.json",
-    "producer": "computations/categorical_bypass_volmatch_demo.py",
-    "recorded": "2996305e1614",
-    "current": "5d8f0b0a0f6e",
-    "reason": "producer not at this path in 7ed5bd92a (renamed/moved)"
-   },
-   {
-    "witness": "computations/chi-at-q0-matrix-m-tritium.witness.json",
-    "producer": "computations/chi_at_q0_via_matrix_m_mpfr.py",
-    "recorded": "334e85b6d2e9",
-    "current": "ba5ec9152c53",
-    "reason": "producer not at this path in d0db8243b (renamed/moved)"
    },
    {
     "witness": "computations/closed-form-tau-M-verification-phase5q.witness.json",
@@ -4108,13 +4229,6 @@
     "reason": "producer not at this path in b72816b33 (renamed/moved)"
    },
    {
-    "witness": "computations/knot-operator-census-group-actions.witness.json",
-    "producer": "computations/knot_operator_census_group_actions.py",
-    "recorded": "0d1cacfe2ffa",
-    "current": "dfe9cb94492a",
-    "reason": "producer not at this path in 84c7b53b9 (renamed/moved)"
-   },
-   {
     "witness": "computations/lepton-net-to-mass-bridge-exclusion.witness.json",
     "producer": "computations/lepton_net_to_mass_bridge_exclusion.py",
     "recorded": "58e461a2af27",
@@ -4134,13 +4248,6 @@
     "recorded": "eeacb94a651f",
     "current": "da2a4394f5b4",
     "reason": "producer not at this path in 9bf3c62b9 (renamed/moved)"
-   },
-   {
-    "witness": "computations/m-p-m-e-li2q.witness.json",
-    "producer": "computations/m_p_m_e_li2q.py",
-    "recorded": "db82f8d1c6ea",
-    "current": "d4ad9f79531c",
-    "reason": "producer not at this path in ff495d269 (renamed/moved)"
    },
    {
     "witness": "computations/mass-from-q-symbolic.witness.json",
@@ -4195,7 +4302,7 @@
     "witness": "computations/phase5/phase1a-per-partition-h-expansion.witness.json",
     "producer": "computations/phase5/phase1a_symbolic_trace_dominant_h_expansion.py",
     "recorded": "3008a9e71415",
-    "current": "9237611982a9",
+    "current": "10779e0b940b",
     "reason": "producer not at this path in 26d6c0987 (renamed/moved)"
    },
    {
@@ -4246,6 +4353,13 @@
     "recorded": "9e54833f34ae",
     "current": "0281d3edb84b",
     "reason": "producer not at this path in cae8b3972 (renamed/moved)"
+   },
+   {
+    "witness": "computations/probes/fourone-stokes-series-selfcheck.witness.json",
+    "producer": "computations/probes/fourone_stokes_series_selfcheck.py",
+    "recorded": "f18ad6d198a1",
+    "current": "4fa6b03c6e80",
+    "reason": "producer not at this path in 2a7b6b966 (renamed/moved)"
    },
    {
     "witness": "computations/probes/full-twist-root-of-unity-probe.witness.json",
@@ -4314,7 +4428,7 @@
     "witness": "computations/q0-figure-eight-phase-derivation.witness.json",
     "producer": "computations/q0_figure_eight_phase_derivation.py",
     "recorded": "ee765ad71e4e",
-    "current": "6ab8e8b7a95b",
+    "current": "6f80dca7ffdb",
     "reason": "producer not at this path in d434c6ad7 (renamed/moved)"
    },
    {
@@ -4335,14 +4449,14 @@
     "witness": "computations/qbeta/qbeta-habiro-cross-pair-factorization.witness.json",
     "producer": "computations/qbeta/qbeta_habiro_cross_pair_factorization.py",
     "recorded": "358925a6c1aa",
-    "current": "1a111bfbb321",
+    "current": "661458b2b60e",
     "reason": "producer not at this path in c4dffb015 (renamed/moved)"
    },
    {
     "witness": "computations/qbeta/qbeta-habiro-delta-am-factorization.witness.json",
     "producer": "computations/qbeta/qbeta_habiro_delta_am_factorization.py",
     "recorded": "16ebcf4da88b",
-    "current": "19bb10682a90",
+    "current": "ac8864430617",
     "reason": "producer not at this path in c4dffb015 (renamed/moved)"
    },
    {
@@ -4386,6 +4500,13 @@
     "recorded": "b8d9bb5630c0",
     "current": "2fcffa3d356c",
     "reason": "producer not at this path in d1a180705 (renamed/moved)"
+   },
+   {
+    "witness": "computations/qbeta/qbeta-magnitude-taylor-qstar.witness.json",
+    "producer": "computations/qbeta/qbeta_magnitude_taylor_qstar_probe.py",
+    "recorded": "11eedf81f23b",
+    "current": "0cdf6aadf958",
+    "reason": "producer not at this path in 3e188b3cb (renamed/moved)"
    },
    {
     "witness": "computations/qbeta/qbeta-odd-parity-avatar-reduction-probe.witness.json",
@@ -4447,7 +4568,7 @@
     "witness": "computations/spectral-coordinates-all-atoms.witness.json",
     "producer": "computations/spectral_coordinates_all_atoms.py",
     "recorded": "d910b8d462a7",
-    "current": "6f42f30572c3",
+    "current": "51dfd095ac82",
     "reason": "producer not at this path in 31142f8fb (renamed/moved)"
    },
    {
@@ -4489,7 +4610,7 @@
     "witness": "computations/sweeps/paper-six-term-isotope-sweep.witness.json",
     "producer": "computations/sweeps/paper_six_term_isotope_sweep.py",
     "recorded": "bcae3070767b",
-    "current": "769aa7ec85d8",
+    "current": "461986e5f49a",
     "reason": "producer not at this path in a853780c9 (renamed/moved)"
    },
    {
@@ -4503,7 +4624,7 @@
     "witness": "computations/tau-M-proton-closed-form-phase5l1.witness.json",
     "producer": "computations/tau_M_proton_closed_form_phase5l1.py",
     "recorded": "4d14efd7aad0",
-    "current": "8a46488e52d3",
+    "current": "cd263fcd8c3e",
     "reason": "producer not at this path in 8786d4587 (renamed/moved)"
    },
    {
@@ -4517,8 +4638,15 @@
     "witness": "computations/terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
     "producer": "computations/terms_2_3_atom_per_gen_mpfr_50dps.py",
     "recorded": "dfe6b983d000",
-    "current": "3bec3c2ef404",
+    "current": "24a3dfbdf61b",
     "reason": "producer not at this path in 83b19a2f8 (renamed/moved)"
+   },
+   {
+    "witness": "computations/theta-mn-linearchain-vs-allpairs.witness.json",
+    "producer": "computations/theta_mn_linearchain_vs_allpairs.py",
+    "recorded": "028791ade765",
+    "current": "163b938e17be",
+    "reason": "producer not at this path in b4e8483d9 (renamed/moved)"
    },
    {
     "witness": "computations/torus-knot-markov-trace-generalized.witness.json",
@@ -4547,13 +4675,6 @@
     "recorded": "3f05da1cc929",
     "current": "41a0728e46ac",
     "reason": "producer not at this path in 5ad92720a (renamed/moved)"
-   },
-   {
-    "witness": "computations/witness-staleness-triage.witness.json",
-    "producer": "computations/witness_staleness_triage.py",
-    "recorded": "d78d590db5ab",
-    "current": "56e95693797b",
-    "reason": "producer not at this path in adec866da (renamed/moved)"
    }
   ],
   "unparseable": []
