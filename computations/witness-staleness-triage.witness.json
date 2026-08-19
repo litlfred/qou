@@ -1,24 +1,33 @@
 {
  "computation": "witness-staleness-triage",
  "scriptFile": "witness_staleness_triage.py",
- "scriptHash": "8938bf6cc9d4",
- "commitSha": "b3f76980535b0e44f899a56629c0c0e9365fbb21",
+ "scriptHash": "18e8cebbd898",
+ "commitSha": "3f74d50b4708ae9494deadc0ae8d8ccd41e39d04",
  "description": "Splits self-stale witnesses by whether re-running the producer could change the payload. Normalisation drops comments, docstrings and formatting via ast.unparse; equality of the normalised sources means a re-run is bookkeeping only.",
  "scope": "scope-(a): decides only whether a re-run can move the payload. Says nothing about whether a witness is numerically correct, and ignores scriptCommitSha, which rebase-merge rewrites.",
  "counts": {
   "cosmetic": 0,
   "cosmetic_env_differs": 0,
-  "cosmetic_import_cone_drift": 3,
+  "cosmetic_import_cone_drift": 6,
   "cosmetic_strips_provenance": 0,
-  "substantive": 257,
-  "rewritten": 338,
-  "unresolvable": 103,
+  "substantive": 268,
+  "rewritten": 366,
+  "unresolvable": 111,
   "unparseable": 0
  },
  "data": {
   "cosmetic": [],
   "cosmetic_env_differs": [],
   "cosmetic_import_cone_drift": [
+   {
+    "witness": "computations/casimir-d6-qcorrection-structure.witness.json",
+    "producer": "computations/casimir_d6_qcorrection_structure.py",
+    "recorded": "072fb5ed3c8b",
+    "current": "5c168b4ff8f9",
+    "import_drift": [
+     "computations/substrate/witness_base.py"
+    ]
+   },
    {
     "witness": "computations/habiro/habiro-taylor-extraction.witness.json",
     "producer": "computations/habiro/habiro_exact_taylor_extraction.py",
@@ -30,10 +39,29 @@
     ]
    },
    {
+    "witness": "computations/probes/one-loop-cusp-normalisation-tension.witness.json",
+    "producer": "computations/probes/one_loop_cusp_normalisation_tension_probe.py",
+    "recorded": "a13c2ded717e",
+    "current": "c07628897e6c",
+    "import_drift": [
+     "computations/substrate/_precision.py",
+     "computations/substrate/witness_base.py"
+    ]
+   },
+   {
     "witness": "computations/qbeta/qbeta-c4-qhermite-entry-gate.witness.json",
     "producer": "computations/qbeta/qbeta_c4_qhermite_entry_gate_probe.py",
     "recorded": "4235f4e36d8d",
     "current": "dcfe9ac029ce",
+    "import_drift": [
+     "computations/substrate/witness_base.py"
+    ]
+   },
+   {
+    "witness": "computations/s5-so3-su2-u1-fiber-action.witness.json",
+    "producer": "computations/s5_so3_su2_u1_fiber_action.py",
+    "recorded": "ebf04365abfd",
+    "current": "d62058fdfbee",
     "import_drift": [
      "computations/substrate/witness_base.py"
     ]
@@ -63,10 +91,40 @@
     "current": "f070b372e226"
    },
    {
+    "witness": "computations/alpha-em-b2-bring-period-matrix.witness.json",
+    "producer": "computations/alpha_em_b2_bring_period_matrix_probe.py",
+    "recorded": "618801e9f029",
+    "current": "b99a6880b008"
+   },
+   {
+    "witness": "computations/alpha-em-b2-scalar-c.witness.json",
+    "producer": "computations/alpha_em_b2_scalar_c_probe.py",
+    "recorded": "1fcdf8435e46",
+    "current": "7e89a348923a"
+   },
+   {
     "witness": "computations/alpha-k-jones-markov-h3.witness.json",
     "producer": "computations/alpha/alpha_k_jones_markov_h3.py",
     "recorded": "3e3b79753110",
     "current": "cba7373fdc4f"
+   },
+   {
+    "witness": "computations/alpha_em/alpha-em-sigmaJ-geometric-carrier.witness.json",
+    "producer": "computations/alpha_em/alpha_em_sigmaJ_geometric_carrier_probe.py",
+    "recorded": "b52d3a3570dd",
+    "current": "ff5488e2969f"
+   },
+   {
+    "witness": "computations/alpha_em/bring-polarized-epstein-determinant.witness.json",
+    "producer": "computations/alpha_em/bring_polarized_epstein_determinant_probe.py",
+    "recorded": "3eb1b08baf01",
+    "current": "e89c4c12f223"
+   },
+   {
+    "witness": "computations/alpha_em/bring-polarized-jacobian-determinant.witness.json",
+    "producer": "computations/alpha_em/bring_polarized_jacobian_determinant_probe.py",
+    "recorded": "7ac85bc0c5a3",
+    "current": "43f58ee12812"
    },
    {
     "witness": "computations/alphaem-dilog-bloch-probe.witness.json",
@@ -969,6 +1027,12 @@
     "current": "b2406a6ced97"
    },
    {
+    "witness": "computations/codata-registry-triangulation.witness.json",
+    "producer": "computations/codata_registry_triangulation_probe.py",
+    "recorded": "a3aa09b8e360",
+    "current": "853b259059ed"
+   },
+   {
     "witness": "computations/constit-factor-and-volhyp.witness.json",
     "producer": "computations/constit_factor_and_volhyp_test.py",
     "recorded": "fb7773a0f293",
@@ -1032,7 +1096,7 @@
     "witness": "computations/em-linking-fh-link-bound-correction.witness.json",
     "producer": "computations/em_linking_fh_link_bound_correction.py",
     "recorded": "4fdaefea4102",
-    "current": "53ea236d5e9b"
+    "current": "3acd037b2fb1"
    },
    {
     "witness": "computations/figure-eight-kashaev-volume.witness.json",
@@ -1044,7 +1108,7 @@
     "witness": "computations/fr-pullback-cosh-h.witness.json",
     "producer": "computations/fr_pullback_cosh_h_test.py",
     "recorded": "4a870776041c",
-    "current": "1db65d47fd5f"
+    "current": "2ac5e4d0c825"
    },
    {
     "witness": "computations/fr-pullback-k1-k2.witness.json",
@@ -1188,7 +1252,7 @@
     "witness": "computations/mu-p-pin-sensitivity-map.witness.json",
     "producer": "computations/mu_p_pin_sensitivity_map.py",
     "recorded": "98ab2ae9a14e",
-    "current": "4288b95f0f9c"
+    "current": "b231de8cca2a"
    },
    {
     "witness": "computations/option-e-canonical-reeb-v5.witness.json",
@@ -1317,6 +1381,12 @@
     "current": "158b68540461"
    },
    {
+    "witness": "computations/probes/bring-golden-jones.witness.json",
+    "producer": "computations/probes/bring_golden_jones_probe.py",
+    "recorded": "b9c32a7aaedd",
+    "current": "236e3d191d89"
+   },
+   {
     "witness": "computations/probes/canonical-ordering-dof.witness.json",
     "producer": "computations/probes/canonical_ordering_dof_probe.py",
     "recorded": "894cafe018ee",
@@ -1392,7 +1462,13 @@
     "witness": "computations/probes/one-loop-dglz-prefactor-identification.witness.json",
     "producer": "computations/probes/one_loop_dglz_prefactor_identification_probe.py",
     "recorded": "7d6794a24040",
-    "current": "b432df659745"
+    "current": "51e2afddd2b6"
+   },
+   {
+    "witness": "computations/probes/one-loop-vdv-constant-closed-form.witness.json",
+    "producer": "computations/probes/one_loop_vdv_constant_closed_form_probe.py",
+    "recorded": "a94eb8c8b602",
+    "current": "58388a8dc2d2"
    },
    {
     "witness": "computations/probes/option-e-isospin-probe.witness.json",
@@ -1425,16 +1501,34 @@
     "current": "32f2b0b1b621"
    },
    {
+    "witness": "computations/probes/qbeta-g3-5two-saddle-exact-predictions.witness.json",
+    "producer": "computations/probes/qbeta_g3_5two_saddle_exact_predictions.py",
+    "recorded": "e05e36312b0c",
+    "current": "d30d5b7edf93"
+   },
+   {
     "witness": "computations/probes/qbeta-habiro-element-probe.witness.json",
     "producer": "computations/probes/qbeta_habiro_element_probe.py",
     "recorded": "6cd682db7cbe",
     "current": "d9336f5c4c04"
    },
    {
+    "witness": "computations/probes/qborel-confluence-pos.witness.json",
+    "producer": "computations/probes/qborel_confluence_pos_probe.py",
+    "recorded": "2a4c26603567",
+    "current": "f292e0b7980f"
+   },
+   {
     "witness": "computations/probes/r2core-schwinger-measure-explore.witness.json",
     "producer": "computations/probes/r2core_schwinger_measure_explore_probe.py",
     "recorded": "9fe415470110",
     "current": "02731f2eede2"
+   },
+   {
+    "witness": "computations/probes/rep-jackson-identification.witness.json",
+    "producer": "computations/probes/rep_jackson_identification_probe.py",
+    "recorded": "7cc3c7311456",
+    "current": "1920d488d9b8"
    },
    {
     "witness": "computations/probes/rep-tightness.witness.json",
@@ -1571,8 +1665,8 @@
    {
     "witness": "computations/witness-staleness-triage.witness.json",
     "producer": "computations/witness_staleness_triage.py",
-    "recorded": "56e95693797b",
-    "current": "8938bf6cc9d4"
+    "recorded": "8938bf6cc9d4",
+    "current": "18e8cebbd898"
    },
    {
     "witness": "computations/xi-ell-phi-q-probe.witness.json",
@@ -1740,13 +1834,6 @@
     "recorded": "94184bd90523",
     "current": "122cfe91a00b",
     "reason": "commit b181e43f2 not in the repository"
-   },
-   {
-    "witness": "computations/atomic-mass-via-rho-k.witness.json",
-    "producer": "computations/atomic_mass_via_rho_k.py",
-    "recorded": "8fa103c830c3",
-    "current": "5bd926a592c6",
-    "reason": "commit 07fd41c51 not in the repository"
    },
    {
     "witness": "computations/audits/canonical-a-k-magnitude-audit.witness.json",
@@ -1990,7 +2077,7 @@
     "witness": "computations/chi-numpy-dtype-fix-benchmark.witness.json",
     "producer": "computations/chi_numpy_dtype_fix_benchmark.py",
     "recorded": "41e443db69f6",
-    "current": "6dc5acf9d758",
+    "current": "affea1db739a",
     "reason": "commit 73f8fafac not in the repository"
    },
    {
@@ -2106,6 +2193,13 @@
     "reason": "commit 0da5917d5 not in the repository"
    },
    {
+    "witness": "computations/deltalambda/geometric-qdilog-lifted-amplitude.witness.json",
+    "producer": "computations/deltalambda/geometric_qdilog_lifted_amplitude_probe.py",
+    "recorded": "ea9c9c3ef707",
+    "current": "f7747969ef4c",
+    "reason": "commit afb2cbb94 not in the repository"
+   },
+   {
     "witness": "computations/deltalambda/helium4-mu4-cluster-moment.witness.json",
     "producer": "computations/deltalambda/helium4_mu4_cluster_moment_probe.py",
     "recorded": "461823a1926a",
@@ -2127,6 +2221,13 @@
     "reason": "commit c0b759503 not in the repository"
    },
    {
+    "witness": "computations/deltalambda/mu4-vs-nuclear-4n-force-bound.witness.json",
+    "producer": "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py",
+    "recorded": "892dd50fa7d0",
+    "current": "5482d558318e",
+    "reason": "commit 263d3ded2 not in the repository"
+   },
+   {
     "witness": "computations/deltalambda/perknot-pn-bond-resolved-extensivity.witness.json",
     "producer": "computations/deltalambda/perknot_pn_bond_resolved_extensivity_probe.py",
     "recorded": "1ea9b59c1f08",
@@ -2139,13 +2240,6 @@
     "recorded": "8f1ca94f93eb",
     "current": "3e45d7ccfe92",
     "reason": "commit bc402561b not in the repository"
-   },
-   {
-    "witness": "computations/deltalambda/tjon-external-cross-check.witness.json",
-    "producer": "computations/deltalambda/tjon_external_cross_check_probe.py",
-    "recorded": "2d6c35115a75",
-    "current": "7fd9b6d6ef08",
-    "reason": "commit 81da8a0d4 not in the repository"
    },
    {
     "witness": "computations/deltalambda/triangle-bond-submodularity.witness.json",
@@ -2921,7 +3015,7 @@
     "witness": "computations/probes/alpha-em-r2-quillen-curvature-probe.witness.json",
     "producer": "computations/probes/alpha_em_r2_quillen_curvature_probe.py",
     "recorded": "7366339fe196",
-    "current": "39ba0c65d708",
+    "current": "033d45478e1f",
     "reason": "commit e9fbe1107 not in the repository"
    },
    {
@@ -2937,6 +3031,20 @@
     "recorded": "90ffe213cc9c",
     "current": "45627d2138e9",
     "reason": "commit 49c6c5336 not in the repository"
+   },
+   {
+    "witness": "computations/probes/borromean-3d-index.witness.json",
+    "producer": "computations/probes/borromean_3d_index.py",
+    "recorded": "598dd0df8147",
+    "current": "ebeb233a7177",
+    "reason": "commit 244e87220 not in the repository"
+   },
+   {
+    "witness": "computations/probes/borromean-angle-structure-lp-probe.witness.json",
+    "producer": "computations/probes/borromean_angle_structure_lp_probe.py",
+    "recorded": "6f59ed3fdd89",
+    "current": "8647315b2101",
+    "reason": "commit 0ffdfb17f not in the repository"
    },
    {
     "witness": "computations/probes/borromean-per-lambda-fr-probe.witness.json",
@@ -2988,6 +3096,20 @@
     "reason": "commit 4ce89ca96 not in the repository"
    },
    {
+    "witness": "computations/probes/eunit-g2-derivation.witness.json",
+    "producer": "computations/probes/eunit_g2_derivation_probe.py",
+    "recorded": "ea1a31982db1",
+    "current": "2a217d47b99e",
+    "reason": "commit 43661aee7 not in the repository"
+   },
+   {
+    "witness": "computations/probes/eunit-magnus-order2.witness.json",
+    "producer": "computations/probes/eunit_magnus_order2_probe.py",
+    "recorded": "7a98e448f24e",
+    "current": "c054a369a133",
+    "reason": "commit 0ffdfb17f not in the repository"
+   },
+   {
     "witness": "computations/probes/frobenius-gram-matrix-probe.witness.json",
     "producer": "computations/probes/frobenius_gram_matrix_probe.py",
     "recorded": "f71989f918b7",
@@ -3035,6 +3157,13 @@
     "recorded": "8f612f57ff24",
     "current": "10affb22a484",
     "reason": "commit b8f884c4f not in the repository"
+   },
+   {
+    "witness": "computations/probes/gk-d5-cyclic-dilog-4one.witness.json",
+    "producer": "computations/probes/gk_d5_cyclic_dilog_4one_probe.py",
+    "recorded": "498abe400e0e",
+    "current": "4dd9caf05815",
+    "reason": "commit 94bbe54b4 not in the repository"
    },
    {
     "witness": "computations/probes/gram-norm-binding-probe.witness.json",
@@ -3114,17 +3243,45 @@
     "reason": "commit 417e511ad not in the repository"
    },
    {
+    "witness": "computations/probes/keystone-colored-sigma235-wrt.witness.json",
+    "producer": "computations/probes/keystone_colored_sigma235_wrt.py",
+    "recorded": "321f800776c0",
+    "current": "0073377fa3ea",
+    "reason": "commit 88292e03e not in the repository"
+   },
+   {
     "witness": "computations/probes/keystone-qbessel-tricomi-c0q-nodes.witness.json",
     "producer": "computations/probes/keystone_qbessel_tricomi_c0q_nodes.py",
     "recorded": "ad5574590fa0",
-    "current": "15b6b2abf108",
+    "current": "ba093b5c1f39",
     "reason": "commit 95cf7b962 not in the repository"
    },
    {
     "witness": "computations/probes/keystone-qhankel-eq2-vacuum-row.witness.json",
     "producer": "computations/probes/keystone_qhankel_eq2_vacuum_row.py",
     "recorded": "43e5939111fa",
-    "current": "f3f5ce3297a2",
+    "current": "528488ba923c",
+    "reason": "commit 95cf7b962 not in the repository"
+   },
+   {
+    "witness": "computations/probes/keystone-route1-sigma345-constancy-s013.witness.json",
+    "producer": "computations/probes/keystone_route1_sigma345_constancy_s013.py",
+    "recorded": "5f2e311fd113",
+    "current": "9d0b5620c1f7",
+    "reason": "commit 50a85d770 not in the repository"
+   },
+   {
+    "witness": "computations/probes/keystone-valuemap-genuine-smatrix-s013.witness.json",
+    "producer": "computations/probes/keystone_valuemap_genuine_smatrix_s013.py",
+    "recorded": "9199fa6f48b5",
+    "current": "78148d65a1c9",
+    "reason": "commit aabd63235 not in the repository"
+   },
+   {
+    "witness": "computations/probes/keystone-valuemap-target-is-compact-hecke.witness.json",
+    "producer": "computations/probes/keystone_valuemap_target_is_compact_hecke.py",
+    "recorded": "46b8589df21c",
+    "current": "946f9078a64c",
     "reason": "commit 95cf7b962 not in the repository"
    },
    {
@@ -3254,6 +3411,34 @@
     "reason": "commit 9d8cb5b54 not in the repository"
    },
    {
+    "witness": "computations/probes/qbeta-5two-colored-tower-barodd-qstar.witness.json",
+    "producer": "computations/probes/qbeta_5two_colored_tower_barodd_qstar_probe.py",
+    "recorded": "d01f2e3c4ce5",
+    "current": "ab2177d63433",
+    "reason": "commit ee28f7a77 not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-5two-dilog-qsqrt7-closed-form.witness.json",
+    "producer": "computations/probes/qbeta_5two_dilog_qsqrt7_closed_form_probe.py",
+    "recorded": "fcea9f621e5b",
+    "current": "77bba00212a6",
+    "reason": "commit 0ae437572 not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-5two-habiro-polynomial-match.witness.json",
+    "producer": "computations/probes/qbeta_5two_habiro_polynomial_match_probe.py",
+    "recorded": "19064d46774f",
+    "current": "87b2d73614f5",
+    "reason": "commit 9582d4038 not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-5two-masbaum-cyclotomic.witness.json",
+    "producer": "computations/probes/qbeta_5two_masbaum_cyclotomic_probe.py",
+    "recorded": "44c4960b614a",
+    "current": "4283bf319584",
+    "reason": "commit 76944209c not in the repository"
+   },
+   {
     "witness": "computations/probes/qbeta-5two-median-borel-resummation.witness.json",
     "producer": "computations/probes/qbeta_5two_median_borel_resummation_probe.py",
     "recorded": "b55158a38220",
@@ -3261,11 +3446,32 @@
     "reason": "commit afa12a689 not in the repository"
    },
    {
+    "witness": "computations/probes/qbeta-5two-quantum-volume.witness.json",
+    "producer": "computations/probes/qbeta_5two_quantum_volume_probe.py",
+    "recorded": "9df4170995e7",
+    "current": "df301d27a85a",
+    "reason": "commit 6c39ebd8d not in the repository"
+   },
+   {
     "witness": "computations/probes/qbeta-5two-saddle-sum-rule-and-provenance.witness.json",
     "producer": "computations/probes/qbeta_5two_saddle_sum_rule_and_provenance_probe.py",
     "recorded": "f97bd808108d",
     "current": "78b913d9e17f",
     "reason": "commit ef1da0bf5 not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-5two-stokes-barodd-index.witness.json",
+    "producer": "computations/probes/qbeta_5two_stokes_barodd_index_probe.py",
+    "recorded": "d7c1bd5f8a7f",
+    "current": "48dc8a689f68",
+    "reason": "commit 80bd9ad75 not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-5two-theorem3-shape-u.witness.json",
+    "producer": "computations/probes/qbeta_5two_theorem3_shape_u_probe.py",
+    "recorded": "9ada21a337ef",
+    "current": "9569b6442de1",
+    "reason": "commit d98ac3af0 not in the repository"
    },
    {
     "witness": "computations/probes/qbeta-c3-habiro-3rung-crossanchor-rigidity.witness.json",
@@ -3280,6 +3486,41 @@
     "recorded": "bede44e14e28",
     "current": "d48c02082bc0",
     "reason": "commit 8012d26cc not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-g3-deformed-blocks-41.witness.json",
+    "producer": "computations/probes/qbeta_g3_deformed_blocks_41.py",
+    "recorded": "9282db487407",
+    "current": "96125c83db74",
+    "reason": "commit 86df9c49b not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-g3-deformed-saddle-exact-bridge.witness.json",
+    "producer": "computations/probes/qbeta_g3_deformed_saddle_exact_bridge.py",
+    "recorded": "50681cd1c941",
+    "current": "ddc35d6a516a",
+    "reason": "commit 20dfbade8 not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-g3-fourone-index-assembly.witness.json",
+    "producer": "computations/probes/qbeta_g3_fourone_index_assembly.py",
+    "recorded": "843b06314dcc",
+    "current": "0dd099e93b28",
+    "reason": "commit 374eedf6d not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-g3-ggm-eq48-bridge-41.witness.json",
+    "producer": "computations/probes/qbeta_g3_ggm_eq48_bridge_41.py",
+    "recorded": "64b0854b0f33",
+    "current": "d34ac5721cd1",
+    "reason": "commit b6ddbbe84 not in the repository"
+   },
+   {
+    "witness": "computations/probes/qbeta-g3-ggm-stokes-41.witness.json",
+    "producer": "computations/probes/qbeta_g3_ggm_stokes_41.py",
+    "recorded": "1e15485adc31",
+    "current": "facbc46ee5da",
+    "reason": "commit 69c40ca8b not in the repository"
    },
    {
     "witness": "computations/probes/qbeta-habiro-integrality-kill-test.witness.json",
@@ -3327,7 +3568,7 @@
     "witness": "computations/probes/quillen-anomaly-classification-probe.witness.json",
     "producer": "computations/probes/quillen_anomaly_classification_probe.py",
     "recorded": "85943fc6484a",
-    "current": "f6a5b7c98795",
+    "current": "873b6861b6f1",
     "reason": "commit 453d7e292 not in the repository"
    },
    {
@@ -3345,6 +3586,20 @@
     "reason": "commit e43d064e4 not in the repository"
    },
    {
+    "witness": "computations/probes/tau-binding-hitchin-wzw-wall.witness.json",
+    "producer": "computations/probes/tau_binding_hitchin_wzw_wall_probe.py",
+    "recorded": "7edf04fec597",
+    "current": "092dafa987f2",
+    "reason": "commit 317ea55ba not in the repository"
+   },
+   {
+    "witness": "computations/probes/tau-dictionary-fricke-spin-probe.witness.json",
+    "producer": "computations/probes/tau_dictionary_fricke_spin_probe.py",
+    "recorded": "61f0446e141a",
+    "current": "f5ae54f9d9aa",
+    "reason": "commit 61f069e9e not in the repository"
+   },
+   {
     "witness": "computations/probes/tau-dictionary-hauptmodul-validator.witness.json",
     "producer": "computations/probes/tau_dictionary_hauptmodul_validator.py",
     "recorded": "45ac7a97d359",
@@ -3359,18 +3614,25 @@
     "reason": "commit b7a80f862 not in the repository"
    },
    {
+    "witness": "computations/probes/vector2-a5-sprime-residue.witness.json",
+    "producer": "computations/probes/vector2_a5_sprime_residue_probe.py",
+    "recorded": "a424767e598d",
+    "current": "1df3e22c9ab0",
+    "reason": "commit 94bbe54b4 not in the repository"
+   },
+   {
+    "witness": "computations/probes/x050-50a-hecke-gate-probe.witness.json",
+    "producer": "computations/probes/x050_50a_hecke_gate_probe.py",
+    "recorded": "864cbaee2de3",
+    "current": "2e46c8d047d8",
+    "reason": "commit df6e09d84 not in the repository"
+   },
+   {
     "witness": "computations/proton-mass-full-tower-50dps.witness.json",
     "producer": "computations/derive_m_p_hecke_full_tower_50dps.py",
     "recorded": "b32f4b5c69c7",
     "current": "f597b2ee422e",
     "reason": "commit 6949424f7 not in the repository"
-   },
-   {
-    "witness": "computations/proton-residual-rootcause.witness.json",
-    "producer": "computations/proton_residual_rootcause.py",
-    "recorded": "8f42f433f657",
-    "current": "fe9b3aec5227",
-    "reason": "commit 58d7abe89 not in the repository"
    },
    {
     "witness": "computations/q-beta-operator-valued-N3.witness.json",
@@ -3422,6 +3684,13 @@
     "reason": "commit 77f2b68af not in the repository"
    },
    {
+    "witness": "computations/qbeta/apoly-census-ldegree-certification.witness.json",
+    "producer": "computations/qbeta/apoly_census_ldegree_certification_probe.py",
+    "recorded": "72c79ce3ccc8",
+    "current": "3c8b12039ad5",
+    "reason": "commit b113c12d8 not in the repository"
+   },
+   {
     "witness": "computations/qbeta/qbeta-alpha-eff-hoefsmit-symbolic-probe.witness.json",
     "producer": "computations/qbeta/qbeta_alpha_eff_hoefsmit_symbolic_probe.py",
     "recorded": "c36f9c0d878e",
@@ -3455,6 +3724,13 @@
     "recorded": "38c11fa6947b",
     "current": "ae8dc2639f1d",
     "reason": "commit 58d7abe89 not in the repository"
+   },
+   {
+    "witness": "computations/qbeta/qbeta-c3-phib-quantum-saddle.witness.json",
+    "producer": "computations/qbeta/qbeta_c3_phib_quantum_saddle_probe.py",
+    "recorded": "22e3cd87c410",
+    "current": "58f02b9f9a1a",
+    "reason": "commit b89c0d1bc not in the repository"
    },
    {
     "witness": "computations/qbeta/qbeta-c3even-exact-sseries.witness.json",
@@ -3548,6 +3824,13 @@
     "reason": "commit 58d7abe89 not in the repository"
    },
    {
+    "witness": "computations/qbeta/qbeta-cusp-shape-drift-robustness.witness.json",
+    "producer": "computations/qbeta/qbeta_cusp_shape_drift_robustness_probe.py",
+    "recorded": "98da3545ea46",
+    "current": "71c2aafb0445",
+    "reason": "commit e2b7bf648 not in the repository"
+   },
+   {
     "witness": "computations/qbeta/qbeta-decay-sdp-full-ck-derivation.witness.json",
     "producer": "computations/qbeta/qbeta_decay_sdp_full_ck.py",
     "recorded": "e55e6f5b8135",
@@ -3569,6 +3852,13 @@
     "reason": "commit 58d7abe89 not in the repository"
    },
    {
+    "witness": "computations/qbeta/qbeta-disc5-parity.witness.json",
+    "producer": "computations/qbeta/qbeta_disc5_parity_probe.py",
+    "recorded": "28c17f9d1306",
+    "current": "e6f551b27faf",
+    "reason": "commit 9c4733b34 not in the repository"
+   },
+   {
     "witness": "computations/qbeta/qbeta-eigenphase-taylor-in-u.witness.json",
     "producer": "computations/qbeta/qbeta_eigenphase_taylor_in_u.py",
     "recorded": "8db63b1d58b5",
@@ -3579,14 +3869,14 @@
     "witness": "computations/qbeta/qbeta-fmap-phi-b-channel-separation.witness.json",
     "producer": "computations/qbeta/qbeta_fmap_phi_b_channel_separation_probe.py",
     "recorded": "2b859d7059f2",
-    "current": "a9ec986995fe",
+    "current": "4eb0626b64af",
     "reason": "commit 829bbbc82 not in the repository"
    },
    {
     "witness": "computations/qbeta/qbeta-fmap-phi-b-root-of-unity-reference.witness.json",
     "producer": "computations/qbeta/qbeta_fmap_phi_b_root_of_unity_reference.py",
     "recorded": "ee20f44a8478",
-    "current": "fd03d5849c7c",
+    "current": "a8dfdb70753f",
     "reason": "commit 71dddb293 not in the repository"
    },
    {
@@ -4054,11 +4344,32 @@
     "reason": "producer not at this path in 8fa41bb06 (renamed/moved)"
    },
    {
+    "witness": "computations/alpha_em/alpha-em-b2-canonical-scale-ratio.witness.json",
+    "producer": "computations/alpha_em/alpha_em_b2_canonical_scale_ratio_probe.py",
+    "recorded": "b22a98ccfb9b",
+    "current": "e774ec5c74fd",
+    "reason": "producer not at this path in 0d1e6212b (renamed/moved)"
+   },
+   {
+    "witness": "computations/alpha_em/alpha-em-f-t2-burau-at-i.witness.json",
+    "producer": "computations/alpha_em/alpha_em_f_t2_burau_at_i_probe.py",
+    "recorded": "5764e3c3685c",
+    "current": "212208d856bf",
+    "reason": "producer not at this path in 9b20131e7 (renamed/moved)"
+   },
+   {
     "witness": "computations/alpha_em/alpha-em-pi-origin-adjudication.witness.json",
     "producer": "computations/alpha_em/alpha_em_pi_origin_adjudication_probe.py",
     "recorded": "56134a37757f",
     "current": "f46d1a4ce361",
     "reason": "producer not at this path in 17db2ebba (renamed/moved)"
+   },
+   {
+    "witness": "computations/alpha_em/bring-genus4-polarized-epstein-detprime.witness.json",
+    "producer": "computations/alpha_em/bring_genus4_polarized_epstein_detprime_probe.py",
+    "recorded": "8cd363e2e7f8",
+    "current": "17688b3a48a7",
+    "reason": "producer not at this path in a2215e324 (renamed/moved)"
    },
    {
     "witness": "computations/atomic-tr-m-helium4-canonical.witness.json",
@@ -4164,6 +4475,13 @@
     "recorded": "6275124a25ad",
     "current": "8cb05a18a959",
     "reason": "producer not at this path in df5a49f95 (renamed/moved)"
+   },
+   {
+    "witness": "computations/deltalambda/octahedral-e2-coloring-quadratic.witness.json",
+    "producer": "computations/deltalambda/octahedral_e2_coloring_quadratic_probe.py",
+    "recorded": "74c013f2a957",
+    "current": "b97b6914f8f2",
+    "reason": "producer not at this path in d317a9c29 (renamed/moved)"
    },
    {
     "witness": "computations/deltalambda/ylambda-normalization-closed-form.witness.json",
@@ -4306,13 +4624,6 @@
     "reason": "producer not at this path in a565201b8 (renamed/moved)"
    },
    {
-    "witness": "computations/phase5/phase1a-per-partition-h-expansion.witness.json",
-    "producer": "computations/phase5/phase1a_symbolic_trace_dominant_h_expansion.py",
-    "recorded": "3008a9e71415",
-    "current": "10779e0b940b",
-    "reason": "producer not at this path in 26d6c0987 (renamed/moved)"
-   },
-   {
     "witness": "computations/probe-markov-trace-factorization.witness.json",
     "producer": "computations/probe_markov_trace_factorization.py",
     "recorded": "76a4084ce51a",
@@ -4346,6 +4657,13 @@
     "recorded": "bb1ddc0b0ffe",
     "current": "0d83928ab573",
     "reason": "producer not at this path in 8daa9c554 (renamed/moved)"
+   },
+   {
+    "witness": "computations/probes/fivetwo-stokes-matrix-zq.witness.json",
+    "producer": "computations/probes/fivetwo_stokes_matrix_zq.py",
+    "recorded": "24b6f2921b54",
+    "current": "af6bde8c53a7",
+    "reason": "producer not at this path in 518f59f07 (renamed/moved)"
    },
    {
     "witness": "computations/probes/flavor-split-alpha-bond-dilog.witness.json",
@@ -4404,6 +4722,27 @@
     "reason": "producer not at this path in 65982e10f (renamed/moved)"
    },
    {
+    "witness": "computations/probes/qbeta-g3-5two-exact-blocks.witness.json",
+    "producer": "computations/probes/qbeta_g3_5two_exact_blocks.py",
+    "recorded": "7108c772ffb8",
+    "current": "f0a1b5a1682a",
+    "reason": "producer not at this path in 26973183b (renamed/moved)"
+   },
+   {
+    "witness": "computations/probes/qbeta-g3-5two-state-integral-split-pin.witness.json",
+    "producer": "computations/probes/qbeta_g3_5two_state_integral_split_pin.py",
+    "recorded": "642d279b2920",
+    "current": "9a11468ecd55",
+    "reason": "producer not at this path in ecce22678 (renamed/moved)"
+   },
+   {
+    "witness": "computations/probes/six-crossing-shape-field-discriminant.witness.json",
+    "producer": "computations/probes/six_crossing_shape_field_discriminant.py",
+    "recorded": "41f20255adc3",
+    "current": "1a844deef407",
+    "reason": "producer not at this path in be80d3229 (renamed/moved)"
+   },
+   {
     "witness": "computations/probes/tritium-8-11-jones-markov-probe.witness.json",
     "producer": "computations/probes/tritium_8_11_jones_markov_probe.py",
     "recorded": "9323f93c549a",
@@ -4444,6 +4783,13 @@
     "recorded": "3695df15aee6",
     "current": "e1e663137f3a",
     "reason": "producer not at this path in 1c8905dcd (renamed/moved)"
+   },
+   {
+    "witness": "computations/qbeta/qbeta-c3-mq0-nk-scan.witness.json",
+    "producer": "computations/qbeta/qbeta_c3_mq0_nk_scan.py",
+    "recorded": "7f168a5c8bb0",
+    "current": "982641b275d7",
+    "reason": "producer not at this path in cbd5de37b (renamed/moved)"
    },
    {
     "witness": "computations/qbeta/qbeta-c3-rung2-bracket-comparison.witness.json",
