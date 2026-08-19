@@ -56,6 +56,27 @@ from q0_migration_tolerance_triage import (  # noqa: E402
     AT_RISK,
 )
 
+#: Producers DECLARED to run at the ideal (muon) anchor, from
+#: `computations/q0_anchor_manifest.json`. These are not unmigrated leftovers
+#: -- they are the canonical 3-CAL layer, where CAL-2 is 𝔇_β with proxy
+#: m_mu/m_e, so muon is correct there BY DEFINITION. Sweeping one does not
+#: migrate a stale witness; it moves a canonical-chain artifact off the layer
+#: it is declared to live on.
+#:
+#: The μ-p tension (11.54 ppb; 9.5 sigma on m_mu) is only measurable because
+#: both pins exist. Collapsing the ideal layer into the experimental one does
+#: not tidy the corpus, it deletes the comparison.
+#:
+#: Measured 2026-08-19: of 576 muon-anchored witnesses, 219 come from a
+#: declared ideal_muon producer and 357 do not. The 357 are the migration.
+def _declared_ideal_muon() -> set[str]:
+    try:
+        man = json.loads((REPO / "computations" / "q0_anchor_manifest.json").read_text())
+    except Exception:
+        return set()
+    return set(man.get("ideal_muon") or [])
+
+
 #: Producers that must NEVER be swept, with the reason.
 #:
 #: `q_pinning_50_digit` writes `q-pinning-50-digit.witness.json`, which is not
@@ -162,6 +183,11 @@ def main() -> int:
     ap.add_argument("--no-push", action="store_true", help="commit but don't push")
     ap.add_argument("--skip", default="", help="comma-separated producer "
                     "scriptFiles to defer (e.g. slow heavy-atom producers)")
+    ap.add_argument("--include-declared-ideal", action="store_true",
+                    help="also sweep producers DECLARED ideal_muon in "
+                         "q0_anchor_manifest.json (default: exclude — they "
+                         "are on their correct layer by declaration; "
+                         "re-declaring one is an owner call)")
     ap.add_argument("--include-at-risk", action="store_true",
                     help="also sweep producers whose witnesses carry "
                          "assertions too tight to absorb the ~1e-7 anchor "
@@ -189,6 +215,13 @@ def main() -> int:
     blocked = [s for s in producers if Path(s).name in NEVER_SWEEP]
     producers = [s for s in producers if Path(s).name not in NEVER_SWEEP]
 
+    # Manifest gate. Declared ideal-layer producers are on their correct
+    # anchor already; the migration targets the UNDECLARED remainder.
+    ideal = _declared_ideal_muon()
+    declared = [s for s in producers if Path(s).stem in ideal]
+    if not args.include_declared_ideal:
+        producers = [s for s in producers if Path(s).stem not in ideal]
+
     # Risk gate. A producer whose witnesses carry assertions with no margin
     # left is deferred by default rather than swept blind: those failures are
     # FINDINGS and are worth reading one at a time, not discovering in the
@@ -204,6 +237,12 @@ def main() -> int:
         f"no_scriptFile(manual)={len(no_script)}")
     for s in blocked:
         log(f"  BLOCKED  {s} — {NEVER_SWEEP[Path(s).name]}")
+    if declared:
+        verb = "INCLUDED" if args.include_declared_ideal else "EXCLUDED"
+        log(f"  {len(declared)} producer(s) DECLARED ideal_muon in the "
+            f"manifest ({verb}; muon is correct there by declaration):")
+        for s in sorted(declared):
+            log(f"    ideal-layer  {s}")
     if at_risk:
         verb = "INCLUDED" if args.include_at_risk else "DEFERRED"
         log(f"  {len(at_risk)} producer(s) carry at-risk assertions "

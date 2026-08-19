@@ -302,3 +302,62 @@ that gained 84 witnesses, which is the useful robustness signal.
    `_q0_value_for_anchor` at a definition that is not itself a sweep target.
    The second is the real fix; the first is the safe stopgap.
 3. Then the 25 producers, AT-RISK first, one at a time.
+
+## 2026-08-19 (b) — the migration is 357 witnesses, not 940: the ideal layer is not a leftover
+
+Owner question, and the right one: *"why muon pinned? is it comparison? if so
+ok, otherwise proton pin."* Measured rather than reasoned about.
+
+`computations/q0_anchor_manifest.json` declares which producers run at the
+ideal anchor. Cross-tabbing that against the muon-anchored witnesses:
+
+    muon witnesses from a DECLARED ideal_muon producer : 219
+    muon witnesses NOT declared (unmigrated)           : 357
+
+So the answer splits cleanly, and it is exactly the owner's rule:
+
+* **219 — comparison, leave them.** The declared ideal layer is the canonical
+  3-CAL chain: CAL-2 is `𝔇_β` with proxy `m_μ/m_e`, so muon is correct there
+  **by definition**, not by inertia. The μ–p tension (11.54 ppb; 9.5 σ on
+  m_μ) is only *measurable because both pins exist*. Collapsing the ideal
+  layer into the experimental one does not tidy the corpus — it deletes the
+  comparison that the framework's own cross-check depends on.
+* **357 — not comparison, migrate them.** No manifest entry, no declared
+  reason, just unswept. These are the migration, and the target is proton per
+  the 2026-08-07 directive.
+
+**Caveat on the split.** "Declared" is intent *as recorded*, not proof. A
+producer could be undeclared and legitimately need muon (nobody declared it),
+or declared and wrongly so. The manifest is the repo's own statement of intent
+and so the right first cut, but a producer moving between the two sets is a
+judgement call, not a sweep step.
+
+### The driver did not read the manifest at all
+
+Measured before the fix: of the 23 producers in the driver's plan, **16 were
+declared `ideal_muon`**. Sweeping them would have migrated canonical-chain
+artifacts off their declared layer — the same class of error as the pin-file
+overwrite in §1 above, distributed across sixteen files instead of
+concentrated in one, and correspondingly harder to notice.
+
+Fixed: the driver now loads the manifest and excludes declared ideal-layer
+producers by default (`--include-declared-ideal` to override, which is an
+owner call since it re-declares a layer). Effect on the live plan:
+
+    before:  333 producers considered
+    after :  132 candidates
+             215 excluded — declared ideal_muon
+               1 blocked  — NEVER_SWEEP (the pin definition)
+               3 deferred — at-risk assertions
+             110 actually sweepable
+
+### Correction to my own previous "next" item
+
+The 2026-08-19 (a) entry ended by pointing at `alpha_k_jones_markov_h12` as
+the remaining live straddle. **It is not** — it was repinned to
+`q_parameter.Q_50_DIGIT_STR` (proton) earlier in this arc; its `Q_PIN` line is
+a `record_upstream` provenance call, not a value read. I carried that item
+forward from `qou-m9xp`'s older "To close" list without reading its own later
+correction four sections down. The corpus is the source of truth, not the
+status note — including when the status note is in the same file as its
+retraction.
