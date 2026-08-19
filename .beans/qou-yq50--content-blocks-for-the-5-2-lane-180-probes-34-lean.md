@@ -139,3 +139,54 @@ timidity about 7^-1 -- in characteristic 7 the hypotheses FORCE 3*L1 = 0, so
 L1 = 0 and every target degenerates to 0 = 0. The divided form would be vacuous
 exactly where it could not be stated. Clear the denominator; let the content sit
 where the denominator is invertible.
+
+## Tranche 4 — the envelope transport (1 block)
+
+`prop:fivetwo-envelope-transport` ->
+`QOU.QBeta.FiveTwoDeformedSaddle.envelopeS_total` (in FiveTwoTransport.lean --
+note file name != namespace).
+
+S(pi) - S(0) = pi^2, given continuity on [0,pi] and dS/dphi = 2phi off ONE
+exceptional point (phi_0, where the discriminant vanishes, two root branches
+collide, and no differentiable labelling exists through it).
+
+## Two things worth having in the paper
+
+1. **Why one exceptional point is not a fudge.** S is a SYMMETRIC function of
+   the roots, so as a function of phi it needs no labelling at all -- well
+   defined and continuous across phi_0 precisely where the branches swap. The
+   labelling is needed only to differentiate term by term, a local operation.
+   Reusable and not specific to 5_2: a symmetric function of a family of roots
+   is insensitive to the monodromy that permutes them, so an obstruction to
+   labelling the branches is NOT an obstruction to the symmetric total.
+
+2. **Non-vacuity is PROVED.** `envelopeS_total_nonvacuous` exhibits
+   S(phi) = phi^2 satisfying both hypotheses. Deliberately trivial -- it exists
+   to rule out the vacuous reading, not to supply evidence, and the file says
+   so. Good authoring practice and the honest counterpart to the AGENTS.md
+   anti-vacuity discipline; worth copying.
+
+## Scope carried into the block
+
+The derivative is a HYPOTHESIS. What is formalised is the integration step
+(hypothesis -> total pi^2, tolerating one exceptional point), NOT the
+identification of the integrand. That identification is numerical (Route 30:
+S' = 2phi per root to 4.6e-41, summed 9.2e-41) and is not formalised.
+
+## Arc status: 8 blocks
+
+trace-field, saddle-sum-rule, bar-odd-arithmetic-home, dt-spectrum-split,
+stokes-unimodular, level-seven-ladder, three-sevens, envelope-transport.
+
+Remaining sorry-free and unnarrated: FiveTwoRootStructure (26 thms),
+FiveTwoDiscriminant, FiveTwoRogersReflection/RogersExtend, the pentagon
+machinery (FiveTwoComplexPentagon has 119 decls but its headline is already
+narrated as the sum rule), FiveTwoCyclotomicBloch, the Envelope* family,
+FiveTwoBranch*/ArgSector/CutAvoidance (branch bookkeeping -- mostly
+infrastructure rather than results).
+
+HONEST ASSESSMENT: the high-value surface is largely covered. What remains is
+mostly (a) infrastructure lemmas whose narrative face is already carried by the
+results they support, and (b) FiveTwoRootStructure/Discriminant, which are the
+root-existence and discriminant plumbing under the trace-field block. A tranche
+5 would be real but thinner than 1-4.
