@@ -96,3 +96,46 @@ because the "det +-2 phenomenon" is cited elsewhere.
   table to prose rather than risk it.
 - `qa-sweep` lives in the folio-assistant clone after miga:
   `bun run folio-assistant/content/pipeline/qa-sweep.ts <block-path>`.
+
+## Tranche 3 — the level-seven ladder, and the three sevens (2 blocks)
+
+1. `prop:fivetwo-level-seven-ladder` ->
+   `QOU.QBeta.FiveTwoLevelSevenLadder.sum_of_numerators`. Three five-term
+   instances give the three Q(zeta_7)^+ numerators m = (17,5,-1); the 7 comes
+   from the quadratic residues {1,2,4} mod 7 acting on the three real
+   conjugates. `L` abstract, generic CommRing. Conditional on its hypotheses,
+   which are NOT proved there (five-term, Landen, Route 8 transport).
+
+2. `rem:fivetwo-three-sevens` (interprets the trace-field block). The reusable
+   lesson of this whole arc.
+
+## THREE distinct sevens, measured
+
+| seven | layer | field |
+|---|---|---|
+| det(5_2) = 7 | abelian / Alexander | Q(sqrt-7) |
+| dt+ + dt- = 7 | tau-even Stokes sum | none claimed |
+| level 7 | cyclotomic | Q(zeta_7)^+ |
+
+and the trace field is a FOURTH object (cubic, disc -23).
+
+## The near-miss that makes a bare degree check insufficient
+
+Computed rather than recalled:
+
+    Q(zeta_7)^+ : x^3 - 2x^2 -  x + 1,  disc  49, totally real, CYCLIC
+    trace field : x^3 - 2x^2 + 3x - 1,  disc -23, one real place, S_3
+
+**Both cubic. Both minimal polynomials open `x^3 - 2x^2`.** Different fields.
+So matching degree AND matching leading coefficients is worth nothing — which
+is the sharper form of the qou-5gh6 lesson (where my own degree heuristic was
+the over-claim). A degree check rules things OUT (tower law); it never rules
+anything IN.
+
+## An authoring pattern worth keeping
+
+`char_seven_forces`: the ladder is stated CLEARED (7T = ...) not divided. Not
+timidity about 7^-1 -- in characteristic 7 the hypotheses FORCE 3*L1 = 0, so
+L1 = 0 and every target degenerates to 0 = 0. The divided form would be vacuous
+exactly where it could not be stated. Clear the denominator; let the content sit
+where the denominator is invertible.
