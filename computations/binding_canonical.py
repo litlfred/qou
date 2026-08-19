@@ -75,6 +75,7 @@ from codata_constants import (
     AME_B_TRITIUM_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
+    ame_binding_mev,
 )
 
 
@@ -456,23 +457,32 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
 
 
 if __name__ == "__main__":
-    # AME 2020 binding-energy comparison targets imported from the
-    # central codata_constants registry (validation-only; not CAL inputs).
-    # Previously hardcoded inline: (2.22452, 8.481821, 7.71804, 28.295674);
-    # the tritium value was a typo (correct AME 2020 = 8.481798). Now
-    # loaded from `ame-2020-binding-energies.witness.json` via the
-    # AME_B_*_MEV_VALIDATION constants (PR #1105).
+    # AME 2020 binding-energy comparison targets, every one read from the
+    # vendored AME2020 table via `codata_constants.ame_binding_mev(Z, A)`
+    # (validation-only; not CAL inputs).
+    #
+    # PR #1105 routed the first four through the AME_B_*_MEV_VALIDATION
+    # constants after finding the inline tritium value was a typo
+    # (8.481821 for 8.481798). The last three stayed as literals and were
+    # each ~500 eV off — a larger error than the typo that prompted the
+    # first fix:
+    #     6Li  31.994526  vs  31.9939872   (-538.8 eV)
+    #     7Li  39.244531  vs  39.2450807   (+549.7 eV)
+    #     7Be  37.600350  vs  37.6008409   (+490.9 eV)
+    # A hand-typed reference value drifts silently; an accessor call cannot.
+    # (2026-08-19, alongside the ame-2020-binding-energies witness becoming
+    # producer-backed rather than hand-entered.)
     ATOMS = [
         ("D",    1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
         ("T",    1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("3He",  2, 1, float(AME_B_HE3_MEV_VALIDATION)),
         ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
-        ("6Li",  3, 3, 31.994526),
+        ("6Li",  3, 3, float(ame_binding_mev(3, 6))),
         # A=7 mirror pair — the SECOND proton-excess test after T/³He (the
         # Z-correction slope test, per the 9b workplan). ⁷Be (Z>N) is the
         # proton-rich member; ⁷Li (N>Z) its mirror. AME2020 binding (MeV).
-        ("7Li",  3, 4, 39.244531),
-        ("7Be",  4, 3, 37.600350),
+        ("7Li",  3, 4, float(ame_binding_mev(3, 7))),
+        ("7Be",  4, 3, float(ame_binding_mev(4, 7))),
     ]
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
