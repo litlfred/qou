@@ -199,6 +199,28 @@ def _y_lambda_at_convention_C_HISTORICAL(
     process-pool parallelism for n ≥ 9 where partition count grows
     rapidly.  Set to `os.cpu_count()` (or a smaller value to leave
     cores free) for maximum throughput on the numerical-q path.
+
+    SIDE EFFECT — the FIRST call raises global `mp.dps` to 50
+    ---------------------------------------------------------
+    Measured: a caller holding `mp.dps = 40` gets 50 back after its first
+    `y_lambda_at(...)`.  Subsequent calls leave it alone, so this is a
+    once-per-process effect, not a per-call one.
+
+    The cause is a LAZY IMPORT, not this function's arithmetic: the first
+    call pulls `y_lambda_su_n`, whose module scope runs `set_compute_dps(50)`
+    (`y_lambda_su_n.py:269`).  That call is DELIBERATE AND CORRECT — it must
+    precede the `mpf()` registry literals below it or `REG_ZC` / `REG_ZD` are
+    parsed at mpmath's default 15 dps, rounded to 53 bits, and are already
+    wrong when built; `module_const_precision_audit --strict` flags exactly
+    those two.  Do not "fix" it by removing it.
+
+    It is documented here because the consequence is invisible at the call
+    site: a producer that sets `mp.dps = 40`, calls this, and then records
+    `"compute_dps": mp.dps` writes a witness saying 50 while the file says 40.
+    The values are not wrong — the later arithmetic really does run at 50 —
+    but the declared precision is not the computed precision.  If you need a
+    guaranteed working precision, set it AFTER your first call, or wrap the
+    region in `mp.workdps(...)`.
     """
     shapes = [tuple(s) for s in m.partitions_of(n)]
     if q_val is None:
@@ -314,6 +336,17 @@ def global_wedderburn_sum_jones_markov(
     total = sp.Integer(0)
     for lam in shapes:
         y = y_vals[lam]
+        # TL_n restriction: under convention D the Ocneanu weight y_λ is
+        # EXACTLY zero for every λ with ≥ 3 rows — proved sorry-free for all
+        # n by QOU.QBeta.WenzlWeight.conventionD_weight_eq_zero_iff (see
+        # docs/audits/2026-08-16-tl-all-n-weight-vanishing.md). Those blocks
+        # span ker(H_n ↠ TL_n), of dimension n! − Catalan(n) (1, 10, 78, 588,
+        # 4611, 38890 at n = 3..8). Their contribution y·χ is identically 0,
+        # so skipping them BEFORE the expensive character build changes no
+        # value — it only avoids computing χ_λ in the radical. This is a
+        # speed change, not a correctness fix.
+        if sp.sympify(y).is_zero:
+            continue  # zero Ocneanu weight ⇒ y·χ = 0 (TL_n radical)
         if char_kind == "mn-atom":
             chi = specht_character_atomic(
                 lam, Z, N, include_inter, m_pp, m_pn, m_nn

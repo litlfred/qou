@@ -275,6 +275,23 @@ def _ame_atomic_mev(Z: int, A: int) -> mp.mpf:
                  * mp.mpf("1e-6") * _U_MEV)
 
 
+def ame_binding_mev(Z: int, A: int) -> mp.mpf:
+    """Public accessor for the vendored AME2020 total binding energy (MeV).
+
+    The named `AME_B_*_MEV_VALIDATION` constants below cover only the seven
+    light nuclides that happened to be needed when they were added.  Consumers
+    working over a *table* of nuclides (mass sweeps, binding ladders) need the
+    same source for arbitrary `(Z, A)`, and without a public entry point they
+    hand-type the rest -- which is exactly how `mass_table_ppb.py` ended up with
+    eleven typed literals sitting up to 1.6e-5 away from this table, in the same
+    column as five registry-derived values.
+
+    Same data, same precision, same `workdps` as the constants: this is an
+    alias for `_ame_binding_mev`, not a second source.
+    """
+    return _ame_binding_mev(Z, A)
+
+
 AME_B_DEUTERON_MEV_VALIDATION = _ame_binding_mev(1, 2)
 AME_B_TRITIUM_MEV_VALIDATION = _ame_binding_mev(1, 3)
 AME_B_HE3_MEV_VALIDATION = _ame_binding_mev(2, 3)
@@ -371,6 +388,8 @@ def __getattr__(name: str):
 
 
 __all__ = [
+    # Vendored-AME accessor for nuclides with no named constant below
+    "ame_binding_mev",
     # Legitimate calibration inputs (CAL-1) + derived cross-check (Q_β)
     "M_E_MEV", "M_E_MEV_ERR",
     "U_MEV", "U_MEV_ERR",  # atomic-mass-unit → MeV (CODATA-2022, from codata_2022_source)
