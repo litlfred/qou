@@ -37,6 +37,15 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+#: Repo root. Producers do NOT all live under `computations/` -- some sit in
+#: `docs/audits/scripts/`, and some are `.sage` or `.lean` rather than `.py`.
+#: Scanning only ROOT for only `*.py` reported those witnesses as tier-E
+#: orphans ("provenance is gone") when their producer was on disk the whole
+#: time, which is the worst direction for this tool to be wrong in: the
+#: recommended disposition for an orphan is to retire it.
+REPO = ROOT.parent
+#: Extensions a `scriptFile` may legitimately name.
+PRODUCER_SUFFIXES = (".py", ".sage", ".lean", ".sh")
 AUDIT_WITNESS = "derivation-chain-audit.witness.json"
 SCRIPT_RE = re.compile(r"script:\s*([^\s,;]+)")
 FAMILY_MIN = 2  # a producer emitting >= this many witnesses is a "family"
@@ -60,14 +69,33 @@ def _referenced_producers() -> set[str]:
     return out
 
 
-def _guess_producer(witness_name: str) -> str:
-    """Same convention the validator falls back on: foo-bar.witness.json -> foo_bar.py."""
-    return witness_name.replace(".witness.json", "").replace("-", "_") + ".py"
+def _guess_producer(witness_name: str, on_disk: set[str] | None = None) -> str:
+    """Same convention the validator falls back on: foo-bar.witness.json -> foo_bar.py.
+
+    A witness with no `scriptFile` is guessed by this name convention, and the
+    guess used to assume `.py`.  Sage producers (`computations/substrate/*.sage`)
+    therefore came back as tier-E orphans with the producer sitting right next to
+    the witness.  When `on_disk` is supplied, prefer whichever suffix actually
+    exists; fall back to `.py` so the reported name stays stable when none does.
+    """
+    stem = witness_name.replace(".witness.json", "").replace("-", "_")
+    if on_disk:
+        for suf in PRODUCER_SUFFIXES:
+            if stem + suf in on_disk:
+                return stem + suf
+    return stem + ".py"
 
 
 def categorize() -> dict:
     referenced = _referenced_producers()
-    on_disk = {p.name for p in ROOT.rglob("*.py")}
+    # `.claude/worktrees/` holds checkouts of OTHER branches; a producer that
+    # exists only there is not on disk for THIS checkout, so it must not count.
+    on_disk = {
+        p.name
+        for suf in PRODUCER_SUFFIXES
+        for p in REPO.rglob("*" + suf)
+        if ".claude" not in p.parts and "_deprecated" not in p.parts
+    }
 
     records = []
     for wp in _scan("*.witness.json"):
@@ -90,7 +118,7 @@ def categorize() -> dict:
             audit_only = False
         else:
             continue
-        producer = pathlib.Path(script_file).name if script_file else _guess_producer(wp.name)
+        producer = pathlib.Path(script_file).name if script_file else _guess_producer(wp.name, on_disk)
         records.append({
             "witness": str(wp.relative_to(ROOT)),
             "producer": producer,
