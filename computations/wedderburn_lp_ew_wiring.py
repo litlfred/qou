@@ -684,11 +684,15 @@ def main() -> int:
     n_expected = sum(
         1 for r in lp_results_per_atom if r.get("n_pairs", 0) > 0
     )
+    # STRINGS, per add_assertion's own docstring ("the drained convention,
+    # qou-t0rf"). These two are integer COUNTS — `float(...)` on them was
+    # never meaningful, and it put three raw float64 fields into the witness
+    # per assertion (computed/expected/tolerance), nine across the three.
     w.add_assertion(
         "lp_strong_duality_all_klr_atoms",
-        float(n_strong_dual),
-        float(n_expected),
-        tolerance=0.5,
+        str(n_strong_dual),
+        str(n_expected),
+        tolerance="0.5",
     )
     # KLR positivity assertion: every atom's KLR supply vector
     # min(t) ≥ -ε (tiny numerical noise tolerated; substantive
@@ -700,16 +704,16 @@ def main() -> int:
     )
     w.add_assertion(
         "klr_positivity_supply_vector_all_atoms",
-        float(n_klr_positive),
-        float(n_expected),
-        tolerance=0.5,
+        str(n_klr_positive),
+        str(n_expected),
+        tolerance="0.5",
     )
     # Weinberg verdict: best rel_err < 2.5% (the σ_2 σ_4 σ_2 baseline)
     w.add_assertion(
         "weinberg_minimal_delta_I_optimal",
-        float(best["rel_err"]),
-        0.0219,  # baseline 2.19% rel_err
-        tolerance=0.005,
+        fmt(mp.mpf(str(best["rel_err"]))),
+        "0.0219",  # baseline 2.19% rel_err
+        tolerance="0.005",
     )
 
     # (A) LP/SDP-EW deliverable
@@ -751,7 +755,10 @@ def main() -> int:
                or fmt(res_dict["duality_gap"]))
     w.add_data("y0_star", res_dict.get("y0_star_str")
                or fmt(res_dict["y0_star"]))
-    w.add_data("y_star", [float(y) for y in res_dict.get("y_star", [])])
+    # The solver's MPFR decimals, not their f64 twins — 28 raw float64 fields
+    # entered here alone. Same `*_str`-first rule as the other numerics.
+    w.add_data("y_star", res_dict.get("y_star_str")
+               or [fmt(y) for y in res_dict.get("y_star", [])])
     w.add_data("active_set", list(res_dict.get("active_set", [])))
 
     # (B) Alt-Δ_I Weinberg probe
