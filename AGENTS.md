@@ -1639,7 +1639,52 @@ muon; muon-anchor → ~4000σ on proton).
    (R2) does not change this.** R2 restates the end state; it does not
    scope the sweep, so the sign-off requirement stands. If the owner
    intends R2 to authorise the bulk migration, that has to be said here
-   explicitly — do not infer it from R2's wording. Concretely:
+   explicitly — do not infer it from R2's wording.
+
+   > **🟧 OWNER AUTHORISATION, RECORDED 2026-08-19 (the gate above is now
+   > SATISFIED — read the four constraints before running anything).**
+   > The owner gave the directive in session on 2026-08-15, in these words:
+   >
+   > > *"we want proton unless for an explicit reason (like comparison on
+   > > proton vs muon results). otherwise pin proton"*
+   > > *"fix all, even if not visible."*
+   >
+   > It is recorded **here** because the gate above asks for exactly that
+   > and a chat transcript does not satisfy it. PR #5049 held the bulk
+   > reclassification back on precisely this ground, and it was right to:
+   > the branch could not show the directive, only infer it.
+   >
+   > **The authorisation is real, and it is not a blank cheque.** The first
+   > attempt at this migration broke `main` for **208 producers**
+   > (`qou-m9xp`), so it carries four constraints, each one bought:
+   >
+   > 1. **NEVER re-pin an anchor-DEFINING witness.**
+   >    `q-pinning-50-digit.witness.json` is what
+   >    `qou_substrate.witness._q0_value_for_anchor("muon")` READS. Re-pinning
+   >    it does not migrate a consumer — it redefines what "muon" *means*, so
+   >    every muon-stamped witness in the corpus then disagrees with its own
+   >    anchor (262 `Q0_FLIP`s) and `q_parameter`'s anti-corruption guard
+   >    hard-fails every `ideal_muon` producer, including the one that would
+   >    regenerate the anchor. `q0_repin_sweep.py` now excludes it by name
+   >    (`ANCHOR_DEFINING` / `ANCHOR_DEFINITIONS`); do not remove that.
+   > 2. **The muon anchor keeps its definition.** "Proton everywhere"
+   >    governs what new compute *pins to*, not whether the muon layer still
+   >    has a value. Something in the tree must continue to hold the muon
+   >    50-digit string or the ideal/CAL-2 layer becomes unstatable.
+   > 3. **A comparison producer needs BOTH pins and the manifest cannot
+   >    serve it.** A per-process override supplies one. Such a producer
+   >    reads `q_at()` / `q_muon_at()` by name and belongs under
+   >    `physical_proton` — see `mu_substrate_tension_audit_100dps`, which
+   >    understated its own subject **155×** while listed `ideal_muon`.
+   > 4. **Do not split the change.** The manifest reclassification and the
+   >    witnesses it re-pins are one change. #5049 merged the witnesses and
+   >    held the manifest, and the half that landed is the half that broke
+   >    `main`. Land them together or not at all.
+   >
+   > Scope: `qou-1c4y`. Rules 1–4 immediately below still apply to
+   > everything the sweep does not cover.
+
+   Concretely:
 
    > **Bean reference corrected 2026-08-15.** This paragraph previously
    > said the sweep is "tracked under bean `tnjb`". It is not, and the

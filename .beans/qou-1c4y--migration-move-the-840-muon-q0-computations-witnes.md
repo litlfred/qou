@@ -182,3 +182,44 @@ did, and that was an overclaim.
    actual bulk, and it is a producer-side question, not a witness-rewrite.
 3. Only then consider the 709 labelled-muon files, and only where a producer
    re-run is genuinely wanted — not as a string substitution.
+
+## 2026-08-19 — the gate is now satisfied, and the sweep is not a re-run
+
+**Authorisation.** The owner's 2026-08-15 directive ("otherwise pin proton";
+"fix all, even if not visible") is now recorded in AGENTS.md §q₀ anchor
+convention rule 4, which is where the gate asked for it. PR #5049 held the
+bulk reclassification back on exactly that ground and was right to — a chat
+transcript does not satisfy a durable gate.
+
+**What the first attempt cost, and what it bought.** It broke `main` for 208
+producers (`qou-m9xp`). The four constraints now recorded with the
+authorisation come out of that, and the second is the one an agent is most
+likely to skip:
+
+1. never re-pin an anchor-DEFINING witness (`q-pinning-50-digit`) — that
+   redefines what "muon" *means* rather than migrating a consumer;
+2. the muon anchor keeps a definition — "proton everywhere" governs what new
+   compute pins to, not whether the ideal layer is statable;
+3. a comparison producer needs BOTH pins, so the manifest cannot serve it —
+   it reads `q_at()`/`q_muon_at()` by name and lives under `physical_proton`;
+4. manifest and witnesses are ONE change — #5049 split them and the half that
+   landed is the half that broke main.
+
+**Sequencing that follows from those.** This is not "run the sweep". It is:
+
+- confirm `q0_repin_sweep.py` still carries `ANCHOR_DEFINING` /
+  `ANCHOR_DEFINITIONS` (added by the `qou-m9xp` fix — do not remove);
+- flip the manifest and run the sweep in ONE branch, so the two never separate
+  again;
+- expect the sweep to resurrect long-broken producers: three did last time
+  (missing scipy; `float(mpc)`; `'.6f'` on an mpf), and each crash was a real
+  finding, not noise — the `float(mpc)` one was the probe correctly reporting
+  that ²H and ³H have negative bar ratios;
+- classify every float64-carrying producer it surfaces with
+  `classify_production_reach.py`; production → mpmath, otherwise
+  `precision_tier: "float64"` + `deprecated` per the owner's ruling.
+
+**Measured, so the next agent does not re-measure.** Triaging the 257 down is
+not available: by precision, 255/255 carry ≥9 sig figs somewhere; by reader
+count, 44 have a reader and 211 are leaves — and skipping leaves is how the
+μ–p tension audit understated its own subject 155× unnoticed.
