@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-19T07:41:30Z
-updated_at: 2026-08-19T08:03:10Z
+updated_at: 2026-08-19T08:17:31Z
 parent: qou-59vq
 ---
 
@@ -48,3 +48,25 @@ Define the diagonal target, induct on k with the two branches above, then read o
 
 ## Hypothesis note (from the existing GAP docstring, verified)
 The stated theorem carries (0 < q) (q != 1), which is SOUND but NARROWER than the construction needs: seminormalRep/hoefsmit_seminormal_rep take (q != 0) (q^2 != 1), admitting negative q. Once discharged, relax to the latter.
+
+
+
+## PROGRESS 2026-08-19 (PR #5290) — the entire inductive step is formalised sorry-free
+Landed in QJucysMurphyEigen.lean, all axiom-clean:
+- seminormalParam_weighted_cancel — a(d)q^{2c} + a(-d)q^{2(c+d)} = 0 (the crux; via 1/(1-x⁻¹) = -x/(1-x)).
+- seminormalParam_sq_of_one / _neg_one / _sq_mul — the inadmissible branch: a(d)^2 q^{2c} = q^{2(c+d)} for d = ±1.
+- jmStep_offDiag — the off-diagonal entry of S·D·S is offDiag(d)·(cancel bracket) = 0.
+- jmStep_diag — the diagonal entry is a(d)^2 q^{2c} + offDiag(-d)offDiag(d) q^{2(c+d)} = q^{2(c+d)}, using SeminormalRep.offDiag_mul_neg (offDiag(d)offDiag(-d) = 1 + a(d)a(-d)) to collapse it onto the SAME cancel identity.
+
+### NEW FINDING: one identity governs the whole step
+Both entries — not just the off-diagonal — reduce to seminormalParam_weighted_cancel. The diagonal case works because offDiag(d)offDiag(-d) = 1 + a(d)a(-d), so
+  a(d)^2 q^{2c} + (1 + a(d)a(-d)) q^{2(c+d)} = a(d)·[cancel bracket] + q^{2(c+d)} = q^{2(c+d)}.
+That is why the induction closes, and it means the remaining work needs NO further algebra.
+
+## What remains: plumbing only
+1. jmDiag q lam k := Matrix.diagonal (fun T => q^(2*cellContent (cellOf T (k+1)))).
+2. Base: rho(L_0) = 1 = jmDiag 0, from SytAdmissible.cellOf_one (cellOf T 1 = (0,0), content 0). Already on main.
+3. Step: rho(L_{k+1}) = genMat(k+1) * jmDiag k * genMat(k+1) = jmDiag (k+1). Expand Matrix.mul_apply; each column of genMat has ≤2 nonzero entries (genMat_apply_of_ne / _of_not_admissible / genMat_swap), so the sum collapses to the two terms handled by jmStep_diag and jmStep_offDiag.
+4. Index bookkeeping: L_k ↔ value k+1; rho(sigma_k) = genMat q (k+1); axialDist T (k+1) = content(cell of k+2) - content(cell of k+1); the swap sends cell of k+1 to cell of k+2 (cellOf_swapTableau_self/_succ), which is why d_k(sT) = q^{2(c+d)}.
+5. Then barSymJMSum: sum_k (q^{2c_k} + q^{-2c_k}) over k = 0..n runs over ALL cells of lambda, giving cellContentCoshSum — independent of T, i.e. a scalar matrix. Discharges barSymJMSum_block_eigenvalue.
+The theorem must live DOWNSTREAM (QJucysMurphy does not import SeminormalRep), same pattern as HoefsmitRepGeneral: prove it in QJucysMurphyEigen and retire the stub.
