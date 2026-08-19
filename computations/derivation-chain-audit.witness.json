@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-18T21:32:23.928048+00:00",
-  "commitSha": "0cdf0424af6ff9c03354ff2eca8377f91135870b",
+  "computedAt": "2026-08-19T05:32:59.443837+00:00",
+  "commitSha": "1c2a4fada1c49b9613c68814167cda2e506ed9dd",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -571,11 +571,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "af669b5b2374",
-  "scriptCommitSha": "0cdf0424af6ff9c03354ff2eca8377f91135870b",
+  "scriptCommitSha": "1c25a95bbd1ec1ce92f65031f2ae24eb4e9e68aa",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -584,6 +584,8 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0"
   },
@@ -2660,6 +2662,7 @@
         "higher-n-wedderburn-h2-drift-probe.witness.json",
         "jones-1loop-c0-calibration-fig8.witness.json",
         "keystone-lr-modulus-d2-collapse-test.witness.json",
+        "knot-trace-field-degree-guard-counterexample.witness.json",
         "ksel1-singularity-selection.witness.json",
         "ksel2-favard-jacobi.witness.json",
         "ksel2id-friedrichs-selection.witness.json",
@@ -3962,6 +3965,7 @@
         "gswz_epsm_per_element_representative.witness.json",
         "gswz_epsm_representative_obstruction.witness.json",
         "gswz_epsm_residue_model_insufficient.witness.json",
+        "gswz_epsm_root_ambiguity_criterion.witness.json",
         "gswz_frobenius_teichmuller.witness.json",
         "gswz_membership_harness_v1.witness.json",
         "gswz_padic_dilog_modp.witness.json",
