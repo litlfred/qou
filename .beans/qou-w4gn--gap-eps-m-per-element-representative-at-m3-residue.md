@@ -84,3 +84,25 @@ satisfies Lemma 2.4(e), identical under either primitive cube root.
 does not vanish for free), and any place where the arithmetic is not
 trivial. The m ≥ 3 fields of Addenda 27–29 are not revived — they are
 the wrong fields, and `ε_m` was never computable there.
+
+### 2026-08-19 (PR #5296, Addenda 34–35) — validated, and one label of mine corrected
+
+**Validated against the paper.** Every earlier check was internal; a
+consistently-wrong `P_ζ` would have passed them all. Four CGZ predictions
+now hold: Lemma 2.4(b) (`D_ζ(1) ≡ ζ`, and `= 3(1−ζ²)` exactly), Lemma
+2.4(c) on 240 arguments, the reflection relation (a **nonzero** constant),
+and the **five-term relation on 400 instances** — with a flipped sign
+breaking 99/150 and `ζ→ζ²` breaking 96/150.
+
+**Corrected value.** The readout `teich(·)⁸` is a power of the μ₂₄
+generator, not of `ζ₃` (`cls(ζ₃) = 2`). So `ε₃(a[z₁]+b[z₂]) = ζ₃^{−a}`
+and `ε₃(2[z₁]+[z₂]) = ζ₃`, **not** `ζ₃²`. The same conflation was one step
+from a false report of a discrepancy with Lemma 2.4(b). Structure
+(linearity, `c₂ = 0`, dependence on `a` alone) unaffected.
+
+**Also:** `d(ξ) = 0` exactly in `K` (the α-line is the exceptional unit
+relation `1−α = α⁻²`), but it vanishes for *every* coefficient pair — so
+the Bloch condition does **not** pin `(2,1)`.
+
+**Still open:** CGZ's lift where the obstruction does *not* vanish for
+free; any place where the arithmetic is not trivial; and `m ≥ 4`.
