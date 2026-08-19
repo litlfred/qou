@@ -80,6 +80,23 @@ question was not open-outcome research but settled infrastructure with one
 right answer. The "measured research-overlap is PERMITTED" relaxation does not
 cover it.
 
+## The sharpest form of the failure: I ran a duplication check and passed it
+
+#5297's body carries a "State-of-main check" section, written after rebasing
+onto `main`, which states:
+
+> No E–M or `sinc` work landed from anyone else and the epic's other bricks are
+> untouched — no duplication.
+
+`CompositeEulerMaclaurin.lean` was **in my working tree** when I wrote that
+(`git cat-file -e 4331bc97a^:…/CompositeEulerMaclaurin.lean` succeeds). So this
+was not a case of missing information: the duplication check was performed,
+reported, and wrong. What it actually checked was the *commit log since my
+fork point* — new landings — rather than the *state of the tree*. A file that
+had been sitting on `main` for nine days is invisible to that check by
+construction, which is precisely why the corpus-grep checklist is a grep over
+`content/` and not a scan of recent commits.
+
 ## Relation to the calibration note in #5297
 
 #5297's body records that my difficulty estimates on this front run high when
