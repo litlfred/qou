@@ -34,7 +34,7 @@ $$
 $$
 Ancilla qubits encode the neighbour sum. A ripple-carry adder of $O(|N(i)|)$ Toffoli gates computes the binary count $k$.
 
-4. **Reversibility and energy conservation.** Each $\mathrm{Toff}_q$ is self-inverse:
+4. **Reversibility and energy conservation.** Each $\mathrm{Toff}_q$ is unitary:
 $$
   \mathrm{Toff}_q^\dagger  \mathrm{Toff}_q
    = 
