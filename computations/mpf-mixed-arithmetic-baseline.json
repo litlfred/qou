@@ -1,0 +1,7 @@
+{
+  "_comment": "Baseline for mpf_mixed_arithmetic_audit.py. This surface starts NON-ZERO, so the gate is ADVISORY until the rows are adjudicated; --strict fails only ABOVE the baseline, so it can only shrink. Never raise it: a new row is a new regression. 3 of 3 rows adjudicated at the time this was set were TRUE positives on physics-bearing values (rho_k_full_via_wenzl_lr tr_M_q0_mp30dps, qbeta_habiro_taylor_investigation tr_M_*_at_q0, phase1e m_p_MeV). Bean qou-gqt5.",
+  "candidates": 28,
+  "set_at": "2026-08-19",
+  "adjudicated": 3,
+  "adjudicated_true_positive": 3
+}
