@@ -509,3 +509,39 @@ shadow. The resurgence DT count for `6₁` is exactly as open as it was, and the
 sibling's bean `qou-btvl` names the same gap. What the agreement does buy is a
 falsifiable **shape**: with `|P_K| = 5`, `6₁`'s reduced Stokes matrix is `4×4`
 against `5₂`'s `3×3`.
+
+### `9₁₂` kills a coincidence the rule had to be separated from
+
+Across the three knots used above, the **ideal-tetrahedron count** equals the
+trace-field degree:
+
+| knot | ideal tetrahedra (DG §6) | trace-field degree | `r` |
+|---|---|---|---|
+| `4₁` | 2 | 2 | 2 |
+| `5₂` | 3 | 3 | 3 |
+| `6₁` | 4 | 4 | 4 |
+
+Three for three. If the rank rule were riding on *that*, everything above would
+be an artifact of a triangulation count rather than a statement about a number
+field — and nothing so far distinguished the two readings.
+
+**DG §6.5 settles it.** `9₁₂` has **10 ideal tetrahedra** and an irreducible
+degree-**17** trace field of type `[1, 8]` — verified here independently by exact
+Sturm sequence (exactly one real root, `r₁ + 2r₂ = 1 + 16 = 17`, no floats).
+`10 ≠ 17`: the coincidence dies at the fourth knot, and the rule — which reads
+the **signature** and never the triangulation — is untouched.
+
+**Sharper than the corpus's existing guard.** PR #5277 already refuted
+"trace-field degree ≈ tetrahedron count", but with the **Whitehead link** and
+**Borromean rings** — both *links*, so the heuristic could be rescued by
+restricting it to knots. `9₁₂` is a **knot**, and kills the knot-restricted
+version too.
+
+**New prediction, and a large one.** Under `A_K^red = F_K`: `r(9₁₂) = 17`,
+`|P_K| = 18`. Far more falsifiable than the small cases — a wrong rule has 17
+ways to miss here rather than 4.
+
+**What is still NOT verified.** `(−2,3,9)`'s predicted `r = 5` remains open.
+Census identification requires SnapPy (absent in this sandbox) and no `(−2,3,9)`
+saddle data is in the corpus, so neither the census route nor the gluing-quartic
+route is available for it. `9₁₂` does **not** substitute for that check.

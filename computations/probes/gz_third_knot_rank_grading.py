@@ -412,6 +412,81 @@ def main():
              "What the routes do buy is a falsifiable SHAPE: with |P_K| = 5, 6_1's "
              "reduced Stokes matrix is 4x4 against 5_2's 3x3.")
 
+    # ---- T26-T29: 9_12 breaks the tetrahedron coincidence; the rule survives ----
+    tetra = {"4_1": 2, "5_2": 3, "6_1": 4}                # DG §6 ideal-tetrahedron counts
+    print("\n[T26] a coincidence worth killing before it counts as evidence")
+    for k in tetra: print(f"     {k:5s} tetrahedra={tetra[k]}  trace-field degree={tf_deg[k]}")
+    chk("T26-tetrahedra-equal-degree-on-the-small-knots",
+        all(tetra[k] == tf_deg[k] for k in tetra),
+        note="Three for three. If the rank rule were secretly riding on the "
+             "TRIANGULATION count rather than the number field, everything in T13-T24 "
+             "would be an artifact -- and nothing up to here distinguishes the two "
+             "readings. Recorded so the next check has something to kill.")
+
+    # DG §6.5, the 9_12 knot: 10 ideal tetrahedra, trace field of DEGREE 17
+    nt_poly = [-3,18,-55,130,-253,421,-605,764,-851,834,-719,542,-353,195,-89,32,-8,1]
+    nt_tetra = 10
+    nt_real = sturm_real_roots(nt_poly) if 'sturm_real_roots' in dir() else None
+    if nt_real is None:
+        def sturm_real_roots(coeffs):
+            def norm(pp):
+                while pp and pp[-1] == 0: pp.pop()
+                return pp
+            def dm(a, b):
+                a = a[:]
+                while len(a) >= len(b) and any(x != 0 for x in a):
+                    d = len(a)-len(b); co = a[-1]/b[-1]
+                    for i in range(len(b)): a[d+i] -= co*b[i]
+                    norm(a)
+                    if not a: break
+                return a
+            pp = [Fr(x) for x in coeffs]; norm(pp)
+            dp = [Fr(i)*pp[i] for i in range(1, len(pp))]; norm(dp)
+            seq = [pp, dp]
+            while len(seq[-1]) > 1:
+                r = dm(seq[-2][:], seq[-1][:])
+                if not r: break
+                seq.append([-x for x in r])
+            def sc(at):
+                vals = []
+                for sq in seq:
+                    vals.append(sq[-1]*((-1)**(len(sq)-1)) if at == '-' else sq[-1])
+                vals = [v for v in vals if v != 0]
+                return sum(1 for i in range(len(vals)-1) if (vals[i] > 0) != (vals[i+1] > 0))
+            return sc('-') - sc('+')
+        nt_real = sturm_real_roots(nt_poly)
+    nt_deg = len(nt_poly)-1
+    nt_pairs = (nt_deg - nt_real)//2
+
+    print("\n[T27] 9_12: does the signature reproduce DG's stated type [1,8]?")
+    print(f"     degree {nt_deg}, real roots (exact Sturm) = {nt_real}, pairs = {nt_pairs}")
+    chk("T27-nineTwelve-signature-matches-DG",
+        nt_real == 1 and nt_pairs == 8 and nt_real + 2*nt_pairs == 17,
+        note="Independent verification of a 17-term transcription: exact Sturm gives "
+             "exactly ONE real root, so [r1,r2] = [1,8] and r1+2r2 = 17, matching DG "
+             "§6.5. No floats -- Sturm over Fractions.")
+
+    print("\n[T28] THE KILL: 10 tetrahedra vs degree 17")
+    chk("T28-tetrahedron-coincidence-breaks-at-nineTwelve", nt_tetra != nt_deg,
+        note="The coincidence dies at the fourth knot: 9_12 has 10 ideal tetrahedra and "
+             "a DEGREE-17 trace field. So the rank rule cannot be a restatement of the "
+             "triangulation count, and the T13-T24 agreements are about the number "
+             "field after all. SHARPER THAN THE CORPUS'S EXISTING GUARD: PR #5277 "
+             "refutes 'degree ~ tetrahedra' using the Whitehead link and Borromean "
+             "rings -- both LINKS, so the heuristic could be rescued by restricting to "
+             "knots. 9_12 is a KNOT and kills the knot-restricted version too.")
+
+    print("\n[T29] the 9_12 prediction, and what is still NOT verified")
+    print(f"     under A_K^red = F_K: r(9_12) = {nt_deg}, |P_K| = {nt_deg+1}")
+    chk("T29-nineTwelve-prediction-and-open-items", nt_deg == 17,
+        note="PREDICTION (unverified, stated with its hypothesis): r(9_12) = 17, "
+             "|P_K| = 18. Far more falsifiable than the small cases -- a wrong rule has "
+             "17 ways to miss here rather than 4. STILL NOT VERIFIED, said plainly: "
+             "(-2,3,9)'s predicted r = 5 from T16 remains open. Census identification "
+             "needs SnapPy (absent here) and no (-2,3,9) saddle data is in the corpus, "
+             "so neither the T18 nor the T23 route is available. 9_12 does NOT "
+             "substitute for it.")
+
     verdict = (
         "THIRD KNOT FOUND IN-CORPUS, and it does NOT refute H_Ad. (i) The data is in "
         "GZ 2304.09377 (the sequel 2111.06645 announces), which the earlier M3 sweep "
@@ -428,7 +503,7 @@ def main():
         "(v) NEW STRUCTURE: W0 is an S_3 = Gamma/Gamma(2) representation decomposing "
         "into partition blocks (3)^2 + (2,1), with the SIGN block absent -- the QOU "
         "Wedderburn indexing appearing in the third knot's modular data, with a "
-        "chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. (viii) DIMOFTE-GAROUFALIDIS 1511.05628 S6 (also missed by the Stokes sweep) states trace fields as SIGNATURES [r1,r2] for five knots. It CONFIRMS Part 4 inputs for 4_1 and 5_2 from an independent source, and forces Part 4 silent hypothesis into the open: the rule needs the signature of A_K^red, NOT of the trace field F_K. Those coincide at 4_1 and 5_2 -- so the two-knot agreement settled nothing -- and (-2,3,7) is a worked counterexample (trace field = 5_2, 3 embeddings, measured rank 6). Under the now-stated hypothesis: 6_1 predicts r=4 / |P_K|=5 and (-2,3,9) predicts r=5 / |P_K|=6, both falsifiable and both unverified. (ix) GUARDED NON-INFERENCE: DG Table 2 Level column is the Chern-Simons level zeta^k=1, NOT GZ level N; reading it as the latter would manufacture the fourth level>1 knot out of an unrelated quantity -- third instance of this conflation trap in this arc. (x) THE 6_1 PREDICTION IS CONFIRMED: a sibling session independently certified 6_1 (census K4_1) at geometric L-degree 4 / full 5 from the Culler A-polynomial census (main 96d65d02e, bean qou-btvl), matching the r=4 / |P_K|=5 predicted here from the DG trace-field type [0,2]. The two sides are a NUMBER FIELD DEGREE and a NEWTON POLYGON L-DEGREE -- unrelated objects, unrelated sources -- agreeing on three knots with three distinct values (2,3,4). The |P_K| = r+1 half is definitional (the abelian rep) and is NOT evidence; the sibling flagged that first. And the control fires: the identity FAILS at (-2,3,7), precisely where A_K^red strictly contains F_K, so the rule does not fit everything. (xi) A THIRD ROUTE to r(6_1)=4, from Ohtsuki-Yokota's SADDLE ANALYSIS (ki6c.pdf, sibling extraction qou-6ort): the 6_1 gluing-equation quartic 2z^4-z^3-2z^2+z+1 is irreducible with discriminant 257 and signature [0,2], matching DG's trace field on every invariant -- and the fields are EQUAL, by the exact witness gamma = -a^3+3a^2-4a-1 satisfying gamma^4-gamma^3-4gamma^2+4gamma+8 = 0 in Z[a]/(dg). So three constructions with nothing in common but the knot (a number field, a Newton polygon, a stationary-phase analysis) all give 4. (xii) STILL NOT A DT COUNT: the saddles are the critical points; the DT invariants are the Stokes constants on the rays BETWEEN them. All three routes measure r, the R1 shadow. The resurgence DT count for 6_1 is exactly as open as before. What is bought is a falsifiable SHAPE: 6_1's reduced Stokes matrix is 4x4 against 5_2's 3x3. Nothing wired."
+        "chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. (viii) DIMOFTE-GAROUFALIDIS 1511.05628 S6 (also missed by the Stokes sweep) states trace fields as SIGNATURES [r1,r2] for five knots. It CONFIRMS Part 4 inputs for 4_1 and 5_2 from an independent source, and forces Part 4 silent hypothesis into the open: the rule needs the signature of A_K^red, NOT of the trace field F_K. Those coincide at 4_1 and 5_2 -- so the two-knot agreement settled nothing -- and (-2,3,7) is a worked counterexample (trace field = 5_2, 3 embeddings, measured rank 6). Under the now-stated hypothesis: 6_1 predicts r=4 / |P_K|=5 and (-2,3,9) predicts r=5 / |P_K|=6, both falsifiable and both unverified. (ix) GUARDED NON-INFERENCE: DG Table 2 Level column is the Chern-Simons level zeta^k=1, NOT GZ level N; reading it as the latter would manufacture the fourth level>1 knot out of an unrelated quantity -- third instance of this conflation trap in this arc. (x) THE 6_1 PREDICTION IS CONFIRMED: a sibling session independently certified 6_1 (census K4_1) at geometric L-degree 4 / full 5 from the Culler A-polynomial census (main 96d65d02e, bean qou-btvl), matching the r=4 / |P_K|=5 predicted here from the DG trace-field type [0,2]. The two sides are a NUMBER FIELD DEGREE and a NEWTON POLYGON L-DEGREE -- unrelated objects, unrelated sources -- agreeing on three knots with three distinct values (2,3,4). The |P_K| = r+1 half is definitional (the abelian rep) and is NOT evidence; the sibling flagged that first. And the control fires: the identity FAILS at (-2,3,7), precisely where A_K^red strictly contains F_K, so the rule does not fit everything. (xi) A THIRD ROUTE to r(6_1)=4, from Ohtsuki-Yokota's SADDLE ANALYSIS (ki6c.pdf, sibling extraction qou-6ort): the 6_1 gluing-equation quartic 2z^4-z^3-2z^2+z+1 is irreducible with discriminant 257 and signature [0,2], matching DG's trace field on every invariant -- and the fields are EQUAL, by the exact witness gamma = -a^3+3a^2-4a-1 satisfying gamma^4-gamma^3-4gamma^2+4gamma+8 = 0 in Z[a]/(dg). So three constructions with nothing in common but the knot (a number field, a Newton polygon, a stationary-phase analysis) all give 4. (xii) STILL NOT A DT COUNT: the saddles are the critical points; the DT invariants are the Stokes constants on the rays BETWEEN them. All three routes measure r, the R1 shadow. The resurgence DT count for 6_1 is exactly as open as before. What is bought is a falsifiable SHAPE: 6_1's reduced Stokes matrix is 4x4 against 5_2's 3x3. (xiii) A COINCIDENCE KILLED: across 4_1/5_2/6_1 the ideal-tetrahedron count EQUALS the trace-field degree (2,3,4), so the rank rule might have been riding on the triangulation rather than the number field. DG S6.5's 9_12 settles it -- 10 ideal tetrahedra, trace field of DEGREE 17 (type [1,8], verified here by exact Sturm: exactly 1 real root). 10 != 17, the coincidence dies at the fourth knot, and the rule -- which reads the signature and never the triangulation -- is untouched. Sharper than PR #5277's existing guard, whose counterexamples are LINKS (Whitehead, Borromean) and could be dodged by restricting to knots; 9_12 is a knot. New prediction: r(9_12) = 17, |P_K| = 18. (xiv) STILL OPEN: (-2,3,9)'s predicted r = 5 is UNVERIFIED -- census identification needs SnapPy (absent) and no saddle data for it is in the corpus. 9_12 does not substitute. Nothing wired."
     )
     print(f"\n verdict: {verdict}")
 

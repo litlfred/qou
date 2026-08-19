@@ -665,4 +665,100 @@ theorem sixOne_stokes_matrix_is_four_by_four :
     rank PKnot.fiveTwo = 3 ∧ geomLDegree DGKnot.sixOne = 4 ∧
     geomLDegree DGKnot.sixOne = rank PKnot.fiveTwo + 1 := by decide
 
+/-! ## Part I — `9₁₂` breaks the tetrahedron coincidence, and the rule survives it
+
+A pattern worth noticing, and then killing. Across the three knots Parts F–H
+used, the **ideal-tetrahedron count** happens to equal the trace-field degree:
+
+| knot | ideal tetrahedra (DG §6) | trace field degree | `r` |
+|---|---|---|---|
+| `4₁` | 2 | 2 | 2 |
+| `5₂` | 3 | 3 | 3 |
+| `6₁` | 4 | 4 | 4 |
+
+Three for three. If the rank rule were secretly riding on *that*, everything in
+Parts F–H would be an artifact of a triangulation count rather than a statement
+about a number field — and nothing so far distinguishes the two readings.
+
+**DG §6.5 settles it.** The `9₁₂` knot has **10 ideal tetrahedra** and trace field
+
+  `x¹⁷ − 8x¹⁶ + 32x¹⁵ − 89x¹⁴ + 195x¹³ − 353x¹² + 542x¹¹ − 719x¹⁰ + 834x⁹`
+  `− 851x⁸ + 764x⁷ − 605x⁶ + 421x⁵ − 253x⁴ + 130x³ − 55x² + 18x − 3`,
+
+irreducible, of type `[1, 8]` — **degree 17**. Measured here by exact Sturm
+sequence: exactly **1** real root, so `[r₁, r₂] = [1, 8]` and
+`r₁ + 2r₂ = 17`, matching DG's stated type.
+
+`10 ≠ 17`. The coincidence dies at the fourth knot, and the rank rule — which
+reads the **signature**, never the triangulation — is untouched. That is the
+point of recording it: a rule that agreed with a coincidence on three points had
+to be separated from it before the agreements could count as evidence.
+
+**Sharper than the corpus's existing guard.** `docs/audits/` already carries a
+refutation of "trace-field degree ≈ tetrahedron count" (PR #5277) — but its
+counterexamples are the **Whitehead link** and **Borromean rings**, both *links*,
+so a reader could have rescued the heuristic by restricting it to knots. `9₁₂` is
+a **knot**, and it kills the knot-restricted version too.
+
+**A new prediction, and a large one.** Under the standing hypothesis
+`A_K^red = F_K`: `r(9₁₂) = 17`, `|P_K| = 18`. Far more falsifiable than the small
+cases — a wrong rule has 17 ways to miss here rather than 4.
+
+**Not verified, and said plainly:** `(−2,3,9)`'s predicted `r = 5` from Part F
+remains **unconfirmed**. Census identification needs SnapPy (absent in this
+sandbox) and no saddle data for it is in the corpus, so neither the Part-G nor
+the Part-H route is available. Recording 9₁₂ here does not substitute for it.
+
+-- Ref: [manuscript] uploads/1511.05628v1.pdf §6.3, §6.5 (Dimofte–Garoufalidis)
+-/
+
+/-- Ideal-tetrahedron counts, DG §6. -/
+def idealTetrahedra : DGKnot → Int
+  | DGKnot.fourOne => 2
+  | DGKnot.fiveTwo => 3
+  | DGKnot.sixOne => 4
+  | DGKnot.pretzel239 => 0     -- DG does not state it
+
+/-- **The coincidence, on the three knots Parts F–H used.** -/
+theorem tetrahedra_match_degree_on_the_small_knots :
+    idealTetrahedra DGKnot.fourOne = traceFieldDegree DGKnot.fourOne ∧
+    idealTetrahedra DGKnot.fiveTwo = traceFieldDegree DGKnot.fiveTwo ∧
+    idealTetrahedra DGKnot.sixOne = traceFieldDegree DGKnot.sixOne := by decide
+
+/-- `9₁₂`'s ideal-tetrahedron count (DG §6.5). -/
+def nineTwelveTetrahedra : Int := 10
+
+/-- `9₁₂`'s trace-field signature `[r₁, r₂] = [1, 8]`, DG §6.5 — the real-root
+count verified independently here by exact Sturm sequence. -/
+def nineTwelveReal : Int := 1
+
+/-- Complex-conjugate pairs of embeddings of `9₁₂`'s trace field. -/
+def nineTwelvePairs : Int := 8
+
+/-- Degree of `9₁₂`'s trace field, `r₁ + 2r₂`. -/
+def nineTwelveDegree : Int := nineTwelveReal + 2 * nineTwelvePairs
+
+/-- **The signature reproduces the stated degree 17** — a consistency check on
+the transcription of a 17-term polynomial. -/
+theorem nineTwelve_signature_gives_degree_seventeen : nineTwelveDegree = 17 := by decide
+
+/-- **The coincidence BREAKS at `9₁₂`.** Ten ideal tetrahedra, degree-17 trace
+field. So the rank rule cannot be a restatement of the triangulation count. -/
+theorem tetrahedra_coincidence_breaks_at_nineTwelve :
+    nineTwelveTetrahedra = 10 ∧ nineTwelveDegree = 17 ∧
+    nineTwelveTetrahedra ≠ nineTwelveDegree := by decide
+
+/-- **The rule is untouched**, because it reads the signature and never the
+triangulation: `r = r₁ + 2r₂` by definition of `traceFieldDegree`, on every knot
+where it is stated. -/
+theorem rank_rule_never_used_tetrahedra :
+    ∀ K : DGKnot, traceFieldDegree K = traceFieldReal K + 2 * traceFieldPairs K := by
+  intro K; cases K <;> rfl
+
+/-- **The `9₁₂` prediction.** Under `A_K^red = F_K`: `r = 17`, `|P_K| = 18`.
+Unverified — no independent count for `9₁₂` exists in the corpus — and stated
+with its hypothesis, as the `(−2,3,7)` counterexample requires. -/
+theorem nineTwelve_prediction :
+    nineTwelveDegree = 17 ∧ nineTwelveDegree + 1 = 18 := by decide
+
 end QOU.QBeta.GZThirdKnotRankGrading

@@ -9,7 +9,7 @@ tags:
     - route-c
     - literature
 created_at: 2026-08-19T12:10:00Z
-updated_at: 2026-08-19T13:55:00Z
+updated_at: 2026-08-19T15:20:00Z
 ---
 
 ## Context
@@ -104,7 +104,7 @@ geometric reading not. Nothing wired.
 
 - Lean: QOU.QBeta.GZThirdKnotRankGrading (core Int, imports AdjointIndexSetM3;
   lean-direct exit 0, sorry-free, #print axioms shows no sorryAx)
-- Probe: computations/probes/gz_third_knot_rank_grading.py, 25/25
+- Probe: computations/probes/gz_third_knot_rank_grading.py, 29/29
 - Audit: docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md §7
 
 ## Part G (2026-08-19): the 6_1 prediction CONFIRMED by a sibling
@@ -171,6 +171,38 @@ with |P_K| = 5, 6_1's reduced Stokes matrix is 4x4 against 5_2's 3x3.
 Lean Part H: Alg4, mulAlg4, reduction_table_consistent, gamma,
 saddle_field_equals_trace_field, gamma_powers, gamma_is_not_rational,
 three_routes_agree_on_sixOne, sixOne_stokes_matrix_is_four_by_four. Probe 25/25.
+
+## Part I (2026-08-19): 9_12 kills a coincidence the rule had to be separated from
+
+Went after "(-2,3,9) -> r = 5". Could NOT verify it (see below). But found and killed
+a coincidence that had to die before any of Parts F-H could count as evidence.
+
+Across 4_1/5_2/6_1 the IDEAL-TETRAHEDRON COUNT equals the trace-field degree (2,3,4).
+Three for three. If the rank rule were riding on the TRIANGULATION rather than the
+number field, everything above would be an artifact -- and nothing up to here
+distinguished the two readings.
+
+DG S6.5's 9_12 settles it: 10 IDEAL TETRAHEDRA, trace field of DEGREE 17, irreducible,
+type [1,8] -- verified here independently by exact Sturm sequence (exactly 1 real root,
+r1 + 2r2 = 17, no floats). 10 != 17. The coincidence dies at the fourth knot, and the
+rule -- which reads the SIGNATURE and never the triangulation -- is untouched.
+
+SHARPER THAN THE CORPUS'S EXISTING GUARD: PR #5277 refutes "degree ~ tetrahedra" using
+the Whitehead link and Borromean rings, both LINKS, so the heuristic could be rescued
+by restricting to knots. 9_12 is a KNOT and kills the knot-restricted version too.
+
+NEW PREDICTION: under A_K^red = F_K, r(9_12) = 17 and |P_K| = 18. Far more falsifiable
+than the small cases -- a wrong rule has 17 ways to miss here rather than 4.
+
+STILL NOT VERIFIED, and 9_12 does NOT substitute: (-2,3,9)'s predicted r = 5 remains
+open. Census identification needs SnapPy (absent in this sandbox; import fails) and no
+(-2,3,9) saddle data is in the corpus, so neither the census route (Part G) nor the
+gluing-quartic route (Part H) is available for it.
+
+Lean Part I: idealTetrahedra, tetrahedra_match_degree_on_the_small_knots,
+nineTwelveTetrahedra/Real/Pairs/Degree, nineTwelve_signature_gives_degree_seventeen,
+tetrahedra_coincidence_breaks_at_nineTwelve, rank_rule_never_used_tetrahedra,
+nineTwelve_prediction. Probe 29/29.
 
 ## NEXT STEP
 
