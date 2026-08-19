@@ -2231,3 +2231,60 @@ and small. Does **not** construct it in general: Remark 1.9 concerns
 arbitrary `F` and `n`, where the extension need not be unramified and
 `H²(Φ,μ)` need not be computable this way. What is shown is that the `v₁`
 obstruction of Addendum 39 was not the real one.
+
+---
+
+## Addendum 42 (2026-08-19) — the `v₁` live set finished: **one invariant at four levels**
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_h_lift_m12_m24_probe.py`](../../computations/probes/gswz_epsm_h_lift_m12_m24_probe.py)
+— 12/12. Scope-(a); nothing wired.
+
+Addendum 41's observation — for a **unit** argument the Kummer extension is
+unramified, hence a finite `Q_{5^d}` rather than `H` — is not special to
+`m = 8`. Applying it finishes the live set.
+
+### The fields
+
+The four arguments' `μ₂₄` dlogs `6, 12, 12, 6` give images generating an
+order-2 subgroup at `m = 12` (`L = Q_{5⁴}`, `N = 624`) and an order-4
+subgroup at `m = 24` (`L = Q_{5⁸}`, `N = 390624`). Both contain `μ_m` and
+`μ₂₄`. Both descents succeed, both are root-independent over all `m²`
+choices, and Prop 2.5(b)'s split was **re-measured at each level** rather
+than carried over: `R` ambiguous, `R^{w_F}` unique, at both.
+
+### I predicted trivial, and was wrong
+
+I wrote `R^{w_F} == 0` at both as a check, by analogy with `m = 8`. It
+**failed**. Measured `R^{w_F} = 8` at both `m = 12` and `m = 24` —
+**non-trivial**.
+
+### The structure is better than either guess
+
+All four computed levels are consistent reductions of a **single class
+`8 ∈ Z/24`**:
+
+| reduction | value | matches |
+|---|---|---|
+| `8 mod 12` | 8 | `m = 12` |
+| `8 mod 8` | 0 | `m = 8` (measured separately, Addendum 41) |
+| `8 mod 3` | 2 | `m = 3` (raw gen-basis `R = 2c₁ + c₂`) |
+
+So the live set carries **one invariant seen at four levels**, not five
+independent ones. `m = 8` is not a vanishing invariant — it is the **2-part
+vanishing while the 3-part carries the content**, which is also why `m = 6`
+collapsed onto `m = 3` (Addendum 38). The cross-level compatibility is a
+falsifiable check and could have failed at any of the three reductions.
+
+### Addendum 39, fully corrected
+
+- "not computable" — wrong on the **mechanism** (Addendum 41: the extension
+  is unramified, so the descent goes through);
+- the follow-up expectation that 12 and 24 would be **trivial** — wrong on
+  the **conclusion** (here).
+
+### Scope
+
+As at `m = 8`, this constructs the lift only where the Kummer extension is
+unramified and small; it is not a general construction. Control: an
+unreachable class is exhibited at each level, so the descent can fail.
