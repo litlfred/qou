@@ -190,3 +190,47 @@ mostly (a) infrastructure lemmas whose narrative face is already carried by the
 results they support, and (b) FiveTwoRootStructure/Discriminant, which are the
 root-existence and discriminant plumbing under the trace-field block. A tranche
 5 would be real but thinner than 1-4.
+
+## Tranche 5 — and I was WRONG that it would be thin
+
+I predicted tranche 5 would be "real but noticeably thinner than 1-4". On
+`FiveTwoDiscriminant` that was wrong, and the file is arguably the most
+instructive of the eight.
+
+`prop:fivetwo-discriminant-vanishes` ->
+`QOU.QBeta.FiveTwoDiscriminant.exists_unit_circle_disc_zero`.
+
+It is a REFUTATION. The transport argument had recorded a sub-gap closed on
+
+    "the three branches never collide on the arc (min |disc| = 0.348)"
+
+and stated the envelope theorem's implicit-function hypothesis as satisfied on
+the same constant. Both false. 0.348 was a GRID minimum from a ~360-point scan;
+the dip is narrow (|disc'| ~ 87) so refinement gives 0.068, 0.0068, 0.
+
+**A minimum over samples bounds the samples, not the function** -- and that
+constant had been carried into a proof step.
+
+The refutation is short: disc is palindromic, so disc x = x^4 Q(x + 1/x) with
+Q u = u^4 - 6u^3 + 7u^2 + 6u - 31; Q(-2) = 49 > 0 > -23 = Q(-1) gives an IVT
+root at u ~ -1.4844, and |x|=1 is exactly x + 1/x real in [-2,2] which contains
+(-2,-1). Verified the Q values and the root independently.
+
+Conclusion survives, argument dies: S is symmetric over all roots, a collision
+permutes them, and a symmetric function cannot notice a permutation. This is
+WHY tranche 4's envelope block tolerates one exceptional point -- the tolerance
+is the shape of the situation, not a hedge. The two blocks complete each other.
+
+## Two -23s, separated
+
+disc(1) = -23 IS the trace-field discriminant (at x=1 the curve degenerates to
+the saddle cubic, `ggm_one`). Q(-1) = -23 is a COINCIDENCE -- Q takes that value
+at u = -1, 1 and 2 alike, and only u=2 corresponds to x=1. Separated in the
+block, per rem:fivetwo-three-sevens.
+
+## Nine blocks. Remaining is now genuinely thin
+
+FiveTwoRootStructure (the IVT root existence feeding the branch pinning) is real
+but is infrastructure under the discriminant/envelope pair. The Rogers/pentagon
+and Branch*/ArgSector/CutAvoidance families are bookkeeping whose narrative face
+is carried by the results above.

@@ -27,6 +27,7 @@ export default chapter({
         "fivetwo-level-seven-ladder",
         "fivetwo-three-sevens",
         "fivetwo-envelope-transport",
+        "fivetwo-discriminant-vanishes",
       ],
     },
     {
