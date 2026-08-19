@@ -563,7 +563,7 @@ After moment (3), the encounter constitutes a knot-theoretic problem. The merged
 
 Once the two vortex cores merge inside a tubular neighbourhood $U \subset M$, the operative geometry is the complement $U \setminus K$. Thurston's hyperbolisation programme proves that, excluding a finite list of exceptions, $U \setminus K$ admits a complete finite-volume hyperbolic structure. A triangulation into ideal tetrahedra $\Delta_{z_k}$ and a system of \emph{gluing equations} in the shape parameters $z_k$ encode this structure.
 
-The algebraic SDP solver of \hyperref[chap:nuclear-interactions]{Chapter 11} is \textbf{not separate from the hyperbolic-geometry calculation}. It is its $\mathbb{Z}[q^{\pm 1/2}]$-shadow. We establish this via three correspondences:
+The algebraic SDP solver of \hyperref[chap:nuclear-interactions]{Chapter 11} is the $\mathbb{Z}[q^{\pm 1/2}]$-shadow of the hyperbolic-geometry calculation. We establish this via three correspondences:
 
 \begin{itemize}
   \item \textbf{Cusps from poles.} The roots of the $q$-Pochhammer denominator $\Phi_n(x; q) =\allowbreak{} \prod_{k=0}^{n-1}(1 -\allowbreak{} x q^k)^{-1}$ seed the Frobenius positivity constraints in the SDP. These roots are in bijection with the ideal vertices of the tetrahedral triangulation of the $\Phi_q$-piece $K_S$ (\hyperref[conj:algebraic-geometric-dilog-equivalence]{pole-to-cusp bijection}(1)).
@@ -571,7 +571,7 @@ The algebraic SDP solver of \hyperref[chap:nuclear-interactions]{Chapter 11} is 
   \item \textbf{Steepest descent.} On the Archimedean side, the residue sum becomes the Picard--Lefschetz thimble decomposition of the Seiberg--Witten action $S(z)$ (thimble). The Gröbner--Shirshov reduction depth maps to the number of ideal tetrahedra used in the triangulation (GB--PL bijection). The SDP's complementary-slackness rank equals the number of thimble flows realising the optimum.
 \end{itemize}
 
-In short: \textbf{two knots settle into the lowest-energy operator because that operator is the unique fixed point of Newton iteration on the Thurston gluing equations seeded by the $q$-Pochhammer poles, and that fixed point is the Archimedean realisation of the SDP optimum}. The algebraic and geometric solvers are two faces of the same computation. The \hyperref[def:archimedean-realization-functor]{Archimedean realization functor} acts as the explicit translator between them.
+In short: \textbf{two knots settle into the lowest-energy operator because that operator is the unique fixed point of Newton iteration on the Thurston gluing equations seeded by the $q$-Pochhammer poles, and that fixed point is the Archimedean realisation of the SDP optimum}. The \hyperref[def:archimedean-realization-functor]{Archimedean realization functor} acts as the explicit translator between the algebraic and geometric solvers.
 
 The next remark details why this functions as the "hyperbolic relaxation" picture, mapping SDP dual variables to thimble depths.
 
@@ -1593,7 +1593,6 @@ spectral filter since $g(K) \leq 4$.  $\square$
 The Descartes particle spectrum is \emph{complete} over embeddable knots:
 every knot type with $g(K) \leq 4$ corresponds to a state in the
 physical state space $V_{\mathrm{phys}} =\allowbreak{} \varinjlim V^{\otimes n}$.
-No embeddable knot is excluded from the spectrum.
 
 \textbf{Counting embeddable knots.}
 The number of distinct knot types with Seifert genus $\leq g$ grows
@@ -2050,7 +2049,7 @@ The low-isotope sign-flip diagnostic (\href{../../computations/low-isotope-sign-
 
 The empirical match between the (now-purged) $\lambda_{\mathrm{scale}}$ literal $2.4599527869$ and the color-tube Faddeev resummation $1/(1 -\allowbreak{} h_q \cdot q_0^{10}) \approx\allowbreak{} 2.450$ provides independent evidence that 10-fold color-tube averaging is the categorical structure behind the historical numerology.
 
-Probe scripts \href{../../computations/probe_pn_flavor_asymmetry.py}{\texttt{probe\_\allowbreak{}pn\_\allowbreak{}flavor\_\allowbreak{}asymmetry.\allowbreak{}py}} and \href{../../computations/probe_per_sheet_flavor_nonin.py}{\texttt{probe\_\allowbreak{}per\_\allowbreak{}sheet\_\allowbreak{}flavor\_\allowbreak{}nonin.\allowbreak{}py}} report that Scheme 4 (per-sheet PL integration on Bring's surface with quark-content weighting) reproduces $\Delta m_{n-p}$ to ${\sim}0.14\%$. This dramatically improves on the uniform-flavor projection's ${\sim}305\,\mathrm{ppm}$ flavor split ratio.
+Probe scripts \href{../../computations/probe_pn_flavor_asymmetry.py}{\texttt{probe\_\allowbreak{}pn\_\allowbreak{}flavor\_\allowbreak{}asymmetry.\allowbreak{}py}} and \href{../../computations/probe_per_sheet_flavor_nonin.py}{\texttt{probe\_\allowbreak{}per\_\allowbreak{}sheet\_\allowbreak{}flavor\_\allowbreak{}nonin.\allowbreak{}py}} report that Scheme 4 (per-sheet PL integration on Bring's surface with quark-content weighting) reproduces $\Delta m_{n-p}$ to ${\sim}0.14\%$. This improves on the uniform-flavor projection's ${\sim}305\,\mathrm{ppm}$ flavor split ratio.
 
 The \textbf{gg-production collapse} isolates the cost of the projection directly. Decomposing the production binding $B_{\mathrm{sym}} =\allowbreak{} \alpha\,\ln(\mathrm{tr}_{\mathrm{free}}/\mathrm{tr}_{\mathrm{atom}})$ into its per-bond log-suppressions $L_{\mathrm{pp}}, L_{\mathrm{pn}}, L_{\mathrm{nn}}$ at $q_0$ gives $L_{\mathrm{nn}}/L_{\mathrm{pp}} -\allowbreak{} 1 \approx\allowbreak{} 78\%$ (\href{../../computations/probes/charge-symmetry-bond-probe.witness.json}{\texttt{charge-\allowbreak{}symmetry-\allowbreak{}bond-\allowbreak{}probe.\allowbreak{}witness.\allowbreak{}json}}). This represents roughly $570\times$ the substrate-derived $p/n$ flavor split $\delta_{\mathrm{lead}} \approx\allowbreak{} 0.14\%$ and $78\times$ the experimental charge-symmetry-breaking bound. This over-break derives entirely from the $\sigma$-vs-$\sigma^{-1}$ inter-crossing sign of the flavor-only projection. Gluons couple color, not flavor. The leading gg interface is the single flavor-blind color-average $\sigma_{\mathrm{avg}} =\allowbreak{} \sigma -\allowbreak{} (h/2)\cdot 1$ for every bond type. Forcing all inter-nucleon crossings to $\sigma_{\mathrm{avg}}$ collapses the $78\%$ asymmetry to $0$ (\href{../../computations/probes/gg-production-bond-probe.witness.json}{\texttt{gg-\allowbreak{}production-\allowbreak{}bond-\allowbreak{}probe.\allowbreak{}witness.\allowbreak{}json}}). The sub-leading flavor weighting $W_{c_1 c_2}$ reintroduces the correct $\delta_{\mathrm{lead}}$-scale split. The uniform-flavor projection manufactures an $O(1)$ charge asymmetry that the color-tube average removes.
 
@@ -2223,4 +2222,4 @@ The statement is conjectural only for as long as \hyperref[conj:inter-nucleon-ch
 
 This closes the Bring's-surface chapter. The archimedean base—the genus-4 surface $\Sigma_4$ with Euler characteristic $\chi = -6$—functions as the QOU spacetime. We fixed the Descartes / archimedean condition via the genus-ideal characterisation. We assembled the colour-tube coordinates and spectral gauge.
 
-The climax chapter on volume-mass duality pairs the hyperbolic-volume content of Bring's surface with the categorical mass content extracted from the eigenbasis. The subsequent chapters specialise the resulting duality to atomic isotopes and the $\beta$-decay $Q$-value predictions.
+The volume-mass duality chapter pairs the hyperbolic-volume content of Bring's surface with the categorical mass content extracted from the eigenbasis. The subsequent chapters specialise the resulting duality to atomic isotopes and the $\beta$-decay $Q$-value predictions.

@@ -66,6 +66,37 @@ the class statement is unchanged.
 numbers by rationals, and `Real.log` is the growth scale the block names. This
 is the archimedean side by subject matter, not by specialisation. Algebraicity
 is taken over `ℚ`, matching "algebraic irrational" in the block.
+
+## Where the rest of `qou-bday`'s findings went
+
+Bean `qou-bday` audited this file on 2026-08-10 and recorded three findings. The
+first — that the class stipulated its own witness and so encoded nothing — is
+the defect `qou-ffwk` fixed above; it no longer describes this file, and is kept
+only as the history note below the class. The other two are about the *target*
+rather than the encoding, so they survive the rewrite unchanged:
+
+* **A separation by the birthday of the number is impossible.** See
+  `QOU/AppendixSurreals/DiophantineBirthdayScope.lean`. The `SurrealField` axiom
+  `birthday_ofReal_le_omega` puts every real at birthday `≤ ω`, and in Conway's
+  surreals every non-dyadic real is born exactly on day `ω` — so
+  `birthday(√2) = ω = birthday(π)`, and `no_birthday_only_separation` proves that
+  no predicate on the birthday can distinguish them. This is why the block's word
+  *trajectory* is load-bearing, and why `trajectory` above is a parameter rather
+  than something computed from `birthday ∘ ofReal`.
+
+* **The trajectory target is unobstructed, and one direction is already a
+  theorem.** `QOU/AppendixSurreals/DiophantineBirthdayTrajectory.lean` shows that
+  a trajectory criterion survives the rational-shift invariance its encoding
+  forces (`liouvilleWith_rat_shift_invariant`, `liouvilleWith_separates`) where
+  `birthday ∘ ofReal` did not, and discharges the fast-approximation ⟹
+  transcendental direction from Mathlib's `Liouville.transcendental` as
+  `liouville_trajectory_direction_settled`. So *wholly open* overstates what is
+  open here.
+
+What remains open is the surreal content: that the sign-expansion trajectory
+computes the approximation exponent. Nothing connects `gonshor`'s length-`n`
+prefix to the dyadic approximant at denominator `2ⁿ`; `SignSequence.lean`
+explains why that induction is not available from the abstract axioms.
 -/
 
 namespace QOU.AppendixSurreals

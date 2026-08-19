@@ -123,7 +123,13 @@ def vol_abs_content(part: list[int], n: int) -> mp.mpf:
 
 def vol_uniform(part: list[int], n: int) -> mp.mpf:
     """Vol_λ = 1 (scalar Path-C baseline; the global scale is the single
-    knot volume). Known: D +0.2%, A≥3 −60% (binding_link_volumes.py)."""
+    knot volume). Known: D −6.3%, A≥3 −56% (binding_link_volumes.py).
+
+    ⚠ Corrected 2026-08-15 (bean `qou-jdhm`): read "D +0.2%, A≥3 −60%".
+    The deuteron figure was trace convention C, excised by owner ruling
+    2026-08-09; under convention D it is −6.3%.  ("D" in this line means
+    the *deuteron*, not the trace convention — the collision is
+    unfortunate and is why the convention is now named explicitly.)"""
     return mp.mpf(1)
 
 

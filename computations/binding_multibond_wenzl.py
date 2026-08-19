@@ -5,9 +5,22 @@ the CANONICAL Wenzl Jones-Markov convention (conventions now reconciled,
 trace_convention_reconciliation.py).
 
 The atom braid is a chain of A−1 inter-nucleon bonds (pp/pn/nn). The
-single-link endomorphism B = m_e·Vol(𝓑₃)·Δtr_combined matches ²H
-(+0.2%) but fails A≥3 (−60%) because the COMBINED Δtr (all bonds
+single-link endomorphism B = m_e·Vol(𝓑₃)·Δtr_combined gives ²H
+(−6.3%) and fails A≥3 (−56%) because the COMBINED Δtr (all bonds
 multiplied together) is nearly A-flat.
+
+⚠ NUMBERS CORRECTED 2026-08-15 (bean `qou-jdhm`). This read "matches ²H
+(+0.2%)". That figure is trace **convention C**, excised by owner ruling
+2026-08-09 in favour of **convention D**; under D the deuteron is −6.3%.
+The A-flatness argument — the actual content of this module — is
+unchanged, and the hypothesis tested below is unaffected: it was
+motivated by the combined Δtr being nearly A-independent, not by the
+deuteron matching.
+
+⚠ Note also that the header line above claims the conventions are "now
+reconciled". That refers to `trace_convention_reconciliation.py`, and is
+a SEPARATE question from the C→D excision; the corpus-wide C→D sweep is
+bean `qou-wgta` and was still open as of this edit.
 
 Hypothesis under test: binding is ADDITIVE over chain bonds —
     B(K) = m_e · Vol(𝓑₃) · Σ_bonds Δtr_bond,
