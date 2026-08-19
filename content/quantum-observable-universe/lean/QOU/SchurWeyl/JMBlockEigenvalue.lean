@@ -150,6 +150,90 @@ theorem sum_diagonal_eq_scalar {μ : YoungDiagram} [DecidableEq (StandardYoungTa
     rw [Finset.sum_congr rfl hk, Finset.sum_const_zero]
     simp [Matrix.smul_apply, Matrix.one_apply_ne hTT]
 
+/-! ## The target, verified on the smallest non-trivial shape
+
+Bean `qou-yvly` records that the per-element eigenvalue should be checked on a concrete case before
+anyone invests sessions in the general proof, because two conventions could be silently wrong — the
+`L_k` ↔ entry-`(k+1)` offset, and the sign of `cellContent = col − row`. This section runs that
+check on `λ = (2,1)` and it **passes exactly**, so the general target is the right one.
+
+The two standard tableaux of shape `(2,1)`, in the order `S0 = diag(q, -q⁻¹)` indexes them:
+
+| | entry `2` at | content | entry `3` at | content |
+|---|---|---|---|---|
+| `[[1,2],[3]]` | `(0,1)` | `+1` | `(1,0)` | `−1` |
+| `[[1,3],[2]]` | `(1,0)` | `−1` | `(0,1)` | `+1` |
+
+`L_1 = σ_0²` and `L_2 = σ_1 L_1 σ_1`, so the prediction `L_k ↦ diagonal (q^{2·content})` reads
+
+* `ρ(L_1) = diag(q^{+2}, q^{−2})`,
+* `ρ(L_2) = diag(q^{−2}, q^{+2})` — the *same two* values, exchanged, because `σ_1` swaps the
+  tableaux.
+
+Both hold. `L_1` is the easy one (`S0` is already diagonal); **`L_2` is the informative one** — it is
+a genuine `2×2` product `S1 · S0² · S1` whose off-diagonal entries have to cancel, which is the
+first test of anything the `1×1` shapes cannot see. They cancel through the single identity
+
+  `a·q² + d·q^{−2} = 0`,  `a = −1/(q³+q)`, `d = q³/(q²+1)`
+
+relating `S1`'s two diagonal entries to the two contents — the axial-distance relation doing exactly
+the work the general induction would need it to do.
+
+**Scope.** This is one shape, and it does not prove the general theorem; `d_λ = 2` with a single
+size-`2` orbit is the smallest case where the off-diagonal is even non-trivial. What it does buy is
+that the general statement in bean `qou-yvly` is not mis-stated. -/
+
+section Rep21Eigenvalue
+
+variable (q : ℝ)
+
+private theorem sq_add_one_ne' : (q ^ 2 + 1) ≠ 0 := by positivity
+
+private theorem cube_add_ne' (hq : q ≠ 0) : (q ^ 3 + q) ≠ 0 := by
+  have h : q ^ 3 + q = q * (q ^ 2 + 1) := by ring
+  rw [h]; exact mul_ne_zero hq (sq_add_one_ne' q)
+
+/-- `S0² = diag(q², q^{−2})` — the `L_1` eigenvalues, at the contents `+1` and `−1` of entry `2`. -/
+theorem S0_sq_eq_diag : S0 q * S0 q = !![q ^ 2, 0; 0, (q⁻¹) ^ 2] := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [S0, Matrix.mul_apply, Fin.sum_univ_two] <;> ring
+
+/-- **`S1 · S0² · S1 = diag(q^{−2}, q²)`** — the `L_2` eigenvalues, at the contents `−1` and `+1`
+of entry `3`.
+
+The informative half of the check: unlike `S0²` this is a genuine `2×2` product, and the
+off-diagonal entries cancel rather than being zero by construction. -/
+theorem S1_S0sq_S1_eq_diag (hq : q ≠ 0) :
+    S1 q * (S0 q * S0 q) * S1 q = !![(q⁻¹) ^ 2, 0; 0, q ^ 2] := by
+  have h1 : (q ^ 2 + 1) ≠ 0 := sq_add_one_ne' q
+  have h2 : (q ^ 3 + q) ≠ 0 := cube_add_ne' q hq
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [S0, S1, Matrix.mul_apply, Fin.sum_univ_two] <;>
+    field_simp <;> ring
+
+/-- `ρ_{(2,1)}(L_1) = diag(q², q^{−2})`: the per-element eigenvalue, first instance. -/
+theorem seminormalRep21_qJM_one (hq : q ≠ 0) :
+    seminormalRep21 q hq (qJM ℝ q q⁻¹ 2 1) = !![q ^ 2, 0; 0, (q⁻¹) ^ 2] := by
+  rw [qJM_one ℝ q q⁻¹ 2 (by norm_num), map_mul]
+  have h0 : seminormalRep21 q hq (Hecke.σ ℝ q q⁻¹ 2 ⟨0, by norm_num⟩) = S0 q :=
+    seminormalRep21_σ0 q hq
+  rw [h0, S0_sq_eq_diag]
+
+/-- `ρ_{(2,1)}(L_2) = diag(q^{−2}, q²)`: the per-element eigenvalue on the moved tableaux. -/
+theorem seminormalRep21_qJM_two (hq : q ≠ 0) :
+    seminormalRep21 q hq (qJM ℝ q q⁻¹ 2 2) = !![(q⁻¹) ^ 2, 0; 0, q ^ 2] := by
+  rw [qJM_succ ℝ q q⁻¹ 2 (show 1 < 2 by norm_num), map_mul, map_mul]
+  have h1 : seminormalRep21 q hq (Hecke.σ ℝ q q⁻¹ 2 ⟨1, by norm_num⟩) = S1 q :=
+    seminormalRep21_σ1 q hq
+  rw [h1, qJM_one ℝ q q⁻¹ 2 (by norm_num), map_mul]
+  have h0 : seminormalRep21 q hq (Hecke.σ ℝ q q⁻¹ 2 ⟨0, by norm_num⟩) = S0 q :=
+    seminormalRep21_σ0 q hq
+  rw [h0, S1_S0sq_S1_eq_diag q hq]
+
+end Rep21Eigenvalue
+
 end TableauCells
 
 end QOU.SchurWeyl

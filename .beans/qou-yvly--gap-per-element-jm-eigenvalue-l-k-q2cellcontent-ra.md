@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-19T08:13:31Z
-updated_at: 2026-08-19T08:16:49Z
+updated_at: 2026-08-19T11:57:02Z
 ---
 
 ## Scope, after the 2026-08-19 narrowing
@@ -72,3 +72,48 @@ the **one-dimensional** shape, where the single SYT has entry `k+1` in cell `(0,
 so `q^{2·content} = q^{2k}` ✓. That is a second, already-proved consistency point for the same
 formula, and it is evidence the exponent convention is right — but it is a 1×1 case, so it does NOT
 test the off-diagonal behaviour that makes the general theorem hard.
+
+
+## The validation RAN, and it PASSES — 2026-08-19
+
+Done, and proved in Lean rather than checked by hand: `JMBlockEigenvalue.lean` §Rep21Eigenvalue,
+four theorems, sorry-free and axiom-clean.
+
+    S0_sq_eq_diag        : S0² = diag(q², q^{-2})
+    S1_S0sq_S1_eq_diag   : S1 · S0² · S1 = diag(q^{-2}, q²)          ← the informative one
+    seminormalRep21_qJM_one : ρ(L_1) = diag(q², q^{-2})
+    seminormalRep21_qJM_two : ρ(L_2) = diag(q^{-2}, q²)
+
+**Both conventions are confirmed.** The prediction `L_k ↦ diagonal (q^{2·cellContent(cellOf T (k+1))})`
+matches exactly on λ = (2,1):
+
+| tableau | entry 2 cell / content | entry 3 cell / content |
+|---|---|---|
+| `[[1,2],[3]]` | (0,1), +1 → q² | (1,0), −1 → q^{-2} |
+| `[[1,3],[2]]` | (1,0), −1 → q^{-2} | (0,1), +1 → q² |
+
+So the `L_k` ↔ entry-`(k+1)` offset is right, and `cellContent = col − row` has the right sign.
+The general target is NOT mis-stated — that was the thing this check existed to rule out.
+
+### The mechanism, which is the part worth carrying into the general proof
+
+`L_2` is the informative case: unlike `S0²` it is a genuine 2×2 product whose off-diagonal entries
+must **cancel**, and they do, through a single identity
+
+    a·q² + d·q^{-2} = 0,     a = −1/(q³+q)  (S1's top-left),  d = q³/(q²+1)  (S1's bottom-right)
+
+i.e. the two diagonal entries of the seminormal block, weighted by the two contents, sum to zero.
+That is the axial-distance relation doing exactly the work a general induction would need it to do
+at each size-2 orbit: `M · D · M` stays diagonal precisely because the block's parameters are tied
+to the contents this way.
+
+**Suggested next step**, now that the target is validated: try to state and prove that cancellation
+identity for the general `seminormalBlock q a` at a general axial distance — i.e. the size-2 orbit
+step of the induction — rather than starting from the full theorem. `seminormalBlock` and
+`seminormalBlock_quadratic` already exist and are generic over the field.
+
+### Still NOT claimed
+
+One shape, with one size-2 orbit. It does not prove the general theorem, and `d_λ = 2` is the
+smallest case where the off-diagonal is non-trivial at all — a λ with several orbits, or orbits of
+size 6, is not exercised. Ram Thm 4.1 remains open.
