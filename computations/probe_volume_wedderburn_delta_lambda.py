@@ -29,6 +29,12 @@ It does NOT touch production. Δ_λ remains an open gate (GAP-A-3/A-4).
 """
 from __future__ import annotations
 
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
+
 import json
 import sys
 from pathlib import Path

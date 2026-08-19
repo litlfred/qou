@@ -27,6 +27,12 @@ variant, so a near-miss isn't mistaken for a refutation of the whole q-involutio
 
 No fit; sympy symbolic in q + mpmath 50-dps at q0; (a)/(b)-scoped verdict per AGENTS.md.
 """
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
 import json, os, sys
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
