@@ -1,9 +1,13 @@
-# archimedean_by_design: scipy LP/SDP solver wrapper + numpy
-#   float64 Hoefsmit matrices (the `_hoefsmit_f64_matrices` helper
-#   makes this explicit in its name). Substrate precision is the
-#   input q-arithmetic; the LP/SDP solve and the Gram matrix
-#   assembly are float64 by necessity (scipy.optimize.linprog +
-#   numpy.linalg).
+# NOT archimedean_by_design. This file used to carry that marker, reading
+#   "the LP/SDP solve and the Gram matrix assembly are float64 by necessity
+#   (scipy.optimize.linprog + numpy.linalg)". The necessity was real when it
+#   was written and is now gone: the Gram/supply assembly runs in mpmath via
+#   `hoefsmit_mpmath` (#5264), the solve goes to the Clarabel-MPFR backend
+#   over decimal strings, and deliverable B's eigensolve is `mp.eig`. numpy
+#   is no longer imported at all. The marker is an agent-facing convention
+#   with no script reading it, so a stale one is pure misdirection — it would
+#   have gone on excusing float64 here long after the reason expired.
+#   Bean qou-q7f1; owner directive "no f64 path".
 """Wedderburn pair-volume LP/SDP wiring for the EW-sector + alt-Δ_I
 Weinberg-angle probe.
 
@@ -31,7 +35,6 @@ import sys
 import time
 from pathlib import Path
 
-import numpy as np
 import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -107,7 +110,6 @@ def _mp_trace(M, dim: int):
         acc += M[i, i]
     return acc
 from wedderburn_pair_volumes import wedderburn_pair_volumes  # noqa: E402
-from hecke_character_symbolic import _hoefsmit_build  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from partition_utils import hook_lengths  # noqa: E402
 
@@ -173,7 +175,7 @@ def _klr_positive_supply_vector(
     q_str: str,
     *,
     hoefsmit_cache: dict | None = None,
-) -> np.ndarray:
+) -> list:
     """KLR-positive supply vector ``t_k = tr_M(σ_i σ_j)`` per pair.
 
     Replaces the signed `pair["full"]` matrix-entry sum used on PR
@@ -202,7 +204,7 @@ def _klr_positive_supply_vector(
 
     Returns
     -------
-    numpy.ndarray
+    list[mpmath.mpf]
         Real ``(n_pairs,)`` vector of pair Markov traces.
     """
     if hoefsmit_cache is None:
@@ -274,7 +276,7 @@ def _full_wedderburn_gram(
 
     Returns
     -------
-    numpy.ndarray
+    list[list[mpmath.mpf]]
         Real ``(n_pairs, n_pairs)`` Gram matrix.
     """
     n_pairs = len(pairs)
@@ -314,41 +316,65 @@ def beta_ew_word(delta_I):
     return [0]*4 + delta_I + [2]*6 + delta_I + [4]*8 + delta_I
 
 
-def beta_matrix_at_q0(shape, q_0, word):
-    """Build β_EW matrix on V_λ at q_0 (Float specialization).
+def beta_matrix_at_q0(shape, q_str, word):
+    """Build β_EW matrix on V_λ at q_0, in **mpmath** at 50 dps.
 
-    Converts each Hoefsmit generator matrix to numpy *once* up front,
-    then runs the per-generator multiplication in numpy.  Symbolic
-    matrix multiplication for a 3·A-letter word can dominate runtime
-    on V_(3,2,1) (dim 16); the numpy path matches the eventual
-    eigvals consumer at the cost of a one-time elaboration.
+    PORTED FROM FLOAT64 (owner directive "no f64 path", bean qou-q7f1).
+    The previous version elaborated the Hoefsmit generators to
+    ``np.complex128`` "once up front" and multiplied in numpy, then fed
+    ``np.linalg.eigvals``. That truncated the 50-dps substrate constant at
+    the first ``np.array(...)`` call, so every ``ratio`` and ``rel_err``
+    this probe reported carried 16 digits regardless of what the witness
+    claimed — the last 31 raw float64 fields in the witness were all
+    downstream of this one line.
+
+    "It is only a percent-level probe" is not an exemption (AGENTS.md
+    §PROBES ARE NOT EXEMPT): a probe conclusion is an *argument* that gets
+    written into a bean and a PR body, where nothing re-derives it.
+
+    The mpmath-native ``seminormal_matrices_mp`` (main #5264) replaces the
+    sympy ``_hoefsmit_build`` + numpy round trip (this file's last caller of
+    either), so no coercion point
+    remains. Measured cost on V_(3,2,1) (dim 16, 27-letter word): the
+    eigensolve is ~1 s per candidate, 14 candidates — the numpy path was
+    never the bottleneck this docstring claimed it was.
     """
-    matrices, dim, _ = _hoefsmit_build(list(shape), q_0)
-    if dim == 0:
-        return None, 0
-    np_mats = [
-        np.array(m.tolist(), dtype=np.complex128) for m in matrices
-    ]
-    M = np.eye(dim, dtype=np.complex128)
-    for gen_idx in word:
-        M = M @ np_mats[gen_idx]
-    return M, dim
+    from hoefsmit_mpmath import BlockCacheMP, seminormal_matrices_mp  # noqa: E402
+
+    with mp.workdps(_MP_DPS):
+        matrices, dim, _ = seminormal_matrices_mp(
+            list(shape), cache=BlockCacheMP(mp.mpf(q_str)))
+        if dim == 0:
+            return None, 0
+        M = mp.eye(dim)
+        for gen_idx in word:
+            M = M * matrices[gen_idx]
+        return M, dim
 
 
-def compute_321_max_plus_ratio(q_0, delta_I):
-    """For β_EW(Δ_I) on V_(3,2,1), return max+/2nd-max+ eigenvalue ratio."""
+def compute_321_max_plus_ratio(q_str, delta_I):
+    """For β_EW(Δ_I) on V_(3,2,1), return max+/2nd-max+ eigenvalue ratio.
+
+    Real parts of the spectrum, as before — the Hoefsmit seminormal form is
+    real at real q, so ``mp.eig`` returns a numerically-real spectrum and
+    ``.real`` discards only the residual imaginary part.
+    """
     word = beta_ew_word(delta_I)
-    M_np, dim = beta_matrix_at_q0((3, 2, 1), q_0, word)
-    if M_np is None:
+    M, dim = beta_matrix_at_q0((3, 2, 1), q_str, word)
+    if M is None:
         return None, []
-    eigs = np.linalg.eigvals(M_np).real
-    pos = sorted([e for e in eigs if e > 0])
-    if len(pos) < 2:
-        return None, eigs.tolist()
-    return pos[-1] / pos[-2], eigs.tolist()
+    with mp.workdps(_MP_DPS):
+        eigs = [mp.mpmathify(e).real for e in mp.eig(M, left=False,
+                                                     right=False)]
+        pos = sorted(e for e in eigs if e > 0)
+        if len(pos) < 2:
+            return None, eigs
+        return +(pos[-1] / pos[-2]), eigs
 
 
 def main() -> int:
+    # Recorded as a witness parameter only — every compute path below takes
+    # the 50-dps STRING directly, so nothing elaborates through sympy.
     q_0 = sp.Float(Q_50_DIGIT_STR, 50)
     print(f"Wedderburn LP/SDP-EW wiring + alt-Δ_I Weinberg probe")
     print(f"  q_0 ≈ {mp.nstr(mp.mpf(Q_50_DIGIT_STR), 12)}")
@@ -578,9 +604,13 @@ def main() -> int:
     print("=" * 72)
     print("(B) Alternative Δ_I words to close the 2.19% Weinberg gap")
     print("=" * 72)
-    cot_codata = float(sp.sqrt(sp.Rational(1) - sp.Rational("0.23129"))
-                       / sp.sqrt(sp.Rational("0.23129")))
-    print(f"  CODATA cot θ_W = {cot_codata:.6f}")
+    # sin²θ_W = 0.23129 (PDG) is an EXACT rational input; the old code
+    # wrapped the exact sympy surd in `float(...)`, throwing away 34 digits
+    # before the comparison it feeds.
+    with mp.workdps(_MP_DPS):
+        _s2w = mp.mpf(23129) / 100000
+        cot_codata = +(mp.sqrt(1 - _s2w) / mp.sqrt(_s2w))
+    print(f"  CODATA cot θ_W = {mp.nstr(cot_codata, 12)}")
     print()
 
     # Candidate Δ_I words — all use generators σ_2 (idx 1) and σ_4 (idx 3)
@@ -605,7 +635,7 @@ def main() -> int:
     for name, delta in delta_candidates:
         t0 = time.time()
         try:
-            ratio, eigs = compute_321_max_plus_ratio(q_0, delta)
+            ratio, eigs = compute_321_max_plus_ratio(Q_50_DIGIT_STR, delta)
         except Exception as e:
             print(f"  {name:<35} FAILED ({type(e).__name__}: {e})")
             continue
@@ -613,31 +643,39 @@ def main() -> int:
         if ratio is None:
             print(f"  {name:<35} (insufficient + eigvals)")
             continue
-        rel_err = abs(ratio - cot_codata) / cot_codata
-        flag = "★" if rel_err < 0.001 else ("✓" if rel_err < 0.01 else "·" if rel_err < 0.05 else " ")
-        print(f"  {flag} {name:<35} ratio = {ratio:>9.4f}  "
-              f"rel_err = {rel_err*100:>6.2f}%  ({elapsed:.2f}s)")
+        with mp.workdps(_MP_DPS):
+            rel_err = +(abs(ratio - cot_codata) / cot_codata)
+        flag = ("★" if rel_err < mp.mpf("0.001")
+                else "✓" if rel_err < mp.mpf("0.01")
+                else "·" if rel_err < mp.mpf("0.05") else " ")
+        print(f"  {flag} {name:<35} ratio = {mp.nstr(ratio, 8):>12s}  "
+              f"rel_err = {mp.nstr(rel_err * 100, 4):>8s}%  ({elapsed:.2f}s)")
         results.append({
             "delta_I_name": name,
             "delta_I_word": delta,
-            "ratio": ratio,
-            "rel_err": rel_err,
+            "ratio": fmt(ratio),
+            "rel_err": fmt(rel_err),
+            "_ratio_mp": ratio,        # popped before serialization
+            "_rel_err_mp": rel_err,
         })
 
     print()
-    best = min(results, key=lambda r: r["rel_err"])
+    # Order on the mpf twin, never on the serialized string: decimal string
+    # comparison would rank "1e-3" above "9e-4".
+    best = min(results, key=lambda r: r["_rel_err_mp"])
+    best_rel_err = best["_rel_err_mp"]
     print(f"Best Δ_I (3,2,1)max+/2nd-max+ vs CODATA cot θ_W:")
     print(f"  {best['delta_I_name']}")
     print(f"  Δ_I word: {best['delta_I_word']}")
-    print(f"  ratio = {best['ratio']:.6f}")
-    print(f"  rel err = {best['rel_err']*100:.4f}%")
+    print(f"  ratio = {mp.nstr(best['_ratio_mp'], 12)}")
+    print(f"  rel err = {mp.nstr(best_rel_err * 100, 6)}%")
     print()
 
-    if best["rel_err"] < 0.001:
+    if best_rel_err < mp.mpf("0.001"):
         verdict = "candidate-found-precision-1e-3"
-    elif best["rel_err"] < 0.01:
+    elif best_rel_err < mp.mpf("0.01"):
         verdict = "near-miss-precision-1e-2"
-    elif best["rel_err"] < 0.05:
+    elif best_rel_err < mp.mpf("0.05"):
         verdict = "near-miss-precision-5pct"
     else:
         verdict = "no-clean-fit"
@@ -647,7 +685,7 @@ def main() -> int:
     # ── Witness assembly via WitnessBuilder ────────────────────
     from witness_base import WitnessBuilder
     w = (
-        WitnessBuilder("wedderburn-lp-ew-wiring", engine="numpy+sympy")
+        WitnessBuilder("wedderburn-lp-ew-wiring", engine="mpmath+clarabel-mpfr")
         .set_description(
             "Two deliverables: (A) wires wedderburn_pair_volumes into "
             "prop:knot-operator-lp-selection via concrete LP/SDP-dual "
@@ -711,7 +749,7 @@ def main() -> int:
     # Weinberg verdict: best rel_err < 2.5% (the σ_2 σ_4 σ_2 baseline)
     w.add_assertion(
         "weinberg_minimal_delta_I_optimal",
-        fmt(mp.mpf(str(best["rel_err"]))),
+        fmt(best_rel_err),
         "0.0219",  # baseline 2.19% rel_err
         tolerance="0.005",
     )
@@ -761,11 +799,16 @@ def main() -> int:
                or [fmt(y) for y in res_dict.get("y_star", [])])
     w.add_data("active_set", list(res_dict.get("active_set", [])))
 
-    # (B) Alt-Δ_I Weinberg probe
+    # (B) Alt-Δ_I Weinberg probe. Drop the `_*_mp` working twins — they exist
+    # only so ordering and the verdict thresholds compare mpf against mpf; the
+    # serialized form is the `fmt()` string beside them.
+    def _shed(rec: dict) -> dict:
+        return {k: v for k, v in rec.items() if not k.startswith("_")}
+
     w.add_data("deliverable_B_alt_delta_I_weinberg_probe", {
-        "codata_cot_theta_W": cot_codata,
-        "candidates": results,
-        "best": best,
+        "codata_cot_theta_W": fmt(cot_codata),
+        "candidates": [_shed(r) for r in results],
+        "best": _shed(best),
         "verdict": verdict,
     })
 
