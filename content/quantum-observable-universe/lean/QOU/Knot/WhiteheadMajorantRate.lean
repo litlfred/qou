@@ -56,6 +56,28 @@ Numeric confirmation of the target: anchor A3 of
 `4G = 3.66386`, err `1.3e-3` — the `b=1` row).
 -/
 
+/-
+**CROSS-REFERENCE (2026-08-19) — a second Whitehead-link VC program exists.**
+
+`QOU/Knot/WhiteheadVolumeConjecture.lean` + `QOU/Knot/WhiteheadSaddleClausen.lean`
+(beans `qou-t2sc` / `qou-dw20` / `qou-1gkf`) attack the same theorem from the
+OPPOSITE end, by van der Veen's Lemma-1 POSITIVE-sum route:
+
+* they have the MAGNITUDE — `whitehead_vc_innerSum_half` (sorry-free): the
+  inner sum `Σ_k S_{n,k}` at the slice `n = ⌊N/2⌋` has scaled log `→ 4G`;
+* this program has the PHASES — the majorant bound, its `4G` limit, and the
+  residue isolated as `VdVWhiteheadLemma4` (no instance anywhere: open).
+
+The gap between the two ends is non-cancellation of the phased outer sum
+`Σ_n (2n+1)·χ_{N,n}^{-1}·(Σ_k S_{n,k})` — which is exactly Lemma 4. The two are
+COMPLEMENTARY, not redundant. Coordinate before extending either.
+
+Note their `whitehead_volume_conjecture` is not the VC for `J_N(W)`: it assumes
+`hk : kashaev N = whiteheadInnerSum N ((N-1)/2)`, so it concerns the inner sum
+at one slice. Their docstring says so; the name alone does not.
+Audit: `docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md`.
+-/
+
 import QOU.Knot.WhiteheadLinkScaffold
 import QOU.Knot.WhiteheadSaddleClausen
 
