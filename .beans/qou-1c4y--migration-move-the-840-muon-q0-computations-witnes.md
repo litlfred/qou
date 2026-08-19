@@ -534,12 +534,33 @@ will not take effect: `qbeta_dladder_ecalle_acceleration_probe`,
 `qbeta_trm_crosscheck_convention_pin_split_probe`.
 
 Together: 101 producers covered (49 + 56 - 4); neither audit sees the other's set.
+## The relabel is not the migration (recorded 2026-08-19, PR #5332)
 
+The section above covers never re-pinning the anchor-DEFINING witness. This is
+the other half, and it is not covered above: the tempting one-line version of
+this migration is to move every `ideal_muon` stem to `physical_proton` in
+`computations/q0_anchor_manifest.json` and call the end state reached.
+
+That is a *disabling*, not a migration. `q_parameter.py:100` selects the anchor
+by membership in that list, so an empty `ideal_muon` means no producer ever
+*requests* the muon anchor again — and the anti-corruption guard at
+`q_parameter.py:224` ("Refusing to fall back to proton silently") fires only on
+a *requested* muon anchor. Empty the list and the guard becomes unreachable for
+exactly the producers it exists to protect, while their already-emitted
+witnesses stay muon-computed under a proton label. Proposed in #5049, held back
+in #5315.
+
+Corollary measured on 2026-08-24: `ideal_muon` does NOT end at zero. Three
+producers refuse a proton run by design (`atomic_tr_m_mpfr_50dps`,
+`cross_check_trM_1ppb`, `he4_stage2_ranking_seminormal_xcheck`), several more
+hold the muon value as a deliberate reference, and `q_pinning_50_digit` defines
+the anchor. A run that drove the list to zero would be a bug, not a completed
+migration.
 
 ## STOPPING POINT 2026-08-24 — bulk migration done, PR #5664
 
-    ideal_muon      120 -> 37
-    physical_proton 514 -> 597
+    ideal_muon      120 -> 36
+    physical_proton 514 -> 598
 
 ~130 producers migrated, each verified by the muon value actually LEAVING its
 witness rather than by the witness merely changing. Manifest moved LAST, after
@@ -570,11 +591,17 @@ over-correcting.
 
 ## What is left, and why it is not "unfinished"
 
-The 37 remaining are the correct end state: `q_pinning_50_digit` DEFINES the
+The 36 remaining are the correct end state: `q_pinning_50_digit` DEFINES the
 anchor; five producers refuse a proton run by design;
 `q0_anchor_consistency_audit` needs BOTH pins (moving it would disable the
 audit that detects anchor corruption). A run that drove ideal_muon to zero
 would be a bug.
+
+Corrected on the rebase before merge: 36/598, not the 37/597 first reported.
+`main` had independently migrated `rho_w_crystal_vertex_trace` with a better
+fix than this branch's — it reads q FROM the deuteron chi cache header rather
+than from any literal, so it can never again be read at a second anchor.
+`main`'s side was kept.
 
 Genuinely open, tracked elsewhere:
   * qou-aj91 — 85 producers read the anchor witness directly (67 untagged);
@@ -586,4 +613,4 @@ Genuinely open, tracked elsewhere:
 
 Keeping this bean IN-PROGRESS rather than closing on the manifest number: the
 mechanism-5 question and the slow producers are real remaining work, and
-closing on "120 -> 37" would read as done when it is not.
+closing on "120 -> 36" would read as done when it is not.
