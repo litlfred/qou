@@ -126,11 +126,27 @@ def former_ideal_muon() -> list[str]:
 ANCHOR_DEFINING = frozenset({"q_pinning_50_digit"})
 
 
+# Witnesses that DEFINE an anchor rather than consume one. The sweep must
+# never re-pin these: doing so redefines the anchor instead of migrating a
+# consumer. See the note in build_graph. Bean qou-cezp.
+ANCHOR_DEFINITIONS = frozenset({"q-pinning-50-digit.witness.json"})
+
+
 def build_graph(stems: set[str]):
     """producer stem -> (script path, its witness names, stems it reads)."""
     wit: dict[str, set[str]] = {}
     for w in HERE.rglob("*.witness.json"):
         if "_deprecated" in w.parts:
+            continue
+        if w.name in ANCHOR_DEFINITIONS:
+            # NOT a consumer. `q-pinning-50-digit.witness.json` DEFINES the muon
+            # anchor: qou_substrate.witness._q0_value_for_anchor("muon") reads
+            # its `derived_50_digit.q`, and q_parameter.py reads it to build the
+            # whole ideal/muon q-closure family. Re-pinning it to proton does
+            # not migrate a consumer -- it redefines what "muon" MEANS, so every
+            # muon-anchored witness in the corpus then disagrees with its own
+            # anchor. That happened in 9a9c6b31c7 and produced 262 Q0_FLIPs plus
+            # a hard RuntimeError on QOU_Q0_ANCHOR=ideal|muon. Bean qou-cezp.
             continue
         try:
             d = json.loads(w.read_text(encoding="utf-8"))

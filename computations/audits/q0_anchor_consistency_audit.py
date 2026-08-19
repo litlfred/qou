@@ -83,6 +83,36 @@ def _canonical(anchor: str) -> str | None:
     return v[:_MATCH_PREFIX] if v else None
 
 
+# The muon/proton pins agree to 8 digits and then diverge; these prefixes are
+# the shortest that separate them.
+_EXPECTED_PREFIX = {"muon": "1.109978595557", "proton": "1.109978582751"}
+
+
+def check_reference_integrity() -> list[str]:
+    """Is the audit's own notion of each anchor still correct?
+
+    Without this the audit cannot tell "262 witnesses are wrong" from "my
+    reference for what muon MEANS is wrong", and it reports the first when the
+    second is true. Measured: 9a9c6b31c7 re-pinned
+    `q-pinning-50-digit.witness.json` -- which DEFINES the muon anchor -- to the
+    proton value, and this audit then flagged 262 correct muon witnesses as
+    flipped. An agent reading that output would go fix 262 files. Bean qou-cezp.
+    """
+    bad = []
+    for anchor, want in _EXPECTED_PREFIX.items():
+        got = _qw._q0_value_for_anchor(anchor)
+        if got is None:
+            bad.append(f"{anchor}: reference pin could not be loaded at all")
+        elif not got.startswith(want):
+            bad.append(
+                f"{anchor}: reference pin is {got[:16]}…, expected {want}… — "
+                f"the SOURCE OF TRUTH for the {anchor} anchor is corrupt, so "
+                f"every {anchor}-anchored witness below is being compared "
+                f"against the wrong value. Fix the reference, not the consumers."
+            )
+    return bad
+
+
 def classify(path: Path) -> tuple[str, str]:
     if any(path.name.endswith(suf) for suf in AUDIT_SUFFIXES):
         return "Q0_AUDIT_EXEMPT", ""
@@ -142,6 +172,21 @@ def main(argv: list[str] | None = None) -> int:
         help="Exit 1 if any Q0_FLIP witnesses are found (CI gate).",
     )
     args = parser.parse_args(argv)
+
+    ref_bad = check_reference_integrity()
+    if ref_bad:
+        print("=" * 74)
+        print("🛑 REFERENCE CORRUPTION — do NOT treat any row below as a finding")
+        print("=" * 74)
+        for m in ref_bad:
+            print(f"  {m}")
+        print()
+        print("  `computations/q-pinning-50-digit.witness.json` DEFINES the muon")
+        print("  anchor; the qou-substrate package constant defines proton. One")
+        print("  of them is wrong, and every consumer would be measured against")
+        print("  it — so this audit stops here rather than reporting hundreds of")
+        print("  correct witnesses as flipped. Fix the reference. Bean qou-cezp.")
+        return 1
 
     by_verdict: dict[str, list[dict]] = {}
     for wp in sorted((HERE.parent).rglob("*.witness.json")):
