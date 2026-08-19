@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T11:55:11Z
+updated_at: 2026-08-19T12:13:23Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -378,3 +378,57 @@ NET: restores a constraint I had wrongly removed, and it is far sharper than
 matching 1-F(q0)=1.6748e-3 at a single point -- it constrains F as a FUNCTION.
 
 Probe: computations/qbeta/qbeta_sinh_partner_object_identification_probe.py
+
+### FORK RESOLVED 2026-08-19: Q_A is the COUNIT; Im(frak V) is the TRACE
+
+Previous entry left two possibilities the corpus did not distinguish. It is the
+first, and the corpus says so explicitly once the derivation is located.
+
+nuclear-interactions/qbeta-counit-closed-form.md derives the closed form as a
+FROBENIUS COUNIT evaluation:
+    eps(Delta)*E_0 = m_e(q+1)(q^2-2q-1)/(2q^3),  E_0 = m_e/(q(q-1)),
+    Delta = NF(n) - NF(p) in H_3(q)
+and states the distinction outright:
+    eps(Delta) = h^2/2 - h,   tr_M(Delta) = h^2/2 - h*z
+    'The two agree precisely when z = 1. The trivial-loop value is never
+     attained on the substrate. THE COUNIT AND THE MARKOV TRACE ARE GENUINELY
+     DISTINCT FUNCTIONALS ON THE SUBSTRATE.'
+while conj:binding-qbeta-complex-volume defines
+    frak-V = E_0 * tr_M((Pi_free - 1) . M)      -- a TRACE object.
+
+VERIFIED: eps(Delta)*E_0 reproduces the committed closed form EXACTLY
+(-0.783645827375 vs +0.783645827375). The closed form's |q^2-2q-1| discards the
+sign -- worth noting, since a bar-odd object is signed.
+
+=> the +1.687-vs--1 bar-ratio is NOT a corpus contradiction. Q_A was never the
+object the parity claim is about. Question closed.
+
+THE IDENTITY THIS EXPOSES (the real result):
+
+    eps(Delta) - tr_M(Delta) = h(z-1) = 2*alpha        [exact, any z]
+
+The ladder's phase alpha is EXACTLY HALF THE COUNIT-MINUS-TRACE GAP. So alpha is
+not an arbitrary parameterisation: the precision ladder is implicitly
+TRANSPORTING the evaluation from the counit to the trace, and alpha measures
+precisely that gap.
+
+This also LOCATES THE UNJUSTIFIED STEP. It is the COSINE -- exponentiating a
+DIFFERENCE into cos(alpha - u/2) -- which is exactly the axiomatised piece
+(QOU.Interactions.QBetaCosResummation). The gap is structural; its
+exponentiation is not. That is a much more specific target than 'derive a
+different functional form': the object to derive is the counit->trace
+transport, and alpha already measures its infinitesimal generator.
+
+MEASURED ONCE, NOT PURSUED: bare transport ratios on Delta are
+    C: trM/eps = 0.44087, odd(trM)/eps = 0.55761
+    D: trM/eps = 0.56748, odd(trM)/eps = 0.68421
+against F_required = 0.998325. None close, so the transport is not a bare ratio
+of these functionals on Delta. Deliberately not explored further -- hunting
+combinations that land near 0.998 is the fit this bean forbids.
+
+NEXT (concrete, and narrower than before): derive the counit->trace transport
+for the frak-V operator (Pi_free - 1).M rather than for Delta, in convention D.
+That is now a specific object with a specific role, not a search over functional
+forms -- and alpha = (eps - tr_M)/2 says the ladder was always approximating it.
+
+Probe: computations/qbeta/qbeta_counit_vs_trace_fork_probe.py
