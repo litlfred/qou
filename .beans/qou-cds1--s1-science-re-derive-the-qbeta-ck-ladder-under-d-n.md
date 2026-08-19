@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T07:21:43Z
+updated_at: 2026-08-19T11:55:11Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -325,3 +325,56 @@ NET EFFECT ON THE RE-DERIVATION: bar-parity is now removed from the toolkit as a
 CONSTRAINT (it cannot be derived), while remaining available as a DESCRIPTION of
 a to-be-identified object. That is a narrowing, not progress: it says one more
 route into the D-frame correction is closed.
+
+### SETTLED 2026-08-19: the 'sinh partner' is Im(frak V) -- and my 'not available' was WRONG
+
+Owner asked what object the description was about, pointing at q-hyperbolic
+geometry. Answer: the COMPLEX VOLUME.
+
+three-calibration-discipline.md:18 cites
+mass-theory/substrate-cohomology-calibration-story.md, line 11:
+  'A crossing has two eigenvalues, q and -q^{-1}. Setting lambda = log q, these
+   split as cosh(lambda) +- sinh(lambda). ... binding sits on the cosh, bar-even
+   side ... Q_beta and its precision coefficients sit on the sinh, bar-odd side.
+   ... That single element is the COMPLEX VOLUME frak-V. Re frak-V = E_bind.
+   Im frak-V = Q_beta, the QOU analogue of Neumann-Zagier Vol + i CS.'
+and conj:binding-qbeta-complex-volume states
+    frak-V(K) = E_0 tr_M((Pi_free - 1).M),  E_bind = Re,  Q_beta = Im.
+
+So bar (q -> 1/q) IS lambda -> -lambda and sinh/cosh parity is exactly
+bar-odd/bar-even. The sinh partner is Im(frak V) -- the Chern-Simons-analogue
+part of the complex volume, NOT the rational closed form.
+
+RETRACTION of my own previous entry. I concluded a bar-parity constraint on F
+was 'NOT AVAILABLE from the chain as written'. That was WRONG -- I had not found
+the object carrying the parity. The constraint IS available.
+
+CORRECTLY STATED: writing Q_beta^pred = Q_A * F, the requirement is NOT that F
+be bar-even. It is that Q_A * F be BAR-ODD: Q_beta(1/q) = -Q_beta(q).
+
+MEASURED (both anchors):
+    Q_A alone                bar-ratio = +1.686826    (bar-odd needs -1)
+    Q_beta^C = Q_A * ladder  bar-ratio = +1.687595
+    ladder's effect on the ratio: 0.046 %
+
+TWO READINGS, both worth keeping:
+  * the chain VIOLATES the conjecture's parity requirement outright;
+  * the entire precision ladder moves the ratio by 0.05%, so the violation is
+    inherited wholesale from Q_A -- the ladder does essentially nothing to
+    restore bar-oddness.
+=> either Q_A is NOT Im(frak V) (the closed form is a different object from the
+   one the parity claim is about), or the conjecture's parity claim fails for
+   the computed object. THE CORPUS DOES NOT DISTINGUISH THESE. Settling that is
+   the next step, ahead of trying any further candidate F.
+
+CONDITIONALITY: conj:binding-qbeta-complex-volume is a CONJECTURE,
+class-axiomatised in Lean (ComplexVolumeMatch / SingleFrakVAssembly /
+StageCSigma3Lift). So Q_beta's bar-oddness is CONDITIONAL on it, and the four
+sites asserting it as fact -- three-calibration-discipline.md:18,
+epistemic-status-of-calibrations.md:3, three-calibration-discipline-proof.md:36,
+AGENTS.md -- omit the conditional ('conditional-proved != premise-established').
+
+NET: restores a constraint I had wrongly removed, and it is far sharper than
+matching 1-F(q0)=1.6748e-3 at a single point -- it constrains F as a FUNCTION.
+
+Probe: computations/qbeta/qbeta_sinh_partner_object_identification_probe.py
