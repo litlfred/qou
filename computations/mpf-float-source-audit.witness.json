@@ -203,7 +203,7 @@
       },
       {
         "file": "tools/qou-substrate/python/qou_substrate/precision.py",
-        "line": 162,
+        "line": 165,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "if isinstance(value, mpf) and value == mpf(float(value)):",

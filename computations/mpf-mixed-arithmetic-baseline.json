@@ -1,7 +1,18 @@
 {
-  "_comment": "Baseline for mpf_mixed_arithmetic_audit.py. This surface starts NON-ZERO, so the gate is ADVISORY until the rows are adjudicated; --strict fails only ABOVE the baseline, so it can only shrink. Never raise it: a new row is a new regression. 3 of 3 rows adjudicated at the time this was set were TRUE positives on physics-bearing values (rho_k_full_via_wenzl_lr tr_M_q0_mp30dps, qbeta_habiro_taylor_investigation tr_M_*_at_q0, phase1e m_p_MeV). Bean qou-gqt5.",
-  "candidates": 28,
+  "_comment": "Baseline for mpf_mixed_arithmetic_audit.py. --strict fails only ABOVE this number, so the surface can only shrink. NEVER raise it: a new row is a new regression. Drained 28 -> 16 under bean qou-65qv (3 detector false-positive classes removed, 2 producers fixed at source with measured A/B, 6 rows marked float64-intentional). Still ADVISORY: the residual 16 are not all verdicted, and one (qbeta_habiro_taylor_investigation) is BLOCKED -- re-running that producer regenerates its witness under convention D, which belongs to bean qou-cds1, not here. Flip to blocking when the residual is verdicted.",
+  "candidates": 16,
   "set_at": "2026-08-19",
-  "adjudicated": 3,
-  "adjudicated_true_positive": 3
+  "history": [
+    {"date": "2026-08-19", "candidates": 28, "note": "as landed by qou-gqt5 in #5264"},
+    {"date": "2026-08-19", "candidates": 25, "note": "int()/round() clear taint; format-spec sink is display"},
+    {"date": "2026-08-19", "candidates": 19, "note": "4 rows marked float64-intentional"},
+    {"date": "2026-08-19", "candidates": 16, "note": "bare .trace()/.sum() no longer imply numpy; 2 markers moved to sink lines"}
+  ],
+  "fixed_at_source": [
+    "qbeta_hoefsmit_chi_cross_anchor_stability_probe.py — 49-digit float literal; delta_q wrong from the 9th significant digit",
+    "rho_k_full_via_wenzl_lr.py — 50-dps q0 discarded 3 lines after being declared; tr_M_q0_mp30dps carried as few as 9 good digits"
+  ],
+  "blocked": [
+    "qbeta_habiro_taylor_investigation.py:235-237 — the float() fix is correct, but re-running the producer regenerates the witness from convention C to convention D. That flip belongs to bean qou-cds1 (three active arcs), not to a float64 drain."
+  ]
 }
