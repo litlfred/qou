@@ -3,7 +3,7 @@
  "probe": "gswz_epsm_m3_one_two_relation_closure_probe",
  "engine": "python3-int-exact",
  "scriptFile": "gswz_epsm_m3_one_two_relation_closure_probe.py",
- "commitSha": "9d547fa2a7378b8f1b0b794c3cf035e3af9bd1ce",
+ "commitSha": "eafc6db1efe21c31747abb93ad5565d05b668750",
  "beans": [
   "qou-w4gn",
   "qou-y3xv"
@@ -28,7 +28,7 @@
   "pair_search": {
    "pairs_examined": 307590,
    "combos_tested": 2460720,
-   "seconds": 10.3,
+   "seconds": "13.5",
    "solutions": 0
   }
  },

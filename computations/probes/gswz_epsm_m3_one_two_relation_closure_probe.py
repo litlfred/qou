@@ -214,8 +214,13 @@ for u, lst in sorted(shared, key=lambda kv: len(kv[1])):
                 if all(v % _mu[ut] == 0 for ut, v in tot.items()):
                     two += 1
 elapsed = time.time() - t0
+# A wall-clock timing is a float and the raw-float64 ratchet counts it like any
+# other, so the corpus convention is to emit it as a formatted STRING -- set by
+# 4e126c6f41 (35 timing fields across 28 producers) and already followed by the
+# sibling gswz_epsm_descent_m4to24_probe.py. This producer missed that sweep,
+# which is why it is the one witness in the arc still flagged NEW-dirty.
 detail["pair_search"] = {"pairs_examined": pairs, "combos_tested": tested,
-                         "seconds": round(elapsed, 1), "solutions": two}
+                         "seconds": f"{elapsed:.1f}", "solutions": two}
 checks["two_relation_search_completed_without_cutoff"] = elapsed < 300
 checks["two_relations_have_no_solution"] = two == 0
 
