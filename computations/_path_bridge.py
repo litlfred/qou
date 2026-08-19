@@ -59,6 +59,12 @@ def _add_to_path(p: Path) -> None:
         sys.path.insert(0, s)
 
 _add_to_path(_HERE.parent / "tools" / "qou-substrate" / "python")
+# `pyhecke` is the other in-repo package computations/ scripts import by
+# bare name, and it was NOT wired here — 35 of the 72 producers that the
+# importability audit found unable to run fail on exactly this, and 44 of
+# those 72 already import this bridge. Adding the path here fixes them at
+# the shared point instead of repeating a 3-line bootstrap 35 times.
+_add_to_path(_HERE.parent / "tools" / "pyhecke" / "python")
 
 # 1. Add the package root itself (so bare-name imports like
 #    `from q_parameter import Q` work for the substrate cluster
