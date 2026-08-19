@@ -1,0 +1,61 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_m6_rwf_value_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_m6_rwf_value_probe.py",
+ "commitSha": "907466861f4fb6c45f9c30ff280bcbafd828b2f5",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 eqn (3), Lemma 2.4(b) even case, Lemma 2.4(c), Proposition 2.5; Addenda 33-37 (this repo)",
+ "checks": {
+  "zeta6_has_order_6": true,
+  "chi_inv_mod_6_is_5": true,
+  "alpha_root_exact": true,
+  "every_Z5_unit_is_a_6th_power_in_B": true,
+  "control_gen_is_not_a_6th_power_in_B": true,
+  "sixth_roots_exist_and_are_exact": true,
+  "one_minus_X_is_a_6th_power_for_both_symbols": true,
+  "m6_root_independence_holds": true,
+  "lemma_24b_even_case_D1_squared_is_a_root_of_unity": true,
+  "lemma_24c_holds_at_m6": true,
+  "five_term_relation_holds_at_m6": true,
+  "m6_control_sign_flip_breaks_it": true,
+  "m6_control_wrong_zeta_breaks_it": true,
+  "m6_R_to_wF_is_defined": true,
+  "wF_power_kills_the_2_part": true,
+  "m6_RwF_lives_in_the_3_torsion": true,
+  "m6_RwF_reproduces_the_m3_invariant": true
+ },
+ "result": {
+  "chi_inv_of_frobenius_mod_6": 5,
+  "m6_per_symbol_class_z1": 4,
+  "m6_per_symbol_class_z2": 0,
+  "m6_classes_over_all_36_root_choices": [
+   "2"
+  ],
+  "m6_inversion_pairs_tested": 120,
+  "m6_five_term": {
+   "tested": 300,
+   "nonzero": 0
+  },
+  "m6_control_sign_flip": {
+   "tested": 150,
+   "nonzero": 93
+  },
+  "m6_control_wrong_zeta": {
+   "tested": 150,
+   "nonzero": 78
+  },
+  "m6_R_class": 2,
+  "m6_R_to_the_wF_class": 2,
+  "m3_per_symbol_classes": {
+   "z1": 1,
+   "z2": 0
+  },
+  "verdict": "m = 6 yields no independent datum: the 2-part of B^x/(B^x)^6 is killed by the even power w_F = 4 and the surviving 3-part is the m = 3 group, so R^{w_F} re-expresses the m = 3 invariant. Same collapse is expected at m = 12 and m = 24; m = 8 is the only structurally new live case."
+ },
+ "scope": "scope-(a) CROSS-CHECK, not a new invariant. m = 6 is the smallest live case where gcd(m, w_F) > 1, so Prop 2.5 defines only R_zeta(xi)^{w_F}. The mechanism carries over -- every unit of Z_5 is a 6th power in B = Q_25 (its Teichmueller part lies in mu_4 = (mu_24)^6), so H is not needed and the eqn-(21) ratio is a 6th power in B, giving root independence over all 36 choices. The four CGZ gates were re-run at m = 6 before any value was believed, including the five-term relation and both constructed-to-fail controls, and Lemma 2.4(b) in its EVEN form (D_zeta(1)^2 a root of unity). RESULT: R^{w_F} is computable but carries no information beyond m = 3 -- the 2-part of B^x/(B^x)^6 is killed by the even power w_F = 4 and the surviving 3-part is the m = 3 group. Measured symbol by symbol against a direct m = 3 computation, not argued from CRT. So m = 6 re-confirms Addenda 33-35 through a different m rather than adding a datum, and the same collapse is expected at m = 12 and 24, leaving m = 8 as the only structurally new live case. Nothing wired."
+}
