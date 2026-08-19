@@ -94,3 +94,71 @@ CONCLUSION (scope-(a)): the E-factor's tail arguments are NOT the
 psi_{0,z,1}(w,x)^3 Gaussian bracket in (281). Next: extract the 5_2
 Nahm data (GSWZ §4.5-4.6 / GZ §8.2-8.3) and re-run the shifted-tail
 hypothesis with those arguments.
+
+## 2026-08-19 — the owner-eyeball blocker is DISSOLVED (I read the pages myself)
+
+Installed `pymupdf` and rendered the regions at 5–6× instead of relying on
+`pypdf` text extraction. Both items I had queued for the owner are answered,
+and one of them was answerable all along.
+
+**(a) The f-subscript in (287): it is `f₅`.** Rendered
+`uploads/2412.04241v2.pdf` p. 57, y≈60–165. The display reads
+
+  `C f₅^{5₂}(x) Ψ_{[ζ₂₄],5}(x)^{−(1+4·5+3·5²+⋯)} Ψ_{[ζ²₂₄],5}(x)^{−(3+5+⋯)} Ψ_{[ζ⁶₂₄],5}(x)^{−(1+5+4·5²+⋯)}`
+
+subscript **5**, superscript `5₂`. Candidate (1) confirmed at the level of
+the glyph. `f₅` is a real object in the paper, not a typo — (285) is
+`f₅^{5₂}(0)² ≡ (α²+4α)x³ + (α²+4α)x² (mod 5)`.
+
+**BUT the prose one sentence earlier says `f₁`** (p. 56, last line):
+"The final experiment to describe here is the integrality of the series
+**f₁^{5₂}(x)** after division by the generator Ψ_{ξ,p}(x)."
+
+So the paper's prose and its display disagree. That is not something an
+eyeball can settle — it needs the computation.
+
+**(b) Any factor between (281)'s f₁ and (282)'s Φ₁: none beyond the shared
+`1/√(3α−2)`.** (281) is `f₁^{5₂}(x) = (1/√δ_{5₂})⟨e^w ψ_{0,z,1}(w,x)³⟩_{3α−2}`
+and (282) is `Φ₁^{5₂}(h) = (1/√(3α−2))(1 + …h + …h² + …)`, with
+`δ_{5₂} = 3α−2` stated in the line under (281). Same prefactor; the ratio
+carries none. Confirms the earlier layout reading (item 4 above).
+Footnote 5 says only: "we again use Φ(h) instead of f(x) where q = e^h =
+1+x. Also, there are factors of q = e^h and ζ₈ that differ here from the
+formulas in [26, Equ. 4]" — i.e. the ζ₈/q discrepancy is against **[26]**,
+not between (281) and (282).
+
+## The actual unblock: f₅ is COMPUTABLE from f₁
+
+p. 56, right after (286): *"These computations can be carried out to any
+desired order and for any roots of unity by replacing the p-power map with
+the Frobenius automorphism described in Section 4.4."* And (286) exhibits
+the gluing that links (285)'s `f₅(0)²` to (284)'s `f₁(ζ₅−1)f₁(ζ₅⁻¹−1)`:
+`(α²+4α)⁵ ≡ α²+3α+2 (mod 5)`.
+
+So the m=5 fibre is **not** unavailable — it is obtainable from f₁ via the
+§4.4 Frobenius gluing. This bean was never blocked on the owner; it is
+blocked on implementing that gluing.
+
+## Example 4.3 (p. 54) — the missing context for the whole arc
+
+  `K = Q(α)/(α³−α²+1)`, `z₁ = 1−α²`, `z₂ = z₁²−z₁+2`, `z₃ = z₁`,
+  `ξ = [z₁]+[z₂]+[z₃] ∈ B(K)` represents the Bloch element of **5₂**.
+
+This is the source of the `2[z₁]+[z₂]` used throughout the ε_m arc
+(verified symbolically in `gswz_epsm_alpha_line_unit_structure_probe.py`).
+It also states independently three things that arc derived on its own:
+`K₅ ≅ Q_{5²} × Q_5`, "one of degree two and one of degree one" (the two
+places of Addendum 32); `μ(K₅)` of orders `5²−1 = 24` and `5−1 = 4` (the
+μ₂₄ readout and the `w_F = 4` of Addendum 33's Prop-2.5 hypothesis); and
+`ζ₂₄ = lim α^{5^{2s}}`, the Teichmüller lift of α. The (274) exponents
+`(1+4·5+3·5²+⋯)`, `(3+5+⋯)`, `(1+5+4·5²+⋯)` are exactly (287)'s Ψ exponents.
+
+## Next steps (revised)
+
+1. Implement the §4.4 Frobenius gluing to produce `f₅` from `f₁`, then
+   re-run the (287) division against it. Falsifiable: the printed x¹..x³
+   digits.
+2. Cheaper first: re-run the existing division experiment under BOTH
+   readings (prose `f₁` vs display `f₅`) and report which reproduces the
+   printed digits. That decides the prose/display conflict computationally
+   rather than by authority.
