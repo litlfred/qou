@@ -182,3 +182,27 @@ witnesses sat in `Q0_ANCHOR_MISSING`, which the audit calls
 correctly scoped. No obvious next increment that isn't either the
 unconstructed H-side lift or a second field whose motivating question just
 evaporated.
+
+### 2026-08-19 (PR #5296, Addendum 41) — the lift is CONSTRUCTED; ε₈ = trivial
+
+Addendum 39's "not computable" was over-stated. `H` is never needed in
+*full* — only the finite Kummer subextension the roots generate, and for a
+**unit** argument with `gcd(m,5)=1` that is **unramified**, i.e. just
+another `Q_{5^d}`. At `m = 8`: `[L:B] = 4`, `L = Q_{5^8}`, `N = 5⁸−1`
+divisible by 8 and 24, so `μ₈`, `μ₂₄`, the roots and the descent target
+share one field. Going up is what makes `1−X` an 8th power, hence
+root-independence over all 64 choices.
+
+**The descent succeeds and is 12-fold ambiguous.** `R = k mod 8` ranges over
+`{0,2,4,6}` — not determined, exactly as Prop 2.5(b) predicts for
+`gcd(8,4) = 4` — while every admissible `k` is even so `R^{w_F} = 0` is
+well defined. Prop 2.5(b)'s mechanism **measured**, not asserted.
+
+**`ε₈` is trivial at `v₁`** — the first value in this arc from an actual
+descent rather than from arranging for one to be unnecessary.
+
+**Next:** `m = 12` and `m = 24` by the same route (their Kummer extensions
+are also unramified, so the method now covers the whole live set). Expect
+`R^{w_F}` well-defined and `R` ambiguous in both. If all come out trivial,
+that is itself the finding — `ε₃` would be the only non-trivial invariant
+the α-line carries at this place.
