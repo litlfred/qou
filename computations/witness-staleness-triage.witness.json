@@ -1,53 +1,54 @@
 {
  "computation": "witness-staleness-triage",
  "scriptFile": "witness_staleness_triage.py",
- "scriptHash": "56e95693797b",
- "commitSha": "6ee378f6cdbef86e4c3cd1c9de62257d5b4b402f",
+ "scriptHash": "8938bf6cc9d4",
+ "commitSha": "b3f76980535b0e44f899a56629c0c0e9365fbb21",
  "description": "Splits self-stale witnesses by whether re-running the producer could change the payload. Normalisation drops comments, docstrings and formatting via ast.unparse; equality of the normalised sources means a re-run is bookkeeping only.",
  "scope": "scope-(a): decides only whether a re-run can move the payload. Says nothing about whether a witness is numerically correct, and ignores scriptCommitSha, which rebase-merge rewrites.",
  "counts": {
   "cosmetic": 0,
-  "cosmetic_env_differs": 2,
-  "cosmetic_strips_provenance": 1,
-  "substantive": 256,
+  "cosmetic_env_differs": 0,
+  "cosmetic_import_cone_drift": 3,
+  "cosmetic_strips_provenance": 0,
+  "substantive": 257,
   "rewritten": 338,
   "unresolvable": 103,
   "unparseable": 0
  },
  "data": {
   "cosmetic": [],
-  "cosmetic_env_differs": [
+  "cosmetic_env_differs": [],
+  "cosmetic_import_cone_drift": [
    {
     "witness": "computations/habiro/habiro-taylor-extraction.witness.json",
     "producer": "computations/habiro/habiro_exact_taylor_extraction.py",
     "recorded": "67d063ec3310",
     "current": "376be8da9282",
-    "env_gap": {
-     "python": "witness 3.13.12, here 3.11",
-     "numpy": "witness 2.5.0, here 2.4.6",
-     "scipy": "witness 1.18.0, NOT INSTALLED here",
-     "pyhecke_native": "witness 0.9.0, NOT INSTALLED here"
-    }
+    "import_drift": [
+     "computations/substrate/_precision.py",
+     "computations/substrate/witness_base.py"
+    ]
    },
    {
     "witness": "computations/qbeta/qbeta-c4-qhermite-entry-gate.witness.json",
     "producer": "computations/qbeta/qbeta_c4_qhermite_entry_gate_probe.py",
     "recorded": "4235f4e36d8d",
     "current": "dcfe9ac029ce",
-    "env_gap": {
-     "scipy": "witness 1.17.1, NOT INSTALLED here"
-    }
-   }
-  ],
-  "cosmetic_strips_provenance": [
+    "import_drift": [
+     "computations/substrate/witness_base.py"
+    ]
+   },
    {
     "witness": "computations/yekutieli-volume-join.witness.json",
     "producer": "computations/yekutieli_volume_join.py",
     "recorded": "9d4761a97964",
     "current": "b39bd1c51f13",
-    "reason": "producer writes no provenance \u2014 a re-run would strip it"
+    "import_drift": [
+     "computations/y_lambda_wenzl_bridge.py"
+    ]
    }
   ],
+  "cosmetic_strips_provenance": [],
   "substantive": [
    {
     "witness": "computations/a3-mirror-residual-reconciliation.witness.json",
@@ -1566,6 +1567,12 @@
     "producer": "computations/delta_lambda_v_hat_z_transfer_phase5d_4.py",
     "recorded": "e389632b77e0",
     "current": "ba4383ceb7e8"
+   },
+   {
+    "witness": "computations/witness-staleness-triage.witness.json",
+    "producer": "computations/witness_staleness_triage.py",
+    "recorded": "56e95693797b",
+    "current": "8938bf6cc9d4"
    },
    {
     "witness": "computations/xi-ell-phi-q-probe.witness.json",
