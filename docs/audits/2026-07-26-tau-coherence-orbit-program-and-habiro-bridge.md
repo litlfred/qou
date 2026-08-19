@@ -1941,3 +1941,81 @@ unprinted α-dependent normalisation between (281)'s `f₁` and the printed
 x² mod 25 (~6 nontrivial digits) but fails x³ mod 5, so the normalisation
 is a **series** with a nonzero h³ term, not a scalar. That is now the whole
 of `qou-xx9f`.
+
+---
+
+## Addendum 37 (2026-08-19) — the m | 24 census, and m = 2 was never a non-vacuous CGZ target
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_m_lattice_eigenspace_census_probe.py`](../../computations/probes/gswz_epsm_m_lattice_eigenspace_census_probe.py)
+— 13/13, exact integer arithmetic. Scope-(a); nothing wired.
+
+Before computing a value at another `m`, map where a value can exist at
+all. CGZ's invariant lives in the χ⁻¹-eigenspace of `F_m^×/(F_m^×)^m`, and
+an eigenspace carries information only when it is a **proper** subgroup.
+
+### The census over `F = Q₅`
+
+For `m | 24`, `F_m = Q₅(ζ_m)` is unramified of degree `ord_m(5)`, the class
+group is `Z/m × Z/m` (Teichmüller × valuation; `1+5O` is uniquely
+`m`-divisible), Frobenius multiplies the Teichmüller exponent by 5 and fixes
+the valuation, and `χ⁻¹(φ₅) = 5⁻¹`. The eigenspace is computed by **brute
+force** over all `m²` classes and only then compared with the closed form
+`m·gcd(m,4)` — so the formula is checked, not assumed.
+
+| `m` | deg | eigenspace | proper | unique lift | `R^{w_F}` nontrivial |
+|---|---|---|---|---|---|
+| 1 | 1 | 1/1 | no | yes | no |
+| **2** | 1 | 4/4 | **no** | no | **no** |
+| **3** | 2 | **3/9** | yes | **yes** | yes |
+| 4 | 1 | 16/16 | no | no | no |
+| **6** | 2 | 12/36 | yes | no | yes |
+| **8** | 2 | 32/64 | yes | no | yes |
+| **12** | 2 | 48/144 | yes | no | yes |
+| **24** | 2 | 96/576 | yes | no | yes |
+
+**Live set: `m ∈ {3, 6, 8, 12, 24}`.** `m = 3` has `gcd(m, w_F) = 1` with
+`w_{Q₅} = 4`, so Theorem 1.2 gives a *unique* lift — the case Addenda 33–35
+computed. For 6, 8, 12, 24 only `R^{w_F}` is defined (Prop 2.5), but that
+power is still nontrivial in those groups, so information survives.
+
+### Correction 1 — the guess that queued this work
+
+The scheduled note said the argument "needs `μ_m ⊄ Q₅`, which holds only for
+`m` coprime to 4". **False.** `μ_m ⊂ Q₅` exactly when `m | 4`, since the
+roots of unity of `Q₅` are `μ₄` and `1+5Z₅` is torsion-free. Coprimality to
+4 gives `{1,3}`; the truth is `{3,6,8,12,24}`. The probe carries both sets
+side by side so the wrong guess cannot be re-made silently.
+
+### Correction 2 — to a claim repeated throughout this arc
+
+**`m = 2` is vacuous in every field of characteristic ≠ 2.** `−1` is a
+nontrivial square root of 1 and lies in every such field, so `F₂ = F`,
+`Gal(F₂/F)` is trivial, the eigenspace is the whole group, and `w_F` is
+always even — hence `gcd(2, w_F) = 2 > 1`, **Theorem 1.2 never applies at
+`n = 2`**, and only `R^{w_F}` is defined, which is `1` in a group of
+exponent 2.
+
+So there was never a non-vacuous CGZ invariant at `m = 2` to compute. I
+have been citing "the m = 2 result of PR #4968" as the one solid value of
+the programme in nearly every commit and addendum here. Addendum 30 had
+already re-scoped it as measuring my descent-to-base composite rather than
+CGZ's invariant; this is the sharper point — **the CGZ target it was being
+compared against is identically trivial**, so the `+1` is forced by the
+group rather than measured.
+
+That does not make the #4968 computation incorrect. It makes it **empty as
+a CGZ value**, and it should stop being cited as a result. The earlier
+probes' phrasing ("the m = 2 result of PR #4968 is untouched") remains
+literally true and is left as written; what is superseded is the *weight*
+that sentence was carrying.
+
+### Controls
+
+The eigenspace test reports "vacuous" for every `m | 4`, so it does not
+always fire; the brute-force sizes agree with the closed form on all five
+degree-2 cases; `w_{Q₅} = 4` is counted, not assumed.
+
+### Scope
+
+A census of where values can exist, not a value at any new `m`.
