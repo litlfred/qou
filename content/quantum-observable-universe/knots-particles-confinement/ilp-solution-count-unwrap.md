@@ -34,4 +34,4 @@ $$
 *The proton's 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{u}\mathfrak{d})$ admits $N_\ell = 84$ feasible ILP solutions at the baryon level. Minimizing $|\mathrm{tr}_M|$ selects the unique $\sigma_0 \to \sigma_0$ solution. If a tie occurs, the framework demands unwrapping to the quark level, where the ILP separates them.*
 
 **Computational shortcut.**
-*Adaptive unwrap yields dramatic savings. Storage and Gröbner reduction scale with $n_{\text{strands}}^{\text{used}}$ rather than uniformly with $3A$.*
+*Adaptive unwrap reduces cost: storage and Gröbner reduction scale with $n_{\text{strands}}^{\text{used}}$ rather than uniformly with $3A$.*

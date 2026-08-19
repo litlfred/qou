@@ -1,5 +1,5 @@
 The conventional periodic table indexes each element by its atomic
-number $Z$ and electron configuration — an ordering imposed from
+number $Z$ and electron configuration, an ordering imposed from
 outside the object it catalogues.  In the present framework an
 element *is* a knot: a nuclear Borromean shell structure dressed by
 electron trefoil resonance modes.  Its most natural label is

@@ -4,7 +4,7 @@ $$
   \tanh(\ln q) \;=\; \frac{q - q^{-1}}{q + q^{-1}} \;=\; \frac{q^2 - 1}{q^2 + 1}.
 $$
 
-*The Coulomb/strong ratio from $\operatorname{def:coulomb-charge}$ equals the q-rational expression $(q_0^2 - 1)/(q_0^2 + 1)$ at the substrate anchor. They represent the SAME object, not two different choices.*
+*The Coulomb/strong ratio from $\operatorname{def:coulomb-charge}$ equals the q-rational expression $(q_0^2 - 1)/(q_0^2 + 1)$ at the substrate anchor. The analytic and the algebraic forms are a single object.*
 
 ## Significance
 

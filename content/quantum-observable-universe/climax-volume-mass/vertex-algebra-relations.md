@@ -386,7 +386,7 @@ $$
 
 Thus $d_q^2 = 0$ if and only if $q = 1$ (classical limit) or $\mathrm{wr}(\alpha) = 0$ (horizontal forms). For generic $q \neq 1$ and non-horizontal $\alpha$, $d_q^2 \neq 0$: the $q$-deformed complex is **not** a cochain complex. The obstruction evaluates to writhe $\times$ curvature.
 
-### C-3: Hodge star and Poincar'e duality
+### C-3: Hodge star and Poincaré duality
 
 The categorical Hodge star ([categorical Hodge star](#def:categorical-hodge-star)) $\star\colon \Omega^k(A) \to \Omega^{n-k}(A)$ satisfies $\star^2 = \mathrm{id}$. In knot coordinates, $\star$ acts on modes via the antipode:
 
@@ -399,7 +399,7 @@ $$
   \qquad\text{where } (\cdot)^* \text{ is Frobenius conjugation.}
 $$
 
-**Poincar'e duality** in knot coordinates demands that for all braid words $\beta, \beta'$:
+**Poincaré duality** in knot coordinates demands that for all braid words $\beta, \beta'$:
 
 $$
   \mathrm{tr}_M\!\bigl(
@@ -641,4 +641,4 @@ See [Table 2](#tbl:vertex-algebra-relations-table2-data).
 
 See [Table 3](#tbl:vertex-algebra-relations-table3-data).
 
-These **26 relations** (14 structural + 12 cohomological), coupled with the Hecke--Skein dictionary $T \leftrightarrow L_+$, $T^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$, supply a complete presentation of the QOU vertex algebra in knot coordinates. They encode both algebraic structure and cohomological topology using the singular language of braid words and the Markov trace.
+These **26 relations** (14 structural + 12 cohomological), coupled with the Hecke--Skein dictionary $T \leftrightarrow L_+$, $T^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$, supply a complete presentation of the QOU vertex algebra in knot coordinates. They encode both algebraic structure and cohomological topology using the single language of braid words and the Markov trace.

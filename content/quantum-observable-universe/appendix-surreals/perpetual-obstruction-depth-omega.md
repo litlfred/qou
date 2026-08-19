@@ -34,11 +34,11 @@ $$
 $$
 
 The universally-quantified family collapses to one non-vanishing
-graded coefficient. This is the cleanest service the surreal field
-renders the framework: an obstruction *beyond every finite order* —
-a non-perturbative datum invisible to each $\varepsilon^{n}$
-truncation, in the manner of a transseries beyond-all-orders term —
-acquires an explicit home as a single element of the value group.
+graded coefficient. The surreal field thereby gives an obstruction
+*beyond every finite order* — a non-perturbative datum invisible to
+each $\varepsilon^{n}$ truncation, in the manner of a transseries
+beyond-all-orders term — an explicit home as a single element of the
+value group.
 
 **Scope.** The equivalence is a re-grading, not a new theorem. By
 Mostow rigidity the volume series $\mathrm{Vol} = \sum_n \Phi_n$

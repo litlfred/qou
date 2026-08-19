@@ -70,10 +70,8 @@ of [the open-problems ledger](#sec:eightfold-open-problems) in full.
 
 What is recorded here is a statement about the **target**, not about prospects.
 Of the eightfold way's three headline quantitative successes, two are now proved
-content-free as derivation targets and this one is proved content-bearing.  A
-derivation of the vector nonet's near-ideal mixing would be the first
-eightfold-way result that is evidence for anything --- which is what makes it
-the highest-value open item in this chapter.
+content-free as derivation targets and this one is proved content-bearing, which
+makes its derivation the highest-value open item in this chapter.
 
 In QCD the near-ideal vector mixing is attributed to the OZI (quark-line) rule,
 and the pseudoscalar departure from it to the axial anomaly.  The framework has
