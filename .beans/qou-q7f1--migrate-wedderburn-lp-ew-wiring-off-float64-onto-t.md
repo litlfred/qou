@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-18T16:24:41Z
-updated_at: 2026-08-19T07:31:13Z
+updated_at: 2026-08-19T11:54:27Z
 ---
 
 ## Scope (PR #5260, owner directive "no f64 path")
@@ -157,3 +157,43 @@ needs an n_pairs x n_pairs Gram over pair amplitudes at H_{3A}, and
 `_hoefsmit_f64_matrices` still has no mpmath twin. Writing that builder is the
 next real step, and the KKT check above is now available to validate whatever
 it produces.
+
+
+---
+
+## Blocker 3: the mp Hoefsmit builder ALREADY EXISTS on main (2026-08-19)
+
+`computations/hoefsmit_mpmath.py` landed in PR #5264 ("NO FLOAT64 in probes"),
+merged to main 2026-08-19. Its rationale is verbatim the blocker recorded here:
+
+> the numpy fast path is float64 **by construction** — `BlockCache` computes its
+> block values with `math.sqrt` against a 1e-15 degeneracy threshold, and the
+> character routine returns `float(np.trace(...))`. Handing those functions a
+> 50-dps `mpf` for `q` does not make them exact; numpy coerces on contact.
+
+API: `BlockCacheMP`, `seminormal_matrices_mp(shape, cache=)` -> mp.matrix
+sigmas, `chi_lambda_of_word_mp(sigmas, dim, word, n_gens_required)` -> mpf.
+
+**I checked before writing rather than after.** Had I started from this bean's
+text I would have re-implemented it. Merged main into the branch (275 commits)
+to pick it up.
+
+**Remaining for this bean, now genuinely the last piece:** port
+`_hoefsmit_f64_matrices`, `_klr_positive_supply_vector` and
+`_full_wedderburn_gram` in `wedderburn_lp_ew_wiring.py` onto those three
+functions, and drop the `float(sympy.Float(Q_50_DIGIT_STR, 50))` truncations at
+lines 133/204/346. The validation for whatever that produces already exists —
+`lp_dual_kkt_residual_50dps.py`, oracle-free at 50 dps.
+
+## Sibling convergence: PR #5265 fixed the same gram.py sites
+
+#5265 ("Convention-D tranche ... pyhecke.gram was straddling C and D
+internally") independently made the SAME three C->D corrections I did — `z_mp`,
+`tr_m_mp`, and `gram_matrix_mp`'s inline `z_`. Posted on their PR citing it and
+proposing they land first, since their branch is scoped to convention D and
+mine is not; I drop the duplicate source change on rebase.
+
+Additive from this branch: their PR touches **no test files**, and the three
+lockstep regression tests are what close the hole the bug came through —
+`test_gram_values.py` pinned the f64 `z` to D (and asserts it is not C) while
+nothing pinned the mirror. Offered them the tests directly.
