@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 313,
-      "proton-pin": 804,
+      "proton-pin": 806,
       "canonical": 608,
       "unknown": 25
     },
@@ -1747,6 +1747,13 @@
         "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
         "class": "canonical",
         "ppb_vs_canonical": 0.0
+      },
+      {
+        "file": "computations/atom-dual-q0-mpfr-demo.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/atom-level-wedderburn-tower.witness.json",
@@ -7403,6 +7410,13 @@
         "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
         "class": "canonical",
         "ppb_vs_canonical": 0.0
+      },
+      {
+        "file": "computations/lp-dual-kkt-residual-50dps.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/lw-growth-rate-probe.witness.json",
