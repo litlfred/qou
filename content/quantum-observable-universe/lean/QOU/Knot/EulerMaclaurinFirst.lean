@@ -30,6 +30,29 @@ and is a candidate for upstreaming.  Authored under the owner's standing
 authorisation to add Mathlib infrastructure rather than route around a gap.
 -/
 
+/-
+**RETRACTION (2026-08-19) — this file did NOT close an infrastructure gap.**
+
+Its header and the PR that landed it (#5297) said Mathlib has no
+Euler-Maclaurin formula and that this is therefore a genuine gap.  Mathlib's
+half is true.  The corpus half is false: `QOU/MathlibExt/CompositeEulerMaclaurin.lean`
+has carried `abs_integral_sub_composite_le_osc` -- the **composite** rule, with
+the `B_2` term and an `O(h^2)` oscillation error -- since 2026-08-10, nine days
+before this file was written, alongside `TrapezoidRule.lean` and a worked
+application to `logSinc` in `QOU/Knot/LogSincNearZero.lean`.
+
+What survives: the bracket below needs only `f'` **antitone**, where the
+composite rule needs a continuous `f''`.  That weaker hypothesis is a real
+difference and is why the file is kept rather than deleted.  But for any
+application where `f''` exists, prefer the composite rule -- it identifies the
+`O(h)` coefficient as `h^2/12 * (f'(b) - f'(a))` where this file only bounds it,
+and the bound here is exactly 6x loose.
+
+Full account, including the root cause (the AGENTS.md corpus-grep checklist was
+not run before declaring the gap):
+`docs/audits/2026-08-19-qou-shrp-duplicated-corpus-euler-maclaurin.md`.
+-/
+
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
