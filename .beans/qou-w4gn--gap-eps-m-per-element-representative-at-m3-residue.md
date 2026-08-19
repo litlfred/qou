@@ -63,3 +63,24 @@ Dead end; no probe spent on it.
 
 **Still open:** the lift `P_ζ → R_ζ` at the degree-1 place (CGZ §3, via
 Chern classes). No ε_m value claimed at m ≥ 3.
+
+### 2026-08-19 (PR #5296, Addendum 33) — a value, at one place
+
+CGZ Prop 2.5 (p. 11) constructs the lift Remark 1.9 flags. At the
+degree-1 place of `K = Q(α)` every hypothesis is free: `w_{Q₅} = 4` is
+coprime to 3 (Theorem 1.2's hypothesis, stated in §2.3 — Addendum 32's
+diagnosis in CGZ's own words); `⋀²(F^×/(F^×)³) = 0` so the obstruction
+has nowhere to live; `S^{χ⁻¹} = 0` so the lift is unique.
+
+`H` is not needed — `z₁, z₂, 1−z₁, 1−z₂` are all units of `Z₅`, hence
+cubes, so the eqn-(21) shift ratio is a cube **in B**. That is the whole
+explanation of the Addenda 27–29 root-dependence: there `1−X` was not a
+cube in the field used.
+
+**ε₃(2[z₁] + [z₂]) = ζ₃²** — invariant over all 9 root choices,
+satisfies Lemma 2.4(e), identical under either primitive cube root.
+
+**Still open:** CGZ's lift *in general* (the cases where the obstruction
+does not vanish for free), and any place where the arithmetic is not
+trivial. The m ≥ 3 fields of Addenda 27–29 are not revived — they are
+the wrong fields, and `ε_m` was never computable there.
