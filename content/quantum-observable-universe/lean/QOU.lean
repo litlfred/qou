@@ -691,6 +691,7 @@ import QOU.QBeta.QCasoratianAbel
 import QOU.QBeta.QCasoratianBarParity
 import QOU.QBeta.ZBarParity
 import QOU.QBeta.LadderPhaseMirrorCovariance
+import QOU.QBeta.RadicalPairingIsSignRep
 import QOU.QBeta.QBetaZeta4ResidueRefutation
 import QOU.QBeta.BarParityZeta4Swap
 import QOU.QBeta.CuspShapeBarParity
