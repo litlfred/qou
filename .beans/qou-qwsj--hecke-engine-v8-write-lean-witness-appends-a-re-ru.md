@@ -19,8 +19,7 @@ DEFECT. tools/hecke-engine/src/bin/v8.rs:749-750 --
 
 write_lean_witness APPENDS unconditionally and dedups on nothing. So running
 the same nucleus twice writes a SECOND copy of every declaration into the
-committed witness-<nuc>.lean. Observed concretely: one  run
-appended 50 lines to tools/hecke-engine/witness-4he.lean, re-declaring
+committed witness-<nuc>.lean. Observed concretely: one `hecke-engine 2 2` run appended 50 lines to tools/hecke-engine/witness-4he.lean, re-declaring
 tr_alt_4he / net_4he / observable_4he / color_4he which were already there.
 Duplicate declarations in one Lean file do not compile -- so the emitted
 witness is broken by the second run, silently, with exit 0.
@@ -28,7 +27,7 @@ witness is broken by the second run, silently, with exit 0.
 The committed witness-4he.lean is currently CLEAN (the accidental append was
 reverted, not committed). The bug is latent, not live in the tree.
 
-RELATED, same run, possibly a separate issue:  also rewrote
+RELATED, same run, possibly a separate issue: `hecke-engine 2 2` also rewrote
 checkpoint-4he.json with materially different content -- n_words 12 -> 10,
 tr_alt_n_terms 22 -> 5, wholly different coefficient lists. Those are INTEGER
 Laurent coefficients, so they cannot move with the q0 anchor; the committed
