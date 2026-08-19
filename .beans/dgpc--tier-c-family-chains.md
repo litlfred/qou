@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-08-18T21:00:00Z
+updated_at: 2026-08-19T08:12:59Z
 ---
 
 Parent dgap. 66 witnesses across producers that emit MORE THAN ONE witness. The audit matches
@@ -41,3 +41,49 @@ chain shapes (composition vs extraction), so shape must be read per family, neve
 
 REMAINING families are small (6, 4, 4, 3, 3, then 2s) -- diminishing yield per chain authored.
 After these, tier D (per-compute authoring) is where the bulk sits.
+
+
+## 2026-08-19 — batch 2 (PR #5289)
+
+Drained: `nucleus_real_sdp.py` (6) + the sign-only chi family (7).
+**1723 -> 1710** computational-only; derivation-backed 161 -> 168.
+
+**The categorizer's families are not always one derivation.** Four
+producers group as "chi" by basename; only two share a derivation.
+Measured, not read off docstrings (which are stale on precision):
+
+| producer | deuteron chi^(6) | convention | in chain? |
+|---|---|---|---|
+| `chi_at_q0_via_matrix_m_mpfr` | 11.02137498091048471910 = q_0^23 | sign-only | yes |
+| `chi_via_rust_lossless` | (5Li/6Li; same convention, declared) | sign-only | yes |
+| `compute_atom_chi_rust` | 1.55987030806094099130 | averaged | **no** |
+| `derived_chi_catalogue_matrix_m_mpfr` | (mu_p/mu_n LR factorisation) | different construction; its 2 witnesses sit on DIFFERENT q0 pins | **no** |
+
+The `q_0^23` identity cross-checks against the crossing count already in
+`atomic-braid-recipe-d.derivation.json` — an independent confirmation the
+chain now records as its step 5.
+
+**Rule for the rest of the queue:** before authoring a family chain,
+check that the family shares a *derivation*, not just a producer prefix.
+Merging on the prefix is the arity conflation AGENTS.md warns about.
+
+### Two tool defects found while running the preflights (both fixed in #5289)
+
+1. `derivation_chain_validator.py` re-evaluated `c-q-q0` against the
+   module-level (proton) `Q_0` while the chain declares the muon pin —
+   a layer straddle. `c_q` amplifies ~10x, so the 11.5 ppb mu-p tension
+   read as `rel_diff 1.16e-07` and the chain had been **FAILING on main**.
+   Now validates at the pin the chain declares.
+2. `mpf_context_dps_audit.py` walked `.claude/worktrees/`, so
+   `precision-gates.sh` was **RED for every agent in this container** on
+   findings from a sibling branch's checkout. Excluded.
+
+### Remaining tier C (~21 witnesses, all families <= 4)
+
+`compute_atom_chi_rust` (4, averaged convention — own chain),
+`derived_chi_catalogue_matrix_m_mpfr` (2, own chain),
+`bar_pairing_binding_observable` (3), `chi_via_rust_lossless` [drained],
+then 2s. **Yield has flattened**: batch 1 was 26/chain, batch 2 was 6-7,
+the rest are 2-4. Worth asking whether the tier-D boundary (1233
+singletons) or the tier-E provenance triage (186 orphans) is the better
+next spend before grinding 2-witness chains.
