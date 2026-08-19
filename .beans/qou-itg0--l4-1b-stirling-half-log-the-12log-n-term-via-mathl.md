@@ -11,7 +11,7 @@ updated_at: 2026-08-11T10:20:00Z
 DONE: LogFactorialStirling.lean sorry-free — log_stirlingSeq_eq (additive expansion of Mathlib's multiplicative stirlingSeq for n>=1) + tendsto_log_factorial_stirling: log(n!) - (n log n - n + (1/2)log n + (1/2)log(2pi)) -> 0. Exactly the constant vdV cites from Zheng p.7. Remaining L4-1 input: qou-q8lc (uniform second-order cell remainder).
 
 REDUNDANT (2026-08-19) -- L4-1's target was ALREADY PROVED ON MAIN, stronger,
-since 2026-08-10 19:24 UTC, one day BEFORE the L4-1 feasibility pass that
+since 2026-08-08 22:33 UTC, THREE DAYS BEFORE the L4-1 feasibility pass that
 opened this bean.
 
   QOU/Knot/KashaevAsymptotic.lean :: kashaev_log_sum_asymptotic

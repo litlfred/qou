@@ -18,7 +18,7 @@ Lipschitz bound across phi's removable singularity at 0 (phi' = cot x - 1/x,
 each term singular, the difference regular).
 
 REDUNDANT (2026-08-19) -- L4-1's target was ALREADY PROVED ON MAIN, stronger,
-since 2026-08-10 19:24 UTC, one day BEFORE the L4-1 feasibility pass that
+since 2026-08-08 22:33 UTC, THREE DAYS BEFORE the L4-1 feasibility pass that
 opened this bean.
 
   QOU/Knot/KashaevAsymptotic.lean :: kashaev_log_sum_asymptotic

@@ -142,7 +142,7 @@ RETRACTION (2026-08-19) -- THE INFRA GAP THIS BEAN CHASED WAS NOT A CORPUS GAP.
 
 Everything above about "Mathlib has no E-M formula => genuine infra gap,
 owner-authorised to add" is half wrong, and it is the half that mattered.
-Mathlib indeed has none.  THIS CORPUS HAS HAD ONE SINCE 2026-08-10:
+Mathlib indeed has none.  THIS CORPUS HAS HAD ONE SINCE 2026-08-08 (commit 2a0d39c28, qou-mlgp lane):
 
   QOU/MathlibExt/CompositeEulerMaclaurin.lean   abs_integral_sub_composite_le_osc
   QOU/MathlibExt/TrapezoidRule.lean
@@ -185,7 +185,7 @@ much worse than once.
 Audit: docs/audits/2026-08-19-qou-shrp-duplicated-corpus-euler-maclaurin.md
 
 REDUNDANT (2026-08-19) -- L4-1's target was ALREADY PROVED ON MAIN, stronger,
-since 2026-08-10 19:24 UTC, one day BEFORE the L4-1 feasibility pass that
+since 2026-08-08 22:33 UTC, THREE DAYS BEFORE the L4-1 feasibility pass that
 opened this bean.
 
   QOU/Knot/KashaevAsymptotic.lean :: kashaev_log_sum_asymptotic
