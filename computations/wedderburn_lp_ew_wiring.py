@@ -57,6 +57,30 @@ def _as_strings(x):
     return mp.nstr(x, _MP_DPS)
 
 
+def _mp_trace_of_product(A, B, dim: int):
+    """tr(A.B) as ``sum_ij A[i,j]*B[j,i]`` -- O(dim^2), never forming A.B.
+
+    The diagonal of a matrix product needs only the row-column contraction, so
+    building the full product to take its trace does dim^3 work for a dim^2
+    answer. In numpy that waste was invisible; in mpmath it is the difference
+    between a session and a day. Measured over the partitions of 9, with 28
+    pairs and 406 pair-pair traces:
+
+        forming the products : 434 * sum(dim^3) = 2.59e10 mpf ops
+        contracting instead  :  28 * sum(dim^3) + 406 * sum(dim^2) = 1.82e9
+                               (sum(dim^2) over partitions of n is n! = 362880)
+
+    a 14.2x reduction. The 28 pair matrices M_k = sigma_i.sigma_j are still
+    formed, because G contracts them against each other; only the outer trace
+    is contracted rather than multiplied.
+    """
+    acc = mp.mpf(0)
+    for i in range(dim):
+        for j in range(dim):
+            acc += A[i, j] * B[j, i]
+    return acc
+
+
 def _mp_trace(M, dim: int):
     """tr(M) for an ``mp.matrix``, staying in mpf.
 
@@ -176,8 +200,9 @@ def _klr_positive_supply_vector(
             acc = mp.mpf(0)
             for shape, info in hoefsmit_cache.items():
                 mats = info["matrices"]
-                M_ij = mats[i] * mats[j]
-                acc += info["y"] * _mp_trace(M_ij, info["dim"])
+                # tr(sigma_i . sigma_j) without forming the product
+                acc += info["y"] * _mp_trace_of_product(
+                    mats[i], mats[j], info["dim"])
             t.append(+acc)
         return t
 
@@ -260,9 +285,9 @@ def _full_wedderburn_gram(
                 val = mp.mpf(0)
                 for shape, info in hoefsmit_cache.items():
                     # χ_λ(σ_i σ_j σ_{i'} σ_{j'}) = tr(M_ij^λ · M_i'j'^λ)
-                    M_kkp = (pair_mats_per_lambda[shape][k]
-                             * pair_mats_per_lambda[shape][kp])
-                    val += info["y"] * _mp_trace(M_kkp, info["dim"])
+                    val += info["y"] * _mp_trace_of_product(
+                        pair_mats_per_lambda[shape][k],
+                        pair_mats_per_lambda[shape][kp], info["dim"])
                 G[k][kp] = +val
                 G[kp][k] = +val
         for k in range(n_pairs):
