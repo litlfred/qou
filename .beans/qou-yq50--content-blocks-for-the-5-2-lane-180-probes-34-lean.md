@@ -55,3 +55,44 @@ gets cited as progress on it.
 The Stokes/DT-spectrum files (`FiveTwoStokesMatrixIdentities`,
 `FiveTwoDTSpectrumSplit`), the level-seven ladder, and the Rogers/pentagon
 machinery are all sorry-free and unnarrated.
+
+## Tranche 2 — the chirality pair (2 blocks)
+
+1. `prop:fivetwo-dt-spectrum-split` ->
+   `QOU.QBeta.FiveTwoDTSpectrumSplit.symmetric_scalar_blind_to_chirality`.
+   The DT spectrum {3,4} splits across chirality (4 in S+, 3 in S-), and NO
+   tau-symmetric integer reading can recover the ordered datum -- universally
+   quantified over g, so a structural exclusion rather than a failed search.
+   Positively: the DT count is a bar-graded object; "no scalar serves the
+   datum" and "the bar-odd part is nonzero" are the same statement. Includes
+   the 4_1 contrast, which is the point: amphichirality collapses all four
+   readings to 3, chirality separates them.
+
+2. `prop:fivetwo-stokes-unimodular` ->
+   `QOU.QBeta.FiveTwoStokes.Splus0_transpose_mul_Sminus0`.
+   det S+(0) = det S-(0) = 1, (S+)^T S- = I to four orders, det W_{-1}(0) = -2.
+
+## The trap I nearly walked into
+
+`chirality_sum_seven` proves dt+ + dt- = 7. det(5_2) = 7. Those are different
+sevens, and the temptation to link them is exactly the conflation that produced
+the retracted 2026-07-18 audit (qou-ynff) in THIS lane. Checked the Lean before
+writing: it uses the 7 only as one of four DISTINCT readings in
+`readings_all_distinct` and makes no identification with the determinant. The
+block now says so explicitly, so the next reader does not make the leap.
+
+## Second correction carried into the paper
+
+det W_{-1}(0) = **-2**, not +2. The matrix carries denominators of 6 from the
+c-slot subtraction, so it is rational and the sign is real; an earlier framing
+assumed a fitted integer +2. Recorded in the block rather than silently fixed,
+because the "det +-2 phenomenon" is cited elsewhere.
+
+## Authoring notes for the next tranche
+
+- Convention check before writing math: `pmatrix` is used 176x in content .md
+  vs `psmallmatrix` 4x -- use pmatrix. Markdown tables live in dedicated
+  `<block>-table1-data.md` blocks, NOT inline in prose blocks; I converted a
+  table to prose rather than risk it.
+- `qa-sweep` lives in the folio-assistant clone after miga:
+  `bun run folio-assistant/content/pipeline/qa-sweep.ts <block-path>`.
