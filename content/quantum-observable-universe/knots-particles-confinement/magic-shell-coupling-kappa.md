@@ -28,7 +28,7 @@ Those two nuclides differ in exactly one respect besides the sign of the excess:
 
 A term proportional to $(n_{pp} - n_{nn})$ must change sign between anchors of excess $+1$ and $-1$. What survives the correction does not: it is an excess-*independent* offset of order $0.2\;\text{MeV}$, three to fifteen times smaller than the matched value. **The excess coefficient is zero.**
 
-That single diagnosis accounts for the two independent negatives found before it. No term of this form and size appears in mirror-split binding data at $A = 3$, $15$, $39$ — because the coefficient vanishes. And the original fit contradicted itself — because it was describing an electrostatic energy with a categorical form, and only one of its two anchors has one.
+That single diagnosis accounts for the two independent negatives found before it. No term of this form and size appears in mirror-split binding data at $A = 3$, $15$, $39$, because the coefficient vanishes. And the original fit contradicted itself because it was describing an electrostatic energy with a categorical form, and only one of its two anchors has one.
 
 ## What is proved about the expression
 

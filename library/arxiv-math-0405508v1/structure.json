@@ -1,0 +1,554 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0405508v1",
+ "source": {
+  "file": "0405508v1.pdf",
+  "sha256": "ef2e41cf67f3a41140521748797696003e2cfa6c48c8b68efb8edd96b08d050a",
+  "bytes": 223914,
+  "pages": 27
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0405508",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "26 May 2004"
+  },
+  "doi": null,
+  "title": "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B",
+  "authors_raw": "Meinolf Geck and Sofia Lambropoulou",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20190506132950-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0405508v1  [math.RT]  26 May 2004"
+  },
+  "title_lines": [
+   "Markov traces and knot invariants related to",
+   "Iwahori-Hecke algebras of type B"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introductory remarks on knots, braids and",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Computations in the braid group of type Bn",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Let Wn and ˜Wn as in Section 1. For each element w in Wn (or in ˜Wn)",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "We shall now lift these elements to the braid group ˜Wn. First note",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Consider an element of the form d1 · · · dn ∈ ˜Wn with di ∈ D ′",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Geometrically y is a half-twist of m + 1 consecutive strands around the",
+   "page": 7,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Trace functions on the Iwahori-Hecke alge-",
+   "page": 9,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Let A be a commutative ring with 1 and Q, q ∈ A two ﬁxed invertible",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "The fact that q is invertible in A implies that the generators gi are",
+   "page": 10,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Let {C} be the set of conjugacy classes of Wn and let wC be an element",
+   "page": 10,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "Markov traces for Iwahori-Hecke algebras of",
+   "page": 12,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 2,
+   "title": "In the course of the above proof, we have shown the following r emark-",
+   "page": 18,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "We can use the results of this section to obtain a classiﬁcation of",
+   "page": 19,
+   "source": "inferred",
+   "number": "4.7"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "The knot invariants related to the Hecke al-",
+   "page": 20,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Knots and links inside a solid torus T can be represented unambiguously",
+   "page": 20,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 2,
+   "title": "We shall now show how to interprete the above in terms of knot",
+   "page": 22,
+   "source": "inferred",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "Geck–Lambropoulou",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 26,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introductory-remarks-on-knots-braids-and",
+   "number": "1",
+   "title": "Introductory remarks on knots, braids and",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1854,
+   "n_words": 312
+  },
+  {
+   "id": "sec-001-2-gecklambropoulou",
+   "number": "2",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4376,
+   "n_words": 860
+  },
+  {
+   "id": "sec-002-4-gecklambropoulou",
+   "number": "4",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1498,
+   "n_words": 320
+  },
+  {
+   "id": "sec-003-2-computations-in-the-braid-group-of-type-bn",
+   "number": "2",
+   "title": "Computations in the braid group of type Bn",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 309,
+   "n_words": 59
+  },
+  {
+   "id": "sec-004-21-let-wn-and-wn-as-in-section-1-for-each-elemen",
+   "number": "2.1",
+   "title": "Let Wn and ˜Wn as in Section 1. For each element w in Wn (or in ˜Wn)",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1644,
+   "n_words": 371
+  },
+  {
+   "id": "sec-005-22-we-shall-now-lift-these-elements-to-the-braid",
+   "number": "2.2",
+   "title": "We shall now lift these elements to the braid group ˜Wn. First note",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 924,
+   "n_words": 208
+  },
+  {
+   "id": "sec-006-6-gecklambropoulou",
+   "number": "6",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1639,
+   "n_words": 387
+  },
+  {
+   "id": "sec-007-24-consider-an-element-of-the-form-d1-dn-wn-with",
+   "number": "2.4",
+   "title": "Consider an element of the form d1 · · · dn ∈ ˜Wn with di ∈ D ′",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1136,
+   "n_words": 239
+  },
+  {
+   "id": "sec-008-0-geometrically-y-is-a-half-twist-of-m-1-consecu",
+   "number": "0",
+   "title": "Geometrically y is a half-twist of m + 1 consecutive strands around the",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1079,
+   "n_words": 212
+  },
+  {
+   "id": "sec-009-8-gecklambropoulou",
+   "number": "8",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2962,
+   "n_words": 618
+  },
+  {
+   "id": "sec-010-3-trace-functions-on-the-iwahori-hecke-alge",
+   "number": "3",
+   "title": "Trace functions on the Iwahori-Hecke alge-",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 363,
+   "n_words": 64
+  },
+  {
+   "id": "sec-011-31-let-a-be-a-commutative-ring-with-1-and-q-q-a",
+   "number": "3.1",
+   "title": "Let A be a commutative ring with 1 and Q, q ∈ A two ﬁxed invertible",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 826,
+   "n_words": 194
+  },
+  {
+   "id": "sec-012-10-gecklambropoulou",
+   "number": "10",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 525,
+   "n_words": 117
+  },
+  {
+   "id": "sec-013-32-the-fact-that-q-is-invertible-in-a-implies-th",
+   "number": "3.2",
+   "title": "The fact that q is invertible in A implies that the generators gi are",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1257,
+   "n_words": 284
+  },
+  {
+   "id": "sec-014-33-let-c-be-the-set-of-conjugacy-classes-of-wn-a",
+   "number": "3.3",
+   "title": "Let {C} be the set of conjugacy classes of Wn and let wC be an element",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 2462,
+   "n_words": 551
+  },
+  {
+   "id": "sec-015-12-gecklambropoulou",
+   "number": "12",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1111,
+   "n_words": 281
+  },
+  {
+   "id": "sec-016-4-markov-traces-for-iwahori-hecke-algebras-of",
+   "number": "4",
+   "title": "Markov traces for Iwahori-Hecke algebras of",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2418,
+   "n_words": 532
+  },
+  {
+   "id": "sec-017-14-gecklambropoulou",
+   "number": "14",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3811,
+   "n_words": 886
+  },
+  {
+   "id": "sec-018-16-gecklambropoulou",
+   "number": "16",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4226,
+   "n_words": 945
+  },
+  {
+   "id": "sec-019-18-gecklambropoulou",
+   "number": "18",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1061,
+   "n_words": 265
+  },
+  {
+   "id": "sec-020-44-in-the-course-of-the-above-proof-we-have-show",
+   "number": "4.4",
+   "title": "In the course of the above proof, we have shown the following r emark-",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2805,
+   "n_words": 611
+  },
+  {
+   "id": "sec-021-47-we-can-use-the-results-of-this-section-to-obt",
+   "number": "4.7",
+   "title": "We can use the results of this section to obtain a classiﬁcation of",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 273,
+   "n_words": 57
+  },
+  {
+   "id": "sec-022-20-gecklambropoulou",
+   "number": "20",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1227,
+   "n_words": 324
+  },
+  {
+   "id": "sec-023-5-the-knot-invariants-related-to-the-hecke-al",
+   "number": "5",
+   "title": "The knot invariants related to the Hecke al-",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 16,
+   "n_words": 3
+  },
+  {
+   "id": "sec-024-51-knots-and-links-inside-a-solid-torus-t-can-be",
+   "number": "5.1",
+   "title": "Knots and links inside a solid torus T can be represented unambiguously",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 2599,
+   "n_words": 536
+  },
+  {
+   "id": "sec-025-22-gecklambropoulou",
+   "number": "22",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1344,
+   "n_words": 284
+  },
+  {
+   "id": "sec-026-54-we-shall-now-show-how-to-interprete-the-above",
+   "number": "5.4",
+   "title": "We shall now show how to interprete the above in terms of knot",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 2349,
+   "n_words": 501
+  },
+  {
+   "id": "sec-027-24-gecklambropoulou",
+   "number": "24",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 4098,
+   "n_words": 889
+  },
+  {
+   "id": "sec-028-26-gecklambropoulou",
+   "number": "26",
+   "title": "Geck–Lambropoulou",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 790,
+   "n_words": 149
+  },
+  {
+   "id": "sec-029-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1517,
+   "n_words": 237
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 30,
+  "sections": 30,
+  "chars_total": 52499
+ }
+}

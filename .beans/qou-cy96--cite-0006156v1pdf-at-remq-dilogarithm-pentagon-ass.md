@@ -13,7 +13,7 @@ rem:q-dilogarithm-pentagon-associator cites faddeev_kashaev1994 for the operator
 - Sect. 6.1, eq. (20) + Sect. 6.5 — The operator five-term identity e_b(P) e_b(X) = e_b(X) e_b(P+X) e_b(P) on a Heisenberg pair, with a proof valid for complex b (real b by continuity).
   Use here: Sources the operator pentagon that rem:q-dilogarithm-pentagon-associator states, at the complex-b generality the corpus's fibre-vs-observable split needs (fibre-level q need not be real).
 
-Source: `uploads/0006156v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-hep-th-0006156v1/0006156v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

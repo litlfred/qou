@@ -1,0 +1,48 @@
+B — S (where S comes with a map i: S > M, and the fiber B, is an
+abelian subvariety of the torus J(Xj.))). We conclude:
+
+Corollary. The total space of any family of abelian subvarieties of F is
+isotropic.
+
+The generalized Hodge conjecture says that v(B) is actually contained in
+v(Ao(&/M)), but this is not known. At first sight it also seems plausible
+that a maximal v(B), as well as each component of v(Ao(4/M)), should
+actually be Lagrangian; there are, however, counterexamples to this.
+
+The intermediate Jacobian is the connected component of the origin in a
+larger group D(X), the Deligne cohomology group of X, cf. [EZ]. This fits
+in the exact sequence
+
+0 — J(X) = D(X) * H??(X,Z) — 0,
+
+where H*?(X,Z) := H??(X,C) 9 H4*(X,Z). For a Calabi-Yau, this is the
+same as H4(X,Z). (The relation of D to J is analogous to that of Pic to
+Pic®.) The Abel-Jacobi map A(X) — J(X) extends to an Abel-Jacobi
+(aka cycle-class) map,
+
+vy: A(X) > D(X),
+
+such that pov : A(X) > H??(X, Z) sends a cycle to its fundamental class.
+Everything works well for families: a family Y — M determines a relative
+Deligne group D(¥/M) whose fiber over t € M is D(X;), and there is an
+Abel-Jacobi map
+
+v:A(X/M) > D(X/M)
+
+which fiber-by-fiber agrees with the previous v.
+
+Theorem 5. Let D=D(4/M) be the relative Deligne group of a com-
+plete family of CY threefolds, let D = D(X/M) be the relative Deligne
+
+group of the gauged family, and let 7,7 be the corresponding relative Jaco-
+bians. Then there is a natural contact structure k on D with symplectification
+o =drt onD with the following properties:
+
+(a) 0,7 and « restrict to the previously constructed structures on TF and J.
+(b) The fibration D + M is Lagrangian.
+
+(c) All normal functions v(A(®/M)) are integral manifolds for 7 (hence
+isotropic for 0), and normal functions v(A(X/M)) are integral mani-
+folds for k.
+
+18

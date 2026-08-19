@@ -1,0 +1,142 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "afst-2007-6-16-3-665-0",
+ "source_sha256": "402b61574e561f86",
+ "brief": "Galois theory of q-difference equations (van der Put–Reversat, Ann. Fac. Sci. Toulouse XVI:3, 2007, 665–718) — Galois-theoretic framework for q-difference equations.",
+ "extended": "**Galois theory of q-difference equations** — Marius van der Put and Marc Reversat. Annales de la Faculté des Sciences de Toulouse, Tome XVI, no 3 (2007), 665–718.\n\nA Galois-theoretic treatment of q-difference equations: the difference-Galois group, its Tannakian formulation, and the classification of q-difference modules.\n\n**Why it may bear here.** q-difference equations are the ambient formalism for the Habiro-ring and q-holonomic material this corpus works in, and `library/equations-aux-q-differences/` (Di Vizio–Ramis–Sauloy–Zhang) is the companion survey already held. This is the Galois-theoretic side of that pair. A prior for attention, not a claim that a result here is used.",
+ "tokens": {
+  "brief": 41,
+  "extended": 172
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-001-1-classiﬁcation-of-q-diﬀerence-equations",
+   "title": "Classiﬁcation of q-diﬀerence equations",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-11-some-notation-and-formulas",
+   "title": "Some notation and formulas",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-12-regular-singular-diﬀerence-modules",
+   "title": "Regular singular diﬀerence modules",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-004-13-the-slope-ﬁltration",
+   "title": "The slope ﬁltration",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-14-classiﬁcation-of-pure-modules-over-ˆk-and-k",
+   "title": "Classiﬁcation of pure modules over ˆK and K",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-2-the-ﬁrst",
+   "title": "The ﬁrst",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-007-0-it-follows-thatm-has-a-unique-ﬁnite-dimensiona",
+   "title": "It follows thatM has a unique ﬁnite dimensionalC-linear subspaceW,",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-008-141-pure-diﬀerence-modules-overk-with-descent-da",
+   "title": "Pure diﬀerence modules overK∞ with descent data",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-009-2-vector-bundles-andq-diﬀerence-modules",
+   "title": "Vector bundles andq-diﬀerence modules",
+   "pages": "13-20"
+  },
+  {
+   "id": "sec-010-26-canonical-representatives-forcokerφ-1m",
+   "title": "(Canonical representatives forcoker(Φ −1,M",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-011-3-moduli-spaces-for-q-diﬀerence-equations",
+   "title": "Moduli spaces for q-diﬀerence equations",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-012-c-it-will-turn-out-that-the-scheme-representingf",
+   "title": "It will turn out that the scheme representingF is in factAN",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-013-4-global-diﬀerence-modules",
+   "title": "Global diﬀerence modules",
+   "pages": "25-30"
+  },
+  {
+   "id": "sec-014-5-the-galois-group-of-aq-diﬀerence-module",
+   "title": "The Galois group of aq-diﬀerence module",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-015-51-universal-picard-vessiot-extensions",
+   "title": "Universal Picard-Vessiot extensions",
+   "pages": "30-33"
+  },
+  {
+   "id": "sec-016-52-galois-groups-for-split-modules-overk",
+   "title": "Galois groups for split modules overK",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-017-53-galois-groups-for-modules-overk-with-two-slop",
+   "title": "Galois groups for modules overK with two slopes",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-018-54-modules-over-k-with-more-slopes",
+   "title": "Modules over K with more slopes",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-019-6-realizing-q-diﬀerence-modules-overk-as-connect",
+   "title": "Realizing q-diﬀerence modules overK as connections",
+   "pages": "39-47"
+  },
+  {
+   "id": "sec-020-7-positive-characteristic",
+   "title": "Positive characteristic",
+   "pages": "47-49"
+  },
+  {
+   "id": "sec-021-71-picard-vessiot-theory-and-examples",
+   "title": "Picard-Vessiot theory and examples",
+   "pages": "49-53"
+  },
+  {
+   "id": "sec-022-72-the-universal-diﬀerence-ring-over-ˆk",
+   "title": "The universal diﬀerence ring over ˆK",
+   "pages": "53-54"
+  },
+  {
+   "id": "sec-023-bibliography",
+   "title": "Bibliography",
+   "pages": "54-55"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "abstract",
+   "opening-text"
+  ],
+  "note": "Written after reading the document, not assembled mechanically. Regeneration preserves this (summarize-library keeps kind==\"agent\"). The \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

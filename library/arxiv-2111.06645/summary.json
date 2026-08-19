@@ -1,0 +1,137 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2111.06645",
+ "source_sha256": "76ae6c6058f4a9f9",
+ "brief": "Knots and Their Related q-Series — We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state",
+ "extended": "**Knots and Their Related q-Series**\n\n*Stavros GAROUFALIDIS a and Don ZAGIER bc*\n\n39 pp, 23 sections.\n\n**Abstract.** We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state integral of a knot complement with remarkable analytic and asymptotic properties that defines a PSL 2(Z)-cocycle on the space of matrix-valued piecewise analytic functions on the real numbers. We identify the corresponding cocycle with the one coming from the Kashaev invariant of a knot (and its matrix-valued extension) via the refined quantum modularity conjecture of [arXiv:2111.06645] and also relate the matrix-valued invariant with the 3D- index of Dimofte–Gaiotto–Gukov. The cocycle also has an analytic extendability property that leads to the notion of a matrix-valued holomorphic quantum modular form.\n\n**Outline.** 1 Introduction; 2 How the q-series arise; 2.1 The quantum modularity conjecture; 2.3 The index, the state integral and a second; 3 q-series and perturbative series; 3.1 Asymptotics of holomorphic functions in se; 3.2 From divergent to convergent power series; 3.4 The quadratic relation; 3.5 Higher level and weight spaces; 4 From vector-valued to matrix-valued q-series; 4.1 Descendant q-series; 4.2 The asymptotics of the descendants; 5 The matrix-valued cocycle of a knot; 5.1 An equivariant state integral; 5.2 A matrix-valued cocycle; 5.3 The two cocycles agree; 5.4 Matrix-valued holomorphic quantum modular ; 6 Final remarks\n\n**Extracted claims (proposals, not verified).**\n- Theorem: The matrix wm(q) is a fundamental solution of the linear q-difference equation\n- Theorem: The function wm(q) defined by (4.6) is a fundamental solution of the linear\n- Theorem 5.2: The cocycles W R and W Hab coincide.\n- Theorem: A.3 ([27]). Forτ∈ C\\ R, we have\n- Corollary 3.2: Let C = V/2π = 0.3230659... and Φ(x)∈ R[[x]] be given by (2.3). Each of\n- Lemma: A.1. Up to a prefactor, for every α∈ Q with α> 0, we have",
+ "tokens": {
+  "brief": 48,
+  "extended": 503
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-how-the-q-series-arise",
+   "title": "How the q-series arise",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-the-quantum-modularity-conjecture",
+   "title": "The quantum modularity conjecture",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-003-23-the-index-the-state-integral-and-a-second-q-s",
+   "title": "The index, the state integral and a second q-series G_1(q)",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-004-3-q-series-and-perturbative-series",
+   "title": "q-series and perturbative series",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-005-31-asymptotics-of-holomorphic-functions-in-secto",
+   "title": "Asymptotics of holomorphic functions in sectors",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-006-32-from-divergent-to-convergent-power-series",
+   "title": "From divergent to convergent power series",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-007-34-the-quadratic-relation",
+   "title": "The quadratic relation",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-008-35-higher-level-and-weight-spaces",
+   "title": "Higher level and weight spaces",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-009-4-from-vector-valued-to-matrix-valued-q-series",
+   "title": "From vector-valued to matrix-valued q-series",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-010-41-descendant-q-series",
+   "title": "Descendant q-series",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-011-42-the-asymptotics-of-the-descendants",
+   "title": "The asymptotics of the descendants",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-012-5-the-matrix-valued-cocycle-of-a-knot",
+   "title": "The matrix-valued cocycle of a knot",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-013-51-an-equivariant-state-integral",
+   "title": "An equivariant state integral",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-014-52-a-matrix-valued-cocycle",
+   "title": "A matrix-valued cocycle",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-015-53-the-two-cocycles-agree",
+   "title": "The two cocycles agree",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-016-54-matrix-valued-holomorphic-quantum-modular-for",
+   "title": "Matrix-valued holomorphic quantum modular forms",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-017-6-final-remarks",
+   "title": "Final remarks",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-018-a-complements-and-proofs",
+   "title": "A Complements and proofs",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-019-a1-q-series-identities",
+   "title": "A.1 q-series identities",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-020-a2-asymptotics-at-roots-of-unity",
+   "title": "A.2 Asymptotics at roots of unity",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-021-a3-the-two-matrix-valued-cocycles-for-the-4-1-kn",
+   "title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
+   "pages": "28-37"
+  },
+  {
+   "id": "sec-022-references",
+   "title": "References",
+   "pages": "37-39"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

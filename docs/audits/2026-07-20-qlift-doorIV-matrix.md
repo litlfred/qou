@@ -14,7 +14,7 @@ Root cause: both C1 branches came from **forward** recursion, both decay
 the anisoclinic {−1,+1} GGM needs.
 
 - **C1** (proved q-lift): `[m+2]_q b_{m+2}=b_{m+1}+b_m`, ∞-slopes **{½,½}**
-- **GGM** (eq 49, `uploads/2012.00062v3.pdf` p.14): `y_{m+1}=(2−q^m)y_m−y_{m−1}`, **{−1,+1}**
+- **GGM** (eq 49, `library/arxiv-2012.00062v3/2012.00062v3.pdf` p.14): `y_{m+1}=(2−q^m)y_m−y_{m−1}`, **{−1,+1}**
 
 **Owner insight (the key):** GGM should be realized WITHIN a matrix / the
 tensor square `C1⊗C1`, with the slope-0 cross term `f₊f₋` as the off-diagonal

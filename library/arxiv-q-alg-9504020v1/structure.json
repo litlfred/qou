@@ -1,0 +1,165 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-q-alg-9504020v1",
+ "source": {
+  "file": "9504020v1.pdf",
+  "sha256": "0baef40fa9934c9119af2c67252f8032e288c884da72eeaecf405bf91569cda9",
+  "bytes": 141318,
+  "pages": 10
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "q-alg/9504020",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "24 Apr 1995"
+  },
+  "doi": null,
+  "title": "A Link Invariant from Quantum Dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Théoriqueenslapp†",
+  "authors_raw": "ENSLyon, 46 Allée d’Italie",
+  "abstract": "The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix construction, is proved to coincide with the invariant of triangulated links in S3 introduced in [14]. The obtained invariant, like Alexander-Conway polynomial, vanishes on disjoint union of links. The R-matrix can be considered as the cyclic analog of the universal R-matrix associated with Uq(sl(2)) algebra. ENSLAPP-L-517/95 ∗On leave from St. Petersburg Branch of the Steklov Mathemati cal Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ ee ` a l’E.N.S. de Lyon, et ` a l’Universit` e de Savoie 0",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181108044046-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:q-alg/9504020v1  24 Apr 1995"
+  },
+  "title_prev": "∗On leave from St. Petersburg Branch of the Steklov Mathemati cal Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associée à l’E.N.S. de Lyon, et à l’Universitè de Savoie",
+  "title_lines": [
+   "A Link Invariant from Quantum Dilogarithm",
+   "R.M. Kashaev ∗",
+   "Laboratoire de Physique Théoriqueenslapp†"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The R-Matrix",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Invariants of Links in Three-Sphere",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Three-Dimensional Description",
+   "page": 5,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Summary",
+   "page": 9,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 10,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 626,
+   "n_words": 96
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1041,
+   "n_words": 167
+  },
+  {
+   "id": "sec-002-2-the-r-matrix",
+   "number": "2",
+   "title": "The R-Matrix",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3981,
+   "n_words": 715
+  },
+  {
+   "id": "sec-003-3-invariants-of-links-in-three-sphere",
+   "number": "3",
+   "title": "Invariants of Links in Three-Sphere",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2563,
+   "n_words": 483
+  },
+  {
+   "id": "sec-004-4-three-dimensional-description",
+   "number": "4",
+   "title": "Three-Dimensional Description",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 8821,
+   "n_words": 1647
+  },
+  {
+   "id": "sec-005-5-summary",
+   "number": "5",
+   "title": "Summary",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1100,
+   "n_words": 170
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1532,
+   "n_words": 255
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 7,
+  "chars_total": 19664
+ }
+}

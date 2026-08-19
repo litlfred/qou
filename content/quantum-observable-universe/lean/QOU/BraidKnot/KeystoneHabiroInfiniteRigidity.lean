@@ -8,7 +8,7 @@ Strengthens the finite interpolation rigidity
 `KeystoneHabiroRootFamily.eq_of_root_family_agreement`) to the **infinite-root**
 form that matches the actual Habiro rigidity: a unified WRT invariant is an element
 of the Habiro ring `Ẑ[q]` determined by its values at **all** roots of unity
-(`habiro2008`).  If the gauge-row polynomial agrees with the value-map polynomial at
+(`habiro2004`).  If the gauge-row polynomial agrees with the value-map polynomial at
 *infinitely many* fibre roots, they are equal — **with no degree hypothesis**
 (bwsd's bounded-degree assumption is dissolved by using the full root family).
 
@@ -26,7 +26,7 @@ modular-data), of which `KeystoneLRAmplitudeReal` (#4365) is the `Σ(2,3,5)` sli
 No fit; nothing wired; L2 unchanged.
 
 -- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
--- Ref: [habiro2008] https://doi.org/10.1007/s00222-007-0071-0
+-- Ref: [habiro2004] https://doi.org/10.1007/s00222-007-0071-0
 -/
 import QOU.BraidKnot.KeystoneHabiroRootFamily
 

@@ -1,0 +1,495 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1112.5179v1",
+ "source": {
+  "file": "1112.5179v1.pdf",
+  "sha256": "b58af08336c409942719db3c4e209817a0e76451983f7b84e9fbc1da15f0a4f8",
+  "bytes": 1824365,
+  "pages": 79
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1112.5179",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "21 Dec 2011"
+  },
+  "doi": null,
+  "title": "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK",
+  "authors_raw": null,
+  "abstract": "We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories. This class includes the eﬀective theories TM of M5-branes wrapped on 3-manifolds M, discussed in previous work by the authors, and more generally comprises theories that admit a UV description as abelian Chern-Simons-matter theories with (possibly non-perturbative) superpotential. Mathematically, class R might be viewed as an extreme quantum general- ization of the Bloch group; in particular, the equivalence relation among theories in class R is a quantum-ﬁeld-theoretic “2–3 move.” We proceed to study the supersymmetric index of theories in classR, uncovering its physical and mathematical properties, including relations to algebras of line operators and to 4d indices. For 3-manifold theories TM, the index is a new topological invariant, which turns out to be equivalent to non-holomorphic SL(2, C) Chern-Simons theory on M with a previously unexplored “integration cycle.” arXiv:1112.5179v1 [hep-th] 21 Dec 2011",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20241127014543Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "medialab",
+   "Title": ""
+  },
+  "title_prev": "Prepared for submission to JHEP 3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK",
+  "title_lines": [
+   "3-Manifolds and 3d Indices",
+   "Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4",
+   "1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA",
+   "2Trinity College, Cambridge CB2 1TQ, UK"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Actions on the 3d index",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The Sp(2N,Z) action",
+   "page": 8,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Affine shifts",
+   "page": 10,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Adding a superpotential",
+   "page": 11,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "A discrete symmetry",
+   "page": 12,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "An operator algebra",
+   "page": 13,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "The tetrahedron index",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Parity and  symmetry",
+   "page": 17,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Triality",
+   "page": 18,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Difference equations",
+   "page": 19,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "The index of TM",
+   "page": 21,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Gluing rules",
+   "page": 22,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The bipyramid",
+   "page": 25,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Some knot complements",
+   "page": 28,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Mapping tori and T[SU(2)]",
+   "page": 31,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Quantum Lagrangian operators",
+   "page": 34,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "Tentacles and vacua",
+   "page": 37,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "Mutation invariance from gauge theory",
+   "page": 42,
+   "source": "outline",
+   "number": "4.7"
+  },
+  {
+   "level": 1,
+   "title": "The index from four dimensions and line operators",
+   "page": 46,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Line operator algebra",
+   "page": 50,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Boundary conditions for hypermultiplets",
+   "page": 51,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Non-abelian line defects",
+   "page": 52,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "The index as SL(2,C) Chern-Simons theory",
+   "page": 56,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Quantization at k=0",
+   "page": 58,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Symplectic action",
+   "page": 62,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Chern-Simons theory from 6d",
+   "page": 65,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "A Proof of triality for the tetrahedron index",
+   "page": 68,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Figure-eight index from six tetrahedra",
+   "page": 70,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "C Quantum Lagrangian calculations",
+   "page": 71,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "D Tentacles and difference equations",
+   "page": 73,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 16121,
+   "n_words": 2739
+  },
+  {
+   "id": "sec-001-2-actions-on-the-3d-index",
+   "number": "2",
+   "title": "Actions on the 3d index",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 11,
+   "n_chars": 9036,
+   "n_words": 1664
+  },
+  {
+   "id": "sec-002-23-adding-a-superpotential",
+   "number": "2.3",
+   "title": "Adding a superpotential",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2111,
+   "n_words": 391
+  },
+  {
+   "id": "sec-003-24-a-discrete-symmetry",
+   "number": "2.4",
+   "title": "A discrete symmetry",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 4083,
+   "n_words": 697
+  },
+  {
+   "id": "sec-004-25-an-operator-algebra",
+   "number": "2.5",
+   "title": "An operator algebra",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 5917,
+   "n_words": 1088
+  },
+  {
+   "id": "sec-005-3-the-tetrahedron-index",
+   "number": "3",
+   "title": "The tetrahedron index",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 6109,
+   "n_words": 1133
+  },
+  {
+   "id": "sec-006-32-triality",
+   "number": "3.2",
+   "title": "Triality",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 6348,
+   "n_words": 1156
+  },
+  {
+   "id": "sec-007-4-the-index-of-tm",
+   "number": "4",
+   "title": "The index of TM",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 179,
+   "n_words": 29
+  },
+  {
+   "id": "sec-008-41-gluing-rules",
+   "number": "4.1",
+   "title": "Gluing rules",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 10546,
+   "n_words": 1808
+  },
+  {
+   "id": "sec-009-42-the-bipyramid",
+   "number": "4.2",
+   "title": "The bipyramid",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 7027,
+   "n_words": 1309
+  },
+  {
+   "id": "sec-010-43-some-knot-complements",
+   "number": "4.3",
+   "title": "Some knot complements",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 34,
+   "n_chars": 13475,
+   "n_words": 2464
+  },
+  {
+   "id": "sec-011-45-quantum-lagrangian-operators",
+   "number": "4.5",
+   "title": "Quantum Lagrangian operators",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 7383,
+   "n_words": 1354
+  },
+  {
+   "id": "sec-012-46-tentacles-and-vacua",
+   "number": "4.6",
+   "title": "Tentacles and vacua",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 42,
+   "n_chars": 13581,
+   "n_words": 2416
+  },
+  {
+   "id": "sec-013-47-mutation-invariance-from-gauge-theory",
+   "number": "4.7",
+   "title": "Mutation invariance from gauge theory",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 46,
+   "n_chars": 11876,
+   "n_words": 2046
+  },
+  {
+   "id": "sec-014-5-the-index-from-four-dimensions-and-line-operat",
+   "number": "5",
+   "title": "The index from four dimensions and line operators",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 50,
+   "n_chars": 12323,
+   "n_words": 2148
+  },
+  {
+   "id": "sec-015-51-line-operator-algebra",
+   "number": "5.1",
+   "title": "Line operator algebra",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 3137,
+   "n_words": 556
+  },
+  {
+   "id": "sec-016-52-boundary-conditions-for-hypermultiplets",
+   "number": "5.2",
+   "title": "Boundary conditions for hypermultiplets",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 2135,
+   "n_words": 367
+  },
+  {
+   "id": "sec-017-53-non-abelian-line-defects",
+   "number": "5.3",
+   "title": "Non-abelian line defects",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 62,
+   "n_chars": 24595,
+   "n_words": 4336
+  },
+  {
+   "id": "sec-018-62-symplectic-action",
+   "number": "6.2",
+   "title": "Symplectic action",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 65,
+   "n_chars": 8280,
+   "n_words": 1474
+  },
+  {
+   "id": "sec-019-63-chern-simons-theory-from-6d",
+   "number": "6.3",
+   "title": "Chern-Simons theory from 6d",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 68,
+   "n_chars": 7195,
+   "n_words": 1238
+  },
+  {
+   "id": "sec-020-a-proof-of-triality-for-the-tetrahedron-index",
+   "number": null,
+   "title": "A Proof of triality for the tetrahedron index",
+   "level": 1,
+   "page_start": 68,
+   "page_end": 70,
+   "n_chars": 3283,
+   "n_words": 637
+  },
+  {
+   "id": "sec-021-b-figure-eight-index-from-six-tetrahedra",
+   "number": null,
+   "title": "B Figure-eight index from six tetrahedra",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 71,
+   "n_chars": 1660,
+   "n_words": 396
+  },
+  {
+   "id": "sec-022-c-quantum-lagrangian-calculations",
+   "number": null,
+   "title": "C Quantum Lagrangian calculations",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 79,
+   "n_chars": 21766,
+   "n_words": 3733
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 31,
+  "sections": 23,
+  "chars_total": 198166
+ }
+}

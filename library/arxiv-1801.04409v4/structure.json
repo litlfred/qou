@@ -1,0 +1,430 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1801.04409v4",
+ "source": {
+  "file": "1801.04409v4.pdf",
+  "sha256": "db61d011e3775aca54c0cc5b4f74b48d028227bf952482c6ff47f98492ee5d3f",
+  "bytes": 380949,
+  "pages": 35,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1801.04409",
+   "version": "4",
+   "primary_class": "math.RT",
+   "stamp_date": "9 Nov 2019"
+  },
+  "doi": null,
+  "title": "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES",
+  "authors_raw": "PA VEL ETINGOF AND VICTOR OSTRIK",
+  "title_lines": [
+   "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES"
+  ],
+  "abstract": "We develop the theory of semisimpli\ufb01cations of ten- sor categories de\ufb01ned by Barrett and Westbury. In particular, w e compute the semisimpli\ufb01cation of the category of representations of a \ufb01nite group in characteristic p in terms of representations of the normalizer of its Sylow p-subgroup. This allows us to compute the semisimpli\ufb01cation of the representation category of the sym- metric group Sn+p in characteristic p, where 0 \u2264 n \u2264 p \u2212 1, and of the Deligne category Rep abSt, where t \u2208 N. We also compute the semisimpli\ufb01cation of the category of representations of the Kac-D e Concini quantum group of the Borel subalgebra of sl2. We also study tensor functors between Verlinde categories of semisimple algebraic groups arising from the semisimpli\ufb01cation construction, and objects of \ufb01nite type in categories of modular representation s of \ufb01nite groups (i.e., objects generating a fusion category in the semisimpli\ufb01cation). Finally, we determine the semisimpli\ufb01cations of the tilting categories of GL(n), SL(n) and P GL(n) in char- acteristic 2. In the appendix, we classify categori\ufb01cations of the Grothendieck ring of representations of SO(3) and its truncations. To Sasha Beilinson and Vitya Ginzburg on their 60th birthdays with admiration",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20191111211703-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Tensor ideals",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Semisimplification of a spherical tensor category",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Generalization to pivotal Karoubian categories",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "General results on semisimplification of tensor categories",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Splitting of the semisimplification functor for Tannakian categories in characteristic zero, reductive envelopes, and the Jacobson-Morozov lemma",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Compatibility of semisimplification with equivariantization",
+   "page": 13,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Compatibility of negligible morphisms with surjective tensor functors",
+   "page": 14,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Semisimplification of representation categories of finite groups in characteristic p.",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The result",
+   "page": 15,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 4.2",
+   "page": 16,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "The case of Sylow subgroup of prime order",
+   "page": 17,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "The case of the symmetric group Sp+n, where n<p",
+   "page": 18,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Application: the semisimplification of the Deligne category Repab Sn",
+   "page": 20,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "Semisimplification of some non-symmetric categories",
+   "page": 21,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Generic q",
+   "page": 22,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Roots of unity",
+   "page": 22,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Surjective symmetric tensor functors between Verlinde categories Verp(G)",
+   "page": 25,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Objects of finite type in semisimplifications",
+   "page": 26,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Semisimplification of Tilt(GL(n)) when char(k)=2",
+   "page": 29,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Categorifications of based rings attached to SO(3).",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1.",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2. Fusion categories",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2368,
+   "n_words": 399
+  },
+  {
+   "id": "sec-001-21-tensor-ideals",
+   "number": "2.1",
+   "title": "Tensor ideals",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2498,
+   "n_words": 398
+  },
+  {
+   "id": "sec-002-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4449,
+   "n_words": 941
+  },
+  {
+   "id": "sec-003-23-generalization-to-pivotal-karoubian-categorie",
+   "number": "2.3",
+   "title": "Generalization to pivotal Karoubian categories",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 7557,
+   "n_words": 1436
+  },
+  {
+   "id": "sec-004-3-general-results-on-semisimplification-of-tenso",
+   "number": "3",
+   "title": "General results on semisimplification of tensor categories",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 13383,
+   "n_words": 2565
+  },
+  {
+   "id": "sec-005-33-compatibility-of-negligible-morphisms-with-su",
+   "number": "3.3",
+   "title": "Compatibility of negligible morphisms with surjective tensor functors",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2799,
+   "n_words": 589
+  },
+  {
+   "id": "sec-006-41-the-result",
+   "number": "4.1",
+   "title": "The result",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-4-semisimplification-of-representation-categorie",
+   "number": "4",
+   "title": "Semisimplification of representation categories of finite groups in characteristic p.",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 848,
+   "n_words": 168
+  },
+  {
+   "id": "sec-008-42-proof-of-theorem-42",
+   "number": "4.2",
+   "title": "Proof of Theorem 4.2",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3163,
+   "n_words": 616
+  },
+  {
+   "id": "sec-009-43-the-case-of-sylow-subgroup-of-prime-order",
+   "number": "4.3",
+   "title": "The case of Sylow subgroup of prime order",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1933,
+   "n_words": 383
+  },
+  {
+   "id": "sec-010-44-the-case-of-the-symmetric-group-spn-where-np",
+   "number": "4.4",
+   "title": "The case of the symmetric group Sp+n, where n<p",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 6017,
+   "n_words": 1127
+  },
+  {
+   "id": "sec-011-5-semisimplification-of-some-non-symmetric-categ",
+   "number": "5",
+   "title": "Semisimplification of some non-symmetric categories",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 430,
+   "n_words": 90
+  },
+  {
+   "id": "sec-012-51-generic-q",
+   "number": "5.1",
+   "title": "Generic q",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1556,
+   "n_words": 324
+  },
+  {
+   "id": "sec-013-52-roots-of-unity",
+   "number": "5.2",
+   "title": "Roots of unity",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 4643,
+   "n_words": 957
+  },
+  {
+   "id": "sec-014-6-surjective-symmetric-tensor-functors-between-v",
+   "number": "6",
+   "title": "Surjective symmetric tensor functors between Verlinde categories Verp(G)",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 3715,
+   "n_words": 690
+  },
+  {
+   "id": "sec-015-7-objects-of-finite-type-in-semisimplifications",
+   "number": "7",
+   "title": "Objects of finite type in semisimplifications",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 29,
+   "n_chars": 4905,
+   "n_words": 938
+  },
+  {
+   "id": "sec-016-8-semisimplification-of-tiltgln-when-chark2",
+   "number": "8",
+   "title": "Semisimplification of Tilt(GL(n)) when char(k)=2",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 4260,
+   "n_words": 939
+  },
+  {
+   "id": "sec-017-appendix-a-categorifications-of-based-rings-atta",
+   "number": null,
+   "title": "Appendix A. Categorifications of based rings attached to SO(3).",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 225,
+   "n_words": 38
+  },
+  {
+   "id": "sec-018-a1",
+   "number": null,
+   "title": "A.1.",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 2802,
+   "n_words": 529
+  },
+  {
+   "id": "sec-019-a2-fusion-categories",
+   "number": null,
+   "title": "A.2. Fusion categories",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 3122,
+   "n_words": 628
+  },
+  {
+   "id": "sec-020-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 3538,
+   "n_words": 539
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 25,
+  "sections": 21,
+  "chars_total": 74211
+ }
+}

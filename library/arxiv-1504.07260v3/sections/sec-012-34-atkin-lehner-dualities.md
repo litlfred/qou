@@ -1,0 +1,225 @@
+---
+doc_id: arxiv-1504.07260v3
+doc_title: "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Swe"
+section_id: sec-012-34-atkin-lehner-dualities
+section_title: "Atkin-Lehner dualities"
+section_number: 3.4
+pages: 22-25
+source_pdf: 1504.07260v3.pdf
+source_sha256: 707cb014400a3f05
+doc_brief: "Fricke S-duality in CHL models Daniel Persson 1 Roberto Volpato 2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden 2Theory Group, SLAC National Accelerator Laborat"
+---
+The Fricke S-dualityS→− 1/NS can be generalized to dualities acting on the heterotic
+axio-dilaton by Atkin-Lehner involutions. Lete be an exact divisor ofN (denoted bye‖N),
+i.e e|N and gcd(e,N/e ) = 1. An Atkin-Lehner involution is an element ofSL(2, R) of the
+form4
+We = 1√e
+(
+ae b
+Nc de
+)
+a,b,c,d,e,N ∈ Z, ade 2−Nbc =e, e ‖N . (3.29)
+Atkin-Lehner involutions are elements of the normalizer ofΓ0(N) withinSL(2, R) and they
+have order2modulo Γ0(N), i.e.W 2
+e∈ Γ0(N). Fore =N, one recovers the Fricke involution
+4The normalization factor 1√e is sometimes omitted in the deﬁnition, since it is irrelevant in the action
+of We as a fractional linear transformation on the upper half plane.
+– 21 –
+WN = 1√
+N
+( 0 −1
+N 0
+)
+. Let us focus on a CHL model in the type IIA frame (similar arguments
+extend to the heterotic frame). One can easily verify that, at least in the perturbative limit,
+the model is invariant under the transformation
+TIIA→T′
+IIA = aeTIIA +b
+NcT IIA +de UIIA→U′
+IIA = aeUIIA +b
+NcU IIA +de SIIA→S′
+IIA =SIIA
+(3.30)
+and
+(
+˜n n/N
+−k ˜k
+)
+→
+(
+˜n′ n′/N
+−k′ ˜k′
+)
+= 1
+e
+(
+de −c
+−bN ae
+)(
+˜n n/N
+−k ˜k
+)(
+de −b
+−Nc ae
+)
+, (3.31)
+where n,k ∈ Z (respectively, ˜n, ˜k∈ Z) are the units of winding and momentum alongS1
+(resp., ˜S1). In particular, (3.31) is an automorphism of the lattice of winding-momenta
+and, for each charge in such a lattice, the corresponding left- and right-moving conformal
+weights 1
+2(p2
+L + ˜p2
+L) and 1
+2(p2
+R + ˜p2
+R) are invariant under (3.30) and (3.31). We will refer to
+this kind of transformations as a type IIA Atkin-Lehner T-duality.
+Let us consider the limitT′
+IIA →∞ , where the dual theory decompactiﬁes to a six
+dimensional model. In this limit, the only states with ﬁnite mass are the ones with zero
+winding n′, ˜n′ around the dual torusS′1× ˜S′1. This condition is equivalent to
+{
+˜n′ =c2N
+e
+˜k +cdk−cdn +d2e˜n = 0
+n′ =−acN˜k +aden−bcN
+ek−bdN ˜n = 0
+⇔
+{
+ck =−de˜n
+dn =cN
+e
+˜k
+. (3.32)
+By the conditionade2−Nbc = e in the deﬁnition (3.29) it follows thatgcd(c,e ) = 1 and
+gcd(d,N/e ) = 1, so that (3.32) implies
+k∈eZ n∈ N
+e Z . (3.33)
+Therefore, in theT′
+IIA→∞ limit, the theory contain only states in the(gN/e)r-twisted sec-
+tors, r = 1,...,e and that are invariant undergN/e. Thus, the model is a compactiﬁcation
+of type IIA on the orbifold CFT
+C′ =C/⟨gN/e⟩ . (3.34)
+For large but ﬁniteT′, as a local observer moves around the circleS′ by 1/N-th of a period,
+a state withk′ units of momentum picks a phase
+e
+2πik′
+N =e
+2πi
+N (acN˜k+adek−N
+ebcn+bdN ˜n) =e
+2πi
+N (adek−N
+ebcn) . (3.35)
+This phase corresponds to the action ofg′ := gadeQ−N
+ebc on the states ofC′ =C/⟨gN/e⟩,
+whereQ is the quantum symmetry acting by a phase on the twisted sectors of the orbifold
+CFTC′ andg (with slight abuse of notation) is the symmetry ofC′ induced by the symmetry
+g ofC. Notice that Q has ordere and g has orderN/e inC′, so that, by the condition
+ade− N
+ebc = 1, we obtain
+gade =g1+N
+ebc =g Q−N
+ebc =Q1−ade =Q . (3.36)
+– 22 –
+Furthermore, sincegcd(e,N/e ) = 1, it follows thatg′ =gQ has orderN. We conclude that
+the T-dual theory is type IIA compactiﬁed on the orbifold
+C′×S′
+⟨(δ′,g′)⟩× ˜S′ withC′ =C/⟨gN/e⟩, g′ =gQ , (3.37)
+and δ′ is a shift of orderN along S′. Fore =N, i.e. the Fricke involution, the inducedg
+has order 1 inC′ =C/⟨g⟩, so thatg′ =Q is simply the quantum symmetry.
+A cumbersome calculation along the lines of A.3 shows that ifg has Frame shape∏
+a|Nam(a), theng′ has Frame shape
+∏
+a|N
+a
+m( ea
+gcd(a,e)2 )
+. (3.38)
+This formula reduces to∏
+a|Nam(N
+a ) for the Fricke involutionWN. A case by case analysis
+shows that wheneverg has a balanced Frame shape (case 1), thenC′ is a K3 model andg′
+has the same Frame shape asg. Therefore, the CHL model in case 1 are self-dual underall
+Atkin-Lehner involutions. On the contrary, the Atkin-Lehner involutions relate the CHL
+models in case3 to the ones in case 2, according to the following duality diagrams:
+K3(1−4253461) T 4(1124356−4)
+K3(152−43164) K3(14213−465)
+W6
+W2 W3
+W6
+W3 W2
+K3(1−22352101) T 4(11225310−2)
+K3(132−251102) K3(12215−2103)
+W10
+W2 W5
+W10
+W5 W2
+K3(1−2223241121) T 4(1131426212−2)
+K3(1122314−2122) K3(123−24162121)
+W12
+W4 W3
+W12
+W3 W4
+K3(1−2243−264) T 4(142−2346−2)
+W2,W 6
+W3 W3
+K3(1−12−13363) T 4(13233−16−1)
+W3,W 6
+W2 W2
+In these diagrams, the notationX(∏
+a|Nam(a)), withX∈{ K3,T 4}, denotes a type IIA
+model on X×T 2
+ZN
+, where Zn is generated by(δ,g ) and g has Frame shape∏
+a|Nam(a).
+Under string-string duality, these Atkin-Lehner involutions are mapped to S-duality
+transformations in the heterotic frame
+Shet→S′
+het = aeShet +b
+NcS het +de Uhet→U′
+het = aeUhet +b
+NcU het +de Thet→T′
+het =Thet .
+(3.39)
+– 23 –
+Each node in the diagrams above admits a heterotic dual (or, more generally, a (4, 0)
+dual) and these heterotic (or(4, 0)) models are related to one each other by a network of
+Atkin-Lehner S-dualities.
+The Atkin-Lehner S-dualityWe acts on the electric-magnetic charges by
+(
+Q
+P
+)
+→
+(
+Q′
+P′
+)
+= 1√e
+(
+de −b
+−Nc ae
+)(
+Q
+P
+)
+. (3.40)
+As a consequence, the electric and magnetic latticesΛe, Λm and Λ′
+e, Λ′
+m of two CHL models
+related byWe must be related as follows
+Λ′
+e∼= spanZ
+(√eΛe∪ 1√eΛm
+)
+⊂ Λm⊗ R (3.41)
+and
+Λ′
+m∼= spanZ
+(N√eΛe∪√eΛm
+)
+⊂ Λm⊗ R . (3.42)
+We have veriﬁed these relations in several examples.
+Finally, we note that an analogous Atkin-Lehner involution is expected to act as T-
+duality in the heterotic frame or, equivalently, as S-duality in the type IIA frame.

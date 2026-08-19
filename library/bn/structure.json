@@ -1,0 +1,805 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "bn",
+ "source": {
+  "file": "bn.pdf",
+  "sha256": "95ed0908ceb54a1cc20733cc63cb258df47ebf634095bee421bf6cf6abe3b7ca",
+  "bytes": 430911,
+  "pages": 64
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009",
+  "authors_raw": null,
+  "abstract": "This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their connections with ergodic theory, complex reﬂection groups, moduli spaces of 1-forms and open problems in s ur- face topology.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 9.19",
+   "CreationDate": "D:20201116004241-05'00'",
+   "Creator": "dvips(k) 5.991 Copyright 2011 Radical Eye Software",
+   "Title": "bn.dvi"
+  },
+  "title_lines": [
+   "Braid groups and Hodge theory",
+   "Curtis T. McMullen",
+   "25 April, 2009"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The ﬁnite case. Let q be a primitive dth root of unity. In §8 we show",
+   "page": 4,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The complex hyperbolic case. In §10 we turn the case where H 1(X)q",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The hyperelliptic case. In §12 we discuss the hyperelliptic case, where",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The period map fq is an inﬁnite-to-one local homeomorphism, but not",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "It transports the discrete action of Bn on T ∗",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The complement of the image fq(T ∗",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(x −bi)−µ idx have been studied since the time of Euler; the present",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Topological preliminaries",
+   "page": 9,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(z −bi). There is a unique homomor-",
+   "page": 11,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "From Hodge theory to topology",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "In summary:",
+   "page": 16,
+   "source": "inferred",
+   "number": "X"
+  },
+  {
+   "level": 1,
+   "title": "Action of the braid group",
+   "page": 18,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(ei) = −T ∗(ei) = −qei",
+   "page": 20,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(dz) = dz +d Imz =dz −",
+   "page": 20,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(dz −dz),",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Complex reﬂection groups",
+   "page": 22,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "If s and t are joined by an edge of Γ, then sts = tst (we say s and t",
+   "page": 22,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The period map",
+   "page": 27,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Arithmetic groups",
+   "page": 32,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "U(Λ n,q ) is an arithmetic lattice in U(r,s ), or",
+   "page": 32,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "We have q = −1, and U(Λ n,q ) ∼",
+   "page": 32,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "We ﬁrst note that the real points of the centralizer factor as follows:",
+   "page": 34,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A fundamental result of Borel and Harish-Chandra then imp lies that",
+   "page": 34,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Let Φ e(x) denote the cyclotomic polynomial for the primitive e-th",
+   "page": 34,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Now suppose q is a primitive d-th root of unity. Then:",
+   "page": 35,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The lattice property of Gd(Z) then implies:",
+   "page": 35,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Suppose q =ζ k",
+   "page": 35,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Factors of the Jacobian",
+   "page": 36,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Similarly, for n = 5 we can rule out d = 4",
+   "page": 36,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Eigenspaces. The most interesting eigenspace here is H 1(X)q for",
+   "page": 38,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "F actors of Jac( X). By Theorem 8.3 we have an isogeny",
+   "page": 38,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Action of the braid group. The braid group acts on PH 1(X)q as",
+   "page": 39,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The period map. The period map determines an embedding",
+   "page": 39,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Deﬁnite integrals",
+   "page": 40,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Complex hyperbolic geometry",
+   "page": 45,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "(soH 1(X)q andH 1(X)r both have",
+   "page": 49,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "Lifting homological symmetries",
+   "page": 50,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "The map Bn → Sp(X)T",
+   "page": 50,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The map Mod(X)T → Sp(X)T",
+   "page": 50,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "There is a primitive dth root of unity q such that ρq(Bn) has ﬁnite",
+   "page": 50,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(see §10), we ﬁnd:",
+   "page": 51,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "The hyperelliptic case",
+   "page": 52,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "Polygons and Teichm¨ uller curves",
+   "page": 55,
+   "source": "inferred",
+   "number": "13"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 58,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 6242,
+   "n_words": 1355
+  },
+  {
+   "id": "sec-001-1-the-ﬁnite-case-let-q-be-a-primitive-dth-root-o",
+   "number": "1",
+   "title": "The ﬁnite case. Let q be a primitive dth root of unity. In §8 we show",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1520,
+   "n_words": 289
+  },
+  {
+   "id": "sec-002-2-the-complex-hyperbolic-case-in-10-we-turn-the",
+   "number": "2",
+   "title": "The complex hyperbolic case. In §10 we turn the case where H 1(X)q",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1598,
+   "n_words": 312
+  },
+  {
+   "id": "sec-003-3-the-hyperelliptic-case-in-12-we-discuss-the-hy",
+   "number": "3",
+   "title": "The hyperelliptic case. In §12 we discuss the hyperelliptic case, where",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 476,
+   "n_words": 104
+  },
+  {
+   "id": "sec-004-1-the-period-map-fq-is-an-inﬁnite-to-one-local-h",
+   "number": "1",
+   "title": "The period map fq is an inﬁnite-to-one local homeomorphism, but not",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 28,
+   "n_words": 6
+  },
+  {
+   "id": "sec-005-2-it-transports-the-discrete-action-of-bn-on-t",
+   "number": "2",
+   "title": "It transports the discrete action of Bn on T ∗",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 40,
+   "n_words": 10
+  },
+  {
+   "id": "sec-006-3-the-complement-of-the-image-fqt",
+   "number": "3",
+   "title": "The complement of the image fq(T ∗",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1849,
+   "n_words": 338
+  },
+  {
+   "id": "sec-007-1-x-biµ-idx-have-been-studied-since-the-time-of",
+   "number": "1",
+   "title": "(x −bi)−µ idx have been studied since the time of Euler; the present",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2550,
+   "n_words": 456
+  },
+  {
+   "id": "sec-008-2-topological-preliminaries",
+   "number": "2",
+   "title": "Topological preliminaries",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3115,
+   "n_words": 610
+  },
+  {
+   "id": "sec-009-1-z-bi-there-is-a-unique-homomor",
+   "number": "1",
+   "title": "(z −bi). There is a unique homomor-",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 4414,
+   "n_words": 900
+  },
+  {
+   "id": "sec-010-3-from-hodge-theory-to-topology",
+   "number": "3",
+   "title": "From Hodge theory to topology",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 2367,
+   "n_words": 493
+  },
+  {
+   "id": "sec-011-x-in-summary",
+   "number": "X",
+   "title": "In summary:",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3394,
+   "n_words": 695
+  },
+  {
+   "id": "sec-012-4-action-of-the-braid-group",
+   "number": "4",
+   "title": "Action of the braid group",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3195,
+   "n_words": 691
+  },
+  {
+   "id": "sec-013-1-ei-t-ei-qei",
+   "number": "1",
+   "title": "(ei) = −T ∗(ei) = −qei",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 847,
+   "n_words": 188
+  },
+  {
+   "id": "sec-014-1-dz-dz-d-imz-dz",
+   "number": "1",
+   "title": "(dz) = dz +d Imz =dz −",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 3,
+   "n_words": 1
+  },
+  {
+   "id": "sec-015-2-dz-dz",
+   "number": "2",
+   "title": "(dz −dz),",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 2709,
+   "n_words": 647
+  },
+  {
+   "id": "sec-016-5-complex-reﬂection-groups",
+   "number": "5",
+   "title": "Complex reﬂection groups",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 320,
+   "n_words": 58
+  },
+  {
+   "id": "sec-017-1-if-s-and-t-are-joined-by-an-edge-of-γ-then-sts",
+   "number": "1",
+   "title": "If s and t are joined by an edge of Γ, then sts = tst (we say s and t",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 27,
+   "n_chars": 6722,
+   "n_words": 1310
+  },
+  {
+   "id": "sec-018-6-the-period-map",
+   "number": "6",
+   "title": "The period map",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 32,
+   "n_chars": 8502,
+   "n_words": 1735
+  },
+  {
+   "id": "sec-019-7-arithmetic-groups",
+   "number": "7",
+   "title": "Arithmetic groups",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 618,
+   "n_words": 125
+  },
+  {
+   "id": "sec-020-1-uλ-nq-is-an-arithmetic-lattice-in-urs-or",
+   "number": "1",
+   "title": "U(Λ n,q ) is an arithmetic lattice in U(r,s ), or",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-2-we-have-q-1-and-uλ-nq",
+   "number": "2",
+   "title": "We have q = −1, and U(Λ n,q ) ∼",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 2464,
+   "n_words": 589
+  },
+  {
+   "id": "sec-022-1-we-ﬁrst-note-that-the-real-points-of-the-centr",
+   "number": "1",
+   "title": "We ﬁrst note that the real points of the centralizer factor as follows:",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 422,
+   "n_words": 85
+  },
+  {
+   "id": "sec-023-2-a-fundamental-result-of-borel-and-harish-chand",
+   "number": "2",
+   "title": "A fundamental result of Borel and Harish-Chandra then imp lies that",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 256,
+   "n_words": 51
+  },
+  {
+   "id": "sec-024-3-let-φ-ex-denote-the-cyclotomic-polynomial-for",
+   "number": "3",
+   "title": "Let Φ e(x) denote the cyclotomic polynomial for the primitive e-th",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 434,
+   "n_words": 90
+  },
+  {
+   "id": "sec-025-4-now-suppose-q-is-a-primitive-d-th-root-of-unit",
+   "number": "4",
+   "title": "Now suppose q is a primitive d-th root of unity. Then:",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 305,
+   "n_words": 59
+  },
+  {
+   "id": "sec-026-5-the-lattice-property-of-gdz-then-implies",
+   "number": "5",
+   "title": "The lattice property of Gd(Z) then implies:",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 100,
+   "n_words": 18
+  },
+  {
+   "id": "sec-027-6-suppose-q-ζ-k",
+   "number": "6",
+   "title": "Suppose q =ζ k",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 1248,
+   "n_words": 241
+  },
+  {
+   "id": "sec-028-8-factors-of-the-jacobian",
+   "number": "8",
+   "title": "Factors of the Jacobian",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 1300,
+   "n_words": 294
+  },
+  {
+   "id": "sec-029-10-similarly-for-n-5-we-can-rule-out-d-4",
+   "number": "10",
+   "title": "Similarly, for n = 5 we can rule out d = 4",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 2633,
+   "n_words": 559
+  },
+  {
+   "id": "sec-030-1-eigenspaces-the-most-interesting-eigenspace-he",
+   "number": "1",
+   "title": "Eigenspaces. The most interesting eigenspace here is H 1(X)q for",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 155,
+   "n_words": 34
+  },
+  {
+   "id": "sec-031-2-f-actors-of-jac-x-by-theorem-83-we-have-an-iso",
+   "number": "2",
+   "title": "F actors of Jac( X). By Theorem 8.3 we have an isogeny",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 1225,
+   "n_words": 256
+  },
+  {
+   "id": "sec-032-4-action-of-the-braid-group-the-braid-group-acts",
+   "number": "4",
+   "title": "Action of the braid group. The braid group acts on PH 1(X)q as",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 222,
+   "n_words": 41
+  },
+  {
+   "id": "sec-033-5-the-period-map-the-period-map-determines-an-em",
+   "number": "5",
+   "title": "The period map. The period map determines an embedding",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 2527,
+   "n_words": 530
+  },
+  {
+   "id": "sec-034-9-deﬁnite-integrals",
+   "number": "9",
+   "title": "Deﬁnite integrals",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 45,
+   "n_chars": 7563,
+   "n_words": 1572
+  },
+  {
+   "id": "sec-035-10-complex-hyperbolic-geometry",
+   "number": "10",
+   "title": "Complex hyperbolic geometry",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 49,
+   "n_chars": 8059,
+   "n_words": 1583
+  },
+  {
+   "id": "sec-036-18-soh-1xq-andh-1xr-both-have",
+   "number": "18",
+   "title": "(soH 1(X)q andH 1(X)r both have",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 50,
+   "n_chars": 799,
+   "n_words": 143
+  },
+  {
+   "id": "sec-037-11-lifting-homological-symmetries",
+   "number": "11",
+   "title": "Lifting homological symmetries",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 746,
+   "n_words": 150
+  },
+  {
+   "id": "sec-038-1-the-map-bn-spxt",
+   "number": "1",
+   "title": "The map Bn → Sp(X)T",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 17,
+   "n_words": 4
+  },
+  {
+   "id": "sec-039-2-the-map-modxt-spxt",
+   "number": "2",
+   "title": "The map Mod(X)T → Sp(X)T",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 17,
+   "n_words": 4
+  },
+  {
+   "id": "sec-040-3-there-is-a-primitive-dth-root-of-unity-q-such",
+   "number": "3",
+   "title": "There is a primitive dth root of unity q such that ρq(Bn) has ﬁnite",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 1892,
+   "n_words": 423
+  },
+  {
+   "id": "sec-041-18-see-10-we-ﬁnd",
+   "number": "18",
+   "title": "(see §10), we ﬁnd:",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 614,
+   "n_words": 116
+  },
+  {
+   "id": "sec-042-12-the-hyperelliptic-case",
+   "number": "12",
+   "title": "The hyperelliptic case",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 55,
+   "n_chars": 6253,
+   "n_words": 1266
+  },
+  {
+   "id": "sec-043-13-polygons-and-teichm-uller-curves",
+   "number": "13",
+   "title": "Polygons and Teichm¨ uller curves",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 58,
+   "n_chars": 4634,
+   "n_words": 936
+  },
+  {
+   "id": "sec-044-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 64,
+   "n_chars": 9842,
+   "n_words": 1521
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 45,
+  "sections": 45,
+  "chars_total": 104236
+ }
+}

@@ -11,7 +11,7 @@ matrix barrier of the current Hoefsmit/Hecke programme
 ([`observations/k12-barrier-bypass.md`](../../content/quantum-observable-universe/observations/k12-barrier-bypass.md))?
 
 > **Verification caveat (STRICT) + paper-identity correction
-> (2026-07-06).** The owner-uploaded `uploads/9605013v1.pdf` was
+> (2026-07-06).** The owner-uploaded `library/arxiv-nucl-th-9605013v1/9605013v1.pdf` was
 > **read locally** (extracted from commit `1804cf09`; the Read tool
 > handles the local PDF — arXiv itself is firewalled, proxy 403). It is
 > **NOT** a q-HO / spin-orbit / magic-number paper. It is **Minkov,

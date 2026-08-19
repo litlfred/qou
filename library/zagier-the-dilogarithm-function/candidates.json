@@ -1,0 +1,187 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "zagier-the-dilogarithm-function",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "05079cf525c6ba0f0d00b5c0d948bad202d291bc4910149d5d4abbab0515e7a0",
+  "file": "zagier-the-dilogarithm-function.pdf"
+ },
+ "provenance": {
+  "title": "The Dilogarithm Function Don Zagier",
+  "authors": "Max-Planck-Institut f\u00a8 ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "corollary": 1,
+   "theorem": 2,
+   "proposition": 5,
+   "remark": 2,
+   "conjecture": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 9
+ },
+ "candidates": [
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2.4",
+   "name": null,
+   "statement": "of [5] applied to suitablex andy.) Now (9)does give information",
+   "section_file": "sections/sec-018-14-don-zagier.md",
+   "section_title": "Don Zagier",
+   "pages": "12-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": ") is that |d|1/2 \u00d7\u03b6F (2)/\u03c02(r1+r2) is a rational linear combination",
+   "section_file": "sections/sec-020-18-don-zagier.md",
+   "section_title": "Don Zagier",
+   "pages": "16-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1",
+   "name": null,
+   "statement": "For x, y\u2208 C with |xy|< 1,|y|< 1 we have",
+   "section_file": "sections/sec-034-c-the-double-logarithm-in-recent-years-there-has.md",
+   "section_title": "The double logarithm. In recent years there has been a resurgence of",
+   "pages": "24-26",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2",
+   "name": null,
+   "statement": "For x, q\u2208 C with |x|< 1,|q|< 1 we have the power series",
+   "section_file": "sections/sec-035-28-don-zagier.md",
+   "section_title": "Don Zagier",
+   "pages": "26-28",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3",
+   "name": "[38], [15], [22]",
+   "statement": "Let u and v be non-commuting variables",
+   "section_file": "sections/sec-036-30-don-zagier.md",
+   "section_title": "Don Zagier",
+   "pages": "28-29",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4",
+   "name": null,
+   "statement": "[40]. (i) Any rational function of one variable is equivalent",
+   "section_file": "sections/sec-039-2-dilogarithm-identities.md",
+   "section_title": "Dilogarithm identities",
+   "pages": "31-37",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "about torsion. In examples (a) and (b), we showed that the",
+   "section_file": "sections/sec-039-2-dilogarithm-identities.md",
+   "section_title": "Dilogarithm identities",
+   "pages": "31-37",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "LetA be a positive de\ufb01nite symmetricr\u00d7r matrix with rational",
+   "section_file": "sections/sec-041-3-dilogarithms-and-modular-functions.md",
+   "section_title": "Dilogarithms and modular functions",
+   "pages": "39-43",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5",
+   "name": null,
+   "statement": "For anyA, B\u2208 R, A> 0, we have the asymptotic expansion",
+   "section_file": "sections/sec-046-2-an2bnc.md",
+   "section_title": "An2+Bn+C",
+   "pages": "48-50",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The functional equation (37) remains true formally if one re-",
+   "section_file": "sections/sec-049-2-ab\u03b5haba\u03b5.md",
+   "section_title": "A+B)\u03b5HA,B+A(\u03b5)",
+   "pages": "50-51",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "For \ufb01xedQ\u2208 (0,1) and q =e\u2212\u03b5 \u2192 1 with qn =Qq\u2212\u03bd with n\u2192\u221e ,",
+   "section_file": "sections/sec-049-2-ab\u03b5haba\u03b5.md",
+   "section_title": "A+B)\u03b5HA,B+A(\u03b5)",
+   "pages": "50-51",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "The only (A,B,C )\u2208 Q+\u00d7Q\u00d7Q for whichfA,B,C (z) is a modular",
+   "section_file": "sections/sec-052-2-an2bn-xn.md",
+   "section_title": "An2+Bn x\u2212n =",
+   "pages": "52-56",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

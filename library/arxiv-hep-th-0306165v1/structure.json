@@ -1,0 +1,775 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-0306165v1",
+ "source": {
+  "file": "0306165v1.pdf",
+  "sha256": "4f187debec912a24c2cbe354107bb61308895f30eb6d608aad5bda2d454775ae",
+  "bytes": 677999,
+  "pages": 67
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/0306165",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "17 Jun 2003"
+  },
+  "doi": null,
+  "title": "Three-Dimensional Quantum Gravity",
+  "authors_raw": "Chern-Simons Theory, And",
+  "abstract": "We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an inﬁnite-dimensional representation of the gauge group, the classical and quan- tum properties of such theory are described by an algebraic c urve called the A-polynomial of a knot. Using this approach, we ﬁnd some new and rather surp rising relations be- tween the A-polynomial, the colored Jones polynomial, and o ther invariants of hyperbolic 3-manifolds. These relations generalize the volume conjec ture and the Melvin-Morton- Rozansky conjecture, and suggest an intriguing connection between the SL(2,C) partition function and the colored Jones polynomial. June 2003",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126162845-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:hep-th/0306165v1  17 Jun 2003"
+  },
+  "title_prev": "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an infinite-dimensional representation of the gauge group, the classical and quan-",
+  "title_lines": [
+   "Three-Dimensional Quantum Gravity"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction and Motivation",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Chern-Simons Theory",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Three-Dimensional Quantum Gravity",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "More precisely, Isom +(I H3) = P SL(2,C) = SL(2,C)/{±1}, but according to [5], a repre-",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Chern-Simons theory with SL(2,C) gauge group and real values of the parameter s is also",
+   "page": 5,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The Hartle-Hawking Wave Function in 2 + 1 Dimensions",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Quantum Geometry of Hyperbolic Three-Manifolds",
+   "page": 8,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 1,
+   "title": "From the physical point of view, this is not very",
+   "page": 8,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Classical Theory",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Like in any constrained",
+   "page": 11,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 2,
+   "title": "The Moduli Space of Classical Solutions",
+   "page": 11,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "SL(2,",
+   "page": 13,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "One has the following identity: Rijkl = gikRjl +gjlRik −gjk Ril−gilRjk − 1",
+   "page": 13,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Properties of the A-polynomial",
+   "page": 19,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Quantization",
+   "page": 20,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "A-polynomial as a Lagrangian Submanifold",
+   "page": 20,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "A proper embedding of a connected orientable surface F → M is called incompressible if",
+   "page": 20,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "(dv +dv)∧ (du +du)− 1",
+   "page": 23,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(du−du)∧ (dv−dv) =",
+   "page": 23,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(du∧dv +du∧dv)",
+   "page": 23,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(du∧dv−du∧dv)",
+   "page": 23,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Semi-Classical Approximation",
+   "page": 25,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Perturbation Theory",
+   "page": 30,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Non-perturbative Aspects",
+   "page": 31,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "T opological Quantum Field Theory and Invariants of Three -Manifolds",
+   "page": 34,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "It follows from the axioms (1) and (2) that a compact oriented 3-manifold M with ∂M =",
+   "page": 34,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "A Generalization of the V olume Conjecture",
+   "page": 37,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "A Brief Review of the Volume Conjecture",
+   "page": 37,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The A-Polynomial and the Generalized Volume Conjectur e",
+   "page": 38,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the Generalized Volume Conjecture for the Figu re-Eight Knot 41",
+   "page": 41,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "A Relation Between The Colored Jones Polynomial And The A-Polynomial",
+   "page": 44,
+   "source": "inferred",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "Non-T rivial Flat Connections and the Melvin-Morton-Roz ansky Conjecture",
+   "page": 45,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "A Brief Review of the Melvin-Morton-Rozansky Conjectu re",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Path Integral Interpretation",
+   "page": 47,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Nph",
+   "page": 48,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "A Contribution of the Trivial Connection",
+   "page": 49,
+   "source": "inferred",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "A Contribution of the “Hyperbolic” Flat Connection",
+   "page": 50,
+   "source": "inferred",
+   "number": "6.4"
+  },
+  {
+   "level": 1,
+   "title": "S1(a) + i",
+   "page": 52,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "S2(a)",
+   "page": 52,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 53,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "I am endebted to G. Moore and A. Strominger for very helpful co mments and suggestions",
+   "page": 56,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 62,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-11-chern-simons-theory",
+   "number": "1.1",
+   "title": "Chern-Simons Theory",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 104,
+   "n_words": 13
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 844,
+   "n_words": 127
+  },
+  {
+   "id": "sec-002-1-introduction-and-motivation",
+   "number": "1",
+   "title": "Introduction and Motivation",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4115,
+   "n_words": 737
+  },
+  {
+   "id": "sec-003-12-three-dimensional-quantum-gravity",
+   "number": "1.2",
+   "title": "Three-Dimensional Quantum Gravity",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1466,
+   "n_words": 263
+  },
+  {
+   "id": "sec-004-2-more-precisely-isom-i-h3-p-sl2c-sl2c1-but-acco",
+   "number": "2",
+   "title": "More precisely, Isom +(I H3) = P SL(2,C) = SL(2,C)/{±1}, but according to [5], a repre-",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2700,
+   "n_words": 447
+  },
+  {
+   "id": "sec-005-4-chern-simons-theory-with-sl2c-gauge-group-and",
+   "number": "4",
+   "title": "Chern-Simons theory with SL(2,C) gauge group and real values of the parameter s is also",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1101,
+   "n_words": 199
+  },
+  {
+   "id": "sec-006-13-the-hartle-hawking-wave-function-in-2-1-dimen",
+   "number": "1.3",
+   "title": "The Hartle-Hawking Wave Function in 2 + 1 Dimensions",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4093,
+   "n_words": 715
+  },
+  {
+   "id": "sec-007-14-quantum-geometry-of-hyperbolic-three-manifold",
+   "number": "1.4",
+   "title": "Quantum Geometry of Hyperbolic Three-Manifolds",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 306,
+   "n_words": 54
+  },
+  {
+   "id": "sec-008-c-from-the-physical-point-of-view-this-is-not-ve",
+   "number": "C",
+   "title": "From the physical point of view, this is not very",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 5761,
+   "n_words": 952
+  },
+  {
+   "id": "sec-009-2-classical-theory",
+   "number": "2",
+   "title": "Classical Theory",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 141,
+   "n_words": 23
+  },
+  {
+   "id": "sec-010-c-like-in-any-constrained",
+   "number": "C",
+   "title": "Like in any constrained",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 466,
+   "n_words": 82
+  },
+  {
+   "id": "sec-011-21-the-moduli-space-of-classical-solutions",
+   "number": "2.1",
+   "title": "The Moduli Space of Classical Solutions",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 2258,
+   "n_words": 414
+  },
+  {
+   "id": "sec-012-22-sl2",
+   "number": "2.2",
+   "title": "SL(2,",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1202,
+   "n_words": 197
+  },
+  {
+   "id": "sec-013-5-one-has-the-following-identity-rijkl-gikrjl-gj",
+   "number": "5",
+   "title": "One has the following identity: Rijkl = gikRjl +gjlRik −gjk Ril−gilRjk − 1",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 19,
+   "n_chars": 10164,
+   "n_words": 1866
+  },
+  {
+   "id": "sec-014-23-properties-of-the-a-polynomial",
+   "number": "2.3",
+   "title": "Properties of the A-polynomial",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2546,
+   "n_words": 457
+  },
+  {
+   "id": "sec-015-3-quantization",
+   "number": "3",
+   "title": "Quantization",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-016-31-a-polynomial-as-a-lagrangian-submanifold",
+   "number": "3.1",
+   "title": "A-polynomial as a Lagrangian Submanifold",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 722,
+   "n_words": 130
+  },
+  {
+   "id": "sec-017-9-a-proper-embedding-of-a-connected-orientable-s",
+   "number": "9",
+   "title": "A proper embedding of a connected orientable surface F → M is called incompressible if",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5214,
+   "n_words": 964
+  },
+  {
+   "id": "sec-018-4-dv-dv-du-du-1",
+   "number": "4",
+   "title": "(dv +dv)∧ (du +du)− 1",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-019-4-dudu-dvdv",
+   "number": "4",
+   "title": "(du−du)∧ (dv−dv) =",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 4,
+   "n_words": 2
+  },
+  {
+   "id": "sec-020-2-dudv-dudv",
+   "number": "2",
+   "title": "(du∧dv +du∧dv)",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 267,
+   "n_words": 49
+  },
+  {
+   "id": "sec-021-2-dudvdudv",
+   "number": "2",
+   "title": "(du∧dv−du∧dv)",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3312,
+   "n_words": 620
+  },
+  {
+   "id": "sec-022-32-semi-classical-approximation",
+   "number": "3.2",
+   "title": "Semi-Classical Approximation",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 30,
+   "n_chars": 8858,
+   "n_words": 1601
+  },
+  {
+   "id": "sec-023-33-perturbation-theory",
+   "number": "3.3",
+   "title": "Perturbation Theory",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1379,
+   "n_words": 235
+  },
+  {
+   "id": "sec-024-34-non-perturbative-aspects",
+   "number": "3.4",
+   "title": "Non-perturbative Aspects",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 5005,
+   "n_words": 868
+  },
+  {
+   "id": "sec-025-4-t-opological-quantum-field-theory-and-invarian",
+   "number": "4",
+   "title": "T opological Quantum Field Theory and Invariants of Three -Manifolds",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 2035,
+   "n_words": 376
+  },
+  {
+   "id": "sec-026-14-it-follows-from-the-axioms-1-and-2-that-a-com",
+   "number": "14",
+   "title": "It follows from the axioms (1) and (2) that a compact oriented 3-manifold M with ∂M =",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 5481,
+   "n_words": 968
+  },
+  {
+   "id": "sec-027-5-a-generalization-of-the-v-olume-conjecture",
+   "number": "5",
+   "title": "A Generalization of the V olume Conjecture",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 430,
+   "n_words": 67
+  },
+  {
+   "id": "sec-028-51-a-brief-review-of-the-volume-conjecture",
+   "number": "5.1",
+   "title": "A Brief Review of the Volume Conjecture",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 2410,
+   "n_words": 445
+  },
+  {
+   "id": "sec-029-52-the-a-polynomial-and-the-generalized-volume-c",
+   "number": "5.2",
+   "title": "The A-Polynomial and the Generalized Volume Conjectur e",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 6078,
+   "n_words": 1099
+  },
+  {
+   "id": "sec-030-53-proof-of-the-generalized-volume-conjecture-fo",
+   "number": "5.3",
+   "title": "Proof of the Generalized Volume Conjecture for the Figu re-Eight Knot 41",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 44,
+   "n_chars": 4424,
+   "n_words": 880
+  },
+  {
+   "id": "sec-031-54-a-relation-between-the-colored-jones-polynomi",
+   "number": "5.4",
+   "title": "A Relation Between The Colored Jones Polynomial And The A-Polynomial",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 1586,
+   "n_words": 278
+  },
+  {
+   "id": "sec-032-6-non-t-rivial-flat-connections-and-the-melvin-m",
+   "number": "6",
+   "title": "Non-T rivial Flat Connections and the Melvin-Morton-Roz ansky Conjecture",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 667,
+   "n_words": 105
+  },
+  {
+   "id": "sec-033-61-a-brief-review-of-the-melvin-morton-rozansky",
+   "number": "6.1",
+   "title": "A Brief Review of the Melvin-Morton-Rozansky Conjectu re",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 2785,
+   "n_words": 551
+  },
+  {
+   "id": "sec-034-62-path-integral-interpretation",
+   "number": "6.2",
+   "title": "Path Integral Interpretation",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 1338,
+   "n_words": 271
+  },
+  {
+   "id": "sec-035-4-nph",
+   "number": "4",
+   "title": "Nph",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 971,
+   "n_words": 188
+  },
+  {
+   "id": "sec-036-63-a-contribution-of-the-trivial-connection",
+   "number": "6.3",
+   "title": "A Contribution of the Trivial Connection",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 50,
+   "n_chars": 1188,
+   "n_words": 226
+  },
+  {
+   "id": "sec-037-64-a-contribution-of-the-hyperbolic-flat-connect",
+   "number": "6.4",
+   "title": "A Contribution of the “Hyperbolic” Flat Connection",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 5617,
+   "n_words": 985
+  },
+  {
+   "id": "sec-038-2-s1a-i",
+   "number": "2",
+   "title": "S1(a) + i",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-039-2-s2a",
+   "number": "2",
+   "title": "S2(a)",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 420,
+   "n_words": 87
+  },
+  {
+   "id": "sec-040-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 56,
+   "n_chars": 6265,
+   "n_words": 1221
+  },
+  {
+   "id": "sec-041-22-i-am-endebted-to-g-moore-and-a-strominger-for",
+   "number": "22",
+   "title": "I am endebted to G. Moore and A. Strominger for very helpful co mments and suggestions",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 62,
+   "n_chars": 8433,
+   "n_words": 1589
+  },
+  {
+   "id": "sec-042-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 67,
+   "n_chars": 13405,
+   "n_words": 2077
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 43,
+  "sections": 43,
+  "chars_total": 125561
+ }
+}

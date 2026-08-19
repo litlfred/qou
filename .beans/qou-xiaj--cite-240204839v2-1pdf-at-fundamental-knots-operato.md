@@ -15,7 +15,7 @@ Once the entry exists, the fundamental-knots table and the three-calibration pro
 - Cor. 2.11 and the surrounding discussion of universal links — The Borromean rings are a universal link -- every closed orientable 3-manifold is a cover of the three-sphere branched over them -- and for a hyperbolic universal link L, volt(M) <= d_L(M) volH(L).
   Use here: A structural fact about the corpus's nucleon knot that is absent from the corpus: the Borromean complement is not merely a convenient hyperbolic link but a universal one, which is the kind of no-choice selection argument the framework's knot assignments otherwise lack.
 
-Source: `uploads/2402.04839v2 (1).pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2402.04839v2/2402.04839v2 (1).pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

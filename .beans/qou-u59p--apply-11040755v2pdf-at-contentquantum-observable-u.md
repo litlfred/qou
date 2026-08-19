@@ -17,7 +17,7 @@ Hypotheses verified to hold, not merely 'related': the paper's A_q is the corpus
 - Lemma 1, §2 p.5 — Jacobi's triple product identity: theta(x) = (q, -x, -q/x; q)_infinity.
   Use here: Exactly one of the three analytic steps AwZeroLocalization.lean names as not formalised ('Jacobi triple product, Rouche, the argument principle'). Having it stated with the paper's own normalisation removes the normalisation ambiguity when that step is eventually formalised or cited.
 
-Source: `uploads/1104.0755v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1104.0755v2/1104.0755v2.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

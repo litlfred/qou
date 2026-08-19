@@ -1,0 +1,86 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0806.4741v1",
+ "source_sha256": "5e7ad85a99fb3552",
+ "brief": "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium — We",
+ "extended": "**The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium**\n\n26 pp, 13 sections.\n\n**Abstract.** We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order hyperbolic diﬀerential operator. The construction is entirely explicit and relies on non-commutative harmonic analytical techniques on symplectic symmetric spaces. The present work presents a uniﬁed method producing every quantization of D, and provides, in the 2-dimensional context, an exact solution to Weinstein’s WKB quantization program within geometric terms. The construction reveals the existence of a metric of Lorentz signature canonically attached (or ‘dual’) to the geometry of the hyperbolic plane through the quantization process.\n\n**Outline.** Introduction; Motivations; What is done in the present work; Symplectic symmetric spaces; Group type symplectic symmetric surfaces, curv; Admissible functions on symplectic symmetric s; Deformation Quantization; sl2(R)- triplets of derivations and an unexpec; The de-contraction procedure: evolution of the; Finding solutions of the Dalembertian evolutio; Normalizations and asymptotic expansions; Complements; On D and M",
+ "tokens": {
+  "brief": 49,
+  "extended": 338
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-motivations",
+   "title": "Motivations",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-what-is-done-in-the-present-work",
+   "title": "What is done in the present work",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-symplectic-symmetric-spaces",
+   "title": "Symplectic symmetric spaces",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-004-group-type-symplectic-symmetric-surfaces-curvatu",
+   "title": "Group type symplectic symmetric surfaces, curvature contractions",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-admissible-functions-on-symplectic-symmetric-sur",
+   "title": "Admissible functions on symplectic symmetric surfaces",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-006-deformation-quantization",
+   "title": "Deformation Quantization",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-007-sl2r--triplets-of-derivations-and-an-unexpected",
+   "title": "sl2(R)- triplets of derivations and an unexpected Lorentzian structure",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-008-the-de-contraction-procedure-evolution-of-the-da",
+   "title": "The de-contraction procedure: evolution of the Dalembert operator",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-009-finding-solutions-of-the-dalembertian-evolution",
+   "title": "Finding solutions of the Dalembertian evolution by variable separation",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-010-normalizations-and-asymptotic-expansions",
+   "title": "Normalizations and asymptotic expansions",
+   "pages": "17-22"
+  },
+  {
+   "id": "sec-011-complements",
+   "title": "Complements",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-012-on-d-and-m",
+   "title": "On D and M",
+   "pages": "22-26"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

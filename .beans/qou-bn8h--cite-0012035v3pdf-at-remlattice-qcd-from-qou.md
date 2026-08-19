@@ -15,7 +15,7 @@ rem:lattice-qcd-from-qou opens with the surface-ordered holonomy formula and cit
 - sec. 2.3.1 ("Topology"), Fig. 9 — When the loop is knotted the naive surface-ordered form fails; the knotted loop is decomposed into a product of surface factors indexed by the genus of the spanning surface, giving the topologically-nontrivial version of the theorem.
   Use here: The corpus applies non-abelian Stokes to holonomy around knots with a Seifert spanning surface, i.e. exactly the topologically-nontrivial case; this flags that the untwisted statement does not cover it.
 
-Source: `uploads/0012035v3.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-ph-0012035v3/0012035v3.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

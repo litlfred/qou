@@ -17,7 +17,7 @@ No ref() entry; the paper qualifies a claim conj:mirror-3d-3d-correspondence mak
 - Sect. 4.1 — Identification of the field-theoretic operation on T^DGG corresponding to Dehn filling, giving a construction of theories attached to closed 3-manifolds and predicting infinitely many 3d dualities from surgery calculus.
   Use here: The concrete route for Open Question 1 (identify T[B_3]); the corpus currently has only 'DGG 2014 provides the construction' with no closing procedure.
 
-Source: `uploads/1803.04009v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1803.04009v2/1803.04009v2.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

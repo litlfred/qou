@@ -13,7 +13,7 @@ The improved analyticity across |q| = 1 is directly about the boundary between t
 - Def. 1.1 with Thm 1.2 (the slash operator), and Thm 1.4 — A q-difference equation is modular when the monodromy relation holds for all of SL(2,Z); it suffices to check the generators S and T, and the generalised q-hypergeometric equation is modular and self-dual with the two natural cocycles equal.
   Use here: A checkable criterion (two generators) for the modularity of the q-difference equations the corpus works with, and with it the effective solution method the Stokes-matrix work currently lacks.
 
-Source: `uploads/modular.qholonomic.modules.pdf` — no `references.ts` entry yet
+Source: `library/modularqholonomicmodules/modular.qholonomic.modules.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

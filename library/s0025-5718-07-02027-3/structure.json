@@ -1,0 +1,190 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "s0025-5718-07-02027-3",
+ "source": {
+  "file": "S0025-5718-07-02027-3.pdf",
+  "sha256": "080b5ac8542ff19ce7e39dd1dfcd56438e63ce3c26210d2950c9fefd7353ef92",
+  "bytes": 402805,
+  "pages": 30
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "MATHEMATICS OF COMPUTATION",
+  "authors_raw": "Volume 77, Number 262, April 2008, Pages 1105–1134",
+  "abstract": "We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision.",
+  "docinfo": {
+   "Author": "",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "CreationDate": "D:20080115102200-05'00'",
+   "Producer": "Acrobat Distiller Server 6.0.1 (Sparc Solaris, Built: 2003-11-03)"
+  },
+  "title_prev": "MA THEMA TICS OF COMPUTATION",
+  "title_lines": [
+   "MATHEMATICS OF COMPUTATION"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The p-adic polylogarithm",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Method of computation on  U0  and  U",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Method of computation in the generic case",
+   "page": 6,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Method of computation on  U1",
+   "page": 8,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Estimates",
+   "page": 11,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The algorithm",
+   "page": 14,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Concluding remarks",
+   "page": 24,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2829,
+   "n_words": 499
+  },
+  {
+   "id": "sec-001-2-the-p-adic-polylogarithm",
+   "number": "2",
+   "title": "The p-adic polylogarithm",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1105,
+   "n_words": 194
+  },
+  {
+   "id": "sec-002-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 9687,
+   "n_words": 1929
+  },
+  {
+   "id": "sec-003-4-method-of-computation-in-the-generic-case",
+   "number": "4",
+   "title": "Method of computation in the generic case",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 11,
+   "n_chars": 11334,
+   "n_words": 2456
+  },
+  {
+   "id": "sec-004-6-estimates",
+   "number": "6",
+   "title": "Estimates",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 7547,
+   "n_words": 1742
+  },
+  {
+   "id": "sec-005-7-the-algorithm",
+   "number": "7",
+   "title": "The algorithm",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 24,
+   "n_chars": 27164,
+   "n_words": 5733
+  },
+  {
+   "id": "sec-006-8-concluding-remarks",
+   "number": "8",
+   "title": "Concluding remarks",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 29,
+   "n_chars": 15902,
+   "n_words": 3319
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 3237,
+   "n_words": 501
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 8,
+  "chars_total": 78805
+ }
+}

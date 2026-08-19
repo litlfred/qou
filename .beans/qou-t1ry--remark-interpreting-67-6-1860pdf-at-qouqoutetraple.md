@@ -13,7 +13,7 @@ The prior art's conclusion -- that the quaternionic construction naturally yield
 - Abstract and Sec. 1 — Formulating fermions and Higgs mesons over the quaternions reproduces the left-right symmetric SU(2)_L x SU(2)_R x U(1) electroweak theory phenomenologically, gives an algebraic account of the replication of quarks and leptons in flavour doublets, and correlates the breakdown to U(1)_em with the existence of a Fock space for gauge singlets but not for quaternionic states.
   Use here: Supplies the missing attribution for the corpus's quaternionic-electroweak Lean file and, more usefully, tells the corpus what its own construction predicts: a left-right symmetric gauge group, which is a testable consequence of the interpretive identification bring_tetraplectic.md already flags as underived.
 
-Source: `uploads/67-6-1860.pdf` — no `references.ts` entry yet
+Source: `library/67-6-1860/67-6-1860.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

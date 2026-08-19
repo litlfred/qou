@@ -106,4 +106,4 @@ number is not the coefficient.
 - Non-separability (why 8π isn't arithmetically recoverable): [`2026-07-18-alpha-em-perloop-reciprocal-form-forcedness.md`](2026-07-18-alpha-em-perloop-reciprocal-form-forcedness.md) (#3918)
 - Settled ingredients: [`2026-07-18-alpha-em-pi-origin-adjudication.md`](2026-07-18-alpha-em-pi-origin-adjudication.md) (`1/(4π)`, #3909); `b₁ = 2g = 8` (#3896)
 - Action plan: [`2026-07-18-1ppq-action-plan.md`](2026-07-18-1ppq-action-plan.md)
-- Jac structure: `Jac(Bring) ≅ E_{5τ₀}³ × E_{τ₀}`, `det M = 125` (Braden–Disney-Hogg, `uploads/2208.13692v1.pdf`)
+- Jac structure: `Jac(Bring) ≅ E_{5τ₀}³ × E_{τ₀}`, `det M = 125` (Braden–Disney-Hogg, `library/arxiv-2208.13692v1/2208.13692v1.pdf`)

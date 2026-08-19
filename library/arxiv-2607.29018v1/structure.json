@@ -1,0 +1,248 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2607.29018v1",
+ "source": {
+  "file": "2607.29018v1.pdf",
+  "sha256": "789faa122dd322901b603935e0158e20c01b4f975eea8cf4923174f013385947",
+  "bytes": 404643,
+  "pages": 23
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2607.29018",
+   "version": "1",
+   "primary_class": "math.CO",
+   "stamp_date": "31 Jul 2026"
+  },
+  "doi": null,
+  "title": "The Aldous property for normal Cayley graphs on symmetric groups",
+  "authors_raw": "Chenhui Lv∗1 and Sanming Zhou 2",
+  "abstract": "Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same spectral gap, or, equivalently, the second largest eigenvalue of any connected Cayley graph on the symmetric groupS n with respect to a set of transpositions is achieved by the standard representation ofS n. This celebrated conjecture, proved in its general form in 2010, has inspired much interest in searching for other Cayley graphs onS n possessing this property, now known as the Aldous property. In this paper, we first prove that forn≥5 at most one of a normal Cayley graph onSn and its complement can possess the Aldous property except when these two graphs are 2K n!/2 andK n!/2,n!/2 respectively. We then determine, for sufficiently largen, all normal Cayley graphs Cay(Sn, S) that have the Aldous property, except for the case whenScontains a permutation with support size in{2,3, . . . , n−2} and a permutation with support size in{n−1, n}, but not all permutations with support sizenare contained inS. In particular, we show that a non-complete normal Cayley graph Cay(Sn, S) does not have the Aldous property if all permutations inShave support sizen−1 orn, or all permutations with support sizenare contained inS, thereby solving an open problem posed by Li, Xia and Zhou in 2023. Along the way we determine all normal Cayley graphs onS n that are line graphs, and classify all normal Cayley graphs onS n with the strictly second largest eigenvalue at most 1.",
+  "docinfo": {
+   "Author": "Chenhui Lv; Sanming Zhou",
+   "Creator": "arXiv GenPDF (tex2pdf:8def8d8)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "The Aldous property for normal Cayley graphs on symmetric groups"
+  },
+  "title_lines": [
+   "The Aldous property for normal Cayley graphs on",
+   "symmetric groups"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Aldous’ spectral gap conjecture",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Main results",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.2",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Proofs of Theorem 1.3 and Corollary 1.5",
+   "page": 11,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Normal Cayley graphs on symmetric groups with",
+   "page": 12,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Normal Cayley graphs onS n that are line graphs",
+   "page": 12,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Normal Cayley graphs onS n with strictly second largest eigen-",
+   "page": 17,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Proofs of Theorem 1.6 and Corollary 1.7",
+   "page": 19,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 21,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-aldous-spectral-gap-conjecture",
+   "number": "1.1",
+   "title": "Aldous’ spectral gap conjecture",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1755,
+   "n_words": 271
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 7505,
+   "n_words": 1191
+  },
+  {
+   "id": "sec-003-12-main-results",
+   "number": "1.2",
+   "title": "Main results",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 5804,
+   "n_words": 904
+  },
+  {
+   "id": "sec-004-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3375,
+   "n_words": 570
+  },
+  {
+   "id": "sec-005-3-proof-of-theorem-12",
+   "number": "3",
+   "title": "Proof of Theorem 1.2",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 5225,
+   "n_words": 776
+  },
+  {
+   "id": "sec-006-4-proofs-of-theorem-13-and-corollary-15",
+   "number": "4",
+   "title": "Proofs of Theorem 1.3 and Corollary 1.5",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 3336,
+   "n_words": 534
+  },
+  {
+   "id": "sec-007-5-normal-cayley-graphs-on-symmetric-groups-with",
+   "number": "5",
+   "title": "Normal Cayley graphs on symmetric groups with",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 242,
+   "n_words": 44
+  },
+  {
+   "id": "sec-008-51-normal-cayley-graphs-ons-n-that-are-line-grap",
+   "number": "5.1",
+   "title": "Normal Cayley graphs onS n that are line graphs",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 11807,
+   "n_words": 2152
+  },
+  {
+   "id": "sec-009-52-normal-cayley-graphs-ons-n-with-strictly-seco",
+   "number": "5.2",
+   "title": "Normal Cayley graphs onS n with strictly second largest eigen-",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 4205,
+   "n_words": 707
+  },
+  {
+   "id": "sec-010-6-proofs-of-theorem-16-and-corollary-17",
+   "number": "6",
+   "title": "Proofs of Theorem 1.6 and Corollary 1.7",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3941,
+   "n_words": 629
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 4415,
+   "n_words": 643
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "sections": 12,
+  "chars_total": 51610
+ }
+}

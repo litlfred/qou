@@ -1,0 +1,231 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-9811173v1",
+ "source_sha256": "986bf57947746523",
+ "brief": "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to",
+ "extended": "**Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links**\n\n*J. M. Borwein a) and D. J. Broadhurst b)*\n\n54 pp, 42 sections.\n\n**Abstract.** We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the 998 invariants of Hodgson–Weeks manifolds is, astoundingly,a = 2 4×23×37×691 = 9, 408, 656; the largest denominator is merely b = 9. We also study the rational invariant a/b for single-complex- place cusped manifolds, complementary to knots and links, both with in and beyond the Hildebrand–Weeks census. Within the censi, we identify 152 distinct D edekind zetas rationally related to volumes. Moreover, 91 census manifolds have v olumes reducible to pairs of these zeta values.\n\n**Outline.** 1 Introduction; 2 Dedekind-zeta invariants of closed manifolds; 2.1 Examination of 1,200 single-complex-place ; 2.2 Examination of 44 ﬁelds found by Snap; 2.3 A special case: manifold v3066(−1, 2); 2.4 How may one derive the rational invariant?; 2 Cl2(2θ7) + 1; 2 Cl2(3θ7) = 7; 1 Its triangulation immedi-; 3 Cusped manifolds and join ﬁelds; 4 Links whose volumes link Clausen values; 4.1 Signpost: integer sequence A003657; 4.2 Dirichlet character; 2 Cl2(2θ) = Cl 2(θ) − Cl2(π −θ) (25); 4.3 Figure-8 knot at D = −3; 4.4 Whitehead link at D = −4; 4.5 Link 63; 7 At 1800-digit precision, PSLQ ﬁnds this to b",
+ "tokens": {
+  "brief": 48,
+  "extended": 409
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-2-dedekind-zeta-invariants-of-closed-manifolds",
+   "title": "Dedekind-zeta invariants of closed manifolds",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-examination-of-1200-single-complex-place-ﬁeld",
+   "title": "Examination of 1,200 single-complex-place ﬁelds",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-22-examination-of-44-ﬁelds-found-by-snap",
+   "title": "Examination of 44 ﬁelds found by Snap",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-23-a-special-case-manifold-v30661-2",
+   "title": "A special case: manifold v3066(−1, 2)",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-24-how-may-one-derive-the-rational-invariant",
+   "title": "How may one derive the rational invariant?",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-006-2-cl22θ7-1",
+   "title": "Cl2(2θ7) + 1",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-007-2-cl23θ7-7",
+   "title": "Cl2(3θ7) = 7",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-008-1-its-triangulation-immedi",
+   "title": "Its triangulation immedi-",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-009-3-cusped-manifolds-and-join-ﬁelds",
+   "title": "Cusped manifolds and join ﬁelds",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-010-4-links-whose-volumes-link-clausen-values",
+   "title": "Links whose volumes link Clausen values",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-011-41-signpost-integer-sequence-a003657",
+   "title": "Signpost: integer sequence A003657",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-012-42-dirichlet-character",
+   "title": "Dirichlet character",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-013-2-cl22θ-cl-2θ-cl2π-θ-25",
+   "title": "Cl2(2θ) = Cl 2(θ) − Cl2(π −θ) (25)",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-014-43-figure-8-knot-at-d-3",
+   "title": "Figure-8 knot at D = −3",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-015-44-whitehead-link-at-d-4",
+   "title": "Whitehead link at D = −4",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-016-45-link-63",
+   "title": "Link 63",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-017-7-at-1800-digit-precision-pslq-ﬁnds-this-to-be-t",
+   "title": "At 1800-digit precision, PSLQ ﬁnds this to be the sole integer re-",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-018-46-link-92",
+   "title": "Link 92",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-019-47-a-12-crossing-4-component-link-at-d-11",
+   "title": "A 12-crossing 4-component link at D = −11",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-020-48-a-12-crossing-3-component-link-at-d-15",
+   "title": "A 12-crossing 3-component link at D = −15",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-021-49-a-self-dual-platonic-link-at-d-20",
+   "title": "A self-dual platonic link at D = −20",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-022-410-a-48-crossing-daisy-chain-link-at-d-24",
+   "title": "A 48-crossing daisy-chain link at D = −24",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-023-411-quartic-platonic-links",
+   "title": "Quartic platonic links",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-024-2-1-i",
+   "title": "(1 + i",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-025-5-knots-and-links-from-feynman-diagrams",
+   "title": "Knots and links from Feynman diagrams",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-026-51-hyperbolic-feynman-links",
+   "title": "Hyperbolic Feynman links",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-027-1-moreover-a-rational-multiple-of-the",
+   "title": "Moreover, a rational multiple of the",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-028-52-dedekind-zeta-invariants-of-feynman-orthosche",
+   "title": "Dedekind-zeta invariants of Feynman orthoschemes",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-029-53-two-of-feynmans-links-are-missing",
+   "title": "Two of Feynman’s links are missing",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-030-54-dedekind-zeta-values-from-10-crossing-feynman",
+   "title": "Dedekind zeta values from 10-crossing Feynman knots",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-031-56-dedekind-zeta-values-from-maximally-symmetric",
+   "title": "Dedekind zeta values from maximally symmetric knots",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-032-16-before-analyzing-the-most-symmetric-of-these",
+   "title": "Before analyzing the most symmetric of these, we comment on t he situation up to 10",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-033-1-up-to-9-crossings-maximal-symmetry-is-a-good-y",
+   "title": "Up to 9 crossings, maximal symmetry is a good – yet far from infallib le – diagnostic",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-034-2-the-maximally-symmetric-knots-designated-by-ro",
+   "title": "The maximally symmetric knots designated by Rolfsen [26] as 6 3, 7 7, 8 21, 9 40 and",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-035-5-only-one-dedekind-zeta-knot-namely-9-49-escape",
+   "title": "Only one Dedekind-zeta knot, namely 9 49, escapes the sieve of maximal symmetry",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-036-6-at-10-crossings-we-found-3-non-alternating-ded",
+   "title": "At 10 crossings, we found 3 non-alternating Dedekind-zeta kno ts with less than",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-037-57-dedekind-zeta-value-from-an-18-crossing-feynm",
+   "title": "Dedekind zeta value from an 18-crossing Feynman knot",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-038-6-conclusions-and-prospects",
+   "title": "Conclusions and prospects",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-039-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-040-references",
+   "title": "References",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-041-3-1860-5468-97108-reprinted-in-gesammelte-mathem",
+   "title": "(1860) 54–68, 97–108, reprinted in: Gesammelte mathematische Abhandlungen ,",
+   "pages": "30-54"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

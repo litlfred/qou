@@ -1,0 +1,601 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "0309214v3",
+ "source": {
+  "file": "0309214v3.pdf",
+  "sha256": "53967ef30b0aedb90fc8384886e3c0754e908ca9a1edf06aaadb3501b72318c5",
+  "bytes": 407134,
+  "pages": 41
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q L ˆ",
+  "authors_raw": "School of Mathematics, Georgia Institute of Technology",
+  "abstract": "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients. Zeilberger was the ﬁ rst to notice that the abstract notion of holonomicity can be applied to verify , in a systematic and computerized way, combinatorial identities among spec ial functions. Using a general state sum deﬁnition of the colored Jones function o f a link in 3–space, we prove from ﬁrst principles that the colored Jones functio n is a multisum of a q –proper-hypergeometric function, and thus it is q –holonomic. We demonstrate our results by computer calculations.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181022171421-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "The colored Jones function is q–holonomic",
+   "Stavros Garoufalidis",
+   "Thang T Q L ˆ"
+  ],
+  "title_prev": "ISSN 1364-0380 (on line) 1465-3060 (printed) 1253"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Zeilberger meets Jones",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Synonymous notions to holonomicity",
+   "page": 4,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Plan of the proof",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 5,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 1,
+   "title": "q--holonomic and q--hypergeometric functions",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "q--holonomicity in many variables",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Assembling q--holonomic functions",
+   "page": 8,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Examples of q--holonomic functions",
+   "page": 8,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "q--hypergeometric functions",
+   "page": 9,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "The colored Jones function for sl2",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem ?? for links",
+   "page": 10,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "A multisum formula for the colored Jones function of a knot",
+   "page": 13,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "The cyclotomic function of a knot is q--holonomic",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Complexity",
+   "page": 16,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Finding a recursion relation for multisums",
+   "page": 16,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Upper bounds for initial conditions",
+   "page": 18,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem ??",
+   "page": 19,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "In computer talk",
+   "page": 19,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Recursion relations for the cyclotomic function of twist knots",
+   "page": 20,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Recursion relations for the colored Jones function of the figure 8 knot",
+   "page": 22,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "The colored Jones function for a simple Lie algebra",
+   "page": 24,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 24,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 3,
+   "title": "The quantum group U",
+   "page": 25,
+   "source": "outline",
+   "number": "7.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Verma modules and finite dimensional modules",
+   "page": 25,
+   "source": "outline",
+   "number": "7.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Quantum braid group action",
+   "page": 26,
+   "source": "outline",
+   "number": "7.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Ordering of the roots",
+   "page": 26,
+   "source": "outline",
+   "number": "7.1.4"
+  },
+  {
+   "level": 3,
+   "title": "PBW basis for U-, U+, and U",
+   "page": 27,
+   "source": "outline",
+   "number": "7.1.5"
+  },
+  {
+   "level": 3,
+   "title": "A commutation rule",
+   "page": 27,
+   "source": "outline",
+   "number": "7.1.6"
+  },
+  {
+   "level": 2,
+   "title": "q--holonomicity of quantum groups",
+   "page": 28,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 3,
+   "title": "q--holonomicity of transition matrix",
+   "page": 28,
+   "source": "outline",
+   "number": "7.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Structure constants",
+   "page": 29,
+   "source": "outline",
+   "number": "7.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Actions on Verma modules are q--holonomic",
+   "page": 29,
+   "source": "outline",
+   "number": "7.2.3"
+  },
+  {
+   "level": 2,
+   "title": "Quantum knot invariants",
+   "page": 29,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 3,
+   "title": "The quasi-R--matrix",
+   "page": 29,
+   "source": "outline",
+   "number": "7.3.1"
+  },
+  {
+   "level": 3,
+   "title": "The R--matrix and the braiding",
+   "page": 30,
+   "source": "outline",
+   "number": "7.3.2"
+  },
+  {
+   "level": 3,
+   "title": "q--holonomicity of quantum invariants of knots",
+   "page": 31,
+   "source": "outline",
+   "number": "7.3.3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem ??",
+   "page": 33,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 3,
+   "title": "r is q--holonomic",
+   "page": 33,
+   "source": "outline",
+   "number": "7.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Uq(sl2) is q--holonomic",
+   "page": 33,
+   "source": "outline",
+   "number": "7.4.2"
+  },
+  {
+   "level": 3,
+   "title": "Ek, Fk2mu-:6muplus1muUU are q--holonomic in k",
+   "page": 34,
+   "source": "outline",
+   "number": "7.4.3"
+  },
+  {
+   "level": 3,
+   "title": "T is q--holonomic",
+   "page": 35,
+   "source": "outline",
+   "number": "7.4.4"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Theorem ??",
+   "page": 36,
+   "source": "outline",
+   "number": "7.4.5"
+  },
+  {
+   "level": 1,
+   "title": "A Appendix: Proof of Proposition ?? for A2 and B2",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1 The case of A2",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2 The case of B2",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-zeilberger-meets-jones",
+   "number": "1.1",
+   "title": "Zeilberger meets Jones",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5293,
+   "n_words": 957
+  },
+  {
+   "id": "sec-002-12-synonymous-notions-to-holonomicity",
+   "number": "1.2",
+   "title": "Synonymous notions to holonomicity",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1107,
+   "n_words": 184
+  },
+  {
+   "id": "sec-003-13-plan-of-the-proof",
+   "number": "1.3",
+   "title": "Plan of the proof",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2222,
+   "n_words": 381
+  },
+  {
+   "id": "sec-004-14-acknowledgements",
+   "number": "1.4",
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 10,
+   "n_chars": 7783,
+   "n_words": 1583
+  },
+  {
+   "id": "sec-005-3-the-colored-jones-function-for-sl2",
+   "number": "3",
+   "title": "The colored Jones function for sl2",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 5873,
+   "n_words": 1248
+  },
+  {
+   "id": "sec-006-32-a-multisum-formula-for-the-colored-jones-func",
+   "number": "3.2",
+   "title": "A multisum formula for the colored Jones function of a knot",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 4564,
+   "n_words": 927
+  },
+  {
+   "id": "sec-007-5-complexity",
+   "number": "5",
+   "title": "Complexity",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 135,
+   "n_words": 26
+  },
+  {
+   "id": "sec-008-51-finding-a-recursion-relation-for-multisums",
+   "number": "5.1",
+   "title": "Finding a recursion relation for multisums",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4237,
+   "n_words": 864
+  },
+  {
+   "id": "sec-009-52-upper-bounds-for-initial-conditions",
+   "number": "5.2",
+   "title": "Upper bounds for initial conditions",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2014,
+   "n_words": 365
+  },
+  {
+   "id": "sec-010-6-in-computer-talk",
+   "number": "6",
+   "title": "In computer talk",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 638,
+   "n_words": 111
+  },
+  {
+   "id": "sec-011-61-recursion-relations-for-the-cyclotomic-functi",
+   "number": "6.1",
+   "title": "Recursion relations for the cyclotomic function of twist knots",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 3680,
+   "n_words": 726
+  },
+  {
+   "id": "sec-012-62-recursion-relations-for-the-colored-jones-fun",
+   "number": "6.2",
+   "title": "Recursion relations for the colored Jones function of the figure 8 knot",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 2510,
+   "n_words": 616
+  },
+  {
+   "id": "sec-013-7-the-colored-jones-function-for-a-simple-lie-al",
+   "number": "7",
+   "title": "The colored Jones function for a simple Lie algebra",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1465,
+   "n_words": 262
+  },
+  {
+   "id": "sec-014-71-preliminaries",
+   "number": "7.1",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1011,
+   "n_words": 242
+  },
+  {
+   "id": "sec-015-711-the-quantum-group-u",
+   "number": "7.1.1",
+   "title": "The quantum group U",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1671,
+   "n_words": 400
+  },
+  {
+   "id": "sec-016-713-quantum-braid-group-action",
+   "number": "7.1.3",
+   "title": "Quantum braid group action",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 840,
+   "n_words": 186
+  },
+  {
+   "id": "sec-017-714-ordering-of-the-roots",
+   "number": "7.1.4",
+   "title": "Ordering of the roots",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2053,
+   "n_words": 518
+  },
+  {
+   "id": "sec-018-716-a-commutation-rule",
+   "number": "7.1.6",
+   "title": "A commutation rule",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 2333,
+   "n_words": 469
+  },
+  {
+   "id": "sec-019-722-structure-constants",
+   "number": "7.2.2",
+   "title": "Structure constants",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 998,
+   "n_words": 214
+  },
+  {
+   "id": "sec-020-73-quantum-knot-invariants",
+   "number": "7.3",
+   "title": "Quantum knot invariants",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 37,
+   "n_chars": 12902,
+   "n_words": 2875
+  },
+  {
+   "id": "sec-021-a1-the-case-of-a2",
+   "number": null,
+   "title": "A.1 The case of A2",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 1740,
+   "n_words": 441
+  },
+  {
+   "id": "sec-022-a2-the-case-of-b2",
+   "number": null,
+   "title": "A.2 The case of B2",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 7402,
+   "n_words": 1395
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 47,
+  "sections": 23,
+  "chars_total": 72471
+ }
+}

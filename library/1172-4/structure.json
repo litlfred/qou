@@ -1,0 +1,262 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "1172-4",
+ "source": {
+  "file": "1172-4.pdf",
+  "sha256": "ffc47732ce0138e9fa08c0fd2598331679a94590b150f5a4f120b8c26f4f56ee",
+  "bytes": 1594675,
+  "pages": 26
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Notes on Construction of the Knot Invariant from $\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$Dilogarithm Function El5~Bg3XBg3X1!N#>8Ln8&5f2JJ*N#3XUs96",
+  "authors_raw": null,
+  "abstract": null,
+  "docinfo": {
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": "",
+   "Producer": "dvipdfm 0.13.2c-j-p1d, Copyright © 1998, by Mark A. Wicks",
+   "CreationDate": "D:20080313235932+09'00'"
+  },
+  "title_lines": [
+   "Notes on Construction of the Knot Invariant from",
+   "$\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$Dilogarithm Function",
+   "El5~Bg3XBg3X1!N#>8Ln8&5f2JJ*N#3XUs96"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Dilogarithm Function",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Quantum Dilogarithm Function II",
+   "page": 6,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Representation",
+   "page": 9,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Momentum Space",
+   "page": 9,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotic Behavior",
+   "page": 11,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Knot Invariant",
+   "page": 13,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Braid $G$roup",
+   "page": 13,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Three Dlmenslonal Picture",
+   "page": 14,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Simple Examples",
+   "page": 19,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Figure-Eight Knot",
+   "page": 19,
+   "source": "inferred",
+   "number": "7.1"
+  },
+  {
+   "level": 1,
+   "title": "Concluding Remarks",
+   "page": 22,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 22,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-dilogarithm-function",
+   "number": "2",
+   "title": "Dilogarithm Function",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 69,
+   "n_words": 5
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 9088,
+   "n_words": 970
+  },
+  {
+   "id": "sec-002-4-quantum-dilogarithm-function-ii",
+   "number": "4",
+   "title": "Quantum Dilogarithm Function II",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 7287,
+   "n_words": 680
+  },
+  {
+   "id": "sec-003-5-representation",
+   "number": "5",
+   "title": "Representation",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-51-momentum-space",
+   "number": "5.1",
+   "title": "Momentum Space",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3150,
+   "n_words": 245
+  },
+  {
+   "id": "sec-005-52-asymptotic-behavior",
+   "number": "5.2",
+   "title": "Asymptotic Behavior",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 3722,
+   "n_words": 245
+  },
+  {
+   "id": "sec-006-6-knot-invariant",
+   "number": "6",
+   "title": "Knot Invariant",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-61-braid-group",
+   "number": "6.1",
+   "title": "Braid $G$roup",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1777,
+   "n_words": 199
+  },
+  {
+   "id": "sec-008-62-three-dlmenslonal-picture",
+   "number": "6.2",
+   "title": "Three Dlmenslonal Picture",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 19,
+   "n_chars": 5785,
+   "n_words": 672
+  },
+  {
+   "id": "sec-009-7-simple-examples",
+   "number": "7",
+   "title": "Simple Examples",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-71-figure-eight-knot",
+   "number": "7.1",
+   "title": "Figure-Eight Knot",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 2695,
+   "n_words": 282
+  },
+  {
+   "id": "sec-011-8-concluding-remarks",
+   "number": "8",
+   "title": "Concluding Remarks",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1300,
+   "n_words": 156
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 6261,
+   "n_words": 762
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 13,
+  "chars_total": 41134
+ }
+}

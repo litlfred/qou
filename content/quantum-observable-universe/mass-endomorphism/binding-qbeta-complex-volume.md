@@ -1,5 +1,5 @@
 **Conjecture (complex-volume unification of mass-binding and decay).** [Lean classes: `ComplexVolumeMatch` / `SingleFrakVAssembly` / `StageCSigma3Lift`]
-*Binding and the $\beta$-decay $Q$-value are not two stories. They form
+*Binding and the $\beta$-decay $Q$-value form
 the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect*
 
@@ -174,13 +174,13 @@ $A_\omega$ is unsupported (no literature; integrality) and not carried.
 
 ## Computational corroboration
 
-The two channels really construct distinct real components of one object: the
+The two channels construct distinct real components of one object: the
 $E_0\cdot|\Delta(\mathrm{net})|$ **net-route** (the bar-even, binding-like
 $E_0\cdot\Delta(\mathrm{tr})$) provides a precision-ladder $c_2 \approx -8.0$,
 whereas the canonical $c_2 = -1$ lives in the bar-odd $\mathrm{tr}_M$
 **brane-tower** ladder
 (witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
-the two parities perfectly align with Re/Im components of one complex
+the two parities align with Re/Im components of one complex
 $c_2$.
 
 ## Corollary — one story, and one proof

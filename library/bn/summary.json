@@ -1,0 +1,247 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "bn",
+ "source_sha256": "95ed0908ceb54a1c",
+ "brief": "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove",
+ "extended": "**Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009**\n\n64 pp, 45 sections.\n\n**Abstract.** This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their connections with ergodic theory, complex reﬂection groups, moduli spaces of 1-forms and open problems in s ur- face topology.\n\n**Outline.** 1 Introduction; 1 The ﬁnite case. Let q be a primitive dth roo; 2 The complex hyperbolic case. In §10 we turn ; 3 The hyperelliptic case. In §12 we discuss th; 1 The period map fq is an inﬁnite-to-one local; 2 It transports the discrete action of Bn on T; 3 The complement of the image fq(T ∗; 1 (x −bi)−µ idx have been studied since the ti; 2 Topological preliminaries; 1 (z −bi). There is a unique homomor-; 3 From Hodge theory to topology; X In summary:; 4 Action of the braid group; 1 (ei) = −T ∗(ei) = −qei; 1 (dz) = dz +d Imz =dz −; 2 (dz −dz),; 5 Complex reﬂection groups; 1 If s and t are joined by an edge of Γ, then \n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.4: The spaceH1(X, Z) is isomorphic to Z[G]/R as a symplectic\n- Theorem 4.1: There is a spanning set (ei)n\n- Theorem 4.4: For each i and q ⁄= 1, we can choose ei ⁄= 0 such that\n- Theorem 5.2: The braid group acts on H 1(X)q as a reduced complex re-\n- Theorem 5.4: The lifted representation ~ρq gives a complex reﬂection group\n- Theorem 5.5: Forqn ⁄= 1, the representation ρq :Bn → U(H 1(X)q) is dual",
+ "tokens": {
+  "brief": 49,
+  "extended": 374
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-1-the-ﬁnite-case-let-q-be-a-primitive-dth-root-o",
+   "title": "The ﬁnite case. Let q be a primitive dth root of unity. In §8 we show",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-002-2-the-complex-hyperbolic-case-in-10-we-turn-the",
+   "title": "The complex hyperbolic case. In §10 we turn the case where H 1(X)q",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-003-3-the-hyperelliptic-case-in-12-we-discuss-the-hy",
+   "title": "The hyperelliptic case. In §12 we discuss the hyperelliptic case, where",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-004-1-the-period-map-fq-is-an-inﬁnite-to-one-local-h",
+   "title": "The period map fq is an inﬁnite-to-one local homeomorphism, but not",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-005-2-it-transports-the-discrete-action-of-bn-on-t",
+   "title": "It transports the discrete action of Bn on T ∗",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-006-3-the-complement-of-the-image-fqt",
+   "title": "The complement of the image fq(T ∗",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-007-1-x-biµ-idx-have-been-studied-since-the-time-of",
+   "title": "(x −bi)−µ idx have been studied since the time of Euler; the present",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-008-2-topological-preliminaries",
+   "title": "Topological preliminaries",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-009-1-z-bi-there-is-a-unique-homomor",
+   "title": "(z −bi). There is a unique homomor-",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-010-3-from-hodge-theory-to-topology",
+   "title": "From Hodge theory to topology",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-011-x-in-summary",
+   "title": "In summary:",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-012-4-action-of-the-braid-group",
+   "title": "Action of the braid group",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-013-1-ei-t-ei-qei",
+   "title": "(ei) = −T ∗(ei) = −qei",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-014-1-dz-dz-d-imz-dz",
+   "title": "(dz) = dz +d Imz =dz −",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-015-2-dz-dz",
+   "title": "(dz −dz),",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-016-5-complex-reﬂection-groups",
+   "title": "Complex reﬂection groups",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-017-1-if-s-and-t-are-joined-by-an-edge-of-γ-then-sts",
+   "title": "If s and t are joined by an edge of Γ, then sts = tst (we say s and t",
+   "pages": "22-27"
+  },
+  {
+   "id": "sec-018-6-the-period-map",
+   "title": "The period map",
+   "pages": "27-32"
+  },
+  {
+   "id": "sec-019-7-arithmetic-groups",
+   "title": "Arithmetic groups",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-020-1-uλ-nq-is-an-arithmetic-lattice-in-urs-or",
+   "title": "U(Λ n,q ) is an arithmetic lattice in U(r,s ), or",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-021-2-we-have-q-1-and-uλ-nq",
+   "title": "We have q = −1, and U(Λ n,q ) ∼",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-022-1-we-ﬁrst-note-that-the-real-points-of-the-centr",
+   "title": "We ﬁrst note that the real points of the centralizer factor as follows:",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-023-2-a-fundamental-result-of-borel-and-harish-chand",
+   "title": "A fundamental result of Borel and Harish-Chandra then imp lies that",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-024-3-let-φ-ex-denote-the-cyclotomic-polynomial-for",
+   "title": "Let Φ e(x) denote the cyclotomic polynomial for the primitive e-th",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-025-4-now-suppose-q-is-a-primitive-d-th-root-of-unit",
+   "title": "Now suppose q is a primitive d-th root of unity. Then:",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-026-5-the-lattice-property-of-gdz-then-implies",
+   "title": "The lattice property of Gd(Z) then implies:",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-027-6-suppose-q-ζ-k",
+   "title": "Suppose q =ζ k",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-028-8-factors-of-the-jacobian",
+   "title": "Factors of the Jacobian",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-029-10-similarly-for-n-5-we-can-rule-out-d-4",
+   "title": "Similarly, for n = 5 we can rule out d = 4",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-030-1-eigenspaces-the-most-interesting-eigenspace-he",
+   "title": "Eigenspaces. The most interesting eigenspace here is H 1(X)q for",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-031-2-f-actors-of-jac-x-by-theorem-83-we-have-an-iso",
+   "title": "F actors of Jac( X). By Theorem 8.3 we have an isogeny",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-032-4-action-of-the-braid-group-the-braid-group-acts",
+   "title": "Action of the braid group. The braid group acts on PH 1(X)q as",
+   "pages": "39-39"
+  },
+  {
+   "id": "sec-033-5-the-period-map-the-period-map-determines-an-em",
+   "title": "The period map. The period map determines an embedding",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-034-9-deﬁnite-integrals",
+   "title": "Deﬁnite integrals",
+   "pages": "40-45"
+  },
+  {
+   "id": "sec-035-10-complex-hyperbolic-geometry",
+   "title": "Complex hyperbolic geometry",
+   "pages": "45-49"
+  },
+  {
+   "id": "sec-036-18-soh-1xq-andh-1xr-both-have",
+   "title": "(soH 1(X)q andH 1(X)r both have",
+   "pages": "49-50"
+  },
+  {
+   "id": "sec-037-11-lifting-homological-symmetries",
+   "title": "Lifting homological symmetries",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-038-1-the-map-bn-spxt",
+   "title": "The map Bn → Sp(X)T",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-039-2-the-map-modxt-spxt",
+   "title": "The map Mod(X)T → Sp(X)T",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-040-3-there-is-a-primitive-dth-root-of-unity-q-such",
+   "title": "There is a primitive dth root of unity q such that ρq(Bn) has ﬁnite",
+   "pages": "50-51"
+  },
+  {
+   "id": "sec-041-18-see-10-we-ﬁnd",
+   "title": "(see §10), we ﬁnd:",
+   "pages": "51-52"
+  },
+  {
+   "id": "sec-042-12-the-hyperelliptic-case",
+   "title": "The hyperelliptic case",
+   "pages": "52-55"
+  },
+  {
+   "id": "sec-043-13-polygons-and-teichm-uller-curves",
+   "title": "Polygons and Teichm¨ uller curves",
+   "pages": "55-58"
+  },
+  {
+   "id": "sec-044-references",
+   "title": "References",
+   "pages": "58-64"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

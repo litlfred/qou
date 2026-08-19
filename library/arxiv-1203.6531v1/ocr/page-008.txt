@@ -1,0 +1,59 @@
+8 EROL YILMAZ, CENAP OZEL AND UGUR USTAOGLU
+
+Proof. By construction of arranged words, the marked components satisfy the given
+conditions. Conversely, if @ = a;,ai,_,...a;,v" is a word satisfying the condi-
+tions, then an arranged word (w = uv':)) whose marked components are aj,’s can
+be obtained as follows:
+
+The components up to rornk,T1, are
+
+(ron2Tin) +++ (ToTnksTin)(ToTnk.T1n—1) *** (TOT nk. TAs )s
+the components between (rornx;Tu;) and (ToTnk;—1Tij;_1) are
+(rorma;Tu;) *** (TOP nk; aru, (TOM nk; TA yA) “++ (TOT ky TULj—1)
+and the last part of the wordw = uv) is
+
+(Tonks? lz) *** (TOP nk rri, (POTnkyT1ly—1) °° (rornk Tuy) (0).
+
+Oo
+
+Therefore the number of the elements in an arranged word w = uv") given by
+the generating function
+
+ae
+
+(—a2")(1— a2"). (att)
+where a is the length of the word @. In order to count all reduced words starting
+with 79 we have to find the number words i whose length is a for any power a.
+To do this, we will find a correspondence between these words and some special
+partitions of integers.
+
+If m is a positive integer, then a partition of m is a nonincreasing sequence of
+positive integers pi1,p2,...,px% Whose sum is m. Each p; is called a part of the
+partition. Let n be a positive integer. Any partition m = d; +d) +...+d, where
+k <n can be identify by the n—tuple (di, d2,...,d,0,0,...,0).
+
+We can also represent each word rornkTi with the n-tuple (k,1,...,1,0,...,0),
+Tnk With (k,...,0) and ro; with (1,1...,1,0,...,0) where number one 1’s is equal
+tolfor2<k<n-1,1<l<n.
+
+Definition 15. Let n be a positive integer. The n-tuples (k,1...,1,0,...,0) where
+number of 1’s is 1 for 1 <k <n, 1 <1 <n-—1 are called basic partitions. The
+basic partition (kj,1...,1,0...,0) is said to be connected to the basic partition
+(ko,1,...,1,0,...,0) if ky > ka and the number of 1’s in the first one is greater
+than number of 1’s in the second one. Hence a sequence of connected partition
+
+@1,42,...,@m, corresponds to a word @ given in Theorem [14]
+
+Theorem 16. There is one to one correspondence between words © and the par-
+titions in which there are at most n parts and in which no parts is larger than
+n.
+
+Proof. Since we identify each word @ with a sequence of connected basic partitions,
+we must find a correspondence between sequences of connected partitions and the
+partitions fit into a box of size n x n. Let aj, a2,..., Gm, be a sequence of connected
+
+partitions where a; = (ki, 1,...,10,...,0). Hence kj > kj and 1; > 1; for 1 <i<
+Ya
+
+jem.
+Define

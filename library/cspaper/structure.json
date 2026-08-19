@@ -1,0 +1,345 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "cspaper",
+ "source": {
+  "file": "cspaper.pdf",
+  "sha256": "1910c380cf79bf426140dfce9c6bb6ab13c2cb47297015ee6c47f288423b8211",
+  "bytes": 210101,
+  "pages": 29
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds Walter D. Neumann 1. Introduction In this paper we prove some results on combinatorics of triangulations of 3-dimensional",
+  "authors_raw": null,
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GNU Ghostscript 6.51"
+  },
+  "title_lines": [
+   "Combinatorics of Triangulations and the",
+   "Chern-Simons Invariant for Hyperbolic 3-Manifolds",
+   "Walter D. Neumann",
+   "1. Introduction",
+   "In this paper we prove some results on combinatorics of triangulations of 3-dimensional"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Q2n:",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Denote Sol0 = fc 2 Z2n : U c = dg and Sol = fc 2 Sol0 : c satisﬁes",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Our formula has been implemented in Jeff Weeks’program “snap pea” by R. Mey-",
+   "page": 3,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Note that R(z) is a multivalued function of z. It has singularities at 0 and",
+   "page": 3,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "We believe there should be a topological interpretation of an integer vector c as in",
+   "page": 4,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Consistency and cusp conditions, and the conditions on c",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "In",
+   "page": 8,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "The formula for the Chern-Simons invariant",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Re",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Im",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(c0",
+   "page": 12,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Combinatorics of 3-cycles",
+   "page": 15,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Cohomological computation of H3(J)",
+   "page": 22,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The desired element \u0014(a) 2 H2(J) = H1(K) is represented by (1=2)",
+   "page": 25,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 2.4",
+   "page": 27,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The J\u0001 of \u0010 has coefﬁcient sum 0 for each 3-simplex \u0001,",
+   "page": 29,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 29,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3319,
+   "n_words": 638
+  },
+  {
+   "id": "sec-001-2-q2n",
+   "number": "2",
+   "title": "Q2n:",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1983,
+   "n_words": 404
+  },
+  {
+   "id": "sec-002-2-denote-sol0-fc-2-z2n-u-c-dg-and-sol-fc-2-sol0",
+   "number": "2",
+   "title": "Denote Sol0 = fc 2 Z2n : U c = dg and Sol = fc 2 Sol0 : c satisﬁes",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 264,
+   "n_words": 54
+  },
+  {
+   "id": "sec-003-3-our-formula-has-been-implemented-in-jeff-weeks",
+   "number": "3",
+   "title": "Our formula has been implemented in Jeff Weeks’program “snap pea” by R. Mey-",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 352,
+   "n_words": 60
+  },
+  {
+   "id": "sec-004-4-note-that-rz-is-a-multivalued-function-of-z-it",
+   "number": "4",
+   "title": "Note that R(z) is a multivalued function of z. It has singularities at 0 and",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1345,
+   "n_words": 303
+  },
+  {
+   "id": "sec-005-5-we-believe-there-should-be-a-topological-inter",
+   "number": "5",
+   "title": "We believe there should be a topological interpretation of an integer vector c as in",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 337,
+   "n_words": 60
+  },
+  {
+   "id": "sec-006-2-consistency-and-cusp-conditions-and-the-condit",
+   "number": "2",
+   "title": "Consistency and cusp conditions, and the conditions on c",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 3882,
+   "n_words": 775
+  },
+  {
+   "id": "sec-007-0-in",
+   "number": "0",
+   "title": "In",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3694,
+   "n_words": 765
+  },
+  {
+   "id": "sec-008-3-the-formula-for-the-chern-simons-invariant",
+   "number": "3",
+   "title": "The formula for the Chern-Simons invariant",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2515,
+   "n_words": 532
+  },
+  {
+   "id": "sec-009-2-re",
+   "number": "2",
+   "title": "Re",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 932,
+   "n_words": 264
+  },
+  {
+   "id": "sec-010-2-im",
+   "number": "2",
+   "title": "Im",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1362,
+   "n_words": 383
+  },
+  {
+   "id": "sec-011-2-c0",
+   "number": "2",
+   "title": "(c0",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 4114,
+   "n_words": 934
+  },
+  {
+   "id": "sec-012-4-combinatorics-of-3-cycles",
+   "number": "4",
+   "title": "Combinatorics of 3-cycles",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 22,
+   "n_chars": 15992,
+   "n_words": 3133
+  },
+  {
+   "id": "sec-013-5-cohomological-computation-of-h3j",
+   "number": "5",
+   "title": "Cohomological computation of H3(J)",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 6775,
+   "n_words": 1350
+  },
+  {
+   "id": "sec-014-2-the-desired-element-a-2-h2j-h1k-is-represented",
+   "number": "2",
+   "title": "The desired element \u0014(a) 2 H2(J) = H1(K) is represented by (1=2)",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 1894,
+   "n_words": 371
+  },
+  {
+   "id": "sec-015-6-proof-of-theorem-24",
+   "number": "6",
+   "title": "Proof of Theorem 2.4",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 4394,
+   "n_words": 926
+  },
+  {
+   "id": "sec-016-10-the-j-of-has-coefﬁcient-sum-0-for-each-3-simp",
+   "number": "10",
+   "title": "The J\u0001 of \u0010 has coefﬁcient sum 0 for each 3-simplex \u0001,",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 427,
+   "n_words": 97
+  },
+  {
+   "id": "sec-017-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1289,
+   "n_words": 186
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 18,
+  "chars_total": 54870
+ }
+}

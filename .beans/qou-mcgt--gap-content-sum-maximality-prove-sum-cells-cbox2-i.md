@@ -142,7 +142,7 @@ literature home is not the same as a cited result.
 
 ## CLOSED BY CITATION (2026-08-11) — owner supplied the papers (commit 2a697a9b)
 
-Read `uploads/2607.29018v1.pdf` (Lv–Zhou, *The Aldous property for normal Cayley
+Read `library/arxiv-2607.29018v1/2607.29018v1.pdf` (Lv–Zhou, *The Aldous property for normal Cayley
 graphs on symmetric groups*). The conjecture is a known theorem, twice over:
 
 1. **Li–Xia–Zhou** (quoted in Lv–Zhou §1.1): for a **single conjugacy class** `S`,
@@ -190,7 +190,7 @@ The corpus's "multi-session Mathlib build" estimate is now **one** lemma, not a
 programme.
 
 Refs:
-- Lv & Zhou, arXiv:2607.29018 — `uploads/2607.29018v1.pdf`
+- Lv & Zhou, arXiv:2607.29018 — `library/arxiv-2607.29018v1/2607.29018v1.pdf`
 - Li, Xia & Zhou (2023) — cited as [22] therein; see also arXiv:2302.04022
-  (`uploads/2302.04022v1.pdf`)
-- `uploads/1711.08944v2.pdf` (second largest eigenvalues of some Cayley graphs)
+  (`library/arxiv-2302.04022v1/2302.04022v1.pdf`)
+- `library/arxiv-1711.08944v2/1711.08944v2.pdf` (second largest eigenvalues of some Cayley graphs)

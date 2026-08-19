@@ -15,7 +15,7 @@ prop:thurston-volume-additivity's triangulation-independence in the cusped case 
 - Thm 5.1 — |vol(rho)| < v_3 * ||(M, dM)|| for every representation, where v_3 is the regular ideal tetrahedron volume and ||(M, dM)|| the relative simplicial (Gromov) volume.
   Use here: atom-knot-mass-derivation-proof invokes Gromov's norm theorem alongside Mostow in the 'post-Archimedean naming' step; Thm 5.1 is the sharp representation-level inequality in that pairing and is a citable bound on how large a non-geometric representation's volume can be.
 
-Source: `uploads/0305275v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0305275v1/0305275v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -1,0 +1,40 @@
+Centers and Simple Modules
+for Iwahori-Hecke Algebras
+
+Meinolf Geck and Raphaél Rouquier
+
+1. Introduction
+
+The work of Dipper and James on Iwahori-Hecke algebras associated
+with the finite Weyl groups of type A, has shown that these algebras be-
+have in many ways like group algebras of finite groups. Moreover, there
+are “generic” features in the modular representation theory of these al-
+gebras which, at present, can only be verified in examples by explicit
+computations. This paper arose from an attempt to provide a concep-
+tual explanation of these phenomena, in the general framework of the
+representation theory of (symmetric) algebras. We will study relations
+between the center of such algebras and properties of decomposition
+maps, and we will use this to obtain a general result about the “gener-
+icity” of the number of simple modules of Iwahori-Hecke algebras.
+
+Usually, the formalism of decomposition maps is developed for al-
+gebras over a complete discrete valuation ring. However, in our appli-
+cations to Iwahori-Hecke algebras, we have to make sure that this also
+works over the ring of Laurent polynomials in one indeterminate over the
+integers. Roughly speaking, this will be achieved by using the theory of
+Henselian rings (see [Ray]). In Section 2, we describe such a general
+setting for decomposition maps of algebras over integrally closed ground
+rings (see Proposition 2.11). Furthermore, we extend the standard results
+on the “Brauer-Cartan triangle” to the case of orders in non-semisimple
+and non-split algebras, by using enlargements of the usual Grothendieck
+groups. As a formal consequence of the definition, we get a factorization
+property of decomposition maps (see Proposition 2.12). Previously, this
+factorization was only established using strong additional assumptions
+on the realizability of representations (cf. [Gel], (2.4), (5.3)).
+
+Let H be an algebra over a local integrally closed domain O with
+residue field k. Then we have a canonical map from central functions on
+
+This paper is a contribution to the DFG research project on “Algorithmic Number
+Theory and Algebra”. The second author thanks the Lehrstuhl D fiir Mathematik,
+RWTH Aachen, for its hospitality and support during part of this work.

@@ -1,0 +1,44 @@
+306 J. S. Birman & W. W. Menasco
+
+The only remaining cases are cases (i),(ii),(iii). If case (i) occurs we
+may stabilize X’ by pushing it across the singular leaf in A. (Equivalently,
+we could destabilize X by repeatedly deleting vertices of valence 1). This
+pushes a positive vertex from A to F’. But then, after some number of such
+stabilizations, we will have reduced to the situation where only cases (ii)
+and (iii) occur. That is, there are no singularities whatsoever in A, so the
+modified braid representatives of X and X’ have identical braid structures.
+The proof of Lemma 4 is complete. ||
+
+Lemma 4 was not the general case of the MT because we assumed that
+X' is a preferred longitude for X. The next lemma will be needed before we
+can attack the general case.
+
+Lemma 5 The unlinking lemma [2]. Let X and X' be links in 3-space
+RR? which are not separated by any topological plane IR? C IR?. Then we may
+modify the link X' by isotoping it to a link X" which is separated from X by
+a plane P in IR?. The isotopy from X' to X" may be realized by choosing
+disjoint embedded discs D,,...,D, whose interiors are disjoint from X' and
+X", with int(D;)NX a point. Each D; intersects X in an arc a; C OD; and
+X" in the closure B; of the complement of a; in OD;. The isotopy is a push
+of 04,.-.,0% CX’ across Dy,...,Dx to B1,..-;Be CX".
+
+Proof: We may assume that X U X’ is in general position with respect
+to projection onto a plane which is orthogonal to the braid axis. Think of
+X as being colored red and X' as being colored green. There are finitely
+many points where the projected image of green crosses that of red, with
+each crossing transversal. If, at every such crossing, green crosses under red,
+then X and X’ will be unlinked geometrically and there is no obstruction to
+pushing green below red to separate them. If not, then after a finite number
+of green-red crossing switches they will be unlinked. Each crossing switch
+may clearly be described as in the statement of the lemma. ||
+
+Proof of Theorem 1: By hypothesis, we are given closed braids X; and
+X»2 which represent the same oriented link type in 3-space. We must prove
+that X; = X2. We may assume without loss of generality that X; and X2
+are situated in distinct half-spaces (so that they are geometrically unlinked),
+with X 9 far above X,. To prove that X, = X2 we will construct a series
+of links X}, X¥,.X3,X3, where X is a preferred longitude for X3 and X3 is
+the braid-connected sum of X, with some number of copies of the unknot.
+By Lemma 3 it will follow that X; = X3. By Lemma 4 it will follow that
+X3 = Xo. Therefore we will have proved that X; = X2. Figure 9 may be
+useful to the reader in following the steps of the proof.

@@ -45,7 +45,7 @@ intrinsic to the statement, not the proof method.
 
 ## Masbaum cross-check + provenance correction (bean xcyc)
 
-The owner uploaded `uploads/0306345v1.pdf` (arXiv egress proxy-blocked).
+The owner uploaded `library/0306345v1/0306345v1.pdf` (arXiv egress proxy-blocked).
 **Reading it corrected a mis-attribution**: G. Masbaum, *Skein-theoretical
 derivation of some formulas of Habiro* (AGT 3 (2003) 537–556, math/0306345) is
 about **twist knots** K_p (his Fig. 3; K₁ = left-handed trefoil, K₋₁ =

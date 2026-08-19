@@ -516,7 +516,7 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-y3xv", "qou-9p9y"],
     "source": (
-        "CGZ arXiv:1712.04887v3 §2-3 descent (uploads/1712.04887v3.pdf); "
+        "CGZ arXiv:1712.04887v3 §2-3 descent (library/arxiv-1712.04887v3/1712.04887v3.pdf); "
         "GSWZ arXiv:2412.04241v2 eqn (270); Lean backbone "
         "QOU.Machinery.CyclicQuantumDilog (merged #4964)"
     ),

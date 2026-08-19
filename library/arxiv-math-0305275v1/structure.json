@@ -1,0 +1,155 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0305275v1",
+ "source": {
+  "file": "0305275v1.pdf",
+  "sha256": "9b356a9d716a0d3e8e2dfe0c4ba1283a28ed85e5c78d18072484030e71377fbc",
+  "bytes": 367310,
+  "pages": 38
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0305275",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "19 May 2003"
+  },
+  "doi": null,
+  "title": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Stefano Francaviglia12",
+  "authors_raw": "September 14, 2021",
+  "abstract": "Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C). Then the volume of ρ is deﬁned by taking any ρ-equivariant map from the universal cover ~W to H3 and then by integrating the pull-back of the hyperbolic volu me form on a fundamental domain. It turns out that such a volume does n ot depend on the choice of the equivariant map. Dunﬁeld extende d this construction to the case of a non-compact (cusped) manifold M , but he did not prove the volume is well-deﬁned in all cases. We prove here that the volume of a representation is always we ll- deﬁned and depends only on the representation. Moreover, we show that this volume can be easily computed by straightening any ideal triangulation of M . We show that the volume of a representation is bounded from above by the relative simplicial volume of M . Finally, we prove a rigidity theorem for representations of the fundamental gr oup of a hyperbolic manifold. Namely, we prove that if M is hyperbolic and vol(ρ) = vol( M ) then ρ is discrete and faithful.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210917155636-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "Hyperbolic volume of representations of fundamental",
+   "groups of cusped 3-manifolds",
+   "Stefano Francaviglia12"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "General definitions",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The straightening",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Volume of representations",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Comparison with simplicial volume",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Rigidity of representations",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Corollaries",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 11035,
+   "n_words": 2081
+  },
+  {
+   "id": "sec-001-the-straightening",
+   "number": null,
+   "title": "The straightening",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 6432,
+   "n_words": 1267
+  },
+  {
+   "id": "sec-002-volume-of-representations",
+   "number": null,
+   "title": "Volume of representations",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 15,
+   "n_chars": 11496,
+   "n_words": 2311
+  },
+  {
+   "id": "sec-003-comparison-with-simplicial-volume",
+   "number": null,
+   "title": "Comparison with simplicial volume",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 21,
+   "n_chars": 10019,
+   "n_words": 2113
+  },
+  {
+   "id": "sec-004-rigidity-of-representations",
+   "number": null,
+   "title": "Rigidity of representations",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 34,
+   "n_chars": 21623,
+   "n_words": 4574
+  },
+  {
+   "id": "sec-005-corollaries",
+   "number": null,
+   "title": "Corollaries",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 38,
+   "n_chars": 7822,
+   "n_words": 1402
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 6,
+  "chars_total": 68427
+ }
+}

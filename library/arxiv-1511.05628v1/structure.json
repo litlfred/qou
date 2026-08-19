@@ -1,0 +1,555 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1511.05628v1",
+ "source": {
+  "file": "1511.05628v1.pdf",
+  "sha256": "3b9da2994233882bdb242798fd1a5f85e53f1d0fd66410809de751d056a07d3a",
+  "bytes": 781463,
+  "pages": 41
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1511.05628",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "18 Nov 2015"
+  },
+  "doi": null,
+  "title": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY",
+  "authors_raw": "TUDOR DIMOFTE AND STAVROS GAROUFALIDIS",
+  "abstract": "The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity ζ. We prove that the coeﬃcients of our series lie in the trace ﬁeld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and conﬁrm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the ﬁrst author. Our construction is motivated by the analysis of singular limits in Chern-Simons theory with gauge group SL(2, C) at ﬁxed levelk, where ζ k = 1.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20151119012606Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  },
+  "title_lines": [
+   "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Quantum modular forms",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Zagier's Quantum Modularity Conjecture",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "The definition of ,",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Ideal triangulations and Neumann-Zagier data",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The 1-loop invariant at level k",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The n-loop invariants at level k for n 2",
+   "page": 7,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Feynman diagrams for the n-loop invariant",
+   "page": 8,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "The 2-loop invariant in detail",
+   "page": 9,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "The 3-loop invariant",
+   "page": 11,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "Matching with the numerical asymptotics of the Kashaev invariant",
+   "page": 11,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 2,
+   "title": "Topological invariance",
+   "page": 11,
+   "source": "outline",
+   "number": "2.8"
+  },
+  {
+   "level": 1,
+   "title": "Proofs",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2.6",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Some identities of the cyclic dilogarithm",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2.2",
+   "page": 14,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Complex Chern-Simons theory",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Basic structure",
+   "page": 15,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "A singular limit",
+   "page": 16,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "State integrals",
+   "page": 17,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Derivation of the torsion",
+   "page": 19,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Ambiguities",
+   "page": 20,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "Computations",
+   "page": 20,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "How the data was computed",
+   "page": 20,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "A sample computation",
+   "page": 21,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Data",
+   "page": 22,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The 41 knot",
+   "page": 22,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "The 52 knot and its partner, the (-2,3,7) pretzel knot",
+   "page": 25,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "The 61 knot",
+   "page": 32,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "The (-2,3,-3) and the (-2,3,9) partner pretzel knots",
+   "page": 35,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 2,
+   "title": "The 912 knot",
+   "page": 38,
+   "source": "outline",
+   "number": "6.5"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-quantum-modular-forms",
+   "number": "1.1",
+   "title": "Quantum modular forms",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7668,
+   "n_words": 1290
+  },
+  {
+   "id": "sec-002-21-ideal-triangulations-and-neumann-zagier-data",
+   "number": "2.1",
+   "title": "Ideal triangulations and Neumann-Zagier data",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 3074,
+   "n_words": 533
+  },
+  {
+   "id": "sec-003-22-the-1-loop-invariant-at-level-k",
+   "number": "2.2",
+   "title": "The 1-loop invariant at level k",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4130,
+   "n_words": 756
+  },
+  {
+   "id": "sec-004-24-feynman-diagrams-for-the-n-loop-invariant",
+   "number": "2.4",
+   "title": "Feynman diagrams for the n-loop invariant",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2374,
+   "n_words": 445
+  },
+  {
+   "id": "sec-005-25-the-2-loop-invariant-in-detail",
+   "number": "2.5",
+   "title": "The 2-loop invariant in detail",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 1470,
+   "n_words": 336
+  },
+  {
+   "id": "sec-006-26-the-3-loop-invariant",
+   "number": "2.6",
+   "title": "The 3-loop invariant",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 781,
+   "n_words": 135
+  },
+  {
+   "id": "sec-007-27-matching-with-the-numerical-asymptotics-of-th",
+   "number": "2.7",
+   "title": "Matching with the numerical asymptotics of the Kashaev invariant",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 480,
+   "n_words": 97
+  },
+  {
+   "id": "sec-008-28-topological-invariance",
+   "number": "2.8",
+   "title": "Topological invariance",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1836,
+   "n_words": 311
+  },
+  {
+   "id": "sec-009-3-proofs",
+   "number": "3",
+   "title": "Proofs",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-31-proof-of-theorem-26",
+   "number": "3.1",
+   "title": "Proof of Theorem 2.6",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2705,
+   "n_words": 481
+  },
+  {
+   "id": "sec-011-32-some-identities-of-the-cyclic-dilogarithm",
+   "number": "3.2",
+   "title": "Some identities of the cyclic dilogarithm",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 472,
+   "n_words": 84
+  },
+  {
+   "id": "sec-012-33-proof-of-theorem-22",
+   "number": "3.3",
+   "title": "Proof of Theorem 2.2",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 206,
+   "n_words": 39
+  },
+  {
+   "id": "sec-013-4-complex-chern-simons-theory",
+   "number": "4",
+   "title": "Complex Chern-Simons theory",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 967,
+   "n_words": 184
+  },
+  {
+   "id": "sec-014-41-basic-structure",
+   "number": "4.1",
+   "title": "Basic structure",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1459,
+   "n_words": 255
+  },
+  {
+   "id": "sec-015-42-a-singular-limit",
+   "number": "4.2",
+   "title": "A singular limit",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2441,
+   "n_words": 425
+  },
+  {
+   "id": "sec-016-43-state-integrals",
+   "number": "4.3",
+   "title": "State integrals",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 5909,
+   "n_words": 1037
+  },
+  {
+   "id": "sec-017-44-derivation-of-the-torsion",
+   "number": "4.4",
+   "title": "Derivation of the torsion",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1402,
+   "n_words": 285
+  },
+  {
+   "id": "sec-018-45-ambiguities",
+   "number": "4.5",
+   "title": "Ambiguities",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 428,
+   "n_words": 76
+  },
+  {
+   "id": "sec-019-5-computations",
+   "number": "5",
+   "title": "Computations",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-020-51-how-the-data-was-computed",
+   "number": "5.1",
+   "title": "How the data was computed",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2020,
+   "n_words": 352
+  },
+  {
+   "id": "sec-021-52-a-sample-computation",
+   "number": "5.2",
+   "title": "A sample computation",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2049,
+   "n_words": 342
+  },
+  {
+   "id": "sec-022-6-data",
+   "number": "6",
+   "title": "Data",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-023-61-the-41-knot",
+   "number": "6.1",
+   "title": "The 41 knot",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 32,
+   "n_chars": 13613,
+   "n_words": 2216
+  },
+  {
+   "id": "sec-024-63-the-61-knot",
+   "number": "6.3",
+   "title": "The 61 knot",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 38,
+   "n_chars": 9868,
+   "n_words": 1521
+  },
+  {
+   "id": "sec-025-65-the-912-knot",
+   "number": "6.5",
+   "title": "The 912 knot",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 1322,
+   "n_words": 243
+  },
+  {
+   "id": "sec-026-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 996,
+   "n_words": 155
+  },
+  {
+   "id": "sec-027-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 6348,
+   "n_words": 935
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 33,
+  "sections": 28,
+  "chars_total": 74018
+ }
+}

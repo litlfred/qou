@@ -23,7 +23,7 @@ correction).
 ## Sufficient legs (verified k≤14, unproved): [A2] Cov(ln f,ω₃)≤0  AND  [A3] |R|=|g(1)−g'(0)|<|g'(0)|,
 g(θ)=E_{2+θ}[ω₃], g(1)=kernel, g'(0)=Cov(ln f,ω₃). ~9 local certificates already eliminated.
 
-## Resources: 7 papers in uploads/ (pdfminer-readable — cffi installed): Fulman 0305423, Ivanov-
+## Resources: 7 papers in library/ (pdfminer-readable — cffi installed): Fulman 0305423, Ivanov-
 Olshanski 0304010, Dołęga-Féray 1402.4615, Śniady 0411647, Biane 0006111, Dołęga-Śniady 1704.02352,
 Okounkov-Olshanski 9608020. lean-lsp available (A4). arXiv-search MCP network-blocked in sandbox.
 

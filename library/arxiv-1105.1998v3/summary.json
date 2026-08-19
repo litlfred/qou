@@ -1,0 +1,52 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1105.1998v3",
+ "source_sha256": "daf3bffad8eb2749",
+ "brief": "A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity.",
+ "extended": "**A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA**\n\n*Graduate School of Information Science and Technology, Osak a University*\n\n11 pp, 6 sections.\n\n**Abstract.** We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity. We introduce the q-Borel transformation and the q-Laplace transformation following C. Zhang to obtain the connection formula . We consider the limit p → 1− of the connection formula.\n\n**Outline.** 1 Introduction; 2 The connection formula; 2.1 The theta function of Jacobi; 2.3 The p-Borel transformation and the p-Lapla; 3 The limit of the connection formula; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: For any x ∈ C∗ \\ [pν+2; p],\n- Theorem 2: For any x ∈ C∗ \\ (−∞, 0] where arg x ∈ (−π, π ), we have\n- Proposition 1: For any x ∈ C∗ (−π < arg x < π ), we have\n- Corollary 1: For any x ∈ C∗ (−π < arg x ≤ π ), we have\n- Lemma 1: We assume that the function f can be p-Borel transformed to the analytic func-\n- Lemma 3: For any k ∈ N, λ ∈ C∗, we have",
+ "tokens": {
+  "brief": 43,
+  "extended": 266
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-the-connection-formula",
+   "title": "The connection formula",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-21-the-theta-function-of-jacobi",
+   "title": "The theta function of Jacobi",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-23-the-p-borel-transformation-and-the-p-laplace",
+   "title": "The p-Borel transformation and the p-Laplace transformation",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-004-3-the-limit-of-the-connection-formula",
+   "title": "The limit of the connection formula",
+   "pages": "6-11"
+  },
+  {
+   "id": "sec-005-references",
+   "title": "References",
+   "pages": "11-11"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

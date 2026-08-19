@@ -20,7 +20,7 @@ fingerprint `−23` (the trace-field discriminant of 5₂).
 
 Generic commutative ring (§7c); the transcendental saddle values `V_i`
 (`Li₂`-values, `Vol(5₂)`, `CS(5₂) ≠ 0`) are archimedean and live in the witness.
-GGM state-integral data: `uploads/2012.00062v3.pdf` (eqs. 73, 230–233).
+GGM state-integral data: `library/arxiv-2012.00062v3/2012.00062v3.pdf` (eqs. 73, 230–233).
 -/
 
 namespace QOU.QBeta.CubicSaddleDiscriminant

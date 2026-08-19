@@ -68,7 +68,7 @@ Classical diophantine approximation theory measures this rate
 analytically (via $|\alpha - p/q|$). The surreal framework
 measures it algebraically (via birthday trajectory).
 
-The alignment is not coincidental — both are studying the same
+Both are studying the same
 object: **how efficiently rationals approach a real**.
 
 ## Conjectural consequences

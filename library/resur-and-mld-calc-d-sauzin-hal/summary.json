@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "resur-and-mld-calc-d-sauzin-hal",
+ "source_sha256": "b33f24cc76102f33",
+ "brief": "HAL Id: hal-04253203 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 9 sections: Introduction",
+ "extended": "**HAL Id: hal-04253203 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not**\n\n*The documents may come from teaching and research*\n\n16 pp, 9 sections.\n\n**Outline.** Introduction; Alien operators. Alien derivations; Borel-Laplace summation; Examples from mathematical physics.; Mould Calculus; The mould algebra; The hyperlogarithmic mould.; Mould aspects of the MZV world; Applications\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: For eachω∈ Ω+, the operator",
+ "tokens": {
+  "brief": 49,
+  "extended": 143
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-alien-operators-alien-derivations",
+   "title": "Alien operators. Alien derivations",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-borel-laplace-summation",
+   "title": "Borel-Laplace summation",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-003-examples-from-mathematical-physics",
+   "title": "Examples from mathematical physics.",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-004-mould-calculus",
+   "title": "Mould Calculus",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-005-the-mould-algebra",
+   "title": "The mould algebra",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-006-the-hyperlogarithmic-mould",
+   "title": "The hyperlogarithmic mould.",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-007-mould-aspects-of-the-mzv-world",
+   "title": "Mould aspects of the MZV world",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-008-applications",
+   "title": "Applications",
+   "pages": "13-16"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

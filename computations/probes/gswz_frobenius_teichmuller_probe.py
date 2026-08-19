@@ -6,7 +6,7 @@ docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md
 (Addendum 4).
 
 CONTEXT. The GSWZ gluing (arXiv:2412.04241v2 Def 1.1, uploaded at
-uploads/2412.04241v2.pdf) is Frobenius-twisted: f_m(x + zeta_pm -
+library/arxiv-2412.04241v2/2412.04241v2.pdf) is Frobenius-twisted: f_m(x + zeta_pm -
 zeta_m) = (phi_p f_pm)(x). Testing membership of a candidate
 Habiro-module element over a number field therefore REQUIRES the
 Frobenius endomorphism phi_p of R_p^wedge in executable form. GSWZ
@@ -172,7 +172,7 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_frobenius_teichmuller_probe",
     "beans": ["qou-1hlh"],
-    "source": "GSWZ arXiv:2412.04241v2 §4.4 eqns (263)-(267), (272); uploads/2412.04241v2.pdf",
+    "source": "GSWZ arXiv:2412.04241v2 §4.4 eqns (263)-(267), (272); library/arxiv-2412.04241v2/2412.04241v2.pdf",
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5, precision 5^6",
     "checks": checks,
     "zeta24_coords_const_alpha_alpha2": [c0, c1, c2],

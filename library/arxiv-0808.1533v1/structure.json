@@ -1,0 +1,128 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0808.1533v1",
+ "source": {
+  "file": "0808.1533v1.pdf",
+  "sha256": "85bb9732afdd70ea2b62816da6f471ba3dce6ce2c4647b23eb7e4b62cbc277f7",
+  "bytes": 494264,
+  "pages": 31
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0808.1533",
+   "version": "1",
+   "primary_class": "math.DG",
+   "stamp_date": "11 Aug 2008"
+  },
+  "doi": null,
+  "title": "On the third order helicity of magnetic fields on invariant domains in S3 R. Komendarczyk ∗",
+  "authors_raw": "December 8, 2018",
+  "abstract": "We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld X. The proposed approach exploits correspondence between th e Milnor ¯µ 123-invariant for 3-component links and the homotopy invarian ts of maps to conﬁg- uration spaces, and we provide a simple geometric proof of th is fact in the case of borromean links. Based on these connections we develop a for mulation for the third order helicity of X on invariant unlinked domains of X, and provide Arnold’s style er- godic interpretation of this invariant as an average asympt otic ¯µ 123-invariant of orbits of X. We also obtain a lower bound for the L2-energy of X.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220420163249-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "On the third order helicity of magnetic ﬁelds on invariant domains in S3 R. Komendarczyk ∗",
+  "title_lines": [
+   "On the third order helicity of magnetic fields",
+   "on invariant domains in S3",
+   "R. Komendarczyk ∗"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The Milnor 123-invariant and the Hopf degree.",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Invariants of volume preserving flows. Helicity.",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Definition of ``123-helicity'' on invariant unlinked handlebodies.",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The ergodic interpretation of H123(X;T)",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Energy bound.",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Comparison to the known approaches via Massey products.",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 23,
+   "n_chars": 45678,
+   "n_words": 9474
+  },
+  {
+   "id": "sec-001-energy-bound",
+   "number": null,
+   "title": "Energy bound.",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 27,
+   "n_chars": 7205,
+   "n_words": 1492
+  },
+  {
+   "id": "sec-002-comparison-to-the-known-approaches-via-massey-pr",
+   "number": null,
+   "title": "Comparison to the known approaches via Massey products.",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 31,
+   "n_chars": 8889,
+   "n_words": 1693
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 3,
+  "chars_total": 61772
+ },
+ "duplicate_of": "arxiv-0808.1533v3",
+ "duplicate_note": "Same work as library/arxiv-0808.1533v3/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+}

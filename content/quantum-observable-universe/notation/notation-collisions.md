@@ -142,7 +142,7 @@ third is the observable.
   write "$\Phi_{\mathrm{mass}}$ is the mass endomorphism" bare.
 - **$\mathfrak{m}$ is a functional, not an endomorphism.** The Markov trace
   $\mathrm{tr}_M \colon H_n \to R$ is a trace functional \cite{jones1987,
-  geck-pfeiffer2000}; the modulus collapses $\mathcal{M}$ to a number. Note
+  geckpfeiffer2000}; the modulus collapses $\mathcal{M}$ to a number. Note
   $\mathrm{tr}_M(a) \neq \mathrm{tr}(L_a)$: the Markov trace is the *quantum*
   trace, not the regular-representation trace.
 

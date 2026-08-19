@@ -1,0 +1,65 @@
+I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604 591
+
+In [17] it was shown that the number of n x n ASMs (which is the same as the number
+of (n,n, n)-Gog trapezoids) is the constant term of the following expression
+
+n-1
+
+IIa + xi), tt Il (xj — xj )(1 +a; + 2425). (5.1)
+i=l 1<i<j<n-1
+
+This is a Gog-type constant term expression as described above. Interestingly, this
+formula was derived using the six-vertex model approach, which is different from the
+approach that was used here. On the other hand, it was shown that the number of TSS-
+CPPs in an 2n x 2n x 2n box (which is the same as the number of (n,n,m)-Magogs) is
+the constant term of
+
+n
+
+T]ated'e?Pa-0%) 9 TT (5.2)
+
+1-242,’
+i=1 1<i<j<n wd
+
+and this is a Magog-type constant term expression. In [17], Fonseca and Zinn-Justin
+succeeded in showing that the constant terms of the two expressions are equal. It can es-
+sentially be deduced from the following theorem, which was conjectured by Di Francesco
+and Zinn-Justin [34] and first proven by Zeilberger [33].
+
+Theorem 15. Let S(x1,...,%n) be a power series in x1,...,% that is symmetric in
+©1,..-,%y. Then
+
+n
+CT a... 9(@1,--+,2n) lL"" Il (xj — aj)(1 + tay + ajx;)
+i=1 1si<j<n
+aj) hap
+i
+2
+i 1si<j<n
+
+Lj Xj
+
+l-2z 1— 22; .
+
+Fonseca and Zinn-Justin [17] gave another proof of the fact that the constant term
+of (5.1) is equal to the constant term of (5.2), which is discussed next.
+
+The general strategy (which also appeared in [32]) is to compute the symmetrizers
+of (5.1) and of (5.2). (The symmetrizer is defined as the antisymmetrizer except for
+the sign sgno which is omitted, see (2.7).) Clearly, in order to show that the constant
+terms of the original expressions are equal, it suffices to show this for the symmetrized
+expressions.
+
+The computation of the symmetrizer is usually much easier for the Magog-type con-
+
+15 —@i
+
+stant term expressions, as [],<;< j<n Toma; iS antisymmetric and therefore it suffices to
+Si<is ij
+
+n .
+compute the antisymmetrizer of T] fi(xi) (with fi(x) = (1+ai)'a;?t?(1—2?)~? in this
+i=l
+case), which can often be accomplished using the Vandermonde determinant evaluation.
+As for the Gog-type constant term expressions, the following result of Fonseca and
+Zinn-Justin [17] can be used to compute the symmetrizer of (5.1) (and also to prove

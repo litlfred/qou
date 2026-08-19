@@ -1,0 +1,647 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "nrarith",
+ "source": {
+  "file": "nrarith.pdf",
+  "sha256": "085ec9541ddc6cd4b52b6af8b268b5d325b9df86e9a253e2d64bdf058bccdcc8",
+  "bytes": 420815,
+  "pages": 38
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Arithmetic of Hyperbolic Manifolds",
+  "authors_raw": "Walter D. Neumann and Alan W. Reid",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GNU Ghostscript 6.51"
+  },
+  "title_lines": [
+   "Arithmetic of Hyperbolic Manifolds"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "PSL2C has algebraic integer trace if and only if it has algebraic",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Trace-ﬁelds",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Let \u0000 be a Kleinian group of ﬁnite covolume. It is well known, and follows from",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "In this subsection we give a geometric description of the invariant trace ﬁeld k(\u0000)",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "PSL2k\u0001:",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "A horospherical section of a cusp of a hyperbolic manifold M is a ﬂat torus. This",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "The following theorem is from [NR1]. Our formulation here is stronger, but the",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Quaternion algebras",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "In this section we associate to a Kleinian group \u0000 a quaternion algebra over the",
+   "page": 7,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The trace ﬁeld, invariant trace ﬁeld, and invariant quaternion algebra are quite",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Short geodesics in arithmetic orbifolds",
+   "page": 9,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Arithmetic Kleinian groups are obtained as follows (cf., [Bo] and [Vig, Chap. 4],",
+   "page": 9,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "We shall make use of the characterization theorems for arithmetic Kleinian groups",
+   "page": 10,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "It follows that when \u0000 is derived from a quaternion algebra, the associated quaternion",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The proof of Theorem 4.6 gives the same results for closed arithmetic 3-orbifolds",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Od. Thus if tr",
+   "page": 12,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Od with j",
+   "page": 12,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "For closed hyperbolic 3-orbifolds we conjecture a similar result to Corollary 4.7:",
+   "page": 12,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Lemma 4.9 has a converse, as pointed out to us by Ted Chinburg:",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "Commensurators of chain links",
+   "page": 15,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Surgery on one component of the Whitehead link complement",
+   "page": 19,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "In [T] Thurston describes how to obtain the complement W of the Whitehead link",
+   "page": 19,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "We are only interested in generalized Dehn surgeries on one cusp of W , so we",
+   "page": 23,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Z. Recall that W",
+   "page": 26,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Z:",
+   "page": 26,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "PGL2C:",
+   "page": 27,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "PSL2Q(pz;i):",
+   "page": 28,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Z, 2q is an arbitrary integer.) Assume p = 0. Then (6.4) and (6.5) imply that",
+   "page": 28,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Arithmeticity of chain links",
+   "page": 29,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Commensurators of chain links: proofs",
+   "page": 30,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "The dodecahedral knots of Aitchison and Rubinstein",
+   "page": 34,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "One of the original motivating questions for this work was the question: does",
+   "page": 34,
+   "source": "inferred",
+   "number": "9.1"
+  },
+  {
+   "level": 1,
+   "title": "Further comments",
+   "page": 35,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "We do not yet know an example of a cocompact Kleinian group \u0000 with invariant",
+   "page": 36,
+   "source": "inferred",
+   "number": "10.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 37,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8017,
+   "n_words": 1376
+  },
+  {
+   "id": "sec-001-2-psl2c-has-algebraic-integer-trace-if-and-only",
+   "number": "2",
+   "title": "PSL2C has algebraic integer trace if and only if it has algebraic",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 706,
+   "n_words": 122
+  },
+  {
+   "id": "sec-002-2-trace-ﬁelds",
+   "number": "2",
+   "title": "Trace-ﬁelds",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-21-let-be-a-kleinian-group-of-ﬁnite-covolume-it",
+   "number": "2.1",
+   "title": "Let \u0000 be a Kleinian group of ﬁnite covolume. It is well known, and follows from",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3285,
+   "n_words": 655
+  },
+  {
+   "id": "sec-004-22-in-this-subsection-we-give-a-geometric-descri",
+   "number": "2.2",
+   "title": "In this subsection we give a geometric description of the invariant trace ﬁeld k(\u0000)",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2242,
+   "n_words": 469
+  },
+  {
+   "id": "sec-005-2-psl2k",
+   "number": "2",
+   "title": "PSL2k\u0001:",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1187,
+   "n_words": 238
+  },
+  {
+   "id": "sec-006-23-a-horospherical-section-of-a-cusp-of-a-hyperb",
+   "number": "2.3",
+   "title": "A horospherical section of a cusp of a hyperbolic manifold M is a ﬂat torus. This",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 986,
+   "n_words": 184
+  },
+  {
+   "id": "sec-007-24-the-following-theorem-is-from-nr1-our-formula",
+   "number": "2.4",
+   "title": "The following theorem is from [NR1]. Our formulation here is stronger, but the",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 173,
+   "n_words": 30
+  },
+  {
+   "id": "sec-008-3-quaternion-algebras",
+   "number": "3",
+   "title": "Quaternion algebras",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-31-in-this-section-we-associate-to-a-kleinian-gr",
+   "number": "3.1",
+   "title": "In this section we associate to a Kleinian group \u0000 a quaternion algebra over the",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4744,
+   "n_words": 870
+  },
+  {
+   "id": "sec-010-32-the-trace-ﬁeld-invariant-trace-ﬁeld-and-invar",
+   "number": "3.2",
+   "title": "The trace ﬁeld, invariant trace ﬁeld, and invariant quaternion algebra are quite",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 748,
+   "n_words": 110
+  },
+  {
+   "id": "sec-011-4-short-geodesics-in-arithmetic-orbifolds",
+   "number": "4",
+   "title": "Short geodesics in arithmetic orbifolds",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 547,
+   "n_words": 81
+  },
+  {
+   "id": "sec-012-41-arithmetic-kleinian-groups-are-obtained-as-fo",
+   "number": "4.1",
+   "title": "Arithmetic Kleinian groups are obtained as follows (cf., [Bo] and [Vig, Chap. 4],",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1609,
+   "n_words": 296
+  },
+  {
+   "id": "sec-013-42-we-shall-make-use-of-the-characterization-the",
+   "number": "4.2",
+   "title": "We shall make use of the characterization theorems for arithmetic Kleinian groups",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 639,
+   "n_words": 123
+  },
+  {
+   "id": "sec-014-2-it-follows-that-when-is-derived-from-a-quatern",
+   "number": "2",
+   "title": "It follows that when \u0000 is derived from a quaternion algebra, the associated quaternion",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2137,
+   "n_words": 366
+  },
+  {
+   "id": "sec-015-2-the-proof-of-theorem-46-gives-the-same-results",
+   "number": "2",
+   "title": "The proof of Theorem 4.6 gives the same results for closed arithmetic 3-orbifolds",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1029,
+   "n_words": 246
+  },
+  {
+   "id": "sec-016-2-od-thus-if-tr",
+   "number": "2",
+   "title": "Od. Thus if tr",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 119,
+   "n_words": 21
+  },
+  {
+   "id": "sec-017-2-od-with-j",
+   "number": "2",
+   "title": "Od with j",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 514,
+   "n_words": 134
+  },
+  {
+   "id": "sec-018-44-for-closed-hyperbolic-3-orbifolds-we-conjectu",
+   "number": "4.4",
+   "title": "For closed hyperbolic 3-orbifolds we conjecture a similar result to Corollary 4.7:",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2209,
+   "n_words": 410
+  },
+  {
+   "id": "sec-019-45-lemma-49-has-a-converse-as-pointed-out-to-us",
+   "number": "4.5",
+   "title": "Lemma 4.9 has a converse, as pointed out to us by Ted Chinburg:",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 5779,
+   "n_words": 1126
+  },
+  {
+   "id": "sec-020-5-commensurators-of-chain-links",
+   "number": "5",
+   "title": "Commensurators of chain links",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 7093,
+   "n_words": 1386
+  },
+  {
+   "id": "sec-021-6-surgery-on-one-component-of-the-whitehead-link",
+   "number": "6",
+   "title": "Surgery on one component of the Whitehead link complement",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-022-61-in-t-thurston-describes-how-to-obtain-the-com",
+   "number": "6.1",
+   "title": "In [T] Thurston describes how to obtain the complement W of the Whitehead link",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 5542,
+   "n_words": 1107
+  },
+  {
+   "id": "sec-023-62-we-are-only-interested-in-generalized-dehn-su",
+   "number": "6.2",
+   "title": "We are only interested in generalized Dehn surgeries on one cusp of W , so we",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 5264,
+   "n_words": 1042
+  },
+  {
+   "id": "sec-024-2-z-recall-that-w",
+   "number": "2",
+   "title": "Z. Recall that W",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 751,
+   "n_words": 151
+  },
+  {
+   "id": "sec-025-2-z",
+   "number": "2",
+   "title": "Z:",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 881,
+   "n_words": 176
+  },
+  {
+   "id": "sec-026-2-pgl2c",
+   "number": "2",
+   "title": "PGL2C:",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1473,
+   "n_words": 308
+  },
+  {
+   "id": "sec-027-2-psl2qpzi",
+   "number": "2",
+   "title": "PSL2Q(pz;i):",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 1548,
+   "n_words": 313
+  },
+  {
+   "id": "sec-028-2-z-2q-is-an-arbitrary-integer-assume-p-0-then-6",
+   "number": "2",
+   "title": "Z, 2q is an arbitrary integer.) Assume p = 0. Then (6.4) and (6.5) imply that",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 1062,
+   "n_words": 208
+  },
+  {
+   "id": "sec-029-7-arithmeticity-of-chain-links",
+   "number": "7",
+   "title": "Arithmeticity of chain links",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 3894,
+   "n_words": 777
+  },
+  {
+   "id": "sec-030-8-commensurators-of-chain-links-proofs",
+   "number": "8",
+   "title": "Commensurators of chain links: proofs",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 5951,
+   "n_words": 1232
+  },
+  {
+   "id": "sec-031-9-the-dodecahedral-knots-of-aitchison-and-rubins",
+   "number": "9",
+   "title": "The dodecahedral knots of Aitchison and Rubinstein",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-032-91-one-of-the-original-motivating-questions-for",
+   "number": "9.1",
+   "title": "One of the original motivating questions for this work was the question: does",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 3321,
+   "n_words": 566
+  },
+  {
+   "id": "sec-033-10-further-comments",
+   "number": "10",
+   "title": "Further comments",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 2158,
+   "n_words": 387
+  },
+  {
+   "id": "sec-034-102-we-do-not-yet-know-an-example-of-a-cocompact",
+   "number": "10.2",
+   "title": "We do not yet know an example of a cocompact Kleinian group \u0000 with invariant",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 885,
+   "n_words": 137
+  },
+  {
+   "id": "sec-035-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 4451,
+   "n_words": 630
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 36,
+  "sections": 36,
+  "chars_total": 80944
+ }
+}

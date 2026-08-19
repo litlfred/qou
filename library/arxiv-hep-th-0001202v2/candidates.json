@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-0001202v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "b2e3e22ea3d51c0b10a6678d71c5d5b265646c5c8902b7d24b35a3162f709214",
+  "file": "0001202v2.pdf"
+ },
+ "provenance": {
+  "title": "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees",
+  "authors": "D. J. Broadhurst 1) and D. Kreimer 2)",
+  "arxiv": {
+   "id": "hep-th/0001202",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "29 Jan 2000"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "The dimensions Hn,k of the bigrading of the Hopf algebra of undecorated",
+   "section_file": "sections/sec-012-54-natural-growth-by-appending-sums-of-forests.md",
+   "section_title": "Natural growth by appending sums of forests",
+   "pages": "14-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

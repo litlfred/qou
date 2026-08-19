@@ -1,0 +1,49 @@
+Hamiltonian vector fields which are tangent to the X, and integrate to give
+the angle variables
+
+(Y1,°+°; Pn)? Xu > R"/(27Z)".
+
+The latter give the affine structure on the fibers.
+
+A completely integrable Hamiltonian system (CIHS) on the 2n-dimensional
+symplectic manifold (¥,c) is an ODE (given, say, by a vector field v)
+which possesses n independent integrals ui,---,Un in involution (i.e. they
+Poisson-commute). This translates immediately to a Lagrangian fibration
+a: X& — R” (where 7 = (t,--+,Un)), and the flow is linearized on the
+level tori X,, ie. vu is tangent to the fibers, and v|x, is a constant linear
+combination of the 0/0y; with coefficients which depend smoothly on w.
+
+The corresponding algebraic object is an algebraically completely inte-
+grable Hamiltonian system (ACIHS): we want ¥Y to be a 2n-dimensional
+non-singular complex algebraic variety, o a closed, non-degenerate holomor-
+phic (2,0)-form on ¥, m: & —U a morphism whose fibers X,, are abelian
+varieties which are Lagrangian subvarieties of (V,o), and v a Hamiltonian
+vector field for some algebraic (Hamiltonian) function on U. Such an ODE
+can be solved more-or-less explicitly, in terms of theta functions. Numerous
+examples, both in mathematics and in physics, are well-known; we refer to
+[DKN] for a survey, and to [DM] for some recent examples. What we are
+asking here is, essentially, to decide when a given family of abelian varieties
+underlies an ACIHS.
+
+The first new feature of the algebraic situation is that a family of abelian
+varieties need not be locally trivial. Rather, it is specified by its classifying
+
+map
+q:u>Ay,
+
+where A, is the moduli space of abelian varieties of dimension g and of a
+given polarization type. The given family 7: ¥ — U is recovered as the
+pullback via q of the universal abelian variety % — Ay. (The latter, of
+course, does not quite exist, but it exists locally away from abelian varieties
+with excess automorphisms, and also globally on a finite “level” branched
+cover of Ag.)
+
+Let V — U be the vertical bundle determined by a : XY — U. Its fiber over
+u €U can be identified with the tangent space 7)X,, or with the universal
+cover of X,,. Deformation theory identifies the tangent space to A, at a
+non-singular point [X] € A, with Sym?V, where V := Ty)X. We may thus
+write the differential of the classifying map as
+
+(2) dq: TU — Sym’.
+
+If the family 7: X — U admits a Lagrangian structure then the sym-

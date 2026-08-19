@@ -14,7 +14,7 @@ $\mathrm{tr}_M(\sigma_1^2) = (q^{5/2} - q^{1/2} + q^2 + q)/(q^2+q) = 1 + (q-1)/q
 was derived from the **excised convention C** value $z = 1/(q^{1/2}+q^{-1/2})$
 and is withdrawn; it gave $1.10438805825918163783$ at $q_0$. The half-integral
 powers of $q$ were an artefact of C. Under the production convention D the
-result is rational in $q$ — a simplification, not a loss.
+result is rational in $q$, which simplifies the closed form.
 
 The $\mathfrak{Q}_\beta$ factorisation takes the form:
 $$

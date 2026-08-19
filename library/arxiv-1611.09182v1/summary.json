@@ -1,0 +1,305 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1611.09182v1",
+ "source_sha256": "6b40549b96d40ac7",
+ "brief": "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections",
+ "extended": "**Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics**\n\n97 pp, 57 sections.\n\n**Outline.** 0.1 Abstract; 0.2 Acknowledgements; 1 Introduction; 1.1 Towards conceptual parsimony; 1.2 Outline; 2 What lies in an algebra?; 2.1 Causality; 2.3 Particles; 2.2 Irreversible time; 2.4 Summary and outlook; 3 Complex quaternions; 3.1 Preamble; 3.3 Conjugation; 3.4 Generalized ideals; 3.5 Complex invariant-action, mc; 3.5.1 Preliminaries; 3.5.2 Weyl and Dirac spinors as generalized id; 3.5.3 A seamless new way to conjugate Weyl spi",
+ "tokens": {
+  "brief": 49,
+  "extended": 164
+ },
+ "sections": [
+  {
+   "id": "sec-000-01-abstract",
+   "title": "Abstract",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-02-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "3-8"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "title": "Introduction",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-003-11-towards-conceptual-parsimony",
+   "title": "Towards conceptual parsimony",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-12-outline",
+   "title": "Outline",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-005-2-what-lies-in-an-algebra",
+   "title": "What lies in an algebra?",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-006-21-causality",
+   "title": "Causality",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-007-23-particles",
+   "title": "Particles",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-008-22-irreversible-time",
+   "title": "Irreversible time",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-009-24-summary-and-outlook",
+   "title": "Summary and outlook",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-010-3-complex-quaternions",
+   "title": "Complex quaternions",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-011-31-preamble",
+   "title": "Preamble",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-012-33-conjugation",
+   "title": "Conjugation",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-013-34-generalized-ideals",
+   "title": "Generalized ideals",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-014-35-complex-invariant-action-mc",
+   "title": "Complex invariant-action, mc",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-015-351-preliminaries",
+   "title": "Preliminaries",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-016-352-weyl-and-dirac-spinors-as-generalized-ideals",
+   "title": "Weyl and Dirac spinors as generalized ideals",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-017-353-a-seamless-new-way-to-conjugate-weyl-spinors",
+   "title": "A seamless new way to conjugate Weyl spinors",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-018-354-majorana-spinors-as-generalized-ideals",
+   "title": "Majorana spinors as generalized ideals",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-019-36-hermitian-invariant-action-mh",
+   "title": "Hermitian invariant-action, mh",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-020-37-quaternionic-invariant-action-mq",
+   "title": "Quaternionic invariant-action, mq",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-021-39-summary",
+   "title": "Summary",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-022-38-bilinears",
+   "title": "Bilinears",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-023-310-outlook",
+   "title": "Outlook",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-024-41-motivation",
+   "title": "Motivation",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-025-44-minimal-left-ideals",
+   "title": "Minimal left ideals",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-026-45-how-to-identify-minimal-left-ideals",
+   "title": "How to identify minimal left ideals",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-027-452-procedure",
+   "title": "Procedure",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-028-461-fock-space-structure",
+   "title": "Fock space structure",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-029-47-the-dirac-algebra",
+   "title": "The Dirac algebra",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-030-48-right-action-required",
+   "title": "Right action required",
+   "pages": "36-40"
+  },
+  {
+   "id": "sec-031-5-standard-model-of-particle-physics",
+   "title": "Standard model of particle physics",
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-032-51-what-it-is",
+   "title": "What it is",
+   "pages": "40-43"
+  },
+  {
+   "id": "sec-033-52-what-it-is-not",
+   "title": "What it is not",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-034-53-what-it-should-be",
+   "title": "What it should be",
+   "pages": "43-46"
+  },
+  {
+   "id": "sec-035-61-a-summary-of-the-results-to-come",
+   "title": "A summary of the results to come",
+   "pages": "46-50"
+  },
+  {
+   "id": "sec-036-63-octonionic-chain-algebra",
+   "title": "Octonionic chain algebra",
+   "pages": "50-53"
+  },
+  {
+   "id": "sec-037-64-a-system-of-ladder-operators",
+   "title": "A system of ladder operators",
+   "pages": "53-55"
+  },
+  {
+   "id": "sec-038-66-minimal-left-ideals",
+   "title": "Minimal left ideals",
+   "pages": "55-57"
+  },
+  {
+   "id": "sec-039-67-mtis-symmetries-su3c-and-u1em",
+   "title": "MTIS symmetries: su(3)c and u(1)em",
+   "pages": "57-58"
+  },
+  {
+   "id": "sec-040-68-ladders-to-su3c-and-u1em",
+   "title": "Ladders to su(3)c and u(1)em",
+   "pages": "58-61"
+  },
+  {
+   "id": "sec-041-69-towards-the-weak-force",
+   "title": "Towards the weak force",
+   "pages": "61-62"
+  },
+  {
+   "id": "sec-042-610-summary",
+   "title": "Summary",
+   "pages": "62-63"
+  },
+  {
+   "id": "sec-043-71-a-spotlight-on-right-multiplication",
+   "title": "A spotlight on right multiplication",
+   "pages": "63-64"
+  },
+  {
+   "id": "sec-044-72-leptonic-subspace-of-cl4",
+   "title": "Leptonic subspace of Cl(4)",
+   "pages": "64-65"
+  },
+  {
+   "id": "sec-045-73-mtis-symmetries-su2l-and-u1y",
+   "title": "MTIS symmetries: su(2)L and u(1)Y",
+   "pages": "65-66"
+  },
+  {
+   "id": "sec-046-74-summary-and-outlook",
+   "title": "Summary and outlook",
+   "pages": "66-67"
+  },
+  {
+   "id": "sec-047-811-introduction",
+   "title": "Introduction",
+   "pages": "67-70"
+  },
+  {
+   "id": "sec-048-813-some-notes-on-symmetry-breaking",
+   "title": "Some notes on symmetry breaking",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-049-82-a-fermionic-binary-code",
+   "title": "A fermionic binary code",
+   "pages": "71-76"
+  },
+  {
+   "id": "sec-050-84-pati-salam-model",
+   "title": "Pati-Salam model",
+   "pages": "76-79"
+  },
+  {
+   "id": "sec-051-9-towards-a-three-generation-model",
+   "title": "Towards a three-generation model",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-052-91-introduction",
+   "title": "Introduction",
+   "pages": "79-84"
+  },
+  {
+   "id": "sec-053-94-a-sample-calculation",
+   "title": "A sample calculation",
+   "pages": "84-89"
+  },
+  {
+   "id": "sec-054-97-outlook-from-one-generation-to-three",
+   "title": "Outlook: From one generation to three",
+   "pages": "89-91"
+  },
+  {
+   "id": "sec-055-10-conclusion",
+   "title": "Conclusion",
+   "pages": "91-93"
+  },
+  {
+   "id": "sec-056-references",
+   "title": "References",
+   "pages": "93-97"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

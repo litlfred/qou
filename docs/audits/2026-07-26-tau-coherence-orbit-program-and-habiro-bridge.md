@@ -151,7 +151,7 @@ its own coherence proof or is dead on arrival.
 `tauAssignment_zeta4_bar_equivariance`: the `rho_compat` law of every
 `TauAssignmentData` **is** ℤ/2 bar-equivariance at the ζ₄ fibre. The
 GSWZ and Wagner papers are now in-repo
-(`uploads/2412.04241v2.pdf`, `uploads/2510.04782v2.pdf`, commit
+(`library/arxiv-2412.04241v2/2412.04241v2.pdf`, `library/arxiv-2510.04782v2/2510.04782v2.pdf`, commit
 4c05849); sandbox PDF extraction is currently broken (system
 `cryptography`/pypdf conflict), so the deep-read of the Frobenius
 gluing definitions (needed to state candidate vertical edges beyond
@@ -162,7 +162,7 @@ bar) remains queued on the bean. Bean stays in-progress.
 PDF extraction unblocked (`pip install cffi` repaired the system
 `cryptography`/pypdf conflict; poppler unavailable, apt fetch blocked).
 Read: §1.2–1.5 (definitions), §4.5–4.6 (examples) of
-`uploads/2412.04241v2.pdf`.
+`library/arxiv-2412.04241v2/2412.04241v2.pdf`.
 
 ### What GSWZ actually provides (verified against the text)
 
@@ -346,10 +346,10 @@ unblock the final layer.
 **The single named missing ingredient arrived.** The owner uploaded
 Besser–de Jeu, *"Li(p)-service? An algorithm for computing p-adic
 polylogarithms"*, Math. Comp. 77 (2008) 1105–1134
-(`uploads/S0025-5718-07-02027-3.pdf`), plus Besser's *"Finite and
-p-adic polylogarithms"* (`uploads/0006051v1.pdf`) and Besser–de Jeu
-arXiv:0707.3682 (`uploads/0707.3682v2.pdf`). Habiro's paper was
-already present (`uploads/0605314v1.pdf`).
+(`library/s0025-5718-07-02027-3/S0025-5718-07-02027-3.pdf`), plus Besser's *"Finite and
+p-adic polylogarithms"* (`library/arxiv-math-0006051v1/0006051v1.pdf`) and Besser–de Jeu
+arXiv:0707.3682 (`library/arxiv-0707.3682v2/0707.3682v2.pdf`). Habiro's paper was
+already present (`library/arxiv-math-0605314v1/0605314v1.pdf`).
 
 **qou-9p9y dilog layer COMPLETE.**
 `gswz_coleman_li2_full_precision_probe.py` (8/8) implements the
@@ -467,7 +467,7 @@ mod-5-validated; remaining: the (287) input-series identification
 ## Addendum 11 (2026-08-02) — CGZ lands: the ε_m machinery implemented and verified vs printed Theorem 7.4 (γ = 2)
 
 The owner uploaded CGZ (Calegari–Garoufalidis–Zagier,
-arXiv:1712.04887v3, `uploads/1712.04887v3.pdf`) — GSWZ's [10], the
+arXiv:1712.04887v3, `library/arxiv-1712.04887v3/1712.04887v3.pdf`) — GSWZ's [10], the
 source of the ε_m units. `cgz_cyclic_qdilog_unit_probe.py` (4/4)
 implements the computable realization:
 
@@ -555,7 +555,7 @@ irreducible-polynomial construction, exact `(Z/5⁸)[x]/(h)` arithmetic):
   provenance triple (engine/scriptFile/commitSha) since the Kummer
   probe reads the base-place witness.
 - xx9f narrowing recorded in the bean (transcription ruled out; q^λ
-  passes x² mod 25 but fails x³; [26] = uploads/2111.06645v3.pdf
+  passes x² mod 25 but fails x³; [26] = library/arxiv-2111.06645v3/2111.06645v3.pdf
   located).
 
 **Remaining honest route to a nontrivial ε_m(ξ)**: the GLOBAL
@@ -565,8 +565,8 @@ final 9p9y layer.
 
 ## Addendum 14 (2026-08-02) — new uploads gap-map: where 1-loop = torsion and the spherical partition algebra bear on 1ppq / SM derivation gaps
 
-Two uploads (`uploads/2411.03801v2.pdf` Garoufalidis–Yoon "1-loop
-equals torsion for two-bridge knots"; `uploads/2402.01890v4.pdf`
+Two uploads (`library/arxiv-2411.03801v2/2411.03801v2.pdf` Garoufalidis–Yoon "1-loop
+equals torsion for two-bridge knots"; `library/arxiv-2402.01890v4/2402.01890v4.pdf`
 Bastías–Martin–Ryom-Hansen "On the spherical partition algebra")
 assessed against the open derivation gaps. Corpus-grep run first; the
 existing 1-loop/torsion thread lives in
@@ -618,7 +618,7 @@ producers re-scoped with the theorem-backing note (GY Thm 1.1 for 4₁,
 2-bridge; PW for 𝓑₃, fundamental shadow link) and their witnesses
 regenerated with a `theorem_backing` field. `garoufalidis-yoon-2024`
 was already registered by a sibling (its note recorded the pdf as
-403-unreachable — it now lives at `uploads/2411.03801v2.pdf`).
+403-unreachable — it now lives at `library/arxiv-2411.03801v2/2411.03801v2.pdf`).
 
 **xx9f SHAPE IDENTIFICATION (the [26] payoff)**: GZ §9 defines the
 single-series correction factor

@@ -1,0 +1,54 @@
+OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES 19
+
+An example of such a path, taken from |
+
+is shown on Figure [id. For that path, we have k = 4, i = 1,
+ny = 3,n2=1 and ng =1.
+3 1
+
+FicurE 10. Another example of a path and its relative heights.
+
+We can now move on to the proof of Proposition 6-3,
+
+Proof. We generalize the argument of Bressoud in (4. Consider a path with no South steps that starts at
+height k — i, whose height is less than k — 1 and that has n; peaks of relative height > j-—1 for 2 <j <k-1.
+By Lemma 64, such paths are counted by
+
+ghate tna tmite triad
+
+(@)mg—mg *** (Q)mx—2—rn—1 (Dna
+
+where 2 <i <k. Note that we have replaced nj; by nj41 so that the terms in n; should be introduced by
+the algorithm described below, which will then give us the generating function in the same form as in (6-9).
+
+For any given k > 2 andi such that 1 <i < k, we describe an algorithm which generates a path counted
+by (6.3) from a path counted by Px: (q) if i > 2 or Pr,2(q) if i = 1, a partition A into distinct parts which lie
+in (0,7; — 1] and a partition b into n; — nz nonnegative parts.
+
+We will need to prove that this contruction is uniquely reversible, that the algorithm generates all of our
+paths, that the distribution of relative heights is not modified (except at the first step where all the peaks
+will be raised by one) and that the algorithm affects the generating function in the appropriate way.
+
+We first perform a “volcanic uplift” by inserting a NES peak at each peak (see Figure |11}). This increases
+all the relative height by one.
+
+(6.4) Pri(Q) =
+
+4 2
+
+FIGURE 11. Effect of the volcanic uplift on the path from Figure
+
+We then insert n1 — nz NES peaks at the beginning of the path (see Figure [1). Note that all these peaks
+have relative height one and that they are the only peaks of relative height one since the volcanic uplift has
+increased all the relative heights by one.
+
+FiGuRE 12. After adding the nj — ng = 4 NES peaks of relative height one to the path
+from Figure {Lil
+
+If i = 1, we introduce an extra SE step at the beginning of the path, from (0,k — 1) to (1,k — 2).
+
+Now if A contains a part j — 1 (1 < j <1), we transform the jth NES peak from the right into a NESE
+peak (see Figure [L3).
+
+Finally, for 1 < 7 <n, —nz, we move the jth peak of relative height one from the right b; times according
+to the rules illustrated in Figure (4.

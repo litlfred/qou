@@ -1,0 +1,253 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2009.03688v6",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "8eb9b4cbe2690730e6267dd96dba32aa9079dfe2b0b9e8c5e2ea7893e1ea0a45",
+  "file": "2009.03688v6.pdf"
+ },
+ "provenance": {
+  "title": "E8-singularity, invariant theory and modular forms Lei Yang",
+  "authors": null,
+  "arxiv": {
+   "id": "2009.03688",
+   "version": "6",
+   "primary_class": "math.NT",
+   "stamp_date": "30 Oct 2020"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 17,
+  "by_kind": {
+   "theorem": 15,
+   "proposition": 2
+  },
+  "formalization_candidates": 17
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "(Main Theorem 1) (A variation of the E8-singularity",
+   "section_file": "sections/sec-006-4-t-az-a.md",
+   "section_title": "T A(z), A",
+   "pages": "7-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.2",
+   "name": null,
+   "statement": "(Main Theorem 2) (A variation of the E8-singularity",
+   "section_file": "sections/sec-006-4-t-az-a.md",
+   "section_title": "T A(z), A",
+   "pages": "7-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "and Theorem 1.2 show that there exist in\ufb01nitely many kind s",
+   "section_file": "sections/sec-006-4-t-az-a.md",
+   "section_title": "T A(z), A",
+   "pages": "7-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.3",
+   "name": null,
+   "statement": "(Variations of Q18 and E20-singularity structures over",
+   "section_file": "sections/sec-006-4-t-az-a.md",
+   "section_title": "T A(z), A",
+   "pages": "7-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.4",
+   "name": null,
+   "statement": "(Variations of Q18 and E20-singularity structures over",
+   "section_file": "sections/sec-006-4-t-az-a.md",
+   "section_title": "T A(z), A",
+   "pages": "7-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.5",
+   "name": null,
+   "statement": "(Main Theorem 3) (A variation of the structure of de-",
+   "section_file": "sections/sec-006-4-t-az-a.md",
+   "section_title": "T A(z), A",
+   "pages": "7-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.1",
+   "name": null,
+   "statement": "(see [10], p. 236). For each odd integer k \u2265 5, the",
+   "section_file": "sections/sec-009-3-invariant-theory-and-modular-forms-for-sl-2-13.md",
+   "section_title": "Invariant theory and modular forms for SL (2, 13)",
+   "pages": "16-26",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.2",
+   "name": "see [31], Proposition 2.5",
+   "statement": "If z \u2208 H, then the following",
+   "section_file": "sections/sec-009-3-invariant-theory-and-modular-forms-for-sl-2-13.md",
+   "section_title": "Invariant theory and modular forms for SL (2, 13)",
+   "pages": "16-26",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.3",
+   "name": null,
+   "statement": "The G-invariant homogeneous polynomials \u03a6 m,n of de-",
+   "section_file": "sections/sec-015-26-8-oq.md",
+   "section_title": "(8 + O(q)),",
+   "pages": "27-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.4",
+   "name": null,
+   "statement": "The G-invariant homogeneous polynomials \u03a6 m,n of de-",
+   "section_file": "sections/sec-032-26-1-oq2.md",
+   "section_title": "(1 + O(q))]2",
+   "pages": "36-39",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": null,
+   "statement": "(A variation of the E8-singularity structure over the",
+   "section_file": "sections/sec-033-4-a-di\ufb00erent-construction-e8-singularity-from.md",
+   "section_title": "A di\ufb00erent construction: E8-singularity from",
+   "pages": "39-42",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.2",
+   "name": null,
+   "statement": "(A variation of the E8-singularity structure over the",
+   "section_file": "sections/sec-033-4-a-di\ufb00erent-construction-e8-singularity-from.md",
+   "section_title": "A di\ufb00erent construction: E8-singularity from",
+   "pages": "39-42",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.3",
+   "name": null,
+   "statement": "(A variation of the structure of decomposition formulas",
+   "section_file": "sections/sec-033-4-a-di\ufb00erent-construction-e8-singularity-from.md",
+   "section_title": "A di\ufb00erent construction: E8-singularity from",
+   "pages": "39-42",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.3",
+   "name": null,
+   "statement": "shows that there are in\ufb01nitely many kinds of distinct dec om-",
+   "section_file": "sections/sec-033-4-a-di\ufb00erent-construction-e8-singularity-from.md",
+   "section_title": "A di\ufb00erent construction: E8-singularity from",
+   "pages": "39-42",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.1",
+   "name": null,
+   "statement": "The G-invariant homogeneous polynomials \u03a6 m,n of de-",
+   "section_file": "sections/sec-034-5-q18-and-e20-singularities-from-cy-sl2-13-over.md",
+   "section_title": "Q18 and E20-singularities from CY /SL(2, 13) over",
+   "pages": "42-46",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.2",
+   "name": null,
+   "statement": "(Variations of Q18 and E20-singularity structures over",
+   "section_file": "sections/sec-034-5-q18-and-e20-singularities-from-cy-sl2-13-over.md",
+   "section_title": "Q18 and E20-singularities from CY /SL(2, 13) over",
+   "pages": "42-46",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.3",
+   "name": null,
+   "statement": "(Variations of Q18 and E20-singularity structures over",
+   "section_file": "sections/sec-034-5-q18-and-e20-singularities-from-cy-sl2-13-over.md",
+   "section_title": "Q18 and E20-singularities from CY /SL(2, 13) over",
+   "pages": "42-46",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

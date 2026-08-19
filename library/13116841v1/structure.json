@@ -1,0 +1,243 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "13116841v1",
+ "source": {
+  "file": "1311.6841v1.pdf",
+  "sha256": "ca65879d80b1e1c3f89fa6f19c62cc925fce5c8d24692c7e311726c817617977",
+  "bytes": 1844849,
+  "pages": 29
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Observables in Loop Quantum Gravity with a cosmological constant",
+  "authors_raw": "Ma¨ ıté Dupuis1,∗ and Florian Girelli 2, 1,†",
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "Title": "",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "CreationDate": "D:20180305111506Z"
+  },
+  "title_lines": [
+   "Observables in Loop Quantum Gravity with a cosmological constant"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Contents",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "I  Uq(su(2)) in a nutshell",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Definition of Uq(su(2))",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B q-harmonic oscillators and the Schwinger-Jordan trick",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "II Tensor operators for Uq(su(2))",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Definition and Wigner-Eckart theorem",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B Product of tensor operators: scalar product, vector product and triple product",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Scalar product",
+   "page": 9,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Vector product",
+   "page": 10,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "C Tensor products of tensor operators",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "III Realization of tensor operators of rank 1/2 and 1 for Uq(su(2))",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Rank 1/2 tensor operators",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B Rank 1 tensor operators",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "IV Observables for the intertwiner space",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A General construction and properties of intertwiner observables",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B Uq(u(n)) formalism for LQG defined over Uq(su(2))",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "V Geometric interpretation of some observables in the LQG context",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Outlook",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "A Hyperbolic cosine law",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Useful formulae",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1179,
+   "n_words": 198
+  },
+  {
+   "id": "sec-001-contents",
+   "number": null,
+   "title": "Contents",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 8,
+   "n_chars": 25180,
+   "n_words": 4333
+  },
+  {
+   "id": "sec-002-1-scalar-product",
+   "number": "1",
+   "title": "Scalar product",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 734,
+   "n_words": 150
+  },
+  {
+   "id": "sec-003-2-vector-product",
+   "number": "2",
+   "title": "Vector product",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 24,
+   "n_chars": 42323,
+   "n_words": 8142
+  },
+  {
+   "id": "sec-004-outlook",
+   "number": null,
+   "title": "Outlook",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 29,
+   "n_chars": 19283,
+   "n_words": 3331
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 5,
+  "chars_total": 88699
+ }
+}

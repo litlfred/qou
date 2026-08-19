@@ -90,14 +90,14 @@ nothing wired; c₃ tier unchanged (SETTLED, #1580).
 
 ## UPDATE (same day): the corpus object is identified — `C52(n)` **is** the Habiro polynomial
 
-Reading GGMW §4.2 (uploaded, `uploads/2111.04763v2.pdf`) turned up the
+Reading GGMW §4.2 (uploaded, `library/arxiv-2111.04763v2/2111.04763v2.pdf`) turned up the
 object in closed form. Equation (161):
 
 $$H_n^{5_2}(q) \;=\; (-1)^n q^{\frac{1}{2}n(n+3)} \sum_{k=0}^{n} q^{k(k+1)} \binom{n}{k}_q$$
 
 attributed there to Habiro [Hab02a] and **Masbaum [Mas03]** — the same
 Masbaum paper the corpus's `C52(n)` implements (uploaded as
-`uploads/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf`).
+`library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf`).
 
 **Machine-exact result** (`qbeta_5two_habiro_polynomial_match_probe.py`,
 4/4, integer-Laurent equality, no floats):
@@ -199,7 +199,7 @@ footnote 6 / eq (186) records that their `Φ^{(σ_j)}` differ from GGM's
 by an explicit prefactor `e^{−πi(τ+τ⁻¹)/12 − 2πiτ}`, and states the
 Stokes constants are unchanged — so a differing `V_j` normalization
 between the two papers is *expected*. Settling it requires GGM
-2012.00062 eq (21), which is not in `uploads/`.
+2012.00062 eq (21), which is not in `library/`.
 
 **Blast radius, checked.** Numeric `V_j` are consumed by four probes
 (`phi_series_engine`, `median_borel_resummation`,
@@ -227,7 +227,7 @@ note — the discrepancy is real but its resolution is unknown.
 
 ## Convention reconciliation — CLOSED with GGM 2012.00062 in hand
 
-`uploads/2012.00062v3.pdf` (GGM, *Peacock patterns*) supplies the missing
+`library/arxiv-2012.00062v3/2012.00062v3.pdf` (GGM, *Peacock patterns*) supplies the missing
 definition. §6.1 eq (234), at `u = 0` (`x = 1`):
 
     V = Li₂(y) + Li₂(xy) + Li₂(x⁻¹y) + (log(−y))²  ──x=1──▶  3Li₂(y) + (log(−y))²

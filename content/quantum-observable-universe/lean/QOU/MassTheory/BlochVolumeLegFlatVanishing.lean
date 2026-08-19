@@ -90,10 +90,10 @@ property of Bloch–Wigner, not a convenient extra.
 
 -- Ref: [neumann2004] https://doi.org/10.2140/gt.2004.8.413
    Neumann, "Extended Bloch group and the Cheeger–Chern–Simons class",
-   Geom. Topol. 8 (2004) 413–474. Local copy: `uploads/0307092v2.pdf`.
+   Geom. Topol. 8 (2004) 413–474. Local copy: `library/0307092v2/0307092v2.pdf`.
 -- Ref: [zagier2007] https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/978-3-540-30308-4_1/chapter.pdf
    Zagier, "The dilogarithm function", §I.2: `D(z̄) = −D(z)`, hence `D` vanishes
-   on `ℝ ∪ {∞}`. Local copy: `uploads/zagier-the-dilogarithm-function.pdf`.
+   on `ℝ ∪ {∞}`. Local copy: `library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf`.
 -/
 
 namespace QOU.MassTheory.BlochVolumeLeg

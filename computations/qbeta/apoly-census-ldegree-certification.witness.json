@@ -46,7 +46,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Parses Culler's census A-polynomials (uploads/A_census.tgz, owner-uploaded from homepages.math.uic.edu/~culler/Apolynomials) for 4_1=K2_1, 5_2=K3_2, 6_1=K4_1 (SnapPy identify). Certifies geometric L-degrees 2/3/4 (full 3/4/5 with the abelian (L-1) convention); cross-checks the K2_1 monomial support against the Lean a41Monomials (identical support, global sign differs); Newton reciprocity for all three. Records the 6_1 prediction chain (DT_max = connections = 5) as PREDICTIONS awaiting an independent resurgence count — full-vs-geometric agreement is by construction, not a test. Scope-(a); nothing wired. Beans qou-btvl/qou-rtec.",
+  "description": "Parses Culler's census A-polynomials (library/A_census.tgz, owner-uploaded from homepages.math.uic.edu/~culler/Apolynomials) for 4_1=K2_1, 5_2=K3_2, 6_1=K4_1 (SnapPy identify). Certifies geometric L-degrees 2/3/4 (full 3/4/5 with the abelian (L-1) convention); cross-checks the K2_1 monomial support against the Lean a41Monomials (identical support, global sign differs); Newton reciprocity for all three. Records the 6_1 prediction chain (DT_max = connections = 5) as PREDICTIONS awaiting an independent resurgence count — full-vs-geometric agreement is by construction, not a test. Scope-(a); nothing wired. Beans qou-btvl/qou-rtec.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "knots": {
@@ -239,7 +239,7 @@
       }
     },
     "provenance": {
-      "tarball": "uploads/A_census.tgz (owner commit 08c56228c)",
+      "tarball": "library/A_census.tgz (owner commit 08c56228c)",
       "database": "Culler A-polynomial census (PHCpack+FFT), homepages.math.uic.edu/~culler/Apolynomials",
       "identification": "snappy identify: 4_1=m004=K2_1, 5_2=m015=K3_2, 6_1=m032=K4_1",
       "sign_convention": "database global unit differs from the corpus a41 transcription; support/hull identical"

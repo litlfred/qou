@@ -8,10 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/DiophantineBirthday.lean"
   },
   "source_hashes": {
-    "md": "6d8834746827",
+    "md": "b5264d9cb341",
     "ts": "ff366a09f6ef",
-    "lean": "b64e3df85b54",
-    "lean_statement": "da8a8211d8f4"
+    "lean": "a20f3ce7c4d5",
+    "lean_statement": "92349eb62fc9"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1735,7 +1735,27 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "b5264d9cb341",
+          "ts": "ff366a09f6ef",
+          "lean": "a20f3ce7c4d5",
+          "lean_statement": "92349eb62fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:51:06.212Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:51:06.212Z"
 }

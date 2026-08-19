@@ -1,0 +1,1156 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "poincare-proof-outline",
+ "source": {
+  "file": "POINCARE-proof-outline.pdf",
+  "sha256": "8ac25ddb38d360b4f314e6b1496f58b46e26f5a0bc13f3a00a90bb13f1e9df4f",
+  "bytes": 1038855,
+  "pages": 175
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry",
+  "authors_raw": "February 6, 2026",
+  "abstract": "We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is deﬁned within the extended complex plane (one dimensional complex projective space CP 1), formalized in the AFP entry “Complex Geometry” [ 6]. Points, lines, congruence of pairs of points, betweenness of triples of points, circles, and isometries are deﬁned within the model. It is shown that the model satisﬁes all Tarski’s axioms except the Euclid’s axiom. It is shown that it satisﬁes its negation and the limiting parallels axiom (which proves it to be a model of hyperbolic geometry).",
+  "docinfo": {
+   "Author": "",
+   "Title": "",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "LuaTeX-1.14.0",
+   "CreationDate": "D:20260206214343+11'00'"
+  },
+  "title_lines": [
+   "Poincaré Disc Model",
+   "Danijela Simić Filip Marić Pierre Boutry"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Background theories",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Hyperbolic Functions",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Tarski axioms",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "H-lines in the Poincaré model",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Definition and basic properties of h-lines",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Collinear points",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "H-lines and inversion",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Classification of h-lines into Euclidean segments and circles",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Points on h-line",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "H-line uniqueness",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "H-isometries preserve h-lines",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Mapping h-lines to x-axis",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Construction of the h-line between the two given points",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Correctness of the construction",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Existence of h-lines",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Uniqueness of h-lines",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Some consequences of line uniqueness",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Transformations of constructed lines",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Collinear points and h-lines",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Points collinear with 42 1000 63 1000 33 1000 58 1000 59 1000 44 1000 0h",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Ideal points of h-lines",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Calculation of ideal points",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Ideal points",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "H-distance in the Poincaré model",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Distance explicit formula",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Existence and uniqueness of points with a given distance",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Triangle inequality",
+   "page": 65,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "H-circles in the Poincaré model",
+   "page": 67,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Intersection of circles in special positions",
+   "page": 71,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Congruent triangles",
+   "page": 74,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "H-betweenness in the Poincaré model",
+   "page": 77,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "H-betwenness expressed by a cross-ratio",
+   "page": 77,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "H-betwenness is preserved by h-isometries",
+   "page": 77,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Some elementary properties of h-betwenness",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "H-betwenness and h-collinearity",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "H-betweeness on Euclidean segments",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "H-betweenness and h-collinearity",
+   "page": 86,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Some properties of betweenness",
+   "page": 87,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Poincare between - sum distances",
+   "page": 89,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Some more properties of h-betweenness.",
+   "page": 94,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Intersection of h-lines with the x-axis in the Poincaré model",
+   "page": 96,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Betweeness of x-axis intersection",
+   "page": 96,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Check if an h-line intersects the x-axis",
+   "page": 97,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Check if a Poincaré line intersects the y-axis",
+   "page": 100,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Intersection point of a Poincaré line with the x-axis in the unit disc",
+   "page": 101,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Check if an h-line intersects the positive part of the x-axis",
+   "page": 105,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Check if an h-line intersects the positive part of the y-axis",
+   "page": 108,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Position of the intersection point in the unit disc",
+   "page": 110,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Ideal points and x-axis intersection",
+   "page": 112,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "H-perpendicular h-lines in the Poincaré model",
+   "page": 114,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Poincaré disc model types",
+   "page": 124,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "H-points",
+   "page": 124,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "H-lines",
+   "page": 124,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "H-collinearity",
+   "page": 125,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "H-isometries",
+   "page": 125,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "H-distance and h-congruence",
+   "page": 126,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "H-betweennes",
+   "page": 127,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Poincaré model satisfies Tarski axioms",
+   "page": 127,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Pasch axiom",
+   "page": 127,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Segment construction axiom",
+   "page": 138,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Five segment axiom",
+   "page": 140,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Upper dimension axiom",
+   "page": 141,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Lower dimension axiom",
+   "page": 143,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Negated Euclidean axiom",
+   "page": 143,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Continuity axiom",
+   "page": 150,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Limiting parallels axiom",
+   "page": 157,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Interpretation of locales",
+   "page": 170,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1488,
+   "n_words": 231
+  },
+  {
+   "id": "sec-001-background-theories",
+   "number": null,
+   "title": "Background theories",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-hyperbolic-functions",
+   "number": null,
+   "title": "Hyperbolic Functions",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2391,
+   "n_words": 458
+  },
+  {
+   "id": "sec-003-tarski-axioms",
+   "number": null,
+   "title": "Tarski axioms",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2279,
+   "n_words": 527
+  },
+  {
+   "id": "sec-004-h-lines-in-the-poincaré-model",
+   "number": null,
+   "title": "H-lines in the Poincaré model",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2992,
+   "n_words": 486
+  },
+  {
+   "id": "sec-005-collinear-points",
+   "number": null,
+   "title": "Collinear points",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 184,
+   "n_words": 28
+  },
+  {
+   "id": "sec-006-h-lines-and-inversion",
+   "number": null,
+   "title": "H-lines and inversion",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2846,
+   "n_words": 409
+  },
+  {
+   "id": "sec-007-points-on-h-line",
+   "number": null,
+   "title": "Points on h-line",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 6210,
+   "n_words": 1103
+  },
+  {
+   "id": "sec-008-h-line-uniqueness",
+   "number": null,
+   "title": "H-line uniqueness",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 6943,
+   "n_words": 1327
+  },
+  {
+   "id": "sec-009-h-isometries-preserve-h-lines",
+   "number": null,
+   "title": "H-isometries preserve h-lines",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 4641,
+   "n_words": 543
+  },
+  {
+   "id": "sec-010-mapping-h-lines-to-x-axis",
+   "number": null,
+   "title": "Mapping h-lines to x-axis",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1496,
+   "n_words": 228
+  },
+  {
+   "id": "sec-011-construction-of-the-h-line-between-the-two-given",
+   "number": null,
+   "title": "Construction of the h-line between the two given points",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 6834,
+   "n_words": 1260
+  },
+  {
+   "id": "sec-012-correctness-of-the-construction",
+   "number": null,
+   "title": "Correctness of the construction",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 28,
+   "n_chars": 12846,
+   "n_words": 2390
+  },
+  {
+   "id": "sec-013-existence-of-h-lines",
+   "number": null,
+   "title": "Existence of h-lines",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 1001,
+   "n_words": 148
+  },
+  {
+   "id": "sec-014-uniqueness-of-h-lines",
+   "number": null,
+   "title": "Uniqueness of h-lines",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 1966,
+   "n_words": 319
+  },
+  {
+   "id": "sec-015-some-consequences-of-line-uniqueness",
+   "number": null,
+   "title": "Some consequences of line uniqueness",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2173,
+   "n_words": 297
+  },
+  {
+   "id": "sec-016-transformations-of-constructed-lines",
+   "number": null,
+   "title": "Transformations of constructed lines",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 1771,
+   "n_words": 259
+  },
+  {
+   "id": "sec-017-collinear-points-and-h-lines",
+   "number": null,
+   "title": "Collinear points and h-lines",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 4050,
+   "n_words": 703
+  },
+  {
+   "id": "sec-018-ideal-points-of-h-lines",
+   "number": null,
+   "title": "Ideal points of h-lines",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 79,
+   "n_words": 14
+  },
+  {
+   "id": "sec-019-calculation-of-ideal-points",
+   "number": null,
+   "title": "Calculation of ideal points",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 39,
+   "n_chars": 11205,
+   "n_words": 1978
+  },
+  {
+   "id": "sec-020-ideal-points",
+   "number": null,
+   "title": "Ideal points",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 44,
+   "n_chars": 10491,
+   "n_words": 1518
+  },
+  {
+   "id": "sec-021-h-distance-in-the-poincaré-model",
+   "number": null,
+   "title": "H-distance in the Poincaré model",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 48,
+   "n_chars": 9635,
+   "n_words": 1622
+  },
+  {
+   "id": "sec-022-distance-explicit-formula",
+   "number": null,
+   "title": "Distance explicit formula",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 54,
+   "n_chars": 13582,
+   "n_words": 2492
+  },
+  {
+   "id": "sec-023-existence-and-uniqueness-of-points-with-a-given",
+   "number": null,
+   "title": "Existence and uniqueness of points with a given distance",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 65,
+   "n_chars": 19298,
+   "n_words": 3949
+  },
+  {
+   "id": "sec-024-triangle-inequality",
+   "number": null,
+   "title": "Triangle inequality",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 67,
+   "n_chars": 4388,
+   "n_words": 884
+  },
+  {
+   "id": "sec-025-h-circles-in-the-poincaré-model",
+   "number": null,
+   "title": "H-circles in the Poincaré model",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 71,
+   "n_chars": 8449,
+   "n_words": 1813
+  },
+  {
+   "id": "sec-026-intersection-of-circles-in-special-positions",
+   "number": null,
+   "title": "Intersection of circles in special positions",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 74,
+   "n_chars": 6504,
+   "n_words": 1237
+  },
+  {
+   "id": "sec-027-congruent-triangles",
+   "number": null,
+   "title": "Congruent triangles",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 77,
+   "n_chars": 5499,
+   "n_words": 1071
+  },
+  {
+   "id": "sec-028-h-betweenness-in-the-poincaré-model",
+   "number": null,
+   "title": "H-betweenness in the Poincaré model",
+   "level": 1,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-029-h-betwenness-expressed-by-a-cross-ratio",
+   "number": null,
+   "title": "H-betwenness expressed by a cross-ratio",
+   "level": 2,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 343,
+   "n_words": 68
+  },
+  {
+   "id": "sec-030-h-betwenness-is-preserved-by-h-isometries",
+   "number": null,
+   "title": "H-betwenness is preserved by h-isometries",
+   "level": 3,
+   "page_start": 77,
+   "page_end": 78,
+   "n_chars": 1747,
+   "n_words": 252
+  },
+  {
+   "id": "sec-031-some-elementary-properties-of-h-betwenness",
+   "number": null,
+   "title": "Some elementary properties of h-betwenness",
+   "level": 3,
+   "page_start": 78,
+   "page_end": 78,
+   "n_chars": 996,
+   "n_words": 141
+  },
+  {
+   "id": "sec-032-h-betwenness-and-h-collinearity",
+   "number": null,
+   "title": "H-betwenness and h-collinearity",
+   "level": 3,
+   "page_start": 78,
+   "page_end": 79,
+   "n_chars": 1752,
+   "n_words": 248
+  },
+  {
+   "id": "sec-033-h-betweeness-on-euclidean-segments",
+   "number": null,
+   "title": "H-betweeness on Euclidean segments",
+   "level": 3,
+   "page_start": 79,
+   "page_end": 86,
+   "n_chars": 13679,
+   "n_words": 2593
+  },
+  {
+   "id": "sec-034-h-betweenness-and-h-collinearity",
+   "number": null,
+   "title": "H-betweenness and h-collinearity",
+   "level": 3,
+   "page_start": 86,
+   "page_end": 87,
+   "n_chars": 2836,
+   "n_words": 534
+  },
+  {
+   "id": "sec-035-some-properties-of-betweenness",
+   "number": null,
+   "title": "Some properties of betweenness",
+   "level": 2,
+   "page_start": 87,
+   "page_end": 89,
+   "n_chars": 4381,
+   "n_words": 760
+  },
+  {
+   "id": "sec-036-poincare-between---sum-distances",
+   "number": null,
+   "title": "Poincare between - sum distances",
+   "level": 2,
+   "page_start": 89,
+   "page_end": 94,
+   "n_chars": 8060,
+   "n_words": 1676
+  },
+  {
+   "id": "sec-037-some-more-properties-of-h-betweenness",
+   "number": null,
+   "title": "Some more properties of h-betweenness.",
+   "level": 2,
+   "page_start": 94,
+   "page_end": 96,
+   "n_chars": 3616,
+   "n_words": 651
+  },
+  {
+   "id": "sec-038-intersection-of-h-lines-with-the-x-axis-in-the-p",
+   "number": null,
+   "title": "Intersection of h-lines with the x-axis in the Poincaré model",
+   "level": 1,
+   "page_start": 96,
+   "page_end": 96,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-039-betweeness-of-x-axis-intersection",
+   "number": null,
+   "title": "Betweeness of x-axis intersection",
+   "level": 2,
+   "page_start": 96,
+   "page_end": 97,
+   "n_chars": 3731,
+   "n_words": 724
+  },
+  {
+   "id": "sec-040-check-if-an-h-line-intersects-the-x-axis",
+   "number": null,
+   "title": "Check if an h-line intersects the x-axis",
+   "level": 2,
+   "page_start": 97,
+   "page_end": 100,
+   "n_chars": 5164,
+   "n_words": 1029
+  },
+  {
+   "id": "sec-041-check-if-a-poincaré-line-intersects-the-y-axis",
+   "number": null,
+   "title": "Check if a Poincaré line intersects the y-axis",
+   "level": 2,
+   "page_start": 100,
+   "page_end": 101,
+   "n_chars": 2553,
+   "n_words": 365
+  },
+  {
+   "id": "sec-042-intersection-point-of-a-poincaré-line-with-the-x",
+   "number": null,
+   "title": "Intersection point of a Poincaré line with the x-axis in the unit disc",
+   "level": 2,
+   "page_start": 101,
+   "page_end": 105,
+   "n_chars": 8324,
+   "n_words": 1486
+  },
+  {
+   "id": "sec-043-check-if-an-h-line-intersects-the-positive-part",
+   "number": null,
+   "title": "Check if an h-line intersects the positive part of the x-axis",
+   "level": 2,
+   "page_start": 105,
+   "page_end": 108,
+   "n_chars": 6381,
+   "n_words": 1118
+  },
+  {
+   "id": "sec-044-check-if-an-h-line-intersects-the-positive-part",
+   "number": null,
+   "title": "Check if an h-line intersects the positive part of the y-axis",
+   "level": 2,
+   "page_start": 108,
+   "page_end": 110,
+   "n_chars": 2726,
+   "n_words": 367
+  },
+  {
+   "id": "sec-045-position-of-the-intersection-point-in-the-unit-d",
+   "number": null,
+   "title": "Position of the intersection point in the unit disc",
+   "level": 2,
+   "page_start": 110,
+   "page_end": 112,
+   "n_chars": 5513,
+   "n_words": 1073
+  },
+  {
+   "id": "sec-046-ideal-points-and-x-axis-intersection",
+   "number": null,
+   "title": "Ideal points and x-axis intersection",
+   "level": 2,
+   "page_start": 112,
+   "page_end": 114,
+   "n_chars": 3770,
+   "n_words": 788
+  },
+  {
+   "id": "sec-047-h-perpendicular-h-lines-in-the-poincaré-model",
+   "number": null,
+   "title": "H-perpendicular h-lines in the Poincaré model",
+   "level": 1,
+   "page_start": 114,
+   "page_end": 124,
+   "n_chars": 18503,
+   "n_words": 3547
+  },
+  {
+   "id": "sec-048-poincaré-disc-model-types",
+   "number": null,
+   "title": "Poincaré disc model types",
+   "level": 1,
+   "page_start": 124,
+   "page_end": 124,
+   "n_chars": 110,
+   "n_words": 18
+  },
+  {
+   "id": "sec-049-h-points",
+   "number": null,
+   "title": "H-points",
+   "level": 2,
+   "page_start": 124,
+   "page_end": 124,
+   "n_chars": 634,
+   "n_words": 94
+  },
+  {
+   "id": "sec-050-h-lines",
+   "number": null,
+   "title": "H-lines",
+   "level": 2,
+   "page_start": 124,
+   "page_end": 125,
+   "n_chars": 1729,
+   "n_words": 280
+  },
+  {
+   "id": "sec-051-h-collinearity",
+   "number": null,
+   "title": "H-collinearity",
+   "level": 2,
+   "page_start": 125,
+   "page_end": 125,
+   "n_chars": 75,
+   "n_words": 10
+  },
+  {
+   "id": "sec-052-h-isometries",
+   "number": null,
+   "title": "H-isometries",
+   "level": 2,
+   "page_start": 125,
+   "page_end": 126,
+   "n_chars": 1424,
+   "n_words": 217
+  },
+  {
+   "id": "sec-053-h-distance-and-h-congruence",
+   "number": null,
+   "title": "H-distance and h-congruence",
+   "level": 2,
+   "page_start": 126,
+   "page_end": 127,
+   "n_chars": 1342,
+   "n_words": 227
+  },
+  {
+   "id": "sec-054-h-betweennes",
+   "number": null,
+   "title": "H-betweennes",
+   "level": 2,
+   "page_start": 127,
+   "page_end": 127,
+   "n_chars": 216,
+   "n_words": 24
+  },
+  {
+   "id": "sec-055-pasch-axiom",
+   "number": null,
+   "title": "Pasch axiom",
+   "level": 2,
+   "page_start": 127,
+   "page_end": 138,
+   "n_chars": 21202,
+   "n_words": 4063
+  },
+  {
+   "id": "sec-056-segment-construction-axiom",
+   "number": null,
+   "title": "Segment construction axiom",
+   "level": 2,
+   "page_start": 138,
+   "page_end": 140,
+   "n_chars": 2757,
+   "n_words": 531
+  },
+  {
+   "id": "sec-057-five-segment-axiom",
+   "number": null,
+   "title": "Five segment axiom",
+   "level": 2,
+   "page_start": 140,
+   "page_end": 141,
+   "n_chars": 1620,
+   "n_words": 295
+  },
+  {
+   "id": "sec-058-upper-dimension-axiom",
+   "number": null,
+   "title": "Upper dimension axiom",
+   "level": 2,
+   "page_start": 141,
+   "page_end": 143,
+   "n_chars": 3632,
+   "n_words": 673
+  },
+  {
+   "id": "sec-059-lower-dimension-axiom",
+   "number": null,
+   "title": "Lower dimension axiom",
+   "level": 2,
+   "page_start": 143,
+   "page_end": 143,
+   "n_chars": 1091,
+   "n_words": 175
+  },
+  {
+   "id": "sec-060-negated-euclidean-axiom",
+   "number": null,
+   "title": "Negated Euclidean axiom",
+   "level": 2,
+   "page_start": 143,
+   "page_end": 150,
+   "n_chars": 13648,
+   "n_words": 2363
+  },
+  {
+   "id": "sec-061-continuity-axiom",
+   "number": null,
+   "title": "Continuity axiom",
+   "level": 2,
+   "page_start": 150,
+   "page_end": 157,
+   "n_chars": 11689,
+   "n_words": 2187
+  },
+  {
+   "id": "sec-062-limiting-parallels-axiom",
+   "number": null,
+   "title": "Limiting parallels axiom",
+   "level": 2,
+   "page_start": 157,
+   "page_end": 170,
+   "n_chars": 27743,
+   "n_words": 4458
+  },
+  {
+   "id": "sec-063-interpretation-of-locales",
+   "number": null,
+   "title": "Interpretation of locales",
+   "level": 2,
+   "page_start": 170,
+   "page_end": 175,
+   "n_chars": 7830,
+   "n_words": 1219
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 68,
+  "sections": 64,
+  "chars_total": 342058
+ }
+}

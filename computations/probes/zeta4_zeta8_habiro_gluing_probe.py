@@ -5,7 +5,7 @@ docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md
 (Addendum 3).
 
 CONTEXT. GSWZ Definition 1.1 (arXiv:2412.04241v2, uploaded at
-uploads/2412.04241v2.pdf) realizes Habiro-ring elements as collections
+library/arxiv-2412.04241v2/2412.04241v2.pdf) realizes Habiro-ring elements as collections
 f_m(x) in Z[zeta_m][[x]] glued by f_m(x + zeta_pm - zeta_m) =
 phi_p f_pm(x) p-adically. The corpus holds evaluations of Habiro
 elements at zeta_4 = i (the alpha_EM modular zero, which is the

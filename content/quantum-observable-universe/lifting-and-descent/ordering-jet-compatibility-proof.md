@@ -44,5 +44,5 @@ $A_0$ propagates through the entire jet tower.  At every
 brane level, "forward time" (Gröbner--Shirshov reduction, braiding)
 and "backward time" (anti-involution, unbraiding) are
 well-defined and compatible with the algebraic structure.
-The arrow of time is inherited from the initial ordering
-— it does not need to be re-imposed at each level.
+The arrow of time is inherited from the initial ordering;
+it does not need to be re-imposed at each level.

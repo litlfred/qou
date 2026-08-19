@@ -1,7 +1,7 @@
 """The CODATA table reader, and the guard against the vendored copy drifting.
 
 `qou_substrate/data/allascii.txt` is a copy of the repo-root
-`uploads/allascii.txt` (NIST's *Complete Listing*, 2022 CODATA adjustment, as
+`library/allascii.txt` (NIST's *Complete Listing*, 2022 CODATA adjustment, as
 downloaded). A copy that nothing compares is a copy that drifts — the failure
 mode AGENTS.md records for `qou-mass/_internal/`, where all 14 vendored
 modules had diverged and the drift masked a live defect. So the byte-identity
@@ -33,7 +33,7 @@ def test_vendored_table_matches_upload():
     if not _UPLOADED.exists():
         pytest.skip(f"{_UPLOADED} absent (package checked out standalone)")
     assert _sha(_VENDORED) == _sha(_UPLOADED), (
-        "qou_substrate/data/allascii.txt has drifted from uploads/allascii.txt. "
+        "qou_substrate/data/allascii.txt has drifted from library/allascii.txt "
         "The upload is the artifact of record; re-copy it rather than editing "
         "either in place."
     )

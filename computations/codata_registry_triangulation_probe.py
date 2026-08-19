@@ -16,7 +16,7 @@ published table — only internal inconsistency:
 
 Confirmed afterwards against the primary source (Mohr, Newell, Taylor &
 Tiesinga, Rev. Mod. Phys. 97, 025002, 30 April 2025, vendored at
-`uploads/RevModPhys.97.025002.pdf.pdf`): the true 2022 proton is
+`library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf`): the true 2022 proton is
 938.272 089 43(29) MeV.  The triangulation had predicted 938.272089427,
 agreeing to **0.0029 ppb** — a quarter of one printed digit.
 
@@ -225,7 +225,7 @@ def main() -> int:
     w.add_parameter("compute_dps", COMPUTE_DPS)
     w.add_parameter("primary_source",
                     "Mohr, Newell, Taylor & Tiesinga, Rev. Mod. Phys. 97, "
-                    "025002 (2025) — uploads/RevModPhys.97.025002.pdf.pdf")
+                    "025002 (2025) — library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf")
 
     w.add_data("m_p_MeV", n(m_p_reg, 14))
     w.add_data("triple_residual_ppb", n(ppb(leg1), 8))

@@ -1,0 +1,46 @@
+Proof.
+
+Note that the trivialization (4) takes a to the isomorphism i of (3), and
+dp goes to dq of (2). The “only if” therefore follows from Theorem 1.
+
+Conversely, we start with the standard symplectic structure on the cotan-
+gent bundle T*U/. Via the affine structure a and the trivialization (4), we
+get a symplectic structure o on the vertical bundle V. The projection to Uv
+is Lagrangian with respect to a as is the 0-section. We want a to descend
+to &. Equivalently, 0 should be invariant under translation by the section
+
+Smniurm-+ p(u)n,
+
+for any m,n € Z9, which happens if and only if the sections s,,,, are La-
+grangian. Back on T*U/, we want the corresponding 1-forms on UYU to be
+closed. This is always true for the s,,,9, since a is assumed to be an affine
+structure. For so, we need closedness of the g 1-forms 1 p;;(u)du;. This
+amounts to equality of mixed partials, hence to the symmetry condition on
+dp oa. We conclude that if dp o a is symmetric then o descends to a La-
+grangian structure on 7. This induces a by construction.
+
+Q.E.D
+
+Remarks.
+
+(1) Another way to state this is as follows. Given the period map p and
+the isomorphism 7, we get an isomorphism
+
+a: V*@Oy TU.
+
+If the cubic condition holds (with respect to i), we get the 2-form o by The-
+orem 1. This o is closed (i.e. gives a Lagrangian, or symplectic, structure)
+if and only if the isomorphism a is integrable, i.e. if and only if a integrates
+to an affine structure on U.
+
+(2) In the situation of the theorem, we deduce from the equality of mixed
+partials that locally in Y there is a function f € [(O,) such that
+
+Pf=p, Of =e,
+
+as sections of Sym?T*U, SymT*U respectively. Here 0 denotes the total
+derivative with respect to the affine structure on U, so 0* denotes, essentially,
+the k*” term in the Taylor expansion. f is unique up to adding an affine
+function. Conversely, any holomorphic f on a complex manifold YU with V*-
+affine structure determines a Lagrangian family of abelian varieties on the
+open subset of U where Im(0?f) > 0.

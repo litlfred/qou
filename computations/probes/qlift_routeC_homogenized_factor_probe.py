@@ -6,7 +6,7 @@ Context: docs/audits/2026-07-20-qlift-ggm-gauge-prune.md (scope-(b) diagonal-gau
 exclusion C1 <-> GGM) and docs/audits/2026-07-20-qlift-literature-check.md S3
 (the 4_1 colored Jones satisfies a minimal ORDER-2 INHOMOGENEOUS q-recurrence,
 Garoufalidis-Le, corpus garoufalidis-le-2005; strong AJ for 4_1 per
-nguyen-tran-2021, arXiv:2006.02042 -- PDF not in uploads/ and arXiv is
+nguyen-tran-2021, arXiv:2006.02042 -- PDF not in library/ and arXiv is
 proxy-blocked in this sandbox, so the recurrence is DERIVED here from the
 Habiro sum rather than transcribed).
 
@@ -15,7 +15,7 @@ q-holonomic module:
 
   C1  (q-Hermite/q-involution, proved c(q)=1 exact):
         [m+2]_q * b_{m+2} = b_{m+1} + b_m
-  C2  (GGM eq 49, arXiv:2012.00062 p.14, uploads/2012.00062v3.pdf):
+  C2  (GGM eq 49, arXiv:2012.00062 p.14, library/arxiv-2012.00062v3/2012.00062v3.pdf):
         y_{m+1} - (2 - q^m) * y_m + y_{m-1} = 0
 
 by testing whether either is a RIGHT FACTOR of the order-3 homogenization L3 of
@@ -558,7 +558,7 @@ def main():
             "literature_check": "docs/audits/2026-07-20-qlift-literature-check.md "
                                 "S3 (4_1 minimal order-2 inhomogeneous, "
                                 "homogeneous order 3)",
-            "ggm_eq49_source": "uploads/2012.00062v3.pdf p.14 (arXiv:2012.00062)",
+            "ggm_eq49_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (arXiv:2012.00062)",
             "discipline": "scope-(a) verdict vocabulary; exact arithmetic; no "
                           "AME data; anti-fit; positive controls gate the "
                           "pipeline",

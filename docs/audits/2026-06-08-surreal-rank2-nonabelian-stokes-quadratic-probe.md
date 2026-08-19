@@ -231,4 +231,4 @@ nothing *forces* an `ε^ω` element that `ℝ` + `ℕ`-grading cannot already ex
 - Canonical action: [`qou-canonical-action.md`](../../content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.md)
 - E₁ collapse (mass tower finite): [`prop:spectral-sequence-collapse`](../../content/quantum-observable-universe/mass-theory/spectral-sequence-collapse.md)
 - Perpetual obstruction (volume tower infinite): [`conj:motivic-perpetual-obstruction`](../../content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.md), [`prop:cs-evaluation-faithfulness`](../../content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.md)
-- Surreal exp-log literature: Kuhlmann–Matusiński (arXiv:1203.4538, in `uploads/`); Berarducci–Mantova (arXiv:1503.00315).
+- Surreal exp-log literature: Kuhlmann–Matusiński (arXiv:1203.4538, in `library/`); Berarducci–Mantova (arXiv:1503.00315).

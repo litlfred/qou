@@ -1,0 +1,204 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2607.03827v1",
+ "source": {
+  "file": "2607.03827v1.pdf",
+  "sha256": "965d69603381942abe2ab6ff20195f17afbbf9e7f215c098634664b1f87a98f7",
+  "bytes": 684846,
+  "pages": 32,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2607.03827",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "4 Jul 2026"
+  },
+  "doi": null,
+  "title": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS",
+  "authors_raw": "PAULA A.A.B. CARVALHO, STEFFEN KOENIG, AND CHRISTIAN LOMP",
+  "title_lines": [
+   "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS"
+  ],
+  "abstract": "The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras \u02c6A, clarifying unexpected differences between classical and affine situations and comparing with Lusztig\u2019s asymptotic Hecke algebras. The main new results are about a double centraliser property betweenA and \u02c6A, about constructing \u02c6Afrom cell modules ofA, about existence of an embeddingA\u2192 \u02c6Aand about a faithful functor from torsionless\u02c6A-modules toA-modules as well as about the embedding being weakly spectrum preserving (in the sense of Baum and Nistor) and about non-zero endomorphisms of cell modules being injective, while there are no non-zero homomorphisms between non-isomorphic cell modules.",
+  "docinfo": {
+   "Author": "Paula A. A. B. Carvalho; Steffen Koenig; Christian Lomp",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Affine cellular algebras and asymptotic algebras"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Determinants for affine Cellular Algebras",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Homomorphisms between affine cell ideals.",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The asymptotic algebra of an affine cellular algebra",
+   "page": 13,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Properties of the embedding into the asymptotic algebra",
+   "page": 17,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Examples and methods",
+   "page": 22,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "An explicit example",
+   "page": 22,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Extended affine Hecke algebra of type A",
+   "page": 26,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Gram determinants and Jucys Murphy elements",
+   "page": 29,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 10585,
+   "n_words": 1587
+  },
+  {
+   "id": "sec-001-2-determinants-for-affine-cellular-algebras",
+   "number": "2",
+   "title": "Determinants for affine Cellular Algebras",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 6088,
+   "n_words": 907
+  },
+  {
+   "id": "sec-002-3-homomorphisms-between-affine-cell-ideals",
+   "number": "3",
+   "title": "Homomorphisms between affine cell ideals.",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 13,
+   "n_chars": 13349,
+   "n_words": 2173
+  },
+  {
+   "id": "sec-003-4-the-asymptotic-algebra-of-an-affine-cellular-a",
+   "number": "4",
+   "title": "The asymptotic algebra of an affine cellular algebra",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 17,
+   "n_chars": 7125,
+   "n_words": 1081
+  },
+  {
+   "id": "sec-004-5-properties-of-the-embedding-into-the-asymptoti",
+   "number": "5",
+   "title": "Properties of the embedding into the asymptotic algebra",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 22,
+   "n_chars": 13288,
+   "n_words": 1926
+  },
+  {
+   "id": "sec-005-6-examples-and-methods",
+   "number": "6",
+   "title": "Examples and methods",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 203,
+   "n_words": 31
+  },
+  {
+   "id": "sec-006-61-an-explicit-example",
+   "number": "6.1",
+   "title": "An explicit example",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 29,
+   "n_chars": 13418,
+   "n_words": 2195
+  },
+  {
+   "id": "sec-007-63-gram-determinants-and-jucys-murphy-elements",
+   "number": "6.3",
+   "title": "Gram determinants and Jucys Murphy elements",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 5469,
+   "n_words": 790
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 3924,
+   "n_words": 515
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 9,
+  "chars_total": 73449
+ }
+}

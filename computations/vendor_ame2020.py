@@ -196,7 +196,7 @@ def main(argv: list[str] | None = None) -> int:
     out = {
         "_metadata": {
             "source": (
-                "uploads/mass_1.mas20.txt (AME2020 mass.mas20 from "
+                "library/mass_1.mas20.txt (AME2020 mass.mas20 from "
                 "W.J.Huang, M.Wang, F.G.Kondev, G.Audi, S.Naimi, "
                 "Chinese Physics C45, 030002, March 2021)"
             ),

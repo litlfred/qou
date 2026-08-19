@@ -1,0 +1,308 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2412.02281v1",
+ "source": {
+  "file": "2412.02281v1.pdf",
+  "sha256": "ac4127cf4994b2ba5ef279a9c54ef591c91f1ff089a0c90bc560f1f6912234c2",
+  "bytes": 454470,
+  "pages": 28
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2412.02281",
+   "version": "1",
+   "primary_class": "math.CA",
+   "stamp_date": "3 Dec 2024"
+  },
+  "doi": null,
+  "title": "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations",
+  "authors_raw": "Jinghong Lin, Yiming Ma and Xiaomeng Xu",
+  "abstract": "We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1, 0;b1,...,b n−1;q,z ) by using the q-Borel resummation. As an application, we compute q-Stokes matrices of a special conﬂuent hypergeometricq-diﬀerence system with an irregular singularity. We show th at by letting q → 1, the q-Stokes matrices recover the known expressions of the Stokes matric es of the corresponding conﬂuent hypergeometric diﬀerential system.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241203203654-05'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "Explicit evaluation of the q-Stokes matrices for certain confluent",
+   "hypergeometric q-difference equations"
+  ],
+  "title_prev": "u + A"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Connection Formula of the Equation (5)",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Basic Notations",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Basic Hypergeometric Series",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "q-Borel Resummation",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Explicit Expression of Connection Formula of the Equation (5)",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Connection Matrix, q-Stokes Matrix of the System (2)",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Fundamental Solution, Connection Matrix and q-Stokes Matrix",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Diagonalization of the Upper Left Submatrix of A",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Fundamental Solutions of the System (33)",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Relationship between the System (33) and the Equation (5)",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (33)",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (2)",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Behavior of the Equation (5) and the System (2) as q1",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Behavior of the Connection Formula as q1",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q1",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5307,
+   "n_words": 1145
+  },
+  {
+   "id": "sec-001-basic-hypergeometric-series",
+   "number": null,
+   "title": "Basic Hypergeometric Series",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1942,
+   "n_words": 376
+  },
+  {
+   "id": "sec-002-connection-formula-of-the-equation-5",
+   "number": null,
+   "title": "Connection Formula of the Equation (5)",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 678,
+   "n_words": 112
+  },
+  {
+   "id": "sec-003-basic-notations",
+   "number": null,
+   "title": "Basic Notations",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3951,
+   "n_words": 818
+  },
+  {
+   "id": "sec-004-q-borel-resummation",
+   "number": null,
+   "title": "q-Borel Resummation",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 5388,
+   "n_words": 1132
+  },
+  {
+   "id": "sec-005-explicit-expression-of-connection-formula-of-the",
+   "number": null,
+   "title": "Explicit Expression of Connection Formula of the Equation (5)",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 9511,
+   "n_words": 1976
+  },
+  {
+   "id": "sec-006-connection-matrix-q-stokes-matrix-of-the-system",
+   "number": null,
+   "title": "Connection Matrix, q-Stokes Matrix of the System (2)",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 520,
+   "n_words": 81
+  },
+  {
+   "id": "sec-007-fundamental-solution-connection-matrix-and-q-sto",
+   "number": null,
+   "title": "Fundamental Solution, Connection Matrix and q-Stokes Matrix",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2225,
+   "n_words": 482
+  },
+  {
+   "id": "sec-008-diagonalization-of-the-upper-left-submatrix-of-a",
+   "number": null,
+   "title": "Diagonalization of the Upper Left Submatrix of A",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1981,
+   "n_words": 496
+  },
+  {
+   "id": "sec-009-fundamental-solutions-of-the-system-33",
+   "number": null,
+   "title": "Fundamental Solutions of the System (33)",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3544,
+   "n_words": 771
+  },
+  {
+   "id": "sec-010-relationship-between-the-system-33-and-the-equat",
+   "number": null,
+   "title": "Relationship between the System (33) and the Equation (5)",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2163,
+   "n_words": 436
+  },
+  {
+   "id": "sec-011-explicit-evaluation-of-connection-matrix-and-q-s",
+   "number": null,
+   "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (33)",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 7021,
+   "n_words": 1709
+  },
+  {
+   "id": "sec-012-explicit-evaluation-of-connection-matrix-and-q-s",
+   "number": null,
+   "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (2)",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2461,
+   "n_words": 561
+  },
+  {
+   "id": "sec-013-behavior-of-the-equation-5-and-the-system-2-as-q",
+   "number": null,
+   "title": "Behavior of the Equation (5) and the System (2) as q1",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 9698,
+   "n_words": 2150
+  },
+  {
+   "id": "sec-014-behavior-of-connection-matrix-and-q-stokes-matri",
+   "number": null,
+   "title": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q1",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 28,
+   "n_chars": 17947,
+   "n_words": 3563
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 16,
+  "sections": 15,
+  "chars_total": 74337
+ }
+}

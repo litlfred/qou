@@ -1,0 +1,191 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2402.08782v1",
+ "source": {
+  "file": "2402.08782v1.pdf",
+  "sha256": "30311f0bd815f93f253a60438c999770726ebcf838e361d5741b564b313389a1",
+  "bytes": 1190195,
+  "pages": 12
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2402.08782",
+   "version": "1",
+   "primary_class": "math.GR",
+   "stamp_date": "13 Feb 2024"
+  },
+  "doi": null,
+  "title": "Hecke–Farey coordinates for Bring’s surface",
+  "authors_raw": "Doha Kattan 1 and David Singerman 2",
+  "abstract": "The modular groupΓ (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that underlies Bring’s surface of genus 4. Our main result is the determination of the 20-sided hyperbnolic polygon that gives Bring’s surface.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20240215015441Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  },
+  "title_lines": [
+   "Hecke–Farey coordinates for Bring’s surface"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Bring's surface",
+   "page": 1,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The congruence subgroups of the Hecke groups",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Universal q-gonal maps",
+   "page": 4,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Farey fractions modulo n",
+   "page": 7,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Hecke-Farey fractions for the cube",
+   "page": 7,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The Bring curve M4(5)",
+   "page": 8,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Poles",
+   "page": 9,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Hecke–Farey coordinates for Bring's surface",
+   "page": 9,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Equivalence classes of vertices",
+   "page": 11,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3857,
+   "n_words": 719
+  },
+  {
+   "id": "sec-001-3-the-congruence-subgroups-of-the-hecke-groups",
+   "number": "3",
+   "title": "The congruence subgroups of the Hecke groups",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1982,
+   "n_words": 383
+  },
+  {
+   "id": "sec-002-4-universal-q-gonal-maps",
+   "number": "4",
+   "title": "Universal q-gonal maps",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 2325,
+   "n_words": 477
+  },
+  {
+   "id": "sec-003-6-hecke-farey-fractions-for-the-cube",
+   "number": "6",
+   "title": "Hecke-Farey fractions for the cube",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2020,
+   "n_words": 502
+  },
+  {
+   "id": "sec-004-8-poles",
+   "number": "8",
+   "title": "Poles",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4576,
+   "n_words": 924
+  },
+  {
+   "id": "sec-005-10-equivalence-classes-of-vertices",
+   "number": "10",
+   "title": "Equivalence classes of vertices",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 939,
+   "n_words": 190
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1838,
+   "n_words": 266
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 7,
+  "chars_total": 17537
+ }
+}

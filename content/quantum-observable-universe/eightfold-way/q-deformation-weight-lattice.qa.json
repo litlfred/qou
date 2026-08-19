@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/lean/QOU/Eightfold/WeylInvarianceQDeformation.lean"
   },
   "source_hashes": {
-    "md": "1ed7085c29aa",
-    "ts": "4dd659bf3b0b",
+    "md": "975c199563d6",
+    "ts": "ef67ad6998ef",
     "lean": "a4991e91947b",
     "lean_statement": "07518028fbce"
   },
@@ -1234,7 +1234,27 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "ef67ad6998ef",
+          "lean": "a4991e91947b",
+          "lean_statement": "07518028fbce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:03.966Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:58:03.966Z"
 }

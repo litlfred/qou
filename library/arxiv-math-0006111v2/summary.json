@@ -1,0 +1,102 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0006111v2",
+ "source_sha256": "cd99f45d686eb6e2",
+ "brief": "APPROXIMATE FACTORIZATION AND CONCENTRATION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups.",
+ "extended": "**APPROXIMATE FACTORIZATION AND CONCENTRATION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane**\n\n12 pp, 16 sections.\n\n**Abstract.** We prove a factorization-concentration result for characters of s ymmet- ric groups. This is then applied to the asymptotic behaviour of the decomposition of the tensor representations. There are connections with the Past ur-Marcenko distri- bution of random matrix theory, and freely inﬁnitely divisible d istributions.\n\n**Outline.** 2 PHILIPPE BIANE; Introduction; 1 Notations and statement of the main result; 1.1 Symmetric groups and Y oung diagrams. We d; 1.2 Positive deﬁnite functions. Let ψ be a nor; 4 PHILIPPE BIANE; 1.3 Approximate factorization. We now give a p; 2 Proof of Theorems 1 and 2; 6 PHILIPPE BIANE; 8 PHILIPPE BIANE; 3 Asymptotics of the tensor representation; 3.1 The case of the canonical trace. In this s; 10 PHILIPPE BIANE; 3.2 Generalization to other tensor states. Let; References; 12 PHILIPPE BIANE\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let the sequence (cl)l≥1 and the integer n be given, then there exists\n- Theorem 2: Let the sequence (cl)l≥1 and the integer n be given, then there exists\n- Theorem 1: now follows by an application of Markov’s inequali ty. □\n- Theorem 3: As q → ∞ and √q/N → c ∈ [0, +∞[, the measure Πq converges\n- Corollary 1: Let the sequence (cl)l≥1 and the integer n be given, then there exists\n- Corollary 1: is a simple consequence of Theorem 1 and of the mom ent-cumulant",
+ "tokens": {
+  "brief": 45,
+  "extended": 371
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-philippe-biane",
+   "title": "PHILIPPE BIANE",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-1-notations-and-statement-of-the-main-result",
+   "title": "Notations and statement of the main result",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-11-symmetric-groups-and-y-oung-diagrams-we-denot",
+   "title": "Symmetric groups and Y oung diagrams. We denote by Sq the symmet-",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-004-12-positive-deﬁnite-functions-let-ψ-be-a-normali",
+   "title": "Positive deﬁnite functions. Let ψ be a normalized (i.e. ψ (e) = 1), central",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-4-philippe-biane",
+   "title": "PHILIPPE BIANE",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-006-13-approximate-factorization-we-now-give-a-preci",
+   "title": "Approximate factorization. We now give a precise deﬁnition of the approx-",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-007-2-proof-of-theorems-1-and-2",
+   "title": "Proof of Theorems 1 and 2",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-008-6-philippe-biane",
+   "title": "PHILIPPE BIANE",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-009-8-philippe-biane",
+   "title": "PHILIPPE BIANE",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-010-3-asymptotics-of-the-tensor-representation",
+   "title": "Asymptotics of the tensor representation",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-011-31-the-case-of-the-canonical-trace-in-this-secti",
+   "title": "The case of the canonical trace. In this section we consider the action of Sq",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-012-10-philippe-biane",
+   "title": "PHILIPPE BIANE",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-013-32-generalization-to-other-tensor-states-leth-h0",
+   "title": "Generalization to other tensor states. LetH =H0 ⊕H1, be a Z/ 2-graded",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-014-references",
+   "title": "References",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-015-12-philippe-biane",
+   "title": "PHILIPPE BIANE",
+   "pages": "12-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

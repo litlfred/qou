@@ -1,0 +1,72 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-9805023v1",
+ "source_sha256": "ea8758b2a2bf9d85",
+ "brief": "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL — The q-Laguerre polynomials correspond to an indetermined moment probl em.",
+ "extended": "**q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL**\n\n*FUNCTIONS AND THEIR ORTHOGONALITY RELATIONS*\n\n20 pp, 10 sections.\n\n**Abstract.** The q-Laguerre polynomials correspond to an indetermined moment probl em. For explicit discrete non-N-extremal measures corresponding to Ramanujan’s1ψ1-summation we complement the orthogonal q-Laguerre polynomials into an explicit orthogonal basis for the corresponding L2-space. The dual orthogonal system consists of so-called big q-Bessel functions, which can be obtained as a rigorous limit of the ortho gonal system of big q-Jacobi polynomials. Interpretations on the SU (1, 1) and E(2) quantum groups are discussed.\n\n**Outline.** 2 (k+1)√; 2 (k− α )(q; q)∞ J (2); L It follows from Moak [21, §7] and (2.8) that; 2 Un(ηp)V t− 1; 2 (−c, −q/c; q)∞; 2 (α +1)(k+l)(−1)k+l; 2 (k+l)(−1)k+lc− α − 1; 2 (k+l)− 1); 4.3 This then gives, together with the analyti; References\n\n**Extracted claims (proposals, not verified).**\n- Proposition 5.2: For |y| < 1, l ∈ Z, we have\n- Proposition 6.1: Fix α > −1, c > 0, k ∈ Z. Then, for each x ∈ R we have the pointwise\n- Proposition 6.2: Fix α > −1, c > 0, k ∈ Z, Let r ∈ { k, k + 1, . . .}. Then, for p ∈\n- Corollary 4.3: The following orthogonality relations hold;\n- Lemma 2.2: Let x ∈ C\\{0}, then V t(x) =\n- Lemma 2.3: We have the following Wronskians:",
+ "tokens": {
+  "brief": 28,
+  "extended": 329
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-k1",
+   "title": "(k+1)√",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-001-2-k-α-q-q-j-2",
+   "title": "(k− α )(q; q)∞ J (2)",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-002-l-it-follows-from-moak-21-7-and-28-that-v-t-1",
+   "title": "It follows from Moak [21, §7] and (2.8) that V t− 1",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-003-2-unηpv-t-1",
+   "title": "Un(ηp)V t− 1",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-004-2-c-qc-q",
+   "title": "(−c, −q/c; q)∞",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-005-2-α-1kl1kl",
+   "title": "(α +1)(k+l)(−1)k+l",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-006-2-kl1klc-α-1",
+   "title": "(k+l)(−1)k+lc− α − 1",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-007-2-kl-1",
+   "title": "(k+l)− 1)",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-008-43-this-then-gives-together-with-the-analytic-pr",
+   "title": "This then gives, together with the analytic proofs of th e previous section a complete",
+   "pages": "13-19"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "19-20"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

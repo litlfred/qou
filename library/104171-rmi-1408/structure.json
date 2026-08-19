@@ -1,0 +1,143 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "104171-rmi-1408",
+ "source": {
+  "file": "10.4171-rmi-1408.pdf",
+  "sha256": "eda199771108dff8901f7b28fb8fe2d02e21bc67ff7fb0c278254035438ae7af",
+  "bytes": 542007,
+  "pages": 24,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.4171/RMI/1408",
+  "title": "DOI 10.4171/RMI/1408 \u00a9 2023 Real Sociedad Matem\u00e1tica Espa\u00f1ola",
+  "authors_raw": "Published by EMS Press and licensed under a CC BY 4.0 license",
+  "title_lines": [
+   "DOI 10.4171/RMI/1408",
+   "\u00a9 2023 Real Sociedad Matem\u00e1tica Espa\u00f1ola"
+  ],
+  "abstract": "The nontrivial unital composition superalgebras, of dimension 3 and6, which exist only in characteristic 3, are obtained from the split Cayley algebra and its order3 automorphisms, by means of the process of semisimplification of the sym- metric tensor category of representations of the cyclic group of order3. Connections with the extended Freudenthal magic square in characteristic 3, that contains some exceptional Lie superalgebras specific of this characteristic are discussed too. In the process, precise recipes to go from (nonassociative) algebras in this tensor category to the corresponding superalgebras are given.",
+  "docinfo": {
+   "Producer": "MiKTeX pdfTeX-1.40.25",
+   "Author": "",
+   "Title": "",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240206104424+01'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "From algebras to superalgebras",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "From octonions to composition superalgebras",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Semisimplification: skew transformations, derivations",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The extended Freudenthal magic square",
+   "page": 19,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5616,
+   "n_words": 917
+  },
+  {
+   "id": "sec-001-2-from-algebras-to-superalgebras",
+   "number": "2",
+   "title": "From algebras to superalgebras",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 9,
+   "n_chars": 11441,
+   "n_words": 1770
+  },
+  {
+   "id": "sec-002-3-from-octonions-to-composition-superalgebras",
+   "number": "3",
+   "title": "From octonions to composition superalgebras",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 15,
+   "n_chars": 12014,
+   "n_words": 2003
+  },
+  {
+   "id": "sec-003-4-semisimplification-skew-transformations-deriva",
+   "number": "4",
+   "title": "Semisimplification: skew transformations, derivations",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 10195,
+   "n_words": 1688
+  },
+  {
+   "id": "sec-004-5-the-extended-freudenthal-magic-square",
+   "number": "5",
+   "title": "The extended Freudenthal magic square",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 9207,
+   "n_words": 1430
+  },
+  {
+   "id": "sec-005-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 3723,
+   "n_words": 534
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 6,
+  "chars_total": 52196
+ }
+}

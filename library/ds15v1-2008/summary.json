@@ -1,0 +1,537 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "ds15v1-2008",
+ "source_sha256": "aef155a324c6fdf4",
+ "brief": "Rogers-Ramanujan-Slater Type Identities James Mc Laughlin — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including",
+ "extended": "**Rogers-Ramanujan-Slater Type Identities James Mc Laughlin**\n\n*Department of Mathematics, 124 Anderson Hall*\n\n59 pp, 103 sections.\n\n**Abstract.** In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of similar type, which were discovered after the publication of Slater’s papers, and older identities (such as those in Ramanujan’s lost notebook) which were not included in Slater’s papers. We attempt to supply the earliest known reference for each identity. Also in- cluded are identities of false theta functions, along with their relationship to Rogers- Ramanujan type identities. We also describe several ways in which pairs/larger sets of identities may be related, as well as dependence relationships between identities.\n\n**Outline.** Abstract; 1.1 Theta Functions; 1 Introduction; 1.2 Bailey Pairs and Bailey’s lemma; 1.3 Some More General q-Series Identities; 2 Rogers-Ramanujan Type Identities; 2.2 Mod 2 Identities; 2.3 Mod 3 Identities; 2.4 Mod 4 Identities; 2.5 Mod 5 Identities; 2.6 Mod 6 Identities; 2.7 The Rogers-Selberg Mod 7 Identities; 2.8 Mod 8 Identities; 2.8.1 Triple Products; 2.8.2 Quintuple products; 2.9 Mod 9 Identities; 2.10 Mod 10 Identities; 2.10.1 Triple Products\n\n**Extracted claims (proposals, not verified).**\n- Corollary 1: f(\u0000q) = (q;q)1 (Euler [20])) (1.1.8)\n- Lemma 13: Let a1, a2, :::, an; b1, b2, :::, bn be non-zero complex numbers such that",
+ "tokens": {
+  "brief": 49,
+  "extended": 369
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-theta-functions",
+   "title": "Theta Functions",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-003-12-bailey-pairs-and-baileys-lemma",
+   "title": "Bailey Pairs and Bailey’s lemma",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-004-13-some-more-general-q-series-identities",
+   "title": "Some More General q-Series Identities",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-005-2-rogers-ramanujan-type-identities",
+   "title": "Rogers-Ramanujan Type Identities",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-006-22-mod-2-identities",
+   "title": "Mod 2 Identities",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-007-23-mod-3-identities",
+   "title": "Mod 3 Identities",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-008-24-mod-4-identities",
+   "title": "Mod 4 Identities",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-009-25-mod-5-identities",
+   "title": "Mod 5 Identities",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-010-26-mod-6-identities",
+   "title": "Mod 6 Identities",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-011-27-the-rogers-selberg-mod-7-identities",
+   "title": "The Rogers-Selberg Mod 7 Identities",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-012-28-mod-8-identities",
+   "title": "Mod 8 Identities",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-013-281-triple-products",
+   "title": "Triple Products",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-014-282-quintuple-products",
+   "title": "Quintuple products",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-015-29-mod-9-identities",
+   "title": "Mod 9 Identities",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-016-210-mod-10-identities",
+   "title": "Mod 10 Identities",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-017-2101-triple-products",
+   "title": "Triple Products",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-018-212-mod-12-identities",
+   "title": "Mod 12 identities",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-019-2122-quintuple-products",
+   "title": "Quintuple Products",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-020-214-mod-14-identities",
+   "title": "Mod 14 Identities",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-021-2141-triple-products",
+   "title": "Triple Products",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-022-215-mod-15-identities",
+   "title": "Mod 15 Identities",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-023-216-mod-16-identities",
+   "title": "Mod 16 Identities",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-024-2181-triple-products",
+   "title": "Triple Products",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-025-2162-quintuple-products",
+   "title": "Quintuple Products",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-026-218-mod-18-identities",
+   "title": "Mod 18 Identities",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-027-2201-triple-products",
+   "title": "Triple Products",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-028-220-mod-20-identities",
+   "title": "Mod 20 Identities",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-029-224-mod-24-identities",
+   "title": "Mod 24 Identities",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-030-227-dysons-mod-27-identities",
+   "title": "Dyson’s Mod 27 Identities",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-031-228-mod-28-identities",
+   "title": "Mod 28 Identities",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-032-232-mod-32-identities",
+   "title": "Mod 32 Identities",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-033-236-mod-36-identities",
+   "title": "Mod 36 Identities",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-034-2361-triple-products",
+   "title": "Triple Products",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-035-2362-quintuple-products",
+   "title": "Quintuple Products",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-036-38-mod-8-identity",
+   "title": "Mod 8 Identity",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-037-310-mod-10-identity",
+   "title": "Mod 10 Identity",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-038-312-mod-12-identities",
+   "title": "Mod 12 Identities",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-039-315-mod-15-identities",
+   "title": "Mod 15 Identities",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-040-316-mod-16-identities",
+   "title": "Mod 16 Identities",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-041-318-mod-18-identities",
+   "title": "Mod 18 Identities",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-042-321-mod-21-identities",
+   "title": "Mod 21 Identities",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-043-324-mod-24-identities",
+   "title": "Mod 24 Identities",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-044-327-mod-27-identities",
+   "title": "Mod 27 Identities",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-045-330-mod-30-identities",
+   "title": "Mod 30 Identities",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-046-332-mod-32-identities",
+   "title": "Mod 32 Identities",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-047-336-mod-36-identities",
+   "title": "Mod 36 Identities",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-048-342-mod-42-identities",
+   "title": "Mod 42 Identities",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-049-348-mod-48-identities",
+   "title": "Mod 48 Identities",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-050-354-mod-54-identities",
+   "title": "Mod 54 Identities",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-051-364-mod-64-identities",
+   "title": "Mod 64 Identities",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-052-4-equivalent-products-in-slaters-list",
+   "title": "Equivalent Products in Slater’s List",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-053-5-false-theta-series-identities",
+   "title": "False Theta Series Identities",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-054-50-false-theta-series-identities-of-order-3",
+   "title": "False Theta Series Identities of Order 3",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-055-51-false-theta-series-identity-of-order-2",
+   "title": "False Theta Series Identity of Order 2",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-056-52-false-theta-series-identities-of-order-5",
+   "title": "False Theta Series Identities of Order 5",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-057-54-false-theta-series-identities-of-order-4",
+   "title": "False Theta Series Identities of Order 4",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-058-58-false-theta-series-identities-of-order-15",
+   "title": "False Theta Series Identities of Order 15",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-059-59-false-theta-series-identities-of-order-9",
+   "title": "False Theta Series Identities of Order 9",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-060-511-false-theta-series-identities-of-order-21",
+   "title": "False Theta Series Identities of Order 21",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-061-516-false-theta-series-identities-of-order-16",
+   "title": "False Theta Series Identities of Order 16",
+   "pages": "39-39"
+  },
+  {
+   "id": "sec-062-518-false-theta-series-identities-of-order-18",
+   "title": "False Theta Series Identities of Order 18",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-063-6-inter-dependence-between-identities",
+   "title": "Inter-Dependence Between Identities",
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-064-61-series-equivalent-identities",
+   "title": "Series-Equivalent Identities",
+   "pages": "40-42"
+  },
+  {
+   "id": "sec-065-2-c",
+   "title": "C,",
+   "pages": "42-44"
+  },
+  {
+   "id": "sec-066-614-s2-0-q",
+   "title": "S.2 0 q",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-067-614-s3-1-q",
+   "title": "S.3 1 q",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-068-613-s4-q12-q-q12-q-q2",
+   "title": "S.4 \u0000q1=2 \u0000q \u0000q1=2 q !q2",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-069-614-s9-1-q3-q-q2",
+   "title": "S.9 1 \u0000q3 q !q2",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-070-613-s10--1-q-q-q-q2",
+   "title": "S.10 -1 q q q !q2",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-071-613-s11-q-q3-q2-q-q2",
+   "title": "S.11 \u0000q q3 q2 q !q2",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-072-614-s52-1-q12-q-q2",
+   "title": "S.52 1 \u0000q1=2 q !q2",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-073-614-s47--1-q12-q-q2",
+   "title": "S.47 -1 q1=2 q !q2",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-074-62-inter-dependence-of-identities-via-the-jacobi",
+   "title": "Inter-dependence of Identities via the Jacobi Triple Product",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-075-6113-s6-s29--1-q12-q12-q-q2q-q",
+   "title": "S6 S29 -1 q\u00001=2 \u0000q\u00001=2 q !q2;q ! \u0000q",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-076-6111-s16-s97-q-q32-q-q2q-q",
+   "title": "S16 S97 \u0000q q3=2 q !q2,q ! \u0000q",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-077-619-s96-s14-q32-q-q2-q-q2",
+   "title": "S96 S14 q3=2 (q !q2) q !q2",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-078-619-s79-s18-q12-q-q2-q-q2",
+   "title": "S79 S18 q1=2 (q !q2) q !q2",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-079-6111-s20-s19-q-q12-q-q2",
+   "title": "S20 S19 \u0000q q\u00001=2 q !q2",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-080-6113-s22-s50-q-q12-q12-q-q2",
+   "title": "S22 S50 \u0000q q\u00001=2 q1=2 q !q2",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-081-613-s25-s48-q12-q-q12-q-q2",
+   "title": "S25 S48 \u0000q1=2 \u0000q q1=2 q !q2",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-082-613-s28-262-q-q32-q-q-q2",
+   "title": "S28 (2.6.2) \u0000q q3=2 q q !q2",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-083-6116-s50-262-q12-q-q-q12",
+   "title": "S50 (2.6.2) q\u00001=2 \u0000q q !q1=2",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-084-613-s94-s16-0-q32-q-q-q2-q-q",
+   "title": "S94 S16 0 q3=2 q q !q2 (q ! \u0000q)",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-085-6111-s94-s97-q32-q-q-q2",
+   "title": "S94 S97 q3=2 \u0000q q !q2",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-086-613-s99-s20-0-q12-q-q-q2-q-q",
+   "title": "S99 S20 0 q1=2 q q !q2 (q ! \u0000q)",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-087-6114-s80-s118-1-q-n-2",
+   "title": "S80 S118 1 \u0000q (n = 2)",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-088-6114-s82-s119-q-q-n-2",
+   "title": "S82 S119 q \u0000q (n = 2)",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-089-6119-s6-s48-1-q-q-q",
+   "title": "S6 S48 \u00001 q q ! \u0000q",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-090-6119-s22-262-q-q2",
+   "title": "S22 (2.6.2) \u0000q \u0000q2",
+   "pages": "45-48"
+  },
+  {
+   "id": "sec-091-63-inter-dependence-via-an-identity-of-weierstra",
+   "title": "Inter-dependence Via an Identity of Weierstrass",
+   "pages": "48-50"
+  },
+  {
+   "id": "sec-092-7-bailey-pairs",
+   "title": "Bailey pairs",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-093-71-the-bailey-pairs-of-slater",
+   "title": "The Bailey Pairs of Slater",
+   "pages": "50-52"
+  },
+  {
+   "id": "sec-094-72-duality-of-bailey-pairs",
+   "title": "Duality of Bailey pairs",
+   "pages": "52-54"
+  },
+  {
+   "id": "sec-095-2-1-q2n1",
+   "title": "(1 \u0000q2n+1)",
+   "pages": "54-55"
+  },
+  {
+   "id": "sec-096-2-1qn-1",
+   "title": "(1+qn+ 1",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-097-2-1-qn-1qn",
+   "title": "(1 +qn) (\u00001;q)n",
+   "pages": "55-56"
+  },
+  {
+   "id": "sec-098-2-1q2n-3",
+   "title": "(1+q2n+ 3",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-099-2-1-q3n-0-q3q3n1",
+   "title": "(1 +q3n) 0 (q3;q3)n\u00001",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-100-8-conclusion",
+   "title": "Conclusion",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-101-references",
+   "title": "References",
+   "pages": "56-57"
+  },
+  {
+   "id": "sec-102-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "57-59"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

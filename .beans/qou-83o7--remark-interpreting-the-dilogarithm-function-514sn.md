@@ -13,7 +13,7 @@ Record that the three kirillov1995 locators in Li2qUniqueness.lean are unverifie
 - Ch. I §3 — The Bloch-Wigner function D(z) = Im(Li_2(z)) + arg(1-z) log|z| is the single-valued real-analytic modification of the dilogarithm, satisfying clean five-term and inversion functional equations.
   Use here: The canonical reference for the Bloch-Wigner arguments the corpus runs; at present the corpus's dilogarithm citations route through kirillov1995 and one other same-author entry, with no pointer to this survey.
 
-Source: `uploads/zagier-the-dilogarithm-function-copy-b.pdf` — no `references.ts` entry yet
+Source: `library/zagier-the-dilogarithm-function-copy-b/zagier-the-dilogarithm-function-copy-b.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

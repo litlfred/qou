@@ -1,0 +1,171 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1404.2541v1",
+ "source": {
+  "file": "1404.2541v1.pdf",
+  "sha256": "edb7c9b2b1561ac3dd50c96bb6cb02714eb5757d4728b53ba9c171e76dcefb9e",
+  "bytes": 198677,
+  "pages": 22
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1404.2541",
+   "version": "1",
+   "primary_class": "math.CA",
+   "stamp_date": "9 Apr 2014"
+  },
+  "doi": null,
+  "title": "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension Takeshi MORITA∗",
+  "authors_raw": null,
+  "abstract": "We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the inﬁnity. These solut ions are given by the Ramanujan function, the q-Airy function and the diver- gent basic hypergeometric series 2ϕ 0(0, 0; −; q, x ). We use two diﬀerent q-Borel-Laplace resummation methods to obtain our connecti on for- mulae. We also introduce the q-Borel-Laplace transformation of level r−1, which are higher order extension of these transformation s. These methods are useful to obtain an asymptotic formula of a diver gent se- ries rϕ 0(0, 0, . . . , 0; −; q, x ).",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220422155936-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "The Stokes phenomenon for the Ramanujan’s q-diﬀerence equation and its higher order extension Takeshi MORITA∗",
+  "title_lines": [
+   "The Stokes phenomenon for the Ramanujan’s",
+   "q-difference equation and its higher order",
+   "extension",
+   "Takeshi MORITA∗"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Basic notations",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Two q-exponential functions",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Covering transformations",
+   "page": 11,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The Ramanujan function and the q-Airy function",
+   "page": 11,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The q-Borel-Laplace transformations",
+   "page": 13,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The connection formula of the series 20(0,0;-;q,)",
+   "page": 15,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "The q-Airy equation around the infinity and the connection formula",
+   "page": 17,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "The q-Borel-Laplace transformations of level r-1 and its application",
+   "page": 19,
+   "source": "outline",
+   "number": "9"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 8957,
+   "n_words": 1632
+  },
+  {
+   "id": "sec-001-2-basic-notations",
+   "number": "2",
+   "title": "Basic notations",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 808,
+   "n_words": 172
+  },
+  {
+   "id": "sec-002-3-two-q-exponential-functions",
+   "number": "3",
+   "title": "Two q-exponential functions",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 2646,
+   "n_words": 554
+  },
+  {
+   "id": "sec-003-4-covering-transformations",
+   "number": "4",
+   "title": "Covering transformations",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 3415,
+   "n_words": 690
+  },
+  {
+   "id": "sec-004-6-the-q-borel-laplace-transformations",
+   "number": "6",
+   "title": "The q-Borel-Laplace transformations",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 19,
+   "n_chars": 5457,
+   "n_words": 1245
+  },
+  {
+   "id": "sec-005-9-the-q-borel-laplace-transformations-of-level-r",
+   "number": "9",
+   "title": "The q-Borel-Laplace transformations of level r-1 and its application",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 4680,
+   "n_words": 870
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 6,
+  "chars_total": 25963
+ }
+}

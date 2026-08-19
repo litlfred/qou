@@ -2,7 +2,7 @@
 
 Three results from one session, in descending order of how much they change the
 corpus's position. Sources: GGM 2012.00062v3, GGMW 2111.04763, Fantini–Wheeler
-2410.20973 — all read from `uploads/` (no external lit was needed; every paper
+2410.20973 — all read from `library/` (no external lit was needed; every paper
 was already in the repo).
 
 ---
@@ -88,7 +88,7 @@ coefficients differ while `s(x)` does not), A-polynomial / spectral networks
 ## 3. Q3 — NO PRECEDENT connecting Stokes/DT data to decay observables
 
 The question the corpus most needs answered, asked adversarially and answered
-flatly. A sweep of all **329 papers in `uploads/`** (324 text-extractable),
+flatly. A sweep of all **329 papers in `library/`** (324 text-extractable),
 cross-tabulating resurgence/DT/BPS vocabulary against particle-observable
 vocabulary (decay width, branching ratio, half-life, muon, beta decay, Q-value,
 CODATA, PDG, MeV), plus independent web search:

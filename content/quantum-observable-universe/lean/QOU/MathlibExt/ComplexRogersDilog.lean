@@ -33,7 +33,7 @@ formality.
 **The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
 and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 
--- Ref: [neumann2004] uploads/0307092v2.pdf, Prop 2.5 (Rogers `R`, and `R(z;p,q)`)
+-- Ref: [neumann2004] library/0307092v2/0307092v2.pdf, Prop 2.5 (Rogers `R`, and `R(z;p,q)`)
 -/
 import QOU.MathlibExt.ComplexDilogarithmDeriv
 import QOU.MathlibExt.ComplexDilogarithmInversion

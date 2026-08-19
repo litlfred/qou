@@ -6,7 +6,7 @@ docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md
 (Addendum 15).
 
 SOURCE ([26] = GZ "Knots, Perturbative Series and Quantum Modularity",
-SIGMA 20 (2024) 055, uploads/2111.06645v3.pdf, §9 end):
+SIGMA 20 (2024) 055, library/arxiv-2111.06645v3/2111.06645v3.pdf, §9 end):
 
 1. For 4_1: sqrt(3)*Phi(h)*Phi(-h) = -sqrt(-3)*Phi^(1)(h)*Phi^(2)(h)
    lies in Z[1/3][[e^{-h}-1]]; "we expect, and have checked
@@ -133,8 +133,8 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-xx9f", "qou-9p9y"],
     "source": (
-        "GZ SIGMA 20 (2024) 055 §9 end (uploads/2111.06645v3.pdf); "
-        "GSWZ (282) (uploads/2412.04241v2.pdf)"
+        "GZ SIGMA 20 (2024) 055 §9 end (library/arxiv-2111.06645v3/2111.06645v3.pdf); "
+        "GSWZ (282) (library/arxiv-2412.04241v2/2412.04241v2.pdf)"
     ),
     "checks": checks,
     "norm_series_coeffs": [str(c) for c in coeffs],

@@ -8,7 +8,7 @@ Context. After the compact-modular routes were exhausted (Σ(2,3,5) D=2 golden,
 2026-07-02; Σ(3,4,5) D=6, 2026-07-04 PR #3290), the surviving lead was
 redirect (ii): the non-compact q-Bessel / E_q(2) vacuum row, motivated by the
 NON-compact SU_q(2)→E_q(2) contraction and the owner-uploaded Murakami paper
-`uploads/2205.01282v2.pdf` ("colored blocks"). This probe grounds two facts
+`library/arxiv-2205.01282v2/2205.01282v2.pdf` ("colored blocks"). This probe grounds two facts
 that together show redirect (ii) is not disciplined-actionable from the in-repo
 sources, and locates where its genuine (literature-gated) content lives.
 
@@ -25,7 +25,7 @@ Each is a LAURENT POLYNOMIAL in q₀ (a finite sum q^{k}+…+q^{-k}) — the cha
 of a finite-dimensional SU_q(2)/Hecke module. This is the COMPACT quantum
 dimension, i.e. the Verlinde ratio S_{0λ}/S_{00} of the Hecke modular category.
 
-FACT 2 (source scan, uploads/2205.01282v2.pdf). Murakami's paper proves the
+FACT 2 (source scan, library/arxiv-2205.01282v2/2205.01282v2.pdf). Murakami's paper proves the
 Gukov–Pei–Putrov–Vafa conjecture (WRT = radial limit of the homological block
 Ẑ) for plumbed homology spheres. Text scan: 0 occurrences of
 color/colour/decorat/wilson/refined/equivariant; the homological block is the
@@ -46,7 +46,7 @@ function on algebraic q-integer values:
   * a MULTI-argument form assigns each of the 4 channels its own radial argument
     ⇒ ≥ 4 free reals for 4 targets ⇒ UNFALSIFIABLE fit (dof ≥ constraints), unless
     the arguments are FIXED by the E_q(2) Plancherel measure — which requires the
-    Koelink–Swarttouw q-Hankel kernel, a source NOT in uploads/.
+    Koelink–Swarttouw q-Hankel kernel, a source NOT in library/.
 
 So redirect (ii) is not disciplined-actionable in-repo: Murakami supplies no
 colored block, and the only falsifiable q-Bessel form is refuted while the
@@ -60,7 +60,7 @@ computed quantities are the exact compact quantum dimensions. Nothing wired.
 
 Output: keystone-valuemap-target-is-compact-hecke.witness.json
 
-# Ref: [murakami2022wrt] arXiv:2205.01282 (uploads/2205.01282v2.pdf; GPPV proof,
+# Ref: [murakami2022wrt] arXiv:2205.01282 (library/arxiv-2205.01282v2/2205.01282v2.pdf; GPPV proof,
 #      undecorated homological blocks)
 """
 from __future__ import annotations
@@ -80,7 +80,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 50
 Q0 = mpf("1.1099785955541805")
-MURAKAMI_PDF = ROOT.parent / "uploads" / "2205.01282v2.pdf"
+MURAKAMI_PDF = ROOT.parent / "library" / "arxiv-2205.01282v2" / "2205.01282v2.pdf"
 
 
 def qint(m, q=Q0):
@@ -208,13 +208,13 @@ def main():
                      str(res["value_target_is_compact_hecke"]), "True",
                      source="the 4 targets equal exact compact q-integers/products "
                             "matching the merged screen probe")
-    # FACT 2 is a HARD gate: the Murakami PDF is committed under uploads/, so a
+    # FACT 2 is a HARD gate: the Murakami PDF is committed under library/, so a
     # run that cannot read it (missing pymupdf / missing-or-corrupt file) must
     # FAIL loudly rather than emit allPassed:true with a vacuous
     # "pdf-unavailable" — the assertion is emitted unconditionally.
     scan_available = bool(res["murakami_scan"].get("available"))
     wb.add_assertion("murakami_scan_ran", str(scan_available), "True",
-                     source="the committed uploads/2205.01282v2.pdf must be "
+                     source="the committed library/arxiv-2205.01282v2/2205.01282v2.pdf must be "
                             "readable (pymupdf present, file intact); a skipped "
                             "scan is a failure, not a silent pass")
     wb.add_assertion("murakami_supplies_colored_block",

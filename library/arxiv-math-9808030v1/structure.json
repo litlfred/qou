@@ -1,0 +1,265 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-9808030v1",
+ "source": {
+  "file": "9808030v1.pdf",
+  "sha256": "7889d6481b876b122db7d7b347b534e45a66cc2023da0f777ba1974591251daa",
+  "bytes": 133415,
+  "pages": 17,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/9808030",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "6 Aug 1998"
+  },
+  "doi": null,
+  "title": "Planscherel Measure on Eq(2)",
+  "authors_raw": "H. Ahmedov 1 and I. H. Duru 2, 1",
+  "title_lines": [
+   "Planscherel Measure on Eq(2)"
+  ],
+  "abstract": "Following the construction of the invariant integral and the scalar p roduct for the quantum Euclidean group Eq(2), we obtained the full matrix elements of its unitary irreducible representations from SUq(2) by contraction and then derived the Planscherel measure. July 1998 1E\u2013mail : hagi@fge1.gursey.gov.tr and duru@fge1.gursey.gov.tr 1",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211127215653-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/9808030v1  [math.QA]  6 Aug 1998"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "TUBITAK, Feza G\u00a8 ursey Institute, P.O. Box 6, 81220 Cengel koy, Istanbul,",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Invariant Integral on Eq(2)",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Scalar Product on Eq(2)",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Matrix Elements of the Irreducible Repre-",
+   "page": 8,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "( (pv)",
+   "page": 9,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(IV.5)",
+   "page": 9,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Planscherel Measure on Eq(2)",
+   "page": 10,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Appendix",
+   "page": 13,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(B.6)",
+   "page": 14,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Unitary Representations of E(2) from SU (2) by Contraction",
+   "page": 15,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 17,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-tubitak-feza-g-ursey-institute-po-box-6-81220",
+   "number": "1",
+   "title": "TUBITAK, Feza G\u00a8 ursey Institute, P.O. Box 6, 81220 Cengel koy, Istanbul,",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 86,
+   "n_words": 13
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 338,
+   "n_words": 47
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1203,
+   "n_words": 198
+  },
+  {
+   "id": "sec-003-2-invariant-integral-on-eq2",
+   "number": "2",
+   "title": "Invariant Integral on Eq(2)",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 4646,
+   "n_words": 925
+  },
+  {
+   "id": "sec-004-3-scalar-product-on-eq2",
+   "number": "3",
+   "title": "Scalar Product on Eq(2)",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 2251,
+   "n_words": 444
+  },
+  {
+   "id": "sec-005-4-matrix-elements-of-the-irreducible-repre",
+   "number": "4",
+   "title": "Matrix Elements of the Irreducible Repre-",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1279,
+   "n_words": 225
+  },
+  {
+   "id": "sec-006-0-pv",
+   "number": "0",
+   "title": "( (pv)",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 54,
+   "n_words": 14
+  },
+  {
+   "id": "sec-007-0-iv5",
+   "number": "0",
+   "title": "(IV.5)",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 806,
+   "n_words": 142
+  },
+  {
+   "id": "sec-008-5-planscherel-measure-on-eq2",
+   "number": "5",
+   "title": "Planscherel Measure on Eq(2)",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 3004,
+   "n_words": 555
+  },
+  {
+   "id": "sec-009-appendix",
+   "number": null,
+   "title": "Appendix",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1301,
+   "n_words": 279
+  },
+  {
+   "id": "sec-010-0-b6",
+   "number": "0",
+   "title": "(B.6)",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 696,
+   "n_words": 156
+  },
+  {
+   "id": "sec-011-c-unitary-representations-of-e2-from-su-2-by-con",
+   "number": "C",
+   "title": "Unitary Representations of E(2) from SU (2) by Contraction",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 1334,
+   "n_words": 276
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1015,
+   "n_words": 183
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 13,
+  "chars_total": 18013
+ }
+}

@@ -1,0 +1,47 @@
+Asymptotics of the quantum invariants for the figure 8 knot 23
+
+Remark 3. Let us make a slight digression by giving some general remarks about
+the set of solutions to (4.42). Assume that v,w € C* and let z = v?. Then (4.42)
+can be written in the following two ways
+
+2 1
+z—|w+—+1)z24+1=0,
+w
+
+w — (: + _ 1) wt+1=0. (4.45)
+z
+
+It is straightforward to see that if (z,w) is a solution to (4.45) with w € R \ {0},
+then z is real and positive if w > 0, z is real and negative if w €]—00, —(3+ V5) /2]U
+[-(3 — V5)/2,0[, and z € S$? if
+
+~(3+ V5)/2 < w < —(3— V5)/2.
+
+If (z,w) is a solution to (4.45) with z € R \ {0}, then w is real and negative if
+z <0, w is real and positive if z €]0,(3 — V5)/2] U [(3 + V5)/2, cof, and w € S! if
+2 € [(3 — V5)/2, (3 + v5)/2].
+
+Later on we will be particularly interested in common solutions to (4.41) and
+(4.42) with v € S! and w € R\ {0}. Assume that (v,w) is such a solution, and
+write v = e™”, x €] — 1,1]. In that case the 2nd of the equations in (4.45) is
+
+w* + (1 — 2Re(z))w +1=0. (4.46)
+Since z € S! we have 1 — 2Re(z) € [—1,3] and since w is real we also have |1 —
+
+2Re(z)| > 2, so 1 — 2Re(z) € [2,3] or cos(272) = Re(z) € [—1, -1/2]. By (4.46) we
+find that
+
+w = w(x) = cos(2rx) — ; + i cos?(2n) — cos(27a) — .. (4.47)
+
+If w > 0 we have already seen that z €]0,00[. But then z = 1 so w? -w+1=0 by
+(4.45) contradicting the fact that w is real.
+
+Taking absolute values we get from (4.41) that |1 — zw| = |w— | and then from
+(4.42) that |w| = Jw — 2|? = (w — z)(w — Z) = w? — 2Re(z)w + 1 (still assuming
+that (v,w) € S1 x R). Since w < 0 this equation is equivalent to (4.46). In other
+words we have to consider the argument equation following from (4.41) to obtain
+information from that equation not obtainable from (4.42).
+
+Let us now turn to the second derivative of V in a critical point (ao, yo), i.e.
+the Hessian H = H(2o, yo) of W in (29, yo) (which is equal to the Hessian of ®,, in
+(x0, yo)). Put (vo, wo) = (e7"*°, e274) and zo = v2. By a small computation, using

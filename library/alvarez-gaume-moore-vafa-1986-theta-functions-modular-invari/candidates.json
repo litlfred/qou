@@ -1,0 +1,39 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "c99ca1cd756f7aa615133e9608b66473d6a90f2a5d3c111dc38443674da292e1",
+  "file": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf"
+ },
+ "provenance": {
+  "title": "Communications in",
+  "authors": "Commun. Math. Phys. 106, 1-40 (1986) Mathematical",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "corollary": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "\u03b8(e|\u03a9) = 0 iff there exist g \u2014 \\ points Pl9 ....P^^\u03b5\u03a3 so that",
+   "section_file": "sections/sec-011-16-l-alvarez-gaume-g-moore-and-c-vafa.md",
+   "section_title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

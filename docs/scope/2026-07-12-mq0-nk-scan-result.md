@@ -9,7 +9,7 @@
 ## What was computed
 
 The branch-tracked complex volume `𝔙(u) = Vol(u) + i·CS(u)` of the figure-eight
-4₁, from Murakami–Yokota's theorem-grade formula (`uploads/0401084v3.pdf`,
+4₁, from Murakami–Yokota's theorem-grade formula (`library/arxiv-math-0401084v3/0401084v3.pdf`,
 math/0401084, Thm 2.1/2.2):
 
 - explicit shapes `z(u), w(u)` (radical form, √-branch fixed by continuity from

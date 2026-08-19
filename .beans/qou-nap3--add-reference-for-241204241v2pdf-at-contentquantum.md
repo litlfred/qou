@@ -13,7 +13,7 @@ Cited by bare arXiv id in 4 Lean library files, 7 audit docs and 2 probe script 
 - Def. 1.1 (§1.4) — An element of the Habiro ring of a number field is a collection of power series f_m(x) in R[zeta_m][[x]], one per root of unity, satisfying a Frobenius-twisted p-adic re-expansion gluing f_m(x + zeta_pm - zeta_m) = (phi_p f_pm)(x).
   Use here: This is the executable form of the 'vertical edges' the tau-assignment gauge gate cites in prose; registering it lets HeckeTauAssignmentGaugeGate.lean carry a real -- Ref: key instead of a bare arXiv id in a docstring.
 
-Source: `uploads/2412.04241v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2412.04241v2/2412.04241v2.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

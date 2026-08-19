@@ -1,0 +1,570 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-q-alg-9504015v2",
+ "source": {
+  "file": "9504015v2.pdf",
+  "sha256": "ea5588225a393477d8b59b4f1374ec9192da2632b9beccdd0f17bb68f9584047",
+  "bytes": 284338,
+  "pages": 33
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "q-alg/9504015",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "24 Apr 1995"
+  },
+  "doi": null,
+  "title": "Witten’s Invariants of Rational Homology Spheres at Prime",
+  "authors_raw": "Values of K and Trivial Connection Contribution",
+  "abstract": "We establish a relation between the coeﬃcients of asymptotic expan sion of the trivial connection contribution to Witten’s invariant of rational homology spheres and the invariants that T. Ohtsuki extracted from Witte n’s invariant at prime values of K. We also rederive the properties of prime K invariants discovered by H. Murakami and T. Ohtsuki. We do this by using the bo unds on Taylor series expansion of the Jones polynomial of algebraically sp lit links, studied in our previous paper. These bounds are enough to prove t hat Ohtsuki’s invariants are of ﬁnite type. The relation between Ohtsuki’s invarian ts and trivial connection contribution is veriﬁed explicitly for lens spaces and Seife rt manifolds. 1Work supported by the National Science Foundation under Grant N o. PHY-92 09978.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210809025023-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:q-alg/9504015v2  24 Apr 1995"
+  },
+  "title_lines": [
+   "Witten’s Invariants of Rational Homology Spheres at Prime"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Rozansky 1",
+   "page": 1,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Trǫµνρ",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Z ZK[x]. (1.11)",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Z Z[x] instead of (1.11) (in other words, he did not ﬁx the coeﬃcient at x",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Gaussian Sums and Divisibility in Cyclotomic Ring",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(3+κ)",
+   "page": 9,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(κ−1)",
+   "page": 9,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(1−κ)√",
+   "page": 11,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "N (1−κ) uN",
+   "page": 11,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(κ − 1)(sign (pj) − 1) ∈ Z Z, we conclude that to prove Theorem 1.1 it is enough to",
+   "page": 12,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "J (res)",
+   "page": 12,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Gaussian Sums and Integrals",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(1−κ)",
+   "page": 15,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Z ZK[x] and using the “checked binomial polynomial”",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(−1)m(2m)!",
+   "page": 17,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "N (κ−1)",
+   "page": 18,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(κ−1)(sign(p)−1)",
+   "page": 20,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "A General Rational Surgery F ormula",
+   "page": 20,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "S, (4.5)",
+   "page": 21,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "S, (4.7)",
+   "page": 22,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(κ−1)√",
+   "page": 23,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(κ−1) sign( p",
+   "page": 24,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(κ−1)∑",
+   "page": 28,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(κ−1) ˇq4∗P H∗n2",
+   "page": 28,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(κ−1) ei π",
+   "page": 28,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 29,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(M) · · · Smn",
+   "page": 30,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 32,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 32,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-l-rozansky-1",
+   "number": "L",
+   "title": "Rozansky 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 133,
+   "n_words": 17
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 796,
+   "n_words": 128
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 166,
+   "n_words": 36
+  },
+  {
+   "id": "sec-003-2-trǫµνρ",
+   "number": "2",
+   "title": "Trǫµνρ",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4068,
+   "n_words": 917
+  },
+  {
+   "id": "sec-004-2-z-zkx-111",
+   "number": "2",
+   "title": "Z ZK[x]. (1.11)",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1162,
+   "n_words": 265
+  },
+  {
+   "id": "sec-005-2-z-zx-instead-of-111-in-other-words-he-did-not",
+   "number": "2",
+   "title": "Z Z[x] instead of (1.11) (in other words, he did not ﬁx the coeﬃcient at x",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 6287,
+   "n_words": 1326
+  },
+  {
+   "id": "sec-006-2-gaussian-sums-and-divisibility-in-cyclotomic-r",
+   "number": "2",
+   "title": "Gaussian Sums and Divisibility in Cyclotomic Ring",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 549,
+   "n_words": 146
+  },
+  {
+   "id": "sec-007-4-3κ",
+   "number": "4",
+   "title": "(3+κ)",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 794,
+   "n_words": 196
+  },
+  {
+   "id": "sec-008-4-κ1",
+   "number": "4",
+   "title": "(κ−1)",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2881,
+   "n_words": 642
+  },
+  {
+   "id": "sec-009-4-1κ",
+   "number": "4",
+   "title": "(1−κ)√",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 129,
+   "n_words": 36
+  },
+  {
+   "id": "sec-010-4-n-1κ-un",
+   "number": "4",
+   "title": "N (1−κ) uN",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 291,
+   "n_words": 69
+  },
+  {
+   "id": "sec-011-4-κ-1sign-pj-1-z-z-we-conclude-that-to-prove-the",
+   "number": "4",
+   "title": "(κ − 1)(sign (pj) − 1) ∈ Z Z, we conclude that to prove Theorem 1.1 it is enough to",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 308,
+   "n_words": 73
+  },
+  {
+   "id": "sec-012-2-j-res",
+   "number": "2",
+   "title": "J (res)",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3258,
+   "n_words": 777
+  },
+  {
+   "id": "sec-013-3-gaussian-sums-and-integrals",
+   "number": "3",
+   "title": "Gaussian Sums and Integrals",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1041,
+   "n_words": 270
+  },
+  {
+   "id": "sec-014-4-1κ",
+   "number": "4",
+   "title": "(1−κ)",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 230,
+   "n_words": 59
+  },
+  {
+   "id": "sec-015-2-z-zkx-and-using-the-checked-binomial-polynomia",
+   "number": "2",
+   "title": "Z ZK[x] and using the “checked binomial polynomial”",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 2487,
+   "n_words": 575
+  },
+  {
+   "id": "sec-016-2-1m2m",
+   "number": "2",
+   "title": "(−1)m(2m)!",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2410,
+   "n_words": 565
+  },
+  {
+   "id": "sec-017-4-n-κ1",
+   "number": "4",
+   "title": "N (κ−1)",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 2839,
+   "n_words": 796
+  },
+  {
+   "id": "sec-018-4-κ1signp1",
+   "number": "4",
+   "title": "(κ−1)(sign(p)−1)",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 625,
+   "n_words": 173
+  },
+  {
+   "id": "sec-019-4-a-general-rational-surgery-f-ormula",
+   "number": "4",
+   "title": "A General Rational Surgery F ormula",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1596,
+   "n_words": 360
+  },
+  {
+   "id": "sec-020-1-s-45",
+   "number": "1",
+   "title": "S, (4.5)",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 210,
+   "n_words": 66
+  },
+  {
+   "id": "sec-021-1-s-47",
+   "number": "1",
+   "title": "S, (4.7)",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2602,
+   "n_words": 614
+  },
+  {
+   "id": "sec-022-4-κ1",
+   "number": "4",
+   "title": "(κ−1)√",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 312,
+   "n_words": 82
+  },
+  {
+   "id": "sec-023-4-κ1-sign-p",
+   "number": "4",
+   "title": "(κ−1) sign( p",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 28,
+   "n_chars": 6061,
+   "n_words": 1458
+  },
+  {
+   "id": "sec-024-4-κ1",
+   "number": "4",
+   "title": "(κ−1)∑",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 525,
+   "n_words": 128
+  },
+  {
+   "id": "sec-025-4-κ1-ˇq4p-hn2",
+   "number": "4",
+   "title": "(κ−1) ˇq4∗P H∗n2",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 155,
+   "n_words": 43
+  },
+  {
+   "id": "sec-026-4-κ1-ei-π",
+   "number": "4",
+   "title": "(κ−1) ei π",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 1683,
+   "n_words": 454
+  },
+  {
+   "id": "sec-027-5-discussion",
+   "number": "5",
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 2113,
+   "n_words": 398
+  },
+  {
+   "id": "sec-028-1-m-smn",
+   "number": "1",
+   "title": "(M) · · · Smn",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 2138,
+   "n_words": 402
+  },
+  {
+   "id": "sec-029-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 510,
+   "n_words": 86
+  },
+  {
+   "id": "sec-030-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 2284,
+   "n_words": 356
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 31,
+  "sections": 31,
+  "chars_total": 50643
+ }
+}

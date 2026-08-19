@@ -13,7 +13,7 @@ The conjecture block lists the reference in its manifest but never invokes it. C
 - Abstract / eq. (1) and the criticality equation — The LQG black-hole entropy has an exact leading term proportional to horizon area plus a logarithmic sub-leading correction; matching Bekenstein-Hawking uniquely fixes the quantum of area.
   Use here: The area-quantum-fixing criticality condition is the external anchor conj:lqg-entropy-qdim-partition-pole compares its q-dimension partition pole against.
 
-Source: `uploads/0407052v1.pdf` (`meissner2004`)
+Source: `library/arxiv-gr-qc-0407052v1/0407052v1.pdf` (`meissner2004`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

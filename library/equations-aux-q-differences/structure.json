@@ -1,0 +1,514 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "equations-aux-q-differences",
+ "source": {
+  "file": "Equations_aux_q-differences.pdf",
+  "sha256": "357d4e0b546b27e6a316a7177e9240d5d8ea3b6d8a06bd57a3b2679a31eeb094",
+  "bytes": 1474495,
+  "pages": 30
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Équations aux q-différences",
+  "authors_raw": "L. Di Vizio, J-P. Ramis, J. Sauloy ∗,C .Z h a n g†",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.10b",
+   "Creator": "TeX",
+   "CreationDate": "D:20060609151600"
+  },
+  "title_prev": "´Equations aux q-diﬀ´erences",
+  "title_lines": [
+   "Équations aux q-différences"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Di Vizio, J-P. Ramis, J. Sauloy ∗,C .Z h a n g†",
+   "page": 1,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "page": 3,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "page": 5,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "Br´eviaire",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Transformation de jauge. Pour un syst`eme diﬀ´erentiel δX = AX,o n",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "page": 7,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 2,
+   "title": "Modules aux q-diﬀ´erences. Les solutions du syst` eme (2.3.1) sont",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Prolongement m´eromorphe. Un des buts de la th´eorie est la classi-",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.6"
+  },
+  {
+   "level": 1,
+   "title": "Classiﬁcation et conﬂuence",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "R´esolution et classiﬁcation locale",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "page": 9,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "page": 11,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 2,
+   "title": "Conﬂuence des solutions locales",
+   "page": 12,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Classiﬁcation globale",
+   "page": 13,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Remarquons que les composantes eq,A(0) et eq,A(∞) des solutions locales",
+   "page": 15,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Conﬂuence de la matrice de connexion",
+   "page": 16,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Classiﬁcation locale des ´ equations irr´eguli`eres",
+   "page": 17,
+   "source": "inferred",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Sommabilit´e des solutions formelles d’´equations aux",
+   "page": 18,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Quelques g´en´eralit´es",
+   "page": 19,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "(χ/log q+1/2)2",
+   "page": 21,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(logq(ξ/x)+1/2)2",
+   "page": 21,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Cas o`u λ ⁄∈ qZ et yλ = 1",
+   "page": 21,
+   "source": "inferred",
+   "number": "4.8"
+  },
+  {
+   "level": 2,
+   "title": "Sommations de Borel-Laplace q-analogues",
+   "page": 22,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "La s´erie (∑",
+   "page": 24,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "Cela signiﬁe que pour tous m1,m2 ∈ Z tels que qm1",
+   "page": 26,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Pour simpliﬁer les notations (mais cela ne simpliﬁe pas les d´ emonstrations !) nous ne",
+   "page": 27,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "R´ef´erences",
+   "page": 28,
+   "source": "inferred",
+   "number": "6"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-l-di-vizio-j-p-ramis-j-sauloy-c-z-h-a-n-g",
+   "number": "L",
+   "title": "Di Vizio, J-P. Ramis, J. Sauloy ∗,C .Z h a n g†",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4181,
+   "n_words": 774
+  },
+  {
+   "id": "sec-002-22-l-di-vizio-j-p-ramis-j-sauloy-c-zhang",
+   "number": "22",
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 6438,
+   "n_words": 1026
+  },
+  {
+   "id": "sec-003-24-l-di-vizio-j-p-ramis-j-sauloy-c-zhang",
+   "number": "24",
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 257,
+   "n_words": 46
+  },
+  {
+   "id": "sec-004-2-breviaire",
+   "number": "2",
+   "title": "Br´eviaire",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3534,
+   "n_words": 663
+  },
+  {
+   "id": "sec-005-24-transformation-de-jauge-pour-un-systeme-diﬀer",
+   "number": "2.4",
+   "title": "Transformation de jauge. Pour un syst`eme diﬀ´erentiel δX = AX,o n",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 301,
+   "n_words": 60
+  },
+  {
+   "id": "sec-006-26-l-di-vizio-j-p-ramis-j-sauloy-c-zhang",
+   "number": "26",
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 714,
+   "n_words": 109
+  },
+  {
+   "id": "sec-007-25-modules-aux-q-diﬀerences-les-solutions-du-sys",
+   "number": "2.5",
+   "title": "Modules aux q-diﬀ´erences. Les solutions du syst` eme (2.3.1) sont",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1243,
+   "n_words": 206
+  },
+  {
+   "id": "sec-008-26-prolongement-meromorphe-un-des-buts-de-la-the",
+   "number": "2.6",
+   "title": "Prolongement m´eromorphe. Un des buts de la th´eorie est la classi-",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 618,
+   "n_words": 90
+  },
+  {
+   "id": "sec-009-3-classiﬁcation-et-conﬂuence",
+   "number": "3",
+   "title": "Classiﬁcation et conﬂuence",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 288,
+   "n_words": 57
+  },
+  {
+   "id": "sec-010-31-resolution-et-classiﬁcation-locale",
+   "number": "3.1",
+   "title": "R´esolution et classiﬁcation locale",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2927,
+   "n_words": 482
+  },
+  {
+   "id": "sec-011-28-l-di-vizio-j-p-ramis-j-sauloy-c-zhang",
+   "number": "28",
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 5153,
+   "n_words": 938
+  },
+  {
+   "id": "sec-012-30-l-di-vizio-j-p-ramis-j-sauloy-c-zhang",
+   "number": "30",
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 3429,
+   "n_words": 537
+  },
+  {
+   "id": "sec-013-32-conﬂuence-des-solutions-locales",
+   "number": "3.2",
+   "title": "Conﬂuence des solutions locales",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3921,
+   "n_words": 725
+  },
+  {
+   "id": "sec-014-33-classiﬁcation-globale",
+   "number": "3.3",
+   "title": "Classiﬁcation globale",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 5054,
+   "n_words": 951
+  },
+  {
+   "id": "sec-015-34-remarquons-que-les-composantes-eqa0-et-eqa-de",
+   "number": "3.4",
+   "title": "Remarquons que les composantes eq,A(0) et eq,A(∞) des solutions locales",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1937,
+   "n_words": 326
+  },
+  {
+   "id": "sec-016-34-conﬂuence-de-la-matrice-de-connexion",
+   "number": "3.4",
+   "title": "Conﬂuence de la matrice de connexion",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2313,
+   "n_words": 413
+  },
+  {
+   "id": "sec-017-35-classiﬁcation-locale-des-equations-irregulier",
+   "number": "3.5",
+   "title": "Classiﬁcation locale des ´ equations irr´eguli`eres",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 3261,
+   "n_words": 553
+  },
+  {
+   "id": "sec-018-4-sommabilite-des-solutions-formelles-dequations",
+   "number": "4",
+   "title": "Sommabilit´e des solutions formelles d’´equations aux",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 831,
+   "n_words": 183
+  },
+  {
+   "id": "sec-019-41-quelques-generalites",
+   "number": "4.1",
+   "title": "Quelques g´en´eralit´es",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 5643,
+   "n_words": 984
+  },
+  {
+   "id": "sec-020-2-χlog-q122",
+   "number": "2",
+   "title": "(χ/log q+1/2)2",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 134,
+   "n_words": 32
+  },
+  {
+   "id": "sec-021-2-logqξx122",
+   "number": "2",
+   "title": "(logq(ξ/x)+1/2)2",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 486,
+   "n_words": 106
+  },
+  {
+   "id": "sec-022-48-cas-ou-λ-qz-et-yλ-1",
+   "number": "4.8",
+   "title": "Cas o`u λ ⁄∈ qZ et yλ = 1",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1025,
+   "n_words": 198
+  },
+  {
+   "id": "sec-023-43-sommations-de-borel-laplace-q-analogues",
+   "number": "4.3",
+   "title": "Sommations de Borel-Laplace q-analogues",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 5456,
+   "n_words": 998
+  },
+  {
+   "id": "sec-024-44-la-serie",
+   "number": "4.4",
+   "title": "La s´erie (∑",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 6451,
+   "n_words": 1075
+  },
+  {
+   "id": "sec-025-3-cela-signiﬁe-que-pour-tous-m1m2-z-tels-que-qm1",
+   "number": "3",
+   "title": "Cela signiﬁe que pour tous m1,m2 ∈ Z tels que qm1",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2912,
+   "n_words": 560
+  },
+  {
+   "id": "sec-026-4-pour-simpliﬁer-les-notations-mais-cela-ne-simp",
+   "number": "4",
+   "title": "Pour simpliﬁer les notations (mais cela ne simpliﬁe pas les d´ emonstrations !) nous ne",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1694,
+   "n_words": 291
+  },
+  {
+   "id": "sec-027-6-references",
+   "number": "6",
+   "title": "R´ef´erences",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 7584,
+   "n_words": 1180
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 28,
+  "sections": 28,
+  "chars_total": 77785
+ }
+}

@@ -1,0 +1,523 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "hdr",
+ "source": {
+  "file": "HDR.pdf",
+  "sha256": "35c190fd2d2a393c8cdfc7083bd44d308c4e37611e0f09fce9929668ec1a91d6",
+  "bytes": 1121857,
+  "pages": 75
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not",
+  "authors_raw": "The documents may come from teaching and research",
+  "abstract": null,
+  "docinfo": {
+   "Creator": "HAL",
+   "Title": "Hecke algebras, generalisations and representation theory",
+   "Author": "Maria Chlouveraki",
+   "Producer": "PDFLaTeX",
+   "CreationDate": "D:20260426145152+02'00'"
+  },
+  "title_lines": [
+   "HAL Id: tel-01411063",
+   "HAL is a multi-disciplinary open access archive",
+   "for the deposit and dissemination of scientific re-",
+   "search documents, whether they are published or not"
+  ],
+  "title_prev": "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Algebras of Finite Type",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Blocks",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Symmetrising forms and Schur elements",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Decomposition maps",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Iwahori–Hecke Algebras",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Kazhdan–Lusztig cells",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Schur elements and the a-function",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Families of characters and Rouquier families",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Decomposition maps and canonical basic sets",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Cyclotomic Hecke Algebras",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Hecke algebras for complex reflection groups",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Schur elements and the a-function",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Families of characters and Rouquier families",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Decomposition maps and canonical basic sets",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Ariki–Koike Algebras",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Combinatorics of partitions and multipartitions",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Schur elements and the a-function",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Families of characters and Rouquier families",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Decomposition maps and canonical basic sets",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Rational Cherednik Algebras",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Rational Cherednik Algebras at t =1",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Canonical basic sets for Hecke algebras from rational Cherednik algebras",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Rational Cherednik Algebras at t = 0",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Families of characters for Hecke algebras from rational Cherednik algebras",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Yokonuma–Hecke Algebras",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Representation theory of Yokonuma–Hecke algebras",
+   "page": 49,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Affine and Cyclotomic Yokonuma–Hecke algebras",
+   "page": 51,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Temperley–Lieb quotients of Yokonuma–Hecke algebras",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Knot invariants",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 68,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-algebras-of-finite-type",
+   "number": null,
+   "title": "Algebras of Finite Type",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 267,
+   "n_words": 48
+  },
+  {
+   "id": "sec-001-blocks",
+   "number": null,
+   "title": "Blocks",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 943,
+   "n_words": 179
+  },
+  {
+   "id": "sec-002-symmetrising-forms-and-schur-elements",
+   "number": null,
+   "title": "Symmetrising forms and Schur elements",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2653,
+   "n_words": 529
+  },
+  {
+   "id": "sec-003-decomposition-maps",
+   "number": null,
+   "title": "Decomposition maps",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 3228,
+   "n_words": 608
+  },
+  {
+   "id": "sec-004-iwahorihecke-algebras",
+   "number": null,
+   "title": "Iwahori–Hecke Algebras",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1750,
+   "n_words": 337
+  },
+  {
+   "id": "sec-005-kazhdanlusztig-cells",
+   "number": null,
+   "title": "Kazhdan–Lusztig cells",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2417,
+   "n_words": 453
+  },
+  {
+   "id": "sec-006-schur-elements-and-the-a-function",
+   "number": null,
+   "title": "Schur elements and the a-function",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 3098,
+   "n_words": 548
+  },
+  {
+   "id": "sec-007-families-of-characters-and-rouquier-families",
+   "number": null,
+   "title": "Families of characters and Rouquier families",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 5391,
+   "n_words": 930
+  },
+  {
+   "id": "sec-008-decomposition-maps-and-canonical-basic-sets",
+   "number": null,
+   "title": "Decomposition maps and canonical basic sets",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 3371,
+   "n_words": 610
+  },
+  {
+   "id": "sec-009-cyclotomic-hecke-algebras",
+   "number": null,
+   "title": "Cyclotomic Hecke Algebras",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 7011,
+   "n_words": 1260
+  },
+  {
+   "id": "sec-010-schur-elements-and-the-a-function",
+   "number": null,
+   "title": "Schur elements and the a-function",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 2486,
+   "n_words": 448
+  },
+  {
+   "id": "sec-011-families-of-characters-and-rouquier-families",
+   "number": null,
+   "title": "Families of characters and Rouquier families",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 6708,
+   "n_words": 1140
+  },
+  {
+   "id": "sec-012-decomposition-maps-and-canonical-basic-sets",
+   "number": null,
+   "title": "Decomposition maps and canonical basic sets",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1136,
+   "n_words": 198
+  },
+  {
+   "id": "sec-013-arikikoike-algebras",
+   "number": null,
+   "title": "Ariki–Koike Algebras",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 2208,
+   "n_words": 406
+  },
+  {
+   "id": "sec-014-combinatorics-of-partitions-and-multipartitions",
+   "number": null,
+   "title": "Combinatorics of partitions and multipartitions",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 4215,
+   "n_words": 863
+  },
+  {
+   "id": "sec-015-schur-elements-and-the-a-function",
+   "number": null,
+   "title": "Schur elements and the a-function",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 3707,
+   "n_words": 691
+  },
+  {
+   "id": "sec-016-families-of-characters-and-rouquier-families",
+   "number": null,
+   "title": "Families of characters and Rouquier families",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 3244,
+   "n_words": 590
+  },
+  {
+   "id": "sec-017-decomposition-maps-and-canonical-basic-sets",
+   "number": null,
+   "title": "Decomposition maps and canonical basic sets",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 4798,
+   "n_words": 784
+  },
+  {
+   "id": "sec-018-rational-cherednik-algebras",
+   "number": null,
+   "title": "Rational Cherednik Algebras",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 8729,
+   "n_words": 1670
+  },
+  {
+   "id": "sec-019-canonical-basic-sets-for-hecke-algebras-from-rat",
+   "number": null,
+   "title": "Canonical basic sets for Hecke algebras from rational Cherednik algebras",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 44,
+   "n_chars": 10698,
+   "n_words": 2032
+  },
+  {
+   "id": "sec-020-rational-cherednik-algebras-at-t-0",
+   "number": null,
+   "title": "Rational Cherednik Algebras at t = 0",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 1216,
+   "n_words": 213
+  },
+  {
+   "id": "sec-021-families-of-characters-for-hecke-algebras-from-r",
+   "number": null,
+   "title": "Families of characters for Hecke algebras from rational Cherednik algebras",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 5591,
+   "n_words": 936
+  },
+  {
+   "id": "sec-022-yokonumahecke-algebras",
+   "number": null,
+   "title": "Yokonuma–Hecke Algebras",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 3839,
+   "n_words": 674
+  },
+  {
+   "id": "sec-023-representation-theory-of-yokonumahecke-algebras",
+   "number": null,
+   "title": "Representation theory of Yokonuma–Hecke algebras",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 54,
+   "n_chars": 16542,
+   "n_words": 2980
+  },
+  {
+   "id": "sec-024-temperleylieb-quotients-of-yokonumahecke-algebra",
+   "number": null,
+   "title": "Temperley–Lieb quotients of Yokonuma–Hecke algebras",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 57,
+   "n_chars": 10602,
+   "n_words": 1818
+  },
+  {
+   "id": "sec-025-knot-invariants",
+   "number": null,
+   "title": "Knot invariants",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 68,
+   "n_chars": 30883,
+   "n_words": 5402
+  },
+  {
+   "id": "sec-026-bibliography",
+   "number": null,
+   "title": "Bibliography",
+   "level": 1,
+   "page_start": 68,
+   "page_end": 75,
+   "n_chars": 22079,
+   "n_words": 3306
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 5,
+  "likely_scanned": false,
+  "toc_entries": 30,
+  "sections": 27,
+  "chars_total": 168810
+ }
+}

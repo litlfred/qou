@@ -1,0 +1,97 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2601.05136v2",
+ "source_sha256": "cee15456257d3028",
+ "brief": "Stateintegralsforthequantized SL2(C)Chern-Simonsinvariant CalvinMcPhail-Snyder DepartmentofMathematics,DukeUniversity calvin@sl2.site — Previous work of the author and N.",
+ "extended": "**Stateintegralsforthequantized SL2(C)Chern-Simonsinvariant CalvinMcPhail-Snyder DepartmentofMathematics,DukeUniversity calvin@sl2.site**\n\n19 pp, 15 sections.\n\n**Abstract.** Previous work of the author and N. Reshetikhin deﬁnes an invariant Zψ N(K,ρ,µ ) of a knotK, a representationρ: π1(S3\\K)→ SL2(C), andalogarithm µofameridianeigenvalueof ρ. Itcanbeinterpretedasa geometrictwistoftheKashaevinvariantorasaquantizationofthe SL2(C) Chern-Simonsinvariantandisdeﬁnedviaadiscretestate-suminvolving quantumdilogarithms. Inthispaperweshowhowtoexpress Zψ N(K,ρ,µ ) asasumovercontourintegralsinaspaceparametrizinghyperbolicstruc- tures on the knot complement. Such state integral presentations are an importantstepindeterminingtheasymptoticsofquantuminvariantsas predictedbytheVolumeConjecture. Wediscussthisperspectiveandthe remainingobstaclestoestablishingexponentialgrowthof Zψ N.\n\n**Outline.** Introduction; Background and motivation; Our results; Cyclic and principal type invariants; Preliminaries; Diagrams and colorings; Gauge transformations and nondegeneracy; Segment equations; Quantum dilogarithms; The action and state sums; State integrals; Classical dilogarithms; Asymptotics; The classical action; Barriers to moving the contour\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: ]beingessentialisequivalenttoapurelygroup-theoreticconditioncalled arc-faithfulness.\n- Theorem 1: Underthehypothesesabove Zψ\n- Proposition 2.12: Foranopenknotdiagram D thereisabijectionbetweenthesetsof\n- Proposition 4.4: LetD be a diagram of a knotK. Generalized critical points ofS(D) are in\n- Lemma 2.8: Letρbeadecoratedrepresentationand D anopendiagram\n- Lemma 2.10: Letρ be a decorated representation of a knotK andD",
+ "tokens": {
+  "brief": 42,
+  "extended": 430
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-background-and-motivation",
+   "title": "Background and motivation",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-our-results",
+   "title": "Our results",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-cyclic-and-principal-type-invariants",
+   "title": "Cyclic and principal type invariants",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-preliminaries",
+   "title": "Preliminaries",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-005-diagrams-and-colorings",
+   "title": "Diagrams and colorings",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-006-gauge-transformations-and-nondegeneracy",
+   "title": "Gauge transformations and nondegeneracy",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-007-segment-equations",
+   "title": "Segment equations",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-008-quantum-dilogarithms",
+   "title": "Quantum dilogarithms",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-009-the-action-and-state-sums",
+   "title": "The action and state sums",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-010-state-integrals",
+   "title": "State integrals",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-011-classical-dilogarithms",
+   "title": "Classical dilogarithms",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-012-asymptotics",
+   "title": "Asymptotics",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-013-the-classical-action",
+   "title": "The classical action",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-014-barriers-to-moving-the-contour",
+   "title": "Barriers to moving the contour",
+   "pages": "15-19"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

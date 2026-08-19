@@ -1,0 +1,173 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "agt-v12-n2-p04-s",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "bcbb460bc75f5612b86fd92444d81181f869078cf91e1040351e535174ac6b06",
+  "file": "agt-v12-n2-p04-s.pdf"
+ },
+ "provenance": {
+  "title": "The twisted Alexander polynomial for \ufb01nite abelian covers over three manifolds with boundary J\u00c9R\u00d4ME DUBOIS YOSHIKAZU YAMAGUCHI We provide the twisted Alexander polynomials of \ufb01nite abelian covers over three-",
+  "authors": null,
+  "arxiv": null,
+  "doi": "10.2140/agt.2012.12.791"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "remark": 6,
+   "example": 2,
+   "theorem": 1,
+   "corollary": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.1",
+   "name": null,
+   "statement": "We have the same Tor.C\u0003.WI V\u001a/; c\u0003; \u2205/ for all orthonormal bases of",
+   "section_file": "sections/sec-002-2-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "3-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.2",
+   "name": null,
+   "statement": "The torsion Tor.C\u0003.WI V\u001a/; c\u0003; \u2205/ depends on the choice of the lifts",
+   "section_file": "sections/sec-002-2-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "3-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.3",
+   "name": null,
+   "statement": "To de\ufb01ne the Reidemeister torsion, we order the cells",
+   "section_file": "sections/sec-002-2-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "3-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "3.3",
+   "name": null,
+   "statement": "Suppose now that M is the link exterior ELD S 3n N.L/ of a link",
+   "section_file": "sections/sec-002-2-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "3-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": null,
+   "statement": "With the above notation, we suppose that the twisted chain complex",
+   "section_file": "sections/sec-003-41-statement-of-the-result.md",
+   "section_title": "Statement of the result",
+   "pages": "8-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.2",
+   "name": null,
+   "statement": "As we already observed, the sign term in Equation (4-2) is not relevant",
+   "section_file": "sections/sec-003-41-statement-of-the-result.md",
+   "section_title": "Statement of the result",
+   "pages": "8-13",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.3",
+   "name": "Explanation of Formula (4-2",
+   "statement": "with variables) If we denote by x\u0018 the",
+   "section_file": "sections/sec-003-41-statement-of-the-result.md",
+   "section_title": "Statement of the result",
+   "pages": "8-13",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4.4",
+   "name": null,
+   "statement": "Suppose that'.\u00191.M//Dh ti andy'.\u00191.Mq//Dh si\u001ah ti, where we",
+   "section_file": "sections/sec-003-41-statement-of-the-result.md",
+   "section_title": "Statement of the result",
+   "pages": "8-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "3.2",
+   "name": null,
+   "statement": "and they observed the similar formula as in Corollary 4.4 in terms of",
+   "section_file": "sections/sec-003-41-statement-of-the-result.md",
+   "section_title": "Statement of the result",
+   "pages": "8-13",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.5",
+   "name": null,
+   "statement": "Let x2 V\u001a.t1;:::; tn/, c2 C\u0003.\u0081MI Z/. For",
+   "section_file": "sections/sec-003-41-statement-of-the-result.md",
+   "section_title": "Statement of the result",
+   "pages": "8-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.7",
+   "name": null,
+   "statement": "This decomposition implies that.V\u001a.t/\u02ddC C\u0152G\u008d/\u02ddZ\u0152\u00191.M/\u008d C\u0003.\u0081MI Z/",
+   "section_file": "sections/sec-003-41-statement-of-the-result.md",
+   "section_title": "Statement of the result",
+   "pages": "8-13",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

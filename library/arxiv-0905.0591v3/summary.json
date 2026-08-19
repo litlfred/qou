@@ -1,0 +1,222 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0905.0591v3",
+ "source_sha256": "cfeaf61f759a6af8",
+ "brief": "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group.",
+ "extended": "**A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS**\n\n*STEF AN FRIEDL AND STEF ANO VIDUSSI*\n\n42 pp, 40 sections.\n\n**Abstract.** We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group. We summarize their formal properties and we explain their relationship t o twisted Reidemeister torsion. We then give a survey of the many applications of twisted inva riants to the study of topological problems. We conclude with a short summary of th e theory of higher order Alexander polynomials.\n\n**Outline.** 1 Introduction; 2.1 Twisted Reidemeister torsion; 2 Definition and basic properties; 2.2 Computation of twisted Reidemeister torsio; 2.4 Twisted Alexander invariants; 2.5 Computation of twisted Alexander polynomia; 3 Basic properties of twisted invariants; 3.1 Relationship between twisted invariants; 3.2 Twisted invariants for conjugate represent; 3.3 Change of variables; 3.4 Duality for twisted invariants; 3.6 Twisted invariants of knots and links; 4 Distinguishing knots and links; 5 Twisted Alexander polynomials and concordanc; 5.1 Twisted Alexander polynomials of zero–surg; 5.2 Twisted Alexander polynomials and knot con; 5.3 Ribbon knots and doubly slice knots; 5.4 Twisted invariants and slice links\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.10: LetL =L1 ∪...L k−1 ∪Lk ⊂S3 be a link. Write L′ =L1 ∪...L k−1 ⊂S3\n- Theorem 4.1: Let L ⊂S3 be a link which is neither the unknot nor the Hopf link. Then\n- Theorem 5.2: LetK be a slice knot. Then for any prime power k there exists a metabolizer\n- Theorem 5.2: can be somewhat generalized using tensor repres entations. In the following\n- Theorem 5.3: Let K be a slice knot. Let q be an odd prime power and let k1,...,k n\n- Theorem 8.3: ]) to prove the following theorem:",
+ "tokens": {
+  "brief": 48,
+  "extended": 458
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-21-twisted-reidemeister-torsion",
+   "title": "Twisted Reidemeister torsion",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-2-definition-and-basic-properties",
+   "title": "Definition and basic properties",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-22-computation-of-twisted-reidemeister-torsion",
+   "title": "Computation of twisted Reidemeister torsion",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-004-24-twisted-alexander-invariants",
+   "title": "Twisted Alexander invariants",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-25-computation-of-twisted-alexander-polynomials",
+   "title": "Computation of twisted Alexander polynomials",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-006-3-basic-properties-of-twisted-invariants",
+   "title": "Basic properties of twisted invariants",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-31-relationship-between-twisted-invariants",
+   "title": "Relationship between twisted invariants",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-32-twisted-invariants-for-conjugate-representati",
+   "title": "Twisted invariants for conjugate representations",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-33-change-of-variables",
+   "title": "Change of variables",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-010-34-duality-for-twisted-invariants",
+   "title": "Duality for twisted invariants",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-011-36-twisted-invariants-of-knots-and-links",
+   "title": "Twisted invariants of knots and links",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-012-4-distinguishing-knots-and-links",
+   "title": "Distinguishing knots and links",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-013-5-twisted-alexander-polynomials-and-concordance",
+   "title": "Twisted Alexander polynomials and concordance",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-014-51-twisted-alexander-polynomials-of-zerosurgerie",
+   "title": "Twisted Alexander polynomials of zero–surgeries",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-015-52-twisted-alexander-polynomials-and-knot-concor",
+   "title": "Twisted Alexander polynomials and knot concordance",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-016-53-ribbon-knots-and-doubly-slice-knots",
+   "title": "Ribbon knots and doubly slice knots",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-017-54-twisted-invariants-and-slice-links",
+   "title": "Twisted invariants and slice links",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-018-6-twisted-alexander-polynomials-the-thurston-nor",
+   "title": "Twisted Alexander polynomials, the Thurston norm and fibered manifolds",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-019-62-twisted-alexander-polynomials-and-the-thursto",
+   "title": "Twisted Alexander polynomials and the Thurston norm",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-020-63-normalized-twisted-reidemeister-torsion-and-t",
+   "title": "Normalized twisted Reidemeister torsion and the free genus of a knot",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-021-7-twisted-invariants-of-knots-and-special-repres",
+   "title": "Twisted invariants of knots and special representations",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-022-71-parabolic-representations",
+   "title": "Parabolic representations",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-023-72-twisted-alexander-polynomials-and-the-space-o",
+   "title": "Twisted Alexander polynomials and the space of 2–dimensional representations",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-024-73-twisted-invariants-of-hyperbolic-knots-and-li",
+   "title": "Twisted invariants of hyperbolic knots and links",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-025-74-metabelian-representations",
+   "title": "Metabelian representations",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-026-8-miscellaneous-applications-of-twisted-reidemei",
+   "title": "Miscellaneous applications of twisted Reidemeister torsion to knot theory",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-027-81-a-partial-order-on-knots",
+   "title": "A Partial order on knots",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-028-82-periodic-and-freely-periodic-knots",
+   "title": "Periodic and freely periodic knots",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-029-83-zeroes-of-twisted-alexander-polynomials-and-n",
+   "title": "Zeroes of twisted Alexander polynomials and non–abelian representations",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-030-85-homology-of-cyclic-covers",
+   "title": "Homology of cyclic covers",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-031-9-twisted-alexander-polynomials-of-cwcomplexes-a",
+   "title": "Twisted Alexander polynomials of CW–complexes and groups",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-032-92-twisted-alexander-polynomials-of-groups",
+   "title": "Twisted Alexander polynomials of groups",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-033-93-plane-algebraic-curves",
+   "title": "Plane algebraic curves",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-034-10-alexander-polynomials-and-representations-ove",
+   "title": "Alexander polynomials and representations over non–commutative rings",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-035-101-noncommutative-alexander-polynomials",
+   "title": "Non–commutative Alexander polynomials",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-036-102-higher-order-alexander-polynomials",
+   "title": "Higher order Alexander polynomials",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-037-104-miscellaneous-applications-of-higher-order-a",
+   "title": "Miscellaneous applications of higher order Alexander polynomials",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-038-11-open-questions-and-problems",
+   "title": "Open questions and problems",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-039-references",
+   "title": "References",
+   "pages": "36-42"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,579 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1604.02688v1",
+ "source": {
+  "file": "1604.02688v1.pdf",
+  "sha256": "bdcafe379519287cc9399877919d607a0e833f84cf2d77f5a265107a1a594d41",
+  "bytes": 1171918,
+  "pages": 57
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1604.02688",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "10 Apr 2016"
+  },
+  "doi": null,
+  "title": "THE 3D-INDEX AND NORMAL SURFACES",
+  "authors_raw": "STAVROS GAROUFALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN",
+  "abstract": "Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary components. The 3D-index is a collection of formal power series inq1/2 with integer coeﬃcients. Our goal is to explain how the 3D-index is a generating series of normal surfaces associated to the ideal triangulation. This shows a connection of the 3D-index with classical normal surface theory, and fulﬁlls a dream of constructing topological invariants of 3-manifolds using normal surfaces.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20160412003006Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  },
+  "title_lines": [
+   "THE 3D-INDEX AND NORMAL SURFACES"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The tetrahedral index",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Notation and conventions for triangulated 3-manifolds",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Gluing equations",
+   "page": 5,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Generalised angle structures",
+   "page": 6,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "The 3D-index of an ideal triangulation",
+   "page": 6,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Dependence on the choice of triangulation",
+   "page": 8,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Some Q-normal surface theory",
+   "page": 10,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Construction of spun normal surfaces",
+   "page": 11,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Geometric generators for Q-normal classes",
+   "page": 13,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Combinatorics of ideal triangulations and integer normal surface theory",
+   "page": 16,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Geometric generators for integer Q-normal classes",
+   "page": 19,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 1,
+   "title": "The 3D-index via normal surfaces",
+   "page": 20,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Convergence of the index sum",
+   "page": 21,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Non 1-efficient ideal triangulations",
+   "page": 24,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 1,
+   "title": "Invariance under 2-3 and 0-2 moves",
+   "page": 25,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Generalised normal surfaces",
+   "page": 27,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Generalised normal and spun normal surfaces",
+   "page": 27,
+   "source": "outline",
+   "number": "10.1"
+  },
+  {
+   "level": 2,
+   "title": "Degrees of index terms",
+   "page": 29,
+   "source": "outline",
+   "number": "10.2"
+  },
+  {
+   "level": 2,
+   "title": "Normalisation and barriers",
+   "page": 30,
+   "source": "outline",
+   "number": "10.3"
+  },
+  {
+   "level": 1,
+   "title": "Some examples",
+   "page": 35,
+   "source": "outline",
+   "number": "11"
+  },
+  {
+   "level": 2,
+   "title": "Solid torus",
+   "page": 35,
+   "source": "outline",
+   "number": "11.1"
+  },
+  {
+   "level": 2,
+   "title": "Trefoil complement",
+   "page": 35,
+   "source": "outline",
+   "number": "11.2"
+  },
+  {
+   "level": 2,
+   "title": "T2 I",
+   "page": 36,
+   "source": "outline",
+   "number": "11.3"
+  },
+  {
+   "level": 2,
+   "title": "A toroidal example",
+   "page": 36,
+   "source": "outline",
+   "number": "11.4"
+  },
+  {
+   "level": 2,
+   "title": "m009",
+   "page": 37,
+   "source": "outline",
+   "number": "11.5"
+  },
+  {
+   "level": 1,
+   "title": "Notes on connectedness of the 1-efficient Pachner Graph",
+   "page": 39,
+   "source": "outline",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "A census of ideal triangulations",
+   "page": 41,
+   "source": "outline",
+   "number": "12.1"
+  },
+  {
+   "level": 2,
+   "title": "Two tetrahedron ideal triangulations",
+   "page": 42,
+   "source": "outline",
+   "number": "12.2"
+  },
+  {
+   "level": 2,
+   "title": "Angle Structures, 1-efficiency and Pachner moves",
+   "page": 44,
+   "source": "outline",
+   "number": "12.3"
+  },
+  {
+   "level": 2,
+   "title": "Connected components of normal surfaces",
+   "page": 45,
+   "source": "outline",
+   "number": "12.4"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Generalised angle structures and the Euler characteristic",
+   "page": 50,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1. Euler characteristic from generalised angle structures",
+   "page": 51,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 55,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7073,
+   "n_words": 1112
+  },
+  {
+   "id": "sec-001-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 320,
+   "n_words": 49
+  },
+  {
+   "id": "sec-002-2-the-tetrahedral-index",
+   "number": "2",
+   "title": "The tetrahedral index",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1664,
+   "n_words": 288
+  },
+  {
+   "id": "sec-003-3-notation-and-conventions-for-triangulated-3-ma",
+   "number": "3",
+   "title": "Notation and conventions for triangulated 3-manifolds",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 309,
+   "n_words": 49
+  },
+  {
+   "id": "sec-004-31-gluing-equations",
+   "number": "3.1",
+   "title": "Gluing equations",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3258,
+   "n_words": 550
+  },
+  {
+   "id": "sec-005-32-generalised-angle-structures",
+   "number": "3.2",
+   "title": "Generalised angle structures",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 326,
+   "n_words": 56
+  },
+  {
+   "id": "sec-006-4-the-3d-index-of-an-ideal-triangulation",
+   "number": "4",
+   "title": "The 3D-index of an ideal triangulation",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3558,
+   "n_words": 656
+  },
+  {
+   "id": "sec-007-5-dependence-on-the-choice-of-triangulation",
+   "number": "5",
+   "title": "Dependence on the choice of triangulation",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 6962,
+   "n_words": 1114
+  },
+  {
+   "id": "sec-008-61-construction-of-spun-normal-surfaces",
+   "number": "6.1",
+   "title": "Construction of spun normal surfaces",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 2538,
+   "n_words": 415
+  },
+  {
+   "id": "sec-009-62-geometric-generators-for-q-normal-classes",
+   "number": "6.2",
+   "title": "Geometric generators for Q-normal classes",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 6687,
+   "n_words": 1125
+  },
+  {
+   "id": "sec-010-7-combinatorics-of-ideal-triangulations-and-inte",
+   "number": "7",
+   "title": "Combinatorics of ideal triangulations and integer normal surface theory",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 7390,
+   "n_words": 1261
+  },
+  {
+   "id": "sec-011-71-geometric-generators-for-integer-q-normal-cla",
+   "number": "7.1",
+   "title": "Geometric generators for integer Q-normal classes",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 4941,
+   "n_words": 863
+  },
+  {
+   "id": "sec-012-81-convergence-of-the-index-sum",
+   "number": "8.1",
+   "title": "Convergence of the index sum",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 27,
+   "n_chars": 15737,
+   "n_words": 2689
+  },
+  {
+   "id": "sec-013-10-generalised-normal-surfaces",
+   "number": "10",
+   "title": "Generalised normal surfaces",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 605,
+   "n_words": 78
+  },
+  {
+   "id": "sec-014-101-generalised-normal-and-spun-normal-surfaces",
+   "number": "10.1",
+   "title": "Generalised normal and spun normal surfaces",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 6846,
+   "n_words": 1098
+  },
+  {
+   "id": "sec-015-102-degrees-of-index-terms",
+   "number": "10.2",
+   "title": "Degrees of index terms",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 1936,
+   "n_words": 338
+  },
+  {
+   "id": "sec-016-103-normalisation-and-barriers",
+   "number": "10.3",
+   "title": "Normalisation and barriers",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 9884,
+   "n_words": 1689
+  },
+  {
+   "id": "sec-017-111-solid-torus",
+   "number": "11.1",
+   "title": "Solid torus",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 3098,
+   "n_words": 512
+  },
+  {
+   "id": "sec-018-11-some-examples",
+   "number": "11",
+   "title": "Some examples",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 1028,
+   "n_words": 186
+  },
+  {
+   "id": "sec-019-112-trefoil-complement",
+   "number": "11.2",
+   "title": "Trefoil complement",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 1538,
+   "n_words": 318
+  },
+  {
+   "id": "sec-020-114-a-toroidal-example",
+   "number": "11.4",
+   "title": "A toroidal example",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 1037,
+   "n_words": 194
+  },
+  {
+   "id": "sec-021-115-m009",
+   "number": "11.5",
+   "title": "m009",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 2399,
+   "n_words": 512
+  },
+  {
+   "id": "sec-022-12-notes-on-connectedness-of-the-1-efficient-pac",
+   "number": "12",
+   "title": "Notes on connectedness of the 1-efficient Pachner Graph",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 6759,
+   "n_words": 1112
+  },
+  {
+   "id": "sec-023-121-a-census-of-ideal-triangulations",
+   "number": "12.1",
+   "title": "A census of ideal triangulations",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 3441,
+   "n_words": 582
+  },
+  {
+   "id": "sec-024-122-two-tetrahedron-ideal-triangulations",
+   "number": "12.2",
+   "title": "Two tetrahedron ideal triangulations",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 45,
+   "n_chars": 6779,
+   "n_words": 1112
+  },
+  {
+   "id": "sec-025-124-connected-components-of-normal-surfaces",
+   "number": "12.4",
+   "title": "Connected components of normal surfaces",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 50,
+   "n_chars": 9911,
+   "n_words": 1576
+  },
+  {
+   "id": "sec-026-appendix-a-generalised-angle-structures-and-the",
+   "number": null,
+   "title": "Appendix A. Generalised angle structures and the Euler characteristic",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 3043,
+   "n_words": 506
+  },
+  {
+   "id": "sec-027-a1-euler-characteristic-from-generalised-angle-s",
+   "number": null,
+   "title": "A.1. Euler characteristic from generalised angle structures",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 55,
+   "n_chars": 8031,
+   "n_words": 1433
+  },
+  {
+   "id": "sec-028-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 57,
+   "n_chars": 6485,
+   "n_words": 858
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 35,
+  "sections": 29,
+  "chars_total": 133583
+ }
+}

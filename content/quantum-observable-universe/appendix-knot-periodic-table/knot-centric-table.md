@@ -2,8 +2,8 @@ The standard periodic table organizes elements by electron
 configuration (rows = periods, columns = groups).  A
 **knot-centric periodic table** reorganizes by the underlying
 knot topology: nuclear Borromean shell structure and electron
-trefoil resonance modes.  The payoff of this reorganization is
-that shell structure and magic numbers become *emergent* — they
+trefoil resonance modes.  Under this reorganization shell
+structure and magic numbers become *emergent*: they
 follow from the Borromean crossing count rather than being read
 off an empirical table.
 

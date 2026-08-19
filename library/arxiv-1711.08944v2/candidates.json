@@ -1,0 +1,150 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1711.08944v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ad7a020e7e92b788c3344cb1910ded6fda534908c9d08c1c44096e796d737234",
+  "file": "1711.08944v2.pdf"
+ },
+ "provenance": {
+  "title": "The second largest eigenvalues of some Cayley graphs on alternating groups \u2217",
+  "authors": "Xueyi Huang, Qiongxiang Huang \u2020",
+  "arxiv": {
+   "id": "1711.08944",
+   "version": "2",
+   "primary_class": "math.CO",
+   "stamp_date": "12 Dec 2018"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "lemma": 4,
+   "theorem": 4,
+   "proposition": 1
+  },
+  "formalization_candidates": 9
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.1",
+   "name": " [\n13]",
+   "statement": "Let G be a graph with adjacency matrix A(G), and let \u03a0 :",
+   "section_file": "sections/sec-001-2-the-second-largest-eigenvalue-of-agn.md",
+   "section_title": "The second largest eigenvalue of AGn",
+   "pages": "3-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": null,
+   "statement": "Let AGn be the alternating group graph with n \u2265 4. Then AGn has",
+   "section_file": "sections/sec-001-2-the-second-largest-eigenvalue-of-agn.md",
+   "section_title": "The second largest eigenvalue of AGn",
+   "pages": "3-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.3",
+   "name": null,
+   "statement": "Let AGn be the alternating group graph with n \u2265 4. Then the two",
+   "section_file": "sections/sec-001-2-the-second-largest-eigenvalue-of-agn.md",
+   "section_title": "The second largest eigenvalue of AGn",
+   "pages": "3-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "claim",
+   "number": "1",
+   "name": null,
+   "statement": "There exists an i such that",
+   "section_file": "sections/sec-001-2-the-second-largest-eigenvalue-of-agn.md",
+   "section_title": "The second largest eigenvalue of AGn",
+   "pages": "3-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "Let EAGn be the extended alternating group graph with n \u2265 3. Then",
+   "section_file": "sections/sec-001-2-the-second-largest-eigenvalue-of-agn.md",
+   "section_title": "The second largest eigenvalue of AGn",
+   "pages": "3-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.2",
+   "name": null,
+   "statement": "Let EAGn be the extended alternating group graph with n \u2265 3.",
+   "section_file": "sections/sec-001-2-the-second-largest-eigenvalue-of-agn.md",
+   "section_title": "The second largest eigenvalue of AGn",
+   "pages": "3-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.3",
+   "name": null,
+   "statement": ", one can easily verify that the induce subgraph of EAGn on Xi(2) is",
+   "section_file": "sections/sec-001-2-the-second-largest-eigenvalue-of-agn.md",
+   "section_title": "The second largest eigenvalue of AGn",
+   "pages": "3-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.3",
+   "name": null,
+   "statement": "Let CAG n be the complete alternating group graph with n \u2265 3. Then",
+   "section_file": "sections/sec-001-2-the-second-largest-eigenvalue-of-agn.md",
+   "section_title": "The second largest eigenvalue of AGn",
+   "pages": "3-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.4",
+   "name": null,
+   "statement": "Let CAG n be the complete alternating group graph with n \u2265 3.",
+   "section_file": "sections/sec-001-2-the-second-largest-eigenvalue-of-agn.md",
+   "section_title": "The second largest eigenvalue of AGn",
+   "pages": "3-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

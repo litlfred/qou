@@ -44,7 +44,7 @@
   "description": "A_omega tranche B part 1: closed-form deformed Borel singularity iota~(u) = (V_sigma1 - V_sigma2)/(2 pi i) from the GGM sec-5.1 saddle data (curve re-derived from (115) with self-checks), compared against the corpus's measured deformed-meridian Borel-Pade pole and resummed Im V_b (#3819 witness, loaded).",
   "contentBlock": "conj:im-q-physical-role",
   "data": {
-    "source": "uploads/2012.00062v3.pdf (GGM) eqs 113-121 + corpus witness qbeta-c3-borel-pade-deformed-meridian",
+    "source": "library/arxiv-2012.00062v3/2012.00062v3.pdf (GGM) eqs 113-121 + corpus witness qbeta-c3-borel-pade-deformed-meridian",
     "curve": "x*y^2 + (x^2-x-1)*y + 1 = 0  [(115)-derived; minus sign restored vs the (116) glyph]",
     "controls": {
       "identity_119": true,

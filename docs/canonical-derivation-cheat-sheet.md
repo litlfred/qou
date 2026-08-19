@@ -375,7 +375,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 
 | Result | Reference |
 |---|---|
-| Hecke algebra of type A | `[iwahori1964]`, `[geck-pfeiffer2000]` |
+| Hecke algebra of type A | `[iwahori1964]`, `[geckpfeiffer2000]` |
 | Iwahori-Hecke quadratic relation as Yang-Baxter | `[jimbo1986]` |
 | Markov trace uniqueness + Jones polynomial | `[jones1987]` |
 | Wenzl Markov-trace closed form + disjoint multiplicativity | `[wenzl1988]` §1.7 |

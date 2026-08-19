@@ -4,7 +4,7 @@
  "beans": [
   "qou-9p9y"
  ],
- "source": "GSWZ arXiv:2412.04241v2 Example 4.3 eqns (271)/(273)/(274); uploads/2412.04241v2.pdf; merged layer probes",
+ "source": "GSWZ arXiv:2412.04241v2 Example 4.3 eqns (271)/(273)/(274); library/arxiv-2412.04241v2/2412.04241v2.pdf; merged layer probes",
  "checks": {
   "layer_frobenius_root": true,
   "layer_teichmuller_order24": true,
@@ -30,6 +30,6 @@
    1
   ]
  },
- "missing_ingredient": "Besser-de Jeu overconvergent Li2 expansion (GSWZ ref [8]) \u2014 not in uploads/; dilog layer is mod-5^3-exact until it lands",
+ "missing_ingredient": "Besser-de Jeu overconvergent Li2 expansion (GSWZ ref [8]) \u2014 not in library/; dilog layer is mod-5^3-exact until it lands",
  "scope": "scope-(a): harness v1 assembled; Bloch decomposition (Theorem 9 instance) verified mod 5^3 from printed data; full-precision Coleman + eps_m queued"
 }

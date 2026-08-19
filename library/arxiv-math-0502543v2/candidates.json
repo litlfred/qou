@@ -1,0 +1,242 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0502543v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "227ef8150cb08faffa97580266e1708285e686b00fe527276827d90af633bd7f",
+  "file": "0502543v2.pdf"
+ },
+ "provenance": {
+  "title": "CONTINUITY OF VOLUMES \u2013 ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR IGOR RIVIN",
+  "authors": null,
+  "arxiv": {
+   "id": "math/0502543",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "22 Mar 2005"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 16,
+  "by_kind": {
+   "theorem": 7,
+   "corollary": 2,
+   "lemma": 4,
+   "remark": 3
+  },
+  "formalization_candidates": 13
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": "this is [3, Theorem 7.26]",
+   "statement": "Theorem 3. Let \u2126be a C 0,1 domain in Rn. Then,",
+   "section_file": "sections/sec-000-2-a-simple-proof-for-simplices-among-other-thing.md",
+   "section_title": "A simple proof for simplices (among other things)",
+   "pages": "3-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": "[10, 8]",
+   "statement": "A metric space (M, g) homeomorphic to S2 can arise",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5",
+   "name": null,
+   "statement": "There exists a constant L 0, such that the maximal length \u2113P of",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "3",
+   "name": null,
+   "statement": "The volume is in W 1,p(\u2126p) for all p > 0.",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6",
+   "name": "Andreev\u2019s theorem ([1]",
+   "statement": ") . Let C be an abstract polyhedron",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7",
+   "name": "Bao-Bonahon, [2]",
+   "statement": "Let \u03c3 be a cell decomposition of S 2, and",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "Let Q be a plane in H3 which intersects both P \u2212 and P+. Then,",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "8",
+   "name": null,
+   "statement": "The constant 3 is far from sharp (especially for larger t).",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "There exists a t 0, such that if M is a line in H3 which intersects",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": null,
+   "statement": "Let T be a spherical triangle with sides A , B, C and (opposite)",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4",
+   "name": null,
+   "statement": "Let F 1 and F 2 be two planes intersecting at a dihedral angle",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4",
+   "name": null,
+   "statement": "Let V be a convex polygon in the hyperbolic plane H2, such that",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "9",
+   "name": null,
+   "statement": "Let X be a convex polyhedron with N vertices inH3 of diameter",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "10",
+   "name": null,
+   "statement": "With notation as in Theorem 9, the faces F 1, . . . ,Fk form a",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "11",
+   "name": null,
+   "statement": "The reader is referred to [8, 10] for a more thorough",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "12",
+   "name": null,
+   "statement": "The argument above is easily modi\ufb01ed to show that the",
+   "section_file": "sections/sec-001-3-convex-polytopes.md",
+   "section_title": "Convex polytopes",
+   "pages": "5-11",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

@@ -160,7 +160,7 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_52_symmetrization_probe",
     "beans": ["qou-9p9y"],
-    "source": "GSWZ arXiv:2412.04241v2 §4.6 eqns (282)/(283)/(286); uploads/2412.04241v2.pdf",
+    "source": "GSWZ arXiv:2412.04241v2 §4.6 eqns (282)/(283)/(286); library/arxiv-2412.04241v2/2412.04241v2.pdf",
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field)",
     "checks": checks,
     "g2_exact": sp.sstr(sp.simplify(g2)),

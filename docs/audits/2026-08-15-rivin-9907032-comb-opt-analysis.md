@@ -1,7 +1,7 @@
 # Rivin, *Combinatorial optimization in geometry* (arXiv:math/9907032) — corpus utilization + Lean-formalization analysis
 
 **Date:** 2026-08-15 · **Scope:** analysis-only, scope-(a), no fit, nothing wired.
-**Source:** `uploads/9907032v1.pdf` (owner upload, commit `73784ff`).
+**Source:** `library/arxiv-math-9907032v1/9907032v1.pdf` (owner upload, commit `73784ff`).
 Igor Rivin, "Combinatorial optimization in geometry", arXiv:math/9907032v1 [math.GT]
 6 Jul 1999; published *Advances in Applied Mathematics* **31** (2003) 242–271.
 

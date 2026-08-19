@@ -245,5 +245,5 @@ axis degenerate on the positive axis.**
 - Target conjecture: [`schwinger-measure-computational-time.md`](../../content/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time.md)
 - Corpus singularity data: [`2026-07-12-alien-calculus-review-binding-gevrey-half.md`](2026-07-12-alien-calculus-review-binding-gevrey-half.md); witnesses `lever1-borel-half-singularity-probe`, `lever1-gevrey-order-pin`, `lever1-bridge-alien-datum`
 - Lean class pin: [`QOU/Mass/BindingGevreyHalf.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/BindingGevreyHalf.lean)
-- RSZ source: `uploads/0903.0853v3.pdf` (§1.2.1 — the output-regularity "optimality" remark made concrete here)
+- RSZ source: `library/arxiv-0903.0853v3/0903.0853v3.pdf` (§1.2.1 — the output-regularity "optimality" remark made concrete here)
 - Probe + witness: [`ksel1_singularity_selection_probe.py`](../../computations/probes/ksel1_singularity_selection_probe.py), [`ksel1-singularity-selection.witness.json`](../../computations/probes/ksel1-singularity-selection.witness.json)

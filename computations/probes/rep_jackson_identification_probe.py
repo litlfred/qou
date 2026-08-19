@@ -544,7 +544,7 @@ def main() -> int:
             "(Q_β Habiro bar-side; θ-kernel bilateral Laplace)",
         ]})
     wb.add_data("rsz_citations", {
-        "paper": "uploads/0903.0853v3.pdf — Ramis–Sauloy–Zhang, "
+        "paper": "library/arxiv-0903.0853v3/0903.0853v3.pdf — Ramis–Sauloy–Zhang, "
                  "Astérisque 355",
         "def_2_3_3": "level-1 formal q-Borel, weight q^{−n(n−1)/2} (p. 23)",
         "eq_1_2": "θ(z;q) triple product — manifest positivity (p. 9)",

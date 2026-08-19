@@ -1,0 +1,61 @@
+Braiding of the attractor 261
+
+Here we develop a localized criterion for the failure of algorithms. We will
+show, for example, that every purely iterative algorithm must fail on every neigh-
+borhood of p(X)=X¢ for d=4 or more. As far as robust algorithms are con-
+cerned, when the criterion is satisfied one cannot even continuously assign to
+each polynomial p an expanding map T, such that the attractor of T, is contained
+in the roots of p.
+
+The criterion is defined in terms of the braiding of the roots of polynomials
+as we move about the Poly,; a good introduction to these ideas is Birman’s
+book [Bi]. We also use the concept of ‘reducibility’ of an element or subgroup
+of the mapping class group; this originates with Nielsen’s notion of ‘simple
+axis’ and is fundamental to Thurston’s classification of elements [FLP].
+
+Notation. For A any finite subset of €, Mod(A) will denote the full mapping
+class group of the surface €—A. (We include maps which do not fix A, but
+we exclude orientation-reversing maps. Our notation comes from Mod(A)’s role
+as the ‘modular group’ for Teichmiiller space.)
+
+Let A denote the discriminant hypersurface in Poly,, i.e. the locus of polyno-
+mials with at least one multiple root. Let (y, p) be a closed loop in the complement
+of A with basepoint p(X), and let r be the set of roots of p. As we traverse
+y the roots of the corresponding polynomials move without collision, and hence
+their monodromy determines an element in Mod(r), the full mapping class group
+of the Riemmann sphere € punctured at r. There is a natural homomorphism
+Mod(r)— Sym(r), the group of permutations of the set of roots, such that the
+image of y in Sym(r) records how the roots are interchanged by the monodromy.
+
+Now let V be an open connected subset of Poly,, and let p be a polynomial
+in p with simple roots r. Then there are homomorphisms
+
+1, (V—A, p) > Mod(r) > Sym(r)
+
+with images G,,, and G.omp respectively, recording the topological and combina-
+torial monodromy of the roots of p over V.
+
+Definition. Vis tangled if the following three conditions are satisfied:
+
+(1) G.omp acts transitively on the roots r;
+
+(2) Gop is irreducible; and
+
+(3) Gop is infinite.
+
+Here a subgroup of the mapping class group of a surface S is irreducible
+if it preserves no system of disjoint nonperipheral simple closed curves on S.
+(Finite irreducible subgroups are discussed by Gilman [G]).
+
+Conditions 2) and 3) are implied by the (perhaps more easily verified) combi-
+natorial conditions
+
+(2') Geom» is irreducible;
+
+(3') G.omp is not isomorphic to a finite group of Mébius transformations
+(a cyclic group Z/n, a dihedral group D,,, the alternating group A,, the octahedral
+group, or the icosahedral group.)
+
+Here a subgroup of Sym(r) is irreducible if it preserves no nontrivial partition
+of the set r. (Transitivity does not imply irreducibility: e.g. (1234) preserves
+

@@ -110,8 +110,8 @@
     "workplan": "docs/workplans/2026-07-20-qlift-borel-kernel-workplan.md (step 3, Route D)",
     "audit_doc": "docs/audits/2026-07-20-qlift-routeD-qborel-transform.md",
     "prior_prune": "computations/probes/qlift_ggm_diagonal_gauge_prune_probe.py (diagonal-gauge scope-(b) exclusion; this probe shows the formal q-Borel transform lies INSIDE that class and re-derives the exclusion via the gauge invariant)",
-    "rsz_source": "uploads/0903.0853v3.pdf Def 2.3.3 p.23 + 1.2.1 (kernel choices)",
-    "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+    "rsz_source": "library/arxiv-0903.0853v3/0903.0853v3.pdf Def 2.3.3 p.23 + 1.2.1 (kernel choices)",
+    "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (eq 49)",
     "discipline": "formalize-first (all identities derived by hand in the audit doc before running); scope-(a)/(b) per AGENTS.md; no AME data; anti-fit"
   }
 }

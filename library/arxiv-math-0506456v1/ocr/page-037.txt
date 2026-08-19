@@ -1,0 +1,58 @@
+Asymptotics of the quantum invariants for the figure 8 knot 37
+
+and
+r={ 4
+
+By (5.65) and the definition of 64 the representation fg,- extends to a representation
+of 1(Mp/q) if and only if
+
+roy
+ole
+
+© (5.73)
+
+1H
+
+ool
+
+po + q8-(6) €Z (5.74)
+
+which is nothing but (5.68) (reparametrized). We note that 8, are smooth on ]4, $
+but not in the end points 1/6 and 1/3. The terms f; have been chosen so that
+64(1/6) = 1/2. This is needed for the proof of
+
+Proposition 4 ( [18, p. 362] ). Let 6 € [1/6,1/3] and let fo, be as in Proposi-
+tion 2. If po,- extends to a representation of 7(M,/,) for a ¢ € {+1} then
+
+)
+CS(po,c) = -z — cp6? — dq? (6) — 2cq08-(0) — 2 6 B-(t)dt (mod Z),
+
+where $4 are the curves defined by (5.71). oO
+
+Kirk and Klassen prove the above result by explicitly constructing a piecewise
+smooth path p : [0,1] + Hom(7,SL(2, C)) from the trivial representation to p14 =
+pr with piecewise smooth curves a, 8 : [0,1] + C as in (5.66) satisfying a(1) = zt
+and B(1) = 4. Moreover, they use that to B(t)a'(t)dt = 4 and the fact that
+y + pyc, [1/6,0] + Hom(m,SU(2)) is a path from pi. to py,- with associated
+functions a(y) = y and @(y) = B-(y). By the choice of the functions f+, these a—
+and 3-functions are continuations of the ones used for the path p from the trivial
+representation to Phase
+
+Kirk and Klassen argue that fo B(t)a! (t)dt = 4, using a comparison between a
+computer calculation and the Chern-Simons invariants of flat SU(2)—connection on
+the Seifert manifold M_3. By following Kirk and Klassen’s argument [18, pp. 361—
+362] it is actually not hard to give an explicit calculation of this integral. Let us give
+some details. The path p from the trivial connection to Px consists of three parts,
+where {3 is identically zero along the first two parts. We can therefore concentrate on
+the third part. Let a = (3+V5)/2, and let a : [0,1] + C be a piecewise smooth curve
+from s4;Log(V/a) to 1/6. Let t(s) = e47**(*) and choose a piecewise smooth solution
+u(s) to (t(s), u(s)) = 0, where ¢ is given by (5.61). Then s +> pie2ria(s) u(s)) =! Ms
+is the third piece of our curve p (reparametrized). Assuming a(s) ¢ $Z (so as to
+avoid the parabolic representations) we can diagonalize exactly as demonstrated
+after Corollary 1 and get
+
+fis(u) =diag(T,T~'), —s(A) = diag (Aus (Tu), A(T, u)~") ,
+where T = T(s) = 79), u = u(s), Au is as below Corollary 1, and where
+
+_ 2
+s(y) = U-!ns(y)U for y € 7, where U = U(s) = ( F ua 4) ). This

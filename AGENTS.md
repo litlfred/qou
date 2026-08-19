@@ -819,8 +819,59 @@ corpus — run the **corpus-grep checklist**:
 4. Check the relevant coordination ledger
    `docs/coordination/<theme>.md` — prior agents may have closed
    the item already.
+5. **The library — walk three tiers, cheapest first.** The ingested
+   sources are 24.7 M characters; do not grep straight into them when a
+   line will do.
 
-Only after **all four** grep paths return empty (modulo the
+   ```sh
+   grep -in <topic> library/INDEX.md              # 320 briefs, ~14k tokens total
+   cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
+   grep -rln <topic> library/<doc-id>/sections/   # the text itself
+   ```
+
+   `INDEX.md` is one line per document and is the right first read — it
+   costs about as much as a single paper's abstract to scan the entire
+   library. Each section file also carries a `doc_brief` in its
+   front-matter, so a hit found by the third command is interpretable
+   without opening anything else (contextual retrieval: a chunk in
+   isolation otherwise loses what makes it mean anything).
+
+   **One line per *work*, not per file.** The library holds 19 works more
+   than once — a preprint beside its published version, or the same PDF
+   ingested under two names — and Neumann–Zagier three times. The extra
+   copies keep their text on disk, so a full-text grep still lands in
+   them; each carries `duplicate_of` in its section front-matter naming
+   the copy to prefer. **Do not read two hits on one work as two
+   sources.** Adjudicated in
+   [`docs/audits/library-duplicate-ledger.json`](docs/audits/library-duplicate-ledger.json);
+   `scripts/library-find-duplicates.py` proposes, but its same-work and
+   different-work score ranges overlap, so a proposal is not a verdict —
+   a sequel sharing its setup sections outscores four true duplicates.
+
+   Briefs and summaries are **extractive** — assembled from each
+   document's own abstract, section titles and extracted claims, nothing
+   written by a model — so a brief is only as good as the abstract it came
+   from. Regenerate with `scripts/summarize-library.py --apply`; a
+   hand-written summary marked `provenance.kind: "agent"` survives
+   regeneration.
+
+   The full-text grep, for when you want it directly:
+   `grep -rln <topic> library/*/sections/` — the **ingested sources**.
+   An item can be open *in this corpus* and settled in a paper we
+   already hold; that is a citation, not a derivation, but it changes
+   what "open" means and it is the difference between deriving a result
+   and re-deriving one. 332 documents / 7,313 sections / 24.7 M
+   characters are searchable this way.
+
+   This path exists only because the sources were sectioned into text.
+   Before that they were 339 PDFs and grep could not see them, which is
+   why the checklist historically stopped at four. Two practical notes:
+   a hit's YAML front-matter names the document, section and page range,
+   so it is immediately citable; and `library/<doc-id>/candidates.json`
+   lists that document's extracted theorems and definitions if you want
+   the claims rather than the prose.
+
+Only after **all five** grep paths return empty (modulo the
 originating file itself) may you declare the item open. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
@@ -1608,7 +1659,7 @@ When a user request arrives, route to the right skill(s):
 | "import + formalize" | `local/paper-importer` + `local/formalizer` | collaborator |
 | "upload / scan / intake / process document" | `local/document-intake` | collaborator |
 | "WHO / guideline / L1 / L2 / normative" | `local/document-intake` | collaborator |
-| "uploads/ status / what's pending" | `local/document-intake` | collaborator |
+| "library/ status / what's pending" | `local/document-intake` | collaborator |
 | "is this paper relevant / triage the uploads / what can we use from X / which uploads aren't cited / source ledger" | `local/paper-relevance-triage` | collaborator |
 | "critical path / trace dependencies" | `local/critical-path-analysis` | collaborator |
 | "archimedean vs categorical / context audit" | `local/critical-path-analysis` | reader |
@@ -3193,7 +3244,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
-| `uploads/` | Document intake pipeline (raw PDFs, scans, WHO guidelines → content objects) |
+| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `content/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`; renamed from `uploads/` 2026-08-15. |
 | `.beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
 | `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `.beans/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
 | `docs/` | Planning documents, migration plans, dependency graphs |

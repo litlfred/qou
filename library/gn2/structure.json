@@ -1,0 +1,275 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "gn2",
+ "source": {
+  "file": "gn2.pdf",
+  "sha256": "ffe8965c496dbb2ff99fb515692fe8738823a3c6177b8e1efaa3956384969d5c",
+  "bytes": 188245,
+  "pages": 11
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR",
+  "authors_raw": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+  "abstract": "In this paper, we list in explicit form the factoring relations of the Kau man bracket skein module (KBSM for short) of a twist knot exterior. This is done using curves decorated by characters of irreducibleSL(2;C)-representations. In the process, we exhibit a relation which holds in the KBSM of the knot exterior, called the minimal relation. In the nal section we prove that, when specializing the variable of the Kau man bracket att =\u00001, the minimal relation becomes the de ning polynomial of the SL(2;C)-character variety of the twist knot. 1. Motivation and background 1.1. Motivation. The Kau man bracket skein module of a 3-manifold was intro- duced by J. Przyticki as a natural generalization of the Kau man bracket to general 3-manifolds. It was later linked to the character variety ofSL(2;C)-representations of the fundamental group of the manifold [B1], [PS]. In this perspective, Kau man bracket skein modules were used to give an alternate description of the A-polynomial of Cooper, Culler, Gillet, Long, and Shalen, and to generalize it to a noncommuta- tive setting [FGL]. The computation of the noncommutative generalization of the A-polynomial of a knot relies heavily on the good understanding of the skein module of the knot complement. The noncommutative generalization of the A-polynomial was computed for the unknot in [FGL], trefoil knot in [G1], partially for (2; 2p + 1)-torus knots in [GS1], and for the gure-eight knot in [GS2]. In those papers, and also in [G2] this knot invariant was linked to the Jones polynomial. This relation led to new developments in the study of colored Jones polynomials [GL]. Let us also point out that such computations yield an alternative way of nding the classical A-polynomial, as it was discussed in [N]. The computation itself is done in three stages. The rst stage consists of the understanding of the Kau man bracket skein module of the knot complement. As knot complements can be obtained by attaching 2-handles to a handlebody, and",
+  "docinfo": {
+   "Producer": "ESP Ghostscript 7.07"
+  },
+  "title_lines": [
+   "SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN",
+   "MODULE OF THE TWIST KNOT EXTERIOR"
+  ],
+  "title_prev": "ning polynomial of the SL(2;C)-character variety of the twist knot. 1. Motivation and background 1.1. Motivation. The Kau man bracket skein module of a 3-manifold was intro- duced by J. Przyticki as a natural generalization of the Kau"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Motivation and background",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Motivation. The Kau",
+   "page": 1,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The Kau",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "The explicit form of the factoring relations",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The \\minimal relation\" in the KBSM of the twist knot exterior. There",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The other factorization relations (The action of Sk(y) on Xi). We now",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Application to the character variety of the m-twist knot",
+   "page": 9,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 10,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 10,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-12-the-kau",
+   "number": "1.2",
+   "title": "The Kau",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 33,
+   "n_words": 6
+  },
+  {
+   "id": "sec-001-2-razvan-gelca-and-fumikazu-nagasato",
+   "number": "2",
+   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 556,
+   "n_words": 91
+  },
+  {
+   "id": "sec-002-1-motivation-and-background",
+   "number": "1",
+   "title": "Motivation and background",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-11-motivation-the-kau",
+   "number": "1.1",
+   "title": "Motivation. The Kau",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4598,
+   "n_words": 792
+  },
+  {
+   "id": "sec-004-2-the-explicit-form-of-the-factoring-relations",
+   "number": "2",
+   "title": "The explicit form of the factoring relations",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 667,
+   "n_words": 112
+  },
+  {
+   "id": "sec-005-21-the-minimal-relation-in-the-kbsm-of-the-twist",
+   "number": "2.1",
+   "title": "The \\minimal relation\" in the KBSM of the twist knot exterior. There",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 577,
+   "n_words": 99
+  },
+  {
+   "id": "sec-006-4-razvan-gelca-and-fumikazu-nagasato",
+   "number": "4",
+   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2611,
+   "n_words": 437
+  },
+  {
+   "id": "sec-007-6-razvan-gelca-and-fumikazu-nagasato",
+   "number": "6",
+   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 802,
+   "n_words": 148
+  },
+  {
+   "id": "sec-008-22-the-other-factorization-relations-the-action",
+   "number": "2.2",
+   "title": "The other factorization relations (The action of Sk(y) on Xi). We now",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 1050,
+   "n_words": 174
+  },
+  {
+   "id": "sec-009-8-razvan-gelca-and-fumikazu-nagasato",
+   "number": "8",
+   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1622,
+   "n_words": 235
+  },
+  {
+   "id": "sec-010-3-application-to-the-character-variety-of-the-m",
+   "number": "3",
+   "title": "Application to the character variety of the m-twist knot",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1935,
+   "n_words": 338
+  },
+  {
+   "id": "sec-011-10-razvan-gelca-and-fumikazu-nagasato",
+   "number": "10",
+   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1475,
+   "n_words": 262
+  },
+  {
+   "id": "sec-012-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 139,
+   "n_words": 21
+  },
+  {
+   "id": "sec-013-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3558,
+   "n_words": 559
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 14,
+  "chars_total": 19623
+ }
+}

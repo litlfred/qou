@@ -17,7 +17,7 @@ Recompute |tau_adjoint| for 4_1 and for the Whitehead link L5a1 by the Theorem-5
 - Theorem 14 + eq. (32), §8, p.23 — Duality with sign: Delta^{phi (x) Ad.rho}_{E_L}(t^{-1}) = (-1)^b * Delta^{phi (x) Ad.rho}_{E_L}(t) for a link exterior with b boundary components (sign term epsilon = (-1)^{b(b-1)/2} computed in Prop. 16).
   Use here: A proved bar-involution (t -> t^{-1}) parity law for the torsion polynomial, with the parity set by the component count b. QOU's bar-even/bar-odd bookkeeping is currently asserted per-object; this is an external, proved instance of exactly that symmetry on an object the corpus already computes, and it is a falsifiable constraint on any candidate torsion polynomial the corpus produces.
 
-Source: `uploads/0906.1500v4.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-0906.1500v4/0906.1500v4.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

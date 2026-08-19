@@ -1,0 +1,67 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-9909088v1",
+ "source_sha256": "52cfb568951f195f",
+ "brief": "THE GAUSS MAP AND A NONCOMPACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEAVES ON SEMIABELIAN VARIETIES — For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as the",
+ "extended": "**THE GAUSS MAP AND A NONCOMPACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEAVES ON SEMIABELIAN VARIETIES**\n\n*J. Franecki, M. Kapranov*\n\n9 pp, 9 sections.\n\n**Abstract.** For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as the degree, in a certain sense, of the Gauss map of Z. It can be regarded as a substitution for the intersection index of the conormal bundle to Z with the zero section of T ∗G, even though G may not be compact. For G a semiabelian variety (in particular, an algebraic torus ( C∗)n), we prove a Riemann- Roch type formula for constructible sheaves on G which involves our substitutions for the intersection indicies. As a corollary, we get that a p erverse sheaf on such a G has nonnegative Euler characteristic, generalizing a theo rem of Loeser-Sabbah.\n\n**Outline.** 2 J. FRANECKI, M. KAPRANOV; 1 Introduction and statement of results; 2 The Gauss map and the Gaussian degree; 4 J. FRANECKI, M. KAPRANOV; 3 Characteristic cycle of an open embedding; 4 Proof of Theorem 1.3 for G = ( C∗)n; 6 J. FRANECKI, M. KAPRANOV; 8 J. FRANECKI, M. KAPRANOV; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 6.3: reduces to our statement.\n- Corollary 1.4: for G = (C∗)n was proven by Loeser-Sabbah [12] and given a diﬀer-",
+ "tokens": {
+  "brief": 49,
+  "extended": 322
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-j-franecki-m-kapranov",
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction-and-statement-of-results",
+   "title": "Introduction and statement of results",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-2-the-gauss-map-and-the-gaussian-degree",
+   "title": "The Gauss map and the Gaussian degree",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-4-j-franecki-m-kapranov",
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-3-characteristic-cycle-of-an-open-embedding",
+   "title": "Characteristic cycle of an open embedding",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-4-proof-of-theorem-13-for-g-cn",
+   "title": "Proof of Theorem 1.3 for G = ( C∗)n",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-006-6-j-franecki-m-kapranov",
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-007-8-j-franecki-m-kapranov",
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "8-9"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -5,13 +5,13 @@
     "qou-0yqu"
   ],
   "dps": 45,
-  "source": "uploads/0307092v2.pdf -- Neumann, Extended Bloch group and the Cheeger-Chern-Simons class, Geometry & Topology 8 (2004) 413-474",
+  "source": "library/0307092v2/0307092v2.pdf -- Neumann, Extended Bloch group and the Cheeger-Chern-Simons class, Geometry & Topology 8 (2004) 413-474",
   "overturns": "Route 43's target ('show sum_sigma [y; eps, 0] is torsion in B-hat(C)') -- the element is not in ker nu, and the admissible flattenings give a non-torsion value.",
   "gates": [
     {
       "gate": "G1",
       "claim": "Neumann's convention, read from the paper rather than reconstructed: R(z;p,q) = R(z) + (pi i/2)(p log(1-z) + q log z) - pi^2/6, valued in C/pi^2 Z. Routes 43-47 used a MINUS sign on the correction and omitted the -pi^2/6 per term. This gate exists so the sign is fixed in the record",
-      "source": "uploads/0307092v2.pdf, Prop 2.5",
+      "source": "library/0307092v2/0307092v2.pdf, Prop 2.5",
       "sign_on_correction": "+",
       "constant_per_term": "-pi^2/6",
       "valued_in": "C / pi^2 Z",

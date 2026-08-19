@@ -1,0 +1,82 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0008040v1",
+ "source_sha256": "a72319b55dbaf20b",
+ "brief": "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh — Let U be the quantum group associated to a Lie algebra g of type An.",
+ "extended": "**Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh**\n\n*Department of Mathematics and Computer Science, University of Leicester, University Road*\n\n21 pp, 12 sections.\n\n**Abstract.** Let U be the quantum group associated to a Lie algebra g of type An. The negative part U − of U has a canonical basis B deﬁned by Lusztig and Kashi- wara, with favourable properties. We show how the spanning v ectors of the cones deﬁned by Lusztig [12], when regarded as monomials in K ashiwara’s root operators, can be described using a remarkable rectangle co mbinatorics. We use this to calculate the Lusztig parameters of the correspo nding canonical basis elements, conjecturing that translates of these vect ors span the simplicial regions of linearity of Lusztig’s piecewise-linear functi on [9, §2].\n\n**Outline.** Abstract; 1 Introduction; 2 Parametrizations of the canonical basis; 1 (B) is a Q(v)-basis of U −, called the canon; 3 The Lusztig cones and their spanning vectors; 4 Canonical basis elements corresponding to sp; 5 Rectangles; 3 F4F1F (2); 2 F3F1. Similarly, there is; 6 A Reparametrization; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: The Z[v]-span L of Bi is independent of i. Let π : L → L/v L be the natural projection. The image\n- Theorem 2.2: (i) Let π ′ : L′ → L ′/v L′ be the natural projection, and let B′ = π ′(S). Then B′ is a Q-basis of\n- Theorem 3.1: (a) The multiset spanning vector M (c, i) depends only upon P (c, i). For a partial quiver P we\n- Theorem 4.4: Let i ∈ χ n. For j = 1, 2,... ,n and P a partial quiver associated to i, let bj(i) =\n- Theorem 5.3: Suppose i ∈χ n is compatible with a quiver Q, and let (c, i) be a chamber in CD (i).\n- Theorem 3.1: In the case where P = j ∈ [1,n ], let Y = j; here we consider Y to be the vertex j of Q, with no",
+ "tokens": {
+  "brief": 42,
+  "extended": 468
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-2-parametrizations-of-the-canonical-basis",
+   "title": "Parametrizations of the canonical basis",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-1-b-is-a-qv-basis-of-u-called-the-canonical",
+   "title": "(B) is a Q(v)-basis of U −, called the canonical",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-3-the-lusztig-cones-and-their-spanning-vectors",
+   "title": "The Lusztig cones and their spanning vectors",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-005-4-canonical-basis-elements-corresponding-to-span",
+   "title": "Canonical basis elements corresponding to spanning vecto rs",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-006-5-rectangles",
+   "title": "Rectangles",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-007-3-f4f1f-2",
+   "title": "F4F1F (2)",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-008-2-f3f1-similarly-there-is",
+   "title": "F3F1. Similarly, there is",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-009-6-a-reparametrization",
+   "title": "A Reparametrization",
+   "pages": "13-20"
+  },
+  {
+   "id": "sec-010-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-011-references",
+   "title": "References",
+   "pages": "20-21"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

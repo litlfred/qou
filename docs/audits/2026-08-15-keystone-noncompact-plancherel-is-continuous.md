@@ -4,11 +4,11 @@
 **Branch:** `claude/l2-1ppq-mass-binding-mh643j`
 **Beans:** `qou-uqen` (keystone), follow-on to the s5-so3 ledger
 **Sources:** owner-uploaded, commit `87e9eb6` —
-[`uploads/9808030v1.pdf`](../../uploads/9808030v1.pdf) (Ahmedov–Duru, *Plancherel
+[`library/arxiv-math-9808030v1/9808030v1.pdf`](../../library/arxiv-math-9808030v1/9808030v1.pdf) (Ahmedov–Duru, *Plancherel
 Measure on E_q(2)*, arXiv:math/9808030),
-[`uploads/1108.5365v2.pdf`](../../uploads/1108.5365v2.pdf) (Ip, *Representation of
+[`library/arxiv-1108.5365v2/1108.5365v2.pdf`](../../library/arxiv-1108.5365v2/1108.5365v2.pdf) (Ip, *Representation of
 the Quantum Plane … Harmonic Analysis on GL⁺_q(2,ℝ)*, arXiv:1108.5365),
-[`uploads/9710022v2.pdf`](../../uploads/9710022v2.pdf) (Buffenoir–Roche, *Harmonic
+[`library/9710022v2/9710022v2.pdf`](../../library/9710022v2/9710022v2.pdf) (Buffenoir–Roche, *Harmonic
 Analysis on the quantum Lorentz group*, arXiv:q-alg/9710022)
 
 ---

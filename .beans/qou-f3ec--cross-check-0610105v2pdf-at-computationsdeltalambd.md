@@ -16,7 +16,7 @@ The probe compares its operator against a hard-coded rho_strong = (1, 3.8128, 13
 - Sect. II (following ref. [12]) — The four-body binding energies are computed WITHOUT an independent four-body parameter at leading order; the two- and three-body inputs suffice.
   Use here: This is the external analogue of the probe's mu4 = 0 baseline (M(4) = 4 M(3) - 6 M(2), Lean tjon_deviation_eq_mu4). It is an analogue, not a proof of that baseline: the corpus's baseline is a simplex/inclusion-exclusion form on a Hecke block trace, whereas this is a zero-range EFT statement about bosons with large scattering length. Cite it as the reason a nonzero mu4 is a meaningful signal, not as a derivation of the form.
 
-Source: `uploads/0610105v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-nucl-th-0610105v2/0610105v2.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

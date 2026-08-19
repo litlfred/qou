@@ -1,0 +1,132 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "s40879-023-00706-0",
+ "source_sha256": "4c5af312d2e5d6a7",
+ "brief": "European Journal of Mathematics (2024) 10:3 RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties.",
+ "extended": "**European Journal of Mathematics (2024) 10:3 RESEARCH ARTICLE**\n\n*Bring’s curve: old and new*\n\n46 pp, 22 sections.\n\n**Abstract.** Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X 0(50), providing a complete description of the orbit decomposition of the theta characteristics, and identifying the unique invariant characteristic with the divisor of the Szeg˝o kernel. In achieving this we have used modern computational tools in Sagemath, Macaulay2, and Maple, for which notebooks demonstrating calculations are provided.\n\n**Outline.** Abstract; 1 Introduction; 2.1 Basic properties; 2.2 The period matrix; 2.3 The automorphism group; 3 Geometric points; 3.1 Weierstrass points; 3.2 Vertices and face-centres; 4 Quotients by subgroups; 4.1 Genera of quotients; 4.2 Relations between quotients; 4.3 Quotients by a 4- and 2,2-cycle; 4.4 Quotients by a 3-cycle; 4.5 Quotients by a transposition; 4.6 Summarising; 5 Theta characteristics; 5.1 Abel–Jacobi and the Riemann constant vecto; 5.2 Tritangent planes and odd characteristics\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.10: Deﬁne the matrices M, M S by\n- Theorem 2.12: The A 5 subgroup of Aut(B) can be realised as a group of\n- Theorem 3.4: If X is a Riemann surface of genus g> 2 with g3 −g\n- Theorem 5.5: KQ = AQ(/Delta1S), and as such /Delta1S is a theta characteristic.\n- Theorem 5.9: The orbit decomposition of even theta characteristics on Bring’s curve\n- Theorem 5.11: The theta characteristic/Delta1(deﬁned in Example5.3) is the unique invari-",
+ "tokens": {
+  "brief": 44,
+  "extended": 453
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-21-basic-properties",
+   "title": "Basic properties",
+   "pages": "3-11"
+  },
+  {
+   "id": "sec-003-22-the-period-matrix",
+   "title": "The period matrix",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-004-23-the-automorphism-group",
+   "title": "The automorphism group",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-005-3-geometric-points",
+   "title": "Geometric points",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-006-31-weierstrass-points",
+   "title": "Weierstrass points",
+   "pages": "19-22"
+  },
+  {
+   "id": "sec-007-32-vertices-and-face-centres",
+   "title": "Vertices and face-centres",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-008-4-quotients-by-subgroups",
+   "title": "Quotients by subgroups",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-009-41-genera-of-quotients",
+   "title": "Genera of quotients",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-010-42-relations-between-quotients",
+   "title": "Relations between quotients",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-011-43-quotients-by-a-4--and-22-cycle",
+   "title": "Quotients by a 4- and 2,2-cycle",
+   "pages": "26-30"
+  },
+  {
+   "id": "sec-012-44-quotients-by-a-3-cycle",
+   "title": "Quotients by a 3-cycle",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-013-45-quotients-by-a-transposition",
+   "title": "Quotients by a transposition",
+   "pages": "32-35"
+  },
+  {
+   "id": "sec-014-46-summarising",
+   "title": "Summarising",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-015-5-theta-characteristics",
+   "title": "Theta characteristics",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-016-51-abeljacobi-and-the-riemann-constant-vector",
+   "title": "Abel–Jacobi and the Riemann constant vector",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-017-52-tritangent-planes-and-odd-characteristics",
+   "title": "Tritangent planes and odd characteristics",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-018-53-even-characteristics",
+   "title": "Even characteristics",
+   "pages": "40-43"
+  },
+  {
+   "id": "sec-019-6-conclusion",
+   "title": "Conclusion",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-020-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-021-references",
+   "title": "References",
+   "pages": "44-46"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

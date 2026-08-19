@@ -15,7 +15,7 @@ Record in the keystone ledger that the Ohtsuki series of Sigma(2,3,5) is Gevrey-
 - Section 4.2, p. 64-65 — Z_K(Mbar)(q) = Z_K(M)(q^{-1}) at all roots of unity, hence Z_inf(Mbar) is obtained from Z_inf(M) by q -> q^{-1}, i.e. h -> -h/(1+h); together with lambda_1 = 6 lambda_Casson and explicit degree-2m polynomials for lambda_m(S,T).
   Use here: States the q -> q^{-1} bar involution at the level of the 3-manifold WRT/Ohtsuki series itself, which is exactly the involution the keystone uses to move from q0 ~ 1.10998 to 1/q0 ~ 0.901. Gives the keystone's bar step a literature statement at the right level of generality (manifold invariant, not just the false theta), and supplies the orientation-reversal bookkeeping any lambda_n cross-check needs.
 
-Source: `uploads/04procbryden.pdf` — no `references.ts` entry yet
+Source: `library/04procbryden/04procbryden.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

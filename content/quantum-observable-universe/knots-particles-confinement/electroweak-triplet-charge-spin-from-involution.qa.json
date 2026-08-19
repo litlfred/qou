@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean"
   },
   "source_hashes": {
-    "md": "dcc713cafbaa",
+    "md": "4a577972f512",
     "ts": "816034935aac",
     "lean": "89c323a45829",
     "lean_statement": "43989ae4e58d"
@@ -1815,7 +1815,27 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac",
+          "lean": "89c323a45829",
+          "lean_statement": "43989ae4e58d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:09.192Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:58:09.192Z"
 }

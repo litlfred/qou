@@ -1,0 +1,131 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1809.08419v1",
+ "source": {
+  "file": "1809.08419v1.pdf",
+  "sha256": "7ebca632544a6ea437d44a312b81a29b5897af5e6bea76a874d7ccd228945311",
+  "bytes": 187282,
+  "pages": 14
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1809.08419",
+   "version": "1",
+   "primary_class": "math.GR",
+   "stamp_date": "22 Sep 2018"
+  },
+  "doi": null,
+  "title": "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS",
+  "authors_raw": "JEONG-YUP LEE AND DONG-IL LEE ∗",
+  "abstract": "For the noncrystallographic Coxeter groups of type H, we construct their Gr¨ obner- Shirshov bases and the corresponding standard monomials.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181015044931-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "GRÖBNER-SHIRSHOV BASES FOR NON-CRYST ALLOGRAPHIC COXETER GROUPS",
+  "title_lines": [
+   "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER",
+   "GROUPS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Coxeter groups of types H2 and H3",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Main results for H4",
+   "page": 5,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2751,
+   "n_words": 437
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3154,
+   "n_words": 706
+  },
+  {
+   "id": "sec-002-3-coxeter-groups-of-types-h2-and-h3",
+   "number": "3",
+   "title": "Coxeter groups of types H2 and H3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 5984,
+   "n_words": 1105
+  },
+  {
+   "id": "sec-003-4-main-results-for-h4",
+   "number": "4",
+   "title": "Main results for H4",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 13,
+   "n_chars": 20667,
+   "n_words": 2527
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 3207,
+   "n_words": 514
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 5,
+  "chars_total": 35763
+ }
+}

@@ -70,6 +70,7 @@ def beta_p_word_v21, beta_n_word_v21 : TypedB3Word
 
 noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
   Matrix.trace (w.foldl ... fun acc c => acc * crossing_to_matrix q c)
+```
 
 The theorem statement is now **explicit at the matrix-product
 level**. The proof is the only remaining `sorry` here — discharged by the substantive sympy

@@ -1,0 +1,229 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0104104v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "e2154399f783aa9beacf7ce1fb96a17c579387895a4d0d3f61a4331c846acaab",
+  "file": "0104104v3.pdf"
+ },
+ "provenance": {
+  "title": "Geometry of Four-vector Fields on Quaternionic Flag Manifolds",
+  "authors": "Philip Foth & Frederick Leitner",
+  "arxiv": {
+   "id": "math/0104104",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "29 Mar 2002"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 15,
+  "by_kind": {
+   "example": 3,
+   "proposition": 6,
+   "lemma": 3,
+   "theorem": 3
+  },
+  "formalization_candidates": 12
+ },
+ "candidates": [
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "Consider the space HP1 identi\ufb01ed as HP1 \u2243 \u03a3\\Sp(2)\u2243 S4 from",
+   "section_file": "sections/sec-003-2-quaternionic-matrices-and-\ufb02ags.md",
+   "section_title": "Quaternionic matrices and \ufb02ags",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "Let \u03c8 be an Sp(2)-invariant volume form on S4. Then ( HP1,\u03c8) is",
+   "section_file": "sections/sec-005-3-quatrisson-and-tetraplectic-structures.md",
+   "section_title": "Quatrisson and tetraplectic structures",
+   "pages": "4-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.2",
+   "name": null,
+   "statement": "Denoting \u22c0 i\u03c7(M ) the space of i-vector \ufb01elds on M , there",
+   "section_file": "sections/sec-005-3-quatrisson-and-tetraplectic-structures.md",
+   "section_title": "Quatrisson and tetraplectic structures",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.6",
+   "name": null,
+   "statement": "Letting (M,\u03be ) be as above, the rank of \u03be at any x\u2208M is divisible",
+   "section_file": "sections/sec-005-3-quatrisson-and-tetraplectic-structures.md",
+   "section_title": "Quatrisson and tetraplectic structures",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "Let Fn be a quaternionic \ufb02ag manifold considered as a tetraplectic",
+   "section_file": "sections/sec-005-3-quatrisson-and-tetraplectic-structures.md",
+   "section_title": "Quatrisson and tetraplectic structures",
+   "pages": "4-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.1",
+   "name": null,
+   "statement": "The 4-vector \ufb01eld \u03ba is a quatrisson structure on Sp(2). More-",
+   "section_file": "sections/sec-006-6-foth-leitner.md",
+   "section_title": "Foth, Leitner",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.2",
+   "name": null,
+   "statement": "The invariant quatrisson structure on S4\u2243 HP1 is given by:",
+   "section_file": "sections/sec-006-6-foth-leitner.md",
+   "section_title": "Foth, Leitner",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.1",
+   "name": null,
+   "statement": "The 4-vector \ufb01eld \u03ba descends to \u03a3\\Sp(n), inducing a \u03a3 -",
+   "section_file": "sections/sec-009-0-id.md",
+   "section_title": "Id",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.3",
+   "name": null,
+   "statement": "The 4-vector \ufb01eld \u03ba on Sp(n) is multiplicative.",
+   "section_file": "sections/sec-009-0-id.md",
+   "section_title": "Id",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.4",
+   "name": null,
+   "statement": "Let\u2135 be the Bruhat quatrisson structure on \u03a3\\Sp(n). The",
+   "section_file": "sections/sec-009-0-id.md",
+   "section_title": "Id",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.5",
+   "name": null,
+   "statement": "The embeddings fr,r +1 : Sp(2)\u0592\u2192Sp(n) respect the multiplicative",
+   "section_file": "sections/sec-009-0-id.md",
+   "section_title": "Id",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.6",
+   "name": null,
+   "statement": "Every tetraplectic leaf L of Sp(n) lies entirely in some Zw.",
+   "section_file": "sections/sec-009-0-id.md",
+   "section_title": "Id",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.7",
+   "name": null,
+   "statement": "The tetraplectic leaf decomposition of the quaternionic \ufb02a g man-",
+   "section_file": "sections/sec-009-0-id.md",
+   "section_title": "Id",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6.1",
+   "name": null,
+   "statement": "In the above situation for each X\u2208 h we have:",
+   "section_file": "sections/sec-011-6-quatrisson-action-and-intrinsic-derivative.md",
+   "section_title": "Quatrisson action and intrinsic derivative",
+   "pages": "10-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7.2",
+   "name": null,
+   "statement": "The tetraplectic leaves of \u03ba on Sp(n) are the orbits of the dress-",
+   "section_file": "sections/sec-012-7-dressing-action.md",
+   "section_title": "Dressing action",
+   "pages": "10-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}
