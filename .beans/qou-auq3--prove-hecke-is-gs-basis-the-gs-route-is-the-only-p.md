@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-16T14:02:46Z
+updated_at: 2026-08-19T12:03:18Z
 ---
 
 
@@ -2625,3 +2625,39 @@ two blocks, and the closing steps, with the `OverlapComposition` and its `spoly`
 identity at the end. Same wiring the `a > b` regime needed, over a longer list.
 No new *kind* of object is known to be missing; that claim is only as good as
 the measurements above, which cover `a ≤ 7` and a sample of `b`.
+
+### Landed — PR #5247 merged 2026-08-19
+
+Rebase-merged, so the arc's commits sit on `main` individually (`895f5e07`
+… `114abbb1`). Verified on `main` after the merge: `quadStep` and
+`farComm_transport_right_sources` both present in `HeckeCompletion.lean`, and
+both probes with their witnesses present under `computations/`.
+
+The bean stays **in-progress**: the merge landed the *infrastructure* for the
+`a ≤ b` regime, not the regime. `hecke_is_gs_basis` is untouched by this arc so
+far.
+
+**The next tranche, in order.**
+
+1. **The outer induction over the block's levels.** Everything it needs exists:
+   the per-level lemma is `farComm_transport_right_sources`, and the level
+   structure is measured — `b > a` gives `a` levels with lengths
+   `min(b−a−1+k, b−a+2)`, `b = a` gives `a−1` levels with `min(k, 2)`. Because
+   the number of *short* levels is fixed (two, or one on the diagonal), this
+   should be a fixed prologue plus a uniform single-index loop, i.e. the same
+   kind of object as §4af's loop rather than a new one.
+2. **The assembly.** `MultiStepReduction.trans` over: prefix loop passes, the
+   two `Y·Q` pairs, the two blocks, the closing steps, then the
+   `OverlapComposition` and its `spoly` identity. Same wiring the `a > b`
+   regime needed, over a longer list.
+
+**Two cautions for whoever picks this up.**
+
+- The measurements behind (1) cover `a ≤ 7` and a *sample* of `b`. "No new kind
+  of object is missing" is an inference from that sample, not a theorem — this
+  arc has already had three structural guesses fail (the linear prefix fit, the
+  quadratic-step contexts, the transport direction).
+- Verify with `lean`-direct, never `lake build`, on a tree restored from
+  `lake-cache/qou-<toolchain-slug>`: that branch carries Mathlib but **no UGB
+  oleans**, so build the cone Elem → Basic → CompositionLemma → NormalForms →
+  AlgOps → HeckeGS first (~30 s), then `HeckeCompletion` (~2 min).
