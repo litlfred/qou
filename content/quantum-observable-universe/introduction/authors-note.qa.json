@@ -23,7 +23,179 @@
           "agent_skill": "local/one-voice-audit"
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c65795d87d53",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.665Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "No denial constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c65795d87d53",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.724Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "A single factual paragraph plus an attributed epigraph; no reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c65795d87d53",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.784Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "Two matched em-dash pairs in 185 words (a high rate for the length), but both are genuine parentheticals.",
+        "notes": "Style note: both pairs are unspaced ('its own—famous external ... separately—of which'), against the spaced convention used elsewhere in the corpus."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c65795d87d53",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.833Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "'braid-word reductions, Groebner--Shirshov normal forms, linear programs, hyperbolic volumes' is a four-item list of actual computation classes."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c65795d87d53",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.889Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "The closing line is an attributed Pascal epigraph, a conventional device in an author's note rather than a manufactured quotable."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c65795d87d53",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.941Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "The block is an author's note; describing the paper's formalisation state is its subject, not narrated emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c65795d87d53",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:59.001Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "No closing restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c65795d87d53",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:59.060Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "The disability disclosure and the LLM-assistance statement are factual and stated without affect; 'Human adjudication remains incomplete' is a plain limitation."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c65795d87d53",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:59.110Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "'Every proof ... possesses a corresponding Lean 4 formalisation' is immediately qualified by the 687/721 sorry-free figure and the citation carve-out. Arithmetic checks: 687/721 = 95.28% (quoted 95.3%), 71/80 = 88.75% (quoted 88.8%).",
+        "notes": "Rigor flag reported separately: the 721 provable-claim total does not match the in-repo definition index, which lists 502 provable-kind rows (35 theorems + 420 propositions + 33 lemmas + 14 corollaries) and 120 conjectures against the quoted 80 primaries."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c65795d87d53",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:59.196Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "One long but well-structured paragraph."
+      }
     ]
   },
-  "updated_at": "2026-07-07T14:26:55.461562Z"
+  "updated_at": "2026-08-19T21:45:59.196Z"
 }

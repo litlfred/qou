@@ -1189,6 +1189,21 @@
         "reviewed_at": "2026-08-15T10:30:58.665Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "15cf11529ecc",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:09.893Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'local in the normal-form word: each vertex volume depends on a single normal-form generator ..., not on the global braid word beta' and 'The first arrow is non-local; the second is local' are the proposition's own locality/non-locality distinction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1208,6 +1223,21 @@
         "reviewed_at": "2026-08-15T10:30:58.665Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "15cf11529ecc",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:09.948Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three numbered parts then a Reconciliation section; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1227,6 +1257,21 @@
         "reviewed_at": "2026-08-15T10:30:58.665Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 421 words)"
+      },
+      {
+        "field_hash": {
+          "md": "15cf11529ecc",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.022Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One em-dash in 532 words, introducing the concrete consequence of non-locality."
       }
     ],
     "trap-triples": [
@@ -1246,6 +1291,21 @@
         "reviewed_at": "2026-08-15T10:30:58.665Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 421 words)"
+      },
+      {
+        "field_hash": {
+          "md": "15cf11529ecc",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.139Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'three rewriting rules' are the actual Groebner-Shirshov rules (quadratic, braid, far-commutativity), each then displayed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1265,6 +1325,21 @@
         "reviewed_at": "2026-08-15T10:30:58.665Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "15cf11529ecc",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.200Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Closes by naming which arrow each operational stance corresponds to — the reconciliation the proposition asserts."
       }
     ],
     "trap-meta-commentary": [
@@ -1284,6 +1359,21 @@
         "reviewed_at": "2026-08-15T10:30:58.665Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "15cf11529ecc",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.253Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Part (2) is a structural observation about ...' labels what kind of claim follows; no narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1303,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:30:58.665Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "15cf11529ecc",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.334Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "The Reconciliation section is part (3)'s obligation, not a closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1322,6 +1427,21 @@
         "reviewed_at": "2026-08-15T10:30:58.665Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "15cf11529ecc",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.397Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1341,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:30:58.665Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "15cf11529ecc",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.460Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No unqualified maxima; the Wenzl weight claim is scoped ('exact for every lambda |- n <= 5')."
       }
     ],
     "trap-nonspeakable": [
@@ -1360,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:30:58.665Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "15cf11529ecc",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.534Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Proof prose parses aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1382,5 +1532,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:34:10.534Z"
 }
