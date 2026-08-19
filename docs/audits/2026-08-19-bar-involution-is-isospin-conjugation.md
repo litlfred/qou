@@ -116,6 +116,73 @@ observable it most plausibly bears on.
 the leading *order* only. No closed form is asserted; naming a constant against
 this five-point sample would be a fit, and the corpus forbids it.
 
+## 4b. Where `δ` lives: an exact extensive/intensive split (added on the second pass)
+
+Asked to try for `δ`'s closed form. I did not get it. What the attempt produced
+instead is the structure, exactly — and a named blocker.
+
+**Symbolically, the interface letter is the sole bar-parity defect.** The word
+builder *is* fully symbolic (sympy), and every letter of the atom word is
+exactly bar-odd — `d(1/q) = −d(q)` — for `d ∈ {0, −h, −h/2}`. The one exception
+is the color-weighted interface letter `d = −h·(½ − f/4)`, `f =
+flavor_split_leading`. Because `f(1/q) = −q²·f(q)` (exact) the `f`-part does not
+flip sign along with `h`, leaving
+
+```
+d(q) + d(1/q)  =  (q−1)⁴ (q+1)² (q²+1)² / (12 q⁵)
+```
+
+fully factored, manifestly positive for `q > 0`, vanishing to fourth order at
+`q = 1`. Sympy-verified against `h·f·(q²+1)/4`.
+
+The interface letters are also **exactly what distinguishes the atom word from
+the free word**. So the atom/free asymmetry and the bar-parity defect have the
+same support — which is why `δ` is a property of the interfaces and of nothing
+else.
+
+**The split is exact, and it is extensive vs intensive.** Summing
+`ln|tr_M(Z,N;q)/tr_M(N,Z;1/q)| / ln q` over a mirror pair:
+
+| `A` | `S_free(A)` | first difference | `S_atom − S_free` |
+|---|---|---|---|
+| 2 | 114.28105868230766694 | — | −0.00062926533703645 |
+| 3 | 171.42158802346150041 | 57.1405293411538335 | −0.00062926533703645 |
+| 4 | 228.56211736461533389 | 57.1405293411538335 | −0.00062926533703645 |
+| 5 | 285.70264670576916736 | 57.1405293411538335 | −0.00062926533703645 |
+| 6 | 342.84317604692300083 | 57.1405293411538335 | −0.00062926533703645 |
+
+- The first difference is **constant to 3.6e-24**, so `S_free(A) = A·c(q)` is
+  *measured*, not fitted — no two-parameter form was ever solved for. And the
+  residual `max|S_free(A) − A·c|` is **3.4e-24**, i.e. there is **no constant
+  term**: the free channel's mirror log is **purely extensive**.
+- The atom channel obeys the same extensive law **minus a purely intensive
+  constant** `2δ`, identical at every `A` (spread 6.0e-23).
+
+That is the same extensive/intensive language the `Δ_λ` magnitude problem is
+stated in — where the missing object is likewise *"a separate additive extensive
+term"* rather than a per-block weight. Here the separation is exact and measured.
+
+**Still open, and not explained.** The *number* of interface letters grows with
+`A`, yet `δ` does not. Something makes a growing set of interface defects
+contribute an `A`-independent net amount to `ln(free/atom)`. That is the missing
+step, and any closed form for `δ` has to come through it. I do not have it.
+
+**The blocker for the symbolic route, named.** `chi_monotone_transfer.word_to_mpfr`
+calls `float(h)` — not as a computation (precision is fine; it rebuilds `d` at
+full dps afterwards) but as a **template classifier**, matching each letter
+against `σ / σ⁻¹ / averaged / color-weighted`. That `float` is what refuses a
+sympy symbol, so `chi_all_lambda_reduced_block` — and therefore the whole trace
+— cannot be evaluated symbolically. The word builder is symbolic; the transfer
+is not. Making the classifier structural rather than numeric would open the
+symbolic derivation of `δ`, and is the concrete next step.
+
+**A refuted guess, recorded.** I expected `q ↦ 1/q` to act as the conjugate
+partition `λ ↦ λ′` (the standard `H_n(q) ≅ H_n(q⁻¹)` fact). For the self-mirror
+deuteron the per-`λ` ratios are all ≈ −1 (defect 1.6e-4 … 1.8e-3), so the shape
+is right there — but at `n = 9` they scatter (−0.66, −0.70, +1.08, +3.47). **The
+naive per-`λ` conjugation law is refuted as stated**; it cannot be the mechanism,
+since `y_λ ≠ y_{λ′}` anyway and the sum would not transform cleanly.
+
 ## 5. What this does and does not say about `conj:binding-qbeta-complex-volume`
 
 The conjecture assigns the bar-even channel to binding (`Re 𝔙`) and the bar-odd
@@ -143,19 +210,27 @@ corpus stated.
 
 ## 6. Follow-on
 
-1. **Formalize the mirror law.** `L(Z,N;q) − L(N,Z;1/q) = δ(q)` with `δ`
-   nucleus-independent is a clean statement for Lean, and it is exactly the
-   formalize-first shape: prove the invariant, then let it prune. Deriving `δ`'s
-   closed form symbolically from the deuteron word is the honest route to
-   identifying it — the five-point numeric sample is not.
-2. **Re-scope the four bar-oddness sites** (`qou-sglq`) with this in hand: the
+1. **Formalize the mirror law**, together with the §4b split: `S_free(A) = A·c(q)`
+   exactly, `S_atom = S_free − 2δ` exactly, and the interface defect
+   `(q−1)⁴(q+1)²(q²+1)²/(12q⁵)`. The last is already a sympy-verified identity
+   and is the easiest of the three to state in Lean.
+2. **Unblock the symbolic route** by making `word_to_mpfr`'s template match
+   structural instead of `float`-based (§4b). That is what stands between here
+   and a derived `δ`; identifying `δ` from the numeric sample instead would be a
+   fit.
+3. **Explain the `A`-independence** of `δ` against a growing interface count
+   (§4b). This is the real open step.
+4. **Re-scope the four bar-oddness sites** (`qou-sglq`) with this in hand: the
    supporting quantity *is* computable, and what it shows is a mirror law, not
    the bar-oddness those sites assert.
-3. **The bar-norm claim should be retired, not repaired.** It is negative.
+5. **The bar-norm claim should be retired, not repaired.** It is negative.
 
 ## What this audit did not do
 
-- It did **not** identify `δ(q)`, and deliberately did not scan a basis for it.
+- It did **not** identify `δ(q)`. The second pass tried and failed; §4b records
+  the structure it got instead, the blocker that stopped it, and a refuted guess.
+  No basis was scanned, and no two-parameter form was solved for — the affine law
+  in §4b is a constant first difference, which is a measurement.
 - It did **not** derive `Im 𝔙`, nor connect the mirror difference to `Q_β`.
 - It did **not** re-run or refresh `complex-volume-unification.witness.json`.
   The edit there is comment-only and every emitted number is byte-identical; a
