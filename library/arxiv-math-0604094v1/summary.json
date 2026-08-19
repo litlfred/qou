@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0604094v1",
+ "source_sha256": "f0c4c36ab0acf537",
+ "brief": "GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF QUANTUM INVARIANT KAZUHIRO HIKAMI — We study quantum invariant Zγ(M) for cusped",
+ "extended": "**GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF QUANTUM INVARIANT KAZUHIRO HIKAMI**\n\n58 pp, 5 sections.\n\n**Abstract.** We study quantum invariant Zγ(M) for cusped hyperbolic 3-manifoldM. We construct this invariant based on oriented ideal triangulation of M by assigning to each tetrahedron the quantum dilogarithm function, which is introduced by Faddeev in studies of the modular double of the quantum group. Following Thurston and Neumann–Zagier, we deform a complete hyperbolic structure of M, and correspondingly we deﬁne quantum invariantZγ(Mu). This quantum invariant is shown to give the Neumann–Zagier potential function in th e classical limit γ → 0, and the A- polynomial can be derived from the potential function. We ex plain our construction by taking examples of 3-manifolds such as complements of hyperbolic k nots and punctured torus bundle over the circle. 1.\n\n**Outline.** Quantum Dilogarithm Function; Examples; 52; Once-Punctured Torus Bundles over the Circle; Complement of Knots up to 7 Crossings",
+ "tokens": {
+  "brief": 48,
+  "extended": 272
+ },
+ "sections": [
+  {
+   "id": "sec-000-quantum-dilogarithm-function",
+   "title": "Quantum Dilogarithm Function",
+   "pages": "2-12"
+  },
+  {
+   "id": "sec-001-examples",
+   "title": "Examples",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-002-52",
+   "title": "52",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-003-once-punctured-torus-bundles-over-the-circle",
+   "title": "Once-Punctured Torus Bundles over the Circle",
+   "pages": "19-26"
+  },
+  {
+   "id": "sec-004-complement-of-knots-up-to-7-crossings",
+   "title": "Complement of Knots up to 7 Crossings",
+   "pages": "26-58"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

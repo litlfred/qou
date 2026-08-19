@@ -8,9 +8,9 @@ created_at: 2026-07-27T02:53:05Z
 updated_at: 2026-08-02T08:30:00Z
 ---
 
-DONE (PR #4400). Sources read in full: `uploads/0611181v2.pdf` (van der
+DONE (PR #4400). Sources read in full: `library/arxiv-math-0611181v2/0611181v2.pdf` (van der
 Veen, arXiv:math/0611181 v2, all 12 pages via pypdf) and
-`uploads/1172-3.pdf` identified as Habiro "On the colored Jones
+`library/1172-3/1172-3.pdf` identified as Habiro "On the colored Jones
 polynomials of some simple links" (RIMS Kōkyūroku 1172, 10 pages; the
 other 1172-N files are L²-torsion / Hikami / WRT papers).
 

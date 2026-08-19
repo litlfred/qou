@@ -372,7 +372,7 @@ Two corrections to this bean's own record, both recorded in `qou-rstq`:
 
 ## ⚠ 2026-08-08 — the level-7 ladder is CLASSICAL. Watson (1937).
 
-Literature arrived (`uploads/9408113v2.pdf` — Kirillov, *Dilogarithm identities*,
+Literature arrived (`library/arxiv-hep-th-9408113v2/9408113v2.pdf` — Kirillov, *Dilogarithm identities*,
 hep-th/9408113). **§1.2.2 gives Watson's relations**, and they are this lane's.
 
 Kirillov: let `α, −β, −1/γ` be the roots of `x³ + 2x² − x − 1 = 0`, with
@@ -404,7 +404,7 @@ it, presented the numerators as "DERIVED" with a tacit implication of novelty.
 
 Both are worth having. Neither is a new theorem.
 
-### Two further confirmations from Zagier (`uploads/the-dilogarithm-function-*.pdf`)
+### Two further confirmations from Zagier (`library/the-dilogarithm-function-*.pdf`)
 
 * **`FiveTwoRogersExtend.extend` is Zagier's definition verbatim** — `L(0)=0`,
   `L(1)=π²/6`, `L(x)=2L(1)−L(1/x)` for `x>1`, `L(x)=−L(x/(x−1))` for `x<0`.

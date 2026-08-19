@@ -15,7 +15,7 @@ Same discipline as its companion 1402.4615: the Jack alpha-deformation is not th
 - Abstract + main theorem (§1.1) — Each such Jack-deformed random Young diagram converges to a limit shape, and fluctuations around the limit are asymptotically Gaussian.
   Use here: The template statement for the folio's open 'q-deformed Kerov-Vershik convergence'. Records that the deformed statement is a theorem for one deformation, so part (3) is plausibly reachable rather than speculative — while remaining silent on the q case.
 
-Source: `uploads/1704.02352v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1704.02352v2/1704.02352v2.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

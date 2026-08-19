@@ -1,0 +1,77 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2301.02038v1",
+ "source_sha256": "27b303939826ab39",
+ "brief": "Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a",
+ "extended": "**Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Differential Equations**\n\n*Fabrizio Pugliese, Giovanni Sparano, and Luca Vitagliano*\n\n26 pp, 11 sections.\n\n**Abstract.** Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-li near partial dif- ferential equations and it is essentially due to Alexandre M . Vinogradov and his collaborators. Many coordinate free properties of PDEs ﬁnd their natu- ral place in Secondary Calculus including: symmetries and c onservation laws, variational principles and the coordinate free aspects of t he calculus of vari- ations, recursion operators and Hamiltonian structures, e tc. The building blocks of this language are horizontal cohomologies of diﬃe ties, i.e. inﬁnite prolongations of PDEs, and their versions with local coeﬃci ents. The main paradigm of Secondary Calculus is the principle, due to A. M.\n\n**Outline.** Introduction; 1 Geometry of PDEs; 1.1 jet spaces; 1.2 the Cartan distribution; 2 Cohomology of PDEs; 2.1 horizontal cohomology; 2.2 interpreting horizontal cohomologies; 2.3 algebraic structures on horizontal cohomol; 3 Homotopy of PDEs; 3.1 homotopy algebras; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.6: The operations (2.7) and (2.8) are well-deﬁned and independ ent\n- Theorem 2.7: The operations (2.9) and (2.10) are well-deﬁned and indepen -\n- Theorem 3.8: A splitting (2.5) induces an LR∞-algebra structure on\n- Theorem 3.10: The Chevalley-Eilenberg algebra of the LR∞-algebra of Theo-\n- Theorem: s 3.8 and 3.10 provide indications towards Vinogradov’s conjecture\n- Theorem 3.13: The graded vector space Ω •(E, VDO)[1] can be equipped with",
+ "tokens": {
+  "brief": 49,
+  "extended": 433
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-1-geometry-of-pdes",
+   "title": "Geometry of PDEs",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-11-jet-spaces",
+   "title": "jet spaces",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-12-the-cartan-distribution",
+   "title": "the Cartan distribution",
+   "pages": "6-10"
+  },
+  {
+   "id": "sec-004-2-cohomology-of-pdes",
+   "title": "Cohomology of PDEs",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-005-21-horizontal-cohomology",
+   "title": "horizontal cohomology",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-006-22-interpreting-horizontal-cohomologies",
+   "title": "interpreting horizontal cohomologies",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-007-23-algebraic-structures-on-horizontal-cohomologi",
+   "title": "algebraic structures on horizontal cohomologies",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-008-3-homotopy-of-pdes",
+   "title": "Homotopy of PDEs",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-009-31-homotopy-algebras",
+   "title": "homotopy algebras",
+   "pages": "18-25"
+  },
+  {
+   "id": "sec-010-references",
+   "title": "References",
+   "pages": "25-26"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

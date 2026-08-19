@@ -1,0 +1,100 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0810.1064v1",
+ "source": {
+  "file": "0810.1064v1.pdf",
+  "sha256": "b2d7514c5382ceaaa1824e32bc21518f43155a83644c9967642788a5cf0c79a9",
+  "bytes": 151848,
+  "pages": 9
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0810.1064",
+   "version": "1",
+   "primary_class": "math.NT",
+   "stamp_date": "6 Oct 2008"
+  },
+  "doi": null,
+  "title": "Multiple polylogarithm values at roots of unity Jianqiang Zhao",
+  "authors_raw": "Department of Mathematics, Eckerd College, St. Petersburg, FL 33711, USA",
+  "abstract": "For any positive integer N let µ N be the group of the N th roots of unity. In this note we shall study the Q-linear relations among values of multiple polylogarithms evaluated at µ N . We show that the standard relations considered by Racinet do not provide all the pos sible relations in the following cases: (i) level N = 4, weight w = 3 or 4, and (ii) w = 2, 7 < N < 50, and N is a power of 2 or 3, or N has at least two prime factors. We further ﬁnd some (presumably all) of th e missing relations in (i) by using the octahedral symmetry of P1 − ({0, ∞} ∪ µ 4). We also prove some other results when N = p or N = p2 (p prime ≥ 5) by using the motivic fundamental group of P1 − ({0, ∞} ∪ µ N ).",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181117222526-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "Multiple polylogarithm values at roots of unity",
+   "Jianqiang Zhao"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The motivic setup",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Standard relations in MPV(w,4)",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Octahedral symmetry of ¶1-({0,}bold0mu mumu 4)",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Level p and p2 cases (p5 a prime)",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3391,
+   "n_words": 693
+  },
+  {
+   "id": "sec-001-the-motivic-setup",
+   "number": null,
+   "title": "The motivic setup",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 9,
+   "n_chars": 17593,
+   "n_words": 3875
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 2,
+  "chars_total": 20984
+ }
+}

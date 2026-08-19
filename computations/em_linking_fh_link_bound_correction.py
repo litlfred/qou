@@ -254,7 +254,7 @@ def main() -> None:
     })
     wb.add_data("residual_gap", (
         "Freedman-He, Ann. of Math. 134 (1991) 189-229 is not in the "
-        "corpus or in uploads/ (201 PDFs scanned by title metadata, no "
+        "corpus or in library/ (201 PDFs scanned by title metadata, no "
         "match), so FH's own definition of the minimisation domain for "
         "ac(L_k, L) is not directly verified. Both corrections rest on "
         "Komendarczyk's statement of it, which is unambiguous on the "

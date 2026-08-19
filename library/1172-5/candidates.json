@@ -1,0 +1,170 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "1172-5",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "21b7a0e13bd208fc92dc60f6fb750eb76d6d9ccb369136a05300cf3d5ce50175",
+  "file": "1172-5.pdf"
+ },
+ "provenance": {
+  "title": "OPTIMISTIC CALCULATIONS ABOUT THE $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INV ARIANTS OF",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "conjecture": 1,
+   "remark": 10
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.1",
+   "name": "Volume Conjecture, [9]",
+   "statement": "Let $J_{N}(K)$be the $N$-colored Jones",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "INTRODUCTION",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.2",
+   "name": null,
+   "statement": "The term $-\\frac{\\pi^{2}}{6}$in (3.3) appears so that $V(1,1,\\ldots, 1)=0$since",
+   "section_file": "sections/sec-001-3-an-optimisticlimit.md",
+   "section_title": "AN OPTIMISTICLIMIT",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.3",
+   "name": null,
+   "statement": "Note that $V$and $\\tilde{V}$satisfy the same algebraic equations (3.5) but",
+   "section_file": "sections/sec-001-3-an-optimisticlimit.md",
+   "section_title": "AN OPTIMISTICLIMIT",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.4",
+   "name": null,
+   "statement": "An optimistic limit is not well de\ufb01ned. There are many ambiguities",
+   "section_file": "sections/sec-001-3-an-optimisticlimit.md",
+   "section_title": "AN OPTIMISTICLIMIT",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.5",
+   "name": null,
+   "statement": "Following Kashaev [2], the behavior of $S(N)$for large $N$may be",
+   "section_file": "sections/sec-001-3-an-optimisticlimit.md",
+   "section_title": "AN OPTIMISTICLIMIT",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.1",
+   "name": null,
+   "statement": "Since the second equation of (4.2) is symmetric with respect to $z$and",
+   "section_file": "sections/sec-002-4-dehn-surgeryalongthe-figure-eightknot.md",
+   "section_title": "DEHN SURGERYALONGTHE FIGURE-EIGHTKNOT",
+   "pages": "4-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.3",
+   "name": null,
+   "statement": "For $p=4n+2$ with $n=1,2,$ $\\ldots$, 100, we can observe the same result.",
+   "section_file": "sections/sec-002-4-dehn-surgeryalongthe-figure-eightknot.md",
+   "section_title": "DEHN SURGERYALONGTHE FIGURE-EIGHTKNOT",
+   "pages": "4-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.4",
+   "name": null,
+   "statement": "It was suggested by A. Kricker to observe the $parrow\\infty$limit.",
+   "section_file": "sections/sec-002-4-dehn-surgeryalongthe-figure-eightknot.md",
+   "section_title": "DEHN SURGERYALONGTHE FIGURE-EIGHTKNOT",
+   "pages": "4-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "5.3",
+   "name": null,
+   "statement": "Conjecture 5.2 is numerically true (up to 8 digits or so) for $p=$",
+   "section_file": "sections/sec-003-5-volume-conjecturefor-closedthree-manifolds.md",
+   "section_title": "VOLUME CONJECTUREFOR CLOSEDTHREE-MANIFOLDS",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "5.4",
+   "name": null,
+   "statement": "Note that $V_{p}(1, w)=- \\mathrm{L}\\mathrm{i}_{2}(w)+\\mathrm{L}\\mathrm{i}_{2}(\\frac{1}{w})$and this appears in calcu-",
+   "section_file": "sections/sec-003-5-volume-conjecturefor-closedthree-manifolds.md",
+   "section_title": "VOLUME CONJECTUREFOR CLOSEDTHREE-MANIFOLDS",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "5.7",
+   "name": null,
+   "statement": "Y. Yokota told me that Conjecture 5.2 and Problem 5.5 can be solved",
+   "section_file": "sections/sec-003-5-volume-conjecturefor-closedthree-manifolds.md",
+   "section_title": "VOLUME CONJECTUREFOR CLOSEDTHREE-MANIFOLDS",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

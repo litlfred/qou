@@ -1,0 +1,746 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0508100v6",
+ "source": {
+  "file": "0508100v6.pdf",
+  "sha256": "9cc100a86b40c33640dfebb0d0e308915f4e2e3beca48ea77992d02602e255f1",
+  "bytes": 435437,
+  "pages": 31
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0508100",
+   "version": "6",
+   "primary_class": null,
+   "stamp_date": "31 Aug 2011"
+  },
+  "doi": null,
+  "title": "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT",
+  "authors_raw": "STA VROS GAROUF ALIDIS AND THANG TQ L Ê",
+  "abstract": "To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial. The paper is concerned with the asymptotic behavior of the value of the nth colored Jones polynomial at eα/n , when α is a ﬁxed complex number and n tends to inﬁnity. W e analyze this asymptotic behavior to all orders in 1 /n when α is a suﬃciently small complex number. In addition, we give upper bounds for the coeﬃcients and degree of the nth colored Jones polynomial, with applications to upper bounds in the Generalized Volume Conjecture. W ork of Agol-D unﬁeld-Storm-W.Thurston implies that our bounds are asymptotically optimal. Moreover, we give resul ts for the Generalized Volume Conjecture when α is near 2 πi . Our proofs use crucially the cyclotomic expansion of the co lored Jones function, due to Habiro.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180827055318-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics of the colored Jones function of a knot",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "The generalized volume conjecture",
+   "page": 4,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "The Generalized Volume Conjecture near 2 i",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Upper bounds for the generalized volume conjecture",
+   "page": 5,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Relation with hyperbolic geometry, and asymptotically sharp bounds",
+   "page": 5,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 2,
+   "title": "The main ideas and organization of the paper",
+   "page": 7,
+   "source": "outline",
+   "number": "1.6"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgment",
+   "page": 8,
+   "source": "outline",
+   "number": "1.7"
+  },
+  {
+   "level": 1,
+   "title": "Weak versus strong convergence",
+   "page": 8,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "A lemma from complex analysis",
+   "page": 8,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The main difficulty for uniform bounds",
+   "page": 8,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Two expansions of the colored Jones polynomial",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The loop expansion",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The cyclotomic expansion",
+   "page": 9,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Comparing the cyclotomic and the loop expansion",
+   "page": 10,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "A reduction of Theorem 2.2 to estimates of the cyclotomic function",
+   "page": 10,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Uniform bounds of the colored Jones function",
+   "page": 10,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Theorem 4.2 implies Theorem 2.2",
+   "page": 11,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "A reduction of Theorem 1.6 to estimates of the cyclotomic function",
+   "page": 12,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Some estimates",
+   "page": 12,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Theorem 4.2 implies Theorem 1.6",
+   "page": 13,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Bounds for the degree and coefficients of the colored Jones function",
+   "page": 14,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Bounds for the degree",
+   "page": 14,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Bounds for the coefficients",
+   "page": 14,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.12",
+   "page": 16,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 4.2",
+   "page": 16,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "The bound for degrees of HK,n",
+   "page": 16,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "The bound for the l1-norm of HK,n",
+   "page": 17,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 1,
+   "title": "Growth rates of R-matrices and the Lobachevsky function",
+   "page": 18,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "The Lobachevsky function",
+   "page": 18,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics of the R-matrix using ideal octahedra",
+   "page": 19,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "The maximum of the growth rate of the R-matrix",
+   "page": 21,
+   "source": "outline",
+   "number": "8.3"
+  },
+  {
+   "level": 2,
+   "title": "The maximum of the R-matrices at roots of unity",
+   "page": 22,
+   "source": "outline",
+   "number": "8.4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.13",
+   "page": 22,
+   "source": "outline",
+   "number": "8.5"
+  },
+  {
+   "level": 1,
+   "title": "The generalized volume conjecture near =2i",
+   "page": 22,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "The q-holonomic point of view",
+   "page": 23,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Bounds on l1-norm of q-holonomic functions",
+   "page": 23,
+   "source": "outline",
+   "number": "10.1"
+  },
+  {
+   "level": 2,
+   "title": "Bounds for higher rank groups",
+   "page": 24,
+   "source": "outline",
+   "number": "10.2"
+  },
+  {
+   "level": 1,
+   "title": "Some physics",
+   "page": 24,
+   "source": "outline",
+   "number": "11"
+  },
+  {
+   "level": 2,
+   "title": "A small dose of physics",
+   "page": 24,
+   "source": "outline",
+   "number": "11.1"
+  },
+  {
+   "level": 2,
+   "title": "The WKB method",
+   "page": 25,
+   "source": "outline",
+   "number": "11.2"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. The volume conjecture for the Borromean rings",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Proof of Proposition 8.9",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.1. Preliminary estimates",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.2. Proof of Proposition 8.9",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-11-asymptotics-of-the-colored-jones-function-of",
+   "number": "1.1",
+   "title": "Asymptotics of the colored Jones function of a knot",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 972,
+   "n_words": 170
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7104,
+   "n_words": 1348
+  },
+  {
+   "id": "sec-002-12-the-generalized-volume-conjecture",
+   "number": "1.2",
+   "title": "The generalized volume conjecture",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 4185,
+   "n_words": 783
+  },
+  {
+   "id": "sec-003-14-upper-bounds-for-the-generalized-volume-conje",
+   "number": "1.4",
+   "title": "Upper bounds for the generalized volume conjecture",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3532,
+   "n_words": 651
+  },
+  {
+   "id": "sec-004-16-the-main-ideas-and-organization-of-the-paper",
+   "number": "1.6",
+   "title": "The main ideas and organization of the paper",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3144,
+   "n_words": 565
+  },
+  {
+   "id": "sec-005-17-acknowledgment",
+   "number": "1.7",
+   "title": "Acknowledgment",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 117,
+   "n_words": 17
+  },
+  {
+   "id": "sec-006-2-weak-versus-strong-convergence",
+   "number": "2",
+   "title": "Weak versus strong convergence",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-21-a-lemma-from-complex-analysis",
+   "number": "2.1",
+   "title": "A lemma from complex analysis",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2262,
+   "n_words": 441
+  },
+  {
+   "id": "sec-008-3-two-expansions-of-the-colored-jones-polynomial",
+   "number": "3",
+   "title": "Two expansions of the colored Jones polynomial",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-31-the-loop-expansion",
+   "number": "3.1",
+   "title": "The loop expansion",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1119,
+   "n_words": 222
+  },
+  {
+   "id": "sec-010-32-the-cyclotomic-expansion",
+   "number": "3.2",
+   "title": "The cyclotomic expansion",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1006,
+   "n_words": 217
+  },
+  {
+   "id": "sec-011-33-comparing-the-cyclotomic-and-the-loop-expansi",
+   "number": "3.3",
+   "title": "Comparing the cyclotomic and the loop expansion",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 847,
+   "n_words": 170
+  },
+  {
+   "id": "sec-012-4-a-reduction-of-theorem-22-to-estimates-of-the",
+   "number": "4",
+   "title": "A reduction of Theorem 2.2 to estimates of the cyclotomic function",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-41-uniform-bounds-of-the-colored-jones-function",
+   "number": "4.1",
+   "title": "Uniform bounds of the colored Jones function",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1919,
+   "n_words": 418
+  },
+  {
+   "id": "sec-014-42-theorem-42-implies-theorem-22",
+   "number": "4.2",
+   "title": "Theorem 4.2 implies Theorem 2.2",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 430,
+   "n_words": 96
+  },
+  {
+   "id": "sec-015-5-a-reduction-of-theorem-16-to-estimates-of-the",
+   "number": "5",
+   "title": "A reduction of Theorem 1.6 to estimates of the cyclotomic function",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-016-51-some-estimates",
+   "number": "5.1",
+   "title": "Some estimates",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4057,
+   "n_words": 1029
+  },
+  {
+   "id": "sec-017-6-bounds-for-the-degree-and-coefficients-of-the",
+   "number": "6",
+   "title": "Bounds for the degree and coefficients of the colored Jones function",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 6140,
+   "n_words": 1292
+  },
+  {
+   "id": "sec-018-63-proof-of-theorem-112",
+   "number": "6.3",
+   "title": "Proof of Theorem 1.12",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 425,
+   "n_words": 97
+  },
+  {
+   "id": "sec-019-7-proof-of-theorem-42",
+   "number": "7",
+   "title": "Proof of Theorem 4.2",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 49,
+   "n_words": 10
+  },
+  {
+   "id": "sec-020-71-the-bound-for-degrees-of-hkn",
+   "number": "7.1",
+   "title": "The bound for degrees of HK,n",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 867,
+   "n_words": 207
+  },
+  {
+   "id": "sec-021-72-the-bound-for-the-l1-norm-of-hkn",
+   "number": "7.2",
+   "title": "The bound for the l1-norm of HK,n",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1641,
+   "n_words": 346
+  },
+  {
+   "id": "sec-022-8-growth-rates-of-r-matrices-and-the-lobachevsky",
+   "number": "8",
+   "title": "Growth rates of R-matrices and the Lobachevsky function",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3207,
+   "n_words": 716
+  },
+  {
+   "id": "sec-023-82-asymptotics-of-the-r-matrix-using-ideal-octah",
+   "number": "8.2",
+   "title": "Asymptotics of the R-matrix using ideal octahedra",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 4139,
+   "n_words": 902
+  },
+  {
+   "id": "sec-024-83-the-maximum-of-the-growth-rate-of-the-r-matri",
+   "number": "8.3",
+   "title": "The maximum of the growth rate of the R-matrix",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1822,
+   "n_words": 426
+  },
+  {
+   "id": "sec-025-84-the-maximum-of-the-r-matrices-at-roots-of-uni",
+   "number": "8.4",
+   "title": "The maximum of the R-matrices at roots of unity",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 833,
+   "n_words": 178
+  },
+  {
+   "id": "sec-026-85-proof-of-theorem-113",
+   "number": "8.5",
+   "title": "Proof of Theorem 1.13",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1864,
+   "n_words": 362
+  },
+  {
+   "id": "sec-027-10-the-q-holonomic-point-of-view",
+   "number": "10",
+   "title": "The q-holonomic point of view",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-028-101-bounds-on-l1-norm-of-q-holonomic-functions",
+   "number": "10.1",
+   "title": "Bounds on l1-norm of q-holonomic functions",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2522,
+   "n_words": 546
+  },
+  {
+   "id": "sec-029-102-bounds-for-higher-rank-groups",
+   "number": "10.2",
+   "title": "Bounds for higher rank groups",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 874,
+   "n_words": 175
+  },
+  {
+   "id": "sec-030-11-some-physics",
+   "number": "11",
+   "title": "Some physics",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-031-111-a-small-dose-of-physics",
+   "number": "11.1",
+   "title": "A small dose of physics",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2383,
+   "n_words": 390
+  },
+  {
+   "id": "sec-032-112-the-wkb-method",
+   "number": "11.2",
+   "title": "The WKB method",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1887,
+   "n_words": 324
+  },
+  {
+   "id": "sec-033-appendix-a-the-volume-conjecture-for-the-borrome",
+   "number": null,
+   "title": "Appendix A. The volume conjecture for the Borromean rings",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 2674,
+   "n_words": 607
+  },
+  {
+   "id": "sec-034-appendix-b-proof-of-proposition-89",
+   "number": null,
+   "title": "Appendix B. Proof of Proposition 8.9",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-035-b1-preliminary-estimates",
+   "number": null,
+   "title": "B.1. Preliminary estimates",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 4393,
+   "n_words": 1076
+  },
+  {
+   "id": "sec-036-b2-proof-of-proposition-89",
+   "number": null,
+   "title": "B.2. Proof of Proposition 8.9",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 2487,
+   "n_words": 578
+  },
+  {
+   "id": "sec-037-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 5727,
+   "n_words": 875
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 46,
+  "sections": 38,
+  "chars_total": 74628
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1302.0342v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ec2ca6ba7896456d896716824fe40854ea931f164b9a710f98f1cc9d8edb93ca",
+  "file": "1302.0342v1.pdf"
+ },
+ "provenance": {
+  "title": "Tying knots in light \ufb01elds",
+  "authors": "Hridesh Kedia,1,\u2217 Iwo Bialynicki-Birula,2 Daniel Peralta-Salas,3 and William T.M. Irvine 1",
+  "arxiv": {
+   "id": "1302.0342",
+   "version": "1",
+   "primary_class": "math-ph",
+   "stamp_date": "2 Feb 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

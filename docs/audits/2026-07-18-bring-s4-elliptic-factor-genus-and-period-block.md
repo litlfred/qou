@@ -64,10 +64,10 @@ the algebraic shortcut is provably obstructed, and the sole remaining step is a 
 computation (Sage/Magma in a network-open environment, or a bespoke mpmath genus-4 period
 integration — deferred, as a rushed numerical build risks a *wrong* τ_E, worse than none).
 
-## Update — the period is PUBLISHED and now PAPER-CONFIRMED (PDFs in `uploads/`)
+## Update — the period is PUBLISHED and now PAPER-CONFIRMED (PDFs in `library/`)
 
 The period route is not open in the literature. **Braden–Disney-Hogg, "Bring's curve:
-Old and New"** ([arXiv:2208.13692](https://arxiv.org/abs/2208.13692), `uploads/2208.13692v1.pdf`,
+Old and New"** ([arXiv:2208.13692](https://arxiv.org/abs/2208.13692), `library/arxiv-2208.13692v1/2208.13692v1.pdf`,
 Theorem 2.12 + Prop 4.6) and Riera–Rodríguez (1992) give it explicitly. Read directly
 from the PDF (superseding the earlier search-summary values, which were correct):
 
@@ -115,8 +115,8 @@ falsified on both sides, `677b74277`/#3871).
 **What remains** (each now well-posed, not tool-blocked): (i) the **polarized** photon
 determinant on `Jac(Bring)` with the genuine principal polarization (Prop 4.6's non-product
 structure) — the honest replacement for the naive product; (ii) the reciprocal `π` (RT /
-Front-2). Cross-source: `uploads/1206.6004v2.pdf` (Braden–Northover period matrix + RCV)
-and `uploads/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf` (Riera–Rodríguez).
+Front-2). Cross-source: `library/arxiv-1206.6004v2/1206.6004v2.pdf` (Braden–Northover period matrix + RCV)
+and `library/the-period-matrix-of-bring-s-curve-1hik02mwva/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf` (Riera–Rodríguez).
 
 ## Scope guard (STRICT)
 

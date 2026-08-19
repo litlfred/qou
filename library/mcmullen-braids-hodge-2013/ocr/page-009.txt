@@ -1,0 +1,58 @@
+Braiding of the attractor 267
+
+(2) If z is an attracting or superattracting periodic point for f, then so is
+(z) (since these are the only isolated point of JU A).
+
+(3) If zeJ is a critical point (repelling periodic point, indifferent periodic
+point with multiplier e’®), then the same is true of (2).
+
+In particular, #(A)=A for any [f] in Mod(J UA, f).
+
+Proof of (3). The Julia set is perfect and totally invariant, so points in J are
+mapped locally n-to-1 near z iff z is a critical point of order (n—1) (and the
+former property is preserved by a topological conjugacy on J.)
+
+To handle periodic points we pass to microscopic scale and take a limit.
+Let zeJ be a periodic point, which we may asume to be a fixed point, and
+let « and f denote the derivatives of f at z and (z) respectively. Choose points
+w,é€J such that w,—>z, and let A,,B, be the Mobius transformations which
+carry (z,Wo,W,), and (f(z), b(Wo), (w,)) to (0,00, 1). Then B,o¢oA,' is a
+sequence of normalized quasiconformal mappings which are conjugacies on
+A, (J). After passing to a subsequence these converge to a quasiconformal map
+w which is a conjugacy between z>az and zz on J’, a Hausdorff limit
+of A, (J) (containing 1 and invariant under multiplication by a).
+
+Since y(1)=1, «”— oo if and only if f"— oo, establishing (3) for repelling
+periodic points. If « is not a root of unity, then <a") is dense in the unit circle
+and we easily conclude a=. Finally if « is a primitive nth root of unity, so
+is B. Using the ‘Fatou flower theorem’ ([Bl, 3.12] and references therein), we
+conclude that J’ contains rays emanating from the origin and passing through
+the powers of «. Since ¢ is a homeomorphism, the order relation of these rays
+is preserved anda=f. 0
+
+Definition. The universal monodromy group of (A, f) is the image of the natural
+ma,
+Le Mod (JU A, f)* Mod(A)
+
+We will denote this group by Univ(A, f).
+
+Proposition 4.1. The monodromy group G for an attractive family (X, f) is a
+subgroup of the universal monodromy group Univ(A, f).
+
+Proof. The motion of the periodic points determines a conjugating isotopy of
+JUA which can be extended quasiconformally to the whole Riemann sphere
+[MSS, ST, BR]. Thus the monodromy of the attractor factors through the
+modular group of f on J UA [Mc2, 3.2] and consequently through the universal
+monodromy group of (A, f):
+
+1(X, f) > Mod(J UA, f) > Univ(A, f)eMod(4).
+
+By the above proposition, Univ(A, f) is irreducible and fixed-point free if
+there exists a single attractive family (X, f) whose monodromy has this property.
+For the remainder of the discussion we will concentrate on proving that this
+property implies Univ(A, f) is finite; by the above, this will establish Theo-
+rem 2.1.
+
+Warning. We do not guarantee that every element of Univ(A, f) can be realized
+by the monodromy in an attractive family including f-
+

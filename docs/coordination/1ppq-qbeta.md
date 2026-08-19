@@ -1202,7 +1202,7 @@ the run); the 11-point ladder (N≤524288, dps 1050, 947d cancellation) measured
 −0.166002385 — residual 9.2e-9, LAW SURVIVES. κ̃₅ = 210.675324 − 35.29743·i
 [5d/3d]; rungs 1–4 sharpened to 22/17/13/9 digits; #3691 values reproduced.
 The perturbative-null for A_ω hardens: κ̃_n/ξⁿ ∈ (−i)ⁿ·ℝ verified through
-rung 5. G3 route-1 (owner-uploaded sources now in uploads/): exact-integer
+rung 5. G3 route-1 (owner-uploaded sources now in library/): exact-integer
 I_Δ engine + exact triality certificates + substrate convergence
 (I_Δ(0,0)(e^−t)=0.1922789824); DGG anchor (4.20) glyph-verified; assembly of
 the 4₁ TOTAL index NOT yet certified (flat-wing divergence of the bare 4.18;
@@ -1267,7 +1267,7 @@ bug* — its `tet_norm` under-summed the per-factor series, reported a spurious
 negative lead for large-argument I_Δ, and its convergence guard then wrongly
 rejected the convergent bare sum as a "flat divergent wing." There is **no
 missing 'U=2·log m charge dictionary'**: (4.18)'s arguments ARE the resolved
-dictionary (DGG §4.3 scout of uploads/1112.5179). Validated coefficients now in
+dictionary (DGG §4.3 scout of library/1112.5179). Validated coefficients now in
 hand: `I_41(0,0) = 1−2q−3q²+2q³+8q⁴+18q⁵+18q⁶+14q⁷−12q⁸−52q⁹−106q¹⁰−…`. The A_ω
 VALUE remains one tranche away — the coefficient↔Stokes dictionary (GGM
 2012.00062, classical Stokes matrix `S⁰=[[1,0],[−3,1]]` → load-bearing integer
@@ -1945,7 +1945,7 @@ scope-(a).
 from Masbaum, "be critical" colored-Jones gate CLEARED).** The owner flagged
 the self-calibrating `(V_{5_2}-1)/(V_{4_1}-1)` extraction of `C_{5_2,1}` as a
 possibly-erroneous probe and pointed at Masbaum's twist-knot paper (uploaded on
-main, `uploads/agt-v3-n1-p17-p.pdf`, `masbaum2003`, DOI 10.2140/agt.2003.3.537).
+main, `library/agt-v3-n1-p17-p/agt-v3-n1-p17-p.pdf`, `masbaum2003`, DOI 10.2140/agt.2003.3.537).
 Critical verification (`qbeta_5two_masbaum_cyclotomic_probe.py`, 4/4):
 (1) V_{4_1}, V_{5_2} match KnotInfo; (2) Masbaum Thm 5.1/Rem 5.2 for K_2
 reproduces the standard Jones V_{5_2} at N=2 EXACTLY (fixing t=q⁻¹);
@@ -2667,7 +2667,7 @@ location result, not a closure.
 
 **2026-07-26 (convention reconciliation, CLOSED) — V_GGMW = V_GGM +
 2π²/3 exactly; the corpus's Im(V₁) and V₃ match NEITHER published
-convention.** With GGM 2012.00062v3 in `uploads/`, eq (234) at x = 1
+convention.** With GGM 2012.00062v3 in `library/`, eq (234) at x = 1
 gives `V = 3Li₂(y) + (log(−y))²` on `y² = (1−y)³` (the same cubic as
 GGMW eq 184), and §6.1 states "for σ₃ we only keep the real part of V".
 Computed at 30 dps: `V_GGM(σ₁) = −3.5556078909 + 2.8281220883i`,
@@ -3024,7 +3024,7 @@ integral-defined dilogarithm, the object that makes sense at `‖y₁‖ = 1.52`
 `Re(1 − yz) > 0` on `[0,1]`, true for all three roots).
 
 *Route 6 — Zagier's enhanced dilogarithm — REFUTED, scope-(a).* Owner supplied
-Zagier (2007) as `uploads/zagier-the-dilogarithm-function.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
+Zagier (2007) as `library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
 `{eᵘ+eᵛ=1}`, valued in `ℂ/(π²/2)ℤ`, looked like our `Vⱼ` exactly: same
 `Li₂ + (log)(log)`-with-branch-data shape, roots on `2u = 3v + 2πik`, and
 `−3π²/2` an exact multiple of the ambiguity. Had it closed, the problem would

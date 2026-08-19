@@ -15,7 +15,7 @@ rem:q-dilog-three-contexts currently states the F_p truncation and the Q_p/C_p c
 - Cor. 2.2 — For a root of unity alpha in X, Li_n(alpha) lies in p^n W and p^{-n} Li_n(alpha) is congruent mod p to -li_n(sigma(alpha))/(1 - alpha).
   Use here: The p-adic valuation of polylogarithms at roots of unity — the direct p-adic analogue of the cyclotomic values Li_3(zeta_5^k) that conj:bring-trilog-depth-3-witness and prop:cl3-zeta5-orbit-sum-identity manipulate archimedeanly. Usable as a remark noting that the orbit-sum relations have a p-adic shadow with a computable valuation, not as an input to any current derivation.
 
-Source: `uploads/0006051v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0006051v1/0006051v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -1,0 +1,131 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "cor-ma1",
+ "source_sha256": "d90c91dcd82bfcab",
+ "brief": "Corteel & Mallet, Overpartitions, lattice paths, and Rogers-Ramanujan identities (HAL hal-00017295) — extends Andrews, Bressoud and Burge to overpartitions via successive ranks and generalized…",
+ "extended": "**Overpartitions, lattice paths, and Rogers-Ramanujan identities** — Sylvie Corteel and Olivier Mallet. HAL hal-00017295 v2, submitted 21 Dec 2006.\n\nExtends partition-theoretic work of Andrews, Bressoud and Burge to overpartitions, defining successive ranks, generalized Durfee squares, and generalized lattice paths in that setting.\n\n**Why it may bear here.** Rogers-Ramanujan identities and the Rogers dilogarithm are named in this corpus's Φ_q / Li₂^q context-sorting; this is the partition-combinatorics side. Thematic adjacency, not an established use.\n\n**Extraction caveat.** The held PDF opens with HAL deposit boilerplate, so its automatic title read that boilerplate; the real title page is the second page.",
+ "tokens": {
+  "brief": 48,
+  "extended": 179
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-2-definitions-on-overpartitions",
+   "title": "Definitions on overpartitions",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-003-6-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-004-3-paths-and-generating-function",
+   "title": "Paths and generating function",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-005-8-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-006-10-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-007-4-paths-and-successive-ranks",
+   "title": "Paths and successive ranks",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-008-12-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-009-2-xi-xi1-yi-yi1-ui-ui1-1-since-ui-ui1-it-is-suﬃc",
+   "title": "(xi− xi+1− yi− yi+1 + ui− ui+1 + 1). Since ui≥ ui+1, it is suﬃcient",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-010-5-paths-and-multiplicities",
+   "title": "Paths and multiplicities",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-011-14-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-012-51-a-generating-function-proof-letbkia-q",
+   "title": "A generating function proof. LetBk,i(a, q) =∑",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-013-16-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-014-6-paths-and-successive-durfee-squares",
+   "title": "Paths and successive Durfee squares",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-015-18-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-016-20-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-017-22-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-018-7-new-partition-theorems",
+   "title": "New partition theorems",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-019-24-syl-vie-corteel-and-olivier-mallet",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-020-8-conclusion",
+   "title": "Conclusion",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-021-references",
+   "title": "References",
+   "pages": "26-26"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "opening-text"
+  ],
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

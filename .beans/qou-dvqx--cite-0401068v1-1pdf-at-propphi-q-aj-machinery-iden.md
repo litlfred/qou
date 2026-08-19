@@ -13,7 +13,7 @@ Separate finding surfaced by this read: le2006 already exists in references.ts, 
 - Thm 2.2 and §4 — Setting q = 1 in the summand recurrences and solving f_0 = l, f_1 = f_2 = 1 recovers a polynomial B_{K_p}(l,m) equal to the A-polynomial A_{K_p}(l,m); §4 additionally derives the A-polynomials of 5_2 and 6_1 from explicit colored-Jones recursions.
   Use here: Concrete worked instances of the classical limit of the AJ machinery that prop:phi-q-aj-machinery-identification describes abstractly. Weaker than le2006, so the honest action is to cite le2006 at that block and keep this as the explicit-computation companion.
 
-Source: `uploads/0401068v1 (1).pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0401068v1/0401068v1 (1).pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

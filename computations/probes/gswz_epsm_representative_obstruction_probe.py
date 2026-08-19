@@ -390,7 +390,7 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-y3xv", "qou-9p9y"],
     "source": (
-        "CGZ arXiv:1712.04887v3 (uploads/1712.04887v3.pdf); GSWZ "
+        "CGZ arXiv:1712.04887v3 (library/arxiv-1712.04887v3/1712.04887v3.pdf); GSWZ "
         "arXiv:2412.04241v2 Example 4.3 eqn (270); the merged m|24 "
         "sweep + alpha-order results (PR #4968, #4983)"
     ),

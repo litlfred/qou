@@ -1,0 +1,469 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-9806163v1",
+ "source": {
+  "file": "9806163v1.pdf",
+  "sha256": "dba44975f29cb017beca484167ac9721da1751533cd1f20335c253b3c84727db",
+  "bytes": 244448,
+  "pages": 23
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/9806163",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "30 Jun 1998"
+  },
+  "doi": null,
+  "title": "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana",
+  "authors_raw": "November 16, 2021",
+  "abstract": "We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn. In order to prove the weight formula, we deﬁne representations of the Hecke algebra of ty pe B onto a reduced Hecke Algebra of type A. To compute the weights for type D we use the inclusion of the Hecke algebra of type D into the Hecke algebra of type B.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220305131056-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/9806163v1  [math.CO]  30 Jun 1998"
+  },
+  "title_lines": [
+   "Weights of Markov Traces on Hecke Algebras ∗",
+   "R.C. Orellana"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries and Notation",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Partitions and Standard Tableaux",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Schur Functions",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The Braid Group",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Hecke Algebra of type Bn",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Representations of the Hecke algebra of type B onto",
+   "page": 9,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Hecke Algebra of type A",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "A Homomorphism of Hn(q, −qr1+m) onto a reduced algebra of",
+   "page": 10,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Markov Traces on the Hecke Algebra of type B",
+   "page": 14,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "The Weight Formula",
+   "page": 16,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "Markov Trace for the Hecke algebra of type D",
+   "page": 21,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "R. C. Orellana",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 22,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 389,
+   "n_words": 77
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1642,
+   "n_words": 300
+  },
+  {
+   "id": "sec-002-2-r-c-orellana",
+   "number": "2",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1983,
+   "n_words": 370
+  },
+  {
+   "id": "sec-003-1-preliminaries-and-notation",
+   "number": "1",
+   "title": "Preliminaries and Notation",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1464,
+   "n_words": 321
+  },
+  {
+   "id": "sec-004-11-partitions-and-standard-tableaux",
+   "number": "1.1",
+   "title": "Partitions and Standard Tableaux",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2415,
+   "n_words": 561
+  },
+  {
+   "id": "sec-005-4-r-c-orellana",
+   "number": "4",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1027,
+   "n_words": 243
+  },
+  {
+   "id": "sec-006-12-schur-functions",
+   "number": "1.2",
+   "title": "Schur Functions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 1716,
+   "n_words": 416
+  },
+  {
+   "id": "sec-007-6-r-c-orellana",
+   "number": "6",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-13-the-braid-group",
+   "number": "1.3",
+   "title": "The Braid Group",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2476,
+   "n_words": 668
+  },
+  {
+   "id": "sec-009-2-hecke-algebra-of-type-bn",
+   "number": "2",
+   "title": "Hecke Algebra of type Bn",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 386,
+   "n_words": 100
+  },
+  {
+   "id": "sec-010-8-r-c-orellana",
+   "number": "8",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2715,
+   "n_words": 558
+  },
+  {
+   "id": "sec-011-3-representations-of-the-hecke-algebra-of-type-b",
+   "number": "3",
+   "title": "Representations of the Hecke algebra of type B onto",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1033,
+   "n_words": 212
+  },
+  {
+   "id": "sec-012-31-the-hecke-algebra-of-type-a",
+   "number": "3.1",
+   "title": "The Hecke Algebra of type A",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 776,
+   "n_words": 168
+  },
+  {
+   "id": "sec-013-10-r-c-orellana",
+   "number": "10",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1722,
+   "n_words": 387
+  },
+  {
+   "id": "sec-014-32-a-homomorphism-of-hnq-qr1m-onto-a-reduced-alg",
+   "number": "3.2",
+   "title": "A Homomorphism of Hn(q, −qr1+m) onto a reduced algebra of",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3052,
+   "n_words": 661
+  },
+  {
+   "id": "sec-015-12-r-c-orellana",
+   "number": "12",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5083,
+   "n_words": 1094
+  },
+  {
+   "id": "sec-016-14-r-c-orellana",
+   "number": "14",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2106,
+   "n_words": 411
+  },
+  {
+   "id": "sec-017-4-markov-traces-on-the-hecke-algebra-of-type-b",
+   "number": "4",
+   "title": "Markov Traces on the Hecke Algebra of type B",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3380,
+   "n_words": 725
+  },
+  {
+   "id": "sec-018-16-r-c-orellana",
+   "number": "16",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-019-5-the-weight-formula",
+   "number": "5",
+   "title": "The Weight Formula",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3395,
+   "n_words": 767
+  },
+  {
+   "id": "sec-020-18-r-c-orellana",
+   "number": "18",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 4593,
+   "n_words": 932
+  },
+  {
+   "id": "sec-021-20-r-c-orellana",
+   "number": "20",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2930,
+   "n_words": 585
+  },
+  {
+   "id": "sec-022-6-markov-trace-for-the-hecke-algebra-of-type-d",
+   "number": "6",
+   "title": "Markov Trace for the Hecke algebra of type D",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1419,
+   "n_words": 331
+  },
+  {
+   "id": "sec-023-22-r-c-orellana",
+   "number": "22",
+   "title": "R. C. Orellana",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 803,
+   "n_words": 182
+  },
+  {
+   "id": "sec-024-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1993,
+   "n_words": 304
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 25,
+  "sections": 25,
+  "chars_total": 48498
+ }
+}

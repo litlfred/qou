@@ -1,0 +1,151 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-9306069v2",
+ "source_sha256": "a140d10424f73233",
+ "brief": "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a",
+ "extended": "**Department of Physics**\n\n*Stanford University, Stanford, CA 94305-4060*\n\n48 pp, 26 sections.\n\n**Abstract.** Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a foundation for the study of black hole evolution. We explain how these po stulates may be implemented in a “stretched horizon” or membrane description of the blac k hole, appropriate to a distant observer. The technical analysis is illustrated in the simp liﬁed context of 1+1 dimensional dilaton gravity. Our postulates imply that the dissipative properties of the stretched horizon arise from a course graining of microphysical degrees of fre edom that the horizon must possess. A principle of black hole complementarity is advoc ated. The overall viewpoint is similar to that pioneered by ’t Hooft but the detailed implem entation is diﬀerent.\n\n**Outline.** Abstract; 1 Introduction; 2.1 Classical theory; 2 Two-dimensional dilaton gravity; 2 (σ + −σ −) ≡ −σ, (2. 14); 2.2 Classical black holes; 2.3 Semi-classical theory; 4 (1 − log κ; 2.4 Semi-classical solutions; 3 The stretched horizon; 3.1 Definition and properties of the classical; 3.2 The semi-classical stretched horizon; 4 (1 − log(κ; 3.3 Incident flux below the black hole thresho; 4 (tf −t∗), (3. 36); 3.4 A causal description of the stretched hori; 4 Brownian motion of the horizon ⋆; 5 Consequences of the postulates",
+ "tokens": {
+  "brief": 49,
+  "extended": 366
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-7"
+  },
+  {
+   "id": "sec-002-21-classical-theory",
+   "title": "Classical theory",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-2-two-dimensional-dilaton-gravity",
+   "title": "Two-dimensional dilaton gravity",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-004-2-σ-σ-σ-2-14",
+   "title": "(σ + −σ −) ≡ −σ, (2. 14)",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-005-22-classical-black-holes",
+   "title": "Classical black holes",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-006-23-semi-classical-theory",
+   "title": "Semi-classical theory",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-007-4-1-log-κ",
+   "title": "(1 − log κ",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-008-24-semi-classical-solutions",
+   "title": "Semi-classical solutions",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-009-3-the-stretched-horizon",
+   "title": "The stretched horizon",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-010-31-definition-and-properties-of-the-classical-st",
+   "title": "Definition and properties of the classical stretched ho rizon",
+   "pages": "18-22"
+  },
+  {
+   "id": "sec-011-32-the-semi-classical-stretched-horizon",
+   "title": "The semi-classical stretched horizon",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-012-4-1-logκ",
+   "title": "(1 − log(κ",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-013-33-incident-flux-below-the-black-hole-threshold",
+   "title": "Incident flux below the black hole threshold",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-014-4-tf-t-3-36",
+   "title": "(tf −t∗), (3. 36)",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-015-34-a-causal-description-of-the-stretched-horizon",
+   "title": "A causal description of the stretched horizon",
+   "pages": "30-34"
+  },
+  {
+   "id": "sec-016-4-brownian-motion-of-the-horizon",
+   "title": "Brownian motion of the horizon ⋆",
+   "pages": "34-37"
+  },
+  {
+   "id": "sec-017-5-consequences-of-the-postulates",
+   "title": "Consequences of the postulates",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-018-51-microstructure-of-the-stretched-horizon",
+   "title": "Microstructure of the stretched horizon",
+   "pages": "37-40"
+  },
+  {
+   "id": "sec-019-52-thermal-entropy-vs-entropy-of-entanglement",
+   "title": "Thermal entropy vs. entropy of entanglement",
+   "pages": "40-44"
+  },
+  {
+   "id": "sec-020-53-discussion",
+   "title": "Discussion",
+   "pages": "44-47"
+  },
+  {
+   "id": "sec-021-references",
+   "title": "References",
+   "pages": "47-47"
+  },
+  {
+   "id": "sec-022-2-for-an-early-critique-of-hawkings-proposal-see",
+   "title": "For an early critique of Hawking’s proposal, see D. N. Page , Phys. Rev. Lett. 44",
+   "pages": "47-47"
+  },
+  {
+   "id": "sec-023-4-e-verlinde-and-h-verlinde-a-unitary-s-matrix-f",
+   "title": "E. Verlinde and H. Verlinde, A Unitary S-matrix for 2D Black Hole Formation and",
+   "pages": "47-47"
+  },
+  {
+   "id": "sec-024-9-k-s-thorne-r-h-price-and-d-a-macdonald-p-black",
+   "title": "K. S. Thorne, R. H. Price, and D. A. MacDonald, P Black Holes: The Membrane",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-025-27-d-n-page-black-hole-information-university-of",
+   "title": "D. N. Page, Black Hole Information, University of Alberta preprint, Alberta-Thy-23-",
+   "pages": "48-48"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

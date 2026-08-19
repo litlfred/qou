@@ -1,0 +1,321 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1003.4485v2",
+ "source": {
+  "file": "1003.4485v2.pdf",
+  "sha256": "714d73873cecd73a2d14ff1661b6ab778124421222b1ec3990acc3f0448a67f0",
+  "bytes": 674346,
+  "pages": 60
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1003.4485",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "18 Feb 2015"
+  },
+  "doi": null,
+  "title": "An Invitation to Higher Gauge Theory",
+  "authors_raw": "John C. Baez and John Huerta",
+  "abstract": "In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles. Just as ordinary gauge theory involves a gauge group, this genera lization in- volves a gauge ‘2-group’. We focus on 6 examples. First, ever y abelian Lie group gives a Lie 2-group; the case of U(1) yields the theo ry of U(1) gerbes, which play an important role in string theory and mul tisymplec- tic geometry. Second, every group representation gives a Li e 2-group; the representation of the Lorentz group on 4d Minkowski spaceti me gives the Poincar´ e 2-group, which leads to a spin foam model for Minko wski space- time. Third, taking the adjoint representation of any Lie gr oup on its own Lie algebra gives a ‘tangent 2-group’, which serves as a gaug e 2-group in 4d BF theory, which has topological gravity as a special case. Fou rth, every Lie group has an ‘inner automorphism 2-group’, which s erves as the gauge group in 4d BF theory with cosmological constant term. Fifth, ev- ery Lie group has an ‘automorphism 2-group’, which plays an i mportant role in the theory of nonabelian gerbes. And sixth, every com pact simple Lie group gives a ‘string 2-group’. We also touch upon higher structures such as the ‘gravity 3-group’, and the Lie 3-superalgebra th at governs 11-dimensional supergravity.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "CreationDate": "D:20150218202134-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "An Invitation to Higher Gauge Theory"
+  ],
+  "title_prev": "email: baez@math.ucr.edu huerta@math.ucr.edu"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Categories and Connections",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "2-Categories and 2-Connections",
+   "page": 11,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "2-Categories",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Path 2-Groupoids",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "2-Groups",
+   "page": 15,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "2-Connections",
+   "page": 21,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Examples and Applications",
+   "page": 27,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Shifted Abelian Groups",
+   "page": 27,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The Poincaré 2-Group",
+   "page": 32,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Tangent 2-Groups",
+   "page": 33,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Inner Automorphism 2-Groups",
+   "page": 37,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Automorphism 2-Groups",
+   "page": 38,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "String 2-Groups",
+   "page": 40,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 1,
+   "title": "Further Topics",
+   "page": 44,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Gauge Transformations",
+   "page": 44,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Curvature",
+   "page": 46,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Nontrivial 2-Bundles",
+   "page": 47,
+   "source": "outline",
+   "number": "5.3"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4609,
+   "n_words": 767
+  },
+  {
+   "id": "sec-001-2-categories-and-connections",
+   "number": "2",
+   "title": "Categories and Connections",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 11,
+   "n_chars": 15965,
+   "n_words": 3217
+  },
+  {
+   "id": "sec-002-3-2-categories-and-2-connections",
+   "number": "3",
+   "title": "2-Categories and 2-Connections",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 4327,
+   "n_words": 806
+  },
+  {
+   "id": "sec-003-32-path-2-groupoids",
+   "number": "3.2",
+   "title": "Path 2-Groupoids",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 3133,
+   "n_words": 659
+  },
+  {
+   "id": "sec-004-33-2-groups",
+   "number": "3.3",
+   "title": "2-Groups",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 21,
+   "n_chars": 9160,
+   "n_words": 1744
+  },
+  {
+   "id": "sec-005-34-2-connections",
+   "number": "3.4",
+   "title": "2-Connections",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 27,
+   "n_chars": 10544,
+   "n_words": 2059
+  },
+  {
+   "id": "sec-006-4-examples-and-applications",
+   "number": "4",
+   "title": "Examples and Applications",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 258,
+   "n_words": 48
+  },
+  {
+   "id": "sec-007-41-shifted-abelian-groups",
+   "number": "4.1",
+   "title": "Shifted Abelian Groups",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 33,
+   "n_chars": 12838,
+   "n_words": 2406
+  },
+  {
+   "id": "sec-008-43-tangent-2-groups",
+   "number": "4.3",
+   "title": "Tangent 2-Groups",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 37,
+   "n_chars": 8728,
+   "n_words": 1685
+  },
+  {
+   "id": "sec-009-44-inner-automorphism-2-groups",
+   "number": "4.4",
+   "title": "Inner Automorphism 2-Groups",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 40,
+   "n_chars": 7163,
+   "n_words": 1379
+  },
+  {
+   "id": "sec-010-46-string-2-groups",
+   "number": "4.6",
+   "title": "String 2-Groups",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 44,
+   "n_chars": 10913,
+   "n_words": 1976
+  },
+  {
+   "id": "sec-011-5-further-topics",
+   "number": "5",
+   "title": "Further Topics",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 80,
+   "n_words": 14
+  },
+  {
+   "id": "sec-012-51-gauge-transformations",
+   "number": "5.1",
+   "title": "Gauge Transformations",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 3935,
+   "n_words": 768
+  },
+  {
+   "id": "sec-013-52-curvature",
+   "number": "5.2",
+   "title": "Curvature",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 2566,
+   "n_words": 509
+  },
+  {
+   "id": "sec-014-53-nontrivial-2-bundles",
+   "number": "5.3",
+   "title": "Nontrivial 2-Bundles",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 60,
+   "n_chars": 27728,
+   "n_words": 4688
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 15,
+  "chars_total": 121947
+ }
+}

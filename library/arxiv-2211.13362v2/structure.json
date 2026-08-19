@@ -1,0 +1,180 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2211.13362v2",
+ "source": {
+  "file": "2211.13362v2.pdf",
+  "sha256": "3becbeaa1135d2e1bb7eeddf3c8026586e12411ca93b963802d10ef39914f13b",
+  "bytes": 8197511,
+  "pages": 15
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2211.13362",
+   "version": "2",
+   "primary_class": "quant-ph",
+   "stamp_date": "20 Nov 2024"
+  },
+  "doi": null,
+  "title": "Double-slit experiment revisited",
+  "authors_raw": "Siddhant Das*, Dirk-André Deckert*, Leopold Kellers*, Simon Krekels†,‡, and Ward",
+  "abstract": "The double-slit experiment is one of the quintessential quantum experiments. However, it tends to be overlooked that a theoretical account of this experiment requires the specification of the joint position and time distribution of detection at the screen, whose position marginal yields the famous interference pattern. The difficulty then arises what this distribution should be. While there exists a variety of proposals for a quantum mechanical time observable, there is no consensus about the right choice. Here, we consider Bohmian mechanics, which allows for a natural and practical approach to this problem. We simulate this distribution in the case of an initial Gaussian wave packet passing through a double-slit potential. We also consider a more challenging setup in which one of the slits is shut during flight. To experimentally probe the quantum nature of the time distribution, a sufficient longitudinal spread of the initial wave packet is required, which has not been achieved so far. Without sufficient spread, the temporal aspect of the distribution can be treated classically. We illustrate this for the case of the double-slit experiment with helium atoms by Kurtsiefer et al. Nature 386, 150 (1997), which reports the joint position and time distribution.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20241121012923Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": "Double-slit experiment revisited"
+  },
+  "title_lines": [
+   "Double-slit experiment revisited"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Bohmian account of the DSE",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Trajectories for the DSE",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "First-passage distribution",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Numerical DSE",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Dynamic DSE",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Comparison to the KPM experiment",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Concluding remarks",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 10592,
+   "n_words": 1755
+  },
+  {
+   "id": "sec-001-bohmian-account-of-the-dse",
+   "number": null,
+   "title": "Bohmian account of the DSE",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-trajectories-for-the-dse",
+   "number": null,
+   "title": "Trajectories for the DSE",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4706,
+   "n_words": 774
+  },
+  {
+   "id": "sec-003-first-passage-distribution",
+   "number": null,
+   "title": "First-passage distribution",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1918,
+   "n_words": 307
+  },
+  {
+   "id": "sec-004-dynamic-dse",
+   "number": null,
+   "title": "Dynamic DSE",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1320,
+   "n_words": 213
+  },
+  {
+   "id": "sec-005-numerical-dse",
+   "number": null,
+   "title": "Numerical DSE",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 4520,
+   "n_words": 836
+  },
+  {
+   "id": "sec-006-comparison-to-the-kpm-experiment",
+   "number": null,
+   "title": "Comparison to the KPM experiment",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 5780,
+   "n_words": 970
+  },
+  {
+   "id": "sec-007-concluding-remarks",
+   "number": null,
+   "title": "Concluding remarks",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 15,
+   "n_chars": 13106,
+   "n_words": 2051
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 8,
+  "chars_total": 41942
+ }
+}

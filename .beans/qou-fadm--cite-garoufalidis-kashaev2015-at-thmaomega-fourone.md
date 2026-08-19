@@ -13,7 +13,7 @@ A registered reference giving closed evaluations of 4_1 state integrals in terms
 - Thm 1.1 (Sec. 2.2); Sec. 1.2-1.4 — One-dimensional state integrals of products of Faddeev quantum dilogarithms admit closed evaluation at rational points in terms of the Rogers dilogarithm, the cyclic quantum dilogarithm and finite state-sums at roots of unity; worked for 4_1, 5_2 and (-2,3,7).
   Use here: The Faddeev-to-Rogers translation at rational points is exactly the Phi_q vs Li_2^q sorting the framework has to keep straight, and the 4_1 evaluation is directly comparable to the folio's figure-eight state-integral counts.
 
-Source: `uploads/1411.6062v2.pdf` (`garoufalidis-kashaev2015`)
+Source: `library/arxiv-1411.6062v2/1411.6062v2.pdf` (`garoufalidis-kashaev2015`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -1,0 +1,199 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "gt-v10-n3-p07-p",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "1f226aac77351a695a13977305062da3129a448946d82571018550ed2ccd5419",
+  "file": "gt-v10-n3-p07-p.pdf"
+ },
+ "provenance": {
+  "title": "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S B IRMAN WILLIAM W M ENASCO The main result of this paper is a negative answer to the question: are all transversal",
+  "authors": null,
+  "arxiv": null,
+  "doi": "10.2140/gt.2006.10.1425"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 13,
+  "by_kind": {
+   "theorem": 5,
+   "example": 1,
+   "lemma": 4,
+   "proposition": 2,
+   "remark": 1
+  },
+  "formalization_candidates": 11
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": ", a simpli\ufb01ed version of the MTWS. The full statement, and the proof, are",
+   "section_file": "sections/sec-000-1-introduction-and-description-of-results.md",
+   "section_title": "Introduction and description of results",
+   "pages": "1-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Its proof is in [6]. After that, we will redo some parts of the proof which",
+   "section_file": "sections/sec-001-2-the-mtws-and-transversal-isotopies.md",
+   "section_title": "The MTWS and transversal isotopies",
+   "pages": "4-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s of templates are the block-strand diagram pairs which make up the templates",
+   "section_file": "sections/sec-003-0-resp-l-i.md",
+   "section_title": "(resp. l i",
+   "pages": "6-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": "The Bennequin Trick",
+   "statement": "Let\u0080\u001a R3 be an oriented differentiable graph that",
+   "section_file": "sections/sec-004-22-the-construction-of-transversal-clasp-annuli.md",
+   "section_title": "The construction of transversal clasp annuli",
+   "pages": "8-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": "Eliashberg\u2019s isotopy extension lemma [8]",
+   "statement": "Let'tW X! R3, t2\u01520; 1\u008d be",
+   "section_file": "sections/sec-004-22-the-construction-of-transversal-clasp-annuli.md",
+   "section_title": "The construction of transversal clasp annuli",
+   "pages": "8-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1",
+   "name": null,
+   "statement": "Given any pair of transversal closed braids.TXC; TX\u0000/ of the same",
+   "section_file": "sections/sec-004-22-the-construction-of-transversal-clasp-annuli.md",
+   "section_title": "The construction of transversal clasp annuli",
+   "pages": "8-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": null,
+   "statement": "Let T\u0081 be a transversal disc between the braids X and X0. Then, when",
+   "section_file": "sections/sec-006-23-braid-foliations-on-transversal-clasp-annuli.md",
+   "section_title": "Braid foliations on transversal clasp annuli",
+   "pages": "13-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2",
+   "name": null,
+   "statement": "Let T X be a transversal oriented knot type and .TXC; TX\u0000/ be a",
+   "section_file": "sections/sec-006-23-braid-foliations-on-transversal-clasp-annuli.md",
+   "section_title": "Braid foliations on transversal clasp annuli",
+   "pages": "13-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": null,
+   "statement": "to T\u0081 we see that, since one boundary arc of @T\u0081 is on a braid of minimal",
+   "section_file": "sections/sec-006-23-braid-foliations-on-transversal-clasp-annuli.md",
+   "section_title": "Braid foliations on transversal clasp annuli",
+   "pages": "13-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": "A weak transversal MTWS",
+   "statement": "Let T X be a transversal oriented knot",
+   "section_file": "sections/sec-007-24-a-weak-transversal-mtws.md",
+   "section_title": "A weak transversal MTWS",
+   "pages": "20-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The main way in which our tranversal MTWS is restrictive and therefore",
+   "section_file": "sections/sec-007-24-a-weak-transversal-mtws.md",
+   "section_title": "A weak transversal MTWS",
+   "pages": "20-24",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "There exist in\ufb01nitely many transversal knot types of braid index 3 which",
+   "section_file": "sections/sec-009-31-the-failure-of-transversal-simplicity-for-cer.md",
+   "section_title": "The failure of transversal simplicity for certain closed 3\u2013braids",
+   "pages": "24-26",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "of [13] asserts that two closed 3\u2013braids are isotopic in the complement",
+   "section_file": "sections/sec-009-31-the-failure-of-transversal-simplicity-for-cer.md",
+   "section_title": "The failure of transversal simplicity for certain closed 3\u2013braids",
+   "pages": "24-26",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -15,7 +15,7 @@ rem:knot-complement-group makes an unsourced claim ('the image of rho characteri
 - Rigidity theorem (§ following Thm 5.1) — If M is hyperbolic and vol(rho) = vol(M), then rho is discrete and faithful.
   Use here: This is the precise form of rem:knot-complement-group's unsourced claim that 'the image of rho characterises the geometric structure': volume maximality singles out the geometric representation. Also the sharp statement behind the corpus's repeated 'Mostow rigidity locks the volume' framing.
 
-Source: `uploads/0305275v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0305275v1/0305275v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

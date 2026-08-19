@@ -1,0 +1,45 @@
+Proof.
+
+Each component of D (respectively D) is locally isomorphic to J (respec-
+
+tively 7. In order to extend 0,7, « we need a collection of local sections of
+D (and D) with the properties:
+
+(1) For each t € M and each component of D(X;), there is a local section
+defined near t and passing through this component.
+
+(2) The difference of any two local sections in the same component is an
+integral manifold for 0,7, kK.
+
+Indeed, such a collection of sections determines a collection of local iso-
+morphisms of components of D (respectively D) with 7 (respectively TI ), so
+we define 0,7, as pullbacks of the corresponding structures on TF and J.
+This is well-defined by (2), and covers D and D, by (1). Now such a collection
+is given, in our case, by the normal functions of all 1-cycles, v(A(¥/M)):
+property (1) follows from the Lefschetz theorem on (1, 1)-classes, and prop-
+erty (2) amounts to our Theorem 4 and the remarks following it.
+
+Q.E.D
+
+As an immediate corollary, we get the following result of Griffiths [G1].
+(There it is proved only for quintic threefolds, but the argument works in
+general, once we know the unobstructedness of moduli [Bo,Ti,To].)
+
+Corollary. On a generic CY, algebraic equivalence of 1-cycles implies
+AJ-equivalence; in other words, the Abel-Jacobi map is constant on any
+connected family of 1-cycles.
+
+Proof.
+
+__The AJ image of the family is isotropic, by Theorem 5, and dominates
+M, hence it is Lagrangian and meets the generic fiber discretely, so the AJ
+map is locally constant on the connected family, hence constant.
+
+Q.E.D
+
+Note. These results have analogues for Calabi-Yaus of odd dimensions n =
+2k+1 > 3: The universal k’” intermediate (or middle-dimensional) Jacobian
+
+ia (X, / M), as well as the corresponding relative Deligne cohomology, have
+
+19

@@ -70,4 +70,4 @@ Plancherel** (not the character-algebra `Σ_k` machinery).
 
 - Attack plan: bean `qou-v8t7`; A5 `qou-9clc`, A4 `qou-q8g5`
 - A3 (CM refuted): [`2026-07-25-covariance-kernel-complete-monotonicity-target.md`](2026-07-25-covariance-kernel-complete-monotonicity-target.md)
-- Śniady `0411647`, Dołęga–Śniady `1704.02352`, Ivanov–Olshanski `0304010` (in `uploads/`)
+- Śniady `0411647`, Dołęga–Śniady `1704.02352`, Ivanov–Olshanski `0304010` (in `library/`)

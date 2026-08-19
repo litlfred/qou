@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """qbeta_g3_ggm_stokes_41.py — A_ω step 2: the 4₁ Stokes data from GGM
-(uploads/2012.00062v3.pdf), implemented exactly and certified internally.
+(library/arxiv-2012.00062v3/2012.00062v3.pdf), implemented exactly and certified internally.
 
 What GGM (Garoufalidis–Gu–Mariño, "Peacock patterns…") §§4–5 give for 4₁,
 all glyph-extracted from the in-repo source:
@@ -390,7 +390,7 @@ def main() -> int:
         "an exact anchor for the step-1 index assembly. No A_omega "
         "identification claimed (step 3 decides).")
     wb.set_content_block("conj:im-q-physical-role")
-    wb.add_data("source", "uploads/2012.00062v3.pdf (GGM) sections 4-5, eqs 43-64 + Conj 4 eq 21")
+    wb.add_data("source", "library/arxiv-2012.00062v3/2012.00062v3.pdf (GGM) sections 4-5, eqs 43-64 + Conj 4 eq 21")
     wb.add_data("theorem9_checks", {"det_Wm_eq_2": bool(v1), "qdifference_49": bool(v2)})
     wb.add_data("sandwich_derivation", {
         "n_matching_sign_patterns": len(hits),

@@ -80,7 +80,7 @@ theorem Lob_pi_sub (t : ℝ) : Lob (Real.pi - t) = -Lob t := by
 
 /-! ### The two identities Milnor's volume proof actually consumes
 
-Sourced from the Appendix of [milnor1982] (full text now in `uploads/`), which
+Sourced from the Appendix of [milnor1982] (full text now in `library/`), which
 states `Λ` is "odd, periodic of period π" and, in the orthoscheme computation,
 substitutes `Λ(2a) = 2Λ(a) + 2Λ(a + π/2)` to reduce the value to `Λ(a)/2`.
 Those are H4-4's inputs; both fall out of Clausen lemmas already in the tree.

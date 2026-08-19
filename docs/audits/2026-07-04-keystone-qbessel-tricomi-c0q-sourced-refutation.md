@@ -3,7 +3,7 @@
 **Date:** 2026-07-04
 **Bean:** [`s013`](../../.beans/s013--keystone-value-map-colored-lawrence-rozansky-s-mat.md)
 **Follows:** [`2026-07-04-keystone-valuemap-target-is-compact-hecke.md`](2026-07-04-keystone-valuemap-target-is-compact-hecke.md) (PR #3292 — target is compact Hecke; multi-arg q-Bessel needs the un-uploaded Plancherel kernel) and [`2026-07-02-keystone-valuemap-qbessel-gate.md`](2026-07-02-keystone-valuemap-qbessel-gate.md) §4 (single-arg q-Bessel row refuted, un-sourced at the time)
-**Source (owner upload):** `uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf` — Raza N., Fadel M., Cesarano C., "On 2-variable q-Legendre polynomials: the view point of the q-operational technique", *Carpathian Math. Publ.* 2025, **17**(1) 14–26, doi:10.15330/cmp.17.1.14-26.
+**Source (owner upload):** `library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf` — Raza N., Fadel M., Cesarano C., "On 2-variable q-Legendre polynomials: the view point of the q-operational technique", *Carpathian Math. Publ.* 2025, **17**(1) 14–26, doi:10.15330/cmp.17.1.14-26.
 **Script:** [`computations/probes/keystone_qbessel_tricomi_c0q_nodes.py`](../../computations/probes/keystone_qbessel_tricomi_c0q_nodes.py)
 **Witness:** [`computations/probes/keystone-qbessel-tricomi-c0q-nodes.witness.json`](../../computations/probes/keystone-qbessel-tricomi-c0q-nodes.witness.json)
 **Status:** one (a)-scope refutation, now carrying an in-repo source. No fit; nothing wired.
@@ -13,8 +13,8 @@
 PR #3292 established that the surviving q-Bessel lead (redirect ii) was not
 disciplined-actionable in-repo because the falsifiable multi-argument E_q(2)
 vacuum row needs its radial arguments fixed by the **Koelink–Swarttouw q-Hankel
-Plancherel kernel**, which was not in `uploads/`. The owner then uploaded
-`uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf`.
+Plancherel kernel**, which was not in `library/`. The owner then uploaded
+`library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf`.
 
 That paper is a **q-Bessel source but not the Plancherel source**: it *cites*
 Koornwinder–Swarttouw (its ref [22]) in the bibliography but does not contain
@@ -80,7 +80,7 @@ un-sourced at the time). What it **does not** do (per the STRICT "refuted"
 discipline, scope (a) not (b)): it does not structurally exclude a
 Plancherel-**fixed** E_q(2) vacuum row. That remains the one disciplined,
 still-unbuilt form, and it still needs the Koornwinder–Swarttouw 1992 q-Hankel
-kernel (paper ref [22]) — which `uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf` cites but does not contain.
+kernel (paper ref [22]) — which `library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf` cites but does not contain.
 
 **Standing ask (unchanged from #3292):** to make the last disciplined q-Bessel
 form testable, the specific source is **Koornwinder T.H., Swarttouw R.F., "On

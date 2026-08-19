@@ -104,7 +104,7 @@ Quoted verbatim from the CODATA-2022 report, Table (row ``energy equivalent
 mpc2``): Mohr, Newell, Taylor & Tiesinga, *CODATA recommended values of the
 fundamental physical constants: 2022*, Rev. Mod. Phys. **97**, 025002
 (published 30 April 2025) — vendored at
-``uploads/RevModPhys.97.025002.pdf.pdf``, p. 47.
+``library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf``, p. 47.
 
 **Vintage correction, 2026-08-09 (PR #4860, bean `qou-2an8` → `qou-if87`).**
 This previously held ``938.27208816``, the CODATA-**2018** value, while

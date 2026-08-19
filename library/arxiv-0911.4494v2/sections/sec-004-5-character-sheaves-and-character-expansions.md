@@ -1,0 +1,171 @@
+---
+doc_id: arxiv-0911.4494v2
+doc_title: "The geometry of Markov traces Ben Webster Geordie Williamson"
+section_id: sec-004-5-character-sheaves-and-character-expansions
+section_title: "Character sheaves and character expansions"
+section_number: 5
+pages: 9-11
+source_pdf: 0911.4494v2.pdf
+source_sha256: 1ba1c79686b12d98
+doc_brief: "The geometry of Markov traces Ben Webster Geordie Williamson — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on"
+---
+can be expanded as a direct sum of the traces on irreducible re presentations, i.e. as
+a sum of irreducible characters. A formula for this was given in type A by Ocneanu
+[Wen88], in type B by Orellana [Ore99], and in arbitrary type by Gomi [Gom06]. Using
+our geometric perspective, we can give a much simpler proof t han that of [Gom06],
+which depended on case-by-case analysis.
+Our proof is founded on the fact that the expansion of the Heck e algebra as a sum of
+matrix algebras has a geometric manifestation: given a simp le perverse sheaf ICw, we
+can apply the “averaging” functor ind G∆
+B∆
+: Db
+B∆
+(G)→ Db
+G∆
+(G). Since G/B is projective, each
+summand of Kw = indG∆
+B∆
+ICw is a shift of a simple perverse sheaf by the Decomposition
+Theorem.
+Deﬁnition 7. A simple perverse sheaf in D b
+G∆
+(G) is called a unipotent character sheaf if it
+appears as a summand of Kw for some w. Following [MS89,§5.2], we let ˆG(1) denote the set of
+unipotent character sheaves.
+We choose our normalization so that eachV∈ ˆG(1) extends a local system of weight
+0 in degree 0. Let ˆW denote the set of irreducible characters of W. For each χ∈ ˆW
+there exists a unipotent character sheaf Vχ ∈ G(1) whose restriction to the regular
+semi-simple elements of G is a local system with monodromy given by χ. Let us denote
+by ˆG(1)ex those character sheaves in ˆG(1) which are not isomorphic to a character sheaf
+of the formVχ for χ∈ ˆW.
+Since induction is adjoint to restriction, we have a natural isomorphism
+(4) H∗
+G∆
+(G; Kw) /simequalH∗
+B∆
+(G; ICw).
+One might hope that the decomposition ofKw into simple character sheaves categoriﬁes
+the formula expressing the trace ofC′
+w in terms of the irreducible characters of the Hecke
+algebra. If this were the case then, by (4) we could write the w eights of our trace in
+terms of the mixed Poincar´ e polynomials of simple characte r sheaves. We will see
+below that this is true after performing Lusztig’s Fourier t ransform.
+ForV∈ ˆG(1), we let PV(q, t) denote the G∆-equivariant mixed Poincar´ e polynomial
+ofV. Let{χ′, χ} be the matrix coe ﬃcients of Lusztig’s Fourier transform.
+Proposition 8. The weight ̟χ of the character χ in Tr is
+̟χ =
+∑
+χ′∈ ˆW
+{χ′, χ}· PVχ′ (q, t)
+Proof. For the course of the proof consider S the split Grothendieck group of Db
+G∆
+(G). If
+F∈ Db
+G∆
+(G) we denote by [F ] its class in S and, given a polynomial a = aiq
+i/2∈ Z[q±1/2]
+9
+The geometry of Markov traces
+we set
+a· [F ] :=
+∑
+i
+ai[F⟨−i⟩]∈ S .
+In this notation, combining Lusztig’s formula [Lus85c, 14. 11] and [Lus86, 23.1] we
+obtain
+(5) [ Kw] =
+∑
+χ,χ′∈ ˆW
+χq(C′
+w){χ′, χ}· [Vχ′] +
+∑
+V∈ˆG(1)ex
+aV· [V].
+Some remarks are in order about why our formula is equivalent to Lusztig’s:
+• Firstly , note that for Lusztig’s objects ¯Kw we have ¯Kw⟨ℓ(w)⟩/simequalKw and Lusztig
+normalizes character sheaves so as to be perverse.
+• Secondly , note that [Lus85c, 14.11] is an equality after for getting mixed struc-
+tures, however this can be lifted to the mixed setting by usin g the fact that Kw is
+pure of weight zero.
+• Thirdly , the sign ǫVχ (see [Lus85c, 13.10]) is equal to ( −1)dim G as Aχ occurs as a
+direct summand of the Springer sheaf Kid.
+We show in Proposition 10 below that the G∆-equivariant cohomology of any V∈
+ˆG(1)ex is zero. Hence, applying hypercohomology to (5) we obtain (n ote also (1))
+Tr(C′
+w) = PICw(q, t) = PKw(q, t) =
+∑
+χ∈ ˆW
+χq(C′
+w)
+( ∑
+χ′∈ ˆW
+{χ′, χ}· PVχ′ (q, t)
+)
+and the proposition follows. □
+Thus, the primary point remaining to us is the computation of the mixed Poincar´ e
+polynomial PV(q, t). Our ﬁrst step is to show that a number of character sheaves h ave
+trivial cohomology .
+If L⊂ G is the Levi of a parabolic, then there are adjoint parabolic restriction and
+parabolic induction functors
+Db
+L∆
+(L) Db
+G∆
+(G)
+IndG
+L
+/d52/d52
+ResG
+L
+/d116/d116
+relating the conjugation-equivariant derived categories of these groups, deﬁned by
+Lusztig [Lus85a]. These functors are di ﬀerent from the usual restriction and induction
+functors on equivariant derived categories, which we write uncapitalized.
+For each character sheafV, there is up to conjugacy a unique minimal Levi LV such
+thatV is a summand of Ind G
+LV′ whereV′ is a strongly cuspidal character sheaf on L.
+This is also the minimal Levi for which Res G
+LV /nequal0.
+In the equivariant derived category DG∆(G), these Levi subgroups index a block
+decomposition of the category generated by character sheav es. That is,
+Proposition 9. IfV,W are character sheaves and Ext•
+G∆(V,W) /nequal{0}, then LV is conjugate
+to LW.
+In particular, if LV /nequalT, then H∗
+G∆
+(G;V) ={0} and PV(q, t) = 0.
+10
+Ben Webster & Geordie Williamson
+Proof. This was proved in the non-equivariant situation by Lusztig in [Lus85b, 7.2], and
+the equivariant result follows immediately from the existe nce of the spectral sequence
+Ep,q
+2 = Extq(V,W)⊗ Hp
+G∆
+(pt)⇒ Extp+q
+G∆
+(V,W). □
+One simple corollary of Proposition 9 is that:
+Theorem 10. Any unipotent character sheaf is G ∆-equivariantly formal.
+Proof. IfV is induced from a cuspidal sheaf on a non-abelian Levi, then b y Proposition
+9, H∗
+G∆
+(V) = 0, soV is equivariantly formal.
+On the other hand, every character sheaf not covered by the pr evious assertion is a
+summand of K1, which is equivariantly formal, since IC1 =
+/CZ
+B is. □
+This allows us to answer deﬁnitively a question answered pos itively for type A in a
+previous paper of the authors [WW08].
+Corollary 11. For any G and any w ∈ W, the sheaf ICw is B∆-equivariantly formal.
+We thank Hailong Dao for help with the following proof.
+Proof. The sheaf Kw is equivariantly formal, since it is a sum of unipotent chara cter
+sheaves. Thus the cohomology H∗
+B∆
+(ICw) = H∗
+G∆
+(Kw) is free as a module over H∗(BG∆);
+we wish to conclude that it is free as a module over the larger r ing H∗(BB∆).
+This follows from standard arguments in commutative algebra: since Spec H∗(BB∆) is
+smooth, it suﬃces to show that the depth of the stalk at each point is the dimension of the
+variety . On the other hand, this follows immediately from Proposition 1.2.16 in [BH93],
+and the fact that both H∗(BB∆) and H∗(BG∆) are smooth and thus Cohen-Macaulay . □

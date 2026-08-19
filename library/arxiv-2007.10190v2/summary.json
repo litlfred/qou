@@ -1,0 +1,97 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2007.10190v2",
+ "source_sha256": "37bcbd3a343bb21a",
+ "brief": "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS — The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series.",
+ "extended": "**THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS**\n\n*STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARIÑO*\n\n25 pp, 15 sections.\n\n**Abstract.** The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series. We conjecture that these series are resurgent functions whose Stokes automorphism is given by a pair of matrices of q-series with integer coeﬃcients, which are determined explicitly by the fundamental solutions of a pair of linear q-diﬀerence equations. We further conjecture that for a hyperbolic knot, a dis- tinguished entry of those matrices equals to the Dimofte-Gaiotto-Gukov 3D-index, and thus is given by a counting of BPS states. We illustrate our conjectures explicitly by matching theoretically and numerically computed integers for the cases of the 4 1 and the 5 2 knots.\n\n**Outline.** 1 Introduction; 1.1 Asymptotic expansions in perturbative quan; 1.2 Resurgence in complex Chern-Simons theory; 4 Descendants; 4.1 The Kashaev invariant and its descendants; 4.3 The state integral and its descendants; 5 Computations; 5.1 Resurgent analysis; 5.2 The 41 knot; 5.3 The 52 knot; 6 Open questions; Acknowledgements; Appendix A. q-series associated with the 52 kn; A.1. The state integral of the 52 knot; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: Fix integers A and B with B > A >0 and integers λ and µ. For all τ with",
+ "tokens": {
+  "brief": 48,
+  "extended": 359
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-asymptotic-expansions-in-perturbative-quantum",
+   "title": "Asymptotic expansions in perturbative quantum field theory",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-12-resurgence-in-complex-chern-simons-theory",
+   "title": "Resurgence in complex Chern-Simons theory",
+   "pages": "1-7"
+  },
+  {
+   "id": "sec-003-4-descendants",
+   "title": "Descendants",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-004-41-the-kashaev-invariant-and-its-descendants",
+   "title": "The Kashaev invariant and its descendants",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-005-43-the-state-integral-and-its-descendants",
+   "title": "The state integral and its descendants",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-006-5-computations",
+   "title": "Computations",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-007-51-resurgent-analysis",
+   "title": "Resurgent analysis",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-008-52-the-41-knot",
+   "title": "The 41 knot",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-009-53-the-52-knot",
+   "title": "The 52 knot",
+   "pages": "16-20"
+  },
+  {
+   "id": "sec-010-6-open-questions",
+   "title": "Open questions",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-011-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-012-appendix-a-q-series-associated-with-the-52-knot",
+   "title": "Appendix A. q-series associated with the 52 knot",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-013-a1-the-state-integral-of-the-52-knot",
+   "title": "A.1. The state integral of the 52 knot",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-014-references",
+   "title": "References",
+   "pages": "23-25"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

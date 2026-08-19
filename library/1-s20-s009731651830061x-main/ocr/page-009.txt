@@ -1,0 +1,48 @@
+568 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604
+
+Strict, =E,'(Id+uA, + (1—v)A, +uA,Ay),
+the following generalization of Corollary 3.1 in [15] can be proved.
+
+Corollary 3. Suppose b = (b1,...,bn) is a strictly increasing sequence of integers, then
+the generating function of monotone triangles with bottom row by,...,b, w.r.t. the two
+inversion numbers is the constant term in 21,...,%n of the following Laurent polynomial.
+
+n
+
+[[atanree*! TT (ia) + (= v)ai + ula; + 2x)
+i=l 1<i<j<n
+
+When considering the special case u = v = 1, it suffices to require that (bi,...,bn) is
+weakly increasing.
+
+In Appendix A, we elaborate on the case v = 1 — u, which is an interesting case since
+there exist certain combinatorial tools to handle it. Also note that we can recover the
+generating function with respect to number of —1 in the ASM proved in [13] by setting
+u =v =1/Q and multiplying with Q(2). This follows from (2.2).
+
+Remark 2.1. There exist two alternative constant term expressions for the number of
+monotone triangles with bottom row b = (b1,...,bn) that could replace (2.3) in all what
+follows in the special case u = v = 1. Both of them are also based on [11]. First, it was
+shown in [12, Theorem 3] that the constant term of
+
+n
+
+Il nttobi(y gor Il (x; — x )(1 — aj + 2425) (2.6)
+i=l 1<i<j<n
+is the number of monotone triangles with bottom row b = (b1,...,bn) if b; > 0 for all z.
+
+Note that this is not a Laurent polynomial but a rational function, and so we need to
+clarify how we expand it into a Laurent series. Here and throughout the remainder of
+the paper, unless stated otherwise, we expand in powers with non-negative exponents,
+in particular, we have
+
+(l- a)" = > (") (-1)far
+
+j=0
+in (2.6). In order to present the second alternative formula, we define ASz, 2, to be
+the antisymmetrizer w.r.t. ©1,...,Up, that is
+AS 0)... P(1,+++52n) = S $gn.0 P(Xo(1))+++3Lo(n))- (2.7)
+oESn,
+
+In [16] it was shown that the number of monotone triangles with bottom row b =
+(b1,...,bn) is given by the constant term of the following expression.

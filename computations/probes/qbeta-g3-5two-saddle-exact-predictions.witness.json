@@ -52,7 +52,7 @@
   "description": "Port of the completed 4_1 machinery to 5_2: exact closed-form saddle data from the GGM sec-6.1 potential (curve Lean-proved) and the falsifiable deformed pole-position/phase targets for the #3892 5_2 ladder. A nonzero intrinsic pole phase is predicted — the odd-channel carrier the 4_1 null excluded.",
   "contentBlock": "conj:im-q-physical-role",
   "data": {
-    "source": "uploads/2012.00062v3.pdf (GGM) eqs 230-233 + 73/75",
+    "source": "library/arxiv-2012.00062v3/2012.00062v3.pdf (GGM) eqs 230-233 + 73/75",
     "curve": "x*y^3 - (x^2+1)*y^2 + (x^2+x+1)*y - x = 0 [(232)-derived; Lean: FiveTwoSaddleCurve.lean]",
     "u0": {
       "xi1": "(0.78492014549902663296 + 1.3071412786820454805j)",

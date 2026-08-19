@@ -1,0 +1,319 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1010.5321v3",
+ "source": {
+  "file": "1010.5321v3.pdf",
+  "sha256": "c6bb20926b1f291fe66fc82b10be9d6a8b51f3b44034d4fd9d111bd4c3767a31",
+  "bytes": 183784,
+  "pages": 16
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1010.5321",
+   "version": "3",
+   "primary_class": "math.MG",
+   "stamp_date": "16 Nov 2010"
+  },
+  "doi": null,
+  "title": "Formulas on hyperbolic volume ∗ Á.G.Horváth Department of Geometry",
+  "authors_raw": "Budapest University of Technology and Economics",
+  "abstract": "This paper collects some important formulas on hyperbolic volume. To determine con- crete values of volume function is a very hard question requiring the knowledge of various methods. Our goal to give a non-elementary integral on the volume of the orthosceme (obtain it without using the Schl¨ aﬂi diﬀerential formula), using edge-lengthes as the only parameters.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181022103223-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "Formulas on hyperbolic volume ∗ ´A.G.Horv´ ath Department of Geometry",
+  "title_lines": [
+   "Formulas on hyperbolic volume ∗",
+   "Á.G.Horváth",
+   "Department of Geometry"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Notation",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "General formulas",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Coordinate system based on paracycles (horocycles)",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Volume in the Poincare half-space model",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Hyperbolic orthogonal coordinate system",
+   "page": 4,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Coordinate system based on spherical hyperbolic coordinates",
+   "page": 5,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Volume in the projective model",
+   "page": 6,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "The three dimensional case",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Formulas of J. Bolyai",
+   "page": 6,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Formulas of N.I.Lobachevsky",
+   "page": 8,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Once more again on the volume of the orthosceme",
+   "page": 9,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "The 3-dimensional case",
+   "page": 9,
+   "source": "outline",
+   "number": "3.3.1"
+  },
+  {
+   "level": 3,
+   "title": "The case of dimension two",
+   "page": 13,
+   "source": "outline",
+   "number": "3.3.2"
+  },
+  {
+   "level": 3,
+   "title": "The case of dimension n",
+   "page": 13,
+   "source": "outline",
+   "number": "3.3.3"
+  },
+  {
+   "level": 2,
+   "title": "Further results on concrete volumes",
+   "page": 14,
+   "source": "outline",
+   "number": "3.4"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 590,
+   "n_words": 92
+  },
+  {
+   "id": "sec-001-2-general-formulas",
+   "number": "2",
+   "title": "General formulas",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 286,
+   "n_words": 45
+  },
+  {
+   "id": "sec-002-11-notation",
+   "number": "1.1",
+   "title": "Notation",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 960,
+   "n_words": 160
+  },
+  {
+   "id": "sec-003-21-coordinate-system-based-on-paracycles-horocyc",
+   "number": "2.1",
+   "title": "Coordinate system based on paracycles (horocycles)",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2687,
+   "n_words": 573
+  },
+  {
+   "id": "sec-004-22-volume-in-the-poincare-half-space-model",
+   "number": "2.2",
+   "title": "Volume in the Poincare half-space model",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 618,
+   "n_words": 135
+  },
+  {
+   "id": "sec-005-23-hyperbolic-orthogonal-coordinate-system",
+   "number": "2.3",
+   "title": "Hyperbolic orthogonal coordinate system",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1886,
+   "n_words": 420
+  },
+  {
+   "id": "sec-006-24-coordinate-system-based-on-spherical-hyperbol",
+   "number": "2.4",
+   "title": "Coordinate system based on spherical hyperbolic coordinates",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 896,
+   "n_words": 197
+  },
+  {
+   "id": "sec-007-25-volume-in-the-projective-model",
+   "number": "2.5",
+   "title": "Volume in the projective model",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 926,
+   "n_words": 214
+  },
+  {
+   "id": "sec-008-3-the-three-dimensional-case",
+   "number": "3",
+   "title": "The three dimensional case",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-31-formulas-of-j-bolyai",
+   "number": "3.1",
+   "title": "Formulas of J. Bolyai",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 2076,
+   "n_words": 447
+  },
+  {
+   "id": "sec-010-32-formulas-of-nilobachevsky",
+   "number": "3.2",
+   "title": "Formulas of N.I.Lobachevsky",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 796,
+   "n_words": 165
+  },
+  {
+   "id": "sec-011-33-once-more-again-on-the-volume-of-the-orthosce",
+   "number": "3.3",
+   "title": "Once more again on the volume of the orthosceme",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 467,
+   "n_words": 99
+  },
+  {
+   "id": "sec-012-331-the-3-dimensional-case",
+   "number": "3.3.1",
+   "title": "The 3-dimensional case",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 13,
+   "n_chars": 6212,
+   "n_words": 1351
+  },
+  {
+   "id": "sec-013-332-the-case-of-dimension-two",
+   "number": "3.3.2",
+   "title": "The case of dimension two",
+   "level": 3,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 964,
+   "n_words": 220
+  },
+  {
+   "id": "sec-014-333-the-case-of-dimension-n",
+   "number": "3.3.3",
+   "title": "The case of dimension n",
+   "level": 3,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1916,
+   "n_words": 387
+  },
+  {
+   "id": "sec-015-34-further-results-on-concrete-volumes",
+   "number": "3.4",
+   "title": "Further results on concrete volumes",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3784,
+   "n_words": 770
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 16,
+  "sections": 16,
+  "chars_total": 25064
+ }
+}

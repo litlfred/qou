@@ -1,0 +1,436 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1301.4504v4",
+ "source": {
+  "file": "1301.4504v4.pdf",
+  "sha256": "201acc5bb1d4b6a0fdf39f7edffb36e11b0119366d1459d968d80b8278a969f3",
+  "bytes": 825500,
+  "pages": 66
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1301.4504",
+   "version": "4",
+   "primary_class": "hep-th",
+   "stamp_date": "6 Apr 2013"
+  },
+  "doi": null,
+  "title": "DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Science, Princeton University, Princeton NJ 08540 USA",
+  "authors_raw": null,
+  "abstract": "In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue against the smoothness of black hole horizons. We argue that the quantum computations required to do these experiments would take a time which is exponential in the entropy of the black hole under study, and we show that for a wide variety of black holes this prevents the experiments from being done. We interpret our results as motivating a broader type of nonlocality than is usually considered in the context of black hole thought experiments, and claim that once this type of nonlocality is allowed there may be no need for ﬁrewalls. Our results do not threaten the unitarity of of black hole evaporation or the ability of advanced civilizations to test it. arXiv:1301.4504v4 [hep-th] 6 Apr 2013",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20241127045613Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "medialab",
+   "Title": ""
+  },
+  "title_prev": "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Science, Princeton University, Princeton NJ 08540 USA",
+  "title_lines": [
+   "DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY",
+   "Quantum Computation vs. Firewalls",
+   "Daniel Harlowa Patrick Haydenb",
+   "aPrinceton Center for Theoretical Science, Princeton University, Princeton NJ 08540 USA"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Firewall Argument",
+   "page": 8,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "A Quantum Black Hole from the Outside",
+   "page": 9,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "A Quantum Black Hole from the Inside",
+   "page": 11,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "A Way Out?",
+   "page": 13,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "The AMPS Experiment as a Quantum Computation",
+   "page": 14,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Quantum Computing is Hard",
+   "page": 16,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Implementing a General Unitary Transformation with Quantum Gates",
+   "page": 19,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Why is Alice's Computation Slower than the Black Hole Dynamics?",
+   "page": 23,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Two Counting Arguments",
+   "page": 26,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Quantum Coding and Error Correction",
+   "page": 27,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Review of Error Correcting Codes",
+   "page": 27,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Computational Complexity, Stabilizer Codes, and NP-Hardness",
+   "page": 32,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Alice's Task as Error Correction",
+   "page": 35,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Error Correction and Zero-Knowledge Proofs",
+   "page": 37,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "More General Black Holes",
+   "page": 41,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Schwarzschild in a Box",
+   "page": 41,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Reissner-Nordstrom",
+   "page": 43,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Near Extremal AdS Throat",
+   "page": 44,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 3,
+   "title": "The Brane Setup",
+   "page": 46,
+   "source": "outline",
+   "number": "5.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Hawking-Page Transition for Toroidal Black Holes",
+   "page": 48,
+   "source": "outline",
+   "number": "5.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Time Scales",
+   "page": 50,
+   "source": "outline",
+   "number": "5.3.3"
+  },
+  {
+   "level": 1,
+   "title": "The Structure of the Hilbert Space",
+   "page": 56,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "A The Absorption Probability for a Nambu-Goto String",
+   "page": 59,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 8,
+   "n_chars": 18368,
+   "n_words": 3044
+  },
+  {
+   "id": "sec-001-2-the-firewall-argument",
+   "number": "2",
+   "title": "The Firewall Argument",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1307,
+   "n_words": 219
+  },
+  {
+   "id": "sec-002-21-a-quantum-black-hole-from-the-outside",
+   "number": "2.1",
+   "title": "A Quantum Black Hole from the Outside",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4908,
+   "n_words": 851
+  },
+  {
+   "id": "sec-003-22-a-quantum-black-hole-from-the-inside",
+   "number": "2.2",
+   "title": "A Quantum Black Hole from the Inside",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 3797,
+   "n_words": 650
+  },
+  {
+   "id": "sec-004-23-a-way-out",
+   "number": "2.3",
+   "title": "A Way Out?",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2829,
+   "n_words": 480
+  },
+  {
+   "id": "sec-005-3-the-amps-experiment-as-a-quantum-computation",
+   "number": "3",
+   "title": "The AMPS Experiment as a Quantum Computation",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 5501,
+   "n_words": 980
+  },
+  {
+   "id": "sec-006-31-quantum-computing-is-hard",
+   "number": "3.1",
+   "title": "Quantum Computing is Hard",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 7889,
+   "n_words": 1469
+  },
+  {
+   "id": "sec-007-32-implementing-a-general-unitary-transformation",
+   "number": "3.2",
+   "title": "Implementing a General Unitary Transformation with Quantum Gates",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 26,
+   "n_chars": 15326,
+   "n_words": 2734
+  },
+  {
+   "id": "sec-008-34-two-counting-arguments",
+   "number": "3.4",
+   "title": "Two Counting Arguments",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3568,
+   "n_words": 624
+  },
+  {
+   "id": "sec-009-4-quantum-coding-and-error-correction",
+   "number": "4",
+   "title": "Quantum Coding and Error Correction",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 461,
+   "n_words": 79
+  },
+  {
+   "id": "sec-010-41-review-of-error-correcting-codes",
+   "number": "4.1",
+   "title": "Review of Error Correcting Codes",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 32,
+   "n_chars": 10395,
+   "n_words": 1826
+  },
+  {
+   "id": "sec-011-42-computational-complexity-stabilizer-codes-and",
+   "number": "4.2",
+   "title": "Computational Complexity, Stabilizer Codes, and NP-Hardness",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 37,
+   "n_chars": 15603,
+   "n_words": 2763
+  },
+  {
+   "id": "sec-012-44-error-correction-and-zero-knowledge-proofs",
+   "number": "4.4",
+   "title": "Error Correction and Zero-Knowledge Proofs",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 41,
+   "n_chars": 11258,
+   "n_words": 1801
+  },
+  {
+   "id": "sec-013-5-more-general-black-holes",
+   "number": "5",
+   "title": "More General Black Holes",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 317,
+   "n_words": 55
+  },
+  {
+   "id": "sec-014-51-schwarzschild-in-a-box",
+   "number": "5.1",
+   "title": "Schwarzschild in a Box",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 5220,
+   "n_words": 938
+  },
+  {
+   "id": "sec-015-52-reissner-nordstrom",
+   "number": "5.2",
+   "title": "Reissner-Nordstrom",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 2489,
+   "n_words": 459
+  },
+  {
+   "id": "sec-016-53-near-extremal-ads-throat",
+   "number": "5.3",
+   "title": "Near Extremal AdS Throat",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 2472,
+   "n_words": 474
+  },
+  {
+   "id": "sec-017-531-the-brane-setup",
+   "number": "5.3.1",
+   "title": "The Brane Setup",
+   "level": 3,
+   "page_start": 46,
+   "page_end": 48,
+   "n_chars": 4109,
+   "n_words": 755
+  },
+  {
+   "id": "sec-018-532-hawking-page-transition-for-toroidal-black-h",
+   "number": "5.3.2",
+   "title": "Hawking-Page Transition for Toroidal Black Holes",
+   "level": 3,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 4495,
+   "n_words": 813
+  },
+  {
+   "id": "sec-019-533-time-scales",
+   "number": "5.3.3",
+   "title": "Time Scales",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 56,
+   "n_chars": 14286,
+   "n_words": 2599
+  },
+  {
+   "id": "sec-020-6-the-structure-of-the-hilbert-space",
+   "number": "6",
+   "title": "The Structure of the Hilbert Space",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 59,
+   "n_chars": 9700,
+   "n_words": 1615
+  },
+  {
+   "id": "sec-021-a-the-absorption-probability-for-a-nambu-goto-st",
+   "number": null,
+   "title": "A The Absorption Probability for a Nambu-Goto String",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 66,
+   "n_chars": 13870,
+   "n_words": 2152
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 24,
+  "sections": 22,
+  "chars_total": 158168
+ }
+}

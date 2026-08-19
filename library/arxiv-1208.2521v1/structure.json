@@ -1,0 +1,350 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1208.2521v1",
+ "source": {
+  "file": "1208.2521v1.pdf",
+  "sha256": "8d0281aa84043865a2268ae04a97c395a9e97d630c05f973c6a43a0d850ddae8",
+  "bytes": 207133,
+  "pages": 20
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1208.2521",
+   "version": "1",
+   "primary_class": "math.CA",
+   "stamp_date": "13 Aug 2012"
+  },
+  "doi": null,
+  "title": "ON q-ANALOGUES OF THE FOURIER",
+  "authors_raw": "AND HANKEL TRANSFORMS",
+  "abstract": "For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H. Exton) we deriv e Hansen- Lommel type orthogonality relations, which, by a symmetry, turn out to be equivalent to orthogonality relations which are q-analogues of the Hankel integral transform pair. These results are implicit, in the context of quantum groups, in a paper by Vaksman and Korogodski ˘ ı. As a specialization we get q-cosines and q-sines which admit q- analogues of the Fourier-cosine and Fourier-sine transforms. We g et also a formula which is both an analogue of Graf’s addition formula and of the W eber-Schafheitlin discontinuous integral. This is a corrected version of a paper wh ich appeared in Trans. Amer. Math. Soc. 333 (1992), 445–461.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180626152420-04'00'",
+   "Creator": "dvips(k) 5.991 Copyright 2011 Radical Eye Software",
+   "Title": "arXiv:1208.2521v1  [math.CA]  13 Aug 2012"
+  },
+  "title_lines": [
+   "ON q-ANALOGUES OF THE FOURIER"
+  ],
+  "title_prev": "1. Introduction Several possible q-analogues of the Bessel function (1.1) Jα (x) := (−1)k (x/ 2)α +2k k! Γ( α + k + 1) have been considered in the literature. Best known are two re lated q-Bessel func-"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Symmetry and orthogonality for q-Bessel functions",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Some limit transitions",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "A q-analogue of Graf’s addition formula",
+   "page": 10,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 19,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "G. E. Andrews, q-Series: their development and application in analysis, nu mber theory,",
+   "page": 19,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "G. E. Andrews and R. Askey, Enumeration of partitions: The role of Eulerian series and",
+   "page": 19,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "E. Heine, Handbuch der Kugelfunctionen, Theorie und Anwendungen. Er ster Band: Theorie",
+   "page": 19,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
+   "number": "2",
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 796,
+   "n_words": 132
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 5166,
+   "n_words": 953
+  },
+  {
+   "id": "sec-002-4-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
+   "number": "4",
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1436,
+   "n_words": 256
+  },
+  {
+   "id": "sec-003-2-symmetry-and-orthogonality-for-q-bessel-functi",
+   "number": "2",
+   "title": "Symmetry and orthogonality for q-Bessel functions",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2697,
+   "n_words": 629
+  },
+  {
+   "id": "sec-004-6-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
+   "number": "6",
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3288,
+   "n_words": 696
+  },
+  {
+   "id": "sec-005-8-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
+   "number": "8",
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-3-some-limit-transitions",
+   "number": "3",
+   "title": "Some limit transitions",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3111,
+   "n_words": 733
+  },
+  {
+   "id": "sec-007-10-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
+   "number": "10",
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 552,
+   "n_words": 139
+  },
+  {
+   "id": "sec-008-4-a-q-analogue-of-grafs-addition-formula",
+   "number": "4",
+   "title": "A q-analogue of Graf’s addition formula",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3137,
+   "n_words": 719
+  },
+  {
+   "id": "sec-009-12-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
+   "number": "12",
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4044,
+   "n_words": 1040
+  },
+  {
+   "id": "sec-010-14-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
+   "number": "14",
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3078,
+   "n_words": 722
+  },
+  {
+   "id": "sec-011-16-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
+   "number": "16",
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 2814,
+   "n_words": 665
+  },
+  {
+   "id": "sec-012-18-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
+   "number": "18",
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 4086,
+   "n_words": 901
+  },
+  {
+   "id": "sec-013-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-014-1-g-e-andrews-q-series-their-development-and-app",
+   "number": "1",
+   "title": "G. E. Andrews, q-Series: their development and application in analysis, nu mber theory,",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 126,
+   "n_words": 19
+  },
+  {
+   "id": "sec-015-2-g-e-andrews-and-r-askey-enumeration-of-partiti",
+   "number": "2",
+   "title": "G. E. Andrews and R. Askey, Enumeration of partitions: The role of Eulerian series and",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 687,
+   "n_words": 106
+  },
+  {
+   "id": "sec-016-9-e-heine-handbuch-der-kugelfunctionen-theorie-u",
+   "number": "9",
+   "title": "E. Heine, Handbuch der Kugelfunctionen, Theorie und Anwendungen. Er ster Band: Theorie",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 487,
+   "n_words": 76
+  },
+  {
+   "id": "sec-017-20-tom-h-koornwinder-and-ren-e-f-sw-arttouw",
+   "number": "20",
+   "title": "TOM H. KOORNWINDER AND REN ´E F. SW ARTTOUW",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1179,
+   "n_words": 191
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 18,
+  "chars_total": 36684
+ }
+}

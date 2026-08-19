@@ -15,7 +15,7 @@ rem:st-is-median-resummation asserts st = L^med as an identity of two selection 
 - Sec 4, eqs (4.1)-(4.3), (4.8)-(4.10) — For the figure-eight complement the Andersen-Kashaev invariant I(tau) is written as a lateral Borel resummation of an explicit trans-series with two complex-instanton towers q~^l exp(-+ V/(2 pi tau)), q~ = exp(-2 pi i / tau), V = 2.029883... the hyperbolic volume, with perturbative series phi_g(tau) = 3^{-1/4}(1 + ...) and phi_c(tau) = phi_g(-tau); the partial series factorise as G^i_n(y) = a_n M_i(y), so the radius-1 convergence of M_{1,2} gives convergence of every partial series, with the same radius for all n.
   Use here: The 4_1 instance of the previous item, at the corpus's own muon anchor and with V = Vol(4_1) as the instanton action. The corpus has a 5_2 analogue (computations/probes/qbeta_5two_median_borel_resummation_probe.py, which records that the substrate ray misses every Stokes ray) but no 4_1 counterpart; this is the published trans-series a 4_1 probe would be written against.
 
-Source: `uploads/2302.08363v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2302.08363v2/2302.08363v2.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

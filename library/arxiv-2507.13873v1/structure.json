@@ -1,0 +1,256 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2507.13873v1",
+ "source": {
+  "file": "2507.13873v1.pdf",
+  "sha256": "fa1d38d08dc4976a3e03dc9c9a2ad31a0ccb4b37ac32b836b4a9e79573bda9ca",
+  "bytes": 1013439,
+  "pages": 44
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2507.13873",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "18 Jul 2025"
+  },
+  "doi": null,
+  "title": "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡",
+  "authors_raw": "Department of Physics and Astronomy",
+  "abstract": "We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the global symmetry of a q-deformed CFT. More precisely, we consider the 2d sinh dilaton gravity model, whose classical metric solutions exhibit a curvature singularity at the holographic boundary. Our aim is to probe this UV near-boundary regime by injecting a small probe into the bulk, and identifying the geometrical features it observes. At the level of the two- point correlator, we see the emergence ofq-deformed hyperbolic disk isometries. By formulating DSSYK in terms of the analogous sine dilaton gravity model, we expect this q-deformed holographic duality to persist. July 21, 2025 ∗andreas.belaey@ugent.be †thomas.mertens@ugent.be ‡jacopo.papalini@ugent.be arXiv:2507.13873v1 [hep-th] 18 Jul 2025",
+  "docinfo": {
+   "Author": "Andreas Belaey; Thomas G. Mertens; Jacopo Papalini",
+   "Creator": "arXiv GenPDF (tex2pdf:)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Probing the singularity at the holographic screen via $q$-holography"
+  },
+  "title_lines": [
+   "Probing the singularity at the holographic screen via",
+   "q-holography",
+   "Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Correlation functions on the quantum disk",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "q-Correlation functions",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Quantum hyperbolic disk",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "A candidate bulk description for q-holography",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Definition and classical structure of sinh dilaton gravity",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Probe regime of sinh dilaton gravity",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Concluding remarks",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Corepresentations of (quasi)-primary operators",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Dilaton gravity models",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Holographic counterterm",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Sinh dilaton gravity quantization",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Useful manipulations involving Ramanujan's formula",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6880,
+   "n_words": 1203
+  },
+  {
+   "id": "sec-001-correlation-functions-on-the-quantum-disk",
+   "number": null,
+   "title": "Correlation functions on the quantum disk",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1276,
+   "n_words": 203
+  },
+  {
+   "id": "sec-002-q-correlation-functions",
+   "number": null,
+   "title": "q-Correlation functions",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 7687,
+   "n_words": 1298
+  },
+  {
+   "id": "sec-003-quantum-hyperbolic-disk",
+   "number": null,
+   "title": "Quantum hyperbolic disk",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3591,
+   "n_words": 568
+  },
+  {
+   "id": "sec-004-a-candidate-bulk-description-for-q-holography",
+   "number": null,
+   "title": "A candidate bulk description for q-holography",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 588,
+   "n_words": 82
+  },
+  {
+   "id": "sec-005-definition-and-classical-structure-of-sinh-dilat",
+   "number": null,
+   "title": "Definition and classical structure of sinh dilaton gravity",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 8663,
+   "n_words": 1426
+  },
+  {
+   "id": "sec-006-probe-regime-of-sinh-dilaton-gravity",
+   "number": null,
+   "title": "Probe regime of sinh dilaton gravity",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 21,
+   "n_chars": 10486,
+   "n_words": 1730
+  },
+  {
+   "id": "sec-007-concluding-remarks",
+   "number": null,
+   "title": "Concluding remarks",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 5960,
+   "n_words": 956
+  },
+  {
+   "id": "sec-008-corepresentations-of-quasi-primary-operators",
+   "number": null,
+   "title": "Corepresentations of (quasi)-primary operators",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 28,
+   "n_chars": 7845,
+   "n_words": 1227
+  },
+  {
+   "id": "sec-009-dilaton-gravity-models",
+   "number": null,
+   "title": "Dilaton gravity models",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 1373,
+   "n_words": 247
+  },
+  {
+   "id": "sec-010-holographic-counterterm",
+   "number": null,
+   "title": "Holographic counterterm",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 3531,
+   "n_words": 685
+  },
+  {
+   "id": "sec-011-sinh-dilaton-gravity-quantization",
+   "number": null,
+   "title": "Sinh dilaton gravity quantization",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 44,
+   "n_chars": 25796,
+   "n_words": 3970
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 12,
+  "chars_total": 83676
+ }
+}

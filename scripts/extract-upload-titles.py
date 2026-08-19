@@ -41,7 +41,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 REFERENCES = "content/schema/references.ts"
-UPLOADS_GLOB = "uploads/*"
+UPLOADS_GLOB = "library/*"
 SOURCE_EXT = (".pdf",)
 
 # A title shorter than this matches too loosely to be evidence of identity

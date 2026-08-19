@@ -1,0 +1,669 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1012.5432v4",
+ "source": {
+  "file": "1012.5432v4.pdf",
+  "sha256": "ec5f6da1f813649eaa2d181004d06fefc47c4ae42db286849c3ce37313ab6439",
+  "bytes": 1595881,
+  "pages": 52
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1012.5432",
+   "version": "4",
+   "primary_class": "quant-ph",
+   "stamp_date": "26 Dec 2012"
+  },
+  "doi": null,
+  "title": "quant-ph Towards Topological Quantum Computation? -",
+  "authors_raw": "Knotting and Fusing Flux Tubes",
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181101200608Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  },
+  "title_lines": [
+   "quant-ph",
+   "Towards Topological Quantum Computation? -"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "I Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "II (2+1)-dimensional Topological Gauge Theories Set the Stage for Quantum Computation",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Knots",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B Fusion",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "III Motivation: Topological Effects in Physics",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Aharonov-Bohm Effect",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B Flux Metamorphosis",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "IV Physics: Hamiltonian Description",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Hamiltonian",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B Symmetry Breaking",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "C Monopoles and Instantons",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Dirac Monopoles",
+   "page": 12,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Polyakov-'t Hooft Monopoles",
+   "page": 12,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Instantons",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "D Higgs Screening",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "E Classification Based on the Symmetry Group",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Three Dimensions",
+   "page": 13,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Two Dimensions",
+   "page": 14,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "V Spin-Statistics Connection",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A The Abelian Case",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B The Non-Abelian Case: Generalized Spin-Statistics Connection",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "VI Determining the Particles from the Hamiltonian",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Abelian",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B Non-Abelian Cases",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "C Determining the Particles",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "D Changing Basis: The S-Matrix",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "E Spin and the T-Matrix",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "F Magnetic-Electric Charge Duality",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Fusion",
+   "page": 21,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Antiparticles",
+   "page": 21,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "G Alice Physics and Cheshire Charges in Non-Abelian Gauge Theories",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "VII Summary",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "VIII Explicit Derivations of Particles and Fusion Rules for Special Physical Theories",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Abelian vs. Non-Abelian: Physical Origin and Computational Potential",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B Applying the Quantum Double Formalism to Abelian Finite Groups Z/NZ",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Particles",
+   "page": 24,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Braiding and Fusion",
+   "page": 24,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "C Applying the Quantum Double Formalism to Non-Abelian Finite Groups",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Finite Subgroups of SO(3) and SU(2)",
+   "page": 25,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "S3",
+   "page": 26,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "A5",
+   "page": 29,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "Fusion Rules:",
+   "page": 32,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "IX MAGMA Program and Discussion of Results",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Majorana Particles",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "X Quantum Computation Schemes",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Universal Quantum Computation",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B Schemes for Topological Quantum Computation",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Fusion Probabilities",
+   "page": 36,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "C Possible Realizations of Topological Quantum Computation",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A5",
+   "page": 37,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "S3",
+   "page": 37,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "The Dihedral Groups and  p + i p Superconductors",
+   "page": 38,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "XI Conclusions",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "A Appendix",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Other Interesting Quantum Doubles",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Finite Subgroups of SO(3) and SU(2)",
+   "page": 44,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "A4",
+   "page": 44,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "S4",
+   "page": 46,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "D4",
+   "page": 48,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "a Possible Physical Realization",
+   "page": 51,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-a-hamiltonian",
+   "number": null,
+   "title": "A Hamiltonian",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 970,
+   "n_words": 152
+  },
+  {
+   "id": "sec-001-3-instantons",
+   "number": "3",
+   "title": "Instantons",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 197,
+   "n_words": 34
+  },
+  {
+   "id": "sec-002-1-dirac-monopoles",
+   "number": "1",
+   "title": "Dirac Monopoles",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3496,
+   "n_words": 543
+  },
+  {
+   "id": "sec-003-1-three-dimensions",
+   "number": "1",
+   "title": "Three Dimensions",
+   "level": 3,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1454,
+   "n_words": 217
+  },
+  {
+   "id": "sec-004-2-two-dimensions",
+   "number": "2",
+   "title": "Two Dimensions",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 21,
+   "n_chars": 11354,
+   "n_words": 1838
+  },
+  {
+   "id": "sec-005-1-fusion",
+   "number": "1",
+   "title": "Fusion",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 940,
+   "n_words": 159
+  },
+  {
+   "id": "sec-006-2-antiparticles",
+   "number": "2",
+   "title": "Antiparticles",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 2368,
+   "n_words": 373
+  },
+  {
+   "id": "sec-007-1-particles",
+   "number": "1",
+   "title": "Particles",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2494,
+   "n_words": 394
+  },
+  {
+   "id": "sec-008-2-braiding-and-fusion",
+   "number": "2",
+   "title": "Braiding and Fusion",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1442,
+   "n_words": 233
+  },
+  {
+   "id": "sec-009-2-s3",
+   "number": "2",
+   "title": "S3",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 6190,
+   "n_words": 1090
+  },
+  {
+   "id": "sec-010-3-a5",
+   "number": "3",
+   "title": "A5",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 32,
+   "n_chars": 3666,
+   "n_words": 728
+  },
+  {
+   "id": "sec-011-4-fusion-rules",
+   "number": "4",
+   "title": "Fusion Rules:",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 36,
+   "n_chars": 4825,
+   "n_words": 758
+  },
+  {
+   "id": "sec-012-1-fusion-probabilities",
+   "number": "1",
+   "title": "Fusion Probabilities",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 1020,
+   "n_words": 151
+  },
+  {
+   "id": "sec-013-1-a5",
+   "number": "1",
+   "title": "A5",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 730,
+   "n_words": 124
+  },
+  {
+   "id": "sec-014-2-s3",
+   "number": "2",
+   "title": "S3",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 4395,
+   "n_words": 755
+  },
+  {
+   "id": "sec-015-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 44,
+   "n_chars": 7009,
+   "n_words": 961
+  },
+  {
+   "id": "sec-016-2-a4",
+   "number": "2",
+   "title": "A4",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 1554,
+   "n_words": 332
+  },
+  {
+   "id": "sec-017-3-s4",
+   "number": "3",
+   "title": "S4",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 651,
+   "n_words": 128
+  },
+  {
+   "id": "sec-018-4-d4",
+   "number": "4",
+   "title": "D4",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 52,
+   "n_chars": 1902,
+   "n_words": 439
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 62,
+  "sections": 19,
+  "chars_total": 56657
+ }
+}

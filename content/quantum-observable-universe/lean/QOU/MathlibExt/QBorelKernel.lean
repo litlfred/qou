@@ -5,7 +5,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 Building block for the RSZ resolution of the C1 module's ∞ slope-½ singularity (bean
 `qou-xufp`, W2). Per Ramis–Sauloy–Zhang, *Local analytic classification of q-difference
-equations* (Astérisque 355, `uploads/0903.0853v3.pdf`) §3.3 p. 39: an irregular singularity
+equations* (Astérisque 355, `library/arxiv-0903.0853v3/0903.0853v3.pdf`) §3.3 p. 39: an irregular singularity
 of level `d` is resolved by a **q-Borel transform** `B_{q,d}(∑ fₙ zⁿ) = ∑ (fₙ/tₙ) ξⁿ` whose
 kernel is a theta family `(tₙ)` subject to `tₙ = q^{n−d}·t_{n−d}` (growth `q^{n²/2d}`). For
 level `d = 1` the canonical choice is the **Jacobi theta coefficient** `tₙ = q^{n(n−1)/2}`;

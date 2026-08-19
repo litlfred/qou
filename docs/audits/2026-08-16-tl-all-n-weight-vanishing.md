@@ -170,7 +170,7 @@ argument.**
 
 That is the "Ocneanu-trace weight formula" of #5207's own phrasing — the
 *route* it named, supplied as the given. Quoted from Orellana p. 17, read
-locally (`uploads/9806163v1.pdf`).
+locally (`library/arxiv-math-9806163v1/9806163v1.pdf`).
 
 > **Superseded 2026-08-16 by [#5230](https://github.com/litlfred/qou/pull/5230).**
 > This paragraph read: *"It is cited with `-- Ref:`, not axiomatised: no Lean

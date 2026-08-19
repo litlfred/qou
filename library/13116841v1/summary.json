@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "13116841v1",
+ "source_sha256": "ca65879d80b1e1c3",
+ "brief": "Observables in Loop Quantum Gravity with a cosmological constant — 5 sections: Introduction; Contents; Scalar product",
+ "extended": "**Observables in Loop Quantum Gravity with a cosmological constant**\n\n*Ma¨ ıté Dupuis1,∗ and Florian Girelli 2, 1,†*\n\n29 pp, 5 sections.\n\n**Outline.** Introduction; Contents; 1 Scalar product; 2 Vector product; Outlook\n\n**Extracted claims (proposals, not verified).**\n- Theorem: II.2. Wigner-Eckart theorem [34]:\n- Lemma: I.1. LetC∈U q(su(2)) invariant under the adjoint action, then C commutes with the generators Jσ, σ =\n- Lemma: II.3. Product of tensor operators [34].\n- Lemma: II.4. [34] If t is a tensor operator of rank j then (1)t = t⊗ 1 and (2)t =ψR(t⊗ 1)ψ−1\n- Lemma: II.5. The scalar product of the tensor operators (i)tj1 and (i)˜tj2 can be reduced to",
+ "tokens": {
+  "brief": 29,
+  "extended": 165
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-contents",
+   "title": "Contents",
+   "pages": "1-8"
+  },
+  {
+   "id": "sec-002-1-scalar-product",
+   "title": "Scalar product",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-003-2-vector-product",
+   "title": "Vector product",
+   "pages": "9-24"
+  },
+  {
+   "id": "sec-004-outlook",
+   "title": "Outlook",
+   "pages": "24-29"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

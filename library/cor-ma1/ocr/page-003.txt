@@ -1,0 +1,68 @@
+2 SYLVIE CORTEEL AND OLIVIER MALLET
+
+Notice that Lovejoy’s result can be seen as an overpartition analogue of Gordon’s theorem, in the sense
+that the conditions on the B;,(n) reduce to the conditions on the By,,(n) if the overpartition has no overlined
+parts and is indeed a partition.
+
+Two questions naturally arise. First, given the similarities between Theorems fj] and [1.3 is there some
+general framework which contains these two theorems? Second, is there an analogue for overpartitions of
+Andrews’ result, Theorem Ly In this paper, both of these questions shall be answered in the affirma-
+tive. Moreover, our results contain many other partition and overpartition identities, such as Andrews’
+generalization of the Gollnitz~-Gordon identities
+
+It is well understood combinatorially that Bg i(n) = Cxi(n) = Dzi(n) and this result was established
+by some beautiful work of Burge {id using some recursive arguments. This work was reinterpreted
+by Andrews and Bressoud who showed that Burge’s argument could be rephrased in terms of lattice
+paths with two kinds of steps and that Gordon’s theorem can be established thanks to these combinatorial
+arguments and the Jacobi Triple product identity PA. Finally Bressoud reinterpreted these in terms of
+different lattice paths with three kinds of steps and gave some direct bijections between the objects counted
+by By,i(n), Cy,i(n), Dy,i(n) and the lattice paths.
+
+With our main theorem we extend the main results of the above works & to overpartitions.
+In particular, we generalize all of the combinatorial definitions to overpartitions and successfully adapt the
+methods of proof. This is the result that provides a unifying framework for Theorems {L.4}, 1 and [L.3.
+Theorem 1.4.
+
+e Let Byi(n,j) be the number of overpartitions of n of the form (Ai, A2,---,As) with j overlined parts,
+where Xp — Ac+e—1 > 1 tf Ae+e-1 is overlined and Ae — Av+n—1 > 2 otherwise and at most i—1 parts
+are equal to 1.
+
+e Let Cy,i(n,j) be the number of overpartitions of n with j non-overlined parts in the bottom row of
+their Frobenius representation and whose successive ranks lie in [—i + 2,2k —i- 1].
+
+e Let Dyi(n,j) be the number of overpartitions of n with j overlined parts and i —1 successive Dur-
+fee squares followed by k —i successive Durfee rectangles, the first one being a generalized Durfee
+square/rectangle.
+
+e Let Ex,:(n, J) be the number of paths that use four kinds of unitary steps with special (k, i)-conditions,
+major index n, and j South steps.
+
+Then Byi(n, J) = Cra(n,j) = Dri(n,j) = Ex,i(n,J)-
+All of the combinatorial notions in this theorem will be defined in detail in Section 2. The addition of
+
+the generalized lattice paths counted by E;,,;(n,j) is the key step which allows us to prove Theorem
+combinatorially. In terms of generating functions, we have:
+
+Theorem 1.5. The generating function Ey,i(a,q) = Yn Ex i(n,j)qrai is:
+
+oo
+(1.1) Exi(a,g) = (49) 00 (<1ytat git? +(h-i41)n A/a)
+
+Dee 5 ag)n
+Here we have used the classical g-series notations:
+
+oo
+
+(@)oc = (4 Qo =][G- a0’),
+
+i=0
+(a)n = (@)co/(aq")oo;
+(41,--+,4K3Qoo = (41; Q)oo--- (Ak; Too:
+
+In several cases, we can use the Jacobi Triple Product identity 5):
+
+(1.2) (-1/2,-24,4;d)00 = S> 242")
+
+n=—0co
+
+to show that this generating function has a very nice form. For example,

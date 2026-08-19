@@ -5,7 +5,7 @@ Self-contained first brick of the Lemma-4 epic
 (`docs/audits/2026-08-11-vdv-lemma4-formalization-workplan.md`): the exact
 quadratic decomposition of the Whitehead-link Fresnel phase and the limits
 of the non-oscillatory phase factors, transcribed from van der Veen §3,
-proof of Lemma 4, Step 3 (`uploads/0611181v2.pdf`):
+proof of Lemma 4, Step 3 (`library/arxiv-math-0611181v2/0611181v2.pdf`):
 
     χ_{N,n}·e^{Nπi/8} = exp(n′²πi/(2N)) · exp(nπi/(2N)),   n′ = n − N/2,
     lim φ_N = e^{(c−d)πi}  (= −1 for the Whitehead link, c−d = 1),

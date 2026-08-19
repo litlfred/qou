@@ -1,0 +1,92 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "13116841v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ca65879d80b1e1c3f89fa6f19c62cc925fce5c8d24692c7e311726c817617977",
+  "file": "1311.6841v1.pdf"
+ },
+ "provenance": {
+  "title": "Observables in Loop Quantum Gravity with a cosmological constant",
+  "authors": "Ma\u00a8 \u0131t\u00b4 e Dupuis1,\u2217 and Florian Girelli 2, 1,\u2020",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "lemma": 4,
+   "theorem": 1
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "I.1. LetC\u2208U q(su(2)) invariant under the adjoint action, then C commutes with the generators J\u03c3, \u03c3 =",
+   "section_file": "sections/sec-001-contents.md",
+   "section_title": "Contents",
+   "pages": "1-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "II.2. Wigner-Eckart theorem [34]:",
+   "section_file": "sections/sec-001-contents.md",
+   "section_title": "Contents",
+   "pages": "1-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "II.3. Product of tensor operators [34].",
+   "section_file": "sections/sec-002-1-scalar-product.md",
+   "section_title": "Scalar product",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "II.4. [34] If t is a tensor operator of rank j then (1)t = t\u2297 1 and (2)t =\u03c8R(t\u2297 1)\u03c8\u22121",
+   "section_file": "sections/sec-003-2-vector-product.md",
+   "section_title": "Vector product",
+   "pages": "9-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "II.5. The scalar product of the tensor operators (i)tj1 and (i)\u02dctj2 can be reduced to",
+   "section_file": "sections/sec-003-2-vector-product.md",
+   "section_title": "Vector product",
+   "pages": "9-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

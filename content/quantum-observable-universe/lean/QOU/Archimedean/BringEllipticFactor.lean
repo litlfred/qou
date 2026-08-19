@@ -30,7 +30,7 @@ So the two 4-dim irreps give genus 1 vs 0; the canonical `{∑xᵢ=0}` embedding
 `std = (4,1)`, which is what makes `Bring/S₄` genus 1.
 
 Paper-confirmed literature values (NOT derived here; Braden–Disney-Hogg
-arXiv:2208.13692 Thm 2.12 + Prop 4.6, PDF in `uploads/`): the period is
+arXiv:2208.13692 Thm 2.12 + Prop 4.6, PDF in `library/`): the period is
 `τ₀ = -0.5 + 0.186676·i` (transcendental), with `j(τ₀) = -29³·5/2⁵ = -121945/32`,
 `j(5τ₀) = -25/2` (conductor-50 Q-isogeny class `50a`; the 5-isogeny is the `X₀(5)`
 structure). STRUCTURAL: the Jacobian is `Jac(Bring) ≅ E_{5τ₀}³ × E_{τ₀}` as a complex

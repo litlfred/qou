@@ -17,7 +17,7 @@ Replace the bare 'arXiv:0905.1873' in the TjonSimplexForm docstring with the reg
 - Abstract + conclusions, p.4 — The net induced four-body contribution in A = 4 is smaller than the truncation errors of the chiral interaction, but four-nucleon forces are strongly density dependent so their size must be monitored for heavier nuclei.
   Use here: Scopes the bound honestly: the small-4N-force statement is an A = 4 statement, not an all-A statement. Any QOU use of it as a ceiling for heavier isotopes in the mass-table sweep must carry that caveat, or it over-claims.
 
-Source: `uploads/0905.1873v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-0905.1873v2/0905.1873v2.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

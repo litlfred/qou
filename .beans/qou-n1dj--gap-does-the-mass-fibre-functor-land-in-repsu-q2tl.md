@@ -106,7 +106,7 @@ traces are not proportional, so it cannot be reached by re-tuning), so the
 open `N = 3` construction (`qou-8p1x`) is not on the mass chain's critical path.
 
 **Literature — one source read, the rest unobtainable.** Read: Jones 1985
-(Bull. AMS 12(1) 103–111, `jones1985`, from `uploads/`). Its relations (I)–(VI)
+(Bull. AMS 12(1) 103–111, `jones1985`, from `library/`). Its relations (I)–(VI)
 p.2 state the TL trace is *"completely determined"* by `tr(1)=1` + cyclicity +
 the single `tr(w e_{n+1}) = t/(1+t)²·tr(w)` — an upstream corroboration that a
 TL-factoring trace has no free parameter. Thm 12 p.5 is the one-variable Jones

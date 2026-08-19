@@ -1,0 +1,121 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0401068v1",
+ "source": {
+  "file": "0401068v1.pdf",
+  "sha256": "8168d7e7f60699781175252c397fc949e5a49790a3d65ecac66e77ed015b66c2",
+  "bytes": 176004,
+  "pages": 12
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0401068",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "8 Jan 2004"
+  },
+  "doi": null,
+  "title": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA",
+  "authors_raw": null,
+  "abstract": "@We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum’s formula of the colored Jones p olynomial. Our result supports the AJ conjecture due to S.Garoufalidis.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181024063829-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL",
+   "FOR TWIST KNOTS",
+   "TOSHIE TAKATA"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Main Theorem",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem ??",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Observations",
+   "page": 6,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3222,
+   "n_words": 551
+  },
+  {
+   "id": "sec-001-2-main-theorem",
+   "number": "2",
+   "title": "Main Theorem",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 6761,
+   "n_words": 1643
+  },
+  {
+   "id": "sec-002-4-observations",
+   "number": "4",
+   "title": "Observations",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 11,
+   "n_chars": 12317,
+   "n_words": 3068
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2728,
+   "n_words": 405
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 4,
+  "chars_total": 25028
+ }
+}

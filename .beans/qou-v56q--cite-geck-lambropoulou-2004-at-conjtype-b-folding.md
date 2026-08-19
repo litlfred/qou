@@ -13,7 +13,7 @@ Move or add the citation to the block that actually needs type-B trace theory: c
 - Thm 4.3 (with Def 4.1) — Full classification of the linear traces on the Iwahori-Hecke algebra of type B satisfying the Markov property.
   Use here: Bounds which trace functionals a folded type-B Hecke picture may use, i.e. constrains the invariant available to the type-B folding conjecture, whose bar-invariance claim currently has no trace-side source.
 
-Source: `uploads/0405508v1.pdf` (`geck-lambropoulou-2004`)
+Source: `library/arxiv-math-0405508v1/0405508v1.pdf` (`geck-lambropoulou-2004`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

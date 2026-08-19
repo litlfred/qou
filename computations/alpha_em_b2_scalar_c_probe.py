@@ -46,7 +46,7 @@ Run: python3 -u computations/alpha_em_b2_scalar_c_probe.py 2>&1 | tee /tmp/b2c.l
 
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [braden-northover-2012] https://doi.org/10.3842/SIGMA.2012.065
--- Ref: [halverson-1998-markov-weights] https://doi.org/10.1006/jabr.1998.7437
+-- Ref: [orellana1998] https://doi.org/10.1006/jabr.1998.7437
 """
 from __future__ import annotations
 

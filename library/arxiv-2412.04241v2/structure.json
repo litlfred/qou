@@ -1,0 +1,652 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2412.04241v2",
+ "source": {
+  "file": "2412.04241v2.pdf",
+  "sha256": "308d1dd1c42bd979e5d5c31d9d95215a1808f604031b49c0ce2a1eb767273de9",
+  "bytes": 998346,
+  "pages": 73
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2412.04241",
+   "version": "2",
+   "primary_class": "math.NT",
+   "stamp_date": "27 Aug 2025"
+  },
+  "doi": null,
+  "title": "THE HABIRO RING OF A NUMBER FIELD",
+  "authors_raw": "STAVROS GAROUFALIDIS, PETER SCHOLZE, CAMPBELL WHEELER, AND DON ZAGIER",
+  "abstract": "We introduce the Habiro ring of a number field K and modules over it graded by K3(K). Elements of these modules are collections of power series at each complex root of unity that arithmetically glue with each other after applying a Frobenius endomorphism, and after dividing at each prime by a collection of series that depends solely on an element of the Bloch group. The main theorems of this paper concern number fields, their algebraic K-theory and its regulator maps (Borel, p-adic and ´ etale), whereas the explicit collections of series are defined by a careful algebraic analysis of the infinite Pochhammer symbol at roots of unity. The origin of the above mentioned power series comes from perturbative Chern–Simons theory and by expansions of the admissible series of Kontsevich–Soibelman, both ultimately related to the infinite Pochhammer symbol. This link suggests that some Donaldson-Thomas invariants have arithmetic meaning and that some elements of the Habiro ring of a number field have enumerative meaning.",
+  "docinfo": {
+   "Author": "Stavros Garoufalidis; Peter Scholze; Campbell Wheeler; Don Zagier",
+   "Creator": "arXiv GenPDF (tex2pdf:)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "The Habiro ring of a number field"
+  },
+  "title_lines": [
+   "THE HABIRO RING OF A NUMBER FIELD"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Prologue",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Integrality and congruence experiments",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "The original Habiro ring",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "The Habiro ring of a number field",
+   "page": 6,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Modules over the Habiro ring of K indexed by K_3(K)",
+   "page": 8,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 2,
+   "title": "Admissible series and formal Gaussian integration",
+   "page": 11,
+   "source": "outline",
+   "number": "1.6"
+  },
+  {
+   "level": 2,
+   "title": "The main theorems",
+   "page": 13,
+   "source": "outline",
+   "number": "1.7"
+  },
+  {
+   "level": 2,
+   "title": "The relation with perturbative Chern–Simons theory",
+   "page": 15,
+   "source": "outline",
+   "number": "1.8"
+  },
+  {
+   "level": 2,
+   "title": "Future extensions",
+   "page": 17,
+   "source": "outline",
+   "number": "1.9"
+  },
+  {
+   "level": 1,
+   "title": "Two complementary collections of power series at roots of unity",
+   "page": 17,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The infinite Pochhammer symbol",
+   "page": 18,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Admissible series",
+   "page": 20,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Admissibility of q-hypergeometric series",
+   "page": 22,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Level m admissible series",
+   "page": 25,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Formal Gaussian integration",
+   "page": 28,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Algebraicity via WKB",
+   "page": 33,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "Synthesis",
+   "page": 35,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 1,
+   "title": "Integrality and gluing of p-adic series",
+   "page": 37,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Bloch group and p-adic dilogarithm",
+   "page": 37,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Explicit sections of the p-completed Habiro ring",
+   "page": 39,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the main theorems",
+   "page": 43,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Examples and computations",
+   "page": 45,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Symmetrisation and a residue formula",
+   "page": 45,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "A rank one admissible series",
+   "page": 48,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Torsion in the Bloch group from admissible series",
+   "page": 51,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Some p-adic computations",
+   "page": 52,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "The 4_1 knot",
+   "page": 54,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "The pair of the 5_2 and the (-2,3,7)-pretzel knots",
+   "page": 55,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "A note on modularity",
+   "page": 57,
+   "source": "outline",
+   "number": "4.7"
+  },
+  {
+   "level": 1,
+   "title": "Alternative approach: Habiro rings via congruences",
+   "page": 58,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Functions near roots of unity and the naive Habiro ring",
+   "page": 59,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The Habiro ring of a number field",
+   "page": 64,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 65,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Some wilder Habiro-like elements",
+   "page": 68,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 71,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 71,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-prologue",
+   "number": "1.1",
+   "title": "Prologue",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-12-integrality-and-congruence-experiments",
+   "number": "1.2",
+   "title": "Integrality and congruence experiments",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7181,
+   "n_words": 1173
+  },
+  {
+   "id": "sec-003-13-the-original-habiro-ring",
+   "number": "1.3",
+   "title": "The original Habiro ring",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2428,
+   "n_words": 442
+  },
+  {
+   "id": "sec-004-14-the-habiro-ring-of-a-number-field",
+   "number": "1.4",
+   "title": "The Habiro ring of a number field",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 9516,
+   "n_words": 1674
+  },
+  {
+   "id": "sec-005-15-modules-over-the-habiro-ring-of-k-indexed-by",
+   "number": "1.5",
+   "title": "Modules over the Habiro ring of K indexed by K_3(K)",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 10938,
+   "n_words": 1906
+  },
+  {
+   "id": "sec-006-16-admissible-series-and-formal-gaussian-integra",
+   "number": "1.6",
+   "title": "Admissible series and formal Gaussian integration",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5156,
+   "n_words": 887
+  },
+  {
+   "id": "sec-007-17-the-main-theorems",
+   "number": "1.7",
+   "title": "The main theorems",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 6481,
+   "n_words": 1161
+  },
+  {
+   "id": "sec-008-18-the-relation-with-perturbative-chernsimons-th",
+   "number": "1.8",
+   "title": "The relation with perturbative Chern–Simons theory",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 4083,
+   "n_words": 675
+  },
+  {
+   "id": "sec-009-19-future-extensions",
+   "number": "1.9",
+   "title": "Future extensions",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 2584,
+   "n_words": 472
+  },
+  {
+   "id": "sec-010-2-two-complementary-collections-of-power-series",
+   "number": "2",
+   "title": "Two complementary collections of power series at roots of unity",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1194,
+   "n_words": 192
+  },
+  {
+   "id": "sec-011-21-the-infinite-pochhammer-symbol",
+   "number": "2.1",
+   "title": "The infinite Pochhammer symbol",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3127,
+   "n_words": 612
+  },
+  {
+   "id": "sec-012-22-admissible-series",
+   "number": "2.2",
+   "title": "Admissible series",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 6181,
+   "n_words": 1189
+  },
+  {
+   "id": "sec-013-23-admissibility-of-q-hypergeometric-series",
+   "number": "2.3",
+   "title": "Admissibility of q-hypergeometric series",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 6017,
+   "n_words": 1106
+  },
+  {
+   "id": "sec-014-24-level-m-admissible-series",
+   "number": "2.4",
+   "title": "Level m admissible series",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 5841,
+   "n_words": 1126
+  },
+  {
+   "id": "sec-015-25-formal-gaussian-integration",
+   "number": "2.5",
+   "title": "Formal Gaussian integration",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 33,
+   "n_chars": 8433,
+   "n_words": 1589
+  },
+  {
+   "id": "sec-016-26-algebraicity-via-wkb",
+   "number": "2.6",
+   "title": "Algebraicity via WKB",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 3729,
+   "n_words": 719
+  },
+  {
+   "id": "sec-017-27-synthesis",
+   "number": "2.7",
+   "title": "Synthesis",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 4724,
+   "n_words": 873
+  },
+  {
+   "id": "sec-018-3-integrality-and-gluing-of-p-adic-series",
+   "number": "3",
+   "title": "Integrality and gluing of p-adic series",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 568,
+   "n_words": 95
+  },
+  {
+   "id": "sec-019-31-bloch-group-and-p-adic-dilogarithm",
+   "number": "3.1",
+   "title": "Bloch group and p-adic dilogarithm",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 5576,
+   "n_words": 1004
+  },
+  {
+   "id": "sec-020-32-explicit-sections-of-the-p-completed-habiro-r",
+   "number": "3.2",
+   "title": "Explicit sections of the p-completed Habiro ring",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 43,
+   "n_chars": 7300,
+   "n_words": 1355
+  },
+  {
+   "id": "sec-021-33-proof-of-the-main-theorems",
+   "number": "3.3",
+   "title": "Proof of the main theorems",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 6089,
+   "n_words": 1095
+  },
+  {
+   "id": "sec-022-4-examples-and-computations",
+   "number": "4",
+   "title": "Examples and computations",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-023-41-symmetrisation-and-a-residue-formula",
+   "number": "4.1",
+   "title": "Symmetrisation and a residue formula",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 5539,
+   "n_words": 1044
+  },
+  {
+   "id": "sec-024-42-a-rank-one-admissible-series",
+   "number": "4.2",
+   "title": "A rank one admissible series",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 51,
+   "n_chars": 6186,
+   "n_words": 1247
+  },
+  {
+   "id": "sec-025-43-torsion-in-the-bloch-group-from-admissible-se",
+   "number": "4.3",
+   "title": "Torsion in the Bloch group from admissible series",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 3162,
+   "n_words": 597
+  },
+  {
+   "id": "sec-026-44-some-p-adic-computations",
+   "number": "4.4",
+   "title": "Some p-adic computations",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 57,
+   "n_chars": 10829,
+   "n_words": 2138
+  },
+  {
+   "id": "sec-027-47-a-note-on-modularity",
+   "number": "4.7",
+   "title": "A note on modularity",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 58,
+   "n_chars": 2435,
+   "n_words": 509
+  },
+  {
+   "id": "sec-028-5-alternative-approach-habiro-rings-via-congruen",
+   "number": "5",
+   "title": "Alternative approach: Habiro rings via congruences",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 59,
+   "n_chars": 1444,
+   "n_words": 254
+  },
+  {
+   "id": "sec-029-51-functions-near-roots-of-unity-and-the-naive-h",
+   "number": "5.1",
+   "title": "Functions near roots of unity and the naive Habiro ring",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 63,
+   "n_chars": 8315,
+   "n_words": 1566
+  },
+  {
+   "id": "sec-030-52-the-habiro-ring-of-a-number-field",
+   "number": "5.2",
+   "title": "The Habiro ring of a number field",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 65,
+   "n_chars": 6655,
+   "n_words": 1237
+  },
+  {
+   "id": "sec-031-53-examples",
+   "number": "5.3",
+   "title": "Examples",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 68,
+   "n_chars": 4695,
+   "n_words": 917
+  },
+  {
+   "id": "sec-032-54-some-wilder-habiro-like-elements",
+   "number": "5.4",
+   "title": "Some wilder Habiro-like elements",
+   "level": 2,
+   "page_start": 68,
+   "page_end": 71,
+   "n_chars": 4378,
+   "n_words": 855
+  },
+  {
+   "id": "sec-033-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 71,
+   "n_chars": 512,
+   "n_words": 73
+  },
+  {
+   "id": "sec-034-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 73,
+   "n_chars": 8421,
+   "n_words": 1150
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 37,
+  "sections": 35,
+  "chars_total": 169717
+ }
+}

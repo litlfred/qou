@@ -1,0 +1,43 @@
+570 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604
+
+Fig. 1. Shape of an (s, t)-tree.
+
+max — min
+
+; b n ; n
+_y)etmin +b Le x,)— ming
+» (-1) a—min Ik + i) (2 Tl
+
+b=0
+
+where (z>) means that we take the coefficient of z® and ss: = . Again,
+3 k=0
+when considering the special case u = v = 1, it suffices to require that b = (b1,...,6n)
+
+is weakly increasing.
+2.3. Truncated monotone triangles: (s, t)-trees
+
+Next we turn to certain partial monotone triangles. Let |, r,n be non-negative integers
+with 1+ r <n. Suppose s = (81, 82,..., 81), t = (tn—r41,tn—r4+2,---,tn) are sequences
+of non-negative integers, where s is weakly decreasing, while t is weakly increasing.
+An (s,t)-tree of order n is an integer array whose shape is obtained from the shape
+of a monotone triangle with n rows when deleting the bottom s; entries from the i-th
+NE-diagonal for 1 < i <1 (NE-diagonals are counted from the left) and the bottom t;
+entries from the i-th SE-diagonal for n — r+ 1 <i <n (SE-diagonals are also counted
+from the left), see Fig. 1. We assume in the following that there is no interference between
+the deletion of the entries in the | leftmost NE-diagonals (as prescribed by s) with the
+deletion of the entries from the r rightmost SE-diagonals (as prescribed by t).
+
+In an (s,t)-tree, an entry m;,; is said to be regular if it has a SW neighbor mj;4+1,;
+and a SE neighbor mj441,;41. We require the following monotonicity properties in an
+(s, t)-tree:
+
+(1) Each regular entry m;,; has to fulfill miy1j5 < mij < mipiy4i-
+(2) Two adjacent regular entries m;,;,7™mi,j+1 in the same row have to be distinct.
+
+This extends the notion of monotone triangles, as a monotone triangle of order n is
+
+.,0) and
+
+just an (s,t)-tree, where J,r are any two numbers with 1+ r <n, s = (0
+

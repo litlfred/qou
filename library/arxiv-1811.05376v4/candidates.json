@@ -1,0 +1,218 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1811.05376v4",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "a486709d0a78d19cd46ec104c801b2f58f346fcab6265408a65684440770f30c",
+  "file": "1811.05376v4.pdf"
+ },
+ "provenance": {
+  "title": "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres",
+  "authors": "J\u00f8rgen Ellegaard Andersen and William Elb\u00e6k Misteg\u00e5rd",
+  "arxiv": {
+   "id": "1811.05376",
+   "version": "4",
+   "primary_class": "math.DG",
+   "stamp_date": "23 Oct 2020"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 14,
+  "by_kind": {
+   "proposition": 5,
+   "theorem": 1,
+   "corollary": 2,
+   "conjecture": 2,
+   "remark": 2,
+   "lemma": 2
+  },
+  "formalization_candidates": 10
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5",
+   "name": null,
+   "statement": "Let l = (l1,l 2,...,l n)\u2208 L(p1,...,p n). Then there exists matricesQj \u2208 SL(2, C)",
+   "section_file": "sections/sec-001-11-the-moduli-space-and-complex-chern-simons-val.md",
+   "section_title": "The moduli space and complex Chern-Simons values",
+   "pages": "6-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "7",
+   "name": null,
+   "statement": "For any representation\u03c1 :\u03c01(X)\u2192SL(2, C), de\ufb01nel = (l1,...,l n)\u2208L(p1,...,p n),",
+   "section_file": "sections/sec-001-11-the-moduli-space-and-complex-chern-simons-val.md",
+   "section_title": "The moduli space and complex Chern-Simons values",
+   "pages": "6-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "For a measurable functiong : R+\u2192 C of su\ufb03cient decay, we use the notationLR+(g)",
+   "section_file": "sections/sec-002-2-the-borel-transform-and-complex-cherns-simons.md",
+   "section_title": "The Borel transform and Complex Cherns-Simons",
+   "pages": "15-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "10",
+   "name": null,
+   "statement": "The polynomialsZ\u03b8 and the quantum invariant~Zk(X) are determined byB(Z0) as",
+   "section_file": "sections/sec-003-21-resummation-of-the-wrt-invariant.md",
+   "section_title": "Resummation of the WRT invariant",
+   "pages": "17-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1",
+   "name": "[26]",
+   "statement": "The generating functionZG(M;z) has an analytic continuation toC\\e\u039b",
+   "section_file": "sections/sec-004-22-resurgence-of-the-generating-function.md",
+   "section_title": "Resurgence of the generating function",
+   "pages": "18-19",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "11",
+   "name": null,
+   "statement": "The generating function\u02dcZ(X;z) is the germ at zero of a holomorphic function",
+   "section_file": "sections/sec-004-22-resurgence-of-the-generating-function.md",
+   "section_title": "Resurgence of the generating function",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2",
+   "name": null,
+   "statement": "The invariance of(49) under Neumann moves is proved by Gukov and Manulescu in",
+   "section_file": "sections/sec-005-3-a-resurgence-formula-for-the-gppv-invariant.md",
+   "section_title": "A resurgence formula for the GPPV invariant",
+   "pages": "19-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "12",
+   "name": null,
+   "statement": "Let Z0\u2208 x\u22121/2C[[x\u22121]] be the normalization of the Ohtsuki series from Theorem",
+   "section_file": "sections/sec-006-31-proof-of-theorem-3.md",
+   "section_title": "Proof of Theorem 3",
+   "pages": "20-26",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2",
+   "name": "[28]",
+   "statement": "LetY be a closed oriented3-manifold withb1(Y ) = 0. Set",
+   "section_file": "sections/sec-007-4-the-asymptotic-expansion-of-the-gppv-invariant.md",
+   "section_title": "The asymptotic expansion of the GPPV invariant",
+   "pages": "26-27",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3",
+   "name": null,
+   "statement": "Conjecture 2 appeared in slighly di\ufb00erent form in [12, 29, 27].",
+   "section_file": "sections/sec-007-4-the-asymptotic-expansion-of-the-gppv-invariant.md",
+   "section_title": "The asymptotic expansion of the GPPV invariant",
+   "pages": "26-27",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "Introduce the holomorphic functionsL,R\u2208O (h) given by",
+   "section_file": "sections/sec-009-411-the-decomposition-of-the-gppv-invariant.md",
+   "section_title": "The decomposition of the GPPV invariant",
+   "pages": "27-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "13",
+   "name": "[31, 40]",
+   "statement": "LetC : Z\u2192 C be a periodic function with periodM and mean value",
+   "section_file": "sections/sec-010-412-asymptotic-expansions-of-q-series-with-perio.md",
+   "section_title": "Asymptotic expansions of q-series with periodic coefficients",
+   "pages": "31-33",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "14",
+   "name": null,
+   "statement": "Forj = 1, 2,...,n \u2212 2 de\ufb01nefj : Z\u2192 C as the coe\ufb01cients of the principal part",
+   "section_file": "sections/sec-010-412-asymptotic-expansions-of-q-series-with-perio.md",
+   "section_title": "Asymptotic expansions of q-series with periodic coefficients",
+   "pages": "31-33",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "LetB : R+\u2192 C be a measurable function and assume the integral de\ufb01ningLR+(B)(\u03bb)",
+   "section_file": "sections/sec-014-a2-borel-laplace-resummation.md",
+   "section_title": "A.2 Borel-Laplace resummation",
+   "pages": "36-40",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

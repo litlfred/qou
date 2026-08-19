@@ -1,0 +1,80 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "descendants-colored-jones",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "f00693a5926c074ffad7e37e63032d6f2a20c55598d1b37497760948cb6992fc",
+  "file": "descendants_colored_jones.pdf"
+ },
+ "provenance": {
+  "title": "Pure and Applied Mathematics Quarterly",
+  "authors": "Volume 19, Number 5, 2307\u20132334, 2023",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "proposition": 1,
+   "conjecture": 2,
+   "theorem": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.2",
+   "name": null,
+   "statement": "Each family of invariants {Jn(q)|n \u2208 Z\u22650}, {DJ(m)",
+   "section_file": "sections/sec-002-properties-of-the-descendants.md",
+   "section_title": "Properties of the descendants",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2.4",
+   "name": null,
+   "statement": "The top row of the matrix J of the conjectured knot in-",
+   "section_file": "sections/sec-003-a-conjecture.md",
+   "section_title": "A conjecture",
+   "pages": "8-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": null,
+   "statement": "The state-sum \u27e8D\u27e9N,n depends on the long knot K and not",
+   "section_file": "sections/sec-008-knot-invariants.md",
+   "section_title": "Knot invariants",
+   "pages": "19-23",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "3.2",
+   "name": null,
+   "statement": "For all knots K, strictly positive integers N and n,a n da",
+   "section_file": "sections/sec-010-a-conjecture.md",
+   "section_title": "A conjecture",
+   "pages": "24-24",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

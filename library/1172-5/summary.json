@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "1172-5",
+ "source_sha256": "21b7a0e13bd208fc",
+ "brief": "OPTIMISTIC CALCULATIONS ABOUT THE $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mat",
+ "extended": "**OPTIMISTIC CALCULATIONS ABOUT THE $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF**\n\n10 pp, 5 sections.\n\n**Abstract.** I calculate optimisticallyasymptoticbehaviorsof the WRT$SU(2)$ invariantsfor the three-manifoldsobtained from the ﬁgure-eight knot by p- surgeries with $p=0,1,2,$$\\ldots,$$10$, from which one can extract volumesand the Chern-Simonsinvariantsof these closed manifolds. I conjecturethat this also holds for general closed three-manifolds.\n\n**Outline.** 1 INTRODUCTION; 3 AN OPTIMISTICLIMIT; 4 DEHN SURGERYALONGTHE FIGURE-EIGHTKNOT; 5 VOLUME CONJECTUREFOR CLOSEDTHREE-MANIFOLDS; References",
+ "tokens": {
+  "brief": 50,
+  "extended": 188
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "INTRODUCTION",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-3-an-optimisticlimit",
+   "title": "AN OPTIMISTICLIMIT",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-4-dehn-surgeryalongthe-figure-eightknot",
+   "title": "DEHN SURGERYALONGTHE FIGURE-EIGHTKNOT",
+   "pages": "4-8"
+  },
+  {
+   "id": "sec-003-5-volume-conjecturefor-closedthree-manifolds",
+   "title": "VOLUME CONJECTUREFOR CLOSEDTHREE-MANIFOLDS",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "9-10"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

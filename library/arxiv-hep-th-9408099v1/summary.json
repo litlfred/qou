@@ -1,0 +1,372 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-9408099v1",
+ "source_sha256": "b534faddd2e3aa71",
+ "brief": "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…",
+ "extended": "**Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD** — N. Seiberg and E. Witten. arXiv:hep-th/9408099, RU-94-60, IASSNS-HEP-94/55, 17 Aug 1994.\n\nFour-dimensional N=2 supersymmetric gauge theories with matter multiplets. For all such models with gauge group SU(2), derives the **exact** metric on the moduli space of quantum vacua and the **exact** spectrum of stable massive states, including the monopole/dyon states whose condensation drives confinement and chiral symmetry breaking.\n\n**Why it may bear here.** This is the second Seiberg–Witten paper — the origin of the exact-moduli-space / BPS-spectrum technology that the Stokes-constant and DT/BPS material in this corpus refers back to. Registered as a foundational source; no specific result here is claimed to be in use.",
+ "tokens": {
+  "brief": 49,
+  "extended": 201
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-7"
+  },
+  {
+   "id": "sec-001-2-a-warm-up-example-qed-with-matter",
+   "title": "A warm-up example: QED with matter",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-002-22-the-classical-moduli-space",
+   "title": "The classical moduli space",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-003-23-the-quantum-moduli-space",
+   "title": "The quantum moduli space",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-004-24-bps-saturated-states",
+   "title": "BPS-saturated states",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-005-25-breaking-n-2-to-n-1",
+   "title": "Breaking N = 2 to N = 1",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-006-3-classical-moduli-space-of-qcd-with-matter",
+   "title": "Classical moduli space of QCD with matter",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-007-4-a-ﬁrst-look-at-the-quantum-theory",
+   "title": "A ﬁrst look at the quantum theory",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-008-41-symmetries-of-the-quantum-theory",
+   "title": "Symmetries of the quantum theory",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-009-42-a-ﬁrst-look-at-the-quantum-moduli-space",
+   "title": "A ﬁrst look at the quantum moduli space",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-010-5-bps-saturated-states",
+   "title": "BPS-saturated states",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-011-2-nm-2ne-for-nf-4-the-universal-cover-is-spin8-w",
+   "title": "(nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 × Z2. The",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-012-6-duality",
+   "title": "Duality",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-013-2-for-large-mass-this-happens-at-large-u-where-s",
+   "title": "For large mass this happens at large |u| where semiclassical techniques are",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-014-7-the-singularities-for-nf-1-2-3",
+   "title": "The singularities for Nf = 1, 2, 3",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-015-3-the-three-singularities-cannot-all-combine-tog",
+   "title": "The three singularities cannot all combine together, since the fundamental group of the",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-016-2-this-theory-has-the-three-singularities-that-d",
+   "title": "This theory has the three singularities that do",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-017-8-low-energy-theory-near-the-singularities",
+   "title": "Low energy theory near the singularities",
+   "pages": "28-31"
+  },
+  {
+   "id": "sec-018-9-breaking-n-2-to-n-1",
+   "title": "Breaking N = 2 to N = 1",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-019-2-this",
+   "title": "This",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-020-10-the-singularities-for-nf-4",
+   "title": "The singularities for Nf = 4",
+   "pages": "34-37"
+  },
+  {
+   "id": "sec-021-2-m1-m2-m3-m4",
+   "title": "(m1 +m2 +m3 +m4)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-022-2-m1-m2-m3-m4",
+   "title": "(m1 +m2 −m3 −m4)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-023-2-m1-m2-m3-m4",
+   "title": "(m1 −m2 +m3 −m4)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-024-2-m1-m2-m3-m4",
+   "title": "(m1 −m2 −m3 +m4)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-025-11-preliminaries-for-determining-the-metric",
+   "title": "Preliminaries for determining the metric",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-026-111-nf-0",
+   "title": "Nf = 0",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-027-112-some-convenient-facts",
+   "title": "Some convenient facts",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-028-2-u",
+   "title": "(u ±",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-029-2-λ-2-λ",
+   "title": "(Λ 2 ± Λ",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-030-113-general-structure-of-the-curve",
+   "title": "General structure of the curve",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-031-12-the-curve-for-nf-1",
+   "title": "The curve for Nf = 1",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-032-121-massless-nf-1",
+   "title": "Massless Nf = 1",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-033-122-massive-nf-1",
+   "title": "Massive Nf = 1",
+   "pages": "45-47"
+  },
+  {
+   "id": "sec-034-13-the-curve-for-nf-2",
+   "title": "The curve for Nf = 2",
+   "pages": "47-47"
+  },
+  {
+   "id": "sec-035-131-massless-nf-2",
+   "title": "Massless Nf = 2",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-036-132-massive-nf-2",
+   "title": "Massive Nf = 2",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-037-2-then-we-should-also",
+   "title": "Then, we should also",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-038-1-substituting-m2-0-and-u-m2",
+   "title": "Substituting m2 = 0 and u =m2",
+   "pages": "48-49"
+  },
+  {
+   "id": "sec-039-16-u-mλ-2-1",
+   "title": "(u +mΛ 2 + 1",
+   "pages": "49-49"
+  },
+  {
+   "id": "sec-040-14-the-curve-for-nf-3",
+   "title": "The curve for Nf = 3",
+   "pages": "49-49"
+  },
+  {
+   "id": "sec-041-141-massless-nf-3",
+   "title": "Massless Nf = 3",
+   "pages": "49-50"
+  },
+  {
+   "id": "sec-042-142-massive-nf-3",
+   "title": "Massive Nf = 3",
+   "pages": "50-52"
+  },
+  {
+   "id": "sec-043-15-masses-periods-and-residues",
+   "title": "Masses, periods and residues",
+   "pages": "52-54"
+  },
+  {
+   "id": "sec-044-2-the-si-are-abelian-conserved-charges",
+   "title": "The Si are abelian conserved charges",
+   "pages": "54-56"
+  },
+  {
+   "id": "sec-045-16-structure-of-the-scale-invariant-theories",
+   "title": "Structure of the scale invariant theories",
+   "pages": "56-57"
+  },
+  {
+   "id": "sec-046-161-the-massless-case",
+   "title": "The massless case",
+   "pages": "57-57"
+  },
+  {
+   "id": "sec-047-9-holomorphy-of-f-is-needed-in-order-for-the-coe",
+   "title": "Holomorphy of F is needed in order for the coeﬃcient τ (u, m i, Λ) in front of Wα",
+   "pages": "57-59"
+  },
+  {
+   "id": "sec-048-4-1τ-for-nf-4-and",
+   "title": "(1,τ ) for Nf = 4 and",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-049-2-1τ-for-n-4-and-since",
+   "title": "(1,τ ) for N = 4 and (since",
+   "pages": "59-60"
+  },
+  {
+   "id": "sec-050-162-the-curve-for-n-4",
+   "title": "The curve for N = 4",
+   "pages": "60-62"
+  },
+  {
+   "id": "sec-051-2-e3-e2-in-this-form-it-is-easy-to-study-the-wea",
+   "title": "(e3 −e2). In this form it is easy to study the weak coupling",
+   "pages": "62-63"
+  },
+  {
+   "id": "sec-052-2-for-weak-coupling-and-in-the-n-4-normalization",
+   "title": "For weak coupling and in the N = 4 normalization this is at u ≈ 1",
+   "pages": "63-65"
+  },
+  {
+   "id": "sec-053-163-the-curve-for-nf-4",
+   "title": "The curve for Nf = 4",
+   "pages": "65-65"
+  },
+  {
+   "id": "sec-054-2-in-the-nf-4-normalization-this-means-that-it-i",
+   "title": "In the Nf = 4 normalization this means that it is at u ≈ 2a2 =m2. Hence,",
+   "pages": "65-70"
+  },
+  {
+   "id": "sec-055-17-the-theory-of-the-residues",
+   "title": "The Theory Of The Residues",
+   "pages": "70-70"
+  },
+  {
+   "id": "sec-056-2-with-mi",
+   "title": "(with mi",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-057-171-the-meaning-of-the-residues",
+   "title": "The Meaning Of The Residues",
+   "pages": "71-73"
+  },
+  {
+   "id": "sec-058-172-the-cohomology-of-x",
+   "title": "The Cohomology Of X",
+   "pages": "73-75"
+  },
+  {
+   "id": "sec-059-173-finding-the-curves",
+   "title": "Finding the Curves",
+   "pages": "75-80"
+  },
+  {
+   "id": "sec-060-2-m1-m2-m3-m4",
+   "title": "(m1 +m2 +m3 −m4)",
+   "pages": "80-80"
+  },
+  {
+   "id": "sec-061-2-m1-m2-m3-m4",
+   "title": "(m1 +m2 −m3 +m4)",
+   "pages": "80-80"
+  },
+  {
+   "id": "sec-062-2-m1-m2-m3-m4",
+   "title": "(m1 −m2 +m3 +m4)",
+   "pages": "80-81"
+  },
+  {
+   "id": "sec-063-174-determination-of-the-equation-for-nf-4",
+   "title": "Determination Of The Equation For Nf = 4",
+   "pages": "81-84"
+  },
+  {
+   "id": "sec-064-2-α-β",
+   "title": "(α +β)",
+   "pages": "84-85"
+  },
+  {
+   "id": "sec-065-2-e3-e2-1",
+   "title": "(e3 −e2) = 1",
+   "pages": "85-85"
+  },
+  {
+   "id": "sec-066-2-β-α-to-derive-1758-actually-to-agree-with-sect",
+   "title": "(β −α) to derive (17.58). Actually, to agree with section 16, it is",
+   "pages": "85-85"
+  },
+  {
+   "id": "sec-067-175-the-n-4-theory",
+   "title": "The N = 4 Theory",
+   "pages": "85-87"
+  },
+  {
+   "id": "sec-068-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "87-88"
+  },
+  {
+   "id": "sec-069-references",
+   "title": "References",
+   "pages": "88-88"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "abstract",
+   "opening-text"
+  ],
+  "note": "Written after reading the document, not assembled mechanically. Regeneration preserves this (summarize-library keeps kind==\"agent\"). The \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

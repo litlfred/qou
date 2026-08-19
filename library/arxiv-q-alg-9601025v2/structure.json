@@ -1,0 +1,217 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-q-alg-9601025v2",
+ "source": {
+  "file": "9601025v2.pdf",
+  "sha256": "369b0a1a92ce67a8bfcaf6dd1ece5eb550a42562e92cad218a0a6de7a36d062f",
+  "bytes": 106740,
+  "pages": 8
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "q-alg/9601025",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "25 Mar 1996"
+  },
+  "doi": null,
+  "title": "The hyperbolic volume of knots from quantum dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Théoriqueenslapp†",
+  "authors_raw": "ENSLyon, 46 Allée d’Italie",
+  "abstract": "The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N . By the analysis of particular examples it is argued that for a hyperbolic knot (link) the absolute value of this invariant grows exponentially at large N , the hyperbolic volume of the knot (link) complement being the growth rate. ENSLAPP-L-577/96 ∗ On leave of absence from St. Petersburg Branch of the Steklov Mathematical Institute, Fontanka 27, St. Petersburg 191011, RUSSIA † URA 14-36 du CNRS, associ´ ee ` a l’E.N.S. de Lyon, au LAPP d’Annecy et ` a l’Universit` e de Savoie 1",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181106002924-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:q-alg/9601025v2  25 Mar 1996"
+  },
+  "title_prev": "The hyperbolic volume of knots from quantum dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Th´ eoriqueenslapp†",
+  "title_lines": [
+   "The hyperbolic volume of knots from quantum",
+   "dilogarithm",
+   "R.M. Kashaev ∗",
+   "Laboratoire de Physique Théoriqueenslapp†"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The quantum invariant for three hyper-",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The classical limit",
+   "page": 3,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Knot 41 (ﬁgure-eight knot)",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Knot 52",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Knot 61",
+   "page": 6,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Summary",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Acknowlegements",
+   "page": 7,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 7,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 604,
+   "n_words": 103
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3008,
+   "n_words": 495
+  },
+  {
+   "id": "sec-002-2-the-quantum-invariant-for-three-hyper",
+   "number": "2",
+   "title": "The quantum invariant for three hyper-",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 850,
+   "n_words": 182
+  },
+  {
+   "id": "sec-003-3-the-classical-limit",
+   "number": "3",
+   "title": "The classical limit",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 1773,
+   "n_words": 404
+  },
+  {
+   "id": "sec-004-31-knot-41-ﬁgure-eight-knot",
+   "number": "3.1",
+   "title": "Knot 41 (ﬁgure-eight knot)",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 651,
+   "n_words": 138
+  },
+  {
+   "id": "sec-005-32-knot-52",
+   "number": "3.2",
+   "title": "Knot 52",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 635,
+   "n_words": 137
+  },
+  {
+   "id": "sec-006-33-knot-61",
+   "number": "3.3",
+   "title": "Knot 61",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 732,
+   "n_words": 161
+  },
+  {
+   "id": "sec-007-4-summary",
+   "number": "4",
+   "title": "Summary",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 346,
+   "n_words": 55
+  },
+  {
+   "id": "sec-008-5-acknowlegements",
+   "number": "5",
+   "title": "Acknowlegements",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 246,
+   "n_words": 42
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2475,
+   "n_words": 389
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 10,
+  "chars_total": 11320
+ }
+}

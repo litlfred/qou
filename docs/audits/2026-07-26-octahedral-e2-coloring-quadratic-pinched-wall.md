@@ -83,7 +83,7 @@ It is a genuine (careful) calculation, not a scan — the coloring is *pinned*, 
 forward number once the pinched limit is taken correctly. That is the point where `g₂` either emerges
 or a residual coloring freedom is exposed as the true obstruction.
 
-Refs: `uploads/2509.02354v2.pdf` eq (4.11–4.14), (4.19), §5.2 (pinched);
+Refs: `library/arxiv-2509.02354v2/2509.02354v2.pdf` eq (4.11–4.14), (4.19), §5.2 (pinched);
 probe [`octahedral_e2_coloring_quadratic_probe.py`](../../computations/deltalambda/octahedral_e2_coloring_quadratic_probe.py);
 PR #4309 (`2026-07-26-coloring-hq0-map-rogers-inflection-g2-is-e2.md`, `RogersDilogInflection.lean`);
 #4301 (deuteron = trefoil); #4127 (`FourDilogFirstOrder.e2`); #4158 W2b.

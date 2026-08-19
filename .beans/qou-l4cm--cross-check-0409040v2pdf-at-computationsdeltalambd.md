@@ -16,7 +16,7 @@ Cross-check the corpus's fractional Tjon deviation mu4/M(4) against the LO-EFT T
 - p. 7-8 (numerical results) — With B_d = 2.22 MeV as input the LO calculation predicts B_alpha = 29.5 MeV (26.9 MeV with the alternative two-body input), against the Coulomb-corrected experimental 29.0 +/- 0.1 MeV.
   Use here: An external, parameter-counted LO prediction of the alpha binding from deuteron+triton inputs, directly comparable to the corpus's e2/e3/e4 per-order pinning on D/T/4He; a cross-check of the corpus's fractional Tjon deviation mu4/M(4) against a published LO value.
 
-Source: `uploads/0409040v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-nucl-th-0409040v2/0409040v2.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

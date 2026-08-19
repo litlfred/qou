@@ -1,0 +1,42 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "104171-qt-83",
+ "source_sha256": "d95b9363de2766d2",
+ "brief": "DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot Tomotada Ohtsuki1 — We give a presentation of the asymptotic",
+ "extended": "**DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot Tomotada Ohtsuki1**\n\n67 pp, 4 sections.\n\n**Abstract.** We give a presentation of the asymptotic expansion of the Kas haev invariant of the52 knot. As the volume conjecture states, the leading term of th e expansion presents the hyperbolic volume and the Chern–Simons invariant of the complement of the 52 knot. Further, we obtain a method to compute the full Poincare asym ptotics to all orders of the Kashaev invariant of the 52 knot. Mathematics Subject Classi/f_ication (/two.prop/zero.prop/one.prop/zero.prop)./five.prop/seven.propM/two.prop/seven.prop; /five.prop/seven.propM/two.prop/five.prop, /five.prop/seven.propM/five.prop/zero.prop.\n\n**Outline.** Introduction; Calculation by the saddle point method; Calculation by the Poisson summation formula; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: /one.prop./one.prop.The asymptotic expansion of the Kashaev invariant h52iN of the52\n- Theorem: /one.prop./one.propin Section /five.prop. We remark that the Poisson summation formula has also\n- Proposition: /three.prop./five.prop. In Section /four.prop, we calculate the sum corresponding to the inte-\n- Proposition: /three.prop./one.prop.For a non-zeroa 2 C, the domain ¹z 2 C j Reaz2<0 º has two\n- Proposition: /three.prop./two.prop.Leta be a non-zero complex number, and let .z/ andr.z/ be\n- Proposition: /three.prop./two.prop, we can show the asymptotic expansion of R",
+ "tokens": {
+  "brief": 48,
+  "extended": 384
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-14"
+  },
+  {
+   "id": "sec-001-calculation-by-the-saddle-point-method",
+   "title": "Calculation by the saddle point method",
+   "pages": "14-25"
+  },
+  {
+   "id": "sec-002-calculation-by-the-poisson-summation-formula",
+   "title": "Calculation by the Poisson summation formula",
+   "pages": "25-63"
+  },
+  {
+   "id": "sec-003-references",
+   "title": "References",
+   "pages": "63-67"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -13,7 +13,7 @@ A registered Biot-Savart-operator reference is uncited while a remark named 'tow
 - title and abstract (J. Math. Phys. 42, 876) — Operator-theoretic development of the Biot-Savart operator on domains, with the helicity and first-curl-eigenvalue estimates it yields, framed for knot theory, fluid dynamics and plasma physics.
   Use here: The Euclidean baseline against which the hyperbolic-space version (deturck-gluck2008) is the generalisation; together they would let rem:vorticity-lower-bound-argument state which ambient geometry its bound is taken in.
 
-Source: `uploads/candetgl.pdf` (`cantarella-deturck-gluck2001`)
+Source: `library/candetgl/candetgl.pdf` (`cantarella-deturck-gluck2001`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

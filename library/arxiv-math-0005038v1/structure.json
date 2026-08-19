@@ -1,0 +1,374 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0005038v1",
+ "source": {
+  "file": "0005038v1.pdf",
+  "sha256": "db0b9b7a8534f16157041fbe8f6a4351064ed97839efb9ef6856774d89eb5072",
+  "bytes": 196196,
+  "pages": 13
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0005038",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "4 May 2000"
+  },
+  "doi": null,
+  "title": "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW",
+  "authors_raw": null,
+  "abstract": "The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc. The Lawrence-Krammer representation of t he braid group is the induced action on a certain twisted second homol ogy of the space C of unordered pairs of points in the n-punctured disc. Recently, Daan Krammer showed that this is a faithful representation in the case n = 4. In this paper, we show that it is faithful for all n.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181101182011-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0005038v1  [math.GR]  4 May 2000"
+  },
+  "title_lines": [
+   "BRAID GROUPS ARE LINEAR",
+   "STEPHEN J. BIGELOW"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Deﬁnitions. Let D be an oriented disc in the complex plane. Fix a set",
+   "page": 1,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "STEPHEN J. BIGELOW",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Outline. In Section 2 we will deﬁne forks and noodles. These will be one-",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Notation. If α and β are arcs in D \\ P such α(s) ⁄= β(s) for all s ∈ I then",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Forks and Noodles",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "STEPHEN J. BIGELOW",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the Basic Lemma. The problem is that one cannot necessarily",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "STEPHEN J. BIGELOW",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Alternative proofs. There are many possible approaches to proving the Ba-",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "The representation is faithful",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Computing the pairing. We now describe how to compute the pairing be-",
+   "page": 6,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "STEPHEN J. BIGELOW",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the Key Lemma. Let N be a noodle and let F be a fork. By",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the Theorem. In this subsection we use the Basic Lemma and the",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "STEPHEN J. BIGELOW",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Matrices for the Lawrence-Krammer representation",
+   "page": 10,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "STEPHEN J. BIGELOW",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "Jones noticed a striking resemblance between the matrices desc ribed in Theorem",
+   "page": 12,
+   "source": "inferred",
+   "number": "V"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 12,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-stephen-j-bigelow",
+   "number": "2",
+   "title": "STEPHEN J. BIGELOW",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 422,
+   "n_words": 77
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 745,
+   "n_words": 127
+  },
+  {
+   "id": "sec-002-11-deﬁnitions-let-d-be-an-oriented-disc-in-the-c",
+   "number": "1.1",
+   "title": "Deﬁnitions. Let D be an oriented disc in the complex plane. Fix a set",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2220,
+   "n_words": 488
+  },
+  {
+   "id": "sec-003-12-outline-in-section-2-we-will-deﬁne-forks-and",
+   "number": "1.2",
+   "title": "Outline. In Section 2 we will deﬁne forks and noodles. These will be one-",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 608,
+   "n_words": 101
+  },
+  {
+   "id": "sec-004-13-notation-if-α-and-β-are-arcs-in-d-p-such-αs-β",
+   "number": "1.3",
+   "title": "Notation. If α and β are arcs in D \\ P such α(s) ⁄= β(s) for all s ∈ I then",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 2515,
+   "n_words": 604
+  },
+  {
+   "id": "sec-005-4-stephen-j-bigelow",
+   "number": "4",
+   "title": "STEPHEN J. BIGELOW",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 297,
+   "n_words": 63
+  },
+  {
+   "id": "sec-006-21-proof-of-the-basic-lemma-the-problem-is-that",
+   "number": "2.1",
+   "title": "Proof of the Basic Lemma. The problem is that one cannot necessarily",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 3357,
+   "n_words": 739
+  },
+  {
+   "id": "sec-007-6-stephen-j-bigelow",
+   "number": "6",
+   "title": "STEPHEN J. BIGELOW",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-22-alternative-proofs-there-are-many-possible-ap",
+   "number": "2.2",
+   "title": "Alternative proofs. There are many possible approaches to proving the Ba-",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1838,
+   "n_words": 336
+  },
+  {
+   "id": "sec-009-3-the-representation-is-faithful",
+   "number": "3",
+   "title": "The representation is faithful",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 311,
+   "n_words": 68
+  },
+  {
+   "id": "sec-010-31-computing-the-pairing-we-now-describe-how-to",
+   "number": "3.1",
+   "title": "Computing the pairing. We now describe how to compute the pairing be-",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3363,
+   "n_words": 833
+  },
+  {
+   "id": "sec-011-8-stephen-j-bigelow",
+   "number": "8",
+   "title": "STEPHEN J. BIGELOW",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 475,
+   "n_words": 101
+  },
+  {
+   "id": "sec-012-32-proof-of-the-key-lemma-let-n-be-a-noodle-and",
+   "number": "3.2",
+   "title": "Proof of the Key Lemma. Let N be a noodle and let F be a fork. By",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3343,
+   "n_words": 759
+  },
+  {
+   "id": "sec-013-33-proof-of-the-theorem-in-this-subsection-we-us",
+   "number": "3.3",
+   "title": "Proof of the Theorem. In this subsection we use the Basic Lemma and the",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1568,
+   "n_words": 329
+  },
+  {
+   "id": "sec-014-10-stephen-j-bigelow",
+   "number": "10",
+   "title": "STEPHEN J. BIGELOW",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 887,
+   "n_words": 189
+  },
+  {
+   "id": "sec-015-4-matrices-for-the-lawrence-krammer-representati",
+   "number": "4",
+   "title": "Matrices for the Lawrence-Krammer representation",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4288,
+   "n_words": 1054
+  },
+  {
+   "id": "sec-016-12-stephen-j-bigelow",
+   "number": "12",
+   "title": "STEPHEN J. BIGELOW",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 2584,
+   "n_words": 558
+  },
+  {
+   "id": "sec-017-v-jones-noticed-a-striking-resemblance-between-t",
+   "number": "V",
+   "title": "Jones noticed a striking resemblance between the matrices desc ribed in Theorem",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 283,
+   "n_words": 49
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1647,
+   "n_words": 270
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 20,
+  "sections": 19,
+  "chars_total": 30751
+ }
+}

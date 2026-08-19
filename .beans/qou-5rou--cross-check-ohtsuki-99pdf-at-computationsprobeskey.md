@@ -15,7 +15,7 @@ Expand the corpus's Sigma(2,3,5) series in h = q-1 and compare lambda_1 against 
 - Theorem 1.1 (p. 293) and Corollary 5.1 (p. 303), strengthened at Theorem 7.1 — lambda_2(M) is an integer divisible by 3 for every integral homology 3-sphere M; lambda_1(M) is in 6Z (lambda_1 = 6 times the Casson invariant, Murakami).
   Use here: An integrality sieve on any lambda_n the corpus extracts from its own Sigma(2,3,5) series: a transcription that yields a non-integer, or an integer not divisible by 3 at n=2, is wrong independently of any numerical tolerance. Cheap, exact, and it fails loudly — the right kind of gate for a transcription check. Consistent with the quoted value (39 = 3 x 13).
 
-Source: `uploads/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf` — no `references.ts` entry yet
+Source: `library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -1,0 +1,759 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9811173v1",
+ "source": {
+  "file": "9811173v1.pdf",
+  "sha256": "986bf57947746523a0647891dc9e452d9b60bf99a7257d33140d146056e1bf7e",
+  "bytes": 418864,
+  "pages": 54
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9811173",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "19 Nov 1998"
+  },
+  "doi": null,
+  "title": "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links",
+  "authors_raw": "J. M. Borwein a) and D. J. Broadhurst b)",
+  "abstract": "We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the 998 invariants of Hodgson–Weeks manifolds is, astoundingly,a = 2 4×23×37×691 = 9, 408, 656; the largest denominator is merely b = 9. We also study the rational invariant a/b for single-complex- place cusped manifolds, complementary to knots and links, both with in and beyond the Hildebrand–Weeks census. Within the censi, we identify 152 distinct D edekind zetas rationally related to volumes. Moreover, 91 census manifolds have v olumes reducible to pairs of these zeta values. Motivated by studies of Feynman diagra ms, we ﬁnd a 10- component 24-crossing link in the case n = 2 and D = −20. It is one of 5 alternating platonic links, the other 4 being quartic. For 8 of 10 quadratic ﬁelds d istinguished by rational relations between Dedekind zeta values and volumes of Fey nman orthoschemes, we ﬁnd corresponding links. Feynman links with D = −39 and D = −84 are missing; we expect them to be as beautiful as the 8 drawn here. Dedekind-z eta invariants are obtained for knots from Feynman diagrams with up to 11 loops. We ide ntify a sextic 18-crossing positive Feynman knot whose rational invariant, a/b = 26, is 390 times that of the cubic 16-crossing non-alternating knot with maximal D9 symmetry. Our results are secure, numerically, yet appear very hard to prove by analysis . a) CECM, Simon Fraser University, Burnaby, B.C. V5A 1S6, Canada; jborwein@cecm.sfu.ca; http://www.cecm.sfu.ca/~jborwein b) Physics Department, Open University, Milton Keynes MK7 6AA, UK; D.Broadhurst@open.ac.uk; http://physics.open.ac.uk/~dbroadhu",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180219042328-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:hep-th/9811173v1  19 Nov 1998"
+  },
+  "title_prev": "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace fieldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the 998 invariants of",
+  "title_lines": [
+   "Determinations of rational Dedekind-zeta invariants of",
+   "hyperbolic manifolds and Feynman knots and links"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Dedekind-zeta invariants of closed manifolds",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Examination of 1,200 single-complex-place ﬁelds",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Examination of 44 ﬁelds found by Snap",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "A special case: manifold v3066(−1, 2)",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "How may one derive the rational invariant?",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Cl2(2θ7) + 1",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Cl2(3θ7) = 7",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Its triangulation immedi-",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Cusped manifolds and join ﬁelds",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Links whose volumes link Clausen values",
+   "page": 8,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Signpost: integer sequence A003657",
+   "page": 8,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Dirichlet character",
+   "page": 9,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Cl2(2θ) = Cl 2(θ) − Cl2(π −θ) (25)",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Figure-8 knot at D = −3",
+   "page": 10,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Whitehead link at D = −4",
+   "page": 10,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Link 63",
+   "page": 11,
+   "source": "inferred",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "At 1800-digit precision, PSLQ ﬁnds this to be the sole integer re-",
+   "page": 11,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Link 92",
+   "page": 11,
+   "source": "inferred",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "A 12-crossing 4-component link at D = −11",
+   "page": 11,
+   "source": "inferred",
+   "number": "4.7"
+  },
+  {
+   "level": 2,
+   "title": "A 12-crossing 3-component link at D = −15",
+   "page": 11,
+   "source": "inferred",
+   "number": "4.8"
+  },
+  {
+   "level": 2,
+   "title": "A self-dual platonic link at D = −20",
+   "page": 12,
+   "source": "inferred",
+   "number": "4.9"
+  },
+  {
+   "level": 2,
+   "title": "A 48-crossing daisy-chain link at D = −24",
+   "page": 12,
+   "source": "inferred",
+   "number": "4.10"
+  },
+  {
+   "level": 2,
+   "title": "Quartic platonic links",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.11"
+  },
+  {
+   "level": 1,
+   "title": "(1 + i",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Knots and links from Feynman diagrams",
+   "page": 15,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Hyperbolic Feynman links",
+   "page": 16,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 1,
+   "title": "Moreover, a rational multiple of the",
+   "page": 16,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Dedekind-zeta invariants of Feynman orthoschemes",
+   "page": 16,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Two of Feynman’s links are missing",
+   "page": 18,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Dedekind zeta values from 10-crossing Feynman knots",
+   "page": 19,
+   "source": "inferred",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Dedekind zeta values from maximally symmetric knots",
+   "page": 23,
+   "source": "inferred",
+   "number": "5.6"
+  },
+  {
+   "level": 1,
+   "title": "Before analyzing the most symmetric of these, we comment on t he situation up to 10",
+   "page": 23,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Up to 9 crossings, maximal symmetry is a good – yet far from infallib le – diagnostic",
+   "page": 23,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The maximally symmetric knots designated by Rolfsen [26] as 6 3, 7 7, 8 21, 9 40 and",
+   "page": 23,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Only one Dedekind-zeta knot, namely 9 49, escapes the sieve of maximal symmetry",
+   "page": 23,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "At 10 crossings, we found 3 non-alternating Dedekind-zeta kno ts with less than",
+   "page": 23,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Dedekind zeta value from an 18-crossing Feynman knot",
+   "page": 25,
+   "source": "inferred",
+   "number": "5.7"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions and prospects",
+   "page": 26,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 27,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 27,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(1860) 54–68, 97–108, reprinted in: Gesammelte mathematische Abhandlungen ,",
+   "page": 30,
+   "source": "inferred",
+   "number": "3"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3952,
+   "n_words": 661
+  },
+  {
+   "id": "sec-001-2-dedekind-zeta-invariants-of-closed-manifolds",
+   "number": "2",
+   "title": "Dedekind-zeta invariants of closed manifolds",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 904,
+   "n_words": 155
+  },
+  {
+   "id": "sec-002-21-examination-of-1200-single-complex-place-ﬁeld",
+   "number": "2.1",
+   "title": "Examination of 1,200 single-complex-place ﬁelds",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2084,
+   "n_words": 369
+  },
+  {
+   "id": "sec-003-22-examination-of-44-ﬁelds-found-by-snap",
+   "number": "2.2",
+   "title": "Examination of 44 ﬁelds found by Snap",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3819,
+   "n_words": 650
+  },
+  {
+   "id": "sec-004-23-a-special-case-manifold-v30661-2",
+   "number": "2.3",
+   "title": "A special case: manifold v3066(−1, 2)",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1083,
+   "n_words": 191
+  },
+  {
+   "id": "sec-005-24-how-may-one-derive-the-rational-invariant",
+   "number": "2.4",
+   "title": "How may one derive the rational invariant?",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1917,
+   "n_words": 380
+  },
+  {
+   "id": "sec-006-2-cl22θ7-1",
+   "number": "2",
+   "title": "Cl2(2θ7) + 1",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-2-cl23θ7-7",
+   "number": "2",
+   "title": "Cl2(3θ7) = 7",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 665,
+   "n_words": 157
+  },
+  {
+   "id": "sec-008-1-its-triangulation-immedi",
+   "number": "1",
+   "title": "Its triangulation immedi-",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 683,
+   "n_words": 131
+  },
+  {
+   "id": "sec-009-3-cusped-manifolds-and-join-ﬁelds",
+   "number": "3",
+   "title": "Cusped manifolds and join ﬁelds",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2398,
+   "n_words": 434
+  },
+  {
+   "id": "sec-010-4-links-whose-volumes-link-clausen-values",
+   "number": "4",
+   "title": "Links whose volumes link Clausen values",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 940,
+   "n_words": 148
+  },
+  {
+   "id": "sec-011-41-signpost-integer-sequence-a003657",
+   "number": "4.1",
+   "title": "Signpost: integer sequence A003657",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1701,
+   "n_words": 306
+  },
+  {
+   "id": "sec-012-42-dirichlet-character",
+   "number": "4.2",
+   "title": "Dirichlet character",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1551,
+   "n_words": 325
+  },
+  {
+   "id": "sec-013-2-cl22θ-cl-2θ-cl2π-θ-25",
+   "number": "2",
+   "title": "Cl2(2θ) = Cl 2(θ) − Cl2(π −θ) (25)",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1145,
+   "n_words": 208
+  },
+  {
+   "id": "sec-014-43-figure-8-knot-at-d-3",
+   "number": "4.3",
+   "title": "Figure-8 knot at D = −3",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 278,
+   "n_words": 56
+  },
+  {
+   "id": "sec-015-44-whitehead-link-at-d-4",
+   "number": "4.4",
+   "title": "Whitehead link at D = −4",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 558,
+   "n_words": 88
+  },
+  {
+   "id": "sec-016-45-link-63",
+   "number": "4.5",
+   "title": "Link 63",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 235,
+   "n_words": 58
+  },
+  {
+   "id": "sec-017-7-at-1800-digit-precision-pslq-ﬁnds-this-to-be-t",
+   "number": "7",
+   "title": "At 1800-digit precision, PSLQ ﬁnds this to be the sole integer re-",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 405,
+   "n_words": 72
+  },
+  {
+   "id": "sec-018-46-link-92",
+   "number": "4.6",
+   "title": "Link 92",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 425,
+   "n_words": 97
+  },
+  {
+   "id": "sec-019-47-a-12-crossing-4-component-link-at-d-11",
+   "number": "4.7",
+   "title": "A 12-crossing 4-component link at D = −11",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 520,
+   "n_words": 107
+  },
+  {
+   "id": "sec-020-48-a-12-crossing-3-component-link-at-d-15",
+   "number": "4.8",
+   "title": "A 12-crossing 3-component link at D = −15",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 388,
+   "n_words": 76
+  },
+  {
+   "id": "sec-021-49-a-self-dual-platonic-link-at-d-20",
+   "number": "4.9",
+   "title": "A self-dual platonic link at D = −20",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1061,
+   "n_words": 191
+  },
+  {
+   "id": "sec-022-410-a-48-crossing-daisy-chain-link-at-d-24",
+   "number": "4.10",
+   "title": "A 48-crossing daisy-chain link at D = −24",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2980,
+   "n_words": 560
+  },
+  {
+   "id": "sec-023-411-quartic-platonic-links",
+   "number": "4.11",
+   "title": "Quartic platonic links",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4253,
+   "n_words": 830
+  },
+  {
+   "id": "sec-024-2-1-i",
+   "number": "2",
+   "title": "(1 + i",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1598,
+   "n_words": 306
+  },
+  {
+   "id": "sec-025-5-knots-and-links-from-feynman-diagrams",
+   "number": "5",
+   "title": "Knots and links from Feynman diagrams",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 88,
+   "n_words": 16
+  },
+  {
+   "id": "sec-026-51-hyperbolic-feynman-links",
+   "number": "5.1",
+   "title": "Hyperbolic Feynman links",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2192,
+   "n_words": 385
+  },
+  {
+   "id": "sec-027-1-moreover-a-rational-multiple-of-the",
+   "number": "1",
+   "title": "Moreover, a rational multiple of the",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 445,
+   "n_words": 86
+  },
+  {
+   "id": "sec-028-52-dedekind-zeta-invariants-of-feynman-orthosche",
+   "number": "5.2",
+   "title": "Dedekind-zeta invariants of Feynman orthoschemes",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3866,
+   "n_words": 722
+  },
+  {
+   "id": "sec-029-53-two-of-feynmans-links-are-missing",
+   "number": "5.3",
+   "title": "Two of Feynman’s links are missing",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2949,
+   "n_words": 538
+  },
+  {
+   "id": "sec-030-54-dedekind-zeta-values-from-10-crossing-feynman",
+   "number": "5.4",
+   "title": "Dedekind zeta values from 10-crossing Feynman knots",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 10768,
+   "n_words": 2069
+  },
+  {
+   "id": "sec-031-56-dedekind-zeta-values-from-maximally-symmetric",
+   "number": "5.6",
+   "title": "Dedekind zeta values from maximally symmetric knots",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 349,
+   "n_words": 56
+  },
+  {
+   "id": "sec-032-16-before-analyzing-the-most-symmetric-of-these",
+   "number": "16",
+   "title": "Before analyzing the most symmetric of these, we comment on t he situation up to 10",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 736,
+   "n_words": 124
+  },
+  {
+   "id": "sec-033-1-up-to-9-crossings-maximal-symmetry-is-a-good-y",
+   "number": "1",
+   "title": "Up to 9 crossings, maximal symmetry is a good – yet far from infallib le – diagnostic",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 31,
+   "n_words": 4
+  },
+  {
+   "id": "sec-034-2-the-maximally-symmetric-knots-designated-by-ro",
+   "number": "2",
+   "title": "The maximally symmetric knots designated by Rolfsen [26] as 6 3, 7 7, 8 21, 9 40 and",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 246,
+   "n_words": 50
+  },
+  {
+   "id": "sec-035-5-only-one-dedekind-zeta-knot-namely-9-49-escape",
+   "number": "5",
+   "title": "Only one Dedekind-zeta knot, namely 9 49, escapes the sieve of maximal symmetry",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 117,
+   "n_words": 20
+  },
+  {
+   "id": "sec-036-6-at-10-crossings-we-found-3-non-alternating-ded",
+   "number": "6",
+   "title": "At 10 crossings, we found 3 non-alternating Dedekind-zeta kno ts with less than",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3410,
+   "n_words": 590
+  },
+  {
+   "id": "sec-037-57-dedekind-zeta-value-from-an-18-crossing-feynm",
+   "number": "5.7",
+   "title": "Dedekind zeta value from an 18-crossing Feynman knot",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2853,
+   "n_words": 502
+  },
+  {
+   "id": "sec-038-6-conclusions-and-prospects",
+   "number": "6",
+   "title": "Conclusions and prospects",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3297,
+   "n_words": 586
+  },
+  {
+   "id": "sec-039-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1021,
+   "n_words": 164
+  },
+  {
+   "id": "sec-040-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 4605,
+   "n_words": 725
+  },
+  {
+   "id": "sec-041-3-1860-5468-97108-reprinted-in-gesammelte-mathem",
+   "number": "3",
+   "title": "(1860) 54–68, 97–108, reprinted in: Gesammelte mathematische Abhandlungen ,",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 54,
+   "n_chars": 34433,
+   "n_words": 6788
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 42,
+  "sections": 42,
+  "chars_total": 106949
+ }
+}

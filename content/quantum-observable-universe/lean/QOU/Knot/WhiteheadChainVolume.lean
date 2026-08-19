@@ -6,7 +6,7 @@ Third volume-conjecture instance, following the 4₁ (E-bricks) and Borromean
 (B-bricks) squeezes.  Carrier provenance and epistemic status:
 
 * **Source.** van der Veen, "Proof of the volume conjecture for Whitehead
-  chains", arXiv:math/0611181 v2 (`uploads/0611181v2.pdf`), Lemma 1: for the
+  chains", arXiv:math/0611181 v2 (`library/arxiv-math-0611181v2/0611181v2.pdf`), Lemma 1: for the
   Whitehead chain `W_{a,b,c,d}` with `b ≥ 2` belts at the Kashaev point
   `t = e^{2πi/N}`, the colored Jones vanishes for even `N`, and for
   `N = 2M+1`,

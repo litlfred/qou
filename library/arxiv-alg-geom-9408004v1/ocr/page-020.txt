@@ -1,0 +1,48 @@
+natural quasi-symplectic structures, i.e. closed 2-forms which in general will
+be degenerate. The fibers of the projections of TJ or D to M are Lagrangian,
+i.e. maximal isotropic with respect to the 2-form (but of dimension greater
+than dimM, because of the degeneracy). All normal functions, or Abel-
+Jacobi images of families of k-cycles, are isotropic. For the details, see [DM].
+
+§3. Mirrors.
+
+To a given family Y — M of Calabi-Yaus, there are two ways of asso-
+ciating an (NV = 2, c = 9) (super) conformal field theory (CFT). Physicists
+refer to these as the A-model and B-model theories. A key quantity in the
+CFT is its partition function, which is a cubic form on a vector space V,
+depending on some auxiliary parameters q.
+
+In the A-model, one takes V := H!1(X) = H?(X,C), where X is a
+general CY in the given family. On it there is the cubic form Topo, giving
+the topological cup product. For each k € Ho(X,Z) ~ H?(X,Z)* (we
+replace Z-homology or cohomology by its image in the Q-(co)homology, i.e.
+we ignore torsion classes), we think of k? as a cubic form on V. The partition
+function is then:
+
+(9) Topo + > ngk?g®.
+
+kd
+
+In the summation, k runs over H?(X,Z)* and d over positive integers. The
+coefficient nz is the “number of rational curves” of fundamental class k in
+X. This number is conjectured, but not known, to be finite. The multi-
+parameter q is defined by q := e?"", where ¢ is a set. of linear coordinates on
+H?(X,C). Intrinsically, we define g“ as the function given at t € H?(X,C)
+by:
+
+(10) gt wm e2mid<tk>
+
+The sum is expected to converge for t in K, the complexified Kahler cone of
+X, ie. when Im(t) € H?(X,R) is in the Kahler cone.
+
+In the B-model, V is H?(X), and the partition function is a normalized
+version of the Yukawa cubic, so its coefficients are functions on M. The
+Yukawa cubic is defined only up to a scalar factor which is determined by
+a choice of holomorphic gauge s € H*°(X). In order to get the coefficients
+in the partition function to be functions on M (rather than M), we need a
+section of M —> M. According to [Mo], one chooses a maximally unipotent
+degeneration of X; this determines a vanishing cycle
+
+yo € H3(X,Z),
+
+20

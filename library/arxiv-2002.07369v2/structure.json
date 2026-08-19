@@ -1,0 +1,127 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2002.07369v2",
+ "source": {
+  "file": "2002.07369v2.pdf",
+  "sha256": "6b8b1e509553b90c447faef596b288c25d7044c6851f157db9f2049b5b7d5c87",
+  "bytes": 358793,
+  "pages": 14
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2002.07369",
+   "version": "2",
+   "primary_class": "math.GR",
+   "stamp_date": "15 Mar 2026"
+  },
+  "doi": null,
+  "title": "GRÖBNER-SHIRSHOV BASES FOR THE COXETER GROUPS OF THE TYPESG 2,F 4,E 6,E 7 ANDE 8",
+  "authors_raw": "XIAOWEI PANG∗ AND JUN WANG∗∗",
+  "abstract": "It is known that the finite Coxeter groups are classified in terms of Coxeter-Dynkin diagrams. The authors are mainly interest in the Gr¨ obner- Shirshov bases of finite Coxeter groups. In this paper, the authors obtain the Gr¨ obner-Shirshov basis for Coxeter group of typeE 8, while giving simpler Gr¨ obner-Shirshov bases for the Coxeter groups of the typesE6, E7. The new presentations ofE n, n= 6,7,8 which are given in this paper has enormous effects in reducing the amount of calculation. 1.Introduction LetM= (m ij) be a symmetricn×nmatrix over natural numbers, with∞ such thatm ii = 1,2≤m ij≤∞fori̸=j. The matrixMdetermines a group with the following presentation W= sgp⟨s 1,..,s n|(sisj)mij = 1,where 1≤i,j≤n,m ij̸=∞⟩, which is called the Coxeter groupW=W(M). The study of Coxeter groups can be said to go back to Greek antiquity, the symmetries and classification of regular polytopes being part of the theory. In 1935, Coxeter classified the finitie Coxeter groups in terms of Coxeter-Dynkin dia- grams [12]. When computing in a Coxeter group, whether by hand or by machine, one faces the problem about how to efficiently represent its elements. For this purpose, we focus on the noncommutative Gr¨ obner bases theory, which is called 2020Mathematics Subject Classification.20F55, 16S15.",
+  "docinfo": {
+   "Author": "Xiaowei Pang; Jun Wang",
+   "Creator": "arXiv GenPDF (tex2pdf:8e18bb9)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Gr\\\"obner-Shirshov bases for the Coxeter groups of the types $G_2,F_4,E_6,E_7$ and $E_8$"
+  },
+  "title_prev": "GRÖBNER-SHIRSHOV BASES FOR THE COXETER GROUPS OF THE TYPESG2,F 4,E 6,E 7 ANDE 8",
+  "title_lines": [
+   "GRÖBNER-SHIRSHOV BASES FOR THE COXETER GROUPS",
+   "OF THE TYPESG 2,F 4,E 6,E 7 ANDE 8"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Grbner-Shirshov bases of the Coxeter groups of the types E6,E7,E8",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A.  Grbner-Shirshov bases of the Coxeter groups of the type G2,F4",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Author contributions",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3093,
+   "n_words": 481
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 13,
+   "n_chars": 15242,
+   "n_words": 2747
+  },
+  {
+   "id": "sec-002-author-contributions",
+   "number": null,
+   "title": "Author contributions",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 75,
+   "n_words": 12
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2931,
+   "n_words": 434
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 4,
+  "chars_total": 21341
+ }
+}

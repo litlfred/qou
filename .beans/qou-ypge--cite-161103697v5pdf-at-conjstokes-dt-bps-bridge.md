@@ -15,7 +15,7 @@ conj:stokes-dt-bps-bridge names Omega_DT without a source that defines it as Sto
 - Thm 3.2 + Thm 3.4 — For an uncoupled finite BPS structure the associated Riemann-Hilbert problem has a unique solution, written explicitly as products of gamma functions; the resulting tau-function is given explicitly by the Barnes G-function.
   Use here: A worked case where DT data determines Stokes data uniquely — the strongest available precedent for the direction the folio's bridge conjecture asserts. Cite as the mathematical status of the bridge in the solvable case; the folio's knot BPS structures are not shown to be uncoupled, so this is context, not a discharge.
 
-Source: `uploads/1611.03697v5.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1611.03697v5/1611.03697v5.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

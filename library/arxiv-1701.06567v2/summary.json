@@ -1,0 +1,452 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1701.06567v2",
+ "source_sha256": "c1610b50f5a7e22c",
+ "brief": "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections.",
+ "extended": "**BPS spectra and 3-manifold invariants**\n\n*Sergei Gukov 1, Du Pei 1,2, Pavel Putrov 3, Cumrun Vafa 4*\n\n81 pp, 86 sections.\n\n**Abstract.** We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections. The physical system in question involves a 6d ﬁvebrane theory onM3 times a 2-disk,D2, whose Hilbert space of BPS states plays the role of a basic building block in categoriﬁcation of various partition functions of 3dN = 2 theory T [M3]: D2×S1 half-index, S2×S1 superconformal index, and S2×S1 topologically twisted index. The ﬁrst partition function is labeled by a choice of boundary condition and provides a reﬁnement of Chern-Simons (WRT) invariant. A linear combination of them in the unreﬁned limit gives the analytically continued WRT invariant ofM3. The last two can be factorized into the product of half-indices.\n\n**Outline.** 1 Walter Burke Institute for Theoretical Physi; 2 Center for Quantum Geometry of Moduli Spaces; 3 School of Natural Sciences, Institute for Ad; 4 Jeﬀerson Physical Laboratory, Harvard Univer; 2 Fivebranes on 3-manifolds and categoriﬁcatio; 2.1 Preliminaries; 2.2 D2×S1 partition function of T [M3] and WRT; 2.3 Realization in terms of counting solutions; 2.4 Surgeries, triangulations, and Atiyah-Floe; 2.5 Superconformal index of T [M3] and its fac; 2.6 Further reﬁnement; 2.7 Topologically twisted index of T [M3]; 2.8 Generalization to U(N); 2.9 Relation to open GW invariants on T∗M3; 2.10 Langlands duality and ﬂat connections; 3.1 M3 =S3; 3 Examples; 3.1.1 Categorifying the index\n\n**Extracted claims (proposals, not verified).**\n- Proposition 3: , as summarized in the following.",
+ "tokens": {
+  "brief": 45,
+  "extended": 426
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-walter-burke-institute-for-theoretical-physics",
+   "title": "Walter Burke Institute for Theoretical Physics, California Institute of Technology,",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-2-center-for-quantum-geometry-of-moduli-spaces-d",
+   "title": "Center for Quantum Geometry of Moduli Spaces, Deparment of Mathematics, University",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-3-school-of-natural-sciences-institute-for-advan",
+   "title": "School of Natural Sciences, Institute for Advanced Study, Princeton, NJ 08540, USA",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-003-4-jeﬀerson-physical-laboratory-harvard-universit",
+   "title": "Jeﬀerson Physical Laboratory, Harvard University, Cambridge, MA 02138, USA",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-004-2-fivebranes-on-3-manifolds-and-categoriﬁcation",
+   "title": "Fivebranes on 3-manifolds and categoriﬁcation of WRT invariant",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-005-21-preliminaries",
+   "title": "Preliminaries",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-006-22-d2s1-partition-function-of-t-m3-and-wrt-invar",
+   "title": "D2×S1 partition function of T [M3] and WRT invariant",
+   "pages": "7-14"
+  },
+  {
+   "id": "sec-007-23-realization-in-terms-of-counting-solutions-of",
+   "title": "Realization in terms of counting solutions of diﬀerential equations",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-008-24-surgeries-triangulations-and-atiyah-floer",
+   "title": "Surgeries, triangulations, and Atiyah-Floer",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-009-25-superconformal-index-of-t-m3-and-its-factoriz",
+   "title": "Superconformal index of T [M3] and its factorization",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-010-26-further-reﬁnement",
+   "title": "Further reﬁnement",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-011-27-topologically-twisted-index-of-t-m3",
+   "title": "Topologically twisted index of T [M3]",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-012-28-generalization-to-un",
+   "title": "Generalization to U(N)",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-013-29-relation-to-open-gw-invariants-on-tm3",
+   "title": "Relation to open GW invariants on T∗M3",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-014-210-langlands-duality-and-ﬂat-connections",
+   "title": "Langlands duality and ﬂat connections",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-015-31-m3-s3",
+   "title": "M3 =S3",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-016-3-examples",
+   "title": "Examples",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-017-311-categorifying-the-index",
+   "title": "Categorifying the index",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-018-312-the-t-qβ-reduction-from-bps-spectral-sequenc",
+   "title": "The t =qβ reduction from BPS spectral sequence",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-019-32-m3-lp-1",
+   "title": "M3 =L(p, 1)",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-020-321-reﬁned-superconformal-index",
+   "title": "Reﬁned superconformal index",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-021-322-topologically-twisted-index-of-t-lp-1",
+   "title": "Topologically twisted index of T [L(p, 1)]",
+   "pages": "34-37"
+  },
+  {
+   "id": "sec-022-0-qˆzβ",
+   "title": "(q)ˆZ(β)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-023-1-qˆzβ",
+   "title": "(q)ˆZ(−β)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-024-0-1q-ˆzβ",
+   "title": "(1/q) +ˆZ(β)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-025-2-1q-364",
+   "title": "(1/q) (3.64)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-026-0-q-2ˆzβ",
+   "title": "(q)· 2ˆZ(−β)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-027-2-1q-365",
+   "title": "(1/q). (3.65)",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-028-0-q-1-ˆz0",
+   "title": "(q) = 1, ˆZ(0)",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-029-1-q-q15-ˆz0",
+   "title": "(q) =−q1/5, ˆZ(0)",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-030-0-q-1-q-q2-ˆz1",
+   "title": "(q) = 1 +q +q2, ˆZ(1)",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-031-1-q-q151-2q-q2-ˆz1",
+   "title": "(q) =−q1/5(1 + 2q +q2), ˆZ(1)",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-032-0-q-1-ˆz1",
+   "title": "(q) = 1, ˆZ(−1)",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-033-1-q-0-ˆz1",
+   "title": "(q) = 0, ˆZ(−1)",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-034-0-q-1-q-2q2-2q3-2q4-q5-q6",
+   "title": "(q) = 1 +q + 2q2 + 2q3 + 2q4 +q5 +q6,",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-035-1-q-q151-2q-3q2-3q3-3q4-2q5-q6",
+   "title": "(q) =−q1/5(1 + 2q + 3q2 + 3q3 + 3q4 + 2q5 +q6),",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-036-0-q-q21q2",
+   "title": "(q) =−q2/(1−q2),",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-037-1-q-q651q2",
+   "title": "(q) =−q6/5/(1−q2),",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-038-0-q-q12-q11-2q10-3q9-4q8-4q7-5q6-4q5-4q4-3q3-2q2",
+   "title": "(q) =q12 +q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q4 + 3q3 + 2q2 +q + 1,",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-039-0-q-q7-q5-q4-q3-q2",
+   "title": "(q) = (q7 +q5 +q4 +q3 +q2)/",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-040-1-q-q115",
+   "title": "(q) =q11/5(",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-041-2-q-q145",
+   "title": "(q) =q14/5(",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-042-324-cyclotomic-expansion",
+   "title": "Cyclotomic expansion",
+   "pages": "39-41"
+  },
+  {
+   "id": "sec-043-325-positivity-of-coeﬃcients",
+   "title": "Positivity of coeﬃcients",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-044-1-positivity-of-homological-blocks-ˆza-besides-o",
+   "title": "Positivity of homological blocks ˆZa. Besides overall signs, all homological blocks are",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-045-2-positivity-of-the-superconformal-index-i-and-t",
+   "title": "Positivity of the superconformal index I and twisted indexItop. After factorizing out",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-046-3-positivity-of-β-reduced-homological-blocks-ˆzβ",
+   "title": "Positivity of “ β-reduced” homological blocks ˆZ(β)",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-047-326-comparison-with-reﬁned-cs",
+   "title": "Comparison with reﬁned CS",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-048-4-2k-4β12",
+   "title": "(2k + 4β)1/2",
+   "pages": "44-46"
+  },
+  {
+   "id": "sec-049-33-m3-op-σg",
+   "title": "M3 =O(−p)→ Σg",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-050-331-homological-blocks-and-wrt-invariant",
+   "title": "Homological blocks and WRT invariant",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-051-332-factorization-of-the-superconformal-index",
+   "title": "Factorization of the superconformal index",
+   "pages": "48-50"
+  },
+  {
+   "id": "sec-052-0-q-1",
+   "title": "(q) = 1",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-053-0-q-q2-1-ˆz2",
+   "title": "(q) =q−2 + 1, ˆZ(−2)",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-054-1-q-q45-ˆz2",
+   "title": "(q) =q−4/5, ˆZ(−2)",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-055-1-q",
+   "title": "(q) =−",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-056-333-comparison-with-reﬁned-cs",
+   "title": "Comparison with reﬁned CS",
+   "pages": "50-51"
+  },
+  {
+   "id": "sec-057-34-m3-plumbed",
+   "title": "M3 = plumbed",
+   "pages": "51-52"
+  },
+  {
+   "id": "sec-058-341-homological-blocks-ˆza",
+   "title": "Homological blocks ˆZa",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-059-1-in-the-special-case-when-the-plumbing-graph-ha",
+   "title": "In the special case when the plumbing graph has just one vertex, the expression for the",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-060-2-generically-it-is-well-deﬁned-only-if-m-is-neg",
+   "title": "Generically it is well-deﬁned only if M is negative deﬁnite, i.e. M3(Γ) is a link of a",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-061-3-the-formula-3145-deﬁnes-homological-blocks-ˆza",
+   "title": "The formula ( 3.145) deﬁnes homological blocks ˆZa(q) in terms of a plumbing graph",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-062-4-even-though-the-formula-has-the-structure-of-t",
+   "title": "Even though the formula has the structure of the “index of a quiver theory”, it is not",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-063-5-suppose-m-0-then-ˆzaq-is-a-well-deﬁned-series",
+   "title": "Suppose M < 0. Then ˆZa(q) is a well-deﬁned series in q convergent in the unit disk",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-064-6-we-have",
+   "title": "We have",
+   "pages": "53-55"
+  },
+  {
+   "id": "sec-065-342-problems-on-the-t-m3-side",
+   "title": "Problems on the T [M3] side",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-066-4-adding-knots-and-links-into-m3",
+   "title": "Adding knots and links into M3",
+   "pages": "55-56"
+  },
+  {
+   "id": "sec-067-41-links-in-m3-and-line-operators-in-t-m3",
+   "title": "Links in M3 and line operators in T [M3]",
+   "pages": "56-60"
+  },
+  {
+   "id": "sec-068-42-links-in-s2s1-and-rozanskys-proposal",
+   "title": "Links in S2×S1 and Rozansky’s proposal",
+   "pages": "60-63"
+  },
+  {
+   "id": "sec-069-43-links-in-lp-1",
+   "title": "Links in L(p, 1)",
+   "pages": "63-64"
+  },
+  {
+   "id": "sec-070-431-unreﬁned-index-of-t-lp-1-with-wilson-loops",
+   "title": "Unreﬁned index of T [L(p, 1)] with Wilson loops",
+   "pages": "64-65"
+  },
+  {
+   "id": "sec-071-432-reﬁnement-and-categoriﬁcation",
+   "title": "Reﬁnement and categoriﬁcation",
+   "pages": "65-66"
+  },
+  {
+   "id": "sec-072-44-comparison-with-reﬁned-cs",
+   "title": "Comparison with reﬁned CS",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-073-0-qkλ",
+   "title": "(q;K,λ )",
+   "pages": "66-67"
+  },
+  {
+   "id": "sec-074-0-q",
+   "title": "(q)",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-075-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "67-69"
+  },
+  {
+   "id": "sec-076-4-2kl2",
+   "title": "(2k)L/2",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-077-2-2kl2-q-12-q-12",
+   "title": "(2k)L/2 (q 1/2− q −1/2)×",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-078-2-a10",
+   "title": "(A.10)",
+   "pages": "69-70"
+  },
+  {
+   "id": "sec-079-4-fωx1x-lxvq-nv2-a15",
+   "title": "Fω(x1,...,x L)|xv=q nv/2 (A.15)",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-080-2-2kl2-q-12-q-12-lim",
+   "title": "(2k)L/2 (q 1/2− q −1/2) lim",
+   "pages": "71-71"
+  },
+  {
+   "id": "sec-081-4-fωx1x-lxvq-nv2",
+   "title": "Fω(x1,...,x L)|xv=q nv/2 =",
+   "pages": "71-71"
+  },
+  {
+   "id": "sec-082-2-q-12-q-12-detm12",
+   "title": "(q 1/2− q −1/2)| detM|1/2",
+   "pages": "71-71"
+  },
+  {
+   "id": "sec-083-2-q-12-q-12-detm12",
+   "title": "(q 1/2− q −1/2)| detM|1/2×",
+   "pages": "71-74"
+  },
+  {
+   "id": "sec-084-c-categoriﬁcation-of-the-turaev-viro-invariants",
+   "title": "Categoriﬁcation of the Turaev-Viro invariants",
+   "pages": "74-76"
+  },
+  {
+   "id": "sec-085-references",
+   "title": "References",
+   "pages": "76-81"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

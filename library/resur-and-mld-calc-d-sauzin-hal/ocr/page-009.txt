@@ -1,0 +1,111 @@
+singular (but, in any given region of C, one ‘sees’ only
+finitely many singularities at a time: you need longer
+and longer paths of analytic continuation to see more
+and more singularities in that region).
+
+Denoting by R® the space of all $(z) € B(C6@
+C{¢}) for which £(¢) is endlessly continuable with at
+worst simple singularities for all the branches of its
+analytic continuation, we can now define the alien op-
+erators
+
+Ate Endc(R°), Aw € Derc(R*), for w € C*
+
+(37)
+as follows: given @ = 4-1(C6+@) € RS, Definition 8
+allows us to find a finite subset of ]0,w[, the points of
+which we denote by w, < +--+ < wp—1 (with reference
+to the natural total order on the line-segment), so that
+Definition 2 can be copied verbatim, except that the
+ws do not necessarily lie on any lattice (take any L >
+Jw] and {w,...,wy—1} == FLM]0,w[ in Definition 8).
+
+Much of what has been said in_the case of a lattice
+can be generalized to the case of R*; in particular, this
+is a differential subalgebra of (C[[z~]], 4) and, in the
+summable case, we have a passage formula generaliz-
+
+ing (33)—(35):
+
+SM = fF 6 ( Se Piz etlea,), 0<6',
+wen’ : 7
+(38)
+(at least in restriction to the simple resurgent series for
+which the action of the right-hand side is well-defined),
+with a scalar mould P99 defined by
+
+1 ifr(w) =0
+
+Pry = if < argu, <--+ < argu, < 6’
+
+1
+There
+
+0 otherwise,
+
+(39)
+where, in the second case, w = w1---w, # W, s counts
+the number of pairwise distinct arg w,’s, ¢
+count their multiplicities (r1) +---+rs =r).
+
+4.2 Examples from mathematical physics.
+
+In [GK21], the logarithm of Faddeev’s quantum dilog-
+arithm ©)(x) (a special function that plays a key
+role in quantum Teichmiiller theory and Chern-Simons
+theory) is shown to arise from the Borel-Laplace sum-
+mation of a simple resurgent series: for fixed « € C
+
+with argx € (—7,7),
+log ®y(5"5) = 3% Lio(—e”) + (WH! A)(z,x) (40)
+
+for z = b-?, where G(z,x) € 2~!C[[z~2]] has mero-
+morphic Borel transform with simple poles that lie on
+
+a countable union of lines passing through 0. More
+(-1)"
+
+2rin
+
+precisely, aC, x) has a simple pole with residue
+at
+
+Wmn(t) = n(x+(2m+l)im), meZ, ne Z*. (41)
+Since resurgent series are stable under nonlinear op-
+erations like exponentiation [Eca85] (details can be
+found in [KS20]), it follows that
+
+1 (525) = exp(s%; Lie(-c*)) (WMA) (z,2) (42)
+
+with H := expG € R°. The Borel transform A(¢,2x)
+is not meromorphic, but its branches may be singular
+only for ¢ € xZ + inZ (because convolution and a
+fortiori the Borel counterpart of exponentiation tend
+to add singular points) and alien chain rule gives
+
+Donne) (%, 2) = CU" ie, x), (43)
+
+which indicates superpositions of simple poles and
+logarithmic singularities. Notice that A,H = 0 if
+w € «Z + inZ is not among the wm »(x)’s, but some
+branch of (though not the principal one) may be
+singular at such a point w.
+
+Borel transforms displaying singularities arranged
+on a countable union of lines through 0, like a peacock
+pattern, have been observed
+
+e in [CSMS17], in the context of topological string
+theory (studying a resurgent transseries for the
+free energy of topological strings on the local P?
+toric Calabi-Yau threefold),
+
+e in [GGM23], in the context of Chern-Simons the-
+ory (studying the partition function of the com-
+plement of a hyperbolic knot in S*).
+
+4.3 Relaxing the constraint on the nature of
+singularities.
+
+Our earlier computation of a difference of Laplace
+transforms illustrated by Figure 4 relied on the fact

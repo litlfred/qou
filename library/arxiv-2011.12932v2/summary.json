@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2011.12932v2",
+ "source_sha256": "23709542c5652a29",
+ "brief": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing",
+ "extended": "**MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY**\n\n*CHRISTIAN BLANCHET AND MARCO DERENZI*\n\n26 pp, 5 sections.\n\n**Abstract.** Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing 3-dimensional Topological Quantum Field Theories (TQFTs for short) con- taining invariants of links in 3-manifolds such as Witten–Reshetikhin–Turaev ones. In recent years, generalized notions of modular categories, which relax the semisimplicity requirement, have been successfully used to extend Turaev’s construction to various non-semisimple settings. We report on these recent de- velopments in the domain, showing the richness of Vladimir’s lineage.\n\n**Outline.** 1 Introduction; Semisimple constructions; Early non-semisimple constructions; Appendix A. Ends; References",
+ "tokens": {
+  "brief": 47,
+  "extended": 210
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-semisimple-constructions",
+   "title": "Semisimple constructions",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-early-non-semisimple-constructions",
+   "title": "Early non-semisimple constructions",
+   "pages": "3-20"
+  },
+  {
+   "id": "sec-003-appendix-a-ends",
+   "title": "Appendix A. Ends",
+   "pages": "20-24"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "24-26"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

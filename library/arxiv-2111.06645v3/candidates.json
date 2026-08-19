@@ -1,0 +1,178 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2111.06645v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "2a4826bd1c2f0823c99f8e3cccfd835c5044d70d30eb20b36fea38dcb8dd83de",
+  "file": "2111.06645v3.pdf"
+ },
+ "provenance": {
+  "title": null,
+  "authors": null,
+  "arxiv": {
+   "id": "2111.06645",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "24 Jun 2024"
+  },
+  "doi": "10.3842/SIGMA.2024.055"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "lemma": 2,
+   "proposition": 5,
+   "conjecture": 1,
+   "corollary": 1,
+   "theorem": 2
+  },
+  "formalization_candidates": 10
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "For all \u03b3,\u03b3\u2032\u2208 PSL2(Z) and x\u2208 Q \u2216",
+   "section_file": "sections/sec-004-31-the-generalized-quantum-modularity-conjecture.md",
+   "section_title": "The generalized quantum modularity conjecture",
+   "pages": "15-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.2",
+   "name": null,
+   "statement": "to the ( \u03c31,\u03c3 1) component of the matrix W (41)",
+   "section_file": "sections/sec-006-33-quadratic-relations.md",
+   "section_title": "Quadratic relations",
+   "pages": "18-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "5.1",
+   "name": null,
+   "statement": "The function W\u03b3 defined on Q \u2216",
+   "section_file": "sections/sec-016-52-smoothness.md",
+   "section_title": "Smoothness",
+   "pages": "34-40",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.2",
+   "name": "assuming RQMC",
+   "statement": "The function W\u03b3 belongs to C\u221e",
+   "section_file": "sections/sec-016-52-smoothness.md",
+   "section_title": "Smoothness",
+   "pages": "34-40",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "5.3",
+   "name": null,
+   "statement": "The function x7\u2192 \u03a6\u03b1(2\u03c0ix)exact on Q defined by (5.12) is differentiable in the",
+   "section_file": "sections/sec-016-52-smoothness.md",
+   "section_title": "Smoothness",
+   "pages": "34-40",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "8.1",
+   "name": null,
+   "statement": "Fix an integer m\u2265 0, and set M =m + 5",
+   "section_file": "sections/sec-028-8-proof-of-the-modularity-conjecture-for-the-4-1.md",
+   "section_title": "Proof of the modularity conjecture for the 4_1 knot",
+   "pages": "58-60",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "8.2",
+   "name": null,
+   "statement": "For fixed m< den(\u03b2) and r\u2208 Z/cZ and for n and X tending to infinity as",
+   "section_file": "sections/sec-029-82-the-general-case.md",
+   "section_title": "The general case",
+   "pages": "60-63",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "9.1",
+   "name": null,
+   "statement": "For each knot K, representation \u03c3\u2208P K, and number \u03b1\u2208 Q/Z, we have",
+   "section_file": "sections/sec-032-92-denominators-and-integrality-properties.md",
+   "section_title": "Denominators and integrality properties",
+   "pages": "65-71",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "9.2",
+   "name": null,
+   "statement": "For any integers r\u2265 2 and \u03bb\u2265 0, we have",
+   "section_file": "sections/sec-032-92-denominators-and-integrality-properties.md",
+   "section_title": "Denominators and integrality properties",
+   "pages": "65-71",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "9.3",
+   "name": null,
+   "statement": "For each integer n\u2265 1, define",
+   "section_file": "sections/sec-032-92-denominators-and-integrality-properties.md",
+   "section_title": "Denominators and integrality properties",
+   "pages": "65-71",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "10.1",
+   "name": null,
+   "statement": "The Kashaev invariant \u27e8K\u27e9N of a knot K can be computed in O(N) steps.",
+   "section_file": "sections/sec-033-10-numerical-aspects.md",
+   "section_title": "Numerical aspects",
+   "pages": "71-74",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

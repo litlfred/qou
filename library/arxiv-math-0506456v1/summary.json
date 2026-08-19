@@ -1,0 +1,412 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0506456v1",
+ "source_sha256": "ce11210245a29eec",
+ "brief": "Asymptotics of the quantum invariants for surgeries on the figure-8 knot (Andersen–Hansen, JKTR) — asymptotic expansion of the SU(2) Reshetikhin–Turaev invariants for surgeries on 4₁.",
+ "extended": "**Asymptotics of the quantum invariants for surgeries on the figure 8 knot** — Jørgen Ellegaard Andersen and Søren Kold Hansen. Journal of Knot Theory and Its Ramifications. arXiv:math/0506456v1 [math.QA], 22 Jun 2005.\n\nInvestigates the Reshetikhin–Turaev invariants associated to SU(2) for the 3-manifolds obtained by surgery on the figure-eight knot, and their asymptotic expansion.\n\n**Why it may bear here.** The figure-eight complement is the calibration object of this corpus (Vol(4₁) = 2·Cl₂(π/3) pins the CAL-2 modulus), and asymptotic expansions of its quantum invariants are the volume-conjecture side of that same knot. Adjacent to the Ohtsuki 5₂ asymptotics already held.",
+ "tokens": {
+  "brief": 45,
+  "extended": 170
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-2-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-4-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-004-6-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-005-8-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-20-in-case-pq",
+   "title": "In case |p/q| >",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-007-10-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-008-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-009-2-the-rt-invariant-for-surgeries-on-the-ﬁgure-8",
+   "title": "The RT-invariant for surgeries on the ﬁgure 8 knot",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-010-12-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-011-3-a-complex-double-contour-integral-formula-for",
+   "title": "A complex double contour integral formula for τr(Mp/q)",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-012-14-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-013-16-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-014-4-the-large-r-asymptotics-of-j",
+   "title": "The large r asymptotics of J ′",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-015-41-semiclassical-asymptotics-of-the-quantum-dilo",
+   "title": "Semiclassical asymptotics of the quantum dilogarithm",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-016-2-volk-425",
+   "title": "Vol(K), (4.25)",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-017-2-jrε-jrε",
+   "title": "(J+(r,ε ) +J−(r,ε )),",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-018-18-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-019-20-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-020-43-the-large-r-asymptotics-of-τrmpq",
+   "title": "The large r asymptotics of τr(Mp/q)",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-021-22-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-022-24-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-023-0-by-a-small-computation-using",
+   "title": "By a small computation, using",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-024-26-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-025-15-if-p2q2-16-we-ﬁnd-that-c-138-giving-a-contrad",
+   "title": "If p2/q2 = 16 we ﬁnd that c = −13/8 giving a contradiction. Thus p2/q2 ∈",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-026-0-or-0",
+   "title": "(or∫ 0",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-027-28-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-028-0-we-actually",
+   "title": "We actually",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-029-30-asymptotics-of-the-quantum-invariants-for-the",
+   "title": "Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-030-5-classical-chernsimons-theory-on-mpq",
+   "title": "Classical Chern–Simons theory on Mp/q",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-031-51-the-moduli-space-of-ﬂat-su2connections-on-mpq",
+   "title": "The moduli space of ﬂat SU(2)–connections on Mp/q",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-032-1-such-groups-are-denoted-2bridge-kmot-groups-by",
+   "title": "Such groups are denoted 2–bridge kmot groups by Riley since the y generalize",
+   "pages": "30-33"
+  },
+  {
+   "id": "sec-033-3-if-s2-1-then-λ11su-1-if-and",
+   "title": "If s2 ⁄= 1 then λ11(s,u ) = ±1 if and",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-034-52-chernsimons-invariants",
+   "title": "Chern–Simons invariants",
+   "pages": "35-37"
+  },
+  {
+   "id": "sec-035-2-z-so-as-to",
+   "title": "Z (so as to",
+   "pages": "37-39"
+  },
+  {
+   "id": "sec-036-53-a-comparison-between-chernsimons-invariants-a",
+   "title": "A comparison between Chern–Simons invariants and critical values",
+   "pages": "39-43"
+  },
+  {
+   "id": "sec-037-1-θ",
+   "title": "(θ)",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-038-1-θ-1-1-uθ1e4πiθ",
+   "title": "(θ) = 1 − (1 +u±(θ))−1e4πiθ,",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-039-2-θ-1-1-uθe4πiθ-581",
+   "title": "(θ) = 1 − (1 +u±(θ))e4πiθ (5.81)",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-040-1-θq",
+   "title": "(θ)Q±",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-041-2-θ-e4πiθ-583",
+   "title": "(θ) = e4πiθ (5.83)",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-042-2-θ-lθ-585",
+   "title": "(θ) =L±(θ) (5.85)",
+   "pages": "44-46"
+  },
+  {
+   "id": "sec-043-2-s2-s2-1-1",
+   "title": "(s2 +s−2 − 1) ± 1",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-044-2-s2-s2-1",
+   "title": "(s2 +s−2) − 1",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-045-4-s2-s2-12-1",
+   "title": "(s2 +s−2 − 1)2 − 1",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-046-2-s4-s4-1",
+   "title": "(s4 +s−4) − 1",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-047-2-s2-s2",
+   "title": "(s−2 −s2)",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-048-4-s2-s22",
+   "title": "(s2 −s−2)2(",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-049-3-eεθ0-fεθ0",
+   "title": "(eε(θ0) −fε(θ0))",
+   "pages": "47-50"
+  },
+  {
+   "id": "sec-050-2-mod-z",
+   "title": "(mod Z)",
+   "pages": "50-52"
+  },
+  {
+   "id": "sec-051-16-mod-z",
+   "title": "(mod Z),",
+   "pages": "52-60"
+  },
+  {
+   "id": "sec-052-0-xy-ax-by-xy-1",
+   "title": "(x,y ) = ax +by −xy + 1",
+   "pages": "60-62"
+  },
+  {
+   "id": "sec-053-30-c5",
+   "title": "(C.5)",
+   "pages": "62-62"
+  },
+  {
+   "id": "sec-054-2-a-rey",
+   "title": "(a − Re(y))",
+   "pages": "62-63"
+  },
+  {
+   "id": "sec-055-2-log2t-li2t1-c6",
+   "title": "Log2(−t) − Li2(t−1) (C.6)",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-056-2-log2w-li2w1",
+   "title": "Log2(−|w|) − Li2(|w|−1),",
+   "pages": "63-65"
+  },
+  {
+   "id": "sec-057-1-θ-q",
+   "title": "(θ) = Q∓",
+   "pages": "65-65"
+  },
+  {
+   "id": "sec-058-2-θ-d1",
+   "title": "(θ) (D.1)",
+   "pages": "65-65"
+  },
+  {
+   "id": "sec-059-2-θ",
+   "title": "(θ) ∈",
+   "pages": "65-66"
+  },
+  {
+   "id": "sec-060-2-θ-ψ",
+   "title": "(θ) = ψ+",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-061-2-θ-ψ",
+   "title": "(θ) = ψ−",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-062-1-θ-ψ",
+   "title": "(θ) +ψ±",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-063-2-θ-4πθ-2πz",
+   "title": "(θ) ∈ 4πθ + 2πZ,",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-064-2-θ-4πθ",
+   "title": "(θ) = 4πθ",
+   "pages": "66-67"
+  },
+  {
+   "id": "sec-065-1-θ",
+   "title": "(−θ)",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-066-1-θ-π-ψ",
+   "title": "(θ) +π −ψ±",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-067-1-θ-ψ",
+   "title": "(θ) −ψ±",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-068-2-θ-ππ-and-we-conclude-that",
+   "title": "(θ) ∈] −π,π ], and we conclude that",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-069-1-θ-ψ",
+   "title": "(θ) ≤ ψ±",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-070-1-θ-and-ψ",
+   "title": "(θ) and ψ±",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-071-2-θ-both-belong-to-either",
+   "title": "(θ) both belong to either",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-072-1-θ-ψ",
+   "title": "(θ) = ψ±",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-073-2-θ-for-θ-16-13-and",
+   "title": "(θ) for θ ∈ {1/6, 1/3} and",
+   "pages": "67-68"
+  },
+  {
+   "id": "sec-074-3-θ-q",
+   "title": "(−θ) = Q±",
+   "pages": "68-68"
+  },
+  {
+   "id": "sec-075-3-θ-d7",
+   "title": "(θ) (D.7)",
+   "pages": "68-68"
+  },
+  {
+   "id": "sec-076-1-θq",
+   "title": "(−θ)Q±",
+   "pages": "68-68"
+  },
+  {
+   "id": "sec-077-1-θ-q",
+   "title": "(θ) = Q±",
+   "pages": "68-70"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "abstract",
+   "opening-text"
+  ],
+  "note": "Written after reading the document, not assembled mechanically. Regeneration preserves this (summarize-library keeps kind==\"agent\"). The \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

@@ -1,0 +1,48 @@
+that M is smooth with tangent space H!(Tx,) at t. Typically such families
+might consist of all CYs in some open subset of M, together with some
+“level” structure. We fatten the family by adding the holomorphic gauge: let
+p:M—M be the C*-bundle over M underlying the line bundle yw /Ms
+so a point of M is given by a pair (X,s) with X € M and s € H°(wx)\(0).
+There is a pullback family X : XY => M, where X= X xy M. We let
+m:J— >Mand7: TI — M denote the relative intermediate Jacobians of
+x, X respectively.
+
+Theorem 3. 7: J > M is an analytically completely integrable Hamil-
+tonian system.
+
+Proof.
+
+Step I. We claim that there is a canonical isomorphism
+(5) i+: Tyx,)M & F?H3(X,C).
+Indeed, p : MoM gives a short exact sequence:
+
+0 = Tix.5)(M/M) > Tix,)M > TxM = 0,
+
+in which the subspace can be identified with H°(wx), and the quotient with
+H'(Tx), hence via |s with H1(0%,). We need to identify this sequence
+naturally with the one defining F?.H*:
+
+0 > H°(wx) = F°H?(X,C) — H'(O%) 3 0.
+
+In other words, we are claiming that the extension data in the two sequences
+match, globally over M.
+
+For this, it suffices to construct a natural map from Tix,s)M to F?H°(X,C),
+which induces the identity on the subspace and quotient.
+
+One way to obtain this map is to note that the bundle R3¥,C has the
+tautological section s, which is actually in the subbundle FSReY,C. The
+Gauss-Manin connection applied to this section maps T; x,)M to H3(X,C),
+but by Griffiths transversability it lands in F?H*. This map is easily seen to
+have the required properties. For future use we want an explicit description
+of this map. We do this using Dolbeault cohomology.
+
+Think of a 1-parameter family (Xz, 5) € M, depending on the parameter
+t, as a fixed C' manifold X on which there is given a 1-parameter family of
+complex structures, specified by their 0-operators 0;, and also a family s; of
+C® 3-forms on X such that s; is of type (3,0) with respect to 0;. Since the
+5, are now on a fixed underlying X, we can expand with respect to t:
+
+s,=8o+ta (mod. 2’).
+
+11

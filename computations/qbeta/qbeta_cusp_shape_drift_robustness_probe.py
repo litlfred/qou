@@ -4,7 +4,7 @@ cusp shape ω move with q₀, and if so does the merged #4401 lattice sign resul
 survive the drift?
 
 PURCELL APPLICABILITY (the literature half, and it is a NEGATIVE).
-`uploads/0410233v4.pdf` (Purcell, *Cusp shapes under cone deformation*) bounds
+`library/arxiv-math-0410233v4/0410233v4.pdf` (Purcell, *Cusp shapes under cone deformation*) bounds
 the change in a cusp shape under a cone deformation. Its Theorem 1.2 hypotheses:
 
     • M a complete finite-volume hyperbolic 3-manifold with a cusp T;
@@ -132,7 +132,7 @@ def main() -> int:
     wb.set_description(
         "GAP-5 (bean qou-hinv, epic qou-xu6t): the cusp-shape-drift objection to the merged "
         "#4401 lattice sign result. LITERATURE NEGATIVE: Purcell's 'Cusp shapes under cone "
-        "deformation' (uploads/0410233v4.pdf) Theorem 1.2 requires a cone deformation along a "
+        "deformation' (library/arxiv-math-0410233v4/0410233v4.pdf) Theorem 1.2 requires a cone deformation along a "
         "singular locus Σ DISJOINT from the cusp T, cone angles 0→2π, with T remaining a cusp "
         "throughout — not the QOU setup, where the substrate deformation is the Neumann–Zagier "
         "deformation of the 4₁ cusp ITSELF (u = 2 ln q₀ ≠ 0). Purcell's bounds therefore do NOT "

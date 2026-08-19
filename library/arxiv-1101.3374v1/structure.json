@@ -1,0 +1,152 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1101.3374v1",
+ "source": {
+  "file": "1101.3374v1.pdf",
+  "sha256": "01d76c1d259c1d512ac9d5bafd411de4d4f34822ba33db0d8ba1a92459953526",
+  "bytes": 1134409,
+  "pages": 60
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1101.3374",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "18 Jan 2011"
+  },
+  "doi": null,
+  "title": "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR’S TRIPLE LINKING NUMBER",
+  "authors_raw": "DENNIS DETURCK, HERMAN GLUCK, RAFAL KOMENDARCZYK",
+  "abstract": "To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus to the 2-sphere, and show that the pairwise linking numbers and Milnor triple linking number that classify the link up to link ho- motopy correspond to the Pontryagin invariants that classify its characteristic map up to homotopy. This can be viewed as a natural extension of the familiar fact that the linking number of a two-component link in 3-space is the degree of its associated Gauss map from the 2-torus to the 2-sphere. When the pairwise linking numbers are all zero, we give an integral formula for the triple linking number analogous to the Gauss integral for the pairwise linking numbers. The integrand in this formula is geometrically natural in the sense that it is invariant under orientation-preserving rigid motions of the 3-sphere, while the integral itself can be viewed as the helicity of a related vector ﬁeld on the 3-torus.",
+  "docinfo": {
+   "Author": "Dennis DeTurck, Herman Gluck, Rafal Komendarczyk, Paul Melvin, Clayton Shonkwiler and David Shea Vela-Vick",
+   "CreationDate": "D:20180530185457Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.10",
+   "Title": "Pontryagin invariants and integral formulas for Milnor's triple linking number"
+  },
+  "title_lines": [
+   "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS",
+   "FOR MILNOR’S TRIPLE LINKING NUMBER"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Milnor -invariant",
+   "page": 9,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The Pontryagin -invariant",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Explicit formulas for the characteristic map",
+   "page": 20,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The Pontryagin -invariant of the characteristic map",
+   "page": 25,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem ??",
+   "page": 41,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Sketch of an algebraic proof of Theorem ??",
+   "page": 43,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem ??, formulas (1) and (2)",
+   "page": 45,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Fourier series and the Proof of Theorem ??, formula (3)",
+   "page": 48,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Appendix. Whitehead's integral formula for the Hopf invariant",
+   "page": 56,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 20,
+   "n_chars": 50138,
+   "n_words": 8965
+  },
+  {
+   "id": "sec-001-4-explicit-formulas-for-the-characteristic-map",
+   "number": "4",
+   "title": "Explicit formulas for the characteristic map",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 57,
+   "n_chars": 75240,
+   "n_words": 14123
+  },
+  {
+   "id": "sec-002-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 60,
+   "n_chars": 10750,
+   "n_words": 1682
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 3,
+  "chars_total": 136128
+ }
+}

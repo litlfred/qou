@@ -1,0 +1,77 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2605.15740v1",
+ "source_sha256": "aa7f99d6633113c6",
+ "brief": "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology",
+ "extended": "**BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS**\n\n*JEREMY LOVEJOY, ROBERT OSBURN, AND MATTHIAS STORZER*\n\n26 pp, 11 sections.\n\n**Abstract.** In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology sphere as the limiting value of the Eichler integral of a weight 3/2 modular form. Habiro’s construction of the unified WRT invariant subsequently recast this result as an identity for aq-hypergeometric series at roots of unity. This motivated Hikami to prove analogousq-series identities involving the unified WRT invariants of certain Brieskorn homology spheres. Hikami also made several conjectures of a similar type forq- series with no apparent connection to quantum invariants. In this paper we use the Bailey pair machinery and a novel relation between incomplete quadratic Gauss sums with periodic coefficients to construct infinite families of identities betweenq-multisums at roots of unity and limiting values of Eichler integrals of weight 3/2 modular forms.\n\n**Outline.** 1 Introduction; 2 Bailey pairs and key identities; 2.1 Preliminaries and auxiliary results; 2.2 An arsenal of Bailey pairs; 2.3 The key results; 3 Incomplete quadratic Gauss sums; 3.1 Properties for incomplete quadratic Gauss ; 3.2 Relations between incomplete quadratic Gau; 4 Proof of Theorem 1.2; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: LetMandNbe coprime positive integers. Forp≥2, we have\n- Theorem 2.7: Let(α k,βk)denote the Bailey pair in(2.16). Then forp≥1andqany primitive\n- Theorem 2.8: Let(α k,βk)denote the Bailey pair in(2.17). Then forp≥1andqany primitive\n- Theorem 2.9: Let(α k,βk)denote the Bailey pair in(2.18). Then forp≥1andqany primitive\n- Theorem 2.10: Let(α k,βk)denote the Bailey pair in(2.19). Then forp≥1andqany\n- Theorem 2.11: Let(α k,βk)denote the Bailey pair in(2.20). Then forp≥1andqany",
+ "tokens": {
+  "brief": 48,
+  "extended": 485
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-001-2-bailey-pairs-and-key-identities",
+   "title": "Bailey pairs and key identities",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-002-21-preliminaries-and-auxiliary-results",
+   "title": "Preliminaries and auxiliary results",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-003-22-an-arsenal-of-bailey-pairs",
+   "title": "An arsenal of Bailey pairs",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-004-23-the-key-results",
+   "title": "The key results",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-005-3-incomplete-quadratic-gauss-sums",
+   "title": "Incomplete quadratic Gauss sums",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-006-31-properties-for-incomplete-quadratic-gauss-sum",
+   "title": "Properties for incomplete quadratic Gauss sums",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-007-32-relations-between-incomplete-quadratic-gauss",
+   "title": "Relations between incomplete quadratic Gauss sums",
+   "pages": "14-21"
+  },
+  {
+   "id": "sec-008-4-proof-of-theorem-12",
+   "title": "Proof of Theorem 1.2",
+   "pages": "21-25"
+  },
+  {
+   "id": "sec-009-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-010-references",
+   "title": "References",
+   "pages": "25-26"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

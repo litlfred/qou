@@ -339,7 +339,7 @@ said any completion "must derive that remainder independently". Part 2 named the
 rival `H_floor`. This part reports that `H_floor` **does** derive it — from the
 arithmetic of the trace field — which is a point against `H_Ad`, not for it.
 
-**Source (glyph-verified, corpus `uploads/2111.06645v3.pdf` §2.1).**
+**Source (glyph-verified, corpus `library/arxiv-2111.06645v3/2111.06645v3.pdf` §2.1).**
 Garoufalidis–Zagier describe `P_K`, the set of boundary-parabolic `SL₂(ℂ)`
 representations, for their three standard knots:
 

@@ -1,0 +1,87 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-q-alg-9608020v2",
+ "source_sha256": "727268098db7f23d",
+ "brief": "SHIFTED JACK POLYNOMIALS, BINOMIAL — In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St]).",
+ "extended": "**SHIFTED JACK POLYNOMIALS, BINOMIAL**\n\n*FORMULA, AND APPLICATIONS*\n\n9 pp, 13 sections.\n\n**Abstract.** In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St]). In this note we use the parameter θ = 1/α inverse to the standard parameter α for Jack polynomials. Jack symmetric poly- nomials Pλ (x1,...,x n;θ) are eigenfunctions of Sekiguchi diﬀerential operators D(u;θ) = V (x)−1 det [ xn−j i ( xi ∂ ∂x i + (n −j)θ +u )] 1≤i,j ≤n , D(u;θ)Pλ (x;θ) = ( ∏ i (λ i + (n −i)θ +u) ) Pλ (x;θ),(1.1) where V (x) =∏ i<j(xi −xj) is the Vandermonde determinant and u is a parame- ter. The operators {D(u;θ),u ∈ C} generate a commutative algebra; denote it by D(n;θ). We normalize Pλ (x1,...,x n;θ) so that Pλ (x1,...,x n;θ) = xλ 1 1 ...x λ n n +... , where dots stand for lower monomials in lexicographic order . Then one has (1.2) P(λ 1+1,...,λ n+1)(x;θ) = ( ∏ xi ) Pλ (x;θ).\n\n**Outline.** 1 Jack polynomials ( [M,St]). In this note we ; 2 A. OKOUNKOV AND G. OLSHANSKI; 2 Shifted Jack polynomials ( [S1,OO,Ok1,KS,Ok3; 3 Binomial formula. Given a partition µ and a ; 4 A. OKOUNKOV AND G. OLSHANSKI; 1 Looking at; 4 Bessel functions ( [D,Op,J]). For a real vec; 6 A. OKOUNKOV AND G. OLSHANSKI; 5 F ormula for θ-dimension of a skew diagram λ; 6 Integral representation of Jack polynomials.; 8 A. OKOUNKOV AND G. OLSHANSKI; 7 Other applications. The binomial theorem its; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: (3.2) Pλ (1 +x1,..., 1 +xn;θ)",
+ "tokens": {
+  "brief": 44,
+  "extended": 384
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-jack-polynomials-mst-in-this-note-we-use-the-p",
+   "title": "Jack polynomials ( [M,St]). In this note we use the parameter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-a-okounkov-and-g-olshanski",
+   "title": "A. OKOUNKOV AND G. OLSHANSKI",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-2-shifted-jack-polynomials-s1oook1ksok3-denote-b",
+   "title": "Shifted Jack polynomials ( [S1,OO,Ok1,KS,Ok3]). Denote by Λ θ (n) the al-",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-3-binomial-formula-given-a-partition-µ-and-a-num",
+   "title": "Binomial formula. Given a partition µ and a number t set",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-4-a-okounkov-and-g-olshanski",
+   "title": "A. OKOUNKOV AND G. OLSHANSKI",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-1-looking-at",
+   "title": "Looking at",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-4-bessel-functions-dopj-for-a-real-vector-l-l1l",
+   "title": "Bessel functions ( [D,Op,J]). For a real vector l = (l1,...,l n) denote by",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-6-a-okounkov-and-g-olshanski",
+   "title": "A. OKOUNKOV AND G. OLSHANSKI",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-008-5-f-ormula-for-θ-dimension-of-a-skew-diagram-λµ",
+   "title": "F ormula for θ-dimension of a skew diagram λ/µ . Deﬁne the θ-dimension",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-009-6-integral-representation-of-jack-polynomials-wr",
+   "title": "Integral representation of Jack polynomials. Writeν ≺λ if",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-010-8-a-okounkov-and-g-olshanski",
+   "title": "A. OKOUNKOV AND G. OLSHANSKI",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-011-7-other-applications-the-binomial-theorem-itself",
+   "title": "Other applications. The binomial theorem itself and the formula (5.2) result",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-012-references",
+   "title": "References",
+   "pages": "8-9"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

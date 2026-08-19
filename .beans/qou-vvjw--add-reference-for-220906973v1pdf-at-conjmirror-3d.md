@@ -9,7 +9,7 @@ updated_at: 2026-08-08T23:36:49Z
 
 No entry exists for the arc-graph state-sum route to the colored Jones polynomial, which is the only independent cross-check method available for the corpus's 3-braid closures.
 
-Source: `uploads/2209.06973v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2209.06973v1/2209.06973v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -1,0 +1,1371 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2604.16077v1",
+ "source": {
+  "file": "2604.16077v1.pdf",
+  "sha256": "2f1140b9d5fee38af86010b89acae5cc7b8054b208a1daff89d1d981142b2bf9",
+  "bytes": 647886,
+  "pages": 66
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2604.16077",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "17 Apr 2026"
+  },
+  "doi": null,
+  "title": "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT",
+  "authors_raw": "STÉPHANE BASEILHAC 1, FATHI BEN ARIBI2",
+  "abstract": "We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI) of the ﬁgure-eight knot comple ment M . We show that it is rigid, in the sense that it does not depend on the choice of holonomy r epresentation of M , and it is either 0 or equal to the hyperbolic volume of M divided by 2 π, depending on a parity condition satisﬁed by logarithms of the holonomy eigenvalu es on the canonical longitude, where the logarithms are parameters of the QHI of M . Along the way we also survey some relevant general features of the QHI.",
+  "docinfo": {
+   "Author": "Stephane Baseilhac; Fathi Ben Aribi",
+   "CreationDate": "D:20260420005710+00'00'",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement"
+  },
+  "title_lines": [
+   "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS:",
+   "THE FIGURE EIGHT KNOT COMPLEMENT"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Main result. In this paper we compute the real part of the semi-classical l imit of the",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "T riangulation-version of Theorem 1.1. Again denote M :=S3 \\ 41, the ﬁgure-eight",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Structure of the proof of Theorem 1.1. Let us denote by PM (N ) (for positive",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Hred",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Vol(M ) and",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Geometric setup",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The quantum gluing varieties. These form the parameter spaces of the QHI state",
+   "page": 9,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Quantum 3-simplices. (see [7], Section 3) A quantum 3-simplex is a tuple (∆ ,b, w)",
+   "page": 9,
+   "source": "inferred",
+   "number": "2.1.1"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 3,
+   "title": "Gluing varieties and the holonomy map. In this section we explain how the structures",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.1.2"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "By means of the formula (6) relating di",
+   "page": 12,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "W eights. The structure of the set of systems of edge colors d compatible with a point",
+   "page": 12,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Log weights and boundary weights. As usual denote by ¯M the compact manifold with",
+   "page": 13,
+   "source": "inferred",
+   "number": "2.2.1"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 3,
+   "title": "The spaces Ghyp,N (T,b ) and NXhyp(M ). (See [7, Section 4].) Let T be a geometric",
+   "page": 15,
+   "source": "inferred",
+   "number": "2.2.2"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 2,
+   "title": "The logarithmic limit set. Recall the spaces Ghyp,N (T,b ) and NXhyp(M ), where",
+   "page": 18,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "The QHI",
+   "page": 20,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "F unctions in the QHI state sums. Consider the rational functions ωN (.,. |n),n ∈ N,",
+   "page": 20,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "(δ/2)3 >",
+   "page": 23,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(δ/2)3)2 ≤ 1",
+   "page": 23,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Log(1 −ez) + 1",
+   "page": 23,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(namely, in the following discussion α must be",
+   "page": 27,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 28,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "Log(1 −ez− 2iπ",
+   "page": 28,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(N −2)(N −1)(2N −1)",
+   "page": 28,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "page": 30,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 2,
+   "title": "The QHI of cusped manifolds. The aim of this section is to introduce some general",
+   "page": 31,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "The case of M = S3 \\ 41. It follows immediately from deﬁnitions (see [8, Section 8])",
+   "page": 32,
+   "source": "inferred",
+   "number": "3.3.1"
+  },
+  {
+   "level": 1,
+   "title": "Log",
+   "page": 33,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The QHI state sum of M = S3 \\ 41. In this section we describe the formula of",
+   "page": 33,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Integral representation. As we are going to consider the functions in (82) when",
+   "page": 33,
+   "source": "inferred",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "Some logarithmic limits of log-parameters. In this section we focus on the peculiar",
+   "page": 34,
+   "source": "inferred",
+   "number": "3.6"
+  },
+  {
+   "level": 2,
+   "title": "These log-parameters have the form (84) (at least for N large enough); that is, they",
+   "page": 34,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotics of classical integrals on a vertical contour",
+   "page": 35,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Classical integrals and their critical sets. Recall the contour CN from (87). By the",
+   "page": 35,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "(l0,∞, l1,∞),",
+   "page": 36,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(lu",
+   "page": 36,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(lv",
+   "page": 36,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(lu,∞",
+   "page": 36,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(lv,∞",
+   "page": 36,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 2,
+   "title": "The saddle-point method. Letλ denote a piecewise continuously diﬀerentiable path",
+   "page": 37,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics of integrals",
+   "page": 37,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 3,
+   "title": "Along [π, 2π] + 2kπ, k ∈ Z. Recall that Clausen’s function",
+   "page": 38,
+   "source": "inferred",
+   "number": "4.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Along [0,s −",
+   "page": 38,
+   "source": "inferred",
+   "number": "4.3.2"
+  },
+  {
+   "level": 1,
+   "title": "(Log(2)+1+Log(N )−Log(π)−Log(α)) = Constant",
+   "page": 39,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The limit in case (a). Recall (89)-(90) and (105)-(106). In case (a) we have l0,∞ =",
+   "page": 39,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 3,
+   "title": "Case (a), integral In,−. Let us prove that lim",
+   "page": 39,
+   "source": "inferred",
+   "number": "4.4.1"
+  },
+  {
+   "level": 1,
+   "title": "Vol(M ),",
+   "page": 39,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(on which ℑf+|iR has a minimum, not a maximum), but we will not use",
+   "page": 40,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The limit in case (b). For case (b) we have l0,∞ = −2iπ and l1,∞ = 2iπ. Hence",
+   "page": 41,
+   "source": "inferred",
+   "number": "4.5"
+  },
+  {
+   "level": 3,
+   "title": "Case (b), integral In,+. Let us study the asymptotics of In,+ =",
+   "page": 41,
+   "source": "inferred",
+   "number": "4.5.1"
+  },
+  {
+   "level": 3,
+   "title": "Case (b), integral In,−. From the formula f−(z) = L−(z; −2πi, 2iπ) = Li 2(ez) +z2 −",
+   "page": 45,
+   "source": "inferred",
+   "number": "4.5.2"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotics of the quantum integral",
+   "page": 47,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Log(1 −e",
+   "page": 49,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(going",
+   "page": 59,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Log(N )",
+   "page": 60,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Vol(M ). The integrals on the subcontours [ is−",
+   "page": 62,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Vol(M ) in case (a),",
+   "page": 62,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Vol(M ). When ℓ = 2iπ, we can always choose",
+   "page": 62,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "([63])",
+   "page": 63,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Vol(M),f ′′",
+   "page": 63,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1 −e",
+   "page": 63,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Vol(M )−i π2",
+   "page": 63,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1 − v0ζk)",
+   "page": 63,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(1 − u0ζk)",
+   "page": 63,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 64,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 928,
+   "n_words": 170
+  },
+  {
+   "id": "sec-001-2-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "2",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 29,
+   "n_words": 4
+  },
+  {
+   "id": "sec-002-11-main-result-in-this-paper-we-compute-the-real",
+   "number": "1.1",
+   "title": "Main result. In this paper we compute the real part of the semi-classical l imit of the",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 7123,
+   "n_words": 1249
+  },
+  {
+   "id": "sec-003-4-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "4",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 5119,
+   "n_words": 911
+  },
+  {
+   "id": "sec-004-12-t-riangulation-version-of-theorem-11-again-de",
+   "number": "1.2",
+   "title": "T riangulation-version of Theorem 1.1. Again denote M :=S3 \\ 41, the ﬁgure-eight",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1767,
+   "n_words": 333
+  },
+  {
+   "id": "sec-005-6-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "6",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 703,
+   "n_words": 144
+  },
+  {
+   "id": "sec-006-13-structure-of-the-proof-of-theorem-11-let-us-d",
+   "number": "1.3",
+   "title": "Structure of the proof of Theorem 1.1. Let us denote by PM (N ) (for positive",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1271,
+   "n_words": 291
+  },
+  {
+   "id": "sec-007-2-hred",
+   "number": "2",
+   "title": "Hred",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3117,
+   "n_words": 653
+  },
+  {
+   "id": "sec-008-8-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "8",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 332,
+   "n_words": 73
+  },
+  {
+   "id": "sec-009-2-volm-and",
+   "number": "2",
+   "title": "Vol(M ) and",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1955,
+   "n_words": 403
+  },
+  {
+   "id": "sec-010-2-geometric-setup",
+   "number": "2",
+   "title": "Geometric setup",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1131,
+   "n_words": 192
+  },
+  {
+   "id": "sec-011-21-the-quantum-gluing-varieties-these-form-the-p",
+   "number": "2.1",
+   "title": "The quantum gluing varieties. These form the parameter spaces of the QHI state",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 13,
+   "n_words": 2
+  },
+  {
+   "id": "sec-012-211-quantum-3-simplices-see-7-section-3-a-quantu",
+   "number": "2.1.1",
+   "title": "Quantum 3-simplices. (see [7], Section 3) A quantum 3-simplex is a tuple (∆ ,b, w)",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2038,
+   "n_words": 388
+  },
+  {
+   "id": "sec-013-10-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "10",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 660,
+   "n_words": 137
+  },
+  {
+   "id": "sec-014-212-gluing-varieties-and-the-holonomy-map-in-thi",
+   "number": "2.1.2",
+   "title": "Gluing varieties and the holonomy map. In this section we explain how the structures",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 5440,
+   "n_words": 1047
+  },
+  {
+   "id": "sec-015-12-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "12",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 462,
+   "n_words": 99
+  },
+  {
+   "id": "sec-016-22-by-means-of-the-formula-6-relating-di",
+   "number": "2.2",
+   "title": "By means of the formula (6) relating di",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1317,
+   "n_words": 260
+  },
+  {
+   "id": "sec-017-22-w-eights-the-structure-of-the-set-of-systems",
+   "number": "2.2",
+   "title": "W eights. The structure of the set of systems of edge colors d compatible with a point",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 681,
+   "n_words": 125
+  },
+  {
+   "id": "sec-018-221-log-weights-and-boundary-weights-as-usual-de",
+   "number": "2.2.1",
+   "title": "Log weights and boundary weights. As usual denote by ¯M the compact manifold with",
+   "level": 3,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 3256,
+   "n_words": 669
+  },
+  {
+   "id": "sec-019-14-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "14",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2824,
+   "n_words": 569
+  },
+  {
+   "id": "sec-020-222-the-spaces-ghypn-tb-and-nxhypm-see-7-section",
+   "number": "2.2.2",
+   "title": "The spaces Ghyp,N (T,b ) and NXhyp(M ). (See [7, Section 4].) Let T be a geometric",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2858,
+   "n_words": 562
+  },
+  {
+   "id": "sec-021-16-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "16",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 5733,
+   "n_words": 1223
+  },
+  {
+   "id": "sec-022-18-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "18",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1154,
+   "n_words": 248
+  },
+  {
+   "id": "sec-023-24-the-logarithmic-limit-set-recall-the-spaces-g",
+   "number": "2.4",
+   "title": "The logarithmic limit set. Recall the spaces Ghyp,N (T,b ) and NXhyp(M ), where",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 4325,
+   "n_words": 968
+  },
+  {
+   "id": "sec-024-20-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "20",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 2395,
+   "n_words": 486
+  },
+  {
+   "id": "sec-025-3-the-qhi",
+   "number": "3",
+   "title": "The QHI",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-026-31-f-unctions-in-the-qhi-state-sums-consider-the",
+   "number": "3.1",
+   "title": "F unctions in the QHI state sums. Consider the rational functions ωN (.,. |n),n ∈ N,",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 2848,
+   "n_words": 641
+  },
+  {
+   "id": "sec-027-22-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "22",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2232,
+   "n_words": 543
+  },
+  {
+   "id": "sec-028-6-δ23",
+   "number": "6",
+   "title": "(δ/2)3 >",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 60,
+   "n_words": 18
+  },
+  {
+   "id": "sec-029-6-δ232-1",
+   "number": "6",
+   "title": "(δ/2)3)2 ≤ 1",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 356,
+   "n_words": 85
+  },
+  {
+   "id": "sec-030-2-log1-ez-1",
+   "number": "2",
+   "title": "Log(1 −ez) + 1",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1069,
+   "n_words": 259
+  },
+  {
+   "id": "sec-031-24-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "24",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 4763,
+   "n_words": 1161
+  },
+  {
+   "id": "sec-032-26-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "26",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3559,
+   "n_words": 858
+  },
+  {
+   "id": "sec-033-2-namely-in-the-following-discussion-α-must-be",
+   "number": "2",
+   "title": "(namely, in the following discussion α must be",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 620,
+   "n_words": 151
+  },
+  {
+   "id": "sec-034-28-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "28",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 136,
+   "n_words": 39
+  },
+  {
+   "id": "sec-035-0-log1-ez-2iπ",
+   "number": "0",
+   "title": "Log(1 −ez− 2iπ",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 1775,
+   "n_words": 404
+  },
+  {
+   "id": "sec-036-12-n-2n-12n-1",
+   "number": "12",
+   "title": "(N −2)(N −1)(2N −1)",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 2028,
+   "n_words": 427
+  },
+  {
+   "id": "sec-037-30-st-ephane-baseilhac-1-f-athi-ben-aribi2",
+   "number": "30",
+   "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2622,
+   "n_words": 561
+  },
+  {
+   "id": "sec-038-33-the-qhi-of-cusped-manifolds-the-aim-of-this-s",
+   "number": "3.3",
+   "title": "The QHI of cusped manifolds. The aim of this section is to introduce some general",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 3814,
+   "n_words": 705
+  },
+  {
+   "id": "sec-039-2-log",
+   "number": "2",
+   "title": "Log",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 1203,
+   "n_words": 244
+  },
+  {
+   "id": "sec-040-331-the-case-of-m-s3-41-it-follows-immediately-f",
+   "number": "3.3.1",
+   "title": "The case of M = S3 \\ 41. It follows immediately from deﬁnitions (see [8, Section 8])",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 1541,
+   "n_words": 351
+  },
+  {
+   "id": "sec-041-34-the-qhi-state-sum-of-m-s3-41-in-this-section",
+   "number": "3.4",
+   "title": "The QHI state sum of M = S3 \\ 41. In this section we describe the formula of",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 916,
+   "n_words": 202
+  },
+  {
+   "id": "sec-042-35-integral-representation-as-we-are-going-to-co",
+   "number": "3.5",
+   "title": "Integral representation. As we are going to consider the functions in (82) when",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 2008,
+   "n_words": 436
+  },
+  {
+   "id": "sec-043-36-some-logarithmic-limits-of-log-parameters-in",
+   "number": "3.6",
+   "title": "Some logarithmic limits of log-parameters. In this section we focus on the peculiar",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 92,
+   "n_words": 14
+  },
+  {
+   "id": "sec-044-11-these-log-parameters-have-the-form-84-at-leas",
+   "number": "1.1",
+   "title": "These log-parameters have the form (84) (at least for N large enough); that is, they",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 1778,
+   "n_words": 361
+  },
+  {
+   "id": "sec-045-4-asymptotics-of-classical-integrals-on-a-vertic",
+   "number": "4",
+   "title": "Asymptotics of classical integrals on a vertical contour",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 183,
+   "n_words": 37
+  },
+  {
+   "id": "sec-046-0-l0-l1",
+   "number": "0",
+   "title": "(l0,∞, l1,∞),",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 594,
+   "n_words": 109
+  },
+  {
+   "id": "sec-047-41-classical-integrals-and-their-critical-sets-r",
+   "number": "4.1",
+   "title": "Classical integrals and their critical sets. Recall the contour CN from (87). By the",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 2672,
+   "n_words": 560
+  },
+  {
+   "id": "sec-048-0-lu",
+   "number": "0",
+   "title": "(lu",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 76,
+   "n_words": 18
+  },
+  {
+   "id": "sec-049-0-lv",
+   "number": "0",
+   "title": "(lv",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 1080,
+   "n_words": 201
+  },
+  {
+   "id": "sec-050-0-lu",
+   "number": "0",
+   "title": "(lu,∞",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 24,
+   "n_words": 7
+  },
+  {
+   "id": "sec-051-0-lv",
+   "number": "0",
+   "title": "(lv,∞",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 597,
+   "n_words": 114
+  },
+  {
+   "id": "sec-052-42-the-saddle-point-method-letλ-denote-a-piecewi",
+   "number": "4.2",
+   "title": "The saddle-point method. Letλ denote a piecewise continuously diﬀerentiable path",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 1859,
+   "n_words": 383
+  },
+  {
+   "id": "sec-053-43-asymptotics-of-integrals",
+   "number": "4.3",
+   "title": "Asymptotics of integrals",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 174,
+   "n_words": 32
+  },
+  {
+   "id": "sec-054-431-along-π-2π-2kπ-k-z-recall-that-clausens-func",
+   "number": "4.3.1",
+   "title": "Along [π, 2π] + 2kπ, k ∈ Z. Recall that Clausen’s function",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 1031,
+   "n_words": 263
+  },
+  {
+   "id": "sec-055-432-along-0s",
+   "number": "4.3.2",
+   "title": "Along [0,s −",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 1146,
+   "n_words": 269
+  },
+  {
+   "id": "sec-056-2-log21logn-logπlogα-constant",
+   "number": "2",
+   "title": "(Log(2)+1+Log(N )−Log(π)−Log(α)) = Constant",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 26,
+   "n_words": 11
+  },
+  {
+   "id": "sec-057-44-the-limit-in-case-a-recall-89-90-and-105-106",
+   "number": "4.4",
+   "title": "The limit in case (a). Recall (89)-(90) and (105)-(106). In case (a) we have l0,∞ =",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 379,
+   "n_words": 82
+  },
+  {
+   "id": "sec-058-441-case-a-integral-in-let-us-prove-that-lim",
+   "number": "4.4.1",
+   "title": "Case (a), integral In,−. Let us prove that lim",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 1366,
+   "n_words": 293
+  },
+  {
+   "id": "sec-059-2-volm",
+   "number": "2",
+   "title": "Vol(M ),",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 781,
+   "n_words": 147
+  },
+  {
+   "id": "sec-060-3-on-which-ℑfir-has-a-minimum-not-a-maximum-but",
+   "number": "3",
+   "title": "(on which ℑf+|iR has a minimum, not a maximum), but we will not use",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2058,
+   "n_words": 482
+  },
+  {
+   "id": "sec-061-45-the-limit-in-case-b-for-case-b-we-have-l0-2iπ",
+   "number": "4.5",
+   "title": "The limit in case (b). For case (b) we have l0,∞ = −2iπ and l1,∞ = 2iπ. Hence",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 523,
+   "n_words": 108
+  },
+  {
+   "id": "sec-062-451-case-b-integral-in-let-us-study-the-asymptot",
+   "number": "4.5.1",
+   "title": "Case (b), integral In,+. Let us study the asymptotics of In,+ =",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 45,
+   "n_chars": 7032,
+   "n_words": 1600
+  },
+  {
+   "id": "sec-063-452-case-b-integral-in-from-the-formula-fz-lz-2π",
+   "number": "4.5.2",
+   "title": "Case (b), integral In,−. From the formula f−(z) = L−(z; −2πi, 2iπ) = Li 2(ez) +z2 −",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 4935,
+   "n_words": 1179
+  },
+  {
+   "id": "sec-064-5-asymptotics-of-the-quantum-integral",
+   "number": "5",
+   "title": "Asymptotics of the quantum integral",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 49,
+   "n_chars": 4188,
+   "n_words": 968
+  },
+  {
+   "id": "sec-065-2-log1-e",
+   "number": "2",
+   "title": "Log(1 −e",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 59,
+   "n_chars": 24389,
+   "n_words": 5369
+  },
+  {
+   "id": "sec-066-4-going",
+   "number": "4",
+   "title": "(going",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 60,
+   "n_chars": 2705,
+   "n_words": 593
+  },
+  {
+   "id": "sec-067-2-logn",
+   "number": "2",
+   "title": "Log(N )",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 62,
+   "n_chars": 5832,
+   "n_words": 1284
+  },
+  {
+   "id": "sec-068-2-volm-the-integrals-on-the-subcontours-is",
+   "number": "2",
+   "title": "Vol(M ). The integrals on the subcontours [ is−",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 1418,
+   "n_words": 285
+  },
+  {
+   "id": "sec-069-2-volm-in-case-a",
+   "number": "2",
+   "title": "Vol(M ) in case (a),",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 292,
+   "n_words": 77
+  },
+  {
+   "id": "sec-070-2-volm-when-ℓ-2iπ-we-can-always-choose",
+   "number": "2",
+   "title": "Vol(M ). When ℓ = 2iπ, we can always choose",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 1095,
+   "n_words": 213
+  },
+  {
+   "id": "sec-071-4-63",
+   "number": "4",
+   "title": "([63])",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 74,
+   "n_words": 21
+  },
+  {
+   "id": "sec-072-2-volmf",
+   "number": "2",
+   "title": "Vol(M),f ′′",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 92,
+   "n_words": 31
+  },
+  {
+   "id": "sec-073-3-1-e",
+   "number": "3",
+   "title": "(1 −e",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 262,
+   "n_words": 81
+  },
+  {
+   "id": "sec-074-2-volm-i-π2",
+   "number": "2",
+   "title": "Vol(M )−i π2",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 1158,
+   "n_words": 253
+  },
+  {
+   "id": "sec-075-0-1-v0ζk",
+   "number": "0",
+   "title": "(1 − v0ζk)",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 13,
+   "n_words": 4
+  },
+  {
+   "id": "sec-076-0-1-u0ζk",
+   "number": "0",
+   "title": "(1 − u0ζk)",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 64,
+   "n_chars": 1230,
+   "n_words": 291
+  },
+  {
+   "id": "sec-077-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 66,
+   "n_chars": 8890,
+   "n_words": 1333
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 78,
+  "sections": 78,
+  "chars_total": 168225
+ }
+}

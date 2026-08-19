@@ -50,5 +50,5 @@ normal form is defined by a fixed rule order, with a pointer to
 way `def:hecke-normal-form` currently has no `cites` field at all and carries
 the `groebner-shirshov` tag.
 
-Surfaced by relevance triage of the nine-PDF batch (uploads/fd58d8e1...pdf and
-uploads/1808.05026v1.pdf); ledger rows carry the join.
+Surfaced by relevance triage of the nine-PDF batch (library/fd58d8e1...pdf and
+library/arxiv-1808.05026v1/1808.05026v1.pdf); ledger rows carry the join.

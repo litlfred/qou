@@ -1,0 +1,32 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0910.0096v1",
+ "source_sha256": "805a75c337599adc",
+ "brief": "Gröbner-Shirshov bases for Coxeter groups I∗ — A conjecture of Gr¨ obner-Shirshov basis of any Coxeter group h as proposed by L.A. Bokut and L.-S. Shiao [4].",
+ "extended": "**Gröbner-Shirshov bases for Coxeter groups I∗**\n\n*Yuqun Chen and Cihua Liu*\n\n21 pp, 2 sections.\n\n**Abstract.** A conjecture of Gr¨ obner-Shirshov basis of any Coxeter group h as proposed by L.A. Bokut and L.-S. Shiao [4]. In this paper, we give an example to s how that the conjecture is not true in general. We list all possible nontrivial inclusio n compositions when we deal with the general cases of the Coxeter groups. We giv e a Gr¨ obner-Shirshov basis of a Coxeter group which is without nontrivial inclusion composit ions mentioned the above.\n\n**Outline.** Introduction; Preliminaries\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.3: Let S = {(1), (2), (3′)}. Then if S is a pre-Gr¨ obner-Shirshov basis of W\n- Theorem 3.13: Suppose that ¯f = u0 · · · ui(m−2)(si, s ′\n- Theorem 3.15: Suppose that ¯f = u0 · · · ui(m−3)(si, s ′\n- Theorem 3.17: Suppose ¯f = u0 · · · ui−1(m−2)(si, s ′\n- Theorem 3.18: Suppose ¯f = u0 · · · ui−1(m−2)(si, s ′\n- Theorem 3.19: S = {(1), (2), (3′)} is a Gr¨ obner-Shirshov basis of W if there is no f ∈",
+ "tokens": {
+  "brief": 39,
+  "extended": 263
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-preliminaries",
+   "title": "Preliminaries",
+   "pages": "1-21"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

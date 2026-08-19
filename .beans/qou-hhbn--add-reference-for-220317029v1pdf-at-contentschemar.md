@@ -9,7 +9,7 @@ updated_at: 2026-08-08T16:13:18Z
 
 Orphan; the machinery it defines is already in active use in the keystone block's authorNotes and in the qlift probes with no citation anywhere in references.ts.
 
-Source: `uploads/2203.17029v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2203.17029v1/2203.17029v1.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -207,14 +207,14 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_membership_harness_v1_probe",
     "beans": ["qou-9p9y"],
-    "source": "GSWZ arXiv:2412.04241v2 Example 4.3 eqns (271)/(273)/(274); uploads/2412.04241v2.pdf; merged layer probes",
+    "source": "GSWZ arXiv:2412.04241v2 Example 4.3 eqns (271)/(273)/(274); library/arxiv-2412.04241v2/2412.04241v2.pdf; merged layer probes",
     "checks": checks,
     "bloch_decomposition": {
         "computed_lhs_mod5": lhs,
         "printed_D5_xi_over25_mod5": printed_xi,
         "coefficients_mod5": [c1, c2, c3],
     },
-    "missing_ingredient": "Besser-de Jeu overconvergent Li2 expansion (GSWZ ref [8]) — not in uploads/; dilog layer is mod-5^3-exact until it lands",
+    "missing_ingredient": "Besser-de Jeu overconvergent Li2 expansion (GSWZ ref [8]) — not in library/; dilog layer is mod-5^3-exact until it lands",
     "scope": "scope-(a): harness v1 assembled; Bloch decomposition (Theorem 9 instance) verified mod 5^3 from printed data; full-precision Coleman + eps_m queued",
 }
 with open(pathlib.Path(__file__).resolve().parent / "gswz_membership_harness_v1.witness.json", "w") as f:

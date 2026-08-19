@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "squier-burau-unitary-1984",
+ "source_sha256": "5087ee3cb48679d1",
+ "brief": "THE BURAU REPRESENTATION IS UNITARY CRAIG C. SQUIEr' — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form.",
+ "extended": "**THE BURAU REPRESENTATION IS UNITARY CRAIG C. SQUIEr'**\n\n*Volume 90. Number 2, February 1984*\n\n4 pp, 5 sections.\n\n**Abstract.** A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form. This gives a partial answer to the problem of identifying the image of the Burau representation and provides a tool for attacking the question of whether or not the Burau representation is faithful. In [2, problem 14, p. 217], Birman asked for a characterization of the image of the Burau representation /J:5„-GL„_,(Z[M-']) of the braid group Bn. We contribute the following partial answer to Birman's question, where, for M a matrix over Z[t, t~l], M* denotes the conjugate-transpose of M and the conjugate of p(t) in Z[t, i\"1] is defined to bep(r_l). Theorem. There exists a nonsingular (n — 1) X (w — 1) matrix J0 over Z[t, t']] such that for each w in Bn it follows that ß(w)*J0ß(w) — J0.\n\n**Outline.** 1 Preliminaries. Let Z denote the ring of (rat; 2 The Burau representation of B„. We view the ; 3 Proof of the theorem. We are ready to prove ; 4 Two conjectures. A more conventional unitary; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 295
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-preliminaries-let-z-denote-the-ring-of-rationa",
+   "title": "Preliminaries. Let Z denote the ring of (rational) integers, let t be an inde-",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-the-burau-representation-of-b-we-view-the-brai",
+   "title": "The Burau representation of B„. We view the braid group abstractly as having",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-3-proof-of-the-theorem-we-are-ready-to-prove-tha",
+   "title": "Proof of the theorem. We are ready to prove that each ß, is unitary, relative to a",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-4-two-conjectures-a-more-conventional-unitary-re",
+   "title": "Two conjectures. A more conventional unitary representation of Bn may be",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "4-4"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

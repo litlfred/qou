@@ -49,7 +49,7 @@ mismatch has α-components). Computed digits recorded in
    genuine). No further solve attempted (would be a fit: x^4 unprinted,
    nothing left to falsify against).
 3. **[26] identified + in uploads**: GZ "Knots, Perturbative Series and
-   Quantum Modularity" = uploads/2111.06645v3.pdf (SIGMA 20 (2024) 055).
+   Quantum Modularity" = library/arxiv-2111.06645v3/2111.06645v3.pdf (SIGMA 20 (2024) 055).
    Its 5_2 series conventions (the ones GSWZ footnote 5 says differ by
    "factors of q and zeta_8") use different notation — the exact
    normalization map GZ-(their Eq 4 region)-vs-GSWZ-(281) is the
@@ -65,7 +65,7 @@ mismatch has α-components). Computed digits recorded in
 
 - Read [26] (= GSWZ's ref for the 5₂ series normalization) if
   uploaded, to pin the (281) prefactor exactly.
-- Alternatively re-extract page 57 of uploads/2412.04241v2.pdf with a
+- Alternatively re-extract page 57 of library/arxiv-2412.04241v2/2412.04241v2.pdf with a
   different tool to rule out (3).
 - If (2): solve for the α-dependent prefactor from the x¹ mismatch
   and CONFIRM on x²/x³ (falsifiable — 8 independent digits).

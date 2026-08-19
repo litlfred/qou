@@ -1,0 +1,220 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "maximal-hoermander-q-var-revised-v03",
+ "source": {
+  "file": "Maximal-Hoermander-q-Var-revised-v03.pdf",
+  "sha256": "135332c04a1b3bb87bf9d0a5e85260731ee08fbbe82c0a769c61292c68d0aa4e",
+  "bytes": 919600,
+  "pages": 43
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "HAL Id: hal-04526930 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not",
+  "authors_raw": "The documents may come from teaching and research",
+  "abstract": null,
+  "docinfo": {
+   "Creator": "HAL",
+   "Title": "q-variational Hörmander functional calculus and Schrödinger and wave maximal estimates",
+   "Author": "Luc Deleaval, Christoph Kriegler",
+   "Producer": "PDFLaTeX",
+   "CreationDate": "D:20260803151641+02'00'"
+  },
+  "title_lines": [
+   "HAL Id: hal-04526930",
+   "HAL is a multi-disciplinary open access archive",
+   "for the deposit and dissemination of scientific re-",
+   "search documents, whether they are published or not"
+  ],
+  "title_prev": "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "R-boundedness",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "UMD lattices",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract Hörmander functional calculus",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "q-variational inequalities",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "q-variation for spherical and euclidean ball means in Rd",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Schrödinger and wave maximal estimates",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Pointwise continuity of time paths for abstract Schrödinger and wave equations",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Examples and concluding remarks",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 8,
+   "n_chars": 13860,
+   "n_words": 2365
+  },
+  {
+   "id": "sec-001-r-boundedness",
+   "number": null,
+   "title": "R-boundedness",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1527,
+   "n_words": 245
+  },
+  {
+   "id": "sec-002-preliminaries",
+   "number": null,
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 7313,
+   "n_words": 1250
+  },
+  {
+   "id": "sec-003-abstract-hörmander-functional-calculus",
+   "number": null,
+   "title": "Abstract Hörmander functional calculus",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 6084,
+   "n_words": 993
+  },
+  {
+   "id": "sec-004-q-variational-inequalities",
+   "number": null,
+   "title": "q-variational inequalities",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 5345,
+   "n_words": 923
+  },
+  {
+   "id": "sec-005-q-variation-for-spherical-and-euclidean-ball-mea",
+   "number": null,
+   "title": "q-variation for spherical and euclidean ball means in Rd",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 21,
+   "n_chars": 10295,
+   "n_words": 1847
+  },
+  {
+   "id": "sec-006-schrödinger-and-wave-maximal-estimates",
+   "number": null,
+   "title": "Schrödinger and wave maximal estimates",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 28,
+   "n_chars": 13674,
+   "n_words": 2413
+  },
+  {
+   "id": "sec-007-pointwise-continuity-of-time-paths-for-abstract",
+   "number": null,
+   "title": "Pointwise continuity of time paths for abstract Schrödinger and wave equations",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 35,
+   "n_chars": 16705,
+   "n_words": 2688
+  },
+  {
+   "id": "sec-008-examples-and-concluding-remarks",
+   "number": null,
+   "title": "Examples and concluding remarks",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 4984,
+   "n_words": 816
+  },
+  {
+   "id": "sec-009-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 43,
+   "n_chars": 16782,
+   "n_words": 2553
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 10,
+  "chars_total": 96569
+ }
+}

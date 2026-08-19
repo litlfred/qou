@@ -1,0 +1,653 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+ "source": {
+  "file": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf",
+  "sha256": "c99ca1cd756f7aa615133e9608b66473d6a90f2a5d3c111dc38443674da292e1",
+  "bytes": 4049274,
+  "pages": 40
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Commun. Math. Phys. 106, 1-40 (1986) Mathematical Physics© Springer-Verlag 1986",
+  "authors_raw": "Theta Functions, Modular Invariance, and Strings",
+  "abstract": "We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory. In particular, we show that the spin structure dependence of the chiral Dirac determinant on a Riemann surface is given by Riemann's theta function. We use this result to investigate the modular invariance of multiloop heterotic string amplitudes.",
+  "docinfo": {
+   "CreationDate": "D:20040916170043Z",
+   "Title": "",
+   "Creator": "ABBYY FineReader",
+   "Author": "",
+   "Producer": ""
+  },
+  "title_prev": "Communications in",
+  "title_lines": [
+   "Commun. Math. Phys. 106, 1-40 (1986) Mathematical",
+   "Physics© Springer-Verlag 1986"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Fermions on a Torus",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Mathematical Background",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 8,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "We thank Dan Freed for explaining this to us",
+   "page": 15,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Under a change of homology basis A shifts by an even half point, defined below",
+   "page": 17,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "Holomorphic Factorization",
+   "page": 18,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "Chiral Dirac Determinants",
+   "page": 23,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "Qi",
+   "page": 25,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "Bosonization",
+   "page": 27,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 28,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "Modular Invariance in the Heterotic String",
+   "page": 29,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "page": 30,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 1,
+   "title": "This is very clearly explained in [31]",
+   "page": 30,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "V (detlmΩ)5",
+   "page": 31,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "After an integration by parts",
+   "page": 31,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 37,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 38,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Martinec, E.: Nonrenormalization theorems and fermionic string finiteness. Princeton",
+   "page": 38,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Gunning, R.: Introduction to Riemann surfaces princeton Math. Notes. Princeton, NJ:",
+   "page": 39,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "Fay, J.: Theta functions on Riemann surfaces Springer notes in math., Vol. 352. Berlin,",
+   "page": 39,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Alvarez, O.: Conformal anomalies and the index theorem. Berkeley preprint",
+   "page": 39,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "The generalization of Quillen's theorem has been independently derived by Belavin and",
+   "page": 39,
+   "source": "inferred",
+   "number": "21"
+  },
+  {
+   "level": 1,
+   "title": "We owe this observation to Phil Nelson",
+   "page": 39,
+   "source": "inferred",
+   "number": "26"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1622,
+   "n_words": 255
+  },
+  {
+   "id": "sec-001-2-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "2",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1932,
+   "n_words": 311
+  },
+  {
+   "id": "sec-002-2-fermions-on-a-torus",
+   "number": "2",
+   "title": "Fermions on a Torus",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3729,
+   "n_words": 662
+  },
+  {
+   "id": "sec-003-4-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "4",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4924,
+   "n_words": 855
+  },
+  {
+   "id": "sec-004-6-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "6",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 223,
+   "n_words": 37
+  },
+  {
+   "id": "sec-005-3-mathematical-background",
+   "number": "3",
+   "title": "Mathematical Background",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3351,
+   "n_words": 596
+  },
+  {
+   "id": "sec-006-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "L",
+   "title": "Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3127,
+   "n_words": 546
+  },
+  {
+   "id": "sec-007-10-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "10",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4042,
+   "n_words": 692
+  },
+  {
+   "id": "sec-008-12-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "12",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5562,
+   "n_words": 989
+  },
+  {
+   "id": "sec-009-14-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "14",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 4141,
+   "n_words": 780
+  },
+  {
+   "id": "sec-010-1-we-thank-dan-freed-for-explaining-this-to-us",
+   "number": "1",
+   "title": "We thank Dan Freed for explaining this to us",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-16-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "16",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 4335,
+   "n_words": 825
+  },
+  {
+   "id": "sec-012-2-under-a-change-of-homology-basis-a-shifts-by-a",
+   "number": "2",
+   "title": "Under a change of homology basis A shifts by an even half point, defined below",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-18-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "18",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 581,
+   "n_words": 117
+  },
+  {
+   "id": "sec-014-4-holomorphic-factorization",
+   "number": "4",
+   "title": "Holomorphic Factorization",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3518,
+   "n_words": 576
+  },
+  {
+   "id": "sec-015-20-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "20",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 3463,
+   "n_words": 594
+  },
+  {
+   "id": "sec-016-22-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "22",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 3818,
+   "n_words": 650
+  },
+  {
+   "id": "sec-017-5-chiral-dirac-determinants",
+   "number": "5",
+   "title": "Chiral Dirac Determinants",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 818,
+   "n_words": 146
+  },
+  {
+   "id": "sec-018-24-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "24",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 3029,
+   "n_words": 543
+  },
+  {
+   "id": "sec-019-9-qi",
+   "number": "9",
+   "title": "Qi",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 886,
+   "n_words": 182
+  },
+  {
+   "id": "sec-020-26-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "26",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 4008,
+   "n_words": 686
+  },
+  {
+   "id": "sec-021-6-bosonization",
+   "number": "6",
+   "title": "Bosonization",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1522,
+   "n_words": 248
+  },
+  {
+   "id": "sec-022-28-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "28",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 3772,
+   "n_words": 655
+  },
+  {
+   "id": "sec-023-7-modular-invariance-in-the-heterotic-string",
+   "number": "7",
+   "title": "Modular Invariance in the Heterotic String",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 152,
+   "n_words": 24
+  },
+  {
+   "id": "sec-024-30-l-alvarez-gaume-g-moore-and-c-vafa",
+   "number": "30",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 3524,
+   "n_words": 544
+  },
+  {
+   "id": "sec-025-5-this-is-very-clearly-explained-in-31",
+   "number": "5",
+   "title": "This is very clearly explained in [31]",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 102,
+   "n_words": 17
+  },
+  {
+   "id": "sec-026-3-v-detlmω5",
+   "number": "3",
+   "title": "V (detlmΩ)5",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 1705,
+   "n_words": 285
+  },
+  {
+   "id": "sec-027-6-after-an-integration-by-parts",
+   "number": "6",
+   "title": "After an integration by parts",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 37,
+   "n_chars": 12909,
+   "n_words": 2287
+  },
+  {
+   "id": "sec-028-8-conclusions",
+   "number": "8",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 2267,
+   "n_words": 372
+  },
+  {
+   "id": "sec-029-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 364,
+   "n_words": 52
+  },
+  {
+   "id": "sec-030-4-martinec-e-nonrenormalization-theorems-and-fer",
+   "number": "4",
+   "title": "Martinec, E.: Nonrenormalization theorems and fermionic string finiteness. Princeton",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 977,
+   "n_words": 144
+  },
+  {
+   "id": "sec-031-12-gunning-r-introduction-to-riemann-surfaces-pr",
+   "number": "12",
+   "title": "Gunning, R.: Introduction to Riemann surfaces princeton Math. Notes. Princeton, NJ:",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 109,
+   "n_words": 17
+  },
+  {
+   "id": "sec-032-14-fay-j-theta-functions-on-riemann-surfaces-spr",
+   "number": "14",
+   "title": "Fay, J.: Theta functions on Riemann surfaces Springer notes in math., Vol. 352. Berlin,",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 151,
+   "n_words": 21
+  },
+  {
+   "id": "sec-033-16-alvarez-o-conformal-anomalies-and-the-index-t",
+   "number": "16",
+   "title": "Alvarez, O.: Conformal anomalies and the index theorem. Berkeley preprint",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 888,
+   "n_words": 129
+  },
+  {
+   "id": "sec-034-21-the-generalization-of-quillens-theorem-has-be",
+   "number": "21",
+   "title": "The generalization of Quillen's theorem has been independently derived by Belavin and",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 1129,
+   "n_words": 173
+  },
+  {
+   "id": "sec-035-26-we-owe-this-observation-to-phil-nelson",
+   "number": "26",
+   "title": "We owe this observation to Phil Nelson",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 2315,
+   "n_words": 360
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 36,
+  "sections": 36,
+  "chars_total": 88995
+ }
+}

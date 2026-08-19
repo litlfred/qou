@@ -20,7 +20,7 @@ parent: 0yqu
 
 `qou-0yqu` names **GGM (2012.00062)** and **GGMW (2111.04763)** twice as "the
 realistic direct sources … which compute precisely these `Vⱼ`, and are already
-in `uploads/`" — and **neither has been read for the sum rule.** Broadhurst was
+in `library/`" — and **neither has been read for the sum rule.** Broadhurst was
 read (2026-08-07 b); these were not.
 
 ## Why they are the right target and not another dead literature lead
@@ -57,7 +57,7 @@ no information about our identity. Only a **real-part** statement counts.
 
 * parent: `qou-0yqu`; ledger `docs/coordination/1ppq-qbeta.md` (GGM entries
   2026-07-18 onward)
-* `uploads/` — both papers present
+* `library/` — both papers present
 * PR #4658
 
 ---
@@ -65,8 +65,8 @@ no information about our identity. Only a **real-part** statement counts.
 ## ✅ READ 2026-08-07 — the papers do NOT contain the sum rule. Closed as a lead.
 
 Both PDFs extracted in full and swept
-(`uploads/2012.00062v3.pdf` = GGM *Peacock patterns and resurgence in complex
-Chern–Simons theory*, Garoufalidis–Gu–Mariño; `uploads/2111.04763v2.pdf` = GGMW).
+(`library/arxiv-2012.00062v3/2012.00062v3.pdf` = GGM *Peacock patterns and resurgence in complex
+Chern–Simons theory*, Garoufalidis–Gu–Mariño; `library/arxiv-2111.04763v2/2111.04763v2.pdf` = GGMW).
 
 ### The negative — this is the point of the bean
 
@@ -121,7 +121,7 @@ Consequences:
 the cubic field of discriminant −23, with a distinguished complex embedding σ₁
 …, its complex conjugate σ₂ and a real embedding σ₃*". So PR #4658's headline
 was not merely already in the corpus (`u0_cubic_discriminant`) — it is **stated
-in one sentence in a paper sitting in `uploads/`**. Third independent source.
+in one sentence in a paper sitting in `library/`**. Third independent source.
 
 **5. The `σⱼ` ARE the three embeddings of the trace field** (GGMW §4.1,
 explicitly). So `Σⱼ Re Vⱼ` is a sum over *all* embeddings — a **trace**. That is

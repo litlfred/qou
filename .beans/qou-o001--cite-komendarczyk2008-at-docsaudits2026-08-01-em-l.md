@@ -17,7 +17,7 @@ Add refid-keyed citation sites in the em-linking audit doc (and in any bean qou-
 - eq. (43), p. 26 — E_{3/2}(X) ≥ (π/16)^{1/4} Σ_k ac(L_k, L)|Flux(X_k)| · min_k |Flux(X_k)|, where ac(L_k, L) is the asymptotic crossing number of ONE component against the WHOLE link.
   Use here: Rules out a per-pair asymptotic-crossing-number reading of the Freedman–He bound; the prefactor carries no volume factor.
 
-Source: `uploads/0808.1533v1.pdf` (`komendarczyk2008`)
+Source: `library/arxiv-0808.1533v1/0808.1533v1.pdf` (`komendarczyk2008`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
