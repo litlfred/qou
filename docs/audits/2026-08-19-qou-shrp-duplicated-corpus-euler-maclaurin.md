@@ -16,7 +16,7 @@ Across the bean, `docs/audits/2026-08-11-l41-euler-maclaurin-feasibility.md`
 ## What is actually true
 
 **Mathlib** has no Euler–Maclaurin formula — that half is correct and remains
-correct. **This corpus does**, and had since **2026-08-10 19:24 UTC**, nine days
+correct. **This corpus does**, and had since **2026-08-08 22:33 UTC**, eleven days
 before my step-2 commit (`4331bc97a`, 2026-08-19 12:31 UTC):
 
 | Corpus file (pre-existing) | What it provides |
@@ -93,7 +93,7 @@ onto `main`, which states:
 was not a case of missing information: the duplication check was performed,
 reported, and wrong. What it actually checked was the *commit log since my
 fork point* — new landings — rather than the *state of the tree*. A file that
-had been sitting on `main` for nine days is invisible to that check by
+had been sitting on `main` for eleven days is invisible to that check by
 construction, which is precisely why the corpus-grep checklist is a grep over
 `content/` and not a scan of recent commits.
 
