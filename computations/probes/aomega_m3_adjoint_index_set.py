@@ -340,6 +340,13 @@ def main():
          "computedAt":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),
          "durationMs":int((time.time()-t0)*1000),"auditOnly":True,
          "auditDoc":"docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
+         "q0Anchor":"independent",
+         "q0AnchorReason":(
+             "No substrate modulus enters. Every number here is an exact integer or "
+             "Fraction: the GGM eq-(98) Stokes constants, the sl_2 adjoint weight set, "
+             "Young-tableau counts, and the Garoufalidis-Zagier trace-field signatures. "
+             "The import cone is json/os/subprocess/time/fractions only -- it reaches no "
+             "q_parameter, no qou_substrate.constants, no y_lambda_at, and no mpmath."),
          "parameters":{"s_exponents_M2":s_exponents_M2,"s_multiplicities_M2":s_mults_M2,
                        "adjoint_exponents":adj_exponents,"dt_vector_4_1_5_2":list(dt_vector),
                        "lean":"QOU.QBeta.AdjointIndexSetM3"},
