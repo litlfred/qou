@@ -324,6 +324,69 @@ theorem seminormalRep_qJMInv (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : 
           * jmDiagValInv q (k + 1) := by rw [mul_assoc]
     _ = jmDiagValInv q (k + 1) := by rw [h2, one_mul]
 
+
+/-! ## From the per-element eigenvalues to the block scalar
+
+Ram 4.1 gives one diagonal matrix per `k`.  What makes `Θ = Σ_k (L_k + L_k⁻¹)` a *scalar* is that
+summing over `k = 0,…,n` sweeps every cell of `μ` exactly once, in an order that depends on `T` but
+whose *total* does not. -/
+
+/-- **Reindexing over a tableau's values.**  `k ↦ cellOf T (k+1)` is a bijection
+`range (n+1) → μ.cells` — its inverse is `c ↦ T.entry c − 1` — because the entry map of a standard
+tableau is a bijection from the cells onto `{1,…,|μ|}`.  So a sum indexed by the values is a sum
+over the cells, and in particular is independent of `T`. -/
+theorem sum_cellOf_range {M : Type*} [AddCommMonoid M] (T : StandardYoungTableau μ) {n : ℕ}
+    (hN : μ.cells.card = n + 1) (f : ℕ × ℕ → M) :
+    ∑ k ∈ Finset.range (n + 1), f (cellOf T (k + 1)) = ∑ c ∈ μ.cells, f c := by
+  classical
+  refine Finset.sum_nbij' (fun k => cellOf T (k + 1)) (fun c => T.entry c.1 c.2 - 1)
+    (fun k hk => ?_) (fun c hc => ?_) (fun k hk => ?_) (fun c hc => ?_) (fun k _ => rfl)
+  · rw [Finset.mem_range] at hk
+    exact cellOf_mem T (Set.mem_Icc.mpr ⟨by omega, by omega⟩)
+  · have h := T.mapsTo_cells (by simpa using hc)
+    simp only [Set.mem_Icc, hN] at h
+    rw [Finset.mem_range]
+    show T.entry c.1 c.2 - 1 < n + 1
+    omega
+  · rw [Finset.mem_range] at hk
+    show T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 - 1 = k
+    rw [entry_cellOf T (Set.mem_Icc.mpr ⟨by omega, by omega⟩)]
+    omega
+  · have h := T.mapsTo_cells (by simpa using hc)
+    simp only [Set.mem_Icc] at h
+    show cellOf T (T.entry c.1 c.2 - 1 + 1) = c
+    rw [show T.entry c.1 c.2 - 1 + 1 = T.entry c.1 c.2 by omega]
+    exact cellOf_unique T hc rfl
+
+/-- **The bar-symmetrised Murphy sum acts by the cell-content scalar.**  Each `L_k + L_k⁻¹`
+contributes `q^{2c} + q^{−2c}` at the cell holding the value `k+1`; summing over `k = 0,…,n` sweeps
+every cell of `μ` once (`sum_cellOf_range`), so the resulting diagonal is *constant* — i.e. a
+scalar matrix, with the scalar `Σ_{c∈μ} (q^{2c} + q^{−2c})`. -/
+theorem seminormalRep_barSymJMSum (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hN : μ.cells.card = n + 1) :
+    seminormalRep q hq0 hq2 n hN (barSymJMSum ℝ q q⁻¹ n)
+      = (∑ c ∈ μ.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c))))
+          • (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) := by
+  classical
+  rw [barSymJMSum, map_sum]
+  have hterm : ∀ k ∈ Finset.range (n + 1),
+      seminormalRep q hq0 hq2 n hN (qJM ℝ q q⁻¹ n k + qJMInv ℝ q q⁻¹ n k)
+        = Matrix.diagonal (fun T : StandardYoungTableau μ =>
+            q ^ (2 * cellContent (cellOf T (k + 1)))
+              + q ^ (-(2 * cellContent (cellOf T (k + 1))))) := by
+    intro k hk
+    rw [Finset.mem_range] at hk
+    rw [map_add, seminormalRep_qJM q hq0 hq2 n hN k (by omega),
+      seminormalRep_qJMInv q hq0 hq2 n hN k (by omega), jmDiagVal, jmDiagValInv,
+      Matrix.diagonal_add]
+  rw [Finset.sum_congr rfl hterm]
+  ext T U
+  simp only [Matrix.sum_apply, Matrix.smul_apply, Matrix.one_apply, smul_eq_mul]
+  by_cases h : T = U
+  · subst h
+    simp only [Matrix.diagonal_apply_eq, if_pos, mul_one]
+    exact sum_cellOf_range T hN (fun c => q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c)))
+  · simp only [Matrix.diagonal_apply_ne _ h, if_neg h, mul_zero, Finset.sum_const_zero]
 end SeminormalRep
 
 end QOU.SchurWeyl
