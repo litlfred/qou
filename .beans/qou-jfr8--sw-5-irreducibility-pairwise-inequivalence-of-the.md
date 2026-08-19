@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-19T14:06:07Z
+updated_at: 2026-08-19T15:24:48Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -116,3 +116,43 @@ BraidKnot/JucysMurphy, MathlibExt/QPartitionCombinatorics,
 MathlibExt/WenzlSchurElement, HeckeAlgebra/JonesMarkovWenzl) are a real
 consolidation target but are NOT part of this bean. Filed as an observation
 only.
+
+
+## Range form chosen (owner, 2026-08-19) — skeleton closed at both ends
+
+Target settled as `AlgHom.range (seminormalRep ...) = top`. Landed sorry-free,
+axiom-clean:
+
+- `DiagonalSeparation.single_self_mem_of_separating` — abstract: a subalgebra
+  containing a DIAGONAL family whose entry-tuples SEPARATE the index set
+  contains every diagonal matrix unit. Finite-set Lagrange interpolation as a
+  product. No Hecke or tableau content, so it checks on its own terms.
+- `DiagonalSeparation.eq_top_of_single_mem` — matrix units generate everything.
+- `SeminormalRange.diagonal_seminormalRep_qJM` — rho(L_k) is its own diagonal.
+- `SeminormalRange.single_self_mem_range` — every DIAGONAL unit is in the image.
+- `SeminormalRange.single_mem_range_of_entry_ne_zero` — a nonzero (T',T) entry
+  anywhere in the image promotes to the off-diagonal unit single T' T 1.
+
+**Lean shape note worth keeping:** matrices are NOT a `CommMonoid`, so
+`Finset.prod` cannot be taken over them even when the particular matrices commute.
+The interpolation product is taken in the function ring (iota -> R) with
+`diagonal` applied once, and membership recovered by induction on the index set
+through diagonal's multiplicativity. First attempt failed on exactly this.
+
+## THE ONE REMAINING GAP
+
+Supplying a nonzero (T', T) entry for EVERY pair. Concretely:
+
+  for T != T', a chain T = T_0, T_1, ..., T_m = T' where each step is an
+  admissible swap, so that genMat's off-diagonal entry offDiag is nonzero at
+  each step; then compose the units (single T'' T' 1 * single T' T 1 =
+  single T'' T 1).
+
+`QOU.BraidKnot.JucysMurphy.syt_adjacentSwap_connected` proves the connectivity
+sorry-free. Transport is HARDER than SytContentTuple was: that one only had to
+match LABEL conventions (off-by-one), this one has to match the SWAP notions --
+BraidKnot's `AdjacentSwapStep` / `swapCellsSYT` against SchurWeyl's
+`SwapAdmissible` / `swapTableau`. Budget accordingly; do not assume the same
+5-line bridge works.
+
+Pairwise inequivalence (rho_lambda !=~ rho_mu) still not started.
