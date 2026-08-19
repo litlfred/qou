@@ -139,8 +139,19 @@ Three honest residual classes, reported separately rather than folded in:
     rebase-merge (AGENTS.md rule 8) rewrites every branch commit sha, so a
     witness produced on a feature branch records a sha the merge destroyed.
     AGENTS.md says this of `scriptCommitSha`; it is equally true of `commitSha`.
-    At 366 of 751 this is **48.7 % of the backlog**, and the §4 remedy
-    (`git diff <witness.commitSha> -- <producer>`) is simply unrunnable on it.
+    At 376 of 765 this is **49 % of the backlog**, and the §4 remedy
+    (`git diff <witness.commitSha> -- <producer>`) is unrunnable on it.
+
+    **CORRECTION (2026-08-19): that cause is confirmed for only 46 of 376.** I
+    asserted rebase-merge as *the* explanation before checking the alternative.
+    This clone is **shallow** (`.git/shallow`, boundary 2026-08-07), so a sha
+    can be absent simply because the history was never fetched. Split on the
+    boundary date: 46 were computed after it (sha was in the fetched window, so
+    genuinely rewritten) and **330 before it — cause UNDETERMINED**. Entries now
+    carry `rewritten_cause`. The 330 are not thereby recoverable; what changed
+    is that I no longer claim to know. A direct `git fetch origin <sha>` cannot
+    settle it either — GitHub refuses arbitrary-sha fetches whether or not the
+    object exists.
 
     Worth being precise about what is and is not broken here: `commitSha` is
     **already** not an enforcement key — `witness_dependency_drift.py` keys
@@ -383,6 +394,23 @@ def find_producer(script_file: str) -> Path | None:
     return hits[0] if len(hits) == 1 else None
 
 
+def shallow_boundary_date() -> str | None:
+    """ISO date of this clone's shallow boundary, or None if the clone is full.
+
+    Load-bearing for reading `rewritten` honestly. A missing `commitSha` has two
+    possible causes and they are NOT interchangeable: rebase-merge destroyed it,
+    or this clone never fetched that far back. Only the first is unfixable.
+    """
+    sh = ROOT / ".git" / "shallow"
+    if not sh.is_file():
+        return None
+    line = sh.read_text().split()
+    if not line:
+        return None
+    out = _git("log", "-1", "--format=%cI", line[0])
+    return (out or "").strip() or None
+
+
 def approx_anchor(computed_at: str | None, producer_rel: str) -> str | None:
     """Nearest `origin/main` commit at-or-before `computed_at` carrying the producer.
 
@@ -405,6 +433,9 @@ def approx_anchor(computed_at: str | None, producer_rel: str) -> str | None:
     if _git("cat-file", "-e", f"{sha}:{producer_rel}") is None:
         return None
     return sha
+
+
+_SHALLOW_BOUNDARY = shallow_boundary_date()
 
 
 def triage() -> dict:
@@ -452,7 +483,16 @@ def triage() -> dict:
         # They call for completely different follow-ups and conflating them
         # hides the dominant cause.
         if _git("cat-file", "-e", f"{sha}^{{commit}}") is None:
-            entry["reason"] = f"commit {sha[:9]} not in the repository"
+            bd = _SHALLOW_BOUNDARY
+            ts = w.get("computedAt")
+            if bd and ts and ts < bd:
+                entry["reason"] = (
+                    f"commit {sha[:9]} not in THIS clone; witness predates the "
+                    f"shallow boundary {bd[:10]} — cause undetermined")
+                entry["rewritten_cause"] = "ambiguous (shallow clone)"
+            else:
+                entry["reason"] = f"commit {sha[:9]} not in the repository"
+                entry["rewritten_cause"] = "confirmed (sha was in the fetched window)"
             # Try the heuristic timestamp anchor so this half of the backlog is
             # at least triageable. Advisory only -- see approx_anchor's caveat.
             anchor = approx_anchor(w.get("computedAt"), rel_p)
