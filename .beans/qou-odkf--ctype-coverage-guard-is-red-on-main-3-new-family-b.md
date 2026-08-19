@@ -74,3 +74,53 @@ Two changes worth making, in order:
 
 Resolve site 3 first — it is the only one that can move a number. Sites 1 and 2
 are a docs/reporting fix and a guard-ergonomics fix respectively.
+
+## RESOLVED 2026-08-19 — site 3 is a FALSE POSITIVE of my own grep
+
+My triage above ranked `_habiro_coefficient_extract.py:171` as *"the one that can
+move a number"*. Measured, it cannot — not on that line.
+
+The module calls `canonical_interface_kinds(Z, N, pn_convention="chi_lambda_braid")`,
+and under that convention the p-n boundary is labelled **`positive`**, not
+`averaged`:
+
+    bring_color_weighted  Z=1 N=1 -> {averaged: 1}
+    chi_lambda_braid      Z=1 N=1 -> {positive: 1}
+    strict_averaged       Z=1 N=1 -> {averaged: 1}
+
+So the `averaged` branch at :171 never sees a p-n bond in this module's own call
+path. Part E fired on a literal it found; the label it should have been looking
+for was `positive`.
+
+**This makes the guard's blind spot worse, not better.** A colour-blind
+collapse that keeps the word `averaged` is visible to Part E. One that renames
+the p-n bond to `positive` is not — and that is the larger of the two defects:
+`chi_lambda_braid` is **-17.05%** off canonical per p-n bond, against **+0.0141%**
+for `strict_averaged` (measured, `qou-cds4`). Part E is tuned to catch the 0.014%
+family and blind to the 17% one.
+
+### Where the real work lives
+
+Not here. The corpus-grep found it already ruled and already scoped: owner ruling
+R3 (`docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md`) makes
+`bring_color_weighted` canonical, and its §3.5 / tranche **S4** names
+`_habiro_coefficient_extract.py` explicitly among the six files that *"need
+reading"*. Bean **`qou-cds4`** owns it; I have claimed it and added the magnitude,
+which the tranche did not have.
+
+### What remains in THIS bean
+
+Sites 1 and 2 stand as written, and one new item replaces site 3:
+
+1. `closed_form_tau_M.py:238` — documented design. Verify the value layer applies
+   delta, then baseline **with the reason recorded**.
+2. `closed_form_tau_M.py:502` — reporting fidelity, one collapsed `averaged` count.
+3. **NEW — Part E must key on the family, not the string.** It cannot see a
+   collapse that relabels rather than merges. Detecting `chi_lambda_braid`-shaped
+   loss needs the check to ask *which convention did this call site request*,
+   which is an AST question about the `pn_convention` kwarg, not a grep for a
+   literal.
+
+Plus the two ergonomics fixes already noted: baseline by enclosing function name
+rather than `file:line` (3 entries went stale on an unrelated edit), and require a
+reason string per baseline entry.
