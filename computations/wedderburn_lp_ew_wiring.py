@@ -436,10 +436,12 @@ def main() -> int:
     # investigation).
     if min(t) < mp.mpf("-1e-9"):
         print(f"  WARN: KLR positivity violation — min(t) = {mp.nstr(min(t), 4)}")
-    # Keep the legacy signed matrix-entry sum for diff/comparison.
-    t_legacy_matrix_entries = np.array(
-        [p["full"] for p in pairs], dtype=float
-    )
+    # Keep the legacy signed matrix-entry sum for diff/comparison — in mpf.
+    # The sweep's copy of this line was ported and the headline's was not,
+    # which is its own small lesson: a duplicated expression only gets half
+    # ported when you fix the one the traceback names.
+    with mp.workdps(_MP_DPS):
+        t_legacy_matrix_entries = [mp.mpf(str(p["full"])) for p in pairs]
     G = _full_wedderburn_gram(
         pairs, n_strands_headline, Q_50_DIGIT_STR,
         hoefsmit_cache=hoefsmit_cache_h,
@@ -451,8 +453,9 @@ def main() -> int:
     print(f"  t (KLR pair Markov traces, top 3): "
           f"{[mp.nstr(v, 12) for v in t[:3]]}")
     print(f"  t.min = {mp.nstr(min(t), 6)}, t.max = {mp.nstr(max(t), 6)}")
-    print(f"  legacy(matrix-entry) t.min = {t_legacy_matrix_entries.min():.4e}, "
-          f"t.max = {t_legacy_matrix_entries.max():.4e}")
+    print(f"  legacy(matrix-entry) t.min = "
+          f"{mp.nstr(min(t_legacy_matrix_entries), 6)}, "
+          f"t.max = {mp.nstr(max(t_legacy_matrix_entries), 6)}")
     print(f"  G shape: ({len(G)}, {len(G[0])}), "
           f"n_target = {mp.nstr(n_target, 12)}")
     # M_bound=0 enforces x ≥ 0 (operator coefficients are non-negative,
@@ -730,7 +733,12 @@ def main() -> int:
                    or [fmt(y) for y in res_dict.get("y_star", [])]),
         "active_set": list(res_dict.get("active_set", [])),
         "n_target": n_target,
-        "supply_matrix_shape": list(G.shape),
+        # `G` is list[list[mpf]], not an ndarray — `.shape` was the THIRD
+        # consumer the port broke, and the first two were value comparisons,
+        # so the grep that caught them (fields that became strings) could not
+        # see this one at all: it is a CONTAINER-API consumer of the
+        # ndarray -> list change. Both categories move when a type widens.
+        "supply_matrix_shape": [len(G), len(G[0]) if G else 0],
         "atom_sweep": lp_results_per_atom,
     })
 
