@@ -373,9 +373,15 @@ user's last message, not the most recently mentioned file.
       `computations/` tree afterwards, not the one file it was looking at, or it
       leaves a dirty tree that reads as real work.
 
-      And ~48 % of the backlog is `rewritten` — the recorded `commitSha`
-      resolves to nothing, because rebase-merge (rule 8) rewrote the branch
-      sha the witness was written under. This is the same effect the
+      And ~49 % of the backlog is `rewritten` — the recorded `commitSha`
+      resolves to nothing. **This text previously named rebase-merge as the
+      cause; that is confirmed for only 46 of 376.** Agent clones here are
+      **shallow**, so a sha can be missing merely because the history was never
+      fetched. Split on the shallow-boundary date, 46 witnesses were computed
+      after it (sha was in the fetched window ⇒ genuinely rewritten) and 330
+      before it (**cause undetermined**). Do not repeat the stronger claim, and
+      note a direct `git fetch origin <sha>` cannot settle it — GitHub refuses
+      arbitrary-sha fetches regardless of whether the object exists. This is the same effect the
       `scriptCommitSha` ruling above describes, one field over: **"diff the
       producer first" is unrunnable for half the queue**, and hand-patching
       the sha (13 such commits on `main` in one 8-day window) buys only the
