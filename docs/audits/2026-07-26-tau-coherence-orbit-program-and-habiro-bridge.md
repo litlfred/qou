@@ -2019,3 +2019,83 @@ degree-2 cases; `w_{Q₅} = 4` is counted, not assumed.
 ### Scope
 
 A census of where values can exist, not a value at any new `m`.
+
+---
+
+## Addenda 38–39 (2026-08-19) — m = 6 computes but adds nothing, and the m-sweep at `v₁` closes on `ε₃` alone
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probes
+[`gswz_epsm_m6_rwf_value_probe.py`](../../computations/probes/gswz_epsm_m6_rwf_value_probe.py)
+(17/17) and
+[`gswz_epsm_v1_computable_m_terminal_probe.py`](../../computations/probes/gswz_epsm_v1_computable_m_terminal_probe.py)
+(11/11). Scope-(a); nothing wired.
+
+### 38 — `m = 6`: the `R^{w_F}` route works, and yields no new datum
+
+`m = 6` is the smallest live case with `gcd(m, w_F) > 1`, so Prop 2.5
+defines only `R_ζ(ξ)^{w_F}`. The census said that power is nontrivial in
+`Z/6`; this asks whether information survives *in practice*.
+
+The mechanism carries over: **every unit of `Z₅` is a 6th power in `B`**
+(its Teichmüller part lies in `μ₄ = (μ₂₄)⁶`), so `H` is not needed and the
+eqn-(21) ratio is a 6th power in `B`. Root-independence holds over all 36
+choices. Control: `gen` itself is *not* a 6th power, so the test isn't
+vacuous.
+
+All four CGZ gates re-run at `m = 6` before any value was believed —
+including Lemma 2.4(b) in its **even** form (`D_ζ(1)²` a root of unity; the
+odd-`n` form does not apply) and the five-term relation on **300**
+instances, with both constructed-to-fail controls breaking it.
+
+**But the answer collapses.** Per-symbol classes `z₁ → 4`, `z₂ → 0`, giving
+`R = R^{w_F} = 2`. The 2-part of `B^×/(B^×)⁶` is killed by the even power
+`w_F = 4`, and the surviving 3-part **is** the `m = 3` group — so `R^{w_F}`
+re-expresses `ε₃`. Checked symbol by symbol against a direct `m = 3`
+computation in the same probe, not argued from CRT. A consistency check on
+Addenda 33–35, not a second data point.
+
+### 39 — and the sweep closes: only `m = 3, 6` are computable at all
+
+Addendum 38 closed by predicting "the same collapse at `m = 12` and `24`,
+leaving `m = 8` as the only structurally new case". **Wrong** — 12 and 24
+are not computable by this method either. That was a prediction where a
+measurement was one line away.
+
+The criterion: an `m`-th root of a `Z₅` unit stays in `B` exactly when
+`gcd(m, 24)` divides its Teichmüller discrete log. Measured — `z₁ → 6`,
+`z₂ → 12`, `1−z₁ → 12`, `1−z₂ → 6`:
+
+| `m` | `gcd(m,24)` | divides? | computable in `B` |
+|---|---|---|---|
+| 3 | 3 | 6, 12 ✓ | **yes** |
+| 6 | 6 | 6, 12 ✓ | **yes** |
+| 8 | 8 | neither | no — all four symbols block |
+| 12 | 12 | 12 only | no — `z₁`, `1−z₂` block |
+| 24 | 24 | neither | no — all four block |
+
+The obstruction is **per-symbol**, which I also got wrong first time: a
+version of the construction check demanded that when `m` fails *no*
+argument has an `m`-th root, and it correctly failed at `m = 12`, where the
+two dlog-12 arguments *do*. Now checked per argument, with exact roots
+built where predicted and absent where not.
+
+### Terminal statement for `v₁`
+
+**The degree-1 place of `K = Q(α)` yields exactly one computable
+non-redundant CGZ invariant: `ε₃`.**
+
+| `m` | status |
+|---|---|
+| 3 | the value (Addenda 33–35) |
+| 6 | computable, collapses onto `m = 3` |
+| 8, 12, 24 | require leaving `B` |
+
+"Requires leaving `B`" means the `m`-th root generates the Kummer extension
+`B(z^{1/m})` — the H-side descent CGZ Remark 1.9 flags as unchecked, and
+precisely what this arc foundered on before Addendum 32 relocated the
+target. The shortcut that made `v₁` easy is exhausted at `m = 3` and `6`.
+
+This **closes** the sweep here rather than opening it. It does **not** claim
+`ε₈, ε₁₂, ε₂₄` are undefined or trivial — only that they are unreachable by
+the method that produced `ε₃`, so claiming any of them would need the lift
+actually constructed. Scope-(a).
