@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 310,
-      "proton-pin": 894,
+      "proton-pin": 893,
       "unknown": 25,
-      "canonical": 532
+      "canonical": 533
     },
     "stale_total": 310,
     "new_stale": 0,
@@ -1856,9 +1856,9 @@
       {
         "file": "computations/atomic-tr-m-mpfr-50dps.witness.json",
         "field": "q_0_50dps",
-        "value": "1.109978582751380807591669095610768879874499121873578736072814240181799",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/audits/braid-encoding-audit.witness.json",
