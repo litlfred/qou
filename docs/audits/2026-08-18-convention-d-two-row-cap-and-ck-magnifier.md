@@ -133,6 +133,72 @@ The only D-frame number available comes from the refuted `z`-swap route
 **sensitivity measurement, not a value**. Do not wire it or quote it as D's
 accuracy.
 
+## 3b. The bar-parity story does not hold up, in either convention
+
+Two follow-on measurements, both cheap and both negative.
+
+### The forced projection does not make the *phase* bar-odd
+
+`qou-cds1` proved (sorry-free) that the eigenphase `a = (z−1)h/2` is bar-odd
+exactly when `z` is bar-even, that `z_D` breaks this with a `z`-independent
+defect, and concluded the projection `a_odd = a − h²/4` is *"forced with no free
+parameter"*. But the ladder's phase is not `a` — it is `a − u/2`, and `u`'s
+parity was never checked. Symbolically, under `q ↦ 1/q`:
+
+| factor | parity |
+|---|---|
+| `h` | **bar-odd** (`→ −h`) |
+| `h²`, `b` | bar-even |
+| `ℏ_q` | neither (`→ −q·ℏ_q`) |
+| `u = b·ℏ_q²` | **neither** (`→ q²·u`) |
+
+So for **any** bar-odd `a`, `bar(a − u/2) + (a − u/2) = −u(1+q²)/2 ≠ 0`. Measured:
+
+- the defect is **identical in C and D** (`−0.0095054571` for `a_C` and for the
+  forced `a_odd` alike) — carried entirely by `u`, hence
+  **convention-independent**. A ladder problem, not a D problem.
+- replacing `u/2` by its bar-odd part moves `1 − F` by **15.1 %** of the
+  required correction. Not a rounding term.
+
+The bean's two Lean theorems are **correct as stated** — they concern `a`. What
+does not follow is the motivation: making `a` bar-odd does not make the phase
+bar-odd.
+
+### …and the parity requirement is not available from the chain anyway
+
+That left an open question: *is* `F` required to be bar-even? The corpus states
+the requirement and names the involution —
+
+> *"It is the bar-odd (`sinh`) partner of the bar-even (`cosh`) meson scale
+> `m_π` **under the bar-involution `q ↦ q⁻¹`**"*
+> — [`three-calibration-discipline.md:18`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md),
+> and similarly `epistemic-status-of-calibrations.md:3`,
+> `three-calibration-discipline-proof.md:36`, and AGENTS.md.
+
+That is testable against the closed form the framework computes. Measured at
+both anchors:
+
+```
+Q_A/m_e at q    = 1.5335566273012
+Q_A/m_e at 1/q  = 2.5868438911015
+bar(Q_A)/Q_A    = 1.686826456258      ← bar-odd would be −1; bar-even would be +1
+```
+
+**Neither**, and not marginally. No other natural involution rescues it either
+(`q ↦ −q` and `q ↦ −1/q` both give non-constant ratios).
+
+So a bar-parity constraint on the D-frame correction **cannot be derived from
+"Q_β is bar-odd"**, because `Q_β` as computed is neither. The open question
+resolves in the direction of *not available*.
+
+**Scope, stated carefully because this contradicts four corpus sites.** The
+measurement is of the closed form `Q_A = m_e|q²−2q−1|(q+1)/(2q³)` — what
+AGENTS.md gives for `Q_β` and what `qbeta_utils` computes. If the parity claim
+is meant for a *different* representation (an unevaluated `sinh` form, or the
+width `𝔇_β` before inversion), it may hold there, and the defect is that the
+corpus attaches it to this form. Either way the statement as written does not
+hold of the computed object. Nothing here tests `m_π`'s claimed bar-evenness.
+
 ## 4. Routes now pruned, and what remains
 
 | route | status | source |
@@ -142,6 +208,7 @@ accuracy.
 | exact bridge `(1−h/2)/(1−zh/2)` | 25–32× too large in both frames | prior + re-measured here |
 | **two-row cap restriction fraction** | **13.6× too large; no residue** | **§1, here** |
 | bar-odd projection `a − h²/4` | forced, necessary, **not sufficient** (−3.17 %) | bean + §2 |
+| bar-parity as a *constraint* on F | **not available** — `Q_β` as computed has neither parity | §3b |
 
 **What a D-frame ladder still needs** is unchanged from the bean's own
 statement: a correction of a *different functional form*, derived from the
