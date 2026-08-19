@@ -72,21 +72,36 @@ sufficient; the deep walk is kept because that is a fact about today's corpus,
 not a property of the method, and it costs little (module paths and git lookups
 are memoised).
 
-**The gate over-flags, and I would rather say so than let it look sharper than
-it is.** 5 of the 6 hits are `substrate/witness_base.py` or
-`substrate/_precision.py` — imported by nearly every producer. Checked one:
-`casimir-d6-qcorrection-structure` is flagged because `witness_base.py` gained
-15 lines whose only non-comment content is exporting `_EPHEMERAL_META_FIELDS`.
-That is serialization plumbing and **cannot move a number**. `_precision.py` is
-a genuine maybe — it sets `mp.dps`, so a change there really can shift digits —
-but `witness_base` drift is provenance-only.
+**The gate DID over-flag, and the fix is measured rather than guessed.** All 8
+flagged witnesses were re-run and diffed on their mathematical fields:
 
-Note this does not create work in either direction, which is the point: a
-refresh driven by infra-only drift would change nothing *but* provenance, and
-"provenance-only refresh" is precisely what this whole script exists to say is
-not worth the budget. So `cosmetic = 0` should be read as **conservative** — a
-few of the 6 are arguably refreshable — and the practical conclusion is
-unchanged.
+    drift confined to witness_base / _precision : 0 moved, 5 unchanged
+    drift touching anything else                : 2 moved, 0 unchanged
+    (1 crashed before writing and is undecided -- see below)
+
+Perfect separation on the 7 decidable cases, so infra-only drift gets its own
+bucket, `cosmetic_import_infra_only`, instead of sitting in the do-not-refresh
+pile. Those are still not worth refreshing -- a provenance-only change is
+exactly what this script exists to skip -- but they are not evidence a payload
+can move, and lumping them together overstated the hazard.
+
+Two honesty notes. **n = 7 is small**: perfect separation at that size is
+suggestive, not settled. And the members differ in weight -- `witness_base` is
+5/5 and pure serialization; `_precision` is 2/2 and could matter in principle,
+since it sets `mp.dps`.
+
+An earlier version of this passage argued infra drift "cannot move a number" and
+declined to automate on it. Declining was right then -- the belief was untested,
+and the last untested belief in this file produced a retraction. It is automated
+now because it was tested. That is the only difference, and it is the whole
+difference.
+
+**The crashed case is a real corpus defect, not a flake.**
+`casimir_d6_qcorrection_structure.py` requests the ideal/muon anchor, and
+`q_parameter` refuses because `q-pinning-50-digit.witness.json` no longer holds
+a muon value -- commit `9a9c6b31c` ("regenerated at the proton pin") flipped it.
+The guard is behaving correctly; the producer is simply unrunnable on current
+main. Tracked separately -- do not "fix" it by relaxing the guard.
 
 **Gate order matters when reading the counts.** The import-cone check runs
 first, so a witness that would *also* fail the environment or bare-producer gate
@@ -254,6 +269,22 @@ def env_gap(w: dict) -> dict[str, str]:
     return gaps
 
 
+# Modules whose drift was MEASURED not to move a payload. Empirical, not a
+# guess: all 8 import-cone-flagged witnesses were re-run and their mathematical
+# fields diffed (2026-08-19).
+#
+#     drift confined to this set  : 0 moved, 5 unchanged
+#     drift touching anything else: 2 moved, 0 unchanged
+#     (a 9th case crashed before writing and is undecided)
+#
+# Perfect separation, but on n=7 decidable cases, so this LABELS a bucket rather
+# than dropping it. The two members do not carry equal weight: `witness_base` is
+# 5/5 and is pure serialization/provenance; `_precision` is only 2/2 and could
+# matter in principle since it sets `mp.dps` -- a producer pinning its own
+# precision is immune, one relying on the default may not be. Re-measure before
+# leaning on the `_precision` half.
+_INFRA_MODULES = {"witness_base.py", "_precision.py"}
+
 _MODULE_PATH_CACHE: dict[str, str | None] = {}
 _CHANGED_CACHE: dict[tuple[str, str], bool] = {}
 
@@ -379,7 +410,7 @@ def approx_anchor(computed_at: str | None, producer_rel: str) -> str | None:
 def triage() -> dict:
     classes: dict[str, list] = {
         "cosmetic": [], "cosmetic_env_differs": [],
-        "cosmetic_import_cone_drift": [],
+        "cosmetic_import_cone_drift": [], "cosmetic_import_infra_only": [],
         "cosmetic_strips_provenance": [], "substantive": [],
         "rewritten": [], "unresolvable": [], "unparseable": [],
     }
@@ -479,7 +510,13 @@ def triage() -> dict:
         drifted = local_import_drift(producer, src_text, sha)
         if drifted:
             entry["import_drift"] = drifted
-            classes["cosmetic_import_cone_drift"].append(entry)
+            infra_only = all(
+                any(d.split("/")[-1].startswith(m) for m in _INFRA_MODULES)
+                for d in drifted
+            )
+            entry["drift_kind"] = "infra-only" if infra_only else "numeric-bearing"
+            classes["cosmetic_import_infra_only" if infra_only
+                    else "cosmetic_import_cone_drift"].append(entry)
             continue
 
         if not any(k in src_text for k in ("WitnessBuilder", "scriptHash", "commitSha")):
@@ -501,6 +538,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--list", choices=["cosmetic", "cosmetic_env_differs",
                                        "cosmetic_import_cone_drift",
+                                       "cosmetic_import_infra_only",
                                        "cosmetic_strips_provenance",
                                        "substantive", "rewritten",
                                        "unresolvable", "unparseable"])
@@ -519,7 +557,8 @@ def main() -> int:
         ("substantive", "code changed — a re-run CAN move the payload"),
         ("cosmetic", "source cosmetic AND environment matches — safe to refresh"),
         ("cosmetic_env_differs", "source cosmetic BUT environment differs — DO NOT refresh"),
-        ("cosmetic_import_cone_drift", "source cosmetic BUT an imported module changed — DO NOT refresh"),
+        ("cosmetic_import_cone_drift", "a NUMERIC-bearing import changed — measured 2/2 moved"),
+        ("cosmetic_import_infra_only", "only witness_base/_precision changed — measured 0/5 moved"),
         ("cosmetic_strips_provenance", "source cosmetic BUT a re-run deletes provenance"),
         ("rewritten", "commitSha not in the repo — undecidable, see below"),
         ("unresolvable", "no commitSha, or producer moved since"),
