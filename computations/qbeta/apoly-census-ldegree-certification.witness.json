@@ -1,0 +1,255 @@
+{
+  "engine": "culler-census-apoly",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T11:35:20.686615+00:00",
+  "commitSha": "b113c12d8d52344a9cbfc1773c1cf6d457f9363f",
+  "assertions": [
+    {
+      "name": "geom_ldegrees",
+      "computed": "[2, 3, 4]",
+      "expected": "[2, 3, 4]",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Culler census .apoly parse"
+    },
+    {
+      "name": "a41_support_matches_lean",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "K2_1 support vs RouteANewtonPolygonDT.a41Monomials"
+    },
+    {
+      "name": "newton_reciprocity_all",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "CCGLS reciprocity on parsed supports"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 41,
+  "computation": "apoly-census-ldegree-certification",
+  "scriptFile": "apoly_census_ldegree_certification_probe.py",
+  "scriptHash": "72c79ce3ccc8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Parses Culler's census A-polynomials (uploads/A_census.tgz, owner-uploaded from homepages.math.uic.edu/~culler/Apolynomials) for 4_1=K2_1, 5_2=K3_2, 6_1=K4_1 (SnapPy identify). Certifies geometric L-degrees 2/3/4 (full 3/4/5 with the abelian (L-1) convention); cross-checks the K2_1 monomial support against the Lean a41Monomials (identical support, global sign differs); Newton reciprocity for all three. Records the 6_1 prediction chain (DT_max = connections = 5) as PREDICTIONS awaiting an independent resurgence count — full-vs-geometric agreement is by construction, not a test. Scope-(a); nothing wired. Beans qou-btvl/qou-rtec.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "knots": {
+      "4_1": {
+        "census_name": "K2_1",
+        "n_monomials": 7,
+        "geom_L_degree": 2,
+        "full_L_degree": 3,
+        "reciprocal_symmetric": true,
+        "support": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            1
+          ]
+        ]
+      },
+      "5_2": {
+        "census_name": "K3_2",
+        "n_monomials": 12,
+        "geom_L_degree": 3,
+        "full_L_degree": 4,
+        "reciprocal_symmetric": true,
+        "support": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            14,
+            3
+          ]
+        ]
+      },
+      "6_1": {
+        "census_name": "K4_1",
+        "n_monomials": 21,
+        "geom_L_degree": 4,
+        "full_L_degree": 5,
+        "reciprocal_symmetric": true,
+        "support": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            12,
+            3
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    "provenance": {
+      "tarball": "uploads/A_census.tgz (owner commit 08c56228c)",
+      "database": "Culler A-polynomial census (PHCpack+FFT), homepages.math.uic.edu/~culler/Apolynomials",
+      "identification": "snappy identify: 4_1=m004=K2_1, 5_2=m015=K3_2, 6_1=m032=K4_1",
+      "sign_convention": "database global unit differs from the corpus a41 transcription; support/hull identical"
+    },
+    "six_one_predictions": {
+      "full_L_degree": 5,
+      "geometric_L_degree": 4,
+      "r1_predicted_connections": 5,
+      "dtmax_predicted": 5,
+      "status": "PREDICTIONS — the full=geom+1 agreement is by construction; the third-knot TEST needs an independent resurgence DT count or ptolemy connection count for 6_1"
+    }
+  }
+}

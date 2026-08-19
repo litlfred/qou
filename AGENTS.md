@@ -1616,6 +1616,7 @@ When a user request arrives, route to the right skill(s):
 | "separate categorical / split statement" | `local/critical-path-analysis` + `local/content-validation` | collaborator |
 | "simulator / simulation / interactive viz" | `local/simulator` + `local/content-validation` | collaborator |
 | "set up lean / install lean / lean not working" | `local/lean-environment-setup` | collaborator |
+| "egress / 403 / blocked host / firewalled / can't download / data server unreachable / clone mirror" | `local/sandbox-egress` (route table: github clone, wheel-bundled data, env overrides) | reader |
 | "generate docs / build docs / schema docs" | `local/docs-generation` | reader |
 | "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
 | "latex build cache / slow latex build / faster pdf / install tex / get a TeX engine / quick feature build / changed-chapter preview / why isn't the preamble or diagram cached" | `local/latex-build-cache` (findings: caches that failed + what works — install-tex, feature-build) | collaborator |

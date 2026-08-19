@@ -1,5 +1,6 @@
 import Mathlib.Order.WellFounded
 import Mathlib.Data.Finset.Insert
+import Mathlib.Tactic.NoncommRing
 import UGB.GrobnerShirshov.Elem
 
 /-!
@@ -960,5 +961,114 @@ theorem noQuasiZerosFree_iff_nonempty {G : Type u} {k : Type v} [Ring k]
     exact one_ne_zero h0
   · rintro ⟨g⟩
     exact noQuasiZerosFree_of_generator g
+
+/-! ## §6  Reduction respects `CoeffEq`, and negation
+
+Two facts the family theorems keep needing, and one obstacle worth recording.
+
+`AlgElement` is a representation: `CoeffEq` is the equality that means anything.
+But `MultiStepReduction.refl` is **syntactic**, so a coefficientwise-equal source
+cannot simply be substituted into a chain — `MultiStepReduction f' f` does not
+follow from `CoeffEq f' f`. The way through is `congr_source` below, whose
+conclusion is a *disjunction*: either the chain restarts at `f'`, or `f'` was
+already coefficientwise the chain's endpoint. The `refl` case lands in the second
+disjunct, which is exactly what the syntactic constructor costs.
+
+With that, negating a rule of a composition — the `§4j` situation, where the
+Yang–Baxter and Bokut–Shiao relations at `j = i − 1` are exact negatives with
+opposite leading coefficients — carries a resolution across for free. -/
+
+/-- A step only reads its source through `coeff`, so the source may be replaced
+by any coefficientwise-equal element. -/
+theorem SingleStepReduction.of_coeffEq_left {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    {f g f' : AlgElement G k} (hs : SingleStepReduction ord sys f g)
+    (hf : AlgElement.CoeffEq f' f) : SingleStepReduction ord sys f' g := by
+  obtain ⟨r, hr, a, b, c, hne, hc, hg⟩ := hs.exists_witness
+  refine ⟨r, hr, a, b, c, ?_, ?_, ?_⟩
+  · rw [hf]; exact hne
+  · rw [hf]; exact hc
+  · intro m
+    rw [hg m]
+    simp only [AlgElement.sub_coeff, hf m]
+
+/-- Negating a step negates both ends: run the same rule with `-c`. -/
+theorem SingleStepReduction.neg {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f g : AlgElement G k}
+    (hs : SingleStepReduction ord sys f g) :
+    SingleStepReduction ord sys (AlgElement.neg f) (AlgElement.neg g) := by
+  obtain ⟨r, hr, a, b, c, hne, hc, hg⟩ := hs.exists_witness
+  refine ⟨r, hr, a, b, -c, ?_, ?_, ?_⟩
+  · simpa using hne
+  · show -c * r.lc ord = -(f.coeff _)
+    rw [neg_mul, hc]
+  · intro m
+    simp only [AlgElement.neg_coeff]
+    rw [hg m]
+    simp only [AlgElement.sub_coeff, AlgElement.smul_coeff, AlgElement.neg_coeff]
+    noncomm_ring
+
+theorem MultiStepReduction.neg {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f g : AlgElement G k}
+    (hm : MultiStepReduction ord sys f g) :
+    MultiStepReduction ord sys (AlgElement.neg f) (AlgElement.neg g) := by
+  induction hm with
+  | refl => exact MultiStepReduction.refl _
+  | step _ hlast ih => exact ih.step hlast.neg
+
+/-- **The source of a chain may be replaced up to `CoeffEq`** — or the
+replacement was already the endpoint. The disjunction is forced by `refl` being
+a syntactic constructor; it is not a weakness of the proof. -/
+theorem MultiStepReduction.congr_source {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    {f nf f' : AlgElement G k} (hm : MultiStepReduction ord sys f nf)
+    (hf : AlgElement.CoeffEq f' f) :
+    MultiStepReduction ord sys f' nf ∨ AlgElement.CoeffEq f' nf := by
+  induction hm with
+  | refl => exact Or.inr hf
+  | step _ hlast ih =>
+    rcases ih with hm' | hce
+    · exact Or.inl (hm'.step hlast)
+    · exact Or.inl ((MultiStepReduction.refl _).step (hlast.of_coeffEq_left hce))
+
+/-- Reducing to zero transfers along `CoeffEq`. -/
+theorem reducesToZero_congr {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f f' : AlgElement G k}
+    (h : ∃ nf, ReducesToNF ord sys f nf ∧ nf.isZero)
+    (hf : AlgElement.CoeffEq f' f) :
+    ∃ nf, ReducesToNF ord sys f' nf ∧ nf.isZero := by
+  obtain ⟨nf, ⟨hred, hnorm⟩, hzero⟩ := h
+  rcases hred.congr_source hf with hm | hce
+  · exact ⟨nf, ⟨hm, hnorm⟩, hzero⟩
+  · exact reducesToNF_self_of_isZero (fun m => (hce m).trans (hzero m))
+
+/-- …and along negation. -/
+theorem reducesToZero_neg {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f f' : AlgElement G k}
+    (h : ∃ nf, ReducesToNF ord sys f nf ∧ nf.isZero)
+    (hf : ∀ m, f'.coeff m = -(f.coeff m)) :
+    ∃ nf, ReducesToNF ord sys f' nf ∧ nf.isZero := by
+  obtain ⟨nf, ⟨hred, hnorm⟩, hzero⟩ := h
+  refine reducesToZero_congr (f := AlgElement.neg f) ⟨AlgElement.neg nf, ⟨hred.neg, ?_⟩, ?_⟩ hf
+  · intro r hr m hm
+    exact hnorm r hr m (by simpa using hm)
+  · intro m; simp [hzero m]
+
+/-- **Negating either rule of an overlap composition negates its S-polynomial.**
+
+`spoly = lc₂ • (rule₁ · right) − lc₁ • (left · rule₂)`, and negating a rule flips
+both its relation and its leading coefficient — so the two occurrences of the
+sign cancel in one term and reinforce in the other, giving `−spoly` either way.
+-/
+theorem OverlapComposition.spoly_coeff_neg_rule₁ {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} (oc oc' : OverlapComposition G k ord)
+    (hrel : ∀ w, oc'.rule₁.relation.coeff w = -(oc.rule₁.relation.coeff w))
+    (hlc : oc'.rule₁.lc ord = -(oc.rule₁.lc ord))
+    (hr₂ : oc'.rule₂ = oc.rule₂) (hl : oc'.left = oc.left) (hr : oc'.right = oc.right)
+    (m : Monomial G) :
+    oc'.spoly.coeff m = -(oc.spoly.coeff m) := by
+  simp only [OverlapComposition.spoly, AlgElement.sub_coeff, AlgElement.smul_coeff]
+  rw [hr₂, hl, hr, hlc, AlgElement.contextMul_coeff_neg [] oc.right hrel m]
+  noncomm_ring
 
 end UGB.GrobnerShirshov

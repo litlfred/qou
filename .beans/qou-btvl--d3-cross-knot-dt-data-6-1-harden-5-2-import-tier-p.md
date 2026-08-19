@@ -19,3 +19,26 @@ snappy.ptolemy_variety(2,'all').retrieve_solutions() needs
 ptolemy.unhyperbolic.org, which 403s through the proxy, and local
 Groebner (magma/sage) is unavailable. A network-open or sage-equipped
 environment can close it in minutes with the same probe pattern.
+
+## 2026-08-15 update — #connections CERTIFIED after all (egress workaround)
+
+The ptolemy-DB-firewalled handoff above is RESOLVED for 4₁/5₂: per the
+owner's egress hint, the snappy WHEEL itself ships the certified Magma
+primary-decomposition outputs (ptolemy/testing_files). Probe
+dt_crossknot_connection_count_certified_probe.py: 4₁ = 2 irreducible
+(one degree-2 orbit, x²−x+1 = ℚ(√−3)) + 1 abelian = 3; 5₂ = 3 (one
+degree-3 orbit, x³+2x²+3x+1, the trace-field cubic) + 1 = 4. R1's
+counts are now locally computed, not literature-recalled. Residual:
+6₁ has no bundled data — the dtMax=recursionOrder+1 third-knot test
+still needs the DB or magma. Pattern documented in the new
+.claude/skills/local/sandbox-egress.md skill.
+
+## 2026-08-15 THIRD-KNOT A-POLY LEG CERTIFIED (owner upload 08c56228)
+
+Culler census tarball (uploads/A_census.tgz): 6_1 = K4_1 (snappy
+identify) has geometric L-degree 4, full 5; 4_1/5_2 re-certified (2/3
+geom; the K2_1 support EQUALS the Lean a41Monomials). Probe:
+apoly_census_ldegree_certification_probe.py, 3/3. The 6_1 prediction
+chain (DT_max = #connections = 5) is recorded as PREDICTION — the
+independent resurgence DT count for 6_1 is still the missing piece of
+the third-knot test (full=geom+1 is by construction, not a test).

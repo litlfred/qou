@@ -1,0 +1,36 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_m3_one_two_relation_closure_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_m3_one_two_relation_closure_probe.py",
+ "commitSha": "9d547fa2a7378b8f1b0b794c3cf035e3af9bd1ce",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv"
+ ],
+ "source": "CGZ arXiv:1712.04887v3; GSWZ arXiv:2412.04241v2 eqn (270); Addenda 27-28 (this repo)",
+ "checks": {
+  "m3_probe_green": true,
+  "mu_star_of_xi_symbols_is_3": true,
+  "no_argument_repeats_three_times": true,
+  "mu_star_3_with_rep_le_2_forces_3_divides_c": true,
+  "one_relation_has_no_solution": true,
+  "two_relation_search_completed_without_cutoff": true,
+  "two_relations_have_no_solution": true,
+  "control_tester_accepts_a_valid_vector": true
+ },
+ "result": {
+  "distinct_relations_containing_z1_or_z2": 1097,
+  "max_in_relation_repetition": 2,
+  "relations_usable_with_c_not_div_3": 0,
+  "special_elements_of_cached": "183 of 1291 field elements (3 of 23 residues)",
+  "one_relation_solutions": 0,
+  "pair_search": {
+   "pairs_examined": 307590,
+   "combos_tested": 2460720,
+   "seconds": 10.3,
+   "solutions": 0
+  }
+ },
+ "scope": "scope-(a): at m = 3 no element-level representative meeting BOTH conditions exists using ONE relation (exhaustive over 1097) or TWO relations sharing a non-special argument (exhaustive over the shared-element pair class). Disjoint pairs are excluded structurally: max in-relation repetition is 2 < 3, so mu* = 3 forces 3 | c and z_2's multiplicity stays 1 mod 3. OPEN and explicitly not searched: three or more relations forming a chain of shared non-special arguments. Says nothing about eps_m as a map, nor about a construction that PINS the roots."
+}

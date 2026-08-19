@@ -1,10 +1,10 @@
 ---
 # qou-auq3
 title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to general n
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-10T02:55:00Z
+updated_at: 2026-08-16T14:02:46Z
 ---
 
 
@@ -786,3 +786,1842 @@ Bokut–Shiao — which is why `Q2 × B120` is 8 steps, not 3.
 
 `AlgElement.contextMul_ofTerms_coeff` and `contextMul_coeff_congr` are already in
 place and are what make each such family mechanical.
+
+## CLAIM 2026-08-15 — §4q, the `Q × R` mirror
+
+`in-progress`, branch `claude/auq3-quad-left-family`. Re-claimed by the agent
+that released it on 2026-08-10; nothing advanced here in between
+(`HeckeCompletion.lean` is unchanged at 1550 lines, §4e–§4p).
+
+Context for the gap: I stepped off to qou-x64l, was away five days, and in that
+time a sibling finished x64l from my pushed branch — `H4GeneratorAction.lean`
+landed verbatim, `H4WordAction.lean` and `H4Cyclicity.lean` completed the route,
+and the eight `MarkovTraceH4Gram*` modules are deleted. A stale claim should not
+block someone who can finish the work, and it didn't. Recorded because the
+claim/report discipline is only worth anything if the misses are written down
+too.
+
+## §4q — the quadratic rule on the **left**, and why it is not §4p's corollary
+
+`CyclicQuadLeft`. Nine rule-level compositions, three steps each, general in `n`.
+
+The two families need **opposite** cyclic-position hypotheses:
+
+    §4p    lm r = u' ++ [σₓ]   other word   σ_y :: u'
+    §4q    lm r = σₓ :: u''    other word   u'' ++ [σ_z]
+
+Both hold for far-commutation and Yang–Baxter. Only §4p's holds for a general
+Bokut–Shiao rule, because `bsWord₂ i' i j = σᵢ₋₁ :: descWord i j` puts the extra
+letter on the **left**. So §4q reaches Bokut–Shiao only at `j = i − 1`, where §4j
+identifies it with Yang–Baxter — and that is not cosmetic: it is exactly why
+`Q2 × B120` is an **eight**-step composition and is *not* covered here. The
+prediction recorded when this bean was released ("holds for far-commutation and
+Yang–Baxter but not for general Bokut–Shiao") is confirmed by the proof needing
+`le_refl` in the Bokut–Shiao instance.
+
+The chain mirrors §4p with the ends swapped: `r` in context `(ε, σ_z)`, then the
+quadratic rule **at `z`** in context `(u'', ε)`, then `r` in empty context on
+`−h` times its own relation. Step 3 needs `h ≠ 0` again.
+
+### One thing that differed from §4p in practice
+
+`simp` normalises `(σₓ :: u'') ++ [σ_z]` to `σₓ :: (u'' ++ [σ_z])`, so the
+word-inequality hypotheses have to be **stated in cons-normal form** and supplied
+in the `Ne.symm` orientation — the filter condition that needs discharging is
+`u'' = <long word>`, not the reverse. Stated the §4p way they are silently
+unused and the coefficient goals stay open. Two of the three `ofTerms_coeff`
+side conditions needed this.
+
+And the `rw`-closes-only-at-reducible-transparency trap struck a third time, in
+`quad_bokutShiao_resolves`: `[σᵢ', σᵢ] ++ [σᵢ']` and `[σᵢ', σᵢ, σᵢ']` need an
+explicit `rfl` after the rewrite.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × far-commutation  5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      ---------------------------
+      proved                  52
+      remaining               40
+
+    inclusion compositions    22   §4m   (all)
+
+That is every 0-, 1- and 3-step composition the `n = 4` confluence witness
+lists. What remains starts at four steps: `Q × B` for general Bokut–Shiao
+(8 steps), then BS × BS and BS × far-commutation at `j₀ ≥ j`, up to the 25-step
+chain.
+
+## Correction — `Q2 × B120` is **4** steps, not 8
+
+The §4q note above says eight. The witness says **four**, and the pattern is
+`3 + (i' − j)`:
+
+    Q1 × B010  j = i'      3 steps   (covered by §4q)
+    Q2 × B121  j = i'      3
+    Q3 × B232  j = i'      3
+    Q2 × B120  i' − j = 1  4
+    Q3 × B231  i' − j = 1  4
+    Q3 × B230  i' − j = 2  5
+
+So `Q × B` beyond §4q is **three** compositions, not a large block, and it is a
+family with a *variable-length* chain — an induction on `i' − j`, not a fixed
+three-step script. The qualitative claim §4q makes (Bokut–Shiao only fits at
+`j = i − 1`) stands; the number attached to it was wrong.
+
+## Where the remaining 40 actually are
+
+    B × B   14        Y × B    6        B × Y    6
+    B × F    5        Q × B    3        Y × Y    3
+    Y × F    1        F × Y    1        F × B    1
+
+**Seventeen of the forty involve a Yang–Baxter rule**, and §4j makes every such
+rule the exact negative of a Bokut–Shiao rule at `j = i − 1`, with the opposite
+leading coefficient. So they are not independent work — they are the same
+compositions with a sign.
+
+Two ways to cash that in, and it is worth recording that the *first* one already
+suffices:
+
+1. **Abstraction over the rule.** §4o/§4p/§4q are stated for an abstract
+   two-term rule and instantiated three times each; the Yang–Baxter instance
+   costs ~10 lines and no new mathematics. Any B-family theorem written the same
+   way gets its Y-variants the same way.
+2. **§6, the negation transfer** (below) — which makes them free rather than
+   cheap, and is general.
+
+## §6 — reduction respects `CoeffEq`, and negation (`Basic.lean`)
+
+    SingleStepReduction.of_coeffEq_left      source may be swapped up to CoeffEq
+    SingleStepReduction.neg                  run the same rule with −c
+    MultiStepReduction.neg
+    MultiStepReduction.congr_source          the disjunctive form — see below
+    reducesToZero_congr / reducesToZero_neg
+    OverlapComposition.spoly_coeff_neg_rule₁ negating a rule negates the spoly
+    AlgElement.contextMul_coeff_neg          (`Elem.lean`)
+
+### The obstacle, which is structural and not a proof weakness
+
+`AlgElement` is a representation and `CoeffEq` is the equality that means
+anything — but **`MultiStepReduction.refl` is syntactic**. So
+`MultiStepReduction f' f` does *not* follow from `CoeffEq f' f`, and a
+coefficientwise-equal source cannot simply be substituted into a chain.
+
+`congr_source` gets through by concluding a **disjunction**:
+
+    MultiStepReduction ord sys f' nf  ∨  CoeffEq f' nf
+
+The `refl` case lands in the second disjunct; the `step` case either extends a
+chain that already restarted at `f'`, or — when the previous stage only gave
+`CoeffEq f' g` — restarts it with `of_coeffEq_left` on the last step. That
+disjunction is exactly what the syntactic constructor costs, and
+`reducesToZero_congr` absorbs it because a `CoeffEq` to a zero endpoint is
+itself a resolution.
+
+### Two tactic notes
+
+`ring` is the wrong tactic here: `k` is only a `Ring`, and `ring` needs
+commutativity, so it reports "made no progress" on goals that are true. The
+import is `Mathlib.Tactic.NoncommRing` and the tactic is `noncomm_ring`. Second,
+`show` cannot open `OverlapComposition.spoly` — it is not definitionally
+transparent enough — so the S-polynomial has to be unfolded with
+`simp only [OverlapComposition.spoly, …]` instead.
+
+### QOU build check on §6 — red, and not from this change
+
+`Basic.lean` is reached by `QOU/PhotonThreading.lean`, so §6 forced a full QOU
+rebuild. It **failed**, on `QOU/SchurWeyl/QJucysMurphy.lean`.
+
+Not caused here. That module's import closure is six QOU modules plus Mathlib
+and contains **no UGB module at all**, while this branch's diff is one bean plus
+three UGB files. A module that does not import a changed file compiles
+identically, so the failure is main's.
+
+Filed as **qou-yzl8** rather than fixed: `QJucysMurphy.lean` belongs to
+`qou-ck0g`, in-progress under another session. Six `ring`-on-a-noncommutative-
+algebra sites — the same trap §6 hit twenty minutes earlier, which is why it was
+recognisable on sight. UGB itself is green (1212 jobs).
+
+## §4r — the braid self-overlap `σᵢσᵢ₋₁σᵢσᵢ₋₁σᵢ`: setup landed, chain derived
+
+The largest single block left: **twelve** of the forty. Three words carry it
+(`10101`, `21212`, `32323`) and each carries **two** rules with that leading
+monomial (§4j), so four ordered rule-pairs per word — `Y×Y`, `Y×B`, `B×Y`, `B×B`,
+three of each. Stated for an abstract pair `r₁, r₂` it covers all twelve at once
+and generally in `n`. They are twelve of the thirteen 8-step compositions in the
+witness; the thirteenth (`B230 × F31`) is unrelated.
+
+### Landed
+
+`BraidSelfOverlap.oc` and **`oc_spoly_coeff`** — axiom-clean, UGB green
+(1212 jobs). The S-polynomial is **two terms**, and the leading coefficients
+enter only through their product, because the ambient word is reached from both
+sides and cancels:
+
+    spoly = c₁c₂ · ( σᵢσᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁  −  σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁σᵢ )
+
+### The chain, derived from the confluence engine
+
+Eight steps. `I = σᵢ`, `J = σᵢ₋₁`, `K = c₁c₂`:
+
+| # | target | rule | context | coefficient |
+|---|---|---|---|---|
+| 1 | `IJJIJ` | `Q_{i-1}` | `(I ∣ IJ)` | `K` |
+| 2 | `JIJJI` | `Q_{i-1}` | `(JI ∣ I)` | `−K` |
+| 3 | `IJIJ` | `r₁` | `(ε ∣ J)` | `K·h·c₁` |
+| 4 | `JIJI` | `r₁` | `(J ∣ ε)` | `−K·h·c₁` |
+| 5 | `JIJJ` | `Q_{i-1}` | `(JI ∣ ε)` | `K·h` |
+| 6 | `JJIJ` | `Q_{i-1}` | `(ε ∣ IJ)` | `−K·h` |
+| 7 | `IIJ` | `Q_i` | `(ε ∣ J)` | `K` |
+| 8 | `JII` | `Q_i` | `(J ∣ ε)` | `−K` |
+
+and the intermediate elements, which is the part worth having written down:
+
+    F₀ = K·IJJIJ − K·JIJJI
+    F₁ = K·IIJ + Kh·IJIJ − K·JIJJI
+    F₂ = K·IIJ + Kh·IJIJ − K·JII − Kh·JIJI
+    F₃ = K·IIJ − K·JII + Kh·JIJJ − Kh·JIJI
+    F₄ = K·IIJ − K·JII + Kh·JIJJ − Kh·JJIJ
+    F₅ = K·IIJ − K·JII + Kh·JI + Kh²·JIJ − Kh·JJIJ
+    F₆ = K·IIJ − K·JII + Kh·JI − Kh·IJ
+    F₇ = K·J + Kh·JI − K·JII
+    F₈ = 0
+
+**No intermediate exceeds five terms**, and `h²` appears in exactly one (`F₅`)
+before cancelling at step 6. Four applications of the quadratic rule at `i − 1`,
+two of the braid rule itself, two of the quadratic rule at `i`.
+
+### Two hypotheses the chain forces
+
+* **`c₁ · c₁ = 1`** for steps 3 and 4. The step coefficient must satisfy
+  `c₃ · lc(r₁) = K·h` with `lc(r₁) = c₁`, and there is no division in a `Ring` —
+  so `c₃ = K·h·c₁` works only when `c₁² = 1`. Both instances have `c = ±1`, so
+  this costs nothing, but it has to be a hypothesis rather than an afterthought.
+* **`h ≠ 0`** for steps 3–6, as in §4p and §4q.
+
+### Why the chain is recorded rather than the steps written
+
+Eight `SingleStepReduction`s against five-term intermediates is roughly 2.5× §4p,
+and generating them inline made each element appear three times (source, target,
+coefficient lemma) — unreadable. The next pass should name `F₀ … F₈` as
+definitions first and generate against those. The table above is the
+specification; it came from the engine, so it is a check on the Lean rather than
+a guess the Lean would have to discover.
+
+### §4r complete — the chain and all four instances
+
+`chainStep1 … chainStep8`, `oc_reduces_to_zero`, and the four instances
+`yb_yb_resolves`, `yb_bs_resolves`, `bs_yb_resolves`, `bs_bs_resolves`.
+UGB green (1212 jobs), warning-free, axiom-clean.
+
+`reducesToZero_congr` (§6) makes the last join — the chain runs on the explicit
+element `F₀`, and `oc_spoly_coeff` says the S-polynomial is coefficientwise `F₀`.
+Built for the negation transfer; this is where it first pays, and it is why the
+chain can be stated on explicit elements instead of on `oc.spoly`.
+
+**Three build facts, none visible from the statement:**
+
+* **Heartbeats are budgeted per declaration.** Eight steps against five-term
+  elements do not fit one 200 000 budget — the single theorem timed out at
+  `elaborator` and again at `whnf`. Split into eight top-level theorems, each
+  fits comfortably. Same lesson as the H₄ generator tables; second time it has
+  cost a build.
+* **Steps 3 and 4 leave goals `ring` cannot close**, because they hold only
+  modulo `c₁ * c₁ = 1`: after `ring_nf` the terms carry `c₁ ^ 3`. Derive
+  `hc3 : c₁ ^ 3 = c₁` and rewrite before the final `ring`. `linear_combination`
+  is the natural tactic and is **not in scope in this file** — `Mathlib.Tactic`
+  reaches `ring` but not it.
+* **`F₀` does not mention `hp`** (it carries no `h`), so `variable`-driven
+  binders gave it a different signature from `F₁ … F₇` and every call site
+  mismatched. Made explicit and named `_hp`.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × far-commutation  5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      ---------------------------
+      proved                  64
+      remaining               28
+
+    inclusion compositions    22   §4m   (all)
+
+## Build-cache note (2026-08-15)
+
+Checked the cache mechanism after being pointed at it. `lake-cache/qou-v4-24-0`
+is restored automatically on SessionStart by
+`scripts/lean-cache-restore.sh` — which is **why** the UGB rebuilds in this
+session cost 12–16 s rather than a Mathlib build. Nothing here needed reseeding
+for that reason.
+
+Two things worth recording:
+
+* `scripts/lean-olean-cache-seed.sh` **excludes paper oleans by default**
+  (`SEED_PAPER=1` opts in) precisely because they go stale the moment Mathlib is
+  rebuilt. So seeding this branch's UGB oleans would be wrong — they are branch
+  state, not main.
+* The expensive thing this session did that a sibling would repeat is **not**
+  UGB: it is the **full QOU rebuild** (5407 modules, ~40 min), triggered because
+  `QOU/PhotonThreading.lean` imports UGB, so any edit to
+  `UGB/GrobnerShirshov/Basic.lean` or `Elem.lean` invalidates the whole QOU
+  tree. §6 touched both. Worth knowing before editing UGB's lower layers:
+  a leaf-only change (`HeckeCompletion.lean`) costs 13 s, a `Basic.lean` change
+  costs ~40 min downstream.
+
+A production reseed is a force-push to a shared branch, so it is not something
+to do unilaterally mid-arc — flagged to the owner rather than done.
+
+## §4s — Bokut–Shiao against far-commutation at the **same** index (3 compositions)
+
+The other neighbour of §4o. §4o puts the far-commutation rule one index *below*
+the Bokut–Shiao rule's bottom (`j₀ + 1 = j`) and resolves in one step, because
+the S-polynomial **is** the Bokut–Shiao rule at `j₀`. Here the two rules share
+their bottom index, and that changes the shape completely: `descWord i j` already
+ends in `σⱼ`, so both surviving terms end in `σⱼσⱼ` and the quadratic rule has to
+fire twice before the family's own rules can.
+
+Writing `jp` for `j + 1`, so `descWord i j = descWord i jp ++ [σⱼ]`:
+
+    spoly = descWord i jp ++ [σⱼ, σⱼ, σᵢ]  −  bsWord₂ i' i jp ++ [σⱼ, σⱼ]
+
+| # | target | rule | context | coefficient |
+|---|---|---|---|---|
+| 1 | first term | `Q_j` | `(descWord i jp ∣ σᵢ)` | `1` |
+| 2 | second term | `Q_j` | `(bsWord₂ i' i jp ∣ ε)` | `−1` |
+| 3 | `bsWord₁ i j` | Bokut–Shiao at `j` | `(ε ∣ ε)` | `h` |
+| 4 | `bsWord₁ i jp` | Bokut–Shiao at `jp` | `(ε ∣ ε)` | `1` |
+
+so the `h` term the two squares leave behind is the Bokut–Shiao relation at `j`
+and the constant term is the one at `jp` — §4o's downward self-completion again,
+reached through the quadratic rule instead of directly. General in `n`;
+sorry-free (`propext, Classical.choice, Quot.sound` only).
+
+**The side condition is not an extra hypothesis.** Step 4 needs
+`bokutShiaoRelation i' i jp` to *be* a rule, i.e. `j + 1 ≤ i − 1`, which is
+exactly the condition for `σᵢσⱼ` to be a far-commutation word in the first place.
+At `j = i − 1` there is no composition here to resolve — `σᵢσᵢ₋₁` is a braid
+word, and that case is §4r's. So `resolves` takes the far-commutation side
+condition `j + 1 < i` and nothing else.
+
+**What made it cheap.** Every word in the chain is `descWord i jp` prefixed or
+suffixed, and `descWord_cons` says `descWord i jp` begins with `σᵢ` while every
+`bsWord₂`-side word begins with `σᵢ₋₁`. One `head_ne` lemma (plus its symmetric
+form) discharges every distinctness obligation except a single length count.
+That is why this is 4 steps of ~15 lines each and §4r was 8 of ~25: §4r's words
+are five explicit letters with no structural handle.
+
+Four steps, four declarations — the per-declaration heartbeat budget again,
+applied pre-emptively this time rather than after a timeout.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × far-comm (j₀+1=j) 5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      BS × far-comm (same j)   3   §4s   general in n
+      ---------------------------
+      proved                  67
+      remaining               25
+
+    inclusion compositions    22   §4m   (all)
+
+Re-derived independently from `hecke-gs-confluence-n4.witness.json` by
+classifying all 92 records against the sections rather than by adding up what
+each section claims — the two agree, including the fact that §4q reaches
+Bokut–Shiao only at `j = i − 1` (3 of the 12 `Q × ?` shapes stay open).
+
+**The remaining 25, by chain length** (all from the witness):
+
+    4–5 steps    Q × B at j < i−1                         3    steps 3 + (i′−j)
+    6–8 steps    BS/YB × F and F × BS/YB at j₀ ≢ j        5
+    9–25 steps   BS/YB × BS/YB                           17
+
+The 3 `Q × B` are the cheapest thing left and the natural next target: they are
+§4q's missing instances, and §4q already says why they cost `3 + (i′−j)` rather
+than 3 — `bsWord₂` puts its extra letter on the left, so the `u'' ++ [σ_z]`
+hypothesis fails and the chain has to walk `descWord i j` down one letter at a
+time. Variable-length in `i′−j`, so it needs induction over the descending run,
+which is the first place in this arc a fixed script will not do.
+
+## §4t — the quadratic rule against a **general** Bokut–Shiao rule (3 compositions)
+
+§4q's missing instances, and the first family in this arc whose chain length is
+**not constant**. §4q reaches the quadratic-on-the-left composition for
+far-commutation, Yang–Baxter and Bokut–Shiao at `j = i − 1`, and says exactly why
+the general Bokut–Shiao rule is not among them: `bsWord₂ i' i j = σᵢ₋₁ :: descWord i j`
+puts the extra letter on the **left**, so for `j < i − 1` there is no `σ_z`
+closing the cycle. That prediction — "8 steps rather than 3" in §4q's prose — was
+half right; the engine says `3 + |v|` where `v = descWord i−2 j`, i.e. `4, 4, 5`
+at `n = 4`.
+
+Writing `v` for `descWord i−2 j`, so `descWord i' j = σᵢ₋₁ :: v`:
+
+    spoly = σᵢ σᵢ₋₁ σᵢ σᵢ₋₁ v  −  h · bsWord₁ i j  −  σᵢ₋₁ v σᵢ
+
+| # | target | rule | context | coefficient |
+|---|---|---|---|---|
+| 1 | `σᵢσᵢ₋₁σᵢσᵢ₋₁v` | Yang–Baxter | `(ε ∣ σᵢ₋₁ v)` | `−1` |
+| 2 | `σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁v` | `Q_{i−1}` | `(σᵢ₋₁σᵢ ∣ v)` | `1` |
+| 3 | `bsWord₁ i j` | Bokut–Shiao at `j` | `(ε ∣ ε)` | `−h` |
+| 4… | — | far-commutation | walking | `1` |
+
+After three fixed steps what is left is `σᵢ₋₁ σᵢ v − σᵢ₋₁ v σᵢ`: one generator on
+the wrong side of `v`. Every letter of `v` has index at most `i − 2`, so each is
+a far-commutation partner of `σᵢ`, and the tail of the chain walks `σᵢ` across
+`v` one letter at a time until the two terms coincide and cancel.
+
+**`farComm_transport` is the reusable part.** Stated for an arbitrary word `w`
+and an arbitrary left context `a` rather than for `descWord`:
+
+    (∀ y ∈ w, y.index + 1 < x)  →
+      c·(a σₓ w) − c·(a w σₓ)  →*  (coefficientwise zero)   in |w| steps
+
+The induction is on `w`, and the left context has to be a parameter because it
+grows: the letter just passed becomes part of the context for the next step. The
+17 open `B × B` compositions all end in the same kind of tail, so this should pay
+again rather than being one-family scaffolding.
+
+Two things that made it go in one build:
+
+* **State the stages over `v`, not over `descWord i' j`.** With every word an
+  explicit cons-list over one shared `v`, all but one distinctness obligation is
+  a length count on `List.length_cons` / `List.length_append`; the exception is
+  `bsWord₁` against `bsWord₂`, same length, separated by the first letter.
+* **`obtain ⟨yi⟩ := y` in the induction step.** `farCommRelation x y.index` has
+  leading monomial `[σₓ, σ_{y.index}]`, which is *defeq* but not *syntactically*
+  `[σₓ, y]` — enough to make `split_ifs` treat one word as two. Destructing the
+  generator first makes the letter literally `⟨yi⟩` everywhere.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × far-comm (j₀+1=j) 5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      BS × far-comm (same j)   3   §4s   general in n
+      quadratic × general BS   3   §4t   general in n
+      ---------------------------
+      proved                  70
+      remaining               22
+
+    inclusion compositions    22   §4m   (all)
+
+**The remaining 22**, re-derived from the witness:
+
+    6–8 steps    BS/YB × F at j₀ < j, and F × BS/YB      5
+    9–25 steps   BS/YB × BS/YB                          17
+
+Next: the 5 mixed far-commutation shapes at `j₀ < j` (6–8 steps). They are the
+same "letter on the wrong side of a descending run" situation §4t just solved, so
+`farComm_transport` should carry most of them; `F × BS/YB` is the one with the
+far-commutation rule on the *left*, which is a different overlap and may need the
+mirror transport (moving a letter leftwards). After that, the 17 `B × B`, whose
+25-step worst case is the largest single obligation in the file.
+
+## §4u — far-commutation on the **left**, against Bokut–Shiao or Yang–Baxter (2)
+
+§4o, §4s and §4t all put the far-commutation rule on the *right* of the
+composition. This is the other side: `farCommRelation x m` leads on `σₓσ_m`, a
+Bokut–Shiao or Yang–Baxter rule leads on a word beginning with `σ_m`, and they
+overlap in that letter. Writing the second rule as `c·(σ_m :: u'') − c·w₂`:
+
+    spoly = c · (σₓ :: w₂)  −  c · (σ_m :: σₓ :: u'')
+
+`m + 1 < x` is the far-commutation side condition, and **no letter of either
+word has index above `m`** — so `σₓ` commutes with everything in sight and is
+simply a passenger in both terms. Two transports and one rule application:
+
+| phase | term | steps |
+|---|---|---|
+| 1 | `σₓ :: w₂` → `w₂ ++ [σₓ]` | `\|w₂\|` |
+| 2 | `σ_m :: σₓ :: u''` → `σ_m :: (u'' ++ [σₓ])` | `\|u''\|` |
+| 3 | the rule, in the context `(ε ∣ σₓ)` | `1` |
+
+After phase 2 the second term is the rule's leading monomial with `σₓ` appended,
+so one application turns it into `w₂ ++ [σₓ]` and the terms cancel. Both `n = 4`
+instances are 6 steps. Stated for an abstract rule in that two-word shape, so
+Bokut–Shiao and Yang–Baxter are two instantiations — §4j's doubling again.
+
+**The transport needed a bystander, and needed it in both list slots.**
+`farComm_transport` (§4t) moves a generator in an element whose *other* term is
+the transport's own destination, so the two cancel at the end. Here the other
+term is a bystander that must be carried untouched, and the step's
+"targeted coefficient is non-zero" condition needs it told apart from every
+intermediate word. Hence `farComm_transport_snd` / `_fst` — the same induction
+with the bystander in the second and the first slot.
+
+Both slots are genuinely required and this is not an accident of presentation:
+each phase transports a *different* term, so whichever slot phase 1 leaves the
+moving term in, phase 2 needs the other. `MultiStepReduction` composes only up to
+syntactic equality of the joining element (`refl` is the constructor), so the
+list order cannot be permuted mid-chain. §6 has `SingleStepReduction.of_coeffEq_left`
+and a disjunctive `MultiStepReduction.congr_source` but no target-side twin, and
+adding one would not have helped: a `refl` run has nothing to retarget.
+
+The collision hypothesis is phrased over splittings —
+`∀ u v, u ++ v = w → p ≠ a ++ (u ++ (σₓ :: v))` — because that enumerates exactly
+the words the run passes through. It specialises cleanly under the induction
+(prepend the crossed letter to `u`) and at both call sites it is discharged by a
+first-letter comparison.
+
+Two build notes:
+
+* **`simp` normalises `(q :: t) ++ [σₓ]` to `q :: (t ++ [σₓ])`**, so a
+  distinctness hypothesis stated in the first form is silently unused and the
+  goal survives. Same lesson as the §4r word-inequality one; state such
+  hypotheses in cons-normal form.
+* **`omega` will not reduce `(⟨m⟩ : HeckeGen n).index.val` to `m.val`.** It is
+  definitional, but omega's preprocessing does not do projection-of-constructor,
+  so every such goal needs a `show m.val ≤ …` first. Cost three separate errors
+  in one build.
+* **Implicit arguments behind a `refine` hole**: `q` and `t` appear only in
+  `hrel`, which was left as `?_`, so they could not be inferred and the whole
+  `refine` failed to unify. Pass them by name.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × far-comm (j₀+1=j) 5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      BS × far-comm (same j)   3   §4s   general in n
+      quadratic × general BS   3   §4t   general in n
+      far-comm × BS/YB         2   §4u   general in n
+      ---------------------------
+      proved                  72
+      remaining               20
+
+    inclusion compositions    22   §4m   (all)
+
+**The remaining 20:**
+
+    3    BS/YB × F with j₀ neither j nor j−1     6, 6, 8 steps
+    17   BS/YB × BS/YB                           9 … 25 steps
+
+The 3 are two different situations, and neither is §4s or §4o:
+
+* `j₀ + 1 < j` (Y23×F30, B232×F30) — `σ_{j₀}` is *below* the whole descending
+  run, so it commutes past all of it. This is a transport again, but the
+  **mirror** one: the small letter moves *left* through big ones, where §4t/§4u
+  move a big letter right through small ones. Same rule, opposite role in it.
+  It also needs a right context, which neither current transport carries.
+* `j < j₀` (B230×F31) — `σ_{j₀}` lands *inside* the run's index range, so it does
+  not commute past `σ_{j₀±1}`. The engine's chain shows why: the tail of the
+  first term is `descWord j₀ j ++ [σ_{j₀}] = bsWord₁ j₀ j`, so the Bokut–Shiao
+  rule at the *inner* index fires first and the family is genuinely nested.
+
+So the honest next step is the mirror transport (with a right context), which
+closes 2 of the 3 and is also what the long `B × B` tails will want; `j < j₀` is
+its own small family.
+
+## §4v — Bokut–Shiao / Yang–Baxter against far-commutation **below** the run (2)
+
+The third regime of `BS/YB × farCommRelation i j₀`, and with it the
+far-commutation block is finished bar one composition. The three regimes by where
+`j₀` sits relative to the run `descWord i j`:
+
+    j₀ + 1 = j     §4o   1 step    the S-polynomial *is* the rule one index lower
+    j₀ = j         §4s   4 steps   a square at each end
+    j₀ + 1 < j     §4v   6 steps   σ_{j₀} is below the run and commutes past it
+    j < j₀         open  8 steps   σ_{j₀} lands *inside* the run's index range
+
+For `j₀ + 1 < j` every letter of the run has index at least `j > j₀ + 1`, so the
+stray `σ_{j₀}` in each term of
+
+    spoly = c · (descWord i j ++ [σ_{j₀}, σᵢ])  −  c · (w₂ ++ [σ_{j₀}])
+
+commutes all the way to the front. Two transports (`|descWord i j|` and `|w₂|`
+steps) then one application of the rule in the context `(σ_{j₀} ∣ ε)`, and the
+terms cancel. Every side condition in the whole section reduces to two letter
+inequalities, `q ≠ σᵢ` and `q ≠ σ_{j₀}`, where `q` is the first letter of the
+rule's other word.
+
+**The mirror transport is a genuinely different lemma.** §4t and §4u move a
+*big* generator rightwards through small ones; §4v moves a *small* generator
+leftwards through big ones. The rewrite is the same rule `σ_aσ_b → σ_bσ_a`, but
+the moving letter is the second factor of the leading monomial instead of the
+first, so the induction recurses at the other end of the word, appends its step
+with `MultiStepReduction.step` rather than `.head`, and needs a **right** context
+that neither earlier transport carries.
+
+**It also fixes §4u's list-slot duplication.** `farComm_transport_left` puts the
+moving term at an arbitrary position `L₁ ++ (·) :: L₂` of the `ofTerms` list, so
+one lemma serves both phases where §4u needed `_snd` and `_fst`. The enabler is
+`ofTerms_coeff_mid`: the coefficient of a singled-out term when no other term
+carries its word, proved by `List.filter_eq_nil_iff` on the two flanking lists.
+The step's `CoeffEq` goal then goes through unchanged — after `List.filter_append`
+and `List.sum_append` the two flanking sums are atoms and `ring` closes over
+them. **If the `B × B` block needs a transport, use this form, not §4u's.**
+
+Two build notes:
+
+* `intro u v _` discarded the splitting hypothesis in one collision proof, and
+  the `u = []` branch genuinely needs it — it is what says the remaining word is
+  the bystander's. Cost one error; the fix is `intro u v huv` and `subst`.
+* `rw` closes by `rfl` only at *reducible* transparency, so
+  `rw [yangBaxterRelation_lm …]` does not finish `[σᵢ,σᵢ₋₁,σᵢ] = [σᵢ,σᵢ₋₁] ++ [σᵢ]`.
+  Fifth time this has come up in this arc.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × F (j₀+1=j)       5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      BS × F (j₀=j)            3   §4s   general in n
+      quadratic × general BS   3   §4t   general in n
+      far-comm × BS/YB         2   §4u   general in n
+      BS/YB × F (j₀+1<j)       2   §4v   general in n
+      ---------------------------
+      proved                  74
+      remaining               18
+
+    inclusion compositions    22   §4m   (all)
+
+**The remaining 18:**
+
+    1    BS/YB × F with j < j₀   (B230 × F31)          8 steps
+    17   BS/YB × BS/YB                                 9 … 25 steps
+
+The single `j < j₀` composition is its own small family and is *not* a transport:
+`σ_{j₀}` lands inside the run's index range, so it does not commute past
+`σ_{j₀±1}`. The engine's chain shows what happens instead — the tail of the first
+term is `descWord j₀ j ++ [σ_{j₀}] = bsWord₁ j₀ j`, so the Bokut–Shiao rule at the
+*inner* index `j₀` fires first, and the family is nested rather than flat. Worth
+doing next precisely because it is small and closes the entire far-commutation
+block, leaving `B × B` as the single remaining shape.
+
+## §4w — far-commutation **inside** the descending run (1) — the F block is closed
+
+The fourth and last position `j₀` can take relative to `descWord i j`. With it
+every composition involving a far-commutation rule is proved, and **`B × B` is
+the only shape left**.
+
+    j₀ + 1 = j     §4o   1 step    the S-polynomial *is* the rule one index lower
+    j₀ = j         §4s   4 steps   a square at each end
+    j₀ + 1 < j     §4v   6 steps   below the run: transport
+    j < j₀         §4w   8 steps   inside the run: nested
+
+Here `σ_{j₀}` is a letter the run already contains, so it does **not** commute
+past `σ_{j₀±1}` and no transport applies to it directly. Splitting the run at
+`j₀`,
+
+    descWord i j = descWord i j₀₊ ++ (σ_{j₀} :: descWord j₀' j)
+
+the first term of the S-polynomial ends in `descWord j₀ j ++ [σ_{j₀}]`, which is
+`bsWord₁ j₀ j` — the Bokut–Shiao word at the **inner** index. So the inner rule
+fires first, and what it leaves, `σ_{j₀'} σ_{j₀} descWord j₀' j`, has its lead
+letter `σ_{j₀'}` *below* everything above it, which is now a transport. Same in
+the second term. Five stages: inner rule, transport, inner rule, transport, outer
+rule.
+
+**The regime that creates the nesting also rules out the doubling.** `j < j₀` and
+`j₀ + 1 < i` force `j < j₀ ≤ i − 2 < i − 1`, so `j ≠ i − 1` and Yang–Baxter never
+leads on `bsWord₁ i j`. Unlike §4r, §4u and §4v there is no second instance —
+this is the only family in the arc where the §4j doubling does not appear, and it
+is a consequence of the side conditions rather than a case distinction.
+
+The composition is §4v's, so `CyclicFarCommLow.oc` and its S-polynomial are
+reused verbatim; only the chain is new. `farComm_transport_left` is reused for
+both transports at different positions of the term list, which is what the
+`L₁ ++ (·) :: L₂` form was for.
+
+**`descWord_split` is the new word identity** and the one most likely to be
+wanted again: `descWord i j = descWord i k ++ descWord k' j` for any interior
+split `k' + 1 = k`. Proved by walking the bottom index down with `descWord_snoc`,
+so the induction is on the gap `k' − j` and not on `List.finRange` — much shorter
+than the filter-level argument `filter_desc_cons` / `filter_desc_snoc` use.
+
+Build notes — every one of these has now cost a build more than once:
+
+* **`₊` is not a valid Lean identifier character.** `j₀₊` in a `variable` line
+  fails to parse and every downstream reference cascades into nonsense errors.
+  Second time in this arc (§4s was the first). Subscript *digits* and the
+  subscript letters are fine; subscript operators are not.
+* **`omega` will not reduce `(⟨j.val + 1, h⟩ : Fin n).val`.** It shows up in the
+  counterexample as an opaque atom. Every such goal needs `show j.val + 1 ≤ …`
+  first — three errors in one build here.
+* **`rw` closes by `rfl` only at *reducible* transparency**, and `List.append` on
+  a cons needs default. Four sites in this section.
+* **State word-inequality hypotheses in cons-normal form**, because that is what
+  `simp` leaves the goal in; otherwise the hypothesis is silently unused and the
+  goal survives.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n   general in n
+      BS/YB × F (j₀+1=j)       5   §4o   general in n
+      cyclic × quadratic      12   §4p   general in n
+      quadratic × cyclic       9   §4q   general in n
+      braid self-overlap      12   §4r   general in n
+      BS × F (j₀=j)            3   §4s   general in n
+      quadratic × general BS   3   §4t   general in n
+      far-comm × BS/YB         2   §4u   general in n
+      BS/YB × F (j₀+1<j)       2   §4v   general in n
+      BS/YB × F (j < j₀)       1   §4w   general in n
+      ---------------------------
+      proved                  75
+      remaining               17   all BS/YB × BS/YB
+
+    inclusion compositions    22   §4m   (all)
+
+**The last shape.** All 17 are `bokutShiaoRelation i' i j₁ × bokutShiaoRelation i' i j₂`
+(with Yang–Baxter standing in at `j = i − 1`), overlapping in the single trailing
+`σᵢ`. The S-polynomial is
+
+    spoly = c₁c₂ · ( descWord i j₁ ++ bsWord₂ i' i j₂  −  bsWord₂ i' i j₁ ++ descWord i' j₂ ++ [σᵢ] )
+
+and the chains run 9 to 25 steps — the 25 being `B230 × B230`, the largest single
+obligation in the file. This is the block to design carefully rather than attack:
+the tooling now in place is `farComm_transport` (rightwards), `farComm_transport_left`
+(leftwards, any list position), `descWord_split`, `descWord_index_le/_ge`, and the
+`ofTerms_coeff_mid` singling-out lemma. Worth extracting the 17 chains from the
+engine first and looking for the common skeleton before writing any Lean.
+
+## §4x — Bokut–Shiao against the braid word (6) — the first `B × B` column
+
+`B × B` is not one family. Writing `a = i − j₁`, `b = i − j₂` for the two depths,
+the engine's chain length depends only on `(a, b)`:
+
+    (1,1) → 8    §4r   the braid self-overlap
+    (a,1) → 9    §4x   this section, flat in a
+    (1,2) → 10       (1,3) → 12
+    (a,2) → 15       (2,3) → 19       (3,3) → 25
+
+This is the column `b = 1` — the second rule leads on the braid word `σᵢσᵢ₋₁σᵢ`.
+
+**Both terms reduce to one word.** With `E = descWord i−1 j₁`, so
+`descWord i j₁ = σᵢ :: E`:
+
+    spoly = c₂ · ( σᵢ E σᵢ₋₁ σᵢ σᵢ₋₁  −  σᵢ₋₁ σᵢ E σᵢ₋₁ σᵢ )   →*   0
+
+via the common endpoint `σᵢ₋₂ σᵢ₋₁ σᵢ₋₂ σᵢ E`, five steps down the first term and
+four down the second. Only three rules occur: Bokut–Shiao at `(i−2, i−1, j₁)`,
+far-commutation `σᵢσᵢ₋₂`, and the outer rule itself; the branches differ only in
+their last step, term 1 commuting `σᵢ` past `σᵢ₋₂` and term 2 straightening
+`σᵢ₋₁σᵢ₋₂σᵢ₋₁`. Nine steps regardless of `a`, which is why this column is flat.
+
+`c₂` is the second rule's leading coefficient — `1` for Bokut–Shiao at `j = i−1`,
+`−1` for Yang–Baxter, the §4j pair. The **first** rule cannot double: `j₁ ≤ i−2`
+makes its leading monomial strictly longer than the braid word.
+
+**Every distinctness in the section is a first-letter comparison** among
+`σᵢ, σᵢ₋₁, σᵢ₋₂`. The nine stages begin `σᵢ σᵢ σᵢ₋₂ σᵢ₋₂ σᵢ₋₂` and
+`σᵢ₋₁ σᵢ₋₁ σᵢ₋₁ σᵢ₋₁` against passengers beginning `σᵢ₋₁` then `σᵢ₋₂`. No length
+count and no word-uniqueness argument anywhere.
+
+**`monicStep` is the reusable piece, and the one to build the rest of `B × B`
+on.** Every rule the chain applies is monic and every stage is two terms, so one
+lemma discharges all nine steps:
+
+    monicStep hn hp r hr hrel hlm hLR L₁ L₂ a b W W' c hc hW hW' hne
+
+It takes the stage words `W`, `W'` as *arbitrary*, tied to the rule's two words
+by equations `W = a ++ L ++ b`, `W' = a ++ R ++ b` — which is what lets
+consecutive steps compose without their context decompositions having to agree
+syntactically, the thing that would otherwise force one bespoke theorem per step.
+It is stated in the same `L₁ ++ (·) :: L₂` list-position-general form as
+`farComm_transport_left`, so steps 1–5 move the first term and 6–9 the second
+with no duplication. Each of the nine steps is then ~12 lines of arguments, and
+the two `by simp` word equations are the only real content.
+
+Two build notes:
+
+* **`j₁` is not inferable from `oc`'s type** — it appears only inside the
+  structure's fields, so `oc r₂ hi (by omega) hlm₂` leaves it a metavariable and
+  the `by omega` fails against a goal containing `?m`. Pass `(j₁ := j₁)`. The
+  omega counterexample naming a variable `↑↑(?m.85 nf)` is the tell.
+* `BraidSelfOverlap.bs_hrel` takes `i' i` explicitly (they come from the
+  namespace's `variable` line) where `bs_hlm` does not; the error surfaces as
+  "`hi` … expected to have type `Fin ?m`".
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n
+      BS/YB × F (j₀+1=j)       5   §4o
+      cyclic × quadratic      12   §4p
+      quadratic × cyclic       9   §4q
+      braid self-overlap      12   §4r
+      BS × F (j₀=j)            3   §4s
+      quadratic × general BS   3   §4t
+      far-comm × BS/YB         2   §4u
+      BS/YB × F (j₀+1<j)       2   §4v
+      BS/YB × F (j < j₀)       1   §4w
+      BS × braid (b = 1)       6   §4x
+      ---------------------------
+      proved                  81   all general in n
+      remaining               11
+
+    inclusion compositions    22   §4m   (all)
+
+**The remaining 11**, all `B × B` with `b ≥ 2`:
+
+    (1,2)  4  10 steps    Y23×B231, B232×B231, Y12×B120, B121×B120
+    (1,3)  2  12 steps    Y23×B230, B232×B230
+    (2,2)  2  15 steps    B120×B120, B231×B231
+    (3,2)  1  15 steps    B230×B231
+    (2,3)  1  19 steps    B231×B230
+    (3,3)  1  25 steps    B230×B230
+
+The natural next column is `a = 1` (rows (1,2) and (1,3), six compositions, 10
+and 12 steps) — the mirror of §4x with the braid word on the *left* of the
+composition. Note it is **not** flat in `b`: 10 vs 12, so unlike §4x the chain
+grows with the second depth and will need an induction or a transport rather than
+a fixed script. The `(a,b)` both ≥ 2 corner (the last 5, up to 25 steps) is the
+hardest and should come last.
+
+## §4y — the `a = 1` row of `B × B`: designed and verified against the engine,
+## transport proved, chain **not yet written**
+
+Status: `farComm_transport_right` is proved and in the file; the eleven stages
+and eight fixed steps below are derived and checked step-by-step against the
+`n = 4` engine traces for both `B121 × B120` (b = 2) and `B232 × B230` (b = 3),
+but are **not yet Lean**. Recorded here so the next session starts from the
+design rather than re-deriving it.
+
+**The row.** `a = 1` means `j₁ = i − 1`, so `rule₁` leads on the braid word
+`σᵢσᵢ₋₁σᵢ` — and therefore doubles (Yang–Baxter or Bokut–Shiao at `j = i−1`,
+leading coefficient `c₁ = ∓1`). `rule₂ = bokutShiaoRelation i' i j₂` is monic and
+`j₂ ≤ i − 2`. With `T = descWord i−2 j₂` (so `descWord i' j₂ = σᵢ₋₁ :: T`):
+
+    spoly = c₁ · ( σᵢ σᵢ₋₁ σᵢ₋₁ σᵢ σᵢ₋₁ T  −  σᵢ₋₁ σᵢ σᵢ₋₁ σᵢ₋₁ T σᵢ )
+
+Both terms carry a **square** `σᵢ₋₁σᵢ₋₁`, which is why this row involves the
+quadratic rule where §4x did not, and why `h` and `h²` appear. The chain is
+**8 + 2|T| steps**, i.e. `8 + 2(b−1)` — *not* flat in `b`, unlike §4x's column.
+
+| # | target | rule | context | coeff |
+|---|---|---|---|---|
+| 1 | `σᵢσᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁T` | `Q_{i−1}` | `(σᵢ ∣ σᵢσᵢ₋₁T)` | `c₁` |
+| 2 | `σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁Tσᵢ` | `Q_{i−1}` | `(σᵢ₋₁σᵢ ∣ Tσᵢ)` | `−c₁` |
+| 3 | `σᵢσᵢ₋₁σᵢσᵢ₋₁T` | `BS(i−1,i,i−1)` | `(ε ∣ σᵢ₋₁T)` | `c₁h` |
+| 4 | `σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁T` | `Q_{i−1}` | `(σᵢ₋₁σᵢ ∣ T)` | `c₁h` |
+| 5 | `σᵢ₋₁σᵢσᵢ₋₁Tσᵢ` | `rule₂` | `(σᵢ₋₁ ∣ ε)` | `−c₁h` |
+| 6 | `σᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁T` | `Q_{i−1}` | `(ε ∣ σᵢσᵢ₋₁T)` | `−c₁h` |
+| 7 | `σᵢσᵢσᵢ₋₁T` | `Q_i` | `(ε ∣ σᵢ₋₁T)` | `c₁` |
+| 8… | `σᵢ` across `T` | far-comm | rightward transport | `−c₁` |
+| … | `σᵢ₋₁Tσᵢσᵢ` | `Q_i` | `(σᵢ₋₁T ∣ ε)` | `−c₁` |
+| … | `σᵢ` across `T` | far-comm | rightward transport | `c₁h` |
+
+Two cancellations carry the proof: the `h²` terms `σᵢ₋₁σᵢσᵢ₋₁T` cancel at step 6,
+and `σᵢσᵢ₋₁T` cancels at step 7. The eleven stages, in order, are
+
+    S0  c₁·σᵢσᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁T                −c₁·σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁Tσᵢ
+    S1  +c₁h·σᵢσᵢ₋₁σᵢσᵢ₋₁T, c₁·σᵢσᵢσᵢ₋₁T
+    S2  … −c₁h·σᵢ₋₁σᵢσᵢ₋₁Tσᵢ, −c₁·σᵢ₋₁σᵢTσᵢ
+    S3  σᵢσᵢ₋₁σᵢσᵢ₋₁T ↦ σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁T
+    S4  (5 terms; h² appears)
+    S5  σᵢ₋₁σᵢσᵢ₋₁Tσᵢ ↦ σᵢ₋₁σᵢ₋₁σᵢσᵢ₋₁T
+    S6  (h² cancels) → 4 terms
+    S7  → c₁h·σᵢ₋₁σᵢT, c₁·σᵢ₋₁T, −c₁·σᵢ₋₁σᵢTσᵢ
+    S8  → … −c₁·σᵢ₋₁Tσᵢσᵢ
+    S9  → c₁h·σᵢ₋₁σᵢT, −c₁h·σᵢ₋₁Tσᵢ
+    S10 → c₁h·σᵢ₋₁Tσᵢ, −c₁h·σᵢ₋₁Tσᵢ   (coefficientwise zero)
+
+**Why `monicStep` does not apply.** It is for a rule with *two* words; `Q_i` has
+three (`σᵢσᵢ`, `σᵢ`, `1`). Five of the eight fixed steps are quadratic, so they
+need bespoke `hv` and `CoeffEq` proofs in the §4r style — and the stages merge
+terms that a generic lemma would leave separate (the `h²` cancellation), so a
+three-word generic step lemma would not help either: its target list is
+determined, and these stages are deliberately the merged form.
+
+Estimated size: eleven stage definitions, eight bespoke steps with up to five
+terms and four distinctness obligations each, two transport applications, the
+S-polynomial, the assembly and two instances — roughly §4r plus §4x together.
+That is why it is recorded rather than half-written.
+
+**What is proved this turn.** `farComm_transport_right` — the rightward transport
+at an arbitrary list position, the mirror of `farComm_transport_left`. With it,
+every transport in the file is an instance of one of two lemmas at an arbitrary
+position; §4t's and §4u's narrower versions remain only because they are already
+used. It is what steps 8… and the last block above need, since at those stages
+the element has three terms and neither of the older bystander forms fits.
+
+## Running total at n = 4, rule level (unchanged this turn)
+
+      proved                  81   all general in n
+      remaining               11   all BS × BS with b ≥ 2
+
+    inclusion compositions    22   §4m   (all)
+
+Next: write §4y's chain from the table above. The remaining five after it are the
+`a, b ≥ 2` corner — `(2,2)` ×2, `(3,2)`, `(2,3)`, `(3,3)` at 15, 15, 19, 25 steps
+— which should be attacked only once §4y's skeleton exists, since the 25-step
+`B230 × B230` is the largest single obligation in the arc.
+
+## §4y — the `a = 1` row of `B × B` (6) — **written and proved**
+
+The design recorded last turn, now Lean. Eleven stages, eight bespoke steps, two
+transports, general in `n`, sorry-free. It went in essentially as designed:
+steps 1–4 built first try, steps 5–8 with the transports and both instances built
+first try. That is what the turn spent on deriving and engine-checking the chain
+bought.
+
+`a = 1` is `j₁ = i − 1`, so `rule₁` leads on the braid word and doubles (§4j);
+`rule₂ = bokutShiaoRelation i' i j₂` is monic and `j₂ ≤ i − 2`, so it cannot.
+With `T = descWord i−2 j₂`:
+
+    spoly = c · ( σᵢ σᵢ₋₁ σᵢ₋₁ σᵢ σᵢ₋₁ T  −  σᵢ₋₁ σᵢ σᵢ₋₁ σᵢ₋₁ T σᵢ )
+
+Both terms carry a **square** `σᵢ₋₁σᵢ₋₁`, so unlike §4x this row runs through the
+quadratic rule and picks up `h` and `h²`. Two cancellations carry it: the `h²`
+terms `σᵢ₋₁σᵢσᵢ₋₁T` cancel at step 6, and `σᵢσᵢ₋₁T` at step 7, taking the element
+from five terms back down to three. Then `σᵢ` crosses `T` twice — `8 + 2(b−1)`
+steps in all, matching the engine's 10 and 12 at `b = 2, 3`.
+
+**Both transports were already in the file, and they are different lemmas.** The
+first has two bystanders (`v7`, `v10`) and needs the list-position-general
+`farComm_transport_right` proved last turn; its collision hypothesis is pure
+length arithmetic, `t+3` against `t+2` and `t+1`. The second, after the
+cancellations, has the moving term and its own destination and nothing else —
+which is exactly §4t's original cancelling `farComm_transport`, used unchanged.
+Worth noting because it is the first place the *older, narrower* transport was
+the right tool and the general one would have needed a collision proof that is
+false at the final stage.
+
+**Distinctness is almost all lengths.** The thirteen words have lengths
+`t+5, t+4, t+3, t+2, t+1` over the shared tail, so a `congrArg List.length` plus
+`omega` discharges most obligations; three go by first letter and one — step 4,
+`σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₁T` against `σᵢ₋₁σᵢσᵢ₋₁(T ++ [σᵢ])`, same length and same first
+three letters — by the fourth, which is why `descWord_head` had to be proved:
+`T` must be exhibited as `σᵢ₋₂ :: T'`.
+
+`descWord_head` — the run begins with its top index whenever non-empty — is the
+new general word lemma, by cases on `j = i` (`descWord_self`) and `j < i`
+(`descWord_cons` at `i − 1`). It is the third such lemma after `descWord_cons`,
+`descWord_snoc` and `descWord_split`, and the natural one to reach for whenever a
+distinctness argument needs to see a run's head.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n
+      BS/YB × F (j₀+1=j)       5   §4o
+      cyclic × quadratic      12   §4p
+      quadratic × cyclic       9   §4q
+      braid self-overlap      12   §4r
+      BS × F (j₀=j)            3   §4s
+      quadratic × general BS   3   §4t
+      far-comm × BS/YB         2   §4u
+      BS/YB × F (j₀+1<j)       2   §4v
+      BS/YB × F (j < j₀)       1   §4w
+      BS × braid (b = 1)       6   §4x
+      braid × BS (a = 1)       6   §4y
+      ---------------------------
+      proved                  87   all general in n
+      remaining                5
+
+    inclusion compositions    22   §4m   (all)
+
+**The last five**, the `a, b ≥ 2` corner — both rules at general depth, neither
+on the braid word:
+
+    (2,2)  B120×B120, B231×B231   15 steps
+    (3,2)  B230×B231              15
+    (2,3)  B231×B230              19
+    (3,3)  B230×B230              25
+
+Both rules are now Bokut–Shiao proper (no Yang–Baxter doubling: `a, b ≥ 2` puts
+both leading monomials longer than the braid word), so this is **one** family
+with two independent depths rather than four. The S-polynomial is
+
+    spoly = descWord i j₁ ++ bsWord₂ i' i j₂  −  bsWord₂ i' i j₁ ++ descWord i' j₂ ++ [σᵢ]
+
+i.e. `D₁ σᵢ₋₁ σᵢ E₂ − σᵢ₋₁ D₁ E₂ σᵢ` with `D₁ = descWord i j₁`, `E₂ = descWord i' j₂`
+— visibly symmetric in the two depths, which §4x and §4y were not (each had one
+depth pinned at 1). The 15/15/19/25 counts suggest the chain length grows in both
+`a` and `b`, so expect two nested transports or an induction on one depth with
+the other abstract. Extract all five chains and look for the two-parameter
+skeleton before writing anything, exactly as this turn did for the `b = 1`
+column and the `a = 1` row.
+
+## §4z — both depths at `i − 2` (2) — the first corner case
+
+The corner `a = b = 2`, i.e. `j₁ = j₂ = i − 2`: the Bokut–Shiao rule against
+**itself** at a proper overlap, the analogue of §4r one level down. Because
+`a, b ≥ 2` puts both leading monomials strictly longer than the braid word,
+neither rule can be Yang–Baxter — no §4j doubling, one composition per `i`, so
+this is `B120 × B120` and `B231 × B231` at `n = 4`.
+
+**Everything is explicit and there are no transports.** Both depths pinned at
+`i − 2` make `descWord i j₁ = σᵢσᵢ₋₁σᵢ₋₂` and `descWord i−1 j₂ = σᵢ₋₁σᵢ₋₂`, so
+every word is a literal five-, six- or seven-letter list in three generators and
+there is no run left to cross. That is exactly why this was the corner to do
+first; the remaining three reintroduce the runs and with them the transports.
+
+    spoly = σᵢσᵢ₋₁σᵢ₋₂σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₂  −  σᵢ₋₁σᵢσᵢ₋₁σᵢ₋₂σᵢ₋₁σᵢ₋₂σᵢ
+
+Fifteen steps, and **thirteen of them apply a two-word monic rule** — the braid
+rule at `(i−2,i−1)`, the braid rule at `(i−1,i)`, far-commutation `σᵢσᵢ₋₂`, and
+the rule itself — so `monicStep` discharges each in a dozen lines. Only steps 4
+and 7 are quadratic and written out. This is the first section where the §4x
+investment in `monicStep` paid at scale: the thirteen applications were generated
+mechanically from a table of `(rule, a, b, W, W')` and every one went through
+unchanged.
+
+`h` enters at the two quadratic steps and leaves at step 11, where
+`σᵢ₋₂σᵢ₋₁σᵢσᵢ₋₂σᵢ₋₁σᵢ₋₂` and `σᵢ₋₂σᵢ₋₁σᵢ₋₂σᵢσᵢ₋₁σᵢ₋₂` carry `h` with opposite
+signs and cancel. The pair is **kept in the term list rather than merged**,
+because `monicStep` produces the unmerged list and merging would need a step of
+its own; carrying it costs nothing since the surviving stages are still separated
+by length or third letter.
+
+Build note: the only failures were four more `rw`-does-not-close-by-`rfl`
+(sixth occurrence in this arc) — everything else built first try.
+
+## Running total at n = 4, rule level
+
+    overlap compositions      92
+      degenerate              22   §4l
+      quadratic self-overlap   4   §4n
+      BS/YB × F (j₀+1=j)       5   §4o
+      cyclic × quadratic      12   §4p
+      quadratic × cyclic       9   §4q
+      braid self-overlap      12   §4r
+      BS × F (j₀=j)            3   §4s
+      quadratic × general BS   3   §4t
+      far-comm × BS/YB         2   §4u
+      BS/YB × F (j₀+1<j)       2   §4v
+      BS/YB × F (j < j₀)       1   §4w
+      BS × braid (b = 1)       6   §4x
+      braid × BS (a = 1)       6   §4y
+      BS × BS (a = b = 2)      2   §4z
+      ---------------------------
+      proved                  89   all general in n
+      remaining                3
+
+    inclusion compositions    22   §4m   (all)
+
+**The last three**, all `B × B` with the depths unequal or both at 3:
+
+    (3,2)  B230 × B231   15 steps
+    (2,3)  B231 × B230   19
+    (3,3)  B230 × B230   25
+
+These are the general two-depth case, `spoly = D₁ σᵢ₋₁ σᵢ E₂ − σᵢ₋₁ D₁ E₂ σᵢ`
+with `D₁ = descWord i j₁`, `E₂ = descWord i−1 j₂` both of arbitrary length. The
+right frame is probably to prove it for abstract `D₁`, `E₂` with the runs crossed
+by transports, rather than three more explicit chains — §4z is the `|D₁| = 3`,
+`|E₂| = 2` instance of it, and its fifteen steps should reappear as the skeleton
+with transports inserted where the runs are longer. Note `(3,2)` is also 15 steps
+like `(2,2)`, which supports that reading: lengthening `D₁` alone does not add
+steps, only lengthening `E₂` does — compare `(2,2) → (2,3)`, 15 → 19.
+
+## §4aa — depths `i−3` and `i−2` (1) — and a correction on the corner's shape
+
+`(a, b) = (3, 2)`. Taken next because **nothing in it is quadratic**: all fifteen
+steps apply a two-word monic rule and every stage has exactly two terms, so
+`monicStep` discharges the whole chain and `h` never appears. Six rules occur —
+Bokut–Shiao at `(i−2,i−1,i−3)`, the braid rule at `(i−3,i−2)`, the three
+far-commutations `σᵢσᵢ₋₂`, `σᵢσᵢ₋₃`, `σᵢ₋₁σᵢ₋₃`, and the composition's own first
+rule — over four generators:
+
+    spoly = x y z w y x y z  −  y x y z w y z x
+
+with `x = σᵢ`, `y = σᵢ₋₁`, `z = σᵢ₋₂`, `w = σᵢ₋₃`. Nine steps take the second
+term to `z y z w x y z w`, six take the first to the same word.
+
+**Correction: there is no shorter chain to find.** Last turn I suggested the
+three remaining corner cases would come out as §4z's skeleton with transports
+inserted, and derived a candidate chain of `2a+1` and `a+b+1` steps — 10 for
+`(2,2)` against the engine's 15. That is wrong. Reducing the two terms
+*separately* to normal form takes
+
+    (2,2)  7 + 8 = 15     (3,2)  8 + 7 = 15
+    (2,3)  9 + 10 = 19    (3,3)  12 + 13 = 25
+
+exactly the engine's totals. So the S-polynomial's chain **is** the two
+reductions laid end to end, with no shared intermediate to cut, and the earlier
+derivation had a step in the wrong direction — it transported a generator
+leftwards past a letter where the rewrite only goes rightwards. Worth recording
+because the same mistake is easy to repeat: `farCommRelation` orients
+`σᵢσⱼ → σⱼσᵢ` with the *larger* index first, so the big letter moves right and
+only right.
+
+It also means the corner is **not** one family with a uniform chain in `(a, b)` —
+`(2,2)` needs the quadratic rule twice and `(3,2)` not at all, at the same length
+of 15. Each corner case is its own explicit chain.
+
+## Running total at n = 4, rule level
+
+      proved                  90   all general in n
+      remaining                2
+
+    inclusion compositions    22   §4m   (all)
+
+**The last two:**
+
+    (2,3)  B231 × B230   19 steps
+    (3,3)  B230 × B230   25 steps
+
+Both are mechanical now: extract the chain, classify each step's rule as monic or
+quadratic, and generate. `(3,3)` at 25 steps is the largest single obligation in
+the arc. The generator script pattern used for §4z and §4aa — a table of
+`(rule, a, b, W, W')` per step, expanded into `monicStep` applications, with the
+quadratic steps written by hand — is what makes them tractable; both sections
+went in with only a hypothesis-order slip and lint to fix.
+
+**Scope note, for whoever picks this up.** These counts are the `n = 4`
+enumeration, which is what `§4k` computes and what the bean has tracked
+throughout. Every *family* is proved general in `n`, but the corner sections
+§4z, §4aa and the two remaining are general in `n` at **fixed depths** — `(a,b)`
+pinned. Closing all 92 therefore settles `n = 4` and every family that occurs
+there; the general-`n` theorem additionally needs the corner for arbitrary
+`(a, b)`, which is still open and is the one genuinely unfinished piece of
+mathematics rather than of bookkeeping.
+
+## §4ab, §4ac — the last two, and **92 of 92**
+
+`(2,3)` at nineteen steps and `(3,3)` at twenty-five. With them every overlap
+composition of the `n = 4` enumeration is closed, and every inclusion composition
+was already closed structurally by §4m.
+
+`(2,3)` is **not** `(3,2)` transposed. §4aa needs no quadratic rule and runs in
+fifteen steps; `(2,3)` needs two and runs in nineteen. The two depths enter the
+S-polynomial in different positions — `D₁ σᵢ₋₁ σᵢ E₂ − σᵢ₋₁ D₁ E₂ σᵢ` — so
+swapping them is not a symmetry of the problem, and the four corner cases really
+are four separate chains.
+
+`(3,3)` is §4z one level deeper and inherits its shape exactly: two quadratic
+steps, `h` entering there and cancelling in the middle, everything else monic.
+Its length is not extra difficulty — 12 + 13 = 25, the sum of the two separate
+reductions, as for every corner case.
+
+**The one real bug, and it is a trap worth naming.** Both sections were generated
+from the engine's traces, and the engine picks whichever rule leads on the target
+word — often `Y..`, the Yang–Baxter rule, whose **leading coefficient is −1**. I
+substituted the Bokut–Shiao rule at the same leading monomial (§4j: they share
+it) because `monicStep` needs a monic rule — but kept the engine's step
+coefficients, which are computed against `lc = −1`. Every substituted step then
+had the wrong sign. The fix is a rule, not a patch: **for a monic rule the step
+coefficient is exactly the target term's coefficient in the source stage**, so
+read it off the stage rather than the trace. §4aa was accidentally right because
+its generator assigned coefficients by position; §4z likewise.
+
+    generated sections   §4z  §4aa  §4ab  §4ac
+    steps                 15    15    19    25
+    monic (via monicStep) 13    15    17    23
+    quadratic (by hand)    2     0     2     2
+
+## FINAL — n = 4, rule level
+
+    overlap compositions      92        proved 92, remaining 0
+    inclusion compositions    22   §4m  (all)
+
+    §4l  22   §4n   4   §4o   5   §4p  12   §4q   9   §4r  12
+    §4s   3   §4t   3   §4u   2   §4v   2   §4w   1   §4x   6
+    §4y   6   §4z   2   §4aa  1   §4ab  1   §4ac  1
+
+`HeckeCompletion.lean` is 8000 lines, sorry-free, and every `resolves` depends on
+`propext, Classical.choice, Quot.sound` and nothing else.
+
+## What this does and does not settle
+
+**Settles:** every composition of the completed Hecke rewriting system at `n = 4`
+resolves, and all but the four corner families are proved for *every* `n` — the
+statements are general, the `n = 4` enumeration only tells us which shapes occur.
+
+**Does not settle:** the general-`n` theorem. Two gaps remain, and they are
+different in kind:
+
+1. **The corner at arbitrary depths.** §4z, §4aa, §4ab, §4ac are general in `n`
+   but at *fixed* `(a, b)` — `(2,2)`, `(3,2)`, `(2,3)`, `(3,3)`. At `n ≥ 5` the
+   corner has cases with `a` or `b` ≥ 4 that no section covers. This is the
+   genuinely unfinished mathematics: the chains are not uniform in `(a, b)` —
+   `(2,2)` needs the quadratic rule twice and `(3,2)` not at all at the same
+   length — so a general treatment needs a real idea, not more generation.
+2. **The enumeration itself.** §4k computes the overlap shapes by `decide` at
+   `n = 4`. A general-`n` statement needs `overlapTriples` characterised
+   abstractly, not enumerated.
+
+Next session should start from (1): extract the `a = 4` chains by extending the
+confluence engine past `n = 4`, and look for the pattern across `(2,2), (3,2),
+(4,2)` and `(2,2), (2,3), (2,4)` before writing anything.
+
+## Beyond n = 4 — the corner has **two regimes**, and confluence holds to n = 12
+
+With all 92 compositions closed at `n = 4`, the open piece was the corner at
+arbitrary depths (§4z/§4aa/§4ab/§4ac are general in `n` but at fixed `(a,b)`).
+Rather than guess at it again, I measured it: re-parametrised the confluence
+engine by rank — `N` is a module constant, so re-running `build_rules()` is the
+whole change — and swept.
+
+**Confluence holds at every rank from 2 to 12**, zero failing compositions:
+
+     n   rules  overlap  inclusion   max chain
+     4      16       92         22          25
+     6      36      272         46          51
+     8      64      604         78          85
+    10     100     1136        118         127
+    12     144     1916        166         177
+
+That is 8992 overlap and 1010 inclusion compositions across the range, all
+reducing to zero. It takes about 25 seconds.
+
+**The corner splits into two regimes.** Writing `a = i − j₁`, `b = i − j₂`:
+
+    a ≤ b   steps = 2ab − a² + 5a + 1   quadratic rule used twice
+    a > b   steps = b² + 3b + 5         quadratic rule not used at all
+
+Exact on all 325 corner cases across `n = 5..9` and every `i` — no step-count or
+quadratic-count mismatch anywhere. Two things fall out:
+
+* **The `a > b` regime does not depend on `a`.** Extra depth in the *first* rule
+  adds no work at all, which is why `(3,2)`, `(4,2)` and `(5,2)` are every one of
+  them fifteen steps. §4aa observed this for one pair without seeing it was a
+  law.
+* **The longest chain at rank `n` is the deepest corner**, `a = b = n − 1`,
+  giving `n² + 3n − 3` — matching the observed maximum at every rank from 3 to 12.
+  So the corner is not merely the last family, it is the *hardest* one, and its
+  cost grows quadratically in the rank.
+
+That last point settles the shape of the remaining work. The chain length is
+**quadratic in the depths**, so no fixed script can cover the corner: a general
+proof needs an induction on both depths with the two regimes separated, and the
+regimes differ in kind — one uses the quadratic rule, the other never does. This
+also explains, after the fact, why the four fixed-depth sections looked so
+unalike: `(2,2)` and `(3,3)` sit on the diagonal (`a = b`, quadratic used),
+`(3,2)` sits strictly below it (never used), and `(2,3)` above.
+
+New artifact: `computations/hecke_gs_confluence_range.py` and its witness, which
+asserts all five facts above and fails if any of them stops holding. It imports
+the `n = 4` engine unchanged rather than copying it, so the two cannot drift.
+
+## Where the arc stands
+
+**Done.** All 92 overlap and all 22 inclusion compositions at `n = 4`, in Lean,
+sorry-free. Every family general in `n` except the corner. Confluence verified
+computationally to `n = 12`, with the corner's cost characterised exactly.
+
+**Open, in order of size:**
+
+1. **The corner at arbitrary `(a, b)`** — a genuine induction, two regimes, with
+   the `a > b` regime the easier one to attempt first since it ignores `a`
+   entirely and never touches the quadratic rule. The `a ≤ b` regime is the one
+   whose length is quadratic in both depths.
+2. **The shape enumeration for general `n`** — §4k computes `overlapTriples` by
+   `decide` at `n = 4`; a general theorem needs it characterised abstractly. The
+   rank sweep gives the target numbers (shapes `= (n−1)(n+2)/2 · …`, see the
+   witness's `ranks` array) but not the characterisation.
+
+## §4ad — the first depth-general corner: the whole `b = 2` column
+
+The `a > b` regime's step count ignores `a`, and the natural guess was that the
+extra depth rides along inertly. It does, and now that is proved rather than
+measured.
+
+**What varies with `a`, mechanically checked.** Abstracting the contiguous
+relative block `[b+2 .. a]` of the descending run to a single symbol `T` and
+comparing the resulting symbolic chains: for `b = 2, 3, 4` the stage words are
+**identical** for every `a ≥ b+2`, step for step, coefficient for coefficient.
+So each column stabilises at `a = b+2`, with `a = b+1` a special case below it.
+(An earlier probe printed "DIFF" for these — that comparison keyed on rule
+*names*, which embed the run's bottom index and so never compare equal across
+`a`. The words, which is what matters, never differed.)
+
+**The Lean statement.** `BokutShiaoCornerDepth.resolves`, hypothesis `j ≤ i − 3`
+and nothing else about the depth. Fifteen steps, all monic, `h` never appears.
+Writing `x, y, z, u` for `σᵢ … σᵢ₋₃` and `E = descWord (i−3) j`, every one of the
+seventeen words is `(explicit prefix) ++ E ++ (explicit suffix)`, and `E` is
+never inspected — not by a rule, not by a distinctness obligation. Eight of the
+fifteen steps do not even take the depth hypothesis (their binder is `_hj`): the
+three far-commutations and the fixed-depth Bokut–Shiao at `(i−2, i−1, i−3)` are
+depth-blind, and the other seven carry it only to split the run's top letters
+off via `descWord_cons`.
+
+**It subsumes §4aa.** §4aa is the case `j = i − 3`, where `E = [σᵢ₋₃]`. §4aa is
+kept rather than deleted because its chain is a genuinely different one: at that
+depth the rule used at steps 5 and 13 degenerates to the braid word, and the
+confluence engine picks the Yang–Baxter rule sharing that leading monomial —
+leading coefficient `−1`, which is why §4aa reads differently step for step.
+Both rules are in the completed system; both chains are valid. Using the
+Bokut–Shiao form throughout is what makes one chain serve every depth, since
+`monicStep` wants a monic rule.
+
+**Build lessons.**
+
+* `rfl` will not close `W = a ++ L ++ b` when `b = []` and the word ends in an
+  abstract tail: `List.append` recurses on its *first* argument, so `E ++ []`
+  is stuck where `E` is a variable. Nine of thirty context obligations failed on
+  exactly this. `simp [<word>]` closes all thirty; explicit-list sections like
+  §4aa never hit it because nothing there is stuck.
+* Where the abstract tail sits only to the *right* of explicit letters,
+  everything to its left still reduces, so all the other equalities are
+  definitional. Placing `E` in one slot in every word — always
+  `prefix ++ E ++ suffix` — is what keeps the whole section in that regime.
+
+**Where this leaves the corner.** The `b = 2` column is closed for all `a ≥ 3`.
+Remaining: the columns `b ≥ 3` (each stabilising at `a = b+2`, and nesting —
+`b = 3`'s stabilised chain extends `b = 2`'s by a block `B_{i-4} F F F` inserted
+after the first far-commutation run, `b = 4` extends it again, which is what an
+induction on `b` would have to formalise), the special cases `a = b+1`, and the
+whole `a ≤ b` regime where the quadratic rule appears twice and the length is
+quadratic in both depths.
+
+### The shape of the induction on `b` (read off the `b = 3` chain)
+
+The columns nest, and now concretely. Writing rules in relative notation, the
+stabilised chains are
+
+    b = 2:  B21 F02 │ B21 F02 B32 F13 F03                      │ B10 B21ᵥ │ B10 B21 F02 B32 F13 F03
+    b = 3:  B21 F02 │ B21 F02 B32 F13 F03 ⟨B43 F24 F14 F04⟩    │ B10 B21ᵥ │ B10 B21 F02 B32 F13 F03 ⟨B43 F24 F14 F04⟩
+
+Each increment of `b` inserts the same kind of block **twice**, once per term of
+the S-polynomial: one Bokut–Shiao step at the next generator down, then a run of
+far-commutations carrying the newly exposed letter leftwards past the whole
+prefix. The block for `b` has length `b + 1`, so
+
+    steps(b) = steps(b−1) + 2(b + 1),   steps(2) = 15   ⟹   b² + 3b + 5  ✓
+
+matching the fitted closed form. `b = 4` adds `B54 F35 F25 F15 F05` and comes
+out at 33, as measured.
+
+The far-commutation run is not new work: it is exactly a leftward transport of a
+single generator past a descending run, which is `farComm_transport_left` from
+§4v. What §4ad did with fifteen explicit `monicStep`s, the induction has to do
+with a transport lemma instead, because the block length grows with `b`. The
+words also need a *second* abstract run (the `b`-side one) alongside `E`, so the
+`prefix ++ E ++ suffix` discipline becomes `prefix ++ E ++ mid ++ F ++ suffix`.
+That is the next piece of work, and it closes the whole `a > b` regime at once
+rather than one column at a time.
+
+## §4ae — the `b = 3` column, and the generator behind both
+
+`BokutShiaoCornerDepth3.resolves`: hypothesis `j ≤ i − 4`, twenty-three steps,
+all monic, `h` absent, every word `(explicit prefix) ++ E ++ (explicit suffix)`
+with `E = descWord i₄ j` never inspected. Sorry-free, standard axioms, full
+library builds. Generators are named `i₀ … i₄` by distance below the top rather
+than by primes — five levels of `'` was past the point of legibility.
+
+**The cost of one more level, exactly.** Side by side with §4ad:
+
+    b = 2:  B₂₁ F₀₂ │ B₂₁ F₀₂ B₃₂ F₁₃ F₀₃                    │ B₁₀ B₂₁ᵛ │ B₁₀ B₂₁ F₀₂ B₃₂ F₁₃ F₀₃
+    b = 3:  B₂₁ F₀₂ │ B₂₁ F₀₂ B₃₂ F₁₃ F₀₃ ⟨B₄₃ F₂₄ F₁₄ F₀₄⟩  │ B₁₀ B₂₁ᵛ │ B₁₀ B₂₁ F₀₂ B₃₂ F₁₃ F₀₃ ⟨B₄₃ F₂₄ F₁₄ F₀₄⟩
+
+One block, inserted twice — once per term. Confirms the induction shape recorded
+above from the raw trace, now against the emitted Lean.
+
+**The generator** is `scripts/gen-hecke-corner-column.py`, alongside the existing
+`gen-gluing-lean.py`. It derives words, stages, rules and contexts from the
+confluence engine's trace, so nothing is transcribed. Two things it needed that
+the engine does not give:
+
+* The engine's driver `clean`s zero coefficients, so the final stage — where the
+  two words become equal and cancel — is simply absent from its output. The
+  generator carries the two-term pair itself. Every rule reachable in this regime
+  is monic with exactly two words, so a step is just "replace the redex word by
+  the rule's other word"; the generator asserts that rather than assuming it.
+* Because rule names embed the run's bottom index, a rule at the general depth
+  and a rule at a fixed depth print alike. The generator distinguishes them
+  structurally (bottom `= a`, or not) and picks the Bokut–Shiao form over the
+  Yang–Baxter one where both share a leading monomial — the `−1` leading
+  coefficient that cost a full debugging cycle in §4ab.
+
+**Validation.** Re-deriving §4ad from the generator reproduces all seventeen
+words and all fifteen rules and slot assignments exactly, against the table
+worked out by hand. That is what licenses trusting it at `b = 3`.
+
+**`rfl` after `rw`, made deterministic.** `rw` closes a goal by `rfl` only at
+*reducible* transparency, so whether a trailing `rfl` is needed depends on
+whether the rewritten side lands in the same cons/association shape as the
+statement. It does when the statement keeps the `… ++ E ++ [x]` shape (the
+general-bottom rules' `lm`), and does not when the statement is a flat literal
+list (the fixed-depth rules, and the `descWord` splits). Writing `<;> rfl`
+everywhere builds fine but draws a linter warning either way — "would suffice"
+or "does nothing" — which is exactly the oracle needed to pin the rule down. The
+committed output has neither.
+
+**Correction.** §4aa's prose said "nine steps take the second term … six take the
+first", contradicting its own "8 and 7" two paragraphs later; §4ad repeated the
+wrong figures. The split is 8 and 7 — `V0 ⋯ V8` and `U0 ⋯ U7`, meeting at
+`V8 = U7`. Both fixed. At `b = 3` it is 12 and 11.
+
+## §4af — the corner is a loop, and its body is proved
+
+Writing columns out one at a time does not scale: column `b` is `b² + 3b + 5`
+steps, so each needs a longer script than the last. It does not have to. Setting
+§4ad against §4ae shows the chain is **a loop over a single index**, and the body
+of that loop is now proved: `CornerBlock.blockStep`, sorry-free, standard axioms.
+
+**The invariant.** With `D = descWord i j₁` the long run and `j₂` the short one,
+both terms march down through
+
+    V:  R ++ D ++ descWord k j₂           →  (R ++ [σ_{k−1}]) ++ D ++ descWord (k−1) j₂
+    U:  Q ++ D ++ descWord k j₂ ++ [σᵢ]   →  (Q ++ [σ_{k−1}]) ++ D ++ descWord (k−1) j₂ ++ [σᵢ]
+
+as `k` runs from `i` down past `j₂`. Each pass is two moves: a Bokut–Shiao step
+at top `k` — available because the `σ_k` ending `descWord k j₁` inside `D` is
+immediately followed by the `σ_k` heading `descWord k j₂`, which is exactly where
+the two runs meet and exactly what makes the redex — and a leftward transport of
+the newly exposed `σ_{k−1}` across the part of `D` above `k`. So the block is one
+`monicStep` plus one `farComm_transport_left` (§4v), its side condition from
+`descWord_index_ge`. It built first try.
+
+`Y`, the part of `D` above `k`, enters abstractly rather than as
+`descWord i (k+1)`. That costs nothing and avoids naming `k + 1`, which matters:
+the first pass has `k = i` and no such index need exist. `blockStep_top` is that
+pass, and doubles as a witness that the hypotheses are satisfiable — worth having
+for a statement with this many parameters, since a wrong index relation would
+leave it true and unusable.
+
+**Validated before writing.** `computations/hecke_corner_block_blueprint.py`
+builds the block-decomposed chain from the invariant and checks every consecutive
+pair really is one rule applied in one context: 48 cases, `b = 2 … 7`,
+`a = b+1 … b+4`, no illegal step, endpoints meeting, lengths exactly
+`b² + 3b + 5`. Predicted per side and confirmed:
+
+    V = 2 + (b+1) + b(b+1)/2      U = b + b(b+1)/2 + 2
+
+**A distinction that had to be got right.** At `a = b + 1` the engine does *not*
+follow these blocks for `b ≥ 5`: the Bokut–Shiao step of pass `d` exposes a redex
+that deg-lex prefers over finishing pass `d`'s transport, so the engine
+interleaves. That is not a counterexample — a `SingleStepReduction` may rewrite
+any redex, not only the largest — and the checker confirms the block chain is
+legal there too. Checking the blueprint against *the engine's ordering* would
+have reported a failure that was not one; checking it against *legality* is the
+right test and is what the committed script does.
+
+**Left to do for the whole `a > b` regime:** assemble the passes. The loop runs
+`k` from `i` down past `j₂`, so it is an induction on `k.val − j₂.val` in the
+style of `descWord_split_aux` (§4w). What needs care is the collision hypotheses:
+each pass needs the bystander term to miss every word the pass passes through,
+and the assembled statement has to carry that through the induction rather than
+re-proving it per pass.
+
+**Also:** a Lean identifier may not contain `′` (U+2032, PRIME) — only ASCII `'`.
+The parse error lands on the *use* site, not the binder. Third member of this
+family after `₊` and the `rw`-transparency trap.
+
+## §4af cont. — the loop is proved (single term), and what blocks the two-term case
+
+`CornerBlock.loop` and `CornerBlock.loopFromTop`, sorry-free, standard axioms.
+`blockStep` iterated: `k` walks down one index per pass and what the passes leave
+behind is the descending run `descWord kd ed` accumulated in front. The induction
+is on passes remaining and carries `Y` — the part of the long run above `k` — as
+a parameter rather than as `descWord i (k+1)`, so each pass hands the next
+`Y ++ [σ_k]` and no index above `k` is ever named. `loopFromTop` enters at
+`k = i` with `Y = []`, and doubles as a satisfiability witness.
+
+This is the whole combinatorial content of the `a > b` corner. What remains is
+bookkeeping about which words the bystanding term must avoid, not rewriting.
+
+**A boundary case the design surfaced.** The last pass has `k = j₂`, where
+`descWord_cons`'s hypothesis `j₂ ≤ k − 1` is false — but the identity still holds,
+because the tail `descWord (j₂−1) j₂` is empty rather than a shorter run. Hence
+two new lemmas: `descWord_of_lt` (a run from below its own floor is empty; the
+module had no emptiness lemma at all) and `descWord_cons_le`, which needs the
+floor only at or below `i`. `blockStep`'s short-run hypothesis is weakened to
+`j₂ ≤ k` to match.
+
+**The real obstruction to the two-term version, stated precisely.**
+`farComm_transport_left`'s collision hypothesis quantifies over all splits
+`u ++ v = w`, and the two extreme splits are the transport's *start* and its
+*end*. So it demands the bystander differ from the transport's endpoint. In the
+actual chain the bystander during the `V` loop **is** the final word `W`, and the
+last pass's transport ends exactly at `W` — so that hypothesis is false there and
+the lemma cannot be applied to the last pass as it stands.
+
+That is not a flaw in the chain: `monicStep` only ever needs the *source* word to
+be distinct, which is why §4ad and §4ae go through writing their transports out
+as individual steps. Two ways forward, and the choice is the next decision:
+
+* a variant of `farComm_transport_left` whose collision hypothesis covers only
+  the sources — the existing proof already uses only those (the `nil` case
+  discards the hypothesis outright), so this should be a weakening of the
+  statement rather than new work; or
+* peel the last pass off the loop and do its transport by hand.
+
+The first is better if the weakened lemma really does fall out of the existing
+proof, since §4t–§4v's other transport lemmas likely carry the same needlessly
+strong hypothesis.
+
+Also worth noting for the length bound: every rule in this regime preserves word
+length — Bokut–Shiao maps `|descWord k j₁| + 1` letters to `2 + |descWord kd j₁|`,
+which is the same — so length can never be used to separate the bystander from a
+chain word. Distinctness has to come from a letter position, as it did in §4ad.
+
+## §4af cont. — the two-term loop, and the transport hypothesis that blocked it
+
+`CornerBlock.loopTwo` and `loopTwoFromTop`: the corner loop with the
+S-polynomial's other term riding along. Sorry-free, standard axioms, full library
+builds. The obstruction recorded last time is cleared.
+
+**The weakening, and why it was available.** `farComm_transport_left`'s collision
+hypothesis quantifies over all splits `u ++ v = w`, and the split `u = []` names
+the transport's *final* word — which is exactly the bystander in the corner
+chain, so the hypothesis is false where it is needed. Reading the proof: `hcol`
+is applied only with a cons-headed first argument (`⟨yi⟩ :: u`, and `[⟨yi⟩]`),
+and the `nil` case discards it outright. So `u ≠ []` suffices. Split into
+`farComm_transport_left_sources` (the real proof, weak hypothesis) and
+`farComm_transport_left` (a two-line corollary with the old statement), so §4v's
+callers are untouched. `blockStep` now asks only for the weak form, and
+`blockStep_top` consequently loses a hypothesis: with `Y` empty there is no split
+with `u ≠ []` at all, so its collision obligation is vacuous.
+
+**Two facts make the bystander uniform.**
+
+* **It does not move.** At pass `k` it is `A ++ descWord kd ed ++ ⋯`; after the
+  pass `A` has grown by `σ_kd` and the run shortened to `descWord kdd ed`, and
+  `A ++ [σ_kd] ++ descWord kdd ed` is again `A ++ descWord kd ed`. Literally the
+  same word at every pass, so the induction carries it unchanged.
+* **Every word a pass rewrites begins, after `A`, with `σ_i`** — the pass's own
+  source is `A ++ (descWord i j₁ ++ ⋯)`, and each word the transport visits is
+  `A ++ (u ++ ⋯)` with `u` a *non-empty* prefix of the run above `k`, whose head
+  is the run's head. The bystander begins with `σ_kd`, and `kd < i`. One letter
+  separates it from everything in sight.
+
+Hence `pass_hne` and `pass_hcol`, discharging both obligations of every pass from
+data the loop already carries; the second needs only `hY`, since every letter
+above `k` is more than one above `σ_kd` and so is not `σ_kd`. Both built first
+try, as did `loopTwo` and its entry point. Helper `append_cons_ne`: two words
+with a common prefix differ as soon as the next letter does.
+
+Worth noting the earlier observation about lengths was the right warning and the
+wrong tool — every rule here preserves length, so length is useless, but a single
+*position* does the job, and it is the same position at every pass.
+
+**What is left for the whole `a > b` regime.** The loop is the quadratic part and
+it is done. Remaining is a fixed, small amount of work independent of `a` and `b`:
+the two setup steps that take the first term to the loop's entry shape, the two
+closing steps on the second term (a `B₁₀` and the fixed-depth Bokut–Shiao), and
+the assembly against `oc.spoly`. Roughly the shape of §4ad's ends with its middle
+excised.
+
+## §4ag — the corner's four end steps, and the second loop variant
+
+All four steps that bracket the loop are proved, sorry-free, standard axioms,
+full library builds. Each built first try.
+
+**A second loop variant was needed.** `loopTwo` hardcodes the bystander to be the
+loop's own endpoint, which is right for the first term — it is heading for the
+word the second term ends at. But while the *second* term runs its loop, the
+parked word is the *first* term, `V2`, which is not the loop's endpoint. Hence
+`loopTwoGen`, taking an arbitrary parked word `P` with the single hypothesis
+`∀ z, P ≠ A ++ z`. That discharges every obligation of every pass at once,
+because the accumulator only ever grows on the right of `A`, so every word any
+pass rewrites has that form — and it is preserved by the induction, since
+`(A ++ [σ_kd]) ++ z = A ++ ([σ_kd] ++ z)`. In the corner it holds because the two
+terms start with different letters.
+
+Note the two variants take the parked term in opposite list positions —
+`loopTwo` second, `loopTwoGen` first — because that is the order the phases put
+them in, and `MultiStepReduction.trans` needs the intermediate to match
+syntactically rather than up to `CoeffEq`.
+
+**The four steps**, in the order the chain takes them:
+
+* `s1` Bokut–Shiao at top `i−1`, general bottom, inside `σᵢ · − · descWord i j₂`
+* `s2` `σᵢσᵢ₋₂ → σᵢ₋₂σᵢ`, putting the first term into the loop's entry shape
+* `s3` Bokut–Shiao at top `i`, at the tail
+* `s4` the fixed-depth Bokut–Shiao at `(i−2, i−1, j₂−1)`, at the head
+
+`s3` and `s4` need `descWord ed j₂ = []` — the run below `j₂` is empty — which is
+`descWord_of_lt`, added for the loop's boundary case last time and reused here.
+Every distinctness is again a first letter: `U0_ne_cons` (`σᵢ₋₁` against `σᵢ`)
+for the setup pair, `V2_ne_cons` (`σᵢ₋₂` against `σᵢ₋₁`) for the closing pair.
+
+None of the four rules needed a custom `hrel`/`hlm`: at general depth the words
+are already `descWord`-shaped, so `fun v => rfl` and `bokutShiaoRelation_lm`
+serve directly. That is the payoff for §4ad and §4ae having been written with the
+abstract tail in one slot.
+
+**What remains** is wiring only: `MultiStepReduction.trans` over
+`s1, s2, loopTwoGen, s3, s4, loopTwo`, plus the `OverlapComposition` and its
+`spoly` identity. The S-polynomial is already known to be `V0 − U0`:
+`rule₁ = bokutShiaoRelation i₁ i j₁`, `rule₂ = bokutShiaoRelation i₁ i j₂`,
+`left = descWord i j₁`, `overlap = [σᵢ]`, `right = descWord i₁ j₂ ++ [σᵢ]`, and
+the two leading words cancel because `descWord i j₂ = σᵢ :: descWord i₁ j₂`.
+
+## §4ag — the `a > b` regime is closed, at every pair of depths
+
+`CornerGeneral.resolves`: the Bokut–Shiao rule at bottom `j₁` composed with the
+one at bottom `j₂` reduces to zero whenever `j₁ < j₂ ≤ i − 2`. No bound on either
+depth. Sorry-free, standard axioms, full library builds. Checked non-vacuous by
+instantiating at rank 5, `a = 3`, `b = 2` — §4aa's case, now an instance.
+
+**What the assembly amounted to.** Six pieces, in the order the engine takes them:
+
+    s1 → s2 → loopTwoGen (second term's loop) → s3 → s4 → loopTwoFromTop (first term's)
+
+and the two terms coincide. The chain length — `b² + 3b + 5`, quadratic in the
+depths — is carried entirely by the two loop invocations; everything else is four
+fixed steps. Wiring it was mechanical because the word definitions had been
+chosen to match the loop lemmas' shapes syntactically, which matters:
+`MultiStepReduction.trans` needs the intermediate to match on the nose, not up to
+`CoeffEq`. Had `V2`, `U0`, `U1`, `W` been written in any other associativity the
+chain would have needed bridging lemmas at every seam.
+
+The composition is `rule₁ = bokutShiaoRelation i₁ i j₁`,
+`rule₂ = bokutShiaoRelation i₁ i j₂`, `left = descWord i j₁`, `overlap = [σᵢ]`,
+`right = descWord i₁ j₂ ++ [σᵢ]`; the two leading words cancel because the short
+run splits as `descWord i j₂ = σᵢ :: descWord i₁ j₂`, which *is* the overlap.
+
+**Scope, precisely.** This subsumes §4aa (`(3,2)`), §4ad (`b = 2`, all `a`) and
+§4ae (`b = 3`, all `a`) — all of them `a > b`. It does **not** subsume §4z
+`(2,2)`, §4ab `(2,3)` or §4ac `(3,3)`: those are `a ≤ b`, the other regime, where
+the quadratic rule appears twice and the length is `2ab − a² + 5a + 1`. Those
+three remain fixed-depth cases.
+
+## Where the arc stands now
+
+**Done.** All 92 overlap and 22 inclusion compositions at `n = 4`, sorry-free.
+Every family general in `n`. The corner's **`a > b` regime general in both
+depths**. Confluence verified computationally to `n = 12`.
+
+**Open, in order of size.**
+
+1. **The corner's `a ≤ b` regime**, general in both depths. Structurally harder
+   than the one just closed: the quadratic rule appears twice, so the chain is
+   not all-monic and `monicStep` does not reach every step; and the length
+   `2ab − a² + 5a + 1` depends on *both* depths, so a single loop over one index
+   will not do. Whether it factors as two nested loops is not yet known — that is
+   the first thing to measure, the way §4af's blueprint was measured before any
+   Lean was written.
+2. **The shape enumeration for general `n`** — §4k computes `overlapTriples` by
+   `decide` at `n = 4`; a general theorem needs it characterised abstractly.
+
+## The `a ≤ b` regime, measured — and it is not one loop
+
+Same order of work as §4af's blueprint: measure before writing Lean. New artifact
+`computations/hecke_corner_le_regime.py` and its witness.
+
+**The split.**
+
+    prefix(a)     a² + a + 5 steps, depending on `a` alone, containing both
+                  applications of the quadratic rule
+    block(a,b)    ab − a² + 2a − 3 far-commutations, and nothing else
+    two steps
+    block(a,b)    the very same sequence again
+
+    a² + a + 5 + 2[ab − a² + 2a − 3] + 2  =  2ab − a² + 5a + 1   ✓
+
+exactly the fitted length. Checked at every `(a, b)` for `a = 2 … 5`,
+`b = a … a+4`: twenty cases, no failure. Both blocks are far-commutations only,
+they are identical sequences, the two middle steps are not far-commutations, and
+no quadratic step occurs anywhere after the prefix.
+
+**A wrong fit, caught.** My first reading of the chains gave `prefix = 6a − 1`
+and `block = a(b−1) − a(a−1)/2`. Those fit `a = 2` and `a = 3` — and fail from
+`a = 4` on, where the prefix is 25 and not 23. Both are quadratic in `a`, not
+linear. This is why the script checks the *split* at each pair rather than
+inferring it from the length: the length formula was right all along and would
+have hidden the error indefinitely.
+
+**Why this regime is harder than the one just closed.** The block is a **nested
+double loop**, not a single one: `a` levels, level `p` a run of far-commutations
+`F_{p,q}` with `q` ascending to `b`, of lengths `2, 3, 4, …` capped at `b−a+2`.
+
+    a=3 b=5:  F24 F25 | F13 F14 F15 | F02 F03 F04 F05
+    a=4 b=6:  F35 F36 | F24 F25 F26 | F13 F14 F15 F16 | F03 F04 F05 F06
+    a=5 b=7:  F46 F47 | F35 F36 F37 | F24 F25 F26 F27 | F14 F15 F16 F17 | F04 F05 F06 F07
+
+That is the structural reason the length depends on both depths rather than one,
+and it is what `a > b` did not have. Two further differences: the prefix is
+itself `a`-dependent and quadratic, and it contains the quadratic rule twice —
+so `monicStep`, which carried every step of the other regime, does not reach it.
+
+**What this suggests for the Lean.** The two blocks are the same sequence, so one
+lemma serves both, and being pure far-commutations they should be a nested
+application of `farComm_transport_left_sources` — an outer induction over levels
+with an inner transport per level, rather than §4af's single loop. The prefix
+looks like the genuinely new work: quadratic-rule steps at general depth, which
+nothing in the development currently handles in a depth-general way. Measuring
+*its* internal structure is the next step, and it should be done before any Lean,
+on the evidence of the fit that just failed.
+
+### The prefix, measured — and the regime is far less alien than it looked
+
+Measured to `a = 7`, and the previous turn's assessment ("the prefix is the
+genuinely new work; nothing handles it depth-generally") was too pessimistic.
+
+**The prefix splits as `A · B₁₀ · C · D`** with
+
+    A = (a² − 3a + 10)/2      C = a(a+1)/2      D = 2a − 1
+
+and it is **self-similar with the whole chain**: `C = A[2:] ++ small(a)` and
+`D = [B₁₀, B₂₁] ++ small(a)`, where `small(a)` is a far-commutation block of
+length `2a − 3`. That is the same `block · two steps · block` shape the top level
+has, one scale down. Both identities hold for every `a` from 3 to 7; at `a = 2`
+the rule in `D`'s second slot is named `Y₂₁` rather than `B₂₁⟨2⟩` because at that
+depth the Bokut–Shiao word degenerates to the braid word — the §4aa
+coincidence again, not a structural exception, and the check accepts either.
+
+**`A` is the loop I already have.** Writing it out at `a = 6`:
+
+    B₂₁ F₀₂ │ B₃₂ F₁₃ F₀₃ │ B₄₃ F₂₄ F₁₄ F₀₄ │ B₅₄ │ Y₆₅ Q₆
+
+after an initial `B₂₁ F₀₂`. Each group is exactly a pass of §4af's loop: a
+Bokut–Shiao step at top `d`, then `d` far-commutations carrying the exposed
+letter left. So `blockStep` and the loop lemmas apply here too, at `d = 1 … a−3`.
+
+**What is actually new is two steps.** The chain uses the quadratic rule exactly
+twice — end of `A`, end of `C`'s non-block part — and each time it is preceded by
+a Yang–Baxter step, as `Y_{a,a−1} Q_a`. Everything else in the whole chain is a
+loop pass or a far-commutation. So the new Lean content for this regime is:
+
+1. the `Y_{a,a−1} Q_a` pair at general depth — the only place `monicStep` cannot
+   reach, since the quadratic rule has three words;
+2. the far-commutation blocks, `small(a)` and `block(a,b)`, as nested transports
+   over `farComm_transport_left_sources`.
+
+Both are bounded pieces of work, and (1) is two steps rather than a family. The
+`a ≤ b` regime is not a second development; it is the one already built plus a
+quadratic-rule pair and a second layer of transport.
+
+The witness now asserts the prefix split, both self-similarity identities, and
+that the quadratic rule is used exactly twice, at every `(a, b)` tested.
+
+### The two quadratic steps, opened up — and `quadStep`
+
+Last turn located the two quadratic steps and read off that everything else in
+the `a ≤ b` chain is a loop pass or a far-commutation. This turn measures the
+steps themselves and supplies the Lean lemma they need.
+
+**Measured** (`computations/hecke_quad_pair_shape.py`, 36 occurrences over
+`a = 2 … 7`, `b ∈ {a, a+1, a+3}`, none failing). Both occurrences apply the
+**same** rule, `heckeRelation j₁`, after the **same** step,
+`yangBaxterRelation j₁ (j₁+1)`; they differ only in their contexts:
+
+    occurrence 1:  L              ++ [σ_{j₁}, σ_{j₁}] ++ descWord (j₁−1) j₂ ++ [σ_i]
+    occurrence 2:  [σ_{i−2}] ++ L ++ [σ_{j₁}, σ_{j₁}] ++ descWord (j₁−1) j₂
+
+    L = descWord (i−1) (j₁+2) ++ descWord i (j₁+3)
+          ++ [σ_{j₁+1}, σ_{j₁+2}, σ_{j₁}, σ_{j₁+1}]
+
+uniformly in `a`, `a = 2` included — both `descWord`s are empty there. Unlike
+the prefix split, this family has no degenerate case, so no `Y`-vs-`B`
+alternative is needed in the check.
+
+A first guess at these contexts, written before the probe ran, was wrong at
+**all 36** occurrences. The formulas are measured then asserted, not derived,
+and the witness caveat says so — the same status as the split formulas, and the
+same reason the check is per `(a, b)`.
+
+**`quadStep`** (§4ah, `HeckeCompletion.lean`). `monicStep` asks for a monic
+*two-word* rule, so a step is a substitution: one term in, one out. The
+quadratic rule has *three* words, so `(a σ_z² b, c)` becomes the **pair**
+`(a σ_z b, h·c)` and `(a b, c)`. `quadStep` is `monicStep`'s statement with that
+output and the same proof shape — `ofTerms_coeff_mid` for the coefficient, then
+`split_ifs <;> ring`. Built first try.
+
+The contexts being *parameters* is what makes one lemma cover both occurrences:
+the assembly supplies the one-letter difference and the step lemma never sees
+it. It also subsumes the five hand-written quadratic steps of §4y, which exist
+only because this lemma was missing.
+
+Sorry-free, standard axioms (`propext, Classical.choice, Quot.sound` — same as
+`monicStep`), `lean`-direct exit 0 on the full file with no warnings, and
+checked non-vacuous by instantiating at rank 4 with a non-empty context at each
+end and a bystander term.
+
+**Scope.** This does **not** close the `a ≤ b` regime. It supplies the one
+piece nothing in the development could reach. The Yang–Baxter half of each pair
+is monic two-word, so `monicStep` already covers it — meaning item (1) of last
+turn's list is now done at the step level.
+
+**Next**, in order: the far-commutation blocks — `small(a)` in the prefix and
+`block(a,b)` twice at top level — as nested transports over
+`farComm_transport_left_sources`, an outer induction over levels with an inner
+transport per level; then the assembly, which is the same `MultiStepReduction.trans`
+wiring the `a > b` regime needed, over a longer list.
+
+**Process note.** This arc's 29 commits had **no PR** — the branch
+`claude/auq3-quad-left-family` was never opened for review, against the
+ALWAYS-PR rule. (Recorded here first as "79 commits", which was wrong: that
+came from `git rev-list origin/main..` in a **shallow** clone, where the
+merge-base is unresolvable and the count is meaningless. Recomputed after
+deepening: 29 arc commits, 36 with this session's, matching GitHub's count.
+Worth remembering — a shallow clone silently returns plausible garbage from
+any range query, and the first symptom here was a `git diff main...branch`
+that failed outright with "no merge base".) Continued on `claude/prefix-self-similarity-fo9avn`, which
+carries those commits plus this turn's, and opened
+[#5247](https://github.com/litlfred/qou/pull/5247) over the whole arc. The
+sibling branch is untouched.
+
+### The far-commutation blocks — two corrections, and the transport lemma
+
+`computations/hecke_block_transport_shape.py` + witness. The earlier conjecture
+that the blocks are "a nested application of `farComm_transport_left_sources`"
+is wrong twice over, and both corrections make the remaining work smaller.
+
+**Correction 1 — the direction.** Within a level the *high* letter is fixed and
+passes successively lower ones, so the shape is
+`a ++ (x :: (w ++ b)) → a ++ (w ++ (x :: b))` — `farComm_transport_right`
+(§4y), **not** `farComm_transport_left` (§4v). The two are mirrors and not
+interchangeable.
+
+Checked positionally rather than by restating rule names: a transport of one
+letter across `k` others is `k` steps whose rewrite position advances by exactly
+one, with the high letter at that position throughout, every letter passed at
+least two below it, and the net effect the source → target shape. All four hold
+for all **275** runs, over the whole chain rather than only the blocks.
+
+**Correction 2 — the nesting.** "Nested double loop" describes the rule list
+accurately but overstates the Lean. Over all 20 pairs `a = 2 … 6`,
+`b = a … a+3`:
+
+    b > a:  a levels;   level k passes min(b−a−1+k, b−a+2) letters
+    b = a:  a−1 levels; level k passes min(k, 2)
+
+so the number of **short** levels is fixed at two (one on the diagonal), and
+every remaining level transports one letter past the *same* run
+`descWord (j₁+1) j₂`. That is a fixed prologue plus a **uniform single-index
+loop** — the shape §4af's loop already has — not a nested loop with a growing
+inner run.
+
+**`farComm_transport_right_sources`** (§4y). The blocks need the rightward
+transport with the relaxed collision hypothesis, for the reason §4v needed it on
+the left: the corner chain's bystanding term *is* the transport's final word, so
+the unrestricted hypothesis is false exactly where the transport is wanted.
+
+The end that relaxes is **not** the mirror image of the left one. On the left
+the final word is the split `u = []`; on the right it is `v = []`, because the
+moving letter starts at the left of `w` and finishes at its right, so the two
+ends swap with the direction of travel. Mirroring `u ≠ []` verbatim would have
+relaxed the *source* split and left the real obstruction in place.
+`farComm_transport_right` is now a two-line corollary, so §4y's callers are
+untouched. Sorry-free, standard axioms, `lean`-direct exit 0, no warnings, and
+checked **strictly stronger** — an instance whose bystander is the transport's
+final word, where `_sources` applies and `farComm_transport_right` provably
+cannot.
+
+**A probe bug worth remembering.** Runs must be grouped by *same-term
+continuation*, not by high letter alone: an element becomes multi-term the
+moment the quadratic rule fires, so adjacent chain steps can rewrite different
+terms. Grouping without that test welded two unrelated `F(0,2)` steps — on words
+of length 6 and 5 — into one bogus run and reported it as a structural failure.
+
+**Still open, and now the whole of what remains.** The outer induction over the
+levels, and then the assembly. The per-level lemma exists
+(`farComm_transport_right_sources`), the level structure is measured, and the
+quadratic steps are covered by `quadStep` — so the assembly is
+`MultiStepReduction.trans` over: prefix loop passes, the two `Y·Q` pairs, the
+two blocks, and the closing steps, with the `OverlapComposition` and its `spoly`
+identity at the end. Same wiring the `a > b` regime needed, over a longer list.
+No new *kind* of object is known to be missing; that claim is only as good as
+the measurements above, which cover `a ≤ 7` and a sample of `b`.

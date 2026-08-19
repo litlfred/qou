@@ -1209,6 +1209,12 @@ Same cwd-assumption class as the `parents[2]` bug fixed in 12 scripts.
 
 ## Addendum 27 (2026-08-18) — a per-element representative EXISTS at m = 3 and 6, the canonical cocycle closes there — and the value is still not an invariant
 
+> **⚠ SCOPE NARROWED by Addendum 30 (2026-08-19).** The ambiguity this
+> addendum measures is real, but it belongs to **my** descent-to-B +
+> χ_B composite, **not** to CGZ's P_ζ — which is root-independent by
+> their Lemma 2.4(a). Read every "obstruction" below as a condition
+> for the *B-level composite* to be well defined.
+
 `gswz_epsm_per_element_representative_probe.py`, **16/16**. Answers the
 question Addendum 25 reopened (bean `qou-w4gn`), and then finds the next
 obstruction rather than a value.
@@ -1275,6 +1281,12 @@ m ≥ 3 remain uncomputed as invariants.
 
 ## Addendum 28 (2026-08-18) — the root ambiguity has a closed form: a second condition, an obstruction at m ≥ 4, and a door still open at m = 3
 
+> **⚠ SCOPE NARROWED by Addendum 30 (2026-08-19).** The ambiguity this
+> addendum measures is real, but it belongs to **my** descent-to-B +
+> χ_B composite, **not** to CGZ's P_ζ — which is root-independent by
+> their Lemma 2.4(a). Read every "obstruction" below as a condition
+> for the *B-level composite* to be well defined.
+
 `gswz_epsm_root_ambiguity_criterion_probe.py`, **9/9**. Explains
 Addendum 27's non-invariance exactly, and turns it into a criterion.
 
@@ -1334,3 +1346,162 @@ e(1−w) computed from a *different* 𝔽₂₅ generator — the two differ by 
 unit rescale, and the check went red. Fixed by doing that comparison in
 one convention. The lattice test is unaffected: μ* is invariant under
 the rescale, since gcd(m, u·g) = gcd(m, g) for a unit u mod 24.
+
+## Addendum 29 (2026-08-18) — m = 3 closed for one and two relations: no element-level representative meets both conditions
+
+> **⚠ SCOPE NARROWED by Addendum 30 (2026-08-19).** The ambiguity this
+> addendum measures is real, but it belongs to **my** descent-to-B +
+> χ_B composite, **not** to CGZ's P_ζ — which is root-independent by
+> their Lemma 2.4(a). Read every "obstruction" below as a condition
+> for the *B-level composite* to be well defined.
+
+`gswz_epsm_m3_one_two_relation_closure_probe.py`, **8/8**. Addendum 28
+left m = 3 as the only level where the two-condition criterion was
+*residue-level* feasible; residue feasibility is only **necessary**
+(Addendum 25), so the question was whether an element-level
+representative actually exists. It does not, for one or two relations.
+
+**The mechanism, measured:**
+
+- μ*(z₁) = μ*(z₂) = **3**, and ξ carries them at multiplicities 2 and 1
+  — so both need moving.
+- The maximum in-relation repetition of any argument is **2, never 3**
+  (over 1097 distinct relations containing the actual z₁ or z₂). For a
+  non-special argument u, μ*_u | c·k_u with k_u ∈ {1,2} therefore forces
+  **3 | c**.
+- Hence a relation usable with c ∦ 3 needs *every distinct* non-target
+  argument special — and **0 of 1097 qualify** (only 3 of 23 residues
+  are special at m = 3).
+
+**Result:**
+
+| search | coverage | solutions |
+|---|---|---|
+| one relation | exhaustive, 1097 | **0** |
+| two relations sharing a non-special argument | exhaustive: 307 590 pairs, 2 460 720 coefficient combos, 13 s | **0** |
+| two relations with disjoint non-special arguments | excluded structurally (each c_i ≡ 0 mod 3, so z₂ stays 1 mod 3) | — |
+
+The pair search finished in 13 s against a 300 s budget, so no cutoff
+hid anything — asserted as a check.
+
+**Open, and explicitly not searched:** three or more relations forming a
+**chain** of shared non-special arguments. The mechanism does not
+exclude those, and the pair result is not evidence about triples beyond
+showing no two-relation chain closes.
+
+**Scope.** Combined with Addendum 28 this says: the D_ζ descent with χ_B
+and *freely chosen* m-th roots yields no well-defined ε_m at any m ≥ 3
+within one or two relations. It says nothing about ε_m as a map, and
+nothing about a construction that **pins** the roots (CGZ's η-elements)
+rather than choosing them — which is now the only route left standing.
+
+**A check that failed for a coding reason, not a mathematical one.** The
+"no relation has all others special" gate first went red. The claim was
+*true* (the measured count is 0); the predicate was miscoded —
+accumulating `max(0, specials − len)` from a sentinel of 0 and then
+requiring `< 0`, which cannot hold when nothing qualifies. Recorded
+because at a glance that is indistinguishable from a mathematical
+failure, and I briefly wrote it up as one.
+
+## Addendum 30 (2026-08-19) — RE-SCOPE: CGZ's P_ζ *is* root-independent; the m ≥ 3 ambiguity belongs to my descent step, not to the invariant
+
+`gswz_epsm_cgz_lemma24a_rescope_probe.py`, **9/9**. Reading CGZ's own
+definition instead of continuing to build on mine shows that Addenda
+27–29 characterise **my composite**, not their invariant. Scope banners
+added to all three in place.
+
+**What CGZ actually define** (eqn (20), p. 10):
+
+$$P_\zeta(X) := D_\zeta(x)/D_\zeta(1) \ \in\ H^\times/(H^\times)^n,
+\qquad x^n = X,$$
+
+with the parenthetical *"only its image modulo nth powers was ever used,
+and it is more canonical to define it in the manner above."* Then
+**Lemma 2.4(a): P_ζ(X) is independent of the choice of nth root x of
+X**, proved via their eqn (21) — which is exactly the shift law this
+programme proved in Lean (#4964) — plus the observation that the shift
+factor **lies in H^×ⁿ**.
+
+**Measured here**, in the degree-12 field F = Q₅(μ₁₈₇₂) where the m = 3
+work was done:
+
+| | shift ratio D(ζx)/D(x) is an m-th power |
+|---|---|
+| in **F** | **4 of 4** — Lemma 2.4(a) confirmed |
+| in the base **B = Q₂₅** | **1 of 4** |
+
+The ratio equals (1−x)^m/(1−w) exactly (the Lean law, re-verified). Its
+(1−x)^m part is an m-th power anywhere; the (1−w)⁻¹ part lives in the
+**base**, and — structurally — **B^× ⊆ (F^×)^m** here, since μ₂₄ sits in
+F^× as ⟨g^{(5¹²−1)/24}⟩ with (5¹²−1)/24 = 10 172 526 divisible by 3, and
+the 1+5R part is uniquely 3-divisible. So in F the ratio is *always* an
+m-th power, and P_ζ is root-independent for free.
+
+**The ambiguity enters only when I descend to B and apply
+χ_B = teich(·)^{24/m}**, which does not kill those ratios.
+
+**Consequence.** Addenda 27–29 are not retracted — their computations
+stand — but their scope narrows:
+
+| addendum | was framed as | actually is |
+|---|---|---|
+| 27 | ε₃ value not invariant | the **B-level composite** is not invariant |
+| 28 | obstruction at m = 4, 6, 8, 12, 24 | when the **B-level composite** is well defined |
+| 29 | m = 3 closed for 1–2 relations | ditto, for the **B-level composite** |
+
+**None of them obstructs ε_m.** The right target is CGZ's own: the class
+in F^×/(F^×)ⁿ, where root-independence is Lemma 2.4(a) and no
+representative search is needed at all. That is the next increment, and
+it is **not** done here — no ε_m value is claimed.
+
+**Two controls that went red for non-mathematical reasons**, both
+recorded because they look identical to real failures at a glance:
+sweeping 𝔽₅ scalars for a non-cube finds none (order divides 4, and
+(5¹²−1)/4 is divisible by 3), and neither does sweeping a+bα+cα² — every
+element of B^× is a cube in F, which is the structural fact above. The
+control had to leave B entirely, using the ring generator.
+
+## Addendum 31 (2026-08-19) — computing CGZ's class where they put it: the invariant is bracketed, not obtained
+
+`gswz_epsm_field_bracketing_probe.py`, **9/9**. Addendum 30's stated
+next increment was to compute the class in F^×/(F^×)ⁿ instead of
+descending to the base. Done — and the answer is a bracketing, not a
+value.
+
+**The computation.** For a unit of F the class is carried entirely by
+the Teichmüller part (1+5R is uniquely m-divisible), so it reads off as
+teich(u)^{(5^d−1)/m} in μ_m. *Applying the exponent to u itself does not
+work* — the 1+5R factor survives, and an earlier version of this probe
+did exactly that and returned no class at all.
+
+**Result 1 — Lemma 2.4(a), measured rather than quoted.** For
+P_ζ(ξ) = D(x₁)²D(x₂)/D(1)³ the class is **0**, and it is 0 for **all
+nine** choices of the two cube roots. Root-independence is confirmed
+empirically in this setting.
+
+**Result 2 — and this is why it is a bracket.** The class map is *not*
+globally trivial: it returns class 1 on an element built from the ring
+generator. But on the objects that matter it is identically zero — the
+class of P_ζ(w) is **0 for every one of the 23 admissible base
+arguments**. So in F the invariant carries no information about ξ, and
+the 0 above is **vacuous**. (P itself is not σ-fixed, so this is not the
+trivial "it landed in B, and B^× ⊆ (F^×)^m" explanation from
+Addendum 30.)
+
+| field | root-independence | class |
+|---|---|---|
+| base B = Q₂₅ | **fails** (Addenda 27–29) | distinguishes |
+| F = Q₅(μ₁₈₇₂) | **holds** (Lemma 2.4(a)) | **identically 0 on base arguments** |
+
+**Neither field supports the invariant.** The useful field is
+intermediate — or, reading CGZ more carefully, the invariant is not this
+bare class at all: their Lemma 2.4(d),(e) record that P_ζ is
+Φ-invariant and transforms under Gal by the cyclotomic character, and
+their R_ζ lands in K₂ / Galois cohomology rather than in a quotient of
+units. A bare class in F^×/(F^×)ⁿ discards exactly that structure, which
+is consistent with its collapsing.
+
+**Scope.** A negative that localises the difficulty rather than
+resolving it. No ε_m value is claimed at m ≥ 3; the m = 2 result
+(PR #4968) is untouched. The non-vacuity control is what makes the
+collapse a finding rather than a broken class function.

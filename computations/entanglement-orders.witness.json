@@ -1,10 +1,10 @@
 {
   "computation": "entanglement-orders",
   "description": "Entanglement energy tracked at all GB filtration orders (k = 0, 1, 2, ..., n_gens).  Each k-subset contribution weighted by z^(2\u00b7span) where span = max(i) - min(i) of the subset, reflecting the total number of crossings the k-entanglement spans.",
-  "timestamp": "2026-08-15T22:16:14.996370+00:00",
+  "timestamp": "2026-08-16T12:59:43.667791+00:00",
   "q_0": 1.1099785827513808,
   "z": 0.6126880371464652,
-  "calibration_MeV_per_cat": 0.0007687818017001644,
+  "calibration_MeV_per_cat": 0.0039018384864282244,
   "particles": [
     {
       "particle": "proton",
@@ -13,22 +13,22 @@
       "n_gens": 2,
       "orders": {
         "0": {
-          "contribution": 0.9603954011165767,
+          "contribution": 1.0228959844379795,
           "n_terms": 1,
           "description": "|\u03a0V\u0302_i|"
         },
         "1": {
-          "contribution": 1096978.5786418868,
-          "n_terms": 2,
+          "contribution": 240468.2049881513,
+          "n_terms": 1,
           "description": "\u03a3_{k=1-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "2": {
-          "contribution": 123486.51008745319,
-          "n_terms": 1,
+          "contribution": 0.0,
+          "n_terms": 0,
           "description": "\u03a3_{k=2-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         }
       },
-      "total": 1220466.0491247412
+      "total": 240469.22788413573
     },
     {
       "particle": "neutron",
@@ -37,22 +37,22 @@
       "n_gens": 2,
       "orders": {
         "0": {
-          "contribution": 0.8332901758695208,
+          "contribution": 0.8875445464799453,
           "n_terms": 1,
           "description": "|\u03a0V\u0302_i|"
         },
         "1": {
-          "contribution": 511298.9126727707,
+          "contribution": 431062.30354316236,
           "n_terms": 2,
           "description": "\u03a3_{k=1-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "2": {
-          "contribution": 9240.692274305515,
+          "contribution": 25631.23372872682,
           "n_terms": 1,
           "description": "\u03a3_{k=2-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         }
       },
-      "total": 520540.43823725206
+      "total": 456694.42481643567
     },
     {
       "particle": "D",
@@ -61,37 +61,37 @@
       "n_gens": 5,
       "orders": {
         "0": {
-          "contribution": 0.21139218630907802,
+          "contribution": 0.30867151599360493,
           "n_terms": 1,
           "description": "|\u03a0V\u0302_i|"
         },
         "1": {
-          "contribution": 1608290.578641762,
-          "n_terms": 5,
+          "contribution": 671560.007892597,
+          "n_terms": 4,
           "description": "\u03a3_{k=1-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "2": {
-          "contribution": 157662.40242711996,
-          "n_terms": 10,
+          "contribution": 40026.29204928464,
+          "n_terms": 7,
           "description": "\u03a3_{k=2-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "3": {
-          "contribution": 6116.1506617801115,
+          "contribution": 33372.1256139112,
           "n_terms": 10,
           "description": "\u03a3_{k=3-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "4": {
-          "contribution": 276.08861114415544,
+          "contribution": 2048.5097642921264,
           "n_terms": 5,
           "description": "\u03a3_{k=4-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "5": {
-          "contribution": 0.15090362620044792,
+          "contribution": 0.4167925418203083,
           "n_terms": 1,
           "description": "\u03a3_{k=5-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         }
       },
-      "total": 1772345.5826376188
+      "total": 747007.6607841428
     },
     {
       "particle": "T",
@@ -100,52 +100,52 @@
       "n_gens": 8,
       "orders": {
         "0": {
-          "contribution": 0.028116342382230257,
+          "contribution": 0.0645083975255979,
           "n_terms": 1,
           "description": "|\u03a0V\u0302_i|"
         },
         "1": {
-          "contribution": 2119594.019211569,
-          "n_terms": 8,
+          "contribution": 1102632.0302457726,
+          "n_terms": 7,
           "description": "\u03a3_{k=1-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "2": {
-          "contribution": 186582.33196601373,
-          "n_terms": 28,
+          "contribution": 84634.31185797062,
+          "n_terms": 23,
           "description": "\u03a3_{k=2-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "3": {
-          "contribution": 8844.826944768236,
+          "contribution": 41894.29817035544,
           "n_terms": 56,
           "description": "\u03a3_{k=3-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "4": {
-          "contribution": 659.7396056314215,
+          "contribution": 3911.558155849104,
           "n_terms": 70,
           "description": "\u03a3_{k=4-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "5": {
-          "contribution": 37.99263605569718,
+          "contribution": 270.9814961939411,
           "n_terms": 56,
           "description": "\u03a3_{k=5-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "6": {
-          "contribution": 1.9656701747035938,
+          "contribution": 16.268718913753766,
           "n_terms": 28,
           "description": "\u03a3_{k=6-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "7": {
-          "contribution": 0.021289267386271814,
+          "contribution": 0.03968243396966806,
           "n_terms": 8,
           "description": "\u03a3_{k=7-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "8": {
-          "contribution": 0.0013587166208524394,
+          "contribution": 0.0019058661788970738,
           "n_terms": 1,
           "description": "\u03a3_{k=8-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         }
       },
-      "total": 2315720.9267985392
+      "total": 1233359.554741753
     },
     {
       "particle": "\u00b3He",
@@ -154,59 +154,59 @@
       "n_gens": 8,
       "orders": {
         "0": {
-          "contribution": 0.07484848465886276,
+          "contribution": 0.14035445237557145,
           "n_terms": 1,
           "description": "|\u03a0V\u0302_i|"
         },
         "1": {
-          "contribution": 2705309.6902193897,
-          "n_terms": 8,
+          "contribution": 912125.0904412898,
+          "n_terms": 6,
           "description": "\u03a3_{k=1-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "2": {
-          "contribution": 373871.66528998525,
-          "n_terms": 28,
+          "contribution": 45240.11174649877,
+          "n_terms": 19,
           "description": "\u03a3_{k=2-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "3": {
-          "contribution": 39647.076737068186,
-          "n_terms": 56,
+          "contribution": 69649.58057275211,
+          "n_terms": 52,
           "description": "\u03a3_{k=3-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "4": {
-          "contribution": 4135.807186937098,
-          "n_terms": 70,
+          "contribution": 4202.123872750315,
+          "n_terms": 64,
           "description": "\u03a3_{k=4-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "5": {
-          "contribution": 186.40305215634427,
+          "contribution": 3641.807215519632,
           "n_terms": 56,
           "description": "\u03a3_{k=5-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "6": {
-          "contribution": 8.935047447156485,
+          "contribution": 169.21644562315663,
           "n_terms": 28,
           "description": "\u03a3_{k=6-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "7": {
-          "contribution": 0.044276187060629794,
+          "contribution": 0.13130243244209486,
           "n_terms": 8,
           "description": "\u03a3_{k=7-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "8": {
-          "contribution": 0.002100561137618076,
+          "contribution": 0.003937398453362449,
           "n_terms": 1,
           "description": "\u03a3_{k=8-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         }
       },
-      "total": 3123159.6987582166
+      "total": 1035028.2058887171
     }
   ],
   "scriptHash": "5c4717b103fd",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
-  "commitSha": "08b6ff7e7de3e8c2db5246d3647b42e1ea71b855",
+  "scriptCommitSha": "6f485d0ba5e5c56c73f5d285890d58aff49dd753",
+  "commitSha": "fc9819f75c7b82f1235a47fe9533978a7100b621",
   "engine": "python",
-  "computedAt": "2026-08-15T22:16:16.773137+00:00",
+  "computedAt": "2026-08-16T12:59:44.015292+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

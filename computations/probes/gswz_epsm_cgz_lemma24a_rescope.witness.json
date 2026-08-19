@@ -1,0 +1,68 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_cgz_lemma24a_rescope_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_cgz_lemma24a_rescope_probe.py",
+ "commitSha": "9d547fa2a7378b8f1b0b794c3cf035e3af9bd1ce",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 eqn (20), Lemma 2.4(a), eqn (21), p.10; shift law QOU.Machinery.CyclicQuantumDilog (#4964); Addenda 27-29 (this repo)",
+ "checks": {
+  "m3_probe_green": true,
+  "m_divides_F_teichmuller_order": true,
+  "representative_rebuilt": true,
+  "shift_ratio_matches_lean_and_cgz21": true,
+  "lemma_24a_holds_in_F": true,
+  "fails_in_B_so_composite_is_where_ambiguity_enters": true,
+  "base_units_are_all_mth_powers_in_F": true,
+  "control_F_test_can_reject": true,
+  "control_B_test_can_reject": true
+ },
+ "result": {
+  "per_symbol": [
+   {
+    "e_w": 3,
+    "mult": 2,
+    "mth_power_in_F": true,
+    "mth_power_in_B": false
+   },
+   {
+    "e_w": 22,
+    "mult": -3,
+    "mth_power_in_F": true,
+    "mth_power_in_B": false
+   },
+   {
+    "e_w": 12,
+    "mult": -2,
+    "mth_power_in_F": true,
+    "mth_power_in_B": true
+   },
+   {
+    "e_w": 15,
+    "mult": -4,
+    "mth_power_in_F": true,
+    "mth_power_in_B": false
+   }
+  ],
+  "mth_power_counts": {
+   "in_F": 4,
+   "in_B": 1,
+   "of": 4
+  },
+  "control_non_cubes": {
+   "F_outside_base": [
+    0,
+    1
+   ],
+   "B": [
+    0,
+    1
+   ]
+  }
+ },
+ "scope": "RE-SCOPE of my own merged Addenda 27-29. CGZ define P_zeta with values in H^x/(H^x)^n and prove root-independence (Lemma 2.4(a)) via the shift law this programme proved in Lean. Measured here in F = Q_5(mu_1872): every shift ratio IS an m-th power of F (Lemma 2.4(a) confirmed), but only one of four is an m-th power in the base B = Q_25 -- so the ambiguity Addenda 27-29 measured is introduced by MY extra step (descent to B, then chi_B), not by CGZ's invariant. Those computations stand; their SCOPE narrows to 'when the B-level composite is well defined'. They do NOT obstruct eps_m. Computing the class in F^x/(F^x)^n is the next increment and is not done here."
+}
