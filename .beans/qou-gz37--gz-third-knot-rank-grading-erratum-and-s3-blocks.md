@@ -1,0 +1,104 @@
+---
+# qou-gz37
+title: 'Third knot found in-corpus: GZ rank grading is NOT s(x) (guard), a source erratum adjudicated, and W_0 as S_3 partition blocks'
+status: in-progress
+type: task
+priority: high
+tags:
+    - g3-aomega
+    - route-c
+    - literature
+created_at: 2026-08-19T12:10:00Z
+updated_at: 2026-08-19T12:10:00Z
+---
+
+## Context
+
+M3 (qou-m3ad) closed saying the one cheap remaining test for H_Ad was a RANK-6 knot
+whose grading is not multiplicity-free, and that no such data was in the 371-PDF
+corpus -- so it needed outbound search, which this sandbox blocks.
+
+That operational conclusion was WRONG. The data is in the corpus.
+
+## The methodology defect (self-correction)
+
+The M3 sweep keyed on the string "Stokes". Garoufalidis-Zagier "Knots and Their
+Related q-Series" (SIGMA 19 (2023) 082, uploads/2304.09377v2.pdf) says "Stokes"
+EXACTLY ONCE, so it ranked below thirty other files and was never opened. It is not
+obscure -- it is the sequel [44] that 2111.06645 announces IN ITS OWN ABSTRACT, an
+abstract I had already quoted.
+
+General lesson: a corpus sweep keyed on the vocabulary of the answer you EXPECT will
+miss the paper that answers in different words. The sweep looked for resurgence
+vocabulary; the data arrived in quantum-modularity vocabulary.
+
+The narrower §6 claim -- "no q->0 STOKES MATRIX for a third knot in the corpus" --
+remains accurate and is NOT retracted. What was wrong was the conclusion drawn from it.
+
+## The near-miss (why the guard is load-bearing)
+
+GZ §3.5 reports for (-2,3,7) "a new phenomenon ... the weight spaces have higher
+multiplicity" -- weights totalling r=6 with one of dimension 4. That reads as exactly
+the rank-6 non-multiplicity-free refutation of H_Ad that M3 asked for.
+
+IT IS NOT. The graded object has total r, which is 2 at 4_1, while s(1)=3; and 4_1's
+weight set is {-1/2,+1/2}, two elements against s(x)'s three. DIFFERENT OBJECTS.
+This is the da-arity-conflation failure mode, one inference away from retiring a
+hypothesis on the strength of an unrelated grading. Guard: T4 + the Lean theorem
+higher_multiplicity_does_not_refute_h_ad, which states both halves in one place so
+neither can be quoted without the other.
+
+## Erratum adjudicated in the source
+
+Three GZ §3.5 statements describe one grading:
+  prose "weights 0,1,2 with dimensions 1, 4 and 1"          -> (1,4,1)
+  explicit W_0=<H0,H3,H4,H5>, W_1=<H1>, W_2=<H2>            -> (4,1,1)
+  delta=(0,1,2,0,0,0); weight vector (-1,0,1,-1,-1,-1)      -> (4,1,1)
+
+Two independent internal statements against one: the PROSE TRANSPOSES its first two
+dimensions. Both readings total 6, so a sum-check cannot catch it -- same shape as the
+GGM eq-(200) q^1 erratum adjudicated earlier in this arc.
+
+## What is genuinely new
+
+1. CORROBORATION on a third knot. GZ ranks r = 2,3,6 (stated in 2111.06645 §2.1;
+   recovered independently in 2304.09377 §3.4 from q-series counts 4,6,12 = 2r).
+   M3 Part 4's signature rule gives r = real + 2*pairs = 2,3,6, and r = |P_K| - 1.
+   Three knots, three DISTINCT values, three routes, one answer.
+
+2. W_0 IS AN S_3 REPRESENTATION IN PARTITION BLOCKS. rho is the identity on W_1,W_2
+   and has kernel Gamma(2) on W_0, so W_0 carries a rep of S_3 = Gamma/Gamma(2),
+   decomposing as "the 2-dimensional irrep and two copies of the trivial" =
+   (2,1) + (3)^2, dim 2+1+1 = 4. S_3-irreps are indexed by partitions of 3 -- the SAME
+   Wedderburn indexing the QOU Hecke programme uses at q=1. The third knot's modular
+   structure lands in the corpus's own language without being put there.
+
+3. THE SIGN BLOCK IS ABSENT (multiplicity 0). Under the standard identification the
+   sign block is the bar-odd one, so the Gamma/Gamma(2) action on the level-2 part
+   carries no sign component -- a chirality-flavoured asymmetry on the same involution
+   that grades the DT split.
+
+OBSERVED, NOT DERIVED. No mechanism is claimed for the absent sign block; nothing is
+wired. It is recorded because it is the first place the corpus's own partition
+indexing has turned up in third-knot data that was not constructed to contain it.
+
+## Artifacts
+
+- Lean: QOU.QBeta.GZThirdKnotRankGrading (core Int, imports AdjointIndexSetM3;
+  lean-direct exit 0, sorry-free, #print axioms shows no sorryAx)
+- Probe: computations/probes/gz_third_knot_rank_grading.py, 9/9
+- Audit: docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md §7
+
+## NEXT STEP
+
+1. EXPLAIN THE ABSENT SIGN BLOCK, or show it is an artifact of (-2,3,7). This is the
+   most QOU-native thread the third knot offers: a partition-indexed decomposition
+   with the bar-odd block missing. Needs 4_1/5_2 comparanda -- do THEIR gradings carry
+   an S_3 (or S_2) action, and is a sign block absent there too? If the pattern holds
+   across knots it is structure; if it is (-2,3,7)-only it is an artifact of level 2.
+2. RE-RUN THE CORPUS SWEEP WITHOUT THE VOCABULARY BIAS. The "Stokes" keying cost this
+   arc one paper; sweep instead on knot names + structural terms (rank, weight space,
+   Galois orbit, trace field, quantum modularity). Cheap, and the same defect will
+   have hidden other things.
+3. The H_Ad polynomial test is STILL open and still needs a genuine Stokes matrix for
+   a third knot -- unchanged by this bean, and still not in the corpus.

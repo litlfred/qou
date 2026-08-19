@@ -265,3 +265,85 @@ Artifacts: `QOU.QBeta.AdjointIndexSetM3` (core `Int`, `lean`-direct exit 0,
 sorry-free), `computations/probes/aomega_m3_adjoint_index_set.py` (13/13, four
 adversarial). Bean `qou-m3ad`. Nothing wired; `A_ω = 3` remains
 certified-as-GGM-DT-count, conditionally adopted.
+
+## 7. The third knot was in the corpus (2026-08-19) — and my §6 sweep was too narrow
+
+§6 closed by saying the remaining test needed *"a source **outside** the 371
+uploads, i.e. real outbound search"*. That operational conclusion was **wrong**,
+and the reason is a methodology defect worth naming.
+
+### What §6 got right, and what it got wrong
+
+The §6 sentence *"no `q→0` Stokes matrix for a third hyperbolic knot exists in
+the corpus"* is **still accurate** — nothing retracts it. But the sweep behind it
+keyed on the string **"Stokes"**, and that is far narrower than the question. The
+paper that carries the third knot's grading — Garoufalidis–Zagier, *Knots and
+Their Related q-Series*, SIGMA 19 (2023) 082 (`uploads/2304.09377v2.pdf`) — says
+"Stokes" **exactly once**, so it ranked below thirty other files and was never
+opened. It is not obscure: it is the sequel `[44]` that `2111.06645` **announces
+in its own abstract**, and I had already quoted that abstract in §6.
+
+Lesson, stated generally: **a corpus sweep keyed on the vocabulary of the answer
+you expect will miss the paper that answers in different words.** The §6 sweep
+looked for resurgence vocabulary; the data arrived in quantum-modularity
+vocabulary.
+
+### The near-miss that makes the guard load-bearing
+
+GZ §3.5 reports, for `(−2,3,7)`, *"a new phenomenon … the weight spaces have
+higher multiplicity"* — weights with dimensions summing to `r = 6`, one of them
+of dimension **4**. That reads as precisely the rank-6, non-multiplicity-free
+refutation of `H_Ad` that §6 asked for.
+
+**It is not, and the two objects must not be conflated.** The graded object has
+total `r` — which is **2** for `4₁` — while `s(1) = 3`; and `4₁`'s weight set is
+`{−1/2, +1/2}`, two elements against `s(x)`'s three. Different objects, so the
+higher multiplicity does not bear on `H_Ad`'s polynomial claim. This is the
+`da-arity-conflation` failure mode, and it was one inference away from retiring a
+hypothesis on the strength of an unrelated grading.
+
+### Erratum in the source, adjudicated
+
+Three statements in GZ §3.5 describe the same grading:
+
+| statement | dimensions |
+|---|---|
+| prose: *"weights 0, 1 and 2 with dimensions 1, 4 and 1"* | `(1, 4, 1)` |
+| explicit decomposition `W₀ = ⟨H₀,H₃,H₄,H₅⟩`, `W₁ = ⟨H₁⟩`, `W₂ = ⟨H₂⟩` | `(4, 1, 1)` |
+| `ε`-degrees `(δ₀…δ₅) = (0,1,2,0,0,0)`; weight vector `(−1,0,1,−1,−1,−1)` | `(4, 1, 1)` |
+
+Two independent internal statements against one: **the prose transposes its
+first two dimensions.** Both readings total `6`, so a sum-check cannot catch it —
+the same shape as the GGM eq-(200) `q¹` erratum adjudicated earlier in this arc.
+
+### What is genuinely new
+
+**The Part-4 signature formula is corroborated on a third knot.** GZ's ranks are
+`r = 2, 3, 6` — stated outright in `2111.06645` §2.1 and recovered independently
+in `2304.09377` §3.4 from the q-series counts `4, 6, 12 = 2r`. Part 4's rule
+gives `r = (real embeddings) + 2·(complex pairs) = 2, 3, 6`, and `r = |P_K| − 1`,
+the non-trivial boundary-parabolic representations. Three knots, three distinct
+values, three routes, one answer.
+
+**`W₀` is an `S₃` representation whose blocks are partitions of 3.** GZ: the
+`SL₂(ℤ)` action is the identity on `W₁`, `W₂` and has kernel `Γ(2)` on `W₀`, so
+`W₀` carries a representation of `S₃ = Γ/Γ(2)`, decomposing as *"the
+2-dimensional irreducible representation of `S₃` and two copies of the trivial
+representation"* — i.e. `(2,1) ⊕ (3)^{⊕2}`, dimension `2 + 1 + 1 = 4`.
+
+`S₃`-irreps are indexed by partitions of `3`, the **same Wedderburn indexing the
+QOU Hecke programme uses at `q = 1`** — so the third knot's modular structure
+lands in the corpus's own language without being put there. And one block is
+**absent**: the **sign** representation has multiplicity `0`. Under the standard
+identification the sign block is the bar-odd one, so the `Γ/Γ(2)` action on the
+level-2 part carries no sign component — a chirality-flavoured asymmetry, sitting
+on the same involution that grades the DT split.
+
+**Observed, not derived.** No mechanism is claimed for the absent sign block, and
+nothing here is wired. It is recorded because it is the first place the corpus's
+own partition indexing has turned up in third-knot data that was not constructed
+to contain it.
+
+Artifacts: `QOU.QBeta.GZThirdKnotRankGrading` (core `Int`, sorry-free, no
+`sorryAx`), `computations/probes/gz_third_knot_rank_grading.py` (9/9). Bean
+`qou-gz37`.
