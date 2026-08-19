@@ -51,3 +51,23 @@ after). Integrability from intervalIntegrable_log' (unconditional) +
 intervalIntegrable_log_two_sin. NO derivative estimate anywhere.
 L4-1's ingredient list is now complete: L4-1a (defect repr) + L4-1c(i)
 (exact singular telescope) + L4-1b (Stirling) + this.
+
+REDUNDANT (2026-08-19) -- L4-1's target was ALREADY PROVED ON MAIN, stronger,
+since 2026-08-10 19:24 UTC, one day BEFORE the L4-1 feasibility pass that
+opened this bean.
+
+  QOU/Knot/KashaevAsymptotic.lean :: kashaev_log_sum_asymptotic
+    | sum_{j=1}^{k} log(2 sin(j pi/N))
+        - ( -(N/pi) Lob(k pi/N) + (1/2) log(2N sin(k pi/N))
+            + (pi/(12N)) cot(k pi/N) ) |
+      <= 1/(144 k^2) + (7/12)(pi/N)^2 + (pi/N)^2/(12 sin^2(k pi/N))
+
+Verified: 17-module cone ok=17, axioms [propext, Classical.choice, Quot.sound],
+no sorryAx.  It is STRICTLY STRONGER than the L4-1 target: it identifies the
+O(1/N) term as (pi/12N)cot, and its error is effective (explicit constants).
+The two (1/2)log terms differ by exactly (1/2)log(2pi) -- the Stirling constant
+the L4-1 route was going to produce.
+
+Nothing is deleted; the work here is correct and sorry-free.  Downstream
+consumers should cite kashaev_log_sum_asymptotic instead.
+Audit: docs/audits/2026-08-19-l41-was-already-proved-on-main.md
