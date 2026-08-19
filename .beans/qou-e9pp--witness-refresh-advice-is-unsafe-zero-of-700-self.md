@@ -33,10 +33,10 @@ producer emits provenance at all.
    Not attempted here.
 2. **The `substantive` queue (256) is untriaged.** This script says which drifts
    *can* move a number; it does not say which *did*. That needs the runner
-   (`witness_reproducibility_check.py` / the producer-reproducibility gate on
-   `claude/producer-reproducibility-gate-2026-08-10`, unmerged), and it needs a
-   container with `scipy` / `pyhecke_native` / `clarabel` present, which this
-   one does not have.
+   (`witness_producer_executes_audit.py`, already on `main` via #4960 -- its
+   ENV_MISSING / DIFFERS buckets are the run-time complement to this script's
+   static env gate), and it needs a container with `scipy` / `pyhecke_native` /
+   `clarabel` present, which this one does not have.
 
 ## Do not
 
