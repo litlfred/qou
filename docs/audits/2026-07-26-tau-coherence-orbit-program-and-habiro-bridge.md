@@ -2359,3 +2359,47 @@ and declare `q0Anchor: "independent"` statically.
 Given the dirty-tree finding above, **neither base should be quoted as a
 corpus fact** without naming the tree it came from. The 262 is the robust
 number.
+
+---
+
+## Addendum 44 (2026-08-19) — `v₂` confirmed vacuous, and for a second reason
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_v2_vacuity_confirmation_probe.py`](../../computations/probes/gswz_epsm_v2_vacuity_confirmation_probe.py)
+— 12/12. Scope-(a); nothing wired.
+
+Addendum 32 predicted the degree-2 place carries no `ε_m` invariant, and
+never measured it. Given how many inferences in this arc failed once
+measured — *"hard-fails every producer"*, *"m = 12 and 24 will be trivial"*,
+*"μ_m ⊂ Q₅ iff m coprime to 4"* — the prediction gets checked.
+
+**Confirmed:** the eigenspace at `v₂` is the whole order-9 group; the
+descent is ambiguous by all of it.
+
+### And a second reason the eigenspace argument does not give
+
+At `v₂` the local field is `Q₂₅`, whose roots of unity are `μ₂₄`, so
+**`w_F = 24`** (counted). CGZ's Theorem 1.2 needs `(n, w_F) = 1`; at `n = 3`
+that is `gcd(3,24) = 3 > 1`, so the theorem does not apply and Prop 2.5
+defines only `R^{w_F} = R²⁴` — which in a group of exponent 3 is `(R³)⁸ = 1`,
+**identically trivial**. The same mechanism that makes `m = 2` vacuous in
+every field (Addendum 37).
+
+This is the **stronger** statement. The eigenspace reason says the descent
+carries no information; the `w_F` reason says there is nothing non-trivial to
+descend *to*, even granting a descent.
+
+### Contrast control
+
+The same computation at `v₁`: `w_F = 4`, `gcd(3,4) = 1`, Theorem 1.2 applies,
+eigenspace 3 of 9, `R^{w_F}` **not** identically trivial. The test
+discriminates between the places rather than reporting "vacuous" everywhere.
+
+### The α-line at `p = 5`, complete
+
+| place | `K_v` | `w_F` | Thm 1.2 | eigenspace | invariant |
+|---|---|---|---|---|---|
+| `v₁` (deg 1) | `Q₅` | 4 | **applies** | 3 of 9 | **`8 ∈ Z/24`**, at four levels |
+| `v₂` (deg 2) | `Q₂₅` | 24 | no | 9 of 9 | none, twice over |
+
+No value changes. This closes the `v₂` question by measurement.
