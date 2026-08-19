@@ -1,6 +1,7 @@
 import QOU.SchurWeyl.SeminormalRep
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.HoefsmitRepGeneral
+import QOU.BraidKnot.SytRowSuperstandard
 
 /-!
 # `QOU.SchurWeyl.QJucysMurphyEigen` — the `q`-Jucys–Murphy eigenvalue (bean `qou-t8qh`)
@@ -388,5 +389,68 @@ theorem seminormalRep_barSymJMSum (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) 
     exact sum_cellOf_range T hN (fun c => q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c)))
   · simp only [Matrix.diagonal_apply_ne _ h, if_neg h, mul_zero, Finset.sum_const_zero]
 end SeminormalRep
+
+/-! ## The block eigenvalue, packaged on `Fin (dLambda lam)`
+
+This is the statement `QJucysMurphy` carried as a `sorry`, discharged — **with one hypothesis it
+was missing**.  See `barSymJMSum_block_eigenvalue_zero_false` below: at `N = 0` the statement is
+not merely unproved, it is **false**, so `0 < N` is not bookkeeping. -/
+
+open QOU.Mathlib (StandardYoungTableau)
+
+/-- **Block eigenvalue of `Θ` on the irreducible `ρ_λ` — PROVED, for `0 < N`.**
+
+For every `λ ⊢ N` with `N ≥ 1` the seminormal representation `ρ_λ : H_{N-1}(q) →ₐ M_{d_λ}(ℝ)`
+sends the central bar-symmetrised Murphy sum `Θ = Σ_k (L_k + L_k⁻¹)` to the scalar matrix
+`(Σ_{c∈λ} (q^{2c} + q^{−2c}))·1 = cellContentCoshSum λ q · 1`.
+
+The two ingredients: `seminormalRep_qJM` (Ram (1997) Thm 4.1 — `L_k` is diagonal with entry
+`q^{2·content}` at the cell holding `k+1`) and `sum_cellOf_range` (summing over `k` sweeps every
+cell once, so the diagonal is constant).
+
+`q ≠ 0` with `q ^ 2 ≠ 1` says over `ℝ` exactly that `q` is not a root of unity — the genericity
+`[ram1997]` presupposes, and what `seminormalRep` takes.  It is **weaker** than the `0 < q ∧ q ≠ 1`
+the `sorry`'d version asked for: negative `q` is admitted here.
+
+Refs: [ram1997] Theorem 4.1; [hoefsmit1974]; [murphy1992]. -/
+theorem barSymJMSum_block_eigenvalue_of_pos {N : ℕ} (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (hNpos : 0 < N) (lam : Partition N) :
+    ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
+      ρ (barSymJMSum ℝ q q⁻¹ (N - 1))
+        = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
+  have hcard : (shape lam).cells.card = (N - 1) + 1 := by
+    rw [card_shape]; omega
+  refine ⟨SeminormalRep.seminormalRepFin q hq0 hq2 lam (N - 1) hcard, ?_⟩
+  rw [SeminormalRep.seminormalRepFin]
+  show (Matrix.reindexAlgEquiv ℝ ℝ (Fintype.equivFin (SYT lam)))
+      (SeminormalRep.seminormalRep q hq0 hq2 (N - 1) hcard (barSymJMSum ℝ q q⁻¹ (N - 1))) = _
+  rw [SeminormalRep.seminormalRep_barSymJMSum q hq0 hq2 (N - 1) hcard, map_smul, map_one,
+    cellContentCoshSum]
+
+/-- **The `N = 0` case is false — recorded, not silently excluded.**
+
+`Θ` at `n = 0` is `L_0 + L_0⁻¹ = 1 + 1`, which every algebra map sends to `2 · 1`, while the empty
+partition's `cellContentCoshSum` is the empty sum `0`.  Since `d_λ ≥ 1` always
+(`instNonemptyStandardYoungTableau`), the matrix algebra is nontrivial and `2 · 1 ≠ 0`.
+
+So the `0 < N` hypothesis on `barSymJMSum_block_eigenvalue_of_pos` is not an artefact of the proof
+route: the statement without it is refutable.  The mismatch is a **normalisation** one — `Θ` counts
+`k = 0,…,n` (that is `n+1 = N` Murphy elements, one per cell, correct for `N ≥ 1`), and at `N = 0`
+the `ℕ`-truncated `N - 1 = 0` makes the range one term long against zero cells. -/
+theorem barSymJMSum_block_eigenvalue_zero_false (q : ℝ) (lam : Partition 0) :
+    ¬ ∃ ρ : Hecke ℝ q q⁻¹ (0 - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
+      ρ (barSymJMSum ℝ q q⁻¹ (0 - 1))
+        = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
+  rintro ⟨ρ, hρ⟩
+  have hd : 0 < dLambda lam := by
+    show 0 < Fintype.card (SYT lam)
+    exact Fintype.card_pos
+  have hzero : cellContentCoshSum lam q = 0 := by
+    rw [cellContentCoshSum,
+      show (shape lam).cells = ∅ from Finset.card_eq_zero.mp (card_shape lam), Finset.sum_empty]
+  have h0 : barSymJMSum ℝ q q⁻¹ (0 - 1) = 1 + 1 := barSymJMSum_zero_eq ℝ q q⁻¹
+  rw [h0, map_add, map_one, hzero, zero_smul] at hρ
+  have hentry := congrFun (congrFun hρ ⟨0, hd⟩) ⟨0, hd⟩
+  simp [Matrix.add_apply] at hentry
 
 end QOU.SchurWeyl
