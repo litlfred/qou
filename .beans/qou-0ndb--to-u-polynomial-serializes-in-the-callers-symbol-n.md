@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-10T02:36:12Z
-updated_at: 2026-08-10T18:46:22Z
+updated_at: 2026-08-18T22:10:15Z
 ---
 
 
@@ -293,3 +293,313 @@ always used, and verified the coefficients came back byte-identical. The Φ_8
 correction there was to the *verification* code and is orthogonal to which
 convention the coefficients encode. But the family being convention-C is a
 real item, and it is material to qou-eea0's "total impact" accounting.
+
+---
+
+## Re-measured 2026-08-18, +1260 commits on. Still blocked — and the predicted mixed witness landed.
+
+### The retirement condition has not moved
+
+    witnesses with PARSED check_q:  19  ->  20      fields: ~750 -> 767
+
+Not progress. The two-name `locals` still protects 20 readers and must stay.
+
+### The mixed C/D atomic witness I warned about is now live on main
+
+`qou-eea0` reached `habiro-coefficients-atomic.witness.json` (regenerated
+2026-08-15, `scriptCommitSha 7bcfeb61d3`). It is **internally inconsistent**:
+
+    row                 deg_p_u   symbol      convention
+    p (proton, A=1)        44     u           D
+    n (neutron, A=1)       36     u           D
+    D (deuteron, A=2)      86     check_q     C     <-- stale row
+
+This is exactly the failure recorded on this bean on 2026-08-10 and posted to
+PR #4924 at the time:
+
+> the default run computes **only p, n** and merge-preserves D from the prior
+> file, so a default invocation would leave a *mixed* C/D witness — the
+> deuteron flag is needed for a clean one.
+
+A default run was used, `merge-preserve` kept the convention-C deuteron, and
+the mixed file is on main. `HABIRO_WITH_DEUTERON=1` is what produces a clean
+one.
+
+Why it matters beyond tidiness: the merge-preserve comment in the producer
+says `path_b_habiro_mass_probe` calibrates α_M off the **D row**. That reader
+now takes a convention-C deuteron while τ_p / τ_n beside it are convention-D —
+a straddle inside one witness, which AGENTS.md forbids by name.
+
+### The 26-witness family is convention-C by descent, and now DISAGREES with its upstream
+
+Measured, not inferred:
+
+    family  proton tr_M_in_q :  q**(39/2) + q**(35/2) - ...   half-integer  = C
+    atomic  proton tr_M_in_q :  q**22 + q**20 + 2*q**18 ...   integer       = D
+    MATCH: False
+
+Independently corroborated by the migration's own table in `b86f406962`:
+
+    atom      C          D
+    proton    1.065306   1.145760
+
+and the family's committed `tr_M_at_q0` for the proton is `1.0653061442…` —
+the C column exactly. So the family is C, unambiguously.
+
+Before eea0 reached the atomic witness, atomic and family were both C, i.e.
+*consistent*. They are now inconsistent. All 26 say `u` in their serialized
+symbol (this bean's fix), which is why a `check_q` grep does not find them —
+the symbol was normalised, the mathematics was not migrated. **A count of
+files carrying a direct C fingerprint undercounts this family by 26**, which
+is the point flagged to #4924 and still unaddressed.
+
+### What this does to the Φ_8 result (PR #4926)
+
+It stands **as a convention-C result** and is not retracted: it was computed
+from a self-consistent C family, and the correction it made was to the
+*verification* code (a mixed-symbol `sympify`), which is orthogonal to
+convention. What is now true and was not then: the family is stale against its
+own upstream, so regenerating it under D will move the coefficients and may
+move Φ_8. The `2⌊(A−1)/2⌋` agreement should be re-checked after that
+regeneration, not assumed to carry over.
+
+### Sequencing, unchanged
+
+`qou-eea0` is still `in-progress` and its own bean names the gap — *"The
+missed set is the nuclear layer: deuteron at H₆, helium-3 at H₉…"*. The
+deuteron row is therefore already on its list. This stays sequenced behind
+that campaign; nothing here is for this bean to run.
+
+## D-only directive executed (owner, 2026-08-18) — and the Φ_k structure does NOT survive
+
+Owner: *"no C family. D only."* Done, in two steps.
+
+**1. The mixed atomic witness is fixed.** Re-ran with `HABIRO_WITH_DEUTERON=1`.
+All three rows now convention D, zero `check_q`, all `reconstruction_matches`
+true. Deuteron `deg_p_u` 86 → 100, coefficients 13 → 14. That removes the
+straddle `path_b_habiro_mass_probe` was reading (it calibrates α_M off the D
+row).
+
+**2. The 26-witness family regenerated under D.** 316 s, 0 failures, 20/20
+reconstructions true with `tr_M_at_q0_rel_err = 0.0` throughout — so the
+serialization fix and the refuse-guard both hold under D.
+
+### The result nobody should skim past
+
+Every Φ_k multiplicity is **0 on all seven mirror pairs** under D, with
+`diff_zero: false` — the differences are nonzero, they simply carry no
+cyclotomic structure:
+
+    A    pair                          Φ_1  Φ_2  Φ_4  Φ_8      (C had:)
+    1    proton − neutron                0    0    0    0       1 1 0 0
+    3    helium-3 − tritium              0    0    0    0       1 0 0 2
+    5    lithium-5 − helium-5            0    0    0    0       1 0 0 4
+    7    beryllium-7 − lithium-7         0    0    0    0       1 0 0 6
+    8    boron-8 − lithium-8             0    0    0    0       1 1 0 6
+    9    boron-9 − beryllium-9           0    0    0    0       1 0 0 8
+   10    carbon-10 − beryllium-10        0    0    0    0       1 1 0 8
+
+**Φ_1 is the alarming one.** Its universality under C had a *structural*
+justification — at q=1 the two mirror halves coincide, so `(u−1)` must divide
+their difference. Under D it does not: the p−n difference factors as
+
+    u^4·(u^2−u+1)·(u^2+u+1)·(u^4−u^2+1)·(u^32+3u^20−2u^16+3u^12−4u^8+3u^4−2)
+
+which evaluates to **6 at u = 1**. The classical-limit coincidence fails.
+Note the factors present are Φ_6, Φ_3, Φ_12 — Φ_8 does not appear at all.
+
+### What this is, and what it is NOT
+
+**It is NOT a refutation of `Φ_8 = 2⌊(A−1)/2⌋`.** Scope-(a): this construction,
+as written, yields no cyclotomic structure under D. Whether the law was a
+convention-C artifact, or the u-parametrisation is simply the wrong reading
+under D, is **open** — and I do not have an established explanation.
+
+One partial mechanism, recorded with its own limit: under D `tr_M_in_q` has
+integer q powers where C had half-integer, so `u = √q` is at least partly
+vestigial — the proton's `p_in_u` is all-even under D (exponents 4,8,16,…)
+versus mixed parity under C (4,5,7,9,…), and an even `P(u) = R(u²)` divides by
+`(u−1)` only if it vanishes at u=1. **But this does not generalise**: only
+**4 of 25** family witnesses are all-even. I checked, and it does not explain
+the other 21. Do not cite parity as the explanation.
+
+### Do not publish the zeros as a result
+
+The summary witness now carries `phi_8_mult: 0` for all seven pairs — the same
+uniform-zero shape that this arc spent PR #4926 correcting. It is the correct
+output of the current producer under D, and it is also exactly the kind of
+number that reads as a finding when it is an artifact of an inapplicable
+construction. Either the mirror-pair Φ_k analysis needs redoing in the right
+variable for D, or it needs a guard that says "not applicable" rather than 0.
+Flagged, not silently shipped.
+
+## RETRACTED — the Φ_k structure DOES survive D. The zeros were a bug in `mirror_pair_diff`.
+
+The section above concluded that the Φ_k mirror structure "does not survive"
+the C→D migration and left the cause open. **That was wrong**, and the owner
+caught it in one question: *"aren't the D ladder rings supposed to be
+cyclotomic? I thought we wrote those specifically to be such."*
+
+They are. `def:habiro-ring` says so outright — the ring is
+`lim ℤ[q]/((q;q)_n)`, whose whole point is that it *"completes the polynomial
+ring ℤ[q] **at the cyclotomic ideals**."* Cyclotomic structure is the defining
+property, so its total absence was a defect signal, not a result. I read a
+zero as a finding — the exact failure this bean's own arc exists to correct.
+
+### The bug
+
+`mirror_pair_diff` differenced the **a_m coefficients**:
+
+    Σ Δa_m·(u;u)_m  =  p_X − p_Y  =  denom_X·tr_X − denom_Y·tr_Y
+
+which is proportional to `tr_X − tr_Y` **only when `denom_X == denom_Y`**.
+Measured: under D that fails on **all seven** canonical pairs. Under C the
+mirror partners happened to share a denominator, so the shortcut was silently
+valid and the law came out clean. It was never differencing what it claimed to.
+
+`Φ_1 = 0` was the tell and I under-read it: at q = 1 the two mirror halves
+coincide, so `(u−1)` MUST divide any true difference. Under the broken form
+the p−n difference evaluated to **6** at u = 1.
+
+### Fixed, and the law holds 7/7 under D
+
+Difference the traces over a common denominator (correct in both conventions):
+
+    A    pair                        Φ_1  Φ_2  Φ_4  Φ_8    2⌊(A−1)/2⌋
+    1    proton − neutron              1    1    1    0        0  ✓
+    3    helium-3 − tritium            1    1    3    2        2  ✓
+    5    lithium-5 − helium-5          1    1    5    4        4  ✓
+    7    beryllium-7 − lithium-7       1    1    7    6        6  ✓
+    8    boron-8 − lithium-8           1    1    8    6        6  ✓
+    9    boron-9 − beryllium-9         1    1    9    8        8  ✓
+   10    carbon-10 − beryllium-10      1    1   10    8        8  ✓
+
+**D is cleaner than C, not worse:**
+
+* `Φ_1 = 1` universally — the classical-limit kill, now holding by construction
+  rather than coincidence.
+* `Φ_2 = 1` **universally**, where under C it held only at A ∈ {1, 8, 10}. The
+  audit doc's "Φ_2 is specific to A = 1" reading is a C artifact of the same
+  denominator bug.
+* `Φ_4 = A` **exactly**, on every pair — a regularity C did not show at all.
+
+### Also withdrawn
+
+The "u = √q is vestigial under D" mechanism recorded above. It is false in
+general: for A ≥ 2 the Markov interface `z(q) = 1/(√q + 1/√q)` puts genuine
+half-integer powers into tr_M regardless of convention (`q**(125/2)` appears
+in the family). u is needed; the denominators were the problem.
+
+## Lean-proved, and the law tested beyond the seven pairs
+
+### Proved (sorry-free, `lean`-direct exit 0, `#print axioms` clean)
+
+`QOU/Habiro/MirrorPairNormalisation.lean` — six theorems, generic
+`CommRing`/`CommMonoid` per §7c (no ordering, no `ℝ`, no archimedean input):
+
+    coeffDiff_of_common_denom          d*tX - d*tY = d*(tX - tY)
+    coeffDiff_at_coincidence           dX*t - dY*t = (dX - dY)*t
+    coeffDiff_eq_zero_iff              = 0 <-> dX = dY \/ t = 0
+    coeffDiff_ne_zero_at_coincidence   dX≠dY -> t≠0 -> ≠ 0
+    mirror_trace_eq_of_tau_eq          τp = τn -> tr(Z,N) = tr(N,Z)
+    mirror_traceDiff_eq_zero_of_tau_eq
+
+Four depend only on `[propext, Quot.sound]`; two on **no axioms at all**.
+
+Every hypothesis of the coincidence theorem was **measured before being
+assumed**: at q=1 all three interface kinds (`z`, `z−h`, `z−h/2`) equal `1/2`;
+`τ_p(1) = τ_n(1) = 1/2`; and the interface count is invariant under
+`(Z,N) ↦ (N,Z)` on every pair checked.
+
+### The Φ_8 law, on all TEN pairs under D
+
+    A     pair                       Φ_8(D)  2⌊(A−1)/2⌋   C gave
+    1,3,5,7,8,9,10  canonical (7)    0,2,4,6,6,8,8   ✓ all    ✓ all
+    12    ¹²N − ¹²B                    10        10  ✓        10  ✓
+    14    ¹⁴O − ¹⁴C                    12        12  ✓         4  ✗
+     6    ⁶He − ⁶Be                     0         4  ✗         2  ✗
+
+**9 of 10 under D against 8 of 10 under C.** The A=14 anomaly — recorded as
+REFUTES in `2026-06-01-qbeta-habiro-phi8-mirror-multiplicity-scaling.md` and in
+`even-a-mirror-pair-phi8-scaling-test` — **resolves under D with the corrected
+differencing**. A=6 is the sole survivor and is now the only open anomaly.
+
+### Φ_4 = A is REFUTED — my own claim, withdrawn
+
+I raised `Φ_4 = A` as "a new clean regularity" on the strength of the seven
+canonical pairs (1,3,5,7,8,9,10 — exactly A each time) while explicitly noting
+it was untested. Tested now, on the three open pairs:
+
+    A= 6   Φ_4 =  5   (≠ 6)
+    A=12   Φ_4 = 23   (≠ 12)
+    A=14   Φ_4 = 27   (≠ 14)
+
+So it is a seven-point coincidence over the canonical set, not a law. What
+survives is narrower and should be stated as such: **Φ_4 = A on the canonical
+mirror pairs**, with no extension to the open ones. Recorded so it is not
+re-proposed.
+
+### Φ_1 = Φ_2 = 1 holds on all ten
+
+Both universal across every pair measured, canonical and open — and Φ_1 now has
+a proof (`mirror_traceDiff_eq_zero_of_tau_eq`) rather than an observation.
+
+
+## 2026-08-18 — corpus sweep for "any other issues like this?"
+
+Two defect classes, swept separately.
+
+### Class 1 — differencing a_m across two witnesses (the qou-0ndb defect)
+
+Nine producers. Confirmed the mechanism against the witness fields directly:
+`Sum a_m (u;u)_m == p_in_u == denom_in_u * tr_M(u^2) * u^shift`, True on every
+entry, so a_m expand the CLEARED NUMERATOR and the coefficient difference is
+`d_X*t_X - d_Y*t_Y`.
+
+Sharpest form of the finding: the denominators are BUILT OUT OF Phi_4 and Phi_8,
+the very factors being measured, to different powers per pair member --
+proton Phi_8^2 vs neutron none; 6He Phi_8^4 vs 6Be Phi_8^8; 14O Phi_8^16 vs
+14C Phi_8^12. So the published multiplicity was substantially a property of the
+normalisation.
+
+Drained: `_habiro_coefficient_extract`, `extend_even_a_mirror_pair_test`,
+`topic2_mirror_pair_phi8_boundary_scan`, `shell_closure_phi8_correlation_test`,
+`probes/qbeta_habiro_phi8_squared_from_z_squared_probe`.
+NOT drained: the five qbeta Habiro-element scripts -> bean qou-lnog.
+
+### Class 2 — q -> sym**2 into an assumption-free symbol
+
+Found in my own helper: it built the difference in the CALLER's symbol, and
+every caller passes `sp.symbols('u')` with no assumptions, so `(u**2)**(k/2)`
+never denested and all three even-A pairs died with PolynomialError. `powsimp`
+does not denest a nested power; `powdenest` does. Fixed by normalising to
+U_CANONICAL inside and translating at the edge, plus a guard that raises if a
+half-integer power survives.
+
+Swept the corpus: 13 files substitute `q -> sym**2`; three have a genuine
+half-integer-power source (`a4_brunnian_deficit_closed_form`,
+`per_irrep_pole_atom_crystal`, `probes/qbeta_borromean_cyclotomic_probe`) and
+ALL THREE ARE CLEAN -- each already substitutes into an explicitly-positive
+symbol, one carrying the comment "so sqrt(u^2) -> u". Class 2 was confined to
+my helper.
+
+### Result
+
+All ten mirror pairs under D: Phi_1 = Phi_2 = 1, Phi_4 = A, and
+Phi_8 = 2floor((A-1)/2) on 10/10. Both corpus REFUTES entries (A=6, A=14) gone.
+Boundary claims M_first_Phi_8 = 7 / M_first_Phi_8^2 = 15 re-measured and hold
+9/9 -- the one place the correction strengthened an existing conclusion.
+
+Phi_4 = A is an OBSERVATION on ten points. No proof, wired to nothing. Do not
+cite it as established.
+
+### Two of my own claims in this PR corrected
+
+- "A=6 -> Phi_8 = 0, the sole open anomaly; law 9/10" -- both figures came
+  through the un-denested path. 10/10, no anomaly.
+- "Phi_4 = A REFUTED (A=6 -> 5, A=12 -> 23, A=14 -> 27)" -- same path.
+  Refutation withdrawn; Phi_4 = A holds exactly on all ten.
+
+Also fixed `witness_shape_guard`: it flagged a witness as COLLAPSED on
+`durationMs: 1 -> 0` while that witness GAINED content. Floored at 1 s, at the
+guard rather than --accept-ing past it.

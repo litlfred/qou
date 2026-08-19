@@ -1,15 +1,15 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T12:55:21.304298+00:00",
-  "commitSha": "7254172552155f52e53c25daa6e4c99bd8f7d740",
+  "computedAt": "2026-08-18T21:53:37.364620+00:00",
+  "commitSha": "74e664fd746e8d34e9ad51bfd27c3f5a325e3841",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "even-a-mirror-pair-phi8-scaling-test",
   "scriptFile": "extend_even_a_mirror_pair_test.py",
-  "scriptHash": "744169d22fdd",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "0ac0668dd167",
+  "scriptCommitSha": "bdfa58a97c1cb7ede9d319eed0550c993590eb5e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,7 +20,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Test the refined 2⌊(A−1)/2⌋ Φ_8 multiplicity scaling law against the now-refuted original A−1 hypothesis on the 3 open even-A mirror pairs (⁶He−⁶Be, ¹²N−¹²B, ¹⁴O−¹⁴C). These are the discriminating cases — odd-A pairs collapse both laws to the same prediction.",
   "reference_blocks": [
@@ -32,14 +33,14 @@
     {
       "pair": "⁶He − ⁶Be",
       "A": 6,
-      "phi_8_mult": 2,
+      "phi_8_mult": 4,
       "phi_1_mult": 1,
       "phi_2_mult": 1,
-      "phi_4_mult": 0,
+      "phi_4_mult": 6,
       "predicted_original_A_minus_1": 5,
       "predicted_refined_2_floor_A_minus_1_over_2": 4,
       "original_law_match": false,
-      "refined_law_match": false
+      "refined_law_match": true
     },
     {
       "pair": "¹²N − ¹²B",
@@ -47,7 +48,7 @@
       "phi_8_mult": 10,
       "phi_1_mult": 1,
       "phi_2_mult": 1,
-      "phi_4_mult": 0,
+      "phi_4_mult": 12,
       "predicted_original_A_minus_1": 11,
       "predicted_refined_2_floor_A_minus_1_over_2": 10,
       "original_law_match": false,
@@ -56,21 +57,21 @@
     {
       "pair": "¹⁴O − ¹⁴C",
       "A": 14,
-      "phi_8_mult": 4,
+      "phi_8_mult": 12,
       "phi_1_mult": 1,
       "phi_2_mult": 1,
-      "phi_4_mult": 0,
+      "phi_4_mult": 14,
       "predicted_original_A_minus_1": 13,
       "predicted_refined_2_floor_A_minus_1_over_2": 12,
       "original_law_match": false,
-      "refined_law_match": false
+      "refined_law_match": true
     }
   ],
   "verdict": {
-    "refined_law_universal_across_open_even_a": false,
+    "refined_law_universal_across_open_even_a": true,
     "original_law_refuted_at_open_even_a": true,
     "n_pairs_tested": 3,
-    "n_refined_matches": 1,
+    "n_refined_matches": 3,
     "n_original_matches": 0
   },
   "q0Anchor": "proton",

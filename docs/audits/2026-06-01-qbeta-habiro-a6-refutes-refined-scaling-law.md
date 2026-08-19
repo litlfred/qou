@@ -4,6 +4,30 @@
 **Branch:** `claude/qbeta-c3-eigenphase-scaling-map-2026-06-01` (PR #1649)
 **Status:** **BOTH scaling laws REFUTED** — original `A−1` and refined `2⌊(A−1)/2⌋` fail on ⁶He−⁶Be.
 
+> **🛑 SUPERSEDED 2026-08-18 — this doc's numbers are computed on the wrong
+> object; scoped, not corrected (bean `qou-0ndb`).** The mirror-pair element
+> here is `Σ_m Δa_m(X − Y)·(u;u)_m`, formed by subtracting two witnesses'
+> Habiro coefficients. Each witness's `a_m` expand *its own
+> denominator-cleared numerator* `p = d·t`, so that sum is `d_X·t_X − d_Y·t_Y`,
+> not the pair difference — and the denominators are built out of Φ₄ and Φ₈,
+> the very factors being measured, to **different powers on each member of a
+> pair** (⁶He: Φ₈⁴ vs ⁶Be: Φ₈⁸; ¹⁴O: Φ₈¹⁶ vs ¹⁴C: Φ₈¹²; proton: Φ₈² vs
+> neutron: none). Proved sorry-free in
+> [`QOU/Habiro/MirrorPairNormalisation.lean`](../../content/quantum-observable-universe/lean/QOU/Habiro/MirrorPairNormalisation.lean)
+> (`coeffDiff_at_coincidence`). Differencing the traces instead gives
+> `mult(Φ₈) = 2⌊(A−1)/2⌋` on **10/10** pairs with `Φ₁ = Φ₂ = 1` and `Φ₄ = A`.
+> Read the tables below as a record of what was measured, not as the pair's
+> cyclotomic content. Full analysis, including which specific claims here do
+> not survive:
+> [`2026-08-18-mirror-pair-a-m-differencing-normalisation-defect.md`](2026-08-18-mirror-pair-a-m-differencing-normalisation-defect.md).
+
+> **Both refutations in this doc are gone under the corrected differencing:**
+> A=6 measures Φ₈ = 4 (predicted 4) and A=14 measures 12 (predicted 12). The
+> doc's `Φ_4 never appears`, `Φ_2 ⟺ even A OR A=1`, and *"no closed form in A
+> can capture this"* all fail — Φ₄ = A, Φ₂ ≡ 1, and the refined closed form
+> holds 10/10.
+
+
 ## TL;DR
 
 Extracting canonical Phase 5q Habiro coefficients for ⁶He (Z=2, N=4) and pairing with the already-extracted ⁶Be (Z=4, N=2) yields:

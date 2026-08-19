@@ -1,15 +1,15 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T12:13:32.641389+00:00",
-  "commitSha": "18d7b4a3c798ecf64cbe6b9a900284f83ab1db99",
+  "computedAt": "2026-08-18T16:47:28.541498+00:00",
+  "commitSha": "b838c46c628d8da8be8b3c4d1d0afa309d28764f",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-proton",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "eec999ddb8d7",
-  "scriptCommitSha": "18d7b4a3c798ecf64cbe6b9a900284f83ab1db99",
+  "scriptHash": "38a8e150e5d2",
+  "scriptCommitSha": "dd6f059cdbd12df2b306a33644593f2972ed0862",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,64 +47,64 @@
   "habiro_coefficients": [
     {
       "m": 0,
-      "a_m": "4",
+      "a_m": "8",
       "deg_a_m": 0,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 1,
-      "a_m": "-74*u - 74",
+      "a_m": "-172*u - 172",
       "deg_a_m": 1,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 2,
-      "a_m": "340*u**2 + 365*u + 389",
+      "a_m": "865*u**2 + 922*u + 977",
       "deg_a_m": 2,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 3,
-      "a_m": "-711*u**3 - 789*u**2 - 872*u - 959",
+      "a_m": "-1918*u**3 - 2135*u**2 - 2323*u - 2566",
       "deg_a_m": 3,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 4,
-      "a_m": "788*u**4 + 901*u**3 + 1029*u**2 + 1172*u + 1328",
+      "a_m": "2171*u**4 + 2474*u**3 + 2831*u**2 + 3204*u + 3635",
       "deg_a_m": 4,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 5,
-      "a_m": "-466*u**5 - 559*u**4 - 660*u**3 - 781*u**2 - 918*u - 1078",
+      "a_m": "-1273*u**5 - 1504*u**4 - 1807*u**3 - 2118*u**2 - 2517*u - 2928",
       "deg_a_m": 5,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 6,
-      "a_m": "133*u**6 + 167*u**5 + 212*u**4 + 264*u**3 + 328*u**2 + 402*u + 494",
+      "a_m": "356*u**6 + 457*u**5 + 568*u**4 + 717*u**3 + 880*u**2 + 1093*u + 1329",
       "deg_a_m": 6,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 7,
-      "a_m": "-12*u**7 - 17*u**6 - 24*u**5 - 34*u**4 - 48*u**3 - 63*u**2 - 84*u - 110",
+      "a_m": "-38*u**7 - 55*u**6 - 73*u**5 - 104*u**4 - 134*u**3 - 182*u**2 - 234*u - 313",
       "deg_a_m": 7,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 8,
-      "a_m": "u**4 + 2*u**3 + 3*u**2 + 5*u + 7",
-      "deg_a_m": 4,
+      "a_m": "u**8 + u**7 + 2*u**6 + 3*u**5 + 6*u**4 + 8*u**3 + 13*u**2 + 18*u + 29",
+      "deg_a_m": 8,
       "integral": true,
       "remainder_nonzero": false
     }
@@ -114,16 +114,16 @@
   "A": 1,
   "interface_kinds": [],
   "include_inter": true,
-  "tr_M_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) + q**(23/2) + q**(21/2) - q**(19/2) - q**(17/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 2*q**12 + 2*q**8 - q**2 + 1)/(4*q**(19/2)*(q + 1))",
+  "tr_M_in_q": "(q**22 + q**20 + 2*q**18 + 2*q**16 + 3*q**14 + 2*q**12 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**9*(q**4 + 2*q**2 + 1))",
   "shift": 0,
-  "denom_in_u": "4*u**21 + 4*u**19",
-  "p_in_u": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17 + 2*u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-  "deg_p_u": 40,
+  "denom_in_u": "4*u**26 + 8*u**22 + 4*u**18",
+  "p_in_u": "u**44 + u**40 + 2*u**36 + 2*u**32 + 3*u**28 + 2*u**24 + u**20 - u**16 - u**8 - u**4 - 1",
+  "deg_p_u": 44,
   "n_nonzero": 9,
   "all_integral": true,
   "reconstruction_matches": true,
-  "tr_M_at_q0": 1.06530614425445,
-  "tr_M_at_q0_via_u_poly": 1.06530614425445,
+  "tr_M_at_q0": 1.1457596924573008,
+  "tr_M_at_q0_via_u_poly": 1.1457596924573008,
   "tr_M_at_q0_rel_err": 0.0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
