@@ -1,10 +1,11 @@
 ---
 # qou-br3w
 title: 'Formalise Thue-Siegel-Roth: the one unformalised input the trajectory lane takes as a hypothesis'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-16T10:49:19Z
-updated_at: 2026-08-16T10:49:19Z
+updated_at: 2026-08-19T16:27:34Z
 ---
 
 

@@ -255,20 +255,139 @@ theorem translate_pderiv [DecidableEq σ] (α : σ → R) (i : σ) (P : MvPolyno
     · simp only [Derivation.leibniz, smul_eq_mul, pderiv_X_of_ne (Ne.symm h), mul_zero,
         zero_add, translate_mul, translate_X, map_add, pderiv_C, add_zero, hp]
 
+/-! ### The index under differentiation
+
+The estimate Roth's lemma runs on: differentiating once costs at most `1/dⱼ` of index. -/
+
+/-- The support of a derivative sits inside the shift of the support by `-eⱼ`. -/
+theorem support_pderiv_subset [DecidableEq σ] (i : σ) (P : MvPolynomial σ R) :
+    (pderiv i P).support ⊆ P.support.image (fun s => s - Finsupp.single i 1) := by
+  classical
+  have hP : P = ∑ v ∈ P.support, monomial v (coeff v P) :=
+    (support_sum_monomial_coeff P).symm
+  intro t ht
+  rw [hP, map_sum] at ht
+  have hb := support_sum ht
+  simp only [Finset.mem_biUnion] at hb
+  obtain ⟨v, hv, htv⟩ := hb
+  rw [pderiv_monomial] at htv
+  have h1 : t = v - Finsupp.single i 1 := by
+    have := support_monomial_subset htv
+    simpa using this
+  exact Finset.mem_image.mpr ⟨v, hv, h1.symm⟩
+
+theorem idxWeight_single (d : σ → ℕ) (i : σ) (n : ℕ) :
+    idxWeight d (Finsupp.single i n) = (n : ℚ) / (d i : ℚ) := by
+  rw [idxWeight_eq_sum]
+  exact Finsupp.sum_single_index (by simp)
+
+/-- When the variable does not occur, truncated subtraction is the identity. -/
+theorem sub_single_of_eq_zero [DecidableEq σ] {s : σ →₀ ℕ} {i : σ} (h : s i = 0) :
+    s - Finsupp.single i 1 = s := by
+  ext j
+  by_cases hj : j = i
+  · subst hj; simp [h]
+  · simp [Ne.symm hj]
+
+/-- **The weight drops by at most `1/dᵢ` under one differentiation.**
+
+⚠ **This must be an inequality, and that is what makes it easy.** The `ℕ`-subtraction on
+`σ →₀ ℕ` is truncated, so `s - eᵢ = s` exactly when `sᵢ = 0`, and there the *equality*
+`idxWeight (s - eᵢ) = idxWeight s - 1/dᵢ` is plainly false. Stated as `≤` the degenerate
+case costs nothing, because `1/dᵢ ≥ 0` makes the bound slack rather than tight. -/
+theorem idxWeight_le_sub_single_add [DecidableEq σ] (d : σ → ℕ) (s : σ →₀ ℕ) (i : σ) :
+    idxWeight d s ≤ idxWeight d (s - Finsupp.single i 1) + 1 / (d i : ℚ) := by
+  by_cases h : Finsupp.single i 1 ≤ s
+  · refine le_of_eq ?_
+    have hcancel : s - Finsupp.single i 1 + Finsupp.single i 1 = s := tsub_add_cancel_of_le h
+    calc idxWeight d s
+        = idxWeight d (s - Finsupp.single i 1 + Finsupp.single i 1) := by rw [hcancel]
+      _ = idxWeight d (s - Finsupp.single i 1) + idxWeight d (Finsupp.single i 1) :=
+          idxWeight_add _ _ _
+      _ = idxWeight d (s - Finsupp.single i 1) + 1 / (d i : ℚ) := by
+          rw [idxWeight_single]; norm_num
+  · have hzero : s i = 0 := by
+      rw [Finsupp.single_le_iff] at h
+      omega
+    rw [sub_single_of_eq_zero hzero]
+    exact le_add_of_nonneg_right (div_nonneg zero_le_one (Nat.cast_nonneg _))
+
+/-- **The index drops by at most `1/dⱼ` under one differentiation.**
+
+The `⊤` case is not a technicality to be routed around: when `∂ⱼP = 0` the right-hand side
+is `⊤` and the bound is free, which is exactly the behaviour the `WithTop` return type was
+chosen for at the top of this file. -/
+theorem index_le_index_pderiv_add [DecidableEq σ] (d : σ → ℕ) (α : σ → R) (j : σ)
+    (P : MvPolynomial σ R) :
+    index d α P ≤ index d α (pderiv j P) + ((1 / (d j : ℚ) : ℚ) : WithTop ℚ) := by
+  classical
+  have htr : translate α (pderiv j P) = pderiv j (translate α P) := translate_pderiv α j P
+  by_cases hemp : (pderiv j (translate α P)).support = ∅
+  · have htop : index d α (pderiv j P) = ⊤ := by
+      rw [index, htr, hemp, Finset.inf_empty]
+    rw [htop, top_add]
+    exact le_top
+  · have hne : (pderiv j (translate α P)).support.Nonempty :=
+      Finset.nonempty_of_ne_empty hemp
+    obtain ⟨t, ht, hinf⟩ :=
+      Finset.exists_mem_eq_inf _ hne (fun m => ((idxWeight d m : ℚ) : WithTop ℚ))
+    have hidx : index d α (pderiv j P) = ((idxWeight d t : ℚ) : WithTop ℚ) := by
+      rw [index, htr]; exact hinf
+    obtain ⟨s, hs, hst⟩ :=
+      Finset.mem_image.mp (support_pderiv_subset j (translate α P) ht)
+    have hweight : idxWeight d s ≤ idxWeight d t + 1 / (d j : ℚ) := by
+      rw [← hst]; exact idxWeight_le_sub_single_add d s j
+    calc index d α P ≤ ((idxWeight d s : ℚ) : WithTop ℚ) := by
+          rw [index]; exact Finset.inf_le hs
+      _ ≤ ((idxWeight d t + 1 / (d j : ℚ) : ℚ) : WithTop ℚ) := by exact_mod_cast hweight
+      _ = ((idxWeight d t : ℚ) : WithTop ℚ) + ((1 / (d j : ℚ) : ℚ) : WithTop ℚ) := by
+          rw [WithTop.coe_add]
+      _ = index d α (pderiv j P) + ((1 / (d j : ℚ) : ℚ) : WithTop ℚ) := by rw [hidx]
+
+/-- **The iterated bound:** `k` differentiations in one variable cost at most `k/dⱼ`. -/
+theorem index_le_index_iterate_pderiv_add [DecidableEq σ] (d : σ → ℕ) (α : σ → R) (j : σ)
+    (k : ℕ) (P : MvPolynomial σ R) :
+    index d α P ≤ index d α ((pderiv j)^[k] P) + (((k : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ) := by
+  induction k generalizing P with
+  | zero => simp
+  | succ n ih =>
+    have hstep := index_le_index_pderiv_add d α j P
+    have hih := ih (pderiv j P)
+    have hsplit : (((n : ℚ) + 1) / (d j : ℚ) : ℚ) = (n : ℚ) / (d j : ℚ) + 1 / (d j : ℚ) := by
+      rw [add_div]
+    calc index d α P
+        ≤ index d α (pderiv j P) + ((1 / (d j : ℚ) : ℚ) : WithTop ℚ) := hstep
+      _ ≤ (index d α ((pderiv j)^[n] (pderiv j P))
+            + (((n : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ))
+            + ((1 / (d j : ℚ) : ℚ) : WithTop ℚ) := by gcongr
+      _ = index d α ((pderiv j)^[n + 1] P)
+            + ((((n : ℚ) + 1) / (d j : ℚ) : ℚ) : WithTop ℚ) := by
+          rw [← Function.iterate_succ_apply, hsplit, WithTop.coe_add, add_assoc]
+      _ = index d α ((pderiv j)^[n + 1] P)
+            + ((((n + 1 : ℕ) : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ) := by push_cast; ring_nf
+
 /-! ### Next, in order
 
 1. ~~`index_mul_ge`~~ — **done**, above.
 2. ~~**Generalized Wronskians**~~ — **done**. Univariate, with the full dependence criterion
    `genWronskian_eq_zero_iff`, in `QOU.Mathlib.GenWronskian`; several variables, with the
    direction Roth's lemma consumes, in `QOU.Mathlib.MvGenWronskian`.
-3. **The index under differentiation** — `index d α P ≤ index d α (pderiv i P) + 1/dᵢ`.
-   `translate_pderiv` above is the gateway; what remains is that the support of `pderiv i Q`
-   sits inside the shift of `Q`'s support by `-eᵢ`, and that `idxWeight` drops by exactly
-   `1/dᵢ` under that shift. ⚠ Note the `ℕ`-subtraction: `s - eᵢ = s` when `sᵢ = 0`, and the
-   statement is rescued only because `pderiv_monomial` carries a factor `sᵢ` that kills
-   exactly those monomials.
+3. ~~**The index under differentiation**~~ — **done**, `index_le_index_pderiv_add` and its
+   iterate above.
+
+   ⚠ **The earlier note here predicted the wrong difficulty.** It said the statement "is
+   rescued only because `pderiv_monomial` carries a factor `sᵢ` that kills exactly those
+   monomials" with `sᵢ = 0`. No such rescue was needed: `support_pderiv_subset` filters
+   nothing, and the degenerate case is free because the statement is an *inequality* —
+   when `sᵢ = 0` truncated subtraction gives `s - eᵢ = s` and the `+1/dᵢ` is simply slack.
+   Reaching for the sharper equality is what would have forced the filter.
 4. **Roth's lemma** — the induction on the number of variables. The hard core, and the one
    step where no part of it is bookkeeping.
+
+   What is now in place for it: the index and its product law, both generalized-Wronskian
+   flavours, and the differentiation estimate above. What is not: the several-variable
+   converse (some operator family witnesses independence — see `MvGenWronskian`'s own
+   `Next`), and the induction itself.
 5. **Roth's theorem** itself, by the auxiliary-polynomial contradiction, using Mathlib's
    existing `exists_ne_zero_int_vec_norm_le` (Siegel's lemma) for the construction. -/
 
