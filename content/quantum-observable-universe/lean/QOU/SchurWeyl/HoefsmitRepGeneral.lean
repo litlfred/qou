@@ -1,6 +1,6 @@
 import QOU.SchurWeyl.SeminormalRep
 import QOU.SchurWeyl.SytAdmissible
-import QOU.Mathlib.YoungDiagramCard
+import QOU.BraidKnot.SpechtClassification
 
 /-!
 # `hoefsmit_seminormal_rep`, proved
@@ -24,13 +24,21 @@ Three things had to land, and only the middle one was ever the hard part:
 2. **Non-scalarity's missing half** — `TableauCells.exists_swapAdmissible_of_one_lt_card`
    (bean SW-5, PR #5266). `genMat_ne_scalar` already gave non-scalarity for a generator that
    *moves* a tableau; what was absent is that `#SYT μ ≥ 2` produces such a tableau at all.
-3. **A Young-diagram cardinality lemma the pinned Mathlib lacks** —
-   `QOU.Mathlib.card_cells_partitionShape`. `seminormalRepFin` takes `μ.cells.card = m + 1` as a
-   hypothesis, and nothing upstream said a partition's shape has `N` cells.
+3. **`|shape λ| = N`** — `seminormalRepFin` takes `μ.cells.card = m + 1` as a hypothesis, and
+   nothing said a partition's shape has `N` cells. `card_shape` below supplies it in six lines from
+   `QOU.BraidKnot.SpechtClassification.card_eq_rowLens_sum`.
 
-Step 3 is worth flagging: the reindexing was twice described (in the bean, and in #5076's body) as
-"mechanical". The reindex itself is — `seminormalRepFin` is four lines — but its *precondition* was
-a missing lemma, and calling the step mechanical hid that.
+Step 3 is worth flagging twice over. First, the reindexing was described (in the bean, and in
+#5076's body) as "mechanical": the reindex itself is — `seminormalRepFin` is four lines — but it was
+blocked on this hypothesis, and calling the step mechanical hid that.
+
+Second, **I then over-corrected.** I probed Mathlib, found `card_ofRowLens` / `rowLens_sum_eq_card`
+and five other spellings genuinely absent upstream, and wrote a ~100-line `YoungDiagramCard.lean`
+proving `cells.card = rowLens.sum` from scratch — without grepping the *repo*, where
+`SpechtClassification.card_eq_rowLens_sum` had been all along, its own docstring noting "Mathlib has
+no packaged bridge at this pin". That is the corpus-grep step AGENTS.md mandates before declaring
+something missing, and skipping it cost a duplicate file. The duplicate is deleted; `card_shape`
+below is the sibling PR #5282's formulation, adopted wholesale.
 
 ## The `N = 0` branch is not a formality
 
@@ -48,6 +56,25 @@ namespace QOU.SchurWeyl
 
 open QOU.Mathlib
 open TableauCells
+
+/-- **`|shape λ| = N`** — a partition of `N` has `N` cells in its Young diagram.
+
+Adopted from the sibling PR #5282, which built it the right way: on
+`QOU.BraidKnot.SpechtClassification.card_eq_rowLens_sum`, already in the repo. I had written a
+standalone `YoungDiagramCard.lean` re-proving that bridge because I probed Mathlib (where it is
+genuinely absent) without grepping the corpus (where it is not). The duplicate is deleted. -/
+theorem card_shape {N : ℕ} (lam : Partition N) : (shape lam).cells.card = N := by
+  have hrow : (shape lam).rowLens = lam.parts.sort (· ≥ ·) :=
+    YoungDiagram.rowLens_ofRowLens_eq_self
+      (QOU.BraidKnot.SpechtClassification.sorted_parts_pos N lam)
+  have h := QOU.BraidKnot.SpechtClassification.card_eq_rowLens_sum (shape lam)
+  rw [hrow] at h
+  have hq : ((lam.parts.sort (· ≥ ·) : List ℕ) : Multiset ℕ) = lam.parts :=
+    Multiset.sort_eq _ _
+  have hsum : (lam.parts.sort (· ≥ ·)).sum = N := by
+    rw [← Multiset.sum_coe, hq]
+    exact lam.parts_sum
+  exact h.trans hsum
 
 /-- A shape with no cells has at most one standard tableau: there is nothing to fill, so
 `syt_ext_on_cells` applies vacuously. -/
@@ -83,12 +110,12 @@ theorem hoefsmit_seminormal_rep {N : ℕ} (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 
       (fun i _ => i.elim0) (fun i _ => i.elim0), fun h2 => absurd h2 ?_⟩
     have hcard : (shape lam).cells.card = 0 := by
       show (partitionShape lam).cells.card = 0
-      exact card_cells_partitionShape lam
+      exact card_shape lam
     have hle : dLambda lam ≤ 1 := card_le_one_of_cells_card_zero hcard
     omega
   · have hcard : (shape lam).cells.card = (N - 1) + 1 := by
       show (partitionShape lam).cells.card = (N - 1) + 1
-      rw [card_cells_partitionShape]
+      rw [card_shape]
       omega
     refine ⟨SeminormalRep.seminormalRepFin q hq hq2 lam (N - 1) hcard, fun h2 => ?_⟩
     have h1lt : 1 < Fintype.card (StandardYoungTableau (shape lam)) := by
@@ -101,7 +128,7 @@ theorem hoefsmit_seminormal_rep {N : ℕ} (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 
       have h := hk2
       rw [show (shape lam).cells.card = N from by
         show (partitionShape lam).cells.card = N
-        exact card_cells_partitionShape lam] at h
+        exact card_shape lam] at h
       exact h
     refine ⟨⟨k', by omega⟩, fun s hcon => ?_⟩
     have hstep : SeminormalRep.seminormalGen q (N - 1) hcard ⟨k', by omega⟩
