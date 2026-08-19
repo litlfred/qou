@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:38:21.426548+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-08-15T11:35:59.665249+00:00",
+  "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
   "assertions": [
     {
       "name": "spine molecular layer reproduces observed bond orders (acetylene 3, benzene 3/2, cyclohexane 1)",
@@ -35,11 +35,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 25,
   "computation": "benzene-assembly-spine",
   "scriptFile": "benzene_assembly_spine.py",
   "scriptHash": "fd1f1eae004f",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,8 +57,8 @@
   "description": "γγ→benzene assembly spine: consumes the light→atom chain (Breit–Wheeler → qq̄ → Borromean nucleon → ¹²C, sibling-owned) and computes the molecular layer. Predicts acetylene C≡C order 3 (orthogonal σ+2π LP active-set), benzene C–C order 3/2 (1 σ + ½ delocalised π from the D₆-symmetric assembly projector), and cyclohexane C–C order 1 (saturated control). Bond order vs observed structural orders; zero fitted parameters.",
   "contentBlock": "rem:benzene-assembly-spine",
   "parameters": {
-    "q": 1.1099785955573347,
-    "TWO_Q": 2.0108968691190756,
+    "q": 1.1099785827513808,
+    "TWO_Q": 2.0108968667071223,
     "N_DIM": 3
   },
   "data": {
@@ -98,6 +98,6 @@
     },
     "aromatic_stabilisation_delta_order": 0.5
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

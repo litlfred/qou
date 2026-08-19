@@ -190,6 +190,54 @@ def _declares_f64_integrator(doc) -> bool:
             return True
     return False
 
+
+# ── deprecated-float64 carve-out (owner ruling 2026-08-15) ────────────────
+#
+# A THIRD carve-out, and deliberately not a widening of the one above.
+#
+# The owner's rule: "mpmath on anything in production; if not production,
+# deprecate it with precision_tier = float64." Walking the
+# production-vs-exploratory decision tree, a producer that reaches none of the
+# named production locations (m_p_borromean_verification_50dps, mass_table_ppb,
+# codata_constants, the two dashboards, the canonical mass/binding facades) is
+# EXPLORATORY, and an exploratory f64 probe is not worth an mpmath rewrite.
+#
+# Why it is NOT `float64-integrator`. That tier means f64 BY CONSTRUCTION with
+# no higher-precision source to carry from — an ODE integrator IS the source.
+# These producers are the opposite: a 50-dps source exists (q_0, h from
+# q_parameter) and numpy was simply cheaper for the matrix algebra. Filing them
+# under `float64-integrator` would be exactly the "ordinary f64 sloppiness"
+# that carve-out's own comment says it must be designed against. They get their
+# own name so the two reasons never blur.
+#
+# Opt-in requires BOTH fields, on the record:
+#
+#     w.add_data("precision_tier", "float64")
+#     w.add_data("deprecated", {"reason": ..., "not_production": ...})
+#
+# `precision_tier: "float64"` alone excuses nothing — otherwise any producer
+# could silence the ratchet by naming its own sloppiness. The `deprecated`
+# field is what makes it a retirement rather than an excuse, and it must say
+# WHY the producer is not production so a reader can check the claim against
+# the decision tree instead of taking it on faith.
+#
+# Counted and reported separately, like the other two. A carve-out that cannot
+# be seen is indistinguishable from a hole.
+F64_DEPRECATED_TIER = "float64"
+
+
+def _declares_deprecated_f64(doc) -> bool:
+    """Has this witness declared BOTH the float64 tier and its deprecation?"""
+    if not isinstance(doc, dict):
+        return False
+    for holder in (doc, doc.get("data"), doc.get("result")):
+        if not isinstance(holder, dict):
+            continue
+        if holder.get("precision_tier") == F64_DEPRECATED_TIER \
+                and holder.get("deprecated"):
+            return True
+    return False
+
 # A binary64 carries at most 17 significant decimal digits. A `*_str`
 # companion is only a genuine full-precision shadow if it carries MORE than
 # that — otherwise it is just the same f64 spelled as text.
@@ -289,6 +337,7 @@ CARVED: dict[str, int] = {}
 #: Per-file tally for the float64-integrator carve-out, kept SEPARATE from
 #: `CARVED` so the two excuses can never be read as one number.
 CARVED_INTEGRATOR: dict[str, int] = {}
+CARVED_DEPRECATED: dict[str, int] = {}
 
 
 def scan(scan_root: Path | None = None) -> dict[str, int]:
@@ -301,6 +350,7 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
     found: dict[str, int] = {}
     CARVED.clear()
     CARVED_INTEGRATOR.clear()
+    CARVED_DEPRECATED.clear()
     for p in sorted((scan_root or HERE).rglob("*.witness.json")):
         if (p.name in SELF_OUTPUTS
                 or p.name.startswith(SELF_OUTPUT_PREFIX)
@@ -319,6 +369,12 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
         # than a name list.
         if n and _declares_f64_integrator(d):
             CARVED_INTEGRATOR[rel] = n
+            n = 0
+        # Same witness-level application for the deprecated-exploratory tier.
+        # Checked AFTER the integrator tier so a producer that (wrongly) claims
+        # both is counted under the narrower, better-justified one.
+        if n and _declares_deprecated_f64(d):
+            CARVED_DEPRECATED[rel] = n
             n = 0
         if n:
             found[rel] = n
@@ -460,6 +516,14 @@ def main() -> int:
               f"precision_tier={F64_INTEGRATOR_TIER!r}]")
         for _f, _n in sorted(CARVED_INTEGRATOR.items(), key=lambda t: -t[1]):
             print(f"      {_n:6,d}  {_f}")
+    if CARVED_DEPRECATED:
+        print(f"  deprecated-f64 carve-out       : "
+              f"{sum(CARVED_DEPRECATED.values()):,} field(s) in "
+              f"{len(CARVED_DEPRECATED)} witness(es)  [NOT drained — declared "
+              f"precision_tier={F64_DEPRECATED_TIER!r} + deprecated, "
+              f"i.e. exploratory and retired rather than rewritten]")
+        for _f, _n in sorted(CARVED_DEPRECATED.items(), key=lambda t: -t[1]):
+            print(f"      {_n:6,d}  {_f}")
     if CARVED:
         print(f"  LP-dual carve-out excused      : {sum(CARVED.values()):,} "
               f"field(s) in {len(CARVED)} witness(es)  [NOT drained — see "
@@ -528,6 +592,8 @@ def main() -> int:
             # script. Emitting it only to stdout would have made this carve-out
             # exactly the unseeable kind its own comment warns against.
             "f64_integrator_carved_out_fields": sum(CARVED_INTEGRATOR.values()),
+            "deprecated_f64_carved_out_fields": sum(CARVED_DEPRECATED.values()),
+            "deprecated_f64_carved_out_by_file": dict(CARVED_DEPRECATED),
             "f64_integrator_carved_out_by_file": dict(
                 sorted(CARVED_INTEGRATOR.items())),
             "f64_integrator_declared_tier": F64_INTEGRATOR_TIER,

@@ -269,12 +269,15 @@ def main() -> int:
     print()
     for r in rows:
         active_names = [NF_NAMES[i] for i in r["active_set"]]
-        print(f"  {r['atom']:8s}  tr_M={r['tr_M_atom']:.6f}  "
-              f"u0*={r['u0_star']:.6f}  active={active_names}")
-        print(f"    sc_y_sum={r['self_conjugate_y_sum']:.6f}  "
-              f"chi_y_sum={r['chirality_y_sum']:.6f}  "
+        # float() at DISPLAY only: these carry mpmath.mpf, which has no
+        # __format__ for '.6f' and raises TypeError. The stored values are
+        # untouched — this is the print, not the compute.
+        print(f"  {r['atom']:8s}  tr_M={float(r['tr_M_atom']):.6f}  "
+              f"u0*={float(r['u0_star']):.6f}  active={active_names}")
+        print(f"    sc_y_sum={float(r['self_conjugate_y_sum']):.6f}  "
+              f"chi_y_sum={float(r['chirality_y_sum']):.6f}  "
               f"a_K^chi_active="
-              f"{'n/a' if r['a_K_chi_active'] is None else format(r['a_K_chi_active'], '.6f')}  "
+              f"{'n/a' if r['a_K_chi_active'] is None else format(float(r['a_K_chi_active']), '.6f')}  "
               f"a_K^C={r['a_K_C_closed']}")
     return 0
 
