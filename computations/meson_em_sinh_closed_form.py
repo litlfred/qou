@@ -98,6 +98,19 @@ def _alpha_em_inv_derived(q, order=None):
     return bare * tower
 
 
+
+def alpha_em_inv_derived(q, order=None):
+    """Public entry point for the framework-derived alpha_em^-1.
+
+    Same computation as `_alpha_em_inv_derived`, exported so other producers
+    import the derivation instead of copying its VALUE. Two of them were
+    carrying the literal `mp.mpf("137.035944")` -- the MUON-anchor evaluation
+    from before the 2026-05-28 proton re-pin, 65.0 ppb from what this returns
+    at the current pin. A value copied across module boundaries cannot follow
+    a re-pin; a call can.
+    """
+    return _alpha_em_inv_derived(q, order=order)
+
 def main():
     _t0 = time.perf_counter()
     set_compute_dps()
