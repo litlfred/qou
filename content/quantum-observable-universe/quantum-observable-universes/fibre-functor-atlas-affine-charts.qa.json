@@ -1135,11 +1135,29 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "6a5478f27384",
+          "ts": "fb71818d1ab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "a9b97ea341b2",
+          "script_commit_sha": "3c2848a5f7fd8883290c754251f18e6d4bc4f03b"
+        },
+        "reviewed_at": "2026-08-18T21:35:54.609Z",
+        "reviewed_sha": "dddef6ab75de05f3cf4a8736ada1ead6920e68e7"
+      }
     ]
   },
   "source_hashes": {
-    "md": "a0db8cd1b88f",
+    "md": "6a5478f27384",
     "ts": "fb71818d1ab7"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-18T21:35:54.609Z"
 }

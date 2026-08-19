@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean"
   },
   "source_hashes": {
-    "md": "4e6ba1caae41",
+    "md": "f2ee2cdd4233",
     "ts": "3a929c499127",
     "lean": "a0986ede6f56",
     "lean_statement": "2f3de13203c6"
@@ -2336,7 +2336,27 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127",
+          "lean": "a0986ede6f56",
+          "lean_statement": "2f3de13203c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-18T22:02:15.526Z",
+        "reviewed_sha": "3b960e3e91f735a3e65dabf01f9d712d0006ea6f"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-18T22:02:15.526Z"
 }

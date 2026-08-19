@@ -1,0 +1,108 @@
+{
+  "name": "aomega-m3-adjoint-index-set",
+  "description": "Route C M3: tests whether the knot-independent core of the DT index set is the sl_2 adjoint weight set; includes two adversarial checks and the Lean-proved forced remainder.",
+  "computation": "aomega-m3-adjoint-index-set",
+  "engine": "python",
+  "scriptFile": "computations/probes/aomega_m3_adjoint_index_set.py",
+  "scriptCommitSha": "5299981d4de8a869d800e334620852a1231b736c",
+  "computedAt": "2026-08-19T05:37:45Z",
+  "durationMs": 2,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "No substrate modulus enters. Every number here is an exact integer or Fraction: the GGM eq-(98) Stokes constants, the sl_2 adjoint weight set, Young-tableau counts, and the Garoufalidis-Zagier trace-field signatures. The import cone is json/os/subprocess/time/fractions only -- it reaches no q_parameter, no qou_substrate.constants, no y_lambda_at, and no mpmath.",
+  "parameters": {
+    "s_exponents_M2": [
+      1,
+      0,
+      -1
+    ],
+    "s_multiplicities_M2": [
+      1,
+      1,
+      1
+    ],
+    "adjoint_exponents": [
+      1,
+      0,
+      -1
+    ],
+    "dt_vector_4_1_5_2": [
+      3,
+      4
+    ],
+    "lean": "QOU.QBeta.AdjointIndexSetM3"
+  },
+  "data": {
+    "forced_extra_4_1": 0,
+    "forced_extra_5_2": 1,
+    "verdict": "M3 REFRAMED and SHARPENED; still a HYPOTHESIS, and this run makes the case both stronger and thinner than the previous one claimed. STRONGER: (i) M2's abelian finding means M3's target is the INDEX SET, not a CoHA. (ii) H_Ad is the dtMin projection and Route A's R1 is the dtMax projection of the SAME chirality-split datum -- different halves, so H_Ad is NOT a re-description of R1, and the PAIR reconstructs the 2-element set {3,4} that no single scalar can equal (no tension with no_scalar_matches_chirality_split_datum, which excludes one scalar, not two). (iii) Lean-proved: a knot-independent core FORCES a knot-dependent unit remainder, pinned to (0,1) under H_Ad. THINNER: (iv) 4_1 is amphichiral, so its dtMin collapses onto dtMax and supplies NO evidence independent of R1 -- the whole support for 'core = 3' is the single observation S-(5_2)=3. (v) A rival H_floor (core = the {0,g,gbar} triple every hyperbolic knot carries = R1's universal floor, no sl_2 anywhere) reproduces every H_Ad prediction AND a palindromic 3-element grading, so the data cannot separate them; only the grading variable (meridian x=m^2 vs Chern-Simons value) could, and that is not settled here. (vi) Self-correction: the previously proposed completion -- '5_2 has one extra flat connection' -- IS R1, so it composes two imported readings rather than deriving anything from Hecke data. No derivation of the DT spectrum is claimed; nothing wired. PART 3 (this run): the meridian grading is now DERIVED -- the shape-(2) semistandard Young tableaux carry m-weights (2,0,-2) = twice the adjoint x-exponents, i.e. exactly x = m^2, so s(x) is the character of S^(2)(C^2) in the meridian variable from Young-tableau combinatorics with nothing fitted. That gives H_Ad a mechanism H_floor lacks WITHOUT excluding H_floor. It also forced a second self-correction: Ad is the Schur-Weyl PARTNER of the partition-(2) Hecke block, not the block (which is 1-dimensional); earlier text here and in Lean said otherwise and is corrected at source. PART 4 (this run): THIRD SELF-CORRECTION -- the route-(a) discriminator stated last commit is WRONG and is retracted. It said a knot with MORE than 3 boundary-parabolic connections would break H_floor. It would not: H_floor's core is the universal FLOOR {s0,g,gbar} = 3 for EVERY hyperbolic knot, exactly as H_Ad's is dim sl_2 = 3, so no third knot separates them at the core (proved: core_is_three_on_all_three, checked on 4_1, 5_2 AND (-2,3,7)). What a third knot actually buys is (i) a second non-degenerate data point against T6 and (ii) a ONE-SIDED falsification test of H_Ad's POLYNOMIAL claim -- if a rank-6 knot's Stokes entries are not built from x+1+1/x, H_Ad breaks while H_floor, which makes no polynomial claim, cannot. Part 4 also found the third knot ALREADY IN THE CORPUS (Garoufalidis-Zagier 2111.06645 S2.1: |P_K| = 3, 4, 7) and, against my own hypothesis, DERIVED the forced 5_2 remainder as the real-embedding count of the trace field -- an H_floor win, not an H_Ad one."
+  },
+  "assertions": [
+    {
+      "name": "T1-adjoint-character-equals-s(x)",
+      "passed": true,
+      "note": "chi_Ad(x) = x+1+1/x reproduces M2's index polynomial exactly, multiplicity-free, with NO free parameter to adjust."
+    },
+    {
+      "name": "T2-knot-independence-predicted-and-observed",
+      "passed": true,
+      "note": "This is H_Ad's one non-trivial already-satisfied prediction. CORRECTION (self, this run): an earlier version of this note said 'Driver14's eight, PLUS Route A's R1, fail precisely here'. That is wrong about R1 and is retracted. R1 does NOT fail on the counts: it hits the dtMax vector (4_1,5_2)->(3,4) EXACTLY (docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md S6). R1's proved failure is a different one -- it is single-valued per knot while the 5_2 datum is the 2-element set {3,4} (Driver14CharacterVarietyDTMenu.no_scalar_matches_chirality_split_datum). Conflating 'fails knot-independence' with 'fails set-valuedness' would have hidden T5 below."
+    },
+    {
+      "name": "T3-H_Ad-is-NOT-a-scalar-answer",
+      "passed": true,
+      "note": "H_Ad FAILS as a scalar, exactly as Driver14's blockCountH3 does. Its content is therefore NOT the number 3 \u2014 it is the GRADING (which charges carry the states). Recording this prevents H_Ad being mis-sold as a count."
+    },
+    {
+      "name": "T4-shape-alone-is-generic-so-mechanism-is-load-bearing",
+      "passed": true,
+      "note": "The 3-element palindromic SHAPE is generic (any {a,0,-a}). So the shape alone proves nothing; what distinguishes H_Ad is the MECHANISM (Ad governs H^1(M,Ad rho), the deformation theory the Borel singularities live on) plus the a=1 normalization forced by x=m^2. Stated so H_Ad cannot be defended on pattern-matching alone."
+    },
+    {
+      "name": "T5-H_Ad-is-dtMin-and-R1-is-dtMax",
+      "passed": true,
+      "note": "They are DIFFERENT halves of the same chirality-split datum, not the same half twice. R1 reads the larger chirality count on both knots; H_Ad's core equals the smaller on both. So H_Ad is not a re-description of R1 -- and the PAIR (H_Ad,R1) reconstructs the full set-valued datum {3,4} that no single scalar can equal (no tension with no_scalar_matches_chirality_split_datum, which excludes ONE scalar, not two). Lean: r1_is_the_dtmax_projection / h_ad_is_the_dtmin_projection / min_max_pair_reconstructs_datum / two_scalars_name_what_one_cannot."
+    },
+    {
+      "name": "T6-support-is-one-non-degenerate-observation",
+      "passed": true,
+      "note": "4_1's amphichirality COLLAPSES the two projections there, so it supplies no evidence for H_Ad independent of R1. The entire empirical support for 'the core is knot-independently 3' is the single observation S-(5_2) = 3. ONE data point, not two. Recorded so H_Ad is not read as twice-confirmed. Lean: fourone_is_a_degenerate_observation."
+    },
+    {
+      "name": "T7-H_Ad-not-distinguished-from-H_floor",
+      "passed": true,
+      "note": "PASSES as an ADVERSARIAL check: the cores are EQUAL, so the two hypotheses impose identical constraints on any completion and the certified data cannot separate them. The coincidence 3 = dim sl_2 = |{0,g,gbar}| is therefore NOT evidence for the adjoint reading. Worse for T4: H_floor also supplies a 3-element palindromic grading (Chern-Simons values {0,+V,-V}), so the palindromic shape cannot arbitrate either. Only the GRADING VARIABLE could -- meridian x=m^2 (H_Ad) vs Chern-Simons value (H_floor). GGM's s(x) is written in the meridian variable, which weakly favours H_Ad; 'weakly' is the honest word and no separation is claimed. Lean: h_ad_and_h_floor_are_indistinguishable / palindromic_shape_does_not_arbitrate."
+    },
+    {
+      "name": "T8-adjoint-is-the-schur-weyl-partner-not-the-hecke-block",
+      "passed": true,
+      "note": "SELF-CORRECTION. Earlier text in this probe and in the Lean docstring said Ad = 'the partition-(2) Wedderburn block of H_2(q)'. That conflates the two sides of Schur-Weyl duality: the (2) block is 1-DIMENSIONAL (#SYT=1); the 3-dimensional object is its PARTNER S^(2)(C^2) on the U_q(sl_2) side of V^(x)2 = sum_lam S^lam(V) (x) M_lam. The 3 lives on the quantum-group factor paired with the (2) block, never in the block itself. Lean: hecke_block_one_schur_partner_three."
+    },
+    {
+      "name": "T9-meridian-grading-derived-from-tableaux",
+      "passed": true,
+      "note": "The shape-(2) semistandard tableaux carry m-weights (2,0,-2) = exactly TWICE the adjoint x-exponents (1,0,-1) -- i.e. precisely x = m^2. So s(x) = x + 1 + 1/x is the character of S^(2)(C^2) in the MERIDIAN variable, read off Young-tableau combinatorics with nothing fitted. This is the discriminator T7 asked for: H_Ad's grading variable follows from QOU-native Schur-Weyl data, which H_floor (Chern-Simons-graded) has no route to. It does NOT exclude H_floor -- supplying H_Ad a mechanism H_floor lacks is weaker and different. Lean: ssyt_meridian_weights_are_twice_adjoint."
+    },
+    {
+      "name": "T10-tableau-weights-multiplicity-free",
+      "passed": true,
+      "note": "Three tableaux, three DISTINCT weights -- matching M2's sMultiplicities = [1,1,1] with no adjustment, now at the combinatorial level rather than by assertion. Lean: ssyt_weights_nodup."
+    },
+    {
+      "name": "T11-pk-sizes-three-four-seven",
+      "passed": true,
+      "note": "Reproduces GZ S2.1 verbatim (3, 4, 7). It also reproduces R1's (4_1,5_2) -> (3,4) from a source INDEPENDENT of the A-polynomial, and extends it to a third knot. Lean: pk_sizes_three_four_seven."
+    },
+    {
+      "name": "T12-remainder-equals-real-embedding-count",
+      "passed": true,
+      "note": "MATERIAL FINDING, and it counts AGAINST H_Ad. Part 1's Lean could only FORCE the 5_2 remainder to be 1 and said any completion 'must derive it independently'. H_floor derives it: the remainder is the count of REAL embeddings of the reduced trace algebra. 4_1's trace field is imaginary quadratic so it has none (remainder 0); 5_2's disc -23 cubic has exactly one (remainder 1) -- GZ even name it, the root with zero imaginary part. So H_floor explains the count AND the remainder with no sl_2 anywhere. H_Ad's surviving distinct content is only the T9 meridian grading. Lean: forced_remainder_is_the_real_embedding_count."
+    },
+    {
+      "name": "T13-third-knot-is-a-new-value",
+      "passed": true,
+      "note": "No: (-2,3,7) gives a remainder of 4, distinct from both smaller knots, so the rule is checked on three points with three different values. PREDICTION (not verified -- its q->0 Stokes matrix is unpublished): R1/H_floor say the (-2,3,7) count is 7. That is the falsifiable edge. NOTE the core stays 3 on all three, so a third knot does NOT separate H_Ad from H_floor -- see the route-(a) retraction in the verdict. Lean: pretzel_is_a_new_data_point / core_is_three_on_all_three."
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:per-braid-mass-tower",
   title:
-    "Per-braid mass tower: $\\mathfrak{m} = |\\mathrm{tr}_M(W)| + \\sum_{\\xi \\in \\mathcal{S}_1}\\Phi_q(|\\mathrm{tr}_M(\\xi)|) + z^2 \\sum_{(\\xi,\\xi') \\in \\mathcal{S}_2}\\Phi_q(|\\mathrm{tr}_M(\\xi\\xi')|)$",
+    "Per-braid mass tower",
   tags: [
     "mass-tower",
     "per-braid",
