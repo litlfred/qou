@@ -57,6 +57,20 @@ def _as_strings(x):
     return mp.nstr(x, _MP_DPS)
 
 
+def _mpf_or(v, default):
+    """Decimal string / number -> mpf, with a default when absent.
+
+    The serialization port turned several witness fields into decimal strings
+    to keep them out of float64, and every downstream COMPARISON on them has
+    to move with the type. Two did not, and the first was found the expensive
+    way: `r.get("duality_gap", float("inf")) < 1e-6` raised TypeError after
+    the entire H_9 compute had already finished.
+    """
+    if v is None:
+        return default
+    return mp.mpf(str(v))
+
+
 def _mp_trace_of_product(A, B, dim: int):
     """tr(A.B) as ``sum_ij A[i,j]*B[j,i]`` -- O(dim^2), never forming A.B.
 
@@ -650,10 +664,19 @@ def main() -> int:
     # basis cone) and the full H_n Wedderburn Gram on the pair-
     # operator algebra, strong duality holds on every atom in the
     # computable sweep.
+    # `duality_gap` is now a decimal STRING (the MPFR value, not its f64
+    # twin), so compare it as an mpf. The bare `< 1e-6` here survived the
+    # serialization port and raised
+    # `TypeError: '<' not supported between instances of 'str' and 'float'`
+    # AFTER the whole H_9 compute had finished — a five-minute run thrown away
+    # at the reporting step. Widening a value's precision changes its type, and
+    # every comparison on it has to move with it.
+    def _gap_mp(r):
+        return abs(_mpf_or(r.get("duality_gap"), mp.inf))
+
     n_strong_dual = sum(
         1 for r in lp_results_per_atom
-        if r.get("n_pairs", 0) > 0
-        and r.get("duality_gap", float("inf")) < 1e-6
+        if r.get("n_pairs", 0) > 0 and _gap_mp(r) < mp.mpf("1e-6")
     )
     n_expected = sum(
         1 for r in lp_results_per_atom if r.get("n_pairs", 0) > 0
@@ -670,7 +693,7 @@ def main() -> int:
     n_klr_positive = sum(
         1 for r in lp_results_per_atom
         if r.get("n_pairs", 0) > 0
-        and r.get("t_min_klr", -1.0) >= -1e-9
+        and _mpf_or(r.get("t_min_klr"), mp.mpf(-1)) >= mp.mpf("-1e-9")
     )
     w.add_assertion(
         "klr_positivity_supply_vector_all_atoms",
@@ -716,8 +739,10 @@ def main() -> int:
                or fmt(res_dict["primal_obj"]))
     w.add_data("dual_obj", res_dict.get("dual_obj_str")
                or fmt(res_dict["dual_obj"]))
-    w.add_data("duality_gap", float(res_dict["duality_gap"]))
-    w.add_data("y0_star", float(res_dict["y0_star"]))
+    w.add_data("duality_gap", res_dict.get("duality_gap_str")
+               or fmt(res_dict["duality_gap"]))
+    w.add_data("y0_star", res_dict.get("y0_star_str")
+               or fmt(res_dict["y0_star"]))
     w.add_data("y_star", [float(y) for y in res_dict.get("y_star", [])])
     w.add_data("active_set", list(res_dict.get("active_set", [])))
 
