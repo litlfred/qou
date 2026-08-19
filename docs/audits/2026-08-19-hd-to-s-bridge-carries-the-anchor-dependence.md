@@ -72,3 +72,97 @@ outside the anchor data, is what would change the situation.
 - The gate: bean `qou-qb8e` (read its two front-state corrections first)
 - Registry: [`ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md) KC21
 - Bean: `qou-qiw9`
+
+---
+
+# Addendum (2026-08-19): what this is driving at, and what the literature offers
+
+Added at the author's request. **Low priority — a lead, not a route to closure.**
+
+## What "closing c₃" would mean
+
+`c₃` sits at tier **`cal-anchored`**, and the point of this front is to move it
+to **`derived`**. The two differ sharply:
+
+- **Cal-anchored** — `c₃` is *extracted* from experimental Q_β by inverting
+  `c₃ = (Q_β^{exp}/Q_{N2} − 1)/u³`. It carries no content independent of the
+  measurement; it is a repackaging of it.
+- **Derived** — the framework produces `c₃` from its own structure, and Q_β
+  becomes a **prediction to check** rather than the input that was inverted.
+
+The near-match that motivates the attempt is `c₃ = −2 = J_{Hopf}(q=1)`, sitting
+$3.47\%$ from the extracted value: close enough to look structural, far enough
+that closing it is real work.
+
+## The fit this audit is written to prevent
+
+Concretely, and it would take about twenty minutes. `B` has two known values.
+Posit $B(q) = \alpha + \beta\,g(q)$ for any plausible categorical $g$ — a
+bracket, a volume, a power of $\hbar_q$ — and solve the $2\times2$ system. It
+fits both anchors **exactly**, sign change and all, and produces a clean
+formula.
+
+It would be worth nothing. Two free parameters against two data points leaves
+**zero** degrees of freedom, so there is nothing left over to be right or wrong
+about. That is not a derivation; it is a coordinate change on the two numbers
+one started with.
+
+The subtler form is harder to spot and therefore more dangerous: take a genuine
+categorical object carrying **one** free normalisation, tune that normalisation
+to the proton anchor, then present the muon anchor as an independent
+cross-check. It is not independent — the normalisation absorbed the freedom.
+`qou-qb8e`'s guardrail states the requirement directly: *a derived `c₃` must come
+out of the construction with its normalisation pinned in advance.*
+
+Admissible-parameter budget, stated so it can be checked rather than argued:
+with two anchors, a candidate form may carry **at most one** free parameter, and
+one is already generous.
+
+## What the library offers — one lead, unverified
+
+The obstruction is not difficulty; it is **information**. Two points cannot
+constrain a functional form. So the question worth asking the literature is not
+"what is `B`" but **"what object supplies more than two evaluations?"**
+
+The library holds a direct candidate shape:
+
+> **Garoufalidis–Zagier, *Knots, Perturbative Series and Quantum Modularity***
+> ([`arxiv-2111.06645v3`](../../library/arxiv-2111.06645v3/)) — *"an invariant of
+> a hyperbolic knot which is a map $\alpha \mapsto \Phi_\alpha(h)$ from
+> $\mathbb{Q}/\mathbb{Z}$ to matrices with entries in $\mathbb{Q}[[h]]$"*.
+
+**A family indexed by $\mathbb{Q}/\mathbb{Z}$ is exactly the shape of thing that
+dissolves a two-point obstruction** — one object with infinitely many
+evaluations, rather than one number read at two anchors. Related holdings in the
+same direction: [`arxiv-1411.6062v2`](../../library/arxiv-1411.6062v2/)
+(evaluation of state integrals at **rational points**) and
+[`arxiv-2304.07001v3`](../../library/arxiv-2304.07001v3/) (resurgence for Habiro
+elements from radial limits).
+
+**What is checked and what is not.** Checked: all five candidate papers are
+already registered in `references.ts` and cited across `docs/` and
+`computations/` — 2111.06645 alone appears in 24 files. So there is **no missing
+paper**, consistent with the 2026-08-18 R2/R3 triage
+([`2026-08-18-5two-survey-r2-r3-triage.md`](2026-08-18-5two-survey-r2-r3-triage.md)).
+The $\mathbb{Q}/\mathbb{Z}$ statement is verified against the paper's own text,
+not an index summary.
+
+**Not checked, and this is the whole of the lead:** whether `B` has any
+counterpart in the $\Phi_\alpha$ family. The corpus uses 2111.06645 for a
+different purpose — arbitrating the colored-Jones tower — and nobody has asked
+whether its indexed family bears on the bridge. That question is well defined
+and currently unexamined.
+
+It is also **not** obviously admissible: a route that explains the anchor swing
+may be deriving $q_0$ under another name, and that is permanently gated
+(`qou-eic1`). Anyone opening this should settle the gate question first, on the
+shape of the proposal, before computing anything.
+
+## Honest expectation
+
+I do not think this front is closeable from the anchor data, and the addendum is
+written to save effort rather than to encourage it. The one thing that would
+change the situation is a **third independent evaluation** — from the
+$\mathbb{Q}/\mathbb{Z}$ family or anywhere else — and until such a thing exists,
+further fitting against two numbers is not a route however sophisticated the
+form.
