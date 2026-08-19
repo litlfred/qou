@@ -372,3 +372,62 @@ reason from a completed investigation, and Part 2 supplies one for two of them
 claim on two appendix blocks rather than fix it. Which of the five belong on
 the floor, and which need their block status corrected instead, is an owner
 decision; recommendations 2–4 of Part 2 stand.
+
+---
+
+# Part 4 — recommendation 4 investigated: no defect, and a fourth glob bug
+
+## `rho-k-markov-multiplicativity` — the flag was mine, not the corpus's
+
+Part 2 listed this as backing a **"PROVED via Markov multiplicativity"** status
+claim from an unregenerable witness. **That was wrong.** The witness is live at
+`computations/probes/rho-k-markov-multiplicativity.witness.json`, its producer
+is live at `computations/probes/rho_k_markov_multiplicativity_probe.py`, and it
+carries two passing assertions (`wenzl_branching_identity_machine_precision`,
+`branching_verified_all_lambda_6`).
+
+The content is also accurate about what it rests on. `rho-k-graded-expansion.md`
+says the witness *"numerically verifies the [Wenzl 1988] branching identity"* —
+the **proof** is Wenzl 1988 Theorem 5, cited as such; the witness is
+corroboration, not the proof. That is the correct shape and no downgrade is
+warranted.
+
+## Why it looked producerless: `_deprecated/` breaks the same uniqueness test
+
+`witness_producer_executes_audit.resolve()` requires a **unique** hit. The
+producer exists at **both** `computations/probes/` and
+`computations/_deprecated/` — a live script and its retired twin — so the
+uniqueness test rejected the match and the producer resolved to `None`.
+
+A `_deprecated/` copy is **by definition not the producer**. Every other scan in
+this repo already skips that directory (`_scan` in the categorizer,
+`scan` in the provenance audit); this resolver did not. Fixed in both the
+narrow and wide search paths. **E-orphan 137 → 134.**
+
+## The pattern, now four instances
+
+| tool | ambiguity source | symptom |
+|---|---|---|
+| `mpf_context_dps_audit` | `.claude/worktrees/` | 28 phantom no-ops; `precision-gates.sh` RED for every agent in the container |
+| `derivation_gap_categorize` | `computations/`-only + `*.py`-only | 4 false orphans, disposition = *retire* |
+| `witness_producer_executes_audit` | `.claude/worktrees/` | `joint_tower_sdp.rs` → 6 hits → `None` |
+| `witness_producer_executes_audit` | `_deprecated/` | live producer with a retired twin → `None` |
+
+Two directories that must never appear in an audit's repo-wide `rglob`:
+**`.claude/`** (checkouts of other branches) and **`_deprecated/`** (retired
+copies). Both are invisible in review — the glob looks correct — and both fail
+*toward* the dangerous verdict: a phantom red that trains agents to skip the
+gate, or a false orphan whose recommended disposition is deletion.
+
+## Net effect of Parts 1–4 on the tier-E count
+
+| stage | E-orphan |
+|---|---:|
+| as first reported | 186 |
+| − 13 genuinely dead (deprecated) | 173 |
+| − 4 (`docs/audits/scripts/`, `.lean`, 2 × `.sage`) | 169 |
+| − 31 (`producer`/`script` keys, `.rs`, `.claude` in `resolve`) | 138 → 137 |
+| − 3 (`_deprecated` twins) | **134** |
+
+**28% of the original tier was tool error, 7% was genuinely dead, and the
+remaining 65% is the load-bearing population Part 1 §3 describes.**
