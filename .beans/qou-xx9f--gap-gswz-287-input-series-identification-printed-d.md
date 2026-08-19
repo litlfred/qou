@@ -162,3 +162,56 @@ places of Addendum 32); `μ(K₅)` of orders `5²−1 = 24` and `5−1 = 4` (the
    readings (prose `f₁` vs display `f₅`) and report which reproduces the
    printed digits. That decides the prose/display conflict computationally
    rather than by authority.
+
+## 2026-08-19 — RESOLVED: the (287) subscript is a typo for `f₁`
+
+Probe `computations/probes/gswz_287_f1_vs_f5_subscript_resolution_probe.py`,
+12/12. (Paths: the pdf moved in the `uploads/ → library/` migration and is
+now `library/arxiv-2412.04241v2/2412.04241v2.pdf`, with extracted section
+markdown alongside it.)
+
+The glyph is `f₅` and the prose one sentence earlier is `f₁`, and `f₅` is a
+real object ((285)), so neither reading can be dismissed on sight. Settled
+from **(287)'s own right-hand side** via GSWZ's coordinate-field rule, the
+parenthetical after (345):
+
+> "the coordinates here are in K as opposed to K[ζ_m] … because φ(m) ≤ 2 for
+> m < 5 … in general, the coordinates are in K[ζ_m + ζ_m⁻¹]."
+
+At m = 5, `ζ₅+ζ₅⁻¹` satisfies `t²+t−1 = 0` (verified symbolically in
+`Z[z]/Φ₅`) — a genuine quadratic extension, and one **ramified at 5**
+(disc 5; `Φ₅(1+π)` Eisenstein ⇒ `Q₅(ζ₅)` totally ramified of degree 4). It
+embeds in neither unramified component of `K₅ = Q_{5²} × Q₅`: there the
+valuation is `Z`-valued and squares have even valuation, while `v₅(5) = 1`
+is odd. So an m=5 coefficient admits **no** clean powers-of-5 digit
+expansion over a K-basis — which is exactly how (287) prints every
+coefficient (three coordinates against `{1, α, α²}`, ordinary base-5
+digits).
+
+**Control:** the same computation re-derives GSWZ's own `φ(m) ≤ 2` boundary
+— `ζ_m+ζ_m⁻¹` is rational for m = 1,2,3,4 (2, −2, −1, 0) and irrational at
+m = 5 — so the test fires at 5 and nowhere below, rather than always.
+
+**Three lines converge:** the prose says `f₁`; only `f₁` is ever *defined*
+as a series ((281)/(282)), so under the `f₅` reading the paper's own
+"experiment" would not be reproducible by a reader, which is the stated
+purpose of §4.6; and the printed RHS lives in K with unramified digits.
+
+**LaTeX source would be definitive and is unavailable here.**
+`https://arxiv.org/e-print/2412.04241v2` returns `403 CONNECT` from the
+sandbox proxy (arxiv.org not allowlisted). If the tarball is ever added to
+`library/arxiv-2412.04241v2/`, one grep for the `f_{1}`/`f_{5}` macro
+confirms or overturns this in a second — do that before building on it.
+
+## What remains — this is now the WHOLE bean
+
+Candidate (1) is **eliminated**: the inputs are not an unprinted m=5 fibre.
+The x¹..x³ printed digits remain unreproduced under the `f₁` reading, so
+what is left is **candidate (2)**: an unprinted α-dependent normalisation
+between (281)'s `f₁` and the printed `Φ` series. The earlier narrowing
+stands — a single `q^λ` exponent confirms x² mod 25 (~6 nontrivial digits)
+but fails x³ mod 5, so the normalisation is a *series* with a nonzero h³
+term, not a scalar.
+
+Candidate (3) (transcription) was already ruled out, and is now doubly so:
+the 6× render agrees with both pypdf modes on every digit group.
