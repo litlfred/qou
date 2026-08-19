@@ -100,6 +100,65 @@ human scholarly drafting, near-universal in unedited model output);
    Entries APPEND to the criterion array; script candidates stay in
    place as provenance.
 
+   **Use these ten criterion ids verbatim** — they are the scanner's
+   ids, and a paraphrase produces an orphan criterion that adjudicates
+   nothing:
+
+   ```
+   trap-negation-contrast   trap-rhetorical-pivot   trap-em-dash
+   trap-triples             trap-closing-aphorism   trap-meta-commentary
+   trap-thesis-restatement  trap-performed-warmth   trap-superlative
+   trap-nonspeakable
+   ```
+
+   The descriptive-sounding spellings `trap-compulsive-triple`,
+   `trap-superlative-inflation` and `trap-nonspeakable-syntax` are
+   **wrong**. 419 blocks in the first campaign recorded verdicts under
+   them, and those verdicts joined to nothing until a normalisation pass
+   ran (`a89de3169`).
+
+## The reading is the point; carry these while you read
+
+A block gets one full-context read from an agent who will not be back.
+Spending it on the ten categories alone wastes the expensive part, so
+carry the corpus's standing traps at the same time and **report** them —
+never fix math inline.
+
+- **Recompute quoted numerics** with `python3`/`mpmath` rather than
+  trusting them. This is where most real findings come from.
+- **q₀ pins.** Proton `1.1099785827513808` is the compute default
+  (owner directive 2026-08-07); muon `1.10997859555733471` is the ideal
+  CAL-2 pin. The string `1.109978595554181` is the **old muon value** —
+  arithmetically correct (it solves the CAL-2 identity and back-implies
+  CODATA m_μ/m_e to 12 digits), so report it as a pin-currency defect,
+  not a corrupt number; its usual presentation labels 16 digits
+  "(50 dps)". The rounding `1.1097` **is** a genuine producer-input
+  error. Say which of the three a table's values actually reproduce.
+- **§7a conventions.** Skein `L₊ − L₋ = (q−q⁻¹)L₀`; generator `σᵢ`,
+  never `T`; Jones `J_K(q)`, never `V_K(t)`.
+- **Vol(4₁) = 2·Cl₂(π/3) ≈ 2.0299.** Most survivors compute the right
+  value under the wrong name, so check the arithmetic beside the name
+  before calling it an error.
+- **Absolute-mass excision** (2026-08-11): `m_p ≈ 938.27 MeV` is never
+  a framework prediction. Ratios, bindings, Q-values and splittings are.
+- **Sweep damage.** Stripped tokens and accents; escaped-bracket
+  citations `\[key]`; "non-by definition" garble; de-hedging intensifier
+  floods; and token substitution — `the canonical formalism` /
+  `the formal derivation` standing in for a script name, and `canonical`
+  substituted for `numerical(ly)` ("is canonical hostile").
+- **Braid words.** Where a table gives one, compute the closure's
+  component count. Two tables were found carrying wrong words this way.
+
+## Preserving verdicts across merges
+
+These entries have **no producer**. `qa-sweep` regenerates the script
+candidates and cannot regenerate a verdict, so the usual sidecar-conflict
+resolution — take main's side, let the pipeline re-run — deletes them
+silently. On any rebase, takeover, or conflict: take the union of both
+sides' agent entries and drop only those whose `field_hash.md` no longer
+matches the merged tree. Bean `qou-tqr9`; 7381 entries were lost and
+recovered this way once already.
+
 ## Batch conventions
 
 - Batches of ~25 blocks, grouped by chapter (mirrors
