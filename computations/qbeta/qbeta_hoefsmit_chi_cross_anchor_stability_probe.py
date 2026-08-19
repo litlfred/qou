@@ -73,7 +73,7 @@ import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
 os.environ.setdefault("QOU_OUTPUT_DPS", "50")
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt as _fmt, set_compute_dps  # noqa: E402
 set_compute_dps(65)
 import mpmath as mp  # noqa: E402
 mp.mp.dps = 65
@@ -115,8 +115,22 @@ def hoefsmit_sigmas_n3_sympy(p, q):
 
 
 def main() -> int:
-    Q_PROTON = 1.1099785827513808075916690956107688798744991218736
-    Q_MUON = 1.10997859555  # cross-anchor (per 569bedda1, PR #1836)
+    # NO FLOAT64 (AGENTS.md "PROBES ARE NOT EXEMPT"; bean qou-65qv).
+    # These were bare Python FLOAT literals. Python parses a 49-digit literal
+    # to binary64 and discards 32 of those digits before anything sees it, so
+    # `sp.Float(str(Q_PROTON), 50)` below was padding 17 good digits back out
+    # to 50 — and chi was then serialized at 25. Measured: 6.8e-18 relative,
+    # i.e. 17 good digits presented as 25.
+    #
+    # The delta is the worse half. `Q_MUON - Q_PROTON` is ~1.28e-11 from two
+    # values that agree to 11 digits — a catastrophic cancellation, which in
+    # float64 leaves the probe's own headline cross-anchor quantity with
+    # roughly 5 significant digits. Carried as strings and subtracted in
+    # mpmath, it is exact.
+    Q_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
+    Q_MUON_STR = "1.10997859555"  # cross-anchor (per 569bedda1, PR #1836)
+    Q_PROTON = mp.mpf(Q_PROTON_STR)
+    Q_MUON = mp.mpf(Q_MUON_STR)
 
     t0 = time.monotonic()
     builder = WitnessBuilder(
@@ -163,7 +177,8 @@ def main() -> int:
         # electron word = σ_0 σ_1 σ_0 (0-indexed) = sigmas[0]·sigmas[1]·sigmas[0]
         M = sigmas[0] * sigmas[1] * sigmas[0]
         chi_sym = sp.simplify(M.trace())
-        chi_qp = mp.mpf(str(sp.N(chi_sym.subs(q_sym, sp.Float(str(Q_PROTON), 50)), 50)))
+        chi_qp = mp.mpf(str(sp.N(
+            chi_sym.subs(q_sym, sp.Float(Q_PROTON_STR, 50)), 50)))
         print(f"  {str(p):<10} {str(chi_sym):<35} {float(chi_qp):>16.10f}")
         per_block.append({
             "lambda": list(p),
@@ -211,9 +226,9 @@ def main() -> int:
     print()
 
     builder.add_data("anchors", {
-        "q_proton": Q_PROTON,
-        "q_muon": Q_MUON,
-        "delta_q": Q_MUON - Q_PROTON,
+        "q_proton": _fmt(Q_PROTON),
+        "q_muon": _fmt(Q_MUON),
+        "delta_q": _fmt(Q_MUON - Q_PROTON),
     })
     builder.add_data("per_block_handbuild_chi_symbolic", per_block)
     builder.add_data("blockers", {
