@@ -1505,3 +1505,112 @@ is consistent with its collapsing.
 resolving it. No ε_m value is claimed at m ≥ 3; the m = 2 result
 (PR #4968) is untouched. The non-vacuity control is what makes the
 collapse a finding rather than a broken class function.
+
+---
+
+## Addendum 32 (2026-08-19) — the invariant lives in a χ⁻¹-**eigenspace**; my base field destroyed it, and half of Addendum 31 was wrong
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_chi_eigenspace_place_probe.py`](../../computations/probes/gswz_epsm_chi_eigenspace_place_probe.py)
+— 21/21, exact integer arithmetic mod 5⁸. Scope-(a); nothing wired.
+
+### What I had not read
+
+CGZ arXiv:1712.04887v3 **Remark 1.9** (p. 8), on Gangl–Kontsevich:
+
+> "*they did not check in general that the image of P_ζ could be lifted
+> to a suitable element R_ζ ∈ (F_n^×/F_n^{×n})^{χ⁻¹}*"
+
+Three facts follow, none of which the previous five addenda used:
+
+1. The invariant is **not** `P_ζ`. `P_ζ ∈ H^×/H^{×n}` is only its
+   *image*; `R_ζ` is a **lift**.
+2. Its home is `(F_n^×/(F_n^×)^n)^{χ⁻¹}` — the **χ⁻¹-eigenspace** of
+   `F_n = F(ζ_n)`, not of `H` and not of `F`. Lemma 2.4(e) is the
+   eigenvector condition, not a decoration.
+3. CGZ themselves flag the lift as **unchecked in general**. It is the
+   hard step, and it is exactly the step my descent was improvising.
+
+### The diagnosis: an eigenspace needs `μ_n ⊄ F`
+
+`(·)^{χ⁻¹}` is a proper subgroup only when `Gal(F_n/F) ≠ 1`, i.e. only
+when the base field does **not** already contain `μ_n`. Every field in
+this programme was `F = Q₅(μ_{624m})`, which contains `μ_m`. So
+`F_n = F`, `Gal(F_n/F) = 1`, Lemma 2.4(e) constrains nothing, and the
+"eigenspace" is the whole group. **The structure that carries the
+invariant was destroyed before anything was computed** — which is a
+better explanation of the Addendum-31 collapse than "the field is too
+large".
+
+### The correct base is place-dependent
+
+The α-line field is `K = Q(α)` with `α³ − α² + 1 = 0` (whence
+`1 − z₁ = α²`, `1 − z₂ = α`, `z₁ = −α³`). Over `Q₅`:
+
+`x³ − x² + 1 ≡ (x − 2)(x² + x + 2) (mod 5)` — measured, with the
+quadratic checked irreducible.
+
+| place | `K_v` | `μ₃ ⊂ K_v`? | `Gal(F₃/K_v)` | χ⁻¹-eigenspace |
+|---|---|---|---|---|
+| `v₁` (degree 1) | `Q₅` | **no** | `Z/2` | order **3** of 9 |
+| `v₂` (degree 2) | `Q₂₅` | yes | `1` | whole group |
+
+**Only `v₁` carries the structure.** There `F₃ = Q₂₅` — which is exactly
+the base `B` of the m = 2 and m = 3 descent probes.
+
+### The eigenspace, measured
+
+At `v₁`, `B^×/(B^×)³` has order **9**: the Teichmüller line
+`μ₂₄/μ₂₄³ ≅ Z/3` times the valuation line `Z/3`, with `1 + 5O` uniquely
+3-divisible (checked on all 25 residues, so it is trivial in the
+quotient). Frobenius `φ₅` acts by `5 ≡ −1 (mod 3)` on the Teichmüller
+line and by `+1` on the valuation line (it fixes `Q₅` pointwise —
+checked on the Teichmüller lifts of `𝔽₅^×`). And
+`χ(φ₅) = 5 ≡ 2`, `χ⁻¹(φ₅) = 2 ≡ −1`.
+
+So the χ⁻¹-eigenspace **is the Teichmüller line**: order 3, a **proper**
+subgroup, with `5` (class `(0,1)`) a witness outside it. Non-vacuous —
+unlike the Addendum-31 F-level class, which was identically 0 on all 23
+admissible base arguments.
+
+### This reverses half of Addendum 31
+
+Addendum 31 bracketed the invariant between "`B = Q₂₅` too small
+(root-independence fails)" and "`F = Q₅(μ₁₈₇₂)` too large (the class
+collapses)". **The first half is wrong.**
+
+- `B = Q₂₅` is not "too small" — it *is* `F_n` at the degree-1 place.
+- `χ_B = teich(·)⁸` is not an ad-hoc character — it *is* the projection
+  onto the χ⁻¹-eigenspace (measured: injective on the line, trivial on
+  cubes and on the valuation part).
+- What failed at the `B` level was the **lift** `H → F_n`, which
+  Remark 1.9 names as the unchecked step — **not** the choice of field.
+
+The second half of the bracket stands: `F = Q₅(μ₁₈₇₂)` really is too
+large, and Addendum 32 now explains *why* in one line — it contains
+`μ₃`.
+
+### A route ruled out without spending a probe on it
+
+**Lemma 2.3** (p. 9) is an **isomorphism**
+
+`φ : F^×/F^{×n} ≅ Hom(Φ, μ) ≅ H¹(Φ, μ)`,  `X ↦ (σ ↦ σx/x)`,
+
+with `Φ = Gal(H/F_n)` and `H` the *universal Kummer extension* (adjoin
+n-th roots of **every** element of `F`) — so `H` was never my `F`
+either. Because Lemma 2.3 is an isomorphism, computing the Kummer
+cocycle `σ ↦ σ(x)/x` returns the **same object** as the Addendum-31
+class, transported. It cannot rescue the collapse. That was the stated
+next increment on the merged work; it is a dead end, and no probe was
+written for it.
+
+### What is open
+
+The lift `P_ζ ∈ H^×/H^{×n} → R_ζ ∈ (F_n^×/(F_n^×)^n)^{χ⁻¹}` at the
+degree-1 place. CGZ construct it (§3, via Chern classes) and flag that
+Gangl–Kontsevich did not; my descent was an improvised substitute for
+it, and the root-dependence of Addenda 27–29 is its failure mode.
+
+**Scope.** No ε_m value is claimed at any m ≥ 3. This addendum
+relocates the target group and shows it is non-vacuous; it does not
+compute anything in it. The m = 2 value (PR #4968) is untouched.
