@@ -464,6 +464,64 @@ showed why they differ: the witness assigns `Im` from the counit closed form and
 asserts nothing (`assertions: []`). **The gap map is the accurate artifact; the
 witness is the misleading one.**
 
+## 3g. Sibling corroboration — and one prune sharper than anything here
+
+Synced with `main` (rebased over 268 commits). Two sibling landings bear
+directly on this document; both are cited rather than re-derived.
+
+### `fcffeee29` — the same D weights, from a different route, plus a sharper prune
+
+A sibling working `qou-cds1` solved the three `H₃(q)` Markov equations for
+general `z` and specialised to `z_D`:
+
+```
+y₍₁³₎  = 0        exactly
+y₍₂,₁₎ = q²/(q²+1)²
+y₍₃₎   = (q⁴+1)/(q²+1)²        with  y₃ + 2y₂₁ = 1 exactly
+```
+
+**Identical to §1's measurement**, reached from the Markov linear system rather
+than from `WenzlWeightVanishing.lean`'s Wenzl-theorem route or from §1's numeric
+evaluation. **Three independent routes now agree**, which is worth more than any
+one of them. Their commit makes the same point about the two-row cap: `y₍₁³₎ = 0`
+*falls out* of the linear system at `z_D` rather than being imported.
+
+**Their prune is sharper than the parity material in §3b–§3f.** Both surviving D
+weights are **bar-even**. So no quantity built from the D-frame weights alone
+carries a bar-odd part, and *the bar-odd eigenphase the C-frame ladder uses
+cannot be assembled from them at all.* The C-frame's bar-odd content came from
+`z_C` being bar-even against a bar-**odd** `h`; under D that source is gone.
+
+That is a cleaner and stronger statement of the obstruction than §3b's
+"the `u/2` term breaks the parity" — §3b says the *repair* is incomplete;
+this says the *material* is absent. Lean:
+`QOU.QBeta.MarkovWeightsConventionD`, 7 declarations, sorry-free, generic
+`CommRing`.
+
+### `457a27181` — my scope-(a) caution upgraded to a proved exclusion
+
+On `qou-gzs0` (the ribbon bean): `θ_V = q^{1/2}·id_V` is a **scalar**, so a
+framing `T` contributes exactly `q^{T/2}` with `T` an integer — a *discrete*
+ladder whose quantum is **5.36 %**, overshooting every L2 gap by ~4×10⁴
+(`Q_β` 41,873×; `m_n` 38,254×; `Δ_pn` 44,629×).
+
+In PR #5262 I wrote that *"the twist closes a proof gap in the mass chain's
+derivation"* is supported while *"the twist improves mass accuracy"* is **not**,
+and marked it scope-(a). The sibling has now proved the scope-(b) version, on a
+proved invariant rather than a failed search. No conflict — the caution was
+warranted, and their verdict puts L2 work exactly where this bean is:
+*"the convention-D re-derivation (`qou-cds1`), not the ribbon layer."*
+
+### What survives, and what is superseded
+
+| this document | status after sync |
+|---|---|
+| §1 two-row cap is 13.6× too big; both frames normalise | **stands** — and the weights are now triple-confirmed |
+| §2 `c_k` magnifier identity `c₂+1 = (F_req−F_N2)/(F_N1u²)` | **stands** — untouched by either sibling result |
+| §3b `u/2` breaks the phase parity | **stands, but superseded in force** by the bar-even prune: the material is absent, not merely the repair incomplete |
+| §3c–§3e counit-vs-trace, `α = (ε−tr_M)/2` | **stands** — orthogonal to both |
+| §3f four issues blocking the imaginary channel | **stands** — and the bar-even prune adds a fifth, at the weights level |
+
 ## 4. Routes now pruned, and what remains
 
 | route | status | source |
