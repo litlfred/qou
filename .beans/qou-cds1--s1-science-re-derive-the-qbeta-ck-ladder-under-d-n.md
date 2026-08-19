@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T12:45:28Z
+updated_at: 2026-08-19T13:36:01Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -537,3 +537,43 @@ c_k re-derivation this bean is scoped to.
 
 SIBLING: main carries fcffeee2 'lean(qou-cds1): the D-frame Markov weights are
 two-row AND bar-even' -- another agent is on this bean. Coordinated on PR #5283.
+
+### 2026-08-19 SYNC: sibling corroboration, and a prune sharper than mine
+
+Rebased over 268 commits. Two sibling landings bear on my entries; both cited.
+
+fcffeee29 (SIBLING ON THIS BEAN) solved the three H_3(q) Markov equations for
+general z and specialised to z_D:
+    y_(1^3) = 0 exactly,  y_(2,1) = q^2/(q^2+1)^2,  y_(3) = (q^4+1)/(q^2+1)^2,
+    y_3 + 2 y_21 = 1 exactly
+IDENTICAL to my two-row-cap measurement, reached from the MARKOV LINEAR SYSTEM
+rather than from WenzlWeightVanishing's Wenzl route or my numeric evaluation.
+THREE INDEPENDENT ROUTES NOW AGREE on the D weights.
+
+THEIR PRUNE IS SHARPER THAN MINE. Both surviving D weights are BAR-EVEN, so no
+quantity built from the D-frame weights alone carries a bar-odd part, and the
+bar-odd eigenphase the C-frame ladder uses CANNOT BE ASSEMBLED FROM THEM AT ALL.
+My entry said the repair (the u/2 term) is incomplete; theirs says the MATERIAL
+IS ABSENT. That supersedes mine in force -- not a conflict, a stronger form.
+Lean: QOU.QBeta.MarkovWeightsConventionD, 7 decls, sorry-free, generic CommRing.
+
+457a27181 (qou-gzs0) UPGRADED MY OWN SCOPE-(a) CAUTION TO SCOPE-(b). theta_V =
+q^{1/2}.id is a SCALAR, so a framing contributes exactly q^{T/2} with T integer
+-- a DISCRETE ladder with quantum 5.36%, overshooting every L2 gap by ~4e4
+(Q_beta 41873x, m_n 38254x, Delta_pn 44629x). In PR #5262 I wrote that 'the
+twist closes a proof gap' is supported while 'the twist improves mass accuracy'
+is NOT, marked scope-(a). They proved the scope-(b) version on a proved
+invariant rather than a failed search. No conflict; the caution was warranted.
+Their verdict puts L2 work where this bean is: 'the convention-D re-derivation
+(qou-cds1), not the ribbon layer.'
+
+WHAT OF MY ENTRIES SURVIVES:
+  two-row cap 13.6x too big + both frames normalise ....... STANDS (triple-confirmed)
+  c_k magnifier identity c2+1 = (F_req-F_N2)/(F_N1 u^2) ... STANDS (untouched)
+  u/2 breaks the phase parity ............................. STANDS but SUPERSEDED
+                                                            IN FORCE by bar-even
+  counit-vs-trace; alpha = (eps - tr_M)/2 ................. STANDS (orthogonal)
+  four issues blocking the imaginary channel .............. STANDS; bar-even adds
+                                                            a FIFTH, at weights level
+
+All six of my probes re-run post-rebase: ASSERTIONS PASS.
