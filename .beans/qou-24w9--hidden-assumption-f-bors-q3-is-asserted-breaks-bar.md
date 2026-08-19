@@ -3,8 +3,9 @@
 title: 'HIDDEN ASSUMPTION: F_Bor''s /q^3 is asserted, breaks bar-symmetry, and carries 37% of m_p'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-18T20:45:53Z
-updated_at: 2026-08-18T20:45:53Z
+updated_at: 2026-08-19T14:03:15Z
 ---
 
 
@@ -347,3 +348,119 @@ It is "explain why THIS combination is the one that works".
 That is a harder and more interesting question, and it is the one I would put to
 the owner: the factor behaves like it encodes something real that the current
 derivation vocabulary cannot express.
+
+
+## WHERE /q^3 COMES FROM — it is the q-Schur Plancherel weight of the trivial block (2026-08-19)
+
+Owner asked what the corpus and the literature say about the options. The
+option table above was INCOMPLETE: it never considered normalising by a single
+Wedderburn BLOCK weight. The corpus does exactly that, and the missing entry is
+the one in use.
+
+`computations/qbeta/fbor_q3_is_qschur_plancherel_weight_probe.py` (8/8, proton
+pin, convention D).
+
+### The provenance, and it is not arbitrary at all
+
+`phase5/phase2b_dim_v21_bridge_derivation.py:29` states
+
+    F_Bor = |tr_M| . [3]_q!/q^3 = |tr_M| / y_(3),   y_lam = q^{c(lam)}/[n]_q!
+
+and that is an EXACT identity: `c((3)) = 0+1+2 = 3` is the CONTENT SUM of the
+trivial partition. Measured: `1/y^Schur_(3) = 4.475573877740067446` = the
+current factor, to the last digit.
+
+This also explains the bar-asymmetry structurally, which nothing before did:
+bar sends `lam -> lam'`, and `c(lam') = -c(lam)`. So the factor is
+bar-asymmetric BECAUSE it is a single-block weight, and the block it picks is
+the chirality-extremal one. That is the first candidate to escape the
+bar-symmetry wall this bean hit — the wall was an artifact of only considering
+normalisers built from tr_M and [3]_q!, both bar-even.
+
+### The catch, measured
+
+`y_lam = q^{c(lam)}/[n]_q!` is the q-SCHUR PLANCHEREL family
+(`QSchurYLambdaClosedForm.lean` — and note the identification with the
+categorical weight there is a CONJECTURE CLASS, not a theorem). The `tr_M` in
+`F_Bor` is the WENZL/MARKOV trace. At the proton pin:
+
+    sum_lam y^Wenzl_lam . chi^lam(beta_Bor) = 0.99856216383678726595
+                                              = the Lean tr_M, residual 1.8e-71
+    sum_lam y^Schur_lam . chi^lam(beta_Bor) = 0.66872287272701215631
+
+    sum_lam dim_lam . y^Wenzl_lam = 1  EXACTLY   (= tr_M(1), the Markov
+                                                  normalisation)
+    sum_lam dim_lam . y^Schur_lam = 0.66967281337086841549
+
+The first line is a THREE-WAY independent check — Lean closed form, the Wenzl
+weight formula, and the Phase-1c character — agreeing to 71 digits. So the
+Wenzl family is unambiguously the one that decomposes this trace, and the
+q-Schur family is not.
+
+So `/q^3` is a CROSS-FAMILY IMPORT: a q-Schur block weight applied to a Markov
+trace. AGENTS.md's notation register forbids exactly this ("three
+partition-weight families y_lam / w_lam / w~_lam are distinct at q != 1 --
+never conflate").
+
+### Two options collapse into one
+
+    1/y^Wenzl_(2,1) = [2]_q^2   EXACTLY (22 digits, both pins)
+
+So "normalise by the standard-rep block weight" and "the Markov/TL strand
+normalisation delta^(n-1)" are the SAME option, not two. It remains the best
+principled bar-symmetric candidate and still misses by 9.71 %.
+
+    1/y^Wenzl_(3)   = 1.9786142409559419401  ->  m_p = 411.38  (-56.2 %)
+    y^Wenzl_(1,1,1) = 0  in convention D — the bar-partner of the trivial block
+                         is not available as a normaliser at all.
+
+### Updated option table (proton pin, convention D)
+
+  option                                        N            m_p (MeV)   family
+  writhe rule (w=0)                             1.0000       204.88      corpus rule
+  1/y^Wenzl_(3)   trivial block                 1.9786       411.38      Wenzl
+  1/y^Wenzl_(2,1) = [2]_q^2 = TL delta^(n-1)    4.0437       847.14      Wenzl
+  [3]_q!  no division                           6.1206      1285.39      Poincare
+  1/y^Schur_(3) = [3]_q!/q^3   CURRENT          4.4756       938.272089  q-SCHUR
+
+Every entry from the Wenzl family — the family that actually decomposes tr_M —
+misses. The only hit is the q-Schur import.
+
+### What the literature says
+
+  * The Wenzl weight is the HOOK-CONTENT formula, and the witness records it as
+    such: `s_{lam,X}(Q) = Q^{n(lam)} prod_x (1 - X Q^{c(x)})/(1 - Q^{h(x)})`.
+    That is Stanley's principal specialisation
+    `s_lam(1,q,...,q^{N-1}) = q^{n(lam)} prod_x [N+c(x)]/[h(x)] = q^{n(lam)}
+    dim_q(lam)` — so a q-power carrying CONTENT is standard in this setting;
+    what the q-Schur closed form drops is the hook/dimension half.
+  * The weights at the minimal idempotents were first computed by Ocneanu (that
+    work is lost) and reproved by Geck; Jones (Ann. Math. 126 (1987) 335-388)
+    is the canonical source for the Markov trace -> HOMFLY construction.
+  * HOMFLY framing: `H(D) = v^{-w(D)} P(D)`, so the framing correction is a
+    WRITHE power and is 1 at w = 0 — which is what the Lean theorem
+    `no_writhe_prefactor_yields_inv_cube` already says for beta_Bor.
+  * The remaining standard normaliser is the `(n-1)`-power of the loop value,
+    i.e. `delta^{n-1} = [2]_q^2` — the option that collapses with the Wenzl
+    standard block above.
+
+  Sources fetched 2026-08-19 via WebSearch (arxiv.org is egress-blocked from
+  this sandbox, so the Ocneanu/Geck and hook-content statements are from search
+  summaries of arXiv math/9806163 "Weights of Markov Traces on Hecke Algebras"
+  and ncatlab's hook-content page, NOT from the full texts).
+
+### What this changes for the open question
+
+"Which normalisation is derivable?" now has a sharper answer than
+"none of them". The factor IS a canonical object — the q-Schur Plancherel
+weight of the trivial block, exponent = content sum — imported across a family
+boundary. So the live question becomes:
+
+    is there a reason the MASS channel should be normalised by the q-Schur
+    Plancherel weight rather than by the Markov weight of its own trace?
+
+That is answerable in principle (the two families differ by the hook/dimension
+half of the hook-content formula), and it is a much better-posed target than
+"what derives 3". Not attempted here.
+
+Scope-(a). Does not refute F_Bor; does not touch the Lean-proved |tr_M|.
