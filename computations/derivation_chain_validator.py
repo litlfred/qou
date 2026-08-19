@@ -99,15 +99,46 @@ class ChainResult:
     has_script_frontier: bool
 
 
-def _eval_simple_algebra(operation: str, q: float) -> Optional[float]:
+def _eval_simple_algebra(operation: str, q: Any) -> Optional[Any]:
     """Try to recognise a small set of canonical algebraic operations
     in the `operation` field; return the numerical result at q if
-    possible, else None."""
+    possible, else None.
+
+    Arithmetic is done in `mpf`, not float64: `c_q = 1/(q - 1)` amplifies its
+    input by q/(q-1) ~ 10, so a float64 round-trip here would eat a decade of
+    the 1e-12 tolerance the chains are checked against.
+    """
     op = operation.replace(" ", "")
     # c_q derivation algebra
     if "1/(q-1)" in op or "1/(q−1)" in op:
-        return 1.0 / (q - 1.0)
+        qq = q if isinstance(q, mpf) else mpf(str(q))
+        return mpf(1) / (qq - 1)
     return None
+
+
+#: `q_0 = <digits>` as written into a chain step's prose `operation` field.
+_DECLARED_Q0_RE = re.compile(r"q_0\s*=\s*([0-9]+\.[0-9]+)")
+
+
+def _declared_q0(operation: str) -> Optional[Any]:
+    """The q_0 a chain step *declares it evaluated at*, as `mpf`, or None.
+
+    A chain records which substrate pin it was built against; the module-level
+    `Q_0` is the experimental (proton) pin that new compute defaults to
+    (AGENTS.md, owner directive 2026-08-07).  Re-evaluating a muon-pinned chain
+    against the proton `Q_0` mixes the two layers inside one comparison, which
+    is the straddle AGENTS.md forbids -- and `c_q` amplifies the ~11.5 ppb
+    mu-p tension to ~1.16e-7, three decades past the 1e-12 chain tolerance, so
+    the straddle reads as a hard formula failure rather than as the pin
+    difference it is.  Prefer the chain's own declared pin; fall back to `Q_0`
+    only for a chain that names none.
+
+    The migration posture (AGENTS.md rule 4) keeps recorded muon-layer
+    artifacts as recorded until the tracked sweep (bean `qou-1c4y`) runs, so
+    this check must be able to validate them where they stand.
+    """
+    m = _DECLARED_Q0_RE.search(operation)
+    return mpf(m.group(1)) if m else None
 
 
 def _ser(v: Any) -> Any:
@@ -246,12 +277,17 @@ def validate_chain(chain_path: Path) -> ChainResult:
 
     # 4. Re-evaluate simple algebraic targets (c_q chain) at the shared Q_0.
     if "c_q" in target and target_is_numeric:
-        recomputed = _eval_simple_algebra(steps[-1].get("operation", ""), Q_0)
+        leaf_op = steps[-1].get("operation", "")
+        declared = _declared_q0(leaf_op)
+        q_eval = declared if declared is not None else mpf(str(Q_0))
+        pin = "chain-declared" if declared is not None else "module Q_0 (proton)"
+        recomputed = _eval_simple_algebra(leaf_op, q_eval)
         if recomputed is not None:
             rel = abs(recomputed - target_value) / abs(target_value)
             if rel > target_tolerance:
                 structural_issues.append(
-                    f"c_q algebra re-eval at q_0={Q_0} gives {recomputed} "
+                    f"c_q algebra re-eval at q_0={mp.nstr(q_eval, 20)} "
+                    f"[{pin}] gives {mp.nstr(recomputed, 20)} "
                     f"vs target {target_value} (rel_diff {rel:.2e}, "
                     f"target_tolerance {target_tolerance:.2e})"
                 )
