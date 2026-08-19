@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-08-19T12:07:20Z
+updated_at: 2026-08-19T13:52:52Z
 ---
 
 Parent dgap. 66 witnesses across producers that emit MORE THAN ONE witness. The audit matches
@@ -117,3 +117,49 @@ or healthy; not a retirement job. Needs: reconstruct the producer, or freeze
 the witness explicitly as a declared constant input.
 
 Audit: `docs/audits/2026-08-19-tier-e-orphan-triage.md`
+
+
+## 2026-08-19 — Parts 2-4: provenance trace + the gate that let it through
+
+**One real paper defect.** `content/values/registry.ts` pins
+`B_4He_AME_MeV = 28.295674` from a producerless artifact; the corpus's own
+AME2020 source says `28.295673`, and all five compute consumers use the AME
+value. **The paper prints a different last digit than the compute layer.**
+Which digit is right needs the actual AME table — a back-of-envelope from mass
+excesses gave a third value (~28.29566). This is the `fvxq` UNSAFE class.
+
+Source: commit `e52487a2` (2026-04-20) records that run as a FAILURE
+("blows up to 1.98M MeV"); the registry pins its experimental **by-product**
+field. Producer never committed.
+
+**The gate.** `witness_provenance_audit.classify` scored by emptiness, and a
+prose marker is a non-empty string — so the I14 campaign reached
+`completeness_ratio: 1.00` partly by *writing* the marker. Fixed: a prose
+`scriptFile` now counts as missing. `PROV_MISSING 49 -> 54`, completeness
+`0.981 -> 0.979`. Five surface, including both paper-facing ones and three not
+previously known.
+
+**Caught my own over-fire before shipping:** the first version ran the prose
+predicate over all of `REQUIRED_FIELDS` and flagged 49 `engine` descriptions
+(`"sympy + pyhecke_native"`). Restricted to `PATH_VALUED_FIELDS`.
+
+**Retracted:** the `rho-k-markov-multiplicativity` "PROVED" flag. Live witness,
+live producer, and the content correctly cites Wenzl 1988 Thm 5 as the proof
+with the witness as corroboration. It only *looked* producerless because a
+`_deprecated/` twin made the resolver's uniqueness test ambiguous.
+
+### The pattern worth carrying forward
+
+Four instances, two directories that must never appear in an audit's repo-wide
+`rglob`: **`.claude/`** (checkouts of other branches) and **`_deprecated/`**
+(retired copies). Both are invisible in review and both fail *toward* the
+dangerous verdict — a phantom red that trains agents to skip a gate, or a false
+orphan whose recommended disposition is deletion.
+
+### Tier-E accounting, Parts 1-4
+
+`186 -> 134`. **28% tool error, 7% genuinely dead, 65% load-bearing.**
+
+Open owner decisions: re-point `B_4He_AME_MeV` (gated on `fvxq`); downgrade or
+reconstruct the two `mba-step02` blocks at `status: "verified"`; which of the
+five prose witnesses belong on the acknowledged floor.
