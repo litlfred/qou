@@ -74,3 +74,54 @@ those probes rather than to this bean.
 
 Note the newcomer is a `.py`-named witness in a tree of `-`-named ones, so a
 drain sweep keyed on the `qbeta-*` prefix would miss it.
+
+## Piece 1 CLOSED — the gate is BLOCKING and green (2026-08-19)
+
+The blocker was never that the six were undrained. It was that the ratchet had
+**no memory for this tree**: `raw-float64-baseline.json`'s 1572 entries are all
+`computations/` paths, so every witness under `docs/audits/scripts/` read as
+NEW on every run, forever. A ratchet with no memory is red on arrival, and a
+gate red on arrival gets skipped — the rule `precision-gates.sh` states at the
+top.
+
+That is the **`_output_name` defect (qou-pgdw) one step removed**. When that
+bug was fixed the OUTPUT name was scoped to the scan root; the BASELINE was
+left global. `_baseline_path()` now derives it the same way, so this tree gets
+`raw-float64-baseline--docs-audits-scripts.json` (6 files / 26 fields) and the
+corpus baseline is untouched.
+
+This is **establishing coverage where there was none**, not silencing a
+regression in a tree that already had it — the distinction the drains-never-grow
+rule turns on. `--rebaseline` with `--scan-root` was refused before precisely
+because it would have written into the corpus baseline; that is now
+unreachable from a non-default root, so the refusal was relaxed to permit a
+root's own file.
+
+Verified before flipping, because a gate that cannot be shown to fire is a
+no-op:
+
+| check | result |
+|---|---|
+| audits tree green now | exit **0** |
+| planted dirty witness | exit **1**, names it |
+| after removing it | exit **0** |
+| corpus run unaffected | 1572 baseline, NEW 0, REGRESSED 0 |
+| whole gate family | **all blocking gates green** |
+
+Why flip rather than wait for the drain: the count grew **5 -> 6** while the
+tree was advisory. Advisory REPORTS a gap; it does not HOLD one. The next
+`wlambda_normalisation_census` now fails on arrival.
+
+## Piece 2 still open, and still not mine
+
+The six baselined witnesses (26 fields) belong to the arcs owning those probes:
+
+- 8 `max_loss_digits` (3 qbeta-ohtsuki probes) — precision *diagnostics*, the
+  same class as the `compute_wall_sec` telemetry drained in qou-5qwb, so
+  cheap: serialize at the producer.
+- 6 `sum_classical = 1.0` (`wlambda_normalisation_census`) — an exact value
+  stored as a float; cheapest of all.
+- 8 `c_ratios` + 4 `Z_at_q0` — genuine computed values; these want real mpmath
+  treatment, not serialization, and that is a judgement for their owners.
+
+The gate now holds the line at six. It does not drain it.
