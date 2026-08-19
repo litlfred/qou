@@ -87,6 +87,17 @@ GATES=(
   # them is the honest middle: the gap becomes visible, nothing is silenced,
   # and anything NEW landing there shows up immediately. Flip to blocking
   # once the five are drained. Bean qou-irzg.
+  # ADVISORY, baseline 28 — the leak BETWEEN the two layers above. The
+  # padding ratchet works on values and is blind once a float64 is multiplied
+  # by anything exact (measured: fmt(mpf(f64)) caught, fmt(exact*mpf(f64)) not);
+  # the mpf(<float>) gate works on construction sites and is blind because this
+  # defect involves no mpf() call at all. Motivating case: pre-fix
+  # h6_deuteron_free_word_chi_lambda_probe.py published a 50-digit q0 beside a
+  # payload good to ~1e-15, with both gates green throughout. Advisory rather
+  # than blocking because the inference is high-recall (a stale `-> float`
+  # annotation already produced one measured false positive, since fixed);
+  # flip to blocking once the 28 rows carry agent verdicts. Bean qou-gqt5.
+  "mixed mpf/f64 -> serializer (advisory)|computations/mpf_mixed_arithmetic_audit.py|--strict|yes|no"
   "audits-tree raw-float64 (advisory)|computations/witness_raw_float64_audit.py|--scan-root docs/audits/scripts --strict|no|no"
   # ADVISORY, and it starts red on purpose — same terms as the audits-tree
   # entry above. `witness_provenance_audit.py` was written, works (27/27

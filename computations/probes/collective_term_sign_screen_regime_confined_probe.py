@@ -102,7 +102,7 @@ import sys
 import mpmath as mp
 
 ALPHA = "4.1859813632944758969"
-WELL_BOUND = 5.0
+WELL_BOUND = "5.0"
 NAMES = {(1, 1): "2H", (1, 3): "4H", (3, 1): "4Li", (1, 4): "5H",
          (4, 1): "5Be", (1, 5): "6H", (1, 6): "7H"}
 
@@ -124,10 +124,10 @@ def main() -> int:
         if B <= 0:
             continue
         ch = a * ((Z - 1) * Lpp + Lpn + (N - 1) * Lnn)
-        rows.append((float(B / A), float((B - ch) / A), A, Z, N))
+        rows.append((B / A, (B - ch) / A, A, Z, N))
 
     neg = sorted(r for r in rows if r[1] < 0)
-    wb = [r for r in rows if r[0] > WELL_BOUND]
+    wb = [r for r in rows if r[0] > mp.mpf(WELL_BOUND)]
 
     print("The collective term's SIGN SCREEN is regime-confined — correcting my own.\n")
     print(f"  full AME2020 sample: {len(rows)} nuclides (Z>=1, N>=1, B>0)")
@@ -138,17 +138,17 @@ def main() -> int:
     for b, R, A, Z, N in neg:
         st = "bound (weakest stable)" if (Z, N) == (1, 1) else "particle-UNBOUND"
         print(f"| {A:2d} | {Z:2d} | {N:2d} | {NAMES.get((Z, N), '?'):<7} "
-              f"| {b:7.4f} | {R:+7.4f} | {st} |")
+              f"| {mp.nstr(b, 6):>9} | {mp.nstr(R, 6):>9} | {st} |")
     hi = max(b for b, _R, _A, _Z, _N in neg)
-    print(f"\n  every negative row has B_AME/A <= {hi:.4f}; typical well-bound is 7-8.8")
+    print(f"\n  every negative row has B_AME/A <= {mp.nstr(hi, 6)}; typical well-bound is 7-8.8")
     print(f"  six of {len(neg)} are particle-unbound drip-line exotics\n")
 
     print(f"## The well-bound regime (B_AME/A > {WELL_BOUND})\n")
     print(f"  {len(wb)} of {len(rows)} nuclides = {100*len(wb)/len(rows):.1f}% of the chart")
-    print(f"  R in [{min(r[1] for r in wb):+.4f}, {max(r[1] for r in wb):+.4f}] MeV/nucleon")
+    print(f"  R in [{mp.nstr(min(r[1] for r in wb), 6)}, {mp.nstr(max(r[1] for r in wb), 6)}] MeV/nucleon")
     print(f"  rows with R < 0 among them: {sum(1 for r in wb if r[1] < 0)}")
     print("  -> strictly positive, one-signed, bounded within a factor of "
-          f"{max(r[1] for r in wb)/min(r[1] for r in wb):.1f}\n")
+          f"{mp.nstr(max(r[1] for r in wb) / min(r[1] for r in wb), 3)}\n")
 
     print("## Why the negatives are a DIFFERENT, already-proved defect\n")
     print("  B_sym = a[(Z-1)L_pp + L_pn + (N-1)L_nn] with every L > 0 is positive for")
@@ -174,7 +174,7 @@ def main() -> int:
     print("  184.6% on A >= 24, so an unsuppressed all-pairs term stays excluded).")
     print("\n(no witness by design — a subtraction over the committed AME2020 table.)")
 
-    assert all(b < 1.75 for b, _R, _A, _Z, _N in neg), "a negative row is well-bound"
+    assert all(b < mp.mpf("1.75") for b, _R, _A, _Z, _N in neg), "a negative row is well-bound"
     assert sum(1 for r in wb if r[1] < 0) == 0, "well-bound regime must be all-positive"
     return 0
 

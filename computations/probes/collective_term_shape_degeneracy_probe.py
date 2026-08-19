@@ -120,14 +120,12 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _Path, _bridge
 
-import math
-import statistics as st
 import sys
 
 import mpmath as mp
 
 ALPHA = "4.1859813632944758969"
-WELL_BOUND = 5.0
+WELL_BOUND = "5.0"
 
 COUNTS = {
     "A-1   chain bonds": lambda A, Z, N: A - 1,
@@ -147,15 +145,25 @@ DROP = {
 }
 
 
+def _mean(v):
+    return mp.fsum(v) / len(v)
+
+
+def _pstdev(v):
+    m = _mean(v)
+    return mp.sqrt(mp.fsum([(x - m) ** 2 for x in v]) / len(v))
+
+
 def corr(xs, ys):
-    mx, my = st.mean(xs), st.mean(ys)
-    num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
-    den = math.sqrt(sum((x - mx) ** 2 for x in xs) * sum((y - my) ** 2 for y in ys))
+    mx, my = _mean(xs), _mean(ys)
+    num = mp.fsum([(x - mx) * (y - my) for x, y in zip(xs, ys)])
+    den = mp.sqrt(mp.fsum([(x - mx) ** 2 for x in xs])
+                  * mp.fsum([(y - my) ** 2 for y in ys]))
     return num / den
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    mp.mp.dps = 50
     import mass_binding_dashboard as M
     L = M._bond_type_L()
     ame = M._ame_table()
@@ -168,10 +176,10 @@ def main() -> int:
         if A < 2 or Z < 1 or N < 1:
             continue
         B = mp.mpf(str(v[0]))
-        if B <= 0 or float(B / A) <= WELL_BOUND:
+        if B <= 0 or B / A <= mp.mpf(WELL_BOUND):
             continue
         ch = a * ((Z - 1) * Lpp + Lpn + (N - 1) * Lnn)
-        rows.append((A, Z, N, float((B - ch) / a)))
+        rows.append((A, Z, N, (B - ch) / a))
 
     print("R is extensive at leading order; the COUNT is degenerate; R is not one term.\n")
     print(f"  well-bound sample: {len(rows)} nuclides")
@@ -182,9 +190,9 @@ def main() -> int:
     print("| candidate count        | mean ratio | rel. spread |")
     print("| ---------------------- | ---------: | ----------: |")
     for nm, f in COUNTS.items():
-        r = [t / f(A, Z, N) for A, Z, N, t in rows if f(A, Z, N) > 0]
-        m = st.mean(r)
-        print(f"| {nm:<22} | {m:10.4f} | {st.pstdev(r)/m*100:10.1f}% |")
+        r = [t / mp.mpf(f(A, Z, N)) for A, Z, N, t in rows if mp.mpf(f(A, Z, N)) > 0]
+        m = _mean(r)
+        print(f"| {nm:<22} | {mp.nstr(m, 8):>10} | {mp.nstr(_pstdev(r) / m * 100, 4):>9}% |")
 
     print("\n## 2. THE COUNT IS DEGENERATE — do not read a winner off that table\n")
     print("  rescaled to the 'A' column at A = 100:")
@@ -192,8 +200,8 @@ def main() -> int:
     for nm, f in COUNTS.items():
         if "C(A,2)" in nm or "surface" in nm:
             continue
-        m = st.mean([t / f(A, Z, N) for A, Z, N, t in rows if f(A, Z, N) > 0])
-        line.append(f"{nm.split()[0]} -> {m*f(100,50,50)/100:.4f}")
+        m = _mean([t / mp.mpf(f(A, Z, N)) for A, Z, N, t in rows if mp.mpf(f(A, Z, N)) > 0])
+        line.append(f"{nm.split()[0]} -> {mp.nstr(m * mp.mpf(f(100, 50, 50)) / 100, 6)}")
     print("    " + " | ".join(line))
     print("\n  All collapse to ~1.207: ONE fit in different units. The 0.2pp spread")
     print("  differences are not a discrimination. The test constrains the SCALING")
@@ -201,12 +209,12 @@ def main() -> int:
     print("  the O(1) offset, i.e. the light nuclei — exactly the rows contaminated by")
     print("  the two-nucleon defect. A real obstruction, not a gap in this probe.\n")
 
-    k = st.mean([t / (A - 1) for A, Z, N, t in rows])
+    k = _mean([t / (A - 1) for A, Z, N, t in rows])
     resid = [(t - k * (A - 1), A, Z, N) for A, Z, N, t in rows]
     r = [v for v, _A, _Z, _N in resid]
     print("## 3. The residual is not noise, and R is NOT one term\n")
-    print(f"  range [{min(r):+.2f}, {max(r):+.2f}] alpha,  sd {st.pstdev(r):.2f}")
-    print(f"  leading term at A=208 is {k*207:.1f} alpha — the residual is a large"
+    print(f"  range [{mp.nstr(min(r), 6)}, {mp.nstr(max(r), 6)}] alpha,  sd {mp.nstr(_pstdev(r), 6)}")
+    print(f"  leading term at A=208 is {mp.nstr(k * 207, 6)} alpha — the residual is a large"
           " fraction there")
     top = max(resid)
     bot = min(resid)
@@ -215,7 +223,7 @@ def main() -> int:
     print("| liquid-drop term           | Pearson r |")
     print("| -------------------------- | --------: |")
     for nm, f in DROP.items():
-        print(f"| {nm:<26} | {corr([f(A,Z,N) for _v,A,Z,N in resid], r):+9.4f} |")
+        print(f"| {nm:<26} | {mp.nstr(corr([mp.mpf(f(A, Z, N)) for _v, A, Z, N in resid], r), 6):>9} |")
     print("\n  CORRELATION DOES NOT IDENTIFY WHICH. Every term correlates strongly")
     print("  because all are monotone in A across the chart and therefore mutually")
     print("  collinear — the SAME failure mode as the count degeneracy in 2.\n")
@@ -230,8 +238,8 @@ def main() -> int:
     print("  something that is not there.")
     print("\n(no witness by design — subtraction over AME2020 plus ratio statistics.)")
 
-    ratios = {nm: st.pstdev([t / f(A, Z, N) for A, Z, N, t in rows if f(A, Z, N) > 0])
-              / st.mean([t / f(A, Z, N) for A, Z, N, t in rows if f(A, Z, N) > 0])
+    ratios = {nm: _pstdev([t / mp.mpf(f(A, Z, N)) for A, Z, N, t in rows if mp.mpf(f(A, Z, N)) > 0])
+              / _mean([t / mp.mpf(f(A, Z, N)) for A, Z, N, t in rows if mp.mpf(f(A, Z, N)) > 0])
               for nm, f in COUNTS.items()}
     assert ratios["C(A,2) all pairs"] > 1.0, "all-pairs must be excluded"
     lin = [v for nm, v in ratios.items() if "C(A,2)" not in nm and "surface" not in nm]

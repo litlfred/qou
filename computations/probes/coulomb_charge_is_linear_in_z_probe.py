@@ -35,7 +35,7 @@ with the ratio of Coulomb to strong equal to `tanh(ln q) = 0.103964` at q0
 
 Evaluated on the framework's own `atom_braid_word_3A`:
 
-    Q - 2Z = +3.439e-04     for 2H, 4He, 12C, 40Ca, 56Fe, 90Zr, 208Pb — IDENTICAL
+    Q - 2Z = 0.000343927701756774002   for 4He..208Pb — IDENTICAL (spread 8.4e-48)
 
 The integer part is exact and the reason is structural:
 
@@ -50,7 +50,7 @@ nn-interface writhe, and N drops out entirely.
 under the canonical `bring_color_weighted` convention its offset is
 `d = -0.104458248`, not the exact midpoint `-h/2 = -0.104530149`. Its crossing
 sign is therefore `e_pn = 1 + 2d/h = +6.878e-04` rather than `0`, giving
-`eps = e_pn/2 = 3.439e-04`. One such bond per nucleus, hence a constant
+`eps = e_pn/2 = 0.000343927701756774002`. One such bond per nucleus, hence a constant
 independent of both Z and N.
 
 I first reported this as "Q = 2Z exactly"; that came from a table printed to two
@@ -151,21 +151,24 @@ CASES = [("4He", 2, 2), ("12C", 6, 6), ("40Ca", 20, 20),
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    mp.mp.dps = 50
     import mass_binding_dashboard as M
     from mass_at_3A_proper import atom_braid_word_3A
-    import pyhecke.gram as G
 
     q = mp.mpf(str(Q50))
     L = M._bond_type_L()
     a = mp.mpf("4.1859813632944758969")
-    hf = float(G.h)
+    # h DERIVED from q at working precision. NOT pyhecke.gram.h, which is a
+    # Python float (differs from the exact value by 5.5e-17) and would drag the
+    # whole computation down to float64. See AGENTS.md "PROBES ARE NOT EXEMPT".
+    h = q - 1 / q
     ratio = mp.tanh(mp.log(q))
     aC = mp.mpf(A_COULOMB)
 
     def Qcharge(Z, N):
-        return 0.5 * sum(1.0 + 2.0 * float(d) / hf
-                         for (_c, d, _g) in atom_braid_word_3A(Z, N))
+        return mp.mpf(1) / 2 * mp.fsum(
+            [mp.mpf(1) + 2 * mp.mpf(str(d)) / h
+             for (_c, d, _g) in atom_braid_word_3A(Z, N)])
 
     print("QOU DOES derive Coulomb. It is Q = 2Z — linear in charge, and that is the gap.\n")
     print("## RETRACTION\n")
@@ -174,7 +177,7 @@ def main() -> int:
     print("  checklist. Withdrawn; what follows replaces it.\n")
     print("## What def:coulomb-charge gives\n")
     print("  E_cross = (1/2)(n+ + n-)(q + 1/q)  +  Q (q - 1/q),   Q = (1/2)(n+ - n-)")
-    print(f"  Coulomb/strong = tanh(ln q0) = {float(ratio):.6f}   (block states ~0.104)\n")
+    print(f"  Coulomb/strong = tanh(ln q0) = {mp.nstr(ratio, 8)}   (block states ~0.104)\n")
 
     print("## 1. Q = 2Z + eps, eps a fixed constant — N cancels\n")
     print("  writhe = 3Z + N + (Z-1)(+1) + (N-1)(-1) + e_pn = 4Z + e_pn")
@@ -184,17 +187,17 @@ def main() -> int:
     for lab, Z, N in CASES:
         Qv = Qcharge(Z, N)
         offs.append(Qv - 2 * Z)
-        print(f"    {lab:<6} Z={Z:3d} N={N:3d}   Q = {Qv:12.6f}   2Z = {2*Z:5d}   "
-              f"Q-2Z = {Qv-2*Z:+.4e}")
+        print(f"    {lab:<6} Z={Z:3d} N={N:3d}   Q = {mp.nstr(Qv, 20):<24} "
+              f"Q-2Z = {mp.nstr(Qv - 2 * Z, 18)}")
     spread = max(offs) - min(offs)
-    print(f"\n  offset spread across all cases: {spread:.2e} -> a CONSTANT")
+    print(f"\n  offset spread across all cases: {mp.nstr(spread, 6)} -> a CONSTANT")
     print("  source: the single colour-weighted pn bond. Under bring_color_weighted")
     print("  its d = -0.104458248, not the midpoint -h/2 = -0.104530149, so its")
     print("  crossing sign is e_pn = +6.878e-04 rather than 0. One per nucleus.")
     print("  (I first reported 'Q = 2Z exactly' off a 2-decimal table; the assertion")
     print("   below caught it. The corrected version is the more informative one:")
     print("   colour weighting breaks exact integrality by a fixed universal amount.)")
-    ok = spread < 1e-9
+    ok = spread < mp.mpf("1e-40")
 
     print("\n## 2. Linear in charge — electrostatic energy is quadratic\n")
     print("| nuclide |  Z |   A |  Q=2Z | fw EM MeV | phys Coulomb | shortfall |")
@@ -204,8 +207,8 @@ def main() -> int:
         strong = a * ((Z - 1) * L["pp"] + L["pn"] + (N - 1) * L["nn"])
         fw = ratio * strong
         phys = aC * Z * (Z - 1) / mp.cbrt(A)
-        print(f"| {lab:<7} | {Z:2d} | {A:3d} | {2*Z:5d} | {float(fw):9.2f} "
-              f"| {float(phys):12.2f} | {float(phys/fw):8.1f}x |")
+        print(f"| {lab:<7} | {Z:2d} | {A:3d} | {2*Z:5d} | {mp.nstr(fw, 4)} "
+              f"| {mp.nstr(phys, 4)} | {mp.nstr(phys/fw, 3)}x |")
     print("\n  Exact at 4He, diverging monotonically with Z — the signature of Z vs")
     print("  Z(Z-1). The framework has a CHARGE; it has no charge-charge interaction.\n")
 
@@ -232,7 +235,7 @@ def main() -> int:
     print("  nothing proved so far excludes it. It is also NOT established here.")
     print("\n(no witness by design — the framework's own words plus the corpus's ratio.)")
 
-    assert ok, "Q = 2Z must hold exactly on every case"
+    assert ok, "Q - 2Z must be the SAME constant on every case"
     return 0
 
 
