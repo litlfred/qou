@@ -2288,3 +2288,74 @@ falsifiable check and could have failed at any of the three reductions.
 As at `m = 8`, this constructs the lift only where the Kummer extension is
 unramified and small; it is not a general construction. Control: an
 unreachable class is exhibited at each level, so the descent can fail.
+
+---
+
+## Addendum 43 (2026-08-19) — the q₀-anchor breakage: correcting my own "every", and two findings from #5265
+
+Bean `qou-w4gn` (incidental), cross-ref `qou-m9xp`. Not ε_m work — recorded
+here because it surfaced from this arc's precision preflight and the
+correction is mine.
+
+### What I got wrong
+
+I wrote, in the PR body and commit message, that the swept anchor
+**"hard-fails every `ideal_muon` producer"**. I took that from `witness.py`'s
+docstring ("hard-fails all 257 `ideal_muon` producers") rather than
+measuring it.
+
+A sibling on [#5265](https://github.com/litlfred/qou/pull/5265) measured it,
+importing all 257 stems under a faithful argv:
+
+| tree | pin-guard failures | imports clean |
+|---|---|---|
+| committed (proton pin) | **208** | 47 |
+| muon value restored | **0** | 253 |
+
+The 47 survivors have no `q_parameter` in their import cone, so the anchor is
+never resolved; 2 more fail on unrelated `ImportError`. **My "every"
+overstates by 49.**
+
+My own cheap cross-check corroborates the mechanism without reproducing the
+number: of the 257 stems, **31 contain no direct `q_parameter` reference at
+all**, so they cannot reach the guard. That is a lower bound; the gap to 47
+is presumably producers that reference it without the guard firing on their
+path.
+
+**The part worth keeping is not either number.** It is that **manifest
+membership does not predict breakage — the import cone does.** "All 257 are
+in the `ideal_muon` manifest" and "all 257 break" are different claims, and I
+conflated them.
+
+### Two findings from #5265 worth carrying
+
+**A committed audit witness can be green off a dirty tree.** The committed
+`q0-anchor-consistency-audit.witness.json` records `Q0_FLIP: 0` at 13:06Z
+*on main*, while the committed pin file was already proton — jointly possible
+only if a producer had transiently rewritten the pin back to muon in the
+working tree at run time. So that witness was never evidence the corpus was
+clean under this defect, which is why it survived four days.
+
+This generalises past that one file, and it retroactively supports a call I
+made independently: `precision-gates.sh` regenerated that same witness on
+this branch and I **declined to commit it**, because this container lacks
+numpy/scipy and regenerating strips both from the environment record. **A
+regenerated audit witness is only as trustworthy as the tree and environment
+that produced it.**
+
+**Resolving configuration from an `argv` stem is a silent-failure hazard.**
+#5265's own `producer_importability_audit.py` imported via
+`python3 -c "<loader>" <file>`, leaving `sys.argv[0] = "-c"`. `q_parameter`
+resolves the anchor from the argv *stem*, so nothing matched the manifest,
+every producer silently pinned to proton, the muon branch never executed, and
+the audit reported all 257 importable. Any harness that imports producers
+programmatically without spoofing argv is measuring **a configuration nothing
+runs in**. The probes in this arc are unaffected — they import no producers
+and declare `q0Anchor: "independent"` statically.
+
+### On the `Q0_OK` base
+
+#5265 measures `654 → 392`; I measure `658 → 396`. Both find **262 flips**.
+Given the dirty-tree finding above, **neither base should be quoted as a
+corpus fact** without naming the tree it came from. The 262 is the robust
+number.
