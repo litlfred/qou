@@ -1,0 +1,137 @@
+{
+  "name": "gz-third-knot-rank-grading",
+  "description": "GZ 2304.09377 (-2,3,7) rank grading: adjudicates an internal erratum, guards the object-identity that would otherwise read as an H_Ad refutation, corroborates the M3 Part-4 signature formula on a third knot, and records the S_3 block decomposition of W0.",
+  "computation": "gz-third-knot-rank-grading",
+  "engine": "python",
+  "scriptFile": "computations/probes/gz_third_knot_rank_grading.py",
+  "scriptCommitSha": "948b582c39fd9163fb5d9bf4ee89b4f1e6467786",
+  "computedAt": "2026-08-19T11:56:27Z",
+  "durationMs": 2,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "No substrate modulus enters. Every quantity is an exact integer read from Garoufalidis-Zagier 2304.09377 S3.4/S3.5 and 2111.06645 S2.1 (weight vectors, subspace dimensions, ranks, trace-field signatures, S_3 irrep dimensions). The import cone is json/os/subprocess/time only -- no q_parameter, no qou_substrate.constants, no y_lambda_at, no mpmath.",
+  "parameters": {
+    "prose_dims": [
+      1,
+      4,
+      1
+    ],
+    "decomposition_dims": [
+      4,
+      1,
+      1
+    ],
+    "delta_degrees": [
+      0,
+      1,
+      2,
+      0,
+      0,
+      0
+    ],
+    "h_weights": [
+      -1,
+      0,
+      1,
+      -1,
+      -1,
+      -1
+    ],
+    "ranks": {
+      "4_1": 2,
+      "5_2": 3,
+      "(-2,3,7)": 6
+    },
+    "signatures": {
+      "4_1": [
+        0,
+        1
+      ],
+      "5_2": [
+        1,
+        1
+      ],
+      "(-2,3,7)": [
+        4,
+        1
+      ]
+    },
+    "s3_partitions": [
+      "(3)",
+      "(2,1)",
+      "(1,1,1)"
+    ],
+    "s3_dims": [
+      1,
+      2,
+      1
+    ],
+    "w0_multiplicities": [
+      2,
+      1,
+      0
+    ],
+    "lean": "QOU.QBeta.GZThirdKnotRankGrading",
+    "sources": [
+      "uploads/2304.09377v2.pdf",
+      "uploads/2111.06645v3.pdf"
+    ]
+  },
+  "data": {
+    "erratum": "GZ 2304.09377 S3.5 prose dims (1,4,1) -> should be (4,1,1)",
+    "pk_sizes": {
+      "4_1": 3,
+      "5_2": 4,
+      "(-2,3,7)": 7
+    },
+    "verdict": "THIRD KNOT FOUND IN-CORPUS, and it does NOT refute H_Ad. (i) The data is in GZ 2304.09377 (the sequel 2111.06645 announces), which the earlier M3 sweep missed because it keyed on 'Stokes' and that paper says it once. (ii) GZ S3.5 reports higher-multiplicity weight spaces for (-2,3,7) -- which reads exactly like the rank-6 refutation M3 asked for. It is not: the graded object has total r (=2 at 4_1) while s(1)=3, and 4_1's weight set has 2 elements against s(x)'s 3. DIFFERENT OBJECTS; the guard is T4. (iii) ERRATUM adjudicated: GZ S3.5's prose dims (1,4,1) contradict the paper's own decomposition and delta-degrees, which both give (4,1,1); the prose transposes the first two, and both readings total 6 so a sum-check cannot catch it. (iv) The ranks 2,3,6 CORROBORATE M3 Part 4's signature formula on three knots with three distinct values, via two independent GZ statements. (v) NEW STRUCTURE: W0 is an S_3 = Gamma/Gamma(2) representation decomposing into partition blocks (3)^2 + (2,1), with the SIGN block absent -- the QOU Wedderburn indexing appearing in the third knot's modular data, with a chirality-flavoured asymmetry. Observed, not derived. Nothing wired."
+  },
+  "assertions": [
+    {
+      "name": "T1-delta-and-weightvector-and-decomposition-agree",
+      "passed": true,
+      "note": "Three encodings of the same grading; the explicit decomposition, the delta-degrees and the centred weight vector all give (4,1,1)."
+    },
+    {
+      "name": "T2-prose-dims-are-transposed",
+      "passed": true,
+      "note": "ERRATUM (adjudicated, not guessed). GZ S3.5's sentence says dimensions '1, 4 and 1'; the paper's OWN explicit decomposition W0=<H0,H3,H4,H5>, W1=<H1>, W2=<H2> and its delta=(0,1,2,0,0,0) both give (4,1,1). Two independent internal statements against one, and the discrepancy is exactly a transposition of the first two entries -- not a miscount. Same adjudication pattern as the GGM eq-(200) q^1 erratum."
+    },
+    {
+      "name": "T3-totals-agree-so-the-slip-is-invisible-to-a-sum-check",
+      "passed": true,
+      "note": "Both readings total 6 = r. Any check that only verifies the total passes on the wrong dimensions. Recorded so a future reader does not 'confirm' the prose by summing it."
+    },
+    {
+      "name": "T4-rank-grading-is-NOT-s(x)",
+      "passed": true,
+      "note": "NO -- and this is the load-bearing check. The grading's total is r=2 at 4_1 while s(1)=3, and 4_1's weight SET has two elements ({-1/2,+1/2}) against s(x)'s three. Different objects. So (-2,3,7)'s non-multiplicity-free grading does NOT refute H_Ad's polynomial claim. Without this check the higher multiplicity reads as exactly the refutation M3 was looking for."
+    },
+    {
+      "name": "T5-higher-multiplicity-real-but-not-a-refutation",
+      "passed": true,
+      "note": "The phenomenon is real (a weight of dimension 4, which GZ calls 'a new phenomenon') AND it does not bear on H_Ad. Stating both in one assertion so neither half can be quoted without the other."
+    },
+    {
+      "name": "T6-rank-equals-real-plus-twice-pairs-equals-pk-minus-one",
+      "passed": true,
+      "note": "Yes, on all three knots and with three DISTINCT values (2,3,6). This is an INDEPENDENT confirmation: 2111.06645 S2.1 states the ranks outright, 2304.09377 S3.4 recovers them from q-series counts (4,6,12 = 2r), and M3 Part 4 predicts them from trace-field signatures. Three routes, one answer. r = |P_K| - 1 = the non-trivial boundary-parabolic reps."
+    },
+    {
+      "name": "T7-w0-decomposition-dimensionally-consistent",
+      "passed": true,
+      "note": "2*1 + 1*2 + 0*1 = 4 = dim W0. S_3-irreps are indexed by partitions of 3 -- the SAME Wedderburn indexing the QOU Hecke programme uses at q=1 -- so the third knot's modular structure lands in the corpus's own language without being put there."
+    },
+    {
+      "name": "T8-sign-representation-absent-from-w0",
+      "passed": true,
+      "note": "The SIGN representation has multiplicity 0. Under the standard identification the sign block is the bar-odd one, so the Gamma/Gamma(2) action on the level-2 part of the third knot's grading carries no sign component. That is the one asymmetry in the decomposition, and it is chirality-flavoured -- the same involution that grades the DT split. NOT claimed to be derived; recorded as an observation to be explained."
+    },
+    {
+      "name": "T9-level-two-confined-to-w0",
+      "passed": true,
+      "note": "rho is the IDENTITY on W1 and W2, so the whole Gamma(2) phenomenon is confined to the 4-dimensional W0 -- which is precisely the weight space whose dimension the prose misreported. The erratum sits on the only interesting summand."
+    }
+  ]
+}
