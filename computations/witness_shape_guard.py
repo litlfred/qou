@@ -110,6 +110,11 @@ SELF_DESCRIBING = {
     "no-free-parameter-certificate.witness.json",
     "q0-anchor-consistency-audit.witness.json",
     "mpf-float-source-audit.witness.json",
+    # Same class as its sibling above: this audit's witness LISTS its own
+    # candidate rows, so draining the corpus shrinks it by design. The
+    # qou-65qv drain took it 28 -> 3 rows, a 75% payload drop, which the
+    # guard correctly flagged as a collapse under its 30% tolerance.
+    "mpf-mixed-arithmetic-audit.witness.json",
     "compute-audit-scan.witness.json",
     "derivation-chain-audit.witness.json",
 }

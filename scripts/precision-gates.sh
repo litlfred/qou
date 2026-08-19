@@ -97,7 +97,7 @@ GATES=(
   # than blocking because the inference is high-recall (a stale `-> float`
   # annotation already produced one measured false positive, since fixed);
   # flip to blocking once the 28 rows carry agent verdicts. Bean qou-gqt5.
-  "mixed mpf/f64 -> serializer (advisory)|computations/mpf_mixed_arithmetic_audit.py|--strict|yes|no"
+  "mixed mpf/f64 -> serializer|computations/mpf_mixed_arithmetic_audit.py|--strict|yes|yes"
   "audits-tree raw-float64 (advisory)|computations/witness_raw_float64_audit.py|--scan-root docs/audits/scripts --strict|no|no"
   # ADVISORY, and it starts red on purpose — same terms as the audits-tree
   # entry above. `witness_provenance_audit.py` was written, works (27/27
