@@ -324,6 +324,65 @@ against `F_required = 0.998325`. None is close, so the transport is **not** a
 bare ratio of `ε` and `tr_M` on `Δ`. Recorded once and not explored further —
 hunting combinations that land near `0.998` is the fit this bean forbids.
 
+## 3e. The `𝔙` transport route is BLOCKED — `Im 𝔙` is *assigned* the counit
+
+§3d proposed a concrete next step: derive the counit→trace transport for the
+`𝔙` operator `(Π_free − 1)∘ℳ` rather than for `Δ`. **That route is blocked**,
+and the reason is worth recording.
+
+The transport is a change of *functional*, so its effect on any `X` is fixed by
+`X`'s character vector:
+
+```
+tr_M^z(X) − ε(X) = Σ_λ [ y_λ(z) − y_λ(1) ] · χ_λ(X)
+```
+
+(`ε` is `tr_M` at the trivial loop value `z = 1`). So computing it for `𝔙`
+requires `χ_λ((Π_free−1)∘ℳ)` — i.e. it requires `𝔙` to have been evaluated as a
+*trace* object. **It has not been.**
+
+### What the one existing compute actually does
+
+`complex_volume_witness.py` opens with *"Complex-volume witness — `𝔙 =
+E₀·tr_M((Π_free − 1)∘ℳ)` as ONE object"*, and then:
+
+- computes the **real** part from `tr_M` (`tr_M_atom`, `tr_M_free`, the
+  bar-norm), but
+- **imports** the imaginary part: `from q_beta_substrate_prediction import
+  q_beta_substrate` (line 39).
+
+So `Im` is the **counit** closed form `Q_A`, not a trace evaluation. Verified
+numerically: the witness's `im_qbeta_pred_MeV = 0.7836458273746213` equals
+`|ε(Δ)·𝔈₀|` to `9e-17`.
+
+The two halves of the "one object" come from **two different functionals** — Re
+from the Markov trace, Im from the Frobenius counit — which
+`qbeta-counit-closed-form.md` itself calls *"genuinely distinct functionals on
+the substrate"*. The "one object" is not realised in compute.
+
+### Two consequences
+
+1. **The transport route is blocked at the source.** `Im 𝔙` has never been
+   evaluated as `tr_M((Π_free−1)∘ℳ)`; it is the counit object by assignment, so
+   there is nothing to transport *to*.
+2. **The parity claim is circular.** The corpus argues `Q_β` is bar-odd
+   *because* it is `Im 𝔙`. But in the only compute, `Im 𝔙` **is** `Q_β` — the
+   counit form — whose bar-ratio is `+1.6868`, neither parity. The claim is
+   asserted of an object defined to be the object whose parity is in question.
+
+### And the witness establishes less than it appears to
+
+- `assertions: []` — it asserts **nothing**, so `allPassed: true` is vacuous.
+- Its **real** part — the half that genuinely *is* a `tr_M` object — misses AME
+  binding by **21.8 % to 69.3 %** across `²H / ³H / ³He / ⁴He`.
+
+This is the AGENTS.md *"Defined residual ≠ derived decomposition"* family: an
+identification made by assignment, then reasoned from as though derived.
+
+**Scope.** This does **not** refute `conj:binding-qbeta-complex-volume`. It says
+the conjecture is *untested* by the compute that appears to test it, and that
+the transport route cannot start from that compute.
+
 ## 4. Routes now pruned, and what remains
 
 | route | status | source |
