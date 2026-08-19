@@ -214,8 +214,15 @@ for u, lst in sorted(shared, key=lambda kv: len(kv[1])):
                 if all(v % _mu[ut] == 0 for ut, v in tot.items()):
                     two += 1
 elapsed = time.time() - t0
+# `seconds` as a STRING (bean qou-g49k). It is a wall-clock phase timing, so
+# no mathematics rides on it — but `witness_raw_float64_audit.py` counts raw
+# JSON floats structurally, not by meaning, and this one field put the whole
+# witness in `new_not_baselined` and turned the raw-float64 ratchet RED. The
+# top-level `durationMs` covers the script, not this phase, so the number is
+# worth keeping rather than dropping. `elapsed` itself is untouched: the
+# cutoff check below still compares the float.
 detail["pair_search"] = {"pairs_examined": pairs, "combos_tested": tested,
-                         "seconds": round(elapsed, 1), "solutions": two}
+                         "seconds": f"{elapsed:.1f}", "solutions": two}
 checks["two_relation_search_completed_without_cutoff"] = elapsed < 300
 checks["two_relations_have_no_solution"] = two == 0
 
