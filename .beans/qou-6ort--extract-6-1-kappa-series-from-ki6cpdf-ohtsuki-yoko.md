@@ -33,3 +33,39 @@ Li2(y) + Li2(z) + quadratic, p.19 eq 40) at the given saddle: Newton
 from their numeric seed at 60 dps, then the order-hbar correction gives
 kappa_1(6_1) — the Ohtsuki-tower third-knot rung. Cross-validate
 machinery first on 5_2 against the published kappa_1(5_2).
+
+## 2026-08-19 rescope — the machinery EXISTS; this is reuse, not build-from-scratch
+
+Two corpus-greps changed the cost estimate and killed one phantom hazard.
+
+**1. No κ symbol collision (a hazard I nearly recorded, then disproved).**
+I suspected the corpus κ_n (`OhtsukiKappaVsCkSign.kappa1 = 11√3π/108`, cited
+to [andersen-hansen2006]) might be the Andersen-Hansen *b*-tower — a different
+object from Ohtsuki's ℏ-series κᵢ in ki6c, which would need a conversion step.
+It is NOT: `docs/audits/2026-07-12-ohtsuki-higher-rungs-exact.md` line 22 states
+the corpus tower is `log(1 + Σ κ_n^Oht ℏⁿ)` with **ℏ = 2πi/N**, and line 10 has
+`κ₁ = [1/N] log J_N(4₁)`. Same object. So a 6₁ κ-series IS directly a
+third-knot rung of the corpus tower — qou-6ort is correctly aimed.
+
+**2. The extraction producer exists and is a template.**
+`docs/audits/scripts/qbeta_ohtsuki_higher_rungs.py` computed 4₁'s κ₁..κ₄ to
+36/30/25/19 digits at dps 220 by: direct `log_kashaev_4_1(N)` evaluation over
+many N → `poly_fit_1_over_N` → `pslq_rational_multiple` against the real
+cyclotomic subfield. The 6₁ job is the same pipeline with two substitutions:
+  (a) the ⟨6₁⟩_N state sum (ki6c §3 gives the 3-variable potential
+      V(t,s,u); the Kashaev sum is finite and directly evaluable) in place of
+      the 1-variable 4₁ sum;
+  (b) a DIFFERENT PSLQ recognition basis — 4₁'s parity pattern (odd n → ℚ·√3·πⁿ,
+      even n → ℚ·πⁿ) is trace-field-specific to ℚ(√-3) and will NOT transfer;
+      6₁'s field is the quartic 2z'⁴ − z'³ − 2z'² + z' + 1 (ki6c p.18).
+
+**Validation gate before trusting any 6₁ rung**: ki6c prints ς(6̄₁) =
+0.5035603... − i·1.08078... and ω(6̄₁) = −0.52139... + i·0.071732... to ~6
+digits. The fit's leading terms must reproduce BOTH before any κ is read;
+mirror/conjugation convention (the paper works with 6̄₁) must be pinned
+explicitly, not assumed.
+
+**Cost**: session-scale for the pipeline port + 4₁ re-validation; the 6₁ state
+sum at the N needed for 4+ rungs is the compute risk (long-compute logging
+discipline applies). NOT a from-scratch saddle-point/Feynman-diagram build,
+which is what the previous note implied.
