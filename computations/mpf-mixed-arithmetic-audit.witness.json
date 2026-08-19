@@ -3,16 +3,14 @@
   "name": "mpf-mixed-arithmetic-audit",
   "description": "Static detection of arithmetic mixing an mpmath value with a float64-sourced one. Sits between the value-level padding ratchet (blind once a float64 is multiplied by anything exact) and the construction-level mpf(<float>) gate (blind because no mpf() call is involved). Advisory: high-recall candidates for agent verdict.",
   "data": {
-    "candidates": 28,
+    "candidates": 25,
     "marked": 0,
-    "files": 18,
+    "files": 15,
     "baseline": 28,
     "by_file": {
-      "computations/_habiro_coefficient_extract.py": 1,
       "computations/atomic_mass_via_rho_k.py": 2,
       "computations/chi_numpy_dtype_fix_benchmark.py": 1,
       "computations/fr_pullback_cosh_h_test.py": 1,
-      "computations/jpsi_boundstate_mass_probe.py": 1,
       "computations/nuclide_braid_pipeline.py": 2,
       "computations/phase5/phase1a_symbolic_trace_dominant_h_expansion.py": 1,
       "computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py": 2,
@@ -21,21 +19,12 @@
       "computations/probes/tritium_8_11_jones_markov_probe.py": 2,
       "computations/proton_residual_rootcause.py": 1,
       "computations/qbeta/qbeta_habiro_taylor_investigation.py": 3,
-      "computations/qbeta/qbeta_habiro_tower_1ppq.py": 1,
       "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py": 1,
       "computations/rho_k_full_via_wenzl_lr.py": 2,
       "computations/s5_so3_su2_u1_fiber_action.py": 1,
       "tools/qou-substrate/python/qou_substrate/precision.py": 1
     },
     "rows": [
-      {
-        "file": "computations/_habiro_coefficient_extract.py",
-        "line": 275,
-        "kind": "serialized",
-        "detail": "_fmt(<float64-tainted>)",
-        "source": "print(f\"  tr_M @ q_0 = {_fmt(tr_M_at_q0, '+.6e')}, \"",
-        "class": "CANDIDATE"
-      },
       {
         "file": "computations/atomic_mass_via_rho_k.py",
         "line": 480,
@@ -66,14 +55,6 @@
         "kind": "serialized",
         "detail": "fmt(<float64-tainted>)",
         "source": "\"B_MeV\": fmt(B_MeV), \"B_AME_MeV\": fmt(B_ame),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/jpsi_boundstate_mass_probe.py",
-        "line": 245,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "\"chern_simons_zero_tolerance\": fmt(cs_zero_tol),",
         "class": "CANDIDATE"
       },
       {
@@ -202,14 +183,6 @@
         "kind": "printed",
         "detail": "nstr(<float64-tainted>, 18)",
         "source": "\"delta_tr_M_at_q0\": mp.nstr(delta_tr_num, 18),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/qbeta/qbeta_habiro_tower_1ppq.py",
-        "line": 152,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 20)",
-        "source": "print(f\"Final Q = {mp.nstr(Q_current, 20)}\")",
         "class": "CANDIDATE"
       },
       {

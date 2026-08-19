@@ -90,6 +90,7 @@ MPF_CTORS = {"mpf", "mpmathify"}
 MPF_MODULES = {"mp", "mpmath"}
 F64_MODULES = {"math", "statistics", "np", "numpy"}
 F64_METHODS = {"item", "sum", "trace", "mean", "std"}
+EXACT_SINKS = {"int", "round", "len"}   # collapse to an exact integer
 ARITH_OPS = (ast.Add, ast.Sub, ast.Mult, ast.Div, ast.Pow, ast.FloorDiv)
 
 MPF = "MPF"
@@ -190,6 +191,14 @@ class Tainter:
         if isinstance(node, ast.Call):
             f = node.func
             if isinstance(f, ast.Name):
+                if f.id in EXACT_SINKS:
+                    # int(x) / round(x) collapse to an exact integer, which
+                    # carries no float64 error however x was computed. Measured
+                    # false positive without this: jpsi_boundstate_mass_probe's
+                    # `mp.mpf(10) ** (-(int(CS_BITS / 3.3219) - 6))` is exact,
+                    # but the non-representable literal 3.3219 tainted the
+                    # division and the taint survived the int().
+                    return False
                 if f.id in MPF_CTORS:
                     # mpf(<tainted>) preserves the taint — it does not heal it.
                     return any(self.f64(a) for a in node.args)
@@ -252,6 +261,12 @@ class Tainter:
                 continue
             nm = getattr(n.func, "attr", None) or getattr(n.func, "id", "")
             if nm in SINKS and n.args and self.f64(n.args[0]):
+                # `_fmt(x, '+.6e')` prints six digits — a display at a stated
+                # width, not a claim of full precision. Only the bare form
+                # (which serializes at output precision) overstates anything.
+                spec = n.args[1] if len(n.args) > 1 else None
+                if isinstance(spec, ast.Constant) and isinstance(spec.value, str):
+                    continue
                 self.record(n, "serialized", f"{nm}(<float64-tainted>)")
             elif nm in NSTR and len(n.args) >= 2 and self.f64(n.args[0]):
                 d = n.args[1]
