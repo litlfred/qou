@@ -131,3 +131,106 @@ unproved input the Gram-inverse derivation leans on; closing it does not move
 `m_p`, `Δ_λ`, or any `c_k`. The owner's actual question — mass and binding
 accuracy — is still untouched and lives in the `Δ_λ` magnitude and the `c_k`
 ladder, neither of which this arc reaches.
+updated_at: 2026-08-18T15:59:31Z
+---
+
+
+## ANSWERED: no for precision, yes for percent-level systematics (2026-08-18)
+
+`computations/ribbon_framing_ladder_scale_probe.py` +
+`ribbon-framing-ladder-scale.witness.json` (2 assertions, both pass).
+
+### The setup
+
+The balancing twist wired onto QuantumUniverse (qou-pkf3) forces
+`theta_V = q^{1/2} . id_V` on the defining representation. Because that is a
+SCALAR, a framing T on a mass-carrying object contributes exactly one factor
+
+    weight(T) = theta^T = q^{T/2},   T integer
+
+and that is the ONLY free parameter the ribbon layer adds to a mass or binding
+evaluation. T is an integer, so the effect is a discrete LADDER.
+
+### Q1 -- can it close the L2 gaps?  NO, by four orders of magnitude
+
+    one framing unit = 5.35552 %   <- the ladder quantum
+
+    Q_beta    gap 1279 ppb    ladder is    41 873x too coarse
+    m_n       gap 1400 ppb    ladder is    38 254x too coarse
+    Delta_pn  gap 1200 ppb    ladder is    44 629x too coarse
+    L2 target  7.8 ppb        ladder is 6 866 050x too coarse
+
+The smallest nonzero framing change overshoots every L2 gap by ~4e4. So the
+ribbon axioms CANNOT supply the corrections those misses need -- not because the
+axioms are wrong, but because their only adjustable parameter is quantised far
+too coarsely. This is a structural prune, not a numerical failure.
+
+Corollary worth stating: the 2.96% m_p discrepancy is ALSO unreachable. No
+integer T gives 2.96% (T=1 gives 5.36%, T=0 gives 0), so framing cannot explain
+that gap either.
+
+### Q2 -- the mass path already carries a factor of exactly this shape
+
+`canonical_mass` uses `F_Bor = |tr_M(beta_Bor)| . [3]_q! / q^3`, and
+
+    q^-3  =  q^{T/2}  at  T = -6      EXACT match, not approximate
+                                      i.e. -2 per Borromean component
+
+The Borromean word (s1 s2^-1)^3 has writhe 0, so this factor is NOT q^writhe.
+It has framing shape. Whether that is the intended reading is a question for the
+corpus/owner -- I am recording an exact structural identification, NOT claiming
+the derivation was framing-motivated.
+
+If it IS a framing, the mass formula's framing is already fixed at -2 per
+component and there is no free knob left. If it is NOT, then there is an
+unaccounted framing DOF sitting on a 5.36% ladder, which would be a
+percent-scale systematic. Either way the answer to Q1 is unchanged.
+
+### Verdict for this bean
+
+The ribbon axioms CANNOT close the mass/binding precision gaps. They CAN move a
+result at the percent level, so a mis-set framing is a percent-scale systematic
+rather than a ppb-scale knob. The L2 work stays where qou-rwhj put it: the
+convention-D re-derivation (qou-cds1), not the ribbon layer.
+
+Scope (b) on the exclusion -- it rests on a proved invariant (theta scalar =>
+weight is q^{T/2} with T integer) plus arithmetic, not on a failed search.
+Scope (a) on the Q2 identification, which is an observation awaiting a ruling.
+
+## Follow-up: can T = 0 be PROVED?  No -- and that is itself a theorem
+
+`QOU/StandardModel/FramingIsAChoice.lean` -- lean-direct exit 0, no sorry /
+axiom / native_decide, #print axioms [propext] (+ Quot.sound on the two
+Fin-indexed ones).
+
+    framing_unobservable_iff_trivial_twist
+        (forall T, theta^T = 1)  <->  theta = 1
+
+So the framing is blind to T EXACTLY when the twist is trivial. At q != 1 --
+the whole substrate regime, q_0 ~ 1.11 -- distinct T give distinct weights, so
+the framing is OBSERVABLE. A quantity that changes the prediction cannot be
+fixed by the axioms that leave it free: "T = 0" is a normalisation CONVENTION to
+be declared, not a proposition to be derived. The converse is the classical
+boundary (theta = 1 is q = 1), consistent with BalancedCategory.ofSymmetric.
+
+    exists_framing_pair_distinguished
+        theta != 1  =>  some framing pair is separated (sharper form)
+
+### Where T = 0 IS derivable
+
+    bar_invariant_forces_zero    t = -t pointwise  =>  t = 0
+    bar_invariant_total_zero     hence total 0, weight 1
+
+The bar involution negates the twist, so a SELF-CONJUGATE state has zero framing
+and needs no convention at all. That is a genuine derivation of T = 0 -- on the
+bar-invariant sector only (amphichirality), not for the nucleon.
+
+### The caveat that redirects the question
+
+Q2 above found F_Bor's /q^3 is EXACTLY q^{T/2} at T = -6. If that factor is the
+framing, the mass path's operative convention is T = -6, NOT 0 -- and proving
+T = 0 would CONTRADICT the working formula rather than support it.
+
+So the target is not "prove T = 0". It is "DECLARE which framing the mass path
+uses", which is a corpus/owner ruling and not a Lean obligation. This file makes
+the choice visible as a choice.

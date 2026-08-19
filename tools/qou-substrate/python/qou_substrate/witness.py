@@ -635,6 +635,91 @@ def _nonfinite_paths(obj, path=""):
             yield path
 
 
+def _version_tuple(v: str) -> tuple:
+    """Leading dotted-numeric prefix of a version string, for ordering.
+
+    `"1.4.1" -> (1, 4, 1)`; `"0.11.1" -> (0, 11, 1)`. Stops at the first
+    non-numeric component, so `"1.3.0rc2"` compares as `(1, 3)` — deliberately
+    coarse. This decides only whether to PRINT a warning, so a tie on a
+    pre-release suffix costs nothing, whereas guessing at PEP 440 ordering
+    here would add a dependency and a new way to be wrong.
+    """
+    out: list[int] = []
+    for part in str(v).split("."):
+        digits = ""
+        for ch in part:
+            if not ch.isdigit():
+                break
+            digits += ch
+        if not digits:
+            break
+        out.append(int(digits))
+        if digits != part:
+            break
+    return tuple(out)
+
+
+def _check_environment_regression(witness: dict, existing, name: str) -> None:
+    """Warn when a re-run RECORDS LESS than the witness already on disk.
+
+    The `environment` block is provenance: it says which libraries produced
+    the numbers. Re-running a producer in a container that is missing one of
+    them, or carrying an older version, silently rewrites that record — the
+    numbers may be untouched while the file now claims they came from a
+    weaker environment than they did.
+
+    History (bean `qou-y0xk`). `rho-k-co-casimir-extended` was regenerated on
+    convention D in a container lacking `scipy` and `clarabel` and carrying
+    `mpmath 1.3.0` against the recorded `1.4.1`, and the stripped block was
+    merged. The re-run with the environment restored changed **zero** physics
+    fields — so the loss was pure provenance damage, which is exactly the kind
+    that survives review: nothing looks wrong in the numbers. The same class
+    was caught the same day on `derivation-chain-audit`, where an agent
+    correctly declined to commit.
+
+    WARN-ONLY, and deliberately so. A dropped library is sometimes legitimate
+    (a producer stops using it) and only the agent can tell which case this
+    is. What the check removes is the *silence*: the regression is now stated
+    at write time rather than discovered in a diff, or not at all. Set
+    `QOU_WITNESS_STRICT_ENV=error` to escalate, `off` to silence.
+    """
+    mode = os.environ.get("QOU_WITNESS_STRICT_ENV", "warn").strip().lower()
+    if mode in ("0", "off", "false"):
+        return
+    if not isinstance(existing, dict):
+        return
+    old = existing.get("environment")
+    new = witness.get("environment")
+    if not isinstance(old, dict) or not isinstance(new, dict):
+        return
+
+    stripped = [k for k in old if k not in new]
+    downgraded = [
+        f"{k} {old[k]} -> {new[k]}"
+        for k in old
+        if k in new and old[k] != new[k]
+        and _version_tuple(new[k]) < _version_tuple(old[k])
+    ]
+    if not stripped and not downgraded:
+        return
+
+    bits = []
+    if stripped:
+        bits.append(f"dropped {', '.join(sorted(stripped))}")
+    if downgraded:
+        bits.append(f"downgraded {'; '.join(sorted(downgraded))}")
+    msg = (f"{name}: the environment block records LESS than the witness on "
+           f"disk — {'; '.join(bits)}. If this container is simply missing a "
+           f"library, install it and re-run rather than committing the "
+           f"weaker record; the numbers can be identical while the provenance "
+           f"silently degrades. If the producer genuinely stopped using it, "
+           f"say so in the commit.")
+    if mode in ("warn", "warning", ""):
+        print(f"⚠ environment: {msg}", file=sys.stderr)
+    else:
+        raise ValueError(f"environment guard: {msg}")
+
+
 def _check_nonfinite(witness: dict, name: str) -> None:
     """Guard the single point where a witness is written. See the note above."""
     mode = os.environ.get("QOU_WITNESS_STRICT_NONFINITE", "warn").strip().lower()
@@ -1353,6 +1438,7 @@ class WitnessBuilder:
 
         _check_raw_float64(witness, out_path.name)
         _check_nonfinite(witness, out_path.name)
+        _check_environment_regression(witness, existing, out_path.name)
 
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(witness, f, indent=2, ensure_ascii=False, default=str)

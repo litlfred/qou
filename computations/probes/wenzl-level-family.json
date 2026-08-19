@@ -1,0 +1,344 @@
+{
+  "probe": "wenzl-level-family",
+  "description": "The Wenzl level family z_r = q^r/[r]_q, and whether convention C belongs to it.",
+  "q0": "1.1099785827513808",
+  "q0_pin": "experimental/proton (m_p/m_e)",
+  "hecke_convention": "sigma^2 = (q - q^-1) sigma + 1; Q = q^2; z_W = q*z",
+  "cited_external_input": {
+    "wenzl1988": "Hecke algebras of type A_n and subfactors, Invent. Math. 92 (1988) 349-383, doi:10.1007/BF01404457 -- the weight formula and the parameter relation z_W = Q^r(1-Q)/(1-Q^r).",
+    "orellana1998": "Weights of Markov Traces on Hecke Algebras, arXiv:math/9806163, p. 17 -- restates the type-A result. Its 'type D' is the COXETER type D_n, unrelated to this repo's convention D."
+  },
+  "checks": [
+    {
+      "check": "W0 eigenvalue matching is forced",
+      "solutions": [
+        {
+          "Q": "q**2",
+          "c": "q"
+        }
+      ],
+      "c": "q",
+      "Q": "q^2",
+      "z_W": "q*z",
+      "pass": true
+    },
+    {
+      "check": "W1/W2 level family closed form; r=2 is convention D",
+      "family": [
+        {
+          "r": 1,
+          "z_r": "q",
+          "z_r_closed": "q^1/[1]_q"
+        },
+        {
+          "r": 2,
+          "z_r": "q**3/(q**2 + 1)",
+          "z_r_closed": "q^2/[2]_q"
+        },
+        {
+          "r": 3,
+          "z_r": "q**5/((q**2 - q + 1)*(q**2 + q + 1))",
+          "z_r_closed": "q^3/[3]_q"
+        },
+        {
+          "r": 4,
+          "z_r": "q**7/((q**2 + 1)*(q**4 + 1))",
+          "z_r_closed": "q^4/[4]_q"
+        },
+        {
+          "r": 5,
+          "z_r": "q**9/((q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1))",
+          "z_r_closed": "q^5/[5]_q"
+        },
+        {
+          "r": 6,
+          "z_r": "q**11/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1))",
+          "z_r_closed": "q^6/[6]_q"
+        },
+        {
+          "r": 7,
+          "z_r": "q**13/((q**6 - q**5 + q**4 - q**3 + q**2 - q + 1)*(q**6 + q**5 + q**4 + q**3 + q**2 + q + 1))",
+          "z_r_closed": "q^7/[7]_q"
+        },
+        {
+          "r": 8,
+          "z_r": "q**15/((q**2 + 1)*(q**4 + 1)*(q**8 + 1))",
+          "z_r_closed": "q^8/[8]_q"
+        }
+      ],
+      "failures": [],
+      "z_2_equals_z_D": true,
+      "pass": true
+    },
+    {
+      "check": "W3 corpus N_eff and Wenzl level r are the same map",
+      "corpus_N_of": "-log(1 - (q - q^-1)/z)/(2 log q)",
+      "wenzl_inversion": "log(q z/(1 - Q + q z))/log Q,  Q = q^2",
+      "arguments_identical": true,
+      "roundtrip_N_of_z_r": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5"
+      },
+      "pass": true
+    },
+    {
+      "check": "W4 z_C is not a Wenzl level for any r, identically in q",
+      "integer_levels_matched": [],
+      "r_C_at_q_1p05": "2.2266886655893815989",
+      "r_C_at_q_1p15": "2.9553235283050802937",
+      "formal_level_is_not_constant": true,
+      "x2_minus_q_irreducible_over_Qq": true,
+      "invariant": "z_r in Q(q) for all r; z_C = sqrt(q)/(q+1) not in Q(q)",
+      "scope": "(b) structural exclusion -- invariant named above",
+      "pass": true
+    },
+    {
+      "check": "W5 r_C at the proton pin equals the corpus N_eff",
+      "q0": "1.1099785827513808",
+      "q0_pin": "experimental/proton (m_p/m_e)",
+      "Q_pow_r_at_q0": "1.72025175121384485372937276144",
+      "r_C_at_q0": "2.59951553640017695890186155174",
+      "corpus_N_eff_at_q0": "2.59951553640017695890186155174",
+      "abs_difference": "1.0691e-50",
+      "nearest_integer": 3,
+      "distance_to_nearest_integer": "0.4004844635998230411",
+      "pass": true
+    },
+    {
+      "check": "W6 the level table, r = 1..4",
+      "note": "quotient algebra identification H_n/<E^(r+1)> is CITED (Jones/Wenzl); only the dimension arithmetic is computed",
+      "levels": [
+        {
+          "r": 1,
+          "z_r": "q",
+          "z_r_at_q0": "1.1099785827513808",
+          "row_cap": "l(lam) <= 1",
+          "quotient_algebra": "H_n/<E^(2)>  (one-dimensional; the 'SU(1)' degenerate level)",
+          "gauge_label": "SU(1)",
+          "quotient_dim_n_1_to_8": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "corank_n_1_to_8": [
+            0,
+            1,
+            5,
+            23,
+            119,
+            719,
+            5039,
+            40319
+          ],
+          "first_n_with_radical": 2
+        },
+        {
+          "r": 2,
+          "z_r": "q**3/(q**2 + 1)",
+          "z_r_at_q0": "0.6126880371464652436505588",
+          "row_cap": "l(lam) <= 2",
+          "quotient_algebra": "TL_n = H_n/<E^(3)>",
+          "gauge_label": "SU(2)",
+          "quotient_dim_n_1_to_8": [
+            1,
+            2,
+            5,
+            14,
+            42,
+            132,
+            429,
+            1430
+          ],
+          "corank_n_1_to_8": [
+            0,
+            0,
+            1,
+            10,
+            78,
+            588,
+            4611,
+            38890
+          ],
+          "first_n_with_radical": 3
+        },
+        {
+          "r": 3,
+          "z_r": "q**5/((q**2 - q + 1)*(q**2 + q + 1))",
+          "z_r_at_q0": "0.4493048090902078521850181",
+          "row_cap": "l(lam) <= 3",
+          "quotient_algebra": "H_n/<E^(4)>",
+          "gauge_label": "SU(3)",
+          "quotient_dim_n_1_to_8": [
+            1,
+            2,
+            6,
+            23,
+            103,
+            513,
+            2761,
+            15767
+          ],
+          "corank_n_1_to_8": [
+            0,
+            0,
+            0,
+            1,
+            17,
+            207,
+            2279,
+            24553
+          ],
+          "first_n_with_radical": 4
+        },
+        {
+          "r": 4,
+          "z_r": "q**7/((q**2 + 1)*(q**4 + 1))",
+          "z_r_at_q0": "0.3693602322356049097562425",
+          "row_cap": "l(lam) <= 4",
+          "quotient_algebra": "H_n/<E^(5)>",
+          "gauge_label": "SU(4)",
+          "quotient_dim_n_1_to_8": [
+            1,
+            2,
+            6,
+            24,
+            119,
+            694,
+            4582,
+            33324
+          ],
+          "corank_n_1_to_8": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            26,
+            458,
+            6996
+          ],
+          "first_n_with_radical": 5
+        }
+      ],
+      "r2_coranks_match_PR5207": true,
+      "r2_dims_are_catalan": true,
+      "pass": true
+    },
+    {
+      "check": "W7 the C curve is transverse to the level family",
+      "limit_r_C_as_q_to_1": "2",
+      "series_r_C_about_q_1": "4*q + 37*(q - 1)**2/4 - 2",
+      "integer_crossings_q": {
+        "2": "1 (limit; both sides degenerate at q = 1)",
+        "3": "1.154160652264486",
+        "4": "1.215893600279658"
+      },
+      "pole_q_star": "1.2784495765796931592",
+      "beyond_pole": "r_C(q) is complex for q > q*",
+      "q0": "1.1099785827513808",
+      "q0_is_not_a_crossing": true,
+      "pass": true
+    },
+    {
+      "check": "W8 z_C is bracketed by two genuine levels at q0",
+      "z_3_at_q0": "0.4493048090902078521850181",
+      "z_C_at_q0": "0.4993203341836944525024451",
+      "z_2_at_q0": "0.6126880371464652436505588",
+      "ordering": "z_3 < z_C < z_2",
+      "pass": true
+    },
+    {
+      "check": "W9 every circulating z spelling, and its level",
+      "spellings": [
+        {
+          "z": "z_D  = q^3/(q^2+1) = q^2/[2]_q",
+          "z_at_q0": "0.6126880371464652436506",
+          "formal_level_at_q0": "2.0",
+          "is_a_level": true,
+          "level_if_any": 2,
+          "exclusion_invariant": null,
+          "call_sites": "mass, binding, borromean-binding"
+        },
+        {
+          "z": "z_C  = sqrt(q)/(q+1) = 1/[2]_{sqrt q}",
+          "z_at_q0": "0.4993203341836944525024",
+          "formal_level_at_q0": "2.5995155364002",
+          "is_a_level": false,
+          "level_if_any": null,
+          "exclusion_invariant": "not in Q(q): sqrt(q) is not a rational function of q (x^2 - q Eisenstein at q)",
+          "call_sites": "qbeta-decay (disputed)"
+        },
+        {
+          "z": "z_TL = q/(q^2+1) = 1/[2]_q",
+          "z_at_q0": "0.4972905456049155563494",
+          "formal_level_at_q0": "2.6136240175381",
+          "is_a_level": false,
+          "level_if_any": null,
+          "exclusion_invariant": "in Q(q), but no r matches: z_r has numerator q^(2r-1), so degree 1 forces r = 1, and z_1 = q != q/(q^2+1)",
+          "call_sites": "meson_lepton_knot_dictionary_probe, casimir_phi_q_markov_probe (neither is a production file)"
+        }
+      ],
+      "off_family": [
+        "z_C  = sqrt(q)/(q+1) = 1/[2]_{sqrt q}",
+        "z_TL = q/(q^2+1) = 1/[2]_q"
+      ],
+      "note": "the two off-family spellings are excluded by DIFFERENT invariants -- field membership for z_C, numerator degree for z_TL. Neither exclusion is numerical.",
+      "pass": true
+    },
+    {
+      "check": "W10 the Wenzl level of each registered channel",
+      "channels": [
+        {
+          "channel": "mass",
+          "convention": "D",
+          "producer": "m_p_substrate_identity_50dps.py::trM_borromean -> canonical_mass.py",
+          "registry_status": "agreed",
+          "level": 2,
+          "formal_level_at_q0": "2.0",
+          "in_the_level_family": true
+        },
+        {
+          "channel": "binding",
+          "convention": "D",
+          "producer": "closed_form_tau_M.py::markov_z, wedderburn_jones_markov.py::y_lambda_at",
+          "registry_status": "agreed",
+          "level": 2,
+          "formal_level_at_q0": "2.0",
+          "in_the_level_family": true
+        },
+        {
+          "channel": "borromean-binding-single-pipeline",
+          "convention": "D",
+          "producer": "borromean_binding_recompute.py:110",
+          "registry_status": "agreed",
+          "level": 2,
+          "formal_level_at_q0": "2.0",
+          "in_the_level_family": true
+        },
+        {
+          "channel": "qbeta-decay",
+          "convention": "C",
+          "producer": "qbeta/qbeta_utils.py::markov_parameter",
+          "registry_status": "disputed",
+          "level": null,
+          "formal_level_at_q0": "2.5995155364002",
+          "in_the_level_family": false
+        }
+      ],
+      "distinct_levels_in_use": [
+        2
+      ],
+      "finding": "every channel that is in the family at all is at r = 2. No QOU channel sits at r = 3 or above.",
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

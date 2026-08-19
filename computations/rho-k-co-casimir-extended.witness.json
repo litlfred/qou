@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T12:50:54.368236+00:00",
-  "commitSha": "282f1b5545f3b6a6b0f9112698b744ed12dca42a",
+  "computedAt": "2026-08-16T13:53:08.967272+00:00",
+  "commitSha": "cc2687b3d9d0850622e4a3acd12b1d1ef3463abd",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 735985,
+  "durationMs": 838,
   "computation": "rho-k-co-casimir-extended",
   "scriptFile": "rho_k_co_casimir_extended.py",
   "scriptHash": "8e4de27ec5a0",
@@ -19,22 +19,16 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
-  "description": "Substrate-derived ρ_K^pred via the Frobenius co-Casimir Option B (Δ_λ := 1/dim_q(λ), forced by thm:frobenius-codim-universal — zero free parameters, τ-invariant). Loads y_λ from EITHER the symbolic Wenzl-bridge witness (n=2..12, sp.Expr in q) OR the numeric Wenzl witness (n=2..30, mp.mpf at q_0) — picks whichever covers the requested n. Per repo-owner directive 2026-05-19 'all nucleotides', DEFAULT_ATOMS extended to A ≤ 10 (5Li, 6Li, 7Li, 7Be, 8Be, 9Be, 10B); gate via --max-A (default 4). Generalises rho_k_h3a_co_casimir.py from D-only. Witness MeV scaling: rows use m_e (CAL-1) as the natural scale for ρ_K^LO and the co-Casimir correction; per-atom 'M_pred_MeV' = ρ_K_pred · m_e · |tr_M|. Note: binding-via-interface-knot.witness.json uses E_0 = Q_β(n) instead — different scale by ~m_e/E_0 ≈ 0.65×.",
+  "description": "Substrate-derived ρ_K^pred via the Frobenius co-Casimir Option B for every L1 atom — incremental save.",
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": "0.510998950690000000000000000000000000000000000000000565443472",
-    "atoms_attempted": [
-      "proton",
-      "neutron",
-      "deuteron",
-      "tritium",
-      "helium-3",
-      "helium-4"
-    ],
     "n_ok": 4
   },
   "data": {
@@ -708,7 +702,7 @@
             "contribution_y_chi_Delta": "0.0"
           }
         ],
-        "compute_wall_sec": "0.48",
+        "compute_wall_sec": "0.43",
         "status": "ok"
       },
       {
@@ -2461,11 +2455,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "45662ca46df2045668d7c38d5dfa75440d4e2d458ac2e0ea9f152e2fc7ce372d",
-        "size_bytes": 60554,
-        "commitSha": "b393679b5ba10c0aa16a8d421800e30e52a8019d",
-        "scriptCommitSha": "b393679b5ba10c0aa16a8d421800e30e52a8019d",
-        "computedAt": "2026-08-15T23:35:51.493188+00:00"
+        "sha256": "2ec45ffa6440582b7b4d82d67f217085b79f17a958ba8bdbf9c2453d2617dce0",
+        "size_bytes": 65331,
+        "commitSha": "0504169edd19fe9e2be816b643b2377a3d895cce",
+        "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
+        "computedAt": "2026-08-16T12:46:35.532141+00:00"
       },
       {
         "path": "y-lambda-wenzl-bridge-symbolic-witness.json",

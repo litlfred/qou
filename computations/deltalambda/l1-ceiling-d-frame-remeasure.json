@@ -1,0 +1,65 @@
+{
+  "pin": {
+    "name": "proton",
+    "q0": "1.1099785827513808"
+  },
+  "supersedes": "delta-lambda-l1-ceiling-sign-prune.witness.json is muon-pinned (2026-07-17) and carries nonzero ell>=3 ell-1 mass; its 0.3576-0.5918 range is not a D-frame number.",
+  "atoms": {
+    "deuteron": {
+      "n_strands": 6,
+      "B_AME_MeV": "2.224566",
+      "target_m_e": "4.35336706072718295820029328601",
+      "ceiling_committed": "0.566137396767041012636436812608",
+      "ceiling_D_live": "0.566137396767041012660720901388",
+      "ceiling_C_live": "0.516066273752835282062036286112",
+      "ratio_D_over_C": "1.09702459850764591549702992812",
+      "C_l1_share_on_rows_ge_3": "0.13309966525927920076857625623",
+      "net_signed_D_m_e": "-0.717445421638373001346293814277",
+      "B_ceiling_D_MeV": "1.2594100041764693574",
+      "committed_matches_D_live": true
+    },
+    "tritium": {
+      "n_strands": 9,
+      "B_AME_MeV": "8.481798",
+      "target_m_e": "16.5984646123970693431875391392",
+      "ceiling_committed": "0.36041232870047135496419584108",
+      "ceiling_D_live": "0.360412328700471355472592706339",
+      "ceiling_C_live": "0.357561964167165777693912528353",
+      "ratio_D_over_C": "1.00797166594591416899509858683",
+      "C_l1_share_on_rows_ge_3": "0.432034706239516288788500347567",
+      "net_signed_D_m_e": "-2.47514029834844191929705875244",
+      "B_ceiling_D_MeV": "3.0569445687470005419",
+      "committed_matches_D_live": true
+    },
+    "helium-3": {
+      "n_strands": 9,
+      "B_AME_MeV": "7.718043",
+      "target_m_e": "15.1038333632160202665405594592",
+      "ceiling_committed": "0.692490208099440195849906365056",
+      "ceiling_D_live": "0.692490208099440196638872099402",
+      "ceiling_C_live": "0.591818240124498688573400519676",
+      "ratio_D_over_C": "1.17010622713109265755222674586",
+      "C_l1_share_on_rows_ge_3": "0.344456994133178245179188373901",
+      "net_signed_D_m_e": "-3.07899122318868201088069399113",
+      "B_ceiling_D_MeV": "5.3446692031904277136",
+      "committed_matches_D_live": true
+    },
+    "helium-4": {
+      "n_strands": 12,
+      "B_AME_MeV": "28.295673",
+      "target_m_e": "55.3732506921833342757230701741",
+      "ceiling_committed": "0.433474067876299039598617345273",
+      "ceiling_D_live": "0.433474067876299040115221625465",
+      "ceiling_C_live": "0.405899476572540431955667418591",
+      "ratio_D_over_C": "1.06793453279763125736799904469",
+      "C_l1_share_on_rows_ge_3": "0.623829372330039226336824137271",
+      "net_signed_D_m_e": "-0.190937769615115506058068239418",
+      "B_ceiling_D_MeV": "12.265440478607562089",
+      "committed_matches_D_live": true
+    }
+  },
+  "all_D_ceilings_below_target": true,
+  "D_tighter_than_C_everywhere": false,
+  "committed_reproduced_by_live_D": true,
+  "max_D_ceiling": "0.692490208099440196638872099402"
+}

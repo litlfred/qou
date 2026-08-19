@@ -75,3 +75,29 @@ build it on this file's account. (It may of course be wanted elsewhere.)
 `qou-me9q` (exact, self-contained) → `qou-itg0` (Stirling glue) →
 `qou-q8lc` (the estimate). Then L4-1 assembles the three; L4-2 consumes
 it.
+
+## RE-CORRECTION (2026-08-11, bean qou-shrp): E–M *is* needed — one step later
+
+The §UPDATE above is right about the **singular** half and wrong to
+generalise. Rewriting the smooth half exactly
+(`smooth_defect_eq_riemann_defect`, `LogSineRiemannForm.lean`, sorry-free):
+
+    Σ_{i<n} ∫_{cell_i} (φ(x_{i+1}) − φ(u)) du
+      = h·Σ_{i<n} φ(x_{i+1}) − ∫_0^{nh} φ
+
+— the smooth half **is** a right-endpoint Riemann-sum defect, whose leading
+correction is the classical first Euler–Maclaurin term `(h/2)(φ(nh) − φ(0))`.
+That is exactly van der Veen's missing `½`, and it matches the measured value
+(`logsine_smooth_defect_constant.py`).
+
+So the correct statement is:
+
+* **singular half** — no summation formula needed; it telescopes exactly, and
+  nothing touches the `log(2 sin)` endpoint singularity. (Unchanged.)
+* **smooth half** — needs the first E–M correction, on the *regular* function
+  `φ`. Mathlib has no Euler–Maclaurin formula, so this is a genuine infra gap.
+
+Mathlib inventory for closing it: `Real.sinc` exists with
+`Real.continuous_sinc` and `Real.sinc_zero`, but **no** differentiability or
+analyticity — those plus the first E–M correction for `C¹` functions are what
+`qou-shrp` must supply.

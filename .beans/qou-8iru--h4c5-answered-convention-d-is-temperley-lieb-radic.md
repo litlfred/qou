@@ -123,3 +123,62 @@ since fb8844fc. All three are now imported from QOU.lean.
       diagram basis) is the same object as the star form -- if so, positivity is
       a citation, not a proof obligation.
   [ ] Only then: cost out the 5-parameter H_4 interface, and DO NOT fit it.
+
+## TL_n compute-move survey (PR #5241, 2026-08-16)
+
+Note first: the brief that commissioned this survey cited bean `qou-ondw` as
+the TL_n compute move. **`qou-ondw` does not exist** (joining `qou-csdp` and
+`qou-rm47` as phantom IDs cited in PR bodies). This bean is the live tracker.
+
+Full survey: docs/audits/2026-08-16-colour-level-and-tln-compute.md (TASK 2).
+
+**Speed vs correctness, separated.** For any computed VALUE the discarded
+blocks contribute exactly zero, so the move is a SPEED change. Correctness
+genuinely differs only where an identically-singular form is inverted,
+solved against, or eigen-decomposed. Six such sites:
+
+  - qbeta/qbeta_crossing_weight_hecke_probe.py:128 -- UNGUARDED
+    np.linalg.solve against the singular Gram. A wrong answer, not a slow
+    one. Split out as bean qou-yof3.
+  - confinement-operator-selection.py:195 -- _pg_safe_inverse RAISES under D.
+    Hard blocker.
+  - gram-matrix-dual.py:169-170,197 -- eigvals + pinv.
+  - tools/pyhecke/.../gram.py:407 and tools/hecke-engine/src/gram.rs:339 --
+    pseudo-inverse of exactly the 1-dim radical at n=3.
+  - qbeta/qbeta_markov_trace_norm_probe.py:219 -- sympy .inv().
+
+On TL_3 the 5x5 form is genuinely non-singular, so these stop needing a
+pseudo-inverse at all.
+
+**Everything else is speed**, largest first: mass_at_3A_proper.py (+ the
+qou-mass mirror) -- the documented "3A >~ 35 wall" is a p(n) wall TL removes;
+tr_m_atom_via_transfer.py; hecke_3a_weights / binding_canonical /
+schur_principal_mpmath; gram_matrix_seminormal_{n,h6} (720 -> 132 at n=6).
+markov/markov_peel.py gets NO benefit -- already basis-free.
+
+**TL already exists in the repo, unwired to the binding path**:
+tools/hecke-engine/src/tl_cable.rs + tl_cable_mpfr.rs (diagram basis, MAXP=30,
+asserts dim == catalan(n)); computations/probes/tl_n6_discriminator.py;
+Lean TemperleyLiebTower.lean / KauffmanTL3.lean.
+
+**DONE in PR #5241** (the one clean low-risk win):
+wedderburn_jones_markov.global_wedderburn_sum_jones_markov looped all p(3A)
+partitions and skipped only on chi==0, so specht_character_atomic ran even for
+y_lambda == 0 blocks. Moved the y==0 test ahead of the character build.
+Verified value-neutral by summing both ways symbolically: A=1 n=3 1/3 skipped,
+A=2 n=6 7/11 (64%), A=3 n=9 25/30 (83%), diff=0 in every case, every skipped
+partition confirmed >= 3 rows.
+
+**NOT done, with effort estimates**:
+  [ ] Same y==0 guard at the enumeration layer (y_lambda_at /
+      y_lambda_at_q0_mpmath return dicts keyed on all p(n) with zeros in
+      them). ~1 h, low risk, but it changes a public dict's keys -- check
+      readers first.
+  [ ] mass_at_3A_proper.py: restrict the lambda-loop to l(lambda) <= 2.
+      ~half day, low-moderate, biggest payoff.
+  [ ] Route pyhecke.gram / gram.rs onto a genuine 5x5 TL_3 form and retire
+      the pinv. ~2-3 days, MODERATE-HIGH -- this is the correctness case and
+      touches the Rust engine, the Python wrapper and
+      confinement-operator-selection. Own PR. Overlaps qou-cds2.
+
+Deliberately NOT attempted: any wholesale rewrite of the binding chain.

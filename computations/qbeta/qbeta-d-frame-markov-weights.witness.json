@@ -1,0 +1,62 @@
+{
+  "computation": "qbeta-d-frame-markov-weights",
+  "description": "Solves the three H_3(q) Markov equations at convention D. y_(1^3) = 0 falls out of the linear system (an independent re-derivation of the two-row cap), the surviving weights are q^2/(q^2+1)^2 and (q^4+1)/(q^2+1)^2, and BOTH are bar-even. So no quantity built from the D-frame weights alone carries a bar-odd part \u2014 the bar-ODD eigenphase the C-frame ladder uses cannot be assembled from them.",
+  "audit_only": true,
+  "tier": "symbolic-exact",
+  "q0Anchor": "independent",
+  "scope": "scope-(a), and NEGATIVE: this narrows where a D-frame ladder derivation may look; it does not supply one. Nothing wired, no c_k value or tier changes, channel stays `disputed`. It does NOT show the decay trace IS the D one \u2014 that is the 2026-08-15 owner ruling.",
+  "computedAt": "2026-08-16T13:46:12.489531+00:00",
+  "commitSha": "0cd6d2c48ac3e6c2d87739dccdc9d43136df6d18",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_d_frame_markov_weights_probe.py",
+  "scriptHash": "190f91bf168d",
+  "assertions": [
+    {
+      "name": "1_threeRow_vanishes_at_zD",
+      "passed": true,
+      "detail": "y_(1^3) = 0 falls out of the Markov linear system at z_D \u2014 an independent re-derivation of the two-row cap, not imported from Wenzl"
+    },
+    {
+      "name": "2_threeRow_survives_at_zC",
+      "passed": true,
+      "detail": "y_(1^3) != 0 at z_C \u2014 the C-frame trace does not factor through Temperley-Lieb (consistent with decayLadder_zC_threeRow_ne_zero)"
+    },
+    {
+      "name": "3_two_row_weights_normalise_exactly",
+      "passed": true,
+      "detail": "y_(3) + 2 y_(2,1) = 1 exactly at z_D; the two-row weights alone saturate the normalisation"
+    },
+    {
+      "name": "4_all_D_weights_bar_even",
+      "passed": true,
+      "detail": "bar(y) = y for every surviving D-frame weight \u2014 no bar-odd part anywhere in the D weight data"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "general_solution": {
+      "y13": "q**2*(-q + z)*(-q**3 + q**2*z + z)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+      "y21": "-q*(-q + z)*(q*z + 1)/((q**2 - q + 1)*(q**2 + q + 1))",
+      "y3": "(q*z + 1)*(q**3*z + q*z + 1)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))"
+    },
+    "at_z_D": {
+      "y13": "0",
+      "y21": "q**2/(q**2 + 1)**2",
+      "y3": "(q**4 + 1)/(q**2 + 1)**2"
+    },
+    "bar_defect_at_z_D": {
+      "y13": "0",
+      "y21": "0",
+      "y3": "0"
+    },
+    "verdict": "Convention D's H_3 Markov trace is two-row with bar-EVEN weights. The C-frame ladder's bar-odd content comes from z_C bar-even against a bar-ODD h; under D that source is gone from the weights. A D-frame phase carrying the C-frame's bar parity must come from the h factor, the Kashiwara f~_1 shift, or the framing \u2014 or not exist."
+  },
+  "context": {
+    "lean": "QOU.QBeta.MarkovWeightsConventionD (sorry-free): markovWeightsD_norm / _sigma / _sigmasq / _zsq, markovWeightsD_y21_barEven / _y3_barEven",
+    "step_1": "qbeta-d-frame-eigenphase-bar-parity \u2014 bar(alpha)+alpha = h^2/2 under D; the forced projection alpha - h^2/4 is necessary but not sufficient",
+    "corroborates": "WenzlWeightVanishing.lean (all n, z_D is Wenzl level r = 2) \u2014 reached here independently from the Markov side",
+    "bean": "qou-cds1",
+    "flip_flop_guard": "registry section 8 \u2014 no c_k wired"
+  }
+}

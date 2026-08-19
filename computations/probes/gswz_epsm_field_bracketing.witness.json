@@ -1,0 +1,40 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_field_bracketing_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_field_bracketing_probe.py",
+ "commitSha": "9d547fa2a7378b8f1b0b794c3cf035e3af9bd1ce",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 eqn (20), Lemma 2.4(a),(d),(e); Addenda 27-30 (this repo)",
+ "checks": {
+  "m3_probe_green": true,
+  "m_divides_teichmuller_order": true,
+  "D1_is_a_unit": true,
+  "cube_roots_exact": true,
+  "class_is_defined": true,
+  "lemma_24a_root_independence_measured": true,
+  "class_map_is_not_globally_trivial": true,
+  "class_collapses_on_all_base_arguments": true,
+  "P_is_not_sigma_fixed": true
+ },
+ "result": {
+  "class_of_P_xi": 0,
+  "classes_over_root_choices": [
+   "0"
+  ],
+  "nonzero_class_witness": {
+   "a": 0,
+   "b": 1,
+   "class": 1
+  },
+  "class_distribution_over_base_arguments": {
+   "0": 23
+  },
+  "base_arguments_tested": 23
+ },
+ "scope": "scope-(a) BRACKETING, not a value. Computing CGZ's class in F^x/(F^x)^m (read on the Teichmuller part) gives 0 for xi, and 0 for all NINE root choices -- Lemma 2.4(a) confirmed by measurement. But the class is identically 0 on ALL 23 admissible base arguments, while being nonzero on an element off the base, so the invariant carries no information about xi in F and the 0 is vacuous. Bracket: B = Q_25 is too small (root-independence fails) and F = Q_5(mu_1872) too large (the class collapses). Reading CGZ, the invariant is likely not this bare class at all -- their Lemma 2.4(d),(e) keep Galois structure that a quotient of units discards. No eps_m value is claimed at m >= 3; the m = 2 result of PR #4968 is untouched."
+}
