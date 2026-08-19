@@ -2004,6 +2004,34 @@ muon; muon-anchor → ~4000σ on proton).
    - **Never mix.** If you touch a producer that consumes a muon-built
      cache, move the *whole* quantity to proton rather than leaving one
      input on each layer (see the straddling hazard above).
+   - **Do NOT do it by emptying `ideal_muon` in the manifest.** The
+     tempting one-line version of this migration is to move all 257 stems
+     from `ideal_muon` to `physical_proton` in
+     [`computations/q0_anchor_manifest.json`](computations/q0_anchor_manifest.json)
+     and declare the end state reached. **That is not a migration, it is a
+     disabling.** `q_parameter.py` selects the anchor by
+     `if _stem in _man.get("ideal_muon", [])`, so an empty `ideal_muon`
+     means no producer ever resolves to the muon anchor again — and the
+     anti-corruption guard that hard-fails when the muon anchor cannot be
+     established (`"Refusing to fall back to proton silently"`) can no
+     longer fire for any of them, because none of them ask for it. The
+     relabel also decouples the declaration from reality across 257
+     producers at once: every witness they have already emitted was
+     computed at the muon pin and stays that way, now labelled proton.
+     Proposed in PR #5049 and deliberately NOT merged (#5315).
+   - **Measured cost of getting this wrong, 2026-08-19.** The sweep ran
+     producer-by-producer, as it should — and still took main RED, because
+     it regenerated `computations/q-pinning-50-digit.witness.json` at the
+     proton pin. That witness is not a *consumer* of the muon anchor, it
+     **is** the anchor: `witness._q0_value_for_anchor("muon")` reads
+     `derived_50_digit.q` out of it. Both anchors collapsed to the same
+     string, 262 correctly-stamped muon witnesses flipped to `Q0_FLIP`
+     (`Q0_OK` 654 → 392), and every `ideal_muon` producer hard-failed —
+     including, circularly, the one that would regenerate the anchor. Fixed
+     in `2e4745448d` by restoring the witness and adding an
+     `ANCHOR_DEFINING` exclusion list to `q0_repin_sweep.py`. The guard did
+     its job; what was missing was an exclusion list. Read that commit
+     before touching this sweep.
    - **Say which pin you used.** Any new witness must record its q₀ so a
      later reader can tell which layer it belongs to without inferring it
      from a call site.
