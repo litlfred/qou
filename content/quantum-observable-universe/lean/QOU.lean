@@ -200,6 +200,7 @@ import QOU.Knot.KashaevFullSum
 import QOU.Knot.KashaevAsymptoticBounds
 import QOU.Knot.KashaevCSigma
 import QOU.Knot.WhiteheadSaddleClausen
+import QOU.Knot.WhiteheadLowerRate
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry

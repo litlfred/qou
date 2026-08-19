@@ -52,3 +52,37 @@ so it is about the inner sum at one slice.  Their docstring is honest about this
 ("placeholder link", bean qou-1gkf tracks the fix); the name alone is not.
 Audit: docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md
 
+PROGRESS 2026-08-19 -- THE OPEN PROBLEM IS NARROWED (sorry-free, no proof claimed).
+
+QOU/Knot/WhiteheadLowerRate.lean.  The upper half of the VC is ALREADY CLOSED
+unconditionally on main -- norm_whiteheadLinkKashaev_le (triangle) against
+tendsto_log_whiteheadLinkMajorant_vol (sorry-free) -- so everything still open
+lives on the lower side only.  VdVWhiteheadLemma4 as stated (a two-sided
+polynomial comparison majorant <= N^p ||J_N||) is therefore MORE than the
+conjecture needs.
+
+  class WhiteheadLinkLowerRate :
+    forall eps > 0, eventually  4G - eps <= (2 pi/N) log ||J_N||
+
+  whiteheadLink_volume_of_lowerRate   -- the VC from that class alone
+  lowerRate_of_lemma4                 -- Lemma 4 => the class, so NOTHING IS LOST
+  eventually_one_lt_norm              -- the class forces ||J_N|| > 1, so
+                                         Real.log's junk value at 0 never bites
+  vol_borromean_half_pos              -- via Cl_2_pi_div_two_pos
+
+All sorry-free; axioms [propext, Classical.choice, Quot.sound].
+
+NO INSTANCE EXISTS for either class.  This does not prove Lemma 4 and does not
+close the epic; it relocates the open problem to the weakest form that suffices,
+which is also the form the sibling programme (qou-t2sc, WhiteheadSaddleClausen)
+is closest to -- it already has the inner sum at the saddle slice attaining 4G,
+and what remains there is non-cancellation of the outer phased n-sum.
+
+NEXT: the outer-sum non-cancellation.  The phase is QUADRATIC in n
+(WhiteheadPhaseAlgebra: chi_{N,n} e^{N pi i/8} = exp(n'^2 pi i/(2N)) exp(n pi i/(2N)),
+n' = n - N/2), so this is a Gauss-sum / stationary-phase statement over a ~sqrt(N)
+window -- and the generic infra is already on main (GaussianWindowSum,
+GaussianTailBound, GaussianSumBound, GaussianTiltedSum, GaussianThetaSum,
+GaussianShearIntegral).  ASSEMBLE, do not build: grep MathlibExt/ first.
+Ledger: docs/coordination/whitehead-link-volume-conjecture-join.md
+
