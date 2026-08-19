@@ -298,3 +298,77 @@ count as missing, not present.**
 4. **Re-check the `rho-k-markov-multiplicativity` "PROVED" claim** — a proof
    status resting on an unregenerable witness.
 5. The remaining 130 non-paper-feeding orphans stay as Part 1 left them.
+
+---
+
+# Part 3 — closing the gate that let it through
+
+Recommendation 1 of Part 2, applied.
+
+## The mechanism, exactly
+
+`computations/audits/witness_provenance_audit.py::classify` scored a witness
+by emptiness:
+
+```python
+missing = [f for f in REQUIRED_FIELDS if not body.get(f)]
+```
+
+A prose marker is a **non-empty string**, so
+`"(legacy — no matching producer found; provenance pending manual triage)"`
+counted as *present*. The I14 campaign reached `completeness_ratio: 1.00` in
+part by **writing that marker**, and the check that should have noticed
+returned `PROV_OK`. The marker is honest; counting it as provenance was the
+defect.
+
+`_has_provenance` now rejects a `scriptFile` whose value is an explanation
+rather than a path, using the same predicate shape as
+`witness_producer_executes_audit.is_prose` — kept in sync deliberately, since
+two different answers to "is this a real producer reference?" is how the wrong
+one gets acted on.
+
+## Measured
+
+| | before | after |
+|---|---:|---:|
+| `PROV_OK` | 2291 | **2284** |
+| `PROV_EXEMPT_NO_READER` | 215 | **217** |
+| `PROV_MISSING` | 49 | **54** |
+| `completeness_ratio` | 0.981 | **0.979** |
+
+Seven witnesses carried a prose `scriptFile`. Five surface as `PROV_MISSING` —
+including **both** paper-facing ones (`4he-binding-full-pipeline`,
+`hecke-core-symbolic-migration`) and three not previously known to this
+investigation: `codata-2022-validation-masses`,
+`rho-k-leading-order-verification`, `chi-helium-4-h12-numeric`. The other two
+(`tau-hat-n-proton-level-1-empty`, `wall-violations`) fall to
+`PROV_EXEMPT_NO_READER`, which is correct — they are the frozen-as-evidence
+class from the 2026-06-13 triage and nothing reads them.
+
+## An over-fire caught before shipping
+
+The first version applied the prose predicate to **all** of
+`REQUIRED_FIELDS = (engine, scriptFile, commitSha)`. Measured before
+committing: it flagged **50** values, of which **49 were `engine`** —
+`"sympy + pyhecke_native"`, `"mpmath (witness-fed; no new tr_M compute)"`,
+`"pyhecke_native seminormal-mpfr 50dps (chi_lambda_all_partitions_mpfr) …"`.
+Those are informative descriptions, not evasions: `engine` is free text by
+design, and the predicate was written for a **path**-valued field.
+
+Shipping it would have manufactured 49 false `PROV_MISSING` and moved
+`completeness_ratio` on noise — a gate made red by a bad check, which is the
+mirror of the failure this whole part is about. The check is now restricted to
+`PATH_VALUED_FIELDS = ("scriptFile",)`. `commitSha` wants a sha-shaped
+validator; that is a separate change and is not attempted here.
+
+## Not done, deliberately
+
+The five surfaced witnesses are **not** added to
+`provenance-acknowledged-floor.json`. The floor is the right mechanism for a
+witness that genuinely cannot carry a producer — its discipline requires a
+reason from a completed investigation, and Part 2 supplies one for two of them
+— but floor-ing them turns the gate green again, and for
+`hecke-core-symbolic-migration` that would bless the `status: "verified"`
+claim on two appendix blocks rather than fix it. Which of the five belong on
+the floor, and which need their block status corrected instead, is an owner
+decision; recommendations 2–4 of Part 2 stand.
