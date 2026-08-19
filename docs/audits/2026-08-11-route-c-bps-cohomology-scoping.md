@@ -397,3 +397,42 @@ boundary-parabolic representations — so it yields no `|P_K|` for the 6-crossin
 knots — and it carries no Stokes matrices. What it does establish is that the
 vocabulary bias cost this arc *at least two* papers, from one cause. Other
 unopened high-rankers: `1511.05628`, `2412.04241`, `1303.5278`.
+
+### Dimofte–Garoufalidis §6: the signature inputs confirmed, and Part 4's hypothesis named
+
+The re-sweep also surfaced `uploads/1511.05628v1.pdf` (Dimofte–Garoufalidis,
+*Quantum Modularity and Complex Chern–Simons Theory*), which §6 states trace
+fields in the **signature notation `[r₁, r₂]`** — the exact input Part 4's rule
+consumes — for five knots:
+
+| knot | minimal polynomial | `[r₁,r₂]` | disc |
+|---|---|---|---|
+| `4₁` | `x² − x + 1` | `[0, 1]` | `−3` |
+| `5₂` | `x³ − x² + 1` | `[1, 1]` | `−23` |
+| `6₁` | `x⁴ − 2x³ + x² + 3x + 1` | `[0, 2]` | `257` |
+| `(−2,3,−3) = (−2,3,9)` | `x⁵ − x⁴ + x³ + 2x² − 2x + 1` | `[1, 2]` | `23·733` |
+| `(−2,3,7)` | *same trace field as* `5₂` | `[1, 1]` | `−23` |
+
+**Confirmation.** Part 4 read `4₁ ↦ (0,1)` and `5₂ ↦ (1,1)` off GZ's prose; DG
+states the same two in type notation. Two sources, identical inputs.
+
+**Part 4's silent hypothesis, now named.** The rule needs
+`r = #embeddings of A_K^red`, and `A_K^red ⊇ F_K` with equality **iff** `K` has no
+boundary-parabolic representations outside its trace field. Part 4 used
+`A_K^red`; DG tabulates `F_K`. They coincide at `4₁` and `5₂`, so **Part 4's
+two-knot agreement did not establish which one the rule needs** — and `(−2,3,7)`
+settles it: its trace field is `5₂`'s (3 embeddings) while the measured rank is
+`6`, because `P_K` acquires a second Galois orbit over the totally real `ℚ(η)`.
+The hypothesis has to be stated, not assumed.
+
+**Two conditional predictions.** Under `A_K^red = F_K`: `6₁` has `r = 4`,
+`|P_K| = 5`; `(−2,3,9)` has `r = 5`, `|P_K| = 6`. Falsifiable, unverified (no
+corpus source gives these ranks), and false if either knot behaves like
+`(−2,3,7)`.
+
+**A guarded non-inference.** DG's Table 2 has a column headed "Level"
+(`4₁ ≤7`, `6₁ ≤3`, …). That is the **Chern–Simons level** `k` with `ζ^k = 1` —
+their abstract says so — **not** GZ's level `N` from Part E. Reading `6₁ ≤ 3` as
+"`6₁` has level 3" would manufacture the fourth level-`>1` knot the open question
+asks for, out of an unrelated quantity. **Third instance of this conflation trap
+in this arc**; recorded so it is not walked into a fourth time.

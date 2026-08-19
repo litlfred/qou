@@ -9,7 +9,7 @@ tags:
     - route-c
     - literature
 created_at: 2026-08-19T12:10:00Z
-updated_at: 2026-08-19T12:45:00Z
+updated_at: 2026-08-19T13:05:00Z
 ---
 
 ## Context
@@ -104,7 +104,7 @@ geometric reading not. Nothing wired.
 
 - Lean: QOU.QBeta.GZThirdKnotRankGrading (core Int, imports AdjointIndexSetM3;
   lean-direct exit 0, sorry-free, #print axioms shows no sorryAx)
-- Probe: computations/probes/gz_third_knot_rank_grading.py, 12/12
+- Probe: computations/probes/gz_third_knot_rank_grading.py, 17/17
 - Audit: docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md §7
 
 ## NEXT STEP
@@ -136,6 +136,27 @@ geometric reading not. Nothing wired.
    boundary-parabolic representations, so no |P_K| for 6-crossing knots -- and it
    carries no Stokes matrices. It is a genuine fourth/fifth/sixth-knot resource on the
    perturbative leg, and it is proof that the vocabulary bias hid more than one paper.
-   Other unopened high-rankers worth a look: 1511.05628, 2412.04241, 1303.5278.
+   FOLLOWED UP on the top unopened hit: 1511.05628 = Dimofte-Garoufalidis, "Quantum
+   Modularity and Complex Chern-Simons Theory". §6 states trace fields as SIGNATURES
+   [r1,r2] for FIVE knots -- the exact input the Part-4 rule consumes:
+     4_1 x^2-x+1 [0,1] disc -3    | 5_2 x^3-x^2+1 [1,1] disc -23
+     6_1 x^4-2x^3+x^2+3x+1 [0,2] disc 257
+     (-2,3,-3)=(-2,3,9) x^5-x^4+x^3+2x^2-2x+1 [1,2] disc 23*733
+     (-2,3,7) same trace field as 5_2 -> [1,1]
+   (a) CONFIRMS Part 4's inputs for 4_1 and 5_2 from an independent source (Part 4 read
+       them off GZ prose; DG states them as types).
+   (b) FORCES PART 4's SILENT HYPOTHESIS INTO THE OPEN. The rule needs the signature of
+       A_K^red, NOT of the trace field F_K. They coincide at 4_1 and 5_2 -- so the
+       two-knot agreement settled nothing -- and (-2,3,7) is the counterexample: trace
+       field = 5_2's (3 embeddings), measured rank 6, because P_K picks up a second
+       Galois orbit over the totally real Q(eta).
+   (c) TWO CONDITIONAL PREDICTIONS, stated with their hypothesis: under A_K^red = F_K,
+       6_1 has r=4 / |P_K|=5 and (-2,3,9) has r=5 / |P_K|=6. Falsifiable, unverified.
+   (d) GUARDED NON-INFERENCE: DG Table 2's "Level" column (4_1 <=7, 6_1 <=3, ...) is the
+       CHERN-SIMONS level zeta^k=1, NOT GZ's level N. Reading it as the latter would
+       manufacture the fourth level>1 knot out of an unrelated quantity. THIRD instance
+       of this conflation trap in this arc.
+   Still unopened: 2412.04241 (Garoufalidis-Scholze-Wheeler-Zagier, "The Habiro Ring of
+   a Number Field" -- likely relevant to the corpus's Habiro-element work), 1303.5278.
 3. The H_Ad polynomial test is STILL open and still needs a genuine Stokes matrix for
    a third knot -- unchanged by this bean, and still not in the corpus.
