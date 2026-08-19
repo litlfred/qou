@@ -43,3 +43,33 @@ producer emits provenance at all.
 Do not drain `substantive` by re-running producers in an under-provisioned
 container. Measured cost: `binding_canonical.py` without `pyhecke_native` moves
 `tr_M_atom` 0.388 -> 0.575 (48%) with no crash and no warning.
+
+
+## 2026-08-19 — RETRACTION and the mechanism that replaced it
+
+Provisioned this container to try to unblock item 2 (`scipy` + `clarabel` from
+PyPI; `pyhecke-native` is not on PyPI but builds from `tools/pyhecke-native/`
+with maturin). Testing the env hypothesis falsified it.
+
+**Retracted:** "binding_canonical.py without pyhecke_native moves tr_M_atom
+0.388 -> 0.575, therefore environment." With `pyhecke_native 0.9.0` and every
+recorded package matched, the producer returns `0.57517233101788385191` --
+byte-identical to the no-native run and to what main carries. Environment was
+never the cause.
+
+**Actual mechanism:** import-cone drift. The producer is source-stable;
+`tr_m_atom_via_transfer.py`, which computes the quantity, is not. Added a
+one-hop import-cone gate; it absorbs all three surviving cases
+(`cosmetic_import_cone_drift` 3, `env_differs` 0, `strips_provenance` 0).
+
+**Unchanged:** `cosmetic = 0` of ~700. Better supported than before.
+
+**Item 2 is still blocked, but for a different reason.** The container is now
+adequately provisioned, so provisioning is no longer the blocker -- what remains
+is that triaging 257 `substantive` witnesses means *running* 257 producers,
+several of which are long-compute (the `rho_k_co_casimir_extended` entry in
+`qou-mnrd` records a 2-hour run that did not finish). That wants a time budget
+and a nightly, not an idle pass.
+
+**Do not** re-cite the environment example. Use
+`witness_import_cone_staleness_audit.py` for the import axis.
