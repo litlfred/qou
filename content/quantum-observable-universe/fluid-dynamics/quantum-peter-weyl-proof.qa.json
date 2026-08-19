@@ -1373,6 +1373,21 @@
         "reviewed_at": "2026-08-15T11:11:41.652Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read: no assert-by-denial constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:13.674Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No denial constructions; each step states what it uses positively."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1407,6 +1422,21 @@
         "reviewed_at": "2026-08-15T11:11:41.687Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read: no setup-then-reframe pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:13.765Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three labelled steps matching clauses (a), (b), (c); no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1441,6 +1471,21 @@
         "reviewed_at": "2026-08-15T11:11:41.724Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read: spaced-dash density low; none load-bearing"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:13.825Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One em-dash in 308 words, glossing 'The isomorphism is algebraic'."
       }
     ],
     "trap-triples": [
@@ -1475,6 +1520,21 @@
         "reviewed_at": "2026-08-15T11:11:41.760Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read: no reflex three-item lists"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:13.901Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'equivariance of d_q, Schur's lemma, and the Casimir computation' names the three ingredients actually used in Step 3."
       }
     ],
     "trap-closing-aphorism": [
@@ -1509,6 +1569,21 @@
         "reviewed_at": "2026-08-15T11:11:41.801Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read: no quotable-sounding closer"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:13.964Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on the dependency list for the eigenvalue identity, matching the same closing pattern in Steps 1 and 2."
       }
     ],
     "trap-meta-commentary": [
@@ -1544,6 +1619,23 @@
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "'This is the key step.' is standard proof signposting, not emphasis narration; kept",
         "notes": "pass-with-note: standard mathematical prose"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:14.047Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "Step 2 opened by announcing its own importance: 'This is the key step.' — the emphasis is narrated rather than placed, and the sentence carries no mathematical content.",
+        "notes": "FIXED (deletion, no meaning change): 'This is the key step.  We use the **Tannaka--Krein reconstruction**.' -> 'We use the **Tannaka--Krein reconstruction**.'"
       }
     ],
     "trap-thesis-restatement": [
@@ -1578,6 +1670,21 @@
         "reviewed_at": "2026-08-15T11:11:41.879Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read: no block-final restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:14.108Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "The per-step 'The argument uses ...' sentences are dependency notes in a consistent pattern, not closing restatements."
       }
     ],
     "trap-performed-warmth": [
@@ -1612,6 +1719,21 @@
         "reviewed_at": "2026-08-15T11:11:41.926Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read: institutional register throughout"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:14.170Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1646,6 +1768,22 @@
         "reviewed_at": "2026-08-15T11:11:41.967Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read: no unqualified maximum-strength claims"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:14.233Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No unqualified maxima.",
+        "notes": "Rigor note: Step 2 concludes 'a complete orthonormal system', but the orthogonality relation displayed in Step 1 carries the factor 1/tr_A(id_{V_j}) = 1/[2j+1]_q, so the system is orthogonal and normalisable rather than orthonormal as displayed."
       }
     ],
     "trap-nonspeakable": [
@@ -1680,6 +1818,21 @@
         "reviewed_at": "2026-08-15T11:11:42.010Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read: prose reads aloud cleanly"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:14.288Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Proof prose parses aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1702,5 +1855,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:39:14.288Z"
 }

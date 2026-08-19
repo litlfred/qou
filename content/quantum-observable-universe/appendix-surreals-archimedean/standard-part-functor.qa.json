@@ -1566,6 +1566,21 @@
         "reviewed_at": "2026-08-15T10:31:00.942Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a632a82cc70c",
+          "ts": "ebc4aec1446a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.512Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No denial constructions anywhere in the definition."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1585,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:31:00.942Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a632a82cc70c",
+          "ts": "ebc4aec1446a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.570Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Straight definitional exposition: finite/infinitesimal setup, definition, functorial extension, properties."
       }
     ],
     "trap-em-dash": [
@@ -1604,6 +1634,21 @@
         "reviewed_at": "2026-08-15T10:31:00.942Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 184 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a632a82cc70c",
+          "ts": "ebc4aec1446a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.630Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Zero em-dashes (the only hyphen is the line-broken word 'standard-part')."
       }
     ],
     "trap-triples": [
@@ -1623,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:31:00.942Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 184 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a632a82cc70c",
+          "ts": "ebc4aec1446a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.678Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Property list has four items, each a distinct structural property."
       }
     ],
     "trap-closing-aphorism": [
@@ -1642,6 +1702,21 @@
         "reviewed_at": "2026-08-15T10:31:00.942Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a632a82cc70c",
+          "ts": "ebc4aec1446a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.748Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on numbered property 4 with a cross-reference to conj:classical-limit-stpart."
       }
     ],
     "trap-meta-commentary": [
@@ -1661,6 +1736,21 @@
         "reviewed_at": "2026-08-15T10:31:00.942Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a632a82cc70c",
+          "ts": "ebc4aec1446a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.804Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis; 'Concretely, if ...' introduces a worked form, which is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1680,6 +1770,21 @@
         "reviewed_at": "2026-08-15T10:31:00.942Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a632a82cc70c",
+          "ts": "ebc4aec1446a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.872Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1699,6 +1804,21 @@
         "reviewed_at": "2026-08-15T10:31:00.942Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a632a82cc70c",
+          "ts": "ebc4aec1446a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.932Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1718,6 +1838,21 @@
         "reviewed_at": "2026-08-15T10:31:00.942Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a632a82cc70c",
+          "ts": "ebc4aec1446a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:11.985Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No unqualified maxima; 'unique real r' is a genuine uniqueness claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1737,6 +1872,21 @@
         "reviewed_at": "2026-08-15T10:31:00.942Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a632a82cc70c",
+          "ts": "ebc4aec1446a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:12.057Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Opening sentence is noun-heavy ('realizes the quotient ... and underlies the classical limit ...; its construction begins with ...') but parses aloud in one pass."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1760,5 +1910,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:25:12.057Z"
 }
