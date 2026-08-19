@@ -50,3 +50,9 @@ INFRA TO ADD (in order):
     h*sum_{j=1}^n f(jh) - int_0^{nh} f = (h/2)(f(nh) - f(0)) + O(h^2 * modulus).
  3. Apply to phi; combine with the exact singular telescope + Stirling to get
     L4-1's sharp statement.
+
+STEP 1 DONE (SincDeriv.lean, sorry-free): the Mathlib gap is closed —
+hasDerivAt_sinc_zero (sinc'(0)=0, via slope + Real.sin_bound),
+hasDerivAt_sinc (quotient rule off 0), differentiable_sinc. Stated in
+Mathlib style, no QOU specifics, upstreamable. Next: step 2, the first
+Euler-Maclaurin correction for C^1 f on a uniform grid.
