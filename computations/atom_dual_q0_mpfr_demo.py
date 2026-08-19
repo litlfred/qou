@@ -26,9 +26,25 @@ from __future__ import annotations
 
 import json
 import subprocess
+import sys
 from pathlib import Path
 
-from pyhecke import gram
+# `pyhecke` lives outside `computations/`, so `_path_bridge` (which only wires
+# the computations/ cluster dirs) does not reach it. Same TOOLS idiom the other
+# pyhecke consumers in this directory use — without it this module raised
+# ModuleNotFoundError on import, which is why it was the one mp-path consumer
+# that could not be re-run during the convention-D migration (bean qou-cds2).
+_TOOLS = Path(__file__).resolve().parent.parent / "tools" / "pyhecke" / "python"
+sys.path.insert(0, str(_TOOLS))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+# `_path_bridge` must come BEFORE pyhecke: `gram.py` resolves the substrate
+# constants as `q_parameter` first (it lives in computations/substrate/, which
+# only the bridge puts on sys.path) and falls back to the `qou_substrate`
+# package otherwise — and that package is not installed here, so without the
+# bridge the fallback raises too.
+
+from pyhecke import gram  # noqa: E402
 
 
 def _find_clarabel_bin() -> Path | None:
@@ -78,31 +94,48 @@ def main():
     print("        pipeline/precision demonstration, not a new result.")
 
     # Witness (auditOnly — pipeline demo, no new claim).
-    import sys
-    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    #
+    # This block used to be a wall of `hasattr` guards inside a bare
+    # `except Exception`, so every failure printed "(witness emission
+    # skipped: …)" and the module exited 0. It had THREE defects at once and
+    # reported none of them (bean qou-cds2):
+    #
+    #   1. `wb.write(name)` does not exist — the API is `wb.save()`, with the
+    #      name given to the constructor. Straight API drift.
+    #   2. `float(res["duality_gap"])` raises when the solver did not run,
+    #      because every field is None then.
+    #   3. the `hasattr` guards meant a mistyped method name would silently
+    #      no-op rather than fail — the same "cannot fail loudly" shape as
+    #      `mp.lu_solve` on the singular D Gram.
+    #
+    # None of it surfaced because the module could not even be imported
+    # (`from pyhecke import gram` with no sys.path wiring), so nobody ran it.
     sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
-    try:
-        from witness_base import WitnessBuilder  # type: ignore
-        wb = WitnessBuilder("atom-dual-q0-mpfr-demo", engine="rust")
-        if hasattr(wb, "set_description"):
-            wb.set_description(
-                "End-to-end no-float64 LP dual on the H_3(q) atomic Gram: "
-                "50-dps mpmath Gram/trace strings -> clarabel-MPFR. Consumer "
-                "of gram_matrix_mp. Degenerate H_3 dual (y0~0); pipeline demo.")
-        if hasattr(wb, "set_audit_only"):
-            wb.set_audit_only("docs/audits/2026-06-16-gram-q-approximation-audit.md")
-        if hasattr(wb, "add_data"):
-            wb.add_data("dual", res)
-        if hasattr(wb, "add_assertion"):
-            wb.add_assertion("strong_duality_gap_small",
-                             computed=abs(float(res.get("duality_gap", 1))),
-                             expected=0.0, tolerance=1e-6,
-                             source="clarabel-MPFR on 50-dps string Gram")
-        out_path = wb.write("atom-dual-q0-mpfr-demo")
-        print(f"\nWitness: {out_path}")
-    except Exception as e:  # noqa: BLE001
-        print(f"\n(witness emission skipped: {e})")
+    from witness_base import WitnessBuilder  # noqa: E402
+
+    if res.get("duality_gap") is None:
+        print("\n  ⛔ NO WITNESS EMITTED — the clarabel-MPFR binary was not found,")
+        print("     so every LP field above is None. Build")
+        print("     tools/hecke-engine/target/release/clarabel-operator-selection-lp")
+        print("     and re-run. Emitting a witness of Nones would record an")
+        print("     absent solver as a computed result.")
+        return 2
+
+    wb = WitnessBuilder("atom-dual-q0-mpfr-demo", engine="rust")
+    wb.set_description(
+        "End-to-end no-float64 LP dual on the H_3(q) atomic Gram: "
+        "50-dps mpmath Gram/trace strings -> clarabel-MPFR. Consumer "
+        "of gram_matrix_mp (convention D since 2026-08-19). Degenerate "
+        "H_3 dual (y0~0); pipeline demo.")
+    wb.set_audit_only("docs/audits/2026-06-16-gram-q-approximation-audit.md")
+    wb.add_data("dual", res)
+    wb.add_assertion("strong_duality_gap_small",
+                     computed=abs(float(res["duality_gap"])),
+                     expected=0.0, tolerance=1e-6,
+                     source="clarabel-MPFR on 50-dps string Gram")
+    print(f"\nWitness: {wb.save()}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
