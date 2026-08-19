@@ -1,0 +1,100 @@
+{
+  "target": "categorical per-partition binding energy B(K) = m_e * |sum_lambda y_lambda chi^lambda(beta_K) sgn(w_0^{S_{lambda'}}) f^lambda|, evaluated on the deuteron",
+  "target_value": "B(D) = 0.380132118905 MeV against AME 2.22456620000 MeV -- a -82.9121% miss",
+  "target_tolerance": 0.0,
+  "content_block": "prop:categorical-mass-markov",
+  "description": "Derivation chain for the categorical per-lambda binding formula on the deuteron (PR #1307), covering binding-energy-categorical-deuteron.witness.json and deuteron-binding-interface-closure.witness.json -- 2 witnesses. Trust profile: one AXIOM entrypoint (Hecke energy), TWO LEAN-PROVEN factors (the Springer sign and the hook-length dimension), two DERIVED steps, one SCRIPT_CITED frontier.\n\nTHIS CHAIN RECORDS A RETRACTION. The formula does NOT close the deuteron: it undershoots AME by 82.9%. The deficit ratio C_knot = 5.852086 that appears in the witnesses is FITTED to AME, not derived, and is labelled as such at every step below. The earlier 'zero free parameters / the interface IS the geometric layer' claim was retracted on 2026-05-29 and the chain must not re-assert it.",
+  "steps": [
+    {
+      "name": "Hecke relation and the balanced q-integer",
+      "operation": "The Iwahori-Hecke algebra H_n(q) is the braid-group algebra of B_n modulo (sigma_i - q)(sigma_i + q^{-1}) = 0; the eigenvalue separation (q - q^{-1}) is the per-crossing Hecke energy scale, the AXIOM entrypoint.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "hecke_relation",
+      "output_value": "sigma_i^2 = (q - q^{-1}) sigma_i + 1",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Wenzl weight y_lambda and Hoefsmit character chi^lambda(beta_K)",
+      "operation": "Wedderburn-decompose H_n(q) over lambda |- n; take the Wenzl Markov weight y_lambda and the Hoefsmit character of the FULL atomic braid word (include_inter=True, i.e. inter-nucleon crossings present).",
+      "inputs": [
+        "hecke_relation",
+        "Wedderburn",
+        "Schur"
+      ],
+      "output_name": "y_and_chi",
+      "output_value": "{ y_lambda, chi^lambda(beta_K) : lambda |- 3A }",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "The chi^lambda leg is derivation-backed upstream by chi-at-q0-averaged-atomic.derivation.json (same convention, include_inter=True)."
+    },
+    {
+      "name": "Springer sign sgn(w_0^{S_{lambda'}}) = (-1)^{n(lambda)} -- LEAN-PROVED",
+      "operation": "The longest-element sign on the Young subgroup of the conjugate partition equals (-1)^{n(lambda)}, where n(lambda) is the jet-order valuation. This is the chirality sign of the Wedderburn block and it is proved in Lean, not posited.",
+      "inputs": [
+        "y_and_chi"
+      ],
+      "output_name": "springer_sign",
+      "output_value": "sgn(w_0^{S_{lambda'}}) = (-1)^{n(lambda)}",
+      "trust_basis": "mathlib-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional",
+      "citation": "kassel1995",
+      "notes": "The per-partition Delta_lambda VALUE is proved sorry-free and general-n (PR #4580): Delta_lambda = (-1)^{n(lambda)} dim V_lambda -- sign from the jet-order parity, magnitude from the Wedderburn dimension. What remains open is the many-body binding MAGNITUDE, which is exactly what this chain's frontier step fails to reach."
+    },
+    {
+      "name": "Hook-length dimension f^lambda -- LEAN-PROVED",
+      "operation": "Take f^lambda = n! / prod_{x in lambda} h_x, the hook-length formula for the dimension of the Specht module. Proved in Lean.",
+      "inputs": [
+        "springer_sign"
+      ],
+      "output_name": "hook_dim",
+      "output_value": "f^lambda = n! / prod_x h_x",
+      "trust_basis": "mathlib-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "lean_ref": "qou:QOU.Mathlib.dimSYT_eq_dimHLF",
+      "notes": "Frame-Robinson-Thrall, proved: dimSYT p = dimHLF(p.parts.sort), i.e. #SYT(lambda) = n!/prod_c h_c. The declaration sits in `namespace QOU.Mathlib` in QOU/Mathlib/IdentityIHLFBridge.lean, so its full name is QOU.Mathlib.dimSYT_eq_dimHLF -- other files cite it as `IdentityIHLFBridge.dimSYT_eq_dimHLF`, which is the MODULE path, not the namespace, and would be the wrong lean_ref. Ref located in the tree rather than assumed: the producer's docstring cites a commit sha, not a declaration name, and inventing one to satisfy the validator would be laundering."
+    },
+    {
+      "name": "Assemble the per-partition sum and scale by m_e",
+      "operation": "Form S := sum_lambda y_lambda chi^lambda(beta_K) sgn(w_0^{S_{lambda'}}) f^lambda and set B(K) := m_e |S|. CAL-1 (m_e) supplies the MeV unit; no other scale enters.",
+      "inputs": [
+        "y_and_chi",
+        "springer_sign",
+        "hook_dim",
+        "Frobenius.Pairing"
+      ],
+      "output_name": "B_categorical",
+      "output_value": "B(K) = m_e |sum_lambda y_lambda chi^lambda sgn f^lambda|",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:three-calibration-discipline",
+      "notes": "Per the 2026-08-11 absolute-mass excision the MeV figure is an m_e-scaled realization of a dimensionless ratio, not an absolute-mass prediction. Binding is a difference, so the scale does not cancel and CAL-1 is genuinely load-bearing here."
+    },
+    {
+      "name": "Numerical evaluation on the deuteron -- the formula MISSES by 82.9%",
+      "operation": "Evaluate on the deuteron. The interface-inclusive sum is S = -0.7439 (against 1.6601 without the inter-nucleon crossings), giving B(D) = 0.380132118905 MeV against AME 2.22456620000 MeV: an error of -82.9121%.",
+      "inputs": [
+        "B_categorical"
+      ],
+      "output_name": "deuteron_binding_miss",
+      "output_value": "B(D)_pred = 0.380132118905 MeV, B(D)_AME = 2.22456620000 MeV, err = -82.9121%",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:three-calibration-discipline",
+      "notes": "script: computations/binding_energy_categorical_deuteron.py -- the frontier step.\n\nC_knot = 5.852086 IS A FIT, NOT A DERIVATION. It is defined as the deficit ratio B_AME / (m_e |S|) -- i.e. it is obtained by INVERTING the experimental value the formula was supposed to predict. It must never be wired to production as a derived geometric layer, and the witnesses label it `C_knot_fitted_deficit` for exactly that reason.\n\nRETRACTED 2026-05-29, and the chain repeats the retraction rather than quietly dropping it: the earlier claim that this closes with 'zero free parameters' because 'the interface IS the geometric layer' is FALSE. The chi^lambda used here is ALREADY interface-inclusive (include_inter=True) and still undershoots by 82.9%, so the interface operator cannot be the missing layer -- it is already counted. What the interface does do is flip the sign of the dominant (5,1) partition and shrink the magnitude by 0.45x; that is a real structural finding and it is not a closure.\n\nSCOPE-(a): this is a magnitude failure of THIS per-lambda functional, not an exclusion of the per-lambda route. Per AGENTS.md the missing piece is a separate, super-pairwise ADDITIVE extensive object -- no per-block weight can turn an intensive quantity into an extensive one -- and six closure ansaetze have already failed on this deuteron for that structural reason. Do not propose a seventh fit-based ansatz for the magnitude."
+    }
+  ]
+}
