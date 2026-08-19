@@ -163,6 +163,7 @@ def str_at_true_precision(value: Any) -> str:
     # point is to detect a value that carries no more than 53 bits and
     # render it short. Measuring the nearest double is the function.
     if isinstance(value, mpf) and value == mpf(float(value)):
+        # float64-intentional: measuring the nearest double IS this function.
         return fmt(float(value))   # float branch of fmt == natural repr
     return str(value)
 
