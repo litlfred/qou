@@ -9,7 +9,7 @@ idle-backlog policy caps witness refreshes at 3 per pass and tells the agent to
 worked case `canonical-ordering-dof`, which drifted on +21 lines that are *all*
 comment).
 
-At the current backlog — 670 self-stale of 2898 — "diff it first" is advice no
+At the current backlog — 700 self-stale of 2985 — "diff it first" is advice no
 one can act on witness-by-witness. This script does it for the whole set at
 once, so an idle pass can spend its budget on the drifts that can actually move
 a number.
@@ -52,11 +52,24 @@ are what drift.
   * `cosmetic_strips_provenance` — **do not refresh.** Fix the producer to emit
     provenance first; refreshing destroys the audit trail.
 
-**The measured result on this corpus is `cosmetic = 0`.** Of 681 self-stale
+**The measured result on this corpus is `cosmetic = 0`.** Of 700 self-stale
 witnesses, not one is safe to refresh by the naive "re-run the producer" advice.
 That is the finding, not a limitation of the script: the idle-pass witness
 budget has nothing to spend itself on here, and an agent that spends it anyway
 is doing damage rather than maintenance.
+
+**It is not a snapshot.** Re-measured three times across 1564 commits of main
+(2026-08-11 and twice on 2026-08-19, corpus 2898 -> 2985 witnesses), `cosmetic`
+came back 0 every time, and the class shape barely moved:
+
+    2026-08-11   substantive 242   rewritten 329   unresolvable 107   cosmetic 0
+    2026-08-19   substantive 239   rewritten 329   unresolvable 106   cosmetic 0
+    2026-08-19   substantive 256   rewritten 338   unresolvable 103   cosmetic 0
+
+So this is structural, not a bad week. Meanwhile main spent 45 `chore(witness)`
+commits over those same 8 days, 13 of them titled "refresh provenance sha after
+rebase" — hand-patching the `commitSha` of the `rewritten` class, which is
+nearly half the backlog and which no branch-side edit can durably fix.
 
 Three honest residual classes, reported separately rather than folded in:
 
