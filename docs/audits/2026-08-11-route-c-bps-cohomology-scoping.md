@@ -376,3 +376,24 @@ Nothing is wired.
 Artifacts: `QOU.QBeta.GZThirdKnotRankGrading` (core `Int`, sorry-free, no
 `sorryAx`), `computations/probes/gz_third_knot_rank_grading.py` (12/12). Bean
 `qou-gz37`.
+
+### Re-sweep executed — the vocabulary bias hid more than one paper
+
+The lesson above was tested rather than asserted. Re-running the 371-PDF sweep on
+**structural** vocabulary (knot names, `pretzel`, `weight space`, `Galois orbit`,
+`trace field`, `quantum modularity`, `boundary-parabolic`, `level of a knot`,
+`A-polynomial`) instead of `Stokes` matches **94** files and ranks them very
+differently. It surfaced a **second** confirmed miss:
+
+> `uploads/ki6c.pdf` — Ohtsuki–Yokota, *On the asymptotic expansions of the
+> Kashaev invariant of the knots with 6 crossings* (`6₁`, `6₂`, `6₃`, with the
+> volume conjecture proved for them). It contains the string "Stokes" **zero**
+> times, so it was structurally invisible to the original sweep.
+
+**Honest yield, so this is not oversold.** `ki6c` does **not** close the open
+items. It treats the perturbative side (asymptotic expansions of the Kashaev
+invariant) via the **single geometric critical point**, not the full set of
+boundary-parabolic representations — so it yields no `|P_K|` for the 6-crossing
+knots — and it carries no Stokes matrices. What it does establish is that the
+vocabulary bias cost this arc *at least two* papers, from one cause. Other
+unopened high-rankers: `1511.05628`, `2412.04241`, `1303.5278`.
