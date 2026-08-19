@@ -4,12 +4,12 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 313,
-      "proton-pin": 805,
+      "STALE": 312,
+      "proton-pin": 807,
       "canonical": 607,
       "unknown": 25
     },
-    "stale_total": 313,
+    "stale_total": 312,
     "new_stale": 0,
     "rows": [
       {
@@ -1800,9 +1800,9 @@
       {
         "file": "computations/atomic-mass-via-rho-k.witness.json",
         "field": "parameters.q0",
-        "value": "1.1099785955573347198997632204832250266562084087802",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
         "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/atomic-mass-via-rho-k.witness.json",
@@ -8016,9 +8016,9 @@
       {
         "file": "computations/multi-level-jet-sum.witness.json",
         "field": "parameters.q0",
-        "value": "1.1099785955541805",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.0028416943465287684
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
       },
       {
         "file": "computations/n-sym-numerical-anchor.witness.json",
@@ -11099,6 +11099,13 @@
         "value": "1.1099785955573347198997632204832250266562084087802",
         "class": "canonical",
         "ppb_vs_canonical": 4.172458118041393e-41
+      },
+      {
+        "file": "computations/ribbon-framing-ladder-scale.witness.json",
+        "field": "parameters.q_0",
+        "value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/rt-binomial-trace-evaluation-probe.witness.json",

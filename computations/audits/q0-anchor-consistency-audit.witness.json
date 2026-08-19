@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T07:21:40.138637+00:00",
-  "commitSha": "4e867031980a1ce6b9fac830796126266fa331f8",
+  "computedAt": "2026-08-19T13:06:00.426909+00:00",
+  "commitSha": "946794f55c4b1d3df052e569fbe73245a992f4a1",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "33ccaac86640",
@@ -39,8 +39,8 @@
       "Q0_OK": 653,
       "Q0_AMBIGUOUS": 15,
       "Q0_INDEPENDENT": 8,
-      "Q0_INDEPENDENT_NO_REASON": 1,
-      "Q0_ANCHOR_MISSING": 1893,
+      "Q0_INDEPENDENT_NO_REASON": 2,
+      "Q0_ANCHOR_MISSING": 1903,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 73,
       "Q0_PARSE_ERROR": 1,
@@ -2414,6 +2414,10 @@
           "detail": ""
         },
         {
+          "witness": "hecke-block-transport-shape.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "hecke-conjugation-duality-sign.witness.json",
           "detail": ""
         },
@@ -2422,7 +2426,19 @@
           "detail": ""
         },
         {
+          "witness": "hecke-corner-le-regime.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "hecke-gs-confluence-n4.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-gs-confluence-range.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-quad-pair-shape.witness.json",
           "detail": ""
         },
         {
@@ -4042,6 +4058,10 @@
           "detail": ""
         },
         {
+          "witness": "gswz_epsm_cgz_lemma24a_rescope.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gswz_epsm_descent_m2.witness.json",
           "detail": ""
         },
@@ -4054,11 +4074,19 @@
           "detail": ""
         },
         {
+          "witness": "gswz_epsm_field_bracketing.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gswz_epsm_global_symbols.witness.json",
           "detail": ""
         },
         {
           "witness": "gswz_epsm_kummer_level.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_m3_one_two_relation_closure.witness.json",
           "detail": ""
         },
         {
@@ -5358,6 +5386,10 @@
           "detail": ""
         },
         {
+          "witness": "apoly-census-ldegree-certification.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "bsym-residual-shell-structure.witness.json",
           "detail": ""
         },
@@ -5447,6 +5479,10 @@
         },
         {
           "witness": "ck-qgevrey-slope.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "dt-crossknot-connection-count-certified.witness.json",
           "detail": ""
         },
         {
@@ -6963,6 +6999,10 @@
         },
         {
           "witness": "rho-w-crystal-vertex-trace.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "ribbon-framing-ladder-scale.witness.json",
           "detail": ""
         },
         {
@@ -10607,6 +10647,10 @@
       "Q0_INDEPENDENT_NO_REASON": [
         {
           "witness": "markov-identity-symbolic.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
+        },
+        {
+          "witness": "qbeta-d-frame-markov-weights.witness.json",
           "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
         }
       ],

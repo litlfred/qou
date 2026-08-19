@@ -223,7 +223,12 @@ def main() -> int:
                          "duality_gap": quo.duality_gap},
             "y0_star_equals_min_contrib": bool(
                 abs(y0 - y0_predicted) <= 1e-9 * max(1.0, abs(y0_predicted))),
+            # float64-intentional: these are LP DUAL variables straight from
+            # the solver, which works in double precision. There is no exact
+            # route to a number the solver only ever computed as a double.
+            # float64-intentional: LP dual, solver works in double precision.
             "min_live_contrib": fmt(y0_predicted),
+            # float64-intentional: LP dual, solver works in double precision.
             "chirality_dual_sum": fmt(float(chir)),
             "a_K_via_lp_dual_quotient": fmt(aK) if aK is not None else None,
             "a_K_closed": fmt(aKc),

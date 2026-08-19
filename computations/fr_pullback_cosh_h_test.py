@@ -204,6 +204,12 @@ def compute_B_with_variant(atom, variant):
     B_MeV = B_dim
     B_ame = B_AME[atom]
     return {
+        # B_MeV traces to `q_f64 = float(Q0)`, which feeds
+        # pyhecke_native.chi_lambda_braid -- a Rust binding that takes a double
+        # BY DESIGN (see chi_lambda_braid_via_rust above, which casts
+        # explicitly). The character is computed in f64 by the kernel, so there
+        # is no exact route to widen here.
+        # float64-intentional: the Rust kernel is the limiting arithmetic.
         "B_MeV": fmt(B_MeV), "B_AME_MeV": fmt(B_ame),
         "ratio_pred_over_AME": float(B_MeV / B_ame),
     }
