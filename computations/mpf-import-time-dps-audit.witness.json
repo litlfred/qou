@@ -3,13 +3,13 @@
   "name": "mpf-import-time-dps-audit",
   "description": "Files building an mpf constant at module scope while mp.dps is still mpmath's default 15. String-sourcing is necessary but not sufficient \u2014 the timing matters too. Ratchet only; drain owner is bean qou-j6gb.",
   "data": {
-    "files_with_findings": 22,
+    "files_with_findings": 14,
     "literal_findings": 0,
-    "expr_findings": 40,
+    "expr_findings": 28,
     "baseline_files": 91,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 75,
+    "drained_files": 83,
     "unparseable_files": 0
   }
 }

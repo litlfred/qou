@@ -49,11 +49,29 @@ CODATA = mpf("1.29333236") / ((mpf("938.27208816") + mpf("939.56542194")) / 2)
 
 
 def _muon_q0() -> "mpf":
+    """The documented muon anchor, imported — never retyped.
+
+    The fallback here was `mpf("1.1099785955541810")` — a hand-typed copy of the
+    value `q_muon_at()` derives, correct when written and with no way to stay
+    correct. A duplicated constant in an `except` branch is the worst kind: it
+    is silent, it fires only when the import is unavailable, and the substrate
+    derives its value from Vol(4_1) and m_mu/m_e, so any refinement of either
+    silently strands the copy. That has already happened once in this corpus,
+    to the hand-typed `Q_MUON` constants (bean qou-khac).
+
+    Raising beats guessing. If the substrate is not importable, this probe cannot
+    know the anchor, and saying so is more useful than quietly answering with a
+    pin that was retired.
+    """
     try:
         from qou_substrate.constants import q_muon_at
         return mpf(str(q_muon_at()))
-    except Exception:
-        return mpf("1.1099785955541810")
+    except Exception as exc:  # noqa: BLE001 — re-raised with the reason
+        raise RuntimeError(
+            "muon q0 unavailable: qou_substrate.constants.q_muon_at could not be "
+            "imported, and this probe will not substitute a hand-typed pin "
+            "(qou-khac). Put tools/qou-substrate/python on PYTHONPATH."
+        ) from exc
 
 
 def _qint(n: int, q):

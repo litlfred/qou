@@ -1417,17 +1417,39 @@ Do not regress either.
 >
 >   **A clean detector run is NOT evidence the C surface is clear.**
 >   [`scripts/convention-c-producer-audit.py`](scripts/convention-c-producer-audit.py)
->   reports **0 actionable C producers** (3 blocked-by-design sites in
->   `tools/pyhecke`, 9 labelled comparisons). That count is real but
->   **narrow**: it keys on *assignment targets*, so a convention-C value
->   **returned from a function** is structurally invisible to it. Measured
->   2026-08-16 — **7 files** return `1/(√q + 1/√q)`, which is `√q/(q+1) = z_C`
->   *exactly* (`0.49932…` against D's `0.61268…`). PR #5124 catalogues five
->   such detector-blind spellings and retracts the earlier "0 actionable"
->   reading outright. So: **treat the remaining C surface as UNMEASURED
->   rather than clear — and do not launch a corpus-wide sweep off either
->   number.** R1 settles which convention is canonical; it does not tell you
->   how much code still disagrees.
+>   once reported **0 actionable C producers**. That count was real but
+>   **narrow**: it keyed on *assignment targets*, so a convention-C value
+>   **returned from a function** was structurally invisible to it. Measured on
+>   `main` 2026-08-16 — **7 files** returned `1/(√q + 1/√q)`, which is
+>   `√q/(q+1) = z_C` *exactly* (`0.49932…` against D's `0.61268…`).
+>
+>   **Status 2026-08-16.** The detector now scans return forms, and those seven
+>   are migrated, so *that* spelling is closed: the only return-form C site left
+>   in the tree is `pyhecke/gram.py:634` (`z_mp`), which is registered and
+>   R10-waived. **The posture does not change.** Closing one shape does not
+>   close the class —
+>   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
+>   catalogues **thirteen** distinct detector-blind spellings, four of which were
+>   found *by* detectors written to catch the previous blind spot. So: **treat
+>   the remaining C surface as UNMEASURED rather than clear — and do not launch
+>   a corpus-wide sweep off any of these numbers.** R1 settles which convention
+>   is canonical; it does not tell you how much code still disagrees.
+>
+>   **The counter-move, when the result is exact and symbolic: test the ANSWER,
+>   not the source.** Every detector above keys on how the convention was
+>   *written*; the algebraic form of the result keys on what it *is*. The Markov
+>   peel's deuteron denominator factors as `192·q²³·(q²+1)³` — one `(q²+1)` per
+>   peel, because `z = q³/(q²+1)`. Convention C leaves half-integer powers and
+>   cannot produce it, so *"`(q²+1)` divides the denominator"* is a complete
+>   convention test needing no source, no `z` grep and no anchor
+>   (`computations/markov/peel_anchor_identification_probe.py`, #5190). A value
+>   cannot be stale, mislabelled, re-spelled, or inherited from a stale record
+>   and still factor correctly.
+>
+>   Two live examples of why the count is not the answer: `pyhecke/atom.py:691`
+>   binds a C `z_mark` consumed at `:713`, in a module no waiver covers; and a
+>   *declared* site is not a fixed one — the audit's `DECLARED C in
+>   evaluators.z, R10-waived` bucket stays **actionable** by design.
 > - **R2 — proton pin canonical.** Reaffirms the 2026-08-07 directive
 >   immediately below; nothing in that directive changes. The *ideal CAL-2
 >   definition* (`𝔇_β`, proxy `m_μ/m_e`) is untouched — R2 governs which pin

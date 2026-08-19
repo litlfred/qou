@@ -37,7 +37,21 @@
       "lean": null
     },
     "rule": "Any tau / tr_M value quoted below 0.1 % precision, and any cross-method comparison of trace values, must name its convention id from this registry with the script or Lean decl cited. Convention-silent trace values are not comparable.",
-    "supersedes": "docs/audits/2026-06-09-binding-trace-convention-split.md (the de-facto registry; retained as the historical record)"
+    "supersedes": "docs/audits/2026-06-09-binding-trace-convention-split.md (the de-facto registry; retained as the historical record)",
+    "owner_rulings": [
+      {
+        "date": "2026-08-09",
+        "ruling": "excise convention C",
+        "effect": "convention D is the trace convention; three of four channels went `agreed` on D."
+      },
+      {
+        "date": "2026-08-15",
+        "ruling": "R1 'convention D is convention. excise convention C.' / R2 'similarly, use proton pin and color wighting' (sic)",
+        "audit": "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md",
+        "milestone_bean": "qou-cdx1",
+        "effect": "R1 re-affirms 2026-08-09 and closes the two places C survived by exception: the qbeta-decay channel (disputed -> agreed-migration-pending, above) and the one owner_decision_required in blocked_migrations (see resolved_migrations -- already resolved in code before the ruling landed). R2 makes the proton pin canonical; it does NOT on its own wording authorise the bulk muon->proton witness sweep (870 witnesses, bean qou-cds3/qou-1c4y), which still needs scoped sign-off. R3 makes colour weighting canonical."
+      }
+    ]
   },
   "conventions": [
     {
@@ -94,7 +108,7 @@
       "implementations": [
         "computations/schur_principal_mpmath.py::_wenzl_constants_convention_C_HISTORICAL",
         "computations/schur_principal_mpmath.py::y_lambda_at_q0_mpmath_convention_C_HISTORICAL",
-        "tools/pyhecke/python/pyhecke/gram.py::z  (BLOCKED, not historical -- see blocked_migrations)"
+        "tools/pyhecke/python/pyhecke/gram.py::z  (MIGRATED to D on 2026-08-15 -- see resolved_migrations; was the one blocked site)"
       ],
       "lean": "QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation.trC_borromean_derived",
       "forcing_status": "pinned-by-definition",
@@ -164,16 +178,16 @@
       "id": "mass",
       "description": "absolute nucleon / atom mass via the muon-anchored Hecke energy",
       "definitional_convention": "D",
-      "definitional_source": "OWNER RULING 2026-08-09: convention C excised. The forcing is docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md \u2014 lem:feynman-eigenbasis-decomposition already writes the row cap ell(lambda) <= 2 into the mass channel's own decomposition (V = the fundamental of SU_q(2), summand count floor(n/2)+1), so y_(1^3) = 0 is a restatement of what the mass chapter uses, not an added premise. Feeding that into QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero (sorry-free) yields D uniquely. Superseded: prop:categorical-mass-markov + rem:markov-axioms-primitive, which SELECTED C \u2014 rem:markov-axioms-primitive says so in its own words, 'a stipulation of this definition, not a consequence of it'.",
+      "definitional_source": "OWNER RULING 2026-08-09: convention C excised. The forcing is docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md — lem:feynman-eigenbasis-decomposition already writes the row cap ell(lambda) <= 2 into the mass channel's own decomposition (V = the fundamental of SU_q(2), summand count floor(n/2)+1), so y_(1^3) = 0 is a restatement of what the mass chapter uses, not an added premise. Feeding that into QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero (sorry-free) yields D uniquely. Superseded: prop:categorical-mass-markov + rem:markov-axioms-primitive, which SELECTED C — rem:markov-axioms-primitive says so in its own words, 'a stipulation of this definition, not a consequence of it'.",
       "production_convention": "D",
       "production_source": "computations/m_p_substrate_identity_50dps.py::trM_borromean -> F_Bor -> m-p-substrate-identity-50dps.witness.json -> computations/canonical_mass.py",
       "status": "agreed",
       "open_item": null,
       "resolution": {
-        "ruling": "owner, 2026-08-09 \u2014 excise convention C",
+        "ruling": "owner, 2026-08-09 — excise convention C",
         "numerical_impact_on_this_channel": "NONE. Production was already D; only the definitional side moved. m_p unchanged.",
         "forcing": "docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md",
-        "not_decided_by": "CODATA match \u2014 the forcing is the fibre dimension (row cap), which is independent of any measured value."
+        "not_decided_by": "CODATA match — the forcing is the fibre dimension (row cap), which is independent of any measured value."
       }
     },
     {
@@ -186,11 +200,11 @@
       "status": "agreed",
       "open_item": null,
       "resolution": {
-        "ruling": "owner, 2026-08-09 \u2014 excise convention C",
+        "ruling": "owner, 2026-08-09 — excise convention C",
         "numerical_impact": "REAL and it is NOT an improvement on aggregate: mean |err| over {2H,3H,3He,4He,6Li,7Li} moves 37.39% -> 43.85%. 2H improves +74.85% -> +27.36% and the 3H/3He mirror split 2.2708 -> 1.7471 MeV (nature 0.7638); everything heavier under-binds worse.",
         "structural_impact": "the 2H impossibility disappears. Under C, AME(2H)=2.2246 sits 30.4% BELOW the whole admissible band [2.9072, 5.1780]; under D the band is [2.0507, 3.7978] and AME is inside it, at d = -0.1192*h.",
         "mass_channel_unaffected": "verified: m_p = 938.27208943 and m_n = 939.56542276 both unchanged, because trM_borromean uses the Lean closed form (4+h^2-3h^4-h^6)/(h^2+4) and never calls y_lambda_at.",
-        "not_decided_by": "experimental match \u2014 see numerical_impact, D is worse on aggregate"
+        "not_decided_by": "experimental match — see numerical_impact, D is worse on aggregate"
       }
     },
     {
@@ -206,15 +220,31 @@
     {
       "id": "qbeta-decay",
       "description": "the neutron beta-decay Q-value ladder: the c_k precision ladder (alpha = (z-1)h/2 rung phase), the Delta tau_M per-block chi analysis, and the KC13/KC21/KC22 certificates built on the same z",
-      "definitional_convention": null,
-      "definitional_source": "CONTRADICTORY, hence null (registered 2026-08-15, bean qou-b3nk). The decay blocks write the excised-C value z = 1/(q^{1/2}+q^{-1/2}) in their own prose (content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix-proof.md line 73; mass-theory/hoefsmit-V21-cos-symmetrization.md line 22) while NAMING it 'the Markov--Jones parameter (Hecke--Skein normalization)' -- and the corpus's definition of that referent (braids-and-knots/markov-axioms-primitive.md line 5) has read z = q^3/(q^2+1) (D) since the 2026-08-09 owner ruling. Written value and named referent disagree; no decay-specific derivation of either exists (no decay analogue of lem:feynman-eigenbasis-decomposition -- corpus-grep clean, see the audit).",
+      "definitional_convention": "D",
+      "definitional_source": "SETTLED 2026-08-15 by owner ruling ('convention D is convention. excise convention C'), recorded in docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md. Supersedes the CONTRADICTORY/null registration of 2026-08-15 (bean qou-b3nk), which is superseded AS A STATUS, NOT AS ANALYSIS: its finding that neither convention was DERIVED for this channel stands, and its Lean is load-bearing below. The contradiction it registered -- decay prose writing z = 1/(q^{1/2}+q^{-1/2}) while NAMING the Markov--Jones parameter, whose corpus definition has read z = q^3/(q^2+1) since 2026-08-09 -- is resolved in favour of the named referent.",
       "production_convention": "C",
       "production_source": "computations/qbeta/qbeta_utils.py::markov_parameter + substrate_ladder_quantities (alpha = (z-1)h/2 at z_C feeds every committed c_k extraction); computations/qbeta/qbeta_ck_sseries_exact_rational.py:20,248 (KC21/KC22 D(u-tilde)-ladder core -- 'D' here is KC21's bar-even Q(sqrt3) ladder function D, NOT convention D; those lines evaluate z = sqrt(q)/(q+1), i.e. z_C); content/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean:59-79 (KC13 bar-even z)",
-      "status": "disputed",
+      "status": "agreed-migration-pending",
       "open_item": {
-        "bean": "qou-b3nk",
-        "audit": "docs/audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md",
-        "note": "Neither convention is DERIVED for the decay channel. C: pinned-by-stipulation with a now-dangling citation, and fails two structural conditions each of which would exclude it IF demanded -- the full-bar condition bar(z) = z - h (Lean QOU.QBeta.zD_full_bar_covariant / barEven_fullBar_forces_classical; premise: trace bar-compatibility) and fixed-rank fibre membership (N_eff(z_C) = 2.5995 pointwise, q-dependent; premise: categorical fibre trace). D: conditionally forced on named unproved premises only (conj:binding-qbeta-complex-volume same-object identification feeding the mass forcing, or trace bar-compatibility). MUTUAL EXCLUSIVITY is proved (Lean decayLadder_zC_threeRow_ne_zero, sorry-free): any faithful normalised Markov trace at the ladder's z_C carries y_(1^3) != 0, so the two-row forcing cannot transfer while the ladder keeps z_C. A z-swap is NOT a migration: measured c_3 -> ~-974, implied c_2 -> -9.3, rung convergence collapses (qbeta-c3-ladder-trace-convention-sensitivity witness). Settling = derive the decay fibre (kills or keeps the third row), then either re-derive the ladder from the D-trace or derive C from decay-channel representation theory."
+        "bean": "qou-cds1",
+        "audit": "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md",
+        "note": "REPOINTED 2026-08-16 from qou-b3nk (settle the convention -- done, see resolution) to qou-cds1 (re-derive the ladder under D -- open). Neither convention is DERIVED for the decay channel. C: pinned-by-stipulation with a now-dangling citation, and fails two structural conditions each of which would exclude it IF demanded -- the full-bar condition bar(z) = z - h (Lean QOU.QBeta.zD_full_bar_covariant / barEven_fullBar_forces_classical; premise: trace bar-compatibility) and fixed-rank fibre membership (N_eff(z_C) = 2.5995 pointwise, q-dependent; premise: categorical fibre trace). D: conditionally forced on named unproved premises only (conj:binding-qbeta-complex-volume same-object identification feeding the mass forcing, or trace bar-compatibility). MUTUAL EXCLUSIVITY is proved (Lean decayLadder_zC_threeRow_ne_zero, sorry-free): any faithful normalised Markov trace at the ladder's z_C carries y_(1^3) != 0, so the two-row forcing cannot transfer while the ladder keeps z_C. A z-swap is NOT a migration: measured c_3 -> ~-974, implied c_2 -> -9.3, rung convergence collapses (qbeta-c3-ladder-trace-convention-sensitivity witness). Settling = derive the decay fibre (kills or keeps the third row), then either re-derive the ladder from the D-trace or derive C from decay-channel representation theory."
+      },
+      "production_convention_target": "D",
+      "production_convention_note": "Deliberately still C: this field records what the CODE DOES, not what it should do. computations/qbeta/qbeta_utils.py::markov_parameter returns mpsqrt(q)/(1+q) = z_C as of 2026-08-16 and is registered under evaluators.z, where R9 CALLS it and asserts z_C numerically. Flipping this to D before qou-cds1 moves the code would put the registry in direct contradiction with its own evaluator -- the exact failure that took R9 red on main when gram.py migrated and its row did not.",
+      "resolution": {
+        "ruling": "owner, verbatim in session: 'convention D is convention. excise convention C.'",
+        "date": "2026-08-15",
+        "audit": "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md",
+        "bean": "qou-cdh1",
+        "scope_note": "The ruling settles WHICH convention. It does not re-derive the ladder, and this is proved, not assumed: QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free) shows any faithful normalised Markov trace at z_C carries y_(1^3) != 0 for every substrate s = sqrt(q) > 1, so 'keep the C-frame ladder' and 'the mass channel's two-row forcing applies here' are MUTUALLY EXCLUSIVE. The ladder must therefore be RE-DERIVED under D, not re-evaluated. The c_3 ~ -974 figure in the audit is what the CURRENT extractor returns when fed z_D -- a sensitivity measurement, NOT a proposed new value of c_3."
+      },
+      "production_source_correction": {
+        "recorded": "2026-08-16 (qou-cdh1 follow-up; raised by a sibling on #5235)",
+        "finding": "`production_source` above says the z_C alpha = (z-1)h/2 'feeds EVERY committed c_k extraction'. That universal is FALSE and was never measured. computations/qbeta/qbeta_ck_cache.py:85 reads `z = q**3 / (q**2 + 1)` -- convention D -- and computes the same ladder phase. The extraction layer is SPLIT, not uniformly C.",
+        "but_the_artifact_is_stale_not_split": "Checked rather than relayed, and the real state is worse than 'two live frames'. The producer is D; its committed witness computations/qbeta/qbeta-ck-cache.witness.json carries the C-frame c_3 (-2.069…), not the D-frame -974.43. Proven stale, not merely suspected: witness scriptHash 88cb1da28b5e vs sha256(producer)[:12] = 9a13a19a1b52, and computedAt is 2026-08-08 -- ONE DAY before the 2026-08-09 ruling. So the -974.43 quoted on #5235 is that producer's RUN OUTPUT, not a committed value. Detector-blindness taxonomy row 10: the producer migrated, the artifact did not.",
+        "consequence": "Both c_3 frames are committed in this corpus -- -2.069… in qbeta-ck-cache/qbeta-c3-three-rung-probe and others, -974.43 in qbeta-c3-ladder-trace-convention-sensitivity and qbeta-kc21-parity-convention-immunity, where it is a deliberate sensitivity measurement. R9 still correctly asserts C for qbeta_utils.markov_parameter; that entry is not wrong, it is just not the whole production layer.",
+        "structural_gap": "`production_source` is PROSE, so no rule can check it. R9/R10/R11 validate `evaluators`, which are structured; a channel's claim about which producers feed it is a free-text string that can assert a universal nobody measured -- which is exactly what happened here. Any future rule wanting to catch this needs production_source to become a list of module/symbol entries the way evaluators already is."
       }
     }
   ],
@@ -355,19 +385,88 @@
         "open_item": null
       },
       "must_error_with": "open_item"
+    },
+    {
+      "id": "RC8",
+      "description": "a settled-but-unmigrated channel that names no ruling -- 'agreed-migration-pending' must not become a quieter spelling of 'disputed'",
+      "channel": {
+        "id": "qbeta-decay",
+        "definitional_convention": "D",
+        "production_convention": "C",
+        "production_convention_target": "D",
+        "status": "agreed-migration-pending",
+        "resolution": null,
+        "open_item": {
+          "bean": "qou-cds1",
+          "audit": "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md"
+        }
+      },
+      "must_error_with": "must name the authority"
+    },
+    {
+      "id": "RC9",
+      "description": "a settled-but-unmigrated channel whose migration target is not the settled convention -- the target of the migration IS the ruling",
+      "channel": {
+        "id": "qbeta-decay",
+        "definitional_convention": "D",
+        "production_convention": "C",
+        "production_convention_target": "C",
+        "status": "agreed-migration-pending",
+        "resolution": {
+          "ruling": "owner 2026-08-15",
+          "date": "2026-08-15"
+        },
+        "open_item": {
+          "bean": "qou-cds1",
+          "audit": "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md"
+        }
+      },
+      "must_error_with": "does not match the settled definitional_convention"
+    },
+    {
+      "id": "RC10",
+      "description": "the pre-2026-08-16 hole: a settled channel recorded as plain 'agreed' while production still returns the excised convention -- the registry would then lie about the code",
+      "channel": {
+        "id": "qbeta-decay",
+        "definitional_convention": "D",
+        "production_convention": "C",
+        "status": "agreed",
+        "open_item": {
+          "bean": "qou-cds1",
+          "audit": "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md"
+        }
+      },
+      "must_error_with": "must be 'disputed' or 'agreed-migration-pending'"
     }
   ],
-  "blocked_migrations": [
+  "blocked_migrations": [],
+  "intra_module_split_waivers": [],
+  "intra_module_split_waivers_note": "EMPTY as of 2026-08-16 (bean qou-cds2). R10 fails a module whose registered z-carrying symbols disagree with each other, because a caller imports a MODULE, not a registry entry. `pyhecke.gram` was the only entry: its float64 `z` was convention D while its 50-dps mpmath path (z_mp, tr_m_mp, tr_m_mp_strings, gram_matrix_mp) was still C -- and the risk ran the unintuitive way, with the NO-FLOAT64 path carrying the wrong convention, so the more precise answer was the incorrect one. The mpmath path is now D and the split is closed, so this list is empty rather than waived. Keep it that way: a waiver was always meant to be a visible open defect (it downgrades to a WARNING, counted in the summary line), never an approved design.",
+  "resolved_migrations": [
     {
       "file": "tools/pyhecke/python/pyhecke/gram.py",
       "symbol": "z",
-      "stays": "C",
+      "was": "C",
+      "now": "D",
+      "resolved_on": "2026-08-15",
+      "resolved_by_bean": "qou-w8zz",
+      "resolution": "gram.py:175 now reads `z = q0 ** 3 / (q0 ** 2 + 1)` and G is inverted on the quotient H_3/rad rather than on the full NF basis -- exactly the repair `repair_named_by` predicted. The block was correct while it stood; it stopped being true when the migration landed and this row was not updated with it, so R9 -- which is written to ASSERT the exception -- went RED on main: `registry says convention C but the CODE returns 0.6126880371464652`. The gate did its job. Moved here rather than deleted, because `reason` below is the clearest statement in the repo of WHY the full Wedderburn Gram cannot be inverted under D, and that is still true.",
       "bean": "qou-wgta",
       "item": 11,
       "reason": "G_INV = np.linalg.inv(G) runs at module import, and under D the Markov-Gram form on the H_3(q) NF basis is SINGULAR -- exactly one null direction (the row-cap one). Bilinear eigenvalues at the proton pin: -0.752702, 0, +0.752702 x3, +4.230339; det 3.998e-17, cond 4.9e16. numpy raises nothing -- it returns entries up to 7.6e15 with ||G G_INV - I|| = 1.64. Switching this line silently corrupts every consumer of G_INV.",
       "repair_named_by": "QOU/QBeta/GramSignature.lean -- quotient by the radical. Post-retraction the quotient is a genuine positive-definite inner product, so the repair is more attractive than it first appeared; it is still an owner decision because G_INV is exported at import.",
-      "owner_decision_required": true,
-      "signature_note": "Quote the signature from QOU.QBeta.GramSignature only AFTER its in-file retraction (commit 748ba9b1). The original '(5,1) under C, (4,1)+null under D, LORENTZIAN' used the bilinear pairing and is WITHDRAWN; the Hecke *-structure is T_w* = T_{w^-1}, giving C (6,0,0) positive definite and D (5,0,1) positive semidefinite. The SINGULARITY under D is common to both pairings and is the only thing this block depends on."
+      "owner_decision_required": false,
+      "signature_note": "Quote the signature from QOU.QBeta.GramSignature only AFTER its in-file retraction (commit 748ba9b1). The original '(5,1) under C, (4,1)+null under D, LORENTZIAN' used the bilinear pairing and is WITHDRAWN; the Hecke *-structure is T_w* = T_{w^-1}, giving C (6,0,0) positive definite and D (5,0,1) positive semidefinite. The SINGULARITY under D is common to both pairings and is the only thing this block depends on.",
+      "owner_decision_resolution": "ANSWERED 2026-08-15 by the owner ruling ('excise convention C'), recorded in docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md. The ruling answers the CONVENTION question. It does not answer the SINGULARITY question -- that is bean qou-cds2 -- but see premise_correction below: by the time the ruling was written, the code had already answered both.",
+      "premise_correction": {
+        "recorded": "2026-08-16",
+        "bean": "qou-cdh1",
+        "finding": "The ruling audit's Sec 2.2 states that this row's subject, tools/pyhecke/python/pyhecke/gram.py::z, 'stays C by design, because G_INV = np.linalg.inv(G) runs at module import'. BOTH clauses were already false when that audit was committed. Verified against source, not against this registry: (a) gram.py:175 reads `z = q0 ** 3 / (q0 ** 2 + 1)` -- convention D; (b) G_INV is DELETED, deliberately left undefined and explicitly 'not a rename' (gram.py:20, 91, 401), the inverse now being taken on the quotient H_3/rad. Both landed in commit 6086572c4 (2026-08-15, 'gram.py: convention D, quotient inverse -- library core done'), which PRECEDES the audit's own commit c8796c283 -- `git show c8796c283:tools/pyhecke/python/pyhecke/gram.py` already carries the D line.",
+        "cause": "The audit measured the pyhecke rows from THIS REGISTRY's blocked_migrations entry rather than from source, and that entry was stale -- which is why it was moved here. Same failure mode the audit itself warns about, and the same one that forced the retraction of bean qou-76a6.",
+        "consequence_for_H2": "Tranche H2 is scoped as 'close the blocked-symbol leak: 13 modules re-exporting pyhecke.gram.z + 13 consumers'. Those 26 sites import `z`, which is convention D -- they re-export the CANONICAL value, so there is no convention-C leak through that symbol and the tranche as written has no defect to close. The real C exposure is a different and much smaller set, on the 50-dps mpmath path that H2 does not name: computations/atom_dual_q0_mpfr_demo.py:47 (gram.tr_m_mp_strings()) and computations/probes/qbeta_braid_nf_sdp_offset_probe.py:127,232 (_gram.tr_m_mp()). Two consumers, not twenty-six -- and the audit's inventory could not see them because it keyed on the symbol name `z`, which is exactly the recurring lesson of this campaign: a detector is blind to the shape it keys on.",
+        "consequence_for_S2": "Tranche S2 ('pyhecke.gram.z and the Gram singularity') is called the highest-risk item in the plan, and H2 is declared blocked on it. Its named repair -- quotient by the radical, QOU/QBeta/GramSignature.lean -- is the repair that 6086572c4 actually shipped. What remains open is not the float64 z or G_INV but the mpmath path above, whose C-valued gram_matrix_mp()/tr_m_mp() are unmigrated; 6086572c4's own message says 'TWO coupled sites found'. S2 should be re-scoped to that, and H2 unblocked.",
+        "verification": "R9 calls pyhecke.gram.z at q_0 and asserts D numerically; R10 reports the surviving intra-module split as a warning."
+      }
     }
   ],
   "evaluators": {
@@ -423,7 +522,7 @@
       },
       {
         "id": "pyhecke.gram.z",
-        "convention": "C",
+        "convention": "D",
         "module": "pyhecke.gram",
         "symbol": "z",
         "kind": "module_attr_float",
@@ -432,7 +531,36 @@
           "computations/substrate"
         ],
         "abs_tol": "1e-15",
-        "note": "BLOCKED on C by design -- see blocked_migrations. Registered as C so R9 ASSERTS the exception instead of leaving it undetected. If this ever reports D without blocked_migrations being cleared, something switched it and G_INV is now silently wrong."
+        "note": "Convention D since 2026-08-15 (bean qou-w8zz): G is inverted on the quotient H_3/rad, so the singularity that blocked the flip no longer applies -- see resolved_migrations. This entry was registered as C by design so that R9 would ASSERT the exception rather than leave it undetected, with the standing warning that reporting D while the block was still listed meant something had switched it. That is exactly what happened, and R9 caught it: the migration landed and the registry row did not move with it, so main went RED on `registry says convention C but the CODE returns 0.6126880371464652`. Recorded here because the sequence is the argument for numeric evaluators over string comparison -- R4/R5 compare a docstring to a registry field and would have stayed green on both sides of a stale pair."
+      },
+      {
+        "id": "pyhecke.gram.z_mp",
+        "convention": "D",
+        "module": "pyhecke.gram",
+        "symbol": "z_mp",
+        "kind": "callable_no_arg",
+        "sys_path": [
+          "tools/pyhecke/python",
+          "computations/substrate"
+        ],
+        "abs_tol": "1e-40",
+        "note": "Was convention C, justified in its own docstring as being 'in lockstep with the module's float64 z'. That justification outlived its premise: the float64 z moved to D on 2026-08-15 (6086572c4) and this did not, so the module exported two conventions 18.5% apart behind one import while every docstring in it claimed lockstep. Now genuinely in lockstep -- z_mp() and the float64 z agree to 4.1e-18, i.e. to float64's own limit.",
+        "migrated": "2026-08-16 (qou-cds2)"
+      },
+      {
+        "id": "pyhecke.gram.tr_m_mp[1]",
+        "convention": "D",
+        "module": "pyhecke.gram",
+        "symbol": "tr_m_mp",
+        "kind": "callable_index",
+        "index": 1,
+        "sys_path": [
+          "tools/pyhecke/python",
+          "computations/substrate"
+        ],
+        "abs_tol": "1e-40",
+        "note": "Was convention C, justified in its own docstring as being 'in lockstep with the module's float64 z'. That justification outlived its premise: the float64 z moved to D on 2026-08-15 (6086572c4) and this did not, so the module exported two conventions 18.5% apart behind one import while every docstring in it claimed lockstep. Now genuinely in lockstep -- z_mp() and the float64 z agree to 4.1e-18, i.e. to float64's own limit.",
+        "migrated": "2026-08-16 (qou-cds2)"
       },
       {
         "id": "qbeta_utils.markov_parameter",
@@ -456,6 +584,138 @@
         "sys_path": [],
         "abs_tol": "1e-15",
         "note": "THE COMPILED ARTIFACT. Added 2026-08-09 after the installed wheel was found returning convention C while its own Rust source (tools/hecke-engine/src/gram.rs:75) read D -- the .so was built 2026-08-08 11:30 UTC, b5f4cb5b9 migrated the engine C->D at 2026-08-09 13:18 UTC, and nothing compared the two. Source review cannot see this defect and neither can the content-layer axis; only calling the binary can. markov_z is re-exported through all nine language bindings and drives trace_weights and the v_std quark-volume channel, so a stale build here is a silent C reintroduction across the whole native path -- and it converts 'regenerate from the producer' from the remediation into the attack. If this entry fails, REBUILD (maturin build --release in tools/pyhecke-native, then pip install --force-reinstall the wheel) before running any producer."
+      }
+    ],
+    "derived": [
+      {
+        "id": "pyhecke.gram.tr_m_mp[3]",
+        "convention": "D",
+        "module": "pyhecke.gram",
+        "symbol": "tr_m_mp",
+        "kind": "callable_index",
+        "index": 3,
+        "identity": "z^2",
+        "sys_path": [
+          "tools/pyhecke/python",
+          "computations/substrate"
+        ],
+        "abs_tol": "1e-40",
+        "note": "R11 -- THE DERIVED CHECK. R9 checks z itself; this checks that a quantity DERIVED from z still matches the z it was derived from. TR_M is [1, z, z, z^2, z^2, h*z^2+z], so index 3 must be z^2 for whatever z the module uses. Registered under C because the mpmath path IS still C (see the intra_module_split_waivers note); if that path migrates to D and this vector is rebuilt consistently, only the `convention` field here changes.",
+        "migrated": "2026-08-16 (qou-cds2)"
+      },
+      {
+        "id": "pyhecke.gram.tr_m_mp[5]",
+        "convention": "D",
+        "module": "pyhecke.gram",
+        "symbol": "tr_m_mp",
+        "kind": "callable_index",
+        "index": 5,
+        "identity": "h*z^2+z",
+        "sys_path": [
+          "tools/pyhecke/python",
+          "computations/substrate"
+        ],
+        "abs_tol": "1e-40",
+        "note": "The longest element e^- = sigma_0 sigma_1 sigma_0 evaluates to h*z^2 + z by cyclicity plus the Hecke quadratic, NOT z^3. This exact entry was z^3 until docs/audits/2026-05-19-trm5-markov-bug.md, and main carries the follow-on commit 'flip trace_weights to h*z^2 + z -- Rust and Python finally agree'. A static scanner cannot catch it: z^3 and h*z^2+z are both perfectly ordinary expressions in z, differing only in being right and wrong. Only evaluation distinguishes them, which is the whole argument for R9/R11 over R4/R5.",
+        "migrated": "2026-08-16 (qou-cds2)"
+      },
+      {
+        "id": "c_3_categorical_derivation_attempt.trM_hopf",
+        "convention": "D",
+        "module": "c_3_categorical_derivation_attempt",
+        "symbol": "trM_hopf",
+        "kind": "callable_q",
+        "identity": "h*z+1",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "The only one of the four producers migrated in this arc that R11 can gate. The other three -- knot_operator_census_group_actions, lepton_t2n_torus_tower, inter_nucleon_linked_channel -- have NO `if __name__` guard and construct a WitnessBuilder at module level, so importing them RUNS the producer and rewrites its witness. A validator cannot import those without making validation a side-effecting act, which is why R11's coverage of the producer layer is one entry rather than four. Verified import-safe here: 0.09 s, witness mtime unchanged. trM_hopf(q0) = 1.128088744114353785593152 matches h*z+1 at z_D exactly (|d| = 0), and independently matches the sigma_1^2 entry of markov-trace-recursive.witness.json."
+      },
+      {
+        "id": "closed_form_tau_M.trM_sigma1_sq",
+        "convention": "D",
+        "module": "closed_form_tau_M",
+        "symbol": "trM_sigma1_sq",
+        "kind": "callable_q",
+        "identity": "h*z+1",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "THE CANONICAL DEFINITION. tr_M(sigma_1^2) = h*z + 1 was copy-pasted, specialised to convention C, into at least five places (knot_operator_census_group_actions.trM_sigma1_sq, c_3_categorical_derivation_attempt.trM_hopf, lepton_t2n_torus_tower.trM_hopf_census_form, inter_nucleon_linked_channel.census_hopf, and the sage example's trace_weights). `1 + (q-1)/q^{1/2}` IS this identity at z_C -- the square root is z_C's, not the identity's -- so every copy went on describing the excised convention after z moved. Gating the one definition is the point; the copies are being repointed at it."
+      },
+      {
+        "id": "closed_form_tau_M.wenzl_weights_h2[0]",
+        "convention": "D",
+        "module": "closed_form_tau_M",
+        "symbol": "wenzl_weights_h2",
+        "kind": "callable_q_index",
+        "index": 0,
+        "identity": "(q*z+1)/(q^2+1)",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "y_(2) for H_2(q), solved from tr_M(1)=1 and tr_M(sigma_1)=z rather than hardcoded. Its convention-C specialisation is (q^{3/2}+q+1)/(q^3+q^2+q+1), which lepton_t2n_torus_tower carried TWICE -- once numerically and once in sympy -- and the two were migrated in separate steps, so for one commit they disagreed and that file's own symbolic-vs-numeric assertion caught it. y_(1,1) = 1 - y_(2) = 1/[2]_q^2 = 0.24729788674803459840..., the same value as y_(2,1) at n=3."
+      },
+      {
+        "id": "inter_nucleon_linked_channel.z_factor",
+        "convention": "D",
+        "module": "inter_nucleon_linked_channel",
+        "symbol": "z_factor",
+        "kind": "callable_q",
+        "identity": "z",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "Gateable only since the producer's side-effecting tail was moved under `if __name__ == \"__main__\"`. Before that, importing this module ran the whole computation and rewrote its witness, so a validator could not touch it without making validation side-effecting."
+      },
+      {
+        "id": "knot_operator_census_group_actions.trM_sigma1_sq",
+        "convention": "D",
+        "module": "knot_operator_census_group_actions",
+        "symbol": "trM_sigma1_sq",
+        "kind": "callable_q",
+        "identity": "h*z+1",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "Now delegates to closed_form_tau_M.trM_sigma1_sq, so this entry checks the DELEGATION rather than a second implementation -- it fails if somebody re-adds a local copy, which is exactly how this identity came to exist in five specialised-to-C versions."
+      },
+      {
+        "id": "lepton_t2n_torus_tower.wenzl_weights[0]",
+        "convention": "D",
+        "module": "lepton_t2n_torus_tower",
+        "symbol": "wenzl_weights",
+        "kind": "callable_q_index",
+        "index": 0,
+        "identity": "(q*z+1)/(q^2+1)",
+        "sys_path": [
+          "computations",
+          "computations/substrate",
+          "computations/hecke",
+          "tools/pyhecke/python"
+        ],
+        "abs_tol": "1e-40",
+        "note": "y_(2) for H_2. This file carried the convention-C specialisation (q^{3/2}+q+1)/(q^3+q^2+q+1) twice -- numerically and in sympy -- migrated in separate steps, so for one commit they disagreed and the file's own symbolic-vs-numeric assertion caught it. Both now delegate to closed_form_tau_M.wenzl_weights_h2."
       }
     ],
     "weights_n3": [

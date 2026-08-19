@@ -1,10 +1,11 @@
 ---
 # qou-76a6
 title: 'LEAK: registry-blocked convention-C z escapes pyhecke into 25 production sites'
-status: todo
+status: scrapped
 type: task
+priority: normal
 created_at: 2026-08-10T03:43:41Z
-updated_at: 2026-08-10T03:43:41Z
+updated_at: 2026-08-15T12:51:56Z
 ---
 
 
@@ -70,3 +71,49 @@ of the full Wedderburn Gram. That was not available when the block was recorded.
 
 Detector: `scripts/convention-c-producer-audit.py` (selftest 23/23, includes a
 fixture asserting pyhecke's own modules are not reported as leaking).
+
+---
+
+## RETRACTED — the leak was never live (2026-08-15)
+
+**The central claim of this bean is false.** It said 25 production sites
+receive convention C through `hecke_core`'s re-export of `pyhecke.gram.z`.
+They receive **D**. `gram.py:175` is `z = q0 ** 3 / (q0 ** 2 + 1)`, migrated
+2026-08-15 under bean `qou-w8zz`, with `G` inverted on the quotient `H_3/rad`.
+
+I measured it and reported it live:
+
+    >>> from hecke_core import z
+    0.4993203341836945
+
+That was real — but it was run against a **five-day-stale checkout**, before
+the migration landed. On current main the same import returns
+`0.6126880371464652`. The 25 re-export sites are real and still exist; what
+was wrong is what they carry.
+
+### How the mistake was made
+
+`scan_reexports` derives its verdict from the registry's `blocked_migrations`
+row, and that row still said `stays: C` after the code moved. So the detector
+faithfully reported a state that had ended. **A detector that trusts a record
+inherits the record's staleness** — the same class of defect this whole
+excision has been unpicking, arriving inside the tool built to find it.
+
+The bean's closing claim, that "the blocker is now solved in principle" by
+`wedderburnGram_restrict_live_det_ne_zero`, was right about the mathematics
+and late on the facts: it had already been solved in practice.
+
+### What survives
+
+The structural point stands — the registry's containment was a statement about
+one file, and nothing checked the file kept it. That is now enforced rather
+than asserted:
+
+- `_defines_convention_d(src, sym)` verifies the premise before any leak is
+  derived from a row, and prints `REGISTRY STALE` when the file disagrees.
+- classification is registry-derived, not path-prefix, which surfaced three
+  genuine unexplained C sites the blanket had been hiding.
+
+Continued as **`qou-2ixd`** (R9 red on main; registry corrected; the three
+sites). Closing this one as retracted rather than deleting it — the failure
+mode is worth keeping.

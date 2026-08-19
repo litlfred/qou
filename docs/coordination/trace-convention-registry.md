@@ -63,15 +63,23 @@ $h = q - q^{-1}$.
 > `markov_trace_canonical::tr_M_element`, `closed_form_tau_M::markov_z` +
 > `y_lambda_wenzl_bridge_numeric`, `binding_canonical.py`, and
 > `wedderburn_jones_markov::y_lambda_at` — are **all convention D** now
-> (bean `qou-wgta`). C survives in exactly three places, and each is
-> deliberate: two explicitly-named historical functions in
-> `schur_principal_mpmath` that keep the excised convention *quotable* for the
-> D-vs-C comparison in `y_lambda_su_n.main()`, and one **blocked migration**,
-> `pyhecke/gram.py::z` (see `blocked_migrations` in the JSON twin — switching
-> it silently destroys `G_INV`, because the Markov–Gram form is degenerate
-> under D). R9 asserts all three are *still C*; the preserved reference
-> stopping being C without anyone noticing is precisely what happened to its
-> predecessor.
+> (bean `qou-wgta`). C survives in exactly **two** places, both deliberate:
+> the explicitly-named historical functions in `schur_principal_mpmath` that
+> keep the excised convention *quotable* for the D-vs-C comparison in
+> `y_lambda_su_n.main()`. R9 asserts both are *still C*; the preserved
+> reference stopping being C without anyone noticing is precisely what
+> happened to its predecessor.
+>
+> The third place — `pyhecke/gram.py::z`, the one **blocked migration** —
+> moved to D on 2026-08-15 (bean `qou-w8zz`), once `G` was inverted on the
+> quotient `H_3/rad` rather than the full NF basis, which removes the
+> degeneracy that blocked it. See `resolved_migrations` in the JSON twin.
+> The registry row was not updated when the migration landed, so R9 — which
+> is written to *assert* the exception — went red on main with *"registry
+> says convention C but the CODE returns 0.6126880371464652"*. That is the
+> gate working as designed: a numeric evaluator caught a stale record, where
+> R4/R5 compare a docstring to a registry field and stay green whenever both
+> sides go stale together.
 
 > **Registry gap closed 2026-08-09.**
 > `computations/wedderburn_jones_markov.py::y_lambda_at` is convention **C** and
