@@ -8,7 +8,7 @@
 
 The owner supplied the muon-electron mass ratio from NIST — `206.768 2827(46)`
 — with the instruction *"should already be in corpus… ALL CODATA… check
-first"*, together with the upload of `uploads/allascii.txt`, NIST's complete
+first"*, together with the upload of `library/allascii.txt` (then `uploads/`), NIST's complete
 2022 listing (commit `9409cb1`).
 
 It was already in the corpus. **Twice, with two different values**, which is
@@ -61,16 +61,16 @@ Yes. It is not a handful; it is close to the whole constant set.
 
 The scan compares every corpus literal of ≥7 significant digits against all
 293 table rows and reports those that are **near but not equal** — the exact
-signature of a stale edition. Result: **275 distinct literals across 1969
+signature of a stale edition. Result: **275 distinct literals across 1962
 sites.**
 
 | literal | table (2022) | sites | offset | σ |
 |---|---|---|---|---|
-| `938.27208816` (m_p) | `938.27208943` | 352 | 1.354 ppb | **4.38 σ** |
-| `939.56542052` (m_n) | `939.56542194` | 175 | 1.511 ppb | 2.96 σ |
-| `0.51099895…` (m_e) | `0.51099895069` | 174+82+53 | 1.35 ppb | 4.31 σ |
+| `938.27208816` (m_p) | `938.27208943` | 349 | 1.354 ppb | **4.38 σ** |
+| `939.56542052` (m_n) | `939.56542194` | 173 | 1.511 ppb | 2.96 σ |
+| `0.51099895…` (m_e) | `0.51099895069` | 172+82+53 | 1.35 ppb | 4.31 σ |
 | `137.035999084` (1/α) | `137.035999177` | 124 | 0.679 ppb | **4.43 σ** |
-| `206.7682830` (m_μ/m_e) | `206.7682827` | 77+52 | 1.451 ppb | 0.065 σ |
+| `206.7682830` (m_μ/m_e) | `206.7682827` | 77+51 | 1.451 ppb | 0.065 σ |
 | `1875.61294257` (m_d) | `1875.61294500` | 65 | 1.296 ppb | 4.19 σ |
 | `2808.39160743` (m_h) | `2808.39161112` | 49 | 1.314 ppb | 4.19 σ |
 | `2808.92113298` (m_t) | `2808.92113668` | 47 | 1.317 ppb | 4.20 σ |
@@ -108,7 +108,7 @@ The two audits are complementary and both are wanted:
 | | compares against | catches |
 |---|---|---|
 | `codata_truncation_audit` | `codata_constants` (in-repo) | truncation |
-| `codata_corpus_literal_scan` | `uploads/allascii.txt` (NIST) | wrong edition |
+| `codata_corpus_literal_scan` | `library/allascii.txt` (NIST) | wrong edition |
 
 The general lesson is the one this session kept meeting: **a correction lands
 at one site and never reaches the consumers that restate it.** The defence is
@@ -132,11 +132,11 @@ verified — is that **each literal disagrees with the committed 2022 table by
 3–4.5 σ**. If someone uploads the 2018 listing, the attribution becomes
 checkable; until then it is stated as inference.
 
-**1969 sites is not 1969 bugs.** The scan separates them:
+**1962 sites is not 1962 bugs.** The scan separates them:
 
 - **SOURCE** (`.py` / `.lean` / `.ts`) — code that computes a wrong number.
-  **443 sites.** These are the actionable set.
-- **RECORD** (`*.witness.json`, audit outputs, `.md` tables) — **1526 sites**,
+  **447 sites.** These are the actionable set.
+- **RECORD** (`*.witness.json`, audit outputs, `.md` tables) — **1515 sites**,
   history. A
   committed witness records what a producer *actually computed*. Rewriting it
   to match the new table would falsify the record. The fix is to correct the
@@ -149,7 +149,96 @@ them. Counting those as defects would be double-counting the detector.
 ## Not done here
 
 The sweep itself. This PR delivers the **detector and the measurement**, not
-the drain. Correcting 443 source sites means re-running their producers and
+the drain. Correcting 447 source sites means re-running their producers and
 regenerating their witnesses, which is a large, announced tranche and needs
 its own scope — and per the standing directive, a witness is never edited to
 make a gate green.
+
+---
+
+## Addendum — what landed on main, and how it re-scopes this
+
+Reviewed at rebase time (main had moved 378 commits). Four landings bear on
+this work; one changes the plan materially.
+
+### 1. `uploads/` → `library/` (381 files)
+
+The table this whole audit reads was relocated. Every reference here, in the
+scan, and in the package drift test was repointed. Worth noting because a
+detector that reads a moved authority fails *open* — it would have raised
+`FileNotFoundError` rather than silently reporting "clean", but a differently
+written one would not.
+
+### 2. The α_EM outlier was a FALSE POSITIVE — and hid a real defect
+
+I flagged `137.035944` as *"2630 σ, not any CODATA edition"* and put it ahead
+of the drain. **It is not a CODATA transcription at all**: it is the
+framework's own derived α⁻¹ (CS-corrected, Witten κ), which is supposed to
+differ from the measured value. This note's own text says the scan "cannot
+tell that from a genuinely different quantity that sits nearby"; I then
+singled it out anyway. The scan behaved correctly; the triage did not.
+
+Underneath it was a real defect of a different kind — a **layer straddle**:
+
+| | α⁻¹ | vs CODATA |
+|---|---|---|
+| registry, proton-pinned, exactly resummed | `137.0359350939756` | −467.6 ppb |
+| hardcoded literal (muon anchor, truncated tower) | `137.035944` | −402.6 ppb |
+| **literal vs registry** | | **65.0 ppb** |
+
+Two producers fed a muon-anchored constant into proton-pinned compute and
+printed "399 ppb" for a residual that is 468 ppb. Fixed by calling the
+derivation instead of copying its value. Effect on `m_K/m_π` — the one L2
+success — is **0.0066 ppb**; the headline stays **1 / 5 scoreable**. The
+defect was in what the number *claimed*, not what it did.
+
+### 3. `qou-m9xp` — the pin file self-contradicts (open, `todo`)
+
+`computations/q-pinning-50-digit.witness.json` states `q0Anchor: muon` with
+muon *numbers*, while `calibration_inputs.anchor` and
+`physical_anchoring_bound.anchor` both say `m_p/m_e`. A reader gets whichever
+answer they grep for. Related: `qou-cezp` found the 262 Q0_FLIPs were **one**
+corrupted anchor definition, and `2e4745448d` restored the muon anchor the
+re-pin sweep had overwritten with its own target.
+
+This is the same disease as the CODATA straddle — an authority disagreeing
+with itself — in the *pin* rather than the *constant*. It is upstream of the
+drain: correcting a producer's CODATA literal while it reads a
+self-contradicting pin file fixes the smaller error.
+
+### 4. 113 producers cannot be imported — **this re-scopes the drain**
+
+`producer_importability_audit` (2132 producers checked, **113 unimportable**)
+closes the detector gap *"witness staleness when the producer cannot run at
+all."*
+
+The drain's method is *fix the literal, re-run the producer, regenerate the
+witness.* For an unimportable producer that method does not exist. So
+`qou-7ot6` is not one tranche but two, and the split has to be made before
+starting rather than discovered midway:
+
+- **7ot6-a** — source sites whose producer imports and runs. Mechanical.
+- **7ot6-b** — sites in the 113. Blocked on importability first; the CODATA
+  literal is the lesser problem there.
+
+**Do not** "fix" a 7ot6-b site by editing its committed witness to match.
+That is the one move this note forbids throughout, and an unimportable
+producer is exactly the case where it looks most tempting.
+
+### Not overlapping
+
+`docs/audits/2026-08-16-colour-level-and-tln-compute.md` Task 0 audits
+**experiment-inverted** values (anti-fit discipline — "Δ_λ from inverted
+CODATA = NOT ALLOWED"). That asks whether a value was *fitted to* experiment;
+this asks whether a value was *transcribed from the wrong edition*. Different
+questions, no duplication.
+
+### One bug fixed in already-merged code
+
+`codata_table_vintage_audit.py` (merged by #5149) compared values with `==` on
+`mpf`. Two `mpf` built from the same decimal string at different working
+precisions differ in the last bit, so after the rebase it reported **all 8**
+constants as disagreeing by ~1e-17 while their printed digits were identical.
+Now compared with a 1e-15 relative tolerance — far below any real edition
+difference (~1e-9), far above construction noise (~1e-17), so detection power
+is unchanged. Back to 8 checked, 0 disagree.
