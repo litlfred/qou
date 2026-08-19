@@ -1,0 +1,137 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_m_lattice_eigenspace_census_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_m_lattice_eigenspace_census_probe.py",
+ "commitSha": "464c0f4e4050af6698e7dc58202540e71fe0a64e",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 Theorem 1.2, Remark 1.9, Proposition 2.5; Addenda 32-35 (this repo)",
+ "checks": {
+  "mu_m_in_Q5_exactly_when_m_divides_4": true,
+  "my_coprime_to_4_guess_was_wrong": true,
+  "degree_is_1_iff_mu_m_in_Q5": true,
+  "all_other_m_give_degree_2": true,
+  "eigenspace_size_matches_closed_form": true,
+  "eigenspace_proper_exactly_for_the_degree_2_m": true,
+  "control_eigenspace_is_vacuous_for_m_dividing_4": true,
+  "w_F_of_Q5_is_4": true,
+  "unique_lift_exactly_for_odd_m": true,
+  "R_to_wF_dies_exactly_when_m_divides_wF": true,
+  "live_m_are_3_6_8_12_24": true,
+  "m2_eigenspace_is_the_whole_group": true,
+  "m2_R_to_wF_is_trivial": true
+ },
+ "result": {
+  "divisors_of_24": [
+   1,
+   2,
+   3,
+   4,
+   6,
+   8,
+   12,
+   24
+  ],
+  "mu_m_contained_in_Q5": {
+   "1": true,
+   "2": true,
+   "3": false,
+   "4": true,
+   "6": false,
+   "8": false,
+   "12": false,
+   "24": false
+  },
+  "m_with_mu_m_outside_Q5": [
+   3,
+   6,
+   8,
+   12,
+   24
+  ],
+  "m_coprime_to_4": [
+   1,
+   3
+  ],
+  "degree_of_F_m_over_Q5": {
+   "1": 1,
+   "2": 1,
+   "3": 2,
+   "4": 1,
+   "6": 2,
+   "8": 2,
+   "12": 2,
+   "24": 2
+  },
+  "eigenspace_size": {
+   "1": 1,
+   "2": 4,
+   "3": 3,
+   "4": 16,
+   "6": 12,
+   "8": 32,
+   "12": 48,
+   "24": 96
+  },
+  "group_order": {
+   "1": 1,
+   "2": 4,
+   "3": 9,
+   "4": 16,
+   "6": 36,
+   "8": 64,
+   "12": 144,
+   "24": 576
+  },
+  "eigenspace_is_proper": {
+   "1": false,
+   "2": false,
+   "3": true,
+   "4": false,
+   "6": true,
+   "8": true,
+   "12": true,
+   "24": true
+  },
+  "m_with_proper_eigenspace": [
+   3,
+   6,
+   8,
+   12,
+   24
+  ],
+  "thm12_applies_unique_lift": {
+   "1": true,
+   "2": false,
+   "3": true,
+   "4": false,
+   "6": false,
+   "8": false,
+   "12": false,
+   "24": false
+  },
+  "R_to_the_wF_still_nontrivial": {
+   "1": false,
+   "2": false,
+   "3": true,
+   "4": false,
+   "6": true,
+   "8": true,
+   "12": true,
+   "24": true
+  },
+  "m_where_a_nonvacuous_value_can_exist": [
+   3,
+   6,
+   8,
+   12,
+   24
+  ],
+  "m2_verdict": "CGZ Theorem 1.2 never applies at n = 2 in any field of characteristic != 2: -1 is a nontrivial square root of 1, so F_2 = F, G is trivial, w_F is even, and only R^{w_F} is defined -- which is 1 in a group of exponent 2. There is no non-vacuous m = 2 invariant to compute, so the +1 of PR #4968 is forced by the group rather than measured."
+ },
+ "scope": "scope-(a) CENSUS of where a value can exist, not a value at any new m. Over F = Q_5 (the degree-1 place of K = Q(alpha)), for each m | 24 the class group F_m^x/(F_m^x)^m is Z/m x Z/m and the chi^{-1}-eigenspace is computed by brute force over all m^2 classes with the actual Frobenius action, then checked against the closed form m . gcd(m, 4). Three-way split: m | 4 has trivial Gal, a vacuous eigenspace and no value; m = 3 satisfies gcd(m, w_F) = 1 with w_{Q_5} = 4 so the lift is unique (the case already computed); m in {6, 8, 12, 24} has a proper eigenspace but gcd > 1, so only R^{w_F} is defined -- and that power is still non-trivial there, so information survives. Corrects the guess that queued this work: mu_m lies in Q_5 exactly when m | 4, NOT when m shares a factor with 4, so 8, 12 and 24 qualify. Also corrects a claim repeated throughout this arc: m = 2 is vacuous in EVERY field of characteristic != 2, because -1 forces F_2 = F and w_F even, so Theorem 1.2 never applies at n = 2 and only R^{w_F} = 1 is defined. The +1 of PR #4968 is forced by the group, not measured -- which does not make that computation wrong, but makes it empty as a CGZ value. Nothing wired."
+}
