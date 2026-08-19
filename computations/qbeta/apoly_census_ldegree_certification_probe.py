@@ -48,7 +48,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent.parent
-TARBALL = REPO / "uploads" / "A_census.tgz"
+TARBALL = REPO / "library" / "A_census.tgz"
 KNOTS = {"4_1": "K2_1", "5_2": "K3_2", "6_1": "K4_1"}
 EXPECT_GEOM_LDEG = {"4_1": 2, "5_2": 3, "6_1": 4}
 # Lean-pinned a41Monomials (M-power, L-power), RouteANewtonPolygonDT
