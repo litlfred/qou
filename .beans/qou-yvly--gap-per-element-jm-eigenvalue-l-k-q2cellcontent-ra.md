@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-19T08:13:31Z
-updated_at: 2026-08-19T11:57:02Z
+updated_at: 2026-08-19T12:22:48Z
 ---
 
 ## Scope, after the 2026-08-19 narrowing
@@ -117,3 +117,46 @@ step of the induction — rather than starting from the full theorem. `seminorma
 One shape, with one size-2 orbit. It does not prove the general theorem, and `d_λ = 2` is the
 smallest case where the off-diagonal is non-trivial at all — a λ with several orbits, or orbits of
 size 6, is not exercised. Ram Thm 4.1 remains open.
+
+
+## 2026-08-19 — the size-2 orbit step is now PROVED (do not redo)
+
+`JMBlockEigenvalue.lean` §OrbitStep, all sorry-free and axiom-clean
+(propext / Classical.choice / Quot.sound only):
+
+* `seminormalBlock_conj_diag_swap` (hq : q ≠ 0) (hδ : q^(2δ) ≠ 1) :
+    seminormalBlock q (a δ) * diag(x, x·q^(2δ)) * seminormalBlock q (a δ)
+      = diag(x·q^(2δ), x)
+  Read with x = q^{2c} and δ = axialDistance, this IS σ_k L_k σ_k = L_{k+1}
+  on a two-element orbit, with the two contents exchanged.
+* `block_conj_diag` — the matrix half. Both off-diagonal entries of
+  M·diag(x,y)·M carry the SAME factor a·x + d·y (d = (q−q⁻¹) − a), so a
+  single scalar condition kills both. That is why one hypothesis suffices.
+* `seminormalParam_weighted_sum_zero` — the scalar half. a(δ)·x +
+  a(−δ)·(x·q^{2δ}) = 0. This is the only place the axial distance enters.
+
+The bridge between the two halves is `seminormalParam_add_neg`, already
+sorry-free: it identifies the block's lower-right entry (q−q⁻¹) − a(δ)
+with a(−δ).
+
+### Correcting my own earlier caveat on this bean
+
+I wrote that the 2×2 case "is NOT known to be as column-local as
+genMat_quadratic was — that is the thing that would make it tractable,
+and I have not established it." That was too pessimistic. The step is
+column-local in the relevant sense: the whole 2×2 computation reduces to
+ONE scalar identity in q and δ, with no tableau data beyond the axial
+distance. Cost was a few hours, not a genMat_braid-scale effort.
+
+### What is actually left for Ram Thm 4.1
+
+Orbit BOOKKEEPING, not the per-orbit algebra:
+
+1. orbits of size > 2 under s_k (the 1×1 fixed-point case is trivial; the
+   claim that every s_k-orbit on SYT(μ) has size ≤ 2 needs stating), and
+2. assembly of the per-generator steps along a reduced word, i.e. the
+   induction on k in L_{k+1} = σ_k L_k σ_k with genMat block-diagonal
+   over orbits.
+
+Neither needs new algebraic identities as far as I can see — but I have
+not tried them, so treat that as a guess, not a result.
