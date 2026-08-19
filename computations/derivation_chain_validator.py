@@ -45,6 +45,10 @@ from typing import Any, Optional
 
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import FirstPrinciple, Q_0  # noqa: E402
+from witness_producer_executes_audit import (  # noqa: E402
+    is_prose as _is_prose,
+    producer_of as _producer_of,
+)
 from witness_base import WitnessBuilder  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402 — chain values are carried as mpf, never float64
 
@@ -397,15 +401,27 @@ def audit_witness_trust(chains_dir: Path) -> dict:
         # not objects; tolerate them. Prefer scriptFile from the first dict
         # element (preserves metadata); otherwise fall back to the name-based
         # guess in _is_in_set.
+        # `scriptFile` is only ONE of the spellings a witness uses to name its
+        # producer -- `producer` and `computation.script` are equally common,
+        # and the whole chi-at-q0 family (8 witnesses) declares `producer`.
+        # Reading `scriptFile` alone left them uncredited: a chain that claimed
+        # their producer moved the count by zero, so the drain looked like it
+        # had done nothing. `witness_producer_executes_audit.producer_of` knows
+        # every spelling and the categorizer already uses it; use the same one
+        # here so the two tools cannot disagree about who produced what.
         if isinstance(data, dict):
-            script_file = data.get("scriptFile")
+            script_file = _producer_of(data)
         elif isinstance(data, list):
-            script_file = next(
-                (item.get("scriptFile") for item in data if isinstance(item, dict)),
-                None,
-            )
+            first = next((item for item in data if isinstance(item, dict)), None)
+            script_file = _producer_of(first) if first else None
         else:
             script_file = None
+        # A prose provenance value ("(legacy -- no matching producer found ...)")
+        # names no script; treat it as absent rather than as a basename.
+        if script_file and _is_prose(script_file):
+            script_file = None
+        if script_file:
+            script_file = Path(script_file).name
         # A witness that declares `auditOnly` records a QA/audit tool's FINDING,
         # not a derivation of a physical target — demanding a first-principles
         # chain for the output of a sorry-counter is a category error. This is the
