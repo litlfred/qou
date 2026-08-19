@@ -1,15 +1,15 @@
 {
   "engine": "rust+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:19:06.415522+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-19T12:06:50.933446+00:00",
+  "commitSha": "084c6ba9d3a4ca9cbc2f0b0fc32b047441575f0b",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "rho-k-full-via-wenzl-lr",
   "scriptFile": "rho_k_full_via_wenzl_lr.py",
-  "scriptHash": "7022193d7aac",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "dd5db324a363",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,7 +21,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "ρ_K^full producer-side primitive: emits the tensor-product |tr_M(β_p ⊗ β_n ⊗ …)| via the Wenzl LR bridge (PR #674). ⚠ **Output is NOT the canonical |tr_M(β_canonical)|** — the canonical atomic braid is not a tensor product (inter-nucleon arc crossings break tensor structure), and the two diverge by ~80 % on D, T, ³He per `cross_check_trM_wenzl_lr_1ppb.py`. The canonical mass-derivation consumer is `canonical_tr_m_via_rust.py` (via `hecke-canonical-chi` Rust binary), which handles the averaged-crossing structure correctly. This script's witness is retained as an audit-only building block for a future non-tensor Wenzl bridge per `hecke-branching-trace-decomposition.md`.",
   "auditOnly": "docs/audits/2026-05-17-1ppb-workplan-v4.md",
@@ -29,11 +30,11 @@
     "upstream_witness_hashes": [
       {
         "path": "/home/user/qou/computations/y-lambda-at-q0.witness.json",
-        "sha256": "0061cf933b8b4e2dfc783f099ac9dc8555d7eb754c4b5ee4252d32e4af4d09b9",
-        "bytes": 59296,
-        "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
-        "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
-        "computedAt": "2026-06-22T14:35:27.408550+00:00"
+        "sha256": "e4f26334a3bc2c699e2ad3f6b6faae0adfbf5292b3dc3b83201b999070f8506e",
+        "bytes": 47239,
+        "commitSha": "c37cbd50ef545778a49904278ec8f8e4e426596f",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T19:03:52.564561+00:00"
       }
     ],
     "calibration_anchors": {
@@ -48,28 +49,456 @@
       "Z": 1,
       "N": 1,
       "n_strands": 6,
-      "tr_M_q0_unavail_reason": "hecke-tr-m-wenzl-lr binary not built; build via `cd tools/hecke-engine && cargo build --release --bin hecke-tr-m-wenzl-lr` to enable this consumer"
+      "n_partitions": 11,
+      "averaging_denominator": 16,
+      "factor_labels": [
+        "p",
+        "n"
+      ],
+      "tr_M_q0_mp30dps": "0.111832899065755609976600585276",
+      "abs_tr_M_q0_mp30dps": "0.111832899065755609976600585276",
+      "chi_lambda_table_top10": [
+        {
+          "lambda": [
+            6
+          ],
+          "chi_q0": "1.56226192429",
+          "y_q0": "0.115324224902",
+          "contribution_q0": "0.180166645513"
+        },
+        {
+          "lambda": [
+            5,
+            1
+          ],
+          "chi_q0": "8.70726260186",
+          "y_q0": "0.0789529624759",
+          "contribution_q0": "0.687464177472"
+        },
+        {
+          "lambda": [
+            4,
+            2
+          ],
+          "chi_q0": "16.8381037619",
+          "y_q0": "0.046032434692",
+          "contribution_q0": "0.775098911759"
+        },
+        {
+          "lambda": [
+            4,
+            1,
+            1
+          ],
+          "chi_q0": "-6.17070028516",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            3,
+            3
+          ],
+          "chi_q0": "9.69310308436",
+          "y_q0": "0.015123810098",
+          "contribution_q0": "0.146596650308"
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            1
+          ],
+          "chi_q0": "-24.8260049573",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "chi_q0": "-61.5483889177",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2
+          ],
+          "chi_q0": "77.480258087",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "chi_q0": "29.247570132",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "chi_q0": "21.116728972",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        }
+      ],
+      "duration_ms_total": 19
     },
     {
       "atom": "T",
       "Z": 1,
       "N": 2,
       "n_strands": 9,
-      "tr_M_q0_unavail_reason": "hecke-tr-m-wenzl-lr binary not built; build via `cd tools/hecke-engine && cargo build --release --bin hecke-tr-m-wenzl-lr` to enable this consumer"
+      "n_partitions": 30,
+      "averaging_denominator": 64,
+      "factor_labels": [
+        "p",
+        "n",
+        "n"
+      ],
+      "tr_M_q0_mp30dps": "0.033470339711649018989284766701",
+      "abs_tr_M_q0_mp30dps": "0.033470339711649018989284766701",
+      "chi_lambda_table_top10": [
+        {
+          "lambda": [
+            9
+          ],
+          "chi_q0": "1.68527919002",
+          "y_q0": "0.0221222760303",
+          "contribution_q0": "0.0372822114297"
+        },
+        {
+          "lambda": [
+            8,
+            1
+          ],
+          "chi_q0": "15.1967862551",
+          "y_q0": "0.0166381738807",
+          "contribution_q0": "0.25284677214"
+        },
+        {
+          "lambda": [
+            7,
+            2
+          ],
+          "chi_q0": "56.315824526",
+          "y_q0": "0.0118812632284",
+          "contribution_q0": "0.669103135118"
+        },
+        {
+          "lambda": [
+            7,
+            1,
+            1
+          ],
+          "chi_q0": "15.4611986435",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            6,
+            3
+          ],
+          "chi_q0": "107.044059715",
+          "y_q0": "0.00764363754438",
+          "contribution_q0": "0.818205993739"
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            1
+          ],
+          "chi_q0": "-7.70206348834",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "chi_q0": "-160.685860201",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            5,
+            4
+          ],
+          "chi_q0": "97.501394922",
+          "y_q0": "0.00374008627682",
+          "contribution_q0": "0.364663629118"
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            1
+          ],
+          "chi_q0": "-94.5024801448",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            2
+          ],
+          "chi_q0": "117.268420111",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        }
+      ],
+      "duration_ms_total": 402
     },
     {
       "atom": "3He",
       "Z": 2,
       "N": 1,
       "n_strands": 9,
-      "tr_M_q0_unavail_reason": "hecke-tr-m-wenzl-lr binary not built; build via `cd tools/hecke-engine && cargo build --release --bin hecke-tr-m-wenzl-lr` to enable this consumer"
+      "n_partitions": 30,
+      "averaging_denominator": 64,
+      "factor_labels": [
+        "p",
+        "p",
+        "n"
+      ],
+      "tr_M_q0_mp30dps": "0.0417877155433974866161083857833",
+      "abs_tr_M_q0_mp30dps": "0.0417877155433974866161083857833",
+      "chi_lambda_table_top10": [
+        {
+          "lambda": [
+            9
+          ],
+          "chi_q0": "2.26250572326",
+          "y_q0": "0.0221222760303",
+          "contribution_q0": "0.05005177613"
+        },
+        {
+          "lambda": [
+            8,
+            1
+          ],
+          "chi_q0": "19.6908627141",
+          "y_q0": "0.0166381738807",
+          "contribution_q0": "0.327619997699"
+        },
+        {
+          "lambda": [
+            7,
+            2
+          ],
+          "chi_q0": "70.93092637",
+          "y_q0": "0.0118812632284",
+          "contribution_q0": "0.842749007237"
+        },
+        {
+          "lambda": [
+            7,
+            1,
+            1
+          ],
+          "chi_q0": "23.5504729659",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            6,
+            3
+          ],
+          "chi_q0": "132.082066959",
+          "y_q0": "0.00764363754438",
+          "contribution_q0": "1.00958744594"
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            1
+          ],
+          "chi_q0": "17.7878923094",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "chi_q0": "-167.790456428",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            5,
+            4
+          ],
+          "chi_q0": "118.822277047",
+          "y_q0": "0.00374008627682",
+          "contribution_q0": "0.444405567766"
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            1
+          ],
+          "chi_q0": "-55.9810296877",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            2
+          ],
+          "chi_q0": "130.420225211",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        }
+      ],
+      "duration_ms_total": 390
     },
     {
       "atom": "4He",
       "Z": 2,
       "N": 2,
       "n_strands": 12,
-      "tr_M_q0_unavail_reason": "hecke-tr-m-wenzl-lr binary not built; build via `cd tools/hecke-engine && cargo build --release --bin hecke-tr-m-wenzl-lr` to enable this consumer"
+      "n_partitions": 77,
+      "averaging_denominator": 256,
+      "factor_labels": [
+        "p",
+        "p",
+        "n",
+        "n"
+      ],
+      "tr_M_q0_mp30dps": "0.0125065973134514819827169314764",
+      "abs_tr_M_q0_mp30dps": "0.0125065973134514819827169314764",
+      "chi_lambda_table_top10": [
+        {
+          "lambda": [
+            12
+          ],
+          "chi_q0": "2.44066232008",
+          "y_q0": "0.00396575801612",
+          "contribution_q0": "0.00967907616051"
+        },
+        {
+          "lambda": [
+            11,
+            1
+          ],
+          "chi_q0": "29.6467119754",
+          "y_q0": "0.00310034854941",
+          "contribution_q0": "0.0919151404678"
+        },
+        {
+          "lambda": [
+            10,
+            2
+          ],
+          "chi_q0": "158.074190762",
+          "y_q0": "0.00237044356293",
+          "contribution_q0": "0.374705947957"
+        },
+        {
+          "lambda": [
+            10,
+            1,
+            1
+          ],
+          "chi_q0": "83.7419714696",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            9,
+            3
+          ],
+          "chi_q0": "481.588104861",
+          "y_q0": "0.00174414167712",
+          "contribution_q0": "0.839957884893"
+        },
+        {
+          "lambda": [
+            9,
+            2,
+            1
+          ],
+          "chi_q0": "320.367772407",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            9,
+            1,
+            1,
+            1
+          ],
+          "chi_q0": "-243.233302841",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            8,
+            4
+          ],
+          "chi_q0": "903.624299369",
+          "y_q0": "0.00119406961116",
+          "contribution_q0": "1.07899031578"
+        },
+        {
+          "lambda": [
+            8,
+            3,
+            1
+          ],
+          "chi_q0": "456.065340362",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        },
+        {
+          "lambda": [
+            8,
+            2,
+            2
+          ],
+          "chi_q0": "367.980906395",
+          "y_q0": "0.0",
+          "contribution_q0": "0.0"
+        }
+      ],
+      "duration_ms_total": 2065
     }
   ],
   "workplan_ref": "docs/audits/2026-05-17-1ppb-workplan-v4.md §3 Item 1 (superseded by canonical Rust route in docs/audits/2026-05-17-knot-fusion-step1-audit.md). Canonical consumer: canonical_tr_m_via_rust.py.",
