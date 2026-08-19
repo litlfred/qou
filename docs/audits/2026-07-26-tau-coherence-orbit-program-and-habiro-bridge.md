@@ -1209,6 +1209,12 @@ Same cwd-assumption class as the `parents[2]` bug fixed in 12 scripts.
 
 ## Addendum 27 (2026-08-18) — a per-element representative EXISTS at m = 3 and 6, the canonical cocycle closes there — and the value is still not an invariant
 
+> **⚠ SCOPE NARROWED by Addendum 30 (2026-08-19).** The ambiguity this
+> addendum measures is real, but it belongs to **my** descent-to-B +
+> χ_B composite, **not** to CGZ's P_ζ — which is root-independent by
+> their Lemma 2.4(a). Read every "obstruction" below as a condition
+> for the *B-level composite* to be well defined.
+
 `gswz_epsm_per_element_representative_probe.py`, **16/16**. Answers the
 question Addendum 25 reopened (bean `qou-w4gn`), and then finds the next
 obstruction rather than a value.
@@ -1275,6 +1281,12 @@ m ≥ 3 remain uncomputed as invariants.
 
 ## Addendum 28 (2026-08-18) — the root ambiguity has a closed form: a second condition, an obstruction at m ≥ 4, and a door still open at m = 3
 
+> **⚠ SCOPE NARROWED by Addendum 30 (2026-08-19).** The ambiguity this
+> addendum measures is real, but it belongs to **my** descent-to-B +
+> χ_B composite, **not** to CGZ's P_ζ — which is root-independent by
+> their Lemma 2.4(a). Read every "obstruction" below as a condition
+> for the *B-level composite* to be well defined.
+
 `gswz_epsm_root_ambiguity_criterion_probe.py`, **9/9**. Explains
 Addendum 27's non-invariance exactly, and turns it into a criterion.
 
@@ -1337,6 +1349,12 @@ the rescale, since gcd(m, u·g) = gcd(m, g) for a unit u mod 24.
 
 ## Addendum 29 (2026-08-18) — m = 3 closed for one and two relations: no element-level representative meets both conditions
 
+> **⚠ SCOPE NARROWED by Addendum 30 (2026-08-19).** The ambiguity this
+> addendum measures is real, but it belongs to **my** descent-to-B +
+> χ_B composite, **not** to CGZ's P_ζ — which is root-independent by
+> their Lemma 2.4(a). Read every "obstruction" below as a condition
+> for the *B-level composite* to be well defined.
+
 `gswz_epsm_m3_one_two_relation_closure_probe.py`, **8/8**. Addendum 28
 left m = 3 as the only level where the two-condition criterion was
 *residue-level* feasible; residue feasibility is only **necessary**
@@ -1384,3 +1402,61 @@ accumulating `max(0, specials − len)` from a sentinel of 0 and then
 requiring `< 0`, which cannot hold when nothing qualifies. Recorded
 because at a glance that is indistinguishable from a mathematical
 failure, and I briefly wrote it up as one.
+
+## Addendum 30 (2026-08-19) — RE-SCOPE: CGZ's P_ζ *is* root-independent; the m ≥ 3 ambiguity belongs to my descent step, not to the invariant
+
+`gswz_epsm_cgz_lemma24a_rescope_probe.py`, **9/9**. Reading CGZ's own
+definition instead of continuing to build on mine shows that Addenda
+27–29 characterise **my composite**, not their invariant. Scope banners
+added to all three in place.
+
+**What CGZ actually define** (eqn (20), p. 10):
+
+$$P_\zeta(X) := D_\zeta(x)/D_\zeta(1) \ \in\ H^\times/(H^\times)^n,
+\qquad x^n = X,$$
+
+with the parenthetical *"only its image modulo nth powers was ever used,
+and it is more canonical to define it in the manner above."* Then
+**Lemma 2.4(a): P_ζ(X) is independent of the choice of nth root x of
+X**, proved via their eqn (21) — which is exactly the shift law this
+programme proved in Lean (#4964) — plus the observation that the shift
+factor **lies in H^×ⁿ**.
+
+**Measured here**, in the degree-12 field F = Q₅(μ₁₈₇₂) where the m = 3
+work was done:
+
+| | shift ratio D(ζx)/D(x) is an m-th power |
+|---|---|
+| in **F** | **4 of 4** — Lemma 2.4(a) confirmed |
+| in the base **B = Q₂₅** | **1 of 4** |
+
+The ratio equals (1−x)^m/(1−w) exactly (the Lean law, re-verified). Its
+(1−x)^m part is an m-th power anywhere; the (1−w)⁻¹ part lives in the
+**base**, and — structurally — **B^× ⊆ (F^×)^m** here, since μ₂₄ sits in
+F^× as ⟨g^{(5¹²−1)/24}⟩ with (5¹²−1)/24 = 10 172 526 divisible by 3, and
+the 1+5R part is uniquely 3-divisible. So in F the ratio is *always* an
+m-th power, and P_ζ is root-independent for free.
+
+**The ambiguity enters only when I descend to B and apply
+χ_B = teich(·)^{24/m}**, which does not kill those ratios.
+
+**Consequence.** Addenda 27–29 are not retracted — their computations
+stand — but their scope narrows:
+
+| addendum | was framed as | actually is |
+|---|---|---|
+| 27 | ε₃ value not invariant | the **B-level composite** is not invariant |
+| 28 | obstruction at m = 4, 6, 8, 12, 24 | when the **B-level composite** is well defined |
+| 29 | m = 3 closed for 1–2 relations | ditto, for the **B-level composite** |
+
+**None of them obstructs ε_m.** The right target is CGZ's own: the class
+in F^×/(F^×)ⁿ, where root-independence is Lemma 2.4(a) and no
+representative search is needed at all. That is the next increment, and
+it is **not** done here — no ε_m value is claimed.
+
+**Two controls that went red for non-mathematical reasons**, both
+recorded because they look identical to real failures at a glance:
+sweeping 𝔽₅ scalars for a non-cube finds none (order divides 4, and
+(5¹²−1)/4 is divisible by 3), and neither does sweeping a+bα+cα² — every
+element of B^× is a cube in F, which is the structural fact above. The
+control had to leave B entirely, using the ring generator.
