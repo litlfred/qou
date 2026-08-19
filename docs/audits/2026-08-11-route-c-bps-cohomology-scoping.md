@@ -475,3 +475,37 @@ rather than a fit.
 **Still open, and the sibling says the same:** an *independent resurgence DT
 count* for `6₁` — the piece that would turn `r = 4` into a third-knot test of the
 DT correspondence itself rather than of the number-field/Newton-polygon identity.
+
+### A third route to `r(6₁) = 4` — from the saddle analysis itself
+
+Ohtsuki–Yokota (`uploads/ki6c.pdf`, saddle data extracted by a sibling, bean
+`qou-6ort`) give `6₁`'s gluing-equation quartic explicitly:
+
+  `2z⁴ − z³ − 2z² + z + 1 = 0`.
+
+It comes from a **stationary-phase analysis of the Kashaev integral** — not a
+character variety, not a knot polynomial. Measured exactly: irreducible over `ℚ`,
+**discriminant 257** (prime), **0 real roots** ⇒ signature `[0,2]` — matching DG's
+trace field `x⁴ − 2x³ + x² + 3x + 1` on every invariant.
+
+**And the fields are equal, not merely invariant-matched.** With `α` a root of
+DG's quartic, `γ := −α³ + 3α² − 4α − 1` satisfies the all-integer relation
+
+  `γ⁴ − γ³ − 4γ² + 4γ + 8 = 0`  (exact in `ℤ[α]/(dg)`),
+
+whose root `γ/2` is a root of the Ohtsuki–Yokota quartic. Both quartics being
+irreducible of degree 4, `ℚ(γ) = ℚ(α)`. (`disc(x⁴−x³−4x²+4x+8) = 16448 = 2⁶·257`
+— the same field through the index-2 scaling `γ = 2β`.) Machine-checked in Lean
+as integer arithmetic on 4-tuples, not asserted.
+
+So **three constructions with nothing in common but the knot** — a number field
+(DG), a Newton polygon (Culler census), a stationary-phase analysis
+(Ohtsuki–Yokota) — all give `r(6₁) = 4`.
+
+**Scope: this is still not a DT count.** The saddles are the *critical points*;
+the Donaldson–Thomas invariants are the Stokes constants on the Borel rays
+**between** them. All three routes measure `r`, the `R1` / Euler-characteristic
+shadow. The resurgence DT count for `6₁` is exactly as open as it was, and the
+sibling's bean `qou-btvl` names the same gap. What the agreement does buy is a
+falsifiable **shape**: with `|P_K| = 5`, `6₁`'s reduced Stokes matrix is `4×4`
+against `5₂`'s `3×3`.

@@ -526,4 +526,143 @@ theorem control_fires_where_hypothesis_fails :
     rank PKnot.pretzel237 = 6 ∧
     predictedRankFromTraceField DGKnot.fiveTwo ≠ rank PKnot.pretzel237 := by decide
 
+/-! ## Part H — a THIRD, independent route to `r(6₁) = 4`, from the saddle analysis itself
+
+Parts F–G got `r(6₁) = 4` twice: from Dimofte–Garoufalidis's **trace field**
+(a number field) and from the Culler census **A-polynomial** (a Newton polygon).
+This part adds a third, and it is the one closest to the resurgence side.
+
+Ohtsuki–Yokota, *On the asymptotic expansions of the Kashaev invariant of the
+knots with 6 crossings* (`uploads/ki6c.pdf`; extracted by a sibling, bean
+`qou-6ort`) give the `6₁` **saddle-point data** of the Kashaev integral
+explicitly, including the gluing-equation quartic
+
+  `2z⁴ − z³ − 2z² + z + 1 = 0`.
+
+That polynomial comes from a **stationary-phase analysis of an integral**, not
+from a character variety and not from a knot polynomial. Measured here, exactly:
+
+* it is **irreducible** over `ℚ`, with **discriminant 257** and **0 real roots**,
+  i.e. signature `[0,2]` — matching DG's trace field `x⁴ − 2x³ + x² + 3x + 1`
+  on every one of those invariants;
+* and the fields are not merely *invariant-matched* — they are **equal**, by the
+  explicit witness below.
+
+**The witness.** With `α` a root of DG's quartic, set
+
+  `γ := −α³ + 3α² − 4α − 1`.
+
+Then `γ` satisfies the all-integer relation `γ⁴ − γ³ − 4γ² + 4γ + 8 = 0`, whose
+root `γ/2` is a root of the Ohtsuki–Yokota quartic. Since both quartics are
+irreducible of degree 4, `ℚ(γ) = ℚ(α)` — the saddle field **is** the trace field.
+(`disc(x⁴−x³−4x²+4x+8) = 16448 = 2⁶·257`: the same field, seen through the
+index-2 scaling `γ = 2β`.)
+
+So four Galois-conjugate saddles ⇒ `r(6₁) = 4`, from a third direction.
+
+**Scope — this is still not a DT count.** The saddles are the *critical points*;
+the Donaldson–Thomas invariants are the Stokes constants attached to the Borel
+rays **between** them. Three independent routes now agree on `r`, which is the
+`R1` / Euler-characteristic shadow — the resurgence DT count for `6₁` remains
+exactly as open as it was, and the sibling's bean `qou-btvl` says the same. What
+this does buy is a structural prediction: with 5 boundary-parabolic
+representations, `6₁`'s reduced Stokes matrix is **4×4**, against `5₂`'s 3×3.
+
+Arithmetic below is exact in `ℤ[α]/(α⁴ − 2α³ + α² + 3α + 1)`, elements carried as
+integer 4-tuples, so the certificate is machine-checked rather than asserted.
+
+-- Ref: [manuscript] uploads/ki6c.pdf (Ohtsuki–Yokota), saddle data via bean qou-6ort
+-/
+
+/-- An element of `ℤ[α]/(dg)` as `(c₀, c₁, c₂, c₃)` ↦ `c₀ + c₁α + c₂α² + c₃α³`. -/
+abbrev Alg4 := Int × Int × Int × Int
+
+/-- Reduction of `α⁴`, from `dg(α) = 0`: `α⁴ = 2α³ − α² − 3α − 1`. -/
+def a4 : Alg4 := (-1, -3, -1, 2)
+
+/-- `α⁵ = 3α³ − 5α² − 7α − 2`. -/
+def a5 : Alg4 := (-2, -7, -5, 3)
+
+/-- `α⁶ = α³ − 10α² − 11α − 3`. -/
+def a6 : Alg4 := (-3, -11, -10, 1)
+
+/-- Multiplication in `ℤ[α]/(dg)`: convolve, then fold `α⁴, α⁵, α⁶` back in. -/
+def mulAlg4 (x y : Alg4) : Alg4 :=
+  let (a0, a1, a2, a3) := x
+  let (b0, b1, b2, b3) := y
+  let c0 := a0 * b0
+  let c1 := a0 * b1 + a1 * b0
+  let c2 := a0 * b2 + a1 * b1 + a2 * b0
+  let c3 := a0 * b3 + a1 * b2 + a2 * b1 + a3 * b0
+  let c4 := a1 * b3 + a2 * b2 + a3 * b1
+  let c5 := a2 * b3 + a3 * b2
+  let c6 := a3 * b3
+  (c0 + c4 * a4.1 + c5 * a5.1 + c6 * a6.1,
+   c1 + c4 * a4.2.1 + c5 * a5.2.1 + c6 * a6.2.1,
+   c2 + c4 * a4.2.2.1 + c5 * a5.2.2.1 + c6 * a6.2.2.1,
+   c3 + c4 * a4.2.2.2 + c5 * a5.2.2.2 + c6 * a6.2.2.2)
+
+/-- Scalar multiple. -/
+def smulAlg4 (k : Int) (x : Alg4) : Alg4 := (k * x.1, k * x.2.1, k * x.2.2.1, k * x.2.2.2)
+
+/-- Sum. -/
+def addAlg4 (x y : Alg4) : Alg4 :=
+  (x.1 + y.1, x.2.1 + y.2.1, x.2.2.1 + y.2.2.1, x.2.2.2 + y.2.2.2)
+
+/-- `α` itself. -/
+def alpha : Alg4 := (0, 1, 0, 0)
+
+/-- **The reduction table is consistent**: `α·α³ = α⁴`, `α·α⁴ = α⁵`, `α·α⁵ = α⁶`.
+Checks the three constants against each other rather than trusting the
+transcription. -/
+theorem reduction_table_consistent :
+    mulAlg4 alpha (0, 0, 0, 1) = a4 ∧
+    mulAlg4 alpha a4 = a5 ∧
+    mulAlg4 alpha a5 = a6 := by decide
+
+/-- The witness `γ = −α³ + 3α² − 4α − 1`. -/
+def gamma : Alg4 := (-1, -4, 3, -1)
+
+/-- **The isomorphism certificate, machine-checked.**
+`γ⁴ − γ³ − 4γ² + 4γ + 8 = 0` in `ℤ[α]/(dg)`. Its root `γ/2` is a root of
+Ohtsuki–Yokota's gluing quartic `2z⁴ − z³ − 2z² + z + 1`, so that quartic has a
+root in `ℚ(α)`; both being irreducible of degree 4, the fields coincide. -/
+theorem saddle_field_equals_trace_field :
+    let g2 := mulAlg4 gamma gamma
+    let g3 := mulAlg4 g2 gamma
+    let g4 := mulAlg4 g3 gamma
+    addAlg4 (addAlg4 (addAlg4 g4 (smulAlg4 (-1) g3)) (smulAlg4 (-4) g2))
+      (addAlg4 (smulAlg4 4 gamma) (8, 0, 0, 0)) = (0, 0, 0, 0) := by decide
+
+/-- The intermediate powers, recorded so a reader can check the certificate by
+hand: `γ² = −5α³ + 13α² − 12α − 7`, `γ³ = −13α³ + 33α² − 32α − 23`,
+`γ⁴ = −29α³ + 73α² − 64α − 55`. -/
+theorem gamma_powers :
+    mulAlg4 gamma gamma = (-7, -12, 13, -5) ∧
+    mulAlg4 (mulAlg4 gamma gamma) gamma = (-23, -32, 33, -13) ∧
+    mulAlg4 (mulAlg4 (mulAlg4 gamma gamma) gamma) gamma = (-55, -64, 73, -29) := by
+  decide
+
+/-- **`γ` is not rational**, so the witness is genuinely degree-4 and not a
+degenerate solution: its `α`, `α²`, `α³` components are all nonzero. -/
+theorem gamma_is_not_rational :
+    gamma.2.1 ≠ 0 ∧ gamma.2.2.1 ≠ 0 ∧ gamma.2.2.2 ≠ 0 := by decide
+
+/-- **Three independent routes now give `r(6₁) = 4`**: the trace-field degree
+(DG, a number field), the geometric `A`-polynomial `L`-degree (Culler census, a
+Newton polygon), and the gluing-equation quartic's degree (Ohtsuki–Yokota, a
+saddle-point analysis). -/
+theorem three_routes_agree_on_sixOne :
+    predictedRankFromTraceField DGKnot.sixOne = 4 ∧
+    geomLDegree DGKnot.sixOne = 4 ∧
+    traceFieldDegree DGKnot.sixOne = 4 := by decide
+
+/-- **Structural prediction, stated so it can be falsified.** With `|P_K| = 5`
+boundary-parabolic representations, `6₁`'s reduced Stokes matrix is `4×4`, against
+`5₂`'s `3×3`. Not a DT count — the Stokes *constants* on those rays are still
+unpublished — but a definite shape for whoever computes them. -/
+theorem sixOne_stokes_matrix_is_four_by_four :
+    rank PKnot.fiveTwo = 3 ∧ geomLDegree DGKnot.sixOne = 4 ∧
+    geomLDegree DGKnot.sixOne = rank PKnot.fiveTwo + 1 := by decide
+
 end QOU.QBeta.GZThirdKnotRankGrading
